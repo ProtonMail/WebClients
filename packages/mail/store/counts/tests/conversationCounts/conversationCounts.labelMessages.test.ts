@@ -442,82 +442,6 @@ describe('conversation counts - label messages', () => {
             });
         });
 
-        it('should not decrease Category counters', () => {
-            const message1 = {
-                ConversationID: 'conversationID',
-                LabelIDs: [
-                    MAILBOX_LABEL_IDS.INBOX,
-                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    MAILBOX_LABEL_IDS.ALL_MAIL,
-                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                ],
-                Unread: 1,
-            } as Message;
-
-            const conversation = {
-                ID: 'conversationID',
-                Labels: [
-                    {
-                        ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 1,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        ContextNumMessages: 1,
-                        ContextNumUnread: 0,
-                        ContextNumAttachments: 0,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                ],
-                NumMessages: 2,
-                NumUnread: 1,
-                NumAttachments: 1,
-            } as Conversation;
-
-            labelMessagesPending(state, {
-                type: 'mailbox/labelMessages',
-                payload: {
-                    messages: [message1],
-                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    conversations: [conversation],
-                    labels: customLabels,
-                    folders: customFolders,
-                },
-            });
-
-            const updatedCounters = state.value as LabelCount[];
-
-            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
-            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 4, Total: 9 });
-
-            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
-            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 2 });
-
-            checkUpdatedCounters({
-                updatedCounters,
-                skippedLabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ARCHIVE],
-            });
-        });
-
         it('should increase ALMOST_ALL_MAIL counters when moving out from TRASH', () => {
             const message1 = {
                 ConversationID: 'conversationID',
@@ -1299,6 +1223,260 @@ describe('conversation counts - label messages', () => {
         });
     });
 
+    describe('Category counter when labelling messages from INBOX', () => {
+        it('should decrease category Total and Unread counters when all messages are moved out of INBOX', () => {
+            const message1 = {
+                ConversationID: 'conversationID',
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+                Unread: 1,
+            } as Message;
+
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        ContextNumMessages: 0,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 1,
+                NumUnread: 1,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelMessagesPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    conversations: [conversation],
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 4, Total: 9 });
+
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 1 });
+
+            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 3 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+
+        it('should decrease category Total but not Unread when all read messages are moved out of INBOX', () => {
+            const message1 = {
+                ConversationID: 'conversationID',
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+                Unread: 0,
+            } as Message;
+
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        ContextNumMessages: 0,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 1,
+                NumUnread: 0,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelMessagesPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    conversations: [conversation],
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5, Total: 9 });
+
+            // Total decreases because all messages left INBOX, but Unread stays since there were none
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 1 });
+
+            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 1, Total: 3 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+
+        it('should not decrease category counters when only some messages are moved out of INBOX', () => {
+            const message1 = {
+                ConversationID: 'conversationID',
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+                Unread: 1,
+            } as Message;
+
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        ContextNumMessages: 0,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 2,
+                NumUnread: 2,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelMessagesPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    conversations: [conversation],
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            // INBOX still has one message left, so its counters should not decrease
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5, Total: 10 });
+
+            // Category counter should not decrease since not all INBOX messages were moved
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+
+            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 3 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+    });
+
     describe('Move to INBOX', () => {
         it('should increase category counter when conversation was not in INBOX', () => {
             const message1 = {
@@ -1367,7 +1545,7 @@ describe('conversation counts - label messages', () => {
             });
         });
 
-        it('should not increase category counter when conversation was already in INBOX', () => {
+        it('should increase category Unread but not Total when conversation was already in INBOX with no unread', () => {
             const message1 = {
                 ConversationID: 'conversationID',
                 LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
@@ -1420,7 +1598,75 @@ describe('conversation counts - label messages', () => {
 
             const updatedCounters = state.value as LabelCount[];
 
-            // Conversation was already in INBOX, so category counter should NOT increase
+            // Conversation was already in INBOX (Total unchanged), but had no unread there, so Unread increases
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 2, Total: 2 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+
+        it('should not increase category counters when conversation was already in INBOX with unread', () => {
+            const message1 = {
+                ConversationID: 'conversationID',
+                LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+                Unread: 1,
+            } as Message;
+
+            const conversation = {
+                ID: 'conversationID',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+                NumMessages: 2,
+                NumUnread: 2,
+                NumAttachments: 0,
+            } as Conversation;
+
+            labelMessagesPending(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    conversations: [conversation],
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            // Conversation was already in INBOX with unread, so neither Total nor Unread should increase
             const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
 
