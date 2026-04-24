@@ -30,6 +30,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
 
 beforeEach(() => {
     jest.clearAllMocks();
+    mockUseFlag.mockReturnValue(false);
 });
 
 it('should render', () => {
@@ -326,6 +327,85 @@ it('should allow input of members through text field', async () => {
         [PLANS.MAIL_PRO]: 1,
         [ADDON_NAMES.MEMBER_MAIL_PRO]: 9,
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 10,
+    });
+});
+
+describe('domain addon gating (VPN_BUSINESS)', () => {
+    const domainCustomizerId = `${ADDON_NAMES.DOMAIN_VPN_BUSINESS}-customizer`;
+
+    it('renders the domain customizer when DomainVpnBiz2023 flag is true', () => {
+        mockUseFlag.mockImplementation((flag: string) => flag === 'DomainVpnBiz2023');
+        const planIDs: PlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={planIDs}
+                latestSubscription={buildSubscription(planIDs)}
+            />
+        );
+
+        expect(screen.getByTestId(domainCustomizerId)).toBeInTheDocument();
+    });
+
+    it('hides the domain customizer when DomainVpnBiz2023 flag is false and no domain addons are selected', () => {
+        const planIDs: PlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={planIDs}
+                latestSubscription={buildSubscription(planIDs)}
+            />
+        );
+
+        expect(screen.queryByTestId(domainCustomizerId)).not.toBeInTheDocument();
+    });
+
+    it('still renders the domain customizer when disabled but domain addons are already purchased (grandfathered)', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 2,
+        };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={planIDs}
+                latestSubscription={buildSubscription(planIDs)}
+            />
+        );
+
+        expect(screen.getByTestId(domainCustomizerId)).toBeInTheDocument();
+    });
+
+    it('does not affect member or IP customizers when DomainVpnBiz2023 flag is false', () => {
+        const planIDs: PlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={planIDs}
+                latestSubscription={buildSubscription(planIDs)}
+            />
+        );
+
+        expect(screen.getByTestId(`${ADDON_NAMES.MEMBER_VPN_BUSINESS}-customizer`)).toBeInTheDocument();
+        expect(screen.getByTestId(`${ADDON_NAMES.IP_VPN_BUSINESS}-customizer`)).toBeInTheDocument();
+    });
+
+    it('does not affect non-VPN_BUSINESS domain addons when DomainVpnBiz2023 flag is false', () => {
+        const planIDs: PlanIDs = { [PLANS.BUNDLE_PRO_2024]: 1 };
+
+        render(
+            <ProtonPlanCustomizer
+                {...defaultProps}
+                selectedPlanIDs={planIDs}
+                latestSubscription={buildSubscription(planIDs)}
+            />
+        );
+
+        expect(screen.getByTestId(`${ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024}-customizer`)).toBeInTheDocument();
     });
 });
 
