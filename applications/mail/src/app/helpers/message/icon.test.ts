@@ -13,9 +13,9 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import type { StatusIcon } from '../../models/crypto';
 import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
 import {
+    getGlobalSentStatusIcon,
     getReceivedStatusIcon,
     getSendStatusIcon,
-    getSentStatusIcon,
     getSentStatusIconInfo,
     getStatusIconName,
 } from './icon';
@@ -319,11 +319,9 @@ describe('icon', () => {
 
     describe('getSentStatusIcon for imported sent message', () => {
         it('should display black padlock icon', () => {
-            const globalIcon = getSentStatusIcon({
-                mapAuthentication: {},
+            const globalIcon = getGlobalSentStatusIcon({
                 mapEncryption: {},
                 contentEncryption: X_PM_HEADERS.ON_DELIVERY,
-                emailAddress: undefined,
                 isImported: true,
             });
             expect(globalIcon?.colorClassName).toBe('color-norm');
@@ -347,6 +345,15 @@ describe('icon', () => {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=none',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=none',
                 'X-Pm-Content-Encryption': 'end-to-end',
+            };
+            const icon = getIconFromHeaders(headers, email);
+            expect(icon).toEqual(undefined);
+        });
+
+        it('should return no lock for messages with BYOE header', () => {
+            const headers = {
+                'X-Pm-Byoe': '<placeholder>',
+                'X-Pm-Content-Encryption': 'on-compose',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toEqual(undefined);

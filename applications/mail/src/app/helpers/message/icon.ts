@@ -139,12 +139,76 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
     }
 };
 
-interface Params {
-    mapAuthentication: { [key: string]: X_PM_HEADERS };
+interface GetGlobalSentStatusIcon {
     mapEncryption: { [key: string]: X_PM_HEADERS };
     contentEncryption: X_PM_HEADERS;
-    emailAddress?: string;
     isImported: boolean;
+}
+
+export const getGlobalSentStatusIcon = ({
+    mapEncryption,
+    contentEncryption,
+    isImported,
+}: GetGlobalSentStatusIcon): StatusIcon | undefined => {
+    // we return the aggregated send icon in this case
+    const encryptions = Object.values(mapEncryption);
+    const hasHeaderInfo = !!encryptions.length;
+    const allExternal =
+        hasHeaderInfo &&
+        !encryptions.some((encryption) =>
+            [X_PM_HEADERS.PGP_PM, X_PM_HEADERS.PGP_PM_PINNED, X_PM_HEADERS.PGP_EO].includes(encryption)
+        );
+    const allPinned =
+        hasHeaderInfo &&
+        !encryptions.some(
+            (encryption) =>
+                ![X_PM_HEADERS.PGP_PM_PINNED, X_PM_HEADERS.PGP_MIME_PINNED, X_PM_HEADERS.PGP_INLINE_PINNED].includes(
+                    encryption
+                )
+        );
+    const allEncrypted = hasHeaderInfo && !encryptions.some((encryption) => encryption === X_PM_HEADERS.NONE);
+    if (allPinned) {
+        const text =
+            contentEncryption === X_PM_HEADERS.END_TO_END
+                ? c('Sent email icon').ngettext(
+                      msgid`Sent by you with end-to-end encryption to verified recipient`,
+                      `Sent by you with end-to-end encryption to verified recipients`,
+                      encryptions.length
+                  )
+                : c('Sent email icon').ngettext(
+                      msgid`Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipient`,
+                      `Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipients`,
+                      encryptions.length
+                  );
+        return {
+            colorClassName: allExternal ? 'color-success' : 'color-info',
+            isEncrypted: true,
+            fill: STATUS_ICONS_FILLS.CHECKMARK,
+            text,
+        };
+    }
+    if (allEncrypted) {
+        return {
+            colorClassName: allExternal ? 'color-success' : 'color-info',
+            isEncrypted: true,
+            fill: STATUS_ICONS_FILLS.PLAIN,
+            text:
+                contentEncryption === X_PM_HEADERS.END_TO_END
+                    ? c('Sent email icon').t`Sent by you with end-to-end encryption`
+                    : c('Sent email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
+        };
+    }
+    return {
+        colorClassName: isImported ? 'color-norm' : 'color-info',
+        isEncrypted: true,
+        fill: STATUS_ICONS_FILLS.PLAIN,
+        text: c('Sent email icon').t`Stored with zero-access encryption`,
+    };
+};
+
+interface GetSentStatusIconParams extends GetGlobalSentStatusIcon {
+    mapAuthentication: { [key: string]: X_PM_HEADERS };
+    emailAddress: string;
 }
 
 export const getSentStatusIcon = ({
@@ -152,67 +216,7 @@ export const getSentStatusIcon = ({
     mapEncryption,
     contentEncryption,
     emailAddress,
-    isImported,
-}: Params): StatusIcon | undefined => {
-    if (!emailAddress) {
-        // we return the aggregated send icon in this case
-        const encryptions = Object.values(mapEncryption);
-        const hasHeaderInfo = !!encryptions.length;
-        const allExternal =
-            hasHeaderInfo &&
-            !encryptions.some((encryption) =>
-                [X_PM_HEADERS.PGP_PM, X_PM_HEADERS.PGP_PM_PINNED, X_PM_HEADERS.PGP_EO].includes(encryption)
-            );
-        const allPinned =
-            hasHeaderInfo &&
-            !encryptions.some(
-                (encryption) =>
-                    ![
-                        X_PM_HEADERS.PGP_PM_PINNED,
-                        X_PM_HEADERS.PGP_MIME_PINNED,
-                        X_PM_HEADERS.PGP_INLINE_PINNED,
-                    ].includes(encryption)
-            );
-        const allEncrypted = hasHeaderInfo && !encryptions.some((encryption) => encryption === X_PM_HEADERS.NONE);
-        if (allPinned) {
-            const text =
-                contentEncryption === X_PM_HEADERS.END_TO_END
-                    ? c('Sent email icon').ngettext(
-                          msgid`Sent by you with end-to-end encryption to verified recipient`,
-                          `Sent by you with end-to-end encryption to verified recipients`,
-                          encryptions.length
-                      )
-                    : c('Sent email icon').ngettext(
-                          msgid`Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipient`,
-                          `Sent by ${MAIL_APP_NAME} with zero-access encryption to verified recipients`,
-                          encryptions.length
-                      );
-            return {
-                colorClassName: allExternal ? 'color-success' : 'color-info',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text,
-            };
-        }
-        if (allEncrypted) {
-            return {
-                colorClassName: allExternal ? 'color-success' : 'color-info',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.PLAIN,
-                text:
-                    contentEncryption === X_PM_HEADERS.END_TO_END
-                        ? c('Sent email icon').t`Sent by you with end-to-end encryption`
-                        : c('Sent email icon').t`Sent by ${MAIL_APP_NAME} with zero-access encryption`,
-            };
-        }
-        return {
-            colorClassName: isImported ? 'color-norm' : 'color-info',
-            isEncrypted: true,
-            fill: STATUS_ICONS_FILLS.PLAIN,
-            text: c('Sent email icon').t`Stored with zero-access encryption`,
-        };
-    }
-
+}: GetSentStatusIconParams): StatusIcon | undefined => {
     const [authentication, encryption] = [mapAuthentication[emailAddress], mapEncryption[emailAddress]];
     if (encryption === X_PM_HEADERS.NONE && [X_PM_HEADERS.PGP_INLINE, X_PM_HEADERS.PGP_MIME].includes(authentication)) {
         if (contentEncryption !== X_PM_HEADERS.ON_COMPOSE) {
@@ -298,10 +302,21 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
     const mapAuthentication = getMapEmailHeaders(
         getParsedHeadersFirstValue(message.data, 'X-Pm-Recipient-Authentication')
     );
+    /**
+     * Determine whether the message was sent externally due to BYOE (hence without encryption);
+     * NB: this header is not set if all recipients are internal
+     */
+    const isSentAsBYOE = !!getParsedHeadersFirstValue(message.data, 'X-Pm-Byoe');
+    if (isSentAsBYOE) {
+        return {
+            globalIcon: undefined,
+            mapStatusIcon: {},
+        };
+    }
     const mapEncryption = getMapEmailHeaders(getParsedHeadersFirstValue(message.data, 'X-Pm-Recipient-Encryption'));
     const contentEncryption = getParsedHeadersFirstValue(message.data, 'X-Pm-Content-Encryption') as X_PM_HEADERS;
     const isImported = getParsedHeadersFirstValue(message.data, 'X-Pm-Origin') === 'import';
-    const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption, isImported });
+    const globalIcon = getGlobalSentStatusIcon({ mapEncryption, contentEncryption, isImported });
     const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
         acc[emailAddress] = getSentStatusIcon({
             mapAuthentication,
