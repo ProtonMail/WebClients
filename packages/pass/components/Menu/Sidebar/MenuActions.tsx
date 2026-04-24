@@ -50,6 +50,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
                 ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' as const }]
                 : []),
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
+            { key: 'access-tokens', label: c('pass_2026: Label').t`Access tokens`, icon: 'key' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
             { key: 'account', label: c('Label').t`Account`, icon: 'arrow-within-square', onClick: navigateToAccount },
