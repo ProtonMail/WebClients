@@ -3,16 +3,16 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import isDeepEqual from 'lodash/isEqual';
 
-import { isCustomLabelOrFolder } from '@proton/mail/helpers/location';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { CacheType } from '@proton/redux-utilities';
+import { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { SentryMailInitiatives, captureMessage, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
@@ -63,8 +63,7 @@ import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 
-const LOAD_ACTION_RATE_LIMIT_COUNT = 10;
-const LOAD_ACTION_RATE_LIMIT_WINDOW_MS = 10_000;
+const elementsLoadRateLimiter = new ApiRateLimiter({ maxRequests: 10, windowMs: 10_000, enabled: true });
 
 const getParametersFromPath = (pathname: string) => {
     const customRoute = getCustomViewFromRoute(pathname);
@@ -181,9 +180,6 @@ export const useElements: UseElements = ({
     );
     const getConversationCounts = useGetConversationCounts();
     const getMessageCounts = useGetMessageCounts();
-
-    const loadActionTimestampRef = useRef<{ timestamp: number; labelID: string }[]>([]);
-    const loadRateLimitReportedRef = useRef(false);
 
     // Remove from cache expired elements
     useExpirationCheck(Object.values(elementsMap), (elements) => {
@@ -352,42 +348,16 @@ export const useElements: UseElements = ({
         // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
         const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
 
-        // Check that the load action rate limit has not been exceeded and report it to Sentry if it has
-        const checkLoadActionRateLimit = (labelID: string) => {
-            const queue = loadActionTimestampRef.current;
-
-            const now = Date.now();
-            queue.push({ timestamp: now, labelID });
-
-            if (queue.length > LOAD_ACTION_RATE_LIMIT_COUNT) {
-                queue.shift();
-            }
-
-            const isQueueFull = queue.length === LOAD_ACTION_RATE_LIMIT_COUNT;
-            const isSameLabelID = queue.every((item) => item.labelID === labelID);
-            const isOldestCallWithinWindow = now - queue[0].timestamp < LOAD_ACTION_RATE_LIMIT_WINDOW_MS;
-
-            if (!loadRateLimitReportedRef.current && isQueueFull && isSameLabelID && isOldestCallWithinWindow) {
-                loadRateLimitReportedRef.current = true;
-
-                const currentLabel = isCustomLabelOrFolder(labelID) ? 'custom' : labelID;
-
-                traceInitiativeError(
-                    SentryMailInitiatives.MAIL_REDUX_ERRORS,
-                    new Error('Elements load action rate limit exceeded'),
-                    {
-                        extra: { labelID: currentLabel, page, conversationMode, loading },
-                    }
-                );
-            }
-        };
-
         /**
          * To more load new elements, the user should either have `shouldLoadElements` true, no pending action AND not be in search,
          * OR change the page size for a bigger one (100 > 200)
          */
         if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
-            checkLoadActionRateLimit(labelID);
+            try {
+                elementsLoadRateLimiter.recordCallOrThrow(labelID);
+            } catch {
+                // Rate limit exceeded - Sentry already notified, dispatch continues to preserve current behavior
+            }
 
             void dispatch(
                 loadAction({
