@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { isSafariPopoverWindow } from 'proton-pass-extension/lib/utils/safari';
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -11,19 +12,12 @@ export const useExpanded = () => {
 
     useEffect(() => {
         (async () => {
-            const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
-
-            const isPopupTab = (() => {
-                if (BUILD_TARGET === 'safari') {
-                    const url = currentTab?.url;
-                    const popupPath = `${window.location.origin}/popup.html`;
-                    /** In Safari, `currentTab` returns the tab behind the extension popup frame.
-                     * If it matches the current location, then we're expanded in a dedicated tab */
-                    return Boolean(url?.toLowerCase().startsWith(popupPath));
-                }
+            const isPopupTab = await (async () => {
+                if (BUILD_TARGET === 'safari') return !isSafariPopoverWindow();
 
                 /** On chromium based browsers : the current tab will be `undefined`
                  * when called from the extension popup frame */
+                const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
                 return currentTab !== undefined;
             })();
 
