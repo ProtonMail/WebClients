@@ -45,16 +45,8 @@ export class VideoHandler extends BaseHandler {
             });
         }
 
-        const testVideo = document.createElement('video');
-        let canPlay = testVideo.canPlayType(originalMimeType);
-        // MOV (video/quicktime) and MP4 share the same ISO BMFF container.
-        // Browsers often reject 'video/quicktime' in canPlayType while still
-        // being able to decode the underlying H.264/AAC streams, so fall back
-        // to checking 'video/mp4' for QuickTime files.
-        if (canPlay === '' && originalMimeType === 'video/quicktime') {
-            canPlay = testVideo.canPlayType('video/mp4');
-        }
-        if (canPlay === '') {
+        const canPlay = canHtmlVideoPlay(originalMimeType);
+        if (!canPlay) {
             throw new UnsupportedFormatError('video format not supported by browser', {
                 context: {
                     stage: 'canPlayType check',
@@ -276,5 +268,34 @@ export class VideoHandler extends BaseHandler {
             listeners.forEach((pair) => video.addEventListener(pair.type, pair.listener));
             video.load();
         });
+    }
+}
+
+/**
+ * Whether the MIME type can be played in an HTML `<video>` element.
+ *
+ * If `document` or `canPlayType` is unavailable, we optimistically assume it
+ * is possible.
+ *
+ * MOV (`video/quicktime`) and MP4 share the same ISO BMFF container; browsers
+ * often reject `video/quicktime` while still decoding H.264/AAC, so we fall back
+ * to checking `video/mp4` for QuickTime files.
+ */
+export function canHtmlVideoPlay(mime: string | undefined): boolean {
+    if (!mime) {
+        return false;
+    }
+    if (typeof document === 'undefined') {
+        return true;
+    }
+    try {
+        const testVideo = document.createElement('video');
+        const canPlay = testVideo.canPlayType(mime) !== '';
+        if (!canPlay && mime === 'video/quicktime') {
+            return testVideo.canPlayType('video/mp4') !== '';
+        }
+        return canPlay;
+    } catch {
+        return true;
     }
 }
