@@ -20,17 +20,37 @@ export type LocalDesktopVersion = {
 export let updateDownloaded = false;
 export let cachedLatestVersion: DesktopVersion | null = null;
 
+const MEETING_POLL_INTERVAL_MS = 5000;
+
+function waitForMeetingToEnd(isMeetingActive: () => boolean): Promise<void> {
+    return new Promise((resolve) => {
+        const interval = setInterval(() => {
+            if (!isMeetingActive()) {
+                clearInterval(interval);
+                resolve();
+            }
+        }, MEETING_POLL_INTERVAL_MS);
+    });
+}
+
 /**
  * Checks the available version immediately and repeat check every
  * `updateInverval`. If there is a valid (channel, rollout) version to update
  * it will trigger the update.
  */
-export function initializeUpdateChecks() {
+export function initializeUpdateChecks(isMeetingActive?: () => boolean) {
     updateLogger.info("Initialization of update checks.");
 
     autoUpdater.on("update-downloaded", async () => {
         updateDownloaded = true;
-        updateLogger.info("Update downloaded, showing prompt.");
+
+        if (isMeetingActive?.()) {
+            updateLogger.info("Update downloaded, meeting is active, deferring prompt.");
+            await waitForMeetingToEnd(isMeetingActive);
+            updateLogger.info("Meeting ended, showing deferred update prompt.");
+        } else {
+            updateLogger.info("Update downloaded, showing prompt.");
+        }
 
         // Replaces update-electron-app dialog message with a custom one
         // https://github.com/electron/update-electron-app/blob/f5e1f6d9944809c75129b74d82fcd76cc9e325b2/src/index.ts#L165-L176
