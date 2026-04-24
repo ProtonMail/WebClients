@@ -388,6 +388,8 @@ export const useElements: UseElements = ({
                                     totalReturned,
                                     ctxIdentifier,
                                     ctxNumbers: store.getState().elements.total,
+                                    // Indicates, in seconds, how long the tab was open when the rate limit was reached.
+                                    tabTime: performance.now() / 1000,
                                 },
                             }
                         );
