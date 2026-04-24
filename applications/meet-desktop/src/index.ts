@@ -7,6 +7,7 @@ import { urlOverrideError } from "./utils/view/dialogs";
 import {
     bringWindowToFront,
     getMainWindow,
+    getViewURL,
     getWebContentsViewName,
     showView,
     viewCreationAppStartup,
@@ -122,7 +123,7 @@ import { handleIPCCalls } from "./ipc/main";
     checkDeepLinks();
 
     connectNetLogger(getWebContentsViewName);
-    initializeUpdateChecks();
+    initializeUpdateChecks(() => getViewURL("meet").includes("/join/"));
     new Notification();
 
     // After this point the main window and views have been created
