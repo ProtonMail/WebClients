@@ -7,6 +7,7 @@ export enum PassEncryptionTag {
     ItemKey = 'itemkey',
     VaultContent = 'vaultcontent',
     LinkKey = 'linkkey',
+    ShareKey = 'sharekey',
     BiometricOfflineKD = 'biometricofflinekd',
     DesktopUnlockVerifier = 'desktopunlockverifier',
     FileData = 'filedata',
