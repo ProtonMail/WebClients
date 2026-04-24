@@ -139,9 +139,7 @@ describe('defineNavigation — nested children', () => {
                 {
                     id: 'account',
                     label: 'Account',
-                    children: [
-                        { id: 'account.settings', label: 'Settings', resolver: (_i, _c, { remove }) => remove() },
-                    ],
+                    children: [{ id: 'account.settings', label: 'Settings', resolver: ({ remove }) => remove() }],
                 },
             ],
         };
@@ -156,7 +154,7 @@ describe('defineNavigation — nested children', () => {
                     id: 'account',
                     label: 'Account',
                     to: '/account',
-                    resolver: (_i, _c, { update }) => update({ to: '/new-account' }),
+                    resolver: ({ update }) => update({ to: '/new-account' }),
                 },
             ],
         };
@@ -196,7 +194,7 @@ describe('defineNavigation — keep', () => {
                     id: 'home',
                     label: 'Home',
                     to: '/',
-                    resolver: (_i, _c, { keep }) => keep(),
+                    resolver: ({ keep }) => keep(),
                 },
             ],
         };
@@ -211,7 +209,7 @@ describe('defineNavigation — remove', () => {
         const definition: NavDefinition = {
             items: [
                 { id: 'home', label: 'Home', to: '/' },
-                { id: 'admin', label: 'Admin', to: '/admin', resolver: (_i, _c, { remove }) => remove() },
+                { id: 'admin', label: 'Admin', to: '/admin', resolver: ({ remove }) => remove() },
             ],
         };
         const nav = defineNavigation({ definition, context: baseContext });
@@ -226,7 +224,7 @@ describe('defineNavigation — remove', () => {
                     label: 'Account',
                     children: [
                         { id: 'account.settings', label: 'Settings', to: '/account/settings' },
-                        { id: 'account.danger', label: 'Danger Zone', resolver: (_i, _c, { remove }) => remove() },
+                        { id: 'account.danger', label: 'Danger Zone', resolver: ({ remove }) => remove() },
                     ],
                 },
             ],
@@ -242,7 +240,7 @@ describe('defineNavigation — remove', () => {
                 {
                     id: 'parent',
                     label: 'Parent',
-                    resolver: (item, _c, { keep, remove }) => {
+                    resolver: ({ item, keep, remove }) => {
                         order.push(item.id);
                         return item.children?.length ? keep() : remove();
                     },
@@ -250,7 +248,7 @@ describe('defineNavigation — remove', () => {
                         {
                             id: 'child',
                             label: 'Child',
-                            resolver: (item, _c, { keep }) => {
+                            resolver: ({ item, keep }) => {
                                 order.push(item.id);
                                 return keep();
                             },
@@ -269,8 +267,8 @@ describe('defineNavigation — remove', () => {
                 {
                     id: 'account',
                     label: 'Account',
-                    resolver: (_i, _c, { remove }) => remove(),
-                    children: [{ id: 'account.hidden', label: 'Hidden', resolver: (_i, _c, { remove }) => remove() }],
+                    resolver: ({ remove }) => remove(),
+                    children: [{ id: 'account.hidden', label: 'Hidden', resolver: ({ remove }) => remove() }],
                 },
             ],
         };
@@ -287,7 +285,7 @@ describe('defineNavigation — update', () => {
                     id: 'home',
                     label: 'Home',
                     to: '/',
-                    resolver: (_i, _c, { update }) => update({ label: 'Dashboard' }),
+                    resolver: ({ update }) => update({ label: 'Dashboard' }),
                 },
             ],
         };
@@ -308,8 +306,8 @@ describe('defineNavigation — update', () => {
                     id: 'settings',
                     label: 'Settings',
                     to: '/settings',
-                    resolver: (_i, ctx, { update }) =>
-                        update({ to: ctx.flags.includes('settings-v2') ? '/settings-v2' : '/settings' }),
+                    resolver: ({ context, update }) =>
+                        update({ to: context.flags.includes('settings-v2') ? '/settings-v2' : '/settings' }),
                 },
             ],
         };
@@ -328,7 +326,7 @@ describe('defineNavigation — update', () => {
                     id: 'home',
                     label: 'Home',
                     meta: { badge: 'old', count: 1 },
-                    resolver: (_i, _c, { update }) => update({ meta: { badge: 'new' } }),
+                    resolver: ({ update }) => update({ meta: { badge: 'new' } }),
                 },
             ],
         };
@@ -343,7 +341,7 @@ describe('defineNavigation — update', () => {
                     id: 'home',
                     label: 'Home',
                     meta: { badge: 'kept' },
-                    resolver: (_i, _c, { update }) => update({ label: 'Updated' }),
+                    resolver: ({ update }) => update({ label: 'Updated' }),
                 },
             ],
         };
@@ -375,7 +373,7 @@ describe('defineNavigation — resolver context', () => {
                 {
                     id: 'billing',
                     label: 'Billing',
-                    resolver: (_i, ctx, { keep, remove }) => (ctx.tenant.plan === 'pro' ? keep() : remove()),
+                    resolver: ({ context, keep, remove }) => (context.tenant.plan === 'pro' ? keep() : remove()),
                 },
             ],
         };
@@ -384,11 +382,11 @@ describe('defineNavigation — resolver context', () => {
     });
 
     it('a resolver typed to a context slice is assignable into NavDefinition<AppContext>', () => {
-        const billingResolver: NavItemResolver<NavContext & { tenant: { plan: 'free' | 'pro' } }> = (
-            _item,
-            ctx,
-            { keep, remove }
-        ) => (ctx.tenant.plan === 'pro' ? keep() : remove());
+        const billingResolver: NavItemResolver<NavContext & { tenant: { plan: 'free' | 'pro' } }> = ({
+            context,
+            keep,
+            remove,
+        }) => (context.tenant.plan === 'pro' ? keep() : remove());
 
         const definition: NavDefinition<AppContext> = {
             items: [{ id: 'billing', label: 'Billing', resolver: billingResolver }],
@@ -403,8 +401,8 @@ describe('defineNavigation — resolver context', () => {
                 {
                     id: 'home',
                     label: 'Home',
-                    resolver: (_i, ctx, { update }) =>
-                        update({ label: ctx.flags.includes('beta') ? 'Home (Beta)' : 'Home' }),
+                    resolver: ({ context, update }) =>
+                        update({ label: context.flags.includes('beta') ? 'Home (Beta)' : 'Home' }),
                 },
             ],
         };
@@ -418,7 +416,7 @@ describe('defineNavigation — resolver context', () => {
                 {
                     id: 'parent',
                     label: 'Parent',
-                    resolver: (item, _c, { keep, remove }) => (item.children?.length ? keep() : remove()),
+                    resolver: ({ item, keep, remove }) => (item.children?.length ? keep() : remove()),
                     children: [{ id: 'child', label: 'Child' }],
                 },
             ],
@@ -499,7 +497,7 @@ describe('defineNavigation — duplicate ids', () => {
     });
 
     it('validates the full tree before any resolver runs', () => {
-        const resolverSpy = vi.fn((_i: any, _c: any, { keep }: any) => keep());
+        const resolverSpy = vi.fn(({ keep }: any) => keep());
         const definition: NavDefinition = {
             items: [
                 { id: 'home', label: 'Home', resolver: resolverSpy },
