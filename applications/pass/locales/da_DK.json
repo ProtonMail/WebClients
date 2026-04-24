@@ -1297,6 +1297,33 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk godkendelse mislykkedes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Legitimationsoplysninger til biometrisk låsning matcher ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Legitimationsoplysninger til biometrisk låsning blev ikke fundet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk låsning er ikke konfigureret."
+      ],
+      "Biometric lock setup failed.": [
+        "Konfiguration af biometrisk låsning mislykkedes."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypteret kommunikation med ${ PASS_APP_NAME }-skrivebordsappen mislykkedes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-skrivebordsappen svarede ikke i tide."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-skrivebordsappen er logget ind med en anden konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME }-skrivebordsappen burde være logget in."
       ]
     },
     "Error message": {
@@ -2581,6 +2608,10 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ]
     },
     "Keyboard key": {
@@ -5048,6 +5079,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
       ]
     }
   }
