@@ -187,6 +187,10 @@ export class SelectedPlan {
         return this.getTotalAddons(isDomainAddon, 'MaxDomains');
     }
 
+    getAdditionalDomains(): number {
+        return this.getCountInAddons(isDomainAddon, 'MaxDomains');
+    }
+
     getTotalScribes(): number {
         return this.getTotalAddons(isScribeAddon, 'MaxAI');
     }

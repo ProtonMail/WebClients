@@ -43,6 +43,7 @@ import type { AddonBalanceKey } from '@proton/payments/core/subscription/selecte
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
@@ -52,6 +53,7 @@ import MeetAddon from './MeetAddon';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 import { getForcedFeatureLimitations } from './forced-addon-limits';
 import type { DecreaseBlockedReason } from './helpers';
+import { shouldShowDomainAddon } from './shouldShowDomainAddon';
 
 import './ProtonPlanCustomizer.scss';
 
@@ -134,6 +136,8 @@ const AddonCustomizer = ({
     isTrialMode,
     telemetryContext,
 }: AddonCustomizerProps) => {
+    const domainVpnBiz2023Enabled = useFlag('DomainVpnBiz2023');
+
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
     const currentPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
@@ -340,7 +344,7 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isDomainAddon(addonName)) {
+    if (isDomainAddon(addonName) && shouldShowDomainAddon({ addonName, currentPlan, domainVpnBiz2023Enabled, mode })) {
         return (
             <NumberCustomiser
                 key={`${addon.Name}-domain`}
