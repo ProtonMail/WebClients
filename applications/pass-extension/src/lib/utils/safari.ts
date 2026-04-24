@@ -19,6 +19,12 @@ type NativeSafariMessage =
     | { writeToClipboard: { Content: string } }
     | { environment: string };
 
+/** In Safari, `browser.tabs.getCurrent()` called from the popover returns
+ * the tab behind it — so a URL check fails when the tab behind is itself
+ * the expanded popup.html. Ask the extension for its "popup" views: the
+ * popover window is listed there, the expanded tab is not. */
+export const isSafariPopoverWindow = (): boolean => browser.extension.getViews({ type: 'popup' }).includes(window);
+
 export const sendSafariMessage = async <T = unknown>(message: NativeSafariMessage): Promise<Maybe<T>> => {
     try {
         const result = await browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
