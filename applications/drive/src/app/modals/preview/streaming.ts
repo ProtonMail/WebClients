@@ -3,6 +3,7 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 import { v4 as uuidv4 } from 'uuid';
 
 import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
+import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
@@ -31,7 +32,9 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
 
     const isServiceWorkerAvailable = useMemo(() => !!navigator.serviceWorker, []);
     const isStreamableVideo = useMemo(() => {
-        return mimeType && isVideo(mimeType) && isServiceWorkerAvailable && !isBrokenVideo;
+        return (
+            !!mimeType && isVideo(mimeType) && isServiceWorkerAvailable && canHtmlVideoPlay(mimeType) && !isBrokenVideo
+        );
     }, [mimeType, isServiceWorkerAvailable, isBrokenVideo]);
 
     const streamPromiseRef = useRef<Promise<{ stream: SeekableReadableStream; claimedTotalSize?: number }> | undefined>(
@@ -60,6 +63,7 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
                 extra: {
                     error,
                     eventDetails,
+                    mimeType,
                 },
             });
         }
@@ -145,6 +149,9 @@ export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamin
                 mimeType,
             });
         } catch (error: unknown) {
+            if (error instanceof Error && error.name === 'AbortError') {
+                return;
+            }
             handleBrokenVideo(error);
         }
     };
