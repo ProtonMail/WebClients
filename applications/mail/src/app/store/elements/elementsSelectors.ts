@@ -76,6 +76,25 @@ const currentESDBStatus = (
 const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
+export const selectCurrentContextIdentifier = createSelector([params, total], (params) => {
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+        newsletterSubscriptionID: params.newsletterSubscriptionID,
+    });
+
+    return contextFilter;
+});
+
 export const contextPages = createSelector([params, pages], (params, pages) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
