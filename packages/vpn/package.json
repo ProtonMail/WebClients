@@ -6,6 +6,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./constants/tvUserTier.ts": "./constants/tvUserTier.ts",
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",

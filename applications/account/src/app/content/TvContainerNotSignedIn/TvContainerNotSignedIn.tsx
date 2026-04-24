@@ -6,8 +6,11 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
+import { setItem } from '@proton/shared/lib/helpers/storage';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
+import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier.ts';
 
 import Layout from '../../public/Layout';
 import Main from '../../public/Main';
@@ -18,6 +21,9 @@ export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: 
     const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
 
     useEffectOnce(() => {
+        telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: 'non_user', flowType: 'web' });
+        setItem(VPN_TV_USER_TIER, 'non_user');
+
         const code = searchParams.get('code');
         if (isAndroid() && code) {
             window.location.href = `protonvpn://session-fork/${code}`;
