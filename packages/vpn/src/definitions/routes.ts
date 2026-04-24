@@ -16,12 +16,9 @@ import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shar
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
-import { isB2BAdmin } from '../functions/isB2BAdmin';
-
 type VpnNavContext = {
     subscription: MaybeFreeSubscription;
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
-    isB2BAdmin: boolean;
     canHaveOrganization: boolean;
     hasActiveOrganizationKey: boolean;
     hasActiveOrganization: boolean;
@@ -33,8 +30,6 @@ const routesDefinition = {
         {
             id: 'organization',
             label: () => c('Title').t`Organization`,
-            resolver: (_, c, { remove, update }) =>
-                c.isB2BAdmin ? update({ meta: { group: true, open: true } }) : remove(),
             children: [
                 {
                     id: 'organization.home',
@@ -51,13 +46,14 @@ const routesDefinition = {
                             id: 'organization.org-and-people.users',
                             label: () => c('Title').t`Users`,
                             to: '/users-addresses',
-                            resolver(_, c, { keep, remove }) {
-                                const isPartOfFamily = getOrganizationDenomination(c.organization) === 'familyGroup';
+                            resolver: ({ context, keep, remove }) => {
+                                const isPartOfFamily =
+                                    getOrganizationDenomination(context.organization) === 'familyGroup';
                                 const show =
-                                    c.canHaveOrganization &&
+                                    context.canHaveOrganization &&
                                     (isPartOfFamily
-                                        ? !c.hasActiveOrganization
-                                        : !c.hasActiveOrganizationKey && c.canHaveOrganization);
+                                        ? !context.hasActiveOrganization
+                                        : !context.hasActiveOrganizationKey && context.canHaveOrganization);
 
                                 return show ? remove() : keep();
                             },
@@ -66,13 +62,14 @@ const routesDefinition = {
                             id: 'organization.org-and-people.groups',
                             label: () => c('Title').t`Groups`,
                             to: '/user-groups',
-                            resolver(_, c, { keep, remove }) {
-                                const isPartOfFamily = getOrganizationDenomination(c.organization) === 'familyGroup';
+                            resolver: ({ context, keep, remove }) => {
+                                const isPartOfFamily =
+                                    getOrganizationDenomination(context.organization) === 'familyGroup';
                                 const show =
-                                    c.canHaveOrganization &&
+                                    context.canHaveOrganization &&
                                     (isPartOfFamily
-                                        ? !c.hasActiveOrganization
-                                        : !c.hasActiveOrganizationKey && c.canHaveOrganization);
+                                        ? !context.hasActiveOrganization
+                                        : !context.hasActiveOrganizationKey && context.canHaveOrganization);
 
                                 return show ? remove() : keep();
                             },
@@ -81,13 +78,14 @@ const routesDefinition = {
                             id: 'organization.org-and-people.access-control',
                             label: () => c('Title').t`Access control`,
                             to: '/access-control',
-                            resolver(_, c, { keep, remove }) {
-                                const isPartOfFamily = getOrganizationDenomination(c.organization) === 'familyGroup';
+                            resolver: ({ context, keep, remove }) => {
+                                const isPartOfFamily =
+                                    getOrganizationDenomination(context.organization) === 'familyGroup';
                                 const show =
-                                    c.canHaveOrganization &&
+                                    context.canHaveOrganization &&
                                     (isPartOfFamily
-                                        ? !c.hasActiveOrganization
-                                        : !c.hasActiveOrganizationKey && c.canHaveOrganization);
+                                        ? !context.hasActiveOrganization
+                                        : !context.hasActiveOrganizationKey && context.canHaveOrganization);
 
                                 return show ? remove() : keep();
                             },
@@ -96,25 +94,26 @@ const routesDefinition = {
                             id: 'organization.org-and-people.multi-user',
                             label: () => c('Title').t`Multi-user support`,
                             to: '/multi-user-support',
-                            resolver: (_, c, { keep, remove, update }) => {
-                                const isPartOfFamily = getOrganizationDenomination(c.organization) === 'familyGroup';
+                            resolver: ({ context, keep, remove, update }) => {
+                                const isPartOfFamily =
+                                    getOrganizationDenomination(context.organization) === 'familyGroup';
                                 const show =
-                                    c.canHaveOrganization &&
+                                    context.canHaveOrganization &&
                                     (isPartOfFamily
-                                        ? !c.hasActiveOrganization
-                                        : !c.hasActiveOrganizationKey && c.canHaveOrganization);
+                                        ? !context.hasActiveOrganization
+                                        : !context.hasActiveOrganizationKey && context.canHaveOrganization);
 
                                 if (show) {
                                     return keep();
                                 }
 
                                 const organizationKeys =
-                                    c.canHaveOrganization &&
+                                    context.canHaveOrganization &&
                                     (isPartOfFamily
-                                        ? c.hasActiveOrganization //Show this section once the family is setup (only requires a name)
-                                        : (c.hasActiveOrganizationKey || c.hasActiveOrganization) &&
-                                          c.organization &&
-                                          !!c.organization.RequiresKey);
+                                        ? context.hasActiveOrganization //Show this section once the family is setup (only requires a name)
+                                        : (context.hasActiveOrganizationKey || context.hasActiveOrganization) &&
+                                          context.organization &&
+                                          !!context.organization.RequiresKey);
 
                                 return organizationKeys ? update({ to: '/organization-keys' }) : remove();
                             },
@@ -125,7 +124,6 @@ const routesDefinition = {
                     id: 'organization.vpn',
                     label: () => c('Title').t`VPN`,
                     icon: 'brand-proton-vpn-filled',
-                    resolver: (_, c, { keep, remove }) => (c.isB2BAdmin ? keep() : remove()),
                     children: [
                         { id: 'organization.vpn.gateways', label: () => c('Title').t`Gateways`, to: '/gateways' },
                         {
@@ -137,18 +135,18 @@ const routesDefinition = {
                             id: 'organization.vpn.gateway-monitor',
                             label: () => c('Title').t`Gateway monitor`,
                             to: '/gateway-monitor',
-                            resolver(_, c, { keep, remove }) {
+                            resolver: ({ context, keep, remove }) => {
                                 const hasPlanWithEventLogging =
-                                    hasVpnBusiness(c.subscription) ||
-                                    hasAnyB2bBundle(c.subscription) ||
-                                    hasVPNPassProfessional(c.subscription);
+                                    hasVpnBusiness(context.subscription) ||
+                                    hasAnyB2bBundle(context.subscription) ||
+                                    hasVPNPassProfessional(context.subscription);
                                 const canShowB2BConnectionEvents =
-                                    c.flags.B2BLogsVPN &&
+                                    context.flags.B2BLogsVPN &&
                                     hasPlanWithEventLogging &&
-                                    c.canHaveOrganization &&
-                                    (c.hasActiveOrganization || c.hasActiveOrganizationKey);
+                                    context.canHaveOrganization &&
+                                    (context.hasActiveOrganization || context.hasActiveOrganizationKey);
 
-                                return c.canHaveOrganization && canShowB2BConnectionEvents ? keep() : remove();
+                                return context.canHaveOrganization && canShowB2BConnectionEvents ? keep() : remove();
                             },
                         },
                     ],
@@ -158,13 +156,13 @@ const routesDefinition = {
                     label: () => c('Title').t`Security and compliance`,
                     icon: 'shield',
                     to: '/authentication-security',
-                    resolver(_, c, { keep, remove }) {
+                    resolver: ({ context, keep, remove }) => {
                         const show =
-                            c.canHaveOrganization &&
-                            (c.hasActiveOrganizationKey || c.hasActiveOrganization) &&
-                            c.organization &&
-                            (c.organization.MaxMembers > 1 ||
-                                c.organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED);
+                            context.canHaveOrganization &&
+                            (context.hasActiveOrganizationKey || context.hasActiveOrganization) &&
+                            context.organization &&
+                            (context.organization.MaxMembers > 1 ||
+                                context.organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED);
 
                         return show ? keep() : remove();
                     },
@@ -173,21 +171,19 @@ const routesDefinition = {
                     id: 'organization.integrations',
                     label: () => c('Title').t`Integrations`,
                     icon: 'link',
-                    resolver(i, _, { remove, keep }) {
-                        return i.children?.length ? keep() : remove();
-                    },
+                    resolver: ({ item, remove, keep }) => (item.children?.length ? keep() : remove()),
                     children: [
                         {
                             id: 'organization.integrations.sso',
                             label: () => c('Title').t`Single-sign on (SSO)`,
                             to: '/single-sign-on',
-                            resolver(_, c, { keep, remove }) {
+                            resolver: ({ context, keep, remove }) => {
                                 const show =
-                                    c.canHaveOrganization &&
-                                    (planSupportsSSO(c.organization?.PlanName, !!c.flags?.SsoForPbs) ||
-                                        upsellPlanSSO(c.organization?.PlanName)) &&
-                                    c.canHaveOrganization &&
-                                    (c.hasActiveOrganization || c.hasActiveOrganizationKey);
+                                    context.canHaveOrganization &&
+                                    (planSupportsSSO(context.organization?.PlanName, !!context.flags?.SsoForPbs) ||
+                                        upsellPlanSSO(context.organization?.PlanName)) &&
+                                    context.canHaveOrganization &&
+                                    (context.hasActiveOrganization || context.hasActiveOrganizationKey);
 
                                 return show ? keep() : remove();
                             },
@@ -211,7 +207,6 @@ const routesDefinition = {
         {
             id: 'my-account',
             label: () => c('Title').t`My account`,
-            resolver: (_, c, { update, keep }) => (c.isB2BAdmin ? update({ meta: { group: true } }) : keep()),
             children: [
                 {
                     id: 'my-account.account-and-password',
@@ -224,10 +219,10 @@ const routesDefinition = {
                     label: () => c('Title').t`Recovery`,
                     to: '/recovery',
                     icon: 'key',
-                    resolver: (_, c, { keep, update }) => {
-                        if (c.notifications?.recovery) {
+                    resolver: ({ context, keep, update }) => {
+                        if (context.notifications?.recovery) {
                             return update({
-                                meta: { hasNotifications: c.notifications?.recovery },
+                                meta: { hasNotifications: context.notifications?.recovery },
                             });
                         }
                         return keep();
@@ -250,12 +245,6 @@ const routesDefinition = {
         {
             id: 'my-vpn',
             label: () => c('Title').t`My VPN`,
-            resolver: (_, context, { update, keep }) => {
-                if (context.isB2BAdmin) {
-                    return update({ meta: { group: true } });
-                }
-                return keep();
-            },
             children: [
                 {
                     id: 'my-vpn.download-apps',
@@ -278,8 +267,8 @@ type Args = {
 };
 
 export const getRoutes = ({ prefix, notifications, user, subscription, organization, flags }: Args) => {
-    const isAdmin = isB2BAdmin({ user, organization, subscription });
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+
     return defineNavigation<VpnNavContext>({
         definition: routesDefinition,
         context: {
@@ -288,8 +277,7 @@ export const getRoutes = ({ prefix, notifications, user, subscription, organizat
             organization,
             notifications,
             prefix,
-            isB2BAdmin: isAdmin,
-            canHaveOrganization: !user.isMember && !!organization && isAdmin,
+            canHaveOrganization: !user.isMember && !!organization,
             hasActiveOrganizationKey: isOrgActive && hasOrganizationSetupWithKeys(organization),
             hasActiveOrganization: isOrgActive && hasOrganizationSetup(organization),
             flags: flags ?? {},
