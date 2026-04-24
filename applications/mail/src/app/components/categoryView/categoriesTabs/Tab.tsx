@@ -58,6 +58,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             )}
             role="tab"
             aria-selected={tabState === TabState.ACTIVE}
+            title={getLabelFromCategoryId(category.id)}
             aria-label={getLabelFromCategoryId(category.id)}
             data-testid={`category-tab-${category.id}`}
             data-color={category.colorShade}
