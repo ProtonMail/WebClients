@@ -15,7 +15,7 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
         const key = `${this.prefix}:${name}`;
         try {
             this.storage.setItem(key, serializedValue);
-            if (key === featureFlagStorageKey) {
+            if (name === featureFlagStorageKey) {
                 saveWhitelistedFlagInCookies(data, FLAGS_WITH_VARIANT);
             }
         } catch (e) {}
