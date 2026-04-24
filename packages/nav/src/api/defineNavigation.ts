@@ -46,7 +46,7 @@ function resolveItem<TContext extends NavContext>(
     };
 
     if (definition.resolver) {
-        const action = definition.resolver(resolved, context, actions);
+        const action = definition.resolver({ ...actions, item: resolved, context });
         switch (action._action) {
             case 'remove':
                 return null;
