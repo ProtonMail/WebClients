@@ -28,7 +28,7 @@ import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from '../UpsellMultiBox';
 
 const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const [subscription] = useSubscription();
     const [plansResult] = usePlans();
@@ -54,7 +54,7 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
 
         const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
 
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             disableCycleSelector: true,
@@ -90,7 +90,7 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
                     />
                 }
                 headerActionArea={
-                    <Button color="norm" shape="outline" onClick={handleGetPlan}>
+                    <Button color="norm" shape="outline" loading={loadingSubscriptionModal} onClick={handleGetPlan}>
                         {c('Meet_launch').t`Add ${planName}`}
                     </Button>
                 }

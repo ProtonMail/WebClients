@@ -8,6 +8,7 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useLoading from '@proton/hooks/useLoading';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,
@@ -60,11 +61,14 @@ const MailUpsellOptionCTA = ({ url, optionID }: OptionProps) => {
         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
     });
 
+    const [loading, withLoading] = useLoading();
+
     if (upsellConfig.onUpgrade) {
         return (
             <MailUpsellModal optionID={optionID}>
                 <Button
-                    onClick={upsellConfig.onUpgrade}
+                    loading={loading}
+                    onClick={() => withLoading(upsellConfig.onUpgrade?.())}
                     shape="underline"
                     size="small"
                     className="text-bold link align-baseline py-0"

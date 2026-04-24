@@ -26,12 +26,12 @@ import { VpnGetMoreSection } from '../VpnGetMoreSection/VpnGetMoreSection';
 export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = hasAnyPlusWithoutVPN(subscription) ? PLANS.BUNDLE : PLANS.VPN2024;
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -49,6 +49,7 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
             shape="underline"
             color="norm"
             onClick={handleExplorePlans}
+            loading={loadingSubscriptionModal}
             data-testid="cta:upgrade-plan"
             key="upgrade-button"
         >

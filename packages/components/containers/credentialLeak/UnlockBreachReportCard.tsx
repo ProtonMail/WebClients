@@ -9,14 +9,14 @@ import sentinelBoltShield from '@proton/styles/assets/img/illustrations/sentinel
 import './UnlockReportModal.scss';
 
 const UnlockBreachReportCard = () => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const metrics = {
         source: 'plans',
     } as const;
 
     const handleUnlockBreachReport = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
             mode: 'upsell-modal',
@@ -39,6 +39,7 @@ const UnlockBreachReportCard = () => {
                     </p>
                     <Button
                         onClick={handleUnlockBreachReport}
+                        loading={loadingSubscriptionModal}
                         size="large"
                         shape="solid"
                         color="norm"

@@ -105,6 +105,30 @@ export const useOptionalSubscriptionModal = (): [OpenSubscriptionModalCallback |
     return [openSubscriptionModal, loadingData];
 };
 
+/**
+ * Escape hatch for {@link useSubscriptionModal} that returns only the `open` callback and skips the
+ * `loading` value. The `custom-rules/use-subscription-modal-loading` lint rule requires callers of
+ * `useSubscriptionModal` to destructure the loading flag; switch to this variant when you intentionally
+ * want to ignore it and handle the promise returned by `openSubscriptionModal()` yourself.
+ */
+export const useSubscriptionModalRaw = () => {
+    // eslint-disable-next-line custom-rules/use-subscription-modal-loading
+    const [openSubscriptionModal] = useSubscriptionModal();
+    return openSubscriptionModal;
+};
+
+/**
+ * Escape hatch for {@link useOptionalSubscriptionModal} that returns only the `open` callback and skips the
+ * `loading` value. The `custom-rules/use-subscription-modal-loading` lint rule requires callers of
+ * `useOptionalSubscriptionModal` to destructure the loading flag; switch to this variant when you intentionally
+ * want to ignore it and handle the promise returned by `openSubscriptionModal()` yourself.
+ */
+export const useOptionalSubscriptionModalRaw = () => {
+    // eslint-disable-next-line custom-rules/use-subscription-modal-loading
+    const [openSubscriptionModal] = useOptionalSubscriptionModal();
+    return openSubscriptionModal;
+};
+
 interface Props {
     children: ReactNode;
     app: APP_NAMES;

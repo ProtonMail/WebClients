@@ -56,7 +56,7 @@ export const AlwaysOnUpsell = ({ app }: Props) => {
          * and must use an alternative route via settings (Account).
          */
         if (onUpgrade) {
-            onUpgrade();
+            void onUpgrade();
         } else {
             goToSettings(upgradePath);
         }

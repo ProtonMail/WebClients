@@ -17,10 +17,10 @@ interface Props {
 
 const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
     const [user] = useUser();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
-    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () =>
-        openSubscriptionModal({
+    const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () => {
+        void openSubscriptionModal({
             metrics: {
                 source,
             },
@@ -28,6 +28,8 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
             defaultAudience: Audience.B2B,
             plan: organization?.PlanName,
         });
+    };
+
     const monitorLink = (
         <Href
             href="https://proton.me/support/business-activity-monitor"
@@ -66,6 +68,7 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
                         <Button
                             color="norm"
                             fullWidth
+                            loading={loadingSubscriptionModal}
                             onClick={getCustomizeSubscriptionOpener('upsells')}
                             title={c('Title').t`View organization events by upgrading to Professional`}
                         >

@@ -20,7 +20,7 @@ interface Props {
 // TODO: Add the logic to refresh after subscription is completed
 
 const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const handleSubscriptionModalSubscribed = () => {
@@ -29,13 +29,11 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }:
     };
 
     const handleOpenSubscriptionModal = () => {
-        console.log('debug: handling open subscription modal with UPSELL REF: ', upsellRef);
-        console.log('debug: modalProps in LumoPlusUpsellModal: ', modalProps);
         modalProps.onClose();
 
         sendSubscriptionModalInitializedEvent(upsellRef);
 
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             maximumCycle: CYCLE.YEARLY,
@@ -72,10 +70,10 @@ const LumoPlusUpsellModal = ({ modalProps, upsellRef, specialBackdrop = false }:
             modalProps={modalProps}
             upsellRef={upsellRef}
             specialBackdrop={specialBackdrop}
-            // loading={plansMapLoading}
             ctaButton={
                 <ButtonLike
                     onClick={handleOpenSubscriptionModal}
+                    loading={loadingSubscriptionModal}
                     size="large"
                     color="norm"
                     shape="solid"
