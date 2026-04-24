@@ -1259,6 +1259,10 @@
       ],
       "Re-index": [
         "Opnieuw indexeren"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Toevoegen aan \"${ name }\" (${ photoCount } foto)",
+        "Toevoegen aan \"${ name }\" (${ photoCount } foto's)"
       ]
     },
     "Action: Docs": {
@@ -7054,6 +7058,34 @@
       ],
       "No populator states found.": [
         "Geen populatorstaten gevonden."
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albums"
+      ],
+      "${ files } file": [
+        "${ files }-bestand",
+        "${ files }-bestanden"
+      ],
+      "${ folders } folder": [
+        "${ folders } map",
+        "${ folders } mappen"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foto's"
+      ],
+      "Indexed ${ first }": [
+        "${ first } geïndexeerd"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } en ${ second } geïndexeerd"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second } en ${ third } geïndexeerd"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } en ${ fourth } geïndexeerd"
       ]
     },
     "info": {
@@ -8913,6 +8945,9 @@
       "Appointment scheduling with ${ n } booking page": [
         "Afspraakplanning met ${ n } boekingspagina",
         "Afspraakplanning met ${ n } boekingspagina's"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Gereserveerde servers geoptimaliseerd voor snelheid"
       ]
     },
     "new_plans: feature highlight": {
@@ -11929,6 +11964,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe Schrijfassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, en ${ LUMO_APP_NAME } met premium functies"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemer",
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemers"
       ]
     },
     "subscription reminder": {
@@ -13719,6 +13764,11 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album is hernoemd"
       ]
     }
   }
