@@ -290,10 +290,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             debugLog('devicechange:detected');
         };
 
-        navigator.mediaDevices.addEventListener('devicechange', handleDeviceChange);
+        navigator.mediaDevices?.addEventListener('devicechange', handleDeviceChange);
 
         return () => {
-            navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
+            navigator.mediaDevices?.removeEventListener('devicechange', handleDeviceChange);
             destroyNoiseFilter();
         };
     }, []);
