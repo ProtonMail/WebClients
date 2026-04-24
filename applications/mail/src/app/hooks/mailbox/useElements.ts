@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import isDeepEqual from 'lodash/isEqual';
 
+import { isCustomLabelOrFolder } from '@proton/mail/helpers/location';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -11,7 +12,7 @@ import { CacheType } from '@proton/redux-utilities';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { SentryMailInitiatives, captureInitiativeMessage, captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SentryMailInitiatives, captureMessage, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
@@ -366,14 +367,17 @@ export const useElements: UseElements = ({
             const isSameLabelID = queue.every((item) => item.labelID === labelID);
             const isOldestCallWithinWindow = now - queue[0].timestamp < LOAD_ACTION_RATE_LIMIT_WINDOW_MS;
 
-            console.log('queue', queue);
-
             if (!loadRateLimitReportedRef.current && isQueueFull && isSameLabelID && isOldestCallWithinWindow) {
                 loadRateLimitReportedRef.current = true;
 
-                captureInitiativeMessage(
+                const currentLabel = isCustomLabelOrFolder(labelID) ? 'custom' : labelID;
+
+                traceInitiativeError(
                     SentryMailInitiatives.MAIL_REDUX_ERRORS,
-                    'Elements load action rate limit exceeded'
+                    new Error('Elements load action rate limit exceeded'),
+                    {
+                        extra: { labelID: currentLabel, page, conversationMode, loading },
+                    }
                 );
             }
         };
