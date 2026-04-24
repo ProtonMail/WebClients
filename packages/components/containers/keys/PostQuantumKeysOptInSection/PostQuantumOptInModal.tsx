@@ -23,16 +23,19 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
+import AuthModal from '../../password/AuthModal';
 
 interface Props extends ModalProps {}
 
 enum Step {
     CONFIRMATION,
+    AUTH,
     IN_PROGRESS_OPTIN,
     IN_PROGRESS_ACCOUNT_KEY,
     IN_PROGRESS_ADDRESS_KEYS,
@@ -48,7 +51,6 @@ interface Model {
 
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const dispatch = useDispatch();
-
     const { isMnemonicSet } = useSelector(selectMnemonicData);
     const { hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
     const hasManualRecoveryMethod = isMnemonicSet || hasCurrentRecoveryFile;
@@ -152,10 +154,10 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const handleSubmit = async () => {
         if (model.step === Step.CONFIRMATION) {
             setModel((prev) => ({
-                step: Step.IN_PROGRESS_OPTIN,
+                step: Step.AUTH,
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
             }));
-            return handleOptIn();
+            // Step.AUTH -> Step.IN_PROGRESS_OPTIN is handled below by AuthModal onSuccess
         }
     };
 
@@ -171,6 +173,28 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         model.step === Step.IN_PROGRESS_OPTIN ||
         model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
         model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
+
+    /**
+     * Prompt for authentication beforehand if needed, otherwise this would be triggered on the account
+     * key creation step, interrupting key creation if the user cancels.
+     */
+    if (model.step === Step.AUTH) {
+        return (
+            <AuthModal
+                scope="password"
+                config={unlockPasswordChanges()}
+                {...rest}
+                onCancel={rest.onClose}
+                onSuccess={async () => {
+                    setModel((prev) => ({
+                        step: Step.IN_PROGRESS_OPTIN,
+                        hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
+                    }));
+                    return withLoading(handleOptIn());
+                }}
+            />
+        );
+    }
 
     return (
         <ModalTwo size="medium" {...rest}>
