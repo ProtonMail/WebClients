@@ -3,8 +3,8 @@ import { assign, setup } from 'xstate';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 
 import { totpBackupCodeMachine } from './totpBackupCodeMachine';
-import { verifyOwnershipWithEmailMachine } from './verifyOwnershipWithEmailMachine';
-import { verifyOwnershipWithPhoneMachine } from './verifyOwnershipWithPhoneMachine';
+import { type EmailVerificationResult, verifyOwnershipWithEmailMachine } from './verifyOwnershipWithEmailMachine';
+import { type SMSVerificationResult, verifyOwnershipWithPhoneMachine } from './verifyOwnershipWithPhoneMachine';
 import { verifyOwnershipWithPhraseMachine } from './verifyOwnershipWithPhraseMachine';
 
 export interface Lost2FARecoveryMethods {
@@ -27,6 +27,8 @@ interface UnauthedLost2FAMachineContext {
     on2FADisabled: (username: string) => void;
     returnTo2FAStep: () => void;
     onResetPassword: (username: string) => void;
+    smsVerificationResult: SMSVerificationResult | null;
+    emailVerificationResult: EmailVerificationResult | null;
 }
 
 export type UnauthedLost2FAMachineEvent =
@@ -78,6 +80,8 @@ export const unauthedLost2FAStateMachine = setup({
         on2FADisabled: input.on2FADisabled,
         returnTo2FAStep: input.returnTo2FAStep,
         onResetPassword: input.onResetPassword,
+        smsVerificationResult: null,
+        emailVerificationResult: null,
     }),
 
     states: {
@@ -148,6 +152,9 @@ export const unauthedLost2FAStateMachine = setup({
             invoke: {
                 id: 'verifyOwnershipWithEmail',
                 src: 'verifyOwnershipWithEmailMachine',
+                input: ({ context }) => ({
+                    verificationResult: context.emailVerificationResult,
+                }),
                 onDone: [
                     {
                         guard: ({ event }) => event.output.result === 'error',
@@ -160,13 +167,16 @@ export const unauthedLost2FAStateMachine = setup({
                     {
                         guard: 'hasRecoveryPhone',
                         target: 'verify ownership with phone',
+                        actions: assign({ emailVerificationResult: ({ event }) => event.output.verificationResult }),
                     },
                     {
                         guard: 'hasRecoveryPhrase',
                         target: 'verify ownership with phrase',
+                        actions: assign({ emailVerificationResult: ({ event }) => event.output.verificationResult }),
                     },
                     {
                         target: 'no method to disable 2fa',
+                        actions: assign({ emailVerificationResult: ({ event }) => event.output.verificationResult }),
                     },
                 ],
             },
@@ -195,6 +205,9 @@ export const unauthedLost2FAStateMachine = setup({
             invoke: {
                 id: 'verifyOwnershipWithPhone',
                 src: 'verifyOwnershipWithPhoneMachine',
+                input: ({ context }) => ({
+                    verificationResult: context.smsVerificationResult,
+                }),
                 onDone: [
                     {
                         guard: ({ event }) => event.output.result === 'error',
@@ -207,9 +220,11 @@ export const unauthedLost2FAStateMachine = setup({
                     {
                         guard: 'hasRecoveryPhrase',
                         target: 'verify ownership with phrase',
+                        actions: assign({ smsVerificationResult: ({ event }) => event.output.verificationResult }),
                     },
                     {
                         target: 'no method to disable 2fa',
+                        actions: assign({ smsVerificationResult: ({ event }) => event.output.verificationResult }),
                     },
                 ],
             },
@@ -266,12 +281,18 @@ export const unauthedLost2FAStateMachine = setup({
                 'try again': {
                     target: 'verify ownership with email',
                 },
+                back: {
+                    target: 'return to 2fa step',
+                },
             },
         },
         'phone ownership verification error': {
             on: {
                 'try again': {
                     target: 'verify ownership with phone',
+                },
+                back: {
+                    target: 'return to 2fa step',
                 },
             },
         },

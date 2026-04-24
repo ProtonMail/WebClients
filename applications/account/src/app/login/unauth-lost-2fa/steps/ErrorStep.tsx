@@ -19,8 +19,8 @@ export const ErrorStep = () => {
     return (
         <>
             <div className="mb-8">{c('Info').t`Something went wrong. Please try again.`}</div>
-            <Button size="large" fullWidth onClick={() => send({ type: 'try again' })}>
-                {c('Action').t`Try again`}
+            <Button size="large" fullWidth onClick={() => send({ type: 'back' })}>
+                {c('Action').t`Return to sign-in`}
             </Button>
         </>
     );

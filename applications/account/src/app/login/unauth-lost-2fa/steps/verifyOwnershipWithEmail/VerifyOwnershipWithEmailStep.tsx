@@ -151,14 +151,17 @@ const VerifyOwnershipWithEmailStepContent = ({
         sendStepLoad('verify ownership with email');
     }, [verifyCodeStep]);
 
+    const api = useApi();
     const handleError = useErrorHandler();
 
-    const api = useApi();
-
-    const [verificationResult, setVerificationResult] = useState<VerificationResult>();
+    const verificationResult = useSelector(actorRef, (s) => s.context.verificationResult);
 
     useEffect(() => {
         if (actorRef.getSnapshot().value !== 'verify code') {
+            return;
+        }
+
+        if (verificationResult) {
             return;
         }
 
@@ -170,14 +173,13 @@ const VerifyOwnershipWithEmailStepContent = ({
                     config: reauthByEmailVerification(),
                 });
 
-                setVerificationResult(result);
+                send({ type: 'verification initiated', verificationResult: result });
             } catch (error) {
                 handleError(error);
-                send({ type: 'error' });
             }
         };
         void sendCode();
-    }, [actorRef.getSnapshot().value]);
+    }, [actorRef.getSnapshot().value, verificationResult]);
 
     if (!verificationResult) {
         return <Loader />;

@@ -1,12 +1,28 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
+import type { VerificationDataResult } from '@proton/components/index';
+
 type Result = '2fa-disabled' | 'skipped' | 'error';
+
+export interface SMSVerificationResult {
+    verificationDataResult: VerificationDataResult;
+    token: string;
+}
 
 interface MachineContext {
     result: Result | null;
+    verificationResult: SMSVerificationResult | null;
+}
+interface MachineOutput {
+    result: Result;
+    verificationResult: SMSVerificationResult | null;
 }
 
-type MachineEvent = { type: '2fa disabled' } | { type: 'try another way' } | { type: 'error' };
+type MachineEvent =
+    | { type: '2fa disabled' }
+    | { type: 'try another way' }
+    | { type: 'error' }
+    | { type: 'verification initiated'; verificationResult: SMSVerificationResult };
 
 export type VerifyOwnershipWithPhoneActorRef = ActorRefFrom<typeof verifyOwnershipWithPhoneMachine>;
 
@@ -14,15 +30,22 @@ export const verifyOwnershipWithPhoneMachine = setup({
     types: {
         context: {} as MachineContext,
         events: {} as MachineEvent,
-        output: {} as { result: Result },
+        output: {} as MachineOutput,
+        input: {} as {
+            verificationResult: SMSVerificationResult | null;
+        },
     },
 }).createMachine({
     id: 'verifyOwnershipWithPhone',
     initial: 'verify code',
-    context: {
+    context: ({ input }) => ({
         result: null,
-    },
-    output: ({ context }): { result: Result } => ({ result: context.result! }),
+        verificationResult: input.verificationResult,
+    }),
+    output: ({ context }): MachineOutput => ({
+        result: context.result!,
+        verificationResult: context.verificationResult,
+    }),
     states: {
         'verify code': {
             on: {
@@ -34,6 +57,9 @@ export const verifyOwnershipWithPhoneMachine = setup({
                 },
                 error: {
                     target: 'error',
+                },
+                'verification initiated': {
+                    actions: assign({ verificationResult: ({ event }) => event.verificationResult }),
                 },
             },
         },
