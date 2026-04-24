@@ -1,4 +1,4 @@
-import type { BrowserOptions, Span } from '@sentry/browser';
+import type { BrowserOptions, SeverityLevel, Span } from '@sentry/browser';
 import {
     Integrations as SentryIntegrations,
     addBreadcrumb,
@@ -405,15 +405,26 @@ export type SentryInitiative =
 
 type CaptureExceptionArgs = Parameters<typeof captureException>;
 
+type InitiativeContext = {
+    tags?: Record<string, string>;
+    extra?: Record<string, unknown>;
+    level?: SeverityLevel;
+    fingerprint?: string[];
+};
+
 /**
  * Capture error with an additional initiative tag
- * @param initiative
- * @param error
  */
-export const traceInitiativeError = (initiative: SentryInitiative, error: CaptureExceptionArgs[0]) => {
+export const traceInitiativeError = (
+    initiative: SentryInitiative,
+    error: CaptureExceptionArgs[0],
+    context?: InitiativeContext
+) => {
     if (!isLocalhost(self.location.host)) {
         captureException(error, {
+            ...context,
             tags: {
+                ...context?.tags,
                 initiative,
             },
         });
@@ -422,15 +433,16 @@ export const traceInitiativeError = (initiative: SentryInitiative, error: Captur
 
 /**
  * Capture message with an additional initiative tag
- * @param initiative
- * @param error
  */
-export const captureInitiativeMessage: (initiative: SentryInitiative, message: string) => void = (
-    initiative,
-    message
+export const captureInitiativeMessage = (
+    initiative: SentryInitiative,
+    message: string,
+    context?: InitiativeContext
 ) => {
     captureMessage(message, {
+        ...context,
         tags: {
+            ...context?.tags,
             initiative,
         },
     });
