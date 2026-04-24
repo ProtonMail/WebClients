@@ -21,23 +21,74 @@ type Props = {
 
 const PASS_CLI_HOME = 'https://protonpass.github.io/pass-cli/';
 
-const buildAgentMarkdown = (envVar: string) => `# Proton Pass agent setup
+const buildAgentMarkdown = (envVar: string) => `# Proton Pass CLI - Agent Instructions
 
-1. Download and install **pass-cli** from ${PASS_CLI_HOME}.
+## Authentication
 
-2. Use the personal access token below to authenticate. Keep it secret — it will not be shown again:
+Agents authenticate using a Personal Access Token (PAT). Set the token and log in:
 
-   \`\`\`
-   ${envVar}
-   \`\`\`
+  export PROTON_PASS_PERSONAL_ACCESS_TOKEN="${envVar}"
+  pass-cli login
 
-3. Run the following command to log in and list accessible vaults:
+## Session isolation
 
-   \`\`\`sh
-   PROTON_PASS_PERSONAL_ACCESS_TOKEN=${envVar} pass-cli login && pass-cli vault list
-   \`\`\`
+If there may already be an active user session on this machine, use a separate session
+directory to avoid overwriting it:
 
-4. Refer to the documentation at ${PASS_CLI_HOME} for the full command reference.
+  export PROTON_PASS_SESSION_DIR="/tmp/pass-agent-<unique-name>"
+  pass-cli login
+
+Before logging in, check whether an existing session is already valid for your token:
+
+  pass-cli info 2>/dev/null
+
+If \`pass-cli info\` succeeds and shows the expected account, you can skip the login step.
+If it fails or shows a different account, set PROTON_PASS_SESSION_DIR and log in fresh.
+
+## Accessing items
+
+As an agent you MUST use \`pass-cli agent item view\`, NOT \`pass-cli item view\`.
+The \`--reason\` flag is mandatory and must describe why you are accessing the item:
+
+  pass-cli agent item view \\
+    --vault-name "Vault Name" \\
+    --item-title "Item Title" \\
+    --reason "Brief description of why this item is being accessed"
+
+You can also address an item directly with a pass:// URI:
+
+  pass-cli agent item view "pass://SHARE_ID/ITEM_ID" --reason "..."
+
+To retrieve a single field (e.g. only the password):
+
+  pass-cli agent item view --vault-name "Vault" --item-title "DB" \\
+    --field password --reason "..."
+
+## Discovering vaults and items
+
+  pass-cli vault list --output json                    # List vaults the agent has access to
+  pass-cli share list --output json                    # List the vaults and direct items the agent has been granted access to
+  pass-cli item list --vault-name "Name" --output json # List items in a vault
+  pass-cli item list --output json                     # List all accessible items
+
+Use \`--output json\` whenever you need to parse the output programmatically.
+
+## Session and connection health
+
+  pass-cli info    # Show current account type and session details
+  pass-cli test    # Verify the connection to the Proton Pass API
+
+## Quick reference
+
+  pass-cli login                                         # Authenticate with PAT from env
+  pass-cli logout                                        # End the session
+  pass-cli vault list --output json                      # List vaults
+  pass-cli item list --vault-name <NAME> --output json   # List items in a vault
+  pass-cli agent item view \\
+    --vault-name <VAULT> --item-title <TITLE> \\
+    --reason <REASON>                                    # Read an item (agent-only)
+
+Full documentation: ${PASS_CLI_HOME}
 `;
 
 const CodeBlock: FC<{ value: string; onCopy: (v: string) => void }> = ({ value, onCopy }) => (
