@@ -69,6 +69,7 @@ interface MemberPayload {
     MaxSpace: number;
     MaxVPN: number;
     MaxAI: number;
+    TemporaryPassword: boolean;
 }
 
 interface UnprivatizationInvitation {
