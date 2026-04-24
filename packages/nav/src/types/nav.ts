@@ -45,9 +45,7 @@ export interface NavItemResolverActions {
 }
 
 export type NavItemResolver<TContext extends NavContext = NavContext> = (
-    item: NavItemResolved,
-    context: TContext,
-    actions: NavItemResolverActions
+    _: { item: NavItemResolved; context: TContext } & NavItemResolverActions
 ) => NavItemResolverAction;
 
 export interface NavItemDefinition<TContext extends NavContext = NavContext> {
