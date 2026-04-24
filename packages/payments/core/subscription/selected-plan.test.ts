@@ -72,6 +72,46 @@ describe('SelectedPlan', () => {
 
     it.each([
         {
+            name: 'VPN_BUSINESS with no domain addons',
+            planIDs: {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+                [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+            },
+            expected: 0,
+        },
+        {
+            name: 'VPN_BUSINESS with 3 domain addons',
+            planIDs: {
+                [PLANS.VPN_BUSINESS]: 1,
+                [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 3,
+            },
+            expected: 3,
+        },
+        {
+            name: 'BUNDLE_PRO_2024 excludes base MaxDomains',
+            planIDs: {
+                [PLANS.BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 5,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 4,
+            },
+            expected: 5,
+        },
+        {
+            name: 'plan without any domain addons',
+            planIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            },
+            expected: 0,
+        },
+    ])('getAdditionalDomains: $name', ({ planIDs, expected }) => {
+        const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        expect(selectedPlan.getAdditionalDomains()).toBe(expected);
+    });
+
+    it.each([
+        {
             planIDs: {
                 [PLANS.MAIL_BUSINESS]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
