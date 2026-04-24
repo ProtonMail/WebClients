@@ -1355,7 +1355,7 @@
         "Bilinmeyen bir sorun çıktı."
       ],
       "Biometric authentication failed.": [
-        "Biyometrik kimlik doğrulama başarısız oldu."
+        "Biyometrik kimlik doğrulanamadı."
       ],
       "Desktop lock is not configured.": [
         "Masaüstü kilidi yapılandırılmamış."
@@ -1370,13 +1370,13 @@
         "Masaüstü kilidi kurulumu başarısız oldu."
       ],
       "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasıyla şifreli iletişim kurulamadı."
+        "${ PASS_APP_NAME } bilgisayar uygulamasıyla şifrelenmiş iletişim kurulamadı."
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
-        "${ PASS_APP_NAME } masaüstü uygulaması zamanında yanıt vermedi."
+        "${ PASS_APP_NAME } bilgisayar uygulaması zamanında yanıt vermedi."
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
+        "${ PASS_APP_NAME } bilgisayar uygulamasında başka bir hesapla oturum açılmış."
       ],
       "Biometric lock credentials do not match.": [
         "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
@@ -1388,10 +1388,10 @@
         "Biyometrik kilit yapılandırılmamış."
       ],
       "Biometric lock setup failed.": [
-        "Biyometrik kilit kurulumu başarısız oldu."
+        "Biyometrik kilit kurulamadı."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasında oturum açılmış olmalıdır."
+        "${ PASS_APP_NAME } bilgisayar uygulamasında oturum açılmış olmalıdır."
       ]
     },
     "Error message": {
@@ -5274,7 +5274,7 @@
     },
     "Upsell": {
       "Get ${ planName }": [
-        "${ planName } edin"
+        "${ planName } tarifesini edinin"
       ]
     }
   }

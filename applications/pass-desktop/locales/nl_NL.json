@@ -1353,6 +1353,33 @@
       ],
       "Unknown error.": [
         "Onbekende fout."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrische authenticatie mislukt."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische vergrendelingsgegevens komen niet overeen."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrische vergrendelingsgegevens niet gevonden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische vergrendelingsgegevens niet geconfigureerd."
+      ],
+      "Biometric lock setup failed.": [
+        "De installatie van het biometrische slot is mislukt."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Versleutelde communicatie met de desktop-app ${ PASS_APP_NAME } is mislukt."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "De desktop-app ${ PASS_APP_NAME } reageerde niet op tijd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "De desktop-app ${ PASS_APP_NAME } is aangemeld met een ander account."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "De desktop-app ${ PASS_APP_NAME } moet ingelogd zijn."
       ]
     },
     "Error message": {
@@ -5231,6 +5258,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
       ]
     }
   }
