@@ -1262,6 +1262,10 @@
       ],
       "Re-index": [
         "Re-indeksér"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Tilføj til \"${ name }\" (${ photoCount } foto)",
+        "Tilføj til \"${ name }\" (${ photoCount } fotos)"
       ]
     },
     "Action: Docs": {
@@ -7070,6 +7074,9 @@
       ],
       "Invitation confirmed": [
         "Invitation bekræftet"
+      ],
+      "No populator states found.": [
+        "Ingen populator states fundet."
       ]
     },
     "info": {
@@ -11956,7 +11963,7 @@
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
-        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premium-funktioner"
       ],
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
@@ -13392,6 +13399,9 @@
       ],
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
+      ],
+      "Index populators": [
+        "Index populators"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13759,6 +13769,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-pladser i prøveperioden."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album omdøbt"
       ]
     }
   }

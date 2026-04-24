@@ -1256,6 +1256,9 @@
       ],
       "Re-index": [
         "重新索引"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "添加到“${ name }”（${ photoCount } 张照片）"
       ]
     },
     "Action: Docs": {
@@ -6970,6 +6973,30 @@
       ],
       "No populator states found.": [
         "未找到填充器状态！"
+      ],
+      "${ albums } album": [
+        "${ albums } 个相册"
+      ],
+      "${ files } file": [
+        "${ files } 个文件"
+      ],
+      "${ folders } folder": [
+        "${ folders } 个文件夹"
+      ],
+      "${ photos } photo": [
+        "${ photos } 张照片"
+      ],
+      "Indexed ${ first }": [
+        "已索引 ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "已索引 ${ first } 和 ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "已索引 ${ first }、${ second } 和 ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "已索引 ${ first }、${ second }、${ third } 和 ${ fourth }"
       ]
     },
     "info": {
@@ -11634,6 +11661,15 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 邮箱别名"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "包含高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME } 和 ${ LUMO_APP_NAME }"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "高清视频会议，最多支持 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 人参与"
       ]
     },
     "subscription reminder": {
@@ -13385,6 +13421,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "试用期间，您最多可以拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位。"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "相册重命名成功"
       ]
     }
   }
