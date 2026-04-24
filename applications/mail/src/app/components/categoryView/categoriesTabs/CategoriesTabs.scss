@@ -41,6 +41,17 @@
 		padding-inline: rem(8);
 		gap: rem(6);
 
+		&:focus-visible {
+			outline: $focus-ring-size solid var(--cat-border);
+			outline-offset: -$focus-ring-size;
+			color: var(--cat-foreground);
+
+			[data-theme-mode='dark'] & {
+				outline-color: var(--cat-border-dark);
+				color: var(--cat-foreground-dark);
+			}
+		}
+
 		.tag-label-text {
 			font-size: rem(12);
 		}
