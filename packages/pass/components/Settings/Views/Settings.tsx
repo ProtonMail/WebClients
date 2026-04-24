@@ -16,6 +16,7 @@ import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { AccessTokens } from './Tabs/AccessTokens';
 import { Aliases } from './Tabs/Aliases';
 import { General } from './Tabs/General';
 import { Security } from './Tabs/Security';
@@ -33,6 +34,7 @@ const getSettingsTabs = (
     { hash: 'general', title: c('Label').t`General`, content: <General /> },
     ...(!aliasCreationDisabled ? [{ hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
+    { hash: 'access-tokens', title: c('pass_2026: Label').t`Access tokens`, content: <AccessTokens /> },
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: exportTab },
     { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
