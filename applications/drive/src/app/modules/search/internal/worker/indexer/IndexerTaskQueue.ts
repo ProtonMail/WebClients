@@ -12,11 +12,11 @@ import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
 import type { IndexPopulator } from './indexPopulators/IndexPopulator';
 import { MyFilesIndexPopulator } from './indexPopulators/MyFilesIndexPopulator';
 import type { BaseTask, TaskContext } from './tasks/BaseTask';
-import { CLEANUP_TASKS } from './tasks/CleanUpTasks/allCleanUpTasks';
+import { CleanUpStaleBlobsTask } from './tasks/CleanUpTasks/CleanUpStaleBlobsTask';
+import { CleanUpStaleIndexEntryTask } from './tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IncrementalUpdateTask } from './tasks/CoreTasks/IncrementalUpdateTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 import { PersistDataTask } from './tasks/CoreTasks/PersistDataTask';
-import { RecurringMaintenanceTask } from './tasks/CoreTasks/RecurringMaintenanceTask';
 
 export type IndexerState = {
     isInitialIndexing: boolean;
@@ -196,9 +196,10 @@ export class IndexerTaskQueue {
                     });
 
                     // Wire registry → task queue: registry decides *when*, queue creates the task.
-                    this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) =>
-                        this.enqueueOnce(new IncrementalUpdateTask(registration))
-                    );
+                    this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) => {
+                        this.enqueueOnce(new IncrementalUpdateTask(registration));
+                        this.enqueueOnce(new CleanUpStaleBlobsTask());
+                    });
                 }
 
                 // Skip waiting if tasks were enqueued (e.g. by postBootstrapTasks).
@@ -257,6 +258,7 @@ export class IndexerTaskQueue {
                 );
             },
             notifyIndexingProgress: () => this.notifyIndexingProgress(),
+            activeIndexPopulators: [...this.populators.values()],
         };
 
         try {
@@ -313,12 +315,7 @@ export class IndexerTaskQueue {
 
         return {
             bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator, true /* isBootstrap */)],
-            postBootstrapTasks: [
-                // Run all cleanup tasks once.
-                ...CLEANUP_TASKS.map((Task) => new Task()),
-                // Self-scheduling round-robin maintenance.
-                new RecurringMaintenanceTask(),
-            ],
+            postBootstrapTasks: [new CleanUpStaleIndexEntryTask(), new CleanUpStaleBlobsTask()],
         };
     }
 
