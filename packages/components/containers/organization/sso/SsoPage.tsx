@@ -306,7 +306,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [samlSSO] = useSamlSSO();
     const [organization] = useOrganization();
     const [user] = useUser();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
@@ -353,8 +353,9 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                             <Button
                                 color="norm"
                                 fullWidth
+                                loading={loadingSubscriptionModal}
                                 onClick={() => {
-                                    openSubscriptionModal({
+                                    void openSubscriptionModal({
                                         metrics: {
                                             source: 'upsells',
                                         },

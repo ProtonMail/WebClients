@@ -166,14 +166,14 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
     const { APP_NAME } = useConfig();
     const { onClose } = modalProps || {};
     const telemetryFlow = useDashboardPaymentFlow(APP_NAME);
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const goToSettings = useSettingsLink();
 
     const handleExplorePlans = () => {
         if (onClose) {
             onClose();
         }
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             telemetryFlow,
@@ -241,6 +241,7 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
         return (
             <Button
                 onClick={handleExplorePlans}
+                loading={loadingSubscriptionModal}
                 size="large"
                 color="norm"
                 fullWidth

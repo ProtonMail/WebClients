@@ -7,19 +7,21 @@ import {
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalTwoHeader, SUBSCRIPTION_STEPS,
+    ModalTwoHeader,
+    SUBSCRIPTION_STEPS,
     useSubscriptionModal,
 } from '@proton/components';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments';
-import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
+
+import { sendSubscriptionModalSubscribedEvent } from '../../../util/telemetry';
 
 import './ProjectLimitModal.scss';
-import {sendSubscriptionModalSubscribedEvent} from "../../../util/telemetry";
 
 export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { plansMapLoading } = usePreferredPlansMap();
 
     const handleSubscriptionModalSubscribed = () => {
@@ -28,7 +30,7 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
     };
 
     const handleUpgrade = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             maximumCycle: CYCLE.YEARLY,
@@ -38,7 +40,7 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
             },
             metrics: {
                 source: 'upsells',
-            }
+            },
         });
     };
 
@@ -47,7 +49,7 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
     }
 
     return (
-        <ModalTwo {...modalProps} size="small" >
+        <ModalTwo {...modalProps} size="small">
             <ModalTwoHeader title={''} />
             <ModalTwoContent>
                 <div className="project-limit-modal-content">
@@ -125,11 +127,10 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
                 <Button onClick={modalProps.onClose} shape="outline">
                     {c('collider_2025:Action').t`Cancel`}
                 </Button>
-                <Button color="norm" onClick={handleUpgrade}>
+                <Button color="norm" loading={loadingSubscriptionModal} onClick={handleUpgrade}>
                     {c('collider_2025:Action').t`Upgrade to Plus`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
 };
-
