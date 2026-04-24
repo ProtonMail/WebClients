@@ -92,6 +92,10 @@
 			.hide-when-stacked {
 				display: none;
 			}
+
+			.justify-start-when-stacked {
+				justify-content: flex-start;
+			}
 		}
 	}
 
