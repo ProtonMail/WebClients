@@ -2,10 +2,11 @@ import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
 import { UserType } from '@proton/shared/lib/interfaces';
 
-const enum UserTier {
+export const enum UserTier {
     internal = 'internal',
     paid = 'paid',
     free = 'free',
+    nonUser = 'non_user',
 }
 
 export const getUserTier = (user: User): UserTier => {
