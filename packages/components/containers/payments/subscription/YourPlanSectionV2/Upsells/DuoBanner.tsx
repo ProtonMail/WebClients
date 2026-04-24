@@ -19,12 +19,12 @@ interface Props extends UpsellSectionBaseProps {
 
 const DuoBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.DUO;
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleGetPlan = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -45,7 +45,7 @@ const DuoBanner = ({ app, subscription }: Props) => {
                 />
             }
             headerActionArea={
-                <Button color="norm" shape="outline" onClick={handleGetPlan}>
+                <Button color="norm" shape="outline" loading={loadingSubscriptionModal} onClick={handleGetPlan}>
                     {c('Action').t`Upgrade`}
                 </Button>
             }

@@ -20,14 +20,14 @@ interface Props extends UpsellSectionBaseProps {
 }
 
 const ExploreGroupPlansBanner = ({ subscription, app }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, PLANS.FAMILY);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
@@ -55,7 +55,12 @@ const ExploreGroupPlansBanner = ({ subscription, app }: Props) => {
             }
             headerActionArea={
                 <>
-                    <Button color="norm" shape="outline" onClick={handleExplorePlans}>
+                    <Button
+                        color="norm"
+                        shape="outline"
+                        loading={loadingSubscriptionModal}
+                        onClick={handleExplorePlans}
+                    >
                         {c('Action').t`Explore group plans`}
                     </Button>
                 </>

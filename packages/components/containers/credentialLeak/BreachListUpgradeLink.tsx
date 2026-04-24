@@ -9,13 +9,13 @@ interface Props {
 }
 
 const BreachListUpgradeLink = ({ total }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const metrics = {
         source: 'plans',
     } as const;
 
     const handleUpgradeClick = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
             mode: 'upsell-modal',
@@ -28,6 +28,7 @@ const BreachListUpgradeLink = ({ total }: Props) => {
             <span className="block text-md text-bold ">{c('Info').jt`Plus ${numOfBreaches} more`}</span>
             <Button
                 onClick={handleUpgradeClick}
+                loading={loadingSubscriptionModal}
                 size="small"
                 shape="underline"
                 color="norm"

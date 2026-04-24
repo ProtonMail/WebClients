@@ -23,7 +23,7 @@ import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
 
 const AssistantToggle = () => {
     const [subscription, subscriptionLoading] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [plans] = usePlans();
     const [organization] = useOrganization();
     const [member] = useMember();
@@ -90,8 +90,9 @@ const AssistantToggle = () => {
                 {getScribeUpsellText()} {learnMore}.
             </p>
             <div className="flex flex-row items-baseline gap-2">
-                <Button shape="outline" size="small" onClick={handleCustomize}>{c('Assistant toggle')
-                    .t`Buy now`}</Button>
+                <Button shape="outline" size="small" onClick={handleCustomize} loading={loadingSubscriptionModal}>{c(
+                    'Assistant toggle'
+                ).t`Buy now`}</Button>
                 {trialStatus === 'trial-ongoing' && (
                     <p className="color-weak text-sm m-0">{c('Assistant toggle')
                         .t`Trial expires on ${formattedDate}`}</p>

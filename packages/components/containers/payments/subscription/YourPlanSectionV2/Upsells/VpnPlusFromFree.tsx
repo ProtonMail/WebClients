@@ -85,8 +85,8 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
         title: rest.title,
         customCycle: rest.customCycle || defaultUpsellCycleB2C,
         description: '',
-        onUpgrade: () =>
-            openSubscriptionModal({
+        onUpgrade: () => {
+            return openSubscriptionModal({
                 cycle: rest.customCycle || defaultUpsellCycleB2C,
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -95,7 +95,8 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
                     source: 'upsells',
                 },
                 telemetryFlow: rest.telemetryFlow,
-            }),
+            });
+        },
         ...rest,
     });
 };
@@ -123,7 +124,7 @@ export const useVpnPlusFromFreeUpsells = ({
     };
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
             telemetryFlow,

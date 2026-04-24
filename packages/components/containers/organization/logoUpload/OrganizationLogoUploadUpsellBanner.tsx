@@ -20,7 +20,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
     canAccessLightLabelling,
     isPartOfFamily,
 }: UpsellBannerProps) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const bundleProPlan = useBundleProPlan();
 
     const currentPlan = organization.PlanName;
@@ -37,7 +37,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
         const newPlan = upgradePlanMapping[currentPlan as PLANS];
 
         if (newPlan) {
-            openSubscriptionModal({
+            void openSubscriptionModal({
                 metrics: {
                     source: 'upsells',
                 },
@@ -67,7 +67,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
                 </div>
             }
             cta={
-                <Button color="norm" fullWidth onClick={handleUpgradeClick}>
+                <Button color="norm" fullWidth onClick={handleUpgradeClick} loading={loadingSubscriptionModal}>
                     {c('Action').t`Upgrade to Business`}
                 </Button>
             }

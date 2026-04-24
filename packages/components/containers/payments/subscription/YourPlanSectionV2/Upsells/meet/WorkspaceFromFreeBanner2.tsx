@@ -32,7 +32,7 @@ import { PlanIcon } from '../../PlanIcon';
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE_PRO_2024;
     const planIsManagedExternally = isManagedExternally(subscription);
@@ -55,7 +55,7 @@ const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
     }
 
     const handleGetPlan = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -87,6 +87,7 @@ const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
                         color="norm"
                         shape="ghost"
                         className="flex items-center gap-1 flex-nowrap"
+                        loading={loadingSubscriptionModal}
                         onClick={handleGetPlan}
                     >
                         {getExploreText(PLAN_NAMES[plan])}
