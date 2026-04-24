@@ -70,14 +70,53 @@ yarn build:extension:all
 
 > Hot-reloading is **unavailable** for safari extension development
 
+Make sure you have a ruby 4+. At the moment of writing, ruby 4.0.2, installed from `brew` works well. You can verify your ruby version with `ruby --version`
+
+For the first time, run the build, install some dependencies and link the assets to the xcode project and open the `Proton Pass.xcodeproj` project for the first time
+
 ```shell
-BUILD_TARGET=safari yarn build:extension
-cd safari && ruby ./tools/reference_dist_directory.rb
+BUILD_TARGET=safari yarn build:extension && (cd safari && gem install xcodeproj && ruby ./tools/reference_dist_directory.rb && open "Proton Pass.xcodeproj")
 ```
 
-> Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn debugger:http`. This configuration will route all extension logs and error messages to stdout.
+Run the build from Xcode, in case of following error, select the team in Xcode:
 
-Open the `Proton Pass.xcodeproj` project and run it
+> Signing for "Safari Extension" requires a development team. Select a development team in the Signing & Capabilities editor.
+
+From this point on, run the following command for all code changes. This script will
+
+- change the version in manifest-version.safari to YYYY.MMDD.HH format to make sure the new build is installed correctly
+- build the extension
+- run xcode build
+- kill and reopen safari
+
+```bash
+sed -i '' -E "s/(\"version\": )\"[^\"]*\"/\1\"$(date +%Y.%m%d.%H%M)\"/" manifest-safari.json && BUILD_TARGET=safari yarn build:extension && (
+  cd safari &&
+  ruby ./tools/reference_dist_directory.rb &&
+  xcodebuild \
+    -project "Proton Pass.xcodeproj" \
+    -scheme "Proton Pass" \
+    -configuration Debug \
+    -derivedDataPath ./build \
+    build &&
+  open "./build/Build/Products/Debug-maccatalyst/Proton Pass for Safari.app" &&
+  pkill -x Safari &&
+  open -a Safari
+)
+```
+
+In case of error
+
+> xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+
+run
+
+```bash
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+xcode-select -p # to verify, Should output /Applications/Xcode.app/Contents/Developer
+```
+
+Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn debugger:http`. This configuration will route all extension logs and error messages to stdout.
 
 ### Local Backend Integration
 
