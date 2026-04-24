@@ -4,11 +4,9 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import config from '../../config';
 import LocationErrorBoundary from '../../containers/LocationErrorBoundary';
-import PublicSharedLinkContainerLegacy from '../../containers/PublicSharedLinkContainerLegacy';
 import { usePartialPublicView } from '../../hooks/util/usePartialPublicView';
 import { logging } from '../../modules/logging';
 import { TransferManager } from '../../sections/transferManager/TransferManager';
@@ -109,11 +107,8 @@ const PublicPageContent = () => {
 };
 
 export function PublicPage() {
-    const useDriveSDKPublicLink = useFlag('DriveWebSDKPublic');
     const location = useLocation();
-    if (!useDriveSDKPublicLink) {
-        return <PublicSharedLinkContainerLegacy />;
-    }
+
     return (
         <LocationErrorBoundary location={location}>
             <PublicPageContent />
