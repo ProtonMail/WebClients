@@ -1453,7 +1453,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7389,10 +7392,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8818,6 +8818,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
       ]
     },
     "info": {
