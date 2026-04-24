@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const GetMoreButton = ({ metricsSource }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     return (
         <Button
@@ -20,15 +20,16 @@ export const GetMoreButton = ({ metricsSource }: Props) => {
             size="small"
             className="px-2"
             data-testid="get-more-btn"
-            onClick={() =>
-                openSubscriptionModal({
+            loading={loadingSubscriptionModal}
+            onClick={() => {
+                void openSubscriptionModal({
                     step: SUBSCRIPTION_STEPS.CHECKOUT,
                     disablePlanSelection: true,
                     metrics: {
                         source: metricsSource,
                     },
-                })
-            }
+                });
+            }}
         >
             {
                 // translator: "Get more" means "Upgrade my business plan to get more user, more dedicated servers, etc"
