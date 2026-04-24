@@ -1342,6 +1342,33 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Biometric authentication failed.": [
+        "生物识别认证失败！"
+      ],
+      "Biometric lock credentials do not match.": [
+        "生物识别锁凭据不匹配！"
+      ],
+      "Biometric lock credentials not found.": [
+        "未找到生物识别锁凭据！"
+      ],
+      "Biometric lock is not configured.": [
+        "生物识别锁未配置！"
+      ],
+      "Biometric lock setup failed.": [
+        "生物识别锁设置失败！"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "与 ${ PASS_APP_NAME } 电脑版的加密通信失败"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 电脑版未及时响应！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 电脑版已登录了其他账户"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 电脑版应处于登录状态！"
       ]
     },
     "Error message": {
@@ -5154,6 +5181,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "开通 ${ planName }"
       ]
     }
   }
