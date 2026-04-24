@@ -12,11 +12,12 @@ import { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SentryMailInitiatives, captureMessage, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -39,6 +40,8 @@ import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import { load as loadAction, removeExpired, reset, setParams, updatePage } from '../../store/elements/elementsActions';
 import {
+    contextPages,
+    contextTotal,
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
     elementsMap as elementsMapSelector,
@@ -51,6 +54,7 @@ import {
     partialESSearch as partialESSearchSelector,
     pendingActions as pendingActionsSelector,
     placeholderCount as placeholderCountSelector,
+    selectCurrentContextIdentifier,
     shouldLoadElements as shouldLoadElementsSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
@@ -63,7 +67,12 @@ import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 
-const elementsLoadRateLimiter = new ApiRateLimiter({ maxRequests: 10, windowMs: 10_000, enabled: true });
+const elementsLoadRateLimiter = new ApiRateLimiter({
+    maxRequests: 10,
+    windowMs: 10_000,
+    enabled: true,
+    tracingEnabled: false,
+});
 
 const getParametersFromPath = (pathname: string) => {
     const customRoute = getCustomViewFromRoute(pathname);
@@ -180,6 +189,14 @@ export const useElements: UseElements = ({
     );
     const getConversationCounts = useGetConversationCounts();
     const getMessageCounts = useGetMessageCounts();
+
+    // Used for the rate limit check and Sentry reports
+    const isMailInfitiniteLoopRateLimiterEnabled = useFlag('MailInfitiniteLoopRateLimiterEnabled');
+    const rateLimitReachedRef = useRef(false);
+
+    const ctxTotal = useMailSelector(contextTotal);
+    const ctxPages = useMailSelector(contextPages);
+    const ctxIdentifier = useMailSelector(selectCurrentContextIdentifier);
 
     // Remove from cache expired elements
     useExpirationCheck(Object.values(elementsMap), (elements) => {
@@ -353,10 +370,29 @@ export const useElements: UseElements = ({
          * OR change the page size for a bigger one (100 > 200)
          */
         if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
-            try {
-                elementsLoadRateLimiter.recordCallOrThrow(labelID);
-            } catch {
-                // Rate limit exceeded - Sentry already notified, dispatch continues to preserve current behavior
+            if (isMailInfitiniteLoopRateLimiterEnabled) {
+                try {
+                    elementsLoadRateLimiter.recordCallOrThrow(labelID);
+                } catch {
+                    if (!rateLimitReachedRef.current) {
+                        rateLimitReachedRef.current = true;
+                        traceInitiativeError(
+                            SentryMailInitiatives.MAIL_REDUX_ERRORS,
+                            new Error('Load rate limit exceeded'),
+                            {
+                                extra: {
+                                    labelID,
+                                    ctxTotal,
+                                    ctxPages,
+                                    dynamicTotal,
+                                    totalReturned,
+                                    ctxIdentifier,
+                                    ctxNumbers: store.getState().elements.total,
+                                },
+                            }
+                        );
+                    }
+                }
             }
 
             void dispatch(
