@@ -21,7 +21,7 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
 }
 
 const FreeLogo = ({ app, size, dark, ...rest }: Props) => {
-    if (app === APPS.PROTONMAIL) {
+    if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
         return getLogo(mailFree, size, rest);
     }
     if (app === APPS.PROTONPASS) {
