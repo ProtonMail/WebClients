@@ -63,6 +63,25 @@ type FeedbackDowngradeContentProps = {
     onClose?: () => void;
 };
 
+const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) => {
+    let colorClass = 'text-weak';
+
+    if (value.length >= maxLength) {
+        colorClass = 'color-danger';
+    } else if (value.length >= maxLength * 0.9) {
+        colorClass = 'color-warning';
+    }
+
+    return (
+        <span className={`text-sm ${colorClass}`}>
+            {
+                // translator: Character count hint showing current length and maximum allowed length for rule title. Example: '25/191 characters'
+                c('Label').t`${value.length}/${maxLength} characters`
+            }
+        </span>
+    );
+};
+
 const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
@@ -183,6 +202,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
         onValue: (value: string) => setModel((model) => ({ ...model, ReasonDetails: value })),
         assistContainerClassName: 'mb-2',
     };
+
     const reasonDetails: ReasonDetail[] = [
         {
             forReason: SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE,
@@ -194,9 +214,10 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     label={c('Label').t`Could you please specify?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE
-                            ? [requiredValidator(model.ReasonDetails)]
+                            ? [requiredValidator(model.ReasonDetails), maxLengthValidator(model.ReasonDetails, 200)]
                             : []
                     )}
+                    hint={<InputLimit maxLength={200} value={model.ReasonDetails} />}
                     {...sharedReasonDetailsProps}
                 />
             ),
@@ -210,12 +231,12 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     as={TextAreaTwo}
                     rows={2}
                     label={c('Label').t`Could you please specify?`}
-                    maxLength={200}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE
                             ? [requiredValidator(model.ReasonDetails), maxLengthValidator(model.ReasonDetails, 200)]
                             : []
                     )}
+                    hint={<InputLimit maxLength={200} value={model.ReasonDetails} />}
                     {...sharedReasonDetailsProps}
                 />
             ),
@@ -382,25 +403,27 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                 })}
 
                 <div className="mb-4">
-                    <div className="flex items-start justify-start gap-2 mb-4">
-                        <CircledNumber className="mx-0" number={2} />
-                        <label htmlFor="feedback" className="text-semibold">{c('Label').t`Additional comments`}</label>
-                        <span className="ml-auto color-weak text-sm">{c('Label').t`Optional`}</span>
-                    </div>
-                    <div className="pl-6">
-                        <InputFieldTwo
-                            id="feedback"
-                            as={TextAreaTwo}
-                            rootClassName="mt-2"
-                            rows={10}
-                            placeholder={c('Placeholder').t`Anything you'd like us to know`}
-                            value={model.Feedback}
-                            maxLength={1000}
-                            error={validator([maxLengthValidator(model.Feedback, 1000)])}
-                            onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
-                            className="border-weak rounded-lg"
-                        />
-                    </div>
+                    <InputFieldTwo
+                        id="feedback"
+                        as={TextAreaTwo}
+                        rootClassName="mt-2"
+                        rows={10}
+                        inputContainerClassName="pl-6"
+                        placeholder={c('Placeholder').t`Anything you'd like us to know`}
+                        value={model.Feedback}
+                        label={
+                            <div className="flex items-center gap-2">
+                                <CircledNumber className="mx-0" number={2} />
+                                <label htmlFor="feedback" className="text-semibold">{c('Label')
+                                    .t`Additional comments`}</label>
+                                <span className="color-weak text-sm">{c('Label').t`Optional`}</span>
+                            </div>
+                        }
+                        hint={<InputLimit maxLength={1000} value={model.Feedback} />}
+                        error={validator([maxLengthValidator(model.Feedback, 1000)])}
+                        onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
+                        className="border-weak rounded-lg mt-4"
+                    />
                 </div>
             </ModalContent>
             <ModalFooter className={clsx('gap-2', isEligibleForFeedbackFirst && 'justify-end')}>
