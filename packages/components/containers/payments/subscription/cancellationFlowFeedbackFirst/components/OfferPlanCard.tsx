@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import Price from '@proton/components/components/price/Price';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
@@ -34,22 +35,18 @@ const OfferPlanCard = ({
     isLoading,
 }: OfferPlanCardProps) => {
     const discountRate = Math.round((1 - discountedMonthly / normalMonthly) * 100);
+
     return (
         <div className="border border-primary rounded-xl p-6 h-full flex flex-column flex-1">
             <div className="flex items-center justify-space-between mb-0">
                 <h2 className="h3 text-bold m-0">{planDisplayName}</h2>
-                <span className="text-uppercase text-semibold text-xs rounded p-1 bg-success">
-                    {c('Badge').t`Save ${discountRate}%`}
-                </span>
+                <Pill rounded="rounded-sm" color="#1B4A34" className="text-semibold text-uppercase">{c('Badge')
+                    .t`Save ${discountRate}%`}</Pill>
             </div>
             <p className="color-weak mt-0 mb-2">{cycleLabel}</p>
             <div className="mb-0 flex items-baseline">
                 <div style={{ fontSize: '2.75rem' }}>
-                    <Price
-                        currency={currency}
-                        amountClassName="text-semibold"
-                        wrapperClassName="inline-flex items-baseline"
-                    >
+                    <Price currency={currency} wrapperClassName="inline-flex text-semibold items-baseline">
                         {discountedMonthly}
                     </Price>
                 </div>

@@ -95,7 +95,7 @@ export const OfferContent = ({ onKeepPlan, onContinueCancelling, offerData }: Pr
             <ModalTwoHeader title={c('Title').t`Lower your cost without losing features`} titleClassName="text-4xl" />
             <ModalTwoContent>
                 <p className="mb-6 color-weak">{subtitle}</p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-stretch">
                     <OfferPlanCard
                         planDisplayName={planDisplayName}
                         features={config.features}
