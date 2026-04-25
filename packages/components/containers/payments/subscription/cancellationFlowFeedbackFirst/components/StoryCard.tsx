@@ -23,7 +23,7 @@ const StoryCard = ({ image, title, subtitle, linkText, url }: Props) => {
             <div className="flex flex-column justify-space-between w-full md:max-w-2/3 gap-1">
                 <span className="text-bold">{title}</span>
                 <span className="color-weak">{subtitle}</span>
-                <a href={url} rel="noopener noreferrer">
+                <a href={url} target="_self" rel="noopener noreferrer">
                     {linkText}
                 </a>
             </div>

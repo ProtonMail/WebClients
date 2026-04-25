@@ -23,6 +23,7 @@ export const CallToActionBanner = ({ image, title, description, ctaText, ctaHref
                     <p className="color-weak m-0">{description}</p>
                 </div>
                 <Href
+                    target="_self"
                     href={ctaHref}
                     className="shrink-0 text-no-decoration hover:text-underline text-no-wrap text-lg w-full md:w-auto"
                 >
