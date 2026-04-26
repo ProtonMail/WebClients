@@ -49,6 +49,7 @@ export type SpreadsheetRef = {
 
 export type SpreadsheetProps = {
   docState: DocStateInterface
+  documentId: string
   hidden: boolean
   onEditorLoadResult: EditorLoadResult
   editorInitializationConfig: EditorInitializationConfig | undefined
@@ -62,6 +63,7 @@ export type SpreadsheetProps = {
 export const Spreadsheet = forwardRef(function Spreadsheet(
   {
     docState,
+    documentId,
     hidden,
     onEditorLoadResult,
     editorInitializationConfig,
@@ -88,7 +90,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isCreationOrConversion = !!editorInitializationConfig
   const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
 
-  const state = useProtonSheetsState({ docState, functions, isReadonly })
+  const state = useProtonSheetsState({ docState, documentId, functions, isReadonly })
   const { setInitialVersion } = useVersioning(
     canRunMigration,
     state.yjsState,
