@@ -171,7 +171,6 @@ function RouterDependentContainer({
   return (
     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
       <ApiProvider api={extraThunkArguments.api}>
-        {/* TODO: fix typo globally */}
         <DrawerProvider defaultShowDrawerSidebar={showDrawerSidebar}>
           <ErrorBoundary big component={<StandardErrorPage big />}>
             {/* TODO: remove this once the temporary "Trash" homepage view implementation is cleaned up */}
