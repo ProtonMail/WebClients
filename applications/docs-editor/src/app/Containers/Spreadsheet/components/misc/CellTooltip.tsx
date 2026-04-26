@@ -12,6 +12,7 @@ import { useApplication } from '../../../ApplicationProvider'
 import { OPEN_LINK_EVENT } from '../../constants'
 import { createStringifier } from '../../stringifier'
 import { useUI } from '../../ui-store'
+import { isSheetLink, parseSheetLink } from '../Dialogs/sheetLink'
 import * as UI from '../ui'
 import { Icon } from '../ui'
 import { createComponent } from '../utils'
@@ -208,6 +209,14 @@ function getLink(hyperlink: NonNullable<CellTooltipProps['hyperlink']>) {
   }
 }
 
+function useSheetLinkInfo(link: string) {
+  const sheets = useUI((state) => state.sheets.listIncludingHidden)
+  const parsed = parseSheetLink(link)
+  if (!parsed) return null
+  const sheet = sheets.find((s) => s.id === parsed.sheetId)
+  return { sheetId: parsed.sheetId, sheetName: sheet?.name ?? null, isHidden: sheet?.hidden ?? false }
+}
+
 function LinkInfo({
   hyperlink,
   onRequestCloseNote,
@@ -223,14 +232,22 @@ function LinkInfo({
 }) {
   const { application } = useApplication()
   const link = getLink(hyperlink)
-  const url = link.startsWith('http') ? link : 'https://' + link
+  const sheetLinkInfo = useSheetLinkInfo(link)
+  const isInternal = isSheetLink(link)
+  const url = !isInternal ? (link.startsWith('http') ? link : 'https://' + link) : ''
   const isReadonly = useUI((state) => state.info.isReadonly)
+  const setActiveSheetId = useUI.$.sheets.setActiveId
+  const showSheet = useUI.$.sheets.show
+
+  const displayText = isInternal
+    ? (sheetLinkInfo?.sheetName ?? s('Unknown sheet'))
+    : link
 
   const { createNotification } = useNotifications()
   const copyLink = useCallback(() => {
-    copyTextToClipboard(url)
+    copyTextToClipboard(isInternal ? link : url)
     createNotification({ text: s('Copied') })
-  }, [createNotification, url])
+  }, [createNotification, isInternal, link, url])
 
   const selections = useUI((state) => state.legacy.selections)
   const removeLink = useCallback(() => {
@@ -244,27 +261,37 @@ function LinkInfo({
     onRequestCloseNote?.()
   }, [cell, onRequestCloseNote, openInsertLinkDialog])
 
+  const handleLinkClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault()
+      if (isInternal && sheetLinkInfo) {
+        if (sheetLinkInfo.isHidden) {
+          showSheet(sheetLinkInfo.sheetId)
+        }
+        setActiveSheetId(sheetLinkInfo.sheetId)
+      } else if (!isInternal) {
+        application.eventBus.publish({
+          type: OPEN_LINK_EVENT,
+          payload: { link: url },
+        })
+      }
+    },
+    [application, isInternal, setActiveSheetId, showSheet, sheetLinkInfo, url],
+  )
+
   return (
     <div className="bg-norm grid grid-cols-[1rem_1fr] gap-1.5 border-l-2 border-[#239ECE] p-2.5 pl-2">
-      <Icon legacyName="globe" className="place-self-center text-[#239ECE]" />
+      <Icon legacyName={isInternal ? 'grid-2' : 'globe'} className="place-self-center text-[#239ECE]" />
       <div className="flex items-center justify-between gap-4 text-[#239ECE]">
         <a
-          href={url}
+          href={isInternal ? undefined : url}
           className="max-w-[20ch] text-ellipsis text-xs font-semibold leading-5 underline focus-visible:shadow-none focus-visible:outline-none"
-          onClick={(e) => {
-            e.preventDefault()
-            application.eventBus.publish({
-              type: OPEN_LINK_EVENT,
-              payload: {
-                link: url,
-              },
-            })
-          }}
+          onClick={handleLinkClick}
         >
-          {link}
+          {displayText}
         </a>
         <div className="flex items-center gap-1">
-          <Button legacyIconName="squares" onClick={copyLink} disabled={isReadonly}>
+          <Button legacyIconName="squares" onClick={copyLink}>
             {s('Copy link')}
           </Button>
           <Button legacyIconName="pencil" onClick={editLink} disabled={isReadonly}>
@@ -286,6 +313,7 @@ function strings() {
     'Edit link': c('sheets_2025:Spreadsheet link tooltip').t`Edit link`,
     'Remove link': c('sheets_2025:Spreadsheet link tooltip').t`Remove link`,
     Removed: c('sheets_2025:Spreadsheet link tooltip').t`Link removed`,
+    'Unknown sheet': c('sheets_2025:Spreadsheet link tooltip').t`Unknown sheet`,
     Note: c('sheets_2025:Spreadsheet cell tooltip').t`Note`,
     Error: c('sheets_2025:Spreadsheet cell tooltip').t`Error`,
     Invalid: c('sheets_2025:Spreadsheet cell tooltip').t`Invalid`,
