@@ -11,9 +11,11 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { Unpack } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AccessTokens } from './Tabs/AccessTokens';
@@ -29,12 +31,15 @@ type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>
 const getSettingsTabs = (
     exportTab: ReactNode,
     orgEnabled: boolean = false,
-    aliasCreationDisabled: boolean = false
+    aliasCreationDisabled: boolean = false,
+    accessTokensEnabled: boolean = false
 ): SettingTab[] => [
     { hash: 'general', title: c('Label').t`General`, content: <General /> },
     ...(!aliasCreationDisabled ? [{ hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
-    { hash: 'access-tokens', title: c('pass_2026: Label').t`Access tokens`, content: <AccessTokens /> },
+    ...(accessTokensEnabled
+        ? [{ hash: 'access-tokens', title: c('pass_2026: Label').t`Access tokens`, content: <AccessTokens /> }]
+        : []),
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: exportTab },
     { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
@@ -68,10 +73,11 @@ export const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
 
     const organization = useOrganization();
     const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
 
     const tabs = useMemo(
-        () => getSettingsTabs(exportTab, organization?.settings.enabled, orgAliasCreationDisabled),
-        [organization]
+        () => getSettingsTabs(exportTab, organization?.settings.enabled, orgAliasCreationDisabled, accessTokensEnabled),
+        [organization, accessTokensEnabled]
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
