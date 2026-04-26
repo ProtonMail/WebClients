@@ -112,10 +112,10 @@ export default function useDrawer() {
 
 export const DrawerProvider = ({
     children,
-    defaultShowDrawerSidear,
+    defaultShowDrawerSidebar,
 }: {
     children: ReactNode;
-    defaultShowDrawerSidear?: boolean;
+    defaultShowDrawerSidebar?: boolean;
 }) => {
     const authentication = useAuthentication();
     const api = useApi();
