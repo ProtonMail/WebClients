@@ -10,9 +10,11 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { OrganizationAliasCreateMode } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 type MenuAction = {
     icon: IconName;
@@ -36,6 +38,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
+    const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
 
     const handleLogout = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
@@ -50,7 +53,9 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
                 ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' as const }]
                 : []),
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
-            { key: 'access-tokens', label: c('pass_2026: Label').t`Access tokens`, icon: 'key' },
+            ...(accessTokensEnabled
+                ? [{ key: 'access-tokens', label: c('pass_2026: Label').t`Access tokens`, icon: 'key' as const }]
+                : []),
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
             { key: 'account', label: c('Label').t`Account`, icon: 'arrow-within-square', onClick: navigateToAccount },
@@ -67,7 +72,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: handleLogout },
         ],
-        [orgEnabled, orgAliasCreationDisabled]
+        [orgEnabled, orgAliasCreationDisabled, accessTokensEnabled]
     );
 
     return (
