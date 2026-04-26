@@ -535,9 +535,6 @@
       "Set extra password": [
         "Nastavite dodatno geslo"
       ],
-      "Settings": [
-        "Nastavitve"
-      ],
       "Setup 2FA": [
         "Nastavitev 2FA"
       ],
@@ -818,9 +815,6 @@
       "Encrypted JSON not supported": [
         "Šifrirani JSON ni podprt"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Komunikacija za šifriranje za odklepanje namizne aplikacije je spodletela."
-      ],
       "Error reporting problem": [
         "Napaka pri prijavi težave"
       ],
@@ -1003,6 +997,9 @@
       ],
       "Unknown error": [
         "Neznana napaka"
+      ],
+      "Unknown error.": [
+        "Neznana napaka."
       ],
       "Unknown invite": [
         "Neznano povabilo"
@@ -1511,6 +1508,9 @@
       "Loading...": [
         "Nalaganje ..."
       ],
+      "Logging you out...": [
+        "Izpisovanje ..."
+      ],
       "Low Priority": [
         "Nizka pomembnost"
       ],
@@ -1789,12 +1789,6 @@
       ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Za dostop do identifikacijskih ključev odklenite ${ PASS_APP_NAME } z vašo PIN kodo"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Odklenite ${ PASS_APP_NAME } z vašo PIN kodo in shranili boste identifikacijski ključ"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odklenite ${ PASS_SHORT_APP_NAME } z geslom ${ BRAND_NAME }"

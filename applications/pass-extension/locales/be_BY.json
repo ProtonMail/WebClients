@@ -584,7 +584,7 @@
         "Абмежаваць колькасць праглядаў"
       ],
       "Resume monitoring": [
-        "Узнавіць назіранне"
+        "Узнавіць маніторынг"
       ],
       "Retry": [
         "Паўтарыць"
@@ -627,9 +627,6 @@
       ],
       "Set extra password": [
         "Задаць дадатковы пароль"
-      ],
-      "Settings": [
-        "Налады"
       ],
       "Setup 2FA": [
         "Наладжванне 2ФА"
@@ -948,6 +945,9 @@
       "Authentication failure: ${ message }": [
         "Збой аўтэнтыфікацыі: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Збой аўтэнтыфікацыі біяметрыі."
+      ],
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданім (${ error })."
       ],
@@ -1026,6 +1026,9 @@
       "Emptying trash failed": [
         "Збой ачысткі сметніцы"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Збой зашыфраваных зносін з праграмай для камп'ютара ${ PASS_APP_NAME }."
+      ],
       "Encrypted JSON not supported": [
         "Зашыфраваны JSON не падтрымліваецца"
       ],
@@ -1033,7 +1036,7 @@
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed removing the invite.": [
         "Збой выдалення запрашэння."
@@ -1266,6 +1269,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Нешта пайшло не так. Перазагрузіце пашырэнне ${ PASS_APP_NAME }. Гэта праблема была зарэгістравана"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } своечасова не адказвае."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
       ],
@@ -1274,6 +1280,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
       ],
       "The URL is in the list": [
         "URL-адрас знаходзіцца ў спісе"
@@ -1298,6 +1307,9 @@
       ],
       "Unknown error": [
         "Невядомая памылка"
+      ],
+      "Unknown error.": [
+        "Невядомая памылка."
       ],
       "Unknown invite": [
         "Невядомае запрашэнне"
@@ -2073,6 +2085,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Logging you out...": [
+        "Адбываецца выхад..."
+      ],
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
@@ -2574,6 +2589,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Каб сканфігурыраваць спалучэнні клавіш, перайдзіце па адрасе about:addons у Firefox і выберыце \"Кіраванне спалучэннямі клавіш пашырэння\""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
       ],
@@ -2597,12 +2615,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email і пашыранае кіраванне псеўданімам"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць доступ да сваіх ключоў"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"

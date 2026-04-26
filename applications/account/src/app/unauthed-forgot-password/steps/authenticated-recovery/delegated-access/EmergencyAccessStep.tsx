@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
@@ -12,6 +14,7 @@ import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/Delegated
 import { UserNameWithIcon } from '../../../../components/username/UserNameWithIcon';
 import Content from '../../../../public/Content';
 import Header from '../../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
 import YesNoButtons from './components/YesNoButtons';
@@ -19,6 +22,15 @@ import YesNoButtons from './components/YesNoButtons';
 export const EmergencyAccessStep = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { delegatedAccessContacts, resetResponse, username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: resetResponse
+                ? 'authenticatedRecoveryEmergencyAccessOffer'
+                : 'unauthenticatedRecoveryEmergencyAccessOffer',
+        });
+    }, []);
 
     const emergencyContacts = delegatedAccessContacts.filter(({ Types }) =>
         hasBit(Types, DelegatedAccessTypeEnum.EmergencyAccess)
@@ -33,7 +45,7 @@ export const EmergencyAccessStep = () => {
             />
             <Content>
                 <p className="mt-0">
-                    {resetResponse
+                    {resetResponse && emergencyContacts
                         ? getBoldFormattedText(
                               c('Info')
                                   .t`Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.`

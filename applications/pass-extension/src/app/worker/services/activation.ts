@@ -346,19 +346,20 @@ export const createActivationService = () => {
         }
     };
 
-    /** If the `current` flag is passed : resolve the active tab for the
-     * current window (ie when requesting the active tab for the popup).
-     * Else parse the sender data (ie: content-script) */
     const handleEndpointInit: MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT> = async (
         { payload },
         { tab, frameId = -1 }
     ) => {
         if (payload.popup) {
+            /** POPUP specific: the popup uses the same ENDPOINT_INIT sequence to setup its
+             * ExtensionContext. In this instance, the `tabUrl` and `frameUrl` will always
+             * refer to the underlying active tab below the popup. In the popup, this will
+             * be used for hydrating the initial filters and default URL on item creation. */
             const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
             if (!(current && current?.id)) throw new Error('No active tabs');
-            const url = parseUrl(current.url);
+            const tabUrl = parseUrl(current.url);
             const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
-            return { tabId: current.id, url, tabUrl: url, senderTabId, frameId };
+            return { tabId: current.id, frameUrl: tabUrl, tabUrl, senderTabId, frameId };
         }
 
         return resolveEndpointContext(tab, frameId);

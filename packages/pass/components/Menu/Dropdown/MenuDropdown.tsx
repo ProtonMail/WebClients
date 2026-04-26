@@ -12,6 +12,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
 import { MenuUser } from '@proton/pass/components/Menu/Dropdown/MenuUser';
 import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
@@ -19,6 +20,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useUserInitiatedLock } from '@proton/pass/hooks/auth/useUserInitiatedLock';
@@ -51,7 +53,9 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const navigate = useNavigate();
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToAdminPanel = useNavigateToAccount(AccountPath.USERS);
     const canLock = useSelector(selectLockEnabled);
+    const org = useOrganization();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
     const vaultMenu = usePopperAnchor<HTMLButtonElement>();
@@ -114,8 +118,18 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                         className="pt-1.5 pb-1.5"
                     />
 
+                    {org?.b2bAdmin && org.organization && (
+                        <DropdownMenuButton
+                            onClick={withAppMenuClose(navigateToAdminPanel)}
+                            ellipsis={false}
+                            icon="users"
+                            className="pt-1.5 pb-1.5"
+                            label={<AdminPanelLabel {...org.organization} />}
+                        />
+                    )}
+
                     <DropdownMenuButton
-                        onClick={withAppMenuClose(() => openSettings?.())}
+                        onClick={withAppMenuClose(() => openSettings())}
                         label={c('Label').t`Settings`}
                         icon={'cog-wheel'}
                         className="pt-1.5 pb-1.5"

@@ -1,6 +1,7 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { Engine } from '@proton/proton-foundation-search';
 import { CleanupEventKind } from '@proton/proton-foundation-search';
 
@@ -13,6 +14,16 @@ import { IndexKind, IndexRegistry } from '../../../index/IndexRegistry';
 import { CleanUpStaleBlobsTask } from './CleanUpStaleBlobsTask';
 
 setupRealSearchLibraryWasm();
+
+const identity = async (d: ArrayBuffer) => d;
+
+jest.mock('../../../../shared/errors', () => {
+    const actual = jest.requireActual('../../../../shared/errors');
+    return {
+        ...actual,
+        sendErrorReportForSearch: jest.fn(),
+    };
+});
 
 /** Drive the cleanup iterator with real blob loading and count Tracked events. */
 async function getTrackedBlobCount(engine: Engine, blobStore: IndexBlobStore): Promise<number> {
@@ -51,7 +62,8 @@ describe('CleanUpStaleBlobsTask', () => {
     beforeEach(async () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
-        indexRegistry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        indexRegistry = new IndexRegistry(cryptoKey);
     });
 
     it('completes without errors when no engines are registered', async () => {
@@ -81,8 +93,8 @@ describe('CleanUpStaleBlobsTask', () => {
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
 
         // Insert orphan blobs that the engine doesn't know about.
-        await db.putIndexBlob([IndexKind.MAIN, 'orphan-1'], new ArrayBuffer(8));
-        await db.putIndexBlob([IndexKind.MAIN, 'orphan-2'], new ArrayBuffer(16));
+        await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-1'], new ArrayBuffer(8), identity);
+        await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-2'], new ArrayBuffer(16), identity);
 
         const keysBefore = await db.getAllIndexBlobKeys();
         const legitimateKeys = keysBefore.filter(([, name]) => name !== 'orphan-1' && name !== 'orphan-2');
@@ -110,7 +122,7 @@ describe('CleanUpStaleBlobsTask', () => {
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
 
         // Insert an orphan under a different kind.
-        await db.putIndexBlob([OTHER_KIND, 'photos-orphan'], new ArrayBuffer(8));
+        await db.putEncryptedIndexBlob([OTHER_KIND, 'photos-orphan'], new ArrayBuffer(8), identity);
 
         const ctx = makeTaskContext({ indexRegistry, db });
         await new CleanUpStaleBlobsTask().execute(ctx);
@@ -130,7 +142,7 @@ describe('CleanUpStaleBlobsTask', () => {
         await indexDocuments(photos.indexWriter, [makeTestIndexEntry('photos-doc')]);
 
         // Insert orphan under photos kind.
-        await db.putIndexBlob([PHOTOS, 'photos-orphan'], new ArrayBuffer(8));
+        await db.putEncryptedIndexBlob([PHOTOS, 'photos-orphan'], new ArrayBuffer(8), identity);
 
         // Break the MAIN engine's cleanup by making it throw.
         jest.spyOn(main.engine, 'cleanup').mockImplementation(() => {
@@ -187,7 +199,7 @@ describe('CleanUpStaleBlobsTask', () => {
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
 
         // Insert an orphan that would normally be cleaned up.
-        await db.putIndexBlob([IndexKind.MAIN, 'orphan-busy'], new ArrayBuffer(8));
+        await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-busy'], new ArrayBuffer(8), identity);
 
         // Simulate write lock being held.
         jest.spyOn(instance.engine, 'cleanup').mockReturnValue(undefined);

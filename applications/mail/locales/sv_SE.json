@@ -322,6 +322,9 @@
       "Contract composer": [
         "Krymp redigeringsfönster"
       ],
+      "Copy": [
+        "Kopiera"
+      ],
       "Copy address": [
         "Kopiera adress"
       ],
@@ -1502,8 +1505,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4141,6 +4143,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Skicka och ta emot Gmail-korrespondens direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
@@ -4168,6 +4173,9 @@
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
@@ -4226,6 +4234,9 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Med anpassad snooze kan du dölja e-post och ställa in dem att dyka upp igen vid en bättre tid."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
+      ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan Gmail-adresser som vidarebefordras till ${ MAIL_APP_NAME }. Anslut en nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
       ],
@@ -4241,6 +4252,14 @@
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adress. Genom att ansluta den kommer du att kunna både ta emot och svara i ${ MAIL_APP_NAME }",
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adresser. Genom att ansluta dem kan du både ta emot och svara i ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adress. För att lägga till en till, inaktivera först ett av dina anslutna konton.",
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adresser. För att lägga till en till, inaktivera först ett av dina anslutna konton."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
@@ -4735,6 +4754,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Misslyckades att kryptera bilaga. Försök igen."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
@@ -5027,6 +5049,9 @@
       ],
       "Something went wrong while creating the address": [
         "Något gick fel när adressen skapades"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
@@ -7041,6 +7066,9 @@
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
       ],
+      "Copy to clipboard": [
+        "Kopiera till urklipp"
+      ],
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
       ],
@@ -7500,7 +7528,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -10962,8 +10991,8 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerade servrar optimerade för streaming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerade servrar optimerade för hastighet"
       ],
       "Desktop app": [
         "Skrivbordsapp"
@@ -12261,6 +12290,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -12702,11 +12734,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Namn"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
       ]
     },
     "Plan description": {
@@ -13258,9 +13285,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ]
     },
     "session_recovery:available:info": {
@@ -14229,6 +14253,10 @@
       "Version history": [
         "Versionshistorik"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare",
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare"
+      ],
       "Watch the interview": [
         "Se intervjun"
       ],
@@ -14440,9 +14468,6 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Canceling import": [
         "Avbryter import"

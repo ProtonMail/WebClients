@@ -3,8 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';
@@ -34,7 +36,7 @@ function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
         <SimpleDropdown
             type="button"
             hasCaret={false}
-            content={<Icon name="app-switch" size={6} className="apps-dropdown-button-icon shrink-0 no-print" />}
+            content={<IcAppSwitch size={6} className="apps-dropdown-button-icon shrink-0 no-print" />}
             className="apps-dropdown-button shrink-0"
             dropdownClassName="apps-dropdown rounded-lg"
             originalPlacement="bottom-start"
@@ -83,7 +85,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
                 aria-current={isAppMail}
                 data-testid="inbox-desktop-switch-mail-app"
             >
-                <Icon name="inbox" alt={MAIL_APP_NAME} className={clsx(isAppMail ? 'color-norm' : 'color-weak')} />
+                <IcInbox alt={MAIL_APP_NAME} className={clsx(isAppMail ? 'color-norm' : 'color-weak')} />
             </ButtonLike>
             <ButtonLike
                 onClick={() => handleClick('calendar')}
@@ -92,11 +94,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
                 aria-current={isAppCalendar}
                 data-testid="inbox-desktop-switch-calendar-app"
             >
-                <Icon
-                    name="calendar-grid"
-                    alt={CALENDAR_APP_NAME}
-                    className={clsx(isAppCalendar ? 'color-norm' : 'color-weak')}
-                />
+                <IcCalendarGrid alt={CALENDAR_APP_NAME} className={clsx(isAppCalendar ? 'color-norm' : 'color-weak')} />
             </ButtonLike>
         </div>
     );

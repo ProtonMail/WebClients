@@ -3734,9 +3734,6 @@
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować."
       ],
-      "Please generate keys before you try to change your password": [
-        "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
-      ],
       "Please select a country": [
         "Wybierz kraj"
       ],
@@ -7291,6 +7288,9 @@
       "Vault updated": [
         "Zaktualizowanie sejfu"
       ],
+      "Verification code sent.": [
+        "Kod weryfikacyjny został wysłany."
+      ],
       "Verification may take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
       ],
@@ -8188,6 +8188,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Free": [
+        "Za darmo"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -8518,6 +8521,9 @@
       "State": [
         "Stan"
       ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -8550,6 +8556,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlimited": [
+        "Bez limitu"
       ],
       "Upload 1 or more encryption keys": [
         "Prześlij co najmniej 1 klucz szyfrowania"
@@ -8604,6 +8613,9 @@
       ],
       "Why would you like to cancel?": [
         "Dlaczego chcesz anulować plan?"
+      ],
+      "Yes": [
+        "Tak"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Tak, chcę trwale usunąć konto i wszystkie dane z nim powiązane."
@@ -8739,9 +8751,6 @@
       ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
-      ],
-      "Common sign in issues": [
-        "Typowe problemy z logowaniem"
       ],
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
@@ -9503,9 +9512,6 @@
       ],
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
       ],
       "Desktop app": [
         "Aplikacja desktopowa"
@@ -11334,11 +11340,6 @@
         "Twoja brama do wolności w sieci"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "skontaktuj się"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
@@ -11544,9 +11545,6 @@
       "Verify now": [
         "Zweryfikuj"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Zweryfikuj adres pomocniczy: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Zweryfikować adres pomocniczy?"
       ],
@@ -11586,9 +11584,6 @@
       ],
       "Verify recovery phone?": [
         "Zweryfikować numer pomocniczy?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Zweryfikuj numer pomocniczy: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
@@ -11842,9 +11837,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Jeśli zapomnisz danych logowania, **metoda odzyskiwania konta i danych** **jest konieczna**, aby zresetować konto. W przeciwnym razie nie będziesz mógł uzyskać dostępu do swoich wiadomości, kontaktów, plików i haseł."
-      ],
-      "Invalid code": [
-        "Kod jest nieprawidłowy"
       ],
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
@@ -12116,9 +12108,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Odzyskiwanie konta nie jest dostępne dla starszych kluczy adresu"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Wygeneruj klucze, zanim zmienisz hasło"
       ]
     },
     "session_recovery:available:info": {

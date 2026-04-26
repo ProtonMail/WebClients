@@ -298,6 +298,7 @@ export const labelMessagesPending = (
     conversations.forEach((conversation) => {
         const messagesFromConversation = messages.filter((message) => message.ConversationID === conversation.ID);
         const unreadMessagesFromConversation = messagesFromConversation.filter((element) => element.Unread);
+        const conversationCategory = conversation.Labels?.find(({ ID }) => isCategoryLabel(ID));
 
         // Decrease
         conversation.Labels?.forEach((label) => {
@@ -406,10 +407,20 @@ export const labelMessagesPending = (
             if (label.ID !== messageFolderID) {
                 return;
             }
+            const categoryCounter =
+                conversationCategory && state.value?.find((counter) => counter.LabelID === conversationCategory.ID);
+
+            const shouldUpdateCategoryCounter =
+                conversationCategory && label.ID === MAILBOX_LABEL_IDS.INBOX && categoryCounter;
 
             // Else decrease count
             if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                 conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
+
+                // If we are moving all messages out from INBOX, also reduce category counters
+                if (shouldUpdateCategoryCounter) {
+                    categoryCounter.Total = safeDecreaseCount(categoryCounter.Total, 1);
+                }
             }
 
             if (
@@ -417,6 +428,11 @@ export const labelMessagesPending = (
                 unreadMessagesFromConversationInLabel.length > 0
             ) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+
+                // If we are moving all unread messages out from INBOX, also reduce category counters
+                if (shouldUpdateCategoryCounter) {
+                    categoryCounter.Unread = safeDecreaseCount(categoryCounter.Unread, 1);
+                }
             }
 
             const almostAllMailMessageCountState = state.value?.find(
@@ -458,27 +474,28 @@ export const labelMessagesPending = (
             }
         }
 
-        // When moving to INBOX, also increase category counters if the conversation was not already in INBOX
+        // When moving to INBOX, also increase category counters if needed
         if (destinationLabelID === MAILBOX_LABEL_IDS.INBOX) {
-            const conversationWasInInbox = conversation.Labels?.some(
-                (label) => label.ID === MAILBOX_LABEL_IDS.INBOX && (label.ContextNumMessages || 0) > 0
-            );
+            const conversationInboxMessages = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
+            const conversationInboxUnread = getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX);
 
-            if (!conversationWasInInbox) {
-                conversation.Labels?.forEach((label) => {
-                    if (isCategoryLabel(label.ID)) {
-                        const categoryCounter = state.value?.find((c) => c.LabelID === label.ID);
+            conversation.Labels?.forEach((label) => {
+                if (isCategoryLabel(label.ID)) {
+                    const categoryCounter = state.value?.find((c) => c.LabelID === label.ID);
 
-                        if (categoryCounter) {
+                    if (categoryCounter) {
+                        // Increase total if conversation had no messages in inbox
+                        if (conversationInboxMessages === 0) {
                             categoryCounter.Total = safeIncreaseCount(categoryCounter.Total, 1);
+                        }
 
-                            if (unreadMessagesFromConversation.length > 0) {
-                                categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
-                            }
+                        // Increase unread if conversation had no unread in inbox and we're moving unread messages in
+                        if (conversationInboxUnread === 0 && unreadMessagesFromConversation.length > 0) {
+                            categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
                         }
                     }
-                });
-            }
+                }
+            });
         }
     });
 };

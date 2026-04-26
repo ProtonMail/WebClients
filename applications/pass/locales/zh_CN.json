@@ -613,9 +613,6 @@
       "Set extra password": [
         "设置额外密码"
       ],
-      "Settings": [
-        "设置"
-      ],
       "Setup 2FA": [
         "设置 2FA"
       ],
@@ -1200,6 +1197,15 @@
       "Something went wrong. Please sign in again.": [
         "出错了。请重新登录。"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 桌面应用已锁定，必须解锁！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "未安装 ${ PASS_APP_NAME } 桌面应用！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 桌面应用无响应，是否仍在运行？"
+      ],
       "The session has expired. Please sign in again.": [
         "登录状态已过期，请重新登录。"
       ],
@@ -1223,6 +1229,9 @@
       ],
       "Unknown error": [
         "未知错误"
+      ],
+      "Unknown error.": [
+        "未知错误。"
       ],
       "Unknown invite": [
         "无效的邀请"
@@ -2970,12 +2979,6 @@
       ],
       "Generic CSV": [
         "通用 CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "开通 ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "开通 ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "立即体验"

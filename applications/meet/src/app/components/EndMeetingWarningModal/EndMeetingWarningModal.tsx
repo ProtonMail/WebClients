@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import warningImg from '@proton/styles/assets/img/meet/warning-icon.png';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import warningImg from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 
@@ -17,7 +18,17 @@ export const EndMeetingWarningModal = ({ onClose, onConfirm }: EndMeetingWarning
                     className="w-custom h-custom"
                     src={warningImg}
                     alt=""
-                    style={{ '--w-custom': '7.5rem', '--h-custom': '7.5rem' }}
+                    style={
+                        isMobile()
+                            ? {
+                                  '--w-custom': '3rem',
+                                  '--h-custom': '3rem',
+                              }
+                            : {
+                                  '--w-custom': '5rem',
+                                  '--h-custom': '5rem',
+                              }
+                    }
                 />
             }
             title={c('Info').t`End the meeting for everyone?`}

@@ -88,10 +88,6 @@
       "Add photos": [
         "Adicionar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adicionar a «${ album.name }» ( ${ album.photoCount } foto)",
-        "Adicionar a «${ album.name }» ( ${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -449,9 +445,6 @@
       "Get in touch": [
         "Entrar em contacto"
       ],
-      "Get link": [
-        "Obter ligação"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Obtenha armazenamento seguro por ${ simplePriceString }"
       ],
@@ -469,9 +462,6 @@
       ],
       "Go back": [
         "Voltar"
-      ],
-      "Go back to album “${ albumName }“": [
-        "Voltar ao álbum «${ albumName }»"
       ],
       "Go to ${ planOrAppName }": [
         "Ir para ${ planOrAppName }"
@@ -569,9 +559,6 @@
       "Load image": [
         "Carregar a imagem"
       ],
-      "Loading link": [
-        "A carregar ligação"
-      ],
       "Make a copy": [
         "realizar uma cópia"
       ],
@@ -586,9 +573,6 @@
       ],
       "Manage labels": [
         "Gerir etiquetas"
-      ],
-      "Manage link": [
-        "Gerir a ligação"
       ],
       "Manage share": [
         "Gerir a partilha"
@@ -5451,9 +5435,6 @@
       "Shared by ${ sharedBy }": [
         "Partilhado por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Partilhado por si"
-      ],
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
       ],
@@ -5738,9 +5719,6 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
-      "Untitled": [
-        "Sem título"
-      ],
       "Updating drive search...": [
         "Atualização da pesquisa na unidade..."
       ],
@@ -5803,9 +5781,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bem, acabou de aumentar o seu armazenamento para 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Temos problemas técnicos. Todas as ações relacionadas com os álbuns estão temporariamente desativadas."
       ],
       "We couldn’t process your payment.": [
         "Não é possível realizar o pagamento."
@@ -7480,9 +7455,6 @@
       "Data breach monitoring": [
         "Monitoramento dos incidentes de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
-      ],
       "Desktop app": [
         "Aplicação de desktop"
       ],
@@ -8138,32 +8110,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» foi eliminado."
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanentemente eliminado do lixo"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Erro ao criar \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Erro ao eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Erro ao eliminar \"${ name }\" permanentemente do lixo"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Erro ao mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Erro ao mover \"${ name }\" para o lixo"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" do lixo"
       ],
       "\"${ name }\" failed to be saved": [
         "Erro ao guardar \"${ name }\""
@@ -8171,14 +8119,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para o lixo"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado do lixo"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Erro ao renomear \"${ newName }\""
@@ -8213,10 +8155,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanentemente eliminado do lixo",
         "${ numberOfItems } itens permanentemente eliminados do lixo"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Erro ao eliminar ${ numberOfItems } item",
-        "Erro ao eliminar ${ numberOfItems } itens"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
@@ -8257,9 +8195,6 @@
       ],
       "Access updated": [
         "O acesso foi atualizado."
-      ],
-      "Album failed to be renamed": [
-        "Erro ao alterar o nome do álbum"
       ],
       "Album renamed successfully": [
         "O nome do álbum foi alterado."
@@ -8305,9 +8240,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Erro ao transferir os ficheiros: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Erro ao carregar os detalhes do convite"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
@@ -9126,11 +9058,6 @@
         "Nome"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacto"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mês",
@@ -9417,9 +9344,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperação de conta indisponível para chaves de endereços antigos"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Crie chaves antes de tentar alterar a sua palavra-passe."
       ]
     },
     "session_recovery:available:info": {

@@ -297,7 +297,7 @@ export function useAccessiblePlans({
             plansMap[PLANS.MAIL];
 
         const canChangeToLumoPlus = !hasLumoAddon(subscription) && !hasVisionary(subscription);
-        const showPlusPlan = plusPlan.Name !== PLANS.LUMO || canChangeToLumoPlus;
+        const showPlusPlan = plusPlan?.Name !== PLANS.LUMO || canChangeToLumoPlus;
 
         IndividualPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
@@ -339,7 +339,11 @@ export function useAccessiblePlans({
         plansMap[bundleProPlan],
     ]);
 
-    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+    const driveB2BPlans = filterPlans([
+        plansMap[PLANS.DRIVE_BUSINESS],
+        plansMap[bundleProPlan],
+        plansMap[PLANS.BUNDLE_BIZ_2025],
+    ]);
 
     const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
 

@@ -40,13 +40,14 @@ export const usePublicActions = () => {
 
     const handlePreview = (uid: string) => {
         const { itemUids, getFolderItem } = usePublicFolderStore.getState();
-        const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
 
+        const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
+        const canVerifySignature = isLoggedIn && publicRole === MemberRole.Editor;
         showPreviewModal({
             drive: getPublicLinkClient(),
             nodeUid: uid,
-            verifySignatures: isLoggedIn,
-            canOpenDetails: publicRole === MemberRole.Editor,
+            verifySignatures: canVerifySignature,
+            canOpenDetails: canVerifySignature,
             previewableNodeUids: Array.from(itemUids).filter((itemUid) => {
                 const item = getFolderItem(itemUid);
                 if (!item) {
@@ -96,8 +97,7 @@ export const usePublicActions = () => {
     };
 
     const handleDetails = (uid: string) => {
-        const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
-        showDetailsModal({ nodeUid: uid, drive: getPublicLinkClient(), verifySignatures: isLoggedIn });
+        showDetailsModal({ nodeUid: uid, drive: getPublicLinkClient() });
     };
 
     const handleRename = (uid: string) => {

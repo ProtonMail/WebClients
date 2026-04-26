@@ -1244,6 +1244,9 @@
         "${ users } यूज़र",
         "${ users } यूज़र"
       ],
+      "Total": [
+        "कुल"
+      ],
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
         "${ n } महीनों के लिए कुल"
@@ -4565,9 +4568,6 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
-      "VPN IP": [
-        "VPN IP"
-      ],
       "Warning": [
         "चेतावनी"
       ],
@@ -7015,11 +7015,6 @@
         "(बेनाम)"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "संपर्क करें"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } महीना",
@@ -7176,11 +7171,6 @@
     "session_recovery:available:action": {
       "Reset password": [
         "पासवर्ड रीसेट करें"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ]
     },
     "session_recovery:available:info": {
@@ -8358,9 +8348,6 @@
       "Exporting contacts": [
         "संपर्क निर्यात हो रहे हे"
       ],
-      "Get more from your VPN": [
-        "अपने VPN से और पाएं"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
       ],
@@ -8412,9 +8399,6 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
-      ],
-      "Mobile": [
-        "मोबाइल"
       ],
       "Network error": [
         "नेटवर्क एरर"

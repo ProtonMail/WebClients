@@ -25,7 +25,7 @@ interface Props extends ModalProps {
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
-    onBYOEWithImportCallback?: (hasError: boolean, token?: ImportToken) => void;
+    onBYOECallback?: (hasError: boolean, token?: ImportToken) => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
@@ -36,7 +36,7 @@ interface Props extends ModalProps {
 const GmailSyncModal = ({
     onSyncCallback,
     onSyncSkipCallback,
-    onBYOEWithImportCallback,
+    onBYOECallback,
     source,
     reduceHeight,
     noSkip,
@@ -81,9 +81,8 @@ const GmailSyncModal = ({
                 const sync = payload?.sync as Sync;
 
                 const hasError = res.type.endsWith('rejected');
+
                 if (!hasError) {
-                    rest?.onClose?.();
-                    onCloseCallback?.();
                     void onComplete?.();
                 }
                 onSyncCallback?.(hasError, sync);
@@ -105,16 +104,13 @@ const GmailSyncModal = ({
                         RedirectUri,
                         Source: source,
                         errorNotification: getBYOEFailNotification(),
+                        Features: [EASY_SWITCH_FEATURES.BYOE],
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const hasError = res.type.endsWith('rejected');
-                if (!hasError) {
-                    rest?.onClose?.();
-                    onCloseCallback?.();
-                }
-                onBYOEWithImportCallback?.(hasError, payload);
+                onBYOECallback?.(hasError, payload);
             },
         });
     };

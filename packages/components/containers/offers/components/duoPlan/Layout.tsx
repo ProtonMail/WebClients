@@ -4,9 +4,11 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { AmountAndCurrency, Currency } from '@proton/payments';
 import { CYCLE, PLANS } from '@proton/payments';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
@@ -99,15 +101,15 @@ const Layout = (props: OfferLayoutProps) => {
                     <p className="h1 lh120">{getSubTitle(isUsingMoreThan80PercentStorage)}</p>
                     <ul className="unstyled mt-3 mb-5">
                         <li className="flex flex-nowrap flex-row mb-2">
-                            <Icon name="users" className="shrink-0 mt-0.5 offer-feature-icon" />
+                            <IcUsers className="shrink-0 mt-0.5 offer-feature-icon" />
                             <span className="flex-1 pl-2">{getInfosUser()}</span>
                         </li>
                         <li className="flex flex-nowrap flex-row mb-2">
-                            <Icon name="storage" className="shrink-0 mt-0.5 offer-feature-icon" />
+                            <IcStorage className="shrink-0 mt-0.5 offer-feature-icon" />
                             <span className="flex-1 pl-2">{getStorage()}</span>
                         </li>
                         <li className="flex flex-nowrap flex-row mb-2">
-                            <Icon name="app-switch" className="shrink-0 mt-0.5 offer-feature-icon" />
+                            <IcAppSwitch className="shrink-0 mt-0.5 offer-feature-icon" />
                             <span className="flex-1 pl-2">{getInfos()}</span>
                         </li>
                     </ul>

@@ -13,13 +13,13 @@ interface AlbumMembersProps {
 }
 
 export const AlbumMembers = ({ onShare }: AlbumMembersProps) => {
-    const members = useAlbumsStore((state) => state.currentAlbum?.members);
+    const members = useAlbumsStore((state) => {
+        const uid = state.currentAlbumNodeUid;
+        return uid ? (state.albums.get(uid)?.members ?? []) : [];
+    });
     const [contactEmails] = useContactEmails();
 
     const membersWithName = useMemo(() => {
-        if (!members) {
-            return [];
-        }
         return members.map((member) => {
             const { contactName, contactEmail } = getContactNameAndEmail(member.inviteeEmail, contactEmails);
             return { email: member.inviteeEmail, contactName, contactEmail };

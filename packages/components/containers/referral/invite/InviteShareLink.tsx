@@ -5,23 +5,26 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import ReferralShareLinks from './inviteActions/ReferralShareLinks';
 import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
 
 const InviteShareLink = ({ className }: { className?: string }) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
+    const { sendCopyLinkPage } = useReferralTelemetry();
 
     const referrerLink = userSettings.Referral?.Link || '';
 
     const onCopyButtonClick = useCallback(
         throttle(
             () => {
+                sendCopyLinkPage();
                 textToClipboard(referrerLink);
                 createNotification({
                     text: c('Info').t`Referral link copied to your clipboard`,
@@ -30,7 +33,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
             1500,
             { leading: true, trailing: false }
         ),
-        [referrerLink]
+        [referrerLink, sendCopyLinkPage]
     );
 
     return (
@@ -50,7 +53,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
                         noDisabledStyles
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="squares" className="mr-2 shrink-0" /> {c('Button').t`Copy`}
+                            <IcSquares className="mr-2 shrink-0" /> {c('Button').t`Copy`}
                         </span>
                     </Button>
                 </div>

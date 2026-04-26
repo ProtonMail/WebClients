@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Step } from '@proton/atoms/Stepper/Step';
 import { Stepper, StepperPositionEnum } from '@proton/atoms/Stepper/Stepper';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { AppLink, Icon } from '@proton/components';
+import { AppLink } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
@@ -74,7 +75,7 @@ export const ModalHeaderWithStepper = <T extends string>({
                         data-testid="modal:close"
                         onClick={onClose}
                     >
-                        <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                        <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                     </Button>
                 </Tooltip>
             </div>

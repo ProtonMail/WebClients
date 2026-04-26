@@ -5,7 +5,8 @@ import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
@@ -29,6 +30,8 @@ import { ImportReport } from './ImportReport';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Import: FC = () => {
+    const offline = useOffline();
+
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
     const willSubmitResolver = useRef<(value: OnWillSubmitImportResult) => void>();
     const passphraseModal = useAsyncModalHandles<OnPassphraseImportResult>({ getInitialModalState: () => ({}) });
@@ -59,7 +62,7 @@ export const Import: FC = () => {
     if (!canCreateItem) {
         return (
             <Card className="flex items-center flex-nowrap w-full gap-3" type="primary">
-                <Icon name="info-circle-filled" size={5} className="shrink-0 mt-0.5" />
+                <IcInfoCircleFilled size={5} className="shrink-0 mt-0.5" />
                 <span>{c('Info').t`You need a vault with edit permission before you can import items.`}</span>
             </Card>
         );
@@ -108,7 +111,7 @@ export const Import: FC = () => {
                             <Button
                                 className="w-full mt-2"
                                 type="submit"
-                                disabled={busy || !form.isValid}
+                                disabled={offline || busy || !form.isValid}
                                 loading={busy}
                                 color="norm"
                             >
@@ -120,8 +123,9 @@ export const Import: FC = () => {
 
                 {importData !== null && (
                     <ImportVaultsPickerModal
-                        onClose={async () => willSubmitResolver.current?.({ ok: false })}
+                        disabled={offline}
                         payload={importData}
+                        onClose={() => willSubmitResolver.current?.({ ok: false })}
                         onSubmit={(payload) =>
                             willSubmitResolver?.current?.(
                                 payload.vaults.length === 0 ? { ok: false } : { ok: true, payload }

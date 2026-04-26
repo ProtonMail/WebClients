@@ -22,7 +22,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { PLANS } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -62,6 +62,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
         const welcome = new URLSearchParams(location.search).get('welcome') === 'true';
         /* Show upsell step for free plans but not just after signup as they just refuse it already */
         const showUpsell = isFreePlan && !welcome;
+        const planName = PLAN_NAMES[selected];
 
         return [
             {
@@ -104,10 +105,7 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                 description: OnboardingUpgrade.Description,
                 action: navigateToUpgrade,
                 actionClassName: 'button-invert',
-                actionText:
-                    selected === PLANS.PASS
-                        ? c('Label').t`Get ${PASS_SHORT_APP_NAME} Plus`
-                        : c('Label').t`Get ${PASS_SHORT_APP_NAME} Unlimited`,
+                actionText: c('Upsell').t`Get ${planName}`,
                 title: c('Label').t`Unlock premium features`,
                 withHeader: true,
             },

@@ -5,6 +5,10 @@ import { c, msgid } from 'ttag';
 
 import { sessionRecoveryChangePassword } from '@proton/account/password/sessionRecoveryChangePassword';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
+import {
+    useIsSessionRecoveryInitiatedByCurrentSession,
+    useSessionRecoveryInsecureTimeRemaining,
+} from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
@@ -18,10 +22,6 @@ import PasswordWithPolicyInputs from '@proton/components/components/passwordPoli
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import {
-    useIsSessionRecoveryInitiatedByCurrentSession,
-    useSessionRecoveryInsecureTimeRemaining,
-} from '@proton/components/hooks/useSessionRecovery';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

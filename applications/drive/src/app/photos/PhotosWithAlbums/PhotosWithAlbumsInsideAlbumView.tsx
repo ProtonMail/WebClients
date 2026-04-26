@@ -1,22 +1,20 @@
 import type { FC } from 'react';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useOutletContext, useParams, useSearchParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useConfig } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
-import { loadAlbum } from '../loaders/loadAlbum';
 import { useAlbumsStore } from '../useAlbums.store';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
@@ -50,11 +48,13 @@ const useAppTitleUpdate = () => {
 
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     const [searchParams, setSearchParams] = useSearchParams();
-    const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
-    const photoCount = useAlbumsStore((state) => state.currentAlbum?.photoCount ?? 0);
+    const { albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    const photoCount = useAlbumsStore((state) => {
+        const uid = state.currentAlbumNodeUid;
+        return (uid ? state.albums.get(uid)?.photoCount : undefined) ?? 0;
+    });
 
     const { setPreviewNodeUid, modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -65,12 +65,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const {
         linkId,
-        albums,
 
         albumPhotos,
-
-        isAlbumsLoading,
-        isAlbumPhotosLoading,
 
         albumPhotosNodeUidToIndexMap,
         photoNodeUidToIndexMap,
@@ -86,8 +82,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const isShiftPressed = useShiftKey();
 
-    const [isInitialized, setIsInitialized] = useState<boolean>(false);
-    const { navigateToAlbum } = useNavigate();
+    const { navigateToNodeUid } = useNavigate();
 
     const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
         enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
@@ -105,12 +100,14 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         []
     );
 
-    const album = useMemo(() => {
-        if (!albumLinkId) {
-            return undefined;
-        }
-        return albums.find((album) => album.linkId === albumLinkId);
-    }, [albums, albumLinkId]);
+    const { album, isLoading } = useAlbumsStore(
+        useShallow((state) => {
+            const album = state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
+            // Skip the full-page loader if we already have cached photo uids for this album.
+            const isLoading = state.isLoading && album?.photoNodeUids === undefined;
+            return { isLoading, album };
+        })
+    );
 
     const isAlbumPhotosEmpty = album?.photoCount === 0;
     const albumName = album?.name;
@@ -124,50 +121,36 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useEffect(() => {
         if (album && albumShareId) {
             if (searchParams.has('openShare')) {
-                modals.linkSharing?.({
-                    nodeUid: generateNodeUid(album.volumeId, album.linkId),
-                    drive: getDriveForPhotos(),
-                });
+                modals.linkSharing?.({ nodeUid: album.nodeUid, drive: getDriveForPhotos() });
                 searchParams.delete('openShare');
                 setSearchParams(searchParams);
             }
         }
     }, [albumShareId, album, searchParams, setSearchParams, modals]);
 
-    const uploadLinkId = useMemo(() => {
-        // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
-        // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
-        return album?.permissions.isOwner ? linkId : albumLinkId || linkId;
-    }, [album?.permissions.isOwner, linkId, albumLinkId]);
-
+    const albumVolumeIdRef = useRef<string | undefined>(undefined);
     useEffect(() => {
-        if (isAlbumsLoading === false && isAlbumPhotosLoading === false) {
-            setIsInitialized(true);
-        }
-    }, [isAlbumsLoading, isAlbumPhotosLoading]);
-
-    useEffect(() => {
-        if (!album?.volumeId) {
+        if (!album?.nodeUid) {
             return;
         }
 
-        const albumNodeUid = generateNodeUid(album.volumeId, album.linkId);
+        const { volumeId: albumVolumeId } = splitNodeUid(album.nodeUid);
+        albumVolumeIdRef.current = albumVolumeId;
 
-        const abortController = new AbortController();
-        void loadAlbum(albumNodeUid, abortController.signal);
-
-        // TODO: Use proper treeEventScopeId once albums are migrated to SDK
-        const treeEventScopeId = album.volumeId;
         const context = `album-photos`;
-        getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
+        getBusDriver().subscribePhotosEventsScope(albumVolumeId, context);
         return () => {
-            abortController.abort();
-            useAlbumsStore.getState().clearCurrentAlbum();
-            void getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
+            void getBusDriver().unsubscribeSdkEventsScope(albumVolumeId, context, 'photos');
         };
-    }, [album?.volumeId, album?.linkId]);
+    }, [album?.nodeUid]);
 
-    if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
+    useEffect(() => {
+        return () => {
+            useAlbumsStore.getState().clearCurrentAlbum();
+        };
+    }, []);
+
+    if (isLoading || !linkId || !album) {
         return <Loader />;
     }
 
@@ -177,9 +160,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             {isAlbumPhotosEmpty ? (
                 <div className="flex flex-column flex-nowrap p-4 w-full h-full">
                     <AlbumEmptyView
-                        album={album}
+                        nodeUid={album.nodeUid}
                         onAddAlbumPhotos={() => {
-                            navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                            void navigateToNodeUid(album.nodeUid, getDriveForPhotos(), '', {
+                                addPhotos: true,
+                            });
                         }}
                     />
                 </div>
@@ -188,7 +173,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     data={albumPhotos}
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                    isLoading={isAlbumsLoading}
+                    isLoading={isLoading}
                     onItemClick={setPreviewNodeUid}
                     //TODO: Remove that any
                     selectedItems={selectedItems as any}
@@ -197,20 +182,22 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? toggleFavorite : undefined}
+                    onFavorite={toggleFavorite}
                     rootLinkId={linkId}
                 >
                     <AlbumCoverHeader
-                        album={album}
+                        nodeUid={album.nodeUid}
                         photoCount={photoCount}
                         onShare={() => {
                             modals.linkSharing?.({
-                                nodeUid: generateNodeUid(album.volumeId, album.linkId),
+                                nodeUid: album.nodeUid,
                                 drive: getDriveForPhotos(),
                             });
                         }}
                         onAddAlbumPhotos={() => {
-                            navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                            void navigateToNodeUid(album.nodeUid, getDriveForPhotos(), '', {
+                                addPhotos: true,
+                            });
                         }}
                     />
                 </PhotosInsideAlbumsGrid>

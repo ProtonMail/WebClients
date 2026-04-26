@@ -1,9 +1,10 @@
 import { useUser } from '@proton/account/user/hooks';
+import Modal from '@proton/components/components/modalTwo/Modal';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import type { FeedbackDowngradeData } from '@proton/payments';
+import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
-import type { FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
-import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
+import type { FeedbackDowngradeResult } from '../content/FeedbackDowngradeContent';
+import FeedbackDowngradeContent, { isKeepSubscription } from '../content/FeedbackDowngradeContent';
 import type { CancellationStep, CancellationStepConfig } from './types';
 
 interface FeedbackStepKept {
@@ -21,8 +22,12 @@ export const useFeedbackStep = ({ canShow }: CancellationStepConfig): Cancellati
     const [user] = useUser();
     const [feedbackModal, showFeedbackModal] = useModalTwoPromise<undefined, FeedbackDowngradeResult>();
 
-    const modal = feedbackModal((props) => {
-        return <FeedbackDowngradeModal user={user} {...props} />;
+    const modal = feedbackModal(({ onResolve, onReject, onClose, ...modalProps }) => {
+        return (
+            <Modal data-testid="help-improve" size="xlarge" onClose={onClose} {...modalProps}>
+                <FeedbackDowngradeContent user={user} onResolve={onResolve} onClose={onClose} />
+            </Modal>
+        );
     });
 
     const show = async (): Promise<FeedbackStepResult> => {

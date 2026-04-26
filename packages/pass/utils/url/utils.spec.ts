@@ -1,12 +1,9 @@
-import { parseUrl } from '@proton/pass/utils/url/parser';
-
 import {
     UNSUPPORTED_SCHEMES,
     globToRegExp,
     intoCleanHostname,
     intoDomainImageHostname,
     intoDomainWithPort,
-    isSupportedSenderUrl,
     isTotpUri,
     isValidURLScheme,
     urlEq,
@@ -63,16 +60,6 @@ describe('URL utils', () => {
             const b = { domain: 'example.com', port: '443', protocol: 'http:' };
             expect(urlEq(a, b)).toBe(false);
         });
-    });
-
-    describe('`isSupportedSenderUrl`', () => {
-        test.each([
-            ['http://example.com', true],
-            ['https://example.com:443', true],
-            ['https://subdomain.example.com', true],
-            ['https://', false],
-            ['invalid url', false],
-        ])('"%s" returns %s', (url, expected) => expect(isSupportedSenderUrl(parseUrl(url))).toBe(expected));
     });
 
     describe('`intoCleanHostname`', () => {

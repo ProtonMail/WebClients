@@ -88,9 +88,9 @@
       "Add photos": [
         "Afegeix fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Afegeix a «${ album.name }» (${ album.photoCount } foto)",
-        "Afegeix a «${ album.name }» (${ album.photoCount } fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Afegiu (${ photoCount } foto) a \"${ name }\"",
+        "Afegiu (${ photoCount } fotos) a \"${ name }\""
       ],
       "Add to album": [
         "Afegeix a l'àlbum"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Contacte"
       ],
-      "Get link": [
-        "Obtén l'enllaç"
-      ],
       "Get mobile and desktop apps": [
         "Obtingueu les aplicacions mòbils i d'escriptori"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Torna enrere"
       ],
-      "Go back to album “${ albumName }“": [
-        "Torna a l'àlbum «${ albumName }»"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Torneu a l'àlbum \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
@@ -644,9 +641,6 @@
       "Load image": [
         "Carrega la imatge"
       ],
-      "Loading link": [
-        "S'està carregant l'enllaç."
-      ],
       "Make a copy": [
         "Fes una còpia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Gestiona les etiquetes"
-      ],
-      "Manage link": [
-        "Gestiona l'enllaç"
       ],
       "Manage share": [
         "Gestiona la compartició"
@@ -802,6 +793,9 @@
       ],
       "Quit": [
         "Surt"
+      ],
+      "Re-index": [
+        "Tornar a indexar"
       ],
       "Re-sign": [
         "Tornar a signar"
@@ -3522,6 +3516,9 @@
       "Failed to load signature details, please try again later": [
         "No s'han pogut carregar els detalls de la signatura, torneu-ho a provar més tard."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -4904,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "S'ha eliminat ${ albumName }"
       ],
+      "${ albums } album": [
+        "${ albums } àlbum",
+        "${ albums } àlbums"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4987,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista prèvia de baixa resolució"
       ],
+      "${ files } file": [
+        "${ files } fitxer",
+        "${ files } fitxers"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetes"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -5020,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elements"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -5762,6 +5775,18 @@
       "Index is empty.": [
         "L'índex és buit."
       ],
+      "Indexed ${ first }": [
+        "Indexat ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexat ${ first } i ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexat ${ first }, ${ second } i ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexació en curs"
       ],
@@ -5788,6 +5813,9 @@
       ],
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
+      ],
+      "Invitation confirmed": [
+        "Invitació confirmada"
       ],
       "Invite link copied": [
         "S'ha copiat l'enllaç de la invitació."
@@ -5978,6 +6006,9 @@
       ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
+      ],
+      "No populator states found.": [
+        "No s'han trobat estats d'emplenament."
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
@@ -6319,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Compartit per ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartit per vós"
-      ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
       ],
@@ -6648,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Tipus de fitxer no admès per a Fotos"
       ],
-      "Untitled": [
-        "Sense títol"
-      ],
       "Update required": [
         "Es requereix una actualització"
       ],
@@ -6725,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Heu augmentat l'emmagatzematge a 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Tenim problemes tècnics. Les accions relacionades amb els àlbums estan desactivades temporalment."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
@@ -8709,8 +8731,8 @@
       "Data retention policies": [
         "Polítiques de conservació de dades"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidors dedicats optimitzats per a estríming"
+      "Dedicated servers optimized for speed": [
+        "Servidors dedicats optimitzats per més rapidesa"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -9389,38 +9411,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "S'ha copiat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "S'ha eliminat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "S'ha eliminat permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "No s'ha pogut eliminar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "No s'ha pogut eliminar permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "No s'ha pogut moure \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "No s'ha pogut restaurar \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "S'ha restaurat \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "S'ha mogut \"${ ellipsedName }\" correctament"
+      ],
       "\"${ fileName }\" shared": [
         "S'ha compartit \"${ fileName }\""
-      ],
-      "\"${ name }\" created successfully": [
-        "S'ha creat \"${ name }\""
-      ],
-      "\"${ name }\" deleted": [
-        "S'ha eliminat «${ name }»."
       ],
       "\"${ name }\" deleted permanently": [
         "S'ha eliminat \"${ name }\" permanentment"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "No s'ha pogut crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "No s'ha pogut eliminar «${ name }»."
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "No s'ha pogut eliminar ${ name } de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "No s'ha pogut moure \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "No s'ha pogut moure \"${ name }\" a la paperera."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "No s'ha pogut restaurar ${ name } de la paperera."
       ],
       "\"${ name }\" failed to be saved": [
         "No s'ha pogut desar \"${ name }\""
@@ -9428,17 +9462,8 @@
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
       ],
-      "\"${ name }\" restored from trash": [
-        "S'ha restaurat \"${ name }\" de la paperera"
-      ],
       "\"${ name }\" saved successfully": [
         "S'ha desat \"${ name }\""
-      ],
-      "\"${ name }\" successfully copied": [
-        "«${ name }» s'ha copiat correctament"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"S'ha mogut ${ name }"
       ],
       "\"${ newName }\" failed to be renamed": [
         "No s'ha pogut canviar el nom de \"${ newName }\""
@@ -9453,6 +9478,10 @@
       "${ errors.length } item failed to be copied": [
         "No s'ha pogut copiar ${ errors.length } element",
         "No s'han pogut copiar ${ errors.length } elements"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "No s'ha pogut eliminar ${ errors.length } element",
+        "No s'han pogut eliminar ${ errors.length } elements"
       ],
       "${ errors.length } item failed to be trashed": [
         "No s'ha pogut moure ${ errors.length } element a la paperera",
@@ -9478,6 +9507,10 @@
         "S'ha mogut ${ numberOfItems } element copiat a la paperera",
         "S'han mogut ${ numberOfItems } elements copiats a la paperera"
       ],
+      "${ numberOfItems } item copied": [
+        "S'ha copiat ${ numberOfItems } element",
+        "S'han copiat ${ numberOfItems } elements"
+      ],
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
         "S'han eliminat ${ numberOfItems } elements"
@@ -9489,10 +9522,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
         "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "No s'ha pogut eliminar ${ numberOfItems } element.",
-        "No s'han pogut eliminar ${ numberOfItems } elements."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
@@ -9510,6 +9539,10 @@
         "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
         "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
       ],
+      "${ numberOfItems } item moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
       "${ numberOfItems } item moved to trash": [
         "S'ha mogut ${ numberOfItems } element a la paperera",
         "S'han mogut ${ numberOfItems } elements a la paperera"
@@ -9517,10 +9550,6 @@
       "${ numberOfItems } item restored from trash": [
         "S'ha restaurat ${ numberOfItems } element de la paperera",
         "S'han restaurat ${ numberOfItems } elements de la paperera"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "S'ha copiat correctament ${ numberOfItems } element",
-        "S'han copiat correctament ${ numberOfItems } elements"
       ],
       "${ numberOfItems } item successfully moved": [
         "S'ha mogut ${ numberOfItems } element",
@@ -9537,9 +9566,6 @@
       ],
       "Access updated": [
         "S'ha actualitzat l'accés."
-      ],
-      "Album failed to be renamed": [
-        "No s'ha pogut canviar el nom de l'àlbum."
       ],
       "Album renamed successfully": [
         "S'ha canviat el nom de l'àlbum."
@@ -9562,8 +9588,8 @@
       "Contact group updated": [
         "Grup de contactes actualitzat"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "La còpia de \"${ name }\" s'ha mogut a la paperera"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La còpia de \"${ ellipsedName }\" s'ha mogut a la paperera"
       ],
       "Device failed to be removed": [
         "No s'ha pogut esborrar el dispositiu."
@@ -9591,9 +9617,6 @@
       ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "No s'han pogut carregar els detalls de l'invitació."
       ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
@@ -9724,6 +9747,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "S'ha canviat el nom de l'àlbum correctament"
       ]
     },
     "Oauth instructions": {
@@ -10266,6 +10294,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
+      ],
       "Got it": [
         "Fet"
       ],
@@ -10658,11 +10689,6 @@
         "Nom"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
@@ -10946,9 +10972,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperació del compte no està disponible per a les claus d'adreces antigues"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereu claus abans d'intentar canviar la contrasenya"
       ]
     },
     "session_recovery:available:info": {
@@ -11583,6 +11606,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
       ],
@@ -11814,6 +11843,10 @@
       "Version history": [
         "Historial de versions"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
+      ],
       "Watch the interview": [
         "Mireu l'entrevista"
       ],
@@ -11978,9 +12011,6 @@
       ],
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
-      ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
       ],
       "Canceling import": [
         "S'està cancel·lant la importació"
@@ -12700,6 +12730,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importeu les dades a ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Emplenadors de l'índex"
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"

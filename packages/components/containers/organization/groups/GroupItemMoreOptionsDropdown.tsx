@@ -4,9 +4,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import DeleteGroupPrompt from './DeleteGroupPrompt';
@@ -60,7 +61,7 @@ const GroupItemMoreOptionsDropdown = ({
                     title={c('Action').t`More options`}
                     aria-expanded={isOpen}
                 >
-                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                    <IcThreeDotsVertical alt={c('Action').t`More options`} />
                 </Button>
             )}
             {canOnlyDelete && (
@@ -71,7 +72,7 @@ const GroupItemMoreOptionsDropdown = ({
                     onClick={() => deleteGroupPrompt.openModal(true)}
                     title={c('Action').t`Delete group`}
                 >
-                    <Icon name="trash" alt={c('Action').t`Delete group`} />
+                    <IcTrash alt={c('Action').t`Delete group`} />
                 </Button>
             )}
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">

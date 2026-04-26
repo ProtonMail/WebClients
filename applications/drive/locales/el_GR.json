@@ -88,9 +88,9 @@
       "Add photos": [
         "Προσθήκη φωτογραφιών"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφία)",
-        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφίες)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφία)",
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφίες)"
       ],
       "Add to album": [
         "Προσθήκη στο άλμπουμ"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Επικοινωνήστε"
       ],
-      "Get link": [
-        "Λήψη συνδέσμου"
-      ],
       "Get mobile and desktop apps": [
         "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Επιστροφή"
       ],
-      "Go back to album “${ albumName }“": [
-        "Επιστροφή στο άλμπουμ “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Επιστροφή στο άλμπουμ “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Πηγαίνετε στο ${ planOrAppName }"
@@ -644,9 +641,6 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
-      "Loading link": [
-        "Φόρτωση συνδέσμου"
-      ],
       "Make a copy": [
         "Κάντε ένα αντίγραφο"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Διαχείριση ετικετών"
-      ],
-      "Manage link": [
-        "Διαχείριση συνδέσμου"
       ],
       "Manage share": [
         "Διαχείριση κοινοποίησης"
@@ -802,6 +793,9 @@
       ],
       "Quit": [
         "Έξοδος"
+      ],
+      "Re-index": [
+        "Επαναδημιουργία ευρετηρίου"
       ],
       "Re-sign": [
         "Επανασυνδεθείτε"
@@ -3522,6 +3516,9 @@
       "Failed to load signature details, please try again later": [
         "Αποτυχία φόρτωσης λεπτομερειών υπογραφής, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
@@ -3999,7 +3996,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
@@ -4904,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } διαγράφηκε με επιτυχία"
       ],
+      "${ albums } album": [
+        "${ albums } άλμπουμ",
+        "${ albums } άλμπουμ"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -4987,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
+      "${ files } file": [
+        "${ files } αρχείο",
+        "${ files } αρχεία"
+      ],
+      "${ folders } folder": [
+        "${ folders } φάκελος",
+        "${ folders } φάκελοι"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
@@ -5020,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } στοιχείο",
         "${ photoCount } στοιχεία"
+      ],
+      "${ photos } photo": [
+        "${ photos } φωτογραφία",
+        "${ photos } φωτογραφίες"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -5762,6 +5775,18 @@
       "Index is empty.": [
         "Ο ευρετήριο είναι άδειο."
       ],
+      "Indexed ${ first }": [
+        "Ενημέρωση ευρετηρίου ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Ενημέρωση ευρετηρίου ${ first } και ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Ενημέρωση ευρετηρίου ${ first }, ${ second } και ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Ενημέρωση ευρετηρίου ${ first }, ${ second }, ${ third } και ${ fourth }"
+      ],
       "Indexing in progress": [
         "Ευρετηρίαση σε εξέλιξη"
       ],
@@ -5788,6 +5813,9 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
+      ],
+      "Invitation confirmed": [
+        "Η πρόσκληση επιβεβαιώθηκε"
       ],
       "Invite link copied": [
         "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
@@ -5978,6 +6006,9 @@
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
+      ],
+      "No populator states found.": [
+        "Δε βρέθηκε κατάσταση διεργασίας δημιουργίας ευρετηρίου"
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -6319,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Κοινοποιήθηκε από τον/την ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Κοινοποιημένο από εσάς"
-      ],
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
       ],
@@ -6648,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Μη υποστηριζόμενος τύπος αρχείου για Φωτογραφίες"
       ],
-      "Untitled": [
-        "Χωρίς τίτλο"
-      ],
       "Update required": [
         "Απαιτείται ενημέρωση"
       ],
@@ -6725,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Συγχαρητήρια, μόλις αυξήσατε τον αποθηκευτικό σας χώρο στα 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Αντιμετωπίζουμε τεχνικά προβλήματα. Οι ενέργειες που σχετίζονται με άλμπουμ είναι προσωρινά απενεργοποιημένες."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ node.name }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
@@ -8649,8 +8671,8 @@
       "Data retention policies": [
         "Πολιτικές διατήρησης δεδομένων"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
@@ -9329,38 +9351,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "Το \"${ ellipsedName }\" αντιγράφηκε"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "Το \"${ ellipsedName }\" διαγράφηκε"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "Το \"${ ellipsedName }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Αποτυχία διαγραφής του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Αποτυχία οριστικής διαγραφής του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Αποτυχία μετακίνησης του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Αποτυχία επαναφοράς του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Το \"${ ellipsedName }\" μετακινήθηκε"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "Το \"${ ellipsedName }\" επαναφέρθηκε από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "Επιτυχής μετακίνηση του \"${ ellipsedName }\""
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" κοινοποιήθηκε"
-      ],
-      "\"${ name }\" created successfully": [
-        "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" διαγράφηκε"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" διαγράφηκε οριστικά"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Αποτυχία δημιουργίας του \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" απέτυχε να διαγραφεί"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Αποτυχία οριστικής διαγραφής του \"${ name }\" από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Αποτυχία μετακίνησης του \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Αποτυχία μετακίνησης του \"${ name }\" στα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Αποτυχία επαναφοράς του \"${ name }\" από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be saved": [
         "Το \"${ name }\" απέτυχε να αποθηκευτεί"
@@ -9368,17 +9402,8 @@
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
       ],
-      "\"${ name }\" restored from trash": [
-        "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
-      ],
       "\"${ name }\" saved successfully": [
         "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" αντιγράφηκε επιτυχώς"
-      ],
-      "\"${ name }\" successfully moved": [
-        "Επιτυχής μετακίνηση του \"${ name }\""
       ],
       "\"${ newName }\" failed to be renamed": [
         "Αποτυχία μετονομασίας σε \"${ newName }\""
@@ -9393,6 +9418,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } στοιχείο απέτυχε να αντιγραφεί",
         "${ errors.length } στοιχεία απέτυχαν να αντιγραφούν"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } στοιχείο απέτυχε να διαγραφεί",
+        "${ errors.length } στοιχεία απέτυχαν να διαγραφούν"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } στοιχείο απέτυχε να μετακινηθεί στον κάδο απορριμμάτων",
@@ -9418,6 +9447,10 @@
         "${ numberOfItems } αντιγραμμένο στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
         "${ numberOfItems } αντιγραμμένα στοιχεία μετακινήθηκαν στον κάδο απορριμμάτων"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } στοιχείο αντιγράφηκε",
+        "${ numberOfItems } στοιχεία αντιγράφηκαν"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
         "${ numberOfItems } στοιχεία διαγράφηκαν"
@@ -9429,10 +9462,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία εξαλείφθηκαν οριστικά από τα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } στοιχείο απέτυχε να διαγραφεί",
-        "${ numberOfItems } στοιχεία απέτυχαν να διαγραφούν"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείου από τα Διαγραμμένα",
@@ -9450,6 +9479,10 @@
         "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείου από τα Διαγραμμένα",
         "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείων από τα Διαγραμμένα"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } στοιχείο μετακινήθηκε στα Διαγραμμένα",
         "${ numberOfItems } στοιχεία μετακινήθηκαν στα Διαγραμμένα"
@@ -9457,10 +9490,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } στοιχείο αντιγράφηκε επιτυχώς",
-        "${ numberOfItems } στοιχεία αντιγράφηκαν επιτυχώς"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
@@ -9477,9 +9506,6 @@
       ],
       "Access updated": [
         "Η πρόσβαση ενημερώθηκε"
-      ],
-      "Album failed to be renamed": [
-        "Το άλμπουμ απέτυχε να μετονομαστεί"
       ],
       "Album renamed successfully": [
         "Το άλμπουμ μετονομάστηκε με επιτυχία"
@@ -9502,8 +9528,8 @@
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Αντίγραφο του \"${ name }\" μετακινήθηκε στον κάδο απορριμμάτων"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Αντίγραφο του \"${ ellipsedName }\" μετακινήθηκε στον κάδο απορριμμάτων"
       ],
       "Device failed to be removed": [
         "Αποτυχία αφαίρεσης συσκευής"
@@ -9531,9 +9557,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Αποτυχία φόρτωσης λεπτομερειών πρόσκλησης"
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
@@ -9664,6 +9687,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Ορισμένες εικόνες δε μεταφορτώθηκαν λόγω διπλότυπων ονομάτων αρχείων στην τρέχουσα επιλογή."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Το άλμπουμ μετονομάστηκε με επιτυχία"
       ]
     },
     "Oauth instructions": {
@@ -10206,6 +10234,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -10598,11 +10629,6 @@
         "Όνομα"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "επικοινωνήστε"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
@@ -10886,9 +10912,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Η ανάκτηση λογαριασμού δεν είναι διαθέσιμη για κλειδιά διευθύνσεων παλαιού τύπου"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ]
     },
     "session_recovery:available:info": {
@@ -11523,6 +11546,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
       ],
@@ -11754,6 +11783,10 @@
       "Version history": [
         "Ιστορικό εκδόσεων"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχων",
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχοντες"
+      ],
       "Watch the interview": [
         "Δείτε τη συνέντευξη"
       ],
@@ -11917,9 +11950,6 @@
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
       ],
       "Billing details updated": [
-        "Τα στοιχεία χρέωσης ενημερώθηκαν"
-      ],
-      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Canceling import": [
@@ -12640,6 +12670,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Δημιουργοί ευρετηρίου"
       ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"

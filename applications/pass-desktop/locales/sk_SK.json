@@ -640,9 +640,6 @@
       "Set extra password": [
         "Nastaviť dodatočné heslo"
       ],
-      "Settings": [
-        "Nastavenia"
-      ],
       "Setup 2FA": [
         "Nastaviť 2FA"
       ],
@@ -971,6 +968,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje druhé heslo, ak chcete pokračovať v exporte"
       ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
       "Cannot send invitation at the moment": [
         "Momentálne nie je možné odoslať pozvánku",
         "Momentálne nie je možné odoslať pozvánky",
@@ -1046,11 +1046,11 @@
       "Emptying trash failed": [
         "Vyprázdňovanie koša zlyhalo"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON nie je podporovaný"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "''Odblokovanie pracovnej plochy pomocou šifrovanej komunikácie sa nepodarilo."
       ],
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
@@ -1268,6 +1268,9 @@
       "Something went wrong. Please sign in again.": [
         "Niečo sa pokazilo. Prihláste sa znova, prosím."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
       ],
@@ -1276,6 +1279,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
       ],
       "The session has expired. Please sign in again.": [
         "Platnosť relácie vypršala. Prihláste sa znovu, prosím."
@@ -1300,6 +1306,9 @@
       ],
       "Unknown error": [
         "Neznáma chyba"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ],
       "Unknown invite": [
         "Neznáma pozvánka"
@@ -2072,6 +2081,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -3237,12 +3252,6 @@
       ],
       "Generic CSV": [
         "Všeobecné CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Získajte ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Získajte ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Začíname"
@@ -5010,6 +5019,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Získať ${ planName }"
       ]
     },
     "Validation": {

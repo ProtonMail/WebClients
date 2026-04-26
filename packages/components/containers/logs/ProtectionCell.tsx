@@ -1,5 +1,5 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcShieldFilled } from '@proton/icons/icons/IcShieldFilled';
 import { ProtectionType } from '@proton/shared/lib/authlog';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
@@ -12,7 +12,7 @@ type Props = {
 const ProtectionTooltip = () => {
     return (
         <Tooltip title={PROTON_SENTINEL_NAME} openDelay={0} closeDelay={150} longTapDelay={0}>
-            <Icon className="align-text-bottom color-primary" name="shield-filled" />
+            <IcShieldFilled className="align-text-bottom color-primary" />
         </Tooltip>
     );
 };

@@ -640,9 +640,6 @@
       "Set extra password": [
         "Stel uw extra wachtwoord in"
       ],
-      "Settings": [
-        "Instellingen"
-      ],
       "Setup 2FA": [
         "2FA Instellen"
       ],
@@ -1039,9 +1036,6 @@
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Versleutelingscommunicatie voor desktop ontgrendeling mislukt."
-      ],
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
@@ -1290,6 +1284,9 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Unknown error.": [
+        "Onbekende fout."
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"
@@ -2022,7 +2019,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3148,12 +3146,6 @@
       ],
       "Generic CSV": [
         "Generieke CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Krijg ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Krijg ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Aan de slag"

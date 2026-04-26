@@ -6,15 +6,22 @@ import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-no
 import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
 
+import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectActiveMicrophoneId,
+    selectInitialAudioState,
+    selectMicrophoneState,
+    selectMicrophones,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { DEFAULT_DEVICE_ID } from '../../../constants';
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
 import type { SwitchActiveDevice } from '../../../types';
-import { isAudioSessionAvailable, setAudioSessionType } from '../../../utils/ios-audio-session';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -73,14 +80,12 @@ const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TO
  *   destroy the processor/AudioContext during device switches to avoid breaking that restart.
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
  */
-export const useAudioToggle = (
-    activeMicrophoneDeviceId: string,
-    switchActiveDevice: SwitchActiveDevice,
-    initialAudioState: boolean,
-    systemDefaultMicrophone: MediaDeviceInfo,
-    microphones: MediaDeviceInfo[]
-) => {
+export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
+    const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
+    const initialAudioState = useMeetSelector(selectInitialAudioState);
+    const microphones = useMeetSelector(selectMicrophones);
+    const microphoneState = useMeetSelector(selectMicrophoneState);
     const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
@@ -285,10 +290,10 @@ export const useAudioToggle = (
             debugLog('devicechange:detected');
         };
 
-        navigator.mediaDevices.addEventListener('devicechange', handleDeviceChange);
+        navigator.mediaDevices?.addEventListener('devicechange', handleDeviceChange);
 
         return () => {
-            navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
+            navigator.mediaDevices?.removeEventListener('devicechange', handleDeviceChange);
             destroyNoiseFilter();
         };
     }, []);
@@ -351,9 +356,9 @@ export const useAudioToggle = (
         } = params;
 
         const requestedDeviceId =
-            audioDeviceId === DEFAULT_DEVICE_ID ? systemDefaultMicrophone.deviceId : audioDeviceId;
+            audioDeviceId === DEFAULT_DEVICE_ID ? microphoneState.systemDefault?.deviceId : audioDeviceId;
         const availableDeviceIds = new Set(microphones.map((mic) => mic.deviceId).filter(Boolean));
-        const fallbackDeviceId = microphones[0]?.deviceId || systemDefaultMicrophone.deviceId || null;
+        const fallbackDeviceId = microphones[0]?.deviceId || microphoneState.systemDefault?.deviceId || null;
         const deviceId =
             requestedDeviceId && availableDeviceIds.has(requestedDeviceId) ? requestedDeviceId : fallbackDeviceId;
 
@@ -587,7 +592,7 @@ export const useAudioToggle = (
             debugLog('track-ended-event', {
                 wasEnabled,
                 activeMicrophoneDeviceId,
-                systemDefault: systemDefaultMicrophone.deviceId,
+                systemDefault: microphoneState.systemDefault?.deviceId,
             });
 
             abandonNoiseFilter();

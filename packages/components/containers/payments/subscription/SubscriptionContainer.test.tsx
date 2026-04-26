@@ -6,16 +6,9 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import {
-    type CheckSubscriptionData,
-    CYCLE,
-    type Currency,
-    FREE_PLAN,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    type Plan,
-    getPlansMap,
-} from '@proton/payments';
+import { CYCLE, type Currency, FREE_PLAN, PAYMENT_METHOD_TYPES, PLANS, type Plan, getPlansMap } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -164,6 +157,7 @@ describe('SubscriptionContainer', () => {
                     Google: true,
                 },
             },
+            initialBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         };
     });
 

@@ -13,6 +13,7 @@ import {
     useAuthentication,
     useLocalState,
 } from '@proton/components';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import type { IconName } from '@proton/icons/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -27,7 +28,6 @@ import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFre
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useIsTransferManagerVisible } from '../../hooks/drive/useIsTransferManagerVisible';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useFileUploadInput } from '../../store';
 import useChecklist from './useChecklist';
 

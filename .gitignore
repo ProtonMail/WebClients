@@ -40,6 +40,7 @@ build
 *.code-workspace
 .vscode
 .nyc_output
+test-results
 tests/**/*.png
 !tests/**/*-linux.png
 !tests/mail/**/*.png

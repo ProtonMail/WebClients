@@ -5,8 +5,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
@@ -74,7 +74,7 @@ export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
                                     onClick={modalProps.onClose}
                                     disabled={createVault.loading}
                                 >
-                                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                                    <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                                 </Button>,
 
                                 vaultLimitReached && isFreePlan ? (

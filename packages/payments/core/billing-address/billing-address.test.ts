@@ -170,7 +170,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
     it('should apply all normalizations when all fields are missing', () => {
         const billingAddress = {} as BillingAddress; // Simulate all fields missing
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.CountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
         expect(result.State).toBe(DEFAULT_TAX_BILLING_ADDRESS.State);
         expect(result.ZipCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.ZipCode);
@@ -183,7 +183,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: '94105',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result).toEqual(billingAddress);
         expect(result).not.toBe(billingAddress); // Should be a new object
     });
@@ -196,7 +196,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             CountryCode: 'US',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.State).toBe(firstUSStateCode);
         expect(result.ZipCode).toBe(getDefaultPostalCodeByStateCode('US', firstUSStateCode));
     });
@@ -209,7 +209,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             CountryCode: 'CA',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.State).toBe(firstCAStateCode);
     });
 
@@ -221,7 +221,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             CountryCode: nonStateCountry,
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.State).toBeUndefined();
     });
 
@@ -232,7 +232,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             State: stateCode,
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         // Use the actual expected ZIP code for NY
         const expectedZipCode = getDefaultPostalCodeByStateCode('US', stateCode);
         expect(result.ZipCode).toBe(expectedZipCode);
@@ -246,7 +246,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: existingZipCode,
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.ZipCode).toBe(existingZipCode);
     });
 
@@ -257,7 +257,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             State: stateCode,
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         // Use the actual expected postal code for ON
         const expectedPostalCode = getDefaultPostalCodeByStateCode('CA', stateCode);
         expect(result.ZipCode).toBe(expectedPostalCode);
@@ -271,7 +271,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: 'M5H',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.ZipCode).toBe('M5H 0A0');
     });
 
@@ -283,7 +283,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             CountryCode: nonPostalCodeCountry,
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.ZipCode).toBeUndefined();
     });
 
@@ -293,7 +293,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: '90001',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.CountryCode).toBe('US');
         expect(result.State).toBe('CA');
         expect(result.ZipCode).toBe('90001');
@@ -305,7 +305,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: 'M5H 2N2', // Ontario postal code
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.CountryCode).toBe('CA');
         expect(result.State).toBe('ON');
         expect(result.ZipCode).toBe('M5H 2N2');
@@ -317,7 +317,7 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: 'wrong zip code',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.CountryCode).toBe('US');
 
         expect(result.State).toEqual(getDefaultState('US'));
@@ -330,10 +330,102 @@ describe('getBillingAddressFromPaymentStatus', () => {
             ZipCode: 'invalid postal code',
         };
 
-        const result = getBillingAddressFromPaymentStatus(billingAddress);
+        const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: true });
         expect(result.CountryCode).toBe('CA');
 
         expect(result.State).toEqual(getDefaultState('CA'));
         expect(result.ZipCode).toEqual(getDefaultPostalCodeByStateCode('CA', getDefaultState('CA')));
+    });
+
+    describe('shouldRestoreZipCode: false', () => {
+        it('should still apply full defaults when country is missing', () => {
+            const billingAddress = {} as BillingAddress;
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.CountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
+            expect(result.State).toBe(DEFAULT_TAX_BILLING_ADDRESS.State);
+            expect(result.ZipCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.ZipCode);
+        });
+
+        it('should not fill default zip when US has state but zip is missing', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'US',
+                State: 'NY',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.CountryCode).toBe('US');
+            expect(result.State).toBe('NY');
+            expect(result.ZipCode).toBeUndefined();
+        });
+
+        it('should not fill default postal code when CA has state but postal code is missing', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'CA',
+                State: 'ON',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.CountryCode).toBe('CA');
+            expect(result.State).toBe('ON');
+            expect(result.ZipCode).toBeUndefined();
+        });
+
+        it('should not expand a partial Canadian postal code', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'CA',
+                State: 'ON',
+                ZipCode: 'M5H',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.ZipCode).toBe('M5H');
+        });
+
+        it('should still infer state from a valid US zip code', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'US',
+                ZipCode: '90001',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.State).toBe('CA');
+            expect(result.ZipCode).toBe('90001');
+        });
+
+        it('should still infer state from a valid Canadian postal code', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'CA',
+                ZipCode: 'M5H 2N2',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.State).toBe('ON');
+            expect(result.ZipCode).toBe('M5H 2N2');
+        });
+
+        it('should still reset state and clear zip when US state cannot be inferred from zip', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'US',
+                ZipCode: 'wrong zip code',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.CountryCode).toBe('US');
+            expect(result.State).toEqual(getDefaultState('US'));
+            expect(result.ZipCode).toBeNull();
+        });
+
+        it('should still reset state and clear zip when CA state cannot be inferred from postal code', () => {
+            const billingAddress: BillingAddress = {
+                CountryCode: 'CA',
+                ZipCode: 'invalid postal code',
+            };
+
+            const result = getBillingAddressFromPaymentStatus(billingAddress, { shouldRestoreZipCode: false });
+            expect(result.CountryCode).toBe('CA');
+            expect(result.State).toEqual(getDefaultState('CA'));
+            expect(result.ZipCode).toBeNull();
+        });
     });
 });

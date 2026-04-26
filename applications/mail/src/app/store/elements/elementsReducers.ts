@@ -15,13 +15,10 @@ import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
 import {
-    filterElementsInState,
     getElementContextIdentifier,
-    getSearchParameters,
     hasLabel,
     isElementConversation,
     isElementMessage,
-    parseElementContextIdentifier,
     parseLabelIDsInEvent,
 } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
@@ -49,6 +46,7 @@ import type {
     TaskRunningInfo,
 } from './elementsTypes';
 import { getElementsToBypassFilter } from './helpers/elementBypassFilters';
+import { computeContextTotals, updateContextTotals } from './helpers/elementContextCount';
 import { newRetry } from './helpers/elementQuery';
 
 export const globalReset = (state: Draft<ElementsState>) => {
@@ -200,28 +198,45 @@ export const eventUpdatesPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: EventUpdates }>
 ) => {
+    const countsBeforeAction = computeContextTotals(state);
+
     const { toCreate, toUpdate, toDelete } = action.meta.arg;
     toCreate.forEach((element) => {
-        state.elements[element.ID || ''] = element;
+        state.elements[element.ID] = element;
     });
+
+    // We only update elements already in state, not blindly insert new ones.
+    // Inserting unknown elements would create phantom entries in views with page gaps,
+    // showing results before the relevant page has been loaded.
+    // The trade-off is potential context total drift: if an element moves out of the
+    // current context but isn't in state, updateContextTotals won't detect the change.
     toUpdate.forEach((element) => {
-        const existingElement = state.elements[element.ID || ''];
+        const existingElement = state.elements[element.ID];
         if (existingElement) {
-            state.elements[element.ID || ''] = parseLabelIDsInEvent(existingElement, element);
+            state.elements[element.ID] = parseLabelIDsInEvent(existingElement, element);
         }
     });
+
     toDelete.forEach((elementID) => {
         delete state.elements[elementID];
     });
+
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const eventUpdatesFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<(Element | undefined)[], string, { arg: EventUpdates }>
 ) => {
+    const countsBeforeAction = computeContextTotals(state);
+
     action.payload.filter(isTruthy).forEach((element) => {
-        state.elements[element.ID || ''] = element;
+        state.elements[element.ID] = element;
     });
+
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
@@ -865,100 +880,6 @@ export const markNewsletterElementsAsReadPending = (
     });
 };
 
-/**
- * Compute the number of elements matching each cached context filter.
- * Called before mutations to snapshot the counts without cloning the entire store.
- */
-const computeFilteredCounts = (state: Draft<ElementsState>): Record<string, number> => {
-    const currentContextIdentifier = getElementContextIdentifier({
-        labelID: state.params.labelID,
-        categoryIDs: state.params.categoryIDs,
-        conversationMode: state.params.conversationMode,
-        filter: state.params.filter,
-        sort: state.params.sort,
-        from: state.params.search?.from,
-        to: state.params.search?.to,
-        address: state.params.search?.address,
-        begin: state.params.search?.begin,
-        end: state.params.search?.end,
-        keyword: state.params.search?.keyword,
-    });
-    const elements = Object.values(state.elements);
-    const counts: Record<string, number> = {};
-
-    Object.keys(state.total).forEach((contextIdentifier) => {
-        const context = parseElementContextIdentifier(contextIdentifier);
-        if (!context) {
-            return;
-        }
-
-        counts[contextIdentifier] = filterElementsInState({
-            elements,
-            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
-            labelID: context.labelID,
-            categoryIDs: context.categoryIDs,
-            filter: context.filter || {},
-            conversationMode: context.conversationMode,
-            search: getSearchParameters(context),
-            newsletterSubscriptionID: context.newsletterSubscriptionID,
-        }).length;
-    });
-
-    return counts;
-};
-
-/**
- * Update all the context of the store to reflect the change that was just made.
- * Compares the element counts before and after the action to compute the new total for each cached context.
- */
-const updateTotal = ({
-    state,
-    countsBeforeAction,
-}: {
-    state: Draft<ElementsState>;
-    countsBeforeAction: Record<string, number>;
-}) => {
-    const currentContextIdentifier = getElementContextIdentifier({
-        labelID: state.params.labelID,
-        categoryIDs: state.params.categoryIDs,
-        conversationMode: state.params.conversationMode,
-        filter: state.params.filter,
-        sort: state.params.sort,
-        from: state.params.search?.from,
-        to: state.params.search?.to,
-        address: state.params.search?.address,
-        begin: state.params.search?.begin,
-        end: state.params.search?.end,
-        keyword: state.params.search?.keyword,
-    });
-    const elements = Object.values(state.elements);
-
-    Object.keys(state.total).forEach((contextIdentifier) => {
-        const context = parseElementContextIdentifier(contextIdentifier);
-        if (!context) {
-            return;
-        }
-
-        const countBefore = countsBeforeAction[contextIdentifier] ?? 0;
-
-        const countAfter = filterElementsInState({
-            elements,
-            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
-            labelID: context.labelID,
-            categoryIDs: context.categoryIDs,
-            filter: context.filter || {},
-            conversationMode: context.conversationMode,
-            search: getSearchParameters(context),
-            newsletterSubscriptionID: context.newsletterSubscriptionID,
-        }).length;
-
-        const totalBefore = state.total[contextIdentifier] || 0;
-
-        // The new total is the current total minus the difference between the number of elements before and after filtering
-        state.total[contextIdentifier] = totalBefore - (countBefore - countAfter);
-    });
-};
-
 export const labelMessagesPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<
@@ -976,7 +897,7 @@ export const labelMessagesPending = (
     >
 ) => {
     const { messages, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     messages.forEach((message) => {
         // Update conversation first because we need to have the initial state of the element
@@ -1000,7 +921,8 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelMessagesPending = (
@@ -1020,7 +942,7 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { messages, destinationLabelID, labels } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     messages.forEach((message) => {
         const conversationElementState = state.elements[message.ConversationID];
@@ -1037,7 +959,8 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const labelMessagesRejected = (
@@ -1078,7 +1001,7 @@ export const labelConversationsPending = (
     >
 ) => {
     const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1099,7 +1022,8 @@ export const labelConversationsPending = (
         });
     });
 
-    updateTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelConversationsPending = (
@@ -1119,7 +1043,7 @@ export const unlabelConversationsPending = (
     >
 ) => {
     const { conversations, destinationLabelID, labels } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1140,5 +1064,6 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };

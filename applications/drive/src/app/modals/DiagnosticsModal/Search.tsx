@@ -31,8 +31,10 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import type { UseSearchModuleReturn } from '../../hooks/search/useSearchModule';
 import { useSearchModule } from '../../hooks/search/useSearchModule';
 import { IndexKind } from '../../modules/search';
+import type { IndexPopulatorState } from '../../modules/search/internal/shared/SearchDB';
 
 const ALL_INDEX_KINDS = Object.values(IndexKind);
 
@@ -182,6 +184,81 @@ async function removeFromIndex(userId: string, kind: IndexKind, identifier: stri
     }
 }
 
+// --- Populator states ---
+
+function PopulatorStates({ searchModule }: { searchModule: Extract<UseSearchModuleReturn, { isAvailable: true }> }) {
+    const [user] = useUser();
+    const [states, setStates] = useState<IndexPopulatorState[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    const fetchStates = async () => {
+        setLoading(true);
+        try {
+            const db = await openSearchDB(user.ID);
+            try {
+                const all = await db.getAll('indexPopulatorStates');
+                setStates(all as IndexPopulatorState[]);
+            } finally {
+                db.close();
+            }
+        } catch {
+            setStates([]);
+        }
+        setLoading(false);
+    };
+
+    useEffect(() => {
+        void fetchStates();
+    }, [user.ID]);
+
+    const handleReindex = async (uid: string) => {
+        await searchModule.reindexPopulator(uid);
+        void fetchStates();
+    };
+
+    if (loading) {
+        return <CircleLoader />;
+    }
+
+    if (states.length === 0) {
+        return <p>{c('Info').t`No populator states found.`}</p>;
+    }
+
+    return (
+        <Table>
+            <TableHeader>
+                <tr>
+                    <th style={{ width: '80em' }}>UID</th>
+                    <th style={{ width: '5em' }}>Done</th>
+                    <th style={{ width: '8em' }}>Generation</th>
+                    <th style={{ width: '6em' }}>Version</th>
+                    <th style={{ width: '8em' }}>{c('Title').t`Actions`}</th>
+                </tr>
+            </TableHeader>
+            <TableBody>
+                {states.map((s) => (
+                    <TableRow
+                        key={s.uid}
+                        cells={[
+                            <code key="uid">{s.uid}</code>,
+                            <span key="done">{s.done ? 'Yes' : 'No'}</span>,
+                            <span key="gen">{s.generation}</span>,
+                            <span key="ver">{s.version}</span>,
+                            <Button
+                                key="action"
+                                size="small"
+                                onClick={() => {
+                                    void handleReindex(s.uid);
+                                }}
+                            >{c('Action').t`Re-index`}</Button>,
+                        ]}
+                    />
+                ))}
+            </TableBody>
+        </Table>
+    );
+}
+
 // --- Global tab ---
 
 function SearchGlobal() {
@@ -205,6 +282,9 @@ function SearchGlobal() {
                 value={typeof SharedWorker !== 'undefined' && typeof indexedDB !== 'undefined' ? 'Yes' : 'No'}
             />
             <InfoRow label={c('Label').t`Index kinds`} value={ALL_INDEX_KINDS.join(', ')} />
+
+            <h3 className="text-bold mt-4 mb-2">{c('Title').t`Index populators`}</h3>
+            <PopulatorStates searchModule={searchModule} />
         </>
     );
 }
@@ -315,7 +395,7 @@ type SortConfig = {
 
 type ColumnDef = {
     key: string;
-    label: string;
+    label: React.ReactNode;
     width?: string;
     render: (entry: ExportedEntry) => React.ReactNode;
     sortValue: (entry: ExportedEntry) => string | number;
@@ -329,6 +409,13 @@ const COLUMNS: ColumnDef[] = [
         defaultVisible: true,
         sortValue: (e) => attr(e, 'filename'),
         render: (entry) => attr(entry, 'filename'),
+    },
+    {
+        key: 'filenameText',
+        label: 'filenameText',
+        defaultVisible: true,
+        sortValue: (e) => attr(e, 'filenameText'),
+        render: (entry) => attr(entry, 'filenameText'),
     },
     {
         key: 'path',
@@ -416,6 +503,78 @@ const COLUMNS: ColumnDef[] = [
         defaultVisible: false,
         sortValue: (e) => Number(attr(e, 'modificationTime')),
         render: (entry) => formatTime(attr(entry, 'modificationTime')),
+    },
+    {
+        key: 'extension',
+        label: 'extension',
+        width: '6em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'extension'),
+        render: (entry) => attr(entry, 'extension'),
+    },
+    {
+        key: 'sharedBy',
+        label: 'sharedBy',
+        width: '14em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'sharedBy'),
+        render: (entry) => attr(entry, 'sharedBy'),
+    },
+    {
+        key: 'isShared',
+        label: 'isShared',
+        width: '6em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'isShared'),
+        render: (entry) => attr(entry, 'isShared'),
+    },
+    {
+        key: 'isSharedPublicly',
+        label: 'isSharedPublicly',
+        width: '6em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'isSharedPublicly'),
+        render: (entry) => attr(entry, 'isSharedPublicly'),
+    },
+    {
+        key: 'keyAuthor',
+        label: 'keyAuthor',
+        width: '14em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'keyAuthor'),
+        render: (entry) => attr(entry, 'keyAuthor'),
+    },
+    {
+        key: 'activeRevisionContentAuthor',
+        label: 'revisionContentAuthor',
+        width: '14em',
+        defaultVisible: false,
+        sortValue: (e) => attr(e, 'activeRevisionContentAuthor'),
+        render: (entry) => attr(entry, 'activeRevisionContentAuthor'),
+    },
+    {
+        key: 'activeRevisionCreationTime',
+        label: 'revisionCreationTime',
+        width: '12em',
+        defaultVisible: false,
+        sortValue: (e) => Number(attr(e, 'activeRevisionCreationTime')),
+        render: (entry) => formatTime(attr(entry, 'activeRevisionCreationTime')),
+    },
+    {
+        key: 'activeRevisionStorageSize',
+        label: 'revisionStorageSize',
+        width: '8em',
+        defaultVisible: false,
+        sortValue: (e) => Number(attr(e, 'activeRevisionStorageSize')),
+        render: (entry) => attr(entry, 'activeRevisionStorageSize'),
+    },
+    {
+        key: 'trashTime',
+        label: 'trashTime',
+        width: '8em',
+        defaultVisible: true,
+        sortValue: (e) => Number(attr(e, 'trashTime')),
+        render: (entry) => attr(entry, 'trashTime'),
     },
 ];
 

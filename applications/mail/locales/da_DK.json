@@ -322,6 +322,9 @@
       "Contract composer": [
         "Sammentræk skrivevinduet"
       ],
+      "Copy": [
+        "Kopiér"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -1502,8 +1505,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4764,6 +4766,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
+      ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
       ],
@@ -7556,7 +7561,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -11012,6 +11018,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
@@ -11066,8 +11079,8 @@
       "Data retention policies": [
         "Databevaringspolitikker"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerede servere optimeret til streaming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerede hastighedsoptimerede servere"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -12359,6 +12372,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -12809,11 +12825,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Navn"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
       ]
     },
     "Plan description": {
@@ -13365,9 +13376,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogendannelse er ikke tilgængelig for ældre adressenøgler"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generér nøgler, før du forsøger at ændre din adgangskode."
       ]
     },
     "session_recovery:available:info": {
@@ -14105,6 +14113,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
@@ -14336,6 +14350,10 @@
       "Version history": [
         "Versionshistorik"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
+        "Videomøde, op til ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagere"
+      ],
       "Watch the interview": [
         "Se interviewet"
       ],
@@ -14546,9 +14564,6 @@
         "Alias gemt og kopieret"
       ],
       "Billing details updated": [
-        "Faktureringsoplysninger opdateret"
-      ],
-      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Canceling import": [

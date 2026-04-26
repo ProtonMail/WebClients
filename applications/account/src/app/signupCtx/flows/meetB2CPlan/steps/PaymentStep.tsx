@@ -9,19 +9,14 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import {
-    PAYMENT_METHOD_TYPES,
-    type PaymentProcessorHook,
-    getBillingAddressFromPaymentStatus,
-    getPaymentsVersion,
-    getPlanFromPlanIDs,
-} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PaymentProcessorHook, getPlanFromPlanIDs } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { useSignup } from '../../../context/SignupContext';
@@ -76,7 +71,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
         initialBillingAddress: payments.paymentStatus
-            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus, { shouldRestoreZipCode: true })
             : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
@@ -97,9 +92,11 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
             try {
                 await processor.processPaymentToken();
             } catch (error) {
-                const sentryError = getSentryError(error);
-                if (sentryError) {
-                    const context = {
+                tracePaymentError(error, {
+                    tags: {
+                        component: 'meetB2CPlan-ctx-PaymentStep',
+                    },
+                    extra: {
                         currency: payments.options.currency,
                         amount: payments.checkResult.AmountDue,
                         processorType: processor.meta.type,
@@ -109,13 +106,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         plan: payments.selectedPlan,
                         planName: payments.selectedPlan.getPlanName(),
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
-                        level: 'error',
-                        extra: { error: sentryError, context },
-                    });
-                }
+                    },
+                });
             }
         }
 

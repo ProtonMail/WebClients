@@ -585,6 +585,9 @@
       "Reconnect": [
         "Riconnetti"
       ],
+      "Reconnect to Gmail": [
+        "Riconnetti a Gmail"
+      ],
       "Recover data": [
         "Recupera dati"
       ],
@@ -2442,6 +2445,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Questo può succedere se i permessi sono stati rimossi o la tua password è cambiata."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuare a ricevere e inviare messaggi Gmail in ${ BRAND_NAME }, per favore riconnetti il tuo account."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuare a ricevere e inviare messaggi Gmail in ${ BRAND_NAME }, per favore riconnetti i tuoi account."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
       ],
@@ -2462,6 +2474,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa questa guida per fare in modo che la tua organizzazione tragga rapidamente vantaggio dalla crittografia e dall'ecosistema di privacy leader del settore di ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Non possiamo più accedere a ${ boldEmails }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
@@ -2726,6 +2741,9 @@
       ],
       "Account does not exist": [
         "L'account non esiste"
+      ],
+      "Address could not be added.": [
+        "Impossibile aggiungere l'indirizzo."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -3024,6 +3042,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Si è verificato un errore durante il recupero dei domini disponibili"
       ],
       "Something went wrong. Please try again.": [
         "Qualcosa è andato storto. Riprova."
@@ -3966,6 +3987,11 @@
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Altre opzioni di importazione"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -4377,6 +4403,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garantisci comunicazioni completamente private e crittografate. Richiedi ora il tuo indirizzo email ${ BRAND_NAME } gratuito."
       ],
+      "Enter code": [
+        "Inserisci il codice"
+      ],
       "Enter password": [
         "Inserisci la password"
       ],
@@ -4475,6 +4504,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5999,6 +6031,12 @@
         "Componente aggiuntivo con prova gratuita"
       ]
     },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferenze confidenziali per le conversazioni importanti"
@@ -6519,6 +6557,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Pianificazione degli appuntamenti"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Pianificazione appuntamenti con ${ n } pagina di prenotazione",
+        "Pianificazione di appuntamenti con ${ n } pagine di prenotazione"
+      ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
@@ -6569,9 +6614,6 @@
       ],
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Server dedicati ottimizzati per lo streaming"
       ],
       "Desktop app": [
         "Applicazione desktop"
@@ -7467,6 +7509,9 @@
       "You stopped sharing this item": [
         "Hai interrotto la condivisione di questo elemento"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Il tuo indirizzo ${ BRAND_NAME } è pronto per l'uso"
+      ],
       "Your settings failed to be saved": [
         "Salvataggio delle impostazioni non riuscito"
       ],
@@ -8322,9 +8367,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera le chiavi prima di provare a modificare la password"
       ]
     },
     "session_recovery:available:info": {
@@ -9353,6 +9395,9 @@
       ],
       "Discard changes?": [
         "Annullare le modifiche?"
+      ],
+      "Disconnected from Gmail": [
+        "Disconnesso da Gmail"
       ],
       "Docs": [
         "Documenti"

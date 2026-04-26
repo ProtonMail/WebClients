@@ -2338,6 +2338,9 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
       ],
@@ -3760,7 +3763,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -3948,6 +3951,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
@@ -4002,8 +4014,8 @@
       "Data retention policies": [
         "Zásady uchovávania údajov"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované na streamovanie"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ],
       "Desktop app": [
         "Desktopová aplikácia"
@@ -4826,6 +4838,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -5151,11 +5166,6 @@
       ],
       "ZIP code": [
         "PSČ"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
       ]
     },
     "Plan description": {
@@ -5594,9 +5604,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Fakturačné údaje aktualizované"
-      ],
-      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Code sent to ${ methodTo }": [

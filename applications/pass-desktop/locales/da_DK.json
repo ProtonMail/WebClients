@@ -640,9 +640,6 @@
       "Set extra password": [
         "Indstil ekstra adgangskode"
       ],
-      "Settings": [
-        "Indstillinger"
-      ],
       "Setup 2FA": [
         "Indstil 2FA"
       ],
@@ -1039,9 +1036,6 @@
       "Encrypted JSON not supported": [
         "Krypteret JSON er ikke understøttet"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Krypteringskommunikation til oplåsning af desktop-appen mislykkedes."
-      ],
       "Error reporting problem": [
         "Problem med fejlrapportering"
       ],
@@ -1290,6 +1284,9 @@
       ],
       "Unknown error": [
         "Ukendt fejl"
+      ],
+      "Unknown error.": [
+        "Ukendt fejl."
       ],
       "Unknown invite": [
         "Ukendt invitation"
@@ -2020,6 +2017,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3145,12 +3146,6 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Få ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Få ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Kom i gang"

@@ -1,5 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useFeature from '@proton/features/useFeature';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { domIsBusy } from '@proton/shared/lib/busy';
 
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
@@ -32,7 +33,8 @@ export const usePaidUsersNudge = ({ plan }: Props): OfferHookReturnValue => {
         };
     }
 
-    const shouldShowReminder = shouldOpenReminder(subscription.PeriodStart, feature?.Value ?? 0);
+    const shouldShowReminder =
+        isPaidSubscription(subscription) && shouldOpenReminder(subscription.PeriodStart, feature?.Value ?? 0);
     const isDomBusy = domIsBusy();
 
     return {

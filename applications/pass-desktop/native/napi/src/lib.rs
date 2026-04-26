@@ -7,6 +7,12 @@ mod clipboards;
 use autotypes::Autotype as AutotypeCore;
 use napi::tokio;
 
+#[macro_export]
+macro_rules! napi_res {
+    ($e:expr) => {
+        $e.map_err(|e| napi::Error::from_reason(e.to_string()))
+    };
+}
 #[napi]
 pub mod biometric {
     use napi::bindgen_prelude::{Buffer, Uint8Array};
@@ -15,28 +21,28 @@ pub mod biometric {
 
     #[napi]
     pub async fn can_check_presence() -> napi::Result<bool> {
-        Biometrics::can_check_presence().map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Biometrics::can_check_presence())
     }
 
     #[napi]
     pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<()> {
-        Biometrics::check_presence(handle.into(), reason).map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Biometrics::check_presence(handle.into(), reason))
     }
 
     #[napi]
     pub async fn get_secret(key: String) -> napi::Result<Uint8Array> {
-        let vec = Biometrics::get_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))?;
+        let vec = napi_res!(Biometrics::get_secret(key))?;
         Ok(Uint8Array::new(vec))
     }
 
     #[napi]
     pub async fn set_secret(key: String, secret: Uint8Array) -> napi::Result<()> {
-        Biometrics::set_secret(key, secret.to_vec()).map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Biometrics::set_secret(key, secret.to_vec()))
     }
 
     #[napi]
     pub async fn delete_secret(key: String) -> napi::Result<()> {
-        Biometrics::delete_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Biometrics::delete_secret(key))
     }
 }
 
@@ -46,12 +52,12 @@ pub mod clipboard {
 
     #[napi]
     pub async fn write_text(text: String, sensitive: bool) -> napi::Result<()> {
-        Clipboard::write(&text, sensitive).map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Clipboard::write(&text, sensitive))
     }
 
     #[napi]
     pub async fn read() -> napi::Result<String> {
-        Clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(Clipboard::read())
     }
 }
 
@@ -61,7 +67,7 @@ pub mod napi_native_messaging {
 
     #[napi]
     pub async fn install(binary_path: String) -> napi::Result<()> {
-        nm_install::nm_install(&binary_path).map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(nm_install::nm_install(&binary_path))
     }
 }
 
@@ -78,19 +84,18 @@ pub struct Autotype {
 impl Autotype {
     #[napi(factory)]
     pub async fn create() -> napi::Result<Self> {
-        // Use spawn_blocking to avoid app being unresponsive while Linux OS permission prompt is not closed
-        tokio::task::spawn_blocking(move || {
-            let autotype = AutotypeCore::new().map_err(|e| napi::Error::from_reason(e.to_string()))?;
-            Ok(Autotype { autotype })
-        })
-        .await
-        .map_err(|e| napi::Error::from_reason(e.to_string()))?
+        napi_res!(
+            // Use spawn_blocking to avoid app being unresponsive while Linux OS permission prompt is not closed
+            tokio::task::spawn_blocking(move || {
+                let autotype = AutotypeCore::new().map_err(|e| napi::Error::from_reason(e.to_string()))?;
+                Ok(Autotype { autotype })
+            })
+            .await
+        )?
     }
 
     #[napi]
     pub fn perform_autotype(&mut self, fields: Vec<String>, enter_at_the_end: Option<bool>) -> napi::Result<()> {
-        self.autotype
-            .perform_autotype(fields, enter_at_the_end)
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
+        napi_res!(self.autotype.perform_autotype(fields, enter_at_the_end))
     }
 }

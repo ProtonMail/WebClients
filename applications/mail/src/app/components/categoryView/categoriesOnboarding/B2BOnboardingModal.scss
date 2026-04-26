@@ -1,9 +1,0 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-
-.categories-img {
-	display: block;
-	inline-size: calc(100% + rem(22));
-	max-inline-size: none;
-	block-size: auto;
-}

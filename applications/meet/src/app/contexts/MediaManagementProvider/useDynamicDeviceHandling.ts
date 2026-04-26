@@ -5,12 +5,21 @@ import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from 'liveki
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectActiveAudioOutputId,
+    selectActiveCameraId,
+    selectActiveMicrophoneId,
+    selectCameraState,
+    selectMicrophoneState,
+    selectSpeakerState,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { filterDevices, getDefaultDevice, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useStableCallback } from '../../hooks/useStableCallback';
-import type { DeviceState, SwitchActiveDevice } from '../../types';
+import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
-import { filterDevices, isDefaultDevice } from '../../utils/device-utils';
 
 const dynamicDeviceUpdate = ({
     deviceList,
@@ -24,7 +33,7 @@ const dynamicDeviceUpdate = ({
     deviceList: MediaDeviceInfo[];
     deviceId: string | null;
     preferredDeviceId: string | null;
-    systemDefaultDevice: MediaDeviceInfo;
+    systemDefaultDevice: MediaDeviceInfo | null;
     previousSystemDefaultDeviceId: string | null;
     useSystemDefault: boolean;
     updateFunction: (newDeviceId: string) => void;
@@ -91,27 +100,19 @@ interface UseDynamicDeviceHandlingParams {
         preserveCache?: boolean;
     }) => Promise<boolean | undefined>;
     switchActiveDevice: SwitchActiveDevice;
-    activeMicrophoneDeviceId: string;
-    activeAudioOutputDeviceId: string;
-    activeCameraDeviceId: string;
-    cameraState: DeviceState;
-    microphoneState: DeviceState;
-    speakerState: DeviceState;
-    getDefaultDevice: (devices: MediaDeviceInfo[]) => MediaDeviceInfo;
 }
 
 export const useDynamicDeviceHandling = ({
     toggleAudio,
     toggleVideo,
     switchActiveDevice,
-    activeMicrophoneDeviceId,
-    activeAudioOutputDeviceId,
-    activeCameraDeviceId,
-    cameraState,
-    microphoneState,
-    speakerState,
-    getDefaultDevice,
 }: UseDynamicDeviceHandlingParams) => {
+    const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
+    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
+    const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
+    const cameraState = useMeetSelector(selectCameraState);
+    const microphoneState = useMeetSelector(selectMicrophoneState);
+    const speakerState = useMeetSelector(selectSpeakerState);
     const room = useRoomContext();
 
     const previousDevices = useRef<{
@@ -130,15 +131,26 @@ export const useDynamicDeviceHandling = ({
         camera: string | null;
         speaker: string | null;
     }>({
-        microphone: microphoneState.systemDefault?.deviceId ?? null,
-        camera: cameraState.systemDefault?.deviceId ?? null,
-        speaker: speakerState.systemDefault?.deviceId ?? null,
+        microphone: null,
+        camera: null,
+        speaker: null,
     });
+
+    // Initialize the previous system default device IDs because initial values are not available in the first render
+    if (previousSystemDefaultsRef.current.microphone === null && microphoneState.systemDefault?.deviceId) {
+        previousSystemDefaultsRef.current.microphone = microphoneState.systemDefault.deviceId;
+    }
+    if (previousSystemDefaultsRef.current.camera === null && cameraState.systemDefault?.deviceId) {
+        previousSystemDefaultsRef.current.camera = cameraState.systemDefault.deviceId;
+    }
+    if (previousSystemDefaultsRef.current.speaker === null && speakerState.systemDefault?.deviceId) {
+        previousSystemDefaultsRef.current.speaker = speakerState.systemDefault.deviceId;
+    }
 
     const handleDeviceChange = useStableCallback(async () => {
         const getLocalDevicesWithErrorHandling = async (deviceType: 'audioinput' | 'videoinput' | 'audiooutput') => {
             try {
-                return await Room.getLocalDevices(deviceType);
+                return await Room.getLocalDevices(deviceType, false);
             } catch (error) {
                 return [];
             }
@@ -175,7 +187,27 @@ export const useDynamicDeviceHandling = ({
                 ])
             ) as { [K in keyof DeviceIdSets]: boolean };
 
-            if (Object.values(areDeviceIdSetsEqual).every((equal) => equal)) {
+            const currentMicrophoneSystemDefault = getDefaultDevice(microphones);
+            const currentCameraSystemDefault = getDefaultDevice(cameras);
+            const currentSpeakerSystemDefault = getDefaultDevice(speakers);
+
+            // Special check for system default that always have the same 'default' label
+            const hasSystemDefaultChanged = {
+                microphones:
+                    previousSystemDefaultsRef.current.microphone !== null &&
+                    currentMicrophoneSystemDefault?.deviceId !== previousSystemDefaultsRef.current.microphone,
+                cameras:
+                    previousSystemDefaultsRef.current.camera !== null &&
+                    currentCameraSystemDefault?.deviceId !== previousSystemDefaultsRef.current.camera,
+                speakers:
+                    previousSystemDefaultsRef.current.speaker !== null &&
+                    currentSpeakerSystemDefault?.deviceId !== previousSystemDefaultsRef.current.speaker,
+            };
+
+            const anySystemDefaultChanged = Object.values(hasSystemDefaultChanged).some(Boolean);
+
+            // Return if no device changes and no system default changes
+            if (Object.values(areDeviceIdSetsEqual).every((equal) => equal) && !anySystemDefaultChanged) {
                 return;
             }
 
@@ -185,16 +217,11 @@ export const useDynamicDeviceHandling = ({
                 speakers: speakersAfterDeviceChange,
             };
 
-            // Get fresh system default devices from the newly fetched device lists
-            const currentMicrophoneSystemDefault = getDefaultDevice(microphones);
-            const currentCameraSystemDefault = getDefaultDevice(cameras);
-            const currentSpeakerSystemDefault = getDefaultDevice(speakers);
-
             const deviceConfigs = [
-                !areDeviceIdSetsEqual.microphones && {
+                (!areDeviceIdSetsEqual.microphones || hasSystemDefaultChanged.microphones) && {
                     deviceList: microphonesAfterDeviceChange,
                     deviceId: activeMicrophoneDeviceId,
-                    preferredDeviceId: microphoneState.preferredDevice?.deviceId ?? null,
+                    preferredDeviceId: microphoneState.preferredDeviceId,
                     systemDefaultDevice: currentMicrophoneSystemDefault,
                     previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
                     useSystemDefault: microphoneState.useSystemDefault,
@@ -214,10 +241,10 @@ export const useDynamicDeviceHandling = ({
                         }
                     },
                 },
-                !areDeviceIdSetsEqual.cameras && {
+                (!areDeviceIdSetsEqual.cameras || hasSystemDefaultChanged.cameras) && {
                     deviceList: camerasAfterDeviceChange,
                     deviceId: activeCameraDeviceId,
-                    preferredDeviceId: cameraState.preferredDevice?.deviceId ?? null,
+                    preferredDeviceId: cameraState.preferredDeviceId,
                     systemDefaultDevice: currentCameraSystemDefault,
                     previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.camera,
                     useSystemDefault: cameraState.useSystemDefault,
@@ -245,10 +272,10 @@ export const useDynamicDeviceHandling = ({
                         }
                     },
                 },
-                !areDeviceIdSetsEqual.speakers && {
+                (!areDeviceIdSetsEqual.speakers || hasSystemDefaultChanged.speakers) && {
                     deviceList: speakersAfterDeviceChange,
                     deviceId: activeAudioOutputDeviceId,
-                    preferredDeviceId: speakerState.preferredDevice?.deviceId ?? null,
+                    preferredDeviceId: speakerState.preferredDeviceId,
                     systemDefaultDevice: currentSpeakerSystemDefault,
                     previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
                     useSystemDefault: speakerState.useSystemDefault,

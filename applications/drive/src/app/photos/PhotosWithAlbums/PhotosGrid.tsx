@@ -312,6 +312,14 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                         style={{ height: `${innerStyle.height + 24}px` }}
                     >
                         {gridItems}
+                        {isLoading && (
+                            <div
+                                className="flex justify-center w-full"
+                                style={{ position: 'absolute', top: `${innerStyle.height + 24}px` }}
+                            >
+                                <Loader />
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
@@ -327,7 +335,6 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                     currentTopGroup={currentTopGroup}
                 />
             )}
-            {isLoading && <Loader />}
         </div>
     );
 };

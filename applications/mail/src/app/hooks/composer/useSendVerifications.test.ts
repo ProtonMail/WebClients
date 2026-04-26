@@ -445,7 +445,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
-                    isInternal: true,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,

@@ -322,6 +322,9 @@
       "Contract composer": [
         "Restaurar tamanho"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar o endereço"
       ],
@@ -1502,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4228,6 +4230,10 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereços do Gmail."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
@@ -7028,6 +7034,9 @@
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
+      "Copy to clipboard": [
+        "Copiar para área de transferência"
+      ],
       "Copy your referral link": [
         "Copiar seu link de referência"
       ],
@@ -7490,7 +7499,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -10940,6 +10950,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -10994,8 +11011,8 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -11878,6 +11895,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Traga seus e-mails para o ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Traga seus e-mails atuais para o ${ MAIL_APP_NAME } para que você possa gerenciar tudo a partir de uma única caixa de entrada privada."
+      ],
       "Choose a provider": [
         "Selecionar um provedor"
       ],
@@ -11892,6 +11912,9 @@
       ],
       "Some popular services": [
         "Alguns serviços populares"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Mude os serviços que você usa todos os dias para o seu endereço da ${ BRAND_NAME } e tenha mais segurança e privacidade."
       ]
     },
     "Onboarding modal": {
@@ -12286,6 +12309,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Got it": [
         "Entendi"
@@ -12736,11 +12762,6 @@
         "Nome"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contato"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, e ${ PASS_SHORT_APP_NAME }."
@@ -12803,7 +12824,7 @@
         "Fax"
       ],
       "Home": [
-        "Casa"
+        "Início"
       ],
       "Main": [
         "Principal"
@@ -13290,9 +13311,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -14030,6 +14048,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
       ],
@@ -14472,9 +14496,6 @@
       ],
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
-      ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
       ],
       "Canceling import": [
         "Cancelando a importação"
@@ -15689,6 +15710,9 @@
       ],
       "Self-destruct message": [
         "Mensagem autodestrutiva"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Enviar e receber e-mails do Gmail usando o ${ MAIL_APP_NAME }"
       ],
       "Send email": [
         "Enviar e-mail"

@@ -3991,9 +3991,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "โปรดแก้ไขข้อขัดแย้งตรงที่ไฮไลต์ไว้เพื่อที่จะดำเนินการต่อไป"
       ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
-      ],
       "Please select a country": [
         "โปรดเลือกประเทศ"
       ],
@@ -7484,6 +7481,9 @@
       "Vault updated": [
         "อัปเดตห้องนิรภัยแล้ว"
       ],
+      "Verification code sent.": [
+        "ส่งรหัสยืนยันแล้ว"
+      ],
       "Verification may take a few minutes.": [
         "การยืนยันอาจใช้เวลาสักครู่"
       ],
@@ -8393,6 +8393,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "สำหรับ ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } และ ${ SHEETS_SHORT_APP_NAME }"
       ],
+      "Free": [
+        "ฟรี"
+      ],
       "From: ${ fromEmail }": [
         "ตั้งแต่: ${ fromEmail }"
       ],
@@ -8732,6 +8735,9 @@
       "State": [
         "รัฐ/จังหวัด"
       ],
+      "Storage": [
+        "พื้นที่จัดเก็บ"
+      ],
       "Street address": [
         "ที่อยู่"
       ],
@@ -8764,6 +8770,9 @@
       ],
       "Type": [
         "รูปแบบ"
+      ],
+      "Unlimited": [
+        "ไม่จำกัด"
       ],
       "Upload 1 or more encryption keys": [
         "อัปโหลดคีย์การเข้ารหัสลับ 1 รายการขึ้นไป"
@@ -8821,6 +8830,9 @@
       ],
       "Why would you like to cancel?": [
         "ทำไมคุณถึงต้องการยกเลิก?"
+      ],
+      "Yes": [
+        "ใช่"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "ใช่ ฉันต้องการลบบัญชีนี้และข้อมูลที่เกี่ยวข้องทั้งหมดแบบถาวร"
@@ -8961,9 +8973,6 @@
       ],
       "clearing your browser cache": [
         "กำลังล้างแคชในเบราว์เซอร์ของคุณ"
-      ],
-      "Common sign in issues": [
-        "ปัญหาในการลงชื่อเข้าใช้ที่พบบ่อย"
       ],
       "Common sign up issues": [
         "ปัญหาในการสมัครบัญชีที่พบบ่อย"
@@ -9732,9 +9741,6 @@
       ],
       "Dedicated servers and IP": [
         "เซิร์ฟเวอร์และ IP เฉพาะ"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "เซิร์ฟเวอร์เฉพาะที่ปรับให้เหมาะสมสำหรับการสตรีม"
       ],
       "Desktop app": [
         "แอปเดสก์ท็อป"
@@ -11669,11 +11675,6 @@
         "ประตูสู่อิสรภาพทางออนไลน์ของคุณ"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ติดต่อ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "คุณสมบัติพรีเมียมทั้งหมดจาก ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } และ ${ PASS_SHORT_APP_NAME }"
@@ -11775,9 +11776,6 @@
       "Verify now": [
         "ยืนยันตอนนี้"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ยืนยันที่อยู่อีเมลการกู้คืนนี้ทันที: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "ยืนยันอีเมลการกู้คืนหรือไม่?"
       ],
@@ -11817,9 +11815,6 @@
       ],
       "Verify recovery phone?": [
         "ยืนยันหมายเลขโทรศัพท์สำรองหรือไม่?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ยืนยันหมายเลขโทรศัพท์กู้คืนนี้ทันที: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "การยืนยันหมายเลขโทรศัพท์ของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
@@ -12121,9 +12116,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "หากทำรายละเอียดการเข้าสู่ระบบหายและจำเป็นต้องรีเซ็ตบัญชี **จำเป็นอย่างยิ่ง** ที่จะต้องมีทั้ง **วิธีการกู้คืนบัญชีและข้อมูล** มิฉะนั้นอาจไม่สามารถเข้าถึงอีเมล รายชื่อติดต่อ ไฟล์ หรือรหัสผ่านใดๆ ได้"
       ],
-      "Invalid code": [
-        "รหัสไม่ถูกต้อง"
-      ],
       "Review account safety": [
         "ตรวจสอบความปลอดภัยบัญชี"
       ],
@@ -12397,9 +12389,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "การกู้คืนบัญชีไม่สามารถใช้ได้กับคีย์ที่อยู่รุ่นเก่า"
-      ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
       ]
     },
     "session_recovery:available:info": {

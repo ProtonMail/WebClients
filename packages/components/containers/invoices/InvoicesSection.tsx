@@ -14,11 +14,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
+import { InvoiceOwner, InvoiceState } from '@proton/payments';
+import { InvoiceDocument } from '@proton/payments/core/api/api';
 import { useEditBillingAddressModal } from '@proton/payments/ui/billing-address/containers/useEditBillingAddressModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';
 import InvoiceGroup from './InvoiceGroup';
@@ -103,7 +105,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
 
     const editBillingAddressLoadingKey = 'editBillingAddress';
 
-    const invoiceEditButtons = hook.type === 'invoices' && hook.invoices.length > 0 && (
+    const invoiceEditButtons = (
         <DropdownActions
             size="medium"
             list={[
@@ -111,16 +113,18 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',
-                    onClick: () => openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }),
+                    onClick: () =>
+                        openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }).catch(noop),
                     loading: loadingByKey[editBillingAddressLoadingKey],
                 },
-                {
-                    text: c('Action').t`Edit invoice note`,
-                    'data-testid': 'editInvoiceNote',
-                    key: 'editInvoiceNote',
-                    onClick: () => setInvoiceModalOpen(true),
-                    loading: loadingEditInvoiceModal,
-                },
+                hook.type === 'invoices' &&
+                    hook.invoices.length > 0 && {
+                        text: c('Action').t`Edit invoice note`,
+                        'data-testid': 'editInvoiceNote',
+                        key: 'editInvoiceNote',
+                        onClick: () => setInvoiceModalOpen(true),
+                        loading: loadingEditInvoiceModal,
+                    },
             ].filter(isTruthy)}
         />
     );

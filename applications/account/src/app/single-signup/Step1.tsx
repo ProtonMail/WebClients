@@ -48,16 +48,17 @@ import {
     type StrictPlan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
-    getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
-    getPaymentsVersion,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,
@@ -75,8 +76,6 @@ import {
     VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -629,7 +628,7 @@ const Step1 = ({
             });
         },
         initialBillingAddress: {
-            ...getBillingAddressFromPaymentStatus(model.paymentStatus),
+            ...getBillingAddressFromPaymentStatus(model.paymentStatus, { shouldRestoreZipCode: true }),
             Company: signupParameters.orgName ?? '',
             City: signupParameters.city ?? '',
             Address: signupParameters.streetAddress ?? '',
@@ -902,9 +901,11 @@ const Step1 = ({
                     });
                 });
 
-                const error = getSentryError(e);
-                if (error) {
-                    const context = {
+                tracePaymentError(e, {
+                    tags: {
+                        component: 'single-signup-v1-Step1',
+                    },
+                    extra: {
                         mode,
                         selectedPlan,
                         selectedPlanName: selectedPlan.Name,
@@ -919,13 +920,8 @@ const Step1 = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage('Payments: Failed to handle single-signup-v1', {
-                        level: 'error',
-                        extra: { error, context },
-                    });
-                }
+                    },
+                });
             }
         }
 
@@ -933,10 +929,12 @@ const Step1 = ({
     };
 
     const getUpsellToggle = () => {
-        const hasUpsellVPNPassBundleToggle = upsellToVPNPassBundle || options.planIDs[PLANS.VPN_PASS_BUNDLE];
+        const hasVpnPassBundle = options.planIDs[PLANS.VPN_PASS_BUNDLE];
+        // Hide toggle during vpn promo for vpnpass2023
+        const hasUpsellVPNPassBundleToggle = upsellToVPNPassBundle;
 
         if (hasUpsellVPNPassBundleToggle) {
-            const hasPlanSelected = !!options.planIDs[PLANS.VPN_PASS_BUNDLE] && options.cycle === CYCLE.YEARLY;
+            const hasPlanSelected = !!hasVpnPassBundle && options.cycle === CYCLE.YEARLY;
             return (
                 <VPNPassUpsellToggle
                     view={hasPlanSelected && !toggleUpsell?.from ? 'included' : undefined}
@@ -1371,6 +1369,8 @@ const Step1 = ({
                                                     </>
                                                 );
                                             }}
+                                            defaultEmail={defaultEmail}
+                                            currentPlan={selectedPlan}
                                         />
                                     </AccountFormDataContextProvider>
                                 </div>

@@ -4150,9 +4150,6 @@
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
       ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
-      ],
       "Please select a country": [
         "აირჩიეთ ქვეყანა"
       ],
@@ -7764,6 +7761,9 @@
       "Vault updated": [
         "საცავი განახლდა"
       ],
+      "Verification code sent.": [
+        "გადამოწმების კოდი გაიგზავნა."
+      ],
       "Verification may take a few minutes.": [
         "გადამოწმებას შეიძლება, რამდენიმე წუთი დასჭირდეს."
       ],
@@ -8670,6 +8670,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } -ისთვის, ${ DOCS_SHORT_APP_NAME } -ისთვის და ${ SHEETS_SHORT_APP_NAME } -ისთვის."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
@@ -9010,6 +9013,9 @@
       "State": [
         "მდგომარეობა"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Street address": [
         "ქუჩის მისამართი"
       ],
@@ -9042,6 +9048,9 @@
       ],
       "Type": [
         "ტიპი"
+      ],
+      "Unlimited": [
+        "შეუზღუდავი"
       ],
       "Upload 1 or more encryption keys": [
         "ატვირთეთ 1 ან მეტი დაშიფვრის გასაღები"
@@ -9099,6 +9108,9 @@
       ],
       "Why would you like to cancel?": [
         "რატომ აუქმებთ?"
+      ],
+      "Yes": [
+        "დიახ"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
@@ -9243,9 +9255,6 @@
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "Common sign in issues": [
-        "შესვლის ზოგადი პრობლემები"
       ],
       "Common sign up issues": [
         "რეგისტრაციის ზოგადი პრობლემები"
@@ -10058,9 +10067,6 @@
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -12024,11 +12030,6 @@
         "თქვენი კარიბჭე ინტერნეტ-უსაფრთხოებისთვის"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } თვე",
@@ -12138,9 +12139,6 @@
       "Verify now": [
         "ახლა გადამოწმება"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
@@ -12180,9 +12178,6 @@
       ],
       "Verify recovery phone?": [
         "შევამოწმო აღდგენის ტელეფონი?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი ახლა: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
@@ -12462,9 +12457,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "თუ თქვენი ავტორიზაციის დეტალები დაკარგეთ და გნებავთ, ჩამოყაროთ თქვენი ანგარიში, **მნიშვნელოვანია**, რომ ორივე, **ანგარიშის აღდგენის და მონაცემების აღდდგენის მეთოდი** გქონდეთ ჩართული. სხვაგვარად, შეიძლება, დაკარგოთ წვდომა თქვენს ელფოსტასთან, კონტაქტებთან, ფაილებთან და პაროლებთან."
       ],
-      "Invalid code": [
-        "არასწორი კოდი"
-      ],
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
       ],
@@ -12738,9 +12730,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
     },
     "session_recovery:available:info": {
@@ -14169,9 +14158,6 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
-      ],
-      "Billing information updated": [
-        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"

@@ -622,9 +622,6 @@
       "Set extra password": [
         "Imposta la password aggiuntiva"
       ],
-      "Settings": [
-        "Consenti"
-      ],
       "Setup 2FA": [
         "Configura 2FA"
       ],
@@ -1273,6 +1270,9 @@
       ],
       "Unknown error": [
         "Errore sconosciuto"
+      ],
+      "Unknown error.": [
+        "Errore sconosciuto."
       ],
       "Unknown invite": [
         "Invito sconosciuto"
@@ -1991,6 +1991,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Logging you out...": [
+        "Disconnessione in corso"
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
@@ -2472,6 +2475,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Il dispositivo **${ name }** che ha tentato di accedere al tuo account ${ BRAND_NAME } il **${ date }** rifiuterà."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Per configurare le scorciatoie, vai su about:addons in Firefox e seleziona \"Gestisci scorciatoie estensioni\""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuare a ricevere email trasferisci questi alias in una casella di posta diversa:"
       ],
@@ -2495,12 +2501,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Alias ​​hide-my-email illimitati e gestione avanzata degli alias"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Sblocca ${ PASS_APP_NAME } con il tuo codice PIN per accedere alle tue passkey"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Sblocca ${ PASS_APP_NAME } con il tuo codice PIN per salvare questa passkey"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con biometria"

@@ -172,7 +172,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const [subscription, loadingSubscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE;
     const planIsManagedExternally = isManagedExternally(subscription);
@@ -194,7 +194,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
 
     const currency = subscription.Currency || user?.Currency || 'USD';
 
-    const plansMap = getPlansMap(plans, subscription.Currency, false);
+    const plansMap = getPlansMap(plans, currency, false);
     const bundle = getPlanByName(plansResult?.plans ?? [], plan, currency);
     const planPricePerCycle = getPricePerCycle(bundle, CYCLE.YEARLY) ?? 0;
 
@@ -230,7 +230,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     }
 
     const handleGetPlan = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -315,6 +315,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                     shape="ghost"
                                     className="flex items-center gap-1 flex-nowrap"
                                     onClick={handleGetPlan}
+                                    loading={loadingSubscriptionModal}
                                 >
                                     {getExploreText(PLAN_NAMES[plan])}
                                     <IcArrowRight className="shrink-0 rtl:mirror" />

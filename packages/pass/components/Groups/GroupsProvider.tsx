@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { GroupMembersModal } from '@proton/pass/components/Groups/GroupMembersModal';
+import type { MaybeGroupProps } from '@proton/pass/components/Groups/MaybeGroupName';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useRequest } from '@proton/pass/hooks/useRequest';
@@ -65,7 +66,7 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
 
     const onShowMembers = useCallback(
         (event: MouseEvent, groupId: GroupId) => {
-            if ((groupsMembers[groupId]?.total ?? 0) > 0) {
+            if ((groupsMembers[groupId]?.members.length ?? 0) > 0) {
                 event.stopPropagation();
                 event.preventDefault();
                 setModalOpen(groupId);
@@ -105,6 +106,7 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
 
 type UseMaybeGroup = {
     name: string;
+    maybeGroupProps: MaybeGroupProps;
     isGroup: boolean;
     isMember: boolean;
     groupIsLoading: boolean;
@@ -126,12 +128,17 @@ export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<str
         if (group) fetchGroupMembers(group.groupId);
     }, [group?.groupId]);
 
-    const name = useMemo(() => {
-        if (!group) return email ?? '';
+    const { name, maybeGroupProps } = useMemo(() => {
+        if (!group) {
+            const name = email ?? '';
+            return { name, maybeGroupProps: { name } };
+        }
         const memberCount = groupsMembers[group.groupId]?.members.length;
-        if (memberCount === undefined) return group.name;
+        if (memberCount === undefined) {
+            return { name: group.name, maybeGroupProps: { name: group.name } };
+        }
         const count = c('Info').ngettext(msgid`(${memberCount} member)`, `(${memberCount} members)`, memberCount);
-        return `${group.name} ${count}`;
+        return { name: `${group.name} ${count}`, maybeGroupProps: { name: group.name, count } };
     }, [email, group, groupsMembers]);
 
     // It's a group if the group is loaded or if we expect a group id
@@ -151,5 +158,5 @@ export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<str
         onShowMembersById,
     ]);
 
-    return { name, isGroup, isMember, groupIsLoading, onShowMembers };
+    return { name, maybeGroupProps, isGroup, isMember, groupIsLoading, onShowMembers };
 };

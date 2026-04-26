@@ -2,16 +2,15 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import {
     Renew,
-    type Subscription,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
@@ -30,7 +29,9 @@ import {
     hasVpnBusiness,
     isTrial,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getHasVpnOnlyB2BPlan, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -78,7 +79,7 @@ import { SubscriptionItems } from './SubscriptionItems';
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];
@@ -117,7 +118,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             const humanUsedSpace = humanSize({ bytes: UsedSpace });
             const humanMaxSpace = humanSize({ bytes: MaxSpace });
             return (
-                <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+                <StripedItem left={<IcStorage className="color-success" size={5} />}>
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
                 </StripedItem>
@@ -129,7 +130,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const humanMaxSpace = humanSize({ bytes: space.maxBaseSpace + space.maxDriveSpace, unit: 'GB', fraction: 0 });
 
         return (
-            <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+            <StripedItem left={<IcStorage className="color-success" size={5} />}>
                 <span>{humanMaxSpace}</span>
                 <div className="text-sm">
                     {maxBaseSpace} {MAIL_SHORT_APP_NAME} + {maxDriveSpace} {DRIVE_SHORT_APP_NAME}
@@ -496,7 +497,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     );
 
     const b2bTrialLearnMore = (() => {
-        const trialCancelled = subscription?.Renew === Renew.Disabled;
+        const trialCancelled = isPaidSubscription(subscription) && subscription.Renew === Renew.Disabled;
         if (!isB2BTrial || trialCancelled) {
             return null;
         }

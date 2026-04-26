@@ -11,8 +11,8 @@ import type { NotificationRequest } from 'proton-pass-extension/app/content/serv
 import { AutosaveVaultPicker } from 'proton-pass-extension/lib/components/Inline/AutosaveVaultPicker';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { WithPinUnlock } from 'proton-pass-extension/lib/components/Inline/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
+import { WithUnlock } from 'proton-pass-extension/lib/components/Inline/WithUnlock';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
@@ -318,7 +318,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     />
 
                     <div className="max-w-full flex flex-auto flex-column flex-nowrap gap-2">
-                        <WithPinUnlock>
+                        <WithUnlock>
                             {(locked, input) =>
                                 locked ? (
                                     <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
@@ -328,8 +328,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                             <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                                 <Icon name="lock-filled" size={6} />
                                                 <span className="text-center block">
-                                                    {c('Info')
-                                                        .t`Unlock ${PASS_APP_NAME} with your PIN code to save this passkey`}
+                                                    {c('Info').t`Unlock ${PASS_APP_NAME} to save this passkey`}
                                                 </span>
                                             </div>
                                             {input}
@@ -342,7 +341,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                     <PasskeyCreateView form={form} loading={loading} username={username} />
                                 )
                             }
-                        </WithPinUnlock>
+                        </WithUnlock>
                     </div>
                 </Form>
             </FormikProvider>

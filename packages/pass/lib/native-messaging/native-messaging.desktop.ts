@@ -15,23 +15,41 @@ export const sendNativeMessageResponse: SendNativeMessageResponse = async (respo
 export const listenNativeMessage = <Type extends NativeMessageType>(
     type: Type,
     isReady: boolean,
+    isLocked: boolean,
+    userId: string,
     callback: (request: NativeMessageRequestForType<Type>, messageId: string) => void
 ) => {
     return window.ctxBridge?.onNmRequest(async (payload) => {
         log('Request received in view', payload.type);
 
-        /** If we receive an encrypted request while the app is locked, we return an error */
         if ('encrypted' in payload && !isReady) {
             return sendNativeMessageResponse(
                 {
                     type: NativeMessageType.SETUP_LOCK_SECRET,
-                    error: NativeMessageErrorType.DESKTOP_APP_LOCKED,
+                    error: isLocked
+                        ? NativeMessageErrorType.DESKTOP_APP_LOCKED
+                        : NativeMessageErrorType.DESKTOP_APP_NOT_LOGGED_IN,
                 },
                 payload.messageId
             );
         }
 
-        const request = await payloadToMessage(payload, 'extension');
+        /** Check for account mismatch before attempting decryption.
+         * userIdentifier format is `${localID}-${userId}`, so we check the suffix. */
+        if ('encrypted' in payload && payload.userIdentifier && !payload.userIdentifier.endsWith(`-${userId}`)) {
+            return sendNativeMessageResponse(
+                { type: payload.type, error: NativeMessageErrorType.ACCOUNT_MISMATCH },
+                payload.messageId
+            );
+        }
+
+        const request = await payloadToMessage(payload, 'extension').catch(() => null);
+        if (request === null) {
+            return sendNativeMessageResponse(
+                { type: payload.type, error: NativeMessageErrorType.NATIVE_MESSAGE_DECRYPTION_FAILED },
+                payload.messageId
+            );
+        }
 
         if (request.type === type) {
             callback(request as NativeMessageRequestForType<Type>, payload.messageId);

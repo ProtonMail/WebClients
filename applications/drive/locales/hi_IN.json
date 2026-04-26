@@ -392,9 +392,6 @@
       "Get in touch": [
         "हमसे संपर्क करें"
       ],
-      "Get link": [
-        "लिंक प्राप्त करें"
-      ],
       "Get Started": [
         "शुरू करें"
       ],
@@ -479,9 +476,6 @@
       "Load image": [
         "तस्वीर लोड करें"
       ],
-      "Loading link": [
-        "लिंक लोड हो रहा है"
-      ],
       "Make a copy": [
         "एक प्रति बनाएं"
       ],
@@ -490,9 +484,6 @@
       ],
       "Manage labels": [
         "लेबल संभाले"
-      ],
-      "Manage link": [
-        "लिंक प्रबंधित करें"
       ],
       "Manage share": [
         "साझा प्रबंधित करें"
@@ -1202,6 +1193,9 @@
       "${ users } user": [
         "${ users } यूज़र",
         "${ users } यूज़र"
+      ],
+      "Total": [
+        "कुल"
       ],
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
@@ -4723,9 +4717,6 @@
       "Unsupported file": [
         "असमर्थित फ़ाइल"
       ],
-      "Untitled": [
-        "बेटाइटल"
-      ],
       "Updating drive search...": [
         "ड्राइव खोज अपडेट कर रहे..."
       ],
@@ -6686,32 +6677,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" बनाया गया"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" मिटाया गया"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" हमेशा के लिए कचरे से मिटाया गया"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" नहीं बनाया जा सका"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" मिटाना असफल"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" को हमेशा के लिए कचरे से मिटाया नहीं जा सका"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" ले जाने में असफल"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" कचरे में ले जाने में असफल"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" कचरे से लाने में असफल"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" सेव करने में असफल"
@@ -6719,14 +6686,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" कचरे में ले गए"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" कचरे से लाया गया"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" सेव किया गया"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" ले जाया गया"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" का नाम बदलने में असफल"
@@ -6745,10 +6706,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाया गया",
         "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाए गए"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } आइटम मिटाने में असफल",
-        "${ numberOfItems } आइटम मिटाने में असफल"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाने में असफल",
@@ -6786,9 +6743,6 @@
       ],
       "Access updated": [
         "पहुंच अपडेट की गई"
-      ],
-      "Album failed to be renamed": [
-        "एल्बम का नाम बदलने में असफल"
       ],
       "Album renamed successfully": [
         "एल्बम का नाम सफलतापूर्वक बदला गया"
@@ -6831,9 +6785,6 @@
       ],
       "Failed to download files: ${ err }": [
         "फाइलें डाउनलोड करने में असफल: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "न्योता की जानकारी लोड करने में असफल"
       ],
       "Failed to move, please try again": [
         "ले जाने में असफल, कृपया वापिस कोशिश करें"
@@ -7380,11 +7331,6 @@
         "नाम"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "संपर्क करें"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } महीना",
@@ -7533,11 +7479,6 @@
     "session_recovery:available:action": {
       "Reset password": [
         "पासवर्ड रीसेट करें"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ]
     },
     "session_recovery:available:info": {

@@ -1,21 +1,22 @@
 import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import { useTrashActions } from '../../../sections/commonActions/useTrashActions';
-import type { LinkInfo } from '../../../store';
+import { getNodeNameFallback } from '../../../utils/sdk/getNodeName';
+import type { PhotoItem } from '../../usePhotos.store';
 
 interface Props {
-    selectedLinks: LinkInfo[];
+    selectedPhotos: PhotoItem[];
     showIconOnly: boolean;
     dropDownMenuButton?: boolean;
 }
 
-const PhotosTrashButton = ({ selectedLinks, showIconOnly, dropDownMenuButton }: Props) => {
+const PhotosTrashButton = ({ selectedPhotos, showIconOnly, dropDownMenuButton }: Props) => {
     const [isLoading, withLoading] = useLoading();
     const { trashItems } = useTrashActions();
     const ButtonComp = dropDownMenuButton ? DropdownMenuButton : ToolbarButton;
@@ -27,12 +28,10 @@ const PhotosTrashButton = ({ selectedLinks, showIconOnly, dropDownMenuButton }: 
                 withLoading(
                     trashItems(
                         getDriveForPhotos(),
-                        selectedLinks.map((link) => ({
-                            uid: generateNodeUid(link.volumeId, link.linkId),
-                            parentUid: link.parentLinkId
-                                ? generateNodeUid(link.volumeId, link.parentLinkId)
-                                : undefined,
-                            name: link.name,
+                        selectedPhotos.map((photo) => ({
+                            uid: photo.nodeUid,
+                            parentUid: photo.additionalInfo?.parentNodeUid,
+                            name: photo.additionalInfo?.name ?? getNodeNameFallback(),
                         }))
                     )
                 )

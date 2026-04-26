@@ -2,8 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
+import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { addressesThunk, selectAddresses } from '../addresses';
@@ -69,8 +68,8 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
         predicate: (action, currentState) => {
             return Boolean(
                 selectOrganizationKey(currentState).value &&
-                    selectMembers(currentState).value?.length &&
-                    selectOrganization(currentState).value
+                selectMembers(currentState).value?.length &&
+                selectOrganization(currentState).value
             );
         },
         effect: async (action, listenerApi) => {
@@ -102,8 +101,8 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             );
             return Boolean(
                 organizationKey?.privateKey &&
-                    !organizationKey.Key.FingerprintSignature &&
-                    eligibleAddresses.length >= 1
+                !organizationKey.Key.FingerprintSignature &&
+                eligibleAddresses.length >= 1
             );
         },
         effect: async (action, listenerApi) => {
@@ -120,8 +119,8 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             if (
                 Boolean(
                     organizationKey?.privateKey &&
-                        !organizationKey.Key.FingerprintSignature &&
-                        eligibleAddresses.length >= 1
+                    !organizationKey.Key.FingerprintSignature &&
+                    eligibleAddresses.length >= 1
                 )
             ) {
                 try {

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -9,6 +11,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -17,7 +20,15 @@ export const AccountLost = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { resetResponse, username } = snapshot.context;
 
-    const AlternateStepInstruction = resetResponse
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'recoveryFailed',
+        });
+    }, []);
+
+    const hasOtherSessions = resetResponse?.Sessions && resetResponse?.Sessions.length > 0;
+    const AlternateStepInstruction = hasOtherSessions
         ? c('Info')
               .t`Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:`
         : c('Info').t`If possible, when signing in, use a device or a browser where you’ve signed in before.`;
@@ -33,21 +44,21 @@ export const AccountLost = () => {
                 <p className="m-0">{c('Info')
                     .t`Unfortunately there is no recovery method available for this account.`}</p>
                 <p className="m-0">{getBoldFormattedText(AlternateStepInstruction)}</p>
-                <div>
-                    {resetResponse?.Sessions && resetResponse?.Sessions.length > 0 && (
+                {hasOtherSessions && (
+                    <div>
                         <SignedInSessionsList activeSessions={resetResponse?.Sessions} />
-                    )}
-                </div>
+                    </div>
+                )}
             </Content>
             <div className="flex flex-column flex-wrap gap-2 justify-between mt-6">
                 <ButtonLike
                     as={Href}
                     size="large"
                     fullWidth
-                    href={getKnowledgeBaseUrl('/troubleshooting?product=account')}
+                    href={getKnowledgeBaseUrl('/set-account-recovery-methods')}
                 >
                     <span className="flex items-center gap-2 justify-center">
-                        {c('Action').t`Contact Support Center`} <IcArrowWithinSquare />
+                        {c('Action').t`Learn about recovery options`} <IcArrowWithinSquare />
                     </span>
                 </ButtonLike>
             </div>

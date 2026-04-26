@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { fromUnixTime } from 'date-fns';
@@ -10,6 +10,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -39,7 +40,7 @@ export const useReferralDiscover = () => {
     const isFreeUsersDiscoverFeatureActive = useFlag('ReferralFreeUsersDiscover');
 
     const subscriptionStartedThirtyDaysAgo =
-        !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
+        isPaidSubscription(subscription) && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
 
     const userIsFreeAndCreatedThirtyDaysAgo =
         isFree && !!user.CreateTime && new Date() > addDays(fromUnixTime(user.CreateTime), 30);
@@ -57,15 +58,20 @@ export const useReferralDiscover = () => {
                 (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo))
     );
 
-    const handleCloseSettingsSpotlight = useCallback(() => {
+    const onceRef = useRef(false);
+
+    const handleCloseSettingsSpotlight = useCallback(async () => {
         onCloseSettingsSpotlight();
-        void updateReferralSpotlightSettings(false);
+        if (!onceRef.current) {
+            onceRef.current = true;
+            void updateReferralSpotlightSettings(false);
+        }
     }, [onCloseSettingsSpotlight]);
 
     // Remove spotlight if user has seen referral page
     useEffect(() => {
         if (isFeatureActive && location?.pathname.includes('/referral')) {
-            handleCloseSettingsSpotlight();
+            void handleCloseSettingsSpotlight();
         }
     }, [location?.pathname, isFeatureActive]);
 

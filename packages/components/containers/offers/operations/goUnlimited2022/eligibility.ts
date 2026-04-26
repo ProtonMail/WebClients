@@ -1,18 +1,23 @@
 import { fromUnixTime, isBefore, subDays } from 'date-fns';
 
-import { CYCLE, PLANS, type Subscription, canModify, getPlan, isTrial } from '@proton/payments';
+import { CYCLE, PLANS, canModify, getPlan, isTrial } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     protonConfig: ProtonConfig;
 }
 
 export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
     const isValidApp = protonConfig?.APP_NAME === APPS.PROTONMAIL || protonConfig?.APP_NAME === APPS.PROTONACCOUNT;
-    const createDate = subscription?.CreateTime ? fromUnixTime(subscription.CreateTime) : new Date();
+    const createDate =
+        isPaidSubscription(subscription) && subscription.CreateTime
+            ? fromUnixTime(subscription.CreateTime)
+            : new Date();
     const plan = getPlan(subscription);
 
     const commonConditions =

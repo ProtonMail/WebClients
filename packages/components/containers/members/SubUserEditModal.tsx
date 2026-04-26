@@ -19,7 +19,6 @@ import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureSta
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
@@ -34,6 +33,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import {
     BRAND_NAME,
@@ -426,7 +426,7 @@ const SubUserEditModal = ({
                                     member.addressState === 'full' &&
                                     !member.Addresses?.[0]?.HasKeys && (
                                         <Tooltip title={getPrivateAdminError()} openDelay={0}>
-                                            <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                            <IcInfoCircleFilled className="color-danger ml-2" />
                                         </Tooltip>
                                     )}
                             </div>

@@ -1,5 +1,5 @@
 import type { CustomElementRef } from '@proton/pass/utils/dom/create-element';
-import { POPOVER_SUPPORTED, hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
+import { POPOVER_SUPPORTED, TopLayerManager, hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
 
 import type { ProtonPassRoot } from './custom-elements/ProtonPassRoot';
 import type { InlineRegistry } from './inline.registry';
@@ -20,6 +20,7 @@ export const createPopoverController = (registry: InlineRegistry): PopoverContro
             if (POPOVER_SUPPORTED) {
                 root.customElement.setAttribute('popover', 'manual');
                 showPopover(root.customElement);
+                TopLayerManager.arm(root.customElement);
             } else root.customElement.removeAttribute('popover');
         },
         close: () => {
@@ -29,7 +30,10 @@ export const createPopoverController = (registry: InlineRegistry): PopoverContro
                  * notification are active. Since both apps share the same
                  * popover container, closing one should not affect the other */
                 if (dropdown?.getState().visible || notification?.getState().visible) return;
-                else hidePopover(root.customElement);
+                else {
+                    hidePopover(root.customElement);
+                    TopLayerManager.disarm();
+                }
             }
         },
     };

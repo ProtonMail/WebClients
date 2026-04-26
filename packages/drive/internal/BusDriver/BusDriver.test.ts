@@ -1,4 +1,5 @@
-import type { NodeEntity } from '../..';
+import type { NodeEntity } from '@protontech/drive-sdk';
+
 import { getBusDriver } from './BusDriver';
 import type {
     AcceptInvitationsEvent,
@@ -12,6 +13,14 @@ import type {
 import { BusDriverEventName } from './BusDriverTypes';
 
 const mockDriveClient = {} as BusDriverClient;
+
+jest.mock('@proton/shared/lib/helpers/promise', () => {
+    const actual = jest.requireActual('@proton/shared/lib/helpers/promise');
+    return {
+        ...actual,
+        wait: jest.fn(() => Promise.resolve()),
+    };
+});
 
 jest.mock('./errorHandling', () => {
     const actual = jest.requireActual('./errorHandling');
@@ -416,16 +425,16 @@ describe('BusDriver', () => {
 
     describe('handleSdkEvent', () => {
         let eventBus: ReturnType<typeof getBusDriver>;
-        let emitSpy: jest.SpyInstance;
+        let emitInternalSpy: jest.SpyInstance;
 
         beforeEach(() => {
             eventBus = getBusDriver();
             eventBus.clear();
-            emitSpy = jest.spyOn(eventBus, 'emit');
+            emitInternalSpy = jest.spyOn(eventBus as any, 'emitInternal');
         });
 
         afterEach(() => {
-            emitSpy.mockRestore();
+            emitInternalSpy.mockRestore();
         });
 
         it('should handle NodeCreated SDK event correctly', async () => {
@@ -439,7 +448,7 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith(
+            expect(emitInternalSpy).toHaveBeenCalledWith(
                 {
                     type: BusDriverEventName.CREATED_NODES,
                     items: [
@@ -453,7 +462,7 @@ describe('BusDriver', () => {
                 },
                 mockDriveClient
             );
-            expect(emitSpy).toHaveBeenCalledTimes(1);
+            expect(emitInternalSpy).toHaveBeenCalledTimes(1);
         });
 
         it('should handle NodeUpdated SDK event correctly', async () => {
@@ -467,7 +476,7 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith(
+            expect(emitInternalSpy).toHaveBeenCalledWith(
                 {
                     type: BusDriverEventName.UPDATED_NODES,
                     items: [
@@ -481,7 +490,7 @@ describe('BusDriver', () => {
                 },
                 mockDriveClient
             );
-            expect(emitSpy).toHaveBeenCalledTimes(1);
+            expect(emitInternalSpy).toHaveBeenCalledTimes(1);
         });
 
         it('should handle NodeDeleted SDK event correctly', async () => {
@@ -492,11 +501,11 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith(
+            expect(emitInternalSpy).toHaveBeenCalledWith(
                 { type: BusDriverEventName.DELETED_NODES, uids: ['deleted-node-123'] },
                 mockDriveClient
             );
-            expect(emitSpy).toHaveBeenCalledTimes(1);
+            expect(emitInternalSpy).toHaveBeenCalledTimes(1);
         });
 
         it('should handle SharedWithMeUpdated SDK event correctly', async () => {
@@ -506,8 +515,11 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME }, mockDriveClient);
-            expect(emitSpy).toHaveBeenCalledTimes(1);
+            expect(emitInternalSpy).toHaveBeenCalledWith(
+                { type: BusDriverEventName.REFRESH_SHARED_WITH_ME },
+                mockDriveClient
+            );
+            expect(emitInternalSpy).toHaveBeenCalledTimes(1);
         });
 
         it('should handle unknown SDK event types gracefully', async () => {
@@ -518,7 +530,7 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).not.toHaveBeenCalled();
+            expect(emitInternalSpy).not.toHaveBeenCalled();
         });
 
         it('should handle SDK events with undefined parent correctly', async () => {
@@ -532,7 +544,7 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith(
+            expect(emitInternalSpy).toHaveBeenCalledWith(
                 {
                     type: BusDriverEventName.CREATED_NODES,
                     items: [
@@ -549,7 +561,7 @@ describe('BusDriver', () => {
         });
 
         it('should handle errors in handleSdkEvent and report them', async () => {
-            emitSpy.mockRejectedValue(new Error('Emit failed'));
+            emitInternalSpy.mockRejectedValue(new Error('Emit failed'));
 
             const mockDriveEvent = {
                 type: 'NodeCreated',

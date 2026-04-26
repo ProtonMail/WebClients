@@ -1,5 +1,4 @@
 export { default as useFileView } from './useFileView';
-export { default as useFolderView } from './useFolderView';
 export { default as useLinkDetailsView } from './useLinkDetailsView';
 export { default as useLinksDetailsView } from './useLinksDetailsView';
 export { default as useLinkPath } from './useLinkPath';

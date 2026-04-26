@@ -698,6 +698,9 @@
       "Reconnect": [
         "Koble til på nytt"
       ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
+      ],
       "Reconnect to Zoom": [
         "Koble til Zoom på nytt"
       ],
@@ -1113,13 +1116,13 @@
         "${ users } brukere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "Domains": [
         "Domener"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Users": [
         "Brukere"
@@ -1232,7 +1235,7 @@
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
@@ -1343,7 +1346,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ servere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -1377,7 +1380,7 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Få tilgang til 15 000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ servere i 120+ land"
       ],
       "Access advanced AI models": [
         "Få tilgang til avanserte KI-modeller"
@@ -3153,6 +3156,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke ${ CALENDAR_APP_NAME } som vanlig."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -3170,6 +3182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -3287,17 +3302,6 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
-      ]
-    },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Last ned for Linux"
-      ],
-      "Download for macOS": [
-        "Last ned for macOS"
-      ],
-      "Download for Windows": [
-        "Last ned for Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3512,6 +3516,9 @@
       "Account does not exist": [
         "Kontoen finnes ikke"
       ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
+      ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
@@ -3667,6 +3674,9 @@
       "Failed to load OAuth modal.": [
         "Kunne ikke laste inn oauth-modal."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
       "Failed to open to contact": [
         "Kontakten kunne ikke åpnes."
       ],
@@ -3689,7 +3699,7 @@
         "Bildeopplasting mislyktes"
       ],
       "IMAP server is required": [
-        "IMAP-tjener kreves"
+        "IMAP-server kreves"
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
@@ -3936,6 +3946,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
+      ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
       ],
@@ -4010,9 +4023,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet feil, vi kan ikke importere kontaktene"
@@ -4496,7 +4506,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2700 servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 90 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
@@ -4855,13 +4865,13 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-postserveradressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-postserveradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
@@ -5131,21 +5141,12 @@
         "${ updated } kontakt oppdatert",
         "${ updated } kontakter oppdatert"
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
@@ -5184,26 +5185,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
-      ],
-      "Ad targeting": [
-        "Annonsemålretting"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5219,9 +5205,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -5373,9 +5356,6 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Koble til ${ VPN_APP_NAME } for å surfe privat"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -5445,7 +5425,7 @@
         "Dedikerte tjenere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "default email address": [
         "standard e-postadresse"
@@ -5517,6 +5497,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
       ],
@@ -5584,14 +5567,8 @@
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
       ],
-      "Geoblocking": [
-        "Geoblokkering"
-      ],
       "Google Pay mark": [
         "Merk Google Pay"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
       "here": [
         "her"
@@ -5623,6 +5600,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -5651,9 +5631,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "I restriktive land"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
@@ -5680,9 +5657,6 @@
       ],
       "It's better to have:": [
         "Det er bedre å ha:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -5774,9 +5748,6 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
@@ -5819,9 +5790,6 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
-      "Not connected": [
-        "Ikke tilkoblet"
-      ],
       "Not on the same day": [
         "Ikke på samme dag"
       ],
@@ -5829,7 +5797,7 @@
         "Antall dedikerte tjenere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
-        "Antall dedikerte VPN-tjenere i organisasjonen"
+        "Antall dedikerte VPN-servere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -5839,9 +5807,6 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som tidligere er oppdatert av arrangøren vil bli beholdt."
-      ],
-      "On public WiFi networks": [
-        "På offentlige Wi-Fi-nettverk"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -5958,9 +5923,6 @@
       "Privacy by default": [
         "Personvern som standard"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
-      ],
       "Range already exists.": [
         "Tidsintervallet finnes allerede."
       ],
@@ -5989,9 +5951,6 @@
         "Lagrer hendelsen",
         "Lagrer hendelser"
       ],
-      "Scan the QR code with your mobile device": [
-        "Skann QR-koden med mobilenheten din"
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
       ],
@@ -6002,7 +5961,7 @@
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -6025,20 +5984,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Noen av svarene dine på forekomster som tidligere er oppdatert av arrangøren vil gå tapt."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -6058,9 +6008,6 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Overvåking"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -6146,12 +6093,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
@@ -6194,9 +6135,6 @@
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
       ],
-      "Tracking": [
-        "Sporing"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -6229,9 +6167,6 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
-      ],
-      "VPN IP": [
-        "VPN-IP"
       ],
       "Warning": [
         "Advarsel"
@@ -6274,12 +6209,6 @@
       ],
       "When can appointments be booked?": [
         "Når kan avtaler bestilles?"
-      ],
-      "When working remotely": [
-        "Når du jobber eksternt"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "Where will the appointment take place?": [
         "Hvor vil avtalen finne sted?"
@@ -6485,15 +6414,6 @@
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Internett-leverandøren din kan overvåke og noen ganger selge dataene dine, eller til og med begrense hvilke nettsteder du har tilgang til."
-      ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -6503,17 +6423,11 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
-      "Your online activity is protected": [
-        "Nettaktiviteten din er beskyttet"
-      ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -7018,7 +6932,7 @@
         "Plassering"
       ],
       "Mail Server (IMAP)": [
-        "E-posttjener (IMAP)"
+        "E-postserver (IMAP)"
       ],
       "Main": [
         "Hjem"
@@ -7153,6 +7067,9 @@
       "Secondary time zone": [
         "Sekundærtidssone"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Del deler av timeplanen din sikkert via en bestillingsside du kan sende til hvem som helst."
+      ],
       "Show others when I'm busy": [
         "Vis andre når jeg er opptatt"
       ],
@@ -7254,15 +7171,6 @@
       ],
       "Your domain": [
         "Ditt domene"
-      ],
-      "Your IP": [
-        "IP-en din"
-      ],
-      "Your ISP": [
-        "Internettleverandøren din"
-      ],
-      "Your location": [
-        "Plasseringen din"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -8061,6 +7969,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -8115,8 +8030,8 @@
       "Data retention policies": [
         "Retningslinjer for dataoppbevaring"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerte tjenere optimalisert for strømming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerte servere optimalisert for hastighet"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -8582,7 +8497,7 @@
         "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -8831,6 +8746,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Passfrase kopiert til utklippstavlen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9112,7 +9030,7 @@
         "Lagringsplass"
       ],
       "Ultrafast VPN servers in 110+ countries": [
-        "Ultraraske VPN-tjenere i 110+ land"
+        "Ultraraske VPN-servere i 110+ land"
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
@@ -9431,6 +9349,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Got it": [
         "Skjønner"
@@ -9853,11 +9774,6 @@
         "(Ingen navn)"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -10253,9 +10169,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogjenoppretting ikke tilgjengelig for eldre adressenøkler."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generer nøkler før du prøver å endre passordet."
       ]
     },
     "session_recovery:available:info": {
@@ -10687,7 +10600,7 @@
         "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+        "Få tilgang til ultra-raske VPN-servere i 110+ land"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
@@ -10707,10 +10620,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
@@ -11310,9 +11223,6 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
-      "Billing information updated": [
-        "Faktureringsinformasjon er oppdatert"
-      ],
       "Booking page created": [
         "Bestillingsside opprettet"
       ],
@@ -11493,7 +11403,7 @@
         "Opprett sikker påloggingsinformasjon på alle enhetene dine. Inkluderer ubegrensede aliaser, 20 hvelv, integrert 2FA, automatisk utfylling av kredittkort og mer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2950+ tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2950+ servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
@@ -11859,11 +11769,11 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
-      "Desktop": [
-        "Skrivebord"
-      ],
       "Discard changes?": [
         "Forkaste endringer?"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
       ],
       "Does not repeat": [
         "Gjentas ikke"
@@ -11876,9 +11786,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
-      ],
-      "Download the app": [
-        "Last ned appen"
       ],
       "Drop to upload": [
         "Slipp for å laste opp"
@@ -11952,9 +11859,6 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
-      "Get more from your VPN": [
-        "Får mer ut av ditt VPN"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaff deg ${ appName[APP_NAME] }-appene"
       ],
@@ -11981,9 +11885,6 @@
       ],
       "Host": [
         "Vert"
-      ],
-      "How does it all work?": [
-        "Hvordan fungerer alt?"
       ],
       "How does it work?": [
         "Hvordan fungerer det?"
@@ -12031,9 +11932,6 @@
       "Location": [
         "Plassering"
       ],
-      "Make a secure connection your default": [
-        "Gjør en sikker tilkobling til standard"
-      ],
       "Merge contacts": [
         "Slå sammen kontakter"
       ],
@@ -12042,9 +11940,6 @@
       ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Mobile": [
-        "Mobil"
       ],
       "Need more aliases?": [
         "Trenger du flere aliaser?"
@@ -12105,9 +12000,6 @@
       ],
       "Previous": [
         "Forrige"
-      ],
-      "Private browsing vs VPN": [
-        "Privat surfing kontra VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -12325,9 +12217,6 @@
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
       ],
-      "VPN explained": [
-        "VPN forklart"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -12348,15 +12237,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
-      ],
-      "What can a VPN protect you from?": [
-        "Hva kan et VPN beskytte deg mot?"
-      ],
-      "What is a VPN?": [
-        "Hva er et VPN?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Når er det viktigst å bruke et VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
@@ -12556,8 +12436,8 @@
         "${ n } enheter"
       ],
       "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
@@ -12580,8 +12460,8 @@
         "Velger automatisk fra ${ numberOfCountries } land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: feature": {
@@ -12594,7 +12474,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+        "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -12690,7 +12570,7 @@
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
+        "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."

@@ -628,9 +628,6 @@
       "Set extra password": [
         "设置额外密码"
       ],
-      "Settings": [
-        "设置"
-      ],
       "Setup 2FA": [
         "设置 2FA"
       ],
@@ -1014,9 +1011,6 @@
       "Encrypted JSON not supported": [
         "不支持加密的 JSON"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "桌面应用解锁的加密通信失败。"
-      ],
       "Error reporting problem": [
         "错误报告"
       ],
@@ -1286,6 +1280,9 @@
       ],
       "Unknown error": [
         "未知错误"
+      ],
+      "Unknown error.": [
+        "未知错误。"
       ],
       "Unknown invite": [
         "无效的邀请"
@@ -1998,6 +1995,9 @@
       "Loading...": [
         "加载中..."
       ],
+      "Logging you out...": [
+        "正在退出账户..."
+      ],
       "Low Priority": [
         "较低优先顺序"
       ],
@@ -2487,6 +2487,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "若要配置快捷键，请在 Firefox 中访问 about:addons 并选择“管理扩展快捷键”"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
@@ -2510,12 +2513,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "无限制 hide-my-email 别名和高级别名管理"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "使用您的 PIN 码解锁 ${ PASS_APP_NAME } 以访问您的密钥"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "使用您的 PIN 码解锁 ${ PASS_APP_NAME } 以保存这些密钥"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"

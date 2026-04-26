@@ -2,8 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Loader from '@proton/components/components/loader/Loader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -11,10 +13,11 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useUserSettings } from '../../../userSettings/hooks';
 import { getFormattedAccessibleAtDate } from '../../emergencyContact/date';
 import { ContactCell } from '../../shared/ContactCell';
 import {
@@ -33,7 +36,7 @@ interface OutgoingItemProps {
     meta: MetaIncomingDelegatedAccess;
 }
 
-const StatusCell = ({
+const getStatusCell = ({
     value: {
         parsedOutgoingDelegatedAccess: { isDisabled, recoverableAtDate },
 
@@ -79,14 +82,15 @@ const OutgoingItem = ({
     meta,
     meta: { canReEnable, canDelete, canRecoverStep1, canRecoverStep2 },
 }: OutgoingItemProps) => {
+    const statusCell = getStatusCell({ value, meta });
+    const hasStatusCell = Boolean(statusCell);
+
     return (
         <TableRow labels={labels}>
-            <TableCell>
+            <TableCell colSpan={hasStatusCell ? undefined : 2}>
                 <ContactCell {...contact} createdAtDate={createdAtDate} />
             </TableCell>
-            <TableCell>
-                <StatusCell value={value} meta={meta} />
-            </TableCell>
+            {hasStatusCell && <TableCell>{statusCell}</TableCell>}
             <TableCell>
                 <div className="inline-flex">
                     <DropdownActions
@@ -128,8 +132,15 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
     const labels = headerCells.map((column) => column.title);
 
     return (
-        <Table hasActions responsive="cards" data-testid="outgoing-recovery-contact-table">
-            <TableHeader>
+        <Table
+            hasActions
+            responsive="stacked"
+            className="mb-0"
+            lastRowNoBorder
+            noInlinePadding
+            data-testid="outgoing-recovery-contact-table"
+        >
+            <TableHeader className="sr-only">
                 <TableRow>
                     {headerCells.map(({ title, className }) => (
                         <TableHeaderCell key={title} className={className}>
@@ -161,74 +172,86 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
     );
 };
 
-export const OutgoingRecoveryContactSettings = ({ accountRecoveryId }: { accountRecoveryId: string | null }) => {
+export const OutgoingRecoveryContactSettings = ({
+    userHasNoAccountRecoveryMethodSet,
+    passwordResetOptionRequiredWarning,
+}: {
+    userHasNoAccountRecoveryMethodSet: boolean;
+    passwordResetOptionRequiredWarning?: React.ReactNode;
+}) => {
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
-    const [userSettings] = useUserSettings();
 
     if (!controller.meta.available) {
         return null;
     }
 
-    const showWarning = Boolean(
-        userSettings &&
-        // If email reset is enabled and set
-        !(
-            (userSettings.Email.Reset && userSettings.Email.Value) ||
-            // If phone reset is enabled and set
-            (userSettings.Phone.Reset && userSettings.Phone.Value)
-        )
-    );
+    const limit = controller.meta.recoveryContacts.limit;
+    const canAddRecoveryContact =
+        controller.meta.recoveryContacts.hasAccess && !controller.meta.recoveryContacts.hasReachedLimit;
+
+    if (isRecoverySettingsRedesignEnabled) {
+        if (controller.loading) {
+            return <Loader />;
+        }
+
+        return (
+            <>
+                {canAddRecoveryContact && (
+                    <div className="mb-2">
+                        <Button
+                            disabled={userHasNoAccountRecoveryMethodSet}
+                            color="norm"
+                            className="inline-flex gap-2 items-center"
+                            onClick={() => {
+                                controller.notify({ type: 'add', value: 'recovery-contact' });
+                            }}
+                        >
+                            <IcPlus className="shrink-0" />
+                            {c('emergency_access').t`Add recovery contact`}
+                        </Button>
+                    </div>
+                )}
+
+                {controller.items.recoveryContacts.length > 0 && (
+                    <DashboardCard>
+                        {passwordResetOptionRequiredWarning}
+                        <DashboardCardContent>
+                            <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
+                                .t`Your recovery contacts`}</h3>
+                            {controller.meta.recoveryContacts.hasReachedLimit && (
+                                <Banner variant="info">
+                                    {c('emergency_access').ngettext(
+                                        msgid`Maximum of ${limit} contact reached. To change, remove a contact and add a new one.`,
+                                        `Maximum of ${limit} contacts reached. To change, remove a contact and add a new one.`,
+                                        limit
+                                    )}
+                                </Banner>
+                            )}
+                            <OutgoingTable controller={controller} />
+                        </DashboardCardContent>
+                    </DashboardCard>
+                )}
+            </>
+        );
+    }
 
     return (
         <>
             <div className="text-semibold text-xl mb-3">{c('emergency_access').t`Your recovery contacts`}</div>
             <SettingsParagraph>
-                {c('emergency_access')
-                    .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.`}
+                {c('emergency_access').t`People you have added as recovery contacts.`}
             </SettingsParagraph>
-            {showWarning && !!accountRecoveryId && (
-                <div className="mb-4">
-                    <Banner
-                        action={
-                            <Button
-                                onClick={() => {
-                                    document.getElementById(accountRecoveryId)?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                            >{c('emergency_access').t`Set account recovery`}</Button>
-                        }
-                    >
-                        {c('emergency_access')
-                            .t`To use trusted contact recovery, you must have an account recovery method set.`}
-                    </Banner>
-                </div>
-            )}
             <div className="mb-4">
-                {(() => {
-                    if (controller.meta.recoveryContacts.hasReachedLimit) {
-                        const limit = controller.meta.recoveryContacts.limit;
-                        return (
-                            <Banner>
-                                {c('emergency_access').ngettext(
-                                    msgid`You reached the maximum of ${limit} recovery contact.`,
-                                    `You reached the maximum of ${limit} recovery contacts.`,
-                                    limit
-                                )}
-                            </Banner>
-                        );
-                    }
-
-                    if (controller.meta.recoveryContacts.hasAccess) {
-                        return (
-                            <Button
-                                disabled={showWarning}
-                                color="norm"
-                                onClick={() => {
-                                    controller.notify({ type: 'add', value: 'recovery-contact' });
-                                }}
-                            >{c('emergency_access').t`Add recovery contact`}</Button>
-                        );
-                    }
-                })()}
+                {canAddRecoveryContact && (
+                    <Button
+                        disabled={userHasNoAccountRecoveryMethodSet}
+                        color="norm"
+                        onClick={() => {
+                            controller.notify({ type: 'add', value: 'recovery-contact' });
+                        }}
+                    >{c('emergency_access').t`Add recovery contact`}</Button>
+                )}
             </div>
             {(controller.items.recoveryContacts.length > 0 || controller.loading) && (
                 <OutgoingTable controller={controller} />

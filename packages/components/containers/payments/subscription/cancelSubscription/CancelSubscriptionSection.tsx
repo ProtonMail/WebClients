@@ -16,8 +16,8 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
-import useFeedbackFirstCancellationFlow from '../cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
-import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
+import { useFeedbackFirstCancellationFlow } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow';
+import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {

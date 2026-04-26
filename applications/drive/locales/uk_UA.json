@@ -390,9 +390,6 @@
       "Get in touch": [
         "Зв'яжіться з нами"
       ],
-      "Get link": [
-        "Отримати посилання"
-      ],
       "Get Started": [
         "Розпочнімо"
       ],
@@ -483,9 +480,6 @@
       "Load image": [
         "Завантажити зображення"
       ],
-      "Loading link": [
-        "Завантаження посилання"
-      ],
       "Make a copy": [
         "Зробити копію"
       ],
@@ -494,9 +488,6 @@
       ],
       "Manage labels": [
         "Керувати мітками"
-      ],
-      "Manage link": [
-        "Керувати посиланням"
       ],
       "Manage share": [
         "Керувати поширенням"
@@ -5283,9 +5274,6 @@
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
-      "Untitled": [
-        "Без назви"
-      ],
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
       ],
@@ -7564,32 +7552,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" успішно створено"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" видалено"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" видалено зі смітника остаточно"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" не вдалося створити"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" не вдалося видалити"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" не вдалося остаточно видалити зі смітника"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" не вдалося перемістити"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" не вдалося перемістити до смітника"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" не вдалося відновити зі смітника"
       ],
       "\"${ name }\" failed to be saved": [
         "Не вдалося зберегти \"${ name }\""
@@ -7597,14 +7561,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" відновлено зі смітника"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" успішно збережено"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" успішно переміщено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" не вдалося перейменувати"
@@ -7629,12 +7587,6 @@
         "${ numberOfItems } елементи видалено зі смітника остаточно",
         "${ numberOfItems } елементів видалено зі смітника остаточно",
         "${ numberOfItems } елементів видалено зі смітника остаточно"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } елемент не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } елемент не вдалося остаточно видалити зі смітника",
@@ -7728,9 +7680,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Не вдалося завантажити деталі запрошення"
       ],
       "Failed to move, please try again": [
         "Не вдалося перемістити, повторіть спробу"
@@ -8402,11 +8351,6 @@
         "Назва"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "зверніться"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } місяць",
@@ -8586,9 +8530,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Відновлення облікового запису недоступне для застарілих ключів адреси"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенеруйте ключі, перш ніж змінювати пароль"
       ]
     },
     "session_recovery:available:info": {

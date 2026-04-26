@@ -1441,6 +1441,11 @@
         "Roterende groep encryptie sleutel voor optimale beveiliging"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Bezig met laden…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrouwd contact"
@@ -1488,12 +1493,6 @@
       ],
       "Failed to lock meeting": [
         "Vergrendelen van vergadering is mislukt"
-      ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Het is niet gelukt om toegang te krijgen tot de camera. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Het is niet gelukt om toegang te krijgen tot de microfoon. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
       ],
       "Failed to rotate personal meeting link": [
         "Roteren van de persoonlijke vergadering link is mislukt."
@@ -1559,6 +1558,9 @@
         "De vergadering link waartoe u toegang probeert te krijgen, bestaat niet of is mogelijk verwijderd."
       ],
       "The meeting password is incorrect": [
+        "Het wachtwoord voor de vergadering is onjuist."
+      ],
+      "The meeting password is invalid": [
         "Het wachtwoord voor de vergadering is onjuist."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
@@ -1825,11 +1827,11 @@
       "Decrypting meetings...": [
         "Vergaderingen ontsleutelen..."
       ],
-      "Default": [
-        "Standaard"
-      ],
       "Default - ${ systemDefault.label }": [
         "Standaard - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Standaard - Systeemstandaard"
       ],
       "Delete event": [
         "Verwijder afspraak"
@@ -1852,6 +1854,9 @@
       "End Meeting for everyone?": [
         "Vergadering voor iedereen beëindigen?"
       ],
+      "End the meeting for everyone?": [
+        "Vergadering voor iedereen beëindigen?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end encryptie is actief voor audio en video."
       ],
@@ -1860,6 +1865,9 @@
       ],
       "End-to-end encryption is active for this chat.": [
         "End-to-end encryptie is actief voor deze chat."
+      ],
+      "Enter code": [
+        "Voer code in"
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
@@ -1903,6 +1911,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
       ],
+      "Host": [
+        "Host"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Host uw eigen veilige vergadering. Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen. Eenvoudig, veilig en gratis."
       ],
@@ -1911,6 +1922,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Als u Firefox gebruikt, zorg er dan voor dat PeerConnection is ingeschakeld."
@@ -1924,8 +1938,11 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Als u vertrekt, stopt uw schermdeling. Wilt u doorgaan?"
+      "Leave meeting and stop sharing?": [
+        "Vergadering verlaten en stoppen met delen?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Het verlaten van de vergadering stopt uw schermdeling."
       ],
       "Left ${ roomNameLabel }": [
         "${ roomNameLabel } verlaten"
@@ -2046,6 +2063,9 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Onze end-to-end versleutelde vergaderingen beschermen uw privacy en maken echt vrije meningsuiting mogelijk."
+      ],
+      "Participant": [
+        "Deelnemer"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Plak uw ${ MEET_APP_NAME } link om deel te nemen aan een veilige vergadering"
@@ -2176,6 +2196,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Dit beëindigt de vergadering voor alle deelnemers en stopt uw scherm delen."
+      ],
       "This will end the meeting for all participants.": [
         "Dit beëindigt de vergadering voor alle deelnemers."
       ],
@@ -2268,6 +2291,9 @@
       ],
       "You were removed from the meeting": [
         "U bent uit de vergadering verwijderd"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "U verlaat de vergadering. Anderen gaan door."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "U bent uitgenodigd om deel te nemen aan een beveiligde vergadering. Bevestig uw naam en klik hieronder om deel te nemen."
@@ -2587,14 +2613,14 @@
       "Others couldn't hear me": [
         "Anderen konden mij niet horen"
       ],
+      "Others couldn't see my video": [
+        "Anderen konden mijn video niet zien"
+      ],
       "The presentation was blurry": [
         "De presentatie was wazig"
       ],
-      "Video was blurry": [
-        "Video was wazig"
-      ],
-      "Video was breaking up": [
-        "Video was aan het haperen"
+      "Video quality was poor": [
+        "De videokwaliteit was slecht"
       ]
     },
     "Placeholder": {

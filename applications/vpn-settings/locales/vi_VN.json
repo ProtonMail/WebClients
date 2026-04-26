@@ -4037,9 +4037,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Vui lòng sửa xung đột được tô sáng để tiếp tục."
       ],
-      "Please generate keys before you try to change your password": [
-        "Hãy tạo các khóa trước khi bạn thử đổi mật khẩu"
-      ],
       "Please select a country": [
         "Vui lòng chọn một quốc gia"
       ],
@@ -7542,6 +7539,9 @@
       "Vault updated": [
         "Đã cập nhật kho lưu trữ"
       ],
+      "Verification code sent.": [
+        "Mã xác minh đã gửi."
+      ],
       "Verification may take a few minutes.": [
         "Quá trình xác minh có thể mất vài phút."
       ],
@@ -8463,6 +8463,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Dành cho ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, và ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Miễn phí"
+      ],
       "From: ${ fromEmail }": [
         "Từ: ${ fromEmail }"
       ],
@@ -8802,6 +8805,9 @@
       "State": [
         "Bang"
       ],
+      "Storage": [
+        "Lưu trữ"
+      ],
       "Street address": [
         "Địa chỉ phố"
       ],
@@ -8834,6 +8840,9 @@
       ],
       "Type": [
         "Dạng"
+      ],
+      "Unlimited": [
+        "Không giới hạn"
       ],
       "Upload 1 or more encryption keys": [
         "Tải lên 1 hoặc nhiều khóa mã hóa"
@@ -8891,6 +8900,9 @@
       ],
       "Why would you like to cancel?": [
         "Tại sao bạn muốn hủy?"
+      ],
+      "Yes": [
+        "Có"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Có, tôi muốn xóa vĩnh viễn tài khoản này và tất cả dữ liệu của nó."
@@ -9034,9 +9046,6 @@
       ],
       "clearing your browser cache": [
         "xóa bộ nhớ đệm trình duyệt"
-      ],
-      "Common sign in issues": [
-        "Các vấn đề đăng nhập thường gặp"
       ],
       "Common sign up issues": [
         "Các sự cố đăng ký thường gặp"
@@ -9808,9 +9817,6 @@
       ],
       "Dedicated servers and IP": [
         "Máy chủ và IP riêng biệt"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Máy chủ chuyên dụng tối ưu cho phát trực tuyến"
       ],
       "Desktop app": [
         "Ứng dụng cho máy tính để bàn"
@@ -11745,11 +11751,6 @@
         "Cánh cổng dẫn đến tự do trực tuyến"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "liên hệ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Tất cả tính năng cao cấp từ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ PASS_SHORT_APP_NAME }."
@@ -11851,9 +11852,6 @@
       "Verify now": [
         "Xác minh ngay"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Xác minh ngay địa chỉ email khôi phục này: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Xác minh email khôi phục?"
       ],
@@ -11893,9 +11891,6 @@
       ],
       "Verify recovery phone?": [
         "Xác minh số điện thoại khôi phục?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Xác minh ngay số điện thoại khôi phục này: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Việc xác minh số điện thoại giúp tăng cường bảo mật tài khoản và cho phép thêm các tùy chọn khôi phục."
@@ -12197,9 +12192,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Nếu mất thông tin đăng nhập và cần đặt lại tài khoản, **bắt buộc** phải có cả **phương thức khôi phục tài khoản và khôi phục dữ liệu**, nếu không có thể không truy cập được bất kỳ email, liên hệ, tệp hoặc mật khẩu nào."
       ],
-      "Invalid code": [
-        "Mã không hợp lệ"
-      ],
       "Review account safety": [
         "Xem lại an toàn tài khoản"
       ],
@@ -12473,9 +12465,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Khôi phục tài khoản không khả dụng cho các khóa địa chỉ cũ"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Hãy tạo các khóa trước khi thử đổi mật khẩu"
       ]
     },
     "session_recovery:available:info": {

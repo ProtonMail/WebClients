@@ -88,10 +88,6 @@
       "Add photos": [
         "Tilføj fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Tilføj til \"${ album.name }\" (${ album.photoCount } billede)",
-        "Tilføj til \"${ album.name }\" (${ album.photoCount } billeder)"
-      ],
       "Add to album": [
         "Tilføj til album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Kontakt os"
       ],
-      "Get link": [
-        "Få link"
-      ],
       "Get mobile and desktop apps": [
         "Få mobil- og desktop-apps"
       ],
@@ -539,8 +532,8 @@
       "Go back": [
         "Gå tilbage"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tilbage til albummet “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tilbage til albummet “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -644,9 +637,6 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "Loading link": [
-        "Indlæser link"
-      ],
       "Make a copy": [
         "Lav en kopi"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
-      ],
-      "Manage link": [
-        "Håndter link"
       ],
       "Manage share": [
         "Håndter deling"
@@ -802,6 +789,9 @@
       ],
       "Quit": [
         "Afslut"
+      ],
+      "Re-index": [
+        "Re-indeksér"
       ],
       "Re-sign": [
         "Signér igen"
@@ -3327,6 +3317,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
@@ -3517,6 +3511,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Kunne ikke indlæse signaturdetaljer, prøv igen senere"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
       ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
@@ -5785,6 +5782,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Invitation confirmed": [
+        "Invitation bekræftet"
+      ],
       "Invite link copied": [
         "Invitationslink kopieret"
       ],
@@ -6315,9 +6315,6 @@
       "Shared by ${ sharedBy }": [
         "Delt af ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Delt af dig"
-      ],
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
@@ -6644,9 +6641,6 @@
       "Unsupported file type for Photos": [
         "Filtypen for Fotos er ikke understøttet"
       ],
-      "Untitled": [
-        "Uden titel"
-      ],
       "Update required": [
         "Opdatering kræves"
       ],
@@ -6721,9 +6715,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har lige øget din lagringsplads til 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi har tekniske problemer. Alle albumrelaterede handlinger er midlertidigt deaktiveret."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ node.name }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
@@ -8584,6 +8575,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
@@ -8638,8 +8636,8 @@
       "Data retention policies": [
         "Databevaringspolitikker"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerede servere optimeret til streaming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerede hastighedsoptimerede servere"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -9318,38 +9316,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopieret"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" oprettet"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" slettet"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke oprettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kunne ikke slettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kunne ikke flyttes"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kunne ikke gendannes fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" gendannet fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" blev flyttet"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" oprettet"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" slettet"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanent slettet fra papirkurven"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kunne ikke oprettes"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kunne ikke slettes"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kunne ikke flyttes"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kunne ikke flyttes til papirkurv"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kunne ikke gendannes fra papirkurv"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kunne ikke gemmes"
@@ -9357,17 +9367,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurv"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" gendannet fra papirkurv"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" gemt"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" blev kopieret"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" blev flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke omdøbes"
@@ -9382,6 +9383,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } element kunne ikke kopieres",
         "${ errors.length } elementer kunne ikke kopieres"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } element kunne ikke slettes",
+        "${ errors.length } elementer kunne ikke slettes"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } element kunne ikke flyttes til papirkurven",
@@ -9407,6 +9412,10 @@
         "${ numberOfItems } kopieret element flyttet til papirkurven",
         "${ numberOfItems } kopierede elementer flyttet til papirkurven"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } element kopieret",
+        "${ numberOfItems } elementer kopieret"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -9418,10 +9427,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
         "${ numberOfItems } elementer permanent slettet fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } element kunne ikke slettes",
-        "${ numberOfItems } elementer kunne ikke slettes"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",
@@ -9439,6 +9444,10 @@
         "${ numberOfItems } element kunne ikke gendannes fra papirkurven",
         "${ numberOfItems } elementer kunne ikke gendannes fra papirkurven"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element flyttet til papirkurven",
         "${ numberOfItems } elementer flyttet til papirkurven"
@@ -9446,10 +9455,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gendannet fra papirkurven",
         "${ numberOfItems } elementer gendannet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } element kopieret",
-        "${ numberOfItems } elementer kopieret"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9466,9 +9471,6 @@
       ],
       "Access updated": [
         "Adgang opdateret"
-      ],
-      "Album failed to be renamed": [
-        "Album kunne ikke omdøbes"
       ],
       "Album renamed successfully": [
         "Album omdøbt"
@@ -9491,8 +9493,8 @@
       "Contact group updated": [
         "Kontaktgruppe opdateret"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopi af \"${ name }\" flyttet til papirkurv"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopi af \"${ ellipsedName }\" flyttet til papirkurv"
       ],
       "Device failed to be removed": [
         "Det lykkedes ikke at fjerne enheden"
@@ -9520,9 +9522,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Kunne ikke indlæse invitationsdetaljer"
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg igen"
@@ -10195,6 +10194,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -10587,11 +10589,6 @@
         "Navn"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -10971,9 +10968,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogendannelse er ikke tilgængelig for ældre adressenøgler"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generér nøgler, før du forsøger at ændre din adgangskode."
       ]
     },
     "session_recovery:available:info": {
@@ -11608,6 +11602,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
@@ -11839,6 +11839,10 @@
       "Version history": [
         "Versionshistorik"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
+        "Videomøde, op til ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagere"
+      ],
       "Watch the interview": [
         "Se interviewet"
       ],
@@ -12002,9 +12006,6 @@
         "Alias gemt og kopieret"
       ],
       "Billing details updated": [
-        "Faktureringsoplysninger opdateret"
-      ],
-      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Canceling import": [

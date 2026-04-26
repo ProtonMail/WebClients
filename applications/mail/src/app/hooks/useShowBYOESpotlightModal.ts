@@ -9,6 +9,7 @@ import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { getAllSync, selectSyncListLoadingState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { FeatureCode, useFeature } from '@proton/features';
+import { domIsBusy } from '@proton/shared/lib/busy';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
 import { useMailGlobalModals } from '../containers/globalModals/GlobalModalProvider';
@@ -42,13 +43,15 @@ const useShowBYOESpotlightModal = () => {
     // - User has no BYOE address && is not a BYOE only account
     // - User created its account more than 30 days ago
     // - User never seen the modal before (old feature flag system)
+    // - User is not busy
     const canShowBYOESpotlightModal =
         hasAccessToBYOE &&
         !getIsBYOEOnlyAccount(addresses) &&
         byoeSyncs.length === 0 &&
         syncListLoaded === 'success' &&
         differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 30 &&
-        !!feature?.Value;
+        !!feature?.Value &&
+        !domIsBusy();
 
     useEffect(() => {
         if (canShowBYOESpotlightModal) {

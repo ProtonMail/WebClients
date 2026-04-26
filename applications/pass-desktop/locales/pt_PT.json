@@ -580,9 +580,6 @@
       "Set extra password": [
         "Defina uma palavra-passe adicional"
       ],
-      "Settings": [
-        "Definições"
-      ],
       "Setup 2FA": [
         "Configurar 2FA"
       ],
@@ -1204,6 +1201,9 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Unknown error.": [
+        "Erro desconhecido."
       ],
       "Unknown invite": [
         "Convite desconhecido"
@@ -1875,6 +1875,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2905,12 +2909,6 @@
       ],
       "Generic CSV": [
         "CSV genérico"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obtenha o ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obtenha o ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Começar"

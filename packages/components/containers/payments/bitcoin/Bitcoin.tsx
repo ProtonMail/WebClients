@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
 import Bordered from '@proton/components/components/container/Bordered';
 import Price from '@proton/components/components/price/Price';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
@@ -38,33 +38,34 @@ const Bitcoin = ({
     if (amount < minBitcoinAmount) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
         return (
-            <Alert className="mb-4" type="warning">
+            <Banner className="mb-4" variant={BannerVariants.WARNING}>
                 {i18n(
                     <Price key="price" currency={currency}>
                         {minBitcoinAmount}
                     </Price>
                 )}
-            </Alert>
+            </Banner>
         );
     }
     const maxBitcoinAmount = getMaxBitcoinAmount(currency);
     if (amount > maxBitcoinAmount) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount above maximum (${amount}).`;
         return (
-            <Alert className="mb-4" type="warning">
+            <Banner className="mb-4" variant={BannerVariants.WARNING}>
                 {i18n(
                     <Price key="price" currency={currency}>
                         {maxBitcoinAmount}
                     </Price>
                 )}
-            </Alert>
+            </Banner>
         );
     }
 
     if (error) {
         return (
             <>
-                <Alert className="mb-4" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
+                <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
+                    .t`Error connecting to the Bitcoin API.`}</Banner>
                 <Button onClick={request} data-testid="bitcoin-try-again">{c('Action').t`Try again`}</Button>
             </>
         );

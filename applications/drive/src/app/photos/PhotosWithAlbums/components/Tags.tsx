@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, UncontainedWrapper } from '@proton/components';
+import { Icon, Loader, UncontainedWrapper } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
@@ -12,6 +12,8 @@ export interface TagsProps<T extends Tag> {
     selectedTags: T[];
     tags: T[];
     onTagSelect: (tag: T[]) => void;
+    counts?: Partial<Record<T, number>>;
+    loading?: boolean;
 }
 
 export type PhotosTagsProps = TagsProps<PhotoTag>;
@@ -107,10 +109,10 @@ const getTagLabelWithIcon = (
     }
 };
 
-function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
+function Tags<T extends Tag>({ selectedTags, tags, onTagSelect, counts, loading }: TagsProps<T>) {
     return (
         <UncontainedWrapper
-            className="mx-4 min-h-custom"
+            className="min-h-custom mx-4"
             style={{
                 '--min-h-custom': 'auto',
             }}
@@ -119,6 +121,7 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);
                 const selected = selectedTags.includes(tag);
+                const count = counts?.[tag];
                 return (
                     <Button
                         shape="ghost"
@@ -131,7 +134,14 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
                         onClick={() => onTagSelect([tag])}
                     >
                         <Icon className="shrink-0" name={iconName} />
-                        <span>{label}</span>
+                        {loading ? (
+                            <span className="inline-flex gap-2 items-center">
+                                {label}
+                                <Loader className="mx-0" />
+                            </span>
+                        ) : (
+                            <span>{count !== undefined ? `${label} (${count})` : label}</span>
+                        )}
                     </Button>
                 );
             })}
@@ -153,9 +163,9 @@ export const PhotosTags = ({ selectedTags, tags, onTagSelect }: PhotosTagsProps)
         }
     };
 
-    return <Tags<PhotoTag> selectedTags={selectedTags} tags={filteredTags} onTagSelect={handleTagSelect} />;
+    return <Tags selectedTags={selectedTags} tags={filteredTags} onTagSelect={handleTagSelect} />;
 };
 
-export const AlbumsTags = ({ selectedTags, tags, onTagSelect }: AlbumsTagsProps) => {
-    return <Tags<AlbumTag> selectedTags={selectedTags} tags={tags} onTagSelect={onTagSelect} />;
+export const AlbumsTags = ({ selectedTags, tags, onTagSelect, counts, loading }: AlbumsTagsProps) => {
+    return <Tags selectedTags={selectedTags} tags={tags} onTagSelect={onTagSelect} counts={counts} loading={loading} />;
 };

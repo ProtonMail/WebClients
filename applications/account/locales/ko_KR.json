@@ -330,9 +330,6 @@
       "Connected": [
         "연결됨"
       ],
-      "Contact sales": [
-        "영업팀에 문의"
-      ],
       "Contact support": [
         "문의하기"
       ],
@@ -464,9 +461,6 @@
       ],
       "Delete account": [
         "계정 삭제"
-      ],
-      "Delete and confirm": [
-        "삭제 및 확인"
       ],
       "Delete filter “${ Name }”": [
         "필터 \"${ Name }\" 삭제"
@@ -6068,9 +6062,6 @@
       "Asking for help": [
         "도움 요청"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "신뢰하는 사람을 복구 연락처에 추가함으로써, 비밀번호 재설정 이후 데이터를 복구할 때 그들에게 이메일을 보내 도움을 요청할 수 있습니다. 당신이 다른 사람의 복구 연락처가 되어 줄 수도 있습니다."
-      ],
       "Cancel request": [
         "요청 취소"
       ],
@@ -6224,9 +6215,6 @@
       "Recovery contact removed": [
         "복구 연락처가 삭제되었습니다"
       ],
-      "Recovery contacts": [
-        "복구 연락처"
-      ],
       "Recovery request sent": [
         "복구 요청 전송됨"
       ],
@@ -6320,9 +6308,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "해당 복구 방법을 비활성화하려면 모든 복구 연락처를 삭제하십시오."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "신뢰할 수 있는 연락처 복구를 사용하려면 계정 복구 방법이 설정되어 있어야 합니다."
-      ],
       "Trusted contact": [
         "신뢰하는 연락처"
       ],
@@ -6373,9 +6358,6 @@
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "복구 연락처의 최대치인 ${ limit }개에 도달했습니다."
       ],
       "You will be notified when someone requests emergency access.": [
         "누군가 긴급 접근을 요청하면 알림을 받게 됩니다."
@@ -6818,9 +6800,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ],
       "Please select a country": [
         "국가를 선택해주세요"
@@ -8170,7 +8149,7 @@
     },
     "Form heading": {
       "Enter your email address": [
-        "이메일 주소를 입력해주세요"
+        "부모의 이매일 주소를 입력하세요"
       ]
     },
     "Form paragraph": {
@@ -8476,7 +8455,7 @@
     },
     "Heading": {
       "A simple step today to ensure your child's digital safety tomorrow": [
-        "내일 자녀의 디지털 안전을 보장하기 위한 오늘의 간단한 단계"
+        "내일의 자녀의 디지털 안전을 보장할 오늘의 간단한 한 단계"
       ],
       "Activate your reserved email address": [
         "예약된 이메일 주소 활성화"
@@ -8962,9 +8941,6 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
@@ -9629,9 +9605,6 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "10점 중 8.4점 평가의 CNET 에디터 초이스 어워드"
       ],
-      "Code expired": [
-        "코드가 만료됨"
-      ],
       "Coming soon": [
         "곧 찾아옵니다"
       ],
@@ -10112,9 +10085,6 @@
       "for ${ price }": [
         "${ price }으로"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10년 버전 기록은 영업팀에 문의하세요."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
       ],
@@ -10218,7 +10188,7 @@
         "중요도 높음"
       ],
       "How it works": [
-        "작동 방식"
+        "어떻게 진행될까요?"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -11423,9 +11393,6 @@
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "추천 크레딧은 친구의 무료 체험 종료된 후 최대 2개월 이내에, 친구가 유료 플랜을 구독한 경우에 지급될 수 있습니다."
-      ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
       ],
@@ -11515,12 +11482,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
-      ],
-      "This will delete all previous versions of your files.": [
-        "이 작업은 파일의 기존 버전을 모두 삭제합니다."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
@@ -11625,7 +11586,7 @@
         "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "남용이나 사기를 방지하기 위해 최소 ${ minimumDonation }의 기부를 부탁드립니다. 이는 전 세계적으로 디지털 개인정보를 보호하는 ${ protonFoundationLink }의 작업을 지원하고 다음 세대를 보호하는 데 도움이 됩니다."
+        "남용이나 사기를 방지하기 위해 최소 ${ minimumDonation }의 기부를 부탁드립니다. 이는 전 세계적으로 디지털 개인정보를 보호하는 ${ protonFoundationLink } 작업을 지원하고 다음 세대를 보호하는 데 도움이 됩니다."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
@@ -11723,9 +11684,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
-      "Upgrade to unlock": [
-        "잠금해제하려면 업그레이드"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
       ],
@@ -11801,6 +11759,9 @@
       "Vault updated": [
         "금고를 업데이트했습니다"
       ],
+      "Verification code sent.": [
+        "인증 코드가 전송되었습니다."
+      ],
       "Verification link expired": [
         "인증 링크 만료됨"
       ],
@@ -11824,9 +11785,6 @@
       ],
       "Version ${ version }": [
         "${ version } 버전"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
@@ -13473,9 +13431,6 @@
       "Don't ask again": [
         "다시 묻지 않기"
       ],
-      "Don't keep versions": [
-        "버전 유지 안 함"
-      ],
       "Don't show this again": [
         "다시 보지 않기"
       ],
@@ -13543,7 +13498,7 @@
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
       ],
       "Enter your email address": [
-        "이메일 주소를 입력해주세요"
+        "부모의 이메일 주소를 입력하세요"
       ],
       "Enter your password": [
         "비밀번호를 입력해주세요"
@@ -13598,6 +13553,9 @@
       ],
       "for your first month": [
         "첫 한 달간"
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
@@ -14199,6 +14157,9 @@
       "Sticky labels": [
         "라벨"
       ],
+      "Storage": [
+        "저장 공간"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -14267,6 +14228,9 @@
       ],
       "Undo send": [
         "전송 취소"
+      ],
+      "Unlimited": [
+        "제한 없음"
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
@@ -14596,9 +14560,6 @@
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "Common sign in issues": [
-        "일반적인 로그인 문제"
       ],
       "Common sign up issues": [
         "일반적 회원가입 문제"
@@ -15845,9 +15806,6 @@
       ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "스트리밍에 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -17500,9 +17458,6 @@
       "Buy now": [
         "지금 구매"
       ],
-      "Contact us": [
-        "문의하기"
-      ],
       "Continue": [
         "계속하기"
       ],
@@ -17529,9 +17484,6 @@
       ],
       "Or ${ createANewAccount }": [
         "또는 ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "무료 체험 신청"
       ],
       "Start using ${ appName }": [
         "${ appName } 사용 시작"
@@ -17774,9 +17726,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용 시작"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "특정 보안 요구가 있는 대규모 조직을 위한 맞춤형 솔루션."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "선택한 제안은 ${ currentPlanTitle } 구독에서 제공되지 않습니다."
@@ -18542,11 +18491,6 @@
         "온라인 자유를 위한 안전한 길"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "인터넷에 안전하고 빠른 속도로 접속할 수 있는 VPN 솔루션."
@@ -18887,9 +18831,6 @@
       "Verify now": [
         "지금 인증"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "이 복구 이메일 주소로 인증하세요: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -18932,9 +18873,6 @@
       ],
       "Verify recovery phone?": [
         "복구 휴대전화 인증?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "이 복구 전화번호로 인증하세요: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
@@ -19886,9 +19824,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "기존 주소 키를 계정 복구에 사용 할 수 없습니다."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ]
     },
     "session_recovery:available:info": {
@@ -20168,9 +20103,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "사진 섹션 활성화"
-      ],
       "Get updates about comments via email": [
         "이메일로 댓글에 대한 업데이트를 받아보세요"
       ],
@@ -20289,6 +20221,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "스팸 방지를 위한 ${ FREE_PASS_ALIASES }개 hide-my-email 별칭"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "스팸 방지를 위한 hide-my-email 이메일 별칭 ${ FREE_PASS_ALIASES }개"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses }개 주소"
       ],
@@ -20373,6 +20308,9 @@
       "Bundle": [
         "번들"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "시작하려면 안전한 ${ MAIL_APP_NAME } 주소를 선택하세요"
+      ],
       "Collaborative document editing": [
         "협업 문서 편집"
       ],
@@ -20436,6 +20374,9 @@
       "Gifted by **${ referrerName }**": [
         "**${ referrerName }**님으로 부터 받은 선물"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }로 대화를 비공개로 유지하세요"
+      ],
       "Manage user access": [
         "사용자 접근 관리"
       ],
@@ -20460,6 +20401,9 @@
       "Password manager for all your devices": [
         "내 모든 기기에서 사용할 수 있는 비밀번호 관리자"
       ],
+      "Password-protected messages": [
+        "비밀번호로 보호되는 메시지"
+      ],
       "Pick a service to get started.": [
         "시작하려면 서비스를 선택하세요."
       ],
@@ -20483,6 +20427,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "동시에 최대 ${ VPN_CONNECTIONS }개까지 장치 보호"
+      ],
+      "Secure calendar": [
+        "안전한 캘린더"
       ],
       "Secure file sharing": [
         "안전한 파일 공유"
@@ -20589,6 +20536,9 @@
       "use your own email.": [
         "자신만의 이메일 주소를 사용해보세요."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries }개 국가에 서버를 둔 VPN"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.countries }개 국가에 소재된 서버의 VPN"
       ],
@@ -20600,6 +20550,9 @@
       ],
       "You are all set": [
         "모든 준비가 완료되었어요"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "귀하의 계정에는 ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ LUMO_SHORT_APP_NAME }의 무료 기능에 대한 접근 권한이 포함됩니다."
       ],
       "Your plan": [
         "내 플랜"
@@ -21962,9 +21915,6 @@
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
       ],
-      "Billing information updated": [
-        "청구 정보 업데이트됨"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."
       ],
@@ -22965,9 +22915,6 @@
       ],
       "Delete user?": [
         "사용자를 삭제합니까?"
-      ],
-      "Delete version history?": [
-        "버전 기록을 삭제하시겠어요?"
       ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"

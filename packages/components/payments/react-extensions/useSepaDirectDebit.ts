@@ -18,7 +18,6 @@ import {
     type ChargebeeFetchedPaymentToken,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
-    type CreatePaymentIntentDirectDebitData,
     DisplayablePaymentError,
     type ExtendedExtractIBANResult,
     PAYMENT_METHOD_TYPES,
@@ -28,9 +27,9 @@ import {
     type V5PaymentToken,
     convertPaymentIntentData,
     extractIBAN,
-    fetchPaymentIntentV5,
     getIsB2BAudienceFromPlan,
 } from '@proton/payments';
+import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/payments/core/api/api';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -122,6 +121,7 @@ export const useSepaDirectDebit = (
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
+    const [userInitiatedProcessing, withUserInitiatiatedProcessing] = useLoading();
 
     const processingToken = fetchingToken || verifyingToken;
 
@@ -268,12 +268,14 @@ export const useSepaDirectDebit = (
         });
     };
 
-    const processPaymentToken = async () => {
-        if (!fetchedPaymentTokenRef.current) {
-            await fetchPaymentToken();
-        }
+    const processPaymentToken = () => {
+        return withUserInitiatiatedProcessing(async () => {
+            if (!fetchedPaymentTokenRef.current) {
+                await fetchPaymentToken();
+            }
 
-        await verifyPaymentToken();
+            await verifyPaymentToken();
+        });
     };
 
     const setCustomerProperty = (property: keyof DirectDebitCustomer) => (value: string) => {
@@ -316,6 +318,7 @@ export const useSepaDirectDebit = (
         getFetchedPaymentToken,
         errors: getErrors(),
         ibanStatus,
+        userInitiatedProcessing,
         meta: {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         },

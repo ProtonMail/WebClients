@@ -321,6 +321,9 @@
       "Contract composer": [
         "전체화면 닫기"
       ],
+      "Copy": [
+        "복사"
+      ],
       "Copy address": [
         "주소 복사하기"
       ],
@@ -10841,9 +10844,6 @@
       "Data retention policies": [
         "데이터 보존 정책"
       ],
-      "Dedicated servers optimized for streaming": [
-        "스트리밍에 최적화된 전용 서버"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -12568,11 +12568,6 @@
         "이름"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
@@ -13109,9 +13104,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "기존 주소 키를 계정 복구에 사용 할 수 없습니다."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ]
     },
     "session_recovery:available:info": {
@@ -14238,9 +14230,6 @@
       ],
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
-      ],
-      "Billing information updated": [
-        "청구 정보 업데이트됨"
       ],
       "Canceling import": [
         "가져오기 취소 중"

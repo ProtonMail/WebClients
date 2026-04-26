@@ -6,6 +6,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./constants/tvUserTier.ts": "./constants/tvUserTier.ts",
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
@@ -20,6 +21,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",

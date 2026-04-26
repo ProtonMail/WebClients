@@ -440,7 +440,10 @@
         "Zaradi neznane napake ni bilo mogoče zagnati urejevalnika."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
-        "Prišlo je do napake pri obdelavi posodobitev dokumenta. Prosimo, ponovno naložite stran in poskusite znova."
+        "Prišlo je do napake pri obdelavi posodobitev dokumenta. Ponovno naložite stran in poskusite znova."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Ta preglednica ni združljiva s trenutno različico odjemalca. Poskusite ponovno zagnati odjemalca. Če napaka še vedno obstaja, se obrnite na podporo uporabnikom."
       ],
       "Tried to import Sheet data into Lexical": [
         "Poskus uvoza podatkov iz lista v Lexical"
@@ -1270,7 +1273,7 @@
         "Prekoračitev"
       ],
       "Wrap": [
-        "Zavitek"
+        "Prelomi"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -1536,10 +1539,10 @@
         "Formatiraj kot valuto"
       ],
       "Format as percent": [
-        "Formatiraj kot odstotek"
+        "Oblikuj kot odstotek"
       ],
       "Horizontal align": [
-        "Horizontalna poravnava"
+        "Vodoravna poravnava"
       ],
       "Increase decimal places": [
         "Povečaj decimalna mesta"

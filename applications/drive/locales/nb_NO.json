@@ -88,10 +88,6 @@
       "Add photos": [
         "Legg til bilder"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Legg til i \"${ album.name }\" (${ album.photoCount } bilde)",
-        "Legg til i \"${ album.name }\" (${ album.photoCount } bilder)"
-      ],
       "Add to album": [
         "Legg til i album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Ta kontakt"
       ],
-      "Get link": [
-        "Få kobling"
-      ],
       "Get mobile and desktop apps": [
         "Skaff deg mobil- og skrivebordsapper"
       ],
@@ -539,8 +532,8 @@
       "Go back": [
         "Gå tilbake"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tilbake til albumet \"${ albumName }\""
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tilbake til albumet \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -644,9 +637,6 @@
       "Load image": [
         "Last inn bilde"
       ],
-      "Loading link": [
-        "Laster kobling"
-      ],
       "Make a copy": [
         "Lag en kopi"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Behandle etiketter"
-      ],
-      "Manage link": [
-        "Administrer kobling"
       ],
       "Manage share": [
         "Administrer deling"
@@ -803,11 +790,17 @@
       "Quit": [
         "Avslutt"
       ],
+      "Re-index": [
+        "Indekser på nytt"
+      ],
       "Re-sign": [
         "Signér på nytt"
       ],
       "Reconnect": [
         "Koble til på nytt"
+      ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -1335,13 +1328,13 @@
         "${ users } brukere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "Domains": [
         "Domener"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Users": [
         "Brukere"
@@ -1405,7 +1398,7 @@
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
@@ -1516,7 +1509,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ servere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -1550,7 +1543,7 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Få tilgang til 15 000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ servere i 120+ land"
       ],
       "Access advanced AI models": [
         "Få tilgang til avanserte KI-modeller"
@@ -3020,6 +3013,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -3040,6 +3042,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -3312,6 +3317,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
@@ -3323,6 +3332,9 @@
       ],
       "Account does not exist": [
         "Kontoen finnes ikke"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -3500,6 +3512,9 @@
       "Failed to load signature details, please try again later": [
         "Kunne ikke laste inn signaturdetaljer, prøv igjen senere"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
@@ -3549,7 +3564,7 @@
         "Bildeopplasting mislyktes"
       ],
       "IMAP server is required": [
-        "IMAP-tjener kreves"
+        "IMAP-server kreves"
       ],
       "Incorrect password. Please try again.": [
         "Feil passord. Prøv igjen."
@@ -3768,6 +3783,9 @@
       ],
       "Something went wrong during folder listing": [
         "Noe gikk galt under mappeopplisting"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ],
       "Something went wrong with search. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
@@ -4120,7 +4138,7 @@
         "Feil: ${ errorMessage }"
       ],
       "Internal server error": [
-        "Intern tjenerfeil"
+        "Intern serverfeil"
       ],
       "Not found": [
         "Ikke funnet"
@@ -4346,7 +4364,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2700 servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 90 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
@@ -4699,13 +4717,13 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-postserveradressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-postserveradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
@@ -5426,7 +5444,7 @@
         "Dedikerte tjenere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "default email address": [
         "standard e-postadresse"
@@ -5542,6 +5560,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
+      ],
+      "Enter code": [
+        "Skriv inn koden"
       ],
       "Enter password": [
         "Skriv inn passord"
@@ -5688,6 +5709,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte prosessen med å fjerne blokkeringen."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -5757,6 +5781,9 @@
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
+      ],
+      "Invitation confirmed": [
+        "Invitasjon bekreftet"
       ],
       "Invite link copied": [
         "Invitasjonskobling kopiert"
@@ -5900,6 +5927,18 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
       ],
+      "Move ${ dragCount } item": [
+        "Flytt ${ dragCount } element",
+        "Flytt ${ dragCount } elementer"
+      ],
+      "Move ${ fileCount } file": [
+        "Flytt ${ fileCount } fil",
+        "Flytt ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flytt ${ folderCount } mappe",
+        "Flytt ${ folderCount } mapper"
+      ],
       "Moving files": [
         "Flytter filer"
       ],
@@ -5936,6 +5975,9 @@
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
       ],
+      "No populator states found.": [
+        "Fant ingen status for indekseringsprosesser"
+      ],
       "No results found": [
         "Ingen resultater funnet"
       ],
@@ -5964,7 +6006,7 @@
         "Antall dedikerte tjenere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
-        "Antall dedikerte VPN-tjenere i organisasjonen"
+        "Antall dedikerte VPN-servere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -6100,7 +6142,7 @@
         "Bruk en annen nettleser eller last ned filen."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vent til endringene dine er synkronisert med tjeneren."
+        "Vent til endringene dine er synkronisert med serveren."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent mens vi ser etter kontakter som kan signeres på nytt med den primære krypteringsnøkkelen."
@@ -6247,7 +6289,7 @@
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -6275,9 +6317,6 @@
       ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
-      ],
-      "Shared by you": [
-        "Delt av deg"
       ],
       "Shared link not found": [
         "Delt kobling ikke funnet"
@@ -6605,9 +6644,6 @@
       "Unsupported file type for Photos": [
         "Filtypen støttes ikke for bilder"
       ],
-      "Untitled": [
-        "Uten navn"
-      ],
       "Update required": [
         "Oppdatering kreves"
       ],
@@ -6682,9 +6718,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Flott levert, du har nettopp økt lagringsplassen til 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi opplever tekniske problem. Alle albumrelaterte handlinger er midlertidig deaktivert."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ node.name }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
@@ -7475,7 +7508,7 @@
         "Logg på eller registrer deg "
       ],
       "Mail Server (IMAP)": [
-        "E-posttjener (IMAP)"
+        "E-postserver (IMAP)"
       ],
       "Main": [
         "Hjem"
@@ -8602,6 +8635,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -8656,8 +8696,8 @@
       "Data retention policies": [
         "Retningslinjer for dataoppbevaring"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerte tjenere optimalisert for strømming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerte servere optimalisert for hastighet"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -9118,7 +9158,7 @@
         "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -9336,38 +9376,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiert"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" opprettet"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" slettet"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke opprettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName } ble ikke slettet"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kunne ikke flyttes"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kunne ikke gjenopprettes fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" gjenopprettet fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }}\" delt"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" opprettet"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" slettet"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" slettet permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kunne ikke opprettes"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name } ble ikke slettet"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" kunne ikke slettes permanent fra papirkurven."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kunne ikke flyttes"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kunne ikke flyttes til papirkurven"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kunne ikke gjenopprettes fra papirkurven"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kunne ikke lagres"
@@ -9375,17 +9427,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurven"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" gjenopprettet fra papirkurven"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" lagret"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" kopiert"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke gis nytt navn"
@@ -9400,6 +9443,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } element kunne ikke kopieres",
         "${ errors.length } elementer kunne ikke kopieres"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } element ble ikke slettet",
+        "${ errors.length } elementer ble ikke slettet"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } element kunne ikke legges i papirkurven",
@@ -9425,6 +9472,10 @@
         "${ numberOfItems } kopiert element flyttet til papirkurven",
         "${ numberOfItems } kopierte elementer flyttet til papirkurven"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } element kopiert",
+        "${ numberOfItems } elementer kopiert"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -9436,10 +9487,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element slettet permanent fra papirkurven",
         "${ numberOfItems } elementer slettet permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } element ble ikke slettet",
-        "${ numberOfItems } elementer ble ikke slettet"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke slettes permanent fra papirkurven",
@@ -9457,6 +9504,10 @@
         "${ numberOfItems } element kunne ikke gjenopprettes fra papirkurven",
         "${ numberOfItems } elementer kunne ikke gjenopprettes fra papirkurven"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element flyttet til papirkurven",
         "${ numberOfItems } elementer flyttet til papirkurven"
@@ -9464,10 +9515,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gjenopprettet fra papirkurven",
         "${ numberOfItems } elementer gjenopprettet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } element kopiert",
-        "${ numberOfItems } elementer kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9484,9 +9531,6 @@
       ],
       "Access updated": [
         "Tilgang oppdatert"
-      ],
-      "Album failed to be renamed": [
-        "Album kunne ikke gis nytt navn"
       ],
       "Album renamed successfully": [
         "Album har fått nytt navn"
@@ -9509,8 +9553,8 @@
       "Contact group updated": [
         "Kontaktgruppe oppdatert"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopi av \"${ name }\" flyttet til papirkurven"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopi av \"${ ellipsedName }\" flyttet til papirkurven"
       ],
       "Device failed to be removed": [
         "Enhet kunne ikke fjernes"
@@ -9538,9 +9582,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke laste ned filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Kunne ikke laste inn invitasjonsdetaljer"
       ],
       "Failed to move, please try again": [
         "Kunne ikke flytte. Prøv igjen."
@@ -9657,6 +9698,9 @@
       ],
       "You stopped sharing this item": [
         "Du stoppet å dele dette elementet"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer blir slettet om 72 timer"
@@ -9802,7 +9846,7 @@
         "Lagringsplass"
       ],
       "Ultrafast VPN servers in 110+ countries": [
-        "Ultraraske VPN-tjenere i 110+ land"
+        "Ultraraske VPN-servere i 110+ land"
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
@@ -10210,6 +10254,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -10602,11 +10649,6 @@
         "Navn"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -10986,9 +11028,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogjenoppretting ikke tilgjengelig for eldre adressenøkler."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generer nøkler før du prøver å endre passordet."
       ]
     },
     "session_recovery:available:info": {
@@ -11374,7 +11413,7 @@
         "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+        "Få tilgang til ultra-raske VPN-servere i 110+ land"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
@@ -11394,10 +11433,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
@@ -12019,9 +12058,6 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
-      "Billing information updated": [
-        "Faktureringsinformasjon er oppdatert"
-      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -12118,7 +12154,7 @@
         "Opprett sikker påloggingsinformasjon på alle enhetene dine. Inkluderer ubegrensede aliaser, 20 hvelv, integrert 2FA, automatisk utfylling av kredittkort og mer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2950+ tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2950+ servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
@@ -12559,6 +12595,9 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
+      ],
       "Downgrade account": [
         "Nedgrader kontoen"
       ],
@@ -12737,6 +12776,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Indekseringsprosesser"
       ],
       "Information exposed in breach": [
         "Informasjon avslørt i brudd"
@@ -13474,8 +13516,8 @@
         "${ n } enheter"
       ],
       "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
@@ -13498,8 +13540,8 @@
         "Velger automatisk fra ${ numberOfCountries } land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: feature": {
@@ -13512,7 +13554,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+        "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -13608,7 +13650,7 @@
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
+        "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."

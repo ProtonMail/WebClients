@@ -4,9 +4,9 @@ import { createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { deleteSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
-import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
+import { loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
 import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -15,15 +15,15 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { findUserAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { useFlag } from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop';
 
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {
     showSuccessModal: (connectedAddress: string) => void;
+    onComplete?: () => void;
 }
 
-const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
+const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
     const api = useApi();
     const [addresses] = useAddresses();
     const hasAccessToBYOE = useBYOEFeatureStatus();
@@ -64,33 +64,15 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
             } catch (e) {
                 handleError(e);
                 onError();
-            }
-        }
-    };
-
-    const handleSyncCallback = async (hasError: boolean, sync?: Sync) => {
-        if (!hasAccessToBYOE) {
-            return;
-        }
-
-        // If setting up the forwarding worked, we can add the sync address as an external address
-        if (!hasError && sync) {
-            const address = await handleCreateAddress({
-                connectedAddress: sync.account,
-                onError: () => {
-                    // If we're not able to add the address, we want to delete the forwarding we just added
-                    void easySwitchDispatch(deleteSyncItem({ syncId: sync.id, showNotification: false })).catch(noop);
-                },
-            });
-
-            if (address) {
-                showSuccessModal(address.Email);
+                onComplete?.();
             }
         }
     };
 
     const handleBYOEWithImportCallback = async (hasError: boolean, token?: ImportToken) => {
-        if (!hasAccessToBYOE) {
+        // If setting up the token failed or user has no access to BYOE, close the modal
+        if (!hasAccessToBYOE || hasError) {
+            onComplete?.();
             return;
         }
 
@@ -101,6 +83,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
                 });
+                onComplete?.();
                 return;
             }
 
@@ -115,6 +98,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
                 );
             } catch (e) {
                 handleError(e);
+                onComplete?.();
                 return;
             }
 
@@ -129,12 +113,15 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
             });
 
             if (address) {
+                onComplete?.();
+                void easySwitchDispatch(loadSyncList());
+                void easySwitchDispatch(loadImporters());
                 showSuccessModal(address.Email);
             }
         }
     };
 
-    return { hasAccessToBYOE, isInMaintenance, handleSyncCallback, handleBYOEWithImportCallback, allSyncs };
+    return { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback, allSyncs };
 };
 
 export default useSetupGmailBYOEAddress;

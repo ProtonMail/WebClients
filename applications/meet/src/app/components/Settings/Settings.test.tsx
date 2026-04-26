@@ -5,8 +5,13 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
+import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
 import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
 import { settingsReducer } from '@proton/meet/store/slices/settings';
+import {
+    initialState as initialSortedParticipantsState,
+    sortedParticipantsReducer,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -31,7 +36,7 @@ vi.mock('../../hooks/useIsLocalParticipantAdmin', () => ({
     }),
 }));
 
-vi.mock('../../contexts/MediaManagementContext', () => ({
+vi.mock('../../contexts/MediaManagementProvider/MediaManagementContext', () => ({
     useMediaManagementContext: vi.fn().mockReturnValue({
         backgroundBlur: false,
         toggleBackgroundBlur: vi.fn(),
@@ -48,6 +53,8 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
             ...settingsReducer,
             ...uiStateReducer,
             ...meetingInfoReducer,
+            ...screenShareStatusReducer,
+            ...sortedParticipantsReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -80,6 +87,12 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
             },
             meetingInfo: {
                 ...initialMeetingInfoState,
+            },
+            screenShareStatus: {
+                participantScreenSharingIdentity: null,
+            },
+            sortedParticipants: {
+                ...initialSortedParticipantsState,
             },
         },
     });

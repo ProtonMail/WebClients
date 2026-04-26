@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
       "Incorrect username": [
         "Falscher Benutzername"
       ],
@@ -3907,8 +3910,8 @@
       "Data retention policies": [
         "Aufbewahrungsrichtlinien für Daten"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Für Streaming optimierte dedizierte Server"
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -4707,6 +4710,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -5020,11 +5026,6 @@
       ],
       "ZIP code": [
         "Postleitzahl"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktiere"
       ]
     },
     "Plan description": {
@@ -5442,9 +5443,6 @@
     "Success": {
       "Billing details updated": [
         "Rechnungsdetails aktualisiert"
-      ],
-      "Billing information updated": [
-        "Rechnungsinformationen aktualisiert"
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"

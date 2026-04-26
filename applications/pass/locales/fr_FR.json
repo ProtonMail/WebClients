@@ -613,9 +613,6 @@
       "Set extra password": [
         "Définir un mot de passe supplémentaire"
       ],
-      "Settings": [
-        "Paramètres"
-      ],
       "Setup 2FA": [
         "Configurer l'authentification A2F"
       ],
@@ -915,6 +912,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre second mot de passe pour continuer l'exportation."
       ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les identifiants de verrouillage biométrique ne correspondent pas."
+      ],
+      "Biometric lock credentials not found.": [
+        "Les identifiants de verrouillage biométrique n'ont pas été trouvés."
+      ],
+      "Biometric lock is not configured.": [
+        "Le verrouillage biométrique n'est pas configuré."
+      ],
+      "Biometric lock setup failed.": [
+        "La configuration du verrouillage biométrique n'a pas abouti."
+      ],
       "Cannot send invitation at the moment": [
         "L'envoi de l'invitation n'est pas possible pour le moment.",
         "L'envoi des invitations n'est pas possible pour le moment."
@@ -985,6 +997,9 @@
       ],
       "Emptying trash failed": [
         "La corbeille n'a pas pu être vidée."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
       ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
@@ -1205,6 +1220,24 @@
       "Something went wrong. Please sign in again.": [
         "Une erreur s'est produite. Veuillez vous reconnecter."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'est pas installée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
+      ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
       ],
@@ -1227,6 +1260,9 @@
         "Synchronisation impossible"
       ],
       "Unknown error": [
+        "Erreur inconnue"
+      ],
+      "Unknown error.": [
         "Erreur inconnue"
       ],
       "Unknown invite": [
@@ -1725,6 +1761,9 @@
       ],
       "Enter the address you want to email.": [
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."
@@ -3019,12 +3058,6 @@
       ],
       "Generic CSV": [
         "CSV générique"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Profitez de ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Profitez de ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Commencer"
@@ -4720,6 +4753,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "À moins d’être déchiffrés, les mots de passe chiffrés restent sécurisés même s’ils sont exposés."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
       ]
     },
     "Validation": {

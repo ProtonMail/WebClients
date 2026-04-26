@@ -2,6 +2,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { PersistentLatestEventIdProvider } from './PersistentLatestEventIdProvider';
+import { SearchDB } from './SearchDB';
 import type { TreeEventScopeId } from './types';
 
 const treeEventScopeId1 = 'scope-1' as TreeEventScopeId;
@@ -15,7 +16,7 @@ describe('PersistentLatestEventIdProvider', () => {
     beforeEach(() => {
         // Fresh IndexedDB for each test.
         indexedDB = new IDBFactory();
-        provider = new PersistentLatestEventIdProvider('test-user');
+        provider = new PersistentLatestEventIdProvider(SearchDB.open('test-user'));
     });
 
     it('returns null when no subscription exists', async () => {

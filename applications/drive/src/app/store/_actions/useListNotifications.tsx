@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { NotificationButton, useNotifications } from '@proton/components';
 
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useErrorHandler } from '../_utils';
 
 type Item = { linkId: string; name?: string };
@@ -68,7 +69,10 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" successfully moved`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" successfully moved`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item successfully moved`,
@@ -80,7 +84,10 @@ export default function useListNotifications() {
         createFailureMessage(
             linkInfos,
             failures,
-            (name: string) => c('Notification').t`"${name}" failed to be moved`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" failed to be moved`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item failed to be moved`,
@@ -99,7 +106,10 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" moved to trash`,
+            (name: string) => {
+                name = getEllipsedName(name);
+                return c('Notification').t`"${name}" moved to trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item moved to trash`,
@@ -111,7 +121,10 @@ export default function useListNotifications() {
         createFailureMessage(
             linkInfos,
             failures,
-            (name: string) => c('Notification').t`"${name}" failed to be moved to trash`,
+            (name: string) => {
+                name = getEllipsedName(name);
+                return c('Notification').t`"${name}" failed to be moved to trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item failed to be moved to trash`,
@@ -124,12 +137,15 @@ export default function useListNotifications() {
     const createDeletedPublicItemsNotifications = (
         linkInfos: Item[],
         ok: string[],
-        failures: { [linkId: string]: any }
+        errors: { [linkId: string]: any }
     ) => {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" deleted`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" deleted`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item deleted`,
@@ -139,13 +155,16 @@ export default function useListNotifications() {
         );
         createFailureMessage(
             linkInfos,
-            failures,
-            (name: string) => c('Notification').t`"${name}" failed to be deleted`,
-            (numberOfItems: number) =>
+            errors,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" failed to be deleted`;
+            },
+            () =>
                 c('Notification').ngettext(
-                    msgid`${numberOfItems} item failed to be deleted`,
-                    `${numberOfItems} items failed to be deleted`,
-                    numberOfItems
+                    msgid`${errors.length} item failed to be deleted`,
+                    `${errors.length} items failed to be deleted`,
+                    errors.length
                 )
         );
     };
@@ -159,7 +178,10 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" restored from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" restored from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item restored from trash`,
@@ -172,7 +194,10 @@ export default function useListNotifications() {
         createFailureMessage(
             linkInfos,
             failures,
-            (name: string) => c('Notification').t`"${name}" failed to be restored from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" failed to be restored from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item failed to be restored from trash`,
@@ -186,7 +211,10 @@ export default function useListNotifications() {
         createSuccessMessage(
             linkInfos,
             ok,
-            (name: string) => c('Notification').t`"${name}" deleted permanently from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" deleted permanently from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item deleted permanently from trash`,
@@ -197,7 +225,10 @@ export default function useListNotifications() {
         createFailureMessage(
             linkInfos,
             failures,
-            (name: string) => c('Notification').t`"${name}" failed to be deleted permanently from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" failed to be deleted permanently from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item failed to be deleted permanently from trash`,

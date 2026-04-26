@@ -374,6 +374,106 @@ describe('SharedWorkerAPI integration', () => {
         }, 15_000);
     });
 
+    describe('Scenario: stale entry cleanup after tree_refresh', () => {
+        it('removes entries for nodes that disappear between indexing cycles', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Before re-index, old-report.pdf is searchable and everything is at generation 1.
+            const before = (await search(api, 'old')).map((r) => r.nodeUid);
+            expect(before).toContain('old-report');
+            expect(await getAllIndexedItemsForGeneration(api, 1)).toHaveLength(9);
+
+            // Simulate that:
+            //   - the user was inactive for a long time, a tree_refresh is sent.
+            //   - the 'folder-archive' folder is now empty: old-report was deleted (maybe on another device)
+            bridge.setChildren('folder-archive', []);
+            bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-refresh' } as any);
+
+            await state.waitForIndexingStart();
+            await state.waitForIndexingEnd();
+
+            // The cleanup task is enqueued after the re-index and runs afterwards,
+            // so we can't assume it finished the moment isIndexing flips to false. Poll
+            // generation-1 entries until the cleanup has removed them all.
+            let genOne: SearchResultItem[] = [];
+            for (let i = 0; i < 50; i++) {
+                genOne = await getAllIndexedItemsForGeneration(api, 1);
+                if (genOne.length === 0) {
+                    break;
+                }
+                await jest.advanceTimersByTimeAsync(100);
+            }
+            expect(genOne).toHaveLength(0);
+
+            // old-report is no longer searchable; the rest of the tree still is.
+            const afterSearch = (await search(api, 'old')).map((r) => r.nodeUid);
+            expect(afterSearch).not.toContain('old-report');
+            const reports = (await search(api, 'report')).map((r) => r.nodeUid).sort();
+            expect(reports).toEqual(['report-q1', 'report-q2']);
+        }, 15_000);
+    });
+
+    describe('Scenario: bootstrap cleans stale entries from inactive tree scope', () => {
+        it('removes entries whose tree scope is no longer active', async () => {
+            const SCOPE_OLD = 'scope-old' as TreeEventScopeId;
+            const SCOPE_NEW = 'scope-new' as TreeEventScopeId;
+
+            // Boot 1: small tree rooted at SCOPE_OLD.
+            const bridge1 = new FakeMainThreadBridge();
+            bridge1.setMyFilesRootNode(
+                makeMaybeNode({
+                    uid: 'root-1',
+                    name: 'Root 1',
+                    type: 'folder' as any,
+                    treeEventScopeId: SCOPE_OLD,
+                })
+            );
+            bridge1.setChildren('root-1', [file('old-a', 'alpha.txt'), file('old-b', 'bravo.txt')]);
+
+            await api.registerClient(USER_ID, CLIENT_A, bridge1.asBridge());
+            await state.waitForSearchable();
+            expect(await search(api, '', { treeEventScopeId: SCOPE_OLD })).toHaveLength(2);
+
+            // Simulate a page reload where the My Files scope has changed (e.g. the
+            // app reopens with a different root tree-event scope). Different node
+            // uids so session.insert doesn't replace the old entries.
+            api.disconnectClient(CLIENT_A);
+            state.checkpoint();
+            api = new SharedWorkerAPI();
+
+            const bridge2 = new FakeMainThreadBridge();
+            bridge2.setMyFilesRootNode(
+                makeMaybeNode({
+                    uid: 'root-2',
+                    name: 'Root 2',
+                    type: 'folder' as any,
+                    treeEventScopeId: SCOPE_NEW,
+                })
+            );
+            bridge2.setChildren('root-2', [file('new-c', 'charlie.txt'), file('new-d', 'delta.txt')]);
+
+            await api.registerClient(USER_ID, CLIENT_A, bridge2.asBridge());
+            await state.waitForSearchable();
+
+            // Post-bootstrap cleanup runs after waitForSearchable returns; poll the
+            // SCOPE_OLD entries until they're gone.
+            let oldScopeResults: SearchResultItem[] = [];
+            for (let i = 0; i < 50; i++) {
+                oldScopeResults = await search(api, '', { treeEventScopeId: SCOPE_OLD });
+                if (oldScopeResults.length === 0) {
+                    break;
+                }
+                await jest.advanceTimersByTimeAsync(100);
+            }
+            expect(oldScopeResults).toHaveLength(0);
+
+            // SCOPE_NEW entries remain searchable.
+            const newScopeResults = await search(api, '', { treeEventScopeId: SCOPE_NEW });
+            expect(newScopeResults.map((r) => r.nodeUid).sort()).toEqual(['new-c', 'new-d']);
+        }, 15_000);
+    });
+
     describe('Scenario: tab switching', () => {
         it('client B takes over when client A disconnects', async () => {
             const bridgeB = createBridge();
@@ -397,7 +497,7 @@ describe('SharedWorkerAPI integration', () => {
     describe('Scenario: permanent error', () => {
         it('quota exceeded stops the indexer', async () => {
             // Simulate IDB quota exceeded when writing index blobs
-            jest.spyOn(SearchDB.prototype, 'putIndexBlob').mockRejectedValue(
+            jest.spyOn(SearchDB.prototype, 'putEncryptedIndexBlob').mockRejectedValue(
                 new DOMException('', 'QuotaExceededError')
             );
             // navigator.storage.estimate is called in the error handler for logging
@@ -424,6 +524,7 @@ describe('SharedWorkerAPI integration', () => {
                 isIndexing: false,
                 isSearchable: false,
                 permanentError: null,
+                indexPopulatorStatuses: [],
             });
         });
 
@@ -434,6 +535,40 @@ describe('SharedWorkerAPI integration', () => {
             const result = await api.queryIndexerState();
             expect(result.isSearchable).toBe(true);
             expect(result.isIndexing).toBe(false);
+        });
+    });
+
+    describe('Scenario: indexing progress broadcasts', () => {
+        it('broadcasts per-populator progress during bootstrap and reports done at the end', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // While indexing, at least one broadcast should carry non-zero file/folder counts
+            // for the MyFiles populator. The complex tree has 5 non-trashed files and 4 non-trashed
+            // folders, so in-memory progress grows through the bootstrap loop.
+            const maxFilesSeen = Math.max(
+                ...state.history.map((msg) =>
+                    Math.max(0, ...(msg.indexPopulatorStatuses ?? []).map((s) => s.progress.files))
+                )
+            );
+            const maxFoldersSeen = Math.max(
+                ...state.history.map((msg) =>
+                    Math.max(0, ...(msg.indexPopulatorStatuses ?? []).map((s) => s.progress.folders))
+                )
+            );
+            expect(maxFilesSeen).toBeGreaterThan(0);
+            expect(maxFoldersSeen).toBeGreaterThan(0);
+
+            // After bootstrap the populator is registered, marked done, and the persisted
+            // progress reflects the exact non-trashed tree:
+            //   files   : notes.txt, report-q1.pdf, report-q2.pdf, old-report.pdf, vacation.jpg
+            //   folders : folder-projects, folder-photos, folder-empty, folder-archive
+            const result = await api.queryIndexerState();
+            expect(result.indexPopulatorStatuses).toHaveLength(1);
+            expect(result.indexPopulatorStatuses[0]).toEqual({
+                done: true,
+                progress: { files: 5, folders: 4, albums: 0, photos: 0 },
+            });
         });
     });
 
@@ -463,10 +598,29 @@ describe('SharedWorkerAPI integration', () => {
         });
     });
 
+    describe('Scenario: duplicate registerClient is a noop', () => {
+        it('does not re-index when the same client registers twice', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForInitialIndexingStart();
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // Re-registering the same client should not trigger another indexing cycle.
+            state.checkpoint();
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+
+            // Give it a moment — if re-indexing were triggered we'd see isIndexing: true.
+            await jest.advanceTimersByTimeAsync(1_000);
+            state.expectNoUpdatesSinceCheckpoint();
+
+            // Search still works with the existing index.
+            await verifyThatUserCanSearchIndexProperly(api);
+        });
+    });
+
     // TODO: Add version upgrade scenario
     // TODO: Add incremental update scenario
     // TODO: Add shared_with_me scenarios: tree removed, tree added
     // TODO: Add volume changed after password recovery
     // TODO: Add DB corrupted scenario
-    // TODO: every mainteance/cleanup/repair tasks
 });

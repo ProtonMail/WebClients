@@ -18,6 +18,8 @@ import {
   usePopperAnchor,
   useConfig,
   useNotifications,
+  getAppVersion,
+  useEarlyAccess,
 } from '@proton/components'
 import type {
   AuthenticatedDocControllerInterface,
@@ -50,6 +52,7 @@ import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import * as UI from '@proton/docs-shared/components/ui/ui'
 import { textToClipboard } from '@proton/shared/lib/helpers/browser'
+import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -91,6 +94,8 @@ export function DocumentTitleDropdown({
   const { toggleDebugMode } = useDebugMode()
   const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
   const { APP_VERSION } = useConfig()
+  const appVersion = getAppVersion(APP_VERSION)
+  const { currentEnvironment } = useEarlyAccess()
   const isSheetsEnabled = useIsSheetsEnabled()
   const { createNotification } = useNotifications()
 
@@ -817,7 +822,13 @@ export function DocumentTitleDropdown({
           <DropdownMenuButton className="flex items-center text-left" onClick={openHelp} data-testid="dropdown-help">
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
-            {showVersionNumber && <span className="ml-auto text-[--text-hint]">v{APP_VERSION}</span>}
+            {showVersionNumber && (
+              <VersionNumber
+                className="ml-auto text-[--text-hint]"
+                version={appVersion}
+                environment={currentEnvironment}
+              />
+            )}
           </DropdownMenuButton>
 
           <DropdownMenuButton

@@ -4,13 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
 import DateInput from '@proton/components/components/input/DateInput';
 import Label from '@proton/components/components/label/Label';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import clsx from '@proton/utils/clsx';
 
 import type { FilterModel } from './VPN/VPNEvents';
@@ -98,7 +100,7 @@ export const FilterAndSortEventsBlock = ({
                                         ? c('Placeholder').t`Search users or details`
                                         : c('Placeholder').t`Search for an email or IP address`
                                 }
-                                prefix={<Icon name="magnifier" />}
+                                prefix={<IcMagnifier />}
                                 onValue={setKeyword}
                                 className="md:max-h-auto"
                                 data-protonpass-ignore="true"
@@ -210,7 +212,7 @@ export const FilterAndSortEventsBlock = ({
                                     onClick={onReload}
                                     title={c('Action').t`Refresh`}
                                 >
-                                    <Icon name="arrow-rotate-right" className="mr-2" />
+                                    <IcArrowRotateRight className="mr-2" />
                                     {c('Action').t`Refresh`}
                                 </Button>
                             )}
@@ -220,7 +222,7 @@ export const FilterAndSortEventsBlock = ({
                                 onClick={handleDownloadClick}
                                 title={c('Action').t`Export`}
                             >
-                                <Icon name="arrow-down-line" className="mr-2" />
+                                <IcArrowDownLine className="mr-2" />
                                 {c('Action').t`Export`}
                             </Button>
                         </div>

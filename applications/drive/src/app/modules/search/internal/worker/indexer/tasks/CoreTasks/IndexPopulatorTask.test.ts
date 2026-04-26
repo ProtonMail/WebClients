@@ -2,6 +2,8 @@ import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { createMockNodeEntity } from '../../../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../../shared/types';
@@ -23,8 +25,8 @@ const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
     ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
 
 class TestPopulator extends NodeTreeIndexPopulator {
-    constructor(generation = 1) {
-        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', 1, generation);
+    constructor(version = 1) {
+        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', version);
     }
 
     protected async getRootNodeUid(): Promise<string> {
@@ -41,7 +43,8 @@ describe('IndexPopulatorTask', () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = new FakeMainThreadBridge();
-        indexRegistry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        indexRegistry = new IndexRegistry(cryptoKey);
 
         bridge.setChildren('root', [
             makeMaybeNode({ uid: 'file-1', name: 'report.pdf', type: 'file' as any }),
@@ -77,7 +80,13 @@ describe('IndexPopulatorTask', () => {
 
     it('skips scan when persisted state says done', async () => {
         const populator = new TestPopulator();
-        await db.putPopulatorState({ uid: populator.getUid(), done: true, generation: 1 });
+        await db.putPopulatorState({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         const ctx = await buildCtx();
         await new IndexPopulatorTask(populator, true).execute(ctx);
@@ -130,12 +139,64 @@ describe('IndexPopulatorTask', () => {
         expect(reg?.lastEventId).toBe('evt-1'); // 'evt-1' i ssent by fetchLastEventIdForTreeScopeId fake implementation.
     });
 
+    it('re-indexes when persisted state is done but version changed', async () => {
+        // Simulate new index populator with a new version #2
+        const populator = new TestPopulator(2 /* version */);
+
+        // Simulate that the version #1 for this populator already ran successfully
+        await db.putPopulatorState({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
+
+        const ctx = await buildCtx();
+        await new IndexPopulatorTask(populator, false).execute(ctx);
+
+        // Should have indexed despite done=true, because version mismatched.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
+        expect(results).toHaveLength(2);
+
+        // Persisted state should reflect the new version and bumped generation.
+        const state = await db.getPopulatorState(populator.getUid());
+        expect(state).toEqual({
+            uid: populator.getUid(),
+            done: true,
+            generation: 2,
+            version: 2,
+            progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+        });
+    });
+
+    it('re-indexes when persisted state has no version (legacy DB)', async () => {
+        // Simulate a legacy DB entry without version field.
+        await db.putPopulatorState({ uid: 'test-pop:scope-1', done: true, generation: 3 } as any);
+
+        const populator = new TestPopulator();
+        const ctx = await buildCtx();
+        await new IndexPopulatorTask(populator, false).execute(ctx);
+
+        // Should have re-indexed because undefined !== 1.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
+        expect(results).toHaveLength(2);
+    });
+
     it('persists populator state as done after success', async () => {
         const populator = new TestPopulator();
         const ctx = await buildCtx();
         await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
 
         const state = await db.getPopulatorState(populator.getUid());
-        expect(state).toEqual({ uid: populator.getUid(), done: true, generation: 1 });
+        expect(state).toEqual({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+        });
     });
 });

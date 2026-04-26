@@ -15,6 +15,7 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-1', {
+                albumNodeUid: 'nodeUid-1',
                 albumShareId: 'share-1',
                 albumLinkId: 'link-1',
                 isOwner: true,
@@ -23,6 +24,7 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         const context = result.current.getContext('upload-1');
         expect(context).toEqual({
+            albumNodeUid: 'nodeUid-1',
             albumShareId: 'share-1',
             albumLinkId: 'link-1',
             isOwner: true,
@@ -41,6 +43,7 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-1', {
+                albumNodeUid: 'nodeUid-1',
                 albumShareId: 'share-1',
                 albumLinkId: 'link-1',
                 isOwner: true,
@@ -63,6 +66,7 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-1', {
+                albumNodeUid: 'nodeUid-1',
                 albumShareId: 'share-1',
                 albumLinkId: 'link-1',
                 isOwner: true,
@@ -73,6 +77,7 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-2', {
+                albumNodeUid: 'nodeUid-2',
                 albumShareId: 'share-2',
                 albumLinkId: 'link-2',
                 isOwner: false,
@@ -99,11 +104,13 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-1', {
+                albumNodeUid: 'nodeUid-1',
                 albumShareId: 'share-1',
                 albumLinkId: 'link-1',
                 isOwner: true,
             });
             result.current.setContext('upload-2', {
+                albumNodeUid: 'nodeUid-2',
                 albumShareId: 'share-2',
                 albumLinkId: 'link-2',
                 isOwner: false,
@@ -126,11 +133,13 @@ describe('useAlbumPhotoUploadSDKStore', () => {
 
         act(() => {
             result.current.setContext('upload-1', {
+                albumNodeUid: 'nodeUid-1',
                 albumShareId: 'share-1',
                 albumLinkId: 'link-1',
                 isOwner: true,
             });
             result.current.setContext('upload-2', {
+                albumNodeUid: 'nodeUid-2',
                 albumShareId: 'share-2',
                 albumLinkId: 'link-2',
                 isOwner: false,

@@ -1,7 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import type { FeedbackDowngradeData } from '@proton/payments';
+import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
 import { useFeedbackStep } from '../useFeedbackStep';
 import type { FeedbackStepResult } from '../useFeedbackStep';

@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
@@ -71,7 +72,7 @@ export const UsersList = ({ userIds, users, keyPrefix = '' }: UsersListProps) =>
                 size="small"
                 key={`logical-users-${keyPrefix}-${id}`}
             >
-                <Icon name="user-filled" />
+                <IcUserFilled />
                 <div className="text-base text-semibold">{user?.Name || user?.Email}</div>
             </DropdownButton>
         );
@@ -98,7 +99,7 @@ const GroupItem = ({ group, keyPrefix, id }: GroupItemProps) => {
                 shape="ghost"
                 size="small"
             >
-                <Icon name="users-filled" />
+                <IcUsersFilled />
                 <div className="text-base text-semibold">{group?.Name}</div>
             </DropdownButton>
 
@@ -108,7 +109,7 @@ const GroupItem = ({ group, keyPrefix, id }: GroupItemProps) => {
                         key={`logical-users-${keyPrefix}-${id}-${(user as any).UserID}`}
                         className="flex items-center gap-1 py-2 px-4"
                     >
-                        <Icon name="user-filled" />
+                        <IcUserFilled />
                         <div className="text-base">{user.Name}</div>
                     </div>
                 ))}

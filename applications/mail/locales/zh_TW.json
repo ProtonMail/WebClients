@@ -1464,9 +1464,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1721,6 +1718,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
       ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
@@ -2542,6 +2542,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -3997,6 +4000,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "從 ${ senderEmailAddress } 來的新電子郵件無法遞送而且將會被永久刪除。"
       ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
       "No folders": [
         "暫無資料夾"
       ],
@@ -4017,6 +4023,12 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "添加至您的訂閱，以繼續使用撰寫幫手。"
@@ -4066,11 +4078,20 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
       ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
@@ -6436,6 +6457,9 @@
       "Ad targeting": [
         "廣告目標鎖定"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "Add image URL": [
         "加入圖像路徑"
       ],
@@ -7118,7 +7142,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -10430,6 +10454,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -10483,9 +10510,6 @@
       ],
       "Data retention policies": [
         "資料保留政策"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -12118,11 +12142,6 @@
         "名稱"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
@@ -12618,9 +12637,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -13703,9 +13719,6 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
-      "Billing information updated": [
-        "繳費資訊已更新"
-      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -14379,6 +14392,9 @@
       "Desktop": [
         "電腦版應用程式"
       ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
+      ],
       "Discover your subscription benefits": [
         "探索您訂閱的各項福利"
       ],
@@ -14837,6 +14853,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "Same inbox, shorter email address": [
         "一樣的收件匣，較短的電郵位址"

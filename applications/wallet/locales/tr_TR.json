@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
@@ -2865,7 +2868,7 @@
         "Otomatik silme özelliği açılıyor…"
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -3846,6 +3849,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -3900,8 +3910,8 @@
       "Data retention policies": [
         "Verileri tutma ilkeleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -4700,6 +4710,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -5013,11 +5026,6 @@
       ],
       "ZIP code": [
         "Posta kodu"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "görüşün"
       ]
     },
     "Plan description": {
@@ -5434,9 +5442,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Code sent to ${ methodTo }": [

@@ -15,6 +15,7 @@ export const HTTP_ERROR_CODES = {
 export const API_CUSTOM_ERROR_CODES = {
     APP_VERSION_BAD: 5003,
     ALREADY_USED: 2001,
+    INVALID_VALUE: 2001,
     // It means a value sent to BE cannot be empty (e.g. input field), NOT related to files/folders
     NOT_EMPTY: 2005,
     FEATURE_DISABLED: 2032,

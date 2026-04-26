@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon } from '@proton/components';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
@@ -42,11 +42,7 @@ export const DiscoverContainer = () => {
                                 className="my-2"
                             >
                                 {c('Action').t`Visit knowledge base`}
-                                <Icon
-                                    alt={c('Action').t`Visit knowledge base`}
-                                    name="arrow-within-square"
-                                    className="ml-2"
-                                />
+                                <IcArrowWithinSquare alt={c('Action').t`Visit knowledge base`} className="ml-2" />
                             </ButtonLike>
                             <ThemeButton />
                         </div>

@@ -1,3 +1,9 @@
+### Version 1.36.1
+
+- Fix group share manager actions
+- Fix group share decryption edge-case
+- Improve group sharing UI
+
 ### Version 1.36.0
 
 - Custom item fields are now searchable

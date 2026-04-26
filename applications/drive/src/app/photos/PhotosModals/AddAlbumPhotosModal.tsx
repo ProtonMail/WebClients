@@ -11,40 +11,48 @@ import {
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
-import { getMimeTypeDescription } from '../../components/sections/helpers';
-import type { DecryptedLink } from '../../store';
 import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
-import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { enqueueAdditionalInfo } from '../PhotosWithAlbums/loaders/loadAdditionalInfo';
+import { loadAllAlbums } from '../loaders/loadAlbums';
+import { useAlbumsStore } from '../useAlbums.store';
 import { usePhotosStore } from '../usePhotos.store';
 import { CreateAlbumModal } from './CreateAlbumModal';
 
 import './AlbumPhotoSelection.scss';
 
-const getAltText = ({ mimeType, name }: DecryptedLink) =>
-    `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
+const getAltText = (name: string) => `${c('Label').t`Album`} - ${name}`;
 
 const AlbumSquare = ({
-    album,
+    nodeUid,
     loading,
     disabled,
     onClick,
 }: {
-    album: DecryptedAlbum;
+    nodeUid: string;
     loading: boolean;
     disabled: boolean;
-    onClick: (shareId: string, linkId: string) => void;
+    onClick: (nodeUid: string) => void;
 }) => {
     const ref = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
     const albumProgress = useAlbumProgressStore();
 
-    const coverNodeUid =
-        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties?.coverLinkId);
+    const { coverNodeUid, photoCount, name } = useAlbumsStore(
+        useShallow((state) => {
+            const album = state.albums.get(nodeUid);
+
+            return {
+                coverNodeUid: album?.coverNodeUid,
+                photoCount: album?.photoCount,
+                name: album?.name,
+            };
+        })
+    );
 
     const coverPhoto = usePhotosStore(
         useShallow((state) => {
@@ -59,8 +67,34 @@ const AlbumSquare = ({
     const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
     const thumbUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
 
+    useEffect(function observeViewport() {
+        const element = ref.current;
+        if (!element) {
+            return;
+        }
+        let timeout: ReturnType<typeof setTimeout>;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    timeout = setTimeout(() => {
+                        setIsVisible(true);
+                        observer.disconnect();
+                    }, 100);
+                } else {
+                    clearTimeout(timeout);
+                }
+            },
+            { rootMargin: '150px' }
+        );
+        observer.observe(element);
+        return () => {
+            observer.disconnect();
+            clearTimeout(timeout);
+        };
+    }, []);
+
     useEffect(() => {
-        if (!coverNodeUid) {
+        if (!isVisible || !coverNodeUid) {
             return;
         }
         if (!coverPhoto?.activeRevisionUid) {
@@ -73,7 +107,7 @@ const AlbumSquare = ({
                 thumbnailTypes: ['sd', 'hd'],
             });
         }
-    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
+    }, [isVisible, coverNodeUid, coverPhoto?.activeRevisionUid]);
 
     let addPhotosProgressText = '';
     if (albumProgress.status === 'in-progress') {
@@ -81,30 +115,33 @@ const AlbumSquare = ({
     }
     const shouldShowLoading = loading && albumProgress.status !== 'done';
 
+    if (!name || !photoCount) {
+        return null;
+    }
     return (
-        <li key={album.linkId} ref={ref}>
+        <li key={nodeUid} ref={ref}>
             <Button
                 className="relative flex flex-nowrap items-center justify-start gap-2 album-photo-selection"
-                onClick={() => onClick(album.rootShareId, album.linkId)}
+                onClick={() => onClick(nodeUid)}
                 disabled={disabled}
                 loading={shouldShowLoading}
                 shape="ghost"
                 title={c('Action').ngettext(
-                    msgid`Add to "${album.name}" (${album.photoCount} photo)`,
-                    `Add to "${album.name}" (${album.photoCount} photos)`,
-                    album.photoCount
+                    msgid`Add to "${name}" (${photoCount} photo)`,
+                    `Add to "${name}" (${photoCount} photos)`,
+                    photoCount
                 )}
                 aria-label={c('Action').ngettext(
-                    msgid`Add to "${album.name}" (${album.photoCount} photo)`,
-                    `Add to "${album.name}" (${album.photoCount} photos)`,
-                    album.photoCount
+                    msgid`Add to "${name}" (${photoCount} photo)`,
+                    `Add to "${name}" (${photoCount} photos)`,
+                    photoCount
                 )}
             >
                 {thumbUrl ? (
                     <img
                         data-testid="albums-card-thumbnail"
                         src={thumbUrl}
-                        alt={getAltText(album)}
+                        alt={getAltText(name)}
                         className="object-cover w-custom h-custom rounded overflow-hidden shrink-0"
                         style={{
                             '--w-custom': '2.5rem',
@@ -122,49 +159,81 @@ const AlbumSquare = ({
                         <IcAlbumFolder />
                     </div>
                 )}
-                <span className="grow-2 text-left text-ellipsis">{album.name}</span>
+                <span className="grow-2 text-left text-ellipsis">{name}</span>
                 {shouldShowLoading && addPhotosProgressText && (
                     <span className="grow-2 text-right">{addPhotosProgressText}</span>
                 )}
-                {!loading && <span className="color-weak text-tabular-nums">{album.photoCount}</span>}
+                {!loading && <span className="color-weak text-tabular-nums">{photoCount}</span>}
             </Button>
         </li>
     );
 };
 
+const AlbumSquareList = ({
+    nodeUids,
+    activeAlbumUid,
+    onSelectAlbum,
+}: {
+    nodeUids: string[];
+    activeAlbumUid: string | undefined;
+    onSelectAlbum: (nodeUid: string) => void;
+}) => (
+    <ul className="unstyled mt-0">
+        {nodeUids.map((nodeUid) => (
+            <AlbumSquare
+                key={nodeUid}
+                nodeUid={nodeUid}
+                loading={activeAlbumUid === nodeUid}
+                disabled={!!activeAlbumUid && activeAlbumUid !== nodeUid}
+                onClick={onSelectAlbum}
+            />
+        ))}
+    </ul>
+);
+
 export const AddAlbumPhotosModal = ({
-    photosLinkIds,
+    photosNodeUids,
     addAlbumPhotosModal,
     onCreateAlbumWithPhotos,
     onAddAlbumPhotos,
-    albums,
     share,
 }: {
     addAlbumPhotosModal: ModalStateReturnObj;
-    onCreateAlbumWithPhotos: (name: string, linkIds: string[]) => Promise<void>;
-    onAddAlbumPhotos: (albumShareId: string, albumLinkId: string, linkIds: string[]) => Promise<void>;
-    photosLinkIds: string[];
-    albums: DecryptedAlbum[];
+    onCreateAlbumWithPhotos: (name: string, photoNodeUids: string[]) => Promise<void>;
+    onAddAlbumPhotos: (albumNodeUid: string, photoNodeUids: string[]) => Promise<void>;
+    photosNodeUids: string[];
     share: boolean;
 }) => {
     const { modalProps, openModal, render } = addAlbumPhotosModal;
     const createAlbumModal = useModalStateObject();
+    const { albumsUids, albumsMap } = useAlbumsStore(
+        useShallow((state) => ({ albumsUids: state.albumsUids, albumsMap: state.albums }))
+    );
+    const recentUids = new Set(albumsUids.slice(0, 2));
+    const sharedAlbumsUids = albumsUids.filter((uid) => albumsMap.get(uid)?.isShared);
+    const notSharedAlbumsUids = albumsUids.filter((uid) => !albumsMap.get(uid)?.isShared && !recentUids.has(uid));
 
-    const sortedAlbums = albums.sort((a, b) => b.createTime - a.createTime);
-    const [latestAlbum, secondLatestAlbum, ...otherAlbums] = sortedAlbums;
+    const [activeAlbumUid, setActiveAlbumUid] = useState<string | undefined>();
 
-    const sharedAlbums = sortedAlbums.filter((album) => album.isShared);
-    const notSharedAlbums = sortedAlbums.filter((album) => !album.isShared);
-    const restAlbums = share ? notSharedAlbums : otherAlbums;
+    const photoCount = photosNodeUids.length;
+    useEffect(
+        function loadAlbumsInAddPhotosModal() {
+            if (!render) {
+                return;
+            }
+            const abortController = new AbortController();
+            void loadAllAlbums(abortController.signal);
+            return function abortLoadAlbums() {
+                abortController.abort();
+            };
+        },
+        [render]
+    );
 
-    const [activeAlbumId, setActiveAlbumId] = useState<string | undefined>();
-
-    const photoCount = photosLinkIds.length;
-
-    const handleSelectAlbum = async (shareId: string, linkId: string) => {
-        setActiveAlbumId(linkId);
-        await onAddAlbumPhotos(shareId, linkId, photosLinkIds);
-        setActiveAlbumId(undefined);
+    const handleSelectAlbum = async (nodeUid: string) => {
+        setActiveAlbumUid(nodeUid);
+        await onAddAlbumPhotos(nodeUid, photosNodeUids);
+        setActiveAlbumUid(undefined);
         openModal(false);
     };
 
@@ -174,7 +243,7 @@ export const AddAlbumPhotosModal = ({
                 <ModalTwo {...modalProps} as="form" size="small">
                     <ModalTwoHeader
                         closeButtonProps={{
-                            disabled: !!activeAlbumId,
+                            disabled: !!activeAlbumUid,
                         }}
                         title={
                             share
@@ -192,7 +261,7 @@ export const AddAlbumPhotosModal = ({
                     />
                     <ModalTwoContent className="max-h-custom" style={{ '--max-h-custom': '21.25rem' }}>
                         <Button
-                            disabled={!!activeAlbumId}
+                            disabled={!!activeAlbumUid}
                             className="relative flex items-center gap-2 album-photo-selection"
                             onClick={() => {
                                 createAlbumModal.openModal(true);
@@ -216,64 +285,48 @@ export const AddAlbumPhotosModal = ({
                             </span>
                             {share ? c('Action').t`New shared album` : c('Action').t`New album`}
                         </Button>
-                        {!!sortedAlbums.length && (
+                        {!!albumsUids.length && (
                             <>
-                                {!share && (
+                                {!share && albumsUids[0] && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
                                         <ul className="unstyled mt-0">
-                                            {latestAlbum && (
+                                            <AlbumSquare
+                                                loading={activeAlbumUid === albumsUids[0]}
+                                                disabled={!!activeAlbumUid && activeAlbumUid !== albumsUids[0]}
+                                                nodeUid={albumsUids[0]}
+                                                onClick={handleSelectAlbum}
+                                            />
+                                            {albumsUids[1] && (
                                                 <AlbumSquare
-                                                    loading={activeAlbumId === latestAlbum.linkId}
-                                                    disabled={!!activeAlbumId && activeAlbumId !== latestAlbum.linkId}
-                                                    album={latestAlbum}
-                                                    onClick={handleSelectAlbum}
-                                                />
-                                            )}
-                                            {secondLatestAlbum && (
-                                                <AlbumSquare
-                                                    loading={activeAlbumId === secondLatestAlbum.linkId}
-                                                    disabled={
-                                                        !!activeAlbumId && activeAlbumId !== secondLatestAlbum.linkId
-                                                    }
-                                                    album={secondLatestAlbum}
+                                                    loading={activeAlbumUid === albumsUids[1]}
+                                                    disabled={!!activeAlbumUid && activeAlbumUid !== albumsUids[1]}
+                                                    nodeUid={albumsUids[1]}
                                                     onClick={handleSelectAlbum}
                                                 />
                                             )}
                                         </ul>
                                     </>
                                 )}
-                                {share && !!sharedAlbums.length && (
+                                {share && !!sharedAlbumsUids.length && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading')
                                             .t`Add to shared album`}</h2>
-                                        <ul className="unstyled mt-0">
-                                            {sharedAlbums.map((album) => (
-                                                <AlbumSquare
-                                                    key={`album-${album.linkId}-${album.rootShareId}`}
-                                                    loading={activeAlbumId === album.linkId}
-                                                    disabled={!!activeAlbumId && activeAlbumId !== album.linkId}
-                                                    album={album}
-                                                    onClick={handleSelectAlbum}
-                                                />
-                                            ))}
-                                        </ul>
+                                        <AlbumSquareList
+                                            nodeUids={sharedAlbumsUids}
+                                            activeAlbumUid={activeAlbumUid}
+                                            onSelectAlbum={handleSelectAlbum}
+                                        />
                                     </>
                                 )}
-                                {!!restAlbums.length && (
+                                {!!notSharedAlbumsUids.length && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`All albums`}</h2>
-                                        <ul className="unstyled mt-0">
-                                            {restAlbums.map((album) => (
-                                                <AlbumSquare
-                                                    key={`album-${album.linkId}-${album.rootShareId}`}
-                                                    loading={activeAlbumId === album.linkId}
-                                                    disabled={!!activeAlbumId && activeAlbumId !== album.linkId}
-                                                    album={album}
-                                                    onClick={handleSelectAlbum}
-                                                />
-                                            ))}
-                                        </ul>
+                                        <AlbumSquareList
+                                            nodeUids={notSharedAlbumsUids}
+                                            activeAlbumUid={activeAlbumUid}
+                                            onSelectAlbum={handleSelectAlbum}
+                                        />
                                     </>
                                 )}
                             </>
@@ -286,7 +339,7 @@ export const AddAlbumPhotosModal = ({
                     share={share}
                     createAlbumModal={createAlbumModal}
                     createAlbum={(name) => {
-                        return onCreateAlbumWithPhotos(name, photosLinkIds);
+                        return onCreateAlbumWithPhotos(name, photosNodeUids);
                     }}
                 />
             )}

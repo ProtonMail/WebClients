@@ -322,6 +322,9 @@
       "Contract composer": [
         "Contraure l'editor"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copia l'adreça"
       ],
@@ -1502,8 +1505,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4764,6 +4766,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Torneu-ho a provar."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -7094,6 +7099,9 @@
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
       ],
+      "Copy to clipboard": [
+        "Copiar-ho al porta-retalls"
+      ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
       ],
@@ -7556,7 +7564,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11073,8 +11082,8 @@
       "Data retention policies": [
         "Polítiques de conservació de dades"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidors dedicats optimitzats per a estríming"
+      "Dedicated servers optimized for speed": [
+        "Servidors dedicats optimitzats per més rapidesa"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -12366,6 +12375,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
+      ],
       "Got it": [
         "Fet"
       ],
@@ -12816,11 +12828,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nom"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
       ]
     },
     "Plan description": {
@@ -13276,9 +13283,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperació del compte no està disponible per a les claus d'adreces antigues"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereu claus abans d'intentar canviar la contrasenya"
       ]
     },
     "session_recovery:available:info": {
@@ -14016,6 +14020,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
       ],
@@ -14247,6 +14257,10 @@
       "Version history": [
         "Historial de versions"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
+      ],
       "Watch the interview": [
         "Mireu l'entrevista"
       ],
@@ -14458,9 +14472,6 @@
       ],
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
-      ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
       ],
       "Canceling import": [
         "S'està cancel·lant la importació"

@@ -2961,6 +2961,9 @@
       "Failed to copy photo to album": [
         "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
       "Failed to open to contact": [
         "Nepodarilo sa otvoriť kontakt"
       ],
@@ -6664,7 +6667,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -6879,6 +6882,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
@@ -6933,8 +6945,8 @@
       "Data retention policies": [
         "Zásady uchovávania údajov"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované na streamovanie"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ],
       "Desktop app": [
         "Desktopová aplikácia"
@@ -8707,9 +8719,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovenie účtu nie je k dispozícii pre staršie kľúče adries"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Pred pokusom o zmenu hesla vygenerujte kľúče, prosím"
       ]
     },
     "session_recovery:available:info": {

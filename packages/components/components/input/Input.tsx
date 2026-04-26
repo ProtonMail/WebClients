@@ -3,9 +3,9 @@ import { cloneElement, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useInput from '@proton/components/components/input/useInput';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -63,7 +63,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                         ref={containerRef}
                         className={clsx(['relative flex', hasError && 'field-icon-container--invalid'])}
                     >
-                        <Icon name="magnifier" className="absolute pointer-events-none left-icon" />
+                        <IcMagnifier className="absolute pointer-events-none left-icon" />
                         {child}
                     </div>
                 );
@@ -123,5 +123,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
         );
     }
 );
+
+Input.displayName = 'Input';
 
 export default Input;

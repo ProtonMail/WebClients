@@ -613,9 +613,6 @@
       "Set extra password": [
         "추가 비밀번호 설정"
       ],
-      "Settings": [
-        "설정"
-      ],
       "Setup 2FA": [
         "2단계 인증 설정"
       ],
@@ -1200,6 +1197,15 @@
       "Something went wrong. Please sign in again.": [
         "문제가 발생했습니다. 다시 로그인해 주세요."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 잠겨 있어 잠금을 해제해야 합니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 설치되지 않았습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 응답하지 않습니다. 실행 중인가요?"
+      ],
       "The session has expired. Please sign in again.": [
         "세션이 만료되었습니다. 다시 로그인해 주세요."
       ],
@@ -1223,6 +1229,9 @@
       ],
       "Unknown error": [
         "알 수 없는 오류"
+      ],
+      "Unknown error.": [
+        "알 수 없는 오류."
       ],
       "Unknown invite": [
         "알 수 없는 초대"
@@ -2976,12 +2985,6 @@
       ],
       "Generic CSV": [
         "일반 CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus 구매"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "${ PASS_SHORT_APP_NAME } Unlimited 구매"
       ],
       "Get Started": [
         "시작하기"

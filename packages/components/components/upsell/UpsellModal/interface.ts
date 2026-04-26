@@ -1,10 +1,19 @@
 import type { ReactNode } from 'react';
 
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import type { COUPON_CODES, CYCLE, Currency, PaymentsApi, Plan, PlanIDs, Subscription } from '@proton/payments';
+import type {
+    COUPON_CODES,
+    CYCLE,
+    Currency,
+    FreeSubscription,
+    PaymentsApi,
+    Plan,
+    PlanIDs,
+    Subscription,
+} from '@proton/payments';
 import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import type {useGetFlag} from '@proton/unleash/useGetFlag';
+import type { useGetFlag } from '@proton/unleash/useGetFlag';
 
 /**
  * Upsell config passed to the subscription modal
@@ -27,7 +36,7 @@ export interface UpsellModalConfigParams {
     paymentsApi: PaymentsApi;
     getFlag: ReturnType<typeof useGetFlag>;
     plans: Plan[];
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     user: UserModel;
     upsellRef?: string;
     currency: Currency;
@@ -36,8 +45,10 @@ export interface UpsellModalConfigParams {
 /**
  * Values returned by every upsellConfig cases
  */
-export interface UpsellModalConfigResult
-    extends Pick<UpsellModalConfig, 'cycle' | 'footerText' | 'planIDs' | 'submitText'> {
+export interface UpsellModalConfigResult extends Pick<
+    UpsellModalConfig,
+    'cycle' | 'footerText' | 'planIDs' | 'submitText'
+> {
     configOverride?: (config: OpenCallbackProps) => void;
     coupon?: COUPON_CODES;
 }

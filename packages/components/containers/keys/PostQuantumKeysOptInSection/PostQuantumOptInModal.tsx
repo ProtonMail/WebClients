@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/account';
-import { useUser } from '@proton/account/user/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -18,22 +18,24 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useLoading from '@proton/hooks/useLoading';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ForwardingState, ForwardingType, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
+import AuthModal from '../../password/AuthModal';
 
 interface Props extends ModalProps {}
 
 enum Step {
     CONFIRMATION,
+    AUTH,
     IN_PROGRESS_OPTIN,
     IN_PROGRESS_ACCOUNT_KEY,
     IN_PROGRESS_ADDRESS_KEYS,
@@ -49,18 +51,13 @@ interface Model {
 
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const dispatch = useDispatch();
-
-    const [user] = useUser();
-    const canRevokeRecoveryFiles = useRecoverySecrets().length > 0;
-    const hasManualRecoveryMethod =
-        user.MnemonicStatus === MNEMONIC_STATUS.SET ||
-        (user.MnemonicStatus === MNEMONIC_STATUS.ENABLED && canRevokeRecoveryFiles);
+    const { isMnemonicSet } = useSelector(selectMnemonicData);
+    const { hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
+    const hasManualRecoveryMethod = isMnemonicSet || hasCurrentRecoveryFile;
 
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
-    const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
-    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
-    const loadingDependencies = loadingOutgoingAddressForwardings || loadingDeviceRecovery;
+    const loadingDependencies = loadingOutgoingAddressForwardings;
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState<Model>({
         step: Step.CONFIRMATION,
@@ -103,7 +100,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
 
     const handleGenerateUserKey = async () => {
         try {
-            await dispatch(generatePqcUserKey({ isDeviceRecoveryEnabled, isDeviceRecoveryAvailable }));
+            await dispatch(generatePqcUserKey());
             setModel((prev) => ({
                 step: Step.IN_PROGRESS_ADDRESS_KEYS,
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
@@ -157,10 +154,10 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const handleSubmit = async () => {
         if (model.step === Step.CONFIRMATION) {
             setModel((prev) => ({
-                step: Step.IN_PROGRESS_OPTIN,
+                step: Step.AUTH,
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
             }));
-            return handleOptIn();
+            // Step.AUTH -> Step.IN_PROGRESS_OPTIN is handled below by AuthModal onSuccess
         }
     };
 
@@ -176,6 +173,28 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         model.step === Step.IN_PROGRESS_OPTIN ||
         model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
         model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
+
+    /**
+     * Prompt for authentication beforehand if needed, otherwise this would be triggered on the account
+     * key creation step, interrupting key creation if the user cancels.
+     */
+    if (model.step === Step.AUTH) {
+        return (
+            <AuthModal
+                scope="password"
+                config={unlockPasswordChanges()}
+                {...rest}
+                onCancel={rest.onClose}
+                onSuccess={async () => {
+                    setModel((prev) => ({
+                        step: Step.IN_PROGRESS_OPTIN,
+                        hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
+                    }));
+                    return withLoading(handleOptIn());
+                }}
+            />
+        );
+    }
 
     return (
         <ModalTwo size="medium" {...rest}>
@@ -203,7 +222,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                             </div>
                             {hasOutgoingE2EEForwardingsAcrossAddresses && (
                                 <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                    <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">
                                         {getBoldFormattedText(
                                             c('Info')
@@ -214,7 +233,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                             )}
                             {model.hadManualRecoveryMethodBeforeOptIn && (
                                 <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                    <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">
                                         {getBoldFormattedText(
                                             c('Info')
@@ -230,7 +249,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                     borderColor: 'var(--signal-danger-minor-2)',
                                 }}
                             >
-                                <Icon name="exclamation-circle-filled" className="shrink-0 color-danger" />
+                                <IcExclamationCircleFilled className="shrink-0 color-danger" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {getBoldFormattedText(
                                         c('PQC compatibility warning')

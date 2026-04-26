@@ -5,7 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -166,7 +166,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const canCreate = !(unverified || needsUpgrade);
     const valid = canCreate && !loading && isValid && !status?.isBusy;
 
-    const gearIcon = <Icon name="cog-wheel" key="alias-customize-icon" />;
+    const gearIcon = <IcCogWheel key="alias-customize-icon" />;
 
     useEffect(() => {
         if (reconciled) {
@@ -237,7 +237,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                             onClick={toggleShowAdvanced}
                                             title={c('Action').t`Show advanced options`}
                                         >
-                                            <Icon name="cog-wheel" />
+                                            <IcCogWheel />
                                         </Button>
                                     }
                                 >

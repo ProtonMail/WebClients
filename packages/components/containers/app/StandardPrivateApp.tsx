@@ -1,7 +1,6 @@
 import { type ReactNode, useCallback, useRef } from 'react';
 
 import useIsInboxElectronApp from '../../hooks/useIsInboxElectronApp';
-import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import LocaleInjector from '../app/LocaleInjector';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import type { RefreshFn } from '../forceRefresh/context';
@@ -29,7 +28,7 @@ const StandardPrivateApp = ({ children, noModals }: Props) => {
     }
 
     return (
-        <SessionRecoveryLocalStorageManager>
+        <>
             <ThemeInjector />
             <DensityInjector />
             <NotificationsChildren />
@@ -37,7 +36,7 @@ const StandardPrivateApp = ({ children, noModals }: Props) => {
             {!noModals && <ModalsChildren />}
             <StorageListener />
             <ForceRefreshProvider ref={refreshRef}>{children}</ForceRefreshProvider>
-        </SessionRecoveryLocalStorageManager>
+        </>
     );
 };
 

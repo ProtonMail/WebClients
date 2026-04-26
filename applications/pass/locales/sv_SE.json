@@ -613,9 +613,6 @@
       "Set extra password": [
         "Ställ in extralösenord"
       ],
-      "Settings": [
-        "Inställningar"
-      ],
       "Setup 2FA": [
         "Konfigurera 2FA"
       ],
@@ -915,6 +912,15 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt andra lösenord för att fortsätta med exporten"
       ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometriskt lås är inte konfigurerat."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisk låsinställning misslyckades."
+      ],
       "Cannot send invitation at the moment": [
         "Kan inte skicka inbjudan just nu",
         "Kan inte skicka inbjudningar just nu"
@@ -985,6 +991,9 @@
       ],
       "Emptying trash failed": [
         "Tömning av papperskorgen misslyckades"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypterad kommunikation med ${ PASS_APP_NAME }-appen för stationär dator misslyckades."
       ],
       "Encrypted JSON not supported": [
         "Krypterad JSON stöds inte"
@@ -1205,6 +1214,21 @@
       "Something went wrong. Please sign in again.": [
         "Något gick fel. Logga in igen."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarade inte i tid."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inte installerad."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
       "The session has expired. Please sign in again.": [
         "Sessionen har löpt ut. Logga in igen."
       ],
@@ -1228,6 +1252,9 @@
       ],
       "Unknown error": [
         "Okänt fel"
+      ],
+      "Unknown error.": [
+        "Okänt fel."
       ],
       "Unknown invite": [
         "Okänd inbjudan"
@@ -3011,12 +3038,6 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Skaffa ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Skaffa ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Kom igång"
       ],
@@ -4708,6 +4729,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
       ]
     },
     "Validation": {

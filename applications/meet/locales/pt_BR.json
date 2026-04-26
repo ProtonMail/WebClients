@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Continuar sem câmera"
       ],
+      "Continue without mic and camera": [
+        "Continuar sem microfone e câmera"
+      ],
       "Continue without microphone": [
         "Continuar sem microfone"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Solicitar um novo código"
+      ],
+      "Request permissions": [
+        "Solicitar permissões"
       ],
       "Resend code": [
         "Reenviar código"
@@ -1441,6 +1447,11 @@
         "Rotação da chave de criptografia do grupo para a melhor segurança"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Carregando…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contato confiável"
@@ -1488,12 +1499,6 @@
       ],
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
-      ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Falha ao solicitar permissão para a câmera. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário ativar as permissões manualmente; atualize a página depois."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Falha ao solicitar permissão para o microfone. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário habilitar as permissões manualmente; atualize a página depois."
       ],
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
@@ -1560,6 +1565,9 @@
       ],
       "The meeting password is incorrect": [
         "A senha da reunião está incorreta"
+      ],
+      "The meeting password is invalid": [
+        "A senha da reunião está inválida"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -1831,11 +1839,11 @@
       "Decrypting meetings...": [
         "Descriptografando reuniões..."
       ],
-      "Default": [
-        "Padrão"
-      ],
       "Default - ${ systemDefault.label }": [
         "Padrão - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Padrão - Padrão do sistema"
       ],
       "Delete event": [
         "Excluir evento"
@@ -1856,6 +1864,9 @@
         "Editar endereço de e-mail"
       ],
       "End Meeting for everyone?": [
+        "Finalizar reunião para todos?"
+      ],
+      "End the meeting for everyone?": [
         "Finalizar reunião para todos?"
       ],
       "End-to-end encryption is active for audio and video.": [
@@ -1912,6 +1923,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Hospede sua própria reunião segura. Inicie uma chamada no ${ MEET_APP_NAME } e compartilhe o link para convidar qualquer pessoa para participar. Simples, seguro e gratuito."
       ],
@@ -1936,8 +1950,11 @@
       "Learn more": [
         "Saiba mais"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Ao sair, seu compartilhamento de tela será interrompido. Deseja continuar?"
+      "Leave meeting and stop sharing?": [
+        "Sair da reunião e parar de compartilhar?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Ao sair da reunião, o compartilhamento de tela será interrompido."
       ],
       "Left ${ roomNameLabel }": [
         "Saiu de ${ roomNameLabel }"
@@ -2086,6 +2103,9 @@
       "Premium meeting": [
         "Reunião premium"
       ],
+      "Presenting": [
+        "Apresentando"
+      ],
       "privacy": [
         "privacidade"
       ],
@@ -2197,11 +2217,17 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Isso encerrará a reunião para todos os participantes e interromperá o compartilhamento de tela."
+      ],
       "This will end the meeting for all participants.": [
         "Isso encerrará a reunião para todos os participantes."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
+      ],
+      "To be seen in the call, allow access to your camera.": [
+        "Para ser visto na chamada, permita o acesso à sua câmera."
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para criar uma sala, você precisará de **uma conta da ${ BRAND_NAME } gratuita** para que possamos salvar a sala. Isso leva apenas alguns segundos."
@@ -2211,6 +2237,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Para agendar um evento, você precisará de **uma conta da ${ BRAND_NAME } gratuita** para que possamos salvar o evento. Isso leva apenas alguns segundos."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Para falar e ser visto na chamada, permita o acesso à câmera e microfone."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Para falar na chamada, permita o acesso ao seu microfone."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Para usar sua sala de reunião pessoal, você precisará de **uma conta da ${ BRAND_NAME } gratuita**. Isso leva apenas alguns segundos."
@@ -2290,6 +2322,9 @@
       "You were removed from the meeting": [
         "Você foi removido da reunião"
       ],
+      "You will leave the meeting. Others will continue.": [
+        "Você vai sair da reunião. Os outros vão continuar."
+      ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Você foi convidado(a) para entrar em uma reunião segura. Confirme seu nome e clique abaixo para entrar."
       ],
@@ -2298,6 +2333,18 @@
       ],
       "Your always available meeting room": [
         "Sua sala de reunião sempre disponível"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso à sua câmera. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu compartilhamento de tela. Para ativar, atualize as configurações do navegador e retone na chamada."
       ],
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
@@ -2608,14 +2655,14 @@
       "Others couldn't hear me": [
         "Os outros não conseguiam me ouvir"
       ],
+      "Others couldn't see my video": [
+        "Outros não conseguiram ver meu vídeo"
+      ],
       "The presentation was blurry": [
         "A apresentação estava embaçada"
       ],
-      "Video was blurry": [
-        "O vídeo estava embaçado"
-      ],
-      "Video was breaking up": [
-        "O vídeo está falhando"
+      "Video quality was poor": [
+        "A qualidade do vídeo está ruim"
       ]
     },
     "Placeholder": {
@@ -2805,6 +2852,18 @@
       "Available Speakers": [
         "Alto-falantes disponíveis"
       ],
+      "Camera access needed": [
+        "Acesso à câmera necessário"
+      ],
+      "Camera and microphone access needed": [
+        "Acesso ao microfone e câmera necessário"
+      ],
+      "Camera and microphone are blocked": [
+        "A câmera e o microfone estão bloqueados"
+      ],
+      "Camera is blocked": [
+        "A câmera está bloqueada"
+      ],
       "Chat": [
         "Bate-papo"
       ],
@@ -2884,6 +2943,12 @@
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
+      "Microphone access needed": [
+        "Acesso ao microfone necessário"
+      ],
+      "Microphone is blocked": [
+        "O microfone está bloqueado"
+      ],
       "Minicalendar": [
         "Mini calendário"
       ],
@@ -2916,6 +2981,9 @@
       ],
       "Schedule a meeting": [
         "Agendar uma reunião"
+      ],
+      "Screen share is blocked": [
+        "O compartilhamento de tela está bloqueada"
       ],
       "Secure meeting": [
         "Reunião segura"

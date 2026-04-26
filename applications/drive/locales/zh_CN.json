@@ -87,9 +87,6 @@
       "Add photos": [
         "添加照片"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "添加到 \"${ album.name }\" (${ album.photoCount } 张照片)"
-      ],
       "Add to album": [
         "添加到相册"
       ],
@@ -510,9 +507,6 @@
       "Get in touch": [
         "保持联系"
       ],
-      "Get link": [
-        "生成共享链接"
-      ],
       "Get mobile and desktop apps": [
         "获取移动端和桌面端应用"
       ],
@@ -534,8 +528,8 @@
       "Go back": [
         "返回"
       ],
-      "Go back to album “${ albumName }“": [
-        "返回相册 “${ albumName }”"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "返回专辑“${ ellipsedAlbumName }”"
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
@@ -639,9 +633,6 @@
       "Load image": [
         "加载图片"
       ],
-      "Loading link": [
-        "链接加载中"
-      ],
       "Make a copy": [
         "创建副本"
       ],
@@ -656,9 +647,6 @@
       ],
       "Manage labels": [
         "管理标签"
-      ],
-      "Manage link": [
-        "管理链接"
       ],
       "Manage share": [
         "管理共享"
@@ -798,11 +786,17 @@
       "Quit": [
         "退出"
       ],
+      "Re-index": [
+        "重新索引"
+      ],
       "Re-sign": [
         "重新签名"
       ],
       "Reconnect": [
         "重新连接"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
       ],
       "Recover data": [
         "恢复数据"
@@ -2998,6 +2992,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "为了使您的账户受到最高安全保护，请设置恢复短语。"
       ],
@@ -3018,6 +3021,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -3290,6 +3296,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 个项目移动失败"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
@@ -3301,6 +3310,9 @@
       ],
       "Account does not exist": [
         "账户不存在"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3475,6 +3487,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "加载签名详情失败，请稍后重试"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "加载订阅数据失败，请稍后重试。"
       ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
@@ -3739,6 +3754,9 @@
       ],
       "Something went wrong during folder listing": [
         "列出文件夹内容时出错"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ],
       "Something went wrong with search. Please try again later.": [
         "搜索时出现问题，请稍后重试。"
@@ -5456,6 +5474,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -5600,6 +5621,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "如果您有其中之一，请继续进行 ${ BRAND_NAME } 账户设置以开始解锁过程。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
       ],
@@ -5668,6 +5692,9 @@
       ],
       "Internet connection restored.": [
         "网络连接已恢复。"
+      ],
+      "Invitation confirmed": [
+        "邀请已确认"
       ],
       "Invite link copied": [
         "邀请链接已复制"
@@ -5810,6 +5837,15 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
       ],
+      "Move ${ dragCount } item": [
+        "移动 ${ dragCount } 项"
+      ],
+      "Move ${ fileCount } file": [
+        "移动 ${ fileCount } 个文件"
+      ],
+      "Move ${ folderCount } folder": [
+        "移动 ${ folderCount } 个文件夹"
+      ],
       "Moving files": [
         "正在移动文件"
       ],
@@ -5845,6 +5881,9 @@
       ],
       "No payment is required at this time.": [
         "目前不需要支付。"
+      ],
+      "No populator states found.": [
+        "未找到填充器状态！"
       ],
       "No results found": [
         "未找到结果"
@@ -6185,9 +6224,6 @@
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
       ],
-      "Shared by you": [
-        "由您共享"
-      ],
       "Shared link not found": [
         "找不到共享链接"
       ],
@@ -6512,9 +6548,6 @@
       "Unsupported file type for Photos": [
         "照片文件类型不受支持"
       ],
-      "Untitled": [
-        "未命名"
-      ],
       "Update required": [
         "需要更新"
       ],
@@ -6589,9 +6622,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "太棒了，您刚刚将存储空间增加到 5 GB！"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "我们遇到了技术问题。任何与相册相关的操作都将暂时关闭。"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "我们无法验证 ${ nameAuthor } 上传了 ${ node.name }。以下内容可能已被篡改：文件数据顺序。请仅在信任的情况下打开。"
@@ -8408,6 +8438,12 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
+      ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -8462,8 +8498,8 @@
       "Data retention policies": [
         "数据保留策略"
       ],
-      "Dedicated servers optimized for streaming": [
-        "专为流媒体优化的专用服务器"
+      "Dedicated servers optimized for speed": [
+        "专为速度优化的专用服务器"
       ],
       "Desktop app": [
         "桌面应用"
@@ -9131,38 +9167,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "已复制“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "“${ ellipsedName }”创建成功"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "${ ellipsedName }”已删除"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "已从回收站彻底删除“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }”创建失败"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "“${ ellipsedName }”删除失败"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "从回收站彻底删除“${ ellipsedName }”失败"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "“${ ellipsedName }”移动失败"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "从回收站恢复“${ ellipsedName }”失败"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "“${ ellipsedName }”已移动"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "已从回收站恢复“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "“${ ellipsedName }”移动成功"
+      ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
-      ],
-      "\"${ name }\" created successfully": [
-        "“${ name }”创建成功"
-      ],
-      "\"${ name }\" deleted": [
-        "“${ name }” 已删除"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" 已永久删除"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" 已从回收站永久删除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" 创建失败"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "“${ name }” 删除失败"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" 回收站永久删除失败"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" 移动失败"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 移到回收站失败"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" 从回收站还原失败"
       ],
       "\"${ name }\" failed to be saved": [
         "${ name } 保存失败"
@@ -9170,17 +9218,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 已移动到回收站"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" 已从回收站恢复"
-      ],
       "\"${ name }\" saved successfully": [
         "${ name } 已成功保存"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" 复制成功"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" 移动成功"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" 重命名失败"
@@ -9193,6 +9232,9 @@
       ],
       "${ errors.length } item failed to be copied": [
         "${ errors.length } 个项目复制失败"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } 个项目删除失败"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 个项目移至回收站失败"
@@ -9212,6 +9254,9 @@
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 个已复制的项目已移至回收站"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } 个项目已复制"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } 项目已删除"
       ],
@@ -9220,9 +9265,6 @@
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 个项目已从回收站永久删除"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } 项目删除失败"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" 个项目从回收站永久删除失败"
@@ -9236,14 +9278,14 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems }\" 个项目从回收站还原失败"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } 个项目已移动"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 个项目已移动到回收站"
       ],
       "${ numberOfItems } item restored from trash": [
         "从回收站还原了${ numberOfItems } 个项目"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } 个项目复制成功"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 个项目移动成功"
@@ -9259,9 +9301,6 @@
       ],
       "Access updated": [
         "访问权限已更新"
-      ],
-      "Album failed to be renamed": [
-        "相册重命名失败"
       ],
       "Album renamed successfully": [
         "相册重命名成功"
@@ -9284,8 +9323,8 @@
       "Contact group updated": [
         "群组已更改"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\" 的副本已移至回收站"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "“${ ellipsedName }”的副本已移至回收站"
       ],
       "Device failed to be removed": [
         "设备移除失败"
@@ -9313,9 +9352,6 @@
       ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
-      ],
-      "Failed to load invitation details": [
-        "载入邀请信息失败"
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
@@ -9424,6 +9460,9 @@
       ],
       "You stopped sharing this item": [
         "您已停止共享此项目"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
@@ -9976,6 +10015,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
+      "Edit billing address": [
+        "编辑账单地址"
+      ],
       "Got it": [
         "了解"
       ],
@@ -10362,11 +10404,6 @@
         "名称"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "联系人"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 的所有高级功能。"
@@ -10643,9 +10680,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "传统地址密钥无法恢复账户"
-      ],
-      "Please generate keys before you try to change your password": [
-        "更改密码前请先生成密钥"
       ]
     },
     "session_recovery:available:info": {
@@ -11645,9 +11679,6 @@
       "Billing details updated": [
         "账单详细信息已更新"
       ],
-      "Billing information updated": [
-        "账单信息已更新"
-      ],
       "Canceling import": [
         "正在取消导入"
       ],
@@ -12170,6 +12201,9 @@
       "Discard changes?": [
         "放弃更改？"
       ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
+      ],
       "Downgrade account": [
         "降级账户"
       ],
@@ -12346,6 +12380,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "索引填充器"
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"

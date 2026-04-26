@@ -319,6 +319,9 @@
       "Contract composer": [
         "Opstelvenster verkleinen"
       ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -1493,8 +1496,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4666,6 +4668,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer opnieuw."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -7213,6 +7218,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
+      "Enter code": [
+        "Voer code in"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
       ],
@@ -7363,6 +7371,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
       ],
@@ -7446,7 +7457,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -10899,6 +10911,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -10952,9 +10971,6 @@
       ],
       "Data retention policies": [
         "Dataretentiebeleid"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -12231,6 +12247,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -12681,11 +12700,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Naam"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
       ]
     },
     "Plan description": {
@@ -13237,9 +13251,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Accountherstel niet beschikbaar voor verouderde adressleutels"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ]
     },
     "session_recovery:available:info": {
@@ -14418,9 +14429,6 @@
         "Alias opgeslagen en gekopieerd"
       ],
       "Billing details updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
-      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Canceling import": [

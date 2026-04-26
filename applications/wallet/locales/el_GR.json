@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
@@ -3907,8 +3910,8 @@
       "Data retention policies": [
         "Πολιτικές διατήρησης δεδομένων"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
@@ -4707,6 +4710,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -5020,11 +5026,6 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "επικοινωνήστε"
       ]
     },
     "Plan description": {
@@ -5441,9 +5442,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Τα στοιχεία χρέωσης ενημερώθηκαν"
-      ],
-      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Code sent to ${ methodTo }": [

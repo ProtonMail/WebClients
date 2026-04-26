@@ -28,6 +28,7 @@ interface DriveExplorerBodyProps {
     getDragMoveControls?: (uid: string) => DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
+    hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
 }
 
@@ -43,6 +44,7 @@ export const DriveExplorerBody = ({
     getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
+    hideSelectionHighlight = false,
     contextMenuControls,
 }: DriveExplorerBodyProps) => {
     const itemCount = loading ? itemIds.length + 1 : itemIds.length;
@@ -68,7 +70,7 @@ export const DriveExplorerBody = ({
                 <div
                     className="w-full relative h-custom"
                     style={{
-                        '--h-custom': virtualizer.getTotalSize(),
+                        '--h-custom': `${virtualizer.getTotalSize()}px`,
                     }}
                 >
                     <Table
@@ -80,7 +82,7 @@ export const DriveExplorerBody = ({
                         )}
                         borderWeak
                         style={{
-                            '--h-custom': virtualizer.getTotalSize(),
+                            '--h-custom': `${virtualizer.getTotalSize()}px`,
                         }}
                     >
                         <TableBody>
@@ -102,6 +104,7 @@ export const DriveExplorerBody = ({
                                         getDragMoveControls={getDragMoveControls}
                                         isMultiSelectionDisabled={isMultiSelectionDisabled}
                                         showCheckboxColumn={showCheckboxColumn}
+                                        hideSelectionHighlight={hideSelectionHighlight}
                                         contextMenuControls={contextMenuControls}
                                     />
                                 );

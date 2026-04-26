@@ -976,6 +976,9 @@
       "Send message": [
         "Bericht verzenden"
       ],
+      "Share your thoughts": [
+        "Deel uw mening"
+      ],
       "Show safety information": [
         "Veiligheidsinformatie weergeven"
       ],
@@ -1013,6 +1016,9 @@
       ]
     },
     "collider_2025: Badge": {
+      "New": [
+        "Nieuw"
+      ],
       "OpenAI-compatible": [
         "OpenAI-compatibel"
       ]
@@ -1184,6 +1190,9 @@
       ],
       "Switch between light and dark mode": [
         "Schakel tussen lichte en donkere modus"
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "Uw ervaring geeft vorm aan ${ LUMO_SHORT_APP_NAME }. Laat ons weten wat u ervan vindt."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -2067,6 +2076,9 @@
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
       ],
+      "Got a minute?": [
+        "Hebt u een momentje?"
+      ],
       "Guest": [
         "Gast"
       ],
@@ -2282,6 +2294,9 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Choose project icon": [
+        "Kies project icoon"
+      ],
       "Click to edit title": [
         "Klik om titel te bewerken"
       ],
@@ -2308,6 +2323,9 @@
       ],
       "Edit instructions": [
         "Instructies bewerken"
+      ],
+      "Edit project": [
+        "Bewerk project"
       ],
       "Go to project": [
         "Ga naar project"
@@ -2393,6 +2411,9 @@
       "Unlink Folder": [
         "Map ontkoppelen"
       ],
+      "Upgrade to Plus": [
+        "Upgrade naar Plus"
+      ],
       "Upload file": [
         "Bestand opladen"
       ],
@@ -2421,6 +2442,9 @@
       ],
       "Collapse projects": [
         "Projecten inklappen"
+      ],
+      "Create a free account": [
+        "Maak een gratis account aan"
       ],
       "Create project": [
         "Project aanmaken"
@@ -2461,6 +2485,9 @@
       "New chat": [
         "Nieuwe chat"
       ],
+      "New project": [
+        "Nieuw project"
+      ],
       "Projects": [
         "Projecten"
       ],
@@ -2481,6 +2508,9 @@
       ],
       "Show sidebar": [
         "Toon zijbalk"
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "Unfavorite": [
         "Verwijderen uit favorieten"
@@ -2534,6 +2564,17 @@
       ],
       "Project not found": [
         "Project niet gevonden"
+      ]
+    },
+    "collider_2025:Feature": {
+      "Advanced AI models": [
+        "Geavanceerde AI-modellen"
+      ],
+      "Priority access & faster responses": [
+        "Prioriteitstoegang en snellere reacties"
+      ],
+      "Unlimited projects": [
+        "Onbeperkte projecten"
       ]
     },
     "collider_2025:FeaturePoint": {
@@ -2623,6 +2664,12 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden. Log in of maak een gratis account aan om te beginnen."
+      ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
       ],
@@ -2638,14 +2685,26 @@
       "Type @filename to ask questions about a specific file": [
         "Typ @bestandsnaam om vragen te stellen over een specifiek bestand"
       ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om onbeperkte projecten aan te maken, geavanceerde AI-modellen te ontgrendelen en meer."
+      ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Door ${ LUMO_SHORT_APP_NAME } te gebruiken, kan ${ DRIVE_APP_NAME } grotere bestanden verwerken."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
+      ],
+      "Your information is zero-access encrypted": [
+        "Uw informatie is versleuteld met zero-access encryptie"
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "chat"
+      ],
+      "chats": [
+        "gesprekken"
+      ],
       "Current folder:": [
         "Huidige map:"
       ],
@@ -2654,6 +2713,12 @@
       ],
       "Folder name": [
         "Mapnaam"
+      ],
+      "Instructions": [
+        "Instructies"
+      ],
+      "Project Instructions (optional)": [
+        "Project Instructies (optioneel)"
       ],
       "Untitled chat": [
         "Naamloos gesprek"
@@ -2673,6 +2738,9 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt."
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt. Deze instructies zijn van toepassing op alle chats in dit project."
       ],
@@ -2685,11 +2753,49 @@
       "Enter folder name": [
         "Voer mapnaam in"
       ],
+      "Enter project name": [
+        "Voer de projectnaam in"
+      ],
+      "Holiday planner": [
+        "Vakantieplanner"
+      ],
       "Search chats": [
         "Gesprekken doorzoeken"
       ],
       "Sign in required": [
         "Aanmelden vereist"
+      ]
+    },
+    "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Ontwikkel verhalen, verfijn proza en verbeter uw schrijfvaardigheid"
+      ],
+      "Financial assistant": [
+        "Financiële assistent"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Hulp krijgen bij het begrijpen van opdrachten, het oplossen van problemen en het leren van concepten"
+      ],
+      "Learn a language": [
+        "Een taal leren"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Plan financiële doelen met gepersonaliseerde inzichten"
+      ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Oefen gesprekken, leer grammatica en bouw woordenschat op in uw doeltaal"
+      ],
+      "Research & Analysis Partner": [
+        "Onderzoeks- en analysepartner"
+      ],
+      "Study companion": [
+        "Studiemaatje"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Synthetiseer bronnen, analyseer gegevens en ontwikkel inzichten voor uw onderzoeksprojecten"
+      ],
+      "Writing coach": [
+        "Schrijfhulp"
       ]
     },
     "collider_2025:Prompt": {
@@ -2827,6 +2933,11 @@
         "Indexeren voor zoeken"
       ]
     },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Projecten helpen u gerelateerde gesprekken, bestanden en instructies op één plek te bewaren. Ze maken het eenvoudig om georganiseerd te blijven en context te hergebruiken in gesprekken."
+      ]
+    },
     "collider_2025:Success": {
       "All files removed from project": [
         "Alle bestanden verwijderd uit project"
@@ -2863,6 +2974,9 @@
       "Create folder": [
         "Map maken"
       ],
+      "Create new project": [
+        "Nieuw project aanmaken"
+      ],
       "Delete conversation?": [
         "Gesprek verwijderen?"
       ],
@@ -2875,11 +2989,17 @@
       "Edit Instructions": [
         "Instructies bewerken"
       ],
+      "Edit Project": [
+        "Project bewerken"
+      ],
       "Expiring Soon": [
         "Verloopt binnenkort"
       ],
       "Favorites": [
         "Favorieten"
+      ],
+      "Get started by creating a new project": [
+        "Begin met het aanmaken van een nieuw project"
       ],
       "Ghost mode": [
         "Spookmodus"
@@ -2895,6 +3015,9 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Hoe houdt ${ LUMO_SHORT_APP_NAME } onze gesprekken vertrouwelijk?"
+      ],
+      "Inspiration": [
+        "Inspiratie"
       ],
       "Instructions": [
         "Instructies"
@@ -2920,6 +3043,9 @@
       "More options": [
         "Meer opties"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Meer projecten met ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "No chat history yet. Let's start chatting!": [
         "Nog geen gespreksgeschiedenis. Laten we beginnen met chatten!"
       ],
@@ -2935,11 +3061,17 @@
       "Project knowledge": [
         "Projectkennis"
       ],
+      "Projects": [
+        "Projecten"
+      ],
       "Remove all files?": [
         "Verwijder alle bestanden?"
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Sign in to create projects": [
+        "Inloggen om projecten te maken"
       ],
       "Start a new conversation": [
         "Start een nieuw gesprek"
@@ -2955,6 +3087,11 @@
       ],
       "Whatever you ask me is:": [
         "Wat u mij ook vraagt, is:"
+      ]
+    },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Pictogram kiezen"
       ]
     },
     "collider_2025:Warning": {
@@ -4076,6 +4213,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -4610,6 +4750,9 @@
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
       ],
+      "Enter code": [
+        "Voer code in"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
       ],
@@ -4651,6 +4794,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -5732,6 +5878,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -5785,9 +5938,6 @@
       ],
       "Data retention policies": [
         "Dataretentiebeleid"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -6615,6 +6765,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -6922,11 +7075,6 @@
       ],
       "ZIP code": [
         "Postcode"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
       ]
     },
     "Plan description": {
@@ -7526,9 +7674,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
-      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Code sent to ${ methodTo }": [

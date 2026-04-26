@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
@@ -190,7 +190,7 @@ export const ItemViewPanel: FC<Props> = ({
                                 onClick={itemActions.onEdit}
                                 disabled={actionsDisabled || itemState.isReadOnly}
                             >
-                                <Icon name="pencil" className="mr-1" />
+                                <IcPencil className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
                             </Button>,
 

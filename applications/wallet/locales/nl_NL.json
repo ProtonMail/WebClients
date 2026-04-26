@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -2864,6 +2867,9 @@
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
       ],
+      "Enter code": [
+        "Voer code in"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
       ],
@@ -2902,6 +2908,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -3840,6 +3849,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -3893,9 +3909,6 @@
       ],
       "Data retention policies": [
         "Dataretentiebeleid"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -4694,6 +4707,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -5007,11 +5023,6 @@
       ],
       "ZIP code": [
         "Postcode"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
       ]
     },
     "Plan description": {
@@ -5428,9 +5439,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
-      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Code sent to ${ methodTo }": [

@@ -4,9 +4,9 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import type { AppLinkProps } from '@proton/components/components/link/AppLink';
 import AppLink from '@proton/components/components/link/AppLink';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     return (
@@ -20,7 +20,7 @@ const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnc
             className="flex items-center justify-center flex-nowrap gap-2"
             {...rest}
         >
-            <Icon name="arrow-left" className="rtl:mirror shrink-0" />
+            <IcArrowLeft className="rtl:mirror shrink-0" />
             <span className="text-ellipsis">{children ? children : c('Navigation').t`Back`}</span>
         </ButtonLike>
     );

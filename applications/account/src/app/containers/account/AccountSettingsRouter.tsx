@@ -13,7 +13,6 @@ import type { SectionConfig } from '@proton/components';
 import {
     AccessibilitySection,
     AccountDashboard,
-    AccountRecoverySection,
     AssistantToggle,
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
@@ -21,7 +20,6 @@ import {
     CredentialLeakSection,
     CreditsSection,
     DashboardTelemetry,
-    DataRecoverySection,
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
@@ -32,17 +30,14 @@ import {
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
-    OverviewSection,
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
     PrivacySection,
     PrivateMainArea,
     PrivateMainSettingsArea,
-    RecoveryPageTelemetry,
     ReferralInvitesContextProvider,
     SentinelSection,
-    SessionRecoverySection,
     SessionsSection,
     SettingsMaintenanceLayoutWrapper,
     SettingsPageTitle,
@@ -62,12 +57,14 @@ import {
 } from '@proton/components';
 import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
+import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { recoveryIds } from './recoveryIds';
+import RecoverySettingsRouter from './RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
 
 const shouldRedirectToSubscriptions = (location: Location<unknown>, path: string, dashboard: SectionConfig) => {
@@ -127,9 +124,8 @@ const AccountSettingsRouter = ({
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
                         config={vpnDashboardV2}
-                        mainAreaClass="bg-lowered settings-cards"
-                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-                        style={{ '--max-w-custom': '1500px' }}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Wide}
                     >
                         <YourPlanSectionV2 app={app} />
                         <YourPlanUpsellsSectionV2 app={app} />
@@ -151,9 +147,8 @@ const AccountSettingsRouter = ({
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea
                         config={subscription}
-                        mainAreaClass="bg-lowered settings-cards"
-                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-                        style={{ '--max-w-custom': '1500px' }}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Wide}
                     >
                         <YourPlanSectionV2
                             app={app}
@@ -212,15 +207,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(recovery) && (
                 <Route path={getSectionPath(path, recovery)}>
-                    <RecoveryPageTelemetry />
-                    <PrivateMainSettingsArea config={recovery}>
-                        <OverviewSection />
-                        <AccountRecoverySection />
-                        <DataRecoverySection />
-                        <EmergencyContactSection app={app} />
-                        <RecoveryContactSection app={app} accountRecoveryId={recoveryIds.account} />
-                        <SessionRecoverySection />
-                    </PrivateMainSettingsArea>
+                    <RecoverySettingsRouter app={app} recovery={recovery} path={path} />
                 </Route>
             )}
             {getIsSectionAvailable(password) && (
@@ -235,7 +222,7 @@ const AccountSettingsRouter = ({
                         <NonPrivateRecoverySection />
                         <SignInWithAnotherDeviceSettings />
                         <EmergencyContactSection app={app} />
-                        <RecoveryContactSection app={app} accountRecoveryId={null} />
+                        <RecoveryContactSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
                         <PaymentMethodsSection app={app} />
@@ -270,6 +257,7 @@ const AccountSettingsRouter = ({
             </Route>
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>
+                    <ReferralPageTelemetry />
                     <ReferralInvitesContextProvider>
                         <PrivateMainSettingsArea config={referral}>
                             <InviteSection />

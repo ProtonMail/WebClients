@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
-import { NodeType, getDrive, splitNodeUid } from '@proton/drive/index';
+import type { MaybeNode } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive/index';
 import generateUID from '@proton/utils/generateUID';
 
 import { toLinkURLType } from '../../components/sections/helpers';
@@ -16,10 +17,13 @@ interface NavigationEvenListener {
 
 let listeners: NavigationEvenListener[] = [];
 
+export type DriveClient = {
+    getNode: (uid: string) => Promise<MaybeNode>;
+};
+
 function useDriveNavigation() {
     const navigate = useNavigate();
     const location = useLocation();
-    const drive = getDrive();
 
     const pushToHistory = (path: string) => {
         navigate(path);
@@ -35,9 +39,29 @@ function useDriveNavigation() {
         [location.pathname]
     );
 
+    const navigateToAlbum = useCallback(
+        (shareId: string, linkId: string, options?: { openShare?: boolean; addPhotos?: boolean }) => {
+            const searchParams = new URLSearchParams();
+            if (options?.openShare) {
+                searchParams.set('openShare', 'true');
+            }
+
+            const queryString = searchParams.toString();
+            const url = `/photos/albums/${shareId}/album/${linkId}${options?.addPhotos ? '/add-photos' : ''}${queryString ? `?${queryString}` : ''}`;
+
+            pushToHistory(url);
+        },
+        []
+    );
+
     // TODO: Convert to volume-based navigation instead of deprecated shareId.
     const navigateToNodeUid = useCallback(
-        async (nodeUid: string, rPath?: string) => {
+        async (
+            nodeUid: string,
+            drive: DriveClient,
+            rPath?: string,
+            options?: { openShare?: boolean; addPhotos?: boolean }
+        ) => {
             const { nodeId: targetNodeLinkId } = splitNodeUid(nodeUid);
             // The shareId is on the top root node; we need to climb from the current node to get it.
             const ancestry = await getNodeAncestry(nodeUid, drive);
@@ -53,10 +77,16 @@ function useDriveNavigation() {
             }
 
             const destinationNode = ancestry.value[ancestry.value.length - 1];
-            const isFile = getNodeEntity(destinationNode).node.type === NodeType.File;
+            const nodeType = getNodeEntity(destinationNode).node.type;
+
+            if (nodeType === NodeType.Album) {
+                return navigateToAlbum(rootNodeSharedId, targetNodeLinkId, options);
+            }
+
+            const isFile = nodeType === NodeType.File || nodeType === NodeType.Photo;
             return navigateToLink(rootNodeSharedId, targetNodeLinkId, isFile, rPath);
         },
-        [drive, navigateToLink]
+        [navigateToLink, navigateToAlbum]
     );
 
     const redirectToLink = useCallback((shareId: string, linkId: string, isFile: boolean) => {
@@ -86,21 +116,6 @@ function useDriveNavigation() {
     const navigateToSharedWithMe = useCallback(() => {
         pushToHistory('/shared-with-me');
     }, []);
-
-    const navigateToAlbum = useCallback(
-        (shareId: string, linkId: string, options?: { openShare?: boolean; addPhotos?: boolean }) => {
-            const searchParams = new URLSearchParams();
-            if (options?.openShare) {
-                searchParams.set('openShare', 'true');
-            }
-
-            const queryString = searchParams.toString();
-            const url = `/photos/albums/${shareId}/album/${linkId}${options?.addPhotos ? '/add-photos' : ''}${queryString ? `?${queryString}` : ''}`;
-
-            pushToHistory(url);
-        },
-        []
-    );
 
     const navigateToPhotos = useCallback(() => {
         pushToHistory('/photos');

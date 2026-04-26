@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { FileAttachment } from '@proton/pass/components/FileAttachments/FileAttachment';
 import { FileAttachmentsView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
@@ -105,7 +106,7 @@ export const RevisionDiff: FC = () => {
                         onClick={() => selectItem(shareId, itemId, { view: 'history', scope })}
                         title={c('Action').t`Back`}
                     >
-                        <Icon name="chevron-left" alt={c('Action').t`Back`} />
+                        <IcChevronLeft alt={c('Action').t`Back`} />
                     </Button>
                     <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{name}</h2>
                 </div>
@@ -122,7 +123,7 @@ export const RevisionDiff: FC = () => {
                               disabled={!canRestore}
                               onClick={() => restore.prompt(previousItem)}
                           >
-                              <Icon name="clock-rotate-left" className="mr-1" />
+                              <IcClockRotateLeft className="mr-1" />
                               <span>{c('Action').t`Restore`}</span>
                           </Button>,
                       ]

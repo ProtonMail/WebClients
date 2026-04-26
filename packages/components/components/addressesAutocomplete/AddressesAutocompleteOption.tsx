@@ -2,10 +2,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { useEffect, useRef } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 export interface OptionProps<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;
@@ -79,7 +78,7 @@ const AddressesAutocompleteOption = <V,>({
             >
                 <div className="flex items-center flex-nowrap">
                     <span className="flex-1 text-ellipsis">{children}</span>
-                    {selected && <Icon name="checkmark-circle-filled" className="color-primary" />}
+                    {selected && <IcCheckmarkCircleFilled className="color-primary" />}
                 </div>
             </button>
         </li>

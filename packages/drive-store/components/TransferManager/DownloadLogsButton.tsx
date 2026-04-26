@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { IcWrench } from '@proton/icons/icons/IcWrench';
 
 export default function DownloadLogsButton({ onClick }: { onClick: () => void }) {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -14,7 +15,7 @@ export default function DownloadLogsButton({ onClick }: { onClick: () => void })
                 icon
                 className="transfers-manager-list-item-controls-button"
             >
-                <Icon size={3} name="wrench" alt={'More'} />
+                <IcWrench size={3} alt={'More'} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>

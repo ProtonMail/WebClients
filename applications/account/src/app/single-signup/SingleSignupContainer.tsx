@@ -27,7 +27,6 @@ import {
     type Plan,
     type PlanIDs,
     SubscriptionMode,
-    getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
     getIsVPNPassPromotion,
     getIsVpnB2BPlan,
@@ -38,6 +37,7 @@ import {
     hasPlanIDs,
 } from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -494,7 +494,7 @@ const SingleSignupContainer = ({
                 plans,
                 preferredCurrency,
                 billingAddress: {
-                    ...getBillingAddressFromPaymentStatus(paymentStatus),
+                    ...getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: true }),
                     Company: signupParameters.orgName,
                     FirstName: signupParameters.firstName,
                     LastName: signupParameters.lastName,

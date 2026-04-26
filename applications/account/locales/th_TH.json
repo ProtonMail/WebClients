@@ -6253,9 +6253,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "โปรดแก้ไขข้อขัดแย้งตรงที่ไฮไลต์ไว้เพื่อที่จะดำเนินการต่อไป"
       ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
-      ],
       "Please select a country": [
         "โปรดเลือกประเทศ"
       ],
@@ -10390,6 +10387,9 @@
       "Show original message": [
         "แสดงข้อความต้นฉบับ"
       ],
+      "Sign in": [
+        "เข้าสู่ระบบ"
+      ],
       "Sign in only": [
         "เข้าสู่ระบบเท่านั้น"
       ],
@@ -10932,6 +10932,9 @@
       ],
       "Vault updated": [
         "อัปเดตห้องนิรภัยแล้ว"
+      ],
+      "Verification code sent.": [
+        "ส่งรหัสยืนยันแล้ว"
       ],
       "Verification link expired": [
         "ลิงก์ยืนยันหมดอายุแล้ว"
@@ -12629,6 +12632,9 @@
       "for your first month": [
         "สำหรับเดือนแรกของคุณ"
       ],
+      "Free": [
+        "ฟรี"
+      ],
       "From: ${ fromEmail }": [
         "ตั้งแต่: ${ fromEmail }"
       ],
@@ -13208,6 +13214,9 @@
       "Sticky labels": [
         "ป้ายกำกับแบบตรึง"
       ],
+      "Storage": [
+        "พื้นที่จัดเก็บ"
+      ],
       "Street address": [
         "ที่อยู่"
       ],
@@ -13273,6 +13282,9 @@
       ],
       "Undo send": [
         "ยกเลิกการส่ง"
+      ],
+      "Unlimited": [
+        "ไม่จำกัด"
       ],
       "Unlimited hide-my-email aliases": [
         "นามแฝง hide-my-email ไม่จำกัด"
@@ -13587,9 +13599,6 @@
       ],
       "clearing your browser cache": [
         "กำลังล้างแคชในเบราว์เซอร์ของคุณ"
-      ],
-      "Common sign in issues": [
-        "ปัญหาในการลงชื่อเข้าใช้ที่พบบ่อย"
       ],
       "Common sign up issues": [
         "ปัญหาในการสมัครบัญชีที่พบบ่อย"
@@ -14730,9 +14739,6 @@
       ],
       "Dedicated servers and IP": [
         "เซิร์ฟเวอร์และ IP เฉพาะ"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "เซิร์ฟเวอร์เฉพาะที่ปรับให้เหมาะสมสำหรับการสตรีม"
       ],
       "Desktop app": [
         "แอปเดสก์ท็อป"
@@ -16361,9 +16367,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "ติดต่อเรา"
-      ],
       "Continue": [
         "ดำเนินการต่อไป"
       ],
@@ -16390,9 +16393,6 @@
       ],
       "Or ${ createANewAccount }": [
         "หรือ ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "ขอทดลองใช้"
       ],
       "Start using ${ appName }": [
         "เริ่มใช้งาน ${ appName }"
@@ -16632,9 +16632,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "เริ่มใช้งาน ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "โซลูชันที่ปรับแต่งมาเพื่อองค์กรขนาดใหญ่ที่มีความต้องการเฉพาะ"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "ข้อเสนอที่คุณเลือกไม่มีให้สำหรับผู้สมัครสมาชิก ${ currentPlanTitle }"
@@ -17329,11 +17326,6 @@
         "ประตูสู่อิสรภาพทางออนไลน์ของคุณ"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ติดต่อ"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "ผลิตภัณฑ์พรีเมียมทั้งหมดของ ${ BRAND_NAME } รวมอยู่ใน Duo"
@@ -17549,9 +17541,6 @@
       "Verify now": [
         "ยืนยันตอนนี้"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ยืนยันที่อยู่อีเมลการกู้คืนนี้ทันที: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "ยืนยันอีเมลการกู้คืนหรือไม่?"
       ],
@@ -17594,9 +17583,6 @@
       ],
       "Verify recovery phone?": [
         "ยืนยันหมายเลขโทรศัพท์สำรองหรือไม่?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ยืนยันหมายเลขโทรศัพท์กู้คืนนี้ทันที: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "การยืนยันหมายเลขโทรศัพท์ของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
@@ -18548,9 +18534,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "การกู้คืนบัญชีไม่สามารถใช้ได้กับคีย์ที่อยู่รุ่นเก่า"
-      ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
       ]
     },
     "session_recovery:available:info": {
@@ -18928,6 +18911,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "นามแฝง hide-my-email ${ FREE_PASS_ALIASES } รายการเพื่อต่อสู้กับสแปม"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } นามแฝง hide-my-email เพื่อป้องกันสแปม"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses }ที่อยู่"
       ],
@@ -19003,6 +18989,9 @@
       "Bundle": [
         "ชุดรวม"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "เลือกที่อยู่ ${ MAIL_APP_NAME } ที่ปลอดภัยเพื่อเริ่มต้นใช้งาน"
+      ],
       "Collaborative document editing": [
         "การแก้ไขเอกสารร่วมกัน"
       ],
@@ -19060,6 +19049,9 @@
       "Gifted by **${ referrerName }**": [
         "มอบให้โดย **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "รักษาบทสนทนาให้เป็นส่วนตัวด้วย ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "จัดการการเข้าถึงของผู้ใช้"
       ],
@@ -19084,6 +19076,9 @@
       "Password manager for all your devices": [
         "โปรแกรมจัดการรหัสผ่านสำหรับอุปกรณ์ทั้งหมดของคุณ"
       ],
+      "Password-protected messages": [
+        "ข้อความที่ป้องกันด้วยรหัสผ่าน"
+      ],
       "Pick your perfect plan": [
         "เลือกแผนที่เหมาะที่สุดสำหรับคุณ"
       ],
@@ -19101,6 +19096,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "รักษาความปลอดภัยอุปกรณ์ ${ VPN_CONNECTIONS } เครื่องพร้อมกัน"
+      ],
+      "Secure calendar": [
+        "ปฏิทินที่ปลอดภัย"
       ],
       "Secure file sharing": [
         "การแชร์ไฟล์ที่ปลอดภัย"
@@ -19198,6 +19196,9 @@
       "use your own email.": [
         "ใช้อีเมลของคุณเอง"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN พร้อมเซิร์ฟเวอร์ใน ${ vpnServersCountData.free.countries } ประเทศ"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN พร้อมเซิร์ฟเวอร์ใน ${ vpnServersCountData.free.countries } ประเทศ"
       ],
@@ -19206,6 +19207,9 @@
       ],
       "Yearly": [
         "ทุกๆ ปี"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "บัญชีนี้มาพร้อมสิทธิ์เข้าถึงคุณสมบัติฟรีใน ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } และ ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "แพ็กเก็จของคุณ"

@@ -117,6 +117,7 @@ enum AccountFlag {
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     BornPrivateEurope = 'BornPrivateEurope',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
+    RecoverySettingsRedesign = 'RecoverySettingsRedesign',
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
 }
@@ -132,6 +133,8 @@ enum PaymentsFlag {
     PaypalKrw = 'PaypalKrw',
     GreenlandOfferRegionalPaymentBlock = 'GreenlandOfferRegionalPaymentBlock',
     PaymentsValidateBillingAddress = 'PaymentsValidateBillingAddress',
+    HideLumoAddonForVpn2024 = 'HideLumoAddonForVpn2024',
+    DomainVpnBiz2023 = 'DomainVpnBiz2023',
 }
 
 export enum CalendarFeatureFlag {
@@ -166,7 +169,6 @@ enum DriveFeatureFlag {
     // Experiment
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
     // Albums
-    DriveAlbumsDisabled = 'DriveAlbumsDisabled',
     DriveAlbumOnboardingModal = 'DriveAlbumOnboardingModal',
     // Offers
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
@@ -255,12 +257,14 @@ export enum MailFeatureFlag {
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
     EncryptedSearchMigrationSystem = 'EncryptedSearchMigrationSystem',
+    MailStoreDebugMode = 'MailStoreDebugMode',
 }
 
 enum AdminFeatureFlag {
     UserSecurityModal = 'UserSecurityModal',
     MLInsiderThreatAPIReportOnly = 'MLInsiderThreatAPIReportOnly',
     SplitLookup = 'SplitLookup',
+    DriveAdminFileExplorer = 'DriveAdminFileExplorer',
 }
 
 enum WalletFlag {
@@ -324,6 +328,11 @@ enum LumoFeatureFlag {
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoImageTools = 'LumoImageTools',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
+    LumoSurvey = 'LumoSurvey',
+    LumoSurveyFreeUsers = 'LumoSurveyFreeUsers',
+    LumoSurveyPaidUsers = 'LumoSurveyPaidUsers',
+    LumoSurveyGuestUsers = 'LumoSurveyGuestUsers',
+    LumoNewMarketingLinks = 'LumoNewMarketingLinks',
 }
 
 export type FeatureFlag =

@@ -14,14 +14,14 @@ import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from '../UpsellMultiBox';
 
 const DrivePlusFromFreeBanner = ({ app }: UpsellSectionBaseProps) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { plansMap } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.DRIVE;
 
     const handleGetPlan = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -48,7 +48,7 @@ const DrivePlusFromFreeBanner = ({ app }: UpsellSectionBaseProps) => {
                 />
             }
             headerActionArea={
-                <Button color="norm" shape="outline" onClick={handleGetPlan}>
+                <Button color="norm" shape="outline" loading={loadingSubscriptionModal} onClick={handleGetPlan}>
                     {c('Action').t`Upgrade`}
                 </Button>
             }

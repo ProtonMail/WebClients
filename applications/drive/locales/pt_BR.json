@@ -88,10 +88,6 @@
       "Add photos": [
         "Adicionar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adicionar para \"${ album.name }\" (${ album.photoCount } foto)",
-        "Adicionar para \"${ album.name }\" (${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Entre em contato"
       ],
-      "Get link": [
-        "Obter link"
-      ],
       "Get mobile and desktop apps": [
         "Obtenha aplicativos móveis e para computador"
       ],
@@ -539,8 +532,8 @@
       "Go back": [
         "Voltar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Voltar para o álbum \"${ albumName }\""
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Voltar para o álbum \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
@@ -644,9 +637,6 @@
       "Load image": [
         "Carregar imagem"
       ],
-      "Loading link": [
-        "Carregando link"
-      ],
       "Make a copy": [
         "Fazer uma cópia"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Gerenciar marcadores"
-      ],
-      "Manage link": [
-        "Gerenciar link"
       ],
       "Manage share": [
         "Gerenciar compartilhamentos"
@@ -3315,6 +3302,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Erro ao mover ${ failureItems.length } item",
+        "Erro ao mover ${ failureItems.length } itens"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
@@ -3478,6 +3469,9 @@
       ],
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
+      ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as configurações de permissões"
       ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
@@ -3771,6 +3765,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao buscar os domínios disponíveis"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ocorreu um erro com a pesquisa. Tente novamente mais tarde."
       ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
@@ -4876,6 +4873,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } foi excluído com sucesso"
       ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbuns"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -4959,6 +4960,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização em baixa resolução"
       ],
+      "${ files } file": [
+        "${ files } arquivo",
+        "${ files } arquivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } pasta",
+        "${ folders } pastas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
@@ -4992,6 +5001,10 @@
       "${ photoCount } item": [
         "${ photoCount } item",
         "${ photoCount } itens"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -5758,6 +5771,9 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "Invitation confirmed": [
+        "Convite confirmado"
+      ],
       "Invite link copied": [
         "Link de convite copiado"
       ],
@@ -6288,9 +6304,6 @@
       "Shared by ${ sharedBy }": [
         "Compartilhado por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartilhado por você"
-      ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
       ],
@@ -6614,8 +6627,8 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
-      "Untitled": [
-        "Sem título"
+      "Unsupported file type for Photos": [
+        "Tipo de arquivo não compatível para Fotos"
       ],
       "Update required": [
         "Atualização necessária"
@@ -6691,9 +6704,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos enfrentando problemas técnicos. Todas as ações relacionadas a álbuns estão temporariamente desativadas. Agradecemos a sua compreensão."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
@@ -8599,6 +8609,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -8653,8 +8670,8 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -9333,38 +9350,47 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiado"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" detectado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" falhou ao ser criado"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" falhou ao ser movido"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Falha ao restaurar \"${ ellipsedName }\" da lixeira"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" restaurado da lixeira"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartilhado"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" excluído"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name } excluído permanentemente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" excluído permanentemente da lixeira"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Não foi possível criar \"${ name }\"."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" não foi excluído"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Não foi possível excluir \"${ name }\" permanentemente da lixeira."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Não foi possível mover \"${ name }\"."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Não foi possível mover \"${ name }\" para a lixeira."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" da lixeira"
       ],
       "\"${ name }\" failed to be saved": [
         "Não foi possível salvar \"${ name }\"."
@@ -9372,17 +9398,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado da lixeira"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvo"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" copiado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Não foi possível mudar o nome de \"${ newName }\"."
@@ -9397,6 +9414,10 @@
       "${ errors.length } item failed to be copied": [
         "Erro ao copiar ${ errors.length } item",
         "Erro ao copiar ${ errors.length } itens"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item não foi excluído",
+        "${ errors.length } itens não foram excluídos"
       ],
       "${ errors.length } item failed to be trashed": [
         "Erro ao carregar ${ errors.length } item para a lixeira",
@@ -9422,6 +9443,10 @@
         "${ numberOfItems } item copiado para a lixeira",
         "${ numberOfItems } itens copiados para a lixeira"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
         "${ numberOfItems } itens excluídos"
@@ -9433,10 +9458,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item excluído permanentemente da lixeira",
         "${ numberOfItems } itens excluídos permanentemente da lixeira"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } item não foi excluído",
-        "${ numberOfItems } itens não foram excluídos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Erro ao excluir permanentemente ${ numberOfItems } arquivo da lixeira",
@@ -9454,6 +9475,10 @@
         "Erro ao restaurar ${ numberOfItems } arquivo da lixeira",
         "Erro ao restaurar ${ numberOfItems } arquivos da lixeira"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item movido para a lixeira",
         "${ numberOfItems } itens movidos para a lixeira"
@@ -9461,10 +9486,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item restaurado da lixeira",
         "${ numberOfItems } itens restaurados da lixeira"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } item copiado",
-        "${ numberOfItems } itens copiados"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item movido",
@@ -9481,9 +9502,6 @@
       ],
       "Access updated": [
         "Acesso atualizado"
-      ],
-      "Album failed to be renamed": [
-        "Não foi possível renomear o álbum"
       ],
       "Album renamed successfully": [
         "O álbum foi renomeado com sucesso"
@@ -9506,8 +9524,8 @@
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Cópia de \"${ name }\" movido para a lixeira"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Cópia de \"${ ellipsedName }\" movido para a lixeira"
       ],
       "Device failed to be removed": [
         "Erro ao remover o dispositivo"
@@ -9535,9 +9553,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Erro ao carregar os detalhes do convite"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
@@ -9668,6 +9683,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algumas imagens não foram enviadas devido a nomes de arquivo duplicados na seleção atual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "O álbum foi renomeado com sucesso"
       ]
     },
     "Oauth instructions": {
@@ -10216,6 +10236,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -10605,11 +10628,6 @@
         "Nome"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contato"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, e ${ PASS_SHORT_APP_NAME }."
@@ -10672,7 +10690,7 @@
         "Fax"
       ],
       "Home": [
-        "Casa"
+        "Início"
       ],
       "Main": [
         "Principal"
@@ -10989,9 +11007,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -11626,6 +11641,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
       ],
@@ -12021,9 +12042,6 @@
       ],
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
-      ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
       ],
       "Canceling import": [
         "Cancelando a importação"

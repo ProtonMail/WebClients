@@ -29,6 +29,7 @@ export interface AuthResponse {
     '2FA': TwoFaResponse;
     HasRecoveryEmail: boolean;
     HasRecoveryPhone: boolean;
+    HasRecoveryPhrase: boolean;
 }
 
 export interface PushForkResponse {

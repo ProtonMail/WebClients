@@ -4371,9 +4371,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
       ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
-      ],
       "Please select a country": [
         "국가를 선택해주세요"
       ],
@@ -7767,9 +7764,6 @@
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "추천 크레딧은 친구의 무료 체험 종료된 후 최대 2개월 이내에, 친구가 유료 플랜을 구독한 경우에 지급될 수 있습니다."
-      ],
       "The securest way to browse, stream, and be online.": [
         "검색, 스트리밍 및 온라인 상태를 유지하는 가장 안전한 방법이에요."
       ],
@@ -8072,6 +8066,9 @@
       ],
       "Vault updated": [
         "금고를 업데이트했습니다"
+      ],
+      "Verification code sent.": [
+        "인증 코드가 전송되었습니다."
       ],
       "Verification may take a few minutes.": [
         "인증에 몇 분이 소요될 수 있습니다."
@@ -9045,6 +9042,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, 및 ${ SHEETS_SHORT_APP_NAME }용."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
@@ -9396,6 +9396,9 @@
       "State": [
         "시/도"
       ],
+      "Storage": [
+        "저장 공간"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -9428,6 +9431,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Unlimited": [
+        "제한 없음"
       ],
       "Upload 1 or more encryption keys": [
         "하나 및 하나 이상의 암호화 키를 업로드 하십시오"
@@ -9485,6 +9491,9 @@
       ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
+      ],
+      "Yes": [
+        "예"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
@@ -9628,9 +9637,6 @@
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "Common sign in issues": [
-        "일반적인 로그인 문제"
       ],
       "Common sign up issues": [
         "일반적 회원가입 문제"
@@ -10497,9 +10503,6 @@
       ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "스트리밍에 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -12520,11 +12523,6 @@
         "온라인 자유를 위한 안전한 길"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
@@ -12742,9 +12740,6 @@
       "Verify now": [
         "지금 인증"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "이 복구 이메일 주소로 인증하세요: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -12784,9 +12779,6 @@
       ],
       "Verify recovery phone?": [
         "복구 휴대전화 인증?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "이 복구 전화번호로 인증하세요: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
@@ -13088,9 +13080,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "로그인 정보를 분실하여 계정을 초기화해야 하는 경우, 이메일, 연락처, 파일 또는 비밀번호에 액세스하지 못할 수 있으므로 **계정 복구 및 데이터 복구 방법**을 모두 마련하는 것이 **필수**입니다."
       ],
-      "Invalid code": [
-        "잘못된 코드입니다"
-      ],
       "Review account safety": [
         "내 계정 보안 검토하기"
       ],
@@ -13364,9 +13353,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "기존 주소 키를 계정 복구에 사용 할 수 없습니다."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ]
     },
     "session_recovery:available:info": {
@@ -14781,9 +14767,6 @@
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
       ],
-      "Billing information updated": [
-        "청구 정보 업데이트됨"
-      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -15389,9 +15372,6 @@
       ],
       "Collaborate on documents": [
         "문서에서 협업하기"
-      ],
-      "Configurations": [
-        "설정"
       ],
       "Confirm": [
         "확인"

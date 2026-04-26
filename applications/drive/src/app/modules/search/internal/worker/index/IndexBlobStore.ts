@@ -1,7 +1,8 @@
-import type { Cached, CleanupEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
+import type { Cached, CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
 import { SerDes } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../shared/Logger';
+import { decryptBlob, encryptBlob } from '../../shared/SearchCrypto';
 import type { SearchDB } from '../../shared/SearchDB';
 import { createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
 import type { IndexKind } from './IndexRegistry';
@@ -21,14 +22,15 @@ export class IndexBlobStore {
 
     constructor(
         private readonly indexKind: IndexKind,
-        private readonly db: SearchDB
+        private readonly db: SearchDB,
+        private readonly cryptoKey: CryptoKey
     ) {}
 
     private dbKey(blobName: string): [string, string] {
         return [this.indexKind, blobName];
     }
 
-    async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent): Promise<void> {
+    async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent | ExportEvent): Promise<void> {
         const blobName = event.id().toString();
         const cached = this.cache.get(blobName);
         if (cached) {
@@ -36,10 +38,13 @@ export class IndexBlobStore {
             return;
         }
 
-        const data = await this.db.getIndexBlob(this.dbKey(blobName));
-        if (data !== undefined) {
-            // TODO: Decrypt blobs, catch exceptions.
-            event.send(SerDes.Cbor, new Uint8Array(data));
+        // TODO: Instrument and exception handling hardening for failed decryptions.
+        const decrypted = await this.db.getDecryptedIndexBlob(this.dbKey(blobName), async (ciphertext) => {
+            const result = await decryptBlob(this.cryptoKey, ciphertext, this.indexKind, blobName);
+            return result.buffer;
+        });
+        if (decrypted !== undefined) {
+            event.send(SerDes.Cbor, new Uint8Array(decrypted));
         } else {
             event.sendEmpty();
         }
@@ -49,9 +54,11 @@ export class IndexBlobStore {
         try {
             const blobName = event.id().toString();
             const cached = event.recv();
-            const data = cached.serialize(SerDes.Cbor);
-            // TODO: Encrypt blobs, catch exceptions.
-            await this.db.putIndexBlob(this.dbKey(blobName), data.buffer as ArrayBuffer);
+            const serialized = cached.serialize(SerDes.Cbor);
+            // TODO: Instrument and exception handling hardening for failed encryptions.
+            await this.db.putEncryptedIndexBlob(this.dbKey(blobName), new Uint8Array(serialized).buffer, (plaintext) =>
+                encryptBlob(this.cryptoKey, new Uint8Array(plaintext), this.indexKind, blobName)
+            );
             this.cache.set(blobName, cached);
         } catch (e) {
             if (isQuotaExceededError(e)) {

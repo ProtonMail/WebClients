@@ -3563,9 +3563,6 @@
         "Corrija o conflito selecionado para proceder.",
         "Corrija os conflitos selecionados para proceder."
       ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar a sua palavra-passe."
-      ],
       "Please select a country": [
         "Selecione um país"
       ],
@@ -6889,6 +6886,9 @@
       "Vault updated": [
         "O cofre foi atualizado."
       ],
+      "Verification code sent.": [
+        "O código de verificação foi enviado."
+      ],
       "Verification may take a few minutes.": [
         "A verificação pode demorar alguns minutos."
       ],
@@ -7748,6 +7748,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -8070,6 +8073,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Armazenamento"
+      ],
       "Street address": [
         "Endereço postal"
       ],
@@ -8102,6 +8108,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlimited": [
+        "Ilimitado"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de encriptação"
@@ -8288,9 +8297,6 @@
       ],
       "clearing your browser cache": [
         "limpar a memória do navegador"
-      ],
-      "Common sign in issues": [
-        "Problemas de ligação comuns"
       ],
       "Common sign up issues": [
         "Problemas de registo comuns"
@@ -8991,9 +8997,6 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
       ],
       "Desktop app": [
         "Aplicação de desktop"
@@ -10756,11 +10759,6 @@
         "A sua porta de entrada para a liberdade online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacto"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mês",
@@ -10943,9 +10941,6 @@
       "Verify now": [
         "Verificar agora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifique agora este endereço de e-mail de recuperação: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verificar o e-mail de recuperação?"
       ],
@@ -10985,9 +10980,6 @@
       ],
       "Verify recovery phone?": [
         "Verificar o telefone de recuperação?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifique este número de telefone de recuperação agora: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
@@ -11145,9 +11137,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se perder os seus dados de acesso e precisar de redefinir a sua conta, **é imperativo** que tenha tanto **um método de recuperação da conta como de recuperação de dados configurados**. Caso contrário, poderá não conseguir aceder aos seus e-mails, contactos, ficheiros ou palavras-passe."
-      ],
-      "Invalid code": [
-        "O código é inválido."
       ],
       "Review account safety": [
         "Verifique a segurança da sua conta"
@@ -11416,9 +11405,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperação de conta indisponível para chaves de endereços antigos"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Crie chaves antes de tentar alterar a sua palavra-passe."
       ]
     },
     "session_recovery:available:info": {

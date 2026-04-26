@@ -1489,12 +1489,6 @@
       "Failed to lock meeting": [
         "Error al bloquear la reunión"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "No se ha podido solicitar acceso a la cámara. Comprueba los permisos del sistema e inténtalo de nuevo. Es posible que tengas que activarlos manualmente; actualiza la página después."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "No se ha podido solicitar acceso al micrófono. Comprueba los permisos del sistema e inténtalo de nuevo. Es posible que tengas que activarlos manualmente; actualiza la página después."
-      ],
       "Failed to rotate personal meeting link": [
         "No se pudo rotar el enlace de reunión personal"
       ],
@@ -1817,11 +1811,11 @@
       "Decrypting meetings...": [
         "Descifrando reuniones..."
       ],
-      "Default": [
-        "Por defecto"
-      ],
       "Default - ${ systemDefault.label }": [
         "Por defecto: ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Predeterminado — Predeterminado del sistema"
       ],
       "Delete event": [
         "Eliminar evento"
@@ -1837,9 +1831,6 @@
       ],
       "Edit email address": [
         "Editar la dirección de correo electrónico"
-      ],
-      "End Meeting for everyone?": [
-        "¿Finalizar la reunión para todos?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "El cifrado de extremo a extremo está activo para audio y vídeo."
@@ -1892,6 +1883,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ve a about:config, busca media.peerconnection.enabled y establécelo en true."
       ],
+      "Host": [
+        "Anfitrión"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organiza tus propias reuniones seguras. Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para invitar a quien quieras. Fácil, seguro y gratuito."
       ],
@@ -1912,9 +1906,6 @@
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Salir detendrá tu pantalla compartida. ¿Quieres continuar?"
       ],
       "Left ${ roomNameLabel }": [
         "Ha salido de ${ roomNameLabel }"
@@ -2576,14 +2567,14 @@
       "Others couldn't hear me": [
         "No podían oírme"
       ],
+      "Others couldn't see my video": [
+        "Los demás no podían ver mi vídeo"
+      ],
       "The presentation was blurry": [
         "La presentación estaba borrosa"
       ],
-      "Video was blurry": [
-        "El vídeo estaba borroso"
-      ],
-      "Video was breaking up": [
-        "No pude presentar"
+      "Video quality was poor": [
+        "La calidad del vídeo era baja"
       ]
     },
     "Placeholder": {

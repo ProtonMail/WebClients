@@ -3,11 +3,7 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from '
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    resetMeetingInfo,
-    selectParticipantDecryptedNameMap,
-    setMeetingInfo,
-} from '@proton/meet/store/slices/meetingInfo';
+import { resetMeetingInfo, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -16,7 +12,7 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
-import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useStableCallback } from '../hooks/useStableCallback';
@@ -95,14 +91,11 @@ export const MeetContainer = ({
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
 
-    const {
-        isScreenShare,
-        isLocalScreenShare,
-        startScreenShare,
-        stopScreenShare,
-        screenShareParticipant,
-        screenShareTrack,
-    } = useCurrentScreenShare({ stopPiP, startPiP, preparePictureInPicture });
+    const { startScreenShare, stopScreenShare, screenShareParticipant, screenShareTrack } = useCurrentScreenShare({
+        stopPiP,
+        startPiP,
+        preparePictureInPicture,
+    });
 
     useLayoutEffect(() => {
         dispatch(
@@ -117,8 +110,6 @@ export const MeetContainer = ({
                 displayName,
                 passphrase,
                 isGuestAdmin,
-                isScreenShare,
-                isLocalScreenShare,
             })
         );
     }, [
@@ -133,8 +124,6 @@ export const MeetContainer = ({
         displayName,
         passphrase,
         isGuestAdmin,
-        isScreenShare,
-        isLocalScreenShare,
     ]);
 
     useEffect(() => {
@@ -143,14 +132,9 @@ export const MeetContainer = ({
         };
     }, [dispatch]);
 
-    const pagedParticipants = useSortedPagedParticipants();
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
-    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
-    const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
-        participantDecryptedNameMap,
-        pagedParticipants
-    );
+    const { recordingState, startRecording, downloadRecording } = useMeetingRecorder();
 
     const leaveWithStopRecording = useStableCallback(async () => {
         await downloadRecording();
@@ -161,6 +145,8 @@ export const MeetContainer = ({
         await downloadRecording();
         await handleEndMeeting();
     });
+
+    useMeetingTelemetry();
 
     // Safari needs a warmup so we can pass strict Safari PiP requirements
     // Running after joining the meeting
@@ -199,10 +185,9 @@ export const MeetContainer = ({
         () => ({
             recordingState,
             startRecording,
-            stopRecording,
             downloadRecording,
         }),
-        [recordingState, startRecording, stopRecording, downloadRecording]
+        [recordingState, startRecording, downloadRecording]
     );
 
     return (
@@ -214,8 +199,6 @@ export const MeetContainer = ({
                             <DebugOverlay isOpen={debugOverlay.isOpen} onClose={debugOverlay.close} />
                         )}
                         <MeetingBody
-                            isScreenShare={isScreenShare}
-                            isLocalScreenShare={isLocalScreenShare}
                             screenShareTrack={screenShareTrack}
                             screenShareParticipant={screenShareParticipant}
                             isUsingTurnRelay={isUsingTurnRelay}

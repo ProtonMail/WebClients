@@ -324,9 +324,6 @@
       "Connected": [
         "დაკავშირებულია"
       ],
-      "Contact sales": [
-        "გაყიდვებთან დაკავშირება"
-      ],
       "Contact support": [
         "კონტაქტი მხარდაჭერის გუნდთან"
       ],
@@ -452,9 +449,6 @@
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
-      ],
-      "Delete and confirm": [
-        "წაშლა და დადასტურება"
       ],
       "Delete filter “${ Name }”": [
         "ფილტრის \"${ Name }\" წაშლა"
@@ -5940,9 +5934,6 @@
       "Recovery contact removed": [
         "აღდგენის კონტაქტი წაიშალა"
       ],
-      "Recovery contacts": [
-        "საკონტაქტო ინფორმაცია აღდგენისთვის"
-      ],
       "Recovery request sent": [
         "აღდგენის მოთხოვნა გაიგზავნა"
       ],
@@ -6072,10 +6063,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს.",
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "თქვენ მიაღწიეთ ${ limit } აღდგენის კონტაქტის მაქსიმალურ რაოდენობას.",
-        "თქვენ მიაღწიეთ მაქსიმალურ ${ limit } აღდგენის კონტაქტს."
       ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
@@ -6481,9 +6468,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ],
       "Please select a country": [
         "აირჩიეთ ქვეყანა"
@@ -9238,9 +9222,6 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
       ],
-      "Code expired": [
-        "კოდს ვადა ამოიწურა"
-      ],
       "Coming soon": [
         "სულ მალე"
       ],
@@ -11202,9 +11183,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
       ],
-      "Upgrade to unlock": [
-        "განსაბლოკად ასწიეთ ტარიფი"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
       ],
@@ -11271,6 +11249,9 @@
       "Vault updated": [
         "საცავი განახლდა"
       ],
+      "Verification code sent.": [
+        "გადამოწმების კოდი გაიგზავნა."
+      ],
       "Verification link expired": [
         "გაადამოწმების ბმულის ვადა ამოიწურა"
       ],
@@ -11291,9 +11272,6 @@
       ],
       "Version ${ version }": [
         "ვერსია ${ version }"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
       ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
@@ -12845,9 +12823,6 @@
       "Don't ask again": [
         "აღარ მკითხო"
       ],
-      "Don't keep versions": [
-        "ვერსიები არ შენარჩუნდება"
-      ],
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
@@ -12967,6 +12942,9 @@
       ],
       "for your first month": [
         "თქვენი პირველი თვისთვის"
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -13557,6 +13535,9 @@
       "Sticky labels": [
         "წებოვანი ჭდეები"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Street address": [
         "ქუჩის მისამართი"
       ],
@@ -13625,6 +13606,9 @@
       ],
       "Undo send": [
         "გაგზავნის გაუქმება"
+      ],
+      "Unlimited": [
+        "შეუზღუდავი"
       ],
       "Unlimited hide-my-email aliases": [
         "შეუზღუდავი hide-my-email-ის ფსევდონიმები"
@@ -13955,9 +13939,6 @@
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "Common sign in issues": [
-        "შესვლის ზოგადი პრობლემები"
       ],
       "Common sign up issues": [
         "რეგისტრაციის ზოგადი პრობლემები"
@@ -15133,9 +15114,6 @@
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -16786,9 +16764,6 @@
       "Buy now": [
         "ახლავე შეძენა"
       ],
-      "Contact us": [
-        "დაგვიკავშირდით"
-      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -16815,9 +16790,6 @@
       ],
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "დროებითი ვერსიის გამოთხოვა"
       ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
@@ -17051,9 +17023,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "ინდივიდუალური გადაწყვეტილებები დიდი ორგანიზაციებისთვის სპეციფიკური მოთხოვნებით."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "შეთავაზება, რომელიც აირჩიეთ, მიუწვდომელია ${ currentPlanTitle }-ის გამომწერებისთვის."
@@ -17765,11 +17734,6 @@
         "თქვენი კარიბჭე ინტერნეტ-უსაფრთხოებისთვის"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "ყველა ${ BRAND_NAME }-ის ფასიანი ფუნქცია, რომელსაც Duo შეიცავს."
@@ -17985,9 +17949,6 @@
       "Verify now": [
         "ახლა გადამოწმება"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
@@ -18030,9 +17991,6 @@
       ],
       "Verify recovery phone?": [
         "შევამოწმო აღდგენის ტელეფონი?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი ახლა: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
@@ -18950,9 +18908,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
     },
     "session_recovery:available:info": {
@@ -19350,6 +19305,9 @@
         "${ FREE_PASS_ALIASES } hide-my-email-ის ფსევდონიმი სპამთან საბრძოლველად",
         "${ FREE_PASS_ALIASES } hide-my-email-ის ფსევდონიმი სპამთან საბრძოლველად"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ალიასი სპამის წინააღმდეგ საბრძოლველად"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } მისამართი",
         "${ maxAddresses } მისამართი"
@@ -19434,6 +19392,9 @@
       "Bundle": [
         "ნაკრები"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "დასაწყებად აირჩიეთ უსაფრთხო ${ MAIL_APP_NAME } მისამართი"
+      ],
       "Collaborative document editing": [
         "კოლაბორაციული დოკუმენტის ჩასწორება"
       ],
@@ -19497,6 +19458,9 @@
       "Gifted by **${ referrerName }**": [
         "გაჩუქათ მომხმარებელმა **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "შეინარჩუნეთ თქვენი მიმოწერის პირადულობა ${ MAIL_APP_NAME }-ით"
+      ],
       "Manage user access": [
         "მომხმარებლის წვდომების მართვა"
       ],
@@ -19518,6 +19482,9 @@
       "Password manager for all your devices": [
         "პაროლების მმართველი ყველა თქვენი მოწყობილობისთვის"
       ],
+      "Password-protected messages": [
+        "პაროლით დაცული შეტყობინებები"
+      ],
       "Pick your perfect plan": [
         "აირჩიეთ საუკეთესო სატარიფო გეგმა თქვენთვის"
       ],
@@ -19536,6 +19503,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "დაიცავით ${ VPN_CONNECTIONS } მოწყობილობა ერთდროულად",
         "დაიცავით ${ VPN_CONNECTIONS } მოწყობილობა ერთდროულად"
+      ],
+      "Secure calendar": [
+        "უსაფრთხო კალენდარი"
       ],
       "Secure file sharing": [
         "დაცული ფაილის გაზიარება"
@@ -19636,6 +19606,9 @@
       "use your own email.": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტა."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN ${ vpnServersCountData.free.countries } ქვეყანაში განთავსებული სერვერებით"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში",
         "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში"
@@ -19648,6 +19621,9 @@
       ],
       "You are all set": [
         "ყველაფერი მზადაა"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "თქვენი ანგარიში გაძლევთ წვდომას უფასო ფუნქციებზე შემდეგ აპებში: ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "თქვენი გეგმა"
@@ -20988,9 +20964,6 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
-      ],
-      "Billing information updated": [
-        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "კალენდარი დაემატა. სინქრონიზაციას რამდენიმე წუთი შეიძლება დასჭირდეს."

@@ -88,10 +88,6 @@
       "Add photos": [
         "დაამატეთ სურათები"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)",
-        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)"
-      ],
       "Add to album": [
         "ალბომში დამატება"
       ],
@@ -512,9 +508,6 @@
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
-      "Get link": [
-        "ბმულის მიღება"
-      ],
       "Get mobile and desktop apps": [
         "მიიღეთ აპები მობილურისთვის და კომპიუტერისთვის"
       ],
@@ -535,9 +528,6 @@
       ],
       "Go back": [
         "უკან დაბრუნება"
-      ],
-      "Go back to album “${ albumName }“": [
-        "დაბრუნება ალბომზე \"${ albumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }-ზე გადასვლა"
@@ -641,9 +631,6 @@
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
-      "Loading link": [
-        "ბმულის ჩატვირთვა"
-      ],
       "Make a copy": [
         "ასლის შექმნა"
       ],
@@ -658,9 +645,6 @@
       ],
       "Manage labels": [
         "ჭდეების მართვა"
-      ],
-      "Manage link": [
-        "ბმულის მართვა"
       ],
       "Manage share": [
         "ზიარის მართვა"
@@ -6082,9 +6066,6 @@
       "Shared by ${ sharedBy }": [
         "გაზიარებულია ${ sharedBy }-ის მიერ"
       ],
-      "Shared by you": [
-        "გაზიარებული თქვენს მიერ"
-      ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
       ],
@@ -6365,9 +6346,6 @@
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
       ],
-      "Untitled": [
-        "უსათაურო"
-      ],
       "Update required": [
         "საჭიროა განახლება"
       ],
@@ -6442,9 +6420,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "სწორად იქცევით. თქვენ ახლახან გაზარდეთ თქვენი საცავი 5 გბ-ით!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "განვიცდით ტექნიკურ სიძნელეებს. ქმედებები, რომლებიც ალბომს ეხება, დროებით გამორთულია."
       ],
       "We couldn’t process your payment.": [
         "თქვენი გადახდა ვერ დავამუშავეთ."
@@ -8254,9 +8229,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Dedicated servers optimized for streaming": [
-        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -8922,35 +8894,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "${ name } წარმატებით შეიქმნა"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" წაიშალა"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" სამუდამოდ წაიშალა"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" ნაგვის ყუთიდან წარმატებით წაიშალა"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\"-ის შექმნის შეცდომა"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"-ის წაშლის შეცდომა"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\"-ის ნაგვიდან წაშლის შეცდომა"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\"-ის გადატანის შეცდომა"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\"-ის ნაგავის ყუთში გადატანის შეცდომა"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\"-ის ნაგვის ყუთიდან აღდგენის შეცდომა"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\"-ის შენახვის შეცდომა"
@@ -8958,17 +8906,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" ნაგვის ყუთში ჩავარდა"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" აღდგენილია ნაგვის ყუთიდან"
-      ],
       "\"${ name }\" saved successfully": [
         "${ name } წარმატებით იქნა შენახული"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" წარმატებით დაკოპირდა"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" გადატანა წარმატებულია"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"-ის გადარქმევის შეცდომა"
@@ -9020,10 +8959,6 @@
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } ელემენტის წაშლის შეცდომა",
-        "${ numberOfItems } ელემენტის წაშლის შეცდომა"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა",
         "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა"
@@ -9048,10 +8983,6 @@
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა",
-        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
@@ -9067,9 +8998,6 @@
       ],
       "Access updated": [
         "წვდომა განახლდა"
-      ],
-      "Album failed to be renamed": [
-        "ალბომის სახელის გადარქმევა ჩავარდა"
       ],
       "Album renamed successfully": [
         "ალბომის სახელი წარმატებით შეიცვალა"
@@ -9091,9 +9019,6 @@
       ],
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\"-ის ასლი გადატანილია ნაგვის ყუთში"
       ],
       "Device failed to be removed": [
         "მოწყობილობის წაშლის შეცდომა"
@@ -9121,9 +9046,6 @@
       ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "მოწვევის დეტალების ჩატვირთვა ჩავარდა"
       ],
       "Failed to move, please try again": [
         "გადატანის შეცდომა. თავიდან სცადეთ"
@@ -10114,11 +10036,6 @@
         "სახელი"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } თვე",
@@ -10375,9 +10292,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
     },
     "session_recovery:available:info": {
@@ -11386,9 +11300,6 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
-      ],
-      "Billing information updated": [
-        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"

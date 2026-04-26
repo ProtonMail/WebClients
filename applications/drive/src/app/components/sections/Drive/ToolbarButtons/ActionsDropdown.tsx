@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -15,7 +16,6 @@ import generateUID from '@proton/utils/generateUID';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
-import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink, useActions } from '../../../../store';
 import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 

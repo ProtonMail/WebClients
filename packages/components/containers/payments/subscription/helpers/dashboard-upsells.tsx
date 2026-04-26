@@ -17,7 +17,6 @@ import {
     type PlanIDs,
     type PlansMap,
     SelectedPlan,
-    type Subscription,
     getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
     getPrice,
@@ -45,6 +44,7 @@ import {
     isPlan,
     isTrial,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { type PreloadedPaymentsContextType, isPaymentsPreloaded } from '@proton/payments/ui';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
@@ -815,7 +815,7 @@ const getVPNPassProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
     });
 };
 
-const hasOnePlusSubscription = (subscription: Subscription) => {
+const hasOnePlusSubscription = (subscription: MaybeFreeSubscription) => {
     return (
         hasMail(subscription) ||
         hasDrive(subscription) ||
@@ -828,7 +828,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
 
 type ResolveUpsellsToDisplayProps = {
     app: APP_NAMES;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     serversCount: VPNServersCountData;

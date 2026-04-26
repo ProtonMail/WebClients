@@ -991,6 +991,9 @@
       "Send message": [
         "Enviar mensaje"
       ],
+      "Share your thoughts": [
+        "Comparta su opinión"
+      ],
       "Show safety information": [
         "Mostrar información de seguridad"
       ],
@@ -1033,6 +1036,9 @@
       ],
       "GA": [
         "GA"
+      ],
+      "New": [
+        "Nuevo"
       ],
       "OpenAI-compatible": [
         "Compatible con OpenAI"
@@ -1214,6 +1220,9 @@
       ],
       "Switch between light and dark mode": [
         "Cambiar entre modo claro y oscuro"
+      ],
+      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
+        "Su experiencia da forma a ${ LUMO_SHORT_APP_NAME }. Cuéntenos lo que opina."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -2286,6 +2295,9 @@
       ],
       "Generated code": [
         "Código generado"
+      ],
+      "Got a minute?": [
+        "¿Tiene un momento?"
       ],
       "Guest": [
         "Invitado"
@@ -4460,6 +4472,9 @@
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
+      ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
@@ -6189,8 +6204,8 @@
       "Data retention policies": [
         "Políticas de retención de datos"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ],
       "Desktop app": [
         "App de escritorio"
@@ -7018,6 +7033,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -7328,11 +7346,6 @@
       ],
       "ZIP code": [
         "Código ZIP"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
       ]
     },
     "Plan description": {
@@ -7933,9 +7946,6 @@
     "Success": {
       "Billing details updated": [
         "Detalles de facturación actualizados"
-      ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"

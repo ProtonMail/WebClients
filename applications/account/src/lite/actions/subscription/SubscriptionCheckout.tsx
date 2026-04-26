@@ -6,6 +6,7 @@ import type { Model } from '@proton/components/containers/payments/subscription/
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { PLANS } from '@proton/payments/core/constants';
+import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { PaymentsContextProvider, usePayments } from '@proton/payments/ui/context/PaymentContext';
@@ -27,7 +28,7 @@ interface Props {
     onUnsubscribed: () => void;
     onClose: () => void;
     metrics: SubscriptionCheckoutMetricsOverrides;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     minimumCycle?: number;
 }
 

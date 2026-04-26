@@ -640,9 +640,6 @@
       "Set extra password": [
         "Configurar la contraseña adicional"
       ],
-      "Settings": [
-        "Ajustes"
-      ],
       "Setup 2FA": [
         "Configurar 2FA"
       ],
@@ -1039,9 +1036,6 @@
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Fallo en la comunicación de cifrado para desbloquear el escritorio."
-      ],
       "Error reporting problem": [
         "Error al notificar el problema"
       ],
@@ -1290,6 +1284,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ],
       "Unknown invite": [
         "Invitación desconocida"
@@ -2022,7 +2019,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -3148,12 +3146,6 @@
       ],
       "Generic CSV": [
         "CSV genérico"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obtén ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obtén ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Comenzar"

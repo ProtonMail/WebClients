@@ -89,10 +89,10 @@
       "Add photos": [
         "Adaugă fotografii"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografii)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adăugare în „${ name }” (${ photoCount } fotografie)",
+        "Adăugare în „${ name }” (${ photoCount } fotografii)",
+        "Adăugare în „${ name }” (${ photoCount } de fotografii)"
       ],
       "Add to album": [
         "Adăugare în album"
@@ -520,9 +520,6 @@
       "Get in touch": [
         "Contactați-ne"
       ],
-      "Get link": [
-        "Obținere legătură web"
-      ],
       "Get mobile and desktop apps": [
         "Aplicații mobile și desktop"
       ],
@@ -544,8 +541,8 @@
       "Go back": [
         "Înapoi"
       ],
-      "Go back to album “${ albumName }“": [
-        "Înapoi la albumul „${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Înapoi la albumul „${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
@@ -649,9 +646,6 @@
       "Load image": [
         "Încărcare imagine"
       ],
-      "Loading link": [
-        "Se încarcă legătura"
-      ],
       "Make a copy": [
         "Creare copie"
       ],
@@ -666,9 +660,6 @@
       ],
       "Manage labels": [
         "Gestionare etichete"
-      ],
-      "Manage link": [
-        "Gestionare legătură web"
       ],
       "Manage share": [
         "Gestionare partajări"
@@ -808,6 +799,9 @@
       "Quit": [
         "Ieșire"
       ],
+      "Re-index": [
+        "Reindexare"
+      ],
       "Re-sign": [
         "Reînregistrare"
       ],
@@ -893,7 +887,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -3349,6 +3343,11 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
       ],
@@ -3541,6 +3540,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Nu s-au putut încărca detaliile semnăturii, reîncercați mai târziu."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
       ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
@@ -5874,6 +5876,9 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Invitation confirmed": [
+        "Invitație confirmată"
+      ],
       "Invite link copied": [
         "Legătura de invitare a fost copiată."
       ],
@@ -6067,6 +6072,9 @@
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
+      ],
+      "No populator states found.": [
+        "Nu a fost găsită nicio stare a generatorului de indexare."
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
@@ -6409,9 +6417,6 @@
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Partajate de mine"
-      ],
       "Shared link not found": [
         "legătură web partajată negăsită"
       ],
@@ -6740,9 +6745,6 @@
       "Unsupported file type for Photos": [
         "Tip de fișier nesuportat pentru „Fotografii”"
       ],
-      "Untitled": [
-        "Nedenumit"
-      ],
       "Update required": [
         "Actualizare necesară"
       ],
@@ -6817,9 +6819,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bun, tocmai v-ați mărit spațiul de stocare la 5 GiB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Avem probleme tehnice. Orice acțiuni legate de albume sunt dezactivate temporar."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
@@ -8721,6 +8720,14 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
+      ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -8775,8 +8782,8 @@
       "Data retention policies": [
         "Politici de păstrare a datelor"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servere dedicate optimizate pentru conținut transmis în flux"
+      "Dedicated servers optimized for speed": [
+        "Servere dedicate optimizate pentru viteză"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -9466,38 +9473,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "„${ ellipsedName }” s-a copiat."
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }” a fost creat."
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "„${ ellipsedName }” s-a șters."
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }” s-a șters permanent din gunoi."
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }” nu a putut fi creat."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "„${ ellipsedName }” nu s-a putut șterge."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "„${ ellipsedName }” nu a putut fi eliminat definitiv din gunoi."
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }” nu a putut fi mutat."
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "„${ ellipsedName }” nu a putut fi restaurat din gunoi."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "„${ ellipsedName }” s-a mutat."
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }” s-a restaurat din gunoi."
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }” s-a mutat."
+      ],
       "\"${ fileName }\" shared": [
         "„${ fileName }” s-a partajat"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }” a fost creat cu succes."
-      ],
-      "\"${ name }\" deleted": [
-        "S-a șters „${ name }”"
       ],
       "\"${ name }\" deleted permanently": [
         "„${ name }” s-a șters permanent."
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "„${ name }” a fost eliminat permanent din «Gunoi»."
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }” nu a putut fi creat."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Nu s-a putut șterge „${ name }”"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "„${ name }” nu a putut fi eliminat definitiv din «Gunoi»."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "„${ name }” nu a putut fi mutat."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }” nu a putut fi mutat în «Gunoi»."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "„${ name }” nu a putut fi restaurat din «Gunoi»."
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }” nu s-a putut salva."
@@ -9505,17 +9524,8 @@
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
       ],
-      "\"${ name }\" restored from trash": [
-        "„${ name }” a fost restaurat din «Gunoi»."
-      ],
       "\"${ name }\" saved successfully": [
         "„${ name }” a fost salvat."
-      ],
-      "\"${ name }\" successfully copied": [
-        "„${ name }” s-a copiat."
-      ],
-      "\"${ name }\" successfully moved": [
-        "„${ name }” a fost mutat cu succes."
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }” nu a reușit să fie redenumit."
@@ -9532,6 +9542,11 @@
         "Articole care nu s-au putut copia: ${ errors.length }",
         "Articole care nu s-au putut copia: ${ errors.length }",
         "Articole care nu s-au putut copia: ${ errors.length }"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }"
       ],
       "${ errors.length } item failed to be trashed": [
         "Articole care nu s-au putut șterge: ${ errors.length }",
@@ -9563,6 +9578,11 @@
         "Articole copiate mutate în gunoi: ${ numberOfItems }",
         "Articole copiate mutate în gunoi: ${ numberOfItems }"
       ],
+      "${ numberOfItems } item copied": [
+        "Articole copiate: ${ numberOfItems }",
+        "Articole copiate: ${ numberOfItems }",
+        "Articole copiate: ${ numberOfItems }"
+      ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",
         "Articole șterse: ${ numberOfItems }",
@@ -9577,11 +9597,6 @@
         "S-a eliminat permanent un element din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Un element nu a putut fi eliminat definitiv din «Gunoi».",
@@ -9603,6 +9618,11 @@
         "${ numberOfItems } articole nu au putut fi restaurate din «Gunoi».",
         "${ numberOfItems } de articole nu au putut fi restaurate din «Gunoi»."
       ],
+      "${ numberOfItems } item moved": [
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }",
+        "Articole mutate: ${ numberOfItems }"
+      ],
       "${ numberOfItems } item moved to trash": [
         "S-a mutat un element în «Gunoi».",
         "S-au mutat ${ numberOfItems } articole în «Gunoi».",
@@ -9612,11 +9632,6 @@
         "Un element a fost restaurat din «Gunoi».",
         "${ numberOfItems } articole au fost restaurate din «Gunoi».",
         "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "Articole copiate: ${ numberOfItems }",
-        "Articole copiate: ${ numberOfItems }",
-        "Articole copiate: ${ numberOfItems }"
       ],
       "${ numberOfItems } item successfully moved": [
         "Un element a fost mutat cu succes.",
@@ -9634,9 +9649,6 @@
       ],
       "Access updated": [
         "Acces actualizat"
-      ],
-      "Album failed to be renamed": [
-        "Albumul nu a putut fi redenumit."
       ],
       "Album renamed successfully": [
         "Albumul a fost redenumit."
@@ -9659,8 +9671,8 @@
       "Contact group updated": [
         "Grup de contacte actualizat"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia lui „${ name }” a fost mutată în gunoi."
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Copia lui „${ ellipsedName }” a fost mutată în gunoi."
       ],
       "Device failed to be removed": [
         "Dispozitivul nu a reușit să fie îndepărtat"
@@ -9688,9 +9700,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nu s-a reușit descărcarea fișierelor: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Încărcarea detaliilor invitației a eșuat."
       ],
       "Failed to move, please try again": [
         "Mutarea a eșuat. Reîncercați."
@@ -9829,6 +9838,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumul a fost redenumit."
       ]
     },
     "Oauth instructions": {
@@ -10372,6 +10386,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -10770,11 +10787,6 @@
         "Nume"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
@@ -11161,9 +11173,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generați cheile înainte de a încerca să vă schimbați parola."
       ]
     },
     "session_recovery:available:info": {
@@ -11821,6 +11830,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -12058,6 +12073,11 @@
       "Version history": [
         "Istoric versiuni"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
+      ],
       "Watch the interview": [
         "Priviți interviul"
       ],
@@ -12224,9 +12244,6 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
-      ],
-      "Billing information updated": [
-        "Informațiile de facturare s-au actualizat."
       ],
       "Canceling import": [
         "Se anulează importarea"
@@ -12963,6 +12980,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importați-vă datele în ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Generatori de index"
       ],
       "Information exposed in breach": [
         "Informații expuse în divulgare"

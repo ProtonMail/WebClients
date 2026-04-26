@@ -10,19 +10,14 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import {
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    getBillingAddressFromPaymentStatus,
-    getPaymentsVersion,
-    getPlanFromPlanIDs,
-} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS, getPlanFromPlanIDs } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout/Layout';
@@ -73,7 +68,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
         initialBillingAddress: payments.paymentStatus
-            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus, { shouldRestoreZipCode: true })
             : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
@@ -94,9 +89,11 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         try {
             await processor.processPaymentToken();
         } catch (error) {
-            const sentryError = getSentryError(error);
-            if (sentryError) {
-                const context = {
+            tracePaymentError(error, {
+                tags: {
+                    component: 'pass-ctx-PaymentStep',
+                },
+                extra: {
                     currency: payments.options.currency,
                     amount: payments.checkResult.AmountDue,
                     processorType: processor.meta.type,
@@ -106,13 +103,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                     plan: payments.selectedPlan,
                     planName: payments.selectedPlan.getPlanName(),
                     paymentsVersion: getPaymentsVersion(),
-                };
-
-                captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
-                    level: 'error',
-                    extra: { error: sentryError, context },
-                });
-            }
+                },
+            });
             setLoading(false);
         }
     };

@@ -88,9 +88,9 @@
       "Add photos": [
         "Fotos hinzufügen"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Foto)",
-        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Foto)",
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Fotos)"
       ],
       "Add to album": [
         "Zum Album hinzufügen"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
-      "Get link": [
-        "Link abrufen"
-      ],
       "Get mobile and desktop apps": [
         "Mobile und Desktop-Apps herunterladen"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Zurück"
       ],
-      "Go back to album “${ albumName }“": [
-        "Zurück zum Album „${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Zurück zum Album „${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Gehe zu ${ planOrAppName }"
@@ -644,9 +641,6 @@
       "Load image": [
         "Bild laden"
       ],
-      "Loading link": [
-        "Link wird geladen"
-      ],
       "Make a copy": [
         "Erstelle eine Kopie"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Kategorien verwalten"
-      ],
-      "Manage link": [
-        "Link verwalten"
       ],
       "Manage share": [
         "Freigabe verwalten"
@@ -802,6 +793,9 @@
       ],
       "Quit": [
         "Beenden"
+      ],
+      "Re-index": [
+        "Neu indexieren"
       ],
       "Re-sign": [
         "Neu signieren"
@@ -3516,6 +3510,9 @@
       "Failed to load signature details, please try again later": [
         "Signaturdetails konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
@@ -4898,6 +4895,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } wurde erfolgreich gelöscht"
       ],
+      "${ albums } album": [
+        "${ albums } Album",
+        "${ albums } Alben"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -4981,6 +4982,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
       ],
+      "${ files } file": [
+        "${ files } Datei",
+        "${ files } Dateien"
+      ],
+      "${ folders } folder": [
+        "${ folders } Ordner",
+        "${ folders } Ordner"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
@@ -5014,6 +5023,10 @@
       "${ photoCount } item": [
         "${ photoCount } Eintrag",
         "${ photoCount } Einträge"
+      ],
+      "${ photos } photo": [
+        "${ photos } Foto",
+        "${ photos } Fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -5783,6 +5796,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Invitation confirmed": [
+        "Einladung bestätigt"
+      ],
       "Invite link copied": [
         "Einladungslink kopiert"
       ],
@@ -5972,6 +5988,9 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
+      ],
+      "No populator states found.": [
+        "Kein Status zu den Index-Generatoren gefunden"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -6313,9 +6332,6 @@
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Geteilt von dir"
-      ],
       "Shared link not found": [
         "Geteilten Link nicht gefunden"
       ],
@@ -6642,9 +6658,6 @@
       "Unsupported file type for Photos": [
         "Für Fotos nicht unterstützter Dateityp"
       ],
-      "Untitled": [
-        "Ohne Titel"
-      ],
       "Update required": [
         "Aktualisierung erforderlich"
       ],
@@ -6719,9 +6732,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Gut gemacht, du hast deinen Speicherplatz um 5 GB erhöht!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Wir haben technische Probleme. Alle Aktionen im Zusammenhang mit Alben sind temporär deaktiviert."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ node.name } hochgeladen hat. Möglicherweise wurden folgende Daten manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
@@ -8700,8 +8710,8 @@
       "Data retention policies": [
         "Aufbewahrungsrichtlinien für Daten"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Für Streaming optimierte dedizierte Server"
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -9380,38 +9390,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiert"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ erfolgreich erstellt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" gelöscht"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" konnte nicht erstellt werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" konnte nicht gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ konnte nicht verschoben werden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verschoben"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ aus dem Papierkorb wiederhergestellt"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ erfolgreich verschoben"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" geteilt"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }“ erfolgreich erstellt"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" gelöscht"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" dauerhaft gelöscht"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "„${ name }“ dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" konnte nicht erstellt werden"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" konnte nicht gelöscht werden"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "„${ name }“ konnte nicht verschoben werden."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" konnte nicht in den Papierkorb verschoben werden"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }“ konnte nicht gespeichert werden."
@@ -9419,17 +9441,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" in den Papierkorb verschoben"
       ],
-      "\"${ name }\" restored from trash": [
-        "„${ name }“ aus dem Papierkorb wiederhergestellt"
-      ],
       "\"${ name }\" saved successfully": [
         "„${ name }“ erfolgreich gespeichert"
-      ],
-      "\"${ name }\" successfully copied": [
-        "„${ name }“ erfolgreich kopiert"
-      ],
-      "\"${ name }\" successfully moved": [
-        "„${ name }“ erfolgreich verschoben"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" konnte nicht umbenannt werden"
@@ -9444,6 +9457,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } Eintrag konnte nicht kopiert werden",
         "${ errors.length } Einträge konnten nicht kopiert werden"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } Eintrag konnte nicht gelöscht werden",
+        "${ errors.length } Einträge konnten nicht gelöscht werden"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } Eintrag konnte nicht in den Papierkorb verschoben werden",
@@ -9469,6 +9486,10 @@
         "${ numberOfItems } kopierter Eintrag wurde in den Papierkorb verschoben",
         "${ numberOfItems } kopierte Einträge wurden in den Papierkorb verschoben"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } Eintrag kopiert",
+        "${ numberOfItems } Einträge kopiert"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
         "${ numberOfItems } Einträge gelöscht"
@@ -9480,10 +9501,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } Element dauerhaft aus dem Papierkorb gelöscht",
         "${ numberOfItems } Elemente dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } Eintrag konnte nicht gelöscht werden",
-        "${ numberOfItems } Einträge konnten nicht gelöscht werden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } Element konnte nicht dauerhaft aus dem Papierkorb gelöscht werden",
@@ -9501,6 +9518,10 @@
         "${ numberOfItems } Element konnte nicht aus dem Papierkorb wiederhergestellt werden",
         "${ numberOfItems } Elemente konnten nicht aus dem Papierkorb wiederhergestellt werden"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } Eintrag verschoben",
+        "${ numberOfItems } Einträge verschoben"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } Element wurde in den Papierkorb verschoben",
         "${ numberOfItems } Elemente wurden in den Papierkorb verschoben"
@@ -9508,10 +9529,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } Element aus dem Papierkorb wiederhergestellt",
         "${ numberOfItems } Elemente aus dem Papierkorb wiederhergestellt"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } Eintrag erfolgreich kopiert",
-        "${ numberOfItems } Einträge erfolgreich kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } Element erfolgreich verschoben",
@@ -9528,9 +9545,6 @@
       ],
       "Access updated": [
         "Zugriff aktualisiert"
-      ],
-      "Album failed to be renamed": [
-        "Album konnte nicht umbenannt werden"
       ],
       "Album renamed successfully": [
         "Album erfolgreich umbenannt"
@@ -9553,8 +9567,8 @@
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopie von \"${ name }\" in den Papierkorb verschoben"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie von \"${ ellipsedName }\" in den Papierkorb verschoben"
       ],
       "Device failed to be removed": [
         "Gerät konnte nicht entfernt werden"
@@ -9582,9 +9596,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Einladungsdetails konnten nicht geladen werden"
       ],
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
@@ -9715,6 +9726,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album erfolgreich umbenannt"
       ]
     },
     "Oauth instructions": {
@@ -10257,6 +10273,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -10649,11 +10668,6 @@
         "Name"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktiere"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
@@ -11033,9 +11047,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
     },
     "session_recovery:available:info": {
@@ -11670,6 +11681,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
       ],
@@ -11901,6 +11918,10 @@
       "Version history": [
         "Versionsverlauf"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer",
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer"
+      ],
       "Watch the interview": [
         "Schau dir das Interview an"
       ],
@@ -12065,9 +12086,6 @@
       ],
       "Billing details updated": [
         "Rechnungsdetails aktualisiert"
-      ],
-      "Billing information updated": [
-        "Rechnungsinformationen aktualisiert"
       ],
       "Canceling import": [
         "Import wird abgebrochen"
@@ -12787,6 +12805,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
+      "Index populators": [
+        "Index-Generatoren"
       ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"

@@ -628,9 +628,6 @@
       "Set extra password": [
         "Définir un mot de passe supplémentaire"
       ],
-      "Settings": [
-        "Paramètres"
-      ],
       "Setup 2FA": [
         "Configurer l'authentification A2F"
       ],
@@ -942,6 +939,21 @@
       "Authentication failure: ${ message }": [
         "L'authentification n'a pas abouti : ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les identifiants de verrouillage biométrique ne correspondent pas."
+      ],
+      "Biometric lock credentials not found.": [
+        "Les identifiants de verrouillage biométrique n'ont pas été trouvés."
+      ],
+      "Biometric lock is not configured.": [
+        "Le verrouillage biométrique n'est pas configuré."
+      ],
+      "Biometric lock setup failed.": [
+        "La configuration du verrouillage biométrique n'a pas abouti."
+      ],
       "Cannot create alias (${ error }).": [
         "La création de l'alias n'a pas abouti (${ error })."
       ],
@@ -1016,11 +1028,11 @@
       "Emptying trash failed": [
         "La corbeille n'a pas pu être vidée."
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
+      ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Le chiffrement de la communication pour le déverrouillage de l'application de bureau n'a pas abouti."
       ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
@@ -1259,6 +1271,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Une erreur s'est produite. Rechargez l'extension ${ PASS_APP_NAME }. Ce bug a été signalé."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
       ],
@@ -1267,6 +1282,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
       ],
       "The URL is in the list": [
         "L'URL est dans la liste."
@@ -1290,6 +1311,9 @@
         "Synchronisation impossible"
       ],
       "Unknown error": [
+        "Erreur inconnue"
+      ],
+      "Unknown error.": [
         "Erreur inconnue"
       ],
       "Unknown invite": [
@@ -1850,6 +1874,9 @@
       "Enter the address you want to email.": [
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
+      ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."
       ],
@@ -2020,6 +2047,9 @@
       ],
       "Loading...": [
         "Chargement en cours"
+      ],
+      "Logging you out...": [
+        "Déconnexion…"
       ],
       "Low Priority": [
         "Priorité basse"
@@ -2541,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Nombre illimité d'alias ​​hide-my-emaill et gestion avancée des alias"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour accéder à vos clés d'accès."
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Débloquez ${ PASS_APP_NAME } pour accéder à vos clés d'accès."
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour enregistrer cette clé d'accès."
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Débloquez ${ PASS_APP_NAME } pour sauvegarder cette clé d'accès."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Déverrouiller ${ PASS_SHORT_APP_NAME } avec les données biométriques"

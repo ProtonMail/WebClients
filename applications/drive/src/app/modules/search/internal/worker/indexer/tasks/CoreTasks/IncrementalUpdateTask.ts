@@ -31,14 +31,14 @@ export class IncrementalUpdateTask extends BaseTask {
                     registration.collector.commit(processed);
                     registration.lastEventId = events[processed - 1].eventId;
                     registration.subscriptionTime = Date.now();
+                    ctx.notifyIndexingProgress();
                 }
             }
         } catch (e) {
             if (isPermanentError(e)) {
                 throw e;
             }
-            Logger.error(`Uncaught incremental update error for <${populatorUid}>`, e);
-            sendErrorReportForSearch(e);
+            sendErrorReportForSearch(`Uncaught incremental update error for <${populatorUid}>`, e);
         } finally {
             ctx.treeSubscriptionRegistry.markIncrementalUpdateComplete(registration);
         }

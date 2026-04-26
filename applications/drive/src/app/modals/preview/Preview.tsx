@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
-import { useSharingModal } from '../SharingModal/SharingModal';
 import type { Drive } from './interface';
 import { isDriveWithSharing } from './interface';
 import { SignatureInformation, SignatureStatus } from './signatures';
@@ -75,7 +75,7 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({ nodeUid: preview.node.nodeUid, drive, verifySignatures });
+        showDetailsModal({ nodeUid: preview.node.nodeUid, drive });
     };
     const sharingDrive = isDriveWithSharing(drive) ? drive : undefined;
     const onShare =

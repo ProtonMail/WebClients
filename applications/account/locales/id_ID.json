@@ -6348,9 +6348,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
-      "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
-      ],
       "Please select a country": [
         "Silakan pilih negara"
       ],
@@ -11079,6 +11076,9 @@
       "Vault updated": [
         "Brankas diperbarui"
       ],
+      "Verification code sent.": [
+        "Kode verifikasi telah dikirim."
+      ],
       "Verification link expired": [
         "Tautan verifikasi kedaluwarsa"
       ],
@@ -12784,6 +12784,9 @@
       "for your first month": [
         "untuk bulan pertama Anda"
       ],
+      "Free": [
+        "Gratis"
+      ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
@@ -13366,6 +13369,9 @@
       "Sticky labels": [
         "Label lekat"
       ],
+      "Storage": [
+        "Penyimpanan"
+      ],
       "Street address": [
         "Alamat jalan"
       ],
@@ -13434,6 +13440,9 @@
       ],
       "Undo send": [
         "Urungkan pengiriman"
+      ],
+      "Unlimited": [
+        "Tidak terbatas"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email tanpa batas"
@@ -13751,9 +13760,6 @@
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
-      ],
-      "Common sign in issues": [
-        "Isu umum proses masuk"
       ],
       "Common sign up issues": [
         "Isu umum proses daftar"
@@ -14900,9 +14906,6 @@
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Server khusus yang dioptimalkan untuk streaming"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -16534,9 +16537,6 @@
       "Buy now": [
         "Beli sekarang"
       ],
-      "Contact us": [
-        "Hubungi kami"
-      ],
       "Continue": [
         "Lanjutkan"
       ],
@@ -16563,9 +16563,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Atau ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Minta uji coba"
       ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
@@ -16805,9 +16802,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Mulai gunakan ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Solusi yang dirancang secara khusus untuk organisasi besar dengan kebutuhan yang spesifik."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Penawaran yang Anda pilih tidak tersedia untuk pelanggan ${ currentPlanTitle }."
@@ -17517,11 +17511,6 @@
         "Pintu gerbang Anda menuju kebebasan daring"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "hubungi"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Seluruh produk premium ${ BRAND_NAME } terliput dalam Duo."
@@ -17751,9 +17740,6 @@
       "Verify now": [
         "Verifikasi"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifikasi alamat email pemulihan ini sekarang: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verifikasi email pemulihan?"
       ],
@@ -17796,9 +17782,6 @@
       ],
       "Verify recovery phone?": [
         "Verifikasi nomor telepon pemulihan?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifikasi nomor telepon pemulihan ini sekarang: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
@@ -18750,9 +18733,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Silakan hasilkan kunci sebelum Anda mencoba untuk mengubah kata sandi Anda"
       ]
     },
     "session_recovery:available:info": {
@@ -19130,6 +19110,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } alias hide-my-email untuk melawan spam"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } alias hide-my-email untuk melawan spam"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } alamat"
       ],
@@ -19205,6 +19188,9 @@
       "Bundle": [
         "Bundel"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Pilih alamat ${ MAIL_APP_NAME } yang aman untuk memulai"
+      ],
       "Collaborative document editing": [
         "Penyuntingan dokumen kolaboratif"
       ],
@@ -19262,6 +19248,9 @@
       "Gifted by **${ referrerName }**": [
         "Dihadiahkan oleh **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Jaga agar percakapan tetap pribadi dengan ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Kelola akses pengguna"
       ],
@@ -19286,6 +19275,9 @@
       "Password manager for all your devices": [
         "Pengelola kata sandi untuk seluruh perangkat Anda"
       ],
+      "Password-protected messages": [
+        "Pesan yang dilindungi dengan kata sandi"
+      ],
       "Pick your perfect plan": [
         "Pilih paket yang sempurna untuk Anda"
       ],
@@ -19303,6 +19295,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Lindungi ${ VPN_CONNECTIONS } perangkat secara bersamaan"
+      ],
+      "Secure calendar": [
+        "Kalender aman"
       ],
       "Secure file sharing": [
         "Berbagi file aman"
@@ -19400,6 +19395,9 @@
       "use your own email.": [
         "gunakan alamat email Anda sendiri."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN dengan server di ${ vpnServersCountData.free.countries } negara"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN dengan server di ${ vpnServersCountData.free.countries } negara"
       ],
@@ -19408,6 +19406,9 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Akun Anda mencakup akses ke fitur gratis di ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } dan ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Paket Anda"

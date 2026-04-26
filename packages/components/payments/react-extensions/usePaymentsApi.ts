@@ -9,21 +9,23 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
-    type CheckSubscriptionData,
     type MultiCheckOptions,
     type PaymentStatus,
     type PaymentsApi,
-    type PaymentsVersion,
     type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
-    getPaymentMethodStatus,
     getPlanName,
     getPlansMap,
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
 } from '@proton/payments';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
+import {
+    type CheckSubscriptionData,
+    type PaymentsVersion,
+    getPaymentMethodStatus,
+} from '@proton/payments/core/api/api';
 import {
     putFullBillingAddress,
     putInvoiceBillingAddress,
@@ -43,7 +45,7 @@ import {
     VatReverseChargeNotSupportedError,
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
-import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
+import type { CheckSubscriptionRequestOptions, GetFullBillingAddressOptions } from '@proton/payments/core/interface';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -154,8 +156,15 @@ function billingAddressFallback(fullBillingAddress: FullBillingAddress): FullBil
     return fullBillingAddress;
 }
 
-export const getFullBillingAddress = async (api: Api): Promise<FullBillingAddress> => {
+export const getFullBillingAddress = async (
+    api: Api,
+    { withFallback }: GetFullBillingAddressOptions
+): Promise<FullBillingAddress> => {
     const fullBillingAddress = await api<FullBillingAddress>(queryFullBillingAddress());
+    if (!withFallback) {
+        return fullBillingAddress;
+    }
+
     return billingAddressFallback(fullBillingAddress);
 };
 
@@ -388,8 +397,10 @@ export const usePaymentsApi = (
             return multiCheckCache.getByPlans(plans);
         };
 
-        const innerGetFullBillingAddress = async (): Promise<FullBillingAddress> => {
-            return getFullBillingAddress(api);
+        const innerGetFullBillingAddress = async (
+            options: GetFullBillingAddressOptions = { withFallback: true }
+        ): Promise<FullBillingAddress> => {
+            return getFullBillingAddress(api, options);
         };
 
         const innerUpdateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {

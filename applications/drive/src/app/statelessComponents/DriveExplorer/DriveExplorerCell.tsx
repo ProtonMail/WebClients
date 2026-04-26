@@ -22,7 +22,7 @@ export const DriveExplorerCell = ({ itemId, cell, style, onClick }: DriveExplore
     };
 
     const cellClassName = clsx(
-        'm-0 flex items-center',
+        'm-0 flex items-center overflow-hidden',
         cell.className,
         cell.width && 'w-custom',
         cell.cellProps?.className

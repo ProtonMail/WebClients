@@ -462,9 +462,6 @@
       "Get in touch": [
         "保持聯絡"
       ],
-      "Get link": [
-        "取得連結"
-      ],
       "Get Started": [
         "入門指南"
       ],
@@ -579,9 +576,6 @@
       "Load image": [
         "載入圖像"
       ],
-      "Loading link": [
-        "載入連結"
-      ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
       ],
@@ -593,9 +587,6 @@
       ],
       "Manage labels": [
         "管理標籤"
-      ],
-      "Manage link": [
-        "管理連結"
       ],
       "Manage share": [
         "管理共享"
@@ -1187,6 +1178,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -1645,6 +1639,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -4647,6 +4644,9 @@
       "Ad targeting": [
         "廣告目標鎖定"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "Address copied to clipboard": [
         "地址已複製到剪貼簿"
       ],
@@ -5873,9 +5873,6 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
-      ],
-      "Untitled": [
-        "無標題"
       ],
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
@@ -7629,6 +7626,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -7682,9 +7682,6 @@
       ],
       "Data retention policies": [
         "資料保留政策"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -8334,32 +8331,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "「${ name }」已成功創建"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\"已刪除"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "「${ name }」創建失敗"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"創建失敗"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "檔案 \"${ name }\" 未能從垃圾桶中被永久刪除。"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "「${ name }」移動失敗"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」無法移動到垃圾桶"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "檔案 \"${ name }\" 未能從垃圾中被復原"
       ],
       "\"${ name }\" failed to be saved": [
         "「${ name }」儲存失敗"
@@ -8367,17 +8340,8 @@
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
       ],
-      "\"${ name }\" restored from trash": [
-        "「${ name }」已從垃圾桶中還原"
-      ],
       "\"${ name }\" saved successfully": [
         "「${ name }」已成功儲存"
-      ],
-      "\"${ name }\" successfully copied": [
-        "「${ name }」已成功複製"
-      ],
-      "\"${ name }\" successfully moved": [
-        "「${ name }」已成功移動"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -8418,9 +8382,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 個項目已從垃圾桶被永久刪除"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } 個項目刪除失敗"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } 個項目未能從垃圾桶中被永久刪除"
       ],
@@ -8438,9 +8399,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } 個項目已成功複製"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 個項目已成功移動"
@@ -8495,9 +8453,6 @@
       ],
       "Failed to download files: ${ err }": [
         "無法下載檔案： ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "載入邀請函詳細資料失敗"
       ],
       "Failed to move, please try again": [
         "移動失敗，請再試一次"
@@ -9427,11 +9382,6 @@
         "名稱"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
@@ -9763,9 +9713,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -10681,9 +10628,6 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
-      "Billing information updated": [
-        "繳費資訊已更新"
-      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -11155,6 +11099,9 @@
       "Discard changes?": [
         "捨棄變更？"
       ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
+      ],
       "Downgrade account": [
         "降級帳號"
       ],
@@ -11520,6 +11467,9 @@
       ],
       "Restore your files": [
         "還原您的檔案"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍後儲存於${ DRIVE_APP_NAME }"

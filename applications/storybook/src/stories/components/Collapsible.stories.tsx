@@ -8,7 +8,8 @@ import { CollapsibleGroup } from '@proton/components/components/collapsible/Coll
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderButton from '@proton/components/components/collapsible/CollapsibleHeaderButton';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 const loremIpsum =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
@@ -44,7 +45,7 @@ export const Default: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
             >
@@ -61,7 +62,7 @@ export const ExpandedByDefault: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
             >
@@ -78,7 +79,7 @@ export const Disabled: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
             >
@@ -96,7 +97,7 @@ export const IconVariants: Story = {
                 <CollapsibleHeader
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >
@@ -108,7 +109,7 @@ export const IconVariants: Story = {
                 <CollapsibleHeader
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="brand-proton" />
+                            <IcBrandProton />
                         </CollapsibleHeaderIconButton>
                     }
                 >
@@ -141,7 +142,7 @@ export const CustomTooltipText: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton expandText="I can be opened" collapseText="I can be collapsed">
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
             >
@@ -158,7 +159,7 @@ export const DisableFullWidth: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
                 disableFullWidth
@@ -176,7 +177,7 @@ export const DisableContainerToggle: Story = {
             <CollapsibleHeader
                 suffix={
                     <CollapsibleHeaderIconButton>
-                        <Icon name="chevron-down" />
+                        <IcChevronDown />
                     </CollapsibleHeaderIconButton>
                 }
                 disableContainerToggle
@@ -195,7 +196,7 @@ export const UncontrolledGroupedCollapsibles: Story = {
                 <CollapsibleHeader
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >
@@ -207,7 +208,7 @@ export const UncontrolledGroupedCollapsibles: Story = {
                 <CollapsibleHeader
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >
@@ -229,7 +230,7 @@ export const ControlledGroupedCollapsibles: Story = {
                     <CollapsibleHeader
                         suffix={
                             <CollapsibleHeaderIconButton>
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                     >
@@ -241,7 +242,7 @@ export const ControlledGroupedCollapsibles: Story = {
                     <CollapsibleHeader
                         suffix={
                             <CollapsibleHeaderIconButton>
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                     >

@@ -157,6 +157,9 @@
       "Close navigation": [
         "Zavřít menu"
       ],
+      "Configure": [
+        "Konfigurovat"
+      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -624,9 +627,6 @@
       ],
       "Set extra password": [
         "Nastavte dodatečné heslo"
-      ],
-      "Settings": [
-        "Nastavení"
       ],
       "Setup 2FA": [
         "Nastavit 2FA"
@@ -1263,6 +1263,15 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Něco se pokazilo. Znovu načtěte rozšíření ${ PASS_APP_NAME }. Tento problém byl zaznamenán"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
+      ],
       "The URL is in the list": [
         "URL je na seznamu"
       ],
@@ -1286,6 +1295,9 @@
       ],
       "Unknown error": [
         "Neznámá chyba"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ],
       "Unknown invite": [
         "Neznámá pozvánka"
@@ -1476,6 +1488,9 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
       ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
       ],
@@ -1523,6 +1538,9 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } navrhne uložení přístupových klíčů."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } je momentálně offline. Otevřete rozšíření a odemkněte jej."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Offline režim ${ PASS_SHORT_APP_NAME } povolen."
@@ -1857,6 +1875,9 @@
       "Enabling biometrics lock failed": [
         "Povolování zamykání biometrií selhalo"
       ],
+      "Enabling desktop auto-lock": [
+        "Zapnutí automatického zamykání plochy"
+      ],
       "Enabling offline mode...": [
         "Povolování režimu offline..."
       ],
@@ -1980,6 +2001,9 @@
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
       ],
+      "invites the group ${ name } to access items in": [
+        "pozve skupinu ${ name } k přístupu k položkám v"
+      ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
       ],
@@ -2048,6 +2072,9 @@
       ],
       "Loading...": [
         "Načítání..."
+      ],
+      "Logging you out...": [
+        "Odhlašování..."
       ],
       "Low Priority": [
         "Nízká priorita"
@@ -2124,6 +2151,9 @@
       "None": [
         "Nic"
       ],
+      "Not configured": [
+        "Není konfigurováno"
+      ],
       "Not recommended": [
         "Nedoporučeno"
       ],
@@ -2135,6 +2165,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Otevřít ${ PASS_APP_NAME } ve větším okně"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Otevřít vyskakovací okno ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otevřete nastavení Safari, vyhledejte ${ PASS_APP_NAME }, přejděte na \"Oprávnění\" a povolte oprávnění webu."
@@ -2505,6 +2541,9 @@
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Tato funkce je v současné době na platformě Linux ve fázi testování. Ujistěte se, že je váš systém aktualizován."
       ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tato funkce vyžaduje, aby byla během instalace nainstalována a spuštěna desktopová aplikace ${ PASS_APP_NAME }."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tato položka není v současné době s nikým sdílena. Pozvěte ostatní, se kterými ji chcete sdílet."
       ],
@@ -2538,6 +2577,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Chcete-li nastavit klávesové zkratky, přejděte ve Firefoxu na stránku about:addons a vyberte možnost „Spravovat klávesové zkratky rozšíření“"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Chcete-li nadále přijímat e-maily, přeneste tyto aliasy do jiné e-mailové schránky:"
       ],
@@ -2561,12 +2603,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Neomezený počet aliasů hide-my-email a jejich pokročilá správa"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Odemkněte ${ PASS_APP_NAME } pomocí kódu PIN a získejte přístup ke svým přístupovým klíčům"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Pro uložení tohoto přístupového klíče odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"
@@ -2681,6 +2717,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."

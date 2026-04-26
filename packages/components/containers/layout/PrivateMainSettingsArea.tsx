@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
+import { Children, type ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
@@ -12,10 +11,13 @@ import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from './interface';
 import type { SettingsAreaConfig } from './interface';
+import { useScrollRestoration } from './useScrollRestoration';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
+    backButton?: ReactNode;
     title?: string;
     noTitle?: boolean;
     description?: ReactNode;
@@ -23,17 +25,22 @@ interface PrivateMainSettingsAreaBaseProps {
     wrapperClass?: string;
     mainAreaClass?: string;
     style?: React.CSSProperties;
+    variant?: SettingsLayoutVariant;
+    maxWidth?: SettingsCardMaxWidth;
 }
 
 export const PrivateMainSettingsAreaBase = ({
     breadcrumbs,
+    backButton,
     title,
     noTitle,
     description,
     children,
+    variant = SettingsLayoutVariant.Default,
     wrapperClass = 'container-section-sticky',
     mainAreaClass,
     style,
+    maxWidth,
 }: PrivateMainSettingsAreaBaseProps) => {
     const location = useLocation();
 
@@ -41,11 +48,7 @@ export const PrivateMainSettingsAreaBase = ({
 
     useAppTitle(title);
 
-    useEffect(() => {
-        if (mainAreaRef.current) {
-            mainAreaRef.current.scrollTop = 0;
-        }
-    }, [location.pathname]);
+    useScrollRestoration(mainAreaRef);
 
     useEffect(() => {
         const { hash } = location;
@@ -110,11 +113,31 @@ export const PrivateMainSettingsAreaBase = ({
     });
 
     return (
-        <PrivateMainArea ref={mainAreaRef} className={mainAreaClass}>
-            <div className={wrapperClass} style={style}>
+        <PrivateMainArea
+            ref={mainAreaRef}
+            className={clsx(variant === 'card' && 'bg-lowered settings-cards', mainAreaClass)}
+        >
+            <div
+                className={clsx(
+                    variant === 'card' &&
+                        'w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings',
+                    wrapperClass
+                )}
+                style={{ '--max-w-custom': maxWidth, ...style }}
+            >
                 {breadcrumbs && <div className="mt-6 md:mt-0">{breadcrumbs}</div>}
-                {!noTitle && (
-                    <SettingsPageTitle className={clsx('mt-14', description ? 'mb-5' : 'mb-14')}>
+                {noTitle ? (
+                    backButton && <div className="mt-6 md:mt-0">{backButton}</div>
+                ) : (
+                    <SettingsPageTitle
+                        className={clsx(
+                            'flex items-center gap-2',
+                            variant === 'default' && 'mt-14',
+                            variant === 'card' && 'text-5xl',
+                            description || variant === 'card' ? 'mb-5' : 'mb-14'
+                        )}
+                    >
+                        {backButton}
                         {title}
                     </SettingsPageTitle>
                 )}
@@ -131,6 +154,8 @@ interface PrivateMainSettingsAreaProps {
     wrapperClass?: string;
     mainAreaClass?: string;
     style?: React.CSSProperties;
+    variant?: SettingsLayoutVariant;
+    maxWidth?: SettingsCardMaxWidth;
 }
 
 const PrivateMainSettingsArea = ({
@@ -139,6 +164,8 @@ const PrivateMainSettingsArea = ({
     wrapperClass,
     mainAreaClass,
     style,
+    variant = SettingsLayoutVariant.Default,
+    maxWidth = SettingsCardMaxWidth.Wide,
 }: PrivateMainSettingsAreaProps) => {
     const { text, title, noTitle, description, subsections } = config;
 
@@ -177,6 +204,8 @@ const PrivateMainSettingsArea = ({
             mainAreaClass={mainAreaClass}
             style={style}
             noTitle={noTitle}
+            variant={variant}
+            maxWidth={maxWidth}
         >
             {wrappedSections}
         </PrivateMainSettingsAreaBase>

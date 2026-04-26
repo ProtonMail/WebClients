@@ -1,7 +1,7 @@
 import type { DBSchema, IDBPDatabase } from 'idb';
 import { openDB } from 'idb';
 
-import type { TreeEventScopeId } from './types';
+import type { IndexingProgress, TreeEventScopeId } from './types';
 
 const DB_VERSION = 1;
 
@@ -15,8 +15,10 @@ export interface TreeEventScopeSubscription {
 
 export interface IndexPopulatorState {
     uid: string;
-    done: boolean;
     generation: number;
+    version: number;
+    done: boolean;
+    progress: IndexingProgress;
 }
 
 interface SearchDBSchema extends DBSchema {
@@ -34,7 +36,7 @@ interface SearchDBSchema extends DBSchema {
     };
     userSettings: {
         key: string;
-        value: boolean;
+        value: string | boolean;
     };
 }
 
@@ -64,12 +66,24 @@ export class SearchDB {
 
     // --- Index blobs (keyed by [indexKind, blobName]) ---
 
-    getIndexBlob(key: [string, string]): Promise<ArrayBuffer | undefined> {
-        return this.db.get('indexBlobs', key);
+    async getDecryptedIndexBlob(
+        key: [string, string],
+        decrypt: (ciphertext: ArrayBuffer) => Promise<ArrayBuffer>
+    ): Promise<ArrayBuffer | undefined> {
+        const raw = await this.db.get('indexBlobs', key);
+        if (raw === undefined) {
+            return undefined;
+        }
+        return decrypt(raw);
     }
 
-    putIndexBlob(key: [string, string], blob: ArrayBuffer): Promise<[string, string]> {
-        return this.db.put('indexBlobs', blob, key);
+    async putEncryptedIndexBlob(
+        key: [string, string],
+        plaintext: ArrayBuffer,
+        encrypt: (data: ArrayBuffer) => Promise<ArrayBuffer>
+    ): Promise<[string, string]> {
+        const encrypted = await encrypt(plaintext);
+        return this.db.put('indexBlobs', encrypted, key);
     }
 
     deleteIndexBlob(key: [string, string]): Promise<void> {
@@ -116,7 +130,20 @@ export class SearchDB {
         return this.db.delete('indexPopulatorStates', uid);
     }
 
-    // --- User preferences ---
+    // --- User preferences & config ---
+
+    async getSearchCryptoKey(decrypt: (ciphertext: string) => Promise<string>): Promise<string | undefined> {
+        const value = await this.db.get('userSettings', 'searchCryptoKey');
+        if (typeof value !== 'string') {
+            return undefined;
+        }
+        return decrypt(value);
+    }
+
+    async putSearchCryptoKey(plaintext: string, encrypt: (data: string) => Promise<string>): Promise<string> {
+        const encrypted = await encrypt(plaintext);
+        return this.db.put('userSettings', encrypted, 'searchCryptoKey');
+    }
 
     async isOptedIn(): Promise<boolean> {
         const value = await this.db.get('userSettings', 'optIn');
@@ -125,6 +152,14 @@ export class SearchDB {
 
     setOptedIn(): Promise<string> {
         return this.db.put('userSettings', true, 'optIn');
+    }
+
+    // Clear index blobs, subscriptions and populator states so the indexer rebuilds from scratch.
+    // Used when the encryption key is regenerated (e.g. after key rotation).
+    async clearIndex(): Promise<void> {
+        await this.db.clear('indexBlobs');
+        await this.db.clear('treeEventScopeSubscriptions');
+        await this.db.clear('indexPopulatorStates');
     }
 
     /**
@@ -139,5 +174,9 @@ export class SearchDB {
         const storeNames = [...this.db.objectStoreNames];
         const tx = this.db.transaction(storeNames, 'readwrite');
         await Promise.all([...storeNames.map((name) => tx.objectStore(name).clear()), tx.done]);
+    }
+
+    close(): void {
+        this.db.close();
     }
 }

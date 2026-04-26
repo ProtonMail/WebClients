@@ -82,7 +82,7 @@ const ResetPasswordContainer = ({
         sendResetPasswordMethodValidated,
         sendResetPasswordSuccess,
         sendResetPasswordFailure,
-    } = useResetPasswordTelemetry();
+    } = useResetPasswordTelemetry({ variant: 'A' });
 
     const history = useHistory();
     const location = useLocation();
@@ -145,11 +145,11 @@ const ResetPasswordContainer = ({
             const destination = result.cache.value;
             if (destination) {
                 createNotification({ text: c('Info').t`Done! We sent a code to ${destination}.`, expiration: 5000 });
-                sendResetPasswordCodeSent({ method: result.cache.method });
+                sendResetPasswordCodeSent({ step: STEPS[step], method: result.cache.method });
             }
         }
         if (result.to === STEPS.NEW_PASSWORD) {
-            sendResetPasswordMethodValidated({ method: result.cache.method });
+            sendResetPasswordMethodValidated({ step: STEPS[step], method: result.cache.method });
         }
 
         cacheRef.current = result.cache;
@@ -386,10 +386,10 @@ const ResetPasswordContainer = ({
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                href={getKnowledgeBaseUrl('/set-account-recovery-methods#recover-account')}
                                 fullWidth
                             >
-                                {c('Link').t`Common sign in issues`}
+                                {c('Link').t`Account recovery explained`}
                             </ButtonLike>
                         </form>
                     </Content>
@@ -413,10 +413,10 @@ const ResetPasswordContainer = ({
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                href={getKnowledgeBaseUrl('/set-account-recovery-methods#recover-account')}
                                 fullWidth
                             >
-                                {c('Link').t`Common sign in issues`}
+                                {c('Link').t`Account recovery explained`}
                             </ButtonLike>
                         </form>
                     </Content>
@@ -533,7 +533,7 @@ const ResetPasswordContainer = ({
                                             cache,
                                         });
                                         if (validateFlow()) {
-                                            sendResetPasswordSuccess({ method: 'mnemonic' });
+                                            sendResetPasswordSuccess({ step: STEPS[step], method: 'mnemonic' });
                                             return await handleResult(result);
                                         }
                                     } catch (e) {
@@ -550,7 +550,7 @@ const ResetPasswordContainer = ({
                                         cache,
                                     });
                                     if (validateFlow()) {
-                                        sendResetPasswordSuccess({ method: cache.method });
+                                        sendResetPasswordSuccess({ step: STEPS[step], method: cache.method });
                                         return await handleResult(result);
                                     }
                                 } catch (e) {

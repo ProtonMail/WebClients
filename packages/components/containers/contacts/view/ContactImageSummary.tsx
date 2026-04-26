@@ -5,8 +5,10 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { IcFileShapes } from '@proton/icons/icons/IcFileShapes';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import useLoadContactImage from '../../../hooks/useLoadContactImage';
@@ -49,8 +51,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'loadDirectFailed' && (
                 <Tooltip title={c('Tooltip').t`The image could not be loaded`}>
                     <div className="flex ratio-square rounded border bg-norm">
-                        <Icon
-                            name="cross-circle"
+                        <IcCrossCircle
                             size={6}
                             className="color-danger m-auto"
                             alt={c('Tooltip').t`The image could not be loaded`}
@@ -61,8 +62,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'needsLoadDirect' && (
                 <Tooltip title={c('Tooltip').t`The image could not be loaded using proxy`}>
                     <div className="flex ratio-square rounded border bg-norm">
-                        <Icon
-                            name="file-shapes"
+                        <IcFileShapes
                             size={6}
                             className="m-auto"
                             alt={c('Tooltip').t`The image could not be loaded using proxy`}
@@ -89,7 +89,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'askLoading' && (
                 <Tooltip openDelay={0} title={c('Tooltip').t`Load image`}>
                     <ButtonLike className="flex ratio-square bg-norm" fullWidth onClick={handleClick}>
-                        <Icon name="arrow-down-line" size={8} className="m-auto" alt={c('Tooltip').t`Load image`} />
+                        <IcArrowDownLine size={8} className="m-auto" alt={c('Tooltip').t`Load image`} />
                     </ButtonLike>
                 </Tooltip>
             )}

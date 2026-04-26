@@ -7,7 +7,9 @@ export enum TelemetryMeasurementGroups {
     accountSecurityCheckup = 'account.web.security_checkup',
     accountRecoverySettings = 'account.web.recovery_settings',
     accountResetPassword = 'account.web.reset_password',
+    accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
+    referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
@@ -82,6 +84,7 @@ export enum TelemetrySubscriptionModalEvents {
     payment = 'payment',
     cancelledOnSameDay = 'cancelled_on_same_day',
     addLumo = 'add_lumo',
+    addMeet = 'add_meet',
 }
 
 export enum TelemetryMailTrial2024UpsellModal {
@@ -203,11 +206,31 @@ export enum TelemetryRecoverySettingsEvents {
 
 export enum TelemetryResetPasswordEvents {
     page_load = 'page_load',
+    page_exit = 'page_exit',
+    step_load = 'step_load',
     recovery_methods_requested = 'recovery_methods_requested',
     code_sent = 'code_sent',
     method_validated = 'method_validated',
     success = 'success',
     failure = 'failure',
+}
+
+export enum TelemetryReferralDiscoverEvents {
+    top_bar_button_view = 'top_bar_button_view',
+    top_bar_button_click = 'top_bar_button_click',
+    top_bar_spotlight_cta_click = 'top_bar_spotlight_cta_click',
+    settings_spotlight_view = 'settings_spotlight_view',
+    referral_page_view = 'referral_page_view',
+    drawer_app_view = 'drawer_app_view',
+    copy_link_drawer = 'copy_link_drawer',
+    copy_link_page = 'copy_link_page',
+    share = 'share',
+    send_email_invite = 'send_email_invite',
+}
+
+export enum TelemetryUnauthLost2FAEvents {
+    step_load = 'step_load',
+    flow_outcome = 'flow_outcome',
 }
 
 export enum TelemetryKeyTransparencyErrorEvents {
@@ -437,6 +460,7 @@ export type TelemetryEvents =
     | TelemetryAccountDashboardEvents
     | TelemetryRecoverySettingsEvents
     | TelemetryResetPasswordEvents
+    | TelemetryReferralDiscoverEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailListEvents
@@ -474,7 +498,8 @@ export type TelemetryEvents =
     | TelemetryUnlimitedToDuoOffer
     | TelemetryListSetting
     | TelemetryAppSwitcher
-    | TelemetryESMigrationToolEvents;
+    | TelemetryESMigrationToolEvents
+    | TelemetryUnauthLost2FAEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

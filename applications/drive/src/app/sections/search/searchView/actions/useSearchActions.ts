@@ -1,4 +1,5 @@
 import { getDrive, getDrivePerNodeType } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
@@ -7,9 +8,9 @@ import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../../modals/RenameModal';
 import { useRevisionsModal } from '../../../../modals/RevisionsModal';
-import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
+import { sendErrorReport } from '../../../../utils/errorHandling';
 import { isPreviewOrFallbackAvailable } from '../../../../utils/isPreviewOrFallbackAvailable';
 import { useTrashActions } from '../../../commonActions/useTrashActions';
 import { useSearchViewStore } from '../store';
@@ -73,7 +74,7 @@ export const useSearchActions = () => {
     };
 
     const handleDetails = (uid: string) => {
-        showDetailsModal({ nodeUid: uid, verifySignatures: false });
+        showDetailsModal({ nodeUid: uid });
     };
 
     const handleRename = (uid: string) => {
@@ -85,14 +86,21 @@ export const useSearchActions = () => {
         const items = uids
             .map(getSearchResultItem)
             .filter(isTruthy)
-            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid, type: item.type }));
+            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid, type: item.type, name: item.name }));
 
         const itemsByDrive = Map.groupBy(items, (item) => getDrivePerNodeType(item.type));
         await Promise.all([...itemsByDrive.entries()].map(([drive, items]) => trashItems(drive, items)));
     };
 
-    const handleGoToParent = async (parentNodeUid: string) => {
-        await navigateToNodeUid(parentNodeUid);
+    const handleGoToParent = async (uid: string, parentNodeUid: string) => {
+        try {
+            const { getSearchResultItem } = useSearchViewStore.getState();
+            const item = getSearchResultItem(uid);
+            const drive = item ? getDrivePerNodeType(item.type) : getDrive();
+            await navigateToNodeUid(parentNodeUid, drive);
+        } catch (e) {
+            sendErrorReport(e);
+        }
     };
 
     const handleMove = (uids: string[]) => {

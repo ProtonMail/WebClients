@@ -1,3 +1,8 @@
+import type { Author, NodeEntity } from '@proton/drive';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+
+import { Logger } from '../../shared/Logger';
+import { MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
 import type { TreeEventScopeId } from '../../shared/types';
 
 // Attribute value variants that the search library WASM understands.
@@ -25,6 +30,14 @@ export interface CoreNodeFields {
     creationTime: Date;
     modificationTime: Date;
     mediaType?: string;
+    sharedBy?: string;
+    isShared?: boolean;
+    isSharedPublicly?: boolean;
+    keyAuthor?: Author;
+    trashTime?: Date;
+    activeRevisionContentAuthor?: Author;
+    activeRevisionCreationTime?: Date;
+    activeRevisionStorageSize?: number;
 }
 
 /**
@@ -44,6 +57,15 @@ export const CORE_ATTRIBUTE_NAMES = [
     'modificationTime',
     'nodeType',
     'mediaType',
+    'extension',
+    'sharedBy',
+    'isShared',
+    'isSharedPublicly',
+    'keyAuthor',
+    'activeRevisionContentAuthor',
+    'activeRevisionCreationTime',
+    'activeRevisionStorageSize',
+    'trashTime',
 ] as const;
 
 type CoreAttributeName = (typeof CORE_ATTRIBUTE_NAMES)[number];
@@ -65,6 +87,65 @@ export interface CreateIndexEntryParams<N extends string = string> {
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
 }
 
+function resolveAuthor(author: Author): string {
+    if (author.ok) {
+        return author.value ?? '';
+    }
+    return author.error.claimedAuthor ?? '';
+}
+
+export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
+    return {
+        uid: node.uid,
+        name: node.name,
+        type: node.type,
+        creationTime: node.creationTime,
+        modificationTime: node.modificationTime,
+        mediaType: node.mediaType,
+        sharedBy: undefined,
+        isShared: node.isShared,
+        isSharedPublicly: node.isSharedPublicly,
+        keyAuthor: node.keyAuthor,
+        trashTime: node.trashTime,
+        activeRevisionContentAuthor: node.activeRevision?.contentAuthor,
+        activeRevisionCreationTime: node.activeRevision?.creationTime,
+        activeRevisionStorageSize: node.activeRevision?.storageSize,
+    };
+}
+
+export function extractExtension(filename: string): string {
+    return splitExtension(filename)[1].toLowerCase();
+}
+
+/**
+ * Strip all non-alphanumeric characters from a string.
+ * Search library WASM tokenizer will use any special characters (space, #, _, -, (,), ., ...
+ * as a token delimiter) which makes matching filenames quite impossible if
+ * they are pack with those e.g. "My file_name #1.png" will be tokenized.
+ *
+ * Ideally we should be able to not consider these special characters for search
+ * tokenization in filenames but this is not supported.
+ * See issue:  See issue: https://protonag.atlassian.net/browse/DRVWEB-5345
+ *
+ * For now, we normalize filenames by stripping all special characters at indexing
+ * and querying time. This allow to match complex filename like "My file_name #1.png"
+ * but we don't support special character querying. For that example, "My file_name #1.png" will
+ * ne stripped down to "Myfilename1png".
+ *
+ * Note: We use unicode replace to make sure this replace is i18n friendly.
+ */
+const stripSpecialChars = (s: string): string => s.replace(/[^\p{L}\p{N}]/gu, '');
+
+/**
+ * Normalize a filename for "tag" indexing: strip special chars + lowercase.
+ * We use lowercase since querying tag attributes is case sensitive: So we will normalize to lowercase
+ * When feeding the index and normalize queries (using the same utility) before querying the
+ * index.
+ * Searching over "text" attribute is not case sensitive so we don't need to lowercase the index value like
+ * for "tag"s.
+ */
+export const normalizedFilenameForTag = (s: string): string => stripSpecialChars(s).toLowerCase();
+
 export function createIndexEntry<N extends string>(params: CreateIndexEntryParams<N>): IndexEntry {
     const {
         node,
@@ -76,15 +157,26 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         additionalAttributes,
     } = params;
 
+    let strippedFilenameForTextAttribute = stripSpecialChars(node.name);
+    if (strippedFilenameForTextAttribute.length > MAX_SEARCHABLE_FILENAME_LENGTH) {
+        Logger.error(
+            `Filename exceeds max searchable length (${strippedFilenameForTextAttribute.length}/${MAX_SEARCHABLE_FILENAME_LENGTH})`
+        );
+        // Let's still index the first MAX_SEARCHABLE_FILENAME_LENGTH characters.
+        strippedFilenameForTextAttribute = strippedFilenameForTextAttribute.slice(0, MAX_SEARCHABLE_FILENAME_LENGTH);
+    }
+
     return {
         documentId: node.uid,
         attributes: [
             { name: 'nodeUid', value: { kind: 'tag', value: node.uid } },
             { name: 'nodeType', value: { kind: 'tag', value: node.type } },
-            // Filename as tag
-            { name: 'filename', value: { kind: 'tag', value: node.name } },
-            // Filename as a fuzzy string to allow trigram matching but only for query above 3 characters
-            { name: 'filenameText', value: { kind: 'text', value: node.name } },
+            // Filename as tag — normalized (lowercase, special chars stripped) for
+            // case-insensitive substring matching via *query* wildcard patterns.
+            { name: 'filename', value: { kind: 'tag', value: normalizedFilenameForTag(node.name) } },
+            // Filename as text — special chars stripped so the text processor sees
+            // concatenated alphanumeric tokens for trigram / fuzzy matching. Not case sensitive.
+            { name: 'filenameText', value: { kind: 'text', value: strippedFilenameForTextAttribute } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },
             { name: 'treeEventScopeId', value: { kind: 'tag', value: treeEventScopeId } },
             { name: 'indexPopulatorId', value: { kind: 'tag', value: indexPopulatorId } },
@@ -93,6 +185,27 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'creationTime', value: { kind: 'integer', value: BigInt(node.creationTime.getTime()) } },
             { name: 'modificationTime', value: { kind: 'integer', value: BigInt(node.modificationTime.getTime()) } },
             { name: 'mediaType', value: { kind: 'tag', value: node.mediaType || '' } },
+            { name: 'extension', value: { kind: 'tag', value: extractExtension(node.name) } },
+            { name: 'sharedBy', value: { kind: 'tag', value: node.sharedBy || '' } },
+            { name: 'isShared', value: { kind: 'boolean', value: node.isShared ?? false } },
+            { name: 'isSharedPublicly', value: { kind: 'boolean', value: node.isSharedPublicly ?? false } },
+            { name: 'keyAuthor', value: { kind: 'tag', value: node.keyAuthor ? resolveAuthor(node.keyAuthor) : '' } },
+            {
+                name: 'activeRevisionContentAuthor',
+                value: {
+                    kind: 'tag',
+                    value: node.activeRevisionContentAuthor ? resolveAuthor(node.activeRevisionContentAuthor) : '',
+                },
+            },
+            {
+                name: 'activeRevisionCreationTime',
+                value: { kind: 'integer', value: BigInt(node.activeRevisionCreationTime?.getTime() ?? 0) },
+            },
+            {
+                name: 'activeRevisionStorageSize',
+                value: { kind: 'integer', value: BigInt(node.activeRevisionStorageSize ?? 0) },
+            },
+            { name: 'trashTime', value: { kind: 'integer', value: BigInt(node.trashTime?.getTime() ?? 0) } },
             ...(additionalAttributes ?? []),
         ],
     };

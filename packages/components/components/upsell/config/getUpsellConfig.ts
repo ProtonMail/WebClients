@@ -3,8 +3,9 @@ import type {
     OpenSubscriptionModalCallback,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import type { COUPON_CODES, Plan, PlanIDs } from '@proton/payments';
 import { CYCLE } from '@proton/payments';
-import type { COUPON_CODES, Plan, PlanIDs, Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -54,17 +55,15 @@ export const getUpsellConfig = ({
 }: Omit<GetUpsellConfigProps, 'plan'> & {
     appName: APP_NAMES;
     planIDs?: PlanIDs;
-    openSubscriptionModal: OpenSubscriptionModalCallback;
-    subscription: Subscription | undefined;
+    openSubscriptionModal: OpenSubscriptionModalCallback | undefined;
+    subscription: MaybeFreeSubscription;
     user: UserModel;
     /** Override final config before opening subscription modal */
     configOverride?: (config: OpenCallbackProps) => void;
-}): { upgradePath: string; onUpgrade?: () => void } => {
-    const hasSubscriptionModal = openSubscriptionModal !== noop;
-
+}): { upgradePath: string; onUpgrade?: () => Promise<void> } => {
     const hasInAppPayments = APPS_WITH_IN_APP_PAYMENTS.has(appName);
 
-    if (hasSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
+    if (openSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
             coupon,
             cycle,
@@ -93,7 +92,7 @@ export const getUpsellConfig = ({
                 fetch(url).catch(noop);
 
                 // Open the subscription modal
-                openSubscriptionModal({ ...subscriptionCallBackProps, onSubscribed });
+                return openSubscriptionModal({ ...subscriptionCallBackProps, onSubscribed });
             },
         };
     }

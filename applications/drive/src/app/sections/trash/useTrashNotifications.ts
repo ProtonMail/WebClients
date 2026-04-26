@@ -2,14 +2,45 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 
-import { useErrorHandler } from '../../store/_utils';
+import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useTrashNotifications = () => {
     const { createSuccessMessage } = useListNotifications();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { showAggregatedErrorNotification } = useErrorHandler();
     const { createNotification } = useNotifications();
+
+    const createTrashedItemsNotifications = (
+        successItems: { name: string; uid: string }[],
+        failureItems: { uid: string; error: string }[],
+        undoAction?: () => Promise<void>
+    ) => {
+        createSuccessMessage(
+            successItems,
+            (name: string) => c('Notification').t`"${name}" moved to trash`,
+            (numberOfItems: number) =>
+                c('Notification').ngettext(
+                    msgid`${numberOfItems} item moved to trash`,
+                    `${numberOfItems} items moved to trash`,
+                    numberOfItems
+                ),
+            undoAction
+        );
+
+        showAggregatedErrorNotification(
+            Object.values(failureItems),
+            () => c('Notification').t`"${name}" failed to be moved to trash`,
+            () => {
+                const numberOfItems = failureItems.length;
+                return c('Notification').ngettext(
+                    msgid`${numberOfItems} item failed to be moved to trash`,
+                    `${numberOfItems} items failed to be moved to trash`,
+                    numberOfItems
+                );
+            }
+        );
+    };
 
     const createTrashRestoreNotification = (
         successItems: { name: string; uid: string }[],
@@ -18,7 +49,10 @@ export const useTrashNotifications = () => {
     ) => {
         createSuccessMessage(
             successItems,
-            (name: string) => c('Notification').t`"${name}" restored from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" restored from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item restored from trash`,
@@ -28,11 +62,11 @@ export const useTrashNotifications = () => {
             undoAction
         );
 
-        showAggregatedErrorNotification(Object.values(failureItems), (errors) => {
-            return errors.length === 1
-                ? errors[0].error
-                : `${failureItems.length} items failed to be restored from trash`;
-        });
+        showAggregatedErrorNotification(
+            Object.values(failureItems),
+            (error) => error.error,
+            () => `${failureItems.length} items failed to be restored from trash`
+        );
     };
 
     const createTrashDeleteNotification = (
@@ -41,7 +75,10 @@ export const useTrashNotifications = () => {
     ) => {
         createSuccessMessage(
             successItems,
-            (name: string) => c('Notification').t`"${name}" deleted permanently from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" deleted permanently from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item deleted permanently from trash`,
@@ -51,12 +88,9 @@ export const useTrashNotifications = () => {
         );
 
         showAggregatedErrorNotification(
-            Object.values(failureItems).map((failureItem) => failureItem.error),
-            (errors) => {
-                return errors.length === 1
-                    ? errors[0].error
-                    : `${failureItems.length} items failed to be deleted from trash`;
-            }
+            Object.values(failureItems),
+            (error) => error.error,
+            () => `${failureItems.length} items failed to be deleted from trash`
         );
     };
 
@@ -86,6 +120,7 @@ export const useTrashNotifications = () => {
     };
 
     return {
+        createTrashedItemsNotifications,
         createTrashRestoreNotification,
         createTrashDeleteNotification,
         createDeleteConfirmModal,

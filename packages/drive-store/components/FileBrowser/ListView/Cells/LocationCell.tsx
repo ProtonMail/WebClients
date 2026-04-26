@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Icon } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import type { useLinkPath } from '../../../../store';
 
@@ -35,7 +35,7 @@ export const LocationCell = ({ shareId, parentLinkId, isTrashed, getPath }: Prop
     return (
         <div key="location" title={location} className="text-ellipsis">
             <span className="text-pre">
-                {isTrashed && <Icon name="trash" className="mr-1" />}
+                {isTrashed && <IcTrash className="mr-1" />}
                 {location}
             </span>
         </div>

@@ -8,7 +8,6 @@ import { Loader, useAppTitle } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useUserSettings } from '../../hooks/user';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
@@ -24,7 +23,6 @@ import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     const {
         albumPhotos,
@@ -38,6 +36,7 @@ export const PhotosWithAlbumsView = () => {
         selectedTags,
         handleSelectTag,
         isPhotosEmpty,
+        photoTimelineUids,
         albumPhotosNodeUidToIndexMap,
         photoNodeUidToIndexMap,
     } = useOutletContext<PhotosLayoutOutletContext>();
@@ -74,7 +73,7 @@ export const PhotosWithAlbumsView = () => {
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
-    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
+    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photoTimelineUids.size === 0)) {
         return <Loader />;
     }
     const isSelectedTagEmtpy = !isPhotosEmpty && photos.length === 0;
@@ -107,7 +106,7 @@ export const PhotosWithAlbumsView = () => {
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? toggleFavorite : undefined}
+                    onFavorite={toggleFavorite}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
                     rootLinkId={linkId}
                     hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}

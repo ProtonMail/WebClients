@@ -637,9 +637,6 @@
       "Set extra password": [
         "Imposta la password aggiuntiva"
       ],
-      "Settings": [
-        "Consenti"
-      ],
       "Setup 2FA": [
         "Configura 2FA"
       ],
@@ -1275,6 +1272,9 @@
       ],
       "Unknown error": [
         "Errore sconosciuto"
+      ],
+      "Unknown error.": [
+        "Errore sconosciuto."
       ],
       "Unknown invite": [
         "Invito sconosciuto"
@@ -1987,6 +1987,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3097,12 +3101,6 @@
       ],
       "Generic CSV": [
         "CSV generico"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Ottieni ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Ottieni ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Inizia ora"
@@ -4848,6 +4846,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A meno che non vengano decifrate, le password crittografate rimangono sicure anche se vengono esposte."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Ottieni ${ planName }"
       ]
     },
     "Validation": {

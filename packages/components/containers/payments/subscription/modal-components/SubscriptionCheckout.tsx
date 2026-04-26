@@ -11,7 +11,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type { CheckoutModifiers, FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
+import type { FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
 import {
     type Currency,
     type Cycle,
@@ -23,6 +23,7 @@ import {
     type Subscription,
     getPlanFromPlanIDs,
 } from '@proton/payments';
+import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { TaxCountryHook } from '@proton/payments/ui';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
@@ -36,6 +37,7 @@ import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
+import { getDisableCurrencySelector } from './helpers/getDisableCurrencySelector';
 import { getWhatsIncluded } from './helpers/included';
 import { show30DaysMoneyBackGuarantee } from './helpers/show30DaysMoneyBackGuarantee';
 
@@ -117,6 +119,7 @@ const SubscriptionCheckout = ({
     }
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
+    const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
@@ -357,11 +360,8 @@ const SubscriptionCheckout = ({
                 paymentForbiddenReason,
             })}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
-            paymentMethods={paymentMethods}
-            planIDs={planIDs}
-            user={user}
+            disableCurrencySelector={disableCurrencySelector}
             renewNotice={checkoutView.render('renewalNotice')}
-            couponConfig={couponConfig}
         >
             {/* Plan header: title + discount badge + billing cycle */}
             <div className="mb-4 flex flex-column">

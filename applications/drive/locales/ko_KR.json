@@ -87,9 +87,6 @@
       "Add photos": [
         "사진 추가"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\"에 추가 (${ album.photoCount }개 사진)"
-      ],
       "Add to album": [
         "앨범에 추가하기"
       ],
@@ -510,9 +507,6 @@
       "Get in touch": [
         "연락하기"
       ],
-      "Get link": [
-        "링크 생성"
-      ],
       "Get mobile and desktop apps": [
         "모바일 및 데스크톱 앱 설치"
       ],
@@ -533,9 +527,6 @@
       ],
       "Go back": [
         "뒤로 가기"
-      ],
-      "Go back to album “${ albumName }“": [
-        "앨범 \"${ albumName }\"(으)로 돌아가기"
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 이동"
@@ -639,9 +630,6 @@
       "Load image": [
         "이미지 불러오기"
       ],
-      "Loading link": [
-        "링크를 불러오는 중"
-      ],
       "Make a copy": [
         "복사본 만들기"
       ],
@@ -656,9 +644,6 @@
       ],
       "Manage labels": [
         "라벨 관리"
-      ],
-      "Manage link": [
-        "링크 관리"
       ],
       "Manage share": [
         "공유 관리"
@@ -6215,9 +6200,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy }님이 공유함"
       ],
-      "Shared by you": [
-        "내가 공유함"
-      ],
       "Shared link not found": [
         "공유 링크 찾을 수 없음"
       ],
@@ -6542,9 +6524,6 @@
       "Unsupported file type for Photos": [
         "사진에서 사용할 수 없는 지원되지 않는 파일 형식"
       ],
-      "Untitled": [
-        "무제"
-      ],
       "Update required": [
         "업데이트 필요"
       ],
@@ -6619,9 +6598,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "현재 기술적인 문제가 발생했습니다. 앨범 관련 작업은 일시적으로 사용할 수 없습니다."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor }님이 ${ node.name } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
@@ -8495,9 +8471,6 @@
       "Data retention policies": [
         "데이터 보존 정책"
       ],
-      "Dedicated servers optimized for streaming": [
-        "스트리밍에 최적화된 전용 서버"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -9167,35 +9140,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\"이(가) 성공적으로 생성되었습니다"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" 삭제됨"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\"이(가) 영구적으로 삭제되었습니다."
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" 삭제 실패"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" 가 휴지통에서 삭제를 실패했습니다"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" 를 이동할 수 없습니다"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 를 휴지통으로 이동하는데 실패했습니다"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\"을(를) 생성할 수 없습니다"
@@ -9203,17 +9152,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 이(가) 휴지통으로 이동됨"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" 이(가) 휴지통에서 복구되었습니다"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\"이(가) 성공적으로 저장되었습니다"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\"이(가) 성공적으로 복사되었습니다"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\"이(가) 성공적으로 이동되었습니다"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
@@ -9254,9 +9194,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }개가 휴지통에서 영구적으로 삭제되었습니다"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems }개 항목 삭제 실패"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }개를 휴지통에서 영구적으로 삭제하는 데 실패했습니다"
       ],
@@ -9275,9 +9212,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems }개 항목이 성공적으로 복사되었습니다"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems }개가 성공적으로 삭제되었습니다"
       ],
@@ -9292,9 +9226,6 @@
       ],
       "Access updated": [
         "접근 권한이 업데이트되었습니다"
-      ],
-      "Album failed to be renamed": [
-        "앨범 이름 변경에 실패했습니다"
       ],
       "Album renamed successfully": [
         "앨범의 이름이 성공적으로 변경되었습니다"
@@ -9316,9 +9247,6 @@
       ],
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\"의 사본이 휴지통으로 이동됨"
       ],
       "Device failed to be removed": [
         "기기 삭제 실패"
@@ -9346,9 +9274,6 @@
       ],
       "Failed to download files: ${ err }": [
         "파일 다운로드 실패: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "초대 상세 정보를 불러오지 못했습니다"
       ],
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
@@ -10398,11 +10323,6 @@
         "이름"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
@@ -10775,9 +10695,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "기존 주소 키를 계정 복구에 사용 할 수 없습니다."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ]
     },
     "session_recovery:available:info": {
@@ -11776,9 +11693,6 @@
       ],
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
-      ],
-      "Billing information updated": [
-        "청구 정보 업데이트됨"
       ],
       "Canceling import": [
         "가져오기 취소 중"

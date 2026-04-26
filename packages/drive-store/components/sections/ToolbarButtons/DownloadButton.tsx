@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { LinkDownload } from '../../../store';
@@ -59,7 +60,7 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Download`}
-            icon={<Icon name="arrow-down-line" alt={c('Action').t`Download`} />}
+            icon={<IcArrowDownLine alt={c('Action').t`Download`} />}
             onClick={onClick}
             data-testid="toolbar-download"
         />

@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
+      "Connect to Gmail": [
+        "Gmail bağlantısı kur"
+      ],
       "Connect to video conferencing": [
         "Görüntülü görüşmeye bağlanın"
       ],
@@ -318,6 +321,9 @@
       ],
       "Contract composer": [
         "Oluşturucuyu küçült"
+      ],
+      "Copy": [
+        "Kopyala"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -1027,6 +1033,9 @@
       "Open navigation": [
         "Gezinmeyi aç"
       ],
+      "Or remove forwarding address": [
+        "Ya da iletme adresini kaldırın"
+      ],
       "Or use a different Gmail address": [
         "Ya da farklı bir Gmail adresi kullanın"
       ],
@@ -1101,6 +1110,9 @@
       ],
       "Reconnect": [
         "Yeniden bağlan"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
       ],
       "Recover data": [
         "Verileri kurtar"
@@ -1493,8 +1505,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4053,6 +4064,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google tarafından profilinizin çıkarılmasını engelleyin. Gmail ${ MAIL_APP_NAME } üzerinde yaptıklarınızı göremez"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
@@ -4079,6 +4093,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } adresine gönderilen e-postalar artık ${ MAIL_APP_NAME } üzerinde görünecek."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ek güvenlik için kuruluşunuzda iki adımlı doğrulamanın kullanılmasını sağlayın."
@@ -4132,6 +4149,12 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Gmail yazışmalarınızı doğrudan ${ MAIL_APP_NAME } üzerinden gönderip alın. ${ addressesSettingsLink } üzerinden adresinizi bağlayın."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ],
@@ -4146,6 +4169,22 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Başka bir Gmail adresi bağlamak için ${ BRAND_NAME } adresine iletilen diğer Gmail adreslerini kaldırın."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } taneye kadar Gmail adresini bağlamak için ${ planName } tarifesine yükseltin.",
+        "${ MAX_SYNC_PAID_USER } taneye kadar Gmail adresini bağlamak için ${ planName } tarifesine yükseltin."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -4168,6 +4207,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Var olan e-posta adresinize ek olarak, daha kısa ve hatırlaması kolay ${ activatePmUser } e-posta adresini edinmek için tarifenizi yükseltin."
       ],
@@ -4180,8 +4222,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Bu e-postada bilinen herhangi bir izleyici veya izleme adresi bulamadık."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -4195,17 +4246,49 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Özel erteleme ile e-postaları gizleyebilir ve daha uygun bir zamanda yeniden görüntülenmelerini sağlayabilirsiniz."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } üzerine iletilen bir Gmail adresiniz zaten var. E-postaları doğrudan ${ MAIL_APP_NAME } üzerinden göndermek ve almak için aşağıdan bağlantı kurun."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } üzerine iletilen Gmail adresleriniz zaten var. Aşağıdakilerden birini bağlayarak e-postalarınızı doğrudan ${ MAIL_APP_NAME } üzerinden gönderip alabilirsiniz."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
+        "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "${ forwardingCount } Gmail adresinden e-postaları iletiyorsunuz. Bu adresi ${ MAIL_APP_NAME } uygulamasına bağlayarak e-postaları alabilir ve yanıtlayabilirsiniz.",
+        "${ forwardingCount } Gmail adresinden e-postaları iletiyorsunuz. Bu adresleri ${ MAIL_APP_NAME } uygulamasına bağlayarak e-postaları alabilir ve yanıtlayabilirsiniz."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER } Gmail adresi bağladınız. Başka bir adres eklemek için önce bağlı hesaplarınızdan birini kullanımdan kaldırın.",
+        "${ MAX_SYNC_PAID_USER } Gmail adresi bağladınız. Başka bir adres eklemek için önce bağlı hesaplarınızdan birini kullanımdan kaldırın."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } uygulamasına bir dış hesap adresi bağladınız."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Hesap ve veri kurtarma yöntemleriniz ayarlandı ve iki adımlı doğrulama açıldı."
       ],
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor.",
+        "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
+        "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
@@ -4524,6 +4607,12 @@
       "Add at least one condition": [
         "En az bir koşul ekleyin"
       ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
+      ],
+      "Address is already added to your account": [
+        "Adres hesabınıza zaten eklenmiş"
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -4676,6 +4765,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -4975,6 +5067,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong while creating the address": [
+        "Adres oluşturulurken bir sorun çıktı"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
@@ -7001,6 +7099,9 @@
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
+      "Copy to clipboard": [
+        "Panoya kopyala"
+      ],
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
       ],
@@ -7225,7 +7326,7 @@
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -7463,7 +7564,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9805,6 +9907,9 @@
       "Search in": [
         "Şurada ara"
       ],
+      "Select which Gmail address to connect": [
+        "Hangi Gmail adresine bağlanılacağını seçin"
+      ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
@@ -10916,6 +11021,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -10970,8 +11082,8 @@
       "Data retention policies": [
         "Verileri tutma ilkeleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -11702,6 +11814,9 @@
       ],
       "Trial started": [
         "Deneme süresi başladı"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12260,6 +12375,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -12710,11 +12828,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Ad"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "görüşün"
       ]
     },
     "Plan description": {
@@ -13266,9 +13379,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -14006,6 +14116,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma asistanı"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
@@ -14237,6 +14353,10 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
+      ],
       "Watch the interview": [
         "Röportajı izleyin"
       ],
@@ -14447,9 +14567,6 @@
         "Takma ad kaydedildi ve kopyalandı"
       ],
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Canceling import": [
@@ -14988,6 +15105,9 @@
       "Block sender": [
         "Göndericiyi engelle"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Gmail e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
+      ],
       "Built for privacy": [
         "Gizlilik için yapıldı"
       ],
@@ -15154,6 +15274,9 @@
       ],
       "Desktop": [
         "Bilgisayar"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
       ],
       "Discover your subscription benefits": [
         "Aboneliğinizin avantajlarını keşfedin."
@@ -15663,6 +15786,9 @@
       "Self-destruct message": [
         "Kendini yok eden ileti"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } ile Gmail gönderin ve alın"
+      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -15829,6 +15955,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } üzerinden güvenle Gmail kullanın"
+      ],
       "Verification error": [
         "Doğrulama sorunu"
       ],
@@ -15874,6 +16003,9 @@
       ],
       "When is it most important to use a VPN?": [
         "VPN kullanmak en çok ne zaman önemlidir?"
+      ],
+      "You are all set": [
+        "Artık hazırsınız"
       ],
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"

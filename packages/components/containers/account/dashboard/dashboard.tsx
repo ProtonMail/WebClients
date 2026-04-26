@@ -7,6 +7,7 @@ import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/compon
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { SettingsCardMaxWidth } from '../../layout/interface';
 import YourPlanSectionV2 from '../../payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 import { YourPlanUpsellsSectionV2 } from '../../payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';
@@ -32,8 +33,8 @@ const DashboardWrapper = ({ children, config }: PropsWithChildren<Props>) => {
         <PrivateMainSettingsArea
             config={config}
             mainAreaClass="bg-lowered settings-cards"
-            wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-            style={{ '--max-w-custom': '93.75rem' }}
+            wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+            style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
         >
             {children}
         </PrivateMainSettingsArea>

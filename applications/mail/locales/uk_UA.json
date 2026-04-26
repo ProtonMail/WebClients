@@ -1296,6 +1296,9 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -6639,6 +6642,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -10929,11 +10935,6 @@
         "Назва"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "зверніться"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } місяць",
@@ -11292,9 +11293,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Відновлення облікового запису недоступне для застарілих ключів адреси"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенеруйте ключі, перш ніж змінювати пароль"
       ]
     },
     "session_recovery:available:info": {

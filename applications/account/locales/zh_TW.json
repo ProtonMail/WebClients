@@ -343,6 +343,9 @@
       "Create folder": [
         "新建資料夾"
       ],
+      "Create free account now": [
+        "立即建立免費帳號"
+      ],
       "Create Gateway": [
         "創建閘道器"
       ],
@@ -1468,6 +1471,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -2293,6 +2299,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -3756,6 +3765,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "讓您可以立即新增會議連結到您的活動邀請。"
       ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
@@ -3764,6 +3776,12 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
@@ -3782,6 +3800,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ]
     },
     "description": {
@@ -4665,9 +4692,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ],
       "Please select a country": [
         "請選擇一個國家"
@@ -6038,6 +6062,11 @@
         "數值 / 資料 / 指向"
       ]
     },
+    "Header for table": {
+      "Email address": [
+        "電子郵件地址"
+      ]
+    },
     "Heading": {
       "A simple step today to ensure your child's digital safety tomorrow": [
         "今天的簡單一步，確保孩子未來的數位安全"
@@ -6693,6 +6722,9 @@
       ],
       "active": [
         "啟用"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "加入復原方式"
@@ -8608,6 +8640,9 @@
       "Vault updated": [
         "保管庫已更新"
       ],
+      "Verification code sent.": [
+        "驗證碼寄送。"
+      ],
       "Verification link expired": [
         "驗證連結已過期"
       ],
@@ -9928,6 +9963,9 @@
       "for your first month": [
         "適用於您的首個月"
       ],
+      "Free": [
+        "免費"
+      ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
@@ -10384,6 +10422,9 @@
       "Statement": [
         "陳述式"
       ],
+      "Storage": [
+        "雲端儲存"
+      ],
       "Street address": [
         "街道位址"
       ],
@@ -10437,6 +10478,9 @@
       ],
       "Undo send": [
         "取消傳送"
+      ],
+      "Unlimited": [
+        "吃到飽"
       ],
       "Updates": [
         "更新"
@@ -10669,9 +10713,6 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
-      ],
-      "Common sign in issues": [
-        "常見登入問題"
       ],
       "Common sign up issues": [
         "常見註冊問題"
@@ -11109,6 +11150,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "Secure calendar": [
+        "安全行事曆"
       ]
     },
     "Member action": {
@@ -11597,6 +11641,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -11659,9 +11706,6 @@
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -13003,9 +13047,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "聯絡我們"
-      ],
       "Continue": [
         "繼續"
       ],
@@ -13029,9 +13070,6 @@
       ],
       "Or ${ createANewAccount }": [
         "或${ createANewAccount }"
-      ],
-      "Request trial": [
-        "要求試用"
       ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
@@ -13839,11 +13877,6 @@
         "安全防護的電子郵件保護隱私"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
@@ -14052,9 +14085,6 @@
       "Verify now": [
         "立刻驗證"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "立即驗證此復原電子郵件位址：${ email.Value }"
-      ],
       "Verify recovery email?": [
         "驗證還原電郵？"
       ],
@@ -14097,9 +14127,6 @@
       ],
       "Verify recovery phone?": [
         "驗證用於帳戶救援的手機號碼？"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即驗證此復原電話號碼：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
@@ -14285,6 +14312,9 @@
       ],
       "Download your Recovery Kit": [
         "下載復原包"
+      ],
+      "Email address": [
+        "電子郵件地址"
       ],
       "Enable device-based recovery": [
         "啟用裝置復原"
@@ -14541,9 +14571,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -14883,6 +14910,9 @@
       ]
     },
     "Signup": {
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "用於對抗垃圾郵件的 ${ FREE_PASS_ALIASES } 個 hide-my-email 別名"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 個電郵位址"
       ],
@@ -14897,6 +14927,9 @@
       ],
       "${ PASS_PLUS_VAULTS } vault for your passwords": [
         "提供 ${ PASS_PLUS_VAULTS } 個保管庫來管理密碼"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } 雲端儲存空間，可存放檔案和相片"
       ],
       "${ value } of secure storage per user": [
         "每位使用者${ value }安全空間"
@@ -14925,6 +14958,12 @@
       "Advanced account protection": [
         "進階的帳號保護"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "選擇一個安全的 ${ MAIL_APP_NAME } 位址即可開始使用"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "協作文件與試算表"
+      ],
       "Compare plans": [
         "比較方案"
       ],
@@ -14934,14 +14973,23 @@
       "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "具備 ${ totalMailStorageSize } 儲存空間的加密電子郵件"
+      ],
       "Encrypted password manager": [
         "加密密碼管理"
       ],
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "Every free account comes with:": [
+        "每個免費帳號都包含："
+      ],
       "Free": [
         "免費"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME }，讓您的對話保持私有"
       ],
       "Manage user access": [
         "管理使用者存取"
@@ -14955,6 +15003,15 @@
       "Online document editor": [
         "線上文件編輯器"
       ],
+      "Password manager for all your devices": [
+        "適用於所有裝置的密碼管理程式"
+      ],
+      "Password-protected messages": [
+        "受密碼保護的訊息"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "聊天記錄已加密的私有 AI 助理"
+      ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
       ],
@@ -14966,6 +15023,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "同時保護 ${ VPN_CONNECTIONS } 台裝置"
+      ],
+      "Secure calendar": [
+        "安全行事曆"
       ],
       "Select ${ title }": [
         "選擇方案 ${ title }"
@@ -14981,6 +15041,9 @@
       ],
       "Set your password": [
         "設定您的密碼"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "註冊即可享有 ${ BRAND_NAME } 提供的一切"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
@@ -15012,8 +15075,17 @@
       "Use your current email": [
         "使用您目前的電子郵件位址"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
+      ],
       "Yearly": [
         "每年"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "您的帳號可存取 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ LUMO_SHORT_APP_NAME } 的免費功能。"
       ],
       "Your plan": [
         "您的方案"
@@ -16179,9 +16251,6 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
-      "Billing information updated": [
-        "繳費資訊已更新"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "行事曆已加入。同步或需時幾分鐘。"
       ],
@@ -17027,6 +17096,9 @@
       "Discard changes?": [
         "捨棄變更？"
       ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
+      ],
       "Display name and signature": [
         "顯示名稱與簽名"
       ],
@@ -17584,6 +17656,9 @@
       ],
       "Reused passwords": [
         "重複使用的密碼"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "Same inbox, shorter email address": [
         "一樣的收件匣，較短的電郵位址"

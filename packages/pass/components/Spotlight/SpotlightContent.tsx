@@ -3,7 +3,7 @@ import { type ComponentType, type ElementType, type FC, type MouseEvent, type Re
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { SpotlightMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -65,7 +65,7 @@ export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
                     className="absolute top-0 right-0 pass-spotlight-content--close"
                     onClick={onClose}
                 >
-                    <Icon name="cross-circle-filled" color="var(--background-invert)" alt={c('Action').t`Close`} />
+                    <IcCrossCircleFilled color="var(--background-invert)" alt={c('Action').t`Close`} />
                 </Button>
             )}
 

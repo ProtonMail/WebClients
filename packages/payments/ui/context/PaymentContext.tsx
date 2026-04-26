@@ -32,7 +32,6 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddressFlat,
 } from '../../core/billing-address/billing-address';
-import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, type getOptimisticCheckResult } from '../../core/checkout';
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
@@ -57,6 +56,7 @@ import { isFreeSubscription } from '../../core/type-guards';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { EstimationChangeAction } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
+import { loadInitialBillingAddress } from '../helpers/load-initial-billing-address';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
@@ -380,6 +380,15 @@ export const PaymentsContextProvider = ({
                 },
             });
 
+            // We don't want to update billing address if the payment is forbidden for any other reason apart from the
+            // selection of a free plan. This is mostly a safery measure for now and subject for re-evaluation in the
+            // future - maybe we don't need to be that cautious and we may update the billing address in all cases.
+            if (paymentForbiddenReason.reason === 'paid-plan-required') {
+                setState({
+                    billingAddress: newBillingAddress,
+                });
+            }
+
             return newCheckResult;
         }
 
@@ -490,9 +499,13 @@ export const PaymentsContextProvider = ({
     const preloadPaymentsData = async ({ api: apiOverride }: { api?: Api } = {}) => {
         const api = apiOverride ?? defaultApi;
 
-        const [plansData, paymentStatus, subscription] = await Promise.all([
+        const [plansData, { paymentStatus, billingAddress }, subscription] = await Promise.all([
             dispatch(plansThunk({ api })),
-            dispatch(paymentStatusThunk({ api })),
+            loadInitialBillingAddress({
+                getPaymentStatus: () => dispatch(paymentStatusThunk({ api })),
+                getFullBillingAddress: paymentsApiRef.current.getFullBillingAddress,
+                isAuthenticated: authenticated,
+            }),
             authenticated ? dispatch(subscriptionThunk()) : Promise.resolve(FREE_SUBSCRIPTION as FreeSubscription),
         ]);
 
@@ -500,6 +513,7 @@ export const PaymentsContextProvider = ({
             plansData,
             paymentStatus,
             subscription,
+            billingAddress,
         };
 
         setState(result);
@@ -531,7 +545,9 @@ export const PaymentsContextProvider = ({
             plans,
         });
 
-        setState({ billingAddress: getBillingAddressFromPaymentStatus(status), availableCurrencies });
+        setState({
+            availableCurrencies,
+        });
 
         const paymentsApi = getPaymentsApi(api);
         paymentsApiRef.current = paymentsApi;

@@ -3837,6 +3837,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -3891,8 +3898,8 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -4697,6 +4704,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -5007,11 +5017,6 @@
       ],
       "ZIP code": [
         "CEP"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contato"
       ]
     },
     "Plan description": {
@@ -5429,9 +5434,6 @@
     "Success": {
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
-      ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"

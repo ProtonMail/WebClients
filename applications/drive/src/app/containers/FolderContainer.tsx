@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { Loader, useNotifications } from '@proton/components';
 import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
+import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { DriveStartupModals } from '../components/modals/DriveStartupModals';
-import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
 import useDriveNavigation from '../hooks/drive/useNavigate';
@@ -18,6 +18,8 @@ import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEv
 import { useFolderStore } from '../sections/folders/useFolder.store';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../utils/errorHandling/handleSdkError';
+
+type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
 export function FolderContainer() {
     const [isLoading, withLoading] = useLoading(true);

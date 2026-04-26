@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Kamera olmadan ilerle"
       ],
+      "Continue without mic and camera": [
+        "Mikrofon ve kamera olmadan devam et"
+      ],
       "Continue without microphone": [
         "Mikrofon olmadan ilerle"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Request permissions": [
+        "İzin iste"
       ],
       "Resend code": [
         "Kodu yeniden gönder"
@@ -1441,6 +1447,11 @@
         "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Yükleniyor…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Güvenilir kişi"
@@ -1488,12 +1499,6 @@
       ],
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
-      ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
       ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
@@ -1560,6 +1565,9 @@
       ],
       "The meeting password is incorrect": [
         "Görüşme parolası yanlış"
+      ],
+      "The meeting password is invalid": [
+        "Görüşme parolası geçersiz"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -1725,6 +1733,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } ve ${ otherParticipantsCount } kişi kaydediyor"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } kaydediyor"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (siz) sunum yapıyorsunuz"
       ],
@@ -1825,11 +1839,11 @@
       "Decrypting meetings...": [
         "Görüşmelerin şifresi çözülüyor..."
       ],
-      "Default": [
-        "Varsayılan"
-      ],
       "Default - ${ systemDefault.label }": [
         "Varsayılan - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Varsayılan - Sistem varsayılanı"
       ],
       "Delete event": [
         "Etkinliği sil"
@@ -1852,6 +1866,9 @@
       "End Meeting for everyone?": [
         "Görüşme herkes için sonlandırılsın mı?"
       ],
+      "End the meeting for everyone?": [
+        "Görüşme herkes için sonlandırılsın mı?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Ses ve görüntü uçtan uca şifreleme ile korunuyor."
       ],
@@ -1862,7 +1879,7 @@
         "Bu sohbet uçtan uca şifreleniyor."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -1906,6 +1923,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
       ],
+      "Host": [
+        "Sunucu"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Kendi güvenli toplantınızı düzenleyin. ${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
@@ -1930,8 +1950,11 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Ayrılmanız ekran paylaşımınızı durduraca. İlerlemek istiyor musunuz?"
+      "Leave meeting and stop sharing?": [
+        "Görüşmeden ayrılıp paylaşımı durdurmak istiyor musunuz?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Görüşmeden ayrıldığınızda ekran paylaşımınız sona erecek."
       ],
       "Left ${ roomNameLabel }": [
         "${ roomNameLabel } odasından ayrıl"
@@ -2080,6 +2103,9 @@
       "Premium meeting": [
         "Ücretli görüşme"
       ],
+      "Presenting": [
+        "Sunma"
+      ],
       "privacy": [
         "gizlilik"
       ],
@@ -2091,6 +2117,12 @@
       ],
       "Record your meetings": [
         "Görüşmelerinizi kaydedin"
+      ],
+      "Recording": [
+        "Kaydediliyor"
+      ],
+      "Recording in progress": [
+        "Kayıt sürüyor"
       ],
       "Recording saved": [
         "Görüşme kaydedildi"
@@ -2185,11 +2217,17 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Bu işlem görüşmeyi tüm katılımcılar için sonlandırır ve ekran paylaşımınızı durdurur."
+      ],
       "This will end the meeting for all participants.": [
         "Bu işlem görüşmeyi tüm katılımcılar için sonlandıracak."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
+      ],
+      "To be seen in the call, allow access to your camera.": [
+        "Görüşmede görünmek için kameranıza erişim izni verin."
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2199,6 +2237,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Görüşmede konuşabilmek ve görünebilmek için kamera ve mikrofonunuza erişim izni verin."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Görüşmede konuşabilmek için mikrofonunuza erişim izni verin."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2278,6 +2322,9 @@
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
       ],
+      "You will leave the meeting. Others will continue.": [
+        "Siz görüşmeden ayrılacaksınız. Diğerleri kalacak."
+      ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Güvenli bir görüşmeye davet edildiniz. Adınızı onaylayın ve katılmak için aşağıya tıklayın."
       ],
@@ -2286,6 +2333,18 @@
       ],
       "Your always available meeting room": [
         "Her zaman kullanabileceğiniz görüşme odası"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Tarayıcınız kamera ve mikrofona erişimi engelledi. Bunları açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız kameranıza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız mikrofonunuza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız ekran paylaşımına erişimi engelledi. Bunu açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
       ],
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
@@ -2596,14 +2655,14 @@
       "Others couldn't hear me": [
         "Diğerleri beni duyamadı"
       ],
+      "Others couldn't see my video": [
+        "Diğerleri videomu göremedi"
+      ],
       "The presentation was blurry": [
         "Sunum bulanıktı"
       ],
-      "Video was blurry": [
-        "Görüntü bulanıktı"
-      ],
-      "Video was breaking up": [
-        "Görüntü takılıyordu"
+      "Video quality was poor": [
+        "Video kalitesi düşüktü"
       ]
     },
     "Placeholder": {
@@ -2793,6 +2852,18 @@
       "Available Speakers": [
         "Uygun konuşmacılar"
       ],
+      "Camera access needed": [
+        "Kamera erişimi gerekiyor"
+      ],
+      "Camera and microphone access needed": [
+        "Kamera ve mikrofon erişimi gerekiyor"
+      ],
+      "Camera and microphone are blocked": [
+        "Kamera ve mikrofon engellendi"
+      ],
+      "Camera is blocked": [
+        "Kamera engellendi"
+      ],
       "Chat": [
         "Sohbet"
       ],
@@ -2872,6 +2943,12 @@
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
       ],
+      "Microphone access needed": [
+        "Mikrofon erişimi gerekiyor"
+      ],
+      "Microphone is blocked": [
+        "Mikrofon engellendi"
+      ],
       "Minicalendar": [
         "Mini takvim"
       ],
@@ -2904,6 +2981,9 @@
       ],
       "Schedule a meeting": [
         "Görüşme planlayın"
+      ],
+      "Screen share is blocked": [
+        "Ekran paylaşımı engellendi"
       ],
       "Secure meeting": [
         "Güvenli görüşme"

@@ -299,6 +299,9 @@
       "Create folder": [
         "फ़ोल्डर बनाएं"
       ],
+      "Create free account now": [
+        "अभी मुफ्त खाता बनाएँ"
+      ],
       "Create Gateway": [
         "गेटवे बनाएं"
       ],
@@ -1867,6 +1870,9 @@
       "${ users } user": [
         "${ users } यूज़र",
         "${ users } यूज़र"
+      ],
+      "Total": [
+        "कुल"
       ],
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
@@ -3915,9 +3921,6 @@
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
       ],
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
-      ],
       "Please select a country": [
         "एक देश चुनें"
       ],
@@ -5218,6 +5221,11 @@
       ],
       "Value / Data / Points to": [
         "मान / डेटा / अंक को"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "ईमेल पता"
       ]
     },
     "Heading": {
@@ -7196,6 +7204,9 @@
       "Show original message": [
         "मूल संदेश दिखाएं"
       ],
+      "Sign in": [
+        "साइनइन करें"
+      ],
       "Sign in or create an account to continue.": [
         "साइनइन करें या खाता बनाएं ताकि आप आगे बढ़ सकें।"
       ],
@@ -7625,6 +7636,9 @@
       ],
       "Vault updated": [
         "तिजोरी अपडेट हुई"
+      ],
+      "Verification code sent.": [
+        "सत्यापन कोड भेजा गया।"
       ],
       "Verification link expired": [
         "सत्यापन लिंक एक्सपायर हुआ"
@@ -8850,6 +8864,9 @@
       "Font size": [
         "फ़ॉन्ट साइज़"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
       ],
@@ -9232,6 +9249,9 @@
       "Statement": [
         "बयान"
       ],
+      "Storage": [
+        "स्टोरेज"
+      ],
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
@@ -9282,6 +9302,9 @@
       ],
       "Undo send": [
         "भेजें पूर्ववत करें"
+      ],
+      "Unlimited": [
+        "असीमित"
       ],
       "Updates": [
         "अपडेट"
@@ -9516,9 +9539,6 @@
       ],
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
-      ],
-      "Common sign in issues": [
-        "मुद्दों में समानन्या संकेत"
       ],
       "Common sign up issues": [
         "सामान्य साइन अप मुद्दे"
@@ -9829,6 +9849,11 @@
       ],
       "This feature is temporarily unavailable": [
         "यह सुविधा अस्थायी रूप से अनुपलब्ध है"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "सुरक्षित कैलेंडर"
       ]
     },
     "Member action": {
@@ -11429,9 +11454,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "हमसे संपर्क करें"
-      ],
       "Continue": [
         "जारी रखें"
       ],
@@ -11455,9 +11477,6 @@
       ],
       "Or ${ createANewAccount }": [
         "या ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "ट्रायल का अनुरोध करें"
       ],
       "Start using ${ appName }": [
         "${ appName } का उपयोग प्रारंभ करें"
@@ -11668,9 +11687,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } का उपयोग शुरू करें"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "बड़े संगठनों के लिए कस्टम आवश्यकताओं के साथ अनुकूलित समाधान।"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "जो ऑफ़र आपने चुना है वह ${ currentPlanTitle } सब्सक्राइबर्स के लिए उपलब्ध नहीं है।"
@@ -12099,11 +12115,6 @@
         "आपका ऑनलाइन स्वतंत्रता का द्वार"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "संपर्क करें"
-      ]
-    },
     "Plan description": {
       "For next-level password management and identity protection.": [
         "उच्च स्तर के पासवर्ड प्रबंधन और पहचान सुरक्षा के लिए।"
@@ -12195,9 +12206,6 @@
       "Verify now": [
         "अभी सत्यापित करें"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ये रिक्वरी ईमेल पता अभी सत्यापित करें: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "पुनर्प्राप्ति ईमेल सत्यापित करें?"
       ],
@@ -12240,9 +12248,6 @@
       ],
       "Verify recovery phone?": [
         "रिक्वरी फोन स्तयापित करें?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ये रिकवरी फोन नंबर अभी सत्यापित करें: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
@@ -12381,6 +12386,9 @@
       ],
       "Download your Recovery Kit": [
         "अपना रिकवर किट डाउनलोड करें"
+      ],
+      "Email address": [
+        "ईमेल पता"
       ],
       "Enable device-based recovery": [
         "डिवाइस-आधारित रिकवरी सक्षम करें"
@@ -12789,11 +12797,6 @@
         "पासवर्ड रीसेट करें"
       ]
     },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
-      ]
-    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } दिन",
@@ -13085,6 +13088,9 @@
       ]
     },
     "Signup": {
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "स्पैम से बचाव के लिए ${ FREE_PASS_ALIASES } hide-my-email ईमेल नकली-नाम"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } पता",
         "${ maxAddresses } पते"
@@ -13096,6 +13102,9 @@
       "${ maxCalendars } calendar": [
         "${ maxCalendars } कैलेंडर",
         "${ maxCalendars } कैलेंडर"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "फ़ाइलों और फ़ोटो के लिए ${ totalDriveStorageSize } क्लाउड स्टोरेज"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } तेज़ वीपीएन कनेक्शन",
@@ -13113,14 +13122,29 @@
       "24 months": [
         "24 महीने"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "शुरू करने के लिए एक सुरक्षित ${ MAIL_APP_NAME } पता चुनें"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "सहयोगात्मक दस्तावेज़ और स्प्रेडशीट"
+      ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "${ PLAN_NAMES[plan] } के साथ जारी रखें"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "${ totalMailStorageSize } स्टोरेज के साथ एन्क्रिप्टेड ईमेल"
       ],
       "End-to-end encryption": [
         "शुरु-से-अंत तक एन्क्रिप्शन"
       ],
+      "Every free account comes with:": [
+        "हर मुफ्त खाते में यह शामिल है:"
+      ],
       "Free": [
         "Free"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } के साथ अपनी बातचीत निजी रखें"
       ],
       "Monthly": [
         "हर महीने"
@@ -13128,11 +13152,23 @@
       "Most popular": [
         "सबसे लोकप्रिय"
       ],
+      "Password manager for all your devices": [
+        "आपके सभी डिवाइसों के लिए पासवर्ड मैनेजर"
+      ],
+      "Password-protected messages": [
+        "पासवर्ड-सुरक्षित संदेश"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "एन्क्रिप्ट किए गए चैट इतिहास वाला निजी AI सहायक"
+      ],
       "Save ${ percentage }%": [
         "${ percentage } की छूट%"
       ],
       "Save ${ priceDifferenceString }": [
         "${ priceDifferenceString } की छूट"
+      ],
+      "Secure calendar": [
+        "सुरक्षित कैलेंडर"
       ],
       "Select ${ title }": [
         "${ title } चुनें"
@@ -13146,6 +13182,12 @@
       "Set your password": [
         "अपना पासवर्ड सेट करें"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "${ BRAND_NAME } की सभी सुविधाएँ पाने के लिए साइनअप करें"
+      ],
+      "Total": [
+        "कुल"
+      ],
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
       ],
@@ -13155,8 +13197,18 @@
       "Up to 6 users": [
         "6 यूज़र तक"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.countries } देश में सर्वरों वाला VPN",
+        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
+      ],
       "Yearly": [
         "हर साल"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "आपके खाते में ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } और ${ LUMO_SHORT_APP_NAME } की मुफ्त खासियतों तक एक्सेस शामिल है।"
       ],
       "Your plan": [
         "आपका प्लान"
@@ -15070,6 +15122,9 @@
       ],
       "Forward emails": [
         "ईमेल भेजे"
+      ],
+      "Free": [
+        "मुफ्त"
       ],
       "Gateway": [
         "गेटवे"

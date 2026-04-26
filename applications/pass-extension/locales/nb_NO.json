@@ -628,9 +628,6 @@
       "Set extra password": [
         "Angi ekstra passord"
       ],
-      "Settings": [
-        "Innstillinger"
-      ],
       "Setup 2FA": [
         "Sett opp 2FA"
       ],
@@ -1019,9 +1016,6 @@
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
-      ],
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
@@ -1291,6 +1285,9 @@
       ],
       "Unknown error": [
         "Ukjent feil"
+      ],
+      "Unknown error.": [
+        "Ukjent feil."
       ],
       "Unknown invite": [
         "Ukjent invitasjon"
@@ -2024,6 +2021,9 @@
       "Loading...": [
         "Laster..."
       ],
+      "Logging you out...": [
+        "Logger deg av..."
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -2385,7 +2385,7 @@
         "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -2517,6 +2517,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "For å konfigurere snarveier, gå til about:addons i Firefox og velg \"Administrer utvidelsessnarveier\"."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
       ],
@@ -2540,12 +2543,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Ubegrenset antall hide-my-email-aliaser og avansert aliasadministrasjon"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Lås opp ${ PASS_APP_NAME } med PIN-koden for å tilgang til dine tilgangsnøkler"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Lås opp ${ PASS_APP_NAME } med PIN-koden for å lagre denne tilgangsnøkkelen"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med biometri"

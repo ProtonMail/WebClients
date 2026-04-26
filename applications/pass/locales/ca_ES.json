@@ -613,9 +613,6 @@
       "Set extra password": [
         "Estableix una contrasenya addicional"
       ],
-      "Settings": [
-        "Preferències"
-      ],
       "Setup 2FA": [
         "Configura el 2FA"
       ],
@@ -915,6 +912,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
       ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
         "Ara mateix no es poden enviar invitacions"
@@ -985,6 +997,9 @@
       ],
       "Emptying trash failed": [
         "No s'ha pogut buidar la paperera"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
       ],
       "Encrypted JSON not supported": [
         "El JSON xifrat no és compatible"
@@ -1205,6 +1220,24 @@
       "Something went wrong. Please sign in again.": [
         "Alguna cosa ha anat malament. Torneu a iniciar la sessió."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no està instal·lada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
+      ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
       ],
@@ -1228,6 +1261,9 @@
       ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ],
       "Unknown invite": [
         "Invitació desconeguda"
@@ -3023,12 +3059,6 @@
       "Generic CSV": [
         "CSV genèric"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obteniu ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obteniu ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Comenceu"
       ],
@@ -3747,7 +3777,7 @@
         "Les vostres contrasenyes allà on sigueu."
       ],
       "ZIP": [
-        "Fitxer ZIP"
+        "ZIP"
       ],
       "ZIP or Postal code": [
         "Codi postal"
@@ -4723,6 +4753,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
       ]
     },
     "Validation": {

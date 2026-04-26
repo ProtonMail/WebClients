@@ -25,9 +25,16 @@ interface AvailablePaymentMethodProps {
     selectedMethod: PaymentMethodType | undefined;
     onChange: (value: PaymentMethodType) => void;
     savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | undefined;
+    disablePaymentMethodChange: boolean;
 }
 
-const AvailablePaymentMethods = ({ methods, onChange, selectedMethod, savedMethod }: AvailablePaymentMethodProps) => {
+const AvailablePaymentMethods = ({
+    methods,
+    onChange,
+    selectedMethod,
+    savedMethod,
+    disablePaymentMethodChange,
+}: AvailablePaymentMethodProps) => {
     return methods.map((method) => {
         return (
             <InputFieldStacked isGroupElement key={method.value}>
@@ -38,6 +45,7 @@ const AvailablePaymentMethods = ({ methods, onChange, selectedMethod, savedMetho
                     name="payment-method"
                     value={method.value}
                     className="flex"
+                    disabled={disablePaymentMethodChange}
                 >
                     <span className="flex flex-1 justify-space-between items-center gap-2">
                         {method.text}
@@ -57,9 +65,15 @@ interface Props {
     methods: ClientMethodsHook;
     selectedMethodValue: ViewPaymentMethod['value'] | undefined;
     onPaymentMethodChange: (currency: PaymentMethodType) => void;
+    disablePaymentMethodChange: boolean;
 }
 
-const PaymentMethodSelector = ({ methods, selectedMethodValue, onPaymentMethodChange }: Props) => {
+const PaymentMethodSelector = ({
+    methods,
+    selectedMethodValue,
+    onPaymentMethodChange,
+    disablePaymentMethodChange,
+}: Props) => {
     const [showAllMethods, setShowAllMethods] = useState(false);
     const { allMethods, savedInternalSelectedMethod, savedExternalSelectedMethod } = methods;
     // Filter Cash and SEPA as they are not required for Lite app
@@ -87,6 +101,7 @@ const PaymentMethodSelector = ({ methods, selectedMethodValue, onPaymentMethodCh
                     selectedMethod={selectedMethodValue}
                     onChange={(value) => onPaymentMethodChange(value)}
                     savedMethod={savedMethod}
+                    disablePaymentMethodChange={disablePaymentMethodChange}
                 />
             )}
             {!showAllMethods && (

@@ -334,7 +334,7 @@ export const ProtonMeetContainer = ({
 
     const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const accessTokenRef = useRef<string | null>(null);
-    const [decryptionKey, setDecryptionKey] = useState<CryptoKey | null>(null);
+    const decryptionKeyRef = useRef<CryptoKey | null>(null);
 
     const {
         getParticipants,
@@ -343,7 +343,7 @@ export const ProtonMeetContainer = ({
         resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
-    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKey);
+    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKeyRef);
 
     const {
         stopPiP,
@@ -416,10 +416,11 @@ export const ProtonMeetContainer = ({
         hasAnotherAdmin,
     } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
 
-    const shareLink = `${window.location.origin}${getMeetingLink(
-        meetingDetails.meetingId,
-        meetingDetails.meetingPassword
-    )}`;
+    const shareLink = `${window.location.origin}${
+        meetingDetails.meetingId && meetingDetails.meetingPassword
+            ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
+            : window.location.pathname
+    }`;
 
     // Check if joining own personal meeting room
     const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
@@ -724,7 +725,7 @@ export const ProtonMeetContainer = ({
                 salt: meetingInfo.MeetingInfo.Salt,
             });
             const decryptionKey = sessionKey ? await deriveEncryptionKeyFromSessionKey(sessionKey) : null;
-            setDecryptionKey(decryptionKey);
+            decryptionKeyRef.current = decryptionKey;
             const encryptedDisplayName = decryptionKey
                 ? await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName)
                 : '';
@@ -734,6 +735,15 @@ export const ProtonMeetContainer = ({
                 token: meetingToken,
                 encryptedDisplayName: encryptedDisplayName,
             });
+
+            // The backend sets ExpirationTime on the meeting once the first participant joins (i.e. right here,
+            // triggered by getAccessDetails). If the cached response we fetched before getAccessDetails didn't
+            // have it yet, invalidate the cache so the next getCachedMeetingInfo call fetches a fresh response
+            // with the populated ExpirationTime. Otherwise the cached value is still accurate and we avoid an
+            // extra network round-trip.
+            if (!meetingInfo.MeetingInfo.ExpirationTime) {
+                meetingInfoRef.current = null;
+            }
 
             // get participants count from the API so we can know which joinType to use based on the participants count
             const participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
@@ -1134,7 +1144,7 @@ export const ProtonMeetContainer = ({
         void room.disconnect();
         resetParticipantNameMap();
         meetingInfoRef.current = null;
-        setDecryptionKey(null);
+        decryptionKeyRef.current = null;
         void wasmApp?.leaveMeeting();
         void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1172,7 +1182,7 @@ export const ProtonMeetContainer = ({
         } finally {
             resetParticipantNameMap();
             meetingInfoRef.current = null;
-            setDecryptionKey(null);
+            decryptionKeyRef.current = null;
         }
 
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1205,7 +1215,7 @@ export const ProtonMeetContainer = ({
         meetingLinkNameRef.current = '';
         resetParticipantNameMap();
         meetingInfoRef.current = null;
-        setDecryptionKey(null);
+        decryptionKeyRef.current = null;
         mlsSetupDone.current = false; // need to set mls again after leave meeting
 
         // Cleanup WASM polling interval to prevent MLS errors after leaving

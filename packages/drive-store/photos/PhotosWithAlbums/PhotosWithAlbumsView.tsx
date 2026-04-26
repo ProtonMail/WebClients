@@ -7,7 +7,6 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle } from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
@@ -23,7 +22,6 @@ import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     const {
         albumPhotos,
@@ -121,7 +119,7 @@ export const PhotosWithAlbumsView = () => {
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
+                    onFavorite={addOrRemovePhotoToFavorite}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
                     rootLinkId={linkId}
                     hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}

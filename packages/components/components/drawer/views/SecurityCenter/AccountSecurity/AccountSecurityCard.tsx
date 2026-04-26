@@ -5,6 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -54,8 +57,7 @@ const AccountSecurityCard = ({
                     <span className="ratio-square rounded flex security-card-icon-container relative">
                         <Icon name={icon} className="m-auto color-info" alt={iconAltText} />
                         {critical && (
-                            <Icon
-                                name="exclamation-circle-filled"
+                            <IcExclamationCircleFilled
                                 className={clsx(
                                     'absolute top-0 right-0 security-card-icon-bubble',
                                     isDanger ? 'color-danger' : 'color-warning'
@@ -68,7 +70,7 @@ const AccountSecurityCard = ({
                         {description && <span className="block m-0 text-sm color-weak">{description}</span>}
                     </span>
                     <span className="flex-0 flex self-stretch color-weak">
-                        <Icon name="chevron-right" className="my-auto group-hover:opacity-100" />
+                        <IcChevronRight className="my-auto group-hover:opacity-100" />
                     </span>
                 </span>
             </SettingsLink>
@@ -79,7 +81,7 @@ const AccountSecurityCard = ({
                     title={c('Action').t`Dismiss`}
                     onClick={onDismiss}
                 >
-                    <Icon name="cross" className="my-auto" alt={c('Action').t`Dismiss`} />
+                    <IcCross className="my-auto" alt={c('Action').t`Dismiss`} />
                 </Button>
             )}
         </div>

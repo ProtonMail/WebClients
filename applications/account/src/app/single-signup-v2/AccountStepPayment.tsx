@@ -23,23 +23,21 @@ import {
     PAYMENT_METHOD_TYPES,
     type Plan,
     SubscriptionMode,
-    getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,
-    getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { PayButton } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -271,16 +269,7 @@ const AccountStepPayment = ({
                 billingAddress.VatId ?? undefined
             );
         },
-        initialBillingAddress: paymentFacade.paymentStatus
-            ? {
-                  ...getBillingAddressFromPaymentStatus(paymentFacade.paymentStatus),
-                  Company: signupParameters.orgName,
-                  FirstName: signupParameters.firstName,
-                  LastName: signupParameters.lastName,
-                  Address: signupParameters.streetAddress,
-                  City: signupParameters.city,
-              }
-            : undefined,
+        initialBillingAddress: model.initialBillingAddress,
         initialVatNumber: signupParameters.vatNumber,
         selectedPlanName: selectedPlan?.Name,
         onVatChange: onVatNumberChange,
@@ -321,9 +310,11 @@ const AccountStepPayment = ({
             } catch (error) {
                 measurePayError(telemetryType);
 
-                const sentryError = getSentryError(error);
-                if (sentryError) {
-                    const context = {
+                tracePaymentError(error, {
+                    tags: {
+                        component: 'single-signup-v2-AccountStepPayment',
+                    },
+                    extra: {
                         currency: model.subscriptionData.currency,
                         amount: model.subscriptionData.checkResult.AmountDue,
                         processorType: processor.meta.type,
@@ -333,13 +324,8 @@ const AccountStepPayment = ({
                         plan: selectedPlan,
                         planName: selectedPlan.Name,
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage('Payments: Failed to handle single-signup-v2', {
-                        level: 'error',
-                        extra: { error: sentryError, context },
-                    });
-                }
+                    },
+                });
             }
         }
 
@@ -518,6 +504,7 @@ const AccountStepPayment = ({
                                 disabled={model.subscriptionData.checkResult.optimistic}
                                 product={app}
                                 telemetryContext={telemetryContext}
+                                isAuthenticated={isAuthenticated}
                                 {...buttonProps}
                             >
                                 {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}

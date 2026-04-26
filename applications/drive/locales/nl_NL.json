@@ -88,10 +88,6 @@
       "Add photos": [
         "Foto's toevoegen"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto)",
-        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto's)"
-      ],
       "Add to album": [
         "Voeg toe aan album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Neem contact op"
       ],
-      "Get link": [
-        "Link krijgen"
-      ],
       "Get mobile and desktop apps": [
         "Download mobiele en desktop apps"
       ],
@@ -539,8 +532,8 @@
       "Go back": [
         "Ga terug"
       ],
-      "Go back to album “${ albumName }“": [
-        "Ga terug naar album “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Ga terug naar album “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
@@ -644,9 +637,6 @@
       "Load image": [
         "Afbeelding laden"
       ],
-      "Loading link": [
-        "Koppeling laden"
-      ],
       "Make a copy": [
         "Een kopie maken"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Labels beheeren"
-      ],
-      "Manage link": [
-        "Beheer link"
       ],
       "Manage share": [
         "Delen beheren"
@@ -802,6 +789,9 @@
       ],
       "Quit": [
         "Afsluiten"
+      ],
+      "Re-index": [
+        "Opnieuw indexeren"
       ],
       "Re-sign": [
         "Opnieuw ondertekenen"
@@ -3312,6 +3302,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
@@ -3499,6 +3493,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Kon details van de handtekening worden geladen, probeer het later opnieuw"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
       ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
@@ -5543,6 +5540,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
+      "Enter code": [
+        "Voer code in"
+      ],
       "Enter password": [
         "Vul login wachtwoord in"
       ],
@@ -5688,6 +5688,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
       ],
@@ -5757,6 +5760,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Invitation confirmed": [
+        "Uitnodiging bevestigd"
       ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
@@ -5900,6 +5906,18 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
       ],
+      "Move ${ dragCount } item": [
+        "Verplaats ${ dragCount } item",
+        "Verplaats ${ dragCount } items"
+      ],
+      "Move ${ fileCount } file": [
+        "Verplaats ${ fileCount } bestand",
+        "Verplaats ${ fileCount } bestanden"
+      ],
+      "Move ${ folderCount } folder": [
+        "Verplaats ${ folderCount } map",
+        "Verplaats ${ folderCount } mappen"
+      ],
       "Moving files": [
         "Bestanden verplaatsen"
       ],
@@ -5935,6 +5953,9 @@
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
+      ],
+      "No populator states found.": [
+        "Geen populatorstaten gevonden."
       ],
       "No results found": [
         "Geen resultaten gevonden"
@@ -6276,9 +6297,6 @@
       "Shared by ${ sharedBy }": [
         "Gedeeld door ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Gedeeld door u"
-      ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
       ],
@@ -6605,9 +6623,6 @@
       "Unsupported file type for Photos": [
         "Bestandstype wordt niet ondersteund voor Foto's"
       ],
-      "Untitled": [
-        "Naamloos"
-      ],
       "Update required": [
         "Update vereist"
       ],
@@ -6682,9 +6697,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Hoera! U hebt zojuist uw opslagruimte verhoogd tot 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "We ondervinden technische problemen. Alle albumgerelateerde acties zijn tijdelijk uitgeschakeld."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "We konden niet verifiëren dat ${ nameAuthor } ${ node.name } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
@@ -8545,6 +8557,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -8598,9 +8617,6 @@
       ],
       "Data retention policies": [
         "Dataretentiebeleid"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -9279,38 +9295,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" gekopieerd"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" verwijderd"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" permanent verwijderd uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kon niet verwijderd worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kon niet permanent verwijderd worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kon niet verplaatst worden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kon niet hersteld worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" hersteld uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" succesvol verplaatst"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" succesvol aangemaakt"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" verwijderd"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" permanent verwijderd"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanent verwijderd uit de prullenbak"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kon niet aangemaakt worden"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kon niet verwijderd worden"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kon niet verplaatst worden"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kon niet verplaatst worden naar prullenbak"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kon niet hersteld worden uit prullenbak"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kon niet worden opgeslagen"
@@ -9318,17 +9346,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" verplaatst naar de prullenbak"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" uit de prullenbak hersteld"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" succesvol aangemaakt"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" succesvol gekopieerd"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" succesvol verplaatst"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
@@ -9343,6 +9362,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } item kon niet worden gekopieerd",
         "${ errors.length } items konden niet gekopieerd worden"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item kon niet worden verwijderd",
+        "${ errors.length } items konden niet verwijderd worden"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } item kon niet in de prullenbak worden geplaatst",
@@ -9368,6 +9391,10 @@
         "${ numberOfItems } gekopieerd item verplaatst naar de prullenbak",
         "${ numberOfItems } gekopieerde items verplaatst naar de prullenbak"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item gekopieerd",
+        "${ numberOfItems } items gekopieerd"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
         "${ numberOfItems } items verwijderd"
@@ -9379,10 +9406,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
         "${ numberOfItems } items permanent verwijderd uit de prullenbak"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } item kon niet worden verwijderd",
-        "${ numberOfItems } items konden niet verwijderd worden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",
@@ -9400,6 +9423,10 @@
         "${ numberOfItems } item kon niet hersteld worden uit prullenbak",
         "${ numberOfItems } items konden niet hersteld worden uit prullenbak"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item verplaatst",
+        "${ numberOfItems } items verplaatst"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item verplaatst naar de prullenbak",
         "${ numberOfItems } items verplaatst naar de prullenbak"
@@ -9407,10 +9434,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item hersteld uit prullenbak",
         "${ numberOfItems } items hersteld uit prullenbak"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } item succesvol gekopieerd",
-        "${ numberOfItems } items succesvol gekopieerd"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item succesvol verplaatst",
@@ -9427,9 +9450,6 @@
       ],
       "Access updated": [
         "Toegang bijgewerkt."
-      ],
-      "Album failed to be renamed": [
-        "Album kon niet worden hernoemd"
       ],
       "Album renamed successfully": [
         "Album is hernoemd"
@@ -9452,8 +9472,8 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopie van \"${ name }\" verplaatst naar de prullenbak"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
       ],
       "Device failed to be removed": [
         "Apparaat kon niet worden verwijderd"
@@ -9481,9 +9501,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Fout bij het laden van uitnodigingsdetails"
       ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
@@ -10153,6 +10170,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -10545,11 +10565,6 @@
         "Naam"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
@@ -10929,9 +10944,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Accountherstel niet beschikbaar voor verouderde adressleutels"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ]
     },
     "session_recovery:available:info": {
@@ -11962,9 +11974,6 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
-      "Billing information updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -12680,6 +12689,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Indexeer populators"
       ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"

@@ -132,9 +132,15 @@ export enum FeatureCode {
     // Lumo
     LumoSmoothedRendering = 'LumoSmoothedRendering',
 
+    // Admin Roles
+    AdminRolesOnboardingModal = 'AdminRolesOnboardingModal',
+
     // NPS
     NPSFeedbackDesktopCalendar = 'NPSFeedbackDesktopCalendar',
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
     NPSFeedbackWebCalendar = 'NPSFeedbackWebCalendar',
     NPSFeedbackWebMail = 'NPSFeedbackWebMail',
+
+    // Feedback First Cancellation Flow
+    CanUseFeedbackFirstCancellationOffer = 'CanUseFeedbackFirstCancellationOffer',
 }

@@ -2923,6 +2923,9 @@
       "Failed to copy photo to album": [
         "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
       ],
@@ -3262,7 +3265,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
@@ -6738,8 +6741,8 @@
       "Data retention policies": [
         "Πολιτικές διατήρησης δεδομένων"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
@@ -8432,9 +8435,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Η ανάκτηση λογαριασμού δεν είναι διαθέσιμη για κλειδιά διευθύνσεων παλαιού τύπου"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ]
     },
     "session_recovery:available:info": {

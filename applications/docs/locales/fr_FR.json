@@ -2101,6 +2101,9 @@
       "North Korea": [
         "Corée du Nord"
       ],
+      "North Macedonia": [
+        "Macédoine du Nord"
+      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -2923,6 +2926,9 @@
       "Failed to copy photo to album": [
         "La copie de la photo dans l’album n'a pas abouti."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
       ],
@@ -3638,7 +3644,15 @@
         "Vitesses extrêmement élevées"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -4471,6 +4485,9 @@
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -4503,6 +4520,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -6720,6 +6740,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planification de rendez-vous avec ${ n } page de réservation",
+        "Planification de rendez-vous avec ${ n } pages de réservation"
+      ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
@@ -6774,8 +6801,8 @@
       "Data retention policies": [
         "Politiques de conservation des données"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Serveurs dédiés optimisés pour le streaming"
+      "Dedicated servers optimized for speed": [
+        "Serveurs dédiés optimisés pour la vitesse"
       ],
       "Desktop app": [
         "Application de bureau"
@@ -8564,9 +8591,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La récupération des comptes n'est pas disponible pour les anciennes clés d'adresse."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Générez des clés avant d'essayer de changer votre mot de passe."
       ]
     },
     "session_recovery:available:info": {
@@ -8604,6 +8628,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {

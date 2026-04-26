@@ -1394,6 +1394,9 @@
         "${ users } यूज़र",
         "${ users } यूज़र"
       ],
+      "Total": [
+        "कुल"
+      ],
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
         "${ n } महीनों के लिए कुल"
@@ -3000,9 +3003,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
         "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
-      ],
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ],
       "Please select a country": [
         "एक देश चुनें"
@@ -6028,6 +6028,9 @@
       "Vault updated": [
         "तिजोरी अपडेट हुई"
       ],
+      "Verification code sent.": [
+        "सत्यापन कोड भेजा गया।"
+      ],
       "Verification may take a few minutes.": [
         "सत्यापन में कुछ मिनट लग सकते है।"
       ],
@@ -6796,6 +6799,9 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
       ],
@@ -7088,6 +7094,9 @@
       "State": [
         "राज्य"
       ],
+      "Storage": [
+        "स्टोरेज"
+      ],
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
@@ -7117,6 +7126,9 @@
       ],
       "Type": [
         "प्रकार"
+      ],
+      "Unlimited": [
+        "असीमित"
       ],
       "Upload 1 or more encryption keys": [
         "1 या अधिक एन्क्रिप्शन कुंजियाँ अपलोड करें"
@@ -7300,9 +7312,6 @@
       ],
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
-      ],
-      "Common sign in issues": [
-        "मुद्दों में समानन्या संकेत"
       ],
       "Common sign up issues": [
         "सामान्य साइन अप मुद्दे"
@@ -9185,11 +9194,6 @@
         "आपका ऑनलाइन स्वतंत्रता का द्वार"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "संपर्क करें"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } महीना",
@@ -9267,9 +9271,6 @@
       "Verify now": [
         "अभी सत्यापित करें"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ये रिक्वरी ईमेल पता अभी सत्यापित करें: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "पुनर्प्राप्ति ईमेल सत्यापित करें?"
       ],
@@ -9309,9 +9310,6 @@
       ],
       "Verify recovery phone?": [
         "रिक्वरी फोन स्तयापित करें?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ये रिकवरी फोन नंबर अभी सत्यापित करें: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
@@ -9391,9 +9389,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "यदि आप अपना लॉगिन विवरण खो देते हैं और अपने खाते को रीसेट करने की आवश्यकता पड़ती है, तो **यह अनिवार्य है** कि आपके पास **खाते की रिकवरी और डाटा रिकवरी विधि** दोनों उपलब्ध हों, अन्यथा आप अपने किसी भी ईमेल, संपर्क, फ़ाइल या पासवर्ड तक पहुँच नहीं पाएंगे।"
-      ],
-      "Invalid code": [
-        "अमान्य कोड"
       ],
       "Safeguard account now": [
         "अब अपना खाता सुरक्षित करें"
@@ -9632,11 +9627,6 @@
       ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ]
     },
     "session_recovery:available:info": {

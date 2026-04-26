@@ -323,6 +323,9 @@
       "Contract composer": [
         "Restrângere editor de mesaje"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -1188,7 +1191,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -1504,11 +1507,6 @@
       ],
       "Trust": [
         "Aprobare"
-      ],
-      "Trust key": [
-        "Aprobare cheie",
-        "Aprobare cheie",
-        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4802,6 +4800,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Eșuare criptare atașament. Reîncercați."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
@@ -7212,6 +7213,9 @@
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
+      "Copy to clipboard": [
+        "Copiere în memorie"
+      ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
       ],
@@ -7685,7 +7689,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -11204,6 +11210,14 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
+      ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -11258,8 +11272,8 @@
       "Data retention policies": [
         "Politici de păstrare a datelor"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servere dedicate optimizate pentru conținut transmis în flux"
+      "Dedicated servers optimized for speed": [
+        "Servere dedicate optimizate pentru viteză"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -12563,6 +12577,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -13019,11 +13036,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nume"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
       ]
     },
     "Plan description": {
@@ -13588,9 +13600,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generați cheile înainte de a încerca să vă schimbați parola."
       ]
     },
     "session_recovery:available:info": {
@@ -14351,6 +14360,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -14588,6 +14603,11 @@
       "Version history": [
         "Istoric versiuni"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
+      ],
       "Watch the interview": [
         "Priviți interviul"
       ],
@@ -14823,9 +14843,6 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
-      ],
-      "Billing information updated": [
-        "Informațiile de facturare s-au actualizat."
       ],
       "Canceling import": [
         "Se anulează importarea"

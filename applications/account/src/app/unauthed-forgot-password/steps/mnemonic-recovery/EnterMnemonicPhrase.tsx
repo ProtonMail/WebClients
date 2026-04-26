@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,13 +18,14 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { defaultPersistentKey } from '../../../public/helper';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { authMnemonicAndGetKeys } from '../../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
 export const EnterMnemonicPhrase = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { username } = snapshot.context;
+    const { username, resetResponse } = snapshot.context;
 
     const [mnemonic, setMnemonic] = useState('');
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
@@ -35,6 +36,13 @@ export const EnterMnemonicPhrase = () => {
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const errorHandler = useErrorHandler();
     const hasInvalidMnemonic = mnemonic && mnemonicValidation.filter(isTruthy);
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'mnemonicRecoveryEnterPhrase',
+        });
+    }, []);
 
     const handleSubmit = async () => {
         try {
@@ -55,17 +63,26 @@ export const EnterMnemonicPhrase = () => {
     return (
         <>
             <Header
-                title={c('Title').t`Verify it’s you`}
+                title={resetResponse ? c('Title').t`Reset password?` : c('Title').t`Verify it’s you`}
                 subTitle={<UserNameWithIcon username={username} />}
                 onBack={() => send({ type: 'decision.back' })}
             />
             <Content>
-                <p>
-                    {c('Info')
-                        .t`To help keep your account safe, we want to make sure it’s really you trying to sign in.`}
-                </p>
+                {resetResponse ? (
+                    <p>
+                        {c('Info')
+                            .t`To regain access to your account and data, enter the 12-word recovery phrase associated with your account.`}
+                    </p>
+                ) : (
+                    <>
+                        <p>
+                            {c('Info')
+                                .t`To help keep your account safe, we want to make sure it’s really you trying to sign in.`}
+                        </p>
 
-                <p>{c('Info').t`Enter the 12-word recovery phrase associated with your account.`}</p>
+                        <p>{c('Info').t`Enter the 12-word recovery phrase associated with your account.`}</p>
+                    </>
+                )}
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();

@@ -1444,12 +1444,6 @@
       "Failed to lock meeting": [
         "Nie udało się zablokować spotkania"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Nie udało się poprosić o uprawnienia do kamery. Sprawdź uprawnienia systemowe i spróbuj ponownie. Może być konieczne ręczne włączenie uprawnień, a następnie odświeżenie strony."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Nie udało się poprosić o uprawnienia do mikrofonu. Sprawdź uprawnienia systemowe i spróbuj ponownie. Może być konieczne ręczne włączenie uprawnień, a następnie odświeżenie strony."
-      ],
       "Failed to rotate personal meeting link": [
         "Nie udało się zmienić osobistego linku do spotkania"
       ],
@@ -1753,9 +1747,6 @@
       "Decrypting meetings...": [
         "Odszyfrowywanie spotkań…"
       ],
-      "Default": [
-        "Domyślny"
-      ],
       "Default - ${ systemDefault.label }": [
         "Domyślny – ${ systemDefault.label }"
       ],
@@ -1773,9 +1764,6 @@
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
-      ],
-      "End Meeting for everyone?": [
-        "Zakończyć spotkanie dla wszystkich?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "Szyfrowanie end-to-end jest aktywne dla audio i wideo."
@@ -1839,9 +1827,6 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
-      ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Wyjście zatrzyma udostępnianie ekranu. Czy chcesz kontynuować?"
       ],
       "Left ${ roomNameLabel }": [
         "Opuszczono ${ roomNameLabel }"
@@ -2450,12 +2435,6 @@
       ],
       "The presentation was blurry": [
         "Prezentacja była niewyraźna"
-      ],
-      "Video was blurry": [
-        "Obraz wideo był niewyraźny"
-      ],
-      "Video was breaking up": [
-        "Obraz wideo się zacinał"
       ]
     },
     "Placeholder": {

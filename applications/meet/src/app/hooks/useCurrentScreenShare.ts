@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
 
-import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
+import { useRoomContext, useTracks } from '@livekit/components-react';
 import type { RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { PermissionsModalType, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
+import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { screenShareQuality } from '../qualityConstants';
@@ -22,16 +25,14 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
+    const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
-    const { localParticipant } = useLocalParticipant();
 
     const notifications = useNotifications();
 
     const screenShareTrack = useTracks([Track.Source.ScreenShare])[0];
 
     const screenShareParticipant = screenShareTrack?.participant;
-
-    const isLocalScreenShare = screenShareParticipant?.identity === localParticipant.identity;
 
     const room = useRoomContext();
 
@@ -40,7 +41,12 @@ export function useCurrentScreenShare({
         void room.localParticipant.setScreenShareEnabled(false);
     });
 
+    useEffect(() => {
+        dispatch(setParticipantScreenShare(screenShareTrack?.participant?.identity));
+    }, [screenShareTrack?.participant?.identity]);
+
     const startScreenShare = useStableCallback(async () => {
+        const start = performance.now();
         try {
             const isOnMobile = isMobile();
 
@@ -80,6 +86,9 @@ export function useCurrentScreenShare({
                 startPiP();
             }
         } catch (err: any) {
+            const end = performance.now();
+            const arePermissionsBlocked = end - start < 300;
+
             stopPiP();
 
             if (
@@ -88,6 +97,11 @@ export function useCurrentScreenShare({
                     'The request is not allowed by the user agent or the platform in the current context.' ||
                 (err.message === 'Could not start video source' && isElectronApp)
             ) {
+                if (arePermissionsBlocked && !isChrome() && !isElectronApp) {
+                    dispatch(
+                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL })
+                    );
+                }
                 return;
             }
 
@@ -150,8 +164,6 @@ export function useCurrentScreenShare({
     }, []);
 
     return {
-        isLocalScreenShare,
-        isScreenShare: !!screenShareTrack,
         screenShareParticipant: screenShareParticipant,
         screenShareTrack,
         stopScreenShare,

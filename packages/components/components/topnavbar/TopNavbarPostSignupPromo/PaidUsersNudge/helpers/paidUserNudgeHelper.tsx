@@ -1,7 +1,8 @@
 import { addDays, differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
 import startOfDay from 'date-fns/startOfDay';
 
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 import { HIDE_OFFER, OfferDuration, ReminderDates, ReminderMaxHours } from '../helpers/interface';
 
@@ -63,6 +64,6 @@ export const getWindowEndDate = (subscriptionAge: number) => {
     return startOfDay(addDays(Date.now(), daysRemainingInWindow));
 };
 
-export const getSubscriptionAge = (subscription?: Subscription) => {
-    return differenceInDays(Date.now(), fromUnixTime(subscription?.PeriodStart ?? 0));
+export const getSubscriptionAge = (subscription: MaybeFreeSubscription) => {
+    return differenceInDays(Date.now(), fromUnixTime(isPaidSubscription(subscription) ? subscription.PeriodStart : 0));
 };

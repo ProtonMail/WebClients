@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
@@ -23,6 +22,7 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentMethodFlow,
     type PaymentMethodType,
+    type PaymentProcessorHook,
     type PlainPaymentMethodType,
     type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
@@ -99,6 +99,8 @@ export interface Props {
     subscription?: Subscription | FreeSubscription;
     currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
+    selectedProcessor: PaymentProcessorHook | undefined;
+    processingPayment: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -136,6 +138,8 @@ export const PaymentsNoApi = ({
     startTrial,
     currencyOverride,
     creditCardDetailsRef,
+    selectedProcessor,
+    processingPayment,
 }: Props) => {
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
@@ -173,8 +177,8 @@ export const PaymentsNoApi = ({
             </Price>
         );
         return (
-            <Alert className="mb-4" type="error">{c('Error')
-                .jt`The minimum amount of credit that can be added is ${price}`}</Alert>
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
+                .jt`The minimum amount of credit that can be added is ${price}`}</Banner>
         );
     }
 
@@ -185,7 +189,10 @@ export const PaymentsNoApi = ({
                 {minDonationAmount}
             </Price>
         );
-        return <Alert className="mb-4" type="error">{c('Error').jt`The minimum donation amount is ${price}`}</Alert>;
+        return (
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
+                .jt`The minimum donation amount is ${price}`}</Banner>
+        );
     }
 
     if (loading) {
@@ -269,6 +276,7 @@ export const PaymentsNoApi = ({
                             lastUsedMethod={lastUsedMethod}
                             narrow={isSingleSignup}
                             showCardIcons={showCardIcons}
+                            disabled={selectedProcessor?.userInitiatedProcessing || processingPayment}
                         />
                     </div>
                 )}

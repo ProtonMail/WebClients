@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -18,27 +19,22 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { MemberRole, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { ShareButton } from '../../../sections/commonButtons/ShareButton';
-import type {
-    OnFileSkippedSuccessCallbackData,
-    OnFileUploadSuccessCallbackData,
-    PhotoGridItem,
-    PhotoLink,
-} from '../../../store';
+import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData, PhotoGridItem } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
-import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { useAlbumsStore } from '../../useAlbums.store';
+import { type PhotoItem, usePhotosStore } from '../../usePhotos.store';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
 import { PhotosAddToAlbumButton } from './PhotosAddToAlbumButton';
 import { PhotosAlbumShareButton } from './PhotosAlbumShareButton';
@@ -211,12 +207,10 @@ interface ToolbarLeftActionsAlbumsGalleryProps {
 }
 
 export const ToolbarLeftActionsAlbumsGallery = ({
-    isLoading,
     onAlbumsClick,
     //name, // not sure if we should keep it?
 }: ToolbarLeftActionsAlbumsGalleryProps) => {
     const getButtonStyles = () => ({
-        loading: isLoading,
         selected: false,
     });
 
@@ -271,9 +265,9 @@ interface ToolbarRightActionsGalleryProps {
 }
 
 interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
-    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
+    requestDownload: (photosUids: string[]) => Promise<void>;
     data: PhotoGridItem[];
-    album: DecryptedAlbum;
+    nodeUid: string;
     onDeleteAlbum: () => void;
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
@@ -305,7 +299,7 @@ const ToolbarRightActionsAlbumGallery = ({
     onFileUpload,
     onFileSkipped,
     requestDownload,
-    album,
+    nodeUid,
     data,
     onDeleteAlbum,
     onLeaveAlbum,
@@ -313,29 +307,20 @@ const ToolbarRightActionsAlbumGallery = ({
     onAddAlbumPhotos,
     isAlbumPhotosLoading,
 }: ToolbarRightActionsAlbumGalleryProps) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { sharingModal, showSharingModal } = useSharingModal();
     const { viewportWidth } = useActiveBreakpoint();
     const showIconOnly = !viewportWidth['>=large'];
-    const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
-    const showAddAlbumsButton =
-        (album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor) && !driveAlbumsDisabled;
+    const album = useAlbumsStore(useShallow((state) => state.albums.get(nodeUid)));
+    const showUploadButton = album?.directRole !== MemberRole.Viewer && !uploadDisabled;
+    const showAddAlbumsButton = album?.directRole !== MemberRole.Viewer;
     const [isDownloading, withDownloading] = useLoading();
     const [pendingDownload, setPendingDownload] = useState(false);
     const wasLoadingRef = useRef(isAlbumPhotosLoading);
 
-    const extractLinkIdsFromData = (data: PhotoGridItem[]): { linkId: string; shareId: string }[] => {
+    const extractNodeUidsFromData = (data: PhotoGridItem[]): string[] => {
         return data
-            .map((photoItem) => {
-                if (!isPhotoGroup(photoItem)) {
-                    return { linkId: photoItem.linkId, shareId: photoItem.rootShareId };
-                }
-                return {
-                    linkId: '',
-                    shareId: '',
-                };
-            })
-            .filter((photoItem) => photoItem.linkId && photoItem.shareId);
+            .filter((item): item is Exclude<PhotoGridItem, string> => !isPhotoGroup(item))
+            .map((item) => generateNodeUid(item.volumeId, item.linkId));
     };
 
     // Track when pagination finishes and trigger pending download with latest data
@@ -343,7 +328,7 @@ const ToolbarRightActionsAlbumGallery = ({
     useEffect(() => {
         if (wasLoadingRef.current && !isAlbumPhotosLoading && pendingDownload) {
             setPendingDownload(false);
-            const linkIds = extractLinkIdsFromData(data);
+            const linkIds = extractNodeUidsFromData(data);
             void withDownloading(requestDownload(linkIds)).catch(noop);
         }
         wasLoadingRef.current = isAlbumPhotosLoading;
@@ -354,7 +339,7 @@ const ToolbarRightActionsAlbumGallery = ({
         if (isAlbumPhotosLoading) {
             setPendingDownload(true);
         } else {
-            const linkIds = extractLinkIdsFromData(data);
+            const linkIds = extractNodeUidsFromData(data);
             void withDownloading(requestDownload(linkIds)).catch(noop);
         }
     };
@@ -394,18 +379,15 @@ const ToolbarRightActionsAlbumGallery = ({
                 </ToolbarButton>
             )}
 
-            {album.permissions.isOwner && (
+            {album?.isOwner && (
                 <PhotosAlbumShareButton
                     showIconOnly={showIconOnly}
                     onClick={() => {
-                        // TODO: avoid the data loop and just execute callback
-                        showSharingModal({
-                            nodeUid: generateNodeUid(album.volumeId, album.linkId),
-                            drive: getDriveForPhotos(),
-                        });
+                        showSharingModal({ nodeUid, drive: getDriveForPhotos() });
                     }}
                 />
             )}
+            {/* TODO: DRVWEB-4974 - show share button only for isOwner once permissions available in AlbumSummary */}
             <Vr className="h-full" />
             <AlbumGalleryDropdownButton
                 onDelete={onDeleteAlbum}
@@ -419,8 +401,8 @@ const ToolbarRightActionsAlbumGallery = ({
                 linkId={linkId}
                 showUploadButton={showIconOnly && !showAddAlbumsButton && showUploadButton}
                 showAddAlbumPhotosButton={showIconOnly && showAddAlbumsButton}
-                showDeleteAlbumButton={album.permissions.isOwner && !driveAlbumsDisabled}
-                showLeaveAlbumButton={!album.permissions.isOwner && !driveAlbumsDisabled}
+                showDeleteAlbumButton={album?.directRole !== MemberRole.Viewer}
+                showLeaveAlbumButton={!album?.isOwner}
             />
             {sharingModal}
         </>
@@ -457,10 +439,10 @@ interface PhotosWithAlbumToolbarProps {
     shareId: string;
     linkId: string; // the upload folder link ID (either root or inside a share album)
     rootLinkId?: string;
-    selectedItems: PhotoLink[];
+    selectedItems: PhotoItem[];
     data: PhotoGridItem[];
     onPreview?: () => void;
-    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
+    requestDownload: (photosUids: string[]) => Promise<void>;
     uploadDisabled: boolean;
     tabSelection: AlbumsPageTypes;
     createAlbumModal: ModalStateReturnObj;
@@ -471,7 +453,7 @@ interface PhotosWithAlbumToolbarProps {
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
-    album?: DecryptedAlbum;
+    nodeUid?: string;
     onDeleteAlbum?: () => void;
     onLeaveAlbum?: () => void;
     onShowDetails?: () => void;
@@ -498,7 +480,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onFileUpload,
     onFileSkipped,
     onSelectCover,
-    album,
+    nodeUid,
     onDeleteAlbum,
     onLeaveAlbum,
     onShowDetails,
@@ -506,39 +488,37 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onSavePhotos,
     isAlbumPhotosLoading,
 }) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { viewportWidth } = useActiveBreakpoint();
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
     const showMoreButtonDropdown = viewportWidth['<=medium'];
     const showIconOnly =
         !viewportWidth['>=large'] || (!hasMultipleSelected && viewportWidth['>=large'] && viewportWidth.large);
-    // Only show set cover button if photo selected is not already the cover
+    // Only show set cover button if photo selected is not already the onSelectCover
+    const album = useAlbumsStore(useShallow((state) => nodeUid && state.albums.get(nodeUid)));
     const canSelectCover = Boolean(
-        !hasMultipleSelected &&
-        onSelectCover &&
-        album &&
-        selectedItems.length &&
-        album.cover?.linkId !== selectedItems[0].linkId &&
-        album.permissions.isOwner &&
-        !driveAlbumsDisabled
+        !hasMultipleSelected && onSelectCover && album && selectedItems.length && album.isOwner
     );
     const canSavePhotos = Boolean(
         album &&
         hasSelection &&
         rootLinkId &&
         onSavePhotos &&
-        selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
+        selectedItems.every(({ nodeUid }) => {
+            const photo = usePhotosStore.getState().getPhotoItem(nodeUid);
+            if (!photo?.additionalInfo?.parentNodeUid) {
+                return true;
+            }
+            return splitNodeUid(photo.additionalInfo.parentNodeUid).nodeId !== rootLinkId;
+        })
     );
-    const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
+    // TODO: DRVWEB-4974 - use album.permissions.isEditor/isOwner once available in AlbumSummary
+    const canRemoveAlbum = Boolean(album && album.directRole !== MemberRole.Viewer && removeAlbumPhotos);
     const canShare = Boolean(
-        (openSharePhotoModal && !hasMultipleSelected && !album) ||
-        (!hasMultipleSelected && album && album.permissions.isOwner)
+        (openSharePhotoModal && !hasMultipleSelected && !album) || (!hasMultipleSelected && album)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
-    const canAddPhotosFromGallery = Boolean(
-        openAddPhotosToAlbumModal && tabSelection === AlbumsPageTypes.GALLERY && !driveAlbumsDisabled
-    );
+    const canAddPhotosFromGallery = Boolean(openAddPhotosToAlbumModal && tabSelection === AlbumsPageTypes.GALLERY);
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
@@ -551,13 +531,13 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         linkId={linkId}
                     />
                 )}
-                {tabSelection === AlbumsPageTypes.ALBUMS && !driveAlbumsDisabled && (
+                {tabSelection === AlbumsPageTypes.ALBUMS && (
                     <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />
                 )}
 
                 {tabSelection === AlbumsPageTypes.ALBUMSGALLERY &&
                     !hasSelection &&
-                    album &&
+                    nodeUid &&
                     onDeleteAlbum &&
                     onLeaveAlbum &&
                     onShowDetails &&
@@ -571,7 +551,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             data={data}
                             onFileUpload={onFileUpload}
                             onFileSkipped={onFileSkipped}
-                            album={album}
+                            nodeUid={nodeUid}
                             onDeleteAlbum={onDeleteAlbum}
                             onLeaveAlbum={onLeaveAlbum}
                             onShowDetails={onShowDetails}
@@ -586,7 +566,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         <PhotosDownloadButton
                             showIconOnly={showIconOnly}
                             requestDownload={requestDownload}
-                            selectedLinks={selectedItems}
+                            selectedPhotos={selectedItems}
                         />
                         {canSavePhotos && onSavePhotos && (
                             <PhotosSavePhotoButton showIconOnly={showIconOnly} onSavePhotos={onSavePhotos} />
@@ -610,7 +590,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {canRemoveAlbum && removeAlbumPhotos && (
                             <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos} />
                         )}
-                        {!album && <PhotosTrashButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />}
+                        {!album && <PhotosTrashButton showIconOnly={showIconOnly} selectedPhotos={selectedItems} />}
                     </>
                 )}
                 {/* Selection Bar that appears when an item is selected (in the photo stream gallery or in album gallery) on small screen */}
@@ -619,7 +599,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         <PhotosDownloadButton
                             showIconOnly={showIconOnly}
                             requestDownload={requestDownload}
-                            selectedLinks={selectedItems}
+                            selectedPhotos={selectedItems}
                         />
                         {canAddPhotosFromGallery && openAddPhotosToAlbumModal && (
                             <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
@@ -643,7 +623,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosShareLinkButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    selectedLink={selectedItems[0]}
+                                    selectedPhoto={selectedItems[0]}
                                     onClick={openSharePhotoModal}
                                 />
                             )}
@@ -657,7 +637,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosDetailsButton
                                 dropDownMenuButton={true}
                                 showIconOnly={false}
-                                selectedLinks={selectedItems}
+                                selectedPhotos={selectedItems}
                             />
                             {canRemoveAlbum && removeAlbumPhotos && (
                                 <PhotosRemoveAlbumPhotosButton
@@ -670,7 +650,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosTrashButton
                                     dropDownMenuButton={true}
                                     showIconOnly={false}
-                                    selectedLinks={selectedItems}
+                                    selectedPhotos={selectedItems}
                                 />
                             )}
                         </SelectionDropdownButton>

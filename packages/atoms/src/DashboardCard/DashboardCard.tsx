@@ -19,12 +19,31 @@ export const DashboardCardContent = ({
     children,
     paddingClass = 'p-4 md:p-6',
     className,
+    style,
 }: {
     children: ReactNode;
     paddingClass?: string;
     className?: string;
+    style?: React.CSSProperties;
 }) => {
-    return <div className={clsx('DashboardCard-content', paddingClass, className)}>{children}</div>;
+    return (
+        <div className={clsx('DashboardCard-content relative', paddingClass, className)} style={style}>
+            {children}
+        </div>
+    );
+};
+
+export const DashboardCardDivider = () => {
+    return (
+        <>
+            <div className="DashboardCard-divider-before block pt-4 md:pt-6" />
+            <hr
+                className="DashboardCard-divider-line absolute w-full left-0 right-0 h-px"
+                style={{ backgroundColor: 'var(--border-weak)' }}
+            />
+            <div className="DashboardCard-divider-after block pb-4 md:pb-6" />
+        </>
+    );
 };
 
 export const DashboardCard = <E extends ElementType = typeof defaultElement>({

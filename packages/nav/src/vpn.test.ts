@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { defineNavigation } from './api';
+import { defineNavigation } from './api/defineNavigation';
 import type { NavContext } from './types/models';
 import type { NavDefinition, NavItemResolver } from './types/nav';
 import type { TestUserModel } from './types/test.models';
@@ -20,14 +20,16 @@ const orgAdmin = makeContext({
     subscription: ['vpn-professional'],
 });
 
-const adminOrgResolver: NavItemResolver<NavContext> = (_item, ctx, { keep, remove }) =>
-    (ctx.user as unknown as TestUserModel).roles?.includes('admin') ? keep() : remove();
+const adminOrgResolver: NavItemResolver<NavContext> = ({ context, keep, remove }) =>
+    (context.user as unknown as TestUserModel).roles?.includes('admin') ? keep() : remove();
 
-const vpnProResolver: NavItemResolver<NavContext> = (_item, ctx, { keep, remove }) =>
-    (ctx.user as unknown as TestUserModel).subscription?.includes('vpn-professional') ? keep() : remove();
+const vpnProResolver: NavItemResolver<NavContext> = ({ context, keep, remove }) =>
+    (context.user as unknown as TestUserModel).subscription?.includes('vpn-professional') ? keep() : remove();
 
-const mailProResolver: NavItemResolver<NavContext> = (_item, ctx, { keep, remove }) =>
-    (ctx.user as unknown as TestUserModel).subscription?.includes('mail-and-calendar-professional') ? keep() : remove();
+const mailProResolver: NavItemResolver<NavContext> = ({ context, keep, remove }) =>
+    (context.user as unknown as TestUserModel).subscription?.includes('mail-and-calendar-professional')
+        ? keep()
+        : remove();
 
 const orgDefinition: NavDefinition = {
     items: [

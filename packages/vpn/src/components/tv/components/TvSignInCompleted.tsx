@@ -16,7 +16,7 @@ export const TvSignInCompleted = () => {
                     <source media="(min-width: 64em)" srcSet={desktopSuccess} />
                     <img src={mobileSuccess} alt="Success device for connection stablished" role="presentation" />
                 </picture>
-                <h1>{c('Info').t`Sign-in complete`}</h1>
+                <h1 className="text-center">{c('Info').t`Sign-in complete`}</h1>
                 <span className="color-weak">{c('Info').t`You're now signed in on your TV.`}</span>
             </div>
             <hr className="w-full" />

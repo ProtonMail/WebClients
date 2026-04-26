@@ -841,6 +841,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -6131,6 +6134,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -6184,9 +6190,6 @@
       ],
       "Data retention policies": [
         "資料保留政策"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -7831,9 +7834,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -8796,6 +8796,9 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ],
       "Docs": [
         "Docs"

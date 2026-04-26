@@ -1427,8 +1427,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6821,7 +6820,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -10023,9 +10023,6 @@
       "Data breach monitoring": [
         "Monitoramento dos incidentes de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
-      ],
       "Desktop app": [
         "Aplicação de desktop"
       ],
@@ -11511,11 +11508,6 @@
         "Nome"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacto"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mês",
@@ -11969,9 +11961,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperação de conta indisponível para chaves de endereços antigos"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Crie chaves antes de tentar alterar a sua palavra-passe."
       ]
     },
     "session_recovery:available:info": {

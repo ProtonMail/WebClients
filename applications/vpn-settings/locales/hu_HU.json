@@ -3658,9 +3658,6 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
-      "Please generate keys before you try to change your password": [
-        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
-      ],
       "Please select a country": [
         "Kérjük, válasszon egy országot"
       ],
@@ -7015,6 +7012,9 @@
       "Vault updated": [
         "Tároló frissítve"
       ],
+      "Verification code sent.": [
+        "Ellenőrző kód kiküldve"
+      ],
       "Verification may take a few minutes.": [
         "Az ellenőrzés néhány percet is igénybe vehet."
       ],
@@ -7871,6 +7871,9 @@
       "Folder location": [
         "Mappa helye"
       ],
+      "Free": [
+        "Ingyenes"
+      ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
@@ -8193,6 +8196,9 @@
       "State": [
         "Állam"
       ],
+      "Storage": [
+        "Tároló"
+      ],
       "Street address": [
         "Utca, házszám"
       ],
@@ -8225,6 +8231,9 @@
       ],
       "Type": [
         "Típus"
+      ],
+      "Unlimited": [
+        "Korlátlan"
       ],
       "Upload 1 or more encryption keys": [
         "Töltsön fel egy vagy több titkosítási kulcsot"
@@ -8411,9 +8420,6 @@
       ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
-      ],
-      "Common sign in issues": [
-        "Általános bejelentkezési problémák"
       ],
       "Common sign up issues": [
         "Általános problémák a regisztrációval"
@@ -9118,9 +9124,6 @@
       ],
       "Dedicated servers and IP": [
         "Dedikált szerverek és IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikált, videózásra optimalizált szerverek"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -10951,11 +10954,6 @@
         "Az Ön átjárója az online szabadsághoz"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "lépjen kapcsolatba"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } hónap",
@@ -11039,9 +11037,6 @@
       "Verify now": [
         "Ellenőrzés most"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Most erősítse meg ezt a helyreállítási e-mail címet: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Helyreállító e-mail megerősítése?"
       ],
@@ -11081,9 +11076,6 @@
       ],
       "Verify recovery phone?": [
         "Helyreállító telefonszám ellenőrzése?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Ellenőrizze ezt a helyreállító telefonszámot most: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
@@ -11189,9 +11181,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ha elveszíti a belépéshez szükséges adatait és vissza kell állítania a fiókját, **feltétlenül szükséges**, hogy legyen **mind fiók, mind pedig adat helyreállítási módszere** beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit, fájljait vagy jelszavait."
-      ],
-      "Invalid code": [
-        "Érvénytelen kód"
       ],
       "Review account safety": [
         "Fiókbiztonság átnézése"
@@ -11460,9 +11449,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A fiók-visszaállítás nem érhető el régi című kulcsokhoz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ]
     },
     "session_recovery:available:info": {

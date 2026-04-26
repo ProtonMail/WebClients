@@ -7,6 +7,10 @@ import { VideoQuality } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
+import {
+    initialState as initialScreenShareStatusState,
+    screenShareStatusReducer,
+} from '@proton/meet/store/slices/screenShareStatusSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { useParticipantQuality } from './useParticipantQuality';
@@ -19,9 +23,14 @@ const createMockStore = ({ isScreenShare = false }: { isScreenShare?: boolean })
     return configureStore({
         reducer: {
             ...meetingInfoReducer,
+            ...screenShareStatusReducer,
         },
         preloadedState: {
-            meetingInfo: { ...initialMeetingInfoState, isScreenShare },
+            meetingInfo: { ...initialMeetingInfoState },
+            screenShareStatus: {
+                ...initialScreenShareStatusState,
+                participantScreenSharingIdentity: isScreenShare ? 'test-participant' : null,
+            },
         },
     });
 };

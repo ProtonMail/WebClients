@@ -1137,6 +1137,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -1735,6 +1738,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -2974,6 +2980,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "讓您可以立即新增會議連結到您的活動邀請。"
       ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
@@ -2982,6 +2991,12 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
@@ -2997,6 +3012,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ]
     },
     "description": {
@@ -3625,9 +3649,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ],
       "Please select a country": [
         "請選擇一個國家"
@@ -5298,6 +5319,9 @@
       "active": [
         "啟用"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "add a recovery method": [
         "加入復原方式"
       ],
@@ -6840,6 +6864,9 @@
       "Vault updated": [
         "保管庫已更新"
       ],
+      "Verification code sent.": [
+        "驗證碼寄送。"
+      ],
       "Verification may take a few minutes.": [
         "驗證或需時數分鐘。"
       ],
@@ -7663,6 +7690,9 @@
       "Folder location": [
         "資料夾位置"
       ],
+      "Free": [
+        "免費"
+      ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
@@ -7987,6 +8017,9 @@
       "State": [
         "州"
       ],
+      "Storage": [
+        "雲端儲存"
+      ],
       "Street address": [
         "街道位址"
       ],
@@ -8016,6 +8049,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Unlimited": [
+        "吃到飽"
       ],
       "Upload 1 or more encryption keys": [
         "上載一個或以上的加密金鑰"
@@ -8197,9 +8233,6 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
-      ],
-      "Common sign in issues": [
-        "常見登入問題"
       ],
       "Common sign up issues": [
         "常見註冊問題"
@@ -8858,6 +8891,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -8917,9 +8953,6 @@
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -10697,11 +10730,6 @@
         "安全防護的電子郵件保護隱私"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
@@ -10898,9 +10926,6 @@
       "Verify now": [
         "立刻驗證"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "立即驗證此復原電子郵件位址：${ email.Value }"
-      ],
       "Verify recovery email?": [
         "驗證還原電郵？"
       ],
@@ -10940,9 +10965,6 @@
       ],
       "Verify recovery phone?": [
         "驗證用於帳戶救援的手機號碼？"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即驗證此復原電話號碼：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
@@ -11082,9 +11104,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "若你遺失登入帳號所需的資訊且需要重設你的帳號。**最重要的是**您同時擁有**復原帳號與資料的手段**，不然您可能再也無法存取您的電子郵件、聯絡人或檔案。"
-      ],
-      "Invalid code": [
-        "代碼無效"
       ],
       "Review account safety": [
         "查看帳號安全"
@@ -11251,9 +11270,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -12574,9 +12590,6 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
-      "Billing information updated": [
-        "繳費資訊已更新"
-      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -13259,6 +13272,9 @@
       "Discard changes?": [
         "捨棄變更？"
       ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
+      ],
       "Domain names": [
         "網域名稱"
       ],
@@ -13621,6 +13637,9 @@
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "SAML authentication": [
         "SAML 驗證"

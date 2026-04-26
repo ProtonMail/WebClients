@@ -90,11 +90,11 @@
       "Add photos": [
         "Pridať fotografie"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografiu)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografie)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Pridať do \"${ name }\" (${ photoCount } fotografiu)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografie)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)"
       ],
       "Add to album": [
         "Pridať do albumu"
@@ -525,9 +525,6 @@
       "Get in touch": [
         "Skontaktovať sa"
       ],
-      "Get link": [
-        "Získať odkaz"
-      ],
       "Get mobile and desktop apps": [
         "Získať mobilné a desktopové aplikácie"
       ],
@@ -549,8 +546,8 @@
       "Go back": [
         "Späť"
       ],
-      "Go back to album “${ albumName }“": [
-        "Späť na album „${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Späť na album „${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
@@ -654,9 +651,6 @@
       "Load image": [
         "Načítať obrázok"
       ],
-      "Loading link": [
-        "Načítanie odkazu"
-      ],
       "Make a copy": [
         "Vytvoriť kópiu"
       ],
@@ -671,9 +665,6 @@
       ],
       "Manage labels": [
         "Spravovať štítky"
-      ],
-      "Manage link": [
-        "Spravovať odkaz"
       ],
       "Manage share": [
         "Spravovať zdieľanie"
@@ -812,6 +803,9 @@
       ],
       "Quit": [
         "Ukončiť"
+      ],
+      "Re-index": [
+        "Preindexovať"
       ],
       "Re-sign": [
         "Znovu podpísať"
@@ -3572,6 +3566,9 @@
       "Failed to load signature details, please try again later": [
         "Nepodarilo sa načítať podrobnosti podpisu, skúste to neskôr"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -5012,6 +5009,12 @@
       "${ albumName } has been successfully deleted": [
         "Album ${ albumName } bol úspešne vymazaný"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albumy",
+        "${ albums } albumov",
+        "${ albums } albumov"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5117,6 +5120,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
+      "${ files } file": [
+        "${ files } súbor",
+        "${ files } súbory",
+        "${ files } súborov",
+        "${ files } súborov"
+      ],
+      "${ folders } folder": [
+        "${ folders } priečinok",
+        "${ folders } priečinky",
+        "${ folders } priečinkov",
+        "${ folders } priečinkov"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } nájdená skupina",
         "${ groupCounts } nájdené skupiny",
@@ -5158,6 +5173,12 @@
         "${ photoCount } položky",
         "${ photoCount } položiek",
         "${ photoCount } položiek"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotografia",
+        "${ photos } fotografie",
+        "${ photos } fotografií",
+        "${ photos } fotografií"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -5942,6 +5963,18 @@
       "Index is empty.": [
         "Index je prázdny."
       ],
+      "Indexed ${ first }": [
+        "Indexované ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexované ${ first } a ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexované ${ first }, ${ second } a ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexované ${ first }, ${ second }, ${ third } a ${ fourth }"
+      ],
       "Indexing in progress": [
         "Prebieha indexovanie"
       ],
@@ -5968,6 +6001,9 @@
       ],
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
+      ],
+      "Invitation confirmed": [
+        "Pozvánka bola potvrdená"
       ],
       "Invite link copied": [
         "Pozývací odkaz skopírovaný"
@@ -6166,6 +6202,9 @@
       ],
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
+      ],
+      "No populator states found.": [
+        "Nenašli sa žiadne stavy pre populátor."
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
@@ -6509,9 +6548,6 @@
       "Shared by ${ sharedBy }": [
         "Zdieľa ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Vami zdieľané"
-      ],
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
@@ -6842,9 +6878,6 @@
       "Unsupported file type for Photos": [
         "Nepodporovaný typ súboru pre Fotografie"
       ],
-      "Untitled": [
-        "Bez názvu"
-      ],
       "Update required": [
         "Je potrebná aktualizácia"
       ],
@@ -6919,9 +6952,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborne, práve ste zväčšili svoje úložisko na 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Máme technické problémy. Všetky akcie súvisiace s albumami sú dočasne nedostupné."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ node.name }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
@@ -8649,7 +8679,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -8864,6 +8894,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
@@ -8918,8 +8957,8 @@
       "Data retention policies": [
         "Zásady uchovávania údajov"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované na streamovanie"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ],
       "Desktop app": [
         "Desktopová aplikácia"
@@ -9620,38 +9659,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" skopírovaný"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ úspešne vytvorené"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" vymazaný"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ trvalo zmazané z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“ sa nepodarilo vytvoriť"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" sa nepodarilo vymazať"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "„${ ellipsedName }“ sa nepodarilo trvalo zmazať z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ sa nepodarilo presunúť"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "„${ ellipsedName }“ sa nepodarilo obnoviť z koša"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" presunutý"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ obnovené z koša"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ úspešne presunuté"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" zdieľané"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }“ úspešne vytvorené"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name } bol vymazaný"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" natrvalo vymazaná"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "„${ name }“ trvalo zmazané z koša"
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }“ sa nepodarilo vytvoriť"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" sa nepodarilo vymazať"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "„${ name }“ sa nepodarilo trvalo zmazať z koša"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "„${ name }“ sa nepodarilo presunúť"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }“ sa nepodarilo presunúť do koša"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "„${ name }“ sa nepodarilo obnoviť z koša"
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }“ sa nepodarilo uložiť"
@@ -9659,17 +9710,8 @@
       "\"${ name }\" moved to trash": [
         "„${ name }“ presunuté do koša"
       ],
-      "\"${ name }\" restored from trash": [
-        "„${ name }“ obnovené z koša"
-      ],
       "\"${ name }\" saved successfully": [
         "„${ name }“ úspešne uložené"
-      ],
-      "\"${ name }\" successfully copied": [
-        "„${ name }“ úspešne skopírované"
-      ],
-      "\"${ name }\" successfully moved": [
-        "„${ name }“ úspešne presunuté"
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }“ sa nepodarilo premenovať"
@@ -9688,6 +9730,12 @@
         "${ errors.length } položky sa nepodarilo skopírovať",
         "${ errors.length } položiek sa nepodarilo skopírovať",
         "${ errors.length } položiek sa nepodarilo skopírovať"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } položku sa nepodarilo vymazať",
+        "${ errors.length } položky sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } položku sa nepodarilo odstrániť",
@@ -9725,6 +9773,12 @@
         "${ numberOfItems } skopírovaných položiek presunutých do koša",
         "${ numberOfItems } skopírovaných položiek presunutých do koša"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } položka skopírovaná",
+        "${ numberOfItems } položky skopírované",
+        "${ numberOfItems } položiek skopírovaných",
+        "${ numberOfItems } položiek skopírovaných"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
         "${ numberOfItems } položky vymazané",
@@ -9742,12 +9796,6 @@
         "${ numberOfItems } položky natrvalo odstránené z koša",
         "${ numberOfItems } položiek natrvalo odstránených z koša",
         "${ numberOfItems } položky natrvalo odstránených z koša"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } položku sa nepodarilo vymazať",
-        "${ numberOfItems } položky sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku sa nepodarilo natrvalo odstrániť z koša",
@@ -9773,6 +9821,12 @@
         "${ numberOfItems } položiek sa nepodarilo obnoviť z koša",
         "${ numberOfItems } položiek sa nepodarilo obnoviť z koša"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka presunutá",
+        "${ numberOfItems } položky presunuté",
+        "${ numberOfItems } položiek presunutých",
+        "${ numberOfItems } položiek presunutých"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } položka presunutá do koša",
         "${ numberOfItems } položky presunuté do koša",
@@ -9784,12 +9838,6 @@
         "${ numberOfItems } položky obnovené z koša",
         "${ numberOfItems } položiek obnovených z koša",
         "${ numberOfItems } položiek obnovených z koša"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } položka bola úspešne skopírovaná",
-        "${ numberOfItems } položky boli úspešne skopírované",
-        "${ numberOfItems } položiek bolo úspešne skopírovaných",
-        "${ numberOfItems } položiek bolo úspešne skopírovaných"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } položka bola úspešne presunutá",
@@ -9808,9 +9856,6 @@
       ],
       "Access updated": [
         "Prístup aktualizovaný"
-      ],
-      "Album failed to be renamed": [
-        "Premenovanie albumu zlyhalo"
       ],
       "Album renamed successfully": [
         "Album bol úspešne premenovaný"
@@ -9833,8 +9878,8 @@
       "Contact group updated": [
         "Skupina kontaktov bola aktualizovaná"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kópia „${ name }“ presunutá do koša"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kópia „${ ellipsedName }“ presunutá do koša"
       ],
       "Device failed to be removed": [
         "Zariadenie sa nepodarilo odstrániť"
@@ -9862,9 +9907,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nepodarilo sa stiahnuť súbory: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nepodarilo sa načítať detaily pozvánky"
       ],
       "Failed to move, please try again": [
         "Presun zlyhal, skúste znovu, prosím"
@@ -10011,6 +10053,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Niektoré obrázky neboli nahrané kvôli duplicitným názvom súborov v aktuálnom výbere."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album bol úspešne premenovaný"
       ]
     },
     "Oauth instructions": {
@@ -10555,6 +10602,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -10959,11 +11009,6 @@
         "Meno"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -11261,9 +11306,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovenie účtu nie je k dispozícii pre staršie kľúče adries"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Pred pokusom o zmenu hesla vygenerujte kľúče, prosím"
       ]
     },
     "session_recovery:available:info": {
@@ -11944,6 +11986,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
@@ -12187,6 +12235,12 @@
       "Version history": [
         "História verzií"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
+      ],
       "Watch the interview": [
         "Pozrite si rozhovor"
       ],
@@ -12354,9 +12408,6 @@
         "Alias ​​uložený a skopírovaný"
       ],
       "Billing details updated": [
-        "Fakturačné údaje aktualizované"
-      ],
-      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Canceling import": [
@@ -13111,6 +13162,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Indexovať populátory"
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"

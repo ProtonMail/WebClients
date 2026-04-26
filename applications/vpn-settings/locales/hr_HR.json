@@ -2749,9 +2749,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
-      ],
       "Please select a country": [
         "Molimo odaberite državu"
       ],
@@ -5284,6 +5281,9 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -5521,6 +5521,9 @@
       "State": [
         "Država"
       ],
+      "Storage": [
+        "Prostor za pohranu"
+      ],
       "Street address": [
         "Adresa"
       ],
@@ -5544,6 +5547,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Unlimited": [
+        "Neograničeno"
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Učitajte jednu ili više datoteka za oporavak ili ključeva za šifriranje"
@@ -5701,9 +5707,6 @@
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
-      ],
-      "Common sign in issues": [
-        "Najčešći problemi s prijavom"
       ],
       "Common sign up issues": [
         "Najčešći problemi s registracijom"
@@ -7084,11 +7087,6 @@
         "Vaš put do slobode na mreži"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
-      ]
-    },
     "Plans": {
       "${ months } month plan": [
         "${ months }-mjesečna pretplata",
@@ -7162,9 +7160,6 @@
       ],
       "Verify now": [
         "Potvrdi sada"
-      ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Potvrdite sada ovu adresu e-pošte za oporavak: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Potvrditi adresu e-pošte za oporavak?"
@@ -7342,9 +7337,6 @@
       "Check account security": [
         "Provjera sigurnosti računa"
       ],
-      "Invalid code": [
-        "Nevažeći kôd"
-      ],
       "Safeguard account now": [
         "Zaštitite korisnički račun sada"
       ],
@@ -7482,11 +7474,6 @@
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
       ]
     },
     "session_recovery:available:info": {

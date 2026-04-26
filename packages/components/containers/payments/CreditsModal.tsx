@@ -27,17 +27,16 @@ import {
     type PaymentProcessorHook,
     type PaymentStatus,
     type PlainPaymentMethodType,
-    getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { getSentryError } from '@proton/shared/lib/keys';
 
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
@@ -218,9 +217,11 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
             try {
                 await processor.processPaymentToken();
             } catch (e) {
-                const error = getSentryError(e);
-                if (error) {
-                    const context = {
+                tracePaymentError(e, {
+                    tags: {
+                        component: 'credits-modal',
+                    },
+                    extra: {
                         app: APP_NAME,
                         currency,
                         amount,
@@ -229,13 +230,8 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage('Payments: failed to handle credits', {
-                        level: 'error',
-                        extra: { error, context },
-                    });
-                }
+                    },
+                });
             }
         });
 

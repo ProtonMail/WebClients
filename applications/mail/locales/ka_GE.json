@@ -316,6 +316,9 @@
       "Contract composer": [
         "რედაქტორის ფანჯრის შეკუმშვა"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Copy address": [
         "მისამართის კოპირება"
       ],
@@ -1488,10 +1491,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -7267,7 +7266,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -10647,9 +10647,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Dedicated servers optimized for streaming": [
-        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -12298,11 +12295,6 @@
         "სახელი"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } თვე",
@@ -12729,9 +12721,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
     },
     "session_recovery:available:info": {
@@ -13890,9 +13879,6 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
-      ],
-      "Billing information updated": [
-        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"

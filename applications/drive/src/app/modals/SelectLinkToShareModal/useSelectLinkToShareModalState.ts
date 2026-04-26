@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
 import { getDrive } from '@proton/drive';
+import type { useSharingModal } from '@proton/drive/modules/sharingModal';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import type { useSharingModal } from '../SharingModal/SharingModal';
 
 export type SelectLinkToShareModalInnerProps = {
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
@@ -15,7 +15,7 @@ export type SelectLinkToShareModalInnerProps = {
 
 export type UseSelectLinkToShareModalStateProps = ModalStateProps & SelectLinkToShareModalInnerProps;
 
-const ABSTRACT_ROOT_TYPES = new Set(['files-root', 'devices-root', 'shares-root']);
+const ABSTRACT_ROOT_TYPES = new Set(['files-root', 'devices-root', 'shares-root', 'device']);
 
 /**
  * Creates isolated directory tree state for this modal.

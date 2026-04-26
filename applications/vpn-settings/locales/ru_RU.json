@@ -3578,9 +3578,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
-      ],
       "Please select a country": [
         "Выберите страну"
       ],
@@ -7003,6 +7000,9 @@
       "Vault updated": [
         "Хранилище обновлено"
       ],
+      "Verification code sent.": [
+        "Код подтверждения отправлен"
+      ],
       "Verification may take a few minutes.": [
         "Проверка может занять несколько минут."
       ],
@@ -7867,6 +7867,9 @@
       "Folder location": [
         "Размещение папки"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
       ],
@@ -8188,6 +8191,9 @@
       "State": [
         "Состояние"
       ],
+      "Storage": [
+        "Хранилище"
+      ],
       "Street address": [
         "Адрес"
       ],
@@ -8220,6 +8226,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Unlimited": [
+        "Без ограничений"
       ],
       "Upload 1 or more encryption keys": [
         "Загрузите 1 или несколько ключей шифрования"
@@ -8406,9 +8415,6 @@
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
-      ],
-      "Common sign in issues": [
-        "Частые проблемы при входе"
       ],
       "Common sign up issues": [
         "Частые проблемы при регистрации"
@@ -9126,9 +9132,6 @@
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Выделенные серверы, оптимизированные для трансляций"
       ],
       "Desktop app": [
         "Приложение для настольного компьютера"
@@ -10821,11 +10824,6 @@
         "Ваш путь к свободе в Интернете"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "свяжитесь"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } месяц",
@@ -11003,9 +11001,6 @@
       "Verify now": [
         "Подтвердить сейчас"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Подтвердите этот адрес электронной почты для восстановления: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Подтвердить резервный адрес электронной почты?"
       ],
@@ -11045,9 +11040,6 @@
       ],
       "Verify recovery phone?": [
         "Подтвердить телефон для восстановления?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Подтвердите этот номер телефона для восстановления: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
@@ -11136,9 +11128,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Если вы потеряете данные для входа и вам потребуется сбросить аккаунт, **крайне необходимо**, чтобы у вас был **настроен способ восстановления аккаунта и данных**, иначе вы не сможете получить доступ ко всей вашей электронной почте, контактам, файлам и паролям."
-      ],
-      "Invalid code": [
-        "Недействительный код"
       ],
       "Review account safety": [
         "Проверьте безопасность аккаунта"
@@ -11407,9 +11396,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Восстановление аккаунта недоступно для устаревших адресных ключей"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ]
     },
     "session_recovery:available:info": {

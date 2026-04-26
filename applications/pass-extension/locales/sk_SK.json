@@ -628,9 +628,6 @@
       "Set extra password": [
         "Nastaviť dodatočné heslo"
       ],
-      "Settings": [
-        "Nastavenia"
-      ],
       "Setup 2FA": [
         "Nastaviť 2FA"
       ],
@@ -948,6 +945,9 @@
       "Authentication failure: ${ message }": [
         "Zlyhanie overenia: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
       "Cannot create alias (${ error }).": [
         "Nie je možné vytvoriť alias (${ error })."
       ],
@@ -1026,11 +1026,11 @@
       "Emptying trash failed": [
         "Vyprázdňovanie koša zlyhalo"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON nie je podporovaný"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "''Odblokovanie pracovnej plochy pomocou šifrovanej komunikácie sa nepodarilo."
       ],
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
@@ -1269,6 +1269,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Niečo sa pokazilo. Znovu, prosím, načítajte rozšírenie ${ PASS_APP_NAME }. Tento problém bol zaznamenaný."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
       ],
@@ -1277,6 +1280,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
       ],
       "The URL is in the list": [
         "URL je na zozname"
@@ -1301,6 +1307,9 @@
       ],
       "Unknown error": [
         "Neznáma chyba"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ],
       "Unknown invite": [
         "Neznáma pozvánka"
@@ -2076,6 +2085,9 @@
       "Loading...": [
         "Načítavanie..."
       ],
+      "Logging you out...": [
+        "Odhlasovanie..."
+      ],
       "Low Priority": [
         "Nízka priorita"
       ],
@@ -2603,12 +2615,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Neobmedzený počet hide-my-email aliasov a pokročilá správa aliasov"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre prístup k svojim prístupovým kľúčom"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre uloženie tohto prístupového kľúča"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"

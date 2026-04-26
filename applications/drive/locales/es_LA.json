@@ -88,9 +88,9 @@
       "Add photos": [
         "Agregar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Añadir a \"${ album.name }\" (${ album.photoCount } foto)",
-        "Añadir a \"${ album.name }\" (${ album.photoCount } fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Añadir a «${ name }» (${ photoCount } foto)",
+        "Añadir a «${ name }» (${ photoCount } fotos)"
       ],
       "Add to album": [
         "Agregar al álbum"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Contáctenos"
       ],
-      "Get link": [
-        "Obtener enlace"
-      ],
       "Get mobile and desktop apps": [
         "Obtener aplicaciones móviles y de escritorio"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Regresar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Regresar al álbum «${ albumName }»"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Regresar al álbum «${ ellipsedAlbumName }»"
       ],
       "Go to ${ planOrAppName }": [
         "Acceda a ${ planOrAppName }"
@@ -644,9 +641,6 @@
       "Load image": [
         "Cargar imagen"
       ],
-      "Loading link": [
-        "Cargando enlace"
-      ],
       "Make a copy": [
         "Hacer una copia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Gestionar etiquetas"
-      ],
-      "Manage link": [
-        "Gestionar enlace"
       ],
       "Manage share": [
         "Gestionar enlaces compartidos"
@@ -803,6 +794,9 @@
       "Quit": [
         "Salir"
       ],
+      "Re-index": [
+        "Reindexar"
+      ],
       "Re-sign": [
         "Volver a firmar"
       ],
@@ -819,7 +813,7 @@
         "Referir una amistad"
       ],
       "Refetch index": [
-        "Volver a cargar índice"
+        "Actualizar el índice"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -3522,6 +3516,9 @@
       "Failed to load signature details, please try again later": [
         "Error al obtener los detalles de firma, intente más tarde"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
       ],
@@ -4904,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } se eliminó."
       ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbumes"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
@@ -4987,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
+      "${ files } file": [
+        "${ files } archivo",
+        "${ files } archivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
@@ -5020,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } elemento",
         "${ photoCount } elementos"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -5762,6 +5775,18 @@
       "Index is empty.": [
         "El índice está vacío."
       ],
+      "Indexed ${ first }": [
+        "Se indexó ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Se indexaron ${ first } y ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Se indexaron ${ first }, ${ second } y ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Se indexaron ${ first }, ${ second }, ${ third } y ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexación en curso"
       ],
@@ -5788,6 +5813,9 @@
       ],
       "Internet connection restored.": [
         "Conexión a internet restaurada."
+      ],
+      "Invitation confirmed": [
+        "Invitación confirmada"
       ],
       "Invite link copied": [
         "Enlace de la invitación copiado"
@@ -5978,6 +6006,9 @@
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
+      ],
+      "No populator states found.": [
+        "No se encontraron estados del proceso de indexación"
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -6319,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartido por usted"
-      ],
       "Shared link not found": [
         "No se encontró el enlace compartido"
       ],
@@ -6648,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Tipo de archivo no compatible para Fotos"
       ],
-      "Untitled": [
-        "Sin título"
-      ],
       "Update required": [
         "Actualización requerida"
       ],
@@ -6725,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho, ha incrementado el almacenamiento a 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos experimentando problemas técnicos. Todas las acciones relacionadas con los álbumes están desactivadas temporalmente."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No pudimos verificar que ${ nameAuthor } haya cargado ${ node.name }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
@@ -8709,8 +8731,8 @@
       "Data retention policies": [
         "Políticas de retención de datos"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ],
       "Desktop app": [
         "App de escritorio"
@@ -9389,38 +9411,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "«${ ellipsedName }» copiado"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "«${ ellipsedName }» creado con éxito"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "«${ ellipsedName }» eliminado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "«${ ellipsedName }» eliminado permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Error al eliminar «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Error al eliminar «${ ellipsedName }» permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Error al mover «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Error al restaurar «${ ellipsedName }» de la papelera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "«${ ellipsedName }» movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "«${ ellipsedName }» restaurado de la papelera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "«${ ellipsedName }» movido con éxito"
+      ],
       "\"${ fileName }\" shared": [
         "«${ fileName }» compartido"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" creado"
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» está eliminado."
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" eliminado de forma permanente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" eliminado permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Error al eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Error al eliminar \"${ name }\" permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Error al mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Error al restaurar \"${ name }\" de la papelera"
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
@@ -9428,17 +9462,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado de la papelera"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
-      ],
-      "\"${ name }\" successfully copied": [
-        "«${ name }» copiado con éxito"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -9453,6 +9478,10 @@
       "${ errors.length } item failed to be copied": [
         "Error al copiar ${ errors.length } elemento",
         "Error al copiar ${ errors.length } elementos"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Error al eliminar ${ errors.length } elemento",
+        "Error al eliminar ${ errors.length } elementos"
       ],
       "${ errors.length } item failed to be trashed": [
         "Error al mover ${ errors.length } elemento a la papelera",
@@ -9478,6 +9507,10 @@
         "${ numberOfItems } elemento copiado movido a la papelera",
         "${ numberOfItems } elementos copiados movidos a la papelera"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } elemento copiado",
+        "${ numberOfItems } elementos copiados"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
         "${ numberOfItems } elementos eliminados"
@@ -9489,10 +9522,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } elemento",
-        "Error al eliminar ${ numberOfItems } elementos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
@@ -9510,6 +9539,10 @@
         "Error al restaurar ${ numberOfItems } elemento de la papelera",
         "Error al restaurar ${ numberOfItems } elementos de la papelera"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } elemento movido",
+        "${ numberOfItems } elementos movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } elemento movido a la papelera",
         "${ numberOfItems } elementos movidos a la papelera"
@@ -9517,10 +9550,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } elemento restaurado de la papelera",
         "${ numberOfItems } elementos restaurados de la papelera"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } elemento copiado con éxito",
-        "${ numberOfItems } elementos copiados con éxito"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento movido",
@@ -9537,9 +9566,6 @@
       ],
       "Access updated": [
         "Acceso actualizado"
-      ],
-      "Album failed to be renamed": [
-        "Error al cambiar el nombre del álbum"
       ],
       "Album renamed successfully": [
         "Se cambió el nombre del álbum."
@@ -9562,8 +9588,8 @@
       "Contact group updated": [
         "Grupo de contactos actualizado"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia de «${ name }» movido a la papelera"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Copia de «${ ellipsedName }» movida a la papelera"
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -9591,9 +9617,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Error al cargar los detalles de la invitación"
       ],
       "Failed to move, please try again": [
         "Error al mover, inténtelo de nuevo"
@@ -9724,6 +9747,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Álbum renombrado con éxito"
       ]
     },
     "Oauth instructions": {
@@ -10266,6 +10294,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -10658,11 +10689,6 @@
         "Nombre"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
@@ -11042,9 +11068,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genere claves antes de intentar cambiar la contraseña"
       ]
     },
     "session_recovery:available:info": {
@@ -11679,6 +11702,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } y ${ LUMO_APP_NAME } con funciones premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
       ],
@@ -11910,6 +11939,10 @@
       "Version history": [
         "Historial de versiones"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videollamadas, hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Videollamadas, hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
+      ],
       "Watch the interview": [
         "Vea la entrevista"
       ],
@@ -12074,9 +12107,6 @@
       ],
       "Billing details updated": [
         "Detalles de facturación actualizados"
-      ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
       ],
       "Canceling import": [
         "Cancelando la importación"
@@ -12616,7 +12646,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"
@@ -12796,6 +12826,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Generadores de índices"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"

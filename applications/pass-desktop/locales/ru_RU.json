@@ -577,9 +577,6 @@
       "Set extra password": [
         "Установить дополнительный пароль"
       ],
-      "Settings": [
-        "Настройки"
-      ],
       "Setup 2FA": [
         "Настроить двухфакторную аутентификацию"
       ],
@@ -1205,6 +1202,9 @@
       ],
       "Unknown error": [
         "Неизвестная ошибка"
+      ],
+      "Unknown error.": [
+        "Неизвестная ошибка."
       ],
       "Unknown invite": [
         "Неизвестное приглашение"
@@ -1915,6 +1915,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2979,12 +2985,6 @@
       ],
       "Generic CSV": [
         "Общий CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Получить ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Получить ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Начать"

@@ -11,7 +11,9 @@ import type { TaskContext } from '../worker/indexer/tasks/BaseTask';
 export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
     return {
         bridge: {} as MainThreadBridge,
-        db: {} as SearchDB,
+        db: {
+            getPopulatorState: jest.fn().mockResolvedValue({ generation: 1, version: 1, done: false }),
+        } as unknown as SearchDB,
         indexRegistry: { getAll: jest.fn().mockReturnValue([].values()) } as unknown as IndexRegistry,
         treeSubscriptionRegistry: {
             getAllRegistrations: jest.fn().mockReturnValue([]),
@@ -24,6 +26,8 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
         markInitialIndexing: jest.fn(),
         enqueueOnce: jest.fn(),
         enqueueDelayed: jest.fn(),
+        notifyIndexingProgress: jest.fn(),
+        activeIndexPopulators: [],
         ...overrides,
     };
 }

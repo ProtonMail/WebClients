@@ -3,10 +3,10 @@ import { useMemo, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import type { DisplayItem } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import { SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import ConfigContext from '@proton/components/containers/config/configContext';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
@@ -92,7 +92,7 @@ export const Default: Story = {
                 <div className="flex flex-1 items-center justify-center border">
                     {show && (
                         <SpotlightMenuButton
-                            buttonIcon={<Icon name="buildings" />}
+                            buttonIcon={<IcBuildings />}
                             buttonText={c('Title').t`Get started`}
                             dismissTitle={c('Title').t`Dismiss setup checklist`}
                             header={

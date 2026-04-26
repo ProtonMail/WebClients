@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useLoading from '@proton/hooks/useLoading';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { useBitcoinNetwork } from '@proton/wallet/store/hooks';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
@@ -104,7 +104,7 @@ const FetchListRightNode = ({
 
     return (
         <span className="mr-1 color-weak shrink-0">
-            <Icon name="chevron-right" className="my-auto" />
+            <IcChevronRight className="my-auto" />
         </span>
     );
 };

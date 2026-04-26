@@ -12,6 +12,12 @@ export enum NativeMessageErrorType {
     NATIVE_MESSAGE_DECRYPTION_FAILED = 'NATIVE_MESSAGE_DECRYPTION_FAILED',
     UNKNOWN = 'UNKNOWN',
     SETUP_LOCK_SECRET_INVALID_RESPONSE = 'SETUP_LOCK_SECRET_INVALID_RESPONSE',
+    SECRET_NOT_FOUND = 'SECRET_NOT_FOUND',
+    BIOMETRICS_FAILED = 'BIOMETRICS_FAILED',
+    DESKTOP_LOCK_NOT_CONFIGURED = 'DESKTOP_LOCK_NOT_CONFIGURED',
+    SECRET_MISMATCH = 'SECRET_MISMATCH',
+    ACCOUNT_MISMATCH = 'ACCOUNT_MISMATCH',
+    DESKTOP_APP_NOT_LOGGED_IN = 'DESKTOP_APP_NOT_LOGGED_IN',
 }
 
 export type NativeMessageRequest = NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest;
@@ -70,7 +76,8 @@ export type SendNativeMessageResponse = <Res extends NativeMessageResponse>(
 ) => Promise<void>;
 
 export type NativeMessagePayload<Mes extends NativeMessage> =
-    Mes['encrypt'] extends true ? { type: Mes['type']; messageId: string; encrypted: string; serverTime: number }
+    Mes['encrypt'] extends true ?
+        { type: Mes['type']; messageId: string; encrypted: string; serverTime: number; userIdentifier?: string }
     :   Omit<Mes, 'encrypt'> & { messageId: string };
 
 export type NativeMessageResponseWithError<Res extends NativeMessageResponse> =

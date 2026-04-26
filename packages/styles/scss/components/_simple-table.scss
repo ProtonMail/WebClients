@@ -7,6 +7,7 @@
 	inline-size: 100%;
 
 	--table-border-color: var(--border-norm);
+	--table-padding: var(--space-2);
 
 	&-wrapper {
 		inline-size: 100%;
@@ -23,11 +24,25 @@
 
 	td,
 	th {
-		padding: var(--space-2);
+		padding: var(--table-padding);
 		border-block-end: 1px solid var(--table-border-color);
 
 		&.pl-0 {
 			padding-inline-start: 0;
+		}
+	}
+
+	&--no-inline-padding {
+		tr {
+			td:first-child,
+			th:first-child {
+				padding-inline-start: 0;
+			}
+
+			td:last-child,
+			th:last-child {
+				padding-inline-end: 0;
+			}
 		}
 	}
 
@@ -58,12 +73,12 @@
 	&--responsive-stacked {
 		@container (max-width: 35rem) {
 			tr {
-				margin-block-end: var(--space-2);
+				margin-block-end: var(--table-padding);
 				border-block-end: 1px solid var(--table-border-color);
 			}
 
 			td {
-				padding-block-end: var(--space-2);
+				padding-block-end: var(--table-padding);
 			}
 
 			td.text-left-when-stacked {
@@ -76,6 +91,21 @@
 
 			.hide-when-stacked {
 				display: none;
+			}
+
+			.justify-start-when-stacked {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	&--last-row-no-border {
+		tr:last-child {
+			margin-block-end: 0 !important;
+			border-block-end: none !important;
+
+			td {
+				border-block-end: none !important;
 			}
 		}
 	}
@@ -94,7 +124,7 @@
 
 			td {
 				&:not(:last-child) {
-					padding-block-end: var(--space-2);
+					padding-block-end: var(--table-padding);
 				}
 			}
 		}
@@ -192,7 +222,7 @@
 
 		--table-border-radius: var(--border-radius-xl);
 		--table-spacing-x-global: var(--space-6);
-		--table-spacing-x: var(--space-2);
+		--table-spacing-x: var(--table-padding);
 		--table-spacing-y: var(--space-4);
 
 		td,
@@ -244,7 +274,7 @@
 			@container (max-width: 35rem) {
 				tr td {
 					border: 0;
-					padding-block: 0 var(--space-2);
+					padding-block: 0 var(--table-padding);
 					padding-inline: 0;
 				}
 
@@ -287,7 +317,7 @@
 
 	td,
 	th {
-		padding: var(--space-2);
+		padding: var(--table-padding);
 	}
 
 	/* alternate bg for rows */

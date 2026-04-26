@@ -3,7 +3,17 @@ import { c } from 'ttag';
 
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcEraser } from '@proton/icons/icons/IcEraser';
+import { IcFileImage } from '@proton/icons/icons/IcFileImage';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
+import { IcListNumbers } from '@proton/icons/icons/IcListNumbers';
+import { IcTextAlignCenter } from '@proton/icons/icons/IcTextAlignCenter';
+import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
+import { IcTextAlignRight } from '@proton/icons/icons/IcTextAlignRight';
+import { IcTextQuote } from '@proton/icons/icons/IcTextQuote';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -21,7 +31,7 @@ interface Props {
 
 const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
     <ToolbarDropdown
-        content={<Icon name="three-dots-horizontal" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`More`} />}
+        content={<IcThreeDotsHorizontal size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`More`} />}
         className="shrink-0 ml-auto editor-toolbar-more-dropdown"
         title={c('Action').t`More`}
         data-testid="editor-toolbar-more"
@@ -35,7 +45,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={() => config.image.showModal()}
                     data-testid="editor-insert-image"
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Insert image`}</span>
                 </DropdownMenuButton>
             )}
@@ -45,18 +55,18 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     className="text-left flex flex-nowrap items-center"
                     onClick={config.unorderedList.toggle}
                 >
-                    <Icon name="checkmark" className={getClassname(config.unorderedList.isActive)} />
+                    <IcCheckmark className={getClassname(config.unorderedList.isActive)} />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Unordered list`}</span>
-                    <Icon name="list-bullets" className="mr-2" />
+                    <IcListBullets className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={13}
                     className="text-left flex flex-nowrap items-center"
                     onClick={config.orderedList.toggle}
                 >
-                    <Icon name="checkmark" className={getClassname(config.orderedList.isActive)} />
+                    <IcCheckmark className={getClassname(config.orderedList.isActive)} />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Ordered list`}</span>
-                    <Icon name="list-numbers" className="mr-2" />
+                    <IcListNumbers className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-1" />,
                 <DropdownMenuButton
@@ -64,27 +74,27 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Left)}
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align left`}</span>
-                    <Icon name="text-align-left" className="mr-2" />
+                    <IcTextAlignLeft className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={9}
                     className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align center`}</span>
-                    <Icon name="text-align-center" className="mr-2" />
+                    <IcTextAlignCenter className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={10}
                     className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align right`}</span>
-                    <Icon name="text-align-right" className="mr-2" />
+                    <IcTextAlignRight className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-2" />,
                 <DropdownMenuButton
@@ -92,27 +102,27 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     className="text-left flex flex-nowrap items-center"
                     onClick={config.blockquote.toggle}
                 >
-                    <Icon name="checkmark" className={getClassname(config.blockquote.isActive)} />
+                    <IcCheckmark className={getClassname(config.blockquote.isActive)} />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Quote`}</span>
-                    <Icon name="text-quote" className="mr-2" />
+                    <IcTextQuote className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={15}
                     className="text-left flex flex-nowrap items-center"
                     onClick={config.link.showModal}
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Insert link`}</span>
-                    <Icon name="link" className="mr-2" />
+                    <IcLink className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={16}
                     className="text-left flex flex-nowrap items-center"
                     onClick={() => config.formatting.clear()}
                 >
-                    <Icon name="checkmark" className="visibility-hidden" />
+                    <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Clear all formatting`}</span>
-                    <Icon name="eraser" className="mr-2" />
+                    <IcEraser className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-3" />,
                 metadata.supportFiles && [
@@ -121,9 +131,9 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         className="text-left flex flex-nowrap items-center"
                         onClick={() => config.image.showModal()}
                     >
-                        <Icon name="checkmark" className="visibility-hidden" />
+                        <IcCheckmark className="visibility-hidden" />
                         <span className="ml-2 my-auto flex-1">{c('Action').t`Insert image`}</span>
-                        <Icon name="file-image" className="mr-2" />
+                        <IcFileImage className="mr-2" />
                     </DropdownMenuButton>,
                     (metadata.supportRightToLeft || metadata.supportPlainText) && (
                         <div className="dropdown-item-hr" key="hr-4" />
@@ -138,10 +148,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         onClick={() => config.textDirection.setValue(DIRECTION.LEFT_TO_RIGHT)}
                         data-testid="editor-left-to-right"
                     >
-                        <Icon
-                            name="checkmark"
-                            className={getClassname(metadata.rightToLeft === DIRECTION.LEFT_TO_RIGHT)}
-                        />
+                        <IcCheckmark className={getClassname(metadata.rightToLeft === DIRECTION.LEFT_TO_RIGHT)} />
                         <span className="ml-2 my-auto flex-1">{c('Info').t`Left to Right`}</span>
                     </DropdownMenuButton>,
                     <DropdownMenuButton
@@ -150,10 +157,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         onClick={() => config.textDirection.setValue(DIRECTION.RIGHT_TO_LEFT)}
                         data-testid="editor-right-to-left"
                     >
-                        <Icon
-                            name="checkmark"
-                            className={getClassname(metadata.rightToLeft === DIRECTION.RIGHT_TO_LEFT)}
-                        />
+                        <IcCheckmark className={getClassname(metadata.rightToLeft === DIRECTION.RIGHT_TO_LEFT)} />
                         <span className="ml-2 my-auto flex-1">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>,
                 ]}

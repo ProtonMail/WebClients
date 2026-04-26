@@ -218,6 +218,9 @@
       "Continue anyway": [
         "المتابعة على أي حال"
       ],
+      "Continue cancelling": [
+        "استمر في الإلغاء"
+      ],
       "Continue import": [
         "مواصلة الاستيراد"
       ],
@@ -568,6 +571,9 @@
       ],
       "Invite user": [
         "دعوة مستخدم"
+      ],
+      "Keep current plan": [
+        "حافظ على الخطة الحالية"
       ],
       "Keep Editing": [
         "متابعة التعديل"
@@ -1741,6 +1747,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } years": [
+        "${ n } سنة",
+        "${ n } سنة",
+        "${ n } سنتان",
+        "${ n } سنوات",
+        "${ n } سنوات",
+        "${ n } سنوات"
+      ],
       "1 month": [
         "شهر واحد"
       ],
@@ -3267,6 +3281,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "يتيح لك ${ DOCS_SHORT_APP_NAME } في ${ DRIVE_APP_NAME } العمل مع الآخرين في بيئة آمنة ومشفّرة."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "أضف عناوين إضافية إلى حسابك أو استخدم الأسماء المستعارة لإخفاء بريدي الإلكتروني للحفاظ على خصوصية صندوق الوارد الخاص بك."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "أضف مجلدات وملفات إلى ${ DRIVE_APP_NAME } وادع أعضاء الفريق للعرض أو التعديل."
       ],
@@ -3386,6 +3403,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "يمكنك إدارة عدة عناوين ${ BRAND_NAME } من حساب واحد دون الحاجة إلى التبديل. تساعد العناوين البديلة وأدوات إدارة العناوين على إبقاء كل شيء في صندوق وارد واحد."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
       ]
     },
     "description": {
@@ -4187,9 +4210,6 @@
         "يرجى إصلاح التعارضات المحددة للمتابعة.",
         "يرجى إصلاح التعارضات المحددة للمتابعة.",
         "يرجى إصلاح التعارضات المحددة للمتابعة."
-      ],
-      "Please generate keys before you try to change your password": [
-        "يجب إنشاء المفاتيح قبل محاولة تغيير كلمة المرور"
       ],
       "Please select a country": [
         "يُرجى اختيار دولة"
@@ -6828,6 +6848,9 @@
       "Enter your recovery phrase to change your password now.": [
         "أدخل عبارة الاسترداد الخاصة بك لتتمكن من تغيير كلمة المرور."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "أدخل عبارة الاسترداد الخاصة بك للتحقق من هويتك وتعطيل المصادقة الثنائية."
+      ],
       "Everything in ${ planOrAppName }": [
         "كل شيء في ${ planOrAppName }"
       ],
@@ -7536,9 +7559,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "موصى به على الأجهزة الموثوقة ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery file": [
-        "ملف الاسترداد"
-      ],
       "Recovery file downloaded": [
         "تم تنزيل ملف الاسترداد"
       ],
@@ -7547,9 +7567,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "ستبقى معلومات الاسترداد على هذا الجهاز ما لم تحدد حذفها."
-      ],
-      "Recovery phrase": [
-        "عبارة الاسترداد"
       ],
       "Recovery phrase copied to clipboard": [
         "تم نسخ عبارة الاسترداد في الحافظة"
@@ -7846,9 +7863,6 @@
       "The name will be visible to your users while they are signed in.": [
         "سيكون الاسم مرئيًا للمستخدمين أثناء تسجيل دخولهم."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "يمكن منح رصيد الإحالة خلال مدة تصل إلى شهرين بعد انتهاء الفترة التجريبية لصديقك، وذلك إذا اشترك صديقك في إحدى الخطط."
-      ],
       "The securest way to browse, stream, and be online.": [
         "الطريقة المضمونة لتصفح الإنترنت، المشاهدة، و البقاء متصلاً."
       ],
@@ -8137,6 +8151,9 @@
       "Vault updated": [
         "تم تحديث المخزن"
       ],
+      "Verification code sent.": [
+        "أُرسل رمز التحقق."
+      ],
       "Verification may take a few minutes.": [
         "قد يستغرق التحقق بضع دقائق."
       ],
@@ -8389,9 +8406,6 @@
       "You can now reset your password to regain access to your account.": [
         "يمكنك الآن إعادة تعيين كلمة المرور لاستعادة الوصول إلى حسابك."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "يمكنك الآن إعادة تعيين كلمة المرور الخاصة بك لاستعادة الوصول إلى حسابك. **سيعطيل هذا المصادقة الثنائية. **"
-      ],
       "You can now return to the application to continue": [
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
       ],
@@ -8576,9 +8590,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "تاريخ الفوترة التالي هو ${ renewalTime }. يمكنك الإلغاء في أي وقت. يرجى الاتصال بالدعم إذا كنت بحاجة إلى تغيير فوري في الخطة."
-      ],
-      "Your old password": [
-        "كلمة المرور القديمة الخاصة بك"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -9183,6 +9194,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "لـ ${ DRIVE_SHORT_APP_NAME } و ${ DOCS_SHORT_APP_NAME } و ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "مجاني"
+      ],
       "From: ${ fromEmail }": [
         "مِن: ${ fromEmail }"
       ],
@@ -9536,6 +9550,9 @@
       "State": [
         "الحالة"
       ],
+      "Storage": [
+        "التخزين"
+      ],
       "Street address": [
         "عنوان الطريق"
       ],
@@ -9568,6 +9585,9 @@
       ],
       "Type": [
         "النوع"
+      ],
+      "Unlimited": [
+        "غير محدود"
       ],
       "Upload 1 or more encryption keys": [
         "تحميل مفتاح تشفير واحد أو أكثر"
@@ -9756,6 +9776,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "شرح استرداد الحساب"
+      ],
       "activity monitor": [
         "مراقب النشاط"
       ],
@@ -9770,9 +9793,6 @@
       ],
       "clearing your browser cache": [
         "مسح ذاكرة التخزين المؤقت للمتصفح"
-      ],
-      "Common sign in issues": [
-        "المشكلات الشائعة في تسجيل الدخول"
       ],
       "Common sign up issues": [
         "المشكلات الشائعة في تسجيل"
@@ -9882,11 +9902,17 @@
       "if your data is leaked": [
         "إذا تم تسريب بياناتك"
       ],
+      "Learn how": [
+        "تعلم كيف"
+      ],
       "Learn more": [
         "معرفة المزيد"
       ],
       "Learn more about data recovery": [
         "معرفة المزيد حول استعادة البيانات"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ],
       "Not activated": [
         "غير مفعل"
@@ -10166,6 +10192,22 @@
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: مؤتمرات فيديو سرية للمحادثات التي تهمك"
+      ],
+      "${ n } active meetings at a time": [
+        "${ n } اجتماع نشط في الوقت نفسه",
+        "${ n } اجتماع نشط حاليا",
+        "${ n } اجتماعان نشطان في الوقت نفسه",
+        "${ n } اجتماعًا نشطًا في كل مرة",
+        "${ n } اجتماعات نشطة في وقت معين",
+        "${ n } اجتماعًا نشطًا في الوقت نفسه"
+      ],
+      "${ n } participants": [
+        "${ n } مشارك",
+        "${ n } مشارك",
+        "${ n } مشاركان",
+        "${ n } مشارك",
+        "${ n } مشاركًا",
+        "${ n } مشاركًا"
       ],
       "24 hours per meeting": [
         "24 ساعة لكل اجتماع"
@@ -10638,6 +10680,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "جميع خدمات ${ BRAND_NAME } الأساسية (${ MAIL_SHORT_APP_NAME }، و${ VPN_SHORT_APP_NAME }، و${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "جدولة المواعيد"
+      ],
       "Apps for": [
         "تطبيقات لـ"
       ],
@@ -10700,9 +10745,6 @@
       ],
       "Dedicated servers and IP": [
         "خوادم وعنوان IP مخصص"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "خوادم مخصصة ومحسّنة للبث"
       ],
       "Desktop app": [
         "تطبيق سطح المكتب"
@@ -12806,11 +12848,6 @@
         "بوابتك إلى الحرية على الإنترنت"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "اتصل بـ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "جميع الميزات المميزة من ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME }."
@@ -12942,9 +12979,6 @@
       "Verify now": [
         "تحقق الآن"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "تحقق الآن من عنوان البريد الإلكتروني للاسترداد هذا: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "التحقق من البريد الإلكتروني للاسترداد؟"
       ],
@@ -12984,9 +13018,6 @@
       ],
       "Verify recovery phone?": [
         "التحقق من هاتف الاسترداد؟"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "تحقق الآن من رقم هاتف الاسترداد هذا: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "يؤدي التحقق من رقم هاتفك إلى زيادة أمان حسابك ويسمح بخيارات إضافية للاسترداد."
@@ -13306,9 +13337,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "في حال فقدت تفاصيل تسجيل الدخول وتحتاج إلى إعادة تعيين حسابك، **فمن الضروري** أن تكون لديك **طريقة لاسترداد الحساب وطريقة لاسترداد البيانات**، وإلا فقد لا تتمكن من الوصول إلى أي من رسائلك الإلكترونية أو جهات اتصالك أو ملفاتك أو كلمات المرور."
       ],
-      "Invalid code": [
-        "رمز غير صالح"
-      ],
       "Review account safety": [
         "مراجعة أمان الحساب"
       ],
@@ -13582,9 +13610,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "استرداد الحساب غير متاح لمفاتيح العناوين القديمة"
-      ],
-      "Please generate keys before you try to change your password": [
-        "يجب إنشاء المفاتيح قبل محاولة تغيير كلمة المرور"
       ]
     },
     "session_recovery:available:info": {
@@ -15203,9 +15228,6 @@
       "Billing details updated": [
         "تم تحديث تفاصيل الفوترة"
       ],
-      "Billing information updated": [
-        "تم تحديث معلومات الفوترة"
-      ],
       "Canceling import": [
         "جارٍ إلغاء الاستيراد"
       ],
@@ -15730,6 +15752,9 @@
       "Allocate storage": [
         "تخصيص التخزين"
       ],
+      "Already have multiple accounts?": [
+        "هل لديك بالفعل حسابات متعددة؟"
+      ],
       "Also in your plan": [
         "في خطتك أيضاً"
       ],
@@ -15902,6 +15927,9 @@
       ],
       "Create multiple user accounts": [
         "إنشاء حسابات مستخدمين متعددة"
+      ],
+      "Create new addresses easily": [
+        "قم بإنشاء عناوين جديدة بسهولة"
       ],
       "Create new policy": [
         "إنشاء سياسة جديدة"
@@ -16657,6 +16685,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "استخدم ${ VPN_SHORT_APP_NAME } لخصوصية البيانات"
+      ],
+      "Use one account for all your addresses": [
+        "استخدم حسابا واحدا لجميع عناوينك"
       ],
       "User": [
         "المستخدم"

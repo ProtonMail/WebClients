@@ -88,9 +88,9 @@
       "Add photos": [
         "Fotoğraf ekle"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)",
-        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)",
+        "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)"
       ],
       "Add to album": [
         "Albüme ekle"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Bizimle görüşün"
       ],
-      "Get link": [
-        "Bağlantıyı al"
-      ],
       "Get mobile and desktop apps": [
         "Mobil ve bilgisayar uygulamalarını edinin"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Geri dön"
       ],
-      "Go back to album “${ albumName }“": [
-        "“${ albumName }” albümüne dön"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "“${ ellipsedAlbumName }” albümüne dön"
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
@@ -644,9 +641,6 @@
       "Load image": [
         "Görsel yükle"
       ],
-      "Loading link": [
-        "Bağlantı yükleniyor"
-      ],
       "Make a copy": [
         "Kopya oluştur"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Etiket yönetimi"
-      ],
-      "Manage link": [
-        "Bağlantıyı yönet"
       ],
       "Manage share": [
         "Paylaşım yönetimi"
@@ -803,11 +794,17 @@
       "Quit": [
         "Çıkış"
       ],
+      "Re-index": [
+        "Dizini yeniden oluştur"
+      ],
       "Re-sign": [
         "Yeniden imzala"
       ],
       "Reconnect": [
         "Yeniden bağlan"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
       ],
       "Recover data": [
         "Verileri kurtar"
@@ -816,7 +813,7 @@
         "Arkadaşınıza önerin"
       ],
       "Refetch index": [
-        "Dizini yeniden getir"
+        "Dizini yeniden al"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
@@ -3020,6 +3017,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
@@ -3040,6 +3046,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -3313,8 +3322,8 @@
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
       "${ failureItems.length } item failed to be moved": [
-        "${ failureItems.length } öğe taşınamadı",
-        "${ failureItems.length } öğe taşınamadı"
+        "${ failureItems.length } öge taşınamadı",
+        "${ failureItems.length } öge taşınamadı"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
@@ -3327,6 +3336,9 @@
       ],
       "Account does not exist": [
         "Hesap bulunamadı"
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3503,6 +3515,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "İmza ayrıntıları yüklenemedi. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -3772,6 +3787,9 @@
       ],
       "Something went wrong during folder listing": [
         "Klasör listelenirken bir sorun çıktı"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ],
       "Something went wrong with search. Please try again later.": [
         "Arama sırasında bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
@@ -4883,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } albümü silindi"
       ],
+      "${ albums } album": [
+        "${ albums } albüm",
+        "${ albums } albüm"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -4966,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
+      "${ files } file": [
+        "${ files } dosya",
+        "${ files } dosya"
+      ],
+      "${ folders } folder": [
+        "${ folders } klasör",
+        "${ folders } klasör"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -4999,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } öge",
         "${ photoCount } öge"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotoğraf",
+        "${ photos } fotoğraf"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -5053,7 +5087,7 @@
         "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } girdi"
+        "${ state.result.entries.length } kayıt"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -5548,7 +5582,7 @@
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter password": [
         "Parolayı yazın"
@@ -5741,6 +5775,18 @@
       "Index is empty.": [
         "Dizin boş."
       ],
+      "Indexed ${ first }": [
+        "${ first } dizinlendi"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } ve ${ second } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second } ve ${ third } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } ve ${ fourth } dizinlendi"
+      ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
       ],
@@ -5767,6 +5813,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "Invitation confirmed": [
+        "Davet kabul edildi"
       ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
@@ -5957,6 +6006,9 @@
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
+      ],
+      "No populator states found.": [
+        "Herhangi bir doldurucu durumu bulunamadı."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -6298,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
       ],
-      "Shared by you": [
-        "Paylaştıklarınız"
-      ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
@@ -6625,10 +6674,7 @@
         "Dosya desteklenmiyor"
       ],
       "Unsupported file type for Photos": [
-        "Fotoğraflar için desteklenmeyen dosya türü"
-      ],
-      "Untitled": [
-        "Adlandırılmamış"
+        "Fotoğraflar için dosya türü desteklenmiyor"
       ],
       "Update required": [
         "Güncelleme gerekli"
@@ -6704,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Tebrikler, depolama alanınızı 5 GB boyutuna artırdınız!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Teknik sorunlar yaşıyoruz. Geçici olarak albümlerle ilgili işlemler yapılamıyor."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor } tarafından yüklenen ${ node.name } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
@@ -7383,7 +7426,7 @@
         "Aygıt adını yazın"
       ],
       "Environment compatible": [
-        "Çevre uyumlu"
+        "Ortam ile uyumlu"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -7458,7 +7501,7 @@
         "Dizin türleri"
       ],
       "Initial indexing": [
-        "İlk dizinleme"
+        "İlk dizin oluşturma"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -7560,7 +7603,7 @@
         "Diğer"
       ],
       "Outdated version": [
-        "Eski sürüm"
+        "Sürüm eski"
       ],
       "Password": [
         "Parola"
@@ -7632,7 +7675,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Searchable": [
-        "Arama yapılabilir"
+        "Aranabilir"
       ],
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
@@ -7746,7 +7789,7 @@
         "Yükleyen"
       ],
       "User opted in": [
-        "Kullanıcı onay verdi"
+        "Kullanıcı katıldı"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -8567,6 +8610,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -8621,8 +8671,8 @@
       "Data retention policies": [
         "Verileri tutma ilkeleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -9301,38 +9351,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopyalandı"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" eklendi"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" silindi"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silindi"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" oluşturulamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" taşınamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" çöpten çıkarılamadı"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" taşındı"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" çöpten çıkarıldı"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" taşındı"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" eklendi"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" silindi"
       ],
       "\"${ name }\" deleted permanently": [
         "“${ name }” kalıcı olarak silindi"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" eklenemedi"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" silinemedi"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" taşınamadı"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" çöpe atılamadı"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" çöpten çıkarılamadı"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kaydedilemedi"
@@ -9340,17 +9402,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" çöpten çıkarıldı"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" kaydedildi"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" kopyalandı"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" taşındı"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" yeniden adlandırılamadı"
@@ -9365,6 +9418,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } öge kopyalanamadı",
         "${ errors.length } öge kopyalanamadı"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } öge silinemedi",
+        "${ errors.length } öge silinemedi"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } öge çöpe atılamadı",
@@ -9390,6 +9447,10 @@
         "${ numberOfItems } kopyalanan öge çöpe atıldı",
         "${ numberOfItems } kopyalanan öge çöpe atıldı"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } öge kopyalandı",
+        "${ numberOfItems } öge kopyalandı"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } öge silindi",
         "${ numberOfItems } öge silindi"
@@ -9401,10 +9462,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } öge silinemedi",
-        "${ numberOfItems } öge silinemedi"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
@@ -9422,6 +9479,10 @@
         "${ numberOfItems } öge çöpten çıkarılamadı",
         "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } öge taşındı",
+        "${ numberOfItems } öge taşındı"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } öge çöpe atıldı",
         "${ numberOfItems } öge çöpe atıldı"
@@ -9429,10 +9490,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } öge çöpten çıkarıldı",
         "${ numberOfItems } öge çöpten çıkarıldı"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } öge kopyalandı",
-        "${ numberOfItems } öge kopyalandı"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } öge taşındı",
@@ -9449,9 +9506,6 @@
       ],
       "Access updated": [
         "Erişim güncellendi"
-      ],
-      "Album failed to be renamed": [
-        "Albüm yeniden adlandırılamadı"
       ],
       "Album renamed successfully": [
         "Albüm yeniden adlandırıldı"
@@ -9474,8 +9528,8 @@
       "Contact group updated": [
         "Kişi grubu güncellendi"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\" kopyası çöpe atıldı"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "\"${ ellipsedName }\" kopyası çöpe atıldı"
       ],
       "Device failed to be removed": [
         "Aygıt kaldırılamadı"
@@ -9503,9 +9557,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Davet bilgileri yüklenemedi"
       ],
       "Failed to move, please try again": [
         "Taşınamadı. Lütfen yeniden deneyin"
@@ -9623,6 +9674,9 @@
       "You stopped sharing this item": [
         "Bu ögeyi paylaşmayı durdurdunuz"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
+      ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
       ],
@@ -9633,6 +9687,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albümün başarıyla yeniden adlandırıldı"
       ]
     },
     "Oauth instructions": {
@@ -10175,6 +10234,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -10567,11 +10629,6 @@
         "Ad"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "görüşün"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri."
@@ -10951,9 +11008,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -11588,6 +11642,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma asistanı"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
@@ -11819,6 +11879,10 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
+      ],
       "Watch the interview": [
         "Röportajı izleyin"
       ],
@@ -11982,9 +12046,6 @@
         "Takma ad kaydedildi ve kopyalandı"
       ],
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Canceling import": [
@@ -12524,6 +12585,9 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
+      ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
       ],
@@ -12702,6 +12766,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Verilerinizi ${ BRAND_NAME } içine aktarın"
+      ],
+      "Index populators": [
+        "Dizin doldurucuları"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"

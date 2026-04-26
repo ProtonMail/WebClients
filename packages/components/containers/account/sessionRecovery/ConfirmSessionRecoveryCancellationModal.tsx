@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSessionRecoveryLocalStorage } from '@proton/account/recovery/sessionRecoveryHooks';
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -24,8 +25,6 @@ import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
-
-import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 interface Props extends ModalProps {
     onBack?: () => void;

@@ -628,9 +628,6 @@
       "Set extra password": [
         "Configurar senha adicional"
       ],
-      "Settings": [
-        "Configurações"
-      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -1288,6 +1285,9 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Unknown error.": [
+        "Erro desconhecido."
       ],
       "Unknown invite": [
         "Convite desconhecido"
@@ -2021,6 +2021,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "Logging you out...": [
+        "Desconectando você..."
+      ],
       "Low Priority": [
         "Baixa prioridade"
       ],
@@ -2514,6 +2517,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Isso rejeitará o dispositivo **${ name }** que tentou entrar na sua conta ${ BRAND_NAME } em **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Para configurar atalhos, acesse about:addons no Firefox e selecione \"Gerenciar atalhos de extensões \""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para continuar recebendo e-mails, transfira esses aliases para uma caixa de correio diferente:"
       ],
@@ -2538,11 +2544,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Aliases hide-my-email ilimitados e gerenciamento avançado de aliases"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para acessar as chaves de acesso"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloqueie o ${ PASS_APP_NAME } para acessar sua chave de acesso"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar esta chave de acesso"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloqueie o ${ PASS_APP_NAME } para salvar esta chave de acesso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com biometria"
@@ -3149,7 +3155,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"

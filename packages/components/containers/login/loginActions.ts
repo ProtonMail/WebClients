@@ -14,14 +14,14 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import type {
     Api,
     KeyTransparencyActivation,
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { getRequiresPasswordSetup, getSentryError, migrateUser } from '@proton/shared/lib/keys';
+import { getRequiresPasswordSetup, migrateUser } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 

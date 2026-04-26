@@ -1411,6 +1411,11 @@
         "Rotazione della chiave crittografica del gruppo per la massima sicurezza"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Caricamento…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contatti sicuri"
@@ -1458,12 +1463,6 @@
       ],
       "Failed to lock meeting": [
         "Impossibile bloccare la riunione"
-      ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Impossibile richiedere l'autorizzazione per la fotocamera. Controlla le autorizzazioni del tuo sistema e riprova. Potrebbe essere necessario attivarle manualmente, aggiorna la pagina in seguito."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Impossibile richiedere l'autorizzazione per il microfono. Controlla le autorizzazioni di sistema e riprova. Potrebbe essere necessario attivarle manualmente; aggiorna la pagina in seguito."
       ],
       "Failed to rotate personal meeting link": [
         "Impossibile reimpostare il link della riunione personale"
@@ -1530,6 +1529,9 @@
       ],
       "The meeting password is incorrect": [
         "La password della riunione non è corretta"
+      ],
+      "The meeting password is invalid": [
+        "La password della riunione non è valida"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -1679,6 +1681,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita di WebRTC per funzionare. Per favore, aggiorna il tuo browser o dispositivo a una versione che supporti WebRTC, prova un altro browser, o disattiva qualsiasi estensione che potrebbe bloccarlo."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } e altre ${ otherParticipantsCount } persone stanno registrando"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } sta registrando"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (tu) sta presentando"
       ],
@@ -1760,9 +1768,6 @@
       "Decrypting meetings...": [
         "Decrittazione delle riunioni..."
       ],
-      "Default": [
-        "Predefinito"
-      ],
       "Default - ${ systemDefault.label }": [
         "Predefinito - ${ systemDefault.label }"
       ],
@@ -1784,6 +1789,9 @@
       "End Meeting for everyone?": [
         "Terminare la riunione per tutti?"
       ],
+      "End the meeting for everyone?": [
+        "Terminare la riunione per tutti?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "La crittografia end-to-end è attiva per audio e video."
       ],
@@ -1792,6 +1800,9 @@
       ],
       "End-to-end encryption is active for this chat.": [
         "La crittografia end-to-end è attiva per questa chat."
+      ],
+      "Enter code": [
+        "Inserisci il codice"
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione."
@@ -1832,6 +1843,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vai su about:config, cerca media.peerconnection.enabled e impostalo su true."
       ],
+      "Host": [
+        "Host"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organizza la tua riunione sicura. Avvia una chiamata in ${ MEET_APP_NAME } e condividi il link per invitare chiunque a unirsi. Semplice, sicuro e gratuito."
       ],
@@ -1840,6 +1854,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Se stai usando Firefox, assicurati che PeerConnection sia attivato."
@@ -1853,8 +1870,11 @@
       "Learn more": [
         "Scopri di più"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Uscire interromperà la tua condivisione dello schermo. Vuoi continuare?"
+      "Leave meeting and stop sharing?": [
+        "Lasciare la riunione e interrompere la condivisione?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Lasciare la riunione interromperà la condivisione dello schermo."
       ],
       "Left ${ roomNameLabel }": [
         "Hai abbandonato ${ roomNameLabel }"
@@ -1880,6 +1900,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Lower participant's hand": [
+        "Abbassare la mano del partecipante"
+      ],
       "Meet without restrictions": [
         "Incontra senza restrizioni"
       ],
@@ -1900,6 +1923,9 @@
       ],
       "Meeting locked. No new participants can join.": [
         "Riunione bloccata. Nessun nuovo partecipante può unirsi."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Le registrazioni delle riunioni non sono supportate in Firefox."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Riunione sbloccata. I partecipanti possono unirsi di nuovo."
@@ -1970,6 +1996,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Le nostre riunioni crittografate end-to-end proteggono la privacy e promuovono la vera libera espressione."
       ],
+      "Participant": [
+        "Partecipante"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Incolla il tuo link di ${ MEET_APP_NAME } per unirti a una riunione sicura"
       ],
@@ -1999,6 +2028,12 @@
       ],
       "Reconnecting to meeting...": [
         "Riconnessione alla riunione in corso…"
+      ],
+      "Recording": [
+        "Registrazione"
+      ],
+      "Recording in progress": [
+        "Registrazione in corso"
       ],
       "Recording saved": [
         "Registrazione salvata"
@@ -2077,6 +2112,9 @@
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Questa riunione è stata aperta nell'app desktop ${ MEET_APP_NAME }."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Questo terminerà la riunione per tutti i partecipanti e interromperà la condivisione dello schermo."
       ],
       "This will end the meeting for all participants.": [
         "Questo terminerà la riunione per tutti i partecipanti."
@@ -2461,12 +2499,6 @@
       ],
       "The presentation was blurry": [
         "La presentazione era sfocata."
-      ],
-      "Video was blurry": [
-        "Il video era poco definito"
-      ],
-      "Video was breaking up": [
-        "Il video si stava interrompendo"
       ]
     },
     "Placeholder": {
@@ -2565,6 +2597,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetico (A-Z)"
+      ],
       "Newly created": [
         "Create recentemente"
       ],

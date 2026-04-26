@@ -88,10 +88,6 @@
       "Add photos": [
         "Añadir fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Añadir a «${ album.name }» (${ album.photoCount } foto)",
-        "Añadir a «${ album.name }» (${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Añadir al álbum"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Ponte en contacto"
       ],
-      "Get link": [
-        "Obtener enlace"
-      ],
       "Get mobile and desktop apps": [
         "Obtén aplicaciones móviles y de escritorio"
       ],
@@ -538,9 +531,6 @@
       ],
       "Go back": [
         "Regresar"
-      ],
-      "Go back to album “${ albumName }“": [
-        "Volver al álbum «${ albumName }»"
       ],
       "Go to ${ planOrAppName }": [
         "Accede a ${ planOrAppName }"
@@ -644,9 +634,6 @@
       "Load image": [
         "Cargar imagen"
       ],
-      "Loading link": [
-        "Cargando el enlace"
-      ],
       "Make a copy": [
         "Hacer una copia"
       ],
@@ -661,9 +648,6 @@
       ],
       "Manage labels": [
         "Administrar etiquetas"
-      ],
-      "Manage link": [
-        "Administrar enlace"
       ],
       "Manage share": [
         "Gestionar los enlaces compartidos"
@@ -803,6 +787,9 @@
       "Quit": [
         "Salir"
       ],
+      "Re-index": [
+        "Reindexar"
+      ],
       "Re-sign": [
         "Volver a firmar"
       ],
@@ -814,6 +801,9 @@
       ],
       "Refer a friend": [
         "Recomendar a un amigo"
+      ],
+      "Refetch index": [
+        "Actualizar el índice"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -5037,6 +5027,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
@@ -5708,6 +5701,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
       ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
       "Indexing in progress": [
         "Indexación en curso"
       ],
@@ -5912,6 +5908,9 @@
       ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
+      ],
+      "No populator states found.": [
+        "No se han encontrado estados del proceso de indexación"
       ],
       "No results found": [
         "No se han encontrado resultados."
@@ -6190,6 +6189,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda activada. Ya puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
       "Select a destination folder": [
         "Selecciona una carpeta de destino"
       ],
@@ -6249,9 +6251,6 @@
       ],
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
-      ],
-      "Shared by you": [
-        "Compartido por ti"
       ],
       "Shared link not found": [
         "Enlace compartido no encontrado"
@@ -6576,8 +6575,8 @@
       "Unsupported file": [
         "Archivo no admitido"
       ],
-      "Untitled": [
-        "Sin título"
+      "Unsupported file type for Photos": [
+        "Formato de archivo no compatible con Fotos"
       ],
       "Update required": [
         "Actualización necesaria"
@@ -6653,9 +6652,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho! Has aumentado tu almacenamiento a 5 GB."
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos experimentando problemas técnicos. Todas las acciones relacionadas con los álbumes están temporalmente desactivadas."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No se pudo verificar que ${ nameAuthor } subiera ${ node.name }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
@@ -7334,6 +7330,9 @@
       "Enter device name": [
         "Introduce el nombre del dispositivo"
       ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7402,6 +7401,12 @@
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexación inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -7502,6 +7507,9 @@
       "Other": [
         "Otros"
       ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -7570,6 +7578,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
+      "Searchable": [
+        "Se pueden realizar búsquedas"
       ],
       "Select type of abuse": [
         "Selecciona el tipo de abuso."
@@ -7682,6 +7693,9 @@
       "Uploaded by": [
         "Cargado por"
       ],
+      "User opted in": [
+        "El usuario ha aceptado"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -7690,6 +7704,9 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -8605,8 +8622,8 @@
       "Data retention policies": [
         "Políticas de retención de datos"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -9288,35 +9305,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartido"
       ],
-      "\"${ name }\" created successfully": [
-        "\"Se ha creado ${ name }\"."
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» está eliminado."
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" se ha eliminado de forma permanente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "Se ha eliminado permanentemente \"${ name }\" de la papelera."
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Error al eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Error al eliminar \"${ name }\" permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Error al mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Error al restaurar \"${ name }\" de la papelera"
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
@@ -9324,17 +9317,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera."
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" se ha restaurado de la papelera."
-      ],
       "\"${ name }\" saved successfully": [
         "Se ha guardado \"${ name }\"."
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" se ha copiado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" se ha movido."
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -9386,10 +9370,6 @@
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } elemento",
-        "Error al eliminar ${ numberOfItems } elementos"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
         "Error al eliminar ${ numberOfItems } elementos permanentemente de la papelera"
@@ -9414,10 +9394,6 @@
         "${ numberOfItems } elemento restaurado de la papelera",
         "${ numberOfItems } elementos restaurados de la papelera"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } elemento copiado",
-        "${ numberOfItems } elementos copiados"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
@@ -9433,9 +9409,6 @@
       ],
       "Access updated": [
         "Se ha actualizado el acceso."
-      ],
-      "Album failed to be renamed": [
-        "Error al cambiar el nombre del álbum"
       ],
       "Album renamed successfully": [
         "Se ha cambiado el nombre del álbum."
@@ -9457,9 +9430,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia de \\\"${ name }\\\" se ha movido a la papelera."
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -9487,9 +9457,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "No se ha podido cargar los detalles de la invitación."
       ],
       "Failed to move, please try again": [
         "Error al mover. Inténtalo de nuevo."
@@ -10551,11 +10518,6 @@
         "Nombre"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
@@ -10935,9 +10897,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ]
     },
     "session_recovery:available:info": {
@@ -11968,9 +11927,6 @@
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -12635,6 +12591,9 @@
       "Gift": [
         "Regalo"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -12683,6 +12642,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importa tus datos a ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Generadores de índices"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
@@ -12945,6 +12907,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Buscar"
       ],
       "Search results": [
         "Resultados de búsqueda"

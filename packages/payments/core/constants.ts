@@ -172,6 +172,7 @@ export enum ADDON_NAMES {
     IP_VPN_BUSINESS = `${ADDON_PREFIXES.IP}-vpnbiz2023`,
     LUMO_VPN_BUSINESS = `${ADDON_PREFIXES.LUMO}-vpnbiz2023`,
     MEET_VPN_BUSINESS = `${ADDON_PREFIXES.MEET}-vpnbiz2023`,
+    DOMAIN_VPN_BUSINESS = `${ADDON_PREFIXES.DOMAIN}-vpnbiz2023`,
 
     // passpro2024
     MEMBER_PASS_PRO = `${ADDON_PREFIXES.MEMBER}-passpro2024`,
@@ -223,6 +224,7 @@ export enum ADDON_NAMES {
     MEET_BUNDLE = `${ADDON_PREFIXES.MEET}-bundle2022`,
     MEET_FAMILY = `${ADDON_PREFIXES.MEET}-family2022`,
     MEET_DUO = `${ADDON_PREFIXES.MEET}-duo2024`,
+    MEET_VPN_PASS_BUNDLE = `${ADDON_PREFIXES.MEET}-vpnpass2023`,
 }
 
 export const AddonFeatureLimitKeyMapping: Readonly<{
@@ -280,6 +282,7 @@ export const AddonFeatureLimitKeyMapping: Readonly<{
     [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
     [ADDON_NAMES.LUMO_VPN_BUSINESS]: 'MaxLumo',
     [ADDON_NAMES.MEET_VPN_BUSINESS]: 'MaxMeet',
+    [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: 'MaxDomains',
 
     // passpro2024
     [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
@@ -331,6 +334,7 @@ export const AddonFeatureLimitKeyMapping: Readonly<{
     [ADDON_NAMES.MEET_BUNDLE]: 'MaxMeet',
     [ADDON_NAMES.MEET_FAMILY]: 'MaxMeet',
     [ADDON_NAMES.MEET_DUO]: 'MaxMeet',
+    [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: 'MaxMeet',
 } as const;
 
 // Max quantity for all addons
@@ -411,6 +415,7 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
     [ADDON_NAMES.LUMO_VPN_BUSINESS]: MAX_MEMBER_LUMO_ADDON,
     [ADDON_NAMES.MEET_VPN_BUSINESS]: MAX_MEMBER_MEET_ADDON,
+    [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: MAX_DOMAIN_PRO_ADDON,
 
     // passpro2024
     [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
@@ -462,6 +467,7 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.MEET_BUNDLE]: MAX_MEET_ADDON,
     [ADDON_NAMES.MEET_FAMILY]: MAX_MEMBER_MEET_ADDON,
     [ADDON_NAMES.MEET_DUO]: MAX_MEMBER_MEET_ADDON,
+    [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: MAX_MEET_ADDON,
 } as const;
 
 export enum PLANS {
@@ -633,6 +639,10 @@ export enum COUPON_CODES {
     // Monthy user nudge
     ANNUALOFFER25 = 'ANNUALOFFER25',
 
+    // Renew and save cancellation offer
+    RENEWANDSAVE1M26 = 'RENEWANDSAVE1M26',
+    RENEWANDSAVE12M26 = 'RENEWANDSAVE12M26',
+
     LIFETIME = 'LIFETIME',
     VPN_VIVALDI = 'VIVALDIVPN',
     MAILPLUSINTRO = 'MAILPLUSINTRO',
@@ -646,6 +656,7 @@ export enum COUPON_CODES {
     CNETVPNPASS = 'CNETVPNPASS',
     COMPARITECHVPNPASS = 'COMPARITECHVPNPASS',
     PCMAGVPNPASS = 'PCMAGVPNPASS',
+    VPNPASSINTRO2026 = 'VPNPASSINTRO2026',
 
     /** 1$ offer */
     TRYMAILPLUS0724 = 'TRYMAILPLUS0724',

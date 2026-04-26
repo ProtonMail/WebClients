@@ -4,11 +4,13 @@ import { c, msgid } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -18,7 +20,9 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { SECOND } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -175,14 +179,21 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
             title: c('emergency_access').t`Wait time`,
             info: c('emergency_access').t`Time required before automatically granting them access`,
         },
-        { title: c('Title').t`Status`, className: 'w-1/3' },
+        { title: '' },
         { title: '' },
     ];
 
     const labels = headerCells.map((column) => column.title);
 
     return (
-        <Table hasActions responsive="cards" data-testid="outgoing-emergency-access-table">
+        <Table
+            hasActions
+            responsive="stacked"
+            lastRowNoBorder
+            noInlinePadding
+            className="mb-0"
+            data-testid="outgoing-emergency-access-table"
+        >
             <TableHeader>
                 <TableRow>
                     {headerCells.map(({ title, info, className }) => (
@@ -222,10 +233,71 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
 };
 
 export const OutgoingEmergencyContactSettings = () => {
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
 
     if (!controller.meta.available) {
         return null;
+    }
+
+    const limit = controller.meta.emergencyContacts.limit;
+
+    if (isRecoverySettingsRedesignEnabled) {
+        if (controller.loading) {
+            return <Loader />;
+        }
+
+        return (
+            <>
+                <OutgoingEmergencyContactBanners />
+                {controller.meta.emergencyContacts.hasAccess && !controller.meta.emergencyContacts.hasReachedLimit && (
+                    <div>
+                        <Button
+                            color="norm"
+                            className="inline-flex gap-2 items-center"
+                            onClick={() => {
+                                controller.notify({ type: 'add', value: 'emergency-contact' });
+                            }}
+                        >
+                            <IcPlus className="shrink-0" />
+                            {c('emergency_access').t`Add emergency contact`}
+                        </Button>
+                    </div>
+                )}
+
+                {controller.meta.emergencyContacts.hasUpsell && (
+                    <div>
+                        <PromotionButton
+                            iconName="upgrade"
+                            onClick={() => {
+                                controller.notify({ type: 'upsell' });
+                            }}
+                        >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
+                    </div>
+                )}
+
+                {controller.items.emergencyContacts.length > 0 && (
+                    <DashboardCard>
+                        <DashboardCardContent>
+                            <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People I trust`}</h3>
+                            <p className="mt-0 mb-4 color-weak">
+                                {c('emergency_access').t`They may ask to access your account in case of an emergency.`}
+                            </p>
+                            {controller.meta.emergencyContacts.hasReachedLimit && (
+                                <Banner variant="info">
+                                    {c('emergency_access').ngettext(
+                                        msgid`You reached the maximum of ${limit} emergency contact.`,
+                                        `You reached the maximum of ${limit} emergency contacts.`,
+                                        limit
+                                    )}
+                                </Banner>
+                            )}
+                            <OutgoingTable controller={controller} />
+                        </DashboardCardContent>
+                    </DashboardCard>
+                )}
+            </>
+        );
     }
 
     return (

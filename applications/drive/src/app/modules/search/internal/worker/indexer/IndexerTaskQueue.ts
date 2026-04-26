@@ -2,24 +2,28 @@ import { getNodeEntity } from '../../../../../utils/sdk/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';
+import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils';
 import type { PermanentErrorKind } from '../../shared/errors';
 import { classifyPermanentError, isAbortError, sendErrorReportForSearch } from '../../shared/errors';
+import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
+import type { IndexPopulator } from './indexPopulators/IndexPopulator';
 import { MyFilesIndexPopulator } from './indexPopulators/MyFilesIndexPopulator';
 import type { BaseTask, TaskContext } from './tasks/BaseTask';
-import { CLEANUP_TASKS } from './tasks/CleanUpTasks/allCleanUpTasks';
+import { CleanUpStaleBlobsTask } from './tasks/CleanUpTasks/CleanUpStaleBlobsTask';
+import { CleanUpStaleIndexEntryTask } from './tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IncrementalUpdateTask } from './tasks/CoreTasks/IncrementalUpdateTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 import { PersistDataTask } from './tasks/CoreTasks/PersistDataTask';
-import { RecurringMaintenanceTask } from './tasks/CoreTasks/RecurringMaintenanceTask';
 
 export type IndexerState = {
     isInitialIndexing: boolean;
     isIndexing: boolean;
     isSearchable: boolean;
     permanentError: PermanentErrorKind | null;
+    indexPopulatorStatuses: IndexPopulatorStatus[];
 };
 
 export const DEFAULT_INDEXER_STATE: IndexerState = {
@@ -27,7 +31,11 @@ export const DEFAULT_INDEXER_STATE: IndexerState = {
     isIndexing: false,
     isSearchable: false,
     permanentError: null,
+    indexPopulatorStatuses: [],
 };
+
+// How often the indexer task queue reports indexing progress to the main thread.
+const PROGRESS_NOTIFY_THROTTLE_MS = 300;
 
 export type IndexerStateListener = (state: IndexerState) => void;
 
@@ -41,6 +49,7 @@ export type IndexerStateListener = (state: IndexerState) => void;
 export class IndexerTaskQueue {
     private readonly treeSubscriptionRegistry: TreeSubscriptionRegistry;
 
+    private populators = new Map<string, IndexPopulator>();
     private queue: BaseTask[] = [];
     private stopped = false;
     private abortController = new AbortController();
@@ -54,10 +63,14 @@ export class IndexerTaskQueue {
         isIndexing: false,
         isSearchable: false,
         permanentError: null,
+        indexPopulatorStatuses: [],
     };
     private stateListeners = new Set<IndexerStateListener>();
 
+    private progressNotifyTimeout: ReturnType<typeof setTimeout> | null = null;
+
     constructor(
+        private readonly userId: UserId,
         private readonly indexRegistry: IndexRegistry,
         private readonly bridge: MainThreadBridge,
         private readonly db: SearchDB,
@@ -90,7 +103,35 @@ export class IndexerTaskQueue {
             clearTimeout(timeout);
         }
         this.pendingTimeouts.clear();
+        if (this.progressNotifyTimeout) {
+            clearTimeout(this.progressNotifyTimeout);
+            this.progressNotifyTimeout = null;
+        }
         this.treeSubscriptionRegistry.dispose();
+
+        this.populators.clear();
+    }
+
+    notifyIndexingProgress(): void {
+        if (this.progressNotifyTimeout) {
+            return;
+        }
+        this.progressNotifyTimeout = setTimeout(() => {
+            this.progressNotifyTimeout = null;
+            this.refreshIndexPopulatorStatuses().catch((err) =>
+                Logger.error('IndexerTaskQueue: refreshIndexPopulatorStatuses failed', err)
+            );
+        }, PROGRESS_NOTIFY_THROTTLE_MS);
+    }
+
+    private async refreshIndexPopulatorStatuses(): Promise<void> {
+        const statuses = await this.buildIndexPopulatorStatuses();
+        this.state = { ...this.state, indexPopulatorStatuses: statuses };
+        this.stateListeners.forEach((cb) => cb(this.state));
+    }
+
+    private buildIndexPopulatorStatuses(): Promise<IndexPopulatorStatus[]> {
+        return Promise.all([...this.populators.values()].map((p) => p.getStatus(this.db)));
     }
 
     enqueue(task: BaseTask): void {
@@ -114,14 +155,33 @@ export class IndexerTaskQueue {
         return () => this.stateListeners.delete(listener);
     }
 
+    // Force re-runnning an index populator - mostly used from debug UI currently.
+    async reindexPopulator(uid: string): Promise<void> {
+        const populator = this.populators.get(uid);
+        if (!populator) {
+            Logger.warn(`IndexerTaskQueue: reindexPopulator called with unknown uid: ${uid}`);
+            return;
+        }
+        Logger.info(`IndexerTaskQueue: manually triggering re-index for ${uid}`);
+        await populator.markAsNotDone(this.db);
+        this.enqueueOnce(new IndexPopulatorTask(populator, false));
+    }
+
     private async processLoop(): Promise<void> {
         const signal = this.abortController.signal;
 
         while (!this.stopped && !signal.aborted) {
             const task = this.queue.shift();
             if (!task) {
+                // Queue is draining — cancel any pending throttled progress refresh so it
+                // doesn't fire a late, redundant broadcast after `isSearchable: true`. The
+                // snapshot we're about to emit already carries the terminal status.
+                if (this.progressNotifyTimeout) {
+                    clearTimeout(this.progressNotifyTimeout);
+                    this.progressNotifyTimeout = null;
+                }
                 // All boostrap tasks are done, initial indexing/indexing is done.
-                this.updateState({ isInitialIndexing: false, isIndexing: false, isSearchable: true });
+                await this.updateState({ isInitialIndexing: false, isIndexing: false, isSearchable: true });
 
                 if (!this.bootstrapDone) {
                     this.bootstrapDone = true;
@@ -130,10 +190,16 @@ export class IndexerTaskQueue {
                     }
                     this.postBootstrapTasks = [];
 
+                    // Clean up legacy encrypted-search DB now that initial indexing is done.
+                    deleteLegacyEncryptedSearchDb(this.userId).catch((error: unknown) => {
+                        sendErrorReportForSearch('Failed to delete legacy search DB', error);
+                    });
+
                     // Wire registry → task queue: registry decides *when*, queue creates the task.
-                    this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) =>
-                        this.enqueueOnce(new IncrementalUpdateTask(registration))
-                    );
+                    this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) => {
+                        this.enqueueOnce(new IncrementalUpdateTask(registration));
+                        this.enqueueOnce(new CleanUpStaleBlobsTask());
+                    });
                 }
 
                 // Skip waiting if tasks were enqueued (e.g. by postBootstrapTasks).
@@ -173,7 +239,11 @@ export class IndexerTaskQueue {
             indexRegistry: this.indexRegistry,
             treeSubscriptionRegistry: this.treeSubscriptionRegistry,
             signal,
-            markIndexing: () => this.updateState({ isIndexing: true }),
+            markIndexing: () => {
+                this.updateState({ isIndexing: true }).catch((err) =>
+                    Logger.error('IndexerTaskQueue: markIndexing updateState failed', err)
+                );
+            },
             enqueueOnce: (t: BaseTask) => this.enqueueOnce(t),
             enqueueDelayed: (t: BaseTask, delayMs: number) => {
                 const timeout = setTimeout(() => {
@@ -182,7 +252,13 @@ export class IndexerTaskQueue {
                 }, delayMs);
                 this.pendingTimeouts.add(timeout);
             },
-            markInitialIndexing: () => this.updateState({ isInitialIndexing: true }),
+            markInitialIndexing: () => {
+                this.updateState({ isInitialIndexing: true }).catch((err) =>
+                    Logger.error('IndexerTaskQueue: markInitialIndexing updateState failed', err)
+                );
+            },
+            notifyIndexingProgress: () => this.notifyIndexingProgress(),
+            activeIndexPopulators: [...this.populators.values()],
         };
 
         try {
@@ -193,16 +269,16 @@ export class IndexerTaskQueue {
                 return;
             }
 
-            Logger.error(`IndexerTaskQueue: ${task.getUid()} failed`, e);
-
             const permanentErrorKind = classifyPermanentError(e);
             if (permanentErrorKind) {
                 // TODO: monitor in graphana
-                Logger.error(`Search permanent error ${permanentErrorKind}`, e);
-                sendErrorReportForSearch(e);
+                sendErrorReportForSearch(
+                    `IndexerTaskQueue: permanent error (${permanentErrorKind}) in ${task.getUid()}`,
+                    e
+                );
 
                 // Notify user of the search module for handling.
-                this.updateState({
+                await this.updateState({
                     permanentError: permanentErrorKind,
                 });
                 this.stop();
@@ -212,10 +288,13 @@ export class IndexerTaskQueue {
             // TODO: monitor in graphana
             if (task instanceof IndexPopulatorTask) {
                 // TODO: Add a max re-enqueue counter in the task to avoid infinite bootstrap sequences.
-                Logger.warn(`IndexerTaskQueue: transient error on ${task.getUid()}, re-enqueuing`);
+                sendErrorReportForSearch(`IndexerTaskQueue: transient error on ${task.getUid()}, re-enqueuing`, e);
                 this.enqueueOnce(task);
             } else {
-                Logger.warn(`IndexerTaskQueue: transient error on ${task.getUid()}, will retry on next cycle`);
+                sendErrorReportForSearch(
+                    `IndexerTaskQueue: transient error on ${task.getUid()}, will retry on next cycle`,
+                    e
+                );
             }
         }
     }
@@ -226,32 +305,34 @@ export class IndexerTaskQueue {
         });
     }
 
-    private async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
+    protected async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
         const maybeNode = await this.bridge.driveSdk.getMyFilesRootFolder();
         const { node: rootNode } = getNodeEntity(maybeNode);
         const scopeId = brandTreeEventScopeId(rootNode.treeEventScopeId);
 
-        const myFilesPopulator = await MyFilesIndexPopulator.create(scopeId, this.db);
+        const myFilesPopulator = new MyFilesIndexPopulator(scopeId);
+        this.populators.set(myFilesPopulator.getUid(), myFilesPopulator);
 
         return {
             bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator, true /* isBootstrap */)],
-            postBootstrapTasks: [
-                // Run all cleanup tasks once.
-                ...CLEANUP_TASKS.map((Task) => new Task()),
-                // Self-scheduling round-robin maintenance.
-                new RecurringMaintenanceTask(),
-            ],
+            postBootstrapTasks: [new CleanUpStaleIndexEntryTask(), new CleanUpStaleBlobsTask()],
         };
     }
 
-    private updateState(patch: Partial<IndexerState>): void {
+    private async updateState(patch: Partial<IndexerState>): Promise<void> {
+        // Sync change detection before any DB work so redundant markIndexing/markInitialIndexing
+        // calls don't each trigger a populator read.
         const changed = Object.keys(patch).some(
             (k) => patch[k as keyof IndexerState] !== this.state[k as keyof IndexerState]
         );
         if (!changed) {
             return;
         }
-        this.state = { ...this.state, ...patch };
+        // Refresh populator statuses on every broadcast so consumers always see
+        // the latest `done` / progress values alongside whatever other field changed.
+        const statuses = await this.buildIndexPopulatorStatuses();
+        // Re-merge against the latest `this.state` (may have been mutated by a concurrent updateState).
+        this.state = { ...this.state, ...patch, indexPopulatorStatuses: statuses };
         this.stateListeners.forEach((cb) => cb(this.state));
     }
 }

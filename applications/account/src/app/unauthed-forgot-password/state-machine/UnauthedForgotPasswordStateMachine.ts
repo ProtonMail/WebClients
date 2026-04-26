@@ -25,6 +25,7 @@ type UnauthedForgotPasswordErrorCode = 'ERROR_FETCHING_RECOVERY_METHODS' | 'ERRO
 interface UnauthedForgotPasswordMachineContext {
     username: string;
     accountType: AccountType | '';
+    ownershipVerificationMethod: RecoveryMethod | undefined;
     ownershipVerificationCode: string;
     resetResponse: ValidateResetTokenResponse | undefined;
     deviceRecoveryLevel: DeviceRecoveryLevel;
@@ -105,7 +106,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
         hasFullDeviceRecovery: ({ context: { deviceRecoveryLevel } }) =>
             deviceRecoveryLevel === DeviceRecoveryLevel.FULL,
         hasResetResponse: ({ context }) => !!context.resetResponse,
-        hasValidatedMnemonicData: ({ context }) => !!context.mnemonicData,
         hasOtherLoggedInSessions: ({ context }) => !!context.resetResponse && context.resetResponse.Sessions.length > 0,
         hasSocialContacts: ({ context }) =>
             context.delegatedAccessContacts?.some(({ Types }) => hasBit(Types, DelegatedAccessTypeEnum.SocialRecovery)),
@@ -133,6 +133,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
     context: {
         username: '',
         accountType: '',
+        ownershipVerificationMethod: undefined,
         ownershipVerificationCode: '',
         resetResponse: undefined,
         deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
@@ -187,6 +188,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                     target: 'setNewPassword',
                     actions: assign(({ event }) => ({
                         username: event.payload.username,
+                        ownershipVerificationMethod: 'mnemonic',
                         ownershipVerificationCode: event.payload.ownershipVerificationCode,
                         resetResponse: event.payload.resetResponse,
                         delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
@@ -224,6 +226,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 'email.code.validated': {
                     target: 'checkDeviceRecovery',
                     actions: assign(({ event }) => ({
+                        ownershipVerificationMethod: 'email',
                         ownershipVerificationCode: event.payload.ownershipVerificationCode,
                         resetResponse: event.payload.resetResponse,
                         delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
@@ -262,6 +265,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 'sms.code.validated': {
                     target: 'checkDeviceRecovery',
                     actions: assign(({ event }) => ({
+                        ownershipVerificationMethod: 'sms',
                         ownershipVerificationCode: event.payload.ownershipVerificationCode,
                         resetResponse: event.payload.resetResponse,
                         delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
@@ -344,9 +348,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 },
                 confirmPhrase: {
                     on: {
-                        'decision.back': {
-                            target: 'enterPhrase',
-                        },
                         'decision.confirm': {
                             target: '#forgotPassword.setNewPassword',
                         },
@@ -383,8 +384,8 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         },
                         'decision.back': [
                             {
-                                guard: 'hasValidatedMnemonicData',
-                                target: '#forgotPassword.mnemonicRecovery.confirmPhrase',
+                                guard: 'hasMnemonic',
+                                target: '#forgotPassword.mnemonicRecovery.enterPhrase',
                             },
                             {
                                 target: '#forgotPassword.entry',

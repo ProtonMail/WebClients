@@ -6283,9 +6283,6 @@
         "Mangyaring ayusin ang naka-highlight na conflict upang magpatuloy.",
         "Mangyaring ayusin ang mga naka-highlight na conflict upang magpatuloy."
       ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate muna ng mga key bago subukang palitan ang password"
-      ],
       "Please select a country": [
         "Mangyaring pumili ng bansa"
       ],
@@ -10479,6 +10476,9 @@
       "Show original message": [
         "Ipakita ang orihinal na mensahe"
       ],
+      "Sign in": [
+        "Mag-sign in"
+      ],
       "Sign in only": [
         "Sign in lang"
       ],
@@ -11022,6 +11022,9 @@
       ],
       "Vault updated": [
         "Na-update ang vault"
+      ],
+      "Verification code sent.": [
+        "Naipadala na ang verification code."
       ],
       "Verification link expired": [
         "Nag-expire na ang link sa pag-verify"
@@ -12737,6 +12740,9 @@
       "for your first month": [
         "para sa unang buwan"
       ],
+      "Free": [
+        "Libre"
+      ],
       "From: ${ fromEmail }": [
         "Mula sa: ${ fromEmail }"
       ],
@@ -13317,6 +13323,9 @@
       "Sticky labels": [
         "Mga sticky label"
       ],
+      "Storage": [
+        "Storage"
+      ],
       "Street address": [
         "Street address"
       ],
@@ -13382,6 +13391,9 @@
       ],
       "Undo send": [
         "I-undo ang pagpapadala"
+      ],
+      "Unlimited": [
+        "Walang limitasyon"
       ],
       "Unlimited hide-my-email aliases": [
         "Walang limitasyong hide-my-email na mga alias ng email"
@@ -13697,9 +13709,6 @@
       ],
       "clearing your browser cache": [
         "pag-clear ng browser cache"
-      ],
-      "Common sign in issues": [
-        "Mga karaniwang isyu sa pag-sign in"
       ],
       "Common sign up issues": [
         "Mga karaniwang isyu sa pag-sign up"
@@ -14848,9 +14857,6 @@
       ],
       "Dedicated servers and IP": [
         "Mga dedicated server at IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Mga dedikadong server na na-optimize para sa streaming"
       ],
       "Desktop app": [
         "Desktop app"
@@ -16500,9 +16506,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Makipag-ugnayan sa amin"
-      ],
       "Continue": [
         "Magpatuloy"
       ],
@@ -16529,9 +16532,6 @@
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Humiling ng pagsubok"
       ],
       "Start using ${ appName }": [
         "Simulan ang paggamit ng ${ appName }"
@@ -16771,9 +16771,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Simulang gamitin ang ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Mga iniangkop na solusyon para sa mas malalaking organisasyon na may mga custom na pangangailangan."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Ang napiling alok ay hindi available para sa mga subscriber ng ${ currentPlanTitle }."
@@ -17472,11 +17469,6 @@
         "Ang iyong gateway sa online na kalayaan."
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakin"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Kasama sa Duo ang lahat ng ${ BRAND_NAME } premium na produkto."
@@ -17694,9 +17686,6 @@
       "Verify now": [
         "I-verify ngayon"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "I-verify na ngayon ang recovery email address na ito: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "I-verify ang recovery email?"
       ],
@@ -17739,9 +17728,6 @@
       ],
       "Verify recovery phone?": [
         "I-verify ang telepono para sa pag-recover?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "I-verify na ngayon ang recovery phone number na ito: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ang pag-verify ng numero ng telepono ay nagpapataas ng seguridad ng account at nagbibigay ng karagdagang opsyon para sa pag-recover."
@@ -18693,9 +18679,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Hindi available ang pag-recover ng account para sa mga legacy address key"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate ng mga key bago subukang palitan ang password"
       ]
     },
     "session_recovery:available:info": {
@@ -19057,6 +19040,9 @@
         "${ FREE_PASS_ALIASES } na hide-my-email na alias upang labanan ang spam",
         "${ FREE_PASS_ALIASES } na hide-my-email na mga alias upang labanan ang spam"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } alias ng hide-my-email para labanan ang spam"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } address",
         "${ maxAddresses } na address"
@@ -19141,6 +19127,9 @@
       "Bundle": [
         "Bundle"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Pumili ng ligtas na ${ MAIL_APP_NAME } address para magsimula"
+      ],
       "Collaborative document editing": [
         "Collaborative na pag-e-edit ng dokumento"
       ],
@@ -19198,6 +19187,9 @@
       "Gifted by **${ referrerName }**": [
         "Regalo ni **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Panatilihing pribado ang mga pag-uusap gamit ang ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Pamahalaan ang access ng user"
       ],
@@ -19222,6 +19214,9 @@
       "Password manager for all your devices": [
         "Tagapamahala ng password para sa lahat ng device"
       ],
+      "Password-protected messages": [
+        "Mga mensaheng protektado ng password"
+      ],
       "Pick your perfect plan": [
         "Piliin ang perpektong plano"
       ],
@@ -19240,6 +19235,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "I-secure ang ${ VPN_CONNECTIONS } na device sa isang pagkakataon",
         "I-secure ang ${ VPN_CONNECTIONS } na mga device sa isang pagkakataon"
+      ],
+      "Secure calendar": [
+        "Ligtas na kalendaryo"
       ],
       "Secure file sharing": [
         "Ligtas na pagbabahagi ng file"
@@ -19337,6 +19335,9 @@
       "use your own email.": [
         "gamitin ang sariling email."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN na may mga server sa ${ vpnServersCountData.free.countries } bansa"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN na may mga server sa ${ vpnServersCountData.free.countries } bansa",
         "VPN na may mga server sa ${ vpnServersCountData.free.countries } na bansa"
@@ -19346,6 +19347,9 @@
       ],
       "Yearly": [
         "Taunan"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Kasama sa account ang access sa mga libreng feature sa ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } at ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Ang iyong plano"

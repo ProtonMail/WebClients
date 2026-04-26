@@ -1121,6 +1121,9 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -4950,7 +4953,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -7885,11 +7890,6 @@
         "Naziv"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
-      ]
-    },
     "plus_block": {
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Više ${ BRAND_NAME } usluga.${ br }Jedna jednostavna pretplata."
@@ -8185,11 +8185,6 @@
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
       ]
     },
     "session_recovery:available:info": {

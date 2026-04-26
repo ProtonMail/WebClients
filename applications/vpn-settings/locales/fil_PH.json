@@ -4014,9 +4014,6 @@
         "Mangyaring ayusin ang naka-highlight na conflict upang magpatuloy.",
         "Mangyaring ayusin ang mga naka-highlight na conflict upang magpatuloy."
       ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate muna ng mga key bago subukang palitan ang password"
-      ],
       "Please select a country": [
         "Mangyaring pumili ng bansa"
       ],
@@ -7572,6 +7569,9 @@
       "Vault updated": [
         "Na-update ang vault"
       ],
+      "Verification code sent.": [
+        "Naipadala na ang verification code."
+      ],
       "Verification may take a few minutes.": [
         "Maaaring tumagal nang ilang minuto ang pag-verify."
       ],
@@ -8498,6 +8498,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Para sa ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, at ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Libre"
+      ],
       "From: ${ fromEmail }": [
         "Mula sa: ${ fromEmail }"
       ],
@@ -8838,6 +8841,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Storage"
+      ],
       "Street address": [
         "Street address"
       ],
@@ -8870,6 +8876,9 @@
       ],
       "Type": [
         "Uri"
+      ],
+      "Unlimited": [
+        "Walang limitasyon"
       ],
       "Upload 1 or more encryption keys": [
         "Mag-upload ng 1 o higit pang encryption key"
@@ -8927,6 +8936,9 @@
       ],
       "Why would you like to cancel?": [
         "Bakit mo gustong kanselahin?"
+      ],
+      "Yes": [
+        "Oo"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oo, gusto kong permanenteng i-delete ang account na ito at lahat ng data nito."
@@ -9068,9 +9080,6 @@
       ],
       "clearing your browser cache": [
         "pag-clear ng browser cache"
-      ],
-      "Common sign in issues": [
-        "Mga karaniwang isyu sa pag-sign in"
       ],
       "Common sign up issues": [
         "Mga karaniwang isyu sa pag-sign up"
@@ -9854,9 +9863,6 @@
       ],
       "Dedicated servers and IP": [
         "Mga dedicated server at IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Mga dedikadong server na na-optimize para sa streaming"
       ],
       "Desktop app": [
         "Desktop app"
@@ -11810,11 +11816,6 @@
         "Ang iyong gateway sa online na kalayaan."
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakin"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Lahat ng premium feature mula sa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, at ${ PASS_SHORT_APP_NAME }."
@@ -11918,9 +11919,6 @@
       "Verify now": [
         "I-verify ngayon"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "I-verify na ngayon ang recovery email address na ito: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "I-verify ang recovery email?"
       ],
@@ -11960,9 +11958,6 @@
       ],
       "Verify recovery phone?": [
         "I-verify ang telepono para sa pag-recover?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "I-verify na ngayon ang recovery phone number na ito: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ang pag-verify ng numero ng telepono ay nagpapataas ng seguridad ng account at nagbibigay ng karagdagang opsyon para sa pag-recover."
@@ -12264,9 +12259,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Kung mawala ang mga detalye sa pag-login at kailangang i-reset ang account, **napakahalaga** na mayroon kang **paraan ng pag-recover ng account at pag-recover ng data**, kung hindi ay maaaring hindi mo ma-access ang alinman sa mga email, contact, file, o password."
       ],
-      "Invalid code": [
-        "Hindi valid na code"
-      ],
       "Review account safety": [
         "Suriin ang kaligtasan ng account"
       ],
@@ -12540,9 +12532,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Hindi available ang pag-recover ng account para sa mga legacy address key"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate ng mga key bago subukang palitan ang password"
       ]
     },
     "session_recovery:available:info": {

@@ -925,6 +925,9 @@
         "${ users } کاربر",
         "${ users } کاربر"
       ],
+      "Total": [
+        "جمع کل"
+      ],
       "Total for ${ n } month": [
         "جمعا برای ${ n } ماه",
         "جمعا برای ${ n } ماه‌"
@@ -2225,9 +2228,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "لطفا تداخل مشخص شده را برطرف کنید تا ادامه دهید.",
         "لطفا تداخلات مشخص شده را برطرف کنید تا ادامه دهید."
-      ],
-      "Please generate keys before you try to change your password": [
-        "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
       ],
       "Please select a country": [
         "لطفاً کشور دیگری را انتخاب کنید"
@@ -4326,6 +4326,9 @@
       "Folder location": [
         "مکان پوشه"
       ],
+      "Free": [
+        "رایگان"
+      ],
       "From: ${ fromEmail }": [
         "از: ${ fromEmail }"
       ],
@@ -4533,6 +4536,9 @@
       "State": [
         "ایالت"
       ],
+      "Storage": [
+        "حافظه"
+      ],
       "Street address": [
         "نشانی خیابان"
       ],
@@ -4550,6 +4556,9 @@
       ],
       "Type": [
         "نوع"
+      ],
+      "Unlimited": [
+        "نامحدود"
       ],
       "Upload 1 or more encryption keys": [
         "۱ یا چند کلید رمزگذاری را آپلود نمایید"
@@ -4685,9 +4694,6 @@
       ],
       "clearing your browser cache": [
         "در حال پاک‌سازی حافظه نهان مرورگر"
-      ],
-      "Common sign in issues": [
-        "مشکلات متداول ورود به سیستم"
       ],
       "Common sign up issues": [
         "مشکلات ثبت‌نام متداول"
@@ -5711,11 +5717,6 @@
         "اعضا"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ﺗﻤﺎﺱ"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } ماه",
@@ -5886,11 +5887,6 @@
         "عملیات"
       ]
     },
-    "Safety review": {
-      "Invalid code": [
-        "کد نامعتبر است"
-      ]
-    },
     "saml: Action": {
       "Cancel": [
         "لغو"
@@ -5944,11 +5940,6 @@
       ],
       "Reset password": [
         "بازیابی رمزعبور"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
       ]
     },
     "session_recovery:available:info": {

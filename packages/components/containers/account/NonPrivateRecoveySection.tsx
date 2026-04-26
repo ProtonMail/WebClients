@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import Loader from '@proton/components/components/loader/Loader';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 
@@ -12,14 +12,15 @@ import SettingsLayoutRight from './SettingsLayoutRight';
 
 const NonPrivateRecoverySection = () => {
     const defaultCountry = useMyCountry();
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const accountRecovery = useUpdateAccountRecovery();
 
-    if (loadingUserSettings || !userSettings) {
+    if (accountRecovery.data.loading) {
         return <Loader />;
     }
 
     return (
         <>
+            {accountRecovery.el}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="recovery-email-input">
@@ -30,9 +31,7 @@ const NonPrivateRecoverySection = () => {
                     <RecoveryEmail
                         className="mb-4 md:mb-0"
                         inputWidth="25rem"
-                        email={userSettings.Email}
-                        hasReset={!!userSettings.Email.Reset}
-                        hasNotify={!!userSettings.Email.Notify}
+                        {...accountRecovery.recoveryEmail.props}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -48,8 +47,7 @@ const NonPrivateRecoverySection = () => {
                         className="mb-4 md:mb-0"
                         inputWidth="25rem"
                         defaultCountry={defaultCountry}
-                        phone={userSettings.Phone}
-                        hasReset={!!userSettings.Phone.Reset}
+                        {...accountRecovery.recoveryPhone.props}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>

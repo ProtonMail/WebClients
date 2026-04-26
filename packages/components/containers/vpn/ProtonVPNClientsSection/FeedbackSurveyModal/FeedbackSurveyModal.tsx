@@ -8,7 +8,8 @@ import { Input } from '@proton/atoms/Input/Input';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
-import { type Subscription, getPlan } from '@proton/payments/index';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { getPlan } from '@proton/payments/index';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { getFeedbackSurveyOptions } from './feedbackSurveyOptions';
@@ -17,7 +18,7 @@ type Props = Omit<ModalProps, 'onClose'> & {
     onClose: (discarted: boolean) => void;
 };
 
-const getSubscriptionPlan = (subscription: Subscription | undefined) => {
+const getSubscriptionPlan = (subscription: MaybeFreeSubscription) => {
     const plan = getPlan(subscription);
     return `${plan?.Title.replace(' ', '_').toLowerCase()}_${plan?.Cycle}`;
 };

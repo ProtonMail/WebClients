@@ -9,6 +9,8 @@ import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
+import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
@@ -72,16 +74,16 @@ import {
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
     useActiveBreakpoint,
-    useIsDataRecoveryAvailable,
-    useIsSessionRecoveryAvailable,
     useModalState,
     useRecoveryNotification,
     useToggle,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
@@ -307,8 +309,8 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-                                        style={{ '--max-w-custom': '1500px' }}
+                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                     >
                                         <YourPlanSectionV2 app={app} />
                                         <YourPlanUpsellsSectionV2 app={app} />
@@ -324,8 +326,8 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.subscription}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-                                        style={{ '--max-w-custom': '1500px' }}
+                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                     >
                                         <YourPlanSectionV2
                                             app={app}
@@ -408,30 +410,13 @@ const MainContainer: FunctionComponent = () => {
                             <Route path={vpnRoutes.downloads.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.downloads}>
                                     <ProtonVPNClientsSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path="/configurations">
-                                <PrivateMainSettingsArea
-                                    config={{
-                                        text: c('Title').t`Configurations`,
-                                        subsections: [
-                                            {
-                                                text: c('Title').t`WireGuard configuration`,
-                                                id: 'wireguard-configuration',
-                                            },
-                                            {
-                                                text: c('Title').t`OpenVPN configuration files`,
-                                                id: 'openvpn-configuration-files',
-                                            },
-                                        ],
-                                    }}
-                                >
                                     <WireGuardConfigurationSection />
                                     <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             {getIsSectionAvailable(vpnRoutes.referral) && (
                                 <Route path={vpnRoutes.referral.to}>
+                                    <ReferralPageTelemetry />
                                     <ReferralInvitesContextProvider>
                                         <PrivateMainSettingsArea config={vpnRoutes.referral}>
                                             <InviteSection />

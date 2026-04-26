@@ -39,8 +39,14 @@ export class FakeMainThreadBridge {
             async (treeEventScopeId: string) => {
                 this.fetchedEventIdScopes.push(treeEventScopeId);
                 return this.fetchLastEventIdResult;
-            }
+            },
+            async () => []
         );
+
+        // Stub OpenPGP methods with a passthrough (no real CryptoProxy in tests).
+        this.bridge.cryptoProxyBridge.openpgpEncryptIndexKey = async (plaintext: string) => `fake-openpgp:${plaintext}`;
+        this.bridge.cryptoProxyBridge.openpgpDecryptIndexKey = async (armored: string) =>
+            armored.replace('fake-openpgp:', '');
     }
 
     /** Set the root node returned by getMyFilesRootFolder. */
@@ -56,6 +62,11 @@ export class FakeMainThreadBridge {
     /** Set children for a given parent node UID. */
     setChildren(parentUid: string, children: MaybeNode[]): void {
         this.fakeDriveClient.setChildren(parentUid, children);
+    }
+
+    /** Set the list of trashed nodes returned by iterateTrashedNodes. */
+    setTrashedNodes(nodes: MaybeNode[]): void {
+        this.fakeDriveClient.setTrashedNodes(nodes);
     }
 
     /** Make iterateFolderChildren throw the given error. */

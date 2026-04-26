@@ -88,9 +88,9 @@
       "Add photos": [
         "Lägg till foton"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Lägg till “${ album.name }” (${ album.photoCount } foto)",
-        "Lägg till “${ album.name }” (${ album.photoCount } foton)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Lägg till i ”${ name }” (${ photoCount } foto)",
+        "Lägg till i ”${ name }” (${ photoCount } foton)"
       ],
       "Add to album": [
         "Lägg till i album"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Kontakta oss"
       ],
-      "Get link": [
-        "Få länk"
-      ],
       "Get mobile and desktop apps": [
         "Skaffa appar för mobil och stationär dator"
       ],
@@ -539,8 +536,8 @@
       "Go back": [
         "Gå tillbaka"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tillbaka till album “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tillbaka till album “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
@@ -644,9 +641,6 @@
       "Load image": [
         "Ladda bild"
       ],
-      "Loading link": [
-        "Laddar länk"
-      ],
       "Make a copy": [
         "Göra en kopia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Hantera etiketter"
-      ],
-      "Manage link": [
-        "Hantera länk"
       ],
       "Manage share": [
         "Hantera delning"
@@ -802,6 +793,9 @@
       ],
       "Quit": [
         "Avsluta"
+      ],
+      "Re-index": [
+        "Indexera igen"
       ],
       "Re-sign": [
         "Återsignera"
@@ -3020,6 +3014,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -3312,6 +3309,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } objekt misslyckades att flyttas",
+        "${ failureItems.length } objekt misslyckades att flyttas"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
@@ -3502,6 +3503,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Misslyckades att ladda signaturdetaljer, försök igen senare"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
       ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
@@ -3759,6 +3763,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
@@ -4861,6 +4868,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } har tagits bort"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } album"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
@@ -4944,6 +4955,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: lågupplöst förhandsgranskning"
       ],
+      "${ files } file": [
+        "${ files } fil",
+        "${ files } filer"
+      ],
+      "${ folders } folder": [
+        "${ folders } mapp",
+        "${ folders } mappar"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
@@ -4971,6 +4990,10 @@
       "${ photoCount } item": [
         "${ photoCount } objekt",
         "${ photoCount } objekt"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foton"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -5701,6 +5724,18 @@
       "Index is empty.": [
         "Index är tom."
       ],
+      "Indexed ${ first }": [
+        "Indexerade ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexerade ${ first } och ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexerade ${ first }, ${ second } och ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexering pågår"
       ],
@@ -5727,6 +5762,9 @@
       ],
       "Internet connection restored.": [
         "Internetanslutning återställd."
+      ],
+      "Invitation confirmed": [
+        "Inbjudan bekräftad"
       ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
@@ -6258,9 +6296,6 @@
       "Shared by ${ sharedBy }": [
         "Delat av ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Delat av dig"
-      ],
       "Shared link not found": [
         "Delad länk hittades inte"
       ],
@@ -6584,9 +6619,6 @@
       "Unsupported file type for Photos": [
         "Filtyp för foton stöds inte"
       ],
-      "Untitled": [
-        "Ingen rubrik"
-      ],
       "Update required": [
         "Uppgradering krävs"
       ],
@@ -6661,9 +6693,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har just ökat ditt lagringsutrymme till 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi har tekniska problem. Alla albumrelaterade åtgärder är tillfälligt inaktiverade."
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
@@ -8588,8 +8617,8 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerade servrar optimerade för streaming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerade servrar optimerade för hastighet"
       ],
       "Desktop app": [
         "Skrivbordsapp"
@@ -9268,38 +9297,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "”${ ellipsedName }” kopierad"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "”${ ellipsedName }” skapades utan problem"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "”${ ellipsedName }” borttaget"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "”${ ellipsedName }” togs bort permanent från papperskorg"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }“ misslyckades att skapas"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "“${ ellipsedName }“ misslyckades att tas bort"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "”${ ellipsedName }” misslyckades att tas bort permanent från papperskorg"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "”${ ellipsedName }” misslyckades att flyttas"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "”${ ellipsedName }” misslyckades att återställas från papperskorg"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "”${ ellipsedName }” flyttad"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "”${ ellipsedName }” återställd från papperskorg"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "”${ ellipsedName }” flyttades utan problem"
+      ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
-      ],
-      "\"${ name }\" created successfully": [
-        "“${ name }“ skapades utan problem"
-      ],
-      "\"${ name }\" deleted": [
-        "“${ name }“ borttagen"
       ],
       "\"${ name }\" deleted permanently": [
         "“${ name }“ borttaget permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "“${ name }“ togs bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be created": [
-        "“${ name }“ misslyckades att skapas"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "“${ name }“ misslyckades att tas bort"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "“${ name }“ misslyckades att tas bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "“${ name }“ misslyckades att flyttas"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "“${ name }“ misslyckades att flyttas till papperskorg"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "“${ name }“ misslyckades att återställas från papperskorg"
       ],
       "\"${ name }\" failed to be saved": [
         "”${ name }” kunde inte sparas"
@@ -9307,17 +9348,8 @@
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
       ],
-      "\"${ name }\" restored from trash": [
-        "“${ name }“ återställd från papperskorg"
-      ],
       "\"${ name }\" saved successfully": [
         "”${ name }” har sparats"
-      ],
-      "\"${ name }\" successfully copied": [
-        "”${ name }” kopierades"
-      ],
-      "\"${ name }\" successfully moved": [
-        "“${ name }“ flyttades utan problem"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -9332,6 +9364,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } objekt misslyckades att kopieras",
         "${ errors.length } objekt misslyckades att kopieras"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } objekt misslyckades att tas bort",
+        "${ errors.length } objekt misslyckades att tas bort"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } objekt misslyckades att flyttas till papperskorg",
@@ -9357,6 +9393,10 @@
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
         "${ numberOfItems } kopierade objekt flyttades till papperskorg"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } objekt kopierat",
+        "${ numberOfItems } objekt kopierade"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
         "${ numberOfItems } objekt borttagna"
@@ -9368,10 +9408,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg",
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } objekt misslyckades att tas bort",
-        "${ numberOfItems } objekt misslyckades att tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
@@ -9389,6 +9425,10 @@
         "“${ numberOfItems }“ fil misslyckades att återställas från papperskorgen",
         "“${ numberOfItems }“ filer misslyckades att återställas från papperskorgen"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } objekt flyttat",
+        "${ numberOfItems } objekt flyttade"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } objekt flyttades till papperskorgen",
         "${ numberOfItems } objekt flyttades till papperskorgen"
@@ -9396,10 +9436,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } objekt återställdes från papperskorg",
         "${ numberOfItems } objekt återställdes från papperskorg"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } objekt kopierades",
-        "${ numberOfItems } objekt kopierades"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } objekt har flyttats",
@@ -9416,9 +9452,6 @@
       ],
       "Access updated": [
         "Åtkomst uppdaterad"
-      ],
-      "Album failed to be renamed": [
-        "Album misslyckades att byta namn"
       ],
       "Album renamed successfully": [
         "Album har bytt namn"
@@ -9441,8 +9474,8 @@
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopia av “${ name }“ flyttades till papperskorg"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
       ],
       "Device failed to be removed": [
         "Enhet kunde inte tas bort"
@@ -9470,9 +9503,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Misslyckades att ladda inbjudningsdetaljer"
       ],
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
@@ -9603,6 +9633,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album har bytt namn"
       ]
     },
     "Oauth instructions": {
@@ -10145,6 +10180,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -10528,11 +10566,6 @@
         "Namn"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }."
@@ -10912,9 +10945,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ]
     },
     "session_recovery:available:info": {
@@ -11780,6 +11810,10 @@
       "Version history": [
         "Versionshistorik"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare",
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare"
+      ],
       "Watch the interview": [
         "Se intervjun"
       ],
@@ -11944,9 +11978,6 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Canceling import": [
         "Avbryter import"

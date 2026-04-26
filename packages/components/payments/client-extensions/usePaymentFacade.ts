@@ -4,6 +4,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
+import useLoading from '@proton/hooks/useLoading';
 import {
     type ADDON_NAMES,
     type AvailablePaymentMethod,
@@ -18,7 +19,6 @@ import {
     type PaymentMethodType,
     type PaymentProcessorType,
     type PaymentStatus,
-    type PaymentsVersion,
     type PlainPaymentMethodType,
     type PlanIDs,
     type SavedPaymentMethod,
@@ -26,6 +26,7 @@ import {
     type SubscriptionEstimation,
     SubscriptionMode,
 } from '@proton/payments';
+import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
@@ -70,7 +71,7 @@ export type OnChargeable = (
         paymentsVersion: PaymentsVersion;
         paymentProcessorType: PaymentProcessorType;
     }
-) => Promise<unknown> | unknown;
+) => Promise<unknown>;
 
 type PaymentFacadeProps = {
     amount: number;
@@ -229,6 +230,7 @@ export const usePaymentFacade = ({
         onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
     });
 
+    const [processingPayment, withProcessingPayment] = useLoading();
     const hook = useInnerPaymentFacade(
         {
             amount,
@@ -240,13 +242,19 @@ export const usePaymentFacade = ({
             paymentStatus,
             selectedPlanName,
             billingAddress,
-            onChargeable: async (operations, data) => {
-                try {
-                    return await onChargeable(operations, data);
-                } catch (error) {
-                    hook.reset();
-                    throw error;
-                }
+            onChargeable: (operations, data) => {
+                const processPayment = async () => {
+                    try {
+                        return await onChargeable(operations, data);
+                    } catch (error) {
+                        hook.reset();
+                        throw error;
+                    }
+                };
+
+                const promise = processPayment();
+                void withProcessingPayment(promise);
+                return promise;
             },
             user,
             subscription,
@@ -466,6 +474,7 @@ export const usePaymentFacade = ({
         subscription,
         telemetryContext,
         product,
+        processingPayment,
     };
 };
 

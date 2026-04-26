@@ -613,9 +613,6 @@
       "Set extra password": [
         "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
-      "Settings": [
-        "Ρυθμίσεις"
-      ],
       "Setup 2FA": [
         "Ρύθμιση 2FA"
       ],
@@ -915,6 +912,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Η ταυτοποίηση απέτυχε. Επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας για να συνεχίσετε με την εξαγωγή"
       ],
+      "Biometric authentication failed.": [
+        "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δεν ταιριάζουν."
+      ],
+      "Biometric lock credentials not found.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δε βρέθηκαν."
+      ],
+      "Biometric lock is not configured.": [
+        "Το βιομετρικό κλείδωμα δεν έχει ρυθμιστεί."
+      ],
+      "Biometric lock setup failed.": [
+        "Η ρύθμιση του βιομετρικού κλειδώματος απέτυχε."
+      ],
       "Cannot send invitation at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
         "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
@@ -985,6 +997,9 @@
       ],
       "Emptying trash failed": [
         "Το άδειασμα των διαγραμμένων απέτυχε"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Η κρυπτογραφημένη επικοινωνία με την εφαρμογή επιτραπέζιου υπολογιστή ${ PASS_APP_NAME } απέτυχε."
       ],
       "Encrypted JSON not supported": [
         "Το κρυπτογραφημένο JSON δεν υποστηρίζεται"
@@ -1205,6 +1220,24 @@
       "Something went wrong. Please sign in again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε συνδεθείτε ξανά."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Η επιτραπέζια εφαρμογή ${ PASS_APP_NAME } δεν ανταποκρίθηκε εγκαίρως."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν είναι εγκατεστημένη."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
+      ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
       ],
@@ -1228,6 +1261,9 @@
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "Unknown error.": [
+        "Άγνωστο σφάλμα."
       ],
       "Unknown invite": [
         "Άγνωστη πρόσκληση"
@@ -3020,12 +3056,6 @@
       "Generic CSV": [
         "Γενικό CSV"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Αποκτήστε το ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Αποκτήστε ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Ξεκινήστε"
       ],
@@ -4720,6 +4750,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
       ]
     },
     "Validation": {

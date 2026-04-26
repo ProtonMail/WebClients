@@ -319,6 +319,9 @@
       "Contract composer": [
         "Reducir el editor"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -1491,10 +1494,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -7440,7 +7439,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -10943,8 +10943,8 @@
       "Data retention policies": [
         "Políticas de retención de datos"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -12685,11 +12685,6 @@
         "Nombre"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
@@ -13239,9 +13234,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ]
     },
     "session_recovery:available:info": {
@@ -14421,9 +14413,6 @@
       ],
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
-      ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
       ],
       "Canceling import": [
         "Cancelando la importación"

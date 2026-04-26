@@ -7,6 +7,8 @@ import type { TotpBackupCodesActorRef } from './state-machine/totpBackupCodeMach
 import { type Lost2FARecoveryMethods, unauthedLost2FAStateMachine } from './state-machine/unauthedLost2FAStateMachine';
 import type { VerifyOwnershipWithEmailActorRef } from './state-machine/verifyOwnershipWithEmailMachine';
 import type { VerifyOwnershipWithPhoneActorRef } from './state-machine/verifyOwnershipWithPhoneMachine';
+import type { VerifyOwnershipWithPhraseActorRef } from './state-machine/verifyOwnershipWithPhraseMachine';
+import { UnauthedLost2FATelemetryProvider, useUnauthedLost2FATelemetryFunctions } from './useUnauthedLost2FATelemetry';
 
 const UnauthedLost2FAContext = createActorContext(unauthedLost2FAStateMachine);
 
@@ -46,6 +48,15 @@ export const useVerifyOwnershipWithPhoneActorRef = () => {
     return verifyOwnershipWithPhoneActorRef;
 };
 
+export const useVerifyOwnershipWithPhraseActorRef = () => {
+    const { useUnauthLost2FASelector } = useUnauthLost2FA();
+    const verifyOwnershipWithPhraseActorRef = useUnauthLost2FASelector(
+        (snapshot) => snapshot.children.verifyOwnershipWithPhrase as VerifyOwnershipWithPhraseActorRef
+    );
+
+    return verifyOwnershipWithPhraseActorRef;
+};
+
 interface Props extends UnauthedLost2FAStepsProps {
     twoFactorAuthTypes: TwoFactorAuthTypes;
     recoveryMethods: Lost2FARecoveryMethods;
@@ -64,22 +75,46 @@ export const UnauthedLost2FAContainer = ({
     recoveryMethods,
     ...rest
 }: Props) => {
+    const { sendStepLoad, sendFlowOutcome } = useUnauthedLost2FATelemetryFunctions(recoveryMethods);
+
+    const wrappedOnSubmitBackupTotpCode = async (username: string) => {
+        sendFlowOutcome('totp backup code provided');
+        await onSubmitBackupTotpCode(username);
+    };
+
+    const wrappedOn2FADisabled = (username: string) => {
+        sendFlowOutcome('signin to continue');
+        on2FADisabled(username);
+    };
+
+    const wrappedReturnTo2FAStep = () => {
+        sendFlowOutcome('return to 2fa step');
+        returnTo2FAStep();
+    };
+
+    const wrappedOnResetPassword = (username: string) => {
+        sendFlowOutcome('reset password');
+        onResetPassword(username);
+    };
+
     return (
-        <UnauthedLost2FAContext.Provider
-            logic={unauthedLost2FAStateMachine}
-            options={{
-                input: {
-                    recoveryMethods,
-                    username: rest.username,
-                    twoFactorAuthTypes,
-                    onSubmitBackupTotpCode,
-                    on2FADisabled,
-                    returnTo2FAStep,
-                    onResetPassword,
-                },
-            }}
-        >
-            <UnauthedLost2FASteps {...rest} />
-        </UnauthedLost2FAContext.Provider>
+        <UnauthedLost2FATelemetryProvider value={{ sendStepLoad, sendFlowOutcome }}>
+            <UnauthedLost2FAContext.Provider
+                logic={unauthedLost2FAStateMachine}
+                options={{
+                    input: {
+                        recoveryMethods,
+                        username: rest.username,
+                        twoFactorAuthTypes,
+                        onSubmitBackupTotpCode: wrappedOnSubmitBackupTotpCode,
+                        on2FADisabled: wrappedOn2FADisabled,
+                        returnTo2FAStep: wrappedReturnTo2FAStep,
+                        onResetPassword: wrappedOnResetPassword,
+                    },
+                }}
+            >
+                <UnauthedLost2FASteps {...rest} />
+            </UnauthedLost2FAContext.Provider>
+        </UnauthedLost2FATelemetryProvider>
     );
 };

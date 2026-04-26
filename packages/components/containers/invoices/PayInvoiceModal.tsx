@@ -14,11 +14,11 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import type { Invoice, PaymentProcessorHook } from '@proton/payments';
-import { type Currency, PAYMENT_METHOD_TYPES, checkInvoice, getPaymentsVersion } from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { checkInvoice, getPaymentsVersion } from '@proton/payments/core/api/api';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
 
 import Form from '../../components/form/Form';
 import ModalTwo from '../../components/modalTwo/Modal';
@@ -113,9 +113,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
             try {
                 await selectedProcessor.processPaymentToken();
             } catch (e) {
-                const error = getSentryError(e);
-                if (error) {
-                    const context = {
+                tracePaymentError(e, {
+                    tags: {
+                        component: 'pay-invoice-modal',
+                    },
+                    extra: {
                         invoiceId: invoice.ID,
                         currency,
                         amount: amountDue,
@@ -123,13 +125,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage('Payments: failed to pay invoice', {
-                        level: 'error',
-                        extra: { error, context },
-                    });
-                }
+                    },
+                });
             }
         });
 

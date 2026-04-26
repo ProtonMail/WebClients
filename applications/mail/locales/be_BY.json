@@ -324,6 +324,9 @@
       "Contract composer": [
         "Сціснуць рэдактар"
       ],
+      "Copy": [
+        "Скапіяваць"
+      ],
       "Copy address": [
         "Скапіяваць адрас"
       ],
@@ -1423,7 +1426,7 @@
         "Прапусціць"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Snooze": [
         "Адкладанне"
@@ -1510,10 +1513,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4323,7 +4323,7 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы яго, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }."
       ],
@@ -4835,10 +4835,13 @@
         "Памылка пры запампоўванні далучэнняў. Паведамленне не адпраўлена."
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не ўдалося зашыфраваць далучэнне. Паспрабуйце яшчэ раз."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
@@ -7330,6 +7333,9 @@
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
       ],
+      "Copy to clipboard": [
+        "Скапіяваць у буфер абмену"
+      ],
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
       ],
@@ -7726,6 +7732,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
@@ -7811,7 +7820,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -11393,6 +11405,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
+      ],
       "Auto-delete Spam and Trash": [
         "Аўтавыдаленне спаму і смецця"
       ],
@@ -11447,8 +11468,8 @@
       "Data retention policies": [
         "Палітыка захоўвання даных"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваныя для трансляцый"
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -11926,7 +11947,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -12764,6 +12785,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -13226,11 +13250,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "звяжыцеся"
       ]
     },
     "Plan description": {
@@ -13712,9 +13731,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -14498,6 +14514,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -14740,6 +14762,12 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
       ],
       "Watch the interview": [
         "Глядзець інтэрв'ю"
@@ -15000,9 +15028,6 @@
       ],
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
-      ],
-      "Billing information updated": [
-        "Плацежная інфармацыя абноўлена"
       ],
       "Canceling import": [
         "Скасаванне імпартавання"

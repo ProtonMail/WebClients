@@ -23,6 +23,7 @@
  */
 import {
     reportAddLumo,
+    reportAddMeet,
     reportBillingCountryChange,
     reportInitialization,
     reportPayment,
@@ -51,6 +52,8 @@ export const checkoutTelemetry = {
     reportBillingCountryChange,
     /** Report Add Lumo button interaction (first time only) */
     reportAddLumo,
+    /** Report Add Meet button interaction (first time only) */
+    reportAddMeet,
     /** Report payment funnel events (attempt, verification, success, etc.) */
     reportPayment,
 

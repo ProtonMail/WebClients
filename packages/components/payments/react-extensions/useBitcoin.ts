@@ -4,17 +4,19 @@ import { useLoading } from '@proton/hooks';
 import {
     type AmountAndCurrency,
     type ChargeablePaymentParameters,
-    type CreateBitcoinTokenData,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    type PaymentsVersion,
     type TokenPaymentMethod,
-    createToken,
-    getTokenStatus,
     isTokenPaymentMethod,
 } from '@proton/payments';
 import type { Currency, PaymentProcessorHook } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
+import {
+    type CreateBitcoinTokenData,
+    type PaymentsVersion,
+    createToken,
+    getTokenStatus,
+} from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -299,6 +301,9 @@ const useBitcoin = ({
         },
         ...holders,
         billingAddress,
+        // Not implementable for Bitcoin at all. The loading state can't be detected by our code, nor Chargebee's, since
+        // user does the transcation manually on blockchain outside of any PSP.
+        userInitiatedProcessing: false,
     };
 };
 

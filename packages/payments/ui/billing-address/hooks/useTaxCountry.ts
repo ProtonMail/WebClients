@@ -68,22 +68,28 @@ function getBillingAddressFromProp(props: HookProps): BillingAddress {
     const { allowedCountries, disabledCountries } = props;
     if (allowedCountries && !allowedCountries.includes(billingAddress.CountryCode)) {
         const allowedCountry = allowedCountries[0];
-        return getBillingAddressFromPaymentStatus({
-            CountryCode: allowedCountry,
-            State: null,
-            ZipCode: null,
-        } satisfies BillingAddress);
+        return getBillingAddressFromPaymentStatus(
+            {
+                CountryCode: allowedCountry,
+                State: null,
+                ZipCode: null,
+            } satisfies BillingAddress,
+            { shouldRestoreZipCode: false }
+        );
     }
 
     if (disabledCountries?.includes(billingAddress.CountryCode)) {
         const allowedCountry = getFullList().find((country: CountryItem) => !disabledCountries.includes(country.value));
 
         if (allowedCountry) {
-            return getBillingAddressFromPaymentStatus({
-                CountryCode: allowedCountry.value,
-                State: null,
-                ZipCode: null,
-            } satisfies BillingAddress);
+            return getBillingAddressFromPaymentStatus(
+                {
+                    CountryCode: allowedCountry.value,
+                    State: null,
+                    ZipCode: null,
+                } satisfies BillingAddress,
+                { shouldRestoreZipCode: false }
+            );
         } else {
             // Technically, this should be an impossible branch. It can happen only if literally all countries are in
             // the list of disabled countries.

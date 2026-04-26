@@ -28,21 +28,21 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import {
     Renew,
     type Subscription,
-    changeRenewState,
     getRenewalTime,
     getSubscriptionPlanTitle,
     hasLifetimeCoupon,
-    isFreeSubscription,
     isManagedExternally,
     isUpcomingSubscriptionUnpaid,
     subscriptionExpires,
 } from '@proton/payments';
+import { changeRenewState } from '@proton/payments/core/api/api';
 import {
     isAddonDowngrade,
     isReferralTrial,
     isSameCycle,
     shouldHaveUpcomingSubscription,
 } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -92,10 +92,6 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             label: c('Subscription status').t`Active`,
         };
     }, [subscriptionExpiresSoon, isB2BTrial]);
-
-    if (isFreeSubscription(subscription)) {
-        return null;
-    }
 
     const showReactivateButton = renewDisabled && !isManagedExternally(subscription);
     const reactivateAction: DropdownActionProps[] = [
@@ -278,7 +274,10 @@ const SubscriptionsSection = () => {
         return <Loader />;
     }
 
-    const subscriptions = [subscription, ...(subscription.SecondarySubscriptions ?? [])];
+    const subscriptions = [
+        subscription,
+        ...(isPaidSubscription(subscription) ? (subscription.SecondarySubscriptions ?? []) : []),
+    ];
 
     return (
         <SettingsSectionWide>
@@ -293,9 +292,11 @@ const SubscriptionsSection = () => {
                         </TableRow>
                     </TableHeader>
                     <TableBody colSpan={4}>
-                        {subscriptions.map((subscription) => (
-                            <SubscriptionRow key={subscription.ID} subscription={subscription} />
-                        ))}
+                        {subscriptions
+                            .filter((subscription) => isPaidSubscription(subscription))
+                            .map((subscription) => (
+                                <SubscriptionRow key={subscription.ID} subscription={subscription} />
+                            ))}
                     </TableBody>
                 </Table>
             </div>

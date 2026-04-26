@@ -6,8 +6,8 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Logo from '@proton/components/components/logo/Logo';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
-import Icon from '../icon/Icon';
 import type { SmartBannerApp } from './types';
 import { useSmartBanner } from './useSmartBanner';
 import { useSmartBannerTelemetry } from './useSmartBannerTelemetry';
@@ -74,7 +74,7 @@ const SmartBanner = ({
             {showDismissButton && !hideSmartBanner && (
                 <Tooltip title={c('Action').t`Dismiss`} data-testid="dismiss-smart-banner">
                     <Button icon className="ml-2" onClick={onClickHideSmartBanner}>
-                        <Icon name="cross" alt={c('Action').t`Dismiss`} />
+                        <IcCross alt={c('Action').t`Dismiss`} />
                     </Button>
                 </Tooltip>
             )}

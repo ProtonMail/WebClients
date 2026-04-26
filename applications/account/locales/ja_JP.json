@@ -6069,9 +6069,6 @@
       "Recovery contact enabled": [
         "復旧用連絡先が有効になりました"
       ],
-      "Recovery contacts": [
-        "復旧用連絡先"
-      ],
       "Recovery request sent": [
         "復旧リクエストが送信されました"
       ],
@@ -6187,9 +6184,6 @@
         "まだ、どなたの緊急連絡先にも指定されていません。"
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
-        "緊急連絡先の最大数${ limit }件に達しました。"
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
         "緊急連絡先の最大数${ limit }件に達しました。"
       ],
       "You will be notified when someone requests emergency access.": [
@@ -6609,9 +6603,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "パスワードを変更する前に鍵を生成してください"
       ],
       "Please select a country": [
         "国を選択してください"
@@ -10857,6 +10848,9 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
+      "Sign in": [
+        "サインイン"
+      ],
       "Sign in only": [
         "サインインのみ"
       ],
@@ -11423,6 +11417,9 @@
       ],
       "Vault updated": [
         "保管庫が更新されました"
+      ],
+      "Verification code sent.": [
+        "確認コードが送信されました。"
       ],
       "Verification link expired": [
         "検証リンクの有効期限が切れました"
@@ -13171,6 +13168,9 @@
       "for your first month": [
         "最初の1か月間"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
@@ -13768,6 +13768,9 @@
       "Sticky labels": [
         "スティッキーラベル"
       ],
+      "Storage": [
+        "容量"
+      ],
       "Street address": [
         "番地"
       ],
@@ -13836,6 +13839,9 @@
       ],
       "Undo send": [
         "送信取り消し"
+      ],
+      "Unlimited": [
+        "無制限"
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の hide-my-email エイリアス"
@@ -14162,9 +14168,6 @@
       ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
-      ],
-      "Common sign in issues": [
-        "一般的なサインインの問題"
       ],
       "Common sign up issues": [
         "一般的なサインアップの問題"
@@ -15355,9 +15358,6 @@
       ],
       "Dedicated servers and IP": [
         "専用サーバーとIP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "ストリーミングに最適化された専用サーバー"
       ],
       "Desktop app": [
         "デスクトップアプリ"
@@ -17001,9 +17001,6 @@
       "Buy now": [
         "今すぐ購入"
       ],
-      "Contact us": [
-        "私たちにご連絡ください"
-      ],
       "Continue": [
         "続ける"
       ],
@@ -17030,9 +17027,6 @@
       ],
       "Or ${ createANewAccount }": [
         "または ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "トライアルをリクエストする"
       ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
@@ -17275,9 +17269,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }を始めましょう"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "カスタムニーズを持つ大規模組織向けにカスタマイズされたソリューション。"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "選択したオファーは、${ currentPlanTitle } サブスクリプションには利用できません。"
@@ -18040,11 +18031,6 @@
         "オンラインの自由への入り口です"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "お問い合わせ"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Duoにはすべての${ BRAND_NAME }プレアム製品が含まれています。"
@@ -18379,9 +18365,6 @@
       "Verify now": [
         "今すぐ検証"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "この復旧用のメールアドレスを確認してください: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "回復用メールアドレスを検証しますか？"
       ],
@@ -18424,9 +18407,6 @@
       ],
       "Verify recovery phone?": [
         "回復用電話を検証しますか?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "この復旧用の電話番号を確認してください: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
@@ -19378,9 +19358,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "パスワードを変更する前に、キーを生成してください。"
       ]
     },
     "session_recovery:available:info": {
@@ -19778,6 +19755,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "迷惑メールをなくすために${ FREE_PASS_ALIASES }件のHide-my-emailエイリアス"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "迷惑メール対策用の hide-my-email エイリアス ${ FREE_PASS_ALIASES } 個"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 件のアドレス"
       ],
@@ -19859,6 +19839,9 @@
       "Bundle": [
         "バンドル"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "開始するには、安全な ${ MAIL_APP_NAME } アドレスを選択してください"
+      ],
       "Collaborative document editing": [
         "共同ドキュメント編集"
       ],
@@ -19922,6 +19905,9 @@
       "Gifted by **${ referrerName }**": [
         "**${ referrerName }**からのギフト"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } で会話をプライベートに保ちましょう"
+      ],
       "Manage user access": [
         "ユーザーアクセスを管理"
       ],
@@ -19946,6 +19932,9 @@
       "Password manager for all your devices": [
         "あなたのすべてのデバイスのためのパスワードマネージャー"
       ],
+      "Password-protected messages": [
+        "パスワードで保護されたメッセージ"
+      ],
       "Pick a service to get started.": [
         "開始するにはサービスを選択してください。"
       ],
@@ -19966,6 +19955,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "${ VPN_CONNECTIONS }台のデバイスを同時に保護"
+      ],
+      "Secure calendar": [
+        "安全性の高いカレンダー"
       ],
       "Secure file sharing": [
         "安全なファイル共有"
@@ -20069,6 +20061,9 @@
       "use your own email.": [
         "独自のメールアドレスを使用。"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries } か国にサーバーを備えたVPN"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.countries }ヶ国にサーバーがあるVPN"
       ],
@@ -20077,6 +20072,9 @@
       ],
       "Yearly": [
         "毎年"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "お客様のアカウントには、${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ LUMO_SHORT_APP_NAME } の無料機能へのアクセスが含まれています。"
       ],
       "Your plan": [
         "現在のプラン"
@@ -21414,9 +21412,6 @@
       ],
       "Billing details updated": [
         "請求の詳細が更新されました"
-      ],
-      "Billing information updated": [
-        "請求情報が更新されました"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "カレンダーが追加されました。同期には数分かかることがあります。"

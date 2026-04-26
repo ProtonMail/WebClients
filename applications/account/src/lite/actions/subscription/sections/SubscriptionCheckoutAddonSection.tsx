@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { showLumoAddonCustomizer } from '@proton/components/containers/payments/subscription/modal-components/helpers/showLumoAddonCustomizer';
-import { showMeetAddonCustomizer } from '@proton/components/containers/payments/subscription/modal-components/helpers/showMeetAddonCustomizer';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -18,18 +17,25 @@ const SubscriptionCheckoutAddonSection = ({ initialCoupon }: Props) => {
     const { cycle, planIDs, currency } = checkoutUi;
     const scribeEnabled = useAssistantFeatureEnabled();
     const meetAddonFlag = useFlag('MeetAddonCustomizer');
+    const hideLumoAddonForVpn2024 = useFlag('HideLumoAddonForVpn2024');
 
     if (subscription && getHasPlanCustomizer(planIDs)) {
         const latestSubscription = subscription.UpcomingSubscription ?? subscription;
-        const lumoAddonEnabled = showLumoAddonCustomizer({ subscription, couponConfig, initialCoupon, planIDs, cycle });
-        const meetAddonEnabled = meetAddonFlag && showMeetAddonCustomizer({ subscription });
+        const lumoAddonEnabled = showLumoAddonCustomizer({
+            subscription,
+            couponConfig,
+            initialCoupon,
+            planIDs,
+            cycle,
+            hideLumoAddonForVpn2024,
+        });
         return (
             <>
                 <h2 className="text-2xl text-bold mt-8 mb-4">{c('Label').t`Add extra services`}</h2>
                 <ProtonPlanCustomizer
                     scribeAddonEnabled={scribeEnabled.paymentsEnabled}
                     lumoAddonEnabled={lumoAddonEnabled}
-                    meetAddonEnabled={meetAddonEnabled}
+                    meetAddonEnabled={meetAddonFlag}
                     loading={loading}
                     currency={currency}
                     cycle={cycle}

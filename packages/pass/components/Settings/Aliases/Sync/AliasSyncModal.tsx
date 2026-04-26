@@ -14,6 +14,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasSyncEnable } from '@proton/pass/store/actions';
@@ -56,7 +57,7 @@ export const AliasSyncModal: FC<Props> = ({ aliasCount, onClose }) => {
                                         )}
                                     </span>
                                 </div>
-                                <Icon name="arrow-right" />
+                                <IcArrowRight />
                                 <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                                     <SelectTwo
                                         value={form.values.shareId}

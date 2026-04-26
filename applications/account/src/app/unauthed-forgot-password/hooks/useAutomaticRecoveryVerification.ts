@@ -4,6 +4,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { type ValidateResetTokenResponse, validateResetToken } from '@proton/shared/lib/api/reset';
 
+import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
 import { DeviceRecoveryLevel } from '../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../wizard/MachineWizardProvider';
@@ -18,12 +19,14 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
     const [loading, withLoading] = useLoading();
     const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const errorHandler = useErrorHandler();
+    const { sendResetPasswordMethodValidated } = useResetPasswordTelemetry({ variant: 'B' });
 
     const silentApi = useSilentApi();
 
     useSearchParamsEffect((params) => {
         const username = params.get('username');
         const token = params.get('token');
+        const variant = params.get('variant');
 
         /**
          * Automatic token validation reset
@@ -36,7 +39,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
                     const resetResponse = await silentApi<ValidateResetTokenResponse>(
                         validateResetToken(username, token)
                     );
-
+                    sendResetPasswordMethodValidated({ step: 'entry', method: 'mnemonic' });
                     send({
                         type: 'token.prefilled',
                         payload: {
@@ -52,7 +55,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
             };
             void withLoading(run());
 
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
 
         /**
@@ -66,7 +69,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
                 },
             });
             onSuccess(username);
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
     }, []);
 

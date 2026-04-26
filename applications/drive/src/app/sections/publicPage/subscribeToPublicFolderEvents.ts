@@ -1,3 +1,4 @@
+import { MemberRole } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -14,6 +15,8 @@ const addPublicFolderItemToStore = async (uid: string) => {
     try {
         const maybeNode = await getPublicLinkClient().getNode(uid);
         const { node } = getNodeEntity(maybeNode);
+        const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
+        const canVerifySignature = isLoggedIn && publicRole === MemberRole.Editor;
         const modificationTime = node.activeRevision?.claimedModificationTime
             ? node.activeRevision.claimedModificationTime
             : node.creationTime;
@@ -28,7 +31,7 @@ const addPublicFolderItemToStore = async (uid: string) => {
             parentUid: node.parentUid,
             creationTime: node.creationTime,
             modificationTime,
-            haveSignatureIssues: usePublicAuthStore.getState().isLoggedIn ? !getSignatureIssues(maybeNode).ok : false,
+            haveSignatureIssues: canVerifySignature ? !getSignatureIssues(maybeNode).ok : false,
             uploadedBy: (node.keyAuthor.ok ? node.keyAuthor.value : node.keyAuthor.error.claimedAuthor) || undefined,
         });
     } catch (e) {

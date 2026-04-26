@@ -88,10 +88,6 @@
       "Add photos": [
         "Fényképek hozzáadása"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)",
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)"
-      ],
       "Add to album": [
         "Hozzáadás albumhoz"
       ],
@@ -473,9 +469,6 @@
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
       ],
-      "Get link": [
-        "Hivatkozás készítése"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Szerezzen biztonságos tárhelyet ${ simplePriceString }ért"
       ],
@@ -493,9 +486,6 @@
       ],
       "Go back": [
         "Vissza"
-      ],
-      "Go back to album “${ albumName }“": [
-        "Vissza az albumhoz: „${ albumName }”"
       ],
       "Go to ${ planOrAppName }": [
         "Nyissa meg a ${ planOrAppName } alkalmazást"
@@ -593,9 +583,6 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "Loading link": [
-        "Link betöltése"
-      ],
       "Make a copy": [
         "Másolat létrehozása"
       ],
@@ -610,9 +597,6 @@
       ],
       "Manage labels": [
         "Címkék kezelése"
-      ],
-      "Manage link": [
-        "Hivatkozás kezelése"
       ],
       "Manage share": [
         "Megosztás kezelése"
@@ -5685,9 +5669,6 @@
       "Shared by ${ sharedBy }": [
         "Megosztotta: ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Megosztotta: Ön"
-      ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
       ],
@@ -5978,9 +5959,6 @@
       "Unsupported file": [
         "Ismeretlen file"
       ],
-      "Untitled": [
-        "Névtelen"
-      ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
       ],
@@ -6046,9 +6024,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Így tovább, most 5 GB-ra növelte a tárhelyét!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Műszaki problémák merültek fel. Az albumokkal kapcsolatos műveletek átmenetileg nem érhetők el."
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
@@ -7738,9 +7713,6 @@
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikált, videózásra optimalizált szerverek"
-      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
@@ -8400,32 +8372,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" sikeresen létrehozva"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name } törölve"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" véglegesen törölve a lomtárból"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" létrehozása nem sikerült"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" törlése nem sikerült"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } fájl végleges törlése a lomtárból nem sikerült"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" áthelyezése nem sikerült"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" áthelyezése a lomtárba nem sikerült"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name } fájl visszaállítása a lomtárból nem sikerült"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" mentése nem sikerült"
@@ -8433,14 +8381,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" áthelyezve a lomtárba"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" visszaállítva a lomtárból"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" sikeresen mentve"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" sikeresen áthelyezve"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" átnevezése nem sikerült"
@@ -8475,10 +8417,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elem véglegesen törölve a lomtárból",
         "${ numberOfItems } elem véglegesen törölve a lomtárból"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } elemet nem sikerült eltávolítani",
-        "${ numberOfItems } elemet nem sikerült eltávolítani"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült",
@@ -8519,9 +8457,6 @@
       ],
       "Access updated": [
         "Hozzáférés frissítve"
-      ],
-      "Album failed to be renamed": [
-        "Album átnevezése sikertelen"
       ],
       "Album renamed successfully": [
         "Album átnevezve"
@@ -8570,9 +8505,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Fájlok letöltése nem sikerült: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nem sikerült betölteni a meghívás részleteit"
       ],
       "Failed to move, please try again": [
         "Nem sikerült áthelyezni, próbálja meg újra"
@@ -9484,11 +9416,6 @@
         "Név"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "lépjen kapcsolatba"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } hónap",
@@ -9710,9 +9637,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A fiók-visszaállítás nem érhető el régi című kulcsokhoz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ]
     },
     "session_recovery:available:info": {

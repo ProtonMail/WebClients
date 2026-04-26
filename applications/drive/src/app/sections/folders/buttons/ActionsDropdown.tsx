@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -13,7 +14,6 @@ import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useTrashActions } from '../../commonActions/useTrashActions';
 
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
@@ -32,10 +32,10 @@ interface Props {
     volumeId: string;
     selectedItems: Item[];
     role: MemberRole;
-    canShareSingleItem: boolean;
+    canShareSelectedItem: boolean;
 }
 
-export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleItem }: Props) => {
+export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSelectedItem }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
@@ -57,7 +57,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleI
         action: () => void;
     }[] = [
         {
-            hidden: !canShareSingleItem,
+            hidden: !canShareSelectedItem,
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
@@ -111,6 +111,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleI
                     selectedItems.map((item) => ({
                         uid: generateNodeUid(item.volumeId, item.linkId),
                         parentUid: generateNodeUid(item.volumeId, item.parentLinkId),
+                        name: item.name,
                     }))
                 ),
         },

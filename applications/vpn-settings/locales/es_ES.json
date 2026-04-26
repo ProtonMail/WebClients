@@ -221,6 +221,9 @@
       "Continue anyway": [
         "Continuar de todas formas"
       ],
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
       "Continue import": [
         "Continuar la importación"
       ],
@@ -577,6 +580,9 @@
       ],
       "Invite user": [
         "Invitar usuario"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -3401,6 +3407,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Añade más direcciones a tu cuenta o utiliza alias de Ocultar mi correo para mantener la privacidad de tu bandeja de entrada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Añade carpetas y archivos a ${ DRIVE_APP_NAME } e invita a los miembros del equipo a ver o editar."
       ],
@@ -3491,6 +3500,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Te permite añadir al instante enlaces de reunión a las invitaciones de tu evento."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nadie en tu organización puede conectarse a servidores compartidos."
       ],
@@ -3499,6 +3511,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifica la sincronización y la programación con calendarios compartidos."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesitas ayuda? Nuestro equipo de asistencia está aquí para ayudarte."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
@@ -3520,6 +3535,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puedes gestionar varias direcciones de ${ BRAND_NAME } desde una sola cuenta, sin tener que cambiar de sesión. Los alias y las herramientas de gestión te ayudan a mantenerlo todo en una misma bandeja de entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puedes unificar tus direcciones en una sola cuenta principal de ${ BRAND_NAME } siguiendo nuestra guía de ayuda."
       ]
     },
     "description": {
@@ -4324,9 +4345,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ],
       "Please select a country": [
         "Selecciona un país"
@@ -5373,6 +5391,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesitas más asistencia, nuestro equipo está aquí para ayudarte."
       ]
     },
     "Gmail forwarding": {
@@ -8060,6 +8089,9 @@
       "Vault updated": [
         "Se ha actualizado la caja fuerte."
       ],
+      "Verification code sent.": [
+        "Se ha enviado el código de verificación."
+      ],
       "Verification may take a few minutes.": [
         "La verificación puede tardar unos minutos."
       ],
@@ -9038,6 +9070,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } y ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Gratuito"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -9387,6 +9422,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Almacenamiento"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -9419,6 +9457,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlimited": [
+        "Sin límite"
       ],
       "Upload 1 or more encryption keys": [
         "Carga 1 o más claves de cifrado"
@@ -9476,6 +9517,9 @@
       ],
       "Why would you like to cancel?": [
         "¿Por qué quieres cancelar?"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
@@ -9606,6 +9650,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Explicación de la recuperación de cuenta"
+      ],
       "activity monitor": [
         "monitor de actividad"
       ],
@@ -9621,11 +9668,11 @@
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
-      "Common sign in issues": [
-        "Problemas comunes de inicio de sesión"
-      ],
       "Common sign up issues": [
         "Problemas comunes de registro"
+      ],
+      "Contact support": [
+        "Contacte con Soporte"
       ],
       "Create account": [
         "Crear cuenta"
@@ -9723,11 +9770,17 @@
       "if your data is leaked": [
         "si tus datos son filtrados"
       ],
+      "Learn how": [
+        "Más información"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Learn more about data recovery": [
         "Aprende más sobre recuperación de datos"
+      ],
+      "Manage addresses": [
+        "Gestiona tus direcciones"
       ],
       "Not activated": [
         "No activado"
@@ -9779,6 +9832,9 @@
       ],
       "visit our blog": [
         "visitar nuestro blog"
+      ],
+      "Visit our support site": [
+        "Visita nuestro centro de ayuda"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -10500,8 +10556,8 @@
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -12538,11 +12594,6 @@
         "La puerta a la libertad en línea"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
@@ -12762,9 +12813,6 @@
       "Verify now": [
         "Verificar ahora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifica ahora este correo electrónico de recuperación: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "¿Verificar el correo electrónico de recuperación?"
       ],
@@ -12804,9 +12852,6 @@
       ],
       "Verify recovery phone?": [
         "¿Verificar el teléfono de recuperación?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifica ahora este número telefónico de recuperación: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar tu número de teléfono aumenta la seguridad de tu cuenta y permite opciones de recuperación adicionales."
@@ -13108,9 +13153,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, **es obligatorio** que tengas configurados **un método de recuperación de la cuenta y de los datos**. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos, archivos o contraseñas."
       ],
-      "Invalid code": [
-        "El código no es válido."
-      ],
       "Review account safety": [
         "Verificar la seguridad de la cuenta"
       ],
@@ -13387,9 +13429,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ]
     },
     "session_recovery:available:info": {
@@ -14853,9 +14892,6 @@
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -15370,6 +15406,9 @@
       "Allocate storage": [
         "Asignar almacenamiento"
       ],
+      "Already have multiple accounts?": [
+        "¿Ya tienes varias cuentas?"
+      ],
       "Also in your plan": [
         "También en tu plan"
       ],
@@ -15526,6 +15565,9 @@
       ],
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
+      ],
+      "Create new addresses easily": [
+        "Crea nuevas direcciones de forma sencilla"
       ],
       "Create new policy": [
         "Crear una política"
@@ -15786,6 +15828,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtén una cobertura de privacidad completa"
+      ],
+      "Get direct support": [
+        "Obtén asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtén ayuda con un problema"
       ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
@@ -16215,6 +16263,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."
       ],
+      "Troubleshoot your issue": [
+        "Soluciona tu problema"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prueba ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16268,6 +16319,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
+      ],
+      "Use one account for all your addresses": [
+        "Utiliza una sola cuenta para todas tus direcciones"
       ],
       "User": [
         "Usuario"

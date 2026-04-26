@@ -83,7 +83,7 @@ const LinkConfirmationModal = ({
             <ModalTwoFooter className="items-center items-inherit">
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
 
-                <div className="*:min-size-auto flex flex-1 flex-column gap-2 items-center sm:ml-2 sm:flex-nowrap sm:flex-row">
+                <div className="*:min-size-auto flex flex-1 flex-column flex-nowrap gap-2 items-center sm:ml-2  sm:flex-row">
                     {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                     {!isPhishingAttempt && !isOutside && (
                         <Label className="w-auto flex-1 self-end sm:self-center flex flex-nowrap justify-end label gap-2 pt-0">

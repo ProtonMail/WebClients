@@ -4,11 +4,11 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import { Pagination } from '@proton/components/components/pagination';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { MonitorReport, UsageReport } from '@proton/pass/lib/organization/types';
 import type { MaybeNull, MemberMonitorReport } from '@proton/pass/types';
@@ -151,7 +151,7 @@ export const PassReports = () => {
                         onPrevious={onMonitorPrevious}
                     />
                     <Button shape="outline" onClick={handleMonitorDownloadClick} title={c('Action').t`Export as CSV`}>
-                        <Icon name="arrow-down-line" className="mr-2" />
+                        <IcArrowDownLine className="mr-2" />
                         {c('Action').t`Export as CSV`}
                     </Button>
                 </div>
@@ -175,7 +175,7 @@ export const PassReports = () => {
                         onPrevious={onUsagePrevious}
                     />
                     <Button shape="outline" onClick={handleUsageDownloadClick} title={c('Action').t`Export as CSV`}>
-                        <Icon name="arrow-down-line" className="mr-2" />
+                        <IcArrowDownLine className="mr-2" />
                         {c('Action').t`Export as CSV`}
                     </Button>
                 </div>

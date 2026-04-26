@@ -628,9 +628,6 @@
       "Set extra password": [
         "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
-      "Settings": [
-        "Ρυθμίσεις"
-      ],
       "Setup 2FA": [
         "Ρύθμιση 2FA"
       ],
@@ -942,6 +939,21 @@
       "Authentication failure: ${ message }": [
         "Αποτυχία ελέγχου ταυτότητας: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δεν ταιριάζουν."
+      ],
+      "Biometric lock credentials not found.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δε βρέθηκαν."
+      ],
+      "Biometric lock is not configured.": [
+        "Το βιομετρικό κλείδωμα δεν έχει ρυθμιστεί."
+      ],
+      "Biometric lock setup failed.": [
+        "Η ρύθμιση του βιομετρικού κλειδώματος απέτυχε."
+      ],
       "Cannot create alias (${ error }).": [
         "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
@@ -1016,11 +1028,11 @@
       "Emptying trash failed": [
         "Το άδειασμα των διαγραμμένων απέτυχε"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Η κρυπτογραφημένη επικοινωνία με την εφαρμογή επιτραπέζιου υπολογιστή ${ PASS_APP_NAME } απέτυχε."
+      ],
       "Encrypted JSON not supported": [
         "Το κρυπτογραφημένο JSON δεν υποστηρίζεται"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Η κρυπτογραφημένη επικοινωνία για το ξεκλείδωμα της επιφάνειας εργασίας απέτυχε."
       ],
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
@@ -1259,6 +1271,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Κάτι πήγε στραβά. Φορτώστε ξανά την προέκταση ${ PASS_APP_NAME }. Αυτό το ζήτημα έχει καταγραφεί"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Η επιτραπέζια εφαρμογή ${ PASS_APP_NAME } δεν ανταποκρίθηκε εγκαίρως."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
       ],
@@ -1267,6 +1282,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
       ],
       "The URL is in the list": [
         "Η διεύθυνση URL βρίσκεται στη λίστα"
@@ -1291,6 +1312,9 @@
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "Unknown error.": [
+        "Άγνωστο σφάλμα."
       ],
       "Unknown invite": [
         "Άγνωστη πρόσκληση"
@@ -2024,6 +2048,9 @@
       "Loading...": [
         "Φόρτωση..."
       ],
+      "Logging you out...": [
+        "Αποσύνδεση..."
+      ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
       ],
@@ -2544,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Απεριόριστα hide-my-email ψευδώνυμα και προηγμένη διαχείριση ψευδωνύμων"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN για πρόσβαση στα κλειδιά πρόσβασής σας"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } για να αποκτήσετε πρόσβαση στους κωδικούς πρόσβασής σας"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN σας για να αποθηκεύσετε αυτό το κλειδί πρόσβασης"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } για να αποθηκεύσετε αυτόν τον κωδικό πρόσβασης"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με βιομετρικά"

@@ -1,20 +1,37 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getHasFIDO2Enabled, getHasTOTPEnabled } from '@proton/shared/lib/authentication/twoFactor';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import lockErrorExclamation from '../../icons/lock-error-exclamation.svg';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
 export const ResetPasswordWithDataLoss = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { username } = snapshot.context;
+    const { username, resetResponse } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'offerDataLossReset',
+        });
+    }, []);
+
+    const multiFAEnabled = resetResponse?.['2FA']?.Enabled;
+    const hasTOTPEnabled = getHasTOTPEnabled();
+    const hasFIDO2Enabled = getHasFIDO2Enabled(multiFAEnabled);
+
+    const has2FA = hasTOTPEnabled || hasFIDO2Enabled;
 
     const DataRecoveryOptionsLink = (
         <Href
@@ -34,9 +51,9 @@ export const ResetPasswordWithDataLoss = () => {
             <Content>
                 <p className="m-0">
                     {getBoldFormattedText(
-                        c('Info')
-                            .t`You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**`
-                    )}
+                        c('Info').t`You can now reset your password to regain access to your account.`
+                    )}{' '}
+                    {has2FA && getBoldFormattedText(c('Info').t`**This will disable 2-factor authentication.**`)}
                 </p>
                 <div className="rounded-lg border border-weak p-3 mt-6">
                     <div className="flex flex-nowrap gap-2">
@@ -47,16 +64,8 @@ export const ResetPasswordWithDataLoss = () => {
                             style={{ '--w-custom': '28px' }}
                         />
                         <div>
-                            <div>
-                                {c('Info')
-                                    .jt`Due to end-to-end encryption, you can reset your password, but ${DataLockedText} until you use a ${DataRecoveryOptionsLink}:`}
-                            </div>
-                            <ul className="m-0 mt-4">
-                                <li className="text-semibold">{c('Info').t`Recovery phrase`}</li>
-                                <li className="text-semibold">{c('Info').t`Recovery contacts`}</li>
-                                <li className="text-semibold">{c('Info').t`Recovery file`}</li>
-                                <li className="text-semibold">{c('Info').t`Your old password`}</li>
-                            </ul>
+                            {c('Info')
+                                .jt`Due to end-to-end encryption, you can reset your password, but ${DataLockedText} until you use a ${DataRecoveryOptionsLink}:`}
                         </div>
                     </div>
                 </div>

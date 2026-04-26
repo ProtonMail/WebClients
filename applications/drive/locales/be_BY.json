@@ -90,11 +90,11 @@
       "Add photos": [
         "Дадаць фатаграфіі"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфія)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфіі)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфій)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфій)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфія)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфіі)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)"
       ],
       "Add to album": [
         "Дадаць у альбом"
@@ -525,9 +525,6 @@
       "Get in touch": [
         "Звязацца з намі"
       ],
-      "Get link": [
-        "Атрымаць спасылку"
-      ],
       "Get mobile and desktop apps": [
         "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
       ],
@@ -549,8 +546,8 @@
       "Go back": [
         "Вярнуцца"
       ],
-      "Go back to album “${ albumName }“": [
-        "Вярнуцца ў альбом “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Вярнуцца ў альбом “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -654,9 +651,6 @@
       "Load image": [
         "Загрузіць відарыс"
       ],
-      "Loading link": [
-        "Загрузка спасылкі"
-      ],
       "Make a copy": [
         "Зрабіць копію"
       ],
@@ -671,9 +665,6 @@
       ],
       "Manage labels": [
         "Кіраванне меткамі"
-      ],
-      "Manage link": [
-        "Кіраванне спасылкай"
       ],
       "Manage share": [
         "Кіраваць абагульваннем"
@@ -812,6 +803,9 @@
       ],
       "Quit": [
         "Выйсці"
+      ],
+      "Re-index": [
+        "Пераіндэксаваць"
       ],
       "Re-sign": [
         "Паўторна падпісаць"
@@ -1084,7 +1078,7 @@
         "Зарэгістравацца"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Start": [
         "Пачаць"
@@ -3543,7 +3537,7 @@
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to change permissions settings": [
         "Не ўдалося змяніць налады дазволаў"
@@ -3571,6 +3565,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Не ўдалося загрузіць падрабязнасці подпісу. Паспрабуйце яшчэ раз пазней"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
@@ -5012,6 +5009,12 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } быў паспяхова выдалены"
       ],
+      "${ albums } album": [
+        "${ albums } альбом",
+        "${ albums } альбомы",
+        "${ albums } альбомаў",
+        "${ albums } альбомаў"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -5117,6 +5120,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
+      "${ files } file": [
+        "${ files } файл",
+        "${ files } файлы",
+        "${ files } файлаў",
+        "${ files } файлаў"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзена ${ groupCounts } групы",
@@ -5158,6 +5167,12 @@
         "${ photoCount } элементы",
         "${ photoCount } элементаў",
         "${ photoCount } элементаў"
+      ],
+      "${ photos } photo": [
+        "${ photos } фатаграфія",
+        "${ photos } фатаграфіі",
+        "${ photos } фатаграфій",
+        "${ photos } фатаграфій"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -5894,6 +5909,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
@@ -5965,6 +5983,9 @@
       ],
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
+      ],
+      "Invitation confirmed": [
+        "Запрашэнне пацверджана"
       ],
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
@@ -6163,6 +6184,9 @@
       ],
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
+      ],
+      "No populator states found.": [
+        "Станы папулятара не знойдзены."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -6506,9 +6530,6 @@
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Абагулена вамі"
-      ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
@@ -6839,9 +6860,6 @@
       "Unsupported file type for Photos": [
         "Тып файла для фатаграфій не падтрымліваецца"
       ],
-      "Untitled": [
-        "Без назвы"
-      ],
       "Update required": [
         "Патрабуецца абнаўленне"
       ],
@@ -6916,9 +6934,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "У нас узніклі тэхнічныя праблемы. Часова адключаны ўсе дзеянні, якія звязаны з альбомамі."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
@@ -8912,6 +8927,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
+      ],
       "Auto-delete Spam and Trash": [
         "Аўтавыдаленне спаму і смецця"
       ],
@@ -8966,8 +8990,8 @@
       "Data retention policies": [
         "Палітыка захоўвання даных"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваныя для трансляцый"
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -9440,7 +9464,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -9668,38 +9692,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" скапіяваны"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" паспяхова створаны"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" выдалены"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" незваротна выдалены са сметніцы"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Не ўдалося стварыць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Не ўдалося выдаліць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Не ўдалося незваротна выдаліць са сметніцы \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Не ўдалося перамясціць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Не ўдалося аднавіць са сметніцы \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" перамешчаны"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" адноўлены са сметніцы"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" паспяхова перамешчаны"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" абагулены"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" паспяхова створана"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" выдалена"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" выдалены незваротна"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" незваротна выдалены са сметніцы"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Не ўдалося стварыць \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Не ўдалося выдаліць \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы \"${ name }\""
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Не ўдалося перамясціць \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Не ўдалося перамясціць у сметніцу \"${ name }\""
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы \"${ name }\""
       ],
       "\"${ name }\" failed to be saved": [
         "Не ўдалося захаваць\"${ name }\""
@@ -9707,17 +9743,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перамешчаны ў сметніцу"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" адноўлены са сметніцы"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" паспяхова захаваны"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" паспяхова скапіявана"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" паспяхова перамешчаны"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не ўдалося перайменаваць \"${ newName }\""
@@ -9736,6 +9763,12 @@
         "Не ўдалося скапіяваць ${ errors.length } элементы",
         "Не ўдалося скапіяваць ${ errors.length } элементаў",
         "Не ўдалося скапіяваць ${ errors.length } элементаў"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Не ўдалося выдаліць ${ errors.length } элемент",
+        "Не ўдалося выдаліць ${ errors.length } элементы",
+        "Не ўдалося выдаліць ${ errors.length } элементаў",
+        "Не ўдалося выдаліць ${ errors.length } элементаў"
       ],
       "${ errors.length } item failed to be trashed": [
         "Не ўдалося выдаліць ${ errors.length } элемент",
@@ -9773,6 +9806,12 @@
         "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу",
         "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } элемент скапіяваны",
+        "${ numberOfItems } элементы скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
         "${ numberOfItems } элементы выдалены",
@@ -9790,12 +9829,6 @@
         "${ numberOfItems } элементы незваротна выдалены са сметніцы",
         "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Не ўдалося выдаліць ${ numberOfItems } элемент",
-        "Не ўдалося выдаліць ${ numberOfItems } элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",
@@ -9821,6 +9854,12 @@
         "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементаў",
         "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } элемент перамешчаны",
+        "${ numberOfItems } элементы перамешчаны",
+        "${ numberOfItems } элементаў перамешчаны",
+        "${ numberOfItems } элементаў перамешчаны"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } элемент перамешчаны ў сметніцу",
         "${ numberOfItems } элементы перамешчаны ў сметніцу",
@@ -9832,12 +9871,6 @@
         "${ numberOfItems } элементы адноўлены са сметніцы",
         "${ numberOfItems } элементаў адноўлены са сметніцы",
         "${ numberOfItems } элементы адноўлены са сметніцы"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } элемент паспяхова скапіяваны",
-        "${ numberOfItems } элементы паспяхова скапіяваны",
-        "${ numberOfItems } элементаў паспяхова скапіяваны",
-        "${ numberOfItems } элементаў паспяхова скапіяваны"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } элемент паспяхова перамешчаны",
@@ -9856,9 +9889,6 @@
       ],
       "Access updated": [
         "Доступ абноўлены"
-      ],
-      "Album failed to be renamed": [
-        "Не ўдалося перайменаваць альбом"
       ],
       "Album renamed successfully": [
         "Альбом паспяхова перайменаваны"
@@ -9881,8 +9911,8 @@
       "Contact group updated": [
         "Група кантактаў абноўлена"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Копія \"${ name }\" перамешчана ў сметніцу"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Копія \"${ ellipsedName }\" перамешчана ў сметніцу"
       ],
       "Device failed to be removed": [
         "Не ўдалося выдаліць прыладу"
@@ -9910,9 +9940,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Не ўдалося спампаваць файлы: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Не ўдалося загрузіць падрабязнасці запрашэння"
       ],
       "Failed to move, please try again": [
         "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
@@ -10059,6 +10086,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Альбом паспяхова перайменаваны"
       ]
     },
     "Oauth instructions": {
@@ -10603,6 +10635,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -11007,11 +11042,6 @@
         "Назва"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "звяжыцеся"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
@@ -11309,9 +11339,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -11992,6 +12019,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -12235,6 +12268,12 @@
       "Version history": [
         "Гісторыя версій"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
+      ],
       "Watch the interview": [
         "Глядзець інтэрв'ю"
       ],
@@ -12403,9 +12442,6 @@
       ],
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
-      ],
-      "Billing information updated": [
-        "Плацежная інфармацыя абноўлена"
       ],
       "Canceling import": [
         "Скасаванне імпартавання"
@@ -13159,6 +13195,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Індэкс папулятараў"
       ],
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"

@@ -1,12 +1,9 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { NodeType } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -18,7 +15,6 @@ import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
-import type { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import {
     BaseTransferStatus,
     IssueStatus,
@@ -32,8 +28,6 @@ type Props = {
     onShare?: () => void;
     cancelTransfer: (entry: TransferManagerEntry) => void;
     retryTransfer: (entry: TransferManagerEntry) => void;
-    showDocumentsModal: (props: { onSubmit: () => void; onCancel: () => void }) => void;
-    showSignatureIssueModal: ReturnType<typeof useSignatureIssueModal>['showSignatureIssueModal'];
     onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
@@ -52,8 +46,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [UploadStatus.ConflictFound]: c('Info').t`Waiting`,
         [UploadStatus.Waiting]: c('Info').t`Waiting`,
         [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
-        // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
-        [UploadStatus.Skipped]: c('Info').t`Skipped`,
+        [UploadStatus.Skipped]: c('Info').t`Canceled`,
         [UploadStatus.PhotosDuplicate]: c('Info').t`Already in your library`,
         [UploadStatus.NotSupportedForPhotos]: c('Info').t`Unsupported file type for Photos`,
     };
@@ -76,6 +69,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === UploadStatus.Skipped) {
         return <IcCrossCircle size={5} className="color-weak" />;
     }
+    if (entry.status === UploadStatus.ParentCancelled) {
+        return <IcCrossCircle size={5} className="color-weak" />;
+    }
     if (entry.status === BaseTransferStatus.Failed || entry.status === UploadStatus.NotSupportedForPhotos) {
         return <IcCrossCircleFilled size={5} className="color-danger" />;
     }
@@ -88,15 +84,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     return null;
 };
 
-export const TransferItem = ({
-    entry,
-    onShare,
-    cancelTransfer,
-    retryTransfer,
-    showDocumentsModal,
-    showSignatureIssueModal,
-    onReportAbuse,
-}: Props) => {
+export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, onReportAbuse }: Props) => {
     // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const onlyShowTransferredBytes = !totalSize;
@@ -121,51 +109,6 @@ export const TransferItem = ({
             return { item: state.getQueueItem(entry.id) };
         })
     );
-
-    useEffect(() => {
-        const { updateDownloadItem } = useDownloadManagerStore.getState();
-
-        if (item?.unsupportedFileDetected === IssueStatus.Detected) {
-            if (!item) {
-                return;
-            }
-            showDocumentsModal({
-                onSubmit: () => {
-                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: IssueStatus.Approved });
-                },
-                onCancel: () => {
-                    cancelTransfer(entry);
-                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: IssueStatus.Rejected });
-                },
-            });
-        }
-
-        const issues = item?.signatureIssues ?? {};
-        const unresolvedIssues = Object.values(issues).filter((issue) => issue.issueStatus === IssueStatus.Detected);
-        const issue = unresolvedIssues[0];
-        if (!item || !issue) {
-            return;
-        }
-        if (item?.signatureIssueAllDecision) {
-            // Case in which the user has selected an option with applyAll already
-            dm.resolveSignatureIssue(item, issue.name, item?.signatureIssueAllDecision);
-        } else {
-            showSignatureIssueModal({
-                isFile: issue.nodeType === NodeType.File || issue.nodeType === NodeType.Photo,
-                downloadName: item.name,
-                message: issue.message,
-                apply: (decision: IssueStatus, applyAll: boolean) => {
-                    applyAll = decision === IssueStatus.Rejected ? true : applyAll;
-                    dm.resolveSignatureIssue(item, issue.name, decision, applyAll);
-                },
-                cancelAll: () => {
-                    dm.resolveSignatureIssue(item, issue.name, IssueStatus.Rejected, true);
-                    cancelTransfer(entry);
-                },
-            });
-        }
-        // showModal not in deps because is not stable
-    }, [item, entry.id, cancelTransfer]);
 
     const downloadAnyway = () => {
         dm.setMalawareDecision(entry.id, IssueStatus.Approved);

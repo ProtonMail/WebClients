@@ -1,154 +1,40 @@
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { userThunk } from '@proton/account/user';
-import { useGetUser, useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { userSettingsThunk } from '@proton/account/userSettings';
-import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useUpdateMnemonicRecovery } from '@proton/account/recovery/useUpdateMnemonicRecovery';
+import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
-import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
-import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
-import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
-import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
-import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
-import GenerateMnemonicModal from '../mnemonic/GenerateMnemonicModal';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
-import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
-import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 export const DataRecoverySection = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [user] = useUser();
-    const [userSettings] = useUserSettings();
-    const dispatch = useDispatch();
-    const api = useApi();
-    const authentication = useAuthentication();
+    const mnemonicData = useSelector(selectMnemonicData);
+    const updateMnemonicRecovery = useUpdateMnemonicRecovery(mnemonicData);
 
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
-    const getUserSettings = useGetUserSettings();
-    const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
-    const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
-
-    const [disableMnemonicModal, setDisableMnemonicModalOpen, renderDisableMnemonicModal] = useModalState();
-    const [generateMnemonicModal, setGenerateMnemonicModalOpen, renderGenerateMnemonicModal] = useModalState();
-    const [generateMnemonicModalButton, setGenerateMnemonicModalButtonOpen, renderGenerateMnemonicModalButton] =
-        useModalState();
-    const [voidRecoveryFilesModal, setVoidRecoveryFilesModalOpen, renderVoidRecoveryFilesModal] = useModalState();
-
-    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
-    const recoverySecrets = useRecoverySecrets();
-    const canRevokeRecoveryFiles = recoverySecrets.length > 0;
+    const recoveryFileData = useSelector(selectRecoveryFileData);
+    const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
 
-    useSearchParamsEffect(
-        (params) => {
-            if (!isMnemonicAvailable) {
-                return;
-            }
-
-            const actionParam = params.get('action');
-            if (!actionParam) {
-                return;
-            }
-
-            if (actionParam === 'generate-recovery-phrase') {
-                if (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
-                    setGenerateMnemonicModalButtonOpen(true);
-                } else {
-                    setGenerateMnemonicModalOpen(true);
-                }
-
-                params.delete('action');
-                return params;
-            }
-        },
-        [loadingIsMnemonicAvailable]
-    );
-
-    const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
-        const [user, userKeys, addresses, userSettings] = await Promise.all([
-            getUser(),
-            getUserKeys(),
-            getAddresses(),
-            getUserSettings(),
-        ]);
-        return syncDeviceRecovery({
-            api,
-            user,
-            addresses,
-            userSettings: { ...userSettings, ...partialUserSettings },
-            userKeys,
-            authentication,
-        });
-    };
-
-    const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
-        const DeviceRecovery = Number(checked) as 0 | 1;
-        if (userSettings.DeviceRecovery === DeviceRecovery) {
-            return;
-        }
-        await api(updateDeviceRecovery({ DeviceRecovery }));
-        await syncDeviceRecoveryHelper({ DeviceRecovery });
-        await Promise.all([
-            dispatch(userThunk({ cache: CacheType.None })),
-            dispatch(userSettingsThunk({ cache: CacheType.None })),
-        ]);
-        if (checked) {
-            sendRecoverySettingEnabled({ setting: 'device_recovery' });
-        }
-    };
-
     return (
         <>
-            {renderDisableMnemonicModal && <DisableMnemonicModal {...disableMnemonicModal} />}
-            {renderGenerateMnemonicModalButton && (
-                <GenerateMnemonicModal
-                    confirmStep
-                    {...generateMnemonicModalButton}
-                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
-                />
-            )}
-            {renderGenerateMnemonicModal && (
-                <GenerateMnemonicModal
-                    {...generateMnemonicModal}
-                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
-                />
-            )}
-            {renderVoidRecoveryFilesModal && (
-                <VoidRecoveryFilesModal
-                    onVoid={() => handleChangeDeviceRecoveryToggle(false)}
-                    deviceRecoveryEnabled={Boolean(userSettings.DeviceRecovery)}
-                    {...voidRecoveryFilesModal}
-                />
-            )}
+            {updateMnemonicRecovery.el}
+            {updateRecoveryFile.el}
 
             <SettingsSection>
                 <SettingsParagraph>
@@ -161,15 +47,11 @@ export const DataRecoverySection = () => {
                 </SettingsParagraph>
 
                 <SettingsDivider>
-                    {isMnemonicAvailable && (
+                    {mnemonicData.isMnemonicAvailable && (
                         <>
-                            {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                            {mnemonicData.hasOutdatedMnemonic && (
                                 <p className="color-danger">
-                                    <Icon
-                                        className="mr-2 float-left mt-1"
-                                        name="exclamation-circle-filled"
-                                        size={3.5}
-                                    />
+                                    <IcExclamationCircleFilled className="mr-2 float-left mt-1" size={3.5} />
                                     {c('Warning')
                                         .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
                                 </p>
@@ -185,11 +67,9 @@ export const DataRecoverySection = () => {
                                         />
                                     </label>
                                 </SettingsLayoutLeft>
-                                <SettingsLayoutRight
-                                    isToggleContainer={user.MnemonicStatus !== MNEMONIC_STATUS.OUTDATED}
-                                >
-                                    {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
-                                        <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
+                                <SettingsLayoutRight isToggleContainer={!mnemonicData.hasOutdatedMnemonic}>
+                                    {mnemonicData.hasOutdatedMnemonic ? (
+                                        <Button color="norm" onClick={() => updateMnemonicRecovery.updatePhrase()}>
                                             {c('Action').t`Update recovery phrase`}
                                         </Button>
                                     ) : (
@@ -197,15 +77,11 @@ export const DataRecoverySection = () => {
                                             <div className="flex items-start">
                                                 <Toggle
                                                     className="mr-2"
-                                                    loading={disableMnemonicModal.open || generateMnemonicModal.open}
-                                                    checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
+                                                    loading={updateMnemonicRecovery.toggleLoading}
+                                                    checked={mnemonicData.isMnemonicSet}
                                                     id="mnemonicToggle"
                                                     onChange={({ target: { checked } }) => {
-                                                        if (checked) {
-                                                            setGenerateMnemonicModalOpen(true);
-                                                        } else {
-                                                            setDisableMnemonicModalOpen(true);
-                                                        }
+                                                        updateMnemonicRecovery.updateToggle(checked);
                                                     }}
                                                 />
 
@@ -218,11 +94,11 @@ export const DataRecoverySection = () => {
                                                 </label>
                                             </div>
 
-                                            {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
+                                            {mnemonicData.isMnemonicSet && (
                                                 <Button
                                                     className="mt-4"
                                                     shape="outline"
-                                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
                                                 >
                                                     {c('Action').t`Generate new recovery phrase`}
                                                 </Button>
@@ -234,7 +110,7 @@ export const DataRecoverySection = () => {
                         </>
                     )}
 
-                    {isRecoveryFileAvailable && (
+                    {recoveryFileData.isRecoveryFileAvailable && (
                         <>
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
@@ -252,10 +128,12 @@ export const DataRecoverySection = () => {
                                         <Toggle
                                             className="mr-2"
                                             loading={loadingDeviceRecovery}
-                                            checked={!!userSettings.DeviceRecovery}
+                                            checked={recoveryFileData.hasDeviceRecoveryEnabled}
                                             id="deviceRecoveryToggle"
                                             onChange={({ target: { checked } }) =>
-                                                withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
+                                                withLoadingDeviceRecovery(
+                                                    updateRecoveryFile.toggleDeviceRecovery(checked)
+                                                )
                                             }
                                         />
                                         <label
@@ -279,30 +157,27 @@ export const DataRecoverySection = () => {
                                     </span>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>
-                                    <ExportRecoveryFileButton className="block" color="norm">
-                                        {hasOutdatedRecoveryFile
-                                            ? c('Action').t`Update recovery file`
-                                            : c('Action').t`Download recovery file`}
-                                    </ExportRecoveryFileButton>
-                                    {canRevokeRecoveryFiles && (
-                                        <Button
-                                            className="mt-4"
-                                            color="danger"
-                                            shape="underline"
-                                            onClick={() => setVoidRecoveryFilesModalOpen(true)}
-                                        >
-                                            {c('Action').t`Void all recovery files`}
-                                        </Button>
-                                    )}
+                                    <div className="flex flex-column items-start gap-2">
+                                        <ExportRecoveryFileButton className="block" color="norm">
+                                            {recoveryFileData.hasOutdatedRecoveryFile
+                                                ? c('Action').t`Update recovery file`
+                                                : c('Action').t`Download recovery file`}
+                                        </ExportRecoveryFileButton>
+                                        {recoveryFileData.canRevokeRecoveryFiles && (
+                                            <Button
+                                                color="danger"
+                                                shape="underline"
+                                                onClick={() => updateRecoveryFile.voidFiles()}
+                                            >
+                                                {c('Action').t`Void all recovery files`}
+                                            </Button>
+                                        )}
+                                    </div>
                                 </SettingsLayoutRight>
                             </SettingsLayout>
-                            {hasOutdatedRecoveryFile && (
+                            {recoveryFileData.hasOutdatedRecoveryFile && (
                                 <p className="color-danger flex flex-nowrap">
-                                    <Icon
-                                        className="mr-2 shrink-0 mt-0.5"
-                                        name="exclamation-circle-filled"
-                                        size={3.5}
-                                    />
+                                    <IcExclamationCircleFilled className="mr-2 shrink-0 mt-0.5" size={3.5} />
                                     <span className="flex-1">{c('Warning')
                                         .t`Your recovery file is outdated. It can't recover new data if you reset your password again.`}</span>
                                 </p>

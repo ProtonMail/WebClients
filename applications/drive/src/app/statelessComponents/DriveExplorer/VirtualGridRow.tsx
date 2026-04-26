@@ -26,6 +26,7 @@ interface VirtualGridRowProps {
     isMultiSelectionDisabled?: boolean;
     getDragMoveControls?: (uid: string) => DragMoveControls;
     showCheckboxColumn?: boolean;
+    hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
     onObserve: (element: HTMLElement | null, uid: string) => void;
 }
@@ -44,6 +45,7 @@ export function VirtualGridRow({
     isMultiSelectionDisabled,
     getDragMoveControls,
     showCheckboxColumn,
+    hideSelectionHighlight,
     contextMenuControls,
     onObserve,
 }: VirtualGridRowProps) {
@@ -85,6 +87,7 @@ export function VirtualGridRow({
                             isMultiSelectionDisabled={isMultiSelectionDisabled}
                             dragMoveControls={dragMoveControls}
                             showCheckboxColumn={showCheckboxColumn}
+                            hideSelectionHighlight={hideSelectionHighlight}
                             contextMenuControls={contextMenuControls}
                         />
                     );

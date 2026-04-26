@@ -17,6 +17,7 @@ import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@pr
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import { embeddedDrawerAppInfos } from '../../helpers/drawer';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useCalendarFavicon from '../../hooks/useCalendarFavicon';
 import { useCalendarSelector } from '../../store/hooks';
@@ -140,7 +141,8 @@ const MainContainer = () => {
 };
 
 const WrappedMainContainer = () => {
-    useDrawerParent();
+    const { parentApp } = embeddedDrawerAppInfos;
+    useDrawerParent(parentApp);
     return (
         <GlobalModalProvider>
             <NotificationManagerInjector />

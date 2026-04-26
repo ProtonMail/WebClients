@@ -38,6 +38,7 @@ export const ConfirmationModal = ({
     return (
         <ModalTwo
             open={true}
+            onClose={onClose}
             rootClassName="confirmation-modal"
             size="small"
             className="large-meet-radius border border-norm overflow-y-auto"
@@ -59,7 +60,7 @@ export const ConfirmationModal = ({
             <div
                 className="flex flex-column flex-nowrap justify-end items-center gap-4 text-center h-full p-6 pt-custom overflow-hidden min-h-custom"
                 style={{
-                    '--pt-custom': isMobile() ? 'none' : '5rem',
+                    '--pt-custom': isMobile() ? '3rem' : '5rem',
                     '--min-h-custom': '22rem',
                 }}
             >

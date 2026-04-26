@@ -7,13 +7,13 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Badge from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal.helpers';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -23,7 +23,7 @@ import { getScribeUpsellLearnMore, getScribeUpsellText } from './helpers';
 
 const AssistantToggle = () => {
     const [subscription, subscriptionLoading] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [plans] = usePlans();
     const [organization] = useOrganization();
     const [member] = useMember();
@@ -72,14 +72,14 @@ const AssistantToggle = () => {
     );
 
     const handleCustomize = () => {
-        openSubscriptionModal(assistantUpsellConfig);
+        void openSubscriptionModal(assistantUpsellConfig);
     };
 
     return (
         <section className="border rounded flex items-start flex-column gap-2 p-6">
             <div className="flex justify-space-between items-center">
                 <div className="flex gap-2 items-center">
-                    <Icon name="pen-sparks" size={6} style={{ color: '#D132EA' }} />
+                    <IcPenSparks size={6} style={{ color: '#D132EA' }} />
                     <p className="m-0 text-bold text-2xl">{c('Info').t`${BRAND_NAME} Scribe writing assistant`}</p>
                     {trialStatus === 'trial-ongoing' && (
                         <Badge type="info">{c('Assistant toggle').t`Trial in progress`}</Badge>
@@ -90,8 +90,9 @@ const AssistantToggle = () => {
                 {getScribeUpsellText()} {learnMore}.
             </p>
             <div className="flex flex-row items-baseline gap-2">
-                <Button shape="outline" size="small" onClick={handleCustomize}>{c('Assistant toggle')
-                    .t`Buy now`}</Button>
+                <Button shape="outline" size="small" onClick={handleCustomize} loading={loadingSubscriptionModal}>{c(
+                    'Assistant toggle'
+                ).t`Buy now`}</Button>
                 {trialStatus === 'trial-ongoing' && (
                     <p className="color-weak text-sm m-0">{c('Assistant toggle')
                         .t`Trial expires on ${formattedDate}`}</p>
