@@ -1,5 +1,6 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
+import { useGridKeyboardShortcuts } from '../../useGridKeyboardShortcuts'
 import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
@@ -61,6 +62,7 @@ const exposeCanvasGrid = (
 
 export function LegacyGrid() {
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
+  useGridKeyboardShortcuts()
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
   const isReadonly = useUI((ui) => ui.info.isReadonly)
 
