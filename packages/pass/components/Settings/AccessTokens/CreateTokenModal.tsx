@@ -193,12 +193,12 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     rootClassName="mb-4"
                 />
 
-                <div className="flex items-start justify-space-between gap-3 mb-4">
+                <div className="flex items-start justify-space-between gap-4 mb-4">
                     <div className="flex-1">
                         <label htmlFor="pat-agent" className="text-bold block">
                             {c('pass_2026: Label').t`Issue for AI agent`}
                         </label>
-                        <span className="text-sm color-weak block mt-1">
+                        <span className="block mt-1">
                             {c('pass_2026: Info').t`Show setup instructions tailored for an AI agent after creation.`}
                         </span>
                     </div>
@@ -209,11 +209,13 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     />
                 </div>
 
-                <div className="mt-4">
+                <hr className="my-5 border-weak" />
+
+                <div>
                     <div className="flex items-baseline justify-space-between mb-1">
-                        <label className="text-sm color-weak">{c('pass_2026: Label').t`Vault access`}</label>
+                        <h3 className="text-bold text-lg m-0">{c('pass_2026: Label').t`Vault access`}</h3>
                         {vaults.length > 0 && (
-                            <span className="text-xs color-weak">
+                            <span className="text-sm color-weak">
                                 {selectedShareIds.size > 0
                                     ? c('pass_2026: Info').t`${selectedShareIds.size} selected`
                                     : c('pass_2026: Info').t`None selected`}
@@ -221,7 +223,8 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                         )}
                     </div>
                     <p className="text-sm color-weak mt-0 mb-2">
-                        {c('pass_2026: Info').t`Select the vaults this token can read. You can change this later.`}
+                        {c('pass_2026: Info')
+                            .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, or share vaults to others.`}
                     </p>
                     {vaults.length === 0 ? (
                         <div className="text-sm color-weak">{c('pass_2026: Info').t`No vaults available.`}</div>
