@@ -104,7 +104,7 @@ const AuthApp = () => {
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
                             <ApiProvider api={extraThunkArguments.api}>
-                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
