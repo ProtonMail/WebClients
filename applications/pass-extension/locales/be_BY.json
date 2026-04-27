@@ -948,6 +948,18 @@
       "Biometric authentication failed.": [
         "Збой аўтэнтыфікацыі біяметрыі."
       ],
+      "Biometric lock credentials do not match.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
+      ],
+      "Biometric lock credentials not found.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не знойдзены."
+      ],
+      "Biometric lock is not configured.": [
+        "Біяметрычная блакіроўка не сканфігурыравана."
+      ],
+      "Biometric lock setup failed.": [
+        "Збой наладкі біяметрычнай блакіроўкі"
+      ],
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданім (${ error })."
       ],
@@ -1283,6 +1295,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
       ],
       "The URL is in the list": [
         "URL-адрас знаходзіцца ў спісе"
@@ -2615,6 +2630,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email і пашыранае кіраванне псеўданімам"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб атрымаць доступ да ключа доступу"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб захаваць гэты ключ доступу"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"
