@@ -18,6 +18,7 @@ import {
   type SquashVerificationObjectionCallback,
 } from '../Types/SquashVerificationObjection'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
+import { getDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
 import { isDocumentState, type DocumentState } from '../State/DocumentState'
@@ -373,11 +374,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
   public async createNewDocument(documentType: DocumentType): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
-    // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
-    const docTitle = c('Title').t`Untitled document ${date}`
-    const sheetTitle = c('Title').t`Untitled spreadsheet ${date}`
-    const baseTitle = documentType === 'sheet' ? sheetTitle : docTitle
-    const newName = `${baseTitle}`
+    const newName = getDefaultDocumentName(documentType, date)
 
     const result = await this._createNewDocument.execute(
       newName,
