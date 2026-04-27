@@ -34,6 +34,7 @@ import { type DocTrashState, FileMenuActionEvent, isWordCountSupported } from '@
 import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
 import { AutoGrowingInput } from './AutoGrowingInput'
@@ -105,6 +106,7 @@ export function DocumentTitleDropdown({
     setRenameInputValue(title)
   }, [title])
   const renameInputRef = useRef<HTMLInputElement>(null)
+  const shouldSelectDefaultSpreadsheetTitleOnMouseUpRef = useRef(false)
 
   const isSpreadsheet = documentType === 'sheet'
 
@@ -409,6 +411,30 @@ export function DocumentTitleDropdown({
                   currentTarget.blur()
                   editorController.focusSpreadsheet()
                 }
+              }}
+              onFocus={(e) => {
+                if (!isDefaultDocumentName(e.currentTarget.value, 'sheet')) {
+                  return
+                }
+                // Defer so the click's mouseup doesn't clobber the selection by placing the caret.
+                const input = e.currentTarget
+                shouldSelectDefaultSpreadsheetTitleOnMouseUpRef.current = true
+                setTimeout(() => {
+                  if (document.activeElement === input) {
+                    input.select()
+                  }
+                })
+              }}
+              onMouseUp={(e) => {
+                if (
+                  !shouldSelectDefaultSpreadsheetTitleOnMouseUpRef.current ||
+                  !isDefaultDocumentName(e.currentTarget.value, 'sheet')
+                ) {
+                  return
+                }
+                shouldSelectDefaultSpreadsheetTitleOnMouseUpRef.current = false
+                e.preventDefault()
+                e.currentTarget.select()
               }}
               onBlur={confirmRename}
               ref={renameInputRef}
