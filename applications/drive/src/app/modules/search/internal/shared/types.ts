@@ -72,3 +72,19 @@ export type SearchResultItem = {
  * from the shared worker to the main thread.
  */
 export type WorkerSearchResultEvent = ({ type: 'item' } & SearchResultItem) | { type: 'done' };
+
+// Possible values for an index entry attribute once it has been returned by the WASM library
+// via `Entry.attribute(name)[i].value()`. Integers may come back as either `number` or `bigint`
+// depending on magnitude; strings cover both `text` and `tag` attribute kinds.
+export type SerializedAttributeValue = string | number | bigint | boolean;
+
+export type SerializedIndexEntry = {
+    identifier: string;
+    attributes: Record<string, SerializedAttributeValue[]>;
+};
+
+/**
+ * Discriminated union for streaming exported index entries across the Comlink
+ * boundary. Used by the diagnostics modal.
+ */
+export type WorkerIndexExportEvent = ({ type: 'entry' } & SerializedIndexEntry) | { type: 'done' };
