@@ -1042,7 +1042,7 @@
         "Otevřít menu"
       ],
       "Or remove forwarding address": [
-        "Nebo odebrat adresu přeposílání"
+        "Nebo odeberte adresu přeposílání"
       ],
       "Or use a different Gmail address": [
         "Nebo použijte jinou Gmail adresu"
@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4304,7 +4307,7 @@
         "Již máte adresu Gmail, která přeposílá na ${ MAIL_APP_NAME }. Připojte ji níže a posílejte a přijímejte e-maily přímo z ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "Již máte nastavené přesměrování adres Gmailu do aplikace ${ MAIL_APP_NAME }. Připojte níže uvedenou adresu, abyste mohli odesílat a přijímat e-maily přímo z aplikace ${ MAIL_APP_NAME }."
+        "Již máte nastavené přesměrování adres Gmailu do ${ MAIL_APP_NAME }. Připojte níže uvedenou adresu, abyste mohli odesílat a přijímat e-maily přímo z ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
@@ -6105,7 +6108,7 @@
         "Pouze pro vaše oči"
       ],
       "Get storage bonus": [
-        "Získejte bonus k úložnému prostoru"
+        "Získejte bonusový úložný prostor"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
@@ -6120,7 +6123,7 @@
         "Ochrana před sledováním"
       ],
       "Review import options": [
-        "Zkontrolovat možnosti importu"
+        "Zkontrolujte možnosti importu"
       ],
       "Sign in to the mobile app to complete this step": [
         "Přihlaste se do mobilní aplikace a dokončete tento krok"
@@ -7280,7 +7283,7 @@
         "Vyberte tarif, který vám nejlépe vyhovuje."
       ],
       "Choose your service to connect with": [
-        "Vyberte si službu, ke které se chcete připojit"
+        "Vyberte službu, se kterou se chcete propojit"
       ],
       "Clear browser data": [
         "Vyčistit data prohlížeče"
@@ -7811,10 +7814,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -13181,7 +13181,7 @@
         "Vybrat"
       ],
       "Select a provider": [
-        "Vybrat poskytovatele"
+        "Vyberte poskytovatele"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -13353,7 +13353,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Další"
+        "Ostatní"
       ],
       "Outlook": [
         "Outlook"
@@ -15691,7 +15691,7 @@
         "Blokovat odesílatele"
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
-        "Připojte svůj Gmail k aplikaci ${ MAIL_APP_NAME }"
+        "Připojte svůj Gmail k ${ MAIL_APP_NAME }"
       ],
       "Built for privacy": [
         "Vytvořeno pro soukromí"
