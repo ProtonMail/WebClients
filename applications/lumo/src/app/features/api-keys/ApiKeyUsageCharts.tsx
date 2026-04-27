@@ -33,7 +33,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
 
     if (!hasUsage) {
         return (
-            <div className="api-keys-usage" onClick={(e) => e.stopPropagation()}>
+            <div className="api-keys-usage flex flex-column items-end gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
                 <div className="api-keys-usage-chart api-keys-usage-chart--ghost" aria-hidden="true">
                     <ResponsiveContainer width="100%" height={34}>
                         <AreaChart data={GHOST_DATA} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
@@ -61,7 +61,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
     }
 
     return (
-        <div className="api-keys-usage" onClick={(e) => e.stopPropagation()}>
+        <div className="api-keys-usage flex flex-column items-end gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
             <div className="api-keys-usage-chart api-keys-usage-chart--spark" aria-hidden="true">
                 <ResponsiveContainer width="100%" height={34}>
                     <AreaChart data={days} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
@@ -97,7 +97,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                                     day: 'numeric',
                                 });
                                 return (
-                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark">
+                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5">
                                         <span className="api-keys-chart-tooltip-date">{label}</span>
                                         <span className="api-keys-chart-tooltip-value">
                                             {formatTokenCount(d.TokenCount)} {c('collider_2025: Unit').t`tokens`}
@@ -115,12 +115,12 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
-            <div className="api-keys-usage-stats">
-                <div className="api-keys-usage-stat-line">
+            <div className="flex flex-column items-end gap-0.5">
+                <div className="flex items-baseline flex-wrap gap-1 justify-end">
                     <span className="api-keys-usage-total">{formatTokenCount(totalTokenCount)}</span>
                     <span className="api-keys-usage-label">{c('collider_2025: Info').t`tokens / 30d`}</span>
                 </div>
-                <div className="api-keys-usage-stat-line">
+                <div className="flex items-baseline flex-wrap gap-1 justify-end">
                     <span className="api-keys-usage-total">{formatTokenCount(totalApiCalls)}</span>
                     <span className="api-keys-usage-label">{c('collider_2025: Info').t`API calls`}</span>
                 </div>
@@ -159,24 +159,24 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
     }
 
     return (
-        <div className="api-keys-card-expanded">
+        <div className="flex flex-column gap-5 pt-2">
             <div className="api-keys-expanded-stats">
-                <div className="api-keys-stat">
+                <div className="api-keys-stat flex flex-column gap-1 p-3 rounded-lg border border-weak bg-norm">
                     <span className="api-keys-stat-value">{formatTokenCount(totalTokenCount)}</span>
                     <span className="api-keys-stat-label">{c('collider_2025: Label').t`Tokens (30d)`}</span>
                 </div>
-                <div className="api-keys-stat">
+                <div className="api-keys-stat flex flex-column gap-1 p-3 rounded-lg border border-weak bg-norm">
                     <span className="api-keys-stat-value">{formatTokenCount(totalApiCalls)}</span>
                     <span className="api-keys-stat-label">{c('collider_2025: Label').t`API calls (30d)`}</span>
                 </div>
-                <div className="api-keys-stat">
+                <div className="api-keys-stat flex flex-column gap-1 p-3 rounded-lg border border-weak bg-norm">
                     <span className="api-keys-stat-value">{formatAvgTokensPerCall(avgTokensPerCall)}</span>
                     <span className="api-keys-stat-label">{c('collider_2025: Label').t`Avg tokens / call`}</span>
                 </div>
             </div>
 
-            <div className="api-keys-expanded-chart-block">
-                <h4 className="api-keys-expanded-chart-title">{c('collider_2025: Title').t`Tokens per day`}</h4>
+            <div className="flex flex-column gap-2">
+                <h4 className="api-keys-expanded-chart-title m-0">{c('collider_2025: Title').t`Tokens per day`}</h4>
                 <div className="api-keys-expanded-chart api-keys-expanded-chart--elevated">
                     <ResponsiveContainer width="100%" height={228}>
                         <AreaChart data={days} margin={{ top: 14, right: 10, left: 4, bottom: 4 }}>
@@ -209,7 +209,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
                                     if (!active || !payload?.length) return null;
                                     const d = payload[0].payload as { Date: string; TokenCount: number };
                                     return (
-                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-tokens">
+                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-tokens flex flex-column gap-0.5">
                                             <span className="api-keys-chart-tooltip-date">{shortDayLabel(d.Date)}</span>
                                             <span className="api-keys-chart-tooltip-value">
                                                 {formatTokenCount(d.TokenCount)} {c('collider_2025: Unit').t`tokens`}
@@ -235,8 +235,8 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
                 </div>
             </div>
 
-            <div className="api-keys-expanded-chart-block">
-                <h4 className="api-keys-expanded-chart-title">{c('collider_2025: Title').t`API calls per day`}</h4>
+            <div className="flex flex-column gap-2">
+                <h4 className="api-keys-expanded-chart-title m-0">{c('collider_2025: Title').t`API calls per day`}</h4>
                 <div className="api-keys-expanded-chart api-keys-expanded-chart--elevated">
                     <ResponsiveContainer width="100%" height={228}>
                         <BarChart data={days} margin={{ top: 14, right: 10, left: 4, bottom: 4 }} barCategoryGap="28%">
@@ -268,7 +268,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
                                     if (!active || !payload?.length) return null;
                                     const d = payload[0].payload as { Date: string; ApiCalls: number };
                                     return (
-                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-calls">
+                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-calls flex flex-column gap-0.5">
                                             <span className="api-keys-chart-tooltip-date">{shortDayLabel(d.Date)}</span>
                                             <span className="api-keys-chart-tooltip-value">
                                                 {d.ApiCalls} {c('collider_2025: Unit').t`calls`}
@@ -291,8 +291,8 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
                 </div>
             </div>
 
-            <div className="api-keys-expanded-chart-block">
-                <h4 className="api-keys-expanded-chart-title">{c('collider_2025: Title').t`Tokens per call (daily)`}</h4>
+            <div className="flex flex-column gap-2">
+                <h4 className="api-keys-expanded-chart-title m-0">{c('collider_2025: Title').t`Tokens per call (daily)`}</h4>
                 <p className="api-keys-expanded-hint text-sm color-weak m-0 mb-2">
                     {c('collider_2025: Info')
                         .t`For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).`}
@@ -332,7 +332,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
                                         ApiCalls: number;
                                     };
                                     return (
-                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-tpc">
+                                        <div className="api-keys-chart-tooltip api-keys-chart-tooltip--expanded api-keys-chart-tooltip--accent-tpc flex flex-column gap-0.5">
                                             <span className="api-keys-chart-tooltip-date">{shortDayLabel(d.Date)}</span>
                                             <span className="api-keys-chart-tooltip-value">
                                                 {d.ApiCalls === 0
@@ -386,18 +386,20 @@ export const ApiKeysUsageOverview = ({
     }
 
     return (
-        <div className="api-keys-overview">
-            <h3 className="api-keys-overview__title">{c('collider_2025: Title').t`Usage (all keys, last 30 days)`}</h3>
+        <div className="api-keys-overview rounded-lg border border-weak">
+            <h3 className="api-keys-overview__title m-0 mb-3">
+                {c('collider_2025: Title').t`Usage (all keys, last 30 days)`}
+            </h3>
             <div className="api-keys-overview__grid">
-                <div className="api-keys-overview__stat">
+                <div className="flex flex-column gap-1">
                     <span className="api-keys-overview__value">{formatTokenCount(totalTokens)}</span>
                     <span className="api-keys-overview__label">{c('collider_2025: Label').t`Tokens generated`}</span>
                 </div>
-                <div className="api-keys-overview__stat">
+                <div className="flex flex-column gap-1">
                     <span className="api-keys-overview__value">{formatTokenCount(totalApiCalls)}</span>
                     <span className="api-keys-overview__label">{c('collider_2025: Label').t`API calls`}</span>
                 </div>
-                <div className="api-keys-overview__stat">
+                <div className="flex flex-column gap-1">
                     <span className="api-keys-overview__value">{formatAvgTokensPerCall(avg)}</span>
                     <span className="api-keys-overview__label">{c('collider_2025: Label').t`Avg tokens / call`}</span>
                 </div>

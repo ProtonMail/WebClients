@@ -23,15 +23,37 @@ export interface TierError extends BaseError {
     userType: LUMO_USER_TYPE;
 }
 
+export type ResourceLimitType = 'messages' | 'assets' | 'conversations' | 'spaces';
+
+export interface ResourceLimitError {
+    id: string;
+    resource: ResourceLimitType;
+    limit: number;
+    serverMessage?: string;
+    timestamp: number;
+}
+
+export type DebugLimitOverride = 'approaching' | 'at' | null;
+
 // State interface
 interface ErrorState {
     conversationErrors: Record<ConversationId, ConversationError[]>;
     tierErrors: TierError[];
+    resourceLimitErrors: ResourceLimitError[];
+    // Dev-only: lets the Debug View force the resource-limit banner state.
+    debugLimitOverrides: Record<ResourceLimitType, DebugLimitOverride>;
 }
 
 const initialState: ErrorState = {
     conversationErrors: {},
     tierErrors: [],
+    resourceLimitErrors: [],
+    debugLimitOverrides: {
+        messages: null,
+        assets: null,
+        conversations: null,
+        spaces: null,
+    },
 };
 
 const errorsSlice = createSlice({
@@ -81,6 +103,47 @@ const errorsSlice = createSlice({
         clearTierErrors: (state) => {
             state.tierErrors = [];
         },
+
+        addResourceLimitError: (
+            state,
+            action: PayloadAction<Omit<ResourceLimitError, 'id' | 'timestamp'>>
+        ) => {
+            // Deduplicate: if there's already a recent error for this resource, don't pile them up.
+            const now = Date.now();
+            const existing = state.resourceLimitErrors.find(
+                (e) => e.resource === action.payload.resource && now - e.timestamp < 5000
+            );
+            if (existing) return;
+            state.resourceLimitErrors.push({
+                ...action.payload,
+                id: `${action.payload.resource}-${now}-${Math.random().toString(36).slice(2, 8)}`,
+                timestamp: now,
+            });
+        },
+
+        dismissResourceLimitError: (state, action: PayloadAction<string>) => {
+            state.resourceLimitErrors = state.resourceLimitErrors.filter((e) => e.id !== action.payload);
+        },
+
+        clearResourceLimitErrors: (state) => {
+            state.resourceLimitErrors = [];
+        },
+
+        setDebugLimitOverride: (
+            state,
+            action: PayloadAction<{ resource: ResourceLimitType; override: DebugLimitOverride }>
+        ) => {
+            state.debugLimitOverrides[action.payload.resource] = action.payload.override;
+        },
+
+        clearAllDebugLimitOverrides: (state) => {
+            state.debugLimitOverrides = {
+                messages: null,
+                assets: null,
+                conversations: null,
+                spaces: null,
+            };
+        },
     },
 });
 
@@ -90,6 +153,11 @@ export const {
     clearConversationErrors,
     dismissConversationError,
     clearTierErrors,
+    addResourceLimitError,
+    dismissResourceLimitError,
+    clearResourceLimitErrors,
+    setDebugLimitOverride,
+    clearAllDebugLimitOverrides,
 } = errorsSlice.actions;
 
 // Selectors
@@ -105,6 +173,21 @@ export const selectTierErrors = createSelector([selectErrorsState], (errorsState
 export const selectHasTierErrors = createSelector(
     [selectErrorsState],
     (errorsState) => errorsState.tierErrors.length > 0
+);
+
+export const selectResourceLimitErrors = createSelector(
+    [selectErrorsState],
+    (errorsState) => errorsState.resourceLimitErrors
+);
+
+export const selectDebugLimitOverride =
+    (resource: ResourceLimitType) =>
+    (state: { errors: ErrorState }): DebugLimitOverride =>
+        state.errors.debugLimitOverrides[resource];
+
+export const selectAllDebugLimitOverrides = createSelector(
+    [selectErrorsState],
+    (errorsState) => errorsState.debugLimitOverrides
 );
 
 export default errorsSlice.reducer;

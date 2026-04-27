@@ -1033,7 +1033,13 @@ export class DbApi {
     ): Promise<void> => {
         tx ??= (await this.db).transaction(MESSAGE_STORE, 'readwrite');
         const message = await this.getMessageById(id, tx);
-        if (!message) throw new Error(`Message ${id} not found`);
+        // Idempotent: tombstones from the server or retry paths may target a message
+        // that was never materialized locally. Treat as a no-op rather than throwing,
+        // which otherwise crashes the saga watcher and spams the console on every pull.
+        if (!message) {
+            console.warn(`softDeleteMessage: ${id} not found, skipping`);
+            return;
+        }
         // Remove content from the encrypted data for security purposes, but keep the encrypted field
         // since the type requires it
         const secureMessage = {
@@ -1052,7 +1058,13 @@ export class DbApi {
     ): Promise<void> => {
         tx ??= (await this.db).transaction(CONVERSATION_STORE, 'readwrite');
         const conversation = await this.getConversationById(id, tx);
-        if (!conversation) throw new Error(`Conversation ${id} not found`);
+        // Idempotent: tombstones from the server or retry paths may target a conversation
+        // that was never materialized locally. Treat as a no-op rather than throwing,
+        // which otherwise crashes the saga watcher and spams the console on every pull.
+        if (!conversation) {
+            console.warn(`softDeleteConversation: ${id} not found, skipping`);
+            return;
+        }
         // Remove content from the encrypted data for security purposes, but keep the encrypted field
         // since the type requires it
         const secureConversation = {
@@ -1067,7 +1079,11 @@ export class DbApi {
     public softDeleteSpace = async (id: SpaceId, { dirty }: { dirty: boolean }, tx?: IDBTransaction): Promise<void> => {
         tx ??= (await this.db).transaction(SPACE_STORE, 'readwrite');
         const space = await this.getSpaceById(id, tx);
-        if (!space) throw new Error(`Space ${id} not found`);
+        // Idempotent: see softDeleteConversation rationale.
+        if (!space) {
+            console.warn(`softDeleteSpace: ${id} not found, skipping`);
+            return;
+        }
         // Remove wrappedSpaceKey when deleting the space for security purposes
         const { wrappedSpaceKey, ...spaceWithoutKey } = space;
         const updatedSpace = {
@@ -1084,7 +1100,11 @@ export class DbApi {
     ): Promise<void> => {
         tx ??= (await this.db).transaction(ATTACHMENT_STORE, 'readwrite');
         const attachment = await this.getAttachmentById(id, tx);
-        if (!attachment) throw new Error(`Attachment ${id} not found`);
+        // Idempotent: see softDeleteConversation rationale.
+        if (!attachment) {
+            console.warn(`softDeleteAttachment: ${id} not found, skipping`);
+            return;
+        }
 
         // Keep only essential metadata from AttachmentPub and remove heavy fields
         const { id: attachmentId, spaceId, uploadedAt, mimeType, rawBytes } = attachment;

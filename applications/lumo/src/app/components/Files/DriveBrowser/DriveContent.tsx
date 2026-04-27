@@ -81,7 +81,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
     const isEmpty = children.length === 0 || filteredChildren.length === 0;
 
     return (
-        <>
+        <div className="flex flex-column flex-nowrap flex-1 min-h-0">
             {showBreadcrumbs && (
                 <DriveBreadcrumbs
                     breadcrumbs={breadcrumbs}
@@ -90,7 +90,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                 />
             )}
 
-            <div className="drive-content-container overflow-auto" style={{ minHeight: '200px' }}>
+            <div className="drive-content-container flex-1 min-h-0 overflow-y-auto">
                 <DriveHiddenFilesNotice
                     hiddenProtonDocsCount={hiddenProtonDocsCount}
                     hiddenUnsupportedCount={hiddenUnsupportedCount}
@@ -117,6 +117,6 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                     />
                 )}
             </div>
-        </>
+        </div>
     );
 };

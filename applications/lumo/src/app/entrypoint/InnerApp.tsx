@@ -7,6 +7,7 @@ import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
 import {useLumoFlags} from "../hooks/useLumoFlags";
 
+
 const ConversationPage = lazy(() => import('../layouts/ConversationPage').then((m) => ({default: m.ConversationPage})));
 const ProjectsView = lazy(() => import('../features/projects/ProjectsView').then((m) => ({default: m.ProjectsView})));
 const ProjectDetailView = lazy(() =>
@@ -18,7 +19,7 @@ const ApiDocsPage = lazy(() =>
 
 export function InnerApp() {
     const {url} = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement } = useLumoFlags();
+    const { apiKeyManagement, imageTools } = useLumoFlags();
 
     return (
 
@@ -29,9 +30,13 @@ export function InnerApp() {
                         <Switch>
                             <Route exact path="/projects" component={ProjectsView}/>
                             <Route path="/projects/:projectId" component={ProjectDetailView}/>
+                            {imageTools &&
+                                <Route exact path="/gallery" component={ConversationPage}/>
+                            }
                             { apiKeyManagement &&
                                 <Route exact path="/docs/api" component={ApiDocsPage}/>
                             }
+                            
                             <Route exact path="/" component={ConversationPage}/>
                             <Route path="/c/:conversationId" component={ConversationPage}/>
                         </Switch>

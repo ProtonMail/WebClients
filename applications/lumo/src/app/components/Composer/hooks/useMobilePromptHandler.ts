@@ -6,11 +6,11 @@ export const useMobilePromptHandler = (
     textareaRef: MutableRefObject<HTMLTextAreaElement | null>
 ): void => {
     useEffect(() => {
-        const handler = (prompt: string) => {
+        const handler = (prompt: string, replace: boolean = false) => {
             const text = prompt.trim();
             if (!text) return;
             setValue((prev) => {
-                if (!prev) return text;
+                if (!prev || replace) return text;
                 return prev.endsWith(' ') ? `${prev}${text}` : `${prev} ${text}`;
             });
             textareaRef.current?.focus();

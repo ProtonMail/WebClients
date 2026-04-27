@@ -41,6 +41,7 @@ function readConfig(): LumoConfig {
             return config;
         }
     } catch (e) {
+        console.error(LOG_LEVELS, e);
         // JSON parse error or localStorage not available
     }
 
@@ -55,6 +56,7 @@ function writeConfig(updates: Partial<LumoConfig>): void {
         const newConfig = { ...currentConfig, ...updates };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(newConfig));
     } catch (e) {
+        console.error(LOG_LEVELS, e);
         // localStorage might not be available, silently fail
     }
 }

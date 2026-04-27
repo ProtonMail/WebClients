@@ -1,4 +1,5 @@
 import { attachmentLoadingStateReducer } from './attachmentLoadingState';
+import composerActionsReducer from './composerActions';
 import contextFiltersReducer from './contextFilters';
 import attachmentsReducer from './core/attachments';
 import conversationsReducer from './core/conversations';
@@ -8,6 +9,7 @@ import messagesReducer from './core/messages';
 import spacesReducer from './core/spaces';
 import featureFlagsReducer from './featureFlags';
 import ghostChatReducer from './ghostChat';
+import guestMigrationReducer from './guestMigration';
 import lumoUserSettingsReducer from './lumoUserSettings';
 import eligibilityStatusReducer from './meta/eligibilityStatus';
 import errorsReducer from './meta/errors';
@@ -16,6 +18,7 @@ import { remainingInvitesReducer } from './meta/remainingInvites';
 import personalizationReducer from './personalization';
 
 export const lumoReducers = {
+    composerActions: composerActionsReducer,
     spaces: spacesReducer,
     conversations: conversationsReducer,
     messages: messagesReducer,
@@ -27,6 +30,7 @@ export const lumoReducers = {
     errors: errorsReducer,
     contextFilters: contextFiltersReducer,
     ghostChat: ghostChatReducer,
+    guestMigration: guestMigrationReducer,
     personalization: personalizationReducer,
     featureFlags: featureFlagsReducer,
     lumoUserSettings: lumoUserSettingsReducer,

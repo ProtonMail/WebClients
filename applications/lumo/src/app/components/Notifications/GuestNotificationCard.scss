@@ -1,0 +1,7 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.guest-notification-heart-icon {
+	inline-size: #{rem(32)};
+	block-size: #{rem(32)};
+	background-color: #eeedfe;
+}

@@ -160,7 +160,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
     chatExamples: {
         basic: {
             curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
-  -H 'Authorization: Bearer  $LUMO_API_KEY' \\
+  -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
     "model": "auto",
@@ -222,7 +222,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         },
         tool_call: {
             curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
-  -H 'Authorization: Bearer  $LUMO_API_KEY' \\
+  -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
     "model": "auto",
@@ -284,7 +284,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     },
     authExamples: {
         curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
-  -H 'Authorization: Bearer $LUMO_API_KEY' \\
+  -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{"model": "auto", "messages": [{"role": "user", "content": "Hello"}]}'`,
         python: `import os

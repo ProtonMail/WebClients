@@ -43,8 +43,7 @@ export const ComposerEditorArea = ({
     onAbort,
     onSubmit,
     spaceId,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    messageChain = [],
+    // messageChain = [],
     isAutocompleteActiveRef,
     placeholder,
     browseFolderChildren,
@@ -169,7 +168,7 @@ export const ComposerEditorArea = ({
     useMobilePromptHandler(setValue, textareaRef);
 
     return (
-        <div className="lumo-input flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative">
+        <div className="lumo-input border-none flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative">
             <TextareaAutosize
                 ref={textareaRef}
                 value={value}
@@ -203,7 +202,7 @@ export const ComposerEditorArea = ({
                 <div className="flex flex-row self-end items-end gap-1 h-full shrink-0 composer-submit-button">
                     <Tooltip
                         title={
-                            // eslint-disable-next-line no-nested-ternary
+                            //eslint-disable-next-line no-nested-ternary
                             isProcessingAttachment
                                 ? c('collider_2025: Info').t`Please wait for files to finish processing`
                                 : isGenerating

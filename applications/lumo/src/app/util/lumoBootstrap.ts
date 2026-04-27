@@ -9,6 +9,7 @@ import { updateEligibilityStatus } from '../redux/slices/meta/eligibilityStatus'
 import type { LumoDispatch } from '../redux/store';
 import { LumoApi } from '../remote/api';
 import { convertMasterKeyToApi } from '../remote/conversion';
+import '../remote/nativeComposerBridge';
 import '../remote/paymentBridge';
 import type { Base64 } from '../types';
 import { LUMO_ELIGIBILITY } from '../types';

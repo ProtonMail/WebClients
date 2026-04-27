@@ -12,6 +12,7 @@ interface ProgressiveMarkdownProps {
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
     message: Message;
 }
 

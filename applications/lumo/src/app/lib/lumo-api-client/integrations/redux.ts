@@ -17,6 +17,7 @@ import {
     pushMessageRequest,
     setToolCall,
     setToolResult,
+    setSuggestedQuestions,
 } from '../../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../../redux/store';
 import { ConversationStatus, Role } from '../../../types';
@@ -158,6 +159,19 @@ export function sendMessageWithRedux(
                                             sequence: message.count,
                                         })
                                     );
+                                }
+                                break;
+
+                            case 'suggested_questions':
+                                if (messageId) {
+                                    try {
+                                        const questions: string[] = JSON.parse(message.content);
+                                        if (Array.isArray(questions)) {
+                                            dispatch(setSuggestedQuestions({ messageId, questions }));
+                                        }
+                                    } catch {
+                                        console.warn('Failed to parse suggested_questions content', message.content);
+                                    }
                                 }
                                 break;
                         }

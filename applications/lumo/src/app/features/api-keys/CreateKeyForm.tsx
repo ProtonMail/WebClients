@@ -77,8 +77,8 @@ export const CreateKeyForm = ({ onCancel, onCreated }: { onCancel: () => void; o
     };
 
     return (
-        <div className="api-keys-form-card">
-            <h4 className="api-keys-form-title">{c('collider_2025: Title').t`Create new API key`}</h4>
+        <div className="api-keys-form-card rounded-lg">
+            <h4 className="api-keys-form-title m-0 mb-4">{c('collider_2025: Title').t`Create new API key`}</h4>
 
             <div className="api-keys-form-fields">
                 <InputFieldTwo
@@ -96,7 +96,7 @@ export const CreateKeyForm = ({ onCancel, onCreated }: { onCancel: () => void; o
                     autoFocus
                 />
                 <div className="api-keys-form-expiry">
-                    <label className="api-keys-form-expiry-label" htmlFor="api-key-expiry">
+                    <label className="api-keys-form-expiry-label block m-0 mb-1.5" htmlFor="api-key-expiry">
                         {c('Label').t`Expires in`}
                     </label>
                     <Select
@@ -108,7 +108,7 @@ export const CreateKeyForm = ({ onCancel, onCreated }: { onCancel: () => void; o
                 </div>
             </div>
 
-            <div className="api-keys-form-footer">
+            <div className="flex items-center justify-end gap-2 mt-4 pt-4 api-keys-form-footer">
                 <Button shape="outline" color="weak" onClick={onCancel} disabled={isSubmitting}>
                     {c('Action').t`Cancel`}
                 </Button>

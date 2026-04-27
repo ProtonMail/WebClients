@@ -37,31 +37,16 @@ im.$media-expressions: $media-expressions;
 }
 
 .files-panel {
-	// Smooth panel entrance animation
-	@include im.media('>small') {
-		animation: slideInFromRight 0.3s ease-out;
-	}
-
-	// Ensure proper scrolling in modal
 	&.modal-files-panel {
 		block-size: 100%;
 		overflow: visible;
-		padding: 0 !important; // Override the pt-2 pr-4 pb-6 classes in modal
+		padding: 0 !important;
 
 		.files-panel-content {
 			block-size: 100%;
 			max-block-size: none;
 			border-radius: 0;
 			box-shadow: none;
-			display: flex;
-			flex-direction: column;
-
-			// Make the scrollable area take remaining space
-			> div:last-child {
-				flex: 1;
-				min-block-size: 0;
-				overflow-y: auto;
-			}
 		}
 	}
 }
@@ -88,15 +73,3 @@ im.$media-expressions: $media-expressions;
 	transition: all 0.2s;
 }
 
-// Panel entrance animation
-@keyframes slideInFromRight {
-	from {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateX(0);
-		opacity: 1;
-	}
-}

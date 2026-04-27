@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { CanvasConfig, Stroke } from './types';
 import { useCanvasRenderer } from './hooks/useCanvasRenderer';
 import { useDrawing } from './hooks/useDrawing';
+import './Canvas.scss';
 
 interface CanvasProps {
     config: CanvasConfig;
@@ -124,11 +125,11 @@ export const Canvas = ({
     }
 
     return (
-        <div ref={containerRef} className="w-full h-full flex items-center justify-center" style={{ padding: '3rem' }}>
+        <div ref={containerRef} className="w-full h-full flex items-center justify-center p-12">
             {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 10 }}>
+                <div className="canvas__loading-overlay absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+                        <div className="canvas__loading-spinner inline-block rounded-full" />
                         <p className="mt-2 color-norm">Loading image...</p>
                     </div>
                 </div>
@@ -137,15 +138,7 @@ export const Canvas = ({
                 ref={canvasRef}
                 width={width}
                 height={height}
-                className="block touch-none"
-                style={{
-                    cursor: 'crosshair',
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: '1.5rem',
-                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                }}
+                className="canvas__element block"
             />
         </div>
     );

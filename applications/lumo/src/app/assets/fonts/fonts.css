@@ -17,7 +17,36 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url(~@proton/styles/assets/fonts/Syne-Medium.woff2) format('woff2'), 
-         url(~@proton/styles/assets/fonts/Syne-Medium.woff) format('woff'), 
+    src: url(~@proton/styles/assets/fonts/Syne-Medium.woff2) format('woff2'),
+         url(~@proton/styles/assets/fonts/Syne-Medium.woff) format('woff'),
          url(~@proton/styles/assets/fonts/Syne-Medium.ttf) format('truetype')
   }
+
+
+@font-face {
+    font-family: OpenRunde;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(~@proton/styles/assets/fonts/OpenRunde-Regular.woff) format('woff'),
+    url(~@proton/styles/assets/fonts/OpenRunde-Regular.woff2) format('woff2')
+}
+
+@font-face {
+    font-family: OpenRunde;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(~@proton/styles/assets/fonts/OpenRunde-Medium.woff) format('woff'),
+    url(~@proton/styles/assets/fonts/OpenRunde-Medium.woff2) format('woff2')
+}
+
+
+@font-face {
+    font-family: OpenRunde;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(~@proton/styles/assets/fonts/OpenRunde-Semibold.woff) format('woff'),
+    url(~@proton/styles/assets/fonts/OpenRunde-Semibold.woff2) format('woff2')
+}

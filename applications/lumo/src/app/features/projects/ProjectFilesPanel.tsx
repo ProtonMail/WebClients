@@ -15,7 +15,7 @@ import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constant
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { FileContentModal } from '../../components/Files';
+import { FilePreviewPanel } from '../../components/Files/Common/FilePreviewPanel';
 import type { BreadcrumbItem } from '../../components/Files/DriveBrowser/DriveBreadcrumbs';
 import type { DriveBrowserHandle } from '../../components/Files/DriveBrowser/DriveBrowser';
 import type { UploadProgress } from '../../components/Files/DriveBrowser/UploadProgressOverlay';
@@ -271,9 +271,14 @@ export const ProjectFilesPanel = ({
                     accept="*/*"
                 />
 
-                {/* Modals */}
                 {fileToView && (
-                    <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
+                    <div className="project-files-preview-panel">
+                        <FilePreviewPanel
+                            attachment={fileToView}
+                            onBack={() => setFileToView(null)}
+                            onClose={() => setFileToView(null)}
+                        />
+                    </div>
                 )}
 
                 {linkDriveFolderModal.render && (

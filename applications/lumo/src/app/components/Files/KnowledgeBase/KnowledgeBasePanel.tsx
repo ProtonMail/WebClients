@@ -7,11 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon, useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcFile } from '@proton/icons/icons/IcFile';
-import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useAutoRetrievedAttachments, useFileProcessing, useFilteredFiles } from '../../../hooks';
@@ -26,10 +23,12 @@ import { SearchService } from '../../../services/search/searchService';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
+import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
+import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
 import { KnowledgeBaseContextProgressBar } from './KnowledgeBaseContextProgressBar';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
-import { KnowledgeBaseGuestDriveUpsell } from './KnowledgeBaseGuestDriveUpsell';
 
 const MEDIUM_SCREEN_BREAK = 1024;
 
@@ -91,10 +90,10 @@ const FilteredFilesContent = ({
     return (
         <>
             {autoRetrievedFiles.length > 0 && (
-                <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
-                    <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                        <IcFolderOpen size={4} className="color-norm" />
-                        {c('collider_2025: Info').t`Retrieved Project Knowledge`}
+                <div className="mb-4 w-full">
+                    <h3 className="text-sm text-bold mb-1">
+                        {c('collider_2025: Info').t`Project knowledge`}{' '}
+                        <span className="color-weak text-normal">{activeAutoFiles.length}</span>
                     </h3>
                     <p className="text-xs color-weak mb-3">
                         {c('collider_2025: Info').t`Files automatically retrieved based on your question.`}
@@ -111,8 +110,8 @@ const FilteredFilesContent = ({
                     ))}
 
                     {excludedAutoFiles.length > 0 && (
-                        <div className="mt-3 pt-3 border-top border-weak">
-                            <h4 className="text-xs color-weak mb-2">
+                        <div className="mt-3">
+                            <h4 className="text-xs text-bold color-weak mb-2">
                                 {c('collider_2025: Info').t`Removed from future questions`}
                             </h4>
                             {excludedAutoFiles.map((file) => (
@@ -157,10 +156,10 @@ interface RetrievedKnowledgeSectionProps {
 }
 
 const RetrievedKnowledgeSection = ({ activeAutoRetrieved, onView, onExclude }: RetrievedKnowledgeSectionProps) => (
-    <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
-        <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-            <IcFolderOpen size={4} className="color-norm" />
-            {c('collider_2025: Info').t`Retrieved Project Knowledge`}
+    <div className="mb-4 w-full">
+        <h3 className="text-sm text-bold mb-1">
+            {c('collider_2025: Info').t`Project knowledge`}{' '}
+            <span className="color-weak text-normal">{activeAutoRetrieved.length}</span>
         </h3>
 
         {activeAutoRetrieved.length === 0 ? (
@@ -170,7 +169,7 @@ const RetrievedKnowledgeSection = ({ activeAutoRetrieved, onView, onExclude }: R
         ) : (
             <>
                 <p className="text-xs color-weak mb-3">
-                    {c('collider_2025: Info').t`Files automatically retrieved based on your questions:`}
+                    {c('collider_2025: Info').t`Files automatically retrieved based on your questions.`}
                 </p>
                 {activeAutoRetrieved.map((attachment) => (
                     <KnowledgeBaseFileItem
@@ -209,11 +208,10 @@ const ManualAttachmentsSection = ({
     if (totalManual === 0) return null;
 
     return (
-        <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
-            <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                <IcPaperClip size={4} className="color-norm" />
-                {c('collider_2025: Info').t`Attached Files`}
-                <span className="text-normal color-weak">{totalManual}</span>
+        <div className="mb-4 w-full">
+            <h3 className="text-sm text-bold mb-1">
+                {c('collider_2025: Info').t`Attached files`}{' '}
+                <span className="color-weak text-normal">{totalManual}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
                 {c('collider_2025: Info').t`Files you've added to this conversation.`}
@@ -260,35 +258,31 @@ const ExcludedFilesSection = ({
     if (totalExcluded === 0) return null;
 
     return (
-        <div className="mb-4 w-full p-4 bg-weak rounded border border-weak opacity-70">
-            <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                <IcEyeSlash size={4} className="color-weak" />
-                {c('collider_2025: Info').t`Excluded`}
-                <span className="text-normal color-weak">{totalExcluded}</span>
+        <div className="mb-4 w-full">
+            <h3 className="text-sm text-bold mb-1">
+                {c('collider_2025: Info').t`Excluded`} <span className="color-weak text-normal">{totalExcluded}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
                 {c('collider_2025: Info').t`These files won't be used for future questions.`}
             </p>
-            <div className="space-y-2">
-                {excludedAutoRetrieved.map((attachment) => (
-                    <KnowledgeBaseFileItem
-                        key={attachment.id}
-                        file={attachment}
-                        onView={onView}
-                        isActive={false}
-                        onInclude={() => onInclude(attachment)}
-                    />
-                ))}
-                {unusedHistoricalFiles.map((file) => (
-                    <KnowledgeBaseFileItem
-                        key={`${file.messageId}-${file.id}`}
-                        file={file}
-                        onView={onView}
-                        onInclude={() => onInclude(file)}
-                        isActive={false}
-                    />
-                ))}
-            </div>
+            {excludedAutoRetrieved.map((attachment) => (
+                <KnowledgeBaseFileItem
+                    key={attachment.id}
+                    file={attachment}
+                    onView={onView}
+                    isActive={false}
+                    onInclude={() => onInclude(attachment)}
+                />
+            ))}
+            {unusedHistoricalFiles.map((file) => (
+                <KnowledgeBaseFileItem
+                    key={`${file.messageId}-${file.id}`}
+                    file={file}
+                    onView={onView}
+                    onInclude={() => onInclude(file)}
+                    isActive={false}
+                />
+            ))}
         </div>
     );
 };
@@ -326,9 +320,11 @@ export const KnowledgeBasePanel = ({
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
     const fileProcessingService = useFileProcessing();
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
+    const [previewFile, setPreviewFile] = useState<Attachment | null>(null);
 
     const { allFiles, activeHistoricalFiles, unusedHistoricalFiles } = useFilteredFiles(
         messageChain,
@@ -433,7 +429,9 @@ export const KnowledgeBasePanel = ({
 
     const handleFileClick: FileViewHandler = (file, fullAttachment, e) => {
         e.preventDefault();
-        onViewFile?.(fullAttachment);
+        if (fullAttachment) {
+            setPreviewFile(fullAttachment);
+        }
     };
 
     const isGuest = useIsGuest();
@@ -444,6 +442,20 @@ export const KnowledgeBasePanel = ({
         'w-1/2 pt-2 pr-4 pb-6': !isModal && isMediumScreen,
         'w-1/3 pt-2 pr-4 pb-6': !isModal && !isMediumScreen,
     });
+
+    if (previewFile) {
+        return (
+            <div className={panelClassName} ref={filesContainerRef}>
+                <div
+                    className={clsx('files-panel-content w-full h-full', {
+                        'bg-weak rounded-xl shadow-lifted': !isModal,
+                    })}
+                >
+                    <FilePreviewPanel attachment={previewFile} onBack={() => setPreviewFile(null)} onClose={onClose} />
+                </div>
+            </div>
+        );
+    }
 
     if (showDriveBrowser) {
         if (isGuest) {
@@ -492,31 +504,30 @@ export const KnowledgeBasePanel = ({
     return (
         <div className={panelClassName} ref={filesContainerRef}>
             <div
-                className={clsx(
-                    'files-panel-content flex flex-column flex-nowrap w-full rounded-xl bg-norm shadow-lifted w-full h-full',
-                    {
-                        'p-4 bg-weak': !isModal,
-                    }
-                )}
+                className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-4', {
+                    'bg-weak rounded-xl shadow-lifted': !isModal,
+                })}
             >
                 {/* Header */}
-                <div className="mb-4">
-                    <div className="flex flex-row items-center justify-space-between mb-2">
+                <div className="shrink-0 mb-4">
+                    <div className="flex flex-row items-center justify-space-between">
                         <div className="flex flex-row flex-nowrap items-center gap-1">
-                            <p className="m-0 text-lg text-bold">{c('collider_2025: Info').t`Chat knowledge`}</p>
+                            <p className="m-0 text-lg text-bold">
+                                {c('collider_2025: Info').t`All files in this chat`}
+                            </p>
                         </div>
 
                         {!linkedDriveFolder && (
                             <Button
-                                size="medium"
-                                shape="solid"
+                                size="small"
+                                shape="outline"
                                 onClick={() => setShowDriveBrowser(true)}
-                                className="shrink-0 bg-strong flex flex-row flex-nowrap items-center"
-                                title={c('collider_2025: Action').t`Browse ${DRIVE_SHORT_APP_NAME}`}
+                                className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
+                                title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                             >
                                 <IcBrandProtonDrive size={4} />
-                                <span className="text-sm ml-2 hidden md:flex">
-                                    {c('collider_2025: Action').t`Browse ${DRIVE_SHORT_APP_NAME}`}
+                                <span className="text-sm">
+                                    {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                                 </span>
                             </Button>
                         )}
@@ -529,7 +540,7 @@ export const KnowledgeBasePanel = ({
 
                 {/* Filter chip */}
                 {filterMessage && onClearFilter && (
-                    <div className="mb-4 flex flex-row items-center gap-2">
+                    <div className="shrink-0 mb-4 flex flex-row items-center gap-2">
                         <Button
                             size="small"
                             shape="solid"
@@ -545,7 +556,7 @@ export const KnowledgeBasePanel = ({
                 )}
 
                 {/* File list */}
-                <div className="flex-1 flex-row overflow-y-auto" style={{ minHeight: '35vh' }}>
+                <div className="flex-1 min-h-0 overflow-y-auto">
                     {filterMessage ? (
                         <FilteredFilesContent
                             allFiles={allFiles}
@@ -590,41 +601,42 @@ export const KnowledgeBasePanel = ({
                     )}
                 </div>
 
-                {/* Context capacity info — hidden in filter mode */}
+                {/* Context capacity info — pinned to bottom, hidden in filter mode */}
                 {!filterMessage && (
-                    <div>
-                        <div className="mb-4 p-3 knowledge-info-area rounded border border-weak">
-                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                            <div
-                                className="flex flex-row items-center gap-2 cursor-pointer"
-                                onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
-                            >
-                                <IcInfoCircle />
-                                <h4 className="m-0 text-sm font-semibold flex-1">
-                                    {c('collider_2025: Info').t`File capacity for this conversation`}
-                                </h4>
-                                <Icon
-                                    name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
-                                    size={4}
-                                    className="color-weak shrink-0"
-                                />
-                            </div>
+                    <div
+                        className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden"
+                        style={{ height: showKnowledgeExplanation ? '8.75rem' : '5rem' }}
+                    >
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <button type="button"
+                            className="flex flex-row items-center gap-2 cursor-pointer p-3"
+                            onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
+                        >
+                            <IcInfoCircle className="shrink-0 color-weak" />
+                            <h4 className="m-0 text-sm text-bold flex-1">
+                                {c('collider_2025: Info').t`File capacity for this conversation`}
+                            </h4>
+                            <Icon
+                                name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
+                                size={4}
+                                className="color-weak shrink-0"
+                            />
+                        </button>
 
-                            {showKnowledgeExplanation && (
-                                <div className="mt-3 pl-6">
-                                    <p className="m-0 text-sm color-weak leading-relaxed">
-                                        {c('collider_2025: Info')
-                                            .t`For each conversation, ${LUMO_SHORT_APP_NAME} has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. `}
-                                    </p>
-                                </div>
-                            )}
+                        {showKnowledgeExplanation && (
+                            <p className="m-0 text-xs color-weak px-3 pb-2">
+                                {c('collider_2025: Info')
+                                    .t`For each conversation, ${LUMO_SHORT_APP_NAME} has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.`}
+                            </p>
+                        )}
+
+                        <div className="px-3 pb-3">
+                            <KnowledgeBaseContextProgressBar
+                                messageChain={messageChain}
+                                contextFilters={contextFilters}
+                                currentAttachments={currentAttachments}
+                            />
                         </div>
-
-                        <KnowledgeBaseContextProgressBar
-                            messageChain={messageChain}
-                            contextFilters={contextFilters}
-                            currentAttachments={currentAttachments}
-                        />
                     </div>
                 )}
             </div>
