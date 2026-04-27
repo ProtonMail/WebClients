@@ -40,13 +40,13 @@ export const selectSessionRecoveryData = createSelector(
         const shouldNotifySessionRecoveryInProgress =
             isSessionRecoveryAvailable &&
             sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD &&
-            !sessionRecoverySliceState.confirmed &&
+            !sessionRecoverySliceState.gracePeriodConfirmed &&
             !isSessionRecoveryInitiatedByCurrentSession;
 
         const shouldNotifySessionRecoveryCancelled =
             isSessionRecoveryAvailable &&
             sessionRecoveryState === SessionRecoveryState.CANCELLED &&
-            !sessionRecoverySliceState.dismissed;
+            !sessionRecoverySliceState.canceledStateDismissed;
 
         const shouldNotifyPasswordResetAvailable =
             isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.INSECURE;
