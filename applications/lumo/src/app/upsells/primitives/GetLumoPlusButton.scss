@@ -1,0 +1,7 @@
+.lumo-plus-upgrade-button {
+	&.button-ghost-weak {
+		--button-default-background-color: rgb(109 74 255 / 0.1);
+		--button-hover-background-color: rgb(109 74 255 / 0.2);
+		--button-active-background-color: rgb(109 74 255 / 0.2);
+	}
+}

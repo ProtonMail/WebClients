@@ -10,6 +10,7 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/const
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
+import { useNativeComposerPromptApi } from '../../components/Composer/hooks/useNativeComposerPromptApi';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
@@ -20,6 +21,7 @@ import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { applyRetentionPolicy, categorizeConversations } from '../../layouts/sidepanel/helpers';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
+import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
@@ -34,13 +36,14 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { getProjectInfo } from '../../types';
+import { ComposerMode, getProjectInfo } from '../../types';
 import { openLumoUpsellModal } from '../../upsells/providers/LumoUpsellModalProvider';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { ConversationDropdown } from './components/ConversationDropdown';
 import { ProjectDetailHeader } from './components/ProjectDetailHeader';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
+import { useNativeComposerProjectDetailVisibilityApi } from './hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useProjectActions } from './hooks/useProjectActions';
 import { DeleteConversationModal } from './modals/DeleteConversationModal';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
@@ -126,7 +129,7 @@ const ProjectDetailViewInner = () => {
     }, [driveBrowserModal]);
 
     const handleSendInProject = useCallback(
-        async (content: string) => {
+        async (content: string, webSearchEnabled: boolean) => {
             try {
                 if (!content.trim()) {
                     console.log('Empty content, skipping send');
@@ -140,8 +143,6 @@ const ProjectDetailViewInner = () => {
 
                 // Navigate to the conversation first
                 history.push(`/c/${conversationId}`);
-
-                const isWebSearchButtonToggled = false; // todo wire the web search button
 
                 // Send the message using the helper function
                 // sendMessage returns a thunk, so we need to dispatch it
@@ -171,7 +172,7 @@ const ProjectDetailViewInner = () => {
                                 console.log('Navigate callback:', newConvId);
                                 history.push(`/c/${newConvId}`);
                             },
-                            enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                            enableExternalTools: webSearchEnabled && ffExternalTools,
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                         },
@@ -201,6 +202,13 @@ const ProjectDetailViewInner = () => {
             isWebSearchButtonToggled,
         ]
     );
+
+    useNativeComposerPromptApi(
+        handleSendInProject,
+        () => {} // todo: abort handler missing at this point, known bug
+    );
+
+    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render);
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
@@ -363,6 +371,7 @@ const ProjectDetailViewInner = () => {
                                 handleSendMessage={handleSendInProject}
                                 isProcessingAttachment={false}
                                 className="w-full"
+                                composerMode={ComposerMode.PROJECT}
                                 setIsEditorFocused={setIsEditorFocused}
                                 isEditorFocused={isEditorFocused}
                                 canShowLumoUpsellToggle={false}
@@ -454,7 +463,9 @@ export const ProjectDetailView = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <ProjectDetailViewInner />
+                <ModelTierProvider>
+                    <ProjectDetailViewInner />
+                </ModelTierProvider>
             </WebSearchProvider>
         </DragAreaProvider>
     );

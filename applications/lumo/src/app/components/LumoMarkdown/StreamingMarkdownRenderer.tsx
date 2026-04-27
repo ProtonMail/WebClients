@@ -31,13 +31,22 @@ interface StreamingMarkdownProps {
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
 }
 
 /**
  * Throttled markdown renderer that batches updates during streaming
  */
 const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
-    ({ content, isStreaming = false, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
+    ({
+        content,
+        isStreaming = false,
+        handleLinkClick,
+        toolCallResults,
+        sourcesContainerRef,
+        message,
+        messageContentContainerRef,
+    }) => {
         const [displayContent, setDisplayContent] = useState(content || '');
         const contentRef = useRef(content);
         const frameRef = useRef<number>();
@@ -106,6 +115,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
                 toolCallResults={toolCallResults}
                 sourcesContainerRef={sourcesContainerRef}
                 message={message}
+                messageContentContainerRef={messageContentContainerRef}
             />
         );
     },

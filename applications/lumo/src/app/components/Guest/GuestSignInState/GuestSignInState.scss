@@ -1,0 +1,31 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.guest-signin-state {
+	flex: 1;
+	min-block-size: 0;
+}
+
+.guest-signin-state__icon {
+	img {
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+}
+
+.guest-signin-state__title {
+	font-size: #{rem(20)};
+}
+
+.guest-signin-state__description {
+	font-size: #{rem(14)};
+	max-inline-size: #{rem(380)};
+	line-height: 1.5;
+}
+
+.guest-signin-state__actions {
+	max-inline-size: 20rem;
+}
+
+.guest-signin-state__footer {
+	font-size: 0.8125rem;
+}

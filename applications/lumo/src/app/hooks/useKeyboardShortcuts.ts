@@ -1,11 +1,12 @@
 import { useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useHotkeys, type HotkeyTuple } from '@proton/components';
+import { type HotkeyTuple, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { useIsGuest } from '../providers/IsGuestProvider';
 import { useGhostChat } from '../providers/GhostChatProvider';
+import { useIsGuest } from '../providers/IsGuestProvider';
+import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
 import { useGuestChatHandler } from './useGuestChatHandler';
 
 interface UseKeyboardShortcutsProps {
@@ -24,6 +25,7 @@ export const useKeyboardShortcuts = ({ onOpenSearch }: UseKeyboardShortcutsProps
             handleGuestClick();
         } else {
             setGhostChatMode(false);
+            setNativeGhostMode(false);
             history.push('/');
         }
     }, [isGuest, handleGuestClick, setGhostChatMode, history]);
@@ -49,4 +51,3 @@ export const useKeyboardShortcuts = ({ onOpenSearch }: UseKeyboardShortcutsProps
 
     useHotkeys(elementRef, shortcutHandlers, { dependencies: [handleNewChat, onOpenSearch] });
 };
-

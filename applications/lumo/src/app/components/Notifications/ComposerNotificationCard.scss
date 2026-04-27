@@ -1,0 +1,37 @@
+.composer-notification-card {
+	// Smooth fade + slight rise when the `--hidden` modifier is toggled off.
+	// No keyframe animation so the card never plays an entrance on mount,
+	// which previously read as a flicker when navigating into an existing
+	// chat where the card becomes eligible immediately after message data
+	// loads.
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+	}
+
+	&--hidden {
+		opacity: 0;
+		transform: translateY(-8px);
+		pointer-events: none;
+	}
+
+	&--warning {
+		border-color: var(--signal-warning);
+	}
+
+	&--error {
+		border-color: var(--signal-danger);
+	}
+
+	&-dismiss-button {
+		transform: translate(35%, -35%);
+		transition: transform 0.2s ease;
+
+		&:hover {
+			transform: translate(35%, -35%) scale(1.1);
+		}
+	}
+}

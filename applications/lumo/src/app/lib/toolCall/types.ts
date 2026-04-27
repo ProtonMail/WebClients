@@ -1,5 +1,6 @@
 export type ToolCallData =
     | WebSearchToolCallData
+    | WebExtractToolCallData
     | DescribeImageToolCallData
     | GenerateImageToolCallData
     | EditImageToolCallData
@@ -12,6 +13,7 @@ export type ToolCallName = ToolCallData['name'];
 export function isToolCallData(data: unknown): data is ToolCallData {
     return (
         isWebSearchToolCallData(data) ||
+        isWebExtractToolCallData(data) ||
         isDescribeImageToolCallData(data) ||
         isGenerateImageToolCallData(data) ||
         isEditImageToolCallData(data) ||
@@ -24,6 +26,8 @@ export function isToolCallData(data: unknown): data is ToolCallData {
 
 export type WebSearchToolCallData = { name: 'web_search'; arguments: WebSearchArguments };
 
+export type WebExtractToolCallData = { name: 'web_extract'; arguments: WebSearchArguments };
+
 export function isWebSearchToolCallData(data: unknown): data is WebSearchToolCallData {
     // prettier-ignore
     return (
@@ -34,8 +38,19 @@ export function isWebSearchToolCallData(data: unknown): data is WebSearchToolCal
     );
 }
 
+export function isWebExtractToolCallData(data: unknown): data is WebExtractToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'web_extract') &&
+        ('arguments' in data && isWebSearchArguments(data.arguments))
+    );
+}
+
 export type WebSearchArguments = {
     query: string;
+    urls?: string[];
 };
 
 export function isWebSearchArguments(args: unknown): args is WebSearchArguments {

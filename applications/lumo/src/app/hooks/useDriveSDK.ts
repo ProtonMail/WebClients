@@ -22,6 +22,8 @@ export interface DriveNode {
     modifiedTime?: Date;
     parentUid?: string;
     treeEventScopeId?: string;
+    isSharedWithMe?: boolean;
+    sharedBy?: string;
 }
 
 export interface DriveSDKState {
@@ -59,6 +61,7 @@ export interface DriveSDKMethods {
     navigateToFolder: (folderUid: string) => void;
     navigateUp: () => void;
     getRootFolder: () => Promise<DriveNode>;
+    iterateSharedWithMe: (abortSignal?: AbortSignal) => Promise<DriveNode[]>;
     subscribeToDriveEvents: (callback: (event: DriveEvent) => Promise<void>) => Promise<EventSubscription>;
     subscribeToTreeEvents: (
         treeEventScopeId: string,
@@ -462,6 +465,59 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
         [drive, isGuest]
     );
 
+    const iterateSharedWithMe = useCallback(
+        async (abortSignal?: AbortSignal): Promise<DriveNode[]> => {
+            if (isGuest) {
+                return [];
+            }
+            if (!drive) {
+                throw new Error('DRIVE_NOT_INITIALIZED');
+            }
+
+            const sharedNodes: DriveNode[] = [];
+            const seenUids = new Set<string>();
+
+            try {
+                for await (const maybeNode of drive.iterateSharedNodesWithMe(abortSignal)) {
+                    const { node } = getNodeEntity(maybeNode);
+                    if (seenUids.has(node.uid)) {
+                        continue;
+                    }
+                    seenUids.add(node.uid);
+
+                    // Extract the display name of the user who shared the node (best-effort).
+                    // `membership.sharedBy` can be a Result<string, { claimedAuthor: string }>; fall back gracefully.
+                    let sharedBy: string | undefined;
+                    const membership = (node as { membership?: any }).membership;
+                    if (membership?.sharedBy) {
+                        sharedBy = membership.sharedBy.ok
+                            ? membership.sharedBy.value
+                            : membership.sharedBy.error?.claimedAuthor;
+                    }
+
+                    sharedNodes.push({
+                        nodeUid: node.uid,
+                        name: node.name,
+                        type: node.type,
+                        size: node.activeRevision?.storageSize || node.totalStorageSize,
+                        mediaType: node.mediaType,
+                        modifiedTime: node.activeRevision?.claimedModificationTime || node.creationTime,
+                        parentUid: node.parentUid,
+                        treeEventScopeId: node.treeEventScopeId,
+                        isSharedWithMe: true,
+                        sharedBy: sharedBy || undefined,
+                    });
+                }
+            } catch (error) {
+                console.error('Failed to iterate shared-with-me nodes:', error);
+                throw error;
+            }
+
+            return sharedNodes;
+        },
+        [drive, isGuest]
+    );
+
     const subscribeToTreeEvents = useCallback(
         async (
             treeEventScopeId: string,
@@ -512,6 +568,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
         navigateToFolder,
         navigateUp,
         getRootFolder,
+        iterateSharedWithMe,
         subscribeToDriveEvents,
         subscribeToTreeEvents,
     };

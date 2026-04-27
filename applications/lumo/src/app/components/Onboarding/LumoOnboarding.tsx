@@ -1,37 +1,38 @@
-import { useModalStateObject } from '@proton/components';
+// Note: removing component for V2, not deleting in case we need again
+// import { useModalStateObject } from '@proton/components';
 
-import { useOnboardingContext } from '../../providers/OnboardingProvider';
-import OnboardingModal from './OnboardingModal';
-import OnboardingPill from './OnboardingPill';
-import OnboardingSection from './OnboardingSection';
+// import { useOnboardingContext } from '../../providers/OnboardingProvider';
+// import OnboardingModal from './OnboardingModal';
+// import OnboardingPill from './OnboardingPill';
+// import OnboardingSection from './OnboardingSection';
 
-const LumoOnboarding = () => {
-    const { isOnboardingCompleted, completeOnboarding } = useOnboardingContext();
+// const LumoOnboarding = () => {
+//     const { isOnboardingCompleted, completeOnboarding } = useOnboardingContext();
 
-    const onboardingModal = useModalStateObject({
-        onClose: () => {
-            completeOnboarding();
-        },
-    });
+//     const onboardingModal = useModalStateObject({
+//         onClose: () => {
+//             completeOnboarding();
+//         },
+//     });
 
-    const handleOpenModal = () => {
-        onboardingModal.openModal(true);
-    };
+//     const handleOpenModal = () => {
+//         onboardingModal.openModal(true);
+//     };
 
-    if (isOnboardingCompleted === undefined) {
-        return null;
-    }
+//     if (isOnboardingCompleted === undefined) {
+//         return null;
+//     }
 
-    return (
-        <>
-            {!isOnboardingCompleted ? (
-                <OnboardingSection onClick={handleOpenModal} onClose={completeOnboarding} />
-            ) : (
-                <OnboardingPill onClick={handleOpenModal} />
-            )}
-            {onboardingModal.render && <OnboardingModal {...onboardingModal.modalProps} />}
-        </>
-    );
-};
+//     return (
+//         <>
+//             {!isOnboardingCompleted ? (
+//                 <OnboardingSection onClick={handleOpenModal} onClose={completeOnboarding} />
+//             ) : (
+//                 <OnboardingPill onClick={handleOpenModal} />
+//             )}
+//             {onboardingModal.render && <OnboardingModal {...onboardingModal.modalProps} />}
+//         </>
+//     );
+// };
 
-export default LumoOnboarding;
+// export default LumoOnboarding;

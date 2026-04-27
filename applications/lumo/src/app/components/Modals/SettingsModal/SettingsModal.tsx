@@ -33,10 +33,10 @@ import type { Conversation, Message, SpaceId } from '../../../types';
 import { LumoSettingsPanelUpsell } from '../../../upsells';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
-import CreateFreeAccountLink from '../../CreateFreeAccountLink/CreateFreeAccountLink';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
+import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
+import { SignInButton } from '../../Guest/SignInLink';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
-import { SignInLinkButton } from '../../Links/SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
@@ -384,43 +384,42 @@ const AccountSettingsPanel = () => {
     const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
 
     return (
-        <>
-            <div className="flex flex-column flex-nowrap gap-4">
-                <ButtonLike
-                    as={SettingsLink}
-                    path={''}
-                    className="user-settings-card flex flex-row flex-nowrap gap-4 items-start p-4 rounded-lg bg-norm cursor-pointer text-left w-full"
-                >
-                    <Avatar className="shrink-0">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
-                    <div className="flex-1 flex flex-column gap-0 items-start">
-                        <div className="flex flex-row items-center gap-3 mb-1">
-                            <span className="text-bold text-lg color-norm">{user.DisplayName ?? user.Name}</span>
-                            {planName && (
-                                <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
-                                    {planName}
-                                </span>
-                            )}
+        <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
+            <ButtonLike
+                as={SettingsLink}
+                path={''}
+                
+                className="user-settings-card flex flex-row flex-nowrap gap-4 items-start p-4 rounded-lg bg-norm cursor-pointer text-left w-full"
+            >
+                <Avatar className="shrink-0">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
+                <div className="flex-1 flex flex-column gap-0 items-start">
+                    <div className="flex flex-row items-center gap-3 mb-1">
+                        <span className="text-bold text-lg color-norm">{user.DisplayName ?? user.Name}</span>
+                        {planName && (
+                            <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
+                                {planName}
+                            </span>
+                        )}
 
-                            {isVisionary && (
-                                <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
-                                    {c('collider_2025: Title').t`Visionary`}
-                                </span>
-                            )}
-                        </div>
-                        <span className="color-weak text-sm text-left">{user.Email}</span>
+                        {isVisionary && (
+                            <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
+                                {c('collider_2025: Title').t`Visionary`}
+                            </span>
+                        )}
                     </div>
-                    <IcChevronRight className="color-weak shrink-0 mt-2" size={4} />
-                </ButtonLike>
-            </div>
+                    <span className="color-weak text-sm text-left">{user.Email}</span>
+                </div>
+                <IcChevronRight className="color-weak shrink-0 mt-2" size={4} />
+            </ButtonLike>
             {hasLumoPlus ? <PaidSubscriptionPanel /> : <LumoSettingsPanelUpsell />}
-        </>
+        </div>
     );
 };
 
 const AccountSettingsPanelGuest = () => {
     const createLink = <CreateFreeAccountLink key="create-free-account-link" />;
     return (
-        <>
+        <div className="flex flex-column flex-nowrap gap-4 w-full min-w-0">
             <LumoSettingsPanelUpsell />
             <SettingsSectionItem
                 icon="user"
@@ -430,9 +429,9 @@ const AccountSettingsPanelGuest = () => {
                     c('collider_2025: Description')
                         .jt`Sign in to access your account and unlock more features. Don't have one? ${createLink}`
                 }
-                button={<SignInLinkButton color="weak" shape="outline" />}
+                button={<SignInButton color="weak" shape="outline" />}
             />
-        </>
+        </div>
     );
 };
 
@@ -514,7 +513,10 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             </div>
 
                             {/* Panel content — rendered exactly once */}
-                            <div className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10" style={{ minHeight: 0 }}>
+                            <div
+                                className="flex flex-column gap-4 flex-1 overflow-y-auto mb-10 w-full min-w-0"
+                                style={{ minHeight: 0 }}
+                            >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}

@@ -1,0 +1,29 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.canvas__loading-overlay {
+    background-color: rgb(0 0 0 / 0.5);
+    z-index: 10;
+}
+
+@keyframes canvas-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.canvas__loading-spinner {
+    inline-size: rem(32);
+    block-size: rem(32);
+    border-block-end: 2px solid var(--primary);
+    animation: canvas-spin 1s linear infinite;
+}
+
+.canvas__element {
+    touch-action: none;
+    cursor: crosshair;
+    max-inline-size: 100%;
+    max-block-size: 100%;
+    background-color: #fff;
+    border-radius: rem(24);
+    box-shadow: 0 rem(25) rem(50) rem(-12) rgb(0 0 0 / 0.25);
+}

@@ -1,15 +1,21 @@
-import {createAction, createReducer} from '@reduxjs/toolkit';
-import {v4 as uuidv4} from 'uuid';
+import { createAction, createReducer } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
-import type {Priority} from '../../../remote/scheduler';
+import { type LumoFile, getLumoFileType } from '../../../remote/nativeComposerBridge';
+import {
+    addNativeComposerFiles,
+    clearNativeComposerFiles,
+    removeNativeComposerFile,
+} from '../../../remote/nativeComposerBridgeHelpers';
+import type { Priority } from '../../../remote/scheduler';
 import type {
     IdMapEntry,
     RemoteDeletedAttachment,
     RemoteFilledAttachment,
     RemoteShallowAttachment,
 } from '../../../remote/types';
-import {attachmentDataCache} from '../../../services/attachmentDataCache';
-import type {Attachment, AttachmentId, SerializedAttachment, SpaceId} from '../../../types';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
+import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
     id: AttachmentId;
@@ -80,6 +86,21 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
             console.log('Action triggered: upsertAttachment', action.payload);
             const attachment = action.payload;
             state[attachment.id] = attachment;
+            if (!attachment.processing) {
+                const imageBytes = attachmentDataCache.getImagePreview(attachment.id);
+                let imagePreview: string | null = null;
+                if (imageBytes !== undefined && imageBytes !== null) {
+                    imagePreview = btoa(imageBytes.reduce((data, byte) => data + String.fromCharCode(byte), ''));
+                }
+
+                const lumoFile: LumoFile = {
+                    id: attachment.id,
+                    name: attachment.filename,
+                    type: getLumoFileType(attachment.mimeType ?? ''),
+                    preview: imagePreview,
+                };
+                addNativeComposerFiles([lumoFile]);
+            }
         })
         .addCase(addAttachment, (state, action) => {
             console.log('Action triggered: addAttachment', action.payload);
@@ -92,11 +113,13 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
             // Clean up cache when deleting attachment
             attachmentDataCache.delete(attachmentId);
             delete state[attachmentId];
+            removeNativeComposerFile(attachmentId);
         })
         .addCase(deleteAllAttachments, () => {
             console.log('Action triggered: deleteAllAttachments');
             // Clean up all cached data when deleting all attachments
             attachmentDataCache.clear();
+            clearNativeComposerFiles();
             return EMPTY_ATTACHMENT_MAP;
         })
         .addCase(deleteAttachmentsBySpaceId, (state, action) => {
@@ -108,6 +131,7 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
                     // Clean up cache when deleting attachment
                     attachmentDataCache.delete(attachmentId);
                     delete state[attachmentId];
+                    removeNativeComposerFile(attachmentId);
                 }
             });
         })
@@ -120,6 +144,7 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
             provisionalIds.forEach((id) => {
                 delete state[id];
             });
+            clearNativeComposerFiles();
             console.log(`Cleared ${provisionalIds.length} provisional attachments`);
         })
         .addCase(pushAttachmentRequest, (state, action) => {

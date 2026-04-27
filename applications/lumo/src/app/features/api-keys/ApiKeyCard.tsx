@@ -71,21 +71,21 @@ export const ApiKeyCard = ({
                     }
                 }}
             >
-                <div className="api-keys-card-icon">
+                <div className="api-keys-card-icon flex items-center justify-center shrink-0 rounded-lg">
                     <IcKey size={4} />
                 </div>
 
-                <div className="api-keys-card-body">
-                    <div className="api-keys-card-name">
+                <div className="flex-1 min-w-0 flex flex-column gap-1">
+                    <div className="api-keys-card-name flex items-center gap-2 min-w-0 text-semibold">
                         <span>{token.Name}</span>
                         <StatusBadge status={status} />
                     </div>
-                    <div className="api-keys-card-meta">{expiryLabel}</div>
+                    <div className="api-keys-card-meta flex items-center gap-2">{expiryLabel}</div>
                 </div>
 
                 <UsageSparklineCompact usage={usage} />
 
-                <div className="api-keys-card-actions">
+                <div className="flex items-center gap-0.5 shrink-0 api-keys-card-actions">
                     <Tooltip title={c('Action').t`Delete key`}>
                         <Button
                             icon
@@ -105,7 +105,10 @@ export const ApiKeyCard = ({
                     </Tooltip>
                 </div>
 
-                <span className={clsx('api-keys-card-chevron', expanded && 'is-open')} aria-hidden>
+                <span
+                    className={clsx('api-keys-card-chevron flex items-center justify-center shrink-0', expanded && 'is-open')}
+                    aria-hidden
+                >
                     <IcChevronDown size={4} />
                 </span>
             </div>
