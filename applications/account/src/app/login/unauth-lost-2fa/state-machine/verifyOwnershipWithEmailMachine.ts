@@ -1,13 +1,31 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-type Result = 'no-email-method' | '2fa-disabled' | 'skipped' | 'error';
+import type { VerificationDataResult } from '@proton/components/index';
 
-interface MachineContext {
-    hasRecoveryEmail: boolean;
-    result: Result | null;
+type Result = '2fa-disabled' | 'skipped';
+
+export interface EmailVerificationResult {
+    verificationDataResult: VerificationDataResult;
+    token: string;
 }
 
-type MachineEvent = { type: '2fa disabled' } | { type: 'try another way' } | { type: 'error' };
+interface MachineContext {
+    result: Result | null;
+    verificationResult: EmailVerificationResult | null;
+    initiationAttempts: number;
+}
+
+interface MachineOutput {
+    result: Result;
+    verificationResult: EmailVerificationResult | null;
+}
+
+type MachineEvent =
+    | { type: '2fa disabled' }
+    | { type: 'try another way' }
+    | { type: 'verification initiated'; verificationResult: EmailVerificationResult }
+    | { type: 'initiation failed' }
+    | { type: 'retry initiation' };
 
 export type VerifyOwnershipWithEmailActorRef = ActorRefFrom<typeof verifyOwnershipWithEmailMachine>;
 
@@ -15,24 +33,27 @@ export const verifyOwnershipWithEmailMachine = setup({
     types: {
         context: {} as MachineContext,
         events: {} as MachineEvent,
-        input: {} as { hasRecoveryEmail: boolean },
-        output: {} as { result: Result },
+        output: {} as MachineOutput,
+        input: {} as {
+            verificationResult: EmailVerificationResult | null;
+        },
     },
     guards: {
-        hasRecoveryEmail: ({ context }) => context.hasRecoveryEmail,
+        canRetry: ({ context }) => context.initiationAttempts < 3,
     },
 }).createMachine({
     id: 'verifyOwnershipWithEmail',
-    initial: 'validating',
+    initial: 'verify code',
     context: ({ input }) => ({
-        hasRecoveryEmail: input.hasRecoveryEmail,
         result: null,
+        verificationResult: input.verificationResult,
+        initiationAttempts: 0,
     }),
-    output: ({ context }): { result: Result } => ({ result: context.result! }),
+    output: ({ context }): MachineOutput => ({
+        result: context.result!,
+        verificationResult: context.verificationResult,
+    }),
     states: {
-        validating: {
-            always: [{ guard: 'hasRecoveryEmail', target: 'verify code' }, { target: 'no email method' }],
-        },
         'verify code': {
             on: {
                 '2fa disabled': {
@@ -41,22 +62,29 @@ export const verifyOwnershipWithEmailMachine = setup({
                 'try another way': {
                     target: 'skipped',
                 },
-                error: {
-                    target: 'error',
+                'verification initiated': {
+                    actions: assign({ verificationResult: ({ event }) => event.verificationResult }),
+                },
+                'initiation failed': {
+                    target: 'initiation failed',
+                    actions: assign({ initiationAttempts: ({ context }) => context.initiationAttempts + 1 }),
                 },
             },
         },
-        'no email method': {
-            type: 'final',
-            entry: assign({ result: 'no-email-method' }),
+        'initiation failed': {
+            on: {
+                'retry initiation': {
+                    guard: 'canRetry',
+                    target: 'verify code',
+                },
+                'try another way': {
+                    target: 'skipped',
+                },
+            },
         },
         '2fa disabled': {
             type: 'final',
             entry: assign({ result: '2fa-disabled' }),
-        },
-        error: {
-            type: 'final',
-            entry: assign({ result: 'error' }),
         },
         skipped: {
             type: 'final',
