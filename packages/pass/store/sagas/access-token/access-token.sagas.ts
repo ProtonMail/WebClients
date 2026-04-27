@@ -4,25 +4,33 @@ import {
     createPersonalAccessToken,
     deletePersonalAccessToken,
     grantPersonalAccessTokenAccess,
+    listPatMonitorRecords,
     listPersonalAccessTokenAccess,
     listPersonalAccessTokens,
     revokePersonalAccessTokenAccess,
 } from '@proton/pass/lib/access-token/access-token.requests';
 import type {
+    DecodedPatMonitorPayload,
+    DecodedPatMonitorRecord,
+    PatMonitorRecord,
     PersonalAccessToken,
     PersonalAccessTokenAccessGrant,
     PersonalAccessTokenShareKey,
 } from '@proton/pass/lib/access-token/access-token.types';
 import { PAT_PRODUCT, buildAccessTokenEnvVar } from '@proton/pass/lib/access-token/access-token.utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import type { DecryptedActionPayload } from '@proton/pass/lib/crypto/processes/access-token/open-action-payload';
 import {
     type AccessTokenAccessGrants,
+    type AccessTokenActionsPage,
     type CreateAccessTokenIntent,
     type CreateAccessTokenSuccess,
+    type GetAccessTokenActionsIntent,
     type UpdateAccessTokenAccessIntent,
     createAccessToken,
     deleteAccessToken,
     getAccessTokenAccess,
+    getAccessTokenActions,
     getAccessTokens,
     updateAccessTokenAccess,
 } from '@proton/pass/store/actions';
@@ -151,4 +159,61 @@ const updateAccessSaga = createRequestSaga({
     },
 });
 
-export default [listSaga, createSaga, deleteSaga, listAccessSaga, updateAccessSaga];
+const decodeRecord = function* (
+    record: PatMonitorRecord,
+    rawPatKey: Uint8Array<ArrayBuffer>
+): Generator<any, DecodedPatMonitorRecord, any> {
+    if (!record.Payload) return { ...record, decodedPayload: null };
+
+    try {
+        const decoded: DecryptedActionPayload | null = yield call([PassCrypto, 'openActionPayload'], {
+            encodedPayload: record.Payload,
+            rawPatKey,
+        });
+        if (!decoded) return { ...record, decodedPayload: null };
+
+        const decodedPayload: DecodedPatMonitorPayload =
+            decoded.kind === 'agent-access-item'
+                ? {
+                      kind: 'agent-access-item',
+                      reason: decoded.agentAccessItem.reason,
+                      vaultName: decoded.agentAccessItem.vaultName,
+                      itemName: decoded.agentAccessItem.itemName,
+                  }
+                : { kind: 'unknown' };
+        return { ...record, decodedPayload };
+    } catch (e) {
+        /* Decryption / proto-decode failure for a single record shouldn't
+         * abort the whole page — surface it as a `decode-error` so the UI
+         * can flag the row and the dev tools log shows the cause. */
+        const error = e instanceof Error ? e.message : String(e);
+        console.error('PAT monitor decode failed', { recordId: record.PatMonitorRecordID, error });
+        return { ...record, decodedPayload: { kind: 'decode-error', error } };
+    }
+};
+
+const listActionsSaga = createRequestSaga({
+    actions: getAccessTokenActions,
+    call: function* ({ tokenId, since }: GetAccessTokenActionsIntent): Generator<any, AccessTokenActionsPage, any> {
+        const pat: PersonalAccessToken | undefined = yield select(selectAccessTokenById(tokenId));
+        if (!pat) throw new Error(`Access token ${tokenId} not found in state`);
+
+        const { records, nextSince }: { records: PatMonitorRecord[]; nextSince: string | null } = yield call(
+            listPatMonitorRecords,
+            tokenId,
+            since
+        );
+
+        let decoded: DecodedPatMonitorRecord[];
+        if (records.some((r) => r.Payload)) {
+            const rawPatKey: Uint8Array<ArrayBuffer> = yield call([PassCrypto, 'openAccessTokenKey'], pat.PersonalAccessTokenKey);
+            decoded = yield all(records.map((record) => call(decodeRecord, record, rawPatKey)));
+        } else {
+            decoded = records.map((record) => ({ ...record, decodedPayload: null }));
+        }
+
+        return { tokenId, records: decoded, nextSince, append: Boolean(since) };
+    },
+});
+
+export default [listSaga, createSaga, deleteSaga, listAccessSaga, updateAccessSaga, listActionsSaga];
