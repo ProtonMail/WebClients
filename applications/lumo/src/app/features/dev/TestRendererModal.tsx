@@ -50,7 +50,7 @@ const TEST_CONTENT_SAMPLES = {
     },
     latex_inline: {
         name: 'Inline LaTeX',
-        content: `Here's an inline equation: $E = mc^2$ and another: $\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$`,
+        content: `Here's an equation: $$E = mc^2$$ and another: $$\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$`,
     },
     latex_block: {
         name: 'Block LaTeX',
@@ -59,6 +59,10 @@ const TEST_CONTENT_SAMPLES = {
     code_inline: {
         name: 'Inline Code',
         content: `Use the \`console.log()\` function to debug. Also try \`Array.map()\` and \`Promise.all()\`.`,
+    },
+    latex_single_dollar_math: {
+        name: 'Single Dollar Math',
+        content: `**Total Cash Invested:** $500 × 60 months = **$30,000**.`,
     },
     code_block_js: {
         name: 'JavaScript Code Block',
@@ -78,7 +82,7 @@ const TEST_CONTENT_SAMPLES = {
     },
     mixed_content: {
         name: 'Mixed Content (Kitchen Sink)',
-        content: `# Test Document\n\nThis tests **multiple** content types:\n\n## Math\n\nInline: $x^2 + y^2 = z^2$\n\nBlock:\n$$\\frac{d}{dx}(x^n) = nx^{n-1}$$\n\n## Code\n\nInline: \`const x = 42;\`\n\nBlock:\n\`\`\`typescript\ninterface User {\n    id: string;\n    name: string;\n    email: string;\n}\n\nconst user: User = {\n    id: '123',\n    name: 'John',\n    email: 'john@example.com'\n};\n\`\`\`\n\n## Lists\n\n- Item 1\n- Item 2\n  - Nested\n\n1. First\n2. Second\n\n## Quote\n\n> This is a quote\n> with multiple lines\n\n## Table\n\n| Name | Age | City |\n|------|-----|------|\n| Alice | 30 | NYC |\n| Bob | 25 | LA |`,
+        content: `# Test Document\n\nThis tests **multiple** content types:\n\n## Math\n\n$$x^2 + y^2 = z^2$$\n\n$$\\frac{d}{dx}(x^n) = nx^{n-1}$$\n\n## Code\n\nInline: \`const x = 42;\`\n\nBlock:\n\`\`\`typescript\ninterface User {\n    id: string;\n    name: string;\n    email: string;\n}\n\nconst user: User = {\n    id: '123',\n    name: 'John',\n    email: 'john@example.com'\n};\n\`\`\`\n\n## Lists\n\n- Item 1\n- Item 2\n  - Nested\n\n1. First\n2. Second\n\n## Quote\n\n> This is a quote\n> with multiple lines\n\n## Table\n\n| Name | Age | City |\n|------|-----|------|\n| Alice | 30 | NYC |\n| Bob | 25 | LA |`,
     },
     special_chars: {
         name: 'Special Characters',
