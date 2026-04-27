@@ -20,6 +20,7 @@ type Props = {
     token: PersonalAccessToken;
     onDelete: (token: PersonalAccessToken) => void;
     onManageAccess: (token: PersonalAccessToken) => void;
+    onViewActions: (token: PersonalAccessToken) => void;
 };
 
 const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType } => {
@@ -43,7 +44,7 @@ const getExpiryLabel = (expireTime: number): string => {
     return c('pass_2026: Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
 };
 
-export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess }) => {
+export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
     const status = getTokenStatus(token.ExpireTime);
     const statusBadge = getStatusBadge(status);
     const expiryLabel = getExpiryLabel(token.ExpireTime);
@@ -91,6 +92,13 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess }) 
                     icon="pass-all-vaults"
                     onClick={() => onManageAccess(token)}
                 />
+                {token.Flags?.PassAgent && (
+                    <DropdownMenuButton
+                        label={c('pass_2026: Action').t`View agent activity`}
+                        icon="clock"
+                        onClick={() => onViewActions(token)}
+                    />
+                )}
                 <DropdownMenuButton label={c('Action').t`Delete`} icon="trash" danger onClick={() => onDelete(token)} />
             </QuickActionsDropdown>
         </Card>

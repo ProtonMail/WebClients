@@ -24,11 +24,13 @@ import { AccessTokenCard } from './AccessTokenCard';
 import { CreateTokenModal } from './CreateTokenModal';
 import { ManageAccessModal } from './ManageAccessModal';
 import { TokenRevealModal } from './TokenRevealModal';
+import { ViewActionsModal } from './ViewActionsModal';
 
 type Action =
     | { type: 'create' }
     | { type: 'delete'; token: PersonalAccessToken }
-    | { type: 'manage-access'; token: PersonalAccessToken };
+    | { type: 'manage-access'; token: PersonalAccessToken }
+    | { type: 'view-actions'; token: PersonalAccessToken };
 
 const AccessTokensList: FC = () => {
     const tokens = useSelector(selectAccessTokens);
@@ -101,6 +103,7 @@ const AccessTokensList: FC = () => {
                         token={token}
                         onDelete={(t) => setAction({ type: 'delete', token: t })}
                         onManageAccess={(t) => setAction({ type: 'manage-access', token: t })}
+                        onViewActions={(t) => setAction({ type: 'view-actions', token: t })}
                     />
                 ))}
             </div>
@@ -139,6 +142,10 @@ const AccessTokensList: FC = () => {
                     onClose={() => setAction(null)}
                     onSaved={() => setAction(null)}
                 />
+            )}
+
+            {action?.type === 'view-actions' && (
+                <ViewActionsModal token={action.token} onClose={() => setAction(null)} />
             )}
 
             {action?.type === 'delete' && (
