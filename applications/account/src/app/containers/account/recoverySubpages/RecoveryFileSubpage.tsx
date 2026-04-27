@@ -28,7 +28,10 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
         return null;
     }
 
-    const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>{c('Link')
+            .t`Learn more`}</Href>
+    );
 
     return (
         <>

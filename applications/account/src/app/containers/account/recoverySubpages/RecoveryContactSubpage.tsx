@@ -23,7 +23,9 @@ import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequ
 
 export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAMES; emailSubpagePath: string }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
-    const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
+    );
     return (
         <DashboardGrid>
             <SettingsDescription
