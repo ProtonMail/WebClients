@@ -11,7 +11,15 @@ import { SearchDB } from '../shared/SearchDB';
 import { InvalidSearchModuleState, listenForWorkerErrors } from '../shared/errors';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
-import type { ClientId, SearchModuleState, SearchQuery, SearchResultItem, UserId } from '../shared/types';
+import type {
+    ClientId,
+    IndexKind,
+    SearchModuleState,
+    SearchQuery,
+    SearchResultItem,
+    SerializedIndexEntry,
+    UserId,
+} from '../shared/types';
 import { AppVersionGuard } from './AppVersionGuard';
 import type { FetchLastEventIdForTreeScopeId } from './MainThreadBridge';
 import { MainThreadBridge } from './MainThreadBridge';
@@ -191,6 +199,19 @@ export class SearchModule {
 
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
         yield* this.workerClient.search(query);
+    }
+
+    /** Stream every entry of a given index. */
+    exportIndexEntries(kind: IndexKind): AsyncGenerator<SerializedIndexEntry> {
+        return this.workerClient.exportIndexEntries(kind);
+    }
+
+    async getIndexByteSize(kind: IndexKind): Promise<number> {
+        return this.workerClient.getIndexByteSize(kind);
+    }
+
+    async removeIndexEntry(kind: IndexKind, identifier: string): Promise<void> {
+        await this.workerClient.removeIndexEntry(kind, identifier);
     }
 
     // TODO: Return a discriminated type instead of true/false to propagate the reason of uncomatibitly

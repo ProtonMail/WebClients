@@ -94,6 +94,24 @@ export class SearchDB {
         return this.db.getAllKeys('indexBlobs');
     }
 
+    /**
+     * Sum the ciphertext byte size of every blob stored under `indexKind`.
+     * Used by diagnostics to report per-index on-disk usage.
+     */
+    async getIndexBlobsByteSize(indexKind: string): Promise<number> {
+        // `indexBlobs` holds blobs for every index kind in a single object store, keyed by
+        // `[indexKind, blobName]`. We only want the rows for `indexKind`, so we narrow
+        // `getAll` to a compound-key prefix scan: arrays sort after strings in IndexedDB,
+        // so `[indexKind, []]` sits just above every `[indexKind, <any string>]`.
+        const keysForKind = IDBKeyRange.bound([indexKind, ''], [indexKind, []]);
+        const blobs = await this.db.getAll('indexBlobs', keysForKind);
+        let total = 0;
+        for (const blob of blobs) {
+            total += blob.byteLength;
+        }
+        return total;
+    }
+
     // --- Tree event scope subscriptions ---
 
     getSubscription(treeEventScopeId: TreeEventScopeId): Promise<TreeEventScopeSubscription | undefined> {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { openDB } from 'idb';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -20,25 +19,22 @@ import {
     useModalState,
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import type { Entry } from '@proton/proton-foundation-search';
-import init, {
-    ExportEventKind,
-    Engine as SearchLibraryWasmEngine,
-    SerDes,
-    WriteEventKind,
-} from '@proton/proton-foundation-search';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { UseSearchModuleReturn } from '../../hooks/search/useSearchModule';
 import { useSearchModule } from '../../hooks/search/useSearchModule';
+import type { SerializedIndexEntry } from '../../modules/search';
 import { IndexKind } from '../../modules/search';
 import type { IndexPopulatorState } from '../../modules/search/internal/shared/SearchDB';
+import { SearchDB } from '../../modules/search/internal/shared/SearchDB';
 
 const ALL_INDEX_KINDS = Object.values(IndexKind);
 
 // --- Helpers ---
+
+type ExportedEntry = SerializedIndexEntry;
 
 function attr(entry: ExportedEntry, name: string): string {
     const values = entry.attributes[name];
@@ -59,129 +55,24 @@ function formatTime(raw: string): string {
     return new Date(ms).toLocaleString();
 }
 
-// --- Export / Remove logic ---
-
-type ExportedEntry = {
-    identifier: string;
-    attributes: Record<string, unknown[]>;
-};
-
-function serializeEntry(entry: Entry): ExportedEntry {
-    const attributes: Record<string, unknown[]> = {};
-    for (const name of entry.attributes()) {
-        attributes[name] = entry.attribute(name).map((v) => v.value());
-    }
-    return { identifier: entry.identifier(), attributes };
-}
-
-async function openSearchDB(userId: string) {
-    return openDB(`search:${userId}`, 1);
-}
-
 type ExportResult = {
     entries: ExportedEntry[];
     sizeBytes: number;
 };
 
-async function exportIndex(userId: string, kind: IndexKind): Promise<ExportResult> {
-    await init();
-
-    const db = await openSearchDB(userId);
-    const engine = SearchLibraryWasmEngine.builder().build();
-
-    try {
-        const exp = engine.export();
+async function exportIndex(
+    searchModule: Extract<UseSearchModuleReturn, { isAvailable: true }>,
+    kind: IndexKind
+): Promise<ExportResult> {
+    const collectEntries = async () => {
         const entries: ExportedEntry[] = [];
-        let sizeBytes = 0;
-
-        try {
-            let event = exp.next();
-            while (event) {
-                switch (event.kind()) {
-                    case ExportEventKind.Load: {
-                        const blobName = event.id().toString();
-                        const data = await db.get('indexBlobs', [kind, blobName]);
-                        if (data) {
-                            sizeBytes += (data as ArrayBuffer).byteLength;
-                            event.send(SerDes.Cbor, new Uint8Array(data));
-                        } else {
-                            event.sendEmpty();
-                        }
-                        break;
-                    }
-                    case ExportEventKind.Entry: {
-                        const entry = event.entry();
-                        if (entry) {
-                            entries.push(serializeEntry(entry));
-                            entry.free();
-                        }
-                        break;
-                    }
-                    default:
-                        event.free();
-                        break;
-                }
-                event = exp.next();
-            }
-        } finally {
-            exp.free();
+        for await (const entry of searchModule.exportIndexEntries(kind)) {
+            entries.push(entry);
         }
-
-        return { entries, sizeBytes };
-    } finally {
-        engine.free();
-        db.close();
-    }
-}
-
-async function removeFromIndex(userId: string, kind: IndexKind, identifier: string): Promise<void> {
-    await init();
-
-    const db = await openSearchDB(userId);
-    const engine = SearchLibraryWasmEngine.builder().build();
-
-    try {
-        const writer = engine.write();
-        if (!writer) {
-            throw new Error('Failed to acquire write handle');
-        }
-        writer.remove(identifier);
-        const execution = writer.commit();
-
-        try {
-            let event = execution.next();
-            while (event) {
-                switch (event.kind()) {
-                    case WriteEventKind.Load: {
-                        const blobName = event.id().toString();
-                        const data = await db.get('indexBlobs', [kind, blobName]);
-                        if (data) {
-                            event.send(SerDes.Cbor, new Uint8Array(data));
-                        } else {
-                            event.sendEmpty();
-                        }
-                        break;
-                    }
-                    case WriteEventKind.Save: {
-                        const blobName = event.id().toString();
-                        const cached = event.recv();
-                        const data = cached.serialize(SerDes.Cbor);
-                        await db.put('indexBlobs', data.buffer as ArrayBuffer, [kind, blobName]);
-                        break;
-                    }
-                    default:
-                        event.free();
-                        break;
-                }
-                event = execution.next();
-            }
-        } finally {
-            execution.free();
-        }
-    } finally {
-        engine.free();
-        db.close();
-    }
+        return entries;
+    };
+    const [entries, sizeBytes] = await Promise.all([collectEntries(), searchModule.getIndexByteSize(kind)]);
+    return { entries, sizeBytes };
 }
 
 // --- Populator states ---
@@ -194,10 +85,9 @@ function PopulatorStates({ searchModule }: { searchModule: Extract<UseSearchModu
     const fetchStates = async () => {
         setLoading(true);
         try {
-            const db = await openSearchDB(user.ID);
+            const db = await SearchDB.open(user.ID);
             try {
-                const all = await db.getAll('indexPopulatorStates');
-                setStates(all as IndexPopulatorState[]);
+                setStates(await db.getAllPopulatorStates());
             } finally {
                 db.close();
             }
@@ -308,14 +198,19 @@ type IndexExportState = {
     error?: string;
 };
 
-function SearchIndex({ kind }: { kind: IndexKind }) {
-    const [user] = useUser();
+function SearchIndex({
+    kind,
+    searchModule,
+}: {
+    kind: IndexKind;
+    searchModule: Extract<UseSearchModuleReturn, { isAvailable: true }>;
+}) {
     const [state, setState] = useState<IndexExportState>({ loading: true });
 
     const fetchIndex = async () => {
         setState({ loading: true });
         try {
-            const result = await exportIndex(user.ID, kind);
+            const result = await exportIndex(searchModule, kind);
             setState({ loading: false, result });
         } catch (error) {
             setState({ loading: false, error: error instanceof Error ? error.message : `${error}` });
@@ -327,7 +222,7 @@ function SearchIndex({ kind }: { kind: IndexKind }) {
         let cancelled = false;
         void (async () => {
             try {
-                const result = await exportIndex(user.ID, kind);
+                const result = await exportIndex(searchModule, kind);
                 if (!cancelled) {
                     setState({ loading: false, result });
                 }
@@ -341,11 +236,11 @@ function SearchIndex({ kind }: { kind: IndexKind }) {
         return () => {
             cancelled = true;
         };
-    }, [user.ID, kind]);
+    }, [searchModule, kind]);
 
     const handleRemove = async (identifier: string) => {
         try {
-            await removeFromIndex(user.ID, kind, identifier);
+            await searchModule.removeIndexEntry(kind, identifier);
             setState((prev) => ({
                 ...prev,
                 result: prev.result
@@ -759,6 +654,7 @@ function IndexExportTable({ entries, onRemove }: { entries: ExportedEntry[]; onR
 
 export function Search() {
     const [tabIndex, setTabIndex] = useState(0);
+    const searchModule = useSearchModule();
 
     return (
         <Tabs
@@ -771,7 +667,11 @@ export function Search() {
                 },
                 ...ALL_INDEX_KINDS.map((kind) => ({
                     title: `Index: ${kind}`,
-                    content: <SearchIndex kind={kind} />,
+                    content: searchModule.isAvailable ? (
+                        <SearchIndex kind={kind} searchModule={searchModule} />
+                    ) : (
+                        <p>{c('Info').t`Search module is not available.`}</p>
+                    ),
                 })),
             ]}
         />

@@ -8,7 +8,16 @@ import {
     SharedWorkerHeartbeatTimeout,
     sendErrorReportForSearch,
 } from '../shared/errors';
-import type { ClientId, SearchQuery, SearchResultItem, UserId, WorkerSearchResultEvent } from '../shared/types';
+import type {
+    ClientId,
+    IndexKind,
+    SearchQuery,
+    SearchResultItem,
+    SerializedIndexEntry,
+    UserId,
+    WorkerIndexExportEvent,
+    WorkerSearchResultEvent,
+} from '../shared/types';
 import type { SharedWorkerAPI } from '../worker/SharedWorkerAPI';
 import type { IndexerState } from '../worker/indexer/IndexerTaskQueue';
 import type { MainThreadBridge } from './MainThreadBridge';
@@ -171,6 +180,40 @@ export class WorkerClient {
         } finally {
             signal.removeEventListener('abort', onAbort);
         }
+    }
+
+    /** Streams entries of a given index through the worker. */
+    async *exportIndexEntries(kind: IndexKind): AsyncGenerator<SerializedIndexEntry> {
+        const queue = createAsyncQueue<SerializedIndexEntry>();
+        const signal = this.connectionAbort.signal;
+
+        const onAbort = () => queue.error(signal.reason);
+        signal.addEventListener('abort', onAbort);
+
+        void this.api.exportIndexEntries(
+            kind,
+            Comlink.proxy((event: WorkerIndexExportEvent) => {
+                if (event.type === 'done') {
+                    queue.close();
+                } else {
+                    queue.push({ identifier: event.identifier, attributes: event.attributes });
+                }
+            })
+        );
+
+        try {
+            yield* queue.iterator();
+        } finally {
+            signal.removeEventListener('abort', onAbort);
+        }
+    }
+
+    async getIndexByteSize(kind: IndexKind): Promise<number> {
+        return this.api.getIndexByteSize(kind);
+    }
+
+    async removeIndexEntry(kind: IndexKind, identifier: string): Promise<void> {
+        await this.api.removeIndexEntry(kind, identifier);
     }
 
     dispose(): void {

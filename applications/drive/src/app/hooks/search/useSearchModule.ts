@@ -7,7 +7,14 @@ import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
-import type { IndexPopulatorStatus, IndexingProgress, SearchQuery, SearchResultItem } from '../../modules/search';
+import type {
+    IndexKind,
+    IndexPopulatorStatus,
+    IndexingProgress,
+    SearchQuery,
+    SearchResultItem,
+    SerializedIndexEntry,
+} from '../../modules/search';
 import { SearchModule, type SearchModuleState } from '../../modules/search';
 import { sendErrorReportForSearch } from '../../modules/search/internal/shared/errors';
 import { brandSearchUserId } from '../../modules/search/internal/shared/types';
@@ -49,6 +56,12 @@ export type UseSearchModuleReturn =
           reset: () => Promise<void>;
           // Trigger a re-index for a specific populator by UID.
           reindexPopulator: (uid: string) => Promise<void>;
+          // Stream every entry of a given index.
+          exportIndexEntries: (kind: IndexKind) => AsyncGenerator<SerializedIndexEntry>;
+          // Sum of encrypted blob byte lengths for the given index.
+          getIndexByteSize: (kind: IndexKind) => Promise<number>;
+          // Remove a single document from a given index by identifier.
+          removeIndexEntry: (kind: IndexKind, identifier: string) => Promise<void>;
       };
 
 export const useSearchModule = (): UseSearchModuleReturn => {
@@ -154,6 +167,9 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             search: (query: SearchQuery) => {
                 return searchModule.search(query);
             },
+            exportIndexEntries: (kind: IndexKind) => searchModule.exportIndexEntries(kind),
+            getIndexByteSize: async (kind: IndexKind) => searchModule.getIndexByteSize(kind),
+            removeIndexEntry: async (kind: IndexKind, nodeUid: string) => searchModule.removeIndexEntry(kind, nodeUid),
         };
     }, [searchModule, searchModuleState]);
 
