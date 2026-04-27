@@ -668,6 +668,26 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             });
         },
 
+        async createAccessTokenKey() {
+            const primary = context.primaryUserKey;
+            if (!primary?.publicKey || !primary?.privateKey) {
+                throw new Error('Primary user key unavailable');
+            }
+            return processes.createAccessTokenKey(primary.publicKey, primary.privateKey);
+        },
+
+        async openAccessTokenKey(encryptedKey) {
+            const primary = context.primaryUserKey;
+            if (!primary?.publicKey || !primary?.privateKey) {
+                throw new Error('Primary user key unavailable');
+            }
+            return processes.openAccessTokenKey(encryptedKey, primary.privateKey, primary.publicKey);
+        },
+
+        async createAccessTokenShareKeys({ rawPatKey, shareId }) {
+            return processes.createAccessTokenShareKeys(rawPatKey, shareId);
+        },
+
         async openSecureLinkFileDescriptor({
             encryptedItemKey,
             encryptedFileKey,
