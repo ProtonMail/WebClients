@@ -142,7 +142,7 @@ const PasswordResetAvailableBanner = () => {
 
 const SessionRecoveryCancelledBanner = () => {
     const [user] = useUser();
-    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
+    const { dismissCanceledState } = useSessionRecoveryLocalStorage();
 
     const changePasswordLink = (
         <SettingsLink key="change-password-link" path="/account-password?action=change-password">
@@ -158,7 +158,7 @@ const SessionRecoveryCancelledBanner = () => {
             <TopBanner
                 className="bg-danger"
                 onClose={() => {
-                    dismissSessionRecoveryCancelled();
+                    dismissCanceledState();
                 }}
             >
                 {

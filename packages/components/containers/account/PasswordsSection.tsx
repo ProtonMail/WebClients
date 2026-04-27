@@ -54,7 +54,7 @@ const PasswordsSection = () => {
         renderSessionRecoveryPasswordResetModal,
     ] = useModalState();
 
-    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
+    const { dismissCanceledState } = useSessionRecoveryLocalStorage();
     const [skipInfoStep, setSkipInfoStep] = useState(false);
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
@@ -133,7 +133,7 @@ const PasswordsSection = () => {
                     mode={tmpPasswordMode}
                     onRecoveryClick={onRecoveryClick}
                     onSuccess={() => {
-                        dismissSessionRecoveryCancelled();
+                        dismissCanceledState();
                     }}
                     {...changePasswordModal}
                 />
