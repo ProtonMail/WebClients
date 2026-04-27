@@ -1,13 +1,25 @@
+import type { Entry } from '@proton/proton-foundation-search';
+
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
-import type { ClientId, SearchQuery, UserId, WorkerSearchResultEvent } from '../shared/types';
+import type {
+    ClientId,
+    IndexKind,
+    SearchQuery,
+    SerializedAttributeValue,
+    SerializedIndexEntry,
+    UserId,
+    WorkerIndexExportEvent,
+    WorkerSearchResultEvent,
+} from '../shared/types';
 import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
 import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 import { IndexRegistry } from './index/IndexRegistry';
+import { exportEntries, removeDocumentIds } from './index/indexEntriesUtils';
 import type { IndexerState } from './indexer/IndexerTaskQueue';
 import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './indexer/TreeSubscriptionRegistry';
@@ -101,6 +113,46 @@ export class SharedWorkerAPI {
         onEvent?.({ type: 'done' });
     }
 
+    /**
+     * Stream every entry of a given index to the caller. Emits one event per
+     * entry, followed by a single `done` event. Diagnostics-only.
+     */
+    async exportIndexEntries(kind: IndexKind, onEvent?: (event: WorkerIndexExportEvent) => void): Promise<void> {
+        if (!this.indexRegistry || !this.db) {
+            Logger.warn('SharedWorkerAPI: exportIndexEntries called before indexer was available');
+            onEvent?.({ type: 'done' });
+            return;
+        }
+        const instance = await this.indexRegistry.get(kind, this.db);
+        const controller = new AbortController();
+        try {
+            for await (const entry of exportEntries(instance, controller.signal)) {
+                onEvent?.({ type: 'entry', ...serializeEntry(entry) });
+            }
+        } finally {
+            onEvent?.({ type: 'done' });
+        }
+    }
+
+    /** Sum of encrypted blob byte lengths for the given index. Diagnostics-only. */
+    async getIndexByteSize(kind: IndexKind): Promise<number> {
+        if (!this.db) {
+            Logger.warn('SharedWorkerAPI: getIndexByteSize called before DB was available');
+            return 0;
+        }
+        return this.db.getIndexBlobsByteSize(kind);
+    }
+
+    /** Remove a single document by identifier from the given index. Diagnostics-only. */
+    async removeIndexEntry(kind: IndexKind, identifier: string): Promise<void> {
+        if (!this.indexRegistry || !this.db) {
+            Logger.warn('SharedWorkerAPI: removeIndexEntry called before indexer was available');
+            return;
+        }
+        const instance = await this.indexRegistry.get(kind, this.db);
+        await removeDocumentIds(instance, [identifier], new AbortController().signal);
+    }
+
     private handleActiveClientChanged(newClientContext: ClientContext | null) {
         if (newClientContext) {
             void this.onClientAvailable(newClientContext);
@@ -170,4 +222,30 @@ export class SharedWorkerAPI {
             throw error;
         }
     }
+}
+
+function serializeEntry(entry: Entry): SerializedIndexEntry {
+    const attributes: Record<string, SerializedAttributeValue[]> = {};
+    for (const name of entry.attributes()) {
+        const values = entry.attribute(name);
+        attributes[name] = values.map((v) => {
+            const raw = v.value();
+            v.free();
+            return toSerializedAttributeValue(raw, name);
+        });
+    }
+    return { identifier: entry.identifier(), attributes };
+}
+
+function toSerializedAttributeValue(raw: unknown, attributeName: string): SerializedAttributeValue {
+    if (typeof raw === 'string' || typeof raw === 'number' || typeof raw === 'bigint' || typeof raw === 'boolean') {
+        return raw;
+    }
+    if (raw !== null && typeof raw === 'object') {
+        try {
+            return JSON.stringify(raw);
+        } catch {}
+    }
+    Logger.warn(`serializeEntry: unexpected attribute value for <${attributeName}>: type=${typeof raw}`);
+    return String(raw);
 }

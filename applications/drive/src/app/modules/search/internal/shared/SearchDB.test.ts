@@ -108,6 +108,36 @@ describe('SearchDB', () => {
             expect(keys).toContainEqual(['main', 'b']);
             expect(keys).toContainEqual(['photos', 'c']);
         });
+
+        describe('getIndexBlobsByteSize', () => {
+            it('returns 0 when no blobs exist for the kind', async () => {
+                expect(await db.getIndexBlobsByteSize('main')).toBe(0);
+            });
+
+            it('sums byte sizes of every blob under the given kind', async () => {
+                await db.putEncryptedIndexBlob(['main', 'a'], new ArrayBuffer(10), identity);
+                await db.putEncryptedIndexBlob(['main', 'b'], new ArrayBuffer(25), identity);
+
+                expect(await db.getIndexBlobsByteSize('main')).toBe(35);
+            });
+
+            it('excludes blobs from other kinds', async () => {
+                await db.putEncryptedIndexBlob(['main', 'a'], new ArrayBuffer(10), identity);
+                await db.putEncryptedIndexBlob(['photos', 'b'], new ArrayBuffer(100), identity);
+
+                expect(await db.getIndexBlobsByteSize('main')).toBe(10);
+                expect(await db.getIndexBlobsByteSize('photos')).toBe(100);
+            });
+
+            it('handles blob names that span the byte range', async () => {
+                // Edge cases for the compound-key prefix scan: empty string, high-codepoint names.
+                await db.putEncryptedIndexBlob(['main', ''], new ArrayBuffer(1), identity);
+                await db.putEncryptedIndexBlob(['main', 'mid'], new ArrayBuffer(2), identity);
+                await db.putEncryptedIndexBlob(['main', '￿￿'], new ArrayBuffer(4), identity);
+
+                expect(await db.getIndexBlobsByteSize('main')).toBe(7);
+            });
+        });
     });
 
     describe('treeEventScopeSubscriptions', () => {

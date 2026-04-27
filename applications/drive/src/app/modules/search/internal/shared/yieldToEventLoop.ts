@@ -12,12 +12,17 @@
 
 type SchedulerLike = { yield?: () => Promise<void> };
 
-const schedulerYield = (globalThis as unknown as { scheduler?: SchedulerLike }).scheduler?.yield;
+function resolveYield(): () => Promise<void> {
+    const scheduler = (globalThis as unknown as { scheduler?: SchedulerLike }).scheduler;
+    // Must preserve the `this` binding to `scheduler`; a bare function reference
+    // throws `Illegal invocation` when the host enforces WebIDL receiver checks.
+    if (scheduler && typeof scheduler.yield === 'function') {
+        return scheduler.yield.bind(scheduler);
+    }
+    return () =>
+        new Promise<void>((resolve) => {
+            setTimeout(resolve, 0);
+        });
+}
 
-export const yieldToEventLoop: () => Promise<void> =
-    typeof schedulerYield === 'function'
-        ? () => schedulerYield()
-        : () =>
-              new Promise<void>((resolve) => {
-                  setTimeout(resolve, 0);
-              });
+export const yieldToEventLoop: () => Promise<void> = resolveYield();

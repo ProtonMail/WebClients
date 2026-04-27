@@ -8,10 +8,13 @@ import type {
     ClientId,
     SearchModuleState,
     SearchResultItem,
+    SerializedIndexEntry,
     TreeEventScopeId,
     UserId,
+    WorkerIndexExportEvent,
     WorkerSearchResultEvent,
 } from '../shared/types';
+import { IndexKind } from '../shared/types';
 import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
 import { FakeMainThreadBridge } from '../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../testing/setupRealSearchLibraryWasm';
@@ -199,6 +202,23 @@ async function search(
 
 async function getAllIndexedItemsForGeneration(api: SharedWorkerAPI, generation: number): Promise<SearchResultItem[]> {
     return search(api, '', { indexPopulatorGeneration: BigInt(generation) });
+}
+
+// Post-bootstrap cleanup tasks can hold the writer briefly. Retry with fake-timer advances
+// until either the call succeeds or we give up. Used by tests that need an on-demand write.
+async function retryWhileWriterBusy(fn: () => Promise<void>, maxIterations = 50): Promise<void> {
+    for (let i = 0; i < maxIterations; i++) {
+        try {
+            await fn();
+            return;
+        } catch (e) {
+            if (!(e instanceof Error) || !/write session|write handle/.test(e.message)) {
+                throw e;
+            }
+            await jest.advanceTimersByTimeAsync(100);
+        }
+    }
+    throw new Error('retryWhileWriterBusy: timed out');
 }
 
 // Verify that non-trashed reports are found and trashed ones are not.
@@ -615,6 +635,87 @@ describe('SharedWorkerAPI integration', () => {
 
             // Search still works with the existing index.
             await verifyThatUserCanSearchIndexProperly(api);
+        });
+    });
+
+    describe('Scenario: diagnostics export / byte-size / remove', () => {
+        async function exportAll(api: SharedWorkerAPI, kind: IndexKind): Promise<SerializedIndexEntry[]> {
+            const entries: SerializedIndexEntry[] = [];
+            await api.exportIndexEntries(kind, (event: WorkerIndexExportEvent) => {
+                if (event.type === 'entry') {
+                    entries.push({ identifier: event.identifier, attributes: event.attributes });
+                }
+            });
+            return entries;
+        }
+
+        it('exportIndexEntries streams every entry with typed attributes', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            const entries = await exportAll(api, IndexKind.MAIN);
+            const ids = entries.map((e) => e.identifier);
+
+            // Non-trashed nodes walked from the root must all be present.
+            for (const expected of [
+                'folder-archive',
+                'folder-empty',
+                'folder-photos',
+                'folder-projects',
+                'notes',
+                'old-report',
+                'report-q1',
+                'report-q2',
+                'vacation',
+            ]) {
+                expect(ids).toContain(expected);
+            }
+
+            // Every entry carries the core classification attributes with the right primitive types.
+            for (const e of entries) {
+                const [populatorId] = e.attributes.indexPopulatorId ?? [];
+                const [generation] = e.attributes.indexPopulatorGeneration ?? [];
+                expect(typeof populatorId).toBe('string');
+                expect(['number', 'bigint']).toContain(typeof generation);
+            }
+        });
+
+        it('emits a final done event even when the index is empty', async () => {
+            // No client registered — no indexer, nothing to export.
+            const events: WorkerIndexExportEvent[] = [];
+            await api.exportIndexEntries(IndexKind.MAIN, (event) => events.push(event));
+            expect(events).toEqual([{ type: 'done' }]);
+        });
+
+        it('getIndexByteSize returns the ciphertext byte total for the kind', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            const size = await api.getIndexByteSize(IndexKind.MAIN);
+            expect(size).toBeGreaterThan(0);
+
+            // An unknown kind should report 0 — no blobs written under that key prefix.
+            expect(await api.getIndexByteSize('nonexistent-kind' as IndexKind)).toBe(0);
+        });
+
+        it('removeIndexEntry deletes the entry and it disappears from exports and search', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Sanity: the entry exists in the export and is searchable.
+            const before = (await exportAll(api, IndexKind.MAIN)).map((e) => e.identifier);
+            expect(before).toContain('notes');
+            const searchBefore = (await search(api, 'notes')).map((r) => r.nodeUid);
+            expect(searchBefore).toContain('notes');
+
+            // Post-bootstrap cleanup tasks may still be driving a write session;
+            // retry briefly so the writer is free by the time we call removeIndexEntry.
+            await retryWhileWriterBusy(() => api.removeIndexEntry(IndexKind.MAIN, 'notes'));
+
+            const after = (await exportAll(api, IndexKind.MAIN)).map((e) => e.identifier);
+            expect(after).not.toContain('notes');
+            const searchAfter = (await search(api, 'notes')).map((r) => r.nodeUid);
+            expect(searchAfter).not.toContain('notes');
         });
     });
 
