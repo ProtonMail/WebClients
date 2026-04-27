@@ -22,7 +22,6 @@ import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions/creators/client';
 import { selectFilters, selectTabState } from '@proton/pass/store/selectors/filters';
 import { selectItem } from '@proton/pass/store/selectors/items';
-import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { first } from '@proton/pass/utils/array/first';
@@ -263,8 +262,8 @@ export const createActivationService = () => {
                 });
             }
 
-            const canCreateItems = selectCanCreateItems(ctx.service.store.getState());
-            const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
+            const resolved = await ctx.service.settings.resolve();
+            const settings = sanitizeSettings(resolved, ctx.service.store.getState());
             // Note: in the future we can modify this to add featureFlags variants in the extension content script
             const { features } = await ctx.service.featureFlags.resolve();
             const connectivity = ctx.service.connectivity.getStatus();
