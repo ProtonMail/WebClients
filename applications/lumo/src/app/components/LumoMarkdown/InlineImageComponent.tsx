@@ -7,7 +7,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
-import { ImageModifyButton, ImageStyleDropdown } from '../../features/imageActions/ImageActionButtons';
+import { ImageModifyButton } from '../../features/imageActions/ImageActionButtons';
 import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
 import { useLazyAttachment } from '../../hooks';
 import { useLumoDispatch } from '../../redux/hooks';
@@ -147,7 +147,6 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                             setOverlayOpen(true);
                         }}
                     />
-                    <ImageStyleDropdown onSelect={handleChangeStyle} side />
                 </span>
             </span>
 
