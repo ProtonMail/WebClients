@@ -16,3 +16,8 @@ export const selectAccessTokenById = (tokenId: string) =>
     );
 
 export const selectAccessTokenGrants = (tokenId: string) => createSelector(selectAccessTokenState, (state) => state.grants[tokenId] ?? []);
+
+const EMPTY_ACTIONS = { records: [], nextSince: null } as const;
+
+export const selectAccessTokenActions = (tokenId: string) =>
+    createSelector(selectAccessTokenState, (state) => state.actions[tokenId] ?? EMPTY_ACTIONS);
