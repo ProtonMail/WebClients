@@ -2,14 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { differenceInMilliseconds } from 'date-fns';
 
-import {
-    confirmSessionRecoveryInProgress,
-    dismissSessionRecoveryCancelled,
-} from '@proton/account/recovery/sessionRecovery';
+import { sessionRecoverySlice } from '@proton/account/recovery/sessionRecovery';
 import {
     selectSessionRecoveryData,
     selectSessionRecoveryGracePeriodEndTime,
-    selectSessionRecoverySliceState,
 } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { useInterval } from '@proton/hooks';
@@ -19,17 +15,9 @@ import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
 export const useSessionRecoveryLocalStorage = () => {
     const dispatch = useDispatch();
-    const selector = useSelector(selectSessionRecoverySliceState);
-
     return {
-        dismissSessionRecoveryCancelled: () => {
-            dispatch(dismissSessionRecoveryCancelled());
-        },
-        confirmSessionRecoveryInProgress: () => {
-            dispatch(confirmSessionRecoveryInProgress());
-        },
-        hasConfirmedSessionRecoveryInProgress: selector.confirmed,
-        hasDismissedSessionRecoveryCancelled: selector.dismissed,
+        dismissCanceledState: () => dispatch(sessionRecoverySlice.actions.setState({ canceledStateDismissed: true })),
+        confirmGracePeriod: () => dispatch(sessionRecoverySlice.actions.setState({ gracePeriodConfirmed: true })),
     };
 };
 
