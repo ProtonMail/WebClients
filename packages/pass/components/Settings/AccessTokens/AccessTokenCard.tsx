@@ -9,10 +9,12 @@ import { IcKey } from '@proton/icons/icons/IcKey';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import { epochHoursFromNow } from '@proton/pass/utils/time/epoch';
+import { epochToDate } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 import type { TokenStatus } from './helpers';
-import { formatDate, getHoursRemaining, getTokenStatus } from './helpers';
+import { getTokenStatus } from './helpers';
 
 type Props = {
     token: PersonalAccessToken;
@@ -32,7 +34,7 @@ const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType }
 };
 
 const getExpiryLabel = (expireTime: number): string => {
-    const hours = getHoursRemaining(expireTime);
+    const hours = epochHoursFromNow(expireTime);
     if (hours < 0) {
         const abs = Math.abs(hours);
         return c('pass_2026: Info').ngettext(msgid`Expired ${abs} hour ago`, `Expired ${abs} hours ago`, abs);
@@ -46,7 +48,7 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess }) 
     const statusBadge = getStatusBadge(status);
     const expiryLabel = getExpiryLabel(token.ExpireTime);
     const isExpired = status === 'expired';
-    const createdDate = formatDate(token.CreateTime);
+    const createdDate = epochToDate(token.CreateTime);
 
     return (
         <Card rounded className="flex items-center gap-3 p-4 border-weak" background={false}>
