@@ -97,28 +97,6 @@ const getFilteredHomePath = (somePath: string) => {
     return normalizedPath.replaceAll(basePathRegExp, replacement);
 };
 
-const isIDKey = (str: string) => {
-    return str.toLowerCase() === "sentry_key";
-};
-
-/** @see https://docs.sentry.io/security-legal-pii/scrubbing/server-side-scrubbing/ */
-const FORBIDDEN_REGEXP_LIST = [
-    /password/gi,
-    /secret/gi,
-    /passwd/gi,
-    /api_key/gi,
-    /apikey/gi,
-    /access_token/gi,
-    /auth/gi,
-    /credentials/gi,
-    /mysql_pwd/gi,
-    /stripetoken/gi,
-    /card[0-9]+/gi,
-    /github_token/gi,
-    /privatekey/gi,
-    /private_key/gi,
-];
-
 const filterSensitiveString = (data: string): string => {
     let filteredData = data;
 
@@ -134,29 +112,7 @@ const filterSensitiveString = (data: string): string => {
         }
 
         filterSearchParams(url.searchParams);
-
-        const pathList = url.pathname.split("/");
-        for (let i = 0; i < pathList.length; i++) {
-            if (isEmail(pathList[i])) {
-                pathList[i] = getFilteredEmail(pathList[i]);
-            } else {
-                for (const forbiddenRegexp of FORBIDDEN_REGEXP_LIST) {
-                    if (forbiddenRegexp.test(pathList[i])) {
-                        pathList[i] = "__FORBIDDEN__";
-                        break;
-                    }
-                }
-            }
-        }
-        url.pathname = pathList.join("/");
-
-        if (url.hash) {
-            const hashParams = new URLSearchParams(url.hash.substring(1));
-            if (hashParams.size) {
-                filterSearchParams(hashParams);
-                url.hash = hashParams.toString();
-            }
-        }
+        url.pathname = filterEmailsFromPathname(url);
 
         if (url.protocol === "file:") {
             url.pathname = encodeURI(getFilteredHomePath(decodeURI(url.pathname)));
@@ -174,28 +130,24 @@ const filterSensitiveString = (data: string): string => {
 
 function filterSearchParams(params: URLSearchParams) {
     for (const [key, value] of params.entries()) {
-        let filteredValue = value;
-
-        for (const forbiddenRegexp of FORBIDDEN_REGEXP_LIST) {
-            if (forbiddenRegexp.test(key)) {
-                params.delete(key);
-                params.set("__FORBIDDEN__", "");
-                continue;
-            }
-
-            if (forbiddenRegexp.test(filteredValue)) {
-                filteredValue = filteredValue.replaceAll(forbiddenRegexp, "__FORBIDDEN__");
-            }
-        }
+        const filteredValue = value;
 
         if (isEmail(filteredValue)) {
             params.set(key, getFilteredEmail(filteredValue));
         } else if (isEmailDomain(key, filteredValue)) {
             params.set(key, getFilteredEmail(filteredValue));
-        } else if (isIDKey(key)) {
-            params.set(key, "__ID__");
         }
     }
+}
+
+function filterEmailsFromPathname(url: URL) {
+    const pathList = url.pathname.split("/");
+    for (let i = 0; i < pathList.length; i++) {
+        if (isEmail(pathList[i])) {
+            pathList[i] = getFilteredEmail(pathList[i]);
+        }
+    }
+    return pathList.join("/");
 }
 
 export function initializeLog() {
@@ -213,6 +165,9 @@ export function initializeLog() {
     Logger.eventLogger.startLogging();
 }
 
+// High-freq requests that add a lot of noise to the logs. Non-200 responses are still recorded.
+const NET_LOG_SKIP_PATTERNS = [/\/assets\/static\//, /\/api\/calendar\/v1\//, /\/api\/core\/v4\/images/];
+
 export async function connectNetLogger(
     getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
 ) {
@@ -220,6 +175,9 @@ export async function connectNetLogger(
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
         if (details.statusCode >= 200 && details.statusCode < 400) {
+            if (NET_LOG_SKIP_PATTERNS.some((re) => re.test(details.url))) {
+                return;
+            }
             netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine);
         } else {
             netLogger(viewName).error(
