@@ -40,7 +40,7 @@ export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, .
                         .jt`Emails sent to ${connectedAddressText} will now show up in ${MAIL_APP_NAME}.`}</li>
                     <li>{c('Description').t`You can now send emails from ${BRAND_NAME} using this address.`}</li>
                     <li>{c('Description')
-                        .t`We've started importing your email from Gmail. We'll let you know when it's done.`}</li>
+                        .t`We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.`}</li>
                 </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
