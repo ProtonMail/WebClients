@@ -56,7 +56,7 @@ export const initiateVerification = async ({
         const { code, details } = getApiError(error);
 
         if (code !== API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-            throw new Error();
+            throw error;
         }
 
         if (

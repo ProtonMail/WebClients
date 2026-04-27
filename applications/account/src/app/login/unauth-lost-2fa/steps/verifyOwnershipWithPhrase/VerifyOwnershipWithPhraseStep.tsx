@@ -23,8 +23,13 @@ interface Props {
     username: string;
 }
 
-export const VerifyOwnershipWithPhraseStep = ({ username }: Props) => {
-    const actorRef = useVerifyOwnershipWithPhraseActorRef();
+const VerifyOwnershipWithPhraseStepContent = ({
+    actorRef,
+    username,
+}: {
+    actorRef: NonNullable<ReturnType<typeof useVerifyOwnershipWithPhraseActorRef>>;
+    username: string;
+}) => {
     const { send } = actorRef;
 
     const verifyPhrase = useSelector(actorRef, (s) => s.matches('verify phrase'));
@@ -64,7 +69,6 @@ export const VerifyOwnershipWithPhraseStep = ({ username }: Props) => {
             send({ type: '2fa disabled' });
         } catch (error) {
             handleError(error);
-            send({ type: 'error' });
         }
     };
 
@@ -88,4 +92,14 @@ export const VerifyOwnershipWithPhraseStep = ({ username }: Props) => {
             </Button>
         </Form>
     );
+};
+
+export const VerifyOwnershipWithPhraseStep = ({ username }: Props) => {
+    const actorRef = useVerifyOwnershipWithPhraseActorRef();
+
+    if (!actorRef) {
+        return null;
+    }
+
+    return <VerifyOwnershipWithPhraseStepContent actorRef={actorRef} username={username} />;
 };

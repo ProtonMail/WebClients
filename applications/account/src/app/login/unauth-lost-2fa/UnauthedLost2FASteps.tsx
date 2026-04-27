@@ -6,7 +6,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { UserNameWithIcon } from '../../components/username/UserNameWithIcon';
 import type { Render, RenderProps } from '../LoginRender';
 import { useUnauthLost2FA } from './UnauthedLost2FAContainer';
-import { ErrorStep } from './steps/ErrorStep';
 import { NoMethodsStep } from './steps/NoMethodsStep';
 import { TwoFADisabledStep } from './steps/TwoFADisabledStep';
 import { RequestTotpBackupCodesStep } from './steps/requestTotpBackupCodes/RequestTotpBackupCodesStep';
@@ -87,14 +86,6 @@ export const UnauthedLost2FASteps = ({ render, toApp, username }: UnauthedLost2F
             title: c('Title').t`Disable two-factor authentication?`,
             content: <NoMethodsStep />,
         });
-    }
-
-    if (
-        snapshot.matches('phone ownership verification error') ||
-        snapshot.matches('email ownership verification error') ||
-        snapshot.matches('phrase ownership verification error')
-    ) {
-        return renderStepLayout({ title: c('Title').t`An error occurred`, content: <ErrorStep /> });
     }
 
     return null;
