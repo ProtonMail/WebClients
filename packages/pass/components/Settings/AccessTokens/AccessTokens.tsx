@@ -7,19 +7,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
-import {
-    deletePersonalAccessToken,
-    listPersonalAccessTokens,
-} from '@proton/pass/lib/access-token/access-token.requests';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { deleteAccessToken, getAccessTokens } from '@proton/pass/store/actions';
+import { selectAccessTokens, selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -34,62 +31,24 @@ type Action =
     | { type: 'manage-access'; token: PersonalAccessToken };
 
 const AccessTokensList: FC = () => {
-    const { createNotification } = useNotifications();
+    const tokens = useSelector(selectAccessTokens);
+    const list = useRequest(getAccessTokens, { loading: true });
+    const remove = useRequest(deleteAccessToken);
 
-    const [tokens, setTokens] = useState<PersonalAccessToken[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
     const [action, setAction] = useState<Action | null>(null);
     const [reveal, setReveal] = useState<{ envVar: string; agent: boolean } | null>(null);
-    const [deletingId, setDeletingId] = useState<string | null>(null);
 
-    useEffect(() => {
-        let ignore = false;
+    useEffect(() => list.dispatch(), []);
 
-        void (async () => {
-            setIsLoading(true);
-            try {
-                const result = await listPersonalAccessTokens();
-                if (!ignore) setTokens(result);
-            } catch {
-                if (!ignore) {
-                    createNotification({
-                        type: 'error',
-                        text: c('pass_2026: Error').t`Failed to load access tokens`,
-                    });
-                }
-            } finally {
-                if (!ignore) setIsLoading(false);
-            }
-        })();
-
-        return () => {
-            ignore = true;
-        };
-    }, []);
-
-    const handleCreated = (envVar: string, pat: PersonalAccessToken, agent: boolean) => {
-        setTokens((prev) => [pat, ...prev.filter((t) => t.PersonalAccessTokenID !== pat.PersonalAccessTokenID)]);
+    const handleCreated = (envVar: string, _pat: PersonalAccessToken, agent: boolean) => {
         setAction(null);
         setReveal({ envVar, agent });
     };
 
-    const handleDelete = async () => {
+    const handleDelete = () => {
         if (action?.type !== 'delete') return;
-        const id = action.token.PersonalAccessTokenID;
-        setDeletingId(id);
-        try {
-            await deletePersonalAccessToken(id);
-            setTokens((prev) => prev.filter((t) => t.PersonalAccessTokenID !== id));
-            createNotification({ text: c('pass_2026: Notification').t`Access token deleted` });
-            setAction(null);
-        } catch {
-            createNotification({
-                type: 'error',
-                text: c('pass_2026: Error').t`Failed to delete access token`,
-            });
-        } finally {
-            setDeletingId(null);
-        }
+        remove.dispatch(action.token.PersonalAccessTokenID);
+        setAction(null);
     };
 
     const newKeyButton = (
@@ -107,7 +66,7 @@ const AccessTokensList: FC = () => {
     );
 
     const renderContent = () => {
-        if (isLoading) {
+        if (list.loading) {
             return (
                 <div className="flex justify-center py-6">
                     <CircleLoader size="medium" />
@@ -164,7 +123,7 @@ const AccessTokensList: FC = () => {
                             .jt`Access tokens, used together with ${passCliLink}, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.`}
                     </span>
                 }
-                actions={tokens.length > 0 && !isLoading ? [newKeyButton] : undefined}
+                actions={tokens.length > 0 && !list.loading ? [newKeyButton] : undefined}
                 contentClassname="flex flex-column flex-nowrap pt-6 pb-2"
             >
                 {renderContent()}
@@ -189,7 +148,7 @@ const AccessTokensList: FC = () => {
                     message={c('pass_2026: Info')
                         .t`"${action.token.Name}" will stop working immediately. This action cannot be undone.`}
                     confirmText={c('Action').t`Delete`}
-                    loading={deletingId === action.token.PersonalAccessTokenID}
+                    loading={remove.loading}
                     onCancel={() => setAction(null)}
                     onConfirm={handleDelete}
                 />
