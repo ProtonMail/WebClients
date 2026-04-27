@@ -1652,6 +1652,12 @@
       ],
       "Change password": [
         "變更密碼"
+      ],
+      "Connect to Gmail": [
+        "連接 Gmail"
+      ],
+      "Reconnect to Gmail": [
+        "重新連接 Gmail"
       ]
     },
     "action": {
@@ -2609,6 +2615,9 @@
       ],
       "Zero-access encryption": [
         "零存取加密"
+      ],
+      "Unlimited favorites for quick access": [
+        "快速存取至無限最愛"
       ]
     },
     "collider_2025: Info": {
@@ -4098,6 +4107,18 @@
       ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我們無法再存取至 ${ boldEmails }"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "您將轉寄來自 ${ forwardingCount } Gmail 位址的電子郵件。若連線它，您將可以同時於 ${ MAIL_APP_NAME } 接收及回覆。"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "您將連線至 ${ MAX_SYNC_PAID_USER } Gmail 位址。若要添加另一個，請先停用您連線的帳號。"
       ]
     },
     "description": {
@@ -4233,6 +4254,9 @@
     "Duo offer: Title": {
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
+      ],
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 取得 4x 儲存空間"
       ]
     },
     "Easy switch": {
@@ -8520,6 +8544,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "全部於 ${ planOrAppName } 方案，附加:"
+      ],
+      "for ${ price }": [
+        "為 ${ price }"
       ]
     },
     "info": {
@@ -10771,6 +10801,9 @@
       ],
       "Appointment scheduling": [
         "預定排定中"
+      ],
+      "Dedicated servers optimized for speed": [
+        "針對速度的獨立伺服器"
       ]
     },
     "new_plans: feature highlight": {
@@ -13571,6 +13604,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
       ]
     },
     "subscription reminder": {
@@ -15134,6 +15170,15 @@
       ],
       "Reverse charge not supported": [
         "不支援倒退修改"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "透過 ${ MAIL_APP_NAME } 傳送和計送 Gmail"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "於 ${ MAIL_APP_NAME } 安全地使用 Gmail。"
+      ],
+      "You are all set": [
+        "你已就緒"
       ]
     },
     "Today icon tooltip in mini calendar": {

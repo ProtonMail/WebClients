@@ -1646,6 +1646,9 @@
       ],
       "Change password": [
         "Spremeni geslo"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Pridobi ${ BRAND_NAME } naslov"
       ]
     },
     "action": {
@@ -2604,6 +2607,9 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ]
     },
     "collider_2025: Info": {
@@ -4091,6 +4097,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers.": [
+        "Brez oglasov. Brez sledilnikov."
       ]
     },
     "description": {
@@ -5011,6 +5020,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ]
     },
     "error": {
@@ -8812,6 +8824,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
+      ],
+      "Copy to clipboard": [
+        "Kopiraj v odložišče"
+      ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -9821,6 +9851,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervacije, računi in naročila"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11666,6 +11702,12 @@
       ],
       "Skip for now": [
         "Preskoči za zdaj"
+      ],
+      "Choose a provider": [
+        "Izberite ponudnika"
+      ],
+      "Some popular services": [
+        "Nekatere priljubljene storitve"
       ]
     },
     "Onboarding modal": {
@@ -11881,6 +11923,12 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Yes, don't show again": [
+        "Da, ne prikaži več"
       ]
     },
     "Option group": {
@@ -12119,6 +12167,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "Payments.Error": {
@@ -12401,6 +12452,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ]
     },
     "Placeholder for contact group name": {
@@ -15492,6 +15546,15 @@
       ],
       "Account temporarily locked": [
         "Račun je začasno zaklenjen"
+      ],
+      "Built for privacy": [
+        "Narejen za zasebnost"
+      ],
+      "Keep this banner hidden?": [
+        "Ali naj ostane ta pasica skrita?"
+      ],
+      "You are all set": [
+        "Vse je nastavljeno"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16151,6 +16214,31 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
