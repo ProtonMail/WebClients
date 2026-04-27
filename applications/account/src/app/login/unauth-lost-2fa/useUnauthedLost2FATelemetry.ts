@@ -25,8 +25,7 @@ export type Step =
     | 'verify ownership with phone'
     | 'verify ownership with phrase'
     | '2fa-disabled'
-    | 'no method to disable 2fa'
-    | 'error';
+    | 'no method to disable 2fa';
 
 type FlowOutcome = 'signin to continue' | 'return to 2fa step' | 'reset password' | 'totp backup code provided';
 

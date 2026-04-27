@@ -1,6 +1,6 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-type Result = '2fa-disabled' | 'skipped' | 'error';
+type Result = '2fa-disabled' | 'skipped';
 
 interface MachineContext {
     result: Result | null;
@@ -32,18 +32,11 @@ export const verifyOwnershipWithPhraseMachine = setup({
                 'try another way': {
                     target: 'skipped',
                 },
-                error: {
-                    target: 'error',
-                },
             },
         },
         '2fa disabled': {
             type: 'final',
             entry: assign({ result: '2fa-disabled' }),
-        },
-        error: {
-            type: 'final',
-            entry: assign({ result: 'error' }),
         },
         skipped: {
             type: 'final',
