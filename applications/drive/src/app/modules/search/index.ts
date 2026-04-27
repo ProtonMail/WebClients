@@ -7,5 +7,6 @@ export type {
     SearchModuleState,
     SearchQuery,
     SearchResultItem,
+    SerializedIndexEntry,
     UserId,
 } from './internal/shared/types';
