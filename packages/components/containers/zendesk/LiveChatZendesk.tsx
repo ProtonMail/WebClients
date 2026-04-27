@@ -292,11 +292,13 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                     ]);
                 }
             } else if (data.type === 'login-response') {
-                // payload.result will be `null` on successful authentication and will contain error details for failed attempts
-                if (data.payload?.result) {
+                // payload will be `null` on successful authentication and will contain error details for failed attempts
+                if (data.payload) {
+                    const { type, reason, message } = data.payload;
+                    const [status] = (typeof reason === 'string' ? reason : '').split(':');
                     captureMessage('Zendesk: Authentication failed', {
                         level: 'error',
-                        extra: { error: data.payload.result },
+                        extra: { type, reason, message, status },
                     });
                 }
             }
