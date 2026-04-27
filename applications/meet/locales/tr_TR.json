@@ -54,7 +54,7 @@
         "Kamera olmadan ilerle"
       ],
       "Continue without mic and camera": [
-        "Mikrofon ve kamera olmadan devam et"
+        "Mikrofon ve kamera olmadan ilerle"
       ],
       "Continue without microphone": [
         "Mikrofon olmadan ilerle"
@@ -264,7 +264,7 @@
         "Yeni kod iste"
       ],
       "Request permissions": [
-        "İzin iste"
+        "İzinleri iste"
       ],
       "Resend code": [
         "Kodu yeniden gönder"
@@ -2104,7 +2104,7 @@
         "Ücretli görüşme"
       ],
       "Presenting": [
-        "Sunma"
+        "Sunum yapıyor"
       ],
       "privacy": [
         "gizlilik"
@@ -2227,7 +2227,7 @@
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
       "To be seen in the call, allow access to your camera.": [
-        "Görüşmede görünmek için kameranıza erişim izni verin."
+        "Görüşmede görünmek için kameranıza erişme izni verin."
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2239,10 +2239,10 @@
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
       "To speak and be seen in the call, allow access to your camera and microphone.": [
-        "Görüşmede konuşabilmek ve görünebilmek için kamera ve mikrofonunuza erişim izni verin."
+        "Görüşmede konuşabilmek ve görünebilmek için kameranıza ve mikrofonunuza erişme izni verin."
       ],
       "To speak in the call, allow access to your microphone.": [
-        "Görüşmede konuşabilmek için mikrofonunuza erişim izni verin."
+        "Görüşmede konuşabilmek için mikrofonunuza erişme izni verin."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2335,16 +2335,16 @@
         "Her zaman kullanabileceğiniz görüşme odası"
       ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Tarayıcınız kamera ve mikrofona erişimi engelledi. Bunları açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+        "Tarayıcınız kameraya ve mikrofona erişme izni vermedi. Erişme izinlerini vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
       ],
       "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız kameranıza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+        "Tarayıcınız kameranıza erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız mikrofonunuza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+        "Tarayıcınız mikrofonunuza erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız ekran paylaşımına erişimi engelledi. Bunu açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+        "Tarayıcınız ekran paylaşımına erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
       ],
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
@@ -2853,10 +2853,10 @@
         "Uygun konuşmacılar"
       ],
       "Camera access needed": [
-        "Kamera erişimi gerekiyor"
+        "Kameraya erişme izni gerekli"
       ],
       "Camera and microphone access needed": [
-        "Kamera ve mikrofon erişimi gerekiyor"
+        "Kameraya ve mikrofona erişme izni gerekli"
       ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
@@ -2944,7 +2944,7 @@
         "İletişim katmanı güvenliği"
       ],
       "Microphone access needed": [
-        "Mikrofon erişimi gerekiyor"
+        "Mikrofona erişme izni gerekli"
       ],
       "Microphone is blocked": [
         "Mikrofon engellendi"
