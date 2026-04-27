@@ -4460,23 +4460,14 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
-      "Email is not valid": [
-        "E-posta geçersiz"
-      ],
       "Enter 6 digits": [
         "6 rakam yazın"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "Incorrect username": [
-        "Kullanıcı adı yanlış"
       ],
       "Invalid ${ name } code": [
         "${ name } kodu geçersiz"
@@ -4505,14 +4496,8 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
-      "Not a valid number": [
-        "Numara geçerli değil"
-      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
-      ],
-      "Passwords do not match": [
-        "Parola ile onayı aynı değil"
       ],
       "Payment process canceled": [
         "Ödeme işlemi iptal edildi"
@@ -4574,17 +4559,11 @@
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
-      "The email addresses do not match": [
-        "E-posta adresleri eşleşmiyor"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "En az bağış tutarı ${ price }"
-      ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
       "This field is invalid": [
         "Bu alan geçersiz"
@@ -4592,23 +4571,11 @@
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
-      ],
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
-      ],
-      "Username must begin with a letter or digit": [
-        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
-      ],
-      "Username must end with a letter or digit": [
-        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
@@ -8285,16 +8252,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
     "VPN Plan Feature": {
