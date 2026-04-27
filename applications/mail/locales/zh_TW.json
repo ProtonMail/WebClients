@@ -288,6 +288,9 @@
       "Connect apps and devices": [
         "連線應用程式和裝置"
       ],
+      "Connect to Gmail": [
+        "連接 Gmail"
+      ],
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
@@ -1083,6 +1086,9 @@
       "Reconnect": [
         "重新連線"
       ],
+      "Reconnect to Gmail": [
+        "重新連接 Gmail"
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -1463,6 +1469,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -2594,6 +2603,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Unlimited favorites for quick access": [
+        "快速存取至無限最愛"
       ],
       "Upload and query multiple large files": [
         "上載及查詢多個大型檔案"
@@ -4030,6 +4042,9 @@
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "添加至您的訂閱，以繼續使用撰寫幫手。"
       ],
@@ -4060,6 +4075,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我們無法再存取至 ${ boldEmails }"
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
@@ -4080,6 +4098,12 @@
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "您將轉寄來自 ${ forwardingCount } Gmail 位址的電子郵件。若連線它，您將可以同時於 ${ MAIL_APP_NAME } 接收及回覆。"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "您將連線至 ${ MAX_SYNC_PAID_USER } Gmail 位址。若要添加另一個，請先停用您連線的帳號。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
@@ -4228,6 +4252,9 @@
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 取得 4x 儲存空間"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
@@ -6955,6 +6982,9 @@
       "Everything in ${ planOrAppName }": [
         "全部都在 ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "全部於 ${ planOrAppName } 方案，附加:"
+      ],
       "Expand selection": [
         "展開選項"
       ],
@@ -6987,6 +7017,9 @@
       ],
       "Folder": [
         "資料夾"
+      ],
+      "for ${ price }": [
+        "為 ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "請於${ mailLink }登入以取得更多資訊或移除限制。"
@@ -7142,7 +7175,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -10511,6 +10544,9 @@
       "Data retention policies": [
         "資料保留政策"
       ],
+      "Dedicated servers optimized for speed": [
+        "針對速度的獨立伺服器"
+      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -13534,6 +13570,9 @@
       "Version history": [
         "版本歷史紀錄"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
+      ],
       "Watch the interview": [
         "瀏覽訪談"
       ],
@@ -14890,6 +14929,9 @@
       "Self-destruct message": [
         "自我銷毀郵件"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "透過 ${ MAIL_APP_NAME } 傳送和計送 Gmail"
+      ],
       "Send email": [
         "傳送電郵"
       ],
@@ -15046,6 +15088,9 @@
       "Upload and share files": [
         "上傳並共享檔案"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "於 ${ MAIL_APP_NAME } 安全地使用 Gmail。"
+      ],
       "Verification error": [
         "驗證錯誤"
       ],
@@ -15087,6 +15132,9 @@
       ],
       "When is it most important to use a VPN?": [
         "何時最適合使用 VPN？"
+      ],
+      "You are all set": [
+        "你已就緒"
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"
