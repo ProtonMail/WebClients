@@ -5,32 +5,18 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import {
-    createPersonalAccessToken,
-    grantPersonalAccessTokenAccess,
-} from '@proton/pass/lib/access-token/access-token.requests';
+import { VaultMultiSelect } from '@proton/pass/components/Vault/VaultSelect';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { createAccessToken } from '@proton/pass/store/actions';
 import { selectWritableVaults } from '@proton/pass/store/selectors';
-import { ShareRole, ShareType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-
-import {
-    PAT_PRODUCT,
-    buildAccessTokenEnvVar,
-    buildPersonalAccessTokenKey,
-    buildPersonalAccessTokenShareKeys,
-    getExpirationTimestampFromMinutes,
-} from './helpers';
 
 type Props = {
     onClose: () => void;
@@ -42,7 +28,6 @@ const MIN_EXPIRATION_MINUTES = 60;
 const MAX_EXPIRATION_MINUTES = 365 * 24 * 60;
 
 export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
-    const { createNotification } = useNotifications();
     const writableVaults = useSelector(selectWritableVaults);
 
     const vaults = useMemo(() => [...writableVaults].sort(sortOn('createTime', 'ASC')), [writableVaults]);
@@ -51,9 +36,12 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     const [expirationMinutes, setExpirationMinutes] = useState('60');
     const [isAgent, setIsAgent] = useState(false);
     const [selectedShareIds, setSelectedShareIds] = useState<Set<string>>(() => new Set());
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [nameError, setNameError] = useState('');
     const [minutesError, setMinutesError] = useState('');
+
+    const create = useRequest(createAccessToken, {
+        onSuccess: ({ envVar, pat, isAgent: agent }) => onCreated(envVar, pat, agent),
+    });
 
     const toggleVault = (shareId: string) => {
         setSelectedShareIds((prev) => {
@@ -64,7 +52,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
         });
     };
 
-    const handleCreate = async () => {
+    const handleCreate = () => {
         const trimmedName = name.trim();
 
         if (!trimmedName) {
@@ -86,73 +74,16 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
             setMinutesError(c('pass_2026: Error').t`Expiration must be between 60 minutes 1 year`);
             return;
         }
-        const expireTime = getExpirationTimestampFromMinutes(minutes);
 
-        setIsSubmitting(true);
         setNameError('');
         setMinutesError('');
 
-        try {
-            const primaryUserKey = PassCrypto.getContext().primaryUserKey;
-            if (!primaryUserKey?.publicKey || !primaryUserKey?.privateKey) {
-                createNotification({
-                    type: 'error',
-                    text: c('pass_2026: Error').t`Could not retrieve your encryption key`,
-                });
-                setIsSubmitting(false);
-                return;
-            }
-
-            const { encrypted, raw } = await buildPersonalAccessTokenKey(
-                primaryUserKey.publicKey,
-                primaryUserKey.privateKey
-            );
-            const pat = await createPersonalAccessToken({
-                Name: trimmedName,
-                Products: [PAT_PRODUCT],
-                PersonalAccessTokenKey: encrypted,
-                ExpireTime: expireTime,
-                Flags: isAgent ? { PassAgent: true } : null,
-            });
-
-            if (!pat.Token) {
-                createNotification({
-                    type: 'error',
-                    text: c('pass_2026: Error').t`Failed to create access token`,
-                });
-                return;
-            }
-
-            if (selectedShareIds.size > 0) {
-                try {
-                    await Promise.all(
-                        Array.from(selectedShareIds).map(async (shareId) =>
-                            grantPersonalAccessTokenAccess(pat.PersonalAccessTokenID, {
-                                ShareID: shareId,
-                                TargetType: ShareType.Vault,
-                                ShareRoleID: ShareRole.READ,
-                                Keys: await buildPersonalAccessTokenShareKeys(raw, shareId),
-                            })
-                        )
-                    );
-                } catch {
-                    createNotification({
-                        type: 'error',
-                        text: c('pass_2026: Error')
-                            .t`Access token was created but vault access could not be granted. Remove the token and try again.`,
-                    });
-                }
-            }
-
-            onCreated(buildAccessTokenEnvVar(pat.Token, raw), pat, isAgent);
-        } catch {
-            createNotification({
-                type: 'error',
-                text: c('pass_2026: Error').t`Failed to create access token`,
-            });
-        } finally {
-            setIsSubmitting(false);
-        }
+        create.dispatch({
+            name: trimmedName,
+            expirationMinutes: minutes,
+            isAgent,
+            shareIds: Array.from(selectedShareIds),
+        });
     };
 
     return (
@@ -224,42 +155,16 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     </div>
                     <p className="text-sm color-weak mt-0 mb-2">
                         {c('pass_2026: Info')
-                            .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, or share vaults to others.`}
+                            .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.`}
                     </p>
-                    {vaults.length === 0 ? (
-                        <div className="text-sm color-weak">{c('pass_2026: Info').t`No vaults available.`}</div>
-                    ) : (
-                        <div
-                            className="flex flex-column gap-1 rounded border border-weak overflow-auto"
-                            style={{ maxHeight: '12rem' }}
-                        >
-                            {vaults.map((vault) => {
-                                const checked = selectedShareIds.has(vault.shareId);
-                                return (
-                                    <label
-                                        key={vault.shareId}
-                                        className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-weak"
-                                    >
-                                        <Checkbox checked={checked} onChange={() => toggleVault(vault.shareId)} />
-                                        <VaultIcon
-                                            color={vault.content.display.color}
-                                            icon={vault.content.display.icon}
-                                            size={3}
-                                            background
-                                        />
-                                        <span className="text-ellipsis">{vault.content.name}</span>
-                                    </label>
-                                );
-                            })}
-                        </div>
-                    )}
+                    <VaultMultiSelect vaults={vaults} selectedShareIds={selectedShareIds} onToggle={toggleVault} />
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose} disabled={isSubmitting}>
+                <Button onClick={onClose} disabled={create.loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button color="norm" onClick={handleCreate} loading={isSubmitting} disabled={isSubmitting}>
+                <Button color="norm" onClick={handleCreate} loading={create.loading} disabled={create.loading}>
                     {c('pass_2026: Action').t`Create token`}
                 </Button>
             </ModalTwoFooter>
