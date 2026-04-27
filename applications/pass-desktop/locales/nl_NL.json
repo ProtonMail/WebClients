@@ -962,6 +962,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Authenticatie mislukt. Bevestig uw extra wachtwoord om verder te gaan met de export"
       ],
+      "Biometric authentication failed.": [
+        "Biometrische authenticatie mislukt."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische vergrendelingsgegevens komen niet overeen."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrische vergrendelingsgegevens niet gevonden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische vergrendelingsgegevens niet geconfigureerd."
+      ],
+      "Biometric lock setup failed.": [
+        "De installatie van het biometrische slot is mislukt."
+      ],
       "Cannot send invitation at the moment": [
         "Kan op dit moment geen uitnodiging verzenden",
         "Kan op dit moment geen uitnodigingen verzenden"
@@ -1032,6 +1047,9 @@
       ],
       "Emptying trash failed": [
         "Prullenbak leegmaken mislukt"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Versleutelde communicatie met de desktop-app ${ PASS_APP_NAME } is mislukt."
       ],
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
@@ -1252,6 +1270,9 @@
       "Something went wrong. Please sign in again.": [
         "Er is iets fout gegaan. Log opnieuw in."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "De desktop-app ${ PASS_APP_NAME } reageerde niet op tijd."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
       ],
@@ -1260,6 +1281,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "De desktop-app ${ PASS_APP_NAME } is aangemeld met een ander account."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "De desktop-app ${ PASS_APP_NAME } moet ingelogd zijn."
       ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
@@ -2019,8 +2046,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4891,6 +4917,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Kies ${ planName }"
       ]
     },
     "Validation": {

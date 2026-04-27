@@ -207,6 +207,9 @@
       "Choose a file or drag it here": [
         "Izberite datoteko ali jo povlecite sem"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Pridobi ${ BRAND_NAME } naslov"
+      ],
       "Clear": [
         "Počisti"
       ],
@@ -1453,7 +1456,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1648,6 +1654,11 @@
     "action": {
       "Search messages": [
         "Išči sporočila"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -2598,6 +2609,9 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
@@ -4014,6 +4028,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nova sporočila pošiljatelja ${ senderEmailAddress } ne bodo dostavljena in bodo dokončno izbrisana."
       ],
+      "No ads. No trackers.": [
+        "Brez oglasov. Brez sledilnikov."
+      ],
       "No folders": [
         "Ni map"
       ],
@@ -4384,6 +4401,9 @@
       ],
       "Add at least one condition": [
         "Dodajte vsaj en pogoj"
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ],
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
@@ -6473,6 +6493,12 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } zahteva vsaj en namenski strežnik ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } varuje vaš račun z namenskim nadzorom sumljivih dejavnosti."
       ],
@@ -6941,6 +6967,9 @@
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
       ],
+      "Copy to clipboard": [
+        "Kopiraj v odložišče"
+      ],
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
       ],
@@ -7235,6 +7264,9 @@
       "Folder": [
         "Mapa"
       ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Za dodatne informacije in odstranitev omejitev se prijavite na ${ mailLink }."
       ],
@@ -7389,10 +7421,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9156,6 +9185,9 @@
       "Add to group": [
         "Dodaj v skupino"
       ],
+      "Additional comments": [
+        "Dodatni komentarji"
+      ],
       "Address": [
         "Naslov"
       ],
@@ -9212,6 +9244,9 @@
       ],
       "Blind Carbon Copy": [
         "Skrita kopija"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervacije, računi in naročila"
       ],
       "Browser": [
         "Brskalnik"
@@ -11664,11 +11699,17 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose a provider": [
+        "Izberite ponudnika"
+      ],
       "Maybe later": [
         "Morda pozneje"
       ],
       "Skip for now": [
         "Preskoči za zdaj"
+      ],
+      "Some popular services": [
+        "Nekatere priljubljene storitve"
       ]
     },
     "Onboarding modal": {
@@ -11884,6 +11925,12 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Yes, don't show again": [
+        "Da, ne prikaži več"
       ]
     },
     "Option group": {
@@ -12044,6 +12091,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ],
       "Got it": [
         "Razumem"
@@ -12260,6 +12310,9 @@
       ],
       "End date": [
         "Datum zaključka"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ],
       "Filter folders": [
         "Filtriraj mape"
@@ -12491,6 +12544,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Uradno sporočilo ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -14594,6 +14667,9 @@
       "Block sender": [
         "Blokiraj pošiljatelja"
       ],
+      "Built for privacy": [
+        "Narejen za zasebnost"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Prekliči ${ MAIL_SHORT_APP_NAME } naročnino"
       ],
@@ -14947,6 +15023,9 @@
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
+      ],
+      "Keep this banner hidden?": [
+        "Ali naj ostane ta pasica skrita?"
       ],
       "Label as": [
         "Označi kot"
@@ -15457,6 +15536,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Kdaj je uporaba VPN najbolj pomembna?"
+      ],
+      "You are all set": [
+        "Vse je nastavljeno"
       ],
       "You can now create unlimited folders and labels": [
         "Zdaj lahko ustvarite neomejeno število map in oznak"
