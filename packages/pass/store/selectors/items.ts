@@ -55,10 +55,16 @@ export const itemsFromSelection =
         selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
 
 export const selectSelectedItems = (selection: SelectedItem[], sortOn?: ItemSortFilter) =>
-    createSelector([selectItemsState], (items) => {
+    createSelector([selectItemsState], (items): ItemRevision[] => {
         const result = itemsFromSelection(selection)(items);
         return sortOn ? sortItems(sortOn)(result) : result;
     });
+
+export const selectSelectedItemGroups = (groups: SelectedItem[][], sortOn?: ItemSortFilter) =>
+    createSelector(
+        groups.map((group) => selectSelectedItems(group, sortOn)),
+        (...res): ItemRevision[][] => res
+    );
 
 export const selectNonOptimisticItem =
     <T extends ItemType = ItemType>(shareId: string, itemId: string) =>
