@@ -2360,20 +2360,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
-      "Email is not valid": [
-        "Эл. почта недействительна"
-      ],
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
-      "Enter your username without the domain (@example.com)": [
-        "Введите ваше имя пользователя без домена (@example.com)"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
-      ],
-      "Incorrect username": [
-        "Некорректное имя пользователя"
       ],
       "Invalid ${ name } code": [
         "Недействительный код ${ name }"
@@ -2396,14 +2387,8 @@
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
-      "Not a valid number": [
-        "Номер недействителен"
-      ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
-      ],
-      "Passwords do not match": [
-        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -2447,35 +2432,17 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
-      "The email addresses do not match": [
-        "Адреса электронной почты не совпадают"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимальные ${ maximumLength } символов."
-      ],
       "This field is required": [
         "Это обязательное поле"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля ${ minimumLength } символов."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Попробуйте, используя только буквы, цифры и _.-"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
-      ],
-      "Username must begin with a letter or digit": [
-        "Имя пользователя должно начинаться с буквы или цифры"
-      ],
-      "Username must end with a letter or digit": [
-        "Имя пользователя должно заканчиваться буквой или цифрой"
       ]
     },
     "Error message": {
@@ -5507,20 +5474,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "VPN Plan Feature": {
