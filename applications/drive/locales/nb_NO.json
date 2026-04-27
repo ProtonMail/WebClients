@@ -1262,6 +1262,10 @@
       ],
       "Re-index": [
         "Indekser på nytt"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Legg til i \"${ name }\" (${ photoCount } bilde)",
+        "Legg til i \"${ name }\" (${ photoCount } bilder)"
       ]
     },
     "Action: Docs": {
@@ -7074,6 +7078,34 @@
       ],
       "No populator states found.": [
         "Fant ingen status for indekseringsprosesser"
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } album"
+      ],
+      "${ files } file": [
+        "${ files } fil",
+        "${ files } filer"
+      ],
+      "${ folders } folder": [
+        "${ folders } mappe",
+        "${ folders } mapper"
+      ],
+      "${ photos } photo": [
+        "${ photos } bilde",
+        "${ photos } bilder"
+      ],
+      "Indexed ${ first }": [
+        "Indekserte ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indekserte ${ first } og ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indekserte ${ first }, ${ second } og ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indekserte ${ first }, ${ second }, ${ third } og ${ fourth }"
       ]
     },
     "info": {
@@ -12012,6 +12044,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premiumfunksjoner"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøter, opptil ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltaker",
+        "Videomøter, opptil ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltakere"
       ]
     },
     "subscription reminder": {
@@ -13800,6 +13842,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumet er omdøpt"
       ]
     }
   }

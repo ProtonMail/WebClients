@@ -1259,6 +1259,13 @@
       ],
       "Go back to album “${ ellipsedAlbumName }“": [
         "Voltar para o álbum \"${ ellipsedAlbumName }\""
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adicionar para \"${ name }\" (${ photoCount } foto)",
+        "Adicionar para \"${ name }\" (${ photoCount } fotos)"
+      ],
+      "Re-index": [
+        "Reindexar"
       ]
     },
     "Action: Docs": {
@@ -7057,6 +7064,18 @@
       ],
       "Unsupported file type for Photos": [
         "Tipo de arquivo não compatível para Fotos"
+      ],
+      "Indexed ${ first }": [
+        "Indexado ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexado ${ first } e ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexado ${ first }, ${ second } e ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexado ${ first }, ${ second }, ${ third } e ${ fourth }"
       ]
     },
     "info": {
@@ -9783,6 +9802,9 @@
       ],
       "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
         "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" não foi excluído"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13426,6 +13448,9 @@
       ],
       "Disconnected from Gmail": [
         "Desconectado do Gmail"
+      ],
+      "Index populators": [
+        "Geradores de índice"
       ]
     },
     "Today icon tooltip in mini calendar": {

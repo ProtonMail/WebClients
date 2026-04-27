@@ -6726,7 +6726,7 @@
         "您当前登录身份为 ${ username }"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
+        "您当前使用的存储空间已超出 ${ downgradedPlanName } 套餐所包含的容量。请删除数据以便降级。"
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
@@ -8353,13 +8353,13 @@
         "开通 ${ planName }"
       ],
       "Keep ${ plan }": [
-        "保持计划 ${ plan }"
+        "保留 ${ plan }"
       ],
       "Keep account": [
         "保留账户"
       ],
       "Switch plan": [
-        "切换计划"
+        "切换套餐"
       ]
     },
     "new_plans: Action": {
@@ -8957,7 +8957,7 @@
         "确认订单并支付"
       ],
       "Switch plans?": [
-        "切换计划？"
+        "切换套餐？"
       ]
     },
     "new_plans: tooltip": {
@@ -9040,7 +9040,7 @@
         "增加或重新分配用户的存储空间"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "使用加密日历为您和家人保密您们的计划"
+        "通过加密日历，让您的计划仅对您和您的家人可见"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "当您与我们的VPN服务器意外断开连接时，我们将通过阻止所有网络连接来保护您。"
@@ -10015,7 +10015,7 @@
     },
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
-        "${ upsellPlanTitle } 计划"
+        "${ upsellPlanTitle } 套餐"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11257,7 +11257,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "保持计划 ${ currentPlanName }"
+        "保留 ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -11388,10 +11388,10 @@
         "订阅"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "您的计划是使用 Android 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Google Play 商店。"
+        "您的套餐是通过 Android 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Google Play 商店操作。"
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "您的计划是使用 iOS 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Apple App Store。"
+        "您的套餐是通过 iOS 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Apple App Store 操作。"
       ]
     },
     "subscription downgrading info": {
@@ -11736,7 +11736,7 @@
         "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
+        "我们的系统将不再使用此支付方式自动扣费，但您的订阅仍会在当前结算周期结束时续订。如果您想降级或更改订阅，仍需在结算周期结束前自行操作。我们无法为您自动降级，因为如果您超出免费套餐的存储配额或正在使用其他付费功能，我们无法自动删除您的文件、邮件或其他数据。如果您关闭自动支付，请记得在到期日前支付下一期的订阅账单，以免账户被暂停使用。"
       ]
     },
     "Subscription saving": {

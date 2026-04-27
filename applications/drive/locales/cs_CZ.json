@@ -7207,7 +7207,7 @@
         "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
       ],
       "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } vstupů"
+        "${ state.result.entries.length } položek"
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Je k dispozici nová verze aplikace ${ DRIVE_APP_NAME }. Pro pokračování ve vyhledávání stránku znovu načtěte."
@@ -7225,7 +7225,7 @@
         "Nelze zapisovat do složky"
       ],
       "Choose your service to connect with": [
-        "Vyberte si službu, ke které se chcete připojit"
+        "Vyberte službu, se kterou se chcete propojit"
       ],
       "Clear all search data": [
         "Vyčistit všechny údaje o vyhledávání"
@@ -7267,7 +7267,7 @@
         "Vyžadována aktualizace"
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
-        "Po změně oprávnění na „prohlížení“ již nebudete moci sdílet soubor „${ fileName }“. Oprávnění může znovu změnit pouze vlastník."
+        "Po změně oprávnění na „Prohlížející“ již nebudete moci sdílet soubor „${ fileName }“. Vaše oprávnění bude moci znovu změnit pouze vlastník."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
@@ -10029,7 +10029,7 @@
         "Vaše nastavení bylo úspěšně změněno"
       ],
       "\"${ ellipsedName }\" copied": [
-        "\"${ ellipsedName }\" zkopírována"
+        "\"${ ellipsedName }\" zkopírováno"
       ],
       "\"${ ellipsedName }\" created successfully": [
         "Složka \"${ ellipsedName }\" úspěšně vytvořena"
@@ -10038,7 +10038,7 @@
         "\"${ ellipsedName } byl smazán"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" trvale odstraněno z koše"
+        "\"${ ellipsedName }\" trvale smazáno z koše"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" se nepodařilo vytvořit"
@@ -10056,7 +10056,7 @@
         "\"${ ellipsedName }\" se nepodařilo obnovit z koše"
       ],
       "\"${ ellipsedName }\" moved": [
-        "\"${ ellipsedName }\" přesunuta"
+        "\"${ ellipsedName }\" přesunuto"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" obnoveno z koše"
@@ -11047,7 +11047,7 @@
         "Zadejte jméno"
       ],
       "Select a provider": [
-        "Vybrat poskytovatele"
+        "Vyberte poskytovatele"
       ]
     },
     "Placeholder for contact group name": {
@@ -13849,7 +13849,7 @@
         "Funkce přenesení daňové povinnosti není podporována"
       ],
       "Change access to viewer?": [
-        "Změnit přístup k prohlížeči?"
+        "Změnit přístup na Prohlížející?"
       ],
       "Global": [
         "Globální"
@@ -14252,7 +14252,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Další"
+        "Ostatní"
       ],
       "Outlook": [
         "Outlook"
