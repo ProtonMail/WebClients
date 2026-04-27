@@ -38,7 +38,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
     const { validator, onFormSubmit } = useFormErrors();
     const [password, setPassword] = useState('');
     const [submitting, withSubmitting] = useLoading();
-    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
+    const { dismissCanceledState } = useSessionRecoveryLocalStorage();
 
     useEffect(() => {
         metrics.core_session_recovery_cancellation_modal_load_total.increment({ step: 'confirm' });
@@ -60,7 +60,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
                 });
 
                 await dispatch(userThunk({ cache: CacheType.None }));
-                dismissSessionRecoveryCancelled();
+                dismissCanceledState();
                 createNotification({
                     text: c('session_recovery:cancellation:notification').t`Password reset canceled`,
                     showCloseButton: false,

@@ -27,7 +27,7 @@ enum STEP {
 const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
     const [user] = useUser();
     const [step, setStep] = useState(STEP.INFO);
-    const { confirmSessionRecoveryInProgress } = useSessionRecoveryLocalStorage();
+    const { confirmGracePeriod } = useSessionRecoveryLocalStorage();
 
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();
 
@@ -112,7 +112,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                         <Button
                             color="norm"
                             onClick={() => {
-                                confirmSessionRecoveryInProgress();
+                                confirmGracePeriod();
                                 onClose?.();
                             }}
                         >
