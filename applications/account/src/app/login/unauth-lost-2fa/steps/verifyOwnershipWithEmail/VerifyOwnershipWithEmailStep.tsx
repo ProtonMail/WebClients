@@ -152,9 +152,10 @@ const VerifyOwnershipWithEmailStepContent = ({
     }, [verifyCodeStep]);
 
     const api = useApi();
-    const handleError = useErrorHandler();
 
     const verificationResult = useSelector(actorRef, (s) => s.context.verificationResult);
+    const initiationFailed = useSelector(actorRef, (s) => s.matches('initiation failed'));
+    const initiationAttempts = useSelector(actorRef, (s) => s.context.initiationAttempts);
 
     useEffect(() => {
         if (actorRef.getSnapshot().value !== 'verify code') {
@@ -175,11 +176,33 @@ const VerifyOwnershipWithEmailStepContent = ({
 
                 send({ type: 'verification initiated', verificationResult: result });
             } catch (error) {
-                handleError(error);
+                send({ type: 'initiation failed' });
             }
         };
         void sendCode();
     }, [actorRef.getSnapshot().value, verificationResult]);
+
+    if (initiationFailed) {
+        return (
+            <>
+                <div className="mb-8">{c('Error').t`Something went wrong. Please try again.`}</div>
+                {initiationAttempts < 3 && (
+                    <Button
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        className="mb-2"
+                        onClick={() => send({ type: 'retry initiation' })}
+                    >
+                        {c('Action').t`Try again`}
+                    </Button>
+                )}
+                <Button size="large" fullWidth onClick={() => send({ type: 'try another way' })}>
+                    {c('Action').t`Try another way`}
+                </Button>
+            </>
+        );
+    }
 
     if (!verificationResult) {
         return <Loader />;
