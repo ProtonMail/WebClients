@@ -668,7 +668,7 @@ const FreePlanHeader = ({ app }: { app?: APP_NAMES }) => {
         );
     }
 
-    const logo = <FreeLogo app={app} size={28} />;
+    const logo = FreeLogo({ app, size: 28 });
     return (
         <>
             {logo === null ? <ProtonLogo variant="glyph-only" size={7} /> : logo}
