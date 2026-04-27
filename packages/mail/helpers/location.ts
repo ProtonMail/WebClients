@@ -22,6 +22,13 @@ export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID
 export const isSystemFolder = (labelID: string) => SYSTEM_FOLDERS.includes(labelID as MAILBOX_LABEL_IDS);
 export const isSystemLocation = (labelID: string) => isSystemFolder(labelID) || isSystemLabel(labelID);
 export const isCategoryLabel = (labelID: string): labelID is CategoryLabelID => {
+    // `23` refers to the forum category ID that we decided to remove
+    // This test needs to be removed once the API team has run the migration
+    // to erase the forum category from already categorised messages and conversations
+    if (labelID === '23') {
+        return true;
+    }
+
     return CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
 };
 
