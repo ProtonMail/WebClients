@@ -948,6 +948,18 @@
       "Biometric authentication failed.": [
         "Biometrické overenie zlyhalo."
       ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
       "Cannot create alias (${ error }).": [
         "Nie je možné vytvoriť alias (${ error })."
       ],
@@ -1283,6 +1295,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
       ],
       "The URL is in the list": [
         "URL je na zozname"
@@ -2615,6 +2630,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Neobmedzený počet hide-my-email aliasov a pokročilá správa aliasov"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odomknite ${ PASS_APP_NAME } pre prístup k svojim prístupovým kľúčom"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odomknite ${ PASS_APP_NAME } pre uloženie tohoto prístupového kľúča"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"

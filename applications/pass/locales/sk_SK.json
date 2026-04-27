@@ -921,6 +921,18 @@
       "Biometric authentication failed.": [
         "Biometrické overenie zlyhalo."
       ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
       "Cannot send invitation at the moment": [
         "Momentálne nie je možné odoslať pozvánku",
         "Momentálne nie je možné odoslať pozvánky",
@@ -1232,6 +1244,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
       ],
       "The session has expired. Please sign in again.": [
         "Platnosť relácie vypršala. Prihláste sa znovu, prosím."
@@ -2000,6 +2015,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"

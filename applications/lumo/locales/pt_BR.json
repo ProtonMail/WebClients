@@ -1206,6 +1206,9 @@
       "Include project conversations in the main chat history": [
         "Inclua conversas sobre projetos no histórico principal do bate-papo"
       ],
+      "Keep it safe — it won't be shown again": [
+        "Guarde em segurança - não será exibido novamente"
+      ],
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
       ],
@@ -1230,6 +1233,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not load usage for this key.": [
+        "Não foi possível carregar o uso desta chave."
+      ],
+      "Could not retrieve your encryption key": [
+        "Não foi possível recuperar sua chave de criptografia"
+      ],
       "Describe what you want the workflow to do.": [
         "Descreva o que você quer que o fluxo de trabalho faça."
       ],
@@ -1453,6 +1462,9 @@
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } dá acesso a modelos avançados para ajudar com consultas mais complexas e fornecer respostas melhores"
       ],
+      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
+        "Segue o esquema da API da OpenAI — basta inserir seu cliente existente com uma única alteração."
+      ],
       "1 file": [
         "1 arquivo"
       ],
@@ -1489,6 +1501,9 @@
       "Build privacy-first assistants with streaming and persistent context.": [
         "Crie assistentes que priorizam a privacidade com streaming e contexto persistente."
       ],
+      "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
+        "A ferramenta Chain realiza chamadas para orquestrar pipelines de várias etapas de ponta a ponta."
+      ],
       "characters": [
         "caracteres"
       ],
@@ -1512,6 +1527,9 @@
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Crie e revogue chaves de API para acesso programático. As chaves são exibidas apenas uma vez após a criação."
+      ],
+      "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
+        "Descreva um fluxo de trabalho em linguagem simples e obtenha um gráfico com código executável. Faça login para usar este recurso."
       ],
       "Domain name": [
         "Nome do domínio"
@@ -1579,6 +1597,9 @@
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Para cada conversa, ${ LUMO_SHORT_APP_NAME } tem a capacidade de processar uma quantidade limitada de informações. A barra de progresso mostra quanta capacidade seus arquivos atuais estão usando. "
       ],
+      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
+        "Para cada dia, a média de tokens por chamada de API (tokens ÷ chamadas, ou 0 se não houver chamadas)."
+      ],
       "Generating…": [
         "Gerando…"
       ],
@@ -1590,6 +1611,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
+      ],
+      "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
+        "Receba uma mensagem do cliente, classifique a urgência e o tópico com ${ LUMO_SHORT_APP_NAME }, determine se é necessário escaloná-la e, em seguida, redija uma resposta ou a encaminhe para um atendente humano."
       ],
       "Loading": [
         "Carregando"
@@ -1612,6 +1636,9 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
+        "Nunca inclua chaves de API em pacotes do lado do cliente. Em produção, utilize variáveis ​​de ambiente e um proxy do lado do servidor."
+      ],
       "No calls": [
         "Nenhuma chamada"
       ],
@@ -1627,6 +1654,9 @@
       "No files available": [
         "Nenhum arquivo disponível"
       ],
+      "No nodes in this workflow.": [
+        "Não há nós neste fluxo de trabalho."
+      ],
       "No supported files in this folder": [
         "Nenhum arquivo compatível nesta pasta"
       ],
@@ -1641,6 +1671,9 @@
       ],
       "Partial content": [
         "Conteúdo parcial"
+      ],
+      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
+        "Passe o modelo: \"auto\" para permitir que o ${ LUMO_SHORT_APP_NAME } direcione para o melhor modelo disponível para sua tarefa. Especifique um ID de modelo diretamente para obter latência previsível ou direcionamento por capacidade."
       ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
@@ -1714,6 +1747,12 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Inicie sessão ou crie uma conta para buscar e adicionar arquivos de seu ${ DRIVE_APP_NAME } (armazenamento em nuvem criptografado de ponta a ponta) à base de conhecimento do seu bate-papo."
       ],
+      "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
+        "Faça login para criar e gerenciar chaves de API para o ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
+        "Inicie sessão para gerar fluxos de trabalho com ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Sketch added as attachment": [
         "Esboço adicionado como anexo"
       ],
@@ -1771,6 +1810,9 @@
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Procure por erros de digitação (ex: proton.me em relação a pr0t0n.me)"
       ],
+      "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
+        "Podemos ajudar você a começar a usar a API ${ LUMO_SHORT_APP_NAME }. Descreva o que você quer automatizar. ${ LUMO_SHORT_APP_NAME } retorna um gráfico do fluxo de trabalho e um código de exemplo que chama a API ${ LUMO_SHORT_APP_NAME }."
+      ],
       "You are about to visit an external website:": [
         "Você está prestes a visitar um site externo:"
       ],
@@ -1814,6 +1856,9 @@
       "API calls (30d)": [
         "Chamadas de API (30d)"
       ],
+      "Avg tokens / call": [
+        "Média tokens/chamada"
+      ],
       "Basic": [
         "Básico"
       ],
@@ -1849,6 +1894,9 @@
       ],
       "File upload": [
         "Envio de arquivo"
+      ],
+      "Loop": [
+        "Laço"
       ],
       "Merge": [
         "Mesclar"
@@ -4337,20 +4385,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
       ],
-      "Email is not valid": [
-        "O e-mail não é válido."
-      ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
       ],
-      "Enter your username without the domain (@example.com)": [
-        "Insira seu nome de usuário sem o domínio (@example.com)"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
-      ],
-      "Incorrect username": [
-        "Nome de usuário incorreto"
       ],
       "Invalid ${ name } code": [
         "O código ${ name } não é válido."
@@ -4379,14 +4418,8 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
-      "Not a valid number": [
-        "Não é um número válido"
-      ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
-      ],
-      "Passwords do not match": [
-        "As senhas não correspondem"
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -4445,17 +4478,11 @@
       "The amount due has changed. Please try again.": [
         "O valor devido foi alterado. Tente novamente."
       ],
-      "The email addresses do not match": [
-        "Os endereços de e-mail não correspondem."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
       "The minimum donation amount is ${ price }": [
         "O valor mínimo da doação é de ${ price }"
-      ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
         "Este campo é inválido"
@@ -4463,23 +4490,11 @@
       "This field is required": [
         "Este campo é obrigatório"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo exige um mínimo de ${ minimumLength } caracteres."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Tente usar apenas letras, números e _.-"
-      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
-      ],
-      "Username must begin with a letter or digit": [
-        "O nome de usuário deve começar com uma letra ou dígito"
-      ],
-      "Username must end with a letter or digit": [
-        "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
@@ -8153,16 +8168,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
-        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "VPN Plan Feature": {

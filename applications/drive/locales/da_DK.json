@@ -88,6 +88,10 @@
       "Add photos": [
         "Tilføj fotos"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Tilføj til \"${ name }\" (${ photoCount } foto)",
+        "Tilføj til \"${ name }\" (${ photoCount } fotos)"
+      ],
       "Add to album": [
         "Tilføj til album"
       ],
@@ -295,9 +299,6 @@
       ],
       "Create folder": [
         "Opret mappe"
-      ],
-      "Create free account": [
-        "Opret gratis konto"
       ],
       "Create new folder": [
         "Opret ny mappe"
@@ -517,9 +518,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Få sikker lagerplads for ${ simplePriceString }"
       ],
-      "Get Started": [
-        "Kom i gang"
-      ],
       "Get the apps": [
         "Få appsene"
       ],
@@ -570,9 +568,6 @@
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
-      ],
-      "Hide download options": [
-        "Skjul download-muligheder"
       ],
       "Hide more benefits": [
         "Skjul flere fordele"
@@ -1042,9 +1037,6 @@
       "Show more benefits": [
         "Vis flere fordele"
       ],
-      "Show more download options": [
-        "Vis flere download-muligheder"
-      ],
       "Show navigation bar": [
         "Vis navigationsbjælke"
       ],
@@ -1158,9 +1150,6 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upload": [
-        "Upload"
       ],
       "Upload and share files": [
         "Upload og del filer"
@@ -5255,9 +5244,6 @@
       "Aug": [
         "Aug"
       ],
-      "Available": [
-        "Tilgængelig"
-      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -5309,14 +5295,8 @@
       "Canceled": [
         "Annulleret"
       ],
-      "Cannot load link": [
-        "Link kan ikke indlæses"
-      ],
       "Cannot load links": [
         "Links kan ikke indlæses"
-      ],
-      "Cannot load shared link": [
-        "Delt link kunne ikke indlæses"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -5548,9 +5528,6 @@
       ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
-      ],
-      "Encrypted": [
-        "Krypteret"
       ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
@@ -5872,9 +5849,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
-      "Loading link": [
-        "Indlæser link"
-      ],
       "Loading links": [
         "Indlæser links"
       ],
@@ -5974,6 +5948,9 @@
       ],
       "No payment is required at this time.": [
         "Betaling er ikke påkrævet på nuværende tidspunkt."
+      ],
+      "No populator states found.": [
+        "Ingen populator states fundet."
       ],
       "No results found": [
         "Ingen resultater fundet"
@@ -6079,9 +6056,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Foto(s) gemt til dit Drive"
-      ],
-      "Photos": [
-        "Fotos"
       ],
       "Photos have been successfully recovered.": [
         "Fotos er blevet gendannet."
@@ -6311,9 +6285,6 @@
       ],
       "Shared by ": [
         "Delt af "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Delt af ${ sharedBy }"
       ],
       "Shared link not found": [
         "Delt link ikke fundet"
@@ -6557,9 +6528,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "For at hjælpe med at beskytte dig, kan ${ DRIVE_APP_NAME } scanne dine filer på en måde der respekterer dit privatliv, og blokere skadelige filer. Det er dog stadig bedst kun at downloade filer fra betroede kilder. "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
       ],
@@ -6607,9 +6575,6 @@
       ],
       "Trash is empty": [
         "Papirkurven er tom"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Prøv ${ DRIVE_APP_NAME }: gratis for evigt"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
@@ -6778,9 +6743,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil blive gemt."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Med ${ DRIVE_APP_NAME } er dine data beskyttet med end-to-end kryptering."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -9608,15 +9570,8 @@
       "Share invitation declined": [
         "Afvist invitation til at dele"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Beklager, vi kunne ikke slette mappen, fordi den ikke er tom.",
-        "Beklager, vi kunne ikke slette mapperne, fordi de ikke er tomme."
-      ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
-      ],
-      "The document failed to be created": [
-        "Dokumentet kunne ikke oprettes"
       ],
       "The item was not added to your drive": [
         "Elementet blev ikke tilføjet dit drev"
@@ -9626,9 +9581,6 @@
       ],
       "The link to your item was deleted": [
         "Linket til dit element blev slettet"
-      ],
-      "The spreadsheet failed to be created": [
-        "Regnearket kunne ikke oprettes"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Dette sikre link er udløbet, du kan ændre udløbsdatoen i delingsindstillingerne."
@@ -9652,6 +9604,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Nogle billeder blev ikke uploadet grundet duplikerede filnavne i det nuværende valg."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album omdøbt"
       ]
     },
     "Oauth instructions": {
@@ -11606,7 +11563,7 @@
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
-        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premium-funktioner"
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
@@ -12230,9 +12187,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "# af downloads"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
@@ -12364,9 +12318,6 @@
       ],
       "Cannot add more addresses": [
         "Kan ikke tilføje flere adresser"
-      ],
-      "Cannot load link": [
-        "Link kunne ikke indlæses"
       ],
       "Card verification": [
         "Kortbekræftelse"
@@ -12727,6 +12678,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "Importér dine data til ${ BRAND_NAME }"
       ],
+      "Index populators": [
+        "Index populators"
+      ],
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
       ],
@@ -12735,9 +12689,6 @@
       ],
       "Item details": [
         "Elementdetaljer"
-      ],
-      "Last edited by": [
-        "Sidst redigeret af"
       ],
       "Last uploaded by": [
         "Sidst uploadet af"
@@ -12777,9 +12728,6 @@
       ],
       "Message": [
         "Besked"
-      ],
-      "MIME type": [
-        "MIME-type"
       ],
       "Minicalendar": [
         "Minikalender"
@@ -12927,9 +12875,6 @@
       ],
       "Public link settings": [
         "Indstillinger for offentligt link"
-      ],
-      "Public shared link status": [
-        "Status på offentligt delt link"
       ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
@@ -13097,12 +13042,6 @@
       "Summary": [
         "Sammenfatning"
       ],
-      "The link either does not exist or has expired": [
-        "Linket findes enten ikke eller er udløbet"
-      ],
-      "The link expired": [
-        "Linket er udløbet"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne fil har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
@@ -13172,9 +13111,6 @@
       "Uploaded": [
         "Uploadet"
       ],
-      "Uploaded by": [
-        "Uploadet af"
-      ],
       "Uploading a large file or folder": [
         "Uploader en stor fil eller mappe"
       ],
@@ -13189,9 +13125,6 @@
       ],
       "Verifying your payment...": [
         "Bekræfter din betaling..."
-      ],
-      "Version details": [
-        "Versionsdetaljer"
       ],
       "Version history": [
         "Versionshistorik"

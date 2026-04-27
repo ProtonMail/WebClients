@@ -968,6 +968,18 @@
       "Biometric authentication failed.": [
         "Autentificarea biometrică a eșuat."
       ],
+      "Biometric lock credentials do not match.": [
+        "Datele de blocare biometrice nu se potrivesc."
+      ],
+      "Biometric lock credentials not found.": [
+        "Datele de conectare biometrică nu au fost găsite."
+      ],
+      "Biometric lock is not configured.": [
+        "Blocarea biometrică nu este configurată."
+      ],
+      "Biometric lock setup failed.": [
+        "Setarea blocării biometrice a eșuat."
+      ],
       "Cannot send invitation at the moment": [
         "Invitația nu poate fi trimisă momentan.",
         "Invitațiile nu se pot trimite momentan.",
@@ -1277,6 +1289,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplicația desktop ${ PASS_APP_NAME } trebuie să fie conectată."
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
@@ -2055,11 +2070,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."

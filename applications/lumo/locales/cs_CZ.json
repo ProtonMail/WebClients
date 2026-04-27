@@ -4348,23 +4348,14 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
-      "Email is not valid": [
-        "E-mailová adresa není platná"
-      ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
-      ],
-      "Incorrect username": [
-        "Nesprávné uživatelské jméno"
       ],
       "Invalid ${ name } code": [
         "Neplatný kód ${ name }"
@@ -4393,14 +4384,8 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Not a valid number": [
-        "Neplatné číslo"
-      ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
-      ],
-      "Passwords do not match": [
-        "Hesla se neshodují"
       ],
       "Payment process canceled": [
         "Platba byla zrušena"
@@ -4462,17 +4447,11 @@
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
-      "The email addresses do not match": [
-        "E-mailové adresy se neshodují"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "Minimální výše daru je ${ price }"
-      ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
       ],
       "This field is invalid": [
         "Toto pole je neplatné"
@@ -4480,23 +4459,11 @@
       "This field is required": [
         "Toto pole je povinné"
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Zkuste používat pouze písmena, číslice a _.-"
-      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
-      ],
-      "Username must begin with a letter or digit": [
-        "Uživatelské jméno musí začínat písmenem nebo číslicí"
-      ],
-      "Username must end with a letter or digit": [
-        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
@@ -7318,7 +7285,7 @@
         "Vybrat"
       ],
       "Select a provider": [
-        "Vybrat poskytovatele"
+        "Vyberte poskytovatele"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -7383,7 +7350,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Další"
+        "Ostatní"
       ],
       "Outlook": [
         "Outlook"
@@ -8311,20 +8278,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "VPN Plan Feature": {
