@@ -4,6 +4,7 @@ import {
     getIsIncomingDelegatedAccessAvailable,
     getIsOutgoingDelegatedAccessAvailable,
 } from '@proton/account/delegatedAccess/available';
+import { isOLESEligible } from '@proton/activation/src/oles/eligibility';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
@@ -34,11 +35,7 @@ import {
     getIsGlobalSSOAccount,
     getIsSSOVPNOnlyAccount,
 } from '@proton/shared/lib/keys';
-import {
-    getOrganizationDenomination,
-    isOrganizationB2B,
-    isOrganizationVisionary,
-} from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type {
@@ -474,7 +471,7 @@ export const getAccountAppRoutes = ({
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
 
     // Show B2B onboarding to admins of B2B orgs when OLES is available
-    const showBusinessActivation = isOLESEnabled && isOrganizationB2B(organization) && isAdmin;
+    const showBusinessActivation = isOLESEnabled && isOLESEligible({ user, subscription, organization });
 
     return <const>{
         available: true,
