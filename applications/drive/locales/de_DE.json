@@ -7100,6 +7100,18 @@
       "${ photos } photo": [
         "${ photos } Foto",
         "${ photos } Fotos"
+      ],
+      "Indexed ${ first }": [
+        "Indiziert ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indiziert: ${ first } und ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indiziert: ${ first }, ${ second } und ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indiziert: ${ first }, ${ second }, ${ third } und ${ fourth }"
       ]
     },
     "info": {
