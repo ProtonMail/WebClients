@@ -1,7 +1,8 @@
 import type { Reducer } from 'redux';
 
+import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
     OrganizationAliasCreateMode,
@@ -31,6 +32,7 @@ export type OrganizationState = {
     canUpdate: boolean;
     organization: Organization;
     settings: OrganizationSettings;
+    pauseList?: DomainCriterias;
 };
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
@@ -46,6 +48,10 @@ const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null
 
         if (getOrganizationSettings.success.match(action)) {
             return { ...state, settings: action.payload.Settings, canUpdate: action.payload.CanUpdate };
+        }
+
+        if (getOrganizationPauseList.success.match(action)) {
+            return { ...state, pauseList: action.payload };
         }
     }
 
