@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proton_pass_action_payload_v1;
+
+message AgentAccessItem {
+	string reason = 1;
+	string vault_name = 2;
+	string item_name = 3;
+}
+
+message ActionPayload {
+	oneof content {
+		AgentAccessItem agent_access_item = 1;
+	}
+}
