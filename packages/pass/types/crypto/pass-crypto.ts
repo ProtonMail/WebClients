@@ -1,4 +1,5 @@
 import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
+import type { DecryptedActionPayload } from '@proton/pass/lib/crypto/processes/access-token/open-action-payload';
 import type { Group, GroupWithPublicKeys } from '@proton/pass/lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
@@ -200,6 +201,14 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         rawPatKey: Uint8Array<ArrayBuffer>;
         shareId: ShareId;
     }) => Promise<KeyRotationKeyPair[]>;
+
+    /** Decrypts + protobuf-decodes an `ActionPayload` carried by a
+     * pat-monitor record, using the raw PAT key as the symmetric key
+     * (AAD = "proton.pass.payload"). Returns `null` for empty input. */
+    openActionPayload: (data: {
+        encodedPayload: string;
+        rawPatKey: Uint8Array<ArrayBuffer>;
+    }) => Promise<DecryptedActionPayload | null>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
