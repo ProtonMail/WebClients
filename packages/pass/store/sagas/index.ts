@@ -3,6 +3,7 @@ import { all } from 'redux-saga/effects';
 import { exportUserData } from '@proton/pass/store/sagas/export/export.saga';
 import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
+import accessTokenSagas from './access-token/access-token.sagas';
 import accessEditRole from './access/access-edit-role.saga';
 import accessLeave from './access/access-leave.saga';
 import accessSagas from './access/access-options.saga';
@@ -90,6 +91,7 @@ import vaultVisibility from './vaults/vault-visibility.saga';
 
 const COMMON_SAGAS = [
     ...accessSagas,
+    ...accessTokenSagas,
     ...aliasContactSagas,
     ...aliasManagementSagas,
     ...aliasSyncSagas,
