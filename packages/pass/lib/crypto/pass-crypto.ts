@@ -688,6 +688,10 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return processes.createAccessTokenShareKeys(rawPatKey, shareId);
         },
 
+        async openActionPayload({ encodedPayload, rawPatKey }) {
+            return processes.openActionPayload(encodedPayload, rawPatKey);
+        },
+
         async openSecureLinkFileDescriptor({
             encryptedItemKey,
             encryptedFileKey,
