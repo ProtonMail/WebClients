@@ -939,6 +939,21 @@
       "Authentication failure: ${ message }": [
         "Falha na autenticação: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "A autenticação biométrica falhou."
+      ],
+      "Biometric lock credentials do not match.": [
+        "As credenciais do bloqueio biométrico não correspondem."
+      ],
+      "Biometric lock credentials not found.": [
+        "As credenciais do bloqueio biométrico não foi encontrado"
+      ],
+      "Biometric lock is not configured.": [
+        "O bloqueio biométrico não está configurado"
+      ],
+      "Biometric lock setup failed.": [
+        "Falha na configuração do bloqueio biométrico"
+      ],
       "Cannot create alias (${ error }).": [
         "Não é possível criar o alias (${ error })."
       ],
@@ -1012,6 +1027,9 @@
       ],
       "Emptying trash failed": [
         "Erro ao esvaziar a lixeira"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Falha na comunicação criptografado com o aplicativo para computador do ${ PASS_APP_NAME }"
       ],
       "Encrypted JSON not supported": [
         "JSON criptografado não suportado"
@@ -1253,6 +1271,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ocorreu um erro. Recarregue a extensão do ${ PASS_APP_NAME }. Esse problema foi registrado"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não respondem a tempo"
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "O aplicativo para área de trabalho do ${ PASS_APP_NAME } está bloqueado, precisa ser desbloqueado."
       ],
@@ -1261,6 +1282,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "O aplicativo para área de trabalho do ${ PASS_APP_NAME } não está respondendo, está em execução?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } está iniciado a sessão com uma conta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } deve estar iniciado a sessão."
       ],
       "The URL is in the list": [
         "A URL está na lista"
