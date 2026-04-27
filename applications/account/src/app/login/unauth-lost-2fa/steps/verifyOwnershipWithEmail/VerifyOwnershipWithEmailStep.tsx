@@ -133,11 +133,13 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
     );
 };
 
-export const VerifyOwnershipWithEmailStep = () => {
-    const actorRef = useVerifyOwnershipWithEmailActorRef();
+const VerifyOwnershipWithEmailStepContent = ({
+    actorRef,
+}: {
+    actorRef: NonNullable<ReturnType<typeof useVerifyOwnershipWithEmailActorRef>>;
+}) => {
     const { send } = actorRef;
 
-    const validating = useSelector(actorRef, (s) => s.matches('validating'));
     const verifyCodeStep = useSelector(actorRef, (s) => s.matches('verify code'));
 
     const { sendStepLoad } = useUnauthedLost2FATelemetry();
@@ -149,14 +151,18 @@ export const VerifyOwnershipWithEmailStep = () => {
         sendStepLoad('verify ownership with email');
     }, [verifyCodeStep]);
 
-    const handleError = useErrorHandler();
-
     const api = useApi();
 
-    const [verificationResult, setVerificationResult] = useState<VerificationResult>();
+    const verificationResult = useSelector(actorRef, (s) => s.context.verificationResult);
+    const initiationFailed = useSelector(actorRef, (s) => s.matches('initiation failed'));
+    const initiationAttempts = useSelector(actorRef, (s) => s.context.initiationAttempts);
 
     useEffect(() => {
         if (actorRef.getSnapshot().value !== 'verify code') {
+            return;
+        }
+
+        if (verificationResult) {
             return;
         }
 
@@ -168,16 +174,37 @@ export const VerifyOwnershipWithEmailStep = () => {
                     config: reauthByEmailVerification(),
                 });
 
-                setVerificationResult(result);
+                send({ type: 'verification initiated', verificationResult: result });
             } catch (error) {
-                handleError(error);
-                send({ type: 'error' });
+                send({ type: 'initiation failed' });
             }
         };
         void sendCode();
-    }, [actorRef.getSnapshot().value]);
+    }, [actorRef.getSnapshot().value, verificationResult]);
 
-    if (validating || !verificationResult) {
+    if (initiationFailed) {
+        return (
+            <>
+                <div className="mb-8">{c('Error').t`Something went wrong. Please try again.`}</div>
+                {initiationAttempts < 3 && (
+                    <Button
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        className="mb-2"
+                        onClick={() => send({ type: 'retry initiation' })}
+                    >
+                        {c('Action').t`Try again`}
+                    </Button>
+                )}
+                <Button size="large" fullWidth onClick={() => send({ type: 'try another way' })}>
+                    {c('Action').t`Try another way`}
+                </Button>
+            </>
+        );
+    }
+
+    if (!verificationResult) {
         return <Loader />;
     }
 
@@ -186,4 +213,14 @@ export const VerifyOwnershipWithEmailStep = () => {
     }
 
     return null;
+};
+
+export const VerifyOwnershipWithEmailStep = () => {
+    const actorRef = useVerifyOwnershipWithEmailActorRef();
+
+    if (!actorRef) {
+        return null;
+    }
+
+    return <VerifyOwnershipWithEmailStepContent actorRef={actorRef} />;
 };

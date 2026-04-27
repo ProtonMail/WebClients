@@ -1,12 +1,9 @@
 import { c } from 'ttag';
 import { type ActorRefFrom, assign, fromPromise, setup } from 'xstate';
 
-import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
-
-type Result = 'no-totp' | 'skipped' | 'validated';
+type Result = 'skipped' | 'validated';
 
 interface TotpBackupCodeMachineContext {
-    twoFactorAuthTypes: TwoFactorAuthTypes;
     onSubmitBackupTotpCode: (code: string) => Promise<void>;
     code: string | null;
     error: string | null;
@@ -22,7 +19,6 @@ export const totpBackupCodeMachine = setup({
         context: {} as TotpBackupCodeMachineContext,
         events: {} as MachineEvent,
         input: {} as {
-            twoFactorAuthTypes: TwoFactorAuthTypes;
             onSubmitBackupTotpCode: (code: string) => Promise<void>;
         },
         output: {} as { result: Result },
@@ -34,14 +30,10 @@ export const totpBackupCodeMachine = setup({
             }
         ),
     },
-    guards: {
-        hasTOTP: ({ context }) => context.twoFactorAuthTypes.totp,
-    },
 }).createMachine({
     id: 'totpBackupCodes',
-    initial: 'validating',
+    initial: 'request backup code',
     context: ({ input }) => ({
-        twoFactorAuthTypes: input.twoFactorAuthTypes,
         onSubmitBackupTotpCode: input.onSubmitBackupTotpCode,
         code: null,
         error: null,
@@ -51,9 +43,6 @@ export const totpBackupCodeMachine = setup({
         return { result: context.result! };
     },
     states: {
-        validating: {
-            always: [{ guard: 'hasTOTP', target: 'request backup code' }, { target: 'no totp' }],
-        },
         'request backup code': {
             on: {
                 'backup code submitted': {
@@ -86,10 +75,6 @@ export const totpBackupCodeMachine = setup({
                     })),
                 },
             },
-        },
-        'no totp': {
-            type: 'final',
-            entry: assign({ result: 'no-totp' }),
         },
         validated: {
             type: 'final',
