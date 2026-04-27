@@ -322,8 +322,8 @@ export function DocumentTitleDropdown({
   }, [authenticatedController, editorController, documentType, showHistoryModal, documentState])
 
   const openHelp = useCallback(() => {
-    window.open(getStaticURL('/support/drive/sheets'), '_blank')
-  }, [])
+    window.open(getStaticURL(isSpreadsheet ? '/support/drive/sheets' : '/support/drive'), '_blank')
+  }, [isSpreadsheet])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(async (data: FileMenuAction) => {
