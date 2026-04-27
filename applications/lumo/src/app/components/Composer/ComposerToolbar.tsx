@@ -197,7 +197,7 @@ export const ComposerToolbar = ({
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
                 {/* <LumoComposerToggleUpsell /> */}
-                {canShowLumoUpsellToggle && (
+                {canShowLumoUpsellToggle && !isImageToolsFlagEnabled && (
                     <div className="flex flex-row">
                         <LumoComposerToggleUpsell />
                     </div>
