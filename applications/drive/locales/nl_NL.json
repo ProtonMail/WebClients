@@ -88,6 +88,10 @@
       "Add photos": [
         "Foto's toevoegen"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Toevoegen aan \"${ name }\" (${ photoCount } foto)",
+        "Toevoegen aan \"${ name }\" (${ photoCount } foto's)"
+      ],
       "Add to album": [
         "Voeg toe aan album"
       ],
@@ -295,9 +299,6 @@
       ],
       "Create folder": [
         "Maak map"
-      ],
-      "Create free account": [
-        "Maak een gratis account aan"
       ],
       "Create new folder": [
         "Nieuwe map aanmaken"
@@ -517,9 +518,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Krijg veilige opslag voor ${ simplePriceString }"
       ],
-      "Get Started": [
-        "Aan de slag"
-      ],
       "Get the apps": [
         "De apps downloaden"
       ],
@@ -570,9 +568,6 @@
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
-      ],
-      "Hide download options": [
-        "Verberg download opties"
       ],
       "Hide more benefits": [
         "Verberg meer voordelen"
@@ -1039,9 +1034,6 @@
       "Show more benefits": [
         "Toon meer voordelen"
       ],
-      "Show more download options": [
-        "Toon meer download opties"
-      ],
       "Show navigation bar": [
         "Navigatiebalk tonen"
       ],
@@ -1155,9 +1147,6 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
-      ],
-      "Upload": [
-        "Uploaden"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"
@@ -4876,6 +4865,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } is succesvol verwijderd"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albums"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -4959,6 +4952,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
+      "${ files } file": [
+        "${ files }-bestand",
+        "${ files }-bestanden"
+      ],
+      "${ folders } folder": [
+        "${ folders } map",
+        "${ folders } mappen"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
@@ -4992,6 +4993,10 @@
       "${ photoCount } item": [
         "${ photoCount } item",
         "${ photoCount } items"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foto's"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -5234,9 +5239,6 @@
       "Aug": [
         "Aug"
       ],
-      "Available": [
-        "Beschikbaar"
-      ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
       ],
@@ -5288,14 +5290,8 @@
       "Canceled": [
         "Geannuleerd"
       ],
-      "Cannot load link": [
-        "Kan koppeling niet laden"
-      ],
       "Cannot load links": [
         "Kan koppelingen niet laden"
-      ],
-      "Cannot load shared link": [
-        "Kan gedeelde koppelingen niet laden"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -5528,9 +5524,6 @@
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
       ],
-      "Encrypted": [
-        "Versleuteld"
-      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -5734,6 +5727,18 @@
       "Index is empty.": [
         "Index niet ingevuld."
       ],
+      "Indexed ${ first }": [
+        "${ first } geïndexeerd"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } en ${ second } geïndexeerd"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second } en ${ third } geïndexeerd"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } en ${ fourth } geïndexeerd"
+      ],
       "Indexing in progress": [
         "Bezig met indexeren"
       ],
@@ -5850,9 +5855,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
-      ],
-      "Loading link": [
-        "Koppeling laden"
       ],
       "Loading links": [
         "Koppelingen laden"
@@ -6061,9 +6063,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Foto('s) opgeslagen in uw Drive"
-      ],
-      "Photos": [
-        "Foto's"
       ],
       "Photos have been successfully recovered.": [
         "Foto's zijn succesvol hersteld."
@@ -6293,9 +6292,6 @@
       ],
       "Shared by ": [
         "Gedeeld door "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Gedeeld door ${ sharedBy }"
       ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
@@ -6539,9 +6535,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Om u te beschermen, kan ${ DRIVE_APP_NAME } uw bestanden op een privacyvriendelijke manier scannen en schadelijke bestanden blokkeren. Het is echter nog steeds het beste om bestanden alleen van vertrouwde bronnen te downloaden. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "Om u te beschermen kan ${ DRIVE_APP_NAME } uw bestanden scannen op een privacyvriendelijke manier, en kwaadaardige bestanden blokkeren. Het is echter nog steeds best om enkel van vertrouwde bronnen bestanden te downloaden."
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
       ],
@@ -6589,9 +6582,6 @@
       ],
       "Trash is empty": [
         "Uw prullenbak is leeg."
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Probeer ${ DRIVE_APP_NAME }: altijd gratis"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
@@ -6760,9 +6750,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wordt hersteld naar de versie van ${ formattedRevisionDate }. Alle andere versies blijven bewaard."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Met ${ DRIVE_APP_NAME } is uw data beveiligd door end-to-end versleuteling."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -8618,6 +8605,9 @@
       "Data retention policies": [
         "Dataretentiebeleid"
       ],
+      "Dedicated servers optimized for speed": [
+        "Gereserveerde servers geoptimaliseerd voor snelheid"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -9587,15 +9577,8 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Sorry, we konden de map niet verwijderen omdat deze niet leeg is.",
-        "Sorry, we kunnen de mappen niet verwijderen omdat ze niet leeg zijn."
-      ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
-      ],
-      "The document failed to be created": [
-        "Het document kon niet aangemaakt worden"
       ],
       "The item was not added to your drive": [
         "Het item werd niet aan uw schijf toegevoegd"
@@ -9605,9 +9588,6 @@
       ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
-      ],
-      "The spreadsheet failed to be created": [
-        "De spreadsheet kon niet aangemaakt worden"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Deze beveiligde koppeling is verlopen, wijzig de verloopdatum in de deelinstellingen."
@@ -9628,6 +9608,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album is hernoemd"
       ]
     },
     "Oauth instructions": {
@@ -11578,6 +11563,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe Schrijfassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, en ${ LUMO_APP_NAME } met premium functies"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
       ],
@@ -11808,6 +11799,10 @@
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemer",
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemers"
       ],
       "Watch the interview": [
         "Bekijk het interview"
@@ -12196,9 +12191,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "# downloads"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
@@ -12330,9 +12322,6 @@
       ],
       "Cannot add more addresses": [
         "Kan geen extra adressen toevoegen"
-      ],
-      "Cannot load link": [
-        "Kan koppeling niet laden"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -12702,9 +12691,6 @@
       "Item details": [
         "Gegevens van item"
       ],
-      "Last edited by": [
-        "Laatst bewerkt door"
-      ],
       "Last uploaded by": [
         "Laatst opgeladen door"
       ],
@@ -12743,9 +12729,6 @@
       ],
       "Message": [
         "Bericht"
-      ],
-      "MIME type": [
-        "MIME-type"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -12893,9 +12876,6 @@
       ],
       "Public link settings": [
         "Instellingen voor publieke link"
-      ],
-      "Public shared link status": [
-        "Status van openbare gedeelde link"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -13063,12 +13043,6 @@
       "Summary": [
         "Overzicht"
       ],
-      "The link either does not exist or has expired": [
-        "De link bestaat niet of is verlopen"
-      ],
-      "The link expired": [
-        "De koppeling is verlopen"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Het bestand heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
       ],
@@ -13138,9 +13112,6 @@
       "Uploaded": [
         "Geüpload"
       ],
-      "Uploaded by": [
-        "Geüpload door"
-      ],
       "Uploading a large file or folder": [
         "Groot bestand of map aan het uploaden"
       ],
@@ -13155,9 +13126,6 @@
       ],
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
-      ],
-      "Version details": [
-        "Versiegegevens"
       ],
       "Version history": [
         "Versiegeschiedenis"

@@ -306,9 +306,6 @@
       "Create folder": [
         "Vytvoriť priečinok"
       ],
-      "Create free account": [
-        "Vytvoriť účet zadarmo"
-      ],
       "Create new folder": [
         "Vytvoriť nový priečinok"
       ],
@@ -531,9 +528,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Získať bezpečné úložisko za ${ simplePriceString }"
       ],
-      "Get Started": [
-        "Začíname"
-      ],
       "Get the apps": [
         "Stiahnť aplikácie"
       ],
@@ -584,9 +578,6 @@
       ],
       "Hide advanced PGP settings": [
         "Skryť pokročilé nastavenia PGO"
-      ],
-      "Hide download options": [
-        "Skryť možnosti sťahovania"
       ],
       "Hide more benefits": [
         "Skryť viac výhod"
@@ -1056,9 +1047,6 @@
       "Show more benefits": [
         "Zobraziť ďalšie výhody"
       ],
-      "Show more download options": [
-        "Zobraziť ďalšie možnosti sťahovania"
-      ],
       "Show navigation bar": [
         "Zobraziť navigačný panel"
       ],
@@ -1172,9 +1160,6 @@
       ],
       "Upgrade now": [
         "Aktualizovať teraz"
-      ],
-      "Upload": [
-        "Nahrať"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
@@ -5453,9 +5438,6 @@
       "Aug": [
         "Aug"
       ],
-      "Available": [
-        "Dostupné"
-      ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
       ],
@@ -5507,14 +5489,8 @@
       "Canceled": [
         "Zrušené"
       ],
-      "Cannot load link": [
-        "Odkaz sa nepodarilo načítať"
-      ],
       "Cannot load links": [
         "Načítanie odkazov zlyhalo"
-      ],
-      "Cannot load shared link": [
-        "Nie je možné načítať zdieľaný odkaz"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -5752,9 +5728,6 @@
       ],
       "Enabling drive search": [
         "Zapínanie vyhľadávania na disku"
-      ],
-      "Encrypted": [
-        "Šifrované"
       ],
       "Encrypted search is here": [
         "Vyhľadávanie v šifrovaných dátach je tu"
@@ -6092,9 +6065,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
-      "Loading link": [
-        "Načítanie odkazu"
-      ],
       "Loading links": [
         "Načítanie odkazov"
       ],
@@ -6310,9 +6280,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Fotografia(e) uložená(é) do vášho Drive"
-      ],
-      "Photos": [
-        "Fotografie"
       ],
       "Photos have been successfully recovered.": [
         "Fotografie boli úspešne obnovené."
@@ -6544,9 +6511,6 @@
       ],
       "Shared by ": [
         "Zdieľané používateľom "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Zdieľa ${ sharedBy }"
       ],
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
@@ -6794,9 +6758,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Ak chcete importovať udalosti, najprv vytvorte kalendár v ${ CALENDAR_APP_NAME }. Po importe sa tu zobrazia udalosti."
       ],
@@ -6844,9 +6805,6 @@
       ],
       "Trash is empty": [
         "Kôš je prázdny"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Vyskúšajte ${ DRIVE_APP_NAME }: Navždy zadarmo"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
@@ -7015,9 +6973,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "S ${ DRIVE_APP_NAME } sú vaše dáta chránené end-to-end šifrovaním."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -10007,17 +9962,8 @@
       "Share invitation declined": [
         "Pozvánka na zdieľanie odmietnutá"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Je nám ľúto, ale priečinok sme nemohli odstrániť, pretože nie je prázdny.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne."
-      ],
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
-      ],
-      "The document failed to be created": [
-        "Dokument sa nepodarilo vytvoriť"
       ],
       "The item was not added to your drive": [
         "Položka nebola pridaná na váš disk"
@@ -10027,9 +9973,6 @@
       ],
       "The link to your item was deleted": [
         "Odkaz na vašu položku bol zmazaný"
-      ],
-      "The spreadsheet failed to be created": [
-        "Tabuľku sa nepodarilo vytvoriť"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Tento zabezpečený odkaz vypršal, zmeňte dátum vypršania platnosti v nastaveniach zdieľania, prosím."
@@ -12644,9 +12587,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "počet stiahnutí"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } emailová adresa",
         "${ emailsCount } emailové adresy",
@@ -12790,9 +12730,6 @@
       ],
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
-      ],
-      "Cannot load link": [
-        "Odkaz sa nepodarilo načítať"
       ],
       "Card verification": [
         "Overenie karty"
@@ -13175,9 +13112,6 @@
       "Item details": [
         "Podrobnosti položky"
       ],
-      "Last edited by": [
-        "Naposledy upravené používateľom"
-      ],
       "Last uploaded by": [
         "Naposledy nahrané používateľom"
       ],
@@ -13216,9 +13150,6 @@
       ],
       "Message": [
         "Správa"
-      ],
-      "MIME type": [
-        "Typ MIME"
       ],
       "Minicalendar": [
         "Minikalendár"
@@ -13366,9 +13297,6 @@
       ],
       "Public link settings": [
         "Nastavenia verejného odkazu"
-      ],
-      "Public shared link status": [
-        "Stav verejného zdieľaného odkazu"
       ],
       "Re-sign all contacts": [
         "Znovu podpísať všetky kontakty"
@@ -13538,12 +13466,6 @@
       "Summary": [
         "Zhrnutie"
       ],
-      "The link either does not exist or has expired": [
-        "Odkaz neexistuje alebo vypršala jeho platnosť"
-      ],
-      "The link expired": [
-        "Platnosť odkazu vypršala"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento súbor má chýbajúci alebo neplatný podpis. Pre informácie prejdite do Menu (⋮) → Podrobnosti."
       ],
@@ -13613,9 +13535,6 @@
       "Uploaded": [
         "Nahrané"
       ],
-      "Uploaded by": [
-        "Nahrané používateľom"
-      ],
       "Uploading a large file or folder": [
         "Nahrávanie veľkého súboru alebo priečinka"
       ],
@@ -13630,9 +13549,6 @@
       ],
       "Verifying your payment...": [
         "Overujeme vašu platbu..."
-      ],
-      "Version details": [
-        "Detaily verzie"
       ],
       "Version history": [
         "História verzií"
