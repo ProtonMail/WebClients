@@ -1,7 +1,5 @@
 export const EXPIRING_SOON_THRESHOLD = 3600;
 
-export const getExpirationTimestampFromMinutes = (minutes: number) => Math.floor(Date.now() / 1000) + minutes * 60;
-
 export type TokenStatus = 'active' | 'expiring' | 'expired';
 
 export const getTokenStatus = (expireTime: number): TokenStatus => {
