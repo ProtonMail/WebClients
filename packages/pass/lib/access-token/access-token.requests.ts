@@ -4,7 +4,9 @@ import type {
     CreatePersonalAccessTokenPayload,
     CreatePersonalAccessTokenResponse,
     GrantPersonalAccessTokenAccessPayload,
+    ListPatMonitorResponse,
     ListPersonalAccessTokensResponse,
+    PatMonitorRecord,
     PersonalAccessToken,
     PersonalAccessTokenAccessGrant,
 } from './access-token.types';
@@ -72,4 +74,34 @@ export const revokePersonalAccessTokenAccess = async (id: string, shareId: strin
         url: `${PASS_PAT_BASE_URL}/${id}/access/${shareId}`,
         method: 'delete',
     });
+};
+
+/** Page size matching the rust CLI's `PAGE_SIZE` constant in
+ * `pass/src/monitor.rs`. Used to detect "short page = last page". */
+const PAT_MONITOR_PAGE_SIZE = 100;
+
+/** Returns one page of audit records for actions made by a PAT.
+ * Pass `since` (the previous response's `NextSince`) for subsequent pages.
+ * A null `nextSince` in the result means there are no more pages.
+ *
+ * The server may return a non-null `NextSince` even on the final page; we
+ * normalise that to `null` whenever we got fewer records than `PageSize`,
+ * mirroring the rust CLI's `fetched == 0 || next_since.is_none()` loop
+ * termination. */
+export const listPatMonitorRecords = async (
+    id: string,
+    since?: string
+): Promise<{ records: PatMonitorRecord[]; nextSince: string | null }> => {
+    const response = await api<ListPatMonitorResponse>({
+        url: `pass/v1/pat/monitor/${id}`,
+        method: 'get',
+        params: { PageSize: PAT_MONITOR_PAGE_SIZE, ...(since ? { Since: since } : {}) },
+    });
+    const records = response.Actions.Records ?? [];
+    const serverNextSince = response.Actions.NextSince;
+    const hasMore = records.length === PAT_MONITOR_PAGE_SIZE && typeof serverNextSince === 'string';
+    return {
+        records,
+        nextSince: hasMore ? serverNextSince : null,
+    };
 };
