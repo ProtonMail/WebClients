@@ -14,6 +14,8 @@ import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/shared/li
 import { srpAuth } from '@proton/shared/lib/srp';
 import type { AuthVersion } from '@proton/srp/lib/interface';
 
+import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
+
 export interface SRPHandshakeInfo {
     Code: number;
     Modulus: string;
@@ -35,7 +37,10 @@ export const useMeetSrp = () => {
             try {
                 return await api<SRPHandshakeInfo>(queryInitMeetSRPHandshake(token));
             } catch (error) {
-                reportMeetError('Error initializing handshake', error);
+                reportMeetError('Error initializing handshake', {
+                    context: { error },
+                    tags: { meetingLinkName: token },
+                });
                 throw error;
             }
         },
@@ -65,6 +70,9 @@ export const useMeetSrp = () => {
                 config: {
                     ...(UID && { headers: getUIDHeaders(UID) }),
                     ...queryMeetAuth(token),
+                    // Silence the wrong-password error so the generic API layer does not
+                    // auto-show "Invalid SRP parameter"; we render a friendlier message ourselves.
+                    silence: [INVALID_SRP_PARAMS_ERROR_CODE],
                 },
             });
 
@@ -78,7 +86,10 @@ export const useMeetSrp = () => {
             try {
                 return await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
             } catch (error) {
-                reportMeetError('Failed to get meeting info', error);
+                reportMeetError('Failed to get meeting info', {
+                    context: { error },
+                    tags: { meetingLinkName },
+                });
                 throw error;
             }
         },

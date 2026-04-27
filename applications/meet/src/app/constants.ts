@@ -3,6 +3,8 @@ export const JOIN_TITLE_TIMEOUT = 2000;
 export const NOTIFICATION_PARTICIPANT_LIMIT = 10;
 
 export const MEETING_LOCKED_ERROR_CODE = 2502;
+// Used for the wrong-password error code
+export const INVALID_SRP_PARAMS_ERROR_CODE = 2026;
 
 export const PIP_PREVIEW_ITEM_WIDTH = 480;
 export const PIP_PREVIEW_ITEM_HEIGHT = 270;
