@@ -1,4 +1,4 @@
-import { type MouseEvent, Suspense, lazy } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -33,7 +33,6 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
 import { hasLabel } from 'proton-mail/helpers/elements';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -53,8 +52,6 @@ import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
-
-const ExtraMessageCategory = lazy(() => import('../../categoryView/categoryBadge/ExtraMessageCategory'));
 
 interface Props {
     labelID: string;
@@ -104,8 +101,6 @@ const HeaderExpanded = ({
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
-
-    const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -284,12 +279,7 @@ const HeaderExpanded = ({
                     </div>
                 )}
             </div>
-            <div
-                className={clsx(
-                    'flex md:flex-nowrap items-center message-header-ccbcc-container',
-                    canSeeCategoryLabel ? '' : 'mb-2'
-                )}
-            >
+            <div className="flex md:flex-nowrap items-center message-header-ccbcc-container mb-2">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -301,11 +291,6 @@ const HeaderExpanded = ({
                     onContactEdit={onContactEdit}
                 />
             </div>
-            {canSeeCategoryLabel && (
-                <Suspense fallback={null}>
-                    <ExtraMessageCategory message={message} element={message.data} />
-                </Suspense>
-            )}
             {showDetails && (
                 <div className="mb-2 flex flex-nowrap color-weak">
                     <span className="self-center mr-2 text-ellipsis">

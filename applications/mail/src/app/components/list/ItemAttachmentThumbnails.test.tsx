@@ -69,7 +69,6 @@ const setup = async (
     const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
     return mailTestRender(
         <ItemColumnLayout
-            index={-1}
             labelID={MAILBOX_LABEL_IDS.INBOX}
             element={element}
             conversationMode={true}
