@@ -70,6 +70,24 @@ const sync2 = {
     startDate: 0,
 };
 
+const sync3 = {
+    id: 'sync3',
+    account: 'test3@googlemail.com',
+    importerID: 'importer3',
+    product: ImportType.MAIL,
+    state: ApiSyncState.ACTIVE,
+    startDate: 0,
+};
+
+const syncCustomDomain = {
+    id: 'sync2',
+    account: 'test3@custom.com',
+    importerID: 'importer2',
+    product: ImportType.MAIL,
+    state: ApiSyncState.ACTIVE,
+    startDate: 0,
+};
+
 describe('useBYOEAddressesCounts', () => {
     const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
     const mockUseUser = require('@proton/account/user/hooks').useUser;
@@ -134,5 +152,24 @@ describe('useBYOEAddressesCounts', () => {
         expect(result.current.forwardingList).toEqual([]);
         expect(result.current.byoeAddressesAvailableCount).toBe(1);
         expect(result.current.maxBYOEAddresses).toBe(MAX_SYNC_FREE_USER);
+    });
+
+    it('should return only convertible forwardings', () => {
+        const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress, internalAddress];
+        const syncs: Sync[] = [sync1, sync2, sync3, syncCustomDomain];
+        const user = { Subscribed: PRODUCT_BIT.MAIL };
+
+        mockUseAddresses.mockReturnValue([addresses]);
+        mockUseUser.mockReturnValue([user]);
+        mockUseEasySwitchSelector.mockReturnValue(syncs);
+
+        const { result } = renderHook(() => useBYOEAddressesCounts());
+
+        expect(result.current.byoeAddresses).toEqual([enabledBYOEAddress, disconnectedBYOEAddress]);
+        expect(result.current.activeBYOEAddresses).toEqual([enabledBYOEAddress]);
+        expect(result.current.addressesOrSyncs).toEqual(syncs);
+        expect(result.current.forwardingList).toEqual([sync2, sync3]);
+        expect(result.current.byoeAddressesAvailableCount).toBe(2);
+        expect(result.current.maxBYOEAddresses).toBe(MAX_SYNC_PAID_USER);
     });
 });
