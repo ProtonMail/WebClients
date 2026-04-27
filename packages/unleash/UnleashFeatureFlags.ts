@@ -251,8 +251,6 @@ export enum MailFeatureFlag {
     // Category view flags
     // Used to control the whole category view
     CategoryView = 'CategoryView',
-    // Used for the alpha experiment of the category view will be deleted
-    ShowMessageCategory = 'ShowMessageCategory',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',

@@ -59,7 +59,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
 
-import { QuickSettingsRemoveCategoriesBadge } from '../categoryView/categoryBadge/QuickSettingsRemoveCategoriesBadge';
 import { DebugMailStoreButton } from '../debug/DebugMailStoreButton';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
@@ -404,7 +403,6 @@ const MailQuickSettings = () => {
             )}
 
             <DefaultQuickSettings inAppReminders={mailReminders} />
-            <QuickSettingsRemoveCategoriesBadge />
 
             <QuickSettingsButtonSection>
                 {isElectronMail &&
