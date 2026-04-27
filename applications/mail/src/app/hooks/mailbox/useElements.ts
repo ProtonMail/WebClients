@@ -242,7 +242,11 @@ export const useElements: UseElements = ({
             categoryIDs.push(category);
 
             if (category === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-                categoryIDs.push(...disabledCategoriesIDs);
+                // `23` refers to the forum category ID that we decided to remove
+                // This line needs to be removed once the API team has run the migration
+                // to erase the forum category from already categorised messages and conversations
+                const forumLabelID = '23' as CategoryLabelID;
+                categoryIDs.push(...disabledCategoriesIDs, forumLabelID);
             }
         }
 
