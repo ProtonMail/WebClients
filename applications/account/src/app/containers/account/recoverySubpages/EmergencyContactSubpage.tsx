@@ -19,7 +19,9 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import illustration from './assets/recovery-emergency-contacts.svg';
 
 export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
-    const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link').t`Learn more`}</Href>
+    );
 
     return (
         <DashboardGrid>
