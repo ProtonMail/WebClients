@@ -415,6 +415,10 @@ blockquote.protonmail_quote
 		background-color: var(--background-norm);
 	}
 
+	.message-recipient-item {
+		cursor: default;
+	}
+
 	.message-recipient-item-expanded {
 		margin-block-start: 0.75em;
 	}
@@ -474,8 +478,20 @@ blockquote.protonmail_quote
 		gap: 0.5rem;
 	}
 
+	.ml-1 {
+		margin-inline-start: 0.25rem;
+	}
+
 	.mr-1 {
 		margin-inline-end: 0.25rem;
+	}
+
+	.color-inherit {
+		color: inherit;
+	}
+
+	.text-no-decoration {
+		text-decoration: none;
 	}
 
 	&.proton-dark-theme .proton-print-content {
