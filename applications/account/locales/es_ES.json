@@ -4740,6 +4740,9 @@
       "Still need help? Our support team is here for you.": [
         "¿Aún necesitas ayuda? Nuestro equipo de asistencia está aquí para ayudarte."
       ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Esto te permite recuperar el acceso a tu cuenta de ${ BRAND_NAME }, pero no recupera tus datos cifrados."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
       ],
@@ -5745,6 +5748,9 @@
       "Add emergency contact": [
         "Añadir contacto de emergencia"
       ],
+      "Add option": [
+        "Añadir opción"
+      ],
       "Add recovery contact": [
         "Añadir contacto de recuperación"
       ],
@@ -5966,9 +5972,6 @@
       ],
       "Send recovery request": [
         "Enviar solicitud de recuperación"
-      ],
-      "Set account recovery": [
-        "Configurar recuperación de cuenta"
       ],
       "Stop being recovery contact": [
         "Dejar de ser contacto de recuperación"
@@ -6935,6 +6938,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "Pide a tu administrador que active el monitor de cuenta."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Activa el monitor de cuenta para empezar a cargar el evento."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -11200,6 +11206,9 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Para utilizar ${ toAppName } necesitas una dirección ${ MAIL_APP_NAME }."
       ],
+      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
+        "Para usar este método de recuperación de datos, debes tener una opción de restablecimiento de contraseña, como la verificación por correo electrónico o por SMS."
+      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script de Sieve válido. Puedes ${ link }."
       ],
@@ -11879,6 +11888,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
+      ],
+      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Tu frase de recuperación —incluida en tu Kit de recuperación— te permitirá iniciar sesión y recuperar tus datos si pierdes el acceso a tu cuenta de ${ BRAND_NAME }. Está compuesta por 12 palabras y funciona como una contraseña de seguridad."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
@@ -18271,6 +18283,11 @@
         "Verificar tu número de teléfono aumenta la seguridad de tu cuenta y permite opciones de recuperación adicionales."
       ]
     },
+    "Recovery score": {
+      "Add more options to avoid getting locked out of your account.": [
+        "Añade más opciones para evitar perder el acceso a tu cuenta."
+      ]
+    },
     "RecoveryPhrase: Action": {
       "Continue": [
         "Continuar"
@@ -22821,6 +22838,9 @@
       ],
       "No events": [
         "No hay eventos"
+      ],
+      "No events yet": [
+        "Aún no hay eventos"
       ],
       "No need to empty the trash": [
         "No es necesario vaciar la papelera"
