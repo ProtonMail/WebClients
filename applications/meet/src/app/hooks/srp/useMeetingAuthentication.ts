@@ -1,15 +1,21 @@
 import { useCallback } from 'react';
 
+import { c } from 'ttag';
+
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
 import type { SRPHandshakeInfo } from './useMeetSrp';
 import { useMeetSrp } from './useMeetSrp';
 
 export const useMeetingAuthentication = () => {
     const { initHandshake, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();
-
+    const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
+
     const getMeetingDetails = useCallback(
         async ({
             customPassword,
@@ -36,7 +42,25 @@ export const useMeetingAuthentication = () => {
 
             try {
                 await getSessionToken(token, getCombinedPassword(urlPassword, customPassword), handshakeInfo);
+            } catch (error) {
+                const { code, message } = getApiError(error);
 
+                if (code !== INVALID_SRP_PARAMS_ERROR_CODE) {
+                    reportMeetError(`Failed to get session token: ${code} - ${message}`, {
+                        context: { error },
+                        tags: { meetingLinkName: token },
+                    });
+                } else {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`The meeting password is incorrect`,
+                    });
+                }
+
+                throw error;
+            }
+
+            try {
                 const meetingInfo = await getMeetingInfo(token);
 
                 meetingName = await decryptMeetingName({
@@ -54,7 +78,13 @@ export const useMeetingAuthentication = () => {
                     expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
                 };
             } catch (error) {
-                reportMeetError('Failed to get meeting info', error);
+                const { code, message } = getApiError(error);
+
+                reportMeetError(`Failed to get meeting info: ${code} - ${message}`, {
+                    context: { error },
+                    tags: { meetingLinkName: token },
+                });
+
                 throw error;
             }
         },
@@ -78,7 +108,10 @@ export const useMeetingAuthentication = () => {
                     websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
                 };
             } catch (error: any) {
-                reportMeetError('Failed to get access details', error);
+                reportMeetError('Failed to get access details', {
+                    context: { error },
+                    tags: { meetingLinkName: token },
+                });
                 throw error;
             }
         },
