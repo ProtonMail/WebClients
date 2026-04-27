@@ -5,6 +5,7 @@ import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
 import metrics from "../metrics";
 import { webRequestRouter } from "../electronSession/webRequestRouter";
+import { getTrackedUID, setViewName } from "../electronSession/uidTracker";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -30,6 +31,7 @@ export const printLogger = Logger.scope("print");
 export const ioStreamLogger = Logger.scope("io-stream");
 export const profilerLogger = Logger.scope("profiler");
 export const webRequestRouterLogger = Logger.scope("web-request-router");
+export const uidLogger = Logger.scope("uid");
 export const rendererLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`renderer/${viewID}`) : Logger.scope("renderer");
 
@@ -173,12 +175,17 @@ export async function connectNetLogger(
 ) {
     webRequestRouter.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
+        if (details.webContents && viewName) {
+            setViewName(details.webContents.id, viewName);
+        }
+        const uid = details.webContents ? getTrackedUID(details.webContents.id) : undefined;
 
         if (details.statusCode >= 200 && details.statusCode < 400) {
             if (NET_LOG_SKIP_PATTERNS.some((re) => re.test(details.url))) {
                 return;
             }
-            netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine);
+
+            netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine, uid);
         } else {
             netLogger(viewName).error(
                 details.method,
@@ -186,13 +193,15 @@ export async function connectNetLogger(
                 details.statusCode,
                 details.statusLine,
                 details.error,
+                uid,
             );
         }
     });
 
     webRequestRouter.onErrorOccurred((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
-        netLogger(viewName).error(details.method, details.url, details.error);
+        const uid = details.webContents ? getTrackedUID(details.webContents.id) : undefined;
+        netLogger(viewName).error(details.method, details.url, details.error, uid);
     });
 }
 
