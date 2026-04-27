@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { Button } from '@proton/atoms/Button/Button'
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { c } from 'ttag'
 import { useDocsContext } from '../context'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
@@ -10,8 +10,7 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import { useApplication } from '~/utils/application-context'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import type { EditorControllerInterface } from '@proton/docs-core'
-import type { PublicDocumentState } from '@proton/docs-core'
+import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import {
   Spotlight,
   Icon,
@@ -24,7 +23,7 @@ import {
   ButtonGroup,
   SimpleDropdown,
 } from '@proton/components'
-import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { useSignupFlowModal } from './SignupFlowModal'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentActiveUsers'
@@ -35,7 +34,6 @@ import { getInitials } from '@proton/shared/lib/helpers/string'
 import { useDocsUrlPublicToken } from '@proton/drive-store'
 import useLoading from '@proton/hooks/useLoading'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS } from '@proton/shared/lib/constants'
 import { openNewTab } from '@proton/shared/lib/helpers/browser'
 import { usePublicSessionUser } from '@proton/drive-store/store'
 import {
@@ -256,12 +254,12 @@ export function HeaderPublicOptions({ editorController, documentState, documentT
                   as={DropdownButton}
                   size="small"
                   loading={isLoading || isAdding}
-                  className="flex items-center gap-2 !border-0 head-max-849:!min-h-7"
+                  className="!whitespace-normal !border-0 text-left head-max-849:!min-h-7"
                   onClick={handleSaveToDriveClick}
                   color="weak"
                   data-testid="save-in-drive-button"
                 >
-                  {!isAdding && <Icon name="folder-arrow-in" />}
+                  {!isAdding && <Icon name="folder-arrow-in" className="mr-2 align-text-bottom" />}
                   <span className="head-max-849:!sr-only">
                     {isAdding ? c('Info').t`Saving...` : saveToDriveButtonText}
                   </span>
