@@ -73,3 +73,43 @@ export interface ListPersonalAccessTokenAccessResponse {
     Code: number;
     Shares: PersonalAccessTokenAccessGrant[];
 }
+
+/** A single audit record of an agent action made via a PAT. `Action` is the
+ * server-defined `EventType` enum (numeric); `Payload` is a base64-encoded
+ * AES-GCM ciphertext (AAD = "proton.pass.payload") that decrypts to a
+ * serialized `ActionPayload` protobuf — the saga handles decryption and
+ * surfaces the decoded form via `decodedPayload`. */
+export interface PatMonitorRecord {
+    PatMonitorRecordID: string;
+    VaultID: string;
+    ObjectID?: string;
+    Action: number;
+    Payload?: string;
+    ActionTime: number;
+}
+
+export type DecodedPatMonitorPayload =
+    /** Currently the only payload variant — agent read of a single item.
+     * Mirrors the rust `AgentAccessItem`. */
+    | { kind: 'agent-access-item'; reason: string; vaultName: string; itemName: string }
+    /** Payload was present but the protobuf had a oneof variant we don't
+     * recognise (e.g. server added a new event type). */
+    | { kind: 'unknown' }
+    /** Payload was present but decryption / proto-decode threw. */
+    | { kind: 'decode-error'; error: string };
+
+/** Server record + the decoded payload (when there is one + decryption
+ * succeeded). The component-side state stores this shape. */
+export type DecodedPatMonitorRecord = PatMonitorRecord & {
+    decodedPayload: DecodedPatMonitorPayload | null;
+};
+
+export interface ListPatMonitorResponse {
+    Code: number;
+    Actions: {
+        Records: PatMonitorRecord[];
+        /** Cursor — pass as `Since` query-param to fetch the next page.
+         * Null when there are no more records. */
+        NextSince: string | null;
+    };
+}
