@@ -214,7 +214,6 @@ const Item = ({
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
                     userSettings={userSettings}
-                    index={index}
                 />
             </div>
         </div>
