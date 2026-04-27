@@ -15,9 +15,6 @@ import type {
 } from '@proton/pass/lib/access-token/access-token.types';
 import { PAT_PRODUCT, buildAccessTokenEnvVar } from '@proton/pass/lib/access-token/access-token.utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { createAccessTokenKey } from '@proton/pass/lib/crypto/processes/access-token/create-access-token-key';
-import { createAccessTokenShareKeys } from '@proton/pass/lib/crypto/processes/access-token/create-access-token-share-keys';
-import { openAccessTokenKey } from '@proton/pass/lib/crypto/processes/access-token/open-access-token-key';
 import {
     type AccessTokenAccessGrants,
     type CreateAccessTokenIntent,
@@ -36,14 +33,6 @@ import { ShareRole, ShareType } from '@proton/pass/types';
 
 const expirationTimestampFromMinutes = (minutes: number) => Math.floor(Date.now() / 1000) + minutes * 60;
 
-const getPrimaryUserKey = () => {
-    const primary = PassCrypto.getContext().primaryUserKey;
-    if (!primary?.publicKey || !primary?.privateKey) {
-        throw new Error('Primary user key unavailable');
-    }
-    return primary;
-};
-
 const listSaga = createRequestSaga({
     actions: getAccessTokens,
     call: listPersonalAccessTokens,
@@ -57,12 +46,7 @@ const createSaga = createRequestSaga({
         isAgent,
         shareIds,
     }: CreateAccessTokenIntent): Generator<any, CreateAccessTokenSuccess, any> {
-        const { publicKey, privateKey } = getPrimaryUserKey();
-        const { encrypted, raw }: { encrypted: string; raw: Uint8Array<ArrayBuffer> } = yield call(
-            createAccessTokenKey,
-            publicKey,
-            privateKey
-        );
+        const { encrypted, raw }: { encrypted: string; raw: Uint8Array<ArrayBuffer> } = yield call([PassCrypto, 'createAccessTokenKey']);
 
         const pat: PersonalAccessToken = yield call(createPersonalAccessToken, {
             Name: name,
@@ -78,7 +62,10 @@ const createSaga = createRequestSaga({
             yield all(
                 shareIds.map((shareId) =>
                     call(function* () {
-                        const Keys: PersonalAccessTokenShareKey[] = yield call(createAccessTokenShareKeys, raw, shareId);
+                        const Keys: PersonalAccessTokenShareKey[] = yield call([PassCrypto, 'createAccessTokenShareKeys'], {
+                            rawPatKey: raw,
+                            shareId,
+                        });
                         yield call(grantPersonalAccessTokenAccess, pat.PersonalAccessTokenID, {
                             ShareID: shareId,
                             TargetType: ShareType.Vault,
@@ -135,13 +122,15 @@ const updateAccessSaga = createRequestSaga({
         const toGrant: string[] = shareIds.filter((sid) => !currentlyGranted.has(sid));
 
         if (toGrant.length > 0) {
-            const { publicKey, privateKey } = getPrimaryUserKey();
-            const raw: Uint8Array<ArrayBuffer> = yield call(openAccessTokenKey, pat.PersonalAccessTokenKey, privateKey, publicKey);
+            const raw: Uint8Array<ArrayBuffer> = yield call([PassCrypto, 'openAccessTokenKey'], pat.PersonalAccessTokenKey);
 
             yield all(
                 toGrant.map((shareId) =>
                     call(function* () {
-                        const Keys: PersonalAccessTokenShareKey[] = yield call(createAccessTokenShareKeys, raw, shareId);
+                        const Keys: PersonalAccessTokenShareKey[] = yield call([PassCrypto, 'createAccessTokenShareKeys'], {
+                            rawPatKey: raw,
+                            shareId,
+                        });
                         yield call(grantPersonalAccessTokenAccess, tokenId, {
                             ShareID: shareId,
                             TargetType: ShareType.Vault,
