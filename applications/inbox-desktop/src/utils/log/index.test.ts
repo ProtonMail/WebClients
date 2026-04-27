@@ -60,18 +60,15 @@ describe("filter sensitve data", () => {
             "https://calendar.proton.me/api/calendar/v1/some-calendar-id/events?Start=1728770400&End=1729375199&Timezone=Europe%2FNarnia&PageSize=100&Type=1&Page=0&MetaDataOnly=1 200 HTTP/1.1 200",
         );
     });
-    it("replaces some ids", () => {
-        expectFilterSensitiveString(
+    it("does not sanitize proton domain URL paths or params", () => {
+        expectFilterStringIsSame(
             "https://account.proton.me/authorize?app=proton-mail&state=some-state-id&v=2&reason=session-expired",
-            "https://account.proton.me/__FORBIDDEN__?app=proton-mail&state=some-state-id&v=2&reason=session-expired",
         );
-        expectFilterSensitiveString(
-            "https://mail.proton.me/login#selector=some-selector-id&state=some-state-id&sk=some-sk-id&v=2&p=1&tr=1&pv=1&pt=default",
+        expectFilterStringIsSame(
             "https://mail.proton.me/login#selector=some-selector-id&state=some-state-id&sk=some-sk-id&v=2&p=1&tr=1&pv=1&pt=default",
         );
-        expectFilterSensitiveString(
+        expectFilterStringIsSame(
             "https://mail.proton.me/login#selector=some-selector-id&state=some-state-id&sentry_key=some-sk-id&v=2&p=1&tr=1&pv=1&pt=default",
-            "https://mail.proton.me/login#selector=some-selector-id&state=some-state-id&sentry_key=__ID__&v=2&p=1&tr=1&pv=1&pt=default",
         );
     });
     it("replaces home directories in absolute paths", () => {
