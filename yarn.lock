@@ -10431,7 +10431,7 @@ __metadata:
     core-js: "npm:^3.49.0"
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
-    postcss: "npm:^8.5.8"
+    postcss: "npm:^8.5.10"
     serve: "npm:^14.2.6"
     typescript: "npm:^6.0.2"
     vite: "npm:^8.0.5"
@@ -11250,7 +11250,7 @@ __metadata:
     html-webpack-plugin: "npm:^5.6.6"
     mini-css-extract-plugin: "npm:^2.10.2"
     portfinder: "npm:^1.0.38"
-    postcss: "npm:^8.5.8"
+    postcss: "npm:^8.5.10"
     postcss-color-functional-notation: "npm:^6.0.14"
     postcss-loader: "npm:^8.2.1"
     postcss-logical: "npm:^8.1.0"
@@ -40864,14 +40864,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.38, postcss@npm:^8.4.40, postcss@npm:^8.4.43, postcss@npm:^8.4.47, postcss@npm:^8.5.6, postcss@npm:^8.5.8":
-  version: 8.5.8
-  resolution: "postcss@npm:8.5.8"
+"postcss@npm:^8.2.14, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.38, postcss@npm:^8.4.40, postcss@npm:^8.4.43, postcss@npm:^8.4.47, postcss@npm:^8.5.10, postcss@npm:^8.5.6, postcss@npm:^8.5.8":
+  version: 8.5.10
+  resolution: "postcss@npm:8.5.10"
   dependencies:
     nanoid: "npm:^3.3.11"
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
-  checksum: 10/cbacbfd7f767e2c820d4bf09a3a744834dd7d14f69ff08d1f57b1a7defce9ae5efcf31981890d9697a972a64e9965de677932ef28e4c8ba23a87aad45b82c459
+  checksum: 10/7eac6169e535b63c8412e94d4f6047fc23efa3e9dde804b541940043c831b25f1cd867d83cd2c4371ad2450c8abcb42c208aa25668c1f0f3650d7f72faf711a8
   languageName: node
   linkType: hard
 
@@ -41744,7 +41744,7 @@ __metadata:
     jest: "npm:^30.3.0"
     jest-junit: "npm:^16.0.0"
     lexical: "npm:0.30.0"
-    postcss: "npm:^8.5.8"
+    postcss: "npm:^8.5.10"
     prettier: "npm:^3.8.1"
     prettier-plugin-tailwindcss: "npm:^0.7.2"
     react: "npm:^18.3.1"
@@ -41809,7 +41809,7 @@ __metadata:
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
     jest-junit: "npm:^16.0.0"
-    postcss: "npm:^8.5.8"
+    postcss: "npm:^8.5.10"
     prettier: "npm:^3.8.1"
     prettier-plugin-tailwindcss: "npm:^0.7.2"
     react: "npm:^18.3.1"
@@ -42072,7 +42072,7 @@ __metadata:
     msw: "npm:2.12.14"
     p-limit: "npm:^6.2.0"
     pdfjs-dist: "npm:^4.10.38"
-    postcss: "npm:^8.5.8"
+    postcss: "npm:^8.5.10"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-markdown: "npm:^9.1.0"
