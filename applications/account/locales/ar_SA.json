@@ -4387,6 +4387,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "بسّط المزامنة والجدولة باستخدام التقويمات المشتركة."
       ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "يتيح لك ذلك استعادة الوصول إلى حساب ${ BRAND_NAME } الخاص بك، لكنه لا يستعيد بياناتك المشفّرة."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "لاستيراد جهات الاتصال عبر ملف CSV أو VCF، تأكد من أن حجم الملف لا يتجاوز ${ MAX_IMPORT_FILE_SIZE_STRING } أو ${ maxContactString } جهة اتصال. إذا كان ملفك أكبر من ذلك، يرجى تقسيمه إلى ملفات أصغر. ${ learnMoreLink }."
       ],
@@ -5208,6 +5211,9 @@
       "Add emergency contact": [
         "إضافة جهة اتصال للطوارئ"
       ],
+      "Add option": [
+        "إضافة خيار"
+      ],
       "Add recovery contact": [
         "إضافة جهة اتصال الاسترداد"
       ],
@@ -5429,9 +5435,6 @@
       ],
       "Send recovery request": [
         "إرسال طلب الاسترداد"
-      ],
-      "Set account recovery": [
-        "تعيين استرداد الحساب"
       ],
       "Stop being recovery contact": [
         "توقف عن أن تكون جهة اتصال الاسترداد"
@@ -6399,6 +6402,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "اطلب من المسؤول تفعيل مراقب الحساب."
+      ],
+      "Enable account monitor to start loading event.": [
+        "تمكين مراقب الحساب لبدء تحميل الحدث."
       ],
       "Error: ${ errorMessage }": [
         "خطأ: ${ errorMessage }"
@@ -10602,6 +10608,9 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "لاستخدام ${ toAppName }، تحتاج إلى عنوان ${ MAIL_APP_NAME }."
       ],
+      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
+        "لاستخدام طريقة استعادة البيانات هذه، يجب أن يكون لديك خيار لإعادة تعيين كلمة المرور، مثل التحقق عبر البريد الإلكتروني أو التحقق عبر الرسائل النصية (SMS)."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "اشحن حسابك بأرصدة يمكنك استخدامها للاشتراك في خطة جديدة أو تجديد خطتك الحالية. حصل على رصيد واحد مقابل كل ${ i18nCurrency } يتم إنفاقه."
       ],
@@ -11275,6 +11284,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "عبارة الاسترداد الخاصة بك هي سلسلة من 12 كلمة تم إنشاؤها عشوائيًا بترتيب معين."
+      ],
+      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "ستتيح لك عبارة الاسترداد—الموجودة ضمن مجموعة الاسترداد الخاصة بك—تسجيل الدخول واستعادة بياناتك إذا تم قفل حساب ${ BRAND_NAME } الخاص بك. تتكوّن من 12 كلمة وتعمل ككلمة مرور احتياطية."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
         "تبدأ خطتك المجدولة في ${ renewalTime } وسيتم تجديدها تلقائيًا كل ${ cycle } من الأشهر.",
@@ -17180,6 +17192,11 @@
         "يؤدي التحقق من رقم هاتفك إلى زيادة أمان حسابك ويسمح بخيارات إضافية للاسترداد."
       ]
     },
+    "Recovery score": {
+      "Add more options to avoid getting locked out of your account.": [
+        "أضف المزيد من الخيارات لتجنّب قفل حسابك."
+      ]
+    },
     "RecoveryPhrase: Action": {
       "Continue": [
         "استمر"
@@ -21767,6 +21784,9 @@
       ],
       "No events": [
         "لا توجد أحداث"
+      ],
+      "No events yet": [
+        "لا توجد أحداث بعد"
       ],
       "No need to empty the trash": [
         "لا حاجة لتفريغ المهملات"

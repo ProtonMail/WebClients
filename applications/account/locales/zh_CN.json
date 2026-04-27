@@ -292,10 +292,10 @@
         "颜色"
       ],
       "Compare all plans": [
-        "比较所有计划"
+        "比较所有套餐"
       ],
       "Compare plans": [
-        "比较计划"
+        "比较套餐"
       ],
       "Configure SAML": [
         "配置 SAML"
@@ -621,6 +621,9 @@
       "Download the desktop app": [
         "下载桌面应用程序"
       ],
+      "Download updated file": [
+        "下载更新后的文件"
+      ],
       "Edit": [
         "更改"
       ],
@@ -715,10 +718,10 @@
         "探索 ${ target }"
       ],
       "Explore business plans": [
-        "探索商业计划"
+        "探索商业套餐"
       ],
       "Explore group plans": [
-        "探索团体计划"
+        "探索团体套餐"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "浏览其他 ${ BRAND_NAME } 账户等级"
@@ -761,6 +764,9 @@
       ],
       "Generate key": [
         "生成密钥"
+      ],
+      "Generate new phrase": [
+        "生成新短语"
       ],
       "Generate new recovery phrase": [
         "生成新的恢复密语"
@@ -892,7 +898,7 @@
         "隐藏更多优势"
       ],
       "Hide plan features": [
-        "隐藏计划功能"
+        "隐藏套餐功能"
       ],
       "I don't have my 2FA device": [
         "我没有 2FA 设备"
@@ -1178,6 +1184,9 @@
       ],
       "Reactivate keys": [
         "重新激活密钥"
+      ],
+      "Read the story": [
+        "阅读故事"
       ],
       "Reconnect": [
         "重新连接"
@@ -1584,6 +1593,9 @@
       "Switch or add account": [
         "切换或添加账户"
       ],
+      "Switch to free plan": [
+        "切换到免费套餐"
+      ],
       "Take a tour": [
         "开始导览"
       ],
@@ -1663,7 +1675,7 @@
         "升级账户查看全部"
       ],
       "Upgrade your plan": [
-        "升级您的计划"
+        "升级您的套餐"
       ],
       "Upload": [
         "已上传"
@@ -2008,6 +2020,17 @@
         "管理员"
       ]
     },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "管理所有用户、群组、存储、安全、计费、审计日志和系统配置。"
+      ],
+      "New: Control admin access for individual users": [
+        "新增：控制个人用户的管理员权限"
+      ],
+      "Security admin:": [
+        "安全管理员："
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "角色是一组权限，您可以将其分配给组织成员。"
@@ -2263,7 +2286,7 @@
         "获取优惠"
       ],
       "Save even more with a 12-month plan": [
-        "使用 12 个月计划可节省更多费用"
+        "选择 12 个月套餐，节省更多"
       ]
     },
     "bf2023: Deal details": {
@@ -3027,6 +3050,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "取消"
+      ],
       "Close": [
         "关闭"
       ],
@@ -3651,6 +3677,17 @@
     "Condition label": {
       "If": [
         "如果"
+      ]
+    },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "当使用量恢复至限制范围内后，访问权限将自动恢复。"
+      ],
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Upload any new files": [
+        "上传任意文件"
       ]
     },
     "Confirm modal title": {
@@ -4825,6 +4862,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } 是您的默认邮箱应用"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } 保护您的业务数据安全，并允许您向任何人发送加密邮件。"
+      ],
       "A checked box means the feature is disabled.": [
         "选中复选框表示禁用该功能。"
       ],
@@ -4921,11 +4961,20 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
       ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "当隐私和言论自由受到威胁时，我们如何支持本地活动人士。"
+      ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "当您忘记密码时，解锁加密数据的方式。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "将您生活中不同的部分分开，并使用其他地址整理您的收件箱。"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "使用我们的网页端、iOS、Android、Windows、Mac 和 Linux 应用程序，让您的团队随时随地保持安全。"
       ],
       "Learn more about common problems": [
         "了解关于常见问题的更多信息"
@@ -6259,6 +6308,9 @@
       "Let ${ user } know it’s really you trying to regain access.": [
         "让 ${ user } 知道确实是您正在尝试恢复访问权限"
       ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "已达到 ${ limit } 位联系人的上限。如需更改，请移除一位联系人后再添加新联系人。"
+      ],
       "None": [
         "无"
       ],
@@ -6357,9 +6409,6 @@
       ],
       "Send recovery request": [
         "发送恢复请求"
-      ],
-      "Set account recovery": [
-        "设置账户恢复"
       ],
       "Stop being recovery contact": [
         "停止作为恢复联系人"
@@ -7351,6 +7400,9 @@
       "Ask your administrator to enable Account monitor.": [
         "请联系您的管理员以启用账户监视器。"
       ],
+      "Enable account monitor to start loading event.": [
+        "启用账户监控以开始加载事件。"
+      ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
       ],
@@ -7608,7 +7660,7 @@
         "带有自定义域的账户无法加入家庭套餐。"
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
-        "离开后，您将被移动到一个 ${ BRAND_NAME } 免费计划。"
+        "离开后，您将被移动到一个 ${ BRAND_NAME } 免费套餐。"
       ],
       "customer support": [
         "客户支持"
@@ -7626,16 +7678,16 @@
         "邀请人：${ inviteEmail }"
       ],
       "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
-        "离开 ${ PASS_SHORT_APP_NAME } 家庭计划"
+        "退出 ${ PASS_SHORT_APP_NAME } 家庭套餐"
       ],
       "Leave Duo plan": [
-        "离开 Duo 计划"
+        "离开 Duo 套餐"
       ],
       "Leave Family plan": [
-        "离开家庭计划"
+        "退出家庭套餐"
       ],
       "Leave Visionary plan": [
-        "离开 Visionary 计划"
+        "退出 Visionary 套餐"
       ],
       "Lifetime accounts cannot join a family plan.": [
         "终身账户无法加入家庭套餐。"
@@ -7710,7 +7762,7 @@
         "您将无法访问包含在 ${ plan } 的所有高级功能。"
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
-        "**${ invite.InviterEmail }** 邀请您将您的账户关联至此群组计划"
+        "您收到来自 **${ invite.InviterEmail }** 的邀请，将您的账户关联到此团体套餐。"
       ],
       "You're invited to join ${ invite.OrganizationName }": [
         "您受邀加入 ${ invite.OrganizationName }"
@@ -7730,10 +7782,10 @@
         "*每个用户只能免费试用一次，之后适用常规定价。"
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
-        "离开您的计划后，该用户将被移动到一个 ${ BRAND_NAME } 免费计划。"
+        "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } 免费套餐。"
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "离开您的计划后，此用户将被移动到一个无限制的 ${ BRAND_NAME } 计划，并且免费试用30天。*"
+        "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } Unlimited 套餐，并享有 30 天免费试用。*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "为管理员账户分配存储空间，您可以稍后为其他用户分配存储。"
@@ -7760,7 +7812,7 @@
         "您可以增加或减少该用户的存储空间。"
       ],
       "You left this plan": [
-        "您已离开该计划"
+        "您已退出此套餐"
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -7853,6 +7905,15 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 台设备可同时接入 VPN"
       ],
+      "3 email domains": [
+        "3 个邮箱域名"
+      ],
+      "500 GB storage": [
+        "500 GB 存储空间"
+      ],
+      "500 MB storage": [
+        "500 MB 存储空间"
+      ],
       "Access to all countries": [
         "解锁全部线路"
       ],
@@ -7879,6 +7940,9 @@
       ],
       "Remove": [
         "注销"
+      ],
+      "Schedule and snooze emails": [
+        "安排和稍后提醒邮件"
       ],
       "Secure Core servers": [
         "Secure Core 服务器"
@@ -8595,7 +8659,7 @@
     },
     "Headline": {
       "Compare plans": [
-        "比较计划"
+        "比较套餐"
       ],
       "Contact us": [
         "联系我们"
@@ -8616,7 +8680,7 @@
         "您目前支付"
       ],
       "Your plan": [
-        "您的计划"
+        "您的套餐"
       ]
     },
     "Hint": {
@@ -9156,10 +9220,10 @@
         "${ planName } 今天到期。"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "适用于组织的 ${ PROTON_SENTINEL_NAME } 是一项高级账户保护计划，由复杂的 AI 系统和全天候工作的专家提供支持，旨在保护您的组织免受恶意行为者和安全威胁的侵害。"
+        "${ PROTON_SENTINEL_NAME }（组织版）是一项高级账户保护计划，由先进的 AI 系统和全天候工作的专家团队提供支持，旨在保护您的组织免受恶意行为者和安全威胁。"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } 是一项高等级账户保护计划，由精密的人工智能系统和资深专家组成，为您全方位抵御恶意攻击和安全威胁。"
+        "${ PROTON_SENTINEL_NAME } 是一项由先进 AI 系统和安全专家全天候运作的高级账户保护计划，旨在保护您免受恶意行为者和安全威胁的侵害。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
@@ -9302,8 +9366,14 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**此操作将禁用端到端加密的邮件转发：** 您之后可以重新设置。"
       ],
+      "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
+        "**仅凭恢复邮箱无法在您重置密码后恢复加密数据**"
+      ],
       "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
         "**您的恢复方法将失效：**您可以稍后生成新的恢复数据"
+      ],
+      "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
+        "**仅凭恢复手机无法在您重置密码后恢复加密数据**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -9376,6 +9446,9 @@
       ],
       "add a recovery method": [
         "添加恢复方法"
+      ],
+      "Add an email address in case we need to contact you": [
+        "请添加一个邮箱地址，以便我们必要时与您联系"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
@@ -9469,6 +9542,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "允许用户从 ${ VPN_APP_NAME } 应用程序的**国家**部分连接到安全的共享服务器。"
+      ],
+      "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "允许通过二维码登录后，当您忘记密码时，可以通过扫描二维码登录。您只需在另一台设备上登录 ${ BRAND_NAME } 服务即可。"
       ],
       "Already allocated": [
         "已分配"
@@ -9944,6 +10020,9 @@
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "禁用验证器 2FA 会降低您账户的安全性，请仅在绝对必要时继续操作。"
       ],
+      "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
+        "在此设备上禁用数据备份后，您将无法在重置密码后自动解锁加密数据。"
+      ],
       "Discount": [
         "优惠"
       ],
@@ -10332,7 +10411,7 @@
         "获取账户访问可见性"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "请为令牌起一个描述性的名称，例如您计划使用该令牌的服务名称，并选择您的一个活跃自定义域名地址。只有此地址才能使用此令牌发送电子邮件。"
+        "为令牌指定一个描述性名称（例如您计划使用该令牌的服务），然后选择您的一个有效自定义域名地址。只有该地址才能使用此令牌发送邮件。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "将您的公钥分享给朋友，或在线发布，以便每个人都能向您发送端到端加密邮件！"
@@ -10387,6 +10466,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
+        "如果禁用，${ BRAND_NAME } 仍将使用您的恢复手机发送安全通知。"
       ],
       "If disabled, only administrators will be able to export data.": [
         "如果禁用，则仅管理员能够导出数据。"
@@ -10936,6 +11018,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才需要更改下列选项。"
+      ],
+      "Only sign in on devices you trust": [
+        "仅在您信任的设备上登录"
       ],
       "Only you can see the label": [
         "仅您自己可见此标签"
@@ -11801,6 +11886,9 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+        "为确保您的账户达到最高安全级别，请禁用 **通过恢复手机恢复**。"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "为了确保您不会丢失重要数据，${ DRIVE_APP_NAME } 会在您和您的协作者进行更改时保存文件的旧版本。选择 ${ BRAND_NAME } 应保留先前版本的时间。"
       ],
@@ -12168,7 +12256,7 @@
         "取消后，您的订阅将不会续订，但您仍可享受套餐优惠，直至订阅期结束。之后，您将降级到 ${ BRAND_NAME } 的免费套餐。"
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "取消后，您的订阅不会开始，但在试用期结束前您仍可享受当前计划的权益。之后，您的服务将降级为 ${ BRAND_NAME } 免费套餐。"
+        "取消后，您的订阅将不会开始，但在试用期结束前您仍可享受套餐权益。之后，您将降级至 ${ BRAND_NAME } 免费套餐。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "点击链接后向您确认要打开的网址，谨防欺诈网站。"
@@ -12258,7 +12346,7 @@
         "您已登录账户 ${ memberAddress }。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
+        "您当前使用的存储空间已超出 ${ downgradedPlanName } 套餐所包含的容量。请删除数据以便降级。"
       ],
       "You can add your own custom domain to ${ MAIL_APP_NAME }": [
         "您可以将您自己的自定义域添加到 ${ MAIL_APP_NAME }"
@@ -12553,6 +12641,9 @@
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "您最近的更改已发布，用户将在几小时后看到这些更新。"
+      ],
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "您的恢复文件将在重置密码后，恢复您对账户中邮件、联系人、文件、密码及其他所有加密数据的访问权限。"
       ],
       "Your recovery phrase": [
         "您的恢复密语"
@@ -13455,6 +13546,9 @@
       "Bookings, billings, and orders": [
         "预订、账单和订单"
       ],
+      "Brand your workspace": [
+        "自定义您的工作区"
+      ],
       "Browser": [
         "浏览器"
       ],
@@ -13623,8 +13717,14 @@
       "Current email": [
         "当前邮箱"
       ],
+      "Custom email domain": [
+        "个自定义邮箱域名"
+      ],
       "Daily email notifications": [
         "每日邮件提醒"
+      ],
+      "Data harvesting": [
+        "数据收集"
       ],
       "Date": [
         "日期"
@@ -13751,6 +13851,9 @@
       ],
       "End weekday": [
         "结束日期"
+      ],
+      "End-to-end encryption": [
+        "端到端加密"
       ],
       "Enter code": [
         "输入代码"
@@ -13991,6 +14094,9 @@
       ],
       "Main reason for cancelling": [
         "取消的主要原因"
+      ],
+      "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
+        "请确保您拥有可用的恢复邮箱或恢复手机，并具备数据恢复选项。"
       ],
       "Manage categories": [
         "管理分类"
@@ -14237,6 +14343,9 @@
       ],
       "Proration": [
         "当前等级结余"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隐私法保护"
       ],
       "Protection mode": [
         "保护模式"
@@ -14631,8 +14740,14 @@
       "Your plan": [
         "您的套餐"
       ],
+      "Your recovery email": [
+        "您的密保邮箱"
+      ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
         "您预留的 ${ BRAND_NAME } 邮箱地址的兑换凭证："
+      ],
+      "Zero-access architecture": [
+        "零访问架构"
       ],
       "ZIP code": [
         "邮政编码"
@@ -15273,7 +15388,7 @@
         "总计 ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
-        "限时优惠： 年度计划**折扣高达 35%**"
+        "限时优惠：年度套餐可享 **高达 35% 折扣**"
       ],
       "Set up your account with your Porkbun domain.": [
         "使用您的 Porkbun 域名来设置账户。"
@@ -15911,13 +16026,13 @@
         "开通 ${ planName }"
       ],
       "Keep ${ plan }": [
-        "保持计划 ${ plan }"
+        "保留 ${ plan }"
       ],
       "Keep account": [
         "保留账户"
       ],
       "Switch plan": [
-        "切换计划"
+        "切换套餐"
       ]
     },
     "new_plans: Action": {
@@ -16607,7 +16722,7 @@
         "确认订单并支付"
       ],
       "Switch plans?": [
-        "切换计划？"
+        "切换套餐？"
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
@@ -16701,7 +16816,7 @@
         "增加或重新分配用户的存储空间"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "使用加密日历为您和家人保密您们的计划"
+        "通过加密日历，让您的计划仅对您和您的家人可见"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "当您与我们的VPN服务器意外断开连接时，我们将通过阻止所有网络连接来保护您。"
@@ -16844,7 +16959,7 @@
         "开通 ${ plus }、${ bundle } 或 ${ BRAND_NAME } 企业版即可使用此功能。"
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "包含多用户 ${ BRAND_NAME } 商业计划。"
+        "包含多用户 ${ BRAND_NAME } 商业套餐"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -17763,6 +17878,11 @@
         "PKGBUILD（适用于其他发行版）"
       ]
     },
+    "Paragraph": {
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 由独立资金支持，且运营不含广告。以下是这种独立性在实际中的运用示例。"
+      ]
+    },
     "Participant name": {
       "You": [
         "你"
@@ -17815,7 +17935,7 @@
         "创建另一个账户"
       ],
       "Keep this plan": [
-        "保持此计划"
+        "保留此套餐"
       ],
       "Open ${ PASS_APP_NAME } vaults": [
         "打开 ${ PASS_APP_NAME } 保险库"
@@ -18104,7 +18224,7 @@
     },
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
-        "${ upsellPlanTitle } 计划"
+        "${ upsellPlanTitle } 套餐"
       ],
       "Create a ${ appName } account": [
         "创建 ${ appName } 账户"
@@ -18881,7 +19001,7 @@
         "${ cycle } 个月"
       ],
       "${ months } month plan": [
-        "${ months } 个月计划"
+        "${ months } 个月套餐"
       ],
       "Enjoying ${ planName }?": [
         "喜欢 ${ planName } 吗？"
@@ -19076,6 +19196,9 @@
       "Verify now": [
         "立即验证"
       ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "立即验证此密保邮箱地址：${ emailData.value }"
+      ],
       "Verify recovery email?": [
         "验证密保邮箱？"
       ],
@@ -19121,6 +19244,37 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
+      ]
+    },
+    "Recovery score": {
+      "Good start. Add more options for a stronger protection.": [
+        "不错的开始。添加更多选项以获得更强的保护。"
+      ],
+      "Great. Add more options for a stronger protection.": [
+        "很好。添加更多选项以获得更强的保护。"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "得分：${ score } / ${ maxScore }"
+      ]
+    },
+    "Recovery score item": {
+      "Add recovery phone": [
+        "添加恢复手机"
+      ],
+      "Allow data recovery on this device": [
+        "允许在此设备上恢复数据"
+      ],
+      "Allow password reset from settings": [
+        "允许通过设置重置密码"
+      ],
+      "Password verified": [
+        "密码已验证"
+      ],
+      "Recovery phrase saved": [
+        "恢复短语已保存"
+      ],
+      "Save recovery phrase": [
+        "保存恢复短语"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20031,6 +20185,11 @@
       ],
       "No results found": [
         "未找到结果"
+      ]
+    },
+    "Sentinel banner": {
+      "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
+        "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
       ]
     },
     "Server-Info": {
@@ -21483,6 +21642,20 @@
         "正在取消您的订阅，请稍候。"
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } 人"
+      ],
+      "Last changed ${ formattedDate }": [
+        "上次更改于 ${ formattedDate }"
+      ],
+      "No contact": [
+        "暂无联系人"
+      ],
+      "Off": [
+        "关闭"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "操作"
@@ -21507,7 +21680,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "保持计划 ${ currentPlanName }"
+        "保留 ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -21745,10 +21918,10 @@
         "订阅"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "您的计划是使用 Android 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Google Play 商店。"
+        "您的套餐是通过 Android 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Google Play 商店操作。"
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "您的计划是使用 iOS 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Apple App Store。"
+        "您的套餐是通过 iOS 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Apple App Store 操作。"
       ]
     },
     "subscription downgrading info": {
@@ -21767,6 +21940,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "包含高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME } 和 ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
@@ -21927,7 +22106,7 @@
         "已邀请的成员将从您的组织中移除"
       ],
       "Keep ${ config.planName }": [
-        "保持计划 ${ config.planName }"
+        "保留 ${ config.planName }"
       ],
       "Keep subscription": [
         "继续订阅"
@@ -22019,6 +22198,9 @@
       "Version history": [
         "版本历史"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "高清视频会议，最多支持 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 人参与"
+      ],
       "Watch the interview": [
         "观看访谈"
       ],
@@ -22038,7 +22220,7 @@
         "年度免费存储奖励"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
-        "您可以继续享受当前计划的所有福利，直至 ${ boldedDate }。"
+        "在 ${ boldedDate } 之前，您可以继续享受当前套餐的所有权益。"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "您的 ${ planName } 订阅还有 ${ expiryDate }。我们会将剩余时间的点数加入您的 ${ BRAND_NAME } 账户。取消前请确保没有超过免费计划的限额。${ learnMoreLink }"
@@ -22114,7 +22296,7 @@
         "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
+        "我们的系统将不再使用此支付方式自动扣费，但您的订阅仍会在当前结算周期结束时续订。如果您想降级或更改订阅，仍需在结算周期结束前自行操作。我们无法为您自动降级，因为如果您超出免费套餐的存储配额或正在使用其他付费功能，我们无法自动删除您的文件、邮件或其他数据。如果您关闭自动支付，请记得在到期日前支付下一期的订阅账单，以免账户被暂停使用。"
       ]
     },
     "Subscription saving": {
@@ -22134,11 +22316,20 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } 为您的文件和照片提供 200 GB 存储空间。您还可获得年度存储奖励。"
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } 帮助确保您的每位家庭成员及其数据在上网时都受到保护。"
+      ],
       "Free forever": [
         "永久免费"
       ],
       "per month, billed annually": [
         "每月，按年计费"
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "了解 ${ MAIL_APP_NAME } 的对比优势，以及我们的独立性为何能带来不同。"
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
@@ -22580,6 +22771,11 @@
         "未找到 SMTP 令牌"
       ]
     },
+    "Temporary need": {
+      "Keep current plan": [
+        "保留当前套餐"
+      ]
+    },
     "Theme": {
       "Auto": [
         "自动"
@@ -22762,6 +22958,9 @@
       "Add a custom logo": [
         "自定义徽标"
       ],
+      "Add a recovery contact": [
+        "添加恢复联系人"
+      ],
       "Add address": [
         "添加地址"
       ],
@@ -22835,7 +23034,7 @@
         "已有多个账户？"
       ],
       "Also in your plan": [
-        "也在您的计划中"
+        "也在您的套餐中"
       ],
       "Amount": [
         "数额"
@@ -22988,7 +23187,7 @@
         "协作处理文件"
       ],
       "Compare plans": [
-        "比较计划"
+        "比较套餐"
       ],
       "Composing": [
         "邮件编辑"
@@ -23129,7 +23328,7 @@
         "自定义日历导入"
       ],
       "Customize the number of IP addresses in your plan": [
-        "自定义计划中的 IP 地址数量"
+        "自定义套餐中的 IP 地址数量"
       ],
       "Customize your mail import": [
         "自定义您的邮件导入"
@@ -23378,7 +23577,7 @@
         "输入 SAML 元数据"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
+        "请输入您的 ${ BRAND_NAME } 账户详细信息以加入 ${ app } Beta 计划"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -23653,8 +23852,14 @@
       "Link confirmation": [
         "确认打开链接"
       ],
+      "Lower your cost without losing features": [
+        "在不牺牲功能的前提下降低成本"
+      ],
       "Main password": [
         "主密码"
+      ],
+      "Make your business stand out": [
+        "让您的企业脱颖而出"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "在 Windows、Mac、Android 和 iOS 设备间管理文件。"
@@ -23770,6 +23975,9 @@
       "Password generator rules": [
         "密码生成规则"
       ],
+      "Password reset options": [
+        "密码重置选项"
+      ],
       "Password reset settings": [
         "密码重置选项"
       ],
@@ -23841,6 +24049,9 @@
       ],
       "QR Code": [
         "二维码"
+      ],
+      "QR code sign-in": [
+        "二维码登录"
       ],
       "Ready, set, forward": [
         "准备就绪，开始转发"
@@ -24058,8 +24269,11 @@
       "Sign in on TV": [
         "在电视上登录"
       ],
+      "Sign in on TV?": [
+        "在电视上登录？"
+      ],
       "Sign in to join the Beta program": [
-        "登录以加入测试版计划"
+        "登录以加入 Beta 计划"
       ],
       "Sign out": [
         "登出"
@@ -24087,6 +24301,9 @@
       ],
       "Snooze:": [
         "延迟通知："
+      ],
+      "Some of your encrypted data is locked": [
+        "您的部分加密数据已被锁定"
       ],
       "Sort folders alphabetically": [
         "按名称排列文件夹"
@@ -24135,6 +24352,9 @@
       ],
       "Support ticket closed": [
         "支持工单已关闭"
+      ],
+      "Support your compliance objectives": [
+        "支持您的合规目标"
       ],
       "Switch account": [
         "切换账户"
@@ -24358,6 +24578,9 @@
       "Your plan": [
         "您的账户等级"
       ],
+      "Your recovery file": [
+        "您的恢复文件"
+      ],
       "Your referrals": [
         "您的推荐"
       ],
@@ -24488,7 +24711,10 @@
         "已添加到您的套餐：${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
-        "管理员可以管理用户账户，并授予其他用户管理员权限。只有主要管理员可以编辑组织的计划。"
+        "管理员可以管理用户账户并将管理员权限授予其他用户。只有主管理员可以编辑组织的套餐。"
+      ],
+      "Allow resetting your password from the account settings": [
+        "允许从账户设置中重置密码"
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "允许您将 Zoom 视频会议链接无缝添加到日历邀请中"
@@ -24594,6 +24820,9 @@
       ],
       "Remove metadata from images to protect your privacy.": [
         "删除图像中的元数据，保护您的隐私。"
+      ],
+      "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
+        "保存 12 个单词的短语，以便在忘记密码时立即解锁您的账户和加密数据"
       ],
       "See number of unread messages in the tab icon": [
         "在标签页图标中即可看到未读邮件的数量"
@@ -25328,7 +25557,7 @@
         "您的 ${ a } 和 ${ b } 套装"
       ],
       "Your ${ selected } plan": [
-        "您的 ${ selected } 计划"
+        "您的 ${ selected } 套餐"
       ]
     },
     "vpn_2step: tooltip": {

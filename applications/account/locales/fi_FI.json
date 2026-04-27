@@ -2620,6 +2620,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "Peruuta"
+      ],
       "Close": [
         "Sulje"
       ],
@@ -2658,6 +2661,9 @@
       ],
       "Set up other features": [
         "Määritä muut ominaisuudet"
+      ],
+      "Sign in": [
+        "Kirjaudu sisään"
       ],
       "Take a tour": [
         "Katso esittely"
@@ -9678,6 +9684,9 @@
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
+      "Only sign in on devices you trust": [
+        "Kirjaudu sisään vain laitteilla, joihin luotat"
+      ],
       "Open source": [
         "Avoin lähdekoodi"
       ],
@@ -10374,6 +10383,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Tämä vahvistus voi kestää jopa tunnin. Älä poista TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sitä tarvitaan vahvistamaan, että omistat verkkotunnuksen myös jatkossa."
+      ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "Tämän avulla televisio pääsee käyttämään ${ BRAND_NAME } -tiliäsi."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Tämä estää pääsyn käyttäjältä **${ email }**. Haluatko varmasti jatkaa?"
@@ -17264,6 +17276,14 @@
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
       ]
     },
+    "Recovery score": {
+      "Inactive recovery options": [
+        "Käyttämättömät palautusvaihtoehdot"
+      ],
+      "Require password reset option (email or SMS verification)": [
+        "Vaadi salasanan nollausvaihtoehto (vahvistus sähköpostitse tai tekstiviestillä)"
+      ]
+    },
     "RecoveryPhrase: Action": {
       "Continue": [
         "Jatka"
@@ -21773,6 +21793,9 @@
       ],
       "Sign in on TV": [
         "Kirjaudu sisään TV:ssä"
+      ],
+      "Sign in on TV?": [
+        "Kirjaudu sisään TV:ssä?"
       ],
       "Sign in to join the Beta program": [
         "Liity beetaohjelmaan kirjautumalla"
