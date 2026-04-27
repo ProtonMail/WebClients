@@ -1496,7 +1496,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -6995,6 +6996,9 @@
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
+      "Copy to clipboard": [
+        "Kopiëren naar klembord"
+      ],
       "Copy your referral link": [
         "Kopieer uw doorverwijslink"
       ],
@@ -7457,8 +7461,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -10972,6 +10975,9 @@
       "Data retention policies": [
         "Dataretentiebeleid"
       ],
+      "Dedicated servers optimized for speed": [
+        "Gereserveerde servers geoptimaliseerd voor snelheid"
+      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -13988,6 +13994,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe Schrijfassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, en ${ LUMO_APP_NAME } met premium functies"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
       ],
@@ -14218,6 +14230,10 @@
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemer",
+        "Videovergaderingen, tot ${ PAID_PREMIUM_MAX_PARTICIPANTS } deelnemers"
       ],
       "Watch the interview": [
         "Bekijk het interview"

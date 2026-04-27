@@ -1333,6 +1333,9 @@
       "Data never used for AI training": [
         "Podatki se ne bodo nikoli uporabljali za urjenje UI"
       ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
+      ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
       ]
@@ -2701,6 +2704,9 @@
       ],
       "Account does not exist": [
         "Račun ne obstaja"
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ],
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
@@ -4085,6 +4091,12 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživljenjska ponudba nima cene za podaljšanje, gre za enkratno plačilo za doživljenjski dostop do ${ PASS_SHORT_APP_NAME }. Cena in datum podaljšanja vaše naročnine ${ planTitle } ostaneta nespremenjena."
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } najdena mapa",
         "${ providerFoldersNumLocalized } najdeni mapi",
@@ -4986,7 +4998,7 @@
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Vnešeni URL je skrajšan in nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka klikni z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
+        "Vneseni URL je bil nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka kliknite z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
       ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
@@ -5454,6 +5466,9 @@
       ],
       "Add to group": [
         "Dodaj v skupino"
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
       ],
       "Anyone on the Internet with the link can edit": [
         "Vsakdo na spletu s povezavo lahko ureja"
@@ -7918,6 +7933,9 @@
       "Email": [
         "E-pošta"
       ],
+      "Enter a name": [
+        "Vnesi ime"
+      ],
       "Enter a new folder name": [
         "Vpišite ime nove mape"
       ],
@@ -8051,6 +8069,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Uradno sporočilo ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recent documents table header": {
@@ -8422,7 +8460,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Ustvarjanje nove preglednice..."
+        "Ustvarjanje nove preglednice ..."
       ],
       "Detect automatically": [
         "Samodejno zaznaj"
@@ -8443,7 +8481,7 @@
         "Izberite datoteko za uvoz"
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
-        "Vaša trenutna preglednica, vključno z vsemi seznami v njej, bo zamenjana s to različico."
+        "Vaša trenutna preglednica, vključno z vsemi listi v njej, bo zamenjana s to različico."
       ]
     },
     "sheets_2025:Label": {
@@ -8451,7 +8489,7 @@
         "Pretvori besedilo v številke, datume in obrazce"
       ],
       "Destination": [
-        "Destinacija"
+        "Cilj"
       ],
       "Format": [
         "Oblika"

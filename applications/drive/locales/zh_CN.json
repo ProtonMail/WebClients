@@ -87,6 +87,9 @@
       "Add photos": [
         "添加照片"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "添加到“${ name }”（${ photoCount } 张照片）"
+      ],
       "Add to album": [
         "添加到相册"
       ],
@@ -293,9 +296,6 @@
       ],
       "Create folder": [
         "新建文件夹"
-      ],
-      "Create free account": [
-        "创建免费账户"
       ],
       "Create new folder": [
         "创建文件夹"
@@ -513,9 +513,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "获取 ${ simplePriceString } 的安全存储"
       ],
-      "Get Started": [
-        "立即体验"
-      ],
       "Get the apps": [
         "获取应用"
       ],
@@ -566,9 +563,6 @@
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
-      ],
-      "Hide download options": [
-        "隐藏下载选项"
       ],
       "Hide more benefits": [
         "隐藏更多优势"
@@ -1038,9 +1032,6 @@
       "Show more benefits": [
         "显示更多优势"
       ],
-      "Show more download options": [
-        "显示更多下载选项"
-      ],
       "Show navigation bar": [
         "显示导航栏"
       ],
@@ -1154,9 +1145,6 @@
       ],
       "Upgrade now": [
         "立即升级账户"
-      ],
-      "Upload": [
-        "已上传"
       ],
       "Upload and share files": [
         "上传并分享文件"
@@ -4844,6 +4832,9 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } 已成功删除"
       ],
+      "${ albums } album": [
+        "${ albums } 个相册"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
@@ -4916,6 +4907,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
       ],
+      "${ files } file": [
+        "${ files } 个文件"
+      ],
+      "${ folders } folder": [
+        "${ folders } 个文件夹"
+      ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
@@ -4945,6 +4942,9 @@
       ],
       "${ photoCount } item": [
         "${ photoCount } 项"
+      ],
+      "${ photos } photo": [
+        "${ photos } 张照片"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
@@ -5171,9 +5171,6 @@
       "Aug": [
         "八月"
       ],
-      "Available": [
-        "可用"
-      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -5225,14 +5222,8 @@
       "Canceled": [
         "已取消"
       ],
-      "Cannot load link": [
-        "链接加载失败"
-      ],
       "Cannot load links": [
         "链接加载失败"
-      ],
-      "Cannot load shared link": [
-        "分享链接加载失败"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -5462,9 +5453,6 @@
       "Enabling drive search": [
         "正在启用网盘搜索"
       ],
-      "Encrypted": [
-        "已加密"
-      ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
       ],
@@ -5666,6 +5654,18 @@
       "Index is empty.": [
         "索引为空！"
       ],
+      "Indexed ${ first }": [
+        "已索引 ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "已索引 ${ first } 和 ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "已索引 ${ first }、${ second } 和 ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "已索引 ${ first }、${ second }、${ third } 和 ${ fourth }"
+      ],
       "Indexing in progress": [
         "正在索引"
       ],
@@ -5782,9 +5782,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
-      ],
-      "Loading link": [
-        "链接加载中"
       ],
       "Loading links": [
         "链接加载中"
@@ -5989,9 +5986,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "照片已保存至 Proton Drive"
-      ],
-      "Photos": [
-        "照片"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功恢复。"
@@ -6220,9 +6214,6 @@
       ],
       "Shared by ": [
         "分享者 "
-      ],
-      "Shared by ${ sharedBy }": [
-        "由 ${ sharedBy } 共享"
       ],
       "Shared link not found": [
         "找不到共享链接"
@@ -6464,9 +6455,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "为帮助保护您，${ DRIVE_APP_NAME } 能够以保护隐私的方式扫描您的文件并阻止恶意文件。然而，最好仍仅从受信任的来源下载文件。"
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "为了保护您的隐私，${ DRIVE_APP_NAME } 可以以保护隐私的方式扫描您的文件并阻止恶意文件。不过，最好还是只从可信来源下载文件。 "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
@@ -6514,9 +6502,6 @@
       ],
       "Trash is empty": [
         "回收站为空"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "试用 ${ DRIVE_APP_NAME }：永久免费"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
@@ -6686,9 +6671,6 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "将恢复到 ${ formattedRevisionDate } 开始的版本。所有其他版本仍将被保存。"
       ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "使用 ${ DRIVE_APP_NAME } 您的数据将受到端到端加密的保护。"
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
@@ -6732,7 +6714,7 @@
         "您当前登录身份为 ${ username }"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
+        "您当前使用的存储空间已超出 ${ downgradedPlanName } 套餐所包含的容量。请删除数据以便降级。"
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
@@ -8294,13 +8276,13 @@
         "开通 ${ planName }"
       ],
       "Keep ${ plan }": [
-        "保持计划 ${ plan }"
+        "保留 ${ plan }"
       ],
       "Keep account": [
         "保留账户"
       ],
       "Switch plan": [
-        "切换计划"
+        "切换套餐"
       ]
     },
     "new_plans: Action": {
@@ -8895,7 +8877,7 @@
         "确认订单并支付"
       ],
       "Switch plans?": [
-        "切换计划？"
+        "切换套餐？"
       ]
     },
     "new_plans: tooltip": {
@@ -8978,7 +8960,7 @@
         "增加或重新分配用户的存储空间"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "使用加密日历为您和家人保密您们的计划"
+        "通过加密日历，让您的计划仅对您和您的家人可见"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "当您与我们的VPN服务器意外断开连接时，我们将通过阻止所有网络连接来保护您。"
@@ -9431,14 +9413,8 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "对不起，我们无法删除这些文件夹，因为它们不是空的。"
-      ],
       "Stopping the sharing of this item has failed": [
         "停止共享此项目失败"
-      ],
-      "The document failed to be created": [
-        "文档创建失败"
       ],
       "The item was not added to your drive": [
         "项目未添加到您的驱动器"
@@ -9448,9 +9424,6 @@
       ],
       "The link to your item was deleted": [
         "共享链接已删除"
-      ],
-      "The spreadsheet failed to be created": [
-        "电子表格创建失败"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "此安全链接已过期，请在共享设置中更改过期日期"
@@ -9474,6 +9447,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "由于当前选中的文件名重复，某些图像未上传。"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "相册重命名成功"
       ]
     },
     "Oauth instructions": {
@@ -9890,7 +9868,7 @@
     },
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
-        "${ upsellPlanTitle } 计划"
+        "${ upsellPlanTitle } 套餐"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11138,7 +11116,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "保持计划 ${ currentPlanName }"
+        "保留 ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -11269,10 +11247,10 @@
         "订阅"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "您的计划是使用 Android 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Google Play 商店。"
+        "您的套餐是通过 Android 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Google Play 商店操作。"
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "您的计划是使用 iOS 应用程序购买的。因此，要更改计划或更新付款详情，您需要访问 Apple App Store。"
+        "您的套餐是通过 iOS 应用购买的。因此，如需更改套餐或更新付款信息，您需要前往 Apple App Store 操作。"
       ]
     },
     "subscription downgrading info": {
@@ -11291,6 +11269,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "包含高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ MEET_SHORT_APP_NAME } 和 ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
@@ -11516,6 +11500,9 @@
       "Version history": [
         "版本历史"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "高清视频会议，最多支持 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 人参与"
+      ],
       "Watch the interview": [
         "观看访谈"
       ],
@@ -11608,7 +11595,7 @@
         "我们的系统将不再使用此付款方式自动扣款，但您的订阅仍会在计费周期结束时自动续订。如果您希望降级或更改订阅，您仍需在当前计费周期结束前手动操作。此外，如果您忘记手动付款且所有付款方式的自动支付均已禁用，我们可能会自动将您的账户降级，这将导致多项功能失效。"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "我们的系统将不再使用这种付款方式自动向您收取费用，但您的订阅仍将在账单周期结束时续订。如果您想降级或更改订阅，仍需在账单周期结束前自行完成。我们无法自动为您降级，因为如果您超过了免费计划的存储配额或使用了其他付费功能，我们就无法为您自动删除文件、电子邮件或其他数据。如果您禁用了自动付款功能，请记得在到期日之前支付下一张订购发票，以免账户被停用。"
+        "我们的系统将不再使用此支付方式自动扣费，但您的订阅仍会在当前结算周期结束时续订。如果您想降级或更改订阅，仍需在结算周期结束前自行操作。我们无法为您自动降级，因为如果您超出免费套餐的存储配额或正在使用其他付费功能，我们无法自动删除您的文件、邮件或其他数据。如果您关闭自动支付，请记得在到期日前支付下一期的订阅账单，以免账户被暂停使用。"
       ]
     },
     "Subscription saving": {
@@ -11895,9 +11882,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "下载数"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
@@ -12023,9 +12007,6 @@
       ],
       "Cannot add more addresses": [
         "无法添加更多地址"
-      ],
-      "Cannot load link": [
-        "无法加载链接"
       ],
       "Card verification": [
         "银行卡验证"
@@ -12393,9 +12374,6 @@
       "Item details": [
         "详细信息"
       ],
-      "Last edited by": [
-        "最后编辑者"
-      ],
       "Last uploaded by": [
         "最后上传者"
       ],
@@ -12434,9 +12412,6 @@
       ],
       "Message": [
         "消息"
-      ],
-      "MIME type": [
-        "MIME 类型"
       ],
       "Minicalendar": [
         "迷你日历"
@@ -12584,9 +12559,6 @@
       ],
       "Public link settings": [
         "公开链接设置"
-      ],
-      "Public shared link status": [
-        "将共享链接状态公开"
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
@@ -12753,12 +12725,6 @@
       "Summary": [
         "概览"
       ],
-      "The link either does not exist or has expired": [
-        "该链接不存在或已失效"
-      ],
-      "The link expired": [
-        "该链接已过期"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
       ],
@@ -12828,9 +12794,6 @@
       "Uploaded": [
         "上传时间"
       ],
-      "Uploaded by": [
-        "上传者"
-      ],
       "Uploading a large file or folder": [
         "上传大文件或文件夹"
       ],
@@ -12845,9 +12808,6 @@
       ],
       "Verifying your payment...": [
         "正在确认支付..."
-      ],
-      "Version details": [
-        "版本详细信息"
       ],
       "Version history": [
         "版本历史"

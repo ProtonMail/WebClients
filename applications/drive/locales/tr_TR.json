@@ -300,9 +300,6 @@
       "Create folder": [
         "Klasör oluştur"
       ],
-      "Create free account": [
-        "Ücretsiz bir hesap açın"
-      ],
       "Create new folder": [
         "Yeni klasör ekle"
       ],
@@ -521,9 +518,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "${ simplePriceString } ile güvenli depolama alanı edinin"
       ],
-      "Get Started": [
-        "Başlayalım"
-      ],
       "Get the apps": [
         "Uygulamaları edinin"
       ],
@@ -574,9 +568,6 @@
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
-      ],
-      "Hide download options": [
-        "İndirme seçeneklerini gizle"
       ],
       "Hide more benefits": [
         "Diğer faydaları gizle"
@@ -1046,9 +1037,6 @@
       "Show more benefits": [
         "Diğer faydaları görüntüle"
       ],
-      "Show more download options": [
-        "Diğer indirme seçeneklerini görüntüle"
-      ],
       "Show navigation bar": [
         "Gezinme çubuğunu görüntüle"
       ],
@@ -1162,9 +1150,6 @@
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upload": [
-        "Yükle"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
@@ -5275,9 +5260,6 @@
       "Aug": [
         "Ağu"
       ],
-      "Available": [
-        "Kullanılabilir"
-      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -5329,14 +5311,8 @@
       "Canceled": [
         "İptal edildi"
       ],
-      "Cannot load link": [
-        "Bağlantı yüklenemedi"
-      ],
       "Cannot load links": [
         "Bağlantılar yüklenemedi"
-      ],
-      "Cannot load shared link": [
-        "Paylaşılmış bağlantı yüklenemedi"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -5569,9 +5545,6 @@
       "Enabling drive search": [
         "Drive arama özelliği açılıyor"
       ],
-      "Encrypted": [
-        "Şifrelenmiş"
-      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -5776,16 +5749,16 @@
         "Dizin boş."
       ],
       "Indexed ${ first }": [
-        "${ first } dizinlendi"
+        "${ first } dizine eklendi"
       ],
       "Indexed ${ first } and ${ second }": [
-        "${ first } ve ${ second } dizinlendi"
+        "${ first } ve ${ second } dizine eklendi"
       ],
       "Indexed ${ first }, ${ second } and ${ third }": [
-        "${ first }, ${ second } ve ${ third } dizinlendi"
+        "${ first }, ${ second } ve ${ third } dizine eklendi"
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
-        "${ first }, ${ second }, ${ third } ve ${ fourth } dizinlendi"
+        "${ first }, ${ second }, ${ third } ve ${ fourth } dizine eklendi"
       ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
@@ -5903,9 +5876,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
-      ],
-      "Loading link": [
-        "Bağlantı yükleniyor"
       ],
       "Loading links": [
         "Bağlantılar yükleniyor"
@@ -6114,9 +6084,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Fotoğraflar Drive alanınıza kaydedildi"
-      ],
-      "Photos": [
-        "Fotoğraflar"
       ],
       "Photos have been successfully recovered.": [
         "Fotoğraflar geri yüklendi."
@@ -6346,9 +6313,6 @@
       ],
       "Shared by ": [
         "Paylaşan "
-      ],
-      "Shared by ${ sharedBy }": [
-        "${ sharedBy } tarafından paylaşıldı"
       ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
@@ -6592,9 +6556,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilir kaynaklardan indirmeniz en iyisidir. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilen kaynaklardan indirmeniz en iyisidir. "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
       ],
@@ -6642,9 +6603,6 @@
       ],
       "Trash is empty": [
         "Çöp kutusu boş"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "${ DRIVE_APP_NAME } deneyin: Sonsuza dek ücretsiz"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
@@ -6813,9 +6771,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "${ DRIVE_APP_NAME } ile verileriniz uçtan uca şifreleme ile korunur."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -9643,15 +9598,8 @@
       "Share invitation declined": [
         "Paylaşma daveti reddedildi"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Üzgünüz, boş olmadığı için klasörü silemedik.",
-        "Üzgünüz, boş olmadıkları için klasörleri silemedik."
-      ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
-      ],
-      "The document failed to be created": [
-        "Belge oluşturulurken sorun çıktı"
       ],
       "The item was not added to your drive": [
         "Öge Drive depolama alanınıza eklenmedi"
@@ -9661,9 +9609,6 @@
       ],
       "The link to your item was deleted": [
         "Öge bağlantınız silindi"
-      ],
-      "The spreadsheet failed to be created": [
-        "Hesap tablosu oluşturulamadı"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Bu güvenli bağlantının süresi dolmuş. Lütfen paylaşım ayarlarından geçerlilik sonu tarihini değiştirin"
@@ -9691,7 +9636,7 @@
     },
     "Notitication": {
       "Album renamed successfully": [
-        "Albümün başarıyla yeniden adlandırıldı"
+        "Albüm yeniden adlandırıldı"
       ]
     },
     "Oauth instructions": {
@@ -11643,10 +11588,10 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe yazma asistanı"
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
-        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+        "Ücretli özellikler ile ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
       ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -11880,8 +11825,8 @@
         "Sürüm geçmişi"
       ],
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
-        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
-        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
+        "Görüntülü görüşmeler, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü görüşmeler, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
       ],
       "Watch the interview": [
         "Röportajı izleyin"
@@ -12270,9 +12215,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "indirme sayısı"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
@@ -12404,9 +12346,6 @@
       ],
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
-      ],
-      "Cannot load link": [
-        "Bağlantı yüklenemedi"
       ],
       "Card verification": [
         "Kart doğrulama"
@@ -12779,9 +12718,6 @@
       "Item details": [
         "Öge bilgileri"
       ],
-      "Last edited by": [
-        "Son düzenleyen"
-      ],
       "Last uploaded by": [
         "Son yükleyen"
       ],
@@ -12820,9 +12756,6 @@
       ],
       "Message": [
         "İleti"
-      ],
-      "MIME type": [
-        "MIME türü"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -12970,9 +12903,6 @@
       ],
       "Public link settings": [
         "Herkese açık bağlantı ayarları"
-      ],
-      "Public shared link status": [
-        "Herkese açık paylaşılmış bağlantı durumu"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -13140,12 +13070,6 @@
       "Summary": [
         "Özet"
       ],
-      "The link either does not exist or has expired": [
-        "Bağlantı bulunamadı ya da geçerlilik süresi dolmuş"
-      ],
-      "The link expired": [
-        "Bağlantının geçerlilik süresi dolmuş"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
       ],
@@ -13215,9 +13139,6 @@
       "Uploaded": [
         "Yüklenme"
       ],
-      "Uploaded by": [
-        "Yükleyen"
-      ],
       "Uploading a large file or folder": [
         "Büyük bir dosya ya da klasör yükleniyor"
       ],
@@ -13232,9 +13153,6 @@
       ],
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
-      ],
-      "Version details": [
-        "Sürüm bilgileri"
       ],
       "Version history": [
         "Sürüm geçmişi"

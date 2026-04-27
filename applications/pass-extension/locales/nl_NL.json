@@ -939,6 +939,21 @@
       "Authentication failure: ${ message }": [
         "Authenticatiefout: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrische authenticatie mislukt."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische vergrendelingsgegevens komen niet overeen."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrische vergrendelingsgegevens niet gevonden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische vergrendelingsgegevens niet geconfigureerd."
+      ],
+      "Biometric lock setup failed.": [
+        "De installatie van het biometrische slot is mislukt."
+      ],
       "Cannot create alias (${ error }).": [
         "Kan alias niet aanmaken (${ error })."
       ],
@@ -1012,6 +1027,9 @@
       ],
       "Emptying trash failed": [
         "Prullenbak leegmaken mislukt"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Versleutelde communicatie met de desktop-app ${ PASS_APP_NAME } is mislukt."
       ],
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
@@ -1253,6 +1271,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Er ging iets fout. Herlaad de ${ PASS_APP_NAME }-extensie. Dit probleem werd genoteerd."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "De desktop-app ${ PASS_APP_NAME } reageerde niet op tijd."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
       ],
@@ -1261,6 +1282,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "De desktop-app ${ PASS_APP_NAME } is aangemeld met een ander account."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "De desktop-app ${ PASS_APP_NAME } moet ingelogd zijn."
       ],
       "The URL is in the list": [
         "De URL is in de lijst"
@@ -2543,6 +2570,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Onbeperkt hide-my-email aliassen en geavanceerd alias beheer"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Ontgrendel ${ PASS_APP_NAME } voor toegang tot uw passkeys"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Ontgrendel ${ PASS_APP_NAME } om deze passkey op te slaan."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met biometrische gegevens"

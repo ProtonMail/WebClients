@@ -1505,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -6553,8 +6554,8 @@
         "${ currentProgress } sur ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } conversation sera labellisée comme suit :",
-        "${ elementsCount } conversations seront labellisées comme suit :"
+        "${ elementsCount } conversation sera labellisée",
+        "${ elementsCount } conversations seront labellisées"
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } conversation sera marquée comme lue.",
@@ -6573,8 +6574,8 @@
         "${ elementsCount } conversations ne seront plus labellisées de :"
       ],
       "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } message sera labellisé comme suit :",
-        "${ elementsCount } messages seront labellisés comme suit :"
+        "${ elementsCount } message sera labellisé",
+        "${ elementsCount } messages seront labellisés"
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } message sera marqué comme lu.",
@@ -6635,8 +6636,8 @@
         "${ numOccurrences } occurrences trouvées"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } occurrence trouvée dans le contenu de l'e-mail",
-        "${ numOccurrences } occurrences trouvées dans le contenu de l'e-mail"
+        "${ numOccurrences } occurrence a été trouvée dans le contenu de l'e-mail.",
+        "${ numOccurrences } occurrences ont été trouvées dans le contenu de l'e-mail."
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } vous permet de stocker vos mots de passe, notes et autres informations sensibles avec un chiffrement de bout en bout. Disponible sur ${ ios }, ${ android } et dans votre ${ browser }."
@@ -6715,16 +6716,16 @@
         "${ trackersCount } traqueurs d'e-mail bloqués"
       ],
       "${ trackersCount } tracker blocked": [
-        "${ trackersCount } traqueur a été bloqué",
-        "${ trackersCount } traqueurs ont été bloqués"
+        "${ trackersCount } traqueur a été bloqué.",
+        "${ trackersCount } traqueurs ont été bloqués."
       ],
       "${ unreadCount } newsletter": [
-        "${ unreadCount } abonnement newsletter",
-        "${ unreadCount } abonnements newsletters"
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newsletters"
       ],
       "${ unreadCount } scheduled message": [
-        "${ unreadCount } message a été programmé",
-        "${ unreadCount } messages ont été programmés"
+        "${ unreadCount } message a été programmé.",
+        "${ unreadCount } messages ont été programmés."
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
@@ -6750,8 +6751,8 @@
         "(aucun destinataire)"
       ],
       "**${ total }** result found in ${ labelName }": [
-        "**${ total }** résultat trouvé dans ${ labelName }",
-        "**${ total }** résultats trouvés dans ${ labelName }"
+        "**${ total }** résultat a été trouvé dans ${ labelName }.",
+        "**${ total }** résultats ont été trouvés dans ${ labelName }."
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Connexion automatique** : cette option ouvre et vous connecte au VPN dès que vous allumez votre appareil."
@@ -7564,8 +7565,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8082,8 +8082,8 @@
         "Vous êtes à jour."
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Sélectionnez ${ elementsCount } dans ${ location }",
-        "Sélectionnez ${ elementsCount } dans ${ location }"
+        "Sélectionnez ${ elementsCount } dans ${ location }.",
+        "Sélectionnez ${ elementsCount } dans ${ location }."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -8285,8 +8285,8 @@
         "L'expéditeur a demandé une confirmation de lecture."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou modifier le contact.",
-        "${ contactNames } n'a pas pu être vérifié : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou modifier les contacts."
+        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou le modifier.",
+        "${ contactNames } n'a pas pu être vérifié : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou les modifier."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -8328,8 +8328,8 @@
         "Cette conversation comporte des messages qui sont dans le dossier Corbeille."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Cette conversation sera considérée comme un indésirables/spam. Voulez-vous également vous désabonner des futurs messages ?",
-        "Ces conversations seront signalées comme des indésirables/spam. Voulez-vous également vous désabonner des prochains messages ?"
+        "Cette conversation sera considérée indésirable. Voulez-vous également vous désabonner des futurs messages ?",
+        "Ces conversations seront considérées indésirables. Voulez-vous également vous désabonner des futurs messages ?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Cette adresse e-mail ne répond pas aux exigences d'authentification de son domaine. Elle a peut-être été falsifiée ou transférée de manière incorrecte."
@@ -8386,8 +8386,8 @@
         "Ce message sera automatiquement supprimé le ${ value }."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ce message sera marqué comme indésirable/spam. Voulez-vous aussi vous désabonner pour les prochains messages ?",
-        "Ces messages seront marqués comme indésirables/spam. Voulez-vous aussi vous désabonner pour les prochains messages ?"
+        "Ce message sera considéré indésirable. Voulez-vous aussi vous désabonner des prochains messages ?",
+        "Ces messages seront considérés indésirables. Voulez-vous aussi vous désabonner des prochains messages ?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message sera déplacé dans le dossier Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
@@ -8802,7 +8802,7 @@
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Vous avez **${ count } conversation** marqué avec ce label.",
-        "Vous avez **${ count } conversations** marqué avec ce label."
+        "Vous avez **${ count } conversations** marquées avec ce label."
       ],
       "You have **${ count } message** stored in this folder": [
         "Vous avez **${ count } message** stocké dans ce dossier",
@@ -14499,8 +14499,8 @@
         "${ elementsCount } conversations ont été déplacées vers ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } conversation a été déplacée dans le dossier Indésirables/spam et l'expéditeur a été ajouté à votre liste d'indésirables/spam.",
-        "${ elementsCount } conversations ont été déplacées dans le dossier Indésirables/spam et les expéditeurs ont été ajoutés à votre liste d'indésirables/spam."
+        "${ elementsCount } conversation a été déplacée dans le dossier indésirables et l'expéditeur a été ajouté à votre liste d'e-mails indésirables.",
+        "${ elementsCount } conversations ont été déplacées dans le dossier indésirables et les expéditeurs ont été ajoutés à votre liste d'e-mails indésirables."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation a été retirée de ${ labelName }.",
@@ -16309,8 +16309,8 @@
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "La signature de la pièce jointe n'a pas pu être vérifiée. \nVous pouvez toujours télécharger cette pièce jointe, mais elle a peut-être été falsifiée.",
-        "La vérification des signatures de certaines pièces jointes n'a pas pu être vérifiée. \nVous pouvez toujours télécharger ces pièces jointes, mais elles pourraient avoir été falsifiées."
+        "La signature de la pièce jointe n'a pas pu être vérifiée. \nVous pouvez toujours la télécharger, mais elle a peut-être été falsifiée.",
+        "Les signatures de certaines pièces jointes n'ont pas pu être vérifiées. \nVous pouvez toujours les télécharger, mais elles pourraient avoir été falsifiées."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les données du contact sont corrompues et ne peuvent pas être affichées."

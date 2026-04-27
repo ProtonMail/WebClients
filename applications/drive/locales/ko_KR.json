@@ -294,9 +294,6 @@
       "Create folder": [
         "폴더 생성"
       ],
-      "Create free account": [
-        "무료 계정 생성"
-      ],
       "Create new folder": [
         "새 폴더 만들기"
       ],
@@ -513,9 +510,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "${ simplePriceString }으로 보안 저장소를 받으세요"
       ],
-      "Get Started": [
-        "시작하기"
-      ],
       "Get the apps": [
         "앱 다운로드"
       ],
@@ -563,9 +557,6 @@
       ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
-      ],
-      "Hide download options": [
-        "다운로드 옵션 숨기기"
       ],
       "Hide more benefits": [
         "더 많은 혜택 숨기기"
@@ -1032,9 +1023,6 @@
       "Show more benefits": [
         "더 많은 혜택 보기"
       ],
-      "Show more download options": [
-        "더 많은 다운로드 옵션 보기"
-      ],
       "Show navigation bar": [
         "네비게이션 바 보기"
       ],
@@ -1148,9 +1136,6 @@
       ],
       "Upgrade now": [
         "지금 업그레이드"
-      ],
-      "Upload": [
-        "업로드"
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
@@ -5159,9 +5144,6 @@
       "Aug": [
         "8월"
       ],
-      "Available": [
-        "사용 가능"
-      ],
       "Awaiting transaction": [
         "거래 대기 중"
       ],
@@ -5213,14 +5195,8 @@
       "Canceled": [
         "취소됨"
       ],
-      "Cannot load link": [
-        "링크를 불러오는 중 문제 발생"
-      ],
       "Cannot load links": [
         "링크를 불러오는 중 문제 발생"
-      ],
-      "Cannot load shared link": [
-        "공유된 링크를 불러오는 데 실패했습니다"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -5449,9 +5425,6 @@
       ],
       "Enabling drive search": [
         "드라이브 검색을 활성화하는 중"
-      ],
-      "Encrypted": [
-        "암호화됨"
       ],
       "Encrypted search is here": [
         "암호화된 검색이 여기 있습니다"
@@ -5762,9 +5735,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
-      "Loading link": [
-        "링크를 불러오는 중"
-      ],
       "Loading links": [
         "링크를 불러오는 중"
       ],
@@ -5965,9 +5935,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "사진이 Drive에 저장되었습니다."
-      ],
-      "Photos": [
-        "사진"
       ],
       "Photos have been successfully recovered.": [
         "사진이 성공적으로 복구되었습니다."
@@ -6196,9 +6163,6 @@
       ],
       "Shared by ": [
         "다음에 의해 공유됨: "
-      ],
-      "Shared by ${ sharedBy }": [
-        "${ sharedBy }님이 공유함"
       ],
       "Shared link not found": [
         "공유 링크 찾을 수 없음"
@@ -6440,9 +6404,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "사용자를 보호하는데 도움이 되도록 ${ DRIVE_APP_NAME }가 개인정보를 보호하는 방식으로 파일을 스캔하고 멀웨어 파일을 차단합니다. 여전히 신뢰된 출처에서만 파일을 다운로드해야 합니다."
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
@@ -6490,9 +6451,6 @@
       ],
       "Trash is empty": [
         "휴지통이 비어있음"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "${ DRIVE_APP_NAME }를 사용해 보세요! 평생 무료입니다"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
@@ -6661,9 +6619,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "이(가) ${ formattedRevisionDate }의 버전으로 복구됩니다. 타 버전들이 여전히 저장됩니다."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "${ DRIVE_APP_NAME }을 사용하신다면 당신의 데이터를 종단간 암호화로 지킬 수 있습니다."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -9353,14 +9308,8 @@
       "Share invitation declined": [
         "캘린더 공유 거부됨"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "죄송합니다, 폴더가 비어있지 않아 삭제할 수 없습니다."
-      ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
-      ],
-      "The document failed to be created": [
-        "문서를 생성하는데 실패했습니다."
       ],
       "The item was not added to your drive": [
         "항목이 Drive에 추가되지 않았습니다."
@@ -9370,9 +9319,6 @@
       ],
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
-      ],
-      "The spreadsheet failed to be created": [
-        "스프레드시트를 생성하는데 실패했습니다."
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "이 보안 링크는 만료되었습니다. 공유 설정에서 만료일을 변경해 주세요."
@@ -11910,9 +11856,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "다운로드 횟수"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount }개 이메일 주소"
       ],
@@ -12038,9 +11981,6 @@
       ],
       "Cannot add more addresses": [
         "더 많이 주소를 추가할 수 없습니다."
-      ],
-      "Cannot load link": [
-        "링크를 불러오는 중 문제 발생"
       ],
       "Card verification": [
         "카드 확인"
@@ -12405,9 +12345,6 @@
       "Item details": [
         "항목 세부사항"
       ],
-      "Last edited by": [
-        "마지막으로 편집한 사용자"
-      ],
       "Last uploaded by": [
         "마지막으로 업로드한 사람"
       ],
@@ -12446,9 +12383,6 @@
       ],
       "Message": [
         "메시지"
-      ],
-      "MIME type": [
-        "MINE 유형"
       ],
       "Minicalendar": [
         "간편 캘린더"
@@ -12596,9 +12530,6 @@
       ],
       "Public link settings": [
         "공개 링크 설정"
-      ],
-      "Public shared link status": [
-        "공개된 공유 링크 상태"
       ],
       "Re-sign all contacts": [
         "모든 연락처에 다시 서명"
@@ -12765,12 +12696,6 @@
       "Summary": [
         "요약"
       ],
-      "The link either does not exist or has expired": [
-        "링크가 존재하지 않거나 만료되었습니다."
-      ],
-      "The link expired": [
-        "링크 만료됨"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"
       ],
@@ -12840,9 +12765,6 @@
       "Uploaded": [
         "업로드 완료"
       ],
-      "Uploaded by": [
-        "업로드한 사용자"
-      ],
       "Uploading a large file or folder": [
         "큰 파일 또는 폴더 업로드 중"
       ],
@@ -12857,9 +12779,6 @@
       ],
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
-      ],
-      "Version details": [
-        "버전 정보"
       ],
       "Version history": [
         "버전 기록"
