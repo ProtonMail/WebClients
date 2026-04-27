@@ -285,9 +285,6 @@
       "Create folder": [
         "新建資料夾"
       ],
-      "Create free account": [
-        "建立免費帳號"
-      ],
       "Create new folder": [
         "創建新資料夾"
       ],
@@ -462,9 +459,6 @@
       "Get in touch": [
         "保持聯絡"
       ],
-      "Get Started": [
-        "入門指南"
-      ],
       "Get the apps": [
         "取得應用程式"
       ],
@@ -509,9 +503,6 @@
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
-      ],
-      "Hide download options": [
-        "隱藏下載選項"
       ],
       "Hide more benefits": [
         "隱藏更多好處"
@@ -719,6 +710,9 @@
       ],
       "Reconnect": [
         "重新連線"
+      ],
+      "Reconnect to Gmail": [
+        "重新連接 Gmail"
       ],
       "Recover data": [
         "恢復資料"
@@ -942,9 +936,6 @@
       "Show more benefits": [
         "顯示更多好處"
       ],
-      "Show more download options": [
-        "顯示下載選項"
-      ],
       "Show navigation bar": [
         "顯示導航欄"
       ],
@@ -1049,9 +1040,6 @@
       ],
       "Upgrade now": [
         "立即升級"
-      ],
-      "Upload": [
-        "上傳"
       ],
       "Upload and share files": [
         "上傳並共享檔案"
@@ -1691,6 +1679,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Unlimited favorites for quick access": [
+        "快速存取至無限最愛"
       ],
       "Upload and query multiple large files": [
         "上載及查詢多個大型檔案"
@@ -2807,6 +2798,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "以確保您帳戶的最高可能的安全，設置復原詞句。"
       ],
@@ -2821,6 +2815,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我們無法再存取至 ${ boldEmails }"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "使用聯絡人群組，您可以一件寄出電子郵件給群組中的所有人。"
@@ -2975,6 +2972,9 @@
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 取得 4x 儲存空間"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
@@ -4734,9 +4734,6 @@
       "Aug": [
         "八月"
       ],
-      "Available": [
-        "可用"
-      ],
       "Awaiting transaction": [
         "等待交易"
       ],
@@ -4767,14 +4764,8 @@
       "Canceled": [
         "已取消"
       ],
-      "Cannot load link": [
-        "無法載入連結"
-      ],
       "Cannot load links": [
         "無法載入連結"
-      ],
-      "Cannot load shared link": [
-        "無法載入已分享的連結"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -4971,9 +4962,6 @@
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
       ],
-      "Encrypted": [
-        "已加密"
-      ],
       "Encrypted search is here": [
         "加密搜索功能現已推出"
       ],
@@ -5009,6 +4997,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "全部都在 ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "全部於 ${ planOrAppName } 方案，附加:"
       ],
       "Expired": [
         "已過期"
@@ -5054,6 +5045,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "來自您電腦的同步資料夾將會出現在此。"
+      ],
+      "for ${ price }": [
+        "為 ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
@@ -5232,9 +5226,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
       ],
-      "Loading link": [
-        "正在載入連結"
-      ],
       "Loading links": [
         "正在載入連結"
       ],
@@ -5408,9 +5399,6 @@
       ],
       "Photo is set as album cover": [
         "照片已設為相簿封面"
-      ],
-      "Photos": [
-        "相片"
       ],
       "Photos have been successfully recovered.": [
         "照片已成功復原。"
@@ -5609,9 +5597,6 @@
       ],
       "Shared by ": [
         "分享自 "
-      ],
-      "Shared by ${ sharedBy }": [
-        "由 ${ sharedBy } 分享"
       ],
       "Shared link not found": [
         "找不到分享的連結"
@@ -5847,9 +5832,6 @@
       "Trash is empty": [
         "垃圾桶是空的"
       ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "嘗試${ DRIVE_APP_NAME }:永久免費"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
@@ -5984,9 +5966,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "將還原到 ${ formattedRevisionDate } 的版本。其他所有版本仍會被儲存。"
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "與${ DRIVE_APP_NAME }您的資料已被端對端加密保護。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -7683,6 +7662,9 @@
       "Data retention policies": [
         "資料保留政策"
       ],
+      "Dedicated servers optimized for speed": [
+        "針對速度的獨立伺服器"
+      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -8519,12 +8501,6 @@
       ],
       "Share invitation declined": [
         "共享邀請被婉拒"
-      ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "抱歉，我們因為其非空白無法刪除此資料夾。"
-      ],
-      "The document failed to be created": [
-        "創建檔案失敗"
       ],
       "The item was not added to your drive": [
         "此項目未被加入您的雲端磁碟"
@@ -10504,6 +10480,9 @@
       "Version history": [
         "版本歷史紀錄"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
+      ],
       "Watch the interview": [
         "瀏覽訪談"
       ],
@@ -10838,9 +10817,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "下載#次數"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
       ],
@@ -10951,9 +10927,6 @@
       ],
       "Cannot add more addresses": [
         "無法加入更多位址"
-      ],
-      "Cannot load link": [
-        "無法載入連結"
       ],
       "Card verification": [
         "信用卡驗證"
@@ -11270,9 +11243,6 @@
       "Item details": [
         "項目詳細資訊"
       ],
-      "Last edited by": [
-        "上次編輯者"
-      ],
       "Level": [
         "等級"
       ],
@@ -11299,9 +11269,6 @@
       ],
       "Message": [
         "郵件訊息"
-      ],
-      "MIME type": [
-        "MIME 類型"
       ],
       "Minicalendar": [
         "小型行事曆"
@@ -11413,9 +11380,6 @@
       ],
       "Processing...": [
         "處理中..."
-      ],
-      "Public shared link status": [
-        "公開共享連結狀態"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
@@ -11567,12 +11531,6 @@
       "Summary": [
         "總結"
       ],
-      "The link either does not exist or has expired": [
-        "連結不存在或已失效"
-      ],
-      "The link expired": [
-        "連結已逾期"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此檔案的簽章遺失或無效。詳見功能表 (⋮) → 詳細資料。"
       ],
@@ -11624,9 +11582,6 @@
       "Uploaded": [
         "已上載"
       ],
-      "Uploaded by": [
-        "上載者"
-      ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
       ],
@@ -11638,9 +11593,6 @@
       ],
       "Verifying your payment...": [
         "正在驗證您的付款..."
-      ],
-      "Version details": [
-        "版本詳細資訊"
       ],
       "Version history": [
         "版本歷史紀錄"

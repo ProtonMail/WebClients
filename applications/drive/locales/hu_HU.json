@@ -275,9 +275,6 @@
       "Create folder": [
         "Mappa létrehozása"
       ],
-      "Create free account": [
-        "Ingyenes fiók létrehozása"
-      ],
       "Create new folder": [
         "Új mappa létrehozása"
       ],
@@ -472,9 +469,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Szerezzen biztonságos tárhelyet ${ simplePriceString }ért"
       ],
-      "Get Started": [
-        "Kezdés"
-      ],
       "Get the apps": [
         "Alkalmazások letöltése"
       ],
@@ -516,9 +510,6 @@
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
-      ],
-      "Hide download options": [
-        "Letöltési opciók elrejtése"
       ],
       "Hide more benefits": [
         "Több előny elrejtése"
@@ -958,9 +949,6 @@
       "Show more benefits": [
         "Több előny megjelenítése"
       ],
-      "Show more download options": [
-        "Több letöltési opció megjelenítése"
-      ],
       "Show navigation bar": [
         "Navigációs sáv mutatása"
       ],
@@ -1068,9 +1056,6 @@
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
-      ],
-      "Upload": [
-        "Feltöltés"
       ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
@@ -4747,9 +4732,6 @@
       "Aug": [
         "Aug"
       ],
-      "Available": [
-        "Elérhető"
-      ],
       "Awaiting transaction": [
         "Tranzakcióra várakozás."
       ],
@@ -4777,14 +4759,8 @@
       "Canceled": [
         "Megszakítva"
       ],
-      "Cannot load link": [
-        "A hivatkozást nem sikerült betölteni"
-      ],
       "Cannot load links": [
         "A hivatkozások betöltése nem sikerült"
-      ],
-      "Cannot load shared link": [
-        "Megosztási hivatkozás betöltése nem sikerült"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
@@ -4983,9 +4959,6 @@
       ],
       "Enabling drive search": [
         "Felhőtárban keresés engedélyezése"
-      ],
-      "Encrypted": [
-        "Titkosított"
       ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
@@ -5268,9 +5241,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Naptár betöltése, kérjük várjon. Át lesz irányítva az ütemezési felületünkre a Calendlyra egy új lapon."
       ],
-      "Loading link": [
-        "Link betöltése"
-      ],
       "Loading links": [
         "Hivatkozások betöltése"
       ],
@@ -5454,9 +5424,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "A meghajtóra mentett fénykép(ek)"
-      ],
-      "Photos": [
-        "Fényképek"
       ],
       "Photos have been successfully recovered.": [
         "A fényképek sikeresen helyreállítva."
@@ -5665,9 +5632,6 @@
       ],
       "Shared by ": [
         "Megosztotta: "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Megosztotta: ${ sharedBy }"
       ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
@@ -5881,9 +5845,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "A védelem érdekében a ${ DRIVE_APP_NAME } a magánszférát tiszteletben tartó módon átvizsgálhatja fájljait, és blokkolhatja a rosszindulatú fájlokat. Azonban még mindig a legjobb, ha csak megbízható forrásból tölt le fájlokat. "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Események importálásához, először hozzon létre egy ${ CALENDAR_APP_NAME } naptárat. Ebben fognak megjelenni az események az importálás után."
       ],
@@ -5931,9 +5892,6 @@
       ],
       "Trash is empty": [
         "A lomtár üres"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Próbáld ki a ${ DRIVE_APP_NAME }: Ingyenes örökké"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
@@ -6075,9 +6033,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "visszaállításra kerül, a(z) ${ formattedRevisionDate } dátumú változatból. Minden további változat továbbra is elérhető marad."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "${ DRIVE_APP_NAME } használatával adatai végponttól végpontig tartó titkosítással vannak védve."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
@@ -8581,15 +8536,8 @@
       "Share invitation declined": [
         "Megosztási meghívás elutasítva"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "A mappát nem lehet törölni, mert nem üres",
-        "A mappát nem lehet törölni, mert nem üres"
-      ],
       "Stopping the sharing of this item has failed": [
         "Az elem megosztásának leállítása nem sikerült"
-      ],
-      "The document failed to be created": [
-        "A dokumentum létrehozása nem sikerült"
       ],
       "The item was not added to your drive": [
         "Az elem nem lett hozzáadva a meghajtóhoz"
@@ -8599,9 +8547,6 @@
       ],
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
-      ],
-      "The spreadsheet failed to be created": [
-        "A táblázat létrehozása nem sikerült"
       ],
       "Trash failed to be emptied": [
         "A lomtár ürítése nem sikerült"
@@ -10843,9 +10788,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "Letöltések száma"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } e-mail cím",
         "${ emailsCount } e-mail cím"
@@ -10965,9 +10907,6 @@
       ],
       "Cannot add more addresses": [
         "Nem adható hozzá több cím"
-      ],
-      "Cannot load link": [
-        "A hivatkozást nem sikerült betölteni"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
@@ -11303,9 +11242,6 @@
       "Item details": [
         "Elem adatai"
       ],
-      "Last edited by": [
-        "Utoljára szerkesztette:"
-      ],
       "Last uploaded by": [
         "Utoljára feltöltötte"
       ],
@@ -11341,9 +11277,6 @@
       ],
       "Message": [
         "Üzenet"
-      ],
-      "MIME type": [
-        "MIME típus"
       ],
       "Minicalendar": [
         "Mini naptár"
@@ -11482,9 +11415,6 @@
       ],
       "Processing...": [
         "Folyamatban..."
-      ],
-      "Public shared link status": [
-        "Nyilvános megosztási hivatkozás állapota"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -11631,12 +11561,6 @@
       "Summary": [
         "Összegzés"
       ],
-      "The link either does not exist or has expired": [
-        "A hivatkozás nem létezik vagy leját"
-      ],
-      "The link expired": [
-        "A hivatkozás lejárt"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
@@ -11694,9 +11618,6 @@
       "Uploaded": [
         "Feltöltve"
       ],
-      "Uploaded by": [
-        "Feltöltötte"
-      ],
       "Uploading a large file or folder": [
         "Nagy fájl vagy mappa feltöltése"
       ],
@@ -11711,9 +11632,6 @@
       ],
       "Verifying your payment...": [
         "Fizetés ellenőrzése..."
-      ],
-      "Version details": [
-        "Változat adatai"
       ],
       "Version history": [
         "Változatelőzmények"
