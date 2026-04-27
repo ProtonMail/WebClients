@@ -12,6 +12,7 @@ export interface EmailVerificationResult {
 interface MachineContext {
     result: Result | null;
     verificationResult: EmailVerificationResult | null;
+    initiationAttempts: number;
 }
 
 interface MachineOutput {
@@ -22,7 +23,9 @@ interface MachineOutput {
 type MachineEvent =
     | { type: '2fa disabled' }
     | { type: 'try another way' }
-    | { type: 'verification initiated'; verificationResult: EmailVerificationResult };
+    | { type: 'verification initiated'; verificationResult: EmailVerificationResult }
+    | { type: 'initiation failed' }
+    | { type: 'retry initiation' };
 
 export type VerifyOwnershipWithEmailActorRef = ActorRefFrom<typeof verifyOwnershipWithEmailMachine>;
 
@@ -35,12 +38,16 @@ export const verifyOwnershipWithEmailMachine = setup({
             verificationResult: EmailVerificationResult | null;
         },
     },
+    guards: {
+        canRetry: ({ context }) => context.initiationAttempts < 3,
+    },
 }).createMachine({
     id: 'verifyOwnershipWithEmail',
     initial: 'verify code',
     context: ({ input }) => ({
         result: null,
         verificationResult: input.verificationResult,
+        initiationAttempts: 0,
     }),
     output: ({ context }): MachineOutput => ({
         result: context.result!,
@@ -57,6 +64,21 @@ export const verifyOwnershipWithEmailMachine = setup({
                 },
                 'verification initiated': {
                     actions: assign({ verificationResult: ({ event }) => event.verificationResult }),
+                },
+                'initiation failed': {
+                    target: 'initiation failed',
+                    actions: assign({ initiationAttempts: ({ context }) => context.initiationAttempts + 1 }),
+                },
+            },
+        },
+        'initiation failed': {
+            on: {
+                'retry initiation': {
+                    guard: 'canRetry',
+                    target: 'verify code',
+                },
+                'try another way': {
+                    target: 'skipped',
                 },
             },
         },
