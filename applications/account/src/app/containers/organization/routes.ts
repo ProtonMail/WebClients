@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { isOLESEligible } from '@proton/activation/src/oles/eligibility';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
@@ -31,11 +32,7 @@ import {
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
-import {
-    getOrganizationDenomination,
-    isOrganizationB2B,
-    isOrganizationPassFamily,
-} from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
@@ -193,11 +190,7 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
-    const showBusinessMigrationSection =
-        Boolean(isOLESEnabled) &&
-        isAdmin &&
-        isOrganizationB2B(organization) &&
-        (hasActiveOrganizationKey || hasActiveOrganization);
+    const showBusinessMigrationSection = Boolean(isOLESEnabled) && isOLESEligible({ user, organization, subscription });
 
     const organizationSectionVisible = canHaveOrganization || !!isGroupOwner;
 
@@ -210,7 +203,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Migration assistant`,
                 to: '/migration-assistant',
                 icon: 'arrow-down-to-square',
-                available: canHaveOrganization && showBusinessMigrationSection,
+                available: showBusinessMigrationSection,
             },
             users: {
                 id: 'users',
