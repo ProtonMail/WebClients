@@ -15,9 +15,12 @@ const useBYOEAddressesCounts = () => {
 
     const { addressesOrSyncs, byoeAddresses, activeBYOEAddresses } = getBYOEAddressesCounts(addresses, allSyncs);
 
-    const forwardingList = allSyncs.filter(
-        (sync) => !byoeAddresses.map((address) => address.Email).includes(sync.account)
-    );
+    const forwardingList = allSyncs.filter((sync) => {
+        // Only "gmail.com" and "googlemail.com" addresses can be converted to a BYOE address so that we do not clash
+        // with OLES (Organization Level Easy Switch) when having a custom domain.
+        const canBeConvertedToBYOE = sync.account.endsWith('gmail.com') || sync.account.endsWith('googlemail.com');
+        return !byoeAddresses.map((address) => address.Email).includes(sync.account) && canBeConvertedToBYOE;
+    });
 
     return {
         isLoadingAddressesCount: loadingAddresses || loadingUser || syncListLoadingState !== 'success',
