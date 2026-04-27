@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import type { PersonalAccessToken, PersonalAccessTokenAccessGrant } from '@proton/pass/lib/access-token/access-token.types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { sessionRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import identity from '@proton/utils/identity';
 
@@ -33,6 +35,7 @@ export type AccessTokenAccessGrants = {
 };
 
 export const getAccessTokens = requestActionsFactory<void, PersonalAccessToken[]>('access-token::list')({
+    success: sessionRequest(5 * UNIX_MINUTE),
     failure: {
         prepare: (error) =>
             withNotification({
@@ -75,6 +78,7 @@ export const deleteAccessToken = requestActionsFactory<string, string>('access-t
 
 export const getAccessTokenAccess = requestActionsFactory<string, AccessTokenAccessGrants>('access-token::access::list')({
     key: identity,
+    success: sessionRequest(5 * UNIX_MINUTE),
 });
 
 export const updateAccessTokenAccess = requestActionsFactory<UpdateAccessTokenAccessIntent, AccessTokenAccessGrants>(
