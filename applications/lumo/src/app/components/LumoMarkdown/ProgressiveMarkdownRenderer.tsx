@@ -310,10 +310,9 @@ const MarkdownBlock: React.FC<{
                 remarkPlugins={[
                     remarkGfm,
                     // singleDollarTextMath is intentionally disabled: single `$` is ambiguous with
-                    // shell/bash variable syntax (e.g. $HOME, $DEST) and would corrupt any LLM-generated
-                    // bash scripts that appear outside a fenced code block. Inline math is handled by
-                    // remarkLatexDelimiters via \(...\), and display math via \[...\] or $$...$$
-                    remarkMath,
+                    // currency ($500, $30,000) and shell variables ($HOME, $DEST). Inline math is
+                    // handled by remarkLatexDelimiters via \(...\), and display math via \[...\] or $$...$$
+                    [remarkMath, { singleDollarTextMath: false }],
                     remarkLatexDelimiters,
                     remarkBrToBreak,
                 ]}
@@ -362,9 +361,6 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
     }) => {
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
-            if (!isStreaming) {
-                console.log('[LUMO:RENDER:RAW]', JSON.stringify(content || ''));
-            }
             const processedContent = convertRefTokensToSpans(content || '');
             return normalizeBrTags(processedContent);
         }, [content]);
