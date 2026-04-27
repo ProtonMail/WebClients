@@ -73,102 +73,102 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
 
 const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (planName === PLANS.VPN2024) {
-        return <img {...rest} src={vpn} width={size} alt="" />;
+        return <img {...rest} src={vpn} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.MAIL) {
-        return <img {...rest} src={mail} width={size} alt="" />;
+        return <img {...rest} src={mail} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.DRIVE) {
-        return <img {...rest} src={drive} width={size} alt="" />;
+        return <img {...rest} src={drive} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.DRIVE_1TB) {
-        return <img {...rest} src={drive} width={size} alt="" />;
+        return <img {...rest} src={drive} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.PASS) {
-        return <img {...rest} src={pass} width={size} alt="" />;
+        return <img {...rest} src={pass} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.BUNDLE) {
-        return <img {...rest} src={bundle} width={size} alt="" />;
+        return <img {...rest} src={bundle} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.DUO) {
-        return <img {...rest} src={duo} width={size} alt="" />;
+        return <img {...rest} src={duo} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.FAMILY) {
-        return <img {...rest} src={family} width={size} alt="" />;
+        return <img {...rest} src={family} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.VISIONARY) {
-        return <img {...rest} src={visionary} width={size} alt="" />;
+        return <img {...rest} src={visionary} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.PASS_FAMILY) {
-        return <img {...rest} src={passFamily} width={size} alt="" />;
+        return <img {...rest} src={passFamily} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.PASS_LIFETIME) {
-        return <img {...rest} src={passLifetime} width={size} alt="" />;
+        return <img {...rest} src={passLifetime} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.VPN_BUSINESS) {
-        return <img {...rest} src={vpnBusiness} width={size} alt="" />;
+        return <img {...rest} src={vpnBusiness} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.BUNDLE_PRO_2024) {
-        return <img {...rest} src={workspace} width={size} alt="" />;
+        return <img {...rest} src={workspace} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.BUNDLE_BIZ_2025) {
-        return <img {...rest} src={workspacePremium} width={size} alt="" />;
+        return <img {...rest} src={workspacePremium} width={size} alt="" className="w-full" />;
     }
     if ((planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) && dark) {
-        return <img {...rest} src={vpnPassBundleDark} width={size} alt="" />;
+        return <img {...rest} src={vpnPassBundleDark} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
-        return <img {...rest} src={vpnPassBundle} width={size} alt="" />;
+        return <img {...rest} src={vpnPassBundle} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.MEET_BUSINESS) {
-        return <img {...rest} src={meetBusiness} width={size} alt="" />;
+        return <img {...rest} src={meetBusiness} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.LUMO) {
-        return <img {...rest} src={lumoPlus} width={size} alt="" />;
+        return <img {...rest} src={lumoPlus} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.LUMO_BUSINESS) {
-        return <img {...rest} src={lumoBusiness} width={size} alt="" />;
+        return <img {...rest} src={lumoBusiness} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.VPN_PRO) {
-        return <img {...rest} src={vpnPro} width={size} alt="" />;
+        return <img {...rest} src={vpnPro} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.DRIVE_PRO) {
-        return <img {...rest} src={drivePro} width={size} alt="" />;
+        return <img {...rest} src={drivePro} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.DRIVE_BUSINESS) {
-        return <img {...rest} src={driveBusiness} width={size} alt="" />;
+        return <img {...rest} src={driveBusiness} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.MAIL_PRO) {
-        return <img {...rest} src={mailPro} width={size} alt="" />;
+        return <img {...rest} src={mailPro} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.MAIL_BUSINESS) {
-        return <img {...rest} src={mailBusiness} width={size} alt="" />;
+        return <img {...rest} src={mailBusiness} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.PASS_PRO) {
-        return <img {...rest} src={passPro} width={size} alt="" />;
+        return <img {...rest} src={passPro} width={size} alt="" className="w-full" />;
     }
     if (planName === PLANS.PASS_BUSINESS) {
-        return <img {...rest} src={passBusiness} width={size} alt="" />;
+        return <img {...rest} src={passBusiness} width={size} alt="" className="w-full" />;
     }
 
     // Temporary fix to use Mail's logo for calendar until design creates one.
     if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
-        return <img {...rest} src={mailFree} width={size} alt="" />;
+        return <img {...rest} src={mailFree} width={size} alt="" className="w-full" />;
     }
     if (app === APPS.PROTONPASS) {
-        return <img {...rest} src={passFree} width={size} alt="" />;
+        return <img {...rest} src={passFree} width={size} alt="" className="w-full" />;
     }
     if (app === APPS.PROTONVPN_SETTINGS) {
-        return <img {...rest} src={vpnFree} width={size} alt="" />;
+        return <img {...rest} src={vpnFree} width={size} alt="" className="w-full" />;
     }
     if (app === APPS.PROTONDRIVE) {
-        return <img {...rest} src={driveFree} width={size} alt="" />;
+        return <img {...rest} src={driveFree} width={size} alt="" className="w-full" />;
     }
     if (app === APPS.PROTONMEET) {
-        return <img {...rest} src={meetFree} width={size} alt="" />;
+        return <img {...rest} src={meetFree} width={size} alt="" className="w-full" />;
     }
     if (app === APPS.PROTONLUMO) {
-        return <img {...rest} src={lumoFree} width={size} alt="" />;
+        return <img {...rest} src={lumoFree} width={size} alt="" className="w-full" />;
     }
     return null;
 };
