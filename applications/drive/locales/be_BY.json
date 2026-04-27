@@ -306,9 +306,6 @@
       "Create folder": [
         "Стварыць папку"
       ],
-      "Create free account": [
-        "Стварыць бясплатны ўліковы запіс"
-      ],
       "Create new folder": [
         "Стварыць новую папку"
       ],
@@ -531,9 +528,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Атрымаць бяспечнае сховішча для ${ simplePriceString }"
       ],
-      "Get Started": [
-        "Пачаць працу"
-      ],
       "Get the apps": [
         "Атрымаць праграмы"
       ],
@@ -584,9 +578,6 @@
       ],
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
-      ],
-      "Hide download options": [
-        "Схаваць параметры спампоўвання"
       ],
       "Hide more benefits": [
         "Схаваць больш пераваг"
@@ -1056,9 +1047,6 @@
       "Show more benefits": [
         "Паказаць больш пераваг"
       ],
-      "Show more download options": [
-        "Паказаць больш параметраў спампоўвання"
-      ],
       "Show navigation bar": [
         "Паказаць панэль навігацыі"
       ],
@@ -1172,9 +1160,6 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
-      ],
-      "Upload": [
-        "Запампаваць"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -5126,6 +5111,12 @@
         "${ files } файлаў",
         "${ files } файлаў"
       ],
+      "${ folders } folder": [
+        "${ folders } папка",
+        "${ folders } папкі",
+        "${ folders } папак",
+        "${ folders } папак"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзена ${ groupCounts } групы",
@@ -5447,9 +5438,6 @@
       "Aug": [
         "Жні"
       ],
-      "Available": [
-        "Даступна"
-      ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
       ],
@@ -5501,14 +5489,8 @@
       "Canceled": [
         "Скасавана"
       ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
-      ],
       "Cannot load links": [
         "Немагчыма загрузіць спасылкі"
-      ],
-      "Cannot load shared link": [
-        "Немагчыма загрузіць абагуленую спасылку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
@@ -5747,9 +5729,6 @@
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
       ],
-      "Encrypted": [
-        "Зашыфравана"
-      ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
       ],
@@ -5957,6 +5936,18 @@
       "Index is empty.": [
         "Індэкс адсутнічае."
       ],
+      "Indexed ${ first }": [
+        "Індэксавана ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Індэксавана ${ first }, ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Індэксавана ${ first }, ${ second } і ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Індэксавана ${ first }, ${ second }, ${ third } і ${ fourth }"
+      ],
       "Indexing in progress": [
         "Выконваецца індэксацыя"
       ],
@@ -6073,9 +6064,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
-      ],
-      "Loading link": [
-        "Загрузка спасылкі"
       ],
       "Loading links": [
         "Загрузка спасылак"
@@ -6292,9 +6280,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Фатаграфіі захаваны ў ваш Drive"
-      ],
-      "Photos": [
-        "Фатаграфіі"
       ],
       "Photos have been successfully recovered.": [
         "Фатаграфіі былі паспяхова адноўлены."
@@ -6526,9 +6511,6 @@
       ],
       "Shared by ": [
         "Абагулена "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Абагулена ${ sharedBy }"
       ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
@@ -6776,9 +6758,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкодныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "${ DRIVE_APP_NAME } можа сканіраваць вашы файлы з захаваннем прыватнасці і блакіраваць шкоднасныя файлы, каб дапамагчы абараніць вас. Аднак, лепш спампоўваць файлы толькі з надзейных крыніц."
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
       ],
@@ -6826,9 +6805,6 @@
       ],
       "Trash is empty": [
         "Сметніца пустая"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Паспрабуйце ${ DRIVE_APP_NAME }: бясплатна назаўсёды"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
@@ -6997,9 +6973,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будзе адноўлены да версіі ад ${ formattedRevisionDate }. Усе астатнія версіі будуць захоўвацца далей."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "З ${ DRIVE_APP_NAME } вашы даныя абаронены з дапамогай скразнога шыфравання."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -10040,17 +10013,8 @@
       "Share invitation declined": [
         "Абагуленае запрашэнне адхілена"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Немагчыма выдаліць папку, бо яна не пустая.",
-        "Немагчыма выдаліць папкі, бо яны не пустыя.",
-        "Немагчыма выдаліць папкі, бо яны не пустыя.",
-        "Немагчыма выдаліць папкі, бо яны не пустыя."
-      ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
-      ],
-      "The document failed to be created": [
-        "Збой стварэння дакумента"
       ],
       "The item was not added to your drive": [
         "Элемент не быў дадзены ў ваш дыск"
@@ -10060,9 +10024,6 @@
       ],
       "The link to your item was deleted": [
         "Спасылка на ваш элемент была выдалена"
-      ],
-      "The spreadsheet failed to be created": [
-        "Збой стварэння электроннай табліцы"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Гэта бяспечная спасылка пратэрмінавана. Змяніце тэрмін дзеяння ў наладах абагульвання."
@@ -12677,9 +12638,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "Колькасць спампоўванняў"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
         "${ emailsCount } адрасы электроннай пошты",
@@ -12823,9 +12781,6 @@
       ],
       "Cannot add more addresses": [
         "Немагчыма дадаць больш адрасоў"
-      ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
       ],
       "Card verification": [
         "Праверка карткі"
@@ -13208,9 +13163,6 @@
       "Item details": [
         "Падрабязнасці элемента"
       ],
-      "Last edited by": [
-        "Апошняе рэдагаванне"
-      ],
       "Last uploaded by": [
         "Апошняе запампоўванне"
       ],
@@ -13249,9 +13201,6 @@
       ],
       "Message": [
         "Паведамленне"
-      ],
-      "MIME type": [
-        "Тып МІМЕ"
       ],
       "Minicalendar": [
         "Мінікаляндар"
@@ -13399,9 +13348,6 @@
       ],
       "Public link settings": [
         "Налады публічнай спасылкі"
-      ],
-      "Public shared link status": [
-        "Статус абагульвання публічнай спасылкі"
       ],
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
@@ -13571,12 +13517,6 @@
       "Summary": [
         "Зводка"
       ],
-      "The link either does not exist or has expired": [
-        "Спасылка не існуе або пратэрмінавана"
-      ],
-      "The link expired": [
-        "Спасылка пратэрмінавана"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Для гэтага файла адсутнічае подпіс або ён з'яўляецца памылковым. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."
       ],
@@ -13646,9 +13586,6 @@
       "Uploaded": [
         "Запампавана"
       ],
-      "Uploaded by": [
-        "Запампавана"
-      ],
       "Uploading a large file or folder": [
         "Запампоўванне вялікага файла або папкі"
       ],
@@ -13663,9 +13600,6 @@
       ],
       "Verifying your payment...": [
         "Спраўджанне вашага плацяжу..."
-      ],
-      "Version details": [
-        "Падрабязнасці версіі"
       ],
       "Version history": [
         "Гісторыя версій"

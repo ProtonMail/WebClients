@@ -2472,20 +2472,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
-      "Email is not valid": [
-        "Adres e-mail nie jest prawidłowy"
-      ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
       ],
-      "Enter your username without the domain (@example.com)": [
-        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
-      ],
-      "Incorrect username": [
-        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Invalid ${ name } code": [
         "Kod ${ name } jest nieprawidłowy"
@@ -2508,14 +2499,8 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
-      "Not a valid number": [
-        "Numer telefonu nie jest prawidłowy"
-      ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
-      ],
-      "Passwords do not match": [
-        "Hasła nie pasują do siebie"
       ],
       "Payment process canceled": [
         "Przetwarzanie płatności zostało anulowane"
@@ -2571,35 +2556,17 @@
       "The amount due has changed. Please try again.": [
         "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
-      "The email addresses do not match": [
-        "Adresy e-mail nie pasują do siebie"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
-      ],
       "This field is required": [
         "Pole jest wymagane"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Użyj tylko liter, cyfr i znaków _.-"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
-      ],
-      "Username must begin with a letter or digit": [
-        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
-      ],
-      "Username must end with a letter or digit": [
-        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Zaszyfrowana nazwa"
@@ -5749,20 +5716,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "VPN Plan Feature": {

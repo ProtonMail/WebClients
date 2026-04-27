@@ -1782,6 +1782,9 @@
       "View recovery settings": [
         "Ver configurações de recuperação"
       ],
+      "View recovery setup details": [
+        "Ver detalhes da configuração de recuperação"
+      ],
       "Void": [
         "Vazio"
       ],
@@ -3124,6 +3127,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "Cancelar"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -3162,6 +3168,9 @@
       ],
       "Set up other features": [
         "Configure outros recursos"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Take a tour": [
         "Faça um tour"
@@ -5091,6 +5100,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Facilite a sincronização e o agendamento com calendários compartilhados."
       ],
+      "Still need help? Our support team is here for you.": [
+        "Precisa de ajuda? Nossa equipe de suporte está aqui para você."
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
         "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
@@ -5127,6 +5139,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Você pode gerenciar vários endereços ${ BRAND_NAME } a partir de uma única conta, sem precisar alternar entre elas. Aliases e ferramentas de gerenciamento de endereços ajudam a manter tudo em uma única caixa de entrada."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
@@ -6215,6 +6230,9 @@
       "Add emergency contact": [
         "Adicionar contato de emergência"
       ],
+      "Add option": [
+        "Adicionar opção"
+      ],
       "Add recovery contact": [
         "Adicionar contato de recuperação"
       ],
@@ -6437,9 +6455,6 @@
       "Send recovery request": [
         "Enviar solicitação de recuperação"
       ],
-      "Set account recovery": [
-        "Definir recuperação de conta"
-      ],
       "Stop being recovery contact": [
         "Deixar de ser um contato de recuperação"
       ],
@@ -6460,6 +6475,9 @@
       ],
       "They may ask to access my account in case of an emergency.": [
         "Eles podem pedir para acessar minha conta em caso de emergência."
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "Eles podem pedir para acessar sua conta em caso de emergência."
       ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
         "Eles receberão acesso automaticamente em **${ days } dia**, em **${ formattedAccessibleAt }**, você pode rejeitar a solicitação deles ou dar-lhes acesso a qualquer momento.",
@@ -9650,6 +9668,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
       ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Permitir a redefinição de senha nas configurações permite que você altere sua senha caso a tenha perdido, mas ainda esteja conectado à conta ${ BRAND_NAME }."
+      ],
       "Already allocated": [
         "Já alocado"
       ],
@@ -9682,6 +9703,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "Uma importação foi pausada porque seu armazenamento está quase cheio."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Um SMS com um código de verificação foi enviado para ${ phoneNumber }."
       ],
       "and": [
         "e"
@@ -9845,6 +9869,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
+        "Faturado por ${ yearlyDiscountedPrice } nos primeiros 12 meses, se renova por ${ yearlyRenewalPrice }."
+      ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
@@ -9853,6 +9880,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Aumente a identidade de marca da sua organização e crie uma experiência on-line mais consistente para os seus usuários."
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "Ao adicionar pessoas de confiança como contatos de recuperação, poderemos enviar um e-mail a elas para ajudar você se estiver com dificuldades para recuperar seus dados após uma redefinição de senha. Você também pode ser um contato de recuperação para outras pessoas."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ao criar uma conta ${ PASS_APP_NAME } com seu e-mail do SimpleLogin, você pode gerenciar seus aliases diretamente do ${ PASS_APP_NAME }."
@@ -10191,6 +10221,9 @@
       ],
       "Drop to import": [
         "Solte para importar"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Devido à criptografia de ponta a ponta, você pode redefinir sua senha, mas ${ DataLockedText } até você usar ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez."
@@ -10557,6 +10590,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Se os atalhos de teclado estão ativados, você pode usar as seguintes teclas para ações rápidas ou para pular para visualizações diferentes. ${ metaKey } + K está sempre ativado."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Se possível, ao iniciar sessão, utilize um dispositivo ou navegador onde já tenha iniciado sessão anteriormente."
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Se o e-mail inserido foi usado para reservar o endereço de e-mail de uma criança, reenviaremos o voucher de ativação."
@@ -11340,6 +11376,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "A recuperação por e-mail não está disponível enquanto o ${ PROTON_SENTINEL_NAME } estiver ativado."
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "A recuperação por telefone não está disponível enquanto a ${ PROTON_SENTINEL_NAME } está ativada."
       ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
@@ -12488,6 +12530,9 @@
       "You don't have any referrals.": [
         "Você não tem nenhuma indicação"
       ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Você não precisa abrir ou ler o arquivo - apenas faça o download e armazene em local seguro."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Você será notificado se sua senha ou outros dados vazarem de um serviço de terceiros."
       ],
@@ -12586,6 +12631,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação baseada em dispositivo."
       ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Você receberá a recompensa em créditos 1 mês após o término do período de teste do seu amigo."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
@@ -12614,6 +12662,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Seu plano ${ planDisplayName } não apenas mantém os dados e comunicações de sua empresa seguros. Ele apoia seus objetivos de conformidade, destaca sua empresa e mantém sua equipe conectada."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
@@ -14023,6 +14074,9 @@
       "Free": [
         "Free"
       ],
+      "Free VPN included": [
+        "VPN gratuita incluída"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -14334,6 +14388,9 @@
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Disponível apenas nos planos pagos do ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Open-source code": [
+        "Código aberto"
       ],
       "OpenVPN password": [
         "Senha do OpenVPN"
@@ -15280,6 +15337,9 @@
       ],
       "Upgrade your plan": [
         "Faça upgrade de seu plano"
+      ],
+      "use a data recovery method": [
+        "usar um método de recuperação de dados"
       ],
       "Vault": [
         "Cofre"
@@ -19540,17 +19600,26 @@
       ]
     },
     "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score } / ${ maxScore } concluído"
+      ],
       "Account protection": [
         "Proteção de conta"
       ],
       "Add more options for stronger protection": [
         "Adicione mais opções para uma proteção mais eficaz"
       ],
+      "Good start. Add more options for a stronger protection.": [
+        "Bom começo. Adicione mais opções para uma proteção mais eficaz."
+      ],
       "Maximum": [
         "Máximo"
       ],
       "Partial": [
         "Parcial"
+      ],
+      "Require password reset option (email or SMS verification)": [
+        "Requer a opção de redefinição de senha (verificação por e-mail ou SMS)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Pontuação: ${ score } / ${ maxScore }"
@@ -19586,6 +19655,9 @@
       ],
       "Allow scanning QR code to sign in": [
         "Permitir a leitura de código QR para iniciar sessão"
+      ],
+      "Data recovery allowed on this device": [
+        "Recuperação de dados é permitida neste dispositivo"
       ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
@@ -22044,6 +22116,10 @@
       ]
     },
     "Status": {
+      "${ count } person": [
+        "${ count } pessoa",
+        "${ count } pessoas"
+      ],
       "Add a phone number": [
         "Adicionar um número de telefone"
       ],
@@ -22053,11 +22129,17 @@
       "Available on this device": [
         "Disponível neste dispositivo"
       ],
+      "Disable QR code sign-in": [
+        "Desativar início de sessão por código QR"
+      ],
       "Disable recovery by email": [
         "Desativar recuperação por e-mail"
       ],
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
+      ],
+      "Disable signed-in reset": [
+        "Desativar opção de início de sessão por redefinição"
       ],
       "Generate a recovery phrase": [
         "Gerar uma frase de recuperação"
@@ -22070,6 +22152,12 @@
       ],
       "Not saved": [
         "Não salvo"
+      ],
+      "Off": [
+        "Desativado"
+      ],
+      "On": [
+        "Ativado"
       ],
       "Outdated": [
         "Desatualizado"
@@ -23452,6 +23540,9 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add an emergency contact": [
+        "Adicionar um contato de emergência"
+      ],
       "Add another notification to remind you of this event": [
         "Adicione outra notificação para lembrá-lo deste evento"
       ],
@@ -23906,6 +23997,9 @@
       ],
       "Device": [
         "Dispositivo"
+      ],
+      "Device data backup": [
+        "Backup de dados do dispositivo"
       ],
       "Device name": [
         "Nome do dispositivo"
@@ -24422,6 +24516,9 @@
       "No events": [
         "Sem eventos"
       ],
+      "No events yet": [
+        "Nenhum evento ainda"
+      ],
       "No need to empty the trash": [
         "Não é necessário esvaziar a lixeira"
       ],
@@ -24559,6 +24656,9 @@
       ],
       "QR Code": [
         "Código QR"
+      ],
+      "QR code sign-in": [
+        "Iniciar sessão com o código QR"
       ],
       "Ready, set, forward": [
         "Preparar, apontar, avançar"
@@ -24776,6 +24876,9 @@
       "Sign in on TV": [
         "Iniciar sessão na TV"
       ],
+      "Sign in on TV?": [
+        "Iniciar sessão na TV?"
+      ],
       "Sign in to join the Beta program": [
         "Inicie sessão para participar do programa Beta"
       ],
@@ -24790,6 +24893,9 @@
       ],
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
+      ],
+      "Signed-in reset": [
+        "Sessão iniciado por redefinição"
       ],
       "Simplify email distribution": [
         "Simplifique a distribuição dos e-mails"
@@ -24905,6 +25011,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
+      ],
+      "Troubleshoot your issue": [
+        "Solucione seu problema"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Experimente ${ AUTHENTICATOR_APP_NAME }"
@@ -25226,6 +25335,12 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "Permita que contatos confiáveis solicitem acesso à sua conta"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "Permita que contatos de confiánça desbloqueiem seus dados criptografados após uma redefinição de senha"
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Permite facilmente adicionar links de videoconferência do Zoom aos seus convites de calendário."
@@ -26218,6 +26333,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Não foi possível acessar. Abra a extensão ${ PASS_APP_NAME } no navegador e inicie a sessão por lá."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se você cancelar esta importação, você não poderá retomá-la. A ${ BRAND_NAME } salvou todo o progresso na sua conta. Deseja cancelar mesmo assim?"
       ],
@@ -26244,6 +26362,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Os servidores neste gateway entrarão em um período de desativação de 10 dias. Esses servidores podem ser adicionados a um novo Gateway, mas o país em que estão não pode ser alterado."
       ],
       "Skip verification?": [
         "Pular verificação?"

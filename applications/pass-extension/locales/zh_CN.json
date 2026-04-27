@@ -936,6 +936,21 @@
       "Authentication failure: ${ message }": [
         "身份验证失败：${ message }"
       ],
+      "Biometric authentication failed.": [
+        "生物识别认证失败！"
+      ],
+      "Biometric lock credentials do not match.": [
+        "生物识别锁凭据不匹配！"
+      ],
+      "Biometric lock credentials not found.": [
+        "未找到生物识别锁凭据！"
+      ],
+      "Biometric lock is not configured.": [
+        "生物识别锁未配置！"
+      ],
+      "Biometric lock setup failed.": [
+        "生物识别锁设置失败！"
+      ],
       "Cannot create alias (${ error }).": [
         "无法创建别名 (${ error })。"
       ],
@@ -1007,6 +1022,9 @@
       ],
       "Emptying trash failed": [
         "清空回收站失败"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "与 ${ PASS_APP_NAME } 电脑版的加密通信失败"
       ],
       "Encrypted JSON not supported": [
         "不支持加密的 JSON"
@@ -1248,6 +1266,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "出错了。请重新加载 ${ PASS_APP_NAME } 扩展。此问题已被记录"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 电脑版未及时响应！"
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } 桌面应用已锁定，必须解锁！"
       ],
@@ -1256,6 +1277,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } 桌面应用无响应，是否仍在运行？"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 电脑版已登录了其他账户"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 电脑版应处于登录状态！"
       ],
       "The URL is in the list": [
         "网址在列表中"
@@ -2025,9 +2052,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
-      ],
       "Moving items": [
         "正在移动"
       ],
@@ -2513,6 +2537,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "无限制 hide-my-email 别名和高级别名管理"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "解锁 ${ PASS_APP_NAME } 以访问您的通行密钥"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "解锁 ${ PASS_APP_NAME } 以保存此通行密钥"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"

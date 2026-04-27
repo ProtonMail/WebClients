@@ -3599,20 +3599,11 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
       ],
-      "Email is not valid": [
-        "El correo no es válido."
-      ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
       ],
-      "Enter your username without the domain (@example.com)": [
-        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
-      ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
-      ],
-      "Incorrect username": [
-        "El nombre de usuario no es correcto."
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -3641,14 +3632,8 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
-      "Not a valid number": [
-        "No es un número válido."
-      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
         "Se ha cancelado el proceso de pago"
@@ -3710,17 +3695,11 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
       ],
-      "The email addresses do not match": [
-        "Las direcciones de correo electrónico no coinciden"
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
-      ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
         "Este campo no es válido"
@@ -3728,23 +3707,11 @@
       "This field is required": [
         "Este campo es obligatorio."
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Utiliza solo letras, números y _.-"
-      ],
       "Unknown error": [
         "Error desconocido"
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
-      ],
-      "Username must begin with a letter or digit": [
-        "El nombre de usuario debe comenzar con una letra o un número."
-      ],
-      "Username must end with a letter or digit": [
-        "El nombre de usuario debe terminar con una letra o un número."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -7282,16 +7249,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
-        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "VPN Plan Feature": {
