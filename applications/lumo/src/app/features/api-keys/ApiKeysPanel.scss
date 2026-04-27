@@ -1,44 +1,32 @@
+@use '~@proton/styles/scss/lib' as *;
 @use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
-.api-keys-panel {
+.api-keys-upsell-loading {
+    min-block-size: rem(160);
+}
+
+.api-keys-plus-gate {
     inline-size: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
 }
 
 // ── Header ────────────────────────────────────────────────────────────────────
 
-.api-keys-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
 .api-keys-description {
-    font-size: 0.8125rem;
+    font-size: rem(13);
     color: var(--text-weak);
-    margin: 0;
     line-height: 1.5;
-    flex: 1;
 }
 
 .api-keys-create-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding-block: 0.4375rem;
-    padding-inline: 0.875rem;
-    border-radius: 0.5rem;
-    font-size: 0.8125rem;
+    padding-block: rem(7);
+    padding-inline: rem(14);
+    font-size: rem(13);
     font-weight: 600;
     white-space: nowrap;
-    flex-shrink: 0;
     background: var(--primary);
     color: var(--primary-contrast);
     border: none;
@@ -56,71 +44,49 @@ im.$media-expressions: $media-expressions;
 
 // ── Empty state ───────────────────────────────────────────────────────────────
 
-.api-keys-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-block: 3rem 2rem;
-    text-align: center;
-    gap: 0.75rem;
-}
-
 .api-keys-empty-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    inline-size: 3.5rem;
-    block-size: 3.5rem;
-    border-radius: 1rem;
+    inline-size: rem(56);
+    block-size: rem(56);
     background: linear-gradient(135deg, var(--interaction-norm-minor-2) 0%, var(--interaction-norm-minor-1) 100%);
     color: var(--interaction-norm);
-    margin-block-end: 0.25rem;
+    margin-block-end: rem(4);
 }
 
 .api-keys-empty-title {
-    font-size: 0.9375rem;
+    font-size: rem(15);
     font-weight: 600;
     color: var(--text-norm);
-    margin: 0;
 }
 
 .api-keys-empty-subtitle {
-    font-size: 0.8125rem;
+    font-size: rem(13);
     color: var(--text-weak);
-    margin: 0;
-    max-inline-size: 22rem;
+    max-inline-size: rem(352);
 }
 
 // ── Key list ──────────────────────────────────────────────────────────────────
 
-.api-keys-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .api-keys-card-wrap {
     display: flex;
     flex-direction: column;
-    border-radius: 0.625rem;
+    border-radius: rem(10);
     border: 1px solid var(--border-weak);
     background-color: var(--background-norm);
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
     &--expanded {
         border-color: var(--border-norm);
-        box-shadow: 0 2px 12px rgb(0 0 0 / 0.06);
+        box-shadow: 0 rem(2) rem(12) rgb(0 0 0 / 0.06);
     }
 }
 
 .api-keys-card {
     display: flex;
     align-items: center;
-    gap: 0.875rem;
-    padding: 0.875rem 1rem;
+    gap: rem(14);
+    padding: rem(14) rem(16);
     border: none;
-    border-radius: 0.625rem;
+    border-radius: rem(10);
     background-color: transparent;
     cursor: pointer;
     text-align: start;
@@ -144,15 +110,11 @@ im.$media-expressions: $media-expressions;
     }
 
     &--open {
-        border-radius: 0.625rem 0.625rem 0 0;
+        border-radius: rem(10) rem(10) 0 0;
     }
 }
 
 .api-keys-card-chevron {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
     color: var(--text-weak);
     transition: transform 0.2s ease;
 
@@ -162,22 +124,17 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-card-expanded-shell {
-    padding: 0 1rem 1rem;
+    padding: 0 rem(16) rem(16);
     border-block-start: 1px solid var(--border-weak);
     background-color: var(--background-weak);
-    border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0 0 rem(8) rem(8);
 }
 
 .api-keys-card-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    inline-size: 2.25rem;
-    block-size: 2.25rem;
-    border-radius: 0.5rem;
+    inline-size: rem(36);
+    block-size: rem(36);
     background-color: var(--interaction-norm-minor-2);
     color: var(--interaction-norm);
-    flex-shrink: 0;
 
     .api-keys-card--expired & {
         background-color: var(--background-strong);
@@ -185,22 +142,9 @@ im.$media-expressions: $media-expressions;
     }
 }
 
-.api-keys-card-body {
-    flex: 1;
-    min-inline-size: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
 .api-keys-card-name {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    font-size: 0.875rem;
+    font-size: rem(14);
     color: var(--text-norm);
-    min-inline-size: 0;
 
     span {
         overflow: hidden;
@@ -210,18 +154,11 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
+    font-size: rem(12);
     color: var(--text-weak);
 }
 
 .api-keys-card-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.125rem;
-    flex-shrink: 0;
     opacity: 0.5;
     transition: opacity 0.15s ease;
 }
@@ -231,19 +168,19 @@ im.$media-expressions: $media-expressions;
 .api-keys-status {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    padding-block: 0.125rem;
-    padding-inline: 0.5rem;
+    gap: rem(4);
+    padding-block: rem(2);
+    padding-inline: rem(8);
     border-radius: 99px;
-    font-size: 0.6875rem;
+    font-size: rem(11);
     font-weight: 600;
     flex-shrink: 0;
 
     &::before {
         content: '';
         display: inline-block;
-        inline-size: 0.375rem;
-        block-size: 0.375rem;
+        inline-size: rem(6);
+        block-size: rem(6);
         border-radius: 50%;
         flex-shrink: 0;
     }
@@ -279,23 +216,21 @@ im.$media-expressions: $media-expressions;
 // ── Inline forms ──────────────────────────────────────────────────────────────
 
 .api-keys-form-card {
-    padding: 1.25rem;
-    border-radius: 0.625rem;
+    padding: rem(20);
     background-color: var(--background-weak);
     border: 1px solid var(--border-norm);
 }
 
 .api-keys-form-title {
-    font-size: 0.9375rem;
+    font-size: rem(15);
     font-weight: 600;
     color: var(--text-norm);
-    margin: 0 0 1rem;
 }
 
 .api-keys-form-fields {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 0.75rem;
+    gap: rem(12);
     align-items: start;
 
     @include im.media('<=small') {
@@ -304,37 +239,29 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-form-expiry {
-    min-inline-size: 8rem;
+    min-inline-size: rem(128);
 }
 
 .api-keys-form-expiry-label {
-    display: block;
-    font-size: 0.8125rem;
+    font-size: rem(13);
     font-weight: 600;
     color: var(--text-norm);
-    margin-block-end: 0.375rem;
 }
 
 .api-keys-form-footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    margin-block-start: 1rem;
-    padding-block-start: 1rem;
     border-block-start: 1px solid var(--border-weak);
 }
 
 .api-keys-renew-warning {
     display: flex;
     align-items: flex-start;
-    gap: 0.625rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    gap: rem(10);
+    padding: rem(12);
+    border-radius: rem(8);
     background-color: var(--signal-warning-minor-2, rgb(245 158 11 / 0.1));
     border: 1px solid var(--signal-warning-minor-1, rgb(245 158 11 / 0.2));
-    margin-block-end: 1rem;
-    font-size: 0.8125rem;
+    margin-block-end: rem(16);
+    font-size: rem(13);
     color: var(--text-norm);
     line-height: 1.4;
 }
@@ -342,118 +269,81 @@ im.$media-expressions: $media-expressions;
 // ── Token reveal dialog ───────────────────────────────────────────────────────
 
 .api-keys-token-reveal {
-    position: fixed;
-    inset: 0;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
 }
 
 .api-keys-token-reveal-overlay {
-    position: absolute;
-    inset: 0;
     background-color: rgb(0 0 0 / 0.55);
     backdrop-filter: blur(3px);
 }
 
 .api-keys-token-reveal-dialog {
-    position: relative;
     z-index: 1;
     background-color: var(--background-norm);
     border: 1px solid var(--border-norm);
-    border-radius: 1rem;
-    inline-size: min(30rem, 92vw);
-    box-shadow: 0 20px 60px rgb(0 0 0 / 0.2), 0 4px 16px rgb(0 0 0 / 0.1);
-    overflow: hidden;
+    border-radius: rem(16);
+    inline-size: min(#{rem(480)}, 92vw);
+    box-shadow: 0 rem(20) rem(60) rgb(0 0 0 / 0.2), 0 rem(4) rem(16) rgb(0 0 0 / 0.1);
 }
 
 .api-keys-token-reveal-header {
-    padding: 1.5rem 1.5rem 1.25rem;
+    padding: rem(24) rem(24) rem(20);
     background: linear-gradient(90deg, var(--interaction-norm-minor-2) 0%, transparent 60%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.5rem;
-}
-
-.api-keys-token-reveal-header-inner {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
 }
 
 .api-keys-token-reveal-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
-    border-radius: 0.625rem;
+    inline-size: rem(40);
+    block-size: rem(40);
     background-color: var(--interaction-norm);
     color: var(--primary-contrast);
-    flex-shrink: 0;
 }
 
 .api-keys-token-reveal-title {
-    font-size: 1rem;
+    font-size: rem(16);
     font-weight: 700;
     color: var(--text-norm);
-    margin: 0 0 0.25rem;
     line-height: 1.25;
 }
 
 .api-keys-token-reveal-subtitle {
-    font-size: 0.8125rem;
+    font-size: rem(13);
     color: var(--text-weak);
-    margin: 0;
 }
 
 .api-keys-token-reveal-body {
-    padding: 1.25rem 1.5rem 1.5rem;
+    padding: rem(20) rem(24) rem(24);
 }
 
 .api-keys-token-warning {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem 0.875rem;
-    border-radius: 0.5rem;
+    padding: rem(10) rem(14);
     background-color: var(--signal-warning-minor-2, rgb(245 158 11 / 0.1));
     border: 1px solid var(--signal-warning-minor-1, rgb(245 158 11 / 0.25));
-    font-size: 0.75rem;
+    font-size: rem(12);
     font-weight: 500;
     color: var(--signal-warning, #f59e0b);
-    margin-block-end: 1rem;
 }
 
 .api-keys-token-box {
-    position: relative;
-    padding: 0.875rem;
-    border-radius: 0.5rem;
+    padding: rem(14);
     background-color: var(--background-strong);
     border: 1px solid var(--border-norm);
-    margin-block-end: 1rem;
     cursor: text;
     user-select: all;
 }
 
 .api-keys-token-text {
     font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
-    font-size: 0.75rem;
+    font-size: rem(12);
     line-height: 1.6;
     color: var(--text-norm);
     word-break: break-all;
-    display: block;
-    padding-inline-end: 2rem;
+    padding-inline-end: rem(32);
 }
 
 .api-keys-token-copied {
-    position: absolute;
-    inset-block-start: 0.625rem;
-    inset-inline-end: 0.625rem;
-    font-size: 0.6875rem;
+    inset-block-start: rem(10);
+    inset-inline-end: rem(10);
+    font-size: rem(11);
     font-weight: 600;
     color: var(--signal-success, #10b981);
     opacity: 0;
@@ -468,12 +358,7 @@ im.$media-expressions: $media-expressions;
 // ── Usage sparkline ───────────────────────────────────────────────────────────
 
 .api-keys-usage {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.25rem;
-    flex-shrink: 0;
-    min-inline-size: 7rem;
+    min-inline-size: rem(112);
 }
 
 .api-keys-usage-chart {
@@ -482,15 +367,15 @@ im.$media-expressions: $media-expressions;
     z-index: 1;
     overflow: visible;
     /* Room above the chart so the Recharts tooltip (positioned upward) is not clipped */
-    padding-block-start: 0.25rem;
+    padding-block-start: rem(4);
 
     &--ghost {
         opacity: 0.35;
     }
 
     &--spark {
-        padding: 0.25rem 0.35rem;
-        border-radius: 0.5rem;
+        padding: rem(4) rem(6);
+        border-radius: rem(8);
         background: linear-gradient(
             180deg,
             color-mix(in srgb, var(--interaction-norm) 8%, transparent) 0%,
@@ -503,41 +388,38 @@ im.$media-expressions: $media-expressions;
 // ── Chart tooltip (Recharts; keep above bar so it does not overlap stats below) ─
 
 .api-keys-chart-tooltip {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    padding: 0.375rem 0.625rem;
-    border-radius: 0.375rem;
+    padding: rem(6) rem(10);
     background: var(--background-norm);
     border: 1px solid var(--border-norm);
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+    border-radius: rem(6);
+    box-shadow: 0 rem(4) rem(12) rgb(0 0 0 / 0.12);
     pointer-events: none;
 
     &--spark {
-        border-radius: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+        border-radius: rem(8);
+        padding: rem(8) rem(12);
+        box-shadow: 0 rem(6) rem(20) rgb(0 0 0 / 0.1);
         border-inline-start: 3px solid var(--interaction-norm);
     }
 }
 
 .api-keys-chart-tooltip-date {
-    font-size: 0.625rem;
+    font-size: rem(10);
     color: var(--text-weak);
     line-height: 1.2;
 }
 
 .api-keys-chart-tooltip-value {
-    font-size: 0.75rem;
+    font-size: rem(12);
     font-weight: 600;
     color: var(--text-norm);
     line-height: 1.2;
 }
 
 .api-keys-chart-tooltip--expanded {
-    padding: 0.625rem 0.875rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+    padding: rem(10) rem(14);
+    border-radius: rem(8);
+    box-shadow: 0 rem(8) rem(24) rgb(0 0 0 / 0.12);
     border-inline-start-width: 3px;
     border-inline-start-style: solid;
     backdrop-filter: blur(8px);
@@ -557,54 +439,32 @@ im.$media-expressions: $media-expressions;
     }
 }
 
-.api-keys-usage-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.125rem;
-}
-
-.api-keys-usage-stat-line {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    justify-content: flex-end;
-}
-
 .api-keys-usage-total {
-    font-size: 0.75rem;
+    font-size: rem(12);
     font-weight: 600;
     color: var(--text-norm);
     line-height: 1;
 }
 
 .api-keys-usage-label {
-    font-size: 0.6875rem;
+    font-size: rem(11);
     color: var(--text-weak);
     line-height: 1;
 }
 
 .api-keys-usage-skeleton {
-    inline-size: 6.5rem;
-    block-size: 2.25rem;
-    border-radius: 0.375rem;
+    inline-size: rem(104);
+    block-size: rem(36);
+    border-radius: rem(6);
     background: var(--background-strong);
     flex-shrink: 0;
 }
 
-
 // ── Loading skeleton ──────────────────────────────────────────────────────────
 
-.api-keys-skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .api-keys-skeleton-item {
-    block-size: 3.75rem;
-    border-radius: 0.625rem;
+    block-size: rem(60);
+    border-radius: rem(10);
     background: linear-gradient(
         90deg,
         var(--background-strong) 25%,
@@ -616,40 +476,36 @@ im.$media-expressions: $media-expressions;
 }
 
 @keyframes api-keys-shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 // ── Usage overview (all keys) ────────────────────────────────────────────────
 
 .api-keys-overview {
-    padding: 1rem 1.125rem;
-    border-radius: 0.625rem;
-    border: 1px solid var(--border-weak);
+    padding: rem(16) rem(18);
     background: linear-gradient(180deg, var(--background-weak) 0%, var(--background-norm) 100%);
-    margin-block-end: 0.5rem;
+    margin-block-end: rem(8);
 
     &__title {
-        font-size: 0.8125rem;
+        font-size: rem(13);
         font-weight: 600;
         color: var(--text-norm);
-        margin: 0 0 0.75rem;
     }
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
-        gap: 1rem;
-    }
-
-    &__stat {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+        gap: rem(16);
     }
 
     &__value {
-        font-size: 1.25rem;
+        font-size: rem(20);
         font-weight: 700;
         color: var(--text-norm);
         line-height: 1.2;
@@ -657,18 +513,18 @@ im.$media-expressions: $media-expressions;
     }
 
     &__label {
-        font-size: 0.6875rem;
+        font-size: rem(11);
         color: var(--text-weak);
         line-height: 1.3;
     }
 
     &--loading {
-        min-block-size: 4.5rem;
+        min-block-size: rem(72);
     }
 
     &__skeleton {
-        block-size: 3.5rem;
-        border-radius: 0.5rem;
+        block-size: rem(56);
+        border-radius: rem(8);
         background: var(--background-strong);
         animation: api-keys-shimmer 1.4s ease infinite;
     }
@@ -676,66 +532,42 @@ im.$media-expressions: $media-expressions;
 
 // ── Expanded per-key usage ───────────────────────────────────────────────────
 
-.api-keys-card-expanded {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding-block-start: 0.5rem;
-}
-
 .api-keys-expanded-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
-    gap: 0.75rem;
-}
-
-.api-keys-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--border-weak);
-    background: var(--background-norm);
+    grid-template-columns: repeat(auto-fit, minmax(rem(104), 1fr));
+    gap: rem(12);
 }
 
 .api-keys-stat-value {
-    font-size: 1.125rem;
+    font-size: rem(18);
     font-weight: 700;
     color: var(--text-norm);
     font-variant-numeric: tabular-nums;
 }
 
 .api-keys-stat-label {
-    font-size: 0.6875rem;
+    font-size: rem(11);
     color: var(--text-weak);
     line-height: 1.3;
 }
 
-.api-keys-expanded-chart-block {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .api-keys-expanded-chart-title {
-    font-size: 0.8125rem;
+    font-size: rem(13);
     font-weight: 600;
-    margin: 0;
     color: var(--text-norm);
 }
 
 .api-keys-expanded-hint {
-    max-inline-size: 40rem;
+    max-inline-size: rem(640);
 }
 
 .api-keys-expanded-chart {
     inline-size: 100%;
-    min-block-size: 200px;
+    min-block-size: rem(200);
 
     &--elevated {
-        padding: 0.75rem 0.5rem 0.5rem;
-        border-radius: 0.75rem;
+        padding: rem(12) rem(8) rem(8);
+        border-radius: rem(12);
         background: linear-gradient(
             165deg,
             color-mix(in srgb, var(--background-norm) 88%, var(--interaction-norm-minor-2)) 0%,
@@ -743,12 +575,10 @@ im.$media-expressions: $media-expressions;
             var(--background-weak) 100%
         );
         border: 1px solid var(--border-weak);
-        box-shadow:
-            0 1px 0 rgb(255 255 255 / 0.06) inset,
-            0 2px 16px rgb(0 0 0 / 0.06);
+        box-shadow: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 rem(2) rem(16) rgb(0 0 0 / 0.06);
     }
 }
 
 .api-keys-expanded-loading {
-    padding: 0.5rem 0;
+    padding-block: rem(8);
 }

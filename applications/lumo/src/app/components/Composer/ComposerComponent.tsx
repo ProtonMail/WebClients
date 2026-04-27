@@ -19,17 +19,24 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
-import type { Attachment, Message } from '../../types';
+import type { Attachment, ComposerMode, Message } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
-import { AttachmentArea, FileContentModal } from '../Files';
+import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
+import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
+import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
+import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
+import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
+import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
+import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
+import { useNativeComposerVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 
 import './ComposerComponent.scss';
 
@@ -50,6 +57,7 @@ type ComposerComponentInnerProps = ComposerComponentProps & {
 };
 
 export type ComposerComponentProps = {
+    composerMode: ComposerMode;
     handleSendMessage: HandleSendMessage;
     onAbort?: () => void;
     isGenerating?: boolean;
@@ -59,14 +67,18 @@ export type ComposerComponentProps = {
     setIsEditorFocused?: (isEditorFocused: boolean) => void;
     isEditorFocused?: boolean;
     setIsEditorEmpty?: (isEditorEmpty: boolean) => void;
-    messageChain?: Message[];
-    handleOpenFiles?: () => void;
-    onShowDriveBrowser?: () => void;
+    messageChain?: Message[]; // Optional for MainContainer (no conversation yet)
+    handleOpenFiles?: () => void; // Optional for MainContainer (no files management needed)
+    onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
+    onOpenFilePreview?: (attachment: Attachment) => void;
     canShowLegalDisclaimer?: boolean;
+    initialQuery?: string; // Initial query to populate and auto-execute
+    prefillQuery?: string; // Query to prefill without auto-executing
+    spaceId?: string; // Optional space ID to include space-level attachments
+    autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
     canShowLumoUpsellToggle?: boolean;
-    initialQuery?: string;
-    prefillQuery?: string;
-    spaceId?: string;
+    canShowGuestNotificationCard?: boolean;
+    placeholder?: string;
 };
 
 /**
@@ -74,6 +86,7 @@ export type ComposerComponentProps = {
  * Receives an optional driveContext — has no direct knowledge of guest vs authenticated state.
  */
 const ComposerComponentInner = ({
+    composerMode,
     handleSendMessage,
     onAbort,
     isGenerating,
@@ -86,11 +99,15 @@ const ComposerComponentInner = ({
     messageChain = [],
     handleOpenFiles,
     onShowDriveBrowser,
+    onOpenFilePreview,
     canShowLegalDisclaimer,
-    canShowLumoUpsellToggle,
     initialQuery,
     prefillQuery,
     spaceId,
+    autoOpenSketch,
+    placeholder,
+    canShowLumoUpsellToggle = false,
+    canShowGuestNotificationCard = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -98,16 +115,59 @@ const ComposerComponentInner = ({
     const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
-    const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showDrawingModal, setShowDrawingModal] = useState(false);
+    const [pendingSketchDescription, setPendingSketchDescription] = useState<string | null>(null);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
+    const isGuest = useIsGuest();
 
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
-    const { handleFileProcessing, handleFilesSelected, handleBrowseDrive, handleDeleteAttachment, fileUploadMode } =
-        useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
+    const {
+        handleFileProcessing,
+        handleFilesSelected,
+        handleBrowseDrive,
+        handleDeleteAttachment,
+        handleFilesFromNative,
+        fileUploadMode,
+    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
+
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
+
+    // Auto-open sketch canvas when navigated from gallery with ?sketch=1
+    useEffect(() => {
+        if (autoOpenSketch) {
+            setShowDrawingModal(true);
+        }
+    }, [autoOpenSketch]);
+
+    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({
+        showDrawingModal,
+    });
+    useNativeComposerFeatureFlagsApi();
+
+    // registers a hook that updates the native composer state
+    useNativeComposerFileApi(
+        composerMode,
+        hasAttachments,
+        messageChain && messageChain.length !== 0,
+        handleFilesFromNative,
+        handleBrowseDrive,
+        handleDrawSketch,
+        handleDeleteAttachment
+    );
+
+    const handleDrawingExport = useCallback(
+        async (imageData: string, _mode: string, description: string) => {
+            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
+            await handleFileProcessing(file);
+            setPendingSketchDescription(description.trim());
+        },
+        [handleFileProcessing]
+    );
 
     const isAutocompleteActiveRef = useRef(false);
 
@@ -199,27 +259,38 @@ const ComposerComponentInner = ({
         }
     }, [handleFileProcessing]);
 
-    const handleDrawSketch = useCallback(() => {
-        setShowDrawingModal(true);
-    }, []);
+    // Auto-submit after sketch export: set description as textarea content and send
+    useEffect(() => {
+        if (pendingSketchDescription === null || isProcessingAttachment) return;
 
-    const handleDrawingExport = useCallback(
-        async (imageData: string) => {
-            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-            await handleFileProcessing(file);
-            createNotification({
-                text: c('collider_2025: Info').t`Sketch added as attachment`,
-                type: 'success',
-            });
-        },
-        [handleFileProcessing, createNotification]
-    );
+        if (pendingSketchDescription) {
+            setValue(pendingSketchDescription);
+        }
+
+        const timer = setTimeout(() => {
+            if (pendingSketchDescription) {
+                void sendGenerateMessage(pendingSketchDescription);
+            }
+            setPendingSketchDescription(null);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [pendingSketchDescription, isProcessingAttachment, setValue, sendGenerateMessage]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
 
+    useNativeComposerLumoStateApi(isGenerating);
+
     return (
         <>
-            <div className="w-full" ref={inputContainerRef}>
+            {isGuest && canShowGuestNotificationCard && (
+                <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+            )}
+            <div
+                style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
+                className="w-full"
+                ref={inputContainerRef}
+            >
                 <section
                     ref={composerContainerRef}
                     className={clsx(
@@ -234,9 +305,15 @@ const ComposerComponentInner = ({
 
                     {showLegalDisclaimer && <GuestDisclaimer />}
 
+                    <ComposerLimitBanner
+                        conversationId={messageChain?.[0]?.conversationId}
+                        spaceId={spaceId}
+                        onOpenFiles={handleOpenFiles}
+                    />
+
                     <div
                         className={clsx(
-                            'lumo-input-container shadow-lifted-composer bg-weak w-full',
+                            'lumo-input-container border border-norm  w-full',
                             isGhostChatMode && 'ghost-mode'
                         )}
                     >
@@ -246,7 +323,7 @@ const ComposerComponentInner = ({
                                 allRelevantAttachments={allRelevantAttachments}
                                 messageChain={messageChain}
                                 onDeleteAttachment={handleDeleteAttachment}
-                                onViewFile={setFileToView}
+                                onViewFile={onOpenFilePreview ?? (() => {})}
                                 onOpenFiles={handleOpenFiles}
                             />
                         )}
@@ -264,23 +341,22 @@ const ComposerComponentInner = ({
                             browseFolderChildren={driveContext?.browseFolderChildren}
                             downloadFile={driveContext?.downloadFile}
                             userId={driveContext?.userId}
+                            placeholder={placeholder}
                         />
                         <ComposerToolbar
+                            composerMode={composerMode}
                             onFilesSelected={handleFilesSelected}
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
-                            canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                             fileUploadMode={fileUploadMode}
+                            canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                         />
                     </div>
+                    {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
             </div>
-
-            {fileToView && (
-                <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
-            )}
 
             <SketchOverlay
                 isOpen={showDrawingModal}

@@ -20,17 +20,19 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
     };
 
     return (
-        <div className="api-keys-token-reveal">
-            <div className="api-keys-token-reveal-overlay" onClick={onClose} />
-            <div className="api-keys-token-reveal-dialog">
-                <div className="api-keys-token-reveal-header">
-                    <div className="api-keys-token-reveal-header-inner">
-                        <div className="api-keys-token-reveal-icon">
+        <div className="api-keys-token-reveal fixed inset-0 flex items-center justify-center p-4">
+            <div className="api-keys-token-reveal-overlay absolute inset-0" onClick={onClose} />
+            <div className="api-keys-token-reveal-dialog relative overflow-hidden">
+                <div className="api-keys-token-reveal-header flex items-start justify-space-between gap-2">
+                    <div className="flex items-center gap-3">
+                        <div className="api-keys-token-reveal-icon flex items-center justify-center shrink-0 rounded-lg">
                             <IcKey size={5} />
                         </div>
                         <div>
-                            <h3 className="api-keys-token-reveal-title">{c('collider_2025: Title').t`Your new API key`}</h3>
-                            <p className="api-keys-token-reveal-subtitle">
+                            <h3 className="api-keys-token-reveal-title m-0 mb-1">
+                                {c('collider_2025: Title').t`Your new API key`}
+                            </h3>
+                            <p className="api-keys-token-reveal-subtitle m-0">
                                 {c('collider_2025: Description').t`Keep it safe — it won't be shown again`}
                             </p>
                         </div>
@@ -41,14 +43,14 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
                 </div>
 
                 <div className="api-keys-token-reveal-body">
-                    <div className="api-keys-token-warning">
+                    <div className="api-keys-token-warning flex items-center gap-2 rounded-lg mb-4">
                         <IcExclamationCircle size={4} className="shrink-0" />
                         {c('collider_2025: Warning').t`This is the only time you'll see this key. Copy it now.`}
                     </div>
 
-                    <div className="api-keys-token-box" onClick={handleCopy}>
-                        <span className="api-keys-token-text">{token}</span>
-                        <span className={`api-keys-token-copied ${copied ? 'api-keys-token-copied--visible' : ''}`}>
+                    <div className="api-keys-token-box relative rounded-lg mb-4" onClick={handleCopy}>
+                        <span className="api-keys-token-text block">{token}</span>
+                        <span className={`api-keys-token-copied absolute ${copied ? 'api-keys-token-copied--visible' : ''}`}>
                             {c('collider_2025: Status').t`Copied!`}
                         </span>
                     </div>

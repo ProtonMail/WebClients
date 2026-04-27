@@ -1,6 +1,7 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { useLumoUserSettings } from '../hooks';
+import { onNativeToggleWebSearch, setNativeWebSearch } from '../remote/nativeComposerBridgeHelpers';
 import { sendWebSearchButtonToggledEvent } from '../util/telemetry';
 
 interface WebSearchContextType {
@@ -24,6 +25,7 @@ export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
     // Sync with persisted setting when it changes (e.g., from settings modal)
     useEffect(() => {
         setIsWebSearchButtonToggled(automaticWebSearch);
+        setNativeWebSearch(automaticWebSearch);
     }, [automaticWebSearch]);
 
     const handleWebSearchButtonClick = useCallback(() => {
@@ -36,6 +38,21 @@ export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
             _autoSave: true,
         });
     }, [isWebSearchButtonToggled, updateSettings]);
+
+    useEffect(() => {
+        console.log('Registered web search listener');
+
+        const unsubscribeToggleWebSearch = onNativeToggleWebSearch((_) => {
+            console.log('Received toggle web search listener');
+
+            handleWebSearchButtonClick();
+        });
+
+        return () => {
+            console.log('Un-registered web search listener');
+            unsubscribeToggleWebSearch();
+        };
+    }, [handleWebSearchButtonClick]);
 
     const value = {
         isWebSearchButtonToggled,

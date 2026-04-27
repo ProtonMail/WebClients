@@ -48,7 +48,9 @@ import {addIdMapEntry} from '../slices/core/idmap';
 import {locallyRefreshMessageFromRemoteRequest} from '../slices/core/messages';
 import type {LumoState} from '../store';
 import {waitForMapping} from './idmap';
-import {callWithRetry, ClientError, isClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {MAX_CONVERSATIONS_PER_SPACE} from '../../constants/limits';
+import {addResourceLimitError} from '../slices/meta/errors';
+import {callWithRetry, ClientError, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 import {considerRequestingFullMessage} from './messages';
 import {waitForSpace} from './spaces';
 
@@ -176,15 +178,18 @@ export function* softDeleteConversationFromRemote({
 }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteConversationFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteConversation(localId)); // Redux
+    // IDB first, then Redux: if the IDB write fails we don't want Redux and IDB
+    // to diverge (Redux-only deletion would leave a stale tombstone on reload).
     yield call([dbApi, dbApi.softDeleteConversation], localId, { dirty: false }); // IDB
+    yield put(deleteConversation(localId)); // Redux
 }
 
 export function* softDeleteConversationFromLocal({ payload: localId }: { payload: ConversationId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteConversationFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteConversation(localId)); // Redux
+    // IDB first, then Redux — see softDeleteConversationFromRemote for rationale.
     yield call([dbApi, dbApi.softDeleteConversation], localId, { dirty: true }); // IDB
+    yield put(deleteConversation(localId)); // Redux
 
     // Trigger push to sync deletion to server
     console.log(`softDeleteConversationFromLocal: triggering push for deleted conversation ${localId}`);
@@ -335,7 +340,16 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
     } catch (e) {
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
-        if (isClientError(e)) {
+        if (isLimitReachedError(e)) {
+            yield put(
+                addResourceLimitError({
+                    resource: 'conversations',
+                    limit: MAX_CONVERSATIONS_PER_SPACE,
+                    serverMessage: e.serverMessage,
+                })
+            );
+            yield put(pushConversationFailure({ ...payload, error: `${e}` }));
+        } else if (isClientError(e)) {
             yield put(pushConversationFailure({ ...payload, error: `${e}` }));
         } else {
             yield put(pushConversationNeedsRetry(payload));

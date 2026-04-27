@@ -1,0 +1,76 @@
+@use '~@proton/styles/scss/lib' as *;
+
+// Shared styles for inline image action buttons and menus.
+// Used by InlineImageComponent and GalleryImageCard.
+
+.image-icon-btn {
+    border: none;
+    background: var(--background-weak);
+    color: var(--text-norm);
+    cursor: pointer;
+    transition: background 0.12s;
+
+    &:hover {
+        background: rgb(255 255 255 / 0.22);
+    }
+}
+
+.image-style-menu__popup {
+    inset-block-end: calc(100% + #{rem(6)});
+    inset-inline-start: 0;
+    z-index: 200;
+    min-inline-size: rem(180);
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    box-shadow: var(--shadow-lifted-lg, 0 rem(8) rem(32) rgb(0 0 0 / 0.14));
+}
+
+.image-style-menu__item {
+    border: none;
+    background: transparent;
+    color: var(--text-norm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.1s;
+
+    &:hover {
+        background: var(--background-strong);
+    }
+}
+
+// ── Inline image card (image left, actions right) ─────────────────────────────
+
+.inline-image-card {
+    gap: rem(10);
+    vertical-align: top;
+}
+
+.inline-image-card__img {
+    line-height: 0;
+
+    img {
+        display: block;
+        max-inline-size: rem(280);
+        inline-size: 100%;
+        border-radius: rem(12);
+    }
+}
+
+.inline-image-card__actions {
+    gap: rem(5);
+    min-inline-size: rem(118);
+    padding-block-start: rem(2);
+}
+
+.image-style-menu--side {
+    .image-style-menu__popup {
+        inset-block: 0 auto;
+        inset-inline: calc(100% + #{rem(6)}) auto;
+    }
+}
+
+.image-lightbox {
+    z-index: 9999;
+    background-color: rgb(255 255 255 / 0.85);
+    backdrop-filter: blur(6px);
+}

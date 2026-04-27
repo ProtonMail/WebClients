@@ -1,9 +1,0 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-
-.sidebar-button {
-	&#{&} {
-		--padding-block: #{rem(3)};
-		--padding-inline: #{rem(3)};
-	}
-}

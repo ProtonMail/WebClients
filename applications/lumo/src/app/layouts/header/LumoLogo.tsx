@@ -7,11 +7,11 @@ import lumoBusinessLogo from '@proton/styles/assets/img/lumo/lumo-business-logo.
 import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
 import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
 
+import { GuestChatDisclaimerModal } from '../../components/Guest/GuestChatDisclaimerModal';
+import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { ThemeTypes, useLumoTheme } from '../../providers/LumoThemeProvider';
-import { GuestChatDisclaimerModal } from '../../components/Modals/GuestChatDisclaimerModal';
-import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
 
 const LOGO_HEIGHT = '21px';
 

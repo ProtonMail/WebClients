@@ -2,12 +2,29 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SearchIndexDebugModal } from '../../components/Modals/SettingsModal/SearchIndex/SearchIndexDebugModal';
+import { SearchIndexDebugPanel } from '../../components/Modals/SettingsModal/SearchIndex/SearchIndexDebugPanel';
+import {
+    isNativeComposerBridgeAvailable,
+    onLimitReachedError,
+} from '../../remote/nativeComposerBridgeHelpers';
+import {
+    MAX_ASSETS_PER_SPACE,
+    MAX_CONVERSATIONS_PER_SPACE,
+    MAX_MESSAGES_PER_CONVERSATION,
+    MAX_SPACES_PER_USER,
+} from '../../constants/limits';
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { addConversation } from '../../redux/slices/core/conversations';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
+import type { DebugLimitOverride } from '../../redux/slices/meta/errors';
+import {
+    addResourceLimitError,
+    clearAllDebugLimitOverrides,
+    selectAllDebugLimitOverrides,
+    setDebugLimitOverride,
+} from '../../redux/slices/meta/errors';
 import type { Conversation, Space } from '../../types';
 import { ConversationStatus } from '../../types';
 import { TestRendererModal } from './TestRendererModal';
@@ -240,8 +257,15 @@ const Sparkline = ({
     );
 };
 
+const overrideLabel = (override: DebugLimitOverride) => {
+    if (override === 'approaching') return 'APPROACHING';
+    if (override === 'at') return 'AT LIMIT';
+    return 'off';
+};
+
 const DebugView = () => {
     const dispatch = useLumoDispatch();
+    const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
     const [metrics, setMetrics] = useState<PerformanceMetrics>({
         tokensPerSecond: 0,
         totalTokens: 0,
@@ -264,8 +288,10 @@ const DebugView = () => {
         },
     });
     const [isVisible, setIsVisible] = useState(false);
-    const [showSearchIndexDebug, setShowSearchIndexDebug] = useState(false);
     const [showTestRenderer, setShowTestRenderer] = useState(false);
+    const [activeTab, setActiveTab] = useState<'performance' | 'rendering' | 'search' | 'notifications'>(
+        'performance'
+    );
 
     useEffect(() => {
         const checkDebug = () => {
@@ -585,13 +611,54 @@ const DebugView = () => {
         setShowTestRenderer(true);
     };
 
-    return (
-        <div className="debug-view">
-            <div className="debug-view-header">
-                <span className="debug-view-header-icon">⚡</span>
-                {c('lumo: Debug View').t`Debug View`}
-            </div>
+    const triggerLimitError = (
+        resource: 'messages' | 'assets' | 'conversations' | 'spaces',
+        limit: number
+    ) => {
+        dispatch(
+            addResourceLimitError({
+                resource,
+                limit,
+                serverMessage: `[debug] Simulated 422 from backend for ${resource}`,
+            })
+        );
+    };
 
+    const triggerNativeBridgeLimit = (
+        resource: 'messages' | 'assets' | 'conversations' | 'spaces',
+        limit: number
+    ) => {
+        onLimitReachedError({
+            resource,
+            limit,
+            message: `[debug] Direct native bridge test for ${resource}`,
+        });
+        if (!isNativeComposerBridgeAvailable()) {
+            console.info(
+                '[DebugView] Native composer bridge unavailable. The call was a no-op — check DevTools under a mobile wrapper to see the event reach native.'
+            );
+        }
+    };
+
+    const cycleOverride = (
+        resource: 'messages' | 'assets' | 'conversations' | 'spaces',
+        current: DebugLimitOverride
+    ) => {
+        const next: DebugLimitOverride =
+            // eslint-disable-next-line no-nested-ternary
+            current === null ? 'approaching' : current === 'approaching' ? 'at' : null;
+        dispatch(setDebugLimitOverride({ resource, override: next }));
+    };
+
+    const tabs: { id: typeof activeTab; label: string }[] = [
+        { id: 'performance', label: c('lumo: Debug View').t`Performance` },
+        { id: 'rendering', label: c('lumo: Debug View').t`Rendering` },
+        { id: 'search', label: c('lumo: Debug View').t`Search` },
+        { id: 'notifications', label: c('lumo: Debug View').t`Notifications` },
+    ];
+
+    const performanceTab = (
+        <div className="debug-view-tab-panel">
             <div className="debug-view-row">
                 <span className="debug-view-label">{c('lumo: Debug View').t`Status`}</span>
                 <span className="debug-view-value">
@@ -792,34 +859,186 @@ const DebugView = () => {
                 <button className="debug-view-btn debug-view-btn--secondary" onClick={handleClearHistory}>
                     {c('lumo: Debug View').t`Clear History`}
                 </button>
+            </div>
+        </div>
+    );
+
+    const renderingTab = (
+        <div className="debug-view-tab-panel debug-view-actions">
+            <button
+                className="debug-view-btn debug-view-btn--primary"
+                onClick={handleTestRenderer}
+                style={{ background: 'var(--interaction-norm)' }}
+            >
+                🧪 {c('lumo: Debug View').t`Test Renderer`}
+            </button>
+            <button
+                className="debug-view-btn debug-view-btn--primary"
+                onClick={handleCreateTestChats}
+                style={{ background: 'var(--signal-warning)' }}
+            >
+                ⚠️ {c('lumo: Debug View').t`Create Test Chats`}
+            </button>
+            <div className="debug-view-hint">
+                {c('lumo: Debug View')
+                    .t`Spin up the test renderer or seed the sidebar with conversations across age buckets.`}
+            </div>
+        </div>
+    );
+
+    const searchTab = (
+        <div className="debug-view-tab-panel">
+            <SearchIndexDebugPanel enabled={activeTab === 'search'} />
+        </div>
+    );
+
+    const notificationsTab = (
+        <div className="debug-view-tab-panel">
+            <div className="debug-view-header">
+                <span className="debug-view-header-icon">🚧</span>
+                {c('lumo: Debug View').t`Resource limit notifications`}
+            </div>
+            <div className="debug-view-actions">
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
-                    onClick={() => setShowSearchIndexDebug(true)}
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerLimitError('messages', MAX_MESSAGES_PER_CONVERSATION)}
                 >
-                    🔍 {c('lumo: Debug View').t`Search Index Debug`}
+                    💬 {c('lumo: Debug View').t`Trigger messages limit`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
-                    onClick={handleTestRenderer}
-                    style={{ background: 'var(--interaction-norm)' }}
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerLimitError('assets', MAX_ASSETS_PER_SPACE)}
                 >
-                    🧪 {c('lumo: Debug View').t`Test Renderer`}
+                    📎 {c('lumo: Debug View').t`Trigger assets limit`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
-                    onClick={handleCreateTestChats}
-                    style={{ background: 'var(--signal-warning)' }}
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerLimitError('conversations', MAX_CONVERSATIONS_PER_SPACE)}
                 >
-                    ⚠️ {c('lumo: Debug View').t`Create Test Chats`}
+                    🗂️ {c('lumo: Debug View').t`Trigger conversations limit`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerLimitError('spaces', MAX_SPACES_PER_USER)}
+                >
+                    🌌 {c('lumo: Debug View').t`Trigger spaces limit`}
                 </button>
                 <div className="debug-view-hint">
-                    <strong>Cmd/Ctrl + Shift + P</strong> {c('lumo: Debug View').t`to toggle`}
+                    {c('lumo: Debug View')
+                        .t`Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.`}
                 </div>
             </div>
 
-            {showSearchIndexDebug && (
-                <SearchIndexDebugModal open={showSearchIndexDebug} onClose={() => setShowSearchIndexDebug(false)} />
-            )}
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">📱</span>
+                {c('lumo: Debug View').t`Native bridge: onLimitReachedError`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerNativeBridgeLimit('messages', MAX_MESSAGES_PER_CONVERSATION)}
+                >
+                    💬 {c('lumo: Debug View').t`Send messages limit to native`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerNativeBridgeLimit('assets', MAX_ASSETS_PER_SPACE)}
+                >
+                    📎 {c('lumo: Debug View').t`Send assets limit to native`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerNativeBridgeLimit('conversations', MAX_CONVERSATIONS_PER_SPACE)}
+                >
+                    🗂️ {c('lumo: Debug View').t`Send conversations limit to native`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => triggerNativeBridgeLimit('spaces', MAX_SPACES_PER_USER)}
+                >
+                    🌌 {c('lumo: Debug View').t`Send spaces limit to native`}
+                </button>
+                <div className="debug-view-hint">
+                    {isNativeComposerBridgeAvailable()
+                        ? c('lumo: Debug View')
+                              .t`Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).`
+                        : c('lumo: Debug View')
+                              .t`Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">📏</span>
+                {c('lumo: Debug View').t`Composer limit banner preview`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => cycleOverride('messages', debugOverrides.messages)}
+                >
+                    💬 {c('lumo: Debug View').t`Messages`}: {overrideLabel(debugOverrides.messages)}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => cycleOverride('assets', debugOverrides.assets)}
+                >
+                    📎 {c('lumo: Debug View').t`Assets`}: {overrideLabel(debugOverrides.assets)}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => dispatch(clearAllDebugLimitOverrides())}
+                >
+                    🧹 {c('lumo: Debug View').t`Clear overrides`}
+                </button>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View')
+                        .t`Forces the inline composer banner into "approaching" or "at limit" state so you can preview it in any context.`}
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderActiveTab = () => {
+        switch (activeTab) {
+            case 'rendering':
+                return renderingTab;
+            case 'search':
+                return searchTab;
+            case 'notifications':
+                return notificationsTab;
+            case 'performance':
+            default:
+                return performanceTab;
+        }
+    };
+
+    return (
+        <div className="debug-view">
+            <div className="debug-view-header">
+                <span className="debug-view-header-icon">⚡</span>
+                {c('lumo: Debug View').t`Debug View`}
+            </div>
+
+            <div className="debug-view-tabs" role="tablist">
+                {tabs.map((tab) => (
+                    <button
+                        key={tab.id}
+                        role="tab"
+                        aria-selected={activeTab === tab.id}
+                        className={`debug-view-tab ${activeTab === tab.id ? 'debug-view-tab--active' : ''}`}
+                        onClick={() => setActiveTab(tab.id)}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+
+            {renderActiveTab()}
+
+            <div className="debug-view-hint" style={{ marginTop: '12px' }}>
+                <strong>Cmd/Ctrl + Shift + P</strong> {c('lumo: Debug View').t`to toggle`}
+            </div>
+
             {showTestRenderer && (
                 <TestRendererModal open={showTestRenderer} onClose={() => setShowTestRenderer(false)} />
             )}

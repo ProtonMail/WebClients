@@ -11,19 +11,20 @@ im.$media-expressions: $media-expressions;
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
 	transition: all 0.3s ease-out;
+	border-width: 0.5px !important;
 
 	// Mobile styles
 	@include im.media('<=small') {
-		border-block-end: none !important;
+		// border-block-end: none !important;
 		inline-size: 98% !important;
 		margin-block-end: 10px;
 
 		// Mobile background override
-		background-color: var(--background-composer-mobile), var(--background-norm);
+		background-color: var(--background-composer-mobile, var(--background-norm));
 
 		.lumo-input {
 			border: none !important;
-			background-color: var(--background-composer-mobile), var(--background-norm);
+			background-color: var(--background-composer-mobile, var(--background-norm));
 		}
 	}
 
@@ -125,4 +126,3 @@ im.$media-expressions: $media-expressions;
 	background-color: rgb(186 186 247 / 0.3) !important;
 	color: var(--text-strong) !important;
 }
-
