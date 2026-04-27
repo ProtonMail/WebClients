@@ -99,7 +99,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       ref={ref}
       {...props}
       className={clsx(
-        'flex h-9 select-none items-center gap-2 truncate text-[.875rem] text-[#0C0C14]',
+        'flex select-none flex-nowrap items-start gap-2 py-[.4375rem] text-[.875rem] text-[#0C0C14]',
         'disabled:text-[#8F8D8A] aria-disabled:text-[#8F8D8A]',
         padding && 'px-4',
         // TODO: "hocus" type tw variant
@@ -110,8 +110,8 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
         props.className,
       )}
     >
-      {leadingIconSlot && <span className="flex shrink-0 items-center">{leadingIconSlot}</span>}
-      <span className="grow leading-none">
+      {leadingIconSlot && <span className="flex h-[1.375rem] shrink-0 items-center">{leadingIconSlot}</span>}
+      <span className="grow leading-[1.375rem]">
         {hintSlot ? (
           <span className="flex grow justify-between gap-4">
             <span className="grow truncate">{props.children}</span>
@@ -122,7 +122,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
         )}
       </span>
 
-      {trailingIconSlot && <span className="flex shrink-0 items-center">{trailingIconSlot}</span>}
+      {trailingIconSlot && <span className="flex h-[1.375rem] shrink-0 items-center">{trailingIconSlot}</span>}
     </Ariakit.Role>
   )
 })
