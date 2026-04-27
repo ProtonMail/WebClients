@@ -4460,23 +4460,14 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La modification de l'adresse de facturation n'est pas disponible pour le moment. Veuillez réessayer ultérieurement."
       ],
-      "Email is not valid": [
-        "L'adresse e-mail n'est pas valide."
-      ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
-      ],
-      "Enter your username without the domain (@example.com)": [
-        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
-      ],
-      "Incorrect username": [
-        "Le nom d'utilisateur n'est pas correct."
       ],
       "Invalid ${ name } code": [
         "Le code ${ name } n'est pas valide."
@@ -4505,14 +4496,8 @@
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
-      "Not a valid number": [
-        "Le numéro n'est pas valide."
-      ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
-      ],
-      "Passwords do not match": [
-        "Les mots de passe ne correspondent pas."
       ],
       "Payment process canceled": [
         "Le traitement du paiement a été annulé."
@@ -4574,17 +4559,11 @@
       "The amount due has changed. Please try again.": [
         "Le montant a changé. Nous vous invitons à réessayer."
       ],
-      "The email addresses do not match": [
-        "Les adresses e-mail ne correspondent pas."
-      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
       ],
       "The minimum donation amount is ${ price }": [
         "Le montant minimum du don est de ${ price }."
-      ],
-      "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
       "This field is invalid": [
         "Ce champ n'est pas valide."
@@ -4592,23 +4571,11 @@
       "This field is required": [
         "Ce champ est nécessaire."
       ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Ce champ nécessite un minimum de ${ minimumLength } caractères."
-      ],
-      "Try using only letters, numerals, and _.-": [
-        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
-      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
       "Unknown payment token status": [
         "Le statut du jeton de paiement est inconnu."
-      ],
-      "Username must begin with a letter or digit": [
-        "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
-      ],
-      "Username must end with a letter or digit": [
-        "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -8285,16 +8252,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
-        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     },
     "VPN Plan Feature": {
