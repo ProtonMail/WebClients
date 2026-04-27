@@ -1133,6 +1133,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "繼續使用 ${ planOrAppName }"
+      ],
+      "Reconnect to Gmail": [
+        "重新連接 Gmail"
       ]
     },
     "Action: Sheets": {
@@ -1712,6 +1715,9 @@
       ],
       "Upload and query small files": [
         "上載及查詢小型檔案"
+      ],
+      "Unlimited favorites for quick access": [
+        "快速存取至無限最愛"
       ]
     },
     "collider_2025: Info": {
@@ -2848,6 +2854,12 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我們無法再存取至 ${ boldEmails }"
       ]
     },
     "description": {
@@ -2986,6 +2998,9 @@
     "Duo offer: Title": {
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
+      ],
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 取得 4x 儲存空間"
       ]
     },
     "Email body for invitation": {
@@ -6227,6 +6242,12 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "全部於 ${ planOrAppName } 方案，附加:"
+      ],
+      "for ${ price }": [
+        "為 ${ price }"
       ]
     },
     "info": {
@@ -7960,6 +7981,9 @@
       ],
       "Appointment scheduling": [
         "預定排定中"
+      ],
+      "Dedicated servers optimized for speed": [
+        "針對速度的獨立伺服器"
       ]
     },
     "new_plans: feature highlight": {
@@ -10593,6 +10617,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
       ]
     },
     "subscription reminder": {

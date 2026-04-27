@@ -1767,6 +1767,9 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ]
     },
     "collider_2025: Info": {
@@ -3767,6 +3770,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Ne-dešifrirano ime"
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ]
     },
     "error": {
@@ -6788,6 +6794,9 @@
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh."
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ]
     },
     "info": {
@@ -7551,6 +7560,9 @@
       ],
       "Visible columns:": [
         "Vidni stolpci:"
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
       ]
     },
     "Label for contact group color": {
@@ -9900,6 +9912,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "Payments.Error": {
@@ -10131,6 +10146,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ]
     },
     "Placeholder for contact group name": {
@@ -12949,6 +12967,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
