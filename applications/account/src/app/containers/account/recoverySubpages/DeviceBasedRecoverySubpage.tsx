@@ -40,7 +40,9 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
         return null;
     }
 
-    const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link').t`Learn more`}</Href>
+    );
 
     return (
         <>
