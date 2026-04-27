@@ -5,8 +5,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { reset } from 'proton-mail/store/elements/elementsActions';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from './useCategoriesView';
 
@@ -22,6 +23,8 @@ export const useCategoryFlagWatcher = () => {
     const location = useLocation();
     const labelID = useMailSelector(selectLabelID);
 
+    const dispatch = useMailDispatch();
+
     const categoryView = useCategoriesView();
 
     useEffect(() => {
@@ -32,13 +35,19 @@ export const useCategoryFlagWatcher = () => {
         const categoryID = categoryIDFromUrl(location);
         if (categoryView.categoryViewAccess && !categoryID) {
             const newUrl = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            dispatch(
+                reset({
+                    params: { labelID: MAILBOX_LABEL_IDS.INBOX },
+                })
+            );
             history.replace(newUrl);
             return;
         }
 
         if (!categoryView.categoryViewAccess && categoryID) {
+            dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
             return;
         }
-    }, [categoryView.categoryViewAccess, labelID, history, location]);
+    }, [categoryView.categoryViewAccess, labelID, history, dispatch, location]);
 };
