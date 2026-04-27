@@ -8,20 +8,12 @@ import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { updatePauseListItem } from '@proton/pass/store/actions/creators/settings';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
-import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
 import { logger } from '@proton/pass/utils/logger';
 
 export const createSettingsService = () => {
     const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {
-        const state = service.store.getState();
-        const canCreateItems = selectCanCreateItems(state);
-
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.SETTINGS_UPDATE,
-                payload: sanitizeSettings(settings, { canCreateItems }),
-            })
-        );
+        const payload = sanitizeSettings(settings, service.store.getState());
+        WorkerMessageBroker.ports.broadcast(backgroundMessage({ type: WorkerMessageType.SETTINGS_UPDATE, payload }));
     });
 
     const service = createCoreSettingsService({

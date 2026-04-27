@@ -55,3 +55,11 @@ export const combinePauseCriteria = (a: PauseCriterias, b: PauseCriterias): Paus
     Autosuggest: a.Autosuggest || b.Autosuggest,
     Passkey: a.Passkey || b.Passkey,
 });
+
+export const mergeWithOrgPauseList = (user: DomainCriterias, org: DomainCriterias): DomainCriterias => {
+    const result = { ...user };
+    for (const [hostname, orgMask] of Object.entries(org)) {
+        result[hostname] = (result[hostname] ?? 0) | orgMask;
+    }
+    return result;
+};

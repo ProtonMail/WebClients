@@ -11,6 +11,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
@@ -127,7 +128,8 @@ export const createContentScriptService = () => {
 
                 const { tabId, frameId, frameUrl, tabUrl } = await resolveEndpointContext(sender.tab, sender.frameId);
 
-                const settings = await ctx.service.settings.resolve();
+                const resolved = await ctx.service.settings.resolve();
+                const settings = sanitizeSettings(resolved, ctx.service.store.getState());
                 const features = computeFeatures(settings, frameUrl, tabUrl);
                 if (!shouldInjectContentScript(features)) return true;
 
