@@ -1,3 +1,6 @@
+export * from './access-token/create-access-token-key';
+export * from './access-token/create-access-token-share-keys';
+export * from './access-token/open-access-token-key';
 export * from './auth/native-messaging';
 export * from './file/create-file-chunk';
 export * from './file/create-file-descriptor';

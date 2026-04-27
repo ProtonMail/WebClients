@@ -182,6 +182,24 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         fileID: FileID;
         linkKey: string;
     }) => Promise<Uint8Array<ArrayBuffer>>;
+
+    /** Generates a fresh 32-byte raw access-token key, encrypts+signs it
+     * with the user's primary key, and returns both forms.
+     * Raw key never persists in the worker; the saga forwards it to the
+     * server (encrypted) and to the user (raw, base64-url) once. */
+    createAccessTokenKey: () => Promise<{ encrypted: string; raw: Uint8Array<ArrayBuffer> }>;
+
+    /** Recovers the raw 32 bytes of a stored access-token key by
+     * decrypting it with the user's primary private key. */
+    openAccessTokenKey: (encryptedKey: string) => Promise<Uint8Array<ArrayBuffer>>;
+
+    /** Wraps every rotation of a vault's share keys with the raw PAT key
+     * (AES-GCM, AAD=ShareKey) so the holder of the PAT can decrypt items
+     * in that vault. */
+    createAccessTokenShareKeys: (data: {
+        rawPatKey: Uint8Array<ArrayBuffer>;
+        shareId: ShareId;
+    }) => Promise<KeyRotationKeyPair[]>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
