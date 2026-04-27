@@ -294,9 +294,6 @@
       "Create folder": [
         "フォルダを作成"
       ],
-      "Create free account": [
-        "無料アカウントを作成"
-      ],
       "Create new folder": [
         "新規フォルダーを作成"
       ],
@@ -513,9 +510,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "${ simplePriceString }で安全なストレージを入手"
       ],
-      "Get Started": [
-        "始めましょう"
-      ],
       "Get the apps": [
         "アプリを入手"
       ],
@@ -563,9 +557,6 @@
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
-      ],
-      "Hide download options": [
-        "ダウンロードオプションを非表示"
       ],
       "Hide more benefits": [
         "その他のメリットを隠す"
@@ -1029,9 +1020,6 @@
       "Show more benefits": [
         "その他のメリットを表示"
       ],
-      "Show more download options": [
-        "さらにダウンロードオプションを表示"
-      ],
       "Show navigation bar": [
         "ナビゲーションバーを表示する"
       ],
@@ -1145,9 +1133,6 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
-      ],
-      "Upload": [
-        "アップロード"
       ],
       "Upload and share files": [
         "ファイルをアップロードして共有"
@@ -5118,9 +5103,6 @@
       "Aug": [
         "8月"
       ],
-      "Available": [
-        "利用可能"
-      ],
       "Awaiting transaction": [
         "取引待ち"
       ],
@@ -5172,14 +5154,8 @@
       "Canceled": [
         "キャンセル"
       ],
-      "Cannot load link": [
-        "リンクの読み込みに失敗しました"
-      ],
       "Cannot load links": [
         "リンクの読み込みに失敗しました"
-      ],
-      "Cannot load shared link": [
-        "共有リンクの読み込みに失敗しました"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワードが思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -5405,9 +5381,6 @@
       ],
       "Enabling drive search": [
         "ドライブ内検索を有効にしています"
-      ],
-      "Encrypted": [
-        "暗号化済み"
       ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
@@ -5709,9 +5682,6 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
-      "Loading link": [
-        "リンクを読み込み中"
-      ],
       "Loading links": [
         "リンクを読み込み中"
       ],
@@ -5903,9 +5873,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "写真がドライブに保存されました"
-      ],
-      "Photos": [
-        "写真"
       ],
       "Photos have been successfully recovered.": [
         "写真は正常に復元されました。"
@@ -6128,9 +6095,6 @@
       ],
       "Shared by ": [
         "共有元 "
-      ],
-      "Shared by ${ sharedBy }": [
-        "${ sharedBy }が共有したもの"
       ],
       "Shared link not found": [
         "共有リンクが見つかりません"
@@ -6369,9 +6333,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "お客様を保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックできます。しかし、それでも信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "あなたの保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックします。ただし信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
       ],
@@ -6419,9 +6380,6 @@
       ],
       "Trash is empty": [
         "ごみ箱が空です"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "${ DRIVE_APP_NAME } をお試しください: 永久無料"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
@@ -6587,9 +6545,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "は${ formattedRevisionDate }のバージョンに復元されます。他のバージョンもすべて保存されたままになります。"
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "${ DRIVE_APP_NAME } を使用すると、データはエンドツーエンドの暗号化によって保護されます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
@@ -9246,14 +9201,8 @@
       "Share invitation declined": [
         "共有への招待が拒否されました"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "申し訳ありませんが、フォルダが空でないため、削除できませんでした。"
-      ],
       "Stopping the sharing of this item has failed": [
         "この項目の共有停止に失敗しました。"
-      ],
-      "The document failed to be created": [
-        "ドキュメントの作成に失敗しました"
       ],
       "The item was not added to your drive": [
         "アイテムはドライブに追加されませんでした"
@@ -9263,9 +9212,6 @@
       ],
       "The link to your item was deleted": [
         "アイテムのリンクを削除しました"
-      ],
-      "The spreadsheet failed to be created": [
-        "スプレッドシートの作成に失敗しました"
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "このセキュアリンクは有効期限切れです。共有設定で有効期限を変更してください。"
@@ -11794,9 +11740,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "ダウンロード数"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } 件のメールアドレス"
       ],
@@ -11922,9 +11865,6 @@
       ],
       "Cannot add more addresses": [
         "これ以上アドレスを追加できません"
-      ],
-      "Cannot load link": [
-        "リンクの読み込みに失敗しました"
       ],
       "Card verification": [
         "カードの検証"
@@ -12283,9 +12223,6 @@
       "Item details": [
         "アイテムの詳細"
       ],
-      "Last edited by": [
-        "による最終編集"
-      ],
       "Last uploaded by": [
         "最終アップロード元"
       ],
@@ -12324,9 +12261,6 @@
       ],
       "Message": [
         "メッセージ"
-      ],
-      "MIME type": [
-        "MIME タイプ"
       ],
       "Minicalendar": [
         "ミニカレンダー"
@@ -12474,9 +12408,6 @@
       ],
       "Public link settings": [
         "公開リンク設定"
-      ],
-      "Public shared link status": [
-        "公開共有リンクの状態"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
@@ -12640,12 +12571,6 @@
       "Summary": [
         "概要"
       ],
-      "The link either does not exist or has expired": [
-        "リンクが存在しないか、有効期限切れです。"
-      ],
-      "The link expired": [
-        "リンクは期限切れです"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このファイルには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"
       ],
@@ -12715,9 +12640,6 @@
       "Uploaded": [
         "アップロード日時"
       ],
-      "Uploaded by": [
-        "アップロードしたユーザー"
-      ],
       "Uploading a large file or folder": [
         "大きなファイルまたはフォルダーをアップロードしています"
       ],
@@ -12732,9 +12654,6 @@
       ],
       "Verifying your payment...": [
         "支払いを検証中..."
-      ],
-      "Version details": [
-        "バージョンの詳細"
       ],
       "Version history": [
         "バージョン履歴"

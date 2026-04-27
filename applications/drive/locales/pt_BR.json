@@ -88,6 +88,10 @@
       "Add photos": [
         "Adicionar fotos"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adicionar para \"${ name }\" (${ photoCount } foto)",
+        "Adicionar para \"${ name }\" (${ photoCount } fotos)"
+      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -295,9 +299,6 @@
       ],
       "Create folder": [
         "Criar pasta"
-      ],
-      "Create free account": [
-        "Criar uma conta gratuita"
       ],
       "Create new folder": [
         "Criar uma pasta"
@@ -517,9 +518,6 @@
       "Get secure storage for ${ simplePriceString }": [
         "Obtenha armazenamento protegido por ${ simplePriceString }"
       ],
-      "Get Started": [
-        "Começar"
-      ],
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
@@ -570,9 +568,6 @@
       ],
       "Hide advanced PGP settings": [
         "Ocultar configurações PGP avançadas"
-      ],
-      "Hide download options": [
-        "Ocultar as opções de download"
       ],
       "Hide more benefits": [
         "Ocultar mais benefícios"
@@ -789,6 +784,9 @@
       ],
       "Quit": [
         "Sair"
+      ],
+      "Re-index": [
+        "Reindexar"
       ],
       "Re-sign": [
         "Assinar novamente"
@@ -1039,9 +1037,6 @@
       "Show more benefits": [
         "Mostrar mais benefícios"
       ],
-      "Show more download options": [
-        "Mostrar mais opções de download"
-      ],
       "Show navigation bar": [
         "Mostrar barra de navegação"
       ],
@@ -1155,9 +1150,6 @@
       ],
       "Upgrade now": [
         "Atualizar agora"
-      ],
-      "Upload": [
-        "Enviar"
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"
@@ -5247,9 +5239,6 @@
       "Aug": [
         "Ago."
       ],
-      "Available": [
-        "Disponível"
-      ],
       "Awaiting transaction": [
         "Esperando transação"
       ],
@@ -5301,14 +5290,8 @@
       "Canceled": [
         "Cancelado"
       ],
-      "Cannot load link": [
-        "Não foi possível carregar o link"
-      ],
       "Cannot load links": [
         "Não foi possível carregar os links"
-      ],
-      "Cannot load shared link": [
-        "Não foi possível carregar o link compartilhado"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5541,9 +5524,6 @@
       "Enabling drive search": [
         "Ativando pesquisa de drive"
       ],
-      "Encrypted": [
-        "Criptografado"
-      ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
       ],
@@ -5744,6 +5724,18 @@
       "Index is empty.": [
         "O índice está vazio."
       ],
+      "Indexed ${ first }": [
+        "Indexado ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexado ${ first } e ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexado ${ first }, ${ second } e ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexado ${ first }, ${ second }, ${ third } e ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexação em progresso"
       ],
@@ -5860,9 +5852,6 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
-      ],
-      "Loading link": [
-        "Carregando link"
       ],
       "Loading links": [
         "Carregando links"
@@ -6068,9 +6057,6 @@
       ],
       "Photo(s) saved to your Drive": [
         "Fotos salvas no seu Drive"
-      ],
-      "Photos": [
-        "Fotos"
       ],
       "Photos have been successfully recovered.": [
         "As fotos foram recuperadas com sucesso."
@@ -6300,9 +6286,6 @@
       ],
       "Shared by ": [
         "Compartilhado por "
-      ],
-      "Shared by ${ sharedBy }": [
-        "Compartilhado por ${ sharedBy }"
       ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
@@ -6546,9 +6529,6 @@
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Para ajudar a te proteger, o ${ DRIVE_APP_NAME } pode escanear seus arquivos de uma forma que preserve a privacidade e bloquear arquivos maliciosos. No entanto, ainda é melhor baixar arquivos somente de fontes confiáveis. "
       ],
-      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
-        "Para ajudar a proteger você, o ${ DRIVE_APP_NAME } pode verificar seus arquivos de uma forma que preserve a privacidade e bloquear arquivos nocivos. No entanto, ainda é melhor você baixar arquivos somente de fontes confiáveis."
-      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
       ],
@@ -6596,9 +6576,6 @@
       ],
       "Trash is empty": [
         "A lixeira está vazia"
-      ],
-      "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Teste o ${ DRIVE_APP_NAME }: grátis para sempre"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
@@ -6767,9 +6744,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado para a versão de ${ formattedRevisionDate }. Todas as outras versões serão salvas."
-      ],
-      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Com ${ DRIVE_APP_NAME } seus dados são protegidos por criptografia de ponta a ponta."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -9365,6 +9339,9 @@
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" falhou ao ser criado"
       ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" não foi excluído"
+      ],
       "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
         "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
       ],
@@ -9639,15 +9616,8 @@
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Não foi possível excluir a pasta porque ela não está vazia.",
-        "Não foi possível excluir as pastas porque elas não estão vazias."
-      ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
-      ],
-      "The document failed to be created": [
-        "O documento não foi criado."
       ],
       "The item was not added to your drive": [
         "O item não foi adicionado ao seu drive"
@@ -9657,9 +9627,6 @@
       ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
-      ],
-      "The spreadsheet failed to be created": [
-        "A planilha não foi criada."
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Este link seguro expirou, por favor, altere a data de expiração nas configurações de compartilhamento"
@@ -12265,9 +12232,6 @@
       ]
     },
     "Title": {
-      "# of downloads": [
-        "# de downloads"
-      ],
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
@@ -12399,9 +12363,6 @@
       ],
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços."
-      ],
-      "Cannot load link": [
-        "Não foi possível carregar o link"
       ],
       "Card verification": [
         "Verificação do cartão"
@@ -12762,6 +12723,9 @@
       "Import your data to ${ BRAND_NAME }": [
         "Importe seus dados para a ${ BRAND_NAME }"
       ],
+      "Index populators": [
+        "Geradores de índice"
+      ],
       "Information exposed in breach": [
         "Informação exposta na violação"
       ],
@@ -12770,9 +12734,6 @@
       ],
       "Item details": [
         "Detalhes dos item"
-      ],
-      "Last edited by": [
-        "Última edição por"
       ],
       "Last uploaded by": [
         "Último envio por"
@@ -12812,9 +12773,6 @@
       ],
       "Message": [
         "Mensagem"
-      ],
-      "MIME type": [
-        "Tipo MIME"
       ],
       "Minicalendar": [
         "Mini calendário"
@@ -12962,9 +12920,6 @@
       ],
       "Public link settings": [
         "Configurações de link público"
-      ],
-      "Public shared link status": [
-        "Status do link público compartilhado"
       ],
       "Re-sign all contacts": [
         "Assinar novamente todos os contatos"
@@ -13129,12 +13084,6 @@
       "Summary": [
         "Resumo"
       ],
-      "The link either does not exist or has expired": [
-        "O link não existe ou já expirou"
-      ],
-      "The link expired": [
-        "O link expirou"
-      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "O arquivo tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
@@ -13204,9 +13153,6 @@
       "Uploaded": [
         "Enviado"
       ],
-      "Uploaded by": [
-        "Enviado por"
-      ],
       "Uploading a large file or folder": [
         "Carregar um arquivo ou pasta grande"
       ],
@@ -13221,9 +13167,6 @@
       ],
       "Verifying your payment...": [
         "Verificando seu pagamento..."
-      ],
-      "Version details": [
-        "Detalhes de versão"
       ],
       "Version history": [
         "Histórico de versões"
