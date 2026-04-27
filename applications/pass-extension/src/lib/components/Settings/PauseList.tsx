@@ -24,6 +24,7 @@ import {
     toggleCriteria,
 } from '@proton/pass/lib/settings/pause-list';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
+import { selectOrgDisallowedDomains } from '@proton/pass/store/selectors/organization';
 import { selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
@@ -35,15 +36,25 @@ const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
 export const PauseList: FC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
+    const orgDomains = useSelector(selectOrgDisallowedDomains);
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
     const [url, setUrl] = useState<string>('');
 
+    const allHostnames = Array.from(new Set([...Object.keys(orgDomains), ...Object.keys(disallowedDomains)]));
+
     const addDisallowedUrl = (url: string) => {
         const hostname = intoCleanHostname(url);
 
         if (!hostname) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
+
+        if (orgDomains[hostname]) {
+            return createNotification({
+                text: c('Error').t`This domain is already managed by your organization`,
+                type: 'error',
+            });
+        }
 
         if (disallowedDomains[hostname]) {
             return createNotification({
@@ -63,12 +74,10 @@ export const PauseList: FC = () => {
     };
 
     const toggleUrlMask = (hostname: string, criteria: CriteriaMasks) => {
-        const setting = disallowedDomains[hostname];
-
         dispatch(
             settingsEditIntent('pause-list', {
                 disallowedDomains: merge(disallowedDomains, {
-                    [hostname]: toggleCriteria(setting, criteria),
+                    [hostname]: toggleCriteria(disallowedDomains[hostname] ?? 0, criteria),
                 }),
             })
         );
@@ -81,7 +90,7 @@ export const PauseList: FC = () => {
         dispatch(settingsEditIntent('pause-list', { disallowedDomains: update }));
     };
 
-    const nonEmptyList = Object.keys(disallowedDomains).length > 0;
+    const nonEmptyList = allHostnames.length > 0;
     const infoText = nonEmptyList ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
 
     return (
@@ -90,7 +99,7 @@ export const PauseList: FC = () => {
             subTitle={c('Description')
                 .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.${infoText}`}
         >
-            {Object.keys(disallowedDomains).length > 0 && (
+            {nonEmptyList && (
                 <Table responsive="cards" hasActions borderWeak>
                     <TableHeader>
                         <TableRow>
@@ -119,53 +128,71 @@ export const PauseList: FC = () => {
                     </TableHeader>
 
                     <TableBody>
-                        {Object.entries(disallowedDomains).map(([url, mask], i) => (
-                            <TableRow key={`${url}-${i}`}>
-                                <TableCell label={c('Label').t`Domains`}>
-                                    <div className="text-ellipsis">{url}</div>
-                                </TableCell>
-                                {criterias.map((criteria) => (
-                                    <TableCell
-                                        key={criteria}
-                                        label={((): string => {
-                                            switch (criteria) {
-                                                case 'Autofill':
-                                                    return c('Label').t`Autofill`;
-                                                case 'Autofill2FA':
-                                                    return c('Label').t`Autofill 2FA`;
-                                                case 'Autosuggest':
-                                                    return c('Label').t`Autosuggest`;
-                                                case 'Autosave':
-                                                    return c('Label').t`Autosave`;
-                                                case 'Passkey':
-                                                    return c('Label').t`Passkey`;
-                                            }
-                                        })()}
-                                    >
-                                        <Checkbox
-                                            checked={hasCriteria(mask, criteria)}
-                                            onChange={() => toggleUrlMask(url, criteria)}
-                                        />
-                                    </TableCell>
-                                ))}
+                        {allHostnames.map((hostname, i) => {
+                            const isLocked = hostname in orgDomains;
+                            const orgMask = orgDomains[hostname] ?? 0;
+                            const userMask = disallowedDomains[hostname] ?? 0;
+                            const effectiveMask = orgMask | userMask;
 
-                                <TableCell className="pass-pause-list--remove">
-                                    <div className="flex justify-end">
-                                        <Button
-                                            onClick={() => deleteDisallowedUrl(url)}
-                                            aria-label={c('Action').t`Remove`}
-                                            color="weak"
-                                            size="medium"
-                                            shape="solid"
-                                            icon
-                                            pill
-                                        >
-                                            <Icon name="cross" size={3} />
-                                        </Button>
-                                    </div>
-                                </TableCell>
-                            </TableRow>
-                        ))}
+                            return (
+                                <TableRow key={`${hostname}-${i}`}>
+                                    <TableCell label={c('Label').t`Domains`}>
+                                        <div className="flex items-center gap-1">
+                                            {isLocked && <Icon name="lock" size={3} className="color-weak shrink-0" />}
+                                            <div className="text-ellipsis">{hostname}</div>
+                                        </div>
+                                    </TableCell>
+                                    {criterias.map((criteria) => {
+                                        const criterionLocked = hasCriteria(orgMask, criteria);
+                                        return (
+                                            <TableCell
+                                                key={criteria}
+                                                label={((): string => {
+                                                    switch (criteria) {
+                                                        case 'Autofill':
+                                                            return c('Label').t`Autofill`;
+                                                        case 'Autofill2FA':
+                                                            return c('Label').t`Autofill 2FA`;
+                                                        case 'Autosuggest':
+                                                            return c('Label').t`Autosuggest`;
+                                                        case 'Autosave':
+                                                            return c('Label').t`Autosave`;
+                                                        case 'Passkey':
+                                                            return c('Label').t`Passkey`;
+                                                    }
+                                                })()}
+                                            >
+                                                <Checkbox
+                                                    checked={hasCriteria(effectiveMask, criteria)}
+                                                    disabled={criterionLocked}
+                                                    onChange={() =>
+                                                        !criterionLocked && toggleUrlMask(hostname, criteria)
+                                                    }
+                                                />
+                                            </TableCell>
+                                        );
+                                    })}
+
+                                    <TableCell className="pass-pause-list--remove">
+                                        <div className="flex justify-end">
+                                            {!isLocked && (
+                                                <Button
+                                                    onClick={() => deleteDisallowedUrl(hostname)}
+                                                    aria-label={c('Action').t`Remove`}
+                                                    color="weak"
+                                                    size="medium"
+                                                    shape="solid"
+                                                    icon
+                                                    pill
+                                                >
+                                                    <Icon name="cross" size={3} />
+                                                </Button>
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                            );
+                        })}
                     </TableBody>
                 </Table>
             )}
