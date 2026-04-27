@@ -1335,6 +1335,9 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ]
     },
     "collider_2025: Info": {
@@ -3151,6 +3154,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ]
     },
     "error": {
@@ -4986,7 +4992,7 @@
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Vnešeni URL je skrajšan in nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka klikni z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
+        "Vneseni URL je bil nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka kliknite z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
       ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
@@ -5359,6 +5365,12 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
       ]
     },
     "info": {
@@ -5847,6 +5859,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
       ]
     },
     "Label for contact group color": {
@@ -7977,6 +7992,9 @@
       ],
       "Your organization name": [
         "Ime vaše organizacije"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ]
     },
     "Placeholder for contact group name": {
@@ -8422,7 +8440,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Ustvarjanje nove preglednice..."
+        "Ustvarjanje nove preglednice ..."
       ],
       "Detect automatically": [
         "Samodejno zaznaj"
@@ -8443,7 +8461,7 @@
         "Izberite datoteko za uvoz"
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
-        "Vaša trenutna preglednica, vključno z vsemi seznami v njej, bo zamenjana s to različico."
+        "Vaša trenutna preglednica, vključno z vsemi listi v njej, bo zamenjana s to različico."
       ]
     },
     "sheets_2025:Label": {
@@ -8451,7 +8469,7 @@
         "Pretvori besedilo v številke, datume in obrazce"
       ],
       "Destination": [
-        "Destinacija"
+        "Cilj"
       ],
       "Format": [
         "Oblika"
@@ -10066,6 +10084,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
