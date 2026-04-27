@@ -13,7 +13,7 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
@@ -36,6 +36,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
+        yield put(withRevalidate(getOrganizationPauseList.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());

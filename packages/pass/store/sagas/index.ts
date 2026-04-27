@@ -71,6 +71,7 @@ import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
 import monitorToggle from './monitor/monitor-toggle.saga';
 import sentinelToggle from './monitor/sentinel-toggle.saga';
 import notificationSagas from './notifications/notifications.sagas';
+import organizationPauseList from './organization/organization.pause-list.saga';
 import organizationSettings from './organization/organization.settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
 import sharesDedupe from './shares/shares-dedupe.saga';
@@ -122,6 +123,7 @@ const COMMON_SAGAS = [
     groupsGetAll,
     groupsGet,
     groupsMembers,
+    organizationPauseList,
     organizationSettings,
     groupInviteAccept,
     groupInviteReject,

@@ -12,7 +12,7 @@ import {
     userRefresh,
 } from '@proton/pass/store/actions';
 import { getGroup } from '@proton/pass/store/actions/creators/groups';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
@@ -126,6 +126,7 @@ function* onUserEvent(
     yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
+    yield put(getOrganizationPauseList.intent());
     yield put(getInAppNotifications.intent());
 }
 
