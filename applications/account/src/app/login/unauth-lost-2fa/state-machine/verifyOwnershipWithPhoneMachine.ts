@@ -2,7 +2,7 @@ import { type ActorRefFrom, assign, setup } from 'xstate';
 
 import type { VerificationDataResult } from '@proton/components/index';
 
-type Result = '2fa-disabled' | 'skipped' | 'error';
+type Result = '2fa-disabled' | 'skipped';
 
 export interface SMSVerificationResult {
     verificationDataResult: VerificationDataResult;
@@ -21,7 +21,6 @@ interface MachineOutput {
 type MachineEvent =
     | { type: '2fa disabled' }
     | { type: 'try another way' }
-    | { type: 'error' }
     | { type: 'verification initiated'; verificationResult: SMSVerificationResult };
 
 export type VerifyOwnershipWithPhoneActorRef = ActorRefFrom<typeof verifyOwnershipWithPhoneMachine>;
@@ -55,9 +54,6 @@ export const verifyOwnershipWithPhoneMachine = setup({
                 'try another way': {
                     target: 'skipped',
                 },
-                error: {
-                    target: 'error',
-                },
                 'verification initiated': {
                     actions: assign({ verificationResult: ({ event }) => event.verificationResult }),
                 },
@@ -66,10 +62,6 @@ export const verifyOwnershipWithPhoneMachine = setup({
         '2fa disabled': {
             type: 'final',
             entry: assign({ result: '2fa-disabled' }),
-        },
-        error: {
-            type: 'final',
-            entry: assign({ result: 'error' }),
         },
         skipped: {
             type: 'final',
