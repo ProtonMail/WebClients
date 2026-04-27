@@ -155,6 +155,7 @@ interface ProgressiveMarkdownProps {
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     message: any;
+    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
 }
 
 /**
@@ -350,7 +351,15 @@ const MarkdownBlock: React.FC<{
 MarkdownBlock.displayName = 'MarkdownBlock';
 
 export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.memo(
-    ({ content, isStreaming, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
+    ({
+        content,
+        isStreaming,
+        handleLinkClick,
+        toolCallResults,
+        sourcesContainerRef,
+        message,
+        messageContentContainerRef,
+    }) => {
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
             if (!isStreaming) {
@@ -371,7 +380,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
             return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
         }, [isIos(), isIpad(), isSafari()]);
         return (
-            <div className="progressive-markdown-content markdown-rendering">
+            <div className="progressive-markdown-content markdown-rendering" ref={messageContentContainerRef}>
                 {blocks.map((block) => (
                     <div key={block.key} className={className}>
                         <MarkdownBlock

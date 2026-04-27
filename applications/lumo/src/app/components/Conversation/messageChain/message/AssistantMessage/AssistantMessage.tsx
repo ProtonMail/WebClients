@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
@@ -24,6 +25,7 @@ import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { AvatarAndNotice } from './AvatarAndNotice';
+import { SuggestedQuestions } from './SuggestedQuestions';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
@@ -193,6 +195,7 @@ const AssistantMessage = ({
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
+    const showNextPromptSuggestionEnabled = useFlag('LumoShowNextPromptSuggestions');
 
     // Get blocks for interleaved rendering
     const blocks = useMemo(
@@ -232,6 +235,9 @@ const AssistantMessage = ({
     // Hide message if it's loading and truly empty (no content, no tool calls)
     const shouldShow = !isLoading || hasContent || hasToolCall;
 
+    const shouldShowNextPromptSuggestions =
+        showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
+
     return (
         <>
             <div className="gap-2 relative w-full">
@@ -266,7 +272,6 @@ const AssistantMessage = ({
                                             sourcesContainerRef={sourcesContainerRef}
                                             messageContentContainerRef={markdownContainerRef}
                                             reasoning={message.reasoning}
-                                            toolCallResults={searchResults}
                                         />
                                     ) : (
                                         <EmptyMessage />
@@ -286,6 +291,10 @@ const AssistantMessage = ({
                                         onRetryPanelToggle={onRetryPanelToggle}
                                         retryButtonRef={retryButtonRef}
                                     />
+
+                                    {shouldShowNextPromptSuggestions && message.suggestedQuestions && (
+                                        <SuggestedQuestions questions={message.suggestedQuestions} />
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -324,6 +333,7 @@ const EmptyMessage = () => (
 export default memo(AssistantMessage, (prevProps, nextProps) => {
     return (
         messagesEqualForRendering(prevProps.message, nextProps.message) &&
+        prevProps.message.suggestedQuestions?.length === nextProps.message.suggestedQuestions?.length &&
         prevProps.isGenerating === nextProps.isGenerating &&
         prevProps.isLastMessage === nextProps.isLastMessage
     );

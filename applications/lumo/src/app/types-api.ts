@@ -89,7 +89,8 @@ export type ToolName =
     | 'cryptocurrency'
     | 'generate_image'
     | 'describe_image'
-    | 'edit_image';
+    | 'edit_image'
+    | 'web_extract';
 
 /*
  * A generation request in the format that the scheduler backend expects.
@@ -114,6 +115,8 @@ export type ChatEndpointGenerationRequest = {
 
 export type Options = {
     tools?: ToolName[] | boolean;
+    reasoning?: boolean;
+    suggested_questions?: boolean;
 };
 
 // *** Utility types for encryption state ***
@@ -289,10 +292,10 @@ function isRequestableGenerationTarget(value: any): value is RequestableGenerati
     return ['message', 'title'].includes(value);
 }
 
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning';
+export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
 
 export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning'].includes(value);
+    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning', 'suggested_questions'].includes(value);
 }
 
 /*

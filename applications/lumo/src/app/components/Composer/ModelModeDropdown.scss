@@ -1,0 +1,20 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.model-mode-trigger {
+    border-radius: #{rem(20)};
+
+    &:hover,
+    &.is-active {
+        background-color: var(--background-weak);
+    }
+}
+
+.model-mode-checkmark {
+    inline-size: #{rem(16)};
+}
+
+.lumo-plus-badge {
+    block-size: #{rem(12)};
+    margin-block-start: #{rem(-2)};
+    margin-inline-start: #{rem(-2)};
+}

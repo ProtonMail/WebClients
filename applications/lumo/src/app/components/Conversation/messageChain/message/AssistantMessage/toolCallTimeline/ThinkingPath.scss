@@ -1,22 +1,19 @@
 @use '~@proton/styles/scss/lib' as *;
 
-.thinking-path {
-    margin-block: 0.75rem;
-}
 
 .thinking-step {
     position: relative;
     display: flex;
     inline-size: 100%;
-    padding-inline-start: 2.5rem;
-    padding-block: 0.5rem;
-    min-block-size: 2.5rem;
+    padding-inline-start: rem(40);
+    padding-block: rem(8);
+    min-block-size: rem(40);
 
     &::before {
         content: '';
         position: absolute;
-        inset-inline-start: 0.75rem;
-        inset-block-start: 2rem;
+        inset-inline-start: rem(12);
+        inset-block-start: rem(32);
         inset-block-end: 0;
         inline-size: 1px;
         background-color: var(--border-norm);
@@ -25,9 +22,9 @@
     &::after {
         content: '';
         position: absolute;
-        inset-inline-start: 0.75rem;
+        inset-inline-start: rem(12);
         inset-block-start: 0;
-        block-size: 1rem;
+        block-size: rem(16);
         inline-size: 1px;
         background-color: var(--border-norm);
     }
@@ -43,8 +40,8 @@
 
 .thinking-step-icon-container {
     position: absolute;
-    inset-inline-start: 0.406rem;
-    inset-block-start: 0.75rem;
+    inset-inline-start: rem(6.5);
+    inset-block-start: rem(12);
 }
 
 .thinking-step-icon-badge {
@@ -64,7 +61,7 @@
 .thinking-step-content {
     flex: 1;
     min-inline-size: 0;
-    padding-block-start: 0.25rem;
+    padding-block-start: rem(4);
 }
 
 .thinking-step-toggle {
@@ -72,18 +69,19 @@
     align-items: center;
     justify-content: space-between;
     inline-size: 100%;
-    padding-block: 0.25rem;
-    padding-inline: 0.5rem;
-    margin-block: -0.25rem;
-    margin-inline: -0.5rem;
+    padding-block: rem(4);
+    padding-inline: rem(8);
+    margin-block: rem(-4);
+    margin-inline: rem(-8);
     background: transparent;
     border: none;
     cursor: pointer;
-    border-radius: 0.375rem;
+    border-radius: rem(6);
     transition: background-color 0.15s ease;
     color: var(--text-weak);
-    font-size: 0.875rem;
+    font-size: rem(14);
     text-align: start;
+    animation: fadeIn 0.2s ease-out;
 
     &:hover {
         background-color: var(--background-weak);
@@ -96,7 +94,6 @@
 }
 
 .thinking-step-chevron {
-    flex-shrink: 0;
     transition: transform 0.2s ease;
     color: var(--text-weak);
 
@@ -106,26 +103,35 @@
 }
 
 .thinking-step-label {
-    flex: 1;
-    font-size: 0.875rem;
-    padding-block-start: 0.125rem;
+    font-size: rem(14);
+    padding-block-start: rem(2);
 }
 
 .thinking-step-details {
-    margin-block-start: 0.5rem;
-    padding: 0.2rem;
-    font-size: 0.75rem;
+    margin-block-start: rem(8);
+    padding: rem(3);
+    font-size: rem(13);
     color: var(--text-weak);
     animation: fadeIn 0.2s ease-out;
 
+    // Force all descendant text to adopt the container's weak color and size.
+    // The LazyProgressiveMarkdownRenderer renders a `.prose` wrapper that sets
+    // its own color/size, so we need to be explicit here rather than rely on
+    // cascade alone.
+    * {
+        color: var(--text-weak) !important;
+        font-size: inherit;
+    }
+
     :global {
         .prose {
-            font-size: 0.875rem;
+            font-size: inherit;
             max-inline-size: none;
+            color: var(--text-weak);
         }
 
         p {
-            margin-block-end: 0.75rem;
+            margin-block-end: rem(10);
 
             &:last-child {
                 margin-block-end: 0;
@@ -133,7 +139,7 @@
         }
 
         pre {
-            margin-block-end: 0.75rem;
+            margin-block-end: rem(12);
 
             &:last-child {
                 margin-block-end: 0;
@@ -142,16 +148,24 @@
 
         ul,
         ol {
-            margin-block-end: 0.75rem;
-            padding-inline-start: 1.5rem;
+            margin-block-end: rem(12);
+            padding-inline-start: rem(24);
         }
 
         li {
-            margin-block-end: 0.25rem;
+            margin-block-end: rem(4);
         }
 
         code {
             font-size: 0.85em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--interaction-norm) !important;
         }
     }
 }
@@ -178,10 +192,53 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-0.25rem);
+        transform: translateY(rem(-4));
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+// Streaming reasoning trail (shown while model is actively thinking)
+
+.thinking-stream-header {
+    margin-block: rem(-4);
+    margin-inline: rem(-8);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-weak);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+}
+
+.thinking-stream-container {
+    position: relative;
+    max-block-size: rem(128);
+    overflow: hidden;
+}
+
+.thinking-stream-fade {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    block-size: rem(40);
+    background: linear-gradient(to bottom, var(--background-norm, #fff), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.thinking-stream-line {
+    font-size: rem(13);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
 }

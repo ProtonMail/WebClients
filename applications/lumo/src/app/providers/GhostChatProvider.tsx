@@ -6,6 +6,7 @@ import {
     setGhostChatMode as setGhostChatModeAction,
     toggleGhostChatMode as toggleGhostChatModeAction,
 } from '../redux/slices/ghostChat';
+import { sendGhostChatToggledEvent } from '../util/telemetry';
 
 interface GhostChatContextValue {
     isGhostChatMode: boolean;
@@ -37,6 +38,7 @@ export const GhostChatProvider = ({ children }: GhostChatProviderProps) => {
     const setGhostChatMode = useCallback(
         (enabled: boolean) => {
             dispatch(setGhostChatModeAction(enabled));
+            sendGhostChatToggledEvent(enabled);
         },
         [dispatch, isGhostChatModeRedux]
     );

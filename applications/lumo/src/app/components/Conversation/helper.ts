@@ -26,6 +26,7 @@ import {
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
+import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import type { MessageId, ShallowAttachment } from '../../types';
 import {
@@ -41,8 +42,11 @@ import {
 import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
 
-const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) =>
-    createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
+const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) => {
+    const errorMessage = getErrorTypeFromMessage(message.type);
+    onComposerError(errorMessage);
+    createGenerationError(errorMessage, cId, message);
+};
 
 export type ApplicationContext = {
     api: Api;
@@ -74,6 +78,7 @@ export type UiContext = {
     updateSibling?: (message: Message | undefined) => void; // todo remove optional
     enableExternalTools: boolean;
     enableImageTools: boolean;
+    enableReasoning?: boolean;
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
@@ -325,6 +330,8 @@ export function sendMessage({
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     generateTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -499,6 +506,8 @@ export function regenerateMessage({
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
@@ -643,13 +652,16 @@ export function retrySendMessage({
             dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // Build conversation context for turn preparation (includes attachments for image enrichment)
+        // Build conversation context for turn preparation. Include RAG attachments (full data with
+        // markdown) so prepareTurns can expand them into proper file-content turns for the API.
         const c2: ConversationContext = {
             ...c,
             messageChain: updatedLinearChain,
+            allConversationAttachments: ragResult?.attachments?.length
+                ? [...c.allConversationAttachments, ...ragResult.attachments]
+                : c.allConversationAttachments,
         };
 
-        // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         const turns = prepareTurns(
             updatedLinearChain,
             s.personalization ?? DEFAULT_PERSONALIZATION,
@@ -667,6 +679,8 @@ export function retrySendMessage({
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     generateTitle: requestTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,

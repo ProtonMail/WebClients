@@ -1,13 +1,13 @@
-import React from 'react';
-
-import type { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import clsx from '@proton/utils/clsx';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
-import { GetLumoPlusContent } from './GetLumoPlusContent';
+import { UpgradeToLumoPlusContent } from './GetLumoPlusContent';
+
+import './GetLumoPlusButton.scss';
 
 interface GetLumoPlusButtonProps extends PromotionButtonProps<typeof ButtonLike> {
     className?: string;
@@ -17,33 +17,36 @@ interface GetLumoPlusButtonProps extends PromotionButtonProps<typeof ButtonLike>
 }
 
 /**
- * Promotion button with gradient and "Get Lumo+" content
  * Used for main CTAs in headers, modals, etc.
  * Supports both path navigation (via SettingsLink) and onClick handlers
  */
-const GetLumoPlusButton = ({ className, path, onClick, callToActionText, ...props }: GetLumoPlusButtonProps) => {
-    const baseClassName = clsx(`shrink-0 upsell-addon-button button-promotion`, LUMO_UPGRADE_TRIGGER_CLASS, className);
+const UpgradeToLumoPlusButton = ({ className, path, onClick, callToActionText, ...props }: GetLumoPlusButtonProps) => {
+    const baseClassName = clsx(
+        `shrink-0 upsell-addon-button lumo-plus-upgrade-button`,
+        LUMO_UPGRADE_TRIGGER_CLASS,
+        className
+    );
     const baseProps = {
-        buttonGradient: true,
         size: 'medium' as const,
+        shape: 'ghost' as const,
         ...props,
     };
 
     // If path is provided, use SettingsLink for navigation
     if (path) {
         return (
-            <PromotionButton as={SettingsLink} path={path} className={baseClassName} {...baseProps}>
-                <GetLumoPlusContent customText={callToActionText} />
-            </PromotionButton>
+            <ButtonLike as={SettingsLink} path={path} className={baseClassName} {...baseProps}>
+                <UpgradeToLumoPlusContent />
+            </ButtonLike>
         );
     }
 
     // Otherwise, use regular button with onClick
     return (
-        <PromotionButton as="button" onClick={onClick} className={baseClassName} {...baseProps}>
-            <GetLumoPlusContent customText={callToActionText} />
-        </PromotionButton>
+        <Button onClick={onClick} className={baseClassName} {...baseProps}>
+            <UpgradeToLumoPlusContent />
+        </Button>
     );
 };
 
-export default GetLumoPlusButton;
+export default UpgradeToLumoPlusButton;

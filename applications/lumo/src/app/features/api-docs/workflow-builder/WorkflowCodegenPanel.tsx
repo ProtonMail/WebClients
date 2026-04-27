@@ -4,17 +4,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Option, SelectTwo, TextAreaTwo, useApi, useNotifications } from '@proton/components/index';
-
-import { LumoMarkdownCodeBlock } from '../../../components/LumoMarkdown/LumoMarkdownCodeBlock';
-import { SignInLinkButton } from '../../../components/Links/SignInLink';
-import { LumoApiClient, createSystemTurn, createUserTurn } from '../../../lib/lumo-api-client';
-import { parseWorkflowCodegenResponse } from './parseWorkflowCodegenResponse';
-import { appendWorkflowCodegenAssistantText } from './workflowCodegenStream';
-import { buildWorkflowCodegenUserPrompt, getWorkflowCodegenSystemPrompt } from './workflowCodegenPrompt';
-import { mapCodeLanguageToPreClass } from './workflowCodegenDisplay';
-import type { LumoWorkflowCodegenResult, WorkflowCodegenLang } from './workflowCodegen.types';
-import { WorkflowGraphView } from './WorkflowGraphView';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { SignInButton } from '../../../components/Guest/SignInLink';
+import { LumoMarkdownCodeBlock } from '../../../components/LumoMarkdown/LumoMarkdownCodeBlock';
+import { LumoApiClient, createSystemTurn, createUserTurn } from '../../../lib/lumo-api-client';
+import { WorkflowGraphView } from './WorkflowGraphView';
+import { parseWorkflowCodegenResponse } from './parseWorkflowCodegenResponse';
+import type { LumoWorkflowCodegenResult, WorkflowCodegenLang } from './workflowCodegen.types';
+import { mapCodeLanguageToPreClass } from './workflowCodegenDisplay';
+import { buildWorkflowCodegenUserPrompt, getWorkflowCodegenSystemPrompt } from './workflowCodegenPrompt';
+import { appendWorkflowCodegenAssistantText } from './workflowCodegenStream';
 
 const WORKFLOW_LANG_OPTIONS = [
     { value: 'python' as const, text: c('collider_2025: Label').t`Python` },
@@ -48,7 +48,7 @@ const WORKFLOW_EXAMPLE_PROMPTS: { label: string; prompt: string }[] = [
         label: c('collider_2025: Label').t`Compare two drafts`,
         prompt: c('collider_2025: Info')
             .t`Load two versions of a policy, ask ${LUMO_SHORT_APP_NAME} to list differences and risks, then produce a short recommendation for which version to adopt.`,
-    }
+    },
 ];
 
 interface WorkflowCodegenPanelProps {
@@ -162,7 +162,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                     <p className="m-0 color-weak mb-4">
                         {c('collider_2025: Info').t`Sign in to generate workflows with ${LUMO_SHORT_APP_NAME}.`}
                     </p>
-                    <SignInLinkButton color="norm" shape="solid" />
+                    <SignInButton color="norm" shape="solid" />
                 </div>
             </div>
         );
@@ -237,9 +237,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 </div>
             </div>
 
-            {loading ? (
-                <p className="color-weak mt-0 mb-6">{c('collider_2025: Info').t`Generating…`}</p>
-            ) : undefined}
+            {loading ? <p className="color-weak mt-0 mb-6">{c('collider_2025: Info').t`Generating…`}</p> : undefined}
 
             {result ? (
                 <section className="mb-8" aria-label={c('collider_2025: Title').t`Workflow output`}>
@@ -266,10 +264,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                             <WorkflowGraphView graph={result.graph} minCanvasHeightPx={420} />
                         </div>
                     ) : (
-                        <div
-                            className="min-w-0 overflow-auto"
-                            style={{ maxHeight: 'min(72vh, 52rem)' }}
-                        >
+                        <div className="min-w-0 overflow-auto" style={{ maxHeight: 'min(72vh, 52rem)' }}>
                             <div className="w-full min-w-0">
                                 <LumoMarkdownCodeBlock
                                     code={result.code.source}

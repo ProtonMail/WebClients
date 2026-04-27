@@ -1,23 +1,21 @@
-.tool-call-timeline {
-	//margin: 8px 0;
-}
+@use '~@proton/styles/scss/lib' as *;
+
 
 .tool-call-timeline-item {
 	position: relative;
 	display: flex;
 	align-items: center;
-	padding-left: 24px;
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-inline-start: rem(24);
+	padding-block: rem(6);
 
 	// Vertical line from circle to bottom (always present, hidden for last item)
 	&::before {
 		content: '';
 		position: absolute;
-		left: 5px;
-		top: calc(50% + 5.5px);
-		bottom: 0;
-		width: 1px;
+		inset-inline-start: rem(5);
+		inset-block-start: calc(50% + #{rem(5.5)});
+		inset-block-end: 0;
+		inline-size: 1px;
 		background-color: var(--border-norm);
 	}
 
@@ -29,10 +27,10 @@
 	&::after {
 		content: '';
 		position: absolute;
-		left: 5px;
-		top: 0;
-		height: calc(50% - 5.5px);
-		width: 1px;
+		inset-inline-start: rem(5);
+		inset-block-start: 0;
+		block-size: calc(50% - #{rem(5.5)});
+		inline-size: 1px;
 		background-color: var(--border-norm);
 	}
 
@@ -42,7 +40,7 @@
 
 	// Single item: no circle, no padding
 	&--single {
-		padding-left: 0;
+		padding-inline-start: 0;
 
 		.tool-call-circle {
 			display: none;
@@ -52,11 +50,11 @@
 
 .tool-call-circle {
 	position: absolute;
-	left: 0;
-	top: 50%;
+	inset-inline-start: 0;
+	inset-block-start: 50%;
 	transform: translateY(calc(-50%));
-	width: 11px;
-	height: 11px;
+	inline-size: rem(11);
+	block-size: rem(11);
 	border-radius: 50%;
 	background-color: var(--border-norm);
 
@@ -64,10 +62,6 @@
 		background-color: var(--interaction-norm);
 		animation: pulse 1.5s ease-in-out infinite;
 	}
-}
-
-.tool-call-label--in-progress {
-	//font-weight: 500;
 }
 
 @keyframes pulse {

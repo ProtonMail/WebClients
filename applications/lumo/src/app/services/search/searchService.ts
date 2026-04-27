@@ -332,7 +332,9 @@ export class SearchService {
 
         // Apply retention policy (7-day limit for free users)
         const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
-        const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
+        // Exclude ghost conversations from search - they are transient and should never surface in results
+        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
+        const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
 
         const results: SearchResult[] = accessibleConversations.map((conversation) => {
             const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
@@ -413,7 +415,9 @@ export class SearchService {
 
         // Apply retention policy (7-day limit for free users)
         const hasLumoPlus = options?.hasLumoPlus ?? true; // Default to Plus access if not specified
-        const accessibleConversations = applyRetentionPolicy(Object.values(conversations), hasLumoPlus);
+        // Exclude ghost conversations from search - they are transient and should never surface in results
+        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
+        const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
         const accessibleConversationIds = new Set(accessibleConversations.map((c) => c.id));
 
         const workerResults = await this.searchWithWorker(normalizedQuery);
@@ -487,7 +491,7 @@ export class SearchService {
             const content = message.content?.toLowerCase() || '';
             if (content.includes(normalizedQuery)) {
                 const conversation = conversations[message.conversationId];
-                if (!conversation) return;
+                if (!conversation || conversation.ghost) return;
 
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
                 const timestamp = new Date(message.createdAt).getTime();

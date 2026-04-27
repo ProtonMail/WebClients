@@ -1,0 +1,126 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.finance-comparison {
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: rem(12);
+    overflow: hidden;
+    font-family: inherit;
+
+    &__title {
+        font-size: rem(12);
+        font-weight: 600;
+        color: var(--text-weak);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    &__legend-item {
+        font-size: rem(13);
+        font-weight: 600;
+        color: var(--text-norm);
+    }
+
+    &__legend-dot {
+        inline-size: rem(10);
+        block-size: rem(10);
+        border-radius: 50%;
+    }
+
+    &__chart {
+        block-size: rem(180);
+        padding-inline: rem(4);
+        padding-block-end: rem(8);
+        border-block-end: 1px solid var(--border-weak);
+    }
+
+    &__prices {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(128), 1fr));
+        border-block-end: 1px solid var(--border-weak);
+    }
+
+    &__price-card {
+        border-block-start: 3px solid transparent;
+        border-inline-end: 1px solid var(--border-weak);
+
+        &:last-child {
+            border-inline-end: none;
+        }
+    }
+
+    &__price-symbol {
+        font-size: rem(13);
+        font-weight: 700;
+        color: var(--text-norm);
+        letter-spacing: 0.02em;
+    }
+
+    &__price-name {
+        font-size: rem(11);
+        color: var(--text-weak);
+        line-height: 1.3;
+    }
+
+    &__price-value {
+        font-size: rem(20);
+        font-weight: 700;
+        color: var(--text-norm);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+
+    &__price-change {
+        font-size: rem(12);
+        font-weight: 600;
+
+        &--up {
+            color: var(--signal-success);
+        }
+
+        &--down {
+            color: var(--signal-danger);
+        }
+    }
+
+    &__table {
+        border-collapse: collapse;
+        font-size: rem(13);
+    }
+
+    &__table-header-symbol {
+        font-size: rem(12);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        border-block-end: 1px solid var(--border-weak);
+    }
+
+    &__table-row:nth-child(even) {
+        background: var(--background-weak);
+    }
+
+    &__table-label {
+        font-size: rem(12);
+        color: var(--text-weak);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+    }
+
+    &__table-value {
+        font-weight: 600;
+        color: var(--text-norm);
+    }
+
+    &__tooltip {
+        background: var(--background-norm);
+        border: 1px solid var(--border-norm);
+        box-shadow: var(--shadow-norm);
+        font-size: rem(12);
+    }
+
+    &__tooltip-date {
+        color: var(--text-weak);
+        font-size: rem(11);
+    }
+}
