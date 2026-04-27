@@ -962,6 +962,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Godkendelse mislykkedes. Bekræft din anden adgangskode for at fortsætte med eksporten"
       ],
+      "Biometric authentication failed.": [
+        "Biometrisk godkendelse mislykkedes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Legitimationsoplysninger til biometrisk låsning matcher ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Legitimationsoplysninger til biometrisk låsning blev ikke fundet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk låsning er ikke konfigureret."
+      ],
+      "Biometric lock setup failed.": [
+        "Konfiguration af biometrisk låsning mislykkedes."
+      ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitation i øjeblikket",
         "Kan ikke sende invitationer i øjeblikket"
@@ -1032,6 +1047,9 @@
       ],
       "Emptying trash failed": [
         "Tømning af papirkurv mislykkedes"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypteret kommunikation med ${ PASS_APP_NAME }-skrivebordsappen mislykkedes."
       ],
       "Encrypted JSON not supported": [
         "Krypteret JSON er ikke understøttet"
@@ -1252,6 +1270,9 @@
       "Something went wrong. Please sign in again.": [
         "Noget gik galt. Du bedes logge ind igen."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-skrivebordsappen svarede ikke i tide."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } desktop-appen er låst og skal låses op."
       ],
@@ -1260,6 +1281,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktop-appen ${ PASS_APP_NAME } svarer ikke. Kører den?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-skrivebordsappen er logget ind med en anden konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME }-skrivebordsappen burde være logget in."
       ],
       "The session has expired. Please sign in again.": [
         "Sessionen er udløbet. Log ind igen."
@@ -2017,10 +2044,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4891,6 +4914,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Få ${ planName }"
       ]
     },
     "Validation": {
