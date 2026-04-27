@@ -1,9 +1,10 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, type ReactNode, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { RadioButtonGroup, RadioLabelledButton } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
@@ -145,4 +146,53 @@ export const useVaultSelectModalHandles = () => {
             []
         ),
     };
+};
+
+export type VaultMultiSelectProps = {
+    vaults: VaultShareItem[];
+    selectedShareIds: Set<string>;
+    onToggle: (shareId: string) => void;
+    /** CSS max-height applied to the scrollable list. */
+    maxHeight?: string;
+    /** Rendered when `vaults` is empty. */
+    emptyState?: ReactNode;
+};
+
+/** Inline multi-select list of vaults — a checkbox companion to the
+ * single-select sidebar `VaultSelect` above. The caller owns the surrounding
+ * layout (typically another modal) and supplies the vault list, so this
+ * component is intentionally vault-source-agnostic. */
+export const VaultMultiSelect: FC<VaultMultiSelectProps> = ({
+    vaults,
+    selectedShareIds,
+    onToggle,
+    maxHeight = '12rem',
+    emptyState,
+}) => {
+    if (vaults.length === 0) {
+        return <div className="text-sm color-weak">{emptyState ?? c('pass_2026: Info').t`No vaults available.`}</div>;
+    }
+
+    return (
+        <div className="flex flex-column gap-1 rounded border border-weak overflow-auto" style={{ maxHeight }}>
+            {vaults.map((vault) => {
+                const checked = selectedShareIds.has(vault.shareId);
+                return (
+                    <label
+                        key={vault.shareId}
+                        className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-weak"
+                    >
+                        <Checkbox checked={checked} onChange={() => onToggle(vault.shareId)} />
+                        <VaultIcon
+                            color={vault.content.display.color}
+                            icon={vault.content.display.icon}
+                            size={3}
+                            background
+                        />
+                        <span className="text-ellipsis">{vault.content.name}</span>
+                    </label>
+                );
+            })}
+        </div>
+    );
 };
