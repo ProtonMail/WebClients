@@ -153,7 +153,9 @@ const RecoveryPhoneSubpage = () => {
         return <Loader />;
     }
 
-    const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/email-sms-recovery')}>{c('Link').t`Learn more`}</Href>
+    );
 
     return (
         <>
