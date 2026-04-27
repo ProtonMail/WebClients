@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
+import { useCategoryFlagWatcher } from 'proton-mail/components/categoryView/useCategoryFlagWatcher';
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
@@ -17,6 +18,7 @@ import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useMailboxFocus } from 'proton-mail/hooks/mailbox/useMailboxFocus';
@@ -31,7 +33,6 @@ import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from './interface';
-import { MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Props {
     params: ElementsStateParams;
@@ -83,6 +84,7 @@ export const RouterLabelContainer = ({
     const composersCount = useMailSelector(selectComposersCount);
 
     const categoryViewControl = useCategoriesView();
+    useCategoryFlagWatcher();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
