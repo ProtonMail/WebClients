@@ -3133,6 +3133,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "Cancel·leu-ho"
+      ],
       "Close": [
         "Tanca"
       ],
@@ -3171,6 +3174,9 @@
       ],
       "Set up other features": [
         "Configureu altres característiques"
+      ],
+      "Sign in": [
+        "Inicieu sessió"
       ],
       "Take a tour": [
         "Feu una visita guiada"
@@ -5093,9 +5099,6 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Com vam donar suport als activistes locals quan la privacitat i la llibertat d'expressió es van veure amenaçades."
       ],
-      "How you reset your ${ BRAND_NAME } password. This will not recover your encrypted data.": [
-        "Com restablir la vostra contrasenya de ${ BRAND_NAME }. Això no recuperarà les vostres dades xifrades."
-      ],
       "How you unlock your encrypted data if you lose your password.": [
         "Com desbloquejar les vostres dades xifrades si perdeu la contrasenya."
       ],
@@ -5146,6 +5149,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "Encara necessiteu ajuda? El nostre equip de suport és a la vostra disposició."
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "Això us permet recuperar l'accés al compte de ${ BRAND_NAME }, però no recupera les dades xifrades."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
@@ -5221,7 +5227,7 @@
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
       ],
       "You can still login with this address and re-connect at any time.": [
-        "Encara podreu iniciar sessió amb aquesta adreça i tornar-la a connectar en qualsevol moment."
+        "Encara podeu iniciar sessió amb aquesta adreça i reconnectar en qualsevol moment."
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
         "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
@@ -6152,7 +6158,7 @@
     },
     "email_forwarding_2023: Link": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
@@ -6328,6 +6334,9 @@
       ],
       "Add emergency contact": [
         "Afegeix un contacte d'emergència"
+      ],
+      "Add option": [
+        "Afegiu una opció"
       ],
       "Add recovery contact": [
         "Afegiu un contacte de recuperació"
@@ -6561,9 +6570,6 @@
       "Send recovery request": [
         "Envieu la sol·licitud de recuperació"
       ],
-      "Set account recovery": [
-        "Configureu la recuperació del compte"
-      ],
       "Stop being recovery contact": [
         "Deixeu de ser contacte de recuperació."
       ],
@@ -6606,9 +6612,6 @@
       ],
       "Time required before automatically granting them access": [
         "Temps necessari abans de concedir-li accés automàticament"
-      ],
-      "To add and use recovery contact, you must have a password reset option.": [
-        "Per afegir i utilitzar un contacte de recuperació, heu de tenir una opció de restabliment de contrasenya."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Per desactivar aquest mètode de recuperació, esborreu tots els vostres contactes de recuperació."
@@ -7571,6 +7574,9 @@
       ],
       "Ask your administrator to enable Account monitor.": [
         "Demaneu al vostre administrador que habiliti el monitor del compte."
+      ],
+      "Enable account monitor to start loading event.": [
+        "Habiliteu el monitor del compte per començar a carregar l'esdeveniment."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -10047,9 +10053,6 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic de SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
       ],
-      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Si desactiveu el monitor del compte, també s'eliminarà tot el vostre historial. Segur que voleu desactivar-lo?"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -11330,6 +11333,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Canvieu aquesta configuració només si utilitzeu PGP amb destinataris que no siguin de ${ BRAND_NAME }."
       ],
+      "Only sign in on devices you trust": [
+        "Inicieu sessió només en dispositius de confiança"
+      ],
       "Only you can see the label": [
         "Només vós podeu veure l'etiqueta"
       ],
@@ -12123,6 +12129,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "Això permetrà que el televisor accedeixi al vostre compte de ${ BRAND_NAME }"
+      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Això eliminarà totes les versions anteriors dels vostres fitxers més antigues de ${ rententionLabel }."
       ],
@@ -12266,6 +12275,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Per a utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
+      ],
+      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
+        "Per utilitzar aquest mètode de recuperació de dades, us cal una opció de restabliment de contrasenya, com ara la verificació per correu electrònic o per SMS."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Per funcionar correctament, cada filtre ha de contenir com a mínim un nom i un script Sieve vàlid. Podeu ${ link }."
@@ -13025,8 +13037,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La vostra frase de recuperació és una sèrie de 12 paraules generades aleatòriament en un ordre específic."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It’s is composed of 12 words and acts like a backup password.": [
-        "La frase de recuperació, inclosa al vostre paquet de recuperació, us permetrà iniciar sessió i recuperar les vostres dades si us quedeu sense accés al vostre compte de ${ BRAND_NAME }. Està composta per 12 paraules i actua com una contrasenya de seguretat."
+      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "La frase de recuperació, inclosa al paquet de recuperació, us permetrà iniciar la sessió i recuperar les vostres dades si perdeu l'accés al compte de ${ BRAND_NAME }. Està composta per 12 paraules i funciona com una contrasenya de seguretat."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
@@ -14683,7 +14695,7 @@
         "Disponible només amb els plans de pagament de ${ PASS_SHORT_APP_NAME }"
       ],
       "Open-source code": [
-        "Codi de font obert"
+        "Codi obert"
       ],
       "OpenVPN password": [
         "Contrasenya d'OpenVPN"
@@ -19817,8 +19829,8 @@
       "Add more options for stronger protection": [
         "Afegiu més opcions per a una protecció més robusta"
       ],
-      "Add options to avoid getting locked out of your account.": [
-        "Afegiu opcions per evitar quedar-vos sense accés al compte."
+      "Add more options to avoid getting locked out of your account.": [
+        "Afegiu més opcions per evitar perdre l'accés al vostre compte."
       ],
       "Awesome. Keep your options up-to-date for stronger protection.": [
         "Genial. Mantingueu les vostres opcions actualitzades per una protecció més robusta."
@@ -19832,11 +19844,17 @@
       "How you increased your account protection": [
         "Com heu augmentat la protecció del vostre compte"
       ],
+      "Inactive recovery options": [
+        "Les opcions de recuperació no estan actives"
+      ],
       "Maximum": [
         "Màxim"
       ],
       "Partial": [
         "Parcial"
+      ],
+      "Require password reset option (email or SMS verification)": [
+        "Us cal una opció per restablir la contrasenya (verificació per correu electrònic o SMS)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Puntuació: ${ score } / ${ maxScore }"
@@ -24784,6 +24802,9 @@
       "No events": [
         "No hi ha cap esdeveniment"
       ],
+      "No events yet": [
+        "Encara no hi ha esdeveniments"
+      ],
       "No need to empty the trash": [
         "No cal buidar la paperera"
       ],
@@ -24911,7 +24932,7 @@
         "Hi ha hagut un problema en processar el vostre pagament"
       ],
       "Problem processing your request": [
-        "Hi ha hagut un problema en processar la vostra sol·licitud"
+        "S'ha produit un problema en processar la vostra sol·licitud"
       ],
       "Processing...": [
         "Processant..."
@@ -25143,6 +25164,9 @@
       ],
       "Sign in on TV": [
         "Inicieu sessió al televisor"
+      ],
+      "Sign in on TV?": [
+        "Voleu iniciar sessió al televisor?"
       ],
       "Sign in to join the Beta program": [
         "Inicieu la sessió per unir-vos al programa Beta"

@@ -212,6 +212,9 @@
       "Choose my own password": [
         "Izberite svoje geslo"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Pridobi ${ BRAND_NAME } naslov"
+      ],
       "Claim it": [
         "Zahtevajte ga"
       ],
@@ -1517,6 +1520,11 @@
         "Ponovno aktiviraj"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
+      ]
+    },
     "Addon": {
       "${ domains } additional custom domain": [
         "${ domains } dodatna domena po meri",
@@ -2162,6 +2170,12 @@
       "Install app": [
         "Namesti aplikacijo"
       ],
+      "Migration started for ${ n } user": [
+        "Začela se je migracija ${ n } uporabnika",
+        "Začela se je migracija ${ n } uporabnikov",
+        "Začela se je migracija ${ n } uporabnikov",
+        "Začela se je migracija ${ n } uporabnikov"
+      ],
       "Not started": [
         "Ni začeto"
       ],
@@ -2571,6 +2585,9 @@
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
       ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
+      ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
       ]
@@ -2909,6 +2926,12 @@
       ]
     },
     "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } izbrano mesto",
+        "${ selectedCitiesCount } izbrani mesti",
+        "${ selectedCitiesCount } izbrana mesta",
+        "${ selectedCitiesCount } izbranih mest"
+      ],
       "${ selectedCountriesCount } selected": [
         "${ selectedCountriesCount } izbrana",
         "${ selectedCountriesCount } izbrana",
@@ -4013,6 +4036,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Omogoča vam takojšnje dodajanje povezav do srečanj v vaša povabila na dogodke."
       ],
+      "No ads. No trackers.": [
+        "Brez oglasov. Brez sledilnikov."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nihče v vaši organizaciji se ne more povezati z deljenimi strežniki."
       ],
@@ -4866,9 +4892,6 @@
       "Send recovery request": [
         "Pošlji zahtevo za obnovitev"
       ],
-      "Set account recovery": [
-        "Nastavi obnovitev računa"
-      ],
       "Stop being recovery contact": [
         "Želite prenehati biti kontakt za obnovitev"
       ],
@@ -4925,6 +4948,12 @@
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Nihče vaš še ni izbral za stik v nujnih primerih."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Dosegli ste največjo dovoljeno število stikov za nujne primere: ${ limit }.",
+        "Dosegli ste največjo dovoljeno število stikov za nujne primere: ${ limit }.",
+        "Dosegli ste največjo dovoljeno število stikov za nujne primere: ${ limit }.",
+        "Dosegli ste največjo dovoljeno število stikov za nujne primere: ${ limit }."
       ],
       "You will be notified when someone requests emergency access.": [
         "Obveščeni boste, ko bo nekdo zahteval dostop v nujnih primerih."
@@ -4986,6 +5015,9 @@
       ],
       "Add at least one condition": [
         "Dodajte vsaj en pogoj"
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ],
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
@@ -6170,6 +6202,9 @@
         "${ MaxVPN } VPN povezave",
         "${ MaxVPN } VPN povezav"
       ],
+      "3 email domains": [
+        "3 e-poštne domene"
+      ],
       "Access to all countries": [
         "Dostop do vseh držav"
       ],
@@ -7285,6 +7320,12 @@
         "${ calendarsToBeMergedCount } združeni koledarji",
         "${ calendarsToBeMergedCount } združenih koledarjev"
       ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } država omogočena",
+        "${ countriesCount } državi omogočeni",
+        "${ countriesCount } države omogočene",
+        "${ countriesCount } držav omogočenih"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } je neveljaven"
       ],
@@ -7344,6 +7385,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } zahteva vsaj en namenski strežnik ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je napreden program za zaščito računa, ki ga poganjajo sofisticirani AI sistemi in strokovnjaki, ki delajo neprekinjeno, da vas zaščitijo pred slabimi akterji in varnostnimi grožnjami."
@@ -8221,6 +8268,9 @@
       "finance": [
         "finance"
       ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Za neomejen dostop do e-pošte in optimizirano izkušnjo na mobilnih napravah, prenesite našo aplikacijo ${ androidAppLink } ali ${ iosAppLink }."
       ],
@@ -8406,6 +8456,12 @@
       ],
       "Import from": [
         "Uvozi iz"
+      ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Uvoz iz ${ accounts } je začasno odložen zaradi omejitve pasovne širine.",
+        "Uvoz iz ${ accounts } je začasno odložen zaradi omejitve pasovne širine.",
+        "Uvoz iz ${ accounts } je začasno odložen zaradi omejitve pasovne širine.",
+        "Uvoz iz ${ accounts } je začasno odložen zaradi omejitve pasovne širine."
       ],
       "Import in progress": [
         "Uvoz v teku"
@@ -10547,6 +10603,9 @@
       "Add extra services": [
         "Dodaj dodatne storitve"
       ],
+      "Additional comments": [
+        "Dodatni komentarji"
+      ],
       "Address": [
         "Naslov"
       ],
@@ -10685,6 +10744,9 @@
       "Block malware, ads and trackers": [
         "Blokiraj zlonameren program, oglase in sledilnike."
       ],
+      "Bookings, billings, and orders": [
+        "Rezervacije, računi in naročila"
+      ],
       "Browser": [
         "Brskalnik"
       ],
@@ -10822,6 +10884,12 @@
       ],
       "Current email": [
         "Trenutna e-pošta"
+      ],
+      "Custom email domain": [
+        "E-poštna domena po meri",
+        "E-poštni domeni po meri",
+        "E-poštne domene po meri",
+        "E-poštnih domen po meri"
       ],
       "Daily email notifications": [
         "Dnevna e-poštna obvestila"
@@ -12169,6 +12237,22 @@
       ],
       "This feature is temporarily unavailable": [
         "Ta funkcija je začasno nedostopna."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Dosegli ste največje število članov: ${ MAX_CALENDAR_MEMBERS }",
+        "Dosegli ste največje število članov: ${ MAX_CALENDAR_MEMBERS }",
+        "Dosegli ste največje število članov: ${ MAX_CALENDAR_MEMBERS }",
+        "Dosegli ste največje število članov: ${ MAX_CALENDAR_MEMBERS }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnika)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnike)",
+        "${ MEET_APP_NAME } (za ${ quantity } uporabnikov)"
       ]
     },
     "meet_2025: Feature": {
@@ -14855,6 +14939,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
       ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -15114,6 +15201,9 @@
       "End date": [
         "Datum zaključka"
       ],
+      "Enter a name": [
+        "Vnesi ime"
+      ],
       "example@domain.com": [
         "primer@domena.si"
       ],
@@ -15251,6 +15341,12 @@
         "${ cycle } meseci",
         "${ cycle } mesecev"
       ],
+      "${ months } month plan": [
+        "${ months } mesečna naročnina",
+        "${ months } mesečna naročnina",
+        "${ months } mesečna naročnina",
+        "${ months } mesečna naročnina"
+      ],
       "Enjoying ${ planName }?": [
         "Uživate v ${ planName }?"
       ]
@@ -15309,6 +15405,26 @@
       ],
       "Unknown": [
         "Neznan"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -17055,6 +17171,14 @@
         "Preklic vaše naročnine, počakajte"
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } oseba",
+        "${ count } osebi",
+        "${ count } osebe",
+        "${ count } oseb"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Dejanja"
@@ -17281,6 +17405,12 @@
         "${ n } VPN povezavi na uporabnika",
         "${ n } VPN povezave na uporabnika",
         "${ n } VPN povezav na uporabnika"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } za ${ count } uporabnika",
+        "${ productName } za ${ count } uporabnika",
+        "${ productName } za ${ count } uporabnike",
+        "${ productName } za ${ count } uporabnikov"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } naslov",
@@ -19529,6 +19659,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard nastavitev"
+      ],
+      "You are all set": [
+        "Vse je nastavljeno"
       ],
       "You can now create unlimited folders and labels": [
         "Zdaj lahko ustvarite neomejeno število map in oznak"
