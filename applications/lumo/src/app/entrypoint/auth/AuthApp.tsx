@@ -24,6 +24,7 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from '../../bootstrap';
+import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';
 import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
 import LumoLoader from '../../components/Loading/LumoLoader';
 import config from '../../config';
@@ -110,7 +111,8 @@ const AuthApp = () => {
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                                     <IndexedDBConnectionMonitor />
-                                                    <StandardPrivateApp>
+                                                    <ConditionalNotificationsChildren />
+                                                    <StandardPrivateApp noNotifications>
                                                         <LumoThemeProvider>
                                                             <Suspense fallback={loader}>
                                                                 <RouterContainerLazy />

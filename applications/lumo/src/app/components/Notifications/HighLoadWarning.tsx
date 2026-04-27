@@ -9,7 +9,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { SignInLink } from '../Links/SignInLink';
+import { SignInLink } from '../Guest/SignInLink';
 
 import './ErrorCard.scss';
 

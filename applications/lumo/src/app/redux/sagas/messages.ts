@@ -41,7 +41,9 @@ import type {LumoState} from '../store';
 import {considerRequestingFullAttachment} from './attachments';
 import {waitForConversation} from './conversations';
 import {waitForMapping} from './idmap';
-import {callWithRetry, isClientError, isConflictClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {addResourceLimitError} from '../slices/meta/errors';
+import {MAX_MESSAGES_PER_CONVERSATION} from '../../constants/limits';
+import {callWithRetry, isClientError, isConflictClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 import {waitForSpace} from './spaces';
 
 /*** helpers ***/
@@ -304,6 +306,15 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
                 yield put(pullConversationRequest({ id: conversationId }));
             }
             yield put(pushMessageNeedsRetry(payload));
+        } else if (isLimitReachedError(e)) {
+            yield put(
+                addResourceLimitError({
+                    resource: 'messages',
+                    limit: MAX_MESSAGES_PER_CONVERSATION,
+                    serverMessage: e.serverMessage,
+                })
+            );
+            yield put(pushMessageFailure({ ...payload, error: `${e}` }));
         } else if (isClientError(e)) {
             yield put(pushMessageFailure({ ...payload, error: `${e}` }));
         } else {

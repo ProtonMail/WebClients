@@ -1,7 +1,0 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/rem' as *;
-
-.lumoprompt {
-	min-block-size: #{rem(500)};
-	inline-size: #{rem(400)};
-}

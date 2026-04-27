@@ -14,6 +14,8 @@ import {
     takeLeading,
 } from 'redux-saga/effects';
 
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
     ASSET_STORE,
@@ -138,6 +140,7 @@ import {
     softDeleteConversationFromLocal,
     softDeleteConversationFromRemote,
 } from './conversations';
+import { guestMigrationSaga } from './guestMigration';
 import { considerSavingIdMapToIdb } from './idmap';
 import {
     deserializeMessageSaga,
@@ -203,12 +206,44 @@ export class ConflictClientError extends ClientError {
     }
 }
 
+/**
+ * Error thrown when the backend rejects a POST because the user hit a resource
+ * limit (messages per conversation, assets per space, conversations per space,
+ * spaces per user). The backend signals this via HTTP 422.
+ */
+export class LimitReachedError extends ClientError {
+    public readonly resource: 'messages' | 'assets' | 'conversations' | 'spaces';
+
+    public readonly serverMessage?: string;
+
+    public readonly code?: number;
+
+    constructor(
+        resource: LimitReachedError['resource'],
+        opts: { serverMessage?: string; code?: number } = {}
+    ) {
+        super(`Limit reached for ${resource}${opts.serverMessage ? `: ${opts.serverMessage}` : ''}`);
+        this.resource = resource;
+        this.serverMessage = opts.serverMessage;
+        this.code = opts.code;
+        Object.setPrototypeOf(this, LimitReachedError.prototype);
+        this.name = 'LimitReachedError';
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, LimitReachedError);
+        }
+    }
+}
+
 export function isClientError(err: unknown): err is ClientError {
     return err instanceof ClientError;
 }
 
 export function isConflictClientError(err: unknown): err is ConflictClientError {
     return err instanceof ConflictClientError;
+}
+
+export function isLimitReachedError(err: unknown): err is LimitReachedError {
+    return err instanceof LimitReachedError;
 }
 
 export function callWithRetry<R>(
@@ -608,19 +643,36 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
         function*() { yield takeEvery(reloadReduxRequest, reloadRedux) },
         function*() { yield takeEvery(unloadReduxRequest, unloadRedux) },
+
+        // Guest migration saga
+        guestMigrationSaga,
     ]);
     // @formatter:on
 
     // @ts-ignore
     const rootWatcher = yield all(
-        watchers.map((w) =>
+        watchers.map((w, index) =>
             spawn(function* wrappedWatcher() {
                 while (true) {
                     try {
                         yield call(w);
                     } catch (err) {
                         if (crashIfErrors) throw err;
+                        // Previously these crashes were only console.error'd, which made
+                        // production issues invisible. Report to Sentry (no-op on localhost)
+                        // so watcher restarts are observable. The watcherIndex tag helps
+                        // correlate recurring crashes to a specific takeEvery binding.
                         console.error(`Watcher crashed, restarting`, err);
+                        try {
+                            traceError(err instanceof Error ? err : new Error(String(err)), {
+                                tags: {
+                                    source: 'lumo-saga-watcher',
+                                    watcherIndex: String(index),
+                                },
+                            });
+                        } catch {
+                            // Never let a reporting failure kill the watcher loop.
+                        }
                     }
                 }
             })

@@ -4,6 +4,7 @@ import { useErrorHandler as useProtonErrorHandler } from '@proton/components';
 
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useLumoDispatch } from '../../redux/hooks';
+import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { type ErrorContext, LUMO_API_ERRORS } from '../../types';
 import { analyzeError } from './errorAnalyzer';
 import { handleGenerationError, handleTierError } from './errorHandling';
@@ -58,6 +59,7 @@ export const useActionErrorHandler = () => {
 
                 default:
                     // Use fallback handler for unknown errors
+                    onComposerError('Unknown');
                     handleError(error);
                     break;
             }

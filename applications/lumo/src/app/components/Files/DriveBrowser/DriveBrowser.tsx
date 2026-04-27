@@ -11,7 +11,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_ASSET_SIZE, MAX_FILE_SIZE } from '../../../constants';
+import { MAX_ASSET_SIZE } from '../../../constants';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
@@ -74,8 +74,16 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         },
         ref
     ) => {
-        const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile, createFolder } =
-            useDriveSDK();
+        const {
+            isInitialized,
+            error,
+            getRootFolder,
+            browseFolderChildren,
+            downloadFile,
+            uploadFile,
+            createFolder,
+            iterateSharedWithMe,
+        } = useDriveSDK();
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
         const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
@@ -105,6 +113,12 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             }
         }, [error]);
 
+        // Whether the current folder is the real "My Files" root (not a scoped initialFolderId).
+        // Shared-with-me items are only surfaced at this level, since they live outside the
+        // user's own volume and have no meaningful parent-child relationship with My Files.
+        const isAtMyFilesRoot =
+            !initialFolderId && !!rootFolderId && currentFolder?.nodeUid === rootFolderId;
+
         const handleRefresh = useCallback(async () => {
             if (!currentFolder) {
                 return;
@@ -117,14 +131,23 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                 await new Promise((resolve) => setTimeout(resolve, 100));
 
                 const folderChildren = await browseFolderChildren(currentFolder.nodeUid, true);
-                setChildren(folderChildren);
+
+                if (isAtMyFilesRoot) {
+                    const sharedWithMe = await iterateSharedWithMe().catch((err) => {
+                        console.error('Failed to load shared-with-me nodes on refresh:', err);
+                        return [] as DriveNode[];
+                    });
+                    setChildren([...folderChildren, ...sharedWithMe]);
+                } else {
+                    setChildren(folderChildren);
+                }
             } catch (error) {
                 console.error('Failed to refresh folder:', error);
                 onError?.(error instanceof Error ? error : new Error('Failed to refresh folder'));
             } finally {
                 setIsRefreshing(false);
             }
-        }, [browseFolderChildren, currentFolder, onError]);
+        }, [browseFolderChildren, currentFolder, onError, isAtMyFilesRoot, iterateSharedWithMe]);
 
         // Refresh when window regains focus (user comes back to the tab)
         useEffect(() => {
@@ -170,13 +193,22 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     setBreadcrumbs(initialBreadcrumbs);
                     onBreadcrumbsChange?.(initialBreadcrumbs);
                 } else {
-                    // Start at root folder
+                    // Start at root folder. We also load items shared with the user here so
+                    // they show up alongside My Files (they live on separate volumes in the API
+                    // and aren't returned by iterateFolderChildren on the root).
                     setCurrentFolder(rootFolder);
                     const rootBreadcrumbs = [{ node: rootFolder, index: 0 }];
                     setBreadcrumbs(rootBreadcrumbs);
                     onBreadcrumbsChange?.(rootBreadcrumbs);
-                    const rootChildren = await browseFolderChildren(rootFolder.nodeUid);
-                    setChildren(rootChildren);
+
+                    const [rootChildren, sharedWithMe] = await Promise.all([
+                        browseFolderChildren(rootFolder.nodeUid),
+                        iterateSharedWithMe().catch((err) => {
+                            console.error('Failed to load shared-with-me nodes:', err);
+                            return [] as DriveNode[];
+                        }),
+                    ]);
+                    setChildren([...rootChildren, ...sharedWithMe]);
                 }
             } catch (err) {
                 console.error('Failed to initialize Drive browser:', err);
@@ -198,7 +230,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             } finally {
                 setLoading(false);
             }
-        }, [getRootFolder, browseFolderChildren, onError, initialFolderId, initialFolderName]);
+        }, [getRootFolder, browseFolderChildren, onError, initialFolderId, initialFolderName, iterateSharedWithMe]);
 
         useEffect(() => {
             if (!isInitialized || error || initializedRef.current) {
@@ -258,9 +290,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     return;
                 }
 
-                // For adding files to KB (not linked folder mode), use asset size limit
-                // Linked folders can handle larger files since they're indexed directly
-                const sizeLimit = isLinkedFolder ? MAX_FILE_SIZE : MAX_ASSET_SIZE;
+                // All selected Drive files are downloaded + processed + indexed on the
+                // main thread, so enforce the same asset-size limit everywhere to avoid
+                // UI freezes on large files.
+                const sizeLimit = MAX_ASSET_SIZE;
 
                 // Check file size limit before downloading
                 if (file.size && file.size > sizeLimit) {
@@ -328,9 +361,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
 
                 for (const file of fileArray) {
                     try {
-                        // Check file size limit first
-                        if (file.size > MAX_FILE_SIZE) {
-                            const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                        // Uploaded files are processed + indexed immediately after upload,
+                        // so enforce the asset-size limit to avoid UI freezes.
+                        if (file.size > MAX_ASSET_SIZE) {
+                            const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                             const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                             createNotification({
                                 text: c('collider_2025: Error')
@@ -663,17 +697,9 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
 
         // Check for errors from both SDK and local initialization
         const displayError = error || localError;
-        console.log(
-            'DriveBrowser render - SDK error:',
-            error,
-            'localError:',
-            localError,
-            'displayError:',
-            displayError
-        );
 
         return (
-            <div className={'drive-browser-container flex flex-column flex-nowrap h-full relative overflow-y-auto'}>
+            <div className={'drive-browser-container flex flex-column flex-nowrap h-full relative p-4'}>
                 <input
                     ref={fileInputRef}
                     type="file"

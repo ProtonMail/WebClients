@@ -5,6 +5,7 @@ import { useModalStateObject } from '@proton/components';
 import { useConversation } from '../providers/ConversationProvider';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
+import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
 
 export const useGuestChatHandler = () => {
     const isGuest = useIsGuest();
@@ -19,9 +20,10 @@ export const useGuestChatHandler = () => {
             disclaimerModalProps.openModal(true);
             return;
         }
-        
+
         // If no active conversation (e.g., on Projects route), navigate to new chat
         setGhostChatMode(false);
+        setNativeGhostMode(false);
         history.push('/');
     };
 

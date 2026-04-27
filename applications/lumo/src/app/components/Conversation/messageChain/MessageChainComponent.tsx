@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useReducer, useRef, useState } from 'rea
 
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
-import { type Message, Role } from '../../../types';
+import { type Attachment, type Message, Role } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { MessageComponent } from './message/MessageComponent';
 
@@ -15,6 +15,7 @@ export type MessageChainComponentProps = {
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
+    handleOpenFilePreview: (attachment: Attachment) => void;
     isGenerating?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     composerContainerRef: React.RefObject<HTMLDivElement>;
@@ -212,6 +213,7 @@ export const MessageChainComponent = ({
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
+    handleOpenFilePreview,
     onRetryPanelToggle,
     composerContainerRef,
 }: MessageChainComponentProps) => {
@@ -278,6 +280,7 @@ export const MessageChainComponent = ({
                                 sourcesContainerRef={sourcesContainerRef}
                                 handleOpenSources={handleOpenSources}
                                 handleOpenFiles={handleOpenFiles}
+                                handleOpenFilePreview={handleOpenFilePreview}
                                 messageChain={messageChain}
                                 newMessageRef={index === messageChain.length - 2 ? newMessageRef : undefined}
                                 isLastMessage={isLastMessage}

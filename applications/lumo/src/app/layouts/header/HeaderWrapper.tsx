@@ -30,6 +30,8 @@ export const LumoHeader = ({ children }: { children: ReactNode }) => {
 interface HeaderWrapperProps {
     children: ReactNode;
 }
+
+// TODO: check that this is no longer needed for V2 and delete
 export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isGuest = useIsGuest();
     const showNewMarketingLinks = useFlag('LumoNewMarketingLinks');

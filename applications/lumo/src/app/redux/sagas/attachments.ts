@@ -5,6 +5,7 @@ import { call, delay, fork, getContext, put, select, take } from 'redux-saga/eff
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
+import { AssetType } from '../../remote/api';
 import { convertNewAttachmentToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
 import type {
@@ -53,7 +54,16 @@ import {
 import { addIdMapEntry } from '../slices/core/idmap';
 import type { LumoState } from '../store';
 import { waitForMapping } from './idmap';
-import { ClientError, RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isConflictClientError } from './index';
+import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
+import { addResourceLimitError } from '../slices/meta/errors';
+import {
+    ClientError,
+    RETRY_PUSH_EVERY_MS,
+    callWithRetry,
+    isClientError,
+    isConflictClientError,
+    isLimitReachedError,
+} from './index';
 import { waitForSpace } from './spaces';
 
 /*** helpers ***/
@@ -228,16 +238,18 @@ export function* deserializeAttachmentSaga(
 export function* softDeleteAttachmentFromRemote({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteAttachment(localId)); // Redux
+    // IDB first, then Redux: prevents Redux/IDB divergence if the IDB write fails.
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: false }); // IDB
+    yield put(deleteAttachment(localId)); // Redux
     yield put(unindexAttachmentRequest({ id: localId })); // Index
 }
 
 export function* softDeleteAttachmentFromLocal({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteAttachment(localId)); // Redux
+    // IDB first, then Redux — see softDeleteAttachmentFromRemote for rationale.
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: true }); // IDB
+    yield put(deleteAttachment(localId)); // Redux
     yield put(unindexAttachmentRequest({ id: localId })); // Index
 
     // Trigger push to sync deletion to server
@@ -269,7 +281,11 @@ export function* logPullAttachmentFailure({ payload: attachmentId }: { payload: 
 
 /*** sync: local -> remote ***/
 
-function* httpPostAttachment(serializedAttachment: SerializedAttachment, priority: Priority): SagaIterator<IdMapEntry> {
+function* httpPostAttachment(
+    serializedAttachment: SerializedAttachment,
+    priority: Priority,
+    assetType?: number
+): SagaIterator<IdMapEntry> {
     console.log('Saga triggered: httpPostAttachment', serializedAttachment);
     const type: ResourceType = 'attachment';
     const { id: localId, spaceId: localSpaceId } = serializedAttachment;
@@ -279,7 +295,7 @@ function* httpPostAttachment(serializedAttachment: SerializedAttachment, priorit
     }
 
     const remoteSpaceId: RemoteId = yield call(waitForMapping, 'space', localSpaceId);
-    const attachmentToApi = convertNewAttachmentToApi(serializedAttachment, remoteSpaceId);
+    const attachmentToApi = convertNewAttachmentToApi(serializedAttachment, remoteSpaceId, assetType);
     const lumoApi: LumoApi = yield getContext('lumoApi');
     const remoteId = yield call([lumoApi, lumoApi.postAttachment], attachmentToApi, priority);
     if (!remoteId) {
@@ -381,8 +397,17 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
         // Save the attachment to IndexedDB with a dirty flag
         yield call(saveDirtyAttachment, serializedAttachment);
 
+        // Tag AI-generated images so the server can index them under /assets/generated
+        const isGeneratedImage =
+            attachment.role === 'assistant' && attachment.mimeType?.startsWith('image/');
+        const assetType = isGeneratedImage ? AssetType.GeneratedImage : undefined;
+
         // Always use POST for attachments (which are assets), never PUT
-        const entry: IdMapEntry = yield call(callWithRetry, httpPostAttachment, [serializedAttachment, priority]);
+        const entry: IdMapEntry = yield call(callWithRetry, httpPostAttachment, [
+            serializedAttachment,
+            priority,
+            assetType,
+        ]);
 
         // Finish
         const updated: boolean = yield call(clearDirtyIfUnchanged, serializedAttachment);
@@ -398,6 +423,15 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
             if (isConflictClientError(e)) {
                 // 409: the asset already exists remotely, there is nothing left to sync
                 yield call(clearDirtyUnconditionally, localId);
+            }
+            if (isLimitReachedError(e)) {
+                yield put(
+                    addResourceLimitError({
+                        resource: 'assets',
+                        limit: MAX_ASSETS_PER_SPACE,
+                        serverMessage: e.serverMessage,
+                    })
+                );
             }
             yield put(pushAttachmentFailure({ ...payload, error: `${e}` }));
             yield put(setAttachmentError({ id: localId, error: `${e}` }));
@@ -545,17 +579,40 @@ export function* pullAttachment({ payload }: { payload: PullAttachmentRequest })
     yield put(setAttachmentLoading(localId));
 
     try {
+        const dbApi: DbApi = yield getContext('dbApi');
+
+        // Check IDB first. On in-session navigation (without a full page reload)
+        // attachmentDataCache is empty but IDB may already hold the encrypted payload
+        // from a previous session. Loading from IDB avoids an unnecessary network round-trip
+        // and fixes images that stay in a loading state after navigating to the gallery.
+        const idbAttachment: SerializedAttachment | undefined = yield call([dbApi, dbApi.getAttachmentById], localId);
+        if (idbAttachment && idbAttachment.encrypted && !idbAttachment.deleted) {
+            console.log(`pullAttachment: loading attachment ${localId} from IDB cache`);
+            // deserializeAttachmentSaga looks up the space DEK internally and populates attachmentDataCache
+            const attachment: Attachment = yield call(deserializeAttachmentSaga, idbAttachment);
+            yield put(addAttachment(attachment));
+            yield put(clearAttachmentLoading(localId));
+            return;
+        }
+
         const lumoApi: LumoApi = yield getContext('lumoApi');
         const remoteId: RemoteId | undefined = yield select((s: LumoState) => s.idmap.local2remote[type][localId]);
         if (!remoteId) {
             console.error(`pullAttachment: Remote ID not found for attachment ${localId}`);
+            yield put(clearAttachmentLoading(localId));
             return;
         }
-        const result: RemoteFilledAttachment | RemoteDeletedAttachment = yield call(
+        const result: RemoteFilledAttachment | RemoteDeletedAttachment | null = yield call(
             [lumoApi, lumoApi.getAttachment],
             remoteId,
             localSpaceId
         );
+        if (!result) {
+            console.error(`pullAttachment: getAttachment returned null for attachment ${localId}`);
+            yield put(pullAttachmentFailure(localId));
+            yield put(setAttachmentError({ id: localId, error: 'Failed to download attachment' }));
+            return;
+        }
         yield put(pullAttachmentSuccess(result));
     } catch (e) {
         console.error(`pullAttachment: Error pulling attachment ${localId}:`, e);

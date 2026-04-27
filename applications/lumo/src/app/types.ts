@@ -194,8 +194,17 @@ export function splitSpace(s: Space): {
 
 export function cleanSpace(space: Space): Space {
     if (space.isProject === true) {
-        const { id, createdAt, updatedAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
-            space;
+        const {
+            id,
+            createdAt,
+            updatedAt,
+            spaceKey,
+            projectName,
+            projectInstructions,
+            isProject,
+            projectIcon,
+            linkedDriveFolder,
+        } = space;
         return {
             id,
             createdAt,
@@ -361,9 +370,12 @@ export type MessagePriv = {
     // Reasoning: Model's internal thinking process (extended thinking models)
     reasoning?: string; // Legacy: concatenated reasoning
     reasoningChunks?: ReasoningChunk[]; // New: reasoning with sequence numbers for proper interleaving
-    
+
     // Thinking timeline: events showing when reasoning/tool calls happened
     thinkingTimeline?: ThinkingTimelineEvent[];
+
+    // Suggested follow-up questions from the model
+    suggestedQuestions?: string[];
 };
 
 export type Message = MessagePub & MessagePriv;
@@ -429,8 +441,30 @@ export function getMessagePub(message: MessagePub): MessagePub {
 }
 
 export function getMessagePriv(m: MessagePriv): MessagePriv {
-    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline } = m;
-    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline };
+    const {
+        content,
+        context,
+        attachments,
+        toolCall,
+        toolResult,
+        contextFiles,
+        blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
+    } = m;
+    return {
+        content,
+        context,
+        attachments,
+        toolCall,
+        toolResult,
+        contextFiles,
+        blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
+    };
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -971,6 +1005,11 @@ export enum LUMO_API_ERRORS {
     GENERATION_REJECTED = 'GenerationRejected',
     HARMFUL_CONTENT = 'HarmfulContent',
     STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
+    // Backend-enforced resource limits (HTTP 422)
+    MESSAGE_LIMIT_REACHED = 'MessageLimitReached',
+    ASSET_LIMIT_REACHED = 'AssetLimitReached',
+    CONVERSATION_LIMIT_REACHED = 'ConversationLimitReached',
+    SPACE_LIMIT_REACHED = 'SpaceLimitReached',
 }
 
 export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
@@ -1003,3 +1042,10 @@ export type GenerationErrorAction = {
     type: 'generation_error';
     payload: GenerationError;
 };
+
+export enum ComposerMode {
+    NEW_CONVERSATION = 'new-conversation',
+    CONVERSATION = 'conversation',
+    GALLERY = 'gallery',
+    PROJECT = 'project',
+}

@@ -1,0 +1,55 @@
+@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.right-drawer {
+    inline-size: rem(480);
+    min-inline-size: rem(380);
+    background-color: var(--background-norm);
+    border-inline-start: 1px solid var(--border-weak);
+    animation: rightDrawerSlideIn 0.25s ease-out;
+
+    @include im.media('<=small') {
+        inline-size: 100%;
+        min-inline-size: 0;
+        border-inline-start: none;
+        border-block-start: 1px solid var(--border-weak);
+    }
+
+    &--fullscreen {
+        position: fixed;
+        inset: 0;
+        inline-size: 100% !important;
+        max-inline-size: 100%;
+        z-index: 100;
+        border-inline-start: none;
+        animation: rightDrawerFullscreenIn 0.2s ease-out;
+    }
+}
+
+@keyframes rightDrawerSlideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rightDrawerFullscreenIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

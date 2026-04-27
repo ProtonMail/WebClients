@@ -3,7 +3,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import config from '../config';
-import { ClientError, ConflictClientError } from '../redux/sagas';
+import { ClientError, ConflictClientError, LimitReachedError } from '../redux/sagas';
 import type { Base64, MasterKey, MessageId, ProtonApiResponse } from '../types';
 import { LUMO_ELIGIBILITY, isProtonApiResponse, isRemoteId } from '../types';
 import { listify } from '../util/collections';
@@ -77,6 +77,39 @@ export type ListSpacesParams = {
     createTimeUntil?: number; // unix timestamp (seconds)
     createTimeSince?: number; // unix timestamp (seconds)
 };
+
+export enum AssetType {
+    Generic = 0,
+    GeneratedImage = 1,
+    GeneratedVideo = 2,
+    GeneratedDoc = 3,
+}
+
+export type ListGeneratedAssetsParams = {
+    assetType?: AssetType;
+    createTimeSince?: number; // unix timestamp (seconds)
+    createTimeUntil?: number; // unix timestamp (seconds)
+};
+
+export type GeneratedAssetFromApi = {
+    ID: string;
+    SpaceID: string;
+    AssetTag: string;
+    CreateTime: string;
+    Encrypted?: string | null;
+    DeleteTime?: string | null;
+};
+
+type LimitReachableResource = 'messages' | 'assets' | 'conversations' | 'spaces';
+
+function isLimitReachableResource(resourceName: ResourceName): resourceName is LimitReachableResource {
+    return (
+        resourceName === 'messages' ||
+        resourceName === 'assets' ||
+        resourceName === 'conversations' ||
+        resourceName === 'spaces'
+    );
+}
 
 const idExtractorMap: Record<ResourceName, (json: object) => RemoteId | undefined> = {
     messages: (json) => (json as any)?.Message?.ID,
@@ -159,6 +192,13 @@ export class LumoApi {
         if (!response.ok) {
             if (response.status === 409) {
                 throw new ConflictClientError(`Error during POST ${resourceName}: resource already exists`);
+            } else if (response.status === 422 && isLimitReachableResource(resourceName)) {
+                // The backend returns 422 when a per-resource limit is reached (e.g.
+                // MAX_MESSAGES_PER_CONVERSATION, MAX_ASSETS_PER_SPACE, etc.).
+                const code = isProtonApiResponse(json) ? json.Code : undefined;
+                const serverMessage =
+                    (json && typeof (json as any).Error === 'string' && (json as any).Error) || undefined;
+                throw new LimitReachedError(resourceName, { serverMessage, code });
             } else if (response.status >= 400 && response.status < 500) {
                 // 4xx don't retry
                 throw new ClientError(`Error during POST ${resourceName}: got ${response.status}`);
@@ -597,5 +637,36 @@ export class LumoApi {
         spaceId: LocalId
     ): Promise<RemoteFilledAttachment | RemoteDeletedAttachment | null> {
         return this.getAsset(attachmentId, spaceId);
+    }
+
+    public async listGeneratedAssets(params?: ListGeneratedAssetsParams): Promise<GeneratedAssetFromApi[]> {
+        const queryParams: Record<string, string> = {};
+        if (params?.assetType !== undefined) {
+            queryParams.AssetType = String(params.assetType);
+        }
+        if (params?.createTimeSince !== undefined) {
+            queryParams.CreateTimeSince = String(params.createTimeSince);
+        }
+        if (params?.createTimeUntil !== undefined) {
+            queryParams.CreateTimeUntil = String(params.createTimeUntil);
+        }
+
+        let url = '/api/lumo/v1/assets/generated';
+        if (Object.keys(queryParams).length > 0) {
+            url += `?${new URLSearchParams(queryParams)}`;
+        }
+
+        console.log(`lumo api: http get ${url}`);
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: this.protonHeaders(),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error fetching generated assets: got ${response.status}`);
+        }
+
+        const json = await response.json();
+        return (json?.Assets ?? []) as GeneratedAssetFromApi[];
     }
 }

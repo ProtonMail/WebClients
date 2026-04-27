@@ -1,0 +1,75 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.weather-card {
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: rem(12);
+    overflow: hidden;
+    font-family: inherit;
+
+    &__location-icon {
+        font-size: rem(16);
+        color: var(--interaction-norm);
+        line-height: 1;
+    }
+
+    &__location-name {
+        font-size: rem(15);
+        font-weight: 600;
+        color: var(--text-norm);
+    }
+
+    &__last-updated {
+        font-size: rem(12);
+        color: var(--text-weak);
+        white-space: nowrap;
+    }
+
+    &__condition-icon {
+        font-size: rem(48);
+        line-height: 1;
+    }
+
+    &__temperature {
+        font-size: rem(32);
+        font-weight: 700;
+        color: var(--text-norm);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    &__description {
+        font-size: rem(15);
+        color: var(--text-weak);
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(96), 1fr));
+        border-block-start: 1px solid var(--border-weak);
+
+        > * {
+            border-inline-end: 1px solid var(--border-weak);
+
+            &:last-child {
+                border-inline-end: none;
+            }
+        }
+    }
+
+    &__stat {
+        &-label {
+            font-size: rem(11);
+            color: var(--text-weak);
+            margin-block-end: rem(3);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        &-value {
+            font-size: rem(14);
+            font-weight: 600;
+            color: var(--text-norm);
+        }
+    }
+}

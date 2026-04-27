@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_FILE_SIZE } from '../../../constants';
+import { MAX_ASSET_SIZE } from '../../../constants';
 import { useFileProcessing } from '../../../hooks';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectSpaceByIdOptional } from '../../../redux/selectors';
@@ -46,8 +46,10 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
 
     const validateFile = useCallback(
         (file: File): boolean => {
-            if (file.size > MAX_FILE_SIZE) {
-                const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+            // All upload paths (including linked-drive) download, process and index the
+            // file, so the same asset-size limit applies everywhere to avoid UI freezes.
+            if (file.size > MAX_ASSET_SIZE) {
+                const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                 const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                 createNotification({
                     text: c('collider_2025: Error')
@@ -235,11 +237,83 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
         [dispatch]
     );
 
+    const handleFilesFromNative = useCallback(
+        (files: { base64: string; name: string }[]) => {
+            files
+                .map(({ base64, name }) => {
+                    // Convert base64 to File object
+                    const base64Data = base64.split(',')[1] || base64; // Remove data URL prefix if present
+                    const byteCharacters = atob(base64Data);
+                    const byteNumbers = new Array(byteCharacters.length);
+                    for (let i = 0; i < byteCharacters.length; i++) {
+                        byteNumbers[i] = byteCharacters.charCodeAt(i);
+                    }
+                    const byteArray = new Uint8Array(byteNumbers);
+
+                    // Infer MIME type from file extension
+                    const extension = name.split('.').pop()?.toLowerCase() || '';
+                    const mimeType = getMimeType(extension);
+
+                    return new File([byteArray], name, { type: mimeType });
+                })
+                .forEach(handleFileProcessing);
+        },
+        [handleFileProcessing]
+    );
+
+    // Helper function to get MIME type from file extension
+    const getMimeType = (extension: string): string => {
+        const mimeTypes: { [key: string]: string } = {
+            // Images
+            jpg: 'image/jpeg',
+            jpeg: 'image/jpeg',
+            png: 'image/png',
+            gif: 'image/gif',
+            webp: 'image/webp',
+            svg: 'image/svg+xml',
+
+            // Documents
+            pdf: 'application/pdf',
+            doc: 'application/msword',
+            docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            xls: 'application/vnd.ms-excel',
+            xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            ppt: 'application/vnd.ms-powerpoint',
+            pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+
+            // Text
+            txt: 'text/plain',
+            csv: 'text/csv',
+            json: 'application/json',
+            xml: 'application/xml',
+            html: 'text/html',
+
+            // Archives
+            zip: 'application/zip',
+            rar: 'application/x-rar-compressed',
+            '7z': 'application/x-7z-compressed',
+
+            // Audio
+            mp3: 'audio/mpeg',
+            wav: 'audio/wav',
+            ogg: 'audio/ogg',
+
+            // Video
+            mp4: 'video/mp4',
+            avi: 'video/x-msvideo',
+            mov: 'video/quicktime',
+            webm: 'video/webm',
+        };
+
+        return mimeTypes[extension] || 'application/octet-stream';
+    };
+
     return {
         handleFileProcessing,
         handleFilesSelected,
         handleBrowseDrive,
         handleDeleteAttachment,
+        handleFilesFromNative,
         fileUploadMode,
     };
 };

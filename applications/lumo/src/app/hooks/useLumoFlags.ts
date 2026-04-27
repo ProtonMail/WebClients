@@ -13,6 +13,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - whatsNew: Show "What's New" feature
  * - earlyAccess: Show early access features
  * - highLoad: Show high load warning
+ * - nativeComposer: Hides the web composer and allows the mobile clients to use their own
  * - lumoSurvey: Legacy survey flag (deprecated)
  * - lumoSurveyFreeUsers: Survey flag for free users
  * - lumoSurveyPaidUsers: Survey flag for paid users
@@ -26,6 +27,9 @@ export const useLumoFlags = () => {
     const deactivateGuestMode = useFlag('LumoDeactivateGuestModeFrontend');
     const whatsNew = useFlag('WhatsNewV1p3');
     const highLoad = useFlag('LumoHighLoad');
+    const nativeComposer = useFlag('LumoNativeComposer');
+    const nativeComposerImages = useFlag('LumoNativeComposerImage');
+    const nativeComposerModelSelection = useFlag('LumoNativeComposerModelSelection');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
     const lumoSurvey = useFlag('LumoSurvey');
     const lumoSurveyFreeUsers = useFlag('LumoSurveyFreeUsers');
@@ -40,6 +44,9 @@ export const useLumoFlags = () => {
         deactivateGuestMode,
         whatsNew,
         highLoad,
+        nativeComposer,
+        nativeComposerImages,
+        nativeComposerModelSelection,
         apiKeyManagement,
         lumoSurvey,
         lumoSurveyFreeUsers,

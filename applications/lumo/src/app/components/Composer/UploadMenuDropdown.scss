@@ -12,8 +12,7 @@ im.$media-expressions: $media-expressions;
 	@include im.media('touch', '<=small') {
 		&.adaptive-for-touch-screens {
 			// Override centering - align to bottom instead
-			padding-block-start: auto;
-			padding-block-end: 0;
+			padding-block: auto 0;
 			padding-inline: 0;
 			justify-content: flex-end;
 
@@ -29,7 +28,6 @@ im.$media-expressions: $media-expressions;
 
 			// iOS WebView fix: Force hardware acceleration
 			transform: translateZ(0);
-			-webkit-transform: translateZ(0);
 			will-change: transform;
 		}
 

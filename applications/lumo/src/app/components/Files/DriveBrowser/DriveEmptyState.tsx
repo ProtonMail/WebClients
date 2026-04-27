@@ -24,13 +24,13 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
     const isDisabled = loading || isRefreshing || disabled;
 
     return (
-        <div className="text-center py-8 text-gray-500">
-            <p className="mb-4">{c('collider_2025: Info').t`This folder is empty`}</p>
+        <div className="flex flex-column items-center justify-center text-center py-8 gap-4">
+            <p className="m-0 color-weak text-sm">{c('collider_2025: Info').t`This folder is empty`}</p>
 
             <div className="flex flex-row items-center justify-center gap-2">
                 <Button
                     onClick={onUpload}
-                    size="medium"
+                    size="small"
                     color="norm"
                     disabled={isDisabled}
                     title={c('collider_2025: Action').t`Upload files`}
@@ -41,7 +41,7 @@ export const DriveEmptyState: React.FC<DriveEmptyStateProps> = ({
                 {onCreateFolder && (
                     <Button
                         onClick={onCreateFolder}
-                        size="medium"
+                        size="small"
                         shape="outline"
                         disabled={isDisabled}
                         title={c('collider_2025: Action').t`Create folder`}

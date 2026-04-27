@@ -1,0 +1,135 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.finance-card {
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: rem(12);
+    overflow: hidden;
+    font-family: inherit;
+
+    &__trend-icon {
+        font-size: rem(14);
+        line-height: 1;
+
+        &--up {
+            color: var(--signal-success);
+        }
+
+        &--down {
+            color: var(--signal-danger);
+        }
+    }
+
+    &__company-name {
+        font-size: rem(13);
+        font-weight: 600;
+        color: var(--text-norm);
+    }
+
+    &__type-badge {
+        font-size: rem(11);
+        background: var(--background-weak);
+        color: var(--text-weak);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 500;
+    }
+
+    &__last-updated {
+        font-size: rem(12);
+        color: var(--text-weak);
+        white-space: nowrap;
+    }
+
+    &__price {
+        font-size: rem(28);
+        font-weight: 700;
+        color: var(--text-norm);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    &__change {
+        font-size: rem(14);
+        font-weight: 600;
+
+        &--up {
+            color: var(--signal-success);
+        }
+
+        &--down {
+            color: var(--signal-danger);
+        }
+    }
+
+    &__chart {
+        block-size: rem(200);
+        padding-inline: rem(4);
+        padding-block-end: rem(8);
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-block-start: 1px solid var(--border-weak);
+
+        // dividers between cells
+        > * {
+            border-inline-end: 1px solid var(--border-weak);
+            border-block-end: 1px solid var(--border-weak);
+
+            &:nth-child(2n) {
+                border-inline-end: none;
+            }
+
+            &:nth-last-child(-n + 2) {
+                border-block-end: none;
+            }
+        }
+    }
+
+    &__stat {
+        &-label {
+            font-size: rem(11);
+            color: var(--text-weak);
+            margin-block-end: rem(3);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        &-value {
+            font-size: rem(14);
+            font-weight: 600;
+            color: var(--text-norm);
+        }
+    }
+}
+
+.finance-chart-tooltip {
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: rem(8);
+    padding-block: rem(8);
+    padding-inline: rem(12);
+    box-shadow: var(--shadow-norm);
+    font-size: rem(12);
+
+    &__date {
+        color: var(--text-weak);
+        margin: 0 0 rem(3);
+        font-size: rem(11);
+    }
+
+    &__price {
+        font-weight: 700;
+        color: var(--text-norm);
+        font-size: rem(14);
+        margin: 0 0 rem(2);
+    }
+
+    &__volume {
+        color: var(--text-weak);
+        margin: 0;
+        font-size: rem(11);
+    }
+}

@@ -77,16 +77,16 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
-            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-1 mb-3 rounded transition-all ${readonly ? 'opacity-75' : ''} ${
+            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-2 mb-2 rounded-lg transition-all ${readonly ? 'opacity-75' : ''} ${
                 canView ? 'hover:bg-weak cursor-pointer' : 'hover:bg-weak'
             }`}
             onClick={handleFileClick}
         >
-            <FileIcon mimeType={mimeTypeIcon} size={6} className="shrink-0 mr-3" />
+            <FileIcon mimeType={mimeTypeIcon} size={10} className="shrink-0 mr-3" />
 
             <div className="flex-1 min-w-0">
-                <div className="flex flex-row flex-nowrap items-center gap-2 mb-1">
-                    <p className="m-0 text-sm font-semibold truncate" title={file.filename}>
+                <div className="flex flex-row flex-nowrap items-center gap-2 mb-0.5">
+                    <p className="m-0 text-sm text-bold truncate" title={file.filename}>
                         {file.filename}
                     </p>
                 </div>

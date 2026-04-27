@@ -6,6 +6,8 @@ import type { IconName } from '@proton/icons/types';
 import LumoCatPlusCollarInline from '../../components/Icons/LumoCatPlusCollarInline';
 import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
 
+import './SubscriptionPanel.scss';
+
 interface LumoCharacteristic {
     icon: IconName;
     getText: () => string;
@@ -44,38 +46,38 @@ interface SubscriptionPanelProps {
 export const SubscriptionPanel = ({ message, children, logo }: SubscriptionPanelProps) => (
     <div
         className={
-            'settings-modal-panel w-full flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap flex-auto overflow-y-auto'
+            'lumo-subscription-panel settings-modal-panel w-full lumo-plus-settings-gradient border border-weak overflow-y-auto'
         }
     >
-        {/* Left side - Content */}
-        <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2 *:min-size-auto">
-            {/* Header */}
-            <div className="flex items-center gap-2">{logo || <LumoPlusLogoInline height="20px" />}</div>
-
-            {/* Subscription status message */}
-            {message && (
-                <div className="flex flex-column gap-1">
-                    <p className="text-sm m-0">{message}</p>
+        <div className="lumo-subscription-panel__body">
+            <div className="lumo-subscription-panel__intro">
+                <div className="lumo-subscription-panel__brand">
+                    {logo || <LumoPlusLogoInline height="22px" />}
                 </div>
-            )}
 
-            {/* Features list */}
-            <ul className="unstyled m-0 flex flex-column gap-2">
+                {message && <p className="lumo-subscription-panel__message">{message}</p>}
+            </div>
+
+            <ul className="lumo-subscription-panel__features">
                 {lumoCharacteristics.map((characteristic) => (
-                    <li key={characteristic.getText()} className="flex items-center gap-3">
-                        <Icon className="color-norm shrink-0" name={characteristic.icon} size={4} />
-                        <span className="text-sm color-norm">{characteristic.getText()}</span>
+                    <li key={characteristic.getText()}>
+                        <Icon
+                            className="lumo-subscription-panel__feature-icon color-norm"
+                            name={characteristic.icon}
+                            size={4}
+                        />
+                        <span className="lumo-subscription-panel__feature-text color-norm">
+                            {characteristic.getText()}
+                        </span>
                     </li>
                 ))}
             </ul>
 
-            {/* Action area - button or message */}
-            <div className="mt-0 md:mt-2 w-fit-content">{children}</div>
+            <div className="lumo-subscription-panel__cta mt-0 md:mt-1 w-fit">{children}</div>
         </div>
 
-        {/* Right side - Lumo cat illustration */}
-        <div className="flex items-end justify-end shrink-0 w-1/2">
-            <LumoCatPlusCollarInline style={{ width: '80%', height: 'auto' }} />
+        <div className="lumo-subscription-panel__illustration flex items-end justify-end">
+            <LumoCatPlusCollarInline className="lumo-subscription-panel__cat" />
         </div>
     </div>
 );

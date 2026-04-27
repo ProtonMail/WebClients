@@ -88,6 +88,7 @@
 	overflow: hidden; // Container handles overflow, children scroll
 	padding: 16px;
 	margin-inline-end: 0; // Ensure no margin on right side
+	position: relative;
 }
 
 .project-files-section {
@@ -182,6 +183,17 @@
 			margin-block-end: 0;
 		}
 	}
+}
+
+.project-files-preview-panel {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	background-color: var(--background-norm);
+	border-radius: 12px 0 0 12px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 .project-instructions-text {
@@ -582,6 +594,24 @@
 }
 
 .link-drive-folder-modal {
+	.modal-two-content {
+		display: flex;
+		flex-direction: column;
+		min-block-size: 26rem;
+	}
+
+	.link-drive-folder-content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		min-block-size: 0;
+
+		.drive-content-container {
+			flex: 1;
+			min-block-size: 20rem;
+		}
+	}
+
 	.drive-content-container {
 		.file-type {
 			pointer-events: none;

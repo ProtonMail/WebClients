@@ -8,6 +8,14 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+// Override the design system's default InterVariable with OpenRunde.
+// The --optional-font-family variable is the intended app-level hook in
+// packages/styles/scss/base/_fonts.scss and takes precedence over InterVariable
+// while still respecting the user's --setting-font-family preference.
+:root {
+	--optional-font-family: 'OpenRunde', system-ui, sans-serif;
+}
+
 .main-text-container {
 	container-type: inline-size;
 	container-name: maintext;
@@ -52,17 +60,7 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.lumo-gradient-text {
-	font-family: Syne, Inter, system-ui, sans-serif;
-	color: #8b7cf6; /* Fallback color */
-	background: linear-gradient(135deg, #ffac2e 15.77%, #dd5dcc 38.4%, #1ba3fd 75.93%, #5325a2 99.84%);
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
 .sidebar {
-	background-color: inherit;
-
 	// Smooth width transitions for desktop
 	transition:
 		inline-size 0.3s ease-in-out,
@@ -156,33 +154,11 @@ im.$media-expressions: $media-expressions;
 		backdrop-filter 0.3s ease-in-out;
 }
 
-// Smooth content transitions in sidebar
-.sidebar-content {
-	// Use hardware acceleration for content transitions
-	will-change: opacity;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	// Prevent layout thrashing during transitions
-	contain: layout style paint;
-
-	// Smooth content fade-in
-	transition: opacity 0.15s ease-in-out;
-
-	&.is-loading {
-		opacity: 0.9;
-	}
-
-	&.is-loaded {
-		opacity: 1;
-	}
-}
-
 .navigation-link.is-active {
 	color: var(--text-norm) !important;
 
 	&.navigation-link {
-		font-weight: 600 !important;
+		// font-weight: 600 !important;
 		border-radius: 8px;
 	}
 }
@@ -202,7 +178,8 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *) {
+// TODO: check that this cna be deleted, was from old designs jade/ v1
+.user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *, .desktop-sidebar-user-dropdown *) {
 	display: none;
 }
 
@@ -224,10 +201,6 @@ im.$media-expressions: $media-expressions;
 	background-color: #ffffff0d;
 }
 
-.circle-chart-circle {
-	stroke: var(--primary);
-}
-
 .composer {
 	outline: none;
 	border: none;
@@ -242,17 +215,8 @@ im.$media-expressions: $media-expressions;
 	outline: none;
 }
 
-
 .action-toolbar {
 	opacity: 0.8;
-}
-
-.timeline-unpinned {
-	background-color: #c5b7ff26;
-}
-
-.timeline-bar {
-	background-color: var(--border-norm);
 }
 
 .message-chain .assistant-msg:last-child {
@@ -265,14 +229,6 @@ im.$media-expressions: $media-expressions;
 
 #icons-root {
 	display: none;
-}
-
-.link-over-btn {
-	&:hover {
-		color: var(--primary-hover);
-	}
-
-	cursor: pointer;
 }
 
 @media print {
@@ -336,6 +292,8 @@ im.$media-expressions: $media-expressions;
 	color: white;
 }
 
-.no-border {
-	border: none !important;
+.apps-dropdown-button,
+.dropdown-content svg {
+	stroke-width: 0.3px;
+	stroke: currentcolor;
 }

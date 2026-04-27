@@ -3,7 +3,6 @@ import { useCallback, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
@@ -11,17 +10,17 @@ import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useOnboardingContext } from '../../providers/OnboardingProvider';
-import type { Message } from '../../types';
+import { ComposerMode, type Message } from '../../types';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
 import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
+import { PublicHeader } from '../Guest/PublicHeader';
 import { LumoCat } from '../LumoAvatar';
-import LumoOnboarding from '../Onboarding/LumoOnboarding';
 import WhatsNew from '../WhatsNew/WhatsNew';
 import LumoMainText from './MainContainer/LumoMainText';
+import MainContainerFooter from './MainContainer/MainContainerFooter';
 import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
-import TermsAndConditions from './MainContainer/TermsAndConditions';
 
 import './MainContainer.scss';
 
@@ -29,14 +28,15 @@ const MainContainer = ({
     handleSendMessage,
     isProcessingAttachment,
     initialQuery,
+    prefillQuery,
 }: {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
     initialQuery?: string;
+    prefillQuery?: string;
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
-    const isMobileOrSmallScreen = isMobile() || isSmallScreen;
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
@@ -88,6 +88,11 @@ const MainContainer = ({
                     <NewGhostChatButton />
                 </HeaderWrapper>
             )}
+            {isGuest && <PublicHeader />}
+            {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
+            <div className="absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px' }}>
+                <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
+            </div>
             <div
                 className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pb-8 pt-0"
                 style={{
@@ -95,7 +100,7 @@ const MainContainer = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />}
+                {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
                 <div
                     className={clsx(
                         'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
@@ -125,6 +130,7 @@ const MainContainer = ({
 
                 <div className="composer-container md:px-4 w-full">
                     <ComposerComponent
+                        composerMode={ComposerMode.NEW_CONVERSATION}
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
                         className="fixed bottom-0 md:static w-full z-20"
@@ -136,10 +142,10 @@ const MainContainer = ({
                         canShowLegalDisclaimer={isGuest && isSmallScreen}
                         canShowLumoUpsellToggle={true}
                         initialQuery={promptSuggestion || initialQuery}
+                        prefillQuery={prefillQuery}
                     />
                 </div>
                 <WhatsNew />
-                {!isMobileOrSmallScreen && <LumoOnboarding />}
             </div>
             {openPanel.type === 'files' && (
                 <FilesManagementView
@@ -153,8 +159,7 @@ const MainContainer = ({
                 />
             )}
 
-            {/* Legal disclaimer for desktop - only shown in guest mode and before user starts typing */}
-            {isGuest && !isSmallScreen && <TermsAndConditions />}
+            <MainContainerFooter />
         </>
     );
 };

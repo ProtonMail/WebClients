@@ -93,7 +93,7 @@ const LumoPlusSidebarContent = ({ collapsed, customText, customIcon }: LumoPlusS
             right={<IcChevronRight className="shrink-0 group-hover:opacity-100" />}
         >
             <span className="flex items-center gap-2">
-                <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>
+                <span>
                     {customText || c('collider_2025: Upsell Title').t`Get`}
                 </span>
                 <LumoPlusLogoInline height="12px" />

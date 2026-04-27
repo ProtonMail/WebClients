@@ -26,7 +26,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
     const { showCopyNotification } = useCopyNotification();
 
     return (
-        <div ref={codeBlockRef} className="message-container code-container w-full min-w-0 bg-weak">
+        <div ref={codeBlockRef} className="message-container code-container w-full min-w-0">
             {/* `relative` establishes the panel box; copy is absolutely top-right inside it (not grid — overlapping grid items can auto-flow to the next row in some cases). */}
             <div className="relative w-full min-w-0 overflow-visible">
                 <div className="min-w-0 pr-12 pt-1">
