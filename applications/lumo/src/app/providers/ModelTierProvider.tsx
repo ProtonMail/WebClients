@@ -25,8 +25,7 @@ export const ModelTierProvider = ({ children }: ModelTierProviderProps) => {
         modelTier: modelTier,
         setModelTier: setModelTier,
         // TODO: remove this once we have a proper thinking tier
-        // isThinkingEnabled: modelTier === 'thinking',
-        isThinkingEnabled: true,
+        isThinkingEnabled: false,
     };
 
     return <ModelTierContext.Provider value={value}>{children}</ModelTierContext.Provider>;
