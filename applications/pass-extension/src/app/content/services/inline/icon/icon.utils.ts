@@ -55,6 +55,13 @@ export const ICON_FLICKER_TRESHOLD = 2;
 export const ICON_MAX_OVERLAY_CHECKS = 2;
 export const ICON_MAX_SHIFT_RATIO = 0.5;
 
+const isInvisible = (el: HTMLElement) => {
+    const { display, visibility, opacity, backgroundColor } = getComputedStyle(el);
+    const isTransparentAndEmpty =
+        backgroundColor === 'rgba(0, 0, 0, 0)' && el.childElementCount === 0 && !el.textContent?.trim();
+    return display === 'none' || visibility === 'hidden' || opacity === '0' || isTransparentAndEmpty;
+};
+
 /** Calculates the maximum horizontal shift required for injected elements.
  * Determines the optimal positioning to avoid overlap with existing elements */
 export const computeIconShift = (
@@ -119,7 +126,6 @@ export const computeIconShift = (
         const overlaysLeft = document.elementsFromPoint(x - offsetX, y);
         const overlaysRight = document.elementsFromPoint(x + offsetX, y);
         const overlays = overlaysLeft.length > overlaysRight.length ? overlaysLeft : overlaysRight;
-
         let maxDx: number = 0;
 
         const skip = options.skip ?? new Set();
@@ -134,10 +140,10 @@ export const computeIconShift = (
             if (container && !container.contains(el)) continue; /* Skip elements outside parent element (form) */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
-            /** Skip hidden elements - if we match an invisible element:
-             * heuristically skip all single-child containers wrapping it */
-            const { display, visibility, opacity } = getComputedStyle(el);
-            if (display === 'none' || visibility === 'hidden' || opacity === '0') {
+            /** Skip hidden or empty transparent placeholder elements. If we match
+             * a skippable element, heuristically skip all single-child containers
+             * wrapping it to avoid redundant getComputedStyle calls on parents */
+            if (isInvisible(el)) {
                 let parent = el.parentElement;
                 while (parent && parent.childElementCount <= 1) {
                     skip.add(parent);
