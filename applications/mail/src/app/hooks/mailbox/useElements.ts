@@ -26,7 +26,6 @@ import {
     extractSearchParameters,
     filterFromUrl,
     filterToString,
-    setCategoryInUrl,
     sortFromUrl,
 } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
@@ -242,11 +241,6 @@ export const useElements: UseElements = ({
             const category = categoryInURL ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
             categoryIDs.push(category);
 
-            if (!categoryInURL) {
-                const newLocation = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
-                history.push(newLocation);
-            }
-
             if (category === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
                 categoryIDs.push(...disabledCategoriesIDs);
             }
@@ -296,7 +290,16 @@ export const useElements: UseElements = ({
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage, disabledCategoriesIDs]);
+    }, [
+        location.pathname,
+        location.hash,
+        mailSettings.ViewMode,
+        labelIDs,
+        esEnabled,
+        onPage,
+        categoryViewAccess,
+        disabledCategoriesIDs,
+    ]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
