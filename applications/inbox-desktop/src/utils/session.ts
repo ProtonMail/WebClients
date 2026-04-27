@@ -6,6 +6,7 @@ import { mainLogger } from "./log";
 import { getSettings } from "../store/settingsStore";
 import { getFeatureFlagManager } from "./flags/manager";
 import { FeatureFlag } from "./flags/flags";
+import { updateTrackedUID } from "./electronSession/uidTracker";
 
 export const appSession = () => {
     const cache = getSettings().appCacheEnabled || false;
@@ -39,6 +40,11 @@ export const setRequestPermission = () => {
 export const extendAppVersionHeader = () => {
     const ffManager = getFeatureFlagManager();
     appSession().webRequest.onBeforeSendHeaders((details, change) => {
+        const uid = details.requestHeaders["x-pm-uid"];
+        if (uid !== undefined && details.webContentsId !== undefined) {
+            updateTrackedUID(details.webContentsId, uid);
+        }
+
         if (
             ffManager.isEnabled(FeatureFlag.APPVERSION_EXTENSION_DISABLED) ||
             !details.requestHeaders["x-pm-appversion"]
