@@ -135,7 +135,6 @@ export const ProtonMeetContainer = ({
     const { initializeDevices } = useMediaManagementContext();
 
     const authentication = useAuthentication();
-    const { createNotification } = useNotifications();
 
     const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
     const meetingLinkNameRef = useRef<string>('');
@@ -1043,15 +1042,9 @@ export const ProtonMeetContainer = ({
                     maxDuration,
                     maxParticipants,
                 };
-            } catch {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`The meeting password is incorrect`,
-                });
-
+            } catch (error: any) {
                 setJoiningInProgress(false);
                 joinBlockedRef.current = false;
-
                 return;
             }
 
