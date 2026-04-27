@@ -69,7 +69,6 @@ const VerifyOwnershipWithPhraseStepContent = ({
             send({ type: '2fa disabled' });
         } catch (error) {
             handleError(error);
-            send({ type: 'error' });
         }
     };
 
