@@ -39,8 +39,7 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     enableSmoothing: true,
     endpoint: LUMO_CHAT_ENDPOINT,
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
-    externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
-    internalTools: ['proton_info'],
+    externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency', 'web_extract', 'proton_info'],
     imageTools: ['generate_image', 'describe_image', 'edit_image'],
     interceptors: {
         request: [],
@@ -74,6 +73,8 @@ export class LumoApiClient {
             signal,
             enableExternalTools = false,
             enableImageTools = false,
+            enableReasoning = false,
+            enableSuggestedQuestions = true,
             requestKey,
             requestId,
             generateTitle = false,
@@ -93,6 +94,8 @@ export class LumoApiClient {
             enableExternalTools,
             enableImageTools,
             generateTitle,
+            enableReasoning,
+            enableSuggestedQuestions,
         });
 
         // Prepare request context and run interceptors
@@ -189,10 +192,12 @@ export class LumoApiClient {
             enableExternalTools: boolean;
             enableImageTools: boolean;
             generateTitle: boolean;
+            enableReasoning: boolean;
+            enableSuggestedQuestions: boolean;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, enableImageTools, generateTitle } = flags;
+        const { enableExternalTools, enableImageTools, generateTitle, enableReasoning, enableSuggestedQuestions } = flags;
 
         // Encrypt request if needed
         if (encryption) {
@@ -206,7 +211,11 @@ export class LumoApiClient {
         return {
             type: 'generation_request',
             turns,
-            options: { tools },
+            options: {
+                tools,
+                reasoning: enableReasoning,
+                suggested_questions: enableSuggestedQuestions,
+            },
             targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
             request_id: encryption?.requestId,
@@ -214,10 +223,9 @@ export class LumoApiClient {
     }
 
     private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
-        const { internalTools, externalTools, imageTools } = this.config;
+        const { externalTools, imageTools } = this.config;
         // prettier-ignore
         return [
-            ...internalTools,
             ...when(enableExternalTools, externalTools),
             ...when(enableImageTools, imageTools),
         ];

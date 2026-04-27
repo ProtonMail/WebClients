@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
 import { useGhostChat } from '../../../providers/GhostChatProvider';
+import { setNativeGhostMode } from '../../../remote/nativeComposerBridgeHelpers';
 
 import './GhostChatButton.scss';
 
@@ -11,7 +12,9 @@ export const NewGhostChatButton = ({ className }: { className?: string }) => {
     const { isGhostChatMode, setGhostChatMode } = useGhostChat();
 
     const handleClick = () => {
-        setGhostChatMode(!isGhostChatMode);
+        const newGhostMode = !isGhostChatMode;
+        setGhostChatMode(newGhostMode);
+        setNativeGhostMode(newGhostMode);
     };
 
     return (

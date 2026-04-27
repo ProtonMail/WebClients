@@ -71,7 +71,9 @@ import {
     pushSpaceSuccess,
 } from '../slices/core/spaces';
 import type {LumoState} from '../store';
-import {callWithRetry, isClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {MAX_SPACES_PER_USER} from '../../constants/limits';
+import {addResourceLimitError} from '../slices/meta/errors';
+import {callWithRetry, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 
 /*** helpers ***/
 export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
@@ -116,15 +118,20 @@ export function* deleteSpaceCascadeInRedux(spaceId: SpaceId): SagaIterator<any> 
 export function* softDeleteSpaceFromRemote({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield call(deleteSpaceCascadeInRedux, localId);
+    // IDB cascade first, then Redux cascade. Otherwise a failing IDB write would
+    // leave Redux purged while IDB still holds the old data — on reload the state
+    // would reappear as a stale tombstone. deleteSpaceCascadeInRedux reads from
+    // Redux selectors, so running it after the IDB cascade is still correct.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: false });
+    yield call(deleteSpaceCascadeInRedux, localId);
 }
 
 export function* softDeleteSpaceFromLocal({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield call(deleteSpaceCascadeInRedux, localId);
+    // IDB cascade first, then Redux cascade — see softDeleteSpaceFromRemote.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: true });
+    yield call(deleteSpaceCascadeInRedux, localId);
     yield put(pushSpaceRequest({ id: localId, priority: 'urgent' }));
 }
 
@@ -338,7 +345,16 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
     } catch (e) {
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
-        if (isClientError(e)) {
+        if (isLimitReachedError(e)) {
+            yield put(
+                addResourceLimitError({
+                    resource: 'spaces',
+                    limit: MAX_SPACES_PER_USER,
+                    serverMessage: e.serverMessage,
+                })
+            );
+            yield put(pushSpaceFailure({ ...payload, error: `${e}` }));
+        } else if (isClientError(e)) {
             yield put(pushSpaceFailure({ ...payload, error: `${e}` }));
         } else {
             yield put(pushSpaceNeedsRetry(payload));

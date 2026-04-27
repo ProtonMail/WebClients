@@ -6,7 +6,6 @@ import useLumoPlusUpsellConfig from '../useLumoPlusUpsellButtonConfig';
 
 export const LumoSettingsPanelUpsell = ({ feature = LUMO_UPSELL_PATHS.SETTINGS_MODAL }) => {
     const config = useLumoPlusUpsellConfig(feature);
-    console.log('debug: config', config);
 
     const showUpsellPanel = config?.showInSettingsModal;
 

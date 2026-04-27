@@ -61,6 +61,18 @@ im.$media-expressions: $media-expressions;
     flex-direction: column;
     height: 100%;
     min-height: 400px;
+    position: relative;
+}
+
+.search-modal-preview-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-color: var(--background-norm);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 // Search input

@@ -19,7 +19,7 @@ import { useLumoSelector } from '../../../redux/hooks';
 import { SearchService } from '../../../services/search/searchService';
 import type { SearchResult } from '../../../services/search/types';
 import type { Attachment } from '../../../types';
-import { FileContentModal } from '../../Files';
+import { FilePreviewPanel } from '../../Files/Common/FilePreviewPanel';
 
 import './SearchModal.scss';
 
@@ -442,13 +442,15 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                     })}
             </div>
 
-            {/* Document Preview Modal */}
+            {/* Document Preview Panel */}
             {documentPreview && (
-                <FileContentModal
-                    attachment={documentPreview}
-                    onClose={() => setDocumentPreview(null)}
-                    open={!!documentPreview}
-                />
+                <div className="search-modal-preview-panel">
+                    <FilePreviewPanel
+                        attachment={documentPreview}
+                        onBack={() => setDocumentPreview(null)}
+                        onClose={() => setDocumentPreview(null)}
+                    />
+                </div>
             )}
 
             {/* Loading indicator for preview */}

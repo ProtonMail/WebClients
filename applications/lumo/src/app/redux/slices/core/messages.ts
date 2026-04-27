@@ -29,12 +29,18 @@ export type AddImageAttachmentAction = {
     attachment: ShallowAttachment;
 };
 
+export type SetSuggestedQuestionsAction = {
+    messageId: MessageId;
+    questions: string[];
+};
+
 // Low-level Redux store operations without side effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
 export const appendReasoning = createAction<ChunkAction>('lumo/message/appendReasoning');
 export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
 export const setToolResult = createAction<ChunkAction>('lumo/message/setToolResult');
+export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
 export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
 export const finishMessage = createAction<FinishMessageAction>('lumo/message/finish');
 export const deleteMessage = createAction<MessageId>('lumo/message/delete');
@@ -146,6 +152,15 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             // Update blocks
             message.blocks ??= [];
             message.blocks = setToolResultInBlocks(message.blocks, chunk.content);
+        })
+        .addCase(setSuggestedQuestions, (state, action) => {
+            const { messageId, questions } = action.payload;
+            const message = state[messageId];
+            if (!message) {
+                console.warn(`setSuggestedQuestions: message ${messageId} not found`);
+                return;
+            }
+            message.suggestedQuestions = questions;
         })
         .addCase(addImageAttachment, (state, action) => {
             const { messageId, attachment } = action.payload;

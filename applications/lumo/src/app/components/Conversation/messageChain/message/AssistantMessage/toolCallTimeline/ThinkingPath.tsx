@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 
@@ -12,6 +13,16 @@ import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
 
 import './ThinkingPath.scss';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+function formatDuration(ms: number): string {
+    const seconds = Math.round(ms / 1000);
+    if (seconds < 1) return '<1s';
+    if (seconds < 60) return `${seconds}s`;
+    const minutes = Math.floor(seconds / 60);
+    const remaining = seconds % 60;
+    return remaining > 0 ? `${minutes}m ${remaining}s` : `${minutes}m`;
+}
 
 /**
  * Get icon name for tool call type.
@@ -62,24 +73,22 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
                 `Checked ${toolCall.arguments.symbol} cryptocurrency prices`,
             ];
         case 'describe_image':
-            return ['Looking at your image...', 'Looked at your image'];
+            return [c('collider_2025:Reasoning').t`Looking at your image...`, c('collider_2025:Reasoning').t`Looked at your image`];
         case 'generate_image':
-            const prompt = toolCall.arguments.prompt;
-            const shortPrompt = prompt.length > 50 ? prompt.substring(0, 50) + '...' : prompt;
-            return [`Generating image: "${shortPrompt}"...`, `Generated image: "${shortPrompt}"`];
+            return [c('collider_2025:Reasoning').t`Generating image...`, c('collider_2025:Reasoning').t`Generated image`];
         case 'edit_image':
-            const editPrompt = toolCall.arguments.prompt;
-            const shortEditPrompt = editPrompt.length > 50 ? editPrompt.substring(0, 50) + '...' : editPrompt;
-            return [`Editing image: "${shortEditPrompt}"...`, `Edited image: "${shortEditPrompt}"`];
+            return [c('collider_2025:Reasoning').t`Editing image...`, c('collider_2025:Reasoning').t`Edited image`];
         case 'proton_info':
-            return ['Checking Proton knowledge...', 'Checked Proton knowledge'];
+            return [c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge...`, c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`];
+        case 'web_extract':
+            return [c('collider_2025:Reasoning').t`Extracting content from page...`, c('collider_2025:Reasoning').t`Extracted page content`];
         default:
-            return ['Executing tool...', 'Executed tool'];
+            return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
     }
 }
 
 export type ThinkingStep =
-    | { type: 'reasoning'; content: string; isActive: boolean }
+    | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
     | { type: 'tool_call'; toolCall: ToolCallData; result?: string; isActive: boolean };
 
 interface ThinkingPathProps {
@@ -88,9 +97,12 @@ interface ThinkingPathProps {
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
+const REASONING_PREVIEW_LINES = 6;
+
 const ReasoningStep = ({
     content,
     isActive,
+    durationMs,
     isFirst,
     isLast,
     message,
@@ -98,12 +110,57 @@ const ReasoningStep = ({
 }: {
     content: string;
     isActive: boolean;
+    durationMs?: number;
     isFirst: boolean;
     isLast: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    // When actively streaming, show the last N lines as a live trail
+    if (isActive && !isExpanded) {
+        const lines = content.split('\n').filter((l) => l.trim().length > 0);
+        const visibleLines = lines.slice(-REASONING_PREVIEW_LINES);
+        const hasMore = lines.length > REASONING_PREVIEW_LINES;
+
+        return (
+            <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
+                <div className="thinking-step-icon-container">
+                    <Icon
+                        name="lightbulb"
+                        size={3}
+                        className="thinking-step-icon-badge thinking-step-icon-badge--active"
+                    />
+                </div>
+
+                <div className="thinking-step-content">
+                    <button
+                        className="thinking-stream-header flex items-center justify-space-between w-full py-1 px-2 rounded color-weak text-sm text-left"
+                        onClick={() => setIsExpanded(true)}
+                        type="button"
+                        aria-label={c('collider_2025:Reasoning').t`Expand reasoning`}
+                    >
+                        <span className="thinking-step-label flex-1">
+                            {c('collider_2025:Reasoning').t`Thinking...`}
+                        </span>
+                        <Icon name="arrow-up-and-left" size={3} className="thinking-step-chevron shrink-0" />
+                    </button>
+
+                    <div className="thinking-stream-container mt-1.5 rounded">
+                        {hasMore && <div className="thinking-stream-fade" />}
+                        <div className="flex flex-column gap-0.5 py-1 px-2">
+                            {visibleLines.map((line, i) => (
+                                <p key={i} className="thinking-stream-line m-0 color-weak">
+                                    {line}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
@@ -123,8 +180,8 @@ const ReasoningStep = ({
                     aria-expanded={isExpanded}
                 >
                     <span className="thinking-step-label">
-                        {isActive
-                            ? c('collider_2025:Reasoning').t`Thinking...`
+                        {durationMs !== undefined
+                            ? c('collider_2025:Reasoning').t`Thought for ` + formatDuration(durationMs)
                             : c('collider_2025:Reasoning').t`Thought about this`}
                     </span>
                     <Icon
@@ -170,6 +227,30 @@ interface ImageToolResult {
     tool?: string;
     error?: boolean;
 }
+
+interface WebExtractResultItem {
+    title: string;
+    url: string;
+    content: string;
+}
+
+interface WebExtractResult {
+    type: 'WebExtract' | string;
+    results: WebExtractResultItem[];
+    failed_urls: string[];
+}
+
+const parseWebExtractResult = (result: string): WebExtractResult | null => {
+    try {
+        const parsed = JSON.parse(result);
+        if (parsed.type === 'WebExtract' && Array.isArray(parsed.results)) {
+            return parsed as WebExtractResult;
+        }
+    } catch {
+        // Not valid JSON or not web extract format
+    }
+    return null;
+};
 
 const parseWebSearchResults = (result: string): WebSearchResults | null => {
     try {
@@ -224,6 +305,16 @@ const ToolCallStep = ({
         (toolCall.name === 'describe_image' || toolCall.name === 'generate_image' || toolCall.name === 'edit_image')
             ? parseImageToolResult(result)
             : null;
+    const webExtractResult = hasDetails && toolCall.name === 'web_extract' ? parseWebExtractResult(result) : null;
+    const hasInlineCard =
+        hasDetails &&
+        (toolCall.name === 'stock' ||
+            toolCall.name === 'cryptocurrency' ||
+            toolCall.name === 'weather' ||
+            toolCall.name === 'proton_info');
+
+    // Image tools render as an inline status row (no accordion)
+    const hasInlineImageStatus = imageToolResult !== null && !isActive;
 
     // Check if the tool call failed
     const hasError = imageToolResult?.error === true;
@@ -243,7 +334,36 @@ const ToolCallStep = ({
             </div>
 
             <div className="thinking-step-content">
-                {hasDetails ? (
+                {/* eslint-disable-next-line no-nested-ternary */}
+                {hasInlineCard && !isActive ? (
+                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
+                        <span className="thinking-step-label color-weak">{label}</span>
+                        <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
+                    </div>
+                ) : hasInlineImageStatus ? (
+                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
+                        <span
+                            className={clsx(
+                                'thinking-step-label',
+                                hasError ? 'color-danger' : 'color-weak'
+                            )}
+                        >
+                            {label}
+                        </span>
+                        <div className="flex items-center gap-2 shrink-0">
+                            {imageToolResult!.elapsed_ms !== undefined && (
+                                <span className="text-sm color-weak">
+                                    ({(imageToolResult!.elapsed_ms / 1000).toFixed(1)}s)
+                                </span>
+                            )}
+                            {hasError ? (
+                                <IcExclamationCircleFilled size={3} className="color-danger" />
+                            ) : (
+                                <IcCheckmarkCircleFilled size={3} className="color-success" />
+                            )}
+                        </div>
+                    </div>
+                ) : hasDetails ? (
                     <>
                         <button
                             className="thinking-step-toggle"
@@ -273,6 +393,19 @@ const ToolCallStep = ({
                                         {webSearchResults.results.length === 1 ? 'result' : 'results'}
                                     </span>
                                 )}
+                                {webExtractResult && (
+                                    <span className="text-sm color-weak">
+                                        {webExtractResult.results.length + webExtractResult.failed_urls.length}{' '}
+                                        {webExtractResult.results.length + webExtractResult.failed_urls.length === 1
+                                            ? 'URL'
+                                            : 'URLs'}
+                                        {webExtractResult.failed_urls.length > 0 && (
+                                            <span className="color-danger ml-1">
+                                                · {webExtractResult.failed_urls.length} failed
+                                            </span>
+                                        )}
+                                    </span>
+                                )}
                                 <Icon
                                     name="chevron-down"
                                     size={3}
@@ -287,7 +420,52 @@ const ToolCallStep = ({
                         {isExpanded && (
                             <div className="thinking-step-details">
                                 {/* eslint-disable-next-line no-nested-ternary */}
-                                {webSearchResults ? (
+                                {webExtractResult ? (
+                                    <div className="flex flex-column gap-2">
+                                        {webExtractResult.results.map((item, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="pb-2 last:pb-0 flex items-start gap-2"
+                                            >
+                                                <IcCheckmarkCircleFilled
+                                                    size={3}
+                                                    className="color-success shrink-0 mt-0.5"
+                                                />
+                                                <div className="min-w-0">
+                                                    <a
+                                                        href={item.url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-semibold color-primary text-no-decoration hover:underline block mb-0.5"
+                                                        onClick={(e) => handleLinkClick?.(e, item.url)}
+                                                    >
+                                                        {item.title || new URL(item.url).hostname}
+                                                    </a>
+                                                    <p className="text-xs color-weak m-0">
+                                                        {new URL(item.url).hostname}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        {webExtractResult.failed_urls.map((url, idx) => (
+                                            <div
+                                                key={`failed-${idx}`}
+                                                className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
+                                            >
+                                                <IcExclamationCircleFilled
+                                                    size={3}
+                                                    className="color-danger shrink-0 mt-0.5"
+                                                />
+                                                <div className="min-w-0">
+                                                    <p className="text-semibold color-danger m-0 mb-0.5 text-ellipsis overflow-hidden">
+                                                        {url}
+                                                    </p>
+                                                    <p className="text-xs color-weak m-0">Failed to extract</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : webSearchResults ? (
                                     <div className="flex flex-column gap-2">
                                         {webSearchResults.results.map((result, idx) => (
                                             <div
@@ -299,6 +477,7 @@ const ToolCallStep = ({
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="text-semibold color-primary text-no-decoration hover:underline block mb-1"
+                                                    onClick={(e) => handleLinkClick?.(e, result.url)}
                                                 >
                                                     {result.title}
                                                 </a>
@@ -363,9 +542,10 @@ export const ThinkingPath = ({ steps, message, handleLinkClick }: ThinkingPathPr
                 if (step.type === 'reasoning') {
                     return (
                         <ReasoningStep
-                            key={idx}
+                            key={`reasoning-${idx}-${step.isActive}`}
                             content={step.content}
                             isActive={step.isActive}
+                            durationMs={step.durationMs}
                             isFirst={isFirst}
                             isLast={isLast}
                             message={message}

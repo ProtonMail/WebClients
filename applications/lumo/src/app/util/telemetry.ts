@@ -197,3 +197,30 @@ export const sendProjectDriveFolderLinkEvent = () => {
 export const sendProjectDriveFolderUnlinkEvent = () => {
     sendLumoProjectEvent('drive-folder-unlink');
 };
+
+/**
+ * Telemetry events for the guest notification card
+ */
+
+const sendLumoGuestNotificationEvent = (eventType: string, eventData?: Record<string, any>) => {
+    telemetry.sendCustomEvent('lumo-guest-notification-event', {
+        eventType,
+        ...eventData,
+    });
+};
+
+export const sendGuestNotificationDismissedEvent = (messageCount: number) => {
+    sendLumoGuestNotificationEvent('dismissed', { messageCount });
+};
+
+export const sendGuestNotificationCtaClickedEvent = (messageCount: number) => {
+    sendLumoGuestNotificationEvent('cta-clicked', { messageCount });
+};
+
+/**
+ * Telemetry events for the ghost chat button
+ */
+
+export const sendGhostChatToggledEvent = (enabled: boolean) => {
+    telemetry.sendCustomEvent('lumo-ghost-chat-toggled', { enabled });
+};

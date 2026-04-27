@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
-import { Role } from '../../../../types';
+import { type Attachment, Role } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import UserMessage from './UserMessage/UserMessage';
@@ -17,6 +17,7 @@ export type MessageComponentProps = {
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
+    handleOpenFilePreview: (attachment: Attachment) => void;
     messageChain: Message[];
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     isLastMessage: boolean;
@@ -46,7 +47,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length ||
         prevProps.message.toolResult !== nextProps.message.toolResult ||
         prevProps.message.reasoning !== nextProps.message.reasoning ||
-        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length;
+        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length ||
+        prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -70,6 +72,7 @@ const MessageComponentPure = ({
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
+    handleOpenFilePreview,
     messageChain,
     newMessageRef,
     isLastMessage,
@@ -95,7 +98,7 @@ const MessageComponentPure = ({
                     siblingInfo={siblingInfo}
                     handleEditMessage={handleEditMessage}
                     newMessageRef={newMessageRef}
-                    // onOpenFiles={handleOpenFiles}
+                    onOpenFilePreview={handleOpenFilePreview}
                 />
             ) : (
                 <>

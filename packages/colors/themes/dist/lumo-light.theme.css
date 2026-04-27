@@ -64,7 +64,8 @@
   --text-disabled: #9e9b98;
   --text-invert: white;
   --text-markdown: #24292e;
-  --text-strong: rgb(186 186 247 / 0.3) --field-norm: #adaba8;
+  --text-strong: rgb(186 186 247 / 0.3); 
+  --field-norm: #adaba8;
   --field-hover: #8f8d8a;
   --field-disabled: #d1cfcd;
   --focus-outline: var(--primary);

@@ -120,18 +120,22 @@ const ApiKeysPanel = () => {
     const showNewKeyButton = !showCreateForm;
 
     return (
-        <div className="api-keys-panel">
+        <div className="api-keys-panel flex flex-column gap-5 w-full">
             {revealedToken && (
                 <TokenRevealModal token={revealedToken} onClose={() => setRevealedToken(null)} />
             )}
 
-            <div className="api-keys-header pt-2">
-                <p className="api-keys-description">
+            <div className="flex items-center justify-space-between gap-4 pt-2">
+                <p className="api-keys-description m-0 flex-1">
                     {c('collider_2025: Description')
                         .t`API keys let you access ${LUMO_SHORT_APP_NAME} programmatically. Each key is shown only once upon creation.`}
                 </p>
                 {showNewKeyButton && (
-                    <button className="api-keys-create-btn" onClick={() => setShowCreateForm(true)} type="button">
+                    <button
+                        className="api-keys-create-btn inline-flex items-center gap-1.5 shrink-0 rounded-lg"
+                        onClick={() => setShowCreateForm(true)}
+                        type="button"
+                    >
                         <IcPlus size={3} />
                         {c('Action').t`New key`}
                     </button>
@@ -143,17 +147,17 @@ const ApiKeysPanel = () => {
             )}
 
             {isLoading ? (
-                <div className="api-keys-skeleton">
+                <div className="flex flex-column gap-2">
                     <div className="api-keys-skeleton-item" />
                     <div className="api-keys-skeleton-item" />
                 </div>
             ) : tokens.length === 0 ? (
-                <div className="api-keys-empty">
-                    <div className="api-keys-empty-icon">
+                <div className="flex flex-column items-center justify-center text-center gap-3 pt-12 pb-8">
+                    <div className="api-keys-empty-icon flex items-center justify-center rounded-xl">
                         <IcKey size={6} />
                     </div>
-                    <p className="api-keys-empty-title">{c('collider_2025: Title').t`No API keys yet`}</p>
-                    <p className="api-keys-empty-subtitle">
+                    <p className="api-keys-empty-title m-0">{c('collider_2025: Title').t`No API keys yet`}</p>
+                    <p className="api-keys-empty-subtitle m-0">
                         {c('collider_2025: Description')
                             .t`Create a key to integrate ${LUMO_SHORT_APP_NAME} with your scripts and tools.`}
                     </p>
@@ -166,7 +170,7 @@ const ApiKeysPanel = () => {
                         isLoading={usageBatchLoading}
                         error={usageBatchError}
                     />
-                    <div className="api-keys-list">
+                    <div className="flex flex-column gap-2">
                         {tokens.map((token) => (
                             <ApiKeyCard
                                 key={token.PersonalAccessTokenID}

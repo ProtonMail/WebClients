@@ -1,0 +1,39 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@keyframes chat-history-upsell-fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+// Enhanced sign-in section for guest users in chat history
+.chat-history-signin-section {
+	background-color: var(--background-weak);
+	border: 1px solid var(--border-weak);
+	transition:
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out;
+
+	// Wait for the sidebar width transition to finish before appearing
+	animation: chat-history-upsell-fadein 0.15s ease-in 0.3s both;
+
+	a {
+		text-decoration-line: none;
+	}
+
+	&:hover {
+		border-color: var(--border-norm);
+	}
+
+	.chat-history-signin-icon {
+		opacity: 0.7;
+	}
+}

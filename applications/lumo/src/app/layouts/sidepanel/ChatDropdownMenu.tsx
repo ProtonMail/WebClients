@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { DropdownOptions } from '../../components/DropdownMenu';
+import DropdownMenu from '../../components/DropdownMenu';
+import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
+import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { useConversationDelete } from '../../hooks/useConversationDelete';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import type { Conversation } from '../../types';
-import type { DropdownOptions } from '../../components/DropdownMenu';
-import DropdownMenu from '../../components/DropdownMenu';
-import FavoritesUpsellPrompt from '../../components/Buttons/FavoritesUpsellPrompt';
-import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 
 interface Props {
     conversation: Conversation;

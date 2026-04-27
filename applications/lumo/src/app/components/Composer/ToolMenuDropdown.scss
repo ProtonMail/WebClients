@@ -1,0 +1,30 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.tool-menu-dropdown {
+	// fix bug where light theme field-norm value is not being applied
+	--field-norm: #adaba8;
+
+	.toggle-container {
+		// border: 1px solid var(--field-disabled);
+
+		&::before {
+			// background-color: var(--background-upsell-toggle-button); // White toggle button
+			//   margin: 3px; // Add margin to create distance from container edges
+			margin-inline-start: #{rem(5)};
+			margin-block: auto;
+			inline-size: calc(#{em(24)} - #{rem(6)}); // Reduce size to account for margin
+			block-size: calc(#{em(24)} - #{rem(6)}); // Reduce size to account for margin
+		}
+
+		&--checked::before {
+			transform: translateX(0.8429em);
+			background-color: var(--interaction-norm);
+		}
+
+		&--checked {
+			.toggle-container-text:last-child .toggle-container-img {
+				opacity: 0;
+			}
+		}
+	}
+}

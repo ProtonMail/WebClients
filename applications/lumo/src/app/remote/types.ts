@@ -172,6 +172,7 @@ export type AssetToApi = {
     SpaceID: RemoteId;
     Encrypted?: Base64;
     AssetTag: AssetTag;
+    AssetType?: number;
 };
 
 export type MasterKeyToApi = {
