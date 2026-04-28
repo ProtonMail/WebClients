@@ -1,5 +1,4 @@
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 
 import { SortField } from '../../modules/sorting/types';
@@ -17,9 +16,7 @@ export function HeaderCellContent({ headerText, currentSortField, cellSortField 
             {headerText}
             {currentSortField === SortField.numberOfInitializedDownloads &&
                 cellSortField === SortField.numberOfInitializedDownloads && (
-                    <Tooltip className="pl-1" title={numAccessesTooltipMessage}>
-                        <IcInfoCircle size={3.5} alt={numAccessesTooltipMessage} />
-                    </Tooltip>
+                    <InfoIconTooltip title={numAccessesTooltipMessage} className="pl-1" />
                 )}
         </>
     );
