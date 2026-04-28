@@ -4,7 +4,6 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components';
 import {
     Alert,
@@ -18,7 +17,7 @@ import {
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import type { Revision } from '@proton/drive';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
@@ -239,9 +238,7 @@ const DetailsModalContent = ({
                         label={
                             <>
                                 {c('Title').t`Size`}
-                                <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                    <IcInfoCircle size={3.5} alt={getSizeTooltipMessage()} />
-                                </Tooltip>
+                                <InfoIconTooltip title={getSizeTooltipMessage()} className="ml-1 mb-1" />
                             </>
                         }
                         dataTestId="file-size"
@@ -274,9 +271,7 @@ const DetailsModalContent = ({
                     label={
                         <>
                             {c('Title').t`# of downloads`}
-                            <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
-                            </Tooltip>
+                            <InfoIconTooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1" />
                         </>
                     }
                 >
