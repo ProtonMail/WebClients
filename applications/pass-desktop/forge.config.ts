@@ -1,7 +1,8 @@
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerDMG } from '@electron-forge/maker-dmg';
+import type { MakerMSIXConfig } from '@electron-forge/maker-msix';
+import { MakerMSIX } from '@electron-forge/maker-msix';
 import { MakerRpm } from '@electron-forge/maker-rpm';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-natives';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
@@ -15,6 +16,29 @@ import getExtraResource from './src/utils/extra-resource';
 import mainConfig from './webpack.main.config';
 import rendererConfig from './webpack.renderer.config';
 
+type Hash = NonNullable<NonNullable<MakerMSIXConfig['windowsSignOptions']>['hashes']>[number];
+
+// macos sign options
+const osxNotarize =
+    (process.env.CI || process.env.PASS_DESKTOP_NOTARIZE) && !process.env.SKIP_NOTARIZE
+        ? {
+              appleId: process.env.PASS_DESKTOP_APPLE_ID!,
+              appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD!,
+              teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID!,
+          }
+        : undefined;
+
+// windows sign options
+const windowsSignOptions =
+    process.env.CI || process.env.WINDOWS_SIGN_TIMESTAMP_SERVER
+        ? {
+              hashes: [process.env.WINDOWS_SIGN_HASHES as Hash],
+              timestampServer: process.env.WINDOWS_SIGN_TIMESTAMP_SERVER,
+              automaticallySelectCertificate: true,
+          }
+        : undefined;
+const windowsPublisher = process.env.WINDOWS_SIGN_PUBLISHER ?? 'CN=Proton AG';
+
 const config: ForgeConfig = {
     packagerConfig: {
         asar: true,
@@ -26,27 +50,27 @@ const config: ForgeConfig = {
         name: 'Proton Pass',
         appCategoryType: 'public.app-category.productivity',
         osxSign: process.env.CI ? {} : undefined,
-        osxNotarize:
-            (process.env.CI || process.env.PASS_DESKTOP_NOTARIZE) && !process.env.SKIP_NOTARIZE
-                ? {
-                      appleId: process.env.PASS_DESKTOP_APPLE_ID!,
-                      appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD!,
-                      teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID!,
-                  }
-                : undefined,
+        osxNotarize,
         osxUniversal: { x64ArchFiles: 'Contents/Resources/assets/proton_pass_nm_host' },
     },
     rebuildConfig: {},
     makers: [
         // Windows
-        new MakerSquirrel({
-            loadingGif: path.join(__dirname, 'assets', 'installSpinner.gif'),
-            iconUrl: path.join(__dirname, 'assets', 'logo.ico'),
-            setupIcon: path.join(__dirname, 'assets', 'logo.ico'),
-            signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
-            setupExe: `ProtonPass_Setup_${pkg.version}.exe`,
-            name: 'ProtonPass',
-            vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
+        new MakerMSIX({
+            packageName: `ProtonPass_Setup_${pkg.version}.msix`,
+            packageAssets: `${__dirname}/assets`,
+            manifestVariables: {
+                packageIdentity: 'ProtonPass',
+                packageDisplayName: 'Proton Pass',
+                packageDescription: 'Open-source and secure identity manager.',
+                packageBackgroundColor: '#FFFFFF',
+                appDisplayName: 'Proton Pass',
+                appExecutable: 'ProtonPass.exe',
+                publisher: windowsPublisher,
+                publisherDisplayName: 'Proton AG',
+            },
+            sign: !!windowsSignOptions,
+            windowsSignOptions,
         }),
         // macOS
         new MakerDMG((arch) => ({
