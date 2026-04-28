@@ -1,10 +1,8 @@
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { ActionPayload, type AgentAccessItem } from '@proton/pass/types/protobuf/action-payload-v1';
+import { ActionPayload, type AgentAction } from '@proton/pass/types/protobuf/action-payload-v1';
 
-export type DecryptedActionPayload =
-    | { kind: 'agent-access-item'; agentAccessItem: AgentAccessItem }
-    | { kind: 'unknown' };
+export type DecryptedActionPayload = { kind: 'agent-action'; agentAction: AgentAction } | { kind: 'unknown' };
 
 /** Mirrors the Pass CLI rust `decrypt_monitor_payload`:
  *   1) base64-decode the wire payload
@@ -25,8 +23,8 @@ export const openActionPayload = async (
 
     const message = ActionPayload.fromBinary(decrypted);
     switch (message.content.oneofKind) {
-        case 'agentAccessItem':
-            return { kind: 'agent-access-item', agentAccessItem: message.content.agentAccessItem };
+        case 'agentAction':
+            return { kind: 'agent-action', agentAction: message.content.agentAction };
         default:
             return { kind: 'unknown' };
     }

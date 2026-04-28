@@ -89,9 +89,7 @@ export interface PatMonitorRecord {
 }
 
 export type DecodedPatMonitorPayload =
-    /** Currently the only payload variant — agent read of a single item.
-     * Mirrors the rust `AgentAccessItem`. */
-    | { kind: 'agent-access-item'; reason: string; vaultName: string; itemName: string }
+    | { kind: 'agent-action'; reason: string; vaultName: string; itemName: string; folderName: string }
     /** Payload was present but the protobuf had a oneof variant we don't
      * recognise (e.g. server added a new event type). */
     | { kind: 'unknown' }
