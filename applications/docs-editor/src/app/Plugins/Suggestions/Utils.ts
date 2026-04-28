@@ -15,6 +15,7 @@ import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfN
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import type { ListItemNode } from '@lexical/list'
 import { $isListItemNode } from '@lexical/list'
+import { $isPageBreakNode } from '../PageBreak/PageBreakNode'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -139,7 +140,7 @@ export function $wrapSelectionInSuggestionNode(
       for (const cell of tableCells) {
         $insertFirst(cell, $createSuggestionNode(id, tableSuggestionType))
       }
-    } else if ($isHorizontalRuleNode(node)) {
+    } else if ($isHorizontalRuleNode(node) || $isPageBreakNode(node)) {
       targetNode = node
     }
 

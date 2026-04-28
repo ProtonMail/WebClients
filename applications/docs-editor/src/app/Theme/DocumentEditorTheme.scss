@@ -281,3 +281,56 @@ $line-height: 1.2; // Consistent line-height
 .Lexical__divider {
 	border-block-end: 1px solid var(--border-norm);
 }
+
+.Lexical__pageBreak {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block: 2rem;
+	inline-size: 100%;
+	min-block-size: 1rem;
+	border: 0;
+	border-block-start: 1px dashed var(--border-norm);
+	break-after: page;
+	page-break-after: always;
+	user-select: none;
+
+	&::after {
+		content: attr(data-label);
+		position: absolute;
+		inset-block-start: -0.5rem;
+		padding-inline: 0.5rem;
+		background: white;
+		color: var(--text-weak);
+		font-size: 0.75rem;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	&.selected {
+		border-block-start-color: var(--primary);
+
+		&::after {
+			color: var(--primary);
+		}
+	}
+}
+
+@media print {
+	.Lexical__pageBreak {
+		min-block-size: 0;
+		border-block-start: 0;
+		break-after: page;
+		page-break-after: always;
+
+		&::after {
+			content: none;
+		}
+
+		& + * {
+			break-before: page;
+			page-break-before: always;
+		}
+	}
+}
