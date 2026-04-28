@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, InputFieldTwo, TextAreaTwo } from '@proton/components';
-import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { SHARE_INVITE_MESSAGE_MAX_LENGTH } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
+
+import { InfoIconTooltip, InfoIconTooltipRenderMode } from '../../../../components/InfoIconTooltip';
 
 interface Props {
     isAdding: boolean;
@@ -39,7 +39,7 @@ export const DirectSharingInviteMessage = ({
         )}
 
         <div className="w-full flex justify-space-between items-center">
-            <div>
+            <div className="flex items-center">
                 <Checkbox
                     disabled={isAdding}
                     id="direct-sharing-toggle-invite-message"
@@ -49,12 +49,12 @@ export const DirectSharingInviteMessage = ({
                 >
                     {c('Label').t`Include message and file name in invite email`}
                 </Checkbox>
-                <Tooltip
+                <InfoIconTooltip
                     title={c('Tooltip')
                         .t`Message and file name are stored with zero access encryption when included in the email`}
-                >
-                    <IcInfoCircleFilled className="color-disabled ml-2" size={5} />
-                </Tooltip>
+                    renderMode={InfoIconTooltipRenderMode.FILLED}
+                    className="ml-2"
+                />
             </div>
 
             <span className="text-sm color-weak">
