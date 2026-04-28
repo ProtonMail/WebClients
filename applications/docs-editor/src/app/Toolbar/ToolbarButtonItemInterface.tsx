@@ -5,6 +5,6 @@ export type ToolbarButtonItemInterface = {
   type: 'button'
   onClick: () => void
   icon: ReactNode
-  label: string
+  label: ReactNode
   shortcut?: KeyboardShortcutID
 }
