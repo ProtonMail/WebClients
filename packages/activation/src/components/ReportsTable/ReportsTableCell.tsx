@@ -13,9 +13,10 @@ interface Props {
     product: ImportType;
     title: string;
     importerDate?: number;
+    isForwardingOnly?: boolean;
 }
 
-const ReportsTableCell = ({ product: app, title, provider, importerDate }: Props) => (
+const ReportsTableCell = ({ product: app, title, provider, importerDate, isForwardingOnly }: Props) => (
     <TableCell>
         <div className="flex">
             <div className="shrink-0 mr-2 hidden md:flex">
@@ -26,7 +27,7 @@ const ReportsTableCell = ({ product: app, title, provider, importerDate }: Props
                     {title}
                 </div>
                 <div className="color-weak">
-                    {getImportProductName(provider, app)}
+                    {getImportProductName(provider, app, isForwardingOnly)}
                     {!!importerDate && <time> - {format(importerDate * 1000, 'PPp', { locale: dateLocale })}</time>}
                 </div>
             </div>
