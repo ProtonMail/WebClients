@@ -10,6 +10,7 @@ import { ImageNode } from './Plugins/Image/ImageNode'
 import { CommentThreadMarkNode } from './Plugins/Comments/CommentThreadMarkNode'
 import { CustomListNode } from './Plugins/CustomList/CustomListNode'
 import { ProtonNode } from './Plugins/Suggestions/ProtonNode'
+import { PageBreakNode } from './Plugins/PageBreak/PageBreakNode'
 
 const CommonNodes = [
   AutoLinkNode,
@@ -32,6 +33,7 @@ const CommonNodes = [
     withKlass: CustomListNode,
   },
   OverflowNode,
+  PageBreakNode,
   QuoteNode,
   TableCellNode,
   TableNode,
