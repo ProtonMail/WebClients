@@ -1,45 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { MimeIcon, useConfirmActionModal } from '@proton/components';
-import { NodeType, type ProtonInvitationWithNode, getDriveForPhotos } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 
 // TODO: Move that to common place
 import { useInvitationsActions } from '../../sections/sharedWith/hooks/useInvitationsActions';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-
-// TODO: Move that somewhere else, it's temporary
-const loadAlbumsInvitations = async (abortSignal: AbortSignal) => {
-    const invitations: ProtonInvitationWithNode[] = [];
-    for await (const invitation of getDriveForPhotos().iterateInvitations(abortSignal)) {
-        if (invitation.node.type !== NodeType.Album) {
-            continue;
-        }
-        invitations.push(invitation);
-    }
-    return invitations;
-};
+import { loadAlbumInvitations } from '../loaders/loadAlbumInvitations';
+import { useAlbumInvitationsStore } from '../useAlbumInvitations.store';
 
 export const AlbumsInvitations = () => {
     const { acceptInvitation, rejectInvitation } = useInvitationsActions();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const [invitations, setInvitations] = useState<ProtonInvitationWithNode[]>([]);
     const [isAccepting, withIsAccepting] = useLoading(false);
+    const invitations = useAlbumInvitationsStore((state) => [...state.invitations.values()]);
+    const removeInvitation = useAlbumInvitationsStore((state) => state.removeInvitation);
 
     useEffect(function initialLoadOfAlbumsInvitations() {
         const abortController = new AbortController();
-        try {
-            void loadAlbumsInvitations(abortController.signal).then((newInvitations) => setInvitations(newInvitations));
-        } catch (e) {
-            handleSdkError(e);
-        }
+        void loadAlbumInvitations(abortController.signal);
         return () => {
             abortController.abort();
         };
     }, []);
+
     return (
         <>
             {invitations.length !== 0 && (
@@ -86,11 +72,7 @@ export const AlbumsInvitations = () => {
                                                         invitation.node.type
                                                     )
                                                 );
-                                                setInvitations((prevInvitations) =>
-                                                    prevInvitations.filter(
-                                                        (prevInvitation) => prevInvitation.uid !== invitation.uid
-                                                    )
-                                                );
+                                                removeInvitation(invitation.uid);
                                             }}
                                         >
                                             {c('Action').t`Join album`}
@@ -106,11 +88,7 @@ export const AlbumsInvitations = () => {
                                                     name: name,
                                                     type: invitation.node.type,
                                                 });
-                                                setInvitations((prevInvitations) =>
-                                                    prevInvitations.filter(
-                                                        (prevInvitation) => prevInvitation.uid === invitation.uid
-                                                    )
-                                                );
+                                                removeInvitation(invitation.uid);
                                             }}
                                         >
                                             {c('Action').t`Decline`}
