@@ -910,17 +910,11 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Bestand toevoegen aan ${ DRIVE_APP_NAME }"
       ],
-      "Add from ${ DRIVE_APP_NAME }": [
-        "Toevoegen vanuit ${ DRIVE_APP_NAME }"
-      ],
       "Add to active": [
         "Toevoegen aan actief"
       ],
       "Already in KB": [
         "Al in KB"
-      ],
-      "Browse ${ DRIVE_SHORT_APP_NAME }": [
-        "Blader door ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Cancel": [
         "Annuleren"
@@ -936,9 +930,6 @@
       ],
       "Disable ghost mode": [
         "Spookmodus uitschakelen"
-      ],
-      "Dismiss": [
-        "Negeren"
       ],
       "Draw a sketch": [
         "Maak een schets"
@@ -997,9 +988,6 @@
       "Try again": [
         "Probeer opnieuw"
       ],
-      "Upload file and add to knowledge base": [
-        "Bestand uploaden en toevoegen aan kennisbank"
-      ],
       "Upload files": [
         "Upload bestanden"
       ],
@@ -1030,9 +1018,6 @@
       "Delete all": [
         "Alles verwijderen"
       ],
-      "Learn more": [
-        "Meer informatie"
-      ],
       "Maybe later": [
         "Misschien later"
       ],
@@ -1044,12 +1029,6 @@
       ],
       "Try it now": [
         "Probeer het nu"
-      ],
-      "Upload": [
-        "Uploaden"
-      ],
-      "Web search": [
-        "Zoeken op het web"
       ]
     },
     "collider_2025: Characteristic": {
@@ -1062,20 +1041,11 @@
       "Multiple large uploads": [
         "Meerdere grote uploads"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Zelfs ${ BRAND_NAME } kan onze gespreksgeschiedenis niet inzien."
-      ],
-      "Our conversations are never used for training.": [
-        "Onze gesprekken worden nooit gebruikt voor trainingsdoeleinden."
-      ],
       "Priority access": [
         "Prioritaire toegang"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dankzij zero-access-versleuteling kunnen uw opgeslagen gesprekken alleen op uw apparaat worden gedecodeerd en gelezen. Noch ${ BRAND_NAME }, noch iemand anders kan ze zien."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "In tegenstelling tot andere assistenten, neem ik onze gesprekken niet op."
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -1097,17 +1067,8 @@
       "Only you have access": [
         "Alleen u hebt toegang"
       ],
-      "Private": [
-        "Privé"
-      ],
-      "Safeguarded": [
-        "Beschermd"
-      ],
       "Tech that you can trust": [
         "Technologie die u kunt vertrouwen"
-      ],
-      "Treated with respect": [
-        "Met respect behandeld"
       ],
       "Your chats are yours alone": [
         "Uw gesprekken zijn alleen van u"
@@ -1465,26 +1426,11 @@
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
         "Keten van toolaanroepen om meertraps pijplijnen end-to-end te orkestreren."
       ],
-      "characters": [
-        "tekens"
-      ],
       "characters not shown": [
         "tekens niet weergegeven"
       ],
-      "Chat knowledge": [
-        "Gesprek kennis"
-      ],
       "Check this is the site you expect to visit": [
         "Controleer of dit de site is die u verwacht te bezoeken"
-      ],
-      "Close": [
-        "Sluiten"
-      ],
-      "columns": [
-        "kolommen"
-      ],
-      "columns found, no data rows": [
-        "kolommen gevonden, geen gegevensrijen"
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Maak en trek API-sleutels in voor programmatische toegang. Sleutels worden slechts één keer weergegeven wanneer ze worden gemaakt."
@@ -1501,14 +1447,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Sleep uw bestanden hierheen om ze aan het gesprek toe te voegen."
       ],
-      "Error Parsing Table": [
-        "Fout bij parseren tabel"
-      ],
       "Error processing attachment": [
         "Fout bij verwerken bijlage"
-      ],
-      "Error Processing File": [
-        "Fout bij verwerken bestand"
       ],
       "Exceeds ${ maxSize } limit": [
         "Overschrijdt ${ maxSize } limiet"
@@ -1528,29 +1468,17 @@
       "File capacity for this conversation": [
         "Bestandscapaciteit voor dit gesprek"
       ],
-      "File too large": [
-        "Bestand te groot"
-      ],
       "File too large for preview (>150k tokens)": [
         "Bestand te groot voor voorbeeld (>150k tokens)"
       ],
       "files": [
         "bestanden"
       ],
-      "files are not currently supported for content extraction.": [
-        "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
-      ],
       "Files automatically retrieved based on your question.": [
         "Bestanden automatisch opgehaald op basis van uw vraag."
       ],
-      "Files automatically retrieved based on your questions:": [
-        "Bestanden automatisch opgehaald op basis van uw vragen:"
-      ],
       "Files you've added to this conversation.": [
         "Bestanden die u aan dit gesprek hebt toegevoegd."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
-        "Voor elk gesprek heeft ${ LUMO_SHORT_APP_NAME } de capaciteit om een beperkte hoeveelheid informatie te verwerken. De voortgangsbalk toont hoeveel capaciteit uw huidige bestanden gebruiken. "
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
@@ -1594,15 +1522,6 @@
       "No calls": [
         "Geen oproepen"
       ],
-      "No Content Available": [
-        "Geen inhoud beschikbaar"
-      ],
-      "No data rows found": [
-        "Geen gegevensrijen gevonden"
-      ],
-      "No data rows found in this file.": [
-        "Geen gegevensrijen gevonden in dit bestand."
-      ],
       "No files available": [
         "Geen bestanden beschikbaar"
       ],
@@ -1611,12 +1530,6 @@
       ],
       "No supported files in this folder": [
         "Geen ondersteunde bestanden in deze map"
-      ],
-      "Note:": [
-        "Let op:"
-      ],
-      "of": [
-        "van"
       ],
       "Partial content": [
         "Gedeeltelijke inhoud"
@@ -1633,14 +1546,8 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Druk op ${ shiftEnterBoldText } om te vragen"
       ],
-      "Preview quality - full resolution not loaded": [
-        "Voorbeeld kwaliteit - volledige resolutie niet geladen"
-      ],
       "Private video calls for the conversations that matter.": [
         "Privé-videogesprekken voor de gesprekken die ertoe doen."
-      ],
-      "Processed content": [
-        "Verwerkte inhoud"
       ],
       "Processing ${ uploadProgress.fileName }": [
         "Verwerken van ${ uploadProgress.fileName }"
@@ -1660,15 +1567,6 @@
       "Removed from future questions": [
         "Verwijderd uit toekomstige vragen"
       ],
-      "Retrieved Project Knowledge": [
-        "Projectkennis opgehaald"
-      ],
-      "rows": [
-        "rijen"
-      ],
-      "rows with": [
-        "rijen met"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Sla al uw gesprekken op in een gespreksgeschiedenis die alleen u kunt zien. Meld u aan of maak een account aan."
       ],
@@ -1677,21 +1575,6 @@
       ],
       "Show all files": [
         "Alle bestanden weergeven"
-      ],
-      "Show Formatted": [
-        "Geformatteerd weergeven"
-      ],
-      "Show Raw": [
-        "Ruwe data weergeven"
-      ],
-      "Show Table": [
-        "Tabel weergeven"
-      ],
-      "Showing": [
-        "Toont"
-      ],
-      "Showing first": [
-        "Toont eerste"
       ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Meld u aan of maak een account aan om bestanden van uw ${ DRIVE_APP_NAME } (end-to-end versleutelde cloudopslag) te bekijken en toe te voegen aan uw chatkennis."
@@ -1702,9 +1585,6 @@
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "Meld u aan om workflows te genereren met ${ LUMO_SHORT_APP_NAME }."
       ],
-      "Sketch added as attachment": [
-        "Schets toegevoegd als bijlage"
-      ],
       "Space usage: ": [
         "Opslaggebruik: "
       ],
@@ -1714,14 +1594,8 @@
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "De ${ LUMO_SHORT_APP_NAME } API biedt u programmatische toegang tot taalmodellen met de privacyarchitectuur van ${ BRAND_NAME } ingebouwd. Geen datatraining op uw verzoeken. Geen tracking."
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Er is een fout opgetreden bij het verwerken van dit bestand. De inhoud is mogelijk niet leesbaar of het bestandsformaat wordt mogelijk niet volledig ondersteund."
-      ],
       "These files won't be used for future questions.": [
         "Deze bestanden worden niet gebruikt voor toekomstige vragen."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Dit bestand lijkt leeg te zijn of bevat geen extraheerbare tekstinhoud."
       ],
       "This folder is empty": [
         "Deze map is leeg"
@@ -1737,12 +1611,6 @@
       ],
       "Trying...": [
         "Bezig..."
-      ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Kan dit bestand niet als tabel parseren. U kunt in plaats daarvan de ruwe inhoud bekijken."
-      ],
-      "Unsupported File Type": [
-        "Niet-ondersteund bestandstype"
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "\"${ file.name }\" wordt opgeladen naar ${ DRIVE_APP_NAME }..."
@@ -1761,9 +1629,6 @@
       ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
-      ],
-      "Your information is zero-access encrypted": [
-        "Uw informatie is zero-access versleuteld"
       ]
     },
     "collider_2025: Job": {
@@ -2234,9 +2099,6 @@
       ]
     },
     "collider_2025: Upsell": {
-      "Create free account": [
-        "Maak een gratis account aan"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -2440,12 +2302,6 @@
       "Close sidebar": [
         "Zijbalk sluiten"
       ],
-      "Collapse projects": [
-        "Projecten inklappen"
-      ],
-      "Create a free account": [
-        "Maak een gratis account aan"
-      ],
       "Create project": [
         "Project aanmaken"
       ],
@@ -2457,9 +2313,6 @@
       ],
       "Expand": [
         "Uitvouwen"
-      ],
-      "Expand projects": [
-        "Projecten uitvouwen"
       ],
       "Favorite": [
         "Favoriet"
@@ -2508,9 +2361,6 @@
       ],
       "Show sidebar": [
         "Toon zijbalk"
-      ],
-      "Sign in": [
-        "Inloggen"
       ],
       "Unfavorite": [
         "Verwijderen uit favorieten"
@@ -2704,9 +2554,6 @@
       ],
       "chats": [
         "gesprekken"
-      ],
-      "Current folder:": [
-        "Huidige map:"
       ],
       "Edit conversation title": [
         "Gesprekstitel bewerken"
@@ -3084,9 +2931,6 @@
       ],
       "Today": [
         "Vandaag"
-      ],
-      "Whatever you ask me is:": [
-        "Wat u mij ook vraagt, is:"
       ]
     },
     "collider_2025:Tooltip": {
@@ -4201,14 +4045,23 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
+      "Email is not valid": [
+        "E-mailadres is ongeldig"
+      ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
       ],
       "Invalid ${ name } code": [
         "Ongeldig ${ name } code"
@@ -4237,8 +4090,14 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Not a valid number": [
+        "Geen geldig getal"
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "Payment process canceled": [
         "Betalingsverzoek geannuleerd"
@@ -4300,11 +4159,17 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
+      "The email addresses do not match": [
+        "De e-mailadressen komen niet overeen"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "Het minimale donatiebedrag is ${ price }"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
       "This field is invalid": [
         "Dit veld is ongeldig"
@@ -4312,11 +4177,23 @@
       "This field is required": [
         "Dit veld is vereist"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
       "Unknown error": [
         "Onbekende fout"
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
+      ],
+      "Username must begin with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer beginnen"
+      ],
+      "Username must end with a letter or digit": [
+        "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
       "Wrong billing address": [
         "Verkeerd factuuradres"
@@ -5522,9 +5399,6 @@
       ],
       "Render time": [
         "Geef tijd weer"
-      ],
-      "Search Index Debug": [
-        "Zoekindex Foutopsporing"
       ],
       "Smoothing (Spring-Mass)": [
         "Vloeiend maken (veer-massa)"
@@ -7892,9 +7766,6 @@
       "Reverse charge not supported": [
         "Omgekeerde btw niet ondersteund"
       ],
-      "Search Index Debug": [
-        "Zoekindex Foutopsporing"
-      ],
       "Select a plan": [
         "Selecteer een abonnement"
       ],
@@ -7986,6 +7857,16 @@
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
     "VPN Plan Feature": {
       "${ n } device": [
         "${ n } apparaat",
@@ -8067,9 +7948,6 @@
       ]
     },
     "Warning": {
-      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
-        "Vond ${ orphanedDocCount } document(en) (${ orphanedChunkCount } chunks) met verwijzingen naar ${ orphanedSpaceIds.length } ontbrekende ruimte(s)."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
