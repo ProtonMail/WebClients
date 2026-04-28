@@ -7,7 +7,7 @@ import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/
 
 interface EventProps {
     step: string;
-    method: RecoveryMethod | undefined;
+    method: RecoveryMethod | undefined | 'device-recovery';
 }
 interface Props {
     variant: 'A' | 'B';
