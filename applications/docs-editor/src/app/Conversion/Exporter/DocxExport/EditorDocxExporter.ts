@@ -1,13 +1,14 @@
-import { Packer } from 'docx'
+import { Document, Packer, SectionType } from 'docx'
 import { EditorExporter } from '../EditorExporter'
 import type { EditorState } from 'lexical'
 import { $getRoot, $isElementNode } from 'lexical'
-import { Document, SectionType } from 'docx'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { $isPageBreakNode } from '../../../Plugins/PageBreak/PageBreakNode'
 import type { DocxExportContext } from './LexicalToDocx/Context'
 import type { TopLevelChildren } from './LexicalToDocx/getTopLevelChildrenFromElementNode'
 import { getTopLevelChildrenFromElementNode } from './LexicalToDocx/getTopLevelChildrenFromElementNode'
 import { createHorizontalRuleChild } from './LexicalToDocx/createHorizontalRuleChild'
+import { createPageBreakChild } from './LexicalToDocx/createPageBreakChild'
 import { NumberingLevelsConfig } from './NumberingLevelsConfig'
 
 export class EditorDocxExporter extends EditorExporter {
@@ -39,6 +40,10 @@ export class EditorDocxExporter extends EditorExporter {
 
       if ($isHorizontalRuleNode(child)) {
         topLevelChildren.push(createHorizontalRuleChild())
+      }
+
+      if ($isPageBreakNode(child)) {
+        topLevelChildren.push(createPageBreakChild())
       }
     }
 

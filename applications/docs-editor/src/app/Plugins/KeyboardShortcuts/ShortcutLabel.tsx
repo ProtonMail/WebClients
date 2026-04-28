@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
 import { DefaultKeyboardShortcuts } from './DefaultKeyboardShortcuts'
@@ -9,7 +10,7 @@ import { ShortcutLabelText } from './ShortcutLabelText'
 
 const AltDisplayKey = isMac() ? 'Option' : 'Alt'
 
-export const ShortcutLabel = ({ shortcut, label }: { shortcut: KeyboardShortcutID; label?: string }) => {
+export const ShortcutLabel = ({ shortcut, label }: { shortcut: KeyboardShortcutID; label?: ReactNode }) => {
   const shortcutAttributes = useMemo(
     () => [...DefaultKeyboardShortcuts, ...CustomKeyboardShortcuts].find(({ id }) => id === shortcut),
     [shortcut],
