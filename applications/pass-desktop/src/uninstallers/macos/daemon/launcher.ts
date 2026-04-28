@@ -39,7 +39,7 @@ const getPlistContent = (scriptPath: string) => {
 export const installDaemon = () => {
     try {
         const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
-        if (!isMac || isDev) return;
+        if (!isMac() || isDev) return;
 
         /** If the .plist file is found - then either the daemon is running
          * or the user manually unloaded it using `unload -w` */
