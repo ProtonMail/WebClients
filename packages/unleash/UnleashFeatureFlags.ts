@@ -256,6 +256,7 @@ export enum MailFeatureFlag {
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
     EncryptedSearchMigrationSystem = 'EncryptedSearchMigrationSystem',
     MailStoreDebugMode = 'MailStoreDebugMode',
+    MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
 }
 
 enum AdminFeatureFlag {
