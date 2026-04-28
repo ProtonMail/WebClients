@@ -189,7 +189,7 @@ const VerifyOwnershipWithPhoneStepContent = ({
                 </Button>
 
                 <Button size="large" fullWidth className="mt-2" onClick={() => send({ type: 'try another way' })}>
-                    {c('Action').t`Try another way`}
+                    {c('Action').t`Verify another way`}
                 </Button>
             </>
         );
