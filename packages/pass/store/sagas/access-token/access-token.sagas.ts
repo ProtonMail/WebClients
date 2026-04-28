@@ -3,6 +3,7 @@ import { all, call, select } from 'redux-saga/effects';
 import {
     createPersonalAccessToken,
     deletePersonalAccessToken,
+    fetchAgentInstructions,
     grantPersonalAccessTokenAccess,
     listPatMonitorRecords,
     listPersonalAccessTokenAccess,
@@ -32,6 +33,7 @@ import {
     getAccessTokenAccess,
     getAccessTokenActions,
     getAccessTokens,
+    getAgentInstructions,
     updateAccessTokenAccess,
 } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
@@ -218,4 +220,9 @@ const listActionsSaga = createRequestSaga({
     },
 });
 
-export default [listSaga, createSaga, deleteSaga, listAccessSaga, updateAccessSaga, listActionsSaga];
+const agentInstructionsSaga = createRequestSaga({
+    actions: getAgentInstructions,
+    call: fetchAgentInstructions,
+});
+
+export default [listSaga, createSaga, deleteSaga, listAccessSaga, updateAccessSaga, listActionsSaga, agentInstructionsSaga];
