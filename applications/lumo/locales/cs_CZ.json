@@ -949,17 +949,11 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Přidat soubor do ${ DRIVE_APP_NAME }"
       ],
-      "Add from ${ DRIVE_APP_NAME }": [
-        "Přidat z ${ DRIVE_APP_NAME }"
-      ],
       "Add to active": [
         "Přidat k aktivním"
       ],
       "Already in KB": [
         "Již je v databázi znalostí"
-      ],
-      "Browse ${ DRIVE_SHORT_APP_NAME }": [
-        "Procházet ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Cancel": [
         "Zrušit"
@@ -975,9 +969,6 @@
       ],
       "Disable ghost mode": [
         "Deaktivovat neviditelný režim"
-      ],
-      "Dismiss": [
-        "Zavřít"
       ],
       "Draw a sketch": [
         "Nakreslit skicu"
@@ -1036,9 +1027,6 @@
       "Try again": [
         "Zkusit znovu"
       ],
-      "Upload file and add to knowledge base": [
-        "Nahrát soubor a přidat do databáze znalostí"
-      ],
       "Upload files": [
         "Nahrát soubory"
       ],
@@ -1072,9 +1060,6 @@
       "Delete all": [
         "Smazat vše"
       ],
-      "Learn more": [
-        "Více informací"
-      ],
       "Maybe later": [
         "Možná později"
       ],
@@ -1086,12 +1071,6 @@
       ],
       "Try it now": [
         "Vyzkoušet nyní"
-      ],
-      "Upload": [
-        "Nahrát"
-      ],
-      "Web search": [
-        "Vyhledat na webu"
       ]
     },
     "collider_2025: Characteristic": {
@@ -1104,20 +1083,11 @@
       "Multiple large uploads": [
         "Vícenásobné nahrávání velkých dat"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Ani ${ BRAND_NAME } nemá přístup k naší historii konverzací."
-      ],
-      "Our conversations are never used for training.": [
-        "Naše konverzace nejsou nikdy používány k trénování."
-      ],
       "Priority access": [
         "Prioritní přístup"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Díky šifrování s nulovým přístupem lze vaše uložené konverzace dešifrovat a číst pouze na vašem zařízení. Ani ${ BRAND_NAME }, ani nikdo jiný je nemůže vidět."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "Na rozdíl od jiných asistentů, naše konverzace nezaznamenávám."
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
@@ -1139,17 +1109,8 @@
       "Only you have access": [
         "Pouze vy máte přístup"
       ],
-      "Private": [
-        "Soukromé"
-      ],
-      "Safeguarded": [
-        "Chráněno"
-      ],
       "Tech that you can trust": [
         "Technologie, které můžete důvěřovat"
-      ],
-      "Treated with respect": [
-        "Respektováno"
       ],
       "Your chats are yours alone": [
         "Vaše konverzace patří pouze vám"
@@ -1531,26 +1492,11 @@
       "Build privacy-first assistants with streaming and persistent context.": [
         "Vytvářejte asistenty, u nichž je na prvním místě ochrana soukromí, s využitím streamování a trvalého kontextu."
       ],
-      "characters": [
-        "znaků"
-      ],
       "characters not shown": [
         "znaků se nezobrazuje"
       ],
-      "Chat knowledge": [
-        "Znalosti chatu"
-      ],
       "Check this is the site you expect to visit": [
         "Zkontrolujte, zda je to web, který očekáváte navštívit"
-      ],
-      "Close": [
-        "Zavřít"
-      ],
-      "columns": [
-        "sloupce"
-      ],
-      "columns found, no data rows": [
-        "nalezeny sloupce, žádné řádky dat"
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Vytvořte a zrušte klíče API pro programový přístup. Klíče se po vytvoření zobrazí pouze jednou."
@@ -1567,14 +1513,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Přetáhněte soubory sem a přidejte je do konverzace."
       ],
-      "Error Parsing Table": [
-        "Chyba při parsování tabulky"
-      ],
       "Error processing attachment": [
         "Chyba při zpracování přílohy"
-      ],
-      "Error Processing File": [
-        "Chyba zpracování souboru"
       ],
       "Exceeds ${ maxSize } limit": [
         "Překračuje limit ${ maxSize }"
@@ -1603,29 +1543,17 @@
       "File capacity for this conversation": [
         "Kapacita souborů pro tuto konverzaci"
       ],
-      "File too large": [
-        "Soubor je příliš velký"
-      ],
       "File too large for preview (>150k tokens)": [
         "Příliš velký soubor pro náhled (>150 tisíc tokenů)"
       ],
       "files": [
         "soubory"
       ],
-      "files are not currently supported for content extraction.": [
-        "soubory nejsou v současné době podporovány pro extrakci obsahu."
-      ],
       "Files automatically retrieved based on your question.": [
         "Soubory automaticky načteny na základě vašeho dotazu."
       ],
-      "Files automatically retrieved based on your questions:": [
-        "Soubory automaticky načtené na základě vašich dotazů:"
-      ],
       "Files you've added to this conversation.": [
         "Soubory, které jste přidali do této konverzace."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
-        "Pro každou konverzaci má ${ LUMO_SHORT_APP_NAME } kapacitu zpracovat omezené množství informací. Ukazatel průběhu zobrazuje, kolik kapacity využívají vaše aktuální soubory. "
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pro každý den průměrný počet tokenů na jedno volání API (počet tokenů dělený počtem volání, případně 0, pokud nedošlo k žádnému volání)."
@@ -1678,15 +1606,6 @@
       "No calls": [
         "Žádné hovory"
       ],
-      "No Content Available": [
-        "Obsah není k dispozici"
-      ],
-      "No data rows found": [
-        "Nebyly nalezeny žádné řádky dat"
-      ],
-      "No data rows found in this file.": [
-        "V tomto souboru nebyly nalezeny žádné řádky dat."
-      ],
       "No files available": [
         "Žádné soubory nejsou k dispozici"
       ],
@@ -1698,12 +1617,6 @@
       ],
       "No usage yet": [
         "Zatím nebylo použito"
-      ],
-      "Note:": [
-        "Poznámka:"
-      ],
-      "of": [
-        "z"
       ],
       "Partial content": [
         "Částečný obsah"
@@ -1720,14 +1633,8 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Stisknutím ${ shiftEnterBoldText } odešlete dotaz"
       ],
-      "Preview quality - full resolution not loaded": [
-        "Kvalita náhledu – plné rozlišení nebylo načteno"
-      ],
       "Private video calls for the conversations that matter.": [
         "Soukromé videohovory pro důležité konverzace."
-      ],
-      "Processed content": [
-        "Zpracovaný obsah"
       ],
       "Processing ${ uploadProgress.fileName }": [
         "Zpracování ${ uploadProgress.fileName }"
@@ -1750,15 +1657,6 @@
       "Required on all POST requests with a JSON body.": [
         "Povinné u všech požadavků POST s tělem ve formátu JSON."
       ],
-      "Retrieved Project Knowledge": [
-        "Načteny znalosti projektu"
-      ],
-      "rows": [
-        "řádky"
-      ],
-      "rows with": [
-        "řádky s"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Uložte si všechny své konverzace do historie konverzací, kterou vidíte pouze vy. Přihlaste se nebo si vytvořte účet."
       ],
@@ -1768,21 +1666,6 @@
       "Show all files": [
         "Zobrazit všechny soubory"
       ],
-      "Show Formatted": [
-        "Zobrazit formátované"
-      ],
-      "Show Raw": [
-        "Zobrazit nezpracované"
-      ],
-      "Show Table": [
-        "Zobrazit tabulku"
-      ],
-      "Showing": [
-        "Zobrazuji"
-      ],
-      "Showing first": [
-        "Zobrazeno první"
-      ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Přihlaste se nebo si vytvořte účet, abyste mohli procházet a přidávat soubory ze svého ${ DRIVE_APP_NAME } (koncově šifrovaného cloudového úložiště) do svých znalostí chatu."
       ],
@@ -1791,9 +1674,6 @@
       ],
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "Přihlaste se a vytvářejte pracovní postupy pomocí ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Sketch added as attachment": [
-        "Náčrt přidán jako příloha"
       ],
       "Space usage: ": [
         "Využité úložiště: "
@@ -1807,14 +1687,8 @@
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
         "API služba ${ LUMO_SHORT_APP_NAME } je k dispozici pro předplatitele služby ${ LUMO_SHORT_APP_NAME }+. Proveďte upgrade, abyste mohli vytvářet klíče API a využívat API programově."
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Při zpracování tohoto souboru došlo k chybě. Obsah nemusí být čitelný nebo formát souboru nemusí být plně podporován."
-      ],
       "These files won't be used for future questions.": [
         "Tyto soubory nebudou použity pro budoucí otázky."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Tento soubor se zdá být prázdný nebo neobsahuje žádný extrahovatelný textový obsah."
       ],
       "This folder is empty": [
         "Tato složka je prázdná"
@@ -1834,12 +1708,6 @@
       "Trying...": [
         "Zkouším..."
       ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Nepodařilo se analyzovat tento soubor jako tabulku. Můžete místo toho zobrazit nezpracovaný obsah."
-      ],
-      "Unsupported File Type": [
-        "Nepodporovaný typ souboru"
-      ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Nahrávání \"${ file.name }\" do ${ DRIVE_APP_NAME }..."
       ],
@@ -1857,9 +1725,6 @@
       ],
       "You are about to visit an external website:": [
         "Chystáte se navštívit externí webovou stránku:"
-      ],
-      "Your information is zero-access encrypted": [
-        "Vaše informace jsou šifrovány s nulovým přístupem"
       ]
     },
     "collider_2025: Job": {
@@ -2403,9 +2268,6 @@
       ]
     },
     "collider_2025: Upsell": {
-      "Create free account": [
-        "Vytvořit bezplatný účet"
-      ],
       "Upgrade": [
         "Navýšit"
       ],
@@ -2614,12 +2476,6 @@
       "Close sidebar": [
         "Zavřít postranní panel"
       ],
-      "Collapse projects": [
-        "Sbalit projekty"
-      ],
-      "Create a free account": [
-        "Vytvořit bezplatný účet"
-      ],
       "Create project": [
         "Vytvořit projekt"
       ],
@@ -2631,9 +2487,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ],
-      "Expand projects": [
-        "Rozbalit projekty"
       ],
       "Favorite": [
         "Oblíbené"
@@ -2682,9 +2535,6 @@
       ],
       "Show sidebar": [
         "Zobrazit postranní panel"
-      ],
-      "Sign in": [
-        "Přihlásit se"
       ],
       "Unfavorite": [
         "Odebrat z oblíbených"
@@ -2877,9 +2727,6 @@
     "collider_2025:Label": {
       "chats": [
         "chaty"
-      ],
-      "Current folder:": [
-        "Aktuální složka:"
       ],
       "Edit conversation title": [
         "Upravit název konverzace"
@@ -3231,9 +3078,6 @@
       ],
       "Today": [
         "Dnes"
-      ],
-      "Whatever you ask me is:": [
-        "Na cokoli se mě zeptáte je:"
       ]
     },
     "collider_2025:Tooltip": {
@@ -4348,14 +4192,23 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
+      "Email is not valid": [
+        "E-mailová adresa není platná"
+      ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
+      ],
+      "Incorrect username": [
+        "Nesprávné uživatelské jméno"
       ],
       "Invalid ${ name } code": [
         "Neplatný kód ${ name }"
@@ -4384,8 +4237,14 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "Not a valid number": [
+        "Neplatné číslo"
+      ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
       ],
       "Payment process canceled": [
         "Platba byla zrušena"
@@ -4447,11 +4306,17 @@
       "The amount due has changed. Please try again.": [
         "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
+      "The email addresses do not match": [
+        "E-mailové adresy se neshodují"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "Minimální výše daru je ${ price }"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
       ],
       "This field is invalid": [
         "Toto pole je neplatné"
@@ -4459,11 +4324,23 @@
       "This field is required": [
         "Toto pole je povinné"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
+      ],
+      "Username must begin with a letter or digit": [
+        "Uživatelské jméno musí začínat písmenem nebo číslicí"
+      ],
+      "Username must end with a letter or digit": [
+        "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
       "Wrong billing address": [
         "Nesprávná fakturační adresa"
@@ -5697,9 +5574,6 @@
       ],
       "Render time": [
         "Doba vykreslení"
-      ],
-      "Search Index Debug": [
-        "Ladění indexu vyhledávání"
       ],
       "Smoothing (Spring-Mass)": [
         "Vyhlazování (pružina-hmota)"
@@ -8186,9 +8060,6 @@
       "Reverse charge not supported": [
         "Funkce přenesení daňové povinnosti není podporována"
       ],
-      "Search Index Debug": [
-        "Ladění indexu vyhledávání"
-      ],
       "Select a plan": [
         "Vyberte tarif"
       ],
@@ -8278,6 +8149,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "VPN Plan Feature": {
@@ -8383,9 +8268,6 @@
       ]
     },
     "Warning": {
-      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
-        "Nalezeno ${ orphanedDocCount } dokumentů (${ orphanedChunkCount } segmentů) odkazujících na ${ orphanedSpaceIds.length } chybějícího prostoru."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
