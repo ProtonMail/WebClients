@@ -4232,8 +4232,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importaremos sus correos electrónicos antiguos y conectaremos su Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Estamos importando su correo electrónico de Gmail. Le avisaremos cuando finalicemos."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Estamos importando sus últimos 180 días de correo electrónico desde Gmail. Le avisaremos cuando finalicemos."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
@@ -9433,9 +9433,6 @@
       "Cash": [
         "Efectivo"
       ],
-      "Categories badge": [
-        "Distintivo de las categorías"
-      ],
       "Category": [
         "Categoría"
       ],
@@ -9633,12 +9630,6 @@
       ],
       "Has attachments": [
         "Contiene adjuntos"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Ayúdenos a mejorar las categorías eligiendo la que mejor se adapte a este correo electrónico. ¡Gracias por su ayuda!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Ayúdenos a mejorar la próxima categorización de correo"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -9970,9 +9961,6 @@
       "Tell us more about your experience": [
         "Cuéntenos más sobre su experiencia."
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Se actualizó la categoría. ¡Gracias por sus comentarios!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "El filtro está desactivado. ${ enableButton }"
       ],
@@ -10039,17 +10027,8 @@
       "Weak password": [
         "Contraseña poco segura"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Estamos mejorando cómo se clasifican los correos electrónicos. Sus comentarios ayudarán a que sea más eficiente y preciso."
-      ],
       "What happened?": [
         "¿Qué ha ocurrido?"
-      ],
-      "Which category should this be recategorized under?": [
-        "¿En qué categoría debería reasignarse esto?"
-      ],
-      "Why am I seeing this?": [
-        "¿Por qué veo esto?"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -16036,9 +16015,6 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
-      ],
-      "✨ Categories are coming!": [
-        "✨ ¡Llegan las categorías!"
       ]
     },
     "Today icon tooltip in mini calendar": {
