@@ -316,6 +316,9 @@
       "Connected": [
         "Yhdistetty"
       ],
+      "Contact sales": [
+        "Ota yhteyttä myyntiin"
+      ],
       "Contact support": [
         "Ota yhteyttä asiakaspalveluun"
       ],
@@ -441,6 +444,9 @@
       ],
       "Delete account": [
         "Poista tili"
+      ],
+      "Delete and confirm": [
+        "Poista ja vahvista"
       ],
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
@@ -4492,8 +4498,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Olemme aloittaneet viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun se on valmis."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet viimeisten 180 päivän viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun tuonti on valmis."
       ],
       "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
@@ -7996,6 +8002,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ phoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } lähettää vahvistuskoodin palautusnumeroosi. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
@@ -8019,6 +8028,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% alennus"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } ei enää säilytä tiedostojesi aiempia versioita."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } on virheellinen"
@@ -9083,6 +9095,9 @@
       ],
       "for ${ price }": [
         "hintaan ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10 vuoden versiohistoriaa varten ota yhteyttä myyntiimme."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Saadaksesi helpon pääsyn sähköpostiisi ja optimoidun kokemuksen mobiililaitteille, lataa ${ androidAppLink } tai ${ iosAppLink }."
@@ -10387,6 +10402,12 @@
       "This will allow the TV to access your ${ BRAND_NAME } account.": [
         "Tämän avulla televisio pääsee käyttämään ${ BRAND_NAME } -tiliäsi."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Tämä poistaa tiedostojesi kaikki aiemmat versiot, jotka ovat vanhempia kuin ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Tämä estää pääsyn käyttäjältä **${ email }**. Haluatko varmasti jatkaa?"
       ],
@@ -10567,6 +10588,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
       ],
+      "Upgrade to unlock": [
+        "Päivitä avataksesi"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Päivitä avataksesi ${ monitorLink }."
       ],
@@ -10656,6 +10680,9 @@
       ],
       "Version ${ version }": [
         "Versio ${ version }"
+      ],
+      "Version history": [
+        "Versiohistoria"
       ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
@@ -12137,6 +12164,9 @@
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
+      ],
+      "Don't keep versions": [
+        "Älä säilytä versioita"
       ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
@@ -18356,6 +18386,11 @@
         "Salasanan nollauspyyntö"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "Ota Kuvat-osio käyttöön"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Pidä postilaatikkosi järjestyksessä kansioiden ja tunnisteiden avulla. ${ learnMoreLink }"
@@ -21020,6 +21055,9 @@
       ],
       "Delete user?": [
         "Poistetaanko käyttäjä?"
+      ],
+      "Delete version history?": [
+        "Poistetaanko versiohistoria?"
       ],
       "Deny access to user?": [
         "Kielletäänkö käyttäjän käyttöoikeus?"

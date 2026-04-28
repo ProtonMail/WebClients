@@ -4232,8 +4232,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Hem començat a importar els vostres correus de Gmail. Us avisarem en acabar."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics dels darrers 180 dies des de Gmail. Us avisarem quan hagi acabat."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
@@ -9433,9 +9433,6 @@
       "Cash": [
         "Efectiu"
       ],
-      "Categories badge": [
-        "Insígnia de categories"
-      ],
       "Category": [
         "Categoria"
       ],
@@ -9633,12 +9630,6 @@
       ],
       "Has attachments": [
         "Té adjunts"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Ajudeu-nos a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la vostra col·laboració!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Ajudeu-nos a millorar la pròxima categorització del correu"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -9970,9 +9961,6 @@
       "Tell us more about your experience": [
         "Expliqueu-nos més sobre la vostra experiència"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "La categoria s'ha actualitzat, gràcies pels vostres comentaris!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "El filtre està desactivat. ${ enableButton }"
       ],
@@ -10039,17 +10027,8 @@
       "Weak password": [
         "Contrasenya feble."
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Estem millorant com es categoritzen els correus electrònics. Els vostres comentaris ajuden a fer-ho més intel·ligent i precís."
-      ],
       "What happened?": [
         "Què ha passat?"
-      ],
-      "Which category should this be recategorized under?": [
-        "En quina categoria s'hauria de recategoritzar?"
-      ],
-      "Why am I seeing this?": [
-        "Per què veig això?"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -15940,9 +15919,6 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
-      ],
-      "✨ Categories are coming!": [
-        "✨ Arriben les categories!"
       ]
     },
     "Today icon tooltip in mini calendar": {

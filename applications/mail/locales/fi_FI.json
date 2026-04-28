@@ -4160,8 +4160,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Olemme aloittaneet viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun se on valmis."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet viimeisten 180 päivän viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun tuonti on valmis."
       ],
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
@@ -9296,9 +9296,6 @@
       "Cash": [
         "Käteinen"
       ],
-      "Categories badge": [
-        "Luokat-merkki"
-      ],
       "Category": [
         "Aihe"
       ],
@@ -9493,12 +9490,6 @@
       ],
       "Has attachments": [
         "Sisältää liitteitä"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Auta meitä parantamaan luokkia valitsemalla se, joka sopii parhaiten tälle sähköpostille. Kiitos avustasi!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Auttakaa meitä parantamaan tulevaa sähköpostien luokittelua"
       ],
       "Hide password": [
         "Piilota salasana"
@@ -9821,9 +9812,6 @@
       "Tell us more about your experience": [
         "Kerro kokemuksestasi tarkemmin"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Tämä kategoria on päivitetty, kiitos palautteestasi!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "Suodatin on poistettu käytöstä. ${ enableButton }"
       ],
@@ -9890,17 +9878,8 @@
       "Weak password": [
         "Heikko salasana"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Parannamme sähköpostien luokittelua. Palautteesi auttaa tekemään siitä älykkäämmän ja tarkemman."
-      ],
       "What happened?": [
         "Mitä tapahtui?"
-      ],
-      "Which category should this be recategorized under?": [
-        "Mihin luokkaan tämä tulisi lajitella?"
-      ],
-      "Why am I seeing this?": [
-        "Miksi näen tämän?"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -15709,9 +15688,6 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
-      ],
-      "✨ Categories are coming!": [
-        "✨ Luokat ovat tulossa!"
       ]
     },
     "Today icon tooltip in mini calendar": {

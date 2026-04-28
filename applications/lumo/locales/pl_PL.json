@@ -759,9 +759,6 @@
       "Disable ghost mode": [
         "Wyłącz tryb znikania"
       ],
-      "Dismiss": [
-        "Odrzuć"
-      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Zdobądź ${ LUMO_SHORT_APP_NAME } Plus już od ${ price }"
       ],
@@ -797,20 +794,11 @@
       "Close": [
         "Zamknij"
       ],
-      "Learn more": [
-        "Dowiedz się więcej"
-      ],
       "Open Link": [
         "Otwórz link"
       ],
       "Retry": [
         "Spróbuj ponownie"
-      ],
-      "Upload": [
-        "Prześlij"
-      ],
-      "Web search": [
-        "Wyszukaj w Internecie"
       ]
     },
     "collider_2025: Characteristic": {
@@ -823,20 +811,11 @@
       "Multiple large uploads": [
         "Wiele dużych przesyłanych plików"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Nawet ${ BRAND_NAME } nie ma dostępu do naszej historii czatów."
-      ],
-      "Our conversations are never used for training.": [
-        "Nasze wątki nigdy nie są wykorzystywane do trenowania."
-      ],
       "Priority access": [
         "Priorytetowy dostęp"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Dzięki szyfrowaniu po stronie klienta Twoje zapisane wątki mogą być dekodowane i odczytywane tylko na Twoim urządzeniu. Ani ${ BRAND_NAME }, ani nikt inny nie może ich zobaczyć."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "W przeciwieństwie do innych asystentów nie nagrywam naszych wątków."
       ],
       "Unlimited daily chats": [
         "Nieograniczone codzienne czaty"
@@ -852,17 +831,8 @@
       "Only you have access": [
         "Tylko Ty masz dostęp"
       ],
-      "Private": [
-        "Prywatne"
-      ],
-      "Safeguarded": [
-        "Chronione"
-      ],
       "Tech that you can trust": [
         "Technologia, której możesz zaufać"
-      ],
-      "Treated with respect": [
-        "Traktowane z szacunkiem"
       ],
       "Your chats are yours alone": [
         "Twoje czaty należą tylko do Ciebie"
@@ -976,20 +946,8 @@
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Zachowaj ostrożność w przypadku nieznanych domen lub nadmiernej liczby subdomen"
       ],
-      "characters": [
-        "znaki"
-      ],
       "Check this is the site you expect to visit": [
         "Sprawdź, czy to jest strona, którą zamierzasz odwiedzić"
-      ],
-      "Close": [
-        "Zamknij"
-      ],
-      "columns": [
-        "kolumn(y)"
-      ],
-      "columns found, no data rows": [
-        "znaleziono kolumny, brak wierszy danych"
       ],
       "Domain name": [
         "Nazwa domeny"
@@ -997,20 +955,11 @@
       "Drag and drop your files here to add them to the chat.": [
         "Przeciągnij i upuść swoje pliki tutaj, aby dodać je do czatu."
       ],
-      "Error Parsing Table": [
-        "Błąd analizowania tabeli"
-      ],
       "Error processing attachment": [
         "Błąd przetwarzania załącznika"
       ],
-      "Error Processing File": [
-        "Błąd przetwarzania pliku"
-      ],
       "files": [
         "pliki"
-      ],
-      "files are not currently supported for content extraction.": [
-        "pliki nie są obecnie obsługiwane do ekstrakcji treści."
       ],
       "How to identify safe links:": [
         "Jak rozpoznać bezpieczne linki:"
@@ -1021,23 +970,8 @@
       "Manage files": [
         "Zarządzaj plikami"
       ],
-      "No Content Available": [
-        "Brak dostępnej treści"
-      ],
-      "No data rows found": [
-        "Nie znaleziono wierszy danych"
-      ],
-      "No data rows found in this file.": [
-        "Nie znaleziono wierszy danych w tym pliku."
-      ],
       "No files available": [
         "Brak dostępnych plików"
-      ],
-      "Note:": [
-        "Uwaga:"
-      ],
-      "of": [
-        "z"
       ],
       "Please share what you expected": [
         "Jakie były Twoje oczekiwania"
@@ -1047,9 +981,6 @@
       ],
       "Press ${ shiftEnterBoldText } to ask": [
         "Naciśnij ${ shiftEnterBoldText }, aby zapytać"
-      ],
-      "Processed content": [
-        "Przetworzona treść"
       ],
       "Processing ${ uploadProgress.fileName }": [
         "Przetwarzanie ${ uploadProgress.fileName }"
@@ -1063,12 +994,6 @@
       "Remove message filter": [
         "Usuń filtr wiadomości"
       ],
-      "rows": [
-        "wiersze"
-      ],
-      "rows with": [
-        "wierszy z"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Zapisz wszystkie swoje wątki w historii czatów, którą tylko Ty możesz zobaczyć. Zaloguj się lub utwórz konto."
       ],
@@ -1078,38 +1003,11 @@
       "Show all files": [
         "Pokaż wszystkie pliki"
       ],
-      "Show Formatted": [
-        "Pokaż sformatowany"
-      ],
-      "Show Raw": [
-        "Pokaż surowy"
-      ],
-      "Show Table": [
-        "Pokaż tabelę"
-      ],
-      "Showing": [
-        "Pokazuję"
-      ],
-      "Showing first": [
-        "Pokazuję pierwsze"
-      ],
       "Table view": [
         "Widok tabelaryczny"
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Wystąpił błąd podczas przetwarzania tego pliku. Treść może być nieczytelna lub format pliku może nie być w pełni obsługiwany."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Ten plik wydaje się pusty lub nie zawiera możliwej do wyodrębnienia treści tekstowej."
-      ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Aby wrócić do tego wątku później, zaloguj się lub utwórz konto."
-      ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Nie można przeanalizować tego pliku jako tabeli. Zamiast tego możesz wyświetlić surową zawartość."
-      ],
-      "Unsupported File Type": [
-        "Nieobsługiwany typ pliku"
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Przesyłanie ${ uploadProgress.fileName }"
@@ -1229,11 +1127,6 @@
         "Wypróbuj ${ MAIL_APP_NAME }"
       ]
     },
-    "collider_2025: Upsell": {
-      "Create free account": [
-        "Utwórz darmowe konto"
-      ]
-    },
     "collider_2025: Upsell Title": {
       "Get": [
         "Zdobądź"
@@ -1305,9 +1198,6 @@
       ],
       "Settings": [
         "Ustawienia"
-      ],
-      "Sign in": [
-        "Zaloguj się"
       ],
       "Unfavorite": [
         "Usuń z ulubionych"
@@ -1405,9 +1295,6 @@
       ],
       "Today": [
         "Dzisiaj"
-      ],
-      "Whatever you ask me is:": [
-        "Wszystko, o co mnie zapytasz, jest:"
       ]
     },
     "color": {
@@ -2472,11 +2359,20 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
+      "Email is not valid": [
+        "Adres e-mail nie jest prawidłowy"
+      ],
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Invalid ${ name } code": [
         "Kod ${ name } jest nieprawidłowy"
@@ -2499,8 +2395,14 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Not a valid number": [
+        "Numer telefonu nie jest prawidłowy"
+      ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
       ],
       "Payment process canceled": [
         "Przetwarzanie płatności zostało anulowane"
@@ -2556,17 +2458,35 @@
       "The amount due has changed. Please try again.": [
         "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
+      "The email addresses do not match": [
+        "Adresy e-mail nie pasują do siebie"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Pole musi zawierać co najmniej ${ minimumLength } znaków."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
+      ],
+      "Username must begin with a letter or digit": [
+        "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
+      ],
+      "Username must end with a letter or digit": [
+        "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Zaszyfrowana nazwa"
@@ -5716,6 +5636,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "VPN Plan Feature": {

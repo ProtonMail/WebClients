@@ -4232,8 +4232,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki son 180 günlük e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -9433,9 +9433,6 @@
       "Cash": [
         "Nakit"
       ],
-      "Categories badge": [
-        "Kategoriler etiketi"
-      ],
       "Category": [
         "Kategori"
       ],
@@ -9633,12 +9630,6 @@
       ],
       "Has attachments": [
         "Ek dosyaları olan"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Yakında kullanılacak e-posta kategorilere ayırma özelliğini geliştirmemize yardımcı olun."
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -9970,9 +9961,6 @@
       "Tell us more about your experience": [
         "Bize deneyiminiz ile ilgili bilgi verin"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "Süzgeç kapalı. ${ enableButton }"
       ],
@@ -10039,17 +10027,8 @@
       "Weak password": [
         "Zayıf parola"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "E-postaların kategorilere ayrılma şeklini geliştiriyoruz. Geri bildiriminiz, bunu daha akıllı ve daha doğru yapmamıza yardımcı olacak."
-      ],
       "What happened?": [
         "Ne oldu?"
-      ],
-      "Which category should this be recategorized under?": [
-        "Bu e-posta hangi kategori altına taşınmalı?"
-      ],
-      "Why am I seeing this?": [
-        "Bunu neden görüyorsunuz?"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -16036,9 +16015,6 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
-      ],
-      "✨ Categories are coming!": [
-        "✨ Kategoriler özelliği geliyor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
