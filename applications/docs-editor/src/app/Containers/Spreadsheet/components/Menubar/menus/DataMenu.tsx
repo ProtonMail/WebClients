@@ -28,6 +28,7 @@ export function DataMenu({ renderMenuButton, ...props }: DataMenuProps) {
 }
 
 function SortSubmenu() {
+  const hasHeaderRow = useUI((ui) => ui.data.hasHeaderRow)
   return (
     <Ariakit.MenuProvider>
       {/* TODO: icon needs to be list-alphabetically-arrow-down but it's not yet in the icon set */}
@@ -49,6 +50,15 @@ function SortSubmenu() {
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
           {s('Sort sheet by')} <b>{columnString(useUI((ui) => ui.info.activeColumnName))}</b> {s('(Z to A)')}
+        </UI.MenuItem>
+        <UI.MenuSeparator />
+        <UI.MenuItem
+          leadingIndent
+          selectedIndicator={hasHeaderRow}
+          onClick={useUI.$.data.toggleHeaderRow}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Data has header row')}
         </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
@@ -119,5 +129,6 @@ function strings() {
     'Protect range': c('sheets_2025:Spreadsheet editor menubar data menu').t`Protect range`,
     'Unlock range': c('sheets_2025:Spreadsheet editor menubar data menu').t`Unlock range`,
     'Data validation': c('sheets_2025:Spreadsheet editor menubar data menu').t`Data validation`,
+    'Data has header row': c('sheets_2025:Spreadsheet editor menubar data menu (sort submenu)').t`Data has header row`,
   }
 }

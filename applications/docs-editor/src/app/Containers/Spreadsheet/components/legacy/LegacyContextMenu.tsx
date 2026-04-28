@@ -177,6 +177,8 @@ export function LegacyContextMenu({
   enableMagicFill,
 }: LegacyContextMenuProps) {
   const insertLink = useUI.$.insert.link
+  const sortAscending = useUI.$.withFocusGrid(useUI.$.data.sortAscending)
+  const sortDescending = useUI.$.withFocusGrid(useUI.$.data.sortDescending)
   const isHeader = isColumnHeader || isRowHeader
   const shouldFocusSheetRef = useRef(true)
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
@@ -469,7 +471,7 @@ export function LegacyContextMenu({
             <DropdownMenuSeparator />
 
             <DropdownMenuItem
-              onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'ASCENDING')}
+              onClick={sortAscending}
               disabled={readonly}
             >
               <DropdownLeftSlot className="text-base leading-4">
@@ -478,7 +480,7 @@ export function LegacyContextMenu({
               {s('Sort sheet A to Z')}
             </DropdownMenuItem>
             <DropdownMenuItem
-              onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'DESCENDING')}
+              onClick={sortDescending}
               disabled={readonly}
             >
               <DropdownLeftSlot className="text-base leading-4">

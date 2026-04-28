@@ -27,6 +27,7 @@ import { sortSheetsByIndex, type ProtonSheetsState } from './state'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
+import { makeSortRangeExcludingHeader } from './sort-utils'
 import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 import { useApplication } from '../ApplicationProvider'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -623,14 +624,32 @@ export function useProtonSheetsUIState(
     () => isProtectedRangeFn(state.activeSheetId, defaultSelection.range, state.protectedRanges),
     [defaultSelection.range, state.activeSheetId, state.protectedRanges],
   )
+  const [hasHeaderRow, setHasHeaderRow] = useState(false)
+
   const data = {
     sortAscending: useEvent(() => {
       logger.info('action: sort column ascending', state.activeSheetId, state.activeCell.columnIndex)
-      state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')
+      if (hasHeaderRow) {
+        state.onSortRange?.(
+          state.activeSheetId,
+          [{ range: makeSortRangeExcludingHeader(state.rowCount, state.columnCount) }],
+          'ASCENDING',
+        )
+      } else {
+        state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')
+      }
     }),
     sortDescending: useEvent(() => {
       logger.info('action: sort column descending', state.activeSheetId, state.activeCell.columnIndex)
-      state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')
+      if (hasHeaderRow) {
+        state.onSortRange?.(
+          state.activeSheetId,
+          [{ range: makeSortRangeExcludingHeader(state.rowCount, state.columnCount) }],
+          'DESCENDING',
+        )
+      } else {
+        state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')
+      }
     }),
     toggleFilter: useEvent(() => {
       logger.info('action: toggle filter', state.activeSheetId, state.activeCell)
@@ -654,6 +673,11 @@ export function useProtonSheetsUIState(
         state.onRequestDataValidation(state.activeSheetId, state.activeCell, state.selections)
       }),
     },
+    hasHeaderRow,
+    toggleHeaderRow: useEvent(() => {
+      logger.info('action: toggle header row', !hasHeaderRow)
+      setHasHeaderRow((v: boolean) => !v)
+    }),
   }
 
   return {
