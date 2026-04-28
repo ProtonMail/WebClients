@@ -10,10 +10,11 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { resetFilterAndSort, setFilterInUrl, setSortInUrl } from 'proton-mail/helpers/mailboxUrl';
-import { selectFilter, selectSort } from 'proton-mail/store/elements/elementsSelectors';
+import { selectFilter, selectLabelID, selectSort } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getActiveState } from './filterListHelpers';
@@ -46,6 +47,7 @@ const DropdownSortOption = ({ onClick, isActive, iconName, label, testID }: Drop
 export const FilterList = () => {
     const history = useHistory();
 
+    const labelID = useMailSelector(selectLabelID);
     const sort = useMailSelector(selectSort);
     const filter = useMailSelector(selectFilter);
 
@@ -67,6 +69,7 @@ export const FilterList = () => {
     };
 
     const active = getActiveState(filter, sort);
+    const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     return (
         <div className="flex flex-nowrap gap-1">
             {active.showReset && (
@@ -143,7 +146,7 @@ export const FilterList = () => {
                             sendNewestFirstReport();
                         }}
                         isActive={active.isNewestFirstActive}
-                        iconName="list-arrow-down"
+                        iconName={isScheduledLabel ? 'list-arrow-up' : 'list-arrow-down'}
                         testID="toolbar:sort-new-to-old"
                         label={c('Sort option').t`Newest first`}
                     />
@@ -154,7 +157,7 @@ export const FilterList = () => {
                             sendOldestFirstReport();
                         }}
                         isActive={active.isOldestFirstActive}
-                        iconName="list-arrow-up"
+                        iconName={isScheduledLabel ? 'list-arrow-down' : 'list-arrow-up'}
                         testID="toolbar:sort-old-to-new"
                         label={c('Sort option').t`Oldest first`}
                     />
