@@ -24,11 +24,16 @@ interface DropdownSortOptionProps {
     isActive: boolean;
     iconName: IconName;
     label: string;
+    testID: string;
 }
 
-const DropdownSortOption = ({ onClick, isActive, iconName, label }: DropdownSortOptionProps) => {
+const DropdownSortOption = ({ onClick, isActive, iconName, label, testID }: DropdownSortOptionProps) => {
     return (
-        <DropdownMenuButton onClick={onClick} className="flex items-center w-full justify-space-between">
+        <DropdownMenuButton
+            onClick={onClick}
+            className="flex items-center w-full justify-space-between"
+            data-testid={testID}
+        >
             <span className="flex items-center gap-2">
                 <Icon name={iconName} title={label} />
                 {label}
@@ -75,6 +80,7 @@ export const FilterList = () => {
                     handleFilter({ Unread: 1 });
                     sendUnreadReport();
                 }}
+                data-testid="filter-dropdown:show-unread"
             >
                 {c('Filter').t`Unread`}
             </Button>
@@ -107,6 +113,7 @@ export const FilterList = () => {
                             sendReadReport();
                         }}
                         className="text-left"
+                        data-testid="filter-dropdown:show-read"
                     >
                         <span className="flex items-center justify-space-between w-full">
                             {c('Filter').t`Read`}
@@ -119,6 +126,7 @@ export const FilterList = () => {
                             sendFileReport();
                         }}
                         className="text-left"
+                        data-testid="filter-dropdown:has-file"
                     >
                         <span className="flex items-center justify-space-between w-full">
                             {c('Filter').t`Has attachments`}
@@ -136,6 +144,7 @@ export const FilterList = () => {
                         }}
                         isActive={active.isNewestFirstActive}
                         iconName="list-arrow-down"
+                        testID="toolbar:sort-new-to-old"
                         label={c('Sort option').t`Newest first`}
                     />
 
@@ -146,6 +155,7 @@ export const FilterList = () => {
                         }}
                         isActive={active.isOldestFirstActive}
                         iconName="list-arrow-up"
+                        testID="toolbar:sort-old-to-new"
                         label={c('Sort option').t`Oldest first`}
                     />
 
@@ -156,6 +166,7 @@ export const FilterList = () => {
                         }}
                         isActive={active.isLargestFirstActive}
                         iconName="size-arrow-down"
+                        testID="toolbar:sort-desc"
                         label={c('Sort option').t`Largest first`}
                     />
 
@@ -166,6 +177,7 @@ export const FilterList = () => {
                         }}
                         isActive={active.isSmallestFirstActive}
                         iconName="size-arrow-up"
+                        testID="toolbar:sort-asc"
                         label={c('Sort option').t`Smallest first`}
                     />
                 </DropdownMenu>
