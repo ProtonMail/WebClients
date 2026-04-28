@@ -128,7 +128,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             devTools: Boolean(process.env.PASS_DEBUG) || !isProdEnv(),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
         },
-        ...(isMac ? { titleBarStyle: 'hidden', frame: false } : { titleBarStyle: 'default' }),
+        ...(isMac() ? { titleBarStyle: 'hidden', frame: false } : { titleBarStyle: 'default' }),
         trafficLightPosition: {
             x: 20,
             y: 18,
@@ -144,7 +144,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     registerWindowManagementHandlers(ctx.window);
 
     ctx.window.on('show', () => {
-        if (isMac) void app.dock?.show();
+        if (isMac()) void app.dock?.show();
     });
 
     ctx.window.on('close', (e) => {
@@ -152,7 +152,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             e.preventDefault();
             ctx.window?.hide();
             onHideWindow(() => ctx.window);
-            if (isMac) app.dock?.hide();
+            if (isMac()) app.dock?.hide();
         }
     });
 
@@ -318,8 +318,8 @@ updateElectronApp(ctx.session);
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
-app.addListener('window-all-closed', () => !isMac && app.quit());
-app.addListener('will-finish-launching', () => isWindows && app.setAppUserModelId(WINDOWS_APP_ID));
+app.addListener('window-all-closed', () => !isMac() && app.quit());
+app.addListener('will-finish-launching', () => isWindows() && app.setAppUserModelId(WINDOWS_APP_ID));
 
 // Call cleanup functions when quitting
 app.addListener('will-quit', async (event) => {
