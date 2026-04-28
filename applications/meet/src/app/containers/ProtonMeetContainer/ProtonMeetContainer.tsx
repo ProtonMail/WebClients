@@ -1,7 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { type App, type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import {
+    type App,
+    type GroupKeyInfo,
+    JoinTypeInfo,
+    MeetCoreErrorEnum,
+    MlsSyncStateInfo,
+    RejoinReasonInfo,
+} from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -326,7 +333,13 @@ export const ProtonMeetContainer = ({
         expirationTime: null as number | null,
     });
 
-    const [connectionLost, setConnectionLost] = useState(false);
+    const [isReconnecting, setIsReconnecting] = useState(false);
+    const [reconnectionFailed, setReconnectionFailed] = useState(false);
+    const [mlsRetrying, setMlsRetrying] = useState(false);
+    const isReconnectingRef = useRef(false);
+    const websocketUrlRef = useRef<string | null>(null);
+    // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
+    const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
     const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
     const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
     const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
@@ -354,7 +367,7 @@ export const ProtonMeetContainer = ({
         pictureInPictureWarmup,
         pipCleanup,
     } = usePictureInPicture({
-        isDisconnected: connectionLost,
+        isDisconnected: isReconnecting || reconnectionFailed,
         participantDecryptedNameMap,
     });
 
@@ -401,7 +414,7 @@ export const ProtonMeetContainer = ({
     const { allowHealthCheck, disallowHealthCheck } = useConnectionHealthCheck({
         wasmApp,
         mlsGroupStateRef,
-        setConnectionLost,
+        onMlsFailed: () => triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch),
     });
 
     useSafariWebsocketVisibilityHandler({
@@ -541,7 +554,20 @@ export const ProtonMeetContainer = ({
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
 
-            setupWasmDependencies({ getGroupKeyInfo, onNewGroupKeyInfo });
+            setupWasmDependencies({
+                getGroupKeyInfo,
+                onNewGroupKeyInfo,
+                onMlsSyncStateChanged: (state: number) => {
+                    if (state === MlsSyncStateInfo.Retrying) {
+                        setMlsRetrying(true);
+                    } else if (state === MlsSyncStateInfo.Failed) {
+                        setMlsRetrying(false);
+                        triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch);
+                    } else if (state === MlsSyncStateInfo.Success) {
+                        setMlsRetrying(false);
+                    }
+                },
+            });
             setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged: updateAdminParticipant });
         }
 
@@ -588,6 +614,7 @@ export const ProtonMeetContainer = ({
 
             await wasmApp.setMlsGroupUpdateHandler();
             await wasmApp.setLiveKitAdminChangeHandler();
+            await wasmApp.setMlsSyncStateUpdateHandler();
 
             const groupKeyData = await wasmApp.getGroupKey();
 
@@ -626,14 +653,150 @@ export const ProtonMeetContainer = ({
         accessTokenRef.current = accessToken;
     };
 
-    // Log connection lost when connectionLost state changes to true
+    const performFullReconnection = useCallback(
+        async (reason: RejoinReasonInfo) => {
+            if (isReconnectingRef.current || !wasmApp || !meetingLinkNameRef.current) {
+                return;
+            }
+            isReconnectingRef.current = true;
+            const reconnectionStartTimeMs = BigInt(Date.now());
+
+            setIsReconnecting(true);
+            setReconnectionFailed(false);
+            setMlsRetrying(false);
+            disallowHealthCheck();
+
+            const meetingToken = meetingLinkNameRef.current;
+            const meetingPassword = meetingDetails.meetingPassword as string;
+
+            try {
+                // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
+                const wasMlsActive = mlsSetupDone.current;
+
+                try {
+                    await room.disconnect();
+                } catch {
+                    // best effort
+                }
+
+                // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
+                // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
+                if (wasMlsActive) {
+                    try {
+                        await wasmApp.leaveMeeting();
+                    } catch {
+                        // best effort
+                    }
+                    mlsSetupDone.current = false;
+                }
+
+                // Cleanup key rotation state
+                cleanupWasmDependencies();
+                if (isMeetSeamlessKeyRotationEnabled) {
+                    keyRotationScheduler.clean();
+                } else {
+                    keyProvider.cleanCurrent();
+                }
+                lastEpochRef.current = null;
+
+                const sanitizedDisplayName = sanitizeMessage(displayName);
+                const encryptedDisplayName = decryptionKeyRef.current
+                    ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
+                    : '';
+
+                const newDetails = await getAccessDetails({
+                    displayName: sanitizedDisplayName,
+                    token: meetingToken,
+                    encryptedDisplayName,
+                });
+
+                websocketUrlRef.current = newDetails.websocketUrl;
+                accessTokenRef.current = newDetails.accessToken;
+                const websocketUrl = newDetails.websocketUrl;
+                const accessToken = newDetails.accessToken;
+
+                // Reset MLS state for a fresh join attempt
+                mlsSetupDone.current = false;
+
+                const groupKeyData = await handleMlsSetup(meetingToken, accessToken, meetingPassword);
+                if (!groupKeyData) {
+                    throw new Error('MLS setup did not return key data');
+                }
+
+                // Mirror handleJoin: set the new key in keyProvider before enabling E2EE
+                if (isMeetSeamlessKeyRotationEnabled) {
+                    await keyRotationScheduler.schedule(groupKeyData.key, groupKeyData.epoch);
+                } else {
+                    await keyProvider.setKeyWithEpoch(groupKeyData.key, groupKeyData.epoch);
+                }
+
+                await room.setE2EEEnabled(true);
+                await connectWithStunFallbackToTurnRelay(room, websocketUrl, accessToken, 20_000);
+
+                // Restore meeting state
+                meetingLinkNameRef.current = meetingToken;
+                setJoinedRoom(true);
+                await initializeDevices(5_000);
+                await getParticipants(meetingToken);
+
+                setIsReconnecting(false);
+                isReconnectingRef.current = false;
+                allowHealthCheck();
+
+                if (isMeetClientMetricsLogEnabled) {
+                    const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
+                    await wasmApp
+                        .logUserRejoin(rejoinTimeMs, 1, reason, true)
+                        .catch((err: unknown) =>
+                            reportMeetError('Failed to log reconnection success', withMeetingLinkNameTag(err))
+                        );
+                }
+            } catch (error) {
+                reportMeetError('Full reconnection failed', withMeetingLinkNameTag(error));
+
+                setIsReconnecting(false);
+                isReconnectingRef.current = false;
+                setReconnectionFailed(true);
+                // Clear stored credentials so the next attempt (manual rejoin) fetches fresh ones
+                accessTokenRef.current = null;
+                websocketUrlRef.current = null;
+
+                if (isMeetClientMetricsLogEnabled) {
+                    const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
+                    await wasmApp
+                        .logUserRejoin(rejoinTimeMs, 1, reason, false)
+                        .catch((err: unknown) =>
+                            reportMeetError('Failed to log reconnection failure', withMeetingLinkNameTag(err))
+                        );
+                }
+            }
+        },
+        [
+            wasmApp,
+            room,
+            meetingDetails.meetingPassword,
+            displayName,
+            getAccessDetails,
+            handleMlsSetup,
+            connectWithStunFallbackToTurnRelay,
+            allowHealthCheck,
+            disallowHealthCheck,
+            initializeDevices,
+            getParticipants,
+            isMeetSeamlessKeyRotationEnabled,
+            isMeetClientMetricsLogEnabled,
+            keyRotationScheduler,
+            keyProvider,
+            reportMeetError,
+            withMeetingLinkNameTag,
+        ]
+    );
+
+    // Keep the stable ref in sync so callbacks registered before performFullReconnection was defined
+    // (e.g. useConnectionHealthCheck's onMlsFailed) always call the latest version.
     useEffect(() => {
-        if (connectionLost && wasmApp && joinedRoom && isMeetClientMetricsLogEnabled) {
-            void wasmApp
-                .logConnectionLost()
-                .catch((error) => reportMeetError('Failed to log connection lost', withMeetingLinkNameTag(error)));
-        }
-    }, [connectionLost, wasmApp, joinedRoom]);
+        triggerFullReconnectionRef.current = performFullReconnection;
+    }, [performFullReconnection]);
 
     const submitPassword = async () => {
         try {
@@ -734,6 +897,8 @@ export const ProtonMeetContainer = ({
                 token: meetingToken,
                 encryptedDisplayName: encryptedDisplayName,
             });
+
+            websocketUrlRef.current = websocketUrl;
 
             // The backend sets ExpirationTime on the meeting once the first participant joins (i.e. right here,
             // triggered by getAccessDetails). If the cached response we fetched before getAccessDetails didn't
@@ -851,6 +1016,23 @@ export const ProtonMeetContainer = ({
             });
 
             room.on(RoomEvent.Disconnected, (reason?: DisconnectReason) => {
+                // STATE_MISMATCH is recoverable — trigger full reconnection flow
+                if (reason === DisconnectReason.STATE_MISMATCH) {
+                    // Don't call leaveMeeting here, performFullReconnection will await it
+                    disallowHealthCheck();
+                    setIsReconnecting(true);
+                    setJoinedRoom(false);
+                    setLiveKitConnectionState(null);
+                    setShowReconnectedMessage(false);
+                    liveKitConnectionStateRef.current = null;
+                    joinedRoomLoggedRef.current = false;
+                    cleanupWasmDependencies();
+                    dispatch(resetChatAndReactions());
+                    dispatch(resetUiState());
+                    triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
+                    return;
+                }
+
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
@@ -861,7 +1043,10 @@ export const ProtonMeetContainer = ({
                 liveKitConnectionStateRef.current = null;
 
                 joinedRoomLoggedRef.current = false;
-                void wasmApp?.leaveMeeting();
+                // Skip leaveMeeting when performFullReconnection is active, it will await it properly.
+                if (!isReconnectingRef.current) {
+                    void wasmApp?.leaveMeeting();
+                }
                 void stopPiP();
 
                 // Cleanup WASM polling interval to prevent MLS errors after leaving
@@ -1335,7 +1520,7 @@ export const ProtonMeetContainer = ({
                     />
                 )}
                 {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
-                {joinedRoom && room && displayName ? (
+                {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
                     <MeetContainer
                         displayName={displayName}
                         handleLeave={handleLeave}
@@ -1344,7 +1529,7 @@ export const ProtonMeetContainer = ({
                         roomName={displayRoomName as string}
                         passphrase={password}
                         handleMeetingLockToggle={handleMeetingLockToggle}
-                        isDisconnected={connectionLost}
+                        isDisconnected={isReconnecting || reconnectionFailed}
                         startPiP={startPiP}
                         stopPiP={stopPiP}
                         pictureInPictureWarmup={pictureInPictureWarmup}
@@ -1364,6 +1549,9 @@ export const ProtonMeetContainer = ({
                         showReconnectedMessage={showReconnectedMessage}
                         setShowReconnectedMessage={setShowReconnectedMessage}
                         setLiveKitConnectionState={setLiveKitConnectionState}
+                        isReconnecting={isReconnecting}
+                        mlsRetrying={mlsRetrying}
+                        onSimulateReconnection={() => setReconnectionFailed(true)}
                     />
                 ) : (
                     <PrejoinContainer
@@ -1388,22 +1576,15 @@ export const ProtonMeetContainer = ({
                 {isWebRtcUnsupportedModalOpen && (
                     <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
                 )}
-                {connectionLost && (
+                {reconnectionFailed && (
                     <ConnectionLostModal
-                        onClose={() => {
-                            void wasmApp
-                                ?.triggerWebSocketReconnect()
-                                .catch((error) =>
-                                    reportMeetError(
-                                        'Failed to trigger websocket reconnect',
-                                        withMeetingLinkNameTag(error)
-                                    )
-                                );
-                            setConnectionLost(false);
+                        onRejoin={() => {
+                            setReconnectionFailed(false);
+                            void performFullReconnection(RejoinReasonInfo.Other);
                         }}
                         onLeave={() => {
+                            setReconnectionFailed(false);
                             handleUngracefulLeave();
-                            setConnectionLost(false);
                         }}
                     />
                 )}
