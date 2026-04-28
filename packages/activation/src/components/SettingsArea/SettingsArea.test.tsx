@@ -24,7 +24,7 @@ const subsections = [
         invisibleTitle: true,
     },
     {
-        text: c('Title').t`Forwardings`,
+        text: c('Title').t`Connected emails`,
         id: 'forwarding-list',
         invisibleTitle: true,
     },

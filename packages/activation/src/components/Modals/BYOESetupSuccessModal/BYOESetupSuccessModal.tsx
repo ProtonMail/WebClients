@@ -1,10 +1,9 @@
-import { useLocation } from 'react-router-dom';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useSettingsLink } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import useConfig from '@proton/components/hooks/useConfig';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
 
@@ -14,11 +13,11 @@ interface Props extends ModalProps {
 }
 
 export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, ...rest }: Props) => {
-    const location = useLocation();
     const goToSettings = useSettingsLink();
+    const { APP_NAME } = useConfig();
 
-    // If we're already in the correct settings section, no need to show the button
-    const showManageAddressesButton = !location.pathname.includes('identity-addresses');
+    // Show the go-to settings button during mail onboarding
+    const showManageAddressesButton = APP_NAME === APPS.PROTONMAIL;
 
     const connectedAddressText = <b key="connectedAddress">{connectedAddress}</b>;
 
