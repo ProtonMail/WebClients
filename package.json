@@ -26,6 +26,7 @@
     "resolutions": {
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "basic-ftp": "5.2.0",
+        "electron-windows-msix": "Swiip/electron-windows-msix#f1c1f4f46439c7d94569afdedd9561d09d4a1c54",
         "electron-winstaller": "^5.4.0",
         "immer": "^11.1.4",
         "jsdom@npm:^26.1.0": "patch:jsdom@npm%3A26.1.0#~/.yarn/patches/jsdom-npm-26.1.0-3857255f02.patch",
