@@ -23,9 +23,9 @@ const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: M
     if (!editIndex) return;
 
     const submenu = menu[editIndex].submenu as MenuItemConstructorOptions[];
-    if (isMac && macEntries) {
+    if (isMac() && macEntries) {
         menu[editIndex].submenu = [...submenu, ...macEntries];
-    } else if (!isMac && otherOsEntries) {
+    } else if (!isMac() && otherOsEntries) {
         menu[editIndex].submenu = [...submenu, ...otherOsEntries];
     }
 
@@ -65,7 +65,7 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
                 { role: 'cut' },
                 { role: 'copy' },
                 { role: 'paste' },
-                { role: 'pasteAndMatchStyle', accelerator: isMac ? 'Cmd+Shift+V' : 'Ctrl+Shift+V' },
+                { role: 'pasteAndMatchStyle', accelerator: isMac() ? 'Cmd+Shift+V' : 'Ctrl+Shift+V' },
                 { role: 'selectAll' },
             ],
         },
@@ -75,12 +75,12 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
             submenu: [
                 {
                     label: c('App menu').t`Reload`,
-                    accelerator: isMac ? 'Cmd+R' : 'Ctrl+R',
+                    accelerator: isMac() ? 'Cmd+R' : 'Ctrl+R',
                     click: reloadGuard(mainWindow)(() => mainWindow.webContents.reload()),
                 },
                 {
                     label: c('App menu').t`Force Reload`,
-                    accelerator: isMac ? 'Cmd+Shift+R' : 'Ctrl+Shift+R',
+                    accelerator: isMac() ? 'Cmd+Shift+R' : 'Ctrl+Shift+R',
                     click: reloadGuard(mainWindow)(() => mainWindow.webContents.reloadIgnoringCache()),
                 },
                 { type: 'separator' },
@@ -98,7 +98,7 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
         },
     ];
 
-    if (isMac) {
+    if (isMac()) {
         temp.unshift({
             label: app.name,
             key: 'app',
@@ -117,7 +117,7 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
                         app.setLoginItemSettings({ openAtLogin: !app.getLoginItemSettings().openAtLogin });
                     },
                 },
-                ...(!isMAS
+                ...(!isMAS()
                     ? [
                           {
                               label: c('App menu').t`Uninstall ${PASS_APP_NAME}`,
@@ -161,7 +161,7 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
                 { type: 'separator' },
                 {
                     label: c('App menu').t`Toggle developers tools`,
-                    accelerator: isMac ? 'Cmd+Alt+I' : 'Ctrl+Shift+I',
+                    accelerator: isMac() ? 'Cmd+Alt+I' : 'Ctrl+Shift+I',
                     click: () => mainWindow.webContents.toggleDevTools(),
                 },
             ],
