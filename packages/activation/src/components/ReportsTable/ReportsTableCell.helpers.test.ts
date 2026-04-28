@@ -13,6 +13,7 @@ describe('ReportsTableCell.helpers', () => {
             const mail = getImportProductName(provider, ImportType.MAIL);
             const calendar = getImportProductName(provider, ImportType.CALENDAR);
             const contact = getImportProductName(provider, ImportType.CONTACTS);
+            const mailForwarding = getImportProductName(provider, ImportType.MAIL, true);
 
             const providerName = getImportProviderFromApiProvider(provider);
             const capitalizedProvider = capitalize(providerName);
@@ -20,6 +21,7 @@ describe('ReportsTableCell.helpers', () => {
             expect(mail).toStrictEqual(`${capitalizedProvider} Mail`);
             expect(calendar).toStrictEqual(`${capitalizedProvider} Calendar`);
             expect(contact).toStrictEqual(`${capitalizedProvider} Contacts`);
+            expect(mailForwarding).toStrictEqual(`${capitalizedProvider} Mail (forwarding only)`);
         });
     });
 
