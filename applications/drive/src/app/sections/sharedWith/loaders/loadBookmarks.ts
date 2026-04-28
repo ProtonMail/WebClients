@@ -4,11 +4,19 @@ import { getDrive } from '@proton/drive/index';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getBookmark } from '../../../utils/sdk/getBookmark';
+import { defaultSharedOnCellConfig } from '../driveExplorerCells/SharedOnCell';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const loadBookmarks = async (abortSignal: AbortSignal) => {
-    const { isLoadingBookmarks, setLoadingBookmarks, setSharedWithMeItem, cleanupStaleItems } =
-        useSharedWithMeStore.getState();
+    const {
+        isLoadingBookmarks,
+        setLoadingBookmarks,
+        setSharedWithMeItem,
+        cleanupStaleItems,
+        setSorting,
+        sortField,
+        direction,
+    } = useSharedWithMeStore.getState();
     if (isLoadingBookmarks) {
         return;
     }
@@ -31,6 +39,14 @@ export const loadBookmarks = async (abortSignal: AbortSignal) => {
                     creationTime: bookmark.creationTime,
                     url: bookmark.url,
                 },
+            });
+        }
+
+        if (defaultSharedOnCellConfig.sortConfig) {
+            setSorting({
+                sortField,
+                direction,
+                sortConfig: defaultSharedOnCellConfig.sortConfig,
             });
         }
 
