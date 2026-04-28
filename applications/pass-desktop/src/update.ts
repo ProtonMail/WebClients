@@ -6,12 +6,13 @@ import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/f
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
+import { msix_updater } from '../native';
 import config from './app/config';
 import { ARCH } from './lib/env';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import logger from './utils/logger';
-import { isMac, isProdEnv } from './utils/platform';
+import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
 export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
@@ -26,6 +27,7 @@ export type RemoteManifestResponse = {
         Version: string;
         RolloutPercentage: number;
         CategoryName: 'Stable' | 'Beta';
+        File?: { Url: string }[];
     }[];
 };
 
@@ -41,7 +43,7 @@ const getFeedURL = (isBeta: boolean) => {
         feedURL += '/beta';
     }
 
-    if (isMac) {
+    if (isMac()) {
         feedURL += '/RELEASES.json';
         serverType = 'json';
     }
@@ -105,10 +107,12 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
         return false;
     }
 
-    // reset feed url each time to adapt if beta settings changed
-    const feedUrl = getFeedURL(getIsBeta());
-    autoUpdater.setFeedURL(feedUrl);
-    logger.log(`[Update] Set feed url ${feedUrl.url}`);
+    if (isMac()) {
+        // reset feed url each time to adapt if beta settings changed
+        const feedUrl = getFeedURL(getIsBeta());
+        autoUpdater.setFeedURL(feedUrl);
+        logger.log(`[Update] Set feed url ${feedUrl.url}`);
+    }
 
     // don't attempt to update during development
     if (!isProdEnv()) {
@@ -119,7 +123,18 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
     }
 
     logger.log(`[Update] Check for update v=${latestRelease.Version}`);
-    autoUpdater.checkForUpdates();
+    if (isWindows()) {
+        const url = latestRelease.File?.[0]?.Url;
+
+        if (!url) {
+            logger.log(`[Update] No url found in the latest release`);
+            return false;
+        }
+
+        await msix_updater.installUpdate(url);
+    } else {
+        autoUpdater.checkForUpdates();
+    }
     return true;
 };
 
@@ -132,7 +147,9 @@ const initUpdater = (session: Session) => {
         return;
     }
 
-    autoUpdater.setFeedURL(getFeedURL(getIsBeta()));
+    if (isMac()) {
+        autoUpdater.setFeedURL(getFeedURL(getIsBeta()));
+    }
 
     autoUpdater.on('error', (err) => {
         logger.log('[Update] An error ocurred');

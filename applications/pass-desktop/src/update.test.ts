@@ -3,11 +3,13 @@ import { autoUpdater } from 'electron';
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
+import { msix_updater } from '../native';
 import config from './app/config';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import type { RemoteManifestResponse } from './update';
 import { UPDATE_SOURCE_URL, checkForUpdates } from './update';
+import { isMac, isWindows } from './utils/platform';
 
 jest.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },
@@ -17,9 +19,13 @@ jest.mock('electron', () => ({
 jest.mock('./utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
 
 jest.mock('./utils/platform', () => ({
-    isMac: false,
-    isWindows: false,
-    isProdEnv: () => true,
+    isMac: jest.fn(() => false),
+    isWindows: jest.fn(() => false),
+    isProdEnv: jest.fn(() => true),
+}));
+
+jest.mock('../native', () => ({
+    msix_updater: { installUpdate: jest.fn() },
 }));
 
 const getMockSession = (version: RemoteManifestResponse, flags: FeatureFlagsResponse): any => ({
@@ -48,7 +54,7 @@ const check = async (versions: RemoteManifestResponse['Releases'], featureFlag =
 describe('Electron updater', () => {
     beforeEach(() => {
         store.set('optInForBeta', false);
-        jest.resetAllMocks();
+        jest.clearAllMocks();
     });
 
     it('should update if there is a new one', async () => {
@@ -57,6 +63,7 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -70,6 +77,7 @@ describe('Electron updater', () => {
                 Version: '1.0.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -83,11 +91,13 @@ describe('Electron updater', () => {
                 Version: '1.0.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
             {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -101,11 +111,13 @@ describe('Electron updater', () => {
                 Version: '1.0.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
             {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Beta',
+                File: [],
             },
         ]);
 
@@ -121,6 +133,7 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 0.5,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -136,6 +149,7 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 0.5,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -151,6 +165,7 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -166,6 +181,7 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Beta',
+                File: [],
             },
         ]);
 
@@ -179,11 +195,13 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'EarlyAccess' as any,
+                File: [],
             },
             {
                 Version: '1.0.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
@@ -198,6 +216,7 @@ describe('Electron updater', () => {
                     Version: '1.1.0',
                     RolloutPercentage: 1.0,
                     CategoryName: 'Stable',
+                    File: [],
                 },
             ],
             false
@@ -207,22 +226,25 @@ describe('Electron updater', () => {
         expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
     });
 
-    it('should update feed url depending on the beta settings', async () => {
+    it('should update feed url on mac depending on the beta settings', async () => {
+        (isMac as jest.Mock).mockImplementation(() => true);
+
         await check([
             {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
         expect(autoUpdater.setFeedURL).toHaveBeenCalledWith({
             headers: { 'user-agent': userAgent() },
-            serverType: 'default',
-            url: UPDATE_SOURCE_URL,
+            serverType: 'json',
+            url: `${UPDATE_SOURCE_URL}/RELEASES.json`,
         });
 
-        jest.resetAllMocks();
+        jest.clearAllMocks();
 
         // running in the same test to ensure it changes dynamically
         store.set('optInForBeta', true);
@@ -232,13 +254,33 @@ describe('Electron updater', () => {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
+                File: [],
             },
         ]);
 
         expect(autoUpdater.setFeedURL).toHaveBeenCalledWith({
             headers: { 'user-agent': userAgent() },
-            serverType: 'default',
-            url: `${UPDATE_SOURCE_URL}/beta`,
+            serverType: 'json',
+            url: `${UPDATE_SOURCE_URL}/beta/RELEASES.json`,
         });
+    });
+
+    it('should use native windows binding to trigger updates on windows', async () => {
+        (isWindows as jest.Mock).mockImplementation(() => true);
+
+        const url = 'url';
+
+        const update = await check([
+            {
+                Version: '1.1.0',
+                RolloutPercentage: 1.0,
+                CategoryName: 'Stable',
+                File: [{ Url: url }],
+            },
+        ]);
+
+        expect(update).toBe(true);
+        expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
+        expect(msix_updater.installUpdate).toHaveBeenCalledWith(url);
     });
 });
