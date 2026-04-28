@@ -2,9 +2,8 @@ import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 
@@ -98,9 +97,7 @@ export const GridHeader = <T extends string>({
                         >
                             {activeSortingText}
                             {sortField === 'numAccesses' && (
-                                <Tooltip className="pl-1" title={getNumAccessesTooltipMessage()}>
-                                    <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
-                                </Tooltip>
+                                <InfoIconTooltip title={getNumAccessesTooltipMessage()} className="pl-1" />
                             )}
                         </TableHeaderCell>
                         <TableHeaderCell>
