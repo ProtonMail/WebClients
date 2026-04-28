@@ -9,6 +9,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectBetaEnabled } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { logger } from '@proton/pass/utils/logger';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -50,7 +51,10 @@ const useToggleBetaDesktop = () => {
         await window.ctxBridge?.setBetaOptIn(newValue);
         setBetaEnabled(newValue);
         if (newValue) {
-            const result = await window.ctxBridge?.checkForUpdates();
+            const result = await window.ctxBridge?.checkForUpdates().catch((err) => {
+                logger.warn(`[Update] Check for update failed (${err})`);
+                return false;
+            });
             createNotification({
                 text: result
                     ? c('Info')
