@@ -71,7 +71,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
             minutes < MIN_EXPIRATION_MINUTES ||
             minutes > MAX_EXPIRATION_MINUTES
         ) {
-            setMinutesError(c('pass_2026: Error').t`Expiration must be between 60 minutes 1 year`);
+            setMinutesError(c('pass_2026: Error').t`Expiration must be between 60 minutes and 1 year`);
             return;
         }
 
