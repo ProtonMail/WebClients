@@ -5196,8 +5196,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Gmail'deki son 180 günlük e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -9342,6 +9342,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME }, ${ phoneNumber } numarasına doğrulama kodu gönderecek. Standart mesaj ücretleri uygulanabilir."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } yedek telefonunuza doğrulama kodu gönderecek. Standart mesaj ücretleri uygulanabilir."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
@@ -11848,9 +11851,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin ya da müşteri destek ekibi ile görüşün."
       ],
-      "Something went wrong. Please try again.": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
@@ -12248,9 +12248,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Hesabınızı korumak için oturum açmaya çalışanın gerçekten siz olduğundan emin olmak istiyoruz."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Hesabınızı korumak için oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmak istiyoruz."
@@ -23996,9 +23993,6 @@
       ],
       "An address for each role": [
         "Her rol için ayrı adres"
-      ],
-      "An error occurred": [
-        "Bir sorun çıktı"
       ],
       "Annual": [
         "Yıllık"

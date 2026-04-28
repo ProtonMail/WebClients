@@ -4232,8 +4232,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Ξεκινήσαμε την εισαγωγή του email σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των μηνυμάτων ηλεκτρονικού ταχυδρομείου των τελευταίων 180 ημερών από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -9433,9 +9433,6 @@
       "Cash": [
         "Μετρητά"
       ],
-      "Categories badge": [
-        "Ετικέτα κατηγοριών"
-      ],
       "Category": [
         "Κατηγορία"
       ],
@@ -9633,12 +9630,6 @@
       ],
       "Has attachments": [
         "Έχει συνημμένα"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Βοηθήστε μας να βελτιώσουμε τις κατηγορίες επιλέγοντας αυτή που ταιριάζει καλύτερα σε αυτό το email. Ευχαριστούμε για τη βοήθειά σας!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Βοηθήστε μας να βελτιώσουμε την επικείμενη κατηγοριοποίηση των αλληλογραφιών."
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -9970,9 +9961,6 @@
       "Tell us more about your experience": [
         "Πείτε μας περισσότερα για την εμπειρία σας"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Η κατηγορία έχει ενημερωθεί, ευχαριστούμε για τα σχόλιά σας!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "Το φίλτρο είναι απενεργοποιημένο. ${ enableButton }"
       ],
@@ -10039,17 +10027,8 @@
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Βελτιώνουμε τον τρόπο κατηγοριοποίησης των μηνυμάτων. Η ανατροφοδότησή σας βοηθά να γίνει πιο έξυπνο και ακριβές."
-      ],
       "What happened?": [
         "Τι συνέβη;"
-      ],
-      "Which category should this be recategorized under?": [
-        "Σε ποια κατηγορία θα έπρεπε να ανακατηγοριοποιηθεί αυτό;"
-      ],
-      "Why am I seeing this?": [
-        "Γιατί το βλέπω αυτό;"
       ],
       "With attachment": [
         "Με συνημμένα"
@@ -15940,9 +15919,6 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
-      ],
-      "✨ Categories are coming!": [
-        "✨ Οι κατηγορίες έρχονται!"
       ]
     },
     "Today icon tooltip in mini calendar": {

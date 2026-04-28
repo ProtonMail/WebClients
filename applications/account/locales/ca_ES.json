@@ -5196,8 +5196,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Hem començat a importar els vostres correus de Gmail. Us avisarem en acabar."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus electrònics dels darrers 180 dies des de Gmail. Us avisarem quan hagi acabat."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
@@ -9342,6 +9342,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } us enviarà un codi de verificació al número ${ phoneNumber }. Pot ser que es carreguin les tarifes de missatgeria estàndard."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } us enviarà un codi de verificació al telèfon de recuperació. Podrien aplicar-se tarifes estàndard de missatgeria."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
@@ -11845,9 +11848,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar o poseu-vos en contacte amb el servei d'atenció al client."
       ],
-      "Something went wrong. Please try again.": [
-        "Alguna cosa ha anat malament. Torneu-ho a provar."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML."
       ],
@@ -12245,9 +12245,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
@@ -23900,9 +23897,6 @@
       ],
       "An address for each role": [
         "Una adreça per a cada rol"
-      ],
-      "An error occurred": [
-        "Hi ha hagut un error"
       ],
       "Annual": [
         "Cada any"
