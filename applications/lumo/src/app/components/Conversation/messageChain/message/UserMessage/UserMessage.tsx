@@ -10,6 +10,7 @@ import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
+import { useLumoTheme } from '../../../../../providers';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
@@ -169,6 +170,7 @@ const UserMessage = ({
     onOpenFilePreview,
 }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
+    const { isDarkLumoTheme } = useLumoTheme();
     const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
@@ -228,6 +230,7 @@ const UserMessage = ({
                 className={clsx(
                     'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
                     !isEditing && 'markdown-rendering',
+                    !isEditing && isDarkLumoTheme && 'user-msg-container--dark',
                     isEditing && 'w-full'
                 )}
                 style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover

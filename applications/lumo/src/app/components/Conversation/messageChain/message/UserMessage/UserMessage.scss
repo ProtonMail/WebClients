@@ -11,14 +11,9 @@
 	display: block;
 	page-break-inside: auto;
 
-	// The bubble background is always the same light lavender regardless of theme,
-	// so text must always be dark — never inherit the theme's light-mode text token.
 	&.markdown-rendering {
 		background-color: #e2e4fb;
 
-		// Scope forced dark color only to the markdown content wrapper — do NOT set
-		// color on the container itself, as inherited values bleed into all descendants
-		// (toolbar, attachment cards, etc.) even when scoped rules are used.
 		.lumo-markdown,
 		.lumo-markdown * {
 			color: #1c1b4b !important;
@@ -26,6 +21,19 @@
 
 		.lumo-markdown a {
 			color: #4740d4 !important;
+		}
+
+		&.user-msg-container--dark {
+			background-color: var(--background-weak);
+
+			.lumo-markdown,
+			.lumo-markdown * {
+				color: var(--text-norm) !important;
+			}
+
+			.lumo-markdown a {
+				color: var(--link-norm) !important;
+			}
 		}
 	}
 
