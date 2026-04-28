@@ -293,7 +293,7 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                 }
             } else if (data.type === 'login-response') {
                 // payload will be `null` on successful authentication and will contain error details for failed attempts
-                if (data.payload) {
+                if (data.payload?.message) {
                     const { type, reason, message } = data.payload;
                     const [status] = (typeof reason === 'string' ? reason : '').split(':');
                     captureMessage('Zendesk: Authentication failed', {
