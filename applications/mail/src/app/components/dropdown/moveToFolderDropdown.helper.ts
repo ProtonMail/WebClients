@@ -10,10 +10,12 @@ import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 
 export const getInboxCategoriesItems = ({
+    selectAll,
     canMoveToInbox,
     shouldShowTabs,
     activeCategoriesTabs,
 }: {
+    selectAll: boolean;
     canMoveToInbox: boolean;
     shouldShowTabs: boolean;
     activeCategoriesTabs: CategoryTab[];
@@ -29,6 +31,10 @@ export const getInboxCategoriesItems = ({
     };
 
     if (shouldShowTabs) {
+        if (selectAll) {
+            return [];
+        }
+
         return activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((category) => ({
                   ID: category.id,
