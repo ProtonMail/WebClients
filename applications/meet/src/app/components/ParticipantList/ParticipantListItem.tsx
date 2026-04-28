@@ -85,6 +85,14 @@ export const ParticipantListItem = memo(
             return isVideoDisabled ? c('Action').t`Receive video` : c('Action').t`Stop receiving video`;
         };
 
+        const getVideoIcon = () => {
+            if (isVideoDisabled) {
+                return participant.isLocal ? <IcMeetCameraOff className="muted-media-stream" /> : <IcMeetEyeClosed />;
+            }
+
+            return <IcMeetCamera />;
+        };
+
         return (
             <div className="flex flex-nowrap gap-2 h-custom" style={{ '--h-custom': 'fit-content', flexShrink: 0 }}>
                 <div
@@ -145,7 +153,7 @@ export const ParticipantListItem = memo(
                                 aria-pressed={!isVideoDisabled}
                                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                             >
-                                {isVideoDisabled ? <IcMeetEyeClosed /> : <IcMeetCamera />}
+                                {getVideoIcon()}
                             </Button>
                         </Tooltip>
                     ) : (
