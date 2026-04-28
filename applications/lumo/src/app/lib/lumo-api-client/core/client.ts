@@ -74,7 +74,7 @@ export class LumoApiClient {
             enableExternalTools = false,
             enableImageTools = false,
             enableReasoning = false,
-            enableSuggestedQuestions = true,
+            enableSuggestedQuestions = false,
             requestKey,
             requestId,
             generateTitle = false,
@@ -197,7 +197,7 @@ export class LumoApiClient {
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, enableImageTools, generateTitle, enableReasoning, enableSuggestedQuestions } = flags;
+        const { enableExternalTools, enableImageTools, generateTitle, enableReasoning } = flags;
 
         // Encrypt request if needed
         if (encryption) {
@@ -214,7 +214,6 @@ export class LumoApiClient {
             options: {
                 tools,
                 reasoning: enableReasoning,
-                suggested_questions: enableSuggestedQuestions,
             },
             targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
