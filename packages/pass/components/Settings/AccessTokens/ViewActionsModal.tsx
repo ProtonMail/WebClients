@@ -11,7 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import { PAT_EVENT_TYPE, type PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { getAccessTokenActions } from '@proton/pass/store/actions';
 import { selectAccessTokenActions } from '@proton/pass/store/selectors';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
@@ -31,10 +31,20 @@ const fieldGrid: CSSProperties = { gridTemplateColumns: 'max-content 1fr' };
  * raw "Action #N". */
 const formatActionLabel = (action: number): string | null => {
     switch (action) {
-        case 132 /* ITEM_READ */:
-            return c('pass_2026: Activity').t`Read item`;
-        case 160 /* PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED */:
-            return c('pass_2026: Activity').t`Vault access granted`;
+        case PAT_EVENT_TYPE.ITEM_READ:
+            return c('Info').t`Read item`;
+        case PAT_EVENT_TYPE.ITEM_CREATE:
+            return c('Info').t`Created item`;
+        case PAT_EVENT_TYPE.ITEM_UPDATE:
+            return c('Info').t`Updated item`;
+        case PAT_EVENT_TYPE.ITEM_TRASH:
+            return c('Info').t`Moved item to trash`;
+        case PAT_EVENT_TYPE.ITEM_UNTRASH:
+            return c('Info').t`Restored item from trash`;
+        case PAT_EVENT_TYPE.ITEM_SOFT_DELETE:
+            return c('Info').t`Deleted item`;
+        case PAT_EVENT_TYPE.PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED:
+            return c('Info').t`Vault access granted`;
         default:
             return null;
     }
@@ -87,8 +97,8 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                         >
                             {records.map((r) => {
                                 const label = formatActionLabel(r.Action);
-                                const payload =
-                                    r.decodedPayload?.kind === 'agent-access-item' ? r.decodedPayload : null;
+                                const payload = r.decodedPayload?.kind === 'agent-action' ? r.decodedPayload : null;
+                                const isDecodeError = r.decodedPayload?.kind === 'decode-error';
                                 return (
                                     <div
                                         key={r.PatMonitorRecordID}
@@ -104,14 +114,36 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                         </div>
                                         {payload && (
                                             <dl className="m-0 grid gap-x-3 gap-y-1 text-sm" style={fieldGrid}>
-                                                <dt className="color-weak m-0">{c('pass_2026: Activity').t`Item`}</dt>
-                                                <dd className="m-0 text-ellipsis" title={payload.itemName}>
-                                                    {payload.itemName}
-                                                </dd>
-                                                <dt className="color-weak m-0">{c('pass_2026: Activity').t`Vault`}</dt>
-                                                <dd className="m-0 text-ellipsis" title={payload.vaultName}>
-                                                    {payload.vaultName}
-                                                </dd>
+                                                {payload.itemName && (
+                                                    <>
+                                                        <dt className="color-weak m-0">
+                                                            {c('pass_2026: Activity').t`Item`}
+                                                        </dt>
+                                                        <dd className="m-0 text-ellipsis" title={payload.itemName}>
+                                                            {payload.itemName}
+                                                        </dd>
+                                                    </>
+                                                )}
+                                                {payload.vaultName && (
+                                                    <>
+                                                        <dt className="color-weak m-0">
+                                                            {c('pass_2026: Activity').t`Vault`}
+                                                        </dt>
+                                                        <dd className="m-0 text-ellipsis" title={payload.vaultName}>
+                                                            {payload.vaultName}
+                                                        </dd>
+                                                    </>
+                                                )}
+                                                {payload.folderName && (
+                                                    <>
+                                                        <dt className="color-weak m-0">
+                                                            {c('pass_2026: Activity').t`Folder`}
+                                                        </dt>
+                                                        <dd className="m-0 text-ellipsis" title={payload.folderName}>
+                                                            {payload.folderName}
+                                                        </dd>
+                                                    </>
+                                                )}
                                                 {payload.reason && (
                                                     <>
                                                         <dt className="color-weak m-0">
@@ -123,6 +155,11 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                                     </>
                                                 )}
                                             </dl>
+                                        )}
+                                        {isDecodeError && (
+                                            <span className="text-sm color-weak text-italic">
+                                                {c('pass_2026: Activity').t`Activity details could not be loaded.`}
+                                            </span>
                                         )}
                                     </div>
                                 );
