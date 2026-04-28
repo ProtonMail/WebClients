@@ -11,7 +11,13 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
+import {
+  AnonymousUserDisplayName,
+  GenerateUUID,
+  DocProvider,
+  getRandomAnonymousUserLetter,
+  isDevOrBlack,
+} from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
@@ -56,6 +62,8 @@ import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
 import { CustomCollaborationContextProvider } from '../Plugins/Collaboration/CustomCollaborationContext'
 import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
+import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
+import { useApplication } from './ApplicationProvider'
 
 const TypingBotEnabled = false
 
@@ -102,6 +110,7 @@ export function Editor({
   lexicalError,
   logger,
 }: Props) {
+  const { application } = useApplication()
   const editorRef = useRef<LexicalEditor | null>(null)
 
   const [collabCursorsContainer, setCollabCursorsContainer] = useState<HTMLDivElement | null>(null)
@@ -143,6 +152,7 @@ export function Editor({
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   const hasMutationDisplay = systemMode === EditorSystemMode.Edit && userMode !== EditorUserMode.Preview
+  const isPageBreakEnabled = application.environment === 'alpha' || isDevOrBlack()
 
   const letterForAnonymousUser = useMemo(() => {
     if (!isAnonymousUser) {
@@ -234,6 +244,7 @@ export function Editor({
         <BlockTypePlugin />
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
         <HorizontalRulePlugin />
+        {isPageBreakEnabled && <PageBreakPlugin />}
         <ListPlugin />
         <CheckListPlugin />
         <CustomOrderedListPlugin />
