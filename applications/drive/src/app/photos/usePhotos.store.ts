@@ -42,7 +42,7 @@ interface PhotosStore {
     setPhotoItem: (photo: PhotoItem) => void;
     setPhotoItems: (photos: PhotoItem[]) => void;
     getPhotoItem: (uid: string) => PhotoItem | undefined;
-    upsertPhotoAdditionalInfo: (uid: string, additionalInfo: PhotoAdditionalInfo) => void;
+    upsertPhotoAdditionalInfo: (photo: PhotoItem) => void;
     removePhotoItem: (uid: string) => void;
 
     setPhotoItemWithoutTimeline: (photo: PhotoItem) => void;
@@ -102,15 +102,13 @@ export const usePhotosStore = create<PhotosStore>()(
 
         getPhotoItem: (uid: string) => get().photoItems.get(uid),
 
-        upsertPhotoAdditionalInfo: (uid: string, additionalInfo: PhotoAdditionalInfo) => {
+        upsertPhotoAdditionalInfo: (photo: PhotoItem) => {
             set((state) => {
                 const newPhotoItems = new Map(state.photoItems);
-                const existing = newPhotoItems.get(uid);
+                const existing = newPhotoItems.get(photo.nodeUid);
                 newPhotoItems.set(
-                    uid,
-                    existing
-                        ? { ...existing, additionalInfo }
-                        : { nodeUid: uid, captureTime: new Date(0), tags: [], relatedPhotoNodeUids: [], additionalInfo }
+                    photo.nodeUid,
+                    existing ? { ...photo, additionalInfo: photo.additionalInfo ?? existing.additionalInfo } : photo
                 );
                 return { photoItems: newPhotoItems };
             });
