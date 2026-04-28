@@ -7,7 +7,7 @@
     <summary>Encrypted password manager to keep your login credentials safe</summary>
 
     <metadata_license>CC0-1.0</metadata_license>
-    <project_license>GPL-3.0</project_license>
+    <project_license>GPL-3.0-only</project_license>
     <developer id="ch.protonmail">
         <name>Proton AG</name>
     </developer>
@@ -87,13 +87,13 @@
         type="contact">https://proton.me/support/troubleshooting?product=pass</url>
     <url type="help">https://proton.me/support/pass</url>
     <url type="translate">https://proton.me/blog/translation-community</url>
+    <url type="bugtracker">https://github.com/ProtonMail/WebClients/issues</url>
 
     <launchable type="desktop-id">me.proton.Pass.desktop</launchable>
     <screenshots>
-        <screenshot type="default" xml:lang="en">
+        <screenshot type="default">
             <image>https://pmecdn.protonweb.com/image-transformation/?s=s&amp;image=cta_keep_your_passwords_safe_for_free_4f90956465.png</image>
-            <caption
-                xml:lang="en">The interface showcases user-friendly access to your Netflix credentials, complete with OTP generation for added security.</caption>
+            <caption>The interface showcases user-friendly access to your Netflix credentials, complete with OTP generation for added security.</caption>
         </screenshot>
     </screenshots>
 
