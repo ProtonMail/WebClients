@@ -886,6 +886,21 @@
       "Authentication failure: ${ message }": [
         "Tunnistautumisvirhe: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrinen tunnistautuminen epäonnistui."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometriset tunnistetiedot eivät täsmää."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisiä tunnistetietoja ei löytynyt."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisiä tunnistetietoja ei ole määritetty."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisiä tunnistetietojen asettaminen epäonnistui."
+      ],
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
       ],
@@ -959,6 +974,9 @@
       ],
       "Emptying trash failed": [
         "Roskakorin tyhjennys epäonnistui"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Salattu viestintä ${ PASS_APP_NAME } -työpöytäsovelluksen kanssa epäonnistui."
       ],
       "Encrypted JSON not supported": [
         "Salattua JSON-tiedostoa ei tueta"
@@ -1185,6 +1203,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma kirjattiin lokiin."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastannut ajoissa."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
       ],
@@ -1194,11 +1215,20 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
       ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on kirjattu sisään toisella tilillä."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } -työpöytäsovelluksessa pitäisi olla kirjautuneena sisään."
+      ],
       "The URL is in the list": [
         "URL-osoite on jo listalla"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Virhe poistettaessa suojattua linkkiä. Yritä muutaman minuutin kuluttua uudelleen."
+      ],
+      "This domain is already managed by your organization": [
+        "Organtisaatiosi hallinnoi jo tätä verkkotunnusta"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Tämä voi tapahtua, jos ${ PASS_SHORT_APP_NAME } on ollut pitkään käyttämättä tai olet tyhjentänyt Safari-historiasi."
@@ -1957,10 +1987,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2409,6 +2435,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Rajattomasti Hide-my-email-aliaksia ja edistynyt aliashallinta"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Avaa ${ PASS_APP_NAME } päästäksesi käsiksi pääsyavaimiisi"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Avaa ${ PASS_APP_NAME } tallentaaksesi tämän pääsyavaimen"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Avaa ${ PASS_SHORT_APP_NAME } biometrisillä tiedoilla"
