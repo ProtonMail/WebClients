@@ -812,7 +812,7 @@ export const getAccountAppRoutes = ({
                         id: 'import-list',
                     },
                     {
-                        text: c('Title').t`Forwardings`,
+                        text: c('Title').t`Connected emails`,
                         id: 'forwarding-list',
                     },
                 ],

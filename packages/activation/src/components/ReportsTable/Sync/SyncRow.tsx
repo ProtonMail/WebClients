@@ -18,7 +18,7 @@ const SyncRow = ({ syncId }: Props) => {
 
     return (
         <TableRow data-testid="reportsTable:syncRow">
-            <ReportsTableCell provider={ApiImportProvider.GOOGLE} product={product} title={account} />
+            <ReportsTableCell provider={ApiImportProvider.GOOGLE} product={product} title={account} isForwardingOnly />
             <TableCell className="easy-switch-table-size">-</TableCell>
             <TableCell className="easy-switch-table-status">
                 <SyncRowStatus state={state} />
