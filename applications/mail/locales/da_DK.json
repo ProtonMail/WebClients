@@ -4232,8 +4232,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Vi er begyndt at importere din e-mail fra Gmail. Vi giver dig besked når det er færdigt."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere de sidste 180 dages e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
@@ -9433,9 +9433,6 @@
       "Cash": [
         "Kontant"
       ],
-      "Categories badge": [
-        "Kategorimærke"
-      ],
       "Category": [
         "Kategori"
       ],
@@ -9633,12 +9630,6 @@
       ],
       "Has attachments": [
         "Har vedhæftninger"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Hjælp os med at forbedre kategorierne ved at vælge den, der bedst passer til denne e-mail. Tak for din hjælp!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Hjælp os med at forbedre den kommende e-mailkategorisering"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -9970,9 +9961,6 @@
       "Tell us more about your experience": [
         "Fortæl os mere om din oplevelse"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Kategorien er blevet opdateret, tak for din feedback!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "Filteret er deaktiveret. ${ enableButton }"
       ],
@@ -10039,17 +10027,8 @@
       "Weak password": [
         "Svag adgangskode"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Vi forbedrer, hvordan e-mails kategoriseres. Din feedback hjælper med at gøre det mere intelligent og præcist."
-      ],
       "What happened?": [
         "Hvad skete der?"
-      ],
-      "Which category should this be recategorized under?": [
-        "Hvilken kategori skal dette omkategoriseres til?"
-      ],
-      "Why am I seeing this?": [
-        "Hvorfor ser jeg dette?"
       ],
       "With attachment": [
         "Med vedhæftning"
@@ -16036,9 +16015,6 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
-      ],
-      "✨ Categories are coming!": [
-        "✨ Kategorier er på vej!"
       ]
     },
     "Today icon tooltip in mini calendar": {
