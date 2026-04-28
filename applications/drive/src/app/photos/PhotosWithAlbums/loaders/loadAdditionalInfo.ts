@@ -3,7 +3,7 @@ import { getDriveForPhotos } from '@proton/drive';
 import { createDebouncedBuffer } from '../../../utils/createDebouncedBuffer';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { usePhotosStore } from '../../usePhotos.store';
-import { mapNodeToAdditionalInfo } from './mapNodeToAdditionalInfo';
+import { mapNodeToPhotoItem } from './mapNodeToAdditionalInfo';
 
 const loadAdditionalInfo = async (uids: string[]) => {
     const store = usePhotosStore.getState();
@@ -12,8 +12,10 @@ const loadAdditionalInfo = async (uids: string[]) => {
         if (!maybeNode.ok) {
             continue;
         }
-        const { uid, additionalInfo } = mapNodeToAdditionalInfo(maybeNode);
-        store.upsertPhotoAdditionalInfo(uid, additionalInfo);
+        const photoItem = mapNodeToPhotoItem(maybeNode);
+        if (photoItem) {
+            store.upsertPhotoAdditionalInfo(photoItem);
+        }
     }
 };
 

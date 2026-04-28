@@ -33,6 +33,8 @@ import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosM
 import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import { loadCurrentAlbum } from '../../loaders/loadAlbum';
+import { loadAlbumInvitations } from '../../loaders/loadAlbumInvitations';
+import { loadSharedWithMeAlbums } from '../../loaders/loadAlbums';
 import { type AlbumItem, useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
@@ -786,6 +788,26 @@ export const PhotosLayout = () => {
             void usePhotosStore.getState().unsubscribeFromEvents('photosProvider');
         };
     }, []);
+
+    useEffect(
+        function subscribeToRefreshSharedWithMe() {
+            if (currentPageType !== AlbumsPageTypes.ALBUMS) {
+                return;
+            }
+            const abortController = new AbortController();
+            const unsub = getBusDriver().subscribe(BusDriverEventName.REFRESH_SHARED_WITH_ME, async () => {
+                await Promise.all([
+                    loadSharedWithMeAlbums(abortController.signal),
+                    loadAlbumInvitations(abortController.signal),
+                ]);
+            });
+
+            return () => {
+                unsub();
+            };
+        },
+        [currentPageType]
+    );
 
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;
