@@ -1,3 +1,4 @@
+import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 
 import type {
@@ -104,4 +105,10 @@ export const listPatMonitorRecords = async (
         records,
         nextSince: hasMore ? serverNextSince : null,
     };
+};
+
+export const fetchAgentInstructions = async (): Promise<string> => {
+    const response = await fetch(AGENT_INSTRUCTIONS_URL);
+    if (!response.ok) throw new Error(`Failed to fetch agent instructions (${response.status})`);
+    return response.text();
 };
