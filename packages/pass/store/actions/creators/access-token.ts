@@ -8,7 +8,7 @@ import type {
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { sessionRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import identity from '@proton/utils/identity';
 
@@ -127,4 +127,8 @@ export const getAccessTokenActions = requestActionsFactory<GetAccessTokenActions
                 error,
             })({ payload, error }),
     },
+});
+
+export const getAgentInstructions = requestActionsFactory<void, string>('access-token::agent-instructions')({
+    success: sessionRequest(UNIX_HOUR),
 });
