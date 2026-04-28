@@ -4260,8 +4260,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor din ultimele 180 de zile din Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -9594,9 +9594,6 @@
       "Cash": [
         "Numerar"
       ],
-      "Categories badge": [
-        "Etichetă categorii"
-      ],
       "Category": [
         "Categoria"
       ],
@@ -9794,12 +9791,6 @@
       ],
       "Has attachments": [
         "Cu atașamente"
-      ],
-      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
-        "Ajutați-ne să îmbunătățim categoriile alegând-o pe cea care se potrivește cel mai bine acestui e-mail. Vă mulțumim pentru ajutor!"
-      ],
-      "Help us improve the upcoming mail categorization": [
-        "Ajutați-ne să îmbunătățim viitoarea clasificare a mesajelor"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -10131,9 +10122,6 @@
       "Tell us more about your experience": [
         "Spuneți-ne mai multe despre experiența proprie"
       ],
-      "The category has been updated, thanks for your feedback!": [
-        "Categoria a fost actualizată, vă mulțumim pentru feedback!"
-      ],
       "The filter is disabled. ${ enableButton }": [
         "Filtrul este dezactivat. ${ enableButton }"
       ],
@@ -10200,17 +10188,8 @@
       "Weak password": [
         "Parolă slabă"
       ],
-      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
-        "Îmbunătățim modul în care sunt categorizate mesajele. Feedbackul dvs. ne ajută ca acesta să devină mai inteligent și mai precis."
-      ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "Which category should this be recategorized under?": [
-        "Sub ce categorie ar trebui să fie recategorizat?"
-      ],
-      "Why am I seeing this?": [
-        "De ce văd asta?"
       ],
       "With attachment": [
         "Cu atașamente"
@@ -16341,9 +16320,6 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
-      ],
-      "✨ Categories are coming!": [
-        "✨ Sosesc categoriile!"
       ]
     },
     "Today icon tooltip in mini calendar": {

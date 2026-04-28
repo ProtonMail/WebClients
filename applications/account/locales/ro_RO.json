@@ -5228,8 +5228,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea mesajelor din ultimele 180 de zile din Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -9418,6 +9418,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } va trimite un cod de verificare la ${ phoneNumber }. Se pot aplica tarife standard pentru mesaje."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } va trimite un cod de verificare la numărul de recuperare. Se pot aplica tarife standard pentru mesaje."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
@@ -11970,9 +11973,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "A apărut o problemă. Reîncercați sau contactați asistența pentru clienți."
       ],
-      "Something went wrong. Please try again.": [
-        "Ceva nu a funcționat. Reîncercați."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
       ],
@@ -12375,9 +12375,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
@@ -24295,9 +24292,6 @@
       ],
       "An address for each role": [
         "O adresă pentru fiecare rol"
-      ],
-      "An error occurred": [
-        "A apărut o eroare"
       ],
       "Annual": [
         "Anual"

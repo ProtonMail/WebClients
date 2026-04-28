@@ -313,7 +313,7 @@
         "Připojit aplikace a zařízení"
       ],
       "Connect Gmail address": [
-        "Připojte svou Gmail adresu"
+        "Připojte Gmail adresu"
       ],
       "Connect to Gmail": [
         "Připojit ke Gmail"
@@ -2022,7 +2022,7 @@
     },
     "Admin roles onboarding": {
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
-        "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditované logy a systémové konfigurace."
+        "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditní logy a systémové konfigurace."
       ],
       "New: Control admin access for individual users": [
         "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
@@ -5081,9 +5081,6 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
-      ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Zahájili jsme import vašich e-mailů z Gmail. Po dokončení vám dáme vědět."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -10010,7 +10007,7 @@
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Na televizoru klikněte na možnost „Problémy s přihlášením?“ a postupujte podle alternativních pokynů."
+        "Na televizoru klikněte na možnost „Potíže s přihlášením?“ a postupujte podle alternativních pokynů."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klikněte na **Požádat o resetování hesla** a postupujte podle pokynů."
@@ -10547,7 +10544,7 @@
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
       "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Funkce přesměrování automaticky přesouvá nové příchozí e-maily do složky Doručená pošta."
+        "Funkce přeposílání automaticky posílá příchozí e-maily do složky Doručená pošta."
       ],
       "Free forever": [
         "Navždy zdarma"
@@ -12335,7 +12332,7 @@
         "Vaši platbu jsme nemohli zpracovat."
       ],
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
-        "Zjistili jsme, že jste již přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**. Obnovení hesla můžete provést z aktuální relace."
+        "Zjistili jsme, že jste již přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**. Obnovení hesla můžete provést z aktivní relace."
       ],
       "We generated a strong password for you": [
         "Vygenerovali jsme vám silné heslo"
@@ -12719,7 +12716,7 @@
         "Zprávy, soubory a další data zašifrovaná tímto klíčem NEBUDE možné dešifrovat. Všechna data podepsaná tímto klíčem již nebudou ověřována aplikacemi ${ BRAND_NAME }."
       ],
       "You will not be asked for a one-time code or a security key.": [
-        "Nebudete požádáni o zadání jednorázového kódu ani bezpečnostního klíče."
+        "Nebudete žádáni o zadávání jednorázového kódu ani bezpečnostního klíče."
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Získáte zpět úplný nebo částečný přístup ke svým zašifrovaným datům."
@@ -17414,7 +17411,7 @@
         "Denní e-mailová upozornění"
       ],
       "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
-        "Pokud tuto funkci deaktivujete, nebudete dostávat oznámení v aplikaci o akcích, nových funkcích, nových službách ${ BRAND_NAME } a připomenutích."
+        "Pokud tuto funkci deaktivujete, nebudete dostávat oznámení v aplikaci o akčních nabídkách, nových funkcích, nových službách ${ BRAND_NAME }, ani připomenutí."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
@@ -23705,9 +23702,6 @@
       ],
       "An address for each role": [
         "Adresa pro každou roli"
-      ],
-      "An error occurred": [
-        "Došlo k chybě"
       ],
       "Annual": [
         "Roční"

@@ -845,17 +845,11 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Aggiungi file a ${ DRIVE_APP_NAME }"
       ],
-      "Add from ${ DRIVE_APP_NAME }": [
-        "Importa da ${ DRIVE_APP_NAME }"
-      ],
       "Add to active": [
         "Aggiungi ai file attivi"
       ],
       "Already in KB": [
         "Già nella Base di Conoscenza"
-      ],
-      "Browse ${ DRIVE_SHORT_APP_NAME }": [
-        "Naviga in ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Cancel": [
         "Annulla"
@@ -871,9 +865,6 @@
       ],
       "Disable ghost mode": [
         "Spegni ghost mode"
-      ],
-      "Dismiss": [
-        "Ignora"
       ],
       "Enable ghost mode": [
         "Disattiva la modalità ghost"
@@ -923,9 +914,6 @@
       "Try again": [
         "Riprova"
       ],
-      "Upload file and add to knowledge base": [
-        "Carica file e aggiungi alla base delle conoscenze"
-      ],
       "Upload files": [
         "Carica il files"
       ],
@@ -948,9 +936,6 @@
       "Delete all": [
         "Elimina tutto"
       ],
-      "Learn more": [
-        "Scopri di più"
-      ],
       "Maybe later": [
         "Forse più tardi"
       ],
@@ -962,12 +947,6 @@
       ],
       "Try it now": [
         "Prova ora"
-      ],
-      "Upload": [
-        "Upload"
-      ],
-      "Web search": [
-        "Ricerca web"
       ]
     },
     "collider_2025: Characteristic": {
@@ -980,20 +959,11 @@
       "Multiple large uploads": [
         "Caricamenti multipli di grandi dimensioni"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Nemmeno ${ BRAND_NAME } può accedere alla nostra cronologia chat."
-      ],
-      "Our conversations are never used for training.": [
-        "Le nostre conversazioni non vengono mai usate per l'addestramento."
-      ],
       "Priority access": [
         "Accesso prioritario"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Grazie alla crittografia ad accesso zero, le tue conversazioni salvate possono essere decodificate e lette solo sul tuo dispositivo. Né ${ BRAND_NAME } né nessun altro può vederle."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "A differenza di altri assistenti, non registro le nostre conversazioni."
       ],
       "Unlimited daily chats": [
         "Chat giornaliere illimitate"
@@ -1015,17 +985,8 @@
       "Only you have access": [
         "Solo tu hai accesso"
       ],
-      "Private": [
-        "Privata"
-      ],
-      "Safeguarded": [
-        "Protetta"
-      ],
       "Tech that you can trust": [
         "Tecnologia di cui ti puoi fidare"
-      ],
-      "Treated with respect": [
-        "Trattato con rispetto"
       ],
       "Your chats are yours alone": [
         "Le tue chat sono solo tue"
@@ -1353,26 +1314,11 @@
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Fai attenzione a domini sconosciuti o sottodomini eccessivi"
       ],
-      "characters": [
-        "caratteri"
-      ],
       "characters not shown": [
         "caratteri non visualizzati"
       ],
-      "Chat knowledge": [
-        "Contenuti della chat"
-      ],
       "Check this is the site you expect to visit": [
         "Verifica che sia il sito che ti aspetti di visitare"
-      ],
-      "Close": [
-        "Chiudi"
-      ],
-      "columns": [
-        "colonne"
-      ],
-      "columns found, no data rows": [
-        "colonne trovate, nessuna riga di dati"
       ],
       "Domain name": [
         "Nome dominio"
@@ -1383,14 +1329,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Trascina e rilascia qui i tuoi file per aggiungerli alla chat."
       ],
-      "Error Parsing Table": [
-        "Errore durante l'analisi della tabella"
-      ],
       "Error processing attachment": [
         "Errore durante l'elaborazione dell'allegato"
-      ],
-      "Error Processing File": [
-        "Errore durante l'elaborazione del file"
       ],
       "Exceeds ${ maxSize } limit": [
         "Supera il limite di ${ maxSize }"
@@ -1407,29 +1347,17 @@
       "File capacity for this conversation": [
         "Capacità dei file per questa conversazione"
       ],
-      "File too large": [
-        "File troppo grande"
-      ],
       "File too large for preview (>150k tokens)": [
         "File troppo grande per l'anteprima (>150k token)"
       ],
       "files": [
         "file"
       ],
-      "files are not currently supported for content extraction.": [
-        "i file non sono attualmente supportati per l'estrazione del contenuto."
-      ],
       "Files automatically retrieved based on your question.": [
         "File recuperati automaticamente in base alla tua domanda."
       ],
-      "Files automatically retrieved based on your questions:": [
-        "File recuperati automaticamente in base alle tue domande:"
-      ],
       "Files you've added to this conversation.": [
         "File che hai aggiunto a questa conversazione."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
-        "Per ogni conversazione, ${ LUMO_SHORT_APP_NAME } ha la capacità di elaborare una quantità limitata di informazioni. La barra di avanzamento mostra quanta capacità stanno usando i tuoi file attuali. "
       ],
       "High-speed chats and advanced AI features.": [
         "Chat veloci e funzioni AI avanzate."
@@ -1452,26 +1380,11 @@
       "Maybe later": [
         "Forse più tardi"
       ],
-      "No Content Available": [
-        "Nessun contenuto disponibile"
-      ],
-      "No data rows found": [
-        "Nessuna riga di dati trovata"
-      ],
-      "No data rows found in this file.": [
-        "Nessuna riga di dati trovata in questo file."
-      ],
       "No files available": [
         "Nessun file presente"
       ],
       "No supported files in this folder": [
         "Nessun file supportato in questa cartella"
-      ],
-      "Note:": [
-        "Nota:"
-      ],
-      "of": [
-        "di"
       ],
       "Partial content": [
         "Contenuto parziale"
@@ -1487,9 +1400,6 @@
       ],
       "Private video calls for the conversations that matter.": [
         "Videochiamate private per le conversazioni importanti."
-      ],
-      "Processed content": [
-        "Contenuto elaborato"
       ],
       "Processing ${ uploadProgress.fileName }": [
         "Caricamento ${ uploadProgress.fileName }..."
@@ -1509,15 +1419,6 @@
       "Removed from future questions": [
         "Rimosso da domande future"
       ],
-      "Retrieved Project Knowledge": [
-        "Conoscenza del progetto recuperata"
-      ],
-      "rows": [
-        "righe"
-      ],
-      "rows with": [
-        "righe con"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Salva tutte le tue conversazioni in una cronologia chat che solo tu puoi vedere. Accedi o crea un account."
       ],
@@ -1526,21 +1427,6 @@
       ],
       "Show all files": [
         "Mostra tutti i file"
-      ],
-      "Show Formatted": [
-        "Mostra in stato formattato"
-      ],
-      "Show Raw": [
-        "Mostra raw"
-      ],
-      "Show Table": [
-        "Mostra tabella"
-      ],
-      "Showing": [
-        "Visualizzazione attuale"
-      ],
-      "Showing first": [
-        "Mostrati per primi"
       ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Accedi o crea un account per sfogliare e aggiungere file dal tuo ${ DRIVE_APP_NAME } (archiviazione cloud crittografata end-to-end) alla conoscenza della tua chat."
@@ -1551,14 +1437,8 @@
       "Table view": [
         "Visualizzazione tabella"
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Si è verificato un errore durante l'elaborazione di questo file. Il contenuto potrebbe non essere leggibile o il formato del file potrebbe non essere completamente supportato."
-      ],
       "These files won't be used for future questions.": [
         "Questi file non verranno utilizzati per domande future."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Questo file sembra essere vuoto o non contiene alcun contenuto testuale estraibile."
       ],
       "This folder is empty": [
         "Questa cartella è vuota"
@@ -1575,12 +1455,6 @@
       "Trying...": [
         "Tentativo in corso..."
       ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Impossibile analizzare questo file come tabella. Puoi visualizzare invece il contenuto raw."
-      ],
-      "Unsupported File Type": [
-        "Tipo di file non supportato"
-      ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Caricamento di \"${ file.name }\" su ${ DRIVE_APP_NAME }..."
       ],
@@ -1595,9 +1469,6 @@
       ],
       "You are about to visit an external website:": [
         "Stai per visitare un sito web esterno:"
-      ],
-      "Your information is zero-access encrypted": [
-        "Le tue informazioni sono crittografate a conoscenza zero"
       ]
     },
     "collider_2025: Job": {
@@ -1930,9 +1801,6 @@
       ]
     },
     "collider_2025: Upsell": {
-      "Create free account": [
-        "Crea un account gratuito"
-      ],
       "Upgrade": [
         "Effettua l'upgrade"
       ],
@@ -2130,9 +1998,6 @@
       "Close sidebar": [
         "Chiudi la barra laterale"
       ],
-      "Create a free account": [
-        "Crea un account gratuito"
-      ],
       "Create project": [
         "Crea progetto"
       ],
@@ -2186,9 +2051,6 @@
       ],
       "Show sidebar": [
         "Mostra la barra laterale"
-      ],
-      "Sign in": [
-        "Accedi"
       ],
       "Unfavorite": [
         "Rimuovi dai preferiti"
@@ -2365,9 +2227,6 @@
       ],
       "chats": [
         "chat"
-      ],
-      "Current folder:": [
-        "Cartella corrente:"
       ],
       "Edit conversation title": [
         "Modifica titolo conversazione"
@@ -2731,9 +2590,6 @@
       ],
       "Today": [
         "Oggi"
-      ],
-      "Whatever you ask me is:": [
-        "Qualunque cosa mi chiedi è:"
       ]
     },
     "collider_2025:Tooltip": {
@@ -3819,11 +3675,20 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La modifica dell'indirizzo di fatturazione non è al momento disponibile. Per favore riprova più tardi."
       ],
+      "Email is not valid": [
+        "Indirizzo email non valido"
+      ],
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
+      ],
+      "Incorrect username": [
+        "Username non corretto"
       ],
       "Invalid ${ name } code": [
         "Codice ${ name } non valido"
@@ -3849,8 +3714,14 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Not a valid number": [
+        "Numero non valido"
+      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Passwords do not match": [
+        "Le password non corrispondono"
       ],
       "Payment process canceled": [
         "Processo di pagamento annullato"
@@ -3909,8 +3780,14 @@
       "The amount due has changed. Please try again.": [
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
+      "The email addresses do not match": [
+        "Gli indirizzi email non corrispondono."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is invalid": [
         "Questo campo non è valido"
@@ -3918,11 +3795,23 @@
       "This field is required": [
         "Campo necessario"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
+      ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
+      ],
+      "Username must begin with a letter or digit": [
+        "Il nome utente deve iniziare con una lettera o un numero."
+      ],
+      "Username must end with a letter or digit": [
+        "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
@@ -5078,9 +4967,6 @@
       ],
       "Render time": [
         "Tempo di rendering"
-      ],
-      "Search Index Debug": [
-        "Debug indice di ricerca"
       ],
       "Smoothing (Spring-Mass)": [
         "Levigatura (Molla-Massa)"
@@ -7319,9 +7205,6 @@
       "Reverse charge not supported": [
         "Inversione contabile non supportata"
       ],
-      "Search Index Debug": [
-        "Debug indice di ricerca"
-      ],
       "Select a plan": [
         "Seleziona un piano"
       ],
@@ -7413,6 +7296,16 @@
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
+      ]
+    },
     "VPN Plan Feature": {
       "${ n } device": [
         "${ n } dispositivo",
@@ -7494,9 +7387,6 @@
       ]
     },
     "Warning": {
-      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
-        "Trovati ${ orphanedDocCount } documenti (${ orphanedChunkCount } chunk) che fanno riferimento a ${ orphanedSpaceIds.length } spazio/i mancante/i."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],

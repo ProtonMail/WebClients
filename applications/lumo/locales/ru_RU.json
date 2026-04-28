@@ -720,9 +720,6 @@
       "Continue": [
         "Продолжить"
       ],
-      "Dismiss": [
-        "Отклонить"
-      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Получите ${ LUMO_SHORT_APP_NAME } Plus всего за ${ price }"
       ],
@@ -758,20 +755,11 @@
       "Close": [
         "Закрыть"
       ],
-      "Learn more": [
-        "Подробнее"
-      ],
       "Open Link": [
         "Открыть ссылку"
       ],
       "Retry": [
         "Повторите попытку"
-      ],
-      "Upload": [
-        "Загрузить"
-      ],
-      "Web search": [
-        "Поиск в Интернете"
       ]
     },
     "collider_2025: Characteristic": {
@@ -784,20 +772,11 @@
       "Multiple large uploads": [
         "Множественные большие загрузки"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Даже ${ BRAND_NAME } не может получить доступ к нашей истории чата."
-      ],
-      "Our conversations are never used for training.": [
-        "Наши цепочки писем никогда не используются для обучения."
-      ],
       "Priority access": [
         "Приоритетный доступ"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Благодаря шифрованию с нулевым доступом, ваши сохраненные беседы могут быть расшифрованы и прочитаны только на вашем устройстве. Ни ${ BRAND_NAME }, ни кто-либо другой не может их видеть."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "В отличие от других помощников, я не записываю наши разговоры."
       ],
       "Unlimited daily chats": [
         "Неограниченное количество ежедневных чатов"
@@ -813,17 +792,8 @@
       "Only you have access": [
         "Доступ есть только у вас"
       ],
-      "Private": [
-        "Частный"
-      ],
-      "Safeguarded": [
-        "Защищено"
-      ],
       "Tech that you can trust": [
         "Технологии, которым вы можете доверять"
-      ],
-      "Treated with respect": [
-        "С уважением к вашей конфиденциальности"
       ],
       "Your chats are yours alone": [
         "Ваши чаты доступны только вам"
@@ -918,20 +888,8 @@
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Будьте осторожны с незнакомыми доменами или чрезмерным количеством поддоменов"
       ],
-      "characters": [
-        "символы"
-      ],
       "Check this is the site you expect to visit": [
         "Убедитесь, что это тот сайт, который вы ожидаете посетить"
-      ],
-      "Close": [
-        "Закрыть"
-      ],
-      "columns": [
-        "столбцов"
-      ],
-      "columns found, no data rows": [
-        "найдены столбцы, нет строк данных"
       ],
       "Domain name": [
         "Доменное имя"
@@ -939,20 +897,11 @@
       "Drag and drop your files here to add them to the chat.": [
         "Перетащите файлы сюда, чтобы добавить их в чат."
       ],
-      "Error Parsing Table": [
-        "Ошибка анализа таблицы"
-      ],
       "Error processing attachment": [
         "Ошибка обработки вложения"
       ],
-      "Error Processing File": [
-        "Ошибка обработки файла"
-      ],
       "files": [
         "файлы"
-      ],
-      "files are not currently supported for content extraction.": [
-        "файлы в настоящее время не поддерживаются для извлечения содержимого."
       ],
       "How to identify safe links:": [
         "Как определить безопасные ссылки:"
@@ -963,29 +912,11 @@
       "Manage files": [
         "Управление файлами"
       ],
-      "No Content Available": [
-        "Содержимое недоступно"
-      ],
-      "No data rows found": [
-        "Строки данных не найдены"
-      ],
-      "No data rows found in this file.": [
-        "В этом файле не найдено строк данных."
-      ],
-      "Note:": [
-        "Заметка:"
-      ],
-      "of": [
-        "из"
-      ],
       "Please share what you expected": [
         "Поделитесь тем, что вы ожидали"
       ],
       "Please wait for files to finish processing": [
         "Дождитесь завершения обработки файлов"
-      ],
-      "Processed content": [
-        "Обработанное содержимое"
       ],
       "Processing file contents...": [
         "Обработка содержимого файла..."
@@ -996,12 +927,6 @@
       "Remove message filter": [
         "Удалить фильтр сообщений"
       ],
-      "rows": [
-        "строк"
-      ],
-      "rows with": [
-        "строк с"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Сохраните все ваши разговоры в истории чата, которую видите только вы. Войдите или создайте аккаунт."
       ],
@@ -1011,38 +936,11 @@
       "Show all files": [
         "Показать все файлы"
       ],
-      "Show Formatted": [
-        "Показать отформатированный"
-      ],
-      "Show Raw": [
-        "Показать необработанный"
-      ],
-      "Show Table": [
-        "Показать таблицу"
-      ],
-      "Showing": [
-        "Показано"
-      ],
-      "Showing first": [
-        "Показаны первые"
-      ],
       "Table view": [
         "Табличный вид"
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Произошла ошибка при обработке этого файла. Содержимое может быть нечитаемым или формат файла может быть не полностью поддерживаемым."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Этот файл, похоже, пуст или не содержит извлекаемого текстового содержимого."
-      ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Чтобы вернуться к этому разговору позже, войдите в систему или создайте аккаунт."
-      ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "Не удалось проанализировать этот файл как таблицу. Вместо этого вы можете просмотреть необработанное содержимое."
-      ],
-      "Unsupported File Type": [
-        "Неподдерживаемый тип файла"
       ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Следите за опечатками (например, proton.me вместо pr0t0n.me)"
@@ -1151,11 +1049,6 @@
         "Попробуйте ${ MAIL_APP_NAME }"
       ]
     },
-    "collider_2025: Upsell": {
-      "Create free account": [
-        "Создать бесплатный аккаунт"
-      ]
-    },
     "collider_2025: Warning": {
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Подозрительно: ${ urlParts.subdomainCount } поддомен",
@@ -1210,9 +1103,6 @@
       ],
       "Settings": [
         "Настройки"
-      ],
-      "Sign in": [
-        "Войти"
       ],
       "Unfavorite": [
         "Убрать из избранного"
@@ -1301,9 +1191,6 @@
       ],
       "Today": [
         "Cегодня"
-      ],
-      "Whatever you ask me is:": [
-        "Что бы вы ни спросили:"
       ]
     },
     "color": {
@@ -2360,11 +2247,20 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "Изменение платежного адреса в данный момент недоступно. Повторите попытку позже."
       ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
       ],
       "Invalid ${ name } code": [
         "Недействительный код ${ name }"
@@ -2387,8 +2283,14 @@
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "Payment process canceled": [
         "Процесс оплаты отменён"
@@ -2432,17 +2334,35 @@
       "The amount due has changed. Please try again.": [
         "Сумма оплаты изменилась. Пожалуйста, попробуйте еще раз."
       ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
       ]
     },
     "Error message": {
@@ -5474,6 +5394,20 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "VPN Plan Feature": {
