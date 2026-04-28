@@ -23,7 +23,7 @@ interface MeetingNameProps {
 }
 
 const CTAContainer = ({ children }: { children: React.ReactNode }) => {
-    const meetUpsellEnabled = useFlag('MeetUpsell');
+    const meetCountdownUpsellEnabled = useFlag('MeetCountdownUpsell');
     const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 
     const forceShowPopup = showRemainingTime && canOpenDropdown;
 
-    const isPopupOpen = (isHovered || forceShowPopup) && meetUpsellEnabled;
+    const isPopupOpen = (isHovered || forceShowPopup) && meetCountdownUpsellEnabled;
 
     const timeLeft = (
         <time dateTime={formatDuration(timeLeftMs)} className="text-tabular-nums" key="time-left">
