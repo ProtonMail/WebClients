@@ -4886,6 +4886,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } er slettet"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albummer"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -4969,6 +4973,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav opløsning"
       ],
+      "${ files } file": [
+        "${ files } fil",
+        "${ files } filer"
+      ],
+      "${ folders } folder": [
+        "${ folders } mappe",
+        "${ folders } mapper"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
@@ -5002,6 +5014,10 @@
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elementer"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -5731,6 +5747,18 @@
       ],
       "Index is empty.": [
         "Indeks er tom."
+      ],
+      "Indexed ${ first }": [
+        "Indekserede ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indekserede ${ first } og ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indekserede ${ first }, ${ second } og ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indekserede ${ first }, ${ second }, ${ third } og ${ fourth }"
       ],
       "Indexing in progress": [
         "Indeksering i gang"
