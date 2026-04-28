@@ -925,17 +925,11 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Agregar archivo a ${ DRIVE_APP_NAME }"
       ],
-      "Add from ${ DRIVE_APP_NAME }": [
-        "Añadir desde ${ DRIVE_APP_NAME }"
-      ],
       "Add to active": [
         "Añadir a activos"
       ],
       "Already in KB": [
         "Ya en la base de conocimiento"
-      ],
-      "Browse ${ DRIVE_SHORT_APP_NAME }": [
-        "Explorar ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Cancel": [
         "Cancelar"
@@ -951,9 +945,6 @@
       ],
       "Disable ghost mode": [
         "Desactivar el modo fantasma"
-      ],
-      "Dismiss": [
-        "Descartar"
       ],
       "Draw a sketch": [
         "Dibujar un boceto"
@@ -1012,9 +1003,6 @@
       "Try again": [
         "Reintentar"
       ],
-      "Upload file and add to knowledge base": [
-        "Cargar archivo y añadirlo a la base de conocimientos"
-      ],
       "Upload files": [
         "Cargar archivos"
       ],
@@ -1051,9 +1039,6 @@
       "Delete all": [
         "Eliminar todo"
       ],
-      "Learn more": [
-        "Más información"
-      ],
       "Maybe later": [
         "Quizás más tarde"
       ],
@@ -1065,12 +1050,6 @@
       ],
       "Try it now": [
         "Pruébelo ahora"
-      ],
-      "Upload": [
-        "Cargar"
-      ],
-      "Web search": [
-        "Búsqueda web"
       ]
     },
     "collider_2025: Characteristic": {
@@ -1083,20 +1062,11 @@
       "Multiple large uploads": [
         "Varias cargas grandes"
       ],
-      "Not even ${ BRAND_NAME } can access our chat history.": [
-        "Ni siquiera ${ BRAND_NAME } puede acceder a nuestro historial de chat."
-      ],
-      "Our conversations are never used for training.": [
-        "Nuestras conversaciones nunca se usan para entrenamiento."
-      ],
       "Priority access": [
         "Acceso prioritario"
       ],
       "Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${ BRAND_NAME } nor anyone else can see them.": [
         "Gracias al cifrado de acceso cero, sus conversaciones guardadas solo se pueden descifrar y leer en su dispositivo. Ni ${ BRAND_NAME } ni nadie más puede verlas."
-      ],
-      "Unlike other assistants, I don't record our conversations.": [
-        "A diferencia de otros asistentes, no grabo nuestras conversaciones."
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -1118,17 +1088,8 @@
       "Only you have access": [
         "Solo usted tiene acceso"
       ],
-      "Private": [
-        "Privado"
-      ],
-      "Safeguarded": [
-        "Protegido"
-      ],
       "Tech that you can trust": [
         "Tecnología en la que puede confiar"
-      ],
-      "Treated with respect": [
-        "Tratado con respeto"
       ],
       "Your chats are yours alone": [
         "Sus chats son solo suyos."
@@ -1540,26 +1501,11 @@
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
         "Encadene llamadas a herramientas para orquestar flujos de trabajo de varios pasos de principio a fin."
       ],
-      "characters": [
-        "caracteres"
-      ],
       "characters not shown": [
         "caracteres no mostrados"
       ],
-      "Chat knowledge": [
-        "Conocimiento del chat"
-      ],
       "Check this is the site you expect to visit": [
         "Verifique que este sea el sitio que espera visitar."
-      ],
-      "Close": [
-        "Cerrar"
-      ],
-      "columns": [
-        "columnas"
-      ],
-      "columns found, no data rows": [
-        "columnas encontradas, no hay filas de datos"
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Cree y revoque claves de API para acceder mediante programación. Las claves solo se muestran una vez luego de crearlas."
@@ -1576,14 +1522,8 @@
       "Drag and drop your files here to add them to the chat.": [
         "Arrastre y suelte sus archivos aquí para agregarlos al chat."
       ],
-      "Error Parsing Table": [
-        "Error al analizar tabla"
-      ],
       "Error processing attachment": [
         "Error al procesar archivo adjunto"
-      ],
-      "Error Processing File": [
-        "Error al procesar archivo"
       ],
       "Exceeds ${ maxSize } limit": [
         "Excede el límite de ${ maxSize }"
@@ -1612,29 +1552,17 @@
       "File capacity for this conversation": [
         "Capacidad de archivo para esta conversación"
       ],
-      "File too large": [
-        "Archivo demasiado grande."
-      ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para la vista previa (>150k tokens)"
       ],
       "files": [
         "archivos"
       ],
-      "files are not currently supported for content extraction.": [
-        "los archivos no son actualmente compatibles para la extracción de contenido."
-      ],
       "Files automatically retrieved based on your question.": [
         "Archivos recuperados automáticamente en función de su pregunta."
       ],
-      "Files automatically retrieved based on your questions:": [
-        "Archivos recuperados automáticamente en función de sus preguntas:"
-      ],
       "Files you've added to this conversation.": [
         "Archivos que ha añadido a esta conversación."
-      ],
-      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
-        "Para cada conversación, ${ LUMO_SHORT_APP_NAME } tiene la capacidad de procesar una cantidad limitada de información. La barra de progreso muestra cuánta capacidad están usando sus archivos actuales. "
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Por cada día, promedio de tokens por llamada a la API (tokens ÷ llamadas, o 0 si no hay llamadas)."
@@ -1693,15 +1621,6 @@
       "No calls": [
         "Sin llamadas"
       ],
-      "No Content Available": [
-        "Contenido no disponible"
-      ],
-      "No data rows found": [
-        "No se encontraron filas de datos"
-      ],
-      "No data rows found in this file.": [
-        "No se encontraron filas de datos en este archivo."
-      ],
       "No files available": [
         "No hay archivos disponibles"
       ],
@@ -1713,12 +1632,6 @@
       ],
       "No usage yet": [
         "Aún no se ha usado"
-      ],
-      "Note:": [
-        "Nota:"
-      ],
-      "of": [
-        "de"
       ],
       "Partial content": [
         "Contenido parcial"
@@ -1735,14 +1648,8 @@
       "Press ${ shiftEnterBoldText } to ask": [
         "Presione ${ shiftEnterBoldText } para preguntar"
       ],
-      "Preview quality - full resolution not loaded": [
-        "Calidad de previsualización: no se ha cargado la resolución completa"
-      ],
       "Private video calls for the conversations that matter.": [
         "Videollamadas privadas para las conversaciones que importan."
-      ],
-      "Processed content": [
-        "Contenido procesado"
       ],
       "Processing ${ uploadProgress.fileName }": [
         "Procesando ${ uploadProgress.fileName }"
@@ -1768,15 +1675,6 @@
       "Required on all POST requests with a JSON body.": [
         "Obligatorio en todas las solicitudes POST con cuerpo JSON."
       ],
-      "Retrieved Project Knowledge": [
-        "Conocimiento del proyecto recuperado"
-      ],
-      "rows": [
-        "filas"
-      ],
-      "rows with": [
-        "filas con"
-      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Guarde todas sus conversaciones en un historial de chat que solo usted puede ver. Inicie sesión o cree una cuenta."
       ],
@@ -1786,21 +1684,6 @@
       "Show all files": [
         "Mostrar todos los archivos"
       ],
-      "Show Formatted": [
-        "Mostrar formateado"
-      ],
-      "Show Raw": [
-        "Mostrar sin formato"
-      ],
-      "Show Table": [
-        "Mostrar tabla"
-      ],
-      "Showing": [
-        "Mostrando"
-      ],
-      "Showing first": [
-        "Mostrando primero"
-      ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Inicie sesión o cree una cuenta para explorar y añadir archivos desde su ${ DRIVE_APP_NAME } (almacenamiento en la nube cifrado de extremo a extremo) a su conocimiento del chat."
       ],
@@ -1809,9 +1692,6 @@
       ],
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "Inicie sesión para generar flujos de trabajo con ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Sketch added as attachment": [
-        "Boceto añadido como archivo adjunto"
       ],
       "Space usage: ": [
         "Uso de espacio: "
@@ -1831,14 +1711,8 @@
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
         "La API de ${ LUMO_SHORT_APP_NAME } está disponible para suscriptores de ${ LUMO_SHORT_APP_NAME }+. Mejore para crear claves de API y usar la API mediante programación."
       ],
-      "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
-        "Hubo un error al procesar este archivo. El contenido podría no ser legible o el formato del archivo podría no ser totalmente compatible."
-      ],
       "These files won't be used for future questions.": [
         "Estos archivos no se usarán para preguntas futuras."
-      ],
-      "This file appears to be empty or contains no extractable text content.": [
-        "Este archivo parece estar vacío o no incluye contenido de texto extraíble."
       ],
       "This folder is empty": [
         "Esta carpeta está vacía"
@@ -1858,12 +1732,6 @@
       "Trying...": [
         "Intentando..."
       ],
-      "Unable to parse this file as a table. You can view the raw content instead.": [
-        "No se puede analizar este archivo como una tabla. Puede ver el contenido sin formato en su lugar."
-      ],
-      "Unsupported File Type": [
-        "Tipo de archivo no compatible"
-      ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Cargando «${ file.name }» a ${ DRIVE_APP_NAME }..."
       ],
@@ -1881,9 +1749,6 @@
       ],
       "You are about to visit an external website:": [
         "Está a punto de visitar un sitio web externo:"
-      ],
-      "Your information is zero-access encrypted": [
-        "Su información está cifrada con acceso cero"
       ]
     },
     "collider_2025: Job": {
@@ -2487,9 +2352,6 @@
       ]
     },
     "collider_2025: Upsell": {
-      "Create free account": [
-        "Crear cuenta gratuita"
-      ],
       "Upgrade": [
         "Mejorar"
       ],
@@ -2696,12 +2558,6 @@
       "Close sidebar": [
         "Cerrar barra lateral"
       ],
-      "Collapse projects": [
-        "Contraer proyectos"
-      ],
-      "Create a free account": [
-        "Crear una cuenta gratuita"
-      ],
       "Create project": [
         "Crear proyecto"
       ],
@@ -2713,9 +2569,6 @@
       ],
       "Expand": [
         "Expandir"
-      ],
-      "Expand projects": [
-        "Expandir proyectos"
       ],
       "Favorite": [
         "Favorito"
@@ -2764,9 +2617,6 @@
       ],
       "Show sidebar": [
         "Mostrar la barra lateral"
-      ],
-      "Sign in": [
-        "Iniciar sesión"
       ],
       "Unfavorite": [
         "Quitar de favoritos"
@@ -2963,9 +2813,6 @@
       ],
       "chats": [
         "chats"
-      ],
-      "Current folder:": [
-        "Carpeta actual:"
       ],
       "Edit conversation title": [
         "Editar título de la conversación"
@@ -3343,9 +3190,6 @@
       ],
       "Today": [
         "Hoy"
-      ],
-      "Whatever you ask me is:": [
-        "Lo que usted me pregunte es:"
       ]
     },
     "collider_2025:Tooltip": {
@@ -4460,14 +4304,23 @@
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtelo de nuevo más tarde."
       ],
+      "Email is not valid": [
+        "Correo no válido"
+      ],
       "Enter 6 digits": [
         "Ingrese 6 dígitos"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Error al cargar los datos de la suscripción. Intente más tarde."
+      ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -4496,8 +4349,14 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
+      "Not a valid number": [
+        "Número no válido"
+      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
+      ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden"
       ],
       "Payment process canceled": [
         "Proceso de pago cancelado"
@@ -4559,11 +4418,17 @@
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Intente de nuevo."
       ],
+      "The email addresses do not match": [
+        "Las direcciónes de correo electrónico no son las mismas"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
         "Este campo es válido"
@@ -4571,11 +4436,23 @@
       "This field is required": [
         "Este campo es obligatorio"
       ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Este campo requiere un mínimo de ${ minimumLength } caracteres."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Intente usando solo letras, números y _.-"
+      ],
       "Unknown error": [
         "Error desconocido"
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
+      ],
+      "Username must begin with a letter or digit": [
+        "El nombre de usuario debe comenzar con una letra o dígito"
+      ],
+      "Username must end with a letter or digit": [
+        "El nombre de usuario debe terminar con una letra o dígito"
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -5787,9 +5664,6 @@
       ],
       "Render time": [
         "Tiempo de renderizado"
-      ],
-      "Search Index Debug": [
-        "Depurar índice de búsqueda"
       ],
       "Smoothing (Spring-Mass)": [
         "Amortiguación (Resorte-Masa)"
@@ -8160,9 +8034,6 @@
       "Reverse charge not supported": [
         "Cargo inverso no soportado"
       ],
-      "Search Index Debug": [
-        "Depuración del índice de búsqueda"
-      ],
       "Select a plan": [
         "Seleccione un plan"
       ],
@@ -8254,6 +8125,16 @@
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
+        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+      ]
+    },
     "VPN Plan Feature": {
       "${ n } device": [
         "${ n } dispositivo",
@@ -8335,9 +8216,6 @@
       ]
     },
     "Warning": {
-      "Found ${ orphanedDocCount } documents (${ orphanedChunkCount } chunks) referencing ${ orphanedSpaceIds.length } missing space(s).": [
-        "Se encontraron ${ orphanedDocCount } documentos (${ orphanedChunkCount } fragmentos) que hacen referencia a ${ orphanedSpaceIds.length } espacio(s) faltante(s)."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
       ],
