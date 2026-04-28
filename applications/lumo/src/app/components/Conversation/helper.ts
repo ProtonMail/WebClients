@@ -331,7 +331,7 @@ export function sendMessage({
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
                     enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: true,
+                    enableSuggestedQuestions: false,
                     generateTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -507,7 +507,7 @@ export function regenerateMessage({
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
                     enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: true,
+                    enableSuggestedQuestions: false,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
@@ -680,7 +680,7 @@ export function retrySendMessage({
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
                     enableReasoning: ui.enableReasoning,
-                    enableSuggestedQuestions: true,
+                    enableSuggestedQuestions: false,
                     generateTitle: requestTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
