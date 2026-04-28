@@ -104,6 +104,24 @@ import { TableOfContents } from './TableOfContents'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useSyncedState } from '../Hooks/useSyncedState'
 
+function SubscriptIcon() {
+  return (
+    <span aria-hidden="true" className="relative inline-block h-4 w-4 font-bold leading-none">
+      <span className="absolute left-0 top-0.5 text-[0.875rem]">X</span>
+      <span className="absolute bottom-0 right-0 text-[0.625rem]">2</span>
+    </span>
+  )
+}
+
+function SuperscriptIcon() {
+  return (
+    <span aria-hidden="true" className="relative inline-block h-4 w-4 font-bold leading-none">
+      <span className="absolute bottom-0 left-0 text-[0.875rem]">X</span>
+      <span className="absolute right-0 top-0 text-[0.625rem]">2</span>
+    </span>
+  )
+}
+
 export default function DocumentEditorToolbar({
   userMode,
   systemMode,
@@ -147,6 +165,8 @@ export default function DocumentEditorToolbar({
   const [isItalic, setIsItalic] = useState(false)
   const [isUnderline, setIsUnderline] = useState(false)
   const [isStrikethrough, setIsStrikethrough] = useState(false)
+  const [isSubscript, setIsSubscript] = useState(false)
+  const [isSuperscript, setIsSuperscript] = useState(false)
   const [isLink, setIsLink] = useState(false)
   const defaultFontSize = `${rootFontSize()}px`
   const [fontSize, setFontSize] = useState(defaultFontSize)
@@ -190,6 +210,16 @@ export default function DocumentEditorToolbar({
 
   const formatStrikethrough = () => {
     editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')
+    focusEditor()
+  }
+
+  const formatSubscript = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'subscript')
+    focusEditor()
+  }
+
+  const formatSuperscript = () => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'superscript')
     focusEditor()
   }
 
@@ -314,6 +344,8 @@ export default function DocumentEditorToolbar({
       setIsItalic(selection.hasFormat('italic'))
       setIsUnderline(selection.hasFormat('underline'))
       setIsStrikethrough(selection.hasFormat('strikethrough'))
+      setIsSubscript(selection.hasFormat('subscript'))
+      setIsSuperscript(selection.hasFormat('superscript'))
 
       const node = getSelectedNode(selection)
       const parent = node.getParent()
@@ -673,7 +705,7 @@ export default function DocumentEditorToolbar({
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
-  const isPageBreakEnabled = application.environment === 'alpha' || isDevOrBlack()
+  const areAlphaOnlyEditorFeaturesEnabled = application.environment === 'alpha' || isDevOrBlack()
 
   const { shouldShowTooltip: suggestionTooltipNotShownPreviously } = useTooltipOnce(
     TooltipKey.DocsSuggestionModeSpotlight,
@@ -1215,9 +1247,37 @@ export default function DocumentEditorToolbar({
       ],
       showInToolbar: false,
     },
+    ...(areAlphaOnlyEditorFeaturesEnabled
+      ? [
+          {
+            id: 'alpha-text-formatting-options',
+            items: [
+              {
+                id: 'subscript-button',
+                type: 'button' as const,
+                label: `${c('Action').t`Subscript`} (alpha only)`,
+                onClick: formatSubscript,
+                disabled: !isEditable,
+                active: isSubscript,
+                icon: <SubscriptIcon />,
+              },
+              {
+                id: 'superscript-button',
+                type: 'button' as const,
+                label: `${c('Action').t`Superscript`} (alpha only)`,
+                onClick: formatSuperscript,
+                disabled: !isEditable,
+                active: isSuperscript,
+                icon: <SuperscriptIcon />,
+              },
+            ],
+            showInToolbar: false as const,
+          },
+        ]
+      : []),
   ]
 
-  if (isPageBreakEnabled) {
+  if (areAlphaOnlyEditorFeaturesEnabled) {
     toolbarItems.splice(6, 0, {
       id: 'page-break-option',
       items: [
@@ -1241,7 +1301,7 @@ export default function DocumentEditorToolbar({
     })
   }
 
-  const isTableOfContentsEnabled = application.environment === 'alpha' || isDevOrBlack()
+  const isTableOfContentsEnabled = areAlphaOnlyEditorFeaturesEnabled
 
   if (isTableOfContentsEnabled) {
     toolbarItems.unshift({
