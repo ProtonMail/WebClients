@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -18,7 +19,7 @@ interface OpenDesktopAppBannerProps {
 }
 
 export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps) => {
-    const [visible] = useState(() => !isElectronApp);
+    const [visible, setVisible] = useState(() => !isElectronApp);
 
     useEffect(() => {
         // Remove deprecated banner storage key
@@ -54,7 +55,7 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
                         c('Info').jt`Get the best experience with the ${protonMeet} desktop app`
                     }
                 </div>
-                <div>
+                <div className="flex flex-row gap-2">
                     <Button
                         className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"
                         onClick={handleDownloadApp}
@@ -70,6 +71,9 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
                     >{c('Action').t`Open app`}</Button>
                 </div>
             </div>
+            <button onClick={() => setVisible(false)} aria-label={c('Action').t`Close`} className="mr-4 cursor-pointer">
+                <IcCross className="color-hint" size={5} alt={c('Action').t`Close`} />
+            </button>
         </div>
     );
 };
