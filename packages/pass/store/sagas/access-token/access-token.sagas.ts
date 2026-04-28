@@ -38,6 +38,7 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
 import { selectWritableVaults } from '@proton/pass/store/selectors/shares';
 import { ShareRole, ShareType } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 
 const expirationTimestampFromMinutes = (minutes: number) => Math.floor(Date.now() / 1000) + minutes * 60;
 
@@ -173,12 +174,13 @@ const decodeRecord = function* (
         if (!decoded) return { ...record, decodedPayload: null };
 
         const decodedPayload: DecodedPatMonitorPayload =
-            decoded.kind === 'agent-access-item'
+            decoded.kind === 'agent-action'
                 ? {
-                      kind: 'agent-access-item',
-                      reason: decoded.agentAccessItem.reason,
-                      vaultName: decoded.agentAccessItem.vaultName,
-                      itemName: decoded.agentAccessItem.itemName,
+                      kind: 'agent-action',
+                      reason: decoded.agentAction.reason,
+                      vaultName: decoded.agentAction.vaultName,
+                      itemName: decoded.agentAction.itemName,
+                      folderName: decoded.agentAction.folderName,
                   }
                 : { kind: 'unknown' };
         return { ...record, decodedPayload };
@@ -187,7 +189,7 @@ const decodeRecord = function* (
          * abort the whole page — surface it as a `decode-error` so the UI
          * can flag the row and the dev tools log shows the cause. */
         const error = e instanceof Error ? e.message : String(e);
-        console.error('PAT monitor decode failed', { recordId: record.PatMonitorRecordID, error });
+        logger.warn(`[Saga::AccessToken] decode failed`, error);
         return { ...record, decodedPayload: { kind: 'decode-error', error } };
     }
 };
