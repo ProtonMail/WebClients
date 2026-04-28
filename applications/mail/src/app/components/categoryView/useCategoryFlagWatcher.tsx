@@ -6,8 +6,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { getParametersFromPath } from 'proton-mail/hooks/mailbox/useElements';
 import { reset } from 'proton-mail/store/elements/elementsActions';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from './useCategoriesView';
@@ -22,15 +22,17 @@ import { useCategoriesView } from './useCategoriesView';
 export const useCategoryFlagWatcher = () => {
     const history = useHistory();
     const location = useLocation();
-    const labelID = useMailSelector(selectLabelID);
     const disabledCategories = useMailSelector(selectDisabledCategoriesIDs);
 
     const dispatch = useMailDispatch();
 
     const categoryView = useCategoriesView();
 
+    // We get the ID from the URL because the labelID in the state is not up-to-date yet.
     useEffect(() => {
-        if (labelID !== MAILBOX_LABEL_IDS.INBOX) {
+        const { rawLabelID } = getParametersFromPath(location.pathname);
+        const isInbox = !rawLabelID || rawLabelID === LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX];
+        if (!isInbox) {
             return;
         }
 
@@ -54,5 +56,5 @@ export const useCategoryFlagWatcher = () => {
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
             return;
         }
-    }, [categoryView.categoryViewAccess, labelID, history, dispatch, location, disabledCategories]);
+    }, [categoryView.categoryViewAccess, history, dispatch, location, disabledCategories]);
 };
