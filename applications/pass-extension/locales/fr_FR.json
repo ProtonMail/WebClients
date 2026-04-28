@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Une erreur s'est produite lors du retrait du lien sécurisé. Nous vous invitons à réessayer dans quelques minutes."
       ],
+      "This domain is already managed by your organization": [
+        "Ce domaine est déjà géré par votre organisation."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Cela peut se produire après une longue période sans utiliser ${ PASS_SHORT_APP_NAME } ou après avoir effacé l'historique de Safari."
       ],
@@ -2080,8 +2083,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"

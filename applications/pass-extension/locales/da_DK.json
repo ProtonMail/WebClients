@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Der opstod en fejl under fjernelse af det sikre link. Prøv igen om et par minutter."
       ],
+      "This domain is already managed by your organization": [
+        "Dette domæne håndteres allerede af din organisation"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Det kan ske efter lang tid uden brug af ${ PASS_SHORT_APP_NAME }, eller rydning af din Safari-historik."
       ],
@@ -2080,8 +2083,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

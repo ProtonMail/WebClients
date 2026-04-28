@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Hubo un error al eliminar el enlace seguro. Intente de nuevo en unos minutos."
       ],
+      "This domain is already managed by your organization": [
+        "Este dominio ya está administrado por su organización"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Esto puede ocurrir después de mucho tiempo sin usar ${ PASS_SHORT_APP_NAME } o de borrar el historial de Safari."
       ],
@@ -2080,8 +2083,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

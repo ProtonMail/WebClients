@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
       ],
+      "This domain is already managed by your organization": [
+        "Aquest domini ja el gestiona la vostra organització"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Això pot passar després de molt de temps sense utilitzar ${ PASS_SHORT_APP_NAME } o esborrar l'historial de Safari."
       ],
@@ -2080,8 +2083,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
