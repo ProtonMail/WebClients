@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
@@ -22,6 +23,7 @@ export const useCategoryFlagWatcher = () => {
     const history = useHistory();
     const location = useLocation();
     const labelID = useMailSelector(selectLabelID);
+    const disabledCategories = useMailSelector(selectDisabledCategoriesIDs);
 
     const dispatch = useMailDispatch();
 
@@ -33,7 +35,10 @@ export const useCategoryFlagWatcher = () => {
         }
 
         const categoryID = categoryIDFromUrl(location);
-        if (categoryView.categoryViewAccess && !categoryID) {
+        if (
+            (categoryView.categoryViewAccess && !categoryID) ||
+            (categoryID && disabledCategories?.includes(categoryID))
+        ) {
             const newUrl = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
             dispatch(
                 reset({
@@ -49,5 +54,5 @@ export const useCategoryFlagWatcher = () => {
             history.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`);
             return;
         }
-    }, [categoryView.categoryViewAccess, labelID, history, dispatch, location]);
+    }, [categoryView.categoryViewAccess, labelID, history, dispatch, location, disabledCategories]);
 };
