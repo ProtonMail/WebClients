@@ -150,7 +150,7 @@ export const setFilterInUrl = (location: Location, filter: Filter) =>
     changeSearchParams(location.pathname, location.hash, { page: undefined, filter: filterToString(filter) });
 
 export const resetFilterAndSort = (location: Location) =>
-    changeSearchParams(location.pathname, location.hash, { filter: undefined, sort: undefined });
+    changeSearchParams(location.pathname, location.hash, { page: undefined, filter: undefined, sort: undefined });
 
 // Categories are only present in inbox, so always link to inbox regardless of current location
 export const setCategoryInUrl = (category: CategoryLabelID) => {

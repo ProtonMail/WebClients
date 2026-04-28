@@ -9,15 +9,17 @@ export const getActiveState = (filter: Filter, sort: Sort) => {
 
     const hasActiveFilter = Object.keys(filter).length > 0;
 
+    const isReadActive = filter.Unread === 0;
+    const isDropdownFilterActive = isReadActive || isAttachmentActive;
     return {
         showReset: isNonDefaultSort || hasActiveFilter,
         isUnreadActive: filter.Unread === 1,
-        isReadActive: filter.Unread === 0,
+        isReadActive,
         isAttachmentActive,
         isNewestFirstActive: sort.sort === 'Time' && sort.desc === true,
         isOldestFirstActive: sort.sort === 'Time' && sort.desc === false,
-        isLargestFirstActive: sort.sort === 'Size' && sort.desc === false,
-        isSmallestFirstActive: sort.sort === 'Size' && sort.desc === true,
-        dropdownActiveCount: (filter.Unread === 0 ? 1 : 0) + (isAttachmentActive ? 1 : 0) + (isNonDefaultSort ? 1 : 0),
+        isLargestFirstActive: sort.sort === 'Size' && sort.desc === true,
+        isSmallestFirstActive: sort.sort === 'Size' && sort.desc === false,
+        dropdownActiveCount: (isDropdownFilterActive ? 1 : 0) + (isNonDefaultSort ? 1 : 0),
     };
 };
