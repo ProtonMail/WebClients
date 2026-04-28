@@ -125,6 +125,7 @@ const MoveDropdown = ({
     const list = treeview
         .concat([
             ...getInboxCategoriesItems({
+                selectAll: selectAll || false,
                 canMoveToInbox,
                 shouldShowTabs,
                 activeCategoriesTabs,
