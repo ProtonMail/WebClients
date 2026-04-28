@@ -2,8 +2,11 @@ import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { getModelState } from '@proton/account/test';
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
+import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { SyncsTable } from './SyncsTable';
 
@@ -73,5 +76,22 @@ describe('Syncs table testing', () => {
         fireEvent.click(deleteReport[0]);
 
         await waitFor(() => screen.getByTestId('ReportsTable:deleteModal'));
+    });
+
+    it('Should display BYOE addresses', async () => {
+        const byoeAddress = {
+            ID: 'address-byoe',
+            Email: 'byoe@gmail.com',
+            Status: ADDRESS_STATUS.STATUS_ENABLED,
+            Receive: ADDRESS_RECEIVE.RECEIVE_YES,
+            Flags: ADDRESS_FLAGS.BYOE,
+        } as Address;
+
+        server.use(http.get('importer/v1/sync', () => HttpResponse.json({ Code: 1000, Syncs: [] }, { headers })));
+
+        easySwitchRender(<SyncsTable />, { addresses: getModelState([byoeAddress]) });
+
+        const byoeRows = await screen.findAllByTestId('reportsTable:byoeAddressRow');
+        expect(byoeRows).toHaveLength(1);
     });
 });
