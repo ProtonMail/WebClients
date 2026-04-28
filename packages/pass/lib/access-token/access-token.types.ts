@@ -74,6 +74,20 @@ export interface ListPersonalAccessTokenAccessResponse {
     Shares: PersonalAccessTokenAccessGrant[];
 }
 
+/** Future-proofing note: BE may emit codes outside this subset for
+ * future event types, so the `Action` field on `PatMonitorRecord` type below
+ * stays `number` instead of the enum, so unmapped codes degrade gracefully
+ * to a generic label. */
+export enum PAT_EVENT_TYPE {
+    ITEM_CREATE = 20,
+    ITEM_UPDATE = 21,
+    ITEM_TRASH = 22,
+    ITEM_UNTRASH = 23,
+    ITEM_SOFT_DELETE = 24,
+    ITEM_READ = 31,
+    PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED = 160,
+}
+
 /** A single audit record of an agent action made via a PAT. `Action` is the
  * server-defined `EventType` enum (numeric); `Payload` is a base64-encoded
  * AES-GCM ciphertext (AAD = "proton.pass.payload") that decrypts to a
