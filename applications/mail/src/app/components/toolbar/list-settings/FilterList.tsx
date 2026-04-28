@@ -51,10 +51,8 @@ export const FilterList = () => {
     const sort = useMailSelector(selectSort);
     const filter = useMailSelector(selectFilter);
 
+    const tel = useListSettingsTelemetry();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { sendFileReport, sendReadReport, sendUnreadReport } = useListSettingsTelemetry();
-    const { sendNewestFirstReport, sendOldestFirstReport, sendLargestFirstReport, sendSmallestFirstReport } =
-        useListSettingsTelemetry();
 
     const handleFilter = (filter: Filter) => {
         history.push(setFilterInUrl(history.location, filter));
@@ -68,20 +66,20 @@ export const FilterList = () => {
         history.push(resetFilterAndSort(history.location));
     };
 
-    const active = getActiveState(filter, sort);
+    const activeState = getActiveState(filter, sort);
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     return (
         <div className="flex flex-nowrap gap-1">
-            {active.showReset && (
+            {activeState.showReset && (
                 <Button shape="ghost" color="norm" size="tiny" onClick={reset}>{c('Filter').t`Reset`}</Button>
             )}
 
             <Button
-                shape={active.isUnreadActive ? 'solid' : 'outline'}
+                shape={activeState.isUnreadActive ? 'solid' : 'outline'}
                 size="tiny"
                 onClick={() => {
                     handleFilter({ Unread: 1 });
-                    sendUnreadReport();
+                    tel.sendUnreadReport();
                 }}
                 data-testid="filter-dropdown:show-unread"
             >
@@ -90,15 +88,16 @@ export const FilterList = () => {
 
             <DropdownButton
                 size="tiny"
-                shape={active.dropdownActiveCount > 0 ? 'solid' : 'outline'}
+                shape={activeState.dropdownActiveCount > 0 ? 'solid' : 'outline'}
                 className="flex items-center"
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
+                data-testid="filter-dropdown:show-filters"
             >
                 <Icon size={3} className="mr-1" name="lines-long-to-small" />
-                {active.dropdownActiveCount > 0
-                    ? c('Filter').t`Filter (${active.dropdownActiveCount})`
+                {activeState.dropdownActiveCount > 0
+                    ? c('Filter').t`Filter (${activeState.dropdownActiveCount})`
                     : c('Filter').t`Filter`}
             </DropdownButton>
             <Dropdown
@@ -109,43 +108,46 @@ export const FilterList = () => {
                 borderRadius={DropdownBorderRadius.LG}
             >
                 <DropdownMenu>
-                    <p className="p-0 px-4 pt-3 pb-1 text-semibold">{c('Filter').t`Filter`}</p>
+                    <p className="px-4 pt-3 pb-1 text-semibold">{c('Filter').t`Filter`}</p>
                     <DropdownMenuButton
                         onClick={() => {
                             handleFilter({ Unread: 0 });
-                            sendReadReport();
+                            tel.sendReadReport();
                         }}
                         className="text-left"
                         data-testid="filter-dropdown:show-read"
                     >
                         <span className="flex items-center justify-space-between w-full">
                             {c('Filter').t`Read`}
-                            {active.isReadActive && <Icon name="checkmark" />}
+                            {activeState.isReadActive && <Icon name="checkmark" />}
                         </span>
                     </DropdownMenuButton>
+
                     <DropdownMenuButton
                         onClick={() => {
                             handleFilter({ Attachments: 1 });
-                            sendFileReport();
+                            tel.sendFileReport();
                         }}
                         className="text-left"
                         data-testid="filter-dropdown:has-file"
                     >
                         <span className="flex items-center justify-space-between w-full">
                             {c('Filter').t`Has attachments`}
-                            {active.isAttachmentActive && <Icon name="checkmark" />}
+                            {activeState.isAttachmentActive && <Icon name="checkmark" />}
                         </span>
                     </DropdownMenuButton>
                 </DropdownMenu>
+
                 <hr className="my-2 border-bottom border-weak" />
+
                 <DropdownMenu>
-                    <p className="p-0 px-4 pt-3 pb-1 text-semibold">{c('Sort option').t`Sort by`}</p>
+                    <p className="px-4 pt-3 pb-1 text-semibold">{c('Sort option').t`Sort by`}</p>
                     <DropdownSortOption
                         onClick={() => {
                             handleSort({ sort: 'Time', desc: true });
-                            sendNewestFirstReport();
+                            tel.sendNewestFirstReport();
                         }}
-                        isActive={active.isNewestFirstActive}
+                        isActive={activeState.isNewestFirstActive}
                         iconName={isScheduledLabel ? 'list-arrow-up' : 'list-arrow-down'}
                         testID="toolbar:sort-new-to-old"
                         label={c('Sort option').t`Newest first`}
@@ -154,9 +156,9 @@ export const FilterList = () => {
                     <DropdownSortOption
                         onClick={() => {
                             handleSort({ sort: 'Time', desc: false });
-                            sendOldestFirstReport();
+                            tel.sendOldestFirstReport();
                         }}
-                        isActive={active.isOldestFirstActive}
+                        isActive={activeState.isOldestFirstActive}
                         iconName={isScheduledLabel ? 'list-arrow-down' : 'list-arrow-up'}
                         testID="toolbar:sort-old-to-new"
                         label={c('Sort option').t`Oldest first`}
@@ -164,10 +166,10 @@ export const FilterList = () => {
 
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Size', desc: false });
-                            sendLargestFirstReport();
+                            handleSort({ sort: 'Size', desc: true });
+                            tel.sendLargestFirstReport();
                         }}
-                        isActive={active.isLargestFirstActive}
+                        isActive={activeState.isLargestFirstActive}
                         iconName="size-arrow-down"
                         testID="toolbar:sort-desc"
                         label={c('Sort option').t`Largest first`}
@@ -175,10 +177,10 @@ export const FilterList = () => {
 
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Size', desc: true });
-                            sendSmallestFirstReport();
+                            handleSort({ sort: 'Size', desc: false });
+                            tel.sendSmallestFirstReport();
                         }}
-                        isActive={active.isSmallestFirstActive}
+                        isActive={activeState.isSmallestFirstActive}
                         iconName="size-arrow-up"
                         testID="toolbar:sort-asc"
                         label={c('Sort option').t`Smallest first`}
