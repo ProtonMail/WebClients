@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Collapsible,
     CollapsibleContent,
@@ -11,8 +10,8 @@ import {
     type ModalStateProps,
     ModalTwoContent,
 } from '@proton/components';
+import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -105,9 +104,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                             label={
                                 <>
                                     {c('Title').t`Size`}
-                                    <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                        <IcInfoCircle size={3.5} alt={getSizeTooltipMessage()} />
-                                    </Tooltip>
+                                    <InfoIconTooltip title={getSizeTooltipMessage()} className="ml-1 mb-1" />
                                 </>
                             }
                             size={details.file.storageSize}
@@ -131,9 +128,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                     label={
                         <>
                             {c('Title').t`Number of downloads`}
-                            <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                <IcInfoCircle size={3.5} alt={getNumAccessesTooltipMessage()} />
-                            </Tooltip>
+                            <InfoIconTooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1" />
                         </>
                     }
                     text={details.numberOfDownloads}

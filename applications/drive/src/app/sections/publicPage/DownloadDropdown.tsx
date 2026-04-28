@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { useScanAndDownloadInfoModal } from '../../modals/ScanAndDownloadInfoModal';
 
@@ -80,11 +79,7 @@ export function DownloadDropdown({
                                 e.stopPropagation();
                             }}
                         >
-                            <Tooltip title={c('Info').t`Learn more`}>
-                                <span className="flex items-center">
-                                    <IcInfoCircle />
-                                </span>
-                            </Tooltip>
+                            <InfoIconTooltip title={c('Info').t`Learn more`} className="flex items-center" />
                         </button>
                     </div>
                 </DropdownMenu>
