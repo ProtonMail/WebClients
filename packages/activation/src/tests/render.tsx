@@ -120,10 +120,10 @@ const getStoreWrapper = (preloadedState?: any) => {
     return { Wrapper, store };
 };
 
-export const easySwitchRender = (ui: ReactElement) => {
+export const easySwitchRender = (ui: ReactElement, preloadedState?: any) => {
     fakeCache.setBase();
 
-    const { Wrapper } = getStoreWrapper();
+    const { Wrapper } = getStoreWrapper(preloadedState);
 
     const result = originalRender(
         <Wrapper>
