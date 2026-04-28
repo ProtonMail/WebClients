@@ -5196,8 +5196,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous informerons une fois que ce sera terminé."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos e-mails des 180 derniers jours depuis Gmail. Nous vous préviendrons lorsque l'opération sera terminée."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -9345,6 +9345,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } enverra un code de vérification au ${ phoneNumber }. Les tarifs habituels des SMS peuvent s'appliquer."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } enverra un code de vérification à votre téléphone de récupération. Des frais sur les SMS peuvent s'appliquer."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
@@ -11851,9 +11854,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Quelque chose n'a pas fonctionné. Veuillez réessayer ou contacter le service clients."
       ],
-      "Something went wrong. Please try again.": [
-        "Une erreur s'est produite. Nous vous invitons à réessayer."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
       ],
@@ -12251,9 +12251,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Pour aider à sécuriser votre compte, nous voulons nous assurer que c'est bien vous qui tentez de vous connecter."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Pour aider à sécuriser votre compte, nous voulons nous assurer que c'est bien vous qui tentez de vous connecter."
@@ -24002,9 +23999,6 @@
       ],
       "An address for each role": [
         "Une adresse pour chaque rôle"
-      ],
-      "An error occurred": [
-        "Une erreur s’est produite"
       ],
       "Annual": [
         "Annuel"

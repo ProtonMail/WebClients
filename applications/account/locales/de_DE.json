@@ -5078,6 +5078,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hilf deinem Team, Passwörter zu sensiblen Geschäfts- und Kundeninformationen sicher zu speichern."
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Wie unser Kundensupport-Team es geschafft hat, dass unsere VPN-App direkt bei den Nutzern ankam."
+      ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
       ],
@@ -5172,8 +5175,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Wir haben mit dem Import deiner E-Mail-Adresse von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import der letzten 180 Tage deiner E-Mails von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
@@ -9293,6 +9296,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } sendet einen Bestätigungscode an ${ phoneNumber }. Es können die üblichen Gebühren für Nachrichten anfallen."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } sendet einen Bestätigungscode an deine Wiederherstellungs-Telefonnummer. Es können die üblichen Gebühren für Nachrichten anfallen."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -11742,9 +11748,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere den Kundensupport."
       ],
-      "Something went wrong. Please try again.": [
-        "Etwas ist schiefgegangen. Bitte versuche es erneut."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
@@ -12127,9 +12130,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
@@ -14113,6 +14113,9 @@
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
+      ],
+      "Email with @yourcompany.com domain": [
+        "E-Mail-Adresse mit einer @yourcompany.com Domain"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -23737,9 +23740,6 @@
       "An address for each role": [
         "Eine Adresse für jede Rolle"
       ],
-      "An error occurred": [
-        "Ein Fehler ist aufgetreten"
-      ],
       "Annual": [
         "Jährlich"
       ],
@@ -24453,6 +24453,9 @@
       ],
       "Home": [
         "Startseite"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "Wie sich ${ MAIL_APP_NAME } unterscheidet"
       ],
       "How did you find out about us?": [
         "Wie bist du auf uns aufmerksam geworden?"

@@ -5196,8 +5196,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Ξεκινήσαμε την εισαγωγή του email σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή των μηνυμάτων ηλεκτρονικού ταχυδρομείου των τελευταίων 180 ημερών από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -9342,6 +9342,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ phoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο τηλέφωνο ανάκτησής σας. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
@@ -11848,9 +11851,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη πελατών."
       ],
-      "Something went wrong. Please try again.": [
-        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO."
       ],
@@ -12248,9 +12248,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Για να βοηθήσουμε να διατηρηθεί ο λογαριασμός σας ασφαλής, θέλουμε να βεβαιωθούμε ότι είστε πραγματικά εσείς που προσπαθείτε να συνδεθείτε."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Για να βοηθήσουμε να διατηρηθεί ο λογαριασμός σας ασφαλής, θέλουμε να βεβαιωθούμε ότι είστε πραγματικά εσείς που προσπαθείτε να συνδεθείτε."
@@ -23900,9 +23897,6 @@
       ],
       "An address for each role": [
         "Μια διεύθυνση για κάθε ρόλο"
-      ],
-      "An error occurred": [
-        "Συνέβη ένα σφάλμα"
       ],
       "Annual": [
         "Ετήσια"
