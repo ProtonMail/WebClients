@@ -3,17 +3,24 @@ import { parseAdditionalMetadata } from '@proton/drive';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import type { PhotoAdditionalInfo } from '../../usePhotos.store';
+import type { PhotoItem } from '../../usePhotos.store';
 
-export const mapNodeToAdditionalInfo = (maybeNode: MaybeNode): { uid: string; additionalInfo: PhotoAdditionalInfo } => {
-    const { node } = getNodeEntity(maybeNode);
+export const mapNodeToPhotoItem = (maybeNode: MaybeNode): PhotoItem | null => {
+    const { node, photoAttributes } = getNodeEntity(maybeNode);
+    if (!photoAttributes) {
+        return null;
+    }
+
     const signatureResult = getSignatureIssues(maybeNode);
     const parsedClaimedAdditionalMetadata = node.activeRevision?.claimedAdditionalMetadata
         ? parseAdditionalMetadata(node.activeRevision.claimedAdditionalMetadata)
         : undefined;
 
     return {
-        uid: node.uid,
+        nodeUid: node.uid,
+        captureTime: photoAttributes.captureTime,
+        tags: photoAttributes.tags,
+        relatedPhotoNodeUids: photoAttributes.relatedPhotoNodeUids,
         additionalInfo: {
             name: node.name,
             mediaType: node.mediaType,
