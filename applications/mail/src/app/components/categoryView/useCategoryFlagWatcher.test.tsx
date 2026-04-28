@@ -2,10 +2,12 @@ import { useHistory, useLocation } from 'react-router';
 
 import { renderHook } from '@testing-library/react-hooks';
 
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from './useCategoriesView';
@@ -29,7 +31,12 @@ describe('useCategoryFlagWatcher', () => {
     beforeEach(() => {
         jest.mocked(useHistory).mockReturnValue({ replace: mockReplace } as any);
         jest.mocked(useLocation).mockReturnValue({ pathname: '/inbox', hash: '' } as any);
-        jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
+        jest.mocked(useMailSelector).mockImplementation((selector) => {
+            if (selector === selectLabelID) {
+                return MAILBOX_LABEL_IDS.INBOX;
+            }
+            return undefined;
+        });
         jest.mocked(useMailDispatch).mockReturnValue(mockDispatch);
         jest.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
         jest.mocked(categoryIDFromUrl).mockReturnValue(undefined);
@@ -42,7 +49,12 @@ describe('useCategoryFlagWatcher', () => {
 
     describe('when not on inbox', () => {
         beforeEach(() => {
-            jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.SENT);
+            jest.mocked(useMailSelector).mockImplementation((selector) => {
+                if (selector === selectLabelID) {
+                    return MAILBOX_LABEL_IDS.SENT;
+                }
+                return undefined;
+            });
             jest.mocked(useLocation).mockReturnValue({ pathname: '/sent', hash: '' } as any);
         });
 
@@ -115,6 +127,45 @@ describe('useCategoryFlagWatcher', () => {
 
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockReplace).toHaveBeenCalledWith(INBOX_URL);
+        });
+    });
+
+    describe('when redirecting disabled categories', () => {
+        it('redirects to inbox when access becomes enabled on inbox without a category', () => {
+            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+            jest.mocked(useMailSelector).mockImplementation((selector) => {
+                if (selector === selectLabelID) {
+                    return MAILBOX_LABEL_IDS.INBOX;
+                }
+                if (selector === selectDisabledCategoriesIDs) {
+                    return [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS];
+                }
+                return undefined;
+            });
+
+            renderHook(() => useCategoryFlagWatcher());
+            expect(mockReplace).toHaveBeenCalled();
+
+            expect(mockDispatch).toHaveBeenCalled();
+            expect(mockReplace).toHaveBeenCalledWith(CATEGORY_DEFAULT_URL);
+        });
+
+        it('does not redirect if the category is not disabled', () => {
+            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            jest.mocked(useMailSelector).mockImplementation((selector) => {
+                if (selector === selectLabelID) {
+                    return MAILBOX_LABEL_IDS.INBOX;
+                }
+                if (selector === selectDisabledCategoriesIDs) {
+                    return [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
+                }
+                return undefined;
+            });
+
+            renderHook(() => useCategoryFlagWatcher());
+            expect(mockReplace).not.toHaveBeenCalled();
         });
     });
 });
