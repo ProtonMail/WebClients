@@ -74,7 +74,7 @@ const elementsLoadRateLimiter = new ApiRateLimiter({
     tracingEnabled: false,
 });
 
-const getParametersFromPath = (pathname: string) => {
+export const getParametersFromPath = (pathname: string) => {
     const customRoute = getCustomViewFromRoute(pathname);
     if (customRoute) {
         return {
