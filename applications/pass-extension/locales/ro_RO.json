@@ -1300,6 +1300,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "A existat o eroare în timpul eliminării legăturii web securizate. Reîncercați peste câteva minute."
       ],
+      "This domain is already managed by your organization": [
+        "Acest domeniu este deja gestionat de către organizație."
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Acest lucru se poate întâmpla după o perioadă lungă de timp în care nu ați folosit ${ PASS_SHORT_APP_NAME } sau dacă nu ați șters istoricul din Safari."
       ],
@@ -2105,11 +2108,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."

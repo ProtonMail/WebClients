@@ -5257,9 +5257,6 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ],
@@ -9488,6 +9485,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } адправіць код спраўджання на нумар тэлефона ${ phoneNumber }. Могуць прымяняцца стандартныя тарыфы за паведамленні."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } адправіць код спраўджання на ваш нумар тэлефона для аднаўлення. Могуць прымяняцца стандартныя тарыфы за паведамленне."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
@@ -12077,9 +12077,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз або звярніцеся ў службу падтрымкі кліентаў."
       ],
-      "Something went wrong. Please try again.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
       ],
@@ -12487,9 +12484,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "Пацвердзіце, што менавіта вы хочаце ўвайсці ва ўліковы запіс. Гэта дазволіць захаваць бяспеку вашага ўліковага запісу."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Пацвердзіце, што менавіта вы хочаце ўвайсці ва ўліковы запіс. Гэта дазволіць захаваць бяспеку вашага ўліковага запісу."
@@ -13288,6 +13282,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Ваша фраза аднаўлення - гэта паслядоўнасць з 12 выпадкова згенерыраваных слоў у вызначаным парадку."
+      ],
+      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Ваша фраза аднаўлення—змешчана ў вашым камплекце аднаўлення—дазволіць вам увайсці і аднавіць вашы даныя ў выпадку, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Яна складаецца з 12 слоў і дзейнічае аналагічна рэзервоваму паролю."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -24465,9 +24462,6 @@
       ],
       "An address for each role": [
         "Адрас для кожнай ролі"
-      ],
-      "An error occurred": [
-        "Адбылася памылка"
       ],
       "Annual": [
         "Штогадовая"

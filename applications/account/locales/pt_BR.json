@@ -9938,6 +9938,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Clique em 'Problemas para iniciar sessão?' na sua TV para seguir as etapas alternativas."
+      ],
       "Click the icon to open it anytime.": [
         "Clique no ícone para abri-lo a qualquer momento."
       ],
@@ -11112,6 +11115,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam a ${ BRAND_NAME }."
       ],
+      "Only sign in on devices you trust": [
+        "Somente inicie sessão em dispositivos que você confia"
+      ],
       "Only you can see the label": [
         "Somente você pode ver o marcador"
       ],
@@ -11615,9 +11621,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Ocorreu um erro. Tente novamente ou contate o suporte ao cliente."
       ],
-      "Something went wrong. Please try again.": [
-        "Ocorreu um erro. Tente novamente."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
       ],
@@ -11895,6 +11898,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Essa verificação pode levar até uma hora. Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "Isso permitirá que a TV acesse sua conta da ${ BRAND_NAME }."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Isso excluirá todas as versões anteriores de seus arquivos anteriores a ${ rententionLabel }."
@@ -23626,9 +23632,6 @@
       ],
       "An address for each role": [
         "Um endereço para cada função"
-      ],
-      "An error occurred": [
-        "Ocorreu um erro"
       ],
       "Annual": [
         "Anual"

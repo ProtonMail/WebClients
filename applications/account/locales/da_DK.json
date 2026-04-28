@@ -5075,6 +5075,9 @@
       "How we supported local activists when privacy and free speech were threatened.": [
         "Sådan støttede vi lokale aktivister, da privatliv og ytringsfriheden blev truet."
       ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Sådan låser du op for din krypterede data hvis du mister din adgangskode."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -5166,8 +5169,8 @@
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
       ],
-      "We've started importing your email from Gmail. We'll let you know when it's done.": [
-        "Vi er begyndt at importere din e-mail fra Gmail. Vi giver dig besked når det er færdigt."
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere de sidste 180 dages e-mails fra Gmail. Vi giver dig besked når det er færdigt."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
@@ -6430,6 +6433,10 @@
       ],
       "Let ${ user } know it’s really you trying to regain access.": [
         "Lad ${ user } vide, at det virkelig er dig, der forsøger at genvinde adgang."
+      ],
+      "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
+        "Det maksimale antal på ${ limit } kontakt nået. Fjern en kontakt eller tilføj en ny for at ændre det.",
+        "Det maksimale antal på ${ limit } kontakter nået. Fjern en kontakt eller tilføj en ny for at ændre det."
       ],
       "None": [
         "Ingen"
@@ -9299,6 +9306,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } sender en bekræftelseskode til ${ phoneNumber }. Standard SMS-takster gælder."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekræftelseskode til din telefon til gendannelse. Standard SMS-takster gælder."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
@@ -11754,9 +11764,6 @@
       "Something went wrong. Please try again or contact customer support.": [
         "Noget gik galt. Prøv igen eller kontakt kundesupport."
       ],
-      "Something went wrong. Please try again.": [
-        "Der gik noget galt. Prøv igen."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
@@ -12139,9 +12146,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
-        "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
@@ -22191,6 +22195,12 @@
         "Opsiger dit abonnement, vent venligst"
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } person",
+        "${ count } personer"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Handlinger"
@@ -23652,9 +23662,6 @@
       ],
       "An address for each role": [
         "En adresse for hver rolle"
-      ],
-      "An error occurred": [
-        "Der opstod en fejl"
       ],
       "Annual": [
         "Årlig"
