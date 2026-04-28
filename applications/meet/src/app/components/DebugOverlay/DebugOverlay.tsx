@@ -441,6 +441,7 @@ const getRemoteParticipantReportInfo = async (participant: RemoteParticipant): P
 interface DebugOverlayProps {
     isOpen: boolean;
     onClose: () => void;
+    onSimulateReconnection: () => void;
 }
 
 interface TrackStatsSnapshot {
@@ -456,7 +457,7 @@ interface TrackRecording {
     snapshots: TrackStatsSnapshot[];
 }
 
-export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
+export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugOverlayProps) => {
     const room = useRoomContext();
     const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const remoteParticipants = useRemoteParticipants();
@@ -788,6 +789,16 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
                 </div>
 
                 <div className="debug-overlay-body">
+                    {/* Reconnection Testing Section */}
+                    <div className="debug-section">
+                        <h3>{c('Title').t`Reconnection Testing`}</h3>
+                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                            <Button size="small" shape="outline" onClick={onSimulateReconnection}>
+                                {c('Action').t`Simulate reconnection`}
+                            </Button>
+                        </div>
+                    </div>
+
                     {/* Local Participant Section */}
                     {localInfo && (
                         <div className="debug-section">

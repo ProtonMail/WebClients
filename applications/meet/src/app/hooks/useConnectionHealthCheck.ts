@@ -8,7 +8,7 @@ import type { MLSGroupState } from '@proton/meet/types/types';
 interface UseConnectionHealthCheckParams {
     wasmApp: App | null;
     mlsGroupStateRef: React.MutableRefObject<MLSGroupState | null>;
-    setConnectionLost: React.Dispatch<React.SetStateAction<boolean>>;
+    onMlsFailed: () => void;
 }
 
 /**
@@ -17,7 +17,7 @@ interface UseConnectionHealthCheckParams {
 export const useConnectionHealthCheck = ({
     wasmApp,
     mlsGroupStateRef,
-    setConnectionLost,
+    onMlsFailed,
 }: UseConnectionHealthCheckParams) => {
     const healthCheckAllowedRef = useRef(false);
 
@@ -44,7 +44,9 @@ export const useConnectionHealthCheck = ({
                     isConnectionCheckInProgressRef.current = true;
 
                     const isMlsUpToDate = await wasmApp.isMlsUpToDate();
-                    setConnectionLost(!isMlsUpToDate);
+                    if (!isMlsUpToDate) {
+                        onMlsFailed();
+                    }
                 } catch (error) {
                     reportMeetError('Failed to get connection status', error);
                 } finally {
@@ -52,8 +54,8 @@ export const useConnectionHealthCheck = ({
                 }
             }
 
-            // Client trigger the next health check every 10 seconds.
-            timeout = setTimeout(checkConnection, 10_000);
+            // Client trigger the next health check every 5 seconds.
+            timeout = setTimeout(checkConnection, 5_000);
         };
 
         const logUserEpochHealth = async () => {
