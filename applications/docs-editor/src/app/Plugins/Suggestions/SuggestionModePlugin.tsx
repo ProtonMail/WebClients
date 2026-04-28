@@ -77,6 +77,8 @@ import { SET_BLOCK_TYPE_COMMAND } from '../BlockTypePlugin'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $insertDividerAsSuggestion } from './insertDividerAsSuggestion'
+import { INSERT_PAGE_BREAK_COMMAND } from '../PageBreak/PageBreakNode'
+import { $insertPageBreakAsSuggestion } from './insertPageBreakAsSuggestion'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
@@ -685,6 +687,13 @@ export function SuggestionModePlugin({
         INSERT_HORIZONTAL_RULE_COMMAND,
         () => {
           return $insertDividerAsSuggestion(addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_PAGE_BREAK_COMMAND,
+        () => {
+          return $insertPageBreakAsSuggestion(addCreatedIDtoSet)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

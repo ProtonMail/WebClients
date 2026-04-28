@@ -59,6 +59,7 @@ import RedoIcon from '../Icons/RedoIcon'
 import TableIcon from '../Icons/TableIcon'
 import UndoIcon from '../Icons/UndoIcon'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
+import { INSERT_PAGE_BREAK_COMMAND } from '../Plugins/PageBreak/PageBreakNode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { reportErrorToSentry } from '../Utils/errorMessage'
@@ -281,6 +282,10 @@ export default function DocumentEditorToolbar({
 
   const insertHorizontalRule = () => {
     activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
+  }
+
+  const insertPageBreak = () => {
+    activeEditor.dispatchCommand(INSERT_PAGE_BREAK_COMMAND, undefined)
   }
 
   const insertComment = () => {
@@ -668,6 +673,7 @@ export default function DocumentEditorToolbar({
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
+  const isPageBreakEnabled = application.environment === 'alpha' || isDevOrBlack()
 
   const { shouldShowTooltip: suggestionTooltipNotShownPreviously } = useTooltipOnce(
     TooltipKey.DocsSuggestionModeSpotlight,
@@ -1210,6 +1216,30 @@ export default function DocumentEditorToolbar({
       showInToolbar: false,
     },
   ]
+
+  if (isPageBreakEnabled) {
+    toolbarItems.splice(6, 0, {
+      id: 'page-break-option',
+      items: [
+        {
+          id: 'page-break-button',
+          type: 'button',
+          label: (
+            <span className="inline-flex items-center gap-2">
+              <span>{c('Action').t`Page break`} (alpha only)</span>
+              <span className="rounded-sm bg-[--signal-info-minor-1] px-1 py-0.5 text-[0.625rem] font-semibold uppercase leading-none text-[--signal-info]">
+                {c('Info').t`New`}
+              </span>
+            </span>
+          ),
+          disabled: !isEditable,
+          onClick: insertPageBreak,
+          icon: <Icon name="file-lines" className="h-4 w-4 fill-current" />,
+        },
+      ],
+      showInToolbar: false,
+    })
+  }
 
   const isTableOfContentsEnabled = application.environment === 'alpha' || isDevOrBlack()
 
