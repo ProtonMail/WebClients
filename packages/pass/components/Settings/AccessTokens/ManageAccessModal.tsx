@@ -78,7 +78,7 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose, onSaved }) => {
     };
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="medium">
+        <PassModal open onClose={onClose} onReset={onClose} size="large">
             <ModalTwoHeader title={c('pass_2026: Title').t`Manage vault access`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0 mb-3">
@@ -90,12 +90,7 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose, onSaved }) => {
                         <CircleLoader size="medium" />
                     </div>
                 ) : (
-                    <VaultMultiSelect
-                        vaults={vaults}
-                        selectedShareIds={selectedShareIds}
-                        onToggle={toggleVault}
-                        maxHeight="16rem"
-                    />
+                    <VaultMultiSelect vaults={vaults} selectedShareIds={selectedShareIds} onToggle={toggleVault} />
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
