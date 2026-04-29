@@ -60,6 +60,11 @@ export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[])
     const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
     if (defaultDevice) {
         const duplicated = devices.find((d) => d.groupId === defaultDevice.groupId && !isDefaultDevice(d.deviceId));
+        // When both deviceId and groupId are 'default', the browser can't associate this entry with any real device.
+        // Return null so callers skip setSinkId entirely and audio routes natively via the browser's default output.
+        if (!duplicated && isDefaultDevice(defaultDevice.groupId)) {
+            return null;
+        }
         return duplicated ?? filterDevices(devices)[0] ?? devices[0] ?? null;
     }
     // Firefox (and other browsers without a synthetic "default" entry) return devices
