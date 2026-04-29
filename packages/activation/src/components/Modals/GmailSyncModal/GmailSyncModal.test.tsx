@@ -67,7 +67,7 @@ describe('GmailSyncModal', () => {
             />
         );
 
-        fireEvent.click(screen.getByText('Connect to Gmail'));
+        fireEvent.click(screen.getByText('Connect your email'));
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
