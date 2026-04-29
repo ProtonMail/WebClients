@@ -164,6 +164,7 @@ export const FilterList = () => {
                 isOpen={isOpen}
                 onClick={toggle}
                 data-testid="filter-dropdown:show-filters"
+                title={c('Filter').t`Filter and sort emails`}
             >
                 <Icon size={3} className="mr-1" name="lines-long-to-small" />
                 {activeState.dropdownActiveCount > 0
