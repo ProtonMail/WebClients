@@ -4,10 +4,12 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { respondToDesktopLockMessage } from '@proton/pass/lib/auth/lock/desktop/logic.desktop';
 import { clientLocked, clientReady } from '@proton/pass/lib/client';
-import { listenNativeMessage } from '@proton/pass/lib/native-messaging/native-messaging.desktop';
-import { NativeMessageType } from '@proton/pass/types';
+import {
+    listenNativeMessage,
+    sendNativeMessageResponse,
+} from '@proton/pass/lib/native-messaging/native-messaging.desktop';
+import { NativeMessageErrorType, NativeMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import noop from '@proton/utils/noop';
 
 const log = (...content: any[]) => logger.debug('[ExtensionUnlock]', ...content);
 
@@ -32,7 +34,12 @@ export const ExtensionUnlock: FC<Props> = ({ children }) => {
             userId,
             (request, messageId) => {
                 log('setup lock request');
-                void respondToDesktopLockMessage(request, messageId).catch(noop);
+                void respondToDesktopLockMessage(request, messageId).catch(() =>
+                    sendNativeMessageResponse(
+                        { type: NativeMessageType.SETUP_LOCK_SECRET, error: NativeMessageErrorType.BIOMETRICS_FAILED },
+                        messageId
+                    )
+                );
             }
         );
     }, [isReady, isLocked, userId]);
