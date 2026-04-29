@@ -446,6 +446,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         lock: async (mode: LockMode, options: { broadcast?: boolean; soft: boolean }): Promise<Lock> => {
+            if (mode === LockMode.NONE) return { mode: LockMode.NONE, locked: false };
+
             const adapter = getLockAdapter(mode);
             const localID = authStore.getLocalID();
             const broadcast = options.broadcast ?? false;
