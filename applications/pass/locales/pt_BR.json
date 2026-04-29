@@ -1300,6 +1300,33 @@
       ],
       "Unknown error.": [
         "Erro desconhecido."
+      ],
+      "Biometric authentication failed.": [
+        "A autenticação biométrica falhou."
+      ],
+      "Biometric lock credentials do not match.": [
+        "As credenciais do bloqueio biométrico não correspondem."
+      ],
+      "Biometric lock credentials not found.": [
+        "As credenciais do bloqueio biométrico não foi encontrado"
+      ],
+      "Biometric lock is not configured.": [
+        "O bloqueio biométrico não está configurado"
+      ],
+      "Biometric lock setup failed.": [
+        "Falha na configuração do bloqueio biométrico"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Falha na comunicação criptografado com o aplicativo para computador do ${ PASS_APP_NAME }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não respondem a tempo"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } está iniciado a sessão com uma conta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } deve estar iniciado a sessão."
       ]
     },
     "Error message": {
@@ -1941,8 +1968,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
