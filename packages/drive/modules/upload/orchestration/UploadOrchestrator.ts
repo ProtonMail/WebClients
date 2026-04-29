@@ -7,7 +7,7 @@ import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
 import { PhotosUploadExecutor } from '../execution/PhotosUploadExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
-import type { UploadEvent, UploadTask } from '../types';
+import type { UploadEventSubscriberCallback, UploadTask } from '../types';
 import { type UploadConflictStrategy, type UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
@@ -50,7 +50,7 @@ export class UploadOrchestrator {
         this.photosExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
     }
 
-    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): () => void {
+    subscribeToEvents(context: string, callback: UploadEventSubscriberCallback): () => void {
         return this.eventHandler.subscribeToEvents(context, callback);
     }
 
