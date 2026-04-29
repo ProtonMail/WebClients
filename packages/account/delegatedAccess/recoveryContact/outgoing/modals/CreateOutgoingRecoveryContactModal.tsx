@@ -8,6 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
@@ -28,6 +29,8 @@ export interface AddOutgoingTrustedContactModalProps extends Omit<
     'children' | 'buttons' | 'onSubmit'
 > {
     existingOutgoingTargetEmails: Set<string>;
+    /** When true, send recovery settings `setting_enabled` telemetry after a successful add (first outgoing contact only). */
+    isFirstOutgoingContact?: boolean;
     contactEmails: ContactEmailInputProps['contactEmails'];
     addresses: ContactEmailInputProps['addresses'];
     protonDomains: ContactEmailInputProps['protonDomains'];
@@ -50,10 +53,12 @@ export const CreateOutgoingRecoveryContactModal = ({
     protonDomains,
     addresses,
     existingOutgoingTargetEmails,
+    isFirstOutgoingContact = false,
     contactEmails,
     email,
     ...rest
 }: AddOutgoingTrustedContactModalProps) => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [targetEmail, setTargetEmail] = useState('');
     const [emailError, setEmailError] = useState<{ email: string; errorMessage: string } | null>(null);
     const [submitted, setSubmitted] = useState<boolean>(false);
@@ -110,6 +115,9 @@ export const CreateOutgoingRecoveryContactModal = ({
                         };
                         try {
                             const delegatedAccess = await dispatch(addDelegatedAccessThunk(payload));
+                            if (isFirstOutgoingContact) {
+                                sendRecoverySettingEnabled({ setting: 'recovery_contacts' });
+                            }
                             setDelegatedAccess(delegatedAccess);
                         } catch (e) {
                             if (e instanceof ValidationError) {
