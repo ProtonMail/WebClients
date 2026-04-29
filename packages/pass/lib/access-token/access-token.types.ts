@@ -54,17 +54,14 @@ export interface GrantPersonalAccessTokenAccessPayload {
     Keys: PersonalAccessTokenShareKey[];
 }
 
-/** Summary of a single access grant returned by GET /access. `ShareID` is the
- * PAT-scoped share that carries this grant; `VaultID` identifies the underlying
- * vault (use this to correlate to the user's own VaultShareItem.vaultId);
- * `ParentShareID` is the user's share that was the source of the grant. */
+/** FIXME: check if this type and others should already be defined in packages/pass/types/api/pass.ts */
 export interface PersonalAccessTokenAccessGrant {
     ShareID: string;
+    ParentShareID: string;
     VaultID: string;
     TargetID?: string;
     TargetType?: number;
     ShareRoleID?: string;
-    ParentShareID?: string;
     CreateTime?: number;
     ExpireTime?: number;
 }
