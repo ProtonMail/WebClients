@@ -311,6 +311,7 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
                 addResourceLimitError({
                     resource: 'messages',
                     limit: MAX_MESSAGES_PER_CONVERSATION,
+                    conversationId: message.conversationId,
                     serverMessage: e.serverMessage,
                 })
             );
