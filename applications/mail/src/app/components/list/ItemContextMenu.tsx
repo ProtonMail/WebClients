@@ -139,16 +139,9 @@ const ItemContextMenu = ({
         <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
             {moveButtons}
             <CategoryContextMenu onCategoryMove={handleMove} />
-            {canShowBlockSender && (
-                <ContextMenuButton
-                    key="context-menu-block"
-                    testId="context-menu-block"
-                    icon="circle-slash"
-                    name={c('Action').t`Block sender`}
-                    action={onBlockSender}
-                />
-            )}
-            <ContextSeparator />
+
+            <ContextSeparator className="bg-weak my-1" />
+
             {buttonMarkAsRead ? (
                 <ContextMenuButton
                     key="context-menu-read"
@@ -165,6 +158,19 @@ const ItemContextMenu = ({
                     name={c('Action').t`Mark as unread`}
                     action={() => handleMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.CONTEXT_MENU)}
                 />
+            )}
+
+            {canShowBlockSender && (
+                <>
+                    <ContextSeparator className="bg-weak my-1" />
+                    <ContextMenuButton
+                        key="context-menu-block"
+                        testId="context-menu-block"
+                        icon="circle-slash"
+                        name={c('Action').t`Block sender`}
+                        action={onBlockSender}
+                    />
+                </>
             )}
         </ContextMenu>
     );
