@@ -1394,6 +1394,24 @@
       ],
       "Unknown error.": [
         "Neznámá chyba."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
+      ],
+      "This domain is already managed by your organization": [
+        "Táto doména už je spravovaná vašou organizáciou"
       ]
     },
     "Error message": {
@@ -2864,6 +2882,12 @@
       ],
       "Logging you out...": [
         "Odhlasovanie..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odomknite ${ PASS_APP_NAME } pre prístup k svojim prístupovým kľúčom"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odomknite ${ PASS_APP_NAME } pre uloženie tohoto prístupového kľúča"
       ]
     },
     "Keyboard key": {
