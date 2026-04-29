@@ -1,4 +1,11 @@
-import type { NodeType, NodeWithSameNameExistsValidationError, UploadController } from '@protontech/drive-sdk';
+import type {
+    NodeType,
+    NodeWithSameNameExistsValidationError,
+    ProtonDriveClient,
+    UploadController,
+} from '@protontech/drive-sdk';
+import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
 export type FileUploadEvent =
     | { type: 'file:queued'; uploadId: string; isForPhotos: boolean; abortController: AbortController }
@@ -177,4 +184,8 @@ export function isPhotosUploadItem(item: UploadItem): item is PhotosUploadItem {
     return 'isForPhotos' in item && item.isForPhotos === true;
 }
 
+export type DriveUploadClient = ProtonDriveClient | ProtonDrivePublicLinkClient | ProtonDrivePhotosClient;
+
 export type EventCallback = (event: UploadEvent) => Promise<void>;
+
+export type UploadEventSubscriberCallback = (event: UploadEvent, driveClient: DriveUploadClient) => Promise<void>;
