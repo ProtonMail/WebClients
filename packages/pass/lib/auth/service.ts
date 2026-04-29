@@ -1,7 +1,6 @@
+import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
-import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
@@ -9,6 +8,7 @@ import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
+import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { Api, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -176,7 +176,7 @@ export interface AuthServiceConfig {
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
     /** Implement how you want to handle notifications emitted from the service */
-    onNotification?: (notification: CreateNotificationOptions) => void;
+    onNotification?: (notification: Notification) => void;
     /** Triggered when extra password is required */
     onMissingScope?: () => void;
 }
@@ -612,11 +612,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         return await authService.login(result.session, options);
                     } catch (error: unknown) {
                         if (error instanceof Error) {
-                            const message = getApiErrorMessage(error) ?? error?.message;
-                            const reason = message ? ` (${message})` : '';
-                            const text = c('Warning').t`Your session could not be resumed.` + reason;
-                            logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                            config.onNotification?.({ text, type: 'error' });
+                            const text = c('Warning').t`Your session could not be resumed.`;
+                            const errorMessage = getErrorMessage(error);
+                            logger.warn(`[AuthService] Resuming session failed: ${errorMessage}`);
+                            config.onNotification?.({ text, type: 'error', errorMessage });
                         }
 
                         /** If a session fails to resume due to reasons other than being locked,
