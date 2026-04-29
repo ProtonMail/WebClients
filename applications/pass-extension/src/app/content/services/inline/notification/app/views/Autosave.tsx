@@ -157,9 +157,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                                         component={AutosaveVaultPicker}
                                         fallback={c('Info').t`Save login`}
                                         anchorRef={vaultPickerAnchor}
-                                        /** Refresh vault picker options on each
-                                         * failed attempt in case vault deleted */
-                                        key={attempts}
+                                        attempt={attempts}
                                     />
                                 );
                             case AutosaveMode.UPDATE:
