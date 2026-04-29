@@ -4293,6 +4293,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail fra de siste 180 dagene. Vi gir deg beskjed når det er ferdig."
       ]
     },
     "description": {
@@ -9000,6 +9003,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Copy to clipboard": [
+        "Kopier til utklippstavlen"
       ]
     },
     "info": {
@@ -14370,6 +14376,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, og ${ LUMO_APP_NAME } med premiumfunksjoner"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøter, opptil ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltaker",
+        "Videomøter, opptil ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltakere"
       ]
     },
     "subscription reminder": {
