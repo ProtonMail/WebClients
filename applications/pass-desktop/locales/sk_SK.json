@@ -1369,6 +1369,21 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
       ]
     },
     "Error message": {
