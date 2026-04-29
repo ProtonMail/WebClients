@@ -257,6 +257,8 @@ export enum MailFeatureFlag {
     EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     MailStoreDebugMode = 'MailStoreDebugMode',
     MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
+    // Refreshed toolbar UI flags
+    RefreshedFilterUI = 'RefreshedFilterUI',
 }
 
 enum AdminFeatureFlag {
