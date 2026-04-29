@@ -7,8 +7,8 @@ import { UploadDriveClientRegistry } from './UploadDriveClientRegistry';
 import { UploadOrchestrator } from './orchestration/UploadOrchestrator';
 import { useUploadControllerStore } from './store/uploadController.store';
 import { useUploadQueueStore } from './store/uploadQueue.store';
-import type { UploadConflictType } from './types';
-import { type UploadConflictStrategy, type UploadEvent, UploadStatus } from './types';
+import type { UploadConflictType, UploadEventSubscriberCallback } from './types';
+import { type UploadConflictStrategy, UploadStatus } from './types';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
 import { isDataTransferList, processDroppedItems } from './utils/processDroppedItems';
@@ -64,7 +64,7 @@ export class UploadManager {
      *   }
      * });
      */
-    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): void {
+    subscribeToEvents(context: string, callback: UploadEventSubscriberCallback): void {
         if (this.activeContexts.has(context)) {
             return;
         }
@@ -309,7 +309,7 @@ export class UploadManager {
             if (!rootFolders.has(rootName)) {
                 rootFolders.set(rootName, []);
             }
-            rootFolders.get(rootName)!.push(file);
+            rootFolders.get(rootName)?.push(file);
         }
 
         return rootFolders;

@@ -1,4 +1,4 @@
-import { getDrive, getDriveForPhotos } from '@proton/drive/index';
+import { getDriveForPhotos } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getNodeEffectiveRole } from '@proton/drive/internal/sdkUtils/getNodeEffectiveRole';
 import { uploadManager } from '@proton/drive/modules/upload';
@@ -9,14 +9,12 @@ import { useTransferManagerStore } from './transferManager.store';
 
 export const subscribeToUploadEvents = (): (() => void) => {
     const busDriver = getBusDriver();
-    uploadManager.subscribeToEvents('transfer-manager', async (event) => {
+    uploadManager.subscribeToEvents('transfer-manager', async (event, driveClient) => {
         if (event.type === 'file:complete') {
-            const client = event.isForPhotos ? getDriveForPhotos() : getDrive();
-
             if (event.parentUid) {
-                const maybeNode = await client.getNode(event.parentUid);
+                const maybeNode = await driveClient.getNode(event.parentUid);
                 const { node } = await getNodeEntityFromMaybeNode(maybeNode);
-                const role = await getNodeEffectiveRole(node, client);
+                const role = await getNodeEffectiveRole(node, driveClient);
                 useTransferManagerStore.getState().addItem(event.uploadId, { role, type: 'upload' });
             }
 
@@ -33,7 +31,7 @@ export const subscribeToUploadEvents = (): (() => void) => {
                         { uid: event.nodeUid, parentUid: event.isForPhotos ? photosRootNode?.uid : event.parentUid },
                     ],
                 },
-                event.isForPhotos ? getDriveForPhotos() : getDrive()
+                driveClient
             );
         } else if (event.type === 'folder:complete') {
             await busDriver.emit(
@@ -41,7 +39,7 @@ export const subscribeToUploadEvents = (): (() => void) => {
                     type: BusDriverEventName.CREATED_NODES,
                     items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                 },
-                getDrive()
+                driveClient
             );
         }
     });
