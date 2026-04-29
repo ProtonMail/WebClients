@@ -802,7 +802,8 @@ export const getAccountAppRoutes = ({
             easySwitch: {
                 id: 'easySwitch',
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
-                description: c('Description').t`Bring over email, calendar events, and contacts from another provider.`,
+                description: c('Description')
+                    .t`Bring over your email, calendar events, and contacts from another provider.`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
                 available: showEasySwitchSection,
