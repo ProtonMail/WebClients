@@ -116,7 +116,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                 <WithUnlock>
                     {(locked, input) =>
                         locked ? (
-                            <Card className="flex flex-auto text-sm" type="primary">
+                            <Card className="flex flex-auto justify-center text-sm" type="primary">
                                 <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                     <Icon name="lock-filled" size={6} />
                                     <span className="text-center block">

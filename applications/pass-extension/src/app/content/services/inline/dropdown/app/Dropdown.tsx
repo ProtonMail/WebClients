@@ -81,6 +81,18 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
 
                         if (clientDesktopLocked(status)) return <DropdownDesktopUnlock />;
 
+                        if (clientPasswordLocked(status)) {
+                            return (
+                                <ListItem
+                                    onClick={() => controller.close({ userAction: true })}
+                                    subTitle={c('Info')
+                                        .t`${PASS_SHORT_APP_NAME} is currently offline. Open the extension to unlock.`}
+                                    icon={{ type: 'status', icon: PassIconStatus.LOCKED_DROPDOWN }}
+                                    autogrow
+                                />
+                            );
+                        }
+
                         if (clientErrored(status)) {
                             return (
                                 <ListItem
@@ -113,18 +125,6 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                     subTitle={c('Info')
                                         .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
                                     icon={{ type: 'status', icon: PassIconStatus.LOCKED }}
-                                    autogrow
-                                />
-                            );
-                        }
-
-                        if (clientPasswordLocked(status)) {
-                            return (
-                                <ListItem
-                                    onClick={() => controller.close({ userAction: true })}
-                                    subTitle={c('Info')
-                                        .t`${PASS_SHORT_APP_NAME} is currently offline. Open the extension to unlock.`}
-                                    icon={{ type: 'status', icon: PassIconStatus.LOCKED_DROPDOWN }}
                                     autogrow
                                 />
                             );
