@@ -1,5 +1,8 @@
 import type { WorkerMessage, WorkerResponse } from './recordingWorkerTypes';
 import { MessageType, WorkerResponseType } from './recordingWorkerTypes';
+import { createWorkerLogger } from './workerLogger';
+
+const logger = createWorkerLogger('MeetingRecorder/recordingWorker');
 
 interface FileSystemSyncAccessHandle {
     write(buffer: ArrayBuffer | ArrayBufferView, options?: { at?: number }): number;
@@ -91,8 +94,7 @@ class OPFSWorkerStorage {
                 this.syncAccessHandle = null;
             }
         } catch (err) {
-            // eslint-disable-next-line no-console
-            console.error('[Worker] Error closing sync handle:', err);
+            logger.error('Error closing sync handle:', err);
         }
     }
 }
@@ -149,6 +151,7 @@ self.onmessage = async (event: MessageEvent<WorkerMessage>) => {
                 throw new Error(`Unknown message type: ${type}`);
         }
     } catch (error) {
+        logger.error(`Error handling message "${type}":`, error);
         const response: WorkerResponse = {
             type: WorkerResponseType.ERROR,
             id,
