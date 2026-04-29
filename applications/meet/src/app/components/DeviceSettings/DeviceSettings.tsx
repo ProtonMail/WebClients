@@ -8,6 +8,7 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import type { IconSize } from '@proton/icons/types';
+import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
@@ -121,8 +122,14 @@ export const DeviceSettings = ({
     };
 
     const handleOutputDeviceChange = async (deviceId: string) => {
+        const systemDefaultFallback: SerializableDeviceInfo = {
+            deviceId: DEFAULT_DEVICE_ID,
+            groupId: DEFAULT_DEVICE_ID,
+            kind: 'audiooutput',
+            label: '',
+        };
         await onAudioOutputDeviceChange(
-            resolveDevice(deviceId, filteredSpeakers, speakerState.systemDefault!),
+            resolveDevice(deviceId, filteredSpeakers, speakerState.systemDefault ?? systemDefaultFallback),
             isDefaultDevice(deviceId)
         );
     };
