@@ -87,7 +87,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
     };
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="medium">
+        <PassModal open onClose={onClose} onReset={onClose} size="large">
             <ModalTwoHeader title={c('pass_2026: Title').t`Create new access token`} />
             <ModalTwoContent className="pt-2">
                 <InputFieldTwo
@@ -158,14 +158,24 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                         {c('pass_2026: Info')
                             .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.`}
                     </p>
-                    <VaultMultiSelect vaults={vaults} selectedShareIds={selectedShareIds} onToggle={toggleVault} />
+                    <VaultMultiSelect
+                        vaults={vaults}
+                        selectedShareIds={selectedShareIds}
+                        onToggle={toggleVault}
+                        maxHeight="20rem"
+                    />
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose} disabled={create.loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button color="norm" onClick={handleCreate} loading={create.loading} disabled={create.loading}>
+                <Button
+                    color="norm"
+                    onClick={handleCreate}
+                    loading={create.loading}
+                    disabled={create.loading || selectedShareIds.size === 0}
+                >
                     {c('pass_2026: Action').t`Create token`}
                 </Button>
             </ModalTwoFooter>
