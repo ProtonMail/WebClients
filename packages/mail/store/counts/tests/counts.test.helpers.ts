@@ -109,8 +109,8 @@ export const createDefaultCounters = () => [
     },
     {
         LabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
-        Unread: 0,
-        Total: 0,
+        Unread: 1,
+        Total: 2,
     },
     {
         LabelID: CUSTOM_LABEL_ID1,
