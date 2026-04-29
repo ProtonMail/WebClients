@@ -6462,12 +6462,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/protocol@npm:1.44.0":
-  version: 1.44.0
-  resolution: "@livekit/protocol@npm:1.44.0"
+"@livekit/protocol@npm:1.45.3":
+  version: 1.45.3
+  resolution: "@livekit/protocol@npm:1.45.3"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.10.0"
-  checksum: 10/e6b81390a69fa8a4e149da00f489d31851d30a4fa8433afe73d29d438f2fc72c96412c4413d6189cb67046bf3bb18de54698deff69b903913ded653b0b980b63
+  checksum: 10/0a4a5103fb0274481cafc9d98a2ccf6db1641375f1d940bf154006da5b0b140068b8664b9604488b5a615162b9a345022e592eb9d5162fe7954fa6fd76cae3c1
   languageName: node
   linkType: hard
 
@@ -11213,7 +11213,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
     happy-dom: "npm:^20.8.9"
-    livekit-client: "npm:2.18.1"
+    livekit-client: "npm:2.18.6"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -35487,22 +35487,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:2.18.1":
-  version: 2.18.1
-  resolution: "livekit-client@npm:2.18.1"
+"livekit-client@npm:2.18.6":
+  version: 2.18.6
+  resolution: "livekit-client@npm:2.18.6"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.44.0"
+    "@livekit/protocol": "npm:1.45.3"
     events: "npm:^3.3.0"
     jose: "npm:^6.1.0"
     loglevel: "npm:^1.9.2"
     sdp-transform: "npm:^2.15.0"
     tslib: "npm:2.8.1"
     typed-emitter: "npm:^2.1.0"
-    webrtc-adapter: "npm:^9.0.1"
+    webrtc-adapter: "npm:9.0.5"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10/ca3e28d66f7e5373b16c6b24d81279a90c94e5c2e358db264430d85c96aca2a1619a3e905275774afabd8f7d4a297ca87320b7b76184bc49200a6e29225caa76
+  checksum: 10/bcaffd90f435926bcbc81d9a9c2ccf8c43093515778effc42e57cbe04d193353f9f894cc4bfa93918623fdbabeb8f2cfbb597610c2c35739bc9fba271b62fff0
   languageName: node
   linkType: hard
 
@@ -42377,7 +42377,7 @@ __metadata:
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.4"
     happy-dom: "npm:^20.8.9"
-    livekit-client: "npm:2.18.1"
+    livekit-client: "npm:2.18.6"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -52353,12 +52353,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webrtc-adapter@npm:^9.0.1":
-  version: 9.0.3
-  resolution: "webrtc-adapter@npm:9.0.3"
+"webrtc-adapter@npm:9.0.5":
+  version: 9.0.5
+  resolution: "webrtc-adapter@npm:9.0.5"
   dependencies:
     sdp: "npm:^3.2.0"
-  checksum: 10/5544cb38093a20b485d1d24eb23483f9ad3cdab0b0edd277cc44a90e871269dd78d124d9c45e91381e16361f79744648575fce762b258bc02c12c3c28ef5e138
+  checksum: 10/23c87b78b689b542ad52723c61c71aead3e07d8ddb4479daafa3fd9490ae3a199859149bb9fb4a16c7e9d13a9e0527e684e781791a221391c21781be2fb5c2e9
   languageName: node
   linkType: hard
 
