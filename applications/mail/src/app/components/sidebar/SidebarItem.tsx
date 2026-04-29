@@ -159,8 +159,13 @@ const SidebarItem = ({
         const customViewLabelIDs = Object.entries(CUSTOM_VIEWS).map(([, view]) => {
             return view.label.toString();
         });
-        return !(labelID === mailParams.labelID) && !NO_DROP_SET.has(labelID) && !customViewLabelIDs.includes(labelID);
-    }, [mailParams.labelID, labelID]);
+        return (
+            !(labelID === mailParams.labelID) &&
+            !NO_DROP_SET.has(labelID) &&
+            !customViewLabelIDs.includes(labelID) &&
+            !(isCategoryLabel(labelID) && selectAll)
+        );
+    }, [mailParams.labelID, labelID, selectAll]);
 
     const dropCallback = useCallback(
         (itemIDs: string[]) => {
