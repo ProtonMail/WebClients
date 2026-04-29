@@ -51,9 +51,7 @@ export const AppGuard: FC = () => {
                 const currentlyNoLock = mode === LockMode.NONE;
                 const inFlightNoLock = lockInFlightRef.current?.lock.mode === LockMode.NONE;
                 // Trigger lock now except if there's no lock or if the lock is being removed
-                if (!currentlyNoLock && !inFlightNoLock) {
-                    await auth.lock(mode, { soft: true });
-                }
+                if (!currentlyNoLock && !inFlightNoLock) await auth.lock(mode, { soft: true });
             }),
         []
     );
