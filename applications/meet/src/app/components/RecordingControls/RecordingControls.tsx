@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { addSeconds, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -10,6 +10,7 @@ import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuestAdmin } from '@proton/meet/store/slices';
+import { selectLocalRecordingTime } from '@proton/meet/store/slices/recordingStatusSlice';
 import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -75,13 +76,12 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
 
 const RecordingControlsInternal = () => {
     const isMeetingRecordingEnabled = useFlag('MeetingRecording');
+
     const { startRecording, downloadRecording, recordingState } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
-
-    const durationIntervalRef = useRef<number>();
     const isLargerThanMd = useIsLargerThanMd();
 
-    const [duration, setDuration] = useState(0);
+    const duration = useMeetSelector(selectLocalRecordingTime);
 
     const [showStartRecordingConfirmation, setShowStartRecordingConfirmation] = useState(false);
     const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
@@ -99,9 +99,6 @@ const RecordingControlsInternal = () => {
         setShowStartRecordingConfirmation(false);
         try {
             await startRecording();
-            durationIntervalRef.current = window.setInterval(() => {
-                setDuration((prev) => prev + 1);
-            }, 1000);
         } catch (error) {
             createNotification({
                 text: c('Error').t`Failed to start recording`,
@@ -120,9 +117,6 @@ const RecordingControlsInternal = () => {
     const handleStopAndDownload = async () => {
         setShowStopRecordingConfirmation(false);
         await downloadRecording();
-
-        clearInterval(durationIntervalRef.current);
-        setDuration(0);
     };
 
     const handleStopRecordingConfirmation = () => {

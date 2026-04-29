@@ -5,8 +5,14 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
-import { recordingStatusReducer } from '@proton/meet/store/slices/recordingStatusSlice';
-import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
+import {
+    initialState as initialRecordingStatusState,
+    recordingStatusReducer,
+} from '@proton/meet/store/slices/recordingStatusSlice';
+import {
+    initialState as initialScreenShareStatusState,
+    screenShareStatusReducer,
+} from '@proton/meet/store/slices/screenShareStatusSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -48,10 +54,12 @@ const createMockStore = ({ isHost = false, isScreenSharing = false, isRecording 
                 },
             },
             recordingStatus: {
+                ...initialRecordingStatusState,
                 participantsRecording: isRecording ? [participantIdentity] : [],
                 isRecording: false,
             },
             screenShareStatus: {
+                ...initialScreenShareStatusState,
                 participantScreenSharingIdentity: isScreenSharing ? participantIdentity : null,
             },
         },
