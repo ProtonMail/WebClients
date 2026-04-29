@@ -87,7 +87,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, krispAudi
     const initialAudioState = useMeetSelector(selectInitialAudioState);
     const microphones = useMeetSelector(selectMicrophones);
     const microphoneState = useMeetSelector(selectMicrophoneState);
-    const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
+    const [noiseFilter, setNoiseFilter] = useState(true);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
@@ -388,9 +388,9 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, krispAudi
         const useIOSWorkaround = isAudioSessionAvailable();
         const audio = {
             ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
-            echoCancellation: { ideal: true },
-            autoGainControl: { ideal: true },
-            noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
+            echoCancellation: true,
+            autoGainControl: true,
+            noiseSuppression: noiseFilter,
             channelCount: { ideal: 1 },
             dtx: false,
         };
