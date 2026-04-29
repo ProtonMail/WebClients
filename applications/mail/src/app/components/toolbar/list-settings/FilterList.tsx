@@ -152,6 +152,7 @@ export const FilterList = () => {
                     tel.sendUnreadReport();
                 }}
                 data-testid="filter-dropdown:show-unread"
+                aria-pressed={activeState.isUnreadActive}
             >
                 {c('Filter').t`Unread`}
             </Button>
@@ -187,6 +188,7 @@ export const FilterList = () => {
                             onClick={() => applyFilter(option)}
                             className="text-left"
                             data-testid={option.testID}
+                            aria-pressed={option.isActive}
                         >
                             <span className="flex items-center justify-space-between w-full">
                                 {option.label}
@@ -206,6 +208,7 @@ export const FilterList = () => {
                             onClick={() => applySort(option)}
                             className="flex items-center w-full justify-space-between"
                             data-testid={option.testID}
+                            aria-pressed={option.isActive}
                         >
                             <span className="flex items-center gap-2">
                                 <Icon name={option.iconName} title={option.label} />
