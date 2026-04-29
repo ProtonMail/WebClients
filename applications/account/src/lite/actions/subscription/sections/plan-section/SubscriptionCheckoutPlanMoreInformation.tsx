@@ -32,7 +32,6 @@ const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutVie
 
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle });
     const hasGuarantee = show30DaysMoneyBackGuarantee({
-        planIDs,
         plansMap,
         subscription,
         selectedPlan,
