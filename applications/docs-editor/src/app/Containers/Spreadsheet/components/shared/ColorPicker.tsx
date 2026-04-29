@@ -15,6 +15,7 @@ import * as Ariakit from '@ariakit/react'
 import { useUI } from '../../ui-store'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
+import { normalizeCustomHexColor } from './normalizeCustomHexColor'
 
 const { s } = createStringifier(strings)
 
@@ -125,8 +126,9 @@ export const ColorPicker = forwardRef(function ColorPicker(
         <HexColorPicker
           value={colorString}
           onChange={(color) => {
-            onChange(color)
-            onAddUserDefinedColor(color)
+            const normalizedColor = normalizeCustomHexColor(color)
+            onChange(normalizedColor)
+            onAddUserDefinedColor(normalizedColor)
           }}
         />
         <EyeDropper
