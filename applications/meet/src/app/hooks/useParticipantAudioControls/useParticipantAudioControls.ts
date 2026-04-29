@@ -4,6 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { WebAudioSettings } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet';
+import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SpatialAudioManager } from '../../utils/spatialAudio/SpatialAudioManager';
@@ -16,8 +17,8 @@ export const useParticipantAudioControls = () => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
     const disableAudioAutoHealing = useFlag('MeetDisableAudioAutoHealing');
 
-    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
-    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
     const [audioTrackSubscriptionManager] = useState(
