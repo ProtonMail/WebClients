@@ -9,6 +9,9 @@ import {
     roundRect,
 } from './drawingUtils';
 import { createMediaStreamTrackProcessor } from './utils';
+import { createWorkerLogger } from './workerLogger';
+
+const logger = createWorkerLogger('MeetingRecorder/renderWorker');
 
 const GAP = 11;
 const BORDER_RADIUS = 28;
@@ -21,8 +24,8 @@ interFont
     .then((font) => {
         self.fonts.add(font);
     })
-    .catch(() => {
-        // Fallback to system fonts if Inter fails to load
+    .catch((err) => {
+        logger.warn('Inter font failed to load, falling back to system fonts:', err);
     });
 
 interface VideoFrameData {
@@ -164,7 +167,9 @@ function drawVideoFrame({ ctx, frame, x, y, width, height, radius = 0, objectFit
         ctx.drawImage(frame, drawX, drawY, drawWidth, drawHeight);
 
         ctx.restore();
-    } catch (error) {}
+    } catch (error) {
+        logger.warn('drawVideoFrame failed:', error);
+    }
 }
 
 function drawRecordingCanvas(canvas: OffscreenCanvas, ctx: OffscreenCanvasRenderingContext2D) {
@@ -428,11 +433,12 @@ async function startTrackCaptureInWorker(trackData: TrackCaptureData) {
                         lastProcessedTime = now;
                     } catch (err) {
                         frame.close();
+                        logger.warn(`createImageBitmap failed for track ${trackId}:`, err);
                     }
                 }
             }
         } catch (error) {
-            // Reader was cancelled or track ended
+            logger.debug(`track processor pump ended for ${trackId}:`, error);
         }
     };
 
