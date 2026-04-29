@@ -13,7 +13,13 @@ import type { IconName } from '@proton/icons/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
-import { resetFilterAndSort, setFilterInUrl, setSortInUrl } from 'proton-mail/helpers/mailboxUrl';
+import {
+    resetFilter,
+    resetFilterAndSort,
+    resetSort,
+    setFilterInUrl,
+    setSortInUrl,
+} from 'proton-mail/helpers/mailboxUrl';
 import { selectFilter, selectLabelID, selectSort } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -66,6 +72,14 @@ export const FilterList = () => {
         history.push(resetFilterAndSort(history.location));
     };
 
+    const resetFilterOnly = () => {
+        history.push(resetFilter(history.location));
+    };
+
+    const resetSortOnly = () => {
+        history.push(resetSort(history.location));
+    };
+
     const activeState = getActiveState(filter, sort);
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     return (
@@ -78,7 +92,12 @@ export const FilterList = () => {
                 shape={activeState.isUnreadActive ? 'solid' : 'outline'}
                 size="tiny"
                 onClick={() => {
-                    handleFilter({ Unread: 1 });
+                    if (activeState.isUnreadActive) {
+                        resetFilterOnly();
+                    } else {
+                        handleFilter({ Unread: 1 });
+                    }
+
                     tel.sendUnreadReport();
                 }}
                 data-testid="filter-dropdown:show-unread"
@@ -111,7 +130,11 @@ export const FilterList = () => {
                     <p className="px-4 pt-3 pb-1 text-semibold">{c('Filter').t`Filter`}</p>
                     <DropdownMenuButton
                         onClick={() => {
-                            handleFilter({ Unread: 0 });
+                            if (activeState.isReadActive) {
+                                resetFilterOnly();
+                            } else {
+                                handleFilter({ Unread: 0 });
+                            }
                             tel.sendReadReport();
                         }}
                         className="text-left"
@@ -125,7 +148,11 @@ export const FilterList = () => {
 
                     <DropdownMenuButton
                         onClick={() => {
-                            handleFilter({ Attachments: 1 });
+                            if (activeState.isAttachmentActive) {
+                                resetFilterOnly();
+                            } else {
+                                handleFilter({ Attachments: 1 });
+                            }
                             tel.sendFileReport();
                         }}
                         className="text-left"
@@ -144,7 +171,11 @@ export const FilterList = () => {
                     <p className="px-4 pt-3 pb-1 text-semibold">{c('Sort option').t`Sort by`}</p>
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Time', desc: true });
+                            if (activeState.isOldestFirstActive) {
+                                resetSortOnly();
+                            } else {
+                                handleSort({ sort: 'Time', desc: true });
+                            }
                             tel.sendNewestFirstReport();
                         }}
                         isActive={activeState.isNewestFirstActive}
@@ -155,7 +186,11 @@ export const FilterList = () => {
 
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Time', desc: false });
+                            if (activeState.isOldestFirstActive) {
+                                resetSortOnly();
+                            } else {
+                                handleSort({ sort: 'Time', desc: false });
+                            }
                             tel.sendOldestFirstReport();
                         }}
                         isActive={activeState.isOldestFirstActive}
@@ -166,7 +201,11 @@ export const FilterList = () => {
 
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Size', desc: true });
+                            if (activeState.isLargestFirstActive) {
+                                resetSortOnly();
+                            } else {
+                                handleSort({ sort: 'Size', desc: true });
+                            }
                             tel.sendLargestFirstReport();
                         }}
                         isActive={activeState.isLargestFirstActive}
@@ -177,7 +216,11 @@ export const FilterList = () => {
 
                     <DropdownSortOption
                         onClick={() => {
-                            handleSort({ sort: 'Size', desc: false });
+                            if (activeState.isSmallestFirstActive) {
+                                resetSortOnly();
+                            } else {
+                                handleSort({ sort: 'Size', desc: false });
+                            }
                             tel.sendSmallestFirstReport();
                         }}
                         isActive={activeState.isSmallestFirstActive}
