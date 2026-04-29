@@ -669,19 +669,15 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         },
 
         async createAccessTokenKey() {
-            const primary = context.primaryUserKey;
-            if (!primary?.publicKey || !primary?.privateKey) {
-                throw new Error('Primary user key unavailable');
-            }
-            return processes.createAccessTokenKey(primary.publicKey, primary.privateKey);
+            assertHydrated(context);
+            const { publicKey, privateKey } = context.primaryUserKey;
+            return processes.createAccessTokenKey(publicKey, privateKey);
         },
 
         async openAccessTokenKey(encryptedKey) {
-            const primary = context.primaryUserKey;
-            if (!primary?.publicKey || !primary?.privateKey) {
-                throw new Error('Primary user key unavailable');
-            }
-            return processes.openAccessTokenKey(encryptedKey, primary.privateKey, primary.publicKey);
+            assertHydrated(context);
+            const { publicKey, privateKey } = context.primaryUserKey;
+            return processes.openAccessTokenKey(encryptedKey, privateKey, publicKey);
         },
 
         async createAccessTokenShareKeys({ rawPatKey, shareId }) {

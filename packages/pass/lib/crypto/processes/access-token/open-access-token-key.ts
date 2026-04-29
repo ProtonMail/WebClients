@@ -14,6 +14,7 @@ export const openAccessTokenKey = async (
         binaryMessage,
         decryptionKeys: privateKey,
         verificationKeys: publicKey,
+        expectSigned: true,
         format: 'binary',
     });
     return data as Uint8Array<ArrayBuffer>;
