@@ -106,7 +106,7 @@ export const TokenRevealModal: FC<Props> = ({ envVar, agent, onClose }) => {
 
     if (agent) {
         return (
-            <PassModal open onClose={onClose} onReset={onClose} size="large">
+            <PassModal open onClose={onClose} onReset={onClose} size="xlarge">
                 <ModalTwoHeader title={c('Title').t`Agent setup instructions`} />
                 <ModalTwoContent>
                     <AgentInstructions envVar={envVar} copy={copy} />
@@ -126,7 +126,7 @@ export const TokenRevealModal: FC<Props> = ({ envVar, agent, onClose }) => {
     );
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="medium">
+        <PassModal open onClose={onClose} onReset={onClose} size="large">
             <ModalTwoHeader title={c('Title').t`Your new access token`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0">
