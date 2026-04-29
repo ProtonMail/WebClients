@@ -128,7 +128,7 @@ const AudioSettingsDropdownComponent = ({
                         <div className="color-weak meet-font-weight text-uppercase text-sm">
                             {!noSpeakerDetected ? c('Info').t`Select a speaker` : c('Info').t`No speaker detected`}
                         </div>
-                        {speakerState.systemDefault && (
+                        {speakerState.hasDefaultOption && (
                             <OptionButton
                                 key={DEFAULT_DEVICE_ID}
                                 onClick={() => {
