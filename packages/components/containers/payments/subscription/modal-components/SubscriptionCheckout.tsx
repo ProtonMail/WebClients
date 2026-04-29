@@ -353,7 +353,6 @@ const SubscriptionCheckout = ({
             onChangeCurrency={onChangeCurrency}
             loading={loading}
             hasGuarantee={show30DaysMoneyBackGuarantee({
-                planIDs,
                 plansMap,
                 subscription,
                 selectedPlan: new SelectedPlan(planIDs, plansMap, cycle, currency),
