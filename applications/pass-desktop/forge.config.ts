@@ -9,6 +9,7 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { WebpackPlugin } from '@electron-forge/plugin-webpack';
 import type { ForgeConfig } from '@electron-forge/shared-types';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import fs from 'node:fs/promises';
 import path from 'path';
 
 import pkg from './package.json';
@@ -131,6 +132,24 @@ const config: ForgeConfig = {
             },
         }),
     ],
+    hooks: {
+        postMake: async (_, makeResults) => {
+            for (const result of makeResults) {
+                result.artifacts = await Promise.all(
+                    result.artifacts.map(async (artifact) => {
+                        if (!artifact.endsWith('.msix')) return artifact;
+                        const renamed = path.join(
+                            path.dirname(artifact),
+                            `ProtonPass_${result.packageJSON.version}.msix`
+                        );
+                        await fs.rename(artifact, renamed);
+                        return renamed;
+                    })
+                );
+            }
+            return makeResults;
+        },
+    },
     plugins: [
         new AutoUnpackNativesPlugin({}),
         new WebpackPlugin({
