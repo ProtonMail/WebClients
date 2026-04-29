@@ -4,6 +4,7 @@ import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
@@ -26,8 +27,8 @@ export const WrappedProtonMeetContainer = () => {
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
     const isMeetH264 = useFlag('MeetH264');
 
-    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
-    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
     const isAudioMixingEnabled = isMeetEnableAudioMixing && !isMeetEnableSpatialAudio;
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
