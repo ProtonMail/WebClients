@@ -1,6 +1,7 @@
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { ActionPayload, type AgentAction } from '@proton/pass/types/protobuf/action-payload-v1';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export type DecryptedActionPayload = { kind: 'agent-action'; agentAction: AgentAction } | { kind: 'unknown' };
 
@@ -14,7 +15,7 @@ export type DecryptedActionPayload = { kind: 'agent-action'; agentAction: AgentA
 export const openActionPayload = async (
     encodedPayload: string,
     rawPatKey: Uint8Array<ArrayBuffer>
-): Promise<DecryptedActionPayload | null> => {
+): Promise<MaybeNull<DecryptedActionPayload>> => {
     if (!encodedPayload) return null;
 
     const encrypted = Uint8Array.fromBase64(encodedPayload) as Uint8Array<ArrayBuffer>;
