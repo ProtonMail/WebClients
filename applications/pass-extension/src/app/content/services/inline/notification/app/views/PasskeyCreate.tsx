@@ -324,7 +324,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                     <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
                                         <div className="shrink-0 px-1">{`${c('Label').t`Passkey`} • ${domain}`}</div>
 
-                                        <Card className="flex flex-auto text-sm" type="primary">
+                                        <Card className="flex flex-auto justify-center text-sm" type="primary">
                                             <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                                 <Icon name="lock-filled" size={6} />
                                                 <span className="text-center block">
