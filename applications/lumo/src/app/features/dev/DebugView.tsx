@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -16,6 +17,7 @@ import {
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
+import { selectConversationById } from '../../redux/selectors';
 import { addConversation } from '../../redux/slices/core/conversations';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import type { DebugLimitOverride } from '../../redux/slices/meta/errors';
@@ -25,7 +27,7 @@ import {
     selectAllDebugLimitOverrides,
     setDebugLimitOverride,
 } from '../../redux/slices/meta/errors';
-import type { Conversation, Space } from '../../types';
+import type { Conversation, ConversationId, Space, SpaceId } from '../../types';
 import { ConversationStatus } from '../../types';
 import { TestRendererModal } from './TestRendererModal';
 
@@ -68,6 +70,14 @@ interface PerformanceMetrics {
         smoothingRate: TimePoint[];
         smoothingDifferential: TimePoint[];
     };
+}
+
+interface ConversationRouteParams {
+    conversationId: ConversationId;
+}
+
+interface ProjectRouteParams {
+    projectId: SpaceId;
 }
 
 const HISTORY_SIZE = 1000;
@@ -266,6 +276,13 @@ const overrideLabel = (override: DebugLimitOverride) => {
 const DebugView = () => {
     const dispatch = useLumoDispatch();
     const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
+    const conversationMatch = useRouteMatch<ConversationRouteParams>('/c/:conversationId');
+    const projectMatch = useRouteMatch<ProjectRouteParams>('/projects/:projectId');
+    const currentConversationId = conversationMatch?.params.conversationId;
+    const currentConversation = useLumoSelector((state) =>
+        currentConversationId ? selectConversationById(currentConversationId)(state) : undefined
+    );
+    const currentSpaceId = projectMatch?.params.projectId ?? currentConversation?.spaceId;
     const [metrics, setMetrics] = useState<PerformanceMetrics>({
         tokensPerSecond: 0,
         totalTokens: 0,
@@ -647,7 +664,14 @@ const DebugView = () => {
         const next: DebugLimitOverride =
             // eslint-disable-next-line no-nested-ternary
             current === null ? 'approaching' : current === 'approaching' ? 'at' : null;
-        dispatch(setDebugLimitOverride({ resource, override: next }));
+        dispatch(
+            setDebugLimitOverride({
+                resource,
+                override: next,
+                conversationId: resource === 'messages' ? currentConversationId : undefined,
+                spaceId: resource === 'assets' ? currentSpaceId : undefined,
+            })
+        );
     };
 
     const tabs: { id: typeof activeTab; label: string }[] = [
@@ -974,15 +998,15 @@ const DebugView = () => {
             <div className="debug-view-actions">
                 <button
                     className="debug-view-btn debug-view-btn--secondary"
-                    onClick={() => cycleOverride('messages', debugOverrides.messages)}
+                    onClick={() => cycleOverride('messages', debugOverrides.messages.override)}
                 >
-                    💬 {c('lumo: Debug View').t`Messages`}: {overrideLabel(debugOverrides.messages)}
+                    💬 {c('lumo: Debug View').t`Messages`}: {overrideLabel(debugOverrides.messages.override)}
                 </button>
                 <button
                     className="debug-view-btn debug-view-btn--secondary"
-                    onClick={() => cycleOverride('assets', debugOverrides.assets)}
+                    onClick={() => cycleOverride('assets', debugOverrides.assets.override)}
                 >
-                    📎 {c('lumo: Debug View').t`Assets`}: {overrideLabel(debugOverrides.assets)}
+                    📎 {c('lumo: Debug View').t`Assets`}: {overrideLabel(debugOverrides.assets.override)}
                 </button>
                 <button
                     className="debug-view-btn debug-view-btn--secondary"
