@@ -28,7 +28,7 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                         .t`Bring your emails into ${MAIL_APP_NAME}`}</h1>
                     <p className="color-weak m-0 mb-4">
                         {c('Onboarding List Placeholder')
-                            .t`Bring your existing email into ${MAIL_APP_NAME} so you can manage everything from one private inbox.`}
+                            .t`Bring your existing emails into ${MAIL_APP_NAME} so you can manage everything from one private inbox.`}
                     </p>
                 </div>
                 <ProviderCard

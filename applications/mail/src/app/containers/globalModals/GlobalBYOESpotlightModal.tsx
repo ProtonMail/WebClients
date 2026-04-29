@@ -67,7 +67,7 @@ export const GlobalBYOESpotlightModal = () => {
                                 .t`Use Gmail securely in ${MAIL_APP_NAME}`}</h1>
                             <div className="my-4 color-weak">
                                 {c('Description')
-                                    .jt`Send and receive Gmail correspondence directly in ${MAIL_APP_NAME}. Connect your address in ${addressesSettingsLink}.`}
+                                    .jt`Send and receive Gmail messages directly in ${MAIL_APP_NAME}. Connect your address in ${addressesSettingsLink}.`}
                             </div>
                             {forwardingCount > 0 && (
                                 <div className="border border-weak rounded flex flex-nowrap gap-2 p-3 color-weak text-left">
@@ -90,7 +90,7 @@ export const GlobalBYOESpotlightModal = () => {
                             app={APPS.PROTONMAIL}
                             className="w-full"
                             color="norm"
-                        >{c('Action').t`Connect to Gmail`}</ButtonLike>
+                        >{c('Action').t`Connect your email`}</ButtonLike>
                     </ModalTwoFooter>
                 </ModalTwo>
             )}
