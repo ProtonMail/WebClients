@@ -10,12 +10,12 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import { telemetry } from '@proton/shared/lib/telemetry';
 
 import ValidationError from '../../../ValidationError';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
@@ -29,6 +29,8 @@ export interface CreateOutgoingEmergencyContactModalProps extends Omit<
     'children' | 'buttons' | 'onSubmit'
 > {
     existingOutgoingTargetEmails: Set<string>;
+    /** When true, send recovery settings `setting_enabled` telemetry after a successful add (first outgoing contact only). */
+    isFirstOutgoingContact?: boolean;
     contactEmails: ContactEmailInputProps['contactEmails'];
     addresses: ContactEmailInputProps['addresses'];
     protonDomains: ContactEmailInputProps['protonDomains'];
@@ -38,9 +40,11 @@ export const CreateOutgoingEmergencyContactModal = ({
     protonDomains,
     addresses,
     existingOutgoingTargetEmails,
+    isFirstOutgoingContact = false,
     contactEmails,
     ...rest
 }: CreateOutgoingEmergencyContactModalProps) => {
+    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [targetEmail, setTargetEmail] = useState('');
     const waitTimeOptions = getWaitTimeOptions();
     const [waitTime, setWaitTime] = useState(getDefaultWaitTimeOptionValue());
@@ -77,9 +81,9 @@ export const CreateOutgoingEmergencyContactModal = ({
                         try {
                             await dispatch(addDelegatedAccessThunk(payload));
                             createNotification({ text: c('emergency_access').t`Emergency contact added` });
-                            telemetry.sendCustomEvent('recovery_settings_setting_enabled_v1', {
-                                setting: 'emergency_contact_added',
-                            });
+                            if (isFirstOutgoingContact) {
+                                sendRecoverySettingEnabled({ setting: 'emergency_contacts' });
+                            }
                             rest.onClose?.();
                         } catch (e) {
                             if (e instanceof ValidationError) {
