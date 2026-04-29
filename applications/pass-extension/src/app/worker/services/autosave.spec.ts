@@ -204,6 +204,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
+                        optimisticId: uniqueId(),
                         shareId: mockShareId,
                         userIdentifier: 'john@proton.me',
                         password: '123',
@@ -231,6 +232,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
+                        optimisticId: uniqueId(),
                         shareId: mockShareId,
                         userIdentifier: 'john',
                         password: '123',
@@ -259,6 +261,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
+                        optimisticId: uniqueId(),
                         shareId: mockShareId,
                         userIdentifier: passkey.userName,
                         password: '',
@@ -414,6 +417,7 @@ describe('AutosaveService [worker]', () => {
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
                     payload: {
                         type: AutosaveMode.NEW,
+                        optimisticId: uniqueId(),
                         shareId: mockShareId,
                         userIdentifier: 'john@proton.me',
                         password: '123',
