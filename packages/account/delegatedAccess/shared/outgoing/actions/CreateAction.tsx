@@ -55,6 +55,7 @@ export const CreateAction = () => {
                     protonDomains={domains}
                     contactEmails={contactEmails}
                     existingOutgoingTargetEmails={existingOutgoingTargetEmails.emergencyContacts}
+                    isFirstOutgoingContact={existingOutgoingTargetEmails.emergencyContacts.size === 0}
                     onExit={() => {
                         modal.onExit();
                         setActionPayload(null);
@@ -68,6 +69,7 @@ export const CreateAction = () => {
                     protonDomains={domains}
                     contactEmails={contactEmails}
                     existingOutgoingTargetEmails={existingOutgoingTargetEmails.recoveryContacts}
+                    isFirstOutgoingContact={existingOutgoingTargetEmails.recoveryContacts.size === 0}
                     email={user.Email}
                     onExit={() => {
                         modal.onExit();
