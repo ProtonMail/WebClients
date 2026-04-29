@@ -13,7 +13,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsLocalScreenShare, selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isChromiumBased, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -103,8 +103,8 @@ export const MeetingBody = ({
     const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
     const [isRefreshingScreenShare, setIsRefreshingScreenShare] = useState(false);
 
-    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
-    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
     const handleRefreshScreenShareTrack = async () => {
