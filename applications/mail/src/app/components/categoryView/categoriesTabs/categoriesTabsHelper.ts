@@ -9,16 +9,24 @@ export const getTabState = ({
     categoriesList,
     draggedOverCategoryId,
     categoryIDs,
+    selectAll,
 }: {
     index: number;
     category: CategoryTab;
     categoriesList: CategoryTab[];
+    selectAll: boolean;
     draggedOverCategoryId?: string;
     categoryIDs?: CategoryLabelID[];
 }): TabState => {
     if (categoryIDs?.includes(category.id)) {
         return TabState.ACTIVE;
-    } else if (category.id === draggedOverCategoryId) {
+    }
+
+    if (selectAll) {
+        return TabState.INACTIVE;
+    }
+
+    if (category.id === draggedOverCategoryId) {
         return TabState.DRAGGING_OVER;
     } else if (draggedOverCategoryId) {
         const hoveredIndex = categoriesList.findIndex((c) => c.id === draggedOverCategoryId);
