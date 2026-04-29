@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -23,6 +24,7 @@ import {
 } from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
 import type { MaybeNull } from '@proton/pass/types';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 export enum VaultSelectMode {
@@ -166,7 +168,7 @@ export const VaultMultiSelect: FC<VaultMultiSelectProps> = ({
     vaults,
     selectedShareIds,
     onToggle,
-    maxHeight = '12rem',
+    maxHeight,
     emptyState,
 }) => {
     if (vaults.length === 0) {
@@ -174,25 +176,32 @@ export const VaultMultiSelect: FC<VaultMultiSelectProps> = ({
     }
 
     return (
-        <div className="flex flex-column gap-1 rounded border border-weak overflow-auto" style={{ maxHeight }}>
-            {vaults.map((vault) => {
-                const checked = selectedShareIds.has(vault.shareId);
-                return (
-                    <label
-                        key={vault.shareId}
-                        className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-weak"
-                    >
-                        <Checkbox checked={checked} onChange={() => onToggle(vault.shareId)} />
-                        <VaultIcon
-                            color={vault.content.display.color}
-                            icon={vault.content.display.icon}
-                            size={3}
-                            background
-                        />
-                        <span className="text-ellipsis">{vault.content.name}</span>
-                    </label>
-                );
-            })}
+        <div
+            className={clsx('rounded border border-weak overflow-auto', maxHeight && 'max-h-custom')}
+            {...(maxHeight ? { style: { '--max-h-custom': maxHeight } } : {})}
+        >
+            <Scroll>
+                <div className="flex flex-column flex-nowrap gap-2 my-2">
+                    {vaults.map((vault) => {
+                        const checked = selectedShareIds.has(vault.shareId);
+                        return (
+                            <label
+                                key={vault.shareId}
+                                className="flex flex-nowrap items-center gap-2 px-3 py-1 cursor-pointer hover:bg-weak"
+                            >
+                                <Checkbox checked={checked} onChange={() => onToggle(vault.shareId)} />
+                                <VaultIcon
+                                    color={vault.content.display.color}
+                                    icon={vault.content.display.icon}
+                                    size={3}
+                                    background
+                                />
+                                <span className="text-ellipsis">{vault.content.name}</span>
+                            </label>
+                        );
+                    })}
+                </div>
+            </Scroll>
         </div>
     );
 };
