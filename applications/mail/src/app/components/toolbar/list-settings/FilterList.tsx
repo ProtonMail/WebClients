@@ -141,6 +141,7 @@ export const FilterList = () => {
 
             <Button
                 shape={activeState.isUnreadActive ? 'solid' : 'outline'}
+                color={activeState.isUnreadActive ? 'norm' : undefined}
                 size="tiny"
                 onClick={() => {
                     if (activeState.isUnreadActive) {
@@ -160,6 +161,7 @@ export const FilterList = () => {
             <DropdownButton
                 size="tiny"
                 shape={activeState.dropdownActiveCount > 0 ? 'solid' : 'outline'}
+                color={activeState.dropdownActiveCount > 0 ? 'norm' : undefined}
                 className="flex items-center"
                 ref={anchorRef}
                 isOpen={isOpen}
