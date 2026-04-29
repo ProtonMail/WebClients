@@ -1397,6 +1397,15 @@
       ],
       "Biometric lock setup failed.": [
         "Збой наладкі біяметрычнай блакіроўкі"
+      ],
+      "Biometric lock credentials do not match.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
+      ],
+      "Biometric lock credentials not found.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не знойдзены."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
       ]
     },
     "Error message": {
@@ -2867,6 +2876,12 @@
       ],
       "Logging you out...": [
         "Адбываецца выхад..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб атрымаць доступ да ключа доступу"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб захаваць гэты ключ доступу"
       ]
     },
     "Keyboard key": {
