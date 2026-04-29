@@ -295,10 +295,11 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                 // payload will be `null` on successful authentication and will contain error details for failed attempts
                 if (data.payload?.message) {
                     const { type, reason, message } = data.payload;
-                    const [status] = (typeof reason === 'string' ? reason : '').split(':');
+                    const safeReason = typeof reason === 'string' ? reason : '';
+                    const [status] = safeReason.split(':');
                     captureMessage('Zendesk: Authentication failed', {
                         level: 'error',
-                        extra: { type, reason, message, status },
+                        extra: { type, reason: btoa(safeReason), message, status },
                     });
                 }
             }
