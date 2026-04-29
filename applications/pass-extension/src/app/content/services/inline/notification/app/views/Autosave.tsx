@@ -25,14 +25,18 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import { withMerge } from '@proton/pass/utils/object/merge';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE }>;
 
-const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, domain: string): AutosaveFormValues =>
+const getInitialValues = (
+    { userIdentifier, password, type }: AutosavePayload,
+    { domain, optimisticId }: { domain: string; optimisticId: string }
+): AutosaveFormValues =>
     type === AutosaveMode.UPDATE
         ? { itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier }
-        : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
+        : { name: domain, optimisticId, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
     const { visible, domain } = useIFrameAppState();
@@ -45,6 +49,11 @@ export const Autosave: FC<Props> = ({ data }) => {
 
     /** Track failed auto-save attempts */
     const [attempts, setAttempt] = useState<number>(0);
+
+    /** Deterministic optimistic ID per autosave payload in case of
+     * creation failure (offline, network error etc..) - This avoids
+     * creating multiple drafts for the same data when this happens */
+    const optimisticId = useMemo(() => uniqueId(), [data]);
 
     const shouldUpdate = useMemo(() => {
         /** The autosave data may get revalidated in certain cases :
@@ -63,7 +72,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     const shouldDiscard = data.submittedAt !== null;
 
     const form = useFormik<AutosaveFormValues>({
-        initialValues: getInitialValues(data, domain),
+        initialValues: getInitialValues(data, { domain, optimisticId }),
         validateOnChange: true,
         validate: (values) => {
             const errors: FormikErrors<AutosaveFormValues> = {};
@@ -96,6 +105,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                     withMerge<AutosaveFormValues>({
                         step: 'edit',
                         type: AutosaveMode.NEW,
+                        optimisticId,
                     })
                 );
             }
@@ -127,7 +137,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     useEffect(() => {
         if (shouldUpdate) {
             form.setValues({
-                ...getInitialValues(data, domain),
+                ...getInitialValues(data, { domain, optimisticId }),
                 shareId: form.values.shareId,
             }).catch(noop);
         }
