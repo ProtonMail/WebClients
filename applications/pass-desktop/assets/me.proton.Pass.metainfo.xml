@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2024 proletarius101 -->
+<component type="desktop-application">
+    <id>me.proton.Pass</id>
+
+    <name>Proton Pass</name>
+    <summary>Encrypted password manager to keep your login credentials safe</summary>
+
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-only</project_license>
+    <developer id="ch.protonmail">
+        <name>Proton AG</name>
+    </developer>
+    <project_group>Proton</project_group>
+
+    <description>
+        <p>**This is a community package of Proton Pass and is not officially supported by Proton AG.**</p>
+
+        <p>Get the password manager created by the scientists who met at CERN behind Proton Mail,
+            the world's largest encrypted email provider. Proton Pass is open source, end-to-end
+            encrypted, and protected by Swiss privacy laws.</p>
+
+        <p>Pass offers more than other free password managers and has no ads or data collection. You
+            can use it for free forever on all your devices to create and store unlimited passwords,
+            autofill logins, generate 2FA codes, create email aliases, secure your notes, and
+            more.</p>
+
+        <p>How can Proton Pass be free forever?</p>
+        <p>We offer Pass for free because everyone deserves online privacy and security. This is
+            possible thanks to our supportive community on paid plans. If you would like to support
+            our work and get access to premium features, consider upgrading your plan.</p>
+
+        <p>Protect more than just your passwords.</p>
+        <p>Join over 100 million people who have signed up for Proton's privacy ecosystem, which
+            includes Proton Mail, Proton Drive, Proton Calendar, Proton VPN, and more. Take back
+            control of your privacy online with our encrypted email, calendar, file storage, and
+            VPN.</p>
+
+        <p>Protect your logins and their metadata with battle-tested end-to-end encryption</p>
+        <p>While many other password managers only encrypt your password, Proton Pass uses
+            end-to-end encryption on all your stored login details (including your username, the
+            website address, and more). Pass protects your information with the same battle-tested
+            encryption libraries all Proton services use.</p>
+
+        <p>Audit Pass's open-source code</p>
+        <p>Like all other Proton services, Pass is open source and built on the principle of trust
+            through transparency. As scientists, we know that transparency and peer review lead to
+            better security. All Proton Pass apps are open source, meaning anyone can verify our
+            security claims for themselves.</p>
+
+        <p>With Proton Pass, you can:</p>
+        <ul>
+            <li>Store and auto-sync unlimited logins on unlimited devices: You can create, store,
+                and manage your credentials from anywhere with our browser extensions and apps for
+                Android and iPhone/iPad.</li>
+            <li>Sign in faster with Proton Pass autofill: You no longer need to copy and paste your
+                username and password. Easily and securely log in with Proton Pass autofill
+                technology.</li>
+            <li>Avoid weak passwords: With our built-in secure password generator, you can easily
+                generate strong, unique, and random passwords based on the security requirements for
+                every website you sign up to.</li>
+            <li>Safely store encrypted notes: You can save private notes in Pass and access them on
+                all your devices.</li>
+            <li>Protect Proton Pass with biometric login access: You can add an extra layer of
+                protection to Proton Pass by using your fingerprint or face to unlock the app.</li>
+            <li>Create unique email addresses with hide-my-email aliases: Proton Pass helps you hide
+                your personal email address with email aliases. Keep spam out of your inbox, avoid
+                being tracked everywhere, and protect yourself from data breaches.</li>
+            <li>Make 2FA easy with our built-in authenticator: With Pass's integrated 2FA
+                authenticator, using 2FA is finally fast and convenient. Easily add a 2FA code for
+                any website and autofill it when you log in.</li>
+            <li>Easily organize and share your sensitive data with vaults: Manage your logins,
+                secure notes, and email aliases with vaults. Share individual items or an entire
+                vault with your family, friends, or colleagues.</li>
+            <li>Quick offline access to your login data: Access your stored passwords and notes in
+                Pass from wherever you are, even when your phone has no internet connection.</li>
+            <li>Secure your Pass account with additional security measures: Protect all your data
+                with another layer of protection, either with TOTP or U2F/FIDO2 security keys.</li>
+            <li>Get unlimited email forwards: There's no limit on the number of emails you can have
+                forwarded from your alias to your inbox.</li>
+        </ul>
+    </description>
+
+    <url type="homepage">https://proton.me/pass</url>
+    <url type="vcs-browser">https://github.com/ProtonMail/WebClients</url>
+    <url
+        type="contact">https://proton.me/support/troubleshooting?product=pass</url>
+    <url type="help">https://proton.me/support/pass</url>
+    <url type="translate">https://proton.me/blog/translation-community</url>
+    <url type="bugtracker">https://github.com/ProtonMail/WebClients/issues</url>
+
+    <launchable type="desktop-id">me.proton.Pass.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://pmecdn.protonweb.com/image-transformation/?s=s&amp;image=cta_keep_your_passwords_safe_for_free_4f90956465.png</image>
+            <caption>The interface showcases user-friendly access to your Netflix credentials, complete with OTP generation for added security.</caption>
+        </screenshot>
+    </screenshots>
+
+    <content_rating type="oars-1.1">
+        <content_attribute id="money-purchasing">intense</content_attribute>
+    </content_rating>
+
+    <releases>
+        <release version="1.36.0" date="2026-04-03">
+            <description>
+                <ul>
+                    <li>Custom item fields are now searchable</li>
+                    <li>Hide biometrics unlock option on Linux</li>
+                    <li>Lock desktop app when closed</li>
+                    <li>Improve importers</li>
+                    <li>Group sharing</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.35.0" date="2026-03-09">
+            <description>
+                <ul>
+                    <li>Support for B2B groups</li>
+                    <li>Fix an issue on invites when users have many addresses</li>
+                    <li>New beta channel for desktop apps</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.34.2" date="2026-01-30">
+            <description>
+                <ul>
+                    <li>Allow Pass Plus Trial to access all paid features</li>
+                    <li>Fix minor Pass Plus Trial UI issues</li>
+                </ul>
+            </description>
+        </release>
+        <release version="1.33.5" date="2026-01-14">
+            <description />
+        </release>
+        <release version="1.33.4" date="2026-01-07">
+            <description />
+        </release>
+        <release version="1.33.3" date="2025-12-18">
+            <description />
+        </release>
+        <release version="1.33.2" date="2025-12-17">
+            <description />
+        </release>
+        <release version="1.33.0" date="2025-11-21">
+            <description />
+        </release>
+        <release version="1.32.11" date="2025-10-27">
+            <description />
+        </release>
+        <release version="1.32.10" date="2025-10-14">
+            <description />
+        </release>
+        <release version="1.32.7" date="2025-09-18">
+            <description />
+        </release>
+        <release version="1.32.6" date="2025-09-09">
+            <description />
+        </release>
+        <release version="1.32.3" date="2025-07-30">
+            <description />
+        </release>
+        <release version="1.32.2" date="2025-07-01">
+            <description />
+        </release>
+        <release version="1.32.0" date="2025-06-24">
+            <description />
+        </release>
+        <release version="1.31.5" date="2025-06-04">
+            <description />
+        </release>
+        <release version="1.31.4" date="2025-05-19">
+            <description />
+        </release>
+        <release version="1.31.3" date="2025-05-14">
+            <description />
+        </release>
+        <release version="1.31.2" date="2025-05-12">
+            <description />
+        </release>
+        <release version="1.31.1" date="2025-04-15">
+            <description />
+        </release>
+        <release version="1.31.0" date="2025-04-08">
+            <description />
+        </release>
+        <release version="1.30.1" date="2025-03-24">
+            <description />
+        </release>
+        <release version="1.29.8" date="2025-03-07">
+            <description />
+        </release>
+        <release version="1.29.5" date="2025-03-03">
+            <description />
+        </release>
+        <release version="1.29.3" date="2025-02-17">
+            <description />
+        </release>
+        <release version="1.29.2" date="2025-02-07">
+            <description />
+        </release>
+        <release version="1.29.1" date="2025-02-04">
+            <description />
+        </release>
+        <release version="1.29.0" date="2025-01-28">
+            <description />
+        </release>
+        <release version="1.28.0" date="2025-01-21">
+            <description />
+        </release>
+        <release version="1.27.2" date="2025-01-06">
+            <description />
+        </release>
+        <release version="1.27.0" date="2024-12-20">
+            <description />
+        </release>
+        <release version="1.26.0" date="2024-12-09">
+            <description />
+        </release>
+        <release version="1.25.0" date="2024-11-25">
+            <description />
+        </release>
+        <release version="1.24.4" date="2024-11-13">
+            <description />
+        </release>
+        <release version="1.24.3" date="2024-11-11">
+            <description />
+        </release>
+        <release version="1.24.1" date="2024-10-31">
+            <description />
+        </release>
+        <release version="1.23.1" date="2024-10-07">
+            <description />
+        </release>
+        <release version="1.23.0" date="2024-09-20">
+            <description />
+        </release>
+        <release version="1.22.2" date="2024-08-26">
+            <description />
+        </release>
+        <release version="1.22.1" date="2024-08-20">
+            <description />
+        </release>
+        <release version="1.22.0" date="2024-08-06" />
+        <release version="1.16.1" date="2024-03-21" />
+    </releases>
+</component>
