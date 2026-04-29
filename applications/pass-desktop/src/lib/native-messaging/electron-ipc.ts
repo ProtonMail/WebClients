@@ -1,4 +1,5 @@
 import type { BrowserWindow } from 'electron';
+import { isMainWindowEntry } from 'proton-pass-desktop/utils/navigation';
 
 import { NativeMessageErrorType } from '@proton/pass/types';
 import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
@@ -24,7 +25,7 @@ export const setupElectronIpcHandlers = (getWindow: () => MaybeNull<BrowserWindo
         request: NativeMessagePayload<NativeMessageRequest>,
         sendResponse: (response: NativeMessagePayload<NativeMessageResponse>) => void
     ) => {
-        if (!getWindow()?.webContents.getURL().startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) {
+        if (!isMainWindowEntry(getWindow()?.webContents.getURL() ?? '')) {
             info('App not on main URL, responding not logged in');
             sendResponse({
                 type: request.type,
