@@ -60,27 +60,46 @@ const buildStatus = (
 
 export const useMessagesLimitStatus = (conversationId: ConversationId | null | undefined): ResourceLimitStatus => {
     const messages = useLumoSelector(selectMessagesByConversationId(conversationId));
-    const override = useLumoSelector(selectDebugLimitOverride('messages'));
-    return useMemo(() => buildStatus('messages', Object.keys(messages).length, override), [messages, override]);
+    const overrideState = useLumoSelector(selectDebugLimitOverride('messages'));
+    return useMemo(
+        () =>
+            buildStatus(
+                'messages',
+                Object.keys(messages).length,
+                conversationId && overrideState.conversationId === conversationId ? overrideState.override : null
+            ),
+        [messages, conversationId, overrideState]
+    );
 };
 
 export const useConversationsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {
     const conversations = useLumoSelector(selectConversationsBySpaceId(spaceId));
-    const override = useLumoSelector(selectDebugLimitOverride('conversations'));
+    const overrideState = useLumoSelector(selectDebugLimitOverride('conversations'));
     return useMemo(
-        () => buildStatus('conversations', Object.keys(conversations).length, override),
-        [conversations, override]
+        () => buildStatus('conversations', Object.keys(conversations).length, overrideState.override),
+        [conversations, overrideState]
     );
 };
 
 export const useAssetsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {
     const attachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
-    const override = useLumoSelector(selectDebugLimitOverride('assets'));
-    return useMemo(() => buildStatus('assets', Object.keys(attachments).length, override), [attachments, override]);
+    const overrideState = useLumoSelector(selectDebugLimitOverride('assets'));
+    return useMemo(
+        () =>
+            buildStatus(
+                'assets',
+                Object.keys(attachments).length,
+                spaceId && overrideState.spaceId === spaceId ? overrideState.override : null
+            ),
+        [attachments, spaceId, overrideState]
+    );
 };
 
 export const useSpacesLimitStatus = (): ResourceLimitStatus => {
     const spaces = useLumoSelector((state) => state.spaces);
-    const override = useLumoSelector(selectDebugLimitOverride('spaces'));
-    return useMemo(() => buildStatus('spaces', Object.keys(spaces).length, override), [spaces, override]);
+    const overrideState = useLumoSelector(selectDebugLimitOverride('spaces'));
+    return useMemo(
+        () => buildStatus('spaces', Object.keys(spaces).length, overrideState.override),
+        [spaces, overrideState]
+    );
 };
