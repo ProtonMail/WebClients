@@ -25,7 +25,7 @@ export const PhotosSavePhotoButton: FC<Props> = ({ onSavePhotos, showIconOnly, d
 
     return (
         <ButtonComp
-            title={c('Action').t`Save`}
+            title={c('Action').t`Save photo to your gallery`}
             disabled={loading}
             onClick={onClick}
             data-testid="toolbar-save-photo"
