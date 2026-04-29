@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -9,6 +10,12 @@ import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import type { ResourceLimitError, ResourceLimitType } from '../redux/slices/meta/errors';
 import { dismissResourceLimitError, selectResourceLimitErrors } from '../redux/slices/meta/errors';
 import { limitResourceToErrorType, onComposerError } from '../remote/nativeComposerBridgeHelpers';
+import type { ConversationId } from '../types';
+import { shouldShowResourceLimitError } from './resourceLimitNotificationHelpers';
+
+interface ConversationRouteParams {
+    conversationId: ConversationId;
+}
 
 const getLimitErrorText = (error: ResourceLimitError): string => {
     const { resource, limit } = error;
@@ -45,12 +52,18 @@ export const useResourceLimitNotifications = () => {
     const { createNotification } = useNotifications();
     const dispatch = useLumoDispatch();
     const errors = useLumoSelector((state) => selectResourceLimitErrors({ errors: state.errors }));
+    const conversationMatch = useRouteMatch<ConversationRouteParams>('/c/:conversationId');
+    const activeConversationId = conversationMatch?.params.conversationId;
     const shown = useRef<Set<string>>(new Set());
 
     useEffect(() => {
         for (const error of errors) {
             if (shown.current.has(error.id)) continue;
             shown.current.add(error.id);
+            if (!shouldShowResourceLimitError(error, activeConversationId)) {
+                dispatch(dismissResourceLimitError(error.id));
+                continue;
+            }
             createNotification({
                 type: 'error',
                 text: getLimitErrorText(error),
@@ -61,7 +74,7 @@ export const useResourceLimitNotifications = () => {
             onComposerError(limitResourceToErrorType(error.resource));
             dispatch(dismissResourceLimitError(error.id));
         }
-    }, [errors, createNotification, dispatch]);
+    }, [errors, createNotification, dispatch, activeConversationId]);
 };
 
 export const getApproachingLimitText = (resource: ResourceLimitType, remaining: number): string => {
