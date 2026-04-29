@@ -1,10 +1,17 @@
 import metrics from '@proton/metrics';
 
 import { TransferSpeedMetrics } from '../../../internal/performance/transferSpeedMetrics';
+import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
-import type { FileUploadEvent, FolderCreationEvent, PhotosUploadEvent, UploadEvent } from '../types';
+import type {
+    FileUploadEvent,
+    FolderCreationEvent,
+    PhotosUploadEvent,
+    UploadEvent,
+    UploadEventSubscriberCallback,
+} from '../types';
 import { UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { uploadLogDebug, uploadLogError } from '../utils/uploadLogger';
@@ -19,7 +26,7 @@ export class UploadEventHandler {
     private eventHandlers: {
         [K in UploadEvent['type']]: (event: Extract<UploadEvent, { type: K }>) => void | Promise<void>;
     };
-    private eventSubscriptions = new Map<string, (event: UploadEvent) => Promise<void>>();
+    private eventSubscriptions = new Map<string, UploadEventSubscriberCallback>();
     private uploadSpeedMetrics = new TransferSpeedMetrics((values) => {
         uploadLogDebug('Upload speed metrics', values);
         metrics.drive_upload_speed_histogram.observe({
@@ -61,7 +68,7 @@ export class UploadEventHandler {
         };
     }
 
-    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): () => void {
+    subscribeToEvents(context: string, callback: UploadEventSubscriberCallback): () => void {
         this.eventSubscriptions.set(context, callback);
         return () => {
             this.eventSubscriptions.delete(context);
@@ -73,9 +80,13 @@ export class UploadEventHandler {
     }
 
     async handleEvent(event: UploadEvent): Promise<void> {
+        const isForPhotos = 'isForPhotos' in event && event.isForPhotos;
+        const driveClient = isForPhotos
+            ? UploadDriveClientRegistry.getDrivePhotosClient()
+            : UploadDriveClientRegistry.getDriveClient();
         await Promise.all(
             Array.from(this.eventSubscriptions.values()).map((callback) => {
-                return callback(event);
+                return callback(event, driveClient);
             })
         );
 
