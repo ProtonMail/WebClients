@@ -14,7 +14,7 @@ import Header from '../../../public/Header';
 import { defaultPersistentKey } from '../../../public/helper';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { useGetAccountKTActivation } from '../../../useGetAccountKTActivation';
-import { performPasswordChangeViaMnemonic, performPasswordReset } from '../../actions';
+import { DeviceRecoveryLevel, performPasswordChangeViaMnemonic, performPasswordReset } from '../../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -29,6 +29,7 @@ export const ResetPassword = () => {
         mnemonicData,
         resetWithDataLoss,
         ownershipVerificationMethod,
+        deviceRecoveryLevel,
     } = snapshot.context;
     const { createNotification } = useNotifications();
 
@@ -61,7 +62,10 @@ export const ResetPassword = () => {
                     persistent,
                     api: silentApi,
                 });
-                sendResetPasswordSuccess({ step: 'setNewPassword', method: 'mnemonic' });
+                sendResetPasswordSuccess({
+                    step: 'setNewPassword',
+                    method: deviceRecoveryLevel === DeviceRecoveryLevel.FULL ? 'device-recovery' : 'mnemonic',
+                });
                 await onLogin(authSession);
             } else if (resetResponse) {
                 const authSession = await performPasswordReset({
@@ -75,7 +79,13 @@ export const ResetPassword = () => {
                     setupVPN,
                     api: silentApi,
                 });
-                sendResetPasswordSuccess({ step: 'setNewPassword', method: ownershipVerificationMethod });
+                sendResetPasswordSuccess({
+                    step: 'setNewPassword',
+                    method:
+                        deviceRecoveryLevel === DeviceRecoveryLevel.FULL
+                            ? 'device-recovery'
+                            : ownershipVerificationMethod,
+                });
                 await onLogin(authSession);
             }
         } catch (error) {
