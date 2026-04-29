@@ -1,7 +1,9 @@
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { FilterActions } from './FilterActions';
+import { FilterList } from './FilterList';
 import { SortDropdown } from './SortDropdown';
 
 export interface ListSettingsProps {
@@ -25,6 +27,11 @@ export const ListSettings = ({
     labelID,
     filterAsDropdown,
 }: ListSettingsProps) => {
+    const isRefreshFilterEnabled = useFlag('RefreshedFilterUI');
+    if (isRefreshFilterEnabled) {
+        return <FilterList />;
+    }
+
     return (
         <div className="flex flex-nowrap justify-space-between items-center gap-2 m-auto">
             <FilterActions
