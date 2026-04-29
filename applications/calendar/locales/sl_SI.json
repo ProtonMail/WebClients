@@ -1760,6 +1760,9 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ]
     },
     "collider_2025: Info": {
@@ -3865,6 +3868,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ]
     },
     "error": {
@@ -6236,6 +6242,21 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } poteče v ${ daysLeft } dnevu.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh.",
+        "${ planName } poteče v ${ daysLeft } dneh."
+      ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -6924,6 +6945,9 @@
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
         "Delite dele svojega urnika prek strani za rezervacije, ki jo lahko pošljete komurkoli."
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
       ]
     },
     "label": {
@@ -9159,6 +9183,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "Payments.Error": {
@@ -9396,6 +9423,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ]
     },
     "Placeholder for contact group name": {
@@ -12379,6 +12409,26 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
