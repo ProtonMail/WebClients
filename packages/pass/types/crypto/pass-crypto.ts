@@ -208,7 +208,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     openActionPayload: (data: {
         encodedPayload: string;
         rawPatKey: Uint8Array<ArrayBuffer>;
-    }) => Promise<DecryptedActionPayload | null>;
+    }) => Promise<MaybeNull<DecryptedActionPayload>>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
