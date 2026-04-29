@@ -41,7 +41,7 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                     className="shrink-0"
                     loadImage={settings.loadDomainImages}
                 />
-                <div className="flex-auto">
+                <div className="flex-auto border rounded-xl border-weak ml-3">
                     <Field
                         lengthLimiters
                         name="name"
