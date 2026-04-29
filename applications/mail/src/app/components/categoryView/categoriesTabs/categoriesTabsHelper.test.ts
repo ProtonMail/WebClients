@@ -134,7 +134,7 @@ describe('CategoriesTabsHelper', () => {
             expect(tabState).toBe(TabState.DRAGGING_NEIGHBOR);
         });
 
-        it('should return inative is select all is enabled even if dragged over', () => {
+        it('should return inactive if select all is enabled even if dragged over', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
@@ -152,7 +152,7 @@ describe('CategoriesTabsHelper', () => {
             expect(tabState).toBe(TabState.INACTIVE);
         });
 
-        it('should return inative is select all is enabled even if neighbor', () => {
+        it('should return inative if select all is enabled even if neighbor', () => {
             const category: CategoryTab = {
                 id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
