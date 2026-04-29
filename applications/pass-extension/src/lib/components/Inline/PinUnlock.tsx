@@ -1,13 +1,11 @@
-import { type FC, type ForwardRefRenderFunction, type ReactNode, forwardRef } from 'react';
+import { type ForwardRefRenderFunction, type ReactNode, forwardRef } from 'react';
 
-import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 
 export type Props = {
@@ -65,14 +63,3 @@ const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ he
 };
 
 export const PinUnlock = forwardRef(PinUnlockRender);
-
-export const WithPinUnlock: FC<Props & { children: (locked: boolean, input: ReactNode) => ReactNode }> = ({
-    children,
-    ...props
-}) => {
-    const { status } = useAppState();
-    const locked = clientSessionLocked(status);
-    const input = locked ? <PinUnlock {...props} /> : null;
-
-    return children(locked, input);
-};

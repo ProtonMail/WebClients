@@ -10,19 +10,25 @@ import type { ShareItem } from '@proton/pass/store/reducers';
 import type { ShareType } from '@proton/pass/types/data/shares';
 import noop from '@proton/utils/noop';
 
-type Props = Omit<SelectFieldProps, 'children'> & { fallback: ReactNode };
+type Props = Omit<SelectFieldProps, 'children'> & { fallback: ReactNode; attempt?: number };
 
-export const AutosaveVaultPicker: FC<Props> = ({ fallback, ...props }) => {
+export const AutosaveVaultPicker: FC<Props> = ({ fallback, attempt, ...props }) => {
     const [vaults, setVaults] = useState<ShareItem<ShareType.Vault>[]>([]);
 
-    useEffect(() => {
-        sendMessage
-            .onSuccess(contentScriptMessage({ type: WorkerMessageType.VAULTS_QUERY }), (res) => {
-                setVaults(res.vaults);
-                void props.form.setFieldValue('shareId', res.defaultShareId);
-            })
-            .catch(noop);
-    }, []);
+    useEffect(
+        () => {
+            sendMessage
+                .onSuccess(contentScriptMessage({ type: WorkerMessageType.VAULTS_QUERY }), (res) => {
+                    setVaults(res.vaults);
+                    void props.form.setFieldValue('shareId', res.defaultShareId);
+                })
+                .catch(noop);
+        },
+
+        /** Refresh vault picker options on each
+         * failed attempt in case vault deleted */
+        [attempt]
+    );
 
     /** Only render the Vault picker in case there are 2 or more vaults
      * to select. Otherwise, render the required fallback node. */
