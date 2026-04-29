@@ -5,7 +5,7 @@ import type { FrameMessageHandler } from 'proton-pass-extension/app/content/serv
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
+import { clientLocked, clientNeedsSession } from '@proton/pass/lib/client';
 import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import noop from '@proton/utils/noop';
 
@@ -104,7 +104,7 @@ export const createInlineService = ({
             if (!ctx) return;
 
             const { status } = ctx.getState();
-            const locked = clientSessionLocked(status);
+            const locked = clientLocked(status);
             const loggedOut = clientNeedsSession(status);
 
             if (loggedOut || locked) {

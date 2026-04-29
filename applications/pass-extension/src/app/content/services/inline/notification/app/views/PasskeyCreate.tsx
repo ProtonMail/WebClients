@@ -40,6 +40,7 @@ import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Step = 'select' | 'passkey';
@@ -207,6 +208,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     const { domain } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { createNotification } = useNotifications();
+    const optimisticId = useMemo(() => uniqueId(), [request]);
 
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
     /** "name" properties may be missing for some relying parties (see globals.d.ts) */
@@ -256,7 +258,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                             type: WorkerMessageType.AUTOSAVE_REQUEST,
                             payload: selectedItem
                                 ? { ...base, ...selectedItem, type: AutosaveMode.UPDATE }
-                                : { ...base, shareId: shareId!, type: AutosaveMode.NEW },
+                                : { ...base, shareId: shareId!, optimisticId, type: AutosaveMode.NEW },
                         }),
                         (res) => res.type === 'error' && throwError({ message: res.error })
                     );
@@ -324,7 +326,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                     <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
                                         <div className="shrink-0 px-1">{`${c('Label').t`Passkey`} • ${domain}`}</div>
 
-                                        <Card className="flex flex-auto text-sm" type="primary">
+                                        <Card className="flex flex-auto justify-center text-sm" type="primary">
                                             <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                                 <Icon name="lock-filled" size={6} />
                                                 <span className="text-center block">

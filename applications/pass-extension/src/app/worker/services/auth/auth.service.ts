@@ -467,7 +467,6 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         /** Auth alarms may be triggered while the service worker is idle,
          * as such, we should check for the app status before triggering any
          * API side-effects to avoid unauthenticated requests being sent out */
-
         alarms.autoLockAlarm.listen(
             withContext(async (ctx) => {
                 const booted = clientBooted(ctx.getState().status);
