@@ -43,7 +43,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
-                            buttonText={c('Action').t`Connect to Gmail`}
+                            buttonText={c('Action').t`Connect your email`}
                         />
                     </div>
                 </div>
