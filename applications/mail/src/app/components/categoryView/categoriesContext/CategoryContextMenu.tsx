@@ -30,7 +30,7 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
         : currentCategories[0];
 
     return (
-        <ContextMenuSubButton icon="drawer-dividers" name={c('Action').t`Move to category`}>
+        <ContextMenuSubButton icon="drawer-dividers" name={c('Action').t`Move to category...`}>
             {activeCategoriesTabs
                 .filter((item) => item.id !== currentCategory)
                 .map((category) => (
