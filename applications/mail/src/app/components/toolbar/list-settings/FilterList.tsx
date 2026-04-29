@@ -26,29 +26,22 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { getActiveState } from './filterListHelpers';
 import { useListSettingsTelemetry } from './useListSettingsTelemetry';
 
-interface DropdownSortOptionProps {
-    onClick: () => void;
-    isActive: boolean;
-    iconName: IconName;
+interface FilterOption {
     label: string;
     testID: string;
+    isActive: boolean;
+    filter: Filter;
+    onTelemetry: () => void;
 }
 
-const DropdownSortOption = ({ onClick, isActive, iconName, label, testID }: DropdownSortOptionProps) => {
-    return (
-        <DropdownMenuButton
-            onClick={onClick}
-            className="flex items-center w-full justify-space-between"
-            data-testid={testID}
-        >
-            <span className="flex items-center gap-2">
-                <Icon name={iconName} title={label} />
-                {label}
-            </span>
-            {isActive && <Icon name="checkmark" />}
-        </DropdownMenuButton>
-    );
-};
+interface SortOption {
+    label: string;
+    iconName: IconName;
+    testID: string;
+    isActive: boolean;
+    sort: Sort;
+    onTelemetry: () => void;
+}
 
 export const FilterList = () => {
     const history = useHistory();
@@ -60,32 +53,90 @@ export const FilterList = () => {
     const tel = useListSettingsTelemetry();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const handleFilter = (filter: Filter) => {
-        history.push(setFilterInUrl(history.location, filter));
-    };
-
-    const handleSort = (sort: Sort) => {
-        history.push(setSortInUrl(history.location, sort));
-    };
-
-    const reset = () => {
-        history.push(resetFilterAndSort(history.location));
-    };
-
-    const resetFilterOnly = () => {
-        history.push(resetFilter(history.location));
-    };
-
-    const resetSortOnly = () => {
-        history.push(resetSort(history.location));
-    };
-
     const activeState = getActiveState(filter, sort);
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+
+    const applyFilter = ({ isActive, filter, onTelemetry }: FilterOption) => {
+        if (isActive) {
+            history.push(resetFilter(history.location));
+        } else {
+            history.push(setFilterInUrl(history.location, filter));
+        }
+        onTelemetry();
+    };
+
+    const applySort = ({ isActive, sort, onTelemetry }: SortOption) => {
+        if (isActive) {
+            history.push(resetSort(history.location));
+        } else {
+            history.push(setSortInUrl(history.location, sort));
+        }
+        onTelemetry();
+    };
+
+    const filterOptions: FilterOption[] = [
+        {
+            label: c('Filter').t`Read`,
+            testID: 'filter-dropdown:show-read',
+            isActive: activeState.isReadActive,
+            filter: { Unread: 0 },
+            onTelemetry: tel.sendReadReport,
+        },
+        {
+            label: c('Filter').t`Has attachments`,
+            testID: 'filter-dropdown:has-file',
+            isActive: activeState.isAttachmentActive,
+            filter: { Attachments: 1 },
+            onTelemetry: tel.sendFileReport,
+        },
+    ];
+
+    const sortOptions: SortOption[] = [
+        {
+            label: c('Sort option').t`Newest first`,
+            iconName: isScheduledLabel ? 'list-arrow-up' : 'list-arrow-down',
+            testID: 'toolbar:sort-new-to-old',
+            isActive: activeState.isNewestFirstActive,
+            sort: { sort: 'Time', desc: true },
+            onTelemetry: tel.sendNewestFirstReport,
+        },
+        {
+            label: c('Sort option').t`Oldest first`,
+            iconName: isScheduledLabel ? 'list-arrow-down' : 'list-arrow-up',
+            testID: 'toolbar:sort-old-to-new',
+            isActive: activeState.isOldestFirstActive,
+            sort: { sort: 'Time', desc: false },
+            onTelemetry: tel.sendOldestFirstReport,
+        },
+        {
+            label: c('Sort option').t`Largest first`,
+            iconName: 'size-arrow-down',
+            testID: 'toolbar:sort-desc',
+            isActive: activeState.isLargestFirstActive,
+            sort: { sort: 'Size', desc: true },
+            onTelemetry: tel.sendLargestFirstReport,
+        },
+        {
+            label: c('Sort option').t`Smallest first`,
+            iconName: 'size-arrow-up',
+            testID: 'toolbar:sort-asc',
+            isActive: activeState.isSmallestFirstActive,
+            sort: { sort: 'Size', desc: false },
+            onTelemetry: tel.sendSmallestFirstReport,
+        },
+    ];
+
     return (
         <div className="flex flex-nowrap gap-1">
             {activeState.showReset && (
-                <Button shape="ghost" color="norm" size="tiny" onClick={reset}>{c('Filter').t`Reset`}</Button>
+                <Button
+                    shape="ghost"
+                    color="norm"
+                    size="tiny"
+                    onClick={() => history.push(resetFilterAndSort(history.location))}
+                >
+                    {c('Filter').t`Reset`}
+                </Button>
             )}
 
             <Button
@@ -93,9 +144,9 @@ export const FilterList = () => {
                 size="tiny"
                 onClick={() => {
                     if (activeState.isUnreadActive) {
-                        resetFilterOnly();
+                        history.push(resetFilter(history.location));
                     } else {
-                        handleFilter({ Unread: 1 });
+                        history.push(setFilterInUrl(history.location, { Unread: 1 }));
                     }
 
                     tel.sendUnreadReport();
@@ -119,6 +170,7 @@ export const FilterList = () => {
                     ? c('Filter').t`Filter (${activeState.dropdownActiveCount})`
                     : c('Filter').t`Filter`}
             </DropdownButton>
+
             <Dropdown
                 isOpen={isOpen}
                 anchorRef={anchorRef}
@@ -128,106 +180,39 @@ export const FilterList = () => {
             >
                 <DropdownMenu>
                     <p className="px-4 pt-3 pb-1 text-semibold">{c('Filter').t`Filter`}</p>
-                    <DropdownMenuButton
-                        onClick={() => {
-                            if (activeState.isReadActive) {
-                                resetFilterOnly();
-                            } else {
-                                handleFilter({ Unread: 0 });
-                            }
-                            tel.sendReadReport();
-                        }}
-                        className="text-left"
-                        data-testid="filter-dropdown:show-read"
-                    >
-                        <span className="flex items-center justify-space-between w-full">
-                            {c('Filter').t`Read`}
-                            {activeState.isReadActive && <Icon name="checkmark" />}
-                        </span>
-                    </DropdownMenuButton>
-
-                    <DropdownMenuButton
-                        onClick={() => {
-                            if (activeState.isAttachmentActive) {
-                                resetFilterOnly();
-                            } else {
-                                handleFilter({ Attachments: 1 });
-                            }
-                            tel.sendFileReport();
-                        }}
-                        className="text-left"
-                        data-testid="filter-dropdown:has-file"
-                    >
-                        <span className="flex items-center justify-space-between w-full">
-                            {c('Filter').t`Has attachments`}
-                            {activeState.isAttachmentActive && <Icon name="checkmark" />}
-                        </span>
-                    </DropdownMenuButton>
+                    {filterOptions.map((option) => (
+                        <DropdownMenuButton
+                            key={option.testID}
+                            onClick={() => applyFilter(option)}
+                            className="text-left"
+                            data-testid={option.testID}
+                        >
+                            <span className="flex items-center justify-space-between w-full">
+                                {option.label}
+                                {option.isActive && <Icon name="checkmark" />}
+                            </span>
+                        </DropdownMenuButton>
+                    ))}
                 </DropdownMenu>
 
                 <hr className="my-2 border-bottom border-weak" />
 
                 <DropdownMenu>
                     <p className="px-4 pt-3 pb-1 text-semibold">{c('Sort option').t`Sort by`}</p>
-                    <DropdownSortOption
-                        onClick={() => {
-                            if (activeState.isOldestFirstActive) {
-                                resetSortOnly();
-                            } else {
-                                handleSort({ sort: 'Time', desc: true });
-                            }
-                            tel.sendNewestFirstReport();
-                        }}
-                        isActive={activeState.isNewestFirstActive}
-                        iconName={isScheduledLabel ? 'list-arrow-up' : 'list-arrow-down'}
-                        testID="toolbar:sort-new-to-old"
-                        label={c('Sort option').t`Newest first`}
-                    />
-
-                    <DropdownSortOption
-                        onClick={() => {
-                            if (activeState.isOldestFirstActive) {
-                                resetSortOnly();
-                            } else {
-                                handleSort({ sort: 'Time', desc: false });
-                            }
-                            tel.sendOldestFirstReport();
-                        }}
-                        isActive={activeState.isOldestFirstActive}
-                        iconName={isScheduledLabel ? 'list-arrow-down' : 'list-arrow-up'}
-                        testID="toolbar:sort-old-to-new"
-                        label={c('Sort option').t`Oldest first`}
-                    />
-
-                    <DropdownSortOption
-                        onClick={() => {
-                            if (activeState.isLargestFirstActive) {
-                                resetSortOnly();
-                            } else {
-                                handleSort({ sort: 'Size', desc: true });
-                            }
-                            tel.sendLargestFirstReport();
-                        }}
-                        isActive={activeState.isLargestFirstActive}
-                        iconName="size-arrow-down"
-                        testID="toolbar:sort-desc"
-                        label={c('Sort option').t`Largest first`}
-                    />
-
-                    <DropdownSortOption
-                        onClick={() => {
-                            if (activeState.isSmallestFirstActive) {
-                                resetSortOnly();
-                            } else {
-                                handleSort({ sort: 'Size', desc: false });
-                            }
-                            tel.sendSmallestFirstReport();
-                        }}
-                        isActive={activeState.isSmallestFirstActive}
-                        iconName="size-arrow-up"
-                        testID="toolbar:sort-asc"
-                        label={c('Sort option').t`Smallest first`}
-                    />
+                    {sortOptions.map((option) => (
+                        <DropdownMenuButton
+                            key={option.testID}
+                            onClick={() => applySort(option)}
+                            className="flex items-center w-full justify-space-between"
+                            data-testid={option.testID}
+                        >
+                            <span className="flex items-center gap-2">
+                                <Icon name={option.iconName} title={option.label} />
+                                {option.label}
+                            </span>
+                            {option.isActive && <Icon name="checkmark" />}
+                        </DropdownMenuButton>
+                    ))}
                 </DropdownMenu>
             </Dropdown>
         </div>
