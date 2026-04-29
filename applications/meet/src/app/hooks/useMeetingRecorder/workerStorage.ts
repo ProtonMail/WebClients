@@ -2,6 +2,7 @@ import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { MessageType, WorkerResponseType } from './recordingWorkerTypes';
 import type { WorkerMessage, WorkerResponse } from './recordingWorkerTypes';
+import { forwardWorkerLog } from './workerLogger';
 
 // Main-thread wrapper for the recording worker. Provides the same interface as OPFSRecordingStorage but uses a Web Worker
 
@@ -21,6 +22,11 @@ export class WorkerRecordingStorage {
         });
 
         this.worker.onmessage = (event: MessageEvent<WorkerResponse>) => {
+            // Logging worker logs into browser console
+            if (forwardWorkerLog(event.data)) {
+                return;
+            }
+
             const { type, id, data, error } = event.data;
             const pending = this.pendingMessages.get(id);
 
@@ -37,10 +43,21 @@ export class WorkerRecordingStorage {
             }
         };
 
-        this.worker.onerror = () => {
+        this.worker.onerror = (event) => {
+            // eslint-disable-next-line no-console
+            console.error('[MeetingRecorder/recordingWorker] uncaught error in worker:', {
+                message: event.message,
+                filename: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                error: event.error,
+                pendingMessages: this.pendingMessages.size,
+            });
+
             for (const pending of this.pendingMessages.values()) {
-                pending.reject(new Error('Worker error'));
+                pending.reject(new Error(event.message || 'Worker error'));
             }
+
             this.pendingMessages.clear();
         };
 
@@ -89,7 +106,7 @@ export class WorkerRecordingStorage {
                 } as WorkerMessage);
             } catch (err) {
                 // eslint-disable-next-line no-console
-                console.error('[WorkerStorage] Error sending close message:', err);
+                console.error('[workerStorage] Error sending close message:', err);
             }
         }
     }
