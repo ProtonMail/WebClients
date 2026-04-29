@@ -6,6 +6,7 @@ import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
@@ -21,12 +22,17 @@ export const CategoriesTabsList = () => {
     const { activeCategoriesTabs } = useCategoriesView();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
+    const selectAll = useMailSelector(selectSelectAll);
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
 
     const [counterMap] = useMailboxCounter();
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
+        if (selectAll) {
+            return;
+        }
+
         void recategorizeElement(categoryId, itemIds);
     };
 
@@ -57,6 +63,7 @@ export const CategoriesTabsList = () => {
                         categoriesList: activeCategoriesTabs || [],
                         draggedOverCategoryId,
                         categoryIDs,
+                        selectAll,
                     });
 
                     return (
