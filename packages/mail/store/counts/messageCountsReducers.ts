@@ -247,6 +247,7 @@ export const labelConversationsPending = (
     conversations.forEach((conversation) => {
         const numMessagesInConversation = conversation.NumMessages || 0;
         const numUnreadMessagesInConversation = conversation.NumUnread || 0;
+        const numMessagesInInbox = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
 
         // DECREASE count in old locations
         conversation.Labels?.forEach((label) => {
@@ -287,6 +288,33 @@ export const labelConversationsPending = (
                 messageCountState.Unread = safeDecreaseCount(
                     messageCountState?.Unread,
                     getContextNumUnread(conversation, label.ID)
+                );
+                return;
+            }
+
+            /*
+             * When a conversation is moved to a folder, all items will move to the destination folder.
+             * All messages from the conversation are in the category, and the category counts only contains items
+             * that are in INBOX & in the category. So we cannot use category.ContextNumMessages
+             * Meaning that the amount of message we need to remove from the category count is actually
+             * the number of messages that will be moved from INBOX.
+             */
+            const isTargetingAFolder =
+                isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
+            const isMovingOutOfInbox =
+                isTargetingAFolder && destinationLabelID !== MAILBOX_LABEL_IDS.INBOX && numMessagesInInbox > 0;
+            // Messages that are in INBOX cannot move to DRAFTS or SENT (and a few other locations but they are not system folders, so we should be protected from them
+            const canInboxMessageMove = ![MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.SENT].includes(
+                destinationLabelID as MAILBOX_LABEL_IDS
+            );
+            if (isMovingOutOfInbox && canInboxMessageMove && isCategoryLabel(label.ID)) {
+                messageCountState.Total = safeDecreaseCount(
+                    messageCountState?.Total,
+                    getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX)
+                );
+                messageCountState.Unread = safeDecreaseCount(
+                    messageCountState?.Unread,
+                    getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX)
                 );
                 return;
             }
@@ -368,7 +396,6 @@ export const labelConversationsPending = (
             return;
         }
 
-        const numMessagesInInbox = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
         const numMessagesInAllSent = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALL_SENT);
         const numMessagesInSent = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.SENT);
         const numMessagesInAllDrafts = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALL_DRAFTS);
