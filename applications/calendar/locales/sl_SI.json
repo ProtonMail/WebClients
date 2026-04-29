@@ -1760,6 +1760,9 @@
       ],
       "Unlimited daily chats": [
         "Neomejeni dnevni klepeti"
+      ],
+      "Strict no-logs policy": [
+        "Strogo brez hrambe dnevniških zapisov"
       ]
     },
     "collider_2025: Info": {
@@ -3854,6 +3857,9 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
+      ],
+      "Address could not be added.": [
+        "Naslova ni bilo mogoče dodati."
       ]
     },
     "error": {
@@ -6237,6 +6243,9 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Vaša fizična lokacija je vidna in se lahko uporablja za omejevanje vašega dostopa do interneta."
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ]
     },
     "info": {
@@ -6925,6 +6934,9 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Additional comments": [
+        "Dodatni komentarji"
       ]
     },
     "label": {
@@ -9157,6 +9169,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "Payments.Error": {
@@ -9394,6 +9409,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Enter a name": [
+        "Vnesi ime"
       ]
     },
     "Placeholder for contact group name": {
@@ -12380,6 +12398,26 @@
       ],
       "Download for Windows": [
         "Prenesi za Windows"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Drugo"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

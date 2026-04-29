@@ -988,6 +988,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Reconnect to Gmail": [
+        "重新連接 Gmail"
       ]
     },
     "action": {
@@ -1802,6 +1805,9 @@
       ],
       "Zero-access encryption": [
         "零存取加密"
+      ],
+      "Unlimited favorites for quick access": [
+        "快速存取至無限最愛"
       ]
     },
     "collider_2025: Info": {
@@ -3061,6 +3067,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我們無法再存取至 ${ boldEmails }"
       ]
     },
     "description": {
@@ -3197,6 +3209,9 @@
     "Duo offer: Title": {
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
+      ],
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "透過 ${ BRAND_NAME } Duo 取得 4x 儲存空間"
       ]
     },
     "Duplicate event button tooltip": {
@@ -6170,6 +6185,12 @@
       ],
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "您的實體位置可見，並可用於限制您對網際網路的存取。"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "全部於 ${ planOrAppName } 方案，附加:"
+      ],
+      "for ${ price }": [
+        "為 ${ price }"
       ]
     },
     "info": {
@@ -7921,6 +7942,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Dedicated servers optimized for speed": [
+        "針對速度的獨立伺服器"
       ]
     },
     "new_plans: feature highlight": {
@@ -10486,6 +10510,9 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
       ]
     },
     "subscription reminder": {
