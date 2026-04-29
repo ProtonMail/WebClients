@@ -26,6 +26,7 @@ import RecoveryPhone from '@proton/components/containers/recovery/navItems/Recov
 import RecoveryPhrase from '@proton/components/containers/recovery/navItems/RecoveryPhrase';
 import RecoveryQrCode from '@proton/components/containers/recovery/navItems/RecoveryQrCode';
 import SignedInReset from '@proton/components/containers/recovery/navItems/SignedInReset';
+import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -260,7 +261,7 @@ const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
     }
 
     return (
-        <>
+        <RecoverySettingsTelemetryVariantProvider value={showRedesign ? 'B' : 'A'}>
             <RecoveryPageTelemetry />
             {showRedesign ? (
                 <RedesignRecoverySettingsRouter app={app} recovery={recovery} path={path} />
@@ -279,7 +280,7 @@ const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                     <Redirect to={recoveryPath} />
                 </Switch>
             )}
-        </>
+        </RecoverySettingsTelemetryVariantProvider>
     );
 };
 
