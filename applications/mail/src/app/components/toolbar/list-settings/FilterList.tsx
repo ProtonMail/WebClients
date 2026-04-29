@@ -46,15 +46,15 @@ interface SortOption {
 export const FilterList = () => {
     const history = useHistory();
 
-    const labelID = useMailSelector(selectLabelID);
     const sort = useMailSelector(selectSort);
     const filter = useMailSelector(selectFilter);
+    const labelID = useMailSelector(selectLabelID);
 
     const tel = useListSettingsTelemetry();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const activeState = getActiveState(filter, sort);
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+    const activeState = getActiveState(filter, sort, isScheduledLabel);
 
     const applyFilter = ({ isActive, filter, onTelemetry }: FilterOption) => {
         if (isActive) {
@@ -94,7 +94,7 @@ export const FilterList = () => {
     const sortOptions: SortOption[] = [
         {
             label: c('Sort option').t`Newest first`,
-            iconName: isScheduledLabel ? 'list-arrow-up' : 'list-arrow-down',
+            iconName: 'list-arrow-down',
             testID: 'toolbar:sort-new-to-old',
             isActive: activeState.isNewestFirstActive,
             sort: { sort: 'Time', desc: true },
@@ -102,7 +102,7 @@ export const FilterList = () => {
         },
         {
             label: c('Sort option').t`Oldest first`,
-            iconName: isScheduledLabel ? 'list-arrow-down' : 'list-arrow-up',
+            iconName: 'list-arrow-up',
             testID: 'toolbar:sort-old-to-new',
             isActive: activeState.isOldestFirstActive,
             sort: { sort: 'Time', desc: false },
