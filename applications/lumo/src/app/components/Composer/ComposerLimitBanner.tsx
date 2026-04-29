@@ -43,6 +43,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
     const assetsStatus = useAssetsLimitStatus(spaceId);
 
     const [dismissed, setDismissed] = useState<Set<string>>(new Set());
+    const canShowMessageLimit = Boolean(conversationId);
 
     const startNewChat = useCallback(() => {
         setGhostChatMode(false);
@@ -51,7 +52,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
     }, [history, setGhostChatMode]);
 
     const banner: BannerConfig | null = useMemo(() => {
-        if (messagesStatus.isAtLimit) {
+        if (canShowMessageLimit && messagesStatus.isAtLimit) {
             return {
                 key: `messages-at-${conversationId ?? 'none'}`,
                 severity: 'error',
@@ -75,7 +76,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
                     : undefined,
             };
         }
-        if (messagesStatus.isApproaching) {
+        if (canShowMessageLimit && messagesStatus.isApproaching) {
             const remaining = messagesStatus.remaining;
             return {
                 key: `messages-approaching-${conversationId ?? 'none'}`,
@@ -102,7 +103,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
             };
         }
         return null;
-    }, [messagesStatus, assetsStatus, conversationId, spaceId, startNewChat, onOpenFiles]);
+    }, [messagesStatus, assetsStatus, canShowMessageLimit, conversationId, spaceId, startNewChat, onOpenFiles]);
 
     // Mobile has a dedicated native composer, so this inline banner would
     // render in the wrong place. The resource-limit toast (wired up in
