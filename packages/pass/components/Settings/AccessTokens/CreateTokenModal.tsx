@@ -127,10 +127,11 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                 <div className="flex items-start justify-space-between gap-4 mb-4">
                     <div className="flex-1">
                         <label htmlFor="pat-agent" className="text-bold block">
-                            {c('pass_2026: Label').t`Issue for AI agent`}
+                            {c('pass_2026: Label').t`Use for AI agent`}
                         </label>
-                        <span className="block mt-1">
-                            {c('pass_2026: Info').t`Show setup instructions tailored for an AI agent after creation.`}
+                        <span className="text-sm color-weak block mt-1">
+                            {c('pass_2026: Info')
+                                .t`The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.`}
                         </span>
                     </div>
                     <Toggle
