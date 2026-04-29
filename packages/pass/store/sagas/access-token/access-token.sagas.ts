@@ -25,7 +25,6 @@ import {
     type AccessTokenAccessGrants,
     type AccessTokenActionsPage,
     type CreateAccessTokenIntent,
-    type CreateAccessTokenSuccess,
     type GetAccessTokenActionsIntent,
     type UpdateAccessTokenAccessIntent,
     createAccessToken,
@@ -38,8 +37,10 @@ import {
 } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
-import { selectWritableVaults } from '@proton/pass/store/selectors/shares';
+import { selectShareState } from '@proton/pass/store/selectors/shares';
 import { ShareRole, ShareType } from '@proton/pass/types';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 const expirationTimestampFromMinutes = (minutes: number) => Math.floor(Date.now() / 1000) + minutes * 60;
@@ -51,13 +52,8 @@ const listSaga = createRequestSaga({
 
 const createSaga = createRequestSaga({
     actions: createAccessToken,
-    call: function* ({
-        name,
-        expirationMinutes,
-        isAgent,
-        shareIds,
-    }: CreateAccessTokenIntent): Generator<any, CreateAccessTokenSuccess, any> {
-        const { encrypted, raw }: { encrypted: string; raw: Uint8Array<ArrayBuffer> } = yield call([PassCrypto, 'createAccessTokenKey']);
+    call: function* ({ name, expirationMinutes, isAgent, shareIds }: CreateAccessTokenIntent) {
+        const { encrypted, raw }: { encrypted: string; raw: Uint8Array<ArrayBuffer> } = yield call(PassCrypto.createAccessTokenKey);
 
         const pat: PersonalAccessToken = yield call(createPersonalAccessToken, {
             Name: name,
@@ -70,22 +66,31 @@ const createSaga = createRequestSaga({
         if (!pat.Token) throw new Error('Token not returned by server');
 
         if (shareIds.length > 0) {
-            yield all(
-                shareIds.map((shareId) =>
-                    call(function* () {
-                        const Keys: PersonalAccessTokenShareKey[] = yield call([PassCrypto, 'createAccessTokenShareKeys'], {
-                            rawPatKey: raw,
-                            shareId,
-                        });
-                        yield call(grantPersonalAccessTokenAccess, pat.PersonalAccessTokenID, {
-                            ShareID: shareId,
-                            TargetType: ShareType.Vault,
-                            ShareRoleID: ShareRole.READ,
-                            Keys,
-                        });
-                    })
-                )
-            );
+            try {
+                yield all(
+                    shareIds.map((shareId) =>
+                        call(function* () {
+                            const Keys: PersonalAccessTokenShareKey[] = yield call([PassCrypto, 'createAccessTokenShareKeys'], {
+                                rawPatKey: raw,
+                                shareId,
+                            });
+                            yield call(grantPersonalAccessTokenAccess, pat.PersonalAccessTokenID, {
+                                ShareID: shareId,
+                                TargetType: ShareType.Vault,
+                                ShareRoleID: ShareRole.READ,
+                                Keys,
+                            });
+                        })
+                    )
+                );
+            } catch (err) {
+                /* The token exists server-side but at least one request failed,
+                 * leaving the token without all the access the user requested.
+                 * Delete the token to avoid a half-configured PAT. */
+                logger.error(`[Saga::AccessToken] grant failed, cancelling token`, getErrorMessage(err));
+                yield call(deletePersonalAccessToken, pat.PersonalAccessTokenID);
+                throw err;
+            }
         }
 
         return { pat, envVar: buildAccessTokenEnvVar(pat.Token, raw), isAgent };
@@ -115,22 +120,13 @@ const updateAccessSaga = createRequestSaga({
         if (!pat) throw new Error(`Access token ${tokenId} not found in state`);
 
         const currentGrants: PersonalAccessTokenAccessGrant[] = yield select(selectAccessTokenGrants(tokenId));
-        const writableVaults: ReturnType<typeof selectWritableVaults> = yield select(selectWritableVaults);
+        const shares: ReturnType<typeof selectShareState> = yield select(selectShareState);
+        const grantUserShareId = (grant: PersonalAccessTokenAccessGrant) => shares[grant.ParentShareID]?.shareId;
 
-        const vaultByVaultId = new Map(writableVaults.map((v) => [v.vaultId, v]));
         const desired = new Set(shareIds);
-
-        const toRevoke: string[] = currentGrants
-            .filter((g) => {
-                const v = vaultByVaultId.get(g.VaultID);
-                return !v || !desired.has(v.shareId);
-            })
-            .map((g) => g.ShareID);
-
-        const currentlyGranted = new Set(
-            currentGrants.map((g) => vaultByVaultId.get(g.VaultID)?.shareId).filter((sid): sid is string => Boolean(sid))
-        );
-        const toGrant: string[] = shareIds.filter((sid) => !currentlyGranted.has(sid));
+        const currentlyGranted = new Set(currentGrants.map(grantUserShareId));
+        const toRevoke = currentGrants.filter((grant) => !desired.has(grantUserShareId(grant))).map(prop('ShareID'));
+        const toGrant = shareIds.filter((sid) => !currentlyGranted.has(sid));
 
         if (toGrant.length > 0) {
             const raw: Uint8Array<ArrayBuffer> = yield call([PassCrypto, 'openAccessTokenKey'], pat.PersonalAccessTokenKey);
@@ -190,8 +186,8 @@ const decodeRecord = function* (
         /* Decryption / proto-decode failure for a single record shouldn't
          * abort the whole page — surface it as a `decode-error` so the UI
          * can flag the row and the dev tools log shows the cause. */
-        const error = e instanceof Error ? e.message : String(e);
-        logger.warn(`[Saga::AccessToken] decode failed`, error);
+        const error = getErrorMessage(e);
+        logger.error(`[Saga::AccessToken] decode failed`, error);
         return { ...record, decodedPayload: { kind: 'decode-error', error } };
     }
 };
