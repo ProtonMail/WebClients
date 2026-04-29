@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { isLinux, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
-import { type SerializableDeviceInfo, getDefaultDevice } from '../../utils/deviceUtils';
+import { type SerializableDeviceInfo, getDefaultDevice, isDefaultDevice } from '../../utils/deviceUtils';
 import { isAudioSessionAvailable, setAudioSessionType } from '../../utils/iosAudioSession';
 import type { MeetState } from '../rootReducer';
 
@@ -286,6 +286,7 @@ const getDeviceFromList = (
 export interface SliceDeviceState {
     systemDefault: SerializableDeviceInfo | null;
     systemDefaultLabel: string;
+    hasDefaultOption: boolean;
     useSystemDefault: boolean;
     preferredAvailable: boolean;
     preferredDevice: SerializableDeviceInfo | null;
@@ -298,6 +299,7 @@ const getDeviceState = (devices: SerializableDeviceInfo[], preferredId: string |
     return {
         systemDefault,
         systemDefaultLabel: getDefaultLabel(systemDefault),
+        hasDefaultOption: devices.some((d) => isDefaultDevice(d.deviceId)),
         useSystemDefault: preferredId === null,
         preferredAvailable: isDeviceAvailable(devices, preferredId),
         preferredDevice: getDeviceFromList(devices, preferredId),
