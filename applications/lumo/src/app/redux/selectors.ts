@@ -67,7 +67,9 @@ export const selectAttachmentByIdOptional = makeOptional(selectAttachmentById, u
 
 export const selectMessagesByConversationId =
     (conversationId: ConversationId | null | undefined) => (state: LumoState) =>
-        objectFilterV(state.messages, (m: Message) => m.conversationId === conversationId, EMPTY_MESSAGE_MAP);
+        conversationId
+            ? objectFilterV(state.messages, (m: Message) => m.conversationId === conversationId, EMPTY_MESSAGE_MAP)
+            : EMPTY_MESSAGE_MAP;
 
 export const selectConversationsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.conversations, (c: Conversation) => c.spaceId === spaceId, EMPTY_CONVERSATION_MAP);
