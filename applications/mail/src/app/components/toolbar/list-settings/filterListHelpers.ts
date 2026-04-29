@@ -6,7 +6,6 @@ export const getActiveState = (filter: Filter, sort: Sort, isScheduled: boolean)
     const isUnreadActive = filter.Unread === 1;
     const isReadActive = filter.Unread === 0;
     const isAttachmentActive = hasAttachmentsFilter(filter);
-    const hasActiveFilter = Object.keys(filter).length > 0;
     const isDropdownFilterActive = isReadActive || isAttachmentActive;
     const isLargestFirstActive = sort.sort === 'Size' && sort.desc === true;
     const isSmallestFirstActive = sort.sort === 'Size' && sort.desc === false;
@@ -25,7 +24,7 @@ export const getActiveState = (filter: Filter, sort: Sort, isScheduled: boolean)
     }
 
     return {
-        showReset: isNonDefaultSort || hasActiveFilter,
+        showReset: isNonDefaultSort || isDropdownFilterActive,
         isUnreadActive,
         isReadActive,
         isAttachmentActive,

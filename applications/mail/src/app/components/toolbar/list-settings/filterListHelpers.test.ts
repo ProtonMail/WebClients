@@ -17,9 +17,9 @@ const getState = (override: Partial<ReturnType<typeof getActiveState>> = {}) => 
 
 describe('getActiveState', () => {
     describe('non-scheduled', () => {
-        it('should inicate unread active', () => {
+        it('should inicate unread active, no reset button', () => {
             const result = getActiveState({ Unread: 1 }, { sort: 'Time', desc: true }, false);
-            const expected = getState({ isUnreadActive: true, isNewestFirstActive: true });
+            const expected = getState({ isUnreadActive: true, isNewestFirstActive: true, showReset: false });
             expect(result).toEqual(expected);
         });
 
@@ -61,9 +61,9 @@ describe('getActiveState', () => {
     });
 
     describe('scheduled', () => {
-        it('should inicate unread active', () => {
+        it('should inicate unread active, no reset button', () => {
             const result = getActiveState({ Unread: 1 }, { sort: 'Time', desc: false }, true);
-            const expected = getState({ isUnreadActive: true, isNewestFirstActive: true });
+            const expected = getState({ isUnreadActive: true, isNewestFirstActive: true, showReset: false });
             expect(result).toEqual(expected);
         });
 
