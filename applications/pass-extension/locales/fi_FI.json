@@ -1289,6 +1289,36 @@
       ],
       "Unknown error.": [
         "Tuntematon virhe."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrinen tunnistautuminen epäonnistui."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometriset tunnistetiedot eivät täsmää."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisiä tunnistetietoja ei löytynyt."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisiä tunnistetietoja ei ole määritetty."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisiä tunnistetietojen asettaminen epäonnistui."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Salattu viestintä ${ PASS_APP_NAME } -työpöytäsovelluksen kanssa epäonnistui."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastannut ajoissa."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on kirjattu sisään toisella tilillä."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } -työpöytäsovelluksessa pitäisi olla kirjautuneena sisään."
+      ],
+      "This domain is already managed by your organization": [
+        "Organtisaatiosi hallinnoi jo tätä verkkotunnusta"
       ]
     },
     "Error message": {
@@ -2623,6 +2653,12 @@
       ],
       "Logging you out...": [
         "Sinua kirjataan ulos..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Avaa ${ PASS_APP_NAME } päästäksesi käsiksi pääsyavaimiisi"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Avaa ${ PASS_APP_NAME } tallentaaksesi tämän pääsyavaimen"
       ]
     },
     "Keyboard key": {
