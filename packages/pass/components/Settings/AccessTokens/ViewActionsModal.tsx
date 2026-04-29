@@ -68,7 +68,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
     const isFirstLoad = fetchActions.loading && records.length === 0;
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="large">
+        <PassModal open onClose={onClose} onReset={onClose} size="xlarge">
             <ModalTwoHeader title={c('pass_2026: Title').t`Activity for "${token.Name}"`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0 mb-3">
@@ -91,10 +91,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                         );
                     }
                     return (
-                        <div
-                            className="flex flex-column gap-1 rounded border border-weak overflow-auto"
-                            style={{ maxHeight: '24rem' }}
-                        >
+                        <div className="rounded border border-weak">
                             {records.map((r) => {
                                 const label = formatActionLabel(r.Action);
                                 const payload = r.decodedPayload?.kind === 'agent-action' ? r.decodedPayload : null;
@@ -102,9 +99,9 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                 return (
                                     <div
                                         key={r.PatMonitorRecordID}
-                                        className="flex flex-column gap-2 px-4 py-3 border-bottom border-weak last:border-bottom-0"
+                                        className="px-4 py-3 border-bottom border-weak last:border-bottom-0"
                                     >
-                                        <div className="flex items-baseline justify-space-between gap-3">
+                                        <div className="flex items-baseline justify-space-between gap-3 mb-2">
                                             <span className="text-bold">
                                                 {label ?? c('pass_2026: Activity').t`Activity`}
                                             </span>
@@ -157,9 +154,9 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                             </dl>
                                         )}
                                         {isDecodeError && (
-                                            <span className="text-sm color-weak text-italic">
+                                            <div className="text-sm color-weak text-italic">
                                                 {c('pass_2026: Activity').t`Activity details could not be loaded.`}
-                                            </span>
+                                            </div>
                                         )}
                                     </div>
                                 );
