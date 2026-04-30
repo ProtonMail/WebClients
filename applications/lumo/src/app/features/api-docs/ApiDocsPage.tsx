@@ -12,6 +12,7 @@ import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { IcSpeechBubbles } from '@proton/icons/icons/IcSpeechBubbles';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { SignInButton } from '../../components/Guest/SignInLink';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -133,6 +134,8 @@ export const ApiDocsPage = () => {
                 return groupId;
         }
     };
+
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     return (
         <div className="api-docs-page">

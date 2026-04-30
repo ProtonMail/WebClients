@@ -77,6 +77,7 @@ export interface State {
     isWebSearchEnabled: boolean;
     isCreateImageEnabled: boolean;
     isVisible: boolean;
+    isSmallScreen: boolean;
     showTsAndCs: boolean;
     userFlags: UserFlags;
     attachedFiles: LumoFile[];
@@ -190,6 +191,7 @@ class NativeComposerApi {
         attachedFiles: [],
         isWebSearchEnabled: false,
         isVisible: true,
+        isSmallScreen: true,
         showTsAndCs: true,
         userFlags: {
             isGuestUser: true,
@@ -455,6 +457,11 @@ class NativeComposerApi {
         this.updateState({ isVisible: visible });
     }
 
+    public setIsSmallScreen(isSmallScreen: boolean): void {
+        console.log(`NativeComposerApi: Setting isSmallScreen to ${isSmallScreen}`);
+        this.updateState({ isSmallScreen });
+    }
+
     public toggleImageGenEnabled(enabled: boolean): void {
         console.log(`NativeComposerApi: Toggle image gen enabled`);
         this.updateState({ featureFlags: { ...this.state.featureFlags, isImageGenEnabled: enabled } });
@@ -588,6 +595,7 @@ try {
 
         // Visibility
         toggleComposerVisibility: createNativeWrapper('toggleComposerVisibility'),
+        setIsSmallScreen: createNativeWrapper('setIsSmallScreen'),
         toggleImageGenEnabled: createNativeWrapper('toggleImageGenEnabled'),
         toggleModelSelectionEnabled: createNativeWrapper('toggleModelSelectionEnabled'),
         setIsFreeUser: createNativeWrapper('setIsFreeUser'),

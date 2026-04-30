@@ -161,6 +161,14 @@ export const setNativeComposerVisibility = (visible: boolean): void => {
     (window as any).nativeComposerApiInstance.toggleComposerVisibility(visible);
 };
 
+export const setNativeIsSmallScreen = (isSmallScreen: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setIsSmallScreen(isSmallScreen);
+};
+
 export const setNativeComposerIsImageGenEnabled = (enabled: boolean): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
