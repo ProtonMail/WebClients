@@ -1,6 +1,7 @@
 export const styles = {
     fontSize: '--setting-font-size',
     fontFamily: '--setting-font-family',
+    backgroundNorm: '--background-norm',
 } as const;
 
 export const classNames = {
