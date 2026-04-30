@@ -186,7 +186,7 @@ export const getOrganizationAppRoutes = ({
         ? c('familyOffer_2023:Title').t`Manage family group`
         : c('Title').t`Multi-user support`;
 
-    const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
+    const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Activate multi-user support`;
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
