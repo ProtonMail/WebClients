@@ -9,6 +9,7 @@ import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 interface CategoryItemProps {
@@ -29,7 +30,7 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
                 checked={category.display}
                 onClick={() => onUpdate({ ...category, display: !category.display })}
                 data-testid={`${category.id}-display`}
-                disabled={loading}
+                disabled={loading || category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}
             />
 
             <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
@@ -54,7 +55,7 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
                 checked={category.notify}
                 onChange={() => onUpdate({ ...category, notify: !category.notify })}
                 data-testid={`${category.id}-notify`}
-                disabled={loading}
+                disabled={loading || category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}
             />
         </div>
     );
