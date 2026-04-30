@@ -35,10 +35,15 @@ export type UseActionRequestOptions<
     SuccessAction extends WithRequest<PayloadAction, 'success', any> = any,
     FailureAction extends WithRequest<PayloadAction, 'failure', any> = any,
 > = {
+    /** Initial loading state */
     loading?: boolean;
+    /** Request ID override for tracking an existing request */
     requestId?: string;
+    /** Called with the intent action payload on dispatch */
     onStart?: (data: IntentAction['payload']) => MaybePromise<void>;
+    /** Called with the resolved success data: explicit `data` from request config, otherwise action `payload` */
     onSuccess?: (data: RequestSuccessDTO<SuccessAction>) => MaybePromise<void>;
+    /** Called with the typed error on failure, or `undefined` if the failure action carries none */
     onFailure?: (error: 'error' extends keyof FailureAction ? FailureAction['error'] : undefined) => MaybePromise<void>;
 };
 
@@ -141,22 +146,15 @@ export const useActionRequest = <
     return useMemo(() => ({ ...handles, progress, loading, error }), [progress, loading, error]);
 };
 
-type UseRequestOptions<T extends RequestFlow<any, any, any>> = {
-    /** Initial loading state */
-    loading?: boolean;
+type UseRequestOptions<T extends RequestFlow<any, any, any>> = Omit<
+    UseActionRequestOptions<ReturnType<T['intent']>, ReturnType<T['success']>, ReturnType<T['failure']>>,
+    'requestId'
+> & {
     /** Initial request parameters
      * - Pass `IntentDTO` if request key preparator requires parameters
      * - Pass true to start tracking immediately if no parameters needed
      * - Omit to skip initial tracking */
     initial?: Parameters<T['requestID']>[0] extends infer U ? (U extends void ? true : U) : never;
-    /** Called when request is initiated. Receives intent action request metadata */
-    onStart?: (data: ReturnType<T['intent']>['payload']) => MaybePromise<void>;
-    /** Called when request fails. Receives failure action request metadata */
-    onFailure?: (
-        error: 'error' extends keyof ReturnType<T['failure']> ? ReturnType<T['failure']>['error'] : undefined
-    ) => MaybePromise<void>;
-    /** Called when request succeeds. Receives success action request metadata */
-    onSuccess?: (data: ReturnType<T['success']>['payload']) => MaybePromise<void>;
 };
 
 export const useRequest = <T extends RequestFlow<any, any, any>>(
