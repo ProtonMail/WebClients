@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Gmail adresini bağlayın"
       ],
-      "Connect to Gmail": [
-        "Gmail bağlantısı kur"
-      ],
       "Connect to video conferencing": [
         "Görüntülü görüşmeye bağlanın"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı bağlayın"
+      ],
+      "Connect your email": [
+        "E-postanızı bağlayın"
       ],
       "Connected": [
         "Bağlı"
@@ -5018,8 +5018,8 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Google tarafından profilinizin çıkarılmasını engelleyin. Gmail ${ MAIL_APP_NAME } üzerinde yaptıklarınızı göremez"
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Başka bir hizmet sağlayıcıdaki e-postalarınızı, takvim etkinliklerinizi ve kişilerinizi aktarın."
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "E-postalarınızı, takvim etkinliklerinizi ve kişilerinizi başka bir sağlayıcıdan aktarın."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
@@ -10146,6 +10146,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Okta, Microsoft Azure veya Google Identity Platform gibi bir kimlik hizmeti sağlayıcı ile kuruluşunuz için SAML kimlik doğrulamasını yapılandırın. Bu, tüm kuruluş için SAML özelliğini etkinleştirir."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } uygulamasında harici e-posta kutularınızı bağlayın ve yönetin."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
       ],
@@ -10657,9 +10660,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "İletme özelliği gelen yeni e-postaları otomatik olarak gelen kutunuza gönderir."
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
@@ -11267,14 +11267,14 @@
       "No card required": [
         "Kredi kartı gerekmez"
       ],
+      "No connected addresses.": [
+        "Bağlı adres yok."
+      ],
       "No countries enabled": [
         "Herhangi bir ülke kullanıma alınmamış"
       ],
       "No folder selected": [
         "Herhangi bir klasör seçilmemiş"
-      ],
-      "No forwarding history.": [
-        "İletme geçmişi yok."
       ],
       "No gateways": [
         "Henüz bir ağ geçidi yok"
@@ -21298,7 +21298,7 @@
         "Fotoğraflar bölümünü aç"
       ],
       "Get updates about comments via email": [
-        "Yorum güncellemeleri e-posta ile bildirilsin"
+        "Yorumlarla ilgili güncellemeleri e-posta yoluyla al"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -24177,6 +24177,9 @@
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
       ],
+      "Connected emails": [
+        "Bağlı e-postalar"
+      ],
       "Connection status": [
         "Bağlantı durumu"
       ],
@@ -24608,9 +24611,6 @@
       ],
       "Forward emails": [
         "E-postaları iletme"
-      ],
-      "Forwardings": [
-        "İletmeler"
       ],
       "Free": [
         "Free"
