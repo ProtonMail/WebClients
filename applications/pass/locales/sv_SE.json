@@ -1456,6 +1456,9 @@
         "${ payload.count } inbjudan skickad",
         "${ payload.count } inbjudningar skickat"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } inaktiverades"
       ],
@@ -2160,9 +2163,6 @@
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
-      ],
       "Reconnect": [
         "Anslut igen"
       ],
@@ -2409,9 +2409,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt andra lösenord"
-      ],
-      "Unlock with biometrics": [
-        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt …"
