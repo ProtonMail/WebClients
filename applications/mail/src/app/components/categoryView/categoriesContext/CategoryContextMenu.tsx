@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import ContextMenuSubButton from '@proton/components/components/contextMenu/ContextMenuSubButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
@@ -16,7 +17,6 @@ interface Props {
 }
 
 export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
-    const labelID = useMailSelector(selectLabelID);
     const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
 
     const currentCategories = useMailSelector(selectCategoryIDs);
@@ -31,27 +31,29 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
 
     return (
         <ContextMenuSubButton icon="drawer-dividers" name={c('Action').t`Move to category...`}>
-            {activeCategoriesTabs
-                .filter((item) => item.id !== currentCategory)
-                .map((category) => (
-                    <DropdownMenuButton
-                        key={category.id}
-                        className="flex items-center flex-nowrap text-left"
-                        onClick={(e) => {
-                            e.stopPropagation();
+            {activeCategoriesTabs.map((category) => (
+                <DropdownMenuButton
+                    key={category.id}
+                    className="flex items-center flex-nowrap"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        if (currentCategory !== category.id) {
                             onCategoryMove(category.id);
-                        }}
-                        onContextMenu={(e) => e.stopPropagation()}
-                    >
-                        <Icon
-                            className="mr-2 shrink-0 mail-category-color"
-                            name={category.filledIcon}
-                            data-color={category.colorShade}
-                        />
-                        {getLabelFromCategoryId(category.id)}
-                        {labelID === category.id && <Icon className="ml-auto shrink-0" name="checkmark" />}
-                    </DropdownMenuButton>
-                ))}
+                        }
+                    }}
+                    onContextMenu={(e) => e.stopPropagation()}
+                >
+                    <Icon
+                        className="mr-2 shrink-0 mail-category-color"
+                        name={category.filledIcon}
+                        data-color={category.colorShade}
+                    />
+                    <span className="mr-8">{getLabelFromCategoryId(category.id)}</span>
+                    {currentCategory === category.id && (
+                        <IcCheckmarkStrong className="color-primary ml-auto shrink-0" />
+                    )}
+                </DropdownMenuButton>
+            ))}
         </ContextMenuSubButton>
     );
 };
