@@ -11,9 +11,10 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import { PAT_EVENT_TYPE, type PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { getAccessTokenActions } from '@proton/pass/store/actions';
 import { selectAccessTokenActions } from '@proton/pass/store/selectors';
+import { EventType2 as PassEventType } from '@proton/pass/types/api/pass';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
 
 type Props = {
@@ -29,21 +30,21 @@ const fieldGrid: CSSProperties = { gridTemplateColumns: 'max-content 1fr' };
  * has dozens of values; only a handful are agent-relevant. Returns null
  * for anything unmapped so the UI can omit the label rather than show a
  * raw "Action #N". */
-const formatActionLabel = (action: number): string | null => {
+const formatActionLabel = (action: PassEventType): string | null => {
     switch (action) {
-        case PAT_EVENT_TYPE.ITEM_READ:
+        case PassEventType.ITEM_READ:
             return c('Info').t`Read item`;
-        case PAT_EVENT_TYPE.ITEM_CREATE:
+        case PassEventType.ITEM_CREATE:
             return c('Info').t`Created item`;
-        case PAT_EVENT_TYPE.ITEM_UPDATE:
+        case PassEventType.ITEM_UPDATE:
             return c('Info').t`Updated item`;
-        case PAT_EVENT_TYPE.ITEM_TRASH:
+        case PassEventType.ITEM_TRASH:
             return c('Info').t`Moved item to trash`;
-        case PAT_EVENT_TYPE.ITEM_UNTRASH:
+        case PassEventType.ITEM_UNTRASH:
             return c('Info').t`Restored item from trash`;
-        case PAT_EVENT_TYPE.ITEM_SOFT_DELETE:
+        case PassEventType.ITEM_SOFT_DELETE:
             return c('Info').t`Deleted item`;
-        case PAT_EVENT_TYPE.PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED:
+        case PassEventType.PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED:
             return c('Info').t`Vault access granted`;
         default:
             return null;

@@ -13,46 +13,39 @@ import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultMultiSelect } from '@proton/pass/components/Vault/VaultSelect';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { getAccessTokenAccess, updateAccessTokenAccess } from '@proton/pass/store/actions';
+import { getAccessTokenGrants, updateAccessTokenAccess } from '@proton/pass/store/actions';
 import { selectAccessTokenGrants, selectWritableVaults } from '@proton/pass/store/selectors';
+import type { PersonalAccessTokenShareResponse, ShareId } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = {
     token: PersonalAccessToken;
     onClose: () => void;
-    onSaved: () => void;
 };
 
-export const ManageAccessModal: FC<Props> = ({ token, onClose, onSaved }) => {
+const intoGrantedShareIDs = (grants: PersonalAccessTokenShareResponse[], shareIDs: Set<ShareId>): Set<ShareId> =>
+    new Set(grants.map(prop('ParentShareID')).filter((shareID) => shareIDs.has(shareID)));
+
+export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
     const tokenId = token.PersonalAccessTokenID;
+
     const writableVaults = useSelector(selectWritableVaults);
     const grants = useSelector(selectAccessTokenGrants(tokenId));
-
     const vaults = useMemo(() => [...writableVaults].sort(sortOn('createTime', 'ASC')), [writableVaults]);
+    const shareIDs = useMemo(() => new Set(vaults.map(prop('shareId'))), [vaults]);
+    const grantedShareIDs = useMemo(() => intoGrantedShareIDs(grants, shareIDs), [grants, shareIDs]);
 
-    const fetchAccess = useRequest(getAccessTokenAccess, { loading: true });
-    const update = useRequest(updateAccessTokenAccess, {
-        onSuccess: onSaved,
-    });
+    const [selectedShareIds, setSelectedShareIds] = useState<Set<ShareId>>(() => grantedShareIDs);
 
-    const [selectedShareIds, setSelectedShareIds] = useState<Set<string>>(() => new Set());
-    const [initialised, setInitialised] = useState(false);
+    const didChange = useMemo(() => {
+        if (selectedShareIds.size !== grantedShareIDs.size) return true;
+        for (const shareID of selectedShareIds) if (!grantedShareIDs.has(shareID)) return true;
+        return false;
+    }, [selectedShareIds, grantedShareIDs]);
 
-    useEffect(() => fetchAccess.dispatch(tokenId), [tokenId]);
-
-    /* Project the saga-loaded grants (keyed by VaultID) onto the user's vault
-     * shareIds, then seed the selection on first arrival. */
-    const grantedShareIds = useMemo(() => {
-        const grantedVaultIds = new Set(grants.map((g) => g.VaultID));
-        return new Set(vaults.filter((v) => grantedVaultIds.has(v.vaultId)).map((v) => v.shareId));
-    }, [grants, vaults]);
-
-    useEffect(() => {
-        if (!fetchAccess.loading && !initialised) {
-            setSelectedShareIds(new Set(grantedShareIds));
-            setInitialised(true);
-        }
-    }, [fetchAccess.loading, initialised, grantedShareIds]);
+    const fetchAccess = useRequest(getAccessTokenGrants, { loading: true });
+    const updateAccess = useRequest(updateAccessTokenAccess, { onSuccess: onClose });
 
     const toggleVault = (shareId: string) => {
         setSelectedShareIds((prev) => {
@@ -63,19 +56,13 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose, onSaved }) => {
         });
     };
 
-    const hasChanges = (() => {
-        if (selectedShareIds.size !== grantedShareIds.size) return true;
-        for (const id of selectedShareIds) if (!grantedShareIds.has(id)) return true;
-        return false;
-    })();
-
     const handleSave = () => {
-        if (!hasChanges) {
-            onClose();
-            return;
-        }
-        update.dispatch({ tokenId, shareIds: Array.from(selectedShareIds) });
+        if (didChange) updateAccess.dispatch({ tokenId, shareIds: Array.from(selectedShareIds) });
+        else onClose();
     };
+
+    useEffect(() => fetchAccess.dispatch(tokenId), [tokenId]);
+    useEffect(() => setSelectedShareIds(grantedShareIDs), [grantedShareIDs]);
 
     return (
         <PassModal open onClose={onClose} onReset={onClose} size="large">
@@ -94,14 +81,14 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose, onSaved }) => {
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose} disabled={update.loading}>
+                <Button onClick={onClose} disabled={updateAccess.loading}>
                     {c('Action').t`Cancel`}
                 </Button>
                 <Button
                     color="norm"
                     onClick={handleSave}
-                    loading={update.loading}
-                    disabled={update.loading || fetchAccess.loading || !hasChanges}
+                    loading={updateAccess.loading}
+                    disabled={updateAccess.loading || fetchAccess.loading || !didChange}
                 >
                     {c('Action').t`Save`}
                 </Button>
