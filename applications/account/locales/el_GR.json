@@ -324,9 +324,6 @@
       "Connect Gmail address": [
         "Σύνδεση διεύθυνσης Gmail"
       ],
-      "Connect to Gmail": [
-        "Σύνδεση στο Gmail"
-      ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
       ],
@@ -5017,9 +5014,6 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
-      ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Μεταφέρετε μηνύματα, εκδηλώσεις ημερολογίου και επαφές από έναν άλλο πάροχο."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
@@ -10146,6 +10140,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Ρυθμίστε τις παραμέτρους ελέγχου ταυτότητας SAML για τον οργανισμό σας μέσω μιας υπηρεσίας παροχής ταυτότητας όπως Okta, Microsoft Azure, ή Google Identity Platform. Αυτό θα ενεργοποιήσει το SAML για ολόκληρο τον οργανισμό."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Συνδέστε και διαχειριστείτε τα εξωτερικά σας γραμματοκιβώτια στο ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Τα δεδομένα σύνδεσης θα είναι διαθέσιμα σε περίπου 1 ώρα."
       ],
@@ -10657,9 +10654,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Η προώθηση στέλνει αυτόματα τα νέα εισερχόμενα μηνύματα στο φάκελο Εισερχόμενα."
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
@@ -11267,14 +11261,14 @@
       "No card required": [
         "Δεν απαιτείται κάρτα"
       ],
+      "No connected addresses.": [
+        "Δεν υπάρχουν συνδεδεμένες διευθύνσεις."
+      ],
       "No countries enabled": [
         "Δεν υπάρχουν ενεργοποιημένες χώρες"
       ],
       "No folder selected": [
         "Δεν επιλέχθηκε φάκελος"
-      ],
-      "No forwarding history.": [
-        "Δεν υπάρχει ιστορικό προώθησης."
       ],
       "No gateways": [
         "Δεν υπάρχουν πύλες"
@@ -24081,6 +24075,9 @@
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
+      "Connected emails": [
+        "Συνδεδεμένα email"
+      ],
       "Connection status": [
         "Κατάσταση σύνδεσης"
       ],
@@ -24512,9 +24509,6 @@
       ],
       "Forward emails": [
         "Προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Forwardings": [
-        "Προωθήσεις"
       ],
       "Free": [
         "Δωρεάν"

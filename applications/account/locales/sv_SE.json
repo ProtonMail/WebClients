@@ -321,14 +321,14 @@
       "Connect Gmail address": [
         "Anslut Gmail-adress"
       ],
-      "Connect to Gmail": [
-        "Anslut till Gmail"
-      ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Anslut ditt ${ BRAND_NAME }-konto"
+      ],
+      "Connect your email": [
+        "Anslut din e-post"
       ],
       "Connected": [
         "Ansluten"
@@ -4948,9 +4948,6 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
-      ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Hämta e-post, kalenderhändelser och kontakter från annan leverantör."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bygg förtroende och varumärkesigenkänning med professionella e-postadresser på din egen domän."
@@ -10485,9 +10482,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Vidarebefordran skickar automatiskt nya inkommande e-postmeddelanden till din inkorg."
-      ],
       "Free forever": [
         "Gratis för alltid"
       ],
@@ -11069,9 +11063,6 @@
       ],
       "No folder selected": [
         "Ingen mapp vald"
-      ],
-      "No forwarding history.": [
-        "Ingen vidarebefordringshistorik."
       ],
       "No gateways": [
         "Inga gateways"
@@ -20895,12 +20886,6 @@
     "Setting": {
       "Enable Photos section": [
         "Aktivera sektion för foton"
-      ],
-      "Get updates about comments via email": [
-        "Få uppdateringar om kommentarer via e-post"
-      ],
-      "Include document name in email notifications": [
-        "Inkludera dokumentnamn i e-postaviseringar"
       ]
     },
     "Settings description": {
@@ -22417,6 +22402,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } och ${ LUMO_APP_NAME } med premiumfunktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
       ],
@@ -23758,6 +23746,9 @@
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
+      "Connected emails": [
+        "Ansluten e-post"
+      ],
       "Connection status": [
         "Anslutningsstatus"
       ],
@@ -24183,9 +24174,6 @@
       ],
       "Forward emails": [
         "Vidarebefordra e-post"
-      ],
-      "Forwardings": [
-        "Vidarebefordringar"
       ],
       "Free": [
         "Gratis"
