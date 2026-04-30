@@ -11,21 +11,20 @@ import {
     revokePersonalAccessTokenAccess,
 } from '@proton/pass/lib/access-token/access-token.requests';
 import type {
+    AccessTokenActionsPage,
+    CreateAccessTokenIntent,
+    GetAccessTokenActionsIntent,
     PersonalAccessToken,
-    PersonalAccessTokenAccessGrant,
     PersonalAccessTokenWithKey,
+    UpdateAccessTokenAccessIntent,
 } from '@proton/pass/lib/access-token/access-token.types';
 import { buildAccessTokenEnvVar } from '@proton/pass/lib/access-token/access-token.utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { AccessTokenActionsPage } from '@proton/pass/store/actions';
 import {
-    type CreateAccessTokenIntent,
-    type GetAccessTokenActionsIntent,
-    type UpdateAccessTokenAccessIntent,
     createAccessToken,
     deleteAccessToken,
-    getAccessTokenAccess,
     getAccessTokenActions,
+    getAccessTokenGrants,
     getAccessTokens,
     getAgentInstructions,
     updateAccessTokenAccess,
@@ -33,7 +32,7 @@ import {
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
 import { selectShareState } from '@proton/pass/store/selectors/shares';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, PersonalAccessTokenShareResponse } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -80,9 +79,9 @@ const deleteSaga = createRequestSaga({
 });
 
 const listAccessSaga = createRequestSaga({
-    actions: getAccessTokenAccess,
+    actions: getAccessTokenGrants,
     call: function* (tokenId: string) {
-        const grants: PersonalAccessTokenAccessGrant[] = yield call(listPersonalAccessTokenAccess, tokenId);
+        const grants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
         return { tokenId, grants };
     },
 });
@@ -93,9 +92,9 @@ const updateAccessSaga = createRequestSaga({
         const pat: Maybe<PersonalAccessToken> = yield select(selectAccessTokenById(tokenId));
         if (!pat) throw new Error(`Access token ${tokenId} not found in state`);
 
-        const currentGrants: PersonalAccessTokenAccessGrant[] = yield select(selectAccessTokenGrants(tokenId));
+        const currentGrants: PersonalAccessTokenShareResponse[] = yield select(selectAccessTokenGrants(tokenId));
         const shares: ReturnType<typeof selectShareState> = yield select(selectShareState);
-        const grantUserShareId = (grant: PersonalAccessTokenAccessGrant) => shares[grant.ParentShareID]?.shareId;
+        const grantUserShareId = (grant: PersonalAccessTokenShareResponse) => shares[grant.ParentShareID]?.shareId;
 
         const desired = new Set(shareIds);
         const currentlyGranted = new Set(currentGrants.map(grantUserShareId));
@@ -111,7 +110,7 @@ const updateAccessSaga = createRequestSaga({
             yield all(toRevoke.map((shareId) => call(revokePersonalAccessTokenAccess, tokenId, shareId)));
         }
 
-        const grants: PersonalAccessTokenAccessGrant[] = yield call(listPersonalAccessTokenAccess, tokenId);
+        const grants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
         return { tokenId, grants };
     },
 });

@@ -2,20 +2,18 @@ import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
 import { PAT_PRODUCT, decodePatRecord } from '@proton/pass/lib/access-token/access-token.utils';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { AccessTokenActionsPage, CreateAccessTokenIntent } from '@proton/pass/store/actions/creators/access-token';
-import type { ShareId } from '@proton/pass/types';
+import type { GrantAccessRequest, PersonalAccessTokenShareResponse, ShareId } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import type {
+    AccessTokenActionsPage,
+    CreateAccessTokenIntent,
     CreatePersonalAccessTokenPayload,
     CreatePersonalAccessTokenResponse,
-    GrantPersonalAccessTokenAccessPayload,
-    ListPatMonitorResponse,
     ListPersonalAccessTokensResponse,
     PersonalAccessToken,
-    PersonalAccessTokenAccessGrant,
     PersonalAccessTokenWithKey,
 } from './access-token.types';
 
@@ -61,10 +59,7 @@ export const deletePersonalAccessToken = async (tokenId: string): Promise<void> 
 };
 
 /** Grants the PAT access to the provided payload  */
-export const grantPersonalAccessTokenAccess = async (
-    tokenId: string,
-    payload: GrantPersonalAccessTokenAccessPayload
-): Promise<void> => {
+export const grantPersonalAccessTokenAccess = async (tokenId: string, payload: GrantAccessRequest): Promise<void> => {
     await api({
         url: `${PASS_PAT_BASE_URL}/${tokenId}/access`,
         method: 'post',
@@ -89,14 +84,8 @@ export const grantPersonalAccessTokenVaultAccess = async (
     });
 };
 
-interface ListPersonalAccessTokenAccessResponse {
-    Code: number;
-    Shares: PersonalAccessTokenAccessGrant[];
-    LastToken: string | null;
-}
-
-export const listPersonalAccessTokenAccess = async (id: string): Promise<PersonalAccessTokenAccessGrant[]> => {
-    const response = await api<ListPersonalAccessTokenAccessResponse>({
+export const listPersonalAccessTokenAccess = async (id: string): Promise<PersonalAccessTokenShareResponse[]> => {
+    const response = await api({
         url: `${PASS_PAT_BASE_URL}/${id}/access`,
         method: 'get',
     });
@@ -123,7 +112,7 @@ export const listPatMonitorRecords = async (
     pat: PersonalAccessToken,
     since?: string
 ): Promise<AccessTokenActionsPage> => {
-    const response = await api<ListPatMonitorResponse>({
+    const response = await api({
         url: `pass/v1/pat/monitor/${pat.PersonalAccessTokenID}`,
         method: 'get',
         params: { PageSize: PAT_MONITOR_PAGE_SIZE, ...(since ? { Since: since } : {}) },
@@ -134,7 +123,7 @@ export const listPatMonitorRecords = async (
 
     return {
         records,
-        nextSince: response.Actions.NextSince,
+        nextSince: response.Actions.NextSince ?? null,
         append: Boolean(since),
         tokenId: pat.PersonalAccessTokenID,
     };

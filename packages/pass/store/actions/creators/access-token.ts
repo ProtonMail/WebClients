@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
 import type {
-    DecodedPatMonitorRecord,
+    AccessTokenAccessGrants,
+    AccessTokenActionsPage,
+    CreateAccessTokenIntent,
+    CreateAccessTokenSuccess,
+    GetAccessTokenActionsIntent,
     PersonalAccessToken,
-    PersonalAccessTokenAccessGrant,
+    UpdateAccessTokenAccessIntent,
 } from '@proton/pass/lib/access-token/access-token.types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { sessionRequest } from '@proton/pass/store/request/configs';
@@ -11,32 +15,6 @@ import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import identity from '@proton/utils/identity';
-
-export type CreateAccessTokenIntent = {
-    name: string;
-    expirationMinutes: number;
-    isAgent: boolean;
-    shareIds: string[];
-};
-
-export type CreateAccessTokenSuccess = {
-    pat: PersonalAccessToken;
-    /** One-shot env-var (`<token>::<b64url(raw-key)>`) — never persisted in state. */
-    envVar: string;
-    isAgent: boolean;
-};
-
-export type UpdateAccessTokenAccessIntent = {
-    tokenId: string;
-    /** The complete set of vault `shareId` values the token should have access
-     * to after the update. The saga diffs this against the current grants. */
-    shareIds: string[];
-};
-
-export type AccessTokenAccessGrants = {
-    tokenId: string;
-    grants: PersonalAccessTokenAccessGrant[];
-};
 
 export const getAccessTokens = requestActionsFactory<void, PersonalAccessToken[]>('access-token::list')({
     success: sessionRequest(5 * UNIX_MINUTE),
@@ -80,7 +58,7 @@ export const deleteAccessToken = requestActionsFactory<string, string>('access-t
     },
 });
 
-export const getAccessTokenAccess = requestActionsFactory<string, AccessTokenAccessGrants>('access-token::access::list')({
+export const getAccessTokenGrants = requestActionsFactory<string, AccessTokenAccessGrants>('access-token::access::list')({
     key: identity,
     success: sessionRequest(5 * UNIX_MINUTE),
 });
@@ -98,22 +76,6 @@ export const updateAccessTokenAccess = requestActionsFactory<UpdateAccessTokenAc
             })({ payload, error }),
     },
 });
-
-export type GetAccessTokenActionsIntent = {
-    tokenId: string;
-    /** Cursor — pass the previous response's `nextSince`, or omit for the
-     * first page. The reducer appends when this is set, replaces otherwise. */
-    since?: string;
-};
-
-export type AccessTokenActionsPage = {
-    tokenId: string;
-    records: DecodedPatMonitorRecord[];
-    nextSince: string | null;
-    /** Mirrors whether the intent had a `since` cursor — tells the reducer
-     * to append vs. replace. */
-    append: boolean;
-};
 
 export const getAccessTokenActions = requestActionsFactory<GetAccessTokenActionsIntent, AccessTokenActionsPage>(
     'access-token::actions::list'
