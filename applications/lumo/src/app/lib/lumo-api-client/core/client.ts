@@ -162,7 +162,7 @@ export class LumoApiClient {
             await this.notifyResponseError(error, responseContext);
 
             // If the stop button was pressed, we finish gracefully
-            if (error.name === 'AbortError') {
+            if (error?.name === 'AbortError') {
                 console.warn('Generation aborted');
                 finalStatus = 'succeeded';
                 return; // Don't re-throw
