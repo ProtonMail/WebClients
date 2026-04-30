@@ -5,7 +5,7 @@ export const shouldShowResourceLimitError = (
     error: ResourceLimitError,
     activeConversationId: ConversationId | undefined
 ): boolean => {
-    if (error.resource !== 'messages' || !error.conversationId) {
+    if ((error.resource !== 'messages' && error.resource !== 'conversations') || !error.conversationId) {
         return true;
     }
 
