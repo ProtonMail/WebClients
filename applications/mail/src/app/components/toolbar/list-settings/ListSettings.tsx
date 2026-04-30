@@ -27,26 +27,26 @@ export const ListSettings = ({
     labelID,
     filterAsDropdown,
 }: ListSettingsProps) => {
-    const isRefreshFilterEnabled = useFlag('RefreshedFilterUI');
-    if (isRefreshFilterEnabled) {
-        return <FilterList />;
+    const isRefreshedFilterUIDisabled = useFlag('RefreshedFilterUIDisabled');
+    if (isRefreshedFilterUIDisabled) {
+        return (
+            <div className="flex flex-nowrap justify-space-between items-center gap-2 m-auto">
+                <FilterActions
+                    filter={filter}
+                    onFilter={onFilter}
+                    mailSettings={mailSettings}
+                    dropdown={filterAsDropdown}
+                />
+                <SortDropdown
+                    conversationMode={conversationMode}
+                    sort={sort}
+                    onSort={onSort}
+                    hasCaret={false}
+                    labelID={labelID}
+                />
+            </div>
+        );
     }
 
-    return (
-        <div className="flex flex-nowrap justify-space-between items-center gap-2 m-auto">
-            <FilterActions
-                filter={filter}
-                onFilter={onFilter}
-                mailSettings={mailSettings}
-                dropdown={filterAsDropdown}
-            />
-            <SortDropdown
-                conversationMode={conversationMode}
-                sort={sort}
-                onSort={onSort}
-                hasCaret={false}
-                labelID={labelID}
-            />
-        </div>
-    );
+    return <FilterList />;
 };
