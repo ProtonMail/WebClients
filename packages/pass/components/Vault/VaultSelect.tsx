@@ -189,12 +189,17 @@ export const VaultMultiSelect: FC<VaultMultiSelectProps> = ({
                                 key={vault.shareId}
                                 className="flex flex-nowrap items-center gap-2 px-3 py-1 cursor-pointer hover:bg-weak"
                             >
-                                <Checkbox checked={checked} onChange={() => onToggle(vault.shareId)} />
+                                <Checkbox
+                                    checked={checked}
+                                    onChange={() => onToggle(vault.shareId)}
+                                    className="shrink-0"
+                                />
                                 <VaultIcon
                                     color={vault.content.display.color}
                                     icon={vault.content.display.icon}
                                     size={3}
                                     background
+                                    className="shrink-0"
                                 />
                                 <span className="text-ellipsis">{vault.content.name}</span>
                             </label>
