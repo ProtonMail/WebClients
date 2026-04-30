@@ -1,5 +1,5 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import type { GroupOwnerInvitesState } from '.';
 import { groupOwnerInvitesThunk, selectGroupOwnerInvites } from '.';

@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';

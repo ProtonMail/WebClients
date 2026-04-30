@@ -3,8 +3,8 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { AddressKeysState, AddressesState, ModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import {
-    type CacheType,
     cacheHelper,
     createPromiseMapStore,
     getFetchedAt,

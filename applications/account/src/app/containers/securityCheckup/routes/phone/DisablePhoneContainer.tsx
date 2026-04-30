@@ -11,7 +11,7 @@ import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyForm
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 

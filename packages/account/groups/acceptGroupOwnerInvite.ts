@@ -4,7 +4,7 @@ import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddre
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import type { SessionKey } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { acceptGroupOwnerInvite as acceptGroupOwnerInviteApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';

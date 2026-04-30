@@ -3,7 +3,7 @@ import isDeepEqual from 'lodash/isEqual';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import { Renew } from '../../core/subscription/constants';
 import type { Subscription } from '../../core/subscription/interface';

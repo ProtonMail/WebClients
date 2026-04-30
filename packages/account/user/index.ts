@@ -7,13 +7,13 @@ import {
 } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import {
-    type CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    
+
 } from '@proton/redux-utilities';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getUser } from '@proton/shared/lib/api/user';

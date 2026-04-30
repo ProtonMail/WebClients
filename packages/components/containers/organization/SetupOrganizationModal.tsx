@@ -34,7 +34,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';

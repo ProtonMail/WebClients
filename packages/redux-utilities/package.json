@@ -7,7 +7,8 @@
         ".": "./index.ts",
         "./creator": "./asyncModelThunk/creator.ts",
         "./hooks": "./asyncModelThunk/hooks.tsx",
-        "./helpers/safeCount": "./helpers/safeCount.ts"
+        "./helpers/safeCount": "./helpers/safeCount.ts",
+        "./interface": "./asyncModelThunk/interface.ts"
     },
     "scripts": {
         "check-types": "tsc",

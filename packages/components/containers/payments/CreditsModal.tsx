@@ -34,7 +34,7 @@ import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

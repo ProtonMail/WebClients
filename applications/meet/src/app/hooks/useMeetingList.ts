@@ -7,7 +7,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { useGetMeetings, useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { HOUR } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
