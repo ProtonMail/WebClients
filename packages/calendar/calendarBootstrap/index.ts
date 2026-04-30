@@ -7,7 +7,7 @@ import type { CacheType } from '@proton/redux-utilities/interface';
 import {
     cacheHelper,
     createPromiseMapStore,
-} from '@proton/redux-utilities';
+} from '@proton/redux-utilities/promiseStore';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { getFullCalendar } from '@proton/shared/lib/api/calendars';
 import {
