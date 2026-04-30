@@ -18,7 +18,8 @@ export const getLabelFromCategoryId = (id: CategoryLabelID) => {
 
 export const getDescriptionFromCategoryId = (id: CategoryLabelID) => {
     const CATEGORIES_DESCRIPTION_MAPPING: Record<CategoryLabelID, string> = {
-        [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: c('Label').t`Primary`,
+        [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: c('Label')
+            .t`Personal and work emails, plus important updates and notifications`,
         [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: c('Label').t`Social media updates and activity`,
         [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: c('Label').t`Deals, offers, marketing emails`,
         [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: c('Label').t`Non-promotional content and news`,

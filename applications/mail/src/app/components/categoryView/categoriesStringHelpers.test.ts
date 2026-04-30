@@ -26,7 +26,7 @@ describe('categoriesStringHelpers', () => {
 
     describe('getDescriptionFromCategoryId', () => {
         const testArray: [CategoryLabelID, string][] = [
-            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Primary'],
+            [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 'Personal and work emails, plus important updates and notifications'],
             [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 'Social media updates and activity'],
             [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 'Deals, offers, marketing emails'],
             [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Non-promotional content and news'],
