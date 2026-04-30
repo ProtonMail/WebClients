@@ -1,25 +1,3 @@
-export type ItemMoveIndividualToShareRequest = {
-  /* Encrypted ID of the source item to move */
-  ItemID: string;
-  /* Data to create the new item in the destination vault */
-  Item?: ItemCreateRequest | null;
-  /* Previous revisions of this item */
-  History?: ItemHistoryRequest[];
-  /* Item keys encrypted with the target vault key */
-  ItemKeys: EncodedItemKeyRotation[];
-};
-
-export type ItemMoveSingleToShareRequest = {
-  /* Encrypted ID of the destination share */
-  ShareID: string;
-  /* Data to create the new item */
-  Item?: ItemCreateRequest | null;
-  /* Previous revisions of this item */
-  History?: ItemHistoryRequest[];
-  /* Item keys encrypted with the target vault key */
-  ItemKeys: EncodedItemKeyRotation[];
-};
-
 export type PublicLinkCreateRequest = {
   /* Last revision of the item */
   Revision: number;
@@ -79,4 +57,50 @@ export type PublicLinkGetResponse = {
   Active: boolean;
   /* If the link key is being encrypted with the item key */
   LinkKeyEncryptedWithItemKey?: boolean;
+};
+
+export type ItemRevisionContentsResponse = {
+    ItemID: string;
+    Revision: number;
+    ContentFormatVersion: number;
+    /* Flags for this item. Possible values:
+<ul>
+    <li>SkipHealthCheck: 1<<0 = 1</li>
+    <li>EmailBreached: 1<<1 = 2</li>
+    <li>AliasDisabled: 1<<2 = 4</li>
+    <li>ItemHasFiles: 1<<3 = 8</li>
+    <li>ItemHasHadFiles: 1<<4 = 16</li>
+    <li>SkipWeakPasswordCheck: 1<<5 = 32</li>
+    <li>SkipCompromisedPasswordCheck: 1<<6 = 64</li>
+    <li>SkipReusedPasswordCheck: 1<<7 = 128</li>
+    <li>Skip2FACheck: 1<<8 = 256</li>
+</ul> */
+    Flags: number;
+    KeyRotation: number;
+    /* Base64 encoded item contents */
+    Content: string;
+    /* Base64 encoded item key. Only for vault shares. */
+    ItemKey?: string | null;
+    /* Revision state. Values: 1 = Active, 2 = Trashed */
+    State: number;
+    /* Whether this item is pinned for this user */
+    Pinned: boolean;
+    /* If the item is pinned, when it was pinned */
+    PinTime?: number | null;
+    /* Number of shares this item has */
+    ShareCount: number;
+    /* Parent FolderID if this item is in a folder */
+    FolderID?: string | null;
+    /* In case this item contains an alias, this is the email address for the alias */
+    AliasEmail?: string | null;
+    /* Whether this alias belongs to this user and thus can be managed. */
+    AliasOwner?: boolean;
+    /* Creation time of the item */
+    CreateTime: number;
+    /* Time of the latest modification of the item */
+    ModifyTime: number;
+    /* Time when the item was last used */
+    LastUseTime: number;
+    /* Creation time of this revision */
+    RevisionTime: number;
 };
