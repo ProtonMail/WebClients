@@ -1,16 +1,15 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { clsx } from 'clsx';
-
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
-import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useConversationActions } from '../../providers/ConversationActionsProvider';
+// import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useOnboardingContext } from '../../providers/OnboardingProvider';
+// import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
@@ -19,39 +18,34 @@ import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
-import { LumoCat } from '../LumoAvatar';
+import { RightPanelSlot } from '../RightPanelSlot';
 import WhatsNew from '../WhatsNew/WhatsNew';
-import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
-import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
 
 import './MainContainer.scss';
 
-const MainContainer = ({
-    handleSendMessage,
-    isProcessingAttachment,
-    initialQuery,
-    prefillQuery,
-}: {
-    handleSendMessage: HandleSendMessage;
+interface MainContainerProps {
     isProcessingAttachment: boolean;
     initialQuery?: string;
     prefillQuery?: string;
-}) => {
-    const { isOnboardingCompleted } = useOnboardingContext();
+}
+
+const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: MainContainerProps) => {
+    const { handleSendMessage } = useConversationActions();
+    // const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
-    const [isEditorEmpty, setIsEditorEmpty] = useState(true);
-    const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
+    const [, setIsEditorEmpty] = useState(true);
+    const [promptSuggestion] = useState<string | undefined>(undefined);
     // Files panel states
     const [openPanel, setOpenPanel] = useState<{
         type: 'files' | null;
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
-    const { isGhostChatMode } = useGhostChat();
+    // const { isGhostChatMode } = useGhostChat();
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
 
@@ -84,17 +78,18 @@ const MainContainer = ({
         setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: false });
     }, []);
 
-    // Handler for prompt suggestion click
-    const handlePromptSuggestionClick = useCallback((prompt: string) => {
-        setPromptSuggestion(prompt);
-    }, []);
+    // // Handler for prompt suggestion click
+    // const handlePromptSuggestionClick = useCallback((prompt: string) => {
+    //     setPromptSuggestion(prompt);
+    // }, []);
 
-    // Determine if lumo-welcome-section should be visible
-    // Hide when input is active (has content) on small screens, always show on large screens
-    const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
+    // // Determine if lumo-welcome-section should be visible
+    // // Hide when input is active (has content) on small screens, always show on large screens
+    // const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
 
     return (
-        <>
+        // <>
+        <div className="main-container-component bg-norm rounded-xl flex flex-column flex-nowrap flex-1">
             {isSmallScreen && (
                 <HeaderWrapper>
                     <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} onlyShowOffers={true} />
@@ -103,18 +98,20 @@ const MainContainer = ({
             )}
             {isGuest && <PublicHeader />}
             {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
-            <div className="absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px' }}>
+            {/* <div className="main-container-component absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px', border: 
+                '1px green solid'
+             }}>
                 <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
-            </div>
+            </div> */}
             <div
-                className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pb-8 pt-0"
+                className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0"
                 style={{
                     '--md-max-w-custom': '90%',
                     '--lg-max-w-custom': '43rem',
                 }}
             >
                 {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
-                <div
+                {/* <div
                     className={clsx(
                         'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
                         isSmallScreen && 'top-custom',
@@ -139,7 +136,7 @@ const MainContainer = ({
                     onClick={handlePromptSuggestionClick}
                     className="align-self-center"
                     canShow={isSmallScreen && isEditorEmpty}
-                />
+                /> */}
 
                 <div className="composer-container md:px-4 w-full">
                     <ComposerComponent
@@ -166,7 +163,7 @@ const MainContainer = ({
             )}
             {openPanel.type === 'files' && (
                 <FilesManagementView
-                    messageChain={[]} // Empty message chain for MainContainer
+                    messageChain={[]}
                     filesContainerRef={filesContainerRef}
                     onClose={handleCloseFiles}
                     filterMessage={openPanel.filterMessage}
@@ -175,9 +172,24 @@ const MainContainer = ({
                     forceModal={true}
                 />
             )}
+            <RightPanelSlot>
+                {/* <FilesManagementView
+                    messageChain={[]}
+                    filesContainerRef={filesContainerRef}
+                    onClose={handleCloseFiles}
+                    filterMessage={openPanel.filterMessage}
+                    onClearFilter={handleClearFilter}
+                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                /> */}
+                {/* <p>HELLO</p> */}
+                <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1">
+                    <Button>Upload from Drive (Add)</Button>
+                    <Button>Upload from computer (Add)</Button>
+                </div>
+            </RightPanelSlot>
 
             <MainContainerFooter />
-        </>
+        </div>
     );
 };
 
