@@ -26,6 +26,7 @@ interface PreJoinDetailsProps {
 }
 
 export const PreJoinDetails = ({
+    roomName,
     roomId,
     displayName,
     onDisplayNameChange,
@@ -43,6 +44,10 @@ export const PreJoinDetails = ({
     const actionLabel = instantMeeting ? c('Action').t`Start meeting` : c('Action').t`Join meeting`;
 
     const getTitle = () => {
+        if (roomName) {
+            return roomName;
+        }
+        // if the room name is not set, show the personal meeting room title base on the meeting type
         if (isPersonalRoom) {
             return c('Title').t`Personal meeting room`;
         }
