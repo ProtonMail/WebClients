@@ -1,4 +1,4 @@
-import { Suspense, lazy, memo, useEffect, useState } from 'react';
+import { Suspense, lazy, memo, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -20,7 +20,6 @@ import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 import { ChatHistorySection } from './components/ChatHistorySection';
 import { GallerySidebarButton } from './components/GallerySidebarButton';
-import { NewGhostChatButton } from './components/NewChatGhostButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
 import { SidebarBottomUserArea } from './components/SidebarBottomUserArea';
@@ -42,9 +41,6 @@ const LumoSidebarContent = () => {
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
-    const [searchValue, setSearchValue] = useState('');
-
-    const showText = true; //TODO: remove after updating sidebar components
 
     const { apiKeyManagement } = useLumoFlags();
 
@@ -60,7 +56,7 @@ const LumoSidebarContent = () => {
 
     return (
         <>
-            <div className="lumo-sidebar">
+            <div className="lumo-sidebar flex flex-column h-full">
                 {showMobileHeader && (
                     <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak">
                         <img src={lumoCatIcon} alt="Lumo" className="lumo-sidebar-mobile-header-logo shrink-0" />
@@ -75,44 +71,21 @@ const LumoSidebarContent = () => {
                     </div>
                 )}
 
-                <div className="sidebar-section">
-                    <NewChatSidebarButton showText={showText} isSmallScreen={isSmallScreen} />
+                <div className="sidebar-section flex flex-column gap-1">
+                    <NewChatSidebarButton />
+                    {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
+                    {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
                 </div>
 
-                <div className="sidebar-section">
-                    <NewGhostChatButton showText={showText} />
+                <div className="sidebar-main-content flex flex-column flex-1 gap-2">
+                    <Suspense fallback={null}>
+                        <ProjectsSidebarSection onItemClick={closeOnItemClick} />
+                    </Suspense>
+                    <FavoritesSidebarSection onItemClick={closeOnItemClick} />
+                    <ChatHistorySection />
                 </div>
 
-                {showSearch && (
-                    <div className="sidebar-section">
-                        <SearchSection
-                            showText={showText}
-                            value={searchValue}
-                            onChange={setSearchValue}
-                            onSearchClick={() => searchModal.openModal(true)}
-                            isSmallScreen={isSmallScreen}
-                        />
-                    </div>
-                )}
-
-                {showGallery && (
-                    <div className="sidebar-section">
-                        <GallerySidebarButton showText={showText} onItemClick={closeOnItemClick} />
-                    </div>
-                )}
-                    <div className="sidebar-section">
-                        <Suspense fallback={null}>
-                            <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-                        </Suspense>
-                    </div>
-                <div className="sidebar-main-content">
-
-                    <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-
-                    <ChatHistorySection searchValue={searchValue} showText={showText} />
-                </div>
-
-                <div className="sidebar-section sidebar-bottom">
+                <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
                     <LumoSidebarUpsell />
 
                     {apiKeyManagement && (
@@ -123,7 +96,6 @@ const LumoSidebarContent = () => {
                                 history.push('/docs/api');
                                 closeOnItemClick?.();
                             }}
-                            showText={showText}
                         />
                     )}
 
@@ -131,12 +103,11 @@ const LumoSidebarContent = () => {
                         icon="cog-wheel"
                         label={c('collider_2025:Button').t`Settings`}
                         onClick={() => settingsModal.openModal(true)}
-                        showText={showText}
                     />
 
                     <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
 
-                    <SidebarBottomUserArea showText={showText} />
+                    <SidebarBottomUserArea />
                 </div>
             </div>
             {settingsModal.render && <SettingsModal {...settingsModal.modalProps} />}
