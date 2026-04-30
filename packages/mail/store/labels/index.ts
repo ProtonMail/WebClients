@@ -2,7 +2,8 @@ import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice }
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
+import { CacheType } from '@proton/redux-utilities';
 import type { MailEventV6Response } from '@proton/shared/lib/api/events';
 import { getByIds, getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';

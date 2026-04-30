@@ -8,8 +8,9 @@ import {
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    previousSelector,
+    
 } from '@proton/redux-utilities';
+import { previousSelector } from '@proton/redux-utilities/creator';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';

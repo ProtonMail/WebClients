@@ -4,7 +4,7 @@ import {startAccountSessionsListener, startPersistListener} from '@proton/accoun
 import {getPersistedState} from '@proton/redux-shared-store/persist';
 import {startSharedListening} from '@proton/redux-shared-store/sharedListeners';
 import {sharedPersistReducer} from '@proton/redux-shared-store/sharedReducers';
-import {selectPersistModel} from '@proton/redux-utilities';
+import {selectPersistModel} from '@proton/redux-utilities/creator';
 
 import type {AppStartListening, LumoListener, LumoState} from '../store';
 import type {LumoThunkArguments} from '../thunk';

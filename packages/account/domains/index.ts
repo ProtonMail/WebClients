@@ -9,8 +9,9 @@ import {
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    previousSelector,
+
 } from '@proton/redux-utilities';
+import { previousSelector } from '@proton/redux-utilities/creator';
 import { getDomain as getDomainConfig, queryDomains } from '@proton/shared/lib/api/domains';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

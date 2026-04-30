@@ -4,7 +4,7 @@ import { useNotifications } from '@proton/components/index';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useGetMeetings } from '@proton/meet/store/hooks/useMeetings';
-import { CacheType } from '@proton/redux-utilities/asyncModelThunk/interface';
+import { CacheType } from '@proton/redux-utilities';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
