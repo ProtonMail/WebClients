@@ -3,7 +3,6 @@ import React from 'react';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent } from '@proton/components';
 
-import { RightDrawer } from '../../RightDrawer';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Message } from '../../../types';
@@ -68,5 +67,5 @@ export const FilesManagementView = ({
         );
     }
 
-    return <RightDrawer>{panel}</RightDrawer>;
+    return panel;
 };

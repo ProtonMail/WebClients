@@ -13,6 +13,7 @@ import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestS
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -175,88 +176,92 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     }
 
     return (
-        <div className="gallery-view">
-            <input
-                ref={editImageFileRef}
-                type="file"
-                accept="image/*"
-                multiple
-                className="sr-only"
-                onChange={handleEditImageFileChange}
-            />
-
-            {isSmallScreen && (
-                <HeaderWrapper>
-                    <div />
-                </HeaderWrapper>
-            )}
-
-            {/* Tab toggle */}
-            <div className="gallery-tab-bar">
-                <div className="gallery-tab-toggle">
-                    <button
-                        className={`gallery-tab-toggle__btn${activeTab === 'inspiration' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                        onClick={() => setActiveTab('inspiration')}
-                        type="button"
-                    >
-                        {c('collider_2025:Tab').t`Create`}
-                    </button>
-                    <button
-                        className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
-                        onClick={() => setActiveTab('gallery')}
-                        type="button"
-                    >
-                        {c('collider_2025:Tab').t`Gallery`}
-                    </button>
+        <LumoLayoutWithDrawer
+            withoutDrawerToggle={true}
+            headerComponent={
+                <div className="gallery-tab-bar">
+                    <div className="gallery-tab-toggle">
+                        <button
+                            className={`gallery-tab-toggle__btn${activeTab === 'inspiration' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                            onClick={() => setActiveTab('inspiration')}
+                            type="button"
+                        >
+                            {c('collider_2025:Tab').t`Create`}
+                        </button>
+                        <button
+                            className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                            onClick={() => setActiveTab('gallery')}
+                            type="button"
+                        >
+                            {c('collider_2025:Tab').t`Gallery`}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            }
+        >
+            <div className="gallery-view">
+                <input
+                    ref={editImageFileRef}
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="sr-only"
+                    onChange={handleEditImageFileChange}
+                />
 
-            {/* Main scrollable area — switches between Gallery and Inspiration */}
-            {/* eslint-disable-next-line no-nested-ternary */}
-            {activeTab === 'gallery' ? (
-                hasImages ? (
-                    <div ref={createdScrollRef} className="gallery-created-scroll">
-                        <div className="gallery-inner max-w-full">
-                            <CreatedGrid
-                                // sections={FAKE_GALLERY_SECTIONS}
-                                sections={galleryImages.sections}
-                                status={galleryImages.status}
-                                hasMore={galleryImages.hasMore}
-                                loadMore={galleryImages.loadMore}
-                                onExport={handleSketchEditExport}
+                {isSmallScreen && (
+                    <HeaderWrapper>
+                        <div />
+                    </HeaderWrapper>
+                )}
+
+                {/* Main scrollable area — switches between Gallery and Inspiration */}
+                {/* eslint-disable-next-line no-nested-ternary */}
+                {activeTab === 'gallery' ? (
+                    hasImages ? (
+                        <div ref={createdScrollRef} className="gallery-created-scroll">
+                            <div className="gallery-inner max-w-full">
+                                <CreatedGrid
+                                    // sections={FAKE_GALLERY_SECTIONS}
+                                    sections={galleryImages.sections}
+                                    status={galleryImages.status}
+                                    hasMore={galleryImages.hasMore}
+                                    loadMore={galleryImages.loadMore}
+                                    onExport={handleSketchEditExport}
+                                />
+                            </div>
+                        </div>
+                    ) : (
+                        <GalleryEmpty onInspirationClick={() => setActiveTab('inspiration')} />
+                    )
+                ) : (
+                    <div className="gallery-inspiration-scroll flex">
+                        <InspirationPanel onSuggestionClick={handleSuggestionClick} />
+                        {/* <DiscoverPanel onSuggestionClick={handleSuggestionClick} /> */}
+                    </div>
+                )}
+
+                {/* Bottom panel — composer only, always visible */}
+                <div
+                    className={clsx(
+                        'gallery-bottom w-full',
+                        !isSmallScreen && activeTab === 'gallery' && hasImages && 'absolute'
+                    )}
+                >
+                    <div className="gallery-inner">
+                        <div className="gallery-composer-wrapper">
+                            <ComposerComponent
+                                composerMode={ComposerMode.GALLERY}
+                                handleSendMessage={handleSendMessage}
+                                isProcessingAttachment={isProcessingAttachment}
+                                prefillQuery={composerPrefill}
+                                autoOpenSketch={gallerySketchTrigger}
+                                placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
                             />
                         </div>
                     </div>
-                ) : (
-                    <GalleryEmpty onInspirationClick={() => setActiveTab('inspiration')} />
-                )
-            ) : (
-                <div className="gallery-inspiration-scroll flex">
-                    <InspirationPanel onSuggestionClick={handleSuggestionClick} />
-                    {/* <DiscoverPanel onSuggestionClick={handleSuggestionClick} /> */}
-                </div>
-            )}
-
-            {/* Bottom panel — composer only, always visible */}
-            <div
-                className={clsx(
-                    'gallery-bottom w-full',
-                    !isSmallScreen && activeTab === 'gallery' && hasImages && 'absolute'
-                )}
-            >
-                <div className="gallery-inner">
-                    <div className="gallery-composer-wrapper">
-                        <ComposerComponent
-                            composerMode={ComposerMode.GALLERY}
-                            handleSendMessage={handleSendMessage}
-                            isProcessingAttachment={isProcessingAttachment}
-                            prefillQuery={composerPrefill}
-                            autoOpenSketch={gallerySketchTrigger}
-                            placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
-                        />
-                    </div>
                 </div>
             </div>
-        </div>
+        </LumoLayoutWithDrawer>
     );
 };
