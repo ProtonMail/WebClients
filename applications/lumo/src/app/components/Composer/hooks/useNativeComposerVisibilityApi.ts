@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useSidebar } from '../../../providers/SidebarProvider';
-import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
+import { setNativeComposerVisibility, setNativeIsSmallScreen } from '../../../remote/nativeComposerBridgeHelpers';
 import { canShowWebComposer } from '../../../util/userAgent';
 
 interface NativeComposerVisibilityConfig {
@@ -23,21 +23,41 @@ export const useNativeComposerVisibilityApi = ({
     showFileModal = false,
     isBlocking = false,
 }: NativeComposerVisibilityConfig = {}) => {
-    const { isVisible: isSidebarVisible } = useSidebar();
+    const { isVisible: isSidebarVisible, isCollapsed, isExpanded, isSmallScreen } = useSidebar();
     const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
 
     useEffect(() => {
+        setNativeIsSmallScreen(isSmallScreen);
+    }, [isSmallScreen]);
+
+    useEffect(() => {
+        const shouldShowNativeComposer =
+            (!isSidebarVisible && isSmallScreen) || (isSidebarVisible && !isSmallScreen && isCollapsed);
+
         if (isBlocking) {
             setNativeComposerVisibility(false);
             return () => {
-                setNativeComposerVisibility(lumoNativeComposerEnabled && !isSidebarVisible);
+                setNativeComposerVisibility(lumoNativeComposerEnabled && shouldShowNativeComposer);
             };
         }
 
         setNativeComposerVisibility(
-            lumoNativeComposerEnabled && !isSidebarVisible && !showDrawingModal && !showNewModal && !showFileModal
+            lumoNativeComposerEnabled &&
+                shouldShowNativeComposer &&
+                !showDrawingModal &&
+                !showNewModal &&
+                !showFileModal
         );
-    }, [isBlocking, lumoNativeComposerEnabled, isSidebarVisible, showDrawingModal, showNewModal]);
+    }, [
+        isBlocking,
+        lumoNativeComposerEnabled,
+        isSidebarVisible,
+        isSmallScreen,
+        isExpanded,
+        showDrawingModal,
+        showNewModal,
+        showFileModal,
+    ]);
 
     const toggle = useCallback(() => {
         setNativeComposerVisibility(lumoNativeComposerEnabled);
