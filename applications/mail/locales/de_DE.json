@@ -289,11 +289,11 @@
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
-      "Connect to Gmail": [
-        "Mit Gmail verbinden"
-      ],
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
+      ],
+      "Connect your email": [
+        "Deine E-Mail-Adresse verbinden"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -4153,8 +4153,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lies, antworte und behalte den Überblick über Gmail innerhalb von ${ MAIL_APP_NAME }"
       ],
-      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Gmail-Korrespondenz direkt in ${ MAIL_APP_NAME } senden und empfangen. Deine Adresse unter ${ addressesSettingsLink } verbinden."
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Gmail-Nachrichten direkt in ${ MAIL_APP_NAME } senden und empfangen. Deine E-Mail-Adresse unter ${ addressesSettingsLink } verbinden."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
@@ -11945,7 +11945,7 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Bringe deine E-Mails zu ${ MAIL_APP_NAME }"
       ],
-      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
         "Bring deine bestehende E-Mails zu ${ MAIL_APP_NAME }, damit du alles von einem privaten Posteingang aus verwalten kannst."
       ],
       "Choose a provider": [

@@ -8771,6 +8771,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "قم بإعداد مصادقة SAML لمؤسستك عبر موفر هوية مثل Okta أو Microsoft Azure أو Google Identity Platform. وهذا سيمكن SAML للمنظمة كُلََّها."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "قم بربط وإدارة صناديق بريدك الخارجية في ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "ستكون بيانات الاتصال متاحة في غضون ساعة."
       ],
@@ -9753,6 +9756,9 @@
       ],
       "No card required": [
         "لا توجد بطاقة مطلوبة"
+      ],
+      "No connected addresses.": [
+        "لا توجد عناوين مرتبطة."
       ],
       "No countries enabled": [
         "لا توجد بلدان مفعلة"
@@ -18445,6 +18451,14 @@
         "طلب إعادة تعيين كلمة المرور"
       ]
     },
+    "Setting": {
+      "Get updates about comments via email": [
+        "احصل على تحديثات حول التعليقات عبر البريد الإلكتروني"
+      ],
+      "Include document name in email notifications": [
+        "قم بتضمين اسم المستند في إشعارات البريد الإلكتروني"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "حافظ على تنظيم صندوق الوارد باستخدام المجلدات والتسميات. ${ learnMoreLink }"
@@ -21173,6 +21187,9 @@
       ],
       "Connect your custom domain": [
         "اربط نطاقك المخصَّص"
+      ],
+      "Connected emails": [
+        "رسائل البريد الإلكتروني المتصلة"
       ],
       "Connection status": [
         "حالة الاتصال"
