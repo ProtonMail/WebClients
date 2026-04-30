@@ -289,11 +289,11 @@
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
-      "Connect to Gmail": [
-        "Koble til Gmail"
-      ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
+      ],
+      "Connect your email": [
+        "Koble til e-posten din"
       ],
       "Contact group": [
         "Kontaktgruppe"
@@ -4153,8 +4153,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
       ],
-      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Send og motta Gmail-korrespondanse direkte i ${ MAIL_APP_NAME }. Koble til adressen din i ${ addressesSettingsLink }."
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Send og motta Gmail-meldinger direkte i ${ MAIL_APP_NAME }. Koble til adressen din i ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
@@ -4231,6 +4231,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-postene dine fra Gmail fra de siste 180 dagene. Vi gir deg beskjed når det er ferdig."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -11942,7 +11945,7 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Ta med e-postene dine til ${ MAIL_APP_NAME }"
       ],
-      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
         "Ta med deg din eksisterende e-post til ${ MAIL_APP_NAME } slik at du kan administrere alt fra én privat innboks."
       ],
       "Choose a provider": [
