@@ -254,7 +254,7 @@ export enum MailFeatureFlag {
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
-    EncryptedSearchMigrationSystem = 'EncryptedSearchMigrationSystem',
+    EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     MailStoreDebugMode = 'MailStoreDebugMode',
     MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
 }
