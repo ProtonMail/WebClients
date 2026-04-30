@@ -9,6 +9,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import type { IconName } from '@proton/icons/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
@@ -194,7 +195,7 @@ export const FilterList = () => {
                         >
                             <span className="flex items-center justify-space-between w-full">
                                 {option.label}
-                                {option.isActive && <Icon name="checkmark" />}
+                                {option.isActive && <IcCheckmarkStrong className="color-primary" />}
                             </span>
                         </DropdownMenuButton>
                     ))}
@@ -216,7 +217,7 @@ export const FilterList = () => {
                                 <Icon name={option.iconName} title={option.label} />
                                 {option.label}
                             </span>
-                            {option.isActive && <Icon name="checkmark" />}
+                            {option.isActive && <IcCheckmarkStrong className="color-primary" />}
                         </DropdownMenuButton>
                     ))}
                 </DropdownMenu>
