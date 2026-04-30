@@ -16,7 +16,7 @@ let mockedApi: ReturnType<typeof mockedUseApi>;
 
 jest.mock('../../hooks/useEventManager', () => () => ({ call: jest.fn() }));
 
-jest.mock('@proton/redux-shared-store');
+jest.mock('@proton/redux-shared-store/sharedProvider');
 const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
 
 jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);
