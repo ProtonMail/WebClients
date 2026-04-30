@@ -10,39 +10,39 @@ import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 
 export const getInboxCategoriesItems = ({
+    selectAll,
     canMoveToInbox,
     shouldShowTabs,
     activeCategoriesTabs,
 }: {
+    selectAll: boolean;
     canMoveToInbox: boolean;
     shouldShowTabs: boolean;
     activeCategoriesTabs: CategoryTab[];
 }) => {
-    if (!canMoveToInbox) {
+    if (!canMoveToInbox || (shouldShowTabs && selectAll)) {
         return [];
     }
 
-    const inboxItem = {
-        ID: MAILBOX_LABEL_IDS.INBOX,
-        Name: c('Mailbox').t`Inbox`,
-        icon: 'inbox',
-    };
-
-    if (shouldShowTabs) {
-        return activeCategoriesTabs.length > 0
-            ? activeCategoriesTabs.map((category) => ({
-                  ID: category.id,
-                  Name: getLabelFromCategoryId(category.id),
-                  icon: category.filledIcon,
-                  folderIconProps: {
-                      className: categoryColorClassName,
-                      color: category.colorShade,
-                  },
-              }))
-            : [inboxItem];
+    if (shouldShowTabs && activeCategoriesTabs.length > 0) {
+        return activeCategoriesTabs.map((category) => ({
+            ID: category.id,
+            Name: getLabelFromCategoryId(category.id),
+            icon: category.filledIcon,
+            folderIconProps: {
+                className: categoryColorClassName,
+                color: category.colorShade,
+            },
+        }));
     }
 
-    return [inboxItem];
+    return [
+        {
+            ID: MAILBOX_LABEL_IDS.INBOX,
+            Name: c('Mailbox').t`Inbox`,
+            icon: 'inbox',
+        },
+    ];
 };
 
 export const toFolderItem = (label: LabelModel): FolderItem => ({
