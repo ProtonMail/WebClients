@@ -233,7 +233,11 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                     })
                 );
 
-                if (result.type !== 'success') throw new Error(result.error);
+                if (result.type !== 'success') {
+                    const message = result.error;
+                    // translator: Shown with error message on passkey registration failure
+                    throw new Error(c('Error').t`Registration failure: ${message}`);
+                }
 
                 const payload = await (async (): Promise<BridgeResponse<WorkerMessageType.PASSKEY_CREATE>> => {
                     if (!result.intercept) {
@@ -260,7 +264,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                 ? { ...base, ...selectedItem, type: AutosaveMode.UPDATE }
                                 : { ...base, shareId: shareId!, optimisticId, type: AutosaveMode.NEW },
                         }),
-                        (res) => res.type === 'error' && throwError({ message: res.error })
+                        (res) => res.type === 'error' && throwError({ message: c('Warning').t`Unable to save` })
                     );
 
                     return createBridgeResponse<WorkerMessageType.PASSKEY_CREATE>(
@@ -270,15 +274,12 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                 })();
 
                 controller.forwardMessage({ type: InlinePortMessageType.PASSKEY_RELAY, payload });
-
                 onTelemetry(TelemetryEventName.PasskeyCreated, {}, {});
                 controller.close();
             } catch (err) {
-                const message = getErrorMessage(err);
                 createNotification({
                     type: 'error',
-                    // translator: Shown with error message on passkey registration failure
-                    text: c('Error').t`Registration failure: ${message}`,
+                    text: getErrorMessage(err),
                 });
                 setLoading(false);
             }
