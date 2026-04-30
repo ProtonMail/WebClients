@@ -1,8 +1,10 @@
-import type { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3_1 } from 'openapi-types';
 
 type EnumDescription = Record<string, string> | undefined;
 
-const generateTSEnumBody = (value: string | number, schema: OpenAPIV3.SchemaObject) => {
+export const parseEnumValue = (val: any): string => (typeof val === 'string' ? `"${val}"` : String(val));
+
+const generateTSEnumBody = (value: string | number, schema: OpenAPIV3_1.SchemaObject) => {
     if (schema.type === 'integer') {
         if ('x-enumDescriptions' in schema) {
             const descriptions = schema?.['x-enumDescriptions'] as EnumDescription;
@@ -16,7 +18,7 @@ const generateTSEnumBody = (value: string | number, schema: OpenAPIV3.SchemaObje
     return `${value.toString().toUpperCase()} = "${value}"`;
 };
 
-export const generateTSEnum = (typeKey: string, schema: OpenAPIV3.SchemaObject): string => {
+export const generateTSEnum = (typeKey: string, schema: OpenAPIV3_1.SchemaObject): string => {
     if (schema.enum) {
         const enumBody = schema.enum.map((value: string | number) => generateTSEnumBody(value, schema));
         return `export enum ${typeKey} { ${enumBody.join(',')} };`;
