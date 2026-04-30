@@ -1465,6 +1465,9 @@
         "${ payload.count } uitnodiging succesvol verzonden",
         "${ payload.count } uitnodigingen succesvol verzonden"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
       ],
@@ -2178,9 +2181,6 @@
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
-      ],
       "Reconnect": [
         "Opnieuw verbinden"
       ],
@@ -2427,9 +2427,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw extra wachtwoord"
-      ],
-      "Unlock with biometrics": [
-        "Ontgrendel met biometrische gegevens"
       ],
       "Unpinning item...": [
         "Item losmaken..."
