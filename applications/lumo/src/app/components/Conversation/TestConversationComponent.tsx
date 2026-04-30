@@ -1,12 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
-
-import { clsx } from 'clsx';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
@@ -19,7 +18,6 @@ import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { RetryPanel } from '../RetryPanel';
-import { RightPanelSlot } from '../RightPanelSlot';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
@@ -120,22 +118,14 @@ export interface ConversationComponentProps {
     conversation?: Conversation;
     initialQuery?: string;
     prefillQuery?: string;
-    /**
-     * Renders the agent surface (used by the `/agent` chatbot route): strips the conversation
-     * down to its essentials (a compact header with just the agent name, no
-     * favorite/knowledge-files actions, and no survey or upsell cards). The message list and
-     * composer stay fully functional. Matches the `isAgent` prop on {@link ComposerComponent}.
-     */
-    isAgent?: boolean;
 }
 
-const ConversationComponent = ({
+const TestConversationComponent = ({
     conversation,
     isGenerating,
     isProcessingAttachment,
     initialQuery,
     prefillQuery,
-    isAgent = false,
 }: ConversationComponentProps) => {
     const {
         handleSendMessage,
@@ -279,74 +269,18 @@ const ConversationComponent = ({
 
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
-            <>
-                <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
-                    <div
-                        className={clsx(
-                            'outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden bg-norm rounded-xl',
-                            isAgent && 'lumo-agent-fullwidth'
-                        )}
-                    >
-                        {conversation && !isAgent && (
-                            <ConversationHeader
-                                conversation={conversation}
-                                messageChain={messageChain}
-                                onOpenFiles={handleOpenFiles}
-                            />
-                        )}
-                        <MessageChainComponent
-                            messageChainRef={messageChainRef}
+            <LumoLayoutWithDrawer
+                headerComponent={
+                    conversation && (
+                        <ConversationHeader
+                            conversation={conversation}
                             messageChain={messageChain}
-                            handleRegenerateMessage={handleRegenerateMessage}
-                            handleEditMessage={handleEditMessage}
-                            getSiblingInfo={getSiblingInfo}
-                            isGenerating={isGenerating}
-                            sourcesContainerRef={sourcesContainerRef}
-                            handleOpenSources={handleOpenSources}
-                            handleOpenFiles={handleOpenFiles}
-                            handleOpenFilePreview={handleOpenFilePreview}
-                            onRetryPanelToggle={handleRetryPanelToggle}
-                            composerContainerRef={composerContainerRef}
-                            className={isAgent ? 'pt-2 md:px-6' : undefined}
+                            onOpenFiles={handleOpenFiles}
                         />
-                        {/* TODO: update to show all conversations errors at some point */}
-                        {conversationErrors.length > 0 && (
-                            <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
-                        )}
-                        {!isAgent && tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
-                        {!isAgent && <ConversationSurvey isGenerating={isGenerating} />}
-                        <div
-                            ref={composerContainerRef}
-                            className={clsx(
-                                'lumo-chat-item flex flex-column no-print',
-                                isAgent ? 'w-full px-4 md:px-6' : 'w-full md:w-2/3 mx-auto max-w-custom'
-                            )}
-                            style={isAgent ? undefined : ({ '--max-w-custom': '51.25rem' } as React.CSSProperties)}
-                        >
-                            <ComposerComponent
-                                composerMode={ComposerMode.CONVERSATION}
-                                handleSendMessage={handleSendMessage}
-                                onAbort={handleAbort}
-                                isGenerating={isGenerating}
-                                isProcessingAttachment={isProcessingAttachment}
-                                inputContainerRef={inputContainerRef}
-                                messageChain={messageChain}
-                                handleOpenFiles={handleOpenFiles}
-                                onShowDriveBrowser={handleShowDriveBrowser}
-                                onOpenFilePreview={handleOpenFilePreview}
-                                initialQuery={initialQuery}
-                                prefillQuery={prefillQuery}
-                                spaceId={conversation?.spaceId}
-                                canShowGuestNotificationCard={!isAgent}
-                                isAgent={isAgent}
-                            />
-                        </div>
-                        <p className="text-center relative color-weak text-xs my-2 hidden md:block">
-                            {c('collider_2025: Disclosure')
-                                .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
-                        </p>
-                    </div>
-                    <RightPanelSlot>
+                    )
+                }
+                drawerContentComponent={
+                    <>
                         {openPanel.type === 'sources' && openPanel.message && (
                             <WebSearchSourcesView
                                 message={openPanel.message}
@@ -372,20 +306,82 @@ const ConversationComponent = ({
                                 onClose={() => setOpenPanel({ type: null })}
                             />
                         )}
-                    </RightPanelSlot>
-                </div>
+                    </>
+                }
+            >
+                <>
+                    <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
+                        <div className="outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden bg-norm rounded-xl">
+                            {/* {conversation && (
+                            <ConversationHeader
+                                conversation={conversation}
+                                messageChain={messageChain}
+                                onOpenFiles={handleOpenFiles}
+                            />
+                        )} */}
+                            <MessageChainComponent
+                                messageChainRef={messageChainRef}
+                                messageChain={messageChain}
+                                handleRegenerateMessage={handleRegenerateMessage}
+                                handleEditMessage={handleEditMessage}
+                                getSiblingInfo={getSiblingInfo}
+                                isGenerating={isGenerating}
+                                sourcesContainerRef={sourcesContainerRef}
+                                handleOpenSources={handleOpenSources}
+                                handleOpenFiles={handleOpenFiles}
+                                handleOpenFilePreview={handleOpenFilePreview}
+                                onRetryPanelToggle={handleRetryPanelToggle}
+                                composerContainerRef={composerContainerRef}
+                            />
+                            {/* TODO: update to show all conversations errors at some point */}
+                            {conversationErrors.length > 0 && (
+                                <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
+                            )}
+                            {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
+                            <ConversationSurvey isGenerating={isGenerating} />
+                            <div
+                                ref={composerContainerRef}
+                                className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
+                                style={{
+                                    '--max-w-custom': '51.25rem',
+                                }}
+                            >
+                                <ComposerComponent
+                                    composerMode={ComposerMode.CONVERSATION}
+                                    handleSendMessage={handleSendMessage}
+                                    onAbort={handleAbort}
+                                    isGenerating={isGenerating}
+                                    isProcessingAttachment={isProcessingAttachment}
+                                    inputContainerRef={inputContainerRef}
+                                    messageChain={messageChain}
+                                    handleOpenFiles={handleOpenFiles}
+                                    onShowDriveBrowser={handleShowDriveBrowser}
+                                    onOpenFilePreview={handleOpenFilePreview}
+                                    initialQuery={initialQuery}
+                                    prefillQuery={prefillQuery}
+                                    spaceId={conversation?.spaceId}
+                                    canShowGuestNotificationCard
+                                />
+                            </div>
+                            <p className="text-center relative color-weak text-xs my-2 hidden md:block">
+                                {c('collider_2025: Disclosure')
+                                    .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
+                            </p>
+                        </div>
+                    </div>
 
-                {/* Floating Retry Panel */}
-                {retryPanelState.show && retryPanelState.buttonRef && (
-                    <FloatingRetryPanel
-                        buttonRef={retryPanelState.buttonRef}
-                        onRetry={handleRetry}
-                        onClose={handleRetryPanelClose}
-                    />
-                )}
-            </>
+                    {/* Floating Retry Panel */}
+                    {retryPanelState.show && retryPanelState.buttonRef && (
+                        <FloatingRetryPanel
+                            buttonRef={retryPanelState.buttonRef}
+                            onRetry={handleRetry}
+                            onClose={handleRetryPanelClose}
+                        />
+                    )}
+                </>
+            </LumoLayoutWithDrawer>
         </HtmlPreviewContext.Provider>
     );
 };
 
-export default ConversationComponent;
+export default TestConversationComponent;
