@@ -10,9 +10,11 @@ export interface PersonalAccessToken {
     CreateTime: number;
     ModifyTime: number;
     TokenMask: number;
-    Token?: string;
+    Token: string;
     Flags?: PersonalAccessTokenFlags | null;
 }
+
+export type PersonalAccessTokenWithKey = { data: PersonalAccessToken; rawPatKey: Uint8Array<ArrayBuffer> };
 
 export interface CreatePersonalAccessTokenPayload {
     Name: string;
