@@ -5,7 +5,7 @@ import type { Action } from '@reduxjs/toolkit';
 import type { Store } from 'redux';
 
 import { ProtonStoreContext, baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
-import { ModelThunkDispatcher } from '@proton/redux-utilities';
+import { ModelThunkDispatcher } from '@proton/redux-utilities/hooks';
 
 import type { SharedStore } from './sharedStore';
 
