@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-
 // Custom hook for encrypted text animation
 const useEncryptedTextAnimation = (targetText: string, trigger: boolean, duration: number = 600) => {
     const [displayText, setDisplayText] = useState(targetText);
@@ -83,19 +81,29 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
     let targetText = '';
     if (isGhostMode) {
         targetText = c('collider_2025:Title').t`Ghost mode`;
-    } else if (isSmallScreen) {
-        targetText = c('collider_2025:Title').t`Hey, I'm ${LUMO_SHORT_APP_NAME}. Ask me anything. It's confidential.`;
-    } else if (isOnboardingCompleted) {
-        targetText = c('collider_2025:Title').t`Hello! How can I help you today?`;
-    } else {
-        targetText = c('collider_2025:Title').t`Hey, I'm ${LUMO_SHORT_APP_NAME}. Ask me anything. It's confidential.`;
+    }
+    // else if (isSmallScreen) {
+    //     targetText = c('collider_2025:Title').t`How can I help you?`;
+    // } else if (isOnboardingCompleted) {
+    //     targetText = c('collider_2025:Title').t`Hello! How can I help you today?`;
+    // }
+    else {
+        targetText = c('collider_2025:Title').t`How can I help you?`;
     }
 
     const { displayText } = useEncryptedTextAnimation(targetText, shouldAnimate, 600);
 
-    const textClassName = `main-text lh100 transition-all duration-50 ease-out  ${
-        isSmallScreen ? 'text-wrap-balance text-center mx-auto' : isOnboardingCompleted ? '' : 'text-wrap-balance'
-    }`;
+    const getResponsiveClasses = () => {
+        if (isSmallScreen) {
+            return 'text-wrap-balance text-center mx-auto';
+        }
+        if (isOnboardingCompleted) {
+            return '';
+        }
+        return 'text-wrap-balance';
+    };
+
+    const textClassName = `main-text lh100 transition-all duration-50 ease-out ${getResponsiveClasses()}`;
 
     if (isGhostMode) {
         return (

@@ -27,8 +27,8 @@ import { SidebarBottomUserArea } from './components/SidebarBottomUserArea';
 import { SidebarItem } from './components/SidebarItem';
 import { useNativeComposerAccountApi } from './hooks/useNativeComposerAccountApi';
 import { useSidebarVisibility } from './hooks/useSidebarVisibility';
-import { useTextVisibility } from './hooks/useTextVisibility';
 
+import '../sidebar/Sidebar.scss';
 import './LumoSidebar.scss';
 
 const ProjectsSidebarSection = lazy(() =>
@@ -36,14 +36,15 @@ const ProjectsSidebarSection = lazy(() =>
 );
 
 const LumoSidebarContent = () => {
-    const { isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick } = useSidebar();
+    const { isVisible, isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
     const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
-    const showText = useTextVisibility(isCollapsed);
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
     const [searchValue, setSearchValue] = useState('');
+
+    const showText = true; //TODO: remove after updating sidebar components
 
     const { apiKeyManagement } = useLumoFlags();
 
@@ -99,31 +100,20 @@ const LumoSidebarContent = () => {
                         <GallerySidebarButton showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 )}
-                <div className="sidebar-section">
-                    <Suspense fallback={null}>
-                        <ProjectsSidebarSection
-                            showText={showText}
-                            onItemClick={closeOnItemClick}
-                            isSmallScreen={isSmallScreen}
-                        />
-                    </Suspense>
-                </div>
-                <div className={clsx('sidebar-main-content', isCollapsed && 'flex-shrink')}>
+                    <div className="sidebar-section">
+                        <Suspense fallback={null}>
+                            <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                        </Suspense>
+                    </div>
+                <div className="sidebar-main-content">
+
                     <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
 
                     <ChatHistorySection searchValue={searchValue} showText={showText} />
                 </div>
 
-                {/* Used to expand the sidebar when the user clicks on the empty space */}
-                {isCollapsed && (
-                    <>
-                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                        <div className="flex-1" onClick={toggle}></div>
-                    </>
-                )}
-
                 <div className="sidebar-section sidebar-bottom">
-                    <LumoSidebarUpsell collapsed={isCollapsed} />
+                    <LumoSidebarUpsell />
 
                     {apiKeyManagement && (
                         <SidebarItem
@@ -155,23 +145,18 @@ const LumoSidebarContent = () => {
     );
 };
 
-const LumoSidebarHeader = ({ isCollapsed }: { isCollapsed: boolean }) => {
+const LumoSidebarHeader = () => {
     const isGuest = useIsGuest();
     return (
-        <div
-            className={clsx('flex flex-row flex-nowrap items-center justify-space-between hidden md:flex', {
-                'px-5 py-3': !isCollapsed,
-                'px-0 pt-2 pb-0': isCollapsed,
-            })}
-        >
-            {!isCollapsed && <LumoLogoHeader />}
+        <div className="flex flex-row flex-nowrap items-center justify-space-between hidden md:flex px-5 py-3">
+            <LumoLogoHeader />
             {!isGuest && <AppsDropdown />}
         </div>
     );
 };
 
 const LumoSidebar = () => {
-    const { isCollapsed, isOverlay, toggle } = useSidebar();
+    const { isVisible, isOverlay, toggle } = useSidebar();
 
     return (
         <>
@@ -179,12 +164,12 @@ const LumoSidebar = () => {
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
-                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none border-right border-top border-weak bg-norm',
-                    isCollapsed && 'sidebar--collapsed',
+                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none bg-norm rounded-xl',
+                    !isVisible && 'sidebar--hidden',
                     isOverlay && 'sidebar-expanded'
                 )}
             >
-                <LumoSidebarHeader isCollapsed={isCollapsed} />
+                <LumoSidebarHeader />
                 <LumoSidebarContent />
             </div>
         </>
