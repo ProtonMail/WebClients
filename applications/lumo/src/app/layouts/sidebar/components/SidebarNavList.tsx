@@ -39,7 +39,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                     onClick={onItemClick}
                 >
                     {leadingContent}
-                    <span className="text-ellipsis flex-1" title={label}>
+                    <span className="text-ellipsis flex-1 " title={label}>
                         {label}
                     </span>
                 </LumoLink>
