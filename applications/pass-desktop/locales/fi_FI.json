@@ -1478,6 +1478,9 @@
         "${ payload.count } kutsu lähetettiin",
         "${ payload.count } kutsua lähetettiin"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, miedän edistynein tilinsuojausohjelmamme"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
       ],
@@ -2153,9 +2156,6 @@
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
-      ],
       "Reconnect": [
         "Uudelleenyhdistä"
       ],
@@ -2396,9 +2396,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
-      ],
-      "Unlock with biometrics": [
-        "Avaa biometrialla"
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
