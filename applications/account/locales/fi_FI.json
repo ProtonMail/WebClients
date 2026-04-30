@@ -304,9 +304,6 @@
       "Connect Gmail address": [
         "Yhdistä Gmail-osoite"
       ],
-      "Connect to Gmail": [
-        "Yhdistä Gmailiin"
-      ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
       ],
@@ -9111,9 +9108,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Uudet saapuvat sähköpostit ohjataan automaattisesti Saapuneet-kansioon."
-      ],
       "Free forever": [
         "Pysyvästi ilmainen"
       ],
@@ -9641,9 +9635,6 @@
       ],
       "No folder selected": [
         "Kansiota ei valittu"
-      ],
-      "No forwarding history.": [
-        "Ei välityshistoriaa."
       ],
       "No gateways": [
         "Yhdyskäytäviä ei ole"
@@ -18389,6 +18380,12 @@
     "Setting": {
       "Enable Photos section": [
         "Ota Kuvat-osio käyttöön"
+      ],
+      "Get updates about comments via email": [
+        "Saat päivityksiä kommenteista sähköpostitse"
+      ],
+      "Include document name in email notifications": [
+        "Sisällytä dokumentin nimi sähköposti-ilmoituksiin"
       ]
     },
     "Settings description": {
@@ -21275,9 +21272,6 @@
       ],
       "Forward emails": [
         "Ohjaa viestit"
-      ],
-      "Forwardings": [
-        "Edelleenlähetykset"
       ],
       "Free": [
         "Free"

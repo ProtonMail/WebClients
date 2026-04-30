@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Conectar endereço do Gmail"
       ],
-      "Connect to Gmail": [
-        "Conectar ao Gmail"
-      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência.\n"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Conecte sua conta da ${ BRAND_NAME }."
+      ],
+      "Connect your email": [
+        "Conecte seu e-mail"
       ],
       "Connected": [
         "Conectado"
@@ -4985,9 +4985,6 @@
       ],
       "Available with ${ title }": [
         "Disponível com ${ title }"
-      ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Traga e-mails, eventos do calendário e contatos de outro provedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
@@ -10468,9 +10465,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
       ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "O encaminhamento envia automaticamente os novos e-mails recebidos para a sua Caixa de entrada."
-      ],
       "Free forever": [
         "Grátis para sempre"
       ],
@@ -11051,9 +11045,6 @@
       ],
       "No folder selected": [
         "Nenhuma pasta selecionada"
-      ],
-      "No forwarding history.": [
-        "Sem histórico de encaminhamento."
       ],
       "No gateways": [
         "Sem gateways"
@@ -20958,11 +20949,8 @@
       "Enable Photos section": [
         "Ativar a seção Fotos"
       ],
-      "Get updates about comments via email": [
-        "Receba atualizações sobre comentários por e-mail"
-      ],
       "Include document name in email notifications": [
-        "Incluir nome do documento em notificações por e-mail"
+        "Incluir o nome do documento nas notificações por e-mail"
       ]
     },
     "Settings description": {
@@ -23696,6 +23684,9 @@
       "Browser extensions": [
         "Extensões de navegador"
       ],
+      "Can you access your session in the browser?": [
+        "Você pode acessar sua sessão no navegador?"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -23806,6 +23797,9 @@
       ],
       "Connect your custom domain": [
         "Conecte seu domínio personalizado"
+      ],
+      "Connected emails": [
+        "E-mails conectados"
       ],
       "Connection status": [
         "Status da conexão"
@@ -24235,9 +24229,6 @@
       ],
       "Forward emails": [
         "Encaminhamento de e-mails"
-      ],
-      "Forwardings": [
-        "Encaminhamentos"
       ],
       "Free": [
         "Free"
@@ -25086,6 +25077,9 @@
       ],
       "Use backup recovery code": [
         "Usar código de recuperação de backup"
+      ],
+      "Use one account for all your addresses": [
+        "Use uma conta para todos seus endereços"
       ],
       "User": [
         "Usuário"

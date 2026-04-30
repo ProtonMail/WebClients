@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Connecteu l'adreça de Gmail"
       ],
-      "Connect to Gmail": [
-        "Connecteu-vos a Gmail"
-      ],
       "Connect to video conferencing": [
         "Connecta't a la videoconferència"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
+      "Connect your email": [
+        "Connecteu el vostre correu electrònic"
       ],
       "Connected": [
         "Connectat"
@@ -5018,8 +5018,8 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Bloquegeu la capacitat de Google per crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Porteu correus electrònics, esdeveniments del calendari i contactes d'un altre proveïdor."
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Importeu els vostres correus electrònics, els esdeveniments del calendari i els contactes des d'un altre proveïdor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bastiu confiança i reconeixement de marca amb adreces de correu electrònic professionals del vostre propi domini."
@@ -10143,6 +10143,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això activarà SAML per a tota l'organització."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Connecteu i gestioneu les vostres bústies de correu externes a ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Les dades de connexió estaran disponibles en aproximadament 1 hora."
       ],
@@ -10654,9 +10657,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "El reenviament envia automàticament els nous correus electrònics entrants a la vostra bústia d'entrada."
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -11264,14 +11264,14 @@
       "No card required": [
         "No cal targeta"
       ],
+      "No connected addresses.": [
+        "No hi ha cap adreça connectada."
+      ],
       "No countries enabled": [
         "No hi ha cap país habilitat"
       ],
       "No folder selected": [
         "No hi ha carpetes seleccionades"
-      ],
-      "No forwarding history.": [
-        "No hi ha cap historial de reenviaments."
       ],
       "No gateways": [
         "Sense passarel·les"
@@ -21202,7 +21202,7 @@
         "Habilitar la secció de fotos"
       ],
       "Get updates about comments via email": [
-        "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
+        "Rebeu actualitzacions sobre els comentaris per correu electrònic"
       ],
       "Include document name in email notifications": [
         "Incloeu el nom del document a les notificacions per correu electrònic"
@@ -24081,6 +24081,9 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
+      "Connected emails": [
+        "Correus electrònics connectats"
+      ],
       "Connection status": [
         "Estat de la connexió"
       ],
@@ -24512,9 +24515,6 @@
       ],
       "Forward emails": [
         "Reenviament de correus electrònics"
-      ],
-      "Forwardings": [
-        "Reenviaments"
       ],
       "Free": [
         "Gratuït"
