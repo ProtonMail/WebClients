@@ -3,14 +3,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
 import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { DismissedFeaturePill } from '../../components/DismissedFeaturePill';
 import { NewProjectModal, useProjects } from '../../features/projects';
 import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
-import { getProjectCategory } from '../../features/projects/constants';
 import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -104,17 +103,17 @@ export const ProjectsSidebarSection = ({ showText, onItemClick, isSmallScreen }:
                         {projects.length > 0 && (
                             <SidebarNavList
                                 items={projects.slice(0, 5).map((project) => {
-                                    const category = getProjectCategory(project.icon);
+                                    // const category = getProjectCategory(project.icon);
                                     return {
                                         id: project.id,
                                         to: `/projects/${project.id}`,
                                         label: project.name,
                                         isSelected: currentProjectId === project.id,
-                                        leadingContent: (
-                                            <div className="project-icon-small color-norm flex-shrink-0">
-                                                <Icon name={category.icon as any} size={4} className="color-white" />
-                                            </div>
-                                        ),
+                                        // leadingContent: (
+                                        //     <div className="project-icon-small color-norm flex-shrink-0">
+                                        //         <Icon name={category.icon as any} size={4} className="color-white" />
+                                        //     </div>
+                                        // ),
                                         trailingContent: <ProjectActionsDropdown project={project} />,
                                     };
                                 })}
