@@ -14,6 +14,7 @@ import getOptimizations from '@proton/pack/webpack/optimization';
 import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
 import { coreJsUint8ArrayFromBase64Rule, sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
 
+import { CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP, IGNORED_DYNAMIC_IMPORTS_CHUNKS } from './src/app/worker/chunks';
 import envVars from './tools/env';
 import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
 
@@ -45,10 +46,6 @@ if (!['chrome', 'firefox', 'safari'].includes(BUILD_TARGET)) {
 
 const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
 const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
-const ARGON2_CHUNK_NAMES = ['node_modules_openpgp_dist_lightweight_argon2id_min_mjs', 'vendor_argon2id_loader_ts'];
-const NACL_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_nacl-fast_min_mjs';
-const PQC_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_noble_post_quantum_min_mjs';
-const NOBLE_HASHES_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_noble_hashes_min_mjs';
 
 const section = (title: string, content: () => void) => {
     const width = process.stdout.columns || 80;
@@ -254,10 +251,15 @@ const config: Configuration = {
          * chromium builds (eg crypto lazy loaded modules) */
         chunkFilename: ({ chunk }) => {
             if (!chunk?.name) {
-                if (chunk?.id && ARGON2_CHUNK_NAMES.includes(chunk.id.toString())) return 'chunk.crypto-argon2.js';
-                if (chunk?.id && NACL_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-nacl.js';
-                if (chunk?.id && PQC_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-pqc.js';
-                if (chunk?.id && NOBLE_HASHES_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-noblehashes.js';
+                if (chunk?.id) {
+                    const maybeCryptoChunkName = CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP[chunk.id.toString()];
+                    if (maybeCryptoChunkName) return maybeCryptoChunkName;
+
+                    if (!IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
+                        // throw on all unhanled chunks
+                        throw new Error(`lazy loaded chunk needs manual handling: ${chunk?.id.toString()}`);
+                    }
+                }
                 return 'chunk.[contenthash:8].js';
             }
 
