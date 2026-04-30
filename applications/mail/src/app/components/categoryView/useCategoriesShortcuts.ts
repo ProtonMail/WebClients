@@ -6,10 +6,12 @@ import type { CommanderItemInterface } from '@proton/components/components/comma
 import type { Hotkey, HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
+import { setCategoryInUrl } from '../../helpers/mailboxUrl';
 import { categoryColorClassName } from './categoriesTabs/tabsInterface';
 import { useCategoriesView } from './useCategoriesView';
 
@@ -21,13 +23,17 @@ export const useCategoriesShortcuts = () => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
     };
 
+    const navigateToCategory = (categoryID: CategoryLabelID) => {
+        history.push(setCategoryInUrl(categoryID));
+    };
+
     const moveToCategoriesOption: CommanderItemInterface[] =
         categoryViewAccess && activeCategoriesTabs.length > 0
             ? activeCategoriesTabs.map((category) => ({
                   icon: category.outlinedIcon,
                   label: getLabelFromCategoryIdInCommander(category.id),
                   value: category.id,
-                  action: () => navigateTo(category.id),
+                  action: () => navigateToCategory(category.id),
                   shortcuts: getCategoryCommanderKeyboardShortcut(category.id),
                   iconProps: {
                       iconClassName: categoryColorClassName,
@@ -55,7 +61,7 @@ export const useCategoriesShortcuts = () => {
                           if (!isBusy(e)) {
                               e.stopPropagation();
                               e.preventDefault();
-                              navigateTo(tab.id);
+                              navigateToCategory(tab.id);
                           }
                       },
                   ];
