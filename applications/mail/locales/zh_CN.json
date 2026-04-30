@@ -1694,6 +1694,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Connect your email": [
+        "关联您的邮箱"
       ]
     },
     "action": {
@@ -4260,6 +4263,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "直接在 ${ MAIL_APP_NAME } 中收发 Gmail 邮件。请在 ${ addressesSettingsLink } 中关联您的邮箱地址。"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
       ]
     },
     "description": {
@@ -6677,7 +6686,7 @@
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
+        "退订此邮件列表的请求将发送给新闻通讯发送方并自动处理"
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "远程办公时，安全连接是必不可少的第一道防线。VPN 不仅能帮助企业数据抵御网络威胁，更能为您的日常工作构筑隐私屏障，让敏感信息始终处于加密保护之中。"
@@ -7145,7 +7154,7 @@
         "每个恢复码只能使用一次"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "轻松管理和取消订阅新闻通讯和邮件列表。"
+        "轻松管理和退订新闻通讯和邮件列表"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -7619,7 +7628,7 @@
         "新"
       ],
       "newsletter": [
-        "时事通讯"
+        "新闻通讯"
       ],
       "No action selected": [
         "未选择操作"
@@ -8306,7 +8315,7 @@
         "之所以向您显示此信息，是因为您的电子邮件主题行包含密码重置关键词。"
       ],
       "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
-        "这将从列表中移除该时事通讯。此操作不会取消您对时事通讯的订阅。若您收到新消息，时事通讯将重新显示。"
+        "这将从列表中移除该新闻通讯，但此操作不会退订该新闻通讯。如果您收到新邮件，时事通讯将重新显示。"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
@@ -8336,10 +8345,10 @@
         "您可以通过升级到付费套餐来移除这些限制。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "退订此邮件列表需要从 ${ boldFrom } 向列表发送者发送其指定的下列信息："
+        "若要退订此邮件列表，您需要从 ${ boldFrom } 发送邮件，具体内容由新闻通讯的发送方定义："
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "您需要跳转至以下网址，并根据邮件发送者的指引退订邮件："
+        "您需要跳转至以下链接，并根据新闻通讯发送方的指引退订邮件："
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
@@ -8567,7 +8576,7 @@
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
-        "订阅新闻通讯时，使用别名而不是您的真实邮箱地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
+        "订阅新闻通讯时，请使用别名而非您的邮箱地址。您的身份将保持隐藏，并且您可以随时禁用该别名。"
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "当您在旅行或使用公共WiFi时，请连接到${ VPN_APP_NAME }，以防止他人跟踪您的在线活动或窃取您的数据。这是免费的。"
@@ -9609,10 +9618,10 @@
         "新密码"
       ],
       "Newsletter entry deleted": [
-        "时事通讯已删除"
+        "新闻通讯已删除"
       ],
       "Newsletters": [
-        "时事通讯"
+        "新闻通讯"
       ],
       "No label found": [
         "未找到标签"
@@ -9999,13 +10008,13 @@
     },
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "您取消订阅的时事通讯或邮件列表将显示在此处。"
+        "您退订的新闻通讯或邮件列表将在此处显示"
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
-        "您没有任何活跃的时事通讯或邮件列表订阅。"
+        "您目前没有活跃的新闻通讯或邮件列表订阅"
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
-        "您没有任何时事通讯或邮件列表订阅。"
+        "您目前没有任何新闻通讯或邮件列表订阅"
       ]
     },
     "Landmarks": {
@@ -11782,6 +11791,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "将您日常使用的服务切换到 ${ BRAND_NAME } 地址，以获得更高的安全性和隐私保护。"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "将您的现有邮件导入 ${ MAIL_APP_NAME }，以便在一个专属收件箱中统一管理所有邮件。"
       ]
     },
     "Onboarding modal": {
@@ -12578,7 +12590,7 @@
         "主题"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "告诉写作助手写什么。列如：“在通讯中宣布即将举行的活动”"
+        "告诉写作助手要写什么，例如：“在新闻通讯中宣布即将举办的活动”"
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
         "告诉写作助手写什么。列如：“取消我的健身房会员资格”"
@@ -15196,10 +15208,10 @@
         "撰写邮件"
       ],
       "Newsletters": [
-        "时事通讯"
+        "新闻通讯"
       ],
       "Newsletters view": [
-        "时事通讯视图"
+        "新闻通讯视图"
       ],
       "Next": [
         "下一页"
@@ -15214,7 +15226,7 @@
         "夜间模式"
       ],
       "No active newsletters": [
-        "没有活跃的邮件列表"
+        "暂无活跃的新闻通讯"
       ],
       "No attachment found": [
         "未找到附件"
@@ -15226,13 +15238,13 @@
         "无需清空回收站"
       ],
       "No newsletters found": [
-        "未找到任何时事通讯"
+        "未找到新闻通讯"
       ],
       "No trackers found": [
         "未发现跟踪器"
       ],
       "No unsubscribed newsletters": [
-        "没有退订的邮件列表"
+        "未发现已退订的新闻通讯"
       ],
       "No-reply address detected": [
         "未找到回复地址"
@@ -15628,7 +15640,7 @@
         "您的免费试用已结束"
       ],
       "Your newsletters in one place": [
-        "您的订阅资讯，一处尽览"
+        "您的通讯，一处尽览"
       ],
       "Your plan": [
         "您的账户等级"
