@@ -508,14 +508,23 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * and backend-side extension). */
         checkLock: async (): Promise<Lock> => {
             const mode = authStore.getLockMode();
+            const ttl = authStore.getLockTTL();
+            const localID = authStore.getLocalID();
+
             if (mode === LockMode.NONE) return { mode: LockMode.NONE, locked: false };
 
             return (
                 (await authService.checkAutoLock()) ??
                 (async () => {
-                    const adapter = getLockAdapter(mode);
-                    const lock = await adapter.check();
-                    const localID = authStore.getLocalID();
+                    const lock = await getLockAdapter(mode)
+                        .check()
+                        .catch((err) => {
+                            /** On connectivity failures, `checkAutoLock` already passed meaning the
+                             * local TTL has not expired. Treat as non-locked to ensure `onLockUpdate`
+                             * still fires and resets the auto-lock auth alarm. */
+                            if (getIsConnectionIssue(err)) return { mode, ttl, locked: false };
+                            throw err;
+                        });
 
                     await config.onLockUpdate?.(lock, localID, false);
                     return lock;
