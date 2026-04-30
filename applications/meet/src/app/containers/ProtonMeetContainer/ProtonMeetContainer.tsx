@@ -79,6 +79,7 @@ import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
 import { checkIfUsingTurnRelay } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { getRandomParticipantName } from '../../utils/getRandomParticipantName';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 import { cleanupWasmDependencies, setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
@@ -129,11 +130,9 @@ export const ProtonMeetContainer = ({
 
     const { personalMeeting, meetingsListStatus } = useDependencySetup();
 
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const instantJoinParam = searchParams.get('instantJoin');
+    const location = useLocation<{ instantJoin?: boolean }>();
 
-    const [isInstantJoin, setIsInstantJoin] = useState(instantJoinParam === 'true');
+    const [isInstantJoin, setIsInstantJoin] = useState(location.state?.instantJoin === true);
 
     const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
     const [joiningLoaderHeader, setJoiningLoaderHeader] = useState<string | undefined>(undefined);
@@ -318,7 +317,9 @@ export const ProtonMeetContainer = ({
 
     const defaultDisplayName = useDefaultDisplayName();
 
-    const [displayName, setDisplayName] = useState(storedDisplayName || defaultDisplayName);
+    const [displayName, setDisplayName] = useState(
+        storedDisplayName || (isInstantJoin ? getRandomParticipantName() : defaultDisplayName)
+    );
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
