@@ -7,6 +7,8 @@ im.$media-expressions: $media-expressions;
 .collapsible-section-header {
 	font-size: rem(13);
 	transition: background-color 0.15s ease;
+	min-block-size: rem(40);
+	block-size: rem(40);
 
 	// &:hover {
 	// 	background-color: var(--background-weak);
