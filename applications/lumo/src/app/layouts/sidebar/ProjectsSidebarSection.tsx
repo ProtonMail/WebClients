@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, useModalStateObject } from '@proton/components';
 import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -15,7 +14,6 @@ import { getProjectCategory } from '../../features/projects/constants';
 import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
 import { SidebarItem } from './components/SidebarItem';
 import { SidebarNavList } from './components/SidebarNavList';
@@ -23,7 +21,6 @@ import { SidebarNavList } from './components/SidebarNavList';
 import './ProjectsSidebarSection.scss';
 
 interface ProjectsSidebarSectionProps {
-    showText: boolean;
     onItemClick?: () => void;
     isSmallScreen: boolean;
 }
@@ -35,7 +32,6 @@ export const ProjectsSidebarSection = ({ showText, onItemClick, isSmallScreen }:
 
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
-    const { isCollapsed, toggle } = useSidebar();
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
 
@@ -45,22 +41,10 @@ export const ProjectsSidebarSection = ({ showText, onItemClick, isSmallScreen }:
     }, [location.pathname]);
 
     const handleProjectsHeaderClick = () => {
-        if (isGuest) {
-            if (onItemClick) {
-                onItemClick();
-            }
-            history.push('/projects');
-            return;
+        if (onItemClick) {
+            onItemClick();
         }
-
-        if (isCollapsed) {
-            toggle();
-        } else {
-            if (onItemClick) {
-                onItemClick();
-            }
-            history.push('/projects');
-        }
+        history.push('/projects');
     };
 
     const handleProjectsClick = () => {
@@ -81,107 +65,78 @@ export const ProjectsSidebarSection = ({ showText, onItemClick, isSmallScreen }:
         newProjectModal.openModal(true);
     };
 
-    if (isGuest) {
-        return (
-            <div className="projects-sidebar-section">
-                {isCollapsed ? (
-                    <Tooltip title={c('collider_2025:Button').t`Projects`} originalPlacement="right">
-                        <button
-                            className="sidebar-item"
-                            onClick={handleProjectsHeaderClick}
-                            aria-label={c('collider_2025:Button').t`Projects`}
-                        >
-                            <div className="sidebar-item-icon">
-                                <IcFolderOpen size={4} className="rtl:mirror" />
-                            </div>
-                        </button>
-                    </Tooltip>
-                ) : (
-                    <Tooltip title={c('collider_2025:Button').t`Projects`} originalPlacement="right">
-                        <button
-                            className="sidebar-item projects-header-button"
-                            onClick={handleProjectsHeaderClick}
-                            aria-label={c('collider_2025:Button').t`Projects`}
-                        >
-                            <div className="sidebar-item-icon">
-                                <IcFolderOpen size={4} />
-                            </div>
-                            <span className="sidebar-item-text">
-                                {c('collider_2025:Button').t`Projects`}
-                                <DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />
-                            </span>
-                        </button>
-                    </Tooltip>
-                )}
-            </div>
-        );
-    }
-
-    if (isSmallScreen) {
-        return (
-            <SidebarItem
-                icon="folder-open"
-                label={c('collider_2025:Button').t`Projects`}
-                onClick={handleProjectsHeaderClick}
-                showText={true}
-            />
-        );
-    }
-
     return (
         <>
-            <CollapsibleSidebarSection
-                label={c('collider_2025:Button').t`Projects`}
-                icon={<IcFolderOpen size={4} className="rtl:mirror" />}
-                showText={showText}
-                onHeaderClick={handleProjectsHeaderClick}
-                labelExtra={<DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />}
-                actionButton={
+            {isGuest ? (
+                <div className="projects-sidebar-section">
                     <button
-                        className="projects-create-button"
-                        onClick={handleCreateProject}
-                        aria-label={c('collider_2025:Button').t`Create project`}
-                        title={c('collider_2025:Button').t`Create project`}
+                        className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5"
+                        onClick={handleProjectsHeaderClick}
+                        aria-label={c('collider_2025:Button').t`Projects`}
                     >
-                        <IcPlus size={3} />
+                        <div className="sidebar-item-icon flex items-center justify-center shrink-0 mr-1.5">
+                            <IcFolderOpen size={4} className="rtl:mirror" />
+                        </div>
+                        <span className="sidebar-item-text flex-1 flex items-center text-nowrap overflow-hidden gap-2">
+                            {c('collider_2025:Button').t`Projects`}
+                            <DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />
+                        </span>
                     </button>
-                }
-                className="projects-sidebar-section"
-            >
-                <div className="projects-list">
-                    {projects.length > 0 && (
-                        <SidebarNavList
-                            items={projects.slice(0, 5).map((project) => {
-                                const category = getProjectCategory(project.icon);
-                                return {
-                                    id: project.id,
-                                    to: `/projects/${project.id}`,
-                                    label: project.name,
-                                    isSelected: currentProjectId === project.id,
-                                    leadingContent: (
-                                        <div className="project-icon-small color-norm flex-shrink-0">
-                                            <Icon name={category.icon as any} size={4} className="color-white" />
-                                        </div>
-                                    ),
-                                    trailingContent: <ProjectActionsDropdown project={project} />,
-                                };
-                            })}
-                            onItemClick={onItemClick}
-                        />
-                    )}
-                    {projects.length > 5 && (
-                        <button
-                            className="project-sidebar-item-see-all flex items-center justify-center px-3 py-2 text-sm color-weak hover:color-norm transition-colors"
-                            onClick={handleProjectsClick}
-                        >
-                            {c('collider_2025:Button').t`See all`}
-                        </button>
-                    )}
-                    {projects.length === 0 && (
-                        <div className="px-3 py-2 text-sm color-weak">{c('collider_2025:Info').t`No projects yet`}</div>
-                    )}
                 </div>
-            </CollapsibleSidebarSection>
+            ) : (
+                <CollapsibleSidebarSection
+                    label={c('collider_2025:Button').t`Projects`}
+                    onHeaderClick={handleProjectsHeaderClick}
+                    labelExtra={<DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />}
+                    actionButton={
+                        <button
+                            className="projects-create-button"
+                            onClick={handleCreateProject}
+                            aria-label={c('collider_2025:Button').t`Create project`}
+                            title={c('collider_2025:Button').t`Create project`}
+                        >
+                            <IcPlus size={3} />
+                        </button>
+                    }
+                    className="projects-sidebar-section"
+                >
+                    <div className="projects-list">
+                        {projects.length > 0 && (
+                            <SidebarNavList
+                                items={projects.slice(0, 5).map((project) => {
+                                    const category = getProjectCategory(project.icon);
+                                    return {
+                                        id: project.id,
+                                        to: `/projects/${project.id}`,
+                                        label: project.name,
+                                        isSelected: currentProjectId === project.id,
+                                        leadingContent: (
+                                            <div className="project-icon-small color-norm flex-shrink-0">
+                                                <Icon name={category.icon as any} size={4} className="color-white" />
+                                            </div>
+                                        ),
+                                        trailingContent: <ProjectActionsDropdown project={project} />,
+                                    };
+                                })}
+                                onItemClick={onItemClick}
+                            />
+                        )}
+                        {projects.length > 5 && (
+                            <button
+                                className="project-sidebar-item-see-all flex items-center justify-center px-3 py-2 text-sm color-weak hover:color-norm transition-colors"
+                                onClick={handleProjectsClick}
+                            >
+                                {c('collider_2025:Button').t`See all`}
+                            </button>
+                        )}
+                        {projects.length === 0 && (
+                            <div className="px-3 py-2 text-sm color-weak">
+                                {c('collider_2025:Info').t`No projects yet`}
+                            </div>
+                        )}
+                    </div>
+                </CollapsibleSidebarSection>
+            )}
             {newProjectModal.render && <NewProjectModal {...newProjectModal.modalProps} />}
             {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </>

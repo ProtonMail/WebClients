@@ -6,6 +6,8 @@ im.$media-expressions: $media-expressions;
 
 // Main sidebar container - handles positioning and transitions
 .sidebar {
+	font-weight: 500;
+
 	// Smooth width transitions for desktop
 	transition:
 		inline-size 0.3s ease-in-out,
