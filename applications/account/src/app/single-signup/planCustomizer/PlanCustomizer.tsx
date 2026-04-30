@@ -152,6 +152,7 @@ const PlanCustomizer = ({
                         ADDON_NAMES.MEMBER_VPN_PRO,
                         ADDON_NAMES.MEMBER_VPN_BUSINESS,
                         ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS,
+                        ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
                     ].includes(addon.Name as ADDON_NAMES)
                 ) {
                     return (
