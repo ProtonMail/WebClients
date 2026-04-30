@@ -14,7 +14,7 @@ function normalizeParentheses(value: string): string {
  */
 export function splitOnDelimiters(text: string): any[] {
     const nodes: any[] = [];
-    const pattern = /\\\[([\s\S]*?)\\\]|\\\(([\s\S]*?)\\\)/g;
+    const pattern = /\\\[([\s\S]*?)\\\]|\\\(([\s\S]*?)\\\)|\$(?!\d)([^$\n]+)\$/g;
     let lastIndex = 0;
     let match;
 
@@ -24,9 +24,40 @@ export function splitOnDelimiters(text: string): any[] {
         }
 
         const isBlock = match[1] !== undefined;
-        const value = normalizeParentheses(isBlock ? match[1] : match[2]);
+        const isInlineDollar = match[3] !== undefined;
+        {
+            /* eslint-disable-next-line no-nested-ternary */
+        }
+        const raw = isBlock ? match[1] : isInlineDollar ? match[3] : match[2];
+        const value = normalizeParentheses(raw);
 
-        nodes.push({ type: isBlock ? 'math' : 'inlineMath', value });
+        if (isBlock) {
+            nodes.push({
+                type: 'math',
+                value,
+                data: {
+                    hName: 'pre',
+                    hChildren: [
+                        {
+                            type: 'element',
+                            tagName: 'code',
+                            properties: { className: ['language-math', 'math-display'] },
+                            children: [{ type: 'text', value }],
+                        },
+                    ],
+                },
+            });
+        } else {
+            nodes.push({
+                type: 'inlineMath',
+                value,
+                data: {
+                    hName: 'code',
+                    hProperties: { className: ['language-math', 'math-inline'] },
+                    hChildren: [{ type: 'text', value }],
+                },
+            });
+        }
 
         lastIndex = match.index + match[0].length;
     }
@@ -39,9 +70,9 @@ export function splitOnDelimiters(text: string): any[] {
 }
 
 /**
- * Remark plugin that converts \[...\] and \(...\) LaTeX delimiters into
- * remark-math AST nodes (math and inlineMath respectively), and normalizes
- * \Bigl/\Bigr to \left/\right inside math content.
+ * Remark plugin that converts \[...\], \(...\), and $...$ (non-digit-leading) LaTeX
+ * delimiters into remark-math AST nodes (math and inlineMath respectively), and
+ * normalizes \Bigl/\Bigr to \left/\right inside math content.
  *
  * Replaces the previous approach of regex-transforming the raw markdown string
  * before parsing. Operating on the AST means code blocks and inline code spans

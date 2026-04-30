@@ -8,35 +8,59 @@ const runPlugin = (tree: any) => {
     return tree;
 };
 
+const makeInlineMath = (value: string) => ({
+    type: 'inlineMath',
+    value,
+    data: {
+        hName: 'code',
+        hProperties: { className: ['language-math', 'math-inline'] },
+        hChildren: [{ type: 'text', value }],
+    },
+});
+
+const makeBlockMath = (value: string) => ({
+    type: 'math',
+    value,
+    data: {
+        hName: 'pre',
+        hChildren: [
+            {
+                type: 'element',
+                tagName: 'code',
+                properties: { className: ['language-math', 'math-display'] },
+                children: [{ type: 'text', value }],
+            },
+        ],
+    },
+});
+
 describe('splitOnDelimiters', () => {
     it('converts \\[...\\] to a block math node', () => {
-        expect(splitOnDelimiters('\\[x^2\\]')).toEqual([{ type: 'math', value: 'x^2' }]);
+        expect(splitOnDelimiters('\\[x^2\\]')).toEqual([makeBlockMath('x^2')]);
     });
 
     it('converts \\(...\\) to an inlineMath node', () => {
-        expect(splitOnDelimiters('\\(x^2\\)')).toEqual([{ type: 'inlineMath', value: 'x^2' }]);
+        expect(splitOnDelimiters('\\(x^2\\)')).toEqual([makeInlineMath('x^2')]);
     });
 
     it('preserves surrounding text when splitting', () => {
         expect(splitOnDelimiters('See \\(F = ma\\) here')).toEqual([
             { type: 'text', value: 'See ' },
-            { type: 'inlineMath', value: 'F = ma' },
+            makeInlineMath('F = ma'),
             { type: 'text', value: ' here' },
         ]);
     });
 
     it('handles multiple delimiters in one string', () => {
         expect(splitOnDelimiters('\\(a+b\\) and \\[c+d\\]')).toEqual([
-            { type: 'inlineMath', value: 'a+b' },
+            makeInlineMath('a+b'),
             { type: 'text', value: ' and ' },
-            { type: 'math', value: 'c+d' },
+            makeBlockMath('c+d'),
         ]);
     });
 
     it('normalizes \\Bigl and \\Bigr inside math content', () => {
-        expect(splitOnDelimiters('\\(\\Bigl( x \\Bigr)\\)')).toEqual([
-            { type: 'inlineMath', value: '\\left( x \\right)' },
-        ]);
+        expect(splitOnDelimiters('\\(\\Bigl( x \\Bigr)\\)')).toEqual([makeInlineMath('\\left( x \\right)')]);
     });
 
     it('returns a single text node when no delimiters are present', () => {
@@ -44,7 +68,24 @@ describe('splitOnDelimiters', () => {
     });
 
     it('handles multiline block math content', () => {
-        expect(splitOnDelimiters('\\[\n  x^2 + y^2\n\\]')).toEqual([{ type: 'math', value: '\n  x^2 + y^2\n' }]);
+        expect(splitOnDelimiters('\\[\n  x^2 + y^2\n\\]')).toEqual([makeBlockMath('\n  x^2 + y^2\n')]);
+    });
+
+    it('converts $...$ to an inlineMath node when content does not start with a digit', () => {
+        expect(splitOnDelimiters('$x^2$')).toEqual([makeInlineMath('x^2')]);
+    });
+
+    it('does not convert $...$ when content starts with a digit (currency)', () => {
+        expect(splitOnDelimiters('$500')).toEqual([{ type: 'text', value: '$500' }]);
+        expect(splitOnDelimiters('costs $30,000 total')).toEqual([{ type: 'text', value: 'costs $30,000 total' }]);
+    });
+
+    it('does not span $...$ across newlines', () => {
+        expect(splitOnDelimiters('$x\ny$')).toEqual([{ type: 'text', value: '$x\ny$' }]);
+    });
+
+    it('does not match two separate currency values as inline math', () => {
+        expect(splitOnDelimiters('between $5 and $10')).toEqual([{ type: 'text', value: 'between $5 and $10' }]);
     });
 });
 
@@ -52,13 +93,13 @@ describe('remarkLatexDelimiters', () => {
     it('converts \\(...\\) text node to inlineMath node in the AST', () => {
         const tree = makeTree([makeParagraph([makeText('\\(x^2\\)')])]);
         runPlugin(tree);
-        expect(tree.children[0].children).toEqual([{ type: 'inlineMath', value: 'x^2' }]);
+        expect(tree.children[0].children).toEqual([makeInlineMath('x^2')]);
     });
 
     it('converts \\[...\\] text node to math node in the AST', () => {
         const tree = makeTree([makeParagraph([makeText('\\[x^2\\]')])]);
         runPlugin(tree);
-        expect(tree.children[0].children).toEqual([{ type: 'math', value: 'x^2' }]);
+        expect(tree.children[0].children).toEqual([makeBlockMath('x^2')]);
     });
 
     it('splits a text node into text and math nodes', () => {
@@ -66,7 +107,7 @@ describe('remarkLatexDelimiters', () => {
         runPlugin(tree);
         expect(tree.children[0].children).toEqual([
             { type: 'text', value: 'See ' },
-            { type: 'inlineMath', value: 'F = ma' },
+            makeInlineMath('F = ma'),
             { type: 'text', value: ' here' },
         ]);
     });
