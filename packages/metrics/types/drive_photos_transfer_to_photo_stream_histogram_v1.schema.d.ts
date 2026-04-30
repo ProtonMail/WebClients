@@ -6,7 +6,7 @@
  */
 
 /**
- * Measures success rate of transfering photos with album parent to photo stream.
+ * Measures success rate of transferring photos with album parent to photo stream.
  */
 export interface HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson {
   Labels: {

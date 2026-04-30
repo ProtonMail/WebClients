@@ -326,7 +326,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
         }
 
         if (isScribeAddon(addon) && plan && organization && !dontTransferAddons.has('scribe')) {
-            // It's possible to calculate the number of scribe seats already transfered by lumo addons (implicitely)
+            // It's possible to calculate the number of scribe seats already transferred by lumo addons (implicitely)
             // only because we maintain strict priority of addons processing. Lumo is always processed before Scribe.
             // We need to do this calculation, because addons that grant Lumo seats also grant Scribe seats.
             const additionalScribeSeatsCoveredByLumo = !dontTransferAddons.has('lumo')

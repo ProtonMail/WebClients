@@ -370,7 +370,7 @@ export function useAccessiblePlans({
 
     const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
         // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
-        // It can cause any sort of problems at the moment: with addons transfering, with subscriptions,
+        // It can cause any sort of problems at the moment: with addons transferring, with subscriptions,
         // with organizations.
         if (isAnyManagedExternally(subscription)) {
             return [];

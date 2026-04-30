@@ -44,7 +44,7 @@ export function showLumoAddonCustomizer({
         // todo: isBF2025Offer check should be replaced by passing static CouponConfig object to
         // showLumoAddonCustomizer().
         ((!couponConfig?.hideLumoAddonBanner && !isBF2025Offer({ coupon: initialCoupon, planIDs, cycle })) ||
-            // if user already has lumo addon and it was transfered to the new selected plan then display the lumo addon
+            // if user already has lumo addon and it was transferred to the new selected plan then display the lumo addon
             // customizer
             userSelectedLumoAddon)
     );
