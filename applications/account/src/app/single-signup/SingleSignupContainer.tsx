@@ -28,6 +28,7 @@ import {
     type PlanIDs,
     SubscriptionMode,
     getHas2025OfferCoupon,
+    getIsB2BAudienceFromPlan,
     getIsVPNPassPromotion,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
@@ -199,6 +200,7 @@ const SingleSignupContainer = ({
             PLANS.VPN_PASS_BUNDLE,
             PLANS.VPN_BUSINESS,
             PLANS.VPN_PASS_BUNDLE_BUSINESS,
+            PLANS.BUNDLE_PRO_2024,
         ];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
             delete result.preSelectedPlan;
@@ -301,7 +303,7 @@ const SingleSignupContainer = ({
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
-    const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
+    const isB2bPlan = getIsVpnB2BPlan(selectedPlan.Name) || getIsB2BAudienceFromPlan(selectedPlan.Name);
     const background = (() => {
         if (isB2bPlan) {
             return 'dark';
