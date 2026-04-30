@@ -3,16 +3,14 @@ import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { SidebarUpsellButton } from '../primitives/SidebarUpsellButton';
 import useLumoPlusUpsellConfig from '../useLumoPlusUpsellButtonConfig';
 
-export const LumoSidebarUpsell = ({ collapsed = false, feature = LUMO_UPSELL_PATHS.SIDEBAR_BUTTON }) => {
-    // Fallback to regular Lumo Plus upsell config
+export const LumoSidebarUpsell = ({ feature = LUMO_UPSELL_PATHS.SIDEBAR_BUTTON }) => {
     const lumoPlusConfig = useLumoPlusUpsellConfig(feature);
-    // Fallback to regular Lumo Plus upsell
     if (!lumoPlusConfig || !lumoPlusConfig.showInSidebar) return null;
 
     return (
         <>
             <SidebarUpsellButton
-                collapsed={collapsed}
+                collapsed={false}
                 path={lumoPlusConfig.path}
                 onClick={lumoPlusConfig.onUpgrade}
                 className={lumoPlusConfig?.className}
