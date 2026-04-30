@@ -1,9 +1,9 @@
 import type {
     DecodedPatMonitorPayload,
     DecodedPatMonitorRecord,
-    PatMonitorRecord,
 } from '@proton/pass/lib/access-token/access-token.types';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import type { PatMonitorListEntryOutput } from '@proton/pass/types';
 import { uint8ArrayToB64URL } from '@proton/pass/utils/buffer/sanitization';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
@@ -15,8 +15,11 @@ export const PAT_PRODUCT = 'pass';
 export const buildAccessTokenEnvVar = (token: string, rawKey: Uint8Array<ArrayBuffer>): string =>
     `${token}::${uint8ArrayToB64URL(rawKey)}`;
 
+/** Decodes a single audit record of an agent action made via a PAT. `Action` is the
+ * server-defined `EventType` enum (numeric); `Payload` is a base64-encoded AES-GCM ciphertext
+ * (AAD = "proton.pass.payload") that decrypts to a serialized `ActionPayload` protobuf. */
 export const decodePatRecord = async (
-    record: PatMonitorRecord,
+    record: PatMonitorListEntryOutput,
     rawPatKey: Uint8Array<ArrayBuffer>
 ): Promise<DecodedPatMonitorRecord> => {
     const encodedPayload = record.Payload;
