@@ -23,7 +23,7 @@ import {
 } from '@proton/components'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import metrics from '@proton/metrics'
-import { ProtonStoreProvider } from '@proton/redux-shared-store'
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider'
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
