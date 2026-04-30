@@ -2,8 +2,6 @@ import { shallowEqual } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { IcStar } from '@proton/icons/icons/IcStar';
-
 import { useConversation } from '../../providers/ConversationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
@@ -12,7 +10,6 @@ import RecentChatsList from '../sidepanel/RecentChatsList';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
 
 interface FavoritesSidebarSectionProps {
-    showText: boolean;
     onItemClick?: () => void;
 }
 
@@ -26,12 +23,7 @@ export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSide
     }
 
     return (
-        <CollapsibleSidebarSection
-            label={c('collider_2025:Title').t`Favorites`}
-            icon={<IcStar size={4} />}
-            showText={showText}
-            className="favorites-sidebar-section"
-        >
+        <CollapsibleSidebarSection label={c('collider_2025:Title').t`Favorites`} className="favorites-sidebar-section">
             <div className="favorites-content ml-4">
                 <RecentChatsList
                     conversations={favorites}

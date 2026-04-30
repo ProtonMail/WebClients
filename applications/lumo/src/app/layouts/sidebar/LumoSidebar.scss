@@ -5,11 +5,8 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .lumo-sidebar {
-	display: flex;
-	flex-direction: column;
-	block-size: 100%;
-	padding: 12px;
-	gap: 8px;
+	padding: #{rem(12)};
+	gap: #{rem(8)};
 
 	ul {
 		span {
@@ -37,12 +34,13 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
-		gap: 0;
+		gap: #{rem(4)};
+		// gap: 0;
 	}
 
 	// Remove list styling from Lumo Plus button
 	li {
-		font-size: rem(13);
+		font-size: rem(14);
 		list-style: none !important;
 		margin-inline-start: 0 !important;
 		padding-inline-start: 0 !important;
@@ -58,12 +56,12 @@ im.$media-expressions: $media-expressions;
 		button {
 			@extend .sidebar-item;
 
-			border-radius: 8px !important;
-			block-size: 40px !important;
+			border-radius: #{rem(8)} !important;
+			block-size: #{rem(40)} !important;
 			display: flex !important;
 			align-items: center !important;
-			padding: 8px !important;
-			padding-inline: 6px !important;
+			padding: #{rem(8)} !important;
+			padding-inline: #{rem(6)} !important;
 
 			&:hover {
 				background-color: var(--interaction-default-hover) !important;
@@ -76,9 +74,6 @@ im.$media-expressions: $media-expressions;
 // Uses overflow: auto so that when expanded sections (projects/favorites) exceed
 // the available height on small screens, content scrolls rather than being clipped.
 .sidebar-main-content {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
 	min-block-size: 0;
 	overflow: hidden auto;
 	gap: 8px;
@@ -89,129 +84,11 @@ im.$media-expressions: $media-expressions;
 }
 
 .sidebar-section {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
+	inline-size: 100%;
 
 	&.sidebar-bottom {
 		flex-shrink: 0;
-		padding-block-start: 12px;
-	}
-}
-
-.search-container {
-	display: flex;
-	align-items: center;
-	inline-size: 100%;
-	block-size: 40px;
-	padding: 8px;
-	border-radius: 8px;
-	cursor: pointer;
-	padding-inline: 6px;
-	transition:
-		background-color 0.3s ease,
-		border 0.3s ease,
-		border-color 0.3s ease;
-	overflow: visible; // Allow shortcut to be visible
-
-	// Always maintain input field styling initially
-	background-color: var(--background-weak);
-	border: 1px solid var(--border-weak);
-
-	// Collapsed state - gradually fade background and border
-	&.collapsed {
-		// Delay the background fade to allow smooth transition
-		transition-delay: 0.1s;
-		background-color: transparent;
-		border-color: transparent;
-		cursor: pointer;
-
-		&:hover {
-			background-color: var(--background-weak);
-			border-color: transparent;
-			transition-delay: 0s; // Remove delay on hover for immediate feedback
-		}
-	}
-
-	// Expanded state - full input field styling
-	&:not(.collapsed) {
-		// background-color: var(--background-norm);
-		border-color: var(--border-weak);
-		cursor: text;
-		transition-delay: 0s; // No delay when expanding
-
-		&:focus-within {
-			border-color: var(--focus-outline);
-		}
-
-		&:hover {
-			border-color: var(--border-norm);
-		}
-	}
-
-	// Icon stays in fixed position
-	.sidebar-item-icon {
-		// Same positioning as other sidebar items
-		inline-size: 24px;
-		block-size: 24px;
-		margin-inline-end: 12px;
-		flex-shrink: 0;
-	}
-}
-
-.search-input-wrapper {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	opacity: 1;
-	transition: opacity 0.3s ease; // Smooth fade transition
-	min-inline-size: 0; // Allow flex item to shrink
-
-	&.hidden {
-		opacity: 0;
-		pointer-events: none;
-	}
-}
-
-.search-shortcut {
-	flex-shrink: 0;
-	margin-inline-start: auto;
-	opacity: 0.6;
-
-	.kbd {
-		font-size: 11px;
-		padding-block: 2px;
-		padding-inline: 4px;
-	}
-}
-
-.sidebar-search-input {
-	flex: 1;
-	min-inline-size: 0;
-	border: none;
-	margin-inline-start: -7px;
-	background: transparent;
-	outline: none;
-	font-size: 14px;
-	color: var(--text-norm);
-
-	&::placeholder {
-		color: var(--text-weak);
-		transition: opacity 0.6s ease; // Smooth transition for rotating text
-	}
-
-	&[readonly] {
-		pointer-events: none;
-	}
-
-	&:disabled {
-		color: var(--text-weak);
-		cursor: not-allowed;
-
-		&::placeholder {
-			color: var(--text-hint);
-		}
+		padding-block-start: #{rem(12)};
 	}
 }
 
@@ -240,87 +117,65 @@ im.$media-expressions: $media-expressions;
 
 // Chat history sidebar section - structured like projects
 .chat-history-sidebar-section {
-	display: flex;
-	flex-direction: column;
 	flex: 1;
 	min-block-size: 0;
-	overflow: hidden;
 }
 
 // Chat history content area - owns the scroll
 .chat-history-content {
-	flex: 1;
 	min-block-size: 0;
 	overflow: hidden auto;
 	animation: sidebar-fade-in 0.25s ease-in-out;
 }
 
+// Inner button for sidebar rows that have a separate right-side element (e.g. NewChatSidebarButton toggle)
+.sidebar-item-main-action {
+	background: none;
+	border: none;
+	color: inherit;
+	text-align: start;
+	min-inline-size: 0;
+}
+
 // Base sidebar item styling
 .sidebar-item {
-	display: flex;
-	align-items: center;
-	inline-size: 100%;
-	block-size: 40px;
-	padding: 8px;
+	block-size: #{rem(40)};
 	border: none;
 	background: transparent;
-	border-radius: 8px;
-	cursor: pointer;
+	border-radius: #{rem(8)};
 	text-decoration: none;
 	color: inherit;
-	font-size: 14px;
+	font-size: #{rem(14)};
 	transition: background-color 0.15s ease;
-	padding-inline: 6px;
 
 	&:hover {
 		background-color: var(--background-weak);
 	}
 
 	&:focus {
-		outline: 2px solid var(--focus-outline);
-		outline-offset: -2px;
+		outline: #{rem(2)} solid var(--focus-outline);
+		outline-offset: #{rem(-2)};
 	}
 }
 
 .sidebar-item-icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	inline-size: 24px;
-	block-size: 24px;
-	flex-shrink: 0;
-	margin-inline-end: 6px;
+	inline-size: #{rem(24)};
+	block-size: #{rem(24)};
 }
 
 .sidebar-item-text {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	text-align: start;
-	white-space: nowrap;
-	overflow: hidden;
-	opacity: 1;
-	transition: opacity 0.3s ease;
-	gap: 8px;
 	min-inline-size: 0;
-
-	&.hidden {
-		opacity: 0;
-		pointer-events: none;
-	}
 }
 
 .sidebar-item-shortcut {
-	flex-shrink: 0;
-	margin-inline-start: auto;
 	opacity: 0.6;
 	transition: opacity 0.15s ease;
 
 	.kbd {
-		font-size: 11px;
-		padding-block: 2px;
-		padding-inline: 4px;
+		font-size: #{rem(11)};
+		padding-block: #{rem(2)};
+		padding-inline: #{rem(4)};
 		display: inline-block;
 	}
 }
@@ -340,24 +195,15 @@ im.$media-expressions: $media-expressions;
 
 .sidebar button:hover,
 .sidebar .navigation-link:hover {
-	border-radius: 8px;
+	border-radius: #{rem(8)};
 }
-
-// .user-dropdown-button {
-
-// 	flex-direction: row-reverse;
-// 	.user-dropdown-email {
-// 		display: none;
-// 	}
-// }
 
 // overrides for UserDropdownButton.scss
 .user-dropdown-button {
-	padding: 4px;
+	padding: #{rem(4)};
 	flex-direction: row-reverse;
 
 	.user-dropdown-text {
-		// display: revert;
 		text-align: start;
 
 		@include im.media('>=small', '<=large') {
@@ -372,12 +218,12 @@ im.$media-expressions: $media-expressions;
 
 // Mobile sidebar header: bleeds to the edges of the padded container
 .lumo-sidebar-mobile-header {
-	margin-block: -16px 0;
-	margin-inline: -16px;
+	margin-block: #{rem(-16)} 0;
+	margin-inline: #{rem(-16)};
 }
 
 .lumo-sidebar-mobile-header-logo {
-	block-size: 40px;
+	block-size: #{rem(40)};
 }
 
 // Mobile-specific sidebar content styling
@@ -388,7 +234,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.lumo-sidebar {
-		padding: 16px;
+		padding: #{rem(16)};
 
 		// Ensure smooth mobile transitions
 		transition: transform 0.3s ease-in-out;
@@ -398,16 +244,14 @@ im.$media-expressions: $media-expressions;
 		position: relative;
 		z-index: 101; // Higher than sidebar container
 		pointer-events: auto;
-
-		// New chat and search sections are now conditionally rendered for mobile guests
 	}
 
 	.sidebar-bottom-user-dropdown {
-		padding-block: 8px;
-		padding-inline: 16px;
-		margin-block: 0 -16px;
-		margin-inline: -16px;
-		border-block-start: 1px solid var(--border-weak);
+		padding-block: #{rem(8)};
+		padding-inline: #{rem(16)};
+		margin-block: 0 #{rem(-16)};
+		margin-inline: #{rem(-16)};
+		border-block-start: #{rem(1)} solid var(--border-weak);
 
 		button {
 			border: none;
@@ -417,6 +261,8 @@ im.$media-expressions: $media-expressions;
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
 		block-size: 40px;
+		// block-size: #{rem(44)};
+
 	}
 }
 
