@@ -1,4 +1,4 @@
-import type { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3_1 } from 'openapi-types';
 
 import { anyTypeParser } from './any';
 import type { Content, Path, PathOperation } from './types';
@@ -51,29 +51,28 @@ const parseContentObject = (object?: Content): string | null => {
     }
 };
 
-const parsePaths = (doc: OpenAPIV3.Document): Path[] =>
-    Object.entries(doc.paths)
+const parsePaths = (doc: OpenAPIV3_1.Document): Path[] =>
+    Object.entries(doc.paths ?? {})
         .sort(([a], [b]) => compareRoutes(a, b))
         .map(([path, methods]) => ({
             path: path.replace(/({.*?}) */g, '${string}').replace(/^\//, ''),
-            operations:
-                methods ?
-                    Object.entries(methods)
-                        .map(([method, definition]): PathOperation | null => {
-                            if (typeof definition === 'object' && 'responses' in definition) {
-                                const responseType = parseContentObject(definition.responses['200']);
-                                const requestBodyType = parseContentObject(definition.requestBody);
-                                return {
-                                    method,
-                                    responseType,
-                                    requestBodyType,
-                                };
-                            }
+            operations: methods
+                ? Object.entries(methods)
+                      .map(([method, definition]): PathOperation | null => {
+                          if (typeof definition === 'object' && 'responses' in definition) {
+                              const responseType = parseContentObject(definition.responses['200']);
+                              const requestBodyType = parseContentObject(definition.requestBody);
+                              return {
+                                  method,
+                                  responseType,
+                                  requestBodyType,
+                              };
+                          }
 
-                            return null;
-                        })
-                        .filter((op): op is PathOperation => Boolean(op))
-                :   [],
+                          return null;
+                      })
+                      .filter((op): op is PathOperation => Boolean(op))
+                : [],
         }));
 
 const generatePathType = (typeKey: string, paths: Path[], key: keyof PathOperation): string =>
@@ -88,7 +87,7 @@ const generatePathType = (typeKey: string, paths: Path[], key: keyof PathOperati
         .filter(Boolean)
         .join(' : ')} : any;`;
 
-export const generatePaths = (doc: OpenAPIV3.Document): string[] => {
+export const generatePaths = (doc: OpenAPIV3_1.Document): string[] => {
     const paths = parsePaths(doc);
     const responses = generatePathType('ApiResponse', paths, 'responseType');
     const bodys = generatePathType('ApiRequestBody', paths, 'requestBodyType');
