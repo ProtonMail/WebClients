@@ -258,7 +258,7 @@ export enum MailFeatureFlag {
     MailStoreDebugMode = 'MailStoreDebugMode',
     MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
     // Refreshed toolbar UI flags
-    RefreshedFilterUI = 'RefreshedFilterUI',
+    RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
 }
 
 enum AdminFeatureFlag {
