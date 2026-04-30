@@ -3,8 +3,8 @@ import { type FC, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
-import { Badge } from '@proton/components/components/badge/Badge';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -74,11 +74,11 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
             <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
                     <strong className={clsx('text-ellipsis', isExpired && 'color-weak')}>{token.Name}</strong>
-                    <Badge type={statusBadge.type} className="m-0">
+                    <Badge type={statusBadge.type} className="m-0 text-sm">
                         {statusBadge.label}
                     </Badge>
                     {token.Flags?.PassAgent && (
-                        <Badge type="info" className="m-0">
+                        <Badge type="info" className="m-0 text-sm">
                             {c('pass_2026: Status').t`Agent`}
                         </Badge>
                     )}
