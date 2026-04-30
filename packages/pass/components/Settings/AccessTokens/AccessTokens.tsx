@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -53,14 +52,12 @@ const AccessTokensList: FC = () => {
         setAction(null);
     };
 
-    const newKeyButton = (
+    const createNewTokenBtn = (
         <Button
-            color="norm"
-            pill
+            color="weak"
             shape="solid"
-            size="small"
             onClick={() => setAction({ type: 'create' })}
-            className="flex items-center gap-1"
+            className="flex items-center gap-1 shrink-0"
         >
             <IcPlus size={3} />
             {c('pass_2026: Action').t`New token`}
@@ -68,29 +65,15 @@ const AccessTokensList: FC = () => {
     );
 
     const renderContent = () => {
-        if (list.loading) {
-            return (
-                <div className="flex justify-center py-6">
-                    <CircleLoader size="medium" />
-                </div>
-            );
-        }
-
-        if (tokens.length === 0) {
+        if (!list.loading && tokens.length === 0) {
             return (
                 <div className="flex flex-column items-center text-center py-6 gap-2">
-                    <div
-                        className="flex items-center justify-center rounded-full bg-weak"
-                        style={{ width: '3rem', height: '3rem' }}
-                    >
-                        <IcKey size={6} />
-                    </div>
                     <strong>{c('pass_2026: Title').t`No access tokens yet`}</strong>
                     <span className="color-weak text-sm">
                         {c('pass_2026: Info')
                             .t`Create a token to integrate ${PASS_APP_NAME} with your scripts and tools.`}
                     </span>
-                    <div className="mt-2">{newKeyButton}</div>
+                    <div className="mt-2">{createNewTokenBtn}</div>
                 </div>
             );
         }
@@ -106,31 +89,15 @@ const AccessTokensList: FC = () => {
                         onViewActions={(t) => setAction({ type: 'view-actions', token: t })}
                     />
                 ))}
+
+                {createNewTokenBtn}
             </div>
         );
     };
 
-    const passCliLink = (
-        <Href key="pass-cli-link" href="https://protonpass.github.io/pass-cli/">
-            pass-cli
-        </Href>
-    );
-
     return (
         <>
-            <SettingsPanel
-                title={c('pass_2026: Label').t`Access tokens`}
-                subTitle={
-                    <span className="block mt-2">
-                        {c('pass_2026: Info')
-                            .jt`Access tokens, used together with ${passCliLink}, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.`}
-                    </span>
-                }
-                actions={tokens.length > 0 && !list.loading ? [newKeyButton] : undefined}
-                contentClassname="flex flex-column flex-nowrap pt-6 pb-2"
-            >
-                {renderContent()}
-            </SettingsPanel>
+            {renderContent()}
 
             {action?.type === 'create' && (
                 <CreateTokenModal onClose={() => setAction(null)} onCreated={handleCreated} />
@@ -163,28 +130,42 @@ const AccessTokensList: FC = () => {
 };
 
 const AccessTokensUpgrade: FC = () => (
-    <SettingsPanel title={c('pass_2026: Label').t`Access tokens`}>
-        <div className="flex flex-column items-center text-center py-6 gap-3">
-            <div
-                className="flex items-center justify-center rounded-full bg-weak"
-                style={{ width: '3rem', height: '3rem' }}
-            >
-                <IcKey size={6} />
-            </div>
-            <strong>{c('pass_2026: Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
-            <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
-                {c('pass_2026: Info')
-                    .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`}
-            </span>
-            <UpgradeButton upsellRef={UpsellRef.SETTING} />
-        </div>
-    </SettingsPanel>
+    <div className="flex flex-column items-center text-center py-6 gap-3">
+        <strong>{c('pass_2026: Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
+        <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
+            {c('pass_2026: Info')
+                .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`}
+        </span>
+        <UpgradeButton upsellRef={UpsellRef.SETTING} />
+    </div>
 );
 
 export const AccessTokens: FC = () => {
     const passPlan = useSelector(selectPassPlan);
     const hasAccess = passPlan !== UserPassPlan.FREE;
 
-    if (!hasAccess) return <AccessTokensUpgrade />;
-    return <AccessTokensList />;
+    const passCliLink = (
+        <Href key="pass-cli-link" href="https://protonpass.github.io/pass-cli/">
+            pass-cli
+        </Href>
+    );
+
+    return (
+        <SettingsPanel
+            contentClassname="flex flex-column flex-nowrap pt-6 pb-2"
+            title={
+                <span className="flex items-center gap-1.5">
+                    <IcKey size={3.5} /> {c('pass_2026: Label').t`Access tokens`}
+                </span>
+            }
+            subTitle={
+                <span className="block mt-2">
+                    {c('pass_2026: Info')
+                        .jt`Access tokens, used together with ${passCliLink}, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.`}
+                </span>
+            }
+        >
+            {!hasAccess ? <AccessTokensUpgrade /> : <AccessTokensList />}
+        </SettingsPanel>
+    );
 };
