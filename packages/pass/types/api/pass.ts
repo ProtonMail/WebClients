@@ -1,6 +1,4 @@
-export enum ResponseCodeSuccess {
-    PROTONRESPONSECODE_1000 = 1000,
-}
+export type ResponseCodeSuccess = number;
 export type ProtonSuccess = { Code: ResponseCodeSuccess };
 export type ProtonError = {
     Code: number;
@@ -10,18 +8,67 @@ export type ProtonError = {
     Details: {};
 };
 export type DriveConstants = {
-    BlockMaxSizeInBytes?: '5300000';
-    ThumbnailMaxSizeInBytes?: '65536';
-    DraftRevisionLifetimeInSec?: '14400';
-    ExtendedAttributesMaxSizeInBytes?: '65535';
-    UploadTokenExpirationTimeInSec?: '10800';
-    DownloadTokenExpirationTimeInSec?: '1800';
+    BlockMaxSizeInBytes?: number;
+    ThumbnailMaxSizeInBytes?: number;
+    DraftRevisionLifetimeInSec?: number;
+    ExtendedAttributesMaxSizeInBytes?: number;
+    UploadTokenExpirationTimeInSec?: number;
+    DownloadTokenExpirationTimeInSec?: number;
+};
+export type Id = string;
+export type BinaryString = string;
+export type ItemKeyPairDto = {
+    /* Rotation value for this key */
+    KeyRotation: 1;
+    /* Encrypted item key encoded in base64 */
+    Key: BinaryString;
+};
+export type FolderItemMoveInputDto = {
+    /* Id of the item being moved into this folder */
+    ItemID: Id;
+    /* FolderKeys encrypted with the parent folder keys or vault keys if it is a top folder */
+    ItemKeys: ItemKeyPairDto[];
 };
 export type FolderItemsMoveInputDto = {
     /* FolderID to move the items into. Null to move to share root */
     FolderID?: Id | null;
     /* List of items to move to specified folder */
     Items: FolderItemMoveInputDto[];
+};
+export type ItemRevisionResponse = {
+    /* Item ID */
+    ItemID: string;
+    /* Latest item revision */
+    Revision: number;
+    /* Revision state. Values: 1 = Active, 2 = Trashed */
+    State: number;
+    /* Flags for this item */
+    Flags: number;
+    /* FolderID for this item */
+    FolderID?: Id | null;
+    /* Time of the last item modification */
+    ModifyTime: number;
+    /* Creation time of this revision */
+    RevisionTime: number;
+};
+export type FolderItemsMoveResponse = {
+    /* Items moved */
+    Items: ItemRevisionResponse[];
+    Code: 1000;
+};
+export type EncodedItemKeyRotation = {
+    /* Rotation for this key */
+    KeyRotation: number;
+    /* Base64 encoded key */
+    Key: string;
+};
+export type ItemMoveIndividualToShareRequest = {
+    /* Encrypted ID of the source item to move */
+    ItemID: string;
+    /* Encrypted ID of the destination folder, if null it will be moved to the top of the share */
+    DestinationFolderID?: string | null;
+    /* Item keys encrypted with the target vault key */
+    ItemKeys: EncodedItemKeyRotation[];
 };
 export type ItemMoveMultipleToShareRequest = {
     /* Encrypted ID of the destination share */
@@ -48,6 +95,12 @@ export type NewUserInviteCreateRequest = {
 export type NewUserInviteCreateBatchRequest = {
     /* New user invites */
     NewUserInvites: NewUserInviteCreateRequest[];
+};
+export type KeyRotationKeyPair = {
+    /* Key rotation */
+    KeyRotation: number;
+    /* Encrypted key encoded in base64 */
+    Key: string;
 };
 export type NewUserInvitePromoteRequest = {
     /* List of keys encrypted for the other user's address key and signed with your address key */
@@ -84,6 +137,7 @@ export type CustomAliasCreateRequest = {
     MailboxIDs: number[];
     /* Optionally, the alias name to be used for this alias */
     AliasName?: string | null;
+    /* Payload for the item creation */
     Item: ItemCreateRequest;
 };
 export type GetAliasDetailBulk = {
@@ -106,9 +160,16 @@ export type AliasUpdateNameRequest = {
     /* Desired name for the alias */
     Name?: string | null;
 };
+export type EncryptedId = string;
 export type EnableSLSyncRequest = {
     /* ShareID to store the alias when syncing */
     DefaultShareID?: EncryptedId | null;
+};
+export type CreatePendingAliasRequest = {
+    /* ID of the pending alias */
+    PendingAliasID: Id;
+    /* Items to be imported */
+    Item: ItemCreateRequest;
 };
 export type CreatePendingAliasesRequest = {
     /* Pending aliases to be created. At most 100 */
@@ -166,13 +227,36 @@ export type FolderCreateInputDto = {
     /* FolderID of the parent folder for this new folder. Use null for top folder. */
     ParentFolderID?: Id | null;
     /* Content format version for folder contents */
-    ContentFormatVersion: '1';
+    ContentFormatVersion: 1;
+    /* Content encrypted with the folder key */
     Content: BinaryString;
     /* Rotation value for this key */
-    KeyRotation: '1';
+    KeyRotation: 1;
+    /* Encrypted folder key encoded in base64 */
     FolderKey: BinaryString;
 };
-export type FolderGetResponse = { Folder: FolderDataResponse; Code: '1000' };
+export type FolderDataResponse = {
+    /* VaultID this folder belongs to */
+    VaultID: Id;
+    /* ID of this folder */
+    FolderID: Id;
+    /* FolderID of the parent folder for this folder */
+    ParentFolderID?: Id | null;
+    /* KeyRotation for this folder key */
+    KeyRotation: number;
+    /* FolderKey encrypted with the parent folder or share key if this is a top folder */
+    FolderKey: BinaryString;
+    /* ContentFormatVersion for the folder data */
+    ContentFormatVersion: number;
+    /* Folder contents like folder name encrypted with the folder key */
+    Content: BinaryString;
+};
+export type FolderGetResponse = {
+    /* Alias to create */
+    Folder: FolderDataResponse;
+    Code: 1000;
+};
+export type SincePagination = { Since?: number | null; PageSize: number };
 export type FolderListQueryRequest = {
     /* LastToken received on the previous request. To get the first page you can just not pass anything */
     Since?: Id | null;
@@ -180,14 +264,39 @@ export type FolderListQueryRequest = {
     PageSize?: number;
     SincePagination: SincePagination;
 };
-export type Id = string;
-export type SincePagination = { Since?: number | null; PageSize: number };
-export type FolderListResponse = { Folders: FolderListContentsResponse; Code: '1000' };
+export type FolderListContentsResponse = {
+    /* Folders listed */
+    Folders: FolderDataResponse[];
+    /* Total number of folders */
+    Total: number;
+    /* Token to pass for getting the next page. Null if there is none */
+    LastToken?: Id | null;
+    Code: 1000;
+};
+export type FolderListResponse = {
+    /* Folders accessible from this share */
+    Folders: FolderListContentsResponse;
+    Code: 1000;
+};
+export type FolderKeyPairDto = {
+    /* Rotation value for this key */
+    KeyRotation: 1;
+    /* Encrypted folder key encoded in base64 */
+    FolderKey: BinaryString;
+};
 export type FolderMoveInputDto = {
     /* Id of the parent folder under which this folder is moved to. Null if it will be a top folder */
     ParentFolderID?: Id | null;
     /* FolderKeys encrypted with the parent folder keys or vault keys if it is a top folder */
     FolderKeys: FolderKeyPairDto[];
+};
+export type FolderUpdateContentInputDto = {
+    /* Content format version for folder contents */
+    ContentFormatVersion: 1;
+    /* Content encrypted with the folder key */
+    Content: BinaryString;
+    /* Key rotation used to encrypt the content */
+    KeyRotation: 1;
 };
 export type FolderUpdateInputDto = {
     /* If the content has to be updated this should contain the new content. Otherwise, null */
@@ -197,16 +306,39 @@ export type FolderDeleteInputDto = {
     /* FolderIDs to be deleted */
     FolderIDs: Id[];
 };
-export type SuccessfulResponse = { Code: '1000' };
+export type SuccessfulResponse = { Code: 1000 };
 export type InviteAcceptRequest = {
     /* Invite keys encrypted and signed with the User Key */
     Keys: KeyRotationKeyPair[];
+};
+export type ImportItemRequest = {
+    /* Items to be imported */
+    Item: ItemCreateRequest;
+    /* Alias email in case this item is an alias item */
+    AliasEmail?: string | null;
+    /* Wether this item is the trash. Default value is false. */
+    Trashed?: boolean;
+    /* When was this item created. By default it will be now */
+    CreateTime?: number | null;
+    /* When was this item modified. By default it will be now */
+    ModifyTime?: number | null;
 };
 export type ImportItemBatchRequest = {
     /* Items to be imported. At most 100 */
     Items: ImportItemRequest[];
 };
-export type AliasAndItemCreateRequest = { Alias: CustomAliasCreateRequest; Item: ItemCreateRequest };
+export type AliasAndItemCreateRequest = {
+    /* Alias to create */
+    Alias: CustomAliasCreateRequest;
+    /* Item to create */
+    Item: ItemCreateRequest;
+};
+export type ItemIDRevision = {
+    /* ItemID */
+    ItemID: string;
+    /* Current revision for the item */
+    Revision: number;
+};
 export type ItemsToTrashRequest = {
     /* Pairs of item IDs with the latest revision. At most 100. */
     Items: ItemIDRevision[];
@@ -216,6 +348,11 @@ export type ItemsToSoftDeleteRequest = {
     Items: ItemIDRevision[];
     /* Skip checking that the items are in the trash. Allows to delete directly */
     SkipTrash?: boolean | null;
+};
+export type ItemMarkAsReadRequest = {
+    /* ItemID that has been read */
+    ItemID: EncryptedId;
+    Timestamp: number;
 };
 export type ItemMarkAsReadBatchRequest = {
     /* List of items and times read for this vault */
@@ -237,16 +374,20 @@ export type UpdateItemLastUseTimeRequest = {
 export type ItemUpdateFlagsRequest = {
     /* Whether to skip the security health checks. Null means leave it as it is now. */
     SkipHealthCheck?: boolean | null;
+    /* Whether to skip the weak password check. Null means leave it as it is now. */
+    SkipWeakPasswordCheck?: boolean | null;
+    /* Whether to skip the compromised password check. Null means leave it as it is now. */
+    SkipCompromisedPasswordCheck?: boolean | null;
+    /* Whether to skip the reused password check. Null means leave it as it is now. */
+    SkipReusedPasswordCheck?: boolean | null;
+    /* Whether to skip the 2FA check. Null means leave it as it is now. */
+    Skip2FACheck?: boolean | null;
 };
-export type ItemMoveSingleToShareRequest = {
-    /* Encrypted ID of the destination share */
-    ShareID: string;
-    /* Data to create the new item */
-    Item?: ItemCreateRequest | null;
-    /* Previous revisions of this item */
-    History?: ItemHistoryRequest[];
-    /* Item keys encrypted with the target vault key */
-    ItemKeys: EncodedItemKeyRotation[];
+export type LinkFileToItemFileData = {
+    /* PendingFile ID to link */
+    FileID: Id;
+    /* File key encrypted with the item key represented in Base64 */
+    FileKey: string;
 };
 export type LinkFileToItemInput = {
     /* Last itemRevision */
@@ -266,11 +407,31 @@ export type FileRestoreInput = {
     /* ItemKeyRotation used to encrypt the file key */
     ItemKeyRotation: number;
 };
+export type FileRestoreSingleInput = {
+    /* FileID to restore */
+    FileID: Id;
+    /* FileKey encrypted with the ItemKey, encoded in Base64 */
+    FileKey: string;
+};
 export type FileRestoreBatchInput = {
     /* Files to restore */
     FilesToRestore: FileRestoreSingleInput[];
     /* ItemKeyRotation used to encrypt the files keys */
     ItemKeyRotation: number;
+};
+export type EncodedKeyRotationItemKey = {
+    /* ItemID for this encrypted key */
+    ItemID: string;
+    /* Base64 encoded item key */
+    ItemKey: string;
+};
+export type EncodedKeyRotationShareKeyForAddress = {
+    /* ShareID for this key */
+    ShareID: string;
+    /* AddressID to which this key is encrypted */
+    AddressID: string;
+    /* Base64 encoded key encrypted for the address key of the user and signed with our address key */
+    EncryptedKeyForAddress: string;
 };
 export type KeyRotationRequest = {
     /* Current key rotation */
@@ -284,12 +445,51 @@ export type KeyRotationRequest = {
     /* Item key encrypted each share of type item */
     ItemKeysForShares: EncodedKeyRotationShareKeyForAddress[];
 };
+export type EncryptedKeyWithRotation = {
+    /* Key rotation */
+    KeyRotation: number;
+    /* Encrypted key encoded in base64 */
+    EncryptedKey: string;
+};
 export type PendingShareKeyPromoteRequest = {
     /* Pending share keys to promote */
     Keys: EncryptedKeyWithRotation[];
 };
 export type GetNotificationsQueryParams = { CountryCode?: string | null };
-export type ChangeNotificationStateRequest = { State: InAppNotificationState };
+export enum InAppNotificationState {
+    UNREAD = 0,
+    READ = 1,
+    DISMISSED = 2,
+}
+export type ChangeNotificationStateRequest = {
+    /* Notification state. 0 = Unread, 1 = Read, 2 = Dismissed */
+    State: InAppNotificationState;
+};
+export enum OrganizationShareMode {
+    UNRESTRICTED = 0,
+    ONLYSHAREINSIDEORG = 1,
+}
+export enum OrganizationItemShareMode {
+    DISABLED = 0,
+    ALLOWED = 1,
+}
+export enum OrganizationPublicLinkMode {
+    DISABLED = 0,
+    ALLOWED = 1,
+}
+export enum OrganizationExportMode {
+    UNRESTRICTED = 0,
+    ONLYADMINS = 1,
+}
+export enum OrganizationVaultCreateMode {
+    ALLOWED = 0,
+    ONLYORGADMINS = 1,
+    ONLYORGADMINSANDPERSONALVAULT = 2,
+}
+export enum OrganizationAliasCreateMode {
+    ALLOWEDFORALLMEMBERS = 0,
+    NOBODY = 1,
+}
 export type OrganizationUpdateInput = {
     /* Allowed ways to share within the organization. */
     ShareMode?: OrganizationShareMode | null;
@@ -305,7 +505,7 @@ export type OrganizationUpdateInput = {
     ExportMode?: OrganizationExportMode | null;
     /* Who can create vaults in the organization. */
     VaultCreateMode?: OrganizationVaultCreateMode | null;
-    /* Whether alias creation is enabled for organization members. */
+    /* If it is allowed to create aliases in the organization. */
     AliasCreateMode?: OrganizationAliasCreateMode | null;
 };
 export type OrganizationUpdatePasswordPolicyInput = {
@@ -342,11 +542,6 @@ export type UserMonitorReportInput = {
     /* Number of weak passwords */
     WeakPasswords: number;
 };
-export type OrganizationUrlPauseEntryCreateRequest = {
-    /* Url of the entry */
-    Url: string;
-    Values: OrganizationUrlPauseEntryValues;
-};
 export type OrganizationUrlPauseEntryValues = {
     /* Whether Autofill is enabled or not */
     AutofillEnabled: boolean;
@@ -358,6 +553,170 @@ export type OrganizationUrlPauseEntryValues = {
     AutosaveEnabled: boolean;
     /* Whether Passkeys are enabled or not */
     PasskeysEnabled: boolean;
+};
+export type OrganizationUrlPauseEntryCreateRequest = {
+    /* Url of the entry */
+    Url: string;
+    /* Which properties are enabled for the entry */
+    Values: OrganizationUrlPauseEntryValues;
+};
+export enum EventType {
+    ITEM_CREATE = 20,
+    ITEM_UPDATE = 21,
+    ITEM_READ = 31,
+    ITEM_TRASH = 22,
+    ITEM_UNTRASH = 23,
+    ITEM_SOFT_DELETE = 24,
+    VAULT_UPDATE = 2,
+}
+export type PatMonitorStoreActionRequestEntry = {
+    /* VaultId of the action */
+    VaultID: Id;
+    /* ID of the object. For item actions this is the ItemID */
+    ObjectID?: Id | null;
+    /* Type of action performed */
+    Action: EventType;
+    /* Payload to store for this action. This has to be a protobuf encrypted with the pat key */
+    Payload: BinaryString;
+};
+export type PatMonitorStoreActionRequest = {
+    /* Records to store */
+    Records: PatMonitorStoreActionRequestEntry[];
+};
+export enum EventType2 {
+    UNKNOWN = 0,
+    VAULT_CREATE = 1,
+    VAULT_UPDATE = 2,
+    VAULT_SOFT_DELETE = 3,
+    VAULT_OWNERSHIP_TRANSFER = 4,
+    VAULT_RESTORE = 5,
+    ITEM_CREATE = 20,
+    ITEM_UPDATE = 21,
+    ITEM_TRASH = 22,
+    ITEM_UNTRASH = 23,
+    ITEM_SOFT_DELETE = 24,
+    ITEM_UPDATE_LAST_USE = 25,
+    ITEM_PIN = 26,
+    ITEM_UNPIN = 27,
+    ITEM_UPDATE_FLAGS = 28,
+    ITEM_OLD_REVISIONS_REMOVED = 29,
+    KEY_ROTATION = 30,
+    ITEM_READ = 31,
+    INVITE_CREATED = 40,
+    INVITE_ACCEPTED = 41,
+    INVITE_REJECT = 42,
+    INVITE_DELETE = 43,
+    INVITE_NEW_USER_CREATED = 44,
+    INVITE_NEW_USER_ADDRESS_CREATED = 45,
+    INVITE_NEW_USER_DELETED = 46,
+    USER_ACTIVATE = 50,
+    USER_APP_ONBOARDED = 51,
+    PUBLIC_LINK_CREATED = 60,
+    PUBLIC_LINK_DELETED = 61,
+    PENDING_FILE_CREATED = 71,
+    PENDING_FILE_CHUNK_CREATED = 72,
+    PENDING_FILE_REMOVED = 73,
+    FILE_ADDED_TO_ITEM = 74,
+    FILE_REMOVED_FROM_ITEM = 75,
+    FILE_SOFT_DELETED = 76,
+    FILE_METADATA_UPDATED = 77,
+    FILE_RESTORED = 78,
+    GROUP_INVITE_CREATED = 80,
+    GROUP_INVITE_ACCEPTED = 81,
+    GROUP_INVITE_REJECT = 82,
+    GROUP_INVITE_DELETE = 83,
+    SHARE_CREATE = 100,
+    SHARE_UPDATE = 101,
+    SHARE_SOFT_DELETE = 102,
+    GROUP_SHARE_SOFT_DELETE = 103,
+    USER_REFRESH = 120,
+    ALIAS_NOTE_CHANGE = 121,
+    ITEM_RESTORE = 122,
+    FOLDER_CREATE = 130,
+    FOLDER_MOVE = 131,
+    FOLDER_UPDATE = 132,
+    ITEM_FOLDER_MOVE = 133,
+    FOLDER_SOFT_DELETED = 134,
+    PENDING_ALIAS_CREATED = 150,
+    BREACH_ADDRESS_CHANGE = 151,
+    BREACH_CUSTOM_EMAIL_CHANGE = 152,
+    ORGANIZATION_DATA_UPDATED = 153,
+    PERSONAL_ACCESS_TOKEN_ACCESS_GRANTED = 160,
+    FULL_SYNC = 9999,
+}
+export type PatMonitorListEntryOutput = {
+    /* RecordID */
+    PatMonitorRecordID: Id;
+    /* VaultID for this record */
+    VaultID: Id;
+    /* If not null, objectID that was used in this action. Type of object depends on the action */
+    ObjectID?: Id | null;
+    /* Action done */
+    Action: EventType2;
+    /* Payload for this action if any */
+    Payload?: BinaryString | null;
+    /* when the action was done */
+    ActionTime: number;
+};
+export type PatMonitorListOutput = {
+    /* Records of actions stored */
+    Records: PatMonitorListEntryOutput[];
+    /* Next since value to get the next page. If null there is no next page */
+    NextSince?: Id | null;
+};
+export type PatMonitorListResponse = {
+    /* Actions made by this PAT */
+    Actions: PatMonitorListOutput;
+    Code: 1000;
+};
+export type GrantAccessRequest = {
+    /* Share ID of the user granting access */
+    ShareID: Id;
+    /* Target ID (for item, optional for vault) */
+    TargetID?: Id | null;
+    /* Target type (1=vault, 2=item) */
+    TargetType: 1 | 2;
+    /* Share role ID */
+    ShareRoleID: string;
+    /* Encrypted keys for the share */
+    Keys: KeyRotationKeyPair[];
+};
+export type GrantAccessResponse = {
+    /* Share ID */
+    ShareID: Id;
+};
+export type AccessGrantResponse = { Access: GrantAccessResponse; Code: 1000 };
+export type SincePaginationQueryRequest = {
+    /* LastToken received on the previous request. To get the first page you can just not pass anything */
+    Since?: Id | null;
+    /* Amount of items to return per page. Default value is 100 */
+    PageSize?: number;
+    SincePagination: SincePagination;
+};
+export type PersonalAccessTokenShareResponse = {
+    /* Share ID */
+    ShareID: Id;
+    /* Vault ID */
+    VaultID: Id;
+    /* Target ID */
+    TargetID: Id;
+    /* Target type (1=vault, 2=item) */
+    TargetType: number;
+    /* Share role ID */
+    ShareRoleID: string;
+    /* Expiration time as Unix timestamp */
+    ExpireTime?: number | null;
+    /* Creation time as Unix timestamp */
+    CreateTime: number;
+    /* Parent share ID */
+    ParentShareID: Id;
+};
+export type AccessesResponse = {
+    /* List of shares */
+    Shares: PersonalAccessTokenShareResponse[];
+    /* Token to pass for getting the next page. Null if there is none */
+    LastToken?: Id | null;
+    Code: 1000;
 };
 export type PublicLinkCreateRequest = {
     /* Last revision of the item */
@@ -447,9 +806,18 @@ export type UpdateUserMonitorStateRequest = {
     /* Enable or disable monitor for aliases. Null leaves the value as is */
     Aliases?: boolean | null;
 };
-export type AddSRPRequest = { SrpModulusID: Id; SrpVerifier: BinaryString; SrpSalt: BinaryString };
+export type AddSRPRequest = {
+    /* SRP Parameter ID */
+    SrpModulusID: Id;
+    /* Base64 encoded SRP verifier */
+    SrpVerifier: BinaryString;
+    /* Base64 encoded SRP salt */
+    SrpSalt: BinaryString;
+};
 export type SRPAuthRequest = {
+    /* Base64 encoded SRP client ephemeral */
     ClientEphemeral: BinaryString;
+    /* Base64 encoded SRP client proof */
     ClientProof: BinaryString;
     /* SRP session ID */
     SrpSessionID: string;
@@ -482,9 +850,74 @@ export type VaultUpdateRequest = {
 };
 export type VaultTransferOwnershipRequest = {
     /* ShareID to move the ownership to. It has to have manager privileges */
-    NewOwnerShareID: string;
+    NewOwnerShareID: Id;
+};
+export type ItemRevisionContentsResponse = {
+    ItemID: string;
+    Revision: number;
+    ContentFormatVersion: number;
+    /* Flags for this item. Possible values:
+<ul>
+    <li>SkipHealthCheck: 1<<0 = 1</li>
+    <li>EmailBreached: 1<<1 = 2</li>
+    <li>AliasDisabled: 1<<2 = 4</li>
+    <li>ItemHasFiles: 1<<3 = 8</li>
+    <li>ItemHasHadFiles: 1<<4 = 16</li>
+    <li>SkipWeakPasswordCheck: 1<<5 = 32</li>
+    <li>SkipCompromisedPasswordCheck: 1<<6 = 64</li>
+    <li>SkipReusedPasswordCheck: 1<<7 = 128</li>
+    <li>Skip2FACheck: 1<<8 = 256</li>
+</ul> */
+    Flags: number;
+    KeyRotation: number;
+    /* Base64 encoded item contents */
+    Content: string;
+    /* Base64 encoded item key. Only for vault shares. */
+    ItemKey?: string | null;
+    /* Revision state. Values: 1 = Active, 2 = Trashed */
+    State: number;
+    /* Whether this item is pinned for this user */
+    Pinned: boolean;
+    /* If the item is pinned, when it was pinned */
+    PinTime?: number | null;
+    /* Number of shares this item has */
+    ShareCount: number;
+    /* Parent FolderID if this item is in a folder */
+    FolderID?: string | null;
+    /* In case this item contains an alias, this is the email address for the alias */
+    AliasEmail?: string | null;
+    /* Whether this alias belongs to this user and thus can be managed. */
+    AliasOwner?: boolean;
+    /* Creation time of the item */
+    CreateTime: number;
+    /* Time of the latest modification of the item */
+    ModifyTime: number;
+    /* Time when the item was last used */
+    LastUseTime: number;
+    /* Creation time of this revision */
+    RevisionTime: number;
 };
 export type ItemMoveMultipleResponse = { Items: ItemRevisionContentsResponse[] };
+export type AliasContactWithStatsGetResponse = {
+    /* ID for this contact */
+    ID: number;
+    /* Contact name */
+    Name?: string | null;
+    /* Whether this contact can send emails to this alias or not */
+    Blocked: boolean;
+    /* Email to which the user has to send an email so the contact receives it as coming from the alias */
+    ReverseAlias: string;
+    /* Real email of the contact */
+    Email: string;
+    /* When the contact was created */
+    CreateTime: number;
+    /* How many emails the user sent through this contact in the last 14 days */
+    RepliedEmails: number;
+    /* How many emails the user received through this contact in the last 14 days */
+    ForwardedEmails: number;
+    /* How many emails were blocked to this contact in the last 14 days */
+    BlockedEmails: number;
+};
 export type AliasContactListResponse = {
     /* Contact list for this alias */
     Contacts: AliasContactWithStatsGetResponse[];
@@ -507,25 +940,23 @@ export type AliasContactGetResponse = {
     /* When the contact was created */
     CreateTime: number;
 };
-export type AliasContactWithStatsGetResponse = {
-    /* ID for this contact */
+export type AliasSuffixResponse = {
+    /* Alias ending including the domain */
+    Suffix: string;
+    /* Signed suffix to ensure users cannot generate their own */
+    SignedSuffix: string;
+    /* Whether this is a user domain or a public SL domain */
+    IsCustom: boolean;
+    /* Whether this is a premium domain or a free SL domain */
+    IsPremium: boolean;
+    /* Domain that this suffix uses */
+    Domain: string;
+};
+export type AliasMailboxResponse = {
+    /* ID of the mailbox in SimpleLogin */
     ID: number;
-    /* Contact name */
-    Name?: string | null;
-    /* Whether this contact can send emails to this alias or not */
-    Blocked: boolean;
-    /* Email to which the user has to send an email so the contact receives it as coming from the alias */
-    ReverseAlias: string;
-    /* Real email of the contact */
+    /* Email of the mailbox */
     Email: string;
-    /* When the contact was created */
-    CreateTime: number;
-    /* How many emails the user sent through this contact in the last 14 days */
-    RepliedEmails: number;
-    /* How many emails the user received through this contact in the last 14 days */
-    ForwardedEmails: number;
-    /* How many emails were blocked to this contact in the last 14 days */
-    BlockedEmails: number;
 };
 export type AliasOptionsResponse = {
     /* List of possible suffixes when creating a new alias. Only valid for 10 minutes */
@@ -535,45 +966,13 @@ export type AliasOptionsResponse = {
     /* Whether the user can create new alias */
     CanCreateAlias: boolean;
 };
-export type ItemRevisionContentsResponse = {
-    ItemID: string;
-    Revision: number;
-    ContentFormatVersion: number;
-    /* Flags for this item. Possible values:
-<ul>
-    <li>SkipHealthCheck: 1<<0 = 1</li>
-    <li>EmailBreached: 1<<1 = 2</li>
-</ul> */
-    Flags: number;
-    KeyRotation: number;
-    /* Base64 encoded item contents */
-    Content: string;
-    /* Base64 encoded item key. Only for vault shares. */
-    ItemKey?: string | null;
-    /* Revision state. Values: 1 = Active, 2 = Trashed */
-    State: number;
-    /* Whether this item is pinned for this user */
-    Pinned: boolean;
-    /* If the item is pinned, when it was pinned */
-    PinTime?: number | null;
-    /* Number of shares this item has */
-    ShareCount: number;
-    /* Parent FolderID if this item is in a folder */
-    FolderID?: string | null;
-    /* In case this item contains an alias, this is the email address for the alias */
-    AliasEmail?: string | null;
-    /* Creation time of the item */
-    CreateTime: number;
-    /* Time of the latest modification of the item */
-    ModifyTime: number;
-    /* Time when the item was last used */
-    LastUseTime: number;
-    /* Creation time of this revision */
-    RevisionTime: number;
-};
-export type AliasDetailsBulkResponse = {
-    /* List of alias details for the given items. */
-    Aliases: AliasDetailsResponse[];
+export type AliasStatsResponse = {
+    /* Count of emails forwarded through this alias in the last 14 days */
+    ForwardedEmails: number;
+    /* Count of emails replied to in the last 14 days */
+    RepliedEmails: number;
+    /* Count of emails blocked in the last 14 days */
+    BlockedEmails: number;
 };
 export type AliasDetailsResponse = {
     /* Alias email */
@@ -590,9 +989,114 @@ export type AliasDetailsResponse = {
     Name?: string | null;
     /* Display name that the recipients will see when receiving an email from this alias */
     DisplayName: string;
+    /* Emails sent and received for this alias in the last 14 days */
     Stats: AliasStatsResponse;
     /* How many contacts does the alias have */
     ContactCount: number;
+};
+export type AliasDetailsBulkResponse = {
+    /* List of alias details for the given items. */
+    Aliases: AliasDetailsResponse[];
+};
+export enum BreachAlertState {
+    UNREAD = 1,
+    READ = 2,
+    RESOLVED = 3,
+}
+export type BreachString = {
+    /* Original value, keyword, token, ... */
+    Code: string;
+    /* Localized name or description of the value */
+    Name: string;
+    /* The leaked value */
+    Values?: string[];
+};
+export type BreachCountry = {
+    /* ISO 3166 alpha 2 country code */
+    Code: string;
+    /* Localized country name */
+    Name: string;
+    /* Emoji flag of the country */
+    FlagEmoji: string;
+};
+export type BreachSource = {
+    /* Whether the breach is aggregated data from multiple sources or data from a single source */
+    IsAggregated: boolean;
+    /* Domain name (DNS) of the source of the breach, if known */
+    Domain?: string | null;
+    /* Breach category, if known; values are dynamic and can change over time */
+    Category?: BreachString | null;
+    /* Country to which source of the breach is associated, if known */
+    Country?: BreachCountry | null;
+};
+export type BreachAction = {
+    /* Unique identifier of the action. Possible values are: <ul><li>stay_alert: No special action required</li><li>password_exposed: Plaintext password leaked. User needs to change the password</li><li>password_source: hashed password exposed. User would better change the password</li><li>passwords_all: all hashed passwords leaked for a site. Recommendation for a paranoid person would be to change all passwords everywhere</li><li>2fa: Recommended to enable 2fa</li><li>aliases: Use an alias instead of your email address</li></ul> */
+    Code: string;
+    /* Translated name of the action to take */
+    Name: string;
+    /* Further information about how to take the action */
+    Desc: string;
+    /* List of URLs used to build clickable links in the description. */
+    Urls?: string[];
+};
+export type BreachCombo = {
+    /* Unique id */
+    ID: string;
+    /* The website for user info */
+    Domain: string;
+    /* Username used in the website */
+    Username: string;
+    /* Password used in the webiste, last 3 chars in plain-text */
+    PasswordLastChars: string;
+};
+export type Breach = {
+    /* Unique (globally) identifier of the breach & email pair; if 1 user has multiple email addresses in the same breach, each entry will have different ID */
+    ID: Id;
+    /* User's email formatted exactly how it appeared in the breach */
+    Email: string;
+    /* Breach alert resolved state.<ul><li>1 unread</li><li>2 read</li><li>3 resolved</li></ul> */
+    ResolvedState: BreachAlertState;
+    /* Severity of the breach expressed as a number on a scale 0.0 -> 1.0; this way we can easily add new severities in the future; for now, interpret in a following way: low: 0.00 <= severity < 0.33, medium: 0.33 <= severity < 0.67, high: 0.67 <= severity <= 1.00 */
+    Severity: number;
+    /* Translated breach name */
+    Name: string;
+    /* Date & time when we imported this breach, ISO 8601 */
+    CreatedAt: string;
+    /* Date & time when the breach probably happened, ISO 8601 */
+    PublishedAt: string;
+    /* Information about source of the breach */
+    Source: BreachSource;
+    /* Number of records exposed in the breach, rounded; we recommend to display this number in a user-friendly way, using user's locale (i.e. 120M in english) */
+    Size?: number | null;
+    /* List of data (fields) exposed in the breach */
+    ExposedData: BreachString[];
+    /* Few last characters of the exposed password, if it was plaintext */
+    PasswordLastChars?: string | null;
+    /* Recommended actions to take */
+    Actions: BreachAction[];
+    /* Leaked combos of domain, username and password (infostealer only) */
+    BreachedCombos: BreachCombo[];
+};
+export enum BreachAlertState2 {
+    UNREAD = 1,
+    READ = 2,
+    RESOLVED = 3,
+}
+export type BreachSample = {
+    /* Unique (globally) identifier of the breach & email pair; if 1 user has multiple email addresses in the same breach, each entry will have different ID */
+    ID: Id;
+    /* User's email formatted exactly how it appeared in the breach */
+    Email: string;
+    /* Breach alert resolved state. */
+    ResolvedState: BreachAlertState2;
+    /* Severity of the breach expressed as a number on a scale 0.0 -> 1.0; this way we can easily add new severities in the future; for now, interpret in a following way: low: 0.00 <= severity < 0.33, medium: 0.33 <= severity < 0.67, high: 0.67 <= severity <= 1.00 */
+    Severity: number;
+    /* Translated breach name */
+    Name: string;
+    /* Date & time when we imported this breach, ISO 8601 */
+    CreatedAt: string;
+    /* Information about source of the breach */
+    Source: BreachSource;
 };
 export type BreachesResponse = {
     /* Whether user is eligible to see the full breaches, or just sees a sample; paid users will get full "breaches", free users will only see few "samples" of breaches */
@@ -607,6 +1111,14 @@ export type SlSyncStatusOutput = {
     Enabled: boolean;
     /* How many aliases are pending to be synced */
     PendingAliasCount: number;
+};
+export type SlPendingAliasResponse = {
+    /* ID of the PendingAlias */
+    PendingAliasID: string;
+    /* Email of the PendingAlias */
+    AliasEmail: string;
+    /* Note of the PendingAlias */
+    AliasNote: string;
 };
 export type SlPendingAliasesResponse = {
     /* Aliases to be synced */
@@ -623,21 +1135,23 @@ export type ItemRevisionListResponse = {
     /* Token to pass for getting the next page. Null if there is none */
     LastToken: string | null;
 };
-export type BreachesGetResponse = {
-    /* Count of addresses and custom emails that have breaches. This does not include aliases */
-    EmailsCount: number;
-    /* List of some domains that have breaches as a sneak peek for free users */
-    DomainsPeek: BreachDomainPeekResponse[];
-    /* List of addresses that have a breach */
-    Addresses: BreachAddressGetResponse[];
-    /* List of custom emails that have a breach */
-    CustomEmails: BreachCustomEmailGetResponse[];
-    /* Whether the user has custom domains or not */
-    HasCustomDomains: boolean;
+export type BreachDomainPeekResponse = {
+    /* Domain that has a breach */
+    Domain: string;
+    /* Time when we were aware of this breach */
+    BreachTime: number;
 };
-export type BreachCustomEmailListResponse = {
-    /* List of custom emails */
-    CustomEmails: BreachCustomEmailGetResponse[];
+export type BreachAddressGetResponse = {
+    /* Id of the address that has a breach */
+    AddressID: string;
+    /* Email of the address */
+    Email: string;
+    /* Flags for this address:<ul><li>1 << 0 (1): Disabled monitoring</li></ul> */
+    Flags: number;
+    /* Number of breaches this custom email appears in */
+    BreachCounter: number;
+    /* Last breach time if there has been a breach */
+    LastBreachTime?: number | null;
 };
 export type BreachCustomEmailGetResponse = {
     /* Id of the email monitor */
@@ -653,13 +1167,21 @@ export type BreachCustomEmailGetResponse = {
     /* Last breach time if any */
     LastBreachTime?: number | null;
 };
-export type CustomDomainsListOutput = {
-    /* List of domains the user has access to */
-    Domains: CustomDomainOutput[];
-    /* ID of the last domain (null if no domains) */
-    LastID?: number | null;
-    /* How many domains are in total */
-    Total: number;
+export type BreachesGetResponse = {
+    /* Count of addresses and custom emails that have breaches. This does not include aliases */
+    EmailsCount: number;
+    /* List of some domains that have breaches as a sneak peek for free users */
+    DomainsPeek: BreachDomainPeekResponse[];
+    /* List of addresses that have a breach */
+    Addresses: BreachAddressGetResponse[];
+    /* List of custom emails that have a breach */
+    CustomEmails: BreachCustomEmailGetResponse[];
+    /* Whether the user has custom domains or not */
+    HasCustomDomains: boolean;
+};
+export type BreachCustomEmailListResponse = {
+    /* List of custom emails */
+    CustomEmails: BreachCustomEmailGetResponse[];
 };
 export type CustomDomainOutput = {
     /* ID for the created domain */
@@ -683,6 +1205,14 @@ export type CustomDomainOutput = {
     /* Creation time of the domain (unix timestamp) */
     CreateTime: number;
 };
+export type CustomDomainsListOutput = {
+    /* List of domains the user has access to */
+    Domains: CustomDomainOutput[];
+    /* ID of the last domain (null if no domains) */
+    LastID?: number | null;
+    /* How many domains are in total */
+    Total: number;
+};
 export type CustomDomainValidationOutput = {
     /* Whether the domain ownership has been verified */
     OwnershipVerified: boolean;
@@ -705,6 +1235,12 @@ export type CustomDomainValidationOutput = {
     /* List of domain verification errors */
     VerificationErrors: string[];
 };
+export type CustomDomainMailboxOutput = {
+    /* ID of the mailbox */
+    ID: number;
+    /* Email address of the mailbox */
+    Email: string;
+};
 export type CustomDomainSettingsOutput = {
     /* ID of the custom domain */
     ID: number;
@@ -717,15 +1253,53 @@ export type CustomDomainSettingsOutput = {
     /* Indicates if random prefix generation is enabled */
     RandomPrefixGeneration: boolean;
 };
-export type CreatePendingFileOutput = { FileID: Id };
-export type FolderGetResponseDto = {
-    VaultID: Id;
-    FolderID: Id;
-    ParentFolderID?: Id | null;
-    KeyRotation: number;
-    FolderKey: BinaryString;
+export type CreatePendingFileOutput = {
+    /* FileID that will be used to add chunks to it */
+    FileID: Id;
+};
+export type InviteVaultDataForUser = {
+    /* Base64 encoded content of the share. Only shown if it a vault share */
+    Content: string;
+    /* Key rotation that should be used to open the content */
+    ContentKeyRotation: number;
+    /* Content format version */
     ContentFormatVersion: number;
-    Content: BinaryString;
+    /* Number of members that have access to this vault */
+    MemberCount: number;
+    /* Number of items in this vault */
+    ItemCount: number;
+};
+export type GroupInviteListItemResponse = {
+    /* ID of the GroupInvite */
+    InviteID: Id;
+    /* UserID of the inviter user */
+    InviterUserID: Id;
+    /* Email address of the inviter user */
+    InviterEmail: string;
+    /* ID of the invited group */
+    InvitedGroupID: Id;
+    /* Email address of the invited group */
+    InvitedEmail: string;
+    /* Type of target for this invite */
+    TargetType: number;
+    /* Id of the target for this invite */
+    TargetID: Id;
+    /* Number of reminders sent */
+    RemindersSent: number;
+    /* InviteToken */
+    InviteToken: string;
+    /* ID of the invited group address */
+    InvitedAddressID: Id;
+    /* Share keys encrypted for the address key of the invited group and signed with the address keys of the inviter */
+    Keys: KeyRotationKeyPair[];
+    /* Vault data for this invite. This will only appear if the invite is for a vault. */
+    VaultData: InviteVaultDataForUser;
+    /* Base64 encrypted invite data */
+    Data?: string | null;
+    /* If true, this user is owner of the group invited, otherwise the user is an org admin. */
+    IsGroupOwner: boolean;
+    /* Creation time for the invite */
+    CreateTime: number;
 };
 export type GroupInvitesListResponse = {
     /* UserInvites */
@@ -734,6 +1308,32 @@ export type GroupInvitesListResponse = {
     Total: number;
     /* LastID of the list. Used for pagination */
     LastID?: Id | null;
+};
+export type InviteDataForUser = {
+    /* InviteToken */
+    InviteToken: string;
+    /* Number of reminders sent */
+    RemindersSent: number;
+    /* Type of target for this invite */
+    TargetType: number;
+    /* TargetID for this invite */
+    TargetID: string;
+    /* Email of the inviter */
+    InviterEmail: string;
+    /* Invited email */
+    InvitedEmail: string;
+    /* Invited AddressID */
+    InvitedAddressID: string;
+    /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
+    Keys: KeyRotationKeyPair[];
+    /* Vault data for this invite. This will only appear if the invite is for a vault. */
+    VaultData?: InviteVaultDataForUser | null;
+    /* Base64 encrypted invite data */
+    Data?: string | null;
+    /* True if the invite comes from a NewUserInvite */
+    FromNewUser: boolean;
+    /* Creation time for the invite */
+    CreateTime: number;
 };
 export type InvitesGetResponse = {
     /* UserInvites */
@@ -783,7 +1383,12 @@ export type ShareGetResponse = {
     /* Share flags. Currently:<br><ul><li>1 -> hidden share</li></ul> */
     Flags: number;
 };
-export type AliasAndItemResponse = { Alias: ItemRevisionContentsResponse; Item: ItemRevisionContentsResponse };
+export type AliasAndItemResponse = {
+    /* Created alias */
+    Alias: ItemRevisionContentsResponse;
+    /* Created item */
+    Item: ItemRevisionContentsResponse;
+};
 export type ItemTrashResponse = { Items: ItemRevisionResponse[] };
 export type ItemLatestKeyResponse = {
     /* Key rotation */
@@ -797,15 +1402,16 @@ export type ItemGetKeysResponse = {
     /* Total number of keys */
     Total: number;
 };
-export type ItemFilesOutput = {
-    /* Files linked to the item */
-    Files: ItemFileOutput[];
-    /* Total number of files linked to the item */
-    Total: number;
-    /* LastID parameter to use for pagination */
-    LastID?: Id | null;
+export type ItemFileChunkOutput = {
+    /* Chunk ID. Needed to download the contents */
+    ChunkID: Id;
+    /* Chunk index. Used to restore the file chunks in order */
+    Index: number;
+    /* Chunk size in bytes */
+    Size: number;
 };
 export type ItemFileOutput = {
+    /* Encrypted ID of the file */
     FileID: Id;
     /* Size of the file in bytes (sum of the chunk sizes) */
     Size: number;
@@ -830,17 +1436,25 @@ export type ItemFileOutput = {
     /* Timestamp of when the file was last modified */
     ModifyTime: number;
 };
-export type ItemFileRestoreResponse = { Item: ItemRevisionContentsResponse; File: ItemFileOutput };
+export type ItemFilesOutput = {
+    /* Files linked to the item */
+    Files: ItemFileOutput[];
+    /* Total number of files linked to the item */
+    Total: number;
+    /* LastID parameter to use for pagination */
+    LastID?: Id | null;
+};
+export type ItemFileRestoreResponse = {
+    /* Updated item output */
+    Item: ItemRevisionContentsResponse;
+    /* New file created after restoring it */
+    File: ItemFileOutput;
+};
 export type ItemFileRestoreBatchResponse = {
+    /* Updated item output */
     Item: ItemRevisionContentsResponse;
     /* New files created after restoring them */
     Files: ItemFileOutput[];
-};
-export type ShareKeysResponse = {
-    /* Keys */
-    Keys: ShareKeyResponse[];
-    /* Total number of keys */
-    Total: number;
 };
 export type ShareKeyResponse = {
     /* Rotation for this key */
@@ -852,9 +1466,96 @@ export type ShareKeyResponse = {
     /* When was this key created */
     CreateTime: number;
 };
+export type ShareKeysResponse = {
+    /* Keys */
+    Keys: ShareKeyResponse[];
+    /* Total number of keys */
+    Total: number;
+};
+export type PendingShareKeyGetResponse = {
+    /* Pending share key ID */
+    PendingShareKeyID: string;
+    /* AddressID for this pending share key */
+    AddressID: string;
+    /* AddressID that did the key rotation. Should be signing this key. */
+    RotatorAddressID: string;
+    /* Key rotation for this pending share key */
+    KeyRotation: number;
+    /* Base64 encoded encrypted shake key for this address */
+    EncryptedKey: string;
+};
 export type PendingShareKeysListResponse = {
     /* Pending share keys */
     Pending: PendingShareKeyGetResponse[];
+};
+export enum InAppNotificationDisplayType {
+    BANNER = 0,
+    MODAL = 1,
+    PROMO = 2,
+}
+export enum InAppNotificationCtaType {
+    INTERNAL_NAVIGATION = 'internal_navigation',
+    EXTERNAL_LINK = 'external_link',
+}
+export type InAppNotificationCta = {
+    /* Text of the CTA */
+    Text: string;
+    /* Action of the CTA */
+    Type: InAppNotificationCtaType;
+    /* Destination of the CTA. If type=external_link, it's a URL. If type=internal_navigation, it's a deeplink */
+    Ref: string;
+};
+export type InAppNotificationPromoThemedContents = {
+    /* Background image url */
+    BackgroundImageUrl: string;
+    /* Content image url */
+    ContentImageUrl: string;
+    /* Color of the close promo text */
+    ClosePromoTextColor: string;
+};
+export type InAppNotificationPromoContents = {
+    /* Whether the promo should start minimized. True means the image should be minimized from the start. False means that the promo should initially be displayed and the user can minimize. */
+    StartMinimized: boolean;
+    /* Text to show on the close promo link */
+    ClosePromoText: string;
+    /* Text to show when the promo is minimized. Only relevant for web. */
+    MinimizedPromoText: string;
+    /* Contents to display for if the client is in light theme */
+    LightThemeContents: InAppNotificationPromoThemedContents;
+    /* Contents to display for if the client is in dark theme */
+    DarkThemeContents: InAppNotificationPromoThemedContents;
+};
+export type InAppNotificationContent = {
+    /* Optional URL of the image to be shown */
+    ImageUrl?: string | null;
+    /* DisplayType of the notification. 0=Banner, 1=Modal */
+    DisplayType: InAppNotificationDisplayType;
+    /* Translated title of the notification. Alternative text for minimizable promos. */
+    Title: string;
+    /* Translated message of the notification */
+    Message: string;
+    /* Theme of the notification */
+    Theme?: string | null;
+    /* CTA of the notification. For minimizable promos the text should be ignored */
+    Cta?: InAppNotificationCta | null;
+    /* Minimizable promo contents. Only for minimizable promos. */
+    PromoContents?: InAppNotificationPromoContents | null;
+};
+export type InAppNotification = {
+    /* ID for this notification. Used to dismiss it */
+    ID: string;
+    /* Notification key used for telemetry */
+    NotificationKey: string;
+    /* Timestamp that states when the notification should be shown */
+    StartTime: number;
+    /* Optional timestamp that states when the notification should not be shown any more */
+    EndTime?: number | null;
+    /* Notification state. 0 = Unread, 1 = Read, 2 = Dismissed */
+    State: InAppNotificationState;
+    /* Notification priority. The higher, the most important */
+    Priority: number;
+    /* Contents of the notification */
+    Content: InAppNotificationContent;
 };
 export type UserNotificationList = {
     /* List of notifications */
@@ -864,16 +1565,80 @@ export type UserNotificationList = {
     /* ID of the last notification in order to paginate */
     LastID?: string | null;
 };
+export type OrganizationSettingsGetResponse = {
+    /* Allowed ways to share within the organization. */
+    ShareMode: OrganizationShareMode;
+    /* Who is allowed to accept an invite from outside the organization. */
+    ShareAcceptMode: OrganizationShareMode;
+    /* Is item sharing enabled. */
+    ItemShareMode: OrganizationItemShareMode;
+    /* Are secure links enabled. */
+    PublicLinkMode: OrganizationPublicLinkMode;
+    /* Force seconds to lock pass. 0 means lock time is not enforced */
+    ForceLockSeconds: number;
+    ExportMode: OrganizationExportMode;
+    /* Organization password policy */
+    PasswordPolicy: OrganizationUpdatePasswordPolicyInput;
+    VaultCreateMode: OrganizationVaultCreateMode;
+    AliasCreateMode: OrganizationAliasCreateMode;
+};
 export type OrganizationGetResponse = {
     /* Whether this user can update the organization */
     CanUpdate: boolean;
+    /* Organization settings */
     Settings: OrganizationSettingsGetResponse;
+};
+export type BreachMonitorCounter = {
+    /* Number of emails monitored */
+    BreachEmailCount: number;
+    /* Number of breaches for all the emails monitored */
+    TotalBreachCount: number;
+};
+export type OrgMemberVaultItemReport = {
+    OwnedVaultCount?: number;
+    OwnedItemCount?: number;
+    AccessibleItemCount?: number;
+    AccessibleVaultCount?: number;
+};
+export type UserMonitorReport = {
+    UserID: string;
+    OrganizationID: number;
+    ReusedPasswords: number;
+    Inactive2FA: number;
+    ExcludedItems: number;
+    WeakPasswords: number;
+    ReportTime: number;
+    ClientVersion: string;
+};
+export type MemberMonitorReport = {
+    /* Primary email for this member */
+    PrimaryEmail: string;
+    /* Breach info for custom emails */
+    CustomEmailBreachCount: BreachMonitorCounter;
+    /* Breach info for addresses */
+    AddressBreachCount: BreachMonitorCounter;
+    /* Item and Vault report for this member */
+    ItemsReport: OrgMemberVaultItemReport;
+    /* Pass Monitor report. Will be null if there is no report stored. */
+    MonitorReport?: UserMonitorReport | null;
+    /* Last activity from the member. Null if the user has not actively done anything */
+    LastActivityTime?: number | null;
 };
 export type MemberMonitorReportList = {
     /* User monitor report for an organization member */
     MemberReports: MemberMonitorReport[];
     /* Last ID for getting the next batch */
     TotalMemberCount: number;
+};
+export type OrganizationUrlPauseEntryDto = {
+    /* ID of the entry */
+    EntryID: Id;
+    /* URL of the entry */
+    Url: string;
+    /* Values of the entry. Tells which operations are enabled and disabled */
+    Values: OrganizationUrlPauseEntryValues;
+    /* Creation time of the entry in seconds */
+    CreateTime: number;
 };
 export type OrganizationUrlPauseListResponse = {
     /* Entries for this org */
@@ -883,16 +1648,18 @@ export type OrganizationUrlPauseListResponse = {
     /* ID of the last entry. Used for pagination */
     LastID?: Id | null;
 };
-export type OrganizationUrlPauseEntryDto = {
-    EntryID: Id;
-    /* URL of the entry */
-    Url: string;
-    Values: OrganizationUrlPauseEntryValues;
-    /* Creation time of the entry in seconds */
-    CreateTime: number;
+export type EventIDGetResponse = {
+    /* Last event ID */
+    EventID: Id;
 };
-export type EventIDGetResponse = { EventID: Id };
+export type ItemIDLastUseTime = {
+    /* Item ID */
+    ItemID: string;
+    /* Last use time for this item */
+    LastUseTime: number;
+};
 export type PassEventListResponse = {
+    /* Updated share in case the vault content changes */
     UpdatedShare: ShareGetResponse;
     /* New or updated items */
     UpdatedItems: ItemRevisionContentsResponse[];
@@ -936,6 +1703,8 @@ export type PublicLinkGetContentResponse = {
     ExpirationTime: number;
     /* If the link key is being encrypted with the item key */
     LinkKeyEncryptedWithItemKey?: boolean;
+    /* Bitmask of flags for the secure link. Bit 0: LinkKeyEncryptedWithItemKey (1), Bit 1: LinkAuthorIsB2BCustomer (2). Multiple flags can be combined. */
+    Flags?: number;
 };
 export type PublicLinkGetResponse = {
     /* ID of the public link */
@@ -960,6 +1729,8 @@ export type PublicLinkGetResponse = {
     Active: boolean;
     /* If the link key is being encrypted with the item key */
     LinkKeyEncryptedWithItemKey?: boolean;
+    /* Bitmask of flags for the secure link. Bit 0: LinkKeyEncryptedWithItemKey (1), Bit 1: LinkAuthorIsB2BCustomer (2). Multiple flags can be combined. */
+    Flags?: number;
 };
 export type SessionLockStorageTokenResponse = {
     /* Storage token to encrypt the local storage */
@@ -974,553 +1745,16 @@ export type SessionLockCheckExistsResponse = {
 export type SharesGetResponse = {
     /* List of shares */
     Shares: ShareGetResponse[];
+    /* Total amount of shares */
+    Total: number;
+    /* Token to pass for getting the next page. Null if there is none */
+    LastToken?: Id | null;
 };
 export type ShareHideUnhideBatchRequest = {
     /* List of share IDs to hide */
     SharesToHide?: string[];
     /* List of share IDs to unhide */
     SharesToUnhide?: string[];
-};
-export type InvitesForVaultGetResponse = {
-    /* Invites for this share */
-    Invites: VaultInviteData[];
-    /* New user invites for this share */
-    NewUserInvites: NewUserInviteGetResponse[];
-};
-export type InviteRecommendationsResponse = {
-    /* Emails recommended to share the vault with */
-    RecommendedEmails: string[];
-    /* Plan internal name. It will be null for free users. */
-    PlanInternalName: string;
-    /* Group display name. It will be null for free users. */
-    GroupDisplayName: string;
-    /* Emails recommended based on the user plan. Will only return something for paid users */
-    PlanRecommendedEmails: string[];
-    /* Token to retrieve the next page. Will be null for the last page. */
-    PlanRecommendedEmailsNextToken: string;
-};
-export type InviteRecommendationSuggestedListOutput = {
-    /* Recent addresses used */
-    Suggested: InviteRecommendationAddressOutput[];
-};
-export type InviteRecommendationOrgOutput = {
-    /* Group display name. It will be null for free users. */
-    GroupDisplayName: string;
-    /* Token to retrieve the next page. Will be null for the last page. */
-    NextToken: string;
-    /* Recent addresses used */
-    Entries: InviteRecommendationOrgEntryOutput[];
-};
-export type ActiveSharesInVaultGetResponse = {
-    /* Shares */
-    Shares: ActiveShareGetResponse[];
-    /* Total amount of shares */
-    Total: number;
-    /* Token to pass for getting the next page. Null if there is none */
-    LastToken: string;
-};
-export type ActiveShareGetResponse = {
-    /* ID of the share */
-    ShareID: string;
-    /* Name of the user */
-    UserName: string;
-    /* Email of the user */
-    UserEmail: string;
-    /* Whether this is the owner of the share */
-    Owner: boolean;
-    /* Type of share. 1 for vault, 2 for item */
-    TargetType: number;
-    /* ID of the top object that this share gives access to */
-    TargetID: string;
-    /* Permissions this share has */
-    Permission: number;
-    /* ShareRoleID this share has */
-    ShareRoleID: string;
-    /* Expiration time if set */
-    ExpireTime?: number | null;
-    /* Creation time of this share */
-    CreateTime: number;
-    /* Whether the share is a group share */
-    IsGroupShare: boolean;
-};
-export type GetMissingAliasResponse = {
-    /* MissingAlias */
-    MissingAlias: MissingAliasDto[];
-};
-export type UserAliasCountResponse = {
-    /* Total number of alias the user has in SL */
-    Total: number;
-};
-export type UserAliasSettingsGetOutput = {
-    /* Default domain when creating aliases */
-    DefaultAliasDomain?: string | null;
-    /* Default mailbox for new aliases */
-    DefaultMailboxID: number;
-};
-export type UserAliasDomainListOutput = {
-    /* List of domains */
-    Domains: UserAliasDomainOutput[];
-};
-export type UserMailboxListOutput = {
-    /* List of mailboxes */
-    Mailboxes: UserMailboxOutput[];
-};
-export type UserMailboxOutput = {
-    /* Mailbox ID */
-    MailboxID: number;
-    /* Mailbox email */
-    Email: string;
-    /* In case there is a pending email change, this will show what is the requested email change */
-    PendingEmail?: string | null;
-    /* Whether the user has verified that he owns the mailbox */
-    Verified: boolean;
-    /* Whether the mailbox is the default one */
-    IsDefault: boolean;
-    /* How many aliases does this mailbox have */
-    AliasCount: number;
-};
-export type UserAccessGetResponse = {
-    Plan: PassPlanResponse;
-    Monitor: UserMonitorStatusResponse;
-    /* Pending invites for this user */
-    PendingInvites: number;
-    /* Number of new user invites ready for a manager to accept */
-    WaitingNewUserInvites: number;
-    /* Request display upgrade to version */
-    MinVersionUpgrade?: string | null;
-    UserData: UserDataResponse;
-};
-export type UserAccessCheckGetResponse = {
-    /* When this user started using Pass */
-    ActivationTime: number;
-};
-export type UserMonitorStatusResponse = {
-    /* If the monitor for proton address leaks is enabled */
-    ProtonAddress: boolean;
-    /* If the monitor for proton address leaks is enabled */
-    Aliases: boolean;
-};
-export type SRPGetOutput = {
-    /* Modulus for the SRP flow */
-    Modulus: string;
-    ServerEphemeral: BinaryString;
-    /* SessionID of the SRP flow */
-    SrpSessionID: string;
-    SrpSalt: BinaryString;
-    /* SRP version */
-    Version: number;
-};
-export type SyncEventListOutput = {
-    /* The next event ID that has to be used for the next call to this endpoint */
-    LastEventID: string;
-    /* Item IDs with ShareIDs that have been updated */
-    ItemsUpdated: SyncEventShareItemOutput[];
-    /* Item IDs with ShareIDs that have been deleted */
-    ItemsDeleted: SyncEventShareItemOutput[];
-    /* Item IDs with ShareIDs that have the alias note changed */
-    AliasNoteChanged: SyncEventShareItemOutput[];
-    /* New ShareIDs for the user. This means new access to a resource. Clients should clear all information for this share and depending objects that they have and re-download all the share contents again. */
-    SharesCreated: SyncEventShareOutput[];
-    /* Share IDs that have been updated. It can be vault name, permissions, state... */
-    SharesUpdated: SyncEventShareOutput[];
-    /* Share IDs that have been deleted */
-    SharesDeleted: SyncEventShareOutput[];
-    /* Folders that have been updated */
-    FoldersUpdated: SyncEventShareFolderOutput[];
-    /* Folders that have been deleted */
-    FoldersDeleted: SyncEventShareFolderOutput[];
-    /* If not null, there are changes in the invites waiting to be accepted by this user */
-    InvitesChanged?: SyncEventChangedWithTokenOutput | null;
-    /* If not null, there are changes in the group invites that this user can accept or reject */
-    GroupInvitesChanged?: SyncEventChangedWithTokenOutput | null;
-    /* If not null, there are changes pending aliases to create items for this user */
-    PendingAliasToCreateChanged?: SyncEventChangedWithTokenOutput | null;
-    /* If not null, there are changes in the breached addresses or custom emails */
-    BreachUpdate?: SyncEventChangedWithTokenOutput | null;
-    /* If not null, there are changes in the organization data (including any policy change) */
-    OrganizationInfoChanged?: SyncEventChangedWithTokenOutput | null;
-    /* Share IDs that have invites that have to be created due to a user having registered with a pending new user invite */
-    SharesWithInvitesToCreate: SyncEventShareOutput[];
-    /* If the user plan or any other setting related to the user has changed */
-    RefreshUser: boolean;
-    /* If there are more events pending to be processed. In that case call this endpoint again using the new LastEventID */
-    EventsPending: boolean;
-    /* If true this user needs a full sync. Perform the same procedure as if the user just logged in. */
-    FullRefresh: boolean;
-};
-export type FolderItemMoveInputDto = {
-    ItemID: Id;
-    /* Item revision */
-    Revision: number;
-    /* FolderKeys encrypted with the parent folder keys or vault keys if it is a top folder */
-    FolderKeys: FolderKeyPairDto[];
-};
-export type ItemMoveIndividualToShareRequest = {
-    /* Encrypted ID of the source item to move */
-    ItemID: string;
-    /* Data to create the new item in the destination vault */
-    Item?: ItemCreateRequest | null;
-    /* Previous revisions of this item */
-    History?: ItemHistoryRequest[];
-    /* Item keys encrypted with the target vault key */
-    ItemKeys: EncodedItemKeyRotation[];
-};
-export type KeyRotationKeyPair = {
-    /* Key rotation */
-    KeyRotation: number;
-    /* Encrypted key encoded in base64 */
-    Key: string;
-};
-export type EncryptedId = string;
-export type CreatePendingAliasRequest = { PendingAliasID: Id; Item: ItemCreateRequest };
-export type BinaryString = string;
-export type FolderDataResponse = {
-    VaultID: Id;
-    FolderID: Id;
-    /* FolderID of the parent folder for this folder */
-    ParentFolderID?: Id | null;
-    /* KeyRotation for this folder key */
-    KeyRotation: number;
-    FolderKey: BinaryString;
-    /* ContentFormatVersion for the folder data */
-    ContentFormatVersion: number;
-    Content: BinaryString;
-};
-export type FolderListContentsResponse = {
-    /* Folders listed */
-    Folders: FolderDataResponse[];
-    /* Total number of folders */
-    Total: number;
-    /* Token to pass for getting the next page. Null if there is none */
-    LastToken?: Id | null;
-    Code: '1000';
-};
-export type FolderKeyPairDto = {
-    /* Rotation value for this key */
-    KeyRotation: '1';
-    FolderKey: BinaryString;
-};
-export type FolderUpdateContentInputDto = {
-    /* Content format version for folder contents */
-    ContentFormatVersion: '1';
-    Content: BinaryString;
-    /* Key rotation used to encrypt the content */
-    KeyRotation: '1';
-};
-export type ImportItemRequest = {
-    Item: ItemCreateRequest;
-    /* Alias email in case this item is an alias item */
-    AliasEmail?: string | null;
-    /* Wether this item is the trash. Default value is false. */
-    Trashed?: boolean;
-    /* When was this item created. By default it will be now */
-    CreateTime?: number | null;
-    /* When was this item modified. By default it will be now */
-    ModifyTime?: number | null;
-};
-export type ItemIDRevision = {
-    /* ItemID */
-    ItemID: string;
-    /* Current revision for the item */
-    Revision: number;
-};
-export type ItemMarkAsReadRequest = { ItemID: EncryptedId; Timestamp: number };
-export type ItemHistoryRequest = {
-    /* Revision id for this entry */
-    Revision: number;
-    Item: ItemCreateRequest;
-};
-export type EncodedItemKeyRotation = {
-    /* Rotation for this key */
-    KeyRotation: number;
-    /* Base64 encoded key */
-    Key: string;
-};
-export type LinkFileToItemFileData = {
-    FileID: Id;
-    /* File key encrypted with the item key represented in Base64 */
-    FileKey: string;
-};
-export type FileRestoreSingleInput = {
-    FileID: Id;
-    /* FileKey encrypted with the ItemKey, encoded in Base64 */
-    FileKey: string;
-};
-export type EncodedKeyRotationItemKey = {
-    /* ItemID for this encrypted key */
-    ItemID: string;
-    /* Base64 encoded item key */
-    ItemKey: string;
-};
-export type EncodedKeyRotationShareKeyForAddress = {
-    /* ShareID for this key */
-    ShareID: string;
-    /* AddressID to which this key is encrypted */
-    AddressID: string;
-    /* Base64 encoded key encrypted for the address key of the user and signed with our address key */
-    EncryptedKeyForAddress: string;
-};
-export type EncryptedKeyWithRotation = {
-    /* Key rotation */
-    KeyRotation: number;
-    /* Encrypted key encoded in base64 */
-    EncryptedKey: string;
-};
-export enum InAppNotificationState {
-    UNREAD = 0,
-    READ = 1,
-    DISMISSED = 2,
-}
-export enum OrganizationShareMode {
-    UNRESTRICTED = 0,
-    ONLYSHAREINSIDEORG = 1,
-}
-export enum OrganizationItemShareMode {
-    DISABLED = 0,
-    ALLOWED = 1,
-}
-export enum OrganizationPublicLinkMode {
-    DISABLED = 0,
-    ALLOWED = 1,
-}
-export enum OrganizationExportMode {
-    UNRESTRICTED = 0,
-    ONLYADMINS = 1,
-}
-export enum OrganizationVaultCreateMode {
-    ALLOWED = 0,
-    ONLYORGADMINS = 1,
-    ONLYORGADMINSANDPERSONALVAULT = 2,
-}
-export enum OrganizationAliasCreateMode {
-    ALLOWEDFORALLMEMBERS = 0,
-    NOBODY = 1,
-}
-export type AliasSuffixResponse = {
-    /* Alias ending including the domain */
-    Suffix: string;
-    /* Signed suffix to ensure users cannot generate their own */
-    SignedSuffix: string;
-    /* Whether this is a user domain or a public SL domain */
-    IsCustom: boolean;
-    /* Whether this is a premium domain or a free SL domain */
-    IsPremium: boolean;
-    /* Domain that this suffix uses */
-    Domain: string;
-};
-export type AliasMailboxResponse = {
-    /* ID of the mailbox in SimpleLogin */
-    ID: number;
-    /* Email of the mailbox */
-    Email: string;
-};
-export type AliasStatsResponse = {
-    /* Count of emails forwarded through this alias in the last 14 days */
-    ForwardedEmails: number;
-    /* Count of emails replied to in the last 14 days */
-    RepliedEmails: number;
-    /* Count of emails blocked in the last 14 days */
-    BlockedEmails: number;
-};
-export type Breach = {
-    ID: Id;
-    /* User's email formatted exactly how it appeared in the breach */
-    Email: string;
-    ResolvedState: BreachAlertState;
-    /* Severity of the breach expressed as a number on a scale 0.0 -> 1.0; this way we can easily add new severities in the future; for now, interpret in a following way: low: 0.00 <= severity < 0.33, medium: 0.33 <= severity < 0.67, high: 0.67 <= severity <= 1.00 */
-    Severity: number;
-    /* Translated breach name */
-    Name: string;
-    /* Date & time when we imported this breach, ISO 8601 */
-    CreatedAt: string;
-    /* Date & time when the breach probably happened, ISO 8601 */
-    PublishedAt: string;
-    Source: BreachSource;
-    /* Number of records exposed in the breach, rounded; we recommend to display this number in a user-friendly way, using user's locale (i.e. 120M in english) */
-    Size?: number | null;
-    /* List of data (fields) exposed in the breach */
-    ExposedData: BreachString[];
-    /* Few last characters of the exposed password, if it was plaintext */
-    PasswordLastChars?: string | null;
-    /* Recommended actions to take */
-    Actions: BreachAction[];
-    /* Leaked combos of domain, username and password (infostealer only) */
-    BreachedCombos: BreachCombo[];
-};
-export type BreachSample = {
-    ID: Id;
-    /* User's email formatted exactly how it appeared in the breach */
-    Email: string;
-    ResolvedState: BreachAlertState2;
-    /* Severity of the breach expressed as a number on a scale 0.0 -> 1.0; this way we can easily add new severities in the future; for now, interpret in a following way: low: 0.00 <= severity < 0.33, medium: 0.33 <= severity < 0.67, high: 0.67 <= severity <= 1.00 */
-    Severity: number;
-    /* Translated breach name */
-    Name: string;
-    /* Date & time when we imported this breach, ISO 8601 */
-    CreatedAt: string;
-    Source: BreachSource;
-};
-export type SlPendingAliasResponse = {
-    /* ID of the PendingAlias */
-    PendingAliasID: string;
-    /* Email of the PendingAlias */
-    AliasEmail: string;
-    /* Note of the PendingAlias */
-    AliasNote: string;
-};
-export type BreachDomainPeekResponse = {
-    /* Domain that has a breach */
-    Domain: string;
-    /* Time when we were aware of this breach */
-    BreachTime: number;
-};
-export type BreachAddressGetResponse = {
-    /* Id of the address that has a breach */
-    AddressID: string;
-    /* Email of the address */
-    Email: string;
-    /* Flags for this address:<ul><li>1 << 0 (1): Disabled monitoring</li></ul> */
-    Flags: number;
-    /* Number of breaches this custom email appears in */
-    BreachCounter: number;
-    /* Last breach time if there has been a breach */
-    LastBreachTime?: number | null;
-};
-export type CustomDomainMailboxOutput = {
-    /* ID of the mailbox */
-    ID: number;
-    /* Email address of the mailbox */
-    Email: string;
-};
-export type GroupInviteListItemResponse = {
-    InviteID: Id;
-    InviterUserID: Id;
-    /* Email address of the inviter user */
-    InviterEmail: string;
-    InvitedGroupID: Id;
-    /* Email address of the invited group */
-    InvitedEmail: string;
-    /* Type of target for this invite */
-    TargetType: number;
-    TargetID: Id;
-    /* Number of reminders sent */
-    RemindersSent: number;
-    /* InviteToken */
-    InviteToken: string;
-    InvitedAddressID: Id;
-    /* Share keys encrypted for the address key of the invited group and signed with the address keys of the inviter */
-    Keys: KeyRotationKeyPair[];
-    VaultData: InviteVaultDataForUser;
-    /* Base64 encrypted invite data */
-    Data?: string | null;
-    /* If true, this user is owner of the group invited */
-    IsGroupOwner: boolean;
-    /* If true, this user is administrator of the organization that owns the group */
-    IsOrgAdmin: boolean;
-    /* Creation time for the invite */
-    CreateTime: number;
-};
-export type InviteDataForUser = {
-    /* InviteToken */
-    InviteToken: string;
-    /* Number of reminders sent */
-    RemindersSent: number;
-    /* Type of target for this invite */
-    TargetType: number;
-    /* TargetID for this invite */
-    TargetID: string;
-    /* Email of the inviter */
-    InviterEmail: string;
-    /* Invited email */
-    InvitedEmail: string;
-    /* Invited AddressID */
-    InvitedAddressID: string;
-    /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
-    Keys: KeyRotationKeyPair[];
-    /* Vault data for this invite. This will only appear if the invite is for a vault. */
-    VaultData?: InviteVaultDataForUser | null;
-    /* Base64 encrypted invite data */
-    Data?: string | null;
-    /* True if the invite comes from a NewUserInvite */
-    FromNewUser: boolean;
-    /* Creation time for the invite */
-    CreateTime: number;
-};
-export type ItemRevisionResponse = {
-    /* Item ID */
-    ItemID: string;
-    /* Latest item revision */
-    Revision: number;
-    /* Revision state. Values: 1 = Active, 2 = Trashed */
-    State: number;
-    /* Flags for this item */
-    Flags: number;
-    /* Time of the last item modification */
-    ModifyTime: number;
-    /* Creation time of this revision */
-    RevisionTime: number;
-};
-export type ItemFileChunkOutput = {
-    ChunkID: Id;
-    /* Chunk index. Used to restore the file chunks in order */
-    Index: number;
-    /* Chunk size in bytes */
-    Size: number;
-};
-export type PendingShareKeyGetResponse = {
-    /* Pending share key ID */
-    PendingShareKeyID: string;
-    /* AddressID for this pending share key */
-    AddressID: string;
-    /* AddressID that did the key rotation. Should be signing this key. */
-    RotatorAddressID: string;
-    /* Key rotation for this pending share key */
-    KeyRotation: number;
-    /* Base64 encoded encrypted shake key for this address */
-    EncryptedKey: string;
-};
-export type InAppNotification = {
-    /* ID for this notification. Used to dismiss it */
-    ID: string;
-    /* Notification key used for telemetry */
-    NotificationKey: string;
-    /* Timestamp that states when the notification should be shown */
-    StartTime: number;
-    /* Optional timestamp that states when the notification should not be shown any more */
-    EndTime?: number | null;
-    State: InAppNotificationState;
-    /* Notification priority. The higher, the most important */
-    Priority: number;
-    Content: InAppNotificationContent;
-};
-export type OrganizationSettingsGetResponse = {
-    ShareMode: OrganizationShareMode;
-    ShareAcceptMode: OrganizationShareMode;
-    ItemShareMode: OrganizationItemShareMode;
-    PublicLinkMode: OrganizationPublicLinkMode;
-    /* Force seconds to lock pass. 0 means lock time is not enforced */
-    ForceLockSeconds: number;
-    ExportMode: OrganizationExportMode;
-    PasswordPolicy: OrganizationUpdatePasswordPolicyInput;
-    VaultCreateMode: OrganizationVaultCreateMode;
-    AliasCreateMode: OrganizationAliasCreateMode;
-};
-export type MemberMonitorReport = {
-    /* Primary email for this member */
-    PrimaryEmail: string;
-    CustomEmailBreachCount: BreachMonitorCounter;
-    AddressBreachCount: BreachMonitorCounter;
-    ItemsReport: OrgMemberVaultItemReport;
-    /* Pass Monitor report. Will be null if there is no report stored. */
-    MonitorReport?: UserMonitorReport | null;
-    /* Last activity from the member. Null if the user has not actively done anything */
-    LastActivityTime?: number | null;
-};
-export type ItemIDLastUseTime = {
-    /* Item ID */
-    ItemID: string;
-    /* Last use time for this item */
-    LastUseTime: number;
 };
 export type VaultInviteData = {
     /* InviteID */
@@ -1564,22 +1798,101 @@ export type NewUserInviteGetResponse = {
     /* Last modification time for the invite */
     ModifyTime: number;
 };
+export type InvitesForVaultGetResponse = {
+    /* Invites for this share */
+    Invites: VaultInviteData[];
+    /* New user invites for this share */
+    NewUserInvites: NewUserInviteGetResponse[];
+};
+export type InviteRecommendationsResponse = {
+    /* Emails recommended to share the vault with */
+    RecommendedEmails: string[];
+    /* Plan internal name. It will be null for free users. */
+    PlanInternalName: string;
+    /* Group display name. It will be null for free users. */
+    GroupDisplayName: string;
+    /* Emails recommended based on the user plan. Will only return something for paid users */
+    PlanRecommendedEmails: string[];
+    /* Token to retrieve the next page. Will be null for the last page. */
+    PlanRecommendedEmailsNextToken: string;
+};
 export type InviteRecommendationAddressOutput = {
     /* Email recommended */
     Email: string;
+    /* AddressID recommended */
     AddressID: Id;
     /* Whether is a group address or not. */
     IsGroup: boolean;
 };
+export type InviteRecommendationSuggestedListOutput = {
+    /* Recent addresses used */
+    Suggested: InviteRecommendationAddressOutput[];
+};
 export type InviteRecommendationOrgEntryOutput = {
     /* Email recommended */
     Email: string;
+    /* Email already has access */
+    AlreadyHasAccess: boolean;
+};
+export type InviteRecommendationOrgOutput = {
+    /* Group display name. It will be null for free users. */
+    GroupDisplayName: string;
+    /* Token to retrieve the next page. Will be null for the last page. */
+    NextToken: string;
+    /* Recent addresses used */
+    Entries: InviteRecommendationOrgEntryOutput[];
+};
+export type ActiveShareGetResponse = {
+    /* ID of the share */
+    ShareID: string;
+    /* Name of the user */
+    UserName: string;
+    /* Email of the user */
+    UserEmail: string;
+    /* Whether this is the owner of the share */
+    Owner: boolean;
+    /* Type of share. 1 for vault, 2 for item */
+    TargetType: number;
+    /* ID of the top object that this share gives access to */
+    TargetID: string;
+    /* Permissions this share has */
+    Permission: number;
+    /* ShareRoleID this share has */
+    ShareRoleID: string;
+    /* Expiration time if set */
+    ExpireTime?: number | null;
+    /* Creation time of this share */
+    CreateTime: number;
+    /* Whether the share is a group share */
+    IsGroupShare: boolean;
+};
+export type ActiveSharesInVaultGetResponse = {
+    /* Shares */
+    Shares: ActiveShareGetResponse[];
+    /* Total amount of shares */
+    Total: number;
+    /* Token to pass for getting the next page. Null if there is none */
+    LastToken: string;
 };
 export type MissingAliasDto = {
     /* Email of the alias */
     Email: string;
     /* Email note as stored in SL */
     Note: string;
+};
+export type GetMissingAliasResponse = {
+    /* MissingAlias */
+    MissingAlias: MissingAliasDto[];
+};
+export type UserAliasCountResponse = {
+    /* Total number of alias the user has in SL */
+    Total: number;
+};
+export type UserAliasSettingsGetOutput = {
+    /* Default domain when creating aliases */
+    DefaultAliasDomain?: string | null;
+    /* Default mailbox for new aliases */
+    DefaultMailboxID: number;
 };
 export type UserAliasDomainOutput = {
     /* Domain name */
@@ -1593,7 +1906,37 @@ export type UserAliasDomainOutput = {
     /* Whether the domain is the default one when creating an alias */
     IsDefault: boolean;
 };
+export type UserAliasDomainListOutput = {
+    /* List of domains */
+    Domains: UserAliasDomainOutput[];
+};
+export type UserMailboxOutput = {
+    /* Mailbox ID */
+    MailboxID: number;
+    /* Mailbox email */
+    Email: string;
+    /* In case there is a pending email change, this will show what is the requested email change */
+    PendingEmail?: string | null;
+    /* Whether the user has verified that he owns the mailbox */
+    Verified: boolean;
+    /* Whether the mailbox is the default one */
+    IsDefault: boolean;
+    /* How many aliases does this mailbox have */
+    AliasCount: number;
+    /* Whether the mailbox can be edited */
+    CanBeEdited: boolean;
+};
+export type UserMailboxListOutput = {
+    /* List of mailboxes */
+    Mailboxes: UserMailboxOutput[];
+};
+export enum PlanType {
+    FREE = 'free',
+    PLUS = 'plus',
+    BUSINESS = 'business',
+}
 export type PassPlanResponse = {
+    /* Type of plan for this user, can be free, plus or business */
     Type: PlanType;
     /* Internal name of the plan */
     InternalName: string;
@@ -1633,6 +1976,14 @@ export type PassPlanResponse = {
     StorageQuota: number;
     /* Whether this account can use the cli */
     CliAllowed: boolean;
+    /* Whether this account can use folders */
+    FolderAllowed: boolean;
+};
+export type UserMonitorStatusResponse = {
+    /* If the monitor for proton address leaks is enabled */
+    ProtonAddress: boolean;
+    /* If the monitor for proton address leaks is enabled */
+    Aliases: boolean;
 };
 export type UserDataResponse = {
     /* Default share to user for this user. Null if not set any default share */
@@ -1641,6 +1992,36 @@ export type UserDataResponse = {
     AliasSyncEnabled: boolean;
     /* How many alias are waiting to be synced */
     PendingAliasToSync: number;
+};
+export type UserAccessGetResponse = {
+    /* Plan for this user */
+    Plan: PassPlanResponse;
+    /* Pass monitor state for this user */
+    Monitor: UserMonitorStatusResponse;
+    /* Pending invites for this user */
+    PendingInvites: number;
+    /* Number of new user invites ready for a manager to accept */
+    WaitingNewUserInvites: number;
+    /* Request display upgrade to version */
+    MinVersionUpgrade?: string | null;
+    /* User data settings */
+    UserData: UserDataResponse;
+};
+export type UserAccessCheckGetResponse = {
+    /* When this user started using Pass */
+    ActivationTime: number;
+};
+export type SRPGetOutput = {
+    /* Modulus for the SRP flow */
+    Modulus: string;
+    /* Base64 encoded server ephemeral */
+    ServerEphemeral: BinaryString;
+    /* SessionID of the SRP flow */
+    SrpSessionID: string;
+    /* Base64 encoded salt */
+    SrpSalt: BinaryString;
+    /* SRP version */
+    Version: number;
 };
 export type SyncEventShareItemOutput = {
     /* ShareID */
@@ -1665,149 +2046,43 @@ export type SyncEventShareFolderOutput = {
     EventToken: string;
 };
 export type SyncEventChangedWithTokenOutput = { EventToken: Id };
-export enum BreachAlertState {
-    UNREAD = 1,
-    READ = 2,
-    RESOLVED = 3,
-}
-export type BreachSource = {
-    /* Whether the breach is aggregated data from multiple sources or data from a single source */
-    IsAggregated: boolean;
-    /* Domain name (DNS) of the source of the breach, if known */
-    Domain?: string | null;
-    /* Breach category, if known; values are dynamic and can change over time */
-    Category?: BreachString | null;
-    /* Country to which source of the breach is associated, if known */
-    Country?: BreachCountry | null;
-};
-export type BreachString = {
-    /* Original value, keyword, token, ... */
-    Code: string;
-    /* Localized name or description of the value */
-    Name: string;
-    /* The leaked value */
-    Values?: string[];
-};
-export type BreachAction = {
-    /* Unique identifier of the action. Possible values are: <ul><li>stay_alert: No special action required</li><li>password_exposed: Plaintext password leaked. User needs to change the password</li><li>password_source: hashed password exposed. User would better change the password</li><li>passwords_all: all hashed passwords leaked for a site. Recommendation for a paranoid person would be to change all passwords everywhere</li><li>2fa: Recommended to enable 2fa</li><li>aliases: Use an alias instead of your email address</li></ul> */
-    Code: string;
-    /* Translated name of the action to take */
-    Name: string;
-    /* Further information about how to take the action */
-    Desc: string;
-    /* List of URLs used to build clickable links in the description. */
-    Urls?: string[];
-};
-export type BreachCombo = {
-    /* Unique id */
-    ID: string;
-    /* The website for user info */
-    Domain: string;
-    /* Username used in the website */
-    Username: string;
-    /* Password used in the webiste, last 3 chars in plain-text */
-    PasswordLastChars: string;
-};
-export enum BreachAlertState2 {
-    UNREAD = 1,
-    READ = 2,
-    RESOLVED = 3,
-}
-export type InviteVaultDataForUser = {
-    /* Base64 encoded content of the share. Only shown if it a vault share */
-    Content: string;
-    /* Key rotation that should be used to open the content */
-    ContentKeyRotation: number;
-    /* Content format version */
-    ContentFormatVersion: number;
-    /* Number of members that have access to this vault */
-    MemberCount: number;
-    /* Number of items in this vault */
-    ItemCount: number;
-};
-export type InAppNotificationContent = {
-    /* Optional URL of the image to be shown */
-    ImageUrl?: string | null;
-    DisplayType: InAppNotificationDisplayType;
-    /* Translated title of the notification. Alternative text for minimizable promos. */
-    Title: string;
-    /* Translated message of the notification */
-    Message: string;
-    /* Theme of the notification */
-    Theme?: string | null;
-    /* CTA of the notification. For minimizable promos the text should be ignored */
-    Cta?: InAppNotificationCta | null;
-    /* Minimizable promo contents. Only for minimizable promos. */
-    PromoContents?: InAppNotificationPromoContents | null;
-};
-export type BreachMonitorCounter = {
-    /* Number of emails monitored */
-    BreachEmailCount: number;
-    /* Number of breaches for all the emails monitored */
-    TotalBreachCount: number;
-};
-export type OrgMemberVaultItemReport = {
-    OwnedVaultCount?: number;
-    OwnedItemCount?: number;
-    AccessibleItemCount?: number;
-    AccessibleVaultCount?: number;
-};
-export type UserMonitorReport = {
-    UserID: number;
-    OrganizationID: number;
-    ReusedPasswords: number;
-    Inactive2FA: number;
-    ExcludedItems: number;
-    WeakPasswords: number;
-    ReportTime: number;
-    ClientVersion: string;
-};
-export enum PlanType {
-    FREE = 'free',
-    PLUS = 'plus',
-    BUSINESS = 'business',
-}
-export type BreachCountry = {
-    /* ISO 3166 alpha 2 country code */
-    Code: string;
-    /* Localized country name */
-    Name: string;
-    /* Emoji flag of the country */
-    FlagEmoji: string;
-};
-export enum InAppNotificationDisplayType {
-    BANNER = 0,
-    MODAL = 1,
-    PROMO = 2,
-}
-export type InAppNotificationCta = {
-    /* Text of the CTA */
-    Text: string;
-    Type: InAppNotificationCtaType;
-    /* Destination of the CTA. If type=external_link, it's a URL. If type=internal_navigation, it's a deeplink */
-    Ref: string;
-};
-export type InAppNotificationPromoContents = {
-    /* Whether the promo should start minimized. True means the image should be minimized from the start. False means that the promo should initially be displayed and the user can minimize. */
-    StartMinimized: boolean;
-    /* Text to show on the close promo link */
-    ClosePromoText: string;
-    /* Text to show when the promo is minimized. Only relevant for web. */
-    MinimizedPromoText: string;
-    LightThemeContents: InAppNotificationPromoThemedContents;
-    DarkThemeContents: InAppNotificationPromoThemedContents;
-};
-export enum InAppNotificationCtaType {
-    INTERNAL_NAVIGATION = 'internal_navigation',
-    EXTERNAL_LINK = 'external_link',
-}
-export type InAppNotificationPromoThemedContents = {
-    /* Background image url */
-    BackgroundImageUrl: string;
-    /* Content image url */
-    ContentImageUrl: string;
-    /* Color of the close promo text */
-    ClosePromoTextColor: string;
+export type SyncEventListOutput = {
+    /* The next event ID that has to be used for the next call to this endpoint */
+    LastEventID: string;
+    /* Item IDs with ShareIDs that have been updated */
+    ItemsUpdated: SyncEventShareItemOutput[];
+    /* Item IDs with ShareIDs that have been deleted */
+    ItemsDeleted: SyncEventShareItemOutput[];
+    /* Item IDs with ShareIDs that have the alias note changed */
+    AliasNoteChanged: SyncEventShareItemOutput[];
+    /* New ShareIDs for the user. This means new access to a resource. Clients should clear all information for this share and depending objects that they have and re-download all the share contents again. */
+    SharesCreated: SyncEventShareOutput[];
+    /* Share IDs that have been updated. It can be vault name, permissions, state... */
+    SharesUpdated: SyncEventShareOutput[];
+    /* Share IDs that have been deleted */
+    SharesDeleted: SyncEventShareOutput[];
+    /* Folders that have been updated */
+    FoldersUpdated: SyncEventShareFolderOutput[];
+    /* Folders that have been deleted */
+    FoldersDeleted: SyncEventShareFolderOutput[];
+    /* If not null, there are changes in the invites waiting to be accepted by this user */
+    InvitesChanged?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes in the group invites that this user can accept or reject */
+    GroupInvitesChanged?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes pending aliases to create items for this user */
+    PendingAliasToCreateChanged?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes in the breached addresses or custom emails */
+    BreachUpdate?: SyncEventChangedWithTokenOutput | null;
+    /* If not null, there are changes in the organization data (including any policy change) */
+    OrganizationInfoChanged?: SyncEventChangedWithTokenOutput | null;
+    /* Share IDs that have invites that have to be created due to a user having registered with a pending new user invite */
+    SharesWithInvitesToCreate: SyncEventShareOutput[];
+    /* If the user plan or any other setting related to the user has changed */
+    RefreshUser: boolean;
+    /* If there are more events pending to be processed. In that case call this endpoint again using the new LastEventID */
+    EventsPending: boolean;
+    /* If true this user needs a full sync. Perform the same procedure as if the user just logged in. */
+    FullRefresh: boolean;
 };
 export type ApiResponse<Path extends string, Method extends string> =
     Path extends `pass/v1/share/${string}/item/${string}/file/${string}/chunk/${string}` ?
@@ -1986,10 +2261,6 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `delete` ?
             { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
         :   never
-    : Path extends `pass/v1/share/${string}/item/${string}/share` ?
-        Method extends `put` ?
-            { Code: ResponseCodeSuccess; Item: ItemRevisionContentsResponse }
-        :   never
     : Path extends `pass/v1/user/alias/settings/default_alias_domain` ?
         Method extends `put` ?
             { Code: ResponseCodeSuccess; Settings: UserAliasSettingsGetOutput }
@@ -2085,7 +2356,7 @@ export type ApiResponse<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/share/${string}/item/folder` ?
         Method extends `put` ?
-            { Code: ResponseCodeSuccess }
+            FolderItemsMoveResponse
         :   never
     : Path extends `pass/v1/share/${string}/item/read` ?
         Method extends `put` ?
@@ -2111,6 +2382,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ? { Code: ResponseCodeSuccess; PendingShareKeys: PendingShareKeysListResponse }
         : Method extends `post` ? { Code: ResponseCodeSuccess; ShareKeys: ShareKeysResponse }
         : never
+    : Path extends `pass/v1/personal-access-token/${string}/access/${string}` ?
+        Method extends `delete` ?
+            SuccessfulResponse
+        :   never
     : Path extends `pass/v1/share/${string}/alias/${string}` ?
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Alias: AliasDetailsResponse }
@@ -2142,7 +2417,7 @@ export type ApiResponse<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/organization/settings/password_policy` ?
         Method extends `put` ?
-            { Code: ResponseCodeSuccess; Organization?: OrganizationGetResponse | null }
+            { Code: ResponseCodeSuccess; Organization: OrganizationGetResponse }
         :   never
     : Path extends `pass/v1/user/access/check` ?
         Method extends `get` ?
@@ -2200,6 +2475,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `put` ? { Code: ResponseCodeSuccess }
         : Method extends `delete` ? { Code: ResponseCodeSuccess }
         : never
+    : Path extends `pass/v1/pat/monitor/${string}` ?
+        Method extends `get` ?
+            PatMonitorListResponse
+        :   never
     : Path extends `pass/v1/public_link/content/${string}` ?
         Method extends `get` ?
             { Code: ResponseCodeSuccess; PublicLinkContent: PublicLinkGetContentResponse }
@@ -2228,6 +2507,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `put` ?
             { Code: ResponseCodeSuccess; File: CreatePendingFileOutput }
         :   never
+    : Path extends `pass/v1/personal-access-token/${string}/access` ?
+        Method extends `get` ? AccessesResponse
+        : Method extends `post` ? AccessGrantResponse
+        : never
     : Path extends `pass/v1/share/${string}/event` ?
         Method extends `get` ?
             EventIDGetResponse & { Code: ResponseCodeSuccess }
@@ -2296,12 +2579,16 @@ export type ApiResponse<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/organization/settings` ?
         Method extends `put` ?
-            { Code: ResponseCodeSuccess; Organization?: OrganizationGetResponse | null }
+            { Code: ResponseCodeSuccess; Organization: OrganizationGetResponse }
         :   never
     : Path extends `pass/v1/organization/urlpause` ?
         Method extends `get` ? { Code: ResponseCodeSuccess; Entries: OrganizationUrlPauseListResponse }
         : Method extends `post` ? { Code: ResponseCodeSuccess; Entry: OrganizationUrlPauseEntryDto }
         : never
+    : Path extends `pass/v1/pat/monitor` ?
+        Method extends `post` ?
+            SuccessfulResponse
+        :   never
     : Path extends `pass/v1/public_link/inactive` ?
         Method extends `delete` ?
             { Code: ResponseCodeSuccess }
@@ -2368,7 +2655,7 @@ export type ApiResponse<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/organization` ?
         Method extends `get` ?
-            { Code: ResponseCodeSuccess; Organization?: OrganizationGetResponse | null }
+            { Code: ResponseCodeSuccess; Organization: OrganizationGetResponse }
         :   never
     : Path extends `pass/v1/public_link` ?
         Method extends `get` ?
@@ -2479,10 +2766,6 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/share/${string}/item/${string}/public_link` ?
         Method extends `post` ?
             PublicLinkCreateRequest
-        :   never
-    : Path extends `pass/v1/share/${string}/item/${string}/share` ?
-        Method extends `put` ?
-            ItemMoveSingleToShareRequest
         :   never
     : Path extends `pass/v1/user/alias/settings/default_alias_domain` ?
         Method extends `put` ?
@@ -2616,6 +2899,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `put` ?
             UpdatePendingFileRequest
         :   never
+    : Path extends `pass/v1/personal-access-token/${string}/access` ?
+        Method extends `post` ?
+            GrantAccessRequest
+        :   never
     : Path extends `pass/v1/share/${string}/folder` ?
         Method extends `post` ? FolderCreateInputDto
         : Method extends `delete` ? FolderDeleteInputDto
@@ -2651,6 +2938,10 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/organization/urlpause` ?
         Method extends `post` ?
             OrganizationUrlPauseEntryCreateRequest
+        :   never
+    : Path extends `pass/v1/pat/monitor` ?
+        Method extends `post` ?
+            PatMonitorStoreActionRequest
         :   never
     : Path extends `pass/v1/share/hide` ?
         Method extends `put` ?
