@@ -44,7 +44,7 @@ const getDownloadIdString = ({
     being sent at one single moment, which filled up the browser request queue. Thus, having
     a folder with lots of images, you couldn't make any request, unless ALL thumbnail are
     loaded and the browser queue is freed (Example: one couldn't load a file preview right
-    away after clicking on a file, and had to wait untill all thumbnails are done loading).
+    away after clicking on a file, and had to wait until all thumbnails are done loading).
 
     This provider ensured that we load thumbnails by small portions, leaving a window for
     other requests to get to a queue in between them.
