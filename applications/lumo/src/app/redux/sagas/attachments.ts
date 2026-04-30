@@ -425,10 +425,12 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
                 yield call(clearDirtyUnconditionally, localId);
             }
             if (isLimitReachedError(e)) {
+                const attachment: Attachment | undefined = yield select(selectAttachmentById(localId));
                 yield put(
                     addResourceLimitError({
                         resource: 'assets',
                         limit: MAX_ASSETS_PER_SPACE,
+                        spaceId: attachment?.spaceId,
                         serverMessage: e.serverMessage,
                     })
                 );
