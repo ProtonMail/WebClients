@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -15,6 +15,13 @@ import clsx from '@proton/utils/clsx';
 
 import type { TokenStatus } from './helpers';
 import { getTokenStatus } from './helpers';
+
+type Derived = {
+    statusBadge: { label: string; type: BadgeType };
+    expiryLabel: string;
+    isExpired: boolean;
+    createdDate: string;
+};
 
 type Props = {
     token: PersonalAccessToken;
@@ -45,11 +52,15 @@ const getExpiryLabel = (expireTime: number): string => {
 };
 
 export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
-    const status = getTokenStatus(token.ExpireTime);
-    const statusBadge = getStatusBadge(status);
-    const expiryLabel = getExpiryLabel(token.ExpireTime);
-    const isExpired = status === 'expired';
-    const createdDate = epochToDate(token.CreateTime);
+    const { statusBadge, expiryLabel, isExpired, createdDate } = useMemo<Derived>(() => {
+        const status = getTokenStatus(token.ExpireTime);
+        return {
+            statusBadge: getStatusBadge(status),
+            expiryLabel: getExpiryLabel(token.ExpireTime),
+            isExpired: status === 'expired',
+            createdDate: epochToDate(token.CreateTime),
+        };
+    }, [token.ExpireTime, token.CreateTime]);
 
     return (
         <Card rounded className="flex items-center gap-3 p-4 border-weak" background={false}>
