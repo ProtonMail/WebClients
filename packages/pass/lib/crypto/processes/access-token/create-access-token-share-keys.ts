@@ -1,6 +1,6 @@
-import type { PersonalAccessTokenShareKey } from '@proton/pass/lib/access-token/access-token.types';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import type { KeyRotationKeyPair } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 
 /** Wraps every rotation of a vault's share keys with the PAT's raw symmetric
@@ -9,7 +9,7 @@ import { PassEncryptionTag } from '@proton/pass/types';
 export const createAccessTokenShareKeys = async (
     rawPatKey: Uint8Array<ArrayBuffer>,
     shareId: string
-): Promise<PersonalAccessTokenShareKey[]> => {
+): Promise<KeyRotationKeyPair[]> => {
     const patKey = await importSymmetricKey(rawPatKey);
     const shareKeys = PassCrypto.getShareManager(shareId).getVaultShareKeys();
 

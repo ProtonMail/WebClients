@@ -1,18 +1,15 @@
 import type { Reducer } from 'redux';
 
-import type {
-    DecodedPatMonitorRecord,
-    PersonalAccessToken,
-    PersonalAccessTokenAccessGrant,
-} from '@proton/pass/lib/access-token/access-token.types';
+import type { DecodedPatMonitorRecord, PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import {
     createAccessToken,
     deleteAccessToken,
-    getAccessTokenAccess,
     getAccessTokenActions,
+    getAccessTokenGrants,
     getAccessTokens,
     updateAccessTokenAccess,
 } from '@proton/pass/store/actions';
+import type { PersonalAccessTokenShareResponse } from '@proton/pass/types';
 
 export type AccessTokenActionsState = {
     records: DecodedPatMonitorRecord[];
@@ -21,7 +18,7 @@ export type AccessTokenActionsState = {
 
 export type AccessTokenState = {
     tokens: PersonalAccessToken[];
-    grants: { [tokenId: string]: PersonalAccessTokenAccessGrant[] };
+    grants: { [tokenId: string]: PersonalAccessTokenShareResponse[] };
     actions: { [tokenId: string]: AccessTokenActionsState };
 };
 
@@ -54,7 +51,7 @@ const reducer: Reducer<AccessTokenState> = (state = getInitialState(), action) =
         };
     }
 
-    if (getAccessTokenAccess.success.match(action) || updateAccessTokenAccess.success.match(action)) {
+    if (getAccessTokenGrants.success.match(action) || updateAccessTokenAccess.success.match(action)) {
         const { tokenId, grants } = action.payload;
         return { ...state, grants: { ...state.grants, [tokenId]: grants } };
     }
