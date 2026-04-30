@@ -13,6 +13,7 @@ import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
     getElementContextIdentifier,
@@ -899,27 +900,50 @@ export const labelMessagesPending = (
     const { messages, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
     const countsBeforeAction = computeContextTotals(state);
 
-    messages.forEach((message) => {
-        // Update conversation first because we need to have the initial state of the element
-        const conversationElementState = state.elements[message.ConversationID];
-        if (conversationElementState && isElementConversation(conversationElementState)) {
-            applyLabelToConversationMessage(
-                message,
-                conversationElementState,
-                sourceLabelID,
-                destinationLabelID,
-                labels
-            );
-        }
+    if (isCategoryLabel(destinationLabelID)) {
+        const conversationIDs = uniqueBy(
+            messages.map(({ ConversationID }) => ConversationID),
+            (id) => id
+        );
 
-        const elementState = state.elements[message.ID];
-        if (!elementState || !isElementMessage(elementState)) {
-            return;
-        }
+        // Update message's conversations
+        conversationIDs.forEach((conversationID) => {
+            const conversation = state.elements[conversationID];
 
-        // Then update message since the mutation are done in the conversation
-        applyLabelToMessage(elementState, destinationLabelID, folders, labels);
-    });
+            if (conversation && isElementConversation(conversation)) {
+                applyLabelToConversation(conversation, sourceLabelID, destinationLabelID, labels, folders);
+            }
+        });
+
+        // Update all messages from conversations
+        Object.values(state.elements).forEach((element) => {
+            if (isElementMessage(element) && conversationIDs.includes(element.ConversationID)) {
+                applyLabelToMessage(element, destinationLabelID, folders, labels);
+            }
+        });
+    } else {
+        messages.forEach((message) => {
+            // Update conversation first because we need to have the initial state of the element
+            const conversationElementState = state.elements[message.ConversationID];
+            if (conversationElementState && isElementConversation(conversationElementState)) {
+                applyLabelToConversationMessage(
+                    message,
+                    conversationElementState,
+                    sourceLabelID,
+                    destinationLabelID,
+                    labels
+                );
+            }
+
+            const elementState = state.elements[message.ID];
+            if (!elementState || !isElementMessage(elementState)) {
+                return;
+            }
+
+            // Then update message since the mutation are done in the conversation
+            applyLabelToMessage(elementState, destinationLabelID, folders, labels);
+        });
+    }
 
     const countsAfterAction = computeContextTotals(state);
     updateContextTotals({ state, countsBeforeAction, countsAfterAction });
