@@ -137,11 +137,7 @@ const AccessTokensList: FC = () => {
             )}
 
             {action?.type === 'manage-access' && (
-                <ManageAccessModal
-                    token={action.token}
-                    onClose={() => setAction(null)}
-                    onSaved={() => setAction(null)}
-                />
+                <ManageAccessModal token={action.token} onClose={() => setAction(null)} />
             )}
 
             {action?.type === 'view-actions' && (
