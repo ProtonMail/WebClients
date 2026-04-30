@@ -2,29 +2,60 @@ import React from 'react';
 
 import { clsx } from 'clsx';
 
+import { useRightPanel } from '../providers/RightPanelProvider';
+import { DrawerToggleButton } from './Conversation/Header';
+
 import './RightDrawer.scss';
 
 interface RightDrawerProps {
-    children: React.ReactNode;
     className?: string;
     isFullscreen?: boolean;
+    onClose?: () => void;
 }
 
 /**
- * Inline right panel that sits as a flex sibling and pushes the main content left.
- * The parent container must be a flex row.
- * Pass isFullscreen to expand it to cover the entire viewport.
+ * Responsive right panel that adapts to screen size:
+ * - Large screens: Sits as a flex sibling and pushes main content left
+ * - Small screens: Overlays content with backdrop (modal-like behavior)
+ * Page-level components inject content via RightPanelSlot, which portals into the
+ * content div registered here.
  */
-export const RightDrawer = ({ children, className, isFullscreen }: RightDrawerProps) => {
+export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerProps) => {
+    const { registerContentEl, isOverlay } = useRightPanel();
+
     return (
-        <aside
-            className={clsx(
-                'right-drawer flex flex-column h-full overflow-hidden',
-                isFullscreen && 'right-drawer--fullscreen',
-                className
+        <>
+            {/* Backdrop for mobile overlay */}
+            {isOverlay && (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                <div className="right-drawer-backdrop" onClick={onClose}></div>
             )}
-        >
-            {children}
-        </aside>
+            <aside
+                className={clsx(
+                    'right-drawer rounded-xl flex flex-column h-full overflow-hidden',
+                    isFullscreen && 'right-drawer--fullscreen',
+                    isOverlay && 'right-drawer--overlay',
+                    className
+                )}
+            >
+                <div className="right-drawer-header w-full flex flex-row items-center justify-end px-3 py-2 shrink-0">
+                    {/* {onClose && (
+                        <button
+                            className="flex items-center justify-center interactive-pseudo-inset rounded-sm"
+                            onClick={onClose}
+                            aria-label="Close panel"
+                            style={{ width: '32px', height: '32px' }}
+                        >
+                            {isSmallScreen ? '✕' : '☰'}
+                        </button>
+                    )} */}
+                    <DrawerToggleButton />
+                </div>
+                <div
+                    ref={registerContentEl}
+                    className="right-drawer-content flex flex-column flex-1 overflow-auto w-full"
+                />
+            </aside>
+        </>
     );
 };

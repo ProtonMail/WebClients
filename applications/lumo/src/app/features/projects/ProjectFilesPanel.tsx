@@ -38,14 +38,14 @@ interface ProjectFilesPanelProps {
     projectId: string;
     instructions?: string;
     onEditInstructions: () => void;
-    modal?: boolean;
+    modal?: boolean; //TODO: clean up since no longer using modal
 }
 
 export const ProjectFilesPanel = ({
     projectId,
     instructions,
     onEditInstructions,
-    modal = false,
+    // modal = false,
 }: ProjectFilesPanelProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const driveBrowserRef = useRef<DriveBrowserHandle>(null);
@@ -191,10 +191,11 @@ export const ProjectFilesPanel = ({
 
     return (
         <div
-            className={clsx('project-files-panel md:w-1/3', {
+            className={clsx('project-files-panel', {
                 'has-drive-browser': linkedDriveFolder,
-                'modal p-0 sm:p-1': modal,
+                // 'modal p-0 sm:p-1': modal,
             })}
+            style={{ outline: '1px solid green' }}
         >
             <div className="project-files-panel-content">
                 {/* Instructions Section */}
