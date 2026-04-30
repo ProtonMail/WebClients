@@ -1,7 +1,7 @@
 .project-files-panel {
 	// Match files-panel structure: h-full w-1/3 pt-2 pr-4 pb-6
 	block-size: 100%;
-	inline-size: 33.33%; // w-1/3 equivalent
+	inline-size: 100%; // w-1/3 equivalent
 	display: flex;
 	flex-direction: column;
 	overflow-y: auto;
@@ -31,37 +31,37 @@
 	}
 
 	// Smooth panel entrance animation
-	animation: slideInFromRight 0.3s ease-out;
+	// animation: slideInFromRight 0.3s ease-out;
 
-	// When sidebar is shown, give it more space (like files-panel)
-	.project-detail-content.with-sidebar & {
-		inline-size: 40%; // Slightly wider when shown
-	}
+	// // When sidebar is shown, give it more space (like files-panel)
+	// .project-detail-content.with-sidebar & {
+	// 	inline-size: 40%; // Slightly wider when shown
+	// }
 
-	@media (width <= 1024px) {
-		inline-size: 50%; // w-1/2 at smaller screens
+	// @media (width <= 1024px) {
+	// 	inline-size: 50%; // w-1/2 at smaller screens
 
-		.project-detail-content.with-sidebar & {
-			inline-size: 50%;
-		}
-	}
+	// 	.project-detail-content.with-sidebar & {
+	// 		inline-size: 50%;
+	// 	}
+	// }
 
-	// Styles specific to modal usage
-	&.modal {
-		.project-files-panel-content {
-			gap: 1rem;
-			padding: 0;
+	// // Styles specific to modal usage
+	// &.modal {
+	// 	.project-files-panel-content {
+	// 		gap: 1rem;
+	// 		padding: 0;
 
-			.files-section:not(.has-files) {
-				padding: 4px;
-			}
-		}
+	// 		.files-section:not(.has-files) {
+	// 			padding: 4px;
+	// 		}
+	// 	}
 
-		.project-files-section {
-			padding: 0;
-			margin: 0;
-		}
-	}
+	// 	.project-files-section {
+	// 		padding: 0;
+	// 		margin: 0;
+	// 	}
+	// }
 }
 
 // Panel entrance animation (same as files-panel)
