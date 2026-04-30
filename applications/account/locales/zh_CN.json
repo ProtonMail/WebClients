@@ -1793,6 +1793,33 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Add and verify": [
+        "添加并验证"
+      ],
+      "Claim offer": [
+        "认领优惠"
+      ],
+      "Contact sales": [
+        "联系销售"
+      ],
+      "Create recovery phrase": [
+        "创建恢复短语"
+      ],
+      "Delete and confirm": [
+        "删除并确认"
+      ],
+      "Save and verify": [
+        "保存并验证"
+      ],
+      "Secure account": [
+        "安全账户"
+      ],
+      "View recovery setup details": [
+        "查看恢复设置详情"
+      ],
+      "Watch the interview": [
+        "观看访谈"
       ]
     },
     "action": {
@@ -2029,6 +2056,39 @@
       ],
       "Security admin:": [
         "安全管理员："
+      ],
+      "3 new admin roles": [
+        "3 个新管理员角色"
+      ],
+      "Admin roles": [
+        "管理员角色"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "通过分配特定的管理员角色进行委派管理。为每位管理员仅授予其所需的访问权限。这遵循最小权限原则，可保护您的组织免受账户被盗和意外错误的影响。"
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "通过合适的管理员角色进行委派管理。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
+      ],
+      "Organization admin": [
+        "组织管理员"
+      ],
+      "Organization admin:": [
+        "组织管理员："
+      ],
+      "Security admin": [
+        "安全管理员"
+      ],
+      "User admin": [
+        "用户管理员"
+      ],
+      "User admin:": [
+        "用户管理员："
       ]
     },
     "AdminRole_Info": {
@@ -2727,7 +2787,7 @@
         "该文章已更新，加入了 WireGuard 和 Stealth VPN 协议。"
       ],
       "Try out **Newsletters view** to declutter your inbox.": [
-        "试试 **订阅邮件视图**，让您的收件箱井井有条。"
+        "试用**新闻通讯视图**，让您的收件箱更整洁"
       ],
       "Understand passkeys, their benefits over passwords, and how ${ PASS_APP_NAME } keeps them safe.": [
         "了解通行密钥、它相对于密码的优势，以及 ${ PASS_APP_NAME } 如何确保其安全。"
@@ -3094,6 +3154,9 @@
       ],
       "Take a tour": [
         "开始导览"
+      ],
+      "Sign in": [
+        "登录"
       ]
     },
     "Calendar access select label": {
@@ -3688,6 +3751,30 @@
       ],
       "Upload any new files": [
         "上传任意文件"
+      ],
+      "Back up photos from your devices": [
+        "从您的设备备份照片"
+      ],
+      "Confirm cancellation": [
+        "确认取消"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "如果您超出免费套餐限制，您将无法："
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Manage your calendar": [
+        "管理您的日历"
+      ],
+      "Receive new emails": [
+        "接收新邮件"
+      ],
+      "Send emails with attachments": [
+        "发送带附件的邮件"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "当您的订阅在 ${ endDate } 结束时，您的账户将切换到免费套餐。如果您的使用量超过免费套餐限制，某些功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -5101,6 +5188,27 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME } 的端到端加密意味着只有您能解锁自己的数据。立即设置恢复选项，确保永不丢失访问权限。"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "从其他服务商迁移您的邮件、日历事件和联系人。"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "使用您自有域名的专业邮箱地址，建立信任和品牌认知度。"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "我们的客户支持团队如何将 VPN 应用直接送到用户手中。"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "当 ${ BRAND_NAME } 在一场咄咄逼人的运动中受阻时，我们是如何反击的。"
+      ],
+      "Methods that include both password reset and data recovery.": [
+        "包含密码重置和数据恢复两种方法。"
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "这可以让您重新访问 ${ BRAND_NAME } 账户，但不会恢复您的加密数据。"
       ]
     },
     "description": {
@@ -6532,6 +6640,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "您的恢复联系人应是您认识并能轻松联系到的人！"
+      ],
+      "Add option": [
+        "添加选项"
+      ],
+      "Contact-assisted recovery": [
+        "联系人辅助恢复"
+      ],
+      "People you have added as recovery contacts.": [
+        "您已添加为恢复联系人的用户。"
+      ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "他们已将您添加为受信任的联系人。在紧急情况下，您可以访问他们的账户。"
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "他们可能会在紧急情况下请求访问您的账户。"
       ]
     },
     "Empty group name": {
@@ -7952,6 +8075,36 @@
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 账户保护"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "3 folders, labels and filters": [
+        "3 个文件夹、标签和筛选器"
+      ],
+      "500 MB Mail storage": [
+        "500 MB 邮件存储空间"
+      ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "Mail、Calendar、Drive、Pass 和 VPN 中的高级功能"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
+      "Short domain @pm.me": [
+        "短域名 @pm.me"
+      ],
+      "Unlimited folders, labels and filters": [
+        "无限文件夹、标签和筛选器"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
       ]
     },
     "Features": {
@@ -12680,6 +12833,114 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 独立运营且无广告收入。\n以下示例说明了如何在实际中运用这种独立性。"
+      ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } 会向您的恢复手机发送验证码，您可能需要支付标准短信费用。"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } 将不再保留文件的先前版本。"
+      ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "添加 1 到 5 名您信任且能轻松联系的人。他们将能够通过登录您的账户为您重置密码。他们必须拥有 ${ BRAND_NAME } 账户。"
+      ],
+      "Add a phone number in case we need to contact you": [
+        "添加手机号码以备我们需要联系您时使用"
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "允许在设置中重置密码，使您能够在忘记密码但仍登录 ${ BRAND_NAME } 时更改密码。"
+      ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "首 6 个月按 ${ monthlyDiscountedPrice } 计费，续费按 ${ monthlyRenewalPrice } 计费。"
+      ],
+      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
+        "首年 12 个月按 ${ yearlyDiscountedPrice } 计费，续费按 ${ yearlyRenewalPrice } 计费。"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "通过添加您信任的人作为恢复联系人，当您在密码重置后难以恢复数据时，我们可以向他们发送邮件以帮助您。您也可以成为其他人的恢复联系人。"
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "在 ${ MAIL_APP_NAME } 中关联和管理您的外部邮箱。"
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "在此设备上启用数据备份后，重置密码后只需在此设备上登录，即可恢复对邮件、联系人、文件、密码以及您账户中任何其他加密数据的访问权限。"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "如需 10 年版本历史，请联系我们的销售团队。"
+      ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "如果禁用，${ BRAND_NAME } 仍会使用您的恢复邮箱向您发送安全通知。"
+      ],
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "如果您最近重置了密码，可以通过 ${ recoveryMethodLink } 解锁您的数据。如果这是因为旧密码重置导致的，您可以停止再次显示此消息。"
+      ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "当您已登录时，这通常是恢复账户的最简便方式。"
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "这是即时恢复所有数据的唯一方法，请务必将其保存在安全但可获取的地方。"
+      ],
+      "No connected addresses.": [
+        "未关联任何地址"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "启用 ${ PROTON_SENTINEL_NAME } 后，通过邮箱恢复不可用。"
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "启用 ${ PROTON_SENTINEL_NAME } 后，手机恢复不可用。"
+      ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "这将允许电视访问您的 ${ BRAND_NAME } 账户。"
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "这将删除您所有早于 ${ rententionLabel } 的文件版本。"
+      ],
+      "This will delete all previous versions of your files.": [
+        "这将删除您文件的所有先前版本！"
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "这将让您快速安全地访问您的 ${ BRAND_NAME } 账户，以便更改密码。"
+      ],
+      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
+        "为了确保您账户的最高安全性，请禁用 **二维码登录**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "为了确保您账户的最高安全性，请禁用 **通过恢复邮箱恢复账户**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
+        "为了确保您账户的最高安全性，请禁用 **已登录状态下的重置**。"
+      ],
+      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
+        "若要使用此数据恢复方法，您必须具有密码重置选项（如邮箱验证或短信验证）。"
+      ],
+      "Upgrade to unlock": [
+        "升级以解锁"
+      ],
+      "Version history": [
+        "版本历史"
+      ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "我们可以使用您的恢复邮箱向您发送验证码以重置密码，并在发现可疑活动时与您联系。"
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "我们可以使用您的恢复手机向您发送验证码以重置密码，并在发现可疑活动时与您联系。"
+      ],
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "我们强烈建议所有人启用通过恢复短语进行恢复。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "您无需打开或阅读该文件，只需下载并存放在安全位置即可。"
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "您的 ${ planDisplayName } 套餐不仅能保护您的业务数据和通信安全，还能支持您的合规目标、让您的业务脱颖而出，并保持团队紧密连接。"
+      ],
+      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "您的恢复短语（包含在恢复套件中）使您能够在无法访问 ${ BRAND_NAME } 账户时重新登录并恢复数据。它由 12 个单词组成，作用类似于备份密码。"
       ]
     },
     "info": {
@@ -14180,7 +14441,7 @@
         "新的二级密码"
       ],
       "Newsletters": [
-        "时事通讯"
+        "新闻通讯"
       ],
       "No (users cannot use the app until a vault is shared with them)": [
         "取消（用户在被共享保管库前无法使用应用）"
@@ -14736,6 +14997,108 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } 企业版"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 账户保护"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "${ PROTON_SENTINEL_NAME } 保护"
+      ],
+      "Allow QR code sign-in": [
+        "允许扫码登录"
+      ],
+      "Automatic email forwarding": [
+        "自动邮件转发"
+      ],
+      "Block trackers and marketers": [
+        "屏蔽跟踪器和营销者"
+      ],
+      "Catch-all email address": [
+        "通配邮件地址"
+      ],
+      "Custom domain": [
+        "自定义域名"
+      ],
+      "Don't keep versions": [
+        "不保留版本"
+      ],
+      "Early access": [
+        "抢先体验"
+      ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Email addresses per user": [
+        "每位用户的邮箱地址数量"
+      ],
+      "Email with @yourcompany.com domain": [
+        "使用 @yourcompany.com 域名的邮箱"
+      ],
+      "Folders, labels, and filters": [
+        "文件夹、标签和筛选器"
+      ],
+      "Free VPN included": [
+        "包含免费 VPN"
+      ],
+      "Monthly": [
+        "按月"
+      ],
+      "No": [
+        "否"
+      ],
+      "Online productivity suite": [
+        "在线生产力套件"
+      ],
+      "Open-source code": [
+        "开源代码"
+      ],
+      "Premium features included": [
+        "包含的高级功能"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
+      "See your team's availability": [
+        "查看您的团队忙闲状态"
+      ],
+      "Short domain @pm.me": [
+        "短域名 @pm.me"
+      ],
+      "Storage per user": [
+        "每位用户的存储空间"
+      ],
+      "Support for multiple users": [
+        "支持多用户"
+      ],
+      "Third-party ads": [
+        "第三方广告"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "Version history": [
+        "版本历史"
+      ],
+      "We securely stored recovery information on this device.": [
+        "我们已在此设备上安全存储了恢复信息。"
+      ],
+      "Yearly": [
+        "年度"
+      ],
+      "Yearly free storage bonus": [
+        "年度免费存储奖励"
+      ],
+      "Your recovery phone number": [
+        "您的恢复手机号码"
       ]
     },
     "label": {
@@ -15149,6 +15512,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "use a data recovery method": [
+        "使用数据恢复方法"
       ]
     },
     "Link (Scribe)": {
@@ -19229,6 +19595,9 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
+      ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "立即验证此密保手机号码：${ phoneData.value }"
       ]
     },
     "Recovery score": {
@@ -19240,6 +19609,45 @@
       ],
       "Score: ${ score } / ${ maxScore }": [
         "得分：${ score } / ${ maxScore }"
+      ],
+      "${ score } / ${ maxScore } completed": [
+        "已完成 ${ score } / ${ maxScore }"
+      ],
+      "Account protection": [
+        "账户保护"
+      ],
+      "Add more options for stronger protection": [
+        "添加更多选项以获得更强的保护"
+      ],
+      "Add more options to avoid getting locked out of your account.": [
+        "添加更多选项以避免无法访问您的账户。"
+      ],
+      "Awesome. Keep your options up-to-date for stronger protection.": [
+        "太棒了。请保持您的选项为最新，以获得更强的保护。"
+      ],
+      "How you increased your account protection": [
+        "您如何加强了账户保护"
+      ],
+      "Inactive recovery options": [
+        "未启用的恢复选项"
+      ],
+      "Maximum": [
+        "上限"
+      ],
+      "Partial": [
+        "部分"
+      ],
+      "Require password reset option (email or SMS verification)": [
+        "需要密码重置选项（邮箱或短信验证）"
+      ],
+      "Strong": [
+        "强"
+      ],
+      "Unprotected": [
+        "未受保护"
+      ],
+      "Weak": [
+        "弱"
       ]
     },
     "Recovery score item": {
@@ -19260,6 +19668,60 @@
       ],
       "Save recovery phrase": [
         "保存恢复短语"
+      ],
+      "Add emergency contacts": [
+        "添加紧急联系人"
+      ],
+      "Add recovery contacts": [
+        "添加恢复联系人"
+      ],
+      "Add recovery email": [
+        "添加恢复邮箱"
+      ],
+      "Allow scanning QR code to sign in": [
+        "允许扫描二维码登录"
+      ],
+      "Data recovery allowed on this device": [
+        "允许在此设备上进行数据恢复"
+      ],
+      "Download recovery file": [
+        "下载恢复文件"
+      ],
+      "Email verification enabled": [
+        "已启用邮箱验证"
+      ],
+      "Emergency contacts added": [
+        "已添加紧急联系人"
+      ],
+      "Enable recovery by email": [
+        "启用通过邮箱恢复"
+      ],
+      "Enable recovery by phone": [
+        "启用手机恢复"
+      ],
+      "Password reset allowed from settings": [
+        "允许在设置中重置密码"
+      ],
+      "Recovery contacts added": [
+        "已添加恢复联系人"
+      ],
+      "Recovery file downloaded": [
+        "已下载恢复文件"
+      ],
+      "Sign-in with QR code allowed": [
+        "允许通过二维码登录"
+      ],
+      "SMS verification enabled": [
+        "已启用短信验证"
+      ],
+      "Verify password": [
+        "验证密码"
+      ],
+      "Verify recovery email": [
+        "验证恢复邮箱"
+      ],
+      "Verify recovery phone": [
+        "验证恢复手机"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20175,6 +20637,9 @@
     "Sentinel banner": {
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
+      ],
+      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
+        "为了确保您账户的最高安全性，请下载您的恢复短语并禁用高亮显示的选项。"
       ]
     },
     "Server-Info": {
@@ -20441,6 +20906,9 @@
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
         "为了增强您的账户和数据的安全性，您可以在网页客户端的账户设置中申请重置密码。"
+      ],
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "若要禁止从设置中重置密码，您必须保存恢复短语。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -21631,6 +22099,54 @@
       ],
       "Off": [
         "关闭"
+      ],
+      "Add a phone number": [
+        "添加手机号码"
+      ],
+      "Add an email address": [
+        "添加邮箱地址"
+      ],
+      "Available on this device": [
+        "在此设备上可用"
+      ],
+      "Disable QR code sign-in": [
+        "禁用二维码登录"
+      ],
+      "Disable recovery by email": [
+        "禁用通过邮箱恢复"
+      ],
+      "Disable recovery by phone": [
+        "禁用手机恢复"
+      ],
+      "Disable signed-in reset": [
+        "禁用已登录状态下的重置"
+      ],
+      "Generate a recovery phrase": [
+        "生成恢复短语"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "最后更新于 ${ formattedUpdateDate }"
+      ],
+      "Not saved": [
+        "未保存"
+      ],
+      "On": [
+        "开启"
+      ],
+      "Outdated": [
+        "已过期"
+      ],
+      "Saved": [
+        "已保存"
+      ],
+      "Unverified": [
+        "未验证"
+      ],
+      "Verified": [
+        "已验证"
+      ],
+      "Verify ${ value }": [
+        "验证 ${ value }"
       ]
     },
     "Step in filter modal": {
@@ -22310,6 +22826,39 @@
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
+      ],
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } 为您的文件和照片提供 1 TB 存储空间。您还有资格获得年度存储奖励。"
+      ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle } 让您可以使用所有应用和高级功能。隐私保护已内置其中，您可放心使用，知晓您的数据和身份是安全的。"
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } 为您提供所有应用、所有功能、新版本的早期访问权限以及掌控数据和数据安全所需的一切。"
+      ],
+      "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planTitle } 为最多 2 人提供无限隐私和更多存储空间。"
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ planTitle } 为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle } 为您的团队提供在工作中提高生产力和组织性所需的一切，包括所有 ${ BRAND_NAME } 应用及其高级功能。"
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planTitle } 为您的团队提供提高生产力、组织有序以及掌控收件箱、日程等所需的一切。"
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planTitle } 超越了基础功能，帮助您提高生产力、更有条理，并掌控您的收件箱、邮件身份等。"
+      ],
+      "Compare the key differences that matter for your business.": [
+        "对比对您的业务至关重要的主要差异。"
+      ],
+      "Save 50% for 1 year, and keep full access": [
+        "节省 50% 费用持续 1 年，并保留所有访问权限"
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "节省 50% 费用持续 6 个月，并保留所有访问权限"
       ]
     },
     "Success": {
@@ -22631,6 +23180,9 @@
       ],
       "/user per month": [
         "/用户每月"
+      ],
+      "/year": [
+        "/年"
       ]
     },
     "Suffix for price": {
@@ -22751,6 +23303,9 @@
     "Temporary need": {
       "Keep current plan": [
         "保留当前套餐"
+      ],
+      "Continue cancelling": [
+        "继续取消"
       ]
     },
     "Theme": {
@@ -24566,6 +25121,72 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Add an emergency contact": [
+        "添加紧急联系人"
+      ],
+      "Advanced recovery options": [
+        "高级恢复选项"
+      ],
+      "Connected emails": [
+        "已关联的邮箱"
+      ],
+      "Contact-assisted recovery": [
+        "联系人辅助恢复"
+      ],
+      "Data recovery options": [
+        "数据恢复选项"
+      ],
+      "Delete version history?": [
+        "删除版本历史？"
+      ],
+      "Device data backup": [
+        "设备数据备份"
+      ],
+      "Disable device data backup?": [
+        "禁用设备数据备份？"
+      ],
+      "Email verification": [
+        "邮箱验证"
+      ],
+      "Free plan": [
+        "免费套餐"
+      ],
+      "Helping activists in Hong Kong": [
+        "帮助香港的活动人士"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "${ MAIL_APP_NAME } 有何不同之处"
+      ],
+      "No events yet": [
+        "暂无事件"
+      ],
+      "Our fight against censorship in Russia": [
+        "我们与俄罗斯的审查制度作斗争"
+      ],
+      "Recovery phrase": [
+        "恢复短语"
+      ],
+      "Signed-in reset": [
+        "已登录状态下的重置"
+      ],
+      "SMS verification": [
+        "短信验证"
+      ],
+      "Stay secure and connected anywhere": [
+        "随时随地保持安全和连接"
+      ],
+      "Unblocking internet access in Iran": [
+        "在伊朗解除互联网访问限制"
+      ],
+      "What changes if you switch to the Free plan": [
+        "切换到免费套餐会有什么变化"
+      ],
+      "Your recovery phrase": [
+        "您的恢复短语"
+      ],
+      "Your recovery setup": [
+        "您的恢复设置"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24929,6 +25550,33 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "允许通过发送到您恢复邮箱的一次性验证码来恢复您的账户"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "允许通过发送到您恢复手机的一次性验证码来恢复您的账户"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "允许扫描 ${ BRAND_NAME } 移动应用中的二维码进行登录"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "允许受信任的联系人请求访问您的账户"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "允许受信任的联系人在密码重置后解锁您的加密数据"
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "包括 ${ MAIL_APP_NAME } 中的自定义邮箱域名和无限 Hide-my-email 别名、${ VPN_SHORT_APP_NAME } 中对 120 多个国家/地区服务器的访问权限、${ PASS_SHORT_APP_NAME } 中的内置 2FA 和安全共享等。"
+      ],
+      "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
+        "包含 @yourdomain.com 的专业邮箱、带有协作文档编辑功能的云存储、日程安排和视频会议、密码管理、安全的 ${ VPN_SHORT_APP_NAME } 等。"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "在此浏览器中保存加密备份文件，以便在密码重置后恢复数据"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "保存加密备份文件，以便在密码重置后恢复数据"
       ]
     },
     "tooltip": {
@@ -25971,6 +26619,22 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "立省 ${ discountRate }%"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "启用照片版块"
+      ],
+      "Get updates about comments via email": [
+        "通过邮件接收评论更新"
+      ],
+      "Include document name in email notifications": [
+        "在邮件通知中包含文档名称"
       ]
     }
   }
