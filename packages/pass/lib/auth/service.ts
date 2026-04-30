@@ -103,7 +103,7 @@ export interface AuthServiceConfig {
      * session data. Requires an API call to retrieve the local key. */
     getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<EncryptedAuthSession>>;
     /**  Implement any service initialization logic in this hook. Should return
-     * a boolean flag indicating wether user was authorized or not. */
+     * a boolean flag indicating whether user was authorized or not. */
     onInit: (options: AuthOptions) => Promise<boolean>;
     /** Called when authorization sequence starts: this can happen when consuming a
      * session fork or when trying to resume a session. */
@@ -115,7 +115,7 @@ export interface AuthServiceConfig {
     onLogoutStart?: () => void;
     /** Called whenever a user is unauthenticated. This will be triggered any time
      * the `logout` function is called (either via user action or when an inactive
-     * session is detected). The `broadcast` flag indicates wether we should
+     * session is detected). The `broadcast` flag indicates whether we should
      * broadcast the unauthorized session to other clients. */
     onLogoutComplete?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
     /** Called during a hard logout sequence if we couldn't properly revoke the session.
@@ -159,7 +159,7 @@ export interface AuthServiceConfig {
      * resume a session. */
     onSessionEmpty?: () => void;
     /** Called when a session is locked either through user action or when a
-     * locked session is detected. The `broadcast` flag indicates wether we should
+     * locked session is detected. The `broadcast` flag indicates whether we should
      * broadcast the locked session to other clients. */
     onLocked?: (mode: LockMode, localID: Maybe<number>, broadcast: boolean) => void;
     /** Callback when session lock is created, updated or deleted */
@@ -173,7 +173,7 @@ export interface AuthServiceConfig {
      * session error. */
     onSessionFailure?: (options: AuthOptions) => MaybePromise<void>;
     /** Called when session tokens have been refreshed. The`broadcast` flag indicates
-     * wether we should broadcast the refresh session data to other clients. */
+     * whether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
     /** Implement how you want to handle notifications emitted from the service */
     onNotification?: (notification: CreateNotificationOptions) => void;

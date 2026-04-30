@@ -22,7 +22,7 @@ export type SpotlightRule = {
     message: SpotlightMessage;
     /** Given any previous acknowledgments for this particular message and the
      * current spotlight service state, should return a boolean flag indicating
-     * wether this rule should be triggered */
+     * whether this rule should be triggered */
     when?: SpotlightWhen;
     /** Optional callback that will be executed when this particular spotlight
      * message is acknowledged */
