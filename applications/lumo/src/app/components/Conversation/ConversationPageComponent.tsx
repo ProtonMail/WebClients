@@ -9,7 +9,7 @@ import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useQueryParam, useSkillParam } from '../../hooks';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
-import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
+import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -29,12 +29,15 @@ import { clearProvisionalAttachments } from '../../redux/slices/core/attachments
 import { EMPTY_CONVERSATION_MAP, pullConversationRequest } from '../../redux/slices/core/conversations';
 import { type ConversationId, ConversationStatus } from '../../types';
 import ConversationSkeleton from '../ConversationSkeleton';
-import ConversationComponent from './ConversationComponent';
-import MainContainer from './MainContainer';
+import TestConversationComponent from './TestConversationComponent';
+import TestMainContainer from './TestMainContainer';
 
 import './Conversation.scss';
 
-const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
+// const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
+const TestGalleryView = lazy(() =>
+    import('../../features/gallery/TestGalleryView').then((m) => ({ default: m.GalleryView }))
+);
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
@@ -176,52 +179,72 @@ const ConversationPageComponentInner = () => {
 
     // ** Main layout **
     return (
-        <ComposerActionsProvider handleSendMessage={handleSendMessage}>
+        <ConversationActionsProvider
+            handleSendMessage={handleSendMessage}
+            handleAbort={handleAbort}
+            handleEditMessage={handleEditMessage}
+            handleRegenerateMessage={handleRegenerateMessage}
+            getSiblingInfo={getSiblingInfo}
+            handleRetryGeneration={handleRetryGeneration}
+            messageChain={messageChain}
+            messageChainRef={messageChainRef}
+        >
             <div
-                className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto"
+                className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm"
+                style={{
+                    border: '1px solid blue',
+                }}
                 onDrop={onDrop}
                 onDragLeave={onDragLeave}
                 onDragEnter={onDragEnter}
                 onDragOver={onDragOver}
             >
+                {/* <Header conversation={conversation} /> */}
                 {!curConversationId && isGalleryRoute && (
                     <Suspense fallback={<ConversationSkeleton />}>
-                        <GalleryView
-                            handleSendMessage={handleSendMessage}
+                        {/* <GalleryView
+                            isProcessingAttachment={isProcessingAttachment}
+                            prefillQuery={prefillQuery || undefined}
+                        /> */}
+                        <TestGalleryView
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
                         />
                     </Suspense>
                 )}
                 {!curConversationId && !isGalleryRoute && (
-                    <MainContainer
+                    // <MainContainer
+                    //     isProcessingAttachment={isProcessingAttachment}
+                    //     initialQuery={initialQuery || undefined}
+                    //     prefillQuery={prefillQuery || undefined}
+                    // />
+                    <TestMainContainer
                         isProcessingAttachment={isProcessingAttachment}
-                        handleSendMessage={handleSendMessage}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
                     />
                 )}
                 {curConversationId && isLoading && <ConversationSkeleton />}
                 {curConversationId && !isLoading && (
-                    <ConversationComponent
+                    // <ConversationComponent
+                    //     key={curConversationId}
+                    //     conversation={conversation}
+                    //     isGenerating={isGenerating}
+                    //     isProcessingAttachment={isProcessingAttachment}
+                    //     initialQuery={initialQuery || undefined}
+                    //     prefillQuery={pendingPrefill || undefined}
+                    // />
+                    <TestConversationComponent
                         key={curConversationId}
                         conversation={conversation}
-                        handleSendMessage={handleSendMessage}
-                        handleAbort={handleAbort}
                         isGenerating={isGenerating}
                         isProcessingAttachment={isProcessingAttachment}
-                        messageChainRef={messageChainRef}
-                        messageChain={messageChain}
-                        handleRegenerateMessage={handleRegenerateMessage}
-                        handleEditMessage={handleEditMessage}
-                        getSiblingInfo={getSiblingInfo}
-                        handleRetryGeneration={handleRetryGeneration}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={pendingPrefill || undefined}
                     />
                 )}
             </div>
-        </ComposerActionsProvider>
+        </ConversationActionsProvider>
     );
 };
 

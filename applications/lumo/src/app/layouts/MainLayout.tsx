@@ -1,14 +1,18 @@
 import { type ReactNode, lazy } from 'react';
 
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
+import { RightDrawer } from '../components/RightDrawer';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { useResourceLimitNotifications } from '../hooks/useResourceLimitNotifications';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
+import { RightPanelProvider, useRightPanel } from '../providers/RightPanelProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { SidebarProvider } from '../providers/SidebarProvider';
 import LumoSidebar from './sidebar/LumoSidebar';
+
+import './MainLayout.scss';
 
 export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
 
@@ -18,22 +22,29 @@ interface Props {
 
 const MainLayoutContent = ({ children }: Props) => {
     const { openSearchModal } = useSearchModal();
+    const { isOpen, toggle } = useRightPanel();
     useGuestMigrationNotification();
     useResourceLimitNotifications();
 
-    // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
 
     return (
-        <div className="relative reset4print flex flex-row h-full w-full overflow-hidden">
+        <div className="outer-outer relative reset4print flex flex-row h-full w-full overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full no-print">
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
-                    <div className="flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative">
+                    <div
+                        className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2"
+                        style={{ border: '1px solid red' }}
+                    >
                         <LumoSidebar />
-                        <main className="flex-1 flex flex-column flex-nowrap border-top border-weak reset4print">
+                        <main
+                            className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative"
+                            style={{ outline: 'solid 1px orange' }}
+                        >
                             <HighLoadWarning />
                             {children}
                         </main>
+                        {isOpen && <RightDrawer onClose={toggle} />}
                     </div>
                 </div>
             </div>
@@ -51,13 +62,15 @@ export const MainLayout = ({ children }: Props) => {
         <GhostChatProvider>
             <SidebarProvider>
                 <SearchModalProvider>
-                    {!isGuest ? (
-                        <DriveIndexingProviderLazy>
+                    <RightPanelProvider>
+                        {!isGuest ? (
+                            <DriveIndexingProviderLazy>
+                                <MainLayoutContent children={children} />
+                            </DriveIndexingProviderLazy>
+                        ) : (
                             <MainLayoutContent children={children} />
-                        </DriveIndexingProviderLazy>
-                    ) : (
-                        <MainLayoutContent children={children} />
-                    )}
+                        )}
+                    </RightPanelProvider>
                 </SearchModalProvider>
             </SidebarProvider>
         </GhostChatProvider>
