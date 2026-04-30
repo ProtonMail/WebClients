@@ -105,6 +105,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     rootClassName="mb-4"
                     autoFocus
                 />
+
                 <InputFieldTwo
                     id="pat-expiry-minutes"
                     type="number"
