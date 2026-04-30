@@ -8,6 +8,7 @@ describe('MoveToFolderDropdownHelper', () => {
         it('should return an empty array if we cannot move to inbox', () => {
             expect(
                 getInboxCategoriesItems({
+                    selectAll: false,
                     canMoveToInbox: false,
                     shouldShowTabs: false,
                     activeCategoriesTabs: [],
@@ -17,6 +18,7 @@ describe('MoveToFolderDropdownHelper', () => {
 
         it('should return inbox if cannot move to tab even if we have active categories', () => {
             const res = getInboxCategoriesItems({
+                selectAll: false,
                 canMoveToInbox: true,
                 shouldShowTabs: false,
                 activeCategoriesTabs: [
@@ -46,6 +48,7 @@ describe('MoveToFolderDropdownHelper', () => {
 
         it('should return the active categories', () => {
             const res = getInboxCategoriesItems({
+                selectAll: false,
                 canMoveToInbox: true,
                 shouldShowTabs: true,
                 activeCategoriesTabs: [
@@ -67,6 +70,84 @@ describe('MoveToFolderDropdownHelper', () => {
             expect(res.length).toEqual(2);
             expect(res[0].ID).toEqual(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
             expect(res[1].ID).toEqual(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+        });
+
+        describe('select all changes', () => {
+            it('should show the categories options if user has not select all', () => {
+                const res = getInboxCategoriesItems({
+                    selectAll: false,
+                    canMoveToInbox: true,
+                    shouldShowTabs: true,
+                    activeCategoriesTabs: [
+                        {
+                            id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                            colorShade: CATEGORIES_COLOR_SHADES.IRIS,
+                            outlinedIcon: 'inbox',
+                            filledIcon: 'inbox-filled',
+                        },
+                        {
+                            id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            colorShade: CATEGORIES_COLOR_SHADES.TEAL,
+                            outlinedIcon: 'megaphone',
+                            filledIcon: 'megaphone-filled',
+                        },
+                    ],
+                });
+
+                expect(res.length).toEqual(2);
+            });
+
+            it('should return an empty array if user has selected all', () => {
+                const res = getInboxCategoriesItems({
+                    selectAll: true,
+                    canMoveToInbox: true,
+                    shouldShowTabs: true,
+                    activeCategoriesTabs: [
+                        {
+                            id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                            colorShade: CATEGORIES_COLOR_SHADES.IRIS,
+                            outlinedIcon: 'inbox',
+                            filledIcon: 'inbox-filled',
+                        },
+                        {
+                            id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            colorShade: CATEGORIES_COLOR_SHADES.TEAL,
+                            outlinedIcon: 'megaphone',
+                            filledIcon: 'megaphone-filled',
+                        },
+                    ],
+                });
+
+                expect(res.length).toEqual(0);
+            });
+
+            it('should return an empty array if user has selected all and there are no active categories', () => {
+                const res = getInboxCategoriesItems({
+                    selectAll: true,
+                    canMoveToInbox: true,
+                    shouldShowTabs: true,
+                    activeCategoriesTabs: [],
+                });
+
+                expect(res.length).toEqual(0);
+            });
+
+            it('should still show inbox if user has selected all but tabs are not displayed', () => {
+                const res = getInboxCategoriesItems({
+                    selectAll: true,
+                    canMoveToInbox: true,
+                    shouldShowTabs: false,
+                    activeCategoriesTabs: [],
+                });
+
+                expect(res).toEqual([
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        Name: 'Inbox',
+                        icon: 'inbox',
+                    },
+                ]);
+            });
         });
     });
 });
