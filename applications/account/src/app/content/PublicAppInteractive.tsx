@@ -16,7 +16,14 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, type APP_NAMES, CLIENT_TYPES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    type APP_NAMES,
+    CLIENT_TYPES,
+    SSO_PATHS,
+    VPN_TV_PATH_WITH_CODE,
+    VPN_TV_SIGNUP_REDIRECT,
+} from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
@@ -63,7 +70,8 @@ import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { ProductAttribution } from './ProductAttribution';
 import ResetPasswordSwitchContainer from './ResetPasswordSwitchContainer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
-import { TvContainerNotSignedIn } from './TvContainerNotSignedIn/TvContainerNotSignedIn';
+import { TvContainerGetVpnPlus } from './TvContainerGetVpnPlus';
+import { TvContainerNotSignedIn } from './TvContainerNotSignedIn';
 import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
@@ -353,6 +361,11 @@ const PublicAppInteractive = ({
                                                     paths={paths}
                                                     searchParams={initialSearchParams}
                                                 />
+                                            </UnAuthenticated>
+                                        </Route>
+                                        <Route path={VPN_TV_SIGNUP_REDIRECT}>
+                                            <UnAuthenticated>
+                                                <TvContainerGetVpnPlus searchParams={searchParams} paths={paths} />
                                             </UnAuthenticated>
                                         </Route>
                                         <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>

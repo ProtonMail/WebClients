@@ -284,7 +284,8 @@ export const getNoAds = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getDNSLeak = (): PlanCardFeatureDefinition => {
+
+export const getDNSLeak = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`DNS leak prevention`,
         tooltip: c('new_plans: tooltip')
@@ -292,6 +293,7 @@ const getDNSLeak = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getKillSwitch = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Kill switch/always-on VPN`,
@@ -300,7 +302,8 @@ export const getKillSwitch = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getEncryption = (): PlanCardFeatureDefinition => {
+
+export const getEncryption = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Encrypted VPN servers`,
         tooltip: c('new_plans: tooltip')
@@ -308,7 +311,8 @@ const getEncryption = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getRouterSupport = (): PlanCardFeatureDefinition => {
+
+export const getRouterSupport = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Router support`,
         tooltip: c('new_plans: tooltip')
@@ -316,6 +320,7 @@ const getRouterSupport = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
 export const getPrioritySupport = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Priority support & live chat`,
@@ -346,7 +351,8 @@ export const getRefundable = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getSplitTunnel = (included: boolean): PlanCardFeatureDefinition => {
+
+export const getSplitTunnel = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Split tunneling (Android and Windows)`,
         tooltip: c('new_plans: tooltip')
@@ -354,6 +360,14 @@ const getSplitTunnel = (included: boolean): PlanCardFeatureDefinition => {
         included: included,
     };
 };
+
+export const getNCountries = (n: number): PlanCardFeatureDefinition => {
+    return {
+        included: true,
+        text: c('new_plans: Upsell attribute').ngettext(msgid`${n} country`, `${n} countries`, n),
+    };
+};
+
 export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
     if (n === 1) {
         return {
@@ -370,6 +384,27 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
             n
         ),
         included: true,
+    };
+};
+
+export const getUnlockStreaming = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Unlock streaming`,
+        included: true,
+    };
+};
+
+export const getAccessAllCountries = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Access all countries`,
+        included: true,
+    };
+};
+
+export const getNoStreamingSupport = (): PlanCardFeatureDefinition => {
+    return {
+        included: false,
+        text: c('new_plans: feature').t`No streaming support`,
     };
 };
 

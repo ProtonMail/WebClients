@@ -15,7 +15,7 @@ import {
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS, VPN_TV_SIGNUP_REDIRECT } from '@proton/shared/lib/constants';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
@@ -138,6 +138,7 @@ export interface Paths {
     forgotUsername: string;
     signinHelp: string;
     signinAnotherDevice: string;
+    tvSignup: string;
 }
 
 export const getPaths = ({
@@ -164,6 +165,7 @@ export const getPaths = ({
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
         signinHelp: `${prefix}${SSO_PATHS.SIGNIN_HELP}`,
         signinAnotherDevice: `${prefix}${SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}`,
+        tvSignup: `${VPN_TV_SIGNUP_REDIRECT}`,
     };
 };
 
