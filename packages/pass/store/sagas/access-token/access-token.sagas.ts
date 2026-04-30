@@ -33,9 +33,7 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
 import { selectShareState } from '@proton/pass/store/selectors/shares';
 import type { Maybe, PersonalAccessTokenShareResponse } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
 
 const listSaga = createRequestSaga({
     actions: getAccessTokens,
@@ -50,16 +48,7 @@ const createSaga = createRequestSaga({
         const tokenId = data.PersonalAccessTokenID;
 
         if (shareIds.length > 0) {
-            try {
-                yield all(shareIds.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey)));
-            } catch (err) {
-                /* The token exists server-side but at least one request failed,
-                 * leaving the token without all the access the user requested.
-                 * Delete the token to avoid a half-configured PAT. */
-                logger.error(`[Saga::AccessToken] grant failed, cancelling token`, getErrorMessage(err));
-                yield call(deletePersonalAccessToken, tokenId);
-                throw err;
-            }
+            yield all(shareIds.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey)));
         }
 
         return {
