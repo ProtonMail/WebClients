@@ -329,7 +329,14 @@ export const labelMessages = createAsyncThunk<
         { extra, dispatch }
     ) => {
         try {
-            dispatch(messageCountsActions.labelMessagesPending({ messages, destinationLabelID, labels, folders }));
+            dispatch(
+                messageCountsActions.labelMessagesPending({
+                    messages,
+                    destinationLabelID,
+                    labels,
+                    folders,
+                })
+            );
             dispatch(
                 conversationCountsActions.labelMessagesPending({
                     messages,

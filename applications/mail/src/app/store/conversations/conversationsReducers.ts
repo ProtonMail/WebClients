@@ -9,6 +9,7 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { hasLabel, isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
@@ -588,26 +589,54 @@ export const labelMessagesPending = (
 ) => {
     const { messages, sourceLabelID, destinationLabelID, folders, labels } = action.meta.arg;
 
-    // Update conversation first so that message is not updated yet
-    messages.forEach((message) => {
-        const conversationState = state[message.ConversationID] as ConversationState;
+    // If the category is being updated, update the conversation and all conversation messages
+    if (isCategoryLabel(destinationLabelID)) {
+        const conversationIDs = uniqueBy(
+            messages.map(({ ConversationID }) => ConversationID),
+            (id) => id
+        );
 
-        if (conversationState) {
-            applyLabelToConversationMessage(
-                message,
+        conversationIDs.forEach((conversationID) => {
+            const conversationState = state[conversationID];
+
+            if (!conversationState) {
+                return;
+            }
+
+            applyLabelToConversation(
                 conversationState.Conversation,
                 sourceLabelID,
                 destinationLabelID,
-                labels
+                labels,
+                folders
             );
 
-            conversationState.Messages?.forEach((messageFromConversation) => {
-                if (messageFromConversation.ID === message.ID) {
-                    applyLabelToMessage(messageFromConversation, destinationLabelID, folders, labels);
-                }
+            conversationState.Messages?.forEach((message) => {
+                applyLabelToMessage(message, destinationLabelID, folders, labels);
             });
-        }
-    });
+        });
+    } else {
+        // Update conversation first so that message is not updated yet
+        messages.forEach((message) => {
+            const conversationState = state[message.ConversationID] as ConversationState;
+
+            if (conversationState) {
+                applyLabelToConversationMessage(
+                    message,
+                    conversationState.Conversation,
+                    sourceLabelID,
+                    destinationLabelID,
+                    labels
+                );
+
+                conversationState.Messages?.forEach((messageFromConversation) => {
+                    if (messageFromConversation.ID === message.ID) {
+                        applyLabelToMessage(messageFromConversation, destinationLabelID, folders, labels);
+                    }
+                });
+            }
+        });
+    }
 };
 
 export const unlabelMessagesPending = (

@@ -89,7 +89,6 @@ export const labelMessages = (
 ) => {
     const { messages, destinationLabelID, folders, labels } = action.payload;
     const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
-    const isTargetACategory = isCategoryLabel(destinationLabelID);
 
     messages.forEach((message) => {
         if (isTargetAFolder) {
@@ -132,18 +131,6 @@ export const labelMessages = (
                                 updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
                             }
                         }
-                    }
-                }
-            });
-        } else if (isTargetACategory) {
-            message.LabelIDs.forEach((selectedLabelID) => {
-                const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
-
-                if (updatedMessageCounter && isCategoryLabel(selectedLabelID)) {
-                    updatedMessageCounter.Total = safeDecreaseCount(updatedMessageCounter.Total, 1);
-
-                    if (message.Unread === 1) {
-                        updatedMessageCounter.Unread = safeDecreaseCount(updatedMessageCounter.Unread, 1);
                     }
                 }
             });
@@ -280,14 +267,15 @@ export const labelConversationsPending = (
             }
 
             // When changing the category, remove the messages from the old category
+            // We need to use the number of messages that are in INBOX, since all message from the conversation are in the category
             if (isCategoryLabel(label.ID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== label.ID) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
-                    getContextNumMessages(conversation, label.ID)
+                    getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX)
                 );
                 messageCountState.Unread = safeDecreaseCount(
                     messageCountState?.Unread,
-                    getContextNumUnread(conversation, label.ID)
+                    getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX)
                 );
                 return;
             }
