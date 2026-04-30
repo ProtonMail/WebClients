@@ -9,13 +9,12 @@ import { useGhostChat } from './GhostChatProvider';
  *   - hidden: Sidebar not visible
  *   - overlay: Sidebar slides over content with backdrop
  *
- * Large screens (>768px): 'collapsed' | 'expanded'
- *   - collapsed: Icons only, narrow width
- *   - expanded: Full width with text
- *   - Note: Large screens can NEVER be hidden
+ * Large screens (>768px): 'hidden' | 'expanded'
+ *   - hidden: Sidebar not visible, content takes full width
+ *   - expanded: Full width sidebar with text
  */
 type SmallScreenMode = 'hidden' | 'overlay';
-type LargeScreenMode = 'collapsed' | 'expanded';
+type LargeScreenMode = 'hidden' | 'expanded';
 type SidebarMode = SmallScreenMode | LargeScreenMode;
 
 interface SidebarState {
@@ -26,7 +25,6 @@ interface SidebarState {
     closeOnItemClick: () => void; // Context-aware item click handler
 
     isVisible: boolean;
-    isCollapsed: boolean;
     isExpanded: boolean;
     isOverlay: boolean;
 }
@@ -45,8 +43,15 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
     // Screen-specific internal states
     const [smallScreenMode, setSmallScreenMode] = useState<SmallScreenMode>('hidden');
     const [largeScreenMode, setLargeScreenMode] = useState<LargeScreenMode>(
-        defaultMode === 'hidden' ? 'collapsed' : (defaultMode as LargeScreenMode)
+        defaultMode === 'hidden' ? 'hidden' : (defaultMode as LargeScreenMode)
     );
+
+    //old implementaiton - need to check
+    // const [largeScreenMode, setLargeScreenMode] = useState<LargeScreenMode>(() => {
+    //     const fallback: LargeScreenMode = defaultMode === 'hidden' ? 'hidden' : 'expanded';
+    //     const stored = readScopedLocalStorageJson<LargeScreenMode | null>(SIDEBAR_MODE_STORAGE_KEY, null);
+    //     return stored === 'hidden' || stored === 'expanded' ? stored : fallback;
+    // });
 
     // Compute the effective mode based on screen size
     const mode = useMemo((): SidebarMode => {
@@ -57,7 +62,7 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
         if (isSmallScreen) {
             setSmallScreenMode((current) => (current === 'hidden' ? 'overlay' : 'hidden'));
         } else {
-            setLargeScreenMode((current) => (current === 'collapsed' ? 'expanded' : 'collapsed'));
+            setLargeScreenMode((current) => (current === 'hidden' ? 'expanded' : 'hidden'));
         }
     }, [isSmallScreen]);
 
@@ -72,13 +77,11 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
 
     const computedValues = useMemo(() => {
         const isVisible = mode !== 'hidden';
-        const isCollapsed = mode === 'collapsed';
         const isExpanded = mode === 'expanded';
         const isOverlay = mode === 'overlay';
 
         return {
             isVisible,
-            isCollapsed,
             isExpanded,
             isOverlay,
         };
