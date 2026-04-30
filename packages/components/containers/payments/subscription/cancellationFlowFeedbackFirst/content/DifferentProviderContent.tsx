@@ -122,7 +122,7 @@ export const DifferentProviderContent = ({ onKeepPlan, onContinueCancelling, fee
                             features={B2CConfig.features}
                         />
                         <p className="mt-12">{c('Info')
-                            .t`${BRAND_NAME} is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.`}</p>
+                            .t`${BRAND_NAME} is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.`}</p>
                         <B2CStoryCards />
                     </>
                 )}
