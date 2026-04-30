@@ -12,7 +12,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';

@@ -28,7 +28,7 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

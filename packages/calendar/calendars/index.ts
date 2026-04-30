@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { AddressesState, ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account/initialModelState';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getCalendar, queryCalendars, queryMembers } from '@proton/shared/lib/api/calendars';
 import type { CalendarEventV6Response } from '@proton/shared/lib/api/events';

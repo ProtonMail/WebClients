@@ -4,7 +4,7 @@ import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetAddresses } from '@proton/account/addresses/hooks';
 import type { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import type { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';

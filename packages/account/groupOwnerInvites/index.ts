@@ -2,8 +2,8 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities/interface';
 import {
-    CacheType,
     cacheHelper,
     createPromiseMapStore,
     getFetchedAt,

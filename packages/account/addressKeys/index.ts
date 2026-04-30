@@ -8,8 +8,8 @@ import {
 import type { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import {
-    type CacheType,
     cacheHelper,
     createPromiseMapStore,
     defaultLongExpiry,

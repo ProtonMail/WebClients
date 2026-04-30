@@ -13,14 +13,14 @@ import {
 import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
 import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments/core/currencies';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities/interface';
 import {
-    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
     getIsStaleRefetch,
-    
+
 } from '@proton/redux-utilities';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { DAY } from '@proton/shared/lib/constants';

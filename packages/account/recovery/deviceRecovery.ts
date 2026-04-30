@@ -6,7 +6,7 @@ import { type UserState, userThunk } from '@proton/account/user';
 import { type UserKeysState, selectUserKeys, userKeysThunk } from '@proton/account/userKeys';
 import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import type { Api } from '@proton/shared/lib/interfaces';

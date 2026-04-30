@@ -8,7 +8,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

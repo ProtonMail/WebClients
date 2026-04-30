@@ -14,7 +14,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';

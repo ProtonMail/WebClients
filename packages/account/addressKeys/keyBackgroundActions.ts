@@ -4,7 +4,7 @@ import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
