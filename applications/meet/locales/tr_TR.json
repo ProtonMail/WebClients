@@ -314,6 +314,9 @@
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
       ],
+      "Simulate reconnection": [
+        "Yeniden bağlanmayı simüle et"
+      ],
       "Skip": [
         "Atla"
       ],
@@ -1812,11 +1815,11 @@
       "Connection interrupted. Reconnecting...": [
         "Bağlantı kesildi. Yeniden bağlanıyor..."
       ],
-      "Connection lost": [
-        "Bağlantı kesildi"
+      "Connection issue detected. Attempting to recover…": [
+        "Bağlantı sorunu tespit edildi. Kurtarılmaya çalışılıyor…"
       ],
-      "Connection lost, please join meeting again": [
-        "Bağlantı kesildi. Lütfen görüşmeye yeniden katılın"
+      "Connection lost. Reconnecting…": [
+        "Bağlantı kesildi. Yeniden bağlanıyor…"
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
@@ -2264,6 +2267,9 @@
       ],
       "Turn on microphone": [
         "Mikrofonu aç"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Toplantıya yeniden bağlanılamıyor. Lütfen tekrar katılın veya toplantıdan çıkın."
       ],
       "unlimited meeting": [
         "sınırsız görüşme"
@@ -2966,6 +2972,9 @@
       ],
       "Publications": [
         "Yayınlar"
+      ],
+      "Reconnection Testing": [
+        "Yeniden Bağlantı Testi"
       ],
       "Record this meeting": [
         "Bu görüşmeyi kaydet"

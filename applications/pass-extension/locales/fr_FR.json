@@ -1543,6 +1543,9 @@
         "${ payload.count } invitation a été envoyée.",
         "${ payload.count } invitations ont été envoyées."
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } a été desactivé."
       ],
@@ -2326,9 +2329,6 @@
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "Remplissez automatiquement et rapidement vos jetons A2F."
       ],
@@ -2596,9 +2596,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
-      ],
-      "Unlock with biometrics": [
-        "Déverrouiller avec les données biométriques"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."

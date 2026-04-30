@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Ocorreu um erro ao remover o link seguro. Tente novamente em alguns minutos."
       ],
+      "This domain is already managed by your organization": [
+        "Esse domínio já é gerenciada pela sua organização"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Isso pode ocorrer após um longo período sem usar o ${ PASS_SHORT_APP_NAME } ou após você limpar o histórico do Safari."
       ],
@@ -2323,9 +2326,6 @@
       "Press Enter to copy": [
         "Pressione Enter para copiar"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "Preenchimento automático de tokens A2F."
       ],
@@ -2593,9 +2593,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
-      ],
-      "Unlock with biometrics": [
-        "Desbloquear com a biometria"
       ],
       "Unpinning item...": [
         "Desafiando item..."

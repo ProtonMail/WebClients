@@ -1521,6 +1521,9 @@
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
@@ -2235,9 +2238,6 @@
       "Press Enter to copy": [
         "按回车键以复制"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
-      ],
       "Reconnect": [
         "重新连接"
       ],
@@ -2486,9 +2486,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
-      ],
-      "Unlock with biometrics": [
-        "使用生物识别技术解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
