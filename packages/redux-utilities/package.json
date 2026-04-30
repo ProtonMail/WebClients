@@ -6,6 +6,7 @@
     "exports": {
         ".": "./index.ts",
         "./creator": "./asyncModelThunk/creator.ts",
+        "./hooks": "./asyncModelThunk/hooks.tsx",
         "./helpers/safeCount": "./helpers/safeCount.ts"
     },
     "scripts": {

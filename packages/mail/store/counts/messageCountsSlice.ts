@@ -8,7 +8,7 @@ import {
     serverEvent,
 } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { queryMessageCount } from '@proton/shared/lib/api/messages';
 import type { LabelCount } from '@proton/shared/lib/interfaces';

@@ -4,7 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { exchangeRateThunk, selectExchangeRate } from '../slices';
 import { getKeyAndTs } from '../slices/exchangeRate';
