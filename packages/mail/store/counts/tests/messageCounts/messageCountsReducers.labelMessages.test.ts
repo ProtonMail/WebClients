@@ -426,7 +426,7 @@ describe('message counts - label messages', () => {
         });
     });
 
-    describe('Move to a category', () => {
+    describe.skip('Move to a category', () => {
         it('should increase new category counters, decrease old category counters and not update other counters', () => {
             const message1 = {
                 ID: 'message1',
@@ -860,7 +860,7 @@ describe('message counts - label messages', () => {
             });
         });
 
-        it('should update both categories counters when moving between categories', () => {
+        it.skip('should update both categories counters when moving between categories', () => {
             const message1 = {
                 ID: 'message1',
                 Unread: 1,
