@@ -314,6 +314,9 @@
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
       ],
+      "Simulate reconnection": [
+        "Wiederherstellung der Verbindung simulieren"
+      ],
       "Skip": [
         "Überspringen"
       ],
@@ -1812,11 +1815,11 @@
       "Connection interrupted. Reconnecting...": [
         "Verbindung unterbrochen. Erneuter Verbindungsaufbau ..."
       ],
-      "Connection lost": [
-        "Verbindung verloren"
+      "Connection issue detected. Attempting to recover…": [
+        "Verbindungsproblem festgestellt. Wiederherstellung wird versucht…"
       ],
-      "Connection lost, please join meeting again": [
-        "Verbindung verloren, bitte nimm erneut am Meeting teil"
+      "Connection lost. Reconnecting…": [
+        "Verbindung verloren. Erneut verbinden…"
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
@@ -2264,6 +2267,9 @@
       ],
       "Turn on microphone": [
         "Mikrofon einschalten"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Die Verbindung zum Meeting kann nicht wiederhergestellt werden. Bitte trete erneut bei oder verlasse das Meeting."
       ],
       "unlimited meeting": [
         "unbegrenztes Meeting"
@@ -2966,6 +2972,9 @@
       ],
       "Publications": [
         "Veröffentlichungen"
+      ],
+      "Reconnection Testing": [
+        "Wiederherstellung der Verbindung prüfen"
       ],
       "Record this meeting": [
         "Dieses Meeting aufzeichnen"

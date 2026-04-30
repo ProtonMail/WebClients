@@ -2857,6 +2857,9 @@
       ]
     },
     "Button": {
+      "Cancel": [
+        "გაუქმება"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -13150,6 +13153,9 @@
       "Moderate NAT": [
         "საშუალო NAT-ი"
       ],
+      "Monthly": [
+        "თვეში ერთხელ"
+      ],
       "More payment methods": [
         "მეტი გადახდის მეთოდი"
       ],
@@ -13197,6 +13203,9 @@
       ],
       "Newsletters": [
         "სიახლეები"
+      ],
+      "No": [
+        "არა"
       ],
       "No (users cannot use the app until a vault is shared with them)": [
         "არა (მომხმარებლები ვერ გამოიყენებენ აპს, სანამ მათ საცავს არ გაუზიარებენ)"
@@ -13706,6 +13715,9 @@
       "Without attachment": [
         "მიმაგრების გარეშე"
       ],
+      "Yearly": [
+        "ყოველწლიური"
+      ],
       "Yes": [
         "დიახ"
       ],
@@ -13945,6 +13957,9 @@
       ],
       "Create an alias": [
         "ფსევდონიმის შექმნა"
+      ],
+      "Details": [
+        "დეტალები"
       ],
       "Downloads": [
         "გადმოწერები"
@@ -17993,6 +18008,17 @@
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
       ]
     },
+    "Recovery score": {
+      "Partial": [
+        "ნაწილობრივი"
+      ],
+      "Strong": [
+        "ძლიერი"
+      ],
+      "Weak": [
+        "სუსტი"
+      ]
+    },
     "RecoveryPhrase: Action": {
       "Continue": [
         "გაგრძელება"
@@ -19184,14 +19210,6 @@
         "პაროლის შეცვლის მოთხოვნა"
       ]
     },
-    "Setting": {
-      "Get updates about comments via email": [
-        "კომენტარის განახლებების ელფოსტით მიღება"
-      ],
-      "Include document name in email notifications": [
-        "დოკუმენტის სახელის ჩასმა ელფოსტის გაფრთხილებებში"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "დაალაგეთ თქვენი საფოსტო ყუთი საქაღალდეებითა და ჭდეებით. ${ learnMoreLink }"
@@ -20272,6 +20290,17 @@
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
       ]
     },
+    "Status": {
+      "Off": [
+        "გამორთ"
+      ],
+      "On": [
+        "ჩართ"
+      ],
+      "Saved": [
+        "შენახულია"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "ქმედებები"
@@ -21256,6 +21285,9 @@
       ],
       "/user per month": [
         "/მომხმარებელი თვეში"
+      ],
+      "/year": [
+        "/წელიწადში"
       ]
     },
     "Suffix for price": {
@@ -22203,9 +22235,6 @@
       ],
       "Forward emails": [
         "ელფოსტების გადამისამართება"
-      ],
-      "Forwardings": [
-        "გადამისამართებები"
       ],
       "Free": [
         "Free"
@@ -23756,6 +23785,9 @@
       "Email": [
         "ელფოსტა"
       ],
+      "General": [
+        "ზოგადი"
+      ],
       "Invitation email": [
         "მოწვევის ელფოსტა"
       ],
@@ -23770,6 +23802,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
+      ],
+      "Save": [
+        "შენახვა"
       ],
       "Send invite link via email instead": [
         "მოწვევის ბმულის ელფოსტით გაგზავნა"
