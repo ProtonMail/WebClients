@@ -223,32 +223,31 @@ export const MeetingRow = ({
                         style={{ '--grow-custom': '3' }}
                     >
                         {meeting.Type !== MeetingType.PERSONAL && (
-                            <>
-                                <Tooltip title={c('Action').t`Delete`}>
-                                    <Button
-                                        className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none delete-button"
-                                        size="medium"
-                                        shape="ghost"
-                                        icon
-                                        onClick={() => setIsDeleteMeetingModalOpen(true)}
-                                    >
-                                        <IcTrash className="m-auto" />
-                                    </Button>
-                                </Tooltip>
-
-                                <Tooltip title={c('Action').t`Edit`}>
-                                    <Button
-                                        className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none"
-                                        size="medium"
-                                        shape="ghost"
-                                        icon
-                                        onClick={() => handleEditMeeting()}
-                                    >
-                                        <IcPenSquare className="m-auto" />
-                                    </Button>
-                                </Tooltip>
-                            </>
+                            <Tooltip title={c('Action').t`Delete`}>
+                                <Button
+                                    className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none delete-button"
+                                    size="medium"
+                                    shape="ghost"
+                                    icon
+                                    onClick={() => setIsDeleteMeetingModalOpen(true)}
+                                >
+                                    <IcTrash className="m-auto" />
+                                </Button>
+                            </Tooltip>
                         )}
+
+                        <Tooltip title={c('Action').t`Edit`}>
+                            <Button
+                                className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none"
+                                size="medium"
+                                shape="ghost"
+                                icon
+                                onClick={() => handleEditMeeting()}
+                            >
+                                <IcPenSquare className="m-auto" />
+                            </Button>
+                        </Tooltip>
+
                         {meeting.Type === MeetingType.PERSONAL &&
                             isPersonalMeetingRotationEnabled &&
                             !!handleRotatePersonalMeeting && (
