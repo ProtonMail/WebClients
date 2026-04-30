@@ -33,6 +33,7 @@ import {
     type Attachment,
     type ConversationId,
     ConversationStatus,
+    type GenerationError,
     type Message,
     Role,
     type SpaceId,
@@ -42,11 +43,13 @@ import {
 import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
 
-const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) => {
-    const errorMessage = getErrorTypeFromMessage(message.type);
-    onComposerError(errorMessage);
-    createGenerationError(errorMessage, cId, message);
-};
+const createLumoErrorHandler =
+    () =>
+    (message: GenerationResponseMessage, cId: string): GenerationError => {
+        const errorMessage = getErrorTypeFromMessage(message.type);
+        onComposerError(errorMessage);
+        return createGenerationError(errorMessage, cId, message);
+    };
 
 export type ApplicationContext = {
     api: Api;
