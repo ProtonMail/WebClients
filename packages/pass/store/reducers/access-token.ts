@@ -10,6 +10,7 @@ import {
     updateAccessTokenAccess,
 } from '@proton/pass/store/actions';
 import type { PersonalAccessTokenShareResponse } from '@proton/pass/types';
+import { objectDelete } from '@proton/pass/utils/object/delete';
 
 export type AccessTokenActionsState = {
     records: DecodedPatMonitorRecord[];
@@ -39,15 +40,11 @@ const reducer: Reducer<AccessTokenState> = (state = getInitialState(), action) =
 
     if (deleteAccessToken.success.match(action)) {
         const id = action.payload;
-        const remainingGrants = { ...state.grants };
-        const remainingActions = { ...state.actions };
-        delete remainingGrants[id];
-        delete remainingActions[id];
         return {
             ...state,
             tokens: state.tokens.filter((t) => t.PersonalAccessTokenID !== id),
-            grants: remainingGrants,
-            actions: remainingActions,
+            grants: objectDelete(state.grants, id),
+            actions: objectDelete(state.actions, id),
         };
     }
 
