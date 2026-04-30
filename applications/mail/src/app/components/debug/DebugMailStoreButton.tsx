@@ -20,8 +20,8 @@ export const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            // Ctrl+Shift toggles the debug button
-            if (event.ctrlKey && event.shiftKey) {
+            // Ctrl+Shift+x toggles the debug button
+            if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'x') {
                 event.preventDefault();
                 setShowDebugButton((prev) => !prev);
             }
