@@ -5,6 +5,7 @@
         "./sharedListeners": "./sharedListeners.ts",
         "./sharedReducers": "./sharedReducers.ts",
         "./sharedProvider": "./sharedProvider.tsx",
+        "./test": "./test.ts",
         "./mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
         "./calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
     },
