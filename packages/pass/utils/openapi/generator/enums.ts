@@ -2,6 +2,8 @@ import type { OpenAPIV3_1 } from 'openapi-types';
 
 type EnumDescription = Record<string, string> | undefined;
 
+export const parseEnumValue = (val: any): string => (typeof val === 'string' ? `"${val}"` : String(val));
+
 const generateTSEnumBody = (value: string | number, schema: OpenAPIV3_1.SchemaObject) => {
     if (schema.type === 'integer') {
         if ('x-enumDescriptions' in schema) {
