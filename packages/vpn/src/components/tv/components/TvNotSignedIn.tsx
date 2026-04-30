@@ -12,7 +12,7 @@ export const TvNotSignedIn = ({
     paths,
 }: {
     searchParams: URLSearchParams;
-    paths: { login: string; signup: string };
+    paths: { login: string; tvSignup: string; signup: string };
 }) => {
     const signupParams = new URLSearchParams(searchParams);
     const isFromAmazon = signupParams.get('source') === 'amazon';
@@ -29,10 +29,11 @@ export const TvNotSignedIn = ({
                 {c('Info').t`Complete the sign-in on this device to start using ${VPN_APP_NAME} on your TV.`}
             </span>
             <div className="flex flex-column gap-4 items-center">
-                <Link className="w-full" to={`${paths.signup}?${signupParams.toString()}`}>
-                    <Button fullWidth color="norm" shape="solid">
-                        {c('Info').t`Create an account`}
-                    </Button>
+                <Link
+                    className="w-full"
+                    to={`${isFromAmazon ? paths.signup : paths.tvSignup}?${signupParams.toString()}`}
+                >
+                    <Button fullWidth color="norm" shape="solid">{c('Info').t`Create an account`}</Button>
                 </Link>
 
                 <Link className="w-full" to={`${paths.login}?${searchParams.toString()}`}>
