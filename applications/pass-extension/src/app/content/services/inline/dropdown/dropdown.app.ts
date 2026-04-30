@@ -39,7 +39,7 @@ export type DropdownRequest = {
     action: DropdownAction;
     /** Indicates that the request was triggered from a focus event */
     autofocused: boolean;
-    /** Indicates wether the initiator field was previously autofilled */
+    /** Indicates whether the initiator field was previously autofilled */
     autofilled: boolean;
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
