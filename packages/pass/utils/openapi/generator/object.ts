@@ -10,10 +10,8 @@ const generateObjectProp = (
     parentSchema: OpenAPIV3_1.SchemaObject
 ) => {
     const { required, description } = (() => {
-        if ('$ref' in propSchema) return { required: true, description: '' };
-
         return {
-            required: parentSchema.required && parentSchema.required.includes(propName),
+            required: parentSchema.required?.includes(propName) || '$ref' in propSchema,
             description: propSchema.description ?? '',
         };
     })();
