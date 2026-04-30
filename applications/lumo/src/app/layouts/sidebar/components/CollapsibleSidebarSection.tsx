@@ -11,8 +11,6 @@ import './CollapsibleSidebarSection.scss';
 
 interface CollapsibleSidebarSectionProps {
     label: string;
-    icon: React.ReactNode;
-    showText: boolean;
     children?: React.ReactNode;
     onHeaderClick?: () => void;
     actionButton?: React.ReactNode;
@@ -22,8 +20,6 @@ interface CollapsibleSidebarSectionProps {
 
 export const CollapsibleSidebarSection = ({
     label,
-    icon,
-    showText,
     children,
     onHeaderClick,
     actionButton,
@@ -32,74 +28,38 @@ export const CollapsibleSidebarSection = ({
 }: CollapsibleSidebarSectionProps) => {
     const [isExpanded, setIsExpanded] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
-    const { isCollapsed, isVisible, isSmallScreen, toggle } = useSidebar();
+    const { isVisible, isSmallScreen } = useSidebar();
 
     useEffect(() => {
         if (isSmallScreen) {
             setIsExpanded(isVisible);
-        } else if (isCollapsed) {
-            setIsExpanded(false);
-        } else {
-            const timer = setTimeout(() => {
-                setIsExpanded(true);
-            }, 200);
-            return () => clearTimeout(timer);
         }
-    }, [isCollapsed, isVisible, isSmallScreen]);
-
-    const handleToggle = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setIsExpanded((prev) => !prev);
-    };
+    }, [isVisible, isSmallScreen]);
 
     const handleContainerClick = () => {
-        if (isCollapsed) {
-            toggle();
-        } else if (onHeaderClick) {
-            onHeaderClick();
-        } else {
-            setIsExpanded((prev) => !prev);
-        }
+        setIsExpanded((prev) => !prev);
+        onHeaderClick?.();
     };
 
     return (
         <div className={clsx('collapsible-sidebar-section', className)}>
-            {isCollapsed ? (
-                <button className="sidebar-item" onClick={toggle} aria-label={label}>
-                    <div className="sidebar-item-icon">{icon}</div>
-                </button>
-            ) : (
-                <>
-                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div
-                        className="collapsible-section-header flex items-center gap-1"
-                        onClick={handleContainerClick}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                    >
-                        <div className={clsx('sidebar-item flex-1', !showText && 'collapsed')}>
-                            <button
-                                className="collapsible-section-icon-button"
-                                onClick={handleToggle}
-                                aria-label={isExpanded ? `Collapse ${label}` : `Expand ${label}`}
-                                aria-expanded={isExpanded}
-                            >
-                                <div className="sidebar-item-icon">
-                                    {!isHovered && showText && icon}
-                                    {isHovered &&
-                                        (isExpanded ? <IcChevronDown size={4} /> : <IcChevronRight size={4} />)}
-                                </div>
-                            </button>
-                            <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
-                                {label}
-                                {labelExtra}
-                            </span>
-                            {!isSmallScreen && showText && actionButton}
-                        </div>
-                    </div>
-                    {isExpanded && showText && children}
-                </>
-            )}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            <div
+                className="collapsible-section-header flex items-center cursor-pointer py-2 px-1.5 rounded-lg"
+                onClick={handleContainerClick}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                <span className="flex-1 flex items-center gap-1 font-bold text-nowrap overflow-hidden">
+                    <span className="overflow-hidden text-ellipsis">{label}</span>
+                    {labelExtra}
+                    {isHovered && (
+                        <Icon name={isExpanded ? 'chevron-down' : 'chevron-right'} size={3} className="shrink-0" />
+                    )}
+                </span>
+                {!isSmallScreen && actionButton}
+            </div>
+            {isExpanded && children}
         </div>
     );
 };
