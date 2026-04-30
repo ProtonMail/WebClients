@@ -59,7 +59,7 @@ export const createKeyringAdapter = (): StorageKeyAdapter => {
                 const result = await commands.getStorageKey(ref.adapterKeyId ?? ref.id);
 
                 if (result.status === 'error') {
-                    logger.info(`[adapter::keyring] An error occured while reading secret [${result.error.type}]`);
+                    logger.info(`[adapter::keyring] An error occurred while reading secret [${result.error.type}]`);
                     return { ok: false, error: intoStorageKeyAdapterError(result.error) };
                 }
 

@@ -9,7 +9,7 @@ import type { Event } from '../../models/event';
  * 1. When we receive an event from the event loop
  * 2. When we delete the message in MailESCallback
  *
- * The second point can seem to be a duplicate because point 1 have already occured.
+ * The second point can seem to be a duplicate because point 1 have already occurred.
  * But when we delete a 1000 messages conversation we will have to wait for
  * multiple events to receive the conversation ID in the event loop.
  * And in the meantime the 750 previous messages will be refetched.

@@ -201,7 +201,7 @@ export const useSendVerifications = (
                     } else {
                         let sendPreferences;
                         // We need to retrieve the most recent encryption preferences (thus bypassing & updating the cache), to avoid missing any of the latest legitimate changes
-                        // that occured after the last contact update we received. This also re-downloads public encryption keys (both pinned and not).
+                        // that occurred after the last contact update we received. This also re-downloads public encryption keys (both pinned and not).
                         // However, at this point the server could provide malicious encryption information, and the user cannot visually check
                         // whether something is off through the send status icons.
                         // Hence, we must compare the newly fetched data with the cached one, which the user could verify before hitting Send.

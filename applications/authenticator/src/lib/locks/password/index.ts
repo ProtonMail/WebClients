@@ -47,7 +47,7 @@ const getPasswordError = (code: PasswordError): string => {
                 remainingCount
             );
         case PasswordError.CORRUPTED:
-            return c('authenticator-2025:Error').t`An unknown error occured. Please contact us to resolve this issue.`;
+            return c('authenticator-2025:Error').t`An unknown error occurred. Please contact us to resolve this issue.`;
     }
 };
 
