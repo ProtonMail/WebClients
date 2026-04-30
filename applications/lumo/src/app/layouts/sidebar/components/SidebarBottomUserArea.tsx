@@ -1,4 +1,3 @@
-import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { UserDropdown, useConfig } from '@proton/components';
@@ -9,18 +8,13 @@ import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { SidebarItem } from './SidebarItem';
 
-interface Props {
-    showText: boolean;
-}
-
-const CollapseToggle = ({ showText, className }: { showText: boolean; className?: string }) => {
-    const { toggle, isCollapsed } = useSidebar();
+const CollapseToggle = ({ className }: { className?: string }) => {
+    const { toggle } = useSidebar();
     return (
         <SidebarItem
-            icon={isCollapsed ? 'chevron-right' : 'chevron-left'}
-            label={isCollapsed ? c('collider_2025:Button').t`Show sidebar` : c('collider_2025:Button').t`Hide sidebar`}
+            icon="chevron-left"
+            label={c('collider_2025:Button').t`Hide sidebar`}
             onClick={toggle}
-            showText={showText}
             className={className}
         />
     );
@@ -36,7 +30,7 @@ const CollapseToggle = ({ showText, className }: { showText: boolean; className?
  * | true          | false   | UserDropdown only               |
  * | true          | true    | Nothing (overlay backdrop handles dismiss) |
  */
-export const SidebarBottomUserArea = ({ showText }: Props) => {
+export const SidebarBottomUserArea = () => {
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
     const { APP_NAME } = useConfig();
@@ -44,7 +38,7 @@ export const SidebarBottomUserArea = ({ showText }: Props) => {
 
     if (isGuest) {
         if (!isSmallScreen) {
-            return <CollapseToggle showText={showText} />;
+            return <CollapseToggle />;
         }
         // Mobile guests have no collapse toggle; the sidebar backdrop handles dismissal.
         return null;
@@ -62,12 +56,12 @@ export const SidebarBottomUserArea = ({ showText }: Props) => {
 
     return (
         <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between">
-            <div className={clsx('w-3/4', showText ? 'block' : 'hidden')}>
+            <div className="w-3/4">
                 <div className="sidebar-item-text">
                     <DropdownComponent app={APP_NAME} dropdownIcon={undefined} />
                 </div>
             </div>
-            <CollapseToggle showText={false} className="mr-0 w-auto" />
+            {/* <CollapseToggle className="mr-0 w-auto" /> */}
         </div>
     );
 };
