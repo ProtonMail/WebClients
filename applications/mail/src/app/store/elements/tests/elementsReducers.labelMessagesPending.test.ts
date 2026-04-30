@@ -1852,7 +1852,7 @@ describe('labelMessagesPending', () => {
         });
 
         describe('Move to a category', () => {
-            it('should decrease old category and increase new category from the conversation when moving to a Category', () => {
+            it('should move all messages to the new category', () => {
                 const message = setupMessage({
                     messageID: MESSAGE_ID,
                     unreadState: 'unread',
@@ -1949,15 +1949,9 @@ describe('labelMessagesPending', () => {
                         ContextNumAttachments: 1,
                     },
                     {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ContextNumMessages: 1,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 0,
-                    },
-                    {
                         ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                        ContextNumMessages: 1,
-                        ContextNumUnread: 1,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
                         ContextNumAttachments: 1,
                     },
                 ]);
