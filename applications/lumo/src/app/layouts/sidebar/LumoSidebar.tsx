@@ -77,7 +77,7 @@ const LumoSidebarContent = () => {
                     {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
                 </div>
 
-                <div className="sidebar-main-content flex flex-column flex-1 gap-2">
+                <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 gap-2">
                     <Suspense fallback={null}>
                         <ProjectsSidebarSection onItemClick={closeOnItemClick} />
                     </Suspense>
