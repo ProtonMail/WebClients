@@ -32,7 +32,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getHasMemberCapablePlan, hasDuo, hasFamily, hasPassFamily } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/shared/lib/constants';

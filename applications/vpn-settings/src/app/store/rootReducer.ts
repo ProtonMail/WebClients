@@ -13,7 +13,7 @@ import {
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsReducer } from '@proton/calendar/calendars';
-import { sharedReducers } from '@proton/redux-shared-store';
+import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,

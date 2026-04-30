@@ -12,7 +12,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { initMainHost } from '@proton/cross-storage/host';
 import useInstance from '@proton/hooks/useInstance';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';

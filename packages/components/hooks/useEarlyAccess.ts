@@ -9,7 +9,7 @@ import {
     versionCookieAtLoad,
 } from '@proton/components/helpers/versionCookie';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 

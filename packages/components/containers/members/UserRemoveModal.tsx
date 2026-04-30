@@ -9,7 +9,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';

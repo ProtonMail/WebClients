@@ -12,7 +12,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SkeletonLoader, useNotifications } from '@proton/components';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 

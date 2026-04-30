@@ -14,7 +14,7 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 
 /**

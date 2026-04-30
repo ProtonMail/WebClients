@@ -6,7 +6,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { useDispatch, useSelector } from '@proton/redux-shared-store';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
