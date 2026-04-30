@@ -289,11 +289,11 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
-      "Connect to Gmail": [
-        "Anslut till Gmail"
-      ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
+      ],
+      "Connect your email": [
+        "Anslut din e-post"
       ],
       "Contact group": [
         "Kontaktgrupp"
@@ -4143,9 +4143,6 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
-      ],
-      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Skicka och ta emot Gmail-korrespondens direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
@@ -11851,9 +11848,6 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Ta med din e-post till ${ MAIL_APP_NAME }"
       ],
-      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
-        "Ta med din befintliga e-post till ${ MAIL_APP_NAME } så kan du hantera allt från en privat inkorg."
-      ],
       "Choose a provider": [
         "Välj en leverantör"
       ],
@@ -13998,6 +13992,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } och ${ LUMO_APP_NAME } med premiumfunktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
       ],

@@ -288,11 +288,11 @@
       "Connect apps and devices": [
         "连接应用和设备"
       ],
-      "Connect to Gmail": [
-        "连接 Gmail"
-      ],
       "Connect to video conferencing": [
         "连接至视频会议"
+      ],
+      "Connect your email": [
+        "关联您的邮箱"
       ],
       "Contact group": [
         "联系人群组"
@@ -4126,8 +4126,8 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
-      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "直接在 ${ MAIL_APP_NAME } 中收发 Gmail 邮件。请在 ${ addressesSettingsLink } 中连接您的地址。"
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "直接在 ${ MAIL_APP_NAME } 中收发 Gmail 邮件。请在 ${ addressesSettingsLink } 中关联您的邮箱地址。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
@@ -4203,6 +4203,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -11738,8 +11741,8 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "将您的电子邮件导入 ${ MAIL_APP_NAME }"
       ],
-      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
-        "将您现有的电子邮件导入 ${ MAIL_APP_NAME }，以便在一个私密收件箱中管理所有内容。"
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "将您的现有邮件导入 ${ MAIL_APP_NAME }，以便在一个专属收件箱中统一管理所有邮件。"
       ],
       "Choose a provider": [
         "请选择提供商"
