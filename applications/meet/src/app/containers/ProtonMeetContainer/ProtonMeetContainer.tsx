@@ -443,9 +443,6 @@ export const ProtonMeetContainer = ({
         (meetingsListStatus === MeetingListStatus.InitialLoading ||
             meetingsListStatus === MeetingListStatus.InitialDecrypting);
 
-    // Override room name if joining own personal meeting room
-    const displayRoomName = isPersonalRoom ? c('Title').t`Personal meeting room` : meetingDetails.meetingName;
-
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
             return 'Lower epoch than last epoch';
@@ -1526,7 +1523,7 @@ export const ProtonMeetContainer = ({
                         handleLeave={handleLeave}
                         handleEndMeeting={handleEndMeeting}
                         shareLink={shareLink}
-                        roomName={displayRoomName as string}
+                        roomName={meetingDetails.meetingName as string}
                         passphrase={password}
                         handleMeetingLockToggle={handleMeetingLockToggle}
                         isDisconnected={isReconnecting || reconnectionFailed}
@@ -1559,7 +1556,7 @@ export const ProtonMeetContainer = ({
                         loadingState={LoadingState.JoiningInProgress}
                         isLoading={joiningInProgress}
                         shareLink={shareLink}
-                        roomName={displayRoomName as string}
+                        roomName={meetingDetails.meetingName as string}
                         roomId={token}
                         instantMeeting={instantMeetingRef.current}
                         participantsCount={prejoinParticipantCount}
