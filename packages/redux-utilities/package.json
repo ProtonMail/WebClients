@@ -4,7 +4,7 @@
     "sideEffects": false,
     "main": "index.ts",
     "exports": {
-        ".": "./index.ts",
+        "./promiseStore": "./asyncModelThunk/promiseStore.ts",
         "./creator": "./asyncModelThunk/creator.ts",
         "./hooks": "./asyncModelThunk/hooks.tsx",
         "./fetchedAt": "./asyncModelThunk/fetchedAt.ts",

@@ -7,7 +7,7 @@ import type { CacheType } from '@proton/redux-utilities/interface';
 import {
     cacheHelper,
     createPromiseMapStore,
-} from '@proton/redux-utilities';
+} from '@proton/redux-utilities/promiseStore';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
