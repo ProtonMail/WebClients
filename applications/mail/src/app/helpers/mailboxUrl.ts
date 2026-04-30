@@ -149,6 +149,15 @@ export const setSortInUrl = (location: Location, sort: Sort) =>
 export const setFilterInUrl = (location: Location, filter: Filter) =>
     changeSearchParams(location.pathname, location.hash, { page: undefined, filter: filterToString(filter) });
 
+export const resetFilterAndSort = (location: Location) =>
+    changeSearchParams(location.pathname, location.hash, { page: undefined, filter: undefined, sort: undefined });
+
+export const resetFilter = (location: Location) =>
+    changeSearchParams(location.pathname, location.hash, { filter: undefined });
+
+export const resetSort = (location: Location) =>
+    changeSearchParams(location.pathname, location.hash, { sort: undefined });
+
 // Categories are only present in inbox, so always link to inbox regardless of current location
 export const setCategoryInUrl = (category: CategoryLabelID) => {
     const inboxPathname = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
