@@ -176,7 +176,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         const [, mailSettings, organization] = await preloadPromise;
 
-        if (unleashClient.isEnabled('EncryptedSearchMigrationSystem')) {
+        const isEncryptedSearchMigrationSystemDisabled = unleashClient.isEnabled(
+            'EncryptedSearchMigrationSystemDisabled'
+        );
+        if (!isEncryptedSearchMigrationSystemDisabled) {
             const shouldLoad = await shouldLoadMigrationWorker(userData.user);
             const canLoad = await canLoadRunner();
 
