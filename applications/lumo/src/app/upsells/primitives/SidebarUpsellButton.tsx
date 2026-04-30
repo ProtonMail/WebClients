@@ -48,7 +48,7 @@ interface SidebarButtonWrapperProps {
 }
 
 const SidebarButtonWrapper = ({ children, triggerMobileModal = false }: SidebarButtonWrapperProps) => (
-    <div className="">
+    <div className="w-full">
         <SidebarListItem className={clsx(triggerMobileModal && LUMO_UPGRADE_TRIGGER_CLASS)}>{children}</SidebarListItem>
     </div>
 );
@@ -93,9 +93,7 @@ const LumoPlusSidebarContent = ({ collapsed, customText, customIcon }: LumoPlusS
             right={<IcChevronRight className="shrink-0 group-hover:opacity-100" />}
         >
             <span className="flex items-center gap-2">
-                <span>
-                    {customText || c('collider_2025: Upsell Title').t`Get`}
-                </span>
+                <span>{customText || c('collider_2025: Upsell Title').t`Get`}</span>
                 <LumoPlusLogoInline height="12px" />
             </span>
         </SidebarListItemContent>
