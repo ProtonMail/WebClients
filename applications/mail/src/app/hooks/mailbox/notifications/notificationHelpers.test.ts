@@ -91,7 +91,7 @@ describe('prepareNotificationData', () => {
             LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
         };
 
-        it('should replace inbox with Newsletter category', () => {
+        it('should redirect to Inbox and use category hash in URL', () => {
             const result = prepareNotificationData({
                 message: MOCK_MESSAGE_WITH_CATEGORY,
                 history: MOCK_HISTORY,
@@ -100,8 +100,9 @@ describe('prepareNotificationData', () => {
                 categoryViewAccess: true,
             });
 
-            expect(result.location.pathname).toContain('/newsletters');
-            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+            expect(result.location.pathname).toContain('/inbox');
+            expect(result.location.hash).toContain('category=newsletters');
+            expect(result.labelID).toBe(MAILBOX_LABEL_IDS.INBOX);
         });
 
         it('should use all-mails if the message has no categories', () => {
