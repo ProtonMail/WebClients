@@ -1,5 +1,12 @@
 import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
+import { PAT_PRODUCT, decodePatRecord } from '@proton/pass/lib/access-token/access-token.utils';
 import { api } from '@proton/pass/lib/api/api';
+import { PassCrypto } from '@proton/pass/lib/crypto';
+import type { AccessTokenActionsPage, CreateAccessTokenIntent } from '@proton/pass/store/actions/creators/access-token';
+import type { ShareId } from '@proton/pass/types';
+import { ShareRole, ShareType } from '@proton/pass/types';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import type {
     CreatePersonalAccessTokenPayload,
@@ -7,50 +14,78 @@ import type {
     GrantPersonalAccessTokenAccessPayload,
     ListPatMonitorResponse,
     ListPersonalAccessTokensResponse,
-    PatMonitorRecord,
     PersonalAccessToken,
     PersonalAccessTokenAccessGrant,
+    PersonalAccessTokenWithKey,
 } from './access-token.types';
 
 const PAT_BASE_URL = 'account/v4/personal-access-token';
 const PASS_PAT_BASE_URL = 'pass/v1/personal-access-token';
 
+/** Lists all access tokens  */
 export const listPersonalAccessTokens = async (): Promise<PersonalAccessToken[]> => {
-    const response = await api<ListPersonalAccessTokensResponse>({
-        url: PAT_BASE_URL,
-        method: 'get',
-    });
+    const response = await api<ListPersonalAccessTokensResponse>({ url: PAT_BASE_URL, method: 'get' });
     return response.PersonalAccessTokens.PersonalAccessTokens ?? [];
 };
 
-export const createPersonalAccessToken = async (
-    payload: CreatePersonalAccessTokenPayload
-): Promise<PersonalAccessToken> => {
-    const response = await api<CreatePersonalAccessTokenResponse>({
+/** Creates a fresh access token key and registers the PAT */
+export const createPersonalAccessToken = async ({
+    name,
+    isAgent,
+    expirationMinutes,
+}: CreateAccessTokenIntent): Promise<PersonalAccessTokenWithKey> => {
+    const { encrypted, raw: rawPatKey } = await PassCrypto.createAccessTokenKey();
+
+    const { PersonalAccessToken } = await api<CreatePersonalAccessTokenResponse>({
         url: PAT_BASE_URL,
         method: 'post',
-        data: payload,
+        data: {
+            Name: name,
+            Products: [PAT_PRODUCT],
+            PersonalAccessTokenKey: encrypted,
+            ExpireTime: getEpoch() + expirationMinutes * UNIX_MINUTE,
+            Flags: isAgent ? { PassAgent: true } : null,
+        } satisfies CreatePersonalAccessTokenPayload,
     });
-    return response.PersonalAccessToken;
+
+    if (!PersonalAccessToken.Token) throw new Error('Token not returned by server');
+    return { data: PersonalAccessToken, rawPatKey };
 };
 
-export const deletePersonalAccessToken = async (id: string): Promise<void> => {
+/** Deletes a personal access token by tokenId */
+export const deletePersonalAccessToken = async (tokenId: string): Promise<void> => {
     await api({
-        url: `${PAT_BASE_URL}/${id}`,
+        url: `${PAT_BASE_URL}/${tokenId}`,
         method: 'delete',
     });
 };
 
-/** Grants the PAT access to the provided Pass vaults. Each entry carries the
- * vault's share keys (one per rotation) wrapped with the PAT's symmetric key. */
+/** Grants the PAT access to the provided payload  */
 export const grantPersonalAccessTokenAccess = async (
-    id: string,
+    tokenId: string,
     payload: GrantPersonalAccessTokenAccessPayload
 ): Promise<void> => {
     await api({
-        url: `${PASS_PAT_BASE_URL}/${id}/access`,
+        url: `${PASS_PAT_BASE_URL}/${tokenId}/access`,
         method: 'post',
         data: payload,
+    });
+};
+
+/** Grants the PAT access to the provided Pass vaults. Each entry carries the
+ * vault's share keys (one per rotation) wrapped with the PAT's symmetric key.
+ * Note: assumes `shareId` is of type vault */
+export const grantPersonalAccessTokenVaultAccess = async (
+    tokenId: string,
+    shareId: ShareId,
+    rawPatKey: Uint8Array<ArrayBuffer>
+) => {
+    const Keys = await PassCrypto.createAccessTokenShareKeys({ rawPatKey, shareId });
+    await grantPersonalAccessTokenAccess(tokenId, {
+        ShareID: shareId,
+        TargetType: ShareType.Vault,
+        ShareRoleID: ShareRole.READ,
+        Keys,
     });
 };
 
@@ -83,27 +118,25 @@ const PAT_MONITOR_PAGE_SIZE = 100;
 
 /** Returns one page of audit records for actions made by a PAT.
  * Pass `since` (the previous response's `NextSince`) for subsequent pages.
- * A null `nextSince` in the result means there are no more pages.
- *
- * The server may return a non-null `NextSince` even on the final page; we
- * normalise that to `null` whenever we got fewer records than `PageSize`,
- * mirroring the rust CLI's `fetched == 0 || next_since.is_none()` loop
- * termination. */
+ * A null `nextSince` in the result means there are no more pages. */
 export const listPatMonitorRecords = async (
-    id: string,
+    pat: PersonalAccessToken,
     since?: string
-): Promise<{ records: PatMonitorRecord[]; nextSince: string | null }> => {
+): Promise<AccessTokenActionsPage> => {
     const response = await api<ListPatMonitorResponse>({
-        url: `pass/v1/pat/monitor/${id}`,
+        url: `pass/v1/pat/monitor/${pat.PersonalAccessTokenID}`,
         method: 'get',
         params: { PageSize: PAT_MONITOR_PAGE_SIZE, ...(since ? { Since: since } : {}) },
     });
-    const records = response.Actions.Records ?? [];
-    const serverNextSince = response.Actions.NextSince;
-    const hasMore = records.length === PAT_MONITOR_PAGE_SIZE && typeof serverNextSince === 'string';
+
+    const rawPatKey = await PassCrypto.openAccessTokenKey(pat.PersonalAccessTokenKey);
+    const records = await Promise.all(response.Actions.Records.map((record) => decodePatRecord(record, rawPatKey)));
+
     return {
         records,
-        nextSince: hasMore ? serverNextSince : null,
+        nextSince: response.Actions.NextSince,
+        append: Boolean(since),
+        tokenId: pat.PersonalAccessTokenID,
     };
 };
 
