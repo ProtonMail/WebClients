@@ -227,7 +227,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Registers passed event handler to process currenlty active share subscriptions by specific id
+     * Registers passed event handler to process currently active share subscriptions by specific id
      */
     const registerEventHandlerById = (id: string, callback: EventHandler): string => {
         eventHandlers.current.set(id, callback);
@@ -235,7 +235,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Registers passed event handler to process currenlty active share subscriptions
+     * Registers passed event handler to process currently active share subscriptions
      */
     const registerEventHandler = (callback: EventHandler): string => {
         const callbackUID = generateUID(DRIVE_EVENT_HANDLER_ID_PREFIX);

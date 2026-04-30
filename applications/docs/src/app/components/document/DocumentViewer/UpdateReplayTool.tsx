@@ -291,7 +291,7 @@ export default function UpdateReplayTool({
           Applied: {appliedUpdates} / {updatesToApply.length}
         </div>
         <label>
-          <div className="mb-1.5 text-sm leading-none">Apply mulitple:</div>
+          <div className="mb-1.5 text-sm leading-none">Apply multiple:</div>
           <input
             className="bg-norm"
             id="ephemeral-updates-apply-multiple-input"
