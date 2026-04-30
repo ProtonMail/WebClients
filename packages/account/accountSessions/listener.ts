@@ -3,7 +3,7 @@ import { updateAccountSessions } from '@proton/account/accountSessions/storage';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { isExpired } from '@proton/redux-utilities/fetchedAt';
-import { getIsStaleRefetch } from '@proton/redux-utilities';
+import { getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     cleanupInactivePersistedSessions,

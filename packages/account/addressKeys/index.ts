@@ -9,7 +9,7 @@ import type { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities/interface';
-import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities';
+import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { defaultLongExpiry, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';

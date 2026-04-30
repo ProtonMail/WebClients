@@ -3,7 +3,7 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities';
+import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroupOwnerInvites } from '@proton/shared/lib/api/groups';
