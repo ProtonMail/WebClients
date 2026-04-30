@@ -28,6 +28,9 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+// TODO: need to investigate why this only works here
+// @import './layouts/sidebar/Sidebar.scss';
+
 .main-text {
 	font-family: Syne, Inter, system-ui, sans-serif;
 	font-size: rem(36);
@@ -58,100 +61,6 @@ im.$media-expressions: $media-expressions;
 		opacity: 1;
 		pointer-events: auto;
 	}
-}
-
-.sidebar {
-	// Smooth width transitions for desktop
-	transition:
-		inline-size 0.3s ease-in-out,
-		transform 0.3s ease-in-out;
-
-	// Hardware acceleration
-	will-change: inline-size, transform;
-	backface-visibility: hidden;
-
-	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
-	@include im.media('>small') {
-		transform: translateZ(0);
-	}
-
-	&--collapsed {
-		inline-size: 64px; // Collapsed width - fits icons + padding
-	}
-
-	&:not(.sidebar--collapsed) {
-		inline-size: 300px; // Expanded width - comfortable for text
-	}
-
-	// Mobile sidebar transitions - true overlay that doesn't affect layout
-	@include im.media('<=small') {
-		position: fixed !important;
-		inset-block-start: 0 !important;
-		inset-inline-start: 0 !important;
-		block-size: 100% !important;
-		z-index: 100 !important;
-		inline-size: 100% !important;
-
-		// Force transitions to work even with immediate class changes
-		transition: transform 0.3s ease-in-out !important;
-		will-change: transform !important;
-
-		// Mobile hidden state - completely off-screen (default state)
-		transform: translateX(-100%) !important;
-
-		// Mobile overlay state - slide into view as overlay
-		&.sidebar-expanded {
-			transform: translateX(0) !important;
-		}
-
-		// Ensure transition works both ways
-		&:not(.sidebar-expanded) {
-			transform: translateX(-100%) !important;
-		}
-
-		// Ensure sidebar doesn't affect main content layout
-		margin: 0 !important;
-		padding: 0 !important;
-
-		// Remove any width that might affect layout calculations
-		flex: none !important;
-		flex-basis: auto !important;
-	}
-}
-
-.sidebar-expanded {
-	background-color: var(--background-weak);
-
-	// Safari performance optimizations for expanded state
-	will-change: transform;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	.lumo-guest-disclaimer {
-		background-color: var(--background-weak);
-	}
-}
-
-// Sidebar backdrop - base properties (mobile enhancements in LumoSidebar.scss)
-.sidebar-backdrop {
-	position: fixed;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 100vw;
-	block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
-	opacity: 1;
-	pointer-events: auto;
-	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
-
-	// Use hardware acceleration for backdrop
-	will-change: opacity;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	// Smooth backdrop transitions
-	transition:
-		opacity 0.3s ease-in-out,
-		backdrop-filter 0.3s ease-in-out;
 }
 
 .navigation-link.is-active {
@@ -296,4 +205,14 @@ im.$media-expressions: $media-expressions;
 .dropdown-content svg {
 	stroke-width: 0.3px;
 	stroke: currentcolor;
+}
+
+body::before {
+	position: fixed;
+	display: flex;
+	inset-block-start: 0;
+	background-color: red;
+	color: white;
+	inset-inline-start: 0;
+	z-index: 12000;
 }
