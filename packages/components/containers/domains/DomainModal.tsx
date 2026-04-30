@@ -21,7 +21,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useStep from '@proton/components/hooks/useStep';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
     DKIM_STATE,

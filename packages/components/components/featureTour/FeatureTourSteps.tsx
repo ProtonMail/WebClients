@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { completedFeatureTourAction } from '@proton/account/featuresTour/actions';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import FeatureTourLoader from './FeatureTourLoader';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';

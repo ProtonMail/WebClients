@@ -5,7 +5,7 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     createRetentionRuleApi,
     deleteRetentionRuleApi,

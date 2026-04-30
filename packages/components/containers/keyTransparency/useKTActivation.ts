@@ -1,4 +1,4 @@
-import { useSelector } from '@proton/redux-shared-store';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 const useKTActivation = (): KeyTransparencyActivation => {

@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { sharedReducers } from '@proton/redux-shared-store';
+import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { lumoReducers } from './slices';
 

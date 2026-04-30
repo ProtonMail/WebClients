@@ -1,6 +1,13 @@
 {
     "name": "@proton/redux-shared-store",
     "description": "Sharing dispatch and selector context",
+    "exports": {
+        "./sharedListeners": "./sharedListeners.ts",
+        "./sharedReducers": "./sharedReducers.ts",
+        "./sharedProvider": "./sharedProvider.tsx",
+        "./mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
+        "./calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet"

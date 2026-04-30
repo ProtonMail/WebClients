@@ -5,7 +5,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';

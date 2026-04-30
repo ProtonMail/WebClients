@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 import type { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { CachedOrganizationKey, DecryptedKey, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';

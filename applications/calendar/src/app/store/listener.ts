@@ -1,7 +1,7 @@
 import { startAccountSessionsListener, startPersistListener } from '@proton/account';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
-import { calendarSettingsHeartbeatListener } from '@proton/redux-shared-store';
+import { calendarSettingsHeartbeatListener } from '@proton/redux-shared-store/calendarSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import { startListeningBusySlots } from './busySlots/busySlotsListeners';

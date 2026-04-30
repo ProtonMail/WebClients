@@ -1,6 +1,13 @@
 {
     "name": "@proton/redux-shared-store-types",
     "description": "",
+    "exports": {
+        ".": {
+            "types": "./index.ts",
+            "default": "./index.ts"
+        }
+    },
+    "types": "./index.ts",
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@proton/unleash": "workspace:^",

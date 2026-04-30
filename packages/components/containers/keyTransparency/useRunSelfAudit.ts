@@ -18,7 +18,7 @@ import type { SelfAuditResult } from '@proton/key-transparency/interfaces';
 import { reportSelfAuditErrors } from '@proton/key-transparency/shared';
 import { getKTLocalStorage } from '@proton/key-transparency/storage';
 import { selfAudit } from '@proton/key-transparency/verification';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';

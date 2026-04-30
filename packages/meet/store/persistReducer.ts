@@ -1,4 +1,4 @@
-import { sharedPersistReducer } from '@proton/redux-shared-store';
+import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
 
 import type { MeetState } from './rootReducer';
