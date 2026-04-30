@@ -5,16 +5,19 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .lumo-sidebar {
+	--collapsible-section-secondary-text-color: #707070;
+	--collapsible-section-title-text-color: #0b0b0b;
+
 	padding: #{rem(12)};
 	gap: #{rem(8)};
 
-	ul {
-		span {
-			&.text-ellipsis {
-				color: var(--text-weak);
-			}
-		}
-	}
+	// ul {
+	// 	span {
+	// 		&.text-ellipsis {
+	// 			color: var(--collapsible-section-text-color);
+	// 		}
+	// 	}
+	// }
 
 	// Add V2 icon styling
 	svg {
@@ -44,6 +47,16 @@ im.$media-expressions: $media-expressions;
 		list-style: none !important;
 		margin-inline-start: 0 !important;
 		padding-inline-start: 0 !important;
+	}
+
+	.sidebar-nav-list--label {
+		color: var(--collapsible-section-secondary-text-color);
+		font-weight: normal;
+	}
+
+	.collapsible-section--title {
+		color: var(--collapsible-section-title-text-color);
+		font-weight: 500;
 	}
 
 	// Ensure Lumo Plus button matches other items
@@ -147,6 +160,7 @@ im.$media-expressions: $media-expressions;
 	color: inherit;
 	font-size: #{rem(14)};
 	transition: background-color 0.15s ease;
+	min-block-size: auto;
 
 	&:hover {
 		background-color: var(--background-weak);

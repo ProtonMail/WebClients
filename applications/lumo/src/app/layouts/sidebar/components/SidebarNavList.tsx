@@ -19,7 +19,7 @@ interface SidebarNavListProps {
 }
 
 export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
-    <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 pl-1 my-0">
+    <ul className="unstyled flex flex-column flex-nowrap gap-0.5 shrink-0 my-0">
         {items.map(({ id, to, label, isSelected, leadingContent, trailingContent }) => (
             <li
                 key={id}
@@ -39,7 +39,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                     onClick={onItemClick}
                 >
                     {leadingContent}
-                    <span className="text-ellipsis flex-1 " title={label}>
+                    <span className="sidebar-nav-list--label text-ellipsis flex-1 " title={label}>
                         {label}
                     </span>
                 </LumoLink>
