@@ -3,7 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { baseUseSelector } from '@proton/react-redux-store';
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Category, Folder, Label } from '@proton/shared/lib/interfaces';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
