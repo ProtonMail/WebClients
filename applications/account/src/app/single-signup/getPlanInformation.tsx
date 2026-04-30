@@ -18,20 +18,23 @@ import {
 } from '@proton/components/containers/payments/features/pass';
 import {
     getAdvancedVPNCustomizations,
-    getAllPlatforms,
     getBandwidth,
     getCountries,
     getNetShield,
+    getNetShieldText,
     getNoAds,
-    getPrioritySupport,
     getProtectDevices,
-    getRefundable,
-    getStreaming,
+    getStreamingText,
     getVPNAppFeature,
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandIos } from '@proton/icons/icons/IcBrandIos';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES, type Plan, getFreeTitle } from '@proton/payments';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -58,12 +61,10 @@ export const getPlanInformation = ({
     loading,
     selectedPlan,
     vpnServersCountData,
-    mode,
 }: {
     loading: boolean;
     selectedPlan: Plan;
     vpnServersCountData: VPNServersCountData;
-    mode: 'pricing' | 'signup' | 'vpn-pass-promotion';
 }): PlanInformation | undefined => {
     const iconSize: IconSize = 7;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
@@ -79,27 +80,37 @@ export const getPlanInformation = ({
         return {
             logo: <FreeLogo size={iconImgSize} app={APPS.PROTONVPN_SETTINGS} />,
             title: getFreeTitle(BRAND_NAME),
-            features: [getCountries(freeServers), getNoAds(), getBandwidth()],
+            features: [countryPlaceholder || getCountries(freeServers), getNoAds(), getBandwidth()],
         };
     }
 
     if (selectedPlan.Name === PLANS.VPN2024) {
         const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
-        const pricingMode = mode === 'pricing' || mode === 'vpn-pass-promotion';
+
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
             title: selectedPlan.Title,
             features: [
-                pricingMode ? countryPlaceholder || getCountries(plusServers) : undefined,
-                getVPNSpeed('highest'),
-                pricingMode ? getStreaming(true) : undefined,
+                countryPlaceholder || getCountries(plusServers),
+                { text: getStreamingText(), included: true },
                 getProtectDevices(VPN_CONNECTIONS),
-                getAllPlatforms(),
-                getNetShield(true),
-                mode === 'signup' ? getStreaming(true) : undefined,
-                getPrioritySupport(),
-                getAdvancedVPNCustomizations(true),
-                pricingMode ? getRefundable() : undefined,
+                {
+                    text: (
+                        <div className="flex items-center">
+                            {c('new_plans: feature').t`Apps for`}
+                            <span className="ml-1 inline-flex gap-1.5">
+                                <IcBrandWindows />
+                                <IcBrandApple />
+                                <IcBrandAndroid />
+                                <IcBrandIos />
+                                <IcBrandLinux />
+                            </span>
+                        </div>
+                    ),
+                    included: true,
+                },
+                { text: c('new_plans: feature').t`Up to 10 Gbps`, included: true },
+                { text: getNetShieldText(), included: true },
             ].filter(isTruthy),
         };
     }
@@ -216,6 +227,7 @@ export const getPlanInformation = ({
             ],
         };
     }
+
     if (selectedPlan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
         return {
             logo: <VpnPassLogo size={iconSize} />,
@@ -223,6 +235,39 @@ export const getPlanInformation = ({
             features: [
                 {
                     text: c('new_plans: feature').t`Advanced network security`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Dedicated servers and IP`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Secure password management`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Activity logs and policy`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`24/7 support`,
+                    included: true,
+                },
+            ],
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.BUNDLE_PRO_2024) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
+                </div>
+            ),
+            title: selectedPlan.Title,
+            features: [
+                {
+                    text: c('new_plans: feature').t`Advanced workspace security`,
                     included: true,
                 },
                 {
