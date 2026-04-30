@@ -20,8 +20,9 @@ import {
     getFetchedAt,
     getFetchedEphemeral,
     getIsStaleRefetch,
-    previousSelector,
+    
 } from '@proton/redux-utilities';
+import { previousSelector } from '@proton/redux-utilities/creator';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 

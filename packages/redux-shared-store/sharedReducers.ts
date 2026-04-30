@@ -41,7 +41,7 @@ import { contactReducer } from '@proton/mail/store/contacts/contactSlice';
 import { importerConfigReducer } from '@proton/mail/store/importerConfig';
 import { categoriesReducer } from '@proton/mail/store/labels';
 import { mailSettingsReducer } from '@proton/mail/store/mailSettings';
-import { selectPersistModel } from '@proton/redux-utilities';
+import { selectPersistModel } from '@proton/redux-utilities/creator';
 
 export const sharedReducers = {
     ...apiStatusReducer,

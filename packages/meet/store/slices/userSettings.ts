@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getMeetUserSettings } from '@proton/shared/lib/api/meet';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UserSettings } from '@proton/shared/lib/interfaces/Meet';

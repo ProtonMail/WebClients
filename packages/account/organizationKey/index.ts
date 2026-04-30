@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import isDeepEqual from 'lodash/isEqual';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
  import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';

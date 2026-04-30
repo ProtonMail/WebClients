@@ -1,7 +1,7 @@
 import { selectDelegatedAccessPersist } from '@proton/account/delegatedAccess/persist';
 import { sharedPersistReducer } from '@proton/redux-shared-store';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
-import { selectPersistModel } from '@proton/redux-utilities';
+import { selectPersistModel } from '@proton/redux-utilities/creator';
 
 import type { AccountState } from './rootReducer';
 

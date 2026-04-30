@@ -13,8 +13,9 @@ import {
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    previousSelector,
+    
 } from '@proton/redux-utilities';
+import { previousSelector } from '@proton/redux-utilities/creator';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';

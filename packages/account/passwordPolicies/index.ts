@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPasswordPolicies, getShouldUsePasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
 import { DAY } from '@proton/shared/lib/constants';

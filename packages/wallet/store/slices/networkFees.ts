@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { type ModelState, getInitialModelState } from '@proton/account';
 import { WasmBlockchainClient } from '@proton/andromeda';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 
 import type { WalletThunkArguments } from '../thunk';
 

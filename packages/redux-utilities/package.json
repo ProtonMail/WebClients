@@ -3,6 +3,10 @@
     "description": "Re-usable redux utilities",
     "sideEffects": false,
     "main": "index.ts",
+    "exports": {
+        ".": "./index.ts",
+        "./creator": "./asyncModelThunk/creator.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
