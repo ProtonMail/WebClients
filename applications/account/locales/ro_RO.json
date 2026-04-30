@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Conectați adresa Gmail"
       ],
-      "Connect to Gmail": [
-        "Conectare la Gmail"
-      ],
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Conectați-vă contul ${ BRAND_NAME }"
+      ],
+      "Connect your email": [
+        "Conectați-vă adresa de e-mail"
       ],
       "Connected": [
         "Conectat"
@@ -5049,8 +5049,8 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Importați-vă mesajele, evenimentele din calendar și contactele de la un alt furnizor."
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Aduceți-vă mesajele, evenimentele din calendar și contactele de la un alt furnizor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Creați încredere și recunoaștere a mărcii cu adrese de e-mail profesionale de pe propriul domeniu."
@@ -10255,6 +10255,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate precum Okta, Microsoft Azure sau Platforma de identitate Google. Acest lucru va activa SAML pentru întreaga organizație."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Conectați-vă și gestionați-vă conturile externe de e-mail în ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
       ],
@@ -10771,9 +10774,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Transferarea vă trimite automat mesajele noi primite în contul personal."
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
@@ -11384,14 +11384,14 @@
       "No card required": [
         "Nu trebuie card de plată"
       ],
+      "No connected addresses.": [
+        "Nu există adrese conectate."
+      ],
       "No countries enabled": [
         "Nu există țări activate"
       ],
       "No folder selected": [
         "Niciun folder selectat"
-      ],
-      "No forwarding history.": [
-        "Nu există istoric de transferare."
       ],
       "No gateways": [
         "Nu există porți de acces"
@@ -24476,6 +24476,9 @@
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
       ],
+      "Connected emails": [
+        "Adrese conectate"
+      ],
       "Connection status": [
         "Stare conexiune"
       ],
@@ -24910,9 +24913,6 @@
       ],
       "Forward emails": [
         "Transferare mesaje"
-      ],
-      "Forwardings": [
-        "Transferări"
       ],
       "Free": [
         "Gratuit"
