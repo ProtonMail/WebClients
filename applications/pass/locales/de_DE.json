@@ -1465,6 +1465,9 @@
         "${ payload.count } Einladung erfolgreich gesendet",
         "${ payload.count } Einladungen erfolgreich gesendet"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, unser fortschrittliches Kontoschutzprogramm"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } erfolgreich deaktiviert."
       ],
@@ -2175,9 +2178,6 @@
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
-      ],
       "Reconnect": [
         "Erneut verbinden"
       ],
@@ -2424,9 +2424,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zweiten Passwort"
-      ],
-      "Unlock with biometrics": [
-        "Mit Biometrie entsperren"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."

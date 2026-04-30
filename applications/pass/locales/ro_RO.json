@@ -1484,6 +1484,9 @@
         "Invitații trimise: ${ payload.count }",
         "Invitații trimise: ${ payload.count }"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s-a dezactivat."
       ],
@@ -2202,9 +2205,6 @@
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
-      ],
       "Reconnect": [
         "Reconectare"
       ],
@@ -2452,9 +2452,6 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola secundară."
-      ],
-      "Unlock with biometrics": [
-        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
