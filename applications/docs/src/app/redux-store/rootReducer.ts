@@ -2,7 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit'
 
 import { breachesCountReducer } from '@proton/components'
 
-import { selectPersistModel } from '@proton/redux-utilities'
+import { selectPersistModel } from '@proton/redux-utilities/creator'
 import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store'
 
 export const rootReducer = combineReducers({

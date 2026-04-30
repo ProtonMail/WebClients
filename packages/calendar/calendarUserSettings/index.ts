@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';

@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getSAMLConfigs, getSAMLStaticInfo, getSCIMInfo } from '@proton/shared/lib/api/samlSSO';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Organization, SSO, User } from '@proton/shared/lib/interfaces';

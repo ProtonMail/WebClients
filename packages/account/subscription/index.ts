@@ -16,8 +16,9 @@ import {
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    previousSelector,
+    
 } from '@proton/redux-utilities';
+import { previousSelector } from '@proton/redux-utilities/creator';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { User } from '@proton/shared/lib/interfaces';

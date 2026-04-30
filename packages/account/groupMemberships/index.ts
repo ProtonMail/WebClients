@@ -1,7 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getGroupMembership } from '@proton/shared/lib/api/groups';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection, { type EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';

@@ -3,7 +3,8 @@ import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice }
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import { getContact } from '@proton/mail/store/contacts/getContact';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { queryContacts } from '@proton/shared/lib/api/contacts';
 import type { ContactEventV6Response } from '@proton/shared/lib/api/events';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
