@@ -49,8 +49,8 @@ const TEST_CONTENT_SAMPLES = {
         content: `<div><h1>Heading</h1><p>Paragraph with <strong>bold</strong> and <em>italic</em> text.</p><ul><li>Item 1</li><li>Item 2</li></ul></div>`,
     },
     latex_inline: {
-        name: 'Inline LaTeX',
-        content: `Here's an equation: $$E = mc^2$$ and another: $$\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$`,
+        name: 'Inline LaTeX ($)',
+        content: `Here's an equation: $E = mc^2$ and another: $\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$`,
     },
     latex_block: {
         name: 'Block LaTeX',
