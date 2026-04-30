@@ -338,12 +338,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// Desktop sidebar z-index to ensure it's above disclaimers and other content
-.sidebar {
-	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
-	position: relative;
-}
-
 .sidebar button:hover,
 .sidebar .navigation-link:hover {
 	border-radius: 8px;
@@ -386,52 +380,11 @@ im.$media-expressions: $media-expressions;
 	block-size: 40px;
 }
 
-// Mobile-specific sidebar enhancements (core positioning handled in index.scss)
+// Mobile-specific sidebar content styling
 @include im.media('<=small') {
 	// Reset sidebar bottom padding on mobile
 	.sidebar-section.sidebar-bottom {
 		padding-block-start: 0;
-	}
-
-	// Mobile sidebar styling - white background and elegant drop shadow
-	.sidebar {
-		// White background for clean mobile appearance
-		background-color: var(--background-norm) !important;
-
-		// Ensure sidebar is above backdrop and clickable
-		z-index: 100 !important;
-		position: relative !important; // Ensure z-index works
-
-		// Elegant drop shadow for mobile overlay
-		box-shadow:
-			2px 0 8px rgb(0 0 0 / 0.02),
-			0 0 20px rgb(0 0 0 / 0.04);
-
-		// Hide shadow when sidebar is hidden - but with transition
-		&:not(.sidebar-expanded) {
-			box-shadow: none;
-			transition-delay: 0s; // Remove shadow immediately when hiding
-		}
-
-		// When expanded, show shadow with slight delay
-		&.sidebar-expanded {
-			transition-delay: 0.1s; // Small delay for shadow to appear
-		}
-	}
-
-	// Subtle white overlay for mobile - elegant and minimal
-	.sidebar-backdrop {
-		position: fixed;
-		inset-block-start: 0;
-		inset-inline-start: 0;
-		inline-size: 100vw;
-		block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
-		opacity: 1 !important;
-		pointer-events: auto !important;
-		z-index: 90 !important; // Behind sidebar (which is z-index: 100) but above content
-		transition: opacity 0.3s ease-in-out;
-
-		// backdrop-filter: blur(5px) !important; // Blur removed - was making content blurry
 	}
 
 	.lumo-sidebar {

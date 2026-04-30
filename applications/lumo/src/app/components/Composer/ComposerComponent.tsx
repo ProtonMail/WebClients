@@ -326,7 +326,7 @@ const ComposerComponentInner = ({
 
                     <div
                         className={clsx(
-                            'lumo-input-container border border-norm  w-full',
+                            'lumo-input-container bg-norm border border-norm  w-full',
                             isGhostChatMode && 'ghost-mode'
                         )}
                     >

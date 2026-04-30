@@ -6,50 +6,119 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .right-drawer {
-    inline-size: rem(480);
-    min-inline-size: rem(380);
-    background-color: var(--background-norm);
-    border-inline-start: 1px solid var(--border-weak);
-    animation: rightDrawerSlideIn 0.25s ease-out;
+	inline-size: rem(400);
+	min-inline-size: rem(380);
+	background-color: var(--background-norm);
 
-    @include im.media('<=small') {
-        inline-size: 100%;
-        min-inline-size: 0;
-        border-inline-start: none;
-        border-block-start: 1px solid var(--border-weak);
-    }
+	// border-inline-start: 1px solid var(--border-weak);
 
-    &--fullscreen {
-        position: fixed;
-        inset: 0;
-        inline-size: 100% !important;
-        max-inline-size: 100%;
-        z-index: 100;
-        border-inline-start: none;
-        animation: rightDrawerFullscreenIn 0.2s ease-out;
-    }
+	// Smooth transitions for desktop
+	transition:
+		inline-size 0.3s ease-in-out,
+		transform 0.3s ease-in-out;
+
+	// Hardware acceleration
+	will-change: inline-size, transform;
+	backface-visibility: hidden;
+
+	// Desktop: slide in animation
+	@include im.media('>small') {
+		animation: rightDrawerSlideIn 0.25s ease-out;
+	}
+
+	// Mobile: overlay behavior
+	@include im.media('<=small') {
+		&--overlay {
+			position: fixed !important;
+			inset-block-start: 0 !important;
+			inset-inline-end: 0 !important;
+			block-size: 100% !important;
+			inline-size: 80vw !important;
+			max-inline-size: 100% !important;
+			z-index: 100 !important;
+
+			// White background for clean mobile appearance
+			background-color: var(--background-norm) !important;
+
+			// Elegant drop shadow for mobile overlay
+			box-shadow:
+				-2px 0 8px rgb(0 0 0 / 0.02),
+				0 0 20px rgb(0 0 0 / 0.04);
+
+			// Mobile slide-in animation from right
+			animation: rightDrawerMobileSlideIn 0.3s ease-out;
+		}
+	}
+
+	&--fullscreen {
+		position: fixed;
+		inset: 0;
+		inline-size: 100% !important;
+		max-inline-size: 100%;
+		z-index: 100;
+		border-inline-start: none;
+		animation: rightDrawerFullscreenIn 0.2s ease-out;
+	}
 }
 
+// Backdrop for mobile overlay
+.right-drawer-backdrop {
+	position: fixed;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100vw;
+	block-size: 100%;
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 90; // Behind drawer (which is z-index: 100) but above content
+
+	// Use hardware acceleration for backdrop
+	will-change: opacity;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	// Smooth backdrop transitions
+	transition: opacity 0.3s ease-in-out;
+
+	// Only show on small screens
+	@include im.media('<=small') {
+		background-color: rgb(0 0 0 / 0.1);
+	}
+}
+
+// Desktop slide-in animation
 @keyframes rightDrawerSlideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
-@keyframes rightDrawerFullscreenIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
-    }
+// Mobile overlay slide-in animation
+@keyframes rightDrawerMobileSlideIn {
+	from {
+		transform: translateX(100%);
+	}
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+	to {
+		transform: translateX(0);
+	}
+}
+
+// Fullscreen mode animation
+@keyframes rightDrawerFullscreenIn {
+	from {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
