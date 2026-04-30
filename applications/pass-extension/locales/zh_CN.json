@@ -1290,6 +1290,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "删除安全链接时出现错误。请几分钟后再试。"
       ],
+      "This domain is already managed by your organization": [
+        "此域名已由您的组织管理"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "长时间不使用 ${ PASS_SHORT_APP_NAME } 或清除 Safari 历史记录后，可能会出现这种情况。"
       ],
@@ -1520,6 +1523,9 @@
       ],
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 已成功禁用"
@@ -2295,9 +2301,6 @@
       "Press Enter to copy": [
         "按回车键以复制"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "快速自动填充您的 2FA 令牌。"
       ],
@@ -2564,9 +2567,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "输入 PIN 码查看设置"
-      ],
-      "Unlock with biometrics": [
-        "使用生物识别技术解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."

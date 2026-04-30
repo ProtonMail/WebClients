@@ -1305,6 +1305,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Pri odstraňovaní bezpečného odkazu došlo k chybe. Skúste to o niekoľko minút znova, prosím."
       ],
+      "This domain is already managed by your organization": [
+        "Táto doména už je spravovaná vašou organizáciou"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Môže sa to stať po dlhšom čase nepoužívania ${ PASS_SHORT_APP_NAME } alebo po vymazaní histórie Safari."
       ],
@@ -2376,9 +2379,6 @@
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "Rýchle automatické vyplnenie vašich 2FA tokenov."
       ],
@@ -2648,9 +2648,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
-      ],
-      "Unlock with biometrics": [
-        "Odomknúť pomocou biometrie"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."

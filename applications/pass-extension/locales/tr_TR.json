@@ -1543,6 +1543,9 @@
         "${ payload.count } davet gönderildi",
         "${ payload.count } davet gönderildi"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
       ],
@@ -2326,9 +2329,6 @@
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "İki adımlı doğrulama kodlarınızı otomatik doldurun."
       ],
@@ -2596,9 +2596,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
-      ],
-      "Unlock with biometrics": [
-        "Kilidi biyometri ile aç"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
