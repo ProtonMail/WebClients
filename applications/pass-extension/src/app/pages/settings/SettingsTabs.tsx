@@ -14,6 +14,7 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { AccessTokens } from '@proton/pass/components/Settings/AccessTokens/AccessTokens';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { AccountPath } from '@proton/pass/constants';
@@ -25,7 +26,6 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { AccessTokens } from './Views/AccessTokens';
 import { Aliases } from './Views/Aliases';
 import { Developer } from './Views/Developer';
 import { Export } from './Views/Export';
