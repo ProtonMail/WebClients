@@ -20,7 +20,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getInitialStates } from '@proton/shared/lib/keys/getInactiveKeys';
 import type {
     KeyReactivationRequest,
@@ -35,11 +34,10 @@ import { RecoveryContactForm, RecoveryContactFormId } from './RecoveryContactFor
 import type { ReactivateKeysContentProps } from './interface';
 
 interface Props extends ModalProps {
-    userKeys: DecryptedKey[];
     keyReactivationRequests: KeyReactivationRequest[];
 }
 
-const InnerReactivateKeysModal = ({ userKeys, keyReactivationRequests, ...rest }: Props) => {
+const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) => {
     const [keyReactivationStates] = useState<KeyReactivationRequestState[]>(() =>
         getInitialStates(keyReactivationRequests)
     );

@@ -1,5 +1,4 @@
 import { useInactiveKeys } from '@proton/account';
-import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode, useFeature } from '@proton/features';
 
@@ -10,8 +9,6 @@ import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryCard from './RecoveryCard';
 
 export const OverviewSection = () => {
-    const [userKeys] = useUserKeys();
-
     const keyReactivationRequests = useInactiveKeys();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
@@ -33,11 +30,7 @@ export const OverviewSection = () => {
     return (
         <>
             {renderReactivateKeys && (
-                <ReactivateKeysModal
-                    userKeys={userKeys || []}
-                    keyReactivationRequests={keyReactivationRequests}
-                    {...reactivateKeyProps}
-                />
+                <ReactivateKeysModal keyReactivationRequests={keyReactivationRequests} {...reactivateKeyProps} />
             )}
             {renderConfirm && <RecoverDataConfirmModal {...confirmProps} />}
             {!!keyReactivationRequests.length && hasDismissedRecoverDataCard?.Value === false && (
