@@ -2,7 +2,7 @@ import type { OpenAPIV3_1 } from 'openapi-types';
 
 import { generateObjectTypeBody } from '@proton/pass/utils/openapi/generator/object';
 
-import { generateTSEnum } from './enums';
+import { generateTSEnum, parseEnumValue } from './enums';
 import type { Schema, SchemaEntry, SchemaTypeParser } from './types';
 import { generateSumType, generateUnionType, refType } from './utils';
 
@@ -25,10 +25,11 @@ const primitiveToType = (primitive: OpenAPIV3_1.NonArraySchemaObjectType | 'arra
 
 export const anyTypeParser: SchemaTypeParser = (schema) => {
     if ('$ref' in schema) return refType(schema.$ref);
-    if ('enum' in schema) return generateUnionType(schema.enum?.map((val) => `"${val}"`) as string[]);
+    if ('enum' in schema && schema.enum) return generateUnionType(schema.enum.map(parseEnumValue));
     if (Array.isArray(schema.type)) return generateUnionType(schema.type.map(primitiveToType));
     if (schema.oneOf) return generateUnionType(schema.oneOf.map(anyTypeParser));
-    if (schema.anyOf) return generateSumType(schema.anyOf.map(anyTypeParser));
+    if (schema.anyOf) return generateUnionType(schema.anyOf.map(anyTypeParser));
+    if (schema.allOf) return generateSumType(schema.allOf.map(anyTypeParser));
     if (schema.type === 'array') return `(${anyTypeParser(schema.items)})[]`;
     if (schema.type === 'object') return generateObjectTypeBody(anyTypeParser)(schema, true);
     if (typeof schema.type === 'string') return primitiveToType(schema.type);
