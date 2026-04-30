@@ -1,0 +1,134 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// Main sidebar container - handles positioning and transitions
+.sidebar {
+	// Smooth width transitions for desktop
+	transition:
+		inline-size 0.3s ease-in-out,
+		transform 0.3s ease-in-out;
+
+	// Hardware acceleration
+	will-change: inline-size, transform;
+	backface-visibility: hidden;
+
+	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
+	@include im.media('>small') {
+		transform: translateZ(0);
+	}
+
+	// Desktop: Expanded state (300px width)
+	&:not(.sidebar--hidden) {
+		@include im.media('>small') {
+			inline-size: 300px; // Expanded width - comfortable for text
+		}
+	}
+
+	// Desktop: Hidden state (0px width)
+	&.sidebar--hidden {
+		@include im.media('>small') {
+			inline-size: 0;
+			overflow: hidden;
+		}
+	}
+
+	// Mobile sidebar transitions - true overlay that doesn't affect layout
+	@include im.media('<=small') {
+		position: fixed !important;
+		inset-block-start: 0 !important;
+		inset-inline-start: 0 !important;
+		block-size: 100% !important;
+		z-index: 100 !important;
+		inline-size: 100% !important;
+
+		// White background for clean mobile appearance
+		background-color: var(--background-norm) !important;
+
+		// Elegant drop shadow for mobile overlay
+		box-shadow:
+			2px 0 8px rgb(0 0 0 / 0.02),
+			0 0 20px rgb(0 0 0 / 0.04);
+
+		// Force transitions to work even with immediate class changes
+		transition: transform 0.3s ease-in-out !important;
+		will-change: transform !important;
+
+		// Mobile hidden state - completely off-screen (default state)
+		transform: translateX(-100%) !important;
+
+		// Mobile overlay state - slide into view as overlay
+		&.sidebar-expanded {
+			transform: translateX(0) !important;
+
+			// Small delay for shadow to appear
+			transition-delay: 0.1s;
+		}
+
+		// Ensure transition works both ways
+		&:not(.sidebar-expanded) {
+			transform: translateX(-100%) !important;
+			box-shadow: none;
+
+			// Remove shadow immediately when hiding
+			transition-delay: 0s;
+		}
+
+		// Ensure sidebar doesn't affect main content layout
+		margin: 0 !important;
+		padding: 0 !important;
+
+		// Remove any width that might affect layout calculations
+		flex: none !important;
+		flex-basis: auto !important;
+	}
+
+	// Desktop sidebar z-index to ensure it's above disclaimers and other content
+	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
+	position: relative;
+}
+
+// Sidebar expanded state (used for mobile overlay styling)
+.sidebar-expanded {
+	background-color: var(--background-weak);
+
+	// Safari performance optimizations for expanded state
+	will-change: transform;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	.lumo-guest-disclaimer {
+		background-color: var(--background-weak);
+	}
+}
+
+// Sidebar backdrop - for mobile overlay
+.sidebar-backdrop {
+	position: fixed;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100vw;
+	block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
+
+	// Use hardware acceleration for backdrop
+	will-change: opacity;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	// Smooth backdrop transitions
+	transition:
+		opacity 0.3s ease-in-out,
+		backdrop-filter 0.3s ease-in-out;
+
+	// Mobile-specific backdrop styling
+	@include im.media('<=small') {
+		// Subtle white overlay for mobile - elegant and minimal
+		transition: opacity 0.3s ease-in-out;
+		z-index: 90 !important;
+	}
+}

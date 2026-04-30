@@ -31,31 +31,29 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
 
     return (
         <>
-            <RightDrawer>
-                <div className="flex flex-column flex-nowrap h-full p-4" ref={sourcesContainerRef}>
-                    <div className="flex flex-row flex-nowrap items-center justify-space-between mb-4 shrink-0">
-                        <p className="m-0 text-lg text-bold">{c('collider_2025: Web Search').t`Sources`}</p>
-                        <Button
-                            icon
-                            className="shrink-0"
-                            size="small"
-                            shape="ghost"
-                            onClick={onClose}
-                            title={c('collider_2025: Web Search').t`Close`}
-                            aria-label={c('collider_2025: Web Search').t`Close`}
-                        >
-                            <IcCross size={4} />
-                        </Button>
-                    </div>
-                    <div className="flex flex-1 overflow-y-auto">
-                        <ToolCallInfo
-                            toolCall={message.toolCall}
-                            toolResult={message.toolResult}
-                            handleLinkClick={handleLinkClick}
-                        />
-                    </div>
+            <div className="flex flex-column flex-nowrap h-full p-4" ref={sourcesContainerRef}>
+                <div className="flex flex-row flex-nowrap items-center justify-space-between mb-4 shrink-0">
+                    <p className="m-0 text-lg text-bold">{c('collider_2025: Web Search').t`Sources`}</p>
+                    <Button
+                        icon
+                        className="shrink-0"
+                        size="small"
+                        shape="ghost"
+                        onClick={onClose}
+                        title={c('collider_2025: Web Search').t`Close`}
+                        aria-label={c('collider_2025: Web Search').t`Close`}
+                    >
+                        <IcCross size={4} />
+                    </Button>
                 </div>
-            </RightDrawer>
+                <div className="flex flex-1 overflow-y-auto">
+                    <ToolCallInfo
+                        toolCall={message.toolCall}
+                        toolResult={message.toolResult}
+                        handleLinkClick={handleLinkClick}
+                    />
+                </div>
+            </div>
             {linkWarningModal.render && (
                 <LinkWarningModal
                     {...linkWarningModal.modalProps}
