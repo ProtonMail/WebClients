@@ -12,7 +12,7 @@ export interface DeferredMnemonicData {
     recoveryPhrase: string;
     /**
      * Blob of the pdf that will be downloaded.
-     * Will be null if an error occured while generating.
+     * Will be null if an error occurred while generating.
      */
     recoveryKitBlob: RecoveryKitBlob | null;
     /**

@@ -133,7 +133,7 @@ export function* hydrate(
             version: encryptedCache?.version,
         };
     } catch (err) {
-        logger.warn(`[Hydration] Error occured`, err);
+        logger.warn(`[Hydration] Error occurred`, err);
 
         if (config.onError) yield config.onError?.(err);
         else throw err;
