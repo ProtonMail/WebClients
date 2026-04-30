@@ -27,8 +27,8 @@ export const WrappedProtonMeetContainer = () => {
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
     const isMeetH264 = useFlag('MeetH264');
 
-    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
-    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isAudioMixingEnabled = isMeetEnableAudioMixing && !isMeetEnableSpatialAudio;
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
@@ -36,6 +36,16 @@ export const WrappedProtonMeetContainer = () => {
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
     const [meetAudioContext] = useState(() => createMeetAudioContext());
+    const getWebAudioMix = () => {
+        if (isAudioMixingEnabled) {
+            if (isChromiumBased()) {
+                return true;
+            }
+            return { audioContext: meetAudioContext.audioContext };
+        }
+
+        return false;
+    };
     const [room] = useState(
         () =>
             new Room({
@@ -43,7 +53,7 @@ export const WrappedProtonMeetContainer = () => {
                     keyProvider,
                     worker,
                 },
-                webAudioMix: isAudioMixingEnabled ? { audioContext: meetAudioContext.audioContext } : false,
+                webAudioMix: getWebAudioMix(),
                 videoCaptureDefaults: {
                     resolution: isMeetHigherBitrate
                         ? qualityConstants[QualityScenarios.PortraitView].resolution
