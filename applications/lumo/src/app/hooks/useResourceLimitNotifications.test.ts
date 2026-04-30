@@ -32,6 +32,28 @@ describe('shouldShowResourceLimitError', () => {
         );
     });
 
+    it('shows conversation limit errors for the active conversation', () => {
+        expect(
+            shouldShowResourceLimitError(
+                buildError({ resource: 'conversations', conversationId: 'conversation-1' }),
+                'conversation-1'
+            )
+        ).toBe(true);
+    });
+
+    it('hides conversation limit errors from another conversation', () => {
+        expect(
+            shouldShowResourceLimitError(
+                buildError({ resource: 'conversations', conversationId: 'conversation-1' }),
+                'conversation-2'
+            )
+        ).toBe(false);
+    });
+
+    it('keeps legacy conversation limit errors without conversation context global', () => {
+        expect(shouldShowResourceLimitError(buildError({ resource: 'conversations' }), undefined)).toBe(true);
+    });
+
     it('shows legacy message limit errors without conversation context', () => {
         expect(shouldShowResourceLimitError(buildError({}), undefined)).toBe(true);
     });
