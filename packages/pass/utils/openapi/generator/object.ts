@@ -1,25 +1,24 @@
-import type { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3_1 } from 'openapi-types';
 
 import type { Schema, SchemaTypeParser } from './types';
-import { generateSumType, generateUnionType, nullableValue, optionalProp, refType, withJSDOC } from './utils';
+import { generateSumType, generateUnionType, optionalProp, refType, withJSDOC } from './utils';
 
 const generateObjectProp = (
     propName: string,
     typeValue: string,
     propSchema: Schema,
-    parentSchema: OpenAPIV3.SchemaObject
+    parentSchema: OpenAPIV3_1.SchemaObject
 ) => {
-    const { nullable, required, description } = (() => {
-        if ('$ref' in propSchema) return { nullable: false, required: true, description: '' };
+    const { required, description } = (() => {
+        if ('$ref' in propSchema) return { required: true, description: '' };
 
         return {
-            nullable: propSchema.nullable ?? false,
             required: parentSchema.required && parentSchema.required.includes(propName),
             description: propSchema.description ?? '',
         };
     })();
 
-    return withJSDOC(`${optionalProp(propName, !required)}: ${nullableValue(typeValue, nullable)};`, description);
+    return withJSDOC(`${optionalProp(propName, !required)}: ${typeValue};`, description);
 };
 
 export const generateObjectTypeBody = (anyTypeParser: SchemaTypeParser) => {

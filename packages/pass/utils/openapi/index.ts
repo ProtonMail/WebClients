@@ -1,5 +1,5 @@
 #!/usr/bin/env tsx
-import type { OpenAPIV3 } from 'openapi-types';
+import type { OpenAPIV3_1 } from 'openapi-types';
 import prettier from 'prettier';
 
 import { generateTypes } from './generator/any';
@@ -7,7 +7,7 @@ import { generatePaths } from './generator/paths';
 
 /** Redocly stores the OpenAPI JSON inlined in the HTML
  * page as a script tag. Extract it from raw source */
-export const resolveDocument = async (redoclyURL: string): Promise<OpenAPIV3.Document> => {
+export const resolveDocument = async (redoclyURL: string): Promise<OpenAPIV3_1.Document> => {
     try {
         const res = await fetch(redoclyURL);
         const txt = await res.text();
@@ -15,7 +15,7 @@ export const resolveDocument = async (redoclyURL: string): Promise<OpenAPIV3.Doc
         const document = txt.match(re);
 
         if (!document) throw new Error('No documents found');
-        return JSON.parse(document[1]) as OpenAPIV3.Document;
+        return JSON.parse(document[1]) as OpenAPIV3_1.Document;
     } catch (err) {
         console.warn('Could not resolve OpenAPI document', err);
         throw err;
