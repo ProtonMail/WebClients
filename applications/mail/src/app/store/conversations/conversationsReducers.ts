@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import { isCategoryLabel } from '@proton/mail/helpers/location';
-import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';

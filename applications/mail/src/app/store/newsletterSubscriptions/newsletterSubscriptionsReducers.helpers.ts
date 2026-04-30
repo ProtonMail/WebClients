@@ -1,4 +1,4 @@
-import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { CreateEventItemUpdate, UpdateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
