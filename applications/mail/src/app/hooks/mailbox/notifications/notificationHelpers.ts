@@ -7,6 +7,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import generateUID from '@proton/utils/generateUID';
 
 import notificationIcon from '../../../assets/notification.png';
@@ -50,9 +51,15 @@ export const prepareNotificationData = ({
     const conversationMode = isConversationMode(labelID, mailSettings, cleanHistoryLocation);
     const elementID = conversationMode ? ConversationID : ID;
     const messageID = conversationMode ? ID : undefined;
-    const location = setParamsInLocation(cleanHistoryLocation, { labelID, elementID, messageID });
 
-    return { title, body, location, ID, labelID, elementID, messageID };
+    // If the label is a category label, we redirect to Inbox and use the category hash in the URL
+    const label = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+    const tmpLocation = isCategoryLabel(labelID)
+        ? { ...cleanHistoryLocation, hash: `#category=${LABEL_IDS_TO_HUMAN[labelID]}` }
+        : cleanHistoryLocation;
+
+    const location = setParamsInLocation(tmpLocation, { labelID: label, elementID, messageID });
+    return { title, body, location, ID, labelID: label, elementID, messageID };
 };
 
 export const displayNotification = ({
