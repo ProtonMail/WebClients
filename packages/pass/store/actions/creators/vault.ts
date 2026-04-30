@@ -172,7 +172,7 @@ export const vaultTransferOwnershipSuccess = createAction(
             withShareDedupe,
             withNotification({
                 type: 'info',
-                text: c('Info').t`Ownership successfully transfered. You are no long the owner of this vault.`,
+                text: c('Info').t`Ownership successfully transferred. You are no long the owner of this vault.`,
             })
         )({ payload: { shareId, userShareId } })
     )
