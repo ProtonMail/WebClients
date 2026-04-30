@@ -1,11 +1,16 @@
 import type { Dispatch, SetStateAction } from 'react';
 
+import { c } from 'ttag';
+
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
+import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';
 import useListTelemetry, {
@@ -16,7 +21,9 @@ import useListTelemetry, {
 } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
+import { isElementMessage } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { getMessagesAuthorizedToMove } from 'proton-mail/helpers/message/messages';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,
@@ -27,9 +34,6 @@ import type { Element } from 'proton-mail/models/element';
 import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
-import { isElementMessage } from 'proton-mail/helpers/elements';
-import { getMessagesAuthorizedToMove } from 'proton-mail/helpers/message/messages';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export enum MoveAllType {
     moveAll,
@@ -86,6 +90,16 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
             event: telemetryEvent,
         });
 
+        // We want to capture any eventual select all performed between category labels
+        if (isCategoryLabel(sourceLabelID) && isCategoryLabel(destinationLabelID)) {
+            createNotification({ type: 'info', text: c('Error').t`This action cannot be performed` });
+            captureInitiativeMessage(SentryMailInitiatives.MOVE_ACTIONS, 'Select all between category labels', {
+                extra: { telemetryEvent },
+            });
+
+            return;
+        }
+
         // We are applying the select all updates optimistically. However, new load request would cancel the optimistic updates.
         // Here we are adding a new pending action to the store to prevent loading elements from useElement hook.
         // Once the request is done, we do know what are the Task running in the labelID
@@ -101,12 +115,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
         });
     };
 
-    const selectAllCallback = async ({
-        sourceLabelID,
-        destinationLabelID,
-        elements,
-        onCheckAll,
-    }: SelectAllParams) => {
+    const selectAllCallback = async ({ sourceLabelID, destinationLabelID, elements, onCheckAll }: SelectAllParams) => {
         if (!elements.length) {
             return;
         }
