@@ -24,7 +24,7 @@ export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSide
 
     return (
         <CollapsibleSidebarSection label={c('collider_2025:Title').t`Favorites`} className="favorites-sidebar-section">
-            <div className="favorites-content ml-4 overflow-auto">
+            <div className="favorites-content overflow-auto">
                 <RecentChatsList
                     conversations={favorites}
                     selectedConversationId={conversationId}

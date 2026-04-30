@@ -51,7 +51,7 @@ export const CollapsibleSidebarSection = ({
                 onMouseLeave={() => setIsHovered(false)}
             >
                 <span className="flex-1 flex items-center gap-1 font-bold text-nowrap overflow-hidden">
-                    <span className="overflow-hidden text-ellipsis">{label}</span>
+                    <span className="collapsible-section--title overflow-hidden text-ellipsis">{label}</span>
                     {labelExtra}
                     {isHovered && (
                         <Icon name={isExpanded ? 'chevron-down' : 'chevron-right'} size={3} className="shrink-0" />
