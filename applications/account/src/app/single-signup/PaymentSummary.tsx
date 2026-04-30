@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import AddonSummary from './AddonSummary';
 import SaveLabel2 from './SaveLabel2';
-import type { getPlanInformation } from './getPlanInformation';
+import type { PlanInformation } from './getPlanInformation';
 import type { VPNSignupModel } from './interface';
 
 const TrialSummary = ({ loading, options }: { loading: boolean; options: OptimisticOptions }) => {
@@ -49,7 +49,7 @@ interface Props {
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
     giftCode: ReactNode;
-    planInformation: ReturnType<typeof getPlanInformation>;
+    planInformation: PlanInformation | undefined;
     upsellToggle: ReactNode;
 }
 
