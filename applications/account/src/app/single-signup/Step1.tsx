@@ -109,7 +109,7 @@ import RightPlanSummary from './RightPlanSummary';
 import SignIntoLink from './SignIntoLink';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import swissFlag from './flag.svg';
-import { getPlanInformation } from './getPlanInformationB';
+import { getPlanInformation } from './getPlanInformation';
 import type { getUpsellShortPlan } from './helper';
 import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
