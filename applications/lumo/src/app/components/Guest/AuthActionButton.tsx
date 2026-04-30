@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 
 import { useGuestMigration } from '../../hooks/useGuestMigration';
+import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 
 export interface BaseAuthProps {
     className?: string;
@@ -51,6 +52,7 @@ export const AuthActionButton = ({
 
     const handleClick = useCallback(async () => {
         onClick?.();
+        setNativeComposerVisibility(false);
         try {
             const captured = await captureGuestState();
             if (captured) {

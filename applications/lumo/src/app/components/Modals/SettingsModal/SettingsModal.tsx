@@ -33,6 +33,7 @@ import type { Conversation, Message, SpaceId } from '../../../types';
 import { LumoSettingsPanelUpsell } from '../../../upsells';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
 import { SignInButton } from '../../Guest/SignInLink';
@@ -388,7 +389,6 @@ const AccountSettingsPanel = () => {
             <ButtonLike
                 as={SettingsLink}
                 path={''}
-                
                 className="user-settings-card flex flex-row flex-nowrap gap-4 items-start p-4 rounded-lg bg-norm cursor-pointer text-left w-full"
             >
                 <Avatar className="shrink-0">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
@@ -444,6 +444,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
     const SettingsItems = BASE_SETTINGS_ITEMS;
+
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     return (
         <ModalTwo size="xlarge" enableCloseWhenClickOutside className="lumo-settings-modal" {...modalProps}>
