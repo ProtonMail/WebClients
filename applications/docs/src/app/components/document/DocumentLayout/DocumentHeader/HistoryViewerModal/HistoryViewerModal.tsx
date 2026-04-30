@@ -93,7 +93,7 @@ function HistoryViewerModalContent({
     })
   }, [createNotification])
 
-  const showSuccessfullRestoreNotification = useCallback(
+  const showSuccessfulRestoreNotification = useCallback(
     (state: SerializedEditorState | unknown) => {
       const shortDate = versionHistory.getShortFormattedDateAndTimeForBatch(selectedBatch)
       const notificationId = createNotification({
@@ -173,7 +173,7 @@ function HistoryViewerModalContent({
                 }
                 await editorController.restoreRevisionByReplacingSpreadsheetState(sheetState)
                 onClose()
-                showSuccessfullRestoreNotification(sheetStateBeforeReplacing)
+                showSuccessfulRestoreNotification(sheetStateBeforeReplacing)
                 resolve()
               } else {
                 const editorStateBeforeReplacing = await editorController.getEditorJSON()
@@ -184,7 +184,7 @@ function HistoryViewerModalContent({
                 }
                 await editorController.restoreRevisionByReplacingLexicalState(lexicalState)
                 onClose()
-                showSuccessfullRestoreNotification(editorStateBeforeReplacing)
+                showSuccessfulRestoreNotification(editorStateBeforeReplacing)
                 resolve()
               }
             },
@@ -205,7 +205,7 @@ function HistoryViewerModalContent({
       docController,
       documentType,
       onClose,
-      showSuccessfullRestoreNotification,
+      showSuccessfulRestoreNotification,
     ],
   )
 

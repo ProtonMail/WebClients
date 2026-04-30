@@ -23,7 +23,7 @@ describe('SubscriptionThanks', () => {
         render(<SubscriptionThanks onClose={mockOnClose} planIDs={{}} />);
 
         // Check main elements
-        expect(screen.getByTestId('successfull-update')).toHaveTextContent('Account successfully updated');
+        expect(screen.getByTestId('successful-update')).toHaveTextContent('Account successfully updated');
         expect(screen.getByTestId('more-info')).toHaveTextContent(
             'Download your favorite app today and take privacy with you everywhere you go.'
         );
