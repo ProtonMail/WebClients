@@ -314,6 +314,9 @@
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
       ],
+      "Simulate reconnection": [
+        "Simuler une reconnexion"
+      ],
       "Skip": [
         "Ignorer"
       ],
@@ -1812,11 +1815,11 @@
       "Connection interrupted. Reconnecting...": [
         "Connexion interrompue. Reconnexion en cours..."
       ],
-      "Connection lost": [
-        "Connexion perdue"
+      "Connection issue detected. Attempting to recover…": [
+        "Nous avons rencontré un problème avec la connexion. Nous tentons de la rétablir…"
       ],
-      "Connection lost, please join meeting again": [
-        "La connexion a été perdue, veuillez rejoindre la réunion à nouveau"
+      "Connection lost. Reconnecting…": [
+        "La connexion a été perdue. Reconnexion en cours…"
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -2264,6 +2267,9 @@
       ],
       "Turn on microphone": [
         "Activer le microphone"
+      ],
+      "Unable to reconnect to the meeting. Please rejoin or leave.": [
+        "Nous n'avons pas vous reconnecter à la réunion. Veuillez rejoindre ou quitter."
       ],
       "unlimited meeting": [
         "réunions illimitées"
@@ -2966,6 +2972,9 @@
       ],
       "Publications": [
         "Publications"
+      ],
+      "Reconnection Testing": [
+        "Test de la reconnexion"
       ],
       "Record this meeting": [
         "Enregistrer cette réunion"

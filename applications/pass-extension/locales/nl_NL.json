@@ -1295,6 +1295,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Er is een fout opgetreden bij het verwijderen van de beveiligde link. Probeer het over een paar minuten opnieuw."
       ],
+      "This domain is already managed by your organization": [
+        "Dit domein wordt al beheerd door uw organisatie"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Dit kan gebeuren na een lange tijd dat ${ PASS_SHORT_APP_NAME } niet wordt gebruikt, of uw Safari geschiedenis opschonen."
       ],
@@ -1539,6 +1542,9 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } uitnodiging succesvol verzonden",
         "${ payload.count } uitnodigingen succesvol verzonden"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
@@ -2323,9 +2329,6 @@
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
       ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
-      ],
       "Quickly autofill your 2FA tokens.": [
         "Vul snel uw 2FA-tokens in."
       ],
@@ -2593,9 +2596,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
-      ],
-      "Unlock with biometrics": [
-        "Ontgrendel met biometrische gegevens"
       ],
       "Unpinning item...": [
         "Item losmaken..."

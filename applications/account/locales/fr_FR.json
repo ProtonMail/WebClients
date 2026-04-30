@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Connecter l'adresse Gmail"
       ],
-      "Connect to Gmail": [
-        "Se connecter à Gmail"
-      ],
       "Connect to video conferencing": [
         "Se connecter à la vidéoconférence"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connectez-vous à votre compte ${ BRAND_NAME }"
+      ],
+      "Connect your email": [
+        "Connectez votre e-mail"
       ],
       "Connected": [
         "Connecté"
@@ -5018,7 +5018,7 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Empêchez Google de vous profiler. Gmail ne peut pas voir ce que vous faites dans ${ MAIL_APP_NAME }."
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
+      "Bring over your email, calendar events, and contacts from another provider.": [
         "Importez vos messages, calendriers et contacts depuis un autre fournisseur."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
@@ -10149,6 +10149,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configurez l'authentification SAML pour votre organisation, via un fournisseur d'identité comme Okta, Microsoft Azure ou Google Identity Platform. Cela activera SAML pour l'ensemble de l'organisation."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Connectez et gérez vos messageries externes dans ${ MAIL_APP_NAME }"
+      ],
       "Connection data will be available in around 1 hour.": [
         "Les données de connexion seront disponibles dans environ 1 heure."
       ],
@@ -10660,9 +10663,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pour les utilisateurs qui passent d'un autre service de messagerie à ${ MAIL_APP_NAME }, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses de messagerie actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Le transfert envoie automatiquement les nouveaux messages entrants dans votre boite de réception."
       ],
       "Free forever": [
         "Gratuit pour toujours"
@@ -11270,14 +11270,14 @@
       "No card required": [
         "Aucune carte requise"
       ],
+      "No connected addresses.": [
+        "Aucune adresse n'est connectée."
+      ],
       "No countries enabled": [
         "Aucun pays activé"
       ],
       "No folder selected": [
         "Aucun dossier n'est sélectionné."
-      ],
-      "No forwarding history.": [
-        "Aucun historique de transfert."
       ],
       "No gateways": [
         "Aucune passerelle"
@@ -21304,10 +21304,10 @@
         "Activer la section Photos"
       ],
       "Get updates about comments via email": [
-        "Recevoir les mises à jour des commentaires par e-mail"
+        "Recevoir des notifications par e-mail concernant les commentaires"
       ],
       "Include document name in email notifications": [
-        "Inclure le nom du document dans les emails de notification"
+        "Inclure le nom du document dans les notifications par e-mail"
       ]
     },
     "Settings description": {
@@ -24183,6 +24183,9 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
+      "Connected emails": [
+        "E-mails connectés"
+      ],
       "Connection status": [
         "Statut de la connexion"
       ],
@@ -24614,9 +24617,6 @@
       ],
       "Forward emails": [
         "Transfert automatique des messages"
-      ],
-      "Forwardings": [
-        "Transferts"
       ],
       "Free": [
         "Gratuit"

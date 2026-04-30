@@ -327,6 +327,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "Koppel uw ${ BRAND_NAME }-account"
       ],
+      "Connect your email": [
+        "Verbind uw e-mailadres"
+      ],
       "Connected": [
         "Verbonden"
       ],
@@ -4968,8 +4971,8 @@
       "Available with ${ title }": [
         "Beschikbaar met ${ title }"
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Importeer e-mails, agenda-afspraken en contactpersonen van een andere provider."
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Neem uw e-mail, agenda-afspraken en contacten van een andere provider over."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bouw vertrouwen en merkherkenning op met professionele e-mailadressen met uw eigen domeinnaam."
@@ -5105,6 +5108,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "We zijn begonnen met het importeren van uw e-mails van de afgelopen 180 dagen vanuit Gmail. We laten uw weten wanneer het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -9168,6 +9174,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } stuurt een verificatiecode naar ${ phoneNumber }. Tarieven voor standaardberichten kunnen van toepassing zijn."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } stuurt een verificatiecode naar uw hersteltelefoon. Tarieven voor standaardberichten kunnen van toepassing zijn."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
@@ -9960,6 +9969,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configureer SAML-authenticatie voor uw organisatie via een identiteitsprovider zoals Okta, Microsoft Azure of Google Identity Platform. Dit zal SAML voor de hele organisatie inschakelen."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Verbind en beheer uw externe mailboxen in ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Verbindingsgegevens zullen beschikbaar zijn in ongeveer 1 uur."
       ],
@@ -10468,9 +10480,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Doorsturen stuurt nieuwe inkomende e-mails automatisch naar uw inbox."
       ],
       "Free forever": [
         "Altijd gratis"
@@ -11075,14 +11084,14 @@
       "No card required": [
         "Geen kaart vereist"
       ],
+      "No connected addresses.": [
+        "Geen gekoppelde adressen."
+      ],
       "No countries enabled": [
         "Geen landen ingeschakeld"
       ],
       "No folder selected": [
         "Geen map geselecteerd"
-      ],
-      "No forwarding history.": [
-        "Geen doorsturen van geschiedenis."
       ],
       "No gateways": [
         "Geen gateways"
@@ -23883,6 +23892,9 @@
       "Connect your custom domain": [
         "Verbind uw eigen domein"
       ],
+      "Connected emails": [
+        "Verbonden e-mails"
+      ],
       "Connection status": [
         "Verbindingsstatus"
       ],
@@ -24311,9 +24323,6 @@
       ],
       "Forward emails": [
         "Stuur e-mails door"
-      ],
-      "Forwardings": [
-        "Doorsturen"
       ],
       "Free": [
         "Gratis"

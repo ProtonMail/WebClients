@@ -324,14 +324,14 @@
       "Connect Gmail address": [
         "Conectar dirección de Gmail"
       ],
-      "Connect to Gmail": [
-        "Conectar a Gmail"
-      ],
       "Connect to video conferencing": [
         "Conectarse a la videoconferencia"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Conecte la cuenta de ${ BRAND_NAME }"
+      ],
+      "Connect your email": [
+        "Conectar su correo electrónico"
       ],
       "Connected": [
         "Conectado"
@@ -5018,8 +5018,8 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Bloquee la capacidad de Google de perfilarle. Gmail no puede ver lo que usted hace en ${ MAIL_APP_NAME }."
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Traiga correos electrónicos, eventos de calendario y contactos desde otro proveedor."
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Traiga su correo electrónico, eventos de calendario y contactos desde otro proveedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -10149,6 +10149,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configure la autenticación SAML para la organización con un proveedor de identidad como Okta, Microsoft Azure o Google Identity Platform. Esto activará SAML para toda la organización."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Conecte y gestione sus buzones externos en ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
       ],
@@ -10660,9 +10663,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "El reenvío envía automáticamente los nuevos correos entrantes a su bandeja de entrada."
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -11270,14 +11270,14 @@
       "No card required": [
         "No se requiere tarjeta"
       ],
+      "No connected addresses.": [
+        "Sin direcciones conectadas."
+      ],
       "No countries enabled": [
         "Sin países activados"
       ],
       "No folder selected": [
         "Ninguna carpeta seleccionada"
-      ],
-      "No forwarding history.": [
-        "Sin historial de reenvío."
       ],
       "No gateways": [
         "Sin puertas de enlace"
@@ -24180,6 +24180,9 @@
       "Connect your custom domain": [
         "Conecte su dominio personalizado"
       ],
+      "Connected emails": [
+        "Correos conectados"
+      ],
       "Connection status": [
         "Estado de la conexión"
       ],
@@ -24611,9 +24614,6 @@
       ],
       "Forward emails": [
         "Reenvío de correos electrónicos"
-      ],
-      "Forwardings": [
-        "Reenvíos"
       ],
       "Free": [
         "Gratis"

@@ -916,14 +916,23 @@
       "Already in KB": [
         "Al in KB"
       ],
+      "Back": [
+        "Terug"
+      ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Close": [
+        "Sluit"
       ],
       "Continue": [
         "Doorgaan"
       ],
       "Create folder": [
         "Map maken"
+      ],
+      "Create image": [
+        "Maak afbeelding"
       ],
       "Dark": [
         "Donker"
@@ -952,8 +961,14 @@
       "Light": [
         "Licht"
       ],
+      "Manage files": [
+        "Beheer bestanden"
+      ],
       "New chat": [
         "Nieuwe chat"
+      ],
+      "New ghost chat": [
+        "Nieuwe spookgesprek"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Open ${ DRIVE_APP_NAME }"
@@ -976,6 +991,9 @@
       "Start generating": [
         "Begin met genereren"
       ],
+      "Start new chat": [
+        "Nieuwe chat starten"
+      ],
       "Stop generating": [
         "Stoppen met genereren"
       ],
@@ -988,11 +1006,17 @@
       "Try again": [
         "Probeer opnieuw"
       ],
+      "Upload file to Drive": [
+        "Bestand uploaden naar Drive"
+      ],
       "Upload files": [
         "Upload bestanden"
       ],
       "Upload from device": [
         "Uploaden vanaf uw apparaat"
+      ],
+      "Web search": [
+        "Zoeken op het web"
       ]
     },
     "collider_2025: b2b": {
@@ -1015,6 +1039,9 @@
       "Close": [
         "Sluiten"
       ],
+      "Create image": [
+        "maak afbeelding"
+      ],
       "Delete all": [
         "Alles verwijderen"
       ],
@@ -1026,6 +1053,9 @@
       ],
       "Retry": [
         "Opnieuw proberen"
+      ],
+      "Tools": [
+        "Gereedschappen"
       ],
       "Try it now": [
         "Probeer het nu"
@@ -1131,6 +1161,9 @@
       "Always enable web search for new conversations": [
         "Schakel web zoeken altijd in voor nieuwe gesprekken"
       ],
+      "Auto choose the best model": [
+        "Kies automatisch het beste model"
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Verhoog uw privé AI-ervaring en ontgrendel geavanceerde modellen en premium functies met ${ LUMO_SHORT_APP_NAME } Plus."
       ],
@@ -1146,8 +1179,14 @@
       "Permanently delete your project and chats. This is irreversible.": [
         "Verwijder uw project en gesprekken permanent. Dit is onomkeerbaar."
       ],
+      "Quick responses": [
+        "Snelle antwoorden"
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
+      ],
+      "Solves complex problems": [
+        "Lost complexe problemen op"
       ],
       "Switch between light and dark mode": [
         "Schakel tussen lichte en donkere modus"
@@ -1220,6 +1259,21 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor onbeperkte gesprekken, uitgebreide geschiedenis, toegang tot geavanceerde AI-modellen en meer."
+      ],
+      "You've reached a usage limit. Please try again later.": [
+        "U hebt uw gebruikslimiet bereikt. Probeer het later opnieuw."
+      ],
+      "You've reached the maximum number of projects. Delete some before creating a new one.": [
+        "U hebt het maximale aantal projecten bereikt. Verwijder enkele voordat u een nieuw project aanmaakt."
+      ],
+      "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
+        "U hebt het maximum aantal gesprekken van ${ limit } in dit project bereikt. Verwijder enkele voordat u nieuwe aanmaakt."
+      ],
+      "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
+        "U hebt het maximum aantal bestanden van ${ limit } in dit project bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
+      ],
+      "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
+        "U hebt het maximum aantal berichten in dit gesprek bereikt ${ limit }. Start een nieuw gesprek om verder te chatten met ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "collider_2025: Error Message": {
@@ -1405,8 +1459,14 @@
       "Advanced account and network security in one plan": [
         "Geavanceerde account- en netwerkbeveiliging in één abonnement"
       ],
+      "All files in this chat": [
+        "Alle bestanden in dit gesprek"
+      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Vraag alles aan ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Attached files": [
+        "Bijgevoegde bestanden"
       ],
       "Attached Files": [
         "Bijgevoegde bestanden"
@@ -1428,6 +1488,9 @@
       ],
       "characters not shown": [
         "tekens niet weergegeven"
+      ],
+      "characters processed": [
+        "verwerkte tekens"
       ],
       "Check this is the site you expect to visit": [
         "Controleer of dit de site is die u verwacht te bezoeken"
@@ -1474,11 +1537,20 @@
       "files": [
         "bestanden"
       ],
+      "files are not supported for content extraction.": [
+        "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
+      ],
       "Files automatically retrieved based on your question.": [
         "Bestanden automatisch opgehaald op basis van uw vraag."
       ],
+      "Files automatically retrieved based on your questions.": [
+        "Bestanden automatisch opgehaald op basis van uw vragen."
+      ],
       "Files you've added to this conversation.": [
         "Bestanden die u aan dit gesprek hebt toegevoegd."
+      ],
+      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.": [
+        "Voor elk gesprek heeft ${ LUMO_SHORT_APP_NAME } de capaciteit om een beperkte hoeveelheid informatie te verwerken. De voortgangsbalk toont hoeveel capaciteit uw huidige bestanden gebruiken."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
@@ -1522,6 +1594,12 @@
       "No calls": [
         "Geen oproepen"
       ],
+      "No content available.": [
+        "Geen inhoud beschikbaar."
+      ],
+      "No data rows found.": [
+        "Geen gegevensrijen gevonden."
+      ],
       "No files available": [
         "Geen bestanden beschikbaar"
       ],
@@ -1555,6 +1633,9 @@
       "Processing file contents...": [
         "Bestandsinhoud wordt verwerkt..."
       ],
+      "Project knowledge": [
+        "Projectkennis"
+      ],
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevante bestanden zullen automatisch opgehaald worden op basis van uw vragen"
       ],
@@ -1572,6 +1653,15 @@
       ],
       "Secure connection (encrypted)": [
         "Beveiligde verbinding (versleuteld)"
+      ],
+      "Shared by ${ file.sharedBy }": [
+        "Gedeeld door ${ file.sharedBy }"
+      ],
+      "Shared with you": [
+        "Gedeeld met jou"
+      ],
+      "Shared with you by ${ file.sharedBy }": [
+        "Gedeeld met u door ${ file.sharedBy }"
       ],
       "Show all files": [
         "Alle bestanden weergeven"
@@ -1594,6 +1684,9 @@
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "De ${ LUMO_SHORT_APP_NAME } API biedt u programmatische toegang tot taalmodellen met de privacyarchitectuur van ${ BRAND_NAME } ingebouwd. Geen datatraining op uw verzoeken. Geen tracking."
       ],
+      "There was an error processing this file.": [
+        "Er is een fout opgetreden bij het verwerken van dit bestand."
+      ],
       "These files won't be used for future questions.": [
         "Deze bestanden worden niet gebruikt voor toekomstige vragen."
       ],
@@ -1611,6 +1704,9 @@
       ],
       "Trying...": [
         "Bezig..."
+      ],
+      "Unable to parse this file as a table.": [
+        "Dit bestand kan niet als tabel worden verwerkt."
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "\"${ file.name }\" wordt opgeladen naar ${ DRIVE_APP_NAME }..."
@@ -1660,12 +1756,25 @@
         "Senior Inspecteur Kartonnen Dozen"
       ]
     },
+    "collider_2025: KBAction": {
+      "Add from ${ DRIVE_SHORT_APP_NAME }": [
+        "Toevoegen vanuit ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
+    "collider_2025: KBActionTitle": {
+      "Add from ${ DRIVE_SHORT_APP_NAME }": [
+        "Toevoegen vanuit ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
     "collider_2025: Label": {
       "API calls": [
         "API-oproepen"
       ],
       "API calls (30d)": [
         "API-aanroepen (30d)"
+      ],
+      "Auto": [
+        "Auto"
       ],
       "Basic": [
         "Basis"
@@ -1684,6 +1793,9 @@
       ],
       "Example ideas": [
         "Voorbeeldideeën"
+      ],
+      "Fast": [
+        "Snel"
       ],
       "File upload": [
         "Bestand opladen"
@@ -1717,6 +1829,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Thinking": [
+        "Denken"
       ],
       "Tokens (30d)": [
         "Tokens (30d)"
@@ -1785,6 +1900,11 @@
       ],
       "Overview": [
         "Overzicht"
+      ]
+    },
+    "collider_2025: Notification": {
+      "Create an account or sign in to save your chats and increase limits.": [
+        "Maak een account aan of log in om uw chats op te slaan en de limieten te verhogen."
       ]
     },
     "collider_2025: Personality": {
@@ -2098,6 +2218,11 @@
         "tokens/oproep"
       ]
     },
+    "collider_2025: UploadAction": {
+      "Add from ${ DRIVE_APP_NAME }": [
+        "Toevoegen vanuit ${ DRIVE_APP_NAME }"
+      ]
+    },
     "collider_2025: Upsell": {
       "Upgrade": [
         "Upgraden"
@@ -2109,14 +2234,29 @@
     "collider_2025: Upsell Title": {
       "Get": [
         "Krijg"
+      ],
+      "Upgrade to": [
+        "Upgrade naar"
       ]
     },
     "collider_2025: Warning": {
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } heeft het er maar druk mee"
       ],
+      "Approaching file limit": [
+        "Bestandslimiet bijna bereikt"
+      ],
+      "Approaching message limit": [
+        "Berichtenlimiet bijna bereikt"
+      ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Kon bestand niet indexeren voor zoeken: ${ processingResult.message }"
+      ],
+      "File limit reached": [
+        "Bestandslimiet bereikt"
+      ],
+      "Message limit reached": [
+        "Berichtenlimiet bereikt"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdacht: ${ urlParts.subdomainCount } subdomein",
@@ -2130,9 +2270,36 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "We ondervinden momenteel een hoger verkeersvolume dan gebruikelijk, dus antwoorden kunnen wat trager zijn. Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor prioriteitstoegang tijdens drukke momenten."
+      ],
+      "You have ${ remaining } conversations left in this project before reaching the limit.": [
+        "U hebt nog ${ remaining } gesprekken over in dit project voordat de limiet bereikt is."
+      ],
+      "You have ${ remaining } file uploads left in this project before reaching the limit.": [
+        "U hebt nog ${ remaining } bestand uploads over in dit project voordat de limiet bereikt is."
+      ],
+      "You have ${ remaining } file uploads left in this project.": [
+        "U heeft nog ${ remaining } bestandsuploads in dit project."
+      ],
+      "You have ${ remaining } messages left in this conversation before reaching the limit.": [
+        "U hebt nog ${ remaining } gesprekken over in deze conversatie voordat de limiet bereikt is."
+      ],
+      "You have ${ remaining } messages left in this conversation. Start a new chat for best responses.": [
+        "U hebt nog ${ remaining } berichten over in dit gesprek. Start een nieuwe chat voor de beste reacties."
+      ],
+      "You have ${ remaining } projects left before reaching the limit.": [
+        "U hebt nog ${ remaining } projecten over voordat u de limiet bereikt."
+      ],
+      "You've hit the ${ assetsStatus.limit }-file limit in this project. Remove some files before uploading new ones.": [
+        "U heeft de bestandslimiet van ${ assetsStatus.limit } bereikt in dit project. Verwijder enkele bestanden voordat u nieuwe uploadt."
+      ],
+      "You've hit the ${ messagesStatus.limit }-message limit in this conversation. Start a new chat to keep talking with ${ LUMO_SHORT_APP_NAME }.": [
+        "U hebt de limiet van ${ messagesStatus.limit } berichten bereikt in dit gesprek. Start een nieuwe chat om verder te praten met ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "collider_2025: Web Search": {
+      "Close": [
+        "Sluiten"
+      ],
       "Sources": [
         "Bronnen"
       ]
@@ -2147,6 +2314,9 @@
       "Ask the model to be more careful and thorough": [
         "Vraag het model om voorzichtiger en grondiger te zijn."
       ],
+      "Back": [
+        "Terug"
+      ],
       "Back to project": [
         "Terug naar project"
       ],
@@ -2156,11 +2326,17 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Change style": [
+        "Stijl wijzigen"
+      ],
       "Choose project icon": [
         "Kies project icoon"
       ],
       "Click to edit title": [
         "Klik om titel te bewerken"
+      ],
+      "Close": [
+        "Sluiten"
       ],
       "Create": [
         "Aanmaken"
@@ -2183,6 +2359,15 @@
       "Deselect all": [
         "Deselecteer alles"
       ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Download image": [
+        "Download afbeelding"
+      ],
+      "Edit image": [
+        "Afbeelding bewerken"
+      ],
       "Edit instructions": [
         "Instructies bewerken"
       ],
@@ -2191,6 +2376,9 @@
       ],
       "Go to project": [
         "Ga naar project"
+      ],
+      "here": [
+        "hier"
       ],
       "Hide settings": [
         "Instellingen verbergen"
@@ -2206,6 +2394,9 @@
       ],
       "Manage Drive folder link": [
         "Beheer Drive-mapkoppeling"
+      ],
+      "Modify...": [
+        "Wijzigen..."
       ],
       "More breadcrumbs": [
         "Meer kruimelpaden"
@@ -2240,6 +2431,9 @@
       "Request a shorter, more focused response": [
         "Vraag om een korter, meer gericht antwoord"
       ],
+      "Retry": [
+        "Probeer opnieuw"
+      ],
       "Retry with the same prompt": [
         "Opnieuw proberen met dezelfde prompt"
       ],
@@ -2260,6 +2454,9 @@
       ],
       "Show sidebar": [
         "Toon de zijbalk"
+      ],
+      "Shuffle suggestions": [
+        "Mix suggesties"
       ],
       "Think longer": [
         "Langer nadenken"
@@ -2317,6 +2514,9 @@
       "Favorite": [
         "Favoriet"
       ],
+      "Gallery": [
+        "Galerij"
+      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Krijg ${ LUMO_SHORT_APP_NAME } Plus"
       ],
@@ -2331,6 +2531,9 @@
       ],
       "Link with ${ DRIVE_APP_NAME } folder": [
         "Koppel met ${ DRIVE_APP_NAME } map"
+      ],
+      "Load more": [
+        "Meer ophalen"
       ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Gesprek kennis bestanden beheren (${ totalFiles })"
@@ -2394,6 +2597,12 @@
       "Failed to link Drive folder": [
         "Kon Drive-map niet koppelen"
       ],
+      "Failed to load image": [
+        "Laden afbeelding mislukt"
+      ],
+      "Failed to load images. Please try again.": [
+        "Kan de afbeeldingen niet laden. Probeer het opnieuw."
+      ],
       "Failed to process file: ${ file.name }": [
         "Kon bestand: ${ file.name } niet verwerken"
       ],
@@ -2436,6 +2645,77 @@
       ],
       "Tailored responses based on your project’s files and instructions.": [
         "Op maat gemaakte reacties op basis van de bestanden en instructies van uw project."
+      ]
+    },
+    "collider_2025:Finance": {
+      "Dividend Yield": [
+        "Divident opbrengst"
+      ],
+      "Exchange": [
+        "Beurs"
+      ],
+      "Market Cap": [
+        "Marktkapitalisatie"
+      ],
+      "P/E Ratio": [
+        "P/E Ratio"
+      ],
+      "Profit Margin": [
+        "Winstmarge"
+      ],
+      "Revenue (TTM)": [
+        "Omzet TTM)"
+      ]
+    },
+    "collider_2025:Gallery suggestion hint": {
+      "Draw a sketch to bring to life": [
+        "Maak een schets om het tot leven te brengen."
+      ],
+      "Upload a photo to caricature": [
+        "Upload een foto voor een karikatuur."
+      ],
+      "Upload a photo to package": [
+        "Upload een foto naar het pakket"
+      ],
+      "Upload a photo to plushify": [
+        "Upload een foto naar Plushify"
+      ],
+      "Upload a photo to transform": [
+        "Upload een foto om te transformeren"
+      ]
+    },
+    "collider_2025:Gallery suggestion title": {
+      "Bauhaus Modern Art": [
+        "Bauhaus Moderne kunst"
+      ],
+      "Comic Caricature": [
+        "Komische karikatuur"
+      ],
+      "Cubist Deconstruction": [
+        "Kubistische deconstructie"
+      ],
+      "Decorated Cookie": [
+        "Versierde Cookie"
+      ],
+      "Impressionist Painting": [
+        "Impressionistische schilderkunst"
+      ],
+      "Plushie Transformation": [
+        "Knuffeltransformatie"
+      ],
+      "Product Packaging": [
+        "Product verpakking"
+      ],
+      "Renaissance Portrait": [
+        "Renaissanceportret"
+      ],
+      "Sketch to Reality": [
+        "Van schets naar werkelijkheid"
+      ]
+    },
+    "collider_2025:Hint": {
+      "Draw on the image to annotate, and/or describe what to change": [
+        "Teken op de afbeelding om aantekeningen te maken, en/of beschrijf wat te wijzigen"
       ]
     },
     "collider_2025:Icon": {
@@ -2481,6 +2761,9 @@
       "Conversation encrypted": [
         "Gesprek versleuteld"
       ],
+      "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
+        "Maak afbeeldingen, pas stijlen toe en schets ideeën. Login of maak een gratis account aan om uw creaties op te slaan."
+      ],
       "Current chat:": [
         "Huidig gesprek:"
       ],
@@ -2495,6 +2778,9 @@
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Van ${ DRIVE_APP_NAME }"
+      ],
+      "Generate images, apply styles, and sketch ideas. For inspiration, click ${ link }.": [
+        "Genereer afbeeldingen, pas stijlen toe en schets ideeën. Klik op ${ link } voor inspiratie."
       ],
       "Initializing Drive...": [
         "Drive initialiseren..."
@@ -2555,6 +2841,12 @@
       "chats": [
         "gesprekken"
       ],
+      "Created on": [
+        "Gemaakt op"
+      ],
+      "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
+        "Ontdek wat ${ LUMO_SHORT_APP_NAME } kan creëren"
+      ],
       "Edit conversation title": [
         "Gesprekstitel bewerken"
       ],
@@ -2566,6 +2858,9 @@
       ],
       "Project Instructions (optional)": [
         "Project Instructies (optioneel)"
+      ],
+      "Selected:": [
+        "Geselecteerd:"
       ],
       "Untitled chat": [
         "Naamloos gesprek"
@@ -2594,6 +2889,12 @@
       "Ask anything…": [
         "Vraag alles..."
       ],
+      "Describe your image...": [
+        "Beschrijf uw afbeelding..."
+      ],
+      "e.g. \"Make the sky purple\", \"Remove the items circled in red\"": [
+        "Bijvoorbeeld: \"Maak de lucht paars\", \"Verwijder de items die rood omcirkeld zijn\""
+      ],
       "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
         "e.g. Doorloop documenten in een map, extraheer personen en datums uit elk document, bouw vervolgens een grafiek van hoe termen met elkaar verband houden."
       ],
@@ -2611,6 +2912,11 @@
       ],
       "Sign in required": [
         "Aanmelden vereist"
+      ]
+    },
+    "collider_2025:Prefill": {
+      "Edit this image:": [
+        "Bewerk deze afbeelding:"
       ]
     },
     "collider_2025:Project": {
@@ -2753,11 +3059,77 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "Checked ${ BRAND_NAME } knowledge": [
+        "Kennis over ${ BRAND_NAME } geraadpleegd"
+      ],
+      "Checking ${ BRAND_NAME } knowledge...": [
+        "Kennis over ${ BRAND_NAME } raadplegen..."
+      ],
+      "Dividend Yield": [
+        "Divident opbrengst"
+      ],
+      "Edited image": [
+        "Afbeelding bewerkt"
+      ],
+      "Editing image...": [
+        "Afbeelding bewerken..."
+      ],
+      "Executed tool": [
+        "Uitgevoerde tool"
+      ],
+      "Executing tool...": [
+        "Uitvoeren tool..."
+      ],
+      "Expand reasoning": [
+        "Geef meer uitleg bij de redenering"
+      ],
+      "Extracted page content": [
+        "Uitgehaalde pagina-inhoud"
+      ],
+      "Extracting content from page...": [
+        "Inhoud van de pagina extraheren..."
+      ],
+      "Generated image": [
+        "Gegenereerde afbeelding"
+      ],
+      "Generating image...": [
+        "Afbeelding genereren ..."
+      ],
+      "Last updated: ": [
+        "Laatst bijgewerkt: "
+      ],
+      "Looked at your image": [
+        "Uw afbeelding bekeken"
+      ],
+      "Looking at your image...": [
+        "Als ik naar uw foto kijk..."
+      ],
+      "Market Cap": [
+        "Marktkapitalisatie"
+      ],
+      "P/E Ratio": [
+        "P/E Ratio"
+      ],
+      "Performance comparison": [
+        "Prestatievergelijking"
+      ],
+      "Price": [
+        "Prijs"
+      ],
+      "Profit Margin": [
+        "Winstmarge"
+      ],
+      "Revenue TTM": [
+        "Omzet TTM"
+      ],
       "Thinking...": [
         "Denken..."
       ],
       "Thought about this": [
         "Dacht hierover na"
+      ],
+      "Thought for ": [
+        "Idee voor "
       ]
     },
     "collider_2025:Status": {
@@ -2811,6 +3183,14 @@
         "Map succesvol aangemaakt"
       ]
     },
+    "collider_2025:Tab": {
+      "Create": [
+        "Creëer"
+      ],
+      "Gallery": [
+        "Galerij"
+      ]
+    },
     "collider_2025:Title": {
       "An AI assistant should empower you, not exploit you for your data. That’s why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Een AI-assistent moet u versterken, niet uitbuiten voor uw gegevens. Daarom hebben we ${ LUMO_SHORT_APP_NAME } gebouwd: om u alle voordelen van AI te bieden, zonder uw privacy en gegevensbeveiliging in gevaar te brengen."
@@ -2847,6 +3227,9 @@
       ],
       "Get started by creating a new project": [
         "Begin met het aanmaken van een nieuw project"
+      ],
+      "Get started by generating an image": [
+        "Begin door een afbeelding te genereren"
       ],
       "Ghost mode": [
         "Spookmodus"
@@ -2917,6 +3300,9 @@
       "Settings": [
         "Instellingen"
       ],
+      "Sign in to build your gallery": [
+        "Meld u aan om uw galerij samen te stellen"
+      ],
       "Sign in to create projects": [
         "Inloggen om projecten te maken"
       ],
@@ -2931,6 +3317,9 @@
       ],
       "Today": [
         "Vandaag"
+      ],
+      "What do you want to create today?": [
+        "Wat wilt u vandaag creëren?"
       ]
     },
     "collider_2025:Tooltip": {
@@ -4406,6 +4795,11 @@
         "Diensten"
       ]
     },
+    "Guest Migration": {
+      "Your chat has been saved to your account!": [
+        "Uw chat is opgeslagen in uw account!"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -5352,11 +5746,23 @@
       "Acceleration": [
         "Versnelling"
       ],
+      "Assets": [
+        "Activa"
+      ],
       "Buffer size": [
         "Buffergrootte"
       ],
+      "Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).": [
+        "Roept NativeComposerApi.onLimitReachedError rechtstreeks aan (slaat de toastflow over)."
+      ],
       "Clear History": [
         "Geschiedenis verwijderen"
+      ],
+      "Clear overrides": [
+        "Wis overschrijvingen"
+      ],
+      "Composer limit banner preview": [
+        "Voorbeeld van bannerbeperking Composer"
       ],
       "Create Test Chats": [
         "Maak Test Chats"
@@ -5366,6 +5772,12 @@
       ],
       "Differential": [
         "Verschil"
+      ],
+      "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
+        "Verstuurt een gesimuleerde limietfout 422, die via de in-app-notificatie wordt weergegeven."
+      ],
+      "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
+        "Hiermee wordt de inline-composerbanner in de status \"naderend\" of \"limiet bereikt\" gezet, zodat u deze in elke context kunt bekijken."
       ],
       "FPS": [
         "FPS"
@@ -5388,6 +5800,18 @@
       "Messages": [
         "Berichten"
       ],
+      "Native bridge: onLimitReachedError": [
+        "Native bridge: onLimitReachedError"
+      ],
+      "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
+        "De native Composer-bridge is niet gedetecteerd — aanroepen worden wel geregistreerd, maar er gebeurt niets. Open de app in de iOS/Android-wrapper om de bridge te testen."
+      ],
+      "Notifications": [
+        "Meldingen"
+      ],
+      "Performance": [
+        "Performantie"
+      ],
       "Rate": [
         "Beoordeel"
       ],
@@ -5400,8 +5824,32 @@
       "Render time": [
         "Geef tijd weer"
       ],
+      "Rendering": [
+        "Renderen"
+      ],
+      "Resource limit notifications": [
+        "Meldingen over resourcebeperkingen"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Send assets limit to native": [
+        "Verzend assets limiet naar oorspronkelijke"
+      ],
+      "Send conversations limit to native": [
+        "Beperk het verzenden van gesprekken tot native gebruikers"
+      ],
+      "Send messages limit to native": [
+        "Stuur berichtenlimiet naar oorspronkelijke"
+      ],
+      "Send spaces limit to native": [
+        "Stuur limiet ruimte naar oorspronkelijke"
+      ],
       "Smoothing (Spring-Mass)": [
         "Vloeiend maken (veer-massa)"
+      ],
+      "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
+        "Start de testrenderer op of vul de zijbalk met gesprekken uit verschillende leeftijdsgroepen."
       ],
       "Spring state": [
         "Spring status"
@@ -5429,6 +5877,18 @@
       ],
       "Tokens/sec": [
         "Tokens/sec"
+      ],
+      "Trigger assets limit": [
+        "Activeer activalimiet"
+      ],
+      "Trigger conversations limit": [
+        "Activeer gesprekslimiet"
+      ],
+      "Trigger messages limit": [
+        "Limiet triggerboodschappen"
+      ],
+      "Trigger spaces limit": [
+        "Limiet triggerruimtes"
       ]
     },
     "lumo: Test Renderer": {
@@ -7948,6 +8408,18 @@
       ]
     },
     "Warning": {
+      "(${ orphanedChunkCount } chunk)": [
+        "(${ orphanedChunkCount } stuk)",
+        "(${ orphanedChunkCount } stukken)"
+      ],
+      "Found ${ orphanedDocCount } document": [
+        "${ orphanedDocCount } document gevonden",
+        "${ orphanedDocCount } documenten gevonden"
+      ],
+      "referencing ${ orphanedSpaceIds.length } missing space.": [
+        "verwijzing naar ${ orphanedSpaceIds.length } ontbrekende spatie",
+        "verwijzing naar ${ orphanedSpaceIds.length } ontbrekende spaties"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],

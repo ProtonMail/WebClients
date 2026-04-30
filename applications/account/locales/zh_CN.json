@@ -318,14 +318,14 @@
       "Connect Gmail address": [
         "连接 Gmail 地址"
       ],
-      "Connect to Gmail": [
-        "连接 Gmail"
-      ],
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "连接 ${ BRAND_NAME } 账户"
+      ],
+      "Connect your email": [
+        "关联您的邮箱"
       ],
       "Connected": [
         "已连接"
@@ -4892,9 +4892,6 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "导入来自其他提供商的电子邮件、日历日程和联系人。"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -5053,6 +5050,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "我们已开始导入您过去 180 天的 Gmail 邮件，导入完成后将会通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -10350,9 +10350,6 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
       ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "自动转发功能会将新收到的邮件自动发送到您的收件箱。"
-      ],
       "Free forever": [
         "永久免费"
       ],
@@ -10949,9 +10946,6 @@
       ],
       "No folder selected": [
         "未选择文件夹"
-      ],
-      "No forwarding history.": [
-        "暂无转发历史！"
       ],
       "No gateways": [
         "没有网关"
@@ -20497,14 +20491,6 @@
         "密码重置申请"
       ]
     },
-    "Setting": {
-      "Get updates about comments via email": [
-        "通过电子邮件获取评论更新"
-      ],
-      "Include document name in email notifications": [
-        "在邮件通知中包含文档名称"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "善用文件夹与标签，让您的邮箱井井有条。${ learnMoreLink }"
@@ -23629,9 +23615,6 @@
       ],
       "Forward emails": [
         "转发电子邮件"
-      ],
-      "Forwardings": [
-        "转发"
       ],
       "Free": [
         "免费"

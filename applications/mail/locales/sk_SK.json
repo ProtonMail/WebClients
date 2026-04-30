@@ -291,9 +291,6 @@
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
       ],
-      "Connect to Gmail": [
-        "Pripojiť ku Gmailu"
-      ],
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
       ],
@@ -4207,9 +4204,6 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
-      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Odosielajte a prijímajte Gmailovú poštu priamo v ${ MAIL_APP_NAME }. Pripojte svoju adresu v ${ addressesSettingsLink }."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ],
@@ -4287,6 +4281,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu z posledných 180 dní. Dáme vám vedieť, keď bude import hotový."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -12349,9 +12346,6 @@
     "Onboarding List Placeholder": {
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Prineste svoje emaily do ${ MAIL_APP_NAME }"
-      ],
-      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
-        "Prineste svoj existujúci email do aplikácie ${ MAIL_APP_NAME }, aby ste mohli všetko spravovať z jednej súkromnej schránky."
       ],
       "Choose a provider": [
         "Vyberte poskytovateľa"

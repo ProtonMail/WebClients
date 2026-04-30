@@ -324,9 +324,6 @@
       "Connect Gmail address": [
         "Pripojte Gmailovú adresu"
       ],
-      "Connect to Gmail": [
-        "Pripojiť ku Gmailu"
-      ],
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
       ],
@@ -5080,9 +5077,6 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
       ],
-      "Bring over email, calendar events, and contacts from another provider.": [
-        "Preneste si emaily, udalosti kalendára a kontakty od iného poskytovateľa."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vytvorte si dôveryhodnú a rozpoznateľnú značku pomocou profesionálnych emailových adries vo vašej vlastnej doméne."
       ],
@@ -5259,6 +5253,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu z posledných 180 dní. Dáme vám vedieť, keď bude import hotový."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -9491,6 +9488,9 @@
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } odošle overovací kód na číslo ${ phoneNumber }. Môžu sa účtovať štandardné poplatky za správy."
       ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } odošle overovací kód na váš záložný telefón. Môžu sa účtovať štandardné poplatky za správy."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
@@ -10358,6 +10358,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Nakonfigurujte overovanie SAML pre svoju organizáciu prostredníctvom poskytovateľa identít, napríklad Okta, Microsoft Azure alebo Google Identity Platform. Týmto sa umožní SAML pre celú organizáciu."
       ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Pripojte a spravujte svoje externé poštové schránky v aplikácii ${ MAIL_APP_NAME }."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Údaje o pripojení budú k dispozícii približne o 1 hodinu."
       ],
@@ -10879,9 +10882,6 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
-      ],
-      "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Preposielanie automaticky odošle nové prichádzajúce emaily do vašej doručenej pošty."
       ],
       "Free forever": [
         "Navždy zadarmo"
@@ -11495,14 +11495,14 @@
       "No card required": [
         "Nevyžaduje sa žiadna karta"
       ],
+      "No connected addresses.": [
+        "Žiadne pripojené adresy."
+      ],
       "No countries enabled": [
         "Nie sú povolené žiadne krajiny"
       ],
       "No folder selected": [
         "Nie je vybraný žiadny priečinok"
-      ],
-      "No forwarding history.": [
-        "Bez histórie preposielania."
       ],
       "No gateways": [
         "Žiadne brány"
@@ -24673,6 +24673,9 @@
       "Connect your custom domain": [
         "Pripojte si vlastnú doménu"
       ],
+      "Connected emails": [
+        "Prepojené emaily"
+      ],
       "Connection status": [
         "Stav pripojenia"
       ],
@@ -25110,9 +25113,6 @@
       ],
       "Forward emails": [
         "Preposielať emaily"
-      ],
-      "Forwardings": [
-        "Preposielania"
       ],
       "Free": [
         "Free"
