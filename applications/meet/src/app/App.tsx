@@ -61,7 +61,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         if (location.pathname.includes(landingPageRoute)) {
             if (isGuest) {
-                history.push('/join?instantJoin=true');
+                history.push({ pathname: '/join', state: { instantJoin: true } });
             } else {
                 history.push('/dashboard');
             }
