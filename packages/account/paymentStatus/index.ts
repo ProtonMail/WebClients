@@ -13,10 +13,8 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
     createPromiseStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-    
 } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';

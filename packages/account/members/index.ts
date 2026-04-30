@@ -3,13 +3,8 @@ import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
-import {
-    cacheHelper,
-    createPromiseStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-
-} from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

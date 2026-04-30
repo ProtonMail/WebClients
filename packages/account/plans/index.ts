@@ -17,11 +17,9 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import {
     cacheHelper,
     createPromiseStore,
-    getFetchedAt,
-    getFetchedEphemeral,
     getIsStaleRefetch,
-
 } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
