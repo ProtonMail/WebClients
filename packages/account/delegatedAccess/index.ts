@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';

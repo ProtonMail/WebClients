@@ -6,7 +6,7 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 export const defaultExpiry = 5 * DAY;
 export const defaultLongExpiry = 90 * DAY;
 
-export const getMinuteJitter = () => {
+const getMinuteJitter = () => {
     return randomIntFromInterval(0, 5) * MINUTE;
 };
 

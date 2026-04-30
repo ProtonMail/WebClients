@@ -5,7 +5,7 @@ import debounce from 'lodash/debounce';
 
 import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 

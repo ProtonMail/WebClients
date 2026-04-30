@@ -11,10 +11,8 @@ import type { CacheType } from '@proton/redux-utilities/interface';
 import {
     cacheHelper,
     createPromiseStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-
 } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
