@@ -2,7 +2,7 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import {  CacheType } from '@proton/redux-utilities';
+import {  CacheType } from '@proton/redux-utilities/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroup, getGroups } from '@proton/shared/lib/api/groups';

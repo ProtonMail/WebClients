@@ -10,14 +10,12 @@ import {
 import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription } from '@proton/payments';
 import { getSubscription } from '@proton/payments/core/api/api';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import {
     cacheHelper,
     createPromiseStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-    
 } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
