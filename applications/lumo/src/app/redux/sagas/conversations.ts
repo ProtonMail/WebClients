@@ -341,10 +341,13 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
         if (isLimitReachedError(e)) {
+            const conversation: Conversation | undefined = yield select(selectConversationById(localId));
             yield put(
                 addResourceLimitError({
                     resource: 'conversations',
                     limit: MAX_CONVERSATIONS_PER_SPACE,
+                    conversationId: localId,
+                    spaceId: conversation?.spaceId,
                     serverMessage: e.serverMessage,
                 })
             );
