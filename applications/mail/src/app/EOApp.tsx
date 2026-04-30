@@ -15,7 +15,7 @@ import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';

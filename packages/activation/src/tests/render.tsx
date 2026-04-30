@@ -16,7 +16,7 @@ import {
     ModalsProvider,
     NotificationsContext,
 } from '@proton/components';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';

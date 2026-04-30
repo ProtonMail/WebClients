@@ -13,7 +13,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch, useSelector } from '@proton/redux-shared-store';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Member } from '@proton/shared/lib/interfaces';
 
 import { MemberListBanner, MembersList } from './MemberListBanner';

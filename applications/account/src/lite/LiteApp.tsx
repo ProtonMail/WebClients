@@ -18,7 +18,7 @@ import {
 import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getValidatedProtonProtocolRedirect } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';

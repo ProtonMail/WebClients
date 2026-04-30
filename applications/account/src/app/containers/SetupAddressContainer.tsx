@@ -17,7 +17,7 @@ import {
 } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { IcBug } from '@proton/icons/icons/IcBug';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';

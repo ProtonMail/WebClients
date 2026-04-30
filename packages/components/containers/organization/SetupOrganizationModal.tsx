@@ -33,7 +33,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';

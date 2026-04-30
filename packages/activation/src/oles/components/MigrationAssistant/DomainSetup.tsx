@@ -8,7 +8,7 @@ import { Card } from '@proton/atoms/Card/Card';
 import { Badge, DomainModal } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';

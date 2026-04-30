@@ -14,7 +14,7 @@ import AuthenticationProvider from '@proton/components/containers/authentication
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MeetExtraThunkArguments, MeetStore } from '@proton/meet/store/store';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

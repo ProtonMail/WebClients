@@ -15,7 +15,7 @@ import NotificationsProvider from '@proton/components/containers/notifications/P
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type {
     ApiEnvironmentConfig,

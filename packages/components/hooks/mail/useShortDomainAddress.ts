@@ -4,7 +4,7 @@ import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useMailShortDomainPostSubscriptionComposerSpotlight from '@proton/components/hooks/mail/useMailShortDomainPostSubscriptionSpotlight';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 

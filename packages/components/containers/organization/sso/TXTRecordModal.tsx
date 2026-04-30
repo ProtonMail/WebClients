@@ -10,7 +10,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 

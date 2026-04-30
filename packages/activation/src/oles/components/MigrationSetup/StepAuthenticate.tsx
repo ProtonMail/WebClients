@@ -10,7 +10,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import useApi from '@proton/components/hooks/useApi';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import googleLogoMono from '@proton/styles/assets/img/import/providers/google_mono.svg';

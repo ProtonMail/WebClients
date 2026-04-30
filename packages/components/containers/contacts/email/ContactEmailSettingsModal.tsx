@@ -25,7 +25,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import type { CONTACT_MIME_TYPES } from '@proton/shared/lib/constants';

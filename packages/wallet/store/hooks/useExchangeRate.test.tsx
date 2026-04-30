@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import type { MockedFunction } from 'vitest';
 
 import type { WasmApiExchangeRateData, WasmExchangeRateClient } from '@proton/andromeda';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { getMockedApi } from '../../tests/mocks/useWalletApi';

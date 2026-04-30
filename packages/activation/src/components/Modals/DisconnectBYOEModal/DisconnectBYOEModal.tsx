@@ -4,7 +4,7 @@ import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 

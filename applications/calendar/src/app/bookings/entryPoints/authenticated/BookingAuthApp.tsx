@@ -10,7 +10,7 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';

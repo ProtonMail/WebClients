@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react';
 
-import { useDispatch, useSelector } from '@proton/redux-shared-store';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 

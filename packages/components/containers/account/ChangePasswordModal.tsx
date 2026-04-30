@@ -23,7 +23,7 @@ import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
