@@ -8,7 +8,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
 interface DisableMnemonicModalProps {

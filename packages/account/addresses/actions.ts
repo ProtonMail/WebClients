@@ -6,7 +6,7 @@ import { createBYOEAddress as createBYOEAddressApi } from '@proton/activation/sr
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import {
     createAddress as createAddressConfig,
     deleteAddress as deleteAddressConfig,

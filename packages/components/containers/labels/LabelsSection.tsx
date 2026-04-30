@@ -19,7 +19,7 @@ import { useLoading } from '@proton/hooks';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';

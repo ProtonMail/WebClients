@@ -2,7 +2,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { CacheType, defaultExpiry, getFetchedAt, isExpired } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { defaultExpiry, getFetchedAt, isExpired } from '@proton/redux-utilities';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DAY } from '@proton/shared/lib/constants';

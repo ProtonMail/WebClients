@@ -7,7 +7,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
 

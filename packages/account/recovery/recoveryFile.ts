@@ -6,7 +6,7 @@ import { type UserState, selectUser, userThunk } from '@proton/account/user';
 import { type UserKeysState, selectUserKeys, userKeysThunk } from '@proton/account/userKeys';
 import { type UserSettingsState, selectUserSettings, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
