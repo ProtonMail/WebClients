@@ -4,6 +4,7 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/em' as *;
 
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
@@ -215,4 +216,62 @@ body::before {
 	color: white;
 	inset-inline-start: 0;
 	z-index: 12000;
+}
+
+// overrides
+// TOGGLE COMPONENT
+.toggle-container {
+	background-color: var(--background-upsell-toggle) !important;
+
+	&::after {
+		border: none;
+	}
+
+	&::before {
+		background-color: var(--background-upsell-toggle-button);
+		margin-inline-start: 5px;
+		margin-block: auto;
+		inline-size: calc(#{em(24)} - 6px);
+		block-size: calc(#{em(24)} - 6px);
+	}
+
+	.toggle-container-text .toggle-container-img {
+		opacity: 0;
+	}
+
+	&--checked {
+		background-color: var(--interaction-norm) !important;
+
+		&::before {
+			background-color: var(--background-upsell-toggle-button);
+
+			// track(em(40)) - base-thumb(em(24)) - em(4) to preserve 5px margin on each side
+			transform: translateX(#{em(40) - em(24) - em(4)});
+
+			@at-root {
+				[dir='rtl'] & {
+					transform: translateX(-#{em(40) - em(24) - em(4)});
+				}
+			}
+		}
+	}
+
+	// Keep Lumo colors for disabled states; base opacity: 0.5 handles the visual fade
+	&--disabled:not(.toggle-container--loading) {
+		background-color: var(--background-upsell-toggle) !important;
+
+		&::before {
+			background-color: var(--background-upsell-toggle-button) !important;
+		}
+
+		&.toggle-container--checked {
+			background-color: var(--interaction-norm) !important;
+		}
+	}
+
+	// No hover state changes
+	&:not(.toggle-container--disabled):hover::before,
+	&:not(.toggle-container--disabled).toggle-container--checked:hover::before {
+		background-color: var(--background-upsell-toggle-button);
+	}
 }
