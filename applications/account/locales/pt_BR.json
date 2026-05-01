@@ -5150,6 +5150,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Traga seus e-mails, eventos do calendário e contatos de outro provedor."
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas."
       ]
     },
     "description": {
@@ -9138,6 +9144,9 @@
       ],
       "Undo in progress": [
         "Desfazendo"
+      ],
+      "Undo finished": [
+        "Cancelamento concluído"
       ]
     },
     "Import type": {
@@ -12783,6 +12792,21 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, mas recuperável com o seu ${ RecoveryContactsLink }:"
+      ],
+      "Add a phone number in case we need to contact you": [
+        "Insira um número de telefone para o caso de precisarmos entrar em contato com você"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Você pode acessar sua sessão ativa em outro navegador?"
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Conecte e gerencie suas caixas de correio externas no ${ MAIL_APP_NAME }."
+      ],
+      "No connected addresses.": [
+        "Sem endereços conectados."
       ]
     },
     "info": {
@@ -16768,6 +16792,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Advanced workspace security": [
+        "Segurança avançada do ambiente de trabalho"
       ]
     },
     "new_plans: feature highlight": {
@@ -19629,6 +19656,12 @@
       ],
       "Weak": [
         "Fraco"
+      ],
+      "How you increased your account protection": [
+        "Como você aumentou a segurança da sua conta"
+      ],
+      "Inactive recovery options": [
+        "Opções de recuperação inativas"
       ]
     },
     "Recovery score item": {
@@ -19700,6 +19733,9 @@
       ],
       "Verify recovery phone": [
         "Verificar telefone de recuperação"
+      ],
+      "Sign-in with QR code allowed": [
+        "Início de sessão com código QR permitido"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20951,6 +20987,9 @@
       ],
       "Include document name in email notifications": [
         "Incluir o nome do documento nas notificações por e-mail"
+      ],
+      "Get updates about comments via email": [
+        "Receba atualizações sobre comentários por e-mail"
       ]
     },
     "Settings description": {
@@ -22167,6 +22206,9 @@
       ],
       "Verify ${ value }": [
         "Verificar ${ value }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Última atualização em ${ formattedUpdateDate }"
       ]
     },
     "Step in filter modal": {
@@ -25215,6 +25257,12 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Activate multi-user support": [
+        "Ativar suporte a múltiplos usuários"
+      ],
+      "What changes if you switch to the Free plan": [
+        "O que muda se você mudar para o plano Free"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25578,6 +25626,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Sua conta externa pode ter atingido o seu limite de largura de banda de 24 horas. O ${ BRAND_NAME } tentará retomar a importação o mais rápido possível."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Permite recuperar sua conta com um código de uso único enviado no seu e-mail de recuperação"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Permite escanear um código QR a partir do aplicativo mover da ${ BRAND_NAME } para iniciar sessão"
       ]
     },
     "tooltip": {

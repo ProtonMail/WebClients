@@ -4903,7 +4903,7 @@
         "Zaškrtnuté políčko znamená, že je funkce deaktivována."
       ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
-        "Přidejte do svého účtu další e-mailové adresy nebo využijte aliasy služby Hide My Email, abyste zachovali soukromí své doručené pošty."
+        "Přidejte do svého účtu další e-mailové adresy nebo využijte aliasy Hide My Email, abyste zachovali soukromí své e-mailové schránky."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
@@ -9212,7 +9212,7 @@
         "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } zašle ověřovací kód na číslo ${ phoneNumber }. Mohou být účtovány standardní poplatky za zaslání zprávy."
+        "${ BRAND_NAME } zašle ověřovací kód na číslo ${ phoneNumber }. Mohou být účtovány běžné poplatky za zprávy."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
@@ -9542,7 +9542,7 @@
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
       "**This will disable 2-factor authentication.**": [
-        "**Tím se deaktivuje dvoufázové ověřování.**"
+        "**Tímto dojde k deaktivaci dvoufázové ověřování.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Toto deaktivuje koncově šifrovaná přeposílání e-mailů:** můžete je znovu nastavit později."
@@ -9845,7 +9845,7 @@
         "Opravdu chcete své štítky řadit podle abecedy?"
       ],
       "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
-        "Požádejte je, aby se v prohlížeči přihlásili ke svému účtu ${ ACCOUNT_APP_NAME } a přešli do části **Nastavení → Všechna nastavení → Obnova → Nouzový přístup → Lidé, kterým důvěřuji.**"
+        "Požádejte je, aby se v prohlížeči přihlásili ke svému účtu ${ ACCOUNT_APP_NAME } a přešli do části **Nastavení → Všechna nastavení → Obnovení → Nouzový přístup → Lidé, kteří mi důvěřují**."
       ],
       "Ask your organization admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení brány."
@@ -9926,7 +9926,7 @@
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
-        "Než vám zašleme nový ověřovací kód, zkontrolujte prosím složku se spamem, zda se tam nenachází zpráva od ${ EmailOrPhoneNumber }."
+        "Než vám zašleme nový ověřovací kód, zkontrolujte prosím složku se spamem, zda se tam nenachází zpráva pro ${ EmailOrPhoneNumber }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ${ MAIL_APP_NAME }, je potřeba přidat následující dva záznamy MX do konzole DNS (nachází se na platformě, kde jste zakoupili vlastní doménu). Příklad a několik užitečných tipů naleznete ${ kbLink }."
@@ -10544,13 +10544,13 @@
         "Bezplatná zkušební verze"
       ],
       "Free up space or upgrade your storage to continue.": [
-        "Uvolněte místo nebo si pořiďte větší úložný prostor, abyste mohli pokračovat."
+        "Pro pokračování uvolněte úložný prostor, nebo zvyšte kapacitu úložiště navýšením svého tarifu."
       ],
       "From there, they can request emergency access to your account by clicking **Request access.**": [
-        "Odtud mohou požádat o nouzový přístup k vašemu účtu kliknutím na **Požádat o přístup.**"
+        "Odtud mohou požádat o nouzový přístup k vašemu účtu kliknutím na **Žádost o přístup**."
       ],
       "Gateway couldn't be deleted. Please try again": [
-        "Bránu se nepodařilo odstranit. Zkuste to prosím znovu."
+        "Bránu nešlo smazat. Zkuste to prosím znovu."
       ],
       "Gateway deleted": [
         "Brána smazána"
@@ -11195,7 +11195,7 @@
         "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
-        "Otevřete svou aktivní relaci v prohlížeči a přejděte do části **Nastavení → Všechna nastavení → Obnova → Nastavení obnovení hesla.**"
+        "Otevřete svou aktivní relaci v prohlížeči a přejděte do části **Nastavení → Všechna nastavení → Obnovení → Nastavení resetování hesla**."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Otevřete nastavení Safari pro rozšíření a ověřte, zda jsou oprávnění pro domény ${ BRAND_NAME } povolena."
@@ -11420,7 +11420,7 @@
         "Recenze produktů, žebříčky nebo průvodce"
       ],
       "Professional": [
-        "Profesionál"
+        "Professional"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Chraňte svůj účet před hrozbami kvantových výpočtů pomocí kvantově odolných kryptografických klíčů."
@@ -11807,7 +11807,7 @@
         "Děkujeme za zpětnou vazbu!"
       ],
       "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
-        "${ bandwidthLimitLink } byl dosažen. Jakmile se limit vynuluje, automaticky obnovíme připojení."
+        "${ bandwidthLimitLink } byl dosažen. K automatickému obnovení dojde po resetu limitu."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
@@ -24886,7 +24886,7 @@
         "Přihlaste se a povolte přístup"
       ],
       "Sign in on TV": [
-        "Přihlásit se na TV"
+        "Přihlaste se na TV"
       ],
       "Sign in to join the Beta program": [
         "Přihlaste se do programu Beta"
@@ -25075,7 +25075,7 @@
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
       ],
       "Use backup recovery code": [
-        "Použít kód pro obnovení zálohy"
+        "Použijte záložní kód pro obnovení"
       ],
       "Use one account for all your addresses": [
         "Používejte jeden účet pro všechny své adresy"

@@ -1817,6 +1817,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Connect your email": [
+        "Падключыць сваю электронную пошту"
       ]
     },
     "action": {
@@ -5310,6 +5313,15 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Перанясіце свае лісты, падзеі календара і кантакты ад іншага пастаўшчыка."
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail за апошнія 180 дзён. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ]
     },
     "description": {
@@ -13321,6 +13333,36 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "Тарыфныя планы ${ BRAND_NAME } Business даюць вашай камандзе ўсе інструменты для сумеснай працы, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
+      ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "Дадайце ад 1 да 5 чалавек, якім вы давяраеце і з якімі можаце лёгка звязацца. Давераныя кантакты змогуць дапамагчы вам скінуць пароль, увайшоўшы ў ваш уліковы запіс. У іх ужо павінен быць уліковы запіс ${ BRAND_NAME }."
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "Калі вы згубілі пароль, то вы можаце скінуць яго пры ўмове актыўнага сеанса ў ${ BRAND_NAME } і дазволу на скіданне пароля ў наладах."
+      ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "Аплачваецца ${ monthlyDiscountedPrice } за першыя 6 месяцаў, а падаўжаецца за ${ monthlyRenewalPrice }."
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Падключыце і кіруйце вашай знешняй паштовай скрыняй у ${ MAIL_APP_NAME }."
+      ],
+      "No connected addresses.": [
+        "Падключаныя адрасы адсутнічаюць."
+      ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Ваш адрас электроннай пошты для аднаўлення доступу можа выкарыстоўвацца, каб адправіць вам код спраўджання для скідання пароля і сувязі з вамі, калі будзе заўважана падазроная актыўнасць."
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Ваш адрас нумар тэлефона для аднаўлення доступу можа выкарыстоўвацца, каб адправіць вам код спраўджання для скідання пароля і сувязі з вамі, калі будзе заўважана падазроная актыўнасць."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Няма неабходнасці адкрываць або чытаць файл. Проста спампуйце яго і захавайце дзе-небудзь у надзейным месцы."
+      ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Ваш тарыфны план ${ planDisplayName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
       ]
     },
     "info": {
@@ -21624,6 +21666,12 @@
     "Setting": {
       "Enable Photos section": [
         "Уключыць раздзел Фатаграфіі"
+      ],
+      "Get updates about comments via email": [
+        "Атрымлівайце абнаўленні аб каментарыях праз электронную пошту"
+      ],
+      "Include document name in email notifications": [
+        "Уключаць назву дакумента ў апавяшчэнні па электроннай пошце"
       ]
     },
     "Settings description": {
@@ -23682,6 +23730,9 @@
       ],
       "View VPN session details for your organization.": [
         "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ planTitle } дае вашай камандзе ўсе інструменты для сумеснай працы, якія ім спатрэбяцца для прадукцыйнай і арганізаванай працы, адначасова абараняючы ваш бізнес."
       ]
     },
     "Success": {
@@ -26061,6 +26112,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Connected emails": [
+        "Падключаныя адрасы электроннай пошты"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26445,6 +26499,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+      ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "Уключае карыстальніцкія дамены электроннай пошты і неабмежаваную колькасць псеўданімаў hide-my-email у ${ MAIL_APP_NAME }, доступ да сервераў у больш чым 120 краінах свету ў ${ VPN_SHORT_APP_NAME }, убудаваны 2ФА і бяспечнае абагульванне ў ${ PASS_SHORT_APP_NAME } і шмат чаго іншага."
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "Захавайце зашыфраваную рэзервовую копію файла ў гэтым браўзеры, каб аднавіць свае даныя пасля скідання пароля"
       ]
     },
     "tooltip": {
