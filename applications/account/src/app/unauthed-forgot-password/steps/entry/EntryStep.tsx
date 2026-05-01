@@ -61,7 +61,10 @@ export const EntryStep = () => {
                 api: silentApi,
             });
             sendResetPasswordRecoveryMethodsRequested({
-                hasPasswordResetMethod: result.methods.includes('email') || result.methods.includes('sms'),
+                hasPasswordResetMethod:
+                    result.methods.includes('email') ||
+                    result.methods.includes('sms') ||
+                    result.methods.includes('login'),
                 hasDataRecoveryMethod: result.methods.includes('mnemonic'),
             });
             send({
