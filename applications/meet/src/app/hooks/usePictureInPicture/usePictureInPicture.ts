@@ -31,9 +31,9 @@ const enableMediaSessionControls = async (reportMeetError: ReportMeetError) => {
     try {
         const silentStream = await navigator.mediaDevices.getUserMedia({
             audio: {
-                echoCancellation: false,
-                noiseSuppression: false,
-                autoGainControl: false,
+                echoCancellation: true,
+                noiseSuppression: true,
+                autoGainControl: true,
             },
         });
 
