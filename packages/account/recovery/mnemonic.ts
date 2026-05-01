@@ -19,6 +19,8 @@ export const selectMnemonicData = createSelector(
                 mnemonicCanBeRegenerated: false,
                 hasOutdatedMnemonic: false,
                 createMnemonic: false,
+                username: '',
+                emailAddress: '',
                 loading: true,
             };
         }
@@ -32,15 +34,22 @@ export const selectMnemonicData = createSelector(
             user.MnemonicStatus === MNEMONIC_STATUS.DISABLED ||
             user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
             user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+        const callReactivateEndpoint =
+            user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+            user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
+            user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
         const updateTime = userSettings?.Mnemonic?.UpdateTime;
         return {
             updateTime: updateTime && updateTime > 0 ? fromUnixTime(updateTime) : null,
             isMnemonicSet: user.MnemonicStatus === MNEMONIC_STATUS.SET,
+            callReactivateEndpoint,
             isMnemonicAvailable,
             mnemonicCanBeSet,
             mnemonicCanBeRegenerated,
             hasOutdatedMnemonic,
             createMnemonic,
+            username: user.Name || '',
+            emailAddress: user.Email || user.Name || '',
             loading: false,
         };
     }

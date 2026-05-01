@@ -8,6 +8,7 @@ import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 /**
  * Displays the recovery phrase and allows to copy it to the clipboard.
@@ -55,7 +56,7 @@ const CopyRecoveryPhraseContainer = ({
                     color="norm"
                     pill
                     className="inline-flex items-center shrink-0"
-                    onClick={() => withLoading(sendPayload)}
+                    onClick={() => withLoading(sendPayload).catch(noop)}
                     disabled={loading}
                     noDisabledStyles
                 >
