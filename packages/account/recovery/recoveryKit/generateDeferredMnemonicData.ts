@@ -1,9 +1,38 @@
 import type { PrivateKeyReference } from '@proton/crypto';
+import type { SetMnemonicPhrasePayload } from '@proton/shared/lib/api/settingsMnemonic';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 
-import type { DeferredMnemonicData } from './types';
-import { generateRecoveryKitBlob } from './useRecoveryKitDownload';
+import { type RecoveryKitBlob, generateRecoveryKitBlob } from './generateRecoveryKitBlob';
+import { type RecoveryKitSaveReturnValue, getRecoveryKitSaveData } from './getRecoveryKitSaveData';
+
+/**
+ * All the data required to display the recovery phrase, download the recovery kit, and ensure the BE is happy.
+ */
+export interface DeferredMnemonicData {
+    /**
+     * 12 word recovery phrase
+     */
+    recoveryPhrase: string;
+    /**
+     * Blob of the pdf that will be downloaded.
+     * Will be null if an error occured while generating.
+     */
+    recoveryKitBlob: RecoveryKitBlob | null;
+    /**
+     * Payload to be sent to the BE.
+     * Handled by the sendMnemonicPayloadToBackend function
+     */
+    payload: SetMnemonicPhrasePayload;
+    /**
+     * If the payload has already been sent to the API already.
+     */
+    hasSentPayload: boolean;
+    /**
+     * All data about saving the recovery kit.
+     */
+    save: RecoveryKitSaveReturnValue;
+}
 
 /**
  * Generates the recovery phrase and prepares a payload to be used for the backend
@@ -39,7 +68,7 @@ const generateRecoveryPhrasePayload = async ({
  * Defer's sending the payload to the BE so that generation can be done optimistically.
  * Use sendMnemonicPayloadToBackend to complete the recovery phrase setup
  */
-const generateDeferredMnemonicData = async ({
+export const generateDeferredMnemonicData = async ({
     api,
     emailAddress,
     username,
@@ -63,7 +92,7 @@ const generateDeferredMnemonicData = async ({
         recoveryPhrase,
         recoveryKitBlob,
         payload,
+        hasSentPayload: false,
+        save: getRecoveryKitSaveData({ recoveryPhrase, recoveryKitBlob }),
     };
 };
-
-export default generateDeferredMnemonicData;

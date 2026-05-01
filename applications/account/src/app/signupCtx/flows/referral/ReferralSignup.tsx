@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
+import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
-import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
