@@ -19,11 +19,11 @@ const makeBaseItems = (overrides: Partial<RecoveryItem>[] = []): RecoveryItems =
             countsTowardScore: true,
         },
         { id: 'deviceRecovery', isAvailable: true, isEnabled: false, countsTowardScore: true },
-        { id: 'recoveryFile', isAvailable: true, isEnabled: false, countsTowardScore: true },
         { id: 'recoveryContacts', isAvailable: false, isEnabled: false },
         { id: 'recoveryPhrase', isAvailable: true, isEnabled: false },
         { id: 'signedInReset', isAvailable: true, isEnabled: false },
         { id: 'qrCodeSignIn', isAvailable: true, isEnabled: true },
+        { id: 'recoveryFile', isAvailable: true, isEnabled: false, countsTowardScore: true },
         { id: 'emergencyContacts', isAvailable: true, isEnabled: true },
     ];
     return defaults.map((item) => {
