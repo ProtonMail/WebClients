@@ -28,13 +28,13 @@
 
             <p class="footer-text">
                 If you are experiencing issues, please contact our
-                <a target="_blank" href="https://proton.me/support/contact?topic=proton+wallet">support team</a>.
+                <a target="_blank" rel="noopener noreferrer" href="https://proton.me/support/contact?topic=proton+wallet">support team</a>.
             </p>
         </div>
     </body>
     <script type="application/javascript">
         if (window.opener) {
-            window.opener.postMessage({ type: 'CheckoutCancelled' }, '*');
+            window.opener.postMessage({ type: 'CheckoutCancelled' }, window.location.origin);
         }
     </script>
 </html>
