@@ -27,7 +27,7 @@ const RecoveryScoreBanner = () => {
     const isMaximumScore = score >= maxScore;
 
     return (
-        <section className="rounded-xl bg-elevated p-4 shadow-norm flex flex-column gap-2 lg:flex-row lg:items-center lg:gap-8 text-center lg:text-left">
+        <section className="rounded-xl bg-elevated p-4 shadow-norm flex flex-column gap-2 lg:flex-row lg:items-center lg:gap-8 text-center lg:text-left lg:pr-8">
             {renderModal && <RecoveryScoreModal {...modalProps} />}
             <div className="shrink-0">
                 <button
