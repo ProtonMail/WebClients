@@ -100,6 +100,8 @@ export const UnauthedForgotPasswordStateMachine = setup({
         tags: {} as `${UnauthedForgotPasswordStateMachineTags}`,
     },
     guards: {
+        hasExternalEmailWithLoginRecovery: ({ context }) =>
+            context.recoveryMethods.includes('login') && !context.emailRecoverySkipped,
         hasEmailRecovery: ({ context }) => context.recoveryMethods.includes('email') && !context.emailRecoverySkipped,
         hasSmsRecovery: ({ context }) => context.recoveryMethods.includes('sms') && !context.smsRecoverySkipped,
         hasMnemonic: ({ context }) => context.recoveryMethods.includes('mnemonic'),
@@ -202,6 +204,10 @@ export const UnauthedForgotPasswordStateMachine = setup({
             invoke: {
                 src: 'fetchRecoveryMethods',
                 onDone: [
+                    {
+                        guard: 'hasExternalEmailWithLoginRecovery',
+                        target: 'verifyRecoveryEmail',
+                    },
                     {
                         guard: 'hasEmailRecovery',
                         target: 'verifyRecoveryEmail',
