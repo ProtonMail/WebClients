@@ -1,12 +1,42 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Prompt from '@proton/components/components/prompt/Prompt';
+
+const Content = ({ hasReset, hasNotify }: { hasReset: boolean; hasNotify: boolean }) => {
+    if (hasReset && !hasNotify) {
+        return (
+            <>
+                <p>{c('Warning').t`By deleting this address, you will no longer be able to recover your account.`}</p>
+
+                <p>{c('Warning').t`Are you sure you want to remove your recovery email?`}</p>
+            </>
+        );
+    }
+
+    if (hasNotify && !hasReset) {
+        return (
+            <>
+                <p>{c('Warning')
+                    .t`By deleting this address, you will no longer be able to receive daily email notifications.`}</p>
+
+                <p>{c('Warning').t`Are you sure you want to remove your notification email?`}</p>
+            </>
+        );
+    }
+
+    return (
+        <>
+            <p>
+                {c('Warning')
+                    .t`By deleting this address, you will no longer be able to recover your account or receive daily email notifications.`}
+            </p>
+
+            <p>{c('Warning').t`Are you sure you want to remove your recovery email?`}</p>
+        </>
+    );
+};
 
 interface Props extends ModalProps {
     onConfirm: () => void;
@@ -16,39 +46,25 @@ interface Props extends ModalProps {
 
 const ConfirmRemoveEmailModal = ({ hasReset, hasNotify, onConfirm, onClose, ...rest }: Props) => {
     return (
-        <Modal onClose={onClose} {...rest}>
-            <ModalHeader title={c('Title').t`Confirm address`} />
-            <ModalContent>
-                <Alert type="warning">
-                    {hasReset &&
-                        !hasNotify &&
-                        c('Warning').t`By deleting this address, you will no longer be able to recover your account.`}
-                    {hasNotify &&
-                        !hasReset &&
-                        c('Warning')
-                            .t`By deleting this address, you will no longer be able to receive daily email notifications.`}
-                    {hasNotify &&
-                        hasReset &&
-                        c('Warning')
-                            .t`By deleting this address, you will no longer be able to recover your account or receive daily email notifications.`}
-                    <br />
-                    <br />
-                    {c('Warning').t`Are you sure you want to delete this address?`}
-                </Alert>
-            </ModalContent>
-            <ModalFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+        <Prompt
+            onClose={onClose}
+            title={c('Title').t`Remove email`}
+            buttons={[
                 <Button
-                    color="norm"
+                    color="danger"
                     onClick={() => {
                         onConfirm();
                         onClose?.();
                     }}
                 >
-                    {c('Action').t`Confirm`}
-                </Button>
-            </ModalFooter>
-        </Modal>
+                    {c('Action').t`Remove`}
+                </Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
+            <Content hasReset={hasReset} hasNotify={hasNotify} />
+        </Prompt>
     );
 };
 
