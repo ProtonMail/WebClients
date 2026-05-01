@@ -1,8 +1,8 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import clsx from '@proton/utils/clsx';
 
-import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
-import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { getLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
