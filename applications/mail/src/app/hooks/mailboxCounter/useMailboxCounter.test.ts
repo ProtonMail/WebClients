@@ -40,12 +40,12 @@ describe('useMailboxCounter', () => {
 
         it('should return loading while not all data is loaded', () => {
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current[1]).toEqual(true);
+            expect(result.current.loading).toEqual(true);
         });
 
         it('should return an object containing all default mailbox label IDs', () => {
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current).toStrictEqual([{}, true]);
+            expect(result.current).toStrictEqual({ loading: true, counterMap: {} });
         });
     });
 
@@ -62,14 +62,14 @@ describe('useMailboxCounter', () => {
 
         it('should return loading while not all data is loaded', () => {
             const { result } = renderHook(() => useMailboxCounter());
-            expect(result.current[1]).toEqual(false);
+            expect(result.current.loading).toEqual(false);
         });
 
         it('should return conversation count when default setting', () => {
             const { result } = renderHook(() => useMailboxCounter());
 
             const expected = getCount(MAILBOX_LABEL_IDS.INBOX, 1000, 100);
-            expect(result.current[0][MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(expected);
+            expect(result.current.counterMap[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(expected);
         });
 
         it('should return conversation count when conversation grouping is disabled', () => {
@@ -77,14 +77,14 @@ describe('useMailboxCounter', () => {
             const { result } = renderHook(() => useMailboxCounter());
 
             const expected = getCount(MAILBOX_LABEL_IDS.INBOX, 500, 50);
-            expect(result.current[0][MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(expected);
+            expect(result.current.counterMap[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual(expected);
         });
 
         it('should return default value count when default setting and the data is not in list', () => {
             const { result } = renderHook(() => useMailboxCounter());
 
             const expected = getCount(MAILBOX_LABEL_IDS.ARCHIVE, 0, 0);
-            expect(result.current[0][MAILBOX_LABEL_IDS.ARCHIVE]).toStrictEqual(expected);
+            expect(result.current.counterMap[MAILBOX_LABEL_IDS.ARCHIVE]).toStrictEqual(expected);
         });
     });
 
@@ -112,15 +112,12 @@ describe('useMailboxCounter', () => {
                 ],
                 false,
             ]);
-            jest.mocked(useMailSelector).mockReturnValue([
-                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-            ]);
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]);
 
             const { result } = renderHook(() => useMailboxCounter());
 
             const expected = getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 2000, 200);
-            expect(result.current[0][MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(expected);
+            expect(result.current.counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(expected);
         });
 
         it('should work with multiple disabled categories', () => {
@@ -143,7 +140,6 @@ describe('useMailboxCounter', () => {
                 false,
             ]);
             jest.mocked(useMailSelector).mockReturnValue([
-                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);
@@ -151,7 +147,7 @@ describe('useMailboxCounter', () => {
             const { result } = renderHook(() => useMailboxCounter());
 
             const expected = getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 3000, 300);
-            expect(result.current[0][MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(expected);
+            expect(result.current.counterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual(expected);
         });
     });
 });
