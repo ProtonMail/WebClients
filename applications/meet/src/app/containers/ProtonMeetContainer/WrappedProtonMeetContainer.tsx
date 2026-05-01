@@ -41,6 +41,7 @@ export const WrappedProtonMeetContainer = () => {
             if (isChromiumBased()) {
                 return true;
             }
+
             return { audioContext: meetAudioContext.audioContext };
         }
 
