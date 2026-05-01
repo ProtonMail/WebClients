@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
 import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
-import { getLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
+import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
@@ -249,7 +249,7 @@ const MailSidebarSystemFolders = ({
                         ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
                         : element.labelID;
 
-                const locationCount = getLocationCount(counterMap, labelID);
+                const locationCount = getRawLocationCount(counterMap, labelID);
 
                 return (
                     <DnDElementWrapper
@@ -301,7 +301,7 @@ const MailSidebarSystemFolders = ({
 
             {displayMoreItems
                 ? moreElements.map((element) => {
-                      const locationCount = getLocationCount(counterMap, element.labelID);
+                      const locationCount = getRawLocationCount(counterMap, element.labelID);
 
                       return (
                           <DnDElementWrapper

@@ -27,7 +27,7 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { getLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
+import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
@@ -127,8 +127,8 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
         scrollIntoView(element, { block: 'nearest' });
     }, []);
 
-    const showScheduled = getLocationCount(counterMap, MAILBOX_LABEL_IDS.SCHEDULED).Total > 0;
-    const showSnoozed = getLocationCount(counterMap, MAILBOX_LABEL_IDS.SNOOZED).Total > 0;
+    const showScheduled = getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.SCHEDULED).Total > 0;
+    const showSnoozed = getRawLocationCount(counterMap, MAILBOX_LABEL_IDS.SNOOZED).Total > 0;
     const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
         if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
             return false;

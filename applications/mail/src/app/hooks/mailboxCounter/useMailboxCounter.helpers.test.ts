@@ -2,7 +2,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getCounterMap, getLocationCount } from './useMailboxCounter.helpers';
+import { getCounterMap, getRawLocationCount } from './useMailboxCounter.helpers';
 
 describe('useMailboxCounter helpers', () => {
     describe('getCounterMap', () => {
@@ -101,7 +101,7 @@ describe('useMailboxCounter helpers', () => {
                 });
             });
 
-            it('should return the count of default if disabled category has no count', () => {
+            it('should ignore disabled categories that have no count entry', () => {
                 const conversationCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 }];
                 const messageCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 }];
 
@@ -202,14 +202,14 @@ describe('useMailboxCounter helpers', () => {
         });
     });
 
-    describe('getLocationCount', () => {
+    describe('getRawLocationCount', () => {
         it('should return default values if record is empty', () => {
-            const result = getLocationCount({}, MAILBOX_LABEL_IDS.INBOX);
+            const result = getRawLocationCount({}, MAILBOX_LABEL_IDS.INBOX);
             expect(result).toStrictEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Total: 0, Unread: 0 });
         });
 
         it('should return default value if labelID not present in record', () => {
-            const result = getLocationCount(
+            const result = getRawLocationCount(
                 {
                     [MAILBOX_LABEL_IDS.ARCHIVE]: {
                         LabelID: MAILBOX_LABEL_IDS.ARCHIVE,
@@ -223,7 +223,7 @@ describe('useMailboxCounter helpers', () => {
         });
 
         it('should return the label value if present in record', () => {
-            const result = getLocationCount(
+            const result = getRawLocationCount(
                 {
                     [MAILBOX_LABEL_IDS.INBOX]: {
                         LabelID: MAILBOX_LABEL_IDS.ARCHIVE,
