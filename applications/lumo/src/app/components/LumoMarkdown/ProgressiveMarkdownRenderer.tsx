@@ -15,6 +15,7 @@ import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
+import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 
 import './LumoMarkdown.scss';
@@ -362,7 +363,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
             const processedContent = convertRefTokensToSpans(content || '');
-            return normalizeBrTags(processedContent);
+            return normalizeGfmTableSpacing(normalizeBrTags(processedContent));
         }, [content]);
 
         // Split content into complete (cacheable) and incomplete (active) blocks
