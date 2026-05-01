@@ -6,11 +6,11 @@ import { c } from 'ttag';
 
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
-import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
+import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
+import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
+import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
-import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import SidebarFolder from './SidebarFolder';
 
 interface Props {
@@ -46,7 +46,7 @@ const SidebarFolders = ({
                 level={level}
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
-                unreadCount={getLocationCount(counterMap, folder.ID).Unread}
+                unreadCount={getRawLocationCount(counterMap, folder.ID).Unread}
                 id={folder.ID}
                 onFocus={updateFocusItem}
                 treeMode={!onlyOneLevel}
