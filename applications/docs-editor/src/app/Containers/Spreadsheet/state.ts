@@ -202,13 +202,17 @@ const useKeyValueState = create<KeyValueState>()((set) => ({
 // Yjs state
 // ---------
 
+const getActiveSheetStorageKey = (documentId: string, userName: string) =>
+  `proton-sheets-active-sheet:${documentId}:${userName}`
+
 type YjsStateDependencies = {
   localState: LocalState
   spreadsheetState: SpreadsheetState
   docState: DocStateInterface
+  documentId: string
 }
 
-function useYjsState({ localState, spreadsheetState, docState }: YjsStateDependencies) {
+function useYjsState({ localState, spreadsheetState, docState, documentId }: YjsStateDependencies) {
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
@@ -223,7 +227,7 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
   const logger = useApplication().application.logger
   const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
   const handledInitialLoad = useRef(false)
-  const { onChangeActiveSheet, calculateNow } = spreadsheetState
+  const { onChangeActiveSheet, calculateNow, activeSheetId } = spreadsheetState
   useEffect(
     function handleInitialLoad() {
       if (!receivedEverythingFromRTS) {
@@ -233,14 +237,21 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
       if (handledInitialLoad.current) {
         return
       }
-      // After receiving base commit, change the active sheet to the first sheet.
+      // After receiving base commit, change the active sheet to the first or last-visited sheet.
       // RnC does try to do this, but it doesn't work with our setup as when it tries
       // to do this, it will not have received the initial update yet.
       const sheets = ySheets.toJSON()
       if (sheets.length) {
-        const firstSheetId = sortSheetsByIndex(sheets)[0].sheetId
-        logger.info(`handleInitialLoad: changing active sheet to ${firstSheetId}`)
-        onChangeActiveSheet(firstSheetId)
+        const sortedSheets = sortSheetsByIndex(sheets)
+        const storageKey = getActiveSheetStorageKey(documentId, userName ?? '')
+        const savedSheetIdStr = localStorage.getItem(storageKey)
+        const savedSheetId = savedSheetIdStr !== null ? parseInt(savedSheetIdStr, 10) : null
+        const sheetExists = savedSheetId !== null && sortedSheets.some((s) => s.sheetId === savedSheetId)
+        const sheetToActivate = sheetExists ? savedSheetId : sortedSheets[0].sheetId
+        logger.info(
+          `handleInitialLoad: changing active sheet to ${sheetToActivate}${sheetExists ? ' (restored from saved state)' : ''}`,
+        )
+        onChangeActiveSheet(sheetToActivate)
       }
       requestAnimationFrame(async () => {
         await calculateNow({
@@ -250,7 +261,18 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
       })
       handledInitialLoad.current = true
     },
-    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets],
+    [calculateNow, documentId, logger, onChangeActiveSheet, receivedEverythingFromRTS, userName, ySheets],
+  )
+
+  useEffect(
+    function saveActiveSheetToStorage() {
+      if (!receivedEverythingFromRTS) {
+        return
+      }
+      const storageKey = getActiveSheetStorageKey(documentId, userName ?? '')
+      localStorage.setItem(storageKey, String(activeSheetId))
+    },
+    [activeSheetId, documentId, receivedEverythingFromRTS, userName],
   )
 
   const yjsState = useYSpreadsheetV2({
