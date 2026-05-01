@@ -1502,8 +1502,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1697,6 +1696,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Connect your email": [
+        "Forbind din e-mail"
       ]
     },
     "action": {
@@ -4287,6 +4289,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Send og modtag Gmail-beskeder direkte i ${ MAIL_APP_NAME }. Forbind din adresse i ${ addressesSettingsLink }."
       ]
     },
     "description": {
@@ -5743,6 +5748,27 @@
     "Filter": {
       "Show": [
         "Vis"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrer (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrer og sortér emails"
+      ],
+      "Has attachments": [
+        "Har vedhæftninger"
+      ],
+      "Read": [
+        "Læst"
+      ],
+      "Reset": [
+        "Nulstil"
+      ],
+      "Unread": [
+        "Ulæste"
       ]
     },
     "Filter Actions": {
@@ -7559,7 +7585,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10056,6 +10083,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlige- og arbejds-e-mails, plus vigtige opdateringer og notifikationer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11956,6 +11986,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Skift de tjenester du bruger hver dag til din ${ BRAND_NAME }-adresse for bedre sikkerhed og privatliv."
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Få dine eksisterende e-mails ind i ${ MAIL_APP_NAME }, så du kan administrere alt fra én privat indbakke."
       ]
     },
     "Onboarding modal": {
@@ -13600,6 +13633,9 @@
       ],
       "Smallest first": [
         "Mindste først"
+      ],
+      "Sort by": [
+        "Sortér efter"
       ]
     },
     "specialoffer: Action": {

@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -5684,6 +5683,27 @@
     "Filter": {
       "Show": [
         "Mostrar"
+      ],
+      "Filter": [
+        "Filtro"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtro (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrar e ordenar e-mails"
+      ],
+      "Has attachments": [
+        "Tem anexos"
+      ],
+      "Read": [
+        "Lido"
+      ],
+      "Reset": [
+        "Redefinir"
+      ],
+      "Unread": [
+        "Não lido"
       ]
     },
     "Filter Actions": {
@@ -7500,7 +7520,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -13538,6 +13559,9 @@
       ],
       "Smallest first": [
         "Menores primeiro"
+      ],
+      "Sort by": [
+        "Ordenar por"
       ]
     },
     "specialoffer: Action": {

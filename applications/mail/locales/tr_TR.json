@@ -1505,8 +1505,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -5749,6 +5748,27 @@
     "Filter": {
       "Show": [
         "Görüntüle"
+      ],
+      "Filter": [
+        "Filtre"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtre (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "E-postaları filtrele ve sırala"
+      ],
+      "Has attachments": [
+        "Ek dosyalara sahip"
+      ],
+      "Read": [
+        "Oku"
+      ],
+      "Reset": [
+        "Sıfırla"
+      ],
+      "Unread": [
+        "Okunmamış"
       ]
     },
     "Filter Actions": {
@@ -7565,7 +7585,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10062,6 +10083,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Kişisel ve iş e-postalarının yanı sıra önemli güncellemeler ve bildirimler"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13609,6 +13633,9 @@
       ],
       "Smallest first": [
         "Küçükten büyüğe"
+      ],
+      "Sort by": [
+        "Sırala"
       ]
     },
     "specialoffer: Action": {

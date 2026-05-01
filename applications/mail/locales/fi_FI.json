@@ -5651,6 +5651,27 @@
     "Filter": {
       "Show": [
         "Näytä"
+      ],
+      "Filter": [
+        "Suodatin"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Suodatin (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Suodata ja järjestä viestit"
+      ],
+      "Has attachments": [
+        "Sisältää liitteitä"
+      ],
+      "Read": [
+        "Luettu"
+      ],
+      "Reset": [
+        "Nollaa"
+      ],
+      "Unread": [
+        "Lukematon"
       ]
     },
     "Filter Actions": {
@@ -7443,7 +7464,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9904,6 +9926,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset ja ilmoitukset"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13309,6 +13334,9 @@
       ],
       "Smallest first": [
         "Pienin ensin"
+      ],
+      "Sort by": [
+        "Järjestä"
       ]
     },
     "specialoffer: Action": {

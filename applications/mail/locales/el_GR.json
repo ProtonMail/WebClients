@@ -1502,8 +1502,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1697,6 +1696,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Connect your email": [
+        "Συνδέστε τη διεύθυνση email σας"
       ]
     },
     "action": {
@@ -4287,6 +4289,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Αποστολή και λήψη μηνυμάτων Gmail απευθείας στο ${ MAIL_APP_NAME }. Συνδέστε τη διεύθυνσή σας στο ${ addressesSettingsLink }."
       ]
     },
     "description": {
@@ -7559,7 +7564,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -11956,6 +11962,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Αλλάξτε τις υπηρεσίες που χρησιμοποιείτε καθημερινά στη διεύθυνση ${ BRAND_NAME } σας για καλύτερη ασφάλεια και ιδιωτικότητα."
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Φέρτε τα υπάρχοντα μηνύματα ηλεκτρονικού ταχυδρομείου σας στο ${ MAIL_APP_NAME } ώστε να μπορείτε να διαχειρίζεστε τα πάντα από ένα ιδιωτικό εισερχόμενο."
       ]
     },
     "Onboarding modal": {

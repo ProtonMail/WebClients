@@ -1505,8 +1505,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -5749,6 +5748,27 @@
     "Filter": {
       "Show": [
         "Mostra"
+      ],
+      "Filter": [
+        "Filtre"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtreu (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtreu i ordeneu els correus electrònics"
+      ],
+      "Has attachments": [
+        "Té adjunts"
+      ],
+      "Read": [
+        "Llegit"
+      ],
+      "Reset": [
+        "Restableix"
+      ],
+      "Unread": [
+        "No llegit"
       ]
     },
     "Filter Actions": {
@@ -7565,7 +7585,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10062,6 +10083,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Correus electrònics personals i de la feina, a més d'actualitzacions i notificacions importants"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13513,6 +13537,9 @@
       ],
       "Smallest first": [
         "Els més petits primer"
+      ],
+      "Sort by": [
+        "Ordenar per"
       ]
     },
     "specialoffer: Action": {

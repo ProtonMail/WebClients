@@ -1505,8 +1505,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -5749,6 +5748,27 @@
     "Filter": {
       "Show": [
         "Montrer"
+      ],
+      "Filter": [
+        "Filtre"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrer (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrer et trier les messages"
+      ],
+      "Has attachments": [
+        "Contient des pièces jointes"
+      ],
+      "Read": [
+        "Lus"
+      ],
+      "Reset": [
+        "Réinitialiser"
+      ],
+      "Unread": [
+        "Non lus"
       ]
     },
     "Filter Actions": {
@@ -7565,7 +7585,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -10062,6 +10083,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "E-mails personnels et professionnels, ainsi que mises à jour et notifications importantes"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13609,6 +13633,9 @@
       ],
       "Smallest first": [
         "Le moins volumineux en premier"
+      ],
+      "Sort by": [
+        "Trier par"
       ]
     },
     "specialoffer: Action": {

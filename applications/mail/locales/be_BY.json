@@ -1510,10 +1510,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1709,6 +1706,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Connect your email": [
+        "Падключыць сваю электронную пошту"
       ]
     },
     "action": {
@@ -4350,6 +4350,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Адпраўляйце і атрымлівайце паведамленні Gmail наўпрост у ${ MAIL_APP_NAME }. Падключыце свой адрас у ${ addressesSettingsLink }."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail за апошнія 180 дзён. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ]
     },
     "description": {
@@ -7814,7 +7820,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -12361,6 +12370,9 @@
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
         "Перанясіце сэрвісы, якімі вы карыстаецеся штодзень у свой адрас ${ BRAND_NAME } для лепшай бяспекі і прыватнасці."
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перанясіце сваю існуючыя лісты ў ${ MAIL_APP_NAME }, каб у вас была магчымасць кіраваць усімі імі з адной прыватнай паштовай скрыні."
       ]
     },
     "Onboarding modal": {
