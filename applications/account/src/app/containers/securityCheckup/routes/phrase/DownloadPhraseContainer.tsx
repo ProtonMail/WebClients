@@ -4,6 +4,10 @@ import { Link, Redirect } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useInactiveKeys, userThunk } from '@proton/account';
+import {
+    type DeferredMnemonicData,
+    generateDeferredMnemonicData,
+} from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -29,8 +33,6 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 import noop from '@proton/utils/noop';
 
-import generateDeferredMnemonicData from '../../../recoveryPhrase/generateDeferredMnemonicData';
-import type { DeferredMnemonicData } from '../../../recoveryPhrase/types';
 import methodErrorSrc from '../../assets/method-error.svg';
 import methodSuccessSrc from '../../assets/method-success.svg';
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';

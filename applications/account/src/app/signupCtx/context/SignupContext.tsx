@@ -1,5 +1,6 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
+import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { type OnLoginCallback, StandardErrorPage, useApi, useConfig } from '@proton/components';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
@@ -34,7 +35,6 @@ import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
-import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
 import type { AccountData, SignupHumanVerification, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {

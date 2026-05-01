@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { useUpdateRecoveryKit } from '@proton/account/recovery/recoveryKit/useUpdateRecoveryKit';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -16,7 +17,6 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useUpdateRecoveryKit } from '../../recoveryPhrase/useUpdateRecoveryKit';
 import illustration from './assets/recovery-phrase.svg';
 
 const RecoveryPhraseSubpage = () => {
