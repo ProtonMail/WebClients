@@ -5,7 +5,7 @@ import type { Label, LabelCount, MailSettings, SafeLabelCount } from '@proton/sh
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
-export type LocationCountMap = Record<string, SafeLabelCount>;
+import type { LocationCountMap } from './interface';
 
 const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Record<string, SafeLabelCount>) => {
     return categoryIDs.reduce(
@@ -19,17 +19,23 @@ const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Recor
     );
 };
 
-export const getCounterMap = (
-    labels: Label[],
-    conversationCounters: LabelCount[],
-    messageCounters: LabelCount[],
-    mailSettings: MailSettings,
-    categoryIDs: CategoryLabelID[]
-) => {
+export const getCounterMap = ({
+    labels,
+    conversationCounts,
+    messageCounts,
+    mailSettings,
+    disabledCategoryIDs,
+}: {
+    labels: Label[];
+    conversationCounts: LabelCount[];
+    messageCounts: LabelCount[];
+    mailSettings: MailSettings;
+    disabledCategoryIDs: CategoryLabelID[];
+}) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
 
-    const conversationCountersMap = toMap(conversationCounters, 'LabelID');
-    const messageCountersMap = toMap(messageCounters, 'LabelID');
+    const conversationCountersMap = toMap(conversationCounts, 'LabelID');
+    const messageCountersMap = toMap(messageCounts, 'LabelID');
 
     const resultCounterMap: Record<string, SafeLabelCount> = {};
     for (const labelID of labelIDs) {
@@ -44,9 +50,10 @@ export const getCounterMap = (
         };
     }
 
-    // We need to add the disabled categories totals to the default category
-    if (categoryIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
-        const disabledCounts = getPrimaryCategoryCounts(categoryIDs, resultCounterMap);
+    // We compute the primary count all the time, to ensure it's always correct regardless of categories setting
+    if (disabledCategoryIDs.length > 0) {
+        const primaryCategories = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoryIDs];
+        const disabledCounts = getPrimaryCategoryCounts(primaryCategories, resultCounterMap);
 
         resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
             LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -58,7 +65,7 @@ export const getCounterMap = (
     return resultCounterMap;
 };
 
-export const getLocationCount = (counterMap: LocationCountMap, labelId: string): SafeLabelCount => {
+export const getRawLocationCount = (counterMap: LocationCountMap, labelId: string): SafeLabelCount => {
     const labelCount = counterMap[labelId];
 
     return {

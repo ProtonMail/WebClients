@@ -1,36 +1,47 @@
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
 
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import type { MailboxCounterReturn } from './interface';
 import { getCounterMap } from './useMailboxCounter.helpers';
 
-export type LocationCountMap = Record<string, SafeLabelCount>;
-
-export const useMailboxCounter = (): [LocationCountMap, boolean] => {
+export const useMailboxCounter = (): MailboxCounterReturn => {
     const [mailSettings] = useMailSettings();
 
     const [labels, labelsLoading] = useLabels();
     const [folders, foldersLoading] = useFolders();
+    const [messageCounts, messageCountsLoading] = useMessageCounts();
+    const [conversationCounts, conversationCountsLoading] = useConversationCounts();
+
     const [systemFolders, systemFoldersLoading] = useSystemFolders();
 
-    const categoryIDs = useMailSelector(selectCategoryIDs);
-
-    const [conversationCounts, conversationCountsLoading] = useConversationCounts();
-    const [messageCounts, messageCountsLoading] = useMessageCounts();
+    const disabledCategoryIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const loading =
         labelsLoading || foldersLoading || systemFoldersLoading || conversationCountsLoading || messageCountsLoading;
 
     if (loading || !mailSettings || !labels || !folders || !systemFolders || !conversationCounts || !messageCounts) {
-        return [{}, loading];
+        return {
+            loading,
+            counterMap: {},
+        };
     }
 
     const allLocations = [...labels, ...folders, ...systemFolders];
-    const counterMap = getCounterMap(allLocations, conversationCounts, messageCounts, mailSettings, categoryIDs);
-    return [counterMap, loading];
+    const counterMap = getCounterMap({
+        labels: allLocations,
+        conversationCounts,
+        messageCounts,
+        mailSettings,
+        disabledCategoryIDs,
+    });
+
+    return {
+        loading,
+        counterMap,
+    };
 };
