@@ -7,28 +7,29 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import recoveryKitPdf from '@proton/styles/assets/img/illustrations/recovery-kit-pdf.svg';
 import clsx from '@proton/utils/clsx';
 
-import type useRecoveryKitDownload from '../useRecoveryKitDownload';
-import CopyRecoveryPhraseContainer from './CopyRecoveryPhraseContainer';
+import { CopyRecoveryPhraseContainer } from './CopyRecoveryPhraseContainer';
+import type { DeferredMnemonicData } from './generateDeferredMnemonicData';
 
-interface Props {
-    recoveryPhrase: string;
-    sendPayload: () => Promise<void>;
+export interface RecoveryKitActionProps {
+    recoveryKitData: DeferredMnemonicData;
+    onSaveRecoveryKit: (type: 'copy' | 'download', recoveryKitData: DeferredMnemonicData) => void;
     method: 'recovery-kit' | 'text';
-    recoveryKitDownload: ReturnType<typeof useRecoveryKitDownload>;
-    hasSentPayload: boolean;
+    loading: boolean;
     cardClasses?: string;
 }
 
-const RecoveryKitAction = ({
-    recoveryPhrase,
-    recoveryKitDownload,
-    sendPayload,
+export const RecoveryKitAction = ({
+    recoveryKitData,
+    onSaveRecoveryKit,
     method,
-    hasSentPayload,
+    loading,
     cardClasses = 'rounded-lg border border-solid border-norm shadow-raised bg-norm',
-}: Props) => {
-    const { canDownloadRecoveryKit, downloadRecoveryKit, downloadingRecoveryKit, recoveryKitBlobToDownload } =
-        recoveryKitDownload;
+}: RecoveryKitActionProps) => {
+    const {
+        hasSentPayload,
+        recoveryPhrase,
+        save: { canDownloadRecoveryKit, recoveryKitBytes },
+    } = recoveryKitData;
 
     if (!canDownloadRecoveryKit || method === 'text') {
         /**
@@ -38,13 +39,16 @@ const RecoveryKitAction = ({
             <CopyRecoveryPhraseContainer
                 className={clsx(cardClasses, 'p-8 ')}
                 recoveryPhrase={recoveryPhrase}
-                sendPayload={sendPayload}
+                loading={loading}
+                onCopyPhrase={() => {
+                    onSaveRecoveryKit('copy', recoveryKitData);
+                }}
                 hasSentPayload={hasSentPayload}
             />
         );
     }
 
-    const size = humanSize({ bytes: recoveryKitBlobToDownload.size });
+    const size = humanSize({ bytes: recoveryKitBytes });
 
     return (
         <div className={clsx(cardClasses, 'p-5 pr-8 flex items-center gap-6')}>
@@ -62,8 +66,10 @@ const RecoveryKitAction = ({
                 icon
                 pill
                 size="large"
-                onClick={downloadRecoveryKit}
-                loading={downloadingRecoveryKit}
+                onClick={() => {
+                    onSaveRecoveryKit('download', recoveryKitData);
+                }}
+                loading={loading}
                 data-testid="download-recovery-kit-button"
             >
                 <IcArrowDownLine size={6} />
@@ -71,5 +77,3 @@ const RecoveryKitAction = ({
         </div>
     );
 };
-
-export default RecoveryKitAction;

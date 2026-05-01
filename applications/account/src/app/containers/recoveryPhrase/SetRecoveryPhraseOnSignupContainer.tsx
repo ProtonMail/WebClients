@@ -2,14 +2,14 @@ import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { RecoveryKitAction, type RecoveryKitActionProps } from '@proton/account/recovery/recoveryKit/RecoveryKitAction';
+import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useErrorHandler } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-
-import RecoveryKitAction from './components/RecoveryKitAction';
-import type { DeferredMnemonicData } from './types';
-import useRecoveryKitDownload from './useRecoveryKitDownload';
 
 type Method = 'recovery-kit' | 'text';
 export interface SetRecoveryPhraseOnSignupContainerProps {
@@ -32,26 +32,33 @@ const SetRecoveryPhraseOnSignupContainer = ({
     const handleError = useErrorHandler();
 
     const [hasSentPayload, setHasSentPayload] = useState(false);
+    const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
 
-    const sendPayload = async () => {
-        if (hasSentPayload) {
-            return;
-        }
-
-        try {
-            await sendRecoveryPhrasePayload();
-            setHasSentPayload(true);
-        } catch (error) {
-            handleError(error);
-            throw error;
+    const handleSave: RecoveryKitActionProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
+        recoveryKitData.save.handle(type);
+        if (type === 'copy') {
+            createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
         }
     };
 
-    const recoveryKitDownload = useRecoveryKitDownload({
-        recoveryKitBlob: recoveryPhraseData.recoveryKitBlob,
-        sendPayload,
-    });
-    const { canDownloadRecoveryKit } = recoveryKitDownload;
+    const handleSaveRecoveryKit: RecoveryKitActionProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
+        if (hasSentPayload) {
+            handleSave(type, recoveryKitData);
+            return;
+        }
+        void withLoading(
+            (async () => {
+                try {
+                    await sendRecoveryPhrasePayload();
+                    handleSave(type, recoveryKitData);
+                    setHasSentPayload(true);
+                } catch (error) {
+                    handleError(error);
+                }
+            })()
+        );
+    };
 
     const [method, setMethod] = useState<Method>('recovery-kit');
 
@@ -101,14 +108,16 @@ const SetRecoveryPhraseOnSignupContainer = ({
             </div>
 
             <RecoveryKitAction
-                recoveryPhrase={recoveryPhraseData.recoveryPhrase}
-                recoveryKitDownload={recoveryKitDownload}
-                hasSentPayload={hasSentPayload}
-                sendPayload={sendPayload}
+                recoveryKitData={
+                    /* Ideally this would be updated in recoveryPhraseData state but that's non-trivial in signup */
+                    { ...recoveryPhraseData, hasSentPayload }
+                }
+                onSaveRecoveryKit={handleSaveRecoveryKit}
+                loading={loading}
                 method={method}
             />
 
-            {canDownloadRecoveryKit && (
+            {recoveryPhraseData.save.canDownloadRecoveryKit && (
                 <div>
                     {method === 'recovery-kit' &&
                         // translator: Full sentence "Or copy recovery phrase as text."

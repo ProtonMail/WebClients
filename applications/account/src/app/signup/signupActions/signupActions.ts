@@ -1,4 +1,8 @@
 import { MAX_CHARS_API } from '@proton/account';
+import {
+    type DeferredMnemonicData,
+    generateDeferredMnemonicData,
+} from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
@@ -35,8 +39,6 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
-import generateDeferredMnemonicData from '../../containers/recoveryPhrase/generateDeferredMnemonicData';
-import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
 import type {
     SignupActionDoneResponse,
     SignupActionResponse,
