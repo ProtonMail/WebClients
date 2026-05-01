@@ -1,6 +1,6 @@
 import { readScopedLocalStorageJson, writeScopedLocalStorageJson } from './lumoScopedLocalStorage';
 
-const NOTIFICATION_PANEL_KEY = 'lumo-notification-panel';
+const NOTIFICATION_PANEL_KEY = 'lumo-survey-notification-panel';
 
 export const hasDismissedNotificationPanel = (): boolean => {
     const parsed = readScopedLocalStorageJson<{ dismissed?: boolean } | null>(NOTIFICATION_PANEL_KEY, null);
