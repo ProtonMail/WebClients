@@ -24,13 +24,13 @@ export const getCounterMap = ({
     conversationCounts,
     messageCounts,
     mailSettings,
-    categoryIDs,
+    disabledCategoryIDs,
 }: {
     labels: Label[];
     conversationCounts: LabelCount[];
     messageCounts: LabelCount[];
     mailSettings: MailSettings;
-    categoryIDs: CategoryLabelID[];
+    disabledCategoryIDs: CategoryLabelID[];
 }) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
 
@@ -50,16 +50,15 @@ export const getCounterMap = ({
         };
     }
 
-    // We need to add the disabled categories totals to the default category
-    if (categoryIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
-        const disabledCounts = getPrimaryCategoryCounts(categoryIDs, resultCounterMap);
+    // We compute the primary count all the time, to ensure it's always correct regardless of categories setting
+    const primaryCategories = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoryIDs];
+    const disabledCounts = getPrimaryCategoryCounts(primaryCategories, resultCounterMap);
 
-        resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
-            LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-            Total: disabledCounts.Total,
-            Unread: disabledCounts.Unread,
-        };
-    }
+    resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
+        LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+        Total: disabledCounts.Total,
+        Unread: disabledCounts.Unread,
+    };
 
     return resultCounterMap;
 };
