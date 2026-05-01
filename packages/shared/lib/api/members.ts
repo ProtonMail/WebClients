@@ -12,6 +12,12 @@ export const searchMembers = (keywords?: string) => ({
     },
 });
 
+export const searchMembersSummary = (params: { q: string; limit?: number; excludeGroupId?: string }) => ({
+    method: 'get',
+    url: 'core/v4/members/search/summary',
+    params,
+});
+
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
     url: 'core/v4/members',
