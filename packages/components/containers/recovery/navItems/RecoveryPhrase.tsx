@@ -41,7 +41,9 @@ const RecoveryPhrase = ({ to }: Props) => {
             <span className="flex items-center gap-2">
                 <RecoveryPhraseBadge />
                 {formattedUpdateDate && (
-                    <span className="text-sm color-weak">{c('Status').t`Last updated ${formattedUpdateDate}`}</span>
+                    <span className="text-sm color-weak" data-testid="account:recovery-phrase:last-changed-date">{c(
+                        'Status'
+                    ).t`Last updated ${formattedUpdateDate}`}</span>
                 )}
             </span>
         </SettingsNavItem>

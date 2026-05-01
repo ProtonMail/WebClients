@@ -38,7 +38,12 @@ const RecoveryContactsStatus = () => {
     return (
         <span className="color-weak">
             <span>{c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}</span>
-            {formattedDate && <span> • {c('Status').t`Last changed ${formattedDate}`}</span>}
+            {formattedDate && (
+                <span data-testid="account:recovery-contacts:last-changed-date">
+                    {' '}
+                    • {c('Status').t`Last changed ${formattedDate}`}
+                </span>
+            )}
         </span>
     );
 };
