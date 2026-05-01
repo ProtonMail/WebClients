@@ -31,10 +31,7 @@ export const useLumoFlags = () => {
     const nativeComposerImages = useFlag('LumoNativeComposerImage');
     const nativeComposerModelSelection = useFlag('LumoNativeComposerModelSelection');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
-    const lumoSurvey = useFlag('LumoSurvey');
-    const lumoSurveyFreeUsers = useFlag('LumoSurveyFreeUsers');
-    const lumoSurveyPaidUsers = useFlag('LumoSurveyPaidUsers');
-    const lumoSurveyGuestUsers = useFlag('LumoSurveyGuestUsers');
+    const lumoSurvey = useFlag('LumoSurveys');
 
     return {
         imageTools,
@@ -49,8 +46,5 @@ export const useLumoFlags = () => {
         nativeComposerModelSelection,
         apiKeyManagement,
         lumoSurvey,
-        lumoSurveyFreeUsers,
-        lumoSurveyPaidUsers,
-        lumoSurveyGuestUsers,
     };
 };
