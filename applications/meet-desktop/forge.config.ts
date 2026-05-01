@@ -99,7 +99,10 @@ const config: ForgeConfig = {
                 options: {
                     name: "proton-meet",
                     bin: getName(),
-                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                    icon: {
+                        scalable: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                        "256x256": `${__dirname}/assets/linux/${getIcon()}.png`,
+                    },
                     homepage: pkg.author.url,
                     categories: ["Network", "AudioVideo", "VideoConference"],
                     mimeType: ["x-scheme-handler/proton-meet"],
@@ -112,7 +115,10 @@ const config: ForgeConfig = {
                 options: {
                     name: "proton-meet",
                     bin: getName(),
-                    icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                    icon: {
+                        scalable: `${__dirname}/assets/linux/${getIcon()}.svg`,
+                        "256x256": `${__dirname}/assets/linux/${getIcon()}.png`,
+                    },
                     maintainer: pkg.author.name,
                     homepage: pkg.author.url,
                     categories: ["Network", "AudioVideo", "VideoConference"],
