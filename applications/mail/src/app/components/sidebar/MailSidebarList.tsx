@@ -59,7 +59,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll();
     const { applyLocation } = useApplyLocation();
     const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
-    const [counterMap] = useMailboxCounter();
+    const { counterMap } = useMailboxCounter();
 
     const numFolders = folders?.length || 0;
     const numLabels = labels?.length || 0;
