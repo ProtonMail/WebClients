@@ -1,11 +1,9 @@
-import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { userThunk } from '@proton/account/user';
-import { useUser } from '@proton/account/user/hooks';
 import { userKeysThunk } from '@proton/account/userKeys';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -15,17 +13,13 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import AuthModal from '@proton/components/containers/password/AuthModal';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
-import { useLoading } from '@proton/hooks';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import RecoveryKitAction from './components/RecoveryKitAction';
 import generateDeferredMnemonicData from './generateDeferredMnemonicData';
@@ -37,22 +31,21 @@ type Method = 'recovery-kit' | 'text';
 interface RecoveryKitContentProps {
     recoveryPhraseData: DeferredMnemonicData;
     continueButton: () => ReactNode;
+    onPhraseAcknowledged: () => Promise<void>;
 }
 
-const RecoveryKitContent = ({ recoveryPhraseData, continueButton }: RecoveryKitContentProps) => {
-    const [hasAcknowledged, setHasAcknowledged] = useState(false);
+const RecoveryKitContent = ({ recoveryPhraseData, continueButton, onPhraseAcknowledged }: RecoveryKitContentProps) => {
+    const [hasSentPayload, setHasSentPayload] = useState(false);
     const [method, setMethod] = useState<Method>('recovery-kit');
 
-    // The payload is already saved to the backend before this content is shown.
-    // This callback only tracks whether the user has downloaded/copied the phrase,
-    // which changes the download button appearance.
-    const onPhraseAcknowledged = async () => {
-        setHasAcknowledged(true);
+    const handlePhraseAcknowledged = async () => {
+        await onPhraseAcknowledged();
+        setHasSentPayload(true);
     };
 
     const recoveryKitDownload = useRecoveryKitDownload({
         recoveryKitBlob: recoveryPhraseData.recoveryKitBlob,
-        sendPayload: onPhraseAcknowledged,
+        sendPayload: handlePhraseAcknowledged,
     });
     const { canDownloadRecoveryKit } = recoveryKitDownload;
 
@@ -90,7 +83,7 @@ const RecoveryKitContent = ({ recoveryPhraseData, continueButton }: RecoveryKitC
                 cardClasses="rounded-xl border border-solid border-norm"
                 recoveryPhrase={recoveryPhraseData.recoveryPhrase}
                 recoveryKitDownload={recoveryKitDownload}
-                hasSentPayload={hasAcknowledged}
+                hasSentPayload={hasSentPayload}
                 sendPayload={onPhraseAcknowledged}
                 method={method}
             />
@@ -119,138 +112,89 @@ const RecoveryKitContent = ({ recoveryPhraseData, continueButton }: RecoveryKitC
     );
 };
 
-interface Props {
-    open: ModalProps['open'];
-    onClose: ModalProps['onClose'];
-    onExit: ModalProps['onExit'];
-    onSuccess?: () => void;
+interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
+    onSuccess: () => void;
+    createMnemonicData: ReturnType<typeof selectMnemonicData>;
 }
 
-const RecoveryKitModal = ({ open, onClose, onExit, onSuccess }: Props) => {
-    const [{ Name, MnemonicStatus }] = useUser();
-    const [addresses] = useAddresses();
-    const mnemonicData = useSelector(selectMnemonicData);
-    const shouldConfirmRegenerate = mnemonicData.mnemonicCanBeRegenerated;
-
-    const callReactivateEndpoint =
-        MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-        MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
-        MnemonicStatus === MNEMONIC_STATUS.PROMPT;
-
+const DownloadRecoveryKitModal = ({ onSuccess, createMnemonicData, ...rest }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
-    const [generating, withGenerating] = useLoading();
-    const [saving, withSaving] = useLoading();
-    const [deferredData, setDeferredData] = useState<DeferredMnemonicData>();
-    const [isRecoveryKitReady, setIsRecoveryKitReady] = useState(false);
-    const [hasConfirmedRegenerate, setHasConfirmedRegenerate] = useState(!shouldConfirmRegenerate);
-    const [authOpen, setAuthOpen] = useState(false);
-    const [hasSavedRecoveryPhrase, setHasSavedRecoveryPhrase] = useState(false);
-    const [hasStarted, setHasStarted] = useState(false);
-    const prepPromiseRef = useRef<Promise<DeferredMnemonicData> | null>(null);
+    const handleError = useErrorHandler();
 
-    const emailAddress = addresses?.[0]?.Email || Name;
-
-    const resetFlow = useCallback(() => {
-        prepPromiseRef.current = null;
-        setDeferredData(undefined);
-        setIsRecoveryKitReady(false);
-        setHasConfirmedRegenerate(!shouldConfirmRegenerate);
-        setAuthOpen(false);
-        setHasSavedRecoveryPhrase(false);
-        setHasStarted(false);
-    }, [shouldConfirmRegenerate]);
-
-    const ensureDeferredData = useCallback(() => {
-        if (!prepPromiseRef.current) {
-            prepPromiseRef.current = (async () => {
-                const data = await withGenerating(() =>
-                    generateDeferredMnemonicData({
-                        api,
-                        emailAddress,
-                        username: Name,
-                        getUserKeys: () => dispatch(userKeysThunk()),
-                    })
-                );
-
-                if (!data) {
-                    throw new Error('Failed to prepare recovery kit data');
-                }
-
-                setDeferredData(data);
-                return data;
-            })();
-        }
-
-        return prepPromiseRef.current as Promise<DeferredMnemonicData>;
-    }, [withGenerating, dispatch, api, Name, emailAddress]);
-
-    const handleFailure = useCallback(() => {
-        onClose?.();
-    }, [onClose]);
-
-    const handleAuthClose = useCallback(() => {
-        setAuthOpen(false);
-    }, []);
-
-    const startFlow = useCallback(() => {
-        if (hasStarted) {
-            return;
-        }
-
-        setHasStarted(true);
-
-        if (!callReactivateEndpoint) {
-            setAuthOpen(true);
-            void ensureDeferredData();
-            return;
-        }
-
-        setIsRecoveryKitReady(true);
-        void withSaving(async () => {
-            try {
-                const data = await ensureDeferredData();
-                await api(reactivateMnemonicPhrase(data.payload));
-                await dispatch(userThunk({ cache: CacheType.None }));
-                setHasSavedRecoveryPhrase(true);
-                onSuccess?.();
-            } catch (e) {
-                handleFailure();
-            }
-        });
-    }, [hasStarted, callReactivateEndpoint, ensureDeferredData, withSaving, api, dispatch, onSuccess, handleFailure]);
-
-    const handleAuthSuccess = useCallback(() => {
-        setAuthOpen(false);
-        setIsRecoveryKitReady(true);
-
-        void withSaving(async () => {
-            try {
-                const data = await ensureDeferredData();
-                await api(updateMnemonicPhrase(data.payload));
-                await dispatch(userThunk({ cache: CacheType.None }));
-                await api(lockSensitiveSettings());
-                setHasSavedRecoveryPhrase(true);
-                onSuccess?.();
-            } catch (e) {
-                handleFailure();
-            }
-        });
-    }, [withSaving, ensureDeferredData, api, dispatch, onSuccess, handleFailure]);
+    const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData | null>(null);
 
     useEffect(() => {
-        if (!open) {
-            resetFlow();
-            return;
-        }
+        const getDeferredData = async () => {
+            const data = await generateDeferredMnemonicData({
+                api,
+                emailAddress: createMnemonicData.emailAddress,
+                username: createMnemonicData.username,
+                getUserKeys: () => dispatch(userKeysThunk()),
+            });
+            if (!data) {
+                throw new Error('Failed to prepare recovery kit data');
+            }
+            return data;
+        };
 
-        if (hasConfirmedRegenerate && !hasStarted) {
-            startFlow();
-        }
-    }, [open, hasConfirmedRegenerate, hasStarted, startFlow, resetFlow]);
+        getDeferredData()
+            .then((data) => {
+                setRecoveryPhraseData(data);
+            })
+            .catch((e) => {
+                handleError(e);
+                // Close as there's nothing meaninful to do at this point
+                rest.onClose?.();
+            });
+    }, []);
 
-    const handleClose = generating || saving ? noop : onClose;
-    const recoveryKitLoading = generating || saving || !deferredData || !hasSavedRecoveryPhrase;
+    const handleDownload = async (recoveryPhraseData: DeferredMnemonicData) => {
+        if (!createMnemonicData.callReactivateEndpoint) {
+            await api(updateMnemonicPhrase(recoveryPhraseData.payload));
+            await dispatch(userThunk({ cache: CacheType.None }));
+            onSuccess?.();
+        } else {
+            await api(reactivateMnemonicPhrase(recoveryPhraseData.payload));
+            await dispatch(userThunk({ cache: CacheType.None }));
+            onSuccess?.();
+        }
+    };
+
+    return (
+        <Modal size="medium" {...rest}>
+            <ModalHeader title={c('Title').t`Download your Recovery Kit`} />
+            <ModalContent className="pb-6">
+                {!recoveryPhraseData ? (
+                    <div className="flex justify-center py-12">
+                        <Loader />
+                    </div>
+                ) : (
+                    <RecoveryKitContent
+                        onPhraseAcknowledged={async () => {
+                            try {
+                                await handleDownload(recoveryPhraseData);
+                            } catch (e) {
+                                handleError(e);
+                                throw e;
+                            }
+                        }}
+                        recoveryPhraseData={recoveryPhraseData}
+                        continueButton={() => (
+                            <Button color="norm" size="large" fullWidth onClick={rest.onClose}>
+                                {c('Action').t`Done`}
+                            </Button>
+                        )}
+                    />
+                )}
+            </ModalContent>
+        </Modal>
+    );
+};
+
+const RecoveryKitModal = ({ open, onClose, onExit, onSuccess }: Props) => {
+    const createMnemonicData = useSelector(selectMnemonicData);
+    const [hasConfirmedRegenerate, setHasConfirmedRegenerate] = useState(!createMnemonicData.mnemonicCanBeRegenerated);
 
     return (
         <>
@@ -277,37 +221,14 @@ const RecoveryKitModal = ({ open, onClose, onExit, onSuccess }: Props) => {
                     </p>
                 </Prompt>
             )}
-            {authOpen && (
-                <AuthModal
-                    open={authOpen}
-                    scope="password"
-                    config={unlockPasswordChanges()}
-                    onClose={handleAuthClose}
+            {hasConfirmedRegenerate && (
+                <DownloadRecoveryKitModal
+                    createMnemonicData={createMnemonicData}
+                    open={open}
+                    onClose={onClose}
                     onExit={onExit}
-                    onCancel={handleFailure}
-                    onSuccess={handleAuthSuccess}
+                    onSuccess={onSuccess}
                 />
-            )}
-            {isRecoveryKitReady && (
-                <Modal size="medium" open={open} onClose={handleClose} onExit={onExit}>
-                    <ModalHeader title={c('Title').t`Download your Recovery Kit`} />
-                    <ModalContent className="pb-6">
-                        {recoveryKitLoading ? (
-                            <div className="flex justify-center py-12">
-                                <Loader />
-                            </div>
-                        ) : (
-                            <RecoveryKitContent
-                                recoveryPhraseData={deferredData}
-                                continueButton={() => (
-                                    <Button color="norm" size="large" fullWidth onClick={onClose}>
-                                        {c('Action').t`Done`}
-                                    </Button>
-                                )}
-                            />
-                        )}
-                    </ModalContent>
-                </Modal>
             )}
         </>
     );

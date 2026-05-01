@@ -8,6 +8,7 @@ import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import noop from '@proton/utils/noop';
 
 import type { RecoveryKitBlob } from './types';
 
@@ -163,7 +164,7 @@ const useRecoveryKitDownload = ({
 
     return {
         canDownloadRecoveryKit: true,
-        downloadRecoveryKit: () => withLoading(handleDownload),
+        downloadRecoveryKit: () => withLoading(handleDownload).catch(noop),
         downloadingRecoveryKit,
         recoveryKitBlobToDownload: recoveryKitBlob,
     };
