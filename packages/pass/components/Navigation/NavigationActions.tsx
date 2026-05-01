@@ -26,7 +26,7 @@ export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationSta
 
 export type NavigationActionsContextValue = {
     /** Wraps react-router-dom's `useHistory` and provides extra options
-     * to chose the navigation mode (push, replace) and wether you want to
+     * to chose the navigation mode (push, replace) and whether you want to
      * push new search parameters to the target path. */
     navigate: <S>(pathname: string, options?: NavigateOptions<S>) => void;
     /** Navigates to an item view. By default it will go to the `view` screen,

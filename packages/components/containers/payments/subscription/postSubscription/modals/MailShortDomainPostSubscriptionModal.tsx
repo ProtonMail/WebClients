@@ -35,7 +35,7 @@ const ConfirmationModalContent = ({
     const { APP_NAME } = useConfig();
 
     // translator complete sentence: This is now your <>default email address<> for sending new messages.
-    const defaultEmailAddress = <b key="default-email-adress">{c('Info').t`default email address`}</b>;
+    const defaultEmailAddress = <b key="default-email-address">{c('Info').t`default email address`}</b>;
     const listItems = [
         {
             icon: 'arrow-within-square',

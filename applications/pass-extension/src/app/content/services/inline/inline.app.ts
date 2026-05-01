@@ -57,7 +57,7 @@ type CreateInlineAppOptions<A> = {
 };
 
 type InlineMessageHandlerOptions = {
-    /** Indicates wether a message handler is initiated
+    /** Indicates whether a message handler is initiated
      * from a user action for further validation */
     userAction: boolean;
 };

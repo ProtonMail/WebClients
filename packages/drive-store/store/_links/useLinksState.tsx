@@ -234,7 +234,7 @@ export function updateByEvents(
         if (event.eventType === EVENT_TYPES.DELETE) {
             // Delete event does not contain context share ID because
             // the link is already deleted and backend might not know
-            // it anymore. There might be two links in mulitple shares
+            // it anymore. There might be two links in multiple shares
             // with the same link IDs, but it is very rare, and it can
             // happen in user cache only with direct sharing. Because
             // the risk is almost zero, it is simply deleting all the

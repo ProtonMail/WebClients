@@ -31,7 +31,7 @@ export const ImportReport: FC = () => {
                 title={c('Label').t`Latest import`}
                 subTitle={
                     report.error ? (
-                        <span className="color-danger">{c('Error').t`An error occured during the import process`}</span>
+                        <span className="color-danger">{c('Error').t`An error occurred during the import process`}</span>
                     ) : null
                 }
             >

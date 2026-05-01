@@ -75,7 +75,7 @@ const SubscriptionThanks = ({ onClose, planIDs }: Props) => {
                         <div>
                             <h1
                                 className={clsx('text-bold text-center', description ? 'text-lg' : 'text-2xl')}
-                                data-testid="successfull-update"
+                                data-testid="successful-update"
                             >
                                 {c('Info').t`Account successfully updated`}
                             </h1>

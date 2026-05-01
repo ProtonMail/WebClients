@@ -183,7 +183,7 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
     const resultsArray: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let newLastTimePoint = lastTimePoint;
     let remainingItems = itemLimit;
-    let previousLenght = 0;
+    let previousLength = 0;
 
     const isReverse = checkIsReverse(esSearchParams);
     const remainingIDs = await readSortedIDs(userID, isReverse, newLastTimePoint);
@@ -254,8 +254,8 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
 
         // In case the callback to show new search results while searching was given
         // and there are new search results in the current batch, show them
-        if (setIncrementalResults && resultsArray.length > previousLenght) {
-            previousLenght = resultsArray.length;
+        if (setIncrementalResults && resultsArray.length > previousLength) {
+            previousLength = resultsArray.length;
             setIncrementalResults(resultsArray);
         }
     }

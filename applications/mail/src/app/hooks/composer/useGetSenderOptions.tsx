@@ -52,7 +52,7 @@ const useGetSenderOptions = (message: MessageState) => {
 
     if (user.hasPaidMail) {
         addressesOptions.push(
-            <div key="create-new-adress" className="pl-4 py-2 border-top">
+            <div key="create-new-address" className="pl-4 py-2 border-top">
                 <SettingsLink path="/identity-addresses#addresses" app={APPS.PROTONMAIL}>
                     {c('Label').t`Manage my addresses`}
                 </SettingsLink>

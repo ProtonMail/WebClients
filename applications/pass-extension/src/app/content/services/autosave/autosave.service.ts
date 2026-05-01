@@ -19,7 +19,7 @@ import noop from '@proton/utils/noop';
 
 export const createAutosaveService = (): AutosaveService => {
     /** Checks the user's settings and prompts for autosave accordingly.
-     * Returns wether the autosave prompt was shown or not. */
+     * Returns whether the autosave prompt was shown or not. */
     const prompt: (submission: AutosaveFormEntry) => boolean = withContext((ctx, { autosave, data, submittedAt }) => {
         if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
 

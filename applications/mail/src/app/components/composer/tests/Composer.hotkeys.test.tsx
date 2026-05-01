@@ -20,14 +20,14 @@ import {
 } from '../../../helpers/test/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
-const orignalGetSelection = global.getSelection;
+const originalGetSelection = global.getSelection;
 
 beforeAll(() => {
     global.getSelection = jest.fn();
 });
 
 afterAll(() => {
-    global.getSelection = orignalGetSelection;
+    global.getSelection = originalGetSelection;
 });
 
 describe('Composer hotkeys', () => {

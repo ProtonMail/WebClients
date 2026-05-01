@@ -1,7 +1,7 @@
 import type { MaybeNull } from '@proton/pass/types';
 
 export type RafHandle = {
-    /** Flag indicating wether the current RAF
+    /** Flag indicating whether the current RAF
      * has been cancelled. NOTE: Do not destructure
      * as this property is a dynamic getter */
     cancelled: boolean;

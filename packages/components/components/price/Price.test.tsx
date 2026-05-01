@@ -88,7 +88,7 @@ describe('Price component', () => {
         expect((container.firstChild as any).textContent).toBe('-SGD 15');
     });
 
-    it('should format unkown currency', () => {
+    it('should format unknown currency', () => {
         const { container } = render(<Price currency={'XXX' as any}>{1500}</Price>);
         expect((container.firstChild as any).textContent).toBe('XXX 15');
 

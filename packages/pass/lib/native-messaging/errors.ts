@@ -54,6 +54,6 @@ export const getForNativeMessageErrorFromConnectionError = (
     const message = last?.message?.toLowerCase() ?? '';
     if (message.includes('not found')) return NativeMessageErrorType.HOST_NOT_FOUND;
     if (message.includes('exited')) return NativeMessageErrorType.HOST_NOT_RESPONDING;
-    log('Unkown connection error', port, last);
+    log('Unknown connection error', port, last);
     return NativeMessageErrorType.UNKNOWN;
 };

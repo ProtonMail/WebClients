@@ -102,9 +102,9 @@ export const verifyAltName = async (
     const { getParametersValue } = await importPvUtils();
 
     altNamesExt.parsedValue.altNames.sort((firstEl: GeneralName, secondEl: GeneralName) => {
-        const firstLenght = getParametersValue<string>(firstEl, 'value', '').length;
-        const secondLenght = getParametersValue<string>(secondEl, 'value', '').length;
-        return secondLenght - firstLenght;
+        const firstLength = getParametersValue<string>(firstEl, 'value', '').length;
+        const secondLength = getParametersValue<string>(secondEl, 'value', '').length;
+        return secondLength - firstLength;
     });
 
     // The primary name cannot be longer than 64 chars due to TLS certificate restrictions, which

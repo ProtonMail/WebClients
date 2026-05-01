@@ -21,7 +21,7 @@ export const getPossibleAddressPrivateKeys = (addressesKeys: AddressesKeysResult
         return [];
     }
     /*
-        Taking all adress keys and match it by Id with `Keys` array (that's decrypted keys).
+        Taking all address keys and match it by Id with `Keys` array (that's decrypted keys).
         The result here is an array of decrypted private keys associated with any of the given
         address keys.
     */

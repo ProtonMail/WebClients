@@ -37,7 +37,7 @@ type HydrateCacheOptions = {
 export type HydrationResult = { fromCache: boolean; version?: string };
 
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
- * boolean flag indicating wether hydration happened from cache or not. */
+ * boolean flag indicating whether hydration happened from cache or not. */
 export function* hydrate(
     config: HydrateCacheOptions,
     { getCache, getAuthService, getAuthStore, getSettings, getConfig, onBeforeHydrate, extensionId }: RootSagaOptions
@@ -133,7 +133,7 @@ export function* hydrate(
             version: encryptedCache?.version,
         };
     } catch (err) {
-        logger.warn(`[Hydration] Error occured`, err);
+        logger.warn(`[Hydration] Error occurred`, err);
 
         if (config.onError) yield config.onError?.(err);
         else throw err;

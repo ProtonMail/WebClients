@@ -46,13 +46,13 @@ describe('EncryptionStatusIcon', () => {
                 isEncrypted: false,
                 fill: 2,
                 loading: false,
-                text: 'This email adress is invalid',
+                text: 'This email address is invalid',
             };
             render(<EncryptionStatusIcon {...props} />);
             const tooltip = screen.getByTestId('encryption-icon-tooltip');
             // workaround to be able to get by tag
             const href = within(tooltip).getByText((_, el) => el?.tagName.toLowerCase() === 'a');
-            within(href).getByText('This email adress is invalid');
+            within(href).getByText('This email address is invalid');
             within(href).getByTestId('encryption-icon');
         });
     });
@@ -63,13 +63,13 @@ describe('EncryptionStatusIcon', () => {
                 isEncrypted: false,
                 fill: 2,
                 loading: false,
-                text: 'This email adress is invalid',
+                text: 'This email address is invalid',
                 shouldHaveHref: false,
             };
             render(<EncryptionStatusIcon {...props} />);
 
             const tooltip = screen.getByTestId('encryption-icon-tooltip');
-            within(tooltip).getByText('This email adress is invalid');
+            within(tooltip).getByText('This email address is invalid');
             within(tooltip).getByTestId('encryption-icon');
 
             expect(within(tooltip).queryByText((_, el) => el?.tagName.toLowerCase() === 'a')).toBeNull();

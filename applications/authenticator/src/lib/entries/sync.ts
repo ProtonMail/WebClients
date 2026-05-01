@@ -330,7 +330,7 @@ export const deleteRemoteEntries = async (remoteIds: string[]): Promise<string[]
  *  Update: remote items needing to be updated locally */
 type SyncOperationType = WasmOperationType | 'Update';
 
-/** Returns wether there were any changes to the local database  */
+/** Returns whether there were any changes to the local database  */
 const syncRemoteEntries = async (
     parsedRemoteEntries: WasmRemoteEntryWithKey[],
     extra?: AppThunkExtra
