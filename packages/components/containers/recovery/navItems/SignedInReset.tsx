@@ -4,8 +4,8 @@ import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
+import { IcSignedInReset } from '@proton/icons/icons/IcSignedInReset';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 interface Props {
@@ -39,7 +39,7 @@ const SignedInReset = ({ to }: Props) => {
     return (
         <SettingsNavItem
             to={to}
-            icon={IcLock}
+            icon={IcSignedInReset}
             title={c('Title').t`Signed-in reset`}
             tooltip={c('Tooltip').t`Allow resetting your password from the account settings`}
         >

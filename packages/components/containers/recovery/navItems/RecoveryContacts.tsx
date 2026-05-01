@@ -6,7 +6,7 @@ import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcContactAssistedRecovery } from '@proton/icons/icons/IcContactAssistedRecovery';
 
 interface Props {
     to: string;
@@ -47,7 +47,7 @@ const RecoveryContacts = ({ to }: Props) => {
     return (
         <SettingsNavItem
             to={to}
-            icon={IcUsers}
+            icon={IcContactAssistedRecovery}
             title={c('Title').t`Contact-assisted recovery`}
             tooltip={c('Tooltip').t`Allow trusted contacts to unlock your encrypted data after a password reset`}
         >

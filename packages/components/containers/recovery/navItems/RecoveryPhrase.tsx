@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcRecoveryPhrase } from '@proton/icons/icons/IcRecoveryPhrase';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -33,7 +33,7 @@ const RecoveryPhrase = ({ to }: Props) => {
     return (
         <SettingsNavItem
             to={to}
-            icon={IcNote}
+            icon={IcRecoveryPhrase}
             title={c('Title').t`Recovery phrase`}
             tooltip={c('Tooltip')
                 .t`Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password`}
