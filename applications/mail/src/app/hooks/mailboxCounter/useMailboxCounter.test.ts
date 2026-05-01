@@ -112,10 +112,7 @@ describe('useMailboxCounter', () => {
                 ],
                 false,
             ]);
-            jest.mocked(useMailSelector).mockReturnValue([
-                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-            ]);
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]);
 
             const { result } = renderHook(() => useMailboxCounter());
 
@@ -143,7 +140,6 @@ describe('useMailboxCounter', () => {
                 false,
             ]);
             jest.mocked(useMailSelector).mockReturnValue([
-                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);

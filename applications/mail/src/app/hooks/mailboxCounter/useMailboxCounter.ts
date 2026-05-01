@@ -1,9 +1,9 @@
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { MailboxCounterReturn } from './interface';
@@ -14,12 +14,12 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
 
     const [labels, labelsLoading] = useLabels();
     const [folders, foldersLoading] = useFolders();
+    const [messageCounts, messageCountsLoading] = useMessageCounts();
+    const [conversationCounts, conversationCountsLoading] = useConversationCounts();
+
     const [systemFolders, systemFoldersLoading] = useSystemFolders();
 
-    const categoryIDs = useMailSelector(selectCategoryIDs);
-
-    const [conversationCounts, conversationCountsLoading] = useConversationCounts();
-    const [messageCounts, messageCountsLoading] = useMessageCounts();
+    const disabledCategoryIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const loading =
         labelsLoading || foldersLoading || systemFoldersLoading || conversationCountsLoading || messageCountsLoading;
@@ -37,7 +37,7 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
         conversationCounts,
         messageCounts,
         mailSettings,
-        categoryIDs,
+        disabledCategoryIDs,
     });
 
     return {

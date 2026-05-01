@@ -22,7 +22,7 @@ describe('useMailboxCounter helpers', () => {
                 conversationCounts,
                 messageCounts,
                 mailSettings: {} as MailSettings,
-                categoryIDs: [],
+                disabledCategoryIDs: [],
             });
 
             expect(result[MAILBOX_LABEL_IDS.STARRED]).toStrictEqual({
@@ -38,7 +38,7 @@ describe('useMailboxCounter helpers', () => {
                 conversationCounts,
                 messageCounts,
                 mailSettings: {} as MailSettings,
-                categoryIDs: [],
+                disabledCategoryIDs: [],
             });
 
             expect(result[MAILBOX_LABEL_IDS.SENT]).toStrictEqual({
@@ -54,7 +54,7 @@ describe('useMailboxCounter helpers', () => {
                 conversationCounts,
                 messageCounts,
                 mailSettings: {} as MailSettings,
-                categoryIDs: [],
+                disabledCategoryIDs: [],
             });
 
             expect(result[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual({
@@ -72,7 +72,7 @@ describe('useMailboxCounter helpers', () => {
                 mailSettings: {
                     ViewMode: VIEW_MODE.SINGLE,
                 } as MailSettings,
-                categoryIDs: [],
+                disabledCategoryIDs: [],
             });
 
             expect(result[MAILBOX_LABEL_IDS.INBOX]).toStrictEqual({
@@ -91,7 +91,7 @@ describe('useMailboxCounter helpers', () => {
                     conversationCounts,
                     messageCounts,
                     mailSettings: {} as MailSettings,
-                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
+                    disabledCategoryIDs: [],
                 });
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
@@ -110,7 +110,7 @@ describe('useMailboxCounter helpers', () => {
                     conversationCounts,
                     messageCounts,
                     mailSettings: {} as MailSettings,
-                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                    disabledCategoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 });
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
@@ -134,7 +134,7 @@ describe('useMailboxCounter helpers', () => {
                     conversationCounts,
                     messageCounts,
                     mailSettings: {} as MailSettings,
-                    categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                    disabledCategoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 });
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
@@ -160,8 +160,7 @@ describe('useMailboxCounter helpers', () => {
                     conversationCounts,
                     messageCounts,
                     mailSettings: {} as MailSettings,
-                    categoryIDs: [
-                        MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    disabledCategoryIDs: [
                         MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                     ],
@@ -188,8 +187,7 @@ describe('useMailboxCounter helpers', () => {
                     conversationCounts,
                     messageCounts,
                     mailSettings: {} as MailSettings,
-                    categoryIDs: [
-                        MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    disabledCategoryIDs: [
                         MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                     ],
