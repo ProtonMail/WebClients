@@ -192,11 +192,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.dropdown {
-	--selection-background-color: var(--interaction-default-hover);
-	--selection-text-color: var(--interaction-weak-contrast);
-}
-
 .new-label {
 	background-color: #8080ff;
 	color: white;
@@ -273,5 +268,21 @@ body::before {
 	&:not(.toggle-container--disabled):hover::before,
 	&:not(.toggle-container--disabled).toggle-container--checked:hover::before {
 		background-color: var(--background-upsell-toggle-button);
+	}
+}
+
+// DROPDOWN
+
+.dropdown {
+	--selection-background-color: var(--interaction-default-hover);
+	--selection-text-color: var(--interaction-weak-contrast);
+	--border-norm: var(--border-weak);
+
+	box-shadow: 0 4px 28px 0 rgb(0 0 0 / 0.1);
+	padding: 0.75rem;
+	border-radius: var(--border-radius-xl);
+
+	.dropdown-item-button {
+		border-radius: var(--border-radius-md);
 	}
 }
