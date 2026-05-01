@@ -26,7 +26,7 @@ export const CategoriesTabsList = () => {
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
 
-    const [counterMap] = useMailboxCounter();
+    const { counterMap } = useMailboxCounter();
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         if (selectAll) {

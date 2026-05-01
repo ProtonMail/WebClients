@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
-import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
 import { getLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';

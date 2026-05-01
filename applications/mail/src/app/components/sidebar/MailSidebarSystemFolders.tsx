@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
-import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import type { LocationCountMap } from 'proton-mail/hooks/mailboxCounter/interface';
 import { getLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
 
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
