@@ -1,4 +1,4 @@
-import type { createAuthentication } from '@proton/account/bootstrap';
+import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 
 import type createApi from '../api/createApi';
 import { getIsIframe } from '../helpers/browser';
@@ -13,7 +13,7 @@ export function bootstrapMailInboxDesktop({
     api,
 }: {
     config: ProtonConfig;
-    authentication: ReturnType<typeof createAuthentication>;
+    authentication: AuthenticationStore;
     api: ReturnType<typeof createApi>;
 }) {
     initElectronClassnames();
