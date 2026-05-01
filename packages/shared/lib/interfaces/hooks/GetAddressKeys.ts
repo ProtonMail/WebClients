@@ -1,3 +1,3 @@
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
-export type GetAddressKeys = ReturnType<typeof useGetAddressKeys>;
+export type GetAddressKeys = (id: string) => Promise<DecryptedAddressKey[]>;

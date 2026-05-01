@@ -1,7 +1,6 @@
 /**
  * Currently this is basically a copy of sendEncrypt from the mail repo. TO BE IMPROVED
  */
-import type { AddressKeysByUsage } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
@@ -10,6 +9,7 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AES256, MIME_TYPES } from '../../constants';
 import { hasBit } from '../../helpers/bitset';
+import type { AddressKeysByUsage } from '../../interfaces/hooks/GetAddressKeysByUsage';
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { PackageDirect } from '../../interfaces/mail/crypto';
 import type { RequireOnly, SimpleMap } from '../../interfaces/utils';

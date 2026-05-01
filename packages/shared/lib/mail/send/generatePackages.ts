@@ -1,5 +1,4 @@
-import type { AddressKeysByUsage } from '@proton/account/addressKeys/getAddressKeysByUsage';
-
+import type { AddressKeysByUsage } from '../../interfaces/hooks/GetAddressKeysByUsage';
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
 import type { RequireOnly, SimpleMap } from '../../interfaces/utils';

@@ -7,11 +7,12 @@ import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-re
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCalendarBootstrap } from '@proton/shared/lib/interfaces/hooks/GetCalendarBootstrap';
 import noop from '@proton/utils/noop';
 
 import { type CalendarsBootstrapState, calendarBootstrapThunk, selectCalendarsBootstrap } from './index';
 
-export const useGetCalendarBootstrap = () => {
+export const useGetCalendarBootstrap = (): GetCalendarBootstrap => {
     const dispatch = baseUseDispatch<ThunkDispatch<CalendarsBootstrapState, ProtonThunkArguments, Action>>();
     return useCallback(
         (calendarID: string, cache?: CacheType) => dispatch(calendarBootstrapThunk({ calendarID, cache })),
