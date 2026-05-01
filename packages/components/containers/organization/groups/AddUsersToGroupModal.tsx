@@ -179,6 +179,7 @@ const AddUsersToGroupModal = ({
                         onAddNewGroupMembers={handleAddNewMembers}
                         groupMembers={groupMembers}
                         onAddAllOrgMembers={handleAddAllOrganizationMembers}
+                        groupId={group.ID}
                     />
                     <div
                         className="mt-8 flex flex-column flex-nowrap gap-3 overflow-y-auto overflow-x-hidden h-custom"

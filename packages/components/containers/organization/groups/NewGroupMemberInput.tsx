@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
@@ -12,7 +11,8 @@ import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { GROUP_MEMBER_TYPE, type GroupMember, type Recipient } from '@proton/shared/lib/interfaces';
 
 import type { NewGroupMember } from './AddUsersToGroupModal';
-import { convertEnhancedMembersToContactEmails, convertGroupMemberToRecipient } from './helpers';
+import { convertGroupMemberToRecipient } from './helpers';
+import useMemberContactEmailsRemote from './hooks/useMemberContactEmailsRemote';
 import useGroupKeys from './useGroupKeys';
 
 interface Props {
@@ -20,6 +20,7 @@ interface Props {
     onAddNewGroupMembers: (members: NewGroupMember[]) => void;
     groupMembers: GroupMember[];
     onAddAllOrgMembers: () => void;
+    groupId: string;
 }
 
 export const NewGroupMemberInput = ({
@@ -27,14 +28,15 @@ export const NewGroupMemberInput = ({
     onAddNewGroupMembers,
     groupMembers,
     onAddAllOrgMembers,
+    groupId,
 }: Props) => {
     const { getMemberPublicKeys } = useGroupKeys();
     const { createNotification } = useNotifications();
-
-    const [members] = useMembers();
     const existingGroupMembers = convertGroupMemberToRecipient(groupMembers);
     const recipients = [...existingGroupMembers, ...newGroupMembers];
     const [processing, setProcessing] = useState(false);
+    const [query, setQuery] = useState('');
+    const [contactEmails, loading] = useMemberContactEmailsRemote(query, groupId);
 
     const handleAddRecipients = async (newRecipients: Recipient[]) => {
         setProcessing(true);
@@ -48,22 +50,17 @@ export const NewGroupMemberInput = ({
                 }
                 return GROUP_MEMBER_TYPE.INTERNAL;
             } catch (error) {
-                // If we fail to get the member public keys, default to external type
                 return GROUP_MEMBER_TYPE.EXTERNAL;
             }
         };
 
-        const processRecipient = async (recipient: Recipient): Promise<NewGroupMember> => {
-            const GroupMemberType = await getRecipientMemberType(recipient);
-            const existingMember = members?.find((member) =>
-                member.Addresses?.some((address) => address.Email === recipient.Address)
-            );
-            const userName = existingMember?.Name ?? recipient.Name;
-            return { ...recipient, GroupMemberType, Name: userName };
-        };
-
         try {
-            const processedRecipients = await Promise.all(newRecipients.map(processRecipient));
+            const processedRecipients = await Promise.all(
+                newRecipients.map(async (recipient): Promise<NewGroupMember> => {
+                    const GroupMemberType = await getRecipientMemberType(recipient);
+                    return { ...recipient, GroupMemberType };
+                })
+            );
             onAddNewGroupMembers(processedRecipients);
         } catch (error) {
             createNotification({ text: c('Error').t`Failed to add group member`, type: 'error' });
@@ -78,10 +75,11 @@ export const NewGroupMemberInput = ({
                 id="group-autocomplete"
                 autoFocus
                 label={c('Label').t`Invite people`}
-                suffix={processing && <CircleLoader size="small" />}
+                suffix={(processing || loading) && <CircleLoader size="small" />}
                 recipients={recipients}
                 onAddRecipients={handleAddRecipients}
-                contactEmails={convertEnhancedMembersToContactEmails(members)}
+                contactEmails={contactEmails}
+                onChange={(value) => setQuery(value.trim())}
                 validate={emailValidator}
                 placeholder={c('Label').t`Enter name or email address`}
                 hasAddOnBlur
