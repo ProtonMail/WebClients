@@ -32,7 +32,13 @@ export const useMailboxCounter = (): MailboxCounterReturn => {
     }
 
     const allLocations = [...labels, ...folders, ...systemFolders];
-    const counterMap = getCounterMap(allLocations, conversationCounts, messageCounts, mailSettings, categoryIDs);
+    const counterMap = getCounterMap({
+        labels: allLocations,
+        conversationCounts,
+        messageCounts,
+        mailSettings,
+        categoryIDs,
+    });
 
     return {
         loading,

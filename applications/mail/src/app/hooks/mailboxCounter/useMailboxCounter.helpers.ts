@@ -19,17 +19,23 @@ const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Recor
     );
 };
 
-export const getCounterMap = (
-    labels: Label[],
-    conversationCounters: LabelCount[],
-    messageCounters: LabelCount[],
-    mailSettings: MailSettings,
-    categoryIDs: CategoryLabelID[]
-) => {
+export const getCounterMap = ({
+    labels,
+    conversationCounts,
+    messageCounts,
+    mailSettings,
+    categoryIDs,
+}: {
+    labels: Label[];
+    conversationCounts: LabelCount[];
+    messageCounts: LabelCount[];
+    mailSettings: MailSettings;
+    categoryIDs: CategoryLabelID[];
+}) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
 
-    const conversationCountersMap = toMap(conversationCounters, 'LabelID');
-    const messageCountersMap = toMap(messageCounters, 'LabelID');
+    const conversationCountersMap = toMap(conversationCounts, 'LabelID');
+    const messageCountersMap = toMap(messageCounts, 'LabelID');
 
     const resultCounterMap: Record<string, SafeLabelCount> = {};
     for (const labelID of labelIDs) {
