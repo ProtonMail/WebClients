@@ -7,7 +7,6 @@ import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
-import type { IconSize } from '@proton/icons/types';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
@@ -280,11 +279,7 @@ export const DeviceSettings = ({
                         className="border white-border"
                         onClick={handleMicrophoneToggle}
                         IconComponent={
-                            isMicrophoneEnabled
-                                ? ({ size }) => (
-                                      <MicrophoneWithVolumeWithMicrophoneStateDirect size={size as IconSize} />
-                                  )
-                                : IcMeetMicrophoneOff
+                            isMicrophoneEnabled ? MicrophoneWithVolumeWithMicrophoneStateDirect : IcMeetMicrophoneOff
                         }
                         variant={'transparent'}
                         indicatorContent={microphoneHasWarning ? '!' : undefined}
