@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcRecoveryFile } from '@proton/icons/icons/IcRecoveryFile';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 interface Props {
@@ -26,7 +26,7 @@ const RecoveryFile = ({ to }: Props) => {
     return (
         <SettingsNavItem
             to={to}
-            icon={IcCode}
+            icon={IcRecoveryFile}
             title={c('Title').t`Recovery file`}
             tooltip={c('Tooltip').t`Save an encryption backup file to recover your data after a password reset`}
         >
