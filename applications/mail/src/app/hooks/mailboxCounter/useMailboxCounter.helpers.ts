@@ -5,7 +5,7 @@ import type { Label, LabelCount, MailSettings, SafeLabelCount } from '@proton/sh
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
-export type LocationCountMap = Record<string, SafeLabelCount>;
+import type { LocationCountMap } from './interface';
 
 const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Record<string, SafeLabelCount>) => {
     return categoryIDs.reduce(
