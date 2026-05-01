@@ -51,19 +51,21 @@ export const getCounterMap = ({
     }
 
     // We compute the primary count all the time, to ensure it's always correct regardless of categories setting
-    const primaryCategories = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoryIDs];
-    const disabledCounts = getPrimaryCategoryCounts(primaryCategories, resultCounterMap);
+    if (disabledCategoryIDs.length > 0) {
+        const primaryCategories = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, ...disabledCategoryIDs];
+        const disabledCounts = getPrimaryCategoryCounts(primaryCategories, resultCounterMap);
 
-    resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
-        LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-        Total: disabledCounts.Total,
-        Unread: disabledCounts.Unread,
-    };
+        resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
+            LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+            Total: disabledCounts.Total,
+            Unread: disabledCounts.Unread,
+        };
+    }
 
     return resultCounterMap;
 };
 
-export const getLocationCount = (counterMap: LocationCountMap, labelId: string): SafeLabelCount => {
+export const getRawLocationCount = (counterMap: LocationCountMap, labelId: string): SafeLabelCount => {
     const labelCount = counterMap[labelId];
 
     return {
