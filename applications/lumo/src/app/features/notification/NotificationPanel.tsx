@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { markNotificationPanelDismissed } from '../../util/notificationPanelStorage';
 
@@ -18,9 +18,9 @@ export interface NotificationProps {
 }
 
 export default function NotificationPanel({
-    title = c('collider_2025: Title').t`Got a minute?`,
-    text = c('collider_2025: Description').t`Your experience shapes ${LUMO_SHORT_APP_NAME}. Tell us what you think.`,
-    actionLabel = c('collider_2025: Action').t`Share your thoughts`,
+    title = c('collider_2025: Title').t`We'd love your feedback!`,
+    text = c('collider_2025: Description').t`${BRAND_NAME} is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.`,
+    actionLabel = c('collider_2025: Action').t`Register here`,
     actionUrl,
     showNewBadge = false,
     onDismiss,
