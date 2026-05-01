@@ -14,7 +14,7 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
  * which would otherwise cause gradual audio loss after several minutes.
  */
 export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup: () => void } => {
-    const audioContext = new AudioContext();
+    const audioContext = new AudioContext({ latencyHint: 'interactive' });
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
     const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
