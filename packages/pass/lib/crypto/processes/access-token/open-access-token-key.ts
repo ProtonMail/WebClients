@@ -1,5 +1,5 @@
-import { CryptoProxy } from '@proton/crypto';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 /** Decrypts a stored PAT key (as returned in the list endpoint's
  * `PersonalAccessTokenKey` field) back to its raw 32 bytes, verifying the
@@ -17,5 +17,6 @@ export const openAccessTokenKey = async (
         expectSigned: true,
         format: 'binary',
     });
-    return data as Uint8Array<ArrayBuffer>;
+
+    return data;
 };
