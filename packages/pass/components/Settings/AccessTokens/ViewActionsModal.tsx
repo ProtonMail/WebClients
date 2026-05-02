@@ -1,5 +1,5 @@
 import type { CSSProperties, FC } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -14,8 +14,10 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { getAccessTokenActions } from '@proton/pass/store/actions';
 import { selectAccessTokenActions } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
 import { EventType2 as PassEventType } from '@proton/pass/types/api/pass';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
+import clsx from '@proton/utils/clsx';
 
 type Props = {
     token: PersonalAccessToken;
@@ -53,61 +55,61 @@ const formatActionLabel = (action: PassEventType): string | null => {
 
 export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
     const tokenId = token.PersonalAccessTokenID;
-    const { records, nextSince } = useSelector(selectAccessTokenActions(tokenId));
-    const fetchActions = useRequest(getAccessTokenActions, { loading: true });
+    const { records } = useSelector(selectAccessTokenActions(tokenId));
+    const [nextSince, setNextSince] = useState<MaybeNull<string>>(null);
 
-    /* Fetch the first page on open. The reducer replaces (not appends)
-     * when the intent has no `since`, so re-opening shows fresh data. */
-    useEffect(() => {
-        fetchActions.dispatch({ tokenId });
-    }, [tokenId]);
+    const getActions = useRequest(getAccessTokenActions, {
+        loading: true,
+        onSuccess: ({ nextSince }) => setNextSince(nextSince),
+    });
 
-    const loadMore = () => {
-        if (nextSince) fetchActions.dispatch({ tokenId, since: nextSince });
-    };
+    const initialLoading = getActions.loading && nextSince === null;
+    const loadMore = () => nextSince && getActions.dispatch({ tokenId, since: nextSince });
 
-    const isFirstLoad = fetchActions.loading && records.length === 0;
+    useEffect(() => getActions.revalidate({ tokenId }), [tokenId]);
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="xlarge">
+        <PassModal open onClose={onClose} onReset={onClose} size="xlarge" enableCloseWhenClickOutside>
             <ModalTwoHeader title={c('pass_2026: Title').t`Activity for "${token.Name}"`} />
-            <ModalTwoContent>
+            <ModalTwoContent className="min-h-custom flex flex-column" style={{ '--min-h-custom': '10rem' }}>
                 <p className="color-weak mt-0 mb-3">
                     {c('pass_2026: Info').t`Every action this agent token has performed, newest first.`}
                 </p>
 
                 {(() => {
-                    if (isFirstLoad) {
+                    if (initialLoading || records.length === 0) {
                         return (
-                            <div className="flex justify-center py-6">
-                                <CircleLoader size="medium" />
+                            <div className="flex flex-1 items-center justify-center text-sm">
+                                {records.length === 0 ? (
+                                    <span className="color-weak">
+                                        {c('pass_2026: Info').t`No activity recorded yet.`}
+                                    </span>
+                                ) : (
+                                    <CircleLoader size="medium" />
+                                )}
                             </div>
                         );
                     }
-                    if (records.length === 0) {
-                        return (
-                            <div className="text-sm color-weak text-center py-6">
-                                {c('pass_2026: Info').t`No activity recorded yet.`}
-                            </div>
-                        );
-                    }
+
                     return (
                         <div className="rounded border border-weak">
-                            {records.map((r) => {
-                                const label = formatActionLabel(r.Action);
-                                const payload = r.decodedPayload?.kind === 'agent-action' ? r.decodedPayload : null;
-                                const isDecodeError = r.decodedPayload?.kind === 'decode-error';
+                            {records.map(({ Action, ActionTime, PatMonitorRecordID, decodedPayload }, i) => {
+                                const last = i === records.length - 1;
+                                const label = formatActionLabel(Action);
+                                const payload = decodedPayload?.kind === 'agent-action' ? decodedPayload : null;
+                                const isDecodeError = decodedPayload?.kind === 'decode-error';
+
                                 return (
                                     <div
-                                        key={r.PatMonitorRecordID}
-                                        className="px-4 py-3 border-bottom border-weak last:border-bottom-0"
+                                        key={PatMonitorRecordID}
+                                        className={clsx('px-4 py-3', !last && 'border-bottom border-weak')}
                                     >
-                                        <div className="flex items-baseline justify-space-between gap-3 mb-2">
-                                            <span className="text-bold">
+                                        <div className="flex flex-nowrap items-baseline justify-space-between gap-3 mb-2">
+                                            <strong className="text-ellipsis">
                                                 {label ?? c('pass_2026: Activity').t`Activity`}
-                                            </span>
+                                            </strong>
                                             <span className="text-sm color-weak shrink-0">
-                                                {epochToDateTime(r.ActionTime)}
+                                                {epochToDateTime(ActionTime)}
                                             </span>
                                         </div>
                                         {payload && (
@@ -168,15 +170,13 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
 
                 {nextSince && (
                     <div className="flex justify-center mt-3">
-                        <Button shape="outline" onClick={loadMore} loading={fetchActions.loading}>
+                        <Button shape="outline" onClick={loadMore} loading={getActions.loading}>
                             {c('pass_2026: Action').t`Load more`}
                         </Button>
                     </div>
                 )}
             </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-            </ModalTwoFooter>
+            <ModalTwoFooter />
         </PassModal>
     );
 };
