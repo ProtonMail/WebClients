@@ -92,7 +92,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                     }
 
                     return (
-                        <div className="rounded border border-weak">
+                        <div className="rounded border border-weak overflow-hidden">
                             {records.map(({ Action, ActionTime, PatMonitorRecordID, decodedPayload }, i) => {
                                 const last = i === records.length - 1;
                                 const label = formatActionLabel(Action);
@@ -164,17 +164,21 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                     </div>
                                 );
                             })}
+
+                            {nextSince && (
+                                <Button
+                                    color="weak"
+                                    shape="solid"
+                                    onClick={loadMore}
+                                    loading={getActions.loading}
+                                    className="w-full mt-2 shrink-0 rounded-none"
+                                >
+                                    {c('pass_2026: Action').t`Load more`}
+                                </Button>
+                            )}
                         </div>
                     );
                 })()}
-
-                {nextSince && (
-                    <div className="flex justify-center mt-3">
-                        <Button shape="outline" onClick={loadMore} loading={getActions.loading}>
-                            {c('pass_2026: Action').t`Load more`}
-                        </Button>
-                    </div>
-                )}
             </ModalTwoContent>
             <ModalTwoFooter />
         </PassModal>
