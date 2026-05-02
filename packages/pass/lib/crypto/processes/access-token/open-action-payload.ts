@@ -21,8 +21,8 @@ export const openActionPayload = async (
     const encrypted = Uint8Array.fromBase64(encodedPayload) as Uint8Array<ArrayBuffer>;
     const patKey = await importSymmetricKey(rawPatKey);
     const decrypted = await decryptData(patKey, encrypted, PassEncryptionTag.ActionPayload);
-
     const message = ActionPayload.fromBinary(decrypted);
+
     switch (message.content.oneofKind) {
         case 'agentAction':
             return { kind: 'agent-action', agentAction: message.content.agentAction };

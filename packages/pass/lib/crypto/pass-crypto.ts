@@ -681,7 +681,8 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         },
 
         async createAccessTokenShareKeys({ rawPatKey, shareId }) {
-            return processes.createAccessTokenShareKeys(rawPatKey, shareId);
+            const shareKeys = worker.getShareManager(shareId).getVaultShareKeys();
+            return processes.createAccessTokenShareKeys(rawPatKey, shareKeys);
         },
 
         async openActionPayload({ encodedPayload, rawPatKey }) {
