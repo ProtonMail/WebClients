@@ -1,6 +1,5 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
 import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { KeyRotationKeyPair } from '@proton/pass/types';
+import type { KeyRotationKeyPair, ShareKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 
 /** Wraps every rotation of a vault's share keys with the PAT's raw symmetric
@@ -8,10 +7,9 @@ import { PassEncryptionTag } from '@proton/pass/types';
  * Pass CLI rust `prepare_vault_access_keys` (AES-GCM, AAD=ShareKey). */
 export const createAccessTokenShareKeys = async (
     rawPatKey: Uint8Array<ArrayBuffer>,
-    shareId: string
+    shareKeys: ShareKey[]
 ): Promise<KeyRotationKeyPair[]> => {
     const patKey = await importSymmetricKey(rawPatKey);
-    const shareKeys = PassCrypto.getShareManager(shareId).getVaultShareKeys();
 
     return Promise.all(
         shareKeys.map(async ({ raw, rotation }) => {

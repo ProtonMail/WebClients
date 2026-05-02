@@ -10,7 +10,7 @@ import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 import { PassCrypto, exposePassCrypto } from './index';
 import { createPassCrypto } from './pass-crypto';
 import * as processes from './processes';
-import { decryptData } from './utils/crypto-helpers';
+import { decryptData, generateKey, importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
 import {
     TEST_KEY_PASSWORD,
@@ -591,6 +591,56 @@ describe('PassCrypto', () => {
 
         test('should throw if PassCrypto not hydrated', async () => {
             await expect(PassCrypto.moveItem({} as any)).rejects.toThrow(PassCryptoNotHydratedError);
+        });
+    });
+
+    describe('PassCrypto::createAccessTokenKey', () => {
+        afterEach(() => PassCrypto.clear());
+
+        test('should throw if PassCrypto not hydrated', async () => {
+            await expect(PassCrypto.createAccessTokenKey()).rejects.toThrow(PassCryptoNotHydratedError);
+        });
+
+        test('should create and round-trip the access token key', async () => {
+            await setupHydratedPassCrypto();
+            const { raw, encrypted } = await PassCrypto.createAccessTokenKey();
+
+            expect(raw).toBeInstanceOf(Uint8Array);
+            expect(raw.byteLength).toBe(32);
+
+            const result = await PassCrypto.openAccessTokenKey(encrypted);
+            expect(result).toStrictEqual(raw);
+        });
+    });
+
+    describe('PassCrypto::createAccessTokenShareKeys', () => {
+        afterEach(() => PassCrypto.clear());
+
+        test('should throw when `shareId` is unknown', async () => {
+            const rawPatKey = generateKey();
+            await expect(PassCrypto.createAccessTokenShareKeys({ rawPatKey, shareId: 'unknown' })).rejects.toThrow(
+                PassCryptoShareError
+            );
+        });
+
+        test('should encrypt each vault share key with the PAT key', async () => {
+            await setupHydratedPassCrypto();
+            const [encryptedShare, shareKey] = await createRandomShareResponses(userKey, userKey, address.ID);
+            const share = await PassCrypto.openShare({ encryptedShare, encryptedShareKeys: [shareKey] });
+
+            const rawPatKey = generateKey();
+            const patKey = await importSymmetricKey(rawPatKey);
+            const result = await PassCrypto.createAccessTokenShareKeys({ rawPatKey, shareId: share!.shareId });
+            const vaultKeys = PassCrypto.getShareManager(share!.shareId).getVaultShareKeys();
+
+            expect(result).toHaveLength(vaultKeys.length);
+
+            for (let i = 0; i < result.length; i++) {
+                expect(result[i].KeyRotation).toBe(vaultKeys[i].rotation);
+                const b64Key = Uint8Array.fromBase64(result[i].Key);
+                const decrypted = await decryptData(patKey, b64Key, PassEncryptionTag.ShareKey);
+                expect(decrypted).toStrictEqual(vaultKeys[i].raw);
+            }
         });
     });
 });
