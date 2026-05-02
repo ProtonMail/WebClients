@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -20,13 +21,17 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
+import { getRequiresAccountAppForTwoFactor } from '@proton/shared/lib/authentication/twoFactor';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
@@ -231,6 +236,7 @@ const SrpAuthModal = ({
 }: SrpAuthModalProps) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
+    const authentication = useAuthentication();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [step, setStep] = useState(Step.Password);
@@ -238,6 +244,7 @@ const SrpAuthModal = ({
     const hasBeenAutoSubmitted = useRef(false);
     const errorHandler = useErrorHandler();
     const [fidoError, setFidoError] = useState(false);
+    const [overrideUnsupportedFido2, setOverrideUnsupportedFido2] = useState(false);
     const initialInfoRef = useRef(initialInfo);
     const infoResultRef = useRef(
         getInitialInfoResultRef({
@@ -247,6 +254,19 @@ const SrpAuthModal = ({
             app: APP_NAME,
         })
     );
+
+    // Pre-check: if userSettings indicates this user can only 2FA via security key, but the current
+    // app/host doesn't support FIDO2, surface a redirect screen BEFORE the password is entered.
+    // Treated as optimistic — the authoritative `/auth/info` call still runs on submit. The override
+    // escape hatch handles edge cases like admin signed in as sub-user where userSettings is misleading.
+    const optimisticRequiresAccountApp =
+        scope === 'password' &&
+        !overrideUnsupportedFido2 &&
+        getRequiresAccountAppForTwoFactor({
+            enabled: userSettings?.['2FA']?.Enabled,
+            appName: APP_NAME,
+            hostname: location.hostname,
+        });
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
@@ -383,15 +403,34 @@ const SrpAuthModal = ({
     // NOTE: This will give wrong values for admins signed in as sub-users.
     const optimisticTwoFactorEnabled = twoFactor ? twoFactor.enabled : Boolean(userSettings?.['2FA']?.Enabled);
 
+    const accountAppHref = getAppHref('/', APPS.PROTONACCOUNT, authentication?.localID);
+
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
             <ModalHeader
                 title={
-                    step === Step.TWO_FA ? c('Title').t`Two-factor authentication` : c('Title').t`Enter your password`
+                    step === Step.TWO_FA
+                        ? c('Title').t`Two-factor authentication`
+                        : optimisticRequiresAccountApp
+                          ? c('Title').t`Continue in your ${BRAND_NAME} Account`
+                          : c('Title').t`Enter your password`
                 }
             />
             <ModalContent>
-                {step === Step.Password && (
+                {step === Step.Password && optimisticRequiresAccountApp && (
+                    <>
+                        <p className="mt-0">
+                            {c('Info')
+                                .t`This action requires re-authentication with your security key, which is only available in your ${BRAND_NAME} Account. Please continue there to complete this action.`}
+                        </p>
+                        <div className="mt-2">
+                            <InlineLinkButton type="button" onClick={() => setOverrideUnsupportedFido2(true)}>
+                                {c('Action').t`Continue here anyway`}
+                            </InlineLinkButton>
+                        </div>
+                    </>
+                )}
+                {step === Step.Password && !optimisticRequiresAccountApp && (
                     <>
                         <PasswordForm
                             key={`${rerender}`}
@@ -501,11 +540,24 @@ const SrpAuthModal = ({
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit" form={FORM_ID} loading={submitting}>
-                    {step === Step.Password && optimisticTwoFactorEnabled
-                        ? c('Action').t`Continue`
-                        : c('Action').t`Authenticate`}
-                </Button>
+                {step === Step.Password && optimisticRequiresAccountApp ? (
+                    <ButtonLike
+                        color="norm"
+                        as="a"
+                        href={accountAppHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={cancelClose}
+                    >
+                        {c('Action').t`Continue in ${BRAND_NAME} Account`}
+                    </ButtonLike>
+                ) : (
+                    <Button color="norm" type="submit" form={FORM_ID} loading={submitting}>
+                        {step === Step.Password && optimisticTwoFactorEnabled
+                            ? c('Action').t`Continue`
+                            : c('Action').t`Authenticate`}
+                    </Button>
+                )}
             </ModalFooter>
         </Modal>
     );
