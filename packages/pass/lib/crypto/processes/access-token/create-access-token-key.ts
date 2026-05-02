@@ -1,5 +1,5 @@
-import { CryptoProxy } from '@proton/crypto';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 export type CreateAccessTokenKeyData = {
     /** OpenPGP-encrypted+signed token key, base64 encoded — sent to the server */
@@ -23,5 +23,6 @@ export const createAccessTokenKey = async (
         signingKeys: privateKey,
         format: 'binary',
     });
+
     return { encrypted: encrypted.message.toBase64(), raw };
 };
