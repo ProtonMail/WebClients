@@ -11,6 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultMultiSelect } from '@proton/pass/components/Vault/VaultSelect';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { getAccessTokenGrants, updateAccessTokenAccess } from '@proton/pass/store/actions';
@@ -31,7 +32,7 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
     const tokenId = token.PersonalAccessTokenID;
 
     const writableVaults = useSelector(selectWritableVaults);
-    const grants = useSelector(selectAccessTokenGrants(tokenId));
+    const grants = useMemoSelector(selectAccessTokenGrants, [tokenId]);
     const vaults = useMemo(() => [...writableVaults].sort(sortOn('createTime', 'ASC')), [writableVaults]);
     const shareIDs = useMemo(() => new Set(vaults.map(prop('shareId'))), [vaults]);
     const grantedShareIDs = useMemo(() => intoGrantedShareIDs(grants, shareIDs), [grants, shareIDs]);
