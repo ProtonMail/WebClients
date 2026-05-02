@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,6 +14,7 @@ import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/C
 import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAgentInstructions } from '@proton/pass/store/actions';
+import type { MaybeNull } from '@proton/pass/types';
 
 type Props = {
     /** Full env-var value: `<server-issued-token>::<urlsafe-base64-no-pad(raw-key)>`.
@@ -39,17 +40,14 @@ const CodeBlock: FC<{ value: string; onCopy: (v: string) => void }> = ({ value, 
 );
 
 const AgentInstructions: FC<{ envVar: string; copy: (v: string) => void }> = ({ envVar, copy }) => {
-    const [template, setTemplate] = useState<string | null>(null);
-    const fetchInstructions = useRequest(getAgentInstructions, {
-        loading: true,
-        onSuccess: setTemplate,
-    });
+    const [template, setTemplate] = useState<MaybeNull<string>>(null);
+    const fetchInstructions = useRequest(getAgentInstructions, { loading: true, onSuccess: setTemplate });
+    const markdown = useMemo(
+        () => (template ? template.replaceAll(ACCESS_TOKEN_PLACEHOLDER, envVar) : null),
+        [template]
+    );
 
-    useEffect(() => {
-        fetchInstructions.dispatch();
-    }, []);
-
-    const markdown = template ? template.replaceAll(ACCESS_TOKEN_PLACEHOLDER, envVar) : null;
+    useEffect(() => fetchInstructions.dispatch(), []);
 
     if (markdown) {
         return (
@@ -106,14 +104,12 @@ export const TokenRevealModal: FC<Props> = ({ envVar, agent, onClose }) => {
 
     if (agent) {
         return (
-            <PassModal open onClose={onClose} onReset={onClose} size="xlarge">
+            <PassModal open onClose={onClose} onReset={onClose} size="xlarge" enableCloseWhenClickOutside>
                 <ModalTwoHeader title={c('Title').t`Agent setup instructions`} />
                 <ModalTwoContent>
                     <AgentInstructions envVar={envVar} copy={copy} />
                 </ModalTwoContent>
-                <ModalTwoFooter>
-                    <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                </ModalTwoFooter>
+                <ModalTwoFooter />
             </PassModal>
         );
     }
@@ -126,7 +122,7 @@ export const TokenRevealModal: FC<Props> = ({ envVar, agent, onClose }) => {
     );
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="large">
+        <PassModal open onClose={onClose} onReset={onClose} size="large" enableCloseWhenClickOutside>
             <ModalTwoHeader title={c('Title').t`Your new access token`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0">
@@ -147,7 +143,6 @@ export const TokenRevealModal: FC<Props> = ({ envVar, agent, onClose }) => {
                 </ol>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
                 <Button color="norm" onClick={() => copy(envVar)}>
                     {c('Action').t`Copy token`}
                 </Button>
