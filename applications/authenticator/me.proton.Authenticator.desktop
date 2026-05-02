@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Proton Authenticator
+Comment=End-to-end encrypted 2FA code manager by Proton
+Exec=proton-authenticator %U
+Icon=me.proton.Authenticator
+Terminal=false
+Type=Application
+Categories=Utility;Security;
+StartupWMClass=Proton Authenticator
