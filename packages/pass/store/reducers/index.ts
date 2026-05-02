@@ -8,7 +8,7 @@ import type { Maybe } from '@proton/pass/types';
 import { zeroize } from '@proton/pass/utils/object/zero';
 
 import { access } from './access';
-import accessToken from './access-token';
+import accessTokens from './access-tokens';
 import alias from './alias';
 import files from './files';
 import filters from './filters';
@@ -26,7 +26,7 @@ import { sharesDedupe } from './shares-dedupe';
 import user from './user';
 
 export * from './access';
-export * from './access-token';
+export * from './access-tokens';
 export * from './alias';
 export * from './files';
 export * from './filters';
@@ -40,7 +40,7 @@ export * from './user';
 
 export const reducerMap = {
     access,
-    accessToken,
+    accessTokens,
     alias,
     files,
     filters,
