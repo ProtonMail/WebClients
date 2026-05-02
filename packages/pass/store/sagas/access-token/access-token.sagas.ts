@@ -34,6 +34,7 @@ import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/sto
 import { selectShareState } from '@proton/pass/store/selectors/shares';
 import type { Maybe, PersonalAccessTokenShareResponse } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { logger } from '@proton/pass/utils/logger';
 
 const listSaga = createRequestSaga({
     actions: getAccessTokens,
@@ -48,7 +49,12 @@ const createSaga = createRequestSaga({
         const tokenId = data.PersonalAccessTokenID;
 
         if (shareIds.length > 0) {
-            yield all(shareIds.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey)));
+            try {
+                const grantRequests = shareIds.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey));
+                yield all(grantRequests);
+            } catch (err) {
+                logger.error(`[PAT] Granting access to PAT failed`, err);
+            }
         }
 
         return {
@@ -92,11 +98,13 @@ const updateAccessSaga = createRequestSaga({
 
         if (toGrant.length > 0) {
             const rawPatKey: Uint8Array<ArrayBuffer> = yield call(PassCrypto.openAccessTokenKey, pat.PersonalAccessTokenKey);
-            yield all(toGrant.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey)));
+            const grantRequests = toGrant.map((shareId) => call(grantPersonalAccessTokenVaultAccess, tokenId, shareId, rawPatKey));
+            yield all(grantRequests);
         }
 
         if (toRevoke.length > 0) {
-            yield all(toRevoke.map((shareId) => call(revokePersonalAccessTokenAccess, tokenId, shareId)));
+            const revokeRequests = toRevoke.map((shareId) => call(revokePersonalAccessTokenAccess, tokenId, shareId));
+            yield all(revokeRequests);
         }
 
         const grants: PersonalAccessTokenShareResponse[] = yield call(listPersonalAccessTokenAccess, tokenId);
