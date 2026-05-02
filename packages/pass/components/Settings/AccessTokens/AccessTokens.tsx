@@ -67,7 +67,7 @@ const AccessTokensList: FC = () => {
     const renderContent = () => {
         if (!list.loading && tokens.length === 0) {
             return (
-                <div className="flex flex-column items-center text-center py-6 gap-2">
+                <div className="flex flex-column items-center text-center py-2 gap-2">
                     <strong>{c('pass_2026: Title').t`No access tokens yet`}</strong>
                     <span className="color-weak text-sm">
                         {c('pass_2026: Info')
@@ -130,7 +130,7 @@ const AccessTokensList: FC = () => {
 };
 
 const AccessTokensUpgrade: FC = () => (
-    <div className="flex flex-column items-center text-center py-6 gap-3">
+    <div className="flex flex-column items-center text-center py-2 gap-3">
         <strong>{c('pass_2026: Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
         <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
             {c('pass_2026: Info')

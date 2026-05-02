@@ -47,9 +47,12 @@ const getExpiryLabel = (expireTime: number): string => {
         const abs = Math.abs(hours);
         return c('pass_2026: Info').ngettext(msgid`Expired ${abs} hour ago`, `Expired ${abs} hours ago`, abs);
     }
+
     if (hours === 0) return c('pass_2026: Info').t`Expires in less than an hour`;
     return c('pass_2026: Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
 };
+
+const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
 
 export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
     const { statusBadge, expiryLabel, isExpired, createdDate } = useMemo<Derived>(() => {
@@ -63,7 +66,7 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
     }, [token.ExpireTime, token.CreateTime]);
 
     return (
-        <Card rounded className="flex items-center gap-3 p-4 border-weak" background={false}>
+        <Card rounded className="flex items-center gap-3 w-full border-weak" background={false}>
             <div
                 className={clsx('flex items-center justify-center rounded bg-weak shrink-0', isExpired && 'opacity-70')}
                 style={{ width: '2.5rem', height: '2.5rem' }}
@@ -71,14 +74,14 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
                 <IcKey size={5} />
             </div>
 
-            <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                    <strong className={clsx('text-ellipsis', isExpired && 'color-weak')}>{token.Name}</strong>
-                    <Badge type={statusBadge.type} className="m-0 text-sm">
+            <div className="flex-1">
+                <div className="flex items-center gap-1 flex-nowrap overflow-hidden mb-0.5">
+                    <strong className={clsx('text-ellipsis mr-1', isExpired && 'color-weak')}>{token.Name}</strong>
+                    <Badge type={statusBadge.type} className={BADGE_CLASSNAMES}>
                         {statusBadge.label}
                     </Badge>
                     {token.Flags?.PassAgent && (
-                        <Badge type="info" className="m-0 text-sm">
+                        <Badge type="info" className={BADGE_CLASSNAMES}>
                             {c('pass_2026: Status').t`Agent`}
                         </Badge>
                     )}
