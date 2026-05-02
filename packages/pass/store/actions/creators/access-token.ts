@@ -10,7 +10,7 @@ import type {
     UpdateAccessTokenAccessIntent,
 } from '@proton/pass/lib/access-token/access-token.types';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { sessionRequest } from '@proton/pass/store/request/configs';
+import { dataRequest, sessionRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
@@ -94,5 +94,5 @@ export const getAccessTokenActions = requestActionsFactory<GetAccessTokenActions
 });
 
 export const getAgentInstructions = requestActionsFactory<void, string>('access-token::agent-instructions')({
-    success: sessionRequest(UNIX_HOUR),
+    success: dataRequest(UNIX_HOUR),
 });
