@@ -66,11 +66,11 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
     useEffect(() => setSelectedShareIds(grantedShareIDs), [grantedShareIDs]);
 
     return (
-        <PassModal open onClose={onClose} onReset={onClose} size="large">
+        <PassModal open onClose={onClose} onReset={onClose} size="large" enableCloseWhenClickOutside>
             <ModalTwoHeader title={c('pass_2026: Title').t`Manage vault access`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0 mb-3">
-                    {c('pass_2026: Info').t`Select the vaults "${token.Name}" can read. Changes apply immediately.`}
+                    {c('pass_2026: Info').t`Select the vaults "${token.Name}" can read.`}
                 </p>
 
                 {fetchAccess.loading ? (
