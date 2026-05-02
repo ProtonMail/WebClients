@@ -13,9 +13,6 @@ import { epochHoursFromNow } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
-import type { TokenStatus } from './helpers';
-import { getTokenStatus } from './helpers';
-
 type Derived = {
     statusBadge: { label: string; type: BadgeType };
     expiryLabel: string;
@@ -29,6 +26,11 @@ type Props = {
     onManageAccess: (token: PersonalAccessToken) => void;
     onViewActions: (token: PersonalAccessToken) => void;
 };
+
+type TokenStatus = 'active' | 'expiring' | 'expired';
+
+const EXPIRING_SOON_THRESHOLD = 3600;
+const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
 
 const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType } => {
     switch (status) {
@@ -52,7 +54,12 @@ const getExpiryLabel = (expireTime: number): string => {
     return c('pass_2026: Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
 };
 
-const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
+const getTokenStatus = (expireTime: number): TokenStatus => {
+    const now = Math.floor(Date.now() / 1000);
+    if (expireTime < now) return 'expired';
+    if (expireTime - now <= EXPIRING_SOON_THRESHOLD) return 'expiring';
+    return 'active';
+};
 
 export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
     const { statusBadge, expiryLabel, isExpired, createdDate } = useMemo<Derived>(() => {
