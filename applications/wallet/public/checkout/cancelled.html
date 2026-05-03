@@ -29,7 +29,7 @@
     </body>
     <script type="application/javascript">
         if (window.opener) {
-            window.opener.postMessage({ type: 'CheckoutCancelled' }, '*');
+            window.opener.postMessage({ type: 'CheckoutCancelled' }, window.location.origin);
         }
     </script>
 </html>

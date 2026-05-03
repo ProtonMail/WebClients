@@ -30,7 +30,7 @@
     </body>
     <script type="application/javascript">
         if (window.opener) {
-            window.opener.postMessage({ type: 'CheckoutCompleted' }, '*');
+            window.opener.postMessage({ type: 'CheckoutCompleted' }, window.location.origin);
         }
     </script>
 </html>

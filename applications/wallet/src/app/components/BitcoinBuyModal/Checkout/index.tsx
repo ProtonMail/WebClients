@@ -68,6 +68,18 @@ export const Checkout = ({
     const [isLoading, setIsLoading] = useState(true);
 
     const handleEvent = (event?: MessageEvent<any>) => {
+        if (!event) {
+            return;
+        }
+
+        const isAllowedOrigin =
+            event.origin === window.location.origin ||
+            (VOLT_WEBSITE && event.origin.endsWith(VOLT_WEBSITE));
+
+        if (!isAllowedOrigin) {
+            return;
+        }
+
         if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
             onBack();
         }

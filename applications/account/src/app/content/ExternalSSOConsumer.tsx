@@ -46,7 +46,7 @@ const ExternalSSOConsumer = ({ children, onLogin, onOAuthLogin }: Props) => {
              */
             if (uid && token && window.opener) {
                 flow = ExternalSSOFlow.Sp;
-                window.opener.postMessage({ action: 'sso', payload: { token, uid } });
+                window.opener.postMessage({ action: 'sso', payload: { token, uid } }, window.location.origin);
                 await wait(5000);
             }
             onLogin({ username, token, flow });
