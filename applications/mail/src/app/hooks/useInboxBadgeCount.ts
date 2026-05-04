@@ -1,25 +1,20 @@
 import { useEffect } from 'react';
 
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import noop from '@proton/utils/noop';
 
+import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
+
 const useInboxBadgeCount = () => {
-    const [mailSettings] = useMailSettings();
-    const [conversationCounts] = useConversationCounts();
-    const [messageCounts] = useMessageCounts();
-    const counts = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
+    const { getLocationCount } = useMailboxCounter();
+    const inboxConvCount = getLocationCount(MAILBOX_LABEL_IDS.INBOX);
 
     // Updates the notification badge on the desktop app icon depending on the unread count
     useEffect(() => {
-        const inboxConvCount = counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.INBOX);
-        let payload = inboxConvCount?.Unread;
+        let payload = inboxConvCount.Unread;
 
         // This is expected for the first render,
         // until the inbox has been loaded
@@ -44,7 +39,7 @@ const useInboxBadgeCount = () => {
             // PWA badge
             navigator.setAppBadge(payload).catch(noop);
         }
-    }, [counts]);
+    }, [inboxConvCount]);
 };
 
 export default useInboxBadgeCount;

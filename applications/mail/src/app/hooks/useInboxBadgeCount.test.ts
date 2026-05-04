@@ -1,19 +1,15 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mock('@proton/mail/store/counts/conversationCountsSlice');
-jest.mock('@proton/mail/store/counts/messageCountsSlice');
 jest.mock('@proton/shared/lib/helpers/desktop');
 const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHelpers>;
+
+jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
+const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
 
 declare const global: {
     ipcInboxMessageBroker?: any;
@@ -21,10 +17,16 @@ declare const global: {
 
 const originalWindow = { ...window };
 
+const mockInboxUnread = (unread: number | undefined) => {
+    mockUseMailboxCounter.mockReturnValue({
+        loading: false,
+        counterMap: {},
+        getLocationCount: jest.fn().mockReturnValue({ Unread: unread, Total: unread ?? 0 }),
+        getCurrentLocationCount: jest.fn(),
+    });
+};
+
 describe('useInboxBadgeCount', () => {
-    const useConversationCountsMock = useConversationCounts as jest.Mock;
-    const useMessageCountsMock = useMessageCounts as jest.Mock;
-    const useMailSettingsMock = useMailSettings as jest.Mock;
     const ipcInboxMessageBrokerMock = {
         send: jest.fn(),
     };
@@ -41,8 +43,7 @@ describe('useInboxBadgeCount', () => {
 
     it('should not call when not on desktop', () => {
         desktopHelpersMock.isElectronMail = false;
-        useConversationCountsMock.mockReturnValue([]);
-        useMessageCountsMock.mockReturnValue([]);
+        mockInboxUnread(0);
 
         renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
@@ -50,9 +51,7 @@ describe('useInboxBadgeCount', () => {
 
     it('should call with 0 when no count', () => {
         desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
-        useConversationCountsMock.mockReturnValue([[]]);
-        useMessageCountsMock.mockReturnValue([]);
+        mockInboxUnread(undefined);
 
         renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
@@ -60,49 +59,23 @@ describe('useInboxBadgeCount', () => {
 
     it('should call with 0 when negative count', () => {
         desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
-        useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: -1, Total: 1 }]]);
-        useMessageCountsMock.mockReturnValue([]);
+        mockInboxUnread(-1);
 
         renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 
-    it('should call with 1 when 1 unread conversation', () => {
+    it('should call with 1 when 1 unread', () => {
         desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
-        useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
-        useMessageCountsMock.mockReturnValue([]);
+        mockInboxUnread(1);
 
         renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
     });
 
-    it('should call with 100 when 100 unread conversation', () => {
+    it('should call with 100 when 100 unread', () => {
         desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
-        useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
-        useMessageCountsMock.mockReturnValue([]);
-
-        renderHook(() => useInboxBadgeCount());
-        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
-    });
-
-    it('should call with 1 when 1 unread message', () => {
-        desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.SINGLE }]);
-        useConversationCountsMock.mockReturnValue([]);
-        useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 1 }]]);
-
-        renderHook(() => useInboxBadgeCount());
-        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
-    });
-
-    it('should call with 100 when 100 unread message', () => {
-        desktopHelpersMock.isElectronMail = true;
-        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.SINGLE }]);
-        useConversationCountsMock.mockReturnValue([]);
-        useMessageCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 100, Total: 100 }]]);
+        mockInboxUnread(100);
 
         renderHook(() => useInboxBadgeCount());
         expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
