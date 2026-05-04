@@ -53,6 +53,7 @@ import { useWasmApp } from '../../contexts/WasmContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
+import { logJoinStats } from '../../hooks/telemetry/meetingTelemetry';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
@@ -70,6 +71,7 @@ import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
+import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { cleanupWasmDependencies } from '../../utils/wasmUtils';
@@ -90,6 +92,18 @@ interface ProtonMeetContainerProps {
     isSubUser: boolean;
 }
 
+const getNetworkHints = () => {
+    const connection = (navigator as any).connection;
+    if (!connection) {
+        return {};
+    }
+    return {
+        networkEffectiveType: connection.effectiveType as string | undefined,
+        networkRtt: connection.rtt as number | undefined,
+        networkDownlink: connection.downlink as number | undefined,
+    };
+};
+
 export const ProtonMeetContainer = ({
     room,
     keyProvider,
@@ -105,6 +119,7 @@ export const ProtonMeetContainer = ({
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
     const usePreSharedKey = useFlag('MeetPreSharedKey');
+    const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
 
     useWakeLock();
 
@@ -300,7 +315,7 @@ export const ProtonMeetContainer = ({
             keyProvider.cleanCurrent();
         }
         lastEpochRef.current = null;
-    }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider]);
+    }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider, lastEpochRef, mlsSetupDone]);
 
     useSafariWebsocketVisibilityHandler({
         wasmApp,
@@ -444,6 +459,13 @@ export const ProtonMeetContainer = ({
     const handleJoin = async (displayName: string, meetingToken: string = token, meetingPassword: string) => {
         setDisplayName(displayName);
 
+        let tokenFetchMs: number | null = null;
+        let mlsSetupMs: number | null = null;
+        let livekitConnectMs: number | null = null;
+        let deviceInitMs: number | null = null;
+        let participantCount = 0;
+        let lastConnectionInfo = { stunFailed: false, connectionAttempts: 0 };
+
         try {
             const sanitizedParticipantName = sanitizeMessage(displayName);
             const meetingInfo = await getCachedMeetingInfo(meetingToken);
@@ -458,11 +480,13 @@ export const ProtonMeetContainer = ({
                 ? await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName)
                 : '';
 
+            const t0 = performance.now();
             const { websocketUrl, accessToken } = await getAccessDetails({
                 displayName: sanitizedParticipantName,
                 token: meetingToken,
                 encryptedDisplayName: encryptedDisplayName,
             });
+            tokenFetchMs = Math.round(performance.now() - t0);
 
             websocketUrlRef.current = websocketUrl;
 
@@ -477,14 +501,17 @@ export const ProtonMeetContainer = ({
 
             // get participants count from the API so we can know which joinType to use based on the participants count
             const participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
+            participantCount = participantsCountValue;
 
             // Set count for prejoin loader
             setPrejoinParticipantCount(participantsCountValue);
 
             accessTokenRef.current = accessToken;
 
+            const t1 = performance.now();
             const { key: groupKey, epoch } =
                 (await handleMlsSetup(meetingToken, accessToken, meetingPassword, participantsCountValue)) || {};
+            mlsSetupMs = Math.round(performance.now() - t1);
 
             reportMLSRelatedError(groupKey, epoch);
 
@@ -515,9 +542,12 @@ export const ProtonMeetContainer = ({
                 // rather than a post-connect renegotiation.
                 // On Safari with H264, renegotiation can cause the simulcast encoder to fail silently.
                 // E2EE is already enabled above so the queued publish will be encrypted.
+                const t2 = performance.now();
                 const initDevices = initializeDevices(5_000);
-                await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
+                lastConnectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
+                livekitConnectMs = Math.round(performance.now() - t2);
                 await initDevices;
+                deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
@@ -534,6 +564,29 @@ export const ProtonMeetContainer = ({
             }
 
             await getParticipants(meetingToken);
+
+            if (meetJoinTelemetryEnabled) {
+                const totalJoinMs = Date.now() - loadingStartTimeRef.current;
+                if (totalJoinMs > 15_000) {
+                    const iceCandidateInfo = await getIceCandidateInfo(room);
+                    logJoinStats({
+                        roomId: meetingToken,
+                        isReconnect: false,
+                        isInstantJoin,
+                        participantCount,
+                        tokenFetchMs,
+                        mlsSetupMs,
+                        livekitConnectMs,
+                        deviceInitMs,
+                        totalJoinMs,
+                        stunFailed: lastConnectionInfo.stunFailed,
+                        turnFallback: isUsingTurnRelay,
+                        connectionAttempts: lastConnectionInfo.connectionAttempts,
+                        ...iceCandidateInfo,
+                        ...getNetworkHints(),
+                    });
+                }
+            }
 
             // In case of mobile devices we need to set these states early, as the camera preview being active while initializing the devices for LiveKit causes issues.
             if (isMobile()) {
@@ -647,6 +700,24 @@ export const ProtonMeetContainer = ({
                 }
             }
         } catch (error: any) {
+            if (meetJoinTelemetryEnabled) {
+                logJoinStats({
+                    roomId: meetingToken,
+                    isReconnect: false,
+                    isInstantJoin,
+                    participantCount,
+                    tokenFetchMs,
+                    mlsSetupMs,
+                    livekitConnectMs,
+                    deviceInitMs,
+                    totalJoinMs: null,
+                    stunFailed: lastConnectionInfo.stunFailed,
+                    turnFallback: isUsingTurnRelay,
+                    connectionAttempts: lastConnectionInfo.connectionAttempts,
+                    ...getNetworkHints(),
+                });
+            }
+
             reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
 
             setJoiningInProgress(false);
@@ -839,6 +910,7 @@ export const ProtonMeetContainer = ({
 
     useEffect(() => {
         void setup();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const prepareUpsell = () => {
@@ -964,7 +1036,7 @@ export const ProtonMeetContainer = ({
         return () => {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
-    }, [joinedRoom]);
+    }, [joinedRoom, promptOnTabClose]);
 
     // Actually disconnect when page unloads (after user confirms)
     useEffect(() => {
@@ -983,7 +1055,7 @@ export const ProtonMeetContainer = ({
         return () => {
             window.removeEventListener('unload', handleUnload);
         };
-    }, [joinedRoom, room, wasmApp, reportMeetError]);
+    }, [joinedRoom, room, wasmApp, reportMeetError, withMeetingLinkNameTag]);
 
     const handleInstantJoin = async () => {
         if (isInstantJoin) {
@@ -995,6 +1067,7 @@ export const ProtonMeetContainer = ({
 
     useEffect(() => {
         void handleInstantJoin();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -1002,7 +1075,7 @@ export const ProtonMeetContainer = ({
             return;
         }
 
-        const unblock = history.block((location, action) => {
+        const unblock = history.block((_location, action) => {
             if (action === 'POP') {
                 const userIsAdminLevel = isLocalParticipantHost || isLocalParticipantAdminLevelUser;
                 if (!userIsAdminLevel || hasAnotherAdmin) {
@@ -1031,7 +1104,15 @@ export const ProtonMeetContainer = ({
         return () => {
             unblock();
         };
-    }, [joinedRoom, isLocalParticipantHost, isLocalParticipantAdminLevelUser, hasAnotherAdmin, history]);
+    }, [
+        joinedRoom,
+        isLocalParticipantHost,
+        isLocalParticipantAdminLevelUser,
+        hasAnotherAdmin,
+        history,
+        dispatch,
+        room.localParticipant.videoTrackPublications,
+    ]);
 
     const getKeychainIndexInformation = useCallback(() => {
         return keyProvider.getKeychainIndexInformation() ?? [];

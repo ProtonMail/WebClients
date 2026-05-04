@@ -19,6 +19,8 @@ export const isConnectionTimeoutError = (error: any): boolean => {
     return msg.includes('Connection timeout after');
 };
 
+export type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number };
+
 interface UseLiveKitConnectionParams {
     room: Room;
     reportMeetError: (msg: string, options?: unknown) => void;
@@ -26,7 +28,7 @@ interface UseLiveKitConnectionParams {
 }
 
 export interface UseLiveKitConnectionResult {
-    connectWithStunFallbackToTurnRelay: (url: string, token: string, timeout: number) => Promise<void>;
+    connectWithStunFallbackToTurnRelay: (url: string, token: string, timeout: number) => Promise<ConnectionInfo>;
     isUsingTurnRelay: boolean;
     joiningLoaderHeader: string | undefined;
     joiningLoaderSubtitle: string | undefined;
@@ -116,12 +118,16 @@ export const useLiveKitConnection = ({
         }
     };
 
-    const connectWithStunFallbackToTurnRelay = async (url: string, token: string, timeout: number): Promise<void> => {
+    const connectWithStunFallbackToTurnRelay = async (
+        url: string,
+        token: string,
+        timeout: number
+    ): Promise<ConnectionInfo> => {
         const noMediaPermission = cameraPermission !== 'granted' && microphonePermission !== 'granted';
         if (isFirefox() && noMediaPermission) {
             await connectViaTurnRelay(url, token, timeout);
             setIsUsingTurnRelay(true);
-            return;
+            return { stunFailed: false, connectionAttempts: 1 };
         }
 
         try {
@@ -134,6 +140,7 @@ export const useLiveKitConnection = ({
                 c('Warning').t`Trying another route…`
             );
             setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
+            return { stunFailed: false, connectionAttempts: 1 };
         } catch (roomConnectionError: any) {
             if (!isConnectionError(roomConnectionError) && !isConnectionTimeoutError(roomConnectionError)) {
                 throw roomConnectionError;
@@ -157,6 +164,7 @@ export const useLiveKitConnection = ({
 
             await connectViaTurnRelay(url, token, timeout);
             setIsUsingTurnRelay(true);
+            return { stunFailed: true, connectionAttempts: 2 };
         }
     };
 
