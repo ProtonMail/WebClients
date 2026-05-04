@@ -258,7 +258,7 @@ const AutomaticSubscriptionModal = () => {
                     subscription,
                     protonConfig,
                     user,
-                    lastSubscriptionEnd: previousSubscription?.previousSubscriptionEndTime,
+                    lastSubscriptionEnd: previousSubscription?.cancelTime,
                     preferredCurrency,
                     offerConfig: config,
                 };

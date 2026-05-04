@@ -15,7 +15,7 @@ describe('computeOptimisticCheckResult', () => {
         jest.useRealTimers();
     });
 
-    it('should return check result that uses the computed susbcription mode and computed renew properties', () => {
+    it('should return check result that uses the computed subscription mode and computed renew properties', () => {
         expect(
             computeOptimisticCheckResult(
                 {
