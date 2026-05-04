@@ -25,13 +25,14 @@ import { selectProvisionalAttachments, selectSpaceById } from '../../redux/selec
 import { upsertAttachment } from '../../redux/slices/core/attachments';
 import type { Attachment, Message } from '../../types';
 import { ComposerMode } from '../../types';
+import type { Attachment, Message } from '../../types';
+import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
-import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
@@ -86,6 +87,7 @@ export type ComposerComponentProps = {
     canShowLumoUpsellToggle?: boolean;
     canShowGuestNotificationCard?: boolean;
     placeholder?: string;
+    optionalElementBelowComposer?: React.ReactNode;
     /** Minimal agent surface: hides image creation, sketch and Drive upload from the composer. */
     isAgent?: boolean;
 };
@@ -117,6 +119,7 @@ const ComposerComponentInner = ({
     placeholder,
     canShowLumoUpsellToggle = false,
     canShowGuestNotificationCard = false,
+    optionalElementBelowComposer,
     isAgent = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
@@ -366,7 +369,8 @@ const ComposerComponentInner = ({
                     <div
                         className={clsx(
                             'lumo-input-container bg-norm border border-norm  w-full',
-                            isGhostChatMode && 'ghost-mode'
+                            isGhostChatMode && 'ghost-mode',
+                            composerMode === ComposerMode.NEW_CONVERSATION && '--glowing-composer'
                         )}
                     >
                         {canUseAgents && <ComposerAgentBar conversationId={messageChain?.[0]?.conversationId} />}
@@ -407,6 +411,7 @@ const ComposerComponentInner = ({
                             isAgent={isAgent}
                         />
                     </div>
+                    {optionalElementBelowComposer}
                     {isGuest && (
                         <TermsAndConditions className={clsx('m-0', isAgent ? 'text-center' : 'hidden md:block')} />
                     )}
