@@ -12,9 +12,9 @@ import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { isStarred, isUnread } from '../../helpers/elements';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import ToolbarDropdown from './ToolbarDropdown';
+import { isStarred, isUnread } from '../../../helpers/elements';
+import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
+import ToolbarDropdown from '../ToolbarDropdown';
 
 interface Props {
     labelID: string;

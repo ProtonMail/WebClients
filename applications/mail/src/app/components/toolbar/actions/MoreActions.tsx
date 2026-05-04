@@ -9,10 +9,10 @@ import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import noop from '@proton/utils/noop';
 
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import useBlockSender from '../../hooks/useBlockSender';
-import type { Element } from '../../models/element';
-import ToolbarDropdown from './ToolbarDropdown';
+import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
+import useBlockSender from '../../../hooks/useBlockSender';
+import type { Element } from '../../../models/element';
+import ToolbarDropdown from '../ToolbarDropdown';
 
 interface Props {
     selectedIDs: string[];

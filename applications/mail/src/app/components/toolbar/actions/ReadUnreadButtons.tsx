@@ -12,8 +12,8 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { elementsAreUnread as elementsAreUnreadSelector, params } from '../../store/elements/elementsSelectors';
-import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
+import { elementsAreUnread as elementsAreUnreadSelector, params } from '../../../store/elements/elementsSelectors';
+import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 
 interface Props {
     selectedIDs: string[];
