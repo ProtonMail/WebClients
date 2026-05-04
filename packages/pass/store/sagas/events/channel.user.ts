@@ -126,8 +126,8 @@ function* onUserEvent(
     yield put((planChanged ? withRevalidate : identity)(getInAppNotifications.intent()));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
-    yield put(getOrganizationPauseList.intent());
     yield put(getInAppNotifications.intent());
+    if (EXTENSION_BUILD) yield put(getOrganizationPauseList.intent());
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
