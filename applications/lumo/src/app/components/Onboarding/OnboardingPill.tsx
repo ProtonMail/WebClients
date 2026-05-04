@@ -15,13 +15,12 @@ const OnboardingPill = ({ onClick, className }: OnboardingPillProps) => {
         // <div className="absolute bottom-0 right-0 mb-4 mr-4">
         <Button
             onClick={onClick}
-            shape="outline"
-            pill
+            shape="ghost"
             color="weak"
-            className={clsx('inline-flex flex-row flex-nowrap gap-2 items-center', className)}
+            className={clsx('inline-flex flex-row flex-nowrap gap-2 items-center color-hint', className)}
         >
-            <IcLockCheckFilled className="color-primary" />
-            <span className="color-weak text-sm">{c('collider_2025: Pill').t`Protected by ${BRAND_NAME}`}</span>
+            <IcLockCheckFilled />
+            <span className="text-sm">{c('collider_2025: Pill').t`Protected by ${BRAND_NAME}`}</span>
         </Button>
         // </div>
     );
