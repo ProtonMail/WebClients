@@ -60,13 +60,11 @@ export const SidebarBottomUserArea = () => {
 
     return (
         <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between">
-            <div className="w-3/4">
-                <div className="sidebar-item-text">
-                    <DropdownComponent app={APP_NAME} dropdownIcon={undefined} />
+            <div className="sidebar-item-text w-full">
+                <DropdownComponent app={APP_NAME} dropdownIcon={undefined} />
                     {/* <UserDropdown app={APP_NAME} dropdownIcon={undefined} className="border-none">
-                        <LumoUserDropdownContent />
-                    </UserDropdown> */}
-                </div>
+                    <LumoUserDropdownContent />
+                </UserDropdown> */}
             </div>
             {/* <CollapseToggle className="mr-0 w-auto" /> */}
         </div>
