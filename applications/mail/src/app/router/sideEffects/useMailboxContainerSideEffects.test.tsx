@@ -76,7 +76,7 @@ describe('useMailboxContainerSideEffects', () => {
         expect(useInboxDesktopElementId).toHaveBeenCalledWith({ isSearch: props.isSearch });
         expect(useApplyEncryptedSearch).toHaveBeenCalledWith(props.elementsParams);
         expect(useMailboxPageTitle).toHaveBeenCalledWith();
-        expect(useMailboxFavicon).toHaveBeenCalledWith(props.labelID);
+        expect(useMailboxFavicon).toHaveBeenCalledWith();
         expect(useInboxBadgeCount).toHaveBeenCalled();
         expect(useNewEmailNotification).toHaveBeenCalled();
         expect(useCalendars).toHaveBeenCalled();
@@ -121,6 +121,6 @@ describe('useMailboxContainerSideEffects', () => {
         expect(useInboxDesktopElementId).toHaveBeenLastCalledWith({ isSearch: true });
         expect(useApplyEncryptedSearch).toHaveBeenLastCalledWith(updatedProps.elementsParams);
         expect(useMailboxPageTitle).toHaveBeenLastCalledWith();
-        expect(useMailboxFavicon).toHaveBeenLastCalledWith('sent');
+        expect(useMailboxFavicon).toHaveBeenLastCalledWith();
     });
 });
