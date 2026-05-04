@@ -17,7 +17,6 @@ interface TableEditorProps {
 
 function TableEditor({ table, onDone }: TableEditorProps) {
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
-  const theme = useUI((ui) => ui.legacy.theme)
   const onUpdateTable = useUI((ui) => ui.legacy.onUpdateTable)
   const form = useForm({ defaultValues: table })
   const formValues = form.watch()
@@ -28,12 +27,7 @@ function TableEditor({ table, onDone }: TableEditorProps) {
     const tableTheme = values.theme ?? 'TableStyleLight1'
     let bandedRange = values.bandedRange
     if (table.showRowStripes !== showRowStripes || table.showColumnStripes !== showColumnStripes) {
-      bandedRange = findMatchingBandProperty(
-        tableTheme,
-        showRowStripes ?? undefined,
-        showColumnStripes ?? undefined,
-        theme,
-      )
+      bandedRange = findMatchingBandProperty(tableTheme, showRowStripes ?? undefined, showColumnStripes ?? undefined)
       if (!showColumnStripes) {
         delete bandedRange?.columnProperties
       }

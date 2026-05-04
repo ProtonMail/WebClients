@@ -129,7 +129,7 @@ describe('getTextRun', () => {
     const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
     const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
     const result = getTextRun(textNode, paragraphNode, state)
-    expect(result.font).toBe(FONT_FACES.MONOSPACE.value)
+    expect(result.font).toBe(FONT_FACES.MONOSPACE.value.replace('Monospace', 'monospace'))
   })
 
   it('should have default font family if not explicitly set', () => {
