@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { isInDeletedFolder } from '../../helpers/elements';
 import { useMailboxListContext } from './MailboxListProvider';
-import MailboxListScreenReaderHeading from './MailboxListScreenReaderHeading';
+import { MailboxListScreenReaderHeading } from './MailboxListScreenReaderHeading';
 
 interface MailboxListContainerProps {
     className?: string;
@@ -35,7 +35,7 @@ const MailboxListContainer = (
                 className,
             ])}
         >
-            <MailboxListScreenReaderHeading conversationMode={conversationMode} labelID={labelID} />
+            <MailboxListScreenReaderHeading conversationMode={conversationMode} />
             <div
                 ref={ref}
                 className={clsx(
