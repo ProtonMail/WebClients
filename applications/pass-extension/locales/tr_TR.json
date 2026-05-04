@@ -1401,7 +1401,7 @@
         "${ PASS_APP_NAME } bilgisayar uygulamasında oturum açılmış olmalıdır."
       ],
       "This domain is already managed by your organization": [
-        "Bu etki alanı halihazırda kuruluşunuz tarafından yönetiliyor"
+        "Bu etki alanı zaten kuruluşunuz tarafından yönetiliyor"
       ]
     },
     "Error message": {
@@ -2098,7 +2098,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2819,6 +2820,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } to save this passkey": [
         "Bu geçiş anahtarını kaydetmek için ${ PASS_APP_NAME } kilidini açın"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
       ]
     },
     "Keyboard key": {

@@ -1370,6 +1370,36 @@
       ],
       "Unknown error.": [
         "Neznámá chyba."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické ověření selhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pro odemknutí se neshodují."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámek nebyl nastaven."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavení biometrického zámku selhalo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikace s desktopovou aplikací ${ PASS_APP_NAME } selhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
+      ],
+      "This domain is already managed by your organization": [
+        "Tuto doménu již spravuje vaše organizace"
       ]
     },
     "Error message": {
@@ -2098,7 +2128,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2837,6 +2870,15 @@
       ],
       "Logging you out...": [
         "Odhlašování..."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a získejte přístup ke svým přístupovým klíčům"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a uložte si tento přístupový klíč"
       ]
     },
     "Keyboard key": {

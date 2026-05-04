@@ -1360,6 +1360,36 @@
       ],
       "Unknown error.": [
         "Ukjent feil."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "De biometriske låselegitimasjonene samsvarer ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisk låslegitimasjon ikke funnet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk lås er ikke konfigurert"
+      ],
+      "Biometric lock setup failed.": [
+        "Konfigurasjonen av den biometriske låsen mislyktes."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Kryptert kommunikasjon med skrivebordsappen ${ PASS_APP_NAME } mislyktes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarte ikke i tide."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er logget på med en annen konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
+      ],
+      "This domain is already managed by your organization": [
+        "Dette domenet administreres allerede av organisasjonen din"
       ]
     },
     "Error message": {
@@ -2772,6 +2802,15 @@
       ],
       "Logging you out...": [
         "Logger deg av..."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Lås opp ${ PASS_APP_NAME } for å få tilgang til tilgangsnøklene dine"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Lås opp ${ PASS_APP_NAME } for å lagre denne tilgangsnøkkelen"
       ]
     },
     "Keyboard key": {
