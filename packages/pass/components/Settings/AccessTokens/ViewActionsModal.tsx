@@ -80,12 +80,12 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                     if (initialLoading || records.length === 0) {
                         return (
                             <div className="flex flex-1 items-center justify-center text-sm">
-                                {records.length === 0 ? (
+                                {initialLoading ? (
+                                    <CircleLoader size="medium" />
+                                ) : (
                                     <span className="color-weak">
                                         {c('pass_2026: Info').t`No activity recorded yet.`}
                                     </span>
-                                ) : (
-                                    <CircleLoader size="medium" />
                                 )}
                             </div>
                         );
