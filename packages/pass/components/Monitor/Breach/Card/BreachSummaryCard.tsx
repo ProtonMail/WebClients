@@ -40,7 +40,8 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
                     subtitle: (
                         <span>
                             {c('Warning').t`Failed to load breaches.`}{' '}
-                            <ButtonLike onClick={sync} shape="underline" as="a">{c('Action').t`Try again.`}</ButtonLike>
+                            <ButtonLike onClick={sync} shape="underline" as="a" className="pt-0 pb-0">{c('Action')
+                                .t`Try again.`}</ButtonLike>
                         </span>
                     ),
                 };
