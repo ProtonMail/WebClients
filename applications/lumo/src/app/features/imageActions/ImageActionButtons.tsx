@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import { IMAGE_STYLE_OPTIONS } from './styleOptions';
 
@@ -11,7 +13,7 @@ const BUTTON_STYLE = 'flex flex-row gap-2 flex-nowrap items-center rounded-full 
 
 export const ImageModifyButton = ({ onClick }: { onClick: () => void }) => (
     <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={onClick}>
-        <Icon name="pen" size={3.5} />
+        <IcPen size={3.5} />
         {c('collider_2025:Action').t`Modify...`}
     </Button>
 );
@@ -46,10 +48,9 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
     return (
         <span ref={menuRef} className={wrapperClass}>
             <Button className={BUTTON_STYLE} shape="outline" size="medium" onClick={() => setShowMenu((v) => !v)}>
-                <Icon name="squares" size={3.5} />
+                <IcSquares size={3.5} />
                 {c('collider_2025:Action').t`Change style`}
-                <Icon
-                    name="chevron-down-filled"
+                <IcChevronDownFilled
                     size={3}
                     style={{
                         transition: 'transform 0.15s',
