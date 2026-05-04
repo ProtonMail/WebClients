@@ -3,14 +3,10 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { getLocationElementsCount } from 'proton-mail/helpers/elements';
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import { getLabelNames } from '../../../../helpers/labels';
 
@@ -34,18 +30,10 @@ const SelectAllLabelModal = ({
     onCloseCustomAction,
     ...rest
 }: Props) => {
-    const [mailSettings] = useMailSettings();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const [conversationCounts] = useConversationCounts();
-    const [messageCounts] = useMessageCounts();
-    const isConversation = isConversationMode(labelID, mailSettings);
-    const elementsCount = getLocationElementsCount(
-        labelID,
-        conversationCounts || [],
-        messageCounts || [],
-        isConversation
-    );
+    const { getCurrentLocationCount } = useMailboxCounter();
+    const elementsCount = getCurrentLocationCount().Total;
 
     const getModalTitle = () => {
         return isMessage ? c('Title').t`Action all messages` : c('Title').t`Action all conversations`;
