@@ -90,6 +90,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             if (EXTENSION_BUILD) {
                 yield put(resolveWebsiteRules.intent());
                 yield put(resolvePrivateDomains.intent());
+                yield put(withRevalidate(getOrganizationPauseList.intent()));
             }
 
             if (fromCache) {
@@ -101,7 +102,6 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                 yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
                 yield put(withRevalidate(getOrganizationSettings.intent()));
-                yield put(withRevalidate(getOrganizationPauseList.intent()));
             }
         }
 
