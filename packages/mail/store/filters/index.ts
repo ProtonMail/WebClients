@@ -3,7 +3,8 @@ import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice }
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import type { MailEventV6Response } from '@proton/shared/lib/api/events';
 import { queryFilter, queryFilters } from '@proton/shared/lib/api/filters';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';

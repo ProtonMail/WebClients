@@ -10,7 +10,7 @@ import { breachesCountReducer } from '@proton/components/components/drawer/views
 import { conversationCountsReducer } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsReducer } from '@proton/mail/store/counts/messageCountsSlice';
 import { filtersReducer } from '@proton/mail/store/filters';
-import { sharedReducers } from '@proton/redux-shared-store';
+import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';
 import { composersReducer } from './composers/composersSlice';

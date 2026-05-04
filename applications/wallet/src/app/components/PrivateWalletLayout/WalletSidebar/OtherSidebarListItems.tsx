@@ -21,7 +21,7 @@ import {
     useToggle,
 } from '@proton/components';
 import { PLANS } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 
 import config from '../../../config';

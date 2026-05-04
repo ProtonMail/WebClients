@@ -4,7 +4,7 @@ import { sub } from 'date-fns';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -16,7 +16,7 @@ let mockedApi: ReturnType<typeof mockedUseApi>;
 
 jest.mock('../../hooks/useEventManager', () => () => ({ call: jest.fn() }));
 
-jest.mock('@proton/redux-shared-store');
+jest.mock('@proton/redux-shared-store/sharedProvider');
 const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
 
 jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);

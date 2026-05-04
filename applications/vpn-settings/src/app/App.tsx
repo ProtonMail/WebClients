@@ -8,7 +8,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
 import { ApiProvider, AuthenticationProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';

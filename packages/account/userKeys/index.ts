@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, defaultLongExpiry, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { defaultLongExpiry } from '@proton/redux-utilities/fetchedAt';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';

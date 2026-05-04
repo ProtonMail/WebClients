@@ -1,6 +1,6 @@
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useSelector } from '@proton/redux-shared-store';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { IncomingDelegatedAccessActions } from '../shared/IncomingDelegatedAccessActions';

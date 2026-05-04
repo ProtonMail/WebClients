@@ -13,7 +13,7 @@ import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import StandardPublicApp from '@proton/components/containers/app/StandardPublicApp';
 import MinimalLoginContainer from '@proton/components/containers/login/MinimalLoginContainer';
 import useInstance from '@proton/hooks/useInstance';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';

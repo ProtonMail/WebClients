@@ -10,7 +10,7 @@ import { useApi, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { updateResetEmail } from '@proton/shared/lib/api/settings';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 

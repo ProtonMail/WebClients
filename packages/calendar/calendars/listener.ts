@@ -2,7 +2,7 @@ import { createNextState } from '@reduxjs/toolkit';
 
 import { selectAddresses } from '@proton/account/addresses';
 import { serverEvent } from '@proton/account/eventLoop';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import {
     findMemberIndices,
     getIsCalendarEventManagerCreate,

@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { useSelector } from '@proton/redux-shared-store';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 export const selectIsDataRecoveryAvailable = createSelector(
     [selectRecoveryFileData, selectMnemonicData],

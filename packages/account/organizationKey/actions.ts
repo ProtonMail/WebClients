@@ -5,7 +5,7 @@ import type { GroupsState } from '@proton/account/groups';
 import { groupThunk, updateGroup } from '@proton/account/groups';
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';
 import type { GroupAddressKeyToken } from '@proton/shared/lib/api/organization';

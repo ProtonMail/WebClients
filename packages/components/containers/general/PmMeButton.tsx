@@ -11,7 +11,7 @@ import type { AuthModalResult } from '@proton/components/containers/password/int
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { User } from '@proton/shared/lib/interfaces';
 

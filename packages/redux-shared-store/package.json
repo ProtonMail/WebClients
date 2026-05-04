@@ -1,6 +1,23 @@
 {
     "name": "@proton/redux-shared-store",
     "description": "Sharing dispatch and selector context",
+    "exports": {
+        "./sharedListeners": "./sharedListeners.ts",
+        "./sharedReducers": "./sharedReducers.ts",
+        "./sharedProvider": "./sharedProvider.tsx",
+        "./sharedSerializable": "./sharedSerializable.ts",
+        "./sharedStore": "./sharedStore.ts",
+        "./persist": "./persist.ts",
+        "./listenerInterface": "./listenerInterface.ts",
+        "./eventLoop/calendarEventLoopV6": "./eventLoop/calendarEventLoopV6.ts",
+        "./eventLoop/contactEventLoopV6": "./eventLoop/contactEventLoopV6.ts",
+        "./eventLoop/coreEventLoopV6": "./eventLoop/coreEventLoopV6.ts",
+        "./eventLoop/mailEventLoopV6": "./eventLoop/mailEventLoopV6.ts",
+        "./eventLoop/meetEventLoop": "./eventLoop/meetEventLoop.ts",
+        "./test": "./test.ts",
+        "./mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
+        "./calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet"

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { Currency } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getReferralInfo as getReferralInfoApi } from '@proton/shared/lib/api/core/referrals';
 import { HOUR } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';

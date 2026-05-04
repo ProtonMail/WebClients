@@ -1,6 +1,6 @@
-import { sharedPersistReducer } from '@proton/redux-shared-store';
+import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
-import { selectPersistModel } from '@proton/redux-utilities';
+import { selectPersistModel } from '@proton/redux-utilities/creator';
 
 import type { CalendarState } from './rootReducer';
 
