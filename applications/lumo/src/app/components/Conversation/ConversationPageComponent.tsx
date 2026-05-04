@@ -186,9 +186,6 @@ const ConversationPageComponentInner = () => {
         >
             <div
                 className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm"
-                style={{
-                    border: '1px solid blue',
-                }}
                 onDrop={onDrop}
                 onDragLeave={onDragLeave}
                 onDragEnter={onDragEnter}
