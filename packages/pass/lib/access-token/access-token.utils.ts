@@ -4,7 +4,6 @@ import type {
 } from '@proton/pass/lib/access-token/access-token.types';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { PatMonitorListEntryOutput } from '@proton/pass/types';
-import { uint8ArrayToB64URL } from '@proton/pass/utils/buffer/sanitization';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -13,7 +12,7 @@ export const PAT_PRODUCT = 'pass';
 /** The string a user pastes into the Pass CLI (or its env var).
  * Format: `<server-issued-token>::<urlsafe-base64-no-pad(raw-key)>` */
 export const buildAccessTokenEnvVar = (token: string, rawKey: Uint8Array<ArrayBuffer>): string =>
-    `${token}::${uint8ArrayToB64URL(rawKey)}`;
+    `${token}::${rawKey.toBase64({ alphabet: 'base64url', omitPadding: true })}`;
 
 /** Decodes a single audit record of an agent action made via a PAT. `Action` is the
  * server-defined `EventType` enum (numeric); `Payload` is a base64-encoded AES-GCM ciphertext
