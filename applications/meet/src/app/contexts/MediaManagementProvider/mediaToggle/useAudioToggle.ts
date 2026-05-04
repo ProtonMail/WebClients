@@ -22,6 +22,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
 import type { SwitchActiveDevice } from '../../../types';
+import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -86,7 +87,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const initialAudioState = useMeetSelector(selectInitialAudioState);
     const microphones = useMeetSelector(selectMicrophones);
     const microphoneState = useMeetSelector(selectMicrophoneState);
-    const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
+    const [noiseFilter, setNoiseFilter] = useState(() => {
+        const persisted = getPersistedNoiseFilter();
+        return persisted ?? true;
+    });
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
@@ -615,6 +619,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         debugLog('toggleNoiseFilter:start', { isMicrophoneEnabled, currentValue: noiseFilter });
         const newValue = !noiseFilter;
         setNoiseFilter(newValue);
+        persistNoiseFilter(newValue);
 
         if (isMicrophoneEnabled) {
             try {
