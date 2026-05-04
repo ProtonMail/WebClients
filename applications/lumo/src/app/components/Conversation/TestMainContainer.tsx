@@ -5,7 +5,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
-// import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 // import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import { ComposerMode, type Message } from '../../types';
@@ -13,6 +13,7 @@ import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
 import ProtectedByProton from './MainContainer/ProtectedByProton';
 
@@ -39,7 +40,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
-    // const { isGhostChatMode } = useGhostChat();
+    const { isGhostChatMode } = useGhostChat();
 
     // Files panel handlers
     const handleOpenFiles = useCallback((message?: Message) => {
@@ -95,6 +96,11 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                         '--lg-max-w-custom': '43rem',
                     }}
                 >
+                    <LumoMainText
+                        // isOnboardingCompleted={isOnboardingCompleted}
+                        isSmallScreen={isSmallScreen}
+                        isGhostMode={isGhostChatMode}
+                    />
                     <div className="composer-container md:px-4 w-full">
                         <ComposerComponent
                             composerMode={ComposerMode.NEW_CONVERSATION}
