@@ -1,8 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { CYCLE, PLANS, SubscriptionPlatform } from '@proton/payments';
 import type { Subscription } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
+import { buildSubscription } from '@proton/testing/builders';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 
@@ -26,26 +27,7 @@ const mockUseConfig = require('@proton/components/hooks/useConfig').default as j
 const mockUseShowVPNDashboard = require('@proton/components/hooks/useShowVPNDashboard').default as jest.Mock;
 const mockUseShowDashboard = require('@proton/components/hooks/accounts/useShowDashboard').default as jest.Mock;
 
-const defaultSubscription: Subscription = {
-    ID: 'sub-123',
-    Renew: 0,
-    PeriodEnd: 1893456000,
-    InvoiceID: '',
-    Cycle: CYCLE.MONTHLY,
-    PeriodStart: 0,
-    CreateTime: 0,
-    CouponCode: null,
-    Currency: 'USD',
-    Amount: 0,
-    RenewAmount: 0,
-    BaseRenewAmount: 0,
-    RenewDiscount: 0,
-    Discount: 0,
-    Plans: [],
-    External: SubscriptionPlatform.Default,
-    IsTrial: false,
-    RenewCycle: CYCLE.MONTHLY,
-};
+const defaultSubscription = buildSubscription();
 
 const subscriptionExpires = {
     subscription: defaultSubscription,
