@@ -75,7 +75,7 @@ const DownloadRecoveryKitModal = ({ onSuccess, ...rest }: Props) => {
 
     return (
         <Modal size="medium" {...rest}>
-            <ModalHeader title={c('Title').t`Download your Recovery Kit`} />
+            <ModalHeader title={c('Title').t`Download your recovery phrase`} />
             <ModalContent className="pb-6">
                 {!recoveryKitData ? (
                     <div className="flex justify-center py-12">

@@ -31,7 +31,7 @@ const MnemonicRecoveryStep = ({ onContinue, accountData, mnemonicData, onMeasure
             <Content>
                 <Header
                     title={c('pass_signup_2023: Title').t`Secure your account`}
-                    subTitle={c('pass_signup_2023: Info').t`Save your recovery kit to continue`}
+                    subTitle={c('pass_signup_2023: Info').t`Save your recovery phrase to continue`}
                 />
                 <SetRecoveryPhraseOnSignupContainer
                     recoveryPhraseData={mnemonicData}

@@ -1576,7 +1576,8 @@ const SingleSignupContainerV2 = ({
                                         hasSession &&
                                         hasPlans &&
                                         c('pass_signup_2023: Info').t`Updating your account`,
-                                    canGenerateMnemonic && c('pass_signup_2023: Info').t`Preparing your Recovery Kit`,
+                                    canGenerateMnemonic &&
+                                        c('pass_signup_2023: Info').t`Preparing your recovery phrase`,
                                 ].filter(isTruthy);
                                 if (!list.length) {
                                     list.push(c('pass_signup_2023: Info').t`Updating your account`);
