@@ -16,6 +16,7 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
 import { deleteAccessToken, getAccessTokens } from '@proton/pass/store/actions';
 import { selectAccessTokens, selectPassPlan } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -36,8 +37,8 @@ const AccessTokensList: FC = () => {
     const list = useRequest(getAccessTokens, { loading: true });
     const remove = useRequest(deleteAccessToken);
 
-    const [action, setAction] = useState<Action | null>(null);
-    const [reveal, setReveal] = useState<{ envVar: string; agent: boolean } | null>(null);
+    const [action, setAction] = useState<MaybeNull<Action>>(null);
+    const [reveal, setReveal] = useState<MaybeNull<{ envVar: string; agent: boolean }>>(null);
 
     useEffect(() => list.dispatch(), []);
 
@@ -95,35 +96,34 @@ const AccessTokensList: FC = () => {
         );
     };
 
+    const renderAction = () => {
+        switch (action?.type) {
+            case 'create':
+                return <CreateTokenModal onClose={() => setAction(null)} onCreated={handleCreated} />;
+            case 'manage-access':
+                return <ManageAccessModal token={action.token} onClose={() => setAction(null)} />;
+            case 'view-actions':
+                return <ViewActionsModal token={action.token} onClose={() => setAction(null)} />;
+            case 'delete':
+                return (
+                    <ConfirmationPrompt
+                        danger
+                        title={c('pass_2026: Title').t`Delete access token?`}
+                        message={c('pass_2026: Info')
+                            .t`"${action.token.Name}" will stop working immediately. This action cannot be undone.`}
+                        confirmText={c('Action').t`Delete`}
+                        loading={remove.loading}
+                        onCancel={() => setAction(null)}
+                        onConfirm={handleDelete}
+                    />
+                );
+        }
+    };
+
     return (
         <>
             {renderContent()}
-
-            {action?.type === 'create' && (
-                <CreateTokenModal onClose={() => setAction(null)} onCreated={handleCreated} />
-            )}
-
-            {action?.type === 'manage-access' && (
-                <ManageAccessModal token={action.token} onClose={() => setAction(null)} />
-            )}
-
-            {action?.type === 'view-actions' && (
-                <ViewActionsModal token={action.token} onClose={() => setAction(null)} />
-            )}
-
-            {action?.type === 'delete' && (
-                <ConfirmationPrompt
-                    danger
-                    title={c('pass_2026: Title').t`Delete access token?`}
-                    message={c('pass_2026: Info')
-                        .t`"${action.token.Name}" will stop working immediately. This action cannot be undone.`}
-                    confirmText={c('Action').t`Delete`}
-                    loading={remove.loading}
-                    onCancel={() => setAction(null)}
-                    onConfirm={handleDelete}
-                />
-            )}
-
+            {renderAction()}
             {reveal && <TokenRevealModal envVar={reveal.envVar} agent={reveal.agent} onClose={() => setReveal(null)} />}
         </>
     );
