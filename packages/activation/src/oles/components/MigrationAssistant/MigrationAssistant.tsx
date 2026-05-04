@@ -1,12 +1,9 @@
-import { type FC, useState, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import {
-    type ApiImporterProduct,
-    ProductStatusState,
-} from '@proton/activation/src/api/api.interface';
+import { type ApiImporterProduct, ProductStatusState } from '@proton/activation/src/api/api.interface';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -27,17 +24,17 @@ import ProviderUsersTable from './ProviderUsersTable';
 const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
     const { createNotification } = useNotifications();
     const [customDomains] = useCustomDomains();
-    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.importerOrganizationId!);
+    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName!);
     const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const dispatch = useDispatch();
 
     const loading = !providerUsers || !tokens || !customDomains;
 
     const domain = customDomains?.find((d) => d.DomainName === model.domainName);
-    
+
     const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
-    const selectableUsers = providerUsers?.filter(u => !u.ImporterOrganizationUser).map(u => u.ID) ?? [];
-    const filteredSelected = selectedUsers.filter(u => selectableUsers.includes(u));
+    const selectableUsers = providerUsers?.filter((u) => !u.ImporterOrganizationUser).map((u) => u.ID) ?? [];
+    const filteredSelected = selectedUsers.filter((u) => selectableUsers.includes(u));
 
     const [migrating, setMigrating] = useState<boolean>(false);
     const migratingDisabled = migrating || !selectedUsers.length || !domain || !getIsDomainActive(domain);
