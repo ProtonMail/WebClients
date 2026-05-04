@@ -323,6 +323,7 @@ enum MeetFeatureFlag {
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
     MeetPreSharedKey = 'MeetPreSharedKey',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
+    MeetJoinTelemetry = 'MeetJoinTelemetry',
 }
 
 enum LumoFeatureFlag {
