@@ -4,6 +4,10 @@ import { Link, Redirect } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useInactiveKeys, userThunk } from '@proton/account';
+import {
+    type DeferredMnemonicData,
+    generateDeferredMnemonicData,
+} from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -29,8 +33,6 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 import noop from '@proton/utils/noop';
 
-import generateDeferredMnemonicData from '../../../recoveryPhrase/generateDeferredMnemonicData';
-import type { DeferredMnemonicData } from '../../../recoveryPhrase/types';
 import methodErrorSrc from '../../assets/method-error.svg';
 import methodSuccessSrc from '../../assets/method-success.svg';
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
@@ -72,12 +74,12 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                 </div>
 
                 <SecurityCheckupMainTitle>
-                    {c('Safety review').t`There was an error generating your Recovery Kit`}
+                    {c('Safety review').t`There was an error generating your recovery phrase`}
                 </SecurityCheckupMainTitle>
 
                 <div>
                     {c('Safety review')
-                        .t`We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.`}
+                        .t`We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm">
@@ -91,7 +93,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phraseIcon} color="success" />}>
-                    {c('Safety review').t`Your Recovery Kit is set`}
+                    {c('Safety review').t`Your recovery phrase is set`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -101,7 +103,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
 
                 <div className="mt-6">
                     {c('Safety review')
-                        .t`You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.`}
+                        .t`You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
@@ -164,8 +166,8 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                 }
             >
                 {phrase.isSet || phrase.isOutdated
-                    ? c('Safety review').t`Update your Recovery Kit?`
-                    : c('Safety review').t`Download your Recovery Kit`}
+                    ? c('Safety review').t`Update your recovery phrase?`
+                    : c('Safety review').t`Download your recovery phrase`}
             </SecurityCheckupMainTitle>
 
             <div>
@@ -176,13 +178,13 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                 {phrase.isOutdated ? (
                     <div>
                         {c('Safety review')
-                            .t`Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.`}
+                            .t`Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.`}
                     </div>
                 ) : (
                     <>
                         <div>
                             {c('Safety review')
-                                .t`If you get locked out of your ${BRAND_NAME} Account, your Recovery Kit will allow you to sign in and recover your data.`}
+                                .t`If you get locked out of your ${BRAND_NAME} Account, your recovery phrase will allow you to sign in and recover your data.`}
                         </div>
 
                         <div>
@@ -196,7 +198,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                     <div>
                         {getBoldFormattedText(
                             c('Safety review')
-                                .t`You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.`
+                                .t`You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.`
                         )}
                     </div>
                 ) : null}
@@ -211,7 +213,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                         />
                         <Label htmlFor="understood-recovery-necessity" className="flex-1">
                             {c('Safety review')
-                                .t`I understand that I will not be able to recover currently locked data with this Recovery Kit`}
+                                .t`I understand that I will not be able to recover currently locked data with this recovery phrase`}
                         </Label>
                     </div>
                 ) : null}

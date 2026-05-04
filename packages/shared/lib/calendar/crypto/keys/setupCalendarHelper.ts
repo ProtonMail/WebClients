@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-
 import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
 import { getRandomAccentColor } from '../../../colors';
 import { getTimezone } from '../../../date/timezone';
 import { getActiveAddresses } from '../../../helpers/address';
 import type { Address, Api } from '../../../interfaces';
 import type { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
 import { DEFAULT_CALENDAR } from '../../constants';
 import { setupCalendarKey } from './setupCalendarKeys';
@@ -15,7 +14,7 @@ import { setupCalendarKey } from './setupCalendarKeys';
 interface Args {
     addresses: Address[];
     api: Api;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAddressKeys: GetAddressKeys;
 }
 
 const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => {

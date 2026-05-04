@@ -1,15 +1,14 @@
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-
 import { resetCalendars } from '../../../api/calendars';
 import type { Api } from '../../../interfaces';
 import type { VisualCalendar } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
 import { generateCalendarKeyPayload } from './calendarKeys';
 
 interface ResetCalendarKeysArguments {
     calendars: VisualCalendar[];
     api: Api;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAddressKeys: GetAddressKeys;
 }
 
 export const resetCalendarKeys = async ({ calendars, api, getAddressKeys }: ResetCalendarKeysArguments) => {

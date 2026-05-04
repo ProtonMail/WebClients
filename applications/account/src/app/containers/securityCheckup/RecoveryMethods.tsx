@@ -33,7 +33,7 @@ const Phrase = () => {
         <SecurityCheckupCard>
             <SecurityCheckupCardInner
                 prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="success" />}
-                title={c('Safety review').t`Your Recovery Kit`}
+                title={c('Safety review').t`Your recovery phrase`}
                 subTitle={c('Safety review').t`Can be used to regain access to your account and data`}
                 checkmark
             />

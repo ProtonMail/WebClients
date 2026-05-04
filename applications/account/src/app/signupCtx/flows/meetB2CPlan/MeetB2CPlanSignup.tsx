@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import type { PlanIDs } from '@proton/payments';
@@ -8,7 +9,6 @@ import { CYCLE, DEFAULT_CYCLE, PLANS, hasFreePlanIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';

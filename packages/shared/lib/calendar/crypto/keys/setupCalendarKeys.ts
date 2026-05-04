@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-
 import { setupCalendar } from '../../../api/calendars';
 import type { Api } from '../../../interfaces';
 import type { CalendarSetupResponse, CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
 import { generateCalendarKeyPayload } from './calendarKeys';
 import { isCalendarSetupData } from './helpers';
@@ -16,7 +15,7 @@ export const setupCalendarKey = async ({
     getAddressKeys,
 }: {
     api: Api;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAddressKeys: GetAddressKeys;
     calendarID: string;
     addressID: string;
 }) => {
@@ -46,7 +45,7 @@ export const setupCalendarKeys = async ({
 }: {
     api: Api;
     calendars: CalendarWithOwnMembers[];
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAddressKeys: GetAddressKeys;
 }) => {
     return Promise.all(
         calendars.map(async ({ ID: calendarID, Members }) => {

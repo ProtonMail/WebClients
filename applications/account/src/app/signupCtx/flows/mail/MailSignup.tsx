@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import useMailSignupVariant from './hooks/useMailSignupVariant';
