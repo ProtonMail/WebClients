@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { AppsDropdown, Icon, useModalStateObject } from '@proton/components';
+import { AppsDropdown, useModalStateObject } from '@proton/components';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
@@ -69,7 +70,7 @@ const LumoSidebarContent = () => {
                             aria-label={c('collider_2025:Button').t`Close sidebar`}
                             style={{ width: '32px', height: '32px' }}
                         >
-                            <Icon name="chevron-left" size={4} />
+                            <IcChevronLeft size={4} />
                         </button>
                     </div>
                 )}

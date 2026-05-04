@@ -4,16 +4,19 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
 import type { IconName } from '@proton/icons/types';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
 
 import './ThinkingPath.scss';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 function formatDuration(ms: number): string {
     const seconds = Math.round(ms / 1000);
@@ -73,15 +76,27 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
                 `Checked ${toolCall.arguments.symbol} cryptocurrency prices`,
             ];
         case 'describe_image':
-            return [c('collider_2025:Reasoning').t`Looking at your image...`, c('collider_2025:Reasoning').t`Looked at your image`];
+            return [
+                c('collider_2025:Reasoning').t`Looking at your image...`,
+                c('collider_2025:Reasoning').t`Looked at your image`,
+            ];
         case 'generate_image':
-            return [c('collider_2025:Reasoning').t`Generating image...`, c('collider_2025:Reasoning').t`Generated image`];
+            return [
+                c('collider_2025:Reasoning').t`Generating image...`,
+                c('collider_2025:Reasoning').t`Generated image`,
+            ];
         case 'edit_image':
             return [c('collider_2025:Reasoning').t`Editing image...`, c('collider_2025:Reasoning').t`Edited image`];
         case 'proton_info':
-            return [c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge...`, c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`];
+            return [
+                c('collider_2025:Reasoning').t`Checking ${BRAND_NAME} knowledge...`,
+                c('collider_2025:Reasoning').t`Checked ${BRAND_NAME} knowledge`,
+            ];
         case 'web_extract':
-            return [c('collider_2025:Reasoning').t`Extracting content from page...`, c('collider_2025:Reasoning').t`Extracted page content`];
+            return [
+                c('collider_2025:Reasoning').t`Extracting content from page...`,
+                c('collider_2025:Reasoning').t`Extracted page content`,
+            ];
         default:
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
     }
@@ -127,11 +142,7 @@ const ReasoningStep = ({
         return (
             <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
                 <div className="thinking-step-icon-container">
-                    <Icon
-                        name="lightbulb"
-                        size={3}
-                        className="thinking-step-icon-badge thinking-step-icon-badge--active"
-                    />
+                    <IcLightbulb size={3} className="thinking-step-icon-badge thinking-step-icon-badge--active" />
                 </div>
 
                 <div className="thinking-step-content">
@@ -144,7 +155,7 @@ const ReasoningStep = ({
                         <span className="thinking-step-label flex-1">
                             {c('collider_2025:Reasoning').t`Thinking...`}
                         </span>
-                        <Icon name="arrow-up-and-left" size={3} className="thinking-step-chevron shrink-0" />
+                        <IcArrowUpAndLeft size={3} className="thinking-step-chevron shrink-0" />
                     </button>
 
                     <div className="thinking-stream-container mt-1.5 rounded">
@@ -165,8 +176,7 @@ const ReasoningStep = ({
     return (
         <div className={clsx('thinking-step', isFirst && 'thinking-step--first', isLast && 'thinking-step--last')}>
             <div className="thinking-step-icon-container">
-                <Icon
-                    name="lightbulb"
+                <IcLightbulb
                     size={3}
                     className={clsx('thinking-step-icon-badge', isActive && 'thinking-step-icon-badge--active')}
                 />
@@ -184,8 +194,7 @@ const ReasoningStep = ({
                             ? c('collider_2025:Reasoning').t`Thought for ` + formatDuration(durationMs)
                             : c('collider_2025:Reasoning').t`Thought about this`}
                     </span>
-                    <Icon
-                        name="chevron-down"
+                    <IcChevronDown
                         size={3}
                         className={clsx('thinking-step-chevron', isExpanded && 'thinking-step-chevron--expanded')}
                     />
@@ -340,14 +349,10 @@ const ToolCallStep = ({
                         <span className="thinking-step-label color-weak">{label}</span>
                         <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
                     </div>
-                ) : hasInlineImageStatus ? (
+                ) : // eslint-disable-next-line no-nested-ternary
+                hasInlineImageStatus ? (
                     <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
-                        <span
-                            className={clsx(
-                                'thinking-step-label',
-                                hasError ? 'color-danger' : 'color-weak'
-                            )}
-                        >
+                        <span className={clsx('thinking-step-label', hasError ? 'color-danger' : 'color-weak')}>
                             {label}
                         </span>
                         <div className="flex items-center gap-2 shrink-0">
@@ -371,10 +376,11 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            {/* eslint-disable-next-line no-nested-ternary */}
+                            {}
                             <span
                                 className={clsx(
                                     'thinking-step-label',
+                                    // eslint-disable-next-line no-nested-ternary
                                     isActive ? 'color-norm' : hasError ? 'color-danger' : 'color-weak'
                                 )}
                             >
@@ -406,8 +412,7 @@ const ToolCallStep = ({
                                         )}
                                     </span>
                                 )}
-                                <Icon
-                                    name="chevron-down"
+                                <IcChevronDown
                                     size={3}
                                     className={clsx(
                                         'thinking-step-chevron',
@@ -423,10 +428,7 @@ const ToolCallStep = ({
                                 {webExtractResult ? (
                                     <div className="flex flex-column gap-2">
                                         {webExtractResult.results.map((item, idx) => (
-                                            <div
-                                                key={idx}
-                                                className="pb-2 last:pb-0 flex items-start gap-2"
-                                            >
+                                            <div key={idx} className="pb-2 last:pb-0 flex items-start gap-2">
                                                 <IcCheckmarkCircleFilled
                                                     size={3}
                                                     className="color-success shrink-0 mt-0.5"
@@ -465,7 +467,8 @@ const ToolCallStep = ({
                                             </div>
                                         ))}
                                     </div>
-                                ) : webSearchResults ? (
+                                ) : // eslint-disable-next-line no-nested-ternary
+                                webSearchResults ? (
                                     <div className="flex flex-column gap-2">
                                         {webSearchResults.results.map((result, idx) => (
                                             <div

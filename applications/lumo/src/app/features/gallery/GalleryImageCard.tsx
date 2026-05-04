@@ -3,7 +3,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcPen } from '@proton/icons/icons/IcPen';
 
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
@@ -120,7 +121,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                                     aria-label={c('collider_2025:Action').t`Edit image`}
                                     title={c('collider_2025:Action').t`Edit image`}
                                 >
-                                    <Icon name="pen" size={4} />
+                                    <IcPen size={4} />
                                 </button>
                             )}
                             <button
@@ -129,7 +130,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                                 aria-label={c('collider_2025:Action').t`Download image`}
                                 title={c('collider_2025:Action').t`Download image`}
                             >
-                                <Icon name="arrow-down-line" size={4} />
+                                <IcArrowDownLine size={4} />
                             </button>
                         </div>
                     </div>
