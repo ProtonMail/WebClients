@@ -95,7 +95,6 @@ export type {
     InitializeCreditCardOptions,
     Invoice,
     InvoiceResponse,
-    LatestSubscription,
     MultiCheckOptions,
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,

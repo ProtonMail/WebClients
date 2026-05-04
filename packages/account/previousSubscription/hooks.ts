@@ -5,13 +5,16 @@ import { defaultPreviousSubscriptionValue, previousSubscriptionThunk, selectPrev
 const hooks = createHooks(previousSubscriptionThunk, selectPreviousSubscription);
 
 /**
- * Gets the previous subscription end time
- * Can be used to determine if the user has had a subscription in the past.
- * ie if `hasHadSubscription` is true for a free user, then they have churned.
+ * Returns the user's previous subscription as a discriminated union:
+ * - `{ hasHadSubscription: false, previousSubscription: null }` when the user has no relevant previous subscription
+ *   (including paid users — see the thunk in `./index.ts` for why).
+ * - `{ hasHadSubscription: true, previousSubscription: PreviousSubscription }` when a previous subscription was found.
+ *
+ * `hasHadSubscription` being true on a free user indicates they have churned.
  */
 export const usePreviousSubscription = () => {
     const [value, loading] = hooks.useValue();
     return [value || defaultPreviousSubscriptionValue, loading] as const;
 };
 
-export const useGetPreviousSubscriptionEnd = hooks.useGet;
+export const useGetPreviousSubscription = hooks.useGet;

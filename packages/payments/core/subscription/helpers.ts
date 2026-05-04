@@ -709,7 +709,7 @@ export const hasMeetAddon = (subscription: MaybeFreeSubscription) => {
 
 /**
  * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
- * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
+ * the current subscription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
  * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
  * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
  */
@@ -889,7 +889,7 @@ export function isSubscriptionCheckForbidden(
 /**
  * Checks if the current plan can be eligible for multi-subs. It works this way: If user has a mobile Lumo subscription
  * then they can buy another subscription on web. So this function checks if another subscription can be added to the
- * existing susbcription that has one of the plans listed in this function.
+ * existing subscription that has one of the plans listed in this function.
  */
 function isMobileMultiSubSupported(subscription: Subscription) {
     return hasLumo(subscription);
