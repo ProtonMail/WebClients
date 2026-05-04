@@ -14,7 +14,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import {

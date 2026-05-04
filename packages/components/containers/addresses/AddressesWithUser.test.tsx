@@ -71,7 +71,7 @@ const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeo
 
 jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 
-jest.mock('@proton/redux-shared-store');
+jest.mock('@proton/redux-shared-store/sharedProvider');
 
 jest.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
     __esModule: true,

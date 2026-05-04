@@ -12,7 +12,7 @@ import {
     isSystemLabel,
     isUnmodifiableByUser,
 } from '@proton/mail/helpers/location';
-import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';

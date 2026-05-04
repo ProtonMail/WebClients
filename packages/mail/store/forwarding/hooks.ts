@@ -1,4 +1,4 @@
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { incomingAddressForwardingsThunk, selectIncomingForwarding } from './incoming';
 import { outgoingAddressForwardingsThunk, selectOutgoingForwarding } from './outgoing';

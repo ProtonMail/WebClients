@@ -36,7 +36,7 @@ import type { IconName } from '@proton/icons/types';
 import { useAssistant } from '@proton/llm/lib';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';

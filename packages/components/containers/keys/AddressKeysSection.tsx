@@ -17,7 +17,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { type Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 

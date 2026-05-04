@@ -1,4 +1,4 @@
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import type { CoreEventLoopV6Callback } from '../coreEventLoop/interface';
 import { samlSSOThunk, selectSamlSSO } from './index';

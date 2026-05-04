@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { getKTUserContext } from '@proton/account/kt/actions';
 import useApi from '@proton/components/hooks/useApi';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto/lib';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { ProcessedApiKey } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';

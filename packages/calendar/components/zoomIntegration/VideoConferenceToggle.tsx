@@ -5,7 +5,7 @@ import { Info, SettingsLayoutLeft, SettingsLayoutRight, useNotifications, useTog
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { toggleOrganizationSetting } from '../../calendars/actions';

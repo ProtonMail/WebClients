@@ -4,7 +4,7 @@ import { getKTActivation } from '@proton/account/kt/actions';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 /**

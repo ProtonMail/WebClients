@@ -7,7 +7,7 @@ import { convertExternalAddress } from '@proton/account/organizationKey/convertA
 import { StandardLoadErrorPage, useErrorHandler, useKTVerifier } from '@proton/components';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { claimOrphanDomain } from '@proton/shared/lib/api/partner';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ADDRESS_TYPE, APPS } from '@proton/shared/lib/constants';

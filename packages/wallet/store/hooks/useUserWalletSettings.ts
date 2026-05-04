@@ -1,5 +1,5 @@
 import type { WasmUserSettings } from '@proton/andromeda';
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { selectUserWalletSettings, userWalletSettingsThunk } from '../slices';
 import { DEFAULT_SETTINGS } from '../slices/userWalletSettings';

@@ -1,7 +1,7 @@
 import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import {
     type AuthDeviceOutput,

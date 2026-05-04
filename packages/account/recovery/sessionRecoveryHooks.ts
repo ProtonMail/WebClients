@@ -9,7 +9,7 @@ import {
 } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { useInterval } from '@proton/hooks';
-import { useDispatch, useSelector } from '@proton/redux-shared-store';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 

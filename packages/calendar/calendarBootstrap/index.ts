@@ -3,13 +3,12 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { AddressKeysState, AddressesState, ModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities/interface';
 import {
-    type CacheType,
     cacheHelper,
     createPromiseMapStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-} from '@proton/redux-utilities';
+} from '@proton/redux-utilities/promiseStore';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
 import { getFullCalendar } from '@proton/shared/lib/api/calendars';
 import {
     getIsCalendarMemberEventManagerCreate,

@@ -1,4 +1,4 @@
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import type { MailEventLoopV6Callback } from '../mailEventLoop/interface';
 import { mailSettingsThunk, selectMailSettings } from './index';

@@ -6,7 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import type { SagaMiddleware } from 'redux-saga';
 
-import { ignoredActions, ignoredPaths } from '@proton/account/serializable';
+import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import type { DbApi } from '../indexedDb/db';
 import type { LumoApi } from '../remote/api';

@@ -3,7 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateFlags } from '@proton/shared/lib/api/settings';
 import { KEYGEN_CONFIGS } from '@proton/shared/lib/constants';

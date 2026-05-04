@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import type { Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

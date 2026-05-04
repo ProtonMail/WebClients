@@ -3,6 +3,14 @@
     "description": "Re-usable redux utilities",
     "sideEffects": false,
     "main": "index.ts",
+    "exports": {
+        "./promiseStore": "./asyncModelThunk/promiseStore.ts",
+        "./creator": "./asyncModelThunk/creator.ts",
+        "./hooks": "./asyncModelThunk/hooks.tsx",
+        "./fetchedAt": "./asyncModelThunk/fetchedAt.ts",
+        "./helpers/safeCount": "./helpers/safeCount.ts",
+        "./interface": "./asyncModelThunk/interface.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",

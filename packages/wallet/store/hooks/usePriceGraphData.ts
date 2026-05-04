@@ -4,7 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { WasmFiatCurrencySymbol, WasmPriceGraph, WasmTimeframe } from '@proton/andromeda';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { getKey, priceGraphDataThunk, selectPriceGraphData } from '../slices/priceGraphData';
 

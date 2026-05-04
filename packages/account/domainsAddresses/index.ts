@@ -2,8 +2,9 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities';
-import { cacheHelper, createPromiseMapStore, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
+import type { CacheType } from '@proton/redux-utilities/interface';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
+import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';

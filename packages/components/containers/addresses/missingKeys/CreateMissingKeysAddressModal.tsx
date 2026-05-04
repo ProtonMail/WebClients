@@ -21,7 +21,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address, Member } from '@proton/shared/lib/interfaces';
 import { getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
 

@@ -1,4 +1,4 @@
-import { selectPersistModel } from '@proton/redux-utilities';
+import { selectPersistModel } from '@proton/redux-utilities/creator';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { DelegatedAccessState } from './index';
