@@ -33,7 +33,7 @@ const PhraseAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHRASE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="warning" />}
-                    title={c('Safety review').t`Update your Recovery Kit`}
+                    title={c('Safety review').t`Update your recovery phrase`}
                     subTitle={c('Safety review').t`to recover your account and data if you're ever locked out`}
                 />
             </SecurityCheckupCardButton>
@@ -44,7 +44,7 @@ const PhraseAction = () => {
         <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHRASE)}>
             <SecurityCheckupCardButtonInner
                 prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="danger" />}
-                title={c('Safety review').t`Download your Recovery Kit`}
+                title={c('Safety review').t`Download your recovery phrase`}
                 subTitle={c('Safety review').t`to recover your account and data if you're ever locked out`}
             />
         </SecurityCheckupCardButton>
