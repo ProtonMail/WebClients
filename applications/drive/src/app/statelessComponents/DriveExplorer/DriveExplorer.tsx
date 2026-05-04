@@ -320,7 +320,7 @@ const DriveExplorer = ({
     return (
         <div
             ref={driveExplorerRef}
-            className={clsx('drive-explorer flex flex-column w-full h-full', config?.className)}
+            className={clsx('drive-explorer flex flex-column w-full flex-1', config?.className)}
             onClick={handleContainerClick}
             onContextMenu={handleContainerContextMenu}
             onKeyDown={handleContainerKeyDown}
