@@ -16,7 +16,9 @@ import {
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
     isSubscriptionUnchanged,
+    isUpcomingSubscriptionUnpaid,
 } from './helpers';
+import type { Subscription } from './interface';
 
 describe('getSubscriptionPlanTitle', () => {
     it('should return plan title and name for a paid user with subscription', () => {
@@ -366,6 +368,7 @@ describe('isSubscriptionCheckForbidden', () => {
             },
             {
                 InvoiceID: '',
+                IsPrepaid: false,
             }
         );
 
@@ -966,5 +969,113 @@ describe('isAddonDowngradeOnSameCycle', () => {
             currency: 'EUR',
         });
         expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
+    });
+});
+
+describe('isUpcomingSubscriptionUnpaid', () => {
+    it('should return false when there is no upcoming subscription', () => {
+        const subscription = buildSubscription({
+            planIDs: { [PLANS.MAIL]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(subscription.UpcomingSubscription).toBeUndefined();
+        expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(false);
+    });
+
+    it('should return false when the upcoming subscription is prepaid', () => {
+        const UpcomingSubscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.TWO_YEARS,
+                currency: 'EUR',
+            },
+            {
+                IsPrepaid: true,
+            }
+        );
+
+        const subscription: Subscription = {
+            ...buildSubscription({
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+            }),
+            UpcomingSubscription,
+        };
+
+        expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(false);
+    });
+
+    it('should return true when the upcoming subscription is not prepaid', () => {
+        const UpcomingSubscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.MONTHLY,
+                currency: 'EUR',
+            },
+            {
+                IsPrepaid: false,
+            }
+        );
+
+        const subscription: Subscription = {
+            ...buildSubscription({
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+            }),
+            UpcomingSubscription,
+        };
+
+        expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(true);
+    });
+
+    it('should rely on IsPrepaid, not on a cycle downgrade heuristic', () => {
+        const UpcomingSubscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.MONTHLY,
+                currency: 'EUR',
+            },
+            {
+                IsPrepaid: true,
+            }
+        );
+
+        const subscription: Subscription = {
+            ...buildSubscription({
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+            }),
+            UpcomingSubscription,
+        };
+
+        expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(false);
+    });
+
+    it('should rely on IsPrepaid, not on an addon-downgrade heuristic', () => {
+        const UpcomingSubscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 },
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+            },
+            {
+                IsPrepaid: false,
+            }
+        );
+
+        const subscription: Subscription = {
+            ...buildSubscription({
+                planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+            }),
+            UpcomingSubscription,
+        };
+
+        expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(true);
     });
 });
