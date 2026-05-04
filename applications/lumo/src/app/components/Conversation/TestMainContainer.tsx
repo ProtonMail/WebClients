@@ -11,8 +11,10 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ComposerMode, type Message } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
+import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
+import ProtectedByProton from './MainContainer/ProtectedByProton';
 
 import './MainContainer.scss';
 
@@ -98,7 +100,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             composerMode={ComposerMode.NEW_CONVERSATION}
                             handleSendMessage={handleSendMessage}
                             isProcessingAttachment={isProcessingAttachment}
-                            className="fixed bottom-0 md:static w-full z-20"
+                            className="main-container fixed bottom-0 md:static w-full z-20"
                             setIsEditorFocused={setIsEditorFocused}
                             isEditorFocused={isEditorFocused}
                             setIsEditorEmpty={setIsEditorEmpty}
@@ -108,6 +110,9 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             canShowLumoUpsellToggle={true}
                             initialQuery={promptSuggestion || initialQuery}
                             prefillQuery={prefillQuery}
+                            optionalElementBelowComposer={
+                                isGuest ? <TermsAndConditions className="m-0 hidden md:block" /> : <ProtectedByProton />
+                            }
                         />
                     </div>
                     <WhatsNew />
