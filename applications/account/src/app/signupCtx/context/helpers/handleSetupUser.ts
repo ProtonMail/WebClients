@@ -1,3 +1,4 @@
+import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import {
     type Currency,
@@ -30,7 +31,6 @@ import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import generateDeferredMnemonicData from '../../../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { type AccountData, SignupType } from '../../../signup/interfaces';
 
 export interface SignupContextSubscriptionData {

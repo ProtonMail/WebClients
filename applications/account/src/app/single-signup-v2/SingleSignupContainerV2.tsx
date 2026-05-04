@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
+import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
@@ -68,8 +70,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
-import generateDeferredMnemonicData from '../containers/recoveryPhrase/generateDeferredMnemonicData';
-import { usePrefetchGenerateRecoveryKit } from '../containers/recoveryPhrase/useRecoveryKitDownload';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
@@ -1576,7 +1576,8 @@ const SingleSignupContainerV2 = ({
                                         hasSession &&
                                         hasPlans &&
                                         c('pass_signup_2023: Info').t`Updating your account`,
-                                    canGenerateMnemonic && c('pass_signup_2023: Info').t`Preparing your Recovery Kit`,
+                                    canGenerateMnemonic &&
+                                        c('pass_signup_2023: Info').t`Preparing your recovery phrase`,
                                 ].filter(isTruthy);
                                 if (!list.length) {
                                     list.push(c('pass_signup_2023: Info').t`Updating your account`);

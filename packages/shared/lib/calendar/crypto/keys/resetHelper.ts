@@ -1,25 +1,25 @@
 import { c } from 'ttag';
 
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import type { useGetAddresses } from '@proton/account/addresses/hooks';
-import type { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import type { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
 import type { Api } from '../../../interfaces';
 import type { VisualCalendar } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import type { GetAddresses } from '../../../interfaces/hooks/GetAddresses';
+import type { GetCalendarBootstrap } from '../../../interfaces/hooks/GetCalendarBootstrap';
+import type { GetCalendars } from '../../../interfaces/hooks/GetCalendars';
 import { getIsOwnedCalendar } from '../../calendar';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';
 
 interface ProcessArguments {
     api: Api;
-    getCalendars: ReturnType<typeof useGetCalendars>;
-    getAddresses: ReturnType<typeof useGetAddresses>;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    getCalendarBootstrap: ReturnType<typeof useGetCalendarBootstrap>;
+    getCalendars: GetCalendars;
+    getAddresses: GetAddresses;
+    getAddressKeys: GetAddressKeys;
+    getCalendarBootstrap: GetCalendarBootstrap;
     calendarsToReset?: VisualCalendar[];
     calendarsToReactivate?: VisualCalendar[];
     calendarsToClean?: VisualCalendar[];

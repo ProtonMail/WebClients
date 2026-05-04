@@ -1,4 +1,3 @@
-import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { CryptoProxy } from '@proton/crypto';
 
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../../api/calendars';
@@ -10,13 +9,14 @@ import type {
     Passphrase,
     ReenableKeyResponse,
 } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { splitKeys } from '../../../keys';
 import { getMemberAddressWithAdminPermissions } from '../../getMemberWithAdmin';
 import { decryptPassphrase } from './calendarKeys';
 
 interface ReactivateCalendarsKeysArgumentsShared {
     api: Api;
-    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+    getAddressKeys: GetAddressKeys;
     addresses: Address[];
 }
 
@@ -96,6 +96,7 @@ const reactivateCalendarKeys = async ({
                     reactivateCalendarKey(CalendarID, KeyID, { PrivateKey: armoredEncryptedKey })
                 );
             } catch (e: any) {
+                // eslint-disable-next-line no-console
                 console.error(e);
             }
         })

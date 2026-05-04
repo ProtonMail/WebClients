@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import DisplayNameStep from './steps/DisplayNameStep';

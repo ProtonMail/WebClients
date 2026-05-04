@@ -1,3 +1,4 @@
+import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import type { ChallengeResult, VerificationModel } from '@proton/components';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type {
@@ -24,8 +25,6 @@ import type {
     Organization,
     User,
 } from '@proton/shared/lib/interfaces';
-
-import type { DeferredMnemonicData } from '../containers/recoveryPhrase/types';
 
 export interface SessionData {
     resumedSessionResult: ResumedSessionResult;
