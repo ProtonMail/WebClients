@@ -13,10 +13,6 @@ const result = (opts: WebpackEnvArguments): Configuration => {
     const config = getConfig(webpackOptions);
     config.plugins = config.plugins || [];
 
-    if (webpackOptions.appMode === 'standalone') {
-        addDevEntry(config);
-    }
-
     // The order is important so that the unsupported file is loaded after
     config.entry = mergeEntry(config.entry, {
         ['bookings-index']: [path.resolve('./src/app/bookings.tsx'), getSupportedEntry()],
@@ -63,18 +59,21 @@ const result = (opts: WebpackEnvArguments): Configuration => {
     );
 
     if (config.devServer) {
-        config.devServer.historyApiFallback = {
-            rewrites: [
-                {
-                    from: /^\/u\/[0-9]+\/bookings/, // Matches `/u/X/bookings`
-                    to: '/bookings.html', // Serves `bookings.html`
-                },
-                {
-                    from: /^\/bookings/, // Matches any path starting with `/bookings`
-                    to: '/bookings.html', // Serves `bookings.html`
-                },
-            ],
-        };
+        // @ts-ignore
+        config.devServer.historyApiFallback.rewrites = [
+            {
+                from: /^\/u\/[0-9]+\/bookings/, // Matches `/u/X/bookings`
+                to: '/bookings.html', // Serves `bookings.html`
+            },
+            {
+                from: /^\/bookings/, // Matches any path starting with `/bookings`
+                to: '/bookings.html', // Serves `bookings.html`
+            },
+        ];
+    }
+
+    if (webpackOptions.appMode === 'standalone') {
+        addDevEntry(config);
     }
 
     return config;
