@@ -5,8 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
@@ -144,7 +145,7 @@ const UserActionToolbar = ({ onEdit, onToggleCollapse, isCollapsed, canBeCollaps
                         onClick={onToggleCollapse}
                         size="small"
                     >
-                        <Icon name={isCollapsed ? 'chevron-down' : 'chevron-up'} />
+                        {isCollapsed ? <IcChevronDown /> : <IcChevronUp />}
                     </Button>
                 </Tooltip>
             )}

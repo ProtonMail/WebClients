@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoArtist from '@proton/styles/assets/img/lumo/lumo-artist.svg';
 
@@ -45,7 +45,7 @@ const DiscoverList = ({ onSuggestionClick }: { onSuggestionClick: (s: GalleryPro
                         type="button"
                         title={c('collider_2025:Action').t`Shuffle suggestions`}
                     >
-                        <Icon name="arrows-rotate" size={3.5} />
+                        <IcArrowsRotate size={3.5} />
                     </button>
                 )}
             </div>
