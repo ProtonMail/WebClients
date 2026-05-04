@@ -16,6 +16,7 @@ export const FLAGS_WITH_VARIANT = [
     'WebApiRateLimiter',
     'MaxContactsImport',
     'ShowLiteAppCheckoutV2',
+    'OlesM1',
 ] satisfies FeatureFlag[];
 
 /**
@@ -34,6 +35,7 @@ export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'show' | 'hide';
+export type OlesM1Variant = 'Config';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -62,6 +64,7 @@ type FeatureFlagVariantMap = {
     WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
     MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;
     ShowLiteAppCheckoutV2: VariantReturnType<ShowLiteAppCheckoutV2Variant>;
+    OlesM1: VariantReturnType<OlesM1Variant>;
 };
 
 /**

@@ -26,7 +26,7 @@ export const ProviderUsersProvider = ({ children }: { children: ReactNode }) => 
 };
 
 export const useProviderUsers = (
-    importerOrganizationId: string
+    domainName: string
 ): [ApiImporterOrganizationUser[] | undefined, boolean, () => Promise<void>] => {
     const api = useApi();
     const { data, setData, loading, setLoading } = useContext(Context);
@@ -34,7 +34,7 @@ export const useProviderUsers = (
     const refresh = useCallback(async () => {
         setLoading(true);
 
-        return api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers(importerOrganizationId))
+        return api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers({ DomainName: domainName }))
             .then((r) => setData(r.Users))
             .catch(noop)
             .finally(() => setLoading(false));
