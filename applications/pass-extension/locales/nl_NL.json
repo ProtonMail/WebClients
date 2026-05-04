@@ -2086,7 +2086,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2807,6 +2808,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } to save this passkey": [
         "Ontgrendel ${ PASS_APP_NAME } om deze passkey op te slaan."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
       ]
     },
     "Keyboard key": {

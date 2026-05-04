@@ -1255,7 +1255,7 @@
         "Збой абнаўлення налад"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некаторыя сховішчы больш недаступны з прычыны таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
@@ -1406,6 +1406,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
+      ],
+      "This domain is already managed by your organization": [
+        "Гэты дамен ужо кіруецца вашай арганізацыяй"
       ]
     },
     "Error message": {
@@ -2882,6 +2885,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } to save this passkey": [
         "Разблакіруйце ${ PASS_APP_NAME }, каб захаваць гэты ключ доступу"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
       ]
     },
     "Keyboard key": {
