@@ -93,18 +93,6 @@ im.$media-expressions: $media-expressions;
 	display: none;
 }
 
-.user-dropdown-button {
-	flex-shrink: 0;
-
-	.user-initials {
-		font-size: rem(12);
-	}
-
-	.rounded {
-		border-radius: var(--border-radius-md);
-	}
-}
-
 .chat-container {
 	border-image-slice: 1;
 	border-radius: 1rem;
@@ -271,7 +259,7 @@ body::before {
 	}
 }
 
-// DROPDOWN
+// Dropdown
 
 .dropdown {
 	--selection-background-color: var(--interaction-default-hover);
