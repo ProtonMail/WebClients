@@ -29,6 +29,7 @@ export const RecoveryKitContent = ({
     const copyRecoverySwitchButton = (
         <InlineLinkButton
             key="copy-recovery-phrase-button"
+            data-testid="switch-to-copy"
             onClick={() => {
                 setMethod('text');
             }}
@@ -43,6 +44,7 @@ export const RecoveryKitContent = ({
     const downloadRecoveryKitSwitchButton = (
         <InlineLinkButton
             key="download-pdf-button"
+            data-testid="switch-to-pdf"
             onClick={() => {
                 setMethod('recovery-kit');
             }}
