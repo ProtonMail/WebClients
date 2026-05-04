@@ -7,7 +7,7 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
-import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
+import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 
 interface Props {
     selectedIDs: string[];

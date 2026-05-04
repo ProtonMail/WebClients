@@ -9,35 +9,39 @@ import clsx from '@proton/utils/clsx';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../helpers/labels';
-import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
-import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
-import LabelName from './LabelName';
-import LabelsAndFolders from './LabelsAndFolders';
-import MoreActions from './MoreActions';
-import MoveButtons from './MoveButtons';
-import PagingControls from './PagingControls';
-import ReadUnreadButtons from './ReadUnreadButtons';
-import type { Props as ToolbarProps } from './Toolbar';
-import { ListSettings } from './list-settings/ListSettings';
-import { MoreDropdown } from './more-dropdown/MoreDropdown';
+import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../../helpers/labels';
+import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';
+import SnoozeToolbarDropdown from '../../list/snooze/containers/SnoozeToolbarDropdown';
+import type { Props as ToolbarProps } from '../Toolbar';
+import LabelName from '../actions/LabelName';
+import LabelsAndFolders from '../actions/LabelsAndFolders';
+import MoreActions from '../actions/MoreActions';
+import MoveButtons from '../actions/MoveButtons';
+import PagingControls from '../actions/PagingControls';
+import ReadUnreadButtons from '../actions/ReadUnreadButtons';
+import { ListSettings } from '../list-settings/ListSettings';
+import { MoreDropdown } from '../more-dropdown/MoreDropdown';
 
-interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
+interface Props extends Omit<
+    ToolbarProps,
+    'onCheck' | 'checkedIDs' | 'columnMode' | 'onBack' | 'onElement' | 'breakpoints'
+> {
     classname: string;
     selectAll: ReactElement;
 }
 
 const BREAKPOINTS = {
     extratiny: 0,
-    tiny: 150,
-    small: 440,
-    medium: 700,
+    tiny: 100,
+    small: 400,
+    medium: 800,
     large: 1100,
 };
 
-const ToolbarColumnWide = ({
+const ToolbarRowWide = ({
     classname,
     selectAll,
+    addressesDropdown,
     sort,
     onSort,
     filter,
@@ -58,13 +62,14 @@ const ToolbarColumnWide = ({
     onPage,
     total,
     onCheckAll,
-    addressesDropdown,
     isInDeletedFolder,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    const localIsNarrowAndMedium = localIsNarrow || breakpoint === 'medium';
     const { selectAll: isSelectAll } = useSelectAll({ labelID });
+
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelNameForToolbar(labelID, labels, folders), [labelID, labels, folders]);
@@ -72,16 +77,13 @@ const ToolbarColumnWide = ({
     return (
         <div className="w-full">
             <nav
-                className={clsx(
-                    classname,
-                    'justify-space-between py-1 pr-2',
-                    selectedIDs.length === 0 ? 'pl-4' : 'pl-3'
-                )}
+                className={clsx(classname, 'justify-space-between py-1 pl-4 pr-2')}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
                 <div className="flex items-center flex-nowrap toolbar-inner gap-2">
+                    {selectAll}
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
                     {addressesDropdown}
 
@@ -95,7 +97,7 @@ const ToolbarColumnWide = ({
                                 onMove={onMove}
                                 onDelete={onDelete}
                             />
-                            {!localIsExtraTiny && (
+                            {!localIsTiny && (
                                 <LabelsAndFolders
                                     labelID={labelID}
                                     selectedIDs={selectedIDs}
@@ -104,15 +106,15 @@ const ToolbarColumnWide = ({
                                     onCheckAll={onCheckAll}
                                 />
                             )}
-                            {!localIsExtraTiny && !isSelectAll && (
-                                <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                            {!localIsTiny && !isSelectAll && (
+                                <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} />
                             )}
                             <MoreDropdown
                                 elementIDs={elementIDs}
                                 selectedIDs={selectedIDs}
                                 isSearch={isSearch}
                                 isNarrow={localIsNarrow}
-                                isTiny={localIsExtraTiny}
+                                isTiny={localIsTiny}
                                 isExtraTiny={localIsExtraTiny}
                                 onMove={onMove}
                                 onDelete={onDelete}
@@ -123,17 +125,7 @@ const ToolbarColumnWide = ({
                     )}
                 </div>
 
-                {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
-                    <div className="flex items-center shrink-0 toolbar-inner gap-2">
-                        <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
-                    </div>
-                ) : undefined}
-            </nav>
-
-            <div className="toolbar flex gap-2 flex-nowrap justify-space-between bg-norm border-bottom border-weak pl-4 pr-2 py-1">
-                <div className="mr-auto">{selectAll}</div>
-
-                <div className="ml-auto">
+                <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
                     {isLabelIDNewsletterSubscription(labelID) ? null : (
                         <ListSettings
                             sort={sort}
@@ -143,13 +135,15 @@ const ToolbarColumnWide = ({
                             conversationMode={conversationMode}
                             mailSettings={mailSettings}
                             labelID={labelID}
-                            filterAsDropdown={localIsTiny}
+                            filterAsDropdown={localIsNarrowAndMedium}
                         />
                     )}
+
+                    <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                 </div>
-            </div>
+            </nav>
         </div>
     );
 };
 
-export default ToolbarColumnWide;
+export default ToolbarRowWide;
