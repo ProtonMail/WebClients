@@ -8,6 +8,7 @@ export default defineConfig([
         rules: {
             // TODO: Add the missing explicit deps and remove this rule
             'import/no-extraneous-dependencies': 'off',
+            'react-hooks/exhaustive-deps': 'warn',
         },
     },
 ]);

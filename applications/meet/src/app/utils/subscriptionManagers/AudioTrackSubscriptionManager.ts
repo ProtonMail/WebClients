@@ -1,6 +1,5 @@
 import type { Participant, TrackPublication } from 'livekit-client';
 import {
-    ConnectionQuality,
     ConnectionState,
     type RemoteParticipant,
     type RemoteTrackPublication,
@@ -10,8 +9,10 @@ import {
 } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
-import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import type { AudioRecoveryAPI } from '../e2eeRecovery/E2eeRecoveryManager';
+import type { RecoveryReason, ReportError } from '../e2eeRecovery/types';
 
 interface PublicationItem {
     publication: RemoteTrackPublication;
@@ -36,45 +37,40 @@ export const sortAudioPublications = <T extends PublicationItem>(publications: T
     });
 };
 
-export class AudioTrackSubscriptionManager {
+const trackKeyOf = (participant: { sid: string }, publication: { trackSid: string }) =>
+    `${participant.sid}-${publication.trackSid}`;
+
+/**
+ * Owns the cap of N concurrently subscribed remote microphone publications,
+ * sorting/eviction logic and unmute/active-speaker driven (re)subscriptions.
+ *
+ * Detection of broken cryptors, missing stats, concealment, persistent
+ * noise etc. lives in `E2eeRecoveryManager`; this class only exposes the
+ * recovery *primitive* (an unsubscribe → wait → resubscribe → enable
+ * dance) via {@link AudioRecoveryAPI} so the recovery manager can drive it
+ * without duplicating the cache / event-guard coordination it already does.
+ */
+export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
     private microphoneCapacity: number;
     private room: Room;
-    private reportError?: (label: string, options?: unknown) => void;
+    private reportError?: ReportError;
     private subscribedMicrophoneTrackPublications: Map<string, PublicationItem> = new Map();
     private lastSortingResult: PublicationItem[] = [];
     private reconcileInterval: NodeJS.Timeout | null = null;
-    private healthCheckInterval: NodeJS.Timeout | null = null;
-    private isHealthCheckRunning = false;
-    private recoveryAttempts = new Map<string, number>();
-    private recoveryTimeouts = new Map<string, NodeJS.Timeout>();
     private activeRecoveries = new Set<string>();
-    private recoveryReasons = new Map<string, 'stalled' | 'concealment'>();
-    private lastPacketCounts = new Map<string, number>();
-    private firstSeenWithoutStats = new Map<string, number>();
-    private consecutiveHighConcealment = new Map<string, number>();
-    private lastConcealmentStats = new Map<
-        string,
-        { concealedSamples: number; silentConcealedSamples: number; totalSamplesReceived: number; timestamp: number }
-    >();
-    private isRoomReconnecting = false;
-    private readonly disableAutoHealing: boolean;
-    private MAX_RECOVERY_ATTEMPTS = 3;
-    private RECOVERY_COOLDOWN = 3_000;
-    private HEALTH_CHECK_INTERVAL = 2_000;
-    private MISSING_STATS_GRACE_PERIOD = 5_000;
-    private CONCEALMENT_RATIO_THRESHOLD = 0.15;
-    private RECENT_CONCEALMENT_THRESHOLD = 0.25;
+    private recoveryTimeouts = new Map<string, NodeJS.Timeout>();
 
-    constructor(
-        capacity: number,
-        room: Room,
-        reportError?: (label: string, options?: unknown) => void,
-        disableAutoHealing: boolean = false
-    ) {
+    // How long we keep `activeRecoveries` entry around after the dance
+    // completes, so subscription event handlers (handleAudioTrackPublished,
+    // handleTrackUnmuted, handleActiveSpeakerChanged, reconcileAudioTracks)
+    // don't race with the just-resubscribed transceiver and tear it down
+    // before it has produced its first packets.
+    private RECOVERY_COOLDOWN = 3_000;
+
+    constructor(capacity: number, room: Room, reportError?: ReportError) {
         this.microphoneCapacity = capacity;
         this.room = room;
         this.reportError = reportError;
-        this.disableAutoHealing = disableAutoHealing;
     }
 
     addToCache(publication: RemoteTrackPublication, participant: RemoteParticipant) {
@@ -173,16 +169,16 @@ export class AudioTrackSubscriptionManager {
         }
 
         if (pub.source === Track.Source.Microphone && !pub.isSubscribed) {
-            const trackKey = `${participant.sid}-${pub.trackSid}`;
+            const trackKey = trackKeyOf(participant, pub);
 
-            // Skip if recovery is in progress for this track
             if (this.activeRecoveries.has(trackKey)) {
                 // eslint-disable-next-line no-console
                 console.log('Skipping handleAudioTrackPublished, recovery in progress for trackKey:', trackKey);
                 return;
             }
 
-            // If the cache if already full, we prevent adding a new track that would be unsubscribed immediately
+            // If the cache is already full, prevent adding a new track that
+            // would be unsubscribed immediately on the next sort.
             if (this.subscribedMicrophoneTrackPublications.size >= this.microphoneCapacity) {
                 const lastItemOfSortedResult = this.lastSortingResult.at(-1);
 
@@ -212,9 +208,8 @@ export class AudioTrackSubscriptionManager {
 
         if (publication.source === Track.Source.Microphone && !publication.isSubscribed) {
             const pub = publication as RemoteTrackPublication;
-            const trackKey = `${participant.sid}-${pub.trackSid}`;
+            const trackKey = trackKeyOf(participant, pub);
 
-            // Skip if recovery is in progress for this track
             if (this.activeRecoveries.has(trackKey)) {
                 // eslint-disable-next-line no-console
                 console.log('Skipping handleTrackUnmuted, recovery in progress for trackKey:', trackKey);
@@ -240,9 +235,7 @@ export class AudioTrackSubscriptionManager {
                 (item) => item.publication.trackSid !== publication.trackSid
             );
 
-            // Clean up any ongoing recovery for this track
-            const trackKey = `${participant.sid}-${publication.trackSid}`;
-            this.cleanupRecovery(trackKey);
+            this.cleanupRecoveryState(trackKeyOf(participant, publication));
         }
     };
 
@@ -257,9 +250,8 @@ export class AudioTrackSubscriptionManager {
             ) as RemoteTrackPublication;
 
             if (microphoneAudioPublication && !microphoneAudioPublication.isSubscribed) {
-                const trackKey = `${participant.sid}-${microphoneAudioPublication.trackSid}`;
+                const trackKey = trackKeyOf(participant, microphoneAudioPublication);
 
-                // Skip if recovery is in progress for this track
                 if (this.activeRecoveries.has(trackKey)) {
                     // eslint-disable-next-line no-console
                     console.log('Skipping handleActiveSpeakerChanged, recovery in progress for trackKey:', trackKey);
@@ -274,41 +266,18 @@ export class AudioTrackSubscriptionManager {
     };
 
     handleParticipantDisconnected = (participant: RemoteParticipant) => {
-        // Clean up all recoveries for this participant
-        const keysToCleanup: string[] = [];
-        for (const key of this.recoveryAttempts.keys()) {
-            if (key.startsWith(participant.sid)) {
-                keysToCleanup.push(key);
+        for (const trackKey of [...this.activeRecoveries]) {
+            if (trackKey.startsWith(`${participant.sid}-`)) {
+                this.cleanupRecoveryState(trackKey);
             }
         }
-        keysToCleanup.forEach((key) => this.cleanupRecovery(key));
     };
 
     handleRoomDisconnected = () => {
-        // Clear all timeouts before clearing maps
         this.recoveryTimeouts.forEach((timeout) => clearTimeout(timeout));
         this.subscribedMicrophoneTrackPublications.clear();
-        this.recoveryAttempts.clear();
         this.recoveryTimeouts.clear();
         this.activeRecoveries.clear();
-        this.lastPacketCounts.clear();
-        this.firstSeenWithoutStats.clear();
-        this.consecutiveHighConcealment.clear();
-        this.lastConcealmentStats.clear();
-        this.isRoomReconnecting = false;
-    };
-
-    handleConnectionStateChanged = (state: ConnectionState) => {
-        // Prevent recovery attempts when the room is reconnecting
-        if (state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting) {
-            // eslint-disable-next-line no-console
-            console.log('Room is reconnecting, pausing track recovery attempts');
-            this.isRoomReconnecting = true;
-        } else if (state === ConnectionState.Connected) {
-            // eslint-disable-next-line no-console
-            console.log('Room reconnected, resuming track recovery attempts');
-            this.isRoomReconnecting = false;
-        }
     };
 
     listenToRoomEvents() {
@@ -319,7 +288,6 @@ export class AudioTrackSubscriptionManager {
         this.room.on(RoomEvent.Disconnected, this.handleRoomDisconnected);
         this.room.on(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
         this.room.on(RoomEvent.ActiveSpeakersChanged, this.handleActiveSpeakerChanged);
-        this.room.on(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
     }
 
     cleanupEventListeners() {
@@ -330,525 +298,121 @@ export class AudioTrackSubscriptionManager {
         this.room.off(RoomEvent.Disconnected, this.handleRoomDisconnected);
         this.room.off(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
         this.room.off(RoomEvent.ActiveSpeakersChanged, this.handleActiveSpeakerChanged);
-        this.room.off(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
     }
 
-    private async attemptRecovery(
+    /**
+     * Implementation of {@link AudioRecoveryAPI.isRecovering}. The recovery
+     * manager polls this every 2s to skip detection while the dance is
+     * running.
+     */
+    isRecovering = (trackKey: string): boolean => this.activeRecoveries.has(trackKey);
+
+    /**
+     * Implementation of {@link AudioRecoveryAPI.recoverTrack}. Executes a
+     * disable → unsubscribe → wait → resubscribe → enable cycle on the
+     * publication, with Safari-specific delays. Marks the track as actively
+     * recovering for the duration of the dance plus a short cooldown so the
+     * other event handlers in this class don't race with the new transceiver.
+     *
+     * Resolves once the cycle finishes; the recovery manager observes the
+     * post-recovery RTP stats to decide success/failure.
+     */
+    recoverTrack = async (
         publication: RemoteTrackPublication,
         participant: RemoteParticipant,
-        trackKey: string
-    ): Promise<void> {
-        // Skip recovery if room is reconnecting
-        if (this.isRoomReconnecting) {
-            // eslint-disable-next-line no-console
-            console.log('Skipping recovery attempt, room is reconnecting');
-            return;
-        }
+        reason: RecoveryReason
+    ): Promise<void> => {
+        const trackKey = trackKeyOf(participant, publication);
 
-        // Skip recovery if participant connection quality is poor or lost —
-        // audio issues are caused by network degradation, not a broken transceiver,
-        // so resubscribing won't help.
-        if (
-            participant.connectionQuality === ConnectionQuality.Poor ||
-            participant.connectionQuality === ConnectionQuality.Lost
-        ) {
-            // eslint-disable-next-line no-console
-            console.log(
-                `Skipping recovery attempt, participant connection quality is ${participant.connectionQuality} for trackKey: ${trackKey}`
-            );
-            return;
-        }
-
-        // Skip recovery if local participant connection quality is poor or lost —
-        // if we can't receive data reliably, resubscribing won't help.
-        if (
-            this.room.localParticipant.connectionQuality === ConnectionQuality.Poor ||
-            this.room.localParticipant.connectionQuality === ConnectionQuality.Lost
-        ) {
-            // eslint-disable-next-line no-console
-            console.log(
-                `Skipping recovery attempt, local participant connection quality is ${this.room.localParticipant.connectionQuality} for trackKey: ${trackKey}`
-            );
-            return;
-        }
-
-        // Prevent concurrent recoveries for same track
         if (this.activeRecoveries.has(trackKey)) {
             // eslint-disable-next-line no-console
-            console.warn('Recovery already in progress for trackKey:', trackKey);
+            console.warn('AudioTrackSubscriptionManager: recovery already in progress', { trackKey, reason });
             return;
         }
 
-        const attempts = this.recoveryAttempts.get(trackKey) || 0;
-
-        if (attempts >= this.MAX_RECOVERY_ATTEMPTS) {
-            const context = {
-                localParticipant: this.room.localParticipant.identity,
-                room: this.room.name,
-                participant: participant.identity,
-                trackSid: publication.trackSid,
-                attempts,
-            };
-            // eslint-disable-next-line no-console
-            console.error('Max recovery attempts reached', context);
-            this.reportError?.('AudioTrackSubscriptionManager: Max recovery attempts reached', {
-                level: 'error',
-                context,
-            });
-
-            this.cleanupRecovery(trackKey);
-            return;
-        }
-
-        // Mark recovery as active
         this.activeRecoveries.add(trackKey);
-        this.recoveryAttempts.set(trackKey, attempts + 1);
+        // eslint-disable-next-line no-console
+        console.log('AudioTrackSubscriptionManager: recoverTrack starting', { trackKey, reason });
 
         try {
-            // eslint-disable-next-line no-console
-            console.log(`Recovery attempt ${attempts + 1}/${this.MAX_RECOVERY_ATTEMPTS} for trackKey: ${trackKey}`);
-
-            // Step 1: Disable track to detach audio element
-            // This helps avoid audio artifacts/echo during recovery
             if (publication.isEnabled) {
                 publication.setEnabled(false);
                 await wait(isSafari() ? 300 : 100);
             }
-
-            // Verify recovery is still active before proceeding
             if (!this.activeRecoveries.has(trackKey)) {
-                // eslint-disable-next-line no-console
-                console.log('Recovery was cleaned up during disable wait, aborting');
                 return;
             }
 
-            // Step 2: Unsubscribe to reset the transceiver
             if (publication.isSubscribed) {
                 publication.setSubscribed(false);
                 await wait(isSafari() ? 1500 : 500);
             }
-
-            // Verify recovery is still active and publication is still valid after the wait
             if (!this.activeRecoveries.has(trackKey)) {
-                // eslint-disable-next-line no-console
-                console.log('Recovery was cleaned up during unsubscribe wait, aborting');
                 return;
             }
 
-            // Check if publication is still in the cache
             if (!this.subscribedMicrophoneTrackPublications.has(publication.trackSid)) {
                 // eslint-disable-next-line no-console
-                console.log('Publication was removed from cache during wait, aborting recovery');
-                this.cleanupRecovery(trackKey);
+                console.log('AudioTrackSubscriptionManager: publication left cache mid-recovery, aborting', trackKey);
+                this.cleanupRecoveryState(trackKey);
                 return;
             }
 
-            // Verify publication is actually unsubscribed before resubscribing
             if (publication.isSubscribed) {
                 // eslint-disable-next-line no-console
-                console.warn('Publication is still subscribed after unsubscribe attempt, forcing unsubscribe');
+                console.warn(
+                    'AudioTrackSubscriptionManager: still subscribed after setSubscribed(false), retrying',
+                    trackKey
+                );
                 publication.setSubscribed(false);
                 await wait(isSafari() ? 500 : 200);
             }
 
-            // Clear stale concealment baseline — the new transceiver starts with fresh counters
-            // so any delta calculated against the old values would be meaningless and cause
-            // a false-positive "concealment resolved" on the very next health check tick.
-            this.lastConcealmentStats.delete(trackKey);
-            this.lastPacketCounts.delete(trackKey);
-
-            // Step 3: Resubscribe to create new transceiver
             if (!publication.isSubscribed) {
                 publication.setSubscribed(true);
                 await wait(isSafari() ? 500 : 100);
             }
-
-            // Verify subscription succeeded before enabling
             if (!publication.isSubscribed) {
                 // eslint-disable-next-line no-console
-                console.error('Failed to resubscribe track during recovery');
-                this.cleanupRecovery(trackKey);
+                console.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
+                this.cleanupRecoveryState(trackKey);
                 return;
             }
 
-            // Step 4: Re-enable track to attach new audio element
             if (!publication.isEnabled) {
                 publication.setEnabled(true);
-                // Small wait to ensure audio element is properly attached
                 await wait(isSafari() ? 200 : 50);
             }
 
             // eslint-disable-next-line no-console
-            console.log(`Recovery completed for trackKey: ${trackKey}, will verify in ${this.RECOVERY_COOLDOWN}ms`);
+            console.log('AudioTrackSubscriptionManager: recoverTrack completed', {
+                trackKey,
+                reason,
+                cooldownMs: this.RECOVERY_COOLDOWN,
+            });
 
-            // Check if successful in the next recovery attempt
             const timeout = setTimeout(() => {
                 this.activeRecoveries.delete(trackKey);
+                this.recoveryTimeouts.delete(trackKey);
             }, this.RECOVERY_COOLDOWN);
-
-            // Store timeout for cleanup
             this.recoveryTimeouts.set(trackKey, timeout);
         } catch (error) {
             // eslint-disable-next-line no-console
-            console.error('Recovery attempt failed', error, {
-                trackKey,
-                participant: participant.identity,
-                trackSid: publication.trackSid,
-            });
-            this.reportError?.('AudioTrackSubscriptionManager: Recovery attempt failed', {
+            console.error('AudioTrackSubscriptionManager: recoverTrack threw', error, { trackKey, reason });
+            this.reportError?.('AudioTrackSubscriptionManager: recoverTrack threw', {
                 level: 'error',
                 context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid },
             });
-            // Clean up recovery state on error
-            this.cleanupRecovery(trackKey);
+            this.cleanupRecoveryState(trackKey);
         }
-    }
+    };
 
-    private cleanupRecovery(trackKey: string): void {
-        this.recoveryAttempts.delete(trackKey);
+    private cleanupRecoveryState = (trackKey: string) => {
         this.activeRecoveries.delete(trackKey);
-        this.recoveryReasons.delete(trackKey);
-        this.lastPacketCounts.delete(trackKey);
-        this.firstSeenWithoutStats.delete(`firstSeen-${trackKey}`);
-        this.consecutiveHighConcealment.delete(trackKey);
-        this.lastConcealmentStats.delete(trackKey);
-
         const timeout = this.recoveryTimeouts.get(trackKey);
         if (timeout) {
             clearTimeout(timeout);
             this.recoveryTimeouts.delete(trackKey);
-        }
-    }
-
-    private runHealthCheck = async () => {
-        if (this.isHealthCheckRunning) {
-            // avoid duplicate health check in same time which might cause performance issues
-            return;
-        }
-
-        if (this.room.state !== ConnectionState.Connected) {
-            return;
-        }
-
-        // Skip health check if page is in background and is Safari
-        if (!isDocumentVisible() && isSafari()) {
-            return;
-        }
-
-        const subscriberPC = (this.room.engine as any).pcManager?.subscriber?.pc;
-        if (!subscriberPC) {
-            return;
-        }
-
-        this.isHealthCheckRunning = true;
-        try {
-            const stats = await subscriberPC.getStats();
-            const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
-
-            await this.checkBrokenTransceivers(stats, currentCacheValues);
-            await this.checkAudioConcealment(stats, currentCacheValues);
-        } finally {
-            this.isHealthCheckRunning = false;
-        }
-    };
-
-    private checkBrokenTransceivers = async (stats: RTCStatsReport, currentCacheValues: PublicationItem[]) => {
-        try {
-            for (const item of currentCacheValues) {
-                const { publication, participant } = item;
-                const track = publication.track;
-                const trackKey = `${participant.sid}-${publication.trackSid}`;
-
-                // Clear packet and concealment tracking for muted tracks to avoid false positives when unmuting
-                if (publication.isMuted) {
-                    this.lastPacketCounts.delete(trackKey);
-                    this.lastConcealmentStats.delete(trackKey);
-                }
-
-                // Skip if not subscribed, muted, or already recovering
-                if (!publication.isSubscribed || publication.isMuted || this.activeRecoveries.has(trackKey) || !track) {
-                    continue;
-                }
-
-                const trackId = track.mediaStreamTrack?.id;
-                if (!trackId) {
-                    continue;
-                }
-
-                // Look for inbound-rtp stats for this track
-                let foundStats = false;
-                let packetsReceived = 0;
-
-                for (const [, value] of stats) {
-                    if (value.type === 'inbound-rtp' && value.kind === 'audio' && value.trackIdentifier === trackId) {
-                        foundStats = true;
-                        packetsReceived = value.packetsReceived || 0;
-                        break;
-                    }
-                }
-
-                // If inbound-rtp stats missing entirely
-                if (!foundStats && track.mediaStreamTrack?.readyState === 'live') {
-                    const firstSeenKey = `firstSeen-${trackKey}`;
-                    const firstSeenTime = this.firstSeenWithoutStats.get(firstSeenKey);
-
-                    if (!firstSeenTime) {
-                        // First time seeing missing stats - give it grace period (track might be initializing)
-                        this.firstSeenWithoutStats.set(firstSeenKey, Date.now());
-                        continue;
-                    }
-
-                    const missingDuration = Date.now() - firstSeenTime;
-                    if (missingDuration > this.MISSING_STATS_GRACE_PERIOD) {
-                        const context = {
-                            localParticipant: this.room.localParticipant.identity,
-                            room: this.room.name,
-                            participant: participant.identity,
-                            trackSid: publication.trackSid,
-                            missingDuration,
-                        };
-                        // eslint-disable-next-line no-console
-                        console.warn('Detected missing inbound-rtp stats', context);
-                        this.reportError?.('AudioTrackSubscriptionManager: Detected missing inbound-rtp stats', {
-                            level: 'warning',
-                            context,
-                        });
-
-                        void this.attemptRecovery(publication, participant, trackKey);
-                        this.firstSeenWithoutStats.delete(firstSeenKey);
-                    }
-                    continue;
-                } else if (foundStats) {
-                    // Stats appeared, clear the tracking
-                    const firstSeenKey = `firstSeen-${trackKey}`;
-                    this.firstSeenWithoutStats.delete(firstSeenKey);
-                }
-
-                // If packets number is freezing
-                const lastPackets = this.lastPacketCounts.get(trackKey) || 0;
-                this.lastPacketCounts.set(trackKey, packetsReceived);
-
-                // If packets haven't increased in 2 checks (6 seconds with 3s interval), but track is live
-                // This gives time for natural network jitter without false alarms
-                if (
-                    lastPackets > 0 &&
-                    packetsReceived === lastPackets &&
-                    track.mediaStreamTrack?.readyState === 'live'
-                ) {
-                    const context = {
-                        localParticipant: this.room.localParticipant.identity,
-                        room: this.room.name,
-                        participant: participant.identity,
-                        trackSid: publication.trackSid,
-                        packetsReceived,
-                        lastPackets,
-                    };
-                    // eslint-disable-next-line no-console
-                    console.warn('Detected stalled audio', context);
-                    this.reportError?.('AudioTrackSubscriptionManager: Detected stalled audio', {
-                        level: 'warning',
-                        context,
-                    });
-
-                    this.recoveryReasons.set(trackKey, 'stalled');
-                    void this.attemptRecovery(publication, participant, trackKey);
-                    continue;
-                }
-
-                // If track is healthy and was in recovery, cleanup recovery state
-                // This validates that the previous recovery attempt was successful
-                if (this.recoveryAttempts.has(trackKey) && this.recoveryReasons.get(trackKey) === 'stalled') {
-                    const attempts = this.recoveryAttempts.get(trackKey) || 0;
-                    const context = {
-                        localParticipant: this.room.localParticipant.identity,
-                        room: this.room.name,
-                        participant: participant.identity,
-                        trackSid: publication.trackSid,
-                        recoveryAttempts: attempts,
-                    };
-                    // eslint-disable-next-line no-console
-                    console.log('Track recovered successfully', context);
-                    this.reportError?.('AudioTrackSubscriptionManager: Track recovered successfully', {
-                        level: 'info',
-                        context,
-                    });
-                    this.cleanupRecovery(trackKey);
-                }
-            }
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Error checking broken transceivers:', error);
-            this.reportError?.('AudioTrackSubscriptionManager: Error checking broken transceivers', {
-                level: 'error',
-                context: { error },
-            });
-        }
-    };
-
-    private checkAudioConcealment = async (stats: RTCStatsReport, currentCacheValues: PublicationItem[]) => {
-        try {
-            let tracksWithHighConcealment = 0;
-
-            for (const item of currentCacheValues) {
-                const { publication, participant } = item;
-                const track = publication.track;
-                const trackKey = `${participant.sid}-${publication.trackSid}`;
-
-                // Skip if not subscribed, muted, already recovering, or no track
-                if (!publication.isSubscribed || publication.isMuted || this.activeRecoveries.has(trackKey) || !track) {
-                    continue;
-                }
-
-                const trackId = track.mediaStreamTrack?.id;
-                if (!trackId) {
-                    continue;
-                }
-
-                // Look for inbound-rtp stats for this audio track
-                for (const [, value] of stats) {
-                    if (value.type === 'inbound-rtp' && value.kind === 'audio' && value.trackIdentifier === trackId) {
-                        const concealedSamples = value.concealedSamples || 0;
-                        const totalSamplesReceived = value.totalSamplesReceived || 0;
-                        const silentConcealedSamples = value.silentConcealedSamples || 0;
-                        const concealmentEvents = value.concealmentEvents || 0;
-
-                        // Only check if we have received enough samples
-                        if (totalSamplesReceived < 1000) {
-                            continue;
-                        }
-
-                        // Calculate non-silent concealment (excludes concealedSamples generated by mute/silence)
-                        const nonSilentConcealedSamples = concealedSamples - silentConcealedSamples;
-                        const nonSilentConcealmentRatio = nonSilentConcealedSamples / totalSamplesReceived;
-
-                        // Delta-based detection: Check recent non-silent concealment rate
-                        const lastStats = this.lastConcealmentStats.get(trackKey);
-                        let recentNonSilentConcealmentRatio = 0;
-                        let hasRecentData = false;
-
-                        if (lastStats) {
-                            const newConcealedSamples = concealedSamples - lastStats.concealedSamples;
-                            const newSilentConcealedSamples = silentConcealedSamples - lastStats.silentConcealedSamples;
-                            const newNonSilentConcealedSamples = newConcealedSamples - newSilentConcealedSamples;
-                            const newTotalSamples = totalSamplesReceived - lastStats.totalSamplesReceived;
-
-                            // We set the samples size to, at least, 500 for meaningful measurement
-                            if (newTotalSamples >= 500) {
-                                recentNonSilentConcealmentRatio = newNonSilentConcealedSamples / newTotalSamples;
-                                hasRecentData = true;
-                            }
-                        }
-
-                        // Store current stats for next delta calculation
-                        this.lastConcealmentStats.set(trackKey, {
-                            concealedSamples,
-                            silentConcealedSamples,
-                            totalSamplesReceived,
-                            timestamp: Date.now(),
-                        });
-
-                        // Trigger if either:
-                        // 1. Recent non-silent concealment is severe (25%+) - immediate trigger
-                        // 2. Cumulative non-silent concealment is high (15%+) after 2 consecutive checks - gradual degradation
-                        const recentConcealmentCritical =
-                            hasRecentData && recentNonSilentConcealmentRatio > this.RECENT_CONCEALMENT_THRESHOLD;
-                        const cumulativeConcealmentHigh = nonSilentConcealmentRatio > this.CONCEALMENT_RATIO_THRESHOLD;
-
-                        if (recentConcealmentCritical || cumulativeConcealmentHigh) {
-                            tracksWithHighConcealment++;
-
-                            // Track consecutive high concealment checks
-                            const consecutiveCount = (this.consecutiveHighConcealment.get(trackKey) || 0) + 1;
-                            this.consecutiveHighConcealment.set(trackKey, consecutiveCount);
-
-                            // Immediate trigger if recent concealment is critical
-                            // Or trigger after 2 consecutive checks if cumulative is high
-                            const shouldTrigger = recentConcealmentCritical || consecutiveCount >= 2;
-
-                            if (shouldTrigger) {
-                                const context = {
-                                    localParticipant: this.room.localParticipant.identity,
-                                    room: this.room.name,
-                                    participant: participant.identity,
-                                    trackSid: publication.trackSid,
-                                    nonSilentConcealmentRatio: nonSilentConcealmentRatio.toFixed(3),
-                                    recentNonSilentConcealmentRatio: hasRecentData
-                                        ? recentNonSilentConcealmentRatio.toFixed(3)
-                                        : 'N/A',
-                                    concealedSamples,
-                                    silentConcealedSamples,
-                                    nonSilentConcealedSamples,
-                                    totalSamplesReceived,
-                                    concealmentEvents,
-                                    consecutiveChecks: consecutiveCount,
-                                    triggerReason: recentConcealmentCritical
-                                        ? 'recent_samples_critical'
-                                        : 'cumulative_high',
-                                };
-
-                                // eslint-disable-next-line no-console
-                                console.warn('Detected high audio concealment', context);
-
-                                this.reportError?.('AudioTrackSubscriptionManager: High audio concealment detected', {
-                                    level: 'warning',
-                                    context,
-                                });
-
-                                this.recoveryReasons.set(trackKey, 'concealment');
-                                void this.attemptRecovery(publication, participant, trackKey);
-                            }
-                        } else {
-                            // Concealment is back to normal
-                            this.consecutiveHighConcealment.delete(trackKey);
-
-                            // If track recovered and was in recovery, cleanup recovery state
-                            if (
-                                this.recoveryAttempts.has(trackKey) &&
-                                this.recoveryReasons.get(trackKey) === 'concealment'
-                            ) {
-                                const attempts = this.recoveryAttempts.get(trackKey) || 0;
-                                const context = {
-                                    localParticipant: this.room.localParticipant.identity,
-                                    room: this.room.name,
-                                    participant: participant.identity,
-                                    trackSid: publication.trackSid,
-                                    recoveryAttempts: attempts,
-                                    finalNonSilentConcealmentRatio: nonSilentConcealmentRatio.toFixed(3),
-                                };
-                                // eslint-disable-next-line no-console
-                                console.log('Track recovered successfully', context);
-                                this.reportError?.('AudioTrackSubscriptionManager: Track recovered successfully', {
-                                    level: 'info',
-                                    context,
-                                });
-                                this.cleanupRecovery(trackKey);
-                            }
-                        }
-                        break;
-                    }
-                }
-            }
-
-            // Log if multiple tracks have high concealment
-            if (tracksWithHighConcealment >= 3) {
-                this.reportError?.(
-                    'AudioTrackSubscriptionManager: Multiple tracks with high concealment (E2EE overload)',
-                    {
-                        level: 'warning',
-                        context: {
-                            affectedTracks: tracksWithHighConcealment,
-                            totalSubscribedTracks: currentCacheValues.length,
-                        },
-                    }
-                );
-            }
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Error checking audio concealment:', error);
-            this.reportError?.('AudioTrackSubscriptionManager: Error checking audio concealment', {
-                level: 'error',
-                context: { error },
-            });
         }
     };
 
@@ -861,19 +425,15 @@ export class AudioTrackSubscriptionManager {
 
         const sortedMicrophoneAudioPublications = sortAudioPublications(microphoneAudioPublications);
 
-        // Get the top N publications. Ideally this is the same as the sorted cache.
         const microphoneAudioPublicationsToPotentiallySubscribe = sortedMicrophoneAudioPublications.slice(
             0,
             this.microphoneCapacity
         );
 
-        // Get the publications that are not in the cache
         const publicationsToSubscribe = microphoneAudioPublicationsToPotentiallySubscribe.filter(
             (publication) => !this.subscribedMicrophoneTrackPublications.has(publication.publication.trackSid)
         );
 
-        // Subscribe to the publications that were not in the cache
-        // The handleCacheUpdate method will evict the oldest publication if the cache is full
         publicationsToSubscribe.forEach((publication) => {
             publication.publication.setSubscribed(true);
             publication.publication.setEnabled(true);
@@ -883,18 +443,15 @@ export class AudioTrackSubscriptionManager {
 
         const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
 
-        // If any items from the cache lost subscription, we re-subscribe them
         currentCacheValues.forEach((item) => {
-            const trackKey = `${item.participant.sid}-${item.publication.trackSid}`;
+            const trackKey = trackKeyOf(item.participant, item.publication);
 
-            // Skip if recovery already in progress for this track
             if (this.activeRecoveries.has(trackKey)) {
                 // eslint-disable-next-line no-console
                 console.log('Skipping reconcile for track in recovery:', trackKey);
                 return;
             }
 
-            // Only modify subscription/enabled state if not in recovery
             if (!item.publication.isSubscribed) {
                 item.publication.setSubscribed(true);
             }
@@ -917,43 +474,18 @@ export class AudioTrackSubscriptionManager {
         }
     };
 
-    setupHealthCheckLoop = () => {
-        if (this.disableAutoHealing) {
-            // eslint-disable-next-line no-console
-            console.log('AudioTrackSubscriptionManager: Auto-healing is disabled, skipping health check setup');
-            return;
-        }
-        this.healthCheckInterval = setInterval(() => {
-            void this.runHealthCheck(); // the health check will be skip if previous health check is not finished
-        }, this.HEALTH_CHECK_INTERVAL);
-    };
-
-    cleanupHealthCheckLoop = () => {
-        if (this.healthCheckInterval) {
-            clearInterval(this.healthCheckInterval);
-        }
-    };
-
     setup = () => {
         this.listenToRoomEvents();
         this.setupReconcileLoop();
-        this.setupHealthCheckLoop();
     };
 
     cleanup = () => {
-        // Clear all timeouts first
         this.recoveryTimeouts.forEach((timeout) => clearTimeout(timeout));
         this.subscribedMicrophoneTrackPublications.clear();
         this.lastSortingResult = [];
-        this.recoveryAttempts.clear();
         this.recoveryTimeouts.clear();
         this.activeRecoveries.clear();
-        this.lastPacketCounts.clear();
-        this.firstSeenWithoutStats.clear();
-        this.consecutiveHighConcealment.clear();
-        this.lastConcealmentStats.clear();
         this.cleanupEventListeners();
         this.cleanupReconcileLoop();
-        this.cleanupHealthCheckLoop();
     };
 }
