@@ -36,7 +36,6 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
-        yield put(withRevalidate(getOrganizationPauseList.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());
@@ -44,6 +43,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSa
         if (EXTENSION_BUILD) {
             yield put(withRevalidate(resolveWebsiteRules.intent()));
             yield put(withRevalidate(resolvePrivateDomains.intent()));
+            yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
         /* Re-hydrate the crypto context with current Redux addresses */
