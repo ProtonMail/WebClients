@@ -1,0 +1,26 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.token-redemption-container {
+	background: transparent;
+
+	@include im.media('>xsmall') {
+		background: linear-gradient(122.01deg, #fff 8.63%, #f7f5fe 69.23%);
+	}
+
+	.sign-layout {
+		min-block-size: rem(500); // to avoid some shifts
+	}
+
+	.sign-layout-title {
+		text-align: center;
+		margin-block-end: var(--space-10);
+	}
+
+	.sign-layout-sub-title {
+		font-size: rem(16);
+	}
+}
