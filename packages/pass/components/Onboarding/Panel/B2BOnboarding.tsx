@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import onboardingExtension from '@proton/pass/assets/b2b-onboarding/icons/extension-icon.svg';
 import onboardingImport from '@proton/pass/assets/b2b-onboarding/icons/import-icon.svg';
@@ -11,6 +12,7 @@ import onboardingVault from '@proton/pass/assets/b2b-onboarding/icons/vault-icon
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OnboardingArrow } from '@proton/pass/components/Onboarding/Panel/OnboardingArrow';
 import type { OnboardingCardProps } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
 import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
@@ -26,6 +28,7 @@ type OnboardingCardType = Pick<OnboardingCardProps, 'imageSrc' | 'title' | 'desc
 
 export const B2BOnboarding: FC = () => {
     const { openSettings, onLink } = usePassCore();
+    const { acknowledge } = useOnboarding();
 
     const vaultActions = useVaultActions();
     const inviteActions = useInviteActions();
@@ -101,6 +104,12 @@ export const B2BOnboarding: FC = () => {
                             actionDone={actionDone}
                         />
                     ))}
+                </div>
+
+                <div className="lg:hidden flex justify-center pb-4">
+                    <Button shape="ghost" color="weak" onClick={acknowledge} className="text-sm italic color-hint">
+                        {c('Action').t`Don't show this again`}
+                    </Button>
                 </div>
             </Scroll>
 
