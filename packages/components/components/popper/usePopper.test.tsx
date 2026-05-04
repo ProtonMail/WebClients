@@ -102,7 +102,7 @@ describe('usePopper', () => {
         await act(async () => {});
         expect(screen.getByTestId('floating').dataset.placement).toBe('top-start');
         // @ts-ignore
-        expect(screen.getByTestId('floating').style._values).toEqual({
+        expect(Object.fromEntries(screen.getByTestId('floating').style._values.entries())).toEqual({
             top: '10px',
             left: '10px',
             width: '1px',
@@ -128,7 +128,7 @@ describe('usePopper', () => {
         rerender(<Test isOpen={true} originalPlacement="top-start" anchor={{ top: 2, left: 3 }} />);
         await act(async () => {});
         // @ts-ignore
-        expect(screen.getByTestId('floating').style._values).toEqual({
+        expect(Object.fromEntries(screen.getByTestId('floating').style._values.entries())).toEqual({
             top: '2px',
             left: '3px',
             width: '1px',
@@ -141,7 +141,7 @@ describe('usePopper', () => {
         const { rerender } = render(<Test isOpen={true} originalPlacement="top-start" />);
         await act(async () => {});
         // @ts-ignore
-        expect(screen.getByTestId('floating').style._values).toEqual({
+        expect(Object.fromEntries(screen.getByTestId('floating').style._values.entries())).toEqual({
             top: '10px',
             left: '10px',
             width: '1px',
@@ -151,7 +151,7 @@ describe('usePopper', () => {
         rerender(<Test isOpen={true} originalPlacement="top-start" anchor={{ top: 1, left: 2 }} />);
         await act(async () => {});
         // @ts-ignore
-        expect(screen.getByTestId('floating').style._values).toEqual({
+        expect(Object.fromEntries(screen.getByTestId('floating').style._values.entries())).toEqual({
             top: '1px',
             left: '2px',
             width: '1px',
