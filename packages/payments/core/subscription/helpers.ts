@@ -667,30 +667,7 @@ export const isAddonDowngradeOnSameCycle = (current: Subscription, upcoming: Sub
 };
 
 export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
-    const current = subscription;
-    const upcoming = subscription.UpcomingSubscription;
-
-    // Two possible cases here: addon downgrade (for example, Scribe) and scheduled downcycling.
-    // 1. Addon downgrade: user decreases the number of addons,
-    //     then the upcoming subscription will have the same cycle as the current subscription
-    // "isAddonDowngradeOnSameCycle()" checks that
-    //
-    // 2. Scheduled downcycling: user changes, for example, from 12 months to 1 month,
-    //     then the upcoming subscription will have a lower cycle than the current subscription
-    // "current.Cycle > upcoming.Cycle" checks that
-    //
-    // In both cases, the upcoming subscription will be unpaid until it starts.
-    // see PAY-2060, PAY-2080, and PAY-3027.
-    //
-    // Additional case from P2-1572:
-    // 3. vpn2024 and bundle2022 can have 6m cycles which always renew for 12m.
-    return (
-        !!current &&
-        !!upcoming &&
-        (current.Cycle > upcoming.Cycle ||
-            current.Cycle === CYCLE.SIX ||
-            isAddonDowngradeOnSameCycle(current, upcoming))
-    );
+    return subscription.UpcomingSubscription?.IsPrepaid === false;
 }
 
 export function getRenewalTime(subscription: Subscription): number;

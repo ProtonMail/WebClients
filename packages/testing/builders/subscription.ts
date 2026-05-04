@@ -35,6 +35,7 @@ const innerBuildSubscription = (value?: Partial<Subscription>): Subscription => 
         Renew: Renew.Enabled,
         External: SubscriptionPlatform.Default,
         IsTrial: false,
+        IsPrepaid: true,
         ...value,
     };
 };
