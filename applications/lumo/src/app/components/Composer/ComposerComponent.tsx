@@ -19,13 +19,13 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
-import type { Attachment, ComposerMode, Message } from '../../types';
+import type { Attachment, Message } from '../../types';
+import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
-import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
@@ -80,6 +80,7 @@ export type ComposerComponentProps = {
     canShowLumoUpsellToggle?: boolean;
     canShowGuestNotificationCard?: boolean;
     placeholder?: string;
+    optionalElementBelowComposer?: React.ReactNode;
 };
 
 /**
@@ -109,6 +110,7 @@ const ComposerComponentInner = ({
     placeholder,
     canShowLumoUpsellToggle = false,
     canShowGuestNotificationCard = false,
+    optionalElementBelowComposer,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -327,7 +329,8 @@ const ComposerComponentInner = ({
                     <div
                         className={clsx(
                             'lumo-input-container bg-norm border border-norm  w-full',
-                            isGhostChatMode && 'ghost-mode'
+                            isGhostChatMode && 'ghost-mode',
+                            composerMode === ComposerMode.NEW_CONVERSATION && '--glowing-composer'
                         )}
                     >
                         {hasAttachments && (
@@ -365,7 +368,7 @@ const ComposerComponentInner = ({
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                         />
                     </div>
-                    {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}
+                    {optionalElementBelowComposer}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}

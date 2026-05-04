@@ -32,15 +32,9 @@ const MainLayoutContent = ({ children }: Props) => {
         <div className="outer-outer relative reset4print flex flex-row h-full w-full overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full no-print">
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
-                    <div
-                        className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2"
-                        style={{ border: '1px solid red' }}
-                    >
+                    <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2 md:gap-2">
                         <LumoSidebar />
-                        <main
-                            className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative"
-                            style={{ outline: 'solid 1px orange' }}
-                        >
+                        <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative">
                             <HighLoadWarning />
                             {children}
                         </main>
