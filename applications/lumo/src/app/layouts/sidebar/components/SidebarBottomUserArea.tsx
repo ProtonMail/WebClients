@@ -4,6 +4,7 @@ import { UserDropdown, useConfig } from '@proton/components';
 
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
+import LumoUserDropdownContent from '../../header/LumoUserDropdownContent';
 import { SidebarItem } from './SidebarItem';
 
 const CollapseToggle = ({ className }: { className?: string }) => {
@@ -44,7 +45,9 @@ export const SidebarBottomUserArea = () => {
     if (isSmallScreen) {
         return (
             <div className="sidebar-bottom-user-dropdown mobile-user-dropdown shrink-0">
-                <UserDropdown app={APP_NAME} dropdownIcon={undefined} className="border-none" />
+                <UserDropdown app={APP_NAME} dropdownIcon={undefined} className="border-none">
+                    <LumoUserDropdownContent />
+                </UserDropdown>
             </div>
         );
     }
@@ -53,7 +56,9 @@ export const SidebarBottomUserArea = () => {
         <div className="desktop-sidebar-user-dropdown flex flex-row flex-nowrap items-center gap-2 justify-space-between">
             <div className="w-3/4">
                 <div className="sidebar-item-text">
-                    <UserDropdown app={APP_NAME} dropdownIcon={undefined} />
+                    <UserDropdown app={APP_NAME} dropdownIcon={undefined}>
+                        <LumoUserDropdownContent />
+                    </UserDropdown>
                 </div>
             </div>
             {/* <CollapseToggle className="mr-0 w-auto" /> */}
