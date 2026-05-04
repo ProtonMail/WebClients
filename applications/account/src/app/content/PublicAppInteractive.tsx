@@ -48,6 +48,7 @@ import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SigninHelpContainer from '../public/SigninHelpContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
+import TokenRedemptionContainer from '../public/orgJoiningLink/TokenRedemptionContainer';
 import PassExtensionOnboarding from '../public/pass/PassExtensionOnboarding';
 import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
@@ -410,6 +411,16 @@ const PublicAppInteractive = ({
                                                 <Activation
                                                     metaTags={bornPrivateActivatePage()}
                                                     onLogin={handleLogin}
+                                                />
+                                            </UnAuthenticated>
+                                        </Route>
+                                        <Route path={SSO_PATHS.JOIN_ORG}>
+                                            <UnAuthenticated>
+                                                <TokenRedemptionContainer
+                                                    unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
+                                                    onPreSubmit={handlePreSubmit}
+                                                    onStartAuth={handleStartAuth}
+                                                    onLoginResult={handleLoginResult}
                                                 />
                                             </UnAuthenticated>
                                         </Route>
