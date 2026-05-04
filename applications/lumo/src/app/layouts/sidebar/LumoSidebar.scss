@@ -216,6 +216,9 @@ im.$media-expressions: $media-expressions;
 .user-dropdown-button {
 	padding: #{rem(4)};
 	flex-direction: row-reverse;
+	justify-content: flex-end;
+	inline-size: 100%;
+	margin-block-start: 8px;
 
 	.user-dropdown-text {
 		text-align: start;
@@ -226,7 +229,8 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.user-initials {
-		background-color: var(--background-norm);
+		background-color: #baf8e6;
+		border: none;
 	}
 }
 
