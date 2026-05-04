@@ -19,7 +19,7 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, userLoading] = useUser();
 
-    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
+    const [{ hasHadSubscription }, loadingPreviousSubscription] = usePreviousSubscription();
 
     // The offer should not be opened if the user has selected a conversation / message.
     // Only when in the root of a folder, regardless of the folder
@@ -48,7 +48,7 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
             mailOneDollarPostSignupFlag,
             nbrEmailsInAllMail: totalMessage,
-            previousSubscriptionEndTime,
+            hasHadSubscription,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
         isLoading: !!(userLoading || mailOfferStateLoading || driveOfferStateLoading || loadingPreviousSubscription),

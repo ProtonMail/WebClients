@@ -39,6 +39,7 @@ import type {
 } from './constants';
 import type { PaymentProcessorType } from './payment-processors/interface';
 import type { PlansMap } from './plan/interface';
+import type { SubscriptionPlatform } from './subscription/constants';
 import type { SubscriptionEstimation } from './subscription/interface';
 
 export interface CreateCardDetailsBackend {
@@ -265,8 +266,34 @@ export type SavedPaymentMethodExternal =
     | PaymentMethodCardDetailsExternal
     | PaymentMethodGooglePay;
 
-export interface LatestSubscription {
-    LastSubscriptionEnd: number;
+export interface PreviousSubscription {
+    cycle: Cycle;
+    currency: Currency;
+    /**
+     * When the previous subscription started.
+     */
+    periodStart: number;
+    /**
+     * When the previous subscription ended.
+     */
+    periodEnd: number;
+    /**
+     * When the first term of previous subscription started. Unlike periodStart, this property doesn't change when
+     * subscription is renewed.
+     */
+    createTime: number;
+    /**
+     * The timestamp when the subscription actually ended. E.g. when subscription expires after user cancelled it, or
+     * when CS deleted the subscription by customer request.
+     */
+    cancelTime: number;
+    couponCode: string | null;
+    plans: PlanIDs;
+    /**
+     * Tells if the subscription was web, iOS, Android.
+     */
+    external: SubscriptionPlatform;
+    isTrial: boolean;
 }
 
 export type ExistingPaymentMethod = string;
