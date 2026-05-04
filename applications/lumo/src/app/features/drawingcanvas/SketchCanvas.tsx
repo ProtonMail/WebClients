@@ -2,13 +2,14 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcPen } from '@proton/icons/icons/IcPen';
 
-import type { CanvasConfig, DrawingMode, ExportOptions } from './types';
 import { Canvas } from './Canvas';
 import { Toolbar } from './Toolbar';
 import { useHistory } from './hooks/useHistory';
+import type { CanvasConfig, DrawingMode, ExportOptions } from './types';
 import { exportCanvasAsDataURL } from './utils/export';
+
 import './SketchCanvas.scss';
 
 interface SketchCanvasProps {
@@ -69,7 +70,7 @@ export const SketchCanvas = ({
                 {mode !== 'blank' && (
                     <div className="sketch-canvas__description rounded-lg bg-norm border border-weak shadow-lifted">
                         <p className="flex items-center gap-1 text-sm text-semibold m-0 color-weak">
-                            <Icon name="pen" size={3} />
+                            <IcPen size={3} />
                             {c('collider_2025:Hint').t`Draw on the image to annotate, and/or describe what to change`}
                         </p>
 
@@ -78,7 +79,8 @@ export const SketchCanvas = ({
                         <textarea
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            placeholder={c('collider_2025:Placeholder').t`e.g. "Make the sky purple", "Remove the items circled in red"`}
+                            placeholder={c('collider_2025:Placeholder')
+                                .t`e.g. "Make the sky purple", "Remove the items circled in red"`}
                             rows={1}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' && !e.shiftKey) {

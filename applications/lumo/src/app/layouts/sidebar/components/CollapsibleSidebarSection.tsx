@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { useSidebar } from '../../../providers/SidebarProvider';
 
@@ -88,9 +89,8 @@ export const CollapsibleSidebarSection = ({
                             >
                                 <div className="sidebar-item-icon">
                                     {!isHovered && showText && icon}
-                                    {isHovered && (
-                                        <Icon name={isExpanded ? 'chevron-down' : 'chevron-right'} size={4} />
-                                    )}
+                                    {isHovered &&
+                                        (isExpanded ? <IcChevronDown size={4} /> : <IcChevronRight size={4} />)}
                                 </div>
                             </button>
                             <span className={clsx('sidebar-item-text', !showText && 'hidden')}>

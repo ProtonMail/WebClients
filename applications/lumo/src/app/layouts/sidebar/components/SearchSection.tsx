@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -44,7 +44,7 @@ export const SearchSection = ({ showText, value, onChange, onSearchClick, isSmal
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                 <div className={clsx('search-container', isCollapsed && 'collapsed')} onClick={handleSearchClick}>
                     <div className="sidebar-item-icon">
-                        <Icon name="magnifier" size={4} />
+                        <IcMagnifier size={4} />
                     </div>
                     <div className={clsx('search-input-wrapper', !showText && 'hidden')}>
                         <input

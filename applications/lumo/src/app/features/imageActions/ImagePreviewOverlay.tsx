@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
@@ -134,7 +135,7 @@ export const ImagePreviewOverlay = ({
                         onClick={onDownload}
                         title={c('collider_2025:Action').t`Download`}
                     >
-                        <Icon name="arrow-down-line" size={4} />
+                        <IcArrowDownLine size={4} />
                     </button>
                 )}
                 <button
