@@ -337,7 +337,7 @@ const ComposerComponentInner = ({
                 <section
                     ref={composerContainerRef}
                     className={clsx(
-                        'flex flex-column flex-nowrap min-h-custom items-center gap-1',
+                        'flex flex-column flex-nowrap min-h-custom items-center gap-2',
                         className,
                         isGhostChatMode && 'ghost-mode'
                     )}
