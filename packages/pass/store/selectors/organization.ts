@@ -1,5 +1,4 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { State } from '@proton/pass/store/types';
@@ -23,6 +22,3 @@ export const selectOrganizationVaultCreationPolicy = ({
     user: { user, plan },
 }: State): MaybeNull<OrganizationVaultCreateMode> =>
     user !== null && !isB2BAdmin(user, getPassPlan(plan)) ? (organization?.settings?.VaultCreateMode ?? null) : null;
-
-const EMPTY_DOMAINS: DomainCriterias = {};
-export const selectOrgDisallowedDomains = ({ organization }: State): DomainCriterias => organization?.pauseList ?? EMPTY_DOMAINS;
