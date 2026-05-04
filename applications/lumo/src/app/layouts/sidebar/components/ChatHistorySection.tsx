@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { ChatHistory } from '../../sidepanel/ChatHistory';
@@ -17,7 +17,7 @@ export const ChatHistorySection = ({ searchValue, showText }: Props) => {
     return (
         <CollapsibleSidebarSection
             label={c('collider_2025:Title').t`History`}
-            icon={<Icon name="clock-rotate-left" size={4} />}
+            icon={<IcClockRotateLeft size={4} />}
             showText={showText}
             className="chat-history-sidebar-section"
         >

@@ -3,10 +3,11 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
-import type { DrawingMode } from './types';
 import { SketchCanvas } from './SketchCanvas';
+import type { DrawingMode } from './types';
+
 import '../imageActions/imageActions.scss';
 import './SketchCanvas.scss';
 
@@ -59,6 +60,7 @@ export const SketchOverlay = ({
     if (!isOpen) return null;
 
     return createPortal(
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
             className="image-lightbox fixed inset-0 flex flex-column"
             role="dialog"
@@ -71,7 +73,7 @@ export const SketchOverlay = ({
                 onClick={onClose}
                 title={c('collider_2025:Action').t`Close`}
             >
-                <Icon name="cross" size={4} />
+                <IcCross size={4} />
             </button>
 
             <div className="flex-1 min-h-0 relative">

@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { IconName } from '@proton/icons/types';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -61,7 +61,7 @@ export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onClickCreateImag
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center gap-3">
-                    <Icon name="globe" size={4} className="" />
+                    <IcGlobe size={4} className="" />
                     <div className="flex flex-column">
                         <span className="text-sm font-medium">{c('collider_2025: Action').t`Web search`}</span>
                     </div>

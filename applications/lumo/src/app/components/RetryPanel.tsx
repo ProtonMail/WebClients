@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import type { IconName } from '@proton/icons/types';
 
 import type { RetryStrategy } from '../types';
@@ -117,11 +118,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         zIndex: 10,
                     }}
                 >
-                    <Icon
-                        name="arrow-right"
-                        size={3}
-                        className={customInstructions.trim() ? 'text-white' : 'text-hint'}
-                    />
+                    <IcArrowRight size={3} className={customInstructions.trim() ? 'text-white' : 'text-hint'} />
                 </button>
             </div>
 

@@ -3,17 +3,20 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../hooks/useLumoUserSettings';
-import { getGalleryPromptSuggestions, type GalleryPromptSuggestion } from './promptSuggestions';
+import { type GalleryPromptSuggestion, getGalleryPromptSuggestions } from './promptSuggestions';
 
 import './GalleryView.scss';
 
 const SUGGESTIONS_PER_PAGE = 3;
 
-function pickSuggestions(pool: GalleryPromptSuggestion[], exclude: GalleryPromptSuggestion[]): GalleryPromptSuggestion[] {
+function pickSuggestions(
+    pool: GalleryPromptSuggestion[],
+    exclude: GalleryPromptSuggestion[]
+): GalleryPromptSuggestion[] {
     const excludeIds = new Set(exclude.map((s) => s.id));
     const remaining = pool.filter((s) => !excludeIds.has(s.id));
     const source = remaining.length >= SUGGESTIONS_PER_PAGE ? remaining : pool;
@@ -36,6 +39,7 @@ const SuggestionCard = ({
 }) => {
     const meta = ACTION_META[suggestion.action];
     return (
+        // eslint-disable-next-line jsx-a11y/control-has-associated-label
         <button className="gallery-suggestion-card" onClick={() => onClick(suggestion)} type="button">
             <span className="gallery-suggestion-card__img-wrap">
                 <img src={suggestion.img} alt="" className="gallery-suggestion-card__img" />
@@ -80,18 +84,13 @@ export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: Ga
                             onClick={handleShuffle}
                             type="button"
                             title={c('collider_2025:Action').t`Shuffle suggestions`}
+                            aria-label={c('collider_2025:Action').t`Shuffle suggestions`}
                         >
-                            <Icon name="arrows-rotate" size={3.5} />
+                            <IcArrowsRotate size={3.5} />
                         </button>
                     )}
-                    <button
-                        className="gallery-discover__toggle"
-                        onClick={handleToggle}
-                        type="button"
-                    >
-                        {expanded
-                            ? c('collider_2025:Action').t`Hide`
-                            : c('collider_2025:Action').t`Show`}
+                    <button className="gallery-discover__toggle" onClick={handleToggle} type="button">
+                        {expanded ? c('collider_2025:Action').t`Hide` : c('collider_2025:Action').t`Show`}
                     </button>
                 </span>
             </div>
