@@ -3,38 +3,23 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import useDynamicFavicon from '@proton/components/hooks/useDynamicFavicon';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useDynamicFavicon } from '@proton/components/hooks/useDynamicFavicon';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON } from '@proton/shared/lib/mail/mailSettings';
+
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 import { useMailboxFavicon } from './useMailboxFavicon';
 
 jest.mock('@proton/components/hooks/useDynamicFavicon', () => ({
-    __esModule: true,
-    default: jest.fn(),
+    useDynamicFavicon: jest.fn(),
 }));
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
 const mockUseMailSettings = useMailSettings as jest.Mock;
 
-jest.mock('@proton/mail/store/counts/conversationCountsSlice');
-const mockUseConversationCounts = useConversationCounts as jest.Mock;
-
-jest.mock('@proton/mail/store/labels/hooks', () => ({
-    useLabels: jest.fn(),
-    useFolders: jest.fn(),
-    useSystemFolders: jest.fn(),
-}));
-
-jest.mock('@proton/mail/store/counts/conversationCountsSlice', () => ({
-    useConversationCounts: jest.fn(),
-}));
-
-jest.mock('@proton/mail/store/counts/messageCountsSlice');
-const mockUseMessageCounts = useMessageCounts as jest.Mock;
+jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
+const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
 
 const mockBaseFavicon = 'mock-base-favicon';
 const mockFavicons = {
@@ -61,6 +46,15 @@ jest.mock('../../../assets/favicons', () => {
     };
 });
 
+const mockUnreadCount = (unread: number) => {
+    mockUseMailboxCounter.mockReturnValue({
+        loading: false,
+        counterMap: {},
+        getLocationCount: jest.fn(),
+        getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: unread, Total: unread }),
+    });
+};
+
 const wrapper = ({ children }: { children: ReactNode }) => <MemoryRouter>{children}</MemoryRouter>;
 
 describe('useMailboxFavicon', () => {
@@ -69,85 +63,37 @@ describe('useMailboxFavicon', () => {
     });
 
     it('should use baseFavicon when there are no unread messages', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
-        ]);
+        mockUnreadCount(0);
+        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+        renderHook(() => useMailboxFavicon(), { wrapper });
 
         expect(useDynamicFavicon).toHaveBeenCalledWith(mockBaseFavicon);
     });
 
-    it('should use the correct favicon when there are 10 unread messages in conversation mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
-        ]);
+    it('should use the correct favicon when there are 10 unread messages', () => {
+        mockUnreadCount(10);
+        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+        renderHook(() => useMailboxFavicon(), { wrapper });
 
         expect(useDynamicFavicon).toHaveBeenCalledWith(mockFavicons[10]);
     });
 
-    it('should use the correct favicon when there are 10 unread messages in message mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
-        ]);
+    it('should use the last favicon when there are more than 100 unread messages', () => {
+        mockUnreadCount(200);
+        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
-
-        expect(useDynamicFavicon).toHaveBeenCalledWith(mockFavicons[10]);
-    });
-
-    it('should use the last favicon when there are more than 100 unread messages in conversation mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 200 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.ENABLED },
-        ]);
-
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+        renderHook(() => useMailboxFavicon(), { wrapper });
 
         expect(useDynamicFavicon).toHaveBeenCalledWith(mockFavicons[100]);
     });
 
-    it('should use the last favicon when there are more than 100 unread messages in message mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 200 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.ENABLED },
-        ]);
+    it('should use baseFavicon when the favicon is disabled', () => {
+        mockUnreadCount(10);
+        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: UNREAD_FAVICON.DISABLED }]);
 
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
-
-        expect(useDynamicFavicon).toHaveBeenCalledWith(mockFavicons[100]);
-    });
-
-    it('should use baseFavicon when the favicon is disabled in conversation mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.GROUP, UnreadFavicon: UNREAD_FAVICON.DISABLED },
-        ]);
-
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
-
-        expect(useDynamicFavicon).toHaveBeenCalledWith(mockBaseFavicon);
-    });
-
-    it('should use baseFavicon when the favicon is disabled in message mode', () => {
-        mockUseConversationCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0 }]]);
-        mockUseMessageCounts.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 10 }]]);
-        mockUseMailSettings.mockReturnValue([
-            { ...DEFAULT_MAIL_SETTINGS, ViewMode: VIEW_MODE.SINGLE, UnreadFavicon: UNREAD_FAVICON.DISABLED },
-        ]);
-
-        renderHook(() => useMailboxFavicon(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+        renderHook(() => useMailboxFavicon(), { wrapper });
 
         expect(useDynamicFavicon).toHaveBeenCalledWith(mockBaseFavicon);
     });

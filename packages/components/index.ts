@@ -797,7 +797,7 @@ export { default as useConfig } from './hooks/useConfig';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';
-export { default as useDynamicFavicon } from './hooks/useDynamicFavicon';
+export { useDynamicFavicon } from './hooks/useDynamicFavicon';
 export { default as useEarlyAccess } from './hooks/useEarlyAccess';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';
 export { default as useElementRect } from './hooks/useElementRect';
