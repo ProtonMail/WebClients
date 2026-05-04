@@ -44,7 +44,7 @@ export const useMailboxContainerSideEffects = ({
 
     useApplyEncryptedSearch(elementsParams);
 
-    useMailboxPageTitle(labelID);
+    useMailboxPageTitle();
     useMailboxFavicon(labelID);
     useInboxBadgeCount();
 
