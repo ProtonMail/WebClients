@@ -24,8 +24,11 @@ import {
     toggleCriteria,
 } from '@proton/pass/lib/settings/pause-list';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
-import { selectOrgDisallowedDomains } from '@proton/pass/store/selectors/organization';
-import { selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
+import {
+    selectDisallowedDomains,
+    selectOrgDomains,
+    selectPauseListEntries,
+} from '@proton/pass/store/selectors/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -36,20 +39,21 @@ const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
 export const PauseList: FC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
-    const orgDomains = useSelector(selectOrgDisallowedDomains);
+    const orgDomains = useSelector(selectOrgDomains);
+    const pauseList = useSelector(selectPauseListEntries);
+    const nonEmpty = pauseList.length > 0;
+
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
     const [url, setUrl] = useState<string>('');
-
-    const allHostnames = Array.from(new Set([...Object.keys(orgDomains), ...Object.keys(disallowedDomains)]));
 
     const addDisallowedUrl = (url: string) => {
         const hostname = intoCleanHostname(url);
 
         if (!hostname) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
 
-        if (orgDomains[hostname]) {
+        if (orgDomains?.[hostname]) {
             return createNotification({
                 text: c('Error').t`This domain is already managed by your organization`,
                 type: 'error',
@@ -70,6 +74,7 @@ export const PauseList: FC = () => {
                 }),
             })
         );
+
         setUrl('');
     };
 
@@ -90,8 +95,7 @@ export const PauseList: FC = () => {
         dispatch(settingsEditIntent('pause-list', { disallowedDomains: update }));
     };
 
-    const nonEmptyList = allHostnames.length > 0;
-    const infoText = nonEmptyList ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
+    const infoText = nonEmpty ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
 
     return (
         <SettingsPanel
@@ -99,7 +103,7 @@ export const PauseList: FC = () => {
             subTitle={c('Description')
                 .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.${infoText}`}
         >
-            {nonEmptyList && (
+            {nonEmpty && (
                 <Table responsive="cards" hasActions borderWeak>
                     <TableHeader>
                         <TableRow>
@@ -128,11 +132,9 @@ export const PauseList: FC = () => {
                     </TableHeader>
 
                     <TableBody>
-                        {allHostnames.map((hostname, i) => {
-                            const isLocked = hostname in orgDomains;
-                            const orgMask = orgDomains[hostname] ?? 0;
-                            const userMask = disallowedDomains[hostname] ?? 0;
-                            const effectiveMask = orgMask | userMask;
+                        {pauseList.map(([hostname, mask], i) => {
+                            const orgMask = orgDomains?.[hostname] ?? 0;
+                            const isLocked = orgMask > 0;
 
                             return (
                                 <TableRow key={`${hostname}-${i}`}>
@@ -163,7 +165,7 @@ export const PauseList: FC = () => {
                                                 })()}
                                             >
                                                 <Checkbox
-                                                    checked={hasCriteria(effectiveMask, criteria)}
+                                                    checked={hasCriteria(mask, criteria)}
                                                     disabled={criterionLocked}
                                                     onChange={() =>
                                                         !criterionLocked && toggleUrlMask(hostname, criteria)
