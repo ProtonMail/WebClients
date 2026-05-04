@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { LatestSubscription } from '@proton/payments';
-import { getLatestCancelledSubscription } from '@proton/payments/core/api/api';
+import { fetchPreviousSubscription } from '@proton/payments/core/api/api';
+import type { PreviousSubscription } from '@proton/payments/core/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 
@@ -11,14 +11,27 @@ import { type UserState, userThunk } from '../user';
 
 const name = 'previousSubscription' as const;
 
+type PreviousSubscriptionModel =
+    | {
+          hasHadSubscription: false;
+          previousSubscription: null;
+      }
+    | {
+          hasHadSubscription: true;
+          previousSubscription: PreviousSubscription;
+      };
+
 export interface PreviousSubscriptionState extends UserState {
-    [name]: ModelState<{ hasHadSubscription: boolean; previousSubscriptionEndTime: number }>;
+    [name]: ModelState<PreviousSubscriptionModel>;
 }
 
 type SliceState = PreviousSubscriptionState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const defaultPreviousSubscriptionValue = { hasHadSubscription: false, previousSubscriptionEndTime: 0 };
+export const defaultPreviousSubscriptionValue: PreviousSubscriptionModel = {
+    hasHadSubscription: false,
+    previousSubscription: null,
+};
 
 export const selectPreviousSubscription = (state: PreviousSubscriptionState) => state[name];
 
@@ -26,16 +39,21 @@ const modelThunk = createAsyncModelThunk<Model, PreviousSubscriptionState, Proto
     miss: async ({ extraArgument, dispatch }) => {
         const user = await dispatch(userThunk());
 
+        // For now, if user already has a subscription then we pretend that the previous one didn't exist, because it's
+        // not important for the current business logic. If you do have a case when it's important to know current AND
+        // previous subscription, the consider removing this condition. Keeping this condition helps to save some API
+        // load.
         if (user.isPaid) {
-            return { hasHadSubscription: true, previousSubscriptionEndTime: 0 };
+            return defaultPreviousSubscriptionValue;
         }
 
         try {
-            const response = await extraArgument.api<LatestSubscription>(getLatestCancelledSubscription());
-            const previousSubscriptionEndTime = response.LastSubscriptionEnd || 0;
-            const hasHadSubscription = previousSubscriptionEndTime > 0;
-
-            return { hasHadSubscription, previousSubscriptionEndTime };
+            const previousSubscription = await fetchPreviousSubscription(extraArgument.api);
+            if (previousSubscription) {
+                return { hasHadSubscription: true, previousSubscription };
+            } else {
+                return { hasHadSubscription: false, previousSubscription: null };
+            }
         } catch (error) {
             return defaultPreviousSubscriptionValue;
         }
