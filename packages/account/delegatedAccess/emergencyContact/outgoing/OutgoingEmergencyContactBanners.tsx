@@ -27,17 +27,15 @@ const OutgoingSubscriptionExpiredBanner = () => {
             emergencyContacts: { hasUpsell },
         },
     } = useOutgoingController();
-    const [previousSubscription] = usePreviousSubscription();
-    if (!previousSubscription) {
+    const [{ hasHadSubscription, previousSubscription }] = usePreviousSubscription();
+    if (!hasHadSubscription) {
         return null;
     }
 
     const showSubscriptionExpired =
-        /* Checking hasUpsell true for the case when a user downgrades their subscription but they still have emergency access through pass lifetime */
-        hasUpsell &&
-        previousSubscription &&
-        previousSubscription.hasHadSubscription &&
-        isBetween(previousSubscription.previousSubscriptionEndTime * SECOND, 1, Date.now());
+        /* Checking hasUpsell true for the case when a user downgrades their subscription but they still have emergency
+        access through pass lifetime */
+        hasUpsell && isBetween(previousSubscription.cancelTime * SECOND, 1, Date.now());
 
     if (!showSubscriptionExpired) {
         return null;

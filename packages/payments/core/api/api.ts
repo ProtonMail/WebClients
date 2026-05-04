@@ -4,12 +4,14 @@ import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import type { BillingAddressExtended } from '../billing-address/billing-address';
 import type {
+    ADDON_NAMES,
     Autopay,
     InvoiceOwner,
     InvoiceState,
     InvoiceType,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
+    PLANS,
 } from '../constants';
 import { PLAN_TYPES } from '../constants';
 import type {
@@ -20,6 +22,7 @@ import type {
     ExistingPayment,
     PaymentStatus,
     PlanIDs,
+    PreviousSubscription,
     SavedPaymentMethod,
     TokenPayment,
     TokenPaymentMethod,
@@ -32,7 +35,7 @@ import { formatPaymentMethods } from '../methods';
 import { normalizePaymentMethodStatus } from '../payment-status';
 import { PlanState } from '../plan/constants';
 import type { FreePlanDefault, SubscriptionPlan } from '../plan/interface';
-import type { Renew } from '../subscription/constants';
+import type { Renew, SubscriptionPlatform } from '../subscription/constants';
 import { FREE_PLAN } from '../subscription/freePlans';
 import type { Subscription } from '../subscription/interface';
 
@@ -270,10 +273,48 @@ export const getTokenStatus = (paymentToken: string, version: PaymentsVersion) =
 export const getTokenStatusV4 = (paymentToken: string) => getTokenStatus(paymentToken, 'v4');
 export const getTokenStatusV5 = (paymentToken: string) => getTokenStatus(paymentToken, 'v5');
 
-export const getLatestCancelledSubscription = () => ({
-    url: `payments/${paymentsVersion}/subscription/latest`,
-    method: 'get',
-});
+interface GetPreviousCancelledSubscriptionResponse {
+    Cycle: Cycle;
+    Currency: Currency;
+    PeriodStart: number;
+    PeriodEnd: number;
+    CreateTime: number;
+    CancelTime: number;
+    CouponCode: string | null | undefined;
+    Plans: { Name: PLANS | ADDON_NAMES; Quantity: number }[];
+    External: SubscriptionPlatform;
+    IsTrial: boolean;
+}
+
+export async function fetchPreviousSubscription(api: Api): Promise<PreviousSubscription | null> {
+    const response = await api<{ Subscription: GetPreviousCancelledSubscriptionResponse | null }>({
+        url: `payments/v6/subscription/latest`,
+        method: 'get',
+    });
+
+    const subscription = response?.Subscription;
+    if (!subscription) {
+        return null;
+    }
+
+    const previousSubscription: PreviousSubscription = {
+        cycle: subscription.Cycle,
+        currency: subscription.Currency,
+        periodStart: subscription.PeriodStart,
+        periodEnd: subscription.PeriodEnd,
+        createTime: subscription.CreateTime,
+        cancelTime: subscription.CancelTime,
+        couponCode: subscription.CouponCode ?? null,
+        external: subscription.External,
+        isTrial: subscription.IsTrial,
+        plans: (subscription.Plans ?? []).reduce((acc, plan) => {
+            acc[plan.Name] = plan.Quantity;
+            return acc;
+        }, {} as PlanIDs),
+    };
+
+    return previousSubscription;
+}
 
 export type RenewalStateData =
     | {

@@ -16,7 +16,7 @@ interface Props {
     offerStartDateTimeStamp: number;
     mailOneDollarPostSignupFlag: boolean;
     nbrEmailsInAllMail: number;
-    previousSubscriptionEndTime: number;
+    hasHadSubscription: boolean;
     driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
 }
 
@@ -28,7 +28,7 @@ export const getIsUserEligibleForOneDollar = ({
     offerStartDateTimeStamp,
     mailOneDollarPostSignupFlag,
     nbrEmailsInAllMail,
-    previousSubscriptionEndTime,
+    hasHadSubscription,
     driveOfferStartDateTimestamp,
 }: Props) => {
     // Global offer flag
@@ -65,7 +65,7 @@ export const getIsUserEligibleForOneDollar = ({
         !user.isDelinquent &&
         hasValidApp &&
         hasRequiredEmails &&
-        !previousSubscriptionEndTime &&
+        !hasHadSubscription &&
         !hasPassLifetime(user);
 
     return basicEligibility && isOfferStillValid && isAccountOldEnough;

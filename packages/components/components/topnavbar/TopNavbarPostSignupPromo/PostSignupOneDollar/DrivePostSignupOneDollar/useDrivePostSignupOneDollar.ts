@@ -14,7 +14,7 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, loadingUser] = useUser();
 
-    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
+    const [{ hasHadSubscription }, loadingPreviousSubscription] = usePreviousSubscription();
 
     // One flag to control the feature, and another to manage the progressive rollout of existing users
     const driveOneDollarPostSignupFlag = useFlag('DrivePostSignupOneDollarPromo');
@@ -34,7 +34,7 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
             protonConfig,
             offerStartDateTimestamp: driveOfferState?.Value?.offerStartDate ?? 0,
             driveOneDollarPostSignupFlag,
-            previousSubscriptionEndTime,
+            hasHadSubscription,
             mailOfferStartDateTimestamp: mailOfferState?.Value,
             hasUploadedFile: !!(user?.ProductUsedSpace?.Drive ?? 0 > 0),
         }),
