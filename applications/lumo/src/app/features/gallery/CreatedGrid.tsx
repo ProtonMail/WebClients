@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon } from '@proton/components';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import lumoCookie from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-cookie.png';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
@@ -98,7 +98,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
         return (
             <div className="gallery-created">
                 <div className="gallery-error">
-                    <Icon name="exclamation-circle" size={6} className="gallery-error__icon" />
+                    <IcExclamationCircle size={6} className="gallery-error__icon" />
                     <p>{c('collider_2025:Error').t`Failed to load images. Please try again.`}</p>
                 </div>
             </div>

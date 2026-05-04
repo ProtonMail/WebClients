@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon } from '@proton/components';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { ImageModifyButton } from '../../features/imageActions/ImageActionButtons';
@@ -101,7 +101,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}
             >
                 <span className="flex items-center gap-2 mb-2">
-                    <Icon name="exclamation-circle" size={4} />
+                    <IcExclamationCircle size={4} />
                     <span className="text-sm font-bold">{c('collider_2025:Error').t`Failed to load image`}</span>
                 </span>
                 {error && <span className="block mb-2 text-xs">{error}</span>}
