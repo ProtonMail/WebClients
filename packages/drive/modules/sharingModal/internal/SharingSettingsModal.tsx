@@ -65,7 +65,10 @@ const SharingSettingsModal = ({
                 </div>
 
                 <ModalTwoContent className="mb-7">
-                    <div className="flex flex-nowrap justify-space-between items-center">
+                    <div
+                        className="flex flex-nowrap justify-space-between items-center"
+                        data-testid="share-modal-settings-editorsAccessSection"
+                    >
                         <div className="flex flex-column flex-1 p-0 gap-2" data-testid="delete-share-text">
                             <span className="text-semibold">{c('Label').t`Access`}</span>
                             <span className="color-weak">{c('Label')
