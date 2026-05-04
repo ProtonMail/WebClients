@@ -3,7 +3,9 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { sendUnlockMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
 import { createNativeMessagingService as createRootNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
+import { NativeMessageErrorType } from '@proton/pass/types';
 
 /** Native Messaging service
  * Implementation in the extension is a wrapper over the one living next to rest
@@ -13,9 +15,17 @@ import { createNativeMessagingService as createRootNativeMessagingService } from
 export const createNativeMessagingService = (authStore: AuthStore) => {
     const nativeMessaging = createRootNativeMessagingService();
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.DESKTOP_UNLOCK_SECRET, async () => ({
-        secret: await sendUnlockMessage(nativeMessaging, authStore),
-    }));
+    let unlockInProgress = false;
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.DESKTOP_UNLOCK_SECRET, async () => {
+        if (unlockInProgress) throw new NativeMessageError(NativeMessageErrorType.UNLOCK_IN_PROGRESS);
+        unlockInProgress = true;
+        try {
+            return { secret: await sendUnlockMessage(nativeMessaging, authStore) };
+        } finally {
+            unlockInProgress = false;
+        }
+    });
 
     return nativeMessaging;
 };
