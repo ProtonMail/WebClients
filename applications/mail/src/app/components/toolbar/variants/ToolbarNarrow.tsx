@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import clsx from '@proton/utils/clsx';
 
-import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
-import type { ListSettingsProps } from './list-settings/ListSettings';
-import { ListSettings } from './list-settings/ListSettings';
+import { isLabelIDNewsletterSubscription } from '../../../helpers/labels';
+import type { ListSettingsProps } from '../list-settings/ListSettings';
+import { ListSettings } from '../list-settings/ListSettings';
 
 interface Props extends ListSettingsProps {
     classname: string;

@@ -11,8 +11,8 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useLabelActions } from '../../hooks/useLabelActions';
-import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
+import { useLabelActions } from '../../../hooks/useLabelActions';
+import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 import DeleteButton from './DeleteButton';
 
 interface Props {

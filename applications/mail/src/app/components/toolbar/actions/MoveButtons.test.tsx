@@ -4,7 +4,7 @@ import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { clearAll, mailTestRender, minimalCache } from '../../helpers/test/helper';
+import { clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';
 import MoveButtons from './MoveButtons';
 
 const labelID = 'labelID';

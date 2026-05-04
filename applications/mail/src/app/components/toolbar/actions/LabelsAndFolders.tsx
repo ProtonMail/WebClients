@@ -12,9 +12,9 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
-import ToolbarDropdown from './ToolbarDropdown';
+import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import ToolbarDropdown from '../ToolbarDropdown';
 
 interface Props {
     labelID: string;

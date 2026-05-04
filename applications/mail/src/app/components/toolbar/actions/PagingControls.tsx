@@ -20,10 +20,10 @@ import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks
 import { contextPages, pageSize as selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isSearch as testIsSearch } from '../../helpers/elements';
-import { extractSearchParameters } from '../../helpers/mailboxUrl';
-import { usePaging } from '../../hooks/usePaging';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import { isSearch as testIsSearch } from '../../../helpers/elements';
+import { extractSearchParameters } from '../../../helpers/mailboxUrl';
+import { usePaging } from '../../../hooks/usePaging';
 
 interface Props {
     loading: boolean;
