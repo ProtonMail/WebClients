@@ -10,13 +10,13 @@ import clsx from '@proton/utils/clsx';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
-import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
-import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
-import LabelsAndFolders from './LabelsAndFolders';
-import MoveButtons from './MoveButtons';
-import NavigationControls from './NavigationControls';
-import ReadUnreadButtons from './ReadUnreadButtons';
-import type { Props as ToolbarProps } from './Toolbar';
+import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';
+import SnoozeToolbarDropdown from '../../list/snooze/containers/SnoozeToolbarDropdown';
+import type { Props as ToolbarProps } from '../Toolbar';
+import LabelsAndFolders from '../actions/LabelsAndFolders';
+import MoveButtons from '../actions/MoveButtons';
+import NavigationControls from '../actions/NavigationControls';
+import ReadUnreadButtons from '../actions/ReadUnreadButtons';
 
 interface Props extends Omit<
     ToolbarProps,

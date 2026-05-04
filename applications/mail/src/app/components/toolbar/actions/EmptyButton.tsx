@@ -12,7 +12,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
-import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
+import { useEmptyLabel } from '../../../hooks/actions/useEmptyLabel';
 
 interface Props {
     labelID: string;
