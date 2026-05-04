@@ -18,6 +18,7 @@ export enum NativeMessageErrorType {
     SECRET_MISMATCH = 'SECRET_MISMATCH',
     ACCOUNT_MISMATCH = 'ACCOUNT_MISMATCH',
     DESKTOP_APP_NOT_LOGGED_IN = 'DESKTOP_APP_NOT_LOGGED_IN',
+    UNLOCK_IN_PROGRESS = 'UNLOCK_IN_PROGRESS',
 }
 
 export type NativeMessageRequest = NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest;

@@ -148,6 +148,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.local.clear({ preserve: ['features', 'pass::qa'] });
             void fileStorage.clearAll();
             void alarms.clearAutoLock();
+            ctx.service.nativeMessaging.disconnect();
 
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
