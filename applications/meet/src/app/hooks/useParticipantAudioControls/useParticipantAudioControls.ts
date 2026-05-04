@@ -15,20 +15,13 @@ const MAX_SUBSCRIBED_MICROPHONE_TRACKS = 80;
 export const useParticipantAudioControls = () => {
     const room = useRoomContext();
     const { reportMeetError: reportError } = useMeetErrorReporting();
-    const disableAudioAutoHealing = useFlag('MeetDisableAudioAutoHealing');
 
     const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
     const [audioTrackSubscriptionManager] = useState(
-        () =>
-            new AudioTrackSubscriptionManager(
-                MAX_SUBSCRIBED_MICROPHONE_TRACKS,
-                room,
-                reportError,
-                disableAudioAutoHealing
-            )
+        () => new AudioTrackSubscriptionManager(MAX_SUBSCRIBED_MICROPHONE_TRACKS, room, reportError)
     );
 
     const [spatialAudioManager] = useState(() => {
@@ -51,4 +44,6 @@ export const useParticipantAudioControls = () => {
             spatialAudioManager.cleanup();
         };
     }, []);
+
+    return audioTrackSubscriptionManager;
 };
