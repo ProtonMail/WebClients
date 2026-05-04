@@ -2,42 +2,37 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useNotifications } from '@proton/components';
-import useLoading from '@proton/hooks/useLoading';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 /**
  * Displays the recovery phrase and allows to copy it to the clipboard.
  * Can be used as a fallback if the recovery kit pdf download is not available according to `canUseRecoveryKitPdfDownload`
  */
-const CopyRecoveryPhraseContainer = ({
+export const CopyRecoveryPhraseContainer = ({
     recoveryPhrase,
-    sendPayload,
+    onCopyPhrase,
     className,
     hasSentPayload,
+    loading,
 }: {
     recoveryPhrase: string;
-    sendPayload: () => Promise<void>;
+    onCopyPhrase: () => void;
     className?: string;
     hasSentPayload: boolean;
+    loading: boolean;
 }) => {
-    const [loading, withLoading] = useLoading();
-
-    const { createNotification } = useNotifications();
-
-    const onCopy = () => {
-        textToClipboard(recoveryPhrase);
-        createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
-    };
-
     const hiddenTextContent = '•••• •••••••• ••••• •••••• ••• •••••• •••• •••••••• •••• •••••• ••• •••• ••••••';
 
     return (
         <div className={clsx('flex gap-4 flex-nowrap items-center', className)}>
-            <div className="text-lg">{hasSentPayload ? recoveryPhrase : hiddenTextContent}</div>
+            <div
+                className="text-lg"
+                data-testid={hasSentPayload ? 'account:recovery:generatedRecoveryPhrase' : undefined}
+            >
+                {hasSentPayload ? recoveryPhrase : hiddenTextContent}
+            </div>
 
             {hasSentPayload ? (
                 <Button
@@ -45,7 +40,8 @@ const CopyRecoveryPhraseContainer = ({
                     shape="outline"
                     pill
                     className="inline-flex items-center shrink-0"
-                    onClick={onCopy}
+                    onClick={onCopyPhrase}
+                    data-testid="copy-recovery-phrase"
                 >
                     <IcSquares className="shrink-0 mr-2" />
                     {c('RecoveryPhrase: Action').t`Copy`}
@@ -55,9 +51,10 @@ const CopyRecoveryPhraseContainer = ({
                     color="norm"
                     pill
                     className="inline-flex items-center shrink-0"
-                    onClick={() => withLoading(sendPayload)}
+                    onClick={onCopyPhrase}
                     disabled={loading}
                     noDisabledStyles
+                    data-testid="copy-recovery-phrase"
                 >
                     {loading ? (
                         <CircleLoader
@@ -77,5 +74,3 @@ const CopyRecoveryPhraseContainer = ({
         </div>
     );
 };
-
-export default CopyRecoveryPhraseContainer;

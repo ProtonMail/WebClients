@@ -1,6 +1,5 @@
 import type { RefObject } from 'react';
 
-import { SignupType } from 'proton-account/src/app/signup/interfaces';
 import { c } from 'ttag';
 
 import { createSignupOAuthToken } from '@proton/activation/src/api';
@@ -22,6 +21,8 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks/index';
 import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
 import { useVariant } from '@proton/unleash/useVariant';
+
+import { SignupType } from '../signup/interfaces';
 
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;

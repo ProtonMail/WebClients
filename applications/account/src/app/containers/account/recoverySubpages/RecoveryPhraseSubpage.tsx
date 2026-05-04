@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import { useUpdateMnemonicRecovery } from '@proton/account/recovery/useUpdateMnemonicRecovery';
+import { useUpdateRecoveryKit } from '@proton/account/recovery/recoveryKit/useUpdateRecoveryKit';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -21,7 +21,7 @@ import illustration from './assets/recovery-phrase.svg';
 
 const RecoveryPhraseSubpage = () => {
     const mnemonicData = useSelector(selectMnemonicData);
-    const updateMnemonicRecovery = useUpdateMnemonicRecovery(mnemonicData);
+    const updateRecoveryKit = useUpdateRecoveryKit(mnemonicData);
 
     if (!mnemonicData.isMnemonicAvailable) {
         return null;
@@ -33,14 +33,15 @@ const RecoveryPhraseSubpage = () => {
 
     return (
         <>
-            {updateMnemonicRecovery.el}
+            {updateRecoveryKit.el}
+
             <DashboardGrid>
                 <SettingsDescription
                     left={
                         <>
                             <SettingsDescriptionItem>
                                 {c('Info')
-                                    .t`Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It is composed of 12 words and acts like a backup password.`}
+                                    .t`Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It is composed of 12 words and acts like a backup password.`}
                             </SettingsDescriptionItem>
                             <SettingsDescriptionItem>
                                 {c('Info')
@@ -61,75 +62,72 @@ const RecoveryPhraseSubpage = () => {
                     </Banner>
                 )}
 
-                <DashboardCard>
-                    <DashboardCardContent>
-                        <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title').t`Your recovery phrase`}</h3>
+                {updateRecoveryKit.showExistingRecoveryPhraseCard ? (
+                    <DashboardCard className="fade-in">
+                        <DashboardCardContent>
+                            <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title').t`Your recovery phrase`}</h3>
 
-                        {mnemonicData.createMnemonic && (
-                            <div>
-                                <Button
-                                    color="norm"
-                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
-                                    className="inline-flex gap-2 items-center"
-                                >
-                                    <IcPlus className="shrink-0" />
-                                    {c('Action').t`Create recovery phrase`}
-                                </Button>
-                            </div>
-                        )}
+                            {mnemonicData.hasOutdatedMnemonic && (
+                                <div>
+                                    <Button
+                                        color="norm"
+                                        className="inline-flex gap-2 items-center"
+                                        onClick={updateRecoveryKit.updatePhrase}
+                                    >
+                                        <IcArrowRotateRight className="shrink-0" />
+                                        {c('Action').t`Generate new phrase`}
+                                    </Button>
+                                </div>
+                            )}
+                            {!mnemonicData.hasOutdatedMnemonic && mnemonicData.mnemonicCanBeRegenerated && (
+                                <div>
+                                    <Button
+                                        shape="outline"
+                                        className="color-primary inline-flex gap-2 items-center"
+                                        onClick={updateRecoveryKit.updatePhrase}
+                                    >
+                                        <IcArrowRotateRight className="shrink-0" />
+                                        {c('Action').t`Generate new recovery phrase`}
+                                    </Button>
+                                </div>
+                            )}
 
-                        {mnemonicData.hasOutdatedMnemonic && (
-                            <div>
-                                <Button
-                                    color="norm"
-                                    className="inline-flex gap-2 items-center"
-                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
-                                >
-                                    <IcArrowRotateRight className="shrink-0" />
-                                    {c('Action').t`Generate new phrase`}
-                                </Button>
-                            </div>
-                        )}
-
-                        {mnemonicData.isMnemonicSet && (
-                            <div>
-                                <Button
-                                    shape="outline"
-                                    className="color-primary inline-flex gap-2 items-center"
-                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
-                                >
-                                    <IcArrowRotateRight className="shrink-0" />
-                                    {c('Action').t`Generate new recovery phrase`}
-                                </Button>
-                            </div>
-                        )}
-
-                        <DashboardCardDivider />
-                        <SettingsToggleRow
-                            id="mnemonicToggle"
-                            label={
-                                <>
-                                    <SettingsToggleRow.Label data-testid="account:recovery:mnemonicToggle">
-                                        {c('Label').t`Allow recovery by recovery phrase`}
-                                    </SettingsToggleRow.Label>
-                                    <SettingsToggleRow.Description>
-                                        {c('Info')
-                                            .t`We strongly recommend that everyone enable recovery by recovery phrase.`}
-                                    </SettingsToggleRow.Description>
-                                </>
-                            }
-                            toggle={
-                                <SettingsToggleRow.Toggle
-                                    loading={updateMnemonicRecovery.toggleLoading}
-                                    checked={mnemonicData.isMnemonicSet}
-                                    onChange={({ target: { checked } }) => {
-                                        updateMnemonicRecovery.updateToggle(checked);
-                                    }}
-                                />
-                            }
-                        />
-                    </DashboardCardContent>
-                </DashboardCard>
+                            <DashboardCardDivider />
+                            <SettingsToggleRow
+                                id="mnemonicToggle"
+                                label={
+                                    <>
+                                        <SettingsToggleRow.Label data-testid="account:recovery:mnemonicToggle">
+                                            {c('Label').t`Allow recovery by recovery phrase`}
+                                        </SettingsToggleRow.Label>
+                                        <SettingsToggleRow.Description>
+                                            {c('Info')
+                                                .t`We strongly recommend that everyone enable recovery by recovery phrase.`}
+                                        </SettingsToggleRow.Description>
+                                    </>
+                                }
+                                toggle={
+                                    <SettingsToggleRow.Toggle
+                                        loading={updateRecoveryKit.toggleLoading}
+                                        checked={mnemonicData.isMnemonicSet}
+                                        onChange={({ target: { checked } }) => updateRecoveryKit.updateToggle(checked)}
+                                    />
+                                }
+                            />
+                        </DashboardCardContent>
+                    </DashboardCard>
+                ) : (
+                    <div>
+                        <Button
+                            color="norm"
+                            onClick={updateRecoveryKit.createPhrase}
+                            className="inline-flex gap-2 items-center"
+                        >
+                            <IcPlus className="shrink-0" />
+                            {c('Action').t`Create recovery phrase`}
+                        </Button>
+                    </div>
+                )}
             </DashboardGrid>
         </>
     );

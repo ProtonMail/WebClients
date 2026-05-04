@@ -3,7 +3,6 @@ import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import BYOESignupButton from '@proton/activation/src/components/Signup/BYOESignupButton';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import {
@@ -32,6 +31,7 @@ import { getThemeData } from '../signup/challenge-theme';
 import { type AccountData, SignupType } from '../signup/interfaces';
 import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
 import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyncValidator/createAsyncValidator';
+import BYOESignupButton from './BYOESignupButton';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';

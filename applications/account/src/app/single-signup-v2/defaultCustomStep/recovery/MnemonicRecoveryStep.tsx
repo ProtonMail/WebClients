@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { Button } from '@proton/atoms/Button/Button';
 import { useApi } from '@proton/components';
 
 import RecoveryStepUnderstoodCheckbox from '../../../containers/recoveryPhrase/RecoveryStepUnderstoodCheckbox';
 import SetRecoveryPhraseOnSignupContainer from '../../../containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
 import sendRecoveryPhrasePayload from '../../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
-import type { DeferredMnemonicData } from '../../../containers/recoveryPhrase/types';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Main from '../../../public/Main';
@@ -31,7 +31,7 @@ const MnemonicRecoveryStep = ({ onContinue, accountData, mnemonicData, onMeasure
             <Content>
                 <Header
                     title={c('pass_signup_2023: Title').t`Secure your account`}
-                    subTitle={c('pass_signup_2023: Info').t`Save your recovery kit to continue`}
+                    subTitle={c('pass_signup_2023: Info').t`Save your recovery phrase to continue`}
                 />
                 <SetRecoveryPhraseOnSignupContainer
                     recoveryPhraseData={mnemonicData}
