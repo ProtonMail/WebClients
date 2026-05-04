@@ -7,6 +7,8 @@ im.$media-expressions: $media-expressions;
 
 .lumo-input-container {
 	// Base styles
+	--border-norm: #dddefb;
+
 	border-color: var(--primary-contrast);
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
@@ -26,6 +28,12 @@ im.$media-expressions: $media-expressions;
 			border: none !important;
 			background-color: var(--background-composer-mobile, var(--background-norm));
 		}
+	}
+
+	&.--glowing-composer {
+		box-shadow:
+			0 1px 4px 0 rgb(0 0 0 / 0.05),
+			0 7px 214px 0 var(--iris-100, #e9eafc);
 	}
 
 	&.shadow-lifted-composer {
