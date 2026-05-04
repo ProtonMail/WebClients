@@ -1,26 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import {
-    type App,
-    type GroupKeyInfo,
-    JoinTypeInfo,
-    MeetCoreErrorEnum,
-    MlsSyncStateInfo,
-    RejoinReasonInfo,
-} from '@proton-meet/proton-meet-core';
+import { type App, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
+import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
 import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
     PopUpControls,
@@ -29,7 +21,6 @@ import {
     setPopupStateValue,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 import {
     decryptSessionKey,
     deriveEncryptionKeyFromSessionKey,
@@ -42,7 +33,6 @@ import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getItem } from '@proton/shared/lib/helpers/storage';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -65,24 +55,24 @@ import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
-import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
+import { useDisplayName } from '../../hooks/useDisplayName';
 import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
+import { useKeyManagement } from '../../hooks/useKeyManagement';
+import { isConnectionTimeoutError, useLiveKitConnection } from '../../hooks/useLiveKitConnection';
 import { MeetingListStatus } from '../../hooks/useMeetingList';
+import { useMlsSession } from '../../hooks/useMlsSession';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
+import { useReconnection } from '../../hooks/useReconnection';
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
-import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
-import { checkIfUsingTurnRelay } from '../../utils/checkIfUsingTurnRelay';
 import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
-import { getRandomParticipantName } from '../../utils/getRandomParticipantName';
 import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
-import { getDisplayNameStorageKey } from '../../utils/storage';
-import { cleanupWasmDependencies, setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
+import { cleanupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
 
@@ -99,16 +89,6 @@ interface ProtonMeetContainerProps {
     paidUser: boolean;
     isSubUser: boolean;
 }
-
-const isConnectionError = (error: any): boolean => {
-    const msg = error?.message || '';
-    return msg.includes('could not establish signal connection');
-};
-
-const isConnectionTimeoutError = (error: any): boolean => {
-    const msg = error?.message || '';
-    return msg.includes('Connection timeout after');
-};
 
 export const ProtonMeetContainer = ({
     room,
@@ -134,13 +114,7 @@ export const ProtonMeetContainer = ({
 
     const [isInstantJoin, setIsInstantJoin] = useState(location.state?.instantJoin === true);
 
-    const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
-    const [joiningLoaderHeader, setJoiningLoaderHeader] = useState<string | undefined>(undefined);
-    const [joiningLoaderSubtitle, setJoiningLoaderSubtitle] = useState<string | undefined>(undefined);
-
     const { initializeDevices } = useMediaManagementContext();
-
-    const authentication = useAuthentication();
 
     const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
     const meetingLinkNameRef = useRef<string>('');
@@ -167,127 +141,13 @@ export const ProtonMeetContainer = ({
         return { tags };
     }, []);
 
-    /**
-     * Connect to LiveKit room with timeout handling.
-     * Shows a warning notification when connection time exceeds timeout/2.
-     * Throws an error if connection is not established within the specified timeout.
-     */
-    const connectWithTimeout = async (
-        room: Room,
-        url: string,
-        token: string,
-        timeout: number,
-        options: Parameters<Room['connect']>[2],
-        warningHeader?: string,
-        warningSubtitle?: string
-    ): Promise<void> => {
-        const connectPromise = room.connect(url, token, options);
-
-        let warningShown = false;
-        const warningTime = Math.floor(timeout / 2);
-
-        const warningTimer = setTimeout(() => {
-            if (!warningShown) {
-                warningShown = true;
-                if (warningHeader) {
-                    setJoiningLoaderHeader(warningHeader);
-                }
-                if (warningSubtitle) {
-                    setJoiningLoaderSubtitle(warningSubtitle);
-                }
-                reportMeetError(
-                    `Livekit room connection time abnormal (${warningTime}ms)`,
-                    withMeetingLinkNameTag({
-                        timeout: `${warningTime}ms`,
-                        stage: 'warning',
-                    })
-                );
-            }
-        }, warningTime);
-
-        let timeoutTimer: NodeJS.Timeout | undefined;
-        const timeoutPromise = new Promise<never>((_, reject) => {
-            timeoutTimer = setTimeout(async () => {
-                reportMeetError(
-                    `Livekit room connection timeout (${timeout}ms)`,
-                    withMeetingLinkNameTag({
-                        timeout: `${timeout}ms`,
-                        stage: 'failed',
-                    })
-                );
-                reject(new Error(`Connection timeout after ${timeout}ms`));
-            }, timeout);
-        });
-
-        try {
-            await Promise.race([connectPromise, timeoutPromise]);
-        } catch (error) {
-            throw error;
-        } finally {
-            clearTimeout(warningTimer);
-            if (timeoutTimer) {
-                clearTimeout(timeoutTimer);
-            }
-        }
-    };
-
-    const connectViaTurnRelay = async (room: Room, url: string, token: string, timeout: number): Promise<void> => {
-        try {
-            await connectWithTimeout(room, url, token, timeout, {
-                autoSubscribe: false,
-                rtcConfig: { iceTransportPolicy: 'relay' },
-                peerConnectionTimeout: timeout / 2,
-            });
-        } catch (error) {
-            if (isConnectionTimeoutError(error)) {
-                await room.disconnect();
-            }
-            throw error;
-        }
-    };
-
-    const connectWithStunFallbackToTurnRelay = async (
-        room: Room,
-        url: string,
-        token: string,
-        timeout: number
-    ): Promise<void> => {
-        try {
-            await connectWithTimeout(
-                room,
-                url,
-                token,
-                timeout,
-                { autoSubscribe: false, peerConnectionTimeout: timeout / 2 },
-                c('Warning').t`Connection is taking longer than expected`,
-                c('Warning').t`Trying another route…`
-            );
-            setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
-        } catch (roomConnectionError: any) {
-            if (!isConnectionError(roomConnectionError) && !isConnectionTimeoutError(roomConnectionError)) {
-                throw roomConnectionError;
-            }
-
-            const isTimeout = isConnectionTimeoutError(roomConnectionError);
-            reportMeetError(
-                `STUN UDP connection ${isTimeout ? 'timeout' : 'failed'}, trying with TURN relay`,
-                withMeetingLinkNameTag(roomConnectionError)
-            );
-            setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
-            setJoiningLoaderSubtitle(
-                isTimeout
-                    ? c('Warning').t`STUN UDP connection timeout, trying with TURN relay`
-                    : c('Warning').t`STUN UDP connection failed, trying with TURN relay…`
-            );
-
-            if (isTimeout) {
-                await room.disconnect();
-            }
-
-            await connectViaTurnRelay(room, url, token, timeout);
-            setIsUsingTurnRelay(true);
-        }
-    };
+    const {
+        connectWithStunFallbackToTurnRelay,
+        isUsingTurnRelay,
+        joiningLoaderHeader,
+        joiningLoaderSubtitle,
+        clearLoaderState,
+    } = useLiveKitConnection({ room, reportMeetError, withMeetingLinkNameTag });
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -295,8 +155,6 @@ export const ProtonMeetContainer = ({
     const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
-
-    const currentKeyRef = useRef<string | null>(null);
 
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
@@ -310,16 +168,7 @@ export const ProtonMeetContainer = ({
 
     const instantMeetingRef = useRef(!token);
 
-    const useDefaultDisplayName = isGuest
-        ? defaultDisplayNameHooks.unauthenticated
-        : defaultDisplayNameHooks.authenticated;
-    const storedDisplayName = getItem(getDisplayNameStorageKey(isGuest, user?.ID));
-
-    const defaultDisplayName = useDefaultDisplayName();
-
-    const [displayName, setDisplayName] = useState(
-        storedDisplayName || (isInstantJoin ? getRandomParticipantName() : defaultDisplayName)
-    );
+    const { displayName, setDisplayName } = useDisplayName({ isGuest, userId: user?.ID, isInstantJoin });
 
     const [joiningInProgress, setJoiningInProgress] = useState(false);
     const [joinedRoom, setJoinedRoom] = useState(false);
@@ -337,8 +186,6 @@ export const ProtonMeetContainer = ({
     const [isReconnecting, setIsReconnecting] = useState(false);
     const [reconnectionFailed, setReconnectionFailed] = useState(false);
     const [mlsRetrying, setMlsRetrying] = useState(false);
-    const isReconnectingRef = useRef(false);
-    const websocketUrlRef = useRef<string | null>(null);
     // Stable ref to break the circular dependency between useConnectionHealthCheck and performFullReconnection
     const triggerFullReconnectionRef = useRef<(reason: RejoinReasonInfo) => void>(() => {});
     const [prejoinParticipantCount, setPrejoinParticipantCount] = useState<number | null>(null);
@@ -373,15 +220,10 @@ export const ProtonMeetContainer = ({
     });
 
     const joinBlockedRef = useRef(false);
-    const lastEpochRef = useRef<bigint | null>(null);
     const joinedRoomLoggedRef = useRef(false);
-
     const loadingStartTimeRef = useRef(0);
-    const mlsGroupStateRef = useRef<MLSGroupState | null>(null);
 
     const wasmApp = useWasmApp();
-
-    const mlsSetupDone = useRef(false);
 
     const meetingLinkRef = useRef<string | null>(null);
 
@@ -401,8 +243,6 @@ export const ProtonMeetContainer = ({
 
     const notifications = useNotifications();
 
-    const [keyRotationScheduler] = useState(() => new KeyRotationScheduler(keyProvider));
-
     useIsRecordingInProgressReceiver(wasmApp as App);
 
     const isGuestAdminRef = useRef(false);
@@ -412,11 +252,55 @@ export const ProtonMeetContainer = ({
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
+    const {
+        keyRotationScheduler,
+        currentKeyRef,
+        lastEpochRef,
+        mlsGroupStateRef,
+        getGroupKeyInfo,
+        onNewGroupKeyInfo,
+        reportMLSRelatedError,
+    } = useKeyManagement({
+        keyProvider,
+        isMeetSeamlessKeyRotationEnabled,
+        isMeetClientMetricsLogEnabled,
+        wasmApp,
+        dispatch,
+        reportMeetError,
+        withMeetingLinkNameTag,
+    });
+
     const { allowHealthCheck, disallowHealthCheck } = useConnectionHealthCheck({
         wasmApp,
         mlsGroupStateRef,
         onMlsFailed: () => triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch),
     });
+
+    const { mlsSetupDone, handleMlsSetup } = useMlsSession({
+        wasmApp,
+        isMeetNewJoinTypeEnabled,
+        isMeetSwitchJoinTypeEnabled,
+        usePreSharedKey,
+        getGroupKeyInfo,
+        onNewGroupKeyInfo,
+        updateAdminParticipant,
+        allowHealthCheck,
+        triggerFullReconnectionRef,
+        setMlsRetrying,
+        currentKeyRef,
+        mlsGroupStateRef,
+    });
+
+    const cleanupMlsState = useCallback(() => {
+        mlsSetupDone.current = false;
+        cleanupWasmDependencies();
+        if (isMeetSeamlessKeyRotationEnabled) {
+            keyRotationScheduler.clean();
+        } else {
+            keyProvider.cleanCurrent();
+        }
+        lastEpochRef.current = null;
+    }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider]);
 
     useSafariWebsocketVisibilityHandler({
         wasmApp,
@@ -444,357 +328,41 @@ export const ProtonMeetContainer = ({
         (meetingsListStatus === MeetingListStatus.InitialLoading ||
             meetingsListStatus === MeetingListStatus.InitialDecrypting);
 
-    const hasEpochError = (epoch: bigint | undefined) => {
-        if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
-            return 'Lower epoch than last epoch';
-        }
-
-        if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
-            return 'Epoch is not the next epoch';
-        }
-
-        return null;
-    };
-
-    const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
-        if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
-            reportMeetError('Lower epoch than last epoch', withMeetingLinkNameTag({ epoch }));
-        }
-
-        if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
-            reportMeetError('Epoch is not the next epoch', withMeetingLinkNameTag({ epoch }));
-        }
-
-        if (!key) {
-            reportMeetError('Key is undefined', withMeetingLinkNameTag({ epoch }));
-        }
-
-        if (!epoch) {
-            reportMeetError('Epoch is undefined', withMeetingLinkNameTag({}));
-        }
-    };
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
-
-    const getGroupKeyInfo = async () => {
-        try {
-            const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
-            currentKeyRef.current = newGroupKeyInfo.key;
-            const displayCode = await wasmApp?.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(newGroupKeyInfo.epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
-            return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
-        } catch (err: any) {
-            reportMeetError('Error while calling getGroupKeyInfo', withMeetingLinkNameTag(err));
-            throw err;
-        }
-    };
-
-    const onNewGroupKeyInfo = async (key: string, epoch: bigint) => {
-        try {
-            reportMLSRelatedError(key, epoch);
-            if (isMeetSeamlessKeyRotationEnabled) {
-                await keyRotationScheduler.schedule(key, epoch);
-            } else {
-                await keyProvider.setKeyWithEpoch(key, epoch);
-            }
-
-            const displayCode = await wasmApp?.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
-
-            if (isMeetClientMetricsLogEnabled) {
-                try {
-                    await wasmApp?.tryLogDesignatedCommitter(Number(epoch));
-                } catch (error) {
-                    reportMeetError('Failed to log designated committer rank', withMeetingLinkNameTag(error));
-                }
-            }
-
-            const errorMessage = hasEpochError(epoch);
-
-            const newLog = {
-                timestamp: Date.now(),
-                epoch: Number(epoch),
-                type: errorMessage ? 'error' : 'log',
-                message: errorMessage ?? 'Key rotation successful',
-            };
-
-            dispatch(addKeyRotationLog(newLog as KeyRotationLog));
-
-            lastEpochRef.current = epoch;
-        } catch (err) {
-            dispatch(
-                addKeyRotationLog({
-                    timestamp: Date.now(),
-                    epoch: Number(epoch),
-                    type: 'error',
-                    message: 'Could not set new encryption key',
-                })
-            );
-            reportMeetError('Could not set new encryption key', withMeetingLinkNameTag(err));
-        }
-    };
-
-    const handleMlsSetup = async (
-        meetingLinkName: string,
-        accessToken: string,
-        meetingPassword: string,
-        participantsCountValue?: number | null
-    ) => {
-        if (!mlsSetupDone.current) {
-            mlsSetupDone.current = true;
-
-            setupWasmDependencies({
-                getGroupKeyInfo,
-                onNewGroupKeyInfo,
-                onMlsSyncStateChanged: (state: number) => {
-                    if (state === MlsSyncStateInfo.Retrying) {
-                        setMlsRetrying(true);
-                    } else if (state === MlsSyncStateInfo.Failed) {
-                        setMlsRetrying(false);
-                        triggerFullReconnectionRef.current(RejoinReasonInfo.EpochMismatch);
-                    } else if (state === MlsSyncStateInfo.Success) {
-                        setMlsRetrying(false);
-                    }
-                },
-            });
-            setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged: updateAdminParticipant });
-        }
-
-        if (!wasmApp) {
-            return;
-        }
-        try {
-            const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            const joinType = wasmApp.getJoinType(
-                isMeetNewJoinTypeEnabled,
-                isMeetSwitchJoinTypeEnabled,
-                participantsCountValue ?? 0
-            );
-            if (joinType === JoinTypeInfo.ExternalProposal) {
-                // eslint-disable-next-line no-console
-                console.log('Joining room with proposal');
-                try {
-                    await wasmApp.joinRoomWithProposal(
-                        accessToken,
-                        meetingLinkName,
-                        meetingPassword,
-                        usePreSharedKey,
-                        sessionId
-                    );
-                } catch (error) {
-                    // fallback to join with external commit
-                    await wasmApp.joinMeetingWithAccessToken(
-                        accessToken,
-                        meetingLinkName,
-                        meetingPassword,
-                        usePreSharedKey,
-                        sessionId
-                    );
-                }
-            } else {
-                await wasmApp.joinMeetingWithAccessToken(
-                    accessToken,
-                    meetingLinkName,
-                    meetingPassword,
-                    usePreSharedKey,
-                    sessionId
-                );
-            }
-
-            await wasmApp.setMlsGroupUpdateHandler();
-            await wasmApp.setLiveKitAdminChangeHandler();
-            await wasmApp.setMlsSyncStateUpdateHandler();
-
-            const groupKeyData = await wasmApp.getGroupKey();
-
-            currentKeyRef.current = groupKeyData.key;
-
-            const displayCode = await wasmApp?.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(groupKeyData.epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
-
-            allowHealthCheck();
-
-            return groupKeyData;
-        } catch (error) {
-            switch (error) {
-                // TODO: Show a custom error message to the user for each error
-                case MeetCoreErrorEnum.MlsServerVersionNotSupported:
-                    throw new Error(
-                        c('Error')
-                            .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`
-                    );
-                case MeetCoreErrorEnum.MaxRetriesReached:
-                case MeetCoreErrorEnum.HttpClientError:
-                default:
-                    // eslint-disable-next-line no-console
-                    console.error(error);
-                    throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
-            }
-        }
-    };
 
     const updateAccessToken = (accessToken: string) => {
         accessTokenRef.current = accessToken;
     };
 
-    const performFullReconnection = useCallback(
-        async (reason: RejoinReasonInfo) => {
-            if (isReconnectingRef.current || !wasmApp || !meetingLinkNameRef.current) {
-                return;
-            }
-            isReconnectingRef.current = true;
-            const reconnectionStartTimeMs = BigInt(Date.now());
-
-            setIsReconnecting(true);
-            setReconnectionFailed(false);
-            setMlsRetrying(false);
-            disallowHealthCheck();
-
-            const meetingToken = meetingLinkNameRef.current;
-            const meetingPassword = meetingDetails.meetingPassword as string;
-
-            try {
-                // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
-                const wasMlsActive = mlsSetupDone.current;
-
-                try {
-                    await room.disconnect();
-                } catch {
-                    // best effort
-                }
-
-                // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
-                // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
-                if (wasMlsActive) {
-                    try {
-                        await wasmApp.leaveMeeting();
-                    } catch {
-                        // best effort
-                    }
-                    mlsSetupDone.current = false;
-                }
-
-                // Cleanup key rotation state
-                cleanupWasmDependencies();
-                if (isMeetSeamlessKeyRotationEnabled) {
-                    keyRotationScheduler.clean();
-                } else {
-                    keyProvider.cleanCurrent();
-                }
-                lastEpochRef.current = null;
-
-                const sanitizedDisplayName = sanitizeMessage(displayName);
-                const encryptedDisplayName = decryptionKeyRef.current
-                    ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
-                    : '';
-
-                const newDetails = await getAccessDetails({
-                    displayName: sanitizedDisplayName,
-                    token: meetingToken,
-                    encryptedDisplayName,
-                });
-
-                websocketUrlRef.current = newDetails.websocketUrl;
-                accessTokenRef.current = newDetails.accessToken;
-                const websocketUrl = newDetails.websocketUrl;
-                const accessToken = newDetails.accessToken;
-
-                // Reset MLS state for a fresh join attempt
-                mlsSetupDone.current = false;
-
-                const groupKeyData = await handleMlsSetup(meetingToken, accessToken, meetingPassword);
-                if (!groupKeyData) {
-                    throw new Error('MLS setup did not return key data');
-                }
-
-                // Mirror handleJoin: set the new key in keyProvider before enabling E2EE
-                if (isMeetSeamlessKeyRotationEnabled) {
-                    await keyRotationScheduler.schedule(groupKeyData.key, groupKeyData.epoch);
-                } else {
-                    await keyProvider.setKeyWithEpoch(groupKeyData.key, groupKeyData.epoch);
-                }
-
-                await room.setE2EEEnabled(true);
-                await connectWithStunFallbackToTurnRelay(room, websocketUrl, accessToken, 20_000);
-
-                // Restore meeting state
-                meetingLinkNameRef.current = meetingToken;
-                setJoinedRoom(true);
-                await initializeDevices(5_000);
-                await getParticipants(meetingToken);
-
-                setIsReconnecting(false);
-                isReconnectingRef.current = false;
-                allowHealthCheck();
-
-                if (isMeetClientMetricsLogEnabled) {
-                    const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                    await wasmApp
-                        .logUserRejoin(rejoinTimeMs, 1, reason, true)
-                        .catch((err: unknown) =>
-                            reportMeetError('Failed to log reconnection success', withMeetingLinkNameTag(err))
-                        );
-                }
-            } catch (error) {
-                reportMeetError('Full reconnection failed', withMeetingLinkNameTag(error));
-
-                setIsReconnecting(false);
-                isReconnectingRef.current = false;
-                setReconnectionFailed(true);
-                // Clear stored credentials so the next attempt (manual rejoin) fetches fresh ones
-                accessTokenRef.current = null;
-                websocketUrlRef.current = null;
-
-                if (isMeetClientMetricsLogEnabled) {
-                    const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                    await wasmApp
-                        .logUserRejoin(rejoinTimeMs, 1, reason, false)
-                        .catch((err: unknown) =>
-                            reportMeetError('Failed to log reconnection failure', withMeetingLinkNameTag(err))
-                        );
-                }
-            }
-        },
-        [
-            wasmApp,
-            room,
-            meetingDetails.meetingPassword,
-            displayName,
-            getAccessDetails,
-            handleMlsSetup,
-            connectWithStunFallbackToTurnRelay,
-            allowHealthCheck,
-            disallowHealthCheck,
-            initializeDevices,
-            getParticipants,
-            isMeetSeamlessKeyRotationEnabled,
-            isMeetClientMetricsLogEnabled,
-            keyRotationScheduler,
-            keyProvider,
-            reportMeetError,
-            withMeetingLinkNameTag,
-        ]
-    );
-
-    // Keep the stable ref in sync so callbacks registered before performFullReconnection was defined
-    // (e.g. useConnectionHealthCheck's onMlsFailed) always call the latest version.
-    useEffect(() => {
-        triggerFullReconnectionRef.current = performFullReconnection;
-    }, [performFullReconnection]);
+    const { isReconnectingRef, websocketUrlRef, performFullReconnection } = useReconnection({
+        wasmApp,
+        room,
+        meetingLinkNameRef,
+        meetingPassword: meetingDetails.meetingPassword as string,
+        displayName,
+        decryptionKeyRef,
+        mlsSetupDone,
+        accessTokenRef,
+        keyProvider,
+        keyRotationScheduler,
+        isMeetSeamlessKeyRotationEnabled,
+        isMeetClientMetricsLogEnabled,
+        getAccessDetails,
+        handleMlsSetup,
+        connectWithStunFallbackToTurnRelay,
+        cleanupMlsState,
+        allowHealthCheck,
+        disallowHealthCheck,
+        initializeDevices,
+        getParticipants,
+        reportMeetError,
+        withMeetingLinkNameTag,
+        setJoinedRoom,
+        setMlsRetrying,
+        setIsReconnecting,
+        setReconnectionFailed,
+        triggerFullReconnectionRef,
+    });
 
     const submitPassword = async () => {
         try {
@@ -948,7 +516,7 @@ export const ProtonMeetContainer = ({
                 // On Safari with H264, renegotiation can cause the simulcast encoder to fail silently.
                 // E2EE is already enabled above so the queued publish will be encrypted.
                 const initDevices = initializeDevices(5_000);
-                await connectWithStunFallbackToTurnRelay(room, websocketUrl, accessToken, timeoutMs);
+                await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
                 await initDevices;
             } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
@@ -960,13 +528,8 @@ export const ProtonMeetContainer = ({
                         withMeetingLinkNameTag(leaveError)
                     );
                 }
-                mlsSetupDone.current = false;
                 disallowHealthCheck();
-                if (isMeetSeamlessKeyRotationEnabled) {
-                    keyRotationScheduler.clean();
-                } else {
-                    keyProvider.cleanCurrent();
-                }
+                cleanupMlsState();
                 throw livekitError;
             }
 
@@ -1024,7 +587,7 @@ export const ProtonMeetContainer = ({
                     setShowReconnectedMessage(false);
                     liveKitConnectionStateRef.current = null;
                     joinedRoomLoggedRef.current = false;
-                    cleanupWasmDependencies();
+                    cleanupMlsState();
                     dispatch(resetChatAndReactions());
                     dispatch(resetUiState());
                     triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
@@ -1047,8 +610,7 @@ export const ProtonMeetContainer = ({
                 }
                 void stopPiP();
 
-                // Cleanup WASM polling interval to prevent MLS errors after leaving
-                cleanupWasmDependencies();
+                cleanupMlsState();
 
                 dispatch(resetChatAndReactions());
                 dispatch(resetUiState());
@@ -1323,24 +885,14 @@ export const ProtonMeetContainer = ({
         decryptionKeyRef.current = null;
         void wasmApp?.leaveMeeting();
         void stopPiP();
-        mlsSetupDone.current = false; // need to set mls again after leave meeting
         disallowHealthCheck();
-
-        // Cleanup WASM polling interval to prevent MLS errors after leaving
-        cleanupWasmDependencies();
-
-        if (isMeetSeamlessKeyRotationEnabled) {
-            // clean the current key and epoch to avoid use them in next meeting
-            keyRotationScheduler.clean();
-        }
+        cleanupMlsState();
 
         setJoinedRoom(false);
 
         // Clear loader states on leave
-        setJoiningLoaderHeader(undefined);
-        setJoiningLoaderSubtitle(undefined);
+        clearLoaderState();
 
-        keyProvider.cleanCurrent();
         clearSentryReportErrorCounts();
         prepareUpsell();
     };
@@ -1361,18 +913,9 @@ export const ProtonMeetContainer = ({
             decryptionKeyRef.current = null;
         }
 
-        mlsSetupDone.current = false; // need to set mls again after leave meeting
         disallowHealthCheck();
-
-        // Cleanup WASM polling interval to prevent MLS errors after leaving
-        cleanupWasmDependencies();
-
-        if (isMeetSeamlessKeyRotationEnabled) {
-            // clean the current key and epoch to avoid use them in next meeting
-            keyRotationScheduler.clean();
-        }
+        cleanupMlsState();
         setJoinedRoom(false);
-        keyProvider.cleanCurrent();
     };
 
     const handleEndMeeting = async () => {
@@ -1392,14 +935,10 @@ export const ProtonMeetContainer = ({
         resetParticipantNameMap();
         meetingInfoRef.current = null;
         decryptionKeyRef.current = null;
-        mlsSetupDone.current = false; // need to set mls again after leave meeting
-
-        // Cleanup WASM polling interval to prevent MLS errors after leaving
-        cleanupWasmDependencies();
+        disallowHealthCheck();
+        cleanupMlsState();
 
         setJoinedRoom(false);
-
-        keyProvider.cleanCurrent();
     };
 
     const handleMeetingLockToggle = useStableCallback(async () => {
