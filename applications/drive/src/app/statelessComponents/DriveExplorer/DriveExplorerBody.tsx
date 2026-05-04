@@ -65,7 +65,7 @@ export const DriveExplorerBody = ({
     });
 
     return (
-        <div ref={containerRef} className="flex-1 overflow-auto h-full max-h-full" data-testid="drive-explorer-scroll">
+        <div ref={containerRef} className="flex-1 overflow-auto" data-testid="drive-explorer-scroll">
             {itemCount > 0 && (
                 <div
                     className="w-full relative h-custom"
