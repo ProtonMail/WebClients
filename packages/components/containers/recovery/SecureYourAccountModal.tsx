@@ -39,7 +39,7 @@ const SecureYourAccountModal = (props: Props) => {
                 className="text-xl p-4 pb-0"
                 hasClose={false}
                 title={c('Header').t`Secure your account`}
-                subline={<span className="text-sm">{c('Header').t`Save your Recovery Kit to continue`}</span>}
+                subline={<span className="text-sm">{c('Header').t`Save your recovery phrase to continue`}</span>}
             />
             <ModalContent className="px-4 mt-6">
                 <img src={recoveryKitImg} alt="" className="mb-6 w-full" />
@@ -47,7 +47,7 @@ const SecureYourAccountModal = (props: Props) => {
                     <div>
                         {getBoldFormattedText(
                             c('Secure Your Account')
-                                .t`If you get locked out of your ${BRAND_NAME} Account, your **Recovery Kit** will allow you to sign in and recover your data.`
+                                .t`If you get locked out of your ${BRAND_NAME} Account, your **recovery phrase** will allow you to sign in and recover your data.`
                         )}
                     </div>
                     <div>

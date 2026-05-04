@@ -4,18 +4,16 @@ import { c } from 'ttag';
 
 import { RecoveryKitAction, type RecoveryKitActionProps } from '@proton/account/recovery/recoveryKit/RecoveryKitAction';
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-type Method = 'recovery-kit' | 'text';
 export interface SetRecoveryPhraseOnSignupContainerProps {
     recoveryPhraseData: DeferredMnemonicData;
     sendRecoveryPhrasePayload: () => Promise<void>;
-    title?: (method: Method) => ReactNode;
+    title?: ReactNode;
     continueButton: () => ReactNode;
 }
 
@@ -60,44 +58,14 @@ const SetRecoveryPhraseOnSignupContainer = ({
         );
     };
 
-    const [method, setMethod] = useState<Method>('recovery-kit');
-
-    const copyRecoverySwitchButton = (
-        <InlineLinkButton
-            key="copy-recovery-phrase-button"
-            onClick={() => {
-                setMethod('text');
-            }}
-        >
-            {
-                // translator: Full sentence "Or copy recovery phrase as text."
-                c('RecoveryPhrase: Info').t`copy recovery phrase`
-            }
-        </InlineLinkButton>
-    );
-
-    const downloadRecoveryKitSwitchButton = (
-        <InlineLinkButton
-            key="download-pdf-button"
-            onClick={() => {
-                setMethod('recovery-kit');
-            }}
-        >
-            {
-                // translator: Full sentence "Or download PDF instead."
-                c('RecoveryPhrase: Info').t`download PDF`
-            }
-        </InlineLinkButton>
-    );
-
     return (
         <div className="flex flex-column gap-8">
             <div className="flex flex-column gap-4">
-                {title?.(method)}
+                {title}
                 <div>
                     {getBoldFormattedText(
                         c('RecoveryPhrase: Info')
-                            .t`Your **Recovery Kit** lets you restore your ${BRAND_NAME} Account if you’re locked out.`
+                            .t`Your **recovery phrase** lets you restore your ${BRAND_NAME} Account if you’re locked out.`
                     )}
                 </div>
                 <div>
@@ -114,20 +82,7 @@ const SetRecoveryPhraseOnSignupContainer = ({
                 }
                 onSaveRecoveryKit={handleSaveRecoveryKit}
                 loading={loading}
-                method={method}
             />
-
-            {recoveryPhraseData.save.canDownloadRecoveryKit && (
-                <div>
-                    {method === 'recovery-kit' &&
-                        // translator: Full sentence "Or copy recovery phrase as text."
-                        c('RecoveryPhrase: Info').jt`Or ${copyRecoverySwitchButton} as text.`}
-
-                    {method === 'text' &&
-                        // translator: Full sentence "Or download PDF instead."
-                        c('RecoveryPhrase: Info').jt`Or ${downloadRecoveryKitSwitchButton} instead.`}
-                </div>
-            )}
 
             {continueButton()}
         </div>

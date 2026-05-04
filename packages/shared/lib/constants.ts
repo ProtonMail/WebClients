@@ -1228,7 +1228,7 @@ export enum REASON_TYPES {
     OTHER = 'other',
 }
 
-export const RECOVERY_KIT_FILE_NAME = 'proton-recovery-kit.pdf';
+export const RECOVERY_KIT_FILE_NAME = 'proton-recovery-phrase.pdf';
 export const RECOVERY_FILE_FILE_NAME = `proton_recovery${KEY_FILE_EXTENSION}`;
 
 export const TWO_FA_RECOVERY_CODES_FILE_NAME = `proton_2FA_recovery_codes.txt`;

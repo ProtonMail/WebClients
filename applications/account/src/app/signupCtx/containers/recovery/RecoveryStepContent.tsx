@@ -5,21 +5,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import RecoveryStepUnderstoodCheckbox from '../../../containers/recoveryPhrase/RecoveryStepUnderstoodCheckbox';
-import SetRecoveryPhraseOnSignupContainer, {
-    type SetRecoveryPhraseOnSignupContainerProps,
-} from '../../../containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
+import SetRecoveryPhraseOnSignupContainer from '../../../containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
 import { useSignup } from '../../context/SignupContext';
 
 interface Props {
     onContinue: () => void;
-    title?: SetRecoveryPhraseOnSignupContainerProps['title'];
 }
 
 /**
  * To be used in the recovery step of the signup flow
  * If you need customisation, use this as a baseline and consume SetRecoveryPhraseOnSignupContainer yourself
  */
-const RecoveryStepContent = ({ onContinue, title }: Props) => {
+const RecoveryStepContent = ({ onContinue }: Props) => {
     const [understood, setUnderstood] = useState(false);
 
     const { recoveryPhraseData, sendRecoveryPhrasePayload, captureSignupSentryMessage } = useSignup();
@@ -42,7 +39,11 @@ const RecoveryStepContent = ({ onContinue, title }: Props) => {
         <SetRecoveryPhraseOnSignupContainer
             recoveryPhraseData={recoveryPhraseData}
             sendRecoveryPhrasePayload={() => sendRecoveryPhrasePayload()}
-            title={title}
+            title={
+                <h1 className="font-arizona text-semibold text-8xl mb-4">
+                    {c('RecoveryPhrase: Title').t`Save your recovery phrase`}
+                </h1>
+            }
             continueButton={() => {
                 return (
                     <>
