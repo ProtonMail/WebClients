@@ -83,33 +83,28 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
         targetText = c('collider_2025:Title').t`Ghost mode`;
     }
     // else if (isSmallScreen) {
-    //     targetText = c('collider_2025:Title').t`How can I help you?`;
+    //     targetText = c('collider_2025:Title').t`Hey, I'm ${LUMO_SHORT_APP_NAME}. Ask me anything. It's confidential.`;
     // } else if (isOnboardingCompleted) {
     //     targetText = c('collider_2025:Title').t`Hello! How can I help you today?`;
     // }
     else {
-        targetText = c('collider_2025:Title').t`How can I help you?`;
+        targetText = c('collider_2025:Title').t`How can I help?`;
     }
 
     const { displayText } = useEncryptedTextAnimation(targetText, shouldAnimate, 600);
 
-    const getResponsiveClasses = () => {
-        if (isSmallScreen) {
-            return 'text-wrap-balance text-center mx-auto';
-        }
-        if (isOnboardingCompleted) {
-            return '';
-        }
-        return 'text-wrap-balance';
-    };
-
-    const textClassName = `main-text lh100 transition-all duration-50 ease-out ${getResponsiveClasses()}`;
+    const textClassName = clsx(
+        'main-text lh100 transition-all duration-50 ease-out',
+        !isGhostMode && 'mb-8',
+        isSmallScreen && 'text-wrap-balance text-center mx-auto',
+        !isSmallScreen && !isOnboardingCompleted && 'text-wrap-balance'
+    );
 
     if (isGhostMode) {
         return (
-            <div className="mx-auto md:mx-0">
+            <div className="mx-auto md:mx-0 mb-8 text-center">
                 <h1 className={textClassName}>{displayText}</h1>
-                <p className={clsx('color-weak text-lg md:text-xl mt-2 mb-0', isSmallScreen && 'text-center')}>
+                <p className={clsx('color-weak text-lg mt-2 mb-0', isSmallScreen && 'text-center')}>
                     {c('collider_2025:Title').t`This chat disappears when you close it and is never saved.`}
                 </p>
             </div>
@@ -120,9 +115,9 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
         return <h1 className={textClassName}>{displayText}</h1>;
     }
 
-    if (isOnboardingCompleted) {
-        return <h1 className={`${textClassName} onboarded`}>{displayText}</h1>;
-    }
+    // if (isOnboardingCompleted) {
+    //     return <h1 className={`${textClassName} onboarded`}>{displayText}</h1>;
+    // }
 
     return <h1 className={textClassName}>{displayText}</h1>;
 };
