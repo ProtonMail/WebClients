@@ -812,6 +812,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ]
     },
     "Actions message": {
@@ -2396,6 +2399,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ]
     },
     "description": {
@@ -3053,6 +3062,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
       ]
     },
     "error": {
@@ -4980,6 +4992,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
+      ],
+      "Tracking": [
+        "追蹤"
       ]
     },
     "info": {
@@ -5477,6 +5495,9 @@
       ],
       "Your password (trusted contact)": [
         "您的密碼 (信任的內容)"
+      ],
+      "Additional comments": [
+        "附加備註"
       ]
     },
     "Label for contact group color": {
@@ -5694,6 +5715,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
       ]
     },
     "meet_2025: Feature": {
@@ -7498,6 +7522,9 @@
       ],
       "Your organization name": [
         "貴組織名稱"
+      ],
+      "Enter a name": [
+        "輸入名稱"
       ]
     },
     "Placeholder for contact group name": {
@@ -7585,6 +7612,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     },
     "q1campaign: Action": {
