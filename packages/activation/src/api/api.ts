@@ -9,7 +9,12 @@ import type {
     OAuthProps,
 } from '../interface';
 import { ImportType } from '../interface';
-import type { ApiCreateImporterOrganization, ApiCreateImporterOrganizationMigration } from './api.interface';
+import type {
+    ApiCreateImporterOrganization,
+    ApiCreateImporterOrganizationMigration,
+    ApiCreateJoiningLink,
+    ApiImporterOrganizationState,
+} from './api.interface';
 
 export const getTokens = () => ({
     url: 'oauth-token/v1/tokens',
@@ -202,9 +207,10 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     data: { Email, OrganizationId },
 });
 
-export const getOrganizationUsers = (importerOrganizationId: string) => ({
-    url: `importer/v1/organizations/${importerOrganizationId}/users`,
+export const getOrganizationUsers = (params: { DomainName: string }) => ({
+    url: `importer/v1/organizations/users`,
     method: 'GET',
+    params,
 });
 
 export const getOrganizationImporter = () => ({
@@ -227,4 +233,30 @@ export const createOrganizationImporterMigration = (data: ApiCreateImporterOrgan
 export const getConnectionStatus = () => ({
     url: 'importer/v1/provider/googleworkspace/connection/status',
     method: 'GET',
+});
+
+export const getOrganizationImporterReport = (importerOrganizationId: string, params: { UserId?: string } = {}) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}/reports`,
+    method: 'GET',
+    params,
+});
+
+export const getJoiningLink = (importerOrganizationId: string) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}/joining-link`,
+    method: 'GET',
+});
+
+export const createJoiningLink = (importerOrganizationId: string, data: ApiCreateJoiningLink) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}/joining-link`,
+    method: 'POST',
+    data,
+});
+
+export const patchOrganizationImporter = (
+    importerOrganizationId: string,
+    data: { State: ApiImporterOrganizationState }
+) => ({
+    url: `importer/v1/organizations/${importerOrganizationId}`,
+    method: 'PATCH',
+    data,
 });

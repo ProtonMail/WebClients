@@ -284,10 +284,18 @@ export interface ApiImporterOrganizationUser {
     ImporterOrganizationUser?: {
         UserID: string;
         ProductStatuses: ProductStatus[];
+        HasTemporaryPassword: boolean;
     };
 }
 
 export type ApiImporterProduct = 'Mail' | 'Contacts' | 'Calendar';
+
+export enum ApiImporterOrganizationState {
+    INITIALIZED = 0,
+    ACTIVE = 1,
+    COMPLETED = 2,
+    FINALIZED = 3,
+}
 
 export interface ApiImporterOrganization {
     AdminUserID: string;
@@ -302,6 +310,7 @@ export interface ApiImporterOrganization {
     ModifyTime: string;
     OrganizationID: string;
     Provider: ApiImportProvider;
+    State: ApiImporterOrganizationState;
 }
 
 export interface ApiCreateImporterOrganization {
@@ -317,4 +326,45 @@ export interface ApiCreateImporterOrganizationMigration {
 
 export interface ApiImporterConnectionStatus {
     IsConnected: boolean;
+}
+
+export interface ApiImporterOrganizationProductReport {
+    UserID: string;
+    Product: ApiImporterProduct;
+    Report: ApiImporterOrganizationReport;
+}
+
+export interface ApiImporterOrganizationReport {
+    State: number;
+    NumMessages?: number;
+    TotalSize: number;
+    Journal: {
+        ImportDate: string;
+        Name?: string;
+        Email?: string;
+        Reason: string;
+        Source?: string;
+        UID?: string;
+    }[];
+    NumContacts?: number;
+    NumGroups?: number;
+    Groups?: any[];
+    Failures?: number;
+    NumEvents?: number;
+}
+
+export enum ApiOrganizationInviteTokenState {
+    Disabled = 0,
+    Enabled = 1,
+}
+
+export interface ApiJoiningLinkData {
+    Token: string;
+    EncryptedTempPassword: string;
+    TokenStatus: ApiOrganizationInviteTokenState;
+    TokenExpirationTime: number;
+}
+
+export interface ApiCreateJoiningLink {
+    EncryptedTempPassword: string;
 }
