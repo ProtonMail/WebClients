@@ -20,6 +20,25 @@ export default defineConfig([
                         'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
                 },
             ],
+            'no-restricted-imports': [
+                'warn',
+                {
+                    paths: [
+                        {
+                            name: '@proton/mail/store/counts/conversationCountsSlice',
+                            importNames: ['useConversationCounts'],
+                            message:
+                                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
+                        },
+                        {
+                            name: '@proton/mail/store/counts/messageCountsSlice',
+                            importNames: ['useMessageCounts'],
+                            message:
+                                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
+                        },
+                    ],
+                },
+            ],
             // TODO: Remove this rule once the cycle dependency is fixed
             'import/no-cycle': 'off',
         },
