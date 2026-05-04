@@ -1,4 +1,4 @@
-import { type MouseEvent, useCallback, useEffect, useMemo } from 'react';
+import { type MouseEvent, type ReactNode, useCallback, useEffect, useMemo } from 'react';
 
 import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
@@ -35,6 +35,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     logoutRedirectUrl?: string;
     extraSessionForkData?: ExtraSessionForkData;
+    children?: ReactNode;
     reportDescriptionContext?: string[];
 }
 
@@ -53,6 +54,7 @@ const UserDropdown = ({
     logoutRedirectUrl,
     extraSessionForkData,
     reportDescriptionContext,
+    children,
     ...rest
 }: UserDropdownProps) => {
     const { APP_NAME, user, info, upgrade, referral, accountSessions } = useUserDropdownInfo({ app });
@@ -201,7 +203,7 @@ const UserDropdown = ({
                     toggle();
                 }}
             />
-            <UserDropdownContent />
+            {children ?? <UserDropdownContent />}
         </UserDropdownContext.Provider>
     );
 };
