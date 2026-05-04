@@ -103,6 +103,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             injection: createContentScriptService(),
             logger: createLoggerService(storage.local),
             monitor: createMonitorService(core, store),
+            nativeMessaging,
             otp: createOTPService(),
             passkey: createPasskeyService(),
             sentry: createSentryService(),

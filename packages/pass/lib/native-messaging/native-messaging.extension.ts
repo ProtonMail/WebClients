@@ -24,6 +24,7 @@ const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content)
 
 export type NativeMessagingService = {
     sendNativeMessageRequest: SendNativeMessageRequest;
+    disconnect: () => void;
 };
 
 type PendingRequests = Map<
@@ -113,19 +114,22 @@ export const createNativeMessagingService = (): NativeMessagingService => {
         try {
             port.postMessage(requestPayload);
         } catch {
-            const pending = pendingRequests.get(messageId);
-            pendingRequests.delete(messageId);
-            pending?.reject(new NativeMessageError(NativeMessageErrorType.HOST_NOT_RESPONDING));
+            throw new NativeMessageError(NativeMessageErrorType.HOST_NOT_RESPONDING);
         }
     };
 
-    const sendNativeMessageRequest: SendNativeMessageRequest = async <Req extends NativeMessageRequest>(request: Req) =>
-        new Promise<NativeMessageResponseForRequest<Req>>(async (resolve, reject) => {
+    const disconnect = () => {
+        port?.disconnect();
+        port = null;
+    };
+
+    const sendNativeMessageRequest: SendNativeMessageRequest = <Req extends NativeMessageRequest>(request: Req) =>
+        new Promise<NativeMessageResponseForRequest<Req>>((resolve, reject) => {
             const messageId = uniqueId();
             const timeoutId = setTimeout(() => {
                 pendingRequests.delete(messageId);
                 info('Request timed out');
-                port?.disconnect();
+                disconnect();
                 reject(new NativeMessageError(NativeMessageErrorType.TIMEOUT));
             }, PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT);
 
@@ -140,8 +144,19 @@ export const createNativeMessagingService = (): NativeMessagingService => {
                 reject: (err) => settle(() => reject(err)),
             });
 
-            await sendRequest(connect(), request, messageId);
+            const onError = (err: unknown) =>
+                settle(() =>
+                    reject(
+                        err instanceof NativeMessageError ? err : new NativeMessageError(NativeMessageErrorType.UNKNOWN)
+                    )
+                );
+
+            try {
+                sendRequest(connect(), request, messageId).catch(onError);
+            } catch (err) {
+                onError(err);
+            }
         });
 
-    return { sendNativeMessageRequest };
+    return { sendNativeMessageRequest, disconnect };
 };
