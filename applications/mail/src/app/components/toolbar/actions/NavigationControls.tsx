@@ -8,7 +8,7 @@ import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { isConversationMode } from '../../helpers/mailSettings';
+import { isConversationMode } from '../../../helpers/mailSettings';
 
 interface Props {
     loading: boolean;

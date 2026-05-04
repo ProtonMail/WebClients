@@ -6,8 +6,8 @@ import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
-import { clearAll, mailTestRender, minimalCache } from '../../helpers/test/helper';
-import { newElementsState } from '../../store/elements/elementsSlice';
+import { clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';
+import { newElementsState } from '../../../store/elements/elementsSlice';
 import ReadUnreadButtons from './ReadUnreadButtons';
 
 const defaultParams: ElementsStateParams = {
