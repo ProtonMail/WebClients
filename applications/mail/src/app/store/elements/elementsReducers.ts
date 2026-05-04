@@ -3,7 +3,7 @@ import type { Draft } from 'immer';
 import isDeepEqual from 'lodash/isEqual';
 
 import { isCategoryLabel } from '@proton/mail/helpers/location';
-import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';

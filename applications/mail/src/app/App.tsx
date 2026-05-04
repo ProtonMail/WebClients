@@ -16,7 +16,7 @@ import EventManagerProvider from '@proton/components/containers/eventManager/Eve
 import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash/proxy';

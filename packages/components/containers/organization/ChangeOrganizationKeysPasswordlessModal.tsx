@@ -21,8 +21,8 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
-import { CacheType } from '@proton/redux-utilities';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities/interface';
 
 import AdministratorList from './AdministratorList';
 

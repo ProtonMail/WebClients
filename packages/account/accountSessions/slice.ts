@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import { type ActiveSessionLite, compareSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
 export interface AccountSessions {

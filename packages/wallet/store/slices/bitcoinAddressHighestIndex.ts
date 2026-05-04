@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
-import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 

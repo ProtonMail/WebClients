@@ -13,7 +13,7 @@ import { DropdownSizeUnit, type ModalOwnProps, Option, SelectTwo } from '@proton
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';

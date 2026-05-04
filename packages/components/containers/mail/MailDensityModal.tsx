@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';

@@ -7,7 +7,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateTimeFormat } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';

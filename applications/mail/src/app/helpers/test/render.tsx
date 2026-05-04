@@ -23,7 +23,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type {

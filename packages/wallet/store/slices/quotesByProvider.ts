@@ -3,7 +3,7 @@ import { createAction, createSlice } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import type { WasmGatewayProvider, WasmPaymentMethod, WasmQuote } from '@proton/andromeda';
-import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities/creator';
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 

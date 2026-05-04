@@ -8,7 +8,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {

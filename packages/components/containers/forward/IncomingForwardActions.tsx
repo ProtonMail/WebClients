@@ -9,7 +9,7 @@ import {
     declineForwarding,
     deleteForwarding,
 } from '@proton/mail/store/forwarding/incomingForwardingActions';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

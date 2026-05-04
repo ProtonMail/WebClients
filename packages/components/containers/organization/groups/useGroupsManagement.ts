@@ -18,7 +18,7 @@ import useGroupKeys from '@proton/components/containers/organization/groups/useG
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

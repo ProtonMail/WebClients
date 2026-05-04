@@ -5,7 +5,7 @@
 // import { FetchedBreaches } from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 // import { toCamelCase } from '@proton/components/containers/credentialLeak/helpers';
 // import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-// import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+// import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 // import { getBreaches } from '@proton/shared/lib/api/breaches';
 // import { Api } from '@proton/shared/lib/interfaces';
 

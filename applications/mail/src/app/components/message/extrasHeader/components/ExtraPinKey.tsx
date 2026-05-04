@@ -16,7 +16,7 @@ import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail, extractEmailFromUserID } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

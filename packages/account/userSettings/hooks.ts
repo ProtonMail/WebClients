@@ -1,4 +1,4 @@
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import { selectUserSettings, userSettingsThunk } from './index';

@@ -10,7 +10,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor';

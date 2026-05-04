@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { createHooks } from '@proton/redux-utilities';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,

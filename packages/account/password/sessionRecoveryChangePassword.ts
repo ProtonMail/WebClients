@@ -9,7 +9,7 @@ import { type UserState, userThunk } from '@proton/account/user';
 import { userKeysThunk } from '@proton/account/userKeys';
 import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';

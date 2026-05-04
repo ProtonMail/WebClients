@@ -28,7 +28,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';

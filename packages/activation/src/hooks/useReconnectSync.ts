@@ -15,7 +15,7 @@ import { SyncTokenStrategy, createSyncItem, resumeSyncItem } from '@proton/activ
 import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
 import { useApi, useNotifications } from '@proton/components';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';

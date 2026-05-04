@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { renameExternalAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';

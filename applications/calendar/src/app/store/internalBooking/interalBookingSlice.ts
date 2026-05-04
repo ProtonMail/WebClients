@@ -9,7 +9,7 @@ import type { KtState } from '@proton/account/kt';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';

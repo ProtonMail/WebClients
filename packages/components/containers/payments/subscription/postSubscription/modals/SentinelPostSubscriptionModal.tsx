@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUserSettings, userSettingsThunk } from '@proton/account';
 import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';

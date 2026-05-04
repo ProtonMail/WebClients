@@ -7,7 +7,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { disableDomainBreachAlert, enableDomainBreachAlert } from '@proton/shared/lib/api/breaches';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces';

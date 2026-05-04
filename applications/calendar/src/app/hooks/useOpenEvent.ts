@@ -4,7 +4,7 @@ import { getUnixTime } from 'date-fns';
 
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';

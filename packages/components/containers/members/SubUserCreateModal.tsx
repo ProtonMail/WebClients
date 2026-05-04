@@ -39,7 +39,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     type APP_NAMES,
     BRAND_NAME,

@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { removeUserKeyRoute } from '@proton/shared/lib/api/keys';
 

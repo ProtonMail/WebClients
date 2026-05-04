@@ -16,7 +16,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { type FullBillingAddress, zipCodeValidator } from '../../../core/billing-address/billing-address';

@@ -21,7 +21,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,

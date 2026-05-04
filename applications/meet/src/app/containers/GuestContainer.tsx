@@ -11,7 +11,7 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import type { MeetStore } from '@proton/meet/store/store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';

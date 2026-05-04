@@ -7,7 +7,7 @@ import { SUBSCRIPTION_STEPS, SettingsLink, useApi, useNotifications, useSubscrip
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';

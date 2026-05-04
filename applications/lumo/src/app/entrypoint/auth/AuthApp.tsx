@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import metrics from '@proton/metrics/index';
-import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
