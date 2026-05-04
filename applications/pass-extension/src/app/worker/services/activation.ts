@@ -262,8 +262,7 @@ export const createActivationService = () => {
                 });
             }
 
-            const resolved = await ctx.service.settings.resolve();
-            const settings = sanitizeSettings(resolved, ctx.service.store.getState());
+            const settings = sanitizeSettings(await ctx.service.settings.resolve(), ctx.service.store.getState());
             // Note: in the future we can modify this to add featureFlags variants in the extension content script
             const { features } = await ctx.service.featureFlags.resolve();
             const connectivity = ctx.service.connectivity.getStatus();
