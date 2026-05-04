@@ -31,7 +31,6 @@ import {
 } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
-import { selectShareState } from '@proton/pass/store/selectors/shares';
 import type { Maybe, PersonalAccessTokenShareResponse } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -88,13 +87,11 @@ const updateAccessSaga = createRequestSaga({
         if (!pat) throw new Error(`Access token ${tokenId} not found in state`);
 
         const currentGrants: PersonalAccessTokenShareResponse[] = yield select(selectAccessTokenGrants(tokenId));
-        const shares: ReturnType<typeof selectShareState> = yield select(selectShareState);
-        const grantUserShareId = (grant: PersonalAccessTokenShareResponse) => shares[grant.ParentShareID]?.shareId;
+        const nextGrantedShareIDs = new Set(shareIds);
+        const currentGrantedShareIDs = new Set(currentGrants.map(prop('ParentShareID')));
 
-        const desired = new Set(shareIds);
-        const currentlyGranted = new Set(currentGrants.map(grantUserShareId));
-        const toRevoke = currentGrants.filter((grant) => !desired.has(grantUserShareId(grant))).map(prop('ShareID'));
-        const toGrant = shareIds.filter((sid) => !currentlyGranted.has(sid));
+        const toRevoke = currentGrants.filter((grant) => !nextGrantedShareIDs.has(grant.ParentShareID)).map(prop('ShareID'));
+        const toGrant = shareIds.filter((sid) => !currentGrantedShareIDs.has(sid));
 
         if (toGrant.length > 0) {
             const rawPatKey: Uint8Array<ArrayBuffer> = yield call(PassCrypto.openAccessTokenKey, pat.PersonalAccessTokenKey);
