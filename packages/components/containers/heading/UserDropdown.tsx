@@ -1,4 +1,4 @@
-import { type MouseEvent, useCallback, useEffect, useMemo } from 'react';
+import { type MouseEvent, type ReactNode, useCallback, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useAccountSessions } from '@proton/account/accountSessions';
@@ -45,6 +45,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     hasAppLinks?: boolean;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     logoutRedirectUrl?: string;
+    children?: ReactNode;
     reportDescriptionContext?: string[];
 }
 
@@ -62,6 +63,7 @@ const UserDropdown = ({
     hasAppLinks,
     logoutRedirectUrl,
     reportDescriptionContext,
+    children,
     ...rest
 }: UserDropdownProps) => {
     const { APP_NAME } = useConfig();
@@ -250,7 +252,7 @@ const UserDropdown = ({
                     toggle();
                 }}
             />
-            <UserDropdownContent />
+            {children ?? <UserDropdownContent />}
         </UserDropdownContext.Provider>
     );
 };

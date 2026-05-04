@@ -75,6 +75,16 @@ const LumoSidebarContent = () => {
                     <NewChatSidebarButton />
                     {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
                     {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
+                    {apiKeyManagement && (
+                        <SidebarItem
+                            icon="code"
+                            label={c('collider_2025:Button').t`API`}
+                            onClick={() => {
+                                history.push('/docs/api');
+                                closeOnItemClick?.();
+                            }}
+                        />
+                    )}
                 </div>
 
                 <div className="sidebar-main-content flex flex-column flex-nowrap flex-1 gap-2">
@@ -88,22 +98,17 @@ const LumoSidebarContent = () => {
                 <div className="sidebar-section sidebar-bottom flex flex-column gap-1">
                     <LumoSidebarUpsell />
 
-                    {apiKeyManagement && (
-                        <SidebarItem
-                            icon="code"
-                            label={c('collider_2025:Button').t`API`}
-                            onClick={() => {
-                                history.push('/docs/api');
-                                closeOnItemClick?.();
-                            }}
-                        />
-                    )}
+                    {/* <SidebarItem
+                        icon="question-circle"
+                        label={c('collider_2025:Button').t`Help and support`}
+                        onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
+                    /> */}
 
-                    <SidebarItem
+                    {/* <SidebarItem
                         icon="cog-wheel"
                         label={c('collider_2025:Button').t`Settings`}
                         onClick={() => settingsModal.openModal(true)}
-                    />
+                    /> */}
 
                     <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
 
