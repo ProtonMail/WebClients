@@ -274,3 +274,13 @@ body::before {
 		border-radius: var(--border-radius-md);
 	}
 }
+
+// Button
+
+button {
+	&.--lumo-background {
+		--button-default-background-color: #f5f6fe;
+
+		background-color: var(--button-default-background-color);
+	}
+}
