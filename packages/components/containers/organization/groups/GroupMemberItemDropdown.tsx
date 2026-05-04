@@ -18,6 +18,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -91,6 +92,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
     const api = useApi();
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
+    const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { getMemberPublicKeys } = useGroupKeys();
 
@@ -105,101 +107,111 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
         },
     ];
 
-    const handleRevokeInvitation = async () => {
-        try {
-            await api(revokeGroupInvitation(groupMember.ID));
-            dispatch(deleteGroupMember({ groupID: group.ID, memberID: groupMember.ID }));
-        } catch (error) {
-            handleError(error);
-        }
-    };
-
-    const handleResumeInvitation = async () => {
-        try {
-            await api(resumeGroupMemberApi(groupMember.ID));
-            dispatch(
-                resumeGroupMemberAction({
-                    groupID: group.ID,
-                    memberID: groupMember.ID,
-                })
-            );
-        } catch (error) {
-            handleError(error);
-        }
-    };
-
-    const handleResendInvitation = async () => {
-        try {
-            await api(reinviteGroupMember(groupMember.ID));
-            createNotification({ text: c('Success notification').t`Resent invitation` });
-        } catch (error) {
-            handleError(error);
-        }
-    };
-
-    const handleOverrideGroupPermissions = async (value: number) => {
-        try {
-            const newPermissions = setBit(clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
-            await api(
-                updateGroupMember(groupMember.ID, {
-                    GroupID: group.ID,
-                    Permissions: newPermissions,
-                })
-            );
-            dispatch(
-                updateOverridePermissions({
-                    groupID: group.ID,
-                    memberID: groupMember.ID,
-                    newValue: newPermissions,
-                })
-            );
-        } catch (error) {
-            handleError(error);
-        }
-    };
-
-    const handleSetGroupOwner = async () => {
-        try {
-            const newOwnerAddressID = groupMember.AddressID;
-            if (!newOwnerAddressID) {
-                throw new Error('Member address ID not found');
+    const handleRevokeInvitation = () =>
+        withLoading(async () => {
+            try {
+                await api(revokeGroupInvitation(groupMember.ID));
+                dispatch(deleteGroupMember({ groupID: group.ID, memberID: groupMember.ID }));
+            } catch (error) {
+                handleError(error);
             }
-            await dispatch(
-                addGroupOwnerThunk({ group, groupMemberID: groupMember.ID, newOwnerAddressID, getMemberPublicKeys })
-            );
-            const newPermissions = setBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
-            dispatch(
-                updateOverridePermissions({
-                    groupID: group.ID,
-                    memberID: groupMember.ID,
-                    newValue: newPermissions,
-                })
-            );
-        } catch (error) {
-            handleError(error);
-        }
-    };
+        });
 
-    const handleRemoveGroupOwner = async () => {
-        try {
-            const newPermissions = clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
-            await api(
-                updateGroupMember(groupMember.ID, {
-                    GroupID: group.ID,
-                    Permissions: newPermissions,
-                })
-            );
-            dispatch(
-                updateOverridePermissions({
-                    groupID: group.ID,
-                    memberID: groupMember.ID,
-                    newValue: newPermissions,
-                })
-            );
-        } catch (error) {
-            handleError(error);
-        }
-    };
+    const handleResumeInvitation = () =>
+        withLoading(async () => {
+            try {
+                await api(resumeGroupMemberApi(groupMember.ID));
+                dispatch(
+                    resumeGroupMemberAction({
+                        groupID: group.ID,
+                        memberID: groupMember.ID,
+                    })
+                );
+            } catch (error) {
+                handleError(error);
+            }
+        });
+
+    const handleResendInvitation = () =>
+        withLoading(async () => {
+            try {
+                await api(reinviteGroupMember(groupMember.ID));
+                createNotification({ text: c('Success notification').t`Resent invitation` });
+            } catch (error) {
+                handleError(error);
+            }
+        });
+
+    const handleOverrideGroupPermissions = (value: number) =>
+        withLoading(async () => {
+            try {
+                const newPermissions = setBit(clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
+                await api(
+                    updateGroupMember(groupMember.ID, {
+                        GroupID: group.ID,
+                        Permissions: newPermissions,
+                    })
+                );
+                dispatch(
+                    updateOverridePermissions({
+                        groupID: group.ID,
+                        memberID: groupMember.ID,
+                        newValue: newPermissions,
+                    })
+                );
+            } catch (error) {
+                handleError(error);
+            }
+        });
+
+    const handleSetGroupOwner = () =>
+        withLoading(async () => {
+            try {
+                const newOwnerAddressID = groupMember.AddressID;
+                if (!newOwnerAddressID) {
+                    throw new Error('Member address ID not found');
+                }
+                await dispatch(
+                    addGroupOwnerThunk({ group, groupMemberID: groupMember.ID, newOwnerAddressID, getMemberPublicKeys })
+                );
+                const newPermissions = setBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+                dispatch(
+                    updateOverridePermissions({
+                        groupID: group.ID,
+                        memberID: groupMember.ID,
+                        newValue: newPermissions,
+                    })
+                );
+                const memberName = member?.Name ?? '';
+                createNotification({ text: c('Action').t`Added ${memberName} as group owner` });
+            } catch (error) {
+                handleError(error);
+            }
+        });
+
+    const handleRemoveGroupOwner = () =>
+        withLoading(async () => {
+            try {
+                const newPermissions = clearBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
+                await api(
+                    updateGroupMember(groupMember.ID, {
+                        GroupID: group.ID,
+                        Permissions: newPermissions,
+                    })
+                );
+                dispatch(
+                    updateOverridePermissions({
+                        groupID: group.ID,
+                        memberID: groupMember.ID,
+                        newValue: newPermissions,
+                    })
+                );
+                const memberName = member?.Name ?? '';
+                createNotification({ text: c('Action').t`Removed ${memberName} as group owner` });
+            } catch (error) {
+                handleError(error);
+            }
+        });
 
     const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
         groupMember.Permissions,
@@ -278,10 +290,9 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
                 shape="ghost"
                 size="small"
                 icon
+                loading={loading}
                 ref={anchorRef}
-                onClick={() => {
-                    toggle();
-                }}
+                onClick={toggle}
                 title={c('Action').t`More options`}
                 aria-expanded={isOpen}
             >
