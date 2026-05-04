@@ -400,6 +400,7 @@ export const SSO_PATHS = {
     DRIVE_SIGN_IN: '/drive',
     BUSINESS_SIGNUP: '/business/signup',
     VPN_SIGNUP: '/vpn/signup',
+    VPN_BUSINESS: '/vpn/signup/business',
     VPN_PRICING: '/vpn/pricing',
     VPN_SIGN_IN: '/vpn',
     PASS_SIGNUP: '/pass/signup',
