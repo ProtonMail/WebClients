@@ -1300,6 +1300,21 @@
       ],
       "Unknown error.": [
         "Error desconocido."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales del bloqueo biométrico no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se han encontrado las credenciales del bloqueo biométrico"
+      ],
+      "Biometric lock is not configured.": [
+        "No se ha configurado el bloqueo biométrico."
+      ],
+      "Biometric lock setup failed.": [
+        "Se ha producido un error al configurar el bloqueo biométrico."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Se debe haber iniciado sesión en la aplicación de escritorio de ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -2587,6 +2602,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección avanzada para tu cuenta"
       ]
     },
     "Keyboard key": {
