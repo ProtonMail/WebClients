@@ -55,6 +55,23 @@ export interface Subscription {
      * cycle offers.
      */
     RenewCycle: Cycle;
+
+    /**
+     * Relevant for upcoming subscriptions. They can be prepaid or unpaid.
+     *
+     * Example 1: user has 12m vpn2024 subscription and buys 24m vpn2024. User pays immediately. The created upcoming
+     * subscription is prepaid.
+     *
+     * Example 2: user has 12m vpn2024 subscription and buys 1m vpn2024. It create an upcoming unpaid subscription. User
+     * will be charged when the current 12m subscription ends and the upcoming 1m subscription starts. The upcoming
+     * subscription is marked as IsPrepaid = false at time when it's created.
+     *
+     * Example 3: user has a B2B plan with lumo addon. User removes one or several lumo seats. It creates an upcoming
+     * unpaid subscription. Until the current subscription ends, user can still use Lumo. After that, user is charged
+     * for the upcoming subscription without the lumo seats. The upcoming subscription is marked as IsPrepaid = false at
+     * time when it's created.
+     */
+    IsPrepaid: boolean;
 }
 
 type CouponBase = {
