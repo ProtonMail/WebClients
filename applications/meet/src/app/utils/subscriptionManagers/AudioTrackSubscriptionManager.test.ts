@@ -741,7 +741,6 @@ describe('AudioTrackSubscriptionManager', () => {
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ParticipantDisconnected, expect.any(Function));
             expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ActiveSpeakersChanged, expect.any(Function));
-            expect(mockRoom.on).toHaveBeenCalledWith(RoomEvent.ConnectionStateChanged, expect.any(Function));
 
             cache.cleanupEventListeners();
 
@@ -752,14 +751,12 @@ describe('AudioTrackSubscriptionManager', () => {
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.Disconnected, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ParticipantDisconnected, expect.any(Function));
             expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ActiveSpeakersChanged, expect.any(Function));
-            expect(mockRoom.off).toHaveBeenCalledWith(RoomEvent.ConnectionStateChanged, expect.any(Function));
         });
 
-        it('should clear all intervals and recovery state on cleanup', () => {
+        it('should clear intervals on cleanup', () => {
             vi.useFakeTimers();
 
             cache.setupReconcileLoop();
-            cache.setupHealthCheckLoop();
 
             const clearIntervalSpy = vi.spyOn(global, 'clearInterval');
 
@@ -911,30 +908,29 @@ describe('AudioTrackSubscriptionManager', () => {
     });
 
     describe('participant disconnected handling', () => {
-        it('should cleanup recovery state when participant disconnects', () => {
+        it('should clear active recovery state when participant disconnects', () => {
             const micPub = createMockPublication({ trackSid: 'mic-1' });
             const participant = createMockParticipant('participant-1', [micPub]);
 
             mockRoom.remoteParticipants.set('participant-1', participant);
             mockRoom.emit(RoomEvent.Connected);
 
-            // Manually add some recovery state for this participant
             const trackKey = `${participant.sid}-${micPub.trackSid}`;
-            (cache as any).recoveryAttempts.set(trackKey, 1);
             (cache as any).activeRecoveries.add(trackKey);
-
-            const cleanupRecoverySpy = vi.spyOn(cache as any, 'cleanupRecovery');
+            (cache as any).recoveryTimeouts.set(
+                trackKey,
+                setTimeout(() => {}, 5000)
+            );
 
             mockRoom.emit(RoomEvent.ParticipantDisconnected, participant);
 
-            // Verify that cleanup was called for this participant's tracks
-            expect(cleanupRecoverySpy).toHaveBeenCalledWith(trackKey);
+            expect((cache as any).activeRecoveries.has(trackKey)).toBe(false);
+            expect((cache as any).recoveryTimeouts.has(trackKey)).toBe(false);
         });
 
         it('should handle participant disconnect with no recovery state gracefully', () => {
             const participant = createMockParticipant('participant-2', []);
 
-            // Should not throw when there's no recovery state
             expect(() => {
                 mockRoom.emit(RoomEvent.ParticipantDisconnected, participant);
             }).not.toThrow();
@@ -942,40 +938,32 @@ describe('AudioTrackSubscriptionManager', () => {
     });
 
     describe('room disconnected handling', () => {
-        it('should clear all recovery state and timeouts on disconnect', () => {
+        it('should clear caches and timeouts on disconnect', () => {
             const micPub1 = createMockPublication({ trackSid: 'mic-1' });
             const participant1 = createMockParticipant('participant-1', [micPub1]);
 
             mockRoom.remoteParticipants.set('participant-1', participant1);
             cache.addToCache(micPub1 as any, participant1 as any);
 
-            // Add recovery state with a timeout
             const trackKey = `${participant1.sid}-${micPub1.trackSid}`;
             const mockTimeout = setTimeout(() => {}, 5000) as any;
             (cache as any).recoveryTimeouts.set(trackKey, mockTimeout);
-            (cache as any).recoveryAttempts.set(trackKey, 1);
             (cache as any).activeRecoveries.add(trackKey);
 
-            // Verify state is set up
             expect((cache as any).recoveryTimeouts.size).toBe(1);
             expect((cache as any).subscribedMicrophoneTrackPublications.size).toBeGreaterThan(0);
 
             mockRoom.emit(RoomEvent.Disconnected);
 
-            // Verify all internal state is cleared
             expect((cache as any).subscribedMicrophoneTrackPublications.size).toBe(0);
-            expect((cache as any).recoveryAttempts.size).toBe(0);
             expect((cache as any).recoveryTimeouts.size).toBe(0);
             expect((cache as any).activeRecoveries.size).toBe(0);
-            expect((cache as any).lastPacketCounts.size).toBe(0);
-            expect((cache as any).firstSeenWithoutStats.size).toBe(0);
 
-            // Clean up the timeout
             clearTimeout(mockTimeout);
         });
     });
 
-    describe('health check and recovery', () => {
+    describe('recoverTrack primitive', () => {
         beforeEach(() => {
             vi.useFakeTimers();
         });
@@ -984,849 +972,83 @@ describe('AudioTrackSubscriptionManager', () => {
             vi.useRealTimers();
         });
 
-        it('should setup health check interval', () => {
-            const setIntervalSpy = vi.spyOn(global, 'setInterval');
-
-            cache.setupHealthCheckLoop();
-
-            expect(setIntervalSpy).toHaveBeenCalledWith(expect.any(Function), 2000);
-        });
-
-        it('should not check broken transceivers when room is not connected', async () => {
-            mockRoom.state = ConnectionState.Disconnected;
-
-            const getStatsSpy = mockRoom.engine?.pcManager?.subscriber?.pc?.getStats;
-
-            await (cache as any).runHealthCheck();
-
-            expect(getStatsSpy).not.toHaveBeenCalled();
-        });
-
-        it('should detect missing inbound-rtp stats after grace period and attempt recovery', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            // Mock getStats to return empty stats (no inbound-rtp)
-            const mockStats = new Map();
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check - should start tracking missing stats
-            await (cache as any).runHealthCheck();
-            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
-
-            // Advance time past grace period (5 seconds)
-            vi.advanceTimersByTime(6000);
-
-            // Second check - should trigger recovery
-            await (cache as any).runHealthCheck();
-
-            // Wait for recovery attempt
-            await vi.runAllTimersAsync();
-
-            // Should have attempted to unsubscribe and resubscribe
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-        });
-
-        it('should detect stalled packets and attempt recovery', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return inbound-rtp with stalled packet count
-            const createMockStats = (packetsReceived: number) => {
-                const mockStats = new Map();
-                mockStats.set('inbound-rtp-1', {
-                    type: 'inbound-rtp',
-                    kind: 'audio',
-                    trackIdentifier: trackId,
-                    packetsReceived,
-                });
-                return mockStats;
-            };
-
-            // First check with 100 packets
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
-            await (cache as any).runHealthCheck();
-
-            // Second check with same 100 packets (stalled)
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(createMockStats(100));
-            await (cache as any).runHealthCheck();
-
-            await vi.runAllTimersAsync();
-
-            // Should have attempted recovery
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-        });
-
-        it('should not attempt recovery if already recovering', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return stalled packets
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check to establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Second check to trigger recovery
-            await (cache as any).runHealthCheck();
-
-            // Since wait() is mocked to resolve immediately, we need to flush all pending promises
-            await vi.waitFor(
-                () => {
-                    expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-                },
-                { timeout: 1000 }
-            );
-            const firstCallCount = micPub.setSubscribed.mock.calls.length;
-
-            // Third check while recovery is in progress (should not trigger another recovery)
-            await (cache as any).runHealthCheck();
-            const secondCallCount = micPub.setSubscribed.mock.calls.length;
-
-            // Call count should not have increased (no new recovery attempt)
-            expect(secondCallCount).toBe(firstCallCount);
-        });
-
-        it('should stop recovery after max attempts', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            // Set readyState to 'ended' so recovery keeps failing
-            micPub.track = {
-                mediaStreamTrack: {
-                    id: `media-mic-1`,
-                    readyState: 'ended',
-                },
-            };
-
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return stalled packets
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Attempt recovery 3 times (max attempts)
-            for (let i = 0; i < 3; i++) {
-                await (cache as any).runHealthCheck();
-                await vi.runAllTimersAsync();
-                // Advance past recovery cooldown (3 seconds)
-                vi.advanceTimersByTime(4000);
-            }
-
-            const callCountAfterMaxAttempts = micPub.setSubscribed.mock.calls.length;
-
-            // Try one more time - should not attempt recovery
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            const finalCallCount = micPub.setSubscribed.mock.calls.length;
-
-            // Should not have made additional calls after max attempts
-            expect(finalCallCount).toBe(callCountAfterMaxAttempts);
-        });
-
-        it('should skip tracks in recovery during reconciliation', () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: false });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            // Manually set the track as recovering
-            const trackKey = `${participant.sid}-${micPub.trackSid}`;
-            (cache as any).activeRecoveries.add(trackKey);
-
-            // Call reconcile
-            cache.reconcileAudioTracks();
-
-            // Should not have tried to resubscribe because it's in recovery
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should skip recovery attempts when room is reconnecting', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            // Simulate room reconnecting
-            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Reconnecting);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return stalled packets
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check to establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Second check to trigger recovery (but should be skipped due to reconnecting)
-            await (cache as any).runHealthCheck();
-
-            await vi.runAllTimersAsync();
-
-            // Should not have attempted recovery because room is reconnecting
-            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
-        });
-
-        it('should resume recovery attempts when room reconnects', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            // Simulate room reconnecting then reconnected
-            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Reconnecting);
-            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return stalled packets
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check to establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Second check to trigger recovery (should work now that room is connected)
-            await (cache as any).runHealthCheck();
-
-            await vi.runAllTimersAsync();
-
-            // Should have attempted recovery because room is connected again
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-        });
-    });
-
-    describe('audio concealment monitoring', () => {
-        beforeEach(() => {
-            vi.useFakeTimers();
-        });
-
-        afterEach(() => {
-            vi.useRealTimers();
-        });
-
-        it('should not check audio concealment when room is not connected', async () => {
-            mockRoom.state = ConnectionState.Disconnected;
-
-            const getStatsSpy = mockRoom.engine?.pcManager?.subscriber?.pc?.getStats;
-
-            await (cache as any).runHealthCheck();
-
-            expect(getStatsSpy).not.toHaveBeenCalled();
-        });
-
-        it('should detect high audio concealment after consecutive checks and attempt recovery', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return high concealment (20% concealment, low silent ratio)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 2000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 200, // Only 10% silent (not filtered)
-                concealmentEvents: 54,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check - should not trigger recovery yet (needs 2 consecutive)
-            await (cache as any).runHealthCheck();
-            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
-
-            // Second check - should trigger recovery
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            // Should have attempted recovery
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-            expect(mockReportError).toHaveBeenCalledWith(
-                'AudioTrackSubscriptionManager: High audio concealment detected',
-                expect.objectContaining({
-                    level: 'warning',
-                    context: expect.objectContaining({
-                        participant: participant.identity,
-                        trackSid: micPub.trackSid,
-                        nonSilentConcealmentRatio: '0.180', // 2000 - 200 = 1800 non-silent out of 10000
-                    }),
-                })
-            );
-        });
-
-        it('should not trigger recovery if concealment is below threshold', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return low concealment (10%)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 100,
-                totalSamplesReceived: 1000,
-                silentConcealedSamples: 90,
-                concealmentEvents: 5,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Multiple checks - should not trigger recovery
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            // Should not have attempted recovery
-            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
-        });
-
-        it('should reset consecutive count when concealment returns to normal', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // First check with high concealment (40%, low silent ratio)
-            const highConcealmentStats = new Map();
-            highConcealmentStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 4000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 400, // Only 10% silent (not filtered)
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(highConcealmentStats);
-            await (cache as any).runHealthCheck();
-
-            // Second check with normal concealment (should reset counter)
-            const normalStats = new Map();
-            normalStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 100,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 90,
-                concealmentEvents: 5,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(normalStats);
-            await (cache as any).runHealthCheck();
-
-            // Third check with high concealment again - should need 2 consecutive again
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(highConcealmentStats);
-            await (cache as any).runHealthCheck();
-
-            // Should not have triggered recovery yet (only 1 consecutive after reset)
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should report when multiple tracks have high concealment (E2EE overload)', async () => {
-            // Create 4 participants with high concealment
-            for (let i = 0; i < 4; i++) {
-                const micPub = createMockPublication({ trackSid: `mic-${i}`, isSubscribed: true });
-                const participant = createMockParticipant(`participant-${i}`, [micPub]);
-
-                mockRoom.remoteParticipants.set(`participant-${i}`, participant);
-                cache.addToCache(micPub as any, participant as any);
-            }
-
-            // Mock getStats to return high concealment for all tracks (low silent ratio)
-            const mockStats = new Map();
-            for (let i = 0; i < 4; i++) {
-                const trackId = `media-mic-${i}`;
-                mockStats.set(`inbound-rtp-${i}`, {
-                    type: 'inbound-rtp',
-                    kind: 'audio',
-                    trackIdentifier: trackId,
-                    concealedSamples: 4000,
-                    totalSamplesReceived: 10000,
-                    silentConcealedSamples: 400, // Only 10% silent (not filtered)
-                    concealmentEvents: 20,
-                });
-            }
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Two consecutive checks to trigger the overload detection
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-
-            // Should report E2EE overload
-            expect(mockReportError).toHaveBeenCalledWith(
-                'AudioTrackSubscriptionManager: Multiple tracks with high concealment (E2EE overload)',
-                expect.objectContaining({
-                    level: 'warning',
-                    context: expect.objectContaining({
-                        affectedTracks: 4,
-                        totalSubscribedTracks: 4,
-                    }),
-                })
-            );
-        });
-
-        it('should skip concealment check for muted or unsubscribed tracks', async () => {
-            const mutedPub = createMockPublication({
-                trackSid: 'mic-muted',
+        it('should mark track as recovering then run the unsubscribe → subscribe → enable dance', async () => {
+            const micPub = createMockPublication({
+                trackSid: 'mic-1',
                 isSubscribed: true,
-                isMuted: true,
+                isEnabled: true,
             });
-            const unsubscribedPub = createMockPublication({
-                trackSid: 'mic-unsub',
-                isSubscribed: false,
-                isMuted: false,
-            });
-
-            const participant1 = createMockParticipant('participant-1', [mutedPub]);
-            const participant2 = createMockParticipant('participant-2', [unsubscribedPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant1);
-            mockRoom.remoteParticipants.set('participant-2', participant2);
-            cache.addToCache(mutedPub as any, participant1 as any);
-            cache.addToCache(unsubscribedPub as any, participant2 as any);
-
-            // Mock getStats to return high concealment (low silent ratio)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: 'media-mic-muted',
-                concealedSamples: 5000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 500, // Only 10% silent (not filtered)
-                concealmentEvents: 20,
-            });
-            mockStats.set('inbound-rtp-2', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: 'media-mic-unsub',
-                concealedSamples: 5000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 500, // Only 10% silent (not filtered)
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Multiple checks - should not trigger recovery for muted/unsubscribed
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            expect(mutedPub.setSubscribed).not.toHaveBeenCalled();
-            expect(unsubscribedPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should skip concealment check if already recovering', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
             const participant = createMockParticipant('participant-1', [micPub]);
-
             mockRoom.remoteParticipants.set('participant-1', participant);
             cache.addToCache(micPub as any, participant as any);
 
-            // Manually set the track as recovering
             const trackKey = `${participant.sid}-${micPub.trackSid}`;
-            (cache as any).activeRecoveries.add(trackKey);
+            expect(cache.isRecovering(trackKey)).toBe(false);
 
-            const trackId = micPub.track?.mediaStreamTrack?.id;
+            const recoverPromise = cache.recoverTrack(micPub as any, participant as any, 'audio-stalled');
 
-            // Mock getStats to return high concealment (low silent ratio)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 5000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 500, // Only 10% silent (not filtered)
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
+            // Once started, isRecovering should report true while the dance runs.
+            expect(cache.isRecovering(trackKey)).toBe(true);
 
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
+            await recoverPromise;
 
-            // Should not attempt recovery because already recovering
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
+            // Dance steps: disable, unsubscribe, resubscribe, re-enable.
+            expect(micPub.setEnabled.mock.calls.map((c) => c[0])).toEqual([false, true]);
+            expect(micPub.setSubscribed.mock.calls.map((c) => c[0])).toEqual([false, true]);
+
+            // The dance schedules a cooldown timer; until it fires the track stays
+            // marked as recovering so event handlers don't race the new transceiver.
+            expect(cache.isRecovering(trackKey)).toBe(true);
+
+            vi.advanceTimersByTime(3_000);
+            expect(cache.isRecovering(trackKey)).toBe(false);
         });
 
-        it('should skip concealment recovery when room is reconnecting', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+        it('should be a no-op if a recovery is already in progress for the same track', async () => {
+            const micPub = createMockPublication({
+                trackSid: 'mic-1',
+                isSubscribed: true,
+                isEnabled: true,
+            });
             const participant = createMockParticipant('participant-1', [micPub]);
-
             mockRoom.remoteParticipants.set('participant-1', participant);
             cache.addToCache(micPub as any, participant as any);
 
-            // Simulate room reconnecting
-            mockRoom.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Reconnecting);
+            const first = cache.recoverTrack(micPub as any, participant as any, 'audio-stalled');
+            // Calling again while the first is still running should not run a second dance.
+            await cache.recoverTrack(micPub as any, participant as any, 'audio-stalled');
+            await first;
 
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats to return high concealment (low silent ratio)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 5000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 500, // Only 10% silent (not filtered)
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Two checks to try to trigger recovery
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            // Should not have attempted recovery because room is reconnecting
-            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(false);
+            // First dance ran exactly once: 1× setEnabled(false→true), 1× setSubscribed(false→true)
+            expect(micPub.setEnabled.mock.calls.map((c) => c[0])).toEqual([false, true]);
+            expect(micPub.setSubscribed.mock.calls.map((c) => c[0])).toEqual([false, true]);
         });
 
-        it('should ignore tracks with insufficient samples', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
+        it('should abort if the track left the cache mid-dance', async () => {
+            const micPub = createMockPublication({
+                trackSid: 'mic-1',
+                isSubscribed: true,
+                isEnabled: true,
+            });
             const participant = createMockParticipant('participant-1', [micPub]);
-
             mockRoom.remoteParticipants.set('participant-1', participant);
             cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats with less than 1000 samples (threshold)
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 450,
-                totalSamplesReceived: 500,
-                silentConcealedSamples: 440,
-                concealmentEvents: 5,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-
-            // Should not trigger recovery for insufficient samples
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should cleanup concealment tracking state on recovery cleanup', () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
 
             const trackKey = `${participant.sid}-${micPub.trackSid}`;
 
-            // Set up concealment tracking state
-            (cache as any).consecutiveHighConcealment.set(trackKey, 2);
-            (cache as any).recoveryAttempts.set(trackKey, 1);
+            // Simulate the publication being evicted right before the resubscribe step.
+            const original = (cache as any).subscribedMicrophoneTrackPublications;
+            (cache as any).subscribedMicrophoneTrackPublications = new Map();
 
-            // Call cleanup
-            (cache as any).cleanupRecovery(trackKey);
+            await cache.recoverTrack(micPub as any, participant as any, 'audio-stalled');
 
-            // Verify concealment state is cleared
-            expect((cache as any).consecutiveHighConcealment.has(trackKey)).toBe(false);
-            expect((cache as any).recoveryAttempts.has(trackKey)).toBe(false);
-        });
-
-        it('should clear concealment state on room disconnect', () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            const trackKey = `${participant.sid}-${micPub.trackSid}`;
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            // Set up concealment tracking state
-            (cache as any).consecutiveHighConcealment.set(trackKey, 2);
-
-            mockRoom.emit(RoomEvent.Disconnected);
-
-            // Verify concealment state is cleared
-            expect((cache as any).consecutiveHighConcealment.size).toBe(0);
-        });
-
-        it('should detect recent high concealment immediately (delta-based fast detection)', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // First check: 30 seconds of good audio (1,440,000 samples @ 48kHz)
-            const goodAudioStats = new Map();
-            goodAudioStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 1000, // < 0.1% concealment
-                totalSamplesReceived: 1440000,
-                silentConcealedSamples: 900,
-                concealmentEvents: 5,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(goodAudioStats);
-            await (cache as any).runHealthCheck();
-
-            // Should not trigger (good audio)
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-
-            // Second check: Audio breaks! 3 more seconds, almost all non-silent concealment (144,000 new samples)
-            // New concealed: 144,000, new silent: 1,000, new non-silent: 143,000 out of 144,000 = 99.3%
-            // This should trigger immediately (way above 25% threshold)
-            const brokenAudioStats = new Map();
-            brokenAudioStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 145000, // 1000 + 144000 new
-                totalSamplesReceived: 1584000, // 1440000 + 144000
-                silentConcealedSamples: 1900, // 900 + 1000 new (very low)
-                concealmentEvents: 50,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(brokenAudioStats);
-            await (cache as any).runHealthCheck();
-
-            await vi.runAllTimersAsync();
-
-            // Should trigger immediately due to high recent non-silent concealment (99.3%)
+            // Should NOT have called resubscribe (true) – only the disable/unsub steps.
             expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(true);
-            expect(mockReportError).toHaveBeenCalledWith(
-                'AudioTrackSubscriptionManager: High audio concealment detected',
-                expect.objectContaining({
-                    level: 'warning',
-                    context: expect.objectContaining({
-                        participant: participant.identity,
-                        trackSid: micPub.trackSid,
-                        triggerReason: 'recent_samples_critical',
-                    }),
-                })
-            );
-        });
+            expect(micPub.setSubscribed).not.toHaveBeenCalledWith(true);
+            // No longer marked as recovering once aborted.
+            expect(cache.isRecovering(trackKey)).toBe(false);
 
-        it('should report trigger reason correctly for cumulative vs recent concealment', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Gradual degradation: 17% non-silent concealment, establishing baseline
-            const gradualDegradationStats1 = new Map();
-            gradualDegradationStats1.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 2000,
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 300, // 1700 non-silent = 17%
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats1);
-            await (cache as any).runHealthCheck();
-
-            // First check doesn't trigger (needs 2 consecutive)
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-
-            // Second check: 16% non-silent cumulative, 15% recent (below 25% threshold)
-            // Recent: (3200 - 1700) / 10000 = 15% (not critical)
-            // This should trigger with "cumulative_high" since recent is not critical but cumulative is high
-            const gradualDegradationStats2 = new Map();
-            gradualDegradationStats2.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 4000,
-                totalSamplesReceived: 20000,
-                silentConcealedSamples: 800, // 3200 non-silent = 16% cumulative
-                concealmentEvents: 30,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(gradualDegradationStats2);
-            await (cache as any).runHealthCheck();
-
-            await vi.runAllTimersAsync();
-
-            // Should trigger after 2 consecutive checks with cumulative reason
-            expect(micPub.setSubscribed).toHaveBeenCalledWith(false);
-            expect(mockReportError).toHaveBeenCalledWith(
-                'AudioTrackSubscriptionManager: High audio concealment detected',
-                expect.objectContaining({
-                    context: expect.objectContaining({
-                        triggerReason: 'cumulative_high',
-                    }),
-                })
-            );
-        });
-
-        it('should not trigger recovery when concealment is mostly silent (low non-silent concealment)', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats with 50% total concealment but 49% silent (only 1% non-silent)
-            // This represents mute/silence, not network issues
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                concealedSamples: 5000, // 50% total concealment
-                totalSamplesReceived: 10000,
-                silentConcealedSamples: 4900, // 49% silent → only 1% non-silent
-                concealmentEvents: 20,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // Multiple checks - should not trigger because non-silent concealment is only 1%
-            await (cache as any).runHealthCheck();
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            // Should not trigger recovery (non-silent concealment < 15% threshold)
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should not trigger stalled audio detection for muted tracks', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true, isMuted: true });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-
-            // Mock getStats with stalled packets
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check to establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Second check with same packet count (stalled)
-            await (cache as any).runHealthCheck();
-            await vi.runAllTimersAsync();
-
-            // Should not trigger recovery for muted track
-            expect(micPub.setSubscribed).not.toHaveBeenCalled();
-        });
-
-        it('should clear packet tracking when track becomes muted', async () => {
-            const micPub = createMockPublication({ trackSid: 'mic-1', isSubscribed: true, isMuted: false });
-            const participant = createMockParticipant('participant-1', [micPub]);
-
-            mockRoom.remoteParticipants.set('participant-1', participant);
-            cache.addToCache(micPub as any, participant as any);
-
-            const trackId = micPub.track?.mediaStreamTrack?.id;
-            const trackKey = `${participant.sid}-${micPub.trackSid}`;
-
-            // Mock getStats with packets flowing
-            const mockStats = new Map();
-            mockStats.set('inbound-rtp-1', {
-                type: 'inbound-rtp',
-                kind: 'audio',
-                trackIdentifier: trackId,
-                packetsReceived: 100,
-            });
-            mockRoom.engine!.pcManager!.subscriber!.pc!.getStats.mockResolvedValue(mockStats);
-
-            // First check to establish baseline
-            await (cache as any).runHealthCheck();
-
-            // Verify packet count was tracked
-            expect((cache as any).lastPacketCounts.has(trackKey)).toBe(true);
-
-            // Mute the track
-            micPub.isMuted = true;
-
-            // Second check should clear the tracking
-            await (cache as any).runHealthCheck();
-
-            // Verify packet count was cleared
-            expect((cache as any).lastPacketCounts.has(trackKey)).toBe(false);
+            (cache as any).subscribedMicrophoneTrackPublications = original;
         });
     });
 });
