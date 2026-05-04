@@ -89,7 +89,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick, isSmallScreen }:
                     labelExtra={<DismissedFeaturePill featureId="projects" versionFlag="WhatsNewV1p3" />}
                     actionButton={
                         <button
-                            className="projects-create-button"
+                            className="projects-create-button --lumo-background"
                             onClick={handleCreateProject}
                             aria-label={c('collider_2025:Button').t`Create project`}
                             title={c('collider_2025:Button').t`Create project`}
