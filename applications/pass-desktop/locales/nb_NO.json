@@ -1353,6 +1353,33 @@
       ],
       "Unknown error.": [
         "Ukjent feil."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "De biometriske låselegitimasjonene samsvarer ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisk låslegitimasjon ikke funnet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk lås er ikke konfigurert"
+      ],
+      "Biometric lock setup failed.": [
+        "Konfigurasjonen av den biometriske låsen mislyktes."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Kryptert kommunikasjon med skrivebordsappen ${ PASS_APP_NAME } mislyktes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarte ikke i tide."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er logget på med en annen konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
       ]
     },
     "Error message": {
@@ -2678,6 +2705,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
       ]
     },
     "Keyboard key": {
@@ -5231,6 +5261,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
       ]
     }
   }
