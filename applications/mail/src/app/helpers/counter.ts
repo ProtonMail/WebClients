@@ -17,6 +17,9 @@ export const replaceCounter = (counters: LabelCount[], counter: LabelCount) =>
 const fromMapToArray = (countersMap: { [labelID: string]: LabelCount }) =>
     Object.entries(countersMap).map(([, counter]) => counter);
 
+/**
+ * @deprecated can be deleted once useOptimisticApplyLabels is deleted
+ */
 export const updateCounters = (element: Element, counters: LabelCount[], changes: LabelChanges) => {
     const countersMap = Object.entries(changes).reduce(
         (acc, [labelID, action]) => {
@@ -43,6 +46,9 @@ export const updateCounters = (element: Element, counters: LabelCount[], changes
     return fromMapToArray(countersMap);
 };
 
+/**
+ * @deprecated can be deleted once useOptimisticApplyLabels is deleted
+ */
 export const updateCountersForMarkAs = (elementBefore: Element, elementAfter: Element, counters: LabelCount[]) => {
     return counters.map((counter) => {
         if (!hasLabel(elementBefore, counter.LabelID || '')) {
@@ -64,15 +70,4 @@ export const updateCountersForMarkAs = (elementBefore: Element, elementAfter: El
 
         return { ...counter, Unread };
     });
-};
-
-export const getCountersByLabelId = (counters: LabelCount[] = []) => {
-    const result: { [labelID: string]: LabelCount } = {};
-    for (let i = 0; i < counters.length; i++) {
-        const current = counters[i];
-        if (current.LabelID) {
-            result[current.LabelID] = current;
-        }
-    }
-    return result;
 };
