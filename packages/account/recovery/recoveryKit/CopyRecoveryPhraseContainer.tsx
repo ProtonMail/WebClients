@@ -27,7 +27,12 @@ export const CopyRecoveryPhraseContainer = ({
 
     return (
         <div className={clsx('flex gap-4 flex-nowrap items-center', className)}>
-            <div className="text-lg">{hasSentPayload ? recoveryPhrase : hiddenTextContent}</div>
+            <div
+                className="text-lg"
+                data-testid={hasSentPayload ? 'account:recovery:generatedRecoveryPhrase' : undefined}
+            >
+                {hasSentPayload ? recoveryPhrase : hiddenTextContent}
+            </div>
 
             {hasSentPayload ? (
                 <Button
@@ -36,6 +41,7 @@ export const CopyRecoveryPhraseContainer = ({
                     pill
                     className="inline-flex items-center shrink-0"
                     onClick={onCopyPhrase}
+                    data-testid="copy-recovery-phrase"
                 >
                     <IcSquares className="shrink-0 mr-2" />
                     {c('RecoveryPhrase: Action').t`Copy`}
@@ -48,6 +54,7 @@ export const CopyRecoveryPhraseContainer = ({
                     onClick={onCopyPhrase}
                     disabled={loading}
                     noDisabledStyles
+                    data-testid="copy-recovery-phrase"
                 >
                     {loading ? (
                         <CircleLoader
