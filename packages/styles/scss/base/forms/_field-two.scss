@@ -45,6 +45,10 @@ im.$media-expressions: $media-expressions;
 			content: ' ';
 			white-space: pre;
 		}
+
+		&.assist-container--no-min-height::before {
+			content: none;
+		}
 	}
 
 	&--invalid &-assist {

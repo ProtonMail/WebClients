@@ -431,6 +431,7 @@ export const SSO_PATHS = {
     BORN_PRIVATE: '/born-private',
     BORN_PRIVATE_ACTIVATE: '/born-private/activate',
     BORN_PRIVATE_RECOVERY: '/born-private/recovery',
+    JOIN_ORG: '/join-org',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
