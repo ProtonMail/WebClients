@@ -1,6 +1,5 @@
 import { useInactiveKeys } from '@proton/account';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode, useFeature } from '@proton/features';
 
@@ -12,8 +11,6 @@ import RecoveryScoreBanner from './RecoveryScoreBanner/RecoveryScoreBanner';
 import SentinelBanner from './SentinelBanner/SentinelBanner';
 
 export const OverviewSectionV2 = () => {
-    const [userKeys] = useUserKeys();
-
     const keyReactivationRequests = useInactiveKeys();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
@@ -37,11 +34,7 @@ export const OverviewSectionV2 = () => {
     return (
         <div className="flex flex-column gap-8">
             {renderReactivateKeys && (
-                <ReactivateKeysModal
-                    userKeys={userKeys || []}
-                    keyReactivationRequests={keyReactivationRequests}
-                    {...reactivateKeyProps}
-                />
+                <ReactivateKeysModal keyReactivationRequests={keyReactivationRequests} {...reactivateKeyProps} />
             )}
             {renderConfirm && <RecoverDataConfirmModal {...confirmProps} />}
             {!!keyReactivationRequests.length && hasDismissedRecoverDataCard?.Value === false && (
