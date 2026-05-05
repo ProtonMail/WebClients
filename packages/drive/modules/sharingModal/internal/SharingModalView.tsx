@@ -138,11 +138,14 @@ export const SharingModalView = ({
         [invitees]
     );
     const canChangePermissions = adminRoleEnabled && roleOnParentNode === MemberRole.Admin && !isPhotoOrAlbum;
-    const isSettingsDisabled =
-        publicLinkStateChanging ||
-        publicLinkUpdating ||
-        !(Boolean(publicLink?.url) || isShared) ||
-        !canChangePermissions;
+
+    const isSettingsVisible =
+        !isInvitationWorkflow &&
+        !publicLinkStateChanging &&
+        !publicLinkUpdating &&
+        isShared &&
+        canChangePermissions;
+
     const isShareWithAnyoneLoading = publicLinkStateChanging || isLoading;
     const isClosedButtonDisabled = publicLinkStateChanging || publicLinkUpdating || isAdding;
 
@@ -248,16 +251,8 @@ export const SharingModalView = ({
                     </div>
 
                     <div className="grow-0 shrink-0">
-                        {!isInvitationWorkflow && (
-                            <Tooltip
-                                disabled={isSettingsDisabled}
-                                title={
-                                    <>
-                                        <strong>{c('Tooltip').t`New!`}</strong>{' '}
-                                        {c('Tooltip').t`Change shared item settings`}
-                                    </>
-                                }
-                            >
+                        {isSettingsVisible && (
+                            <Tooltip title={c('Tooltip').t`Change shared item settings`}>
                                 <Button
                                     icon
                                     shape="ghost"
