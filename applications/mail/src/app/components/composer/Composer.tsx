@@ -8,6 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useHandler, useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -18,9 +19,11 @@ import type {
     MessageStateWithData,
     PartialMessageState,
 } from '@proton/mail/store/messages/messagesTypes';
+import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -85,6 +88,7 @@ const Composer = (
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
+    const silentApi = useSilentApi();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -374,6 +378,15 @@ const Composer = (
         return getHasAssistantStatus(openedAssistants, composerID, OpenedAssistantStatus.EXPANDED);
     }, [composerID, openedAssistants]);
 
+    const handleExpandBlockquotes = () => {
+        void sendTelemetryReport({
+            api: silentApi,
+            measurementGroup: TelemetryMeasurementGroups.mailExpandBlockquotes,
+            event: TelemetryMailBlockquotes.expandComposerBlockquotes,
+            delay: false,
+        });
+    };
+
     return (
         <div
             className="composer-container flex flex-column flex-1 relative w-full"
@@ -457,6 +470,7 @@ const Composer = (
                         }
                         toolbarWrapperRef={toolbarWrapperRef}
                         isAssistantExpanded={isAssistantExpanded}
+                        onExpandBlockquotes={handleExpandBlockquotes}
                     />
                 </div>
 
