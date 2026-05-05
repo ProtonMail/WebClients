@@ -112,9 +112,10 @@ const OutgoingItem = ({
     value,
     value: {
         parsedOutgoingDelegatedAccess: { contact, createdAtDate, accessibleTriggerDelayMs },
+        loading,
     },
     meta,
-    meta: { canGrantAccess, canRevokeAccess, canRefuseAccess, canDelete, canChangeWaitTime },
+    meta: { canReEnable, canGrantAccess, canRevokeAccess, canRefuseAccess, canDelete, canChangeWaitTime },
 }: OutgoingItemProps) => {
     return (
         <TableRow labels={labels}>
@@ -131,6 +132,11 @@ const OutgoingItem = ({
                 <div className="inline-flex">
                     <DropdownActions
                         list={[
+                            canReEnable && {
+                                text: c('emergency_access').t`Enable`,
+                                onClick: () => notify({ type: 'enable-emergency-contact', value }),
+                                loading: loading.enable,
+                            },
                             canRevokeAccess && {
                                 text: c('emergency_access').t`Revoke access`,
                                 onClick: () => notify({ type: 'revoke-access', value }),
