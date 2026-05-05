@@ -1,4 +1,4 @@
-import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
+import { CRITERIA_MASKS, toggleCriteria } from '@proton/pass/lib/settings/pause-list';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { RecursivePartial } from '@proton/pass/types';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -66,6 +66,30 @@ describe('computeFeatures', () => {
 
         const getSettings = createSettings({ passkeys: { get: true } });
         expect(computeFeatures(getSettings, null, null).Passkeys).toBe(true);
+    });
+
+    test('should respect `orgDomains` pause list even when `disallowedDomains` is empty', () => {
+        const settings = createSettings({
+            autofill: { login: true },
+            orgDomains: { 'org.com': CRITERIA_MASKS.Autofill },
+        });
+
+        const result = computeFeatures(settings, parseUrl('https://org.com'), null);
+        expect(result.Autofill).toBe(false);
+    });
+
+    test('should combine user and org pause lists across frame and tab', () => {
+        const settings = createSettings({
+            autofill: { login: true, twofa: true },
+            autosave: { prompt: true },
+            disallowedDomains: { 'frame.com': CRITERIA_MASKS.Autofill },
+            orgDomains: { 'org.com': CRITERIA_MASKS.Autosave },
+        });
+
+        const result = computeFeatures(settings, parseUrl('https://frame.com'), parseUrl('https://org.com'));
+        expect(result.Autofill).toBe(false);
+        expect(result.Autosave).toBe(false);
+        expect(result.Autofill2FA).toBe(true);
     });
 });
 

@@ -13,7 +13,11 @@ import {
     createCoreTelemetryService,
 } from '@proton/pass/lib/telemetry/service';
 import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
-import { selectAutofillSettings, selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
+import {
+    selectAutofillSettings,
+    selectDisallowedDomains,
+    selectOrgDomains,
+} from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
@@ -62,8 +66,9 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                     const matchedLoginCount = ctx.service.autofill.getLoginCandidates({ url }).length;
                     const loginAutofillSettingsEnabled = selectAutofillSettings(state).login ?? false;
                     const disallowedDomains = selectDisallowedDomains(state);
+                    const orgDomains = selectOrgDomains(state);
                     const itemUrlsMatchTab = itemUrls.some((itemUrl) => parseUrl(itemUrl).domain === tabUrl.domain);
-                    const autofillPaused = hasPauseCriteria({ disallowedDomains, url: tabUrl }).Autofill;
+                    const autofillPaused = hasPauseCriteria({ disallowedDomains, orgDomains, url: tabUrl }).Autofill;
                     const loginFormDetected = validTab ? await ctx.service.autofill.queryTabLoginForms(tabId) : false;
 
                     event.Dimensions = {
