@@ -122,7 +122,7 @@ function WindowsDownloads({ downloadFunctions }: { downloadFunctions: DownloadFu
                 .t`Windows 11/10 (x64)`}</DropdownMenuButton>
             <DropdownMenuButton onClick={downloadFunctions.windowsARM}>{c('Action')
                 .t`Windows 11 (ARM64)`}</DropdownMenuButton>
-            <DropdownMenuButton onClick={downloadFunctions.mac}>{c('Action').t`Download for MacOS`}</DropdownMenuButton>
+            <DropdownMenuButton onClick={downloadFunctions.mac}>{c('Action').t`Download for macOS`}</DropdownMenuButton>
         </>
     );
 }
@@ -130,7 +130,7 @@ function WindowsDownloads({ downloadFunctions }: { downloadFunctions: DownloadFu
 function MacDownloads({ downloadFunctions }: { downloadFunctions: DownloadFunctions }) {
     return (
         <>
-            <DropdownMenuButton onClick={downloadFunctions.mac}>{c('Action').t`Download for MacOS`}</DropdownMenuButton>
+            <DropdownMenuButton onClick={downloadFunctions.mac}>{c('Action').t`Download for macOS`}</DropdownMenuButton>
             <DropdownMenuButton onClick={downloadFunctions.windows}>{c('Action')
                 .t`Windows 11/10 (x64)`}</DropdownMenuButton>
             <DropdownMenuButton onClick={downloadFunctions.windowsARM}>{c('Action')
