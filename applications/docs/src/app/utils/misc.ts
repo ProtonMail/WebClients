@@ -1,5 +1,4 @@
-import { useFlag } from '@proton/unleash/useFlag'
-import { isDevOrBlack, type BasePropertiesState, type BasePropertyValues } from '@proton/docs-shared'
+import type { BasePropertiesState, BasePropertyValues } from '@proton/docs-shared'
 import { useCallback, useEffect, useInsertionEffect, useRef, useState } from 'react'
 
 // use event
@@ -46,23 +45,4 @@ export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
   const [value, setValue] = useState(store.getProperty(property))
   useEffect(() => store.subscribeToProperty(property, (newValue) => setValue(() => newValue)), [property, store])
   return value
-}
-
-export function useIsSheetsEnabled() {
-  const killswitch = useFlag('DocsSheetsDisabled')
-  return (useFlag('DocsSheetsEnabled') || isDevOrBlack()) && !killswitch
-}
-
-export function useIsSheetsEditorEnabled() {
-  const killswitch = useFlag('DocsSheetsDisabled')
-  return (useFlag('SheetsEditorEnabled') || isDevOrBlack()) && !killswitch
-}
-
-/**
- * Checks if the user is allowed to download logs.
- * It will only be active for alpha and dev/black environments for now.
- * @returns true if the user is allowed to download logs, false otherwise.
- */
-export function useIsDownloadLogsAllowed() {
-  return useFlag('DownloadLogs')
 }
