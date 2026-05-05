@@ -23,13 +23,14 @@ interface Props {
     options: DropdownOptions[];
     onToggle: () => void;
     isOpen: boolean;
+    visibleOnHover?: boolean;
 }
 
-const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
+const DropdownMenu = ({ options, onToggle, isOpen, visibleOnHover = false }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
     const { isSmallScreen } = useIsLumoSmallScreen();
     const isTouchDevice = useIsTouchDevice();
-    const alwaysVisible = isSmallScreen || isTouchDevice;
+    const alwaysVisible = isSmallScreen || isTouchDevice || visibleOnHover;
 
     return (
         <div
