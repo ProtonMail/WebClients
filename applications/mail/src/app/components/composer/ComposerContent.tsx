@@ -37,6 +37,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     isInert?: boolean;
     isAssistantExpanded?: boolean;
     toolbarWrapperRef?: RefObject<HTMLDivElement>;
+    onExpandBlockquotes?: () => void;
 }
 
 const ComposerContent = (
@@ -62,6 +63,7 @@ const ComposerContent = (
         toolbarCustomRender,
         isAssistantExpanded,
         toolbarWrapperRef,
+        onExpandBlockquotes,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -111,6 +113,7 @@ const ComposerContent = (
                     editorMetadata={editorMetadata}
                     toolbarCustomRender={toolbarCustomRender}
                     hasAttachments={attachments.length > 0}
+                    onExpandBlockquotes={onExpandBlockquotes}
                 />
             </div>
 
