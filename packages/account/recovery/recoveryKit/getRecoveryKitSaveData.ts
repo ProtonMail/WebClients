@@ -1,5 +1,5 @@
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
-import { isIos, isIpad, textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import type { RecoveryKitBlob } from './generateRecoveryKitBlob';
@@ -35,7 +35,7 @@ export interface RecoveryKitSaveReturnValue {
     /**
      * Helper function to download or copy phrase.
      */
-    handle: (type: 'copy' | 'download') => void;
+    handle: (type: 'copy' | 'download') => Promise<void>;
     /**
      * Size of the pdf that will be downloaded in bytes.
      * Will be 0 if the download is not supported.
@@ -60,7 +60,7 @@ export const getRecoveryKitSaveData = ({
 }): RecoveryKitSaveReturnValue => {
     const canDownloadRecoveryKit = !!recoveryKitBlob && canUseRecoveryKitPdfDownload();
 
-    const handleDownload = () => {
+    const handleDownload = async () => {
         if (!recoveryKitBlob) {
             return;
         }
@@ -68,7 +68,7 @@ export const getRecoveryKitSaveData = ({
     };
 
     const handleCopy = () => {
-        textToClipboard(recoveryPhrase);
+        return navigator.clipboard.writeText(recoveryPhrase);
     };
 
     return {
@@ -78,9 +78,9 @@ export const getRecoveryKitSaveData = ({
         copyRecoveryPhrase: handleCopy,
         handle: (type: 'copy' | 'download') => {
             if (type === 'copy') {
-                handleCopy();
+                return handleCopy();
             } else {
-                handleDownload();
+                return handleDownload();
             }
         },
     };

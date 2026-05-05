@@ -9,6 +9,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 export interface SetRecoveryPhraseOnSignupContainerProps {
     recoveryPhraseData: DeferredMnemonicData;
@@ -33,23 +34,22 @@ const SetRecoveryPhraseOnSignupContainer = ({
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
-    const handleSave: RecoveryKitActionProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
-        recoveryKitData.save.handle(type);
-        if (type === 'copy') {
-            createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
-        }
-    };
-
     const handleSaveRecoveryKit: RecoveryKitActionProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
+        const handleSave = async () => {
+            await recoveryKitData.save.handle(type);
+            if (type === 'copy') {
+                createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
+            }
+        };
         if (hasSentPayload) {
-            handleSave(type, recoveryKitData);
+            handleSave().catch(noop);
             return;
         }
         void withLoading(
             (async () => {
                 try {
                     await sendRecoveryPhrasePayload();
-                    handleSave(type, recoveryKitData);
+                    handleSave().catch(noop);
                     setHasSentPayload(true);
                 } catch (error) {
                     handleError(error);

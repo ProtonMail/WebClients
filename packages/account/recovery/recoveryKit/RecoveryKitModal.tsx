@@ -13,9 +13,9 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
+import noop from '@proton/utils/noop';
 
 import { selectMnemonicData } from '../mnemonic';
-import type { RecoveryKitActionProps } from './RecoveryKitAction';
 import { RecoveryKitContent, type RecoveryKitContentProps } from './RecoveryKitContent';
 import type { DeferredMnemonicData } from './generateDeferredMnemonicData';
 import { generateRecoveryKitData, setRecoveryPhrase } from './recoveryPhraseActions';
@@ -45,17 +45,16 @@ const DownloadRecoveryKitModal = ({ onSuccess, ...rest }: Props) => {
         })();
     }, []);
 
-    const handleSave: RecoveryKitActionProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
-        recoveryKitData.save.handle(type);
-        if (type === 'copy') {
-            createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
-        }
-    };
-
     const handleSaveRecoveryKit: RecoveryKitContentProps['onSaveRecoveryKit'] = (type, recoveryKitData) => {
+        const handleSave = async () => {
+            await recoveryKitData.save.handle(type);
+            if (type === 'copy') {
+                createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
+            }
+        };
         // If we've already sent the payload for this data we'll just save the kit.
         if (recoveryKitData.hasSentPayload) {
-            handleSave(type, recoveryKitData);
+            handleSave().catch(noop);
             return;
         }
         void withLoading(
@@ -63,7 +62,7 @@ const DownloadRecoveryKitModal = ({ onSuccess, ...rest }: Props) => {
                 try {
                     const newRecoveryKitData = await dispatch(setRecoveryPhrase(recoveryKitData));
                     setRecoveryKitData(newRecoveryKitData);
-                    handleSave(type, newRecoveryKitData);
+                    handleSave().catch(noop);
                     // If it's the first time the onSuccess handler is triggered. Not on subsequent download triggers etc.
                     onSuccess?.();
                 } catch (e) {
