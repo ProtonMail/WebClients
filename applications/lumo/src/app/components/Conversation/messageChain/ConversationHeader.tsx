@@ -11,6 +11,7 @@ import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
+import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
@@ -288,9 +289,10 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
             <div className="flex flex-row justify-space-between items-center pt-3 pb-2 px-3">
                 <div className="inline-flex flex-row flex-nowrap items-center justify-start">
                     <RenderTitle isEditing={isEditing} />
+                    <ChatDropdownMenu conversation={conversation} visibleOnHover />
                 </div>
 
-                <div className="flex flex-row items-center gap-1">
+                {/* <div className="flex flex-row items-center gap-1">
                     {!isGhostChatMode && (
                         <div className="relative">
                             <LumoButton
@@ -327,7 +329,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                             <IcMonitor size={4} />
                         </Button>
                     </div>
-                </div>
+                </div> */}
             </div>
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </div>
