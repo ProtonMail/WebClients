@@ -2,6 +2,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { SearchDB } from './SearchDB';
+import { IndexKind } from './types';
 import type { TreeEventScopeId } from './types';
 
 const identity = async <T>(d: T) => d;
@@ -187,6 +188,9 @@ describe('SearchDB', () => {
         it('stores and retrieves populator state', async () => {
             const state = {
                 uid: 'pop-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: 'scope-1' as TreeEventScopeId,
                 done: true,
                 generation: 3,
                 version: 1,
@@ -199,6 +203,9 @@ describe('SearchDB', () => {
         it('getAllPopulatorStates returns all', async () => {
             await db.putPopulatorState({
                 uid: 'pop-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: 'scope-1' as TreeEventScopeId,
                 done: true,
                 generation: 1,
                 version: 1,
@@ -206,6 +213,9 @@ describe('SearchDB', () => {
             });
             await db.putPopulatorState({
                 uid: 'pop-2',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-2',
+                treeEventScopeId: 'scope-1' as TreeEventScopeId,
                 done: false,
                 generation: 2,
                 version: 1,
@@ -219,6 +229,9 @@ describe('SearchDB', () => {
         it('deletes a populator state', async () => {
             await db.putPopulatorState({
                 uid: 'pop-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: 'scope-1' as TreeEventScopeId,
                 done: true,
                 generation: 1,
                 version: 1,
@@ -285,6 +298,9 @@ describe('SearchDB', () => {
             await db.putEncryptedIndexBlob(['main', 'blob-1'], new ArrayBuffer(4), identity);
             await db.putPopulatorState({
                 uid: 'pop-1',
+                indexKind: IndexKind.MAIN,
+                indexPopulatorKind: 'pop-1',
+                treeEventScopeId: 'scope-1' as TreeEventScopeId,
                 done: false,
                 generation: 2,
                 version: 1,

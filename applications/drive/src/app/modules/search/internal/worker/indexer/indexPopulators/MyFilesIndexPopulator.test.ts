@@ -4,6 +4,7 @@ import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '../../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../../shared/SearchDB';
+import { IndexKind } from '../../../shared/types';
 import type { TreeEventScopeId } from '../../../shared/types';
 import { FakeMainThreadBridge } from '../../../testing/FakeMainThreadBridge';
 import { makeTaskContext } from '../../../testing/makeTaskContext';
@@ -36,6 +37,9 @@ describe('MyFilesIndexPopulator', () => {
     it('getGeneration returns existing generation from DB', async () => {
         await db.putPopulatorState({
             uid: `myfiles:${SCOPE_ID}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'myfiles',
+            treeEventScopeId: SCOPE_ID,
             done: true,
             generation: 3,
             version: 1,
@@ -165,6 +169,9 @@ describe('MyFilesIndexPopulator', () => {
     it('stamps scope, generation, and populator id on trashed entries', async () => {
         await db.putPopulatorState({
             uid: `myfiles:${SCOPE_ID}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'myfiles',
+            treeEventScopeId: SCOPE_ID,
             done: false,
             generation: 7,
             version: 2,
@@ -191,7 +198,7 @@ describe('MyFilesIndexPopulator', () => {
 
         const attr = (name: string) => entries[0].attributes.find((a) => a.name === name)?.value;
         expect(attr('treeEventScopeId')).toEqual({ kind: 'tag', value: SCOPE_ID });
-        expect(attr('indexPopulatorId')).toEqual({ kind: 'tag', value: 'myfiles' });
+        expect(attr('indexPopulatorKind')).toEqual({ kind: 'tag', value: 'myfiles' });
         expect(attr('indexPopulatorGeneration')).toEqual({ kind: 'integer', value: 7n });
     });
 
