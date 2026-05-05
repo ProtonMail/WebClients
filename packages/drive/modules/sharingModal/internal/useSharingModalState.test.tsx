@@ -1,4 +1,11 @@
-import { MemberRole, type NodeEntity, NodeType, type Result, generateNodeUid } from '@protontech/drive-sdk';
+import {
+    MemberRole,
+    type NodeEntity,
+    NodeType,
+    type Result,
+    ValidationError,
+    generateNodeUid,
+} from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
@@ -779,6 +786,37 @@ describe('useSharingModalState', () => {
                 extra: {
                     nodeUid: mockNodeUid,
                 },
+            });
+        });
+
+        it('should show a toast with the SDK message when updateSharePublic fails with ValidationError', async () => {
+            const errorMessage = 'Max amount of editable public urls limited to 3 on your plan. Please upgrade.';
+            const error = new ValidationError(errorMessage);
+            error.message = errorMessage;
+
+            when(mockDrive.shareNode)
+                .calledWith(mockNodeUid, {
+                    publicLink: {
+                        role: MemberRole.Editor,
+                        expiration: new Date('2025-04-25T12:17:56.000Z'),
+                        customPassword: 'test-password',
+                    },
+                })
+                .mockRejectedValue(error);
+
+            const { result } = renderHook(() => useSharingModalState(mockProps));
+
+            await waitFor(() => {
+                expect(result.current.publicLink).toBeDefined();
+            });
+
+            await act(async () => {
+                await result.current.actions.updateSharePublic({ role: MemberRole.Editor });
+            });
+
+            expect(mockedCreateNotification).toHaveBeenCalledWith({
+                type: 'error',
+                text: errorMessage,
             });
         });
 
