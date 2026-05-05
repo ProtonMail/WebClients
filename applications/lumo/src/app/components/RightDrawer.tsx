@@ -21,7 +21,7 @@ interface RightDrawerProps {
  * content div registered here.
  */
 export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerProps) => {
-    const { registerContentEl, isOverlay } = useRightPanel();
+    const { registerContentEl, isOverlay, title, actionButton } = useRightPanel();
 
     return (
         <>
@@ -38,18 +38,12 @@ export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerPro
                     className
                 )}
             >
-                <div className="right-drawer-header w-full flex flex-row items-center justify-end px-3 py-2 shrink-0">
-                    {/* {onClose && (
-                        <button
-                            className="flex items-center justify-center interactive-pseudo-inset rounded-sm"
-                            onClick={onClose}
-                            aria-label="Close panel"
-                            style={{ width: '32px', height: '32px' }}
-                        >
-                            {isSmallScreen ? '✕' : '☰'}
-                        </button>
-                    )} */}
-                    <DrawerToggleButton />
+                <div className="right-drawer-header w-full flex flex-row items-center justify-between px-3 py-2 shrink-0">
+                    {title && <h3 className="text-bold text-rg flex-1 mx-2">{title}</h3>}
+                    <div className="flex flex-row items-center gap-2">
+                        {actionButton}
+                        <DrawerToggleButton />
+                    </div>
                 </div>
                 <div
                     ref={registerContentEl}
