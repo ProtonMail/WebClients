@@ -837,7 +837,7 @@
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "开始监测与您的邮箱地址和 hide-my-email 别名创建的账户相关的数据泄露。"
+        "开始监测与您的邮箱地址和 Hide-my-email 别名创建的账户相关的数据泄露。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "暗网是互联网的一个隐蔽部分，在这里可以买卖被盗的个人信息，比如身份信息。"
@@ -861,7 +861,7 @@
         "解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "使用 ${ PASS_SHORT_APP_NAME } 监视器，在您的凭证受到威胁时，您会收到即时警报，从而在威胁面前保持领先。解锁高级安全功能和详细日志，保护您的在线形象。"
+        "借助 ${ PASS_SHORT_APP_NAME } Monitor，如果您的凭据遭到泄露，您将收到即时警报，从而领先于威胁。解锁高级安全功能和详细日志，以保护您的在线安全。"
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "您的邮箱地址在至少一次数据泄露事件中被泄露。"
@@ -1498,7 +1498,7 @@
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
       ],
       "Add your custom email address to monitor:": [
-        "添加您的自定义邮箱地址进行监控："
+        "添加您的自定义邮箱地址进行监测："
       ],
       "Admin": [
         "管理员"
@@ -1525,7 +1525,7 @@
         "别名未同步 (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "自定义域名的别名不受监控，请将其添加为自定义电子邮件以便监控。"
+        "自定义域名的别名不受监测，请将其添加为自定义邮件以便监测。"
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "使用邮箱 ${ emailJSX } 的所有别名也将被删除。"
@@ -1927,7 +1927,7 @@
         "中等优先顺序"
       ],
       "Monitor accounts": [
-        "监控账户"
+        "监测账户"
       ],
       "Monitoring settings successfully updated": [
         "监测设置已更新"
@@ -2912,10 +2912,10 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "电子邮件（别名）"
+        "邮箱（别名）"
       ],
       "Email (new alias)": [
-        "电子邮件 (新别名)"
+        "邮箱 (新别名)"
       ],
       "Email address": [
         "邮箱地址"
@@ -2954,7 +2954,7 @@
         "额外密码"
       ],
       "Facebook account": [
-        "Facebook 账号"
+        "Facebook 账户"
       ],
       "Feedback": [
         "用户反馈"
@@ -4194,7 +4194,7 @@
         "${ BRAND_NAME } 个地址"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } 监视器"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "Account protection": [
         "账户保护"
@@ -4284,7 +4284,7 @@
         "自定义域名"
       ],
       "Custom email monitoring": [
-        "自定义电子邮件监测"
+        "自定义邮件监测"
       ],
       "Custom emails": [
         "自定义电子邮件"
@@ -4482,7 +4482,7 @@
         "密码安全"
       ],
       "Pause monitoring?": [
-        "暂停监测?"
+        "暂停监测？"
       ],
       "Pay once, access forever.": [
         "一次支付，终身使用。"
@@ -4536,7 +4536,7 @@
         "恢复此版本?"
       ],
       "Resume monitoring?": [
-        "恢复监测?"
+        "恢复监测？"
       ],
       "Reused ${ count } time": [
         "重复使用 ${ count } 次"
@@ -4802,7 +4802,7 @@
         "邮箱地址不能为空"
       ],
       "Email is required": [
-        "电子邮件为必填项"
+        "邮箱为必填项"
       ],
       "Empty note": [
         "空注"
