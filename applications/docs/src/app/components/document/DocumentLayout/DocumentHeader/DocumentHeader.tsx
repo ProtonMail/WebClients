@@ -25,7 +25,7 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useIsSheetsEditorEnabled } from '~/utils/misc'
+import { useIsSheetsEditorEnabled } from '~/utils/flags'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash

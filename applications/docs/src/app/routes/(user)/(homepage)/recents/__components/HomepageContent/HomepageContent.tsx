@@ -16,7 +16,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { useApplication } from '~/utils/application-context'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { useIsSheetsEnabled } from '~/utils/misc'
+import { useIsSheetsEnabled } from '~/utils/flags'
 
 export function HomepageContent() {
   return (
