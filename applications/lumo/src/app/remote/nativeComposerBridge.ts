@@ -1,3 +1,5 @@
+import isEqual from 'lodash/isEqual';
+
 import {
     PROTON_DOCS_DOCUMENT_MIMETYPE,
     PROTON_DOCS_SPREADSHEET_MIMETYPE,
@@ -234,7 +236,7 @@ class NativeComposerApi {
             );
         }
 
-        if (oldState !== newState) {
+        if (!isEqual(oldState, newState)) {
             sendStateToNative(newState);
             this.state = newState;
         }
