@@ -942,6 +942,9 @@
       "Save changes": [
         "Uložit změny"
       ],
+      "Save photo to your gallery": [
+        "Uložte fotky do vaší galerie"
+      ],
       "Save photos and remove": [
         "Uložit fotky a odebrat"
       ],
@@ -4994,6 +4997,12 @@
       "${ albumName } has been successfully deleted": [
         "Album ${ albumName } bylo úspěšně smazáno"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } alba",
+        "${ albums } alb",
+        "${ albums } alb"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5099,6 +5108,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhled v nízkém rozlišení"
       ],
+      "${ files } file": [
+        "${ files } soubor",
+        "${ files } soubory",
+        "${ files } souborů",
+        "${ files } souborů"
+      ],
+      "${ folders } folder": [
+        "${ folders } složka",
+        "${ folders } složky",
+        "${ folders } složek",
+        "${ folders } složek"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
@@ -5140,6 +5161,12 @@
         "${ photoCount } položky",
         "${ photoCount } položek",
         "${ photoCount } položek"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotka",
+        "${ photos } fotky",
+        "${ photos } fotek",
+        "${ photos } fotek"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -5484,7 +5511,7 @@
         "Vyberte tarif, který vám nejlépe vyhovuje."
       ],
       "Choose your service to connect with": [
-        "Vyberte službu, se kterou se chcete propojit"
+        "Vyberte službu, kterou chcete propojit"
       ],
       "Clear all search data": [
         "Vyčistit všechny údaje o vyhledávání"
@@ -5714,6 +5741,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
+      "Enter code": [
+        "Zadejte kód"
+      ],
       "Enter password": [
         "Zadejte heslo"
       ],
@@ -5861,6 +5891,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Pokud máte některý z nich, pokračujte do nastavení účtu ${ BRAND_NAME } a spusťte proces odblokování."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -5905,6 +5938,18 @@
       ],
       "Index is empty.": [
         "Index je prázdný."
+      ],
+      "Indexed ${ first }": [
+        "Indexováno ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexováno ${ first } a ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexováno ${ first }, ${ second } a ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexováno ${ first }, ${ second }, ${ third } a ${ fourth }"
       ],
       "Indexing in progress": [
         "Probíhá indexování"
@@ -6130,6 +6175,9 @@
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
+      ],
+      "No populator states found.": [
+        "Nebylo nalezeno žádné stavové hlášení procesu indexování."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -13150,6 +13198,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importujte svá data do ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Služby indexování"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
