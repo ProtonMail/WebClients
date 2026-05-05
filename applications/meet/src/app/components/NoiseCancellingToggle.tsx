@@ -14,10 +14,8 @@ export const NoiseCancellingToggle = ({
 }) => {
     return (
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
-            <label
-                className={clsx('setting-label', noiseFilter ? 'color-norm' : 'color-hint')}
-                htmlFor={`${idBase}-noise-filter`}
-            >{c('Action').t`Noise cancellation`}</label>
+            <label className="setting-label color-norm" htmlFor={`${idBase}-noise-filter`}>{c('Action')
+                .t`Noise cancellation`}</label>
             <Toggle
                 id={`${idBase}-noise-filter`}
                 checked={noiseFilter}
