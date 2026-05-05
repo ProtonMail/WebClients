@@ -324,6 +324,7 @@ const ProjectDetailViewInner = () => {
                     onEditInstructions={() => instructionsModal.openModal(true)}
                 />
             }
+            drawerTitle={c('collider_2025:Title').t`Project knowledge`}
         >
             <div className="project-detail-view flex flex-column">
                 {isMobileViewport && (
