@@ -162,6 +162,9 @@
       "Add user": [
         "Ajouter un utilisateur"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } a été ajouté en tant que propriétaire du groupe."
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Confirmer"
+      ],
+      "Confirm email": [
+        "Confirmez l'e-mail"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
@@ -761,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Les filtres sont en cours d'application. Cela peut prendre quelques minutes."
+      ],
+      "Finish": [
+        "Terminer"
       ],
       "Fit to window": [
         "Ajuster à la fenêtre"
@@ -1277,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Retirer cette notification"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } a été retiré des propriétaires du groupe."
       ],
       "Rename": [
         "Renommer"
@@ -6972,6 +6984,9 @@
       "Invalid invitation link": [
         "Le lien d'invitation n'est pas valide."
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Le lien d'invitation n'est pas valide. Veuillez contacter votre administrateur."
+      ],
       "Invalid name": [
         "Le nom n'est pas valide."
       ],
@@ -9310,7 +9325,7 @@
         "Si elle est réactivée, la clé sera utilisée pour le déchiffrement"
       ],
       "If reactivated, the key will be used for decryption and verification": [
-        "Si elle est réactivée, la clé sera utilisée pour le décryptage et la vérification"
+        "Si elle est réactivée, la clé sera utilisée pour le déchiffrement et la vérification"
       ]
     },
     "Info": {
@@ -10134,6 +10149,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Prix Editors' Choice de CNET avec une note de 8,4 sur 10"
       ],
+      "Code has been re-sent.": [
+        "Le code a été envoyé à nouveau."
+      ],
       "Coming soon": [
         "Bientôt disponible"
       ],
@@ -10690,6 +10708,9 @@
       ],
       "Gateways": [
         "Passerelles"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "La génération d’une nouvelle phrase de récupération désactivera votre phrase actuelle."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
@@ -11340,7 +11361,7 @@
         "Une fois votre mot de passe réinitialisé :"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modifier ces paramètres seulement si vous utilisez l'encryptage PGP avec des destinataires extérieurs à ${ BRAND_NAME }."
+        "Modifier ces paramètres seulement si vous utilisez le chiffrement PGP avec des destinataires extérieurs à ${ BRAND_NAME }."
       ],
       "Only sign in on devices you trust": [
         "Connectez-vous uniquement depuis des appareils de confiance"
@@ -13040,8 +13061,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Votre phrase de récupération est une série de 12 mots générés aléatoirement dans un ordre spécifique."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Votre phrase de récupération, contenue dans votre Kit de récupération, vous permettra de vous connecter et de récupérer vos données si vous ne parvenez plus à déverrouiller votre compte ${ BRAND_NAME }. Elle est composée de 12 mots et agis comme un mot de passe de secours."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Votre phrase de récupération vous permettra de vous connecter et de récupérer vos données si vous ne parvenez plus à déverrouiller votre compte ${ BRAND_NAME }. Elle est composée de 12 mots et agis comme un mot de passe de secours."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
@@ -13312,7 +13333,7 @@
         "Ceci générera une nouvelle clé pouvant être utilisée pour chiffrer de futures informations de contact, clés de chiffrements d'email, et autres données."
       ],
       "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
-        "Cela générera une nouvelle clé, qui sera utilisée pour crypter les futurs courriels et autres données pour **${ emailAddress }**."
+        "Cela générera une nouvelle clé, qui sera utilisée pour chiffrer les futurs courriels et autres données pour **${ emailAddress }**."
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Vous avez déjà ce type de clé. À moins que cette clé ait été compromise, **la génération d'une nouvelle clé pourrait ralentir votre compte**."
@@ -14759,6 +14780,9 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "E-mails personnels et professionnels, ainsi que mises à jour et notifications importantes"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -16717,6 +16741,9 @@
       ],
       "Advanced network security": [
         "Sécurité avancée du réseau"
+      ],
+      "Advanced workspace security": [
+        "Sécurité avancée de l'espace de travail"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tous les produits et fonctionnalités ${ BRAND_NAME }"
@@ -18719,14 +18746,14 @@
       "per month, billed every two years": [
         "par mois (facturation tous les deux ans)"
       ],
-      "Preparing your Recovery Kit": [
-        "Préparation de votre kit de récupération"
+      "Preparing your recovery phrase": [
+        "Préparation de votre phrase de récupération en cours"
       ],
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses en matière de données personnelles"
       ],
-      "Save your recovery kit to continue": [
-        "Enregistrez votre kit de récupération pour continuer."
+      "Save your recovery phrase to continue": [
+        "Enregistrez votre phrase de récupération pour continuer."
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
@@ -20054,6 +20081,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Conservez votre phrase de récupération dans un endroit accessible après sa création.** Pour des raisons de sécurité, nous ne la stockons pas après avoie enregistré vos modifications, et vous ne pourrez plus la consulter sur l'application ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "copier la phrase de récupération"
       ],
@@ -20075,14 +20105,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Ou plutôt ${ downloadRecoveryKitSwitchButton }."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Votre **Kit de récupération** vous permet de restaurer votre compte ${ BRAND_NAME } si vous êtes bloqué."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Votre **phrase de récupération** vous permet de restaurer votre compte ${ BRAND_NAME } en cas de blocage."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Enregistrez votre Kit de récupération"
-      ],
       "Save your recovery phrase": [
         "Enregistrez votre phrase de récupération"
       ]
@@ -20164,7 +20191,7 @@
         "Classique"
       ],
       "Post-quantum": [
-        "Encryptage post-quantique"
+        "Chiffrement post-quantique"
       ]
     },
     "Remove calendar section description": {
@@ -20475,8 +20502,8 @@
       "Back to Safety Review": [
         "Revenir à la vérification de sécurité"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Étant donné que vous avez réinitialisé votre mot de passe, vous pouvez uniquement utiliser votre kit de récupération actuel pour récupérer les données créées avant la réinitialisation de votre mot de passe."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Étant donné que vous avez réinitialisé votre mot de passe, vous pouvez uniquement utiliser votre phrase de récupération actuelle pour récupérer les données créées avant la réinitialisation de votre mot de passe."
       ],
       "Can be used to regain access to your account and data": [
         "Ceci peut être utilisé pour récupérer l'accès à votre compte et à vos données."
@@ -20505,8 +20532,8 @@
       "Download ${ size }": [
         "Télécharger ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Télécharger le kit de récupération"
+      "Download your recovery phrase": [
+        "Téléchargez votre phrase de récupération"
       ],
       "Email address": [
         "Adresse e-mail"
@@ -20520,8 +20547,8 @@
       "Enable recovery by phone": [
         "Activer la récupération par téléphone"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Je comprends que je ne pourrai pas récupérer les données actuellement verrouillées avec ce kit de récupération."
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Je comprends que je ne pourrai pas récupérer les données actuellement verrouillées avec cette phrase de récupération."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si vous avez oublié votre mot de passe ${ BRAND_NAME } et vous devez le réinitialiser, la prochaine fois que vous vous connecterez sur cet appareil avec votre nouveau mot de passe, vous aurez de nouveau accès à l'intégralité de votre compte ${ BRAND_NAME }."
@@ -20529,8 +20556,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si vous avez oublié votre mot de passe ${ BRAND_NAME } et vous devez le réinitialiser, la prochaine fois que vous vous connecterez sur cet appareil avec votre nouveau mot de passe, vous aurez de nouveau accès à l'intégralité de votre compte ${ BRAND_NAME }."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre kit de récupération vous permettra de vous connecter et de récupérer vos données."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre phrase de récupération vous permettra de vous connecter et de récupérer vos données."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, **vous devez** avoir à la fois **une méthode de récupération de données et une méthode de récupération de compte**. Dans le cas contraire, vous pourriez ne pas pouvoir accéder à vos courriels, contacts, fichiers ou mots de passe."
@@ -20574,8 +20601,8 @@
       "Take action to secure your account": [
         "Prenez les mesures nécessaires pour sécuriser votre compte."
       ],
-      "There was an error generating your Recovery Kit": [
-        "Une erreur s'est produite lors de la génération du kit de récupération."
+      "There was an error generating your recovery phrase": [
+        "Une erreur s'est produite lors de la génération de votre phrase de récupération."
       ],
       "There was an error verifying your email": [
         "Une erreur s'est produite lors de la vérification de votre e-mail."
@@ -20604,11 +20631,11 @@
       "to recover your account if you're ever locked out": [
         "pour récupérer votre compte si vous n'avez plus accès à ce dernier."
       ],
-      "Update your Recovery Kit": [
-        "Mettre à jour le kit de récupération"
+      "Update your recovery phrase": [
+        "Mettre à jour votre phrase de récupération"
       ],
-      "Update your Recovery Kit?": [
-        "Mettre à jour le kit de récupération ?"
+      "Update your recovery phrase?": [
+        "Mettre à jour votre phrase de récupération ?"
       ],
       "Verify": [
         "Vérifier"
@@ -20625,8 +20652,8 @@
       "Verify your recovery phone number": [
         "Vérifier le numéro de téléphone de récupération"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Une erreur est survenue lors de la génération du kit de récupération. Nous vous invitons à réessayer plus tard ou à contacter le service client si le problème persiste."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Une erreur est survenue lors de la génération de votre phrase de récupération. Nous vous invitons à réessayer plus tard ou à contacter le service client si le problème persiste."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Une erreur est survenue lors de la vérification de votre e-mail. Veuillez réessayer plus tard ou contacter le support si le problème persiste."
@@ -20649,7 +20676,7 @@
       "You can disable this at any time.": [
         "Vous pouvez désactiver ceci à tout moment."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Vous pouvez utiliser la phrase de récupération de ce kit de récupération pour restaurer l'intégralité de votre compte lorsque vous réinitialisez votre mot de passe. Assurez-vous donc de la conserver en lieu sûr."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
@@ -20661,8 +20688,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Vous pouvez utiliser la récupération par téléphone pour récupérer l'accès à votre compte si vous avez perdu votre mot de passe."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Vous avez déjà téléchargé un kit de récupération. Si vous en téléchargez un nouveau, ceci **désactivera l'ancien**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Vous avez déjà téléchargé une phrase de récupération. Si vous en téléchargez une nouvelle, ceci **désactivera l'ancienne**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Vous avez des actions recommandées pour protéger davantage votre compte."
@@ -20727,12 +20754,6 @@
       "Your recovery email is set": [
         "L'e-mail de récupération est configuré."
       ],
-      "Your Recovery Kit": [
-        "Kit de récupération"
-      ],
-      "Your Recovery Kit is set": [
-        "Le kit de récupération est configuré."
-      ],
       "Your recovery methods": [
         "Méthodes de récupération"
       ],
@@ -20753,6 +20774,12 @@
       ],
       "Your recovery phone number is:": [
         "Votre numéro de téléphone de récupération est :"
+      ],
+      "Your recovery phrase": [
+        "Votre phrase de récupération"
+      ],
+      "Your recovery phrase is set": [
+        "Votre phrase de récupération est configurée."
       ]
     },
     "saml: Action": {
@@ -23891,11 +23918,17 @@
       "Actions": [
         "Actions"
       ],
+      "Activate multi-user support": [
+        "Activer la prise en charge multi-utilisateur"
+      ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
       ],
       "Activate user": [
         "Activer l'utilisateur"
+      ],
+      "Activate your email": [
+        "Activez votre e-mail"
       ],
       "Activity monitor": [
         "Surveillance des activités"
@@ -24147,17 +24180,11 @@
       "Confirm": [
         "Confirmer"
       ],
-      "Confirm address": [
-        "Confirmer l'adresse"
-      ],
       "Confirm downgrade": [
         "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmer la perte des bonus ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Confirmer le numéro de téléphone"
       ],
       "Connect ${ name }": [
         "Se connecter à ${ name }"
@@ -24219,6 +24246,9 @@
       ],
       "Create a new gateway": [
         "Créer une passerelle"
+      ],
+      "Create a new password": [
+        "Créer un nouveau mot de passe"
       ],
       "Create Gateway": [
         "Créer une passerelle"
@@ -24312,6 +24342,9 @@
       ],
       "Day theme": [
         "Thème jour"
+      ],
+      "Deactivate current phrase?": [
+        "Désactiver la phrase actuelle ?"
       ],
       "Decrypt key": [
         "Déchiffrer la clé"
@@ -24448,6 +24481,9 @@
       ],
       "Download the mobile apps": [
         "Télécharger les applications mobiles"
+      ],
+      "Download your recovery phrase": [
+        "Téléchargez votre phrase de récupération"
       ],
       "Downloads": [
         "Téléchargements"
@@ -25087,8 +25123,14 @@
       "Remove domain": [
         "Retirer le domaine"
       ],
+      "Remove email": [
+        "Retirer l'e-mail"
+      ],
       "Remove forwarding address": [
         "Retirer l'adresse de transfert"
+      ],
+      "Remove recovery phone number": [
+        "Retirer le numéro de téléphone de récupération"
       ],
       "Remove server?": [
         "Retirer le serveur ?"
@@ -25499,6 +25541,9 @@
       "Verify it’s you": [
         "Vérifiez que c'est bien vous"
       ],
+      "Verify your email": [
+        "Vérifiez votre e-mail"
+      ],
       "Verifying your card...": [
         "Vérification de votre carte en cours"
       ],
@@ -25522,6 +25567,9 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Nous vous avons envoyé un code à votre adresse e-mail afin de s'assurer qu'il s'agit bien de vous. Ce code est valide pendant 10 minutes. Veuillez le saisir ci-dessous."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Nous vous enverrons un message à votre nouvelle adresse e-mail avec des instructions pour effectuer la modification."
@@ -25573,6 +25621,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Votre abonnement ${ planTitle } a commencé."
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Votre administrateur de ${ orgName } vous invite à activer votre nouveau compte sécurisé ${ BRAND_NAME } et à mettre à jour votre mot de passe."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Votre administrateur vous invite à activer votre nouveau compte sécurisé ${ BRAND_NAME } et à mettre à jour votre mot de passe."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
@@ -26736,11 +26790,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Voulez-vous vraiment supprimer ce numéro de téléphone ?"
+      "Are you sure you want to remove your notification email?": [
+        "Voulez-vous vraiment retirer votre e-mail de notification ?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Voulez-vous vraiment supprimer cette adresse ?"
+      "Are you sure you want to remove your recovery email?": [
+        "Voulez-vous vraiment retirer votre e-mail de récupération ?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Voulez-vous vraiment retirer votre numéro de téléphone de récupération ?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "En supprimant cette adresse, vous ne pourrez plus recevoir de notifications quotidiennes par e-mail."
@@ -26751,8 +26808,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "En supprimant cette adresse, vous ne pourrez plus récupérer votre compte."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "En supprimant ce numéro de téléphone, vous ne pourrez plus récupérer votre compte."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "En retirant ce numéro de téléphone, vous ne pourrez plus récupérer votre compte."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Impossible de se connecter. Veuillez ouvrir l'extension de navigateur ${ PASS_APP_NAME } et vous connecter à partir de là."

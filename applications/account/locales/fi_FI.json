@@ -151,6 +151,9 @@
       "Add user": [
         "Lisää käyttäjä"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } lisättiin ryhmän omistajaksi"
+      ],
       "Align center": [
         "Keskitä"
       ],
@@ -1173,6 +1176,9 @@
       ],
       "Remove this notification": [
         "Poista ilmoitus"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } poistettiin ryhmän omistajan asemasta"
       ],
       "Rename": [
         "Nimeä uudelleen"
@@ -12612,6 +12618,9 @@
       "Pending": [
         "Odottaa"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset ja ilmoitukset"
+      ],
       "Phone number": [
         "Puhelinnumero"
       ],
@@ -14324,6 +14333,9 @@
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
+      ],
+      "Advanced workspace security": [
+        "Työtilan edistyksellinen tietoturva"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Kaikki ${ BRAND_NAME }n tuotteet ja ominaisuudet"
@@ -16203,14 +16215,8 @@
       "per month, billed every two years": [
         "kuukaudessa, laskutetaan kahden vuoden välein"
       ],
-      "Preparing your Recovery Kit": [
-        "Palautuspakettiasi valmistellaan"
-      ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
-      ],
-      "Save your recovery kit to continue": [
-        "Jatka tallentamalla palautuspakettisi"
       ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
@@ -17328,9 +17334,6 @@
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Tallenna palautuspakettisi"
-      ],
       "Save your recovery phrase": [
         "Tallenna palautuslauseesi"
       ]
@@ -17606,9 +17609,6 @@
       "Back to Safety Review": [
         "Takaisin turvallisuuskatsaukseen"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Koska nollasit salasanasi, nykyistä palautuspakettiasi voidaan käyttää vain ennen salasanan nollausta luotujen tietojen palauttamiseen."
-      ],
       "Can be used to regain access to your account and data": [
         "Voidaan käyttää palauttamaan pääsysi tilillesi ja tietoihisi"
       ],
@@ -17633,9 +17633,6 @@
       "Download ${ size }": [
         "Lataa ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Lataa palautuspakettisi"
-      ],
       "Email address": [
         "Sähköpostiosoite"
       ],
@@ -17648,17 +17645,11 @@
       "Enable recovery by phone": [
         "Ota palautus puhelimitse käyttöön"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Ymmärrän, etten voi palauttaa tällä hetkellä lukittuja tietoja tällä palautuspaketilla."
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Jos olet menettänyt pääsyn ${ BRAND_NAME }-tilillesi, voit palautuspakettisi avulla kirjautua ja palauttaa tietosi."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Jos kadotat kirjautumistietosi ja joudut nollaamaan tilisi, **on erittäin tärkeää**, että olet määrittänyt **tilin ja tietojen palautustavat**, tai et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi, tiedostoihisi tai salasanoihisi."
@@ -17699,9 +17690,6 @@
       "Take action to secure your account": [
         "Toimi suojataksesi tilisi"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Virhe luotaessa palautuspakettiasi"
-      ],
       "There was an error verifying your recovery email": [
         "Virhe vahvistettaessa palautusosoitettasi"
       ],
@@ -17723,12 +17711,6 @@
       "to recover your account if you're ever locked out": [
         "palauttaaksesi tilisi, jos sinut lukitaan ulos"
       ],
-      "Update your Recovery Kit": [
-        "Päivitä palautuspakettisi"
-      ],
-      "Update your Recovery Kit?": [
-        "Päivitetäänkö palautuspakettisi?"
-      ],
       "Verify": [
         "Vahvista"
       ],
@@ -17743,9 +17725,6 @@
       ],
       "Verify your recovery phone number": [
         "Vahvista palautusnumerosi nyt"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Virhe luotaessa palautuspakettiasi. Yritä myöhemmin uudelleen tai ole ongelman jatkuessa yhteydessä asiakaspalveluun."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Palautussähköpostisi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu."
@@ -17765,17 +17744,11 @@
       "You can disable this at any time.": [
         "Voit poistaa tämän käytöstä milloin tahansa."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Voit käyttää tässä palautuspaketissa olevaa palautuslauseketta tilisi täydelliseen palauttamiseen, kun nollaat salasanasi. Varmista, että säilytät sen jossakin turvallisessa paikassa."
-      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Voit käyttää palautussähköpostia päästäksesi takaisin tilillesi, jos unohdat salasanasi."
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Voit käyttää palautuspuhelinta päästäksesi takaisin tilillesi, jos unohdat salasanasi."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Olet aiemmin ladannut palautuspaketin. Uuden lataaminen **mitätöi vanhan**."
       ],
       "You have recommended actions.": [
         "Sinulle on suositeltuja toimintoja."
@@ -17821,12 +17794,6 @@
       ],
       "Your recovery email is set": [
         "Palautusosoitteesi on asetettu"
-      ],
-      "Your Recovery Kit": [
-        "Palautuspakettisi"
-      ],
-      "Your Recovery Kit is set": [
-        "Palautuspakettisi on valmis"
       ],
       "Your recovery methods": [
         "Palautustapasi"
@@ -20865,17 +20832,11 @@
       "Confirm": [
         "Vahvista"
       ],
-      "Confirm address": [
-        "Vahvista osoite"
-      ],
       "Confirm downgrade": [
         "Vahvista alennus"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Vahvista ${ BRAND_NAME }-bonusten menetys"
-      ],
-      "Confirm phone number": [
-        "Vahvista puhelinnumero"
       ],
       "Connect ${ name }": [
         "Yhdistä palveluun ${ name }"
@@ -23036,12 +22997,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Haluatko varmasti poistaa puhelinnumeron?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Haluatko varmasti poistaa osoitteen?"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Jos poistat tämän osoitteen, et voi enää vastaanottaa päivittäisiä sähköposti-ilmoituksia."
       ],
@@ -23050,9 +23005,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Jos poistat tämän sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kirjautuminen epäonnistui. Avaa ${ PASS_APP_NAME }-selainlaajennus ja kirjaudu sisään sieltä."
