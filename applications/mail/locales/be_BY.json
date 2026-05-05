@@ -294,6 +294,9 @@
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
+      "Connect your email": [
+        "Падключыць сваю электронную пошту"
+      ],
       "Contact group": [
         "Група кантактаў"
       ],
@@ -4204,6 +4207,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Адпраўляйце і атрымлівайце паведамленні Gmail наўпрост у ${ MAIL_APP_NAME }. Падключыце свой адрас у ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ],
@@ -4281,6 +4287,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail за апошнія 180 дзён. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -5123,7 +5132,7 @@
         "Памылка праверкі подпісу."
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
@@ -5848,8 +5857,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Фільтр"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Фільтр (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Фільтрацыя і сартванне лістоў"
+      ],
+      "Has attachments": [
+        "Змяшчае ўкладанні"
+      ],
+      "Read": [
+        "Прачытаныя"
+      ],
+      "Reset": [
+        "Скінуць"
+      ],
       "Show": [
         "Паказаць"
+      ],
+      "Unread": [
+        "Непрачытаныя"
       ]
     },
     "Filter Actions": {
@@ -6478,7 +6508,7 @@
         "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. Не выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
-        "Вашы адрас электроннай пошты і пароль правільныя."
+        "Ваш адрас электроннай пошты і пароль правільныя."
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
@@ -6555,7 +6585,7 @@
         "пароль праграмы або ўключыць IMAP"
       ],
       "CSV or a VCF (vCard) file": [
-        "Файл CSV або VCF (vCard)"
+        "файл CSV або VCF (vCard)"
       ],
       "full calendar view": [
         "поўнага выгляду календара"
@@ -6569,10 +6599,10 @@
     },
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
-        "Перайсці да ${ calendarViewLink } у Yahoo."
+        "Перайсці да ${ calendarViewLink } ў Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Навядзіце курсор мышы на каляндар, які вы хочаце імпартаваць, і адкрыйце выпадное меню."
+        "Навядзіце курсор мышы на каляндар, які хочаце імпартаваць, і адкрыйце выпадное меню."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Выберыце ${ boldExport }, каб экспартаваць каляндар як файл ICS."
@@ -7847,7 +7877,7 @@
         "Далучайцеся да праграмы ${ PROTON_SENTINEL_NAME } для забеспячэння найвышэйшага ўзроўню бяспекі ўліковага запісу і падтрымкі з нашага боку."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+        "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
       ],
       "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
         "Захоўвайце свае ўліковыя даныя і інфармацыю аб крэдытнай картцы ў бяспецы, але заўсёды пад рукой, дадаўшы іх у ${ PASS_APP_NAME }. Гэта бясплатна і ўваходзіць у ваш уліковы запіс ${ BRAND_NAME }."
@@ -7994,7 +8024,7 @@
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
+        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
         "Новы"
@@ -8081,7 +8111,7 @@
         "У грамадскіх сетках Wi-Fi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
+        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
       ],
       "Open shortcut cheat sheet": [
         "Адкрыць спіс спалучэнняў клавіш"
@@ -8156,7 +8186,7 @@
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
+        "Звярніце ўвагу, што адрасы прызначаныя гэтай групе, НЕ будуць выдалены."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
@@ -8210,7 +8240,7 @@
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
+        "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
       "Preferences updated": [
         "Параметры абноўлены"
@@ -10148,6 +10178,9 @@
       "Payment method": [
         "Спосаб аплаты"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Асабістыя і працоўныя лісты, а таксама важныя абнаўленні і апавяшчэнні"
+      ],
       "PGP scheme": [
         "Схема PGP"
       ],
@@ -10476,7 +10509,7 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
+        "Выдаліце адзін з існуючых календароў, каб дадаць новы."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
@@ -10748,7 +10781,7 @@
         "Збор вашых даных"
       ],
       "We're gathering your data from your provider": [
-        "Мы збіраем даныя ад вашага пастаўшчыка паслуг"
+        "Адбываецца збор даных ад вашага пастаўшчыка паслуг"
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
@@ -12344,6 +12377,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перанясіце сваю існуючыя лісты ў ${ MAIL_APP_NAME }, каб у вас была магчымасць кіраваць усімі імі з адной прыватнай паштовай скрыні."
+      ],
       "Choose a provider": [
         "Выберыце пастаўшчыка"
       ],
@@ -13006,7 +13042,7 @@
         "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для спраўджання подпісу."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
         "Знешні ключ аўтаматычна атрыманы з вэб-сайта keys.openpgp.org."
@@ -13971,6 +14007,9 @@
       ],
       "Smallest first": [
         "Спачатку самыя маленькія"
+      ],
+      "Sort by": [
+        "Сартаваць па"
       ]
     },
     "specialoffer: Action": {
@@ -14050,7 +14089,7 @@
         "Бяспечнае патокавае вяшчанне"
       ],
       "Support online privacy": [
-        "Падтрыманне прыватнасці ў інтэрнэце"
+        "Падтрымка прыватнасці ў інтэрнэце"
       ]
     },
     "specialoffer: Footer": {
@@ -16809,7 +16848,7 @@
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Skip verification?": [
-        "Прапусціць праверку?"
+        "Прапусціць спраўджанне?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
@@ -16833,7 +16872,7 @@
         "Не ўдалося расшыфраваць зашыфраванае змесціва."
       ],
       "The verification of the contact details' signature failed.": [
-        "Не ўдалося праверыць подпіс кантактных звестак."
+        "Не ўдалося спраўдзіць подпіс кантактных звестак."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Гэта незваротнае дзеянне. Увядзіце слова ${ boldDanger } у поле, каб працягнуць."

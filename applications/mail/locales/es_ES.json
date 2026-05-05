@@ -292,6 +292,9 @@
       "Connect to video conferencing": [
         "Conectarte a la videoconferencia"
       ],
+      "Connect your email": [
+        "Conectar tu correo"
+      ],
       "Contact group": [
         "Grupo de contactos"
       ],
@@ -4132,6 +4135,9 @@
       "No labels": [
         "Sin etiquetas"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Envía y recibe mensajes de Gmail directamente en ${ MAIL_APP_NAME }. Conecta tu dirección en ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
       ],
@@ -4182,6 +4188,9 @@
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "No hemos encontrado ningún rastreador o URL de rastreo conocidos en este correo."
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Se ha iniciado la importación de tus correos de los últimos 180 días desde Gmail. Te avisamos en cuanto termine."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
@@ -5640,8 +5649,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filtro"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrar (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrar y ordenar correos."
+      ],
+      "Has attachments": [
+        "Tiene adjuntos"
+      ],
+      "Read": [
+        "Leído"
+      ],
+      "Reset": [
+        "Restablecer"
+      ],
       "Show": [
         "Mostrar"
+      ],
+      "Unread": [
+        "Sin leer"
       ]
     },
     "Filter Actions": {
@@ -6713,6 +6743,9 @@
       ],
       "Ad targeting": [
         "Orientación de anuncios"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Añadir URL de la imagen"
@@ -9713,6 +9746,9 @@
       "Payment method": [
         "Método de pago"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Tus correos personales y profesionales, además de actualizaciones y notificaciones importantes"
+      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -11806,6 +11842,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Trae tus correos electrónicos a ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Trae tus correos a ${ MAIL_APP_NAME } para gestionarlo todo desde una única bandeja de entrada privada."
+      ],
       "Choose a provider": [
         "Elige un proveedor"
       ],
@@ -13464,6 +13503,9 @@
       ],
       "Smallest first": [
         "Más pequeño primero"
+      ],
+      "Sort by": [
+        "Ordenar por"
       ]
     },
     "specialoffer: Action": {
