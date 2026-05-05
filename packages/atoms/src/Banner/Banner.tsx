@@ -144,6 +144,7 @@ export const Banner = ({
 
     return (
         <div
+            data-testid="banner"
             className={clsx(
                 `banner banner--${variant} w-full`,
                 BannerVariantsBordered.includes(variant as BannerVariants) ? 'border border-weak' : 'banner--no-border',
@@ -155,14 +156,14 @@ export const Banner = ({
             {...rest}
         >
             <div className="banner-inner p-1">
-                <div className="banner-main flex flex-nowrap gap-2 pl-1 py-1">
+                <div data-testid="banner-main" className="banner-main flex flex-nowrap gap-2 pl-1 py-1">
                     {!noIcon && icon && <BannerIcon icon={icon} />}
                     <span className={contentWrapperClassName}>
                         {children}
                         {link && <> {link}</>}
                     </span>
                 </div>
-                <div className="banner-action flex shrink-0 grow-0 mb-auto">
+                <div data-testid="banner-action" className="banner-action flex shrink-0 grow-0 mb-auto">
                     {action &&
                         React.isValidElement(action) &&
                         React.cloneElement(action, {
