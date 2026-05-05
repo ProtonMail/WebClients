@@ -183,7 +183,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
             <AuthModal
                 scope="password"
                 config={unlockPasswordChanges()}
-                {...rest}
+                open={rest.open}
                 onCancel={rest.onClose}
                 onSuccess={async () => {
                     setModel((prev) => ({
