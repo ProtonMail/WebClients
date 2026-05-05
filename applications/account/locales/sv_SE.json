@@ -13660,6 +13660,9 @@
       "Bookings, billings, and orders": [
         "Bokningar, faktureringar och beställningar"
       ],
+      "Brand your workspace": [
+        "Varumärk ditt arbetsutrymme"
+      ],
       "Browser": [
         "Webbläsare"
       ],
@@ -18348,14 +18351,8 @@
       "per month, billed every two years": [
         "per månad, faktureras vartannat år"
       ],
-      "Preparing your Recovery Kit": [
-        "Förbereder ditt återställningskit"
-      ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
-      ],
-      "Save your recovery kit to continue": [
-        "Spara ditt återställningskit för att fortsätta"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
@@ -19667,15 +19664,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller ${ downloadRecoveryKitSwitchButton } istället."
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Ditt **Återställningskit** låter dig återställa ditt ${ BRAND_NAME }-konto om du är utelåst."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Spara ditt återställningskit"
-      ],
       "Save your recovery phrase": [
         "Spara din återställningsfras"
       ]
@@ -20062,9 +20053,6 @@
       "Back to Safety Review": [
         "Tillbaka till säkerhetsgranskning"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Eftersom du återställer ditt lösenord kan ditt nuvarande återställningskit endast användas för att återställa data skapad innan din lösenordsåterställning."
-      ],
       "Can be used to regain access to your account and data": [
         "Kan användas för att återfå åtkomst till ditt konto och data"
       ],
@@ -20092,9 +20080,6 @@
       "Download ${ size }": [
         "Ladda ner ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Ladda ner ditt återställningskit"
-      ],
       "Email address": [
         "E-postadress"
       ],
@@ -20107,17 +20092,11 @@
       "Enable recovery by phone": [
         "Aktivera återställning via telefon"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Jag förstår att jag inte kommer att kunna återställa för närvarande låsta data med detta återställningskit"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt återställningskit att låta dig logga in och återställa dina data."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Om du tappar dina inloggningsuppgifter och behöver återställa ditt konto **är det absolut nödvändigt** att du har både en **kontoåterställnings- och dataåterställningsmetod** på plats, annars kanske du inte kommer åt din e-post, kontakter, filer eller lösenord."
@@ -20161,9 +20140,6 @@
       "Take action to secure your account": [
         "Vidta åtgärd för att säkra ditt konto"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Det var ett fel vid generering av ditt återställningskit"
-      ],
       "There was an error verifying your email": [
         "Det var ett fel att verifiera din e-post"
       ],
@@ -20191,12 +20167,6 @@
       "to recover your account if you're ever locked out": [
         "för att återställa ditt konto om du någon gång blir utelåst"
       ],
-      "Update your Recovery Kit": [
-        "Uppdatera ditt återställningskit"
-      ],
-      "Update your Recovery Kit?": [
-        "Uppdatera ditt återställningskit?"
-      ],
       "Verify": [
         "Verifiera"
       ],
@@ -20211,9 +20181,6 @@
       ],
       "Verify your recovery phone number": [
         "Verifiera ditt telefonnummer för återställning"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Vi stötte på ett fel vid genereringen av ditt återställningskit. Försök igen senare eller kontakta supporten om problemet kvarstår."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Vi stötte på ett fel vid verifieringen av din e-post. Försök igen senare eller kontakta supporten om problemet kvarstår."
@@ -20236,9 +20203,6 @@
       "You can disable this at any time.": [
         "Du kan inaktivera detta när som helst."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Du kan använda återställningsfrasen i detta återställningskit för att helt återställa ditt konto när du återställer ditt lösenord, så se till att du förvarar det någonstans säkert."
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Du kan använda din e-post för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
@@ -20247,9 +20211,6 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Du kan använda din telefon för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Du har tidigare laddat ner ett återställningskit. Att ladda ner ett nytt kommer **inaktivera det gamla**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Du har rekommenderade åtgärder för att skydda ditt konto ytterligare."
@@ -20313,12 +20274,6 @@
       ],
       "Your recovery email is set": [
         "Din e-post för återställning är inställd"
-      ],
-      "Your Recovery Kit": [
-        "Ditt återställningskit"
-      ],
-      "Your Recovery Kit is set": [
-        "Ditt återställningskit är inställt"
       ],
       "Your recovery methods": [
         "Dina återställningsmetoder"
@@ -23454,6 +23409,9 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Activate multi-user support": [
+        "Aktivera stöd för flera användare"
+      ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
       ],
@@ -23710,17 +23668,11 @@
       "Confirm": [
         "Bekräfta"
       ],
-      "Confirm address": [
-        "Bekräfta adress"
-      ],
       "Confirm downgrade": [
         "Bekräfta nedgradering"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekräfta förlust av ${ BRAND_NAME }-bonusar"
-      ],
-      "Confirm phone number": [
-        "Bekräfta telefonnummer"
       ],
       "Connect ${ name }": [
         "Anslut ${ name }"
@@ -24643,6 +24595,9 @@
       ],
       "Remove domain": [
         "Ta bort domän"
+      ],
+      "Remove email": [
+        "Ta bort e-post"
       ],
       "Remove forwarding address": [
         "Ta bort vidarebefordringsadress"
@@ -26254,12 +26209,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Är du säker på att du vill ta bort telefonnumret?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Är du säker på att du vill ta bort denna adress?"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."
       ],
@@ -26268,9 +26217,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna återställa ditt konto."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kunde inte logga in. Öppna webbläsartillägget ${ PASS_APP_NAME } och logga in därifrån."

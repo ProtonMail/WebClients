@@ -909,6 +909,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "En opplåsingssjekk for skrivebordet pågår allerede."
+      ],
       "A domain ownership must be verified first.": [
         "Et domeneeierskap må bekreftes først."
       ],
@@ -938,6 +941,21 @@
       ],
       "Authentication failure: ${ message }": [
         "Autentiseringsfeil: ${ message }"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "De biometriske låselegitimasjonene samsvarer ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisk låslegitimasjon ikke funnet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk lås er ikke konfigurert"
+      ],
+      "Biometric lock setup failed.": [
+        "Konfigurasjonen av den biometriske låsen mislyktes."
       ],
       "Cannot create alias (${ error }).": [
         "Kan ikke opprette alias (${ error })."
@@ -1012,6 +1030,9 @@
       ],
       "Emptying trash failed": [
         "Tømming av papirkurven mislyktes"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Kryptert kommunikasjon med skrivebordsappen ${ PASS_APP_NAME } mislyktes."
       ],
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
@@ -1253,6 +1274,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Noe gikk galt. Last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarte ikke i tide."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
       ],
@@ -1262,11 +1286,20 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
       ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er logget på med en annen konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
+      ],
       "The URL is in the list": [
         "Nettadressen er i listen"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det oppstod en feil under fjerning av den sikre koblingen. Prøv igjen om noen minutter."
+      ],
+      "This domain is already managed by your organization": [
+        "Dette domenet administreres allerede av organisasjonen din"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Dette kan oppstå etter en stund hvis du ikke bruker ${ PASS_SHORT_APP_NAME } eller tømmer historikken i Safari."
@@ -1512,6 +1545,9 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitasjon sendt",
         "${ payload.count } invitasjoner sendt"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktivert"
@@ -2052,6 +2088,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2536,6 +2576,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Ubegrenset antall hide-my-email-aliaser og avansert aliasadministrasjon"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Lås opp ${ PASS_APP_NAME } for å få tilgang til tilgangsnøklene dine"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Lås opp ${ PASS_APP_NAME } for å lagre denne tilgangsnøkkelen"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med biometri"

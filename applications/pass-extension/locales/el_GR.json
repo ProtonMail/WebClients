@@ -909,6 +909,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Ένας έλεγχος ξεκλειδώματος επιφάνειας εργασίας είναι ήδη σε εξέλιξη."
+      ],
       "A domain ownership must be verified first.": [
         "Η ιδιοκτησία του τομέα πρέπει πρώτα να επαληθευτεί."
       ],
@@ -1543,6 +1546,9 @@
         "${ payload.count } πρόσκληση στάλθηκε με επιτυχία",
         "${ payload.count } προσκλήσεις στάλθηκαν με επιτυχία"
       ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "Το ${ PROTON_SENTINEL_NAME } απενεργοποιήθηκε επιτυχώς"
       ],
@@ -2081,6 +2087,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"

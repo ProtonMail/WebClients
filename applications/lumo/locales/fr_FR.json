@@ -991,14 +991,14 @@
       "Refresh folder contents": [
         "Actualiser le contenu du dossier"
       ],
+      "Register here": [
+        "Inscrivez-vous ici"
+      ],
       "Report an issue": [
         "Signaler un problème"
       ],
       "Send message": [
         "Envoyer le message"
-      ],
-      "Share your thoughts": [
-        "Partagez votre avis"
       ],
       "Show safety information": [
         "Afficher les informations de sécurité"
@@ -1179,6 +1179,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "${ BRAND_NAME } mène actuellement une étude rémunérée sur les assistants IA. Ça vous intéresse ? Ça ne prend que 2 minutes. Si votre profil est sélectionné, vous gagnerez 80 £."
+      ],
       "Always enable web search for new conversations": [
         "Toujours activer la recherche web pour les nouvelles conversations"
       ],
@@ -1220,9 +1223,6 @@
       ],
       "Switch between light and dark mode": [
         "Basculer entre le mode clair et le mode sombre"
-      ],
-      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
-        "Votre expérience façonne ${ LUMO_SHORT_APP_NAME }. Dites-nous ce que vous pensez."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1322,6 +1322,12 @@
       ],
       "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
         "Vous avez atteint la limite de ${ limit } conversations dans ce projet. Supprimez-en quelques-unes avant d'en créer une nouvelle."
+      ],
+      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
+        "Vous avez atteint le maximum de ${ limit } conversations. Supprimez-en quelques-uns pour en créer un nouveau."
+      ],
+      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
+        "Vous avez atteint le maximum de ${ limit } fichiers dans ce chat. Supprimez certains fichiers avant d’en importer de nouveaux."
       ],
       "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
         "Vous avez atteint la limite de ${ limit } fichiers dans ce projet. Retirez-en quelques-uns avant d'en ajouter des nouveaux."
@@ -2279,9 +2285,6 @@
       "Generated code": [
         "Code généré"
       ],
-      "Got a minute?": [
-        "Vous avez une minute ?"
-      ],
       "Guest": [
         "Invité"
       ],
@@ -2344,6 +2347,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "Nous aimerions connaître votre avis."
       ],
       "What you can build": [
         "Ce que vous pouvez construire"

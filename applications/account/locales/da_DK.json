@@ -162,6 +162,9 @@
       "Add user": [
         "Tilføj bruger"
       ],
+      "Added ${ memberName } as group owner": [
+        "Tilføjede ${ memberName } som gruppeejer"
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -309,6 +312,9 @@
       "Confirm": [
         "Bekræft"
       ],
+      "Confirm email": [
+        "Bekræft e-mail"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
       ],
@@ -329,6 +335,9 @@
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Forbind din ${ BRAND_NAME }-konto"
+      ],
+      "Connect your email": [
+        "Forbind din e-mail"
       ],
       "Connected": [
         "Forbundet"
@@ -758,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Filtre anvendes. Dette kan tage et par minutter."
+      ],
+      "Finish": [
+        "Afslut"
       ],
       "Fit to window": [
         "Tilpas til vinduet"
@@ -1274,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Fjern denne notifikation"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Fjernede ${ memberName } som gruppeejer"
       ],
       "Rename": [
         "Omdøb"
@@ -5015,6 +5030,9 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blokér Google fra at profilere dig. Gmail kan ikke se hvad du laver i ${ MAIL_APP_NAME }"
       ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Overfør din e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Opbyg tillid og brandgenkendelse med professionelle e-mailadresser på dit eget domæne."
       ],
@@ -6965,6 +6983,9 @@
       ],
       "Invalid invitation link": [
         "Ugyldigt invitationslink"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Ugyldigt tilslutningslink. Kontakt din administrator."
       ],
       "Invalid name": [
         "Ugyldigt navn"
@@ -10128,6 +10149,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
       ],
+      "Code has been re-sent.": [
+        "Koden er sendt igen."
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -10684,6 +10708,9 @@
       ],
       "Gateways": [
         "Gateways"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Hvis du opretter en ny gendannelsessætning, deaktiveres din gamle gendannelsessætning."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
@@ -13034,8 +13061,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din gendannelsessætning er en serie af 12 tilfældigt genererede ord i en bestemt rækkefølge."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Din gendannelsessætning – opbevaret i dit gendannelsessæt – giver dig mulighed for at logge ind og gendanne din ${ BRAND_NAME }-konto, hvis du bliver låst ude. Den består af 12 ord og fungerer som en backup-adgangskode."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Din gendannelsessætning giver dig mulighed for at logge ind og gendanne din ${ BRAND_NAME }-konto, hvis du bliver låst ude. Den består af 12 ord og fungerer som en backup-adgangskode."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Dit planlagte abonnement starter ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -14753,6 +14780,9 @@
       ],
       "Pending": [
         "Afventende"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlige- og arbejds-e-mails, plus vigtige opdateringer og notifikationer"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -16711,6 +16741,9 @@
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
+      ],
+      "Advanced workspace security": [
+        "Avanceret sikkerhed for arbejdsområdet"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME }-produkter og funktioner"
@@ -18713,14 +18746,14 @@
       "per month, billed every two years": [
         "pr. måned, faktureres hvert andet år"
       ],
-      "Preparing your Recovery Kit": [
-        "Forbereder dit gendannelsessæt"
+      "Preparing your recovery phrase": [
+        "Forbereder din gendannelsessætning"
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
       ],
-      "Save your recovery kit to continue": [
-        "Gem dit gendannelseskit for at fortsætte"
+      "Save your recovery phrase to continue": [
+        "Gem din gendannelsessætning for at fortsætte"
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
@@ -20048,6 +20081,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Sørg for at opbevare din gendannelsessætning, så den er tilgængelig efter den er oprettet.** Af sikkerhedsmæssige årsager opbevarer vi ikke sætningen efter du har gemt dine ændringer, og du vil ikke kunne se den igen i ${ BRAND_NAME }-appen."
+      ],
       "copy recovery phrase": [
         "Kopiér gendannelsessætningen"
       ],
@@ -20069,14 +20105,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller brug ${ downloadRecoveryKitSwitchButton } i stedet."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Dit **Recovery Kit** giver dig mulighed for at genoprette din ${ BRAND_NAME } konto, hvis du er låst ude."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Din **gendannelsessætning** giver dig mulighed for at genoprette din ${ BRAND_NAME } konto, hvis du er låst ude."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Gem dit gendannelsessæt"
-      ],
       "Save your recovery phrase": [
         "Gem din gendannelsessætning"
       ]
@@ -20469,8 +20502,8 @@
       "Back to Safety Review": [
         "Tilbage til sikkerhedsgennemgang"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "På grund af nulstillingen af din adgangskode, kan de data, der blev oprettet før nulstillingen, kun gendannes med dit nuværende gendannelsessæt."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Fordi du nulstillede din adgangskode, kan din gendannelsessætning kun bruges til at gendanne de data, der blev oprettet før nulstillingen."
       ],
       "Can be used to regain access to your account and data": [
         "Kan bruges til at få adgang til din konto og dine data igen"
@@ -20499,8 +20532,8 @@
       "Download ${ size }": [
         "Hent ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Hent dit gendannelsessæt"
+      "Download your recovery phrase": [
+        "Download din gendannelsessætning"
       ],
       "Email address": [
         "E-mailadresse"
@@ -20514,8 +20547,8 @@
       "Enable recovery by phone": [
         "Aktiver gendannelse via telefonnummer"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Jeg er bekendt med, at jeg ikke kan gendanne allerede låste data med dette gendannelsessæt."
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Jeg er bekendt med, at jeg ikke kan gendanne allerede låste data med denne gendannelsessætning."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Hvis adgangskoden til ${ BRAND_NAME } bortfalder og skal nulstilles, får du fuld adgang til din ${ BRAND_NAME }, næste gang du logger ind på denne enhed med din nye adgangskode. Kontoen bliver gendannet."
@@ -20523,8 +20556,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Hvis adgangskoden til ${ BRAND_NAME } bortfalder og skal nulstilles, får du fuld adgang til din ${ BRAND_NAME }, næste gang du logger ind på denne enhed med din nye adgangskode. Kontoen bliver gendannet."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, gør dit gendannelsessæt det muligt for dig at logge på og gendanne dine data."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil din gendannelsessætning give dig mulighed for at logge ind og gendanne dine data."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister dine adgangsoplysninger og har brug for at nulstille din konto, **er det afgørende**, at du har både **konto- og datagendannelsesmetode** på plads, ellers kan du måske ikke tilgå nogen af dine e-mails, kontakter, filer eller adgangskoder."
@@ -20568,8 +20601,8 @@
       "Take action to secure your account": [
         "Gør noget for at sikre din konto"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Der opstod en fejl under oprettelsen af dit gendannelsessæt"
+      "There was an error generating your recovery phrase": [
+        "Der opstod en fejl under oprettelsen af din gendannelsessætning"
       ],
       "There was an error verifying your email": [
         "Der opstod en fejl ved bekræftelsen af din e-mail"
@@ -20598,11 +20631,11 @@
       "to recover your account if you're ever locked out": [
         "til at gendanne din konto, hvis du skulle blive låst ude"
       ],
-      "Update your Recovery Kit": [
-        "Opdater dit gendannelsessæt"
+      "Update your recovery phrase": [
+        "Opdater din gendannelsessætning"
       ],
-      "Update your Recovery Kit?": [
-        "Opdater dit gendannelsessæt?"
+      "Update your recovery phrase?": [
+        "Opdater din gendannelsessætning?"
       ],
       "Verify": [
         "Bekræft"
@@ -20619,8 +20652,8 @@
       "Verify your recovery phone number": [
         "Bekræft dit telefonnummer til gendannelse"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Vi stødte på en fejl under genereringen af dit gendannelsessæt. Prøv igen senere, eller kontakt supporten, hvis problemet fortsætter."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Vi stødte på en fejl under genereringen af din gendannelsessætning. Prøv igen senere eller kontakt supporten, hvis problemet fortsætter."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Vi stødte på en fejl ved bekræftelsen af din e-mail. Prøv igen senere eller kontakt supporten, hvis problemet fortsætter."
@@ -20643,9 +20676,6 @@
       "You can disable this at any time.": [
         "Du kan slå det fra når som helst."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Du kan bruge gendannelsessætningen i dette gendannelsessæt til at gendanne din konto helt, når du nulstiller din adgangskode, så husk at opbevare den et sikkert sted."
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Du kan bruge din e-mail til at tilgå din konto igen, hvis du glemmer din adgangskode."
       ],
@@ -20655,8 +20685,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Du kan bruge din gendannelsestelefon til at få adgang til din konto igen, hvis du har glemt din adgangskode."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Du har tidligere hentet et gendannelsessæt. Ved at hente et nyt, bliver det gamle **deaktiveret**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidligere hentet en gendannelsessætning. Ved at hente et nyt, bliver det gamle **deaktiveret**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Du har anbefalede handlinger for yderligere at beskytte din konto."
@@ -20721,12 +20751,6 @@
       "Your recovery email is set": [
         "Din gendannelsesmail er indstillet"
       ],
-      "Your Recovery Kit": [
-        "Dit gendannelsessæt"
-      ],
-      "Your Recovery Kit is set": [
-        "Dit gendannelsessæt er indstillet"
-      ],
       "Your recovery methods": [
         "Dine gendannelsesmetoder"
       ],
@@ -20747,6 +20771,12 @@
       ],
       "Your recovery phone number is:": [
         "Din telefonnummer til gendannelse er:"
+      ],
+      "Your recovery phrase": [
+        "Din gendannelsessætning"
+      ],
+      "Your recovery phrase is set": [
+        "Din gendannelsessætning er indstillet"
       ]
     },
     "saml: Action": {
@@ -23882,11 +23912,17 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activate multi-user support": [
+        "Aktivér understøttelse af flere brugere"
+      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
       "Activate user": [
         "Aktiver bruger"
+      ],
+      "Activate your email": [
+        "Aktivér din e-mail"
       ],
       "Activity monitor": [
         "Aktivitetsovervågning"
@@ -24138,17 +24174,11 @@
       "Confirm": [
         "Bekræft"
       ],
-      "Confirm address": [
-        "Bekræft adresse"
-      ],
       "Confirm downgrade": [
         "Bekræft nedgradering"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekræft tab af ${ BRAND_NAME }-bonusser"
-      ],
-      "Confirm phone number": [
-        "Bekræft telefonnummer"
       ],
       "Connect ${ name }": [
         "Forbind ${ name }"
@@ -24210,6 +24240,9 @@
       ],
       "Create a new gateway": [
         "Opret en ny gateway"
+      ],
+      "Create a new password": [
+        "Opret en ny adgangskode"
       ],
       "Create Gateway": [
         "Opret gateway"
@@ -24303,6 +24336,9 @@
       ],
       "Day theme": [
         "Dagstema"
+      ],
+      "Deactivate current phrase?": [
+        "Deaktivér nuværende sætning?"
       ],
       "Decrypt key": [
         "Dekryptér nøgle"
@@ -24439,6 +24475,9 @@
       ],
       "Download the mobile apps": [
         "Download appen til din mobil"
+      ],
+      "Download your recovery phrase": [
+        "Download din gendannelsessætning"
       ],
       "Downloads": [
         "Downloads"
@@ -25078,8 +25117,14 @@
       "Remove domain": [
         "Fjern domæne"
       ],
+      "Remove email": [
+        "Fjern e-mail"
+      ],
       "Remove forwarding address": [
         "Fjern videresendelsesadresse"
+      ],
+      "Remove recovery phone number": [
+        "Fjern telefonnummer til gendannelse"
       ],
       "Remove server?": [
         "Fjern server?"
@@ -25490,6 +25535,9 @@
       "Verify it’s you": [
         "Bekræft at det er dig"
       ],
+      "Verify your email": [
+        "Bekræft din e-mail"
+      ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
       ],
@@ -25513,6 +25561,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Vi har sendt dig en kode til din e-mail for at sikre os at det er dig. Koden er gyldig i 10 minutter. Indtast den nedenfor."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."
@@ -25564,6 +25615,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Dit ${ planTitle }-abonnement er startet"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din admin hos ${ orgName } inviterer dig til at aktivere din nye og sikre ${ BRAND_NAME }-konto og opdatere din adgangskode."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din admin inviterer dig til at aktivere din nye og sikre ${ BRAND_NAME }-konto og opdatere din adgangskode."
       ],
       "Your calendar link": [
         "Dit kalenderlink"
@@ -26727,11 +26784,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Er du sikker på, at du vil slette telefonnummeret?"
+      "Are you sure you want to remove your notification email?": [
+        "Er du sikker på at du vil fjerne din notifikations-e-mail?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på, at du vil slette denne adresse?"
+      "Are you sure you want to remove your recovery email?": [
+        "Er du sikker på at du vil fjerne din e-mail til gendannelse?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Er du sikker på at du vil fjerne dit telefonnummer til gendannelse?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ved at slette denne adresse vil du ikke længere kunne modtage daglige e-mailnotifikationer."
@@ -26742,8 +26802,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ved at slette denne adresse vil du ikke længere kunne gendanne din konto."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Ved at fjerne dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kunne ikke logge ind. Åbn venligst ${ PASS_APP_NAME } browserudvidelsen og log ind derfra."

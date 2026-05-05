@@ -835,6 +835,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Työpöydän lukituksen tarkistus on jo käynnissä."
+      ],
       "A domain ownership must be verified first.": [
         "Verkkotunnuksen omistajuus on vahvistettava ensin."
       ],

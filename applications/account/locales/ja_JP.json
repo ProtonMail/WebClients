@@ -17231,14 +17231,8 @@
       "per month, billed every two years": [
         "月額、2年ごとに請求"
       ],
-      "Preparing your Recovery Kit": [
-        "回復キットを準備中"
-      ],
       "Protected by Swiss privacy laws": [
         "スイスのプライバシー法によって保護されています"
-      ],
-      "Save your recovery kit to continue": [
-        "続行するにはリカバリ キットを保存してください"
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
@@ -18435,15 +18429,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "または、代わりに ${ downloadRecoveryKitSwitchButton } 。"
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "お客様の**リカバリーキット**を使用すると、ロックアウトされた場合に${ BRAND_NAME }アカウントを復元できます。"
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "回復キットを保存"
-      ],
       "Save your recovery phrase": [
         "回復用フレーズを保存"
       ]
@@ -18830,9 +18818,6 @@
       "Back to Safety Review": [
         "安全性レビューに戻る"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "パスワードをリセットしたため、現在のリカバリーキットはパスワードがリセットされる前に作成されたデータのみ復元できます。"
-      ],
       "Can be used to regain access to your account and data": [
         "アカウントとデータへのアクセスを回復するために使用できます"
       ],
@@ -18860,9 +18845,6 @@
       "Download ${ size }": [
         "${ size } をダウンロード"
       ],
-      "Download your Recovery Kit": [
-        "回復キットをダウンロード"
-      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -18875,17 +18857,11 @@
       "Enable recovery by phone": [
         "電話番号での回復を有効にする"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "現在ロックされたデータをこのリカバリーキットでは復旧はできないことを理解しています"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "もし${ BRAND_NAME }パスワードを忘れてリセットする必要がある場合、新しいパスワードを使用してこのデバイスでサインインすると、${ BRAND_NAME }アカウントへの完全なアクセスが復元されます。"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "もし${ BRAND_NAME }パスワードを忘れてリセットする必要がある場合、新しいパスワードを使用してこのデバイスでサインインすると、${ BRAND_NAME }アカウントへの完全なアクセスが復元されます。"
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME }アカウントからロックアウトされた場合、リカバリーキットを利用してサインインし、データの復元ができます。"
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "ログイン情報を失い、アカウントをリセットする必要がある場合、**アカウント回復とデータ回復**の方法を確立しておくことが**非常に重要です**。そうしないと、メール、連絡先、ファイル、またはパスワードにアクセスできなくなる可能性があります。"
@@ -18929,9 +18905,6 @@
       "Take action to secure your account": [
         "アカウントを保護するためのアクション"
       ],
-      "There was an error generating your Recovery Kit": [
-        "回復キットの生成中にエラーが発生しました"
-      ],
       "There was an error verifying your email": [
         "お客様のメールアドレスの確認中にエラーが発生しました"
       ],
@@ -18959,12 +18932,6 @@
       "to recover your account if you're ever locked out": [
         "締め出された場合にアカウントを回復するために"
       ],
-      "Update your Recovery Kit": [
-        "回復キットを更新"
-      ],
-      "Update your Recovery Kit?": [
-        "回復キットを更新しますか？"
-      ],
       "Verify": [
         "検証"
       ],
@@ -18979,9 +18946,6 @@
       ],
       "Verify your recovery phone number": [
         "回復用電話番号を確認してください"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "回復キットの生成中にエラーが発生しました。後ほど再度試してください、あるいは問題が続く場合はサポートに連絡をしてください。"
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "お客様のメールアドレスの確認中にエラーが発生しました。後ほど再度お試しいただくか、問題が続く場合はサポートにお問い合わせください。"
@@ -19004,9 +18968,6 @@
       "You can disable this at any time.": [
         "いつでも無効化することができます。"
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "この回復キットにあるリカバリーフレーズを使用すると、パスワードをリセットした際にアカウントを完全に復元することができるので、安全な場所に保管してください。"
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "パスワードを忘れた場合、お客様のメールアドレスを使用してアカウントへのアクセスを回復できます。"
       ],
@@ -19015,9 +18976,6 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "パスワードを忘れた場合、回復用電話番号を使用してアカウントへのアクセスを回復できます。"
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "以前にリカバリーキットはダウンロードされました。新しいものをダウンろどーすると、**古いものは非アクティベートされます**。"
       ],
       "You have recommended actions to safeguard your account further.": [
         "お客様のアカウントをさらに保護するための推奨事項があります。"
@@ -19081,12 +19039,6 @@
       ],
       "Your recovery email is set": [
         "回復用メールアドレスが設定されました"
-      ],
-      "Your Recovery Kit": [
-        "回復キット"
-      ],
-      "Your Recovery Kit is set": [
-        "回復キットが設定されました"
       ],
       "Your recovery methods": [
         "回復手段"
@@ -22184,17 +22136,11 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm address": [
-        "アドレスの確認"
-      ],
       "Confirm downgrade": [
         "ダウングレードの確認"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } ボーナスの損失を確認"
-      ],
-      "Confirm phone number": [
-        "電話番号の確認"
       ],
       "Connect ${ name }": [
         "${ name } に接続"
@@ -24555,12 +24501,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
-      "Are you sure you want to delete the phone number?": [
-        "本当にこの電話番号を削除しますか？"
-      ],
-      "Are you sure you want to delete this address?": [
-        "本当にこのアドレスを削除してよろしいですか？"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "このアドレスを削除することで、今後毎日のメール通知を受け取ることができなくなります。"
       ],
@@ -24569,9 +24509,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "このメールアドレスを削除すると、今後あなたのアカウントを回復することができなくなります。"
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "このインポートをキャンセルすると、後で再開することはできません。${ BRAND_NAME } は進行状況をすべてアカウントに保存しました。それでもキャンセルしますか？"
