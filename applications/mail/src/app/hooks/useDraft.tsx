@@ -5,6 +5,7 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useCache from '@proton/components/hooks/useCache';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
@@ -12,6 +13,8 @@ import type {
     MessageStateWithData,
     PartialMessageState,
 } from '@proton/mail/store/messages/messagesTypes';
+import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
@@ -53,6 +56,7 @@ export const useDraftVerifications = () => {
  * It will prepare an empty draft to be quickly reused and create other drafts with helpers
  */
 export const useDraft = () => {
+    const silentApi = useSilentApi();
     const cache = useCache();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
@@ -92,6 +96,14 @@ export const useDraft = () => {
             if (action === MESSAGE_ACTIONS.NEW && cache.has(CACHE_KEY) && referenceMessage === undefined) {
                 message = cloneDraft(cache.get(CACHE_KEY) as MessageStateWithData);
             } else {
+                if ([MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE_ACTIONS.FORWARD].includes(action)) {
+                    void sendTelemetryReport({
+                        api: silentApi,
+                        measurementGroup: TelemetryMeasurementGroups.mailExpandBlockquotes,
+                        event: TelemetryMailBlockquotes.createReply,
+                        delay: false,
+                    });
+                }
                 // This cast is quite dangerous but hard to remove
                 message = createNewDraft({
                     action,

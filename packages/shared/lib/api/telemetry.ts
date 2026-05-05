@@ -38,6 +38,7 @@ export enum TelemetryMeasurementGroups {
     mailListSettings = 'mail.web.list_settings',
     mailPostSignupOneDollar = 'mail.web.post_signup_one_dollar',
     mailPagingControls = 'mail.web.paging_controls',
+    mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
@@ -329,6 +330,11 @@ export enum TelemetryMailListEvents {
     clicksMailListActions = 'clicks_mail_actions',
 }
 
+export enum TelemetryMailBlockquotes {
+    expandComposerBlockquotes = 'expand_composer_blockquotes',
+    createReply = 'create_reply',
+}
+
 export enum TelemetrySmartBannerEvents {
     clickAppStoreLink = 'click_app_store_link',
 }
@@ -467,6 +473,7 @@ export type TelemetryEvents =
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
+    | TelemetryMailBlockquotes
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryVPNDrawerEvents
