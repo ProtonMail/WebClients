@@ -23,9 +23,9 @@ const makeEvent = (eventId: string, type = 'node_created'): DriveEvent => ({ typ
 
 async function registerAndGet(
     registry: TreeSubscriptionRegistry,
-    populatorId = 'pop-1'
+    populatorKind = 'pop-1'
 ): Promise<{ populator: ReturnType<typeof makeTestPopulator>; registration: IndexPopulatorRegistration }> {
-    const populator = makeTestPopulator(populatorId, SCOPE_ID);
+    const populator = makeTestPopulator(populatorKind, SCOPE_ID);
     await registry.register(SCOPE_ID, populator, 'evt-0', 0);
     const registration = registry.getRegistration(populator);
     if (!registration) {
