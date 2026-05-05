@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
-import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import { isDevOrBlack } from '@proton/utils/env';
 
@@ -19,6 +20,7 @@ import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetCo
 
 export const WrappedProtonMeetContainer = () => {
     const isGuest = useGuestContext();
+    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
@@ -37,10 +39,6 @@ export const WrappedProtonMeetContainer = () => {
 
     const getWebAudioMix = () => {
         if (isAudioMixingEnabled) {
-            if (isChromiumBased()) {
-                return true;
-            }
-
             return { audioContext: meetAudioContext.audioContext };
         }
 
@@ -100,6 +98,12 @@ export const WrappedProtonMeetContainer = () => {
             meetAudioContext?.cleanup();
         };
     }, [meetAudioContext, worker]);
+
+    useEffect(() => {
+        if (activeAudioOutputDeviceId) {
+            meetAudioContext.setSinkId(activeAudioOutputDeviceId);
+        }
+    }, [activeAudioOutputDeviceId, meetAudioContext]);
 
     return (
         <RoomContext.Provider value={room}>
