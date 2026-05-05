@@ -6,7 +6,7 @@ import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import { getNodeEntity } from '../../../../../../utils/sdk/getNodeEntity';
 import { Logger } from '../../../shared/Logger';
-import type { SearchDB } from '../../../shared/SearchDB';
+import type { IndexPopulatorState, SearchDB } from '../../../shared/SearchDB';
 import { SearchLibraryError } from '../../../shared/errors';
 import type { IndexPopulatorStatus, IndexingProgress, TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
@@ -30,8 +30,8 @@ export abstract class IndexPopulator {
         // This is how multi-index writes are made possible.
         readonly indexKind: IndexKind,
 
-        // Unique identifier for this IndexPopulator type e.g. "my-files"
-        readonly indexPopulatorId: string,
+        // Discriminator for this IndexPopulator type, e.g. "myfiles", "photos", "shared-with-me".
+        readonly indexPopulatorKind: string,
 
         // Schema version of this populator's output. Bumped when the shape of
         // indexed attributes changes, so stale entries can be detected and re-indexed.
@@ -78,15 +78,18 @@ export abstract class IndexPopulator {
         }
     }
 
-    static buildUid(indexPopulatorId: string, treeEventScopeId: TreeEventScopeId): string {
-        return `${indexPopulatorId}:${treeEventScopeId}`;
+    static buildUid(indexPopulatorKind: string, treeEventScopeId: TreeEventScopeId): string {
+        return `${indexPopulatorKind}:${treeEventScopeId}`;
     }
 
-    private async ensureState(db: SearchDB) {
+    private async ensureState(db: SearchDB): Promise<IndexPopulatorState> {
         const state = await db.getPopulatorState(this.getUid());
         if (!state) {
-            const newState = {
+            const newState: IndexPopulatorState = {
                 uid: this.getUid(),
+                indexKind: this.indexKind,
+                indexPopulatorKind: this.indexPopulatorKind,
+                treeEventScopeId: this.treeEventScopeId,
                 done: false,
                 generation: 1,
                 version: this.version,
@@ -99,7 +102,7 @@ export abstract class IndexPopulator {
     }
 
     getUid(): string {
-        return IndexPopulator.buildUid(this.indexPopulatorId, this.treeEventScopeId);
+        return IndexPopulator.buildUid(this.indexPopulatorKind, this.treeEventScopeId);
     }
 
     getVersion(): number {
@@ -353,7 +356,7 @@ export abstract class IndexPopulator {
             node: toCoreNodeFields(node),
             treeEventScopeId: this.treeEventScopeId,
             parentPath,
-            indexPopulatorId: this.indexPopulatorId,
+            indexPopulatorKind: this.indexPopulatorKind,
             indexPopulatorVersion: this.version,
             indexPopulatorGeneration: generation,
         });

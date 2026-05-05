@@ -22,7 +22,7 @@ const defaultParams = () => ({
     node: makeNode(),
     treeEventScopeId: 'scope-1' as TreeEventScopeId,
     parentPath: '/parent-uid-1/parent-uid-2',
-    indexPopulatorId: 'populator-1',
+    indexPopulatorKind: 'populator-1',
     indexPopulatorVersion: 1,
     indexPopulatorGeneration: 1,
 });
@@ -82,7 +82,7 @@ describe('createIndexEntry', () => {
         expect(attr('filenameText')).toEqual({ kind: 'text', value: 'documentpdf' });
         expect(attr('path')).toEqual({ kind: 'tag', value: '/parent-uid-1/parent-uid-2' });
         expect(attr('treeEventScopeId')).toEqual({ kind: 'tag', value: 'scope-1' });
-        expect(attr('indexPopulatorId')).toEqual({ kind: 'tag', value: 'populator-1' });
+        expect(attr('indexPopulatorKind')).toEqual({ kind: 'tag', value: 'populator-1' });
         expect(attr('nodeType')).toEqual({ kind: 'tag', value: 'file' });
         expect(attr('mediaType')).toEqual({ kind: 'tag', value: 'application/pdf' });
         expect(attr('sharedBy')).toEqual({ kind: 'tag', value: '' });

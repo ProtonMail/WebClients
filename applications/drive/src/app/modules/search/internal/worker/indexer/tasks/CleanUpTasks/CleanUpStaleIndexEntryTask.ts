@@ -17,13 +17,13 @@ const YIELD_EVENT_LOOP_EVERY = 200;
 /**
  * Removes stale entries from every IndexInstance.
  *
- * Policy: an entry is kept iff its (indexPopulatorId, treeEventScopeId, version,
- * generation) tuple matches a populator state, AND both its populator id and
- * tree-event-scope id are still in `ctx.activePopulatorIds` /
+ * Policy: an entry is kept iff its (indexPopulatorKind, treeEventScopeId, version,
+ * generation) tuple matches a populator state, AND both its populator kind and
+ * tree-event-scope id are still in `ctx.activePopulatorKinds` /
  * `ctx.activeTreeEventScopeIds`. Entries are deleted when they:
  *  - come from a previous generation / version,
  *  - have no matching populator state (orphan),
- *  - belong to a populator whose id is no longer active (removed, disabled, unregistered),
+ *  - belong to a populator kind that is no longer active (removed, disabled, unregistered),
  *  - belong to a tree-event-scope that is no longer active (volume unshared, etc.),
  *  - are missing one or more of the core classification attributes (unclassifiable).
  */
@@ -36,7 +36,7 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
         Logger.info(`Running: ${this.getUid()}`);
 
         const allStates = await ctx.db.getAllPopulatorStates();
-        const activePopulatorIds = new Set(ctx.activeIndexPopulators.map((p) => p.indexPopulatorId));
+        const activePopulatorKinds = new Set(ctx.activeIndexPopulators.map((p) => p.indexPopulatorKind));
         const activeTreeEventScopeIds = new Set(ctx.activeIndexPopulators.map((p) => p.treeEventScopeId));
 
         for (const instance of ctx.indexRegistry.getAll()) {
@@ -44,7 +44,7 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
                 await this.cleanupInstance(
                     instance,
                     allStates,
-                    activePopulatorIds,
+                    activePopulatorKinds,
                     activeTreeEventScopeIds,
                     ctx.signal
                 );
@@ -60,11 +60,11 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
     private async cleanupInstance(
         instance: IndexInstance,
         allStates: IndexPopulatorState[],
-        activePopulatorIds: Set<string>,
+        activePopulatorKinds: Set<string>,
         activeTreeEventScopeIds: Set<string>,
         signal: AbortSignal
     ): Promise<void> {
-        // Index states by uid ("populatorId:treeEventScopeId") for O(1) lookup per exported entry.
+        // Index states by uid ("populatorKind:treeEventScopeId") for O(1) lookup per exported entry.
         const stateByUid = new Map<string, IndexPopulatorState>();
         for (const state of allStates) {
             stateByUid.set(state.uid, state);
@@ -83,7 +83,7 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
 
         let processedSinceYield = 0;
         for await (const entry of exportEntries(instance, signal)) {
-            if (isEntryStale(entry, stateByUid, activePopulatorIds, activeTreeEventScopeIds)) {
+            if (isEntryStale(entry, stateByUid, activePopulatorKinds, activeTreeEventScopeIds)) {
                 pending.push(entry.identifier());
             }
             if (pending.length >= DEFAULT_BATCH_SIZE) {
@@ -107,16 +107,16 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
 function isEntryStale(
     entry: Entry,
     stateByUid: Map<string, IndexPopulatorState>,
-    activePopulatorIds: Set<string>,
+    activePopulatorKinds: Set<string>,
     activeTreeEventScopeIds: Set<string>
 ): boolean {
-    const populatorId = readSearchLibraryTagAttribute(entry, 'indexPopulatorId');
+    const populatorKind = readSearchLibraryTagAttribute(entry, 'indexPopulatorKind');
     const treeEventScopeId = readSearchLibraryTagAttribute(entry, 'treeEventScopeId');
     const version = readSearchLibraryIntegerAttribute(entry, 'indexPopulatorVersion');
     const generation = readSearchLibraryIntegerAttribute(entry, 'indexPopulatorGeneration');
 
     if (
-        populatorId === undefined ||
+        populatorKind === undefined ||
         treeEventScopeId === undefined ||
         version === undefined ||
         generation === undefined
@@ -124,19 +124,19 @@ function isEntryStale(
         // Malformed index entry: we can't classify it, so we mark it as stale.
         Logger.warn(
             `Malformed index entry ${entry.identifier()}: ` +
-                `indexPopulatorId=${populatorId}, treeEventScopeId=${treeEventScopeId}, ` +
+                `indexPopulatorKind=${populatorKind}, treeEventScopeId=${treeEventScopeId}, ` +
                 `indexPopulatorVersion=${version}, indexPopulatorGeneration=${generation}`
         );
         return true;
     }
 
-    const state = stateByUid.get(`${populatorId}:${treeEventScopeId}`);
+    const state = stateByUid.get(`${populatorKind}:${treeEventScopeId}`);
     if (!state) {
-        // Orphan: no state for this (populatorId, treeEventScopeId). Mark as stale.
+        // Orphan: no state for this (populatorKind, treeEventScopeId). Mark as stale.
         return true;
     }
 
-    if (!activePopulatorIds.has(populatorId)) {
+    if (!activePopulatorKinds.has(populatorKind)) {
         return true;
     }
     // Remove entries from untracked treeEventScopeId (volume unshared, recovery volume, ...)

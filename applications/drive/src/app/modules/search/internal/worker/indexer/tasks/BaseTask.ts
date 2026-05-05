@@ -7,7 +7,7 @@ import type { IndexPopulator } from '../indexPopulators/IndexPopulator';
 /**
  * Minimal view of an IndexPopulator exposed to tasks via TaskContext.
  */
-export type ActiveIndexPopulator = Pick<IndexPopulator, 'indexPopulatorId' | 'treeEventScopeId'>;
+export type ActiveIndexPopulator = Pick<IndexPopulator, 'indexPopulatorKind' | 'treeEventScopeId'>;
 
 export interface TaskContext {
     readonly bridge: MainThreadBridge;
