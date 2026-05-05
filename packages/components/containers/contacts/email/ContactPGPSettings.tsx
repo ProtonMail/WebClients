@@ -10,7 +10,7 @@ import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

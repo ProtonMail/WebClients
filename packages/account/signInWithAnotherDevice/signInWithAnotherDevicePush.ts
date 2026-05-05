@@ -1,5 +1,5 @@
 import type { QRCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
-import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import { getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';

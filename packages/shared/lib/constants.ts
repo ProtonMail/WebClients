@@ -1,4 +1,4 @@
-import type { enums } from '@proton/crypto';
+import type { enums } from '@protontech/crypto';
 
 import { Product } from './ProductEnum';
 import { sizeUnits } from './helpers/size';

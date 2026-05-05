@@ -1,6 +1,6 @@
 import { useApi } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import useStateRef from '@proton/hooks/useStateRef';
 import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
 import {

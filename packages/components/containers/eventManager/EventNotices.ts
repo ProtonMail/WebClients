@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy } from '@proton/crypto';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const getID = async (text: string) => {

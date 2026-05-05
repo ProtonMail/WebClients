@@ -1,6 +1,6 @@
-import type { PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import {

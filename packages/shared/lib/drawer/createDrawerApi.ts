@@ -1,4 +1,4 @@
-import { updateServerTime } from '@proton/crypto';
+import { updateServerTime } from '@protontech/crypto';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import noop from '@proton/utils/noop';
 

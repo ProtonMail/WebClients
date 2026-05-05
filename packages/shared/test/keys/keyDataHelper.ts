@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@proton/crypto';
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@protontech/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
 import type { Key, KeyGenConfig, KeyGenConfigV6 } from '../../lib/interfaces';

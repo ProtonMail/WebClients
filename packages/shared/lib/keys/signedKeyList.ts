@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

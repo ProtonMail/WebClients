@@ -1,5 +1,5 @@
-import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { type AesGcmCryptoKey, deriveKey, exportKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
+import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';

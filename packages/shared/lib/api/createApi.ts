@@ -1,4 +1,4 @@
-import { updateServerTime } from '@proton/crypto';
+import { updateServerTime } from '@protontech/crypto';
 
 import { configureApi } from '../api';
 import { getClientID } from '../apps/helper';

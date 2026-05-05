@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import type { AuthVersion } from '../../authentication/interface';
 import type { SHARE_MEMBER_STATE } from '../../drive/constants';

@@ -1,5 +1,5 @@
-import { CryptoProxy, type SessionKey } from '@proton/crypto';
-import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy, type SessionKey } from '@protontech/crypto';
+import { binaryStringToUint8Array } from '@protontech/crypto/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';

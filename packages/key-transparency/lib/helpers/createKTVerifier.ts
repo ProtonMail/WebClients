@@ -1,4 +1,4 @@
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import type {
     Address,
     Api,

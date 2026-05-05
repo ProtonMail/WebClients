@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { fetchSignedKeyLists } from '@proton/key-transparency/helpers';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';

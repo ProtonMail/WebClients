@@ -1,4 +1,4 @@
-import { ARGON2_PARAMS } from '@proton/crypto/lib';
+import { ARGON2_PARAMS } from '@protontech/crypto';
 import { getInitialAppState } from '@proton/pass/components/Core/AppStateManager';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';

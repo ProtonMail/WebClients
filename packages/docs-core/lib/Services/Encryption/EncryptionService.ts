@@ -1,14 +1,14 @@
-import type { MaybeArray, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto'
-import type { VERIFICATION_STATUS } from '@proton/crypto'
-import { CryptoProxy } from '@proton/crypto'
+import type { MaybeArray, PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto'
+import type { VERIFICATION_STATUS } from '@protontech/crypto'
+import { CryptoProxy } from '@protontech/crypto'
 import { SignedPlaintextContent } from '@proton/docs-proto'
 import {
   encryptDataWith16ByteIV as gcmEncryptWith16ByteIV,
   decryptData as gcmDecrypt,
   encryptData,
-} from '@proton/crypto/lib/subtle/aesGcm'
+} from '@protontech/crypto/subtle/aesGcm.ts'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'

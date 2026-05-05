@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { PACKAGE_TYPE, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import type { CONTACT_MIME_TYPES } from '../../lib/constants';

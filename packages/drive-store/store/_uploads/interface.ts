@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { ThumbnailType } from './media';

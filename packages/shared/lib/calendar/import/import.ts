@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, serverTime } from '@proton/crypto';
-import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy, serverTime } from '@protontech/crypto';
+import { binaryStringToUint8Array } from '@protontech/crypto/utils';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports, sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

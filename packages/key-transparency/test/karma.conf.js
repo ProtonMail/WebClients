@@ -1,6 +1,7 @@
 import karmaChromeLauncher from 'karma-chrome-launcher';
 import karmaJasmine from 'karma-jasmine';
 import karmaWebpack from 'karma-webpack';
+import { resolve as resolvePath } from 'path';
 import { chromium } from 'playwright';
 
 process.env.CHROME_BIN = chromium.executablePath();
@@ -35,10 +36,20 @@ export default (config) => {
                         use: [
                             {
                                 loader: 'ts-loader',
-                                options: { transpileOnly: true },
+                                options: {
+                                    /**
+                                     * An absolute path is needed here so that ts-loader sticks to this
+                                     * tsconfig file even for any TS entrypoing (incl. the TS node_modules).
+                                     * With just a filename, it expects and loads the tsconfig relative to
+                                     * each module's entrypoint otherwise.
+                                     * See https://github.com/TypeStrong/ts-loader#configfile
+                                     */
+                                    configFile: resolvePath('tsconfig.json'),
+                                    transpileOnly: true,
+                                },
                             },
                         ],
-                        exclude: /node_modules\/(?!.*(bip39|pmcrypto))/,
+                        exclude: /node_modules\/(?!.*(bip39|@protontech\/crypto))/,
                     },
                 ],
             },

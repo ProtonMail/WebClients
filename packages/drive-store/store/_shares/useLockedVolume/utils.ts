@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@protontech/crypto';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';

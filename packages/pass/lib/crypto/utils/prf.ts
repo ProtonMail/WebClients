@@ -1,5 +1,5 @@
-import { type AesGcmCryptoKey, deriveKey, exportKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import { isChromiumBased, isMinimumSafariVersion, isWindows } from '@proton/shared/lib/helpers/browser';

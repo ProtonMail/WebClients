@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 
 /** Encrypts an `Uint8Array` representation of a file/blob:

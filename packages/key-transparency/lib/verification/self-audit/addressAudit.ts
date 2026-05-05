@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4 } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {

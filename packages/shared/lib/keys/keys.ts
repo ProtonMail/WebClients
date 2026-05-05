@@ -1,6 +1,6 @@
-import type { KeyReference, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import type { KeyReference, PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
 import { extractEmailFromUserID } from '../helpers/email';
 import type { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';

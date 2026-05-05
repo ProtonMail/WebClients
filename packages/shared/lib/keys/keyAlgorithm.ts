@@ -1,4 +1,4 @@
-import type { AlgorithmInfo } from '@proton/crypto';
+import type { AlgorithmInfo } from '@protontech/crypto';
 import unique from '@proton/utils/unique';
 
 import type { KeyGenConfig, KeyGenConfigV6 } from '../interfaces';

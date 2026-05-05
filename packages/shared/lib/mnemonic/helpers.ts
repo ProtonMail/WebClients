@@ -1,5 +1,5 @@
-import { CryptoProxy } from '@proton/crypto';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { CryptoProxy } from '@protontech/crypto';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
 import { getHasMigratedAddressKeys } from '../../lib/keys';
 import { isPrivate, isSelf } from '../../lib/user/helpers';

@@ -1,6 +1,6 @@
 import { format as formatDate, fromUnixTime, getUnixTime, isSameDay } from 'date-fns';
 
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 
 export type DateFnsOptions = Parameters<typeof formatDate>[2];
 

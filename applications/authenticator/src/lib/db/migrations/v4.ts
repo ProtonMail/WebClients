@@ -15,7 +15,7 @@ import logger from 'proton-authenticator/lib/logger';
 import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
-import { importKey as importAesGcmKey, exportKey as exportAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { importKey as importAesGcmKey, exportKey as exportAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 

@@ -1,6 +1,6 @@
 import log from 'loglevel';
 
-import { type AesGcmCryptoKey, generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { type AesGcmCryptoKey, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { Logger, logger, loggerManager } from '../../lib/logger/logger';
 

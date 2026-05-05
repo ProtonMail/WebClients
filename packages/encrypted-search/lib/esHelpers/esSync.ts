@@ -1,6 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import chunk from '@proton/utils/chunk';
 

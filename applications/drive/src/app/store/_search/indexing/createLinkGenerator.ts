@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 
 import { LinkMapDecryptionBuffer } from './LinkDecryptionBuffer';
 import { LinkMapLoader } from './LinkMapLoader';

@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import { AES256 } from '../constants';
 

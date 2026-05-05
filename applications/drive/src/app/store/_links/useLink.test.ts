@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import { VERIFICATION_STATUS } from '@protontech/crypto';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';

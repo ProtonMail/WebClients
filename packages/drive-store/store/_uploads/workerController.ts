@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, serverTime, updateServerTime } from '@protontech/crypto';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
@@ -247,11 +247,11 @@ export class UploadWorker {
                 case 'generate_keys':
                     (async (data) => {
                         let module;
-                        // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded
+                        // Dynamic import is needed since we want openpgpjs to be loaded
                         // inside the worker, not in the main thread.
                         try {
                             module = await import(
-                                /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
+                                /* webpackChunkName: "crypto-worker-api" */ '@protontech/crypto/proxy/endpoint/api.ts'
                             );
                         } catch (e: any) {
                             console.warn(e);

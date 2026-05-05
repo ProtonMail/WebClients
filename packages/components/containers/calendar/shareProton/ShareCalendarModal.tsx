@@ -23,7 +23,7 @@ import { useKeyTransparencyContext } from '@proton/components/containers/keyTran
 import useApi from '@proton/components/hooks/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { addMember } from '@proton/shared/lib/api/calendars';

@@ -1,7 +1,6 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
-
-import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import { SearchDB } from '../../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../../shared/types';

@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { AES256, MIME_TYPES, PACKAGE_SIGNATURES_MODE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

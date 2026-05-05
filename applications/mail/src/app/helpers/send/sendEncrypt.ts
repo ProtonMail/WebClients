@@ -1,5 +1,5 @@
-import type { PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { AES256, MIME_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

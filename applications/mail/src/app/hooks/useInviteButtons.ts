@@ -7,7 +7,7 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ATTENDEE_MORE_ATTENDEES, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import type { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';

@@ -1,6 +1,6 @@
 import { sub } from 'date-fns';
 
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import metrics from '@proton/metrics';
 import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';

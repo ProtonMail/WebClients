@@ -1,4 +1,4 @@
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency/shared';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -26,7 +26,7 @@ import {
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

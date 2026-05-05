@@ -1,4 +1,4 @@
-import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import { ES_MAX_CACHE, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';

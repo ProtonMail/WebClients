@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { API_CODES } from '../constants';
 import type {

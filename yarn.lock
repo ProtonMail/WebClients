@@ -1921,7 +1921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.24.6, @babel/register@npm:^7.28.5":
+"@babel/register@npm:^7.24.6":
   version: 7.28.6
   resolution: "@babel/register@npm:7.28.6"
   dependencies:
@@ -2029,13 +2029,6 @@ __metadata:
   version: 0.4.2
   resolution: "@bjorn3/browser_wasi_shim@npm:0.4.2"
   checksum: 10/71de5a7ece0ef19765dc2b9aa757de8cd4156454892e01ebd5e9f70e788d47ef17e783cfaf25a5f78f293dafae6f8c2cd1a63761d41169cf216f03fab30dbf2f
-  languageName: node
-  linkType: hard
-
-"@blazediff/core@npm:1.9.1":
-  version: 1.9.1
-  resolution: "@blazediff/core@npm:1.9.1"
-  checksum: 10/6bb615f104da313934bcabc09627f3c803461bf85182453d5c13a6a354be4d32b35504b84f1043c21e95d0f6c0acb45083caeb72e72c1d6a76ca5e1f61f25510
   languageName: node
   linkType: hard
 
@@ -8084,7 +8077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:2.0.1, @noble/hashes@npm:^2.0.1":
+"@noble/hashes@npm:2.0.1":
   version: 2.0.1
   resolution: "@noble/hashes@npm:2.0.1"
   checksum: 10/f4d00e7564eb4ff4e6d16be151dd0e404aede35f91e4372b0a8a6ec888379c1dd1e02c721b480af8e7853bea9637185b5cb9533970c5b77d60c254ead0cfd8f7
@@ -8095,6 +8088,13 @@ __metadata:
   version: 1.8.0
   resolution: "@noble/hashes@npm:1.8.0"
   checksum: 10/474b7f56bc6fb2d5b3a42132561e221b0ea4f91e590f4655312ca13667840896b34195e2b53b7f097ec080a1fdd3b58d902c2a8d0fbdf51d2e238b53808a177e
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@noble/hashes@npm:2.2.0"
+  checksum: 10/b1b78bedc2a01394be047429f3d888905015fe8a09f1b7e43e0b5736b54133df62f73dcc73ede43af38e96e86156afb45b86973fdeaa95d9f0880333c3fc0907
   languageName: node
   linkType: hard
 
@@ -8622,7 +8622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.1.0, @openpgp/web-stream-tools@npm:~0.1.3":
+"@openpgp/web-stream-tools@npm:^0.1.0":
   version: 0.1.3
   resolution: "@openpgp/web-stream-tools@npm:0.1.3"
   peerDependencies:
@@ -8631,6 +8631,21 @@ __metadata:
     typescript:
       optional: true
   checksum: 10/3f7d00dd42807e9e0aa3809491c6ae6a46ff24b6d8dac85b7bcb97ed16c076139c83c32cc6b58a90ae6714862898a9f516c5a46de29c9d9f08521e7280eb4831
+  languageName: node
+  linkType: hard
+
+"@openpgp/web-stream-tools@npm:~0.3.1":
+  version: 0.3.1
+  resolution: "@openpgp/web-stream-tools@npm:0.3.1"
+  peerDependencies:
+    "@types/node": ">=18.0.0"
+    typescript: ">=4.7"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    typescript:
+      optional: true
+  checksum: 10/6a7ceb44cd223eb3986dc5674cad408dc4fbccf60fea3dd6405077721b841812c591449adc1f964b83036a0fc9fb8b0dd80dba8744874bf0f89432b05f1a010f
   languageName: node
   linkType: hard
 
@@ -10311,7 +10326,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
@@ -10320,6 +10334,7 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -10705,10 +10720,9 @@ __metadata:
     typescript: "npm:^6.0.2"
   peerDependencies:
     "@proton/cross-storage": "*"
-    "@proton/crypto": "*"
     "@proton/key-transparency": "*"
     "@proton/shared": "*"
-    "@proton/srp": "*"
+    "@protontech/crypto": "*"
     date-fns: ^2.30.0
   languageName: unknown
   linkType: soft
@@ -10721,23 +10735,6 @@ __metadata:
     "@proton/shared": "workspace:^"
     eslint: "npm:^9.39.4"
     typescript: "npm:^6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@proton/crypto@workspace:^, @proton/crypto@workspace:packages/crypto":
-  version: 0.0.0-use.local
-  resolution: "@proton/crypto@workspace:packages/crypto"
-  dependencies:
-    "@proton/eslint-config-proton": "workspace:^"
-    "@sentry/browser": "npm:^7.120.4"
-    "@vitest/browser-playwright": "npm:^4.1.1"
-    comlink: "npm:^4.4.2"
-    eslint: "npm:^9.39.4"
-    playwright: "npm:^1.58.2"
-    pmcrypto: "npm:@protontech/pmcrypto@^8.9.0"
-    prettier: "npm:^3.8.1"
-    typescript: "npm:^6.0.2"
-    vitest: "npm:^4.1.2"
   languageName: unknown
   linkType: soft
 
@@ -10757,7 +10754,6 @@ __metadata:
     "@babel/plugin-transform-class-properties": "npm:^7.28.5"
     "@lexical/yjs": "npm:0.30.0"
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/docs-proto": "workspace:^"
     "@proton/docs-shared": "workspace:^"
     "@proton/drive-store": "workspace:^"
@@ -10765,6 +10761,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^14.3.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -10843,7 +10840,6 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/encrypted-search": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
@@ -10858,11 +10854,11 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -10912,7 +10908,6 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
@@ -10921,11 +10916,11 @@ __metadata:
     "@proton/payments": "workspace:^"
     "@proton/raw-images": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@protontech/drive-sdk": "npm:^0.14.8"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -10958,12 +10953,12 @@ __metadata:
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@swc/jest": "npm:^0.2.39"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jasmine": "npm:^5.1.15"
@@ -10971,7 +10966,7 @@ __metadata:
     eslint-plugin-jasmine: "npm:^4.2.2"
     idb: "npm:^8.0.3"
     jest: "npm:^30.3.0"
-    playwright: "npm:^1.58.2"
+    playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
     react: "npm:^18.3.1"
     ts-jest: "npm:^29.4.9"
     ts-loader: "npm:^9.5.7"
@@ -11104,10 +11099,10 @@ __metadata:
   dependencies:
     "@noble/ed25519": "npm:1.7.5"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@types/jasmine": "npm:^5.1.15"
     eslint: "npm:^9.39.4"
     eslint-plugin-jasmine: "npm:^4.2.2"
@@ -11118,7 +11113,7 @@ __metadata:
     karma-jasmine: "npm:^5.1.0"
     karma-webpack: "npm:^5.0.1"
     pkijs: "npm:^3.4.0"
-    playwright: "npm:^1.58.2"
+    playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
     ts-loader: "npm:^9.5.7"
     typescript: "npm:^6.0.2"
     webpack: "npm:^5.105.4"
@@ -11208,10 +11203,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/meet@workspace:packages/meet"
   dependencies:
-    "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
+    "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@types/react": "npm:^18.3.28"
@@ -11351,16 +11346,15 @@ __metadata:
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/key-transparency": "workspace:^"
     "@proton/polyfill": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@protontech/pass-rust-core": "npm:0.28.8"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -11584,14 +11578,13 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.28.5"
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@proton/colors": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/sanitize": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@protontech/bip39": "npm:^1.1.0"
+    "@protontech/crypto": "npm:*"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
     "@protontech/telemetry": "npm:^1.0.5"
@@ -11624,7 +11617,7 @@ __metadata:
     karma-webpack: "npm:^5.0.1"
     loglevel: "npm:^1.9.2"
     papaparse: "npm:^5.5.3"
-    playwright: "npm:^1.58.2"
+    playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
     prettier: "npm:^3.8.1"
     ts-loader: "npm:^9.5.7"
     ttag: "npm:^1.8.12"
@@ -11645,25 +11638,6 @@ __metadata:
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
     prettier: "npm:^3.8.1"
-    typescript: "npm:^6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@proton/srp@workspace:^, @proton/srp@workspace:packages/srp":
-  version: 0.0.0-use.local
-  resolution: "@proton/srp@workspace:packages/srp"
-  dependencies:
-    "@babel/preset-env": "npm:^7.28.5"
-    "@babel/preset-typescript": "npm:^7.28.5"
-    "@babel/register": "npm:^7.28.5"
-    "@proton/crypto": "workspace:^"
-    "@proton/eslint-config-proton": "workspace:^"
-    bcryptjs: "npm:^3.0.3"
-    core-js: "npm:^3.49.0"
-    eslint: "npm:^9.39.4"
-    jest: "npm:^30.3.0"
-    prettier: "npm:^3.8.1"
-    ts-jest: "npm:^29.4.9"
     typescript: "npm:^6.0.2"
   languageName: unknown
   linkType: soft
@@ -11872,6 +11846,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@protontech/crypto@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@protontech/crypto@npm:2.0.1"
+  dependencies:
+    "@noble/hashes": "npm:^2.2.0"
+    "@openpgp/web-stream-tools": "npm:~0.3.1"
+    bcryptjs: "npm:^3.0.3"
+    comlink: "npm:^4.4.2"
+    core-js: "npm:^3.49.0"
+    jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
+    openpgp: "npm:@protontech/openpgp@~6.3.1-0"
+  checksum: 10/f3fe80240664c9b9f8d18725d3927b236adc566a9387e9958bd8d2740a2309778ee92cd6138e8b842d6ce1a0a1d12e9a508a28f9d97763525ccb07416fc0a70d
+  languageName: node
+  linkType: hard
+
 "@protontech/drive-sdk@npm:^0.14.8":
   version: 0.14.8
   resolution: "@protontech/drive-sdk@npm:0.14.8"
@@ -11923,18 +11912,6 @@ __metadata:
   version: 0.28.8
   resolution: "@protontech/pass-rust-core@npm:0.28.8"
   checksum: 10/adc5655ca9ef66e5bfa5b0544a00c298011478682fe12850f9bbf419aeb85dc458f2715c998e36eaf0a2f12afee190afeae2ebadaad761498890ffa52185551c
-  languageName: node
-  linkType: hard
-
-"@protontech/pmcrypto@npm:^8.9.0, pmcrypto@npm:@protontech/pmcrypto@^8.9.0":
-  version: 8.9.0
-  resolution: "@protontech/pmcrypto@npm:8.9.0"
-  dependencies:
-    "@noble/hashes": "npm:^2.0.1"
-    "@openpgp/web-stream-tools": "npm:~0.1.3"
-    jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
-    openpgp: "npm:@protontech/openpgp@~6.3.0"
-  checksum: 10/66cccb5f17937af5a4944f4a55d3130c09d90950fc96831230f303cc5ec52ac0b758a25265b6ef29de307bdba9df65a935f621cd8e3aea6b2bec3f6e99a47d9d
   languageName: node
   linkType: hard
 
@@ -14526,7 +14503,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@standard-schema/spec@npm:^1.0.0, @standard-schema/spec@npm:^1.1.0":
+"@standard-schema/spec@npm:^1.0.0":
   version: 1.1.0
   resolution: "@standard-schema/spec@npm:1.1.0"
   checksum: 10/a209615c9e8b2ea535d7db0a5f6aa0f962fd4ab73ee86a46c100fb78116964af1f55a27c1794d4801e534a196794223daa25ff5135021e03c7828aa3d95e1763
@@ -17784,41 +17761,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/browser-playwright@npm:^4.1.1":
-  version: 4.1.2
-  resolution: "@vitest/browser-playwright@npm:4.1.2"
-  dependencies:
-    "@vitest/browser": "npm:4.1.2"
-    "@vitest/mocker": "npm:4.1.2"
-    tinyrainbow: "npm:^3.1.0"
-  peerDependencies:
-    playwright: "*"
-    vitest: 4.1.2
-  peerDependenciesMeta:
-    playwright:
-      optional: false
-  checksum: 10/69e559bbcb7c700b45cd89e8f59bf5d6ec131ddf8ab15d0dbfe0d8427954825a58d249c44a652cf44e736b7012abccd2442b28bfc2e934d5e7d09c5e5777f164
-  languageName: node
-  linkType: hard
-
-"@vitest/browser@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/browser@npm:4.1.2"
-  dependencies:
-    "@blazediff/core": "npm:1.9.1"
-    "@vitest/mocker": "npm:4.1.2"
-    "@vitest/utils": "npm:4.1.2"
-    magic-string: "npm:^0.30.21"
-    pngjs: "npm:^7.0.0"
-    sirv: "npm:^3.0.2"
-    tinyrainbow: "npm:^3.1.0"
-    ws: "npm:^8.19.0"
-  peerDependencies:
-    vitest: 4.1.2
-  checksum: 10/b50ad6c8931629711e20c853375fbf57827fde10b570e2a60ede1e70a62b96657ab4caaf9cfb09844ebd2db4d65bb793dcec7a585d97f5524f5394e9f07ef818
-  languageName: node
-  linkType: hard
-
 "@vitest/coverage-v8@npm:3.2.4":
   version: 3.2.4
   resolution: "@vitest/coverage-v8@npm:3.2.4"
@@ -17870,20 +17812,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/expect@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/expect@npm:4.1.2"
-  dependencies:
-    "@standard-schema/spec": "npm:^1.1.0"
-    "@types/chai": "npm:^5.2.2"
-    "@vitest/spy": "npm:4.1.2"
-    "@vitest/utils": "npm:4.1.2"
-    chai: "npm:^6.2.2"
-    tinyrainbow: "npm:^3.1.0"
-  checksum: 10/536c5a8903927e324bbb66967be4e0ec2ec4ff6234f0b8fe20987841b0705c931c7e3ce2e61c7665f4ded65ba736de6cda8d2d37ee114efeedb187ca5d597ea1
-  languageName: node
-  linkType: hard
-
 "@vitest/mocker@npm:3.2.4":
   version: 3.2.4
   resolution: "@vitest/mocker@npm:3.2.4"
@@ -17903,40 +17831,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/mocker@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/mocker@npm:4.1.2"
-  dependencies:
-    "@vitest/spy": "npm:4.1.2"
-    estree-walker: "npm:^3.0.3"
-    magic-string: "npm:^0.30.21"
-  peerDependencies:
-    msw: ^2.4.9
-    vite: ^6.0.0 || ^7.0.0 || ^8.0.0
-  peerDependenciesMeta:
-    msw:
-      optional: true
-    vite:
-      optional: true
-  checksum: 10/1d7976e19ef168357aba2ca41cd8db86236a98dfb2209bd3152a3a20e9a5b8cbfd8f73356c43a934b384d3b4c7a63835fb1037d3f56a7824faa838331eaa214e
-  languageName: node
-  linkType: hard
-
 "@vitest/pretty-format@npm:3.2.4, @vitest/pretty-format@npm:^3.2.4":
   version: 3.2.4
   resolution: "@vitest/pretty-format@npm:3.2.4"
   dependencies:
     tinyrainbow: "npm:^2.0.0"
   checksum: 10/8dd30cbf956e01fbab042fe651fb5175d9f0cd00b7b569a46cd98df89c4fec47dab12916201ad6e09a4f25f2a2ec8927a4bfdc61118593097f759c90b18a51d4
-  languageName: node
-  linkType: hard
-
-"@vitest/pretty-format@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/pretty-format@npm:4.1.2"
-  dependencies:
-    tinyrainbow: "npm:^3.1.0"
-  checksum: 10/a07a6023c52b25be5c75fc05bb3317629390cc1b50eae6cbea91ba4c13193ec88e54abaa56b46b40ddb8a6a4558d667f2ba0e1cf2ee2d0e32b463244f3002aa7
   languageName: node
   linkType: hard
 
@@ -17962,16 +17862,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/runner@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/runner@npm:4.1.2"
-  dependencies:
-    "@vitest/utils": "npm:4.1.2"
-    pathe: "npm:^2.0.3"
-  checksum: 10/13fd019a63ee3225420474cbd1ca0ae7c5c2dcdd241f2a958ca45731c10de36131f15303ae8ab1196133ec4e955b7c6de658c7b5e19736d550f310c8195fa9b2
-  languageName: node
-  linkType: hard
-
 "@vitest/snapshot@npm:1.6.1":
   version: 1.6.1
   resolution: "@vitest/snapshot@npm:1.6.1"
@@ -17994,18 +17884,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/snapshot@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/snapshot@npm:4.1.2"
-  dependencies:
-    "@vitest/pretty-format": "npm:4.1.2"
-    "@vitest/utils": "npm:4.1.2"
-    magic-string: "npm:^0.30.21"
-    pathe: "npm:^2.0.3"
-  checksum: 10/9d124412dbe44db43ca5277180bf5fe5dad7373218a177830bba631b53d225f7d4de368a20d6f5740ec07402e9e4dd179609db2b2f691d2d8b02f1bdbfd8c1a3
-  languageName: node
-  linkType: hard
-
 "@vitest/spy@npm:1.6.1":
   version: 1.6.1
   resolution: "@vitest/spy@npm:1.6.1"
@@ -18021,13 +17899,6 @@ __metadata:
   dependencies:
     tinyspy: "npm:^4.0.3"
   checksum: 10/7d38c299f42a8c7e5e41652b203af98ca54e63df69c3b072d0e401d5a57fbbba3e39d8538ac1b3022c26718a6388d0bcc222bc2f07faab75942543b9247c007d
-  languageName: node
-  linkType: hard
-
-"@vitest/spy@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/spy@npm:4.1.2"
-  checksum: 10/e20e417ac430fee34e4be58802b2eb31e1c1163296a8921c0878be14e1ae77c7a7cae1b9b515d56fe623e05ee21b092aff7eb5e0d412f656650b72ecd02bb30a
   languageName: node
   linkType: hard
 
@@ -18068,17 +17939,6 @@ __metadata:
     loupe: "npm:^3.1.4"
     tinyrainbow: "npm:^2.0.0"
   checksum: 10/7f12ef63bd8ee13957744d1f336b0405f164ade4358bf9dfa531f75bbb58ffac02bf61aba65724311ddbc50b12ba54853a169e59c6b837c16086173b9a480710
-  languageName: node
-  linkType: hard
-
-"@vitest/utils@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@vitest/utils@npm:4.1.2"
-  dependencies:
-    "@vitest/pretty-format": "npm:4.1.2"
-    convert-source-map: "npm:^2.0.0"
-    tinyrainbow: "npm:^3.1.0"
-  checksum: 10/854decf0eb639758d012c9aa53c3d7aed547e37c05ece6704d5f53035be77f704a24973ed95089926e1768c0b55902d42c4438660788e7a0f0e80d0fda1c713b
   languageName: node
   linkType: hard
 
@@ -18416,6 +18276,15 @@ __metadata:
     d3-selection: "npm:^3.0.0"
     d3-zoom: "npm:^3.0.0"
   checksum: 10/6fada3ea584b41007a8f10160046665a940a4302b85f7ccbd2169bf1109a2e070ddbededd3f4f4e2479234e9bb0a500406c7718f6d4b5328575be59bc6655a84
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/types@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@yarnpkg/types@npm:4.0.1"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10/f391763cd955356e9aad551b29e8de7bbf68a6c8992af7cdc950ccf53f8aff6695ad81aa4c8a8e7c582786a840a4f30617732e2cb49f4109b971a9242c31c9fc
   languageName: node
   linkType: hard
 
@@ -22186,13 +22055,6 @@ __metadata:
     loupe: "npm:^3.1.0"
     pathval: "npm:^2.0.0"
   checksum: 10/0d0ef63106083b05c7ba510697cd9991a02b8df5984a7d010ab4af10205c7a1f27d1c06bfa4679540894295ac4dcc22aa2a281e2e4cfe5133c1db379626689a2
-  languageName: node
-  linkType: hard
-
-"chai@npm:^6.2.2":
-  version: 6.2.2
-  resolution: "chai@npm:6.2.2"
-  checksum: 10/13cda42cc40aa46da04a41cf7e5c61df6b6ae0b4e8a8c8b40e04d6947e4d7951377ea8c14f9fa7fe5aaa9e8bd9ba414f11288dc958d4cee6f5221b9436f2778f
   languageName: node
   linkType: hard
 
@@ -28192,7 +28054,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect-type@npm:^1.2.1, expect-type@npm:^1.3.0":
+"expect-type@npm:^1.2.1":
   version: 1.3.0
   resolution: "expect-type@npm:1.3.0"
   checksum: 10/a5fada3d0c621649261f886e7d93e6bf80ce26d8a86e5d517e38301b8baec8450ab2cb94ba6e7a0a6bf2fc9ee55f54e1b06938ef1efa52ddcfeffbfa01acbbcc
@@ -39202,10 +39064,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~6.3.0":
-  version: 6.3.0
-  resolution: "@protontech/openpgp@npm:6.3.0"
-  checksum: 10/f2ff906338107224869beb1e3d6d92b9671f40234812082ead5b60bd9ebf576c064ce852aaf7d9e609c6aae39957c474266b8d01582740d1a7a78837ec48fc46
+"openpgp@npm:@protontech/openpgp@~6.3.1-0":
+  version: 6.3.1-0
+  resolution: "@protontech/openpgp@npm:6.3.1-0"
+  checksum: 10/9f78cf2ed2dbb8be39ce8767985a1dc04c9c85b70e01bf23865666f9c7ebbfe5ec2c8a9024742ba76cfe9c2767de5d92af8ca48f7a7d1f63fda9ca2900a14019
   languageName: node
   linkType: hard
 
@@ -40563,7 +40425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.58.2, playwright@npm:^1.58.2":
+"playwright@npm:1.58.2":
   version: 1.58.2
   resolution: "playwright@npm:1.58.2"
   dependencies:
@@ -40575,6 +40437,21 @@ __metadata:
   bin:
     playwright: cli.js
   checksum: 10/d89d6c8a32388911b9aff9ee0f1a90076219f15c804f2b287db048b9e9cde182aea3131fac1959051d25189ed4218ec4272b137c83cd7f9cd24781cbc77edd86
+  languageName: node
+  linkType: hard
+
+"playwright@patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch":
+  version: 1.58.2
+  resolution: "playwright@patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch::version=1.58.2&hash=1b9358"
+  dependencies:
+    fsevents: "npm:2.3.2"
+    playwright-core: "npm:1.58.2"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 10/15e9a38eb7da9b9f483aeb60f6d3984f90452b3d7c39aaa9d7620d360e6e51ec5f800af760297898f0d5945082c530d14142ca41d52e701588431133165709dc
   languageName: node
   linkType: hard
 
@@ -40658,13 +40535,6 @@ __metadata:
   version: 0.5.5
   resolution: "plural-forms@npm:0.5.5"
   checksum: 10/73998fa85b619aafc5383d2e7d4ce70e3a6903fc444c1456d474d37db948208f1a8f762918e832637ce61f25554afee1ae74b7c83bd583d85ca3cb4074628302
-  languageName: node
-  linkType: hard
-
-"pngjs@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "pngjs@npm:7.0.0"
-  checksum: 10/e843ebbb0df092ee0f3a3e7dbd91ff87a239a4e4c4198fff202916bfb33b67622f4b83b3c29f3ccae94fcb97180c289df06068624554f61686fe6b9a4811f7db
   languageName: node
   linkType: hard
 
@@ -41494,7 +41364,6 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -41514,13 +41383,13 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@proton/vpn": "workspace:^"
     "@proton/wallet": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -41614,7 +41483,6 @@ __metadata:
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
@@ -41623,6 +41491,7 @@ __metadata:
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@protontech/authenticator-rust-core": "npm:^0.28.8"
+    "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@tanstack/react-virtual": "npm:^3.13.23"
     "@tauri-apps/api": "npm:^2.10.1"
@@ -41673,7 +41542,6 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/encrypted-search": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
@@ -41692,11 +41560,11 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -41769,7 +41637,6 @@ __metadata:
     "@lexical/yjs": "npm:0.30.0"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/docs-shared": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -41782,6 +41649,7 @@ __metadata:
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@rowsncolumns/charts": "workspace:^"
     "@rowsncolumns/functions": "workspace:^"
     "@rowsncolumns/icons": "workspace:^"
@@ -41900,7 +41768,6 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/drive": "workspace:^"
     "@proton/encrypted-search": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -41921,11 +41788,11 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@redux-devtools/extension": "npm:^3.3.0"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@tanstack/react-virtual": "npm:^3.13.23"
@@ -41986,13 +41853,12 @@ __metadata:
     "@playwright/test": "npm:^1.58.2"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/prettier-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@tpe/loki-client": "npm:0.2.1"
     "@tpe/measurement-sdk": "npm:0.2.2"
     "@tpe/minimum-test-set": "npm:0.1.2"
@@ -42019,6 +41885,7 @@ __metadata:
     moment: "npm:^2.30.1"
     node-stream-zip: "npm:^1.15.0"
     pdf-parse: "npm:^1.1.4"
+    playwright: "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch"
     prettier: "npm:^3.8.1"
     prom-client: "npm:^15.1.3"
     rimraf: "npm:^6.1.3"
@@ -42094,7 +41961,6 @@ __metadata:
     "@msgpack/msgpack": "npm:^3.1.3"
     "@peculiar/webcrypto": "npm:^1.5.0"
     "@proton/atoms": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/drive": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
@@ -42102,6 +41968,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.12.2"
@@ -42201,7 +42068,6 @@ __metadata:
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
-    "@proton/crypto": "workspace:^"
     "@proton/encrypted-search": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
@@ -42223,14 +42089,13 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@protontech/crypto": "npm:*"
     "@protontech/mimemessage": "npm:~v1.1.4"
-    "@protontech/pmcrypto": "npm:^8.9.0"
     "@protontech/tidy-url": "npm:^1.18.5"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/dom": "npm:^10.4.1"
@@ -42347,7 +42212,6 @@ __metadata:
     "@proton/atoms": "workspace:packages/atoms"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/meet": "workspace:packages/meet"
@@ -42358,6 +42222,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@types/react": "npm:^18.3.28"
@@ -42625,7 +42490,6 @@ __metadata:
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
@@ -42634,6 +42498,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@proton/wallet": "workspace:packages/wallet"
+    "@protontech/crypto": "npm:*"
     "@ramp-network/ramp-instant-sdk": "npm:^4.0.8"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -45952,6 +45817,7 @@ __metadata:
     "@trivago/prettier-plugin-sort-imports": "npm:^6.0.2"
     "@types/global-types-monorepo": "workspace:^"
     "@types/jest-when": "npm:^3.5.5"
+    "@yarnpkg/types": "npm:^4.0.1"
     husky: "npm:^9.1.7"
     is-ci: "npm:^4.1.0"
     lint-staged: "npm:^16.4.0"
@@ -47616,13 +47482,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"std-env@npm:^4.0.0-rc.1":
-  version: 4.0.0
-  resolution: "std-env@npm:4.0.0"
-  checksum: 10/19ef21cd85da52dc1178288d1b69e242b6579c0a76ddba2374f859aa58678797ec4a34c4f1fe6b9007a032e04d6fd3fca4e27349c88809265a9cbd90d924203f
-  languageName: node
-  linkType: hard
-
 "stdin-discarder@npm:^0.2.2":
   version: 0.2.2
   resolution: "stdin-discarder@npm:0.2.2"
@@ -49118,7 +48977,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinyexec@npm:^1.0.1, tinyexec@npm:^1.0.2, tinyexec@npm:^1.0.4":
+"tinyexec@npm:^1.0.1, tinyexec@npm:^1.0.4":
   version: 1.0.4
   resolution: "tinyexec@npm:1.0.4"
   checksum: 10/ccebe4044eef6fa5050929df7862fda70b4fb700f15d94aef8ae6109b9d194dbc3a990125d99944fd25b90fe2115e1927f055b909a604c571a81b647ede5757a
@@ -49167,13 +49026,6 @@ __metadata:
   version: 2.0.0
   resolution: "tinyrainbow@npm:2.0.0"
   checksum: 10/94d4e16246972614a5601eeb169ba94f1d49752426312d3cf8cc4f2cc663a2e354ffc653aa4de4eebccbf9eeebdd0caef52d1150271fdfde65d7ae7f3dcb9eb5
-  languageName: node
-  linkType: hard
-
-"tinyrainbow@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "tinyrainbow@npm:3.1.0"
-  checksum: 10/4c2c01dde1e5bb9a74973daaae141d4d733d246280b2f9a7f6a9e7dd8e940d48b2580a6086125278777897bc44635d6ccec5f9f563c2179dd2129f4542d0ec05
   languageName: node
   linkType: hard
 
@@ -51520,7 +51372,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.0.0 || ^7.0.0 || ^8.0.0, vite@npm:^8.0.5":
+"vite@npm:^8.0.5":
   version: 8.0.5
   resolution: "vite@npm:8.0.5"
   dependencies:
@@ -51692,68 +51544,6 @@ __metadata:
   bin:
     vitest: vitest.mjs
   checksum: 10/f10bbce093ecab310ecbe484536ef4496fb9151510b2be0c5907c65f6d31482d9c851f3182531d1d27d558054aa78e8efd9d4702ba6c82058657e8b6a52507ee
-  languageName: node
-  linkType: hard
-
-"vitest@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "vitest@npm:4.1.2"
-  dependencies:
-    "@vitest/expect": "npm:4.1.2"
-    "@vitest/mocker": "npm:4.1.2"
-    "@vitest/pretty-format": "npm:4.1.2"
-    "@vitest/runner": "npm:4.1.2"
-    "@vitest/snapshot": "npm:4.1.2"
-    "@vitest/spy": "npm:4.1.2"
-    "@vitest/utils": "npm:4.1.2"
-    es-module-lexer: "npm:^2.0.0"
-    expect-type: "npm:^1.3.0"
-    magic-string: "npm:^0.30.21"
-    obug: "npm:^2.1.1"
-    pathe: "npm:^2.0.3"
-    picomatch: "npm:^4.0.3"
-    std-env: "npm:^4.0.0-rc.1"
-    tinybench: "npm:^2.9.0"
-    tinyexec: "npm:^1.0.2"
-    tinyglobby: "npm:^0.2.15"
-    tinyrainbow: "npm:^3.1.0"
-    vite: "npm:^6.0.0 || ^7.0.0 || ^8.0.0"
-    why-is-node-running: "npm:^2.3.0"
-  peerDependencies:
-    "@edge-runtime/vm": "*"
-    "@opentelemetry/api": ^1.9.0
-    "@types/node": ^20.0.0 || ^22.0.0 || >=24.0.0
-    "@vitest/browser-playwright": 4.1.2
-    "@vitest/browser-preview": 4.1.2
-    "@vitest/browser-webdriverio": 4.1.2
-    "@vitest/ui": 4.1.2
-    happy-dom: "*"
-    jsdom: "*"
-    vite: ^6.0.0 || ^7.0.0 || ^8.0.0
-  peerDependenciesMeta:
-    "@edge-runtime/vm":
-      optional: true
-    "@opentelemetry/api":
-      optional: true
-    "@types/node":
-      optional: true
-    "@vitest/browser-playwright":
-      optional: true
-    "@vitest/browser-preview":
-      optional: true
-    "@vitest/browser-webdriverio":
-      optional: true
-    "@vitest/ui":
-      optional: true
-    happy-dom:
-      optional: true
-    jsdom:
-      optional: true
-    vite:
-      optional: false
-  bin:
-    vitest: vitest.mjs
-  checksum: 10/6b037387e59d403f6570f887f6ac96b81ff6e768dbd02d32a812ddff5bdebef022dd6d9f20b84fb9535866e0c5dbdf80e6705cc428b6a8f8a8e67e1335235848
   languageName: node
   linkType: hard
 

@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useNotifications } from '@proton/components';
-import type { PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import noop from '@proton/utils/noop';
 
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
@@ -45,7 +45,7 @@ jest.mocked(useNotifications).mockReturnValue({
     createNotification: mockedCreateNotification,
 } as any);
 
-jest.mock('@proton/crypto');
+jest.mock('@protontech/crypto');
 const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
 
 jest.mock('./helpers/useGetPublicKeysForEmail');

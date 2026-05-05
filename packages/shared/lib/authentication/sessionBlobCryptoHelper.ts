@@ -1,5 +1,5 @@
-import { decryptData, encryptData, encryptDataWith16ByteIV } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { decryptData, encryptData, encryptDataWith16ByteIV } from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { stringToUint8Array, uint8ArrayToString } from '../helpers/encoding';
 

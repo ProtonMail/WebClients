@@ -1,6 +1,6 @@
 import type { ScopeContext } from '@sentry/types';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import type { VerificationData } from '../interface';

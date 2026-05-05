@@ -2,7 +2,7 @@ import type { MaybeNode, NodeEntity } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { createMockNodeEntity } from '../../../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../../../shared/SearchDB';

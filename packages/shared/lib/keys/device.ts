@@ -1,9 +1,9 @@
 import { base32crockford } from '@scure/base';
 import { c } from 'ttag';
 
-import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
-import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
+import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUser } from '@proton/shared/lib/api/user';
 import { API_CODES } from '@proton/shared/lib/constants';

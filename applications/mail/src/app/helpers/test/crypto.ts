@@ -1,6 +1,6 @@
 import { getModelState } from '@proton/account/test';
-import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
@@ -175,7 +175,7 @@ export const decryptSessionKey = async (keyPacket: string, privateKeys: PrivateK
  */
 export async function setupCryptoProxyForTesting() {
     // dynamic import to avoid loading the library unless required
-    const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+    const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
     CryptoApi.init({});
     CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }

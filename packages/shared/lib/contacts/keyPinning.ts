@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CONTACT_CARD_TYPE } from '../constants';

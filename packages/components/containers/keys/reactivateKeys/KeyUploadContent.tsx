@@ -9,7 +9,7 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';

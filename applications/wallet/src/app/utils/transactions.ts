@@ -11,7 +11,7 @@ import type {
     WasmTransactionDetails,
     WasmTxOut,
 } from '@proton/andromeda';
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address, DecryptedAddressKey, DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
