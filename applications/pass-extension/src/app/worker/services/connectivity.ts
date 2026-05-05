@@ -20,7 +20,7 @@ export const createConnectivityService = (): ConnectivityService => {
     };
 
     service.subscribe(broadcast);
-    service.init();
+    void service.init();
 
     return service;
 };

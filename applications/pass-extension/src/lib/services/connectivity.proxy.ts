@@ -21,11 +21,19 @@ export const createConnectivityProxy = (): ConnectivityService => {
             return status === ConnectivityStatus.ONLINE;
         },
 
+        get status() {
+            return status;
+        },
+
+        get retryHandler() {
+            return null;
+        },
+
         check: notImplemented,
         init: notImplemented,
         destroy: notImplemented,
+
         setStatus,
-        getStatus: () => status,
         subscribe: pubsub.subscribe,
     };
 };
