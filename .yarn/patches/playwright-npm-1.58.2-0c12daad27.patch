@@ -1,0 +1,13 @@
+diff --git a/lib/transform/transform.js b/lib/transform/transform.js
+index 715bcce88b2bcc5647718f3c58bb1ebdd9585fa0..df097ca05160c58185b2b277f45a3f2aeb667ed7 100644
+--- a/lib/transform/transform.js
++++ b/lib/transform/transform.js
+@@ -179,7 +179,7 @@ function resolveHook(filename, specifier) {
+ function shouldTransform(filename) {
+   if (_externalMatcher(filename))
+     return false;
+-  return !(0, import_compilationCache.belongsToNodeModules)(filename);
++  return !(0, import_compilationCache.belongsToNodeModules)(filename) || filename.includes('@protontech');
+ }
+ let transformData;
+ function setTransformData(pluginName, value) {
