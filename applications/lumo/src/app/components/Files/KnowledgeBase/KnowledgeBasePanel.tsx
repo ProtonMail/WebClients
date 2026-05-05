@@ -30,6 +30,7 @@ import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
 import { KnowledgeBaseContextProgressBar } from './KnowledgeBaseContextProgressBar';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
+import { EmptyStateWithUpload } from './components';
 
 const MEDIUM_SCREEN_BREAK = 1024;
 
@@ -471,6 +472,18 @@ export const KnowledgeBasePanel = ({
         !linkedDriveFolder;
 
     const IndicatorIcon = showKnowledgeExplanation ? IcChevronUp : IcChevronDown;
+
+    if (isEmpty) {
+        return (
+            <div className={panelClassName} ref={filesContainerRef}>
+                <EmptyStateWithUpload
+                    messageChain={messageChain}
+                    onShowDriveBrowser={() => setShowDriveBrowser(true)}
+                    spaceId={spaceId}
+                />
+            </div>
+        );
+    }
 
     return (
         <>
