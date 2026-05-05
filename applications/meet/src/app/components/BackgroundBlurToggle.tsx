@@ -20,10 +20,8 @@ export const BackgroundBlurToggle = ({
 }) => {
     return (
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
-            <label
-                className={clsx('setting-label text-ellipsis', backgroundBlur ? 'color-norm' : 'color-hint')}
-                htmlFor="blur-background"
-            >{c('Action').t`Background blur`}</label>
+            <label className="setting-label text-ellipsis color-norm" htmlFor="blur-background">{c('Action')
+                .t`Background blur`}</label>
             <ConditionalTooltip
                 title={
                     withTooltip && !isBackgroundBlurSupported
