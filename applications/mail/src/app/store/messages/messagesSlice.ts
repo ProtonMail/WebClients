@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 
 import { globalReset } from '../actions';
-import { load as loadElements } from '../elements/elementsActions';
+import { categorizeMessage, load as loadElements } from '../elements/elementsActions';
 import {
     labelConversations,
     labelMessages,
@@ -19,6 +19,7 @@ import * as draftReducer from './draft/messagesDraftReducers';
 import * as expireAction from './expire/messagesExpireActions';
 import * as expireReducer from './expire/messagesExpireReducers';
 import {
+    categorizeMessage as categorizeMessageReducer,
     labelConversationsPending,
     labelMessagesPending,
     markConversationsAsReadPending,
@@ -113,6 +114,8 @@ export const messagesSlice = createSlice({
 
         builder.addCase(labelConversations.pending, labelConversationsPending);
         builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
+
+        builder.addCase(categorizeMessage, categorizeMessageReducer);
     },
 });
 

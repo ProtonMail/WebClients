@@ -289,3 +289,19 @@ export const unlabelConversationsPending = (
         });
     });
 };
+
+export const categorizeMessage = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<{ elementIDs: string[]; categoryID: string }>
+) => {
+    const { elementIDs, categoryID } = action.payload;
+
+    elementIDs.forEach((id) => {
+        const messageState = getMessage(state, id);
+        if (!messageState?.data) {
+            return;
+        }
+        messageState.data.LabelIDs = messageState.data.LabelIDs.filter((labelID) => !isCategoryLabel(labelID));
+        messageState.data.LabelIDs.push(categoryID);
+    });
+};

@@ -21,6 +21,7 @@ import {
     addESResults,
     backendActionFinished,
     backendActionStarted,
+    categorizeMessage,
     eventUpdates,
     invalidate,
     load,
@@ -48,6 +49,7 @@ import {
     addESResults as addESResultsReducer,
     backendActionFinished as backendActionFinishedReducer,
     backendActionStarted as backendActionStartedReducer,
+    categorizeMessage as categorizeMessageReducer,
     deleteDraft as deleteDraftReducer,
     eventUpdatesFulfilled,
     eventUpdatesPending,
@@ -199,6 +201,8 @@ const elementsSlice = createSlice({
         builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
 
         builder.addCase(loadConversation.fulfilled, loadConversationFulfilled);
+
+        builder.addCase(categorizeMessage, categorizeMessageReducer);
     },
 });
 
