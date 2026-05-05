@@ -323,7 +323,7 @@
         "Contraure l'editor"
       ],
       "Copy": [
-        "Copiar"
+        "Copia"
       ],
       "Copy address": [
         "Copia l'adreça"
@@ -5747,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filtre"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtreu (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtreu i ordeneu els correus electrònics"
+      ],
+      "Has attachments": [
+        "Té adjunts"
+      ],
+      "Read": [
+        "Llegit"
+      ],
+      "Reset": [
+        "Restableix"
+      ],
       "Show": [
         "Mostra"
+      ],
+      "Unread": [
+        "No llegit"
       ]
     },
     "Filter Actions": {
@@ -9835,6 +9856,9 @@
       "Payment method": [
         "Forma de pagament"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Correus electrònics personals i de la feina, a més d'actualitzacions i notificacions importants"
+      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -10336,7 +10360,7 @@
         "Programats"
       ],
       "Sent": [
-        "Enviats"
+        "Enviat"
       ],
       "settings": [
         "preferències"
@@ -13513,6 +13537,9 @@
       ],
       "Smallest first": [
         "Els més petits primer"
+      ],
+      "Sort by": [
+        "Ordena per"
       ]
     },
     "specialoffer: Action": {
@@ -13636,7 +13663,7 @@
         "/ mes"
       ],
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -16033,7 +16060,7 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "Only": [
         "Només"

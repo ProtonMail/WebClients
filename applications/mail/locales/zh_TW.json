@@ -291,6 +291,9 @@
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
+      "Connect your email": [
+        "連接您的電子郵件"
+      ],
       "Contact group": [
         "聯絡人群組"
       ],
@@ -1563,6 +1566,9 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
       "Use a different card": [
         "改用另一張卡"
       ],
@@ -2548,6 +2554,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
       ],
       "Subtotal for ${ cycle } month": [
         "${ cycle } 個月小計"
@@ -3979,6 +3988,9 @@
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
         "不想現在寄出電子郵件？將它放入排程可以在對的時間點寄出。"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
@@ -3987,6 +3999,9 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "升級至 ${ BRAND_NAME } Duo可獲得無限的寫作助理與其他服務。"
@@ -4038,6 +4053,9 @@
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
@@ -4092,6 +4110,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
@@ -4420,6 +4441,12 @@
       ],
       "Add at least one condition": [
         "添加至少一個條件"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
+      ],
+      "Address is already added to your account": [
+        "位址已添加至您的帳號"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -5494,8 +5521,26 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "過濾"
+      ],
+      "Filter and sort emails": [
+        "過濾器和排序電子郵件"
+      ],
+      "Has attachments": [
+        "有附件"
+      ],
+      "Read": [
+        "已讀"
+      ],
+      "Reset": [
+        "重置"
+      ],
       "Show": [
         "顯示"
+      ],
+      "Unread": [
+        "未讀"
       ]
     },
     "Filter Actions": {
@@ -5752,6 +5797,9 @@
       ],
       "Protection from trackers": [
         "保護免於追蹤"
+      ],
+      "Review import options": [
+        "瀏覽匯入選項"
       ],
       "Sign in to the mobile app to complete this step": [
         "登入行動APP以完成此步驟"
@@ -6679,6 +6727,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "類別有如垃圾郵件篩選器。 ${ MAIL_APP_NAME } 永不已讀您的電子郵件或共享您的資料。"
+      ],
       "Center": [
         "置中"
       ],
@@ -6690,6 +6741,9 @@
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
       ],
       "Clear browser data": [
         "清除瀏覽器資料"
@@ -6738,6 +6792,9 @@
       ],
       "Copy the link to clipboard": [
         "複製連結到剪貼簿"
+      ],
+      "Copy to clipboard": [
+        "複製到剪貼簿"
       ],
       "Copy your referral link": [
         "複製您的推介連結"
@@ -8077,6 +8134,9 @@
       "Trackers blocked:": [
         "追蹤器已封鎖:"
       ],
+      "Tracking": [
+        "追蹤"
+      ],
       "Trash existing messages": [
         "刪除現有訊息"
       ],
@@ -8864,6 +8924,9 @@
       "Add to group": [
         "加入至群組"
       ],
+      "Additional comments": [
+        "附加備註"
+      ],
       "Address": [
         "電郵位址"
       ],
@@ -8968,6 +9031,9 @@
       ],
       "CC": [
         "副本"
+      ],
+      "Choose what to do instead": [
+        "選擇替代動作"
       ],
       "City": [
         "縣市"
@@ -10027,6 +10093,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -11372,6 +11441,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "帶入您的電子郵件至 ${ MAIL_APP_NAME }"
       ],
+      "Choose a provider": [
+        "選擇服務商"
+      ],
       "Maybe later": [
         "稍後再說"
       ],
@@ -11595,6 +11667,12 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，日後不再顯示"
       ]
     },
     "Option group": {
@@ -11746,6 +11824,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
       ],
       "Got it": [
         "瞭解"
@@ -12004,6 +12085,9 @@
       "End date": [
         "終止日"
       ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
       "Enter passphrase": [
         "請輸入密碼"
       ],
@@ -12238,6 +12322,9 @@
     "Provider option": {
       "Gmail": [
         "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ],
       "Microsoft 365": [
         "Microsoft 365"
@@ -12883,6 +12970,9 @@
       ],
       "Smallest first": [
         "從最小排序"
+      ],
+      "Sort by": [
+        "排列方式"
       ]
     },
     "specialoffer: Action": {
@@ -13342,6 +13432,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
