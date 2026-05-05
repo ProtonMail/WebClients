@@ -227,6 +227,9 @@
       "Copy alias “${ name }”": [
         "複製別名 \"${ name }\""
       ],
+      "Copy booking page link": [
+        "複製預定頁面的連結"
+      ],
       "Copy email address": [
         "複製電子郵件位址"
       ],
@@ -937,6 +940,9 @@
       ],
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ],
       "Use a different card": [
         "改用另一張卡"
@@ -1741,6 +1747,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
       ],
       "Subtotal for ${ cycle } month": [
         "${ cycle } 個月小計"
@@ -3005,6 +3014,9 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -3034,6 +3046,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "這可能需要幾分鐘的時間。同時，您可以像往常一樣繼續使用${ CALENDAR_APP_NAME }。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
@@ -3070,6 +3085,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "您即將取得安全電子郵件附帶詳細資料。"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
@@ -3372,6 +3390,9 @@
       ],
       "Account does not exist": [
         "帳號不存在"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -5108,6 +5129,9 @@
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
       ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
+      ],
       "Clear data": [
         "清除資料"
       ],
@@ -5386,6 +5410,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
+      ],
+      "In which calendar should bookings appear?": [
+        "預定該顯示於何者行事曆?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "正在索引行程：${ current }/${ total }"
@@ -5884,6 +5911,9 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
+      ],
+      "Tracking": [
+        "追蹤"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
@@ -6398,6 +6428,9 @@
       ],
       "Add Zoom meeting": [
         "新增 Zoom 會議"
+      ],
+      "Additional comments": [
+        "附加備註"
       ],
       "Address": [
         "電郵位址"
@@ -7181,6 +7214,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -8937,6 +8973,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
       "Got it": [
         "瞭解"
       ],
@@ -9206,6 +9245,9 @@
       "Email for booking confirmation": [
         "電子郵件預定確認"
       ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
       "Enter passphrase": [
         "請輸入密碼"
       ],
@@ -9391,6 +9433,9 @@
     "Provider option": {
       "Gmail": [
         "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ],
       "Microsoft 365": [
         "Microsoft 365"
@@ -10291,6 +10336,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
