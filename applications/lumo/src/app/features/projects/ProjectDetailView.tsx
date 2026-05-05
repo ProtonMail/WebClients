@@ -452,6 +452,7 @@ const ProjectDetailViewInner = () => {
                     onClose={() => driveBrowserModal.openModal(false)}
                     initialShowDriveBrowser={true}
                     forceModal={true}
+                    modalProps={driveBrowserModal.modalProps}
                     spaceId={projectId}
                 />
             )}
