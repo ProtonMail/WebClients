@@ -888,6 +888,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не ўдалося прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Адбываецца праверка, ці разблакіраваны працоўны стол."
+      ],
       "A domain ownership must be verified first.": [
         "Першапачаткова неабходна праверыць дамен уладальніка."
       ],
@@ -1219,7 +1222,7 @@
         "Збой абнаўлення налад"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некаторыя сховішчы больш недаступны з прычыны таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
@@ -1502,6 +1505,9 @@
         "${ payload.count } запрашэнні паспяхова адпраўлены",
         "${ payload.count } запрашэнняў паспяхова адпраўлены",
         "${ payload.count } запрашэнняў паспяхова адпраўлены"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
@@ -4701,7 +4707,7 @@
         "Аднавіць гэту версію?"
       ],
       "Resume monitoring?": [
-        "Узнавіць назіранне?"
+        "Узнавіць маніторынг?"
       ],
       "Reused ${ count } time": [
         "Паўторна выкарыстаны ${ count } раз",

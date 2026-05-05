@@ -888,6 +888,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } soubor se nepodařilo analyzovat. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Právě probíhá kontrola odemknutí počítače."
+      ],
       "A domain ownership must be verified first.": [
         "Nejprve je třeba ověřit vlastnictví domény."
       ],
@@ -917,6 +920,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své druhé heslo, abyste mohli pokračovat v exportu"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické ověření selhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pro odemknutí se neshodují."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámek nebyl nastaven."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavení biometrického zámku selhalo."
       ],
       "Cannot send invitation at the moment": [
         "Pozvánku nyní nelze odeslat",
@@ -992,6 +1010,9 @@
       ],
       "Emptying trash failed": [
         "Vyprázdnění koše selhalo"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikace s desktopovou aplikací ${ PASS_APP_NAME } selhala."
       ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON není podporován"
@@ -1212,6 +1233,9 @@
       "Something went wrong. Please sign in again.": [
         "Něco se pokazilo. Přihlaste se prosím znovu."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
       ],
@@ -1220,6 +1244,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
       ],
       "The session has expired. Please sign in again.": [
         "Platnost relace vypršela. Znovu se přihlaste."
@@ -1475,6 +1505,9 @@
         "${ payload.count } pozvánky úspěšně odeslány",
         "${ payload.count } pozvánek úspěšně odesláno",
         "${ payload.count } pozvánek úspěšně odesláno"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspěšně deaktivován"
@@ -4834,6 +4867,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Získat ${ planName }"
       ]
     },
     "Validation": {
