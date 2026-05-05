@@ -594,6 +594,12 @@
 }
 
 .link-drive-folder-modal {
+	.link-drive-folder-modal-title {
+		font-size: 1.125rem;
+		font-weight: var(--font-weight-bold, 700);
+		line-height: 1.5;
+	}
+
 	.modal-two-content {
 		display: flex;
 		flex-direction: column;
