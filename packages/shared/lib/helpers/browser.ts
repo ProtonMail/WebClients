@@ -1,6 +1,7 @@
 import UAParser from 'ua-parser-js';
 
 import { Version } from '@proton/shared/lib/helpers/version';
+import noop from '@proton/utils/noop';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
@@ -26,7 +27,7 @@ export const isWebglSupported = () => {
 export const textToClipboard = (text = '', target = document.body) => {
     const oldActiveElement = document.activeElement as HTMLElement;
     if (navigator.clipboard) {
-        void navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(text).catch(noop);
     } else {
         const dummy = document.createElement('textarea');
         target.appendChild(dummy);
