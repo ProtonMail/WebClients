@@ -196,7 +196,8 @@ const MainContainer = () => {
 
     const [referralInfo] = useReferralInfo();
 
-    const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
+    const [{ isMnemonicAvailable, isRecoveryFileAvailable, isDataRecoveryAvailable }, loadingDataRecovery] =
+        useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
 
@@ -255,6 +256,8 @@ const MainContainer = () => {
         subscription,
         isReferralProgramEnabled,
         isDataRecoveryAvailable,
+        isMnemonicAvailable,
+        isRecoveryFileAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
         showVPNDashboard,
