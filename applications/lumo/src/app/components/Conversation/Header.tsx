@@ -10,7 +10,7 @@ import './Header.scss';
 export const DrawerToggleButton = ({ className }: { className?: string }) => {
     const { toggle } = useRightPanel();
     return (
-        <Button onClick={toggle} icon shape="ghost" color="weak" size="small" className={className}>
+        <Button onClick={toggle} icon shape="ghost" color="weak" size="small" className={clsx('shrink-0', className)}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="40" height="40" rx="12" fill="#F5F6FE" />
                 <path
