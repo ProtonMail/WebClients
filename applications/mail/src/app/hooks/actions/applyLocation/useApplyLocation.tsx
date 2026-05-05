@@ -28,6 +28,7 @@ import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import { load } from 'proton-mail/store/conversations/conversationsActions';
+import { categorizeMessage } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -368,6 +369,13 @@ export const useApplyLocation = () => {
             if (isCategoryLabel(destinationLabelID)) {
                 const conversationIDs = unique(
                     elements.filter(isElementMessage).map((element) => element.ConversationID)
+                );
+
+                dispatch(
+                    categorizeMessage({
+                        elementIDs: elements.filter(isElementMessage).map((element) => element.ID),
+                        categoryID: destinationLabelID,
+                    })
                 );
 
                 await Promise.all(
