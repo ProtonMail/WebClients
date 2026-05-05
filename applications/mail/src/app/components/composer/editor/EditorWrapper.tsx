@@ -54,6 +54,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
     hasAttachments?: boolean;
+    onExpandBlockquotes?: () => void;
 }
 
 const EditorWrapper = ({
@@ -72,6 +73,7 @@ const EditorWrapper = ({
     editorMetadata,
     toolbarCustomRender,
     hasAttachments,
+    onExpandBlockquotes,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
@@ -283,6 +285,8 @@ const EditorWrapper = ({
                 updateCursor: false,
             });
         }
+
+        onExpandBlockquotes?.();
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-863A3F
     }, [blockquoteSaved]);
 
