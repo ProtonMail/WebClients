@@ -162,6 +162,9 @@
       "Add user": [
         "Kullanıcı ekle"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } grup sahibi olarak eklendi"
+      ],
       "Align center": [
         "Ortaya hizala"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Onayla"
+      ],
+      "Confirm email": [
+        "E-postayı onayla"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } bağlantısını açmayı onaylayın"
@@ -761,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Süzgeçler uygulanıyor. Bu işlem bir kaç dakika alabilir."
+      ],
+      "Finish": [
+        "Bitir"
       ],
       "Fit to window": [
         "Pencereye sığdır"
@@ -1277,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Bu bildirimi kaldır"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } grup sahipliği yetkisi kaldırıldı"
       ],
       "Rename": [
         "Yeniden adlandır"
@@ -5019,7 +5031,7 @@
         "Google tarafından profilinizin çıkarılmasını engelleyin. Gmail ${ MAIL_APP_NAME } üzerinde yaptıklarınızı göremez"
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
-        "E-postalarınızı, takvim etkinliklerinizi ve kişilerinizi başka bir sağlayıcıdan aktarın."
+        "Başka bir hizmet sağlayıcıdaki e-postalarınızı, takvim etkinliklerinizi ve kişilerinizi aktarın."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
@@ -5197,7 +5209,7 @@
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Gmail'deki son 180 günlük e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
+        "Gmail üzerinde son 180 gündeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -6971,6 +6983,9 @@
       ],
       "Invalid invitation link": [
         "Davet bağlantısı geçersiz"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Geçersiz katılım bağlantısı. Lütfen yöneticinizle iletişime geçin."
       ],
       "Invalid name": [
         "Ad geçersiz"
@@ -9343,7 +9358,7 @@
         "${ BRAND_NAME }, ${ phoneNumber } numarasına doğrulama kodu gönderecek. Standart mesaj ücretleri uygulanabilir."
       ],
       "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
-        "${ BRAND_NAME } yedek telefonunuza doğrulama kodu gönderecek. Standart mesaj ücretleri uygulanabilir."
+        "${ BRAND_NAME } kurtarma telefonu numaranıza bir doğrulama kodu gönderecek. Standart mesaj ücretleri uygulanabilir."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
@@ -10131,6 +10146,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editörün Seçimi ödülünü 10 üzerinden 8,4 puanla kazandı"
       ],
+      "Code has been re-sent.": [
+        "Kod yeniden gönderildi."
+      ],
       "Coming soon": [
         "Çok yakında"
       ],
@@ -10147,7 +10165,7 @@
         "Okta, Microsoft Azure veya Google Identity Platform gibi bir kimlik hizmeti sağlayıcı ile kuruluşunuz için SAML kimlik doğrulamasını yapılandırın. Bu, tüm kuruluş için SAML özelliğini etkinleştirir."
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } uygulamasında harici e-posta kutularınızı bağlayın ve yönetin."
+        "Dış e-posta adreslerinizi ${ MAIL_APP_NAME } üzerine bağlayın ve yönetin."
       ],
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
@@ -10687,6 +10705,9 @@
       ],
       "Gateways": [
         "Ağ geçitleri"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Yeni kurtarma ifadesi oluşturmak mevcut kurtarma ifadenizi devre dışı bırakacak."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Yeni bir kurtarma ifadesi oluşturmak, önceki ifadeyi kullanımdan kaldırır."
@@ -11268,7 +11289,7 @@
         "Kredi kartı gerekmez"
       ],
       "No connected addresses.": [
-        "Bağlı adres yok."
+        "Bağlı bir adres yok."
       ],
       "No countries enabled": [
         "Herhangi bir ülke kullanıma alınmamış"
@@ -13037,8 +13058,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Kurtarma ifadeniz, belirli bir sırada rastgele oluşturulmuş 12 sözcükten oluşan bir dizidir."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Kurtarma paketindeki kurtarma ifadeniz ${ BRAND_NAME } hesabınıza erişiminiz engellendiğinde oturum açmanızı ve verilerinizi kurtarmanızı sağlar. Bu ifade 12 sözcükten oluşur ve yedek parola görevi görür."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "${ BRAND_NAME } Hesabınıza erişiminiz engellendiğinde kurtarma ifadeniz oturum açmanıza ve verilerinizi kurtarmanıza olanak tanır. 12 kelimeden oluşur ve yedek parola görevi görür."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
@@ -14756,6 +14777,9 @@
       ],
       "Pending": [
         "Bekliyor"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Kişisel ve iş e-postalarının yanı sıra önemli güncellemeler ve bildirimler"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -16714,6 +16738,9 @@
       ],
       "Advanced network security": [
         "Gelişmiş ağ güvenliği"
+      ],
+      "Advanced workspace security": [
+        "Gelişmiş çalışma alanı güvenliği"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
@@ -18716,14 +18743,14 @@
       "per month, billed every two years": [
         "aylık, iki yılda bir faturalanır"
       ],
-      "Preparing your Recovery Kit": [
-        "Kurtarma paketiniz hazırlanıyor"
+      "Preparing your recovery phrase": [
+        "Kurtarma ifadeniz hazırlanıyor"
       ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunur"
       ],
-      "Save your recovery kit to continue": [
-        "İlerlemek için kurtarma paketinizi kaydedin"
+      "Save your recovery phrase to continue": [
+        "Devam etmek için kurtarma ifadenizi kaydedin"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
@@ -20051,6 +20078,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Kurtarma ifadenizi oluşturduktan sonra ona her zaman erişebildiğinizden emin olun.** Değişikliklerinizi kaydettikten sonra ifadeyi güvenlik nedeniyle saklamıyoruz ve bu ifadeyi ${ BRAND_NAME } uygulamasında bir daha göremeyeceksiniz."
+      ],
       "copy recovery phrase": [
         "kurtarma ifadesini kopyala"
       ],
@@ -20072,14 +20102,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Ya da ${ downloadRecoveryKitSwitchButton } kullanın."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "**Kurtarma paketiniz**, hesabınız kilitlenirse ${ BRAND_NAME } hesabınıza erişmenizi sağlar."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "**Kurtarma ifadeniz** hesabınıza erişemediğiniz durumlarda ${ BRAND_NAME } Hesabınızı geri yüklemenizi sağlar."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Kurtarma paketinizi güncelleyin"
-      ],
       "Save your recovery phrase": [
         "Kurtarma ifadenizi kaydedin"
       ]
@@ -20472,8 +20499,8 @@
       "Back to Safety Review": [
         "Güvenlik değerlendirmesine dön"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Parolanızı sıfırlarsanız var olan kurtarma paketiniz yalnızca parolanızı sıfırlamadan önce oluşturulan verileri kurtarmak için kullanılabilir."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Parolanızı sıfırladığınız için mevcut kurtarma ifadeniz yalnızca parola sıfırlama işleminden önce oluşturulan verileri kurtarmak için kullanılabilir."
       ],
       "Can be used to regain access to your account and data": [
         "Hesabınıza ve verilerinize yeniden erişebilmeniz için kullanılabilir"
@@ -20502,8 +20529,8 @@
       "Download ${ size }": [
         "${ size } indir"
       ],
-      "Download your Recovery Kit": [
-        "Kurtarma paketinizi indirin"
+      "Download your recovery phrase": [
+        "Kurtarma ifadesini indir"
       ],
       "Email address": [
         "E-posta adresi"
@@ -20517,8 +20544,8 @@
       "Enable recovery by phone": [
         "Telefon numarası ile kurtarmayı açın"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Bu kurtarma paketi ile şu anda kilitlenmiş verileri kurtaramayacağımı anladım"
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Bu kurtarma ifadesiyle şu anda kilitli olan verileri kurtaramayacağımı anlıyorum"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "${ BRAND_NAME } parolanızı unutursanız ve sıfırlamanız gerekirse, yeni parolanızı bu aygıtta kullanarak oturum açtığınızda ${ BRAND_NAME } hesabınıza yeniden tam erişim sağlayabilirsiniz."
@@ -20526,8 +20553,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "${ BRAND_NAME } parolanızı unutursanız ve sıfırlamanız gerekirse, yeni parolanızı bu aygıtta kullanarak oturum açtığınızda ${ BRAND_NAME } hesabınıza yeniden tam erişim sağlayabilirsiniz."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, kurtarma paketiniz oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME } hesabınıza erişemez hale gelirseniz kurtarma ifadesi sayesinde oturum açabilir ve verilerinizi geri alabilirsiniz."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Oturum açma bilgilerinizi kaybederseniz ve hesabınızı sıfırlamanız gerekirse, hem **hesap kurtarma hem de veri kurtarma yöntemlerini** kullanıyor olmanız **zorunludur**. Yoksa e-postalarınıza, kişilerinize, dosyalarınıza veya parolalarınıza erişemeyebilirsiniz."
@@ -20571,8 +20598,8 @@
       "Take action to secure your account": [
         "Hesabınızı korumak için önlem alın"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Kurtarma paketiniz oluşturulurken bir sorun çıktı"
+      "There was an error generating your recovery phrase": [
+        "Kurtarma ifadeniz oluşturulurken bir hata oluştu"
       ],
       "There was an error verifying your email": [
         "E-postanız doğrulanırken bir sorun çıktı"
@@ -20601,11 +20628,11 @@
       "to recover your account if you're ever locked out": [
         "kilitlenirse hesabınızı kurtarmak için"
       ],
-      "Update your Recovery Kit": [
-        "Kurtarma paketinizi güncelleyin"
+      "Update your recovery phrase": [
+        "Kurtarma ifadesini güncelle"
       ],
-      "Update your Recovery Kit?": [
-        "Kurtarma paketiniz güncellensin mi?"
+      "Update your recovery phrase?": [
+        "Kurtarma ifadeniz güncellensin mi?"
       ],
       "Verify": [
         "Doğrula"
@@ -20622,8 +20649,8 @@
       "Verify your recovery phone number": [
         "Kurtarma telefon numaranızı doğrulayın"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Kurtarma paketiniz oluşturulurken bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin ya da sorun sürüyorsa destek ekibimizle görüşün."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Kurtatma ifadeniz oluştururken bir hata oluştu. Lütfen daha sonra tekrar deneyin. Sorun devam ederse destekle iletişime geçin."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "E-posta adresiniz doğrulanırken bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin ya da sorun sürüyorsa destek ekibimizle görüşün."
@@ -20646,8 +20673,8 @@
       "You can disable this at any time.": [
         "Bu özelliği istediğiniz zaman kapatabilirsiniz."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Parolanızı sıfırlarsanız hesabınızı tümüyle kurtarabilmek için bu kurtarma paketindeki kurtarma ifadesini kullanabilirsiniz. Bu nedenle onu güvenli bir yerde sakladığınızdan emin olun."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Parolanızı sıfırladığınızda bu kurtarma ifadesini kullanarak hesabınızı tamamen geri yükleyebilirsiniz. Bu yüzden ifadeyi güvenli bir yerde sakladığınızdan emin olun."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için e-posta adresinizi kullanabilirsiniz."
@@ -20658,8 +20685,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için telefon ile kurtarmayı kullanabilirsiniz."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Daha önce bir kurtarma paketi indirmişsiniz. Yeni bir paket indirdiğinizde **eskisi kullanımdan kaldırılır**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Daha önce bir kurtarma ifadesi indirmişsiniz. Yeni ifade indirirseniz **eski ifade devre dışı kalır**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Hesabınızın güvenliğini artırmak için yapabileceğiniz işlemler var."
@@ -20724,12 +20751,6 @@
       "Your recovery email is set": [
         "Kurtarma e-posta adresiniz ayarlandı"
       ],
-      "Your Recovery Kit": [
-        "Kurtarma paketiniz"
-      ],
-      "Your Recovery Kit is set": [
-        "Kurtarma paketiniz ayarlandı"
-      ],
       "Your recovery methods": [
         "Kurtarma yöntemleriniz"
       ],
@@ -20750,6 +20771,12 @@
       ],
       "Your recovery phone number is:": [
         "Kurtarma telefon numaranız:"
+      ],
+      "Your recovery phrase": [
+        "Kurtarma ifadeniz"
+      ],
+      "Your recovery phrase is set": [
+        "Kurtarma ifadeniz ayarlandı"
       ]
     },
     "saml: Action": {
@@ -21298,7 +21325,7 @@
         "Fotoğraflar bölümünü aç"
       ],
       "Get updates about comments via email": [
-        "Yorumlarla ilgili güncellemeleri e-posta yoluyla al"
+        "Yorumlarla ilgili güncellemeleri e-posta ile al"
       ],
       "Include document name in email notifications": [
         "E-posta bildirimlerine belge adı eklensin"
@@ -23885,11 +23912,17 @@
       "Actions": [
         "İşlemler"
       ],
+      "Activate multi-user support": [
+        "Çok kullanıcı desteğini etkinleştir"
+      ],
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
       ],
       "Activate user": [
         "Kullanıcıyı etkinleştir"
+      ],
+      "Activate your email": [
+        "E-postanızı etkinleştirin"
       ],
       "Activity monitor": [
         "Etkinlik izleyici"
@@ -24141,17 +24174,11 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm address": [
-        "E-posta adresini onaylayın"
-      ],
       "Confirm downgrade": [
         "Tarife düşürmeyi onayla"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
-      ],
-      "Confirm phone number": [
-        "Telefon numarasını onaylayın"
       ],
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
@@ -24178,7 +24205,7 @@
         "Özel etki alanınızı bağlayın"
       ],
       "Connected emails": [
-        "Bağlı e-postalar"
+        "Bağlı e-posta adresleri"
       ],
       "Connection status": [
         "Bağlantı durumu"
@@ -24213,6 +24240,9 @@
       ],
       "Create a new gateway": [
         "Yeni ağ geçidi ekle"
+      ],
+      "Create a new password": [
+        "Yeni parola oluştur"
       ],
       "Create Gateway": [
         "Ağ geçidi ekle"
@@ -24306,6 +24336,9 @@
       ],
       "Day theme": [
         "Gündüz teması"
+      ],
+      "Deactivate current phrase?": [
+        "Mevcut ifade devre dışı bırakılsın mı?"
       ],
       "Decrypt key": [
         "Anahtarın şifresini çöz"
@@ -24442,6 +24475,9 @@
       ],
       "Download the mobile apps": [
         "Mobil uygulamaları indirin"
+      ],
+      "Download your recovery phrase": [
+        "Kurtarma ifadesini indir"
       ],
       "Downloads": [
         "İndirmeler"
@@ -25081,8 +25117,14 @@
       "Remove domain": [
         "Etki alanını kaldır"
       ],
+      "Remove email": [
+        "E-postayı kaldır"
+      ],
       "Remove forwarding address": [
         "İletme adresini kaldır"
+      ],
+      "Remove recovery phone number": [
+        "Kurtarma telefon numarasını kaldır"
       ],
       "Remove server?": [
         "Sunucu kaldırılsın mı?"
@@ -25493,6 +25535,9 @@
       "Verify it’s you": [
         "Siz olduğunuzu doğrulayın"
       ],
+      "Verify your email": [
+        "E-postanızı doğrulayın"
+      ],
       "Verifying your card...": [
         "Kartınız doğrulanıyor..."
       ],
@@ -25516,6 +25561,9 @@
       ],
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Kimliğinizi doğrulamak için e-postanıza bir kod gönderdik. Bu kod 10 dakika boyunca geçerli olacak. Lütfen kodu aşağıya yazın."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Değişikliği tamamlamak için yapmanız gereken işlemler e-postasını yeni adresinize göndereeceğiz."
@@ -25567,6 +25615,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "${ planTitle } aboneliğiniz başladı"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "${ orgName } bünyesindeki yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Yöneticiniz sizi yeni ve güvenli ${ BRAND_NAME } hesabınızı etkinleştirmeye ve parolanızı güncellemeye davet ediyor."
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -26730,11 +26784,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Telefon numarasını silmek istediğinize emin misiniz?"
+      "Are you sure you want to remove your notification email?": [
+        "Bildirim e-postanızı kaldırmak istediğinizden emin misiniz?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Bu adresi silmek istediğinize emin misiniz?"
+      "Are you sure you want to remove your recovery email?": [
+        "Kurtarma e-postanızı kaldırmak istediğinizden emin misiniz?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Kurtarma telefon numaranızı kaldırmak istediğinizden emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Bu adresi sildikten sonra günlük gönderilen e-posta bildirimlerini alamazsınız."
@@ -26745,8 +26802,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Bu adresi silerseniz, hesabınızı kurtaramazsınız."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Bu telefon numarasını kaldırdığınızda artık hesabınızı kurtaramayacaksınız."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Oturum açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan oturum açın."

@@ -280,6 +280,9 @@
       "Connect your ${ BRAND_NAME } Account": [
         "連接您的${ BRAND_NAME }帳號"
       ],
+      "Connect your email": [
+        "連接您的電子郵件"
+      ],
       "Connected": [
         "已連線"
       ],
@@ -1336,6 +1339,9 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
       "Use a different card": [
         "改用另一張卡"
       ],
@@ -2302,6 +2308,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
       ],
       "Subtotal for ${ cycle } month": [
         "${ cycle } 個月小計"
@@ -3735,6 +3744,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "創建政策以決定誰可連接至於各國的共享伺服器"
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "電子郵件傳送至 ${ connectedAddressText } 將顯示於 ${ MAIL_APP_NAME }。"
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "啟用${ PROTON_SENTINEL_NAME }以存取此功能"
       ],
@@ -3752,6 +3764,9 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
       ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "於您的組織內任何人可連接至於全部國家共享伺服器"
@@ -3789,6 +3804,9 @@
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
@@ -3812,6 +3830,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您可透過 ${ BRAND_NAME } 用此位址傳送電子郵件。"
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
@@ -4407,6 +4428,12 @@
       ],
       "Add at least one condition": [
         "添加至少一個條件"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
+      ],
+      "Address is already added to your account": [
+        "位址已添加至您的帳號"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -6983,6 +7010,9 @@
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -9576,6 +9606,9 @@
       "Add all organization members": [
         "添加全部組織成員"
       ],
+      "Additional comments": [
+        "附加備註"
+      ],
       "Address": [
         "電郵位址"
       ],
@@ -11114,6 +11147,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -13259,14 +13295,8 @@
       "per month, billed every two years": [
         "每月，每兩年收費"
       ],
-      "Preparing your Recovery Kit": [
-        "準備復原包"
-      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隱私權相關法律保障"
-      ],
-      "Save your recovery kit to continue": [
-        "儲存您的復原包並繼續"
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
@@ -13499,6 +13529,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
       ],
       "Got it": [
         "瞭解"
@@ -13791,6 +13824,9 @@
       "End date": [
         "終止日"
       ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -13981,6 +14017,9 @@
       "Gmail": [
         "Gmail"
       ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
       "Microsoft 365": [
         "Microsoft 365"
       ],
@@ -14170,11 +14209,6 @@
         "顯示"
       ]
     },
-    "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "儲存復原包"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
@@ -14337,9 +14371,6 @@
       "Download ${ size }": [
         "下載 ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "下載復原包"
-      ],
       "Email address": [
         "電子郵件地址"
       ],
@@ -14388,12 +14419,6 @@
       "There was an error verifying your recovery phone": [
         "驗證復原手機時出了一些錯誤"
       ],
-      "Update your Recovery Kit": [
-        "更新復原包"
-      ],
-      "Update your Recovery Kit?": [
-        "更新復原包?"
-      ],
       "Verify": [
         "驗證"
       ],
@@ -14429,9 +14454,6 @@
       ],
       "Your recovery email is set": [
         "你的復原電子郵件已設置"
-      ],
-      "Your Recovery Kit": [
-        "你的復原包"
       ],
       "Your recovery methods": [
         "您的復原方法"
@@ -15912,6 +15934,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
@@ -16931,17 +16956,11 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm address": [
-        "確認電郵位址"
-      ],
       "Confirm downgrade": [
         "確認降級"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "確認失去 ${ BRAND_NAME } 獎勵"
-      ],
-      "Confirm phone number": [
-        "確認手機號碼"
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
@@ -18678,12 +18697,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
-      "Are you sure you want to delete the phone number?": [
-        "您確定要刪除此手機號碼嗎？"
-      ],
-      "Are you sure you want to delete this address?": [
-        "您確定要刪除此電子郵件位址嗎？"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "一旦刪除此電郵位址，您日後將不能接收每日電郵通知。"
       ],
@@ -18692,9 +18705,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "一旦刪除此電郵位址，您日後將不能救援您的帳號。"
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "一旦刪除此手機號碼，您日後將不能救援您的帳號。"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。 ${ BRAND_NAME } 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"

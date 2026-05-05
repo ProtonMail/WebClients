@@ -105,6 +105,9 @@
       "Add address or domain": [
         "添加邮箱地址或域名"
       ],
+      "Add and verify": [
+        "添加并验证"
+      ],
       "Add another account": [
         "添加其他账户"
       ],
@@ -261,6 +264,9 @@
       "Claim it": [
         "使用该地址"
       ],
+      "Claim offer": [
+        "认领优惠"
+      ],
       "Claim this address": [
         "认领此地址"
       ],
@@ -330,6 +336,9 @@
       "Connected": [
         "已连接"
       ],
+      "Contact sales": [
+        "联系销售"
+      ],
       "Contact support": [
         "联系客服"
       ],
@@ -361,7 +370,7 @@
         "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
-        "使用 Google 账号继续"
+        "通过 Google 继续"
       ],
       "Continue with Outlook": [
         "使用 Outlook 继续"
@@ -406,7 +415,7 @@
         "创建一个链接，与 ${ BRAND_NAME } 之外的人员共享"
       ],
       "Create an account": [
-        "创建账号"
+        "创建账户"
       ],
       "Create calendar": [
         "创建日历"
@@ -434,6 +443,9 @@
       ],
       "Create organization": [
         "创建组织"
+      ],
+      "Create recovery phrase": [
+        "创建恢复短语"
       ],
       "Create users": [
         "创建用户"
@@ -466,7 +478,10 @@
         "删除"
       ],
       "Delete account": [
-        "删除账号"
+        "删除账户"
+      ],
+      "Delete and confirm": [
+        "删除并确认"
       ],
       "Delete filter “${ Name }”": [
         "删除筛选器 “${ Name }”"
@@ -547,10 +562,10 @@
         "禁用分类"
       ],
       "Disable recovery phrase": [
-        "禁用恢复密语"
+        "禁用恢复短语"
       ],
       "Disable recovery phrase?": [
-        "禁用恢复密语吗？"
+        "禁用恢复短语？"
       ],
       "Discard": [
         "放弃"
@@ -769,13 +784,13 @@
         "生成新短语"
       ],
       "Generate new recovery phrase": [
-        "生成新的恢复密语"
+        "生成新的恢复短语"
       ],
       "Generate password": [
         "生成密码"
       ],
       "Generate recovery phrase": [
-        "生成恢复密语"
+        "生成恢复短语"
       ],
       "Generate token": [
         "生成令牌"
@@ -1291,7 +1306,7 @@
         "重置"
       ],
       "Reset credentials": [
-        "重置凭证信息"
+        "重置凭据"
       ],
       "Reset keys": [
         "重置密钥"
@@ -1350,6 +1365,9 @@
       "Save and continue": [
         "保存并继续"
       ],
+      "Save and verify": [
+        "保存并验证"
+      ],
       "Save changes": [
         "保存更改"
       ],
@@ -1370,6 +1388,9 @@
       ],
       "Search settings": [
         "搜索设置"
+      ],
+      "Secure account": [
+        "安全账户"
       ],
       "See DNS TXT record": [
         "查看 DNS 的 TXT 记录"
@@ -1465,7 +1486,7 @@
         "设置恢复方式"
       ],
       "Set recovery phrase": [
-        "设置恢复密语"
+        "设置恢复短语"
       ],
       "Set up 2FA": [
         "设置 2FA"
@@ -1654,7 +1675,7 @@
         "更新恢复文件"
       ],
       "Update recovery phrase": [
-        "更新恢复密语"
+        "更新恢复短语"
       ],
       "Upgrade": [
         "升级账户"
@@ -1761,6 +1782,9 @@
       "View recovery settings": [
         "查看恢复设置"
       ],
+      "View recovery setup details": [
+        "查看恢复设置详情"
+      ],
       "Void": [
         "确定废除"
       ],
@@ -1769,6 +1793,9 @@
       ],
       "Void all recovery files?": [
         "废除所有恢复文件？"
+      ],
+      "Watch the interview": [
+        "观看访谈"
       ],
       "Welcome": [
         "欢迎"
@@ -2021,14 +2048,47 @@
       ]
     },
     "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 个新管理员角色"
+      ],
+      "Admin roles": [
+        "管理员角色"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "通过分配特定的管理员角色进行委派管理。为每位管理员仅授予其所需的访问权限。这遵循最小权限原则，可保护您的组织免受账户被盗和意外错误的影响。"
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "通过合适的管理员角色进行委派管理。"
+      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "管理所有用户、群组、存储、安全、计费、审计日志和系统配置。"
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
       ],
       "New: Control admin access for individual users": [
         "新增：控制个人用户的管理员权限"
       ],
+      "Organization admin": [
+        "组织管理员"
+      ],
+      "Organization admin:": [
+        "组织管理员："
+      ],
+      "Security admin": [
+        "安全管理员"
+      ],
       "Security admin:": [
         "安全管理员："
+      ],
+      "User admin": [
+        "用户管理员"
+      ],
+      "User admin:": [
+        "用户管理员："
       ]
     },
     "AdminRole_Info": {
@@ -2256,6 +2316,11 @@
         "您的免费体验期将于 ${ timeRemaining } 结束。"
       ]
     },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "立省 ${ discountRate }%"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "关闭"
@@ -2408,7 +2473,7 @@
         "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
+        "在所有设备上安全登录。包括无限制 Hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 hide-my-email  别名等功能。"
@@ -2727,7 +2792,7 @@
         "该文章已更新，加入了 WireGuard 和 Stealth VPN 协议。"
       ],
       "Try out **Newsletters view** to declutter your inbox.": [
-        "试试 **订阅邮件视图**，让您的收件箱井井有条。"
+        "试用**新闻通讯视图**，让您的收件箱更整洁"
       ],
       "Understand passkeys, their benefits over passwords, and how ${ PASS_APP_NAME } keeps them safe.": [
         "了解通行密钥、它相对于密码的优势，以及 ${ PASS_APP_NAME } 如何确保其安全。"
@@ -3091,6 +3156,9 @@
       ],
       "Set up other features": [
         "设置其他功能"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Take a tour": [
         "开始导览"
@@ -3683,11 +3751,35 @@
       "Access is restored once usage is back within limits.": [
         "当使用量恢复至限制范围内后，访问权限将自动恢复。"
       ],
+      "Back up photos from your devices": [
+        "从您的设备备份照片"
+      ],
       "Cancel subscription": [
         "取消订阅"
       ],
+      "Confirm cancellation": [
+        "确认取消"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "如果您超出免费套餐限制，您将无法："
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Manage your calendar": [
+        "管理您的日历"
+      ],
+      "Receive new emails": [
+        "接收新邮件"
+      ],
+      "Send emails with attachments": [
+        "发送带附件的邮件"
+      ],
       "Upload any new files": [
         "上传任意文件"
+      ],
+      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
+        "当您的订阅在 ${ endDate } 结束时，您的账户将切换到免费套餐。如果您的使用量超过免费套餐限制，某些功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -4853,6 +4945,9 @@
       ]
     },
     "Description": {
+      "${ BRAND_NAME }'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.": [
+        "${ BRAND_NAME } 的端到端加密意味着只有您能解锁自己的数据。立即设置恢复选项，确保永不丢失访问权限。"
+      ],
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 允许您在安全、加密的环境中与他人协同办公。"
       ],
@@ -4891,6 +4986,12 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "从其他服务商迁移您的邮件、日历事件和联系人。"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "使用您自有域名的专业邮箱地址，建立信任和品牌认知度。"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
@@ -4958,6 +5059,12 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
       ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "我们的客户支持团队如何将 VPN 应用直接送到用户手中。"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "当 ${ BRAND_NAME } 在一场咄咄逼人的运动中受阻时，我们是如何反击的。"
+      ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "当隐私和言论自由受到威胁时，我们如何支持本地活动人士。"
       ],
@@ -4982,6 +5089,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "在邮件末尾展现您的独特品牌，而非我们的统一标识。"
       ],
+      "Methods that include both password reset and data recovery.": [
+        "包含密码重置和数据恢复两种方法。"
+      ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "大多数问题可通过我们的分步指南在几分钟内解决！"
       ],
@@ -4995,7 +5105,7 @@
         "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
       "Send a code to your recovery email or phone": [
-        "将验证码发送至您的恢复邮箱或手机号码"
+        "向您的密保邮箱或手机发送验证码"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "为所有用户建立账户并邀请他们加入 ${ BRAND_NAME }。"
@@ -5008,6 +5118,9 @@
       ],
       "Still need help? Our support team is here for you.": [
         "仍需要帮助？我们的支持团队随时为您服务。"
+      ],
+      "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
+        "这可以让您重新访问 ${ BRAND_NAME } 账户，但不会恢复您的加密数据。"
       ],
       "This may happen if permissions were removed or your password changed.": [
         "如果权限被移除或密码被更改，可能会发生此情况。"
@@ -5645,7 +5758,7 @@
     },
     "Email": {
       "Email verified": [
-        "电子邮件已验证"
+        "邮箱已验证"
       ],
       "Thank you for verifying your email address.": [
         "感谢您验证您的邮箱地址。"
@@ -6182,6 +6295,9 @@
       "Add emergency contact": [
         "添加紧急联系人"
       ],
+      "Add option": [
+        "添加选项"
+      ],
       "Add recovery contact": [
         "添加恢复联系人"
       ],
@@ -6195,7 +6311,7 @@
         "已批准请求"
       ],
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
-        "请向恢复联系人寻求帮助，他们将收到一封电子邮件来验证您的请求并解锁您的数据。"
+        "向恢复联系人寻求帮助。他们将收到一封邮件，用于验证您的请求并解锁您的数据。"
       ],
       "Asking for help": [
         "正在请求帮助"
@@ -6223,6 +6339,9 @@
       ],
       "Connect with them to confirm they need help to recover their data.": [
         "请与他们联系以确认他们需要帮助来恢复数据！"
+      ],
+      "Contact-assisted recovery": [
+        "联系人辅助恢复"
       ],
       "Contacts": [
         "联系人"
@@ -6329,6 +6448,9 @@
       "People who trust me": [
         "信任我的人"
       ],
+      "People you have added as recovery contacts.": [
+        "您已添加为恢复联系人的用户。"
+      ],
       "Proceed anyway": [
         "仍要继续"
       ],
@@ -6425,8 +6547,14 @@
       "They added me as trusted contact. I can access their account in case of an emergency.": [
         "他们添加我为可信联系人，以便我可以在紧急情况下访问他们的账户。"
       ],
+      "They added you as trusted contact. You can access their account in case of an emergency.": [
+        "他们已将您添加为受信任的联系人。在紧急情况下，您可以访问他们的账户。"
+      ],
       "They may ask to access my account in case of an emergency.": [
         "他们可能会在紧急情况下请求访问我的账户"
+      ],
+      "They may ask to access your account in case of an emergency.": [
+        "他们可能会在紧急情况下请求访问您的账户。"
       ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
         "他们将在**${ days }天后**自动获得访问权限，具体日期为**${ formattedAccessibleAt }**。在此之前，您可随时拒绝其请求或立即授予访问权限。"
@@ -6652,7 +6780,7 @@
         "域名不可用，请稍后再试"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "目前无法编辑帐单地址。请稍后重试。"
+        "当前无法编辑账单地址，请稍后重试。"
       ],
       "Email address disabled": [
         "邮箱地址已停用"
@@ -6721,7 +6849,7 @@
         "更新账单地址失败"
       ],
       "Failed to update detailed monitoring.": [
-        "更新详细监控失败。"
+        "更新详细监测失败。"
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "文件过大。您的 Logo 必须是 30 KB 以内。"
@@ -6967,7 +7095,7 @@
         "请先设置密保手机"
       ],
       "Please set a recovery/notification email first": [
-        "请先设置恢复/通知邮箱"
+        "请先设置密保/通知邮箱"
       ],
       "Please try again in a few moments.": [
         "请稍后再试."
@@ -7195,7 +7323,7 @@
         "错误的账单地址"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "密语错误，请重试或使用另一种方式恢复。"
+        "恢复短语错误，请重试或使用其他恢复方法。"
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "验证代码错误，请确认正确复制代码后重试。更改该记录可能需要 24 小时才能生效。"
@@ -7395,10 +7523,10 @@
         "应用当前不可用"
       ],
       "Ask your administrator to enable Account monitor.": [
-        "请联系您的管理员以启用账户监视器。"
+        "请联系您的管理员以启用账户监测。"
       ],
       "Enable account monitor to start loading event.": [
-        "启用账户监控以开始加载事件。"
+        "启用账户监测以开始加载事件。"
       ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
@@ -7441,7 +7569,7 @@
         "联系人 ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "请 ${ signIn } 后重新发送验证邮件。"
+        "请 ${ signIn } 重新发送密保邮箱验证请求。"
       ],
       "sign in": [
         "登录"
@@ -7899,14 +8027,29 @@
       ]
     },
     "Feature": {
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 台设备可同时接入 VPN"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 账户保护"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
       ],
       "3 email domains": [
         "3 个邮箱域名"
       ],
+      "3 folders, labels and filters": [
+        "3 个文件夹、标签和筛选器"
+      ],
       "500 GB storage": [
         "500 GB 存储空间"
+      ],
+      "500 MB Mail storage": [
+        "500 MB 邮件存储空间"
       ],
       "500 MB storage": [
         "500 MB 存储空间"
@@ -7935,6 +8078,12 @@
       "More premium features": [
         "更多高级功能"
       ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "Mail、Calendar、Drive、Pass 和 VPN 中的高级功能"
+      ],
+      "Priority support": [
+        "优先支持"
+      ],
       "Remove": [
         "注销"
       ],
@@ -7947,11 +8096,20 @@
       "Secure streaming support": [
         "让流媒体更安全"
       ],
+      "Short domain @pm.me": [
+        "短域名 @pm.me"
+      ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
       ],
+      "Unlimited folders, labels and filters": [
+        "无限文件夹、标签和筛选器"
+      ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
       ]
     },
     "Features": {
@@ -8310,7 +8468,7 @@
     },
     "Form paragraph": {
       "The voucher will be sent here.": [
-        "凭证将发送至此处。"
+        "凭证将发送到此地址"
       ]
     },
     "Free trial dekstop": {
@@ -8636,7 +8794,7 @@
         "激活您预留的邮箱地址"
       ],
       "Address reservation voucher": [
-        "地址保留凭证"
+        "地址预留凭证"
       ],
       "Donate to the ${ BRAND_NAME } Foundation": [
         "向 ${ BRAND_NAME } 基金会捐赠"
@@ -8651,7 +8809,7 @@
         "预留儿童邮箱地址"
       ],
       "We emailed you the voucher": [
-        "我们已通过电子邮件向您发送了凭证"
+        "我们已将凭证通过邮件发送给您！"
       ]
     },
     "Headline": {
@@ -9090,6 +9248,12 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
       ],
+      "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ BRAND_NAME } 企业套餐为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
+      ],
+      "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
+        "${ BRAND_NAME } 独立运营且无广告收入。\n以下示例说明了如何在实际中运用这种独立性。"
+      ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
         "${ BRAND_NAME } 是您可以信赖的隐私，由强大的加密、开源代码和瑞士隐私法确保。我们相信没有人能够利用您的数据。我们的技术和业务基于这种从根本上更严格的隐私定义。"
       ],
@@ -9101,6 +9265,9 @@
       ],
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } 将向 ${ phoneNumber } 发送验证码，这可能产生标准短信费用。"
+      ],
+      "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
+        "${ BRAND_NAME } 会向您的密保手机发送验证码，您可能需要支付标准短信费用。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
@@ -9122,6 +9289,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } 将不再保留文件的先前版本。"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
@@ -9364,13 +9534,13 @@
         "**此操作将禁用端到端加密的邮件转发：** 您之后可以重新设置。"
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
-        "**仅凭恢复邮箱无法在您重置密码后恢复加密数据**"
+        "**重置密码后，仅凭密保邮箱将无法恢复加密数据！**"
       ],
       "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
         "**您的恢复方法将失效：**您可以稍后生成新的恢复数据"
       ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
-        "**仅凭恢复手机无法在您重置密码后恢复加密数据**"
+        "**重置密码后，仅凭密保手机将无法恢复加密数据！**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -9406,10 +9576,10 @@
         "恢复文件可让您在账户恢复后解锁并查看数据"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "若不慎忘记密码，恢复密语可用于找回账户并解锁加密邮件"
+        "若不慎忘记密码，恢复短语可让您访问账户并恢复已加密的消息。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
+        "一个用户即一个关联了单一用户名、邮箱和自然人的账户"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "在最多10个设备上访问6,500多个高速服务器以保持您浏览数据的安全。 可在 ${ ios }、 ${ android }、 ${ appleTV }和 ${ desktop } 上获得。"
@@ -9433,13 +9603,19 @@
         "启用"
       ],
       "Activity Monitor": [
-        "活动监视器"
+        "活动监测"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
+      "Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${ BRAND_NAME } Account.": [
+        "添加 1 到 5 名您信任且能轻松联系的人。他们将能够通过登录您的账户为您重置密码。他们必须拥有 ${ BRAND_NAME } 账户。"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "为您的账户添加一个 @pm.me 邮箱地址。这个简短易记的域名代表 “${ MAIL_APP_NAME } me” 或 “私信我”"
+      ],
+      "Add a phone number in case we need to contact you": [
+        "添加手机号码以备我们需要联系您时使用"
       ],
       "add a recovery method": [
         "添加恢复方法"
@@ -9542,6 +9718,9 @@
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "允许通过二维码登录后，当您忘记密码时，可以通过扫描二维码登录。您只需在另一台设备上登录 ${ BRAND_NAME } 服务即可。"
+      ],
+      "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
+        "允许在设置中重置密码，使您能够在忘记密码但仍登录 ${ BRAND_NAME } 时更改密码。"
       ],
       "Already allocated": [
         "已分配"
@@ -9747,6 +9926,12 @@
       "Beta": [
         "测试版"
       ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "首 6 个月按 ${ monthlyDiscountedPrice } 计费，续费按 ${ monthlyRenewalPrice } 计费。"
+      ],
+      "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
+        "首年 12 个月按 ${ yearlyDiscountedPrice } 计费，续费按 ${ yearlyRenewalPrice } 计费。"
+      ],
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
@@ -9755,6 +9940,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
+        "通过添加您信任的人作为恢复联系人，当您在密码重置后难以恢复数据时，我们可以向他们发送邮件以帮助您。您也可以成为其他人的恢复联系人。"
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "通过使用 SimpleLogin 电子邮件创建 ${ PASS_APP_NAME } 账户，您可以直接从 ${ PASS_APP_NAME } 管理别名。"
@@ -9787,10 +9975,10 @@
         "随时取消"
       ],
       "Can’t access your recovery email?": [
-        "找回密码需要的邮箱用不了？"
+        "无法访问密保邮箱？"
       ],
       "Can’t access your recovery phone?": [
-        "找回密码需要的手机号用不了？"
+        "无法访问密保手机？"
       ],
       "Center": [
         "居中"
@@ -9848,6 +10036,9 @@
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "通过 Okta、Microsoft Azure 或 Google Identity Platform 等身份提供商为组织配置 SAML 身份验证。这将为整个组织启用 SAML。"
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "在 ${ MAIL_APP_NAME } 中关联和管理您的外部邮箱。"
       ],
       "Connection data will be available in around 1 hour.": [
         "连接数据将在 1 小时左右可用。"
@@ -10069,7 +10260,7 @@
         "搞定！我们向 ${ destination } 发送了一个验证码。"
       ],
       "Don’t know your recovery phrase?": [
-        "找回密码需要的助记词没有了？"
+        "不知道您的恢复短语？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "没有跳转？请先关闭弹出窗口屏蔽插件。"
@@ -10177,7 +10368,10 @@
         "正在启用自动删除…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "再次启用通过密语恢复将生成一个新的恢复密语。"
+        "重新启用恢复短语将生成一个新的恢复短语！"
+      ],
+      "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "在此设备上启用数据备份后，重置密码后只需在此设备上登录，即可恢复对邮件、联系人、文件、密码以及您账户中任何其他加密数据的访问权限。"
       ],
       "Encryption setting updated": [
         "加密设置已更新"
@@ -10219,7 +10413,7 @@
         "输入用户 ${ userName } 的新密码。"
       ],
       "Enter the 12-word recovery phrase associated with your account.": [
-        "请输入与您的账户关联的 12 字恢复短语！"
+        "请输入与您账户关联的 12 字恢复短语！"
       ],
       "Enter the code from your authenticator app": [
         "请输入身份验证应用中的验证码"
@@ -10231,7 +10425,7 @@
         "输入发送到${ email } 的验证码。如果您在收件箱中没有找到该邮件，请检查您的垃圾邮件文件夹。"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "输入您要导入的邮箱账号和密码。"
+        "请输入您要导入的邮箱账户的凭据。"
       ],
       "Enter the email address used to reserve ${ reservedEmail }.": [
         "请输入用于预留邮箱 ${ reservedEmail } 的邮箱地址"
@@ -10264,16 +10458,16 @@
         "输入您自己的密码（作为可信联系人）"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "输入您的密保邮箱，我们将发邮件告知您的用户名或邮箱地址。"
+        "请输入您的密保邮箱地址，我们将向您发送您的用户名或邮箱地址。"
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "请输入您的密保手机号，我们将把您的用户名或邮箱地址发送至该号码。"
+        "请输入您的密保手机号码，我们将向您发送您的用户名或邮箱地址。"
       ],
       "Enter your recovery phrase to change your password now.": [
-        "输入找回密码需要的助记词。"
+        "请输入您的恢复短语以更改密码。"
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
-        "请输入您的恢复短语以验证身份并禁用您的 2FA！"
+        "请输入您的恢复短语以验证身份并禁用 2FA！"
       ],
       "Event invitations and responses will be sent in this language.": [
         "事件邀请和回复将以此语言发送"
@@ -10338,6 +10532,9 @@
       "for ${ price }": [
         "仅需 ${ price }"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "如需 10 年版本历史，请联系我们的销售团队。"
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "要随时访问电子邮件并获得优化的移动体验，请下载我们的 ${ androidAppLink } 或 ${ iosAppLink }。"
       ],
@@ -10372,13 +10569,13 @@
         "网关已删除"
       ],
       "Gateway monitor": [
-        "网关监视器"
+        "网关监测"
       ],
       "Gateways": [
         "网关"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "新生成的恢复密语将取代旧的。"
+        "新生成的恢复短语将取代旧的！"
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "使用 ${ AUTHENTICATOR_APP_NAME } 即可在您的任意设备上获取验证码。"
@@ -10461,8 +10658,11 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
       ],
+      "If disabled, ${ BRAND_NAME } will still use your recovery email to send security notifications.": [
+        "如果禁用，${ BRAND_NAME } 仍会向您的密保邮箱发送安全通知。"
+      ],
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
-        "如果禁用，${ BRAND_NAME } 仍将使用您的恢复手机发送安全通知。"
+        "如果禁用，${ BRAND_NAME } 仍会向您的密保手机发送安全通知。"
       ],
       "If disabled, only administrators will be able to export data.": [
         "如果禁用，则仅管理员能够导出数据。"
@@ -10486,7 +10686,7 @@
         "如果可以，请在登录时使用之前登录过的设备或浏览器。"
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
-        "如果您输入的邮箱曾用于预留儿童邮箱地址，我们将重新发送激活凭证。"
+        "如果您输入的邮箱曾用于预留孩子的邮箱地址，我们将重新发送激活凭证。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系统时区与当前时区偏好设置不匹配，系统将提示您更新（每天最多一次）。"
@@ -10541,6 +10741,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "如果您购买了礼品码或从我们的支持团队收到了礼品码，可以在此处输入。"
+      ],
+      "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
+        "如果您最近重置了密码，可以通过 ${ recoveryMethodLink } 解锁您的数据。如果这是因为旧密码重置导致的，您可以停止再次显示此消息。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您近期重置了您的密码，您可以使用数据恢复手段解锁您的数据。"
@@ -10734,6 +10937,12 @@
       "Item updated in vault": [
         "密码库中有条目被被更新"
       ],
+      "It’s often the easiest way to recover your account if you’re signed in.": [
+        "当您已登录时，这通常是恢复账户的最简便方式。"
+      ],
+      "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
+        "这是即时恢复所有数据的唯一方法，请务必将其保存在安全但可获取的地方。"
+      ],
       "JCB logo": [
         "JCB 徽标"
       ],
@@ -10741,7 +10950,7 @@
         "只需确认您的选择，剩下的交给我们即可。"
       ],
       "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "请妥善保管凭证直到需要使用时，例如保存在 ${ DRIVE_APP_NAME } 中。"
+        "请妥善保管凭证，例如存放在 ${ DRIVE_APP_NAME } 中，直到需要使用时。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "使用这些指南和技巧，让您的信息更安全、更私密。"
@@ -10822,7 +11031,7 @@
         "正在加载 eduGAIN 数据..."
       ],
       "Loading gateways monitoring current status.": [
-        "正在加载网关监控的当前状态。"
+        "正在加载网关监测的当前状态。"
       ],
       "Loading preview": [
         "正在载入预览"
@@ -10879,10 +11088,10 @@
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
       ],
       "Monitor accounts": [
-        "监控账户"
+        "监测账户"
       ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "监控和审计使用您的 ${ BRAND_NAME } 凭据的所有 ${ BRAND_NAME } 服务的身份验证尝试。"
+        "监测和审计所有使用 ${ BRAND_NAME } 凭据的 ${ BRAND_NAME } 服务的身份验证尝试。"
       ],
       "Monitor login activity, detect unauthorized access and close security and compliance gaps. ": [
         "监测登录活动、检测未授权访问并填补安全与合规漏洞。"
@@ -10927,7 +11136,7 @@
         "新闻或媒体文章"
       ],
       "Next billing date": [
-        "下一个帐单日期"
+        "下一个账单日期"
       ],
       "No account keys exist": [
         "账户密钥不存在"
@@ -10940,6 +11149,9 @@
       ],
       "No card required": [
         "无需银行卡"
+      ],
+      "No connected addresses.": [
+        "未关联任何地址"
       ],
       "No countries enabled": [
         "未启用的国家/地区"
@@ -11050,7 +11262,7 @@
         "组织成员需要使用其密码或 PIN 码等解锁 ${ PASS_APP_NAME }"
       ],
       "Organization monitor": [
-        "组织监控器"
+        "组织监测"
       ],
       "Organization size": [
         "组织的规模"
@@ -11083,13 +11295,13 @@
         "已开通套餐"
       ],
       "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - 自定义电子邮件已确认"
+        "Pass Monitor - 自定义邮件已确认"
       ],
       "Pass Monitor - custom email created": [
-        "Pass Monitor - 自定义电子邮件已创建"
+        "Pass Monitor - 自定义邮件已创建"
       ],
       "Pass Monitor - custom email deleted": [
-        "Pass Monitor - 自定义电子邮件已删除"
+        "Pass Monitor - 自定义邮件已删除"
       ],
       "Pass usage logs": [
         "Pass 使用日志"
@@ -11155,7 +11367,7 @@
         "请检查您的文件，或尝试${ csvTemplateButton }。"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "请输入与您的账户关联的 12 字恢复密语。"
+        "请输入与您账户关联的 12 字恢复短语。"
       ],
       "Please fill in all required fields.": [
         "请填写所有必填项。"
@@ -11269,13 +11481,19 @@
         "接收关于 ${ categoryLabel } 的通知"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "通过电子邮件接收保留凭证。您或您的孩子可以使用它在未来 15 年内激活该地址。${ learnMoreLink }"
+        "通过邮件接收预留凭证，您或孩子可以在未来 15 年内使用该凭证激活地址。${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "近期使用的服务器："
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "启用 ${ PROTON_SENTINEL_NAME } 时，无法使用通过密保邮箱恢复选项。"
+      ],
+      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "启用 ${ PROTON_SENTINEL_NAME } 时，无法使用通过密保手机恢复选项。"
       ],
       "Recovery file downloaded": [
         "恢复文件已下载"
@@ -11290,16 +11508,16 @@
         "恢复短语已复制到剪贴板"
       ],
       "Recovery phrase downloaded": [
-        "恢复密语已下载"
+        "恢复短语已下载"
       ],
       "Recovery phrase has been disabled": [
-        "恢复密语已被禁用"
+        "恢复短语已禁用"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "恢复密语与任何密钥不相关。"
+        "恢复短语未关联任何密钥！"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "恢复密语与任何过时的密钥不相关。"
+        "恢复短语未关联任何过时的密钥！"
       ],
       "Reddit": [
         "Reddit"
@@ -11710,7 +11928,7 @@
         "这些配置适用于 WireGuard 路由器和官方客户端。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "这些凭据无法用来登录我们的官方 ${ VPN_APP_NAME } 应用。${ learnMore }"
+        "这些凭据不能用于登录我们的官方 ${ VPN_APP_NAME } 应用。${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -11787,6 +12005,15 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证时间可能长达一小时。验证成功后，不要删除 TXT 记录，因为需要它来确认您继续拥有该域名。"
       ],
+      "This will allow the TV to access your ${ BRAND_NAME } account.": [
+        "这将允许电视访问您的 ${ BRAND_NAME } 账户。"
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "这将删除您所有早于 ${ rententionLabel } 的文件版本。"
+      ],
+      "This will delete all previous versions of your files.": [
+        "这将删除您文件的所有先前版本！"
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "这将拒绝访问 **${ email }**，您确定要继续吗？"
       ],
@@ -11794,13 +12021,16 @@
         "这将禁用双因素身份验证，包括验证器应用程序和安全密钥方法。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
+        "这将禁用您当前的恢复短语，您将无法使用它来访问账户或解密数据。"
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "此操作将下载一个包含您私钥的文件，请通过使用密码加密来保护此文件。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以在 ${ BRAND_NAME } 中使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请关闭后再继续。"
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "这将让您快速安全地访问您的 ${ BRAND_NAME } 账户，以便更改密码。"
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "此操作将永久删除这些用户的相关数据和所有的邮箱地址。"
@@ -11874,8 +12104,17 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
+      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
+        "为了确保您账户的最高安全性，请禁用 **二维码登录**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+        "为确保您账户的最高安全性，请禁用**通过密保邮箱恢复**！"
+      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "为确保您的账户达到最高安全级别，请禁用 **通过恢复手机恢复**。"
+        "为确保您账户的最高安全性，请禁用**通过密保手机恢复**！"
+      ],
+      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
+        "为了确保您账户的最高安全性，请禁用 **已登录状态下的重置**。"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "为了确保您不会丢失重要数据，${ DRIVE_APP_NAME } 会在您和您的协作者进行更改时保存文件的旧版本。选择 ${ BRAND_NAME } 应保留先前版本的时间。"
@@ -11902,13 +12141,16 @@
         "继续操作之前，操作请求需要验证。"
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
-        "若要重新获得对您账户和数据的访问权限，请输入与您账户关联的 12 词恢复短语。"
+        "若要重新获得对您账户和数据的访问权限，请输入与您账户关联的 12 字恢复短语。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "增强互联网传输安全，下载安装 ${ VPN_APP_NAME } 应用程序，连接应用提供的服务器。"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
+      ],
+      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
+        "若要使用此数据恢复方法，您必须具备密码重置选项（例如邮箱验证或短信验证）。"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
@@ -11956,7 +12198,7 @@
         "双密码模式使用独立的密码进行登录和数据解密。这在某些情况下能提供轻微的安全优势，但我们为大多数用户推荐单密码模式。要切换至双密码模式，请先设置一个登录密码，再设置一个二级密码。"
       ],
       "Unable to check gateways monitoring current status.": [
-        "无法检查网关监控的当前状态。"
+        "无法检查网关监测的当前状态。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "无法验证恢复文件签名，请联系支持人员。"
@@ -11999,6 +12241,9 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
+      ],
+      "Upgrade to unlock": [
+        "升级以解锁"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "升级以解锁 ${ monitorLink }！"
@@ -12043,7 +12288,7 @@
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "要是不使用官方客户端，比如使用 macOS 上的 Tunnelblick 或者 GNU/Linux 上的 OpenVPN，那就用下面的凭据连接 ${ VPN_APP_NAME }。"
+        "非官方应用连接 ${ VPN_APP_NAME } 服务器时，请使用以下凭据。使用场景示例包括：macOS 上的 Tunnelblick、GNU/Linux 上的 OpenVPN。"
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "在外部服务中使用所选邮箱地址作为 SMTP 用户名，使用生成的令牌作为 SMTP 密码。"
@@ -12102,6 +12347,9 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
+      "Version history": [
+        "版本历史"
+      ],
       "Version number successfully copied to clipboard": [
         "版本号已成功复制"
       ],
@@ -12127,10 +12375,16 @@
         "警告："
       ],
       "Warning: deleting your account is permanent.": [
-        "警告：删除账号将是永久性的。"
+        "警告：删除账户为永久性操作。"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我们建议尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
+      ],
+      "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "我们可以使用您的密保邮箱向您发送重置密码的验证码，并在发现可疑活动时与您联系。"
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "我们可以使用您的密保手机向您发送重置密码的验证码，并在发现可疑活动时与您联系。"
       ],
       "We couldn't complete the transaction. Please try again.": [
         "我们无法完成交易。请重试。"
@@ -12169,13 +12423,16 @@
         "我们建议在强制使用 2FA 之前通知组织成员并要求他们为其账户设置 2FA。"
       ],
       "We recommend using your recovery phrase instead.": [
-        "我们建议您改为使用恢复密语。"
+        "我们建议您改用恢复短语。"
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "我们会将账户恢复信息安全地存储在您的可信设备上，避免数据意外丢失"
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "我们在此浏览器中存储了一份备份文件，因为您在此 ${ deviceLink } 启用了数据恢复功能。如果备份文件有效，您将立即恢复对加密数据的完整或部分访问权限。"
+      ],
+      "We strongly recommend that everyone enable recovery by recovery phrase.": [
+        "我们强烈建议所有人启用通过恢复短语恢复。"
       ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
@@ -12214,10 +12471,10 @@
         "验证码会发到 ${ boldValue }。"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "我们会将重置代码发送到您先前提供的密保邮箱。"
+        "我们将向您的密保邮箱发送用于账户恢复的重置代码。"
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "我们会将重置代码发送到您先前提供的密保手机。"
+        "我们将向您的密保手机发送用于账户恢复的重置代码。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
@@ -12250,7 +12507,7 @@
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "当您准备好激活该地址时，请扫描二维码或使用凭证中的链接。"
+        "当您准备激活地址时，请扫描二维码或使用凭证中的链接。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -12397,7 +12654,7 @@
         "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ${ MAIL_APP_NAME }。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "可以使用以下凭据，通过诸如 macOS 下的 Tunnelblick 和 GNU/Linux 下的 OpenVPN 等第三方开源 VPN 客户端，连接到 ${ VPN_APP_NAME } 服务器。"
+        "您可以使用以下凭据，通过第三方的开源 VPN 应用（例如 macOS 的 Tunnelblick 或 GNU/Linux 的 OpenVPN）连接到 ${ VPN_APP_NAME } 服务器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
@@ -12416,6 +12673,9 @@
       ],
       "You don't have any referrals.": [
         "您目前没有推荐记录。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "您无需打开或阅读该文件，只需下载并存放在安全位置即可。"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
@@ -12552,6 +12812,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
+      "Your ${ planDisplayName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "您的 ${ planDisplayName } 套餐不仅能保护您的业务数据和通信安全，还能支持您的合规目标、让您的业务脱颖而出，并保持团队紧密连接。"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
       ],
@@ -12598,7 +12861,7 @@
         "您的信息在 ${ displayedDate } 找到"
       ],
       "Your login information will not be saved after the import is completed.": [
-        "导入完成后我们不会留存您的账号和密码。"
+        "导入完成后，您的登录信息将不会被保存。"
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "下次账单日期为 ${ renewalTime }，您可以随时取消。"
@@ -12628,10 +12891,10 @@
         "您最近的更改已发布，用户将在几小时后看到这些更新。"
       ],
       "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
-        "您的恢复文件将在重置密码后，恢复您对账户中邮件、联系人、文件、密码及其他所有加密数据的访问权限。"
+        "重置密码后，您的恢复文件将能够恢复账户中的邮件、联系人、文件、密码以及任何其他加密数据的访问权限。"
       ],
       "Your recovery phrase": [
-        "您的恢复密语"
+        "您的恢复短语"
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "您的恢复短语由 12 个随机生成的单词按特定顺序组成。"
@@ -12655,7 +12918,7 @@
         "您的试用将于 ${ timeRemaining } 结束。"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "您预留的 ${ BRAND_NAME } 邮箱地址 ${ reservedEmail } 的兑换凭证"
+        "您的预留 ${ BRAND_NAME } 邮箱地址凭证：${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13231,6 +13494,15 @@
       "${ Brand } ending with ${ Last4 }": [
         "${ Brand } 卡号末四位：${ Last4 }"
       ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 桌面应用"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } 企业版"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
@@ -13257,6 +13529,12 @@
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } /月"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } 账户保护"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "${ PROTON_SENTINEL_NAME } 保护"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -13384,6 +13662,9 @@
       "Allow notifications by email": [
         "允许通过电子邮件发送通知"
       ],
+      "Allow QR code sign-in": [
+        "允许扫码登录"
+      ],
       "Allow random passwords": [
         "允许生成随机密码"
       ],
@@ -13394,7 +13675,7 @@
         "允许通过密保手机恢复"
       ],
       "Allow recovery by recovery phrase": [
-        "允许通过恢复密语来恢复"
+        "允许通过恢复短语恢复"
       ],
       "Allow recovery using a trusted device": [
         "允许通过可信设备恢复"
@@ -13489,6 +13770,9 @@
       "Automated confirmations and alerts": [
         "自动确认和提醒"
       ],
+      "Automatic email forwarding": [
+        "自动邮件转发"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
       ],
@@ -13528,6 +13812,9 @@
       "Block malware, ads and trackers": [
         "拦截恶意软件、广告和追踪器"
       ],
+      "Block trackers and marketers": [
+        "屏蔽跟踪器和营销者"
+      ],
       "Bookings, billings, and orders": [
         "预订、账单和订单"
       ],
@@ -13566,6 +13853,9 @@
       ],
       "Cash": [
         "现金"
+      ],
+      "Catch-all email address": [
+        "通配邮件地址"
       ],
       "Categories": [
         "分类"
@@ -13702,6 +13992,9 @@
       "Current email": [
         "当前邮箱"
       ],
+      "Custom domain": [
+        "自定义域名"
+      ],
       "Custom email domain": [
         "个自定义邮箱域名"
       ],
@@ -13780,6 +14073,9 @@
       "Don't ask again": [
         "不再询问"
       ],
+      "Don't keep versions": [
+        "不保留版本"
+      ],
       "Don't show this again": [
         "不再显示此内容"
       ],
@@ -13795,14 +14091,26 @@
       "e.g. example.com": [
         "类似于 example.com"
       ],
+      "Early access": [
+        "抢先体验"
+      ],
       "Email": [
         "邮箱"
       ],
       "Email address": [
         "邮箱地址"
       ],
+      "Email addresses": [
+        "邮箱地址"
+      ],
+      "Email addresses per user": [
+        "每位用户的邮箱地址数量"
+      ],
       "Email or username": [
         "邮箱或账户名"
+      ],
+      "Email with @yourcompany.com domain": [
+        "使用 @yourcompany.com 域名的邮箱"
       ],
       "Emails (all messages)": [
         "所有邮件"
@@ -13897,6 +14205,9 @@
       "Folder location": [
         "文件夹位置"
       ],
+      "Folders, labels, and filters": [
+        "文件夹、标签和筛选器"
+      ],
       "Font family": [
         "字体"
       ],
@@ -13914,6 +14225,9 @@
       ],
       "Free": [
         "Free"
+      ],
+      "Free VPN included": [
+        "包含免费 VPN"
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
@@ -14081,7 +14395,7 @@
         "取消的主要原因"
       ],
       "Make sure you have access to a recovery email or phone, and have a data recovery option.": [
-        "请确保您拥有可用的恢复邮箱或恢复手机，并具备数据恢复选项。"
+        "请确保您可以访问密保邮箱或手机，并且有可用的数据恢复方式。"
       ],
       "Manage categories": [
         "管理分类"
@@ -14134,6 +14448,9 @@
       "Moderate NAT": [
         "保守 NAT"
       ],
+      "Monthly": [
+        "按月"
+      ],
       "More payment methods": [
         "更多付款方式"
       ],
@@ -14180,7 +14497,10 @@
         "新的二级密码"
       ],
       "Newsletters": [
-        "时事通讯"
+        "新闻通讯"
+      ],
+      "No": [
+        "否"
       ],
       "No (users cannot use the app until a vault is shared with them)": [
         "取消（用户在被共享保管库前无法使用应用）"
@@ -14215,11 +14535,17 @@
       "Online privacy for your whole family": [
         "为您的家人提供在线隐私保护"
       ],
+      "Online productivity suite": [
+        "在线生产力套件"
+      ],
       "Only a single personal vault can be created": [
         "仅可创建一个个人保险库"
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "仅在 ${ PASS_SHORT_APP_NAME } 付费套餐中可用"
+      ],
+      "Open-source code": [
+        "开源代码"
       ],
       "OpenVPN password": [
         "OpenVPN 密码"
@@ -14281,6 +14607,9 @@
       "Pending": [
         "等待"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "个人和工作邮件，以及重要的更新和通知"
+      ],
       "Phone number": [
         "电话号码"
       ],
@@ -14314,11 +14643,17 @@
       "Postal code": [
         "邮编"
       ],
+      "Premium features included": [
+        "包含的高级功能"
+      ],
       "Previous password": [
         "先前的密码"
       ],
       "Primary": [
         "基本的"
+      ],
+      "Priority support": [
+        "优先支持"
       ],
       "Promotions": [
         "优惠促销"
@@ -14357,7 +14692,7 @@
         "密保手机"
       ],
       "Recovery phrase": [
-        "恢复密语"
+        "恢复短语"
       ],
       "Remove": [
         "移除"
@@ -14407,6 +14742,9 @@
       "Secure password generator": [
         "安全密码生成器"
       ],
+      "See your team's availability": [
+        "查看您的团队忙闲状态"
+      ],
       "Select Linux package format": [
         "选择 Linux 软件包格式"
       ],
@@ -14439,6 +14777,9 @@
       ],
       "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
         "在 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ WALLET_SHORT_APP_NAME } 之间共享"
+      ],
+      "Short domain @pm.me": [
+        "短域名 @pm.me"
       ],
       "Show ${ n } administrator": [
         "显示 ${ n } 位管理员"
@@ -14527,6 +14868,9 @@
       "Storage": [
         "存储"
       ],
+      "Storage per user": [
+        "每位用户的存储空间"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -14538,6 +14882,9 @@
       ],
       "Subscription options": [
         "计费方式"
+      ],
+      "Support for multiple users": [
+        "支持多用户"
       ],
       "Swipe left action": [
         "向左滑动"
@@ -14556,6 +14903,9 @@
       ],
       "Then": [
         "则"
+      ],
+      "Third-party ads": [
+        "第三方广告"
       ],
       "Thomas": [
         "Thomas"
@@ -14632,6 +14982,9 @@
       "Use folder colors": [
         "文件夹附带颜色"
       ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
       "User": [
         "用户"
       ],
@@ -14659,6 +15012,9 @@
       "Verify keys with Key Transparency": [
         "通过密钥透明化系统验证密钥"
       ],
+      "Version history": [
+        "版本历史"
+      ],
       "Video conferencing with Zoom": [
         "使用 Zoom 进行视频会议"
       ],
@@ -14670,6 +15026,9 @@
       ],
       "Vulnerable password": [
         "易受攻击的密码"
+      ],
+      "We securely stored recovery information on this device.": [
+        "我们已在此设备上安全存储了恢复信息。"
       ],
       "Weak": [
         "弱"
@@ -14697,6 +15056,12 @@
       ],
       "Without attachment": [
         "不含附件"
+      ],
+      "Yearly": [
+        "年度"
+      ],
+      "Yearly free storage bonus": [
+        "年度免费存储奖励"
       ],
       "Yes": [
         "确定"
@@ -14728,8 +15093,11 @@
       "Your recovery email": [
         "您的密保邮箱"
       ],
+      "Your recovery phone number": [
+        "您的密保手机"
+      ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "您预留的 ${ BRAND_NAME } 邮箱地址的兑换凭证："
+        "您的预留 ${ BRAND_NAME } 邮箱地址凭证："
       ],
       "Zero-access architecture": [
         "零访问架构"
@@ -14749,7 +15117,7 @@
         "密保手机"
       ],
       "Recovery phrase": [
-        "恢复密语"
+        "恢复短语"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14914,7 +15282,7 @@
         "活动日志"
       ],
       "activity monitor": [
-        "活动监视器"
+        "活动监测"
       ],
       "Add a gift code": [
         "使用礼品码"
@@ -15129,6 +15497,9 @@
       "Upgrade your plan": [
         "升级套餐"
       ],
+      "use a data recovery method": [
+        "使用数据恢复方法"
+      ],
       "Vault": [
         "保险库"
       ],
@@ -15158,7 +15529,7 @@
     },
     "Link label": {
       "Email": [
-        "电子邮件"
+        "邮箱"
       ],
       "Facebook": [
         "Facebook"
@@ -15666,10 +16037,10 @@
         "查找您的 ${ BRAND_NAME } 账户用户名"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘记了您的 ${ BRAND_NAME } 账户密码？在此使用恢复码、邮箱或短信重置，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
+        "忘记了您的 ${ BRAND_NAME } 账户密码？在此使用恢复码、密保邮箱或短信重置密码，并重新访问您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等服务。"
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘记了您的 ${ BRAND_NAME } 账户用户名？通过您的密保邮箱或密保手机找回，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
+        "忘记了您的 ${ BRAND_NAME } 账户用户名？您可以使用密保邮箱或手机找回，并重新访问您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等服务。"
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
         "恢复访问为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址。"
@@ -16161,6 +16532,9 @@
       "Advanced network security": [
         "高级网络安全"
       ],
+      "Advanced workspace security": [
+        "高级工作区安全设置"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "所有 ${ BRAND_NAME } 产品和功能"
       ],
@@ -16231,7 +16605,7 @@
         "定制工作室品牌"
       ],
       "Data breach monitoring": [
-        "数据泄露监控"
+        "数据泄露监测"
       ],
       "Data retention policies": [
         "数据保留策略"
@@ -16261,7 +16635,7 @@
         "支持 IMAP/SMTP 客户端"
       ],
       "Email groups": [
-        "邮件组别"
+        "邮件群组"
       ],
       "Enables HIPAA compliance": [
         "遵循 HIPAA"
@@ -16336,7 +16710,7 @@
         "密码管理器"
       ],
       "Password manager to secure credentials": [
-        "密码管理器可确保凭证安全"
+        "用于保护凭据的密码管理器"
       ],
       "Password-protected Emails": [
         "邮件密码保护"
@@ -16614,7 +16988,7 @@
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "通过必要的网络监控，随时随地安全上网"
+        "通过必要的网络监测，随时随地安全上网"
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
@@ -16632,10 +17006,10 @@
         "无限的私密性和更多的存储空间，最多可容纳 2 人。"
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "您正在享受当前套餐的促销价格。 删除账号后，您将失去优惠价格；创建新账号后，优惠价格将不可用。"
+        "您当前套餐享受优惠价格。如果删除账户，您将失去该优惠价格，且创建新账户时无法重新获得。"
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+        "您当前套餐享受优惠价格。如果降级账户，您将失去该优惠价格，且再次订阅时无法重新获得。"
       ]
     },
     "new_plans: Info": {
@@ -16792,7 +17166,7 @@
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "将密码泄露的用户强制下线"
+        "当用户凭据被认为遭到泄露时，强制注销用户会话"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP 仅支持桌面客户端（如 Outlook、Apple Mail、Thunderbird）配合 ${ MAIL_APP_NAME } Bridge 使用。目前不支持云服务接入 IMAP。"
@@ -17136,7 +17510,7 @@
         "记录数超过 10000 的下载限制"
       ],
       "OpenVPN credentials regenerated": [
-        "重新生成了 OpenVPN 的账号密码"
+        "OpenVPN 凭据已重新生成"
       ],
       "Reminder has been sent": [
         "提醒已发送"
@@ -18140,14 +18514,8 @@
       "per month, billed every two years": [
         "每月，每两年结算一次"
       ],
-      "Preparing your Recovery Kit": [
-        "正在准备您的恢复套件"
-      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
-      ],
-      "Save your recovery kit to continue": [
-        "保存您的恢复套件以继续"
       ],
       "Secure vault sharing": [
         "安全保险库共享"
@@ -18286,7 +18654,7 @@
         "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **旧密码** 解锁。"
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **恢复短语** 或您的 **旧密码** 解锁。"
+        "**您所有的现有数据**（邮件、事件、联系人、文件、${ PASS_APP_NAME } 条目等）**将被锁定**，并且只能使用**恢复短语**或**旧密码**解锁。"
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "您账户上的任何 **双因素身份验证 (2FA)** 方法将被禁用。"
@@ -19182,7 +19550,7 @@
         "立即验证"
       ],
       "Verify now this recovery email address: ${ emailData.value }": [
-        "立即验证此密保邮箱地址：${ emailData.value }"
+        "立即验证密保邮箱：${ emailData.value }"
       ],
       "Verify recovery email?": [
         "验证密保邮箱？"
@@ -19191,7 +19559,7 @@
         "邮箱验证"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "完成邮箱地址验证可以提升账户安全性，多一种账户恢复方式。"
+        "验证邮箱地址可提高账户安全性，并提供更多的恢复选项。"
       ],
       "Your recovery email has been successfully removed.": [
         "密保邮箱已成功移除。"
@@ -19199,7 +19567,7 @@
     },
     "Recovery method": {
       "Email": [
-        "邮件"
+        "邮箱"
       ],
       "Phone number": [
         "电话号码"
@@ -19227,24 +19595,75 @@
       "Verify recovery phone?": [
         "验证密保手机？"
       ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "立即验证密保手机：${ phoneData.value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
+        "验证手机号码可提高账户安全性，并提供更多的恢复选项。"
       ]
     },
     "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "已完成 ${ score } / ${ maxScore }"
+      ],
+      "Account protection": [
+        "账户保护"
+      ],
+      "Add more options for stronger protection": [
+        "添加更多选项以获得更强的保护"
+      ],
+      "Add more options to avoid getting locked out of your account.": [
+        "添加更多选项以避免无法访问您的账户。"
+      ],
+      "Awesome. Keep your options up-to-date for stronger protection.": [
+        "太棒了。请保持您的选项为最新，以获得更强的保护。"
+      ],
       "Good start. Add more options for a stronger protection.": [
         "不错的开始。添加更多选项以获得更强的保护。"
       ],
       "Great. Add more options for a stronger protection.": [
         "很好。添加更多选项以获得更强的保护。"
       ],
+      "How you increased your account protection": [
+        "您如何加强了账户保护"
+      ],
+      "Inactive recovery options": [
+        "未启用的恢复选项"
+      ],
+      "Maximum": [
+        "上限"
+      ],
+      "Partial": [
+        "部分"
+      ],
+      "Require password reset option (email or SMS verification)": [
+        "需要密码重置选项（邮箱或短信验证）"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "得分：${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "强"
+      ],
+      "Unprotected": [
+        "未受保护"
+      ],
+      "Weak": [
+        "弱"
       ]
     },
     "Recovery score item": {
+      "Add emergency contacts": [
+        "添加紧急联系人"
+      ],
+      "Add recovery contacts": [
+        "添加恢复联系人"
+      ],
+      "Add recovery email": [
+        "添加密保邮箱"
+      ],
       "Add recovery phone": [
-        "添加恢复手机"
+        "添加密保手机"
       ],
       "Allow data recovery on this device": [
         "允许在此设备上恢复数据"
@@ -19252,14 +19671,59 @@
       "Allow password reset from settings": [
         "允许通过设置重置密码"
       ],
+      "Allow scanning QR code to sign in": [
+        "允许扫描二维码登录"
+      ],
+      "Data recovery allowed on this device": [
+        "允许在此设备上进行数据恢复"
+      ],
+      "Download recovery file": [
+        "下载恢复文件"
+      ],
+      "Email verification enabled": [
+        "已启用邮箱验证"
+      ],
+      "Emergency contacts added": [
+        "已添加紧急联系人"
+      ],
+      "Enable recovery by email": [
+        "启用通过密保邮箱恢复"
+      ],
+      "Enable recovery by phone": [
+        "启用通过密保手机恢复"
+      ],
+      "Password reset allowed from settings": [
+        "允许在设置中重置密码"
+      ],
       "Password verified": [
         "密码已验证"
+      ],
+      "Recovery contacts added": [
+        "已添加恢复联系人"
+      ],
+      "Recovery file downloaded": [
+        "已下载恢复文件"
       ],
       "Recovery phrase saved": [
         "恢复短语已保存"
       ],
       "Save recovery phrase": [
         "保存恢复短语"
+      ],
+      "Sign-in with QR code allowed": [
+        "允许通过二维码登录"
+      ],
+      "SMS verification enabled": [
+        "已启用短信验证"
+      ],
+      "Verify password": [
+        "验证密码"
+      ],
+      "Verify recovery email": [
+        "验证密保邮箱"
+      ],
+      "Verify recovery phone": [
+        "验证密保手机"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -19284,7 +19748,7 @@
         "下载 PDF"
       ],
       "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
-        "我明白如果丢失恢复短语，我可能会永久失去对账户的访问权限。"
+        "我明白，如果丢失了恢复短语，我可能会永久无法访问我的账户。"
       ],
       "It’s the only way to recover everything—store it safely.": [
         "这是恢复所有内容的唯一方式 —— 请将其安全存储。"
@@ -19294,15 +19758,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "或者选择 ${ downloadRecoveryKitSwitchButton }。"
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "您的 **恢复工具包** 可在您被锁定账户时，用于恢复您的 ${ BRAND_NAME } 账户。"
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "保存您的恢复工具包"
-      ],
       "Save your recovery phrase": [
         "保存您的恢复短语"
       ]
@@ -19636,10 +20094,10 @@
     },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
-        " **禁止通过短信重置密码** 以防止攻击者窃取您的账户。"
+        " **禁用通过密保手机恢复**，防止攻击者劫持您的账户。"
       ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
-        " 如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
+        "如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
       ],
       "${ BRAND_NAME } will use this address to keep you updated on your account security.": [
         "${ BRAND_NAME } 将使用此邮箱地址与您保持联络关于账户安全的问题。"
@@ -19689,9 +20147,6 @@
       "Back to Safety Review": [
         "返回安全审查"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "由于您重置了密码，您当前的恢复套件只能用于恢复重置密码前创建的数据。"
-      ],
       "Can be used to regain access to your account and data": [
         "可用于重新访问您的账户和数据"
       ],
@@ -19711,16 +20166,13 @@
         "禁用通过电子邮件重置账户"
       ],
       "Disable recovery by email": [
-        "禁用密保邮箱恢复"
+        "禁用通过密保邮箱恢复"
       ],
       "Disable recovery by phone": [
-        "禁用密保手机恢复"
+        "禁用通过密保手机恢复"
       ],
       "Download ${ size }": [
         "下载 ${ size }"
-      ],
-      "Download your Recovery Kit": [
-        "下载您的恢复密钥"
       ],
       "Email address": [
         "邮箱地址"
@@ -19729,13 +20181,10 @@
         "启用基于设备的恢复"
       ],
       "Enable recovery by email": [
-        "启用密保邮箱恢复"
+        "启用通过密保邮箱恢复"
       ],
       "Enable recovery by phone": [
-        "启用密保手机恢复"
-      ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "我明白使用此恢复套件无法恢复当前锁定的数据"
+        "启用通过密保手机恢复"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
@@ -19743,11 +20192,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "如果您的 ${ BRAND_NAME } 账户被锁定，恢复套件将允许您登录并恢复数据。"
-      ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "如果您丢失了登录信息并需要重置账户，**重要的是**您必须同时使用**账户恢复和数据恢复方法**，否则您可能无法访问任何电子邮件、联系人、文件或密码。"
+        "如果您丢失了登录信息并需要重置账户，**务必**同时拥有**账户恢复方法和数据恢复方法**，否则您可能无法访问任何邮件、联系人、文件或密码。"
       ],
       "in case we need to contact you": [
         "以使我们能够联系到你"
@@ -19788,17 +20234,14 @@
       "Take action to secure your account": [
         "采取行动确保您的账户安全"
       ],
-      "There was an error generating your Recovery Kit": [
-        "生成恢复套件时出错"
-      ],
       "There was an error verifying your email": [
         "验证邮箱出错"
       ],
       "There was an error verifying your recovery email": [
-        "验证您的密保邮箱时出错"
+        "验证密保邮箱时出错"
       ],
       "There was an error verifying your recovery phone": [
-        "验证您的密保手机时出错"
+        "验证密保手机时出错"
       ],
       "to automatically recover your data when you log into a trusted device": [
         "在登录受信任设备时自动恢复数据"
@@ -19818,12 +20261,6 @@
       "to recover your account if you're ever locked out": [
         "如果您被锁定，可恢复您的账户"
       ],
-      "Update your Recovery Kit": [
-        "更新您的恢复密钥"
-      ],
-      "Update your Recovery Kit?": [
-        "更新您的恢复套件？"
-      ],
       "Verify": [
         "验证"
       ],
@@ -19834,22 +20271,19 @@
         "验证您的电话号码"
       ],
       "Verify your recovery email address": [
-        "验证您的密保邮箱地址"
+        "验证您的密保邮箱"
       ],
       "Verify your recovery phone number": [
-        "验证您的密保手机"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "我们在生成您的恢复套件时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+        "验证密保手机"
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "验证邮箱出现错误，请稍后重试。若无效，请联系技术支援。"
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的密保邮箱时遇到错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+        "我们在验证您的密保邮箱时遇到了错误。请稍后重试，如果问题仍然存在，请联系客服。"
       ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
-        "我们在验证您的密保手机时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+        "我们在验证您的密保手机时遇到了错误。请稍后重试，如果问题仍然存在，请联系客服。"
       ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
         "启用基于设备的恢复后，${ BRAND_NAME } 会将加密备份的密钥链作为文件存储在浏览器的网络存储中。"
@@ -19863,20 +20297,14 @@
       "You can disable this at any time.": [
         "您可以随时禁用此功能。"
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "重置密码时，您可以使用本恢复套件中的恢复短语来完全恢复您的账户，因此请确保将其妥善保存。"
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "若忘记密码，您将可以通过密保邮箱重新访问您的账户。"
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
-        "如果忘记密码，您可以使用密保邮箱重新访问您的账户。"
+        "如果忘记密码，可以使用密保邮箱重新访问账户。"
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "如果忘记密码，可以使用密保手机重新访问账户。"
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "您以前下载过恢复套件，下载新的恢复套件将**停用旧的恢复套件**。"
       ],
       "You have recommended actions to safeguard your account further.": [
         "建议您采取进一步保护账户的措施。"
@@ -19924,28 +20352,22 @@
         "您的密保邮箱"
       ],
       "Your recovery email address is:": [
-        "您的密保邮箱地址为："
+        "密保邮箱："
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
-        "您的密保邮箱和手机只能**恢复对您账户的访问**。"
+        "您的密保邮箱和手机**只能恢复对您账户的访问**。"
       ],
       "Your recovery email can **only recover access to your account**.": [
         "您的密保邮箱**只能恢复对您账户的访问**。"
       ],
       "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "您的恢复邮箱可能被攻击者滥用以接管您的账户，${ disableEmail } 以提高账户安全性。"
+        "密保邮箱可能被攻击者滥用以劫持您的账户，启用 ${ disableEmail } 可提高账户安全性！"
       ],
       "Your recovery email has been enabled": [
-        "您的密保邮箱已启用"
+        "密保邮箱已启用"
       ],
       "Your recovery email is set": [
-        "您的密保邮箱已设置"
-      ],
-      "Your Recovery Kit": [
-        "您的恢复密钥"
-      ],
-      "Your Recovery Kit is set": [
-        "您的恢复套件已设置"
+        "密保邮箱已设置"
       ],
       "Your recovery methods": [
         "您的恢复方法"
@@ -19954,19 +20376,19 @@
         "您的密保手机"
       ],
       "Your recovery phone can **only recover access to your account**.": [
-        "您的密保手机 **只能恢复对您账户的访问** 。"
+        "您的密保手机**只能恢复对您账户的访问**。"
       ],
       "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "您的恢复手机可能被攻击者滥用以接管您的账户，${ disablePhone } 以提高账户安全性。"
+        "密保手机可能被攻击者滥用以劫持您的账户，启用 ${ disablePhone } 可提高账户安全性！"
       ],
       "Your recovery phone has been enabled": [
-        "您的密保手机已启用"
+        "密保手机已启用"
       ],
       "Your recovery phone is set": [
-        "您的密保手机已设置"
+        "密保手机已设置"
       ],
       "Your recovery phone number is:": [
-        "您的密保手机是："
+        "密保手机："
       ]
     },
     "saml: Action": {
@@ -20173,6 +20595,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
+        "为确保您账户的最高安全性，请下载您的恢复短语并禁用高亮显示的选项。"
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
       ]
@@ -20436,6 +20861,9 @@
       ]
     },
     "session_recovery:settings:info": {
+      "To disallow password reset from settings, you must save your recovery phrase.": [
+        "若要禁止从设置中重置密码，您必须保存恢复短语。"
+      ],
       "To disallow password reset, you must have a recovery method set up.": [
         "要禁用密码重置，您必须设置恢复方法。"
       ],
@@ -20489,6 +20917,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "密码重置申请"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "启用照片版块"
       ]
     },
     "Settings description": {
@@ -20553,7 +20986,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "添加您想分享 ${ calendarName } 的 ${ BRAND_NAME } 账号，我们会为您发送邀请。"
+        "添加您想要与之共享 ${ calendarName } 的 ${ BRAND_NAME } 账户，我们将向他们发送邀请。"
       ]
     },
     "Share calendar modal input placeholder": {
@@ -21031,7 +21464,7 @@
         "邮箱别名"
       ],
       "Email, calendar, password manager, and VPN included": [
-        "包含电子邮件、日历、密码管理器以及 VPN"
+        "包含邮箱、日历、密码管理器以及 VPN"
       ],
       "End-to-end encrypted transactions": [
         "端到端加密交易"
@@ -21447,7 +21880,7 @@
         "输入您的备份密码"
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
-        "为了您的账号安全，您已从其他所有活跃设备中登出。在访问您的账户之前，您将需要输入一个新的备用密码。"
+        "为了您的安全，您已登出所有其他活跃设备。在访问您的账户之前，您需要输入一个新的备份密码。"
       ],
       "Grant": [
         "授权"
@@ -21477,7 +21910,7 @@
         "加入 ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
-        "确保将其保存在安全的地方，以便在身份提供商凭据丢失时可以重新进入您的账户。"
+        "请务必将它保存在安全的地方，以便在您无法访问身份凭据时能够重新进入账户。"
       ],
       "New backup password": [
         "新的备份密码"
@@ -21543,7 +21976,7 @@
         "单点登录已移除"
       ],
       "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
-        "该邮箱地址 ${ email } 已在 ${ BRAND_NAME } 系统中注册。请使用您的 ${ BRAND_NAME } 账号登录以继续。"
+        "邮箱地址 ${ email } 已存在于 ${ BRAND_NAME } 中，请使用您的 ${ BRAND_NAME } 凭据登录以继续。"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "用户 ${ user } 现在是单点登录账户。他们之前的密码变成了备份密码。"
@@ -21623,14 +22056,62 @@
       "${ count } person": [
         "${ count } 人"
       ],
+      "Add a phone number": [
+        "添加手机号码"
+      ],
+      "Add an email address": [
+        "添加邮箱地址"
+      ],
+      "Available on this device": [
+        "在此设备上可用"
+      ],
+      "Disable QR code sign-in": [
+        "禁用二维码登录"
+      ],
+      "Disable recovery by email": [
+        "禁用通过密保邮箱恢复"
+      ],
+      "Disable recovery by phone": [
+        "禁用通过密保手机恢复"
+      ],
+      "Disable signed-in reset": [
+        "禁用已登录状态下的重置"
+      ],
+      "Generate a recovery phrase": [
+        "生成恢复短语"
+      ],
       "Last changed ${ formattedDate }": [
         "上次更改于 ${ formattedDate }"
+      ],
+      "Last updated ${ formattedUpdateDate }": [
+        "最后更新于 ${ formattedUpdateDate }"
       ],
       "No contact": [
         "暂无联系人"
       ],
+      "Not saved": [
+        "未保存"
+      ],
       "Off": [
         "关闭"
+      ],
+      "On": [
+        "开启"
+      ],
+      "Outdated": [
+        "已过期"
+      ],
+      "Saved": [
+        "已保存"
+      ],
+      "Unverified": [
+        "未验证"
+      ],
+      "Verified": [
+        "已验证"
+      ],
+      "Verify ${ value }": [
+        "验证 ${ value }"
       ]
     },
     "Step in filter modal": {
@@ -22293,17 +22774,50 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } 为您的文件和照片提供 1 TB 存储空间。您还有资格获得年度存储奖励。"
+      ],
       "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } 为您的文件和照片提供 200 GB 存储空间。您还可获得年度存储奖励。"
       ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle } 让您可以使用所有应用和高级功能。隐私保护已内置其中，您可放心使用，知晓您的数据和身份是安全的。"
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } 为您提供所有应用、所有功能、新版本的早期访问权限以及掌控数据和数据安全所需的一切。"
+      ],
+      "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planTitle } 为最多 2 人提供无限隐私和更多存储空间。"
+      ],
+      "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
+        "${ planTitle } 为您的团队提供所有所需的协作工具，使其在工作中高效且有条理，同时保护您的业务安全。"
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle } 为您的团队提供在工作中提高生产力和组织性所需的一切，包括所有 ${ BRAND_NAME } 应用及其高级功能。"
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planTitle } 为您的团队提供提高生产力、组织有序以及掌控收件箱、日程等所需的一切。"
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planTitle } 超越了基础功能，帮助您提高生产力、更有条理，并掌控您的收件箱、邮件身份等。"
+      ],
       "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planTitle } 帮助确保您的每位家庭成员及其数据在上网时都受到保护。"
+      ],
+      "Compare the key differences that matter for your business.": [
+        "对比对您的业务至关重要的主要差异。"
       ],
       "Free forever": [
         "永久免费"
       ],
       "per month, billed annually": [
         "每月，按年计费"
+      ],
+      "Save 50% for 1 year, and keep full access": [
+        "节省 50% 费用持续 1 年，并保留所有访问权限"
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "节省 50% 费用持续 6 个月，并保留所有访问权限"
       ],
       "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
         "了解 ${ MAIL_APP_NAME } 的对比优势，以及我们的独立性为何能带来不同。"
@@ -22539,10 +23053,10 @@
         "您已退订成功"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
-        "如果您输入的是有效的密保邮箱地址，您将在一分钟内通过该邮箱收到您的用户名。"
+        "若您的密保邮箱地址无误，您将在一分钟内收到有关您用户名的邮件。"
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
-        "如果您输入了有效的密保手机号码，您将在一分钟内通过短信收到您的用户名。"
+        "若您的密保手机号码无误，您将在一分钟内收到有关您用户名的短信。"
       ],
       "Your address has been activated": [
         "您的地址已激活"
@@ -22631,6 +23145,9 @@
       ],
       "/user per month": [
         "/用户每月"
+      ],
+      "/year": [
+        "/年"
       ]
     },
     "Suffix for price": {
@@ -22749,6 +23266,9 @@
       ]
     },
     "Temporary need": {
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Keep current plan": [
         "保留当前套餐"
       ]
@@ -22909,7 +23429,7 @@
         "账户受限"
       ],
       "Account suspended": [
-        "账号已被停用"
+        "账户已被停用"
       ],
       "Account temporarily locked": [
         "账户暂时锁定"
@@ -22920,6 +23440,9 @@
       "Actions": [
         "操作"
       ],
+      "Activate multi-user support": [
+        "启用多用户支持"
+      ],
       "Activate organization key": [
         "激活机构密钥"
       ],
@@ -22927,7 +23450,7 @@
         "激活用户"
       ],
       "Activity monitor": [
-        "活动监视器"
+        "活动监测"
       ],
       "Add ${ totalServerCount } server?": [
         "添加 ${ totalServerCount } 台服务器？"
@@ -22940,6 +23463,9 @@
       ],
       "Add address": [
         "添加地址"
+      ],
+      "Add an emergency contact": [
+        "添加紧急联系人"
       ],
       "Add another notification to remind you of this event": [
         "添加另一个提醒您此日程的通知"
@@ -23003,6 +23529,9 @@
       ],
       "Address and key verification": [
         "地址和密钥验证"
+      ],
+      "Advanced recovery options": [
+        "高级恢复选项"
       ],
       "Allocate storage": [
         "分配存储空间"
@@ -23169,17 +23698,11 @@
       "Confirm": [
         "确认"
       ],
-      "Confirm address": [
-        "确认地址"
-      ],
       "Confirm downgrade": [
         "确认降级"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "确定放弃 ${ BRAND_NAME } 特权"
-      ],
-      "Confirm phone number": [
-        "确认电话号码"
       ],
       "Connect ${ name }": [
         "连接至 ${ name }"
@@ -23205,11 +23728,17 @@
       "Connect your custom domain": [
         "连接您的自定义域名"
       ],
+      "Connected emails": [
+        "已关联的邮箱"
+      ],
       "Connection status": [
         "连接状况"
       ],
       "Contact us": [
         "联系我们"
+      ],
+      "Contact-assisted recovery": [
+        "联系人辅助恢复"
       ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
@@ -23316,6 +23845,9 @@
       "Data recovery": [
         "数据恢复"
       ],
+      "Data recovery options": [
+        "数据恢复选项"
+      ],
       "Data retention": [
         "数据保留"
       ],
@@ -23376,6 +23908,9 @@
       "Delete user?": [
         "删除用户?"
       ],
+      "Delete version history?": [
+        "删除版本历史？"
+      ],
       "Deny access to user?": [
         "拒绝用户访问？"
       ],
@@ -23391,6 +23926,9 @@
       "Device": [
         "台设备"
       ],
+      "Device data backup": [
+        "设备数据备份"
+      ],
       "Device name": [
         "设备名称"
       ],
@@ -23399,6 +23937,9 @@
       ],
       "Disable categories?": [
         "禁用分类？"
+      ],
+      "Disable device data backup?": [
+        "禁用设备数据备份？"
       ],
       "Disable two-factor authentication": [
         "禁用双因素身份验证"
@@ -23509,7 +24050,7 @@
         "编辑谁要使用该网关"
       ],
       "Email": [
-        "邮件"
+        "邮箱"
       ],
       "Email breaches": [
         "邮箱数据泄露"
@@ -23527,7 +24068,10 @@
         "邮件通知"
       ],
       "Email privacy": [
-        "电子邮件隐私"
+        "邮件隐私"
+      ],
+      "Email verification": [
+        "邮箱验证"
       ],
       "Emergency access": [
         "紧急访问权限"
@@ -23619,17 +24163,20 @@
       "Free": [
         "免费"
       ],
+      "Free plan": [
+        "免费套餐"
+      ],
       "Gateway": [
         "网关"
       ],
       "Gateway monitor": [
-        "网关监控"
+        "网关监测"
       ],
       "Gateway monitor disabled": [
-        "网关监控已禁用"
+        "网关监测已禁用"
       ],
       "Gateway monitor enabled": [
-        "网关监控已启用"
+        "网关监测已启用"
       ],
       "Gateways": [
         "网关"
@@ -23641,7 +24188,7 @@
         "生成缺失的密钥"
       ],
       "Generate new recovery phrase?": [
-        "生成新的恢复密语吗?"
+        "生成新的恢复短语？"
       ],
       "Generate SMTP token": [
         "生成 SMTP 令牌"
@@ -23709,8 +24256,14 @@
       "Help center": [
         "帮助中心"
       ],
+      "Helping activists in Hong Kong": [
+        "帮助香港的活动人士"
+      ],
       "Home": [
         "首页"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "${ MAIL_APP_NAME } 有何不同之处"
       ],
       "How did you find out about us?": [
         "您是如何了解到我们的？"
@@ -23886,6 +24439,9 @@
       "No events": [
         "暂无事件"
       ],
+      "No events yet": [
+        "暂无事件"
+      ],
       "No need to empty the trash": [
         "无需清空回收站"
       ],
@@ -23939,6 +24495,9 @@
       ],
       "Other sign-in issues": [
         "其他登录问题"
+      ],
+      "Our fight against censorship in Russia": [
+        "我们与俄罗斯的审查制度作斗争"
       ],
       "Password": [
         "密码"
@@ -24048,6 +24607,9 @@
       "Recovery file": [
         "恢复文件"
       ],
+      "Recovery phrase": [
+        "恢复短语"
+      ],
       "Refer a friend": [
         "邀请好友"
       ],
@@ -24066,8 +24628,14 @@
       "Remove domain": [
         "移除域名"
       ],
+      "Remove email": [
+        "移除邮箱"
+      ],
       "Remove forwarding address": [
         "移除转发地址"
+      ],
+      "Remove recovery phone number": [
+        "移除密保手机"
       ],
       "Remove server?": [
         "移除服务器？"
@@ -24258,6 +24826,9 @@
       "Signed in to member account": [
         "已登录成员账户"
       ],
+      "Signed-in reset": [
+        "已登录状态下的重置"
+      ],
       "Simplify email distribution": [
         "简化电子邮件分发"
       ],
@@ -24266,6 +24837,9 @@
       ],
       "Single sign-on": [
         "单点登录"
+      ],
+      "SMS verification": [
+        "短信验证"
       ],
       "SMTP submission": [
         "SMTP 投递"
@@ -24302,6 +24876,9 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Stay secure and connected anywhere": [
+        "随时随地保持安全和连接"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "使用 ${ passPlusPlanName } 在所有设备上增强安全性。${ upgradeButton }"
@@ -24395,6 +24972,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "Unblocking internet access in Iran": [
+        "在伊朗解除互联网访问限制"
       ],
       "Unlock your data": [
         "解锁您的数据"
@@ -24504,6 +25084,9 @@
       "Welcome to your new password manager!": [
         "欢迎来到您新的密码管理器！"
       ],
+      "What changes if you switch to the Free plan": [
+        "切换到免费套餐会有什么变化"
+      ],
       "What is an alias?": [
         "什么是邮箱别名？"
       ],
@@ -24551,6 +25134,12 @@
       ],
       "Your recovery file": [
         "您的恢复文件"
+      ],
+      "Your recovery phrase": [
+        "您的恢复短语"
+      ],
+      "Your recovery setup": [
+        "您的恢复设置"
       ],
       "Your referrals": [
         "您的推荐"
@@ -24684,8 +25273,23 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户并将管理员权限授予其他用户。只有主管理员可以编辑组织的套餐。"
       ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "允许通过发送到密保邮箱的一次性验证码恢复账户"
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery phone": [
+        "允许通过发送到密保手机的一次性验证码恢复账户"
+      ],
       "Allow resetting your password from the account settings": [
         "允许从账户设置中重置密码"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "允许扫描 ${ BRAND_NAME } 移动应用中的二维码进行登录"
+      ],
+      "Allow trusted contacts to request access to your account": [
+        "允许受信任的联系人请求访问您的账户"
+      ],
+      "Allow trusted contacts to unlock your encrypted data after a password reset": [
+        "允许受信任的联系人在密码重置后解锁您的加密数据"
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "允许您将 Zoom 视频会议链接无缝添加到日历邀请中"
@@ -24771,6 +25375,12 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
+      "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
+        "包括 ${ MAIL_APP_NAME } 中的自定义邮箱域名和无限 Hide-my-email 别名、${ VPN_SHORT_APP_NAME } 中对 120 多个国家/地区服务器的访问权限、${ PASS_SHORT_APP_NAME } 中的内置 2FA 和安全共享等。"
+      ],
+      "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
+        "包含 @yourdomain.com 的专业邮箱、带有协作文档编辑功能的云存储、日程安排和视频会议、密码管理、安全的 ${ VPN_SHORT_APP_NAME } 等。"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "未启用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
       ],
@@ -24794,6 +25404,12 @@
       ],
       "Save 12-word long phrase to unlock your account and your encrypted data instantly if you forgot your password": [
         "保存 12 个单词的短语，以便在忘记密码时立即解锁您的账户和加密数据"
+      ],
+      "Save an encryption backup file in this browser to recover your data after a password reset": [
+        "在此浏览器中保存加密备份文件，以便在密码重置后恢复数据"
+      ],
+      "Save an encryption backup file to recover your data after a password reset": [
+        "保存加密备份文件，以便在密码重置后恢复数据"
       ],
       "See number of unread messages in the tab icon": [
         "在标签页图标中即可看到未读邮件的数量"
@@ -25126,7 +25742,7 @@
         "手动启用"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
-        "如果您丢失了访问凭证，您所在组织的管理员将能够重置您的密码并恢复对您账户的访问。"
+        "如果您无法访问凭据，组织的管理员将能够重置您的密码并恢复账户的访问权限。"
       ],
       "Keep request": [
         "保留申请"
@@ -25648,11 +26264,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
-      "Are you sure you want to delete the phone number?": [
-        "确定要删除此号码吗？"
+      "Are you sure you want to remove your notification email?": [
+        "确定要移除您的通知邮箱？"
       ],
-      "Are you sure you want to delete this address?": [
-        "您确定要删除该地址吗？"
+      "Are you sure you want to remove your recovery email?": [
+        "确定要移除您的密保邮箱？"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "确定要移除您的密保手机？"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "删除此地址，您将无法收到每日邮件通知。"
@@ -25663,8 +26282,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "删除此地址，您将无法恢复您的账户。"
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "删除此号码后，您将无法再重置账户密码。"
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "移除此号码后，您将无法再找回您的账户。"
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "登录失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中登录。"
