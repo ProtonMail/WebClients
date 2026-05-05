@@ -859,6 +859,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Työpöydän lukituksen tarkistus on jo käynnissä."
+      ],
       "A domain ownership must be verified first.": [
         "Verkkotunnuksen omistajuus on vahvistettava ensin."
       ],
@@ -1989,6 +1992,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
