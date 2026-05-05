@@ -12,7 +12,7 @@ type Props = {
     children: ReactNode;
 };
 
-const ContextMenuSubButton = ({ name, icon, children }: Props) => {
+export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef<HTMLDivElement>(null);
 
@@ -64,5 +64,3 @@ const ContextMenuSubButton = ({ name, icon, children }: Props) => {
         </>
     );
 };
-
-export default ContextMenuSubButton;
