@@ -10,7 +10,7 @@ export const makeTestPopulator = (
         getUid: () => IndexPopulator.buildUid(id, scopeId),
         treeEventScopeId: scopeId,
         indexKind: 'main',
-        indexPopulatorId: id,
+        indexPopulatorKind: id,
         processIncrementalUpdates: jest.fn(async (events: unknown[]) => events.length),
         ...overrides,
     }) as unknown as IndexPopulator;
