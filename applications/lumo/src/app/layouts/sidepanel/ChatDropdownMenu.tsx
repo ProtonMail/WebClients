@@ -47,7 +47,12 @@ const ChatDropdownMenu = ({ conversation, onOpenChange }: Props) => {
 
     return (
         <>
-            <DropdownMenu options={options} onToggle={toggleDropdown} isOpen={isDropdownOpen} />
+            <DropdownMenu
+                options={options}
+                onToggle={toggleDropdown}
+                isOpen={isDropdownOpen}
+                visibleOnHover={visibleOnHover}
+            />
             {showConfirmDeleteModal && <ConfirmDeleteModal handleDelete={handleDelete} {...confirmDeleteModalProps} />}
             {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
         </>
