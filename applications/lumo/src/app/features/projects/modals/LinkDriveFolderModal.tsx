@@ -20,6 +20,7 @@ import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../../types';
 import { sendProjectDriveFolderLinkEvent, sendProjectDriveFolderUnlinkEvent } from '../../../util/telemetry';
+import {ButtonLikeSizeEnum} from "@proton/atoms/Button/ButtonLike";
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
     projectId: string;
@@ -174,6 +175,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                         ? c('collider_2025:Title').t`Linked Drive Folder`
                         : c('collider_2025:Title').t`Link Drive Folder`
                 }
+                titleClassName="link-drive-folder-modal-title"
+                closeButtonProps={{ size: ButtonLikeSizeEnum.Tiny }}
             />
             <ModalTwoContent>
                 {/* eslint-disable no-nested-ternary */}

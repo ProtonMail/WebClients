@@ -1,5 +1,6 @@
 import React from 'react';
 
+import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent } from '@proton/components';
 
 import { RightDrawer } from '../../RightDrawer';
@@ -19,6 +20,8 @@ interface FilesManagementViewProps {
     initialShowDriveBrowser?: boolean;
     /** When true, renders as a centred modal overlay (e.g. on the main/home page). */
     forceModal?: boolean;
+    /** Required when forceModal is true so the ModalTwo open/close lifecycle is properly controlled. */
+    modalProps?: ModalStateProps;
     spaceId?: string;
 }
 
@@ -30,6 +33,7 @@ export const FilesManagementView = ({
     onClearFilter,
     initialShowDriveBrowser = false,
     forceModal = false,
+    modalProps,
     spaceId,
 }: FilesManagementViewProps) => {
     const currentAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -49,8 +53,14 @@ export const FilesManagementView = ({
     );
 
     if (forceModal) {
+        // Prefer the controlled modalProps so the X button (which calls onClose)
+        // can correctly drive the ModalTwo open/exit lifecycle. Fall back to a
+        // hardcoded `open` only if no modalProps were provided, but always wire
+        // up onClose so the host can react to close requests.
+        const resolvedModalProps: Partial<ModalStateProps> = modalProps ?? { open: true, onClose };
+
         return (
-            <ModalTwo open onClose={onClose} size="large">
+            <ModalTwo {...resolvedModalProps} size="large">
                 <ModalTwoContent className="p-0 overflow-hidden" style={{ height: '70vh' }}>
                     {panel}
                 </ModalTwoContent>
