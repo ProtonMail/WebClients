@@ -1,7 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { Button } from '@proton/atoms/Button/Button';
-
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
@@ -76,8 +74,14 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         <LumoLayoutWithDrawer
             drawerContentComponent={
                 <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1">
-                    <Button>Upload from Drive (Add)</Button>
-                    <Button>Upload from computer (Add)</Button>
+                    <FilesManagementView
+                        messageChain={[]}
+                        filesContainerRef={filesContainerRef}
+                        onClose={handleCloseFiles}
+                        filterMessage={openPanel.filterMessage}
+                        onClearFilter={handleClearFilter}
+                        initialShowDriveBrowser={false}
+                    />
                 </div>
             }
         >
