@@ -5747,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filtre"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrer (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrer et trier les messages"
+      ],
+      "Has attachments": [
+        "Contient des pièces jointes"
+      ],
+      "Read": [
+        "Lus"
+      ],
+      "Reset": [
+        "Réinitialiser"
+      ],
       "Show": [
         "Montrer"
+      ],
+      "Unread": [
+        "Non lus"
       ]
     },
     "Filter Actions": {
@@ -9835,6 +9856,9 @@
       "Payment method": [
         "Moyen de paiement"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "E-mails personnels et professionnels, ainsi que mises à jour et notifications importantes"
+      ],
       "PGP scheme": [
         "Schéma PGP"
       ],
@@ -13609,6 +13633,9 @@
       ],
       "Smallest first": [
         "Le moins volumineux en premier"
+      ],
+      "Sort by": [
+        "Trier par"
       ]
     },
     "specialoffer: Action": {

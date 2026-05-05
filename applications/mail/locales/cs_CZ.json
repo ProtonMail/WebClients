@@ -294,6 +294,9 @@
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
       ],
+      "Connect your email": [
+        "Připojte svůj e-mail"
+      ],
       "Contact group": [
         "Skupina kontaktů"
       ],
@@ -4204,6 +4207,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Odesílejte a přijímejte zprávy Gmailu přímo v aplikaci ${ MAIL_APP_NAME }. Připojte svou adresu na stránce ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
@@ -4281,6 +4287,9 @@
       ],
       "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
         "Načteme vaše staré e-maily a propojíme váš účet Gmail s aplikací ${ MAIL_APP_NAME }, aby se nové zprávy zobrazovaly automaticky"
+      ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašich e-mailů za posledních 180 dnů z Gmailu. Po dokončení vám dáme vědět."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -5848,8 +5857,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filtr"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrovat (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrování a třídění e-mailů"
+      ],
+      "Has attachments": [
+        "S přílohami"
+      ],
+      "Read": [
+        "Přečtené"
+      ],
+      "Reset": [
+        "Resetovat"
+      ],
       "Show": [
         "Zobrazit"
+      ],
+      "Unread": [
+        "Nepřečtené"
       ]
     },
     "Filter Actions": {
@@ -7274,7 +7304,7 @@
         "Vyberte tarif, který vám nejlépe vyhovuje."
       ],
       "Choose your service to connect with": [
-        "Vyberte službu, se kterou se chcete propojit"
+        "Vyberte službu, kterou chcete propojit"
       ],
       "Clear browser data": [
         "Vyčistit data prohlížeče"
@@ -7326,6 +7356,9 @@
       ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
+      ],
+      "Copy to clipboard": [
+        "Kopírovat do schránky"
       ],
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
@@ -7558,6 +7591,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
+      "Enter code": [
+        "Zadejte kód"
+      ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
       ],
@@ -7719,6 +7755,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
@@ -10139,6 +10178,9 @@
       "Payment method": [
         "Platební metoda"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Osobní a pracovní e-maily, důležité novinky a oznámení"
+      ],
       "PGP scheme": [
         "PGP schéma"
       ],
@@ -12335,6 +12377,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Přeneste své e-maily do ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Převeďte své stávající e-maily do ${ MAIL_APP_NAME }, abyste mohli spravovat vše z jednoho soukromého účtu."
+      ],
       "Choose a provider": [
         "Zvolte poskytovatele"
       ],
@@ -14058,6 +14103,9 @@
       ],
       "Smallest first": [
         "Od nejmenších"
+      ],
+      "Sort by": [
+        "Seřadit podle"
       ]
     },
     "specialoffer: Action": {
