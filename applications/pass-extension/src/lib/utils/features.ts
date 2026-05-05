@@ -15,14 +15,14 @@ export type ComputedFeatures = {
 };
 
 export const computeFeatures = (
-    settings: ProxiedSettings,
+    { autofill, autosuggest, autosave, passkeys, orgDomains, disallowedDomains }: ProxiedSettings,
     frameUrl: MaybeNull<ParsedUrl>,
     tabUrl: MaybeNull<ParsedUrl>
 ): ComputedFeatures => {
-    const { disallowedDomains } = settings;
-    const { autofill, autosuggest, autosave, passkeys } = settings;
+    const criterias = [frameUrl, tabUrl]
+        .filter(truthy)
+        .map((url) => hasPauseCriteria({ disallowedDomains, orgDomains, url }));
 
-    const criterias = [frameUrl, tabUrl].filter(truthy).map((url) => hasPauseCriteria({ disallowedDomains, url }));
     const hasPause = criterias.length > 0 ? criterias.reduce(combinePauseCriteria) : DEFAULT_PAUSE_CRITERIAS;
 
     return {

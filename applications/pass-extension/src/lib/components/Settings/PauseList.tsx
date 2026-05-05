@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from 'react';
-import { type FC, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -24,8 +24,11 @@ import {
     toggleCriteria,
 } from '@proton/pass/lib/settings/pause-list';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
-import { selectOrgDisallowedDomains } from '@proton/pass/store/selectors/organization';
-import { selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
+import {
+    selectDisallowedDomains,
+    selectOrgDomains,
+    selectPauseListEntries,
+} from '@proton/pass/store/selectors/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -36,20 +39,21 @@ const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
 export const PauseList: FC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
-    const orgDomains = useSelector(selectOrgDisallowedDomains);
+    const orgDomains = useSelector(selectOrgDomains);
+    const pauseList = useSelector(selectPauseListEntries);
+    const nonEmpty = pauseList.length > 0;
+
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
 
     const [url, setUrl] = useState<string>('');
-
-    const allHostnames = Array.from(new Set([...Object.keys(orgDomains), ...Object.keys(disallowedDomains)]));
 
     const addDisallowedUrl = (url: string) => {
         const hostname = intoCleanHostname(url);
 
         if (!hostname) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
 
-        if (orgDomains[hostname]) {
+        if (orgDomains?.[hostname]) {
             return createNotification({
                 text: c('Error').t`This domain is already managed by your organization`,
                 type: 'error',
@@ -70,6 +74,7 @@ export const PauseList: FC = () => {
                 }),
             })
         );
+
         setUrl('');
     };
 
@@ -90,8 +95,19 @@ export const PauseList: FC = () => {
         dispatch(settingsEditIntent('pause-list', { disallowedDomains: update }));
     };
 
-    const nonEmptyList = allHostnames.length > 0;
-    const infoText = nonEmptyList ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
+    const infoText = nonEmpty ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
+
+    const headings = useMemo(
+        () => [
+            { title: c('Label').t`Domain`, className: 'w-1/4' },
+            { title: c('Label').t`Autofill` },
+            { title: c('Label').t`Autofill 2FA` },
+            { title: c('Label').t`Autosuggest` },
+            { title: c('Label').t`Autosave` },
+            { title: c('Label').t`Passkeys` },
+        ],
+        []
+    );
 
     return (
         <SettingsPanel
@@ -99,40 +115,26 @@ export const PauseList: FC = () => {
             subTitle={c('Description')
                 .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.${infoText}`}
         >
-            {nonEmptyList && (
-                <Table responsive="cards" hasActions borderWeak>
+            {nonEmpty && (
+                <Table responsive="cards" hasActions borderWeak className="pass-pauselist--table">
                     <TableHeader>
                         <TableRow>
-                            <TableHeaderCell className="w-1/4">
-                                <small className="text-xs">{c('Label').t`Domain`}</small>
-                            </TableHeaderCell>
+                            {headings.map(({ title, className }) => (
+                                <TableHeaderCell className={className} key={title}>
+                                    <small className="text-ellipsis max-w-full text-xs">{title}</small>
+                                </TableHeaderCell>
+                            ))}
+
                             <TableHeaderCell>
-                                <small className="text-xs">{c('Label').t`Autofill`}</small>
-                            </TableHeaderCell>
-                            <TableHeaderCell>
-                                <small className="text-xs">{c('Label').t`Autofill 2FA`}</small>
-                            </TableHeaderCell>
-                            <TableHeaderCell>
-                                <small className="text-xs">{c('Label').t`Autosuggest`}</small>
-                            </TableHeaderCell>
-                            <TableHeaderCell>
-                                <small className="text-xs">{c('Label').t`Autosave`}</small>
-                            </TableHeaderCell>
-                            <TableHeaderCell>
-                                <small className="text-xs">{c('Label').t`Passkeys`}</small>
-                            </TableHeaderCell>
-                            <TableHeaderCell>
-                                <Icon name="pass-trash" size={4} className="mr-2" />
+                                <Icon name="pass-trash" size={3} className="mr-1 mb-0.5" />
                             </TableHeaderCell>
                         </TableRow>
                     </TableHeader>
 
                     <TableBody>
-                        {allHostnames.map((hostname, i) => {
-                            const isLocked = hostname in orgDomains;
-                            const orgMask = orgDomains[hostname] ?? 0;
-                            const userMask = disallowedDomains[hostname] ?? 0;
-                            const effectiveMask = orgMask | userMask;
+                        {pauseList.map(([hostname, mask], i) => {
+                            const orgMask = orgDomains?.[hostname] ?? 0;
+                            const isLocked = orgMask > 0;
 
                             return (
                                 <TableRow key={`${hostname}-${i}`}>
@@ -163,7 +165,7 @@ export const PauseList: FC = () => {
                                                 })()}
                                             >
                                                 <Checkbox
-                                                    checked={hasCriteria(effectiveMask, criteria)}
+                                                    checked={hasCriteria(mask, criteria)}
                                                     disabled={criterionLocked}
                                                     onChange={() =>
                                                         !criterionLocked && toggleUrlMask(hostname, criteria)
@@ -173,22 +175,21 @@ export const PauseList: FC = () => {
                                         );
                                     })}
 
-                                    <TableCell className="pass-pause-list--remove">
-                                        <div className="flex justify-end">
-                                            {!isLocked && (
+                                    <TableCell className="pass-pauselist--actions relative">
+                                        {!isLocked && (
+                                            <div>
                                                 <Button
                                                     onClick={() => deleteDisallowedUrl(hostname)}
                                                     aria-label={c('Action').t`Remove`}
-                                                    color="weak"
-                                                    size="medium"
-                                                    shape="solid"
+                                                    size="small"
+                                                    shape="ghost"
                                                     icon
                                                     pill
                                                 >
                                                     <Icon name="cross" size={3} />
                                                 </Button>
-                                            )}
-                                        </div>
+                                            </div>
+                                        )}
                                     </TableCell>
                                 </TableRow>
                             );
@@ -197,7 +198,7 @@ export const PauseList: FC = () => {
                 </Table>
             )}
 
-            <div className="flex mt-2">
+            <div className="flex mt-2 items-center">
                 <div className="flex-1 mr-2">
                     <InputFieldTwo
                         value={url}
