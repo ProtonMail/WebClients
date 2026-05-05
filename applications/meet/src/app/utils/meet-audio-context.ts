@@ -13,7 +13,11 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
  * throttling the AudioContext and the WebRTC pipeline in background/inactive tabs —
  * which would otherwise cause gradual audio loss after several minutes.
  */
-export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup: () => void } => {
+export const createMeetAudioContext = (): {
+    audioContext: AudioContext;
+    setSinkId: (deviceId: string) => void;
+    cleanup: () => void;
+} => {
     const audioContext = new AudioContext({ latencyHint: 'interactive' });
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
@@ -27,9 +31,14 @@ export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup:
     };
     audioContext.addEventListener('error', onAudioContextError);
 
+    const setSinkId = (deviceId: string) => {
+        ctx.setSinkId?.(deviceId).catch(() => {});
+    };
+
     if (!isSafari()) {
         return {
             audioContext,
+            setSinkId,
             cleanup: () => {
                 audioContext.removeEventListener('error', onAudioContextError);
                 audioContext.close().catch(() => {});
@@ -66,6 +75,7 @@ export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup:
 
     return {
         audioContext,
+        setSinkId,
         cleanup: () => {
             audioContext.removeEventListener('error', onAudioContextError);
             audioContext.removeEventListener('statechange', onStateChange);
