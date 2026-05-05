@@ -162,6 +162,9 @@
       "Add user": [
         "Adăugare utilizator"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } s-a adăugat ca proprietar de grup"
+      ],
       "Align center": [
         "Centrare"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Confirmare"
+      ],
+      "Confirm email": [
+        "Confirmare e-mail"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
@@ -761,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Se aplică filtrele. Ar putea dura câteva minute."
+      ],
+      "Finish": [
+        "Finalizare"
       ],
       "Fit to window": [
         "Potrivire la fereastră"
@@ -1277,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Eliminare această notificare"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } eliminat ca proprietar de grup"
       ],
       "Rename": [
         "Redenumire"
@@ -7018,6 +7030,9 @@
       "Invalid invitation link": [
         "Legătura de invitație nu este validă."
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Legătură web de participare nevalidă. Contactați administratorul."
+      ],
       "Invalid name": [
         "Nume nevalid"
       ],
@@ -10240,6 +10255,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
       ],
+      "Code has been re-sent.": [
+        "Codul a fost retrimis."
+      ],
       "Coming soon": [
         "În curând"
       ],
@@ -10801,6 +10819,9 @@
       ],
       "Gateways": [
         "Porți de acces"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Generarea unei noi fraze de recuperare va dezactiva fraza de recuperare curentă."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
@@ -13175,8 +13196,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Fraza de recuperare este o serie de 12 cuvinte generate aleatoriu într-o anumită ordine."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Fraza de recuperare — conținută în pachetul de recuperare — vă va permite să vă conectați și să vă recuperați datele dacă accesul la contul ${ BRAND_NAME } rămâne blocat. Este compusă din 12 cuvinte și acționează ca o parolă de rezervă."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Fraza de recuperare vă va permite să vă conectați și să vă recuperați datele dacă accesul la contul ${ BRAND_NAME } rămâne blocat. Este compusă din 12 cuvinte și acționează ca o parolă de rezervă."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
@@ -14903,6 +14924,9 @@
       ],
       "Pending": [
         "În așteptare"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Mesaje personale și de afaceri, plus actualizări importante și notificări"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -16897,6 +16921,9 @@
       ],
       "Advanced network security": [
         "Securitate avansată a rețelei"
+      ],
+      "Advanced workspace security": [
+        "Securitate avansată spațiu de lucru"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Toate produsele și funcțiile ${ BRAND_NAME }"
@@ -18921,14 +18948,14 @@
       "per month, billed every two years": [
         "pe lună, facturat la fiecare doi ani"
       ],
-      "Preparing your Recovery Kit": [
-        "Se pregătește pachetul de recuperare"
+      "Preparing your recovery phrase": [
+        "Se pregătește fraza de recuperare"
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile elvețiene privind confidențialitatea"
       ],
-      "Save your recovery kit to continue": [
-        "Salvați-vă pachetul de recuperare pentru a continua"
+      "Save your recovery phrase to continue": [
+        "Salvați-vă fraza de recuperare pentru a continua"
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
@@ -20265,6 +20292,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Asigurați-vă că păstrați fraza de recuperare accesibilă după ce o creați.** Din motive de securitate, nu stocăm fraza după salvarea modificărilor și nu o veți mai putea vedea în aplicația ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "copiați fraza de recuperare"
       ],
@@ -20286,14 +20316,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Sau folosiți ${ downloadRecoveryKitSwitchButton }."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Pachetul de **recuperare** vă permite să vă restaurați contul ${ BRAND_NAME } dacă nu îl mai puteți accesa."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Fraza de **recuperare** vă permite să vă restaurați contul ${ BRAND_NAME } dacă nu îl mai puteți accesa."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Salvați-vă pachetul de recuperare"
-      ],
       "Save your recovery phrase": [
         "Salvați-vă fraza de recuperare"
       ]
@@ -20692,8 +20719,8 @@
       "Back to Safety Review": [
         "Înapoi la revizuire securitate"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Deoarece v-ați resetat parola, pachetul de recuperare actual poate fi folosit doar pentru a recupera datele create înainte de resetarea parolei."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Deoarece v-ați resetat parola, fraza de recuperare actuală poate fi folosită doar pentru a recupera datele create înainte de resetarea parolei."
       ],
       "Can be used to regain access to your account and data": [
         "Poate fi folosit pentru a vă recâștiga accesul la cont și date."
@@ -20722,8 +20749,8 @@
       "Download ${ size }": [
         "Descărcare ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Descărcare pachet de recuperare"
+      "Download your recovery phrase": [
+        "Descărcați fraza de recuperare"
       ],
       "Email address": [
         "Adresa de e-mail"
@@ -20737,8 +20764,8 @@
       "Enable recovery by phone": [
         "Activare recuperare cu număr de telefon"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Înțeleg că nu voi putea recupera datele blocate în prezent cu acest pachet de recuperare"
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Înțeleg că nu voi putea recupera datele blocate în prezent cu această frază de recuperare."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Dacă vă uitați parola ${ BRAND_NAME } și trebuie să o resetați, la următoarea reconectare cu acest dispozitiv, cu parola nouă, vă va fi restabilit accesul complet la contul ${ BRAND_NAME }."
@@ -20746,8 +20773,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Dacă vă uitați parola ${ BRAND_NAME } și trebuie să o resetați, la următoarea reconectare cu acest dispozitiv, cu parola nouă, vă va fi restabilit accesul complet la contul ${ BRAND_NAME }."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Dacă nu vă mai puteți accesa contul ${ BRAND_NAME }, pachetul de recuperare vă va permite să vă conectați și să vă recuperați datele."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Dacă nu vă mai puteți accesa contul ${ BRAND_NAME }, fraza de recuperare vă va permite să vă conectați și să vă recuperați datele."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Dacă vă pierdeți detaliile de conectare și trebuie să vă resetați contul, **este imperativ** să aveți atât o **metodă de recuperare a contului, cât și o metodă de recuperare a datelor**, altfel este posibil să nu vă puteți accesa niciunul dintre mesajele de pe e-mail, contactele, fișierele sau parolele."
@@ -20791,8 +20818,8 @@
       "Take action to secure your account": [
         "Acționați pentru a vă securiza contul"
       ],
-      "There was an error generating your Recovery Kit": [
-        "A apărut o eroare la generarea pachetului de recuperare."
+      "There was an error generating your recovery phrase": [
+        "A apărut o eroare la generarea frazei de recuperare."
       ],
       "There was an error verifying your email": [
         "A apărut o eroare la verificarea adresei de e-mail."
@@ -20821,11 +20848,11 @@
       "to recover your account if you're ever locked out": [
         "pentru a vă recupera contul dacă nu îl mai puteți accesa"
       ],
-      "Update your Recovery Kit": [
-        "Actualizați pachetul de recuperare"
+      "Update your recovery phrase": [
+        "Actualizați-vă fraza de recuperare"
       ],
-      "Update your Recovery Kit?": [
-        "Actualizați pachetul de recuperare?"
+      "Update your recovery phrase?": [
+        "Vă actualizați fraza de recuperare?"
       ],
       "Verify": [
         "Verificare"
@@ -20842,8 +20869,8 @@
       "Verify your recovery phone number": [
         "Verificați numărul de telefon de recuperare"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "A apărut o eroare la generarea pachetului de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "A apărut o eroare la generarea frazei de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "A apărut o eroare la verificarea adresei de e-mail. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
@@ -20866,8 +20893,8 @@
       "You can disable this at any time.": [
         "Puteți oricând dezactiva aceasta."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Puteți folosi fraza de recuperare din acest pachet de recuperare pentru a vă restabili complet contul atunci când vă resetați parola, așa că asigurați-vă că o păstrați în siguranță."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Puteți folosi fraza de recuperare pentru a vă restabili complet contul atunci când vă resetați parola, așa că asigurați-vă că o păstrați în siguranță."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Vă puteți folosi adresa de e-mail pentru a vă recâștiga accesul la cont dacă vă uitați parola."
@@ -20878,8 +20905,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Vă puteți folosi recuperarea prin telefon pentru a vă recâștiga accesul la cont dacă vă uitați parola."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Ați descărcat anterior pachetul de recuperare. Descărcarea unui nou pachet îl va **dezactiva pe cel vechi**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Ați descărcat anterior o frază de recuperare. Descărcarea unei noi fraze o va **dezactiva pe cea veche**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Aveți acțiuni recomandate pentru a vă spori protecția contului."
@@ -20944,12 +20971,6 @@
       "Your recovery email is set": [
         "Adresa de e-mail de recuperare este setată"
       ],
-      "Your Recovery Kit": [
-        "Pachetul de recuperare"
-      ],
-      "Your Recovery Kit is set": [
-        "Pachetul de recuperare este setat"
-      ],
       "Your recovery methods": [
         "Metode de recuperare"
       ],
@@ -20970,6 +20991,12 @@
       ],
       "Your recovery phone number is:": [
         "Număr de telefon de recuperare:"
+      ],
+      "Your recovery phrase": [
+        "Fraza de recuperare"
+      ],
+      "Your recovery phrase is set": [
+        "Fraza de recuperare este setată"
       ]
     },
     "saml: Action": {
@@ -21531,7 +21558,7 @@
         "Activare secțiune „Fotografii”"
       ],
       "Get updates about comments via email": [
-        "Obținere actualizări despre comentarii prin e-mail"
+        "Obținere actualizări pe e-mail despre comentarii"
       ],
       "Include document name in email notifications": [
         "Includere nume documente în notificările de pe e-mail"
@@ -24183,11 +24210,17 @@
       "Actions": [
         "Acțiuni"
       ],
+      "Activate multi-user support": [
+        "Activare suport utilizatori multipli"
+      ],
       "Activate organization key": [
         "Activare chei organizație"
       ],
       "Activate user": [
         "Activare utilizator"
+      ],
+      "Activate your email": [
+        "Activați-vă adresa de e-mail"
       ],
       "Activity monitor": [
         "Monitorizare activitate"
@@ -24440,17 +24473,11 @@
       "Confirm": [
         "Confirmare"
       ],
-      "Confirm address": [
-        "Confirmare adresă"
-      ],
       "Confirm downgrade": [
         "Confirmare modificare la plan inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmare pierdere bonusuri ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Confirmați numărul de telefon"
       ],
       "Connect ${ name }": [
         "Conectare ${ name }"
@@ -24513,6 +24540,9 @@
       ],
       "Create a new gateway": [
         "Creare poartă de acces"
+      ],
+      "Create a new password": [
+        "Creați o parolă nouă"
       ],
       "Create Gateway": [
         "Creare poartă de acces"
@@ -24606,6 +24636,9 @@
       ],
       "Day theme": [
         "Temă albă"
+      ],
+      "Deactivate current phrase?": [
+        "Dezactivați fraza actuală?"
       ],
       "Decrypt key": [
         "Cheie decriptare"
@@ -24743,6 +24776,9 @@
       ],
       "Download the mobile apps": [
         "Descărcați aplicațiile pentru dispozitive mobile"
+      ],
+      "Download your recovery phrase": [
+        "Descărcați fraza de recuperare"
       ],
       "Downloads": [
         "Descărcări"
@@ -25384,8 +25420,14 @@
       "Remove domain": [
         "Eliminare domeniu"
       ],
+      "Remove email": [
+        "Eliminare e-mail"
+      ],
       "Remove forwarding address": [
         "Eliminare adresă de transferare"
+      ],
+      "Remove recovery phone number": [
+        "Eliminare număr de telefon de recuperare"
       ],
       "Remove server?": [
         "Eliminați serverul?"
@@ -25797,6 +25839,9 @@
       "Verify it’s you": [
         "Verificați-vă autenticitatea"
       ],
+      "Verify your email": [
+        "Verificați adresa de email"
+      ],
       "Verifying your card...": [
         "Verificare card..."
       ],
@@ -25820,6 +25865,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Vi s-a trimis un cod la adresa de e-mail pentru a ne asigura că dețineți contul. Acest cod este valabil 10 minute. Trebuie să îl introduceți mai jos."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
@@ -25871,6 +25919,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Abonamentul ${ planTitle } a început"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Administratorul de la ${ orgName } vă invită să vă activați noul cont securizat ${ BRAND_NAME } și să vă actualizați parola."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Administratorul vă invită să vă activați noul cont securizat ${ BRAND_NAME } și să vă actualizați parola."
       ],
       "Your calendar link": [
         "legătură web calendar"
@@ -27049,11 +27103,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Ștergeți acest număr de telefon?"
+      "Are you sure you want to remove your notification email?": [
+        "Sigur doriți să eliminați mesajele de notificare?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Ștergeți aceste adrese?"
+      "Are you sure you want to remove your recovery email?": [
+        "Sigur doriți să eliminați adresa de e-mail de recuperare?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Sigur doriți să eliminați numărul de telefon de recuperare?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ștergând această adresă, nu veți mai putea primi notificările zilnice."
@@ -27064,8 +27121,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ștergând această adresă, nu veți mai putea să vă recuperați contul."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Ștergând acest număr de telefon, nu veți mai putea să vă recuperați contul."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Eliminând acest număr de telefon, nu veți mai putea să vă recuperați contul."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Nu s-a putut realiza conectarea. Deschideți extensia de navigator web ${ PASS_APP_NAME } și realizați conectarea de acolo."

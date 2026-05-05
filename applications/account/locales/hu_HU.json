@@ -13535,14 +13535,8 @@
       "per month, billed every two years": [
         "havonta, kétévente számlázva"
       ],
-      "Preparing your Recovery Kit": [
-        "Helyreállító csomag elkészítése"
-      ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
-      ],
-      "Save your recovery kit to continue": [
-        "Mentse le a helyreállítási csomagot a továbblépéshez"
       ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
@@ -14357,11 +14351,6 @@
         "Megjelenítés"
       ]
     },
-    "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Mentse el a helyreállító csomagját"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } ajánlásonként"
@@ -14490,9 +14479,6 @@
       "Back to Safety Review": [
         "Vissza a Biztonsági áttekintésre"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Mivel visszaállította a jelszavát, a jelenlegi Helyreállító csomag csak azon adatok helyreállítására alkalmas, amik a jelszó visszaállítása előtt jöttek létre."
-      ],
       "Can be used to regain access to your account and data": [
         "A fiókjához és az adataihoz való hozzáférés helyreállítására használható"
       ],
@@ -14511,9 +14497,6 @@
       "Download ${ size }": [
         "Letöltés ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Helyreállító csomag letöltése"
-      ],
       "Email address": [
         "E-mail cím"
       ],
@@ -14526,17 +14509,11 @@
       "Enable recovery by phone": [
         "Helyreállítás engedélyezése telefonnal"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Megértettem, hogy a jelenleg zárolt adatokat nem fogom tudni helyreállítani ezzel a Helyreállító csomaggal"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ha elfelejti a ${ BRAND_NAME } jelszavát, és vissza kell állítania, az ezen az eszközön az új jelszavával való következő bejelentkezéskor, a ${ BRAND_NAME } fiókjához való teljes hozzáférése helyreáll."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ha elfelejti a ${ BRAND_NAME } jelszavát, és vissza kell állítania, az ezen az eszközön az új jelszavával való következő bejelentkezéskor, a ${ BRAND_NAME } fiókjához való teljes hozzáférése helyreáll."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "A kizáródna a ${ BRAND_NAME } fiókjából, akkor a Helyreállító csomag segít ismét belépni és az adatait helyreállítani."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ha elveszíti a belépéshez szükséges adatait és vissza kell állítania a fiókját, **feltétlenül szükséges**, hogy legyen **mind fiók, mind pedig adat helyreállítási módszere** beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit, fájljait vagy jelszavait."
@@ -14577,9 +14554,6 @@
       "Take action to secure your account": [
         "Tegyen lépéseket a fióka biztonságáért"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Hiba történt a Helyreállító csomag létrehozásakor"
-      ],
       "There was an error verifying your recovery email": [
         "Hiba történt a helyreállítási e-mail cím ellenőrzése során"
       ],
@@ -14601,12 +14575,6 @@
       "to recover your account if you're ever locked out": [
         "a fiók helyreállításához, ha esetleg kizáródna"
       ],
-      "Update your Recovery Kit": [
-        "Helyreállító csomag frissítése"
-      ],
-      "Update your Recovery Kit?": [
-        "Frissíti a Helyreállító csomagját?"
-      ],
       "Verify": [
         "Ellenőrzés"
       ],
@@ -14615,9 +14583,6 @@
       ],
       "Verify your recovery phone number": [
         "Erősítse meg a helyreállítási telefonszámot"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Hiba történt a helyreállító csomag létrehozása során. Próbálja meg később, vagy ha a probléma továbbra is fennáll, lépjen kapcsolatba az ügyfélszolgálattal."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Hiba történt a helyreállítási e-mail cím ellenőrzése során. Próbálja meg később, vagy ha a probléma továbbra is fennáll, lépjen kapcsolatba az ügyfélszolgálattal."
@@ -14637,17 +14602,11 @@
       "You can disable this at any time.": [
         "Ezt bármikor kikapcsolhatja."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "A helyreállító csomagban található helyreállító jelmondattal teljesen helyreállíthatja a fiókját, ha visszaállítaná a jelszavát, szóval feltétlenül tartsa biztonságos helyen."
-      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "A helyreállítási e-mail címét használhatja, a fiókja elérésének visszaszerzéséhez, ha elfelejtené a jelszavát."
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "A helyreállítási telefonszámát használhatja, a fiókja elérésének visszaszerzéséhez, ha elfelejtené a jelszavát."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Már letöltötte a Helyreállító csomagját. Ha egy újat tölt le, az **érvényteleníti a régit**."
       ],
       "You have recommended actions.": [
         "Javasolt műveletek érhetők el."
@@ -14687,12 +14646,6 @@
       ],
       "Your recovery email is set": [
         "A helyreállítási e-mail címe meg van adva"
-      ],
-      "Your Recovery Kit": [
-        "Helyreállítási csomag"
-      ],
-      "Your Recovery Kit is set": [
-        "A Helyreállító csomagja készen van"
       ],
       "Your recovery methods": [
         "Helyreállítási módszerek megjelenítése"
@@ -17479,17 +17432,11 @@
       "Confirm": [
         "Jóváhagyás"
       ],
-      "Confirm address": [
-        "Cím megerősítése"
-      ],
       "Confirm downgrade": [
         "Lemondás megerősítése"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } kedvezmények lemondásának megerősítése"
-      ],
-      "Confirm phone number": [
-        "Telefonszám megerősítése"
       ],
       "Connect ${ name }": [
         "${ name } kapcsolása"
@@ -19376,12 +19323,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Biztosan törli ezt a telefonszámot?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Biztosan törli ezt a címet?"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "A cím törlésével többé nem kaphat napi e-mailes értesítéseket."
       ],
@@ -19390,9 +19331,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "A cím törlésével a továbbiakban nem lesz képes helyreállítani fiókját."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "A telefonszám törlésével a továbbiakban nem lesz képes helyreállítani fiókját."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A ${ BRAND_NAME } már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"

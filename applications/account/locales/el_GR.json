@@ -162,6 +162,9 @@
       "Add user": [
         "Προσθήκη χρήστη"
       ],
+      "Added ${ memberName } as group owner": [
+        "Προστέθηκε ο/η ${ memberName } ως ιδιοκτήτης της ομάδας"
+      ],
       "Align center": [
         "Στοίχιση στο κέντρο"
       ],
@@ -309,6 +312,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Confirm email": [
+        "Επιβεβαίωση email"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Επιβεβαίωση ανοίγματος συνδέσμου ${ linkToShow }"
       ],
@@ -329,6 +335,9 @@
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
+      ],
+      "Connect your email": [
+        "Συνδέστε τη διεύθυνση email σας"
       ],
       "Connected": [
         "Συνδεδεμένο"
@@ -758,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Τα φίλτρα εφαρμόζονται. Αυτό μπορεί να πάρει μερικά λεπτά."
+      ],
+      "Finish": [
+        "Ολοκλήρωση"
       ],
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
@@ -1274,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Αφαίρεση ειδοποίησης"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Αφαιρέθηκε ο/η ${ memberName } ως ιδιοκτήτης της ομάδας"
       ],
       "Rename": [
         "Μετονομασία"
@@ -5015,6 +5030,9 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
       ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Μεταφέρετε τα μηνύματα, τις εκδηλώσεις ημερολογίου και τις επαφές σας από έναν άλλο πάροχο."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
       ],
@@ -6965,6 +6983,9 @@
       ],
       "Invalid invitation link": [
         "Μη έγκυρος σύνδεσμος πρόσκλησης"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Μη έγκυρος σύνδεσμος σύνδεσης. Επικοινωνήστε με τον διαχειριστή σας."
       ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
@@ -10125,6 +10146,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
       ],
+      "Code has been re-sent.": [
+        "Ο κωδικός έχει σταλεί ξανά."
+      ],
       "Coming soon": [
         "Έρχεται σύντομα"
       ],
@@ -10681,6 +10705,9 @@
       ],
       "Gateways": [
         "Πύλες"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Η δημιουργία μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την τρέχουσα φράση ανάκτησής σας."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Η παραγωγή μιας νέας φράσης ανάκτησης θα απενεργοποιήσει την παλιά σας."
@@ -13031,8 +13058,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Η φράση ανάκτησης είναι μια σειρά από 12 τυχαία δημιουργημένες λέξεις με συγκεκριμένη σειρά."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Η φράση ανάκτησής σας—που περιέχεται στο Κιτ Ανάκτησης σας—θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας σε περίπτωση που κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας. Αποτελείται από 12 λέξεις και λειτουργεί σαν εφεδρικός κωδικός πρόσβασης."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Η φράση ανάκτησής σας θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας εάν κλειδωθείτε έξω από τον λογαριασμό σας ${ BRAND_NAME }. Αποτελείται από 12 λέξεις και λειτουργεί σαν εφεδρικός κωδικός πρόσβασης."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
@@ -14750,6 +14777,9 @@
       ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Προσωπικά και επαγγελματικά μηνύματα ηλεκτρονικού ταχυδρομείου, καθώς και σημαντικές ενημερώσεις και ειδοποιήσεις"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -16708,6 +16738,9 @@
       ],
       "Advanced network security": [
         "Προχωρημένη ασφάλεια δικτύου"
+      ],
+      "Advanced workspace security": [
+        "Προηγμένη ασφάλεια χώρου εργασίας"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Όλα τα προϊόντα και δυνατότητες ${ BRAND_NAME }"
@@ -18710,14 +18743,14 @@
       "per month, billed every two years": [
         "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
       ],
-      "Preparing your Recovery Kit": [
-        "Προετοιμασία του Κιτ Αποκατάστασης"
+      "Preparing your recovery phrase": [
+        "Προετοιμασία της φράσης ανάκτησης σας"
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
       ],
-      "Save your recovery kit to continue": [
-        "Αποθηκεύστε το κιτ αποκατάστασης σας για να συνεχίσετε"
+      "Save your recovery phrase to continue": [
+        "Αποθηκεύστε τη φράση ανάκτησης σας για να συνεχίσετε"
       ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
@@ -19949,6 +19982,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Βεβαιωθείτε ότι κρατάτε προσβάσιμη τη φράση ανάκτησής σας μετά τη δημιουργία της.** Για λόγους ασφαλείας, δεν αποθηκεύουμε τη φράση μετά την αποθήκευση των αλλαγών σας και δε θα μπορείτε να τη δείτε ξανά στην εφαρμογή ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "αντιγραφή φράσης ανάκτησης"
       ],
@@ -19970,14 +20006,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Ή ${ downloadRecoveryKitSwitchButton } αντί για αυτό."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Το **Κιτ αποκατάστασης** σας επιτρέπει να επαναφέρετε τον λογαριασμό σας ${ BRAND_NAME } αν αποκλειστείτε."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Η **φράση ανάκτησης** σάς επιτρέπει να επαναφέρετε τον λογαριασμό σας ${ BRAND_NAME } εάν κλειδωθείτε έξω."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Αποθηκεύστε το Κιτ Αποκατάστασης σας"
-      ],
       "Save your recovery phrase": [
         "Αποθηκεύστε τη φράση ανάκτησής σας"
       ]
@@ -20370,8 +20403,8 @@
       "Back to Safety Review": [
         "Πίσω στην Επισκόπηση Ασφάλειας"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Επειδή επαναφέρετε τον κωδικό πρόσβασής σας, το τρέχον Κιτ Αποκατάστασης μπορεί να χρησιμοποιηθεί μόνο για την ανάκτηση των δεδομένων που δημιουργήθηκαν πριν από την επαναφορά του κωδικού πρόσβασης."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Επειδή επαναφέρετε τον κωδικό πρόσβασής σας, η τρέχουσα φράση ανάκτησης μπορεί να χρησιμοποιηθεί μόνο για την ανάκτηση των δεδομένων που δημιουργήθηκαν πριν από την επαναφορά του κωδικού πρόσβασής σας."
       ],
       "Can be used to regain access to your account and data": [
         "Μπορεί να χρησιμοποιηθεί για την ανάκτηση πρόσβασης στον λογαριασμό και τα δεδομένα σας"
@@ -20400,8 +20433,8 @@
       "Download ${ size }": [
         "Κατεβάστε ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Λήψη του Κιτ Αποκατάστασης"
+      "Download your recovery phrase": [
+        "Λήψη της φράσης ανάκτησης"
       ],
       "Email address": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -20415,8 +20448,8 @@
       "Enable recovery by phone": [
         "Ενεργοποίηση ανάκτησης μέσω τηλεφώνου"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Κατανοώ ότι δε θα μπορέσω να ανακτήσω τα κλειδωμένα δεδομένα με αυτό το Κιτ Ανάκτησης"
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Κατανοώ ότι δε θα μπορέσω να ανακτήσω δεδομένα που είναι επί του παρόντος κλειδωμένα με αυτή τη φράση ανάκτησης"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Εάν ξεχάσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας και πρέπει να τον επαναφέρετε, την επόμενη φορά που θα συνδεθείτε σε αυτήν τη συσκευή χρησιμοποιώντας τον νέο κωδικό πρόσβασης, θα αποκατασταθεί η πλήρης πρόσβαση στον ${ BRAND_NAME } λογαριασμό σας."
@@ -20424,8 +20457,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Εάν ξεχάσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας και πρέπει να τον επαναφέρετε, την επόμενη φορά που θα συνδεθείτε σε αυτήν τη συσκευή χρησιμοποιώντας τον νέο κωδικό πρόσβασης, θα αποκατασταθεί η πλήρης πρόσβαση στον ${ BRAND_NAME } λογαριασμό σας."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } Λογαριασμό σας, το Κιτ Ανάκτησης θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Αν αποκλειστείτε από τον λογαριασμό σας ${ BRAND_NAME }, η φράση ανάκτησής σας θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε τον λογαριασμό σας, **είναι επιτακτική ανάγκη** να έχετε εφαρμόσει μια **μέθοδο ανάκτησης λογαριασμού και ανάκτησης δεδομένων**, διαφορετικά ενδέχεται να μην μπορείτε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές, τα αρχεία ή τους κωδικούς πρόσβασής σας."
@@ -20469,8 +20502,8 @@
       "Take action to secure your account": [
         "Λάβετε μέτρα για να ασφαλίσετε τον λογαριασμό σας"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Παρουσιάστηκε σφάλμα κατά τη δημιουργία του Κιτ Αποκατάστασης"
+      "There was an error generating your recovery phrase": [
+        "Παρουσιάστηκε σφάλμα κατά τη δημιουργία της φράσης ανάκτησής σας"
       ],
       "There was an error verifying your email": [
         "Παρουσιάστηκε σφάλμα κατά την επαλήθευση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας"
@@ -20499,11 +20532,11 @@
       "to recover your account if you're ever locked out": [
         "για να ανακτήσετε τον λογαριασμό σας σε περίπτωση που κλειδωθείτε έξω"
       ],
-      "Update your Recovery Kit": [
-        "Ενημέρωση του Κιτ Αποκατάστασης"
+      "Update your recovery phrase": [
+        "Ενημερώστε τη φράση ανάκτησης σας"
       ],
-      "Update your Recovery Kit?": [
-        "Ενημέρωση του Κιτ Αποκατάστασης;"
+      "Update your recovery phrase?": [
+        "Ενημέρωση τη φράση ανάκτησης σας;"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -20520,8 +20553,8 @@
       "Verify your recovery phone number": [
         "Επαληθεύστε τον αριθμό τηλεφώνου ανάκτησης σας"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Αντιμετωπίσαμε ένα σφάλμα κατά τη δημιουργία του Κιτ Αποκατάστασης. Παρακαλούμε προσπαθήστε ξανά αργότερα ή επικοινωνήστε με την υποστήριξη, αν το πρόβλημα παραμένει."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Αντιμετωπίσαμε ένα σφάλμα κατά τη δημιουργία της φράσης ανάκτησής σας. Δοκιμάστε ξανά αργότερα ή επικοινωνήστε με την υποστήριξη εάν το πρόβλημα συνεχιστεί."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Αντιμετωπίσαμε ένα σφάλμα κατά την επαλήθευση του ηλεκτρονικού ταχυδρομείου σας. Παρακαλούμε προσπαθήστε ξανά αργότερα ή επικοινωνήστε με την υποστήριξη, αν το πρόβλημα παραμένει."
@@ -20544,8 +20577,8 @@
       "You can disable this at any time.": [
         "Μπορείτε να το απενεργοποιήσετε ανά πάσα στιγμή."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Μπορείτε να χρησιμοποιήσετε τη φράση ανάκτησης σε αυτό το Κιτ Ανάκτησης για να επαναφέρετε πλήρως τον λογαριασμό σας όταν επαναφέρετε τον κωδικό πρόσβασής σας, επομένως φροντίστε να τον διατηρήσετε κάπου ασφαλή."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Μπορείτε να χρησιμοποιήσετε τη φράση ανάκτησης σε αυτήν τη φράση ανάκτησης για να επαναφέρετε πλήρως τον λογαριασμό σας όταν επαναφέρετε τον κωδικό πρόσβασής σας, επομένως φροντίστε να τον κρατήσετε σε ασφαλές μέρος."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Μπορείτε να χρησιμοποιήσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
@@ -20556,8 +20589,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Μπορείτε να χρησιμοποιήσετε το τηλέφωνο ανάκτησης για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Έχετε κατεβάσει προηγουμένως ένα Κιτ Αποκατάστασης. Η λήψη ενός νέου θα **απενεργοποιήσει το παλιό**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Έχετε κατεβάσει προηγουμένως μια φράση ανάκτησης. Η λήψη μιας νέας θα **απενεργοποιήσει την παλιά**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Έχετε προτεινόμενες ενέργειες για να προστατεύσετε περαιτέρω τον λογαριασμό σας."
@@ -20622,12 +20655,6 @@
       "Your recovery email is set": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης σας έχει οριστεί"
       ],
-      "Your Recovery Kit": [
-        "Το Κιτ Αποκατάστασής σας"
-      ],
-      "Your Recovery Kit is set": [
-        "Το Κιτ Αποκατάστασής έχει ρυθμιστεί"
-      ],
       "Your recovery methods": [
         "Οι μέθοδοι ανάκτησής σας"
       ],
@@ -20648,6 +20675,12 @@
       ],
       "Your recovery phone number is:": [
         "Ο αριθμός τηλεφώνου ανάκτησης σας είναι:"
+      ],
+      "Your recovery phrase": [
+        "Η φράση ανάκτησής σας"
+      ],
+      "Your recovery phrase is set": [
+        "Η φράση ανάκτησής σας έχει οριστεί"
       ]
     },
     "saml: Action": {
@@ -23783,11 +23816,17 @@
       "Actions": [
         "Ενέργειες"
       ],
+      "Activate multi-user support": [
+        "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
+      ],
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
       ],
       "Activate user": [
         "Ενεργοποίηση χρήστη"
+      ],
+      "Activate your email": [
+        "Ενεργοποιήστε το email σας"
       ],
       "Activity monitor": [
         "Παρακολούθηση δραστηριότητας"
@@ -24039,17 +24078,11 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
-      "Confirm address": [
-        "Επιβεβαιώση διεύθυνσης"
-      ],
       "Confirm downgrade": [
         "Επιβεβαιώστε την υποβάθμιση"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Επιβεβαίωση αριθμού τηλεφώνου"
       ],
       "Connect ${ name }": [
         "Σύνδεση ${ name }"
@@ -24111,6 +24144,9 @@
       ],
       "Create a new gateway": [
         "Δημιουργία νέας πύλης"
+      ],
+      "Create a new password": [
+        "Δημιουργία νέου κωδικού πρόσβασης"
       ],
       "Create Gateway": [
         "Δημιουργία Πύλης"
@@ -24204,6 +24240,9 @@
       ],
       "Day theme": [
         "Ανοιχτό θέμα"
+      ],
+      "Deactivate current phrase?": [
+        "Απενεργοποίηση της τρέχουσας φράσης;"
       ],
       "Decrypt key": [
         "Αποκρυπτογράφηση κλειδιού"
@@ -24340,6 +24379,9 @@
       ],
       "Download the mobile apps": [
         "Κατεβάστε τις εφαρμογές για κινητά"
+      ],
+      "Download your recovery phrase": [
+        "Λήψη της φράσης ανάκτησης"
       ],
       "Downloads": [
         "Λήψεις"
@@ -24979,8 +25021,14 @@
       "Remove domain": [
         "Αφαίρεση τομέα"
       ],
+      "Remove email": [
+        "Αφαίρεση email"
+      ],
       "Remove forwarding address": [
         "Κατάργηση διεύθυνσης προώθησης"
+      ],
+      "Remove recovery phone number": [
+        "Κατάργηση αριθμού τηλεφώνου ανάκτησης"
       ],
       "Remove server?": [
         "Αφαίρεση διακομιστή;"
@@ -25391,6 +25439,9 @@
       "Verify it’s you": [
         "Επαλήθευση ταυτότητας"
       ],
+      "Verify your email": [
+        "Επαληθεύστε το email σας"
+      ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."
       ],
@@ -25414,6 +25465,9 @@
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Σας στείλαμε έναν κωδικό στην ηλεκτρονική διεύθυνση σας για να βεβαιωθούμε ότι είστε εσείς. Ο κωδικός αυτός ισχύει για 10 λεπτά. Παρακαλούμε εισάγετέ τον παρακάτω."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
@@ -25465,6 +25519,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Η ${ planTitle } συνδρομή σας έχει ξεκινήσει"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ο διαχειριστής σας στο ${ orgName } σας προσκαλεί να ενεργοποιήσετε τον νέο ασφαλή λογαριασμό σας ${ BRAND_NAME } και να ενημερώσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ο διαχειριστής σας προσκαλεί να ενεργοποιήσετε τον νέο ασφαλή λογαριασμό σας ${ BRAND_NAME } και να ενημερώσετε τον κωδικό πρόσβασής σας."
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
@@ -26628,11 +26688,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Θέλετε σίγουρα να διαγράψετε τον αριθμό τηλεφώνου;"
+      "Are you sure you want to remove your notification email?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε το email ειδοποίησής σας;"
       ],
-      "Are you sure you want to delete this address?": [
-        "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
+      "Are you sure you want to remove your recovery email?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης;"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον αριθμό τηλεφώνου ανάκτησης;"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Διαγράφοντας αυτή τη διεύθυνση, δεν θα μπορείτε πλέον να λαμβάνετε καθημερινές ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου."
@@ -26643,8 +26706,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτή τη διεύθυνση, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Με την κατάργηση αυτού του αριθμού τηλεφώνου, δεν θα μπορείτε πλέον να ανακτήσετε τον λογαριασμό σας."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Δεν ήταν δυνατή η σύνδεση. Παρακαλούμε ανοίξτε την προέκταση προγράμματος περιήγησης ${ PASS_APP_NAME } και συνδεθείτε από εκεί."

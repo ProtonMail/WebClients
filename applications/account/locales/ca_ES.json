@@ -162,6 +162,9 @@
       "Add user": [
         "Afegir usuari"
       ],
+      "Added ${ memberName } as group owner": [
+        "S'ha afegit ${ memberName } com a propietari del grup"
+      ],
       "Align center": [
         "Alinea al centre"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Confirma"
+      ],
+      "Confirm email": [
+        "Confirmeu el correu electrònic"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
@@ -761,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "S'estan aplicant els filtres. Això pot trigar uns minuts."
+      ],
+      "Finish": [
+        "Finalitzar"
       ],
       "Fit to window": [
         "Ajusta a la finestra"
@@ -1277,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Esborra aquesta notificació"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "S’ha esborrat ${ memberName } com a propietari del grup"
       ],
       "Rename": [
         "Canvia el nom"
@@ -6163,7 +6175,7 @@
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
       "To me": [
-        "Per mi"
+        "Per a mi"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -6971,6 +6983,9 @@
       ],
       "Invalid invitation link": [
         "L'enllaç d'invitació no és vàlid"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "L'enllaç d'unió no és vàlid. Contacteu amb el vostre administrador."
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -10128,6 +10143,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
       ],
+      "Code has been re-sent.": [
+        "S'ha tornat a enviar el codi."
+      ],
       "Coming soon": [
         "Pròximament"
       ],
@@ -10684,6 +10702,9 @@
       ],
       "Gateways": [
         "Passarel·les"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "La generació d'una nova frase de recuperació desactivarà la vostra frase de recuperació actual."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
@@ -13034,8 +13055,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La vostra frase de recuperació és una sèrie de 12 paraules generades aleatòriament en un ordre específic."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "La frase de recuperació, inclosa al paquet de recuperació, us permetrà iniciar la sessió i recuperar les vostres dades si perdeu l'accés al compte de ${ BRAND_NAME }. Està composta per 12 paraules i funciona com una contrasenya de seguretat."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "La vostra frase de recuperació us permetrà iniciar la sessió i recuperar les vostres dades si perdeu l'accés al vostre compte de ${ BRAND_NAME }. Està composta per 12 paraules i actua com una contrasenya de seguretat."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
@@ -14753,6 +14774,9 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Correus electrònics personals i de la feina, a més d'actualitzacions i notificacions importants"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -16711,6 +16735,9 @@
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
+      ],
+      "Advanced workspace security": [
+        "Seguretat avançada de l'espai de treball"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
@@ -18713,14 +18740,14 @@
       "per month, billed every two years": [
         "al mes amb facturació cada dos anys"
       ],
-      "Preparing your Recovery Kit": [
-        "S'està preparant el vostre kit de recuperació"
+      "Preparing your recovery phrase": [
+        "S'està preparant la frase de recuperació"
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
       ],
-      "Save your recovery kit to continue": [
-        "Deseu el vostre kit de recuperació per continuar"
+      "Save your recovery phrase to continue": [
+        "Deseu la frase de recuperació per continuar"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
@@ -19636,7 +19663,7 @@
     },
     "pqc-optin: Action": {
       "Close": [
-        "Tanqueu"
+        "Tanca"
       ],
       "Got it": [
         "Entesos"
@@ -19952,6 +19979,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Assegureu-vos de mantenir la vostra frase de recuperació accessible després de crear-la**. Per motius de seguretat, no la guardem un cop hàgiu desat els canvis i no la podreu tornar a veure a l'aplicació ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "copia la frase de recuperació"
       ],
@@ -19973,14 +20003,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "O ${ downloadRecoveryKitSwitchButton } en el seu lloc."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "El **kit de recuperació** us permet restaurar el vostre compte de ${ BRAND_NAME } si us quedeu bloquejat."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "La **frase de recuperació** us permet restaurar el compte de ${ BRAND_NAME } si en perdeu l'accés."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Deseu el vostre kit de recuperació"
-      ],
       "Save your recovery phrase": [
         "Deseu la vostra frase de recuperació"
       ]
@@ -20373,8 +20400,8 @@
       "Back to Safety Review": [
         "Torna a la revisió de seguretat"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Com que vau restablir la contrasenya, el kit de recuperació actual només es pot utilitzar per recuperar les dades creades abans de restablir la contrasenya."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Com que heu restablert la contrasenya, la frase de recuperació actual només la podreu fer servir per recuperar les dades creades abans del restabliment de la contrasenya."
       ],
       "Can be used to regain access to your account and data": [
         "Es pot utilitzar per recuperar l'accés al vostre compte i a les vostres dades."
@@ -20403,8 +20430,8 @@
       "Download ${ size }": [
         "Descarrega ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Descarregueu el vostre kit de recuperació"
+      "Download your recovery phrase": [
+        "Descarregar la frase de recuperació"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -20418,8 +20445,8 @@
       "Enable recovery by phone": [
         "Activa la recuperació per telèfon"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Entenc que no podré recuperar les dades bloquejades actualment amb aquest kit de recuperació."
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Entenc que no podré recuperar les dades actualment bloquejades amb aquesta frase de recuperació"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si oblideu la contrasenya de ${ BRAND_NAME } i necessiteu restablir-la, la pròxima vegada que inicieu sessió en aquest dispositiu amb la nova contrasenya, es restaurarà l'accés total al vostre compte de ${ BRAND_NAME }."
@@ -20427,8 +20454,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si oblideu la contrasenya de ${ BRAND_NAME } i necessiteu restablir-la, la pròxima vegada que inicieu sessió en aquest dispositiu amb la contrasenya nova, es restaurarà l'accés total al compte de ${ BRAND_NAME }."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Si se us bloqueja el compte de ${ BRAND_NAME }, el vostre kit de recuperació us permetrà iniciar la sessió i recuperar les dades."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Si perdeu l'accés al compte de ${ BRAND_NAME }, la frase de recuperació us permetrà iniciar la sessió i recuperar les vostres dades."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si perdeu les dades d'inici de sessió i necessiteu restablir el compte, **és imprescindible** que tingueu un **mètode de recuperació del compte i de les dades**. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes, fitxers o contrasenyes."
@@ -20472,8 +20499,8 @@
       "Take action to secure your account": [
         "Preneu mesures per protegir el vostre compte."
       ],
-      "There was an error generating your Recovery Kit": [
-        "S'ha produït un error en generar el vostre kit de recuperació."
+      "There was an error generating your recovery phrase": [
+        "S'ha produït un error en generar la frase de recuperació"
       ],
       "There was an error verifying your email": [
         "S'ha produït un error en verificar el vostre correu"
@@ -20502,11 +20529,11 @@
       "to recover your account if you're ever locked out": [
         "per recuperar el vostre compte si ja no hi teniu accés."
       ],
-      "Update your Recovery Kit": [
-        "Actualitzeu el kit de recuperació"
+      "Update your recovery phrase": [
+        "Actualitzeu la vostra frase de recuperació"
       ],
-      "Update your Recovery Kit?": [
-        "Voleu actualitzar el kit de recuperació?"
+      "Update your recovery phrase?": [
+        "Voleu actualitzar la frase de recuperació?"
       ],
       "Verify": [
         "Verifica"
@@ -20523,8 +20550,8 @@
       "Verify your recovery phone number": [
         "Verifiqueu el vostre número de telèfon de recuperació"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Hem trobat un error en generar el vostre kit de recuperació. Torneu-ho a provar més tard o poseu-vos en contacte amb el servei d'atenció al client si el problema continua."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Hem trobat un error en generar la frase de recuperació. Torneu-ho a provar més tard o contacteu amb el servei de suport si el problema persisteix."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Hi ha hagut un error en verificar el vostre correu. Torneu-ho a provar més tard o poseu-vos en contacte amb el servei d'atenció al client si el problema continua."
@@ -20547,8 +20574,8 @@
       "You can disable this at any time.": [
         "Podeu desactivar això en qualsevol moment."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Podeu utilitzar la frase de recuperació d'aquest kit de recuperació per restaurar completament el vostre compte quan restabliu la contrasenya, així que assegureu-vos de mantenir-la en un lloc segur."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Podeu fer servir la frase de recuperació d'aquest fitxer per restaurar completament el vostre compte quan restabliu la vostra contrasenya; per tant, assegureu-vos de guardar-la en un lloc segur."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Podeu utilitzar el correu per recuperar l'accés al vostre compte si oblideu la contrasenya."
@@ -20559,8 +20586,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Podeu utilitzar el vostre telèfon de recuperació per recuperar l'accés al vostre compte si oblideu la contrasenya."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Abans heu baixat un kit de recuperació. Descarregar-ne un de nou **desactivarà l'antic**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Anteriorment heu descarregat una frase de recuperació. Descarregar-ne una de nova **desactivarà l'anterior**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Teniu accions recomanades per protegir el compte encara més."
@@ -20625,12 +20652,6 @@
       "Your recovery email is set": [
         "El vostre correu electrònic de recuperació està configurat."
       ],
-      "Your Recovery Kit": [
-        "Kit de recuperació"
-      ],
-      "Your Recovery Kit is set": [
-        "El vostre kit de recuperació està configurat."
-      ],
       "Your recovery methods": [
         "Els vostres mètodes de recuperació"
       ],
@@ -20651,6 +20672,12 @@
       ],
       "Your recovery phone number is:": [
         "El número de telèfon de recuperació és:"
+      ],
+      "Your recovery phrase": [
+        "La vostra frase de recuperació"
+      ],
+      "Your recovery phrase is set": [
+        "S'ha definit la vostra frase de recuperació"
       ]
     },
     "saml: Action": {
@@ -21960,7 +21987,7 @@
         "/ mes"
       ],
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -23789,11 +23816,17 @@
       "Actions": [
         "Accions"
       ],
+      "Activate multi-user support": [
+        "Activar el suport multiusuari"
+      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
       "Activate user": [
         "Activa l'usuari"
+      ],
+      "Activate your email": [
+        "Activeu el vostre correu electrònic"
       ],
       "Activity monitor": [
         "Monitor d'activitats"
@@ -24045,17 +24078,11 @@
       "Confirm": [
         "Confirma"
       ],
-      "Confirm address": [
-        "Confirmar adreça"
-      ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmeu la pèrdua de les bonificacions de ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Confirmeu el número de telèfon"
       ],
       "Connect ${ name }": [
         "Connecta ${ name }"
@@ -24117,6 +24144,9 @@
       ],
       "Create a new gateway": [
         "Crea una passarel·la"
+      ],
+      "Create a new password": [
+        "Creeu una nova contrasenya"
       ],
       "Create Gateway": [
         "Crea una passarel·la"
@@ -24210,6 +24240,9 @@
       ],
       "Day theme": [
         "Tema de dia"
+      ],
+      "Deactivate current phrase?": [
+        "Voleu desactivar la frase actual?"
       ],
       "Decrypt key": [
         "Desxifra la clau"
@@ -24346,6 +24379,9 @@
       ],
       "Download the mobile apps": [
         "Descarregueu les aplicacions mòbils"
+      ],
+      "Download your recovery phrase": [
+        "Descarregueu la frase de recuperació"
       ],
       "Downloads": [
         "Descàrregues"
@@ -24985,8 +25021,14 @@
       "Remove domain": [
         "Esborra el domini"
       ],
+      "Remove email": [
+        "Eliminar el correu electrònic"
+      ],
       "Remove forwarding address": [
         "Esborreu l'adreça de reenviament"
+      ],
+      "Remove recovery phone number": [
+        "Elimineu el número de telèfon de recuperació"
       ],
       "Remove server?": [
         "Voleu esborrar el servidor?"
@@ -25397,6 +25439,9 @@
       "Verify it’s you": [
         "Verifiqueu que sou vós"
       ],
+      "Verify your email": [
+        "Verifiqueu el correu electrònic"
+      ],
       "Verifying your card...": [
         "S'està verificant la targeta…"
       ],
@@ -25420,6 +25465,9 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Us hem enviat un codi al correu electrònic per assegurar-nos que sou vós. Aquest codi és vàlid durant 10 minuts. Introduïu-lo a continuació."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
@@ -25471,6 +25519,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "La vostra subscripció a ${ planTitle } ha començat"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "El vostre administrador a ${ orgName } us convida a activar el nou compte segur de ${ BRAND_NAME } i a actualitzar la vostra contrasenya."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "L'administrador us convida a activar el nou compte segur de ${ BRAND_NAME } i a actualitzar la contrasenya."
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
@@ -26038,7 +26092,7 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "Only": [
         "Només"
@@ -26634,11 +26688,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Confirmes que vols eliminar el número de telèfon?"
+      "Are you sure you want to remove your notification email?": [
+        "Esteu segur que voleu esborrar el vostre correu electrònic de notificacions?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Segur que voleu eliminar aquesta adreça?"
+      "Are you sure you want to remove your recovery email?": [
+        "Esteu segur que voleu esborrar el vostre correu electrònic de recuperació?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Esteu segur que voleu esborrar el vostre telèfon de recuperació?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Suprimint aquesta adreça, ja no podràs rebre notificacions diàries al correu."
@@ -26649,7 +26706,7 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Suprimint aquesta adreça, ja no podràs recuperar el teu compte."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
+      "By removing this phone number, you will no longer be able to recover your account.": [
         "Si suprimiu aquest número de telèfon, ja no podreu recuperar el vostre compte."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
