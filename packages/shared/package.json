@@ -62,7 +62,7 @@
         "karma-junit-reporter": "^2.0.1",
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.1",
-        "playwright": "^1.58.2",
+        "playwright": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
         "prettier": "^3.8.1",
         "ts-loader": "^9.5.7",
         "ttag": "^1.8.12",
