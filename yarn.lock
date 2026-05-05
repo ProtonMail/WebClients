@@ -10568,7 +10568,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
-    axios: "npm:1.15.0"
+    axios: "npm:^1.15.2"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
@@ -11030,7 +11030,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": "npm:^30.0.0"
-    axios: "npm:1.15.0"
+    axios: "npm:^1.15.2"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
@@ -19961,14 +19961,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.15.0, axios@npm:^1.12.1, axios@npm:^1.13.5, axios@npm:^1.7.5":
-  version: 1.15.0
-  resolution: "axios@npm:1.15.0"
+"axios@npm:^1.12.1, axios@npm:^1.13.5, axios@npm:^1.15.2, axios@npm:^1.7.5":
+  version: 1.15.2
+  resolution: "axios@npm:1.15.2"
   dependencies:
     follow-redirects: "npm:^1.15.11"
     form-data: "npm:^4.0.5"
     proxy-from-env: "npm:^2.1.0"
-  checksum: 10/d39a2c0ebc7ff4739401b282e726cc2673377949d6c46d60eb619458f8d7a2f7eadbcada7097f4dbc7d5c59abb4d3bf6fac33d474412bc3415d3f5aa7ed45530
+  checksum: 10/eebbd8cb777316d4252cd994a06ec9fb956ef519214a62dab6c5443ae8b753b5116e9a770502316789e6cdef1101e6aae53b6936d6a3791b2d66d75f4d7d2462
   languageName: node
   linkType: hard
 
