@@ -464,6 +464,23 @@ export function* refreshShallowAttachmentFromRemote({
         return;
     }
 
+    // If the attachment is locally soft-deleted, do not rehydrate it from remote.
+    // If the deletion is still dirty (push hasn't synced yet), re-trigger the push
+    // so the server eventually drops the asset and stops returning it on space pulls.
+    // Without this guard, processPullSpacesGeneric can resurrect deleted project files
+    // into every new chat in that project.
+    const dbApi: DbApi = yield getContext('dbApi');
+    const idbAttachment: SerializedAttachment | undefined = yield call([dbApi, dbApi.getAttachmentById], localId);
+    if (idbAttachment?.deleted) {
+        console.log(
+            `refreshShallowAttachmentFromRemote: attachment ${localId} is locally soft-deleted, skipping rehydration`
+        );
+        if (idbAttachment.dirty) {
+            yield put(pushAttachmentRequest({ id: localId, priority: 'urgent' }));
+        }
+        return;
+    }
+
     // The attachment has no data, but we save the remote id, this will be used for pulling it from remote.
     const entry: IdMapEntry = { type: 'attachment', localId, remoteId };
     yield put(addIdMapEntry({ ...entry, saveToIdb: true }));
@@ -650,6 +667,19 @@ export function* considerRequestingFullAttachment({
 
     // Compare with object in IDB
     const idbAttachment: SerializedAttachment | undefined = yield call([dbApi, dbApi.getAttachmentById], localId);
+
+    // Don't re-pull an attachment the user has locally soft-deleted. Otherwise the
+    // remote copy gets downloaded again and reappears as a "ghost" project file in
+    // every new chat for the space. If the deletion is still dirty, kick off a push
+    // so the server picks up the deletion.
+    if (idbAttachment?.deleted) {
+        console.log(`considerRequestingFullAttachment: attachment ${localId} is locally soft-deleted, not requesting`);
+        if (idbAttachment.dirty) {
+            yield put(pushAttachmentRequest({ id: localId, priority: 'urgent' }));
+        }
+        return;
+    }
+
     if (idbAttachment && idbAttachment.encrypted) {
         console.log(
             `considerRequestingFullAttachment: Attachment ${localId} is already filled locally, not requesting`
