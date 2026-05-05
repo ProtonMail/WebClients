@@ -10,7 +10,7 @@ body {
 }
 
 /* override checkboxes */
-.checkbox-container {
+.checkbox-container:not(td *) {
 	gap: 1rem;
 
 	.checkbox-fakecheck {
