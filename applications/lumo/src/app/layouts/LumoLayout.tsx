@@ -1,5 +1,5 @@
 import { Header } from '../components/Conversation/Header';
-import { RightPanelSlot } from '../components/RightPanelSlot';
+import { RightPanelSlot, RightPanelSlotWithHeader } from '../components/RightPanelSlot';
 import { useDragArea } from '../providers/DragAreaProvider';
 
 export const DragAreaContainer = ({ children }: { children: React.ReactNode }) => {
@@ -28,6 +28,8 @@ interface LumoLayoutWithDrawerProps {
     drawerContentComponent?: React.ReactNode;
     withoutDrawerToggle?: boolean;
     leftHeaderButton?: React.ReactNode;
+    drawerTitle?: string;
+    drawerActionButton?: React.ReactNode;
 }
 
 export const LumoLayoutWithDrawer = ({
@@ -36,6 +38,8 @@ export const LumoLayoutWithDrawer = ({
     drawerContentComponent,
     withoutDrawerToggle = false,
     leftHeaderButton,
+    drawerTitle,
+    drawerActionButton,
 }: LumoLayoutWithDrawerProps) => {
     return (
         <div className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm">
@@ -43,7 +47,14 @@ export const LumoLayoutWithDrawer = ({
                 {headerComponent || null}
             </Header>
             {children}
-            {drawerContentComponent && <RightPanelSlot>{drawerContentComponent}</RightPanelSlot>}
+            {drawerContentComponent &&
+                (drawerTitle || drawerActionButton ? (
+                    <RightPanelSlotWithHeader title={drawerTitle} actionButton={drawerActionButton}>
+                        {drawerContentComponent}
+                    </RightPanelSlotWithHeader>
+                ) : (
+                    <RightPanelSlot>{drawerContentComponent}</RightPanelSlot>
+                ))}
         </div>
     );
 };
