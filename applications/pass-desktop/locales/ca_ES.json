@@ -179,7 +179,7 @@
         "Continuar fora de línia"
       ],
       "Copy": [
-        "Copiar"
+        "Copia"
       ],
       "Copy and close": [
         "Copia i tanca"
@@ -931,6 +931,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
       ],
       "A domain ownership must be verified first.": [
         "Primer s'ha de verificar la propietat d'un domini."
@@ -2932,7 +2935,7 @@
         "Targetes"
       ],
       "Catch-All": [
-        "Catch-all"
+        "Capturar-ho tot"
       ],
       "Checkbox": [
         "Casella de selecció"

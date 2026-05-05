@@ -938,6 +938,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "V súčasnosti prebieha kontrola odblokovania desktopu."
+      ],
       "A domain ownership must be verified first.": [
         "Najprv je potrebné overiť vlastníctvo domény."
       ],
@@ -1577,6 +1580,9 @@
         "${ payload.count } pozvánky úspešne odoslané",
         "${ payload.count } pozvánok úspešne odoslaných",
         "${ payload.count } pozvánok úspešne odoslaných"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtu"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspešne vypnutý"

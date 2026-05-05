@@ -5649,8 +5649,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Suodatin"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Suodatin (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Suodata ja järjestä viestit"
+      ],
+      "Has attachments": [
+        "Sisältää liitteitä"
+      ],
+      "Read": [
+        "Luettu"
+      ],
+      "Reset": [
+        "Nollaa"
+      ],
       "Show": [
         "Näytä"
+      ],
+      "Unread": [
+        "Lukematon"
       ]
     },
     "Filter Actions": {
@@ -9683,6 +9704,9 @@
       "Payment method": [
         "Maksutapa"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Henkilökohtaiset ja työsähköpostit sekä tärkeät päivitykset ja ilmoitukset"
+      ],
       "PGP scheme": [
         "PGP-malli"
       ],
@@ -13309,6 +13333,9 @@
       ],
       "Smallest first": [
         "Pienin ensin"
+      ],
+      "Sort by": [
+        "Järjestä"
       ]
     },
     "specialoffer: Action": {

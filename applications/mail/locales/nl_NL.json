@@ -4129,6 +4129,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nieuwe e-mails van ${ senderEmailAddress } worden niet meer afgeleverd en zullen permanent verwijderd worden."
       ],
+      "No ads. No trackers.": [
+        "Geen advertenties. Geen trackers."
+      ],
       "No folders": [
         "Geen mappen"
       ],
@@ -4153,6 +4156,10 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adres te koppelen, upgrade naar ${ planName }.",
+        "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adressen te koppelen, upgrade naar ${ planName }."
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
       ],
@@ -4173,6 +4180,9 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER } accounts"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -4210,11 +4220,37 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "U stuurt ${ numAddressesOrSync } Gmail-adres door naar ${ MAIL_APP_NAME }.",
+        "U stuurt ${ numAddressesOrSync } Gmail-adressen door naar ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "U stuurt e-mails door vanaf ${ forwardingCount } Gmail-adres. Door dit adres te koppelen, kunt u zowel e-mails ontvangen als beantwoorden in ${ MAIL_APP_NAME }.",
+        "U stuurt e-mails door vanaf ${ forwardingCount } Gmail-adressen. Door deze adressen te koppelen, kunt u zowel e-mails ontvangen als beantwoorden in ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
+        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "U hebt één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Uw account en dataherstelmethoden zijn ingesteld en 2FA is ingeschakeld."
       ],
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adres.",
+        "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adressen."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
+        "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
@@ -5652,6 +5688,15 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter and sort emails": [
+        "Filter en sorteer e-mails"
+      ],
+      "Reset": [
+        "Reset"
+      ],
       "Show": [
         "Tonen"
       ]
@@ -9740,6 +9785,9 @@
       "Payment method": [
         "Betalingsmethode"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Persoonlijke en zakelijke e-mails, plus belangrijke updates en notificaties."
+      ],
       "PGP scheme": [
         "PGP-schema"
       ],
@@ -9802,6 +9850,9 @@
       ],
       "Search in": [
         "Zoeken in"
+      ],
+      "Select which Gmail address to connect": [
+        "Selecteer welk Gmail-adres u wilt koppelen"
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -11841,6 +11892,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Importeer uw e-mails in ${ MAIL_APP_NAME }"
+      ],
       "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
         "Breng uw bestaande e-mails over naar ${ MAIL_APP_NAME }, zodat u alles vanuit één privé-inbox kunt beheren."
       ],
@@ -13499,6 +13553,9 @@
       ],
       "Smallest first": [
         "Kleinste eerst"
+      ],
+      "Sort by": [
+        "Sorteren op"
       ]
     },
     "specialoffer: Action": {
@@ -15141,6 +15198,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Disconnected from Gmail": [
+        "Ontkoppeld van Gmail"
+      ],
       "Discover your subscription benefits": [
         "Ontdek uw abonnementsvoordelen"
       ],
@@ -15648,6 +15708,9 @@
       ],
       "Self-destruct message": [
         "Zelfvernietigend bericht"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail verzenden en ontvangen in ${ MAIL_APP_NAME }"
       ],
       "Send email": [
         "E-mail verzenden"

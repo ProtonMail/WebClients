@@ -162,6 +162,9 @@
       "Add user": [
         "Legg til bruker"
       ],
+      "Added ${ memberName } as group owner": [
+        "La til ${ memberName } som gruppeeier"
+      ],
       "Align center": [
         "Midtstill"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Bekreft"
+      ],
+      "Confirm email": [
+        "Bekreft e-post"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
@@ -761,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Filtre anvendes. Dette kan ta noen minutter."
+      ],
+      "Finish": [
+        "Fullfør"
       ],
       "Fit to window": [
         "Tilpass til vindu"
@@ -1277,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Slett dette varslet"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Fjernet ${ memberName } som gruppeeier"
       ],
       "Rename": [
         "Gi nytt navn"
@@ -2065,7 +2077,7 @@
         "Administratorroller"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring og VPN-infrastruktur, og administrer revisjonslogger."
+        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Deleger administrasjon ved å tildele spesifikke administratorroller. Gi hver administrator bare den tilgangen de trenger. Dette følger prinsippet om færrest rettigheter, og beskytter organisasjonen din mot kompromitterte kontoer og utilsiktede feil."
@@ -2080,7 +2092,7 @@
         "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ],
       "New: Control admin access for individual users": [
-        "Nytt: Kontroller administratortilgang for individuelle brukere"
+        "Nytt: kontroller administratortilgang for individuelle brukere"
       ],
       "Organization admin": [
         "Organisasjonsadministrator"
@@ -6972,6 +6984,9 @@
       "Invalid invitation link": [
         "Ugyldig invitasjonskobling"
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Ugyldig kobling for å bli med. Ta kontakt med administratoren din."
+      ],
       "Invalid name": [
         "Ugyldig navn"
       ],
@@ -8109,7 +8124,7 @@
         "500 MB lagringsplass for e-post"
       ],
       "500 MB storage": [
-        "500 GB lagringsplass"
+        "500 MB lagringsplass"
       ],
       "Access to all countries": [
         "Tilgang til alle land"
@@ -10131,6 +10146,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
       ],
+      "Code has been re-sent.": [
+        "Koden er sendt på nytt."
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -10687,6 +10705,9 @@
       ],
       "Gateways": [
         "Gateway-tjenere"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Hvis du genererer en ny gjenopprettingsfrase, deaktiveres den nåværende gjenopprettingsfrasen."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generering av ny gjenopprettingsfrase vil deaktivere den gamle."
@@ -11609,6 +11630,9 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefalt på klarerte enheter. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
+        "Gjenoppretting via e-post er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
       ],
       "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Gjenoppretting via telefon er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
@@ -13034,8 +13058,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Gjenopprettingsfrasen din er en serie på 12 tilfeldig genererte ord i en bestemt rekkefølge."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Gjenopprettingsfrasen din – som finnes i gjenopprettingssettet – lar deg logge på og gjenopprette dataene dine hvis du blir låst ute av ${ BRAND_NAME }-kontoen. Den består av 12 ord og fungerer som et reservepassord."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Gjenopprettingsfrasen din lar deg logge på og gjenopprette dataene dine hvis du blir låst ute av ${ BRAND_NAME }-kontoen din. Den består av 12 ord og fungerer som et reservepassord."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
@@ -13637,7 +13661,7 @@
         "${ Brand } slutter på ${ Last4 }"
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-Skrivebordsapp"
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-skrivebordsapp"
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-skrivebordsapp"
@@ -14753,6 +14777,9 @@
       ],
       "Pending": [
         "Ventende"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer og varsler"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -16711,6 +16738,9 @@
       ],
       "Advanced network security": [
         "Avansert nettverkssikkerhet"
+      ],
+      "Advanced workspace security": [
+        "Avansert sikkerhet på arbeidsområdet"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME }-produkter og tjenester"
@@ -18713,14 +18743,14 @@
       "per month, billed every two years": [
         "per måned, faktureres hvert 2. år"
       ],
-      "Preparing your Recovery Kit": [
-        "Forbereder gjenopprettingssettet ditt"
+      "Preparing your recovery phrase": [
+        "Forbereder gjenopprettingsfrasen din"
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
       ],
-      "Save your recovery kit to continue": [
-        "Lagre gjenopprettingssettet for å fortsette"
+      "Save your recovery phrase to continue": [
+        "Lagre gjenopprettingsfrasen for å fortsette"
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
@@ -19955,6 +19985,9 @@
       "Strong": [
         "Sterk"
       ],
+      "Unprotected": [
+        "Ubeskyttet"
+      ],
       "Weak": [
         "Svak"
       ]
@@ -20045,6 +20078,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Sørg for at du holder gjenopprettingsfrasen tilgjengelig etter at du har opprettet den.** Av sikkerhetshensyn lagrer vi ikke frasen etter at du har lagret endringene, og du vil ikke kunne se den igjen i ${ BRAND_NAME }-appen."
+      ],
       "copy recovery phrase": [
         "kopier gjenopprettingsfrase"
       ],
@@ -20066,14 +20102,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller ${ downloadRecoveryKitSwitchButton } istedenfor."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "**Gjenopprettingssettet** lar deg gjenopprette ${ BRAND_NAME }-kontoen din hvis du blir låst ute."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "**Gjenopprettingsfrasen** lar deg gjenopprette ${ BRAND_NAME }-kontoen din hvis du blir låst ute."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Lagre gjenopprettingssettet ditt"
-      ],
       "Save your recovery phrase": [
         "Lagre gjenopprettingsfrasen din"
       ]
@@ -20466,8 +20499,8 @@
       "Back to Safety Review": [
         "Tilbake til gjennomgang av sikkerhet"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Fordi du tilbakestiller passordet, kan det nåværende gjenopprettingssettet bare brukes til å gjenopprette dataene som ble opprettet før tilbakestillingen av passordet."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Fordi du tilbakestilte passordet ditt, kan den nåværende gjenopprettingsfrasen din bare brukes til å gjenopprette dataene som ble opprettet før tilbakestillingen av passordet."
       ],
       "Can be used to regain access to your account and data": [
         "Kan brukes til å få tilgang til kontoen din og dataene dine"
@@ -20496,8 +20529,8 @@
       "Download ${ size }": [
         "Last ned ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Last ned gjenopprettingssettet ditt"
+      "Download your recovery phrase": [
+        "Last ned gjenopprettingsfrasen din"
       ],
       "Email address": [
         "E-postadresse"
@@ -20511,8 +20544,8 @@
       "Enable recovery by phone": [
         "Aktiver gjenoppretting via telefon"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Jeg forstår at jeg ikke vil kunne gjenopprette låste data med dette gjenopprettingssettet"
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Jeg forstår at jeg ikke vil kunne gjenopprette data som er låst for øyeblikket med denne gjenopprettingsfrasen"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
@@ -20520,8 +20553,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Hvis du blir låst ute av ${ BRAND_NAME }-kontoen din, vil ditt gjenopprettingssett la deg logge på og gjenopprette dataene dine."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Hvis du blir låst ute fra ${ BRAND_NAME }-kontoen din, vil gjenopprettingsfrasen din tillate deg å logge på og gjenopprette dataene dine."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister påloggingsinformasjonen din og trenger å tilbakestille kontoen din, **er det viktig** at du har både en **kontogjenopprettings- og datagjenopprettingsmetode** på plass, ellers kan det hende du ikke får tilgang til noen av e-postene, kontaktene, filene eller passordene dine."
@@ -20565,8 +20598,8 @@
       "Take action to secure your account": [
         "Iverksett tiltak for å sikre kontoen din"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Det oppstod en feil under generering av gjenopprettingssettet"
+      "There was an error generating your recovery phrase": [
+        "Det oppstod en feil under generering av gjenopprettingsfrasen din"
       ],
       "There was an error verifying your email": [
         "Det oppstod en feil under bekreftelse av e-posten din"
@@ -20595,11 +20628,11 @@
       "to recover your account if you're ever locked out": [
         "for å gjenopprette kontoen din hvis du noen gang blir utestengt"
       ],
-      "Update your Recovery Kit": [
-        "Oppdater gjenopprettingssettet ditt"
+      "Update your recovery phrase": [
+        "Oppdater gjenopprettingsfrasen din"
       ],
-      "Update your Recovery Kit?": [
-        "Oppdatere gjenopprettingssettet ditt?"
+      "Update your recovery phrase?": [
+        "Oppdatere gjenopprettingsfrasen din?"
       ],
       "Verify": [
         "Verifiser"
@@ -20616,8 +20649,8 @@
       "Verify your recovery phone number": [
         "Verifiser telefonnummeret for gjenoppretting"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Det oppstod en feil under generering av gjenopprettingssettet. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Det oppsto en feil under genereringen av gjenopprettingsfrasen din. Prøv på nytt senere, eller kontakt brukerstøtte hvis problemet vedvarer."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Vi oppdaget en feil under bekreftelsen av e-posten din. Prøv igjen senere, eller kontakt brukerstøtte hvis problemet vedvarer."
@@ -20640,8 +20673,8 @@
       "You can disable this at any time.": [
         "Du kan deaktivere dette når som helst."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Du kan bruke gjenopprettingsfrasen i dette gjenopprettingssettet til å gjenopprette kontoen din fullstendig når du tilbakestiller passordet, så sørg for at du oppbevarer den på et trygt sted."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Du kan bruke gjenopprettingsfrasen til å gjenopprette kontoen din fullstendig når du tilbakestiller passordet, så sørg for at du oppbevarer den et trygt sted."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Du kan bruke e-posten din til å få tilgang til kontoen igjen hvis du glemmer passordet ditt."
@@ -20652,8 +20685,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Du kan bruke gjenopprettingstelefonen til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Du har tidligere lastet ned et gjenopprettingssett. Nedlasting av en ny vil **deaktivere det gamle**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidligere lastet ned en gjenopprettingsfrase. Hvis du laster ned en ny, **deaktiveres den gamle**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Du har anbefalte tiltak for å beskytte kontoen din ytterligere."
@@ -20718,12 +20751,6 @@
       "Your recovery email is set": [
         "Gjenopprettings-e-posten din er angitt"
       ],
-      "Your Recovery Kit": [
-        "Gjenopprettingssettet ditt"
-      ],
-      "Your Recovery Kit is set": [
-        "Gjenopprettingssettet ditt er angitt"
-      ],
       "Your recovery methods": [
         "Gjenopprettingsmetodene dine"
       ],
@@ -20744,6 +20771,12 @@
       ],
       "Your recovery phone number is:": [
         "Telefonnummeret ditt for gjenoppretting er:"
+      ],
+      "Your recovery phrase": [
+        "Din gjenopprettingsfrase"
+      ],
+      "Your recovery phrase is set": [
+        "Gjenopprettingsfrasen din er angitt"
       ]
     },
     "saml: Action": {
@@ -22478,7 +22511,7 @@
         "Deaktiver gjenoppretting via telefon"
       ],
       "Disable signed-in reset": [
-        "Deaktiver tilbakestillilng når pålogget"
+        "Deaktiver tilbakestillilng ved pålogget"
       ],
       "Generate a recovery phrase": [
         "Generer en gjenopprettingsfrase"
@@ -23879,11 +23912,17 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activate multi-user support": [
+        "Aktiver støtte for flere brukere"
+      ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
       ],
       "Activate user": [
         "Aktiver bruker"
+      ],
+      "Activate your email": [
+        "Aktiver e-posten din"
       ],
       "Activity monitor": [
         "Aktivitetsovervåking"
@@ -24135,17 +24174,11 @@
       "Confirm": [
         "Bekreft"
       ],
-      "Confirm address": [
-        "Bekreft adresse"
-      ],
       "Confirm downgrade": [
         "Bekreft nedgradering"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekreft tap av ${ BRAND_NAME }-bonuser"
-      ],
-      "Confirm phone number": [
-        "Bekreft telefonnummer"
       ],
       "Connect ${ name }": [
         "Koble til ${ name }"
@@ -24207,6 +24240,9 @@
       ],
       "Create a new gateway": [
         "Opprett en ny gateway"
+      ],
+      "Create a new password": [
+        "Opprett et nytt passord"
       ],
       "Create Gateway": [
         "Opprett gateway"
@@ -24301,6 +24337,9 @@
       "Day theme": [
         "Dagtema"
       ],
+      "Deactivate current phrase?": [
+        "Deaktivere gjeldende frase?"
+      ],
       "Decrypt key": [
         "Dekrypter nøkkel"
       ],
@@ -24384,7 +24423,7 @@
         "Deaktivere kategorier?"
       ],
       "Disable device data backup?": [
-        "Deaktiver sikkerhetskopiering av enhetsdata?"
+        "Deaktivere sikkerhetskopiering av enhetsdata?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -24436,6 +24475,9 @@
       ],
       "Download the mobile apps": [
         "Last ned mobilappene"
+      ],
+      "Download your recovery phrase": [
+        "Last ned gjenopprettingsfrasen din"
       ],
       "Downloads": [
         "Nedlastinger"
@@ -24953,7 +24995,7 @@
         "Regler for passordgenerator"
       ],
       "Password reset options": [
-        "Innstillinger for tilbakestilling av passord"
+        "Alternativer for tilbakestilling av passord"
       ],
       "Password reset settings": [
         "Innstillinger for tilbakestilling av passord"
@@ -25075,8 +25117,14 @@
       "Remove domain": [
         "Fjern domene"
       ],
+      "Remove email": [
+        "Fjern e-post"
+      ],
       "Remove forwarding address": [
         "Fjern videresendingsadresse"
+      ],
+      "Remove recovery phone number": [
+        "Fjern gjenopprettingstelefonnummer"
       ],
       "Remove server?": [
         "Fjerne tjener?"
@@ -25268,7 +25316,7 @@
         "Logget på medlemskonto"
       ],
       "Signed-in reset": [
-        "Tilbakestilling når pålogget"
+        "Tilbakestilling ved pålogget"
       ],
       "Simplify email distribution": [
         "Forenkle distribusjon av e-post"
@@ -25487,6 +25535,9 @@
       "Verify it’s you": [
         "Bekreft at det er deg"
       ],
+      "Verify your email": [
+        "Bekreft e-postadressen"
+      ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."
       ],
@@ -25510,6 +25561,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Vi har sendt deg en kode til e-posten din for å bekrefte at det er deg. Denne koden er gyldig i 10 minutter. Skriv den inn nedenfor."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi vil sende deg en e-post til din nye adresse med instruksjoner om hvordan du fullfører endringen."
@@ -25561,6 +25615,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Abonnementet ditt på ${ planTitle } har startet"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Administratoren din hos ${ orgName } inviterer deg til å aktivere den nye, sikre ${ BRAND_NAME }-kontoen din og oppdatere passordet ditt."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Administratoren din inviterer deg til å aktivere den nye, sikre ${ BRAND_NAME }-kontoen din og oppdatere passordet ditt."
       ],
       "Your calendar link": [
         "Din kalenderkobling"
@@ -26724,11 +26784,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Er du sikker på at du vil slette telefonnummeret?"
+      "Are you sure you want to remove your notification email?": [
+        "Er du sikker på at du vil fjerne tilknyttet e-post for varsling?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på at du vil slette denne adressen?"
+      "Are you sure you want to remove your recovery email?": [
+        "Er du sikker på at du vil fjerne gjenopprettings-e-postadressen din?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Er du sikker på at du vil fjerne telefonnummeret ditt for gjenoppretting?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ved å slette denne adressen vil du ikke lenger kunne motta daglige e-postvarslinger."
@@ -26739,8 +26802,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ved å slette denne adressen vil du ikke lenger kunne gjenopprette kontoen din."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Hvis du fjerner dette telefonnummeret, vil du ikke lenger kunne gjenopprette kontoen din."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kunne ikke logge på. Åpne nettleserutvidelsen for ${ PASS_APP_NAME } og logg på derfra."

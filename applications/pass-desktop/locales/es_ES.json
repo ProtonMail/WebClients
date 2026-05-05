@@ -962,6 +962,18 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Error de autenticación. Confirma tu segunda contraseña para continuar con la exportación"
       ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales del bloqueo biométrico no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se han encontrado las credenciales del bloqueo biométrico"
+      ],
+      "Biometric lock is not configured.": [
+        "No se ha configurado el bloqueo biométrico."
+      ],
+      "Biometric lock setup failed.": [
+        "Se ha producido un error al configurar el bloqueo biométrico."
+      ],
       "Cannot send invitation at the moment": [
         "No se puede enviar la invitación por el momento.",
         "No se pueden enviar las invitaciones por el momento."
@@ -1261,6 +1273,9 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
       ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Se debe haber iniciado sesión en la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
       "The session has expired. Please sign in again.": [
         "Tu sesión ha expirado. Inicia sesión de nuevo."
       ],
@@ -1512,6 +1527,9 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitación enviada",
         "${ payload.count } invitaciones enviadas"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección avanzada para tu cuenta"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"

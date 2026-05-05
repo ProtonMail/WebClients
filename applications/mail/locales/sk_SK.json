@@ -294,6 +294,9 @@
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
       ],
+      "Connect your email": [
+        "Pripojte svoj email"
+      ],
       "Contact group": [
         "Skupina kontaktov"
       ],
@@ -4204,6 +4207,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Odosielajte a prijímajte Gmailové správy priamo v ${ MAIL_APP_NAME }. Pripojte svoju adresu v ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ],
@@ -5851,8 +5857,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrovať (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrujte a trieďte emaily"
+      ],
+      "Has attachments": [
+        "Má prílohy"
+      ],
+      "Read": [
+        "Prečítané"
+      ],
+      "Reset": [
+        "Resetovať"
+      ],
       "Show": [
         "Zobraziť"
+      ],
+      "Unread": [
+        "Neprečítané"
       ]
     },
     "Filter Actions": {
@@ -10151,6 +10178,9 @@
       "Payment method": [
         "Spôsob platby"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Osobné a pracovné emaily, ako aj dôležité aktualizácie a oznámenia"
+      ],
       "PGP scheme": [
         "PGP schéma"
       ],
@@ -12347,6 +12377,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Prineste svoje emaily do ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Preneste svoje existujúce emaily do aplikácie ${ MAIL_APP_NAME }, aby ste mohli všetko spravovať z jednej súkromnej schránky."
+      ],
       "Choose a provider": [
         "Vyberte poskytovateľa"
       ],
@@ -13974,6 +14007,9 @@
       ],
       "Smallest first": [
         "Od najmenších"
+      ],
+      "Sort by": [
+        "Zoradiť podľa"
       ]
     },
     "specialoffer: Action": {
