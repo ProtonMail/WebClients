@@ -4,7 +4,6 @@ import { selectActiveImportersErrors } from '@proton/activation/src/logic/import
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import { SettingsParagraph } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -27,9 +26,6 @@ const ReportsTableInfos = () => {
 
     return (
         <>
-            {!importErrors.includes('authConnection') && (
-                <SettingsParagraph>{c('Info').t`Check the status of imports and forwarding.`}</SettingsParagraph>
-            )}
             {importErrors.includes('storageLimit') && (
                 <Banner className="mb-4" variant="warning" icon={<IcInfoCircle />}>
                     <div className="color-norm">
