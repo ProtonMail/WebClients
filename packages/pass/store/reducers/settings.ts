@@ -17,6 +17,7 @@ import {
     updatePauseListItem,
     userEvent,
 } from '@proton/pass/store/actions';
+import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull, Unpack } from '@proton/pass/types';
 import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySettings } from '@proton/pass/types/worker/settings';
@@ -30,8 +31,12 @@ export type SettingsState = {
     autosuggest: AutoSuggestSettings;
     beta?: boolean;
     clipboard?: ClipboardSettings;
-    createdItemsCount: number /* explicitly created, not including import */;
+    /** explicitly created, not including import */
+    createdItemsCount: number;
+    /** User controlled pause-list */
     disallowedDomains: DomainCriterias;
+    /** Org-level pause-list */
+    orgDomains?: DomainCriterias;
     extraPassword?: boolean;
     loadDomainImages: boolean;
     locale?: string;
@@ -98,9 +103,7 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
         const criteriasSetting = state.disallowedDomains[hostname] ?? 0;
 
         return partialMerge<SettingsState>(state, {
-            disallowedDomains: {
-                [hostname]: toggleCriteria(criteriasSetting, criteria),
-            },
+            disallowedDomains: { [hostname]: toggleCriteria(criteriasSetting, criteria) },
         });
     }
 
@@ -110,6 +113,10 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (extraPasswordToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { extraPassword: action.payload });
+    }
+
+    if (getOrganizationPauseList.success.match(action)) {
+        return { ...state, orgDomains: action.payload };
     }
 
     return state;

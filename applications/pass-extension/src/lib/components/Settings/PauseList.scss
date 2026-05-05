@@ -1,9 +1,16 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/em' as *;
 
-table {
-	th small {
-		display: block;
+table.pass-pauselist--table {
+	td.pass-pauselist--actions {
+		position: relative;
+
+		> div {
+			position: absolute;
+			inset-block-start: 50%;
+			inset-inline-end: em(5);
+			transform: translateY(-50%);
+		}
 	}
 
 	// Same width condition as packages/styles/scss/components/_simple-table.scss
@@ -16,14 +23,23 @@ table {
 				align-items: center;
 				gap: em(10);
 
+				&:first-of-type {
+					border-block-end: 1px solid var(--table-border-color);
+					margin-block-end: em(10);
+				}
+
 				label {
 					order: -1;
 				}
 
-				&.pass-pause-list--remove button {
-					position: absolute;
-					inset-block-start: em(10);
-					inset-inline-end: em(10);
+				&.pass-pauselist--actions {
+					position: static;
+
+					> div {
+						inset-block-start: em(10);
+						inset-inline-end: em(10);
+						transform: none;
+					}
 				}
 
 				&:first-of-type p {

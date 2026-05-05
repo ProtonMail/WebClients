@@ -25,7 +25,7 @@ export const getUserOrganization = async (): Promise<MaybeNull<Organization>> =>
 };
 
 export const getOrganizationSettings = async (): Promise<OrganizationGetResponse> =>
-    (await api({ url: 'pass/v1/organization', method: 'get' })).Organization!;
+    (await api({ url: 'pass/v1/organization', method: 'get' })).Organization;
 
 export const setOrganizationSettings = async (
     settings: Partial<OrganizationSettings>
@@ -36,7 +36,7 @@ export const setOrganizationSettings = async (
             method: 'put',
             data: settings,
         })
-    ).Organization!;
+    ).Organization;
 
 export const getOrganizationKey = async (): Promise<OrganizationKey> => api(getOrganizationKeys());
 
@@ -57,7 +57,7 @@ export const setPasswordGeneratorPolicySettings = async (
             method: 'put',
             data: settings,
         })
-    ).Organization!;
+    ).Organization;
 
 export const getOrganizationReports = async ({
     page,
@@ -69,7 +69,7 @@ export const getOrganizationReports = async ({
             method: 'get',
             params: { Page: page, PageSize: pageSize },
         })
-    ).Report!;
+    ).Report;
 
 export const getUrlPauseList = async (): Promise<OrganizationUrlPauseEntryDto[]> =>
     createPageIterator({
