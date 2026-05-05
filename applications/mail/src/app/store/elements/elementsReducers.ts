@@ -864,6 +864,22 @@ export const resetRetry = (state: Draft<ElementsState>) => {
     state.retry = newRetry(state.retry, state.params, undefined);
 };
 
+export const categorizeMessage = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<{ elementIDs: string[]; categoryID: string }>
+) => {
+    const { elementIDs, categoryID } = action.payload;
+
+    elementIDs.forEach((id) => {
+        const element = state.elements[id];
+        if (!element || !isElementMessage(element)) {
+            return;
+        }
+        element.LabelIDs = element.LabelIDs.filter((labelID) => !isCategoryLabel(labelID));
+        element.LabelIDs.push(categoryID);
+    });
+};
+
 export const markNewsletterElementsAsReadPending = (
     state: Draft<ElementsState>,
     action: ReturnType<typeof filterSubscriptionList.pending>
