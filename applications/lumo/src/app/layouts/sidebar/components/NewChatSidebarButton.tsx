@@ -42,7 +42,7 @@ export const NewChatSidebarButton = () => {
 
     return (
         <>
-            <div className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5 show-shortcut-on-hover">
+            <div className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5 show-shortcut-on-hover gap-2">
                 <button
                     className="sidebar-item-main-action flex-1 flex items-center h-full p-0 cursor-pointer"
                     onClick={isGuest ? handleGuestClick : handleNewChat}
