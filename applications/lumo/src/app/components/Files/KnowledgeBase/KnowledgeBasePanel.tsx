@@ -17,7 +17,7 @@ import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectContextFilters, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../redux/slices/contextFilters';
-import { deleteAttachment } from '../../../redux/slices/core/attachments';
+import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../services/files';
 import { SearchService } from '../../../services/search/searchService';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
@@ -580,7 +580,7 @@ export const KnowledgeBasePanel = ({
                                 activeHistoricalFiles={activeHistoricalFiles}
                                 onView={handleFileClick}
                                 onViewFile={onViewFile}
-                                onRemove={(id) => dispatch(deleteAttachment(id))}
+                                onRemove={(id) => dispatch(locallyDeleteAttachmentFromLocalRequest(id))}
                                 onExclude={handleExcludeHistoricalFile}
                             />
 
