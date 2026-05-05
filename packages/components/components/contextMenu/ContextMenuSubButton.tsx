@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -12,11 +12,15 @@ type Props = {
     children: ReactNode;
 };
 
+const FOCUSABLE_SELECTOR = 'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
 export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef<HTMLDivElement>(null);
+    const openViaKeyboardRef = useRef(false);
 
     const closeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+    const dropdownContentRef = useRef<HTMLDivElement>(null);
 
     const open = () => {
         clearTimeout(closeTimerRef.current);
@@ -31,10 +35,38 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
         return () => clearTimeout(closeTimerRef.current);
     }, []);
 
+    useEffect(() => {
+        if (!isOpen || !openViaKeyboardRef.current) {
+            return;
+        }
+
+        openViaKeyboardRef.current = false;
+        const firstFocusable = dropdownContentRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR);
+        firstFocusable?.focus();
+    }, [isOpen]);
+
+    const handleButtonKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            e.stopPropagation();
+            openViaKeyboardRef.current = true;
+            open();
+        }
+    };
+
+    const handleDropdownKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'ArrowLeft' && isOpen) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(false);
+        }
+    };
+
     return (
         <>
             <div ref={buttonRef} onMouseEnter={open} onMouseLeave={scheduleClose}>
                 <DropdownMenuButton
+                    onKeyDown={handleButtonKeyDown}
                     onContextMenu={(e) => e.stopPropagation()}
                     className="flex items-center flex-nowrap text-left"
                 >
@@ -50,7 +82,6 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
                 originalPlacement="right-start"
                 availablePlacements={['right-start', 'right-end', 'left-start', 'left-end']}
                 noCaret
-                disableFocusTrap
                 autoClose={false}
                 autoCloseOutside={false}
                 autoCloseOutsideAnchor={false}
@@ -58,8 +89,9 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
                 onMouseEnter={open}
                 onMouseLeave={scheduleClose}
                 onContextMenu={(e) => e.stopPropagation()}
+                onKeyDown={handleDropdownKeyDown}
             >
-                {children}
+                <div ref={dropdownContentRef}>{children}</div>
             </Dropdown>
         </>
     );
