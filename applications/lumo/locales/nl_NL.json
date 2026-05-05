@@ -982,9 +982,6 @@
       "Send message": [
         "Bericht verzenden"
       ],
-      "Share your thoughts": [
-        "Deel uw mening"
-      ],
       "Show safety information": [
         "Veiligheidsinformatie weergeven"
       ],
@@ -1190,9 +1187,6 @@
       ],
       "Switch between light and dark mode": [
         "Schakel tussen lichte en donkere modus"
-      ],
-      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
-        "Uw ervaring geeft vorm aan ${ LUMO_SHORT_APP_NAME }. Laat ons weten wat u ervan vindt."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1268,6 +1262,12 @@
       ],
       "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
         "U hebt het maximum aantal gesprekken van ${ limit } in dit project bereikt. Verwijder enkele voordat u nieuwe aanmaakt."
+      ],
+      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
+        "U hebt het maximum aantal gesprekken van ${ limit }. Verwijder enkele voordat u nieuwe aanmaakt."
+      ],
+      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
+        "U hebt het maximum aantal bestanden van ${ limit } in dit gesprek bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
       ],
       "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
         "U hebt het maximum aantal bestanden van ${ limit } in dit project bereikt. Verwijder enkele bestanden voordat u nieuwe uploadt."
@@ -2060,9 +2060,6 @@
       ],
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
-      ],
-      "Got a minute?": [
-        "Hebt u een momentje?"
       ],
       "Guest": [
         "Gast"

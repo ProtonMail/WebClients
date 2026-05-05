@@ -977,7 +977,7 @@
         "Açık"
       ],
       "Manage files": [
-        "Dosyaları yönet"
+        "Dosya yönetimi"
       ],
       "New chat": [
         "Yeni sohbet"
@@ -991,14 +991,14 @@
       "Refresh folder contents": [
         "Klasör içeriklerini yenile"
       ],
+      "Register here": [
+        "Buradan kaydolun"
+      ],
       "Report an issue": [
         "Sorun bildireceğim"
       ],
       "Send message": [
         "İletiyi gönder"
-      ],
-      "Share your thoughts": [
-        "Düşüncelerinizi paylaşın"
       ],
       "Show safety information": [
         "Güvenlik bilgilerini görüntüle"
@@ -1022,7 +1022,7 @@
         "Yeniden dene"
       ],
       "Upload file to Drive": [
-        "Dosyayı Drive'a yükle"
+        "Dosyayı Drive üzerine yükle"
       ],
       "Upload files": [
         "Dosya yükle"
@@ -1031,7 +1031,7 @@
         "Aygıttan yükle"
       ],
       "Web search": [
-        "Web araması"
+        "İnternet araması"
       ]
     },
     "collider_2025: b2b": {
@@ -1179,6 +1179,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "${ BRAND_NAME } yapay zeka asistanları hakkında ücretli bir araştırma yürütüyor. İlgilenir misiniz? Sadece 2 dakikanızı alır. Seçilirseniz £80 kazanacaksınız."
+      ],
       "Always enable web search for new conversations": [
         "Yeni yazışmalarda internet araması her zaman açık olsun"
       ],
@@ -1220,9 +1223,6 @@
       ],
       "Switch between light and dark mode": [
         "Açık ve koyu kip arasında geçiş yap"
-      ],
-      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
-        "Deneyimleriniz ${ LUMO_SHORT_APP_NAME } uygulamasına yön veriyor. Düşüncelerinizi bizimle paylaşın."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1315,19 +1315,25 @@
         "Sınırsız sohbet, genişletilmiş geçmiş, gelişmiş yapay zeka modellerine erişim ve diğer özellikler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
       "You've reached a usage limit. Please try again later.": [
-        "Kullanım sınırına ulaştınız. Lütfen daha sonra tekrar deneyin."
+        "Bir kullanım sınırına ulaştınız. Lütfen bir süre sonra yeniden deneyin."
       ],
       "You've reached the maximum number of projects. Delete some before creating a new one.": [
-        "Maksimum proje sayısına ulaştınız. Yeni bir tane oluşturmadan önce bazılarını silin."
+        "Olabilecek en fazla proje sayısına ulaştınız. Yeni bir proje oluşturmadan önce bazılarını silin."
       ],
       "You've reached the maximum of ${ limit } conversations in this project. Delete some to create a new one.": [
-        "Bu projede ${ limit } adetlik sohbet sınırına ulaştınız. Yeni proje oluşturmak için bazılarını silin."
+        "Bu projede ${ limit } adet sohbet sayısı sınırına ulaştınız. Yeni proje oluşturmak için bazılarını silin."
+      ],
+      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
+        "Olabilecek en fazla ${ limit } yazışma sınırına ulaştınız. Yeni bir yazışma oluşturmak için bazılarını silin."
+      ],
+      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
+        "Bu sohbette olabilecek en fazla ${ limit } dosya sınırına ulaştınız. Yeni bir dosya yüklemeden önce bazılarını silin."
       ],
       "You've reached the maximum of ${ limit } files in this project. Remove some files before uploading new ones.": [
-        "Bu projede ${ limit } dosya sınırına ulaştınız. Yeni dosyalar yüklemeden önce bazı dosyaları silin."
+        "Bu projede ${ limit } dosya sayısı sınırına ulaştınız. Yeni dosyalar yüklemeden önce bazı dosyaları silin."
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bu sohbette ${ limit } mesaj sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeye devam etmek için yeni bir sohbet başlatın."
+        "Bu sohbetin ${ limit } ileti sayısı sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeyi sürdürmek için yeni bir sohbet başlatın."
       ]
     },
     "collider_2025: Error Message": {
@@ -1541,7 +1547,7 @@
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
       ],
       "Attached files": [
-        "Eklenen dosyalar"
+        "Eklenmiş dosyalar"
       ],
       "Attached Files": [
         "Eklenmiş dosyalar"
@@ -1565,7 +1571,7 @@
         "görüntülenmeyen karakterler"
       ],
       "characters processed": [
-        "işlenen karakterler"
+        "işlenen karakter"
       ],
       "Check this is the site you expect to visit": [
         "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
@@ -1622,19 +1628,19 @@
         "dosyalar"
       ],
       "files are not supported for content extraction.": [
-        "dosyalar şu anda içerik ayıklama işlemi için desteklenmiyor."
+        "dosyalarda şu anda içeriklerin ayıklanması desteklenmiyor."
       ],
       "Files automatically retrieved based on your question.": [
         "Sorunuza göre otomatik olarak alınan dosyalar."
       ],
       "Files automatically retrieved based on your questions.": [
-        "Sorunuza göre otomatik olarak alınan dosyalar."
+        "Sorularınıza göre otomatik olarak alınan dosyalar."
       ],
       "Files you've added to this conversation.": [
         "Bu yazışmaya eklediğiniz dosyalar."
       ],
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.": [
-        "Her bir sohbet için ${ LUMO_SHORT_APP_NAME } sınırlı miktarda bilgiyi işleyebilme kapasitesine sahiptir. İlerleme çubuğu mevcut dosyalarınızın ne kadar kapasite kullandığını gösterir."
+        "Her bir sohbette ${ LUMO_SHORT_APP_NAME } sınırlı miktarda bilgi işleyebilir. İlerleme çubuğu var olan dosyalarınızın ne kadar kapasite kullandığını gösterir."
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
@@ -1694,10 +1700,10 @@
         "Herhangi bir çağrı yok"
       ],
       "No content available.": [
-        "İçerik mevcut değil."
+        "Kullanılabilecek bir içerik yok."
       ],
       "No data rows found.": [
-        "Hiçbir veri satırı bulunamadı."
+        "Herhangi bir veri satırı bulunamadı."
       ],
       "No files available": [
         "Kullanılabilecek bir dosya yok"
@@ -1736,7 +1742,7 @@
         "Dosya içerikleri işleniyor..."
       ],
       "Project knowledge": [
-        "Proje bilgisi"
+        "Proje bilgileri"
       ],
       "Read a batch of text files, extract people, organizations, and dates with ${ LUMO_SHORT_APP_NAME }, then emit a CSV of entities per file.": [
         "Bir grup yazı dosyasını oku, ${ LUMO_SHORT_APP_NAME } ile insanları, kuruluşları ve tarihleri çıkar, ardından her dosya varlığı için bir CSV hazırla."
@@ -1802,7 +1808,7 @@
         "${ LUMO_SHORT_APP_NAME } API uygulaması, ${ LUMO_SHORT_APP_NAME }+ aboneleri tarafından kullanılabilir. API anahtarları oluşturmak ve API uygulamasını programlama ile kullanmak için tarifenizi yükseltin."
       ],
       "There was an error processing this file.": [
-        "Bu dosya işlenirken bir hata oluştu."
+        "Bu dosya işlenirken bir sorun çıktı."
       ],
       "These files won't be used for future questions.": [
         "Bu dosyalar gelecekteki sorular için kullanılmayacak."
@@ -1826,7 +1832,7 @@
         "Deneniyor..."
       ],
       "Unable to parse this file as a table.": [
-        "Bu dosya tablo olarak işlenemedi."
+        "Bu dosya bir tablo olarak işlenemedi."
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "\"${ file.name }\" dosyası ${ DRIVE_APP_NAME } üzerine yükleniyor..."
@@ -1878,12 +1884,12 @@
     },
     "collider_2025: KBAction": {
       "Add from ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } uygulamasından ekle"
+        "${ DRIVE_SHORT_APP_NAME } üzerinden ekle"
       ]
     },
     "collider_2025: KBActionTitle": {
       "Add from ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } uygulamasından ekle"
+        "${ DRIVE_SHORT_APP_NAME } üzerinden ekle"
       ]
     },
     "collider_2025: Label": {
@@ -2081,7 +2087,7 @@
         "API anahtarı silindi"
       ],
       "Create an account or sign in to save your chats and increase limits.": [
-        "Sohbetlerinizi kaydetmek ve limitlerinizi artırmak için hesap oluşturun veya oturum açın."
+        "Sohbetlerinizi kaydetmek ve sınırlarınızı artırmak için hesap ya da oturum açın."
       ]
     },
     "collider_2025: Option": {
@@ -2279,9 +2285,6 @@
       "Generated code": [
         "Oluşturulan kod"
       ],
-      "Got a minute?": [
-        "Bir dakikanız var mı?"
-      ],
       "Guest": [
         "Konuk"
       ],
@@ -2344,6 +2347,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "Geri bildirimlerinizi bekliyoruz!"
       ],
       "What you can build": [
         "Neler oluşturabilirsiniz"
@@ -2471,7 +2477,7 @@
     },
     "collider_2025: UploadAction": {
       "Add from ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasından ekle"
+        "${ DRIVE_APP_NAME } üzerinden ekle"
       ]
     },
     "collider_2025: Upsell": {
@@ -2487,7 +2493,7 @@
         "Edinin"
       ],
       "Upgrade to": [
-        "Şuna yükselt:"
+        "Şuna yükselt"
       ]
     },
     "collider_2025: Warning": {
@@ -2498,7 +2504,7 @@
         "Dosya sınırına yaklaşılıyor"
       ],
       "Approaching message limit": [
-        "Mesaj sınırına yaklaşıyor"
+        "İleti sayısı sınırına yaklaşılıyor"
       ],
       "Failed to index file for search: ${ processingResult.message }": [
         "Dosya arama dizinine eklenemedi: ${ processingResult.message }"
@@ -2507,7 +2513,7 @@
         "Dosya sınırına ulaşıldı"
       ],
       "Message limit reached": [
-        "Mesaj sınırına ulaşıldı"
+        "İleti sayısı sınırına ulaşıldı"
       ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı",
@@ -2526,28 +2532,28 @@
         "Her zamankinden daha yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Yoğun zamanlarda öncelikli erişim için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
       "You have ${ remaining } conversations left in this project before reaching the limit.": [
-        "Bu projede sınıra ulaşmadan önce ${ remaining } adet sohbet hakkınız kaldı."
+        "Bu projenin sınırına ulaşmadan önce ${ remaining } sohbet hakkınız kaldı."
       ],
       "You have ${ remaining } file uploads left in this project before reaching the limit.": [
-        "Bu projede sınıra ulaşmadan önce ${ remaining } dosya yükleme hakkınız kaldı."
+        "Bu projenin sınırına ulaşmadan önce ${ remaining } dosya yükleme hakkınız kaldı."
       ],
       "You have ${ remaining } file uploads left in this project.": [
-        "Bu projede ${ remaining } dosya yükleme hakkınız kaldı."
+        "Bu projenin ${ remaining } dosya yükleme hakkı kaldı."
       ],
       "You have ${ remaining } messages left in this conversation before reaching the limit.": [
-        "Bu sohbette sınıra ulaşmadan önce ${ remaining } mesaj hakkınız kaldı."
+        "Bu sohbetin sınırına ulaşmadan önce ${ remaining } ileti hakkınız kaldı."
       ],
       "You have ${ remaining } messages left in this conversation. Start a new chat for best responses.": [
-        "Bu sohbette ${ remaining } mesaj hakkınız kaldı. En iyi yanıtları almak için yeni sohbet başlatın."
+        "Bu sohbette ${ remaining } ileti hakkınız kaldı. En iyi yanıtları almak için yeni sohbet başlatın."
       ],
       "You have ${ remaining } projects left before reaching the limit.": [
         "Sınırına ulaşmadan önce ${ remaining } proje hakkınız kaldı."
       ],
       "You've hit the ${ assetsStatus.limit }-file limit in this project. Remove some files before uploading new ones.": [
-        "Bu projede ${ assetsStatus.limit } dosya sınırına ulaştınız. Yeni dosya yüklemeden önce bazı dosyaları silin."
+        "Bu projenin ${ assetsStatus.limit } dosya sayısı sınırına ulaştınız. Yeni bir dosya yüklemeden önce bazı dosyaları silin."
       ],
       "You've hit the ${ messagesStatus.limit }-message limit in this conversation. Start a new chat to keep talking with ${ LUMO_SHORT_APP_NAME }.": [
-        "Bu sohbette ${ messagesStatus.limit } mesaj sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeye devam etmek için yeni bir sohbet başlatın."
+        "Bu sohbetin ${ messagesStatus.limit } ileti sayısı sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeyi sürdürmek için yeni bir sohbet başlatın."
       ]
     },
     "collider_2025: Web Search": {
@@ -2581,7 +2587,7 @@
         "İptal"
       ],
       "Change style": [
-        "Stili değiştir"
+        "Tarzı değiştir"
       ],
       "Choose project icon": [
         "Proje simgesini seçin"
@@ -2617,10 +2623,10 @@
         "İndir"
       ],
       "Download image": [
-        "Görüntüyü indir"
+        "Görseli indir"
       ],
       "Edit image": [
-        "Görüntüyü düzenle"
+        "Görseli düzenle"
       ],
       "Edit instructions": [
         "Yönergeleri düzenle"
@@ -2787,7 +2793,7 @@
         "${ DRIVE_APP_NAME } klasörüyle bağlantı kur"
       ],
       "Load more": [
-        "Daha fazla yükle"
+        "Diğerlerini yükle"
       ],
       "Manage chat knowledge files (${ totalFiles })": [
         "Sohbet bilgi dosyaları yönetimi (${ totalFiles })"
@@ -2852,10 +2858,10 @@
         "Drive klasörü ile bağlantı kurulamadı"
       ],
       "Failed to load image": [
-        "Resim yüklenemedi"
+        "Görsel yüklenemedi"
       ],
       "Failed to load images. Please try again.": [
-        "Resimler yüklenemedi. Lütfen tekrar deneyin."
+        "Görseller yüklenemedi. Lütfen yeniden deneyin."
       ],
       "Failed to process file: ${ file.name }": [
         "Dosya işlenemedi: ${ file.name }"
@@ -2903,19 +2909,19 @@
     },
     "collider_2025:Finance": {
       "Dividend Yield": [
-        "Temettü Getirisi"
+        "Temettü getirisi"
       ],
       "Exchange": [
         "Borsa"
       ],
       "Market Cap": [
-        "Piyasa Değeri"
+        "Piyasa değeri"
       ],
       "P/E Ratio": [
-        "F/K Oranı"
+        "F/K oranı"
       ],
       "Profit Margin": [
-        "Kâr Marjı"
+        "Kâr marjı"
       ],
       "Revenue (TTM)": [
         "Gelir (PSS)"
@@ -2923,53 +2929,53 @@
     },
     "collider_2025:Gallery suggestion hint": {
       "Draw a sketch to bring to life": [
-        "Hayata geçirmek için bir eskiz çiz"
+        "Hayata geçirilecek bir taslak çizin"
       ],
       "Upload a photo to caricature": [
-        "Karikatürleştirmek için bir fotoğraf yükleyin"
+        "Karikatürleştirilecek bir fotoğraf yükleyin"
       ],
       "Upload a photo to package": [
         "Pakete bir fotoğraf yükle"
       ],
       "Upload a photo to plushify": [
-        "Plushify'a bir fotoğraf yükle"
+        "Plushify üzerine bir fotoğraf yükleyin"
       ],
       "Upload a photo to transform": [
-        "Dönüştürmek için bir fotoğraf yükleyin"
+        "Dönüştürülecek bir fotoğraf yükleyin"
       ]
     },
     "collider_2025:Gallery suggestion title": {
       "Bauhaus Modern Art": [
-        "Bauhaus Modern Sanatı"
+        "Bauhaus modern sanatı"
       ],
       "Comic Caricature": [
-        "Çizgi Roman Karikatürü"
+        "Çizgi roman karikatürü"
       ],
       "Cubist Deconstruction": [
-        "Kübi̇st Dekonstrüksiyon"
+        "Kübi̇st dekonstrüksiyon"
       ],
       "Decorated Cookie": [
-        "Süslemeli Kurabiye"
+        "Süslemeli kurabiye"
       ],
       "Impressionist Painting": [
-        "Empresyonist Çizim"
+        "Empresyonist çizim"
       ],
       "Plushie Transformation": [
-        "Peluş Oyuncağa Dönüşüm"
+        "Peluş oyuncak dönüşümü"
       ],
       "Product Packaging": [
-        "Ürün Paketlemesi"
+        "Ürün paketlemesi"
       ],
       "Renaissance Portrait": [
-        "Rönesans Portresi"
+        "Rönesans portresi"
       ],
       "Sketch to Reality": [
-        "Taslaktan Gerçeğe"
+        "Taslaktan gerçeğe"
       ]
     },
     "collider_2025:Hint": {
       "Draw on the image to annotate, and/or describe what to change": [
-        "Görüntünün üzerine çizim yaparak notlar ekleyin ve/veya nelerin değiştirilmesi gerektiğini açıklayın"
+        "Görselin üzerine çizim yaparak notlar ekleyin ve/veya nelerin değiştirilmesi gerektiğini açıklayın"
       ]
     },
     "collider_2025:Icon": {
@@ -3016,7 +3022,7 @@
         "Sohbet şifrelendi"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Görseller oluşturun, stiller uygulayın ve fikirlerinizi çizim haline getirin. Yaptıklarınızı kaydetmek için oturum açın veya ücretsiz bir hesap oluşturun."
+        "Görseller oluşturun, tarzlar uygulayın ve fikirlerinizin taslağını oluşturun. Yaptıklarınızı kaydetmek için oturum veya ücretsiz bir hesap açın."
       ],
       "Current chat:": [
         "Geçerli sohbet:"
@@ -3037,7 +3043,7 @@
         "${ DRIVE_APP_NAME } uygulamasından"
       ],
       "Generate images, apply styles, and sketch ideas. For inspiration, click ${ link }.": [
-        "Görseller oluşturun, stiller uygulayın ve fikirlerinizi taslak haline getirin. İlham almak için ${ link } bağlantısına tıklayın."
+        "Görseller oluşturun, tarzı uygulayın ve fikirlerinizin taslağını oluşturun. İlham almak için ${ link } bağlantısına tıklayın."
       ],
       "Initializing Drive...": [
         "Drive başlatılıyor..."
@@ -3117,7 +3123,7 @@
         "Proje yönergeleri (isteğe bağlı)"
       ],
       "Selected:": [
-        "Seçili:"
+        "Seçilmiş:"
       ],
       "Untitled chat": [
         "Adlandırılmamış sohbet"
@@ -3138,19 +3144,19 @@
     },
     "collider_2025:Placeholder": {
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "${ LUMO_SHORT_APP_NAME } tarafından kullanılacak ton, üslup ve kişilik ile ilgili yönergeler ekleyin."
+        "${ LUMO_SHORT_APP_NAME } tarafından kullanılacak ton, tarz ve kişilik ile ilgili yönergeler ekleyin."
       ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
-        "${ LUMO_SHORT_APP_NAME } tarafından kullanılacak üslup, tarz ve kişilik ile ilgili yönergeleri ekleyin. Bu yönergeler bu projedeki tüm sohbetler için geçerli olur."
+        "${ LUMO_SHORT_APP_NAME } tarafından kullanılacak ton, tarz ve kişilik ile ilgili yönergeleri ekleyin. Bu yönergeler bu projedeki tüm sohbetler için geçerli olur."
       ],
       "Ask anything…": [
         "İstediğinizi sorun…"
       ],
       "Describe your image...": [
-        "Resminizi tarif edin..."
+        "Görselinizi tarif edin..."
       ],
       "e.g. \"Make the sky purple\", \"Remove the items circled in red\"": [
-        "Örneğin: \"Gökyüzünü mor yap\", \"Kırmızı daire içine alınmış öğeleri kaldır\""
+        "Örneğin: \"Gökyüzünü mor yap\", \"Kırmızı daire içindeki ögeleri kaldır\""
       ],
       "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
         "Örneğin bir klasördeki belgeleri tek tek inceletin, her birinden kişi ve tarih bilgilerini aldırın, ardından dönemler arasındaki ilişkileri gösteren bir çizelge hazırlatın."
@@ -3173,7 +3179,7 @@
     },
     "collider_2025:Prefill": {
       "Edit this image:": [
-        "Bu resmi düzenle:"
+        "Bu görseli düzenle:"
       ]
     },
     "collider_2025:Project": {
@@ -3317,19 +3323,19 @@
     },
     "collider_2025:Reasoning": {
       "Checked ${ BRAND_NAME } knowledge": [
-        "${ BRAND_NAME } hakkındaki bilgiler kontrol edildi"
+        "${ BRAND_NAME } bilgilerine bakıldı"
       ],
       "Checking ${ BRAND_NAME } knowledge...": [
-        "${ BRAND_NAME } ile ilgili bilgiler kontrol ediliyor..."
+        "${ BRAND_NAME } bilgilerine bakılıyor..."
       ],
       "Dividend Yield": [
-        "Temettü Getirisi"
+        "Temettü getirisi"
       ],
       "Edited image": [
-        "Düzenlenmiş resim"
+        "Düzenlenmiş görsel"
       ],
       "Editing image...": [
-        "Görüntü düzenleniyor..."
+        "Görsel düzenleniyor..."
       ],
       "Executed tool": [
         "Çalıştırılan araç"
@@ -3341,13 +3347,13 @@
         "Akıl yürütmeyi genişlet"
       ],
       "Extracted page content": [
-        "Çıkarılan sayfa içeriği"
+        "Ayıklanan sayfa içeriği"
       ],
       "Extracting content from page...": [
-        "Sayfa içeriği çıkarılıyor..."
+        "Sayfa içeriği ayıklanıyor..."
       ],
       "Generated image": [
-        "Oluşturulan görüntü"
+        "Oluşturulan görsel"
       ],
       "Generating image...": [
         "Görsel oluşturuluyor..."
@@ -3356,25 +3362,25 @@
         "Son güncelleme: "
       ],
       "Looked at your image": [
-        "Resminize bakıldı"
+        "Görselinize bakıldı"
       ],
       "Looking at your image...": [
-        "Resminize bakılıyor..."
+        "Görselinize bakılıyor..."
       ],
       "Market Cap": [
-        "Piyasa Değeri"
+        "Piyasa değeri"
       ],
       "P/E Ratio": [
-        "F/K Oranı"
+        "F/K oranı"
       ],
       "Performance comparison": [
-        "Performans karşılaştırması"
+        "Başarım"
       ],
       "Price": [
         "Ücret"
       ],
       "Profit Margin": [
-        "Kâr Marjı"
+        "Kâr marjı"
       ],
       "Revenue TTM": [
         "Gelir PSS"
@@ -3386,7 +3392,7 @@
         "Bunu düşündüm"
       ],
       "Thought for ": [
-        "Şunun için düşünce: "
+        "Şunun için düşünce "
       ]
     },
     "collider_2025:Status": {
@@ -6016,16 +6022,16 @@
         "Ara bellek boyutu"
       ],
       "Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).": [
-        "Doğrudan NativeComposerApi.onLimitReachedError'ı çağırır (toast akışını atlar)."
+        "Doğrudan NativeComposerApi.onLimitReachedError çağırır (toast akışını atlar)."
       ],
       "Clear History": [
         "Geçmişi temizle"
       ],
       "Clear overrides": [
-        "Geçersiz kılmaları temizle"
+        "Değişiklikleri temizle"
       ],
       "Composer limit banner preview": [
-        "Oluşturucu sınırı başlığı önizlemesi"
+        "Oluşturucu sınırı bildirimi ön izlemesi"
       ],
       "Create Test Chats": [
         "Deneme sohbetleri oluştur"
@@ -6037,10 +6043,10 @@
         "Fark"
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
-        "Uygulama içi bildirimci tarafından gösterilecek olan simüle edilmiş bir 422 limit hatası gönderir."
+        "Uygulama içi bildirimler tarafından gösterilecek benzetilmiş bir 422 sınırı uyarısı görüntüler."
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
-        "Satır arası oluşturucu başlığını \"yaklaşıyor\" veya \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda önizleme yapabilirsiniz."
+        "Satır arası oluşturucu başlığını \"yaklaşıyor\" ya da \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda ön izleme yapabilirsiniz."
       ],
       "FPS": [
         "kare/sn"
@@ -6073,7 +6079,7 @@
         "Bildirimler"
       ],
       "Performance": [
-        "Performans"
+        "Başarım"
       ],
       "Rate": [
         "Oran"
@@ -6088,31 +6094,31 @@
         "Görüntüleme süresi"
       ],
       "Rendering": [
-        "Render alınıyor"
+        "Görselleştiriliyor"
       ],
       "Resource limit notifications": [
         "Kaynak sınırı bildirimleri"
       ],
       "Search": [
-        "Arama"
+        "Ara"
       ],
       "Send assets limit to native": [
-        "Varlık sınırını yerele gönder"
+        "Varlık sınırı yerel uygulamaya gönderilsin"
       ],
       "Send conversations limit to native": [
-        "Konuşma sınırını yerele gönder"
+        "Konuşma sayısı sınırını doğal uygulamaya ilet"
       ],
       "Send messages limit to native": [
-        "Mesaj sınırını yerele gönder"
+        "İleti sayısı sınırı yerel uygulamaya gönderilsin"
       ],
       "Send spaces limit to native": [
-        "Alan sınırını yerele gönder"
+        "Alan sınırı yerel uygulamaya gönderilsin"
       ],
       "Smoothing (Spring-Mass)": [
         "Düzeltme (Yay-Kütle)"
       ],
       "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
-        "Test oluşturucuyu (renderer) başlatın veya yan paneli farklı yaş gruplarındaki konuşmalarla besleyin."
+        "Deneme oluşturucuyu (görselleştirici) başlatın ya da yan panoyu farklı yaş gruplarındaki yazışma dallarıyla besleyin."
       ],
       "Spring state": [
         "Yay durumu"
@@ -6142,16 +6148,16 @@
         "Kod/sn"
       ],
       "Trigger assets limit": [
-        "Tetikleyici varlık sınırı"
+        "Tetikleyici varlıklar sınırı"
       ],
       "Trigger conversations limit": [
-        "Konuşma sınırını tetikle"
+        "Konuşma sayısı sınırını tetikle"
       ],
       "Trigger messages limit": [
-        "Tetikleyici ileti sınırı"
+        "Tetikleyici ileticileri sınırı"
       ],
       "Trigger spaces limit": [
-        "Tetikleyici alan sınırı"
+        "Tetikleyici alanları sınırı"
       ]
     },
     "lumo: Test Renderer": {
@@ -8683,8 +8689,8 @@
         "${ orphanedDocCount } belge bulundu"
       ],
       "referencing ${ orphanedSpaceIds.length } missing space.": [
-        "${ orphanedSpaceIds.length } eksik boşluk referansı.",
-        "${ orphanedSpaceIds.length } eksik boşluk referansı."
+        "başvuruda ${ orphanedSpaceIds.length } eksik boşluk var.",
+        "başvuruda ${ orphanedSpaceIds.length } eksik boşluk var."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

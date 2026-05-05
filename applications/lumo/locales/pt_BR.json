@@ -991,14 +991,14 @@
       "Refresh folder contents": [
         "Atualizar conteúdo da pasta"
       ],
+      "Register here": [
+        "Registre-se aqui"
+      ],
       "Report an issue": [
         "Reportar um problema"
       ],
       "Send message": [
         "Enviar mensagem"
-      ],
-      "Share your thoughts": [
-        "Compartilhe suas ideias"
       ],
       "Show safety information": [
         "Mostrar informações de segurança"
@@ -1020,6 +1020,9 @@
       ],
       "Try again": [
         "Tentar novamente"
+      ],
+      "Upload file to Drive": [
+        "Enviar arquivo para o Drive"
       ],
       "Upload files": [
         "Enviar arquivos"
@@ -1176,11 +1179,17 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "A ${ BRAND_NAME } está realizando uma pesquisa remunerada sobre assistentes de IA. Está interessado? Leva apenas 2 minutos. Se for selecionado, você receberá £80."
+      ],
       "Always enable web search for new conversations": [
         "Sempre ativar a pesquisa na web para novas conversas"
       ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "As chaves de API permitem acessar o ${ LUMO_SHORT_APP_NAME } por meio de programação. Cada chave é exibida apenas uma vez após a criação."
+      ],
+      "Auto choose the best model": [
+        "Escolher automaticamente o melhor modelo"
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crie uma chave para integrar o ${ LUMO_SHORT_APP_NAME } aos seus scripts e ferramentas."
@@ -1555,8 +1564,14 @@
       "files": [
         "arquivos"
       ],
+      "files are not supported for content extraction.": [
+        "arquivos não são suportados para extração de conteúdo."
+      ],
       "Files automatically retrieved based on your question.": [
         "Arquivos recuperados automaticamente com base na sua pergunta."
+      ],
+      "Files automatically retrieved based on your questions.": [
+        "Arquivos recuperados automaticamente com base em suas perguntas."
       ],
       "Files you've added to this conversation.": [
         "Arquivos que você adicionou a esta conversa."
@@ -1672,8 +1687,14 @@
       "Secure connection (encrypted)": [
         "Conexão segura (criptografada)"
       ],
+      "Shared by ${ file.sharedBy }": [
+        "Compartilhado por ${ file.sharedBy }"
+      ],
       "Shared with you": [
         "Compartilhado com você"
+      ],
+      "Shared with you by ${ file.sharedBy }": [
+        "Compartilhado com você por ${ file.sharedBy }"
       ],
       "Show all files": [
         "Mostrar todos os arquivos"
@@ -2165,9 +2186,6 @@
       "Generated code": [
         "Código gerado"
       ],
-      "Got a minute?": [
-        "Tem um minuto?"
-      ],
       "Guest": [
         "Convidado"
       ],
@@ -2194,6 +2212,9 @@
       ],
       "Privacy included by default.": [
         "Privacidade incluída por padrão."
+      ],
+      "Raw response": [
+        "Resposta sem processar"
       ],
       "Required headers": [
         "Cabeçalhos obrigatórios"
@@ -2380,6 +2401,9 @@
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
       ],
+      "Message limit reached": [
+        "Limite de mensagens atingido."
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Suspeito: ${ urlParts.subdomainCount } subdomínio",
         "Suspeito: ${ urlParts.subdomainCount } subdomínios"
@@ -2556,6 +2580,9 @@
       "Show sidebar": [
         "Mostrar barra lateral"
       ],
+      "Shuffle suggestions": [
+        "Sugestões aleatórias"
+      ],
       "Think longer": [
         "Pense mais"
       ],
@@ -2695,6 +2722,9 @@
       "Failed to link Drive folder": [
         "Falha ao vincular a pasta do Drive"
       ],
+      "Failed to load images. Please try again.": [
+        "Erro ao carregar as imagens.Tente novamente."
+      ],
       "Failed to process file: ${ file.name }": [
         "Falha ao processar arquivo: ${ file.name }"
       ],
@@ -2742,19 +2772,61 @@
     "collider_2025:Finance": {
       "Dividend Yield": [
         "Rendimento de dividendos"
+      ],
+      "Exchange": [
+        "Câmbio"
+      ],
+      "Market Cap": [
+        "Capitalização de mercado"
+      ],
+      "Profit Margin": [
+        "Margem de lucro"
+      ],
+      "Revenue (TTM)": [
+        "Receita (TTM)"
       ]
     },
     "collider_2025:Gallery suggestion hint": {
+      "Upload a photo to caricature": [
+        "Envie uma foto para fazer uma caricatura"
+      ],
+      "Upload a photo to package": [
+        "Envie uma foto para o pacote"
+      ],
+      "Upload a photo to plushify": [
+        "Envie uma foto para transformá-la em pelúcia"
+      ],
       "Upload a photo to transform": [
         "Envie uma foto para transformar"
       ]
     },
     "collider_2025:Gallery suggestion title": {
+      "Bauhaus Modern Art": [
+        "Arte moderna Bauhaus"
+      ],
+      "Comic Caricature": [
+        "Caricatura humorística"
+      ],
+      "Cubist Deconstruction": [
+        "Desconstrução cubista"
+      ],
+      "Decorated Cookie": [
+        "Biscoito decorado"
+      ],
       "Impressionist Painting": [
         "Pintura impressionista"
       ],
+      "Plushie Transformation": [
+        "Transformação de pelúcias"
+      ],
+      "Product Packaging": [
+        "Embalagem de produto"
+      ],
       "Renaissance Portrait": [
         "Retrato renascentista"
+      ],
+      "Sketch to Reality": [
+        "Do esboço à realidade"
       ]
     },
     "collider_2025:Icon": {
@@ -2879,6 +2951,9 @@
       ],
       "Created on": [
         "Criada em"
+      ],
+      "Discover what ${ LUMO_SHORT_APP_NAME } can create": [
+        "Descubra o que o ${ LUMO_SHORT_APP_NAME } pode criar"
       ],
       "Edit conversation title": [
         "Editar título da conversa"
@@ -3086,6 +3161,9 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "Checked ${ BRAND_NAME } knowledge": [
+        "Verifiquei os conhecimentos sobre a ${ BRAND_NAME }"
+      ],
       "Dividend Yield": [
         "Rendimento de dividendos"
       ],
@@ -3094,6 +3172,12 @@
       ],
       "Editing image...": [
         "Editando imagem..."
+      ],
+      "Executed tool": [
+        "Ferramenta executada"
+      ],
+      "Executing tool...": [
+        "Executando ferramenta..."
       ],
       "Expand reasoning": [
         "Expandir raciocínio"
@@ -3116,11 +3200,20 @@
       "Looking at your image...": [
         "Olhando para a sua foto..."
       ],
+      "Market Cap": [
+        "Capitalização de mercado"
+      ],
       "Performance comparison": [
         "Comparação de desempenho"
       ],
       "Price": [
         "Preço"
+      ],
+      "Profit Margin": [
+        "Margem de lucro"
+      ],
+      "Revenue TTM": [
+        "Receita TTM"
       ],
       "Thinking...": [
         "Pensando..."
@@ -3297,6 +3390,9 @@
       "Settings": [
         "Configurações"
       ],
+      "Sign in to build your gallery": [
+        "Inicie sessão para criar a sua galeria"
+      ],
       "Sign in to create projects": [
         "Inicie a sessão para criar projetos"
       ],
@@ -3311,6 +3407,9 @@
       ],
       "Today": [
         "Hoje"
+      ],
+      "What do you want to create today?": [
+        "O que você quer criar hoje?"
       ]
     },
     "collider_2025:Tooltip": {
@@ -4777,6 +4876,11 @@
         "Serviços"
       ]
     },
+    "Guest Migration": {
+      "Your chat has been saved to your account!": [
+        "Seu bate-papo foi salvo na sua conta!"
+      ]
+    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -5768,6 +5872,9 @@
       "Messages": [
         "Mensagens"
       ],
+      "Native bridge: onLimitReachedError": [
+        "Ponte nativa: onLimitReachedError"
+      ],
       "Notifications": [
         "Notificações"
       ],
@@ -5788,6 +5895,9 @@
       ],
       "Rendering": [
         "Renderizando"
+      ],
+      "Resource limit notifications": [
+        "Notificações de limite de recursos"
       ],
       "Search": [
         "Pesquisar"
