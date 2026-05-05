@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
@@ -101,7 +101,7 @@ const SidebarItem = ({
     hideSpinner = false,
 }: Props) => {
     const { call } = useEventManager();
-    const history = useHistory();
+    const location = useLocation();
     const [{ Shortcuts }] = useMailSettings();
     const getElementsFromIDs = useGetElementsFromIDs();
     const { selectAll } = useSelectAll({ labelID });
@@ -129,24 +129,15 @@ const SidebarItem = ({
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-        // Remove the category from search params during comparison
-        const linkPathname = link.split('#')[0];
-        const params = new URLSearchParams(history.location.hash.slice(1));
-        params.delete('category');
-        const strippedHash = params.toString() ? `#${params.toString()}` : '';
+        const currentUrl = location.pathname + location.hash;
 
-        if (
-            history.location.pathname.endsWith(linkPathname) &&
-            // No search, no paging, nothing (except #category)
-            strippedHash === '' &&
-            // Not already refreshing
-            !refreshing
-        ) {
+        if (currentUrl === link) {
             event.preventDefault();
-            void withRefreshing(Promise.all([call(), wait(1000)]));
+            if (!refreshing) {
+                void withRefreshing(Promise.all([call(), wait(1000)]));
+            }
         }
 
-        // Allow to handle click outside of the SidebarItem
         onClickCallback?.();
     };
 
