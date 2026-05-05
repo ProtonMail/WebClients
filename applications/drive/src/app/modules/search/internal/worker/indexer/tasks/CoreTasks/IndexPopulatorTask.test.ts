@@ -73,7 +73,7 @@ describe('IndexPopulatorTask', () => {
 
         // Verify documents are searchable
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
-        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
         const ids = results.map((r) => r.identifier).sort();
         expect(ids).toEqual(['file-1', 'file-2']);
     });
@@ -82,6 +82,9 @@ describe('IndexPopulatorTask', () => {
         const populator = new TestPopulator();
         await db.putPopulatorState({
             uid: populator.getUid(),
+            indexKind: populator.indexKind,
+            indexPopulatorKind: populator.indexPopulatorKind,
+            treeEventScopeId: populator.treeEventScopeId,
             done: true,
             generation: 1,
             version: 1,
@@ -146,6 +149,9 @@ describe('IndexPopulatorTask', () => {
         // Simulate that the version #1 for this populator already ran successfully
         await db.putPopulatorState({
             uid: populator.getUid(),
+            indexKind: populator.indexKind,
+            indexPopulatorKind: populator.indexPopulatorKind,
+            treeEventScopeId: populator.treeEventScopeId,
             done: true,
             generation: 1,
             version: 1,
@@ -157,13 +163,16 @@ describe('IndexPopulatorTask', () => {
 
         // Should have indexed despite done=true, because version mismatched.
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
-        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
         expect(results).toHaveLength(2);
 
         // Persisted state should reflect the new version and bumped generation.
         const state = await db.getPopulatorState(populator.getUid());
         expect(state).toEqual({
             uid: populator.getUid(),
+            indexKind: populator.indexKind,
+            indexPopulatorKind: populator.indexPopulatorKind,
+            treeEventScopeId: populator.treeEventScopeId,
             done: true,
             generation: 2,
             version: 2,
@@ -181,7 +190,7 @@ describe('IndexPopulatorTask', () => {
 
         // Should have re-indexed because undefined !== 1.
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
-        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
+        const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorKind', 'test-pop');
         expect(results).toHaveLength(2);
     });
 
@@ -193,6 +202,9 @@ describe('IndexPopulatorTask', () => {
         const state = await db.getPopulatorState(populator.getUid());
         expect(state).toEqual({
             uid: populator.getUid(),
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'test-pop',
+            treeEventScopeId: SCOPE_ID,
             done: true,
             generation: 1,
             version: 1,

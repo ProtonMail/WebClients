@@ -274,6 +274,9 @@ describe('IndexerTaskQueue', () => {
         // Seed DB with a done state at version 1.
         await db.putPopulatorState({
             uid: `myfiles:${SCOPE_ID}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'myfiles',
+            treeEventScopeId: SCOPE_ID,
             done: true,
             generation: 1,
             version: 1,
@@ -360,6 +363,9 @@ describe('IndexerTaskQueue', () => {
         // Seed DB with a done state at version 1, generation 3 (simulating prior bumps).
         await db.putPopulatorState({
             uid: `myfiles:${SCOPE_ID}`,
+            indexKind: IndexKind.MAIN,
+            indexPopulatorKind: 'myfiles',
+            treeEventScopeId: SCOPE_ID,
             done: true,
             generation: 3,
             version: 1,

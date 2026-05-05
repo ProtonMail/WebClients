@@ -673,9 +673,9 @@ describe('SharedWorkerAPI integration', () => {
 
             // Every entry carries the core classification attributes with the right primitive types.
             for (const e of entries) {
-                const [populatorId] = e.attributes.indexPopulatorId ?? [];
+                const [populatorKind] = e.attributes.indexPopulatorKind ?? [];
                 const [generation] = e.attributes.indexPopulatorGeneration ?? [];
-                expect(typeof populatorId).toBe('string');
+                expect(typeof populatorKind).toBe('string');
                 expect(['number', 'bigint']).toContain(typeof generation);
             }
         });

@@ -50,7 +50,7 @@ export const CORE_ATTRIBUTE_NAMES = [
     'filenameText',
     'path',
     'treeEventScopeId',
-    'indexPopulatorId',
+    'indexPopulatorKind',
     'indexPopulatorVersion',
     'indexPopulatorGeneration',
     'creationTime',
@@ -81,7 +81,7 @@ export interface CreateIndexEntryParams<N extends string = string> {
     node: CoreNodeFields;
     treeEventScopeId: TreeEventScopeId;
     parentPath: string;
-    indexPopulatorId: string;
+    indexPopulatorKind: string;
     indexPopulatorVersion: number;
     indexPopulatorGeneration: number;
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
@@ -151,7 +151,7 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         node,
         treeEventScopeId,
         parentPath,
-        indexPopulatorId,
+        indexPopulatorKind,
         indexPopulatorVersion,
         indexPopulatorGeneration,
         additionalAttributes,
@@ -179,7 +179,7 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'filenameText', value: { kind: 'text', value: strippedFilenameForTextAttribute } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },
             { name: 'treeEventScopeId', value: { kind: 'tag', value: treeEventScopeId } },
-            { name: 'indexPopulatorId', value: { kind: 'tag', value: indexPopulatorId } },
+            { name: 'indexPopulatorKind', value: { kind: 'tag', value: indexPopulatorKind } },
             { name: 'indexPopulatorVersion', value: { kind: 'integer', value: BigInt(indexPopulatorVersion) } },
             { name: 'indexPopulatorGeneration', value: { kind: 'integer', value: BigInt(indexPopulatorGeneration) } },
             { name: 'creationTime', value: { kind: 'integer', value: BigInt(node.creationTime.getTime()) } },
