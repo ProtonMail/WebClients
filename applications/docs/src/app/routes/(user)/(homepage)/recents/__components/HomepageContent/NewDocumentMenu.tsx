@@ -7,7 +7,7 @@ import { c } from 'ttag'
 import { ICON_BY_TYPE, COLOR_BY_TYPE } from './shared'
 import { useApplication } from '~/utils/application-context'
 import { useHomepageView } from '../../__utils/homepage-view'
-import { useIsSheetsEnabled } from '~/utils/misc'
+import { useIsSheetsEnabled } from '~/utils/flags'
 import clsx from '@proton/utils/clsx'
 import type * as Ariakit from '@ariakit/react'
 

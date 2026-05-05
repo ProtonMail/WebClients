@@ -7,7 +7,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { DocumentType, RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useLocation } from 'react-router-dom-v5-compat'
-import { useIsSheetsEnabled } from './misc'
+import { useIsSheetsEnabled } from './flags'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { useFlag } from '@proton/unleash/useFlag'
 
