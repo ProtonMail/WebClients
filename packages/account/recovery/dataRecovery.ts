@@ -11,13 +11,19 @@ export const selectIsDataRecoveryAvailable = createSelector(
 
         return {
             isDataRecoveryAvailable,
+            isRecoveryFileAvailable: recoveryFileData.isRecoveryFileAvailable,
+            isMnemonicAvailable: mnemonicData.isMnemonicAvailable,
             loading: recoveryFileData.loading || mnemonicData.loading,
         };
     }
 );
 
-export const useIsDataRecoveryAvailable = () => {
-    const { isDataRecoveryAvailable, loading } = useSelector(selectIsDataRecoveryAvailable);
+export const useIsDataRecoveryAvailable = (): [
+    { isDataRecoveryAvailable: boolean; isRecoveryFileAvailable: boolean; isMnemonicAvailable: boolean },
+    boolean,
+] => {
+    const { isDataRecoveryAvailable, isRecoveryFileAvailable, isMnemonicAvailable, loading } =
+        useSelector(selectIsDataRecoveryAvailable);
 
-    return [isDataRecoveryAvailable, loading];
+    return [{ isDataRecoveryAvailable, isRecoveryFileAvailable, isMnemonicAvailable }, loading];
 };
