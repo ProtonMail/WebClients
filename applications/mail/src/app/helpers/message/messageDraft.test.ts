@@ -1,13 +1,19 @@
 import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type {
+    MessageEmbeddedImage,
+    MessageImages,
+    MessageRemoteImage,
+    MessageStateWithData,
+} from '@proton/mail/store/messages/messagesTypes';
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import type { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
-import { createNewDraft, formatRecipientsString, handleActions } from './messageDraft';
+import { createNewDraft, formatRecipientsString, handleActions, keepImages } from './messageDraft';
 
 const ID = 'ID';
 const now = new Date();
@@ -517,6 +523,88 @@ describe('messageDraft', () => {
                 // The signature should be converted from HTML to plaintext
                 expect(result.messageDocument?.plainText).toContain(address.Signature);
             });
+        });
+    });
+
+    describe('keepImages', () => {
+        const makeAttachment = (id: string): Attachment => ({ ID: id }) as Attachment;
+
+        const makeEmbeddedImage = (id: string, status: MessageEmbeddedImage['status']): MessageEmbeddedImage => ({
+            type: 'embedded',
+            id,
+            status,
+            cid: `cid-${id}`,
+            cloc: '',
+            tracker: undefined,
+            attachment: makeAttachment(id),
+        });
+
+        const makeRemoteImage = (id: string, status: MessageRemoteImage['status']): MessageRemoteImage => ({
+            type: 'remote',
+            id,
+            status,
+            tracker: undefined,
+        });
+
+        const makeMessageImages = (images: MessageImages['images']): MessageImages => ({
+            hasRemoteImages: false,
+            hasEmbeddedImages: false,
+            showRemoteImages: false,
+            showEmbeddedImages: false,
+            trackersStatus: 'not-loaded',
+            images,
+        });
+
+        it('should return empty Attachments and default messageImages when message has no images', () => {
+            const { Attachments, messageImages } = keepImages({});
+            expect(Attachments).toEqual([]);
+            expect(messageImages.images).toEqual([]);
+        });
+
+        it('should handle a mix of loading and non-loading embedded images', () => {
+            const loadedImage = makeEmbeddedImage('1', 'loaded');
+            const loadingImage = makeEmbeddedImage('2', 'loading');
+            const notLoadedImage = makeEmbeddedImage('3', 'not-loaded');
+
+            const { Attachments, messageImages } = keepImages({
+                messageImages: makeMessageImages([loadedImage, loadingImage, notLoadedImage]),
+            });
+
+            expect(Attachments).toEqual([makeAttachment('1'), makeAttachment('2'), makeAttachment('3')]);
+
+            const result1 = messageImages.images.find((img) => img.id === '1') as MessageEmbeddedImage;
+            const result2 = messageImages.images.find((img) => img.id === '2') as MessageEmbeddedImage;
+            const result3 = messageImages.images.find((img) => img.id === '3') as MessageEmbeddedImage;
+            expect(result1.status).toBe('loaded');
+            expect(result2.status).toBe('not-loaded');
+            expect(result3.status).toBe('not-loaded');
+        });
+
+        it('should preserve remote images unchanged and not include them in Attachments', () => {
+            const remoteImage = makeRemoteImage('r1', 'loaded');
+            const { Attachments, messageImages } = keepImages({ messageImages: makeMessageImages([remoteImage]) });
+
+            expect(Attachments).toEqual([]);
+            expect(messageImages.images).toContainEqual(remoteImage);
+        });
+
+        it('should preserve original messageImages flags', () => {
+            const { messageImages } = keepImages({
+                messageImages: {
+                    hasRemoteImages: true,
+                    hasEmbeddedImages: true,
+                    showRemoteImages: true,
+                    showEmbeddedImages: true,
+                    trackersStatus: 'loaded',
+                    images: [],
+                },
+            });
+
+            expect(messageImages.hasRemoteImages).toBe(true);
+            expect(messageImages.hasEmbeddedImages).toBe(true);
+            expect(messageImages.showRemoteImages).toBe(true);
+            expect(messageImages.showEmbeddedImages).toBe(true);
+            expect(messageImages.trackersStatus).toBe('loaded');
         });
     });
 

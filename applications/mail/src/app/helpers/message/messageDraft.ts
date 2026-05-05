@@ -37,7 +37,12 @@ export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
  * Copy embedded images from the reference message
  */
 export const keepImages = (message: PartialMessageState) => {
-    const embeddedImages = getEmbeddedImages(message);
+    // Embedded images in a loading state can end up blocking the composer.
+    // Mitigating this issue by marking loading images as `not-loaded` so the draft code can call `decryptEmbeddedImages`
+    // at a later stage. This needs to be reworked by changing the embedding images loading logic so drafts do not stall.
+    const embeddedImages = getEmbeddedImages(message).map((image) =>
+        image.status === 'loading' ? { ...image, status: 'not-loaded' as const } : image
+    );
     const remoteImages = getRemoteImages(message);
     const Attachments = embeddedImages.map((image) => image.attachment);
     const messageImages = updateImages(message.messageImages, undefined, remoteImages, embeddedImages);
