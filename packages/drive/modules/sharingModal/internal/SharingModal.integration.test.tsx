@@ -235,7 +235,10 @@ describe('SharingModal', () => {
         await userEvent.click(stopSharingButton);
         // Confirmation modal opens
         const confirmDialog = (await screen.findByText('Stop sharing?')).closest('dialog');
-        await userEvent.click(within(confirmDialog!).getByRole('button', { name: 'Stop sharing', hidden: true }));
+        if (!confirmDialog) {
+            throw new Error('Stop sharing confirmation dialog not found');
+        }
+        await userEvent.click(within(confirmDialog).getByRole('button', { name: 'Stop sharing', hidden: true }));
         expect(unshareNode).toHaveBeenCalledWith(viewedNode.uid);
     });
 
@@ -274,8 +277,93 @@ describe('SharingModal', () => {
         renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
 
         await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
-        const settingsButton = screen.getByTestId('share-modal-settings');
-        expect(settingsButton).toBeDisabled();
+        expect(screen.queryByTestId('share-modal-settings')).not.toBeInTheDocument();
+    });
+
+    it('should hide settings when nothing is shared yet', async () => {
+        const parentNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~123',
+            name: 'root',
+            directRole: MemberRole.Admin,
+            isSharedPublicly: false,
+        } as NodeEntity;
+        const viewedNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~456',
+            parentUid: parentNode.uid,
+            name: 'unshared file',
+            directRole: MemberRole.Admin,
+            isShared: false,
+            isSharedPublicly: false,
+        } as NodeEntity;
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: (uid: string): Promise<MaybeNode> =>
+                Promise.resolve({
+                    ok: true,
+                    value: uid === parentNode.uid ? parentNode : viewedNode,
+                }),
+            getSharingInfo: (): Promise<ShareResult> =>
+                Promise.resolve({
+                    protonInvitations: [],
+                    nonProtonInvitations: [],
+                    members: [],
+                    editorsCanShare: false,
+                }),
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
+
+        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        expect(screen.queryByTestId('share-modal-settings')).not.toBeInTheDocument();
+    });
+
+    it('should show settings when shared and user can change permissions', async () => {
+        const parentNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~123',
+            name: 'root',
+            directRole: MemberRole.Admin,
+            isSharedPublicly: false,
+        } as NodeEntity;
+        const viewedNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~456',
+            parentUid: parentNode.uid,
+            name: 'shared file',
+            directRole: MemberRole.Admin,
+        } as NodeEntity;
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: (uid: string): Promise<MaybeNode> =>
+                Promise.resolve({
+                    ok: true,
+                    value: uid === parentNode.uid ? parentNode : viewedNode,
+                }),
+            getSharingInfo: (): Promise<ShareResult> =>
+                Promise.resolve({
+                    protonInvitations: [],
+                    nonProtonInvitations: [],
+                    members: [
+                        {
+                            uid: '',
+                            invitationTime: new Date(),
+                            role: MemberRole.Admin,
+                            addedByEmail: { ok: true, value: '' },
+                            inviteeEmail: '',
+                        },
+                    ],
+                    editorsCanShare: true,
+                }),
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
+
+        await waitFor(() => screen.getByText(`Share "${viewedNode.name}"`));
+        expect(await screen.findByTestId('share-modal-settings')).toBeInTheDocument();
     });
 
     it('should warn user of degrading if user does not have admin on parent', async () => {
@@ -541,8 +629,10 @@ describe('SharingModal', () => {
         await userEvent.click(screen.getByText('Remove access'));
 
         const confirmDialog = (await screen.findByText('Remove your access?')).closest('dialog');
-        expect(confirmDialog).not.toBeNull();
-        await userEvent.click(within(confirmDialog!).getByRole('button', { name: 'Remove my access', hidden: true }));
+        if (!confirmDialog) {
+            throw new Error('Remove access confirmation dialog not found');
+        }
+        await userEvent.click(within(confirmDialog).getByRole('button', { name: 'Remove my access', hidden: true }));
 
         expect(unshareNode).toHaveBeenCalledWith(viewedNode.uid, { users: [currentUserEmail] });
     });
