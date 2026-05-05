@@ -60,6 +60,7 @@ import { extraThunkArguments } from '../store/public-thunk';
 import type useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
+import { ProductAttribution } from './ProductAttribution';
 import ResetPasswordSwitchContainer from './ResetPasswordSwitchContainer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { TvContainerNotSignedIn } from './TvContainerNotSignedIn/TvContainerNotSignedIn';
@@ -343,6 +344,7 @@ const PublicAppInteractive = ({
                                     onPreload={handlePreload}
                                     loader={loader}
                                 >
+                                    <ProductAttribution productParam={productParam} />
                                     <UnleashFlagStarter location={location} />
                                     <Switch location={location}>
                                         <Route path={VPN_TV_PATH_WITH_CODE}>
