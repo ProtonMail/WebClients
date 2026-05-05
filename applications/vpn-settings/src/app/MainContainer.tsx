@@ -127,7 +127,7 @@ const MainContainer: FunctionComponent = () => {
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [referralInfo] = useReferralInfo();
-    const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
+    const [{ isDataRecoveryAvailable }, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
