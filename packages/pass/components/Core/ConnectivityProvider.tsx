@@ -25,7 +25,7 @@ type ConnectivityState = {
 const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
 
 export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, service }) => {
-    const [status, setStatus] = useState(() => service.getStatus());
+    const [status, setStatus] = useState(() => service.status);
     const ctx = useMemo(() => ({ check: service.check, status }), [status]);
 
     useEffect(() => service.subscribe(setStatus), []);
