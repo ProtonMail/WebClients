@@ -946,14 +946,14 @@
       "Refresh folder contents": [
         "Actualizar el contenido de la carpeta"
       ],
+      "Register here": [
+        "Regístrate aquí"
+      ],
       "Report an issue": [
         "Notificar un problema"
       ],
       "Send message": [
         "Enviar mensaje"
-      ],
-      "Share your thoughts": [
-        "Comparte tu opinión"
       ],
       "Show safety information": [
         "Mostrar información de seguridad"
@@ -1098,6 +1098,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "${ BRAND_NAME } está realizando un estudio de investigación remunerado sobre asistentes de IA. ¿Te interesa? Solo te lleva 2 minutos. Si se te selecciona, ganas 80 £."
+      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Las claves de API permiten acceder a ${ LUMO_SHORT_APP_NAME } de forma programática. Cada clave solo se muestra una vez al crearla."
       ],
@@ -1118,9 +1121,6 @@
       ],
       "Switch between light and dark mode": [
         "Cambiar entre modo claro y oscuro"
-      ],
-      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
-        "Tu experiencia da forma a ${ LUMO_SHORT_APP_NAME }. Cuéntanos qué opinas."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1196,6 +1196,12 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Contrata ${ LUMO_SHORT_APP_NAME } Plus para chats ilimitados, historial extendido, acceso a modelos avanzados de IA y mucho más."
+      ],
+      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
+        "Has alcanzado el límite de ${ limit } conversaciones. Borra algunas para crear una nueva."
+      ],
+      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
+        "Has alcanzado el máximo de ${ limit } archivos en este chat. Elimina algunos antes de subir otros nuevos."
       ]
     },
     "collider_2025: Error Message": {
@@ -1350,6 +1356,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } proporciona acceso a modelos avanzados para ayudar con consultas más complejas y ofrecer mejores respuestas"
+      ],
+      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
+        "${ LUMO_SHORT_APP_NAME }+: el acceso y las claves de la API se incluyen con una suscripción a ${ LUMO_SHORT_APP_NAME }+ (inicia sesión para mejorar el plan o gestionar las claves)"
       ],
       "1 file": [
         "1 archivo"
@@ -1734,9 +1743,6 @@
       "Don't lose the thread": [
         "No pierdas el hilo"
       ],
-      "Got a minute?": [
-        "¿Tiene un momento?"
-      ],
       "Guest": [
         "Invitado"
       ],
@@ -1766,6 +1772,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "¡Nos encantaría conocer tu opinión!"
       ],
       "Your new API key": [
         "Tu nueva clave API"
@@ -1910,6 +1919,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Choose project icon": [
+        "Elige el icono del proyecto"
+      ],
       "Click to edit title": [
         "Haz click para editar el título"
       ],
@@ -1985,6 +1997,9 @@
       "Unlink Folder": [
         "Desvincular carpeta"
       ],
+      "Upgrade to Plus": [
+        "Pásate a Plus"
+      ],
       "Upload file": [
         "Subir archivo"
       ],
@@ -1995,6 +2010,9 @@
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Agregar instrucciones para adaptar las respuestas de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "API": [
+        "API"
       ],
       "Cancel": [
         "Cancelar"
@@ -2034,6 +2052,9 @@
       ],
       "New chat": [
         "Nuevo chat"
+      ],
+      "New project": [
+        "Nuevo proyecto"
       ],
       "Projects": [
         "Proyectos"
@@ -2098,6 +2119,12 @@
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Modelos avanzados de IA"
+      ],
+      "Priority access & faster responses": [
+        "Acceso prioritario y respuestas más rápidas"
+      ],
+      "Unlimited projects": [
+        "Proyectos ilimitados"
       ]
     },
     "collider_2025:Icon": {
@@ -2145,6 +2172,12 @@
       "Processing...": [
         "Procesando..."
       ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Los proyectos te ayudan a organizar las conversaciones con instrucciones personalizadas y archivos."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Los proyectos te ayudan a organizar las conversaciones con instrucciones personalizadas y archivos. Inicia sesión o crea una cuenta gratuita para empezar."
+      ],
       "This message is empty. Sorry about that.": [
         "Este mensaje está vacío. Lo sentimos."
       ],
@@ -2168,11 +2201,20 @@
       ]
     },
     "collider_2025:Label": {
+      "chat": [
+        "chat"
+      ],
       "chats": [
         "conversaciones"
       ],
       "Edit conversation title": [
         "Editar título de la conversación"
+      ],
+      "Instructions": [
+        "Instrucciones"
+      ],
+      "Project Instructions (optional)": [
+        "Instrucciones del proyecto (opcional)"
       ],
       "Untitled chat": [
         "Conversación sin título"
@@ -2192,6 +2234,9 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Añade instrucciones sobre el tono, el estilo y la personalidad que quieres que adopte ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Ask anything…": [
         "Pregunta lo que quieras…"
       ],
@@ -2201,6 +2246,9 @@
       "Enter project name": [
         "Introduce el nombre del proyecto"
       ],
+      "Holiday planner": [
+        "Planificador de vacaciones"
+      ],
       "Search chats": [
         "Buscar chats"
       ],
@@ -2209,14 +2257,32 @@
       ]
     },
     "collider_2025:Project": {
+      "Develop stories, refine prose, and improve your writing craft": [
+        "Desarrolla historias, perfecciona la prosa y mejora tu técnica de escritura"
+      ],
+      "Financial assistant": [
+        "Asistente financiero"
+      ],
       "Get help understanding assignments, solving problems, and learning concepts": [
         "Obtén ayuda para comprender las tareas, resolver problemas y aprender conceptos"
+      ],
+      "Learn a language": [
+        "Aprende un idioma"
       ],
       "Plan financial goals with personalized insights": [
         "Planifica tus metas financieras con análisis personalizados"
       ],
+      "Practice conversations, learn grammar, and build vocabulary in your target language": [
+        "Practica conversaciones, aprende gramática y amplía tu vocabulario en el idioma que quieres aprender"
+      ],
       "Research & Analysis Partner": [
         "Colaborador de investigación y análisis"
+      ],
+      "Study companion": [
+        "Asistente de estudio"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Sintetiza fuentes, analiza datos y obtén conclusiones para tus proyectos de investigación"
       ],
       "Writing coach": [
         "Asesor de redacción"
@@ -2306,6 +2372,11 @@
         "Indexación para búsqueda"
       ]
     },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Los proyectos te ayudan a guardar los chats, archivos e instrucciones relacionados en un mismo sitio. Te facilitan mantener la organización y permiten reutilizar el contexto entre chats."
+      ]
+    },
     "collider_2025:Success": {
       "Database connection restored.": [
         "Conexión de base de datos restaurada."
@@ -2336,11 +2407,17 @@
       "Earlier": [
         "Anterior"
       ],
+      "Edit Project": [
+        "Editar proyecto"
+      ],
       "Expiring Soon": [
         "Caducará pronto"
       ],
       "Favorites": [
         "Favoritos"
+      ],
+      "Get started by creating a new project": [
+        "Empieza creando un nuevo proyecto"
       ],
       "Ghost mode": [
         "Modo fantasma"
@@ -2404,6 +2481,11 @@
       ],
       "Today": [
         "Hoy"
+      ]
+    },
+    "collider_2025:Tooltip": {
+      "Choose icon": [
+        "Elige icono"
       ]
     },
     "collider_2025:Warning": {
@@ -3929,6 +4011,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Añade ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
