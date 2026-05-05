@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import ContextMenuSubButton from '@proton/components/components/contextMenu/ContextMenuSubButton';
+import { ContextMenuSubButton } from '@proton/components/components/contextMenu/ContextMenuSubButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
