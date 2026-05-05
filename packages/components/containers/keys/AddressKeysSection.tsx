@@ -279,11 +279,7 @@ const AddressKeysSection = () => {
                 />
             )}
             {renderReactivateKey && (
-                <ReactivateKeysModal
-                    userKeys={userKeys || []}
-                    keyReactivationRequests={keyReactivationRequests}
-                    {...reactivateKeyProps}
-                />
+                <ReactivateKeysModal keyReactivationRequests={keyReactivationRequests} {...reactivateKeyProps} />
             )}
             {renderExportPublicKey && tmpAddressKey && (
                 <ExportPublicKeyModal
