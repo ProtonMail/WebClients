@@ -309,6 +309,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm email": [
+        "Confirme seu e-mail"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura do link ${ linkToShow }"
       ],
@@ -761,6 +764,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Os filtros estão sendo aplicados. Isso pode levar alguns minutos."
+      ],
+      "Finish": [
+        "Finalizar"
       ],
       "Fit to window": [
         "Ajustar na janela"
@@ -3776,6 +3782,9 @@
       "Confirm cancellation": [
         "Confirmar cancelamento"
       ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Se você exceder os limites do plano gratuito, não será possível:"
+      ],
       "Keep current plan": [
         "Manter plano atual"
       ],
@@ -4950,6 +4959,11 @@
         "Observe que, se você excluir o grupo ${ displayGroupName }, esse será removido permanentemente."
       ]
     },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Observe que se você excluir o grupo ${ displayGroupName } (com o endereço ${ displayGroupAddressEmail }), você não poderá mais receber e-mails usando esse endereço."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura vencida"
@@ -4985,6 +4999,9 @@
       ],
       "Available with ${ title }": [
         "Disponível com ${ title }"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Traga seus e-mails, eventos do calendário e contatos de outro provedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
@@ -5054,6 +5071,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "Como nossa equipe de suporte ao cliente colocou nosso aplicativo de VPN diretamente nas mãos das pessoas."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Como reagimos quando a ${ BRAND_NAME } foi bloqueada em uma campanha agressiva."
@@ -7448,6 +7468,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Peça ao seu administrador para ativar o monitor de conta."
       ],
+      "Enable account monitor to start loading event.": [
+        "Ativar monitor de conta para inciar o carregamento de eventos"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -9136,6 +9159,9 @@
       "Paused": [
         "Em pausa"
       ],
+      "Undo finished": [
+        "Cancelamento concluído"
+      ],
       "Undo in progress": [
         "Desfazendo"
       ]
@@ -9217,6 +9243,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } país ativado",
         "${ countriesCount } países ativados"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, mas recuperável com o seu ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "Desconto de ${ discountPercent }%"
@@ -9559,6 +9588,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
       ],
+      "Add a phone number in case we need to contact you": [
+        "Insira um número de telefone para o caso de precisarmos entrar em contato com você"
+      ],
       "add a recovery method": [
         "adicionar um método de recuperação"
       ],
@@ -9866,6 +9898,9 @@
       "Beta": [
         "Beta"
       ],
+      "Billed at ${ monthlyDiscountedPrice } for the first 6 months, renews at ${ monthlyRenewalPrice }.": [
+        "Faturado por ${ monthlyDiscountedPrice } nos primeiros 6 meses, se renova por ${ monthlyRenewalPrice }."
+      ],
       "Billed at ${ yearlyDiscountedPrice } for the first 12 months, renews at ${ yearlyRenewalPrice }.": [
         "Faturado por ${ yearlyDiscountedPrice } nos primeiros 12 meses, se renova por ${ yearlyRenewalPrice }."
       ],
@@ -9898,6 +9933,9 @@
       ],
       "Can you access your active session?": [
         "Você pode acessar sua sessão ativa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Você pode acessar sua sessão ativa em outro navegador?"
       ],
       "Cancel": [
         "Cancelar"
@@ -9964,6 +10002,9 @@
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configure a autenticação SAML para a sua organização através de um provedor de identidade como Okta, Microsoft Azure ou Google Identity Platform. Isso habilitará o SAML para toda a organização."
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Conecte e gerencie suas caixas de correio externas no ${ MAIL_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
@@ -11040,6 +11081,9 @@
       "No card required": [
         "Nenhum cartão necessário"
       ],
+      "No connected addresses.": [
+        "Sem endereços conectados."
+      ],
       "No countries enabled": [
         "Não há países ativados"
       ],
@@ -11796,6 +11840,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem conectados."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "O crédito por indicação pode ser concedido até dois meses após o término do período de avaliação do seu amigo, desde que ele tenha assinado um plano."
       ],
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
@@ -12630,6 +12677,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
         "Você receberá a recompensa em créditos 1 mês após o término do período de teste do seu amigo."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Você receberá a recompensa em créditos 2 meses após o término do período de teste do seu amigo."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
@@ -13658,6 +13708,9 @@
       ],
       "Block malware, ads and trackers": [
         "Bloqueio de malware, anúncios e rastreadores"
+      ],
+      "Block trackers and marketers": [
+        "Bloqueie rastreadores e marketing"
       ],
       "Bookings, billings, and orders": [
         "Reservas, cobranças e pedidos"
@@ -16404,6 +16457,9 @@
       "Advanced network security": [
         "Segurança de rede avançada"
       ],
+      "Advanced workspace security": [
+        "Segurança avançada do ambiente de trabalho"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
@@ -18400,14 +18456,14 @@
       "per month, billed every two years": [
         "por mês com cobrança a cada dois anos"
       ],
-      "Preparing your Recovery Kit": [
-        "Preparando o kit de recuperação"
+      "Preparing your recovery phrase": [
+        "Preparando sua frase de recuperação"
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
-      "Save your recovery kit to continue": [
-        "Salve o seu kit de recuperação para continuar"
+      "Save your recovery phrase to continue": [
+        "Salve sua frase de recuperação para continuar"
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
@@ -19592,6 +19648,9 @@
       "Verify recovery phone?": [
         "Verificar telefone de recuperação?"
       ],
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "Verifique agora esse endereço de telefone de recuperação: ${ phoneData.value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
       ]
@@ -19608,6 +19667,12 @@
       ],
       "Good start. Add more options for a stronger protection.": [
         "Bom começo. Adicione mais opções para uma proteção mais eficaz."
+      ],
+      "How you increased your account protection": [
+        "Como você aumentou a segurança da sua conta"
+      ],
+      "Inactive recovery options": [
+        "Opções de recuperação inativas"
       ],
       "Maximum": [
         "Máximo"
@@ -19689,6 +19754,9 @@
       "Save recovery phrase": [
         "Salvar frase de recuperação"
       ],
+      "Sign-in with QR code allowed": [
+        "Início de sessão com código QR permitido"
+      ],
       "SMS verification enabled": [
         "Verificação por SMS ativada"
       ],
@@ -19734,15 +19802,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Ou ${ downloadRecoveryKitSwitchButton } em vez disso."
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Seu **Kit de Recuperação** permite que você restaure sua conta da ${ BRAND_NAME } se o seu log-in for bloqueado."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Guarde seu kit de recuperação"
-      ],
       "Save your recovery phrase": [
         "Guarde sua frase de recuperação"
       ]
@@ -20135,9 +20197,6 @@
       "Back to Safety Review": [
         "Voltar para Verificação de Segurança"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Como você redefiniu sua senha, o Kit de recuperação atual só pode ser usado para recuperar os dados criados antes da redefinição da senha."
-      ],
       "Can be used to regain access to your account and data": [
         "Pode ser usado para recuperar o acesso à sua conta e aos seus dados"
       ],
@@ -20165,9 +20224,6 @@
       "Download ${ size }": [
         "Baixar ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Baixe seu Kit de Recuperação"
-      ],
       "Email address": [
         "Endereço de e-mail"
       ],
@@ -20180,17 +20236,11 @@
       "Enable recovery by phone": [
         "Ativar recuperação por telefone"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Entendo que não poderei recuperar os dados bloqueados atualmente com este Kit de recuperação"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Se você esquecer sua senha da ${ BRAND_NAME } e precisar redefinir, na próxima vez que iniciar sessão neste dispositivo usando sua nova senha, o acesso total à sua conta ${ BRAND_NAME } será restaurado."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Se você esquecer sua senha ${ BRAND_NAME } e precisar redefini-la, na próxima vez que entrar neste dispositivo usando a nova senha, o acesso total à sua conta ${ BRAND_NAME } será restaurado."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Se você for bloqueado em sua conta ${ BRAND_NAME } seu Kit de recuperação permitirá que você faça login e recupere seus dados."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se você perder seus detalhes de login e precisar redefinir sua conta, é **imprescindível** que você tenha um **método de recuperação de conta e de recuperação de dados** em vigor, caso contrário, talvez não consiga acessar nenhum de seus e-mails, contatos, arquivos ou senhas."
@@ -20234,8 +20284,8 @@
       "Take action to secure your account": [
         "Tome medidas para proteger sua conta"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Ocorreu um erro ao gerar seu kit de recuperação"
+      "There was an error generating your recovery phrase": [
+        "Ocorreu um erro ao gerar sua frase de recuperação"
       ],
       "There was an error verifying your email": [
         "Ocorreu um erro ao verificar seu e-mail"
@@ -20264,11 +20314,8 @@
       "to recover your account if you're ever locked out": [
         "para recuperar sua conta caso você seja bloqueado"
       ],
-      "Update your Recovery Kit": [
-        "Atualize seu Kit de Recuperação"
-      ],
-      "Update your Recovery Kit?": [
-        "Atualizar kit de recuperação?"
+      "Update your recovery phrase?": [
+        "Atualizar sua frase de recuperação?"
       ],
       "Verify": [
         "Verificar"
@@ -20284,9 +20331,6 @@
       ],
       "Verify your recovery phone number": [
         "Verifique seu endereço de e-mail de recuperação"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Encontramos um erro ao gerar seu kit de recuperação. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Encontramos um erro ao verificar seu e-mail. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
@@ -20309,9 +20353,6 @@
       "You can disable this at any time.": [
         "Você pode desativar isso a qualquer momento."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Você pode usar a frase de recuperação deste Kit de recuperação para restaurar totalmente a sua conta quando redefinir a senha, portanto, certifique-se de mantê-la em um local seguro."
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Você pode usar o e-mail para recuperar o acesso à sua conta caso esqueça a senha."
       ],
@@ -20320,9 +20361,6 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Você pode usar o telefone de recuperação para recuperar o acesso à sua conta caso esqueça a senha."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Você já fez download de um Kit de recuperação anteriormente. O download de um novo kit **desativará o antigo**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Você tem ações recomendadas para proteger ainda mais sua conta."
@@ -20387,12 +20425,6 @@
       "Your recovery email is set": [
         "Seu e-mail de recuperação está configurado"
       ],
-      "Your Recovery Kit": [
-        "Seu kit de recuperação"
-      ],
-      "Your Recovery Kit is set": [
-        "Seu kit de recuperação está configurado"
-      ],
       "Your recovery methods": [
         "Seus métodos de recuperação"
       ],
@@ -20413,6 +20445,12 @@
       ],
       "Your recovery phone number is:": [
         "O seu número de telefone de recuperação é"
+      ],
+      "Your recovery phrase": [
+        "Sua frase de recuperação"
+      ],
+      "Your recovery phrase is set": [
+        "Sua frase de recuperação está configurada"
       ]
     },
     "saml: Action": {
@@ -20949,8 +20987,8 @@
       "Enable Photos section": [
         "Ativar a seção Fotos"
       ],
-      "Include document name in email notifications": [
-        "Incluir o nome do documento nas notificações por e-mail"
+      "Get updates about comments via email": [
+        "Receba atualizações sobre comentários por e-mail"
       ]
     },
     "Settings description": {
@@ -22141,6 +22179,9 @@
       "Last changed ${ formattedDate }": [
         "Última alteração há ${ formattedDate } atrás"
       ],
+      "Last updated ${ formattedUpdateDate }": [
+        "Última atualização em ${ formattedUpdateDate }"
+      ],
       "No contact": [
         "Nenhum contato"
       ],
@@ -22855,6 +22896,9 @@
       "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } oferece 200 GB de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus anuais de armazenamento."
       ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
       "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
         "${ planTitle } oferece à sua equipe o que ela necessita para ser mais produtiva e organizada no trabalho com acesso a todos os aplicativos da ${ BRAND_NAME } e seus recursos avançados."
       ],
@@ -23512,6 +23556,9 @@
       "Actions": [
         "Ações"
       ],
+      "Activate multi-user support": [
+        "Ativar suporte a múltiplos usuários"
+      ],
       "Activate organization key": [
         "Ativar chave da organização"
       ],
@@ -23762,17 +23809,11 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm address": [
-        "Confirmar endereço"
-      ],
       "Confirm downgrade": [
         "Confirmar downgrade"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Confirme o número do telefone"
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
@@ -23831,6 +23872,9 @@
       ],
       "Create a new gateway": [
         "Criar um gateway"
+      ],
+      "Create a new password": [
+        "Crie uma nova senha"
       ],
       "Create Gateway": [
         "Criar gateway"
@@ -23924,6 +23968,9 @@
       ],
       "Day theme": [
         "Tema diurno"
+      ],
+      "Deactivate current phrase?": [
+        "Desativar frase atual?"
       ],
       "Decrypt key": [
         "Descriptografar chave"
@@ -24702,6 +24749,9 @@
       "Remove forwarding address": [
         "Remover endereço de encaminhamento"
       ],
+      "Remove recovery phone number": [
+        "Remover número de telefone de recuperação"
+      ],
       "Remove server?": [
         "Remover servidor?"
       ],
@@ -25105,6 +25155,9 @@
       "Verify it’s you": [
         "Verifique se é você"
       ],
+      "Verify your email": [
+        "Verificar seu e-mail"
+      ],
       "Verifying your card...": [
         "Verificando seu cartão..."
       ],
@@ -25143,6 +25196,9 @@
       ],
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
+      ],
+      "What changes if you switch to the Free plan": [
+        "O que muda se você mudar para o plano Free"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -25332,6 +25388,12 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
+      ],
+      "Allow recovering your account with a one-time code sent to your recovery email": [
+        "Permite recuperar sua conta com um código de uso único enviado no seu e-mail de recuperação"
+      ],
+      "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
+        "Permite escanear um código QR a partir do aplicativo mover da ${ BRAND_NAME } para iniciar sessão"
       ],
       "Allow trusted contacts to request access to your account": [
         "Permita que contatos confiáveis solicitem acesso à sua conta"
@@ -26312,11 +26374,8 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Você tem certeza que deseja excluir o número de telefone?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Tem a certeza de que quer apagar esta endereço?"
+      "Are you sure you want to remove your recovery email?": [
+        "Você tem certeza que deseja remover seu e-mail de recuperação?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao excluir este endereço, você não poderá mais receber notificações diárias por e-mail."
@@ -26326,9 +26385,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ao excluir este endereço, você não poderá mais recuperar sua conta."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Não foi possível acessar. Abra a extensão ${ PASS_APP_NAME } no navegador e inicie a sessão por lá."

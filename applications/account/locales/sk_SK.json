@@ -162,6 +162,9 @@
       "Add user": [
         "Pridať používateľa"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } bol pridaný ako vlastník skupiny"
+      ],
       "Align center": [
         "Zarovnať na stred"
       ],
@@ -309,6 +312,9 @@
       "Confirm": [
         "Potvrdiť"
       ],
+      "Confirm email": [
+        "Potvrďte email"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
@@ -329,6 +335,9 @@
       ],
       "Connect your ${ BRAND_NAME } Account": [
         "Pripojte svoj ${ BRAND_NAME } účet"
+      ],
+      "Connect your email": [
+        "Pripojte svoj email"
       ],
       "Connected": [
         "Pripojené"
@@ -758,6 +767,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Filtre sa aplikujú. Môže to trvať niekoľko minút."
+      ],
+      "Finish": [
+        "Dokončiť"
       ],
       "Fit to window": [
         "Prispôsobiť oknu"
@@ -1274,6 +1286,9 @@
       ],
       "Remove this notification": [
         "Odstrániť túto notifikáciu"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } bol odstránený z pozície vlastníka skupiny"
       ],
       "Rename": [
         "Premenovať"
@@ -5077,6 +5092,9 @@
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
       ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Preneste si vaše emaily, udalosti kalendára a kontakty od iného poskytovateľa."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vytvorte si dôveryhodnú a rozpoznateľnú značku pomocou profesionálnych emailových adries vo vašej vlastnej doméne."
       ],
@@ -7057,6 +7075,9 @@
       ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Neplatný odkaz na pripojenie. Obráťte sa na správcu, prosím."
       ],
       "Invalid name": [
         "Neplatné meno"
@@ -10343,6 +10364,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
       ],
+      "Code has been re-sent.": [
+        "Kód bol opätovne zaslaný."
+      ],
       "Coming soon": [
         "Už čoskoro"
       ],
@@ -10909,6 +10933,9 @@
       ],
       "Gateways": [
         "Brány"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Vytvorenie novej obnovovacej frázy deaktivuje vašu súčasnú obnovovaciu frázu."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Vygenerovaním novej obnovovacej fráze sa stará deaktivuje."
@@ -13307,8 +13334,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Vaša obnovovacia fráza je séria 12 náhodne vygenerovaných slov v určitom poradí."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Vaša obnovovacia fráza – ktorá je súčasťou vašej obnovovacej sady – vám umožní prihlásiť sa a obnoviť vaše údaje v prípade, že stratíte prístup k vášmu ${ BRAND_NAME } účtu. Skladá sa z 12 slov a funguje ako záložné heslo."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Vaša obnovovacia fráza vám umožní prihlásiť sa a obnoviť vaše údaje v prípade, že stratíte prístup k vášmu ${ BRAND_NAME } účtu. Skladá sa z 12 slov a funguje ako záložné heslo."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý ${ cycle } mesiac.",
@@ -15044,6 +15071,9 @@
       ],
       "Pending": [
         "Čaká na spracovanie"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Osobné a pracovné emaily, ako aj dôležité aktualizácie a oznámenia"
       ],
       "Phone number": [
         "Telefónne číslo"
@@ -17074,6 +17104,9 @@
       ],
       "Advanced network security": [
         "Pokročilá bezpečnosť siete"
+      ],
+      "Advanced workspace security": [
+        "Pokročilá bezpečnosť pracovného priestoru"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Všetky ${ BRAND_NAME } produkty a funkcie"
@@ -19120,14 +19153,14 @@
       "per month, billed every two years": [
         "mesačne, účtované každé dva roky"
       ],
-      "Preparing your Recovery Kit": [
-        "Príprava sady na obnovenie"
+      "Preparing your recovery phrase": [
+        "Príprava frázy na obnovenie"
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
       ],
-      "Save your recovery kit to continue": [
-        "Uložte si sadu na obnovenie pre pokračovanie"
+      "Save your recovery phrase to continue": [
+        "Uložte si frázu na obnovenie pre pokračovanie"
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
@@ -20377,6 +20410,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Po vytvorení si nezabudnite uložiť frázu na obnovenie hesla na bezpečnom mieste.** Z bezpečnostných dôvodov túto frázu po uložení zmien neukladáme a v aplikácii ${ BRAND_NAME } ju už nebudete môcť zobraziť."
+      ],
       "copy recovery phrase": [
         "kopírovať obnovovaciu frázu"
       ],
@@ -20398,14 +20434,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Alebo namiesto toho použite ${ downloadRecoveryKitSwitchButton }."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Vaša **Súprava na obnovenie** vám umožňuje obnoviť váš ${ BRAND_NAME } účet, ak sa zablokujete."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Vaša **Fráza na obnovenie** vám umožňuje obnoviť váš ${ BRAND_NAME } účet, ak sa zablokujete."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Uložte si svoju sadu pre obnovenie"
-      ],
       "Save your recovery phrase": [
         "Uložiť vašu obnovovaciu frázu"
       ]
@@ -20810,8 +20843,8 @@
       "Back to Safety Review": [
         "Späť ku kontrole bezpečnosti"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Keďže ste obnovili heslo, aktuálnu obnovovaciu sadu možno použiť len na obnovu údajov vytvorených pred obnovením hesla."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Keďže ste obnovili heslo, aktuálnu obnovovaciu frázu možno použiť len na obnovu údajov vytvorených pred obnovením hesla."
       ],
       "Can be used to regain access to your account and data": [
         "Môže byť použité pre obnovenie prístupu k vášmu účtu a dátam"
@@ -20840,8 +20873,8 @@
       "Download ${ size }": [
         "Stiahnuť ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Stiahnite si svoju sadu pre obnovenie"
+      "Download your recovery phrase": [
+        "Stiahnite si svoju frázu pre obnovenie"
       ],
       "Email address": [
         "Emailová adresa"
@@ -20855,8 +20888,8 @@
       "Enable recovery by phone": [
         "Povoľte obnovenie telefónom"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Beriem na vedomie, že pomocou tejto sady na obnovu nebudem môcť obnoviť aktuálne zablokované údaje."
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Beriem na vedomie, že pomocou tejto frázy na obnovu nebudem môcť obnoviť aktuálne zablokované údaje."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje ${ BRAND_NAME } heslo a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu ${ BRAND_NAME } účtu."
@@ -20864,8 +20897,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Ak stratíte prístup k svojmu ${ BRAND_NAME } účtu, vaša sada na obnovenie vám umožní prihlásiť sa a obnoviť vaše údaje."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Ak stratíte prístup k svojmu ${ BRAND_NAME } účtu, vaša fráza na obnovenie vám umožní prihlásiť sa a obnoviť vaše údaje."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ak stratíte prihlasovacie údaje a potrebujete obnoviť svoj účet, **je nevyhnutné**, aby ste mali k dispozícii metódu **obnovenia účtu aj obnovenia údajov**, inak sa môže stať, že nebudete mať prístup k žiadnym svojim emailom, kontaktom, súborom alebo heslám."
@@ -20909,8 +20942,8 @@
       "Take action to secure your account": [
         "Podniknite kroky na zabezpečenie účtu"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Pri generovaní sady na obnovu došlo k chybe"
+      "There was an error generating your recovery phrase": [
+        "Pri generovaní frázy na obnovu došlo k chybe"
       ],
       "There was an error verifying your email": [
         "Pri overovaní vášho emailu došlo k chybe"
@@ -20939,11 +20972,11 @@
       "to recover your account if you're ever locked out": [
         "aby ste mohli obnoviť svoj účet, ak by ste ho niekedy zablokovali."
       ],
-      "Update your Recovery Kit": [
-        "Aktualizujte si svoju sadu pre obnovenie"
+      "Update your recovery phrase": [
+        "Aktualizovať vašu obnovovaciu frázu"
       ],
-      "Update your Recovery Kit?": [
-        "Aktualizovať vašu sadu pre obnovenie?"
+      "Update your recovery phrase?": [
+        "Aktualizovať vašu obnovovaciu frázu?"
       ],
       "Verify": [
         "Overiť"
@@ -20960,8 +20993,8 @@
       "Verify your recovery phone number": [
         "Overte svoje telefónne číslo určené na obnovenie"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Pri generovaní vašej sady na obnovu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Pri generovaní vašej frázy na obnovu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Pri overovaní vášho emailu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu, prosím.."
@@ -20984,8 +21017,8 @@
       "You can disable this at any time.": [
         "Túto funkciu môžete kedykoľvek vypnúť."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Frázu na obnovenie v tejto obnovovacej sade môžete použiť na úplné obnovenie svojho konta po obnovení hesla, preto si ju nezabudnite uschovať na bezpečnom mieste."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Frázu na obnovenie v tejto obnovovacej fráze môžete použiť na úplné obnovenie svojho konta po obnovení hesla, preto si ju nezabudnite uschovať na bezpečnom mieste."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Ak zabudnete heslo, môžete použiť svoj email na obnovenie prístupu k účtu."
@@ -20996,8 +21029,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací telefón."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Predtým ste si stiahli sadu na obnovu. Stiahnutím novej sady sa **stará deaktivuje**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Predtým ste si stiahli frázu na obnovu. Stiahnutím novej frázy sa **stará deaktivuje**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Na zabezpečenie vášho účtu vám odporúčame ďalšie kroky."
@@ -21062,12 +21095,6 @@
       "Your recovery email is set": [
         "Váš email pre obnovenie je nastavený"
       ],
-      "Your Recovery Kit": [
-        "Vaša sada pre obnovenie"
-      ],
-      "Your Recovery Kit is set": [
-        "Vaša sada pre obnovenie je nastavená"
-      ],
       "Your recovery methods": [
         "Vaše metódy obnovenia"
       ],
@@ -21088,6 +21115,12 @@
       ],
       "Your recovery phone number is:": [
         "Vaše telefónne číslo pre obnovenie je:"
+      ],
+      "Your recovery phrase": [
+        "Vaša obnovovacia fráza"
+      ],
+      "Your recovery phrase is set": [
+        "Váš fráza pre obnovenie je nastavená"
       ]
     },
     "saml: Action": {
@@ -24379,11 +24412,17 @@
       "Actions": [
         "Akcie"
       ],
+      "Activate multi-user support": [
+        "Aktivovať podporu pre viac používateľov"
+      ],
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
       ],
       "Activate user": [
         "Aktivovať používateľa"
+      ],
+      "Activate your email": [
+        "Aktivovovať váš email"
       ],
       "Activity monitor": [
         "Monitor aktivity"
@@ -24637,17 +24676,11 @@
       "Confirm": [
         "Potvrdiť"
       ],
-      "Confirm address": [
-        "Potvrdiť adresu"
-      ],
       "Confirm downgrade": [
         "Potvrďte zníženie"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrďte stratu bonusov ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Potvrdenie telefónneho čísla"
       ],
       "Connect ${ name }": [
         "Pripojiť ${ name }"
@@ -24711,6 +24744,9 @@
       ],
       "Create a new gateway": [
         "Vytvoriť novú bránu"
+      ],
+      "Create a new password": [
+        "Vytvorte si nové heslo"
       ],
       "Create Gateway": [
         "Vytvoriť bránu"
@@ -24804,6 +24840,9 @@
       ],
       "Day theme": [
         "Denný motív"
+      ],
+      "Deactivate current phrase?": [
+        "Deaktivovať aktuálnu frázu?"
       ],
       "Decrypt key": [
         "Dešifrovať kľúč"
@@ -24942,6 +24981,9 @@
       ],
       "Download the mobile apps": [
         "Stiahnuť mobilné aplikácie"
+      ],
+      "Download your recovery phrase": [
+        "Stiahnite si svoju frázu pre obnovenie"
       ],
       "Downloads": [
         "Na stiahnutie"
@@ -25585,8 +25627,14 @@
       "Remove domain": [
         "Odstrániť doménu"
       ],
+      "Remove email": [
+        "Odstrániť email"
+      ],
       "Remove forwarding address": [
         "Odstrániť adresu preposielania"
+      ],
+      "Remove recovery phone number": [
+        "Odstrániť telefónne číslo pre obnovenie"
       ],
       "Remove server?": [
         "Odstrániť server?"
@@ -25999,6 +26047,9 @@
       "Verify it’s you": [
         "Overiť, že ste to vy"
       ],
+      "Verify your email": [
+        "Overte svoj email"
+      ],
       "Verifying your card...": [
         "Overujeme vašu kartu..."
       ],
@@ -26022,6 +26073,9 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Na vašu emailovú adresu sme vám zaslali overovací kód, aby sme sa uistili, že ste to naozaj vy. Tento kód je platný 10 minút. Zadajte ho nižšie, prosím."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vašu novú adresu vám pošleme email s pokynmi na dokončenie zmeny."
@@ -26073,6 +26127,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Vaše predplatné ${ planTitle } začalo"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Váš správca organizácie ${ orgName } vás žiada, aby ste si aktivovali svoj nový bezpečný ${ BRAND_NAME } účet a aktualizovali heslo."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Váš správca vás žiada, aby ste si aktivovali svoj nový bezpečný ${ BRAND_NAME } účet a aktualizovali heslo."
       ],
       "Your calendar link": [
         "Váš odkaz na kalendár"
@@ -27266,11 +27326,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Naozaj chcete vymazať telefónne číslo?"
+      "Are you sure you want to remove your notification email?": [
+        "Naozaj chcete odstrániť váš notifikačný email?"
       ],
-      "Are you sure you want to delete this address?": [
-        "Naozaj chcete vymazať túto adresu?"
+      "Are you sure you want to remove your recovery email?": [
+        "Naozaj chcete odstrániť váš email na obnovenie?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "Naozaj chcete odstrániť vaše telefónne číslo na obnovenie?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Vymazaním tejto adresy už nebudete môcť prijímať denné emailové notifikácie."
@@ -27281,8 +27344,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Odstránením tejto adresy už nebudete môcť obnoviť svoj účet."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Vymazaním tohto telefónneho čísla už nebudete môcť obnovit svoj účet."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Odstránením tohto telefónneho čísla už nebudete môcť obnoviť svoj účet."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Prihlásenie sa nepodarilo. Otvorte rozšírenie prehliadača ${ PASS_APP_NAME } a prihláste sa odtiaľ."

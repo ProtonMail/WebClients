@@ -915,6 +915,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } soubor se nepodařilo analyzovat. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Právě probíhá kontrola odemknutí počítače."
+      ],
       "A domain ownership must be verified first.": [
         "Nejprve je třeba ověřit vlastnictví domény."
       ],
@@ -944,6 +947,21 @@
       ],
       "Authentication failure: ${ message }": [
         "Ověření selhalo: ${ message }"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické ověření selhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pro odemknutí se neshodují."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámek nebyl nastaven."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavení biometrického zámku selhalo."
       ],
       "Cannot create alias (${ error }).": [
         "Nelze vytvořit alias (${ error })."
@@ -1022,6 +1040,9 @@
       ],
       "Emptying trash failed": [
         "Vyprázdnění koše selhalo"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikace s desktopovou aplikací ${ PASS_APP_NAME } selhala."
       ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON není podporován"
@@ -1263,6 +1284,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Něco se pokazilo. Znovu načtěte rozšíření ${ PASS_APP_NAME }. Tento problém byl zaznamenán"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
       ],
@@ -1272,11 +1296,20 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
       ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
+      ],
       "The URL is in the list": [
         "URL je na seznamu"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Došlo k chybě při odebírání bezpečného odkazu. Zkuste to prosím znovu za několik minut."
+      ],
+      "This domain is already managed by your organization": [
+        "Tuto doménu již spravuje vaše organizace"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "K tomu může dojít po delší době nepoužívání ${ PASS_SHORT_APP_NAME } nebo po smazání historie v Safari."
@@ -1550,6 +1583,9 @@
         "${ payload.count } pozvánky úspěšně odeslány",
         "${ payload.count } pozvánek úspěšně odesláno",
         "${ payload.count } pozvánek úspěšně odesláno"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspěšně deaktivován"
@@ -2107,7 +2143,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2597,6 +2636,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Neomezený počet aliasů hide-my-email a jejich pokročilá správa"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a získejte přístup ke svým přístupovým klíčům"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a uložte si tento přístupový klíč"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"

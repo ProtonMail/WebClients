@@ -882,6 +882,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "En opplåsingssjekk for skrivebordet pågår allerede."
+      ],
       "A domain ownership must be verified first.": [
         "Et domeneeierskap må bekreftes først."
       ],
@@ -911,6 +914,21 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "De biometriske låselegitimasjonene samsvarer ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisk låslegitimasjon ikke funnet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk lås er ikke konfigurert"
+      ],
+      "Biometric lock setup failed.": [
+        "Konfigurasjonen av den biometriske låsen mislyktes."
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitasjon for øyeblikket",
@@ -982,6 +1000,9 @@
       ],
       "Emptying trash failed": [
         "Tømming av papirkurven mislyktes"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Kryptert kommunikasjon med skrivebordsappen ${ PASS_APP_NAME } mislyktes."
       ],
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
@@ -1202,6 +1223,9 @@
       "Something went wrong. Please sign in again.": [
         "Noe gikk galt, logg inn på nytt."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarte ikke i tide."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
       ],
@@ -1210,6 +1234,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er logget på med en annen konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
       ],
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
@@ -1437,6 +1467,9 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitasjon sendt",
         "${ payload.count } invitasjoner sendt"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktivert"
@@ -4717,6 +4750,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Med mindre de blir dechiffrert, forblir krypterte passord sikre selv om de blir eksponert."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
       ]
     },
     "Validation": {

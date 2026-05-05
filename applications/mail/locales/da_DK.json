@@ -292,6 +292,9 @@
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
+      "Connect your email": [
+        "Forbind din e-mail"
+      ],
       "Contact group": [
         "Kontaktgruppe"
       ],
@@ -4150,6 +4153,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Send og modtag Gmail-beskeder direkte i ${ MAIL_APP_NAME }. Forbind din adresse i ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ],
@@ -5741,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtrer (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrer og sortér emails"
+      ],
+      "Has attachments": [
+        "Har vedhæftninger"
+      ],
+      "Read": [
+        "Læst"
+      ],
+      "Reset": [
+        "Nulstil"
+      ],
       "Show": [
         "Vis"
+      ],
+      "Unread": [
+        "Ulæste"
       ]
     },
     "Filter Actions": {
@@ -9829,6 +9856,9 @@
       "Payment method": [
         "Betalingsmetode"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlige- og arbejds-e-mails, plus vigtige opdateringer og notifikationer"
+      ],
       "PGP scheme": [
         "PGP-metode"
       ],
@@ -11939,6 +11969,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Få dine e-mails ind i ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Få dine eksisterende e-mails ind i ${ MAIL_APP_NAME }, så du kan administrere alt fra én privat indbakke."
+      ],
       "Choose a provider": [
         "Vælg en udbyder"
       ],
@@ -13600,6 +13633,9 @@
       ],
       "Smallest first": [
         "Mindste først"
+      ],
+      "Sort by": [
+        "Sortér efter"
       ]
     },
     "specialoffer: Action": {

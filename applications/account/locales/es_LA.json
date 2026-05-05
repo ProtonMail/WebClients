@@ -13040,9 +13040,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Su frase de recuperación, incluida en su kit de recuperación, le permitirá iniciar sesión y recuperar sus datos si no puede acceder a la cuenta de ${ BRAND_NAME }. Está compuesta por 12 palabras y funciona como una contraseña de respaldo."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
@@ -14759,6 +14756,9 @@
       ],
       "Pending": [
         "Pendiente"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "correos electrónicos personales y profesionales, con actualizaciones y notificaciones importantes"
       ],
       "Phone number": [
         "Número telefónico"
@@ -16717,6 +16717,9 @@
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
+      ],
+      "Advanced workspace security": [
+        "Seguridad avanzada en el espacio de trabajo"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Todos los productos y funciones de ${ BRAND_NAME }"
@@ -18719,14 +18722,8 @@
       "per month, billed every two years": [
         "al mes con facturación cada dos años"
       ],
-      "Preparing your Recovery Kit": [
-        "Preparando su kit de recuperación"
-      ],
       "Protected by Swiss privacy laws": [
         "Bajo la protección de las leyes de privacidad suizas"
-      ],
-      "Save your recovery kit to continue": [
-        "Guarde su kit de recuperación para continuar"
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
@@ -20074,15 +20071,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "O ${ downloadRecoveryKitSwitchButton } en su lugar."
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Su **kit de recuperación** le permite restaurar su cuenta de ${ BRAND_NAME } si se queda fuera."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Guarde su kit de recuperación"
-      ],
       "Save your recovery phrase": [
         "Guarde su frase de recuperación"
       ]
@@ -20475,9 +20466,6 @@
       "Back to Safety Review": [
         "Volver a la verificación de seguridad"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Como restableció su contraseña, el kit de recuperación actual solo puede usarse para recuperar los datos creados antes del restablecimiento de la contraseña."
-      ],
       "Can be used to regain access to your account and data": [
         "Puede usarse para recuperar el acceso a la cuenta y sus datos"
       ],
@@ -20505,9 +20493,6 @@
       "Download ${ size }": [
         "Descargar ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "Descargar el kit de recuperación"
-      ],
       "Email address": [
         "Dirección de correo"
       ],
@@ -20520,17 +20505,11 @@
       "Enable recovery by phone": [
         "Activar la recuperación por teléfono"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Entiendo que no podré recuperar los datos actualmente bloqueados con este kit de recuperación"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Si se bloquea la cuenta ${ BRAND_NAME }, su kit de recuperación le permitirá iniciar sesión y recuperar los datos."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si pierde los datos de inicio de sesión y necesita restablecer la cuenta, **es obligatorio** que tenga configurados **un método de recuperación de la cuenta y de los datos**, de lo contrario, es posible que no pueda acceder a ninguno de sus correos electrónicos, contactos, archivos o contraseñas."
@@ -20574,9 +20553,6 @@
       "Take action to secure your account": [
         "Tome acciones para asegurar la cuenta"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Ocurrió un error al generar el kit de recuperación"
-      ],
       "There was an error verifying your email": [
         "Ocurrió un error al verificar su correo electrónico"
       ],
@@ -20604,12 +20580,6 @@
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
       ],
-      "Update your Recovery Kit": [
-        "Actualice el kit de recuperación"
-      ],
-      "Update your Recovery Kit?": [
-        "¿Actualizar el kit de recuperación?"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -20624,9 +20594,6 @@
       ],
       "Verify your recovery phone number": [
         "Verifique el número telefónico de recuperación"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Encontramos un error al generar el kit de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Encontramos un error al verificar su correo electrónico. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
@@ -20649,9 +20616,6 @@
       "You can disable this at any time.": [
         "Puede desactivar esto en cualquier momento."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "Puede usar la frase de recuperación en el kit de recuperación para restaurar completamente la cuenta cuando restablezca su contraseña, así que asegúrese de mantenerla a salvo en algún lugar."
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Puede usar su correo electrónico para recuperar el acceso a la cuenta si olvidara la contraseña."
       ],
@@ -20660,9 +20624,6 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Puede usar su teléfono de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "Previamente descargó un kit de recuperación. Descargar uno nuevo **desactivará el anterior**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Tiene recomendaciones para proteger aún más su cuenta."
@@ -20726,12 +20687,6 @@
       ],
       "Your recovery email is set": [
         "Se configuró el correo electrónico de recuperación"
-      ],
-      "Your Recovery Kit": [
-        "Kit de recuperación"
-      ],
-      "Your Recovery Kit is set": [
-        "Se configuró el kit de recuperación"
       ],
       "Your recovery methods": [
         "Métodos de recuperación"
@@ -21299,12 +21254,6 @@
     "Setting": {
       "Enable Photos section": [
         "Activar sección Fotos"
-      ],
-      "Get updates about comments via email": [
-        "Recibir actualizaciones sobre los comentarios por correo electrónico"
-      ],
-      "Include document name in email notifications": [
-        "Incluir el nombre del documento en las notificaciones por correo electrónico"
       ]
     },
     "Settings description": {
@@ -23888,6 +23837,9 @@
       "Actions": [
         "Acciones"
       ],
+      "Activate multi-user support": [
+        "Activar soporte multi usuario"
+      ],
       "Activate organization key": [
         "Activar clave de la organización"
       ],
@@ -24144,17 +24096,11 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm address": [
-        "Confirmar dirección"
-      ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar pérdida de beneficios de ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "Confirmar número de teléfono"
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
@@ -25084,8 +25030,14 @@
       "Remove domain": [
         "Eliminar el dominio"
       ],
+      "Remove email": [
+        "Borrar correo electrónico"
+      ],
       "Remove forwarding address": [
         "Eliminar dirección de reenvío"
+      ],
+      "Remove recovery phone number": [
+        "Borrar su número de teléfono de recuperación"
       ],
       "Remove server?": [
         "¿Eliminar el servidor?"
@@ -26733,11 +26685,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "¿Está seguro de que quiere eliminar el número de teléfono?"
+      "Are you sure you want to remove your notification email?": [
+        "¿Realmente desea borrar su correo electrónico de notificación?"
       ],
-      "Are you sure you want to delete this address?": [
-        "¿Está seguro de que quiere eliminar esta dirección?"
+      "Are you sure you want to remove your recovery email?": [
+        "¿Realmente desea eliminar su correo electrónico de recuperación?"
+      ],
+      "Are you sure you want to remove your recovery phone number?": [
+        "¿Realmente desea eliminar su número de teléfono de recuperación?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."
@@ -26748,8 +26703,8 @@
       "By deleting this address, you will no longer be able to recover your account.": [
         "Si elimina esta dirección, ya no podrá recuperar la cuenta."
       ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Al eliminar este número de teléfono, ya no podrá recuperar la cuenta."
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Al borrar este número de teléfono, ya no podrá recuperar su cuenta."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "No se pudo iniciar sesión. Abra la extensión del navegador ${ PASS_APP_NAME } e inicie sesión desde allí."

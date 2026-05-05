@@ -292,6 +292,9 @@
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
       ],
+      "Connect your email": [
+        "Συνδέστε τη διεύθυνση email σας"
+      ],
       "Contact group": [
         "Ομάδα Επαφών"
       ],
@@ -4150,6 +4153,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Αποστολή και λήψη μηνυμάτων Gmail απευθείας στο ${ MAIL_APP_NAME }. Συνδέστε τη διεύθυνσή σας στο ${ addressesSettingsLink }."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium δυνατότητες όταν αναβαθμίσετε."
       ],
@@ -5741,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Φίλτρο"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Φίλτρο (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Φιλτράρισμα και ταξινόμηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Has attachments": [
+        "Έχει συνημμένα"
+      ],
+      "Read": [
+        "Αναγνωσμένα"
+      ],
+      "Reset": [
+        "Επαναφορά"
+      ],
       "Show": [
         "Εμφάνιση"
+      ],
+      "Unread": [
+        "Μη αναγνωσμένα"
       ]
     },
     "Filter Actions": {
@@ -9829,6 +9856,9 @@
       "Payment method": [
         "Μέθοδος πληρωμής"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Προσωπικά και επαγγελματικά μηνύματα ηλεκτρονικού ταχυδρομείου, καθώς και σημαντικές ενημερώσεις και ειδοποιήσεις"
+      ],
       "PGP scheme": [
         "Σύστημα PGP"
       ],
@@ -11939,6 +11969,9 @@
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Φέρε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας στο ${ MAIL_APP_NAME }"
       ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Φέρτε τα υπάρχοντα μηνύματα ηλεκτρονικού ταχυδρομείου σας στο ${ MAIL_APP_NAME } ώστε να μπορείτε να διαχειρίζεστε τα πάντα από ένα ιδιωτικό εισερχόμενο."
+      ],
       "Choose a provider": [
         "Επιλέξτε έναν πάροχο"
       ],
@@ -13504,6 +13537,9 @@
       ],
       "Smallest first": [
         "Μικρότερου μεγέθους πρώτα"
+      ],
+      "Sort by": [
+        "Ταξινόμηση κατά"
       ]
     },
     "specialoffer: Action": {

@@ -268,6 +268,9 @@
       "Confirm": [
         "أكّد"
       ],
+      "Confirm email": [
+        "تأكيد البريد الإلكتروني"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "تأكيد فتح الرابط ${ linkToShow }"
       ],
@@ -609,6 +612,9 @@
       ],
       "Extend": [
         "تمديد"
+      ],
+      "Finish": [
+        "انتهى"
       ],
       "Fit to window": [
         "ملاءمة للنافذة"
@@ -5814,6 +5820,9 @@
       "Invalid invitation link": [
         "رابط دعوة غير صالح"
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "رابط الانضمام غير صالح. يرجى الاتصال بالمسؤول الخاص بك."
+      ],
       "Invalid name": [
         "اسم غير صحيح"
       ],
@@ -8762,6 +8771,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "جائزة اختيار محرري CNET بتقييم 8.4 من 10"
       ],
+      "Code has been re-sent.": [
+        "تمت إعادة إرسال الرمز."
+      ],
       "Coming soon": [
         "قريبًا"
       ],
@@ -9260,6 +9272,9 @@
       ],
       "Gateways": [
         "البوابات"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "سيؤدي إنشاء عبارة استرداد جديدة إلى تعطيل عبارة الاسترداد الحالية."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "سيؤدي إنشاء عبارة استرداد جديدة إلى إلغاء تنشيط عبارتك القديمة."
@@ -11294,8 +11309,8 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "عبارة الاسترداد الخاصة بك هي سلسلة من 12 كلمة تم إنشاؤها عشوائيًا بترتيب معين."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "ستتيح لك عبارة الاسترداد—الموجودة ضمن مجموعة الاسترداد الخاصة بك—تسجيل الدخول واستعادة بياناتك إذا تم قفل حساب ${ BRAND_NAME } الخاص بك. تتكوّن من 12 كلمة وتعمل ككلمة مرور احتياطية."
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "تتيح لك عبارة الاسترداد تسجيل الدخول واستعادة بياناتك إذا تم قفلك خارج حساب ${ BRAND_NAME } الخاص بك. تتكوّن من 12 كلمة وتعمل ككلمة مرور احتياطية."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
         "تبدأ خطتك المجدولة في ${ renewalTime } وسيتم تجديدها تلقائيًا كل ${ cycle } من الأشهر.",
@@ -12641,6 +12656,9 @@
       ],
       "Pending": [
         "معلق"
+      ],
+      "Personal and work emails, plus important updates and notifications": [
+        "رسائل البريد الإلكتروني الشخصية والعملية، بالإضافة إلى التحديثات والإشعارات المهمة"
       ],
       "Phone number": [
         "رقم الهاتف"
@@ -16166,14 +16184,14 @@
       "per month, billed every two years": [
         "شهريًا، تُدفع الفاتورة كل عامين"
       ],
-      "Preparing your Recovery Kit": [
-        "جارٍ إعداد مجموعة أدوات الاسترداد الخاصة بك"
+      "Preparing your recovery phrase": [
+        "إعداد عبارة الاسترداد الخاصة بك"
       ],
       "Protected by Swiss privacy laws": [
         "محمية بواسطة قوانين الخصوصية السويسرية"
       ],
-      "Save your recovery kit to continue": [
-        "احفظ مجموعة أدوات الاسترداد للمتابعة"
+      "Save your recovery phrase to continue": [
+        "احفظ عبارة الاسترداد الخاصة بك للمتابعة"
       ],
       "Secure vault sharing": [
         "مشاركة آمنة للخزنة"
@@ -17218,6 +17236,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**تأكّد من الاحتفاظ بعبارة الاسترداد في مكان يسهل الوصول إليه بعد إنشائها.** لأسباب أمنية، لا نقوم بتخزين العبارة بعد حفظ تغييراتك، ولن تتمكن من عرضها مرة أخرى في تطبيق ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "نسخ عبارة الاسترداد"
       ],
@@ -17239,14 +17260,11 @@
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "أو ${ downloadRecoveryKitSwitchButton } بدلًا من ذلك."
       ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "تتيح لك **مجموعة أدوات الاسترداد** الخاصة بك استعادة حساب ${ BRAND_NAME } الخاص بك إذا تم قفله."
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "تتيح لك **عبارة الاسترداد** استعادة حساب ${ BRAND_NAME } الخاص بك إذا تم قفلك خارجه."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "احفظ حزمة استردادك"
-      ],
       "Save your recovery phrase": [
         "احفظ عبارة الاسترداد الخاصة بك"
       ]
@@ -17613,8 +17631,8 @@
       "Back to Safety Review": [
         "العودة إلى قسم مراجعة الأمان"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "نظرًا لإعادة تعيين كلمة المرور، لا يمكن استخدام حزمة الاسترداد الحالية إلا لاسترداد البيانات التي تم إنشاؤها قبل إعادة تعيين كلمة المرور."
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "نظرًا لأنك قمت بإعادة تعيين كلمة المرور، يمكن استخدام عبارة الاسترداد الحالية فقط لاستعادة البيانات التي تم إنشاؤها قبل إعادة تعيين كلمة المرور."
       ],
       "Can be used to regain access to your account and data": [
         "يمكن استخدامها لاستعادة الوصول إلى حسابك وبياناتك"
@@ -17643,8 +17661,8 @@
       "Download ${ size }": [
         "تنزيل ${ size }"
       ],
-      "Download your Recovery Kit": [
-        "تنزيل حزمة الاسترداد"
+      "Download your recovery phrase": [
+        "قم بتنزيل عبارة الاسترداد الخاصة بك"
       ],
       "Email address": [
         "عنوان البريد الإلكتروني"
@@ -17658,8 +17676,8 @@
       "Enable recovery by phone": [
         "تفعيل الاسترداد عبر الهاتف"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "أنا على دراية بأنني لن أتمكن من استرداد البيانات المقفلة حاليًا باستخدام حزمة الاسترداد هذه"
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "أفهم أنني لن أتمكن من استرداد البيانات المقفلة حاليًا باستخدام عبارة الاسترداد هذه"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "في حال نسيت كلمة مرور ${ BRAND_NAME } الخاصة بك واحتجت إلى إعادة تعيينها، في المرة التالية التي تسجل فيها الدخول على هذا الجهاز باستخدام كلمة المرور الجديدة، ستتم استعادة الوصول الكامل إلى حساب ${ BRAND_NAME } الخاص بك."
@@ -17667,8 +17685,8 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "في حال نسيت كلمة مرور ${ BRAND_NAME } الخاصة بك واحتجت إلى إعادة تعيينها، في المرة التالية التي تسجل فيها الدخول على هذا الجهاز باستخدام كلمة المرور الجديدة، ستتم استعادة الوصول الكامل إلى حساب ${ BRAND_NAME } الخاص بك."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "في حال تم إغلاق حسابك ${ BRAND_NAME }، ستسمح لك حزمة الاسترداد بتسجيل الدخول واسترداد بياناتك."
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "إذا تم قفلك خارج حساب ${ BRAND_NAME } الخاص بك، فستتيح لك عبارة الاسترداد تسجيل الدخول واستعادة بياناتك."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "في حال فقدت تفاصيل تسجيل الدخول وتحتاج إلى إعادة تعيين حسابك، **فمن الضروري** أن تكون لديك **طريقة لاسترداد الحساب وطريقة لاسترداد البيانات**، وإلا فقد لا تتمكن من الوصول إلى أي من رسائلك الإلكترونية أو جهات اتصالك أو ملفاتك أو كلمات المرور."
@@ -17712,8 +17730,8 @@
       "Take action to secure your account": [
         "اتخذ الإجراء لتأمين حسابك"
       ],
-      "There was an error generating your Recovery Kit": [
-        "حدث خطأ أثناء إنشاء حزمة الاسترداد"
+      "There was an error generating your recovery phrase": [
+        "حدث خطأ أثناء إنشاء عبارة الاسترداد الخاصة بك"
       ],
       "There was an error verifying your email": [
         "حدث خطأ أثناء التحقق من بريدك الإلكتروني"
@@ -17742,11 +17760,11 @@
       "to recover your account if you're ever locked out": [
         "لاسترداد حسابك في حال تم إغلاقه"
       ],
-      "Update your Recovery Kit": [
-        "تحديث حزمة الاسترداد"
+      "Update your recovery phrase": [
+        "قم بتحديث عبارة الاسترداد الخاصة بك"
       ],
-      "Update your Recovery Kit?": [
-        "هل تريد تحديث حزمة الاسترداد؟"
+      "Update your recovery phrase?": [
+        "تحديث عبارة الاسترداد؟"
       ],
       "Verify": [
         "التحقق"
@@ -17763,8 +17781,8 @@
       "Verify your recovery phone number": [
         "التحقق من رقم هاتف الاسترداد"
       ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "واجهنا خطأ أثناء إنشاء حزمة الاسترداد الخاصة بك. يرجى المحاولة مرة أخرى لاحقًا، أو الاتصال بالدعم إذا استمرت المشكلة."
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "واجهنا خطأً أثناء إنشاء عبارة الاسترداد. يرجى المحاولة مرة أخرى لاحقاً، أو التواصل مع الدعم إذا استمرت المشكلة."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "واجهنا خطأ أثناء التحقق من بريدك الإلكتروني. يرجى المحاولة مرة أخرى لاحقًا، أو الاتصال بالدعم إذا استمرت المشكلة."
@@ -17787,8 +17805,8 @@
       "You can disable this at any time.": [
         "يمكنك تعطيله في أي وقت."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "يمكنك استخدام عبارة الاسترداد الموجودة في حزمة الاسترداد هذه لاستعادة حسابك بالكامل عند إعادة تعيين كلمة المرور، لذا تأكد من حفظها في مكان آمن."
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "يمكنك استخدام عبارة الاسترداد هذه لاستعادة حسابك بالكامل عند إعادة تعيين كلمة المرور، لذا تأكّد من الاحتفاظ بها في مكان آمن."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "يمكنك استخدام بريدك الإلكتروني لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
@@ -17799,8 +17817,8 @@
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "يمكنك استخدام هاتفك المخصص للاسترداد لاستعادة الوصول إلى حسابك إذا نسيت كلمة المرور."
       ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "لقد قمت بتنزيل حزمة استرداد سابقا. سيؤدي تنزيل حزمة جديدة إلى **تعطيل الحزمة القديمة**."
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "لقد قمت سابقًا بتنزيل عبارة استرداد. سيؤدي تنزيل واحدة جديدة إلى **تعطيل العبارة القديمة**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "اتخذ الإجراءات الموصى بها لزيادة حماية حسابك."
@@ -17865,12 +17883,6 @@
       "Your recovery email is set": [
         "تم تعيين بريد الاسترداد"
       ],
-      "Your Recovery Kit": [
-        "حزمة الاسترداد الخاصة بك"
-      ],
-      "Your Recovery Kit is set": [
-        "تم إعداد حزمة الاسترداد"
-      ],
       "Your recovery methods": [
         "طرق الاسترداد الخاصة بك"
       ],
@@ -17891,6 +17903,12 @@
       ],
       "Your recovery phone number is:": [
         "رقم هاتف الاسترداد الخاص بك هو:"
+      ],
+      "Your recovery phrase": [
+        "عبارة الاسترداد الخاصة بك"
+      ],
+      "Your recovery phrase is set": [
+        "تم تعيين عبارة الاسترداد الخاصة بك"
       ]
     },
     "saml: Action": {
@@ -18449,14 +18467,6 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "طلب إعادة تعيين كلمة المرور"
-      ]
-    },
-    "Setting": {
-      "Get updates about comments via email": [
-        "احصل على تحديثات حول التعليقات عبر البريد الإلكتروني"
-      ],
-      "Include document name in email notifications": [
-        "قم بتضمين اسم المستند في إشعارات البريد الإلكتروني"
       ]
     },
     "Settings description": {
@@ -20943,6 +20953,9 @@
       "Activate user": [
         "تفعيل المستخدم"
       ],
+      "Activate your email": [
+        "قم بتفعيل بريدك الإلكتروني"
+      ],
       "Activity monitor": [
         "مراقب النشاط"
       ],
@@ -21155,17 +21168,11 @@
       "Confirm": [
         "تأكيد"
       ],
-      "Confirm address": [
-        "تأكيد العنوان"
-      ],
       "Confirm downgrade": [
         "تأكيد التخفيض"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "تأكيد فقدان مكافآت ${ BRAND_NAME }"
-      ],
-      "Confirm phone number": [
-        "تأكيد رقم الهاتف"
       ],
       "Connect ${ name }": [
         "اتصال بـ ${ name }"
@@ -21222,6 +21229,9 @@
       ],
       "Create a new gateway": [
         "إنشاء بوابة جديدة"
+      ],
+      "Create a new password": [
+        "قم بإنشاء كلمة مرور جديدة"
       ],
       "Create Gateway": [
         "إنشاء بوابة"
@@ -21309,6 +21319,9 @@
       ],
       "Day theme": [
         "سمة الصباح"
+      ],
+      "Deactivate current phrase?": [
+        "إلغاء تنشيط العبارة الحالية؟"
       ],
       "Decrypt key": [
         "تشفير المفتاح"
@@ -21425,6 +21438,9 @@
       ],
       "Download the mobile apps": [
         "تنزيل تطبيقات الجوال"
+      ],
+      "Download your recovery phrase": [
+        "تنزيل عبارة الاسترداد الخاصة بك"
       ],
       "Downloads": [
         "التحميلات"
@@ -22326,6 +22342,9 @@
       "Verify it’s you": [
         "تحقق من أنك أنت"
       ],
+      "Verify your email": [
+        "تحقق من بريدك الإلكتروني"
+      ],
       "Verifying your card...": [
         "جارٍ التحقق من بطاقتك..."
       ],
@@ -22349,6 +22368,9 @@
       ],
       "Warning: suspected fake website": [
         "تحذير: موقع مزيف مشتبه به"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "أرسلنا رمزًا إلى بريدك الإلكتروني للتأكد من هويتك. هذا الرمز صالح لمدة 10 دقائق. يُرجى إدخاله أدناه."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "سنرسل بريدًا إلكترونيًا إلى عنوانك الجديد مع إرشادات حول إتمام التغيير."
@@ -22394,6 +22416,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "بدأ اشتراكك ${ planTitle }"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "يدعوك المسؤول في ${ orgName } لتفعيل حساب ${ BRAND_NAME } الآمن الجديد الخاص بك وتحديث كلمة المرور."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "يدعوك المسؤول لتفعيل حساب ${ BRAND_NAME } الآمن الجديد الخاص بك وتحديث كلمة المرور."
       ],
       "Your calendar link": [
         "رابط تقويمك"
@@ -23376,12 +23404,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "سينقل ${ BRAND_NAME } أكبر قدر ممكن من البيانات، بدءًا من أحدث رسائلك."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "هل أنت متأكد من أنك تريد حذف رقم الهاتف؟"
-      ],
-      "Are you sure you want to delete this address?": [
-        "هل أنت متأكد أنك تريد حذف هذا العنوان؟"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "عند حذف هذا العنوان، لن تلقي إشعارات في البريد الإلكتروني."
       ],
@@ -23390,9 +23412,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "عند حذف هذا العنوان، لن تستطيع استعادة حسابك."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "عند حذف رقم الهاتف، لن تستطيع استرداد حسابك."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "إذا ألغيت هذا الاستيراد، فلن تتمكن من استئنافه. لقد حفظ ${ BRAND_NAME } كل التقدم في حسابك. هل تريد الإلغاء على أي حال؟"

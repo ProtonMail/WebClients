@@ -774,6 +774,9 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
       "Use authentication code": [
         "使用驗證代碼"
       ],
@@ -2334,6 +2337,9 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -2357,6 +2363,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
@@ -2642,6 +2651,9 @@
       ],
       "Account does not exist": [
         "帳號不存在"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -4066,6 +4078,9 @@
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
       ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -4735,6 +4750,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
+      "Tracking": [
+        "追蹤"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
       ],
@@ -5072,6 +5090,9 @@
       ],
       "Add to group": [
         "加入至群組"
+      ],
+      "Additional comments": [
+        "附加備註"
       ],
       "Alias title": [
         "別名標題"
@@ -5689,6 +5710,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -7439,6 +7463,9 @@
       "Email": [
         "電子郵件"
       ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
       ],
@@ -7573,6 +7600,9 @@
     "Provider option": {
       "Gmail": [
         "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ],
       "Microsoft 365": [
         "Microsoft 365"

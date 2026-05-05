@@ -939,6 +939,18 @@
       "Authentication failure: ${ message }": [
         "Error con la autenticación: ${ message }"
       ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales del bloqueo biométrico no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se han encontrado las credenciales del bloqueo biométrico"
+      ],
+      "Biometric lock is not configured.": [
+        "No se ha configurado el bloqueo biométrico."
+      ],
+      "Biometric lock setup failed.": [
+        "Se ha producido un error al configurar el bloqueo biométrico."
+      ],
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
@@ -1262,11 +1274,17 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
       ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Se debe haber iniciado sesión en la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
       "The URL is in the list": [
         "La URL está en la lista."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Se ha producido un error al eliminar el enlace seguro. Intenta de nuevo en unos minutos."
+      ],
+      "This domain is already managed by your organization": [
+        "Tu organización ya gestiona este dominio"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Esto puede ocurrir después de mucho tiempo sin usar ${ PASS_SHORT_APP_NAME } o de borrar el historial de Safari."
@@ -1512,6 +1530,9 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitación enviada",
         "${ payload.count } invitaciones enviadas"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección avanzada para tu cuenta"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
@@ -2053,7 +2074,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2536,6 +2558,12 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Número ilimitado de alias ​​hide-my-email y administración avanzada de alias"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquea ${ PASS_APP_NAME } para acceder a tus claves de acceso"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquea ${ PASS_APP_NAME } para guardar esta clave de acceso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con datos biométricos"

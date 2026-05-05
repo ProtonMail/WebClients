@@ -4154,7 +4154,7 @@
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Gmail iletilerini doğrudan ${ MAIL_APP_NAME } üzerinden gönderin ve alın. Adresinizi ${ addressesSettingsLink } kısmından bağlayın."
+        "Gmail iletilerini doğrudan ${ MAIL_APP_NAME } üzerinden gönderin ve alın. ${ addressesSettingsLink } bölümünden adresinizi bağlayın."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
@@ -4233,7 +4233,7 @@
         "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
       ],
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
-        "Gmail'deki son 180 günlük e-postalarınızı içe aktarmaya başladık. İşlem tamamlandığında size haber vereceğiz."
+        "Gmail üzerinde son 180 gündeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -5747,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Süz"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Süz (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "E-postaları süz ve sırala"
+      ],
+      "Has attachments": [
+        "Ek dosyaları olan"
+      ],
+      "Read": [
+        "Okunmuş"
+      ],
+      "Reset": [
+        "Sıfırla"
+      ],
       "Show": [
         "Görüntüle"
+      ],
+      "Unread": [
+        "Okunmamış"
       ]
     },
     "Filter Actions": {
@@ -9835,6 +9856,9 @@
       "Payment method": [
         "Ödeme yöntemi"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Kişisel ve iş e-postalarının yanı sıra önemli güncellemeler ve bildirimler"
+      ],
       "PGP scheme": [
         "PGP şeması"
       ],
@@ -11946,7 +11970,7 @@
         "E-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
       ],
       "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
-        "Mevcut e-postalarınızı ${ MAIL_APP_NAME } uygulamasına taşıyın. Böylece her şeyi tek bir gizli gelen kutusundan yönetebilirsiniz."
+        "Var olan e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın. Böylece her şeyi gizliliği koruyan tek bir gelen kutusundan yönetebilirsiniz."
       ],
       "Choose a provider": [
         "Bir hizmet sağlayıcı seçin"
@@ -13609,6 +13633,9 @@
       ],
       "Smallest first": [
         "Küçükten büyüğe"
+      ],
+      "Sort by": [
+        "Sırala"
       ]
     },
     "specialoffer: Action": {

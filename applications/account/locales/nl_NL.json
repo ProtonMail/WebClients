@@ -5070,6 +5070,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De meeste problemen kunnen binnen enkele minuten worden opgelost met onze stapsgewijze handleidingen."
       ],
+      "No ads. No trackers.": [
+        "Geen advertenties. Geen trackers."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Niemand in uw organisatie kan verbinding maken met gedeelde servers."
       ],
@@ -5091,6 +5094,10 @@
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Hiermee krijgt u weer toegang tot uw ${ BRAND_NAME } account, maar uw versleutelde gegevens worden niet hersteld."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adres te koppelen, upgrade naar ${ planName }.",
+        "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adressen te koppelen, upgrade naar ${ planName }."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
       ],
@@ -5102,6 +5109,9 @@
       ],
       "Track the status and activity of your referrals": [
         "Volg de status en activiteiten van uw doorverwijzingen"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Upgrade naar ${ planName } om te koppelen met maximaal ${ MAX_SYNC_PAID_USER } accounts"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
@@ -5129,6 +5139,28 @@
       ],
       "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
         "U kunt adressen samenvoegen tot één primair ${ BRAND_NAME } account met behulp van onze ondersteuningsgids."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "U kunt nu e-mails versturen vanuit ${ BRAND_NAME } via dit adres."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "U stuurt ${ numAddressesOrSync } Gmail-adres door naar ${ MAIL_APP_NAME }.",
+        "U stuurt ${ numAddressesOrSync } Gmail-adressen door naar ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adres gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen.",
+        "U hebt ${ MAX_SYNC_PAID_USER } Gmail-adressen gekoppeld. Als u nog een adres wilt toevoegen, moet u eerst een van uw gekoppelde accounts ontkoppelen."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "U hebt één extern e-mailadres gekoppeld aan ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adres.",
+        "Uw abonnement ondersteunt ${ MAX_SYNC_FREE_USER } Gmail-adressen."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
+        "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
       ]
     },
     "description": {
@@ -12842,9 +12874,6 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Uw herstel zin is een serie van 12 willekeurig gegenereerde woorden in een specifieke volgorde."
       ],
-      "Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "Uw herstelzin—die u in uw herstelpakket vindt—stelt u in staat om in te loggen en uw gegevens te herstellen als u geen toegang meer hebt tot uw ${ BRAND_NAME }-account. De herstelzin bestaat uit 12 woorden en fungeert als een reservewachtwoord."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
         "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
@@ -14532,6 +14561,9 @@
       "Pending": [
         "In afwachting"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Persoonlijke en zakelijke e-mails, plus belangrijke updates en notificaties."
+      ],
       "Phone number": [
         "Telefoonnummer"
       ],
@@ -14663,6 +14695,9 @@
       ],
       "Select Linux platform": [
         "Selecteer Linux platform"
+      ],
+      "Select which Gmail address to connect": [
+        "Selecteer welk Gmail-adres u wilt koppelen"
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -18461,14 +18496,8 @@
       "per month, billed every two years": [
         "per maand, tweejaarlijks gefactureerd"
       ],
-      "Preparing your Recovery Kit": [
-        "Uw herstelkit voorbereiden"
-      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
-      ],
-      "Save your recovery kit to continue": [
-        "Sla uw herstelkit op om verder te gaan"
       ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
@@ -19816,15 +19845,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Of ${ downloadRecoveryKitSwitchButton } in plaats."
-      ],
-      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Uw **Herstelkit** laat u uw ${ BRAND_NAME } account herstellen als u bent buitengesloten."
       ]
     },
     "RecoveryPhrase: Title": {
-      "Save your Recovery Kit": [
-        "Bewaar uw Recovery Kit"
-      ],
       "Save your recovery phrase": [
         "Sla uw herstelzin op"
       ]
@@ -20217,9 +20240,6 @@
       "Back to Safety Review": [
         "Terug naar beoordeling veiligheid"
       ],
-      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
-        "Omdat u uw wachtwoord opnieuw instelt, kan uw huidige Recovery Kit alleen worden gebruikt om de gegevens te herstellen die zijn gemaakt voordat uw wachtwoord wordt hersteld."
-      ],
       "Can be used to regain access to your account and data": [
         "Kan gebruikt worden om opnieuw toegang te krijgen tot uw account en gegevens"
       ],
@@ -20247,9 +20267,6 @@
       "Download ${ size }": [
         "${ size } downloaden"
       ],
-      "Download your Recovery Kit": [
-        "Download uw Recovery Kit"
-      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -20262,17 +20279,11 @@
       "Enable recovery by phone": [
         "Herstellen via telefoon inschakelen"
       ],
-      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
-        "Ik begrijp dat ik met deze Recovery Kit geen vergrendelde gegevens kan herstellen"
-      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Als u uw ${ BRAND_NAME }-wachtwoord bent vergeten en moet u het opnieuw instellen, de volgende keer dat u zich aanmeldt op dit apparaat met uw nieuwe wachtwoord, zal volledige toegang tot uw ${ BRAND_NAME }-account worden hersteld."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Als u uw ${ BRAND_NAME }-wachtwoord bent vergeten en moet u het opnieuw instellen, de volgende keer dat u zich aanmeldt op dit apparaat met uw nieuwe wachtwoord, zal volledige toegang tot uw ${ BRAND_NAME }-account worden hersteld."
-      ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw herstelkit u toelaten om in te liggen en uw data te herstellen."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Als u uw inloggegevens verliest en uw account opnieuw moet instellen **Het is dwingend** dat u zowel een **account recovery en data recovery** heeft geïnstalleerd. Anders heeft u mogelijk geen toegang tot uw e-mails, contacten, bestanden of wachtwoorden."
@@ -20316,9 +20327,6 @@
       "Take action to secure your account": [
         "Neem actie om uw account te beveiligen"
       ],
-      "There was an error generating your Recovery Kit": [
-        "Er is een fout opgetreden bij het genereren van uw Recovery Kit"
-      ],
       "There was an error verifying your email": [
         "Er is een fout opgetreden bij het verifiëren van uw herstel-e-mail"
       ],
@@ -20346,12 +20354,6 @@
       "to recover your account if you're ever locked out": [
         "om uw account te herstellen als u ooit buitengesloten bent"
       ],
-      "Update your Recovery Kit": [
-        "Update uw Recovery Kit"
-      ],
-      "Update your Recovery Kit?": [
-        "Update uw Recovery Kit?"
-      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -20366,9 +20368,6 @@
       ],
       "Verify your recovery phone number": [
         "Verifieer uw hersteltelefoonnummer"
-      ],
-      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden bij het genereren van uw Recovery Kit. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Er is een fout opgetreden tijdens het verifiëren van uw e-mail. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
@@ -20391,9 +20390,6 @@
       "You can disable this at any time.": [
         "U kunt dit op elk moment uitschakelen."
       ],
-      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
-        "U kunt de herstelzin gebruiken in deze Recovery Kit om uw account volledig te herstellen wanneer u uw wachtwoord opnieuw instelt, zorg ervoor dat u het ergens veilig houdt."
-      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "U kunt uw herstel-e-mailadres gebruiken om toegang te krijgen tot uw account als u uw wachtwoord vergeet."
       ],
@@ -20402,9 +20398,6 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "U kunt uw hersteltelefoon gebruiken om toegang tot uw account te krijgen als u uw wachtwoord vergeet."
-      ],
-      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
-        "U heeft eerder een Recovery Kit gedownload. Een nieuwe downloaden zal **deactiveren de oude**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "U heeft aanbevolen acties om uw account verder te beveiligen."
@@ -20468,12 +20461,6 @@
       ],
       "Your recovery email is set": [
         "Uw herstel-e-mailadres is ingesteld"
-      ],
-      "Your Recovery Kit": [
-        "Uw herstelkit"
-      ],
-      "Your Recovery Kit is set": [
-        "Uw herstelkit is ingesteld"
       ],
       "Your recovery methods": [
         "Uw herstelmethoden"
@@ -21041,12 +21028,6 @@
     "Setting": {
       "Enable Photos section": [
         "Sectie voor foto's inschakelen"
-      ],
-      "Get updates about comments via email": [
-        "Ontvang updates over reacties via e-mail."
-      ],
-      "Include document name in email notifications": [
-        "Documentnaam opnemen in e-mailnotificaties."
       ]
     },
     "Settings description": {
@@ -23606,6 +23587,9 @@
       "Actions": [
         "Acties"
       ],
+      "Activate multi-user support": [
+        "Ondersteuning voor meerdere gebruikers inschakelen"
+      ],
       "Activate organization key": [
         "Organisatiesleutel activeren"
       ],
@@ -23856,17 +23840,11 @@
       "Confirm": [
         "Bevestigen"
       ],
-      "Confirm address": [
-        "Adres bevestigen"
-      ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bevestig verlies van ${ BRAND_NAME }-bonussen"
-      ],
-      "Confirm phone number": [
-        "Telefoonnummer bevestigen"
       ],
       "Connect ${ name }": [
         "Verbind ${ name }"
@@ -24118,6 +24096,9 @@
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
+      ],
+      "Disconnected from Gmail": [
+        "Ontkoppeld van Gmail"
       ],
       "Display name and signature": [
         "Weergavenaam en handtekening"
@@ -24885,6 +24866,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail verzenden en ontvangen in ${ MAIL_APP_NAME }"
       ],
       "Send email reminders?": [
         "E-mailherinneringen versturen?"
@@ -26418,12 +26402,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
-      "Are you sure you want to delete the phone number?": [
-        "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Weet u zeker dat u dit adres wil verwijderen?"
-      ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Door dit e-mailadres te verwijderen, kunt u geen dagelijkse e-mailmeldingen meer ontvangen."
       ],
@@ -26432,9 +26410,6 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Door dit e-mailadres te verwijderen, kunt u uw account niet meer herstellen."
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kan niet inloggen. Open de ${ PASS_APP_NAME } browser-extensie en log daar in."

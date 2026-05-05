@@ -5682,8 +5682,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filtro"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filtro (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrar e ordenar e-mails"
+      ],
+      "Has attachments": [
+        "Tem anexos"
+      ],
+      "Read": [
+        "Lido"
+      ],
+      "Reset": [
+        "Redefinir"
+      ],
       "Show": [
         "Mostrar"
+      ],
+      "Unread": [
+        "Não lido"
       ]
     },
     "Filter Actions": {
@@ -13538,6 +13559,9 @@
       ],
       "Smallest first": [
         "Menores primeiro"
+      ],
+      "Sort by": [
+        "Ordenar por"
       ]
     },
     "specialoffer: Action": {

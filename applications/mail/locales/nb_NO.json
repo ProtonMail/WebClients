@@ -5747,8 +5747,29 @@
       ]
     },
     "Filter": {
+      "Filter": [
+        "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filter (${ activeState.dropdownActiveCount })"
+      ],
+      "Filter and sort emails": [
+        "Filtrer og sorter e-poster"
+      ],
+      "Has attachments": [
+        "Har vedlegg"
+      ],
+      "Read": [
+        "Lest"
+      ],
+      "Reset": [
+        "Tilbakestill"
+      ],
       "Show": [
         "Vis"
+      ],
+      "Unread": [
+        "Ulest"
       ]
     },
     "Filter Actions": {
@@ -9835,6 +9856,9 @@
       "Payment method": [
         "Betalingsmåte"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "Personlige og jobbrelaterte e-poster, pluss viktige oppdateringer og varsler"
+      ],
       "PGP scheme": [
         "PGP-skjema"
       ],
@@ -13609,6 +13633,9 @@
       ],
       "Smallest first": [
         "Minste først"
+      ],
+      "Sort by": [
+        "Sorter etter"
       ]
     },
     "specialoffer: Action": {
