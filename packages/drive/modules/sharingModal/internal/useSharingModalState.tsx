@@ -8,6 +8,7 @@ import {
     NonProtonInvitationState,
     type ShareNodeSettings,
     type ShareResult,
+    ValidationError,
 } from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
@@ -165,6 +166,9 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
+            if (e instanceof ValidationError) {
+                createNotification({ type: 'error', text: e.message });
+            }
             handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to create public share node`,
                 extra: { nodeUid },
@@ -205,6 +209,9 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
+            if (e instanceof ValidationError) {
+                createNotification({ type: 'error', text: e.message });
+            }
             handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to update public share node`,
                 extra: { nodeUid },
