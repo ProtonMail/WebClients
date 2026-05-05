@@ -1,4 +1,4 @@
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultShareKey as ShareKey, ShareKeyResponse } from '@proton/pass/types';

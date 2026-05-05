@@ -6,7 +6,7 @@ import { $convertFromMarkdownString } from '@lexical/markdown'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { c } from 'ttag'
 

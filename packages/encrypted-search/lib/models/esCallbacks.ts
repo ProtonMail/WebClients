@@ -1,4 +1,4 @@
-import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import type { GetItemInfo } from './esFunctions';
 import type { RecordProgress } from './esIndexing';

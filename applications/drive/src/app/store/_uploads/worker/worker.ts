@@ -3,7 +3,7 @@ import 'core-js/proposals/array-buffer-base64';
 import 'core-js/stable';
 import { getUnixTime } from 'date-fns';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
     generateContentKeys,

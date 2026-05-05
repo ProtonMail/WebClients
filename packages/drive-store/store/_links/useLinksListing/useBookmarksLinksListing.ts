@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { useBookmarks } from '../../_bookmarks/useBookmarks';
 import type { DecryptedLink } from '../../_links';

@@ -1,4 +1,4 @@
-import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 
 export const uint8ArrayToString = uint8ArrayToBinaryString;
 

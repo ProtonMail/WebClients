@@ -1,7 +1,7 @@
 import type { sha1 } from '@noble/hashes/sha1';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 

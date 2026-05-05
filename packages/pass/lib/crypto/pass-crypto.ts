@@ -1,6 +1,6 @@
 import type { Store } from 'redux';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { authStore } from '@proton/pass/lib/auth/store';

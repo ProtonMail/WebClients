@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import type { KeysPair } from '../interfaces';

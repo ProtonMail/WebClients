@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto/lib/proxy';
+import { CryptoProxy } from '@protontech/crypto';
 import {
     createRandomKey,
     createRandomVaultKey,

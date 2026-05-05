@@ -1,6 +1,6 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
@@ -25,8 +25,8 @@ jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
     getFileExtension: jest.fn((name: string) => name.split('.').pop()),
     isRAWExtension: jest.fn(() => false),
 }));
-jest.mock('@proton/crypto', () => {
-    const actual = jest.requireActual('@proton/crypto');
+jest.mock('@protontech/crypto', () => {
+    const actual = jest.requireActual('@protontech/crypto');
     return {
         ...actual,
         CryptoProxy: {

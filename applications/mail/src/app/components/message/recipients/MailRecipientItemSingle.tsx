@@ -8,7 +8,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import { IcEnvelopeMagnifyingGlass } from '@proton/icons/icons/IcEnvelopeMagnifyingGlass';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';

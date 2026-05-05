@@ -1,7 +1,7 @@
 import { fireEvent, getByDisplayValue, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';

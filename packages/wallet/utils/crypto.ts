@@ -1,13 +1,13 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import {
     decryptData,
     encryptData,
     generateKey as generateAesGcmKey,
     importKey as importAesGcmKey,
-} from '@proton/crypto/lib/subtle/aesGcm';
-import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+} from '@protontech/crypto/subtle/aesGcm.ts';
+import { signData as computeHmacSignature, importKey as importHmacKey } from '@protontech/crypto/subtle/hmac.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 export enum WalletSignatureContextEnum {

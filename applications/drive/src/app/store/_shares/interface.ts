@@ -1,4 +1,4 @@
-import type { PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';

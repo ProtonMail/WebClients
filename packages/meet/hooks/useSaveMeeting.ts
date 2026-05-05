@@ -1,5 +1,5 @@
 import { useApi } from '@proton/components';
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { createMeetingCall } from '@proton/shared/lib/api/meet';
 import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/shared/lib/interfaces/Meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';

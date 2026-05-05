@@ -1,4 +1,4 @@
-import { type ESCiphertext, type IndexKey, decryptItem } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import { type ESCiphertext, type IndexKey, decryptItem } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 

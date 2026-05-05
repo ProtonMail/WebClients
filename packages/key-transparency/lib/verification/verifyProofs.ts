@@ -1,5 +1,5 @@
-import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { binaryStringToUint8Array } from '@protontech/crypto/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';

@@ -5,8 +5,8 @@ import type {
     ContextVerificationOptions,
     PrivateKeyReference,
     PublicKeyReference,
-} from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@proton/crypto';
+} from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@protontech/crypto';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';

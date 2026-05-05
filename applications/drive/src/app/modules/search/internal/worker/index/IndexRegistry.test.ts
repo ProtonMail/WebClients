@@ -1,7 +1,7 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { SearchDB } from '../../shared/SearchDB';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';

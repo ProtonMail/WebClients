@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { createUnleash } from '@proton/account/bootstrap';
-import { KEY_LENGTH_BYTES } from '@proton/crypto/lib/subtle/aesGcm';
+import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 import createApi from '@proton/shared/lib/api/createApi';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';

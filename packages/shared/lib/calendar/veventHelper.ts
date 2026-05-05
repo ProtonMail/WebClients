@@ -1,4 +1,4 @@
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
 import { DAY } from '../constants';

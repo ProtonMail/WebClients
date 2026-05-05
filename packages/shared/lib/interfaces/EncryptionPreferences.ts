@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 import type {
     API_KEY_SOURCE,

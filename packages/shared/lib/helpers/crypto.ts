@@ -1,5 +1,5 @@
-import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 
 export const getSHA256String = async (data: string) => {
     const value = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: binaryStringToUint8Array(data) });

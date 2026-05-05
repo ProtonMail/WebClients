@@ -1,6 +1,6 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { isElectronMail } from '../../helpers/desktop';

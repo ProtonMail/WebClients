@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
-import { CryptoProxy, canKeyEncryptAndDecrypt } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
+import { CryptoProxy, canKeyEncryptAndDecrypt } from '@protontech/crypto';
 
 import { getDefaultKeyFlags } from '../';
 import { getApiError } from '../../api/helpers/apiErrorHelper';

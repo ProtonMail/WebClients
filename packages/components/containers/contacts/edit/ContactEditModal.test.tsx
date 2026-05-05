@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as userHooks from '@proton/account/user/hooks';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import * as useContactEmailHooks from '@proton/mail/store/contactEmails/hooks';
 import * as mailLabelHooks from '@proton/mail/store/labels/hooks';
 import * as mailSettingsHooks from '@proton/mail/store/mailSettings/hooks';

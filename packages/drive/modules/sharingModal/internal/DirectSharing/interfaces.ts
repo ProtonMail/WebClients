@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 export interface ShareInvitee {
     name: string;

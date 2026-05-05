@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import {
     queryAcceptShareInvite,
     queryDeleteExternalInvitation,

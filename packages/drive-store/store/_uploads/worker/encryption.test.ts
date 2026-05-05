@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 

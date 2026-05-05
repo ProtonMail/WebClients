@@ -1,5 +1,5 @@
-import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';

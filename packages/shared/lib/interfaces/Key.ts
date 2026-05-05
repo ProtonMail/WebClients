@@ -3,7 +3,7 @@ import type {
     PrivateKeyReferenceV4,
     PrivateKeyReferenceV6,
     PublicKeyReference,
-} from '@proton/crypto';
+} from '@protontech/crypto';
 
 import type { RequireSome } from './utils';
 

@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { Address, Key } from '@proton/shared/lib/interfaces';
 
 export async function generatePrivateKey(name = 'name', email = 'name@example.com'): Promise<PrivateKeyReference> {
@@ -48,7 +48,7 @@ export const generateAddress = async (keys: Key[], email = 'test@pm.me'): Promis
  */
 export async function setupCryptoProxyForTesting() {
     // dynamic import to avoid loading the library unless required
-    const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+    const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
     CryptoApi.init({});
     CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }

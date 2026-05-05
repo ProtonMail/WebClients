@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { usePreventLeave } from '@proton/components';
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 import { queryCreateAlbum, queryUpdateAlbumName } from '@proton/shared/lib/api/drive/photos';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import {

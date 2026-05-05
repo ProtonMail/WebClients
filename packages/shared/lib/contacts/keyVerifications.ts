@@ -1,5 +1,5 @@
-import type { KeyID } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { KeyID } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import type { Key } from '../interfaces';

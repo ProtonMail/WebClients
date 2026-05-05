@@ -4,7 +4,7 @@ import stableStringify from 'json-stable-stringify';
 import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
 
-import {generateAndImportKey} from '@proton/crypto/lib/subtle/aesGcm';
+import {generateAndImportKey} from '@protontech/crypto/subtle/aesGcm.ts';
 
 import {
     base64ToSpaceKey,

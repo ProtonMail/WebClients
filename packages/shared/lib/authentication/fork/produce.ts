@@ -1,5 +1,5 @@
-import { serverTime } from '@proton/crypto';
-import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { serverTime } from '@protontech/crypto';
+import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { isSelf } from '@proton/shared/lib/user/helpers';

@@ -1,4 +1,4 @@
-import { getRandomSrpVerifier, getSrp } from '@proton/srp';
+import { getRandomSrpVerifier, getSrp } from '@protontech/crypto/srp';
 
 import { getInfo, getModulus } from './api/auth';
 import type { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';

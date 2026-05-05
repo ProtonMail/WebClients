@@ -1,6 +1,6 @@
 // Bootstrap stuff that's specific to Lumo and not common with other apps.
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { generateMasterKeyBytes } from '../crypto';

@@ -1,4 +1,4 @@
-import type { MIMEAttachment } from '@proton/crypto';
+import type { MIMEAttachment } from '@protontech/crypto';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 

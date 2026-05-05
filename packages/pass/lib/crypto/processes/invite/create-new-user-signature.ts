@@ -1,4 +1,4 @@
-import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { PassSignatureContext, type VaultShareKey } from '@proton/pass/types';
 

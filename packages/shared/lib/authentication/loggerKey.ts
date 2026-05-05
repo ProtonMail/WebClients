@@ -1,6 +1,6 @@
-import { type AesGcmCryptoKey, deriveKey as deriveAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { type AesGcmCryptoKey, deriveKey as deriveAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { computeSHA256 } from '@protontech/crypto/subtle/hash.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { getParsedClientKey } from './clientKey';

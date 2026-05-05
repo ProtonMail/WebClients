@@ -4,7 +4,7 @@ import type { EncryptionService } from '../Services/Encryption/EncryptionService
 import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import metrics from '@proton/metrics'
 import { canKeysSign } from '../Types/DocumentEntitlements'
 import type { PublicDocumentKeys } from '@proton/drive-store'

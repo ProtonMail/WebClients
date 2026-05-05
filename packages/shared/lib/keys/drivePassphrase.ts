@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 export const getDecryptedSessionKey = async ({
     data: serializedMessage,

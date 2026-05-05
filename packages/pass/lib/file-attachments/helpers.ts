@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '@proton/pass/types';

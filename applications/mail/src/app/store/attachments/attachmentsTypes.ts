@@ -1,4 +1,4 @@
-import type { WorkerDecryptionResult } from '@proton/crypto/lib';
+import type { WorkerDecryptionResult } from '@protontech/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 

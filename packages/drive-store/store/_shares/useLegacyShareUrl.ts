@@ -1,7 +1,7 @@
 import { useApi, usePreventLeave } from '@proton/components';
-import type { SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import type { SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,
@@ -25,7 +25,7 @@ import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword } from '@proton/srp';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 import chunk from '@proton/utils/chunk';
 import getRandomString from '@proton/utils/getRandomString';
 import groupWith from '@proton/utils/groupWith';

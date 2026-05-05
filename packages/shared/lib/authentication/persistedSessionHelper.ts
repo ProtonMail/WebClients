@@ -1,4 +1,4 @@
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

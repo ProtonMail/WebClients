@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { activatePasswordlessKey } from '@proton/shared/lib/api/members';
 import {
     getIsPasswordless,

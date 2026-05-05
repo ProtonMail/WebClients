@@ -86,8 +86,8 @@
         "type-check": "tsc --noEmit"
     },
     "dependencies": {
-        "@proton/crypto": "^6.0.0",
         "@proton/shared": "^6.0.0",
+        "@protontech/crypto": "*",
         "uuid": "^9.0.1"
     },
     "peerDependencies": {

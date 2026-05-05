@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS as CRYPTO_VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
+import { VERIFICATION_STATUS as CRYPTO_VERIFICATION_STATUS } from '@protontech/crypto/constants';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getMailVerificationStatus, getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 

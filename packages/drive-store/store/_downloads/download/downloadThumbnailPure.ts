@@ -1,7 +1,5 @@
-// @ts-ignore missing `toStream` TS defs
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
-
-import { CryptoProxy, type VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, type VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { streamToBuffer } from '../../../utils/stream';
 import type { DecryptFileKeys } from '../interface';
@@ -52,9 +50,7 @@ async function decryptThumbnail(
     const { sessionKeys, addressPublicKeys } = await getKeys();
 
     const binaryMessage =
-        streamOrCache instanceof Uint8Array
-            ? streamOrCache
-            : await readToEnd<Uint8Array<ArrayBuffer>>(streamOrCache);
+        streamOrCache instanceof Uint8Array ? streamOrCache : await readToEnd<Uint8Array<ArrayBuffer>>(streamOrCache);
     if (!(streamOrCache instanceof Uint8Array) && binaryMessage instanceof Uint8Array) {
         setCache(binaryMessage);
     }

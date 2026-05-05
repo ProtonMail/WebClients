@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { type ReactivateKeysResult, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';

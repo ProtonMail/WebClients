@@ -23,7 +23,7 @@ import { service } from 'proton-authenticator/lib/wasm/service';
 import type { AppThunkExtra } from 'proton-authenticator/store';
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import type { Maybe } from '@proton/pass/types/utils';
 import { prop } from '@proton/pass/utils/fp/lens';

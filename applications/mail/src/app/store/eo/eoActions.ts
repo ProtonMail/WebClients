@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { CryptoProxy } from '@proton/crypto';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { MessageState, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 

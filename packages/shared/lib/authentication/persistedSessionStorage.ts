@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { omit } from '@proton/shared/lib/helpers/object';
 import isEnumValue from '@proton/utils/isEnumValue';
