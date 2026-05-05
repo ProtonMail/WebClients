@@ -87,6 +87,9 @@
       "Add photos": [
         "新增相片"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "添加至 \"\"${ name }\" (${ photoCount } 張照片)"
+      ],
       "Add to album": [
         "加入至相簿"
       ],
@@ -236,6 +239,9 @@
       ],
       "Continue import": [
         "繼續匯入"
+      ],
+      "Continue on web": [
+        "在網頁繼續"
       ],
       "Continue to ${ planOrAppName }": [
         "繼續使用 ${ planOrAppName }"
@@ -435,6 +441,9 @@
       "Export selection as .vcf": [
         "以.vcf匯出選項"
       ],
+      "Export system log": [
+        "匯出系統日誌"
+      ],
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
@@ -455,6 +464,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "獲取免費 ${ BRAND_NAME } 電郵位址"
+      ],
+      "Get Drive for Business": [
+        "取得 Drive for Business"
       ],
       "Get in touch": [
         "保持聯絡"
@@ -647,6 +659,9 @@
       ],
       "New message": [
         "撰寫"
+      ],
+      "New spreadsheet": [
+        "新增工作表"
       ],
       "Next": [
         "下一個"
@@ -1008,6 +1023,9 @@
       "Try another method": [
         "嘗試其它驗證方式"
       ],
+      "Try it now": [
+        "立即體驗"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
@@ -1068,6 +1086,9 @@
       "Use ${ PASS_APP_NAME } for Business": [
         "將 ${ PASS_APP_NAME } 用於商務"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
       "Use a different card": [
         "改用另一張卡"
       ],
@@ -1100,6 +1121,9 @@
       ],
       "What do I get?": [
         "我的專屬服務方案："
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
@@ -1627,6 +1651,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal": [
+        "小計"
       ],
       "Subtotal for ${ cycle } month": [
         "${ cycle } 個月小計"
@@ -2774,6 +2801,9 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -2797,6 +2827,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
         "若於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
@@ -3082,6 +3115,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 個項目移動失敗"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
@@ -3093,6 +3129,9 @@
       ],
       "Account does not exist": [
         "帳號不存在"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -3136,6 +3175,9 @@
       "Calendar limit reached": [
         "行事曆數量已達上限"
       ],
+      "Can't find any secure link": [
+        "無法找到任何安全連結"
+      ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
@@ -3156,6 +3198,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
+      ],
+      "Could not add to favorites": [
+        "無法添加至最愛"
       ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
@@ -3193,6 +3238,9 @@
       "Error decrypting a computer": [
         "解密電腦時發生錯誤"
       ],
+      "Error reading file": [
+        "讀取檔案時發生錯誤"
+      ],
       "External accounts are not supported yet": [
         "外部邀請函上未支援。"
       ],
@@ -3207,6 +3255,9 @@
       ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
+      ],
+      "Failed to resend invitation": [
+        "失敗重新傳送邀請"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
@@ -3312,6 +3363,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
+      ],
+      "No file to upload": [
+        "無可上傳的檔案"
       ],
       "No valid address found": [
         "未能找到有效位址"
@@ -3546,6 +3600,9 @@
       ],
       "Unknown payment token status": [
         "未知的付款權仗狀態"
+      ],
+      "Upload failed": [
+        "上傳失敗"
       ],
       "Upload for this folder is temporarily disabled": [
         "上傳此資料夾已暫時關閉"
@@ -4076,6 +4133,9 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Create new album": [
+        "創建新相簿"
+      ],
       "Domain": [
         "網域"
       ],
@@ -4488,6 +4548,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'以下載其他檔案。"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
       ],
@@ -4758,6 +4821,9 @@
       "Calendar side panel": [
         "行事曆側面板"
       ],
+      "Can edit": [
+        "可以編輯"
+      ],
       "Can view and edit": [
         "可檢視和編輯"
       ],
@@ -4781,6 +4847,9 @@
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
       ],
       "Clear data": [
         "清除資料"
@@ -5127,6 +5196,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
+      "Indexing in progress": [
+        "正在排序"
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "正在索引項目 ${ esProgress } / ${ totalProgressToShow }"
       ],
@@ -5211,6 +5283,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "寮解渴做什麼 ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "已複製連結"
+      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
@@ -5240,6 +5315,9 @@
       ],
       "Makes your account safer": [
         "讓您的帳號更安全"
+      ],
+      "Malware detected": [
+        "發現惡意軟體"
       ],
       "Mar": [
         "三月"
@@ -5274,6 +5352,15 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
       ],
+      "Move ${ dragCount } item": [
+        "移動 ${ dragCount } 個項目"
+      ],
+      "Move ${ fileCount } file": [
+        "移動 ${ fileCount } 個檔案"
+      ],
+      "Move ${ folderCount } folder": [
+        "移動 ${ folderCount } 個資料夾"
+      ],
       "Moving files": [
         "正在移動檔案"
       ],
@@ -5303,6 +5390,9 @@
       ],
       "No group found": [
         "未找到群組"
+      ],
+      "No issue found": [
+        "找不到問題"
       ],
       "No payment is required at this time.": [
         "此時毋須付款。"
@@ -5534,6 +5624,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "復原照片中...請保持分頁開啟。"
+      ],
+      "Running diagnostics...": [
+        "執行診斷..."
       ],
       "Saving...": [
         "儲存中..."
@@ -5814,6 +5907,9 @@
       "Total VPN connections": [
         "總 VPN 連線數量"
       ],
+      "Tracking": [
+        "追蹤"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
       ],
@@ -5963,6 +6059,9 @@
       ],
       "When working remotely": [
         "當遠端工作時"
+      ],
+      "who": [
+        "誰"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "將還原到 ${ formattedRevisionDate } 的版本。其他所有版本仍會被儲存。"
@@ -6292,11 +6391,17 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
+      "Access": [
+        "存取"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
       ],
       "Account holder": [
         "帳戶持有人"
+      ],
+      "Active": [
+        "啟用"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -6306,6 +6411,9 @@
       ],
       "Add to group": [
         "加入至群組"
+      ],
+      "Additional comments": [
+        "附加備註"
       ],
       "Address": [
         "電郵位址"
@@ -6718,6 +6826,9 @@
       "Replace existing folder": [
         "取代已存在的資料夾"
       ],
+      "Replace existing folder or file": [
+        "取代已存在的資料夾或檔案"
+      ],
       "Require password": [
         "需要密碼"
       ],
@@ -6727,11 +6838,17 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Searchable": [
+        "可被搜尋"
+      ],
       "Select type of abuse": [
         "選取濫用類型"
       ],
       "Set recovery method": [
         "設定復原方法"
+      ],
+      "Share a file, folder, or album": [
+        "共享一個檔案、資料夾或相簿"
       ],
       "Shared": [
         "已分享"
@@ -7137,6 +7254,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
@@ -8313,6 +8433,18 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" 已複製"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "「${ ellipsedName }」移動失敗"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "「${ ellipsedName }」已成功移動"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" 已共享"
+      ],
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」無法移動到垃圾桶"
       ],
@@ -8337,6 +8469,9 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } 個項目複製失敗"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } 個項目刪除失敗"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 個項目刪除失敗"
       ],
@@ -8354,6 +8489,9 @@
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 個複製項目已移動到垃圾桶"
+      ],
+      "${ numberOfItems } item copied": [
+        "已刪除 ${ numberOfItems } 個項目"
       ],
       "${ numberOfItems } item deleted": [
         "已刪除${ numberOfItems }項目"
@@ -8375,6 +8513,9 @@
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } 個項目未能從垃圾中被復原"
+      ],
+      "${ numberOfItems } item moved": [
+        "已移動 ${ numberOfItems } 個項目"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 個項目已移動到垃圾桶"
@@ -8867,6 +9008,12 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Only current location: ${ name }": [
+        "只有目前的位置: ${ name }"
+      ],
+      "Select JSON file": [
+        "選擇 JSON 檔案"
       ]
     },
     "Option group label": {
@@ -9007,6 +9154,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
       ],
       "Got it": [
         "瞭解"
@@ -9262,6 +9412,9 @@
       "Email": [
         "電子郵件"
       ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
       "Enter a new file name": [
         "輸入新的檔案名稱"
       ],
@@ -9439,6 +9592,9 @@
     "Provider option": {
       "Gmail": [
         "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ],
       "Microsoft 365": [
         "Microsoft 365"
@@ -10273,6 +10429,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
@@ -10583,6 +10742,12 @@
     "Subtitle": {
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 分享"
+      ],
+      "Your screenshots will appear here": [
+        "您的螢幕擷取畫面會顯示在這裡"
+      ],
+      "Your selfies photos will appear here": [
+        "您的自拍照會顯示在這裡"
       ],
       "Your tagged photos will appear here": [
         "您標記的照片會顯示在這裡"
@@ -10922,6 +11087,9 @@
       "Cancel all transfers?": [
         "取消全部匯款?"
       ],
+      "Cancel all uploads?": [
+        "取消所有上傳?"
+      ],
       "Cancel subscription?": [
         "取消訂購授權?"
       ],
@@ -10930,6 +11098,9 @@
       ],
       "Card verification": [
         "信用卡驗證"
+      ],
+      "Change access to viewer?": [
+        "變更存取權至檢視者?"
       ],
       "Change layout": [
         "變更版面配置"
@@ -11180,6 +11351,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "獲得 ${ CALENDAR_APP_NAME }的完整功能"
       ],
+      "Get mobile and desktop apps": [
+        "取得移動端和桌面應用程式"
+      ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
       ],
@@ -11188,6 +11362,9 @@
       ],
       "Gift": [
         "禮物"
+      ],
+      "Global": [
+        "全域設定"
       ],
       "Groups": [
         "群組"
@@ -11317,6 +11494,15 @@
       ],
       "No screenshots": [
         "無螢幕截圖"
+      ],
+      "No selfies": [
+        "沒有自拍照"
+      ],
+      "No shared albums": [
+        "無共享相簿"
+      ],
+      "No videos": [
+        "沒有任何影片"
       ],
       "Notes": [
         "備註"
@@ -11564,6 +11750,9 @@
       "Type": [
         "類型"
       ],
+      "Unknown user": [
+        "未知的使用者"
+      ],
       "Untitled document ${ date }": [
         "未命名文件 ${ date }"
       ],
@@ -11762,6 +11951,11 @@
     "Unload warning": {
       "Changes you made may not be saved.": [
         "您所作的變更將不會儲存。"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "取得 Drive for Business"
       ]
     },
     "Validation": {
