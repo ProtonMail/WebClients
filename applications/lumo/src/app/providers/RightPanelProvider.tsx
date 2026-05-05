@@ -12,6 +12,9 @@ interface RightPanelContextValue {
     closeOnItemClick: () => void;
     contentEl: HTMLElement | null;
     registerContentEl: (el: HTMLElement | null) => void;
+    title: string | null;
+    actionButton: ReactNode | null;
+    setHeaderContent: (title: string | null, actionButton?: ReactNode | null) => void;
 }
 
 const RightPanelContext = createContext<RightPanelContextValue | null>(null);
@@ -19,12 +22,19 @@ const RightPanelContext = createContext<RightPanelContextValue | null>(null);
 export const RightPanelProvider = ({ children }: { children: ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [contentEl, setContentEl] = useState<HTMLElement | null>(null);
+    const [title, setTitle] = useState<string | null>(null);
+    const [actionButton, setActionButton] = useState<ReactNode | null>(null);
     const { isSmallScreen } = useIsLumoSmallScreen();
 
     const toggle = useCallback(() => setIsOpen((v) => !v), []);
     const open = useCallback(() => setIsOpen(true), []);
     const close = useCallback(() => setIsOpen(false), []);
     const registerContentEl = useCallback((el: HTMLElement | null) => setContentEl(el), []);
+
+    const setHeaderContent = useCallback((newTitle: string | null, newActionButton?: ReactNode | null) => {
+        setTitle(newTitle);
+        setActionButton(newActionButton || null);
+    }, []);
 
     // Context-aware item click handler - only closes on mobile
     const closeOnItemClick = useCallback(() => {
@@ -49,6 +59,9 @@ export const RightPanelProvider = ({ children }: { children: ReactNode }) => {
                 closeOnItemClick,
                 contentEl,
                 registerContentEl,
+                title,
+                actionButton,
+                setHeaderContent,
             }}
         >
             {children}
