@@ -988,14 +988,14 @@
       "Refresh folder contents": [
         "Ordnerinhalte aktualisieren"
       ],
+      "Register here": [
+        "Hier registrieren"
+      ],
       "Report an issue": [
         "Ein Problem melden"
       ],
       "Send message": [
         "Nachricht senden"
-      ],
-      "Share your thoughts": [
-        "Sag uns deine Meinung"
       ],
       "Show safety information": [
         "Sicherheitsinformationen anzeigen"
@@ -1173,6 +1173,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "${ BRAND_NAME } führt eine bezahlte Umfrage zum Thema KI-Assistenten durch. Hast du Interesse? Die Teilnahme dauert nur 2 Minuten. Wenn du ausgewählt wirst, erhältst du £ 80."
+      ],
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
       ],
@@ -1211,9 +1214,6 @@
       ],
       "Switch between light and dark mode": [
         "Wechseln Sie zwischen Hell- und Dunkelmodus"
-      ],
-      "Your experience shapes ${ LUMO_SHORT_APP_NAME }. Tell us what you think.": [
-        "Deine Erfahrungen prägen ${ LUMO_SHORT_APP_NAME }. Sag uns deine Meinung."
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1304,6 +1304,12 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus für unbegrenzte Chats, erweiterten Verlauf, Zugriff auf erweiterte KI-Modelle und mehr."
+      ],
+      "You've reached the maximum of ${ limit } conversations. Delete some to create a new one.": [
+        "Du hast die maximale Anzahl von ${ limit } Unterhaltungen erreicht. Lösche einige, um eine neue zu erstellen."
+      ],
+      "You've reached the maximum of ${ limit } files in this chat. Remove some files before uploading new ones.": [
+        "Du hast die maximale Anzahl von ${ limit } Dateien in diesem Chat erreicht. Lösche einige Dateien, bevor du neue hochlädst."
       ]
     },
     "collider_2025: Error Message": {
@@ -2214,9 +2220,6 @@
       "Generated code": [
         "Generierter Code"
       ],
-      "Got a minute?": [
-        "Hast du kurz Zeit?"
-      ],
       "Guest": [
         "Gast"
       ],
@@ -2279,6 +2282,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "Wir freuen uns auf dein Feedback."
       ],
       "What you can build": [
         "Was du bauen kannst"
