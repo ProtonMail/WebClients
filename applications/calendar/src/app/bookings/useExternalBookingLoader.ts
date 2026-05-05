@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router';
 
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { endOfDay, getUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
@@ -7,7 +8,6 @@ import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKe
 import { useGetUser } from '@proton/account/user/hooks';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';

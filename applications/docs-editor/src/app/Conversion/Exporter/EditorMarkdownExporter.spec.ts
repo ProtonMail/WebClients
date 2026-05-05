@@ -1,6 +1,6 @@
 import type { ExporterRequiredCallbacks } from './EditorExporter'
 import { EditorMarkdownExporter } from './EditorMarkdownExporter'
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 
 describe('EditorMarkdownExporter', () => {
   it('should export plaintext from editor', async () => {

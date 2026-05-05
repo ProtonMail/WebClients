@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
 import { KT_ERROR_TYPE, ktSentryReportError, throwKTError } from '../helpers/utils';

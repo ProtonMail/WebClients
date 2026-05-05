@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import type { Epoch, Proof } from '../../interfaces';

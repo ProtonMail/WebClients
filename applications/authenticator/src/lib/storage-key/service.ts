@@ -1,6 +1,6 @@
 import logger from 'proton-authenticator/lib/logger';
 
-import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { type PubSub, createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 

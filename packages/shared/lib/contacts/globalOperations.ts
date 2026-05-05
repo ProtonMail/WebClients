@@ -1,4 +1,4 @@
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { getContact, updateContact } from '../api/contacts';
 import { CONTACT_CARD_TYPE } from '../constants';

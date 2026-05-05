@@ -1,5 +1,5 @@
-import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
-import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
+import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';

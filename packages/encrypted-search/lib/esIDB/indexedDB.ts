@@ -1,7 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
-import type { ESCiphertext } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import type { ESCiphertext } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 

@@ -1,4 +1,4 @@
-import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 
 import { STORING_OUTCOME } from '../constants';
 import { ciphertextSize, decryptFromDB } from '../esHelpers';

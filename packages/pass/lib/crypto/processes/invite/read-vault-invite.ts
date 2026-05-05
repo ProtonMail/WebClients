@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type KeyRotationKeyPair, PassEncryptionTag } from '@proton/pass/types';
 

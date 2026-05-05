@@ -1,7 +1,7 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { signData as computeHmacSignature, importKey as importHmacKey } from '@protontech/crypto/subtle/hmac.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/encrypt';
 import { generatePassphrase } from '../calendar/crypto/keys/calendarKeys';

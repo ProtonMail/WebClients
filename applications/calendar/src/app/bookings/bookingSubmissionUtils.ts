@@ -1,7 +1,7 @@
 import { fromUnixTime } from 'date-fns';
 
-import { CryptoProxy } from '@proton/crypto';
-import type { SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import type { SessionKey } from '@protontech/crypto';
 import { getMeetingLink } from '@proton/meet';
 import type { SaveMeetingParams } from '@proton/meet/hooks/useSaveMeeting';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

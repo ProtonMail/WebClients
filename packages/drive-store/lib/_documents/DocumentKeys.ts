@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto/lib';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 
 /**
  * Container for document keys.

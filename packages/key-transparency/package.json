@@ -22,8 +22,8 @@
     "dependencies": {
         "@noble/ed25519": "1.7.5",
         "@proton/cross-storage": "workspace:^",
-        "@proton/crypto": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@protontech/crypto": "*",
         "pkijs": "^3.4.0"
     },
     "devDependencies": {
@@ -38,7 +38,7 @@
         "karma-chrome-launcher": "^3.2.0",
         "karma-jasmine": "^5.1.0",
         "karma-webpack": "^5.0.1",
-        "playwright": "^1.58.2",
+        "playwright": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
         "ts-loader": "^9.5.7",
         "typescript": "^6.0.2",
         "webpack": "^5.105.4"

@@ -1,7 +1,6 @@
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
-import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS, MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -17,6 +16,18 @@ import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
 import { updateAttachment } from 'proton-mail/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 import { useMailDispatch } from 'proton-mail/store/hooks';
+
+/**
+ * Get this value as an exact Number (max 53 bits)
+ * Fails if this value is too large
+ * @throws if input is larger than `Number.MAX_SAFE_INTEGER`
+ */
+function bigIntToNumber(x: bigint) {
+    if (x > BigInt(Number.MAX_SAFE_INTEGER)) {
+        throw new Error('Number can only safely store up to 53 bits');
+    }
+    return Number(x);
+}
 
 const enum DOWNLOAD_TYPE {
     PREVIEW = 'PREVIEW',

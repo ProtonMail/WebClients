@@ -9,7 +9,7 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpVerify } from '@proton/shared/lib/srp';
-import { AUTH_VERSION } from '@proton/srp';
+import { AUTH_VERSION } from '@protontech/crypto/srp';
 import noop from '@proton/utils/noop';
 
 import type { AuthActionResponse, AuthCacheResult } from './interface';

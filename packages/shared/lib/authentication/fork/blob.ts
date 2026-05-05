@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { getDecryptedBlob, getDecryptedBlobV3, getEncryptedBlob, getEncryptedBlobV3 } from '../sessionBlobCryptoHelper';
 import type { ForkPayloadVersion } from './constants';

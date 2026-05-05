@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { decryptData, deriveKey, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
+import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@protontech/crypto/srp';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { BASE_PASSWORD_LENGTH } from '../constants';

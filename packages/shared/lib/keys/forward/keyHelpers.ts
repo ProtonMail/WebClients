@@ -1,4 +1,4 @@
-import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@proton/crypto';
+import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@protontech/crypto';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency/shared';
 import type { KTVerifier } from '@proton/key-transparency/helpers';
 

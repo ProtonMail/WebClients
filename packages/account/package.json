@@ -12,7 +12,6 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@proton/crypto": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/recovery-kit": "workspace:^",
@@ -20,6 +19,7 @@
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.11.2",
         "date-fns": "^2.30.0",
         "deep-freeze": "^0.0.1",

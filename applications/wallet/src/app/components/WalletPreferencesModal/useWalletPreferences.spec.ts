@@ -3,7 +3,7 @@ import { act } from 'react';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseAddresses, mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';

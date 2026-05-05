@@ -32,9 +32,9 @@ export const MESSAGE_FLAGS = {
 
 export enum MAIL_VERIFICATION_STATUS {
     NOT_VERIFIED = -1,
-    NOT_SIGNED, // same as @proton/crypto's VERIFICATION_STATUS.NOT_SIGNED
-    SIGNED_AND_VALID, // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_VALID
-    SIGNED_AND_INVALID, // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_INVALID
+    NOT_SIGNED, // same as @protontech/crypto's VERIFICATION_STATUS.NOT_SIGNED
+    SIGNED_AND_VALID, // same as @protontech/crypto's VERIFICATION_STATUS.SIGNED_AND_VALID
+    SIGNED_AND_INVALID, // same as @protontech/crypto's VERIFICATION_STATUS.SIGNED_AND_INVALID
 }
 
 // Protonmail enforces signing outgoing messages since January 1, 2019. It does not sign bulk messages yet

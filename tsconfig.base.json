@@ -2,6 +2,7 @@
     "compilerOptions": {
         "allowJs": true,
         "esModuleInterop": true,
+        "allowImportingTsExtensions": true,
         "forceConsistentCasingInFileNames": true,
         "incremental": true,
         "jsx": "preserve",
@@ -52,7 +53,6 @@
             "@proton/redux-shared-store/*": ["./packages/redux-shared-store/*"],
             "@proton/shared/*": ["./packages/shared/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
-            "@proton/srp/*": ["./packages/srp/*"],
             "@proton/types/*": ["./packages/types/*"],
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],

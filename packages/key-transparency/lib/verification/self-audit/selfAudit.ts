@@ -1,4 +1,4 @@
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import type {
     Api,

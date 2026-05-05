@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';

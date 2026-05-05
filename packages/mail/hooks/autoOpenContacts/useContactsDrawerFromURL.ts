@@ -8,7 +8,7 @@ import type { ContactEditProps } from '@proton/components/containers/contacts/ed
 import type { ContactGroupEditProps } from '@proton/components/containers/contacts/group/ContactGroupEditModal';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { CONTACT_SEARCH_PARAMS, isContactSearchParams } from '@proton/mail/hooks/autoOpenContacts/helper';
 import { useGetContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';

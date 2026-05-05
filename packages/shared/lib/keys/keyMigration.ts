@@ -1,5 +1,5 @@
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import noop from '@proton/utils/noop';
 

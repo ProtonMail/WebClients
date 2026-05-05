@@ -23,10 +23,10 @@
     },
     "dependencies": {
         "@proton/components": "workspace:^",
-        "@proton/crypto": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@protontech/crypto": "*",
         "idb": "^8.0.3",
         "react": "^18.3.1",
         "ttag": "^1.8.12"
@@ -40,7 +40,7 @@
         "eslint": "^9.39.4",
         "eslint-plugin-jasmine": "^4.2.2",
         "jest": "^30.3.0",
-        "playwright": "^1.58.2",
+        "playwright": "patch:playwright@npm%3A1.58.2#~/.yarn/patches/playwright-npm-1.58.2-0c12daad27.patch",
         "ts-jest": "^29.4.9",
         "ts-loader": "^9.5.7",
         "typescript": "^6.0.2",

@@ -1,4 +1,4 @@
-import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';

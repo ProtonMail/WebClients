@@ -1,6 +1,6 @@
 import mimemessage from '@protontech/mimemessage';
 
-import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import type {
     MessageEmbeddedImage,
     MessageImages,

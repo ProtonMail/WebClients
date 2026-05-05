@@ -31,12 +31,12 @@ const getCalendarModelState = (bootstrap: CalendarBootstrap) => {
     return { ...getModelState(bootstrap), loading: false };
 };
 
-jest.mock('@proton/crypto', () => {
+jest.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {},
     };
 });
-jest.mock('@proton/srp', () => {});
+jest.mock('@protontech/crypto/srp', () => {});
 
 const reducer = combineReducers({
     ...userReducer,

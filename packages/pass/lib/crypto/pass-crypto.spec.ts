@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { parseGroup } from '@proton/pass/lib/groups/groups.parsers';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword, getSrp as srpModuleGetSrp } from '@proton/srp/lib';
+import { computeKeyPassword, getSrp as srpModuleGetSrp } from '@protontech/crypto/srp';
 
 export type SRPVerifier = {
     modulusId: string;

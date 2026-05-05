@@ -1,5 +1,5 @@
 import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import type { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

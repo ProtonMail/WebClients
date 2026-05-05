@@ -2,7 +2,7 @@ import { act } from 'react';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
 import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';

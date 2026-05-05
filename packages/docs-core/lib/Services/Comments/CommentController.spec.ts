@@ -2,7 +2,7 @@ import { CommentController } from './CommentController'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { Result, type InternalEventBusInterface } from '@proton/docs-shared'
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto'
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { EncryptComment } from '../../UseCase/EncryptComment'

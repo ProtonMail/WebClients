@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import type { MIME_TYPES } from '../../constants';
 import { hasBitBigInt } from '../../helpers/bitset';

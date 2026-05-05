@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { normalizeKeyword, testKeywords } from '@proton/encrypted-search/esHelpers';
 import { readAllLastEvents } from '@proton/encrypted-search/esIDB';
 import type {

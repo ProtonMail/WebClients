@@ -1,7 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 import { addApiMock } from '../../../helpers/test/api';

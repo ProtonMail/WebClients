@@ -1,7 +1,0 @@
-{
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-        "types": ["global-types-monorepo"],
-        "moduleResolution": "Bundler"
-    }
-}

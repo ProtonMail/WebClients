@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { DRIVE_SIGNATURE_CONTEXT } from '@proton/shared/lib/drive/constants';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 

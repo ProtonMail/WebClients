@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import omit from 'lodash/omit';
 
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 

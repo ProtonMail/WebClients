@@ -1,7 +1,6 @@
-// @ts-ignore missing `toStream` TS definitions
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 

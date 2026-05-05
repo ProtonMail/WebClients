@@ -1,4 +1,4 @@
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { HOUR } from '@proton/shared/lib/constants';
 
 import { KT_DOMAINS } from '../constants/constants';

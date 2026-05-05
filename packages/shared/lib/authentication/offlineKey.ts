@@ -1,4 +1,4 @@
-import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto';
+import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
 
 import { captureMessage } from '../helpers/sentry';
 

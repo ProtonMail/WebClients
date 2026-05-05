@@ -1,13 +1,13 @@
 import type { IDBPDatabase } from 'idb';
 
-import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
 import {
     type ESCiphertext,
     type GeneratedIndexKey,
     type IndexKey,
     generateIndexKey,
     importIndexKey,
-} from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+} from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';

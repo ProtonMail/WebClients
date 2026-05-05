@@ -1,5 +1,5 @@
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy, canKeyEncryptAndDecrypt } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy, canKeyEncryptAndDecrypt } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 

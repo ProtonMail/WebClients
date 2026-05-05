@@ -6,7 +6,7 @@ import { getKTUserContext } from '@proton/account/kt/actions';
 import { userKeysThunk } from '@proton/account/userKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import { CryptoProxy, serverTime } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@protontech/crypto';
 import {
     KT_ERROR_TYPE,
     StaleEpochError,

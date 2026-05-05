@@ -1,5 +1,5 @@
-import type { ContextSigningOptions, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { ContextSigningOptions, PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 export const decryptKeyPacket = async ({
     armoredMessage,

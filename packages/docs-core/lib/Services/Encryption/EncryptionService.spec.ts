@@ -1,22 +1,22 @@
-import { CryptoProxy } from '@proton/crypto'
-import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants'
+import { CryptoProxy } from '@protontech/crypto'
+import { VERIFICATION_STATUS } from '@protontech/crypto/constants'
 import { SignedPlaintextContent } from '@proton/docs-proto'
 import { EncryptionService } from './EncryptionService'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
-import * as aesGcm from '@proton/crypto/lib/subtle/aesGcm'
+import * as aesGcm from '@protontech/crypto/subtle/aesGcm.ts'
 import { EncryptionContext } from './EncryptionContext'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { DriveCompat } from '@proton/drive-store/lib'
 
-jest.mock('@proton/crypto', () => ({
+jest.mock('@protontech/crypto', () => ({
   CryptoProxy: {
     signMessage: jest.fn(),
     verifyMessage: jest.fn(),
   },
 }))
 
-jest.mock('@proton/crypto/lib/subtle/aesGcm', () => ({
+jest.mock('@protontech/crypto/subtle/aesGcm.ts', () => ({
   encryptDataWith16ByteIV: jest.fn(),
   decryptData: jest.fn(),
 }))

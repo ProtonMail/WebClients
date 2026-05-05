@@ -10,6 +10,7 @@ const jestConfig: JestConfigWithTsJest = {
             },
         ],
     },
+    transformIgnorePatterns: ['node_modules/(?!(@protontech/crypto)/)'],
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: 'jsdom',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

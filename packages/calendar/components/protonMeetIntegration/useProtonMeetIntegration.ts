@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 import { getMeetingLink, useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
 import {
     decryptSessionKey,

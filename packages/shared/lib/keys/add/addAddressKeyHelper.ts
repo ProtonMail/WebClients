@@ -1,4 +1,4 @@
-import { toPublicKeyReference } from '@proton/crypto';
+import { toPublicKeyReference } from '@protontech/crypto';
 
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
