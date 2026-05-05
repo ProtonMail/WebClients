@@ -175,6 +175,8 @@ function getV1DashboardSections(
 
 const getRecoverySettings = ({
     isDataRecoveryAvailable,
+    isMnemonicAvailable,
+    isRecoveryFileAvailable,
     isSessionRecoveryAvailable,
     isEmergencyAccessAvailable,
     isRecoveryContactsAvailable,
@@ -184,6 +186,8 @@ const getRecoverySettings = ({
 }: {
     isAccountRecoveryAvailable: boolean;
     isDataRecoveryAvailable: boolean;
+    isMnemonicAvailable: boolean;
+    isRecoveryFileAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     isEmergencyAccessAvailable: boolean;
     isRecoveryContactsAvailable: boolean;
@@ -220,14 +224,14 @@ const getRecoverySettings = ({
                     id: 'device-backup',
                     text: c('Title').t`Device data backup`,
                     to: '/device-backup',
-                    available: isDataRecoveryAvailable,
+                    available: isRecoveryFileAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
                 backupFile: {
                     id: 'backup-file',
                     text: c('Title').t`Recovery file`,
                     to: '/backup-file',
-                    available: isDataRecoveryAvailable,
+                    available: isRecoveryFileAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
                 recoveryContacts: {
@@ -248,7 +252,7 @@ const getRecoverySettings = ({
                     id: 'phrase',
                     text: c('Title').t`Recovery phrase`,
                     to: '/phrase',
-                    available: isDataRecoveryAvailable,
+                    available: isMnemonicAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
                 signedInReset: {
@@ -339,6 +343,8 @@ export const getAccountAppRoutes = ({
     isRecoveryContactsEnabled,
     subscription,
     isDataRecoveryAvailable,
+    isMnemonicAvailable,
+    isRecoveryFileAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
     organization,
@@ -365,6 +371,8 @@ export const getAccountAppRoutes = ({
     addresses?: Address[];
     subscription: MaybeFreeSubscription;
     isDataRecoveryAvailable: boolean;
+    isMnemonicAvailable: boolean;
+    isRecoveryFileAvailable: boolean;
     isRecoveryContactsEnabled: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
@@ -452,6 +460,8 @@ export const getAccountAppRoutes = ({
         isRecoverySettingsRedesignEnabled,
         isSessionRecoveryAvailable,
         isDataRecoveryAvailable,
+        isMnemonicAvailable,
+        isRecoveryFileAvailable,
         isEmergencyAccessAvailable,
         isRecoveryContactsAvailable,
     });

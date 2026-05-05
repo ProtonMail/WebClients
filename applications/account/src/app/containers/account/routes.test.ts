@@ -25,6 +25,8 @@ function buildDefaultParams(overrides?: Record<string, any>) {
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
         isDataRecoveryAvailable: false,
+        isRecoveryFileAvailable: false,
+        isMnemonicAvailable: false,
         isRecoveryContactsEnabled: false,
         isSessionRecoveryAvailable: false,
         isReferralProgramEnabled: false,
