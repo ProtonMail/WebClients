@@ -1354,6 +1354,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "A verificação de desbloqueio do computador já está em andamento."
+      ],
+      "Biometric authentication failed.": [
+        "A autenticação biométrica falhou."
+      ],
+      "Biometric lock credentials do not match.": [
+        "As credenciais do bloqueio biométrico não correspondem."
+      ],
+      "Biometric lock credentials not found.": [
+        "As credenciais do bloqueio biométrico não foi encontrado"
+      ],
+      "Biometric lock is not configured.": [
+        "O bloqueio biométrico não está configurado"
+      ],
+      "Biometric lock setup failed.": [
+        "Falha na configuração do bloqueio biométrico"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Falha na comunicação criptografado com o aplicativo para computador do ${ PASS_APP_NAME }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não respondem a tempo"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } está iniciado a sessão com uma conta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } deve estar iniciado a sessão."
+      ],
+      "This domain is already managed by your organization": [
+        "Esse domínio já é gerenciada pela sua organização"
+      ],
+      "Unknown error.": [
+        "Erro desconhecido."
       ]
     },
     "Error message": {
@@ -2050,7 +2086,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2759,6 +2796,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
+      "Logging you out...": [
+        "Desconectando você..."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Para configurar atalhos, acesse about:addons no Firefox e selecione \"Gerenciar atalhos de extensões \""
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloqueie o ${ PASS_APP_NAME } para acessar sua chave de acesso"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloqueie o ${ PASS_APP_NAME } para salvar esta chave de acesso"
       ]
     },
     "Keyboard key": {
@@ -3148,7 +3200,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"

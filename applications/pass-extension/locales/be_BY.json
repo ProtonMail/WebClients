@@ -1255,7 +1255,7 @@
         "Збой абнаўлення налад"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некаторыя сховішчы больш недаступны з прычыны таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
@@ -1364,6 +1364,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Адбываецца праверка, ці разблакіраваны працоўны стол."
+      ],
+      "Biometric authentication failed.": [
+        "Збой аўтэнтыфікацыі біяметрыі."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
+      ],
+      "Biometric lock credentials not found.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не знойдзены."
+      ],
+      "Biometric lock is not configured.": [
+        "Біяметрычная блакіроўка не сканфігурыравана."
+      ],
+      "Biometric lock setup failed.": [
+        "Збой наладкі біяметрычнай блакіроўкі"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Збой зашыфраваных зносін з праграмай для камп'ютара ${ PASS_APP_NAME }."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } своечасова не адказвае."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
+      ],
+      "This domain is already managed by your organization": [
+        "Гэты дамен ужо кіруецца вашай арганізацыяй"
+      ],
+      "Unknown error.": [
+        "Невядомая памылка."
       ]
     },
     "Error message": {
@@ -2828,6 +2864,21 @@
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
         "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
+      ],
+      "Logging you out...": [
+        "Адбываецца выхад..."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Каб сканфігурыраваць спалучэнні клавіш, перайдзіце па адрасе about:addons у Firefox і выберыце \"Кіраванне спалучэннямі клавіш пашырэння\""
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб атрымаць доступ да ключа доступу"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Разблакіруйце ${ PASS_APP_NAME }, каб захаваць гэты ключ доступу"
       ]
     },
     "Keyboard key": {
@@ -4858,7 +4909,7 @@
         "Аднавіць гэту версію?"
       ],
       "Resume monitoring?": [
-        "Узнавіць назіранне?"
+        "Узнавіць маніторынг?"
       ],
       "Reused ${ count } time": [
         "Паўторна выкарыстаны ${ count } раз",

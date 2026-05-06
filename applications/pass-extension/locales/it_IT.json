@@ -1339,6 +1339,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "Unknown error.": [
+        "Errore sconosciuto."
       ]
     },
     "Error message": {
@@ -2020,7 +2023,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2708,6 +2712,9 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Per configurare le scorciatoie, vai su about:addons in Firefox e seleziona \"Gestisci scorciatoie estensioni\""
+      ],
+      "Logging you out...": [
+        "Disconnessione in corso"
       ]
     },
     "Keyboard key": {

@@ -1357,6 +1357,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
+      ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
+      ],
+      "This domain is already managed by your organization": [
+        "Aquest domini ja el gestiona la vostra organització"
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ]
     },
     "Error message": {
@@ -2053,7 +2089,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2765,6 +2802,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Per configurar dreceres, aneu a about:addons a Firefox i seleccioneu \"Gestionar les dreceres de les extensions\""
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+      ],
+      "Logging you out...": [
+        "S'està tancant la sessió..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquegeu ${ PASS_APP_NAME } per accedir a les vostres claus d'accés"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquegeu ${ PASS_APP_NAME } per desar aquesta clau d'accés"
       ]
     },
     "Keyboard key": {
@@ -3004,7 +3053,7 @@
         "Targetes"
       ],
       "Catch-All": [
-        "Catch-all"
+        "Capturar-ho tot"
       ],
       "Checkbox": [
         "Casella de selecció"

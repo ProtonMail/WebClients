@@ -1362,6 +1362,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "O verificare a deblocării desktopului este deja în curs de desfășurare."
+      ],
+      "Biometric authentication failed.": [
+        "Autentificarea biometrică a eșuat."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Datele de blocare biometrice nu se potrivesc."
+      ],
+      "Biometric lock credentials not found.": [
+        "Datele de conectare biometrică nu au fost găsite."
+      ],
+      "Biometric lock is not configured.": [
+        "Blocarea biometrică nu este configurată."
+      ],
+      "Biometric lock setup failed.": [
+        "Setarea blocării biometrice a eșuat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Comunicarea criptată cu aplicația desktop ${ PASS_APP_NAME } a eșuat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplicația desktop ${ PASS_APP_NAME } trebuie să fie conectată."
+      ],
+      "This domain is already managed by your organization": [
+        "Acest domeniu este deja gestionat de către organizație."
+      ],
+      "Unknown error.": [
+        "Eroare necunoscută."
       ]
     },
     "Error message": {
@@ -2800,6 +2836,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Pentru a configura scurtături, accesați about:addons în Firefox și selectați „Gestionare scurtături extensie\""
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
+      "Logging you out...": [
+        "Se deconectează…"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Deblocați ${ PASS_APP_NAME } pentru a vă accesa cheile de acces."
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Deblocați ${ PASS_APP_NAME } pentru a salva această cheie de acces."
       ]
     },
     "Keyboard key": {

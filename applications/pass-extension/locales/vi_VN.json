@@ -1331,6 +1331,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Mã PIN đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
+      ],
+      "Unknown error.": [
+        "Lỗi không xác định."
       ]
     },
     "Error message": {
@@ -1984,7 +1987,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -2648,6 +2651,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức yêu cầu phải bảo mật truy cập tới ${ PASS_APP_NAME }"
+      ],
+      "Logging you out...": [
+        "Đang đăng xuất bạn..."
       ]
     },
     "Keyboard key": {

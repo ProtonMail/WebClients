@@ -1337,6 +1337,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
+      ],
+      "Unknown error.": [
+        "不明なエラーが発生しました。"
       ]
     },
     "Error message": {
@@ -1990,7 +1993,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2654,6 +2657,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "Logging you out...": [
+        "ログアウト中..."
       ]
     },
     "Keyboard key": {

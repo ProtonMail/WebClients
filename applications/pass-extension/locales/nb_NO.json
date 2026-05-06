@@ -1357,6 +1357,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "En opplåsingssjekk for skrivebordet pågår allerede."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric lock credentials do not match.": [
+        "De biometriske låselegitimasjonene samsvarer ikke."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrisk låslegitimasjon ikke funnet."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrisk lås er ikke konfigurert"
+      ],
+      "Biometric lock setup failed.": [
+        "Konfigurasjonen av den biometriske låsen mislyktes."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Kryptert kommunikasjon med skrivebordsappen ${ PASS_APP_NAME } mislyktes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarte ikke i tide."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er logget på med en annen konto."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } skal være logget på."
+      ],
+      "This domain is already managed by your organization": [
+        "Dette domenet administreres allerede av organisasjonen din"
+      ],
+      "Unknown error.": [
+        "Ukjent feil."
       ]
     },
     "Error message": {
@@ -2381,7 +2417,7 @@
         "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -2763,6 +2799,21 @@
       "Moving an item to another vault will erase its secure links.": [
         "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
         "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
+      ],
+      "Logging you out...": [
+        "Logger deg av..."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "For å konfigurere snarveier, gå til about:addons i Firefox og velg \"Administrer utvidelsessnarveier\"."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Lås opp ${ PASS_APP_NAME } for å få tilgang til tilgangsnøklene dine"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Lås opp ${ PASS_APP_NAME } for å lagre denne tilgangsnøkkelen"
       ]
     },
     "Keyboard key": {
