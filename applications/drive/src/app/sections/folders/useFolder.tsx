@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
@@ -22,25 +23,34 @@ export function useFolder() {
     const isSheetsEnabled = useFlagsDriveSheet();
     const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
-    const handleFolderError = useCallback((error?: Error) => {
-        if (!error) {
-            return;
-        }
-        const { setError } = useFolderStore.getState();
+    const handleFolderError = useCallback(
+        (error?: Error) => {
+            if (!error) {
+                return;
+            }
 
-        const errorMessage = error
-            ? ('message' in error ? error.message : error) || 'Unknown node error'
-            : 'Unknown node error';
+            if ('code' in error && error.code === API_CUSTOM_ERROR_CODES.INVALID_ID) {
+                createNotification({ type: 'error', text: c('Error').t`Folder not found` });
+                return;
+            }
 
-        const enrichedError = new EnrichedError(errorMessage, {
-            tags: { component: 'drive-sdk' },
-            extra: { originalError: error },
-        });
+            const { setError } = useFolderStore.getState();
 
-        handleSdkError(error);
-        setError(enrichedError);
-        //TODO: Implement better way of handling error (Retry capability for ex)
-    }, []);
+            const errorMessage = error
+                ? ('message' in error ? error.message : error) || 'Unknown node error'
+                : 'Unknown node error';
+
+            const enrichedError = new EnrichedError(errorMessage, {
+                tags: { component: 'drive-sdk' },
+                extra: { originalError: error },
+            });
+
+            handleSdkError(error);
+            setError(enrichedError);
+            //TODO: Implement better way of handling error (Retry capability for ex)
+        },
+        [createNotification]
+    );
 
     const load = useCallback(
         // TODO: after FileBrowser migration, this params can be passed in the hook main function

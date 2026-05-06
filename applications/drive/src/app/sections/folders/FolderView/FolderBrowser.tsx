@@ -56,8 +56,7 @@ export function FolderBrowser({
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const contextMenu = useContextMenuStore();
     const { viewportWidth } = useActiveBreakpoint();
-
-    const { navigateToLink } = useDriveNavigation();
+    const { navigateToLink, navigateToRoot } = useDriveNavigation();
 
     const { permissions, isLoading, folder, hasEverLoaded, sortField, sortDirection } = useFolderStore(
         useShallow((state) => ({
@@ -195,6 +194,7 @@ export function FolderBrowser({
     }, []);
 
     const isEmpty = hasEverLoaded && !isLoading && !sortedList.length;
+    const isNotFound = hasEverLoaded && !isLoading && !folder;
 
     const uploadInputs = (
         <>
@@ -212,6 +212,15 @@ export function FolderBrowser({
                 onChange={uploadFolder.handleFolderChange}
             />
         </>
+    );
+
+    useEffect(
+        function handleFolderNotFound() {
+            if (isNotFound) {
+                navigateToRoot();
+            }
+        },
+        [isNotFound, navigateToRoot]
     );
 
     if (isEmpty) {
