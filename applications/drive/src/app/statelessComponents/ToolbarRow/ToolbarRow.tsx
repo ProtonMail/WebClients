@@ -12,7 +12,7 @@ interface Props {
     withPadding?: boolean;
 }
 
-const ToolbarRow = ({ titleArea, toolbar, className, withBorder = true, withPadding = true }: Props) => {
+export const ToolbarRow = ({ titleArea, toolbar, className, withBorder = true, withPadding = true }: Props) => {
     return (
         <div
             className={clsx(
@@ -28,5 +28,3 @@ const ToolbarRow = ({ titleArea, toolbar, className, withBorder = true, withPadd
         </div>
     );
 };
-
-export default ToolbarRow;

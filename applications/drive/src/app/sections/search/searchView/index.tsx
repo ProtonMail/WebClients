@@ -5,8 +5,6 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components/index';
 
-import { FileBrowserStateProvider } from '../../../components/FileBrowser';
-import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
@@ -16,6 +14,7 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../../statelessComponents/DriveExplorer/types';
+import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { EnableSearchView } from './EnableSearchView';
 import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchContextMenu } from './SearchContextMenu';
@@ -188,7 +187,7 @@ export const SearchView = () => {
     const isDriveExplorerLoading = isSearching || loading;
 
     return (
-        <FileBrowserStateProvider itemIds={sortedItemUids}>
+        <>
             <ToolbarRow
                 titleArea={<SearchResultTitle loading={isDriveExplorerLoading} resultCount={sortedItemUids.length} />}
                 toolbar={<SearchResultViewToolbar uids={[...selectedItemIds]} />}
@@ -220,6 +219,6 @@ export const SearchView = () => {
                 />
                 {previewModal}
             </div>
-        </FileBrowserStateProvider>
+        </>
     );
 };
