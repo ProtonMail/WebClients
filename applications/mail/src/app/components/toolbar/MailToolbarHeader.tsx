@@ -77,7 +77,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                     <div
                         className={clsx('flex items-center toolbar-inner gap-2', !actions.selectedIDs.length && 'pl-2')}
                     >
-                        <MoveBackButton />
+                        {elementID && <MoveBackButton />}
                         {!isInDeletedFolder && (
                             <>
                                 <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
