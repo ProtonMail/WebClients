@@ -73,7 +73,7 @@
   --focus-ring: rgba(109, 74, 255, 0.3);
   --border-norm: #4a4658;
   --border-weak: #343140;
-  --background-norm: #16141c;
+  --background-norm: #141414;
   --background-weak: #292733;
   --background-strong: #3f3b4c;
   --background-invert: white;
@@ -90,6 +90,7 @@
   --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(38 42 51 / 0.48);
+  --background-main-canvas: #0b0b0b;
   --interaction-secondary: #e57031;
   --interaction-secondary-hover: #f97316;
   --interaction-secondary-active: #fb923c;
@@ -99,6 +100,8 @@
   --link-norm: #9880ff;
   --link-hover: #a898ed;
   --link-active: #bbabff;
+  --composer-glow-shadow: var(--background-norm);
+  --composer-glow-border: var(--border-norm);
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
   --optional-upgrade-color-1: #ffac2e;
