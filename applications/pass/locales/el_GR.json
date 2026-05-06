@@ -752,6 +752,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ]
     },
     "Browser": {
@@ -1288,6 +1291,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ένας έλεγχος ξεκλειδώματος επιφάνειας εργασίας είναι ήδη σε εξέλιξη."
+      ],
+      "Biometric authentication failed.": [
+        "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δεν ταιριάζουν."
+      ],
+      "Biometric lock credentials not found.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δε βρέθηκαν."
+      ],
+      "Biometric lock is not configured.": [
+        "Το βιομετρικό κλείδωμα δεν έχει ρυθμιστεί."
+      ],
+      "Biometric lock setup failed.": [
+        "Η ρύθμιση του βιομετρικού κλειδώματος απέτυχε."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Η κρυπτογραφημένη επικοινωνία με την εφαρμογή επιτραπέζιου υπολογιστή ${ PASS_APP_NAME } απέτυχε."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Η επιτραπέζια εφαρμογή ${ PASS_APP_NAME } δεν ανταποκρίθηκε εγκαίρως."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν είναι εγκατεστημένη."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
+      ],
+      "Unknown error.": [
+        "Άγνωστο σφάλμα."
       ]
     },
     "Error message": {
@@ -2572,6 +2617,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ]
     },
     "Keyboard key": {
@@ -5045,6 +5097,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
       ]
     }
   }

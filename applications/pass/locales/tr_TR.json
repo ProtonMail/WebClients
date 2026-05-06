@@ -752,6 +752,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Don't show this again": [
+        "Bunu bir daha gösterme"
       ]
     },
     "Browser": {
@@ -1288,6 +1291,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Masaüstü kilit açma kontrolü zaten devam ediyor."
+      ],
+      "Biometric authentication failed.": [
+        "Biyometrik kimlik doğrulanamadı."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri bulunamadı."
+      ],
+      "Biometric lock is not configured.": [
+        "Biyometrik kilit yapılandırılmamış."
+      ],
+      "Biometric lock setup failed.": [
+        "Biyometrik kilit kurulamadı."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } bilgisayar uygulamasıyla şifrelenmiş iletişim kurulamadı."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması zamanında yanıt vermedi."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kurulmamış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } bilgisayar uygulamasında başka bir hesapla oturum açılmış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } bilgisayar uygulamasında oturum açılmış olmalıdır."
+      ],
+      "Unknown error.": [
+        "Bilinmeyen bir sorun çıktı."
       ]
     },
     "Error message": {
@@ -1929,7 +1974,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2575,6 +2621,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
       ]
     },
     "Keyboard key": {
@@ -5048,6 +5097,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } tarifesini edinin"
       ]
     }
   }

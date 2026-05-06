@@ -1288,6 +1288,36 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometriskt lås är inte konfigurerat."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisk låsinställning misslyckades."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypterad kommunikation med ${ PASS_APP_NAME }-appen för stationär dator misslyckades."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarade inte i tid."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inte installerad."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
+      "Unknown error.": [
+        "Okänt fel."
       ]
     },
     "Error message": {
@@ -2563,6 +2593,13 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ]
     },
     "Keyboard key": {
@@ -5033,6 +5070,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
       ]
     }
   }
