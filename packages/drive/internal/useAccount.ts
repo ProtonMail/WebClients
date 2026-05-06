@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import { CryptoProxy } from '@protontech/crypto';
 import type { ProtonDriveAccount, ProtonDriveAccountAddress } from '@protontech/drive-sdk';
 import type { PublicKey } from '@protontech/drive-sdk/dist/crypto';
 
@@ -7,8 +8,6 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { PublicKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -21,8 +20,7 @@ export function useAccount(): ProtonDriveAccount {
     // This is using AuthenticationProvider, it should be included in every app already
     // TODO: Check if we can improve that, probably we can pass authentication through the init of drive and then instanciate it here
     const authentication = useAuthentication();
-
-    const cachedPublicKeys = useRef(new Map<string, PublicKeyReference[]>());
+    const getPublicKeysPromises = useRef(new Map<string, Promise<PublicKey[]>>());
 
     const getOwnPrimaryAddress = async (): Promise<ProtonDriveAccountAddress> => {
         const addresses = await getAddresses();
@@ -86,6 +84,11 @@ export function useAccount(): ProtonDriveAccount {
             return [];
         }
 
+        const existing = getPublicKeysPromises.current.get(email);
+        if (!forceRefresh && existing) {
+            return existing;
+        }
+
         // If the address is own address, use the keys from that directly
         // as that is already imported in the cache.
         // Except if the address is disabled, in which case we need to provide
@@ -100,55 +103,55 @@ export function useAccount(): ProtonDriveAccount {
         // Thus we need to provide both. The disabled address keys are ordered
         // at the end of the array to have lower priority (so the second case
         // works), but still present (so the first case works).
-        let disabledKeys: PublicKey[] = [];
-        try {
-            const address = await getOwnAddress(email);
-            const keys = address.keys.map(({ key }) => key);
-            if (!address.isDisabled) {
-                return keys;
-            } else {
+        const promise = (async (): Promise<PublicKey[]> => {
+            let disabledKeys: PublicKey[] = [];
+            try {
+                const address = await getOwnAddress(email);
+                const keys = address.keys.map(({ key }) => key);
+                if (!address.isDisabled) {
+                    return keys;
+                }
                 disabledKeys = keys;
-            }
-        } catch {}
+            } catch {}
 
-        if (!forceRefresh) {
-            const cachedKeys = cachedPublicKeys.current.get(email);
-            if (cachedKeys !== undefined) {
-                return [...cachedKeys, ...disabledKeys];
-            }
-        }
+            const response = await api<{
+                Address: { Keys: { PublicKey: string }[] };
+                Unverified?: { Keys: { PublicKey: string }[] };
+            }>({
+                ...getAllPublicKeys({
+                    Email: email,
+                    InternalOnly: 1,
+                }),
+                silence: [
+                    API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING,
+                    API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL,
+                ],
+            }).catch((e) => {
+                // We should not failed on missing address
+                if (
+                    e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING ||
+                    e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL
+                ) {
+                    return { Address: { Keys: [] }, Unverified: undefined };
+                }
+                throw e;
+            });
 
-        const response = await api<{
-            Address: { Keys: { PublicKey: string }[] };
-            Unverified?: { Keys: { PublicKey: string }[] };
-        }>({
-            ...getAllPublicKeys({
-                Email: email,
-                InternalOnly: 1,
-            }),
-            silence: [API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING, API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL],
-        }).catch((e) => {
-            // We should not failed on missing address
-            if (
-                e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING ||
-                e?.data?.Code === API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL
-            ) {
-                return { Address: { Keys: [] }, Unverified: undefined };
-            }
-            throw e;
-        });
+            const keys =
+                response.Address.Keys.length === 0 && response.Unverified
+                    ? response.Unverified.Keys
+                    : response.Address.Keys;
+            const publicKeys = await Promise.all(
+                keys.map((key) => CryptoProxy.importPublicKey({ armoredKey: key.PublicKey }))
+            );
 
-        const keys =
-            response.Address.Keys.length === 0 && response.Unverified
-                ? response.Unverified.Keys
-                : response.Address.Keys;
-        const publicKeys = await Promise.all(
-            keys.map((key) => CryptoProxy.importPublicKey({ armoredKey: key.PublicKey }))
-        );
+            return [...publicKeys, ...disabledKeys];
+        })();
 
-        cachedPublicKeys.current.set(email, publicKeys);
+        getPublicKeysPromises.current.set(email, promise);
+        promise.catch(() => getPublicKeysPromises.current.delete(email));
 
-        return [...publicKeys, ...disabledKeys];
+        return promise;
     };
 
     const hasProtonAccount = async (email: string): Promise<boolean> => {
