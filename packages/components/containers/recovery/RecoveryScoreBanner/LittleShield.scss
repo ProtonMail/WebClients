@@ -1,0 +1,29 @@
+.recovery-score-little-shield {
+	--recovery-score-little-shield-start: color-mix(in srgb, var(--recovery-score-little-shield-accent) 38%, white);
+	--recovery-score-little-shield-end: var(--recovery-score-little-shield-accent);
+
+	[data-theme-mode='dark'] & {
+		--recovery-score-little-shield-start: color-mix(in srgb, var(--recovery-score-little-shield-accent) 50%, white);
+		--recovery-score-little-shield-end: color-mix(
+			in srgb,
+			var(--recovery-score-little-shield-accent) 80%,
+			var(--background-norm)
+		);
+	}
+
+	&--color-success {
+		--recovery-score-little-shield-accent: var(--signal-success);
+	}
+
+	&--color-warning {
+		--recovery-score-little-shield-accent: var(--signal-warning);
+	}
+
+	&--color-info {
+		--recovery-score-little-shield-accent: var(--signal-info);
+	}
+
+	&--color-danger {
+		--recovery-score-little-shield-accent: var(--signal-danger);
+	}
+}

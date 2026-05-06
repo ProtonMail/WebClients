@@ -25,9 +25,14 @@ export interface ViewAccessOutgoingEmergencyContactModalProps extends Omit<
     'children' | 'buttons' | 'onSubmit'
 > {
     value: EnrichedOutgoingDelegatedAccess;
+    hasKeysToReactivate: boolean | null;
 }
 
-export const ViewOutgoingEmergencyContactModal = ({ value, ...rest }: ViewAccessOutgoingEmergencyContactModalProps) => {
+export const ViewOutgoingEmergencyContactModal = ({
+    value,
+    hasKeysToReactivate,
+    ...rest
+}: ViewAccessOutgoingEmergencyContactModalProps) => {
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
@@ -39,7 +44,7 @@ export const ViewOutgoingEmergencyContactModal = ({ value, ...rest }: ViewAccess
         getFormattedAccessibleAtDate(value.parsedOutgoingDelegatedAccess.accessibleAtDate) || '';
 
     const now = Date.now();
-    const meta = getMetaOutgoingDelegatedAccess({ now, value, userContext: { hasInactiveKeys: null } });
+    const meta = getMetaOutgoingDelegatedAccess({ now, value, hasKeysToReactivate });
     const days = meta.accessibleAtTimeDiff !== null ? getDaysFromMilliseconds(meta.accessibleAtTimeDiff) : 0;
 
     const user = (

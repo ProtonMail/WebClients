@@ -84,13 +84,11 @@ export const getMetaOutgoingDelegatedAccess = ({
     value: {
         parsedOutgoingDelegatedAccess: { isDisabled, accessibleAtDate },
     },
-    userContext,
+    hasKeysToReactivate,
 }: {
     now: number;
     value: ReturnType<typeof getEnrichedOutgoingDelegatedAccess>;
-    userContext: {
-        hasInactiveKeys: boolean | null;
-    };
+    hasKeysToReactivate: boolean | null;
 }) => {
     const canRequestAccess = accessibleAtDate === null;
     const accessibleAt = accessibleAtDate !== null ? accessibleAtDate.getTime() : null;
@@ -105,8 +103,8 @@ export const getMetaOutgoingDelegatedAccess = ({
         hasRequestedAccess,
         canLogin: !isDisabled && canLogin,
         canRequestAccess: !isDisabled && canRequestAccess,
-        canRecoverStep1: getCanOutgoingDelegatedAccessRecoverStep1(value) && userContext?.hasInactiveKeys === true,
-        canRecoverStep2: getCanOutgoingDelegatedAccessRecoverStep2(value) && userContext?.hasInactiveKeys === true,
+        canRecoverStep1: getCanOutgoingDelegatedAccessRecoverStep1(value) && hasKeysToReactivate === true,
+        canRecoverStep2: getCanOutgoingDelegatedAccessRecoverStep2(value) && hasKeysToReactivate === true,
         canDelete: true,
         canChangeWaitTime: true,
         canGrantAccess: hasRequestedAccess,

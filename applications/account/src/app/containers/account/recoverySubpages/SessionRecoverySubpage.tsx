@@ -5,7 +5,7 @@ import {
     selectAvailableRecoveryMethods,
     selectSessionRecoveryData,
 } from '@proton/account/recovery/sessionRecoverySelectors';
-import { userSettingsThunk } from '@proton/account/userSettings';
+import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
@@ -21,15 +21,12 @@ import { SettingsToggleRow } from '@proton/components/containers/account/Setting
 import InitiateSessionRecoveryModal from '@proton/components/containers/account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -40,7 +37,6 @@ import SentinelWarning from './shared/SentinelWarning';
 export const SessionRecoverySubpage = () => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const api = useApi();
     const dispatch = useDispatch();
 
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
@@ -65,8 +61,7 @@ export const SessionRecoverySubpage = () => {
 
     const handleEnableSessionRecoveryToggle = async () => {
         try {
-            await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            await dispatch(toggleSignedInReset({ value: true }));
             sendRecoverySettingEnabled({ setting: 'session_recovery' });
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',
