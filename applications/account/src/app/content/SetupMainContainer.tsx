@@ -7,7 +7,7 @@ import KeyTransparencyManager from '@proton/components/containers/keyTransparenc
 
 import PartnerClaimContainer from '../containers/PartnerClaimContainer';
 import SetupAddressContainer from '../containers/SetupAddressContainer';
-import SecurityCheckupContainer from '../containers/securityCheckup/SecurityCheckupContainer';
+import { SecurityCheckupSwitch } from '../containers/securityCheckup/SecurityCheckupSwitch';
 import MainContainer from './MainContainer';
 import { getRoutesWithoutSlug } from './routesWithoutSlug';
 
@@ -22,7 +22,7 @@ const SetupMainContainer: FunctionComponent = () => {
                             <SetupAddressContainer />
                         </Route>
                         <Route path={routes.securityCheckup}>
-                            <SecurityCheckupContainer />
+                            <SecurityCheckupSwitch />
                         </Route>
                         <Route path={routes.legacySecurityCheckup}>
                             <Redirect to={`${routes.securityCheckup}${location.search}`} />

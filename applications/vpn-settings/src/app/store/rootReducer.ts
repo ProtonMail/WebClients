@@ -3,7 +3,6 @@ import { combineReducers } from 'redux';
 import {
     allowAddressDeletionReducer,
     authDevicesReducer,
-    delegatedAccessReducer,
     domainsAddressesReducer,
     memberAuthDevicesReducer,
     organizationRolesReducer,
@@ -27,5 +26,4 @@ export const rootReducer = combineReducers({
     ...memberAuthDevicesReducer,
     ...organizationRolesReducer,
     ...oauthTokenReducer,
-    ...delegatedAccessReducer,
 });

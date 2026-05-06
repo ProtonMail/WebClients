@@ -16,6 +16,7 @@ const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
+        v: 'new',
     });
 
     return (

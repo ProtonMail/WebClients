@@ -1,0 +1,8 @@
+.safety-review-cta-button:not([disabled]) {
+	background: linear-gradient(272deg, #1fa698 -35.45%, #3ba36b 98.71%);
+
+	&:hover,
+	&:focus-visible {
+		background: linear-gradient(272deg, #1b8d82 -35.45%, #308557 98.71%);
+	}
+}

@@ -33,7 +33,10 @@ const SecurityCheckupLayout = ({ children }: Props) => {
     const nameToDisplay = user.DisplayName || user.Name || user.Email || '';
     const initials = getInitials(nameToDisplay);
 
-    const isRoot = location.pathname === SECURITY_CHECKUP_PATHS.ROOT;
+    const isRoot =
+        location.pathname === SECURITY_CHECKUP_PATHS.ROOT ||
+        // Handle email sources as root
+        location.pathname.includes(`${SECURITY_CHECKUP_PATHS.ROOT}/source`);
 
     const BackButton = () => {
         if (!isRoot) {

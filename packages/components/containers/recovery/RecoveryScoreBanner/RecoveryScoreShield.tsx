@@ -4,15 +4,15 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import './Shield.scss';
+import './RecoveryScoreShield.scss';
 
-export interface ShieldProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
+export interface RecoveryScoreShieldProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
     score: number;
     maxScore: number;
     toneClass: string;
 }
 
-export const Shield = ({ score, maxScore, toneClass, className, ...props }: ShieldProps) => {
+export const RecoveryScoreShield = ({ score, maxScore, toneClass, className, ...props }: RecoveryScoreShieldProps) => {
     const badgeNudgeX = score === maxScore ? 4 : 0;
 
     return (
@@ -23,7 +23,7 @@ export const Shield = ({ score, maxScore, toneClass, className, ...props }: Shie
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             focusable="false"
-            className={clsx('recovery-score-shield', `recovery-score-shield--${toneClass}`, className)}
+            className={clsx('recovery-score-shield user-select-none', `recovery-score-shield--${toneClass}`, className)}
             {...props}
         >
             <title>{c('Recovery score').t`Score: ${score} / ${maxScore}`}</title>
@@ -47,20 +47,10 @@ export const Shield = ({ score, maxScore, toneClass, className, ...props }: Shie
                 />
             </g>
             <g transform={`translate(${badgeNudgeX} 0)`}>
-                <foreignObject x="30" y="17" width="29" height="23">
-                    <div
-                        style={{
-                            backdropFilter: 'blur(1.5px)',
-                            clipPath: 'url(#bgblur_0_10148_123993_clip_path)',
-                            height: '100%',
-                            width: '100%',
-                        }}
-                    />
-                </foreignObject>
                 <path
                     d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"
                     fill="url(#paint3_radial_10148_123993)"
-                    fillOpacity="0.4"
+                    fillOpacity="0.9"
                 />
                 <path
                     d="M41 20.25H48C52.2802 20.25 55.75 23.7198 55.75 28V29C55.75 33.2802 52.2802 36.75 48 36.75H41C36.7198 36.75 33.25 33.2802 33.25 29V28C33.25 23.7198 36.7198 20.25 41 20.25Z"

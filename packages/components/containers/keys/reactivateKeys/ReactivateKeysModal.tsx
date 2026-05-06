@@ -51,12 +51,16 @@ const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) =
 
     const { showRecoveryContactsTab, canSomeContactRecoverStep2 } = (() => {
         const canSomeContactRecoverStep1 =
-            delegatedAccessController.meta.recoveryContacts.hasAccess &&
-            delegatedAccessController.items.recoveryContacts.some(getCanOutgoingDelegatedAccessRecoverStep1);
+            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
+            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.items.some(
+                getCanOutgoingDelegatedAccessRecoverStep1
+            );
 
         const canSomeContactRecoverStep2 =
-            delegatedAccessController.meta.recoveryContacts.hasAccess &&
-            delegatedAccessController.items.recoveryContacts.some(getCanOutgoingDelegatedAccessRecoverStep2);
+            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
+            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.items.some(
+                getCanOutgoingDelegatedAccessRecoverStep2
+            );
 
         return {
             showRecoveryContactsTab: canSomeContactRecoverStep1 || canSomeContactRecoverStep2,

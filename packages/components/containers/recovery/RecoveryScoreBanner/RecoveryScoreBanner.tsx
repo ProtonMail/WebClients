@@ -1,25 +1,24 @@
 import { c } from 'ttag';
 
-import { useRecoveryScore } from '@proton/account/securityCheckup/recoveryScore/useRecoveryScore';
+import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 
+import { RecoveryScoreBar } from './RecoveryScoreBar';
 import RecoveryScoreModal from './RecoveryScoreModal';
+import { RecoveryScoreShield } from './RecoveryScoreShield';
 import SecureAccountButton from './SecureAccountButton';
-import { Shield } from './Shield';
-import {
-    SCORE_TONE_BG_CLASS,
-    SCORE_TONE_CLASS,
-    getRecoveryScoreHint,
-    getRecoveryScoreState,
-} from './recoveryScoreState';
+import { SCORE_TONE_CLASS, getRecoveryScoreHint, getRecoveryScoreState } from './recoveryScoreState';
 
 import './RecoveryScoreBanner.scss';
 
 const RecoveryScoreBanner = () => {
-    const { score, maxScore } = useRecoveryScore();
+    const {
+        recoveryScore: { score, maxScore },
+    } = useSelector(selectRecoveryState);
     const { label: scoreLabel, tone: scoreTone } = getRecoveryScoreState(score);
     const scoreHint = getRecoveryScoreHint(score);
     const [modalProps, setModalOpen, renderModal] = useModalState();
@@ -39,7 +38,7 @@ const RecoveryScoreBanner = () => {
                         `recovery-score-accent-${SCORE_TONE_CLASS[scoreTone]}`
                     )}
                 >
-                    <Shield score={score} maxScore={maxScore} toneClass={SCORE_TONE_CLASS[scoreTone]} />
+                    <RecoveryScoreShield score={score} maxScore={maxScore} toneClass={SCORE_TONE_CLASS[scoreTone]} />
                 </button>
             </div>
 
@@ -60,17 +59,7 @@ const RecoveryScoreBanner = () => {
                     </Button>
                 </div>
 
-                <div className="mb-3 flex gap-1 h-custom" style={{ '--h-custom': '0.1875rem' }}>
-                    {Array.from({ length: maxScore }, (_, index) => (
-                        <div
-                            key={index}
-                            className={clsx(
-                                'h-full flex-1 rounded-full',
-                                index < score ? SCORE_TONE_BG_CLASS[scoreTone] : 'bg-weak'
-                            )}
-                        />
-                    ))}
-                </div>
+                <RecoveryScoreBar score={score} maxScore={maxScore} scoreTone={scoreTone} />
 
                 <p className="m-0 text-sm">{scoreHint}</p>
             </div>
