@@ -370,17 +370,19 @@ export const getSentryError = (error: any): any => {
 };
 
 export enum SentryMailInitiatives {
+    ASSISTANT = 'assistant',
+    ATTACHMENT_ENCRYPTION_ERROR = 'attachment-encryption-error',
+    ATTACHMENT_UPLOAD_ERROR = 'attachment-upload-error',
+    COMPOSER = 'composer',
     DRAWER_SECURITY_CENTER = 'drawer-security-center',
     DRAWER_VPN = 'drawer-vpn',
-    COMPOSER = 'composer',
-    ASSISTANT = 'assistant',
-    MAIL_ONBOARDING = 'mail-onboarding',
     LIST_ACTIONS_TELEMETRY = 'list-actions-telemetry',
-    REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
-    UPSELL_MODALS = 'upsell-modals',
-    MOVE_ACTIONS = 'move-actions',
+    MAIL_ONBOARDING = 'mail-onboarding',
     MAIL_REDUX_ERRORS = 'mail-redux-errors',
     MIGRATION_TOOL = 'migration-tool',
+    MOVE_ACTIONS = 'move-actions',
+    REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
+    UPSELL_MODALS = 'upsell-modals',
 }
 
 export enum SentryMailPerformanceInitiatives {
