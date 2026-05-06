@@ -6,7 +6,7 @@ import { useSearchModule } from '../../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
 import { getNotificationsManager } from '../../../../modules/notifications';
 import { type SearchResultItem, tryCatchWithNotification } from '../../../../modules/search';
-import { sendErrorReport } from '../../../../utils/errorHandling';
+import { sendErrorReportForSearch } from '../../../../modules/search/internal/shared/errors';
 import type { SearchViewModelAdapter } from '../type';
 
 export const useSearchViewModel = (): SearchViewModelAdapter => {
@@ -29,7 +29,8 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
             setCurrentResultUids([]);
 
             if (!searchModule.isAvailable || !searchModule.isSearchable) {
-                sendErrorReport(new Error('Doing search query on non-ready search module'));
+                const errorMsg = 'Doing search query on non-ready search module';
+                sendErrorReportForSearch(errorMsg, new Error(errorMsg));
                 return;
             }
 
@@ -59,7 +60,7 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
                     type: 'error',
                     text: c('Error').t`Search failed`,
                 });
-                sendErrorReport(e);
+                sendErrorReportForSearch('Search query failed', e);
             }
         } finally {
             if (!abortController.signal.aborted) {
@@ -86,7 +87,8 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
 
     const startIndexing = useCallback(() => {
         if (!searchModule.isAvailable) {
-            sendErrorReport(new Error('Start indexing on non-ready search module'));
+            const errorMsg = 'Start indexing on non-ready search module';
+            sendErrorReportForSearch(errorMsg, new Error(errorMsg));
             return;
         }
 

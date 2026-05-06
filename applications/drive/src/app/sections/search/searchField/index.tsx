@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -25,6 +25,16 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
 
     const navigation = useDriveNavigation();
     const [searchParams, setSearchParams] = useUrlSearchParams();
+
+    const hasPermanentError = searchModule.permanentError !== null;
+    // Auto-open the dropdown on a new permanent error, but allow Dismiss to close it
+    // until a fresh error kind comes in.
+    const [isErrorDismissed, setIsErrorDismissed] = useState(false);
+    useEffect(() => {
+        if (searchModule.permanentError) {
+            setIsErrorDismissed(false);
+        }
+    }, [searchModule.permanentError]);
 
     const handleSearch = useCallback((keyword = '') => {
         const encodedKeyword = encodeURIComponent(keyword);
@@ -58,10 +68,29 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
     const handleClosedDropdown = (e?: Event) => {
         e?.stopPropagation();
         indexingDropdownControl.close();
+        setIsErrorDismissed(true);
     };
 
-    const placeholderText = c('Action').t`Search drive`;
+    const placeholderText = hasPermanentError ? c('Action').t`Search is unavailable` : c('Action').t`Search drive`;
     const isReadonly = !(searchModule.isSearchable && !searchModule.isRunningOutdatedVersion);
+
+    const suffix = searchParams ? (
+        <Button
+            type="button"
+            shape="ghost"
+            color="weak"
+            size="small"
+            className="rounded-sm"
+            title={c('Action').t`Clear`}
+            onClick={() => {
+                setSearchParams('');
+                handleSearch('');
+            }}
+        >
+            {c('Action').t`Clear`}
+        </Button>
+    ) : null;
+
     return (
         <div ref={indexingDropdownAnchorRef} className="searchfield-container searchbox">
             <>
@@ -96,27 +125,10 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                             <IcMagnifier alt={c('Action').t`Search`} />
                         </Button>
                     }
-                    suffix={
-                        searchParams ? (
-                            <Button
-                                type="button"
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                className="rounded-sm"
-                                title={c('Action').t`Clear`}
-                                onClick={() => {
-                                    setSearchParams('');
-                                    handleSearch('');
-                                }}
-                            >
-                                {c('Action').t`Clear`}
-                            </Button>
-                        ) : null
-                    }
+                    suffix={suffix}
                 />
                 <SearchDropdown
-                    isOpen={indexingDropdownControl.isOpen}
+                    isOpen={indexingDropdownControl.isOpen || (hasPermanentError && !isErrorDismissed)}
                     anchorRef={indexingDropdownAnchorRef}
                     onClose={handleClosedDropdown}
                     onClosed={handleClosedDropdown}
@@ -124,6 +136,8 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     isInitialIndexing={searchModule.isInitialIndexing}
                     isRunningOutdatedAppVersion={searchModule.isRunningOutdatedVersion}
                     indexingProgress={searchModule.indexingProgress}
+                    permanentError={searchModule.permanentError}
+                    rebuild={searchModule.rebuild}
                 />
             </>
         </div>

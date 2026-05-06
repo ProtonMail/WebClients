@@ -197,6 +197,16 @@ export class SearchModule {
         await this.workerClient.reset();
     }
 
+    /**
+     * Wipe the index and restart indexing from scratch. Opt-in and encryption key
+     * are preserved so the user doesn't have to opt in again. Used to recover from
+     * permanent indexing errors.
+     */
+    async rebuild(): Promise<void> {
+        await this.workerClient.rebuild();
+        this.start();
+    }
+
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
         yield* this.workerClient.search(query);
     }

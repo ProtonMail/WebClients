@@ -92,6 +92,33 @@ export class SharedWorkerAPI {
         this.clientsCoordinator.clearActiveClient();
     }
 
+    /**
+     * Wipe the index and re-index from scratch while preserving the user's opt-in
+     * preference and encryption key. Used to recover from permanent indexing errors.
+     */
+    async rebuild(): Promise<void> {
+        Logger.info('SharedWorkerAPI: rebuilding search index');
+        this.indexer?.stop();
+        this.indexer = null;
+        this.searcher = null;
+
+        this.indexRegistry?.disposeAll();
+
+        if (this.db) {
+            await this.db.clearIndex();
+        }
+
+        this.stateChannel?.postMessage({
+            isInitialIndexing: false,
+            isIndexing: false,
+            isSearchable: false,
+            permanentError: null,
+            indexPopulatorStatuses: [],
+        });
+
+        this.clientsCoordinator.clearActiveClient();
+    }
+
     async reindexPopulator(uid: string): Promise<void> {
         if (!this.indexer) {
             Logger.warn('SharedWorkerAPI: reindexPopulator called but no indexer available');
