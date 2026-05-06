@@ -3,20 +3,22 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { ApiImportProvider, type ApiImporterOrganization } from '@proton/activation/src/api/api.interface';
-import { SkeletonLoader, useApi } from '@proton/components';
-import protonGoogleIcon from '@proton/styles/assets/img/migration-assistant/proton-google.svg';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { EllipsisLoader } from '@proton/components/index';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
-import { createOrganizationImporter } from '../../api';
+import { ApiImporterOrganizationState } from '../../api/api.interface';
+import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationSetupModel } from '../types';
 import { useImporterOrganizations } from '../useImporterOrganizations';
+import { CircledLogoWithProton } from './CircledLogoWithProton';
 import MigrationAssistant from './MigrationAssistant/MigrationAssistant';
 import MigrationSetup from './MigrationSetup/MigrationSetup';
 
 const MigrationFlow = () => {
-    const api = useApi();
-    const [customDomains, customDomainsLoading] = useCustomDomains();
-    const [importerOrganizations, importerOrganizationLoading] = useImporterOrganizations();
+    const dispatch = useDispatch();
+    const [customDomains] = useCustomDomains();
+    const [importerOrganizations] = useImporterOrganizations();
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>({
         importerOrganizationId: undefined,
         domainName: undefined,
@@ -24,23 +26,14 @@ const MigrationFlow = () => {
         notifyList: [],
         timePeriod: 'all',
         importOrganizationSettings: true,
+        joiningLink: undefined,
+        state: ApiImporterOrganizationState.INITIALIZED,
     });
-    const loading = customDomainsLoading || importerOrganizationLoading;
+    const loading = !customDomains || !importerOrganizations;
 
     const onMigrationSetupSubmit = async (payload: MigrationConfiguration) => {
-        const result = await api<ApiImporterOrganization>(
-            createOrganizationImporter({
-                Provider: ApiImportProvider.GOOGLE,
-                Products: payload.selectedProducts,
-                ImportOrganizationSettings: payload.importOrganizationSettings,
-            })
-        );
-
-        setMigrationConfig({
-            ...payload,
-            importerOrganizationId: result.ImporterOrganizationID,
-            domainName: result.DomainName,
-        });
+        const migrationConfig = await dispatch(setupMigration(payload)).unwrap();
+        setMigrationConfig(migrationConfig);
     };
 
     useEffect(() => {
@@ -48,7 +41,7 @@ const MigrationFlow = () => {
             return;
         }
 
-        const { ImporterConfig, ImporterOrganizationID, DomainName } = importerOrganizations[0];
+        const { ImporterConfig, ImporterOrganizationID, DomainName, JoiningLink, State } = importerOrganizations[0];
 
         setMigrationConfig((config) => ({
             ...config,
@@ -56,8 +49,10 @@ const MigrationFlow = () => {
             selectedProducts: ImporterConfig.Products,
             domainName: DomainName,
             importOrganizationSettings: ImporterConfig.ImportOrganizationSettings,
+            joiningLink: JoiningLink,
+            state: State,
         }));
-    }, [importerOrganizations, customDomains, loading]);
+    }, [importerOrganizations, loading]);
 
     const model: MigrationSetupModel = {
         ...migrationConfig,
@@ -66,11 +61,23 @@ const MigrationFlow = () => {
         setTimePeriod: (timePeriod) => setMigrationConfig((state) => ({ ...state, timePeriod })),
         setImportOrganizationSettings: (importOrganizationSettings) =>
             setMigrationConfig((state) => ({ ...state, importOrganizationSettings })),
+        setDomainName: (domainName) => setMigrationConfig((state) => ({ ...state, domainName })),
     };
 
     const component = (() => {
-        if (customDomainsLoading || importerOrganizationLoading) {
-            return <SkeletonLoader />;
+        if (loading) {
+            return (
+                <div className="flex-1 h-full w-full flex flex-nowrap">
+                    <div className="m-auto text-center">
+                        <CircleLoader size="large" />
+                        <br />
+                        <div className="color-weak mt-2">
+                            {c('BOSS').t`Loading your organization data`}
+                            <EllipsisLoader />
+                        </div>
+                    </div>
+                </div>
+            );
         }
 
         if (!migrationConfig.importerOrganizationId) {
@@ -81,10 +88,10 @@ const MigrationFlow = () => {
     })();
 
     return (
-        <div className="flex-1 flex flex-column flex-nowrap">
-            <div className="w-full flex items-center p-4 border-bottom border-top border-weak">
-                <img src={protonGoogleIcon} alt="" className="shrink-0" width={48} />
-                <h2 className="text-xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
+        <div className="relative flex-1 flex flex-column flex-nowrap">
+            <div className="w-full flex flex-nowrap items-center py-5 px-4 xl:px-8 border-bottom border-top border-weak">
+                <CircledLogoWithProton iconPosition="outside-bottom-right" className="shrink-0 mb-1" />
+                <h2 className="text-2xl text-bold ml-4 my-0">{c('BOSS').t`Migrate from Google Workspace`}</h2>
             </div>
 
             {component}
