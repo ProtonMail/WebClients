@@ -21,7 +21,7 @@ import {
     useDownloadManagerStore,
 } from '../../../zustand/download/downloadManager.store';
 import { isCancellable, isRetryable, isShareable } from '../transferStatus';
-import type { TransferManagerEntry } from '../useTransferManagerState';
+import { type TransferManagerEntry, isMalwareIssue } from '../useTransferManagerState';
 
 type Props = {
     entry: TransferManagerEntry;
@@ -39,6 +39,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [BaseTransferStatus.Failed]:
             entry.type === 'download' ? c('Info').t`Download Failed` : c('Info').t`Upload Failed`,
         [BaseTransferStatus.MalwareDetected]: c('Info').t`Malware detected`,
+        [BaseTransferStatus.MalwareScanUnavailable]: c('Info').t`Could not scan file for malware`,
         [BaseTransferStatus.Finished]: entry.type === 'download' ? c('Info').t`Downloaded` : c('Info').t`Uploaded`,
         [BaseTransferStatus.Paused]: c('Info').t`Paused`,
         [BaseTransferStatus.PausedServer]: c('Info').t`Paused`,
@@ -72,10 +73,11 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === UploadStatus.ParentCancelled) {
         return <IcCrossCircle size={5} className="color-weak" />;
     }
-    if (entry.status === BaseTransferStatus.Failed || entry.status === UploadStatus.NotSupportedForPhotos) {
-        return <IcCrossCircleFilled size={5} className="color-danger" />;
-    }
-    if (entry.status === BaseTransferStatus.MalwareDetected) {
+    if (
+        entry.status === BaseTransferStatus.Failed ||
+        entry.status === UploadStatus.NotSupportedForPhotos ||
+        isMalwareIssue(entry.status)
+    ) {
         return <IcCrossCircleFilled size={5} className="color-danger" />;
     }
     if (entry.status === UploadStatus.ConflictFound) {
@@ -99,6 +101,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
         BaseTransferStatus.Cancelled,
         BaseTransferStatus.Failed,
         BaseTransferStatus.MalwareDetected,
+        BaseTransferStatus.MalwareScanUnavailable,
         UploadStatus.Skipped,
         UploadStatus.PhotosDuplicate,
         UploadStatus.NotSupportedForPhotos,
@@ -127,6 +130,8 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
     const shouldShowFailedMessage = entry.status === BaseTransferStatus.Failed && entry.error;
     const shouldShowInfo = shouldShowFailedMessage || !shouldHideSizeInfo;
 
+    const showDownloadAnywayButton = isMalwareIssue(entry.status);
+    const showReportMalwareButton = entry.status === BaseTransferStatus.MalwareDetected;
     return (
         <div
             className="bg-norm flex w-full gap-1 items-center py-2 pl-3 pr-4 h-full min-h-custom group-hover-opacity-container"
@@ -197,9 +202,9 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
                         </Button>
                     </Tooltip>
                 )}
-                {entry.status === BaseTransferStatus.MalwareDetected && (
+                {showDownloadAnywayButton && (
                     <div className="flex gap-1">
-                        {onReportAbuse && (
+                        {showReportMalwareButton && onReportAbuse && (
                             <Tooltip title={c('Action').t`Report`}>
                                 <Button
                                     icon
