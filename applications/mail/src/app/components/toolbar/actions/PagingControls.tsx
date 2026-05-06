@@ -30,6 +30,7 @@ interface Props {
     page: number;
     total: number | undefined;
     onPage: (page: number) => void;
+    showPageNumber?: boolean;
 }
 
 const LoadMore = ({ isSearching, handleClickLoadMore }: { isSearching: boolean; handleClickLoadMore: () => void }) => {
@@ -44,7 +45,13 @@ const LoadMore = ({ isSearching, handleClickLoadMore }: { isSearching: boolean; 
     );
 };
 
-const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
+const PagingControls = ({
+    loading,
+    page: inputPage,
+    total: inputTotal,
+    onPage: inputOnPage,
+    showPageNumber = true,
+}: Props) => {
     const pagesState = useMailSelector(contextPages);
     const pageSize = useMailSelector(selectPageSize);
 
@@ -133,22 +140,24 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 >
                     <IcChevronLeft alt={c('Action').t`Previous page`} className="rtl:mirror" />
                 </Button>
-                <DropdownButton
-                    size="tiny"
-                    shape="ghost"
-                    data-testid="toolbar:page-number-dropdown"
-                    ref={anchorRef}
-                    isOpen={isOpen}
-                    onClick={toggle}
-                    disabled={dropdownDisabled}
-                    tabIndex={dropdownDisabled ? -1 : undefined}
-                >
-                    <>
-                        {page}
-                        <span>/</span>
-                        {totalText}
-                    </>
-                </DropdownButton>
+                {showPageNumber && (
+                    <DropdownButton
+                        size="tiny"
+                        shape="ghost"
+                        data-testid="toolbar:page-number-dropdown"
+                        ref={anchorRef}
+                        isOpen={isOpen}
+                        onClick={toggle}
+                        disabled={dropdownDisabled}
+                        tabIndex={dropdownDisabled ? -1 : undefined}
+                    >
+                        <>
+                            {page}
+                            <span>/</span>
+                            {totalText}
+                        </>
+                    </DropdownButton>
+                )}
                 <Button
                     onClick={handleClickNext}
                     tabIndex={nextDisableDisabled ? -1 : undefined}
