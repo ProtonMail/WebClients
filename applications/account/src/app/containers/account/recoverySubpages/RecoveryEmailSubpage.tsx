@@ -188,8 +188,10 @@ const RecoveryEmailSubpage = () => {
                                 await accountRecovery.recoveryEmail.handleChangeEmailValue({
                                     value,
                                     autoStartVerificationFlowAfterSet: true,
+                                    onSuccess: () => {
+                                        setIsEditingRecoveryEmail(false);
+                                    },
                                 });
-                                setIsEditingRecoveryEmail(false);
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery email`,

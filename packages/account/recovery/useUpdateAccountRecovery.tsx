@@ -53,11 +53,13 @@ export const useUpdateAccountRecovery = () => {
         autoStartVerificationFlowAfterSet = false,
         persistPasswordScope = false,
         ignoreConfirm = false,
+        onSuccess,
     }: {
         value: string;
         autoStartVerificationFlowAfterSet?: boolean;
         persistPasswordScope?: boolean;
         ignoreConfirm?: boolean;
+        onSuccess?: () => void;
     }): Promise<UserSettings | undefined> => {
         const update = async () => {
             const userSettings = await dispatch(updateRecoveryEmailValue({ value: nextEmail, persistPasswordScope }));
@@ -102,7 +104,8 @@ export const useUpdateAccountRecovery = () => {
             isSubmittingEmailRef.current = false;
         });
         withLoadingEmail(promise).catch(noop);
-        return promise;
+        await promise;
+        onSuccess?.();
     };
 
     const handleChangePhoneValue = async ({
