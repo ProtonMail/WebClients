@@ -1,7 +1,6 @@
 import type { Engine, Query, QueryEvent } from '@proton/proton-foundation-search';
 import { QueryEventKind } from '@proton/proton-foundation-search';
 
-import { SearchLibraryError } from '../../shared/errors';
 import type { IndexBlobStore } from './IndexBlobStore';
 
 export type ReadResult = {
@@ -32,11 +31,7 @@ export class IndexReader {
             while ((event = search.next()) !== undefined) {
                 switch (event.kind()) {
                     case QueryEventKind.Load:
-                        try {
-                            await this.blobStore.loadEvent(event);
-                        } catch (e) {
-                            throw new SearchLibraryError('IndexReader: failed to load blob during query', e);
-                        }
+                        await this.blobStore.loadEvent(event);
                         break;
                     case QueryEventKind.Found: {
                         const found = event.found();
