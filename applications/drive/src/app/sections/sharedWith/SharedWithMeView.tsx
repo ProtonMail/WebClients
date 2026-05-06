@@ -6,8 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { useAppTitle } from '@proton/components';
 
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
-import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { ToolbarRow } from '../../statelessComponents/ToolbarRow/ToolbarRow';
 import { Actions, traceTelemetry } from '../../utils/telemetry';
 import { SharedWithMe } from './SharedWithMe';
 import SharedWithMeToolbar from './SharedWithMeToolbar';

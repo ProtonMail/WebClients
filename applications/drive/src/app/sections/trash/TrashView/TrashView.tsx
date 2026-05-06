@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useAppTitle } from '@proton/components';
 
-import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { TrashToolbar } from '../menus/TrashToolbar';
 import { EmptyTrashBar } from '../statelessComponents/EmptyTrashBar';
 import { useTrashStore } from '../useTrash.store';
