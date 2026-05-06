@@ -1811,6 +1811,15 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Confirm email": [
+        "Bekräfta e-post"
+      ],
+      "Finish": [
+        "Slutför"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Tog bort ${ memberName } som gruppägare"
       ]
     },
     "action": {
@@ -5157,6 +5166,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Hämta över din e-post, kalenderhändelser och kontakter från annan leverantör."
       ]
     },
     "description": {
@@ -12790,6 +12802,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Code has been re-sent.": [
+        "Kod har skickats igen."
+      ],
+      "No connected addresses.": [
+        "Inga anslutna adresser."
       ]
     },
     "info": {
@@ -18407,6 +18425,12 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har åtkomst till ${ free }. Om du vill komma åt premiumfunktioner för ${ appName }, be din organisations administratör att uppgradera."
+      ],
+      "Preparing your recovery phrase": [
+        "Förbereder din återställningsfras"
+      ],
+      "Save your recovery phrase to continue": [
+        "Spara din återställningsfras för att fortsätta"
       ]
     },
     "pass_signup_2023: Title": {
@@ -20295,6 +20319,24 @@
       ],
       "Your recovery phone number is:": [
         "Ditt telefonnummer för återställning är:"
+      ],
+      "Download your recovery phrase": [
+        "Ladda ner din återställningsfras"
+      ],
+      "Update your recovery phrase": [
+        "Öppna din återställningsfras"
+      ],
+      "Update your recovery phrase?": [
+        "Uppdatera din återställningsfras?"
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidigare laddat ner en återställningsfras. Om du laddar ner en ny kommer den gamla **inaktiveras**."
+      ],
+      "Your recovery phrase": [
+        "Din återställningsfras"
+      ],
+      "Your recovery phrase is set": [
+        "Din återställningsfras är inställd"
       ]
     },
     "saml: Action": {
@@ -20841,6 +20883,9 @@
     "Setting": {
       "Enable Photos section": [
         "Aktivera sektion för foton"
+      ],
+      "Include document name in email notifications": [
+        "Inkludera dokumentnamn i e-postaviseringar"
       ]
     },
     "Settings description": {
@@ -25112,6 +25157,21 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Activate your email": [
+        "Aktivera din e-post"
+      ],
+      "Create a new password": [
+        "Skapa ett nytt lösenord"
+      ],
+      "Deactivate current phrase?": [
+        "Inaktivera nuvarande fras?"
+      ],
+      "Verify your email": [
+        "Verifiera din e-post"
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din administratör bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26298,6 +26358,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
       ]
     },
     "Warning for domain modal": {

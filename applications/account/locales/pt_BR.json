@@ -5170,6 +5170,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
       ]
     },
     "description": {
@@ -19694,6 +19697,9 @@
       ],
       "Weak": [
         "Fraco"
+      ],
+      "Great. Add more options for a stronger protection.": [
+        "Ótimo. Adicione mais opções para uma proteção mais eficaz."
       ]
     },
     "Recovery score item": {
@@ -20451,6 +20457,15 @@
       ],
       "Your recovery phrase is set": [
         "Sua frase de recuperação está configurada"
+      ],
+      "Download your recovery phrase": [
+        "Baixe sua frase de recuperação"
+      ],
+      "Update your recovery phrase": [
+        "Atualizar sua frase de recuperação"
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Você pode usar a frase de recuperação desta frase de recuperação para restaurar totalmente a sua conta quando redefinir a senha, portanto, certifique-se de mantê-la em um local seguro."
       ]
     },
     "saml: Action": {
@@ -25271,6 +25286,15 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Activate your email": [
+        "Ative seu e-mail"
+      ],
+      "Download your recovery phrase": [
+        "Baixe sua frase de recuperação"
+      ],
+      "Remove email": [
+        "Remover e-mail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26463,6 +26487,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "Você tem certeza que deseja remover seu e-mail de notificação?"
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Não foi possível criar conta. Abra a extensão ${ PASS_APP_NAME } no navegador e crie a conta por lá."
       ]
     },
     "Warning for domain modal": {
