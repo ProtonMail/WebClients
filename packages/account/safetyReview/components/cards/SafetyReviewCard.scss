@@ -1,0 +1,127 @@
+.safety-review--card {
+	--shadow-blur: 0.75rem;
+
+	box-shadow: 0 0.15rem calc(var(--shadow-blur) * (100 - var(--card-index) * 35) / 100) 0
+		rgb(var(--shadow-color, var(--shadow-primary-color)) / var(--shadow-raised-opacity));
+	transform: translateY(calc(var(--card-index) * 1.2rem)) scale(calc(1 - var(--card-index) * 0.04));
+	border-radius: calc(var(--border-radius-xl) * (100 - var(--card-index) * 25) / 100);
+	z-index: calc(var(--card-index) * -1);
+
+	[data-theme-mode='dark'] & {
+		border: 1px solid var(--border-weak);
+	}
+
+	> * {
+		transition: opacity 0.3s ease-out;
+	}
+
+	&:not(.safety-review--card-top) {
+		> * {
+			opacity: 0;
+		}
+	}
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown -- ::view-transition-old(<name>) */
+:root[data-safety-review-swipe='completed']::view-transition-old(safety-review-card-enter-0) {
+	animation: safety-review-card-vt-fly-complete 0.5s ease-out forwards;
+
+	/* Lift above the view-transition-new el so the card isn't behind it */
+	z-index: 1;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+:root[data-safety-review-swipe='skipped']::view-transition-old(safety-review-card-enter-0) {
+	animation: safety-review-card-vt-fly-skipped 0.5s ease-out forwards;
+	z-index: 1;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown -- ::view-transition-group(<name>) */
+:root[data-safety-review-swipe]::view-transition-group(safety-review-card-enter-0) {
+	z-index: 20;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+:root[data-safety-review-swipe][data-safety-review-swipe-promote]::view-transition-new(safety-review-card-enter-0) {
+	animation: safety-review-card-vt-promote 0.3s ease-out both;
+}
+
+$safety-review-card-vt-stagger-timing: 0.9s;
+
+/* stylelint-disable selector-type-no-unknown -- ::view-transition-new(<name>) */
+:root:not([data-safety-review-vt-intro-complete]) {
+	&::view-transition-new(safety-review-card-enter-0) {
+		animation: safety-review-card-vt-enter 0.4s ease-out both;
+	}
+
+	&::view-transition-new(safety-review-card-enter-1),
+	&::view-transition-new(safety-review-card-enter-2) {
+		animation:
+			safety-review-card-vt-enter $safety-review-card-vt-stagger-timing ease-out both,
+			safety-review-card-vt-enter-opacity $safety-review-card-vt-stagger-timing ease-out both;
+	}
+
+	&::view-transition-new(safety-review-card-enter-2) {
+		animation-delay: $safety-review-card-vt-stagger-timing * 0.1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root:not([data-safety-review-vt-intro-complete]) {
+		&::view-transition-new(safety-review-card-enter-0),
+		&::view-transition-new(safety-review-card-enter-1),
+		&::view-transition-new(safety-review-card-enter-2) {
+			animation: none;
+		}
+	}
+
+	:root[data-safety-review-swipe][data-safety-review-swipe-promote]::view-transition-new(safety-review-card-enter-0) {
+		animation: none;
+	}
+}
+
+/* stylelint-enable selector-type-no-unknown */
+
+@keyframes safety-review-card-vt-promote {
+	from {
+		transform: translateY(1.25rem) scale(0.94);
+	}
+
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes safety-review-card-vt-enter {
+	from {
+		transform: translateY(-1.5rem) scale(0.94);
+	}
+
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes safety-review-card-vt-enter-opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes safety-review-card-vt-fly-complete {
+	to {
+		transform: translateX(60vw) rotate(30deg);
+		opacity: 0;
+	}
+}
+
+@keyframes safety-review-card-vt-fly-skipped {
+	to {
+		transform: translateX(-60vw) rotate(-30deg);
+		opacity: 0;
+	}
+}

@@ -4,7 +4,12 @@ import { c } from 'ttag';
 
 import { RecoveryMethodWarningModal } from '@proton/account/delegatedAccess/recoveryContact/RecoveryMethodWarningModal';
 import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
-import { userSettingsActions, userSettingsThunk } from '@proton/account/userSettings';
+import {
+    toggleRecoveryEmailReset,
+    toggleRecoveryPhoneReset,
+    updateRecoveryEmailValue,
+    updateRecoveryPhoneValue,
+} from '@proton/account/recovery/accountRecoveryActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
@@ -13,12 +18,10 @@ import VerifyRecoveryEmailModal from '@proton/components/containers/recovery/ema
 import ConfirmRemovePhoneModal from '@proton/components/containers/recovery/phone/ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from '@proton/components/containers/recovery/phone/VerifyRecoveryPhoneModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateEmail, updatePhone, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { SETTINGS_STATUS, type UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -29,7 +32,7 @@ export const useUpdateAccountRecovery = () => {
     const dispatch = useDispatch();
     const accountRecoveryData = useSelector(selectAccountRecovery);
 
-    const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
+    const [authModal, showAuthModal] = useModalTwoPromise<undefined, AuthModalResult>();
     const [renderProps, showRecoveryContactWarning, renderModal] = useModalState();
 
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
@@ -45,8 +48,6 @@ export const useUpdateAccountRecovery = () => {
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
 
-    const api = useApi();
-
     const handleChangeEmailValue = async ({
         value: nextEmail,
         autoStartVerificationFlowAfterSet = false,
@@ -57,44 +58,28 @@ export const useUpdateAccountRecovery = () => {
         autoStartVerificationFlowAfterSet?: boolean;
         persistPasswordScope?: boolean;
         ignoreConfirm?: boolean;
-    }) => {
+    }): Promise<UserSettings | undefined> => {
         const update = async () => {
-            const disableEmailReset =
-                accountRecoveryData.isSentinelEnabled && accountRecoveryData.emailRecovery.hasReset;
-
-            const { UserSettings } = await api<{ UserSettings: UserSettings }>(
-                updateEmail({
-                    Email: nextEmail,
-                    // Prevent sentinel users getting double auth
-                    PersistPasswordScope: disableEmailReset || persistPasswordScope,
-                })
-            );
-
-            dispatch(userSettingsActions.set({ UserSettings }));
-
-            // TODO: temporarily included until BE takes care of it
-            if (disableEmailReset) {
-                await api(updateResetEmail({ Reset: 0, PersistPasswordScope: persistPasswordScope }));
-                await dispatch(userSettingsThunk({ cache: CacheType.None }));
-            }
-
+            const userSettings = await dispatch(updateRecoveryEmailValue({ value: nextEmail, persistPasswordScope }));
             createNotification({ text: c('Success').t`Email updated` });
 
             if (
                 autoStartVerificationFlowAfterSet &&
                 nextEmail &&
                 nextEmail !== accountRecoveryData.emailRecovery.value &&
-                UserSettings.Email.Status !== SETTINGS_STATUS.VERIFIED
+                userSettings.Email.Status !== SETTINGS_STATUS.VERIFIED
             ) {
                 setVerifyRecoveryEmailProps({ email: nextEmail });
                 setVerifyRecoveryEmailModalOpen(true);
             }
 
-            const emailEnabled = !!UserSettings.Email.Reset && !!UserSettings.Email.Value;
+            const emailEnabled = !!userSettings.Email.Reset && !!userSettings.Email.Value;
 
             if (emailEnabled) {
                 sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
             }
+
+            return userSettings;
         };
         if (!nextEmail && !accountRecoveryData.emailRecovery.canDisable) {
             showRecoveryContactWarning(true);
@@ -112,13 +97,14 @@ export const useUpdateAccountRecovery = () => {
             return;
         }
         isSubmittingEmailRef.current = true;
-        return withLoadingEmail(
-            update()
-                .catch(noop)
-                .finally(() => {
-                    isSubmittingEmailRef.current = false;
-                })
-        );
+
+        const promise = update()
+            .catch(noop)
+            .finally(() => {
+                isSubmittingEmailRef.current = false;
+            });
+        withLoadingEmail(promise).catch(noop);
+        return promise;
     };
 
     const handleChangePhoneValue = async ({
@@ -133,39 +119,24 @@ export const useUpdateAccountRecovery = () => {
         ignoreConfirm?: boolean;
     }) => {
         const update = async () => {
-            const disablePhoneReset =
-                accountRecoveryData.isSentinelEnabled && accountRecoveryData.phoneRecovery.hasReset;
-
-            const { UserSettings } = await api<{ UserSettings: UserSettings }>(
-                updatePhone({
-                    Phone: nextPhone,
-                    PersistPasswordScope: disablePhoneReset || persistPasswordScope,
-                })
-            );
-
-            dispatch(userSettingsActions.set({ UserSettings }));
-
-            // TODO: temporarily included until BE takes care of it
-            if (disablePhoneReset) {
-                await api(updateResetPhone({ Reset: 0, PersistPasswordScope: persistPasswordScope }));
-                await dispatch(userSettingsThunk({ cache: CacheType.None }));
-            }
-
+            const userSettings = await dispatch(updateRecoveryPhoneValue({ value: nextPhone, persistPasswordScope }));
             createNotification({ text: c('Success').t`Phone number updated` });
 
             if (
                 autoStartVerificationFlowAfterSet &&
                 nextPhone &&
                 nextPhone !== accountRecoveryData.phoneRecovery.value &&
-                UserSettings.Phone.Status !== SETTINGS_STATUS.VERIFIED
+                userSettings.Phone.Status !== SETTINGS_STATUS.VERIFIED
             ) {
                 setVerifyRecoveryPhoneModalOpen(true);
             }
 
-            const phoneEnabled = !!UserSettings.Phone.Reset && !!UserSettings.Phone.Value;
+            const phoneEnabled = !!userSettings.Phone.Reset && !!userSettings.Phone.Value;
             if (phoneEnabled) {
                 sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
             }
+
+            return userSettings;
         };
 
         if (!nextPhone && !accountRecoveryData.phoneRecovery.canDisable) {
@@ -180,13 +151,13 @@ export const useUpdateAccountRecovery = () => {
             return;
         }
         isSubmittingPhoneRef.current = true;
-        void withLoadingPhone(
-            update()
-                .catch(noop)
-                .finally(() => {
-                    isSubmittingPhoneRef.current = false;
-                })
-        );
+        const promise = update()
+            .catch(noop)
+            .finally(() => {
+                isSubmittingPhoneRef.current = false;
+            });
+        withLoadingPhone(promise).catch(noop);
+        return promise;
     };
 
     const handleChangePasswordEmailToggle = async (value: number) => {
@@ -197,8 +168,8 @@ export const useUpdateAccountRecovery = () => {
                     text: c('Error').t`Please set a recovery email first`,
                 });
             }
-            await showAuthModal({ config: updateResetEmail({ Reset: value }) });
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            await showAuthModal(); // TODO: Do we really need a client side triggered auth modal?
+            await dispatch(toggleRecoveryEmailReset({ value: Boolean(value) }));
             if (value) {
                 sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
             }
@@ -218,8 +189,8 @@ export const useUpdateAccountRecovery = () => {
                     text: c('Error').t`Please set a recovery phone number first`,
                 });
             }
-            await showAuthModal({ config: updateResetPhone({ Reset: value }) });
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            await showAuthModal(); // TODO: Do we really need a client side triggered auth modal?
+            await dispatch(toggleRecoveryPhoneReset({ value: Boolean(value) }));
             if (value) {
                 sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
             }
@@ -230,9 +201,17 @@ export const useUpdateAccountRecovery = () => {
     const el = (
         <>
             {renderModal && <RecoveryMethodWarningModal {...renderProps} />}
-            {authModal(({ onResolve, onReject, ...props }) => (
-                <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />
-            ))}
+            {authModal(({ onResolve, onReject, ...props }) => {
+                return (
+                    <AuthModal
+                        {...props}
+                        scope="password"
+                        config={unlockPasswordChanges()}
+                        onCancel={onReject}
+                        onSuccess={onResolve}
+                    />
+                );
+            })}
             {renderConfirmRecoveryEmailProps && (
                 <ConfirmRemoveEmailModal
                     hasReset={accountRecoveryData.emailRecovery.hasReset}
@@ -267,7 +246,7 @@ export const useUpdateAccountRecovery = () => {
         recoveryEmail: {
             handleChangeEmailValue,
             toggleProps: {
-                checked: accountRecoveryData.emailRecovery.enabled,
+                checked: accountRecoveryData.emailRecovery.legacyEnabled,
                 onChange: ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
                     return withLoadingEmailReset(handleChangePasswordEmailToggle(+checked).catch(noop));
                 },
@@ -287,7 +266,7 @@ export const useUpdateAccountRecovery = () => {
         recoveryPhone: {
             handleChangePhoneValue,
             toggleProps: {
-                checked: accountRecoveryData.phoneRecovery.enabled,
+                checked: accountRecoveryData.phoneRecovery.legacyEnabled,
                 onChange: ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
                     return withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked).catch(noop));
                 },

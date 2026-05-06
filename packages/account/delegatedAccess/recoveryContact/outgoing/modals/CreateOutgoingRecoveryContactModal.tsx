@@ -19,7 +19,8 @@ import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/Delegated
 import ValidationError from '../../../ValidationError';
 import type { OutgoingDelegatedAccessOutput } from '../../../interface';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
-import ContactEmailInput, { type ContactEmailInputProps } from '../../../shared/outgoing/ContactEmailInput';
+import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
+import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shieldSuccess from '../../../shared/shield-success.svg';
 import shield from '../../../shared/shield.svg';
 import { useDispatch } from '../../../useDispatch';
@@ -27,15 +28,7 @@ import { useDispatch } from '../../../useDispatch';
 export interface AddOutgoingTrustedContactModalProps extends Omit<
     ModalProps<'form'>,
     'children' | 'buttons' | 'onSubmit'
-> {
-    existingOutgoingTargetEmails: Set<string>;
-    /** When true, send recovery settings `setting_enabled` telemetry after a successful add (first outgoing contact only). */
-    isFirstOutgoingContact?: boolean;
-    contactEmails: ContactEmailInputProps['contactEmails'];
-    addresses: ContactEmailInputProps['addresses'];
-    protonDomains: ContactEmailInputProps['protonDomains'];
-    email: string;
-}
+> {}
 
 const getHeader = (text: string, email: string, svg = shield) => {
     return (
@@ -49,28 +42,16 @@ const getHeader = (text: string, email: string, svg = shield) => {
     );
 };
 
-export const CreateOutgoingRecoveryContactModal = ({
-    protonDomains,
-    addresses,
-    existingOutgoingTargetEmails,
-    isFirstOutgoingContact = false,
-    contactEmails,
-    email,
-    ...rest
-}: AddOutgoingTrustedContactModalProps) => {
+export const CreateOutgoingRecoveryContactModal = ({ ...rest }: AddOutgoingTrustedContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [targetEmail, setTargetEmail] = useState('');
-    const [emailError, setEmailError] = useState<{ email: string; errorMessage: string } | null>(null);
-    const [submitted, setSubmitted] = useState<boolean>(false);
     const dispatch = useDispatch();
-    const [asyncError, setAsyncError] = useState<{ email: string; errorMessage: string } | null>(null);
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const [delegatedAccess, setDelegatedAccess] = useState<OutgoingDelegatedAccessOutput | null>(null);
 
-    const asyncErrorValue = asyncError?.email === targetEmail ? asyncError?.errorMessage : undefined;
-    const emailErrorValue = emailError?.email === targetEmail ? emailError.errorMessage : undefined;
-    const hasError = Boolean(emailErrorValue || asyncErrorValue);
+    const addContactInputs = useAddContactInputs();
+    const email = addContactInputs.createOutgoingDelegatedAccessData.email;
+    const input = addContactInputs.inputs[0];
 
     if (delegatedAccess) {
         const contact = delegatedAccess.TargetEmail;
@@ -102,26 +83,26 @@ export const CreateOutgoingRecoveryContactModal = ({
             as="form"
             onSubmit={(e) => {
                 e.preventDefault();
-                setSubmitted(true);
-                if (hasError || loading) {
+                addContactInputs.setSubmitted(true);
+                if (addContactInputs.hasError || loading) {
                     return;
                 }
                 void withLoading(
                     (async function run() {
                         const payload = {
-                            targetEmail,
+                            targetEmail: input.email,
                             triggerDelay: 0,
                             types: DelegatedAccessTypeEnum.SocialRecovery,
                         };
                         try {
                             const delegatedAccess = await dispatch(addDelegatedAccessThunk(payload));
-                            if (isFirstOutgoingContact) {
+                            if (!addContactInputs.createOutgoingDelegatedAccessData.recoveryContacts.size) {
                                 sendRecoverySettingEnabled({ setting: 'recovery_contacts' });
                             }
                             setDelegatedAccess(delegatedAccess);
                         } catch (e) {
                             if (e instanceof ValidationError) {
-                                setAsyncError({ email: payload.targetEmail, errorMessage: e.message });
+                                addContactInputs.setAsyncError({ email: e.email, errorMessage: e.message });
                             } else {
                                 handleError(e);
                             }
@@ -140,21 +121,18 @@ export const CreateOutgoingRecoveryContactModal = ({
                 <div>
                     <InputFieldTwo
                         as={ContactEmailInput}
-                        protonDomains={protonDomains}
-                        addresses={addresses}
-                        contactEmails={contactEmails}
-                        ignoreEmails={existingOutgoingTargetEmails}
+                        protonDomains={addContactInputs.createOutgoingDelegatedAccessData.domains}
+                        addresses={addContactInputs.createOutgoingDelegatedAccessData.addresses}
+                        contactEmails={addContactInputs.createOutgoingDelegatedAccessData.contactEmails}
+                        ignoreEmails={addContactInputs.createOutgoingDelegatedAccessData.recoveryContacts}
                         id="email"
                         label={c('emergency_access').t`${BRAND_NAME} Account email`}
-                        value={targetEmail}
+                        value={input.email}
                         onValue={(value, errorMessage) => {
-                            setTargetEmail(value);
-                            if (errorMessage) {
-                                setEmailError({ email: value, errorMessage });
-                            }
+                            addContactInputs.setInputs(input.id, { email: value, emailError: errorMessage });
                         }}
                         autoFocus={true}
-                        error={submitted ? asyncErrorValue || emailErrorValue : undefined}
+                        error={addContactInputs.submitted ? input.asyncError || input.emailError : undefined}
                     />
                 </div>
                 <div className="text-sm flex flex-nowrap gap-2">

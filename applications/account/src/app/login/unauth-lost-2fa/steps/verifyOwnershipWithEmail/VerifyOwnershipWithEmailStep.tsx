@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
 
+import { initiateVerification, sendNewCode, verifyCode } from '@proton/account/safetyReview/verification/verification';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     Form,
@@ -21,11 +22,6 @@ import { reauthByEmailVerification } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import {
-    initiateVerification,
-    sendNewCode,
-    verifyCode,
-} from '../../../../containers/securityCheckup/verification/verification';
 import { getEmailVerificationCodeText } from '../../../../content/helper';
 import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
 import { useVerifyOwnershipWithEmailActorRef } from '../../UnauthedLost2FAContainer';

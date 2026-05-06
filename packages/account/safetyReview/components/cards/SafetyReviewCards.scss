@@ -1,0 +1,12 @@
+@use '~@proton/styles/scss/lib/em' as *;
+
+.safety-review--container {
+	inline-size: min(em(464), 92vw);
+}
+
+.safety-review--stack {
+	block-size: min(em(512), 70vh);
+
+	/* Keep negative sibling z-indices clipped so backdrop cards paint under VT groups */
+	isolation: isolate;
+}

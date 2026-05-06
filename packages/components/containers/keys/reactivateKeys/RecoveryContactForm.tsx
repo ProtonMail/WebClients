@@ -27,7 +27,7 @@ const ContactSelector = ({
     checked,
     onSelectContact,
 }: {
-    item: ReturnType<typeof useOutgoingController>['items']['recoveryContacts'][0];
+    item: ReturnType<typeof useOutgoingController>['outgoingDelegatedAccess']['recoveryContacts']['items'][0];
     checked: boolean;
     onSelectContact?: () => void;
 }) => {
@@ -189,11 +189,13 @@ export const RecoveryContactFormStep2 = ({
 };
 
 export const RecoveryContactForm = (props: ReactivateKeysContentProps) => {
-    const { items } = useOutgoingController();
-    const firstRecoverableContact = items.recoveryContacts.find(getCanOutgoingDelegatedAccessRecoverStep2);
+    const { outgoingDelegatedAccess } = useOutgoingController();
+    const firstRecoverableContact = outgoingDelegatedAccess.recoveryContacts.items.find(
+        getCanOutgoingDelegatedAccessRecoverStep2
+    );
     return firstRecoverableContact ? (
         <RecoveryContactFormStep2 recoveryContact={firstRecoverableContact} {...props} />
     ) : (
-        <RecoveryContactFormStep1 recoveryContacts={items.recoveryContacts} {...props} />
+        <RecoveryContactFormStep1 recoveryContacts={outgoingDelegatedAccess.recoveryContacts.items} {...props} />
     );
 };
