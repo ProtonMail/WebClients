@@ -14,6 +14,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
+import { CategoryContextMenu } from '../categoryView/categoriesContext/CategoryContextMenu';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
@@ -135,10 +136,33 @@ const ItemContextMenu = ({
     const moveButtons = actions.map((action) => allMoveButtons[action]);
 
     return (
-        <>
-            <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
-                {moveButtons}
-                {canShowBlockSender && (
+        <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
+            {moveButtons}
+            <CategoryContextMenu onCategoryMove={handleMove} />
+
+            <ContextSeparator className="bg-weak my-1" />
+
+            {buttonMarkAsRead ? (
+                <ContextMenuButton
+                    key="context-menu-read"
+                    testId="context-menu-read"
+                    icon="envelope-open"
+                    name={c('Action').t`Mark as read`}
+                    action={() => handleMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.CONTEXT_MENU)}
+                />
+            ) : (
+                <ContextMenuButton
+                    key="context-menu-unread"
+                    testId="context-menu-unread"
+                    icon="envelope-dot"
+                    name={c('Action').t`Mark as unread`}
+                    action={() => handleMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.CONTEXT_MENU)}
+                />
+            )}
+
+            {canShowBlockSender && (
+                <>
+                    <ContextSeparator className="bg-weak my-1" />
                     <ContextMenuButton
                         key="context-menu-block"
                         testId="context-menu-block"
@@ -146,27 +170,9 @@ const ItemContextMenu = ({
                         name={c('Action').t`Block sender`}
                         action={onBlockSender}
                     />
-                )}
-                <ContextSeparator />
-                {buttonMarkAsRead ? (
-                    <ContextMenuButton
-                        key="context-menu-read"
-                        testId="context-menu-read"
-                        icon="envelope-open"
-                        name={c('Action').t`Mark as read`}
-                        action={() => handleMarkAs(MARK_AS_STATUS.READ, SOURCE_ACTION.CONTEXT_MENU)}
-                    />
-                ) : (
-                    <ContextMenuButton
-                        key="context-menu-unread"
-                        testId="context-menu-unread"
-                        icon="envelope-dot"
-                        name={c('Action').t`Mark as unread`}
-                        action={() => handleMarkAs(MARK_AS_STATUS.UNREAD, SOURCE_ACTION.CONTEXT_MENU)}
-                    />
-                )}
-            </ContextMenu>
-        </>
+                </>
+            )}
+        </ContextMenu>
     );
 };
 
