@@ -62,6 +62,8 @@
     --backdrop-norm: rgb(38 42 51 / 0.48);
 
     /*  new colors */
+    --background-main-canvas: #F5F6FE;
+    
     --interaction-secondary: #FFAC2F;
     --interaction-secondary-hover: #E69A2A;
     --interaction-secondary-active: #D48F26;
@@ -73,6 +75,9 @@
     --link-norm: var(--primary);
     --link-hover: var(--interaction-norm-hover);
     --link-active: var(--interaction-norm-active);
+
+    --composer-glow-shadow: #e9eafc;
+    --composer-glow-border: #dddefb;
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);
