@@ -37,7 +37,7 @@ export const useUpdateAccountRecovery = () => {
 
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
     const [verifyRecoveryEmailProps, setVerifyRecoveryEmailProps] = useState<{ email: string } | null>(null);
-    const [confirmRecoveryEmailProps, setConfirmRecoveryEmailModal, renderConfirmRecoveryEmailProps] = useModalState();
+    const [confirmRemoveEmailProps, setConfirmRemoveEmailModal, renderConfirmRemoveEmailProps] = useModalState();
     const isSubmittingEmailRef = useRef(false);
 
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
@@ -90,7 +90,7 @@ export const useUpdateAccountRecovery = () => {
             !nextEmail &&
             (accountRecoveryData.emailRecovery.hasReset || accountRecoveryData.emailRecovery.hasNotify)
         ) {
-            setConfirmRecoveryEmailModal(true);
+            setConfirmRemoveEmailModal(true);
             return;
         }
         if (isSubmittingEmailRef.current) {
@@ -210,11 +210,11 @@ export const useUpdateAccountRecovery = () => {
                     />
                 );
             })}
-            {renderConfirmRecoveryEmailProps && (
+            {renderConfirmRemoveEmailProps && (
                 <ConfirmRemoveEmailModal
                     hasReset={accountRecoveryData.emailRecovery.hasReset}
                     hasNotify={accountRecoveryData.emailRecovery.hasNotify}
-                    {...confirmRecoveryEmailProps}
+                    {...confirmRemoveEmailProps}
                     onConfirm={() => {
                         return handleChangeEmailValue({ value: '', ignoreConfirm: true });
                     }}
