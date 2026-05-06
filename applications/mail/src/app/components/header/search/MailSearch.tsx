@@ -102,7 +102,7 @@ const MailSearch = ({ labelID, location, columnMode }: Props) => {
     return (
         <>
             {breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium ? (
-                <div className="topnav-listItem flex shrink-0 pl-1">
+                <div className="topnav-listItem flex shrink-0">
                     <TopNavbarListItemSearchButton onClick={handleOpen} />
                 </div>
             ) : (

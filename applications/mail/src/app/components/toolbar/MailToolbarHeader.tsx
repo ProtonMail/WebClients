@@ -6,7 +6,6 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 import { getLabelName } from 'proton-mail/helpers/labels';
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
@@ -66,105 +65,23 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     if (isSmallScreen) {
         const actionsInHeader = elementID || actions.selectedIDs.length > 0;
 
-        return actionsInHeader ? (
-            <div className="flex w-full">
-                <nav
-                    className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print flex-auto toolbar--in-container"
-                    data-shortcut-target="mailbox-toolbar"
-                    aria-label={c('Label').t`Toolbar`}
-                    ref={ref}
-                >
-                    <div
-                        className={clsx('flex items-center toolbar-inner gap-2', !actions.selectedIDs.length && 'pl-2')}
-                    >
-                        {elementID && <MoveBackButton />}
-                        {!isInDeletedFolder && (
-                            <>
-                                <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
-                                <Vr />
-                                <MoveButtons
-                                    labelID={labelID}
-                                    isExtraTiny={false}
-                                    viewportIsNarrow
-                                    selectedIDs={actions.selectedIDs}
-                                    onMove={actions.handleMove}
-                                    onDelete={actions.handleDelete}
-                                />
-                                <Vr />
-                                {!isTiny && (
-                                    <LabelsAndFolders
-                                        labelID={labelID}
-                                        selectedIDs={actions.selectedIDs}
-                                        labelDropdownToggleRef={labelDropdownToggleRef}
-                                        moveDropdownToggleRef={moveDropdownToggleRef}
-                                        onCheckAll={actions.handleCheckAll}
-                                    />
-                                )}
-                                {!isTiny && !isSelectAll && (
-                                    <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />
-                                )}
-                                <MoreDropdown
-                                    elementIDs={elementsData.elementIDs}
-                                    selectedIDs={actions.selectedIDs}
-                                    isSearch={isSearching}
-                                    isNarrow
-                                    isTiny
-                                    isExtraTiny={false}
-                                    onMove={actions.handleMove}
-                                    onDelete={actions.handleDelete}
-                                    onCheckAll={actions.handleCheckAll}
-                                />
-
-                                <MoreActions selectedIDs={actions.selectedIDs} />
-                            </>
-                        )}
-                    </div>
-                </nav>
-                {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
-            </div>
-        ) : (
-            <div className="w-full flex items-center justify-space-between" ref={ref}>
-                <div className="flex items-center flex-nowrap toolbar-inner gap-2">
-                    <LabelName selectedIDs={actions.selectedIDs} labelName={labelName} />
-                    <MoreDropdown
-                        elementIDs={elementsData.elementIDs}
-                        selectedIDs={actions.selectedIDs}
-                        isSearch={isSearching}
-                        isNarrow={isTiny}
-                        isTiny={isTiny}
-                        isExtraTiny={isExtraTiny}
-                        onMove={actions.handleMove}
-                        onDelete={actions.handleDelete}
-                        onCheckAll={actions.handleCheckAll}
-                    />
-                </div>
-                <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
-            </div>
-        );
-    }
-
-    // TODO add toolbarRef
-    const actionsInHeader = !isColumn && elementID;
-    return actionsInHeader ? (
-        <div className="w-full">
-            <nav
-                className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print flex-auto toolbar--in-container"
-                data-shortcut-target="mailbox-toolbar"
-                aria-label={c('Label').t`Toolbar`}
-                ref={ref}
-            >
-                <div className="flex items-center toolbar-inner flex-nowrap gap-2">
-                    <MoveBackButton />
-                    {!isInDeletedFolder && (
-                        <>
-                            <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
-                            <MoveButtons
-                                labelID={labelID}
-                                isExtraTiny={isExtraTiny}
-                                selectedIDs={actions.selectedIDs}
-                                onMove={actions.handleMove}
-                                onDelete={actions.handleDelete}
-                            />
+        const content = actionsInHeader ? (
+            <>
+                {elementID && <MoveBackButton />}
+                {!isInDeletedFolder && (
+                    <>
+                        <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
+                        <Vr />
+                        <MoveButtons
+                            labelID={labelID}
+                            isExtraTiny={false}
+                            viewportIsNarrow
+                            selectedIDs={actions.selectedIDs}
+                            onMove={actions.handleMove}
+                            onDelete={actions.handleDelete}
+                        />
+                        <Vr />
+                        {!isTiny && (
                             <LabelsAndFolders
                                 labelID={labelID}
                                 selectedIDs={actions.selectedIDs}
@@ -172,29 +89,105 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                                 moveDropdownToggleRef={moveDropdownToggleRef}
                                 onCheckAll={actions.handleCheckAll}
                             />
-                            {!isSelectAll && (
-                                <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />
-                            )}
-                        </>
-                    )}
+                        )}
+                        {!isTiny && !isSelectAll && (
+                            <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />
+                        )}
+                        <MoreDropdown
+                            elementIDs={elementsData.elementIDs}
+                            selectedIDs={actions.selectedIDs}
+                            isSearch={isSearching}
+                            isNarrow
+                            isTiny
+                            isExtraTiny={false}
+                            onMove={actions.handleMove}
+                            onDelete={actions.handleDelete}
+                            onCheckAll={actions.handleCheckAll}
+                        />
 
-                    {!isTiny ? (
-                        <>
-                            <Vr />
-                            <NavigationControls
-                                loading={elementsData.loading}
-                                conversationMode={conversationMode}
-                                elementID={elementID}
-                                messageID={messageID}
-                                elementIDs={elementsData.elementIDs}
-                                onElement={actions.handleElement}
-                                labelID={labelID}
-                            />
-                        </>
-                    ) : null}
-                </div>
-            </nav>
-        </div>
+                        <MoreActions selectedIDs={actions.selectedIDs} />
+                    </>
+                )}
+            </>
+        ) : (
+            <>
+                <LabelName selectedIDs={actions.selectedIDs} labelName={labelName} />
+                <MoreDropdown
+                    elementIDs={elementsData.elementIDs}
+                    selectedIDs={actions.selectedIDs}
+                    isSearch={isSearching}
+                    isNarrow={isTiny}
+                    isTiny={isTiny}
+                    isExtraTiny={isExtraTiny}
+                    onMove={actions.handleMove}
+                    onDelete={actions.handleDelete}
+                    onCheckAll={actions.handleCheckAll}
+                />
+            </>
+        );
+
+        return (
+            <>
+                <nav
+                    className="toolbar toolbar--heavy flex flex-1 flex-nowrap shrink-0 items-center gap-2 no-print toolbar--in-container"
+                    data-shortcut-target="mailbox-toolbar"
+                    aria-label={c('Label').t`Toolbar`}
+                    ref={ref}
+                >
+                    <div className="flex items-center flex-nowrap toolbar-inner gap-2 ml-2">{content}</div>
+                </nav>
+                {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
+            </>
+        );
+    }
+
+    const actionsInHeader = !isColumn && elementID;
+    return actionsInHeader ? (
+        <nav
+            className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print flex-auto toolbar--in-container"
+            data-shortcut-target="mailbox-toolbar"
+            aria-label={c('Label').t`Toolbar`}
+            ref={ref}
+        >
+            <div className="flex items-center toolbar-inner flex-nowrap gap-2">
+                <MoveBackButton />
+                {!isInDeletedFolder && (
+                    <>
+                        <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
+                        <MoveButtons
+                            labelID={labelID}
+                            isExtraTiny={false}
+                            selectedIDs={actions.selectedIDs}
+                            onMove={actions.handleMove}
+                            onDelete={actions.handleDelete}
+                        />
+                        <LabelsAndFolders
+                            labelID={labelID}
+                            selectedIDs={actions.selectedIDs}
+                            labelDropdownToggleRef={labelDropdownToggleRef}
+                            moveDropdownToggleRef={moveDropdownToggleRef}
+                            onCheckAll={actions.handleCheckAll}
+                        />
+                        {!isSelectAll && <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />}
+                    </>
+                )}
+
+                {!isExtraTiny ? (
+                    <>
+                        <Vr />
+                        <NavigationControls
+                            loading={elementsData.loading}
+                            conversationMode={conversationMode}
+                            elementID={elementID}
+                            messageID={messageID}
+                            elementIDs={elementsData.elementIDs}
+                            onElement={actions.handleElement}
+                            labelID={labelID}
+                        />
+                    </>
+                ) : null}
+            </div>
+        </nav>
     ) : (
         <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
     );
