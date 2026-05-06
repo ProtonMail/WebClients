@@ -88,7 +88,7 @@ describe('useSetupGmailBYOEAddress', () => {
             const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(true, mockToken);
+                await result.current.handleBYOEWithImportCallback(true, false, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -102,7 +102,7 @@ describe('useSetupGmailBYOEAddress', () => {
             const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -115,7 +115,7 @@ describe('useSetupGmailBYOEAddress', () => {
             const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
             });
 
             expect(mockDispatch).toHaveBeenCalled();
@@ -129,7 +129,7 @@ describe('useSetupGmailBYOEAddress', () => {
             const { result } = renderHook(() => useSetupGmailBYOEAddress({ showSuccessModal: mockShowSuccessModal }));
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
             });
 
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
