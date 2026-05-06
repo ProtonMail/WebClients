@@ -69,7 +69,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
         }
     };
 
-    const handleBYOEWithImportCallback = async (hasError: boolean, token?: ImportToken) => {
+    const handleBYOEWithImportCallback = async (hasError: boolean, isConversionFlow: boolean, token?: ImportToken) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
             onComplete?.();
@@ -94,6 +94,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
                         Provider: OAUTH_PROVIDER.GOOGLE,
                         Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                         Account: token.Account,
+                        AutomaticImport: !isConversionFlow,
                     })
                 );
             } catch (e) {

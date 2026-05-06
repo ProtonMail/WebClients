@@ -60,7 +60,7 @@ const useReconnectSync = (address: Address) => {
                             type: SyncTokenStrategy.useExisting,
                             token: Tokens[0],
                             Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
-                            expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                            expectedEmailAddress: address.Email,
                             successNotification: { text: c('action').t`Resuming forward` },
                         })
                     );
@@ -82,7 +82,7 @@ const useReconnectSync = (address: Address) => {
                                 Provider,
                                 RedirectUri,
                                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
-                                expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                                expectedEmailAddress: address.Email,
                                 successNotification: { text: c('action').t`Resuming forward` },
                                 Features: [EASY_SWITCH_FEATURES.BYOE],
                             })
@@ -170,7 +170,7 @@ const useReconnectSync = (address: Address) => {
                         type: SyncTokenStrategy.useExisting,
                         token: Tokens[0],
                         Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
-                        expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                        expectedEmailAddress: address.Email,
                     })
                 );
 
@@ -197,7 +197,7 @@ const useReconnectSync = (address: Address) => {
                                 Provider,
                                 RedirectUri,
                                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
-                                expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                                expectedEmailAddress: address.Email,
                                 Features: [EASY_SWITCH_FEATURES.BYOE],
                             })
                         );

@@ -56,6 +56,7 @@ const ConnectGmailButton = ({
     const [removeForwardingModalProps, setRemoveForwardingModalOpen, renderRemoveForwardingModal] = useModalState();
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
+    const [isConversionFlow, setIsConversionFlow] = useState(false);
 
     const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string) => {
@@ -97,6 +98,7 @@ const ConnectGmailButton = ({
 
     const handleOpenSyncModal = async (expectedEmailAddress: string | undefined) => {
         setExpectedEmailAddress(expectedEmailAddress);
+        setIsConversionFlow(!!expectedEmailAddress);
         setSyncModalOpen(true);
     };
 
@@ -149,7 +151,12 @@ const ConnectGmailButton = ({
                 <BYOESetupSuccessModal
                     connectedAddress={connectedAddress}
                     onComplete={onComplete}
+                    isConversionFlow={isConversionFlow}
                     {...byoeSetupSuccessModal}
+                    onClose={() => {
+                        setIsConversionFlow(false);
+                        byoeSetupSuccessModal.onClose();
+                    }}
                 />
             )}
         </>

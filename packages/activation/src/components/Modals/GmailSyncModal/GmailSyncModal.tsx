@@ -25,7 +25,7 @@ interface Props extends ModalProps {
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
-    onBYOECallback?: (hasError: boolean, token?: ImportToken) => void;
+    onBYOECallback?: (hasError: boolean, isConversionFlow: boolean, token?: ImportToken) => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
@@ -71,9 +71,6 @@ const GmailSyncModal = ({
                         Source: source,
                         successNotification: hasAccessToBYOE ? undefined : getSyncSuccessNotification(),
                         errorNotification: hasAccessToBYOE ? getBYOEFailNotification() : undefined,
-                        expectedEmailAddress: expectedEmailAddress
-                            ? { address: expectedEmailAddress, type: 'convertToBYOE' }
-                            : undefined,
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
@@ -105,12 +102,14 @@ const GmailSyncModal = ({
                         Source: source,
                         errorNotification: getBYOEFailNotification(),
                         Features: [EASY_SWITCH_FEATURES.BYOE],
+                        expectedEmailAddress,
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const hasError = res.type.endsWith('rejected');
-                onBYOECallback?.(hasError, payload);
+                const isConversionFlow = !!expectedEmailAddress;
+                onBYOECallback?.(hasError, isConversionFlow, payload);
             },
         });
     };
@@ -128,15 +127,7 @@ const GmailSyncModal = ({
     };
 
     if (hasAccessToBYOE) {
-        return (
-            <AddBYOEModal
-                {...rest}
-                onClose={handleClose}
-                onSubmit={handleBYOEWithImport}
-                expectedEmailAddress={expectedEmailAddress}
-                isLoading={loading}
-            />
-        );
+        return <AddBYOEModal {...rest} onClose={handleClose} onSubmit={handleBYOEWithImport} isLoading={loading} />;
     }
 
     return (

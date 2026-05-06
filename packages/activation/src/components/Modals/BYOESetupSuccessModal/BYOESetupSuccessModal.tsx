@@ -10,9 +10,10 @@ import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup
 interface Props extends ModalProps {
     connectedAddress: string;
     onComplete?: () => Promise<void>;
+    isConversionFlow: boolean;
 }
 
-export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, ...rest }: Props) => {
+export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, isConversionFlow, ...rest }: Props) => {
     const goToSettings = useSettingsLink();
     const { APP_NAME } = useConfig();
 
@@ -38,8 +39,10 @@ export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, .
                     <li>{c('Description')
                         .jt`Emails sent to ${connectedAddressText} will now show up in ${MAIL_APP_NAME}.`}</li>
                     <li>{c('Description').t`You can now send emails from ${BRAND_NAME} using this address.`}</li>
-                    <li>{c('Description')
-                        .t`We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.`}</li>
+                    {!isConversionFlow && (
+                        <li>{c('Description')
+                            .t`We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.`}</li>
+                    )}
                 </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
