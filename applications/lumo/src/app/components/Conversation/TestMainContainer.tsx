@@ -9,6 +9,7 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ComposerMode, type Message } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
+import { PublicHeader } from '../Guest/PublicHeader';
 import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
 import LumoMainText from './MainContainer/LumoMainText';
@@ -72,6 +73,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
 
     return (
         <LumoLayoutWithDrawer
+            headerComponent={isGuest ? <PublicHeader /> : null}
             drawerContentComponent={
                 <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1">
                     <FilesManagementView
