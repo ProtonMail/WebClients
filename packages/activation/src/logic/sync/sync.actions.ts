@@ -85,7 +85,7 @@ export type CreateSyncProps = (CreateSyncNeedsToken | CreateSyncExistingToken) &
     type: SyncTokenStrategy;
     successNotification?: CreateNotificationOptions;
     errorNotification?: CreateNotificationOptions;
-    expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
+    expectedEmailAddress?: string;
     Source: EASY_SWITCH_SOURCES;
     Features?: EASY_SWITCH_FEATURES[];
 };
@@ -113,7 +113,7 @@ export const createSyncItem = createAsyncThunk<
                     RedirectUri,
                     Source,
                     Features: Features ?? getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
-                    Account: expectedEmailAddress?.address,
+                    Account: expectedEmailAddress,
                 })
             );
 
@@ -127,14 +127,13 @@ export const createSyncItem = createAsyncThunk<
 
         // When reconnecting the BYOE address, the user can choose a different gmail account that the BYOE he's trying to reconnect.
         // We need to make sure they are matching to continue
-        if (expectedEmailAddress && Account !== expectedEmailAddress.address) {
-            if (expectedEmailAddress.type === 'reconnect') {
-                throw new Error(c('error').t`Please sign in with the same Gmail address you originally connected`);
-            } else {
-                throw new Error(
-                    c('error').t`Please sign in with a Gmail address that already forwards to ${MAIL_APP_NAME}`
-                );
-            }
+        if (expectedEmailAddress && Account !== expectedEmailAddress) {
+            thunkApi.extra.notificationManager.createNotification({
+                type: 'error',
+                text: c('error').t`Please sign in with the same Gmail address you originally connected`,
+            });
+
+            return thunkApi.rejectWithValue({ Code: 0, Error: 'wrong_account' });
         }
 
         const createImportPayload: CreateImportPayload = {
@@ -246,6 +245,7 @@ export type CreateTokenProps = {
     Provider: OAUTH_PROVIDER;
     RedirectUri: string;
     Features?: EASY_SWITCH_FEATURES[];
+    expectedEmailAddress?: string;
 };
 
 export const createTokenItem = createAsyncThunk<
@@ -256,7 +256,7 @@ export const createTokenItem = createAsyncThunk<
         fulfillValue: ImportToken;
     }
 >('token/create', async (props, thunkApi) => {
-    const { Source, errorNotification, Code, Provider, RedirectUri, Features } = props;
+    const { Source, errorNotification, Code, Provider, RedirectUri, Features, expectedEmailAddress } = props;
 
     try {
         const { Token }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
@@ -268,6 +268,18 @@ export const createTokenItem = createAsyncThunk<
                 Features: Features ?? getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
             })
         );
+
+        const { Account } = Token;
+
+        // In the conversion flow, user needs to connect using the selected address
+        if (expectedEmailAddress && Account !== expectedEmailAddress) {
+            thunkApi.extra.notificationManager.createNotification({
+                type: 'error',
+                text: c('error').t`Please sign in with a Gmail address that already forwards to ${MAIL_APP_NAME}`,
+            });
+
+            return thunkApi.rejectWithValue({ Code: 0, Error: 'wrong_account' });
+        }
 
         return Token;
     } catch (error: any) {
