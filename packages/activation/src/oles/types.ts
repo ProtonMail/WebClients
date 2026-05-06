@@ -1,4 +1,4 @@
-import type { ApiImporterProduct } from '../api/api.interface';
+import type { ApiImporterOrganizationState, ApiImporterProduct } from '../api/api.interface';
 
 export type Product = ApiImporterProduct;
 
@@ -17,6 +17,8 @@ export type MigrationConfiguration = {
     domainName: string | undefined;
     importerOrganizationId: string | undefined;
     importOrganizationSettings: boolean;
+    joiningLink: JoiningLink | undefined;
+    state: ApiImporterOrganizationState;
 };
 
 export type MigrationSetupModel = MigrationConfiguration & {
@@ -24,4 +26,5 @@ export type MigrationSetupModel = MigrationConfiguration & {
     setTimePeriod: (period: TimePeriod) => void;
     setSelectedProducts: (products: Product[]) => void;
     setImportOrganizationSettings: (value: boolean) => void;
+    setDomainName: (value: string | undefined) => void;
 };

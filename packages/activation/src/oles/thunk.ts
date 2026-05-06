@@ -7,7 +7,7 @@ import { createAddress } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
 import { getMemberAddresses, membersThunk } from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
-import { decryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
+import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
@@ -35,12 +35,18 @@ import {
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { createOrganizationImporterMigration } from '../api';
-import type { ApiImporterOrganizationUser, ApiJoiningLinkData } from '../api/api.interface';
+import { createJoiningLink, createOrganizationImporter, createOrganizationImporterMigration } from '../api';
+import {
+    ApiImportProvider,
+    type ApiImporterOrganization,
+    type ApiImporterOrganizationUser,
+    type ApiJoiningLinkData,
+} from '../api/api.interface';
 import type { OAuthToken } from '../logic/oauthToken';
-import type { JoiningLink } from './types';
+import type { JoiningLink, MigrationConfiguration } from './types';
 
 type RequiredState = KtState &
     OrganizationKeyState &
@@ -110,6 +116,55 @@ export const parseJoiningLinkData = createAsyncThunk<JoiningLink, ApiJoiningLink
         };
     }
 );
+
+export const setupJoiningLink = createAsyncThunk<JoiningLink, string, ThunkApi<OrganizationKeyState>>(
+    'oles/setupJoiningLink',
+    async (importerOganizationId, { dispatch, extra: { api } }) => {
+        const orgKey = await dispatch(organizationKeyThunk());
+        if (!orgKey.publicKey) {
+            throw new Error('Missing organization public key');
+        }
+        const password = getRandomString(24);
+        const EncryptedTempPassword = await encryptTemporaryPassword(password, orgKey.publicKey);
+        const { JoiningLinkData } = await api<{ JoiningLinkData: ApiJoiningLinkData }>(
+            createJoiningLink(importerOganizationId, {
+                EncryptedTempPassword,
+            })
+        );
+        return {
+            token: JoiningLinkData.Token,
+            expirationTime: JoiningLinkData.TokenExpirationTime,
+            password,
+        };
+    }
+);
+
+export const setupMigration = createAsyncThunk<
+    MigrationConfiguration,
+    MigrationConfiguration,
+    ThunkApi<OrganizationKeyState>
+>('oles/setupMigration', async (payload, { dispatch, extra: { api } }) => {
+    const { ImporterOrganizationID, DomainName, State } = await api<ApiImporterOrganization>(
+        createOrganizationImporter({
+            Provider: ApiImportProvider.GOOGLE,
+            Products: payload.selectedProducts,
+            ImportOrganizationSettings: payload.importOrganizationSettings,
+        })
+    );
+
+    const joiningLink = await dispatch(setupJoiningLink(ImporterOrganizationID)).unwrap();
+
+    return {
+        selectedProducts: payload.selectedProducts,
+        notifyList: payload.notifyList,
+        timePeriod: payload.timePeriod,
+        domainName: DomainName,
+        importerOrganizationId: ImporterOrganizationID,
+        importOrganizationSettings: payload.importOrganizationSettings,
+        joiningLink,
+        state: State,
+    };
+});
 
 export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchParams, ThunkApi<RequiredState>>(
     'oles/createMigration',
