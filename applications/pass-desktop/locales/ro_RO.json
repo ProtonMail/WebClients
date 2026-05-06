@@ -781,6 +781,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Don't show this again": [
+        "Nu mai afișa asta"
       ]
     },
     "App menu": {
@@ -1355,6 +1358,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "O verificare a deblocării desktopului este deja în curs de desfășurare."
+      ],
+      "Biometric authentication failed.": [
+        "Autentificarea biometrică a eșuat."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Datele de blocare biometrice nu se potrivesc."
+      ],
+      "Biometric lock credentials not found.": [
+        "Datele de conectare biometrică nu au fost găsite."
+      ],
+      "Biometric lock is not configured.": [
+        "Blocarea biometrică nu este configurată."
+      ],
+      "Biometric lock setup failed.": [
+        "Setarea blocării biometrice a eșuat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Comunicarea criptată cu aplicația desktop ${ PASS_APP_NAME } a eșuat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplicația desktop ${ PASS_APP_NAME } trebuie să fie conectată."
+      ],
+      "Unknown error.": [
+        "Eroare necunoscută."
       ]
     },
     "Error message": {
@@ -2708,6 +2744,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ]
     },
     "Keyboard key": {
@@ -5290,6 +5329,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
       ]
     }
   }

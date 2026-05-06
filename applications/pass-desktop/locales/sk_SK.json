@@ -783,6 +783,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
       ]
     },
     "App menu": {
@@ -1360,6 +1363,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "V súčasnosti prebieha kontrola odblokovania desktopu."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ]
     },
     "Error message": {
@@ -2741,6 +2777,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtu"
       ]
     },
     "Keyboard key": {
@@ -5352,6 +5391,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Získať ${ planName }"
       ]
     }
   }

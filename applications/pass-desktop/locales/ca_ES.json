@@ -179,7 +179,7 @@
         "Continuar fora de línia"
       ],
       "Copy": [
-        "Copiar"
+        "Copia"
       ],
       "Copy and close": [
         "Copia i tanca"
@@ -779,6 +779,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
       ]
     },
     "App menu": {
@@ -1350,6 +1353,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
+      ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ]
     },
     "Error message": {
@@ -2675,6 +2711,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ]
     },
     "Keyboard key": {
@@ -2911,7 +2950,7 @@
         "Targetes"
       ],
       "Catch-All": [
-        "Catch-all"
+        "Capturar-ho tot"
       ],
       "Checkbox": [
         "Casella de selecció"
@@ -3910,7 +3949,7 @@
         "Les vostres contrasenyes allà on sigueu."
       ],
       "ZIP": [
-        "Fitxer ZIP"
+        "ZIP"
       ],
       "ZIP or Postal code": [
         "Codi postal"
@@ -5228,6 +5267,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
       ]
     }
   }
