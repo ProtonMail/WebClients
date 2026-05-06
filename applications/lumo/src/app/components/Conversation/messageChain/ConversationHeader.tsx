@@ -7,20 +7,17 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo } from '@proton/components';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
-import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
+import { useProjectActions } from '../../../features/projects/hooks/useProjectActions';
 import { useConversationStar } from '../../../hooks/useConversationStar';
-import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
 import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';
-import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import { type Conversation, type Message, getProjectInfo } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
-import LumoButton from '../../Buttons/LumoButton';
-import { NewChatButtonHeader } from '../../Buttons/NewChatButton';
+import type { DropdownOptions } from '../../DropdownMenu';
 import FavoritesUpsellPrompt from '../../Guest/FavoritesUpsellPrompt';
 
 import './ConversationHeader.scss';
@@ -28,10 +25,11 @@ import './ConversationHeader.scss';
 interface Props {
     conversation: Conversation;
     messageChain: Message[];
-    onOpenFiles: (message?: Message) => void;
+    // onOpenFiles: (message?: Message) => void; TODO: remove this prop
 }
 
-const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }: Props) => {
+// TODO: major clean up of this component
+const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
     const { id, title, spaceId } = conversation;
     const dispatch = useLumoDispatch();
     const history = useHistory();
@@ -39,13 +37,14 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const { isGhostChatMode } = useGhostChat();
-    const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
+    // const { isGhostChatMode } = useGhostChat();
+    const { showFavoritesUpsellModal, favoritesUpsellModalProps } = useConversationStar({
         conversation,
         location: 'header',
     });
     const { isSmallScreen } = useSidebar();
     const allAttachments = useLumoSelector(selectAttachments);
+    const { navigateToAllProjects } = useProjectActions();
 
     // Get space/project info if this conversation is part of a project
     const space = useLumoSelector(selectSpaceById(spaceId));
@@ -92,12 +91,12 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     });
 
     // Total = unique filenames across all sources
-    const totalFiles = uniqueFilenames.size;
+    // const totalFiles = uniqueFilenames.size;
 
-    // Handler for opening the full knowledge base (no filter)
-    const handleOpenFilesClick = useCallback(() => {
-        onOpenFiles(); // Call with no arguments to show full knowledge base
-    }, [onOpenFiles]);
+    // // Handler for opening the full knowledge base (no filter)
+    // const handleOpenFilesClick = useCallback(() => {
+    //     onOpenFiles(); // Call with no arguments to show full knowledge base
+    // }, [onOpenFiles]);
 
     useEffect(() => {
         // Only update local state if user is not currently editing
@@ -159,9 +158,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         [saveTitleChange]
     );
 
-    const handleStarClick = () => {
-        handleStarToggle();
-    };
+    // const handleStarClick = () => {
+    //     handleStarToggle();
+    // };
 
     const handleNavigateToProject = useCallback(() => {
         if (spaceId) {
@@ -169,10 +168,33 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         }
     }, [spaceId, history]);
 
+    const additionalOptions: DropdownOptions[] = isProjectConversation
+        ? [
+              {
+                  label: c('Option').t`Go to project`,
+                  icon: 'arrow-up-and-left',
+                  onClick: handleNavigateToProject,
+              },
+              {
+                  label: c('Option').t`Go to all projects`,
+                  icon: 'folder-open',
+                  onClick: navigateToAllProjects,
+              },
+          ]
+        : [];
+
     if (isSmallScreen) {
         return (
             <>
-                <HeaderWrapper>
+                <header className="w-full max-w-full flex flex-nowrap items-center justify-end mx-auto p-3 header-lumo">
+                    {/* <NewChatButtonHeader /> */}
+                    <ChatDropdownMenu
+                        conversation={conversation}
+                        visibleOnHover
+                        additionalOptions={additionalOptions}
+                    />
+                </header>
+                {/* <HeaderWrapper>
                     <div className="flex flex-row items-center gap-1">
                         {!isGhostChatMode && (
                             <div className="relative">
@@ -214,8 +236,8 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                         </div>
                         <NewChatButtonHeader />
                     </div>
-                </HeaderWrapper>
-                {isProjectConversation && projectName && (
+                </HeaderWrapper> */}
+                {/* {isProjectConversation && projectName && (
                     <div className="conversation-breadcrumb-mobile flex items-center gap-2 px-4 py-2 border-b">
                         <Button
                             icon
@@ -228,8 +250,8 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                             <span className="text-md color-weak">{projectName}</span>
                         </Button>
                     </div>
-                )}
-                {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
+                )} */}
+                {/* {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />} */}
             </>
         );
     }
@@ -349,5 +371,5 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
     const nextAttachmentIds = nextProps.messageChain.flatMap((m) => m.attachments?.map((a) => a.id) || []).join(',');
 
     const attachmentsChanged = prevAttachmentIds !== nextAttachmentIds;
-    return !conversationChanged && !attachmentsChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
+    return !conversationChanged && !attachmentsChanged;
 });
