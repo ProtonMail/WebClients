@@ -227,7 +227,9 @@ const SubUserEditModal = ({
     const { createNotification } = useNotifications();
     const silentApi = useSilentApi();
 
-    const [selectedRoles, setSelectedRoles] = useState<Set<string>>(new Set());
+    const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
+        () => new Set(member.UserOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
+    );
     const [organizationRoles, loadingRoles] = useOrganizationRoles();
     const showRolesTab = useFlag('AdminRoleMVP');
 
@@ -708,6 +710,7 @@ const SubUserEditModal = ({
                                               onChange={setSelectedRoles}
                                               organizationRoles={organizationRoles}
                                               loadingRoles={loadingRoles}
+                                              userRoles={member.UserOrganizationRoles}
                                           />
                                       ),
                                   },
