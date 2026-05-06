@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -41,6 +41,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
+import { usePlansSectionTelemetry } from './plansSectionTelemetry';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -82,6 +83,7 @@ const PlansSectionInner = ({ app }: Props) => {
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const { sendPageLoad, sendCtaClick, sendSubscriptionSuccess } = usePlansSectionTelemetry({ app });
     const isLoading =
         loadingPlans ||
         loadingSubscription ||
@@ -106,12 +108,25 @@ const PlansSectionInner = ({ app }: Props) => {
 
     useLoad();
 
+    const hasTrackedPageLoad = useRef(false);
+
+    useEffect(() => {
+        if (isLoading || hasTrackedPageLoad.current) {
+            return;
+        }
+        hasTrackedPageLoad.current = true;
+        sendPageLoad();
+    }, [isLoading]);
+
     const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
         if (!hasPlanIDs(newPlanIDs)) {
             throw new Error('Downgrade not supported');
         }
 
         const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
+        const planName = plan?.Name;
+
+        sendCtaClick({ cta: 'select_plan', plan: planName });
 
         void openSubscriptionModal({
             defaultSelectedProductPlans: selectedProductPlans,
@@ -125,6 +140,7 @@ const PlansSectionInner = ({ app }: Props) => {
             metrics: {
                 source: 'plans',
             },
+            onSubscribed: () => sendSubscriptionSuccess({ origin: 'select_plan', plan: planName }),
         });
     };
 
@@ -195,6 +211,7 @@ const PlansSectionInner = ({ app }: Props) => {
                             openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                             return;
                         }
+                        sendCtaClick({ cta: 'view_plans_details' });
                         void openSubscriptionModal({
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                             defaultAudience: audience,
@@ -202,6 +219,7 @@ const PlansSectionInner = ({ app }: Props) => {
                             metrics: {
                                 source: 'plans',
                             },
+                            onSubscribed: () => sendSubscriptionSuccess({ origin: 'view_plans_details' }),
                         });
                     }}
                 >
