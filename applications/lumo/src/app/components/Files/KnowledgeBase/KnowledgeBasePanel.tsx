@@ -11,18 +11,17 @@ import { IcFile } from '@proton/icons/icons/IcFile';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useAutoRetrievedAttachments, useFileProcessing, useFilteredFiles } from '../../../hooks';
+import { useAutoRetrievedAttachments, useFilteredFiles } from '../../../hooks';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectContextFilters, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../redux/slices/contextFilters';
 import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
-import { handleFileAsync } from '../../../services/files';
-import { SearchService } from '../../../services/search/searchService';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
-import type { DriveDocument } from '../../../types/documents';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
+import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
+import { useFileHandling } from '../../Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
@@ -319,12 +318,20 @@ export const KnowledgeBasePanel = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
-    const fileProcessingService = useFileProcessing();
     useNativeComposerVisibilityApi({ isBlocking: true });
 
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
     const [previewFile, setPreviewFile] = useState<Attachment | null>(null);
+    const { requestSheetSelection: handleSelectExcelSheets, modal: excelSheetSelectionModal } =
+        useExcelSheetSelection();
+
+    const { handleLocalFileProcessing } = useFileHandling({
+        messageChain,
+        spaceId,
+        onSelectExcelSheets: handleSelectExcelSheets,
+        notifyOnSuccess: true,
+    });
 
     const { allFiles, activeHistoricalFiles, unusedHistoricalFiles } = useFilteredFiles(
         messageChain,
@@ -335,8 +342,6 @@ export const KnowledgeBasePanel = ({
 
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const { linkedDriveFolder } = getProjectInfo(space);
-
-    const user = useLumoSelector((state) => state.user?.value);
 
     const { autoRetrievedAttachments, activeAutoRetrieved, excludedAutoRetrieved } =
         useAutoRetrievedAttachments(messageChain);
@@ -352,12 +357,8 @@ export const KnowledgeBasePanel = ({
     const handleDriveFileSelect = React.useCallback(
         async (file: DriveNode, content: Uint8Array<ArrayBuffer>) => {
             try {
-                const detectedMimeType = getMimeTypeFromExtension(file.name);
-                const mimeType = file.mediaType || detectedMimeType;
-                const fileName = file.name;
-
-                const fileBlob = new Blob([content], { type: mimeType });
-                const fileObject = new File([fileBlob], fileName, {
+                const mimeType = file.mediaType || getMimeTypeFromExtension(file.name);
+                const fileObject = new File([new Blob([content], { type: mimeType })], file.name, {
                     type: mimeType,
                     lastModified: file.modifiedTime?.getTime() || Date.now(),
                 });
@@ -365,53 +366,8 @@ export const KnowledgeBasePanel = ({
                 console.log(
                     `Processing downloaded Drive file: ${file.name} (${(content.length / 1024 / 1024).toFixed(2)} MB)`
                 );
-                const result = await dispatch(handleFileAsync(fileObject, messageChain, fileProcessingService));
 
-                if (result.isDuplicate) {
-                    createNotification({
-                        text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
-                        type: 'warning',
-                    });
-                } else if (result.isUnsupported) {
-                    createNotification({
-                        text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
-                        type: 'error',
-                    });
-                } else if (!result.success && result.errorMessage) {
-                    createNotification({
-                        text: c('collider_2025: Error').t`Error processing ${result.fileName}: ${result.errorMessage}`,
-                        type: 'error',
-                    });
-                } else {
-                    createNotification({
-                        text: c('collider_2025: Success').t`File added to knowledge base: ${result.fileName}`,
-                        type: 'success',
-                    });
-
-                    if (spaceId && result.success && result.attachmentId && result.markdown) {
-                        try {
-                            const userId = user?.ID;
-                            if (userId) {
-                                const searchService = SearchService.get(userId);
-                                const document: DriveDocument = {
-                                    id: result.attachmentId,
-                                    name: fileName,
-                                    content: result.markdown,
-                                    mimeType: mimeType,
-                                    size: content.length,
-                                    modifiedTime: Date.now(),
-                                    folderId: spaceId,
-                                    folderPath: 'Uploaded Files',
-                                    spaceId,
-                                };
-                                await searchService.indexDocuments([document]);
-                                console.log(`[FilesPanel] Indexed file for RAG: ${fileName}`);
-                            }
-                        } catch (indexError) {
-                            console.warn('[FilesPanel] Failed to index file for RAG:', indexError);
-                        }
-                    }
-                }
+                await handleLocalFileProcessing(fileObject);
             } catch (error) {
                 console.error('Failed to process downloaded Drive file:', error);
                 createNotification({
@@ -420,7 +376,7 @@ export const KnowledgeBasePanel = ({
                 });
             }
         },
-        [dispatch, createNotification, spaceId, user]
+        [createNotification, handleLocalFileProcessing]
     );
 
     const handleDriveError = React.useCallback((error: Error) => {
@@ -445,15 +401,22 @@ export const KnowledgeBasePanel = ({
 
     if (previewFile) {
         return (
-            <div className={panelClassName} ref={filesContainerRef}>
-                <div
-                    className={clsx('files-panel-content w-full h-full', {
-                        'bg-weak rounded-xl shadow-lifted': !isModal,
-                    })}
-                >
-                    <FilePreviewPanel attachment={previewFile} onBack={() => setPreviewFile(null)} onClose={onClose} />
+            <>
+                <div className={panelClassName} ref={filesContainerRef}>
+                    <div
+                        className={clsx('files-panel-content w-full h-full', {
+                            'bg-weak rounded-xl shadow-lifted': !isModal,
+                        })}
+                    >
+                        <FilePreviewPanel
+                            attachment={previewFile}
+                            onBack={() => setPreviewFile(null)}
+                            onClose={onClose}
+                        />
+                    </div>
                 </div>
-            </div>
+                {excelSheetSelectionModal}
+            </>
         );
     }
 
@@ -471,27 +434,31 @@ export const KnowledgeBasePanel = ({
         }
 
         return (
-            <div className={panelClassName} ref={filesContainerRef}>
-                <div
-                    className={clsx('w-full h-full relative', {
-                        'rounded-none shadow-none': isModal,
-                        'files-panel-content flex flex-column flex-nowrap bg-norm rounded-xl shadow-lifted': !isModal,
-                    })}
-                >
-                    <DriveBrowser
-                        onFileSelect={handleDriveFileSelect}
-                        onError={handleDriveError}
-                        onClose={onClose}
-                        onBack={() => setShowDriveBrowser(false)}
-                        autoRefreshInterval={0}
-                        initialShowDriveBrowser={initialShowDriveBrowser}
-                        existingFiles={[...allFiles, ...currentAttachments].map((file) => ({
-                            filename: file.filename,
-                            rawBytes: file.rawBytes,
-                        }))}
-                    />
+            <>
+                <div className={panelClassName} ref={filesContainerRef}>
+                    <div
+                        className={clsx('w-full h-full relative', {
+                            'rounded-none shadow-none': isModal,
+                            'files-panel-content flex flex-column flex-nowrap bg-norm rounded-xl shadow-lifted':
+                                !isModal,
+                        })}
+                    >
+                        <DriveBrowser
+                            onFileSelect={handleDriveFileSelect}
+                            onError={handleDriveError}
+                            onClose={onClose}
+                            onBack={() => setShowDriveBrowser(false)}
+                            autoRefreshInterval={0}
+                            initialShowDriveBrowser={initialShowDriveBrowser}
+                            existingFiles={[...allFiles, ...currentAttachments].map((file) => ({
+                                filename: file.filename,
+                                rawBytes: file.rawBytes,
+                            }))}
+                        />
+                    </div>
                 </div>
-            </div>
+                {excelSheetSelectionModal}
+            </>
         );
     }
 
@@ -502,78 +469,79 @@ export const KnowledgeBasePanel = ({
         !linkedDriveFolder;
 
     return (
-        <div className={panelClassName} ref={filesContainerRef}>
-            <div
-                className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-4', {
-                    'bg-weak rounded-xl shadow-lifted': !isModal,
-                })}
-            >
-                {/* Header */}
-                <div className="shrink-0 mb-4">
-                    <div className="flex flex-row items-center justify-space-between">
-                        <div className="flex flex-row flex-nowrap items-center gap-1">
-                            <p className="m-0 text-lg text-bold">
-                                {c('collider_2025: Info').t`All files in this chat`}
-                            </p>
-                        </div>
+        <>
+            <div className={panelClassName} ref={filesContainerRef}>
+                <div
+                    className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-4', {
+                        'bg-weak rounded-xl shadow-lifted': !isModal,
+                    })}
+                >
+                    {/* Header */}
+                    <div className="shrink-0 mb-4">
+                        <div className="flex flex-row items-center justify-space-between">
+                            <div className="flex flex-row flex-nowrap items-center gap-1">
+                                <p className="m-0 text-lg text-bold">
+                                    {c('collider_2025: Info').t`All files in this chat`}
+                                </p>
+                            </div>
 
-                        {!linkedDriveFolder && (
+                            {!linkedDriveFolder && (
+                                <Button
+                                    size="small"
+                                    shape="outline"
+                                    onClick={() => setShowDriveBrowser(true)}
+                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
+                                    title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                >
+                                    <IcBrandProtonDrive size={4} />
+                                    <span className="text-sm">
+                                        {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                    </span>
+                                </Button>
+                            )}
+
+                            <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
+                                <IcCross size={4} />
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Filter chip */}
+                    {filterMessage && onClearFilter && (
+                        <div className="shrink-0 mb-4 flex flex-row items-center gap-2">
                             <Button
                                 size="small"
-                                shape="outline"
-                                onClick={() => setShowDriveBrowser(true)}
-                                className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
-                                title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                shape="solid"
+                                icon={true}
+                                onClick={onClearFilter}
+                                className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
+                                title={c('collider_2025: Info').t`Show all files`}
                             >
-                                <IcBrandProtonDrive size={4} />
-                                <span className="text-sm">
-                                    {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
-                                </span>
+                                <IcCross size={3} />
+                                <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
                             </Button>
-                        )}
+                        </div>
+                    )}
 
-                        <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                            <IcCross size={4} />
-                        </Button>
-                    </div>
-                </div>
-
-                {/* Filter chip */}
-                {filterMessage && onClearFilter && (
-                    <div className="shrink-0 mb-4 flex flex-row items-center gap-2">
-                        <Button
-                            size="small"
-                            shape="solid"
-                            icon={true}
-                            onClick={onClearFilter}
-                            className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
-                            title={c('collider_2025: Info').t`Show all files`}
-                        >
-                            <IcCross size={3} />
-                            <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
-                        </Button>
-                    </div>
-                )}
-
-                {/* File list */}
-                <div className="flex-1 min-h-0 overflow-y-auto">
-                    {filterMessage ? (
-                        <FilteredFilesContent
-                            allFiles={allFiles}
-                            contextFilters={contextFilters}
-                            onView={handleFileClick}
-                            onExclude={handleExcludeHistoricalFile}
-                            onInclude={handleIncludeHistoricalFile}
-                        />
-                    ) : (
-                        <>
-                            {(linkedDriveFolder || autoRetrievedAttachments.length > 0) && (
-                                <RetrievedKnowledgeSection
-                                    activeAutoRetrieved={activeAutoRetrieved}
-                                    onView={handleFileClick}
-                                    onExclude={handleExcludeHistoricalFile}
-                                />
-                            )}
+                    {/* File list */}
+                    <div className="flex-1 min-h-0 overflow-y-auto">
+                        {filterMessage ? (
+                            <FilteredFilesContent
+                                allFiles={allFiles}
+                                contextFilters={contextFilters}
+                                onView={handleFileClick}
+                                onExclude={handleExcludeHistoricalFile}
+                                onInclude={handleIncludeHistoricalFile}
+                            />
+                        ) : (
+                            <>
+                                {(linkedDriveFolder || autoRetrievedAttachments.length > 0) && (
+                                    <RetrievedKnowledgeSection
+                                        activeAutoRetrieved={activeAutoRetrieved}
+                                        onView={handleFileClick}
+                                        onExclude={handleExcludeHistoricalFile}
+                                    />
+                                )}
 
                             <ManualAttachmentsSection
                                 currentAttachments={currentAttachments}
@@ -584,62 +552,66 @@ export const KnowledgeBasePanel = ({
                                 onExclude={handleExcludeHistoricalFile}
                             />
 
-                            <ExcludedFilesSection
-                                excludedAutoRetrieved={excludedAutoRetrieved}
-                                unusedHistoricalFiles={unusedHistoricalFiles}
-                                onView={handleFileClick}
-                                onInclude={handleIncludeHistoricalFile}
-                            />
-                        </>
-                    )}
+                                <ExcludedFilesSection
+                                    excludedAutoRetrieved={excludedAutoRetrieved}
+                                    unusedHistoricalFiles={unusedHistoricalFiles}
+                                    onView={handleFileClick}
+                                    onInclude={handleIncludeHistoricalFile}
+                                />
+                            </>
+                        )}
 
-                    {isEmpty && (
-                        <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
-                            <IcFile size={8} className="color-weak mb-2" />
-                            <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No files available`}</p>
+                        {isEmpty && (
+                            <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
+                                <IcFile size={8} className="color-weak mb-2" />
+                                <p className="color-weak text-sm m-0">{c('collider_2025: Info')
+                                    .t`No files available`}</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Context capacity info — pinned to bottom, hidden in filter mode */}
+                    {!filterMessage && (
+                        <div
+                            className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden"
+                            style={{ height: showKnowledgeExplanation ? '8.75rem' : '5rem' }}
+                        >
+                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                            <button
+                                type="button"
+                                className="flex flex-row items-center gap-2 cursor-pointer p-3"
+                                onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
+                            >
+                                <IcInfoCircle className="shrink-0 color-weak" />
+                                <h4 className="m-0 text-sm text-bold flex-1">
+                                    {c('collider_2025: Info').t`File capacity for this conversation`}
+                                </h4>
+                                <Icon
+                                    name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
+                                    size={4}
+                                    className="color-weak shrink-0"
+                                />
+                            </button>
+
+                            {showKnowledgeExplanation && (
+                                <p className="m-0 text-xs color-weak px-3 pb-2">
+                                    {c('collider_2025: Info')
+                                        .t`For each conversation, ${LUMO_SHORT_APP_NAME} has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.`}
+                                </p>
+                            )}
+
+                            <div className="px-3 pb-3">
+                                <KnowledgeBaseContextProgressBar
+                                    messageChain={messageChain}
+                                    contextFilters={contextFilters}
+                                    currentAttachments={currentAttachments}
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
-
-                {/* Context capacity info — pinned to bottom, hidden in filter mode */}
-                {!filterMessage && (
-                    <div
-                        className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden"
-                        style={{ height: showKnowledgeExplanation ? '8.75rem' : '5rem' }}
-                    >
-                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                        <button type="button"
-                            className="flex flex-row items-center gap-2 cursor-pointer p-3"
-                            onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
-                        >
-                            <IcInfoCircle className="shrink-0 color-weak" />
-                            <h4 className="m-0 text-sm text-bold flex-1">
-                                {c('collider_2025: Info').t`File capacity for this conversation`}
-                            </h4>
-                            <Icon
-                                name={showKnowledgeExplanation ? 'chevron-up' : 'chevron-down'}
-                                size={4}
-                                className="color-weak shrink-0"
-                            />
-                        </button>
-
-                        {showKnowledgeExplanation && (
-                            <p className="m-0 text-xs color-weak px-3 pb-2">
-                                {c('collider_2025: Info')
-                                    .t`For each conversation, ${LUMO_SHORT_APP_NAME} has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using.`}
-                            </p>
-                        )}
-
-                        <div className="px-3 pb-3">
-                            <KnowledgeBaseContextProgressBar
-                                messageChain={messageChain}
-                                contextFilters={contextFilters}
-                                currentAttachments={currentAttachments}
-                            />
-                        </div>
-                    </div>
-                )}
             </div>
-        </div>
+            {excelSheetSelectionModal}
+        </>
     );
 };

@@ -2,7 +2,6 @@
  * File type helper utilities
  * Centralizes file type checking logic using getProcessingCategory
  */
-
 import { getProcessingCategory } from './filetypes';
 
 /**
@@ -11,6 +10,10 @@ import { getProcessingCategory } from './filetypes';
 export function isSpreadsheetFile(file: File): boolean {
     const category = getProcessingCategory(file.type, file.name);
     return category === 'csv' || category === 'excel';
+}
+
+export function isExcelFile(file: File): boolean {
+    return getProcessingCategory(file.type, file.name) === 'excel';
 }
 
 /**

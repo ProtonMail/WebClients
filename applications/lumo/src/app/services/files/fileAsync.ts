@@ -6,11 +6,16 @@ import type { Attachment, Message } from '../../types';
 import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../util/attachmentHelpers';
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
-import type { FileProcessingService } from '../fileProcessingService';
+import type { FileProcessingOptions, FileProcessingService } from '../fileProcessingService';
 import { findDuplicateAttachment } from './duplicateDetection';
 
 export const handleFileAsync =
-    (file: File, messageChain: Message[] = [], fileProcessingService: FileProcessingService) =>
+    (
+        file: File,
+        messageChain: Message[] = [],
+        fileProcessingService: FileProcessingService,
+        processingOptions?: FileProcessingOptions
+    ) =>
     async (
         dispatch: LumoDispatch,
         getState: () => LumoState
@@ -68,7 +73,7 @@ export const handleFileAsync =
 
         // All files go through the worker for processing
         try {
-            const result = await fileProcessingService.processFile(file);
+            const result = await fileProcessingService.processFile(file, processingOptions);
 
             if (result.type === 'text') {
                 // Text file processed successfully
