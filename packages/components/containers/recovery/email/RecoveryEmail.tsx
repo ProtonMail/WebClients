@@ -13,6 +13,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 
@@ -63,7 +64,7 @@ interface Props {
     renderForm?: (props: RenderFormProps) => ReactNode;
     inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label' | 'readOnly' | 'placeholder'>>;
     disableVerifyCta?: boolean;
-    onSubmit: (input: string) => void;
+    onSubmit: (input: string) => Promise<void>;
     onVerify: () => void;
     loading: boolean;
 }
@@ -100,7 +101,7 @@ const RecoveryEmail = ({
                     if (!onFormSubmit()) {
                         return;
                     }
-                    onSubmit(input);
+                    void onSubmit(input).catch(noop);
                 },
                 input: (
                     <InputFieldTwo

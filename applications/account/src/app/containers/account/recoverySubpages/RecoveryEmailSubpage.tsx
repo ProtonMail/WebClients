@@ -185,14 +185,11 @@ const RecoveryEmailSubpage = () => {
                             disableVerifyCta
                             {...accountRecovery.recoveryEmail.props}
                             onSubmit={async (value) => {
-                                try {
-                                    await accountRecovery.recoveryEmail.handleChangeEmailValue({
-                                        value,
-                                        autoStartVerificationFlowAfterSet: true,
-                                    });
-                                } finally {
-                                    setIsEditingRecoveryEmail(false);
-                                }
+                                await accountRecovery.recoveryEmail.handleChangeEmailValue({
+                                    value,
+                                    autoStartVerificationFlowAfterSet: true,
+                                });
+                                setIsEditingRecoveryEmail(false);
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery email`,
