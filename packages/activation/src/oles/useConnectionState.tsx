@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useState } from 'react';
 
-import { useApi } from '@proton/components/index';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 
 import { getConnectionStatus } from '../api';
 import type { ApiImporterConnectionStatus } from '../api/api.interface';
@@ -27,7 +27,7 @@ export const ConnectionStateProvider = ({ children }: { children: ReactNode }) =
 };
 
 export const useConnectionState = (): [ConnectionState | undefined, boolean, () => Promise<void>, () => void] => {
-    const api = useApi();
+    const api = useSilentApi();
     const { data, setData, loading, setLoading } = useContext(Context);
 
     const verify = async () => {

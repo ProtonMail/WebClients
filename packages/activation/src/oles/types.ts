@@ -4,6 +4,12 @@ export type Product = ApiImporterProduct;
 
 export type TimePeriod = 'all' | '1yr' | '2yr' | '5yr';
 
+export type JoiningLink = {
+    token: string;
+    password: string;
+    expirationTime: number;
+};
+
 export type MigrationConfiguration = {
     selectedProducts: Product[];
     notifyList: string[];

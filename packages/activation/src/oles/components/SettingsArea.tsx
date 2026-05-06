@@ -1,17 +1,20 @@
 import { ConnectionStateProvider } from '../useConnectionState';
-import { ImporterOrganizationProvider } from '../useImporterOrganization';
+import { ImporterOrganizationsProvider } from '../useImporterOrganizations';
+import { ProviderTokensProvider } from '../useProviderTokens';
 import { ProviderUsersProvider } from '../useProviderUsers';
 import MigrationFlow from './MigrationFlow';
 
 const SettingsArea = () => {
     return (
-        <ImporterOrganizationProvider>
-            <ProviderUsersProvider>
-                <ConnectionStateProvider>
-                    <MigrationFlow />
-                </ConnectionStateProvider>
-            </ProviderUsersProvider>
-        </ImporterOrganizationProvider>
+        <ProviderTokensProvider>
+            <ImporterOrganizationsProvider>
+                <ProviderUsersProvider>
+                    <ConnectionStateProvider>
+                        <MigrationFlow />
+                    </ConnectionStateProvider>
+                </ProviderUsersProvider>
+            </ImporterOrganizationsProvider>
+        </ProviderTokensProvider>
     );
 };
 
