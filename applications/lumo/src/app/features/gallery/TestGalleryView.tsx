@@ -14,7 +14,6 @@ import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -159,11 +158,6 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     if (isGuest) {
         return (
             <div className="gallery-view">
-                {isSmallScreen && (
-                    <HeaderWrapper>
-                        <div />
-                    </HeaderWrapper>
-                )}
                 <GuestSignInState
                     image={lumoImageLight}
                     imageAlt=""
@@ -209,11 +203,11 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
                     onChange={handleEditImageFileChange}
                 />
 
-                {isSmallScreen && (
+                {/* {isSmallScreen && (
                     <HeaderWrapper>
                         <div />
                     </HeaderWrapper>
-                )}
+                )} */}
 
                 {/* Main scrollable area — switches between Gallery and Inspiration */}
                 {/* eslint-disable-next-line no-nested-ternary */}
