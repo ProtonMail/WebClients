@@ -15,11 +15,9 @@ import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
 import { usePersonalization } from '../../hooks';
-import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { applyRetentionPolicy, categorizeConversations } from '../../layouts/sidepanel/helpers';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
@@ -75,7 +73,6 @@ const ProjectDetailViewInner = () => {
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
 
-    const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
     const { personalization } = usePersonalization();
     const {
         smoothRendering: ffSmoothRendering,
@@ -294,20 +291,20 @@ const ProjectDetailViewInner = () => {
 
     return (
         <LumoLayoutWithDrawer
-            leftHeaderButton={
-                <Button
-                    onClick={() => history.push('/projects')}
-                    icon
-                    shape="ghost"
-                    color="weak"
-                    size="small"
-                    className="shrink-0"
-                >
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="40" height="40" rx="12" fill="#F5F6FE" />
-                    </svg>
-                </Button>
-            }
+            // leftHeaderButton={
+            //     <Button
+            //         onClick={() => history.push('/projects')}
+            //         icon
+            //         shape="ghost"
+            //         color="weak"
+            //         size="small"
+            //         className="shrink-0"
+            //     >
+            //         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //             <rect width="40" height="40" rx="12" fill="#F5F6FE" />
+            //         </svg>
+            //     </Button>
+            // }
             headerComponent={
                 <ProjectTitleSection
                     projectName={projectName}
@@ -327,11 +324,11 @@ const ProjectDetailViewInner = () => {
             drawerTitle={c('collider_2025:Title').t`Project knowledge`}
         >
             <div className="project-detail-view flex flex-column">
-                {isMobileViewport && (
+                {/* {isMobileViewport && (
                     <HeaderWrapper>
                         <></>
                     </HeaderWrapper>
-                )}
+                )} */}
                 {/* <ProjectDetailHeader
                     projectName={projectName}
                     category={category}

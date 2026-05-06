@@ -30,6 +30,7 @@ interface LumoLayoutWithDrawerProps {
     leftHeaderButton?: React.ReactNode;
     drawerTitle?: string;
     drawerActionButton?: React.ReactNode;
+    showNewChatButton?: boolean;
 }
 
 export const LumoLayoutWithDrawer = ({
@@ -40,10 +41,15 @@ export const LumoLayoutWithDrawer = ({
     leftHeaderButton,
     drawerTitle,
     drawerActionButton,
+    showNewChatButton = false,
 }: LumoLayoutWithDrawerProps) => {
     return (
         <div className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl bg-norm">
-            <Header withoutDrawerToggle={withoutDrawerToggle} leftHeaderButton={leftHeaderButton}>
+            <Header
+                withoutDrawerToggle={withoutDrawerToggle}
+                leftHeaderButton={leftHeaderButton}
+                showNewChatButton={showNewChatButton}
+            >
                 {headerComponent || null}
             </Header>
             {children}

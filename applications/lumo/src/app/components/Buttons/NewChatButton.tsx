@@ -151,7 +151,7 @@ export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) =
     return (
         <NewChatButton
             buttonProps={{
-                shape: 'ghost',
+                shape: 'solid',
                 size: 'medium',
                 icon: true,
                 className: 'shrink-0',
