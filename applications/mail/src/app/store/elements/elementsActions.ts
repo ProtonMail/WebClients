@@ -355,10 +355,6 @@ export const labelAll = createAsyncThunk<
     };
 });
 
-export const categorizeMessage = createAction<{ elementIDs: string[]; categoryID: string }>(
-    'elements/categorizeMessage'
-);
-
 export const resetRetry = createAction<void>('elements/resetRetry');
 
 export const loadConversation = createAsyncThunk<ConversationResult, ConversationParams, MailThunkExtra>(
