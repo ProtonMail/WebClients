@@ -8,7 +8,6 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useMoveNodes } from '../../../hooks/sdk/useMoveNodes';
@@ -23,6 +22,7 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../../statelessComponents/DriveExplorer/types';
+import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
