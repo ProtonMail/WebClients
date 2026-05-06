@@ -107,15 +107,29 @@ const MeetB2CPlanSignupInner = () => {
     );
 };
 
-const meetB2B: { planIDs: PlanIDs } = {
-    planIDs: { [PLANS.MEET_BUSINESS]: 1 },
+const supportedPlans = [PLANS.MEET_BUSINESS, PLANS.MEET] as const;
+type SupportedPlan = (typeof supportedPlans)[number];
+const defaultPlan: SupportedPlan = PLANS.MEET_BUSINESS;
+
+const planIDsByPlan: Record<SupportedPlan, PlanIDs> = {
+    [PLANS.MEET_BUSINESS]: { [PLANS.MEET_BUSINESS]: 1 },
+    [PLANS.MEET]: { [PLANS.MEET]: 1 },
 };
 
-export const availablePlans = getAvailablePlansWithCycles([meetB2B], [CYCLE.MONTHLY, CYCLE.YEARLY]);
+const isSupportedPlan = (plan: PLANS | undefined): plan is SupportedPlan =>
+    plan !== undefined && (supportedPlans as readonly PLANS[]).includes(plan);
+
+export const availablePlans = getAvailablePlansWithCycles(
+    supportedPlans.map((plan) => ({ planIDs: planIDsByPlan[plan] })),
+    [CYCLE.MONTHLY, CYCLE.YEARLY]
+);
 
 const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
+
+    const requestedPlan = signupSearchParams.getPlan(searchParams);
+    const selectedPlan: SupportedPlan = isSupportedPlan(requestedPlan) ? requestedPlan : defaultPlan;
 
     return (
         <SignupContextProvider
@@ -128,7 +142,7 @@ const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
             paymentsDataConfig={{
                 availablePlans,
                 plan: {
-                    planIDs: meetB2B.planIDs,
+                    planIDs: planIDsByPlan[selectedPlan],
                     currency: signupSearchParams.getCurrency(searchParams),
                     cycle: signupSearchParams.getCycle(searchParams) || DEFAULT_CYCLE,
                     coupon: signupSearchParams.getCoupon(searchParams),
