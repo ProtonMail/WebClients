@@ -1,5 +1,3 @@
-import type { Row } from 'exceljs';
-
 import { PandocConverter } from '../../lib/attachments/pandoc-wasm';
 import pdfParse from '../../lib/attachments/pdfParse';
 import { getProcessingCategory, mimeTypeToPandocFormat } from '../../util/filetypes';
@@ -9,6 +7,7 @@ import type {
     FileProcessingResponse,
     ProcessingError,
 } from '../fileProcessingService';
+import { convertXlsxToMarkdown } from '../files/excelSheets';
 import type { InternalFileResult, InternalTextResult, TruncationResult } from '../files/types';
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
@@ -50,71 +49,12 @@ async function getPandocConverter(): Promise<PandocConverter> {
     return pandocConverter;
 }
 
-function rowToCommaSeparatedString(row: Row): string {
-    // ExcelJS row.values is an array where index 0 is empty, actual values start at index 1
-    const rowValues = row.values as any[];
-    return rowValues
-        .slice(1)
-        .map((value: any) => {
-            // Handle different cell value types
-            if (value === null || value === undefined) {
-                return '';
-            }
-            // Handle ExcelJS cell objects with rich text or formulas
-            if (typeof value === 'object' && value !== null) {
-                if (value.richText) {
-                    // Handle rich text cells
-                    return value.richText.map((rt: any) => rt.text || '').join('');
-                } else if (value.text !== undefined) {
-                    // Handle simple text cells
-                    return String(value.text);
-                } else if (value.result !== undefined) {
-                    // Handle formula cells
-                    return String(value.result);
-                } else {
-                    // Handle other object types
-                    return String(value);
-                }
-            }
-            const stringValue = String(value);
-            // Escape commas and quotes in CSV
-            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
-                return `"${stringValue.replace(/"/g, '""')}"`;
-            }
-            return stringValue;
-        })
-        .join(',');
-}
-
-async function convertXlsxToCsv(fileData: FileData): Promise<string> {
+async function convertExcelToText(fileData: FileData, selectedExcelSheetNames?: string[]) {
     try {
         console.log(`Converting Excel file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
-
-        // Import exceljs library dynamically
-        const ExcelJS = await import('exceljs');
-
-        // Read the Excel file
-        const workbook = new ExcelJS.Workbook();
-        await workbook.xlsx.load(fileData.data);
-
-        // Get the first worksheet
-        const worksheet = workbook.getWorksheet(1);
-        if (!worksheet) {
-            throw new Error('Excel file contains no worksheets');
-        }
-
-        // Convert the worksheet to CSV format
-        const csvRows: string[] = [];
-        worksheet.eachRow((row) => csvRows.push(rowToCommaSeparatedString(row)));
-
-        const csvData = csvRows.join('\n');
-        if (!csvData.trim()) {
-            throw new Error('Excel file appears to be empty or contains no readable data');
-        }
-
-        const lines = csvData.split('\n');
-        console.log(`Excel file converted: ${lines.length} rows`);
-        return csvData;
+        const result = await convertXlsxToMarkdown(fileData, selectedExcelSheetNames);
+        console.log(`Excel file converted: ${result.rowCount} rows`);
+        return result;
     } catch (error) {
         workerLogger.error('Error converting Excel to CSV:', error);
         throw error instanceof Error ? error : new Error('Failed to convert Excel file to CSV');
@@ -172,11 +112,11 @@ function processCsvFile(fileData: FileData): InternalTextResult {
 async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
     try {
         const parseResult = await pdfParse(fileData.data);
-        
+
         if (!parseResult || !parseResult.text) {
             throw new Error('PDF parsing returned empty result');
         }
-        
+
         return {
             type: 'text',
             content: parseResult.text,
@@ -187,26 +127,27 @@ async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
     }
 }
 
-async function processExcelFile(fileData: FileData): Promise<InternalTextResult> {
-    const csvData = await convertXlsxToCsv(fileData);
-    const lines = csvData.split('\n');
-    const { content: truncatedContent, wasTruncated } = truncateContent(csvData);
+async function processExcelFile(fileData: FileData, selectedExcelSheetNames?: string[]): Promise<InternalTextResult> {
+    const { content, rowCount } = await convertExcelToText(fileData, selectedExcelSheetNames);
+    const { content: truncatedContent, wasTruncated } = truncateContent(content);
 
     return {
         type: 'text',
         content: truncatedContent,
         metadata: {
             rowCount: {
-                original: lines.length,
-                processed: wasTruncated
-                    ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
-                    : lines.length,
+                original: rowCount,
+                processed: wasTruncated ? Math.floor(rowCount * (truncatedContent.length / content.length)) : rowCount,
             },
         },
     };
 }
 
-async function processFile(fileData: FileData, isLumoPaid: boolean = false): Promise<InternalFileResult> {
+async function processFile(
+    fileData: FileData,
+    isLumoPaid: boolean = false,
+    selectedExcelSheetNames?: string[]
+): Promise<InternalFileResult> {
     const startTime = performance.now();
     console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type})`);
 
@@ -223,7 +164,7 @@ async function processFile(fileData: FileData, isLumoPaid: boolean = false): Pro
                 return processCsvFile(fileData);
 
             case 'excel':
-                return await processExcelFile(fileData);
+                return await processExcelFile(fileData, selectedExcelSheetNames);
 
             case 'pdf':
                 return await processPdfFile(fileData);
@@ -292,10 +233,10 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
         return;
     }
 
-    const { id, file, isLumoPaid = false } = event.data as FileProcessingRequest;
+    const { id, file, isLumoPaid = false, selectedExcelSheetNames } = event.data as FileProcessingRequest;
 
     try {
-        const result = await processFile(file, isLumoPaid);
+        const result = await processFile(file, isLumoPaid, selectedExcelSheetNames);
 
         // Add id to result and send
         const response: FileProcessingResponse = { id, ...result };
