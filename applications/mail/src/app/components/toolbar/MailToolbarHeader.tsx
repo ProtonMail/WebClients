@@ -81,6 +81,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                         {!isInDeletedFolder && (
                             <>
                                 <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
+                                <Vr />
                                 <MoveButtons
                                     labelID={labelID}
                                     isExtraTiny={false}
@@ -89,6 +90,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                                     onMove={actions.handleMove}
                                     onDelete={actions.handleDelete}
                                 />
+                                <Vr />
                                 {!isTiny && (
                                     <LabelsAndFolders
                                         labelID={labelID}
@@ -118,6 +120,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                         )}
                     </div>
                 </nav>
+                {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
             </div>
         ) : (
             <div className="w-full flex items-center justify-space-between" ref={ref}>
