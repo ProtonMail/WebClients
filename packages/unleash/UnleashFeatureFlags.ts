@@ -3,6 +3,7 @@
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
 export enum CommonFeatureFlag {
+    ForceReload = 'ForceReload',
     ColorPerEventWeb = 'ColorPerEventWeb',
     CollectLogs = 'CollectLogs',
     AutoReloadPage = 'AutoReloadPage',
