@@ -263,7 +263,7 @@ export const RouterLabelContainer = ({
         content
     ) : (
         <div className="flex flex-column flex-1 flex-nowrap">
-            <MailToolbar placement="list" />
+            <MailToolbar placement="list" actions={{ ...actions, handleMove }} elementsData={elementsData} />
             {content}
         </div>
     );

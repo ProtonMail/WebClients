@@ -51,7 +51,6 @@ export const RouterMailboxContainer = () => {
     const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
-    const { selectedIDs } = actions;
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
@@ -123,8 +122,9 @@ export const RouterMailboxContainer = () => {
             isResizing={isResizing}
         >
             <MailHeader
+                elementsData={elementsData}
+                actions={actions}
                 elementID={elementID}
-                selectedIDs={selectedIDs}
                 labelID={labelID}
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={

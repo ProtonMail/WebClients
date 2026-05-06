@@ -11,6 +11,8 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
+import type { MailboxActions } from 'proton-mail/router/interface';
 import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
@@ -24,12 +26,13 @@ import { MailHeaderActionArea } from './MailHeaderActionArea';
 interface Props {
     labelID: string;
     elementID: string | undefined;
-    selectedIDs: string[];
-    toolbar?: ReactNode | undefined;
+    elementsData: ElementsStructure;
+    actions: MailboxActions;
     settingsButton?: ReactNode;
+    toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementID, elementsData, actions, toolbar, settingsButton }: Props) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();
@@ -44,7 +47,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
     const hideMenuButton = breakpoints.viewportWidth['<=small'] && !!elementID;
     const hideUpsellButton =
         (breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium) &&
-        (!!elementID || selectedIDs.length !== 0);
+        (!!elementID || actions.selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
 
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
@@ -59,7 +62,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
                 hideMenuButton={hideMenuButton}
                 hideUpsellButton={hideUpsellButton}
                 title={labelName}
-                actionArea={<MailHeaderActionArea toolbar={toolbar} />}
+                actionArea={<MailHeaderActionArea toolbar={toolbar} actions={actions} elementsData={elementsData} />}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={breakpoints.viewportWidth['<=small']}
