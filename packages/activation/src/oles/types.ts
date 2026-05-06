@@ -21,6 +21,10 @@ export type MigrationConfiguration = {
     state: ApiImporterOrganizationState;
 };
 
+export type MigrationModel = MigrationConfiguration & {
+    update: (newState: MigrationConfiguration) => void;
+};
+
 export type MigrationSetupModel = MigrationConfiguration & {
     setNotifyList: (emails: string[]) => void;
     setTimePeriod: (period: TimePeriod) => void;
