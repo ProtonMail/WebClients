@@ -5,8 +5,13 @@ import { generateSpaceKeyBase64 } from '../../../crypto';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useSearchService } from '../../../hooks/useSearchService';
 import { useLumoDispatch } from '../../../redux/hooks';
-import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequest } from '../../../redux/slices/core/spaces';
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
+import {
+    addSpace,
+    locallyDeleteSpaceFromLocalRequest,
+    newSpaceId,
+    pushSpaceRequest,
+} from '../../../redux/slices/core/spaces';
 import type { SpaceId } from '../../../types';
 import { ConversationStatus } from '../../../types';
 import { sendProjectCreateEvent, sendProjectDeleteEvent } from '../../../util/telemetry';
@@ -69,14 +74,14 @@ export const useProjectActions = () => {
         [dispatch]
     );
 
-    const updateProjectInstructions = useCallback(
-        (spaceId: SpaceId, instructions: string) => {
-            // This function is deprecated - instructions are now updated directly in the modal
-            // to avoid the complexity of accessing state in a callback
-            console.warn('updateProjectInstructions is deprecated - use direct dispatch in modal');
-        },
-        []
-    );
+    // const updateProjectInstructions = useCallback(
+    //     (spaceId: SpaceId, instructions: string) => {
+    //         // This function is deprecated - instructions are now updated directly in the modal
+    //         // to avoid the complexity of accessing state in a callback
+    //         console.warn('updateProjectInstructions is deprecated - use direct dispatch in modal');
+    //     },
+    //     []
+    // );
 
     const deleteProject = useCallback(
         async (spaceId: SpaceId) => {
@@ -101,11 +106,14 @@ export const useProjectActions = () => {
         [dispatch, history, removeIndexedFoldersBySpace, searchService]
     );
 
+    const navigateToAllProjects = useCallback(() => {
+        history.push('/projects');
+    }, [history]);
+
     return {
         createProject,
         createConversationInProject,
-        updateProjectInstructions,
         deleteProject,
+        navigateToAllProjects,
     };
 };
-

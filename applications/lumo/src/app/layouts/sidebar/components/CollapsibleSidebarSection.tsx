@@ -42,7 +42,7 @@ export const CollapsibleSidebarSection = ({
     };
 
     return (
-        <div className={clsx('collapsible-sidebar-section', className)}>
+        <div className={clsx('collapsible-sidebar-section flex-nowrap', className)}>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
                 className="collapsible-section-header flex items-center cursor-pointer py-2 px-1.5 rounded-lg"
