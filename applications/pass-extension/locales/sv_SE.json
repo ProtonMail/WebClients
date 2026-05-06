@@ -1351,6 +1351,27 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometriskt lås är inte konfigurerat."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisk låsinställning misslyckades."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypterad kommunikation med ${ PASS_APP_NAME }-appen för stationär dator misslyckades."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarade inte i tid."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
+      "Unknown error.": [
+        "Okänt fel."
       ]
     },
     "Error message": {
@@ -2742,6 +2763,12 @@
       "Moving an item to another vault will erase its secure links.": [
         "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
         "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
+      "Logging you out...": [
+        "Du loggas ut …"
       ]
     },
     "Keyboard key": {

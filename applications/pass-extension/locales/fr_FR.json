@@ -1357,6 +1357,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Une vérification du déverrouillage du bureau est déjà en cours."
+      ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les identifiants de verrouillage biométrique ne correspondent pas."
+      ],
+      "Biometric lock credentials not found.": [
+        "Les identifiants de verrouillage biométrique n'ont pas été trouvés."
+      ],
+      "Biometric lock is not configured.": [
+        "Le verrouillage biométrique n'est pas configuré."
+      ],
+      "Biometric lock setup failed.": [
+        "La configuration du verrouillage biométrique n'a pas abouti."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
+      ],
+      "This domain is already managed by your organization": [
+        "Ce domaine est déjà géré par votre organisation."
+      ],
+      "Unknown error.": [
+        "Erreur inconnue"
       ]
     },
     "Error message": {
@@ -2050,7 +2086,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2762,6 +2799,21 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Pour configurer les raccourcis, allez sur « about:addons » dans Firefox et sélectionnez « Gérer les raccourcis d'extension »."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
+      ],
+      "Logging you out...": [
+        "Déconnexion…"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Débloquez ${ PASS_APP_NAME } pour accéder à vos clés d'accès."
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Débloquez ${ PASS_APP_NAME } pour sauvegarder cette clé d'accès."
       ]
     },
     "Keyboard key": {

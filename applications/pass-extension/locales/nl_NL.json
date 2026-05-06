@@ -1357,6 +1357,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrische authenticatie mislukt."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische vergrendelingsgegevens komen niet overeen."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrische vergrendelingsgegevens niet gevonden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische vergrendelingsgegevens niet geconfigureerd."
+      ],
+      "Biometric lock setup failed.": [
+        "De installatie van het biometrische slot is mislukt."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Versleutelde communicatie met de desktop-app ${ PASS_APP_NAME } is mislukt."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "De desktop-app ${ PASS_APP_NAME } reageerde niet op tijd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "De desktop-app ${ PASS_APP_NAME } is aangemeld met een ander account."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "De desktop-app ${ PASS_APP_NAME } moet ingelogd zijn."
+      ],
+      "This domain is already managed by your organization": [
+        "Dit domein wordt al beheerd door uw organisatie"
+      ],
+      "Unknown error.": [
+        "Onbekende fout."
       ]
     },
     "Error message": {
@@ -2053,7 +2086,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2765,6 +2799,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Om sneltoetsen te configureren, gaat u naar about:addons in Firefox en selecteert u \"Extensie Sneltoetsen Beheren\""
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
+      "Logging you out...": [
+        "Afmelden..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Ontgrendel ${ PASS_APP_NAME } voor toegang tot uw passkeys"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Ontgrendel ${ PASS_APP_NAME } om deze passkey op te slaan."
       ]
     },
     "Keyboard key": {

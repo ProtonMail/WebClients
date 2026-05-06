@@ -1367,6 +1367,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "V súčasnosti prebieha kontrola odblokovania desktopu."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pre odomknutie sa nezhodujú."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nenašli sa prihlasovacie údaje pre biometrický zámok."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámok nie je nakonfigurovaný."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavenie biometrického zámku zlyhalo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopovej aplikácii ${ PASS_APP_NAME } by ste mali byť prihlásení."
+      ],
+      "This domain is already managed by your organization": [
+        "Táto doména už je spravovaná vašou organizáciou"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ]
     },
     "Error message": {
@@ -2834,6 +2870,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Ak chcete nakonfigurovať klávesové skratky, prejdite vo Firefoxe na stránku about:addons a vyberte možnosť „Spravovať klávesové skratky doplnkov“"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtu"
+      ],
+      "Logging you out...": [
+        "Odhlasovanie..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odomknite ${ PASS_APP_NAME } pre prístup k svojim prístupovým kľúčom"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odomknite ${ PASS_APP_NAME } pre uloženie tohoto prístupového kľúča"
       ]
     },
     "Keyboard key": {

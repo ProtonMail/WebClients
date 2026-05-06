@@ -1357,6 +1357,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se eliminó el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales de bloqueo de biometría no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se encontró el bloqueo por biometría."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueo de biometría no está configurado."
+      ],
+      "Biometric lock setup failed.": [
+        "Error en la configuración de bloqueo de biometría."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Error en la comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no respondió a tiempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Debe iniciar sesión en la aplicación de escritorio de ${ PASS_APP_NAME }"
+      ],
+      "This domain is already managed by your organization": [
+        "Este dominio ya está administrado por su organización"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ]
     },
     "Error message": {
@@ -2053,7 +2086,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2765,6 +2799,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Para configurar atajos, vaya a about:addons en Firefox y seleccione \"Gestionar atajos de extensiones\""
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
+      "Logging you out...": [
+        "Cerrando la sesión..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquee ${ PASS_APP_NAME } para acceder a sus claves de acceso"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquee ${ PASS_APP_NAME } para guardar esta clave de acceso"
       ]
     },
     "Keyboard key": {

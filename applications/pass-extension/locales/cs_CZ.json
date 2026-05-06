@@ -774,6 +774,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Váš správce hesel zde není? Požádejte o něj."
+      ],
+      "Configure": [
+        "Konfigurovat"
       ]
     },
     "Browser": {
@@ -1352,6 +1355,51 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Právě probíhá kontrola odemknutí počítače."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické ověření selhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pro odemknutí se neshodují."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámek nebyl nastaven."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavení biometrického zámku selhalo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikace s desktopovou aplikací ${ PASS_APP_NAME } selhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
+      ],
+      "This domain is already managed by your organization": [
+        "Tuto doménu již spravuje vaše organizace"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ]
     },
     "Error message": {
@@ -2080,7 +2128,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2780,6 +2831,54 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } je momentálně offline. Otevřete rozšíření a odemkněte jej."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
+      ],
+      "Enabling desktop auto-lock": [
+        "Zapnutí automatického zamykání plochy"
+      ],
+      "invites the group ${ name } to access items in": [
+        "pozve skupinu ${ name } k přístupu k položkám v"
+      ],
+      "Logging you out...": [
+        "Odhlašování..."
+      ],
+      "Not configured": [
+        "Není konfigurováno"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Otevřít ${ PASS_APP_NAME } ve větším okně"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Otevřít vyskakovací okno ${ PASS_APP_NAME }"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tato funkce vyžaduje, aby byla během instalace nainstalována a spuštěna desktopová aplikace ${ PASS_APP_NAME }."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Chcete-li nastavit klávesové zkratky, přejděte ve Firefoxu na stránku about:addons a vyberte možnost „Spravovat klávesové zkratky rozšíření“"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a získejte přístup ke svým přístupovým klíčům"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Odemkněte aplikaci ${ PASS_APP_NAME } a uložte si tento přístupový klíč"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ]
     },
     "Keyboard key": {

@@ -1357,6 +1357,39 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrische Authentifizierung fehlgeschlagen."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische Anmeldedaten stimmen nicht überein."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrischen Anmeldedaten nicht gefunden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische Sperre nicht konfiguriert."
+      ],
+      "Biometric lock setup failed.": [
+        "Einrichten der biometrischen Sperre fehlgeschlagen."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Verschlüsselte Kommunikation mit der ${ PASS_APP_NAME }-Desktop-App fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App sollte angemeldet sein."
+      ],
+      "This domain is already managed by your organization": [
+        "Diese Domain wird bereits von deiner Organisation verwaltet"
+      ],
+      "Unknown error.": [
+        "Unbekannter Fehler."
       ]
     },
     "Error message": {
@@ -2766,6 +2799,18 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Um Tastenkombinationen zu konfigurieren, gehe in Firefox zu \"Erweiterungen & Themes\" und wähle \"Tastenkombinationen von Erweiterungen verwalten\""
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, unser fortschrittliches Kontoschutzprogramm"
+      ],
+      "Logging you out...": [
+        "Du wirst abgemeldet..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "${ PASS_APP_NAME } entsperren, um auf deine Passkeys zuzugreifen"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "${ PASS_APP_NAME } entsperren, um diesen Passkey zu speichern"
       ]
     },
     "Keyboard key": {
