@@ -9,6 +9,7 @@ import ModalsChildren from '../modals/Children';
 import NotificationsChildren from '../notifications/Children';
 import { ThemeInjector } from '../themes/ThemeInjector';
 import ElectronBlockedContainer from './ElectronBlockedContainer';
+import ForceReload from './ForceReload';
 import StorageListener from './StorageListener';
 
 interface Props {
@@ -30,6 +31,7 @@ const StandardPrivateApp = ({ children, noModals, noNotifications }: Props) => {
 
     return (
         <>
+            <ForceReload />
             <ThemeInjector />
             <DensityInjector />
             {!noNotifications && <NotificationsChildren />}
