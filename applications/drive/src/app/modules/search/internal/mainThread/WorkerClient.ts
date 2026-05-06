@@ -157,6 +157,12 @@ export class WorkerClient {
         this.running = false;
     }
 
+    /** Wipe the index and let the caller re-trigger indexing via start(). Preserves opt-in. */
+    async rebuild(): Promise<void> {
+        await this.api.rebuild();
+        this.running = false;
+    }
+
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
         const queue = createAsyncQueue<SearchResultItem>();
         const signal = this.connectionAbort.signal;
@@ -164,16 +170,19 @@ export class WorkerClient {
         const onAbort = () => queue.error(signal.reason);
         signal.addEventListener('abort', onAbort);
 
-        void this.api.search(
-            query,
-            Comlink.proxy((event: WorkerSearchResultEvent) => {
-                if (event.type === 'done') {
-                    queue.close();
-                } else {
-                    queue.push(event);
-                }
-            })
-        );
+        // Pipe comlink-side rejections into the queue so they surface during iteration.
+        this.api
+            .search(
+                query,
+                Comlink.proxy((event: WorkerSearchResultEvent) => {
+                    if (event.type === 'done') {
+                        queue.close();
+                    } else {
+                        queue.push(event);
+                    }
+                })
+            )
+            .catch((error) => queue.error(error));
 
         try {
             yield* queue.iterator();
@@ -190,16 +199,19 @@ export class WorkerClient {
         const onAbort = () => queue.error(signal.reason);
         signal.addEventListener('abort', onAbort);
 
-        void this.api.exportIndexEntries(
-            kind,
-            Comlink.proxy((event: WorkerIndexExportEvent) => {
-                if (event.type === 'done') {
-                    queue.close();
-                } else {
-                    queue.push({ identifier: event.identifier, attributes: event.attributes });
-                }
-            })
-        );
+        // Pipe comlink-side rejections into the queue so they surface during iteration.
+        this.api
+            .exportIndexEntries(
+                kind,
+                Comlink.proxy((event: WorkerIndexExportEvent) => {
+                    if (event.type === 'done') {
+                        queue.close();
+                    } else {
+                        queue.push({ identifier: event.identifier, attributes: event.attributes });
+                    }
+                })
+            )
+            .catch((error) => queue.error(error));
 
         try {
             yield* queue.iterator();

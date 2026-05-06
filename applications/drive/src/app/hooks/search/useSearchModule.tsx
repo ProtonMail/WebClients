@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
@@ -7,6 +9,7 @@ import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
+import { getNotificationsManager } from '../../modules/notifications';
 import type {
     IndexKind,
     IndexPopulatorStatus,
@@ -16,6 +19,7 @@ import type {
     SerializedIndexEntry,
 } from '../../modules/search';
 import { SearchModule, type SearchModuleState } from '../../modules/search';
+import type { PermanentErrorKind } from '../../modules/search/internal/shared/errors';
 import { sendErrorReportForSearch } from '../../modules/search/internal/shared/errors';
 import { brandSearchUserId } from '../../modules/search/internal/shared/types';
 
@@ -43,6 +47,8 @@ export type UseSearchModuleReturn =
           isRunningOutdatedVersion: boolean;
           // Aggregated indexing progress across all populators.
           indexingProgress: IndexingProgress;
+          // If non-null, a permanent error has stopped the processor.
+          permanentError: PermanentErrorKind | null;
 
           // Whether the user has opted in to the search experience.
           isUserOptIn: boolean;
@@ -54,6 +60,8 @@ export type UseSearchModuleReturn =
           search: (query: SearchQuery) => AsyncGenerator<SearchResultItem>;
           // Clear all search-related data (DBs, caches, indexes).
           reset: () => Promise<void>;
+          // Wipe the index and restart indexing from scratch, preserving opt-in.
+          rebuild: () => Promise<void>;
           // Trigger a re-index for a specific populator by UID.
           reindexPopulator: (uid: string) => Promise<void>;
           // Stream every entry of a given index.
@@ -123,6 +131,25 @@ export const useSearchModule = (): UseSearchModuleReturn => {
         };
     }, []);
 
+    const wasInitialIndexingRef = useRef(false);
+    useEffect(
+        function notifyInitialIndexingComplete() {
+            const isInitialIndexing = searchModuleState?.isInitialIndexing ?? false;
+            const isSearchable = searchModuleState?.isSearchable ?? false;
+            const justFinished = wasInitialIndexingRef.current && !isInitialIndexing && isSearchable;
+            wasInitialIndexingRef.current = isInitialIndexing;
+            if (!justFinished) {
+                return;
+            }
+            getNotificationsManager().createNotification({
+                key: 'search-initial-indexing-complete',
+                type: 'success',
+                text: c('Info').t`Search is ready. Your files have been indexed.`,
+            });
+        },
+        [searchModuleState?.isInitialIndexing, searchModuleState?.isSearchable]
+    );
+
     useEffect(
         function maybeStartWhenIdle() {
             if (!searchModule || !searchModuleState?.isUserOptIn) {
@@ -154,6 +181,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isSearchable: searchModuleState.isSearchable,
             isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
             indexingProgress: aggregateIndexingProgress(searchModuleState.indexPopulatorStatuses),
+            permanentError: searchModuleState.permanentError,
 
             isUserOptIn: searchModuleState.isUserOptIn,
             optIn: async () => {
@@ -162,6 +190,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             },
             start: async () => searchModule.start(),
             reset: async () => searchModule.reset(),
+            rebuild: async () => searchModule.rebuild(),
             reindexPopulator: async (uid: string) => searchModule.reindexPopulator(uid),
 
             search: (query: SearchQuery) => {
