@@ -29,13 +29,27 @@ const getFetchMock = () => {
 
 const getStorageMock = () => {
     const localStorageMock: { [key: string]: any } = {};
-    const mock = {
+    // Implements the full Storage interface required by ProtonUnleashStorageProvider
+    const mock: Storage = {
         setItem: jest.fn().mockImplementation((key: string, value: any) => {
             localStorageMock[key] = value;
         }),
         getItem: jest.fn().mockImplementation((key: string) => {
             return localStorageMock[key] || null;
         }),
+        removeItem: jest.fn().mockImplementation((key: string) => {
+            delete localStorageMock[key];
+        }),
+        clear: jest.fn().mockImplementation(() => {
+            Object.keys(localStorageMock).forEach((key) => delete localStorageMock[key]);
+        }),
+        key: jest.fn().mockImplementation((index: number) => {
+            const keys = Object.keys(localStorageMock);
+            return keys[index] || null;
+        }),
+        get length() {
+            return Object.keys(localStorageMock).length;
+        },
     };
     return { mock, storageProvider: new ProtonUnleashStorageProvider(mock) };
 };

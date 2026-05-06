@@ -100,23 +100,21 @@ const THIRTY_MINUTES = 30 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
-export const newVersionUpdater = (config: ProtonConfig) => {
-    const { VERSION_PATH, COMMIT } = config;
+const getVersion = (config: ProtonConfig) => fetch(config.VERSION_PATH).then((response) => response.json());
 
+export const isNewVersionAvailable = async (config: ProtonConfig) => {
+    try {
+        const { commit } = await getVersion(config);
+
+        return isDifferent(commit, config.COMMIT);
+    } catch (error: any) {
+        traceError(error);
+    }
+};
+
+export const newVersionUpdater = (config: ProtonConfig) => {
     let reloadTimeoutId: number | null = null;
     let versionIntervalId: number | null = null;
-
-    const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
-
-    const isNewVersionAvailable = async () => {
-        try {
-            const { commit } = await getVersion();
-
-            return isDifferent(commit, COMMIT);
-        } catch (error: any) {
-            traceError(error);
-        }
-    };
 
     const clearReload = () => {
         if (reloadTimeoutId) {
@@ -184,7 +182,7 @@ export const newVersionUpdater = (config: ProtonConfig) => {
     };
 
     const checkForNewVersion = async () => {
-        if (await isNewVersionAvailable()) {
+        if (await isNewVersionAvailable(config)) {
             clearVersionCheck();
             if (isElectronApp) {
                 handleElectronFocus();
