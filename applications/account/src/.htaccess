@@ -15,8 +15,13 @@ RewriteRule ^(.*)/$ /$1 [L,R=301]
 
 # Easy switch
 RewriteRule ^oauth/callback /oauth.html [L]
+
 # Signed in app
 RewriteRule ^u/ /private.html [L]
+
+# Lite app - Rewrite all paths except for real files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^lite(/|$) /lite/index.html [L]
 
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule (.*) $1/index.html [L]
