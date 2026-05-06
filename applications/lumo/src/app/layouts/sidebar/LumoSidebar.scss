@@ -5,9 +5,6 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .lumo-sidebar {
-	--collapsible-section-secondary-text-color: #707070;
-	--collapsible-section-title-text-color: #0b0b0b;
-
 	padding: #{rem(12)};
 	gap: #{rem(8)};
 
@@ -50,12 +47,10 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.sidebar-nav-list--label {
-		color: var(--collapsible-section-secondary-text-color);
 		font-weight: normal;
 	}
 
 	.collapsible-section--title {
-		color: var(--collapsible-section-title-text-color);
 		font-weight: 500;
 	}
 
