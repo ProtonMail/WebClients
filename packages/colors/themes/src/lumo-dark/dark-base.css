@@ -35,7 +35,7 @@
     --border-norm: #4A4658;
     --border-weak: #343140;
 
-    --background-norm: #16141C;
+    --background-norm: #141414;
     --background-weak: #292733;
     --background-strong: #3F3B4C;
     --background-invert: white;
@@ -63,6 +63,7 @@
     --backdrop-norm: rgb(38 42 51 / 0.48);
 
     /*  new colors */
+    --background-main-canvas: #0B0B0B;
     --interaction-secondary: #E57031;
     --interaction-secondary-hover: #F97316;
     --interaction-secondary-active: #FB923C;
@@ -74,6 +75,9 @@
     --link-norm: #9880FF;
     --link-hover: #A898ED;
     --link-active: #BBABFF;
+
+    --composer-glow-shadow: var(--background-norm);
+    --composer-glow-border: var(--border-norm);
 
     --optional-promotion-background-start: rgb(109 74 255 / 0.15);
     --optional-promotion-background-end: rgb(70 26 255 / 0.04);
