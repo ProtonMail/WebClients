@@ -7,11 +7,11 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 // TODO: handle with container
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
+import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { useSearchView } from '../../../store';
 import { extractSearchParameters } from '../../../store/_search/utils';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import DriveToolbar from '../Drive/DriveToolbar';
-import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { SearchLegacy } from './SearchLegacy';
 
 export function SearchViewLegacy() {
