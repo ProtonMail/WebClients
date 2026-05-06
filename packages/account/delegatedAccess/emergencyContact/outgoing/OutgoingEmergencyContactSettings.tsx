@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
@@ -18,10 +19,13 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { SECOND } from '@proton/shared/lib/constants';
+import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
+import { PROTON_SENTINEL_NAME, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -241,12 +245,17 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
 export const OutgoingEmergencyContactSettings = () => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
     }
 
     const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
+    const showSentinelWarning =
+        !loadingIsSentinelUser &&
+        isSentinelUser &&
+        controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0;
 
     if (isRecoverySettingsRedesignEnabled) {
         if (controller.outgoingDelegatedAccess.loading) {
@@ -300,6 +309,24 @@ export const OutgoingEmergencyContactSettings = () => {
                                 </Banner>
                             )}
                             <OutgoingTable controller={controller} />
+                            {showSentinelWarning && (
+                                <div className="fade-in">
+                                    <DashboardCardDivider />
+                                    <div className="flex flex-column gap-2 items-start">
+                                        <StatusBadge
+                                            status={StatusBadgeStatus.Warning}
+                                            text={PROTON_SENTINEL_NAME}
+                                            icon={IcShieldExclamationFilled}
+                                        />
+                                        <p className="m-0">
+                                            {getBoldFormattedText(
+                                                c('Info')
+                                                    .t`To ensure the highest possible security of your account, disable **Emergency access**.`
+                                            )}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </DashboardCardContent>
                     </DashboardCard>
                 )}
