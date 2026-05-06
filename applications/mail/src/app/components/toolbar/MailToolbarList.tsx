@@ -159,16 +159,17 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     {!isInDeletedFolder && (
                         <>
                             <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
-                            <Vr />
+                            {actions.selectedIDs.length > 0 && <Vr />}
                             <MoveButtons
                                 // This is needed to avoir showing a <Vr />. Will be removed in a future version.
-                                viewportIsNarrow={true}
                                 labelID={labelID}
-                                isExtraTiny={isExtraTiny}
+                                isExtraTiny={false}
+                                viewportIsNarrow
                                 selectedIDs={actions.selectedIDs}
                                 onMove={actions.handleMove}
                                 onDelete={actions.handleDelete}
                             />
+                            {isExtraTiny && <Vr />}
                             {!isExtraTiny && (
                                 <LabelsAndFolders
                                     labelID={labelID}
