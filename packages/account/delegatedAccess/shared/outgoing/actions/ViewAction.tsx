@@ -7,7 +7,10 @@ import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { EnrichedOutgoingDelegatedAccess } from '../interface';
 
 export const ViewAction = () => {
-    const { subscribe } = useOutgoingController();
+    const {
+        subscribe,
+        outgoingDelegatedAccess: { hasKeysToReactivate },
+    } = useOutgoingController();
     const [modal, setModalOpen, renderModal] = useModalState();
     const [tmpOutgoingDelegatedAccess, setTmpOutgoingDelegatedAccess] =
         useState<EnrichedOutgoingDelegatedAccess | null>(null);
@@ -26,6 +29,7 @@ export const ViewAction = () => {
             {renderModal && tmpOutgoingDelegatedAccess && (
                 <ViewOutgoingEmergencyContactModal
                     {...modal}
+                    hasKeysToReactivate={hasKeysToReactivate}
                     value={tmpOutgoingDelegatedAccess}
                     onExit={() => {
                         modal.onExit();

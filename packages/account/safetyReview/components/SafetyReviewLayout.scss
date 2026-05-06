@@ -1,0 +1,50 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.safety-review-layout {
+	background: linear-gradient(122deg, rgb(255 255 255 / 0.5) 11.2%, rgb(255 255 255 / 0) 50%), #f5f6fe;
+
+	[data-theme-mode='dark'] & {
+		background: linear-gradient(122deg, rgb(0 0 0 / 0.5) 11.2%, rgb(0 0 0 / 0) 50%), #1d1738;
+	}
+}
+
+.safety-review-entrance-animation {
+	--safety-review-layout-enter-y: -1rem;
+	--safety-review-layout-enter-scale: 0.94;
+	--safety-review-layout-enter-timing: 0.55s;
+	--safety-review-layout-enter-delay: 0s;
+
+	animation: safety-review-entrance-animation var(--safety-review-layout-enter-timing) cubic-bezier(0.2, 0.8, 0.2, 1)
+		var(--safety-review-layout-enter-delay) both;
+}
+
+@keyframes safety-review-entrance-animation {
+	from {
+		opacity: 0;
+		transform: translateY(var(--safety-review-layout-enter-y)) scale(var(--safety-review-layout-enter-scale));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+.safety-review-header {
+	grid-template-columns: rem(44) auto rem(44);
+
+	@include im.media('>small') {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+	}
+
+	&-title {
+		@include im.media('>small') {
+			grid-column: span 2;
+		}
+	}
+}

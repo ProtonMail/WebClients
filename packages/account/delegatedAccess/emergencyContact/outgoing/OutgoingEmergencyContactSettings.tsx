@@ -36,7 +36,7 @@ import { DateCountdown } from '../DateCountdown';
 import { getFormattedAccessibleAtDate, getFormattedTriggerDelay } from '../date';
 import OutgoingEmergencyContactBanners from './OutgoingEmergencyContactBanners';
 
-type ItemValue = OutgoingDelegatedAccessProviderValue['items']['emergencyContacts'][0];
+type ItemValue = OutgoingDelegatedAccessProviderValue['outgoingDelegatedAccess']['emergencyContacts']['items'][0];
 
 interface OutgoingItemProps {
     labels: string[];
@@ -216,12 +216,12 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
                     ))}
                 </TableRow>
             </TableHeader>
-            <TableBody loading={controller.loading} colSpan={5}>
-                {controller.items.emergencyContacts.map((value) => {
+            <TableBody loading={controller.outgoingDelegatedAccess.loading} colSpan={5}>
+                {controller.outgoingDelegatedAccess.emergencyContacts.items.map((value) => {
                     const meta = getMetaOutgoingDelegatedAccess({
                         now,
                         value,
-                        userContext: controller.meta.userContext,
+                        hasKeysToReactivate: controller.outgoingDelegatedAccess.hasKeysToReactivate,
                     });
                     return (
                         <OutgoingItem
@@ -242,36 +242,37 @@ export const OutgoingEmergencyContactSettings = () => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
 
-    if (!controller.meta.available) {
+    if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
     }
 
-    const limit = controller.meta.emergencyContacts.limit;
+    const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
 
     if (isRecoverySettingsRedesignEnabled) {
-        if (controller.loading) {
+        if (controller.outgoingDelegatedAccess.loading) {
             return <Loader />;
         }
 
         return (
             <>
                 <OutgoingEmergencyContactBanners />
-                {controller.meta.emergencyContacts.hasAccess && !controller.meta.emergencyContacts.hasReachedLimit && (
-                    <div>
-                        <Button
-                            color="norm"
-                            className="inline-flex gap-2 items-center"
-                            onClick={() => {
-                                controller.notify({ type: 'add', value: 'emergency-contact' });
-                            }}
-                        >
-                            <IcPlus className="shrink-0" />
-                            {c('emergency_access').t`Add emergency contact`}
-                        </Button>
-                    </div>
-                )}
+                {controller.outgoingDelegatedAccess.emergencyContacts.hasAccess &&
+                    !controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
+                        <div>
+                            <Button
+                                color="norm"
+                                className="inline-flex gap-2 items-center"
+                                onClick={() => {
+                                    controller.notify({ type: 'add', value: 'emergency-contact' });
+                                }}
+                            >
+                                <IcPlus className="shrink-0" />
+                                {c('emergency_access').t`Add emergency contact`}
+                            </Button>
+                        </div>
+                    )}
 
-                {controller.meta.emergencyContacts.hasUpsell && (
+                {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell && (
                     <div>
                         <PromotionButton
                             iconName="upgrade"
@@ -282,14 +283,14 @@ export const OutgoingEmergencyContactSettings = () => {
                     </div>
                 )}
 
-                {controller.items.emergencyContacts.length > 0 && (
+                {controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 && (
                     <DashboardCard>
                         <DashboardCardContent>
                             <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People I trust`}</h3>
                             <p className="mt-0 mb-4 color-weak">
                                 {c('emergency_access').t`They may ask to access your account in case of an emergency.`}
                             </p>
-                            {controller.meta.emergencyContacts.hasReachedLimit && (
+                            {controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
                                 <Banner variant="info">
                                     {c('emergency_access').ngettext(
                                         msgid`You reached the maximum of ${limit} emergency contact.`,
@@ -315,8 +316,8 @@ export const OutgoingEmergencyContactSettings = () => {
             </SettingsParagraph>
             <div className="mb-4">
                 {(() => {
-                    if (controller.meta.emergencyContacts.hasReachedLimit) {
-                        const limit = controller.meta.emergencyContacts.limit;
+                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit) {
+                        const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
                         return (
                             <Banner>
                                 {c('emergency_access').ngettext(
@@ -328,7 +329,7 @@ export const OutgoingEmergencyContactSettings = () => {
                         );
                     }
 
-                    if (controller.meta.emergencyContacts.hasUpsell) {
+                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell) {
                         return (
                             <PromotionButton
                                 iconName="upgrade"
@@ -339,7 +340,7 @@ export const OutgoingEmergencyContactSettings = () => {
                         );
                     }
 
-                    if (controller.meta.emergencyContacts.hasAccess) {
+                    if (controller.outgoingDelegatedAccess.emergencyContacts.hasAccess) {
                         return (
                             <Button
                                 color="norm"
@@ -351,9 +352,8 @@ export const OutgoingEmergencyContactSettings = () => {
                     }
                 })()}
             </div>
-            {(controller.items.emergencyContacts.length > 0 || controller.loading) && (
-                <OutgoingTable controller={controller} />
-            )}
+            {(controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 ||
+                controller.outgoingDelegatedAccess.loading) && <OutgoingTable controller={controller} />}
         </>
     );
 };

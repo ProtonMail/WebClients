@@ -2,17 +2,22 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { postVerifyPhone } from '@proton/shared/lib/api/verify';
+import noop from '@proton/utils/noop';
 
 interface Props extends ModalProps {}
 
 const VerifyRecoveryPhoneModal = ({ onClose, ...rest }: Props) => {
     const [loading, setLoading] = useState(false);
     const api = useApi();
+    const dispatch = useDispatch();
 
     const handleSendVerificationPhoneClick = async () => {
         setLoading(true);
@@ -20,6 +25,8 @@ const VerifyRecoveryPhoneModal = ({ onClose, ...rest }: Props) => {
             // PostVerifyPhone will call /core/v4/verify/phone which should return error 9001 Human Verification.
             // The client will then display the verify modal and replay the endpoint to submit the token and verify the phone number.
             await api(postVerifyPhone());
+            // Ensure we get the updated verified settings after
+            await dispatch(userSettingsThunk({ cache: CacheType.None })).catch(noop);
         } catch (error) {}
 
         onClose?.();

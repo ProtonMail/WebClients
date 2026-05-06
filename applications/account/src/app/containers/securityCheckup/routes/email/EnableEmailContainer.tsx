@@ -3,15 +3,13 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { userSettingsThunk } from '@proton/account/userSettings';
+import { toggleRecoveryEmailReset } from '@proton/account/recovery/accountRecoveryActions';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useApi, useSecurityCheckup } from '@proton/components';
+import { useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateResetEmail } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import methodSuccessSrc from '../../assets/method-success.svg';
@@ -26,7 +24,6 @@ enum STEPS {
 }
 
 const EnableEmailContainer = () => {
-    const api = useApi();
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
     const dispatch = useDispatch();
@@ -64,9 +61,8 @@ const EnableEmailContainer = () => {
     }
 
     const enablePasswordResetViaEmail = async () => {
-        await api(updateResetEmail({ Reset: 1, PersistPasswordScope: true }));
+        await dispatch(toggleRecoveryEmailReset({ value: true, persistPasswordScope: true }));
 
-        await dispatch(userSettingsThunk({ cache: CacheType.None }));
         setStep(STEPS.SUCCESS);
     };
 

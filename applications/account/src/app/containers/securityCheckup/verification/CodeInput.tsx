@@ -2,17 +2,13 @@ import { type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetUserSettings } from '@proton/account/userSettings/hooks';
+import { useCodeInput } from '@proton/account/safetyReview/verification/useCodeInput';
+import type { VerificationMethod } from '@proton/account/safetyReview/verification/verification';
 import { Button } from '@proton/atoms/Button/Button';
-import { Form, InputFieldTwo, TotpInput, useApi, useFormErrors, useNotifications } from '@proton/components';
+import { Form, InputFieldTwo, TotpInput, useFormErrors } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-
-import type { VerificationMethod } from './verification';
-import { getInitiationCall, initiateVerification, sendNewCode, verifyCode } from './verification';
+import noop from '@proton/utils/noop';
 
 interface Props {
     value: ReactNode;
@@ -22,79 +18,28 @@ interface Props {
 }
 
 export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
-    const api = useApi();
-    const getUserSettings = useGetUserSettings();
+    const { actions, state } = useCodeInput();
 
-    const { createNotification } = useNotifications();
-
-    const [token, setToken] = useState<string>();
-
-    const [code, setCode] = useState('');
-    const [codeError, setCodeError] = useState('');
-    const [submittingCode, withSubmittingCode] = useLoading();
-    const [resendingCode, withResendingCode] = useLoading();
-
-    const [showResendCode, setShowResendCode] = useState(false);
+    useEffect(() => {
+        actions.handleInitiateVerification(method).catch(onError);
+    }, []);
 
     const { validator, onFormSubmit, reset } = useFormErrors();
 
-    const invalidCodeError = c('Safety review').t`Invalid code`;
+    const [submittingCode, withSubmittingCode] = useLoading();
+    const [resendingCode, withResendingCode] = useLoading();
 
-    useEffect(() => {
-        void initiateVerification({ api, method, config: getInitiationCall(method) })
-            .then(({ token }) => setToken(token))
-            .catch(() => onError());
-    }, []);
-
-    const handleSubmitCode = async (code: string) => {
-        if (!token) {
-            setCodeError(invalidCodeError);
-            setShowResendCode(true);
-            return;
-        }
-
-        try {
-            await verifyCode({
-                token,
-                code,
-                api,
-                method,
-                config: getInitiationCall(method),
-            });
-            await getUserSettings({ cache: CacheType.None });
-
-            onSuccess();
-        } catch (error: any) {
-            const { code } = getApiError(error);
-
-            if (code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                setCodeError(invalidCodeError);
-                setShowResendCode(true);
-            }
-        }
-    };
-
-    const handleSubmit = async () => {
-        if (!onFormSubmit()) {
-            return;
-        }
-        return handleSubmitCode(code);
-    };
-
-    const boldValue = <b key="bold-value">{value}</b>;
-
-    const handleSendNewCode = async (token: string) => {
-        await sendNewCode({ token, api, method });
-
-        setCode('');
-        setCodeError('');
-        reset();
-
-        createNotification({ text: c('Safety review').jt`Code sent to ${boldValue}` });
-    };
+    const [code, setCode] = useState<string>('');
 
     return (
-        <Form onSubmit={() => withSubmittingCode(handleSubmit())}>
+        <Form
+            onSubmit={() => {
+                if (!onFormSubmit()) {
+                    return;
+                }
+                withSubmittingCode(actions.handleSubmit(code, method).then(onSuccess).catch(noop));
+            }}
+        >
             <InputFieldTwo
                 as={TotpInput}
                 autoFocus
@@ -102,13 +47,13 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
                 value={code}
                 onValue={(value: string) => {
                     setCode(value);
-                    setCodeError('');
+                    actions.resetCodeError();
                 }}
                 error={validator([
                     requiredValidator(code),
                     numberValidator(code),
                     code.length !== 6 ? c('Error').t`Enter 6 digits` : '',
-                    codeError,
+                    state.codeError,
                 ])}
             />
             <Button
@@ -121,14 +66,19 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
             >
                 {c('Safety review').t`Verify`}
             </Button>
-            {showResendCode && token ? (
+            {state.showResendCode && state.token ? (
                 <Button
                     shape="ghost"
                     color="norm"
                     fullWidth
                     loading={resendingCode}
                     disabled={submittingCode}
-                    onClick={() => withResendingCode(handleSendNewCode(token))}
+                    onClick={async () => {
+                        if (state.token) {
+                            await withResendingCode(actions.handleSendNewCode(value, state.token, method));
+                            reset();
+                        }
+                    }}
                     className="mt-2"
                 >
                     {c('Safety review').t`Send a new code`}

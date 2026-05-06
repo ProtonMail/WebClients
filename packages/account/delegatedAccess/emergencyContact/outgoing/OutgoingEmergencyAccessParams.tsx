@@ -3,17 +3,18 @@ import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffec
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
 
 export const OutgoingEmergencyContactSearchParams = () => {
-    const { meta, notify, items } = useOutgoingController();
-
-    const hasAccess = meta.emergencyContacts.hasAccess;
+    const {
+        outgoingDelegatedAccess: {
+            emergencyContacts: { hasAccess, items },
+        },
+        notify,
+    } = useOutgoingController();
 
     useSearchParamsEffect(
         (params) => {
             if (params.get('action') === 'view' && hasAccess) {
                 const id = params.get('id');
-                const item = items.emergencyContacts.find(
-                    (item) => item.outgoingDelegatedAccess.DelegatedAccessID === id
-                );
+                const item = items.find((item) => item.outgoingDelegatedAccess.DelegatedAccessID === id);
                 if (item) {
                     setTimeout(() => {
                         notify({ type: 'view-access', value: item });

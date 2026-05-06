@@ -84,8 +84,8 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
 };
 
 export const OutgoingEmergencyContactUpsell = (props: Props) => {
-    const { meta } = useOutgoingController();
-    if (!meta.emergencyContacts.hasUpsell) {
+    const { outgoingDelegatedAccess } = useOutgoingController();
+    if (!outgoingDelegatedAccess.emergencyContacts.hasUpsell) {
         return null;
     }
     return (

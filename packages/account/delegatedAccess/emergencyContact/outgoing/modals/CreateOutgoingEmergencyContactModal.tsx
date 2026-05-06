@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -19,46 +17,25 @@ import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/Delegated
 
 import ValidationError from '../../../ValidationError';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
-import ContactEmailInput, { type ContactEmailInputProps } from '../../../shared/outgoing/ContactEmailInput';
+import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
+import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';
 import shield from '../../../shared/shield.svg';
 import { useDispatch } from '../../../useDispatch';
-import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './getWaitTimeOptions';
 
 export interface CreateOutgoingEmergencyContactModalProps extends Omit<
     ModalProps<'form'>,
     'children' | 'buttons' | 'onSubmit'
-> {
-    existingOutgoingTargetEmails: Set<string>;
-    /** When true, send recovery settings `setting_enabled` telemetry after a successful add (first outgoing contact only). */
-    isFirstOutgoingContact?: boolean;
-    contactEmails: ContactEmailInputProps['contactEmails'];
-    addresses: ContactEmailInputProps['addresses'];
-    protonDomains: ContactEmailInputProps['protonDomains'];
-}
+> {}
 
-export const CreateOutgoingEmergencyContactModal = ({
-    protonDomains,
-    addresses,
-    existingOutgoingTargetEmails,
-    isFirstOutgoingContact = false,
-    contactEmails,
-    ...rest
-}: CreateOutgoingEmergencyContactModalProps) => {
+export const CreateOutgoingEmergencyContactModal = ({ ...rest }: CreateOutgoingEmergencyContactModalProps) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [targetEmail, setTargetEmail] = useState('');
-    const waitTimeOptions = getWaitTimeOptions();
-    const [waitTime, setWaitTime] = useState(getDefaultWaitTimeOptionValue());
-    const [emailError, setEmailError] = useState<{ email: string; errorMessage: string } | null>(null);
-    const [submitted, setSubmitted] = useState<boolean>(false);
     const dispatch = useDispatch();
-    const [asyncError, setAsyncError] = useState<{ email: string; errorMessage: string } | null>(null);
     const [loading, withLoading] = useLoading();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
 
-    const asyncErrorValue = asyncError?.email === targetEmail ? asyncError?.errorMessage : undefined;
-    const emailErrorValue = emailError?.email === targetEmail ? emailError.errorMessage : undefined;
-    const hasError = Boolean(emailErrorValue || asyncErrorValue);
+    const addContactInputs = useAddContactInputs();
+    const input = addContactInputs.inputs[0];
 
     return (
         <ModalTwo
@@ -67,27 +44,27 @@ export const CreateOutgoingEmergencyContactModal = ({
             as="form"
             onSubmit={(e) => {
                 e.preventDefault();
-                setSubmitted(true);
-                if (hasError || loading) {
+                addContactInputs.setSubmitted(true);
+                if (addContactInputs.hasError || loading) {
                     return;
                 }
                 void withLoading(
                     (async function run() {
                         const payload = {
-                            targetEmail,
-                            triggerDelay: waitTime / SECOND,
+                            targetEmail: input.email,
+                            triggerDelay: input.waitTime / SECOND,
                             types: DelegatedAccessTypeEnum.EmergencyAccess,
                         };
                         try {
                             await dispatch(addDelegatedAccessThunk(payload));
                             createNotification({ text: c('emergency_access').t`Emergency contact added` });
-                            if (isFirstOutgoingContact) {
+                            if (!addContactInputs.createOutgoingDelegatedAccessData.emergencyContacts.size) {
                                 sendRecoverySettingEnabled({ setting: 'emergency_contacts' });
                             }
                             rest.onClose?.();
                         } catch (e) {
                             if (e instanceof ValidationError) {
-                                setAsyncError({ email: payload.targetEmail, errorMessage: e.message });
+                                addContactInputs.setAsyncError({ email: e.email, errorMessage: e.message });
                             } else {
                                 handleError(e);
                             }
@@ -113,32 +90,29 @@ export const CreateOutgoingEmergencyContactModal = ({
                 <div className="mb-4">
                     <InputFieldTwo
                         as={ContactEmailInput}
-                        protonDomains={protonDomains}
-                        addresses={addresses}
-                        contactEmails={contactEmails}
-                        ignoreEmails={existingOutgoingTargetEmails}
+                        protonDomains={addContactInputs.createOutgoingDelegatedAccessData.domains}
+                        addresses={addContactInputs.createOutgoingDelegatedAccessData.addresses}
+                        contactEmails={addContactInputs.createOutgoingDelegatedAccessData.contactEmails}
+                        ignoreEmails={addContactInputs.createOutgoingDelegatedAccessData.emergencyContacts}
                         id="email"
                         label={c('emergency_access').t`${BRAND_NAME} Account email`}
-                        value={targetEmail}
+                        value={input.email}
                         onValue={(value, errorMessage) => {
-                            setTargetEmail(value);
-                            if (errorMessage) {
-                                setEmailError({ email: value, errorMessage });
-                            }
+                            addContactInputs.setInputs(input.id, { email: value, emailError: errorMessage });
                         }}
                         autoFocus={true}
-                        error={submitted ? asyncErrorValue || emailErrorValue : undefined}
+                        error={addContactInputs.submitted ? input.asyncError || input.emailError : undefined}
                     />
                     <InputFieldTwo
                         as={SelectTwo<number>}
                         id="wait-time"
                         label={c('emergency_access').t`Wait time for access`}
-                        value={waitTime}
-                        onValue={setWaitTime}
+                        value={input.waitTime}
+                        onValue={(value) => addContactInputs.setInputs(input.id, { waitTime: value })}
                         disabled={loading}
                         assistiveText={c('emergency_access').t`Time required before automatically giving access`}
                     >
-                        {waitTimeOptions.map(({ value, label }) => (
+                        {addContactInputs.waitTimeOptions.map(({ value, label }) => (
                             <Option key={value} value={value} title={label} />
                         ))}
                     </InputFieldTwo>
