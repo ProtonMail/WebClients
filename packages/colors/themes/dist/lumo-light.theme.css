@@ -90,6 +90,7 @@
   --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(38 42 51 / 0.48);
+  --background-main-canvas: #f5f6fe;
   --interaction-secondary: #ffac2f;
   --interaction-secondary-hover: #e69a2a;
   --interaction-secondary-active: #d48f26;
@@ -99,6 +100,8 @@
   --link-norm: var(--primary);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
+  --composer-glow-shadow: #e9eafc;
+  --composer-glow-border: #dddefb;
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
   --optional-upgrade-color-1: #ffac2e;
