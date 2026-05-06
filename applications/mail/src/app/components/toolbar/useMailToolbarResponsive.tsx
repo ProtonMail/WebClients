@@ -1,11 +1,11 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
-interface Props {
-    ref: React.RefObject<HTMLDivElement>;
-}
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
-export const useMailboxToolbarBreakpoints = ({ ref }: Props) => {
+export const useMailboxToolbarBreakpoints = () => {
+    const ref = useRef<HTMLDivElement>(null);
     const [containerWidth, setContainerWidth] = useState(Infinity);
+    const breakpoint = useActiveBreakpoint();
 
     useLayoutEffect(() => {
         const el = ref.current;
@@ -27,5 +27,7 @@ export const useMailboxToolbarBreakpoints = ({ ref }: Props) => {
     const isExtraTiny = containerWidth < 575;
     const filterAsDropdown = containerWidth < 1024;
 
-    return { isTiny, isExtraTiny, filterAsDropdown };
+    const isSmallScreen = breakpoint.viewportWidth['<=small'];
+
+    return { ref, isTiny, isExtraTiny, filterAsDropdown, isSmallScreen };
 };

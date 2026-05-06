@@ -12,7 +12,7 @@ interface Props {
 
 export const MailToolbar = ({ placement, elementsData, actions }: Props) => {
     if (placement === 'list') {
-        return <MailToolbarList />;
+        return <MailToolbarList elementsData={elementsData} actions={actions} />;
     }
 
     return <MailToolbarHeader elementsData={elementsData} actions={actions} />;

@@ -1,7 +1,5 @@
-import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useActiveBreakpoint } from '@proton/components/index';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
@@ -25,14 +23,12 @@ interface Props {
 export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const location = useLocation();
 
-    const toolbarRef = useRef<HTMLDivElement>(null);
-    const { isTiny, isExtraTiny } = useMailboxToolbarBreakpoints({ ref: toolbarRef });
+    const { ref, isTiny, isExtraTiny, isSmallScreen } = useMailboxToolbarBreakpoints();
 
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
     const isSearching = useMailSelector(selectisSearching);
 
-    const breakpoint = useActiveBreakpoint();
     const [mailSettings] = useMailSettings();
     const isColumn = isColumnMode(mailSettings);
 
@@ -40,13 +36,11 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const [folders] = useFolders();
     const labelName = getLabelName(labelID, labels, folders);
 
-    const isSmallScreen = breakpoint.viewportWidth['<=small'];
-
     if (isSmallScreen) {
         const actionsInHeader = elementID || actions.selectedIDs.length > 0;
 
         return (
-            <div className="w-full flex items-center justify-space-between" ref={toolbarRef}>
+            <div className="w-full flex items-center justify-space-between" ref={ref}>
                 {actionsInHeader ? (
                     <span>small screen actions</span>
                 ) : (
@@ -72,6 +66,7 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
         );
     }
 
+    // TODO add toolbarRef
     const actionsInHeader = !isColumn && elementID;
     return actionsInHeader ? (
         <span>large screen actions</span>
