@@ -1,14 +1,16 @@
 import type { IStorageProvider } from '@unleash/proxy-client-react';
 
+import { deleteCookie } from '@proton/shared/lib/helpers/cookies';
+
 import { FLAGS_WITH_VARIANT } from '../UnleashFeatureFlagsVariants';
-import saveWhitelistedFlagInCookies from './UnleashCookiesProvider';
+import saveWhitelistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
 
 export const featureFlagStorageKey = 'repo';
 
 export default class ProtonUnleashStorageProvider implements IStorageProvider {
     private prefix = 'unleash:repository';
 
-    constructor(private storage: Pick<typeof global.localStorage, 'setItem' | 'getItem'> = global.localStorage) {}
+    constructor(private storage: Storage = global.localStorage) {}
 
     public async save(name: string, data: any) {
         const serializedValue = JSON.stringify(data);
@@ -34,5 +36,28 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
 
     public async get(name: string) {
         return this.getSync(name);
+    }
+
+    /**
+     * Clears all Unleash feature flag data from localStorage and cookies.
+     * Use this before force reload to ensure fresh feature flag state.
+     */
+    public clear(): void {
+        try {
+            // Clear all localStorage entries with unleash prefix
+            const keysToRemove: string[] = [];
+            for (let i = 0; i < this.storage.length; i++) {
+                const key = this.storage.key?.(i);
+                if (key?.startsWith(this.prefix)) {
+                    keysToRemove.push(key);
+                }
+            }
+            keysToRemove.forEach((key) => this.storage.removeItem(key));
+
+            // Clear feature flags cookie
+            deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
+        } catch (e) {
+            // Silent fail - storage might be unavailable or restricted
+        }
     }
 }
