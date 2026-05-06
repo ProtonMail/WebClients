@@ -19,11 +19,9 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { FloatingElements } from '../components/FloatingElements/FloatingElements';
-import { TransferManagerLegacy } from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import config from '../config';
-import { useFlagsDriveSDKTransfer } from '../flags/useFlagsDriveSDKTransfer';
 import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useSearchModule } from '../hooks/search/useSearchModule';
@@ -165,8 +163,6 @@ function InitContainer() {
         };
     }, []);
 
-    const isForPhotos = window.location.pathname.includes('/photos');
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos });
     const freeUploadOverModal = useRunningFreeUploadTimer(defaultShareRoot.createTime);
 
     if (loading) {
@@ -214,11 +210,7 @@ function InitContainer() {
             <ModalsChildren />
             <FloatingElements>
                 <GiftFloatingButton />
-                {!isSDKTransferEnabled && <TransferManagerLegacy />}
-                {/* TransferManager will be showed in case we don't have new upload/download */}
-                {isSDKTransferEnabled && (
-                    <TransferManager drawerWidth={drawerWidth} deprecatedRootShareId={defaultShareRoot.shareId} />
-                )}
+                <TransferManager drawerWidth={drawerWidth} deprecatedRootShareId={defaultShareRoot.shareId} />
             </FloatingElements>
             <DriveWindow>
                 <Routes>
