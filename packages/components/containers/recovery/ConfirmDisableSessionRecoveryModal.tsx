@@ -1,14 +1,11 @@
 import { c } from 'ttag';
 
-import { userSettingsThunk } from '@proton/account/userSettings';
+import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
 
 interface Props {
@@ -17,15 +14,13 @@ interface Props {
 }
 
 const ConfirmDisableSessionRecoveryModal = ({ open, onClose }: Props) => {
-    const api = useApi();
     const dispatch = useDispatch();
 
     const [submitting, withSubmitting] = useLoading();
 
     const handleDisableSessionRecoveryToggle = async () => {
         try {
-            await api(updateSessionAccountRecovery({ SessionAccountRecovery: 0 }));
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            await dispatch(toggleSignedInReset({ value: false }));
             onClose();
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',

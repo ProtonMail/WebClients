@@ -23,7 +23,7 @@ const subscriptionDaysLeftBeforeWarning = 7;
 const OutgoingSubscriptionExpiredBanner = () => {
     const {
         notify,
-        meta: {
+        outgoingDelegatedAccess: {
             emergencyContacts: { hasUpsell },
         },
     } = useOutgoingController();
@@ -110,9 +110,13 @@ const OutgoingSubscriptionExpiresBanner = () => {
 };
 
 const OutgoingEmergencyContactBanners = () => {
-    const { items } = useOutgoingController();
+    const {
+        outgoingDelegatedAccess: {
+            emergencyContacts: { items },
+        },
+    } = useOutgoingController();
 
-    const hasOutgoingEmergencyContacts = items.emergencyContacts.length > 0;
+    const hasOutgoingEmergencyContacts = items.length > 0;
     if (!hasOutgoingEmergencyContacts) {
         return;
     }

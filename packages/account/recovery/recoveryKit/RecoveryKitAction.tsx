@@ -42,7 +42,7 @@ const BaseRecoveryKitAction = ({
          */
         return (
             <CopyRecoveryPhraseContainer
-                className={clsx(cardClasses, 'p-8 ')}
+                className={clsx(cardClasses, 'p-4 md:p-8 ')}
                 recoveryPhrase={recoveryPhrase}
                 loading={loading}
                 onCopyPhrase={() => {
@@ -56,14 +56,22 @@ const BaseRecoveryKitAction = ({
     const size = humanSize({ bytes: recoveryKitBytes });
 
     return (
-        <div className={clsx(cardClasses, 'p-5 pr-8 flex items-center gap-6')}>
+        <div className={clsx(cardClasses, 'p-4 md:p-5 md:pr-8 flex items-center gap-3 md:gap-6')}>
             <div>
-                <img src={recoveryKitPdf} alt="" />
+                <img
+                    src={recoveryKitPdf}
+                    alt=""
+                    width={84}
+                    height={120}
+                    className="max-w-custom"
+                    loading="lazy"
+                    style={{ '--max-w-custom': '15vw' }}
+                />
             </div>
             <div className="flex-1">
                 <div className="text-lg text-bold">{c('RecoveryPhrase: Info').t`Download PDF`}</div>
-                <div className="color-weak">{RECOVERY_KIT_FILE_NAME}</div>
-                <div className="color-weak text-sm">{size}</div>
+                <div className="color-weak text-sm md:text-rg">{RECOVERY_KIT_FILE_NAME}</div>
+                <div className="color-weak text-xs md:text-sm">{size}</div>
             </div>
             <Button
                 color={hasSentPayload ? 'weak' : 'norm'}

@@ -13,22 +13,24 @@ interface Props {
 }
 
 const RecoveryContactsStatus = () => {
-    const { items, loading } = useOutgoingItems();
-    const contacts = items.recoveryContacts;
+    const {
+        recoveryContacts: { items: contacts },
+        loading,
+    } = useOutgoingItems();
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     if (loading || loadingIsSentinelUser) {
         return <SkeletonLoader width={'3rem'} />;
     }
 
-    if (contacts.length === 0) {
+    const count = contacts.length;
+    if (count === 0) {
         if (isSentinelUser) {
             return <span className="color-weak">{c('Status').t`No contact`}</span>;
         }
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add a recovery contact`} />;
     }
 
-    const count = contacts.length;
     const latestDate = contacts.reduce<Date | null>((latest, contact) => {
         const date = contact.parsedOutgoingDelegatedAccess.createdAtDate;
         return latest === null || date > latest ? date : latest;

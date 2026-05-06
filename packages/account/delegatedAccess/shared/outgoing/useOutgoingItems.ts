@@ -11,16 +11,13 @@ import type { DelegatedAccessState } from '../../index';
 import { listOutgoingDelegatedAccess } from '../../outgoingActions';
 import { type EnrichedOutgoingDelegatedAccessReturnValue, selectEnrichedOutgoingDelegatedAccess } from './selector';
 
-export interface OutgoingItemsResult {
-    items: EnrichedOutgoingDelegatedAccessReturnValue['items'];
-    loading: boolean;
-}
+export type OutgoingItemsResult = EnrichedOutgoingDelegatedAccessReturnValue;
 
 type RequiredState = DelegatedAccessState & ContactEmailsState;
 
 export const useOutgoingItems = (): OutgoingItemsResult => {
     const dispatch = baseUseDispatch<ThunkDispatch<RequiredState, ProtonThunkArguments, Action>>();
-    const { items, loading } = baseUseSelector<RequiredState, EnrichedOutgoingDelegatedAccessReturnValue>(
+    const result = baseUseSelector<RequiredState, EnrichedOutgoingDelegatedAccessReturnValue>(
         selectEnrichedOutgoingDelegatedAccess
     );
 
@@ -28,5 +25,5 @@ export const useOutgoingItems = (): OutgoingItemsResult => {
         Promise.all([dispatch(listOutgoingDelegatedAccess()), dispatch(contactEmailsThunk())]).catch(noop);
     }, []);
 
-    return { items, loading };
+    return result;
 };

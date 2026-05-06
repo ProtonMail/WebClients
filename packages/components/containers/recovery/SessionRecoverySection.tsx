@@ -4,17 +4,14 @@ import {
     selectAvailableRecoveryMethods,
     selectSessionRecoveryData,
 } from '@proton/account/recovery/sessionRecoverySelectors';
-import { userSettingsThunk } from '@proton/account/userSettings';
+import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
 import ChangePasswordModal, { MODES } from '../account/ChangePasswordModal';
 import ReauthUsingRecoveryModal from '../account/ReauthUsingRecoveryModal';
@@ -29,7 +26,6 @@ import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
 export const SessionRecoverySection = () => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const api = useApi();
     const dispatch = useDispatch();
 
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
@@ -54,8 +50,7 @@ export const SessionRecoverySection = () => {
 
     const handleEnableSessionRecoveryToggle = async () => {
         try {
-            await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+            await dispatch(toggleSignedInReset({ value: true }));
             sendRecoverySettingEnabled({ setting: 'session_recovery' });
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',

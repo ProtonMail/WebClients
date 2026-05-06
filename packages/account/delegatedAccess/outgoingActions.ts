@@ -186,11 +186,11 @@ export const getAddDelegatedAccessPayloadThunk = ({
             noCache: true,
         }).catch(noop);
         if (!verifiedApiKeys) {
-            throw new ValidationError('Address does not exist');
+            throw new ValidationError('Address does not exist', targetEmail);
         }
         const targetEncryptionKey = verifiedApiKeys.addressKeys.map(({ publicKey }) => publicKey)?.[0];
         if (!targetEncryptionKey) {
-            throw new ValidationError('Address is not setup');
+            throw new ValidationError('Address is not setup', targetEmail);
         }
 
         const [addresses, userKeys] = await Promise.all([dispatch(addressesThunk()), dispatch(userKeysThunk())]);
@@ -236,6 +236,33 @@ export const addDelegatedAccessThunk = ({
         }>(addDelegatedAccess(payload));
         dispatch(delegatedAccessActions.upsertOutgoingItem(DelegatedAccess));
         return DelegatedAccess;
+    };
+};
+
+export const addDelegatedAccessesThunk = ({
+    contacts,
+}: {
+    contacts: {
+        targetEmail: string;
+        triggerDelay: number;
+        types: DelegatedAccessTypeEnum;
+    }[];
+}): ThunkAction<
+    Promise<OutgoingDelegatedAccessOutput[]>,
+    DelegatedAccessState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const result: OutgoingDelegatedAccessOutput[] = [];
+        for (const contact of contacts) {
+            if (!contact.targetEmail) {
+                continue;
+            }
+            const data = await dispatch(addDelegatedAccessThunk(contact));
+            result.push(data);
+        }
+        return result;
     };
 };
 

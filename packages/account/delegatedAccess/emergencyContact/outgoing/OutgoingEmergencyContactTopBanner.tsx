@@ -10,12 +10,12 @@ import { getMetaOutgoingDelegatedAccess } from '../../shared/outgoing/helper';
 import { useOutgoingItems } from '../../shared/outgoing/useOutgoingItems';
 
 const InnerOutgoingEmergencyAccessTopBanner = () => {
-    const { items } = useOutgoingItems();
+    const { emergencyContacts, hasKeysToReactivate } = useOutgoingItems();
 
     const now = Date.now();
-    const parsedItems = items.emergencyContacts.map((item) => {
+    const parsedItems = emergencyContacts.items.map((item) => {
         return {
-            meta: getMetaOutgoingDelegatedAccess({ now, value: item, userContext: { hasInactiveKeys: null } }),
+            meta: getMetaOutgoingDelegatedAccess({ now, value: item, hasKeysToReactivate }),
             item,
         };
     });

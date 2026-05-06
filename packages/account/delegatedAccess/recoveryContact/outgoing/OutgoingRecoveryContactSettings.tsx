@@ -27,7 +27,7 @@ import {
 import { getMetaOutgoingDelegatedAccess } from '../../shared/outgoing/helper';
 import type { MetaIncomingDelegatedAccess } from '../../shared/outgoing/interface';
 
-type ItemValue = OutgoingDelegatedAccessProviderValue['items']['recoveryContacts'][0];
+type ItemValue = OutgoingDelegatedAccessProviderValue['outgoingDelegatedAccess']['recoveryContacts']['items'][0];
 
 interface OutgoingItemProps {
     labels: string[];
@@ -149,13 +149,13 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
                     ))}
                 </TableRow>
             </TableHeader>
-            <TableBody loading={controller.loading} colSpan={3}>
-                {controller.items.recoveryContacts.map((value) => {
+            <TableBody loading={controller.outgoingDelegatedAccess.loading} colSpan={3}>
+                {controller.outgoingDelegatedAccess.recoveryContacts.items.map((value) => {
                     const meta = getMetaOutgoingDelegatedAccess({
                         // `now` doesn't matter for recovery contacts, use 0
                         now: 0,
                         value,
-                        userContext: controller.meta.userContext,
+                        hasKeysToReactivate: controller.outgoingDelegatedAccess.hasKeysToReactivate,
                     });
                     return (
                         <OutgoingItem
@@ -182,16 +182,17 @@ export const OutgoingRecoveryContactSettings = ({
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
 
-    if (!controller.meta.available) {
+    if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
     }
 
-    const limit = controller.meta.recoveryContacts.limit;
+    const limit = controller.outgoingDelegatedAccess.recoveryContacts.limit;
     const canAddRecoveryContact =
-        controller.meta.recoveryContacts.hasAccess && !controller.meta.recoveryContacts.hasReachedLimit;
+        controller.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
+        !controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit;
 
     if (isRecoverySettingsRedesignEnabled) {
-        if (controller.loading) {
+        if (controller.outgoingDelegatedAccess.loading) {
             return <Loader />;
         }
 
@@ -213,13 +214,13 @@ export const OutgoingRecoveryContactSettings = ({
                     </div>
                 )}
 
-                {controller.items.recoveryContacts.length > 0 && (
-                    <DashboardCard>
-                        {passwordResetOptionRequiredWarning}
+                <DashboardCard>
+                    {passwordResetOptionRequiredWarning}
+                    {controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 && (
                         <DashboardCardContent>
                             <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
                                 .t`Your recovery contacts`}</h3>
-                            {controller.meta.recoveryContacts.hasReachedLimit && (
+                            {controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit && (
                                 <Banner variant="info">
                                     {c('emergency_access').ngettext(
                                         msgid`Maximum of ${limit} contact reached. To change, remove a contact and add a new one.`,
@@ -230,8 +231,8 @@ export const OutgoingRecoveryContactSettings = ({
                             )}
                             <OutgoingTable controller={controller} />
                         </DashboardCardContent>
-                    </DashboardCard>
-                )}
+                    )}
+                </DashboardCard>
             </>
         );
     }
@@ -253,9 +254,8 @@ export const OutgoingRecoveryContactSettings = ({
                     >{c('emergency_access').t`Add recovery contact`}</Button>
                 )}
             </div>
-            {(controller.items.recoveryContacts.length > 0 || controller.loading) && (
-                <OutgoingTable controller={controller} />
-            )}
+            {(controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 ||
+                controller.outgoingDelegatedAccess.loading) && <OutgoingTable controller={controller} />}
         </>
     );
 };
