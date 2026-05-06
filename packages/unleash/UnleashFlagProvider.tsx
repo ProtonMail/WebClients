@@ -48,6 +48,8 @@ export const createCustomFetch =
 
 const storageProvider = new ProtonUnleashStorageProvider();
 
+export const unleashStorageProvider = storageProvider;
+
 export const getUnleashConfig = ({ fetch }: Pick<IConfig, 'fetch'>): IConfig => {
     return {
         url,
