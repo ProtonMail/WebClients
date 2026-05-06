@@ -3,9 +3,18 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 
 import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../shared/SearchDB';
+import {
+    DEFAULT_RETRY_AFTER_IN_MS,
+    InvalidIndexerState,
+    SearchLibraryError,
+    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
+    TRANSIENT_REPORT_THROTTLE_MS,
+    sendErrorReportForSearch,
+} from '../../shared/errors';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
 import { findDocuments } from '../../testing/indexHelpers';
@@ -15,6 +24,7 @@ import type { IndexerState } from './IndexerTaskQueue';
 import { IndexerTaskQueue } from './IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
 import { NodeTreeIndexPopulator } from './indexPopulators/NodeTreeIndexPopulator';
+import type { BaseTask } from './tasks/BaseTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 
 setupRealSearchLibraryWasm();
@@ -88,6 +98,27 @@ class IndexerStateStream {
 
     waitForPermanentError() {
         return this.waitUntil((s) => s.permanentError !== null);
+    }
+}
+
+/**
+ * Advance jest fake timers in 1s chunks so:
+ * - Multi-await microtask chains (bootstrap → run → IndexedDB ops → throw → catch) drain.
+ * - Nested timers (a retry timer firing schedules the next retry timer) actually run.
+ * `advanceTimersByTimeAsync(N)` in one big call only fires timers that exist at call time.
+ */
+async function fakeAdvance(totalMs: number): Promise<void> {
+    if (totalMs === 0) {
+        for (let i = 0; i < 30; i++) {
+            await jest.advanceTimersByTimeAsync(0);
+        }
+        return;
+    }
+    let elapsed = 0;
+    while (elapsed < totalMs) {
+        const step = Math.min(1000, totalMs - elapsed);
+        await jest.advanceTimersByTimeAsync(step);
+        elapsed += step;
     }
 }
 
@@ -458,5 +489,374 @@ describe('IndexerTaskQueue', () => {
 
         const errored = await state.waitForPermanentError();
         expect(errored.permanentError).toBe('quota_exceeded');
+    });
+
+    it('permanent error halts the queue: postBootstrap tasks do not run', async () => {
+        let postBootstrapRan = false;
+
+        class PostBootstrapTask {
+            getUid() {
+                return 'post-bootstrap';
+            }
+            async execute() {
+                postBootstrapRan = true;
+            }
+        }
+
+        class DummyTestIndexPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 1);
+            }
+            protected async getRootNodeUid(): Promise<string> {
+                return 'root-uid';
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                bridge.setIterateFolderChildrenError(new DOMException('', 'QuotaExceededError'));
+                const populator = new DummyTestIndexPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [new PostBootstrapTask() as unknown as BaseTask],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForPermanentError();
+        // Yield once more so any post-stop microtasks would have a chance to fire.
+        await new Promise((r) => setTimeout(r, 50));
+
+        expect(postBootstrapRan).toBe(false);
+    });
+
+    it('transient error on IndexPopulatorTask retries with backoff', async () => {
+        let callCount = 0;
+
+        class FlakyPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 1);
+            }
+
+            protected async getRootNodeUid(): Promise<string> {
+                callCount++;
+                if (callCount === 1) {
+                    throw new Error('transient flake');
+                }
+                return 'root-uid';
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                const populator = new FlakyPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        queue.start().catch(() => {});
+
+        // Wait until the populator has retried AND completed (state.done = true). callCount=2 only
+        // signals that the retry has *started*; the full flow (iterate -> persist) needs more time.
+        await waitForCondition(async () => {
+            const s = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            return callCount >= 2 && s?.done === true;
+        });
+
+        queue.stop();
+
+        expect(callCount).toBe(2);
+        const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(populatorState?.done).toBe(true);
+    });
+
+    it('abort error is swallowed without retry or permanent state', async () => {
+        let callCount = 0;
+
+        class AbortingPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 1);
+            }
+
+            protected async getRootNodeUid(): Promise<string> {
+                callCount++;
+                throw new DOMException('aborted', 'AbortError');
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                const populator = new AbortingPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        // Abort errors should not retry: the queue empties and goes searchable.
+        const searchable = await state.waitForSearchable();
+        queue.stop();
+
+        // Yield to confirm no late retry sneaks in.
+        await new Promise((r) => setTimeout(r, 50));
+
+        expect(callCount).toBe(1);
+        expect(searchable.permanentError).toBeNull();
+        // Populator did not complete, so it was never marked done.
+        const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(populatorState?.done ?? false).toBe(false);
+    });
+
+    it('stop() clears pending retry timeouts', async () => {
+        class AlwaysFailingPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 1);
+            }
+
+            protected async getRootNodeUid(): Promise<string> {
+                throw new Error('always fails');
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                const populator = new AlwaysFailingPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        queue.start().catch(() => {});
+
+        const pending = (queue as unknown as { pendingTimeouts: Set<unknown> }).pendingTimeouts;
+        await waitForCondition(() => pending.size > 0);
+        expect(pending.size).toBeGreaterThan(0);
+
+        queue.stop();
+        expect(pending.size).toBe(0);
+    });
+
+    /**
+     * Builds a queue whose only bootstrap task is an IndexPopulatorTask wrapping a populator
+     * that throws `error` from its first iteration step. Used to drive the queue into a
+     * specific error path without rebuilding the whole bootstrap flow each time.
+     */
+    function makeQueueWithFailingPopulator(error: unknown): IndexerTaskQueue {
+        class FailingPopulator extends NodeTreeIndexPopulator {
+            constructor() {
+                super(SCOPE_ID, IndexKind.MAIN, 'myfiles', 1);
+            }
+            protected async getRootNodeUid(): Promise<string> {
+                throw error;
+            }
+        }
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(new FailingPopulator(), true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+        return new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+    }
+
+    it('permanent error: corrupted_db (DOMException VersionError)', async () => {
+        const queue = makeQueueWithFailingPopulator(new DOMException('', 'VersionError'));
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        const errored = await state.waitForPermanentError();
+        expect(errored.permanentError).toBe('corrupted_db');
+        queue.stop();
+    });
+
+    it('permanent error: invalid_indexer_state', async () => {
+        const queue = makeQueueWithFailingPopulator(new InvalidIndexerState('bad state'));
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        const errored = await state.waitForPermanentError();
+        expect(errored.permanentError).toBe('invalid_indexer_state');
+        queue.stop();
+    });
+
+    it('permanent error: search_library_error', async () => {
+        const queue = makeQueueWithFailingPopulator(new SearchLibraryError('wasm crash', null));
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        const errored = await state.waitForPermanentError();
+        expect(errored.permanentError).toBe('search_library_error');
+        queue.stop();
+    });
+
+    it('rate-limited error retries with DEFAULT_RETRY_AFTER_IN_MS, not computeBackoff', async () => {
+        let callCount = 0;
+
+        class RateLimitedPopulator extends NodeTreeIndexPopulator {
+            constructor() {
+                super(SCOPE_ID, IndexKind.MAIN, 'myfiles', 1);
+            }
+            protected async getRootNodeUid(): Promise<string> {
+                callCount++;
+                throw new SdkRateLimitedError('429');
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(new RateLimitedPopulator(), true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        (sendErrorReportForSearch as jest.Mock).mockClear();
+        jest.useFakeTimers();
+        let queue: IndexerTaskQueue | null = null;
+        try {
+            queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+            queue.start().catch(() => {});
+
+            // Drain microtasks so the first failure registers and a retry is scheduled.
+            await fakeAdvance(0);
+            expect(callCount).toBe(1);
+
+            // computeBackoff(1) is at most 1200ms. If the queue were using it, retry would have
+            // fired by 5s. DEFAULT_RETRY_AFTER_IN_MS is 30s, so call count must still be 1.
+            await fakeAdvance(5_000);
+            expect(callCount).toBe(1);
+
+            // Advance past the 30s mark and drain microtasks so the loop can wake up,
+            // pick up the re-enqueued task, run it, and increment callCount.
+            await fakeAdvance(DEFAULT_RETRY_AFTER_IN_MS);
+            await fakeAdvance(0);
+            expect(callCount).toBe(2);
+        } finally {
+            queue?.stop();
+            jest.useRealTimers();
+        }
+    });
+
+    it('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per reason, then a fresh burst after the throttle window', async () => {
+        const errorReportMock = sendErrorReportForSearch as jest.Mock;
+        errorReportMock.mockClear();
+
+        class AlwaysFailingPopulator extends NodeTreeIndexPopulator {
+            constructor() {
+                super(SCOPE_ID, IndexKind.MAIN, 'myfiles', 1);
+            }
+            protected async getRootNodeUid(): Promise<string> {
+                throw new Error('always fails');
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(new AlwaysFailingPopulator(), true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        // Neutralize jitter so the backoff schedule advances deterministically.
+        const randomSpy = jest.spyOn(Math, 'random').mockReturnValue(0.5);
+        jest.useFakeTimers();
+        let queue: IndexerTaskQueue | null = null;
+        try {
+            queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+            queue.start().catch(() => {});
+
+            // Backoff schedule (no jitter): 1s, 2s, 5s, 10s, 30s, 60s, 60s, ...
+            // Run plenty of retries while staying inside the throttle window so the
+            // burst caps at MAX_REPORTED_ATTEMPTS and further retries stay silent.
+            await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS - 1);
+
+            const reportsInWindow = errorReportMock.mock.calls.filter(([msg]) =>
+                String(msg).includes('Transient error')
+            );
+            expect(reportsInWindow).toHaveLength(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+            // Stable message (no attempt number) so Sentry groups them.
+            expect(reportsInWindow.every(([msg]) => msg === 'IndexerTaskQueue: Transient error (unknown)')).toBe(true);
+
+            // Cross the throttle window - a new burst should be allowed.
+            await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS);
+
+            const reportsAfterWindow = errorReportMock.mock.calls.filter(([msg]) =>
+                String(msg).includes('Transient error')
+            );
+            expect(reportsAfterWindow.length).toBeGreaterThan(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
+            expect(reportsAfterWindow.length).toBeLessThanOrEqual(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS * 2);
+            expect(reportsAfterWindow.every(([msg]) => msg === 'IndexerTaskQueue: Transient error (unknown)')).toBe(
+                true
+            );
+        } finally {
+            queue?.stop();
+            jest.useRealTimers();
+            randomSpy.mockRestore();
+        }
+    });
+
+    it('non-IndexPopulatorTask transient error is dropped, not retried', async () => {
+        let failingRunCount = 0;
+        let followUpRan = false;
+
+        const failingTask = {
+            getUid: () => 'failing-task',
+            execute: async () => {
+                failingRunCount++;
+                throw new Error('transient');
+            },
+        } as unknown as BaseTask;
+
+        const followUpTask = {
+            getUid: () => 'follow-up',
+            execute: async () => {
+                followUpRan = true;
+            },
+        } as unknown as BaseTask;
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                return {
+                    bootstrapTasks: [failingTask, followUpTask],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        queue.start().catch(() => {});
+
+        await waitForCondition(() => followUpRan);
+
+        // Failing task ran once and was NOT re-enqueued (no retry timer scheduled).
+        expect(failingRunCount).toBe(1);
+        // Queue continued to subsequent tasks despite the transient failure.
+        expect(followUpRan).toBe(true);
+
+        const pending = (queue as unknown as { pendingTimeouts: Set<unknown> }).pendingTimeouts;
+        expect(pending.size).toBe(0);
+
+        queue.stop();
     });
 });

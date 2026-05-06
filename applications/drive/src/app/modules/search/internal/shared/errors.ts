@@ -1,6 +1,19 @@
 import type { ScopeContext } from '@sentry/types';
 import { c } from 'ttag';
 
+import {
+    AbortError as SdkAbortError,
+    ConnectionError as SdkConnectionError,
+    RateLimitedError as SdkRateLimitedError,
+    ServerError as SdkServerError,
+} from '@proton/drive';
+import {
+    getIsNetworkError,
+    getIsOfflineError,
+    getIsTimeoutError,
+    getIsUnreachableError,
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import { getNotificationsManager } from '../../../notifications';
 import { Logger } from './Logger';
@@ -31,6 +44,13 @@ export function sendErrorReportForSearch(
     error: Error | unknown,
     additionalContext?: Partial<ScopeContext>
 ) {
+    // Defense in depth: never forward offline errors to Sentry. The indexer queue
+    // also filters these structurally, but a stray callsite shouldn't flood telemetry
+    // when the user briefly drops connectivity.
+    if (getIsOfflineError(error)) {
+        return;
+    }
+
     Logger.error(message, error);
 
     // Normalize into a proper Error and build a shared Sentry context
@@ -71,7 +91,8 @@ export function listenForWorkerErrors() {
 }
 
 export function isAbortError(e: unknown): boolean {
-    return e instanceof DOMException && e.name === 'AbortError';
+    // DOMException covers fetch/AbortController aborts; SdkAbortError covers SDK-thrown aborts.
+    return (e instanceof DOMException && e.name === 'AbortError') || e instanceof SdkAbortError;
 }
 
 export function isQuotaExceededError(e: unknown): boolean {
@@ -244,4 +265,77 @@ export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Pro
             getNotificationsManager().createNotification({ text, type: 'error' });
         }
     };
+}
+
+export type TransientErrorKind = 'rate-limited' | 'server' | 'network' | 'offline' | 'abort' | 'unknown';
+
+export type ErrorDecision =
+    | { kind: 'permanent'; reason: PermanentErrorKind }
+    | { kind: 'transient'; reason: TransientErrorKind };
+
+/**
+ * Classifies an error into one of two buckets driving the queue's reaction:
+ * - permanent: stop the queue (existing behavior, e.g. quota / corrupted DB)
+ * - transient: per-task delay and retry
+ */
+export function classifyError(e: unknown): ErrorDecision {
+    const permanent = classifyPermanentError(e);
+    if (permanent) {
+        return { kind: 'permanent', reason: permanent };
+    }
+    // Abort is checked before other transients so it never silently buckets as 'unknown'.
+    // The IndexerTaskQueue short-circuits aborts before calling classifyError, so this branch
+    // is defensive completeness rather than the live path.
+    if (isAbortError(e)) {
+        return { kind: 'transient', reason: 'abort' };
+    }
+    // NOTE: As of may-2026, the SdkConnectionError is never used or thrown by he SDK. It only
+    // throws an error with the name "OfflineError". We add it for forward-comaptibility only.
+    if (e instanceof SdkConnectionError || getIsOfflineError(e)) {
+        return { kind: 'transient', reason: 'offline' };
+    }
+    if (e instanceof SdkRateLimitedError) {
+        return { kind: 'transient', reason: 'rate-limited' };
+    }
+    if (e instanceof SdkServerError || getIsUnreachableError(e)) {
+        return { kind: 'transient', reason: 'server' };
+    }
+    if (getIsNetworkError(e) || getIsTimeoutError(e)) {
+        return { kind: 'transient', reason: 'network' };
+    }
+
+    return { kind: 'transient', reason: 'unknown' };
+}
+
+/** Max number of attempts reported to Sentry per burst before silencing further retries to avoid spam. */
+export const TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS = 5;
+
+/**
+ * Window after which a new burst of reports is allowed for the same transient reason.
+ * Keeps ongoing issues visible without flooding Sentry.
+ */
+export const TRANSIENT_REPORT_THROTTLE_MS = 600_000; // 10 minutes
+
+/** Default retry delay applied to rate-limited errors. */
+export const DEFAULT_RETRY_AFTER_IN_MS = 600_000; // 10 minutes
+
+// Hand-tuned backoff schedule.
+const BACKOFF_SCHEDULE_MS: readonly number[] = [
+    1_000, // attempt 1
+    2_000, // attempt 2
+    5_000, // attempt 3
+    10_000, // attempt 4
+    30_000, // attempt 5
+    60_000, // attempt 6+
+];
+
+/**
+ * Returns the backoff delay for the given 1-based attempt number, with ±20% jitter
+ * to smear out concurrent retries.
+ */
+export function computeBackoff(attempt: number): number {
+    const idx = Math.min(Math.max(attempt, 1) - 1, BACKOFF_SCHEDULE_MS.length - 1);
+    const base = BACKOFF_SCHEDULE_MS[idx];
+    const jitter = 0.8 + Math.random() * 0.4;
+    return Math.round(base * jitter);
 }

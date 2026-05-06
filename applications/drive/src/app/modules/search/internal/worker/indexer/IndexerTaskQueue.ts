@@ -4,10 +4,20 @@ import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';
 import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils';
 import type { PermanentErrorKind } from '../../shared/errors';
-import { classifyPermanentError, isAbortError, sendErrorReportForSearch } from '../../shared/errors';
+import {
+    DEFAULT_RETRY_AFTER_IN_MS,
+    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
+    TRANSIENT_REPORT_THROTTLE_MS,
+    type TransientErrorKind,
+    classifyError,
+    computeBackoff,
+    isAbortError,
+    sendErrorReportForSearch,
+} from '../../shared/errors';
 import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
+import { OnlineMonitor } from './OnlineMonitor';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
 import type { IndexPopulator } from './indexPopulators/IndexPopulator';
 import { MyFilesIndexPopulator } from './indexPopulators/MyFilesIndexPopulator';
@@ -57,6 +67,15 @@ export class IndexerTaskQueue {
     private previousTask: BaseTask | null = null;
     private bootstrapDone = false;
     private pendingTimeouts = new Set<ReturnType<typeof setTimeout>>();
+
+    // Per-task retry counter for backoff. Keyed by task UID and reset on success.
+    private taskAttempts = new Map<string, number>();
+
+    // Per-reason Sentry report bursts. Each burst allows up to MAX_REPORTED_ATTEMPTS
+    // reports; after TRANSIENT_REPORT_THROTTLE_MS from the burst start, a new burst opens.
+    private transientReportBursts = new Map<TransientErrorKind, { count: number; windowStartedAt: number }>();
+
+    private readonly onlineMonitor = new OnlineMonitor();
 
     private state: IndexerState = {
         isInitialIndexing: false,
@@ -108,6 +127,10 @@ export class IndexerTaskQueue {
             this.progressNotifyTimeout = null;
         }
         this.treeSubscriptionRegistry.dispose();
+
+        this.taskAttempts.clear();
+        this.transientReportBursts.clear();
+        this.onlineMonitor.cancelWaits();
 
         this.populators.clear();
     }
@@ -171,6 +194,13 @@ export class IndexerTaskQueue {
         const signal = this.abortController.signal;
 
         while (!this.stopped && !signal.aborted) {
+            // Freeze the entire indexer while the monitor reports offline.
+            await this.onlineMonitor.waitForOnline();
+
+            if (this.stopped || signal.aborted) {
+                break;
+            }
+
             const task = this.queue.shift();
             if (!task) {
                 // Queue is draining — cancel any pending throttled progress refresh so it
@@ -261,40 +291,44 @@ export class IndexerTaskQueue {
             activeIndexPopulators: [...this.populators.values()],
         };
 
+        const uid = task.getUid();
         try {
-            Logger.info(`IndexerTaskQueue - Starting task: ${task.getUid()}`);
+            Logger.info(`IndexerTaskQueue - Starting task: ${uid}`);
             await task.execute(ctx);
+            this.taskAttempts.delete(uid);
         } catch (e) {
             if (isAbortError(e) || signal.aborted) {
                 return;
             }
 
-            const permanentErrorKind = classifyPermanentError(e);
-            if (permanentErrorKind) {
-                // TODO: monitor in graphana
-                sendErrorReportForSearch(
-                    `IndexerTaskQueue: permanent error (${permanentErrorKind}) in ${task.getUid()}`,
-                    e
-                );
+            const decision = classifyError(e);
+            switch (decision.kind) {
+                case 'permanent':
+                    // TODO: monitor in graphana
+                    this.taskAttempts.delete(uid);
+                    sendErrorReportForSearch(`IndexerTaskQueue: permanent error (${decision.reason}) in ${uid}`, e);
+                    await this.updateState({ permanentError: decision.reason });
+                    this.stop();
+                    return;
 
-                // Notify user of the search module for handling.
-                await this.updateState({
-                    permanentError: permanentErrorKind,
-                });
-                this.stop();
-                return;
-            }
+                case 'transient': {
+                    // TODO: monitor in graphana
+                    const currentAttemptCount = (this.taskAttempts.get(uid) ?? 0) + 1;
+                    this.taskAttempts.set(uid, currentAttemptCount);
 
-            // TODO: monitor in graphana
-            if (task instanceof IndexPopulatorTask) {
-                // TODO: Add a max re-enqueue counter in the task to avoid infinite bootstrap sequences.
-                sendErrorReportForSearch(`IndexerTaskQueue: transient error on ${task.getUid()}, re-enqueuing`, e);
-                this.enqueueOnce(task);
-            } else {
-                sendErrorReportForSearch(
-                    `IndexerTaskQueue: transient error on ${task.getUid()}, will retry on next cycle`,
-                    e
-                );
+                    this.reportTransientIssue(decision.reason, e);
+
+                    // Only IndexPopulatorTask re-enqueues itself on transient failure.
+                    // Other task types (maintenance) rely on thier own scheduling mechanism.
+                    if (task instanceof IndexPopulatorTask) {
+                        const delayMs =
+                            decision.reason === 'rate-limited'
+                                ? DEFAULT_RETRY_AFTER_IN_MS
+                                : computeBackoff(currentAttemptCount);
+                        ctx.enqueueDelayed(task, delayMs);
+                    }
+                    return;
+                }
             }
         }
     }
@@ -303,6 +337,24 @@ export class IndexerTaskQueue {
         return new Promise<void>((resolve) => {
             this.wakeUp = () => resolve();
         });
+    }
+
+    /**
+     * Reports the first MAX_REPORTED_ATTEMPTS occurrences of a transient reason to
+     * Sentry, then stays silent. After TRANSIENT_REPORT_THROTTLE_MS from the burst start,
+     * a new burst is allowed so ongoing problems remain visible.
+     */
+    private reportTransientIssue(reason: TransientErrorKind, error: unknown): void {
+        const now = Date.now();
+        const existing = this.transientReportBursts.get(reason);
+        const burst =
+            !existing || now - existing.windowStartedAt >= TRANSIENT_REPORT_THROTTLE_MS
+                ? { count: 1, windowStartedAt: now }
+                : { count: existing.count + 1, windowStartedAt: existing.windowStartedAt };
+        this.transientReportBursts.set(reason, burst);
+        if (burst.count <= TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS) {
+            sendErrorReportForSearch(`IndexerTaskQueue: Transient error (${reason})`, error);
+        }
     }
 
     protected async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
