@@ -1,3 +1,7 @@
+.simple-table .provider-users-table-cell.pr-0 {
+	padding-inline-end: 0; // specificity override to save a bit of space
+}
+
 .provider-users-table.simple-table--responsive-stacked {
 	@container (max-width: 35rem) {
 		.provider-users-table-cell {

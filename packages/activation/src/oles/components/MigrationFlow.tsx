@@ -9,7 +9,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
 import { setupMigration } from '../thunk';
-import type { MigrationConfiguration, MigrationSetupModel } from '../types';
+import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
 import { useImporterOrganizations } from '../useImporterOrganizations';
 import { CircledLogoWithProton } from './CircledLogoWithProton';
 import MigrationAssistant from './MigrationAssistant/MigrationAssistant';
@@ -54,7 +54,7 @@ const MigrationFlow = () => {
         }));
     }, [importerOrganizations, loading]);
 
-    const model: MigrationSetupModel = {
+    const model: MigrationSetupModel & MigrationModel = {
         ...migrationConfig,
         setSelectedProducts: (products) => setMigrationConfig((state) => ({ ...state, selectedProducts: products })),
         setNotifyList: (emails) => setMigrationConfig((state) => ({ ...state, notifyList: emails })),
@@ -62,6 +62,7 @@ const MigrationFlow = () => {
         setImportOrganizationSettings: (importOrganizationSettings) =>
             setMigrationConfig((state) => ({ ...state, importOrganizationSettings })),
         setDomainName: (domainName) => setMigrationConfig((state) => ({ ...state, domainName })),
+        update: setMigrationConfig,
     };
 
     const component = (() => {
