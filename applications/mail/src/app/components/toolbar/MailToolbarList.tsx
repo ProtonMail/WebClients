@@ -2,6 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -158,6 +159,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                     {!isInDeletedFolder && (
                         <>
                             <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
+                            <Vr />
                             <MoveButtons
                                 // This is needed to avoir showing a <Vr />. Will be removed in a future version.
                                 viewportIsNarrow={true}
@@ -214,7 +216,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                         page={pageFromUrl(location)}
                         total={elementsData.total}
                         onPage={handlePage}
-                        showPageNumber={!isTiny}
+                        showPageNumber={!isExtraTiny}
                     />
                 </div>
             </nav>
