@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import { userSettingsActions } from '@proton/account/userSettings';
+import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
@@ -14,15 +14,12 @@ import SettingsDescription, {
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateFlags } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { EDM_VALUE, type UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import illustration from './assets/recovery-qr-code.svg';
@@ -35,22 +32,17 @@ const SignInWithAnotherDeviceSubpage = () => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const [loadingEDM, withLoadingEDM] = useLoading();
     const dispatch = useDispatch();
-    const api = useApi();
     const { createNotification } = useNotifications();
     const [modalProps, setModalState, renderModalState] = useModalState();
 
-    const handleEDMToggle = async (value: EDM_VALUE) => {
-        await api<{ UserSettings: UserSettings }>(updateFlags({ EdmOptOut: value }));
-        dispatch(userSettingsActions.update({ UserSettings: { Flags: { EdmOptOut: value } } }));
+    const handleEDMToggle = async (value: boolean) => {
+        await dispatch(toggleQrCodeSignIn({ value }));
         createNotification({
             type: 'info',
-            text:
-                value === EDM_VALUE.DISABLED
-                    ? c('edm').t`QR code sign-in disabled`
-                    : c('edm').t`QR code sign-in enabled`,
+            text: value ? c('edm').t`QR code sign-in enabled` : c('edm').t`QR code sign-in disabled`,
         });
 
-        if (value === EDM_VALUE.ENABLED) {
+        if (value) {
             sendRecoverySettingEnabled({ setting: 'qr_code_sign_in' });
         }
     };
@@ -111,11 +103,7 @@ const SignInWithAnotherDeviceSubpage = () => {
                                     loading={loadingEDM}
                                     checked={allowScanningQrCode}
                                     onChange={({ target: { checked } }) =>
-                                        withLoadingEDM(
-                                            handleEDMToggle(!checked ? EDM_VALUE.DISABLED : EDM_VALUE.ENABLED).catch(
-                                                noop
-                                            )
-                                        )
+                                        withLoadingEDM(handleEDMToggle(checked).catch(noop))
                                     }
                                 />
                             }

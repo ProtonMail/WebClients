@@ -6,7 +6,7 @@ export const getIsIncomingDelegatedAccessAvailable = (user: User) => {
     return user.Keys.length > 0 && isSelf(user);
 };
 
-export const getIsOutgoingDelegatedAccessAvailable = (user: User) => {
+export const getIsOutgoingDelegatedAccessAvailable = (user: User | undefined) => {
     // Outgoing delegated access, need to manage your own keys (isPrivate or be admin)
-    return getIsIncomingDelegatedAccessAvailable(user) && (isPrivate(user) || isAdmin(user));
+    return !!user && getIsIncomingDelegatedAccessAvailable(user) && (isPrivate(user) || isAdmin(user));
 };

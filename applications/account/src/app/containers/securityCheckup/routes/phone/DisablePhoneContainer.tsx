@@ -3,16 +3,14 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { userSettingsThunk } from '@proton/account/userSettings';
+import { toggleRecoveryPhoneReset } from '@proton/account/recovery/accountRecoveryActions';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useApi, useSecurityCheckup } from '@proton/components';
+import { useSecurityCheckup } from '@proton/components';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import methodSuccessSrc from '../../assets/method-success.svg';
@@ -27,7 +25,6 @@ enum STEPS {
 }
 
 const DisablePhoneContainer = () => {
-    const api = useApi();
     const { securityState } = useSecurityCheckup();
     const { phone } = securityState;
 
@@ -66,8 +63,7 @@ const DisablePhoneContainer = () => {
     }
 
     const disablePasswordResetViaPhone = async () => {
-        await api(updateResetPhone({ Reset: 0, PersistPasswordScope: true }));
-        await dispatch(userSettingsThunk({ cache: CacheType.None }));
+        await dispatch(toggleRecoveryPhoneReset({ value: false, persistPasswordScope: true }));
 
         setStep(STEPS.SUCCESS);
     };
