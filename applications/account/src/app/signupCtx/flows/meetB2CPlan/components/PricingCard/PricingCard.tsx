@@ -51,20 +51,20 @@ const PricingFeatures = () => {
     const { selectedPlan } = payments;
 
     const features =
-        selectedPlan.name === PLANS.MEET_BUSINESS ? (
+        selectedPlan.name === PLANS.FREE ? (
+            <>
+                <FeatureItem text={getMeetingMaxLengthText('free')} highlighted />
+                <FeatureItem text={getMaxParticipantsText(FREE_MAX_PARTICIPANTS)} highlighted />
+                <FeatureItem text={getMaxMeetingsText(FREE_MAX_ACTIVE_MEETINGS)} highlighted />
+                <FeatureItem text={getMaxMeetingsPerDayText(FREE_MAX_MEETINGS_PER_DAY)} highlighted />
+            </>
+        ) : (
             <>
                 <FeatureItem text={getMeetingMaxLengthText('paid')} highlighted />
                 <FeatureItem text={getMaxParticipantsText(PAID_MAX_PARTICIPANTS)} highlighted />
                 <FeatureItem text={getMaxMeetingsText(PAID_MAX_ACTIVE_MEETINGS)} highlighted />
                 <FeatureItem text={getMaxMeetingsPerDayText('unlimited')} highlighted />
                 <FeatureItem text={getMeetMeetingRecordingText()} highlighted />
-            </>
-        ) : (
-            <>
-                <FeatureItem text={getMeetingMaxLengthText('free')} highlighted />
-                <FeatureItem text={getMaxParticipantsText(FREE_MAX_PARTICIPANTS)} highlighted />
-                <FeatureItem text={getMaxMeetingsText(FREE_MAX_ACTIVE_MEETINGS)} highlighted />
-                <FeatureItem text={getMaxMeetingsPerDayText(FREE_MAX_MEETINGS_PER_DAY)} highlighted />
             </>
         );
     return (

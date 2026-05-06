@@ -9,7 +9,7 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { PAYMENT_METHOD_TYPES, type PaymentProcessorHook, getPlanFromPlanIDs } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, PLANS, type PaymentProcessorHook, getPlanFromPlanIDs } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -156,7 +156,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                             plansMap={payments.plansMap}
                             selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
-                            audience={Audience.B2B}
+                            audience={payments.selectedPlan.name === PLANS.MEET_BUSINESS ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled
                             showUsersTooltip
                             telemetryContext={payments.telemetryContext}
