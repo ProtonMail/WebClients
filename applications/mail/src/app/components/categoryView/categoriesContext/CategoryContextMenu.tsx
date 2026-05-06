@@ -42,6 +42,7 @@ export const CategoryContextMenu = ({ onCategoryMove }: Props) => {
                         }
                     }}
                     onContextMenu={(e) => e.stopPropagation()}
+                    aria-pressed={currentCategory === category.id}
                 >
                     <Icon
                         className="mr-2 shrink-0 mail-category-color"
