@@ -27,9 +27,10 @@ import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
-import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerEditorArea } from './ComposerEditorArea';
+import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerToolbar } from './ComposerToolbar';
+import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
@@ -117,6 +118,11 @@ const ComposerComponentInner = ({
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [showDrawingModal, setShowDrawingModal] = useState(false);
     const [pendingSketchDescription, setPendingSketchDescription] = useState<string | null>(null);
+    const {
+        requestSheetSelection: handleSelectExcelSheets,
+        modal: excelSheetSelectionModal,
+        isOpen: isSheetModalOpen,
+    } = useExcelSheetSelection();
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -131,7 +137,13 @@ const ComposerComponentInner = ({
         handleDeleteAttachment,
         handleFilesFromNative,
         fileUploadMode,
-    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
+    } = useFileHandling({
+        messageChain,
+        onShowDriveBrowser,
+        spaceId,
+        uploadToDrive: driveContext?.uploadFile,
+        onSelectExcelSheets: handleSelectExcelSheets,
+    });
 
     const handleDrawSketch = useCallback(() => {
         setShowDrawingModal(true);
@@ -146,6 +158,7 @@ const ComposerComponentInner = ({
 
     const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({
         showDrawingModal,
+        showFileModal: isSheetModalOpen,
     });
     useNativeComposerFeatureFlagsApi();
 
@@ -364,6 +377,7 @@ const ComposerComponentInner = ({
                 onExport={handleDrawingExport}
                 mode="blank"
             />
+            {excelSheetSelectionModal}
         </>
     );
 };

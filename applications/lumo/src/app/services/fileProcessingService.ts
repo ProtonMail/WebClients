@@ -16,7 +16,12 @@ export interface FileProcessingRequest {
     id: string;
     file: FileData;
     isLumoPaid?: boolean; // User tier information for tiered processing limits
+    selectedExcelSheetNames?: string[];
 }
+
+export type FileProcessingOptions = {
+    selectedExcelSheetNames?: string[];
+};
 
 export interface TextProcessingResult {
     id: string;
@@ -225,7 +230,7 @@ export class FileProcessingService {
         return timeout;
     }
 
-    async processFile(file: File): Promise<FileProcessingResponse> {
+    async processFile(file: File, options?: FileProcessingOptions): Promise<FileProcessingResponse> {
         return new Promise<FileProcessingResponse>((resolve, reject) => {
             const id = `file-${++this.requestCounter}-${Date.now()}`;
 
@@ -233,7 +238,7 @@ export class FileProcessingService {
             this.pendingRequests.set(id, { resolve, reject });
 
             // Convert file to ArrayBuffer and send to worker
-            this.makeRequest(id, file)
+            this.makeRequest(id, file, options)
                 .then((request) => this.process(request))
                 .catch((error) => {
                     // Clean up pending request on error
@@ -280,7 +285,7 @@ export class FileProcessingService {
         }
     }
 
-    private async makeRequest(id: string, file: File): Promise<FileProcessingRequest> {
+    private async makeRequest(id: string, file: File, options?: FileProcessingOptions): Promise<FileProcessingRequest> {
         const data = await file.arrayBuffer();
         return {
             id,
@@ -290,6 +295,7 @@ export class FileProcessingService {
                 size: file.size,
                 data,
             },
+            selectedExcelSheetNames: options?.selectedExcelSheetNames,
         };
     }
 

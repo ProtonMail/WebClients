@@ -12,10 +12,11 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectSpaceByIdOptional } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../services/files';
+import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } from '../../../services/files/excelSheets';
 import { SearchService } from '../../../services/search/searchService';
 import type { AttachmentId, Message, ProjectSpace } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
-import { isLargeSpreadsheetFile, isPresentationFile } from '../../../util/fileTypeHelpers';
+import { isExcelFile, isLargeSpreadsheetFile, isPresentationFile } from '../../../util/fileTypeHelpers';
 import { sendFileUploadFromDriveEvent } from '../../../util/telemetry';
 
 export type FileUploadMode = 'guest' | 'local' | 'linked-drive';
@@ -27,9 +28,24 @@ export interface UseFileHandlingProps {
     spaceId?: string;
     /** Optional Drive upload function — only provided for authenticated users */
     uploadToDrive?: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+    onSelectExcelSheets?: (file: File, sheets: ExcelSheetInfo[]) => Promise<string[] | null>;
+    /**
+     * Emit a success notification once the file has been added. Defaults to
+     * false because the composer surfaces success implicitly via the attachment
+     * appearing in the message bar; enable it for flows where the user needs
+     * explicit feedback (e.g. files added from the knowledge base panel).
+     */
+    notifyOnSuccess?: boolean;
 }
 
-export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive }: UseFileHandlingProps) => {
+export const useFileHandling = ({
+    messageChain,
+    onShowDriveBrowser,
+    spaceId,
+    uploadToDrive,
+    onSelectExcelSheets,
+    notifyOnSuccess = false,
+}: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const fileProcessingService = useFileProcessing();
@@ -63,6 +79,22 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
         [createNotification]
     );
 
+    const getSelectedExcelSheetNames = useCallback(
+        async (file: File): Promise<string[] | undefined | null> => {
+            if (!onSelectExcelSheets || !isExcelFile(file)) {
+                return undefined;
+            }
+
+            const sheets = await getExcelSheetsFromFile(file);
+            if (sheets.length <= 1) {
+                return undefined;
+            }
+
+            return onSelectExcelSheets(file, sheets);
+        },
+        [onSelectExcelSheets]
+    );
+
     const indexFileForSearch = useCallback(
         async (doc: DriveDocument): Promise<void> => {
             if (!userId) return;
@@ -79,7 +111,7 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
     );
 
     const uploadFileToDrive = useCallback(
-        async (file: File): Promise<void> => {
+        async (file: File, selectedExcelSheetNames?: string[]): Promise<void> => {
             if (!linkedDriveFolder || !spaceId || !uploadToDrive) return;
 
             try {
@@ -100,29 +132,42 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
 
                 // Process and index immediately after upload — don't wait for Drive events
                 try {
-                    const processingResult = await fileProcessingService.processFile(file);
+                    const hasSelectedExcelSheets = selectedExcelSheetNames && selectedExcelSheetNames.length > 0;
+                    const filesToIndex = hasSelectedExcelSheets
+                        ? selectedExcelSheetNames.map((sheetName) => ({
+                              file: createExcelSheetFile(file, sheetName),
+                              selectedExcelSheetNames: [sheetName],
+                              documentId: `${nodeId}:${sheetName}`,
+                          }))
+                        : [{ file, selectedExcelSheetNames: undefined, documentId: nodeId }];
 
-                    if (processingResult.type === 'text') {
-                        await indexFileForSearch({
-                            id: nodeId,
-                            name: file.name,
-                            content: processingResult.content,
-                            mimeType: file.type,
-                            size: file.size,
-                            modifiedTime: Date.now(),
-                            folderId: linkedDriveFolder.folderId,
-                            folderPath: linkedDriveFolder.folderPath || 'Drive',
-                            spaceId,
+                    for (const fileToIndex of filesToIndex) {
+                        const processingResult = await fileProcessingService.processFile(fileToIndex.file, {
+                            selectedExcelSheetNames: fileToIndex.selectedExcelSheetNames,
                         });
-                    } else if (processingResult.type === 'error') {
-                        console.warn(
-                            `[useFileHandling] File processing failed for ${file.name}: ${processingResult.message}`
-                        );
-                        createNotification({
-                            text: c('collider_2025: Warning')
-                                .t`Failed to index file for search: ${processingResult.message}`,
-                            type: 'warning',
-                        });
+
+                        if (processingResult.type === 'text') {
+                            await indexFileForSearch({
+                                id: fileToIndex.documentId,
+                                name: fileToIndex.file.name,
+                                content: processingResult.content,
+                                mimeType: fileToIndex.file.type,
+                                size: fileToIndex.file.size,
+                                modifiedTime: Date.now(),
+                                folderId: linkedDriveFolder.folderId,
+                                folderPath: linkedDriveFolder.folderPath || 'Drive',
+                                spaceId,
+                            });
+                        } else if (processingResult.type === 'error') {
+                            console.warn(
+                                `[useFileHandling] File processing failed for ${fileToIndex.file.name}: ${processingResult.message}`
+                            );
+                            createNotification({
+                                text: c('collider_2025: Warning')
+                                    .t`Failed to index file for search: ${processingResult.message}`,
+                                type: 'warning',
+                            });
+                        }
                     }
                 } catch (indexError) {
                     console.warn('[useFileHandling] Failed to index Drive file for RAG:', indexError);
@@ -139,62 +184,105 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
     );
 
     const processFileLocally = useCallback(
-        async (file: File): Promise<void> => {
+        async (file: File, selectedExcelSheetNames?: string[]): Promise<void> => {
             if (isLargeSpreadsheetFile(file)) {
                 console.log(`Processing large spreadsheet file — this may take a moment...`);
             }
 
-            const result = await dispatch(handleFileAsync(file, messageChain, fileProcessingService));
+            const hasSelectedExcelSheets = selectedExcelSheetNames && selectedExcelSheetNames.length > 0;
+            const filesToProcess = hasSelectedExcelSheets
+                ? selectedExcelSheetNames.map((sheetName) => ({
+                      file: createExcelSheetFile(file, sheetName),
+                      selectedExcelSheetNames: [sheetName],
+                  }))
+                : [{ file, selectedExcelSheetNames: undefined }];
 
-            if (result.isDuplicate) {
-                createNotification({
-                    text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
-                    type: 'warning',
-                });
-                return;
-            }
+            for (const fileToProcess of filesToProcess) {
+                const result = await dispatch(
+                    handleFileAsync(fileToProcess.file, messageChain, fileProcessingService, {
+                        selectedExcelSheetNames: fileToProcess.selectedExcelSheetNames,
+                    })
+                );
 
-            if (result.isUnsupported) {
-                if (isPresentationFile(file)) {
+                if (result.isDuplicate) {
                     createNotification({
-                        text: c('collider_2025: Error')
-                            .t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
+                        text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
                         type: 'warning',
                     });
-                } else {
+                    continue;
+                }
+
+                if (result.isUnsupported) {
+                    if (isPresentationFile(fileToProcess.file)) {
+                        createNotification({
+                            text: c('collider_2025: Error')
+                                .t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
+                            type: 'warning',
+                        });
+                    } else {
+                        createNotification({
+                            text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
+                            type: 'error',
+                        });
+                    }
+                    continue;
+                }
+
+                if (!result.success && result.errorMessage) {
                     createNotification({
-                        text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
+                        text: c('collider_2025: Error').t`Error processing ${result.fileName}: ${result.errorMessage}`,
                         type: 'error',
                     });
+                    continue;
                 }
-                return;
-            }
 
-            if (!result.success && result.errorMessage) {
+                console.log(`File processing completed: ${fileToProcess.file.name}`);
+
+                if (notifyOnSuccess && result.success) {
+                    createNotification({
+                        text: c('collider_2025: Success').t`File added to knowledge base: ${result.fileName}`,
+                        type: 'success',
+                    });
+                }
+
+                if (spaceId && result.success && result.attachmentId && result.markdown) {
+                    await indexFileForSearch({
+                        id: result.attachmentId,
+                        name: fileToProcess.file.name,
+                        content: result.markdown,
+                        mimeType: fileToProcess.file.type,
+                        size: fileToProcess.file.size,
+                        modifiedTime: Date.now(),
+                        folderId: spaceId,
+                        folderPath: 'Uploaded Files',
+                        spaceId,
+                    });
+                }
+            }
+        },
+        [createNotification, dispatch, fileProcessingService, indexFileForSearch, messageChain, notifyOnSuccess, spaceId]
+    );
+
+    const handleLocalFileProcessing = useCallback(
+        async (file: File): Promise<void> => {
+            try {
+                if (!validateFile(file)) return;
+
+                const selectedExcelSheetNames = await getSelectedExcelSheetNames(file);
+                if (selectedExcelSheetNames === null) {
+                    return;
+                }
+
+                await processFileLocally(file, selectedExcelSheetNames);
+            } catch (error) {
+                console.error('Error processing file locally:', error);
                 createNotification({
-                    text: c('collider_2025: Error').t`Error processing ${result.fileName}: ${result.errorMessage}`,
+                    text: c('collider_2025: Error').t`Error processing file: ${file.name}`,
                     type: 'error',
-                });
-                return;
-            }
-
-            console.log(`File processing completed: ${file.name}`);
-
-            if (spaceId && result.success && result.attachmentId && result.markdown) {
-                await indexFileForSearch({
-                    id: result.attachmentId,
-                    name: file.name,
-                    content: result.markdown,
-                    mimeType: file.type,
-                    size: file.size,
-                    modifiedTime: Date.now(),
-                    folderId: spaceId,
-                    folderPath: 'Uploaded Files',
-                    spaceId,
                 });
             }
         },
-        [createNotification, dispatch, fileProcessingService, indexFileForSearch, messageChain, spaceId]
+        [createNotification, getSelectedExcelSheetNames, processFileLocally, validateFile]
     );
 
     const handleFileProcessing = useCallback(
@@ -202,10 +290,15 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
             try {
                 if (!validateFile(file)) return;
 
+                const selectedExcelSheetNames = await getSelectedExcelSheetNames(file);
+                if (selectedExcelSheetNames === null) {
+                    return;
+                }
+
                 if (fileUploadMode === 'linked-drive') {
-                    await uploadFileToDrive(file);
+                    await uploadFileToDrive(file, selectedExcelSheetNames);
                 } else {
-                    await processFileLocally(file);
+                    await processFileLocally(file, selectedExcelSheetNames);
                 }
             } catch (error) {
                 console.error('Error processing file:', error);
@@ -215,12 +308,23 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
                 });
             }
         },
-        [createNotification, fileUploadMode, processFileLocally, uploadFileToDrive, validateFile]
+        [
+            createNotification,
+            fileUploadMode,
+            getSelectedExcelSheetNames,
+            processFileLocally,
+            uploadFileToDrive,
+            validateFile,
+        ]
     );
 
     const handleFilesSelected = useCallback(
         (files: File[]) => {
-            files.forEach((file) => handleFileProcessing(file));
+            void (async () => {
+                for (const file of files) {
+                    await handleFileProcessing(file);
+                }
+            })();
         },
         [handleFileProcessing]
     );
@@ -239,24 +343,28 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
 
     const handleFilesFromNative = useCallback(
         (files: { base64: string; name: string }[]) => {
-            files
-                .map(({ base64, name }) => {
-                    // Convert base64 to File object
-                    const base64Data = base64.split(',')[1] || base64; // Remove data URL prefix if present
-                    const byteCharacters = atob(base64Data);
-                    const byteNumbers = new Array(byteCharacters.length);
-                    for (let i = 0; i < byteCharacters.length; i++) {
-                        byteNumbers[i] = byteCharacters.charCodeAt(i);
-                    }
-                    const byteArray = new Uint8Array(byteNumbers);
+            const uploadedFiles = files.map(({ base64, name }) => {
+                // Convert base64 to File object
+                const base64Data = base64.split(',')[1] || base64; // Remove data URL prefix if present
+                const byteCharacters = atob(base64Data);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
 
-                    // Infer MIME type from file extension
-                    const extension = name.split('.').pop()?.toLowerCase() || '';
-                    const mimeType = getMimeType(extension);
+                // Infer MIME type from file extension
+                const extension = name.split('.').pop()?.toLowerCase() || '';
+                const mimeType = getMimeType(extension);
 
-                    return new File([byteArray], name, { type: mimeType });
-                })
-                .forEach(handleFileProcessing);
+                return new File([byteArray], name, { type: mimeType });
+            });
+
+            void (async () => {
+                for (const file of uploadedFiles) {
+                    await handleFileProcessing(file);
+                }
+            })();
         },
         [handleFileProcessing]
     );
@@ -310,6 +418,7 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
 
     return {
         handleFileProcessing,
+        handleLocalFileProcessing,
         handleFilesSelected,
         handleBrowseDrive,
         handleDeleteAttachment,
