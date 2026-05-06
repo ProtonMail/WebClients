@@ -62,7 +62,7 @@ interface Props {
     onSuccess?: (data: { emailEnabled: boolean; updatedUserSettings: UserSettings }) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label' | 'readOnly' | 'placeholder'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label' | 'readOnly' | 'placeholder' | 'onFocus'>>;
     disableVerifyCta?: boolean;
     onSubmit: (input: string) => Promise<void>;
     onVerify: () => void;
