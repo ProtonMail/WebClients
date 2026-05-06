@@ -98,11 +98,9 @@ export const useUpdateAccountRecovery = () => {
         }
         isSubmittingEmailRef.current = true;
 
-        const promise = update()
-            .catch(noop)
-            .finally(() => {
-                isSubmittingEmailRef.current = false;
-            });
+        const promise = update().finally(() => {
+            isSubmittingEmailRef.current = false;
+        });
         withLoadingEmail(promise).catch(noop);
         return promise;
     };
