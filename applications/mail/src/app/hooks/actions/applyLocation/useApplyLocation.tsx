@@ -25,10 +25,9 @@ import {
 } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
 import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
-import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
+import { useGetConversation, useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import { load } from 'proton-mail/store/conversations/conversationsActions';
-import { categorizeMessage } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -67,6 +66,7 @@ export const useApplyLocation = () => {
     const { getFilterActions } = useCreateFilters();
 
     const getConversationById = useGetConversation();
+    const getConversationsByIDs = useGetConversationsByIDs();
     const getElementByID = useGetElementByID();
 
     const dispatchMessage = ({
@@ -363,30 +363,32 @@ export const useApplyLocation = () => {
                 return Promise.resolve([]);
             }
 
-            // Moving a message to a different category is difficult because we cannot predict the number of
-            // elements that are in the conversation, and that are in the category, and in inbox.
-            // To solve this issue, we fetch the conversation and we apply the move action on the conversation instead of the message.
+            // Moving a message to a different category is difficult.
+            // This is because we cannot predict the number of elements of the conversation that are both in the category and in inbox.
+            // To solve the issue we try to pre-fetch conversation before the user perform the action, if not available we fetch it and do the action.
             if (isCategoryLabel(destinationLabelID)) {
-                const conversationIDs = unique(
-                    elements.filter(isElementMessage).map((element) => element.ConversationID)
-                );
+                const messageElements = elements.filter(isElementMessage);
+                const conversationIDs = unique(messageElements.map((element) => element.ConversationID));
 
-                dispatch(
-                    categorizeMessage({
-                        elementIDs: elements.filter(isElementMessage).map((element) => element.ID),
-                        categoryID: destinationLabelID,
-                    })
-                );
+                const conversationStates = getConversationsByIDs(conversationIDs);
+                const allConversationsInStore = conversationStates.every((state) => state?.Conversation !== undefined);
 
+                // If all conversations are already in the store, we can perform the action optimistically
+                if (allConversationsInStore) {
+                    return moveToFolder({
+                        elements: conversationStates.map((state) => state!.Conversation!),
+                        removeLabel,
+                        askUnsubscribe,
+                        destinationLabelID,
+                        showSuccessNotification,
+                        createFilters,
+                        type: APPLY_LOCATION_TYPES.MOVE,
+                    });
+                }
+
+                // Fetch all conversation and perform the action, this breaks optimistic action but ensure the context total remains correct
                 await Promise.all(
-                    conversationIDs.map((id) =>
-                        dispatch(
-                            load({
-                                conversationID: id,
-                                messageID: undefined,
-                            })
-                        )
-                    )
+                    conversationIDs.map((id) => dispatch(load({ conversationID: id, messageID: undefined })))
                 );
 
                 const conversations = conversationIDs.map((id) => getElementByID(id)).filter(isTruthy);
