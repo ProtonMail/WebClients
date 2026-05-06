@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -21,6 +21,7 @@ export const NewChatSidebarButton = () => {
     const { isSmallScreen } = useSidebar();
     const { isGhostChatMode, setGhostChatMode } = useGhostChat();
     const { handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
+    const isNewChatRoute = useRouteMatch('/')?.isExact;
 
     const handleNewChat = useCallback(() => {
         setGhostChatMode(false);
@@ -84,6 +85,7 @@ export const NewChatSidebarButton = () => {
                         checked={isGhostChatMode}
                         onChange={handleGhostToggle}
                         title={c('collider_2025:Toggle').t`Ghost chat mode`}
+                        disabled={!isNewChatRoute}
                     />
                 </div>
                 {/* <LumoPlusToggle /> */}
