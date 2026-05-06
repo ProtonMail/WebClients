@@ -14,6 +14,7 @@ export enum BaseTransferStatus {
     Pending = 'pending',
     Cancelled = 'cancelled',
     MalwareDetected = 'malwareDetectionStatus',
+    MalwareScanUnavailable = 'malwareScanUnavailable',
 }
 
 export enum DownloadStatus {
@@ -27,6 +28,7 @@ export enum DownloadStatus {
     Pending = BaseTransferStatus.Pending,
     Cancelled = BaseTransferStatus.Cancelled,
     MalwareDetected = BaseTransferStatus.MalwareDetected,
+    MalwareScanUnavailable = BaseTransferStatus.MalwareScanUnavailable,
 }
 
 type DownloadStatusKeys = (typeof DownloadStatus)[keyof typeof DownloadStatus];

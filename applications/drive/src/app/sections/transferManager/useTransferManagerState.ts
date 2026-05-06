@@ -75,13 +75,16 @@ const mapUpload = (item: UploadItem): TransferManagerUploadEntry => ({
     error: item.error,
 });
 
+export const isMalwareIssue = (status: TransferManagerDownloadEntry['status'] | TransferManagerUploadEntry['status']) =>
+    status === BaseTransferStatus.MalwareDetected || status === BaseTransferStatus.MalwareScanUnavailable;
+
 const getShouldIgnoreTransferProgress = (
     status: TransferManagerDownloadEntry['status'] | TransferManagerUploadEntry['status']
 ) => {
     return (
         status === BaseTransferStatus.Cancelled ||
         status === BaseTransferStatus.Failed ||
-        status === BaseTransferStatus.MalwareDetected ||
+        isMalwareIssue(status) ||
         status === UploadStatus.Skipped ||
         status === UploadStatus.PhotosDuplicate ||
         status === UploadStatus.NotSupportedForPhotos
@@ -143,6 +146,7 @@ export const useTransferManagerState = () => {
         } else if (
             statesMap.get(BaseTransferStatus.Failed) ||
             statesMap.get(BaseTransferStatus.MalwareDetected) ||
+            statesMap.get(BaseTransferStatus.MalwareScanUnavailable) ||
             statesMap.get(UploadStatus.NotSupportedForPhotos)
         ) {
             status = TransferManagerStatus.Failed;
@@ -178,6 +182,7 @@ export const useTransferManagerState = () => {
                     return 4;
                 case BaseTransferStatus.Failed:
                 case BaseTransferStatus.MalwareDetected:
+                case BaseTransferStatus.MalwareScanUnavailable:
                     return 3;
                 case UploadStatus.NotSupportedForPhotos:
                     return 2;
