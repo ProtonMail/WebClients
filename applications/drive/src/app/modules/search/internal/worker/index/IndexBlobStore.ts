@@ -4,7 +4,7 @@ import { SerDes } from '@proton/proton-foundation-search';
 import { Logger } from '../../shared/Logger';
 import { decryptBlob, encryptBlob } from '../../shared/SearchCrypto';
 import type { SearchDB } from '../../shared/SearchDB';
-import { createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
+import { SearchLibraryError, createQuotaExceededErrorMessage, isQuotaExceededError } from '../../shared/errors';
 import type { IndexKind } from './IndexRegistry';
 
 /**
@@ -31,22 +31,27 @@ export class IndexBlobStore {
     }
 
     async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent | ExportEvent): Promise<void> {
-        const blobName = event.id().toString();
-        const cached = this.cache.get(blobName);
-        if (cached) {
-            event.sendCached(cached);
-            return;
-        }
+        try {
+            const blobName = event.id().toString();
+            const cached = this.cache.get(blobName);
 
-        // TODO: Instrument and exception handling hardening for failed decryptions.
-        const decrypted = await this.db.getDecryptedIndexBlob(this.dbKey(blobName), async (ciphertext) => {
-            const result = await decryptBlob(this.cryptoKey, ciphertext, this.indexKind, blobName);
-            return result.buffer;
-        });
-        if (decrypted !== undefined) {
-            event.send(SerDes.Cbor, new Uint8Array(decrypted));
-        } else {
-            event.sendEmpty();
+            if (cached) {
+                event.sendCached(cached);
+                return;
+            }
+
+            // TODO: Instrument and exception handling hardening for failed decryptions.
+            const decrypted = await this.db.getDecryptedIndexBlob(this.dbKey(blobName), async (ciphertext) => {
+                const result = await decryptBlob(this.cryptoKey, ciphertext, this.indexKind, blobName);
+                return result.buffer;
+            });
+            if (decrypted !== undefined) {
+                event.send(SerDes.Cbor, new Uint8Array(decrypted));
+            } else {
+                event.sendEmpty();
+            }
+        } catch (e) {
+            throw new SearchLibraryError('Failed to load blob', e);
         }
     }
 
@@ -64,8 +69,9 @@ export class IndexBlobStore {
             if (isQuotaExceededError(e)) {
                 const msg = await createQuotaExceededErrorMessage();
                 Logger.error(`IndexBlobStore: Quota exceeded error <${msg}>`);
+                throw e;
             }
-            throw e;
+            throw new SearchLibraryError('Failed to save blob', e);
         }
     }
 
