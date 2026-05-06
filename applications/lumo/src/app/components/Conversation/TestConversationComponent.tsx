@@ -307,12 +307,13 @@ const TestConversationComponent = ({
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
             <LumoLayoutWithDrawer
+                showNewChatButton={true}
                 headerComponent={
                     conversation && (
                         <ConversationHeader
                             conversation={conversation}
                             messageChain={messageChain}
-                            onOpenFiles={handleOpenFiles}
+                            // onOpenFiles={handleOpenFiles}
                         />
                     )
                 }

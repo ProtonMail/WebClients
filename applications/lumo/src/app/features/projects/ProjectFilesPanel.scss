@@ -9,10 +9,6 @@
 
 	// When drive browser is active, remove outer scroll and let drive browser handle it
 	&:not(.modal) {
-		// padding for non-modal views
-		padding-block: 8px 24px; // pt-2 equivalent
-		padding-inline-end: 16px; // pr-4 equivalent // pb-6 equivalent
-
 		&.has-drive-browser {
 			overflow-y: hidden;
 
