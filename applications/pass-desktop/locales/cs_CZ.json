@@ -1348,6 +1348,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Právě probíhá kontrola odemknutí počítače."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické ověření selhalo."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrické údaje pro odemknutí se neshodují."
+      ],
+      "Biometric lock credentials not found.": [
+        "Nebyly nalezeny přihlašovací údaje pro biometrický zámek."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrický zámek nebyl nastaven."
+      ],
+      "Biometric lock setup failed.": [
+        "Nastavení biometrického zámku selhalo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikace s desktopovou aplikací ${ PASS_APP_NAME } selhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } neodpověděla včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplikace pro stolní počítače ${ PASS_APP_NAME } je přihlášena pod jiným účtem."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "V desktopové aplikaci ${ PASS_APP_NAME } byste měli být přihlášeni."
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ]
     },
     "Error message": {
@@ -2708,6 +2750,30 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
+      ],
+      "Enabling desktop auto-lock": [
+        "Zapnutí automatického zamykání plochy"
+      ],
+      "invites the group ${ name } to access items in": [
+        "pozve skupinu ${ name } k přístupu k položkám v"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tato funkce vyžaduje, aby byla během instalace nainstalována a spuštěna desktopová aplikace ${ PASS_APP_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ]
     },
     "Keyboard key": {
@@ -5319,6 +5385,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Získat ${ planName }"
       ]
     }
   }
