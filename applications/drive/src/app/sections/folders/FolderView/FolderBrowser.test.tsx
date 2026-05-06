@@ -20,7 +20,7 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
 
 jest.mock('../../../hooks/drive/useNavigate', () => ({
     __esModule: true,
-    default: () => ({ navigateToLink: jest.fn() }),
+    default: () => ({ navigateToLink: jest.fn(), navigateToRoot: jest.fn() }),
 }));
 
 jest.mock('../../../store/_documents', () => ({
@@ -81,6 +81,16 @@ function renderFolderBrowser(role: MemberRole, buttonType: 'toolbar' | 'contextM
     const item = buildItem(role);
 
     act(() => {
+        useFolderStore.getState().setFolder(
+            {
+                uid: 'vol-1~link-1',
+                name: 'whatever',
+                parentUid: 'vol-1~parent-1',
+                isRoot: false,
+                shareId: 'share-1',
+            },
+            'tree-event-scope-1'
+        );
         useFolderStore.getState().setItems([item]);
         useSelectionStore.getState().setAllItemIds(new Set([item.uid]));
         useSelectionStore.getState().selectItem(item.uid);
