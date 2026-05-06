@@ -60,10 +60,6 @@ const PostQuantumKeysOptInSection = () => {
         );
     }
 
-    if (state.pqcIncompatibleSessions) {
-        return null;
-    }
-
     // section title rendering is handled here temporarily, since it depends on whether the section is shown,
     // based on the sessions
     const id = 'pqc-optin';
@@ -93,33 +89,48 @@ const PostQuantumKeysOptInSection = () => {
         </Link>
     );
 
+    const sectionTitleElement = (
+        <SettingsSectionTitle className="group-hover-opacity-container relative">
+            {linkElement}
+            <span>{title}</span>
+        </SettingsSectionTitle>
+    );
+
     return (
         <>
-            <SettingsSectionTitle className="group-hover-opacity-container relative">
-                {linkElement}
-                <span>{title}</span>
-            </SettingsSectionTitle>
             {optInModal}
             {!!userSettings.Flags.SupportPgpV6Keys ? (
-                <SettingsSectionWide>
-                    <SettingsParagraph>
-                        {c('Info').t`Support for post-quantum keys is enabled for your account.`}
-                    </SettingsParagraph>
-                </SettingsSectionWide>
+                <>
+                    {sectionTitleElement}
+                    <SettingsSectionWide>
+                        <SettingsParagraph>
+                            {c('Info').t`Support for post-quantum keys is enabled for your account.`}
+                        </SettingsParagraph>
+                    </SettingsSectionWide>
+                </>
             ) : (
-                <SettingsSectionWide>
-                    <SettingsParagraph>
-                        {c('Info')
-                            .t`Protect your account from quantum computing threats with quantum-resistant cryptographic keys.`}
-                    </SettingsParagraph>
-                    {
-                        <div className="mb-4">
-                            <Button shape="outline" onClick={() => showOptInModal({})} data-testid="postQuantumOptIn">
-                                {c('Action').t`Enable post-quantum protection`}
-                            </Button>
-                        </div>
-                    }
-                </SettingsSectionWide>
+                !state.pqcIncompatibleSessions && (
+                    <>
+                        {sectionTitleElement}
+                        <SettingsSectionWide>
+                            <SettingsParagraph>
+                                {c('Info')
+                                    .t`Protect your account from quantum computing threats with quantum-resistant cryptographic keys.`}
+                            </SettingsParagraph>
+                            {
+                                <div className="mb-4">
+                                    <Button
+                                        shape="outline"
+                                        onClick={() => showOptInModal({})}
+                                        data-testid="postQuantumOptIn"
+                                    >
+                                        {c('Action').t`Enable post-quantum protection`}
+                                    </Button>
+                                </div>
+                            }
+                        </SettingsSectionWide>
+                    </>
+                )
             )}
         </>
     );
