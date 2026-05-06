@@ -16,7 +16,7 @@ import { MAX_INDEXABLE_FILES, useDriveFolderIndexing } from '../../../hooks/useD
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
-import { deleteAttachment } from '../../../redux/slices/core/attachments';
+import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../../types';
 import { sendProjectDriveFolderLinkEvent, sendProjectDriveFolderUnlinkEvent } from '../../../util/telemetry';
@@ -147,7 +147,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 (attachment) => attachment.autoRetrieved || attachment.driveNodeId
             );
             for (const attachment of autoRetrievedAttachments) {
-                dispatch(deleteAttachment(attachment.id));
+                // Use the saga-backed action so the attachment is also soft-deleted in IDB,
+                // unindexed from search, and the deletion is pushed to the remote.
+                // Otherwise loadReduxFromIdb / refreshShallowAttachmentFromRemote can rehydrate
+                // these "ghost" auto-retrieved files into every new chat in the project.
+                dispatch(locallyDeleteAttachmentFromLocalRequest(attachment.id));
             }
 
             sendProjectDriveFolderUnlinkEvent();
