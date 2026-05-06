@@ -17,6 +17,7 @@ import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
@@ -144,6 +145,12 @@ export const useComposerContent = (args: EditorArgs) => {
     };
 
     const { message: syncedMessage } = useMessage(messageID);
+
+    const syncedMessageRef = useRef(syncedMessage);
+    syncedMessageRef.current = syncedMessage;
+
+    const modelMessageRef = useRef(modelMessage);
+    modelMessageRef.current = modelMessage;
 
     const date = getDate(syncedMessage.data, '');
     const timestamp = date ? date.getTime() : 0;
@@ -492,6 +499,29 @@ export const useComposerContent = (args: EditorArgs) => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E1A782
     }, [editorReady, syncedMessage.data, syncedMessage.messageDocument?.initialized]);
+
+    useEffect(() => {
+        if (!opening) {
+            return;
+        }
+        const id = window.setTimeout(() => {
+            const currentSyncedMessage = syncedMessageRef.current;
+            const currentModelMessage = modelMessageRef.current;
+            captureMessage('Composer stuck loading for more than 10 seconds', {
+                level: 'error',
+                extra: {
+                    syncedMessageInitialized: currentSyncedMessage.messageDocument?.initialized,
+                    modelMessageInitialized: currentModelMessage.messageDocument?.initialized,
+                    hasEmbeddedImages: currentSyncedMessage.messageImages?.hasEmbeddedImages,
+                    hasRemoteImages: currentSyncedMessage.messageImages?.hasRemoteImages,
+                    imageStatuses: currentSyncedMessage.messageImages?.images?.map((img) => img.status),
+                    initialAttachments: currentSyncedMessage.draftFlags?.initialAttachments?.length,
+                    isNewDraft: isNewDraft(currentSyncedMessage.localID),
+                },
+            });
+        }, 10000);
+        return () => window.clearTimeout(id);
+    }, [opening]);
 
     /**
      * When opening a draft we also want to check that the message Sender is valid
