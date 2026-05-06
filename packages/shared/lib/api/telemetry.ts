@@ -11,6 +11,7 @@ export enum TelemetryMeasurementGroups {
     accountResetPassword = 'account.web.reset_password',
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
+    accountUpgradePage = 'account.web.upgrade_page',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
@@ -221,6 +222,12 @@ export enum TelemetrySafetyReviewScoreDiffEvents {
 
 export enum TelemetryAccountDashboardEvents {
     pageLoad = 'page_load',
+}
+
+export enum TelemetryUpgradePageEvents {
+    page_load = 'page_load',
+    cta_click = 'cta_click',
+    subscription_success = 'subscription_success',
 }
 
 export enum TelemetryRecoverySettingsEvents {
@@ -543,6 +550,7 @@ export type TelemetryEvents =
     | TelemetryAccountCancellationFlowFeedbackEvents
     | TelemetrySafetyReviewCtrEvents
     | TelemetrySafetyReviewScoreDiffEvents
+    | TelemetryUpgradePageEvents
     | TelemetryVpnTvEvents
     | TelemetryPreventWasmLoading;
 
