@@ -7,6 +7,7 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcContactAssistedRecovery } from '@proton/icons/icons/IcContactAssistedRecovery';
+import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 
 interface Props {
     to: string;
@@ -26,9 +27,19 @@ const RecoveryContactsStatus = () => {
     const count = contacts.length;
     if (count === 0) {
         if (isSentinelUser) {
-            return <span className="color-weak">{c('Status').t`No contact`}</span>;
+            return <span className="color-weak text-sm">{c('Status').t`No contact`}</span>;
         }
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add a recovery contact`} />;
+    }
+
+    if (isSentinelUser && count > 0) {
+        return (
+            <StatusBadge
+                status={StatusBadgeStatus.Warning}
+                text={c('Status').t`Disable contact-assisted recovery`}
+                icon={IcShieldExclamationFilled}
+            />
+        );
     }
 
     const latestDate = contacts.reduce<Date | null>((latest, contact) => {
@@ -38,7 +49,7 @@ const RecoveryContactsStatus = () => {
     const formattedDate = getFormattedCreateTime(latestDate);
 
     return (
-        <span className="color-weak">
+        <span className="color-weak text-sm">
             <span>{c('Status').ngettext(msgid`${count} person`, `${count} people`, count)}</span>
             {formattedDate && (
                 <span data-testid="account:recovery-contacts:last-changed-date">
