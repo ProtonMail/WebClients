@@ -1,15 +1,28 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcDeviceDataBackup } from '@proton/icons/icons/IcDeviceDataBackup';
+import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 const RecoveryDeviceBadge = ({ recoveryFileData }: { recoveryFileData: ReturnType<typeof selectRecoveryFileData> }) => {
     const { hasDeviceRecoveryEnabled, loading } = recoveryFileData;
-    if (loading) {
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+
+    if (loading || loadingIsSentinelUser) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
+    }
+    if (isSentinelUser && hasDeviceRecoveryEnabled) {
+        return (
+            <StatusBadge
+                status={StatusBadgeStatus.Warning}
+                text={c('Status').t`Disable device data backup`}
+                icon={IcShieldExclamationFilled}
+            />
+        );
     }
     if (hasDeviceRecoveryEnabled) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`On`} />;

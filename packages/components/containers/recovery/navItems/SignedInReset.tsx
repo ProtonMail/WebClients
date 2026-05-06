@@ -13,14 +13,14 @@ interface Props {
 }
 
 const SignedInResetBadge = () => {
-    const { isSessionRecoveryEnabled } = useSelector(selectSessionRecoveryData);
+    const { isSessionRecoveryEnabled, isSessionRecoveryAvailable, loading } = useSelector(selectSessionRecoveryData);
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
-    if (loadingIsSentinelUser) {
+    if (loadingIsSentinelUser || loading) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
 
-    if (isSentinelUser && isSessionRecoveryEnabled) {
+    if (isSentinelUser && isSessionRecoveryAvailable && isSessionRecoveryEnabled) {
         return (
             <StatusBadge
                 status={StatusBadgeStatus.Warning}

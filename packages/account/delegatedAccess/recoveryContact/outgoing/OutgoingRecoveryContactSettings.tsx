@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,7 +14,11 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -181,6 +186,7 @@ export const OutgoingRecoveryContactSettings = ({
 }) => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
@@ -190,6 +196,10 @@ export const OutgoingRecoveryContactSettings = ({
     const canAddRecoveryContact =
         controller.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
         !controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit;
+    const showSentinelWarning =
+        !loadingIsSentinelUser &&
+        isSentinelUser &&
+        controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0;
 
     if (isRecoverySettingsRedesignEnabled) {
         if (controller.outgoingDelegatedAccess.loading) {
@@ -230,6 +240,24 @@ export const OutgoingRecoveryContactSettings = ({
                                 </Banner>
                             )}
                             <OutgoingTable controller={controller} />
+                            {showSentinelWarning && (
+                                <div className="fade-in">
+                                    <DashboardCardDivider />
+                                    <div className="flex flex-column gap-2 items-start">
+                                        <StatusBadge
+                                            status={StatusBadgeStatus.Warning}
+                                            text={PROTON_SENTINEL_NAME}
+                                            icon={IcShieldExclamationFilled}
+                                        />
+                                        <p className="m-0">
+                                            {getBoldFormattedText(
+                                                c('Info')
+                                                    .t`To ensure the highest possible security of your account, disable **Contact-assisted recovery**.`
+                                            )}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </DashboardCardContent>
                     )}
                 </DashboardCard>

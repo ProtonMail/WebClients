@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcRecoveryFile } from '@proton/icons/icons/IcRecoveryFile';
+import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 interface Props {
@@ -11,7 +13,26 @@ interface Props {
 }
 
 const RecoveryFileBadge = () => {
-    const { hasOutdatedRecoveryFile, hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
+    const { hasOutdatedRecoveryFile, hasCurrentRecoveryFile, isRecoveryFileAvailable, recoverySecrets, loading } =
+        useSelector(selectRecoveryFileData);
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+
+    if (loading || loadingIsSentinelUser) {
+        return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
+    }
+
+    const isRecoveryFileSentinelConflict =
+        isRecoveryFileAvailable && !hasOutdatedRecoveryFile && recoverySecrets.length > 0;
+
+    if (isSentinelUser && isRecoveryFileSentinelConflict) {
+        return (
+            <StatusBadge
+                status={StatusBadgeStatus.Warning}
+                text={c('Status').t`Disable recovery file`}
+                icon={IcShieldExclamationFilled}
+            />
+        );
+    }
 
     if (hasOutdatedRecoveryFile) {
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Status').t`Outdated`} />;
