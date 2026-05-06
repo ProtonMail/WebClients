@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { OrganizationRole } from '@proton/shared/lib/interfaces';
 
 const ROLE_KNOWLEDGE_BASE_LINKS: Record<string, string> = {
     'org-admin': '/admin-roles#organizational-admin',
@@ -11,40 +10,48 @@ const ROLE_KNOWLEDGE_BASE_LINKS: Record<string, string> = {
     'security-admin': '/admin-roles#security-admin',
 };
 
-interface Props {
-    roles: OrganizationRole[];
-    selectedRoles: Set<string>;
-    onChange: (selectedRoles: Set<string>) => void;
+export interface RoleRow {
+    id: string;
+    name: string;
+    description: string | null;
+    isChecked: boolean;
+    isGroupSourced: boolean;
+    groupName: string | null;
 }
 
-const RoleCheckList = ({ roles, selectedRoles, onChange }: Props) => {
-    const handleRoleToggle = (roleId: string) => {
-        const next = new Set(selectedRoles);
-        if (next.has(roleId)) {
-            next.delete(roleId);
-        } else {
-            next.add(roleId);
-        }
-        onChange(next);
-    };
+interface Props {
+    rows: RoleRow[];
+    onToggle: (roleId: string) => void;
+}
 
+const RoleCheckList = ({ rows, onToggle }: Props) => {
     return (
         <div className="flex flex-column gap-3">
-            {roles.map(({ OrganizationRoleID, Name, Description }) => (
-                <div key={OrganizationRoleID} className="py-2">
+            {rows.map(({ id, name, description, isChecked, isGroupSourced, groupName }) => (
+                <div key={id} className="py-2">
                     <Checkbox
-                        id={`role-${OrganizationRoleID}`}
-                        checked={selectedRoles.has(OrganizationRoleID)}
-                        onChange={() => handleRoleToggle(OrganizationRoleID)}
+                        id={`role-${id}`}
+                        checked={isChecked}
+                        disabled={isGroupSourced}
+                        onChange={() => onToggle(id)}
                     >
                         <div>
-                            <div>{Name}</div>
+                            <div>
+                                {name}
+                                {isGroupSourced && (
+                                    <span className="color-weak ml-1">
+                                        {groupName
+                                            ? c('user_modal').t`(via ${groupName})`
+                                            : c('user_modal').t`(via group)`}
+                                    </span>
+                                )}
+                            </div>
                             <div className="color-weak text-sm">
-                                {Description}
-                                {ROLE_KNOWLEDGE_BASE_LINKS[OrganizationRoleID] && (
+                                {description}
+                                {ROLE_KNOWLEDGE_BASE_LINKS[id] && (
                                     <>
                                         <br />
-                                        <Href href={getKnowledgeBaseUrl(ROLE_KNOWLEDGE_BASE_LINKS[OrganizationRoleID])}>
+                                        <Href href={getKnowledgeBaseUrl(ROLE_KNOWLEDGE_BASE_LINKS[id])}>
                                             {c('Link').t`Details`}
                                         </Href>
                                     </>
