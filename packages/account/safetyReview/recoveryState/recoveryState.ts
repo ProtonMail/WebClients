@@ -286,3 +286,49 @@ export const selectRecoveryState = createSelector(
         };
     }
 );
+
+/** Sentinel overview banner: which recovery-state-driven message to show (or hide). */
+export type SentinelRecoveryBannerVariant = 'disable-recovery-options' | 'download-recovery-phrase' | null;
+
+/**
+ * Recovery settings that Sentinel treats as conflicts match the highlighted rows in account recovery (email/SMS
+ * recovery path on, device backup, recovery file, contacts, signed-in reset, QR sign-in, emergency access).
+ */
+export const selectSentinelRecoveryBannerDisplay = createSelector(
+    [selectRecoveryState, selectAccountRecovery],
+    (recoveryState, accountRecovery): { loading: boolean; variant: SentinelRecoveryBannerVariant } => {
+        const loading = recoveryState.loading || accountRecovery.loading;
+
+        if (loading) {
+            return { loading: true, variant: null };
+        }
+
+        const getRecoveryItem = (id: RecoveryItemIds) => recoveryState.recoveryItems.find((i) => i.id === id);
+
+        const emailRecoveryPathActive = !!accountRecovery.emailRecovery.value && accountRecovery.emailRecovery.hasReset;
+        const phoneRecoveryPathActive = !!accountRecovery.phoneRecovery.value && accountRecovery.phoneRecovery.hasReset;
+
+        const hasSentinelRecoveryConflict =
+            emailRecoveryPathActive ||
+            phoneRecoveryPathActive ||
+            !!getRecoveryItem('deviceRecovery')?.isEnabled ||
+            !!getRecoveryItem('recoveryFile')?.isEnabled ||
+            !!getRecoveryItem('recoveryContacts')?.isEnabled ||
+            !!getRecoveryItem('signedInReset')?.isEnabled ||
+            !!getRecoveryItem('qrCodeSignIn')?.isEnabled ||
+            !!getRecoveryItem('emergencyContacts')?.isEnabled;
+
+        const phraseGenerated = !!getRecoveryItem('recoveryPhrase')?.isEnabled;
+
+        let variant: SentinelRecoveryBannerVariant;
+        if (hasSentinelRecoveryConflict) {
+            variant = 'disable-recovery-options';
+        } else if (!phraseGenerated) {
+            variant = 'download-recovery-phrase';
+        } else {
+            variant = null;
+        }
+
+        return { loading: false, variant };
+    }
+);
