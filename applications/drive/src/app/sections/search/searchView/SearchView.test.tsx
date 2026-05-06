@@ -35,18 +35,10 @@ jest.mock('@proton/components', () => {
     };
 });
 
-jest.mock('../../../components/FileBrowser', () => {
+jest.mock('../../../statelessComponents/ToolbarRow/ToolbarRow', () => {
     const React = require('react');
     return {
-        FileBrowserStateProvider: jest.fn((props) => React.createElement(React.Fragment, null, props.children)),
-    };
-});
-
-jest.mock('../../../components/sections/ToolbarRow/ToolbarRow', () => {
-    const React = require('react');
-    return {
-        __esModule: true,
-        default: () => React.createElement('div', { 'data-testid': 'toolbar-row' }),
+        ToolbarRow: () => React.createElement('div', { 'data-testid': 'toolbar-row' }),
     };
 });
 

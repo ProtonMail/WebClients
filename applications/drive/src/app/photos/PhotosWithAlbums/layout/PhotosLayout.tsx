@@ -14,11 +14,11 @@ import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { usePhotosPreviewModal } from '../../../modals/preview';
+import { ToolbarRow } from '../../../statelessComponents/ToolbarRow/ToolbarRow';
 import { type OnFileUploadSuccessCallbackData, useSharedWithMeActions } from '../../../store';
 import { useLinkActions, useLinksActions } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
