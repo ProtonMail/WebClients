@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import { NewChatButtonHeader } from '../Buttons/NewChatButton';
 
 import './Header.scss';
 
@@ -86,16 +87,18 @@ export const Header = ({
     children,
     withoutDrawerToggle = false,
     leftHeaderButton,
+    showNewChatButton,
 }: {
     children: React.ReactNode;
     withoutDrawerToggle?: boolean;
     leftHeaderButton?: React.ReactNode;
+    showNewChatButton: boolean;
 }) => {
     const { isOpen } = useRightPanel();
     const { toggle: toggleSideMenu } = useSidebar();
     return (
         <div className="flex flex-row flex-nowrap justify-space-between w-full">
-            <div className="flex flex-row flex-nowrap justify-start items-center gap-2 mr-2 shrink-0">
+            <div className="flex flex-row flex-nowrap justify-start items-center mr-2 shrink-0">
                 <Button onClick={toggleSideMenu} icon shape="ghost" color="weak" size="small" className="shrink-0">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="40" height="40" rx="12" fill="#F5F6FE" />
@@ -108,6 +111,7 @@ export const Header = ({
                         />
                     </svg>
                 </Button>
+                {showNewChatButton && <NewChatButtonHeader />}
                 {leftHeaderButton}
             </div>
             {children}

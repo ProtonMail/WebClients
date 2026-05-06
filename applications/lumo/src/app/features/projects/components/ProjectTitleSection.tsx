@@ -4,8 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+
+import { useProjectActions } from '../hooks/useProjectActions';
 
 interface ProjectTitleSectionProps {
     projectName: string;
@@ -24,6 +27,7 @@ export const ProjectTitleSection = ({
     const [editedTitle, setEditedTitle] = useState('');
     const titleInputRef = useRef<HTMLInputElement>(null);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { navigateToAllProjects } = useProjectActions();
 
     useEffect(() => {
         if (isEditingTitle && titleInputRef.current) {
@@ -92,6 +96,10 @@ export const ProjectTitleSection = ({
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
                 <DropdownMenu>
+                    <DropdownMenuButton className="text-left" onClick={navigateToAllProjects}>
+                        <IcFolderOpen className="mr-2" />
+                        {c('collider_2025:Action').t`Go to all projects`}
+                    </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left color-danger"
                         onClick={() => {
