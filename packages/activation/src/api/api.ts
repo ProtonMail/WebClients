@@ -112,14 +112,16 @@ export const startEasySwitchSignupImportTask = ({
     Source,
     Account,
     Provider,
+    AutomaticImport,
 }: {
     Source: string;
     Account: string;
     Provider: OAUTH_PROVIDER;
+    AutomaticImport: boolean;
 }) => ({
     url: 'importer/v1/mail/importers/start/all',
     method: 'POST',
-    data: { Source, Account, Provider },
+    data: { Source, Account, Provider, AutomaticImport: AutomaticImport ? 1 : 0 },
 });
 
 export const getImportsList = () => ({
