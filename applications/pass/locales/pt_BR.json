@@ -752,6 +752,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ]
     },
     "Browser": {
@@ -1288,6 +1291,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "A verificação de desbloqueio do computador já está em andamento."
+      ],
+      "Biometric authentication failed.": [
+        "A autenticação biométrica falhou."
+      ],
+      "Biometric lock credentials do not match.": [
+        "As credenciais do bloqueio biométrico não correspondem."
+      ],
+      "Biometric lock credentials not found.": [
+        "As credenciais do bloqueio biométrico não foi encontrado"
+      ],
+      "Biometric lock is not configured.": [
+        "O bloqueio biométrico não está configurado"
+      ],
+      "Biometric lock setup failed.": [
+        "Falha na configuração do bloqueio biométrico"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Falha na comunicação criptografado com o aplicativo para computador do ${ PASS_APP_NAME }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não respondem a tempo"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } está bloqueado, precisa ser desbloqueado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não está instalado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } não está respondendo, está em execução?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } está iniciado a sessão com uma conta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } deve estar iniciado a sessão."
+      ],
+      "Unknown error.": [
+        "Erro desconhecido."
       ]
     },
     "Error message": {
@@ -1929,7 +1974,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2575,6 +2621,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
       ]
     },
     "Keyboard key": {
@@ -2946,7 +2995,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
@@ -3624,7 +3673,7 @@
         "Desconhecido"
       ],
       "Unlimited": [
-        "Ilimitado"
+        "Unlimited"
       ],
       "Unlock premium features": [
         "Desbloqueie recursos premium"
@@ -5048,6 +5097,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obter ${ planName }"
       ]
     }
   }

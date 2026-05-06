@@ -92,7 +92,7 @@
         "Дадатковыя параметры"
       ],
       "Apply lifetime coupon code": [
-        "Ужыць пажыццёвы код купона"
+        "Прымяніць пажыццёвы код купона"
       ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
@@ -575,7 +575,7 @@
         "Абмежаваць колькасць праглядаў"
       ],
       "Resume monitoring": [
-        "Узнавіць назіранне"
+        "Узнавіць маніторынг"
       ],
       "Retry": [
         "Паўтарыць"
@@ -756,6 +756,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Don't show this again": [
+        "Больш не паказваць"
       ]
     },
     "Browser": {
@@ -1003,7 +1006,7 @@
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed removing the invite.": [
         "Збой выдалення запрашэння."
@@ -1204,7 +1207,7 @@
         "Збой абнаўлення налад"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некаторыя сховішчы больш недаступны з прычыны таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
@@ -1298,6 +1301,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Адбываецца праверка, ці разблакіраваны працоўны стол."
+      ],
+      "Biometric authentication failed.": [
+        "Збой аўтэнтыфікацыі біяметрыі."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
+      ],
+      "Biometric lock credentials not found.": [
+        "Уліковыя даныя біяметрычнай блакіроўкі не знойдзены."
+      ],
+      "Biometric lock is not configured.": [
+        "Біяметрычная блакіроўка не сканфігурыравана."
+      ],
+      "Biometric lock setup failed.": [
+        "Збой наладкі біяметрычнай блакіроўкі"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Збой зашыфраваных зносін з праграмай для камп'ютара ${ PASS_APP_NAME }."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } своечасова не адказвае."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не ўсталявана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
+      ],
+      "Unknown error.": [
+        "Невядомая памылка."
       ]
     },
     "Error message": {
@@ -2062,7 +2107,7 @@
         "Замацаванне элемента..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Спраўдзіце папку са спамам або паспрабуйце адправіць код паўторна."
+        "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
@@ -2636,6 +2681,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ]
     },
     "Keyboard key": {
@@ -4677,7 +4731,7 @@
         "Аднавіць гэту версію?"
       ],
       "Resume monitoring?": [
-        "Узнавіць назіранне?"
+        "Узнавіць маніторынг?"
       ],
       "Reused ${ count } time": [
         "Паўторна выкарыстаны ${ count } раз",
@@ -5167,6 +5221,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
       ]
     }
   }

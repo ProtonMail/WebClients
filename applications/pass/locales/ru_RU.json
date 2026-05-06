@@ -1227,6 +1227,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Unknown error.": [
+        "Неизвестная ошибка."
       ]
     },
     "Error message": {
@@ -2440,6 +2443,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ]
     },
     "Label": {

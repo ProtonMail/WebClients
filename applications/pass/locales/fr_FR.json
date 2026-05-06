@@ -752,6 +752,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
       ]
     },
     "Browser": {
@@ -1288,6 +1291,48 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Une vérification du déverrouillage du bureau est déjà en cours."
+      ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les identifiants de verrouillage biométrique ne correspondent pas."
+      ],
+      "Biometric lock credentials not found.": [
+        "Les identifiants de verrouillage biométrique n'ont pas été trouvés."
+      ],
+      "Biometric lock is not configured.": [
+        "Le verrouillage biométrique n'est pas configuré."
+      ],
+      "Biometric lock setup failed.": [
+        "La configuration du verrouillage biométrique n'a pas abouti."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'est pas installée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
+      ],
+      "Unknown error.": [
+        "Erreur inconnue"
       ]
     },
     "Error message": {
@@ -1926,7 +1971,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2572,6 +2618,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -5045,6 +5097,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
       ]
     }
   }
