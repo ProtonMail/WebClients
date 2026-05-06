@@ -5,7 +5,7 @@ import { type AddressKeysState, addressKeysThunk } from '@proton/account/address
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { createAddress } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
-import { getMemberAddresses, membersThunk } from '@proton/account/members';
+import { UnavailableAddressesError, getMemberAddresses, membersThunk } from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
@@ -15,9 +15,10 @@ import type { UserInvitationsState } from '@proton/account/userInvitations';
 import type { UserSettingsState } from '@proton/account/userSettings';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { authMember } from '@proton/shared/lib/api/members';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { authMember, updateQuota } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
@@ -37,6 +38,7 @@ import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAdd
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { createJoiningLink, createOrganizationImporter, createOrganizationImporterMigration } from '../api';
 import {
@@ -82,11 +84,8 @@ const createDefaultCalendar = async (
 };
 
 const getMemberApi = async (api: Api, member: Member) => {
-    const silentApi = getSilentApi(api);
-    const { UID } = await silentApi<{ UID: string; LocalID: number }>(
-        authMember(member.ID, { PersistPasswordScope: true } as {})
-    );
-    return getUIDApi(UID, silentApi);
+    const { UID } = await api<{ UID: string; LocalID: number }>(authMember(member.ID));
+    return getUIDApi(UID, api);
 };
 
 const getMemberAddressKeys = async (memberApi: Api, address: Address, orgKey: KeyPair) => {
@@ -97,9 +96,11 @@ const getMemberAddressKeys = async (memberApi: Api, address: Address, orgKey: Ke
 
 type CreateMigrationBatchParams = {
     importerOrganizationId: string;
-    users: ApiImporterOrganizationUser[];
+    providerUsers: ApiImporterOrganizationUser[];
+    selectedUsers: string[];
     oauthToken: OAuthToken;
     domain: Domain;
+    password: string;
 };
 
 export const parseJoiningLinkData = createAsyncThunk<JoiningLink, ApiJoiningLinkData, ThunkApi<OrganizationKeyState>>(
@@ -166,9 +167,31 @@ export const setupMigration = createAsyncThunk<
     };
 });
 
-export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchParams, ThunkApi<RequiredState>>(
-    'oles/createMigration',
-    async ({ importerOrganizationId, domain, users, oauthToken }, { dispatch, extra: { api } }) => {
+export type CreateMigrationBatchError = { metadata: any; error: { code?: any; name?: string; message?: string } };
+
+type CreateMigrationBatchResult = {
+    errors: CreateMigrationBatchError[];
+    results: Address[];
+};
+
+export const createMigrationBatch = createAsyncThunk<
+    CreateMigrationBatchResult,
+    CreateMigrationBatchParams,
+    ThunkApi<RequiredState>
+>(
+    'oles/createMigrationBatch',
+    async (
+        { importerOrganizationId, domain, providerUsers, selectedUsers, oauthToken, password },
+        { dispatch, extra }
+    ) => {
+        const errors: CreateMigrationBatchResult['errors'] = [];
+        const api = <T>(config: any) =>
+            extra.api<T>({
+                ...config,
+                data: config.data ? { ...config.data, PersistPasswordScope: true } : undefined,
+                silence: true,
+            });
+
         const [organization, members, orgKey] = await Promise.all([
             dispatch(organizationThunk()),
             dispatch(membersThunk()),
@@ -188,12 +211,31 @@ export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchP
         const getKnownAddresses = () => Object.values(membersAddresses).flat();
         const isSelf = (email: string) => email === oauthToken.Account;
         const isKnownAddress = (email: string) => getKnownAddresses().find((a) => a.Email === email);
+        const isExistingUser = (email: string) => isSelf(email) || isKnownAddress(email);
 
+        const users = providerUsers.filter((u) => selectedUsers.includes(u.ID));
         const usersToCreate = users.filter((u) => !isSelf(u.Email) && !isKnownAddress(u.Email));
+        const existingUsers = providerUsers.filter((u) => isExistingUser(u.Email));
 
         const availableSeats = organization.MaxMembers - organization.UsedMembers;
         if (usersToCreate.length > availableSeats) {
-            throw new Error(c('BOSS').t`Organization does not have enough seats available`);
+            throw { name: 'SeatsError', message: c('BOSS').t`Organization does not have enough seats available` };
+        }
+
+        const selfMember = members.find((m) => m.Self)!;
+        let allocatableStorage = organization.MaxSpace - organization.AssignedSpace;
+
+        // Drop some quota from the admin if safe to do so
+        if (selfMember.MaxSpace === organization.MaxSpace && organization.MaxMembers > 1 && usersToCreate.length) {
+            const newQuota = Math.floor(organization.MaxSpace / organization.MaxMembers);
+            await api(updateQuota(selfMember.ID, newQuota));
+            allocatableStorage = organization.MaxSpace - newQuota;
+        }
+
+        const userQuota = Math.floor(allocatableStorage / (providerUsers.length - existingUsers.length));
+        const totalStorageRequired = usersToCreate.length * userQuota;
+        if ((usersToCreate.length > 1 && userQuota < 1) || totalStorageRequired > allocatableStorage) {
+            throw { name: 'QuotaError', message: c('BOSS').t`Organization does not have enough storage available` };
         }
 
         const migratingSelf = users.find((u) => isSelf(u.Email));
@@ -226,53 +268,80 @@ export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchP
             }
         }
 
-        const allocatableStorage = organization.MaxSpace - organization.AssignedSpace;
-        const fairSplitAmount = organization.MaxSpace / organization.MaxMembers;
-        const perUserStorage = (u: ApiImporterOrganizationUser) => Math.max(u.UsedQuota, fairSplitAmount);
-        const totalStorageRequired = usersToCreate.reduce((acc, u) => acc + perUserStorage(u), 0);
-        if (totalStorageRequired > allocatableStorage) {
-            throw new Error(c('BOSS').t`Organization does not have enough storage available`);
-        }
-
         for (const user of usersToCreate) {
             const [Local, Domain] = getEmailParts(user.Email);
 
-            const member = await dispatch(
-                createMember({
-                    api,
-                    single: false,
-                    member: {
-                        name: user.AdminSetName,
-                        addresses: [
-                            {
-                                Domain,
-                                Local,
-                            },
-                        ],
-                        invitationEmail: user.Email,
-                        private: MEMBER_PRIVATE.READABLE,
-                        password: 'random-password',
-                        role: MEMBER_ROLE.ORGANIZATION_MEMBER,
-                        numAI: false,
-                        lumo: false,
-                        storage: perUserStorage(user),
-                        mode: CreateMemberMode.Password,
-                    },
-                    verifiedDomains: [domain],
-                    validationOptions: {
-                        disableAddressValidation: false,
-                        disableDomainValidation: false,
-                        disableStorageValidation: false,
-                    },
-                })
-            );
+            try {
+                const member = await dispatch(
+                    createMember({
+                        api,
+                        single: false,
+                        member: {
+                            name: user.AdminSetName,
+                            addresses: [
+                                {
+                                    Domain,
+                                    Local,
+                                },
+                            ],
+                            invitationEmail: '',
+                            private: MEMBER_PRIVATE.READABLE,
+                            password,
+                            role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+                            numAI: false,
+                            lumo: false,
+                            storage: userQuota,
+                            mode: CreateMemberMode.LoginLink,
+                        },
+                        verifiedDomains: [domain],
+                        // Disabled because we're doing bulk member creation,
+                        // and will handle these errors on an entire-migration basis
+                        validationOptions: {
+                            disableAddressValidation: true,
+                            disableDomainValidation: true,
+                            disableStorageValidation: true,
+                        },
+                    })
+                );
 
-            const addresses = await dispatch(getMemberAddresses({ member }));
-            membersAddresses[member.ID] = addresses;
+                const addresses = await dispatch(getMemberAddresses({ member }));
+                membersAddresses[member.ID] = addresses;
 
-            const memberApi = await getMemberApi(api, member);
-            const getAddressKeys = () => getMemberAddressKeys(memberApi, addresses[0], orgKey);
-            await createDefaultCalendar(memberApi, getAddressKeys, addresses[0].ID);
+                const memberApi = await getMemberApi(api, member);
+                const getAddressKeys = () => getMemberAddressKeys(memberApi, addresses[0], orgKey);
+                await createDefaultCalendar(memberApi, getAddressKeys, addresses[0].ID);
+            } catch (err: any) {
+                if (err instanceof UnavailableAddressesError) {
+                    errors.push({
+                        metadata: { user },
+                        error: {
+                            code: 2500,
+                            name: 'UnavailableAddressesError',
+                            message: c('BOSS')
+                                .t`Address is already used by a user outside of your organization. Please contact customer support to resolve this`,
+                        },
+                    });
+                } else {
+                    errors.push({
+                        metadata: {
+                            user,
+                        },
+                        error: {
+                            code: err?.Code || err?.code,
+                            name: err?.Name || err?.name,
+                            message: err?.Message || err?.message,
+                        },
+                    });
+                }
+            }
+        }
+
+        if (usersToCreate.length) {
+            // Creating users affects organization storage and members, so they need to be refetched
+            void Promise.all([
+                dispatch(organizationThunk({ cache: CacheType.None })).catch(noop),
+                dispatch(membersThunk({ cache: CacheType.None })).catch(noop),
+            ]);
         }
 
         const addressesToMigrate = (() => {
@@ -280,11 +349,18 @@ export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchP
             return users.map((u) => knownAddresses.find((a) => a.Email === u.Email)).filter(isTruthy);
         })();
 
-        await api(
-            createOrganizationImporterMigration({
-                ImporterOrganizationId: importerOrganizationId,
-                AddressIds: addressesToMigrate.map((a) => a.ID),
-            })
-        );
+        if (addressesToMigrate.length) {
+            await api(
+                createOrganizationImporterMigration({
+                    ImporterOrganizationId: importerOrganizationId,
+                    AddressIds: addressesToMigrate.map((a) => a.ID),
+                })
+            );
+        }
+
+        return {
+            errors,
+            results: addressesToMigrate,
+        };
     }
 );
