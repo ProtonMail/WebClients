@@ -14,10 +14,9 @@ interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: () => void;
     submitDisabled?: boolean;
     isLoading: boolean;
-    expectedEmailAddress?: string;
 }
 
-const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddress, ...rest }: Props) => {
+const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, ...rest }: Props) => {
     const { onClose } = rest;
 
     return (

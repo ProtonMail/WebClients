@@ -518,6 +518,7 @@ export const handleSetupUser = async ({
                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
+                AutomaticImport: true,
             })
         );
     }
