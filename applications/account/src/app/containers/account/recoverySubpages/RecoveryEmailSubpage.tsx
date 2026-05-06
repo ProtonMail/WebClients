@@ -195,6 +195,12 @@ const RecoveryEmailSubpage = () => {
                                 label: c('Label').t`Your recovery email`,
                                 readOnly: !isEditingRecoveryEmail && !!emailRecovery.value,
                                 placeholder: c('Placeholder').t`example@domain.com`,
+                                onFocus: () => {
+                                    if (!emailRecovery.value) {
+                                        return;
+                                    }
+                                    setIsEditingRecoveryEmail(true);
+                                },
                             }}
                             renderForm={({ onSubmit, onReset, input, submitButtonProps, onVerify, onRemove }) => {
                                 return (
