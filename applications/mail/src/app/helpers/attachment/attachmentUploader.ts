@@ -1,11 +1,12 @@
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
+import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -24,8 +25,6 @@ import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import type { RequestParams, Upload } from '../upload';
 import { upload as uploadHelper } from '../upload';
 
-// Reference: Angular/src/app/attachments/factories/attachmentModel.js
-
 type UploadQueryResult = Promise<{
     Code: number;
     Attachment: Attachment;
@@ -37,6 +36,10 @@ export interface UploadResult {
     packets: Packets;
     addressID: string; // The addressID used to encrypt packets
 }
+
+export const getAttachementEncryptionFailedErrorMessage = () => {
+    return c('Error').t`Failed to encrypt attachment. Please try again.`;
+};
 
 /**
  * Read the file locally, and encrypt it. return the encrypted file.
@@ -54,7 +57,17 @@ export const encryptFile = async (
         const result = await readFileAsBuffer(file);
         return await encryptAttachment(new Uint8Array(result), file, inline, encryptionKey, signingKeys);
     } catch (e: any) {
-        throw new Error(c('Error').t`Failed to encrypt attachment. Please try again.`);
+        traceError(e, {
+            extra: {
+                mimeType: file.type,
+                size: file.size,
+                inline,
+            },
+            tags: {
+                initiative: SentryMailInitiatives.ATTACHMENT_ENCRYPTION_ERROR,
+            },
+        });
+        throw new Error(getAttachementEncryptionFailedErrorMessage());
     }
 };
 
@@ -93,15 +106,40 @@ const uploadFile = (
     const upload = uploadHelper(uid, getParams()) as Upload<UploadQueryResult>;
 
     const attachPackets = async () => {
-        const result = await upload.resultPromise;
+        try {
+            const result = await upload.resultPromise;
 
-        if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
-            throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
-        } else if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.STORAGE_QUOTA_EXCEEDED) {
-            throw new Error(STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR);
+            if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+                throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
+            } else if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.STORAGE_QUOTA_EXCEEDED) {
+                throw new Error(STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR);
+            }
+
+            // TODO: We might need to check for other error codes here.
+
+            return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
+        } catch (error: any) {
+            const errorMessage = error?.message;
+            const isKnownBusinessError =
+                errorMessage === MESSAGE_ALREADY_SENT_INTERNAL_ERROR ||
+                errorMessage === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR;
+            // Encryption errors are already reported in encryptFile; they bubble up here with the localized "Failed to encrypt attachment" message and should not be re-traced.
+            const isEncryptionError = errorMessage === getAttachementEncryptionFailedErrorMessage();
+
+            if (!isKnownBusinessError && !isEncryptionError) {
+                traceError(error, {
+                    extra: {
+                        mimeType: file.type,
+                        size: file.size,
+                        inline,
+                    },
+                    tags: {
+                        initiative: SentryMailInitiatives.ATTACHMENT_UPLOAD_ERROR,
+                    },
+                });
+            }
+            throw error;
         }
-
-        return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
     };
 
     return {
