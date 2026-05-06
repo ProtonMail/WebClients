@@ -2,15 +2,15 @@ import React, { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { MigrationConfiguration, MigrationSetupModel } from '../../types';
-import { useProviderTokens } from '../../useProviderTokens';
 import { useConnectionState } from '../../useConnectionState';
+import { useProviderTokens } from '../../useProviderTokens';
 import StepAuthenticate from './StepAuthenticate';
 import StepConfigureMigration from './StepConfigureMigration';
 import StepInstallApp from './StepInstallApp';
@@ -27,7 +27,7 @@ type MigrationSetupState = {
 };
 
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
-    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
     const [connectionState, , , resetConnectionState] = useConnectionState();
 
     const [state, setState] = useState<MigrationSetupState>({
