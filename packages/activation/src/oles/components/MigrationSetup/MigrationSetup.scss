@@ -1,0 +1,35 @@
+@use 'sass:math';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+$step-list-item-size: rem(24);
+$step-list-substep-size: rem(32);
+
+.migration-setup-step-list {
+	font-size: rem(13);
+	inline-size: calc(100% - (var(--space-8) * 2));
+	@include im.media('>medium') {
+		min-inline-size: rem(250);
+		inline-size: auto;
+	}
+
+	&-button {
+		background-color: var(--background-norm);
+
+		&[aria-current='step'] {
+			background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+		}
+	}
+
+	&-number {
+		min-inline-size: $step-list-item-size;
+		min-block-size: $step-list-item-size;
+
+		&--substep {
+			min-inline-size: $step-list-substep-size;
+		}
+	}
+}
