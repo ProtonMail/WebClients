@@ -12,6 +12,7 @@ import {
     enableMember,
 } from '@proton/account/members/actions';
 import { useMemberAddresses } from '@proton/account/members/useMemberAddresses';
+import { useMemberRoles } from '@proton/account/members/useMemberRoles';
 import { getDomainAddressError, getDomainError } from '@proton/account/members/validateAddUser';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
@@ -79,6 +80,7 @@ export const useMemberActions = ({
     syncMembers: () => void;
 }) => {
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
+    const { value: memberRolesMap } = useMemberRoles({ members });
     const api = useSilentApi();
     const dispatch = useDispatch();
 
@@ -536,6 +538,7 @@ export const useMemberActions = ({
 
     const models = {
         memberAddressesMap,
+        memberRolesMap,
         user,
         organization,
         organizationKey,
