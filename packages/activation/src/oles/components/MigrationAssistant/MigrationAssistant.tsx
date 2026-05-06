@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { type ApiImporterProduct, ProductStatusState } from '@proton/activation/src/api/api.interface';
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -25,7 +25,7 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
     const { createNotification } = useNotifications();
     const [customDomains] = useCustomDomains();
     const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName!);
-    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
+    const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE, [EASY_SWITCH_FEATURES.OLES]);
     const dispatch = useDispatch();
 
     const loading = !providerUsers || !tokens || !customDomains;
