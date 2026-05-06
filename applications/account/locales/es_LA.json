@@ -1820,6 +1820,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } se ha añadido a la titularidad de grupo"
+      ],
+      "Confirm email": [
+        "Confirmar correo electrónico"
+      ],
+      "Finish": [
+        "Terminar"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } se ha borrado de la titularidad de grupo"
       ]
     },
     "action": {
@@ -7412,6 +7424,9 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Enlace de invitación no válido. Contáctese con su administración."
       ]
     },
     "error": {
@@ -13085,6 +13100,15 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Code has been re-sent.": [
+        "El código ha sido reenviado."
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Generar una frase de recuperación nueva desactivará la actual frase de recuperación."
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Su frase de recuperación le permitirá iniciar sesión y recuperar sus datos si no puede acceder a la cuenta de ${ BRAND_NAME }. Está compuesta por 12 palabras y funciona como una contraseña de respaldo."
       ]
     },
     "info": {
@@ -18781,6 +18805,12 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "la organización tiene acceso a ${ free }. Si quiere acceder a las funciones premium de ${ appName }, solicite al administrador de la organización que actualice la versión."
+      ],
+      "Preparing your recovery phrase": [
+        "Preparando su frase de recuperación"
+      ],
+      "Save your recovery phrase to continue": [
+        "Guarde su frase de recuperación para continuar"
       ]
     },
     "pass_signup_2023: Title": {
@@ -20071,6 +20101,12 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "O ${ downloadRecoveryKitSwitchButton } en su lugar."
+      ],
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Asegúrese de mantener su frase de recuperación accesible después de crearla .** Por razones de seguridad, no almacenamos la frase después de guardar los cambios, y no podrá verla de nuevo en la aplicación de ${ BRAND_NAME }."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Su **frase de recuperación** le permite restaurar su cuenta de ${ BRAND_NAME } si se queda fuera."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20708,6 +20744,42 @@
       ],
       "Your recovery phone number is:": [
         "El número de teléfono de recuperación es:"
+      ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Como restableció su contraseña, la frase de recuperación actual solo puede usarse para recuperar los datos creados antes del restablecimiento de la contraseña."
+      ],
+      "Download your recovery phrase": [
+        "Descargue su frase de recuperación"
+      ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Entiendo que no podré recuperar los datos actualmente bloqueados con esta frase de recuperación"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Si se bloquea su cuenta de ${ BRAND_NAME }, su frase de recuperación le permitirá iniciar sesión y recuperar sus datos."
+      ],
+      "There was an error generating your recovery phrase": [
+        "Ocurrió un error al generar su frase de recuperación"
+      ],
+      "Update your recovery phrase": [
+        "Actualice su frase de recuperación"
+      ],
+      "Update your recovery phrase?": [
+        "¿Actualizar su frase de recuperación?"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Encontramos un error al generar la frase de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Puede usar la frase de recuperación para restaurar completamente la cuenta cuando restablezca su contraseña, así que asegúrese de mantenerla a salvo en algún lugar."
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Previamente descargó una frase de recuperación. Descargar uno nuevo **desactivará el anterior**."
+      ],
+      "Your recovery phrase": [
+        "Su frase de recuperación"
+      ],
+      "Your recovery phrase is set": [
+        "Se configuró la frase de recuperación"
       ]
     },
     "saml: Action": {
@@ -21254,6 +21326,12 @@
     "Setting": {
       "Enable Photos section": [
         "Activar sección Fotos"
+      ],
+      "Get updates about comments via email": [
+        "Recibir actualizaciones sobre los comentarios por correo electrónico"
+      ],
+      "Include document name in email notifications": [
+        "Incluir el nombre del documento en las notificaciones por correo electrónico"
       ]
     },
     "Settings description": {
@@ -25558,6 +25636,30 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Activate your email": [
+        "Active su correo electrónico"
+      ],
+      "Create a new password": [
+        "Crear una nueva contraseña"
+      ],
+      "Deactivate current phrase?": [
+        "¿Desactivar la frase actual?"
+      ],
+      "Download your recovery phrase": [
+        "Descargue su frase de recuperación"
+      ],
+      "Verify your email": [
+        "Verifique su correo electrónico"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Le enviamos un código a su correo electrónico para asegurarnos de que es usted. Este código es válido por 10 minutos. Ingréselo debajo."
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Su administración en ${ orgName } le invita a activar su nueva cuenta segura de ${ BRAND_NAME } y actualizar su contraseña."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Su administración le invita a activar su nueva cuenta segura de ${ BRAND_NAME } y actualizar su contraseña."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

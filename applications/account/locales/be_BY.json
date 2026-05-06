@@ -1826,6 +1826,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Confirm email": [
+        "Пацвердзіць электронную пошту"
+      ],
+      "Finish": [
+        "Гатова"
       ]
     },
     "action": {
@@ -7516,6 +7522,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Памылковая спасылка на далучэнне. Звяжыцеся са сваім адміністратарам."
       ]
     },
     "error": {
@@ -13366,6 +13375,15 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Code has been re-sent.": [
+        "Код быў паўторна адпраўлены"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі вашай бягучай фразы аднаўлення."
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Ваша фраза аднаўлення дазволіць вам увайсці і аднавіць вашы даныя ў выпадку, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Яна складаецца з 12 слоў і дзейнічае аналагічна рэзервоваму паролю."
       ]
     },
     "info": {
@@ -19194,6 +19212,12 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашай арганізацыі ёсць доступ да ${ free }. Калі вы хочаце атрымаць прэміяльныя функцыі ${ appName }, папрасіце адміністратара сваёй арганізацыі абнавіць тарыфны план."
+      ],
+      "Preparing your recovery phrase": [
+        "Падрыхтоўка вашай фразы аднаўлення"
+      ],
+      "Save your recovery phrase to continue": [
+        "Захавайце свой фразу аднаўлення для працягу"
       ]
     },
     "pass_signup_2023: Title": {
@@ -20406,6 +20430,12 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Або замест гэтага ${ downloadRecoveryKitSwitchButton }."
+      ],
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Пасля стварэння фразы аднаўлення пераканайцеся, што яна знаходзіцца ў даступным для вас месцы.** З меркаванняў бяспекі мы не захоўваем яе пасля захавання вашых змяненняў, і вы больш не зможаце ўбачыць яе ў праграме ${ BRAND_NAME }."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Ваш **фраза аднаўлення** дазваляе аднавіць ваш уліковы запіс ${ BRAND_NAME } у выпадку яго блакіравання."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -21055,6 +21085,39 @@
       ],
       "Your recovery phone number is:": [
         "Ваш нумар тэлефона для аднаўлення доступу:"
+      ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Паколькі вы скінулі пароль, бягучую фразу аднаўлення можна будзе выкарыстоўваць толькі для аднаўлення даных, створаных да скідання пароля."
+      ],
+      "Download your recovery phrase": [
+        "Спампаваць сваю фразу аднаўлення"
+      ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Я разумею, што ў мяне не будзе магчымасці аднавіць ужо заблакіраваныя даныя з гэтай фразай аднаўлення."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваша фраза аднаўлення дазволіць вам увайсці і аднавіць свае даныя."
+      ],
+      "There was an error generating your recovery phrase": [
+        "Адбылася памылка генерацыі вашай фразы аднаўлення"
+      ],
+      "Update your recovery phrase": [
+        "Абнавіце сваю фразу аднаўлення"
+      ],
+      "Update your recovery phrase?": [
+        "Абнавіць вашу фразу аднаўлення?"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Сістэма сутыкнулася з памылкай падчас генерацыі вашай фразы аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Вы ўжо спампоўвалі фразу аднаўлення. Паўторнае спампоўванне **дэактывуе папярэдні экзэмпляр**."
+      ],
+      "Your recovery phrase": [
+        "Ваша фраза аднаўлення"
+      ],
+      "Your recovery phrase is set": [
+        "Ваш нумар фраза аднаўлення зададзена"
       ]
     },
     "saml: Action": {
@@ -26079,6 +26142,30 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Activate your email": [
+        "Актывацыя вашай электроннай пошты"
+      ],
+      "Create a new password": [
+        "Стварыце новы пароль"
+      ],
+      "Deactivate current phrase?": [
+        "Дэактываваць бягучую фразу?"
+      ],
+      "Download your recovery phrase": [
+        "Спампаваць сваю фразу аднаўлення"
+      ],
+      "Verify your email": [
+        "Спраўдзіць вашу электронную пошту"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Код адпраўлены на вашу электронную пошту для пацвярджэння вашай асобы. Код сапраўдны на працягу 10 хвілін. Увядзіце яго ніжэй."
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ваш адміністратар у ${ orgName } запрашае актываваць ваш новы бяспечны ўліковы запіс ${ BRAND_NAME } і абнавіць пароль."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ваш адміністратар запрашае актываваць ваш новы бяспечны ўліковы запіс ${ BRAND_NAME } і абнавіць пароль."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -5166,6 +5166,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Hämta över din e-post, kalenderhändelser och kontakter från annan leverantör."
       ]
     },
     "description": {
@@ -20331,6 +20334,9 @@
       ],
       "Your recovery phrase is set": [
         "Din återställningsfras är inställd"
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidigare laddat ner en återställningsfras. Om du laddar ner en ny kommer den gamla **inaktiveras**."
       ]
     },
     "saml: Action": {
@@ -25163,6 +25169,9 @@
       ],
       "Verify your email": [
         "Verifiera din e-post"
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din administratör bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

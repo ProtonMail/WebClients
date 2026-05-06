@@ -1820,6 +1820,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Added ${ memberName } as group owner": [
+        "已将 ${ memberName } 添加到群组所有者"
+      ],
+      "Confirm email": [
+        "确认电子邮件"
+      ],
+      "Finish": [
+        "完成"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "已移除 ${ memberName } 作为群组所有者"
       ]
     },
     "action": {
@@ -7363,6 +7375,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "无效的加入链接。请联系您的管理员。"
       ]
     },
     "error": {
@@ -12943,6 +12958,15 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Code has been re-sent.": [
+        "代码已重新发送。"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "生成新的恢复短语将停用您当前的恢复短语。"
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "如果您被锁定在 ${ BRAND_NAME } 帐户之外，恢复短语可让您登录并恢复数据。它由 12 个单词组成，相当于一个备用密码。"
       ]
     },
     "info": {
@@ -18573,6 +18597,12 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "您的组织可以访问 ${ free }。如果您想访问高级 ${ appName } 功能，请让您的组织管理员升级。"
+      ],
+      "Preparing your recovery phrase": [
+        "准备您的恢复短语"
+      ],
+      "Save your recovery phrase to continue": [
+        "保存您的恢复短语以继续"
       ]
     },
     "pass_signup_2023: Title": {
@@ -19758,6 +19788,12 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "或者选择 ${ downloadRecoveryKitSwitchButton }。"
+      ],
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**创建恢复短语后，请确保您可以随时访问它。** 出于安全考虑，我们不会在您保存更改后存储该短语，您将无法在 ${ BRAND_NAME } 应用中再次看到它。"
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "如果您被锁定，您的**恢复短语**可帮助您恢复您的 ${ BRAND_NAME } 帐户。"
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20389,6 +20425,42 @@
       ],
       "Your recovery phone number is:": [
         "密保手机："
+      ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "由于您重置了密码，因此您当前的恢复短语只能用于恢复密码重置之前创建的数据。"
+      ],
+      "Download your recovery phrase": [
+        "下载您的恢复短语"
+      ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "我明白我无法使用此恢复短语恢复当前锁定的数据。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "如果您被锁定在您的 ${ BRAND_NAME } 帐户之外，您的恢复短语将允许您登录并恢复您的数据。"
+      ],
+      "There was an error generating your recovery phrase": [
+        "生成恢复短语时出错"
+      ],
+      "Update your recovery phrase": [
+        "更新您的恢复短语"
+      ],
+      "Update your recovery phrase?": [
+        "更新您的恢复短语？"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "生成恢复短语时出错。请稍后重试，如果问题仍然存在，请联系支持人员。"
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "您可以使用此恢复短语中的恢复短语在重置密码时完全恢复您的帐户，因此请务必将其保存在安全的地方。"
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "您之前下载过一个恢复短语。下载新的恢复短语将会**停用旧的恢复短语**。"
+      ],
+      "Your recovery phrase": [
+        "您的恢复短语"
+      ],
+      "Your recovery phrase is set": [
+        "您的恢复短语已设置"
       ]
     },
     "saml: Action": {
@@ -20922,6 +20994,12 @@
     "Setting": {
       "Enable Photos section": [
         "启用照片版块"
+      ],
+      "Get updates about comments via email": [
+        "通过电子邮件获取评论更新信息"
+      ],
+      "Include document name in email notifications": [
+        "在电子邮件通知中包含文档名称"
       ]
     },
     "Settings description": {
@@ -25155,6 +25233,30 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Activate your email": [
+        "激活您的电子邮件"
+      ],
+      "Create a new password": [
+        "创建新密码"
+      ],
+      "Deactivate current phrase?": [
+        "停用当前短语？"
+      ],
+      "Download your recovery phrase": [
+        "下载您的恢复短语"
+      ],
+      "Verify your email": [
+        "验证电子邮件"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "我们已向您的邮箱发送了验证码，以确认您的身份。此验证码有效期为 10 分钟。请在下方输入验证码。"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "您的管理员（位于 ${ orgName }）邀请您激活新的安全 ${ BRAND_NAME } 帐户并更新您的密码。"
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "您的管理员邀请您激活新的安全的 ${ BRAND_NAME } 帐户并更新您的密码。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
