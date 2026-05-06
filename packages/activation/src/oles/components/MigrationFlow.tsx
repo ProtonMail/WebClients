@@ -9,14 +9,14 @@ import protonGoogleIcon from '@proton/styles/assets/img/migration-assistant/prot
 
 import { createOrganizationImporter } from '../../api';
 import type { MigrationConfiguration, MigrationSetupModel } from '../types';
-import { useImporterOrganization } from '../useImporterOrganization';
+import { useImporterOrganizations } from '../useImporterOrganizations';
 import MigrationAssistant from './MigrationAssistant/MigrationAssistant';
 import MigrationSetup from './MigrationSetup/MigrationSetup';
 
 const MigrationFlow = () => {
     const api = useApi();
     const [customDomains, customDomainsLoading] = useCustomDomains();
-    const [importerOrganization, importerOrganizationLoading] = useImporterOrganization();
+    const [importerOrganizations, importerOrganizationLoading] = useImporterOrganizations();
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>({
         importerOrganizationId: undefined,
         domainName: undefined,
@@ -44,11 +44,11 @@ const MigrationFlow = () => {
     };
 
     useEffect(() => {
-        if (loading || !importerOrganization) {
+        if (loading || !importerOrganizations?.length) {
             return;
         }
 
-        const { ImporterConfig, ImporterOrganizationID, DomainName } = importerOrganization;
+        const { ImporterConfig, ImporterOrganizationID, DomainName } = importerOrganizations[0];
 
         setMigrationConfig((config) => ({
             ...config,
@@ -57,7 +57,7 @@ const MigrationFlow = () => {
             domainName: DomainName,
             importOrganizationSettings: ImporterConfig.ImportOrganizationSettings,
         }));
-    }, [importerOrganization, customDomains, loading]);
+    }, [importerOrganizations, customDomains, loading]);
 
     const model: MigrationSetupModel = {
         ...migrationConfig,

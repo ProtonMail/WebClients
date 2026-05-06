@@ -7,6 +7,7 @@ import { createAddress } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
 import { getMemberAddresses, membersThunk } from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
+import { decryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
@@ -37,8 +38,9 @@ import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKe
 import isTruthy from '@proton/utils/isTruthy';
 
 import { createOrganizationImporterMigration } from '../api';
-import type { ApiImporterOrganizationUser } from '../api/api.interface';
+import type { ApiImporterOrganizationUser, ApiJoiningLinkData } from '../api/api.interface';
 import type { OAuthToken } from '../logic/oauthToken';
+import type { JoiningLink } from './types';
 
 type RequiredState = KtState &
     OrganizationKeyState &
@@ -48,7 +50,7 @@ type RequiredState = KtState &
     CalendarsState &
     AddressKeysState;
 
-type ThunkApi = { state: RequiredState; extra: ProtonThunkArguments };
+type ThunkApi<T> = { state: T; extra: ProtonThunkArguments };
 
 const createDefaultCalendar = async (
     uidApi: Api,
@@ -94,7 +96,22 @@ type CreateMigrationBatchParams = {
     domain: Domain;
 };
 
-export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchParams, ThunkApi>(
+export const parseJoiningLinkData = createAsyncThunk<JoiningLink, ApiJoiningLinkData, ThunkApi<OrganizationKeyState>>(
+    'oles/parseJoiningLinkData',
+    async (joiningLinkData, { dispatch }) => {
+        const orgKey = await dispatch(organizationKeyThunk());
+        if (!orgKey.publicKey) {
+            throw new Error('Missing organization public key');
+        }
+        return {
+            token: joiningLinkData.Token,
+            password: await decryptTemporaryPassword(joiningLinkData.EncryptedTempPassword, orgKey.privateKey),
+            expirationTime: joiningLinkData.TokenExpirationTime,
+        };
+    }
+);
+
+export const createMigrationBatch = createAsyncThunk<void, CreateMigrationBatchParams, ThunkApi<RequiredState>>(
     'oles/createMigration',
     async ({ importerOrganizationId, domain, users, oauthToken }, { dispatch, extra: { api } }) => {
         const [organization, members, orgKey] = await Promise.all([

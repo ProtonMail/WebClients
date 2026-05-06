@@ -1,7 +1,7 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { getOrganizationUsers } from '@proton/activation/src/api/api';
-import { useApi } from '@proton/components/index';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
@@ -28,7 +28,7 @@ export const ProviderUsersProvider = ({ children }: { children: ReactNode }) => 
 export const useProviderUsers = (
     domainName: string
 ): [ApiImporterOrganizationUser[] | undefined, boolean, () => Promise<void>] => {
-    const api = useApi();
+    const api = useSilentApi();
     const { data, setData, loading, setLoading } = useContext(Context);
 
     const refresh = useCallback(async () => {
