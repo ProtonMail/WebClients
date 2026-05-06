@@ -221,7 +221,7 @@ export const MembersTable = ({
                 </TableCell>
                 <TableCell className="text-cut align-baseline" data-testid="users-and-addresses-table:memberRole">
                     <div className={clsx('flex flex-column flex-nowrap', hasDisabledLayout && 'color-hint')}>
-                        <MemberRole member={member} />
+                        <MemberRole member={member} userOrganizationRoles={models.memberRolesMap?.[member.ID]} />
                         {hasPendingFamilyInvitation && (
                             <span>
                                 <UserTableBadge type="weak">
