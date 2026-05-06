@@ -55,7 +55,12 @@ export const SessionRecoverySubpage = () => {
         hasRecoveryMethod,
         loading: loadingUseHasRecoveryMethod,
     } = useSelector(selectAvailableRecoveryMethods);
-    const { isSessionRecoveryEnabled, isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
+    const {
+        isSessionRecoveryEnabled,
+        isSessionRecoveryAvailable,
+        isSessionRecoveryInitiationAvailable,
+        loading: loadingSessionRecoveryData,
+    } = useSelector(selectSessionRecoveryData);
 
     const { createNotification } = useNotifications();
 
@@ -81,7 +86,7 @@ export const SessionRecoverySubpage = () => {
         </Href>
     );
 
-    if (loadingIsSentinelUser) {
+    if (loadingIsSentinelUser || loadingSessionRecoveryData) {
         return <Loader />;
     }
 
@@ -191,7 +196,7 @@ export const SessionRecoverySubpage = () => {
                             </div>
                         )}
                         {!isSessionRecoveryEnabled && !isSentinelUser && <RecoveryWarning />}
-                        {isSessionRecoveryEnabled && isSentinelUser && (
+                        {isSessionRecoveryAvailable && isSessionRecoveryEnabled && isSentinelUser && (
                             <SentinelWarning
                                 text={c('Info')
                                     .t`To ensure the highest possible security of your account, disable **Signed-in reset**.`}
