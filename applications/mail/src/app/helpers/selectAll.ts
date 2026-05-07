@@ -100,14 +100,12 @@ export const getSelectAllNotificationText = (isMessage: boolean) => {
 };
 
 export const getCanDisplaySelectAllBanner = ({
-    selectAllFeatureAvailable,
     mailPageSize,
     checkedIDs,
     labelID,
     isSearch,
     hasFilter,
 }: {
-    selectAllFeatureAvailable: boolean;
     mailPageSize: number;
     checkedIDs: string[];
     labelID: string;
@@ -117,7 +115,6 @@ export const getCanDisplaySelectAllBanner = ({
     const unauthorizedSelectAllLabelIDs = [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL];
 
     return (
-        selectAllFeatureAvailable &&
         checkedIDs?.length === mailPageSize &&
         !unauthorizedSelectAllLabelIDs.includes(labelID as MAILBOX_LABEL_IDS) &&
         !isSearch &&

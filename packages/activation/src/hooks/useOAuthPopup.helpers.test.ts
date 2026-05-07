@@ -30,9 +30,9 @@ describe('OAuth url generation', () => {
             'oauth.zoom.client_id': 'string',
         };
 
-        expect(() =>
-            getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config, consentExperiment: false })
-        ).toThrow('Provider does not exist');
+        expect(() => getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config })).toThrow(
+            'Provider does not exist'
+        );
     });
 
     it('Should return appropriate number for each supported providers', () => {
@@ -98,7 +98,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesMail.join(' '),
             config,
-            consentExperiment: false,
         });
         expect(outlookMailsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read&prompt=consent&client_id=string'
@@ -109,7 +108,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesContact.join(' '),
             config,
-            consentExperiment: false,
         });
         expect(outlookContactsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
@@ -119,7 +117,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesContact.join(' '),
             config,
-            consentExperiment: false,
         });
         expect(outlookHintRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
@@ -130,7 +127,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesCalendars.join(' '),
             config,
-            consentExperiment: false,
         });
         expect(outlookCalendarsRedirect).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Calendars.read&prompt=consent&client_id=string'
@@ -141,7 +137,6 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesAll.join(' '),
             config,
-            consentExperiment: false,
         });
         expect(outlookAllScopes).toStrictEqual(
             'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read+Calendars.read+Contacts.read&prompt=consent&client_id=string'

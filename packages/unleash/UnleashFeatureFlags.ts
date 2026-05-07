@@ -85,7 +85,6 @@ enum AccountFlag {
     B2BDarkWebMonitoring = 'B2BDarkWebMonitoring',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
-    EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
@@ -239,13 +238,9 @@ enum DocsFeatureFlag {
 }
 
 export enum MailFeatureFlag {
-    SelectAll = 'SelectAll',
-    SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
-    WalletRightSidebarLink = 'WalletRightSidebarLink',
-    ProtonTips = 'ProtonTips',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
