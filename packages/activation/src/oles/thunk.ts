@@ -167,7 +167,34 @@ export const setupMigration = createAsyncThunk<
     };
 });
 
-export type CreateMigrationBatchError = { metadata: any; error: { code?: any; name?: string; message?: string } };
+export type CreateMigrationBatchError = {
+    metadata: { user: ApiImporterOrganizationUser };
+    error: { code?: any; name?: string; message?: string };
+};
+
+const toSerializableUserError = (user: ApiImporterOrganizationUser, err: any): CreateMigrationBatchError => {
+    const error = (() => {
+        if (err instanceof UnavailableAddressesError) {
+            return {
+                code: 2500,
+                name: 'UnavailableAddressesError',
+                message: c('BOSS')
+                    .t`Address is already used by a user outside of your organization. Please contact customer support to resolve this`,
+            };
+        }
+
+        return {
+            code: err?.Code || err?.code,
+            name: err?.Name || err?.name,
+            message: err?.Message || err?.message,
+        };
+    })();
+
+    return {
+        metadata: { user },
+        error,
+    };
+};
 
 type CreateMigrationBatchResult = {
     errors: CreateMigrationBatchError[];
@@ -199,12 +226,16 @@ export const createMigrationBatch = createAsyncThunk<
         ]);
 
         if (!orgKey.privateKey) {
-            throw new Error('Missing organization private key');
+            throw new Error(c('BOSS').t`Missing organization private key`);
+        }
+
+        if (!orgKey.publicKey) {
+            throw new Error(c('BOSS').t`Missing organization public key`);
         }
 
         const membersAddresses: Record<string, Address[]> = {};
         for (const member of members) {
-            const addresses = await dispatch(getMemberAddresses({ member, retry: true }));
+            const addresses = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
             membersAddresses[member.ID] = addresses;
         }
 
@@ -240,38 +271,42 @@ export const createMigrationBatch = createAsyncThunk<
 
         const migratingSelf = users.find((u) => isSelf(u.Email));
         if (migratingSelf) {
-            const selfMember = members.find((m) => !!m.Self)!;
+            try {
+                const selfMember = members.find((m) => !!m.Self)!;
 
-            if (!membersAddresses[selfMember.ID].find((a) => isSelf(a.Email))) {
-                const [Local, Domain] = getEmailParts(oauthToken.Account);
-                const address = await dispatch(
-                    createAddress({
-                        member: selfMember,
-                        setDefault: true,
-                        emailAddressParts: {
-                            Local,
-                            Domain,
-                        },
-                    })
+                let selfAddress = membersAddresses[selfMember.ID].find((a) => isSelf(a.Email));
+                if (!selfAddress) {
+                    const [Local, Domain] = getEmailParts(oauthToken.Account);
+                    const address = await dispatch(
+                        createAddress({
+                            member: selfMember,
+                            setDefault: true,
+                            emailAddressParts: {
+                                Local,
+                                Domain,
+                            },
+                        })
+                    );
+                    selfAddress = address;
+                    membersAddresses[selfMember.ID] = [address];
+                }
+
+                const calendars = (await dispatch(calendarsThunk())).filter(
+                    (calendar) => getIsOwnedCalendar(calendar) && calendar.Owner.Email === oauthToken.Account
                 );
-                membersAddresses[selfMember.ID] = [address];
-            }
 
-            const calendars = (await dispatch(calendarsThunk())).filter(
-                (calendar) => getIsOwnedCalendar(calendar) && calendar.Owner.Email === oauthToken.Account
-            );
-
-            if (!calendars.length) {
-                const addressID = membersAddresses[selfMember.ID].find((a) => a.Email.endsWith(domain.DomainName))!.ID;
-                const getAddressKeys = (addressID: string) => dispatch(addressKeysThunk({ addressID }));
-                await createDefaultCalendar(api, getAddressKeys, addressID);
+                if (!calendars.length) {
+                    const getAddressKeys = (addressID: string) => dispatch(addressKeysThunk({ addressID }));
+                    await createDefaultCalendar(api, getAddressKeys, selfAddress.ID);
+                }
+            } catch (err: any) {
+                errors.push(toSerializableUserError(migratingSelf, err));
             }
         }
 
         for (const user of usersToCreate) {
-            const [Local, Domain] = getEmailParts(user.Email);
-
             try {
+                const [Local, Domain] = getEmailParts(user.Email);
                 const member = await dispatch(
                     createMember({
                         api,
@@ -304,35 +339,26 @@ export const createMigrationBatch = createAsyncThunk<
                     })
                 );
 
-                const addresses = await dispatch(getMemberAddresses({ member }));
-                membersAddresses[member.ID] = addresses;
+                // Allow a bit of time for addresses to catch up
+                await new Promise((resolve) => setTimeout(resolve, 250));
+
+                const [address] = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
+                if (!address) {
+                    throw new Error(
+                        c('BOSS').t`Member address not found. Please contact customer support to resolve this`
+                    );
+                }
+                membersAddresses[member.ID] = [address];
 
                 const memberApi = await getMemberApi(api, member);
-                const getAddressKeys = () => getMemberAddressKeys(memberApi, addresses[0], orgKey);
-                await createDefaultCalendar(memberApi, getAddressKeys, addresses[0].ID);
+                const getAddressKeys = () =>
+                    getMemberAddressKeys(memberApi, address, {
+                        publicKey: orgKey.publicKey,
+                        privateKey: orgKey.privateKey,
+                    });
+                await createDefaultCalendar(memberApi, getAddressKeys, address.ID);
             } catch (err: any) {
-                if (err instanceof UnavailableAddressesError) {
-                    errors.push({
-                        metadata: { user },
-                        error: {
-                            code: 2500,
-                            name: 'UnavailableAddressesError',
-                            message: c('BOSS')
-                                .t`Address is already used by a user outside of your organization. Please contact customer support to resolve this`,
-                        },
-                    });
-                } else {
-                    errors.push({
-                        metadata: {
-                            user,
-                        },
-                        error: {
-                            code: err?.Code || err?.code,
-                            name: err?.Name || err?.name,
-                            message: err?.Message || err?.message,
-                        },
-                    });
-                }
+                errors.push(toSerializableUserError(user, err));
             }
         }
 
