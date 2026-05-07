@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Annuler l'essai et payer"
       ],
-      "Cancel upload": [
-        "Annuler le chargement"
-      ],
       "Cancel uploads": [
         "Annuler les importations"
       ],
@@ -407,7 +404,7 @@
       "Download for Mac": [
         "Télécharger pour Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Télécharger pour macOS"
       ],
       "Download for Windows": [
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
-      "Pause all": [
-        "Tout mettre en pause"
-      ],
-      "Pause download": [
-        "Suspendre le téléchargement"
-      ],
-      "Pause upload": [
-        "Suspendre le chargement"
-      ],
       "Pay": [
         "Payer"
       ],
@@ -790,6 +778,9 @@
       ],
       "Re-sign": [
         "Signer à nouveau"
+      ],
+      "Rebuild index": [
+        "Régénérez l'index"
       ],
       "Reconnect": [
         "Reconnecter"
@@ -832,9 +823,6 @@
       ],
       "Remove from favorites": [
         "Retirer des favoris"
-      ],
-      "Remove from this list": [
-        "Retirer de cette liste"
       ],
       "Remove gift code": [
         "Retirer le code-cadeau"
@@ -884,15 +872,6 @@
       "Reset to default": [
         "Rétablir les valeurs par défaut"
       ],
-      "Restart all": [
-        "Tout redémarrer"
-      ],
-      "Restart download": [
-        "Relancer le téléchargement"
-      ],
-      "Restart upload": [
-        "Relancer le chargement"
-      ],
       "Restore": [
         "Restaurer"
       ],
@@ -904,15 +883,6 @@
       ],
       "Restore version": [
         "Restaurer la version"
-      ],
-      "Resume all": [
-        "Tout redémarrer"
-      ],
-      "Resume download": [
-        "Reprendre le téléchargement"
-      ],
-      "Resume upload": [
-        "Reprendre le chargement"
       ],
       "Retry": [
         "Réessayer"
@@ -955,6 +925,9 @@
       ],
       "Search drive": [
         "Rechercher dans Drive"
+      ],
+      "Search is unavailable": [
+        "La recherche est indisponible."
       ],
       "See how": [
         "Voir comment faire"
@@ -3549,6 +3522,9 @@
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
       ],
+      "Folder not found": [
+        "Le dossier n'a pas été trouvé."
+      ],
       "Forward address is required": [
         "L'adresse de transfert est nécessaire."
       ],
@@ -4870,18 +4846,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } en cours de téléchargement",
-        "${ activeDownloadsCount } en cours de téléchargement"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } téléchargement en cours (${ downloadProgress } %)",
-        "${ activeDownloadsCount } téléchargements en cours (${ downloadProgress } %)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } transfert en cours (${ uploadProgress } %)",
-        "${ activeUploadsCount } transferts en cours (${ uploadProgress } %)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } adresse e-mail",
         "${ addressCount } adresses e-mail"
@@ -4916,10 +4880,6 @@
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } annulé",
-        "${ canceledCount } annulés"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } sur ${ items.length } transferts terminés"
       ],
@@ -4945,17 +4905,8 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Les fichiers ${ DOCS_APP_NAME } et ${ SHEETS_APP_NAME } ne peuvent pas être téléchargés directement et ne seront pas inclus dans ce téléchargement. Vous pouvez télécharger les autres fichiers en cliquant sur « Continuer le téléchargement »."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } terminé",
-        "${ doneCount } terminés"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } téléchargé",
-        "${ doneDownloadsCount } téléchargés"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } importé",
-        "${ doneUploadsCount } importés"
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } a détecté que la recherche locale est corrompue et inutilisable. Régénérez l'index pour rétablir la recherche."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } sur l'App Store"
@@ -4965,10 +4916,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } vous a invité à rejoindre ${ albumName }."
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } erreur",
-        "${ errorCount } erreurs"
       ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
@@ -5010,10 +4957,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }. Le prix et la date de renouvellement de votre abonnement ${ planTitle } restent inchangés."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } en pause",
-        "${ pausedCount } en pause"
-      ],
       "${ photoCount } item": [
         "${ photoCount } élément",
         "${ photoCount } éléments"
@@ -5043,10 +4986,6 @@
         "${ providerFoldersNumLocalized } label trouvé dans Gmail",
         "${ providerFoldersNumLocalized } labels trouvés dans Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } erreur d'analyse",
-        "${ scanErrorCount } erreurs d'analyse"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
@@ -5066,13 +5005,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignoré",
-        "${ skippedCount } ignorés"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entrées"
@@ -5365,12 +5297,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Collaborez efficacement tout en protégeant les données de vos clients et de votre entreprise des fuites de données, des rançongiciels et de la surveillance."
       ],
-      "Computed hash does not match XAttr": [
-        "Le hachage calculé ne correspond pas au XAttr"
-      ],
-      "Conflict": [
-        "Conflit"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
       ],
@@ -5391,6 +5317,9 @@
       ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
+      ],
+      "Could not scan file for malware": [
+        "Le fichier n'a pas pu être analysé pour détecter les logiciels malveillants."
       ],
       "Country code": [
         "Indicatif du pays"
@@ -5417,9 +5346,6 @@
       ],
       "Create links and share your files with others.": [
         "Créez des liens et partagez vos fichiers avec d'autres personnes."
-      ],
-      "Creating": [
-        "Création"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -5603,14 +5529,17 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exporter les journaux de diagnostic pour le support technique et le dépannage"
       ],
-      "Failed": [
-        "Échec"
-      ],
       "Feb": [
         "Fév."
       ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
+      ],
+      "File could not be scanned": [
+        "Le fichier n'a pas pu être scanné."
+      ],
+      "File flagged as potentially malicious": [
+        "Le fichier a été détecté comme potentiellement malveillant."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Il manque la signature du fichier. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -5623,9 +5552,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Les dossiers et fichiers partagés avec vous par d'autres utilisateurs s'afficheront ici."
-      ],
-      "Finalizing": [
-        "Finalisation en cours"
       ],
       "finance": [
         "finance"
@@ -5763,6 +5689,9 @@
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "${ first }, ${ second }, ${ third } et ${ fourth } indexés"
       ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "L'indexation a atteint un état inattendu et ne peut pas se poursuivre. Régénérez l'index pour la rétablir."
+      ],
       "Indexing in progress": [
         "Indexation en cours"
       ],
@@ -5774,9 +5703,6 @@
       ],
       "Inherited from parent folder": [
         "Similaire au dossier principal"
-      ],
-      "Initializing": [
-        "Initialisation en cours"
       ],
       "Integrity issues found": [
         "Problèmes d'intégrité détectés"
@@ -5953,9 +5879,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
-      "Network issue": [
-        "Problème de réseau"
-      ],
       "New": [
         "Nouveau"
       ],
@@ -5995,11 +5918,11 @@
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
-      ],
       "Not connected": [
         "Non connecté"
+      ],
+      "Not enough storage space": [
+        "Espace de stockage insuffisant"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
@@ -6191,9 +6114,6 @@
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
       ],
-      "Queued": [
-        "En file d'attente"
-      ],
       "Ready to add some photos?": [
         "Prêt à ajouter des photos ?"
       ],
@@ -6239,9 +6159,6 @@
       "Saving...": [
         "Enregistrement..."
       ],
-      "Scan issue": [
-        "Problème d'analyse"
-      ],
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
       ],
@@ -6251,11 +6168,29 @@
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
       ],
+      "Search data is corrupted": [
+        "Les données de recherche sont corrompues."
+      ],
       "Search Enabled": [
         "Recherche activée"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "La recherche est activée. Vous pouvez maintenant fermer cette boîte de dialogue et rechercher des fichiers et des dossiers."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Une erreur interne s'est produite pendant la recherche. Régénérez l'index pour la rétablir."
+      ],
+      "Search engine error": [
+        "Erreur de moteur de recherche"
+      ],
+      "Search error": [
+        "Erreur de recherche"
+      ],
+      "Search is in an invalid state": [
+        "La recherche se trouve dans un état non valide."
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La recherche est prête. Vos fichiers ont été indexés."
       ],
       "Search module is not available.": [
         "Le module de recherche n'est pas disponible."
@@ -6332,20 +6267,8 @@
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée."
       ],
-      "Signature issue": [
-        "Problème de signature"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
-      ],
-      "Skipped": [
-        "Ignoré"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Certains fichiers n'ont pas pu être téléchargés. Essayez à nouveau de les télécharger."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Certains fichiers n'ont pas pu être chargés. Essayez à nouveau de les charger."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
@@ -6361,9 +6284,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
-      ],
-      "Something went wrong, please try again later.": [
-        "Un problème est survenu, réessayez plus tard."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
@@ -6434,6 +6354,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Le moteur de recherche a rencontré une erreur interne. Régénérez l'index pour la rétablir."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
@@ -6927,6 +6850,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Votre navigateur a arrivé à court d'espace pendant l'indexation des fichiers pour la recherche. Libérez de l'espace de stockage puis régénérez l'index."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux/multiples. Téléchargez l'application de bureau pour des importations et des téléchargements fluides."
@@ -12288,18 +12214,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } d'importations gratuites."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } téléchargement n'a pas abouti.",
-        "${ numberOfFailedTransfer.total } téléchargements n'ont pas abouti."
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transfert n'a pas abouti.",
-        "${ numberOfFailedTransfer.total } transferts n'ont pas abouti."
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } chargement n'a pas abouti.",
-        "${ numberOfFailedTransfer.total } chargements n'ont pas abouti."
-      ],
       "Account recovery": [
         "Récupération du compte"
       ],
@@ -12314,9 +12228,6 @@
       ],
       "Actions": [
         "Actions"
-      ],
-      "Active": [
-        "Actifs"
       ],
       "Add a custom logo": [
         "Ajouter un logo personnalisé"
@@ -12351,9 +12262,6 @@
       ],
       "Albums": [
         "Albums"
-      ],
-      "All": [
-        "Tous"
       ],
       "All settings": [
         "Tous les paramètres"
@@ -12436,9 +12344,6 @@
       ],
       "Collaborate on documents": [
         "Collaborer sur des documents"
-      ],
-      "Completed": [
-        "Terminés"
       ],
       "Computers": [
         "Ordinateurs"
@@ -12673,9 +12578,6 @@
       ],
       "Exporting contacts": [
         "Exportation des contacts"
-      ],
-      "Failed": [
-        "Échec"
       ],
       "File details": [
         "Informations sur le fichier"
@@ -13379,9 +13281,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Le message et le nom de fichier sont stockés avec un chiffrement zéro accès lorsqu'ils sont inclus dans l'e-mail."
-      ],
-      "New!": [
-        "Nouveau !"
       ],
       "Not all information listed here was exposed for all users.": [
         "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."

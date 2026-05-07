@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Annullér prøveversion og betal"
       ],
-      "Cancel upload": [
-        "Annullér upload"
-      ],
       "Cancel uploads": [
         "Annullér uploads"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Download til Mac"
       ],
-      "Download for MacOS": [
-        "Download til MacOS"
+      "Download for macOS": [
+        "Download til macOS"
       ],
       "Download for Windows": [
         "Download til Windows"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Åbn navigation"
       ],
-      "Pause all": [
-        "Sæt alt/alle på pause"
-      ],
-      "Pause download": [
-        "Pause download"
-      ],
-      "Pause upload": [
-        "Pause upload"
-      ],
       "Pay": [
         "Betal"
       ],
@@ -833,9 +821,6 @@
       "Remove from favorites": [
         "Fjern fra favoritter"
       ],
-      "Remove from this list": [
-        "Fjern fra denne liste"
-      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
@@ -884,15 +869,6 @@
       "Reset to default": [
         "Nulstil til standard"
       ],
-      "Restart all": [
-        "Genstart alle"
-      ],
-      "Restart download": [
-        "Genstart download"
-      ],
-      "Restart upload": [
-        "Genstart upload"
-      ],
       "Restore": [
         "Gendan"
       ],
@@ -904,15 +880,6 @@
       ],
       "Restore version": [
         "Genskab version"
-      ],
-      "Resume all": [
-        "Genoptag alle"
-      ],
-      "Resume download": [
-        "Genoptag download"
-      ],
-      "Resume upload": [
-        "Genoptag upload"
       ],
       "Retry": [
         "Prøv igen"
@@ -4870,18 +4837,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } downloader",
-        "${ activeDownloadsCount } downloader"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)",
-        "${ activeDownloadsCount } downloader (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)",
-        "${ activeUploadsCount } uploader (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
@@ -4916,10 +4871,6 @@
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } annulleret",
-        "${ canceledCount } annulleret"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } af ${ items.length } overførsler fuldført"
       ],
@@ -4945,18 +4896,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } færdig",
-        "${ doneCount } færdige"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } downloadet",
-        "${ doneDownloadsCount } downloadet"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } uploadet",
-        "${ doneUploadsCount } uploadet"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } i App Store"
       ],
@@ -4965,10 +4904,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } inviterede dig til at deltage i ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } mislykkedes",
-        "${ errorCount } mislykkedes"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
@@ -5010,10 +4945,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } sat på pause",
-        "${ pausedCount } sat på pause"
-      ],
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elementer"
@@ -5043,10 +4974,6 @@
         "${ providerFoldersNumLocalized } etiket fundet i Gmail",
         "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } scanning mislykkedes",
-        "${ scanErrorCount } scanninger mislykkedes"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
@@ -5066,13 +4993,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } sprunget over",
-        "${ skippedCount } sprunget over"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } elementer"
@@ -5365,12 +5285,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Samarbejd effektivt, samtidig med at du beskytter dine klient- og virksomhedsdata mod databrud, ransomware og overvågning."
       ],
-      "Computed hash does not match XAttr": [
-        "Beregnet hash stemmer ikke overens med XAttr"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Forbind til ${ VPN_APP_NAME } for at browse privat"
       ],
@@ -5417,9 +5331,6 @@
       ],
       "Create links and share your files with others.": [
         "Opret links og del dine filer med andre."
-      ],
-      "Creating": [
-        "Opretter"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
@@ -5603,9 +5514,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksportér diagnoselogfiler til teknisk support og fejlfinding"
       ],
-      "Failed": [
-        "Mislykkedes"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5623,9 +5531,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Filer og mapper, som andre har delt med dig, vises her."
-      ],
-      "Finalizing": [
-        "Færdiggører"
       ],
       "finance": [
         "finans"
@@ -5774,9 +5679,6 @@
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
-      ],
-      "Initializing": [
-        "Initialiserer"
       ],
       "Integrity issues found": [
         "Integritetsproblemer fundet"
@@ -5953,9 +5855,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
-      "Network issue": [
-        "Netværksproblem"
-      ],
       "New": [
         "Ny"
       ],
@@ -5994,9 +5893,6 @@
       ],
       "Not a valid URL": [
         "Ugyldig URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nogle filer blev ikke overført. Prøv at uploade eller downloade filerne igen."
       ],
       "Not connected": [
         "Ikke forbundet"
@@ -6191,9 +6087,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
-      "Queued": [
-        "Sat i kø"
-      ],
       "Ready to add some photos?": [
         "Klar til at tilføje nogle fotos?"
       ],
@@ -6238,9 +6131,6 @@
       ],
       "Saving...": [
         "Gemmer..."
-      ],
-      "Scan issue": [
-        "Problem med scanning"
       ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
@@ -6332,20 +6222,8 @@
       "Signature check will be ignored": [
         "Tjek af signatur ignoreres"
       ],
-      "Signature issue": [
-        "Signatur problem"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
-      ],
-      "Skipped": [
-        "Sprunget over"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Nogle filer kunne ikke hentes. Prøv at hente dem igen."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Nogle filer kunne ikke uploades. Prøv at uploade filerne igen."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
@@ -6361,9 +6239,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
-      ],
-      "Something went wrong, please try again later.": [
-        "Noget gik galt. Prøv igen senere."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
@@ -12228,18 +12103,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } af gratis uploads."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } mislykket download",
-        "${ numberOfFailedTransfer.total } mislykkede downloads"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } mislykket overførsel",
-        "${ numberOfFailedTransfer.total } mislykkede overførsler"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } mislykket upload",
-        "${ numberOfFailedTransfer.total } mislykkede uploads"
-      ],
       "Account recovery": [
         "Kontogendannelse"
       ],
@@ -12254,9 +12117,6 @@
       ],
       "Actions": [
         "Handlinger"
-      ],
-      "Active": [
-        "Aktiv"
       ],
       "Add a custom logo": [
         "Tilføj et brugertilpasset logo"
@@ -12291,9 +12151,6 @@
       ],
       "Albums": [
         "Albummer"
-      ],
-      "All": [
-        "Alle"
       ],
       "All settings": [
         "Alle indstillinger"
@@ -12376,9 +12233,6 @@
       ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
-      ],
-      "Completed": [
-        "Fuldført"
       ],
       "Computers": [
         "Computere"
@@ -12613,9 +12467,6 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
-      ],
-      "Failed": [
-        "Mislykkedes"
       ],
       "File details": [
         "Fildetaljer"
@@ -13319,9 +13170,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Besked og filnavn gemmes med nul-adgangskryptering, når de er medtaget i e-mailen"
-      ],
-      "New!": [
-        "Nyt!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke alle oplysninger på listen blev afsløret for alle brugere"

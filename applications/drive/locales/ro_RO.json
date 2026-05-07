@@ -153,9 +153,6 @@
       "Cancel trial and pay": [
         "Anulare perioadă de probare și plătire"
       ],
-      "Cancel upload": [
-        "Anulare încărcare"
-      ],
       "Cancel uploads": [
         "Anulare încărcări"
       ],
@@ -412,7 +409,7 @@
       "Download for Mac": [
         "Descărcare pentru Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Descărcare pentru macOS"
       ],
       "Download for Windows": [
@@ -757,15 +754,6 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
-      "Pause all": [
-        "Suspendare toate"
-      ],
-      "Pause download": [
-        "Suspendare descărcare"
-      ],
-      "Pause upload": [
-        "Suspendare încărcare"
-      ],
       "Pay": [
         "Plătire"
       ],
@@ -838,9 +826,6 @@
       "Remove from favorites": [
         "Eliminare din favorite"
       ],
-      "Remove from this list": [
-        "Eliminare din listă"
-      ],
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
@@ -889,15 +874,6 @@
       "Reset to default": [
         "Revenire la setări inițiale"
       ],
-      "Restart all": [
-        "Repornire toate"
-      ],
-      "Restart download": [
-        "Repornire descărcare"
-      ],
-      "Restart upload": [
-        "Repornire descărcare"
-      ],
       "Restore": [
         "Restaurare"
       ],
@@ -909,15 +885,6 @@
       ],
       "Restore version": [
         "Restaurare versiune"
-      ],
-      "Resume all": [
-        "Reluare toate"
-      ],
-      "Resume download": [
-        "Reluare descărcare"
-      ],
-      "Resume upload": [
-        "Reluare încărcare"
       ],
       "Retry": [
         "Reîncercare"
@@ -3574,6 +3541,9 @@
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
       ],
+      "Folder not found": [
+        "Folderul nu a fost găsit."
+      ],
       "Forward address is required": [
         "Adresa de transferare este obligatorie."
       ],
@@ -4920,21 +4890,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "Se descarcă ${ activeDownloadsCount }",
-        "Se descarcă ${ activeDownloadsCount }",
-        "Se descarcă ${ activeDownloadsCount }"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "Adrese de e-mail: ${ addressCount }",
         "Adrese de e-mail: ${ addressCount }",
@@ -4973,11 +4928,6 @@
         "Calendare îmbinate: ${ calendarsToBeMergedCount }",
         "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
-      "${ canceledCount } canceled": [
-        "Unul anulat",
-        "${ canceledCount } anulate",
-        "${ canceledCount } anulate"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } din ${ items.length } transferuri finalizate"
       ],
@@ -5007,21 +4957,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Fișierele ${ DOCS_APP_NAME } și ${ SHEETS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
       ],
-      "${ doneCount } finished": [
-        "S-a transferat unul",
-        "S-au transferat ${ doneCount }",
-        "S-au transferat ${ doneCount }"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "S-a descărcat unul",
-        "S-au descărcat ${ doneDownloadsCount }",
-        "S-au descărcat ${ doneDownloadsCount }"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "S-a încărcat unul",
-        "S-au încărcat ${ doneUploadsCount }",
-        "S-au încărcat ${ doneUploadsCount }"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } din App Store"
       ],
@@ -5030,11 +4965,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } v-a invitat să vă alăturați la ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "Unul a eșuat",
-        "${ errorCount } au eșuat",
-        "${ errorCount } au eșuat"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagine completă"
@@ -5080,11 +5010,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
       ],
-      "${ pausedCount } paused": [
-        "Unul suspendat",
-        "${ pausedCount } suspendate",
-        "${ pausedCount } suspendate"
-      ],
       "${ photoCount } item": [
         "Articole: ${ photoCount }",
         "Articole: ${ photoCount }",
@@ -5119,11 +5044,6 @@
         "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
         "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
       ],
-      "${ scanErrorCount } scan failed": [
-        "Scanări eșuate: ${ scanErrorCount }",
-        "Scanări eșuate: ${ scanErrorCount }",
-        "Scanări eșuate: ${ scanErrorCount }"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
@@ -5148,14 +5068,6 @@
         "Etichete selectate: ${ selectedFoldersCountLocalized }",
         "Etichete selectate: ${ selectedFoldersCountLocalized }",
         "Etichete selectate: ${ selectedFoldersCountLocalized }"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignorat",
-        "${ skippedCount } ignorate",
-        "${ skippedCount } ignorate"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } intrări"
@@ -5454,12 +5366,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Colaborați eficient, protejând în același timp datele clienților și ale afacerii proprii împotriva divulgărilor, a programelor de tip răscumpărare și a supravegherii."
       ],
-      "Computed hash does not match XAttr": [
-        "Hash-ul calculat nu corespunde cu XAttr."
-      ],
-      "Conflict": [
-        "Conflict"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
@@ -5480,6 +5386,9 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
+      ],
+      "Could not scan file for malware": [
+        "Fișierul nu s-a putut scana pentru programe malware."
       ],
       "Country code": [
         "Cod țară"
@@ -5508,9 +5417,6 @@
       ],
       "Create links and share your files with others.": [
         "Creați legături web şi partajați fişierele cu alții."
-      ],
-      "Creating": [
-        "Se crează"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
@@ -5696,14 +5602,17 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportare jurnal de diagnosticare pentru asistență tehnică și depanare."
       ],
-      "Failed": [
-        "Eșuat"
-      ],
       "Feb": [
         "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fișierul „${ name }” a fost șters în timpul descărcării."
+      ],
+      "File could not be scanned": [
+        "Fișierul nu a putut fi scanat."
+      ],
+      "File flagged as potentially malicious": [
+        "Fișier semnalat ca potențial rău intenționat."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
@@ -5716,9 +5625,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Fișierele și folderele pe care alții vi le-au partajat vor apărea aici."
-      ],
-      "Finalizing": [
-        "Finalizare"
       ],
       "finance": [
         "finanțe"
@@ -5868,9 +5774,6 @@
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
-      ],
-      "Initializing": [
-        "Se inițializează"
       ],
       "Integrity issues found": [
         "S-au găsit probleme de integritate."
@@ -6051,9 +5954,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
-      "Network issue": [
-        "Problemă de rețea"
-      ],
       "New": [
         "Nou"
       ],
@@ -6092,9 +5992,6 @@
       ],
       "Not a valid URL": [
         "URL nevalid"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
       ],
       "Not connected": [
         "Neconectat"
@@ -6290,9 +6187,6 @@
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
-      "Queued": [
-        "În așteptare"
-      ],
       "Ready to add some photos?": [
         "Sunteți gata să adăugați fotografii?"
       ],
@@ -6337,9 +6231,6 @@
       ],
       "Saving...": [
         "Se salvează..."
-      ],
-      "Scan issue": [
-        "Probleme scanare"
       ],
       "Scan the QR code with your mobile device": [
         "Scanați codul QR cu dispozitivul mobil"
@@ -6431,20 +6322,8 @@
       "Signature check will be ignored": [
         "Verificarea semnăturii va fi ignorată"
       ],
-      "Signature issue": [
-        "Problemă de semnătură"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
-      ],
-      "Skipped": [
-        "Ignorat"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Unele fișiere nu s-au putut descărca. Încercați să le descărcați din nou."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Unele fișiere nu s-au putut încărca. Încercați să le încărcați din nou."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
@@ -6460,9 +6339,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
-      ],
-      "Something went wrong, please try again later.": [
-        "A apărut o problemă. Reîncercați mai târziu."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
@@ -12463,21 +12339,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } încărcări gratuite."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "O descărcare a eșuat",
-        "Au eșuat ${ numberOfFailedTransfer.total } descărcări.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "A eșuat ${ numberOfFailedTransfer.total } transfer.",
-        "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "O încărcare a eșuat",
-        "Au eșuat ${ numberOfFailedTransfer.total } încărcări.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de încărcări."
-      ],
       "Account recovery": [
         "Recuperare cont"
       ],
@@ -12492,9 +12353,6 @@
       ],
       "Actions": [
         "Acțiuni"
-      ],
-      "Active": [
-        "Activ"
       ],
       "Add a custom logo": [
         "Adăugare logo personal"
@@ -12530,9 +12388,6 @@
       ],
       "Albums": [
         "Albume"
-      ],
-      "All": [
-        "Toate"
       ],
       "All settings": [
         "Toate setările"
@@ -12616,9 +12471,6 @@
       ],
       "Collaborate on documents": [
         "Colaborați la documente"
-      ],
-      "Completed": [
-        "Finalizate"
       ],
       "Computers": [
         "Calculatoare"
@@ -12856,9 +12708,6 @@
       ],
       "Exporting contacts": [
         "Exportare contacte"
-      ],
-      "Failed": [
-        "Eșuate"
       ],
       "File details": [
         "Detalii fișier"
@@ -13565,9 +13414,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Mesajul și numele fișierului sunt stocate cu criptare cu acces zero atunci când sunt incluse în e-mail."
-      ],
-      "New!": [
-        "Nou!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."

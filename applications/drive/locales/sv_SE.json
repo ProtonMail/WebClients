@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Avbryt provperiod och betala"
       ],
-      "Cancel upload": [
-        "Avbryt uppladdning"
-      ],
       "Cancel uploads": [
         "Avbryt uppladdningar"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Ladda ner för Mac"
       ],
-      "Download for MacOS": [
-        "Ladda ner för MacOS"
+      "Download for macOS": [
+        "Ladda ner för macOS"
       ],
       "Download for Windows": [
         "Ladda ner för Windows"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Öppna navigering"
       ],
-      "Pause all": [
-        "Pausa alla"
-      ],
-      "Pause download": [
-        "Pausa nedladdning"
-      ],
-      "Pause upload": [
-        "Pausa uppladdning"
-      ],
       "Pay": [
         "Betala"
       ],
@@ -833,9 +821,6 @@
       "Remove from favorites": [
         "Ta bort från favoriter"
       ],
-      "Remove from this list": [
-        "Ta bort från denna lista"
-      ],
       "Remove gift code": [
         "Ta bort presentkod"
       ],
@@ -884,15 +869,6 @@
       "Reset to default": [
         "Återställ till standard"
       ],
-      "Restart all": [
-        "Starta om alla"
-      ],
-      "Restart download": [
-        "Starta om nedladdning"
-      ],
-      "Restart upload": [
-        "Starta om uppladdning"
-      ],
       "Restore": [
         "Återställ"
       ],
@@ -904,15 +880,6 @@
       ],
       "Restore version": [
         "Återställ version"
-      ],
-      "Resume all": [
-        "Återuppta alla"
-      ],
-      "Resume download": [
-        "Återuppta nedladdning"
-      ],
-      "Resume upload": [
-        "Återuppta uppladdning"
       ],
       "Retry": [
         "Försök igen"
@@ -3537,6 +3504,9 @@
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
       ],
+      "Folder not found": [
+        "Mapp hittades inte"
+      ],
       "Forward address is required": [
         "Adress för vidarebefordran är obligatoriskt"
       ],
@@ -4837,18 +4807,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } laddar ner",
-        "${ activeDownloadsCount } laddar ner"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } laddar ner (${ downloadProgress }%)",
-        "${ activeDownloadsCount } laddar ner (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } laddar upp (${ uploadProgress }%)",
-        "${ activeUploadsCount } laddar upp (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-postadress",
         "${ addressCount } e-postadresser"
@@ -4883,10 +4841,6 @@
         "${ calendarsToBeMergedCount } sammanslagen kalender",
         "${ calendarsToBeMergedCount } sammanslagna kalendrar"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } avbruten",
-        "${ canceledCount } avbrutna"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } av ${ items.length } överföringar slutförda"
       ],
@@ -4912,18 +4866,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } och ${ SHEETS_APP_NAME }-filer kan inte laddas ner direkt och kommer inte att inkluderas i denna nedladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nedladdning'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } slutförd",
-        "${ doneCount } slutförda"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } nedladdad",
-        "${ doneDownloadsCount } nedladdade"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } uppladdad",
-        "${ doneUploadsCount } uppladdade"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } på App Store"
       ],
@@ -4932,10 +4874,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } bjöd in dig att gå med i ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } misslyckades",
-        "${ errorCount } misslyckades"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: fullstor bild"
@@ -4971,10 +4909,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pausad",
-        "${ pausedCount } pausade"
-      ],
       "${ photoCount } item": [
         "${ photoCount } objekt",
         "${ photoCount } objekt"
@@ -5004,10 +4938,6 @@
         "${ providerFoldersNumLocalized } etikett hittades i Gmail",
         "${ providerFoldersNumLocalized } etiketter hittades i Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skanning misslyckades",
-        "${ scanErrorCount } skanningar misslyckades"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
@@ -5027,13 +4957,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } hoppade över",
-        "${ skippedCount } hoppade över"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
@@ -5320,12 +5243,6 @@
       "Cloud storage for businesses that take security seriously": [
         "Molnlagring för företag som tar säkerhet på allvar"
       ],
-      "Computed hash does not match XAttr": [
-        "Beräknat hash matchar inte XAttr"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
       ],
@@ -5372,9 +5289,6 @@
       ],
       "Create links and share your files with others.": [
         "Skapa länkar och dela dina filer med andra."
-      ],
-      "Creating": [
-        "Skapar"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -5558,14 +5472,14 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportera diagnostikloggar för teknisk support och felsökning"
       ],
-      "Failed": [
-        "Misslyckades"
-      ],
       "Feb": [
         "Feb"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
+      ],
+      "File could not be scanned": [
+        "Fil kunde inte skannas"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
@@ -5578,9 +5492,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Filer och mappar som andra delat med dig kommer visas här"
-      ],
-      "Finalizing": [
-        "Färdigställer"
       ],
       "finance": [
         "finans"
@@ -5723,9 +5634,6 @@
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
-      ],
-      "Initializing": [
-        "Initierar"
       ],
       "Integrity issues found": [
         "Integritetsproblem hittades"
@@ -5902,9 +5810,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
-      "Network issue": [
-        "Nätverksproblem"
-      ],
       "New": [
         "Ny"
       ],
@@ -5940,9 +5845,6 @@
       ],
       "Not a valid URL": [
         "Ogiltig URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Alla filer överfördes inte. Försök att ladda upp eller ladda ner filerna igen."
       ],
       "Not connected": [
         "Inte ansluten"
@@ -6137,9 +6039,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
-      "Queued": [
-        "Köad"
-      ],
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
       ],
@@ -6184,9 +6083,6 @@
       ],
       "Saving...": [
         "Sparar …"
-      ],
-      "Scan issue": [
-        "Skanningsproblem"
       ],
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
@@ -6278,20 +6174,8 @@
       "Signature check will be ignored": [
         "Signaturkontroll kommer att ignoreras"
       ],
-      "Signature issue": [
-        "Problem med signatur"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
-      ],
-      "Skipped": [
-        "Hoppades över"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Vissa filer kunde inte laddas ner. Försök att ladda ner filerna igen."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Vissa filer kunde inte laddas upp. Försök att ladda upp filerna igen."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Vissa regeringar blockerar eller begränsar åtkomsten till vissa webbplatser. Ett VPN hjälper dig att kringgå censur samtidigt som din aktivitet och identitet förblir privat."
@@ -6307,9 +6191,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Vissa webbplatser och streamingtjänster blockerar innehåll efter region. Med ett VPN kan du kringgå dessa begränsningar och få fri tillgång till internet."
-      ],
-      "Something went wrong, please try again later.": [
-        "Något gick fel, försök igen senare."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
@@ -12162,18 +12043,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } av gratis uppladdningar."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } misslyckad nedladdning",
-        "${ numberOfFailedTransfer.total } misslyckade nedladdningar"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } misslyckad överföring",
-        "${ numberOfFailedTransfer.total } misslyckade överföringar"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } misslyckad uppladdning",
-        "${ numberOfFailedTransfer.total } misslyckade uppladdningar"
-      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -12188,9 +12057,6 @@
       ],
       "Actions": [
         "Åtgärder"
-      ],
-      "Active": [
-        "Aktiv"
       ],
       "Add a custom logo": [
         "Lägg till en anpassad logga"
@@ -12225,9 +12091,6 @@
       ],
       "Albums": [
         "Album"
-      ],
-      "All": [
-        "Alla"
       ],
       "All settings": [
         "Alla inställningar"
@@ -12307,9 +12170,6 @@
       ],
       "Collaborate on documents": [
         "Samarbeta på dokument"
-      ],
-      "Completed": [
-        "Slutförd"
       ],
       "Computers": [
         "Datorer"
@@ -12544,9 +12404,6 @@
       ],
       "Exporting contacts": [
         "Exporterar kontakter"
-      ],
-      "Failed": [
-        "Misslyckades"
       ],
       "File details": [
         "Fildetaljer"
@@ -13241,9 +13098,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meddelande och filnamn lagras med kryptering med noll åtkomst när de inkluderas i e-portmeddelandet"
-      ],
-      "New!": [
-        "Ny!"
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."

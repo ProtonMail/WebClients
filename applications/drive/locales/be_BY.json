@@ -17,7 +17,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -155,9 +155,6 @@
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
-      ],
-      "Cancel upload": [
-        "Скасаваць запампоўванне"
       ],
       "Cancel uploads": [
         "Скасаваць запампоўкі"
@@ -417,7 +414,7 @@
       "Download for Mac": [
         "Спампаваць для Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Спампаваць для macOS"
       ],
       "Download for Windows": [
@@ -601,7 +598,7 @@
         "Імпартаваць лісты, календары, кантакты"
       ],
       "Import from .csv or vCard": [
-        "Імпартаванне з .csv або vCard"
+        "Імпартаваць з .csv або vCard"
       ],
       "Import from Google": [
         "Імпартаваць з Google"
@@ -762,15 +759,6 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
-      "Pause all": [
-        "Прыпыніць усе"
-      ],
-      "Pause download": [
-        "Прыпыніць спампоўванне"
-      ],
-      "Pause upload": [
-        "Прыпыніць запампоўванне"
-      ],
       "Pay": [
         "Аплаціць"
       ],
@@ -843,9 +831,6 @@
       "Remove from favorites": [
         "Выдаліць з абранага"
       ],
-      "Remove from this list": [
-        "Выдаліць з гэтага спіса"
-      ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
@@ -894,15 +879,6 @@
       "Reset to default": [
         "Скінуць да прадвызначаных"
       ],
-      "Restart all": [
-        "Перазапусціць усе"
-      ],
-      "Restart download": [
-        "Перазапусціць спампоўванне"
-      ],
-      "Restart upload": [
-        "Перазапусціць запампоўванне"
-      ],
       "Restore": [
         "Аднавіць"
       ],
@@ -914,15 +890,6 @@
       ],
       "Restore version": [
         "Аднавіць версію"
-      ],
-      "Resume all": [
-        "Узнавіць усе"
-      ],
-      "Resume download": [
-        "Узнавіць спампоўванне"
-      ],
-      "Resume upload": [
-        "Узнавіць запампоўванне"
       ],
       "Retry": [
         "Паўтарыць"
@@ -3029,7 +2996,7 @@
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
@@ -3114,7 +3081,7 @@
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+        "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
     "Docs Info": {
@@ -3606,7 +3573,7 @@
         "Не ўдалося запампаваць відарыс"
       ],
       "IMAP server is required": [
-        "Патрабуецца ўвесці сервер IMAP"
+        "Патрабуецца сервер IMAP"
       ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
@@ -3804,7 +3771,7 @@
         "Не ўдалося знайсці"
       ],
       "Signature not verified": [
-        "Подпіс не правераны"
+        "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -3831,7 +3798,7 @@
         "Назвы некаторых вашых метак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+        "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong during folder listing": [
         "Нешта пайшло не так падчас пераліку папак."
@@ -3918,7 +3885,7 @@
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
       "This field is invalid": [
         "Гэта поле з'яўляецца памылковым"
@@ -4819,7 +4786,7 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
       "IMAP access is enabled in your external account.": [
-        "У вашым знешнім уліковым запісе ўключаны IMAP."
+        "У вашым знешнім уліковым запісе ўключаны доступ па IMAP."
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "У вашым уліковым запісе Yahoo уключаны IMAP."
@@ -4837,7 +4804,7 @@
         "Выкарыстоўвайце свой пароль праграмы, калі:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
+        "Выкарыстоўвайце пароль праграмы замест звычайнага пароля, калі:"
       ],
       "Your app password is correct. Do not use your regular password.": [
         "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
@@ -4970,24 +4937,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } спампоўваецца",
-        "${ activeDownloadsCount } спампоўваюцца",
-        "${ activeDownloadsCount } спампоўваюцца",
-        "${ activeDownloadsCount } спампоўваюцца"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } спампоўваецца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
-        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } запампоўваецца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
-        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } адрас электроннай пошты",
         "${ addressCount } адрасы электроннай пошты",
@@ -5030,12 +4979,6 @@
         "${ calendarsToBeMergedCount } аб'яднаных календароў",
         "${ calendarsToBeMergedCount } аб'яднаных календароў"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } скасаваны",
-        "${ canceledCount } скасавана",
-        "${ canceledCount } скасавана",
-        "${ canceledCount } скасавана"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "Перадач завершана: ${ completedItems.length } з ${ items.length }"
       ],
@@ -5069,24 +5012,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Файлы ${ DOCS_APP_NAME } і ${ SHEETS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } завершаны",
-        "${ doneCount } завершана",
-        "${ doneCount } завершана",
-        "${ doneCount } завершана"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } спампаваны",
-        "${ doneDownloadsCount } спампавана",
-        "${ doneDownloadsCount } спампавана",
-        "${ doneDownloadsCount } спампавана"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } запампаваны",
-        "${ doneUploadsCount } запампавана",
-        "${ doneUploadsCount } запампавана",
-        "${ doneUploadsCount } запампавана"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } у App Store"
       ],
@@ -5095,12 +5020,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } запрасіў(ла) вас далучыцца да ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем",
-        "${ errorCount } са збоем"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -5150,12 +5069,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } прыпынены",
-        "${ pausedCount } прыпынена",
-        "${ pausedCount } прыпынена",
-        "${ pausedCount } прыпынена"
-      ],
       "${ photoCount } item": [
         "${ photoCount } элемент",
         "${ photoCount } элементы",
@@ -5195,12 +5108,6 @@
         "У Gmail знойдзена ${ providerFoldersNumLocalized } метак",
         "У Gmail знойдзена ${ providerFoldersNumLocalized } метак"
       ],
-      "${ scanErrorCount } scan failed": [
-        "Збой ${ scanErrorCount } сканіравання",
-        "Збой ${ scanErrorCount } сканіраванняў",
-        "Збой ${ scanErrorCount } сканіраванняў",
-        "Збой ${ scanErrorCount } сканіраванняў"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } календары з ${ providerCalendars.length }",
@@ -5230,15 +5137,6 @@
         "Выбрана ${ selectedFoldersCountLocalized } меткі",
         "Выбрана ${ selectedFoldersCountLocalized } метак",
         "Выбрана ${ selectedFoldersCountLocalized } метак"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны"
-      ],
-      "${ speed }/s": [
-        "${ speed }/с"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } запісаў"
@@ -5286,7 +5184,7 @@
         "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -5364,10 +5262,10 @@
         "Усе вашы змены будуць страчаны."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
       "Already in this folder": [
         "Ужо ў гэтай папцы"
@@ -5543,12 +5441,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Эфектыўна супрацоўнічайце, абараняючы даныя сваіх кліентаў і бізнесу ад парушэнняў, праграм-вымагальнікаў і сачэння."
       ],
-      "Computed hash does not match XAttr": [
-        "Разлічаны хэш не супадае з XAttr"
-      ],
-      "Conflict": [
-        "Канфлікт"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
       ],
@@ -5599,9 +5491,6 @@
       ],
       "Create links and share your files with others.": [
         "Стварайце спасылкі і абагульвайце свае файлы з іншымі."
-      ],
-      "Creating": [
-        "Стварэнне"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
@@ -5789,9 +5678,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Экспартаваць дыягнастычныя журналы для тэхнічнай падтрымкі і выпраўлення непаладак"
       ],
-      "Failed": [
-        "Збой"
-      ],
       "Feb": [
         "Лют"
       ],
@@ -5809,9 +5695,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
-      ],
-      "Finalizing": [
-        "Завяршэнне"
       ],
       "finance": [
         "фінансы"
@@ -5962,9 +5845,6 @@
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
-      ],
-      "Initializing": [
-        "Ініцыялізацыя"
       ],
       "Integrity issues found": [
         "Знойдзены праблемы з цэласнасцю"
@@ -6149,9 +6029,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
-      "Network issue": [
-        "Праблема з сеткай"
-      ],
       "New": [
         "Новы"
       ],
@@ -6190,9 +6067,6 @@
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Не ўсе файлы былі перададзены. Паспрабуйце спампаваць або запампаваць файлы яшчэ раз."
       ],
       "Not connected": [
         "Не падключана"
@@ -6389,9 +6263,6 @@
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
-      "Queued": [
-        "У чарзе"
-      ],
       "Ready to add some photos?": [
         "Гатовыя дадаць некаторыя фатаграфіі?"
       ],
@@ -6437,9 +6308,6 @@
       "Saving...": [
         "Захаванне..."
       ],
-      "Scan issue": [
-        "Сканіраванне праблемы"
-      ],
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
@@ -6477,7 +6345,7 @@
         "Выбар элемента"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -6530,20 +6398,8 @@
       "Signature check will be ignored": [
         "Праверка подпісу была праігнаравана"
       ],
-      "Signature issue": [
-        "Праблема з подпісам"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
-      ],
-      "Skipped": [
-        "Прапушчана"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Не ўдалося спампаваць некаторыя файлы. Паспрабуйце спампаваць файлы яшчэ раз."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Не ўдалося запампаваць некаторыя файлы. Паспрабуйце запампаваць файлы яшчэ раз."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
@@ -6552,16 +6408,13 @@
         "Збой некаторых элементаў"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
+        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да сваіх файлаў. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
-      ],
-      "Something went wrong, please try again later.": [
-        "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
@@ -6597,7 +6450,7 @@
         "Сімвалы (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Дзякуй, што выбралі ${ BRAND_NAME } для абароны сваёй арганізацыі."
@@ -6750,7 +6603,7 @@
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а мы вас апавясцім, калі індэксацыя будзе завершана."
+        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а калі індэксацыя будзе завершана, вы атрымаеце апавяшчэнне."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а сістэма адправіць вам апавяшчэнне, калі індэксацыя будзе завершана."
@@ -7137,7 +6990,7 @@
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
@@ -7969,7 +7822,7 @@
         "Запампаваць малюнак"
       ],
       "Upload your first file": [
-        "Запампуйце ваш першы файл"
+        "Запампуйце свой першы файл"
       ],
       "Uploaded by": [
         "Запампавана"
@@ -8090,7 +7943,7 @@
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -10059,7 +9912,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далей вы павінны ўвайсці ў ваш уліковы запіс Google і даць нам доступ да вашых даных ${ BRAND_NAME }."
+        "На наступным кроку вы павінны ўвайсці ў свой уліковы запіс Google і даць доступ ${ BRAND_NAME } да сваіх даных."
       ]
     },
     "Oauth instructions video": {
@@ -11181,7 +11034,7 @@
         "Параіць сябрам"
       ],
       "Start earning credits": [
-        "Пачніце зарабляць крэдыты"
+        "Пачаць зарабляць крэдыты"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
@@ -12653,24 +12506,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } бясплатных запамповак."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванняў",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачу",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадач",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванне",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванняў",
-        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні"
-      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -12685,9 +12520,6 @@
       ],
       "Actions": [
         "Дзеянні"
-      ],
-      "Active": [
-        "Актыўна"
       ],
       "Add a custom logo": [
         "Дадаць карыстальніцкі лагатып"
@@ -12724,9 +12556,6 @@
       ],
       "Albums": [
         "Альбомы"
-      ],
-      "All": [
-        "Усе"
       ],
       "All settings": [
         "Усе налады"
@@ -12811,9 +12640,6 @@
       ],
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
-      ],
-      "Completed": [
-        "Завершаныя"
       ],
       "Computers": [
         "Камп'ютары"
@@ -13054,9 +12880,6 @@
       ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
-      ],
-      "Failed": [
-        "Збой"
       ],
       "File details": [
         "Падрабязнасці файла"
@@ -13410,7 +13233,7 @@
         "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
+        "Захаваць пазней у ${ DRIVE_APP_NAME }"
       ],
       "Search": [
         "Пошук"
@@ -13767,9 +13590,6 @@
       "Message and file name are stored with zero access encryption when included in the email": [
         "Паведамленне і назва файла захоўваюцца з дапамогай шыфравання нулявога доступу, калі ўключаны ў ліст"
       ],
-      "New!": [
-        "Новае!"
-      ],
       "Not all information listed here was exposed for all users.": [
         "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
       ],
@@ -13804,7 +13624,7 @@
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "We have sent them an invite to access the item.": [
-        "Мы адправілі ім запрашэнне на доступ да элемента."
+        "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ]
     },
     "tooltip": {

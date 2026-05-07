@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
       ],
-      "Cancel upload": [
-        "Cancelar envio"
-      ],
       "Cancel uploads": [
         "Cancelar envios"
       ],
@@ -407,7 +404,7 @@
       "Download for Mac": [
         "Baixar para Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Baixar para macOS"
       ],
       "Download for Windows": [
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Abrir navegação"
       ],
-      "Pause all": [
-        "Pausar todos"
-      ],
-      "Pause download": [
-        "Pausar download"
-      ],
-      "Pause upload": [
-        "Pausar envio"
-      ],
       "Pay": [
         "Pagar"
       ],
@@ -833,9 +821,6 @@
       "Remove from favorites": [
         "Remover dos favoritos"
       ],
-      "Remove from this list": [
-        "Remover desta lista"
-      ],
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
@@ -884,15 +869,6 @@
       "Reset to default": [
         "Restaurar para padrão"
       ],
-      "Restart all": [
-        "Reiniciar tudo"
-      ],
-      "Restart download": [
-        "Reiniciar download"
-      ],
-      "Restart upload": [
-        "Reiniciar envio"
-      ],
       "Restore": [
         "Restaurar"
       ],
@@ -904,15 +880,6 @@
       ],
       "Restore version": [
         "Restaurar versão"
-      ],
-      "Resume all": [
-        "Continuar tudo"
-      ],
-      "Resume download": [
-        "Retomar download"
-      ],
-      "Resume upload": [
-        "Retomar envio"
       ],
       "Retry": [
         "Tentar novamente"
@@ -3534,6 +3501,9 @@
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
       ],
+      "Folder not found": [
+        "Pasta não encontrada"
+      ],
       "Forward address is required": [
         "O endereço de encaminhamento é obrigatório"
       ],
@@ -4849,18 +4819,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "Baixando ${ activeDownloadsCount }",
-        "Baixando ${ activeDownloadsCount }"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "Baixando ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Baixando ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "Enviando ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Enviando ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -4895,10 +4853,6 @@
         "${ calendarsToBeMergedCount } calendário mesclado",
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } cancelado",
-        "${ canceledCount } cancelados"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } de ${ items.length } transferências concluídas"
       ],
@@ -4924,18 +4878,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Os arquivos do ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } não podem ser baixados diretamente e não serão incluídos neste download. Você pode baixar os outros arquivos clicando em 'Continuar baixando'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } concluído",
-        "${ doneCount } concluídos"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } baixado",
-        "${ doneDownloadsCount } baixados"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } enviado",
-        "${ doneUploadsCount } enviados"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } na App Store"
       ],
@@ -4944,10 +4886,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } convidou você para juntar-se a ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } erro",
-        "${ errorCount } erros"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho real"
@@ -4989,10 +4927,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pausado",
-        "${ pausedCount } pausados"
-      ],
       "${ photoCount } item": [
         "${ photoCount } item",
         "${ photoCount } itens"
@@ -5022,10 +4956,6 @@
         "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
         "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } falha de verificação",
-        "${ scanErrorCount } falhas de verificação"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
@@ -5045,13 +4975,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignorado",
-        "${ skippedCount } ignorados"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entradas"
@@ -5344,12 +5267,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Colabore com eficiência enquanto protege os dados dos seus clientes e da sua empresa contra violações, ransomware e vigilância."
       ],
-      "Computed hash does not match XAttr": [
-        "Hash computado não corresponde ao XAttr"
-      ],
-      "Conflict": [
-        "Conflito"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conecte-se ao ${ VPN_APP_NAME } para navegar de forma privada."
       ],
@@ -5396,9 +5313,6 @@
       ],
       "Create links and share your files with others.": [
         "Crie links e compartilhe seus arquivos com outros."
-      ],
-      "Creating": [
-        "Criando"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
@@ -5582,14 +5496,14 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportar os registros de diagnóstico para suporte técnico e solução de problemas"
       ],
-      "Failed": [
-        "Erro"
-      ],
       "Feb": [
         "Fev."
       ],
       "File \"${ name }\" was deleted during download": [
         "Arquivo \"${ name }\" foi deletado durante o download"
+      ],
+      "File could not be scanned": [
+        "Não foi possível escanear o arquivo."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Arquivo está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
@@ -5602,9 +5516,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Arquivos e pastas que outras pessoas compartilharam com você aparecerão aqui"
-      ],
-      "Finalizing": [
-        "Finalizando"
       ],
       "finance": [
         "finança"
@@ -5750,9 +5661,6 @@
       ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
-      ],
-      "Initializing": [
-        "Inicializando"
       ],
       "Integrity issues found": [
         "Problemas de integridade encontrados"
@@ -5929,9 +5837,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
-      "Network issue": [
-        "Problema na rede"
-      ],
       "New": [
         "Novo"
       ],
@@ -5967,9 +5872,6 @@
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nem todos os arquivos foram transferidos. Tente carregar ou baixar os arquivos novamente."
       ],
       "Not connected": [
         "Não conectado"
@@ -6164,9 +6066,6 @@
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
       ],
-      "Queued": [
-        "Na fila"
-      ],
       "Ready to add some photos?": [
         "Vamos adicionar algumas fotos?"
       ],
@@ -6211,9 +6110,6 @@
       ],
       "Saving...": [
         "Salvando..."
-      ],
-      "Scan issue": [
-        "Problema ao escanear"
       ],
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
@@ -6305,20 +6201,8 @@
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
       ],
-      "Signature issue": [
-        "Problema de assinatura"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
-      ],
-      "Skipped": [
-        "Ignorado"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Não foi possível baixar alguns arquivos. Tente baixar os arquivos novamente."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Não foi possível enviar alguns arquivos. Tente enviá-los novamente."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governos bloqueiam ou restringem o acesso a determinados sites. Uma VPN ajuda a evitar a censura enquanto mantém sua atividade e identidade privadas."
@@ -6334,9 +6218,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns sites e serviços de streaming bloqueiam conteúdo por região. Uma VPN permite que você contorne essas restrições e acesse a internet livremente."
-      ],
-      "Something went wrong, please try again later.": [
-        "Ocorreu um erro. Tente novamente mais tarde.."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
@@ -12245,18 +12126,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de envios gratuitos."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } erro de download",
-        "${ numberOfFailedTransfer.total } erros de download"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } erro de transferência",
-        "${ numberOfFailedTransfer.total } erros de transferência"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } erro de envio",
-        "${ numberOfFailedTransfer.total } erro de envio"
-      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -12271,9 +12140,6 @@
       ],
       "Actions": [
         "Ações"
-      ],
-      "Active": [
-        "Ativo"
       ],
       "Add a custom logo": [
         "Adicionar um logotipo personalizado"
@@ -12308,9 +12174,6 @@
       ],
       "Albums": [
         "Álbuns"
-      ],
-      "All": [
-        "Todos"
       ],
       "All settings": [
         "Todas as configurações"
@@ -12393,9 +12256,6 @@
       ],
       "Collaborate on documents": [
         "Colaborar em documentos"
-      ],
-      "Completed": [
-        "Concluído"
       ],
       "Computers": [
         "Computadores"
@@ -12630,9 +12490,6 @@
       ],
       "Exporting contacts": [
         "Exportando contatos"
-      ],
-      "Failed": [
-        "Erro"
       ],
       "File details": [
         "Detalhes do arquivo"
@@ -13333,9 +13190,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "A mensagem e o nome do arquivo são armazenados com criptografia de acesso zero, quando incluídos no e-mail."
-      ],
-      "New!": [
-        "Novo!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nem todas as informações listadas aqui foram expostas para todos os usuários."

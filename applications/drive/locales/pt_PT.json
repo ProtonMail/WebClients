@@ -140,9 +140,6 @@
       "Cancel trial and pay": [
         "Cancelar o período de avaliação e pagar"
       ],
-      "Cancel upload": [
-        "Cancelar o envio"
-      ],
       "Change": [
         "Alterar"
       ],
@@ -667,15 +664,6 @@
       "Open navigation": [
         "Abrir navegação"
       ],
-      "Pause all": [
-        "Pausar tudo"
-      ],
-      "Pause download": [
-        "Pausar a transferência"
-      ],
-      "Pause upload": [
-        "Pausar o envio"
-      ],
       "Pay": [
         "Pagar"
       ],
@@ -739,9 +727,6 @@
       "Remove from favorites": [
         "Remover dos favoritos"
       ],
-      "Remove from this list": [
-        "Remover desta lista"
-      ],
       "Remove gift code": [
         "Remover código de oferta"
       ],
@@ -787,15 +772,6 @@
       "Reset to default": [
         "Reposição predefinida"
       ],
-      "Restart all": [
-        "Reiniciar tudo"
-      ],
-      "Restart download": [
-        "Reiniciar transferência"
-      ],
-      "Restart upload": [
-        "Reiniciar o envio"
-      ],
       "Restore": [
         "Restaurar"
       ],
@@ -807,15 +783,6 @@
       ],
       "Restore version": [
         "Restaurar a versão"
-      ],
-      "Resume all": [
-        "Reiniciar tudo"
-      ],
-      "Resume download": [
-        "Retomar transferência"
-      ],
-      "Resume upload": [
-        "Retomar o envio"
       ],
       "Retry": [
         "Repetir"
@@ -4194,18 +4161,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } transferência em curso",
-        "${ activeDownloadsCount } transferências em curso"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } transferência em curso (${ downloadProgress }%)",
-        "${ activeDownloadsCount } transferências em curso (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } envio em curso (${ uploadProgress }%)",
-        "${ activeUploadsCount } envios em curso (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -4230,10 +4185,6 @@
         "${ calendarsToBeMergedCount } calendário unido",
         "${ calendarsToBeMergedCount } calendários unidos"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } cancelado",
-        "${ canceledCount } cancelados"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } contacto contém vários endereços de e-mail.",
         "${ contactCount } contactos contêm vários endereços de e-mail."
@@ -4253,18 +4204,6 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } terminado",
-        "${ doneCount } terminados"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } transferido",
-        "${ doneDownloadsCount } transferidos"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } enviado",
-        "${ doneUploadsCount } enviados"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } na App Store"
       ],
@@ -4273,10 +4212,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } convidou-o a juntar-se a ${ albumName }."
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } erro",
-        "${ errorCount } erros"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho máximo"
@@ -4300,10 +4235,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço de renovação e a data da sua subscrição ao ${ planTitle } permanecem inalterados."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pausado",
-        "${ pausedCount } pausados"
       ],
       "${ photoCount } item": [
         " ${ photoCount } item",
@@ -4330,10 +4261,6 @@
         "${ providerFoldersNumLocalized } etiqueta encontrada no Gmail",
         "${ providerFoldersNumLocalized } etiquetas encontradas no Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } erro de análise",
-        "${ scanErrorCount } erros de análise"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
@@ -4353,13 +4280,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta selecionada",
         "${ selectedFoldersCountLocalized } etiquetas selecionadas"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignorado",
-        "${ skippedCount } ignorados"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
@@ -4576,9 +4496,6 @@
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
-      "Conflict": [
-        "Conflito"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conecte-se ao ${ VPN_APP_NAME } para navegar em privado."
       ],
@@ -4622,9 +4539,6 @@
       ],
       "Create links and share your files with others.": [
         "Crie ligações e partilhe ficheiros com outros."
-      ],
-      "Creating": [
-        "Criação"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
@@ -4784,9 +4698,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportar os registos de diagnóstico para apoio técnico e resolução de problemas"
       ],
-      "Failed": [
-        "Erro"
-      ],
       "Feb": [
         "Fev."
       ],
@@ -4804,9 +4715,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Os ficheiros e pastas que outros partilharam consigo aparecerão aqui."
-      ],
-      "Finalizing": [
-        "A finalizar"
       ],
       "finance": [
         "finanças"
@@ -4919,9 +4827,6 @@
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
-      ],
-      "Initializing": [
-        "A inicializar"
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -5068,9 +4973,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
-      "Network issue": [
-        "Problema de rede"
-      ],
       "New": [
         "Novo"
       ],
@@ -5103,9 +5005,6 @@
       ],
       "Not a valid URL": [
         "Não é um URL válido"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nem todos os ficheiros foram transferidos. Tente enviar ou transferir os ficheiros novamente."
       ],
       "Not connected": [
         "Não ligado"
@@ -5294,9 +5193,6 @@
       "Public sharing of documents is not yet supported.": [
         "A partilha pública de documentos ainda não é suportada."
       ],
-      "Queued": [
-        "Em espera"
-      ],
       "Ready to add some photos?": [
         "Pronto para adicionar algumas fotos?"
       ],
@@ -5335,9 +5231,6 @@
       ],
       "Saving...": [
         "A guardar..."
-      ],
-      "Scan issue": [
-        "Problema de análise"
       ],
       "Scan the QR code with your mobile device": [
         "Leia o código QR com o seu dispositivo móvel."
@@ -5414,20 +5307,8 @@
       "Signature check will be ignored": [
         "A verificação da assinatura será ignorada."
       ],
-      "Signature issue": [
-        "Problema de assinatura"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
-      ],
-      "Skipped": [
-        "Ignorado"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Alguns ficheiros não foram transferidos. Tente transferir os ficheiros novamente."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Alguns ficheiros não puderam ser enviados. Tente enviar os ficheiros novamente."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governos bloqueiam ou restringem o acesso a determinados sítios web. Uma VPN ajuda a contornar a censura, mantendo a sua atividade e identidade privadas."
@@ -5440,9 +5321,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns sítios web e serviços de streaming bloqueiam os conteúdos por região. Uma VPN permite ignorar estas restrições e aceder à internet livremente."
-      ],
-      "Something went wrong, please try again later.": [
-        "Algo correu mal. Tente novamente mais tarde."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a partilhá-lo com contactos e utilize-o para serviços online."
@@ -10502,18 +10380,6 @@
       "${ feature } is now active": [
         "A funcionalidade ${ feature } agora está ativa."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } transferência falhada",
-        "${ numberOfFailedTransfer.total } transferências falhadas"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transferência falhou",
-        "${ numberOfFailedTransfer.total } transferências falharam"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } erro de envio",
-        "${ numberOfFailedTransfer.total } erros de envio"
-      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -10525,9 +10391,6 @@
       ],
       "Actions": [
         "Ações"
-      ],
-      "Active": [
-        "Ativo"
       ],
       "Add a custom logo": [
         "Adicionar um logo personalizado"
@@ -10559,9 +10422,6 @@
       ],
       "Albums": [
         "Álbuns"
-      ],
-      "All": [
-        "Todos"
       ],
       "All settings": [
         "Todas as definições"
@@ -10626,9 +10486,6 @@
       ],
       "Collaborate on documents": [
         "Colabore em documentos"
-      ],
-      "Completed": [
-        "Concluída"
       ],
       "Computers": [
         "Computadores"
@@ -10827,9 +10684,6 @@
       ],
       "Exporting contacts": [
         "A exportar contactos"
-      ],
-      "Failed": [
-        "Erro"
       ],
       "File details": [
         "Detalhes do ficheiro"
