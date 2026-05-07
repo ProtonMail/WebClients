@@ -329,9 +329,6 @@
       "Delete policy": [
         "Smazat zásadu"
       ],
-      "Delete token ${ token.Account }": [
-        "Smazat token ${ token.Account }"
-      ],
       "Delete user": [
         "Smazat uživatele"
       ],
@@ -1499,7 +1496,7 @@
         "Administrátorská role"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nakonfigurujte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní protokoly."
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci udělejte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
@@ -1529,7 +1526,7 @@
         "Správce zabezpečení:"
       ],
       "User admin": [
-        "Uživatel Admin"
+        "Správce uživatelů"
       ],
       "User admin:": [
         "Uživatel Admin:"
@@ -2008,9 +2005,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "App installed": [
-        "Aplikace nainstalována"
-      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -2031,9 +2025,6 @@
       ],
       "Domain connected": [
         "Doména připojena"
-      ],
-      "Domain ownership verified": [
-        "Vlastnictví domény ověřeno"
       ],
       "Estimated size": [
         "Odhadovaná velikost"
@@ -2056,14 +2047,8 @@
       "Install migration app": [
         "Nainstalujte migrační aplikaci"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Zjistěte více o tom, co lze migrovat. Více informací"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migrovat"
       ],
       "Migrate from Google Workspace": [
         "Migrovat z Google Workspace"
@@ -2083,17 +2068,11 @@
       "Migration status": [
         "Stav migrace"
       ],
-      "Not started": [
-        "Nezahájeno"
-      ],
       "Organization does not have enough seats available": [
         "Organizace nemá dostatek volných licencí"
       ],
       "Organization does not have enough storage available": [
         "Organizace nemá dostatečně velké úložiště"
-      ],
-      "Organization settings": [
-        "Nastavení organizace"
       ],
       "Required": [
         "Vyžadováno"
@@ -2103,9 +2082,6 @@
       ],
       "Select at least one user to start a migration": [
         "Pro zahájení migrace vyberte alespoň jednoho uživatele"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Vyberte, co chcete migrovat. Toto nastavení se použije pro všechny uživatele, ať už jsou vytvořeni nyní nebo později. Migrace začne po vytvoření uživatelských účtů."
       ],
       "Set up": [
         "Nastavení"
@@ -2120,10 +2096,7 @@
         "Stav"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte."
-      ],
-      "Transfer errors": [
-        "Chyby přenosu"
+        "Chcete-li migrovat data své organizace, musíte nainstalovat ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte."
       ],
       "User": [
         "Uživatel"
@@ -2526,7 +2499,7 @@
         "Přístup bude obnoven, jakmile se využití vrátí do povolených mezí."
       ],
       "Back up photos from your devices": [
-        "Zálohovat fotky ze svých zařízení"
+        "Zálohujte fotky ze svých zařízení"
       ],
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -2541,7 +2514,7 @@
         "Zachovat aktuální tarif"
       ],
       "Manage your calendar": [
-        "Spravovat váš kalendář"
+        "Spravujte svůj kalendář"
       ],
       "Receive new emails": [
         "Přijímat nové e-maily"
@@ -5099,7 +5072,7 @@
         "Požádejte správce o povolení sledování účtu."
       ],
       "Enable account monitor to start loading event.": [
-        "Povolte monitorování účtu pro spuštění načítání událostí."
+        "Povolte monitor účtu pro spuštění načítání události."
       ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
@@ -5884,7 +5857,7 @@
         "Popis:"
       ],
       "Group address:": [
-        "Skupinová adresa:"
+        "Adresa skupiny:"
       ]
     },
     "Group member count": {
@@ -6415,7 +6388,7 @@
         "${ BRAND_NAME } zašle ověřovací kód na číslo ${ phoneNumber }. Mohou být účtovány běžné poplatky za zprávy."
       ],
       "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
-        "${ BRAND_NAME } zašle ověřovací kód na váš telefon pro obnovení. Mohou být účtovány běžné poplatky za zprávy."
+        "${ BRAND_NAME } zašle ověřovací kód na váš telefon, který je určen pro obnovení. Mohou být účtovány běžné poplatky za zprávy."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
@@ -6991,7 +6964,7 @@
         "Fakturační cyklus: ${ text }"
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Deaktivací monitoru účtu se vymaže také celá vaše historie. Opravdu chcete tuto funkci deaktivovat?"
+        "Deaktivací monitoru účtu smažete také celou vaší historii. Opravdu chcete pokračovat v deaktivaci?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -7897,7 +7870,7 @@
         "Data o nových připojeních VPN se přestanou shromažďovat a zobrazovat."
       ],
       "News or media article": [
-        "Zpráva nebo článek v médiích"
+        "Noviny nebo článek v médiích"
       ],
       "Next billing date": [
         "Datum další fakturace"
@@ -8647,7 +8620,7 @@
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
-        "Abychom zajistili bezpečnost tvého účtu, chceme se ujistit, že se skutečně pokoušíte přihlásit vy."
+        "Abychom zajistili bezpečnost vašeho účtu, potřebujeme se ujistit, že se skutečně pokoušíte přihlásit vy."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
@@ -9634,7 +9607,7 @@
         "Ověřovací aplikace"
       ],
       "Automatic email forwarding": [
-        "Automatické přesměrování e-mailů"
+        "Automatické přeposílání e-mailů"
       ],
       "Awarded": [
         "Uděleno"
@@ -9850,7 +9823,7 @@
         "E-mail nebo uživatelské jméno"
       ],
       "Email with @yourcompany.com domain": [
-        "E-mail s doménou @yourcompany.com"
+        "E-mail s doménou @vasefirma.cz"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -10204,7 +10177,7 @@
         "Předchozí heslo"
       ],
       "Priority support": [
-        "Přednostní podpora"
+        "Prioritní podpora"
       ],
       "Proration": [
         "Prorace"
@@ -16775,7 +16748,7 @@
         "Máte v prohlížeči přístup ke své relaci?"
       ],
       "Can you reach out to your emergency contacts?": [
-        "Mohl bys se spojit se svými nouzovými kontakty?"
+        "Můžete se spojit se svými nouzovými kontakty?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
@@ -17678,7 +17651,7 @@
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
       ],
       "Troubleshoot your issue": [
-        "Vyřešte svůj problém"
+        "Zjistěte příčinu problému"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Vyzkoušejte ${ AUTHENTICATOR_APP_NAME }"
@@ -18351,7 +18324,7 @@
         "E-mail"
       ],
       "General": [
-        "Obecné"
+        "Obecný"
       ],
       "Invitation email": [
         "E-mail pozvánky"
