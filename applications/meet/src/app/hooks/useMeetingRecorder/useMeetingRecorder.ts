@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useRoomContext, useTracks } from '@livekit/components-react';
 import { RemoteTrackPublication, RoomEvent, Track } from 'livekit-client';
@@ -11,6 +11,8 @@ import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/mee
 import {
     addParticipantRecording,
     removeParticipantRecording,
+    selectIsLocalParticipantRecording,
+    setIsLocalRecording,
     startLocalRecordingTimer,
     stopLocalRecordingTimer,
 } from '@proton/meet/store/slices/recordingStatusSlice';
@@ -23,27 +25,22 @@ import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
 import { useStableCallback } from '../useStableCallback';
 import { RECORDING_FPS } from './constants';
+import { getFallbackCodec, getSupportedRecordingCodec } from './getSupportedCodec';
 import { MessageType } from './recordingWorkerTypes';
-import type { FrameReaderInfo, MeetingRecordingState, RecordingTrackInfo } from './types';
+import type { FrameReaderInfo, RecordingCodec, RecordingTrackInfo } from './types';
 import { useRecordingStatusPublish } from './useRecordingStatusPublish';
-import {
-    createMediaStreamTrackProcessor,
-    getRecordingDetails,
-    getTracksForRecording,
-    supportsTrackProcessor,
-} from './utils';
+import { createMediaStreamTrackProcessor, getTracksForRecording, supportsTrackProcessor } from './utils';
 import { forwardWorkerLog } from './workerLogger';
 import { WorkerRecordingStorage } from './workerStorage';
 
 const CANVAS_WIDTH = 1920;
 const CANVAS_HEIGHT = 1080;
 
-let mimeType: string;
-let extension: string;
+let recordingCodec: RecordingCodec;
 
-void getRecordingDetails().then((result) => {
-    mimeType = result.mimeType;
-    extension = result.extension;
+// Preload supported recording codec
+void getSupportedRecordingCodec().then((codec) => {
+    recordingCodec = codec;
 });
 
 export function useMeetingRecorder() {
@@ -60,13 +57,10 @@ export function useMeetingRecorder() {
 
     const isNarrowHeight = useIsNarrowHeight();
 
-    const [recordingState, setRecordingState] = useState<MeetingRecordingState>({
-        isRecording: false,
-        recordedChunks: [],
-    });
+    const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
 
     const publishRecordingStatus = useRecordingStatusPublish(
-        recordingState.isRecording ? RecordingStatus.Started : RecordingStatus.Stopped
+        isLocalRecording ? RecordingStatus.Started : RecordingStatus.Stopped
     );
 
     const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -80,6 +74,7 @@ export function useMeetingRecorder() {
     );
     const silentSourceRef = useRef<{ source: ConstantSourceNode; gain: GainNode } | null>(null);
     const startTimeRef = useRef<number>(0);
+    const activeRecordingCodecRef = useRef<RecordingCodec>(recordingCodec);
     const workerStorageRef = useRef<WorkerRecordingStorage | null>(null);
     const visibilityListenerRef = useRef<(() => void) | null>(null);
     const pendingChunkWrites = useRef<Set<Promise<void>>>(new Set());
@@ -453,25 +448,36 @@ export function useMeetingRecorder() {
         });
     };
 
+    const cleanupRecordingResources = () => {
+        stopChunkWatchdog();
+        stopAllFrameCaptures();
+        stopRendererWorker();
+        cleanUpAudioResources();
+        cleanUpVisibilityListener();
+        mediaRecorderRef.current = null;
+
+        dispatch(stopLocalRecordingTimer());
+        if (isMeetMultipleRecordingEnabled) {
+            dispatch(removeParticipantRecording(room.localParticipant.identity));
+        } else {
+            dispatch(setIsLocalRecording(false));
+        }
+    };
+
     const startRecording = useStableCallback(async () => {
         // eslint-disable-next-line no-console
-        console.log('[MeetingRecorder] starting recording with', {
-            mimeType,
-            extension,
-        });
+        console.log('[MeetingRecorder] starting recording with', recordingCodec);
 
-        if (!mimeType || !extension) {
+        if (!recordingCodec) {
             // Probe still in flight: MediaRecorder would fall back to the
             // browser default, which is what causes the "empty chunk" floods.
             // eslint-disable-next-line no-console
-            console.error(
-                '[MeetingRecorder] codec detection has not resolved yet; MediaRecorder will use the browser default.',
-                { mimeType, extension }
-            );
-            reportMeetError('MeetingRecording Error: codec detection not ready at startRecording', {
-                context: { mimeType: String(mimeType), extension: String(extension) },
-            });
+            console.error('[MeetingRecorder] codec detection has not resolved yet.');
+            reportMeetError('MeetingRecording Error: codec detection not ready at startRecording');
+            return;
         }
+
+        activeRecordingCodecRef.current = recordingCodec;
 
         try {
             // Reset chunk stats and stop any leftover watchdog from a prior run.
@@ -494,7 +500,7 @@ export function useMeetingRecorder() {
             }
 
             // Spin up OPFS storage for this recording.
-            const storage = new WorkerRecordingStorage(extension);
+            const storage = new WorkerRecordingStorage(recordingCodec.extension);
             await storage.init();
             workerStorageRef.current = storage;
 
@@ -587,90 +593,114 @@ export function useMeetingRecorder() {
             // Build the MediaRecorder over the combined track stream.
             const combinedStream = new MediaStream(tracks);
 
-            const options: MediaRecorderOptions = {
-                mimeType,
-                videoBitsPerSecond: 2_000_000,
-                audioBitsPerSecond: 128_000,
-            };
-            const mediaRecorder = new MediaRecorder(combinedStream, options);
+            const createConfiguredRecorder = (codecMimeType: string) => {
+                const recorder = new MediaRecorder(combinedStream, {
+                    mimeType: codecMimeType,
+                    videoBitsPerSecond: 2_000_000,
+                    audioBitsPerSecond: 128_000,
+                });
 
-            // Each chunk: classify (data / empty / tail) and persist to OPFS.
-            mediaRecorder.ondataavailable = async (event) => {
-                const stats = chunkStatsRef.current;
+                // Each chunk: classify (data / empty / tail) and persist to OPFS.
+                recorder.ondataavailable = async (event) => {
+                    const stats = chunkStatsRef.current;
 
-                if (!workerStorageRef.current) {
-                    // eslint-disable-next-line no-console
-                    console.error('[MeetingRecorder] ondataavailable but worker storage is gone', {
-                        chunkSize: event.data.size,
-                        chunksWithDataSoFar: stats.chunkCount,
-                        emptyChunksSoFar: stats.emptyChunkCount,
-                    });
-                    return;
-                }
-
-                if (event.data.size === 0) {
-                    // The final ondataavailable after stop() is normally empty;
-                    // ignore it.
-                    if (mediaRecorder.state !== 'recording') {
+                    if (!workerStorageRef.current) {
                         // eslint-disable-next-line no-console
-                        console.log(
-                            `[MeetingRecorder] empty tail chunk while state="${mediaRecorder.state}" (expected during stop flush)`
-                        );
+                        console.error('[MeetingRecorder] ondataavailable but worker storage is gone', {
+                            chunkSize: event.data.size,
+                            chunksWithDataSoFar: stats.chunkCount,
+                            emptyChunksSoFar: stats.emptyChunkCount,
+                        });
                         return;
                     }
 
-                    stats.emptyChunkCount++;
+                    if (event.data.size === 0) {
+                        // The final ondataavailable after stop() is normally empty;
+                        // ignore it.
+                        if (recorder.state !== 'recording') {
+                            // eslint-disable-next-line no-console
+                            console.log(
+                                `[MeetingRecorder] empty tail chunk while state="${recorder.state}" (expected during stop flush)`
+                            );
+                            return;
+                        }
 
-                    if (stats.emptyChunkCount === 1 || stats.emptyChunkCount % 5 === 0) {
+                        stats.emptyChunkCount++;
+
+                        if (stats.emptyChunkCount === 1 || stats.emptyChunkCount % 5 === 0) {
+                            // eslint-disable-next-line no-console
+                            console.warn(
+                                `[MeetingRecorder] empty chunk #${stats.emptyChunkCount} (chunks with data so far: ${stats.chunkCount}, mimeType: ${recordingCodec.mimeType}, mediaRecorder.state: ${recorder.state})`
+                            );
+                        }
+
+                        if (stats.emptyChunkCount === 10 && stats.chunkCount === 0) {
+                            reportMeetError('MeetingRecording Error: 10 consecutive empty chunks with no data', {
+                                context: {
+                                    emptyChunkCount: stats.emptyChunkCount,
+                                    mediaRecorderState: recorder.state,
+                                    recordingCodec,
+                                },
+                            });
+                        }
+                        return;
+                    }
+
+                    stats.chunkCount++;
+                    stats.lastChunkAt = performance.now();
+                    if (stats.firstChunkAt === null) {
+                        stats.firstChunkAt = stats.lastChunkAt;
                         // eslint-disable-next-line no-console
-                        console.warn(
-                            `[MeetingRecorder] empty chunk #${stats.emptyChunkCount} (chunks with data so far: ${stats.chunkCount}, mimeType: ${mimeType}, mediaRecorder.state: ${mediaRecorder.state})`
+                        console.log(
+                            `[MeetingRecorder] first non-empty chunk: ${event.data.size} bytes (empty chunks before this: ${stats.emptyChunkCount})`
                         );
                     }
 
-                    if (stats.emptyChunkCount === 10 && stats.chunkCount === 0) {
-                        reportMeetError('MeetingRecording Error: 10 consecutive empty chunks with no data', {
+                    const chunkNumber = stats.chunkCount;
+                    const writePromise = workerStorageRef.current.addChunk(event.data).catch((error) => {
+                        reportMeetError('MeetingRecording Error: Failed to store chunk in OPFS', {
                             context: {
-                                emptyChunkCount: stats.emptyChunkCount,
-                                mimeType,
-                                mediaRecorderState: mediaRecorder.state,
+                                chunkNumber,
+                                error: error instanceof Error ? error.message : String(error),
+                                name: error?.name,
                             },
                         });
-                    }
-                    return;
-                }
 
-                stats.chunkCount++;
-                stats.lastChunkAt = performance.now();
-                if (stats.firstChunkAt === null) {
-                    stats.firstChunkAt = stats.lastChunkAt;
-                    // eslint-disable-next-line no-console
-                    console.log(
-                        `[MeetingRecorder] first non-empty chunk: ${event.data.size} bytes (empty chunks before this: ${stats.emptyChunkCount})`
-                    );
-                }
-
-                const chunkNumber = stats.chunkCount;
-                const writePromise = workerStorageRef.current.addChunk(event.data).catch((error) => {
-                    reportMeetError('MeetingRecording Error: Failed to store chunk in OPFS', {
-                        context: {
-                            chunkNumber,
-                            error: error instanceof Error ? error.message : String(error),
-                            name: error?.name,
-                        },
+                        // eslint-disable-next-line no-console
+                        console.error(`[MeetingRecorder] failed to store chunk ${chunkNumber} in OPFS:`, error);
                     });
 
-                    // eslint-disable-next-line no-console
-                    console.error(`[MeetingRecorder] failed to store chunk ${chunkNumber} in OPFS:`, error);
-                });
+                    pendingChunkWrites.current.add(writePromise);
+                    await writePromise;
+                    pendingChunkWrites.current.delete(writePromise);
+                };
 
-                pendingChunkWrites.current.add(writePromise);
-                await writePromise;
-                pendingChunkWrites.current.delete(writePromise);
+                return recorder;
             };
 
-            // Actually start the recorder (resolves on its `onstart`).
-            await startMediaRecorder(mediaRecorder);
+            // Start the recorder, falling back to the next codec on EncodingError.
+            let mediaRecorder = createConfiguredRecorder(recordingCodec.mimeType);
+            try {
+                await startMediaRecorder(mediaRecorder);
+            } catch (error) {
+                if (error instanceof DOMException && error.name === 'EncodingError') {
+                    const fallbackCodec = getFallbackCodec();
+                    // eslint-disable-next-line no-console
+                    console.error('[MeetingRecorder] EncodingError with codec, retrying with fallback', {
+                        failed: recordingCodec,
+                        fallback: fallbackCodec,
+                    });
+                    reportMeetError('MeetingRecording Error: EncodingError, retrying with fallback codec', {
+                        context: { failed: recordingCodec, fallback: fallbackCodec },
+                    });
+
+                    activeRecordingCodecRef.current = fallbackCodec;
+                    mediaRecorder = createConfiguredRecorder(fallbackCodec.mimeType);
+                    await startMediaRecorder(mediaRecorder);
+                } else {
+                    throw error;
+                }
+            }
 
             // Permanent error handler — without this, runtime errors are lost
             // until stopMediaRecorder installs its own onerror on the stop path.
@@ -681,7 +711,7 @@ export function useMeetingRecorder() {
                     message: error?.message ?? 'Unknown MediaRecorder error',
                     name: error?.name,
                     state: mediaRecorder.state,
-                    mimeType,
+                    recordingCodec,
                     chunksWithData: chunkStatsRef.current.chunkCount,
                     emptyChunks: chunkStatsRef.current.emptyChunkCount,
                 });
@@ -690,9 +720,12 @@ export function useMeetingRecorder() {
                         message: error?.message ?? 'Unknown MediaRecorder error',
                         name: error?.name,
                         state: mediaRecorder.state,
-                        mimeType,
+                        recordingCodec,
                     },
                 });
+
+                // The encoder failed mid-recording. Clean up so the user isn't stuck in a recording state.
+                cleanupRecordingResources();
             };
 
             // Surface stalled encoders to the console and Sentry. Two phases:
@@ -719,7 +752,7 @@ export function useMeetingRecorder() {
                             sinceLastChunk
                         )}ms (${phase})`,
                         {
-                            mimeType,
+                            recordingCodec,
                             mediaRecorderState: mediaRecorder.state,
                             chunksWithData: stats.chunkCount,
                             emptyChunks: stats.emptyChunkCount,
@@ -728,7 +761,7 @@ export function useMeetingRecorder() {
                     );
                     reportMeetError('MeetingRecording Error: watchdog detected stalled MediaRecorder', {
                         context: {
-                            mimeType,
+                            recordingCodec,
                             mediaRecorderState: mediaRecorder.state,
                             chunksWithData: stats.chunkCount,
                             emptyChunks: stats.emptyChunkCount,
@@ -748,7 +781,7 @@ export function useMeetingRecorder() {
             mediaRecorderRef.current = mediaRecorder;
 
             // eslint-disable-next-line no-console
-            console.log('[MeetingRecorder] MediaRecorder started', { state: mediaRecorder.state, mimeType });
+            console.log('[MeetingRecorder] MediaRecorder started', { state: mediaRecorder.state, recordingCodec });
             if (mediaRecorder.state !== 'recording') {
                 // eslint-disable-next-line no-console
                 console.error(
@@ -769,16 +802,12 @@ export function useMeetingRecorder() {
             // Mark recording as active in local state and broadcast to peers.
             startTimeRef.current = Date.now();
 
-            setRecordingState({
-                isRecording: true,
-                recordedChunks: [],
-            });
-
-            dispatch(startLocalRecordingTimer());
-
             if (isMeetMultipleRecordingEnabled) {
                 dispatch(addParticipantRecording(room.localParticipant.identity));
+            } else {
+                dispatch(setIsLocalRecording(true));
             }
+            dispatch(startLocalRecordingTimer());
 
             void publishRecordingStatus(RecordingStatus.Started);
         } catch (error) {
@@ -788,6 +817,7 @@ export function useMeetingRecorder() {
                 context: {
                     error: error instanceof Error ? error.message : String(error),
                     name: error instanceof Error ? error.name : 'UnknownError',
+                    recordingCodec,
                 },
             });
 
@@ -813,7 +843,7 @@ export function useMeetingRecorder() {
 
     const stopRecording = useStableCallback(async () => {
         try {
-            if (mediaRecorderRef.current && recordingState.isRecording) {
+            if (mediaRecorderRef.current && isLocalRecording) {
                 let blob: Blob | null = null;
 
                 await stopMediaRecorder(mediaRecorderRef.current);
@@ -831,7 +861,7 @@ export function useMeetingRecorder() {
                 if (file.type && file.type !== '') {
                     blob = file;
                 } else {
-                    blob = file.slice(0, file.size, mimeType);
+                    blob = file.slice(0, file.size, activeRecordingCodecRef.current.mimeType);
                 }
 
                 return blob;
@@ -856,13 +886,6 @@ export function useMeetingRecorder() {
 
             throw error;
         } finally {
-            // We always cleanup state even if the recording failed
-            stopChunkWatchdog();
-            stopAllFrameCaptures();
-            stopRendererWorker();
-            cleanUpAudioResources();
-            cleanUpVisibilityListener();
-
             // eslint-disable-next-line no-console
             console.log('[MeetingRecorder] recording stopped', {
                 chunksWithData: chunkStatsRef.current.chunkCount,
@@ -871,22 +894,13 @@ export function useMeetingRecorder() {
                 lastChunkAt: chunkStatsRef.current.lastChunkAt,
             });
 
-            setRecordingState({
-                isRecording: false,
-                recordedChunks: [],
-            });
-
-            dispatch(stopLocalRecordingTimer());
-
-            if (isMeetMultipleRecordingEnabled) {
-                dispatch(removeParticipantRecording(room.localParticipant.identity));
-            }
+            cleanupRecordingResources();
         }
     });
 
     const downloadRecording = useStableCallback(async () => {
         try {
-            if (!recordingState.isRecording) {
+            if (!isLocalRecording) {
                 return;
             }
 
@@ -909,7 +923,7 @@ export function useMeetingRecorder() {
 
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `meeting-recording-${new Date().toISOString()}.${extension}`;
+                a.download = `meeting-recording-${new Date().toISOString()}.${activeRecordingCodecRef.current.extension}`;
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -954,7 +968,7 @@ export function useMeetingRecorder() {
         .join(',');
 
     useEffect(() => {
-        if (!recordingState.isRecording || !renderWorkerRef.current) {
+        if (!isLocalRecording || !renderWorkerRef.current) {
             return;
         }
 
@@ -962,8 +976,9 @@ export function useMeetingRecorder() {
             type: 'updateState',
             state: prepareRenderState(),
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [
-        recordingState.isRecording,
+        isLocalRecording,
         isLargerThanMd,
         isNarrowHeight,
         pagedParticipants,
@@ -976,7 +991,7 @@ export function useMeetingRecorder() {
     // Runs on participants change (to subscribe new joiners) and on track signature changes
     // (to start capture once a track becomes available after subscription completes).
     useEffect(() => {
-        if (!recordingState.isRecording) {
+        if (!isLocalRecording) {
             return;
         }
 
@@ -1030,7 +1045,8 @@ export function useMeetingRecorder() {
         return () => {
             room.off(RoomEvent.TrackPublished, handleTrackPublished);
         };
-    }, [recordingState.isRecording, room, pagedParticipants, videoTracksSignature, screenShareTracksSignature]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLocalRecording, room, pagedParticipants, videoTracksSignature, screenShareTracksSignature]);
 
     const audioTracksSignature = audioTracks
         .map((trackRef) => {
@@ -1041,7 +1057,7 @@ export function useMeetingRecorder() {
         .join(',');
 
     useEffect(() => {
-        if (!recordingState.isRecording) {
+        if (!isLocalRecording) {
             return;
         }
 
@@ -1055,14 +1071,10 @@ export function useMeetingRecorder() {
             clearTimeout(timeout1);
             clearTimeout(timeout2);
         };
-    }, [recordingState.isRecording, audioTracksSignature]);
+    }, [isLocalRecording, audioTracksSignature]);
 
     const handleCleanup = async () => {
-        stopChunkWatchdog();
-        stopAllFrameCaptures();
-        stopRendererWorker();
-        cleanUpAudioResources();
-        cleanUpVisibilityListener();
+        cleanupRecordingResources();
 
         if (workerStorageRef.current) {
             await workerStorageRef.current.clear();
@@ -1075,10 +1087,10 @@ export function useMeetingRecorder() {
         return () => {
             void handleCleanup();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return {
-        recordingState,
         startRecording,
         downloadRecording,
     };

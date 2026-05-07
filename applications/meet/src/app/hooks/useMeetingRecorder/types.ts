@@ -7,12 +7,14 @@ export interface RecordingTrackInfo {
     participantIndex: number;
 }
 
-export interface MeetingRecordingState {
-    isRecording: boolean;
-    recordedChunks: Blob[];
-}
-
 export interface FrameReaderInfo {
     reader: ReadableStreamDefaultReader<VideoFrame> | null;
     participantKey: string;
 }
+
+export type RecordingCodec = {
+    mimeType: string;
+    extension: string;
+};
+
+export type CodecProbeOutcome = 'unsupported' | 'data' | 'flush' | 'timeout' | 'error' | 'throw';
