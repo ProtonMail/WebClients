@@ -387,6 +387,10 @@ export const ThemeFontFaceSettingMap: { [key in ThemeFontFaceSetting]: ThemeFont
         label: () => 'OpenDyslexic',
         value: 'OpenDyslexic, cursive',
     },
+    [ThemeFontFaceSetting.ATKINSON]: {
+        label: () => 'Atkinson HyperLegible',
+        value: "'Atkinson Hyperlegible', sans-serif",
+    },
 };
 export const getThemeFontFaceEntries = () => {
     return Object.entries(ThemeFontFaceSettingMap).map(
@@ -486,7 +490,7 @@ const getValidatedFontFace = (maybeFontFace: number | undefined) => {
     if (
         maybeFontFace !== undefined &&
         maybeFontFace >= ThemeFontFaceSetting.DEFAULT &&
-        maybeFontFace <= ThemeFontFaceSetting.DYSLEXIC
+        maybeFontFace <= ThemeFontFaceSetting.ATKINSON
     ) {
         return maybeFontFace;
     }
