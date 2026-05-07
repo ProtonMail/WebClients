@@ -1108,6 +1108,9 @@
       "Reconnect": [
         "Opnieuw verbinden"
       ],
+      "Reconnect to Gmail": [
+        "Opnieuw verbinden met Gmail"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -1499,8 +1502,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4059,6 +4061,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Voorkom dat Google een profiel van u aanmaakt. Gmail kan niet zien wat u in ${ MAIL_APP_NAME } doet."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
@@ -4156,9 +4161,21 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dit kan gebeuren als de toegangsrechten zijn ingetrokken of als uw wachtwoord is gewijzigd."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Om een ander Gmail-adres te koppelen, verwijdert u de extra Gmail-adressen die naar ${ BRAND_NAME } worden doorgestuurd."
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adres te koppelen, upgrade naar ${ planName }.",
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adressen te koppelen, upgrade naar ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw account opnieuw koppelen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw accounts opnieuw koppelen."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
@@ -4196,8 +4213,14 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
       ],
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "We zijn begonnen met het importeren van uw e-mails van de afgelopen 180 dagen vanuit Gmail. We laten uw weten wanneer het klaar is."
@@ -4213,6 +4236,12 @@
       ],
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Met aangepaste snooze kunt u e-mails verbergen en deze op een beter moment opnieuw laten verschijnen."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -4395,6 +4424,14 @@
         "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van één extern account naar ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -4560,6 +4597,9 @@
       ],
       "Add at least one condition": [
         "Voeg tenminste één voorwaarde toe"
+      ],
+      "Address is already added to your account": [
+        "Het adres is al aan uw account toegevoegd"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -5694,11 +5734,20 @@
       "Filter and sort emails": [
         "Filter en sorteer e-mails"
       ],
+      "Has attachments": [
+        "Heeft bijlagen"
+      ],
+      "Read": [
+        "Gelezen"
+      ],
       "Reset": [
         "Reset"
       ],
       "Show": [
         "Tonen"
+      ],
+      "Unread": [
+        "Ongelezen"
       ]
     },
     "Filter Actions": {
@@ -7515,7 +7564,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7609,9 +7659,6 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -11909,6 +11956,12 @@
       ],
       "Skip for now": [
         "Sla voorlopig over"
+      ],
+      "Some popular services": [
+        "Enkele populaire services"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Verander de diensten die u dagelijks gebruikt naar uw ${ BRAND_NAME } adres voor meer veiligheid en privacy."
       ]
     },
     "Onboarding modal": {
@@ -12127,12 +12180,6 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
-      ],
-      "Remind me later": [
-        "Herinner mij later"
-      ],
-      "Yes, don't show again": [
-        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -15388,9 +15435,6 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Keep this banner hidden?": [
-        "Deze banner verbergen?"
-      ],
       "Label as": [
         "Labellen als"
       ],
@@ -15877,6 +15921,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gebruik Gmail veilig in ${ MAIL_APP_NAME }"
       ],
       "Verification error": [
         "Verificatiefout"
