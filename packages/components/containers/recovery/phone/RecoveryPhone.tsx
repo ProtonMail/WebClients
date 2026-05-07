@@ -56,7 +56,7 @@ interface Props {
     inputWidth?: string;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label' | 'readOnly'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label' | 'readOnly' | 'onFocus'>>;
     disableVerifyCta?: boolean;
     onSubmit: (input: string) => void;
     onVerify: () => void;
