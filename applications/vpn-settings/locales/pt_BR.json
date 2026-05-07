@@ -326,8 +326,8 @@
       "Delete policy": [
         "Excluir política"
       ],
-      "Delete token ${ token.Account }": [
-        "Excluir token ${ token.Account }"
+      "Delete token ${ tokens[0].Account }": [
+        "Excluir token ${ tokens[0].Account }"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -553,6 +553,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Ir para o provedor de domínios"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -886,6 +889,9 @@
       ],
       "Save": [
         "Salvar"
+      ],
+      "Save & exit": [
+        "Salvar e sair"
       ],
       "Save address": [
         "Salvar endereço"
@@ -1965,8 +1971,38 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Assistente de Migração da ${ BRAND_NAME }"
       ],
-      "App installed": [
-        "Apps instalado"
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "Account connected": [
+        "Conta conectada"
+      ],
+      "Account disconnected": [
+        "Conta desconectada"
+      ],
+      "Activated": [
+        "Ativado"
+      ],
+      "Activation link": [
+        "Link de ativação"
+      ],
+      "Activation link copied to clipboard": [
+        "Link de ativação copiado para a área de transferência"
+      ],
+      "Add domain": [
+        "Adicionar domínio"
+      ],
+      "Add users": [
+        "Adicionar usuários"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
+      ],
+      "All": [
+        "Todos"
+      ],
+      "An unknown error occurred": [
+        "Ocorreu um erro desconhecido"
       ],
       "Authenticate": [
         "Autenticar"
@@ -1980,17 +2016,41 @@
       "Completed": [
         "Concluído"
       ],
+      "Configure domain": [
+        "Configurar domínio"
+      ],
       "Configure migration": [
         "Configurar migração"
+      ],
+      "Configure your domain": [
+        "Configure seu domínio"
       ],
       "Contacts": [
         "Contatos"
       ],
+      "Copy activation link": [
+        "Copiar link de ativação"
+      ],
+      "Copy activation link to clipboard": [
+        "Copiar link de ativação para a área de transferência"
+      ],
+      "Creating accounts": [
+        "Criando contas"
+      ],
+      "DKIM records": [
+        "Registos DKIM"
+      ],
+      "DMARC records": [
+        "Registros DMARC"
+      ],
+      "Domain added": [
+        "Domínio adicionado"
+      ],
       "Domain connected": [
         "Domínio conectado"
       ],
-      "Domain ownership verified": [
-        "Propriedade do domínio verificada"
+      "Errors": [
+        "Errors"
       ],
       "Estimated size": [
         "Tempo estimado"
@@ -1998,8 +2058,14 @@
       "Failed to load OAuth": [
         "Falha ao carregar o OAuth"
       ],
+      "Finalize migration": [
+        "Finalizar migração"
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicativo do Google Marketplace para copiar dados para a ${ BRAND_NAME }"
+      ],
+      "Google Workspace account": [
+        "Conta do Google Workspace"
       ],
       "Has errors": [
         "Tem erros"
@@ -2013,20 +2079,23 @@
       "Install migration app": [
         "Instalar aplicativo de migração"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Saiba mais sobre o que pode ser migrado. Saiba mais"
+      "Loading your organization data": [
+        "Carregando os dados da sua organização"
       ],
       "Mail": [
         "E-mail"
       ],
-      "Migrate": [
-        "Migrar"
+      "Managed via ${ registrar.name }": [
+        "Gerenciado via ${ registrar.name }"
       ],
       "Migrate from Google Workspace": [
         "Migrar do Google Workspace"
       ],
       "Migrate users": [
         "Migrar usuários"
+      ],
+      "Migrated": [
+        "Migrado"
       ],
       "Migration includes": [
         "A migração foi concluída"
@@ -2038,8 +2107,17 @@
       "Migration status": [
         "Status da migração"
       ],
-      "Not started": [
-        "Não iniciado"
+      "More details": [
+        "Mais detalhes"
+      ],
+      "No users to display": [
+        "Nenhum usuário para exibir"
+      ],
+      "Not activated": [
+        "Não ativado"
+      ],
+      "Not confirmed": [
+        "Não confirmado"
       ],
       "Organization does not have enough seats available": [
         "A organização não tem licenças suficientes disponíveis"
@@ -2047,8 +2125,14 @@
       "Organization does not have enough storage available": [
         "A organização não tem armazenamento suficientes disponíveis"
       ],
-      "Organization settings": [
-        "Configurações da organização"
+      "Pending": [
+        "Pendente"
+      ],
+      "Please select at least one product to migrate": [
+        "Selecione ao menos um produto para migrar"
+      ],
+      "Refresh": [
+        "Atualizar"
       ],
       "Required": [
         "Obrigatório"
@@ -2059,11 +2143,20 @@
       "Select at least one user to start a migration": [
         "Selecione pelo menos um usuário para iniciar uma migração"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Selecione o que você deseja migrar, isso se aplicará a todos os usuários, sejam eles criados agora ou depois. A migração começará após a criação das contas de usuário."
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
       ],
       "Set up": [
         "Configurar"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurar envio seguro (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar envio seguro (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar envio seguro (SPF)"
       ],
       "Settings": [
         "Configurações"
@@ -2071,20 +2164,35 @@
       "Sign in to Google Workspace": [
         "Iniciar sessão do Google Workspace"
       ],
+      "Size": [
+        "Tamanho"
+      ],
+      "SPF records": [
+        "Registros SPF"
+      ],
+      "Start migrating": [
+        "Iniciar migração"
+      ],
       "Status": [
         "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
       ],
-      "Transfer errors": [
-        "Erros de transferência"
+      "Update records for receiving": [
+        "Atualize os registros para recener"
       ],
       "User": [
         "Usuário"
       ],
+      "User status": [
+        "Status do usuário"
+      ],
       "Users migrated": [
         "Usuários migrados"
+      ],
+      "Verified": [
+        "Verificado"
       ],
       "Verify installation": [
         "Verificar instalação"
@@ -2100,6 +2208,12 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "You": [
+        "Você"
+      ],
+      "You're all set!": [
+        "Tudo pronto!"
       ]
     },
     "Browser": {
@@ -3558,6 +3672,9 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adicione pastas e arquivos ao ${ DRIVE_APP_NAME } e convide os membros da equipe para visualizar ou editar."
@@ -8828,6 +8945,9 @@
       "Your encrypted data will be locked": [
         "Seus dados criptografados ficarão bloqueados"
       ],
+      "your encrypted data will be locked": [
+        "seus dados criptografados ficarão bloqueados"
+      ],
       "Your feedback": [
         "Seu comentário"
       ],
@@ -9306,6 +9426,9 @@
       "Confirm login password": [
         "Confirmar nova senha"
       ],
+      "Confirm MX records added": [
+        "Confirmar os registros MX adicionados"
+      ],
       "Confirm new password": [
         "Confirmar nova senha"
       ],
@@ -9526,6 +9649,9 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "Host name": [
+        "Nome do servidor"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entendo que precisarei adicionar esse endereço de e-mail à outra conta imediatamente, para evitar perdê-lo permanentemente."
       ],
@@ -9642,6 +9768,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "MX records": [
+        "Registros MX"
       ],
       "Name": [
         "Nome"
@@ -9774,6 +9903,9 @@
       ],
       "Previous password": [
         "Senha anterior"
+      ],
+      "Priority": [
+        "Prioridade"
       ],
       "Priority support": [
         "Suporte prioritário"
@@ -10057,6 +10189,20 @@
         "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup } registro não encontrado"
+      ],
+      "Host name": [
+        "Nome do servidor"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Use default value": [
+        "Usar valor padrão"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -10171,6 +10317,9 @@
       ],
       "data recovery option": [
         "opção de recuperação de dados"
+      ],
+      "Detailed instructions": [
+        "Instruções detalhadas"
       ],
       "Details": [
         "Detalhes"
@@ -13088,6 +13237,9 @@
       "Search for an email or IP address": [
         "Pesquisar por e-mail ou endereço de IP"
       ],
+      "Search for users or addresses": [
+        "Pesquisar por um usuários ou endereços"
+      ],
       "Search parent folder": [
         "Pesquisar pasta pai"
       ],
@@ -13377,6 +13529,9 @@
       ],
       "Verify now": [
         "Verificar agora"
+      ],
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "Verifique agora esse endereço de e-mail de recuperação: ${ emailData.value }"
       ],
       "Verify recovery email?": [
         "Verificar e-mail de recuperação?"
@@ -15455,6 +15610,9 @@
       "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } oferece 200 GB de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus anuais de armazenamento."
       ],
+      "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planTitle } oferece a você acesso a todos os aplicativos e recursos premium. A privacidade está integrada para você poder seguir adiante sabendo que seus dados estão seguros."
+      ],
       "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planTitle } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
       ],
@@ -15483,6 +15641,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
+      ],
+      "Activation link copied to clipboard": [
+        "Link de ativação copiado para a área de transferência"
       ],
       "Address added": [
         "Endereço adicionado"
@@ -16062,6 +16223,9 @@
       ],
       "Are you sure?": [
         "Você tem certeza?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Peça ajuda aos seus contatos de emergência"
       ],
       "Auto-deletion is active": [
         "A exclusão automática está ativa."
@@ -16742,6 +16906,9 @@
       "Remove domain": [
         "Remover domínio"
       ],
+      "Remove email": [
+        "Remover e-mail"
+      ],
       "Remove forwarding address": [
         "Remover endereço de encaminhamento"
       ],
@@ -17362,6 +17529,9 @@
       "User is a group": [
         "Usuário é um grupo"
       ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
       ]
@@ -17594,6 +17764,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grupo)"
+      ],
       "Add multiple users": [
         "Adicionar vários usuários"
       ],
@@ -17923,6 +18099,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
+      "Are you sure you want to remove your notification email?": [
+        "Você tem certeza que deseja remover seu e-mail de notificação?"
+      ],
       "Are you sure you want to remove your recovery email?": [
         "Você tem certeza que deseja remover seu e-mail de recuperação?"
       ],
@@ -17934,6 +18113,9 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Ao excluir este endereço, você não poderá mais recuperar sua conta."
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Ao remover este número de telefone, você não poderá mais recuperar sua conta."
       ],
       "Please add at least one recipient.": [
         "Adicione ao menos um destinatário."

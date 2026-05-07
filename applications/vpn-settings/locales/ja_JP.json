@@ -1810,9 +1810,6 @@
       ]
     },
     "BOSS": {
-      "App installed": [
-        "アプリをインストールしました"
-      ],
       "Authenticate": [
         "認証"
       ],
@@ -1828,9 +1825,6 @@
       "Domain connected": [
         "ドメインを接続しました"
       ],
-      "Domain ownership verified": [
-        "ドメイン所有権は検証済みです"
-      ],
       "Estimated size": [
         "推定サイズ"
       ],
@@ -1843,14 +1837,8 @@
       "Install migration app": [
         "移行アプリをインストール"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "移行可能な内容の詳細をご確認ください。より詳しく"
-      ],
       "Mail": [
         "メール"
-      ],
-      "Migrate": [
-        "移行"
       ],
       "Migrate from Google Workspace": [
         "Google Workspaceから移行"
@@ -1873,9 +1861,6 @@
       "Organization does not have enough storage available": [
         "組織には十分なストレージがありません"
       ],
-      "Organization settings": [
-        "組織設定"
-      ],
       "Required": [
         "必須"
       ],
@@ -1885,9 +1870,6 @@
       "Select at least one user to start a migration": [
         "移行を開始するには少なくとも1人のユーザーを選択してください"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "移行したいものを選択してください。これは、今後作成されるものも含め、すべてのユーザーに適用されます。ユーザーアカウントが作成された後、移行が開始されます。"
-      ],
       "Set up": [
         "セットアップ"
       ],
@@ -1896,9 +1878,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistant をインストールする必要があります。これにより、${ BRAND_NAME }にデータをコピーする権限が与えられます。インストールをしてから、ここに戻って続行してください。"
-      ],
-      "Transfer errors": [
-        "転送エラー"
       ],
       "User": [
         "ユーザー"
