@@ -5,11 +5,13 @@ import type { RecoveryActionItem } from '@proton/account/safetyReview/recoverySt
 import { RecoveryScoreShield } from '@proton/components/containers/recovery/RecoveryScoreBanner/RecoveryScoreShield';
 import {
     SCORE_TONE_CLASS,
+    getRecoveryScoreHint,
     getRecoveryScoreState,
 } from '@proton/components/containers/recovery/RecoveryScoreBanner/recoveryScoreState';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 
+import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
 import { NegativeCongratulationsCta, PositiveCongratulationsCta } from './CongratulationsCta';
 import { getNegativeRecoveryActionItemCopy, getPositiveRecoveryActionItemCopy } from './getRecoveryActionItemCopy';
 
@@ -40,17 +42,15 @@ export const Congratulations = (props: Props) => {
     if (actions.completed.length > 0) {
         return (
             <div>
-                <div className="text-center mb-8">
-                    <div className="mb-4">
+                <SafetyReviewCardHeader>
+                    <SafetyReviewCardHeader.Illustration>
                         <span style={{ fontSize: '5rem' }}>🎉</span>
-                    </div>
-                    <h1 className="text-lg text-semibold mb-2">{c('safety_review').t`Congratulations`}</h1>
-                </div>
-                <div>
-                    <div className="mb-2">
+                    </SafetyReviewCardHeader.Illustration>
+                    <SafetyReviewCardHeader.Title>{c('safety_review').t`Congratulations`}</SafetyReviewCardHeader.Title>
+                    <SafetyReviewCardHeader.Description>
                         {c('safety_review').t`Here's how you increased your account protection:`}
-                    </div>
-                    <ul className="unstyled m-0">
+                    </SafetyReviewCardHeader.Description>
+                    <ul className="unstyled m-0 self-start">
                         {actions.completed.map((item) => (
                             <li key={item.id} className="flex items-center gap-2 py-1">
                                 <IcCheckmarkCircleFilled size={4} className="shrink-0 color-success" />
@@ -58,32 +58,55 @@ export const Congratulations = (props: Props) => {
                             </li>
                         ))}
                     </ul>
-                </div>
+                </SafetyReviewCardHeader>
 
                 <PositiveCongratulationsCta {...props} />
             </div>
         );
     }
 
+    if (actions.skipped.length > 0) {
+        return (
+            <div>
+                <SafetyReviewCardHeader>
+                    <SafetyReviewCardHeader.Illustration>
+                        <RecoveryScoreShield
+                            score={score}
+                            maxScore={maxScore}
+                            toneClass={SCORE_TONE_CLASS[scoreTone]}
+                        />
+                    </SafetyReviewCardHeader.Illustration>
+                    <SafetyReviewCardHeader.Title>{c('safety_review')
+                        .t`Your security setup`}</SafetyReviewCardHeader.Title>
+                    <SafetyReviewCardHeader.Description>
+                        {c('Recovery score').t`Add more options for stronger protection`}
+                    </SafetyReviewCardHeader.Description>
+                    <ul className="unstyled m-0 self-start">
+                        {actions.skipped.map((item) => (
+                            <li key={item.id} className="flex items-center gap-2 py-1">
+                                <IcCircleRadioEmpty className="shrink-0 color-hint" />
+                                <span>{getNegativeRecoveryActionItemCopy(item)}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </SafetyReviewCardHeader>
+
+                <NegativeCongratulationsCta {...props} onClick={props.safetyReview.actions.restart} />
+            </div>
+        );
+    }
+
     return (
         <div>
-            <div className="text-center mb-8">
-                <div className="mb-4">
+            <SafetyReviewCardHeader>
+                <SafetyReviewCardHeader.Illustration>
                     <RecoveryScoreShield score={score} maxScore={maxScore} toneClass={SCORE_TONE_CLASS[scoreTone]} />
-                </div>
-                <h1 className="text-lg text-semibold mb-2">{c('safety_review').t`Your security setup`}</h1>
-            </div>
-            <div className="mb-2">{c('Recovery score').t`Add more options for stronger protection`}</div>
-            <ul className="unstyled m-0">
-                {actions.skipped.map((item) => (
-                    <li key={item.id} className="flex items-center gap-2 py-1">
-                        <IcCircleRadioEmpty className="shrink-0 color-hint" />
-                        <span>{getNegativeRecoveryActionItemCopy(item)}</span>
-                    </li>
-                ))}
-            </ul>
+                </SafetyReviewCardHeader.Illustration>
+                <SafetyReviewCardHeader.Title>{c('safety_review').t`Your security setup`}</SafetyReviewCardHeader.Title>
+                <SafetyReviewCardHeader.Description>{getRecoveryScoreHint(score)}</SafetyReviewCardHeader.Description>
+            </SafetyReviewCardHeader>
 
-            <NegativeCongratulationsCta {...props} onClick={props.safetyReview.actions.restart} />
+            <PositiveCongratulationsCta {...props} />
         </div>
     );
 };

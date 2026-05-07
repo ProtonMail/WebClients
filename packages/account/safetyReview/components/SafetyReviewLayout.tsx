@@ -72,7 +72,7 @@ export const SafetyReviewHeader = ({ logo, backButton }: { logo: ReactNode; back
                     </span>
                 </div>
             </div>
-            <div className="md:mb-4 md:mb-8 text-center safety-review-header-title">
+            <div className="md:mb-8 text-center safety-review-header-title">
                 <h1 className="m-0 text-xl md:text-4xl text-semibold">
                     {c('safety_review').t`Your recovery checklist`}
                 </h1>
