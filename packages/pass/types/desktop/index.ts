@@ -38,12 +38,29 @@ export type ContextBridgeApi = {
 
     openContextMenu: (items: ContextMenuItemSerializable[]) => Promise<number>;
 
-    getBetaOptIn: () => Promise<boolean>;
-    setBetaOptIn: (optIn: boolean) => Promise<void>;
+    getUpdateStore: () => Promise<UpdateStore>;
+    setUpdateStore: (update: Partial<UpdateStore>) => Promise<void>;
     checkForUpdates: () => Promise<boolean>;
+    restartToUpdate: () => Promise<void>;
+    onUpdateStoreChange: (callback: (store: UpdateStore) => void) => () => void;
 
     onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
+
+export enum UpdateStatus {
+    Idle = 0,
+    Checking = 1,
+    Downloading = 2,
+    UpdateReady = 3,
+}
+
+export type UpdateStore = {
+    distribution: number;
+    beta: boolean;
+    status: UpdateStatus;
+    newVersion: MaybeNull<string>;
+    progress: MaybeNull<number>;
+};
