@@ -30,13 +30,15 @@ const CommonRecoveryEmail = ({
                 autoFocus
                 {...accountRecovery.recoveryEmail.props}
                 onSubmit={async (value) => {
-                    const result = await accountRecovery.recoveryEmail.handleChangeEmailValue({
-                        value,
-                        persistPasswordScope: true,
-                    });
-                    if (!!result?.Email.Value) {
-                        onSuccess();
-                    }
+                    try {
+                        const newUserSettings = await accountRecovery.recoveryEmail.handleChangeEmailValue({
+                            value,
+                            persistPasswordScope: true,
+                        });
+                        if (!!newUserSettings?.Email.Value) {
+                            onSuccess();
+                        }
+                    } catch {}
                 }}
                 disableVerifyCta
                 inputProps={{ label }}

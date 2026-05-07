@@ -43,8 +43,8 @@ export const useUpdateAccountRecovery = () => {
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
     const [confirmRecoveryPhoneProps, setConfirmRecoveryPhoneModal, renderConfirmRecoveryPhoneProps] = useModalState();
     const isSubmittingPhoneRef = useRef(false);
-    const [loadingPhone, withLoadingPhone] = useLoading(false);
-    const [loadingEmail, withLoadingEmail] = useLoading(false);
+    const [loadingPhone, setLoadingPhone] = useState(false);
+    const [loadingEmail, setLoadingEmail] = useState(false);
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
 
@@ -53,17 +53,38 @@ export const useUpdateAccountRecovery = () => {
         autoStartVerificationFlowAfterSet = false,
         persistPasswordScope = false,
         ignoreConfirm = false,
-        onSuccess,
     }: {
         value: string;
         autoStartVerificationFlowAfterSet?: boolean;
         persistPasswordScope?: boolean;
         ignoreConfirm?: boolean;
-        onSuccess?: () => void;
-    }): Promise<UserSettings | undefined> => {
-        const update = async () => {
+    }): Promise<UserSettings> => {
+        if (!nextEmail && !accountRecoveryData.emailRecovery.canDisable) {
+            showRecoveryContactWarning(true);
+            throw new Error("Can't disable email recovery");
+        }
+        if (
+            !ignoreConfirm &&
+            !nextEmail &&
+            (accountRecoveryData.emailRecovery.hasReset || accountRecoveryData.emailRecovery.hasNotify)
+        ) {
+            setConfirmRemoveEmailModal(true);
+            throw new Error('Confirm removal');
+        }
+        if (isSubmittingEmailRef.current) {
+            throw new Error('Already submitting');
+        }
+        try {
+            setLoadingEmail(true);
+            isSubmittingEmailRef.current = true;
             const userSettings = await dispatch(updateRecoveryEmailValue({ value: nextEmail, persistPasswordScope }));
             createNotification({ text: c('Success').t`Email updated` });
+
+            const emailEnabled = !!userSettings.Email.Reset && !!userSettings.Email.Value;
+
+            if (emailEnabled) {
+                sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
+            }
 
             if (
                 autoStartVerificationFlowAfterSet &&
@@ -75,37 +96,11 @@ export const useUpdateAccountRecovery = () => {
                 setVerifyRecoveryEmailModalOpen(true);
             }
 
-            const emailEnabled = !!userSettings.Email.Reset && !!userSettings.Email.Value;
-
-            if (emailEnabled) {
-                sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
-            }
-
             return userSettings;
-        };
-        if (!nextEmail && !accountRecoveryData.emailRecovery.canDisable) {
-            showRecoveryContactWarning(true);
-            return;
-        }
-        if (
-            !ignoreConfirm &&
-            !nextEmail &&
-            (accountRecoveryData.emailRecovery.hasReset || accountRecoveryData.emailRecovery.hasNotify)
-        ) {
-            setConfirmRemoveEmailModal(true);
-            return;
-        }
-        if (isSubmittingEmailRef.current) {
-            return;
-        }
-        isSubmittingEmailRef.current = true;
-
-        const promise = update().finally(() => {
+        } finally {
+            setLoadingEmail(false);
             isSubmittingEmailRef.current = false;
-        });
-        withLoadingEmail(promise).catch(noop);
-        await promise;
-        onSuccess?.();
+        }
     };
 
     const handleChangePhoneValue = async ({
@@ -119,9 +114,28 @@ export const useUpdateAccountRecovery = () => {
         persistPasswordScope?: boolean;
         ignoreConfirm?: boolean;
     }) => {
-        const update = async () => {
+        if (!nextPhone && !accountRecoveryData.phoneRecovery.canDisable) {
+            showRecoveryContactWarning(true);
+            throw new Error("Can't disable phone recovery");
+        }
+        if (!ignoreConfirm && !nextPhone && accountRecoveryData.phoneRecovery.hasReset) {
+            setConfirmRecoveryPhoneModal(true);
+            throw new Error('Confirm removal');
+        }
+        if (isSubmittingPhoneRef.current) {
+            throw new Error('Already submitting');
+        }
+        try {
+            setLoadingPhone(true);
+            isSubmittingPhoneRef.current = true;
+
             const userSettings = await dispatch(updateRecoveryPhoneValue({ value: nextPhone, persistPasswordScope }));
             createNotification({ text: c('Success').t`Phone number updated` });
+
+            const phoneEnabled = !!userSettings.Phone.Reset && !!userSettings.Phone.Value;
+            if (phoneEnabled) {
+                sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
+            }
 
             if (
                 autoStartVerificationFlowAfterSet &&
@@ -132,33 +146,11 @@ export const useUpdateAccountRecovery = () => {
                 setVerifyRecoveryPhoneModalOpen(true);
             }
 
-            const phoneEnabled = !!userSettings.Phone.Reset && !!userSettings.Phone.Value;
-            if (phoneEnabled) {
-                sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
-            }
-
             return userSettings;
-        };
-
-        if (!nextPhone && !accountRecoveryData.phoneRecovery.canDisable) {
-            showRecoveryContactWarning(true);
-            return;
+        } finally {
+            setLoadingPhone(false);
+            isSubmittingPhoneRef.current = false;
         }
-        if (!ignoreConfirm && !nextPhone && accountRecoveryData.phoneRecovery.hasReset) {
-            setConfirmRecoveryPhoneModal(true);
-            return;
-        }
-        if (isSubmittingPhoneRef.current) {
-            return;
-        }
-        isSubmittingPhoneRef.current = true;
-        const promise = update()
-            .catch(noop)
-            .finally(() => {
-                isSubmittingPhoneRef.current = false;
-            });
-        withLoadingPhone(promise).catch(noop);
-        return promise;
     };
 
     const handleChangePasswordEmailToggle = async (value: number) => {
@@ -219,7 +211,7 @@ export const useUpdateAccountRecovery = () => {
                     hasNotify={accountRecoveryData.emailRecovery.hasNotify}
                     {...confirmRemoveEmailProps}
                     onConfirm={() => {
-                        return handleChangeEmailValue({ value: '', ignoreConfirm: true });
+                        handleChangeEmailValue({ value: '', ignoreConfirm: true }).catch(noop);
                     }}
                 />
             )}
@@ -233,7 +225,7 @@ export const useUpdateAccountRecovery = () => {
                 <ConfirmRemovePhoneModal
                     {...confirmRecoveryPhoneProps}
                     onConfirm={() => {
-                        return handleChangePhoneValue({ value: '', ignoreConfirm: true });
+                        handleChangePhoneValue({ value: '', ignoreConfirm: true }).catch(noop);
                     }}
                 />
             )}
@@ -257,7 +249,7 @@ export const useUpdateAccountRecovery = () => {
                 emailData: accountRecoveryData.emailRecovery,
                 loading: loadingEmail,
                 onSubmit: (value: string) => {
-                    return handleChangeEmailValue({ value: value });
+                    handleChangeEmailValue({ value: value }).catch(noop);
                 },
                 onVerify: () => {
                     setVerifyRecoveryEmailModalOpen(true);
@@ -277,7 +269,7 @@ export const useUpdateAccountRecovery = () => {
                 phoneData: accountRecoveryData.phoneRecovery,
                 loading: loadingPhone,
                 onSubmit: (value: string) => {
-                    return handleChangePhoneValue({ value: value });
+                    handleChangePhoneValue({ value: value }).catch(noop);
                 },
                 onVerify: () => {
                     setVerifyRecoveryPhoneModalOpen(true);
