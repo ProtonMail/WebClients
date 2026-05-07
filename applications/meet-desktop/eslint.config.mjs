@@ -13,6 +13,13 @@ export default defineConfig(
     importPlugin.flatConfigs.typescript,
     {
         languageOptions: {
+            parserOptions: {
+                // Required because lint-staged can invoke ESLint with files from multiple
+                // sibling Electron apps in a single run; without this, `@typescript-eslint/parser`
+                // can't disambiguate between candidate roots and fails with a parsing error.
+                // See https://tseslint.com/parser-tsconfigrootdir
+                tsconfigRootDir: import.meta.dirname,
+            },
             globals: {
                 ...globals.browser,
                 ...globals.node,
