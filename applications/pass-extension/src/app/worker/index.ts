@@ -32,12 +32,11 @@ if (typeof browser !== 'undefined') {
             .filter((locale) => locale !== 'en_US')
             .map((locale) => `chunk.locales/${locale}-json.js`);
 
+        const passChunks = ['chunk.pass-core.main.js'];
+        const cryptoChunks = ['chunk.crypto-worker-api.js', ...Object.values(CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP)];
         const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
 
-        const cryptoChunks = Object.values(CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP);
-
-        const chunks = localeChunks.concat(cryptoChunks).concat(extraChunks);
-
+        const chunks = localeChunks.concat(passChunks).concat(cryptoChunks).concat(extraChunks);
         globalScope.oninstall = () => {
             safeCall(() => importScripts(...chunks.map((path) => browser.runtime.getURL(path))))();
             /* In order to alleviate MV3 service worker potentially ending up
