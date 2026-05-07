@@ -106,7 +106,10 @@ impl Autotype {
 #[napi]
 pub mod msix_updater {
     #[napi]
-    pub async fn install_update(package_uri: String) -> napi::Result<()> {
+    pub async fn install_update(
+        package_uri: String,
+        on_progress: napi::threadsafe_function::ThreadsafeFunction<u32>,
+    ) -> napi::Result<()> {
         #[cfg(windows)]
         {
             use super::updater;
@@ -117,7 +120,7 @@ pub mod msix_updater {
 
             // Install the update (spawn blocking since Windows APIs are synchronous)
             tokio::task::spawn_blocking(move || {
-                updater::install_update(package_uri).map_err(|e| napi::Error::from_reason(e.to_string()))
+                updater::install_update(package_uri, on_progress).map_err(|e| napi::Error::from_reason(e.to_string()))
             })
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))??;
@@ -128,6 +131,7 @@ pub mod msix_updater {
         #[cfg(not(windows))]
         {
             let _ = package_uri; // Avoid unused variable warning
+            let _ = on_progress; // Avoid unused variable warning
             Err(napi::Error::from_reason("MSIX updates are only supported on Windows"))
         }
     }

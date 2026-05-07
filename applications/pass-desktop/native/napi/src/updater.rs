@@ -1,8 +1,9 @@
 use anyhow::{bail, Result};
+use napi::threadsafe_function::{ThreadsafeFunction, ThreadsafeFunctionCallMode};
 use windows::{
     core::{HSTRING, PCWSTR},
     Foundation::Uri,
-    Management::Deployment::{AddPackageOptions, PackageManager},
+    Management::Deployment::{AddPackageOptions, DeploymentProgress, PackageManager},
     Win32::System::Recovery::{RegisterApplicationRestart, REGISTER_APPLICATION_RESTART_FLAGS},
 };
 
@@ -18,7 +19,7 @@ pub fn register_for_restart() -> Result<String> {
 }
 
 // Install an MSIX update from the given package URI
-pub fn install_update(package_uri: String) -> Result<()> {
+pub fn install_update(package_uri: String, on_progress: ThreadsafeFunction<u32>) -> Result<()> {
     let package_manager = PackageManager::new()?;
     let uri = Uri::CreateUri(&HSTRING::from(&package_uri))?;
 
@@ -27,10 +28,17 @@ pub fn install_update(package_uri: String) -> Result<()> {
     options.SetDeferRegistrationWhenPackagesAreInUse(true)?;
 
     let operation = package_manager.AddPackageByUriAsync(&uri, &options)?;
-    let result = operation.get()?;
-    let is_registered = result.IsRegistered()?;
 
-    if is_registered {
+    operation.SetProgress(&move |_, progress: &Option<DeploymentProgress>| {
+        if let Some(p) = progress {
+            on_progress.call(Ok(p.percentage), ThreadsafeFunctionCallMode::NonBlocking);
+        }
+        Ok(())
+    })?;
+
+    let result = operation.get()?;
+
+    if result.IsRegistered()? {
         Ok(())
     } else {
         bail!("Failed to install update:\n{}", result.ErrorText()?)

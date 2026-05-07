@@ -1,6 +1,18 @@
-import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
+import {
+    BrowserWindow,
+    Menu,
+    type Session,
+    Tray,
+    app,
+    autoUpdater,
+    nativeImage,
+    nativeTheme,
+    session,
+    shell,
+} from 'electron';
 import { join } from 'path';
 
+import { UpdateStatus } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -12,6 +24,10 @@ import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
+import { setTagCookie } from './lib/updater/helpers';
+import { setupUpdaterMock } from './lib/updater/mock';
+import { getUpdateStore, setUpdateStore } from './lib/updater/store';
+import { startUpdater } from './lib/updater/updater';
 import { userAgent } from './lib/user-agent';
 import { onHideWindow } from './lib/window';
 import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
@@ -19,7 +35,6 @@ import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
 import type { PassElectronContext } from './types';
-import { setTagCookie, updateElectronApp } from './update';
 import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
@@ -99,7 +114,9 @@ const createSession = () => {
 
     secureSession.setUserAgent(userAgent());
 
-    void setTagCookie(secureSession);
+    void setTagCookie(secureSession, getUpdateStore().beta);
+
+    if (!isProdEnv()) setupUpdaterMock(secureSession);
 
     return secureSession;
 };
@@ -313,7 +330,7 @@ app.addListener('before-quit', () => (ctx.quitting = true));
 
 await createWindow(ctx.session);
 
-updateElectronApp(ctx.session);
+startUpdater(ctx.session);
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -325,5 +342,11 @@ app.addListener('will-finish-launching', () => isWindows() && app.setAppUserMode
 app.addListener('will-quit', async (event) => {
     event.preventDefault();
     await cleanup();
-    app.exit(0);
+    if (isMac() && getUpdateStore().status === UpdateStatus.UpdateReady) {
+        logger.log('[Update] Installing update on quit');
+        setUpdateStore({ status: UpdateStatus.Idle });
+        autoUpdater.quitAndInstall();
+    } else {
+        app.exit(0);
+    }
 });
