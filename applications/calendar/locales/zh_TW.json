@@ -5264,6 +5264,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每個代碼都只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -5591,6 +5594,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "召集人先前更新的事件將會保留。"
       ],
+      "On public WiFi networks": [
+        "於公用 WiFi 網路上"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
@@ -5702,6 +5708,9 @@
       "Primary": [
         "主要"
       ],
+      "Privacy by default": [
+        "隱私權為根本"
+      ],
       "Range already exists.": [
         "範圍已存在"
       ],
@@ -5725,6 +5734,9 @@
       ],
       "Saving event": [
         "正在儲存活動"
+      ],
+      "Scan the QR code with your mobile device": [
+        "透過行動裝置掃描此 QR Code"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
@@ -7027,6 +7039,9 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
+      ],
+      "Enforcing 2FA for organizations": [
+        "強制貴組織雙重驗證"
       ],
       "How to add users": [
         "如何新增使用者"
@@ -8757,6 +8772,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
     "Option": {
@@ -8987,6 +9005,9 @@
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "包含 ${ rate }% 稅金"
       ],
       "Including ${ rate }% taxes: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金：${ taxAmountElement }"
@@ -9275,6 +9296,9 @@
       "Last name": [
         "姓"
       ],
+      "Leave a note for all participants": [
+        "給全部參與者留下註記"
+      ],
       "Name": [
         "名稱"
       ],
@@ -9319,6 +9343,9 @@
       ],
       "Select": [
         "選取"
+      ],
+      "Select a provider": [
+        "選擇一個供應商"
       ],
       "Select a reason": [
         "選取理由"
@@ -9365,6 +9392,9 @@
     "plus_block": {
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "保持 ${ currentPlanTitle } 方案"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
@@ -10099,6 +10129,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "取得 500 GB 以安全地儲存您的檔案和照片"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "取得存取在110 多個國家提供極速 VPN 伺服器"
