@@ -118,8 +118,18 @@ export const usePublicLink = (): UsePublicLinkResult => {
                 passwordRef.current = newCustomPassword;
             }
 
+            if (!window.location.hash && !passwordRef.current) {
+                setIsPasswordNeeded(true);
+                setIsLoading(false);
+                return;
+            }
+
+            const sdkUrl = window.location.hash
+                ? window.location.href
+                : `${window.location.href}#${passwordRef.current}`;
+
             try {
-                const publicLinkInfo = await drive.experimental.getPublicLinkInfo(window.location.href);
+                const publicLinkInfo = await drive.experimental.getPublicLinkInfo(sdkUrl);
 
                 if (publicLinkInfo.isCustomPasswordProtected && !passwordRef.current) {
                     setIsPasswordNeeded(true);
@@ -127,8 +137,8 @@ export const usePublicLink = (): UsePublicLinkResult => {
                 }
 
                 const maybeNode = await loadRootNode(
-                    window.location.href,
-                    passwordRef.current || undefined,
+                    sdkUrl,
+                    !window.location.hash ? undefined : passwordRef.current,
                     !authentication.getUID()
                 );
 
