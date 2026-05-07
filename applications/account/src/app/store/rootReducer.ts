@@ -10,6 +10,7 @@ import {
     passwordPoliciesReducer,
     paymentMethodsReducer,
     retentionPoliciesReducer,
+    safetyReviewTelemetryReducer,
     samlReducer,
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
@@ -42,6 +43,7 @@ export const rootReducer = combineReducers({
     ...retentionPoliciesReducer,
     ...organizationRolesReducer,
     ...appNameReducer,
+    ...safetyReviewTelemetryReducer,
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;
