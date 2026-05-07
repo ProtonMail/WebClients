@@ -310,6 +310,9 @@
       "Do not show again when I press": [
         "No volver a mostrar al presionar"
       ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
       ],
@@ -2047,10 +2050,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
