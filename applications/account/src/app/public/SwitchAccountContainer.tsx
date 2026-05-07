@@ -7,14 +7,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { OnLoginCallback } from '@proton/components';
-import {
-    ConfirmSignOutModal,
-    SkeletonLoader,
-    useErrorHandler,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
-import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
+import { SkeletonLoader, useErrorHandler, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -43,6 +36,8 @@ import noop from '@proton/utils/noop';
 
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
+import type { ConfirmSignoutModalProps } from './ConfirmSignOutModal';
+import { ConfirmSignOutModal } from './ConfirmSignOutModal';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -195,9 +190,11 @@ const SwitchAccountContainer = ({
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
     const validRef = useRef(false);
-    const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
-    const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
-    const [tmpSessions, setTmpSessions] = useState<ActiveSession[]>([]);
+    const [confirmSignOutModalProps, setConfirmSignOutModalOpen, renderConfirmSignOutModal] = useModalState();
+    const [tmpConfirmSignOutState, setTmpConfirmSignOutState] = useState<{
+        confirmType: ConfirmSignoutModalProps['confirmType'];
+        sessions: ActiveSession[];
+    }>({ confirmType: 'single', sessions: [] });
 
     useEffect(() => {
         if (!activeSessions) {
@@ -229,16 +226,16 @@ const SwitchAccountContainer = ({
     }, []);
 
     const handleSignOutMultiple = useCallback((activeSessions: ActiveSession[], type: 'all' | 'single') => {
-        setTmpSessions(activeSessions);
+        let confirmType: (typeof tmpConfirmSignOutState)['confirmType'];
         if (activeSessions.some((session) => getHasRecoveryMessage(session.remote.UserID))) {
-            setConfirmSignoutModal(true);
-            return;
+            confirmType = 'recoveryMessage';
+        } else if (type === 'all' && activeSessions.length > 1) {
+            confirmType = 'all';
+        } else {
+            confirmType = 'single';
         }
-        if (type === 'all') {
-            setOpenSignOutAllPrompt(true);
-            return;
-        }
-        return handleSignOut(activeSessions, false);
+        setTmpConfirmSignOutState({ sessions: activeSessions, confirmType });
+        setConfirmSignOutModalOpen(true);
     }, []);
 
     const handleClickSession = async (localID: number) => {
@@ -346,8 +343,9 @@ const SwitchAccountContainer = ({
                     <Scroll>{inner()}</Scroll>
                 </div>
                 <div className="w-full text-center mt-7 mb-2">
-                    <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>{c('Action')
-                        .t`Add ${BRAND_NAME} Account`}</Button>
+                    <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>
+                        {c('Action').t`Add ${BRAND_NAME} Account`}
+                    </Button>
                 </div>
                 <div className="w-full text-center mb-2">
                     <Button
@@ -360,20 +358,17 @@ const SwitchAccountContainer = ({
                         }}
                     >{c('Action').t`Sign out of all accounts`}</Button>
                 </div>
-                {renderConfirmSignoutModal && (
+                {renderConfirmSignOutModal && (
                     <ConfirmSignOutModal
+                        confirmType={tmpConfirmSignOutState.confirmType}
                         onSignOut={(clearData) => {
-                            handleSignOut(tmpSessions, clearData);
+                            handleSignOut(tmpConfirmSignOutState.sessions, clearData);
                         }}
-                        {...confirmSignoutModal}
-                    />
-                )}
-                {renderOpenSignOutAllPrompt && (
-                    <ConfirmSignOutAllModal
-                        onSignOut={() => {
-                            handleSignOut(tmpSessions, false);
+                        {...confirmSignOutModalProps}
+                        onExit={() => {
+                            setTmpConfirmSignOutState({ sessions: [], confirmType: 'single' });
+                            confirmSignOutModalProps.onExit();
                         }}
-                        {...openSignOutAllPrompt}
                     />
                 )}
             </Content>
