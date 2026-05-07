@@ -33,7 +33,7 @@ export const SafetyReviewCta = ({
     }
     return (
         <SafetyReviewCtaPortal footerEl={footerEl}>
-            <div className="flex flex-row flex-nowrap gap-2 justify-center">
+            <div className="safety-review-cta-container flex flex-row flex-nowrap gap-2 justify-center">
                 <Button
                     fullWidth
                     pill
