@@ -5,7 +5,7 @@ import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc
 
 import { EmptyViewWrapper } from '../../EmptyView/EmptyViewWrapper';
 
-export const NewsletterSubscriptionViewPlaceholder = () => {
+export const NewsletterSubscriptionViewPlaceholder = ({ loading }: { loading: boolean }) => {
     const theme = useTheme();
 
     return (
@@ -17,8 +17,12 @@ export const NewsletterSubscriptionViewPlaceholder = () => {
                 }),
             }}
             height={128}
-            title={c('Title').t`No newsletters found`}
-            description={c('Labels').t`You don't have any newsletters or mailing list subscriptions.`}
+            title={loading ? c('Title').t`Loading...` : c('Title').t`No newsletters found`}
+            description={
+                loading
+                    ? c('Labels').t`Loading your newsletter subscriptions...`
+                    : c('Labels').t`You don't have any newsletters or mailing list subscriptions.`
+            }
         />
     );
 };
