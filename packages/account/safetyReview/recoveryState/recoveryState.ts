@@ -27,11 +27,11 @@ export type RecoveryItems = [
         data: { isVerified: boolean; hasValue: boolean; hasReset: boolean; value: string };
     },
     GenericRecoveryItem<'deviceRecovery'>,
-    GenericRecoveryItem<'recoveryFile'>,
     GenericRecoveryItem<'recoveryContacts'>,
     GenericRecoveryItem<'recoveryPhrase'>,
     GenericRecoveryItem<'signedInReset'>,
     GenericRecoveryItem<'qrCodeSignIn'>,
+    GenericRecoveryItem<'recoveryFile'>,
     GenericRecoveryItem<'emergencyContacts'>,
 ];
 
@@ -134,15 +134,6 @@ export const selectRecoveryState = createSelector(
                 countsTowardScore: hasPerfectPasswordResetState,
             },
             {
-                id: 'recoveryFile',
-                isAvailable: recoveryFileData.isRecoveryFileAvailable,
-                isEnabled:
-                    recoveryFileData.isRecoveryFileAvailable &&
-                    !recoveryFileData.hasOutdatedRecoveryFile &&
-                    recoveryFileData.recoverySecrets.length > 0,
-                countsTowardScore: hasPerfectPasswordResetState,
-            },
-            {
                 id: 'recoveryContacts',
                 isAvailable: isRecoveryContactsAvailable,
                 isEnabled: isRecoveryContactsAvailable && outgoingDelegatedAccess.recoveryContacts.items.length > 0,
@@ -163,6 +154,15 @@ export const selectRecoveryState = createSelector(
                 id: 'qrCodeSignIn',
                 isAvailable: true,
                 isEnabled: !userSettings?.Flags.EdmOptOut,
+            },
+            {
+                id: 'recoveryFile',
+                isAvailable: recoveryFileData.isRecoveryFileAvailable,
+                isEnabled:
+                    recoveryFileData.isRecoveryFileAvailable &&
+                    !recoveryFileData.hasOutdatedRecoveryFile &&
+                    recoveryFileData.recoverySecrets.length > 0,
+                countsTowardScore: hasPerfectPasswordResetState,
             },
             {
                 id: 'emergencyContacts',
