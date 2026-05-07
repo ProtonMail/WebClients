@@ -43,7 +43,6 @@
     --interaction-default-hover: rgb(200 209 214 / 0.2);
     --interaction-default-active: rgb(200 209 214 / 0.45);
 
-    --shadow-primary-color: 118 125 255;
     --shadow-norm-opacity: 0.1;
     --shadow-raised-opacity: 0.1;
     --shadow-lifted-opacity: 0.16;
@@ -53,7 +52,9 @@
     /* Optional colors */
 
     --optional-scrollbar-thumb-color: #d1cfcd;
-
+    
+    --optional-shadow-primary-color: 118 125 255;
+    
     /* Reset because prominent part overrides those colors */
     --optional-link-norm: #5B63F6;
     --optional-link-hover: #4449E4;

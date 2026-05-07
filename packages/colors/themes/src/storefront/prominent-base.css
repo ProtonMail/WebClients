@@ -37,7 +37,6 @@
     --interaction-default-hover: rgb(74 54 143 / 0.3);
     --interaction-default-active: rgb(74 57 143 / 0.5);
 
-    --shadow-primary-color: 109 74 255;
     --shadow-norm-opacity: 0.32;
     --shadow-raised-opacity: 0.35;
     --shadow-lifted-opacity: 0.4;
@@ -57,4 +56,6 @@
 
     --optional-promotion-text-color: white;
     --optional-promotion-text-weak: #C1B2FF;
+
+    --optional-shadow-primary-color: 109 74 255;
 }
