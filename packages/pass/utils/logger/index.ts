@@ -1,10 +1,7 @@
+/// <reference path="../../globals.d.ts" />
 import log from 'loglevel';
 
-/** re-import the globals in case any pass code
- * is loaded outside of our build pipeline */
 import noop from '@proton/utils/noop';
-
-import '../../globals.d';
 
 export const logId = (id: string) =>
     id.length > 10 ? `[${id.slice(0, 5)}…${id.slice(id.length - 5, id.length)}]` : `[${id}]`;
