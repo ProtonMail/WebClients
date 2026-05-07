@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { Button } from '@proton/atoms/Button/Button';
-import { useMyCountry, useSecurityCheckup } from '@proton/components';
+import { useMyCountry } from '@proton/components';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
 import AccountLoaderPage from '../../../../content/AccountLoaderPage';
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
@@ -16,9 +17,6 @@ import { phoneIcon } from '../../methodIcons';
 
 const SetPhoneContainer = () => {
     const history = useHistory();
-
-    const { securityState } = useSecurityCheckup();
-    const { phone } = securityState;
 
     const accountRecovery = useUpdateAccountRecovery();
     const defaultCountry = useMyCountry();
@@ -57,14 +55,19 @@ const SetPhoneContainer = () => {
                 }}
                 {...accountRecovery.recoveryPhone.props}
                 onSubmit={async (value) => {
-                    await accountRecovery.recoveryPhone.handleChangePhoneValue({ value, persistPasswordScope: true });
+                    try {
+                        const userSettings = await accountRecovery.recoveryPhone.handleChangePhoneValue({
+                            value,
+                            persistPasswordScope: true,
+                        });
 
-                    if (phone.verified) {
-                        history.push(SECURITY_CHECKUP_PATHS.ROOT);
-                        return;
-                    }
+                        if (userSettings.Phone.Status === SETTINGS_STATUS.VERIFIED) {
+                            history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                            return;
+                        }
 
-                    history.push(`${SECURITY_CHECKUP_PATHS.VERIFY_PHONE}?setup=1`);
+                        history.push(`${SECURITY_CHECKUP_PATHS.VERIFY_PHONE}?setup=1`);
+                    } catch {}
                 }}
             />
         </SecurityCheckupMain>
