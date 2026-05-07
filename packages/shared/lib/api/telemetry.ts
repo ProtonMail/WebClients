@@ -16,6 +16,7 @@ export enum TelemetryMeasurementGroups {
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     calendarVideoConferencing = 'calendar.web.video_conferencing',
     accountCancellation = 'account.web.cancellation',
+    accountCancellationFeedbackFirst = 'account.web.cancellation_feedback_first',
     settingsHeartBeat = 'any.web.settings_heart_beat',
     calendarSettingsHeartBeat = 'any.web.calendar_settings_heart_beat',
     /** Not only calendar scope because party crasher on mail and drawer */
@@ -177,6 +178,13 @@ export enum TelemetryAccountCancellationEvents {
     resubscribeModal = 'resubscribe_modal',
     dashboardReactivate = 'dashboard_reactivate',
     upsellModal = 'upsell_modal',
+}
+
+export enum TelemetryAccountCancellationFlowFeedbackEvents {
+    startCancellation = 'start_cancellation',
+    feedbackStep = 'feedback_step',
+    secondStep = 'second_step',
+    confirmCancellation = 'confirm_cancellation',
 }
 
 export enum TelemetryAccountOrganizationLogoUploadEvents {
@@ -505,7 +513,8 @@ export type TelemetryEvents =
     | TelemetryListSetting
     | TelemetryAppSwitcher
     | TelemetryESMigrationToolEvents
-    | TelemetryUnauthLost2FAEvents;
+    | TelemetryUnauthLost2FAEvents
+    | TelemetryAccountCancellationFlowFeedbackEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

@@ -18,6 +18,7 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useFeedbackFirstCancellationFlow } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
+import { useFeedbackFirstTelemetry } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstTelemetry';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
@@ -37,6 +38,8 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const { referrerRewardAmount } = referralInfo.uiData;
     const isActiveReferralTrial = isReferralTrial(subscription);
 
+    const { startCancellation } = useFeedbackFirstTelemetry();
+
     if (loadingCancelSubscription) {
         return null;
     }
@@ -46,6 +49,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
             void cancelSubscription({});
         } else if (feedbackFirstB2BAccess || feedbackFirstB2CAccess) {
             startFeedbackFirstFlow();
+            startCancellation();
         } else if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
             sendStartCancellationSectionReport();
