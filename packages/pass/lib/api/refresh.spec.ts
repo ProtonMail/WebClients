@@ -1,6 +1,7 @@
 import { AuthMode } from '@proton/pass/types';
 import { RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import * as time from '@proton/shared/lib/helpers/promise';
 
 import { refreshHandlerFactory } from './refresh';
@@ -170,15 +171,13 @@ describe('Refresh handlers', () => {
     });
 
     test('should not retry if offline error', async () => {
-        const offlineError = new Error();
-        offlineError.name = 'OfflineError';
         getAuth.mockReturnValue({
             type: AuthMode.TOKEN,
             AccessToken: 'access-000',
             UID: 'id-000',
             RefreshToken: 'refresh-000',
         });
-        call.mockRejectedValueOnce(offlineError);
+        call.mockRejectedValueOnce(createOfflineError({}));
 
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await expect(refresh(getMockResponse(), {})).rejects.toThrow();
