@@ -57,9 +57,11 @@ const contextBridgeApi: ContextBridgeApi = {
     openContextMenu: (items) => invoke('contextMenu:open', items),
 
     /* update system */
-    getBetaOptIn: () => invoke('update:getBetaOptIn'),
-    setBetaOptIn: (value) => invoke('update:setBetaOptIn', value),
+    getUpdateStore: () => invoke('update:getUpdateStore'),
+    setUpdateStore: (update) => invoke('update:setUpdateStore', update),
     checkForUpdates: () => invoke('update:checkNow'),
+    restartToUpdate: () => invoke('update:restartToUpdate'),
+    onUpdateStoreChange: (callback) => handler('update:onUpdateStoreChange', callback),
 
     /* native messaging */
     onNmRequest: (callback) => handler('nm:request', callback),
