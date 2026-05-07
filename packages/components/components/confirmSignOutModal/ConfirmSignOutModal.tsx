@@ -30,7 +30,7 @@ interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onSignOut: (clearData: boolean) => void;
 }
 
-const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
+const ConfirmSignOutModal = ({ onSignOut, ...rest }: Props) => {
     const [clearData, setClearData] = useState(false);
 
     return (
@@ -41,12 +41,12 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                     color="norm"
                     onClick={() => {
                         onSignOut(clearData);
-                        onClose?.();
+                        rest.onClose?.();
                     }}
                 >
                     {c('Action').t`Sign out`}
                 </Button>,
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
         >
