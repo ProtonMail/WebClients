@@ -126,9 +126,6 @@
       "Cancel subscription": [
         "सदस्यता रद्द करें"
       ],
-      "Cancel upload": [
-        "अपलोड रद्द करें"
-      ],
       "Change": [
         "बदलें"
       ],
@@ -563,15 +560,6 @@
       "Open navigation": [
         "नेविगेशन खोलें"
       ],
-      "Pause all": [
-        "सब रोकें"
-      ],
-      "Pause download": [
-        "डाउनलोड रोकें"
-      ],
-      "Pause upload": [
-        "अपलोड रोकें"
-      ],
       "Pay": [
         "भुगतान करें"
       ],
@@ -632,9 +620,6 @@
       "Remove from favorites": [
         "फेवरेट्स से हटाएं"
       ],
-      "Remove from this list": [
-        "इस सूची से हटाएं"
-      ],
       "Remove gift code": [
         "उपहार कोड हटाएं"
       ],
@@ -680,15 +665,6 @@
       "Reset to default": [
         "डिफ़ॉल्ट पर रीसेट करें"
       ],
-      "Restart all": [
-        "सब वापस शुरु करें"
-      ],
-      "Restart download": [
-        "डाउनलोड फिर से शुरू करें"
-      ],
-      "Restart upload": [
-        "अपलोड फिर से शुरू करें"
-      ],
       "Restore": [
         "रीस्टोर करें"
       ],
@@ -700,15 +676,6 @@
       ],
       "Restore version": [
         "संस्करण वापस लाएं"
-      ],
-      "Resume all": [
-        "सभी जारी रखें"
-      ],
-      "Resume download": [
-        "डाउनलोड जारी रखें"
-      ],
-      "Resume upload": [
-        "अपलोड जारी रखें"
       ],
       "Retry": [
         "वापस कोशिश करें"
@@ -3461,18 +3428,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } डाउनलोड कर रहे हैं",
-        "${ activeDownloadsCount } डाउनलोड कर रहे हैं"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)",
-        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)",
-        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } ईमेल पता",
         "${ addressCount } ईमेल पते"
@@ -3497,10 +3452,6 @@
         "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
         "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } रद्द करा गया",
-        "${ canceledCount } रद्द करे गए"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।",
         "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।"
@@ -3520,27 +3471,11 @@
         "${ contactsLength } संपर्क",
         "${ contactsLength } संपर्क"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } खत्म",
-        "${ doneCount } खत्म"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } डाउनलोड किया गया",
-        "${ doneDownloadsCount } डाउनलोड किए गए"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } अपलोड किया गया",
-        "${ doneUploadsCount } अपलोड किये गए"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store पर ${ DRIVE_APP_NAME }"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store पर ${ DRIVE_APP_NAME }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } असफल",
-        "${ errorCount } असफल"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: पूरे साइज़ का तस्वीर"
@@ -3551,10 +3486,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } रोका गया",
-        "${ pausedCount } रोके गए"
       ],
       "${ photoCount } item": [
         "${ photoCount } आइटम",
@@ -3577,10 +3508,6 @@
         "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
         "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } स्कैन असफल",
-        "${ scanErrorCount } स्कैन असफल"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
@@ -3596,13 +3523,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } छोड़ा गए",
-        "${ skippedCount } छोड़े गए"
-      ],
-      "${ speed }/s": [
-        "${ speed }/सेकेंड"
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
@@ -3774,9 +3694,6 @@
       "Close this screen to exit.": [
         "बाहर निकलने के लिए इस स्क्रीन को बंद करें।"
       ],
-      "Conflict": [
-        "टकराव"
-      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } का इस्तेमाल जारी रखें और ड्राइव बाद में खोलें"
       ],
@@ -3804,9 +3721,6 @@
       ],
       "Create links and share your files with others.": [
         "लिंक बनाएं और अपनी फाइलों को दूसरों के साथ साझा करें।"
-      ],
-      "Creating": [
-        "बन रहा है"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
@@ -3951,9 +3865,6 @@
       "Expired": [
         "समय सीमा समाप्त"
       ],
-      "Failed": [
-        "असफल"
-      ],
       "File \"${ name }\" was deleted during download": [
         "फाइल \"${ name }\" को डाउनलोड करते समय मिटा दिया गया"
       ],
@@ -3968,9 +3879,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "लोगों द्वारा आपके साथ साझा की गई फ़ाइलें और फ़ोल्डर यहां दिखाई देंगे"
-      ],
-      "Finalizing": [
-        "तैयार किया जा रहा है"
       ],
       "finance": [
         "वित्त"
@@ -4065,9 +3973,6 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
-      ],
-      "Initializing": [
-        "शुरु हो रहा है"
       ],
       "Internet connection lost": [
         "इंटरनेट कनेक्शन टूट गया"
@@ -4187,9 +4092,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "अपने नए फ़ोल्डर को नाम दें और उस मूल फ़ोल्डर का चयन करें जिसे आप इसे रखना चाहते हैं। यदि आप किसी मूल फ़ोल्डर का चयन नहीं करते हैं, तो यह नया फ़ोल्डर एक शीर्ष स्तर फ़ोल्डर के रूप में बनाया जाएगा।"
       ],
-      "Network issue": [
-        "नेटवर्क समस्या"
-      ],
       "New": [
         "नया"
       ],
@@ -4222,9 +4124,6 @@
       ],
       "Not a valid URL": [
         "मान्य URL नहीं है"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "सभी फ़ाइलें स्थानांतरित नहीं की जा सकीं। फ़ाइलों को फिर से अपलोड या डाउनलोड करने की कोशिश करें।"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "नोट: डाटा उन डिवाइसों पे भी मौजूद हो सकता है जहा आपने ${ DRIVE_APP_NAME } इंस्टॉल किया है।"
@@ -4353,9 +4252,6 @@
       "Public link": [
         "सार्वजनिक लिंक"
       ],
-      "Queued": [
-        "कतार में"
-      ],
       "Ready to add some photos?": [
         "कुछ तस्वीरें जोड़ने के लिए तैयार हैं?"
       ],
@@ -4391,9 +4287,6 @@
       ],
       "Saving...": [
         "सहेज रहे हैं.."
-      ],
-      "Scan issue": [
-        "समस्या स्कैन करें"
       ],
       "Search cannot be enabled in this browser": [
         "खोज इस ब्राउज़र में सक्षम नहीं कर सकते"
@@ -4455,26 +4348,11 @@
       "Signature check will be ignored": [
         "हस्ताक्षर चेक नज़रअंदाज किया जाएगा"
       ],
-      "Signature issue": [
-        "हस्ताक्षर समस्या"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
-      "Skipped": [
-        "छोड़ा गया"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "कुछ फ़ाइलें डाउनलोड होने में विफल रहीं। फ़ाइलें फिर से डाउनलोड करने की कोशिश करें।"
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "कुछ फ़ाइलें अपलोड होने में विफल रहीं। फ़ाइलें फिर से अपलोड करने की कोशिश करें।"
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "अब आप अपनी कुछ फ़ाइलों तक नहीं पहुंच सकते। अपनी फ़ाइलों तक पहुंच पुनर्स्थापित करें। ${ StartRecoveryButton }"
-      ],
-      "Something went wrong, please try again later.": [
-        "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
@@ -8217,18 +8095,6 @@
       "${ feature } is now active": [
         "${ feature } अब सक्रिय है"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } असफल डाउनलोड",
-        "${ numberOfFailedTransfer.total } असफल डाउनलोड"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } असफल भुगतान",
-        "${ numberOfFailedTransfer.total } असफल भुगतान"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } असफल अपलोड",
-        "${ numberOfFailedTransfer.total } असफल अपलोड"
-      ],
       "Account recovery": [
         "खाता पुनर्प्राप्ति"
       ],
@@ -8240,9 +8106,6 @@
       ],
       "Actions": [
         "एक्शन"
-      ],
-      "Active": [
-        "सक्रिय"
       ],
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"
@@ -8271,9 +8134,6 @@
       ],
       "Albums": [
         "एल्बम"
-      ],
-      "All": [
-        "सभी"
       ],
       "All settings": [
         "सभी सेटिंग"
@@ -8326,9 +8186,6 @@
       ],
       "Clearing data": [
         "डेटा साफ़ करना"
-      ],
-      "Completed": [
-        "पूरा हुआ"
       ],
       "Computers": [
         "कंप्यूटर"
@@ -8484,9 +8341,6 @@
       ],
       "Exporting contacts": [
         "संपर्क निर्यात हो रहे हे"
-      ],
-      "Failed": [
-        "विफल"
       ],
       "File details": [
         "फाइल की जानकारी"

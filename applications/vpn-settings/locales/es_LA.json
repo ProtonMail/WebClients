@@ -92,6 +92,9 @@
       "Add user": [
         "Agregar usuario"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } se ha añadido a la titularidad de grupo"
+      ],
       "Allow": [
         "Permitir"
       ],
@@ -325,9 +328,6 @@
       ],
       "Delete policy": [
         "Eliminar la política"
-      ],
-      "Delete token ${ token.Account }": [
-        "Eliminar token ${ token.Account }"
       ],
       "Delete user": [
         "Eliminar usuario"
@@ -817,6 +817,9 @@
       ],
       "Remove gift code": [
         "Eliminar el código de regalo"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } se ha borrado de la titularidad de grupo"
       ],
       "Rename": [
         "Renombrar"
@@ -1968,9 +1971,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Asistente de migración de ${ BRAND_NAME }"
       ],
-      "App installed": [
-        "Aplicación instalada"
-      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -1991,9 +1991,6 @@
       ],
       "Domain connected": [
         "Dominio conectado"
-      ],
-      "Domain ownership verified": [
-        "Propiedad del dominio verificada"
       ],
       "Estimated size": [
         "Tamaño estimado"
@@ -2016,14 +2013,8 @@
       "Install migration app": [
         "Instalar aplicación de migración"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Consulte qué se puede migrar. Más información"
-      ],
       "Mail": [
         "Correo"
-      ],
-      "Migrate": [
-        "Migrar"
       ],
       "Migrate from Google Workspace": [
         "Migrar desde Google Workspace"
@@ -2041,17 +2032,11 @@
       "Migration status": [
         "Estado de la migración"
       ],
-      "Not started": [
-        "No iniciado"
-      ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
       ],
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente almacenamiento disponible"
-      ],
-      "Organization settings": [
-        "Ajustes de la organización"
       ],
       "Required": [
         "Obligatorio"
@@ -2061,9 +2046,6 @@
       ],
       "Select at least one user to start a migration": [
         "Seleccione al menos un usuario para iniciar una migración"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Seleccione qué desea migrar. Esto se aplicará a todos los usuarios, tanto actuales como futuros. La migración comenzará una vez creadas las cuentas de usuario."
       ],
       "Set up": [
         "Configurar"
@@ -2079,9 +2061,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar."
-      ],
-      "Transfer errors": [
-        "Errores de transferencia"
       ],
       "User": [
         "Usuario"
@@ -17576,6 +17555,9 @@
       "User is a group": [
         "El usuario es un grupo"
       ],
+      "via ${ groupName }": [
+        "vía ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
       ]
@@ -17808,6 +17790,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(vía ${ groupName })"
+      ],
+      "(via group)": [
+        "(vía grupo)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Añada roles delegados a un usuario para otorgarle solo los permisos específicos que necesita, manteniendo el poder de administrador completo separado y su entorno seguro."
       ],

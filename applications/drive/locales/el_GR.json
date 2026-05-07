@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
       ],
-      "Cancel upload": [
-        "Ακύρωση ανεβάσματος"
-      ],
       "Cancel uploads": [
         "Ακύρωση μεταφορτώσεων"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Λήψη για Mac"
       ],
-      "Download for MacOS": [
-        "Λήψη για macOS"
+      "Download for macOS": [
+        "Λήψη για MacOS"
       ],
       "Download for Windows": [
         "Λήψη για Windows"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
-      "Pause all": [
-        "Παύση όλων"
-      ],
-      "Pause download": [
-        "Παύση λήψης"
-      ],
-      "Pause upload": [
-        "Παύση ανεβάσματος"
-      ],
       "Pay": [
         "Πληρωμή"
       ],
@@ -833,9 +821,6 @@
       "Remove from favorites": [
         "Κατάργηση από τα αγαπημένα"
       ],
-      "Remove from this list": [
-        "Κατάργηση από αυτή τη λίστα"
-      ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
@@ -884,15 +869,6 @@
       "Reset to default": [
         "Επαναφορά των προεπιλογών"
       ],
-      "Restart all": [
-        "Επανεκκίνηση όλων"
-      ],
-      "Restart download": [
-        "Επανεκκίνηση λήψης"
-      ],
-      "Restart upload": [
-        "Επανεκκίνηση ανεβάσματος"
-      ],
       "Restore": [
         "Επαναφορά"
       ],
@@ -904,15 +880,6 @@
       ],
       "Restore version": [
         "Επαναφορά έκδοσης"
-      ],
-      "Resume all": [
-        "Συνέχιση όλων"
-      ],
-      "Resume download": [
-        "Συνέχιση λήψης"
-      ],
-      "Resume upload": [
-        "Συνέχιση ανεβάσματος"
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -3549,6 +3516,9 @@
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
+      "Folder not found": [
+        "Ο φάκελος δεν βρέθηκε"
+      ],
       "Forward address is required": [
         "Απαιτείται η διεύθυνση προώθησης"
       ],
@@ -4870,18 +4840,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } κατεβαίνει",
-        "${ activeDownloadsCount } κατεβαίνουν"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } κατεβαίνει (${ downloadProgress }%)",
-        "${ activeDownloadsCount } κατεβαίνουν (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } ανεβαίνει (${ uploadProgress }%)",
-        "${ activeUploadsCount } ανεβαίνουν (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
@@ -4916,10 +4874,6 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } ακυρώθηκε",
-        "${ canceledCount } ακυρώθηκαν"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } από ${ items.length } μεταφορές ολοκληρώθηκαν"
       ],
@@ -4945,18 +4899,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Τα αρχεία ${ DOCS_APP_NAME } και ${ SHEETS_APP_NAME } δεν μπορούν να ληφθούν απευθείας και δε θα συμπεριληφθούν σε αυτή τη λήψη. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο \"Συνέχεια λήψης\"."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } τελείωσε",
-        "${ doneCount } τελείωσαν"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } κατέβηκε",
-        "${ doneDownloadsCount } κατέβηκαν"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } ανέβηκε",
-        "${ doneUploadsCount } ανέβηκαν"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } στο App Store"
       ],
@@ -4965,10 +4907,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } σας προσκάλεσε να συμμετάσχετε στο ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } απέτυχε",
-        "${ errorCount } απέτυχαν"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: εικόνα πλήρους μεγέθους"
@@ -5010,10 +4948,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } σε παύση",
-        "${ pausedCount } σε παύση"
-      ],
       "${ photoCount } item": [
         "${ photoCount } στοιχείο",
         "${ photoCount } στοιχεία"
@@ -5043,10 +4977,6 @@
         "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
         "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } σάρωση απέτυχε",
-        "${ scanErrorCount } σαρώσεις απέτυχαν"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
@@ -5066,13 +4996,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } παραλείφθηκε",
-        "${ skippedCount } παραλείφθηκαν"
-      ],
-      "${ speed }/s": [
-        "${ speed }/δ"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } εγγραφές"
@@ -5365,12 +5288,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Συνεργαστείτε αποτελεσματικά, προστατεύοντας παράλληλα τα δεδομένα των πελατών και της επιχείρησής σας από παραβιάσεις, ransomware και παρακολούθηση."
       ],
-      "Computed hash does not match XAttr": [
-        "Ο υπολογισμένος κατακερματισμός δεν ταιριάζει με το XAttr"
-      ],
-      "Conflict": [
-        "Διένεξη"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
       ],
@@ -5391,6 +5308,9 @@
       ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
+      ],
+      "Could not scan file for malware": [
+        "Δεν ήταν δυνατή η σάρωση του αρχείου για κακόβουλο λογισμικό"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -5417,9 +5337,6 @@
       ],
       "Create links and share your files with others.": [
         "Δημιουργήστε συνδέσμους και μοιραστείτε τα αρχεία σας με άλλους."
-      ],
-      "Creating": [
-        "Δημιουργία"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
@@ -5603,14 +5520,17 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Εξαγωγή αρχείων καταγραφής διαγνωστικών για τεχνική υποστήριξη και αντιμετώπιση προβλημάτων"
       ],
-      "Failed": [
-        "Απέτυχε"
-      ],
       "Feb": [
         "Φεβ"
       ],
       "File \"${ name }\" was deleted during download": [
         "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
+      ],
+      "File could not be scanned": [
+        "Δεν ήταν δυνατή η σάρωση του αρχείου"
+      ],
+      "File flagged as potentially malicious": [
+        "Το αρχείο επισημάνθηκε ως πιθανώς κακόβουλο"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } μεταφορτώθηκε από ${ emailAddress }."
@@ -5623,9 +5543,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Τα αρχεία και οι φάκελοι που έχουν μοιραστεί μαζί σας άλλοι χρήστες θα εμφανίζονται εδώ"
-      ],
-      "Finalizing": [
-        "Γίνεται οριστικοποίηση"
       ],
       "finance": [
         "οικονομικά"
@@ -5774,9 +5691,6 @@
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
-      ],
-      "Initializing": [
-        "Εκκίνηση"
       ],
       "Integrity issues found": [
         "Βρέθηκαν προβλήματα ακεραιότητας"
@@ -5953,9 +5867,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
-      "Network issue": [
-        "Πρόβλημα δικτύου"
-      ],
       "New": [
         "Νέο"
       ],
@@ -5994,9 +5905,6 @@
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Δεν μεταφέρθηκαν όλα τα αρχεία. Δοκιμάστε ξανά να τα ανεβάσετε ή να τα κατεβάσετε."
       ],
       "Not connected": [
         "Μη συνδεδεμένο"
@@ -6191,9 +6099,6 @@
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
-      "Queued": [
-        "Σε αναμονή"
-      ],
       "Ready to add some photos?": [
         "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
@@ -6238,9 +6143,6 @@
       ],
       "Saving...": [
         "Αποθήκευση..."
-      ],
-      "Scan issue": [
-        "Πρόβλημα σάρωσης"
       ],
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
@@ -6332,20 +6234,8 @@
       "Signature check will be ignored": [
         "Ο έλεγχος υπογραφής θα αγνοηθεί"
       ],
-      "Signature issue": [
-        "Πρόβλημα υπογραφής"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
-      ],
-      "Skipped": [
-        "Παραλείφθηκε"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Αποτυχία λήψης ορισμένων αρχείων. Δοκιμάστε ξανά να λάβετε τα αρχεία."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Αποτυχία αποστολής ορισμένων αρχείων. Δοκιμάστε ξανά να ανεβάσετε τα αρχεία."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
@@ -6361,9 +6251,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
-      ],
-      "Something went wrong, please try again later.": [
-        "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
@@ -12132,18 +12019,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } δωρεάν μεταφορτώσεις."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } αποτυχημένη λήψη",
-        "${ numberOfFailedTransfer.total } αποτυχημένες λήψεις"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
-        "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } μεταφόρτωση απέτυχε",
-        "${ numberOfFailedTransfer.total } μεταφορτώσεις απέτυχαν"
-      ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
@@ -12158,9 +12033,6 @@
       ],
       "Actions": [
         "Ενέργειες"
-      ],
-      "Active": [
-        "Ενεργά"
       ],
       "Add a custom logo": [
         "Προσθήκη προσαρμοσμένου λογότυπου"
@@ -12195,9 +12067,6 @@
       ],
       "Albums": [
         "Άλμπουμ"
-      ],
-      "All": [
-        "Όλα"
       ],
       "All settings": [
         "Όλες οι ρυθμίσεις"
@@ -12280,9 +12149,6 @@
       ],
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
-      ],
-      "Completed": [
-        "Ολοκληρωμένα"
       ],
       "Computers": [
         "Υπολογιστές"
@@ -12517,9 +12383,6 @@
       ],
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
-      ],
-      "Failed": [
-        "Αποτυχημένα"
       ],
       "File details": [
         "Λεπτομέρειες αρχείου"
@@ -13223,9 +13086,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Το μήνυμα και το όνομα αρχείου αποθηκεύονται με κρυπτογράφηση μηδενικής πρόσβασης όταν περιλαμβάνονται στο μήνυμα ηλεκτρονικού ταχυδρομείου"
-      ],
-      "New!": [
-        "Νέο!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."

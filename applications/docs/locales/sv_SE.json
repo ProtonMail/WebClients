@@ -90,9 +90,6 @@
       "Apply": [
         "Tillämpa"
       ],
-      "Ask me next time": [
-        "Fråga mig nästa gång"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
         "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
@@ -677,9 +674,6 @@
       ],
       "Save changes": [
         "Spara ändringar"
-      ],
-      "Save preferences": [
-        "Spara preferenser"
       ],
       "Search": [
         "Sök"
@@ -4358,9 +4352,6 @@
       "Continue": [
         "Fortsätt"
       ],
-      "Converting document...": [
-        "Konverterar dokument …"
-      ],
       "Copied to clipboard": [
         "Kopierat till urklipp"
       ],
@@ -4409,9 +4400,6 @@
       ],
       "Creating link to folder": [
         "Skapar länk till mapp"
-      ],
-      "Creating new document...": [
-        "Skapar nytt dokument …"
       ],
       "Current plan": [
         "Nuvarande paket"
@@ -4512,12 +4500,6 @@
       "Enter your own password (as trusted contact).": [
         "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Fel vid konvertering av dokument: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Fel vid laddning av dokument: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Fel vid synkronisering"
       ],
@@ -4580,12 +4562,6 @@
       ],
       "Geoblocking": [
         "Geoblockering"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Skaffa e-postuppdateringar för kommentarer och förslag som läggs till dina dokument."
-      ],
-      "Get Notified About Comments": [
-        "Bli aviserad om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
@@ -4717,17 +4693,11 @@
       "Loading link": [
         "Laddar länk"
       ],
-      "Loading...": [
-        "Laddar in …"
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det verkar som att du är offline. Dokumentet kan inte redigeras när du är offline. Kontrollera din enhets anslutning."
       ],
       "Low Priority": [
         "Låg prioritet"
-      ],
-      "Making a copy...": [
-        "Gör en kopia …"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken",
@@ -4759,9 +4729,6 @@
       ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Inget dokument angivet i URL. Gå tillbaka till ${ DRIVE_APP_NAME } och välj ett dokument."
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -5043,9 +5010,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "URL:en du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj sedan “Kopiera länk“ istället för att kopiera den avkortade URL-texten direkt."
       ],
       "There are no documents in the trash.": [
         "Det finns inga dokument i papperskorgen."
@@ -5651,9 +5615,6 @@
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
-      "Enable email notifications": [
-        "Aktivera e-postaviseringar"
-      ],
       "Encrypt emails": [
         "Kryptera e-post"
       ],
@@ -5701,9 +5662,6 @@
       ],
       "Include application logs in bug report": [
         "Inkludera applikationsloggar i felrapport"
-      ],
-      "Include document name in notification": [
-        "Inkludera dokumentnamn i avisering"
       ],
       "Include message and file name in invite email": [
         "Inkludera meddelande och filnamn i e-postinbjudan"
@@ -8729,9 +8687,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Skapar nytt kalkylblad …"
-      ],
       "Detect automatically": [
         "Upptäck automatiskt"
       ],

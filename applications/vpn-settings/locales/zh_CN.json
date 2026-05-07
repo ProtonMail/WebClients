@@ -326,9 +326,6 @@
       "Delete policy": [
         "删除策略"
       ],
-      "Delete token ${ token.Account }": [
-        "删除令牌 ${ token.Account }"
-      ],
       "Delete user": [
         "删除用户"
       ],
@@ -1951,9 +1948,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } 迁移助手"
       ],
-      "App installed": [
-        "应用已安装"
-      ],
       "Authenticate": [
         "身份验证"
       ],
@@ -1974,9 +1968,6 @@
       ],
       "Domain connected": [
         "域名已连接"
-      ],
-      "Domain ownership verified": [
-        "域名所有权已验证"
       ],
       "Estimated size": [
         "预计大小"
@@ -1999,14 +1990,8 @@
       "Install migration app": [
         "安装迁移应用"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "详细了解可迁移的内容。了解详情"
-      ],
       "Mail": [
         "邮箱"
-      ],
-      "Migrate": [
-        "迁移"
       ],
       "Migrate from Google Workspace": [
         "从 Google Workspace 迁移"
@@ -2023,17 +2008,11 @@
       "Migration status": [
         "迁移状态"
       ],
-      "Not started": [
-        "未开始"
-      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
       "Organization does not have enough storage available": [
         "组织可用存储空间不足"
-      ],
-      "Organization settings": [
-        "组织设置"
       ],
       "Required": [
         "必填"
@@ -2043,9 +2022,6 @@
       ],
       "Select at least one user to start a migration": [
         "请至少选择一位用户以开始迁移"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "请选择您要迁移的内容，这将应用于所有用户（无论是当前创建还是稍后创建）。账户创建后，迁移将开始。"
       ],
       "Set up": [
         "设置"
@@ -2061,9 +2037,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
-      ],
-      "Transfer errors": [
-        "传输错误"
       ],
       "User": [
         "用户"

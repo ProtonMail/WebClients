@@ -144,9 +144,6 @@
       "Cancel trial and pay": [
         "取消試用並付款"
       ],
-      "Cancel upload": [
-        "取消上載"
-      ],
       "Cancel uploads": [
         "取消上傳"
       ],
@@ -483,6 +480,9 @@
       "Go back": [
         "倒退"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "回到相簿 \"${ ellipsedAlbumName }\""
+      ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
       ],
@@ -687,15 +687,6 @@
       "Open navigation": [
         "開啟導覽"
       ],
-      "Pause all": [
-        "全部暫停"
-      ],
-      "Pause download": [
-        "暫停下載"
-      ],
-      "Pause upload": [
-        "暫停上載"
-      ],
       "Pay": [
         "付款"
       ],
@@ -762,9 +753,6 @@
       "Remove from favorites": [
         "從我的最愛移除"
       ],
-      "Remove from this list": [
-        "從此清單中移除"
-      ],
       "Remove gift code": [
         "移除禮品代碼"
       ],
@@ -813,15 +801,6 @@
       "Reset to default": [
         "還原成預設值"
       ],
-      "Restart all": [
-        "全部重新開始"
-      ],
-      "Restart download": [
-        "重新開始下載"
-      ],
-      "Restart upload": [
-        "重新開始上載"
-      ],
       "Restore": [
         "還原"
       ],
@@ -833,15 +812,6 @@
       ],
       "Restore version": [
         "還原版本"
-      ],
-      "Resume all": [
-        "全部恢復"
-      ],
-      "Resume download": [
-        "恢復下載"
-      ],
-      "Resume upload": [
-        "恢復上載"
       ],
       "Retry": [
         "重試"
@@ -3181,6 +3151,9 @@
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
+      "Cannot find move target": [
+        "找不到移動目標"
+      ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
       ],
@@ -4497,17 +4470,11 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } 個下載任務執行中"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } 個下載任務執行中(${ downloadProgress } ％)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 個任務上載中（${ uploadProgress } ％）"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
+      ],
+      "${ albums } album": [
+        "${ albums } 相簿"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -4530,9 +4497,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } 個任務已取消"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 個聯絡人包含多個電子郵件位址。"
       ],
@@ -4551,15 +4515,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'以下載其他檔案。"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } 項已完成"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "已完成 ${ doneDownloadsCount } 個下載任務"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "已完成 ${ doneUploadsCount } 個上載任務"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store的${ DRIVE_APP_NAME }"
       ],
@@ -4569,14 +4524,17 @@
       "${ email } invited you to join ${ albumName }": [
         "${ email }邀請您加入${ albumName }"
       ],
-      "${ errorCount } failed": [
-        "${ errorCount } 個任務失敗"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：低解析度預覽"
+      ],
+      "${ files } file": [
+        "${ files } 個檔案"
+      ],
+      "${ folders } folder": [
+        "${ folders } 個資料夾"
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
@@ -4596,11 +4554,11 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } 個任務已暫停"
-      ],
       "${ photoCount } item": [
         "${ photoCount }項目"
+      ],
+      "${ photos } photo": [
+        "${ photos } 張照片"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -4613,9 +4571,6 @@
       ],
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
-      ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount }掃描失敗"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -4631,12 +4586,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount }略過"
-      ],
-      "${ speed }/s": [
-        "${ speed }/秒"
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
@@ -4827,6 +4776,12 @@
       "Can view and edit": [
         "可檢視和編輯"
       ],
+      "Can view only": [
+        "僅供檢視"
+      ],
+      "Can't rename to same name": [
+        "無法重新命名為相同名稱。"
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -4869,9 +4824,6 @@
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
       ],
-      "Conflict": [
-        "衝突"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "指派通訊錄給群組 ${ contactGroupName }"
       ],
@@ -4913,9 +4865,6 @@
       ],
       "Create links and share your files with others.": [
         "創建連結並與其他人分享您的檔案。"
-      ],
-      "Creating": [
-        "正在創建"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
@@ -5007,6 +4956,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每個代碼都只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -5073,9 +5025,6 @@
       "Expired": [
         "已過期"
       ],
-      "Failed": [
-        "失敗"
-      ],
       "Feb": [
         "二月"
       ],
@@ -5093,9 +5042,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "與他人共享的文件及資料夾會在這裡出現"
-      ],
-      "Finalizing": [
-        "即將完成"
       ],
       "finance": [
         "金融"
@@ -5190,6 +5136,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
+      "In progress": [
+        "進行中"
+      ],
       "In restrictive countries": [
         "在受限制的國家"
       ],
@@ -5207,9 +5156,6 @@
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
-      ],
-      "Initializing": [
-        "正在初始化"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -5370,9 +5316,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
-      "Network issue": [
-        "網路問題"
-      ],
       "New": [
         "加入"
       ],
@@ -5409,9 +5352,6 @@
       "Not a valid URL": [
         "無效的網址"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
-      ],
       "Not connected": [
         "未連線"
       ],
@@ -5435,6 +5375,9 @@
       ],
       "of": [
         "/"
+      ],
+      "On public WiFi networks": [
+        "於公用 WiFi 網路上"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "您的其中一個加密硬碟已被鎖定。這很可能是由於最近一次密碼重設。"
@@ -5586,9 +5529,6 @@
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
-      "Queued": [
-        "待處理"
-      ],
       "Ready to add some photos?": [
         "準備好新增一些照片了嗎?"
       ],
@@ -5613,6 +5553,9 @@
       "Request access, or switch to an account with access.": [
         "要求存取權或切換至有存取權的帳號"
       ],
+      "Requested item doesn't exist anymore": [
+        "要求的檔案已不存在"
+      ],
       "Restore": [
         "還原"
       ],
@@ -5631,14 +5574,17 @@
       "Saving...": [
         "儲存中..."
       ],
-      "Scan issue": [
-        "掃描出現問題"
+      "Scan the QR code with your mobile device": [
+        "透過行動裝置掃描此 QR Code"
       ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
       ],
       "Search Enabled": [
         "搜尋已啟用"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "搜尋已啟用。您現可關閉此對話方塊並搜尋檔案和資料夾。"
       ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
@@ -5703,29 +5649,14 @@
       "Signature check will be ignored": [
         "簽章檢查將會忽略"
       ],
-      "Signature issue": [
-        "簽署問題"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
-      ],
-      "Skipped": [
-        "已略過"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "某些檔案下載失敗，請嘗試重新下載這些檔案。"
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "某些檔案上載失敗，請嘗試重新上載這些檔案。"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您有部份檔案不再能夠存取。請為您的檔案還原存取。${ StartRecoveryButton }"
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "有些網站和串流服務會根據地區限制內容。VPN 能讓您繞過這些限制並自由存取網路。"
-      ],
-      "Something went wrong, please try again later.": [
-        "發生錯誤，請稍後再試。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "開始共享此內容和使用於線上服務。"
@@ -5840,6 +5771,9 @@
       ],
       "This month": [
         "本月"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "此將暫停任何剩餘的上傳及下載。取消上傳將不會儲存在 ${ DRIVE_APP_NAME } 。"
       ],
       "This will permanently delete the file you uploaded.": [
         "此將會永久刪除所有上傳的檔案。"
@@ -5963,6 +5897,9 @@
       ],
       "upgrade your storage": [
         "升級您的儲存"
+      ],
+      "Upload Failed": [
+        "上傳失敗"
       ],
       "Uploaded": [
         "已上載"
@@ -6550,6 +6487,9 @@
       "Delete drive?": [
         "刪除雲端硬碟?"
       ],
+      "Delete link and remove access for everyone": [
+        "刪除連結並移除所有人的存取權"
+      ],
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
       ],
@@ -6958,6 +6898,9 @@
       "Viewer": [
         "檢視者"
       ],
+      "Visible columns:": [
+        "可見欄位："
+      ],
       "Vulnerable": [
         "具有風險"
       ],
@@ -7071,6 +7014,9 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
+      ],
+      "Enforcing 2FA for organizations": [
+        "強制貴組織雙重驗證"
       ],
       "How to add users": [
         "如何新增使用者"
@@ -8439,6 +8385,9 @@
       "\"${ ellipsedName }\" failed to be moved": [
         "「${ ellipsedName }」移動失敗"
       ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "檔案 \"${ ellipsedName }\" 未能從垃圾中被還原"
+      ],
       "\"${ ellipsedName }\" successfully moved": [
         "「${ ellipsedName }」已成功移動"
       ],
@@ -8991,6 +8940,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
     "Option": {
@@ -9003,6 +8955,9 @@
       "Create new group": [
         "創建新群組"
       ],
+      "Expected structure": [
+        "期待的結構"
+      ],
       "Ignore group": [
         "忽略群組"
       ],
@@ -9014,6 +8969,9 @@
       ],
       "Select JSON file": [
         "選擇 JSON 檔案"
+      ],
+      "Verify thumbnails": [
+        "驗證縮圖"
       ]
     },
     "Option group label": {
@@ -9169,6 +9127,9 @@
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "包含 ${ rate }% 稅金"
       ],
       "Including ${ rate }% taxes: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金：${ taxAmountElement }"
@@ -9484,6 +9445,9 @@
       "Select": [
         "選取"
       ],
+      "Select a provider": [
+        "選擇一個供應商"
+      ],
       "Select a reason": [
         "選取理由"
       ],
@@ -9524,6 +9488,9 @@
     "plus_block": {
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "保持 ${ currentPlanTitle } 方案"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
@@ -10195,6 +10162,9 @@
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "取得 500 GB 以安全地儲存您的檔案和照片"
+      ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "取得存取在110 多個國家提供極速 VPN 伺服器"
       ],
@@ -10743,6 +10713,9 @@
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 分享"
       ],
+      "Your favorited photos will appear here": [
+        "您喜愛的照片會顯示在這裡"
+      ],
       "Your screenshots will appear here": [
         "您的螢幕擷取畫面會顯示在這裡"
       ],
@@ -10951,6 +10924,9 @@
       "Live Photos": [
         "及時照片"
       ],
+      "Panoramas": [
+        "全景"
+      ],
       "Portraits": [
         "肖像"
       ],
@@ -10988,15 +10964,6 @@
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } 個檔案下載失敗"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } 個檔案傳輸失敗"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } 個檔案上載失敗"
-      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -11008,9 +10975,6 @@
       ],
       "Actions": [
         "操作"
-      ],
-      "Active": [
-        "使用中"
       ],
       "Add a custom logo": [
         "新增自訂標誌"
@@ -11036,11 +11000,11 @@
       "Album": [
         "相簿"
       ],
+      "Album details": [
+        "專輯詳細資訊"
+      ],
       "Albums": [
         "專輯"
-      ],
-      "All": [
-        "全部"
       ],
       "All settings": [
         "所有設定"
@@ -11122,9 +11086,6 @@
       ],
       "Collaborate on documents": [
         "於文件上合作"
-      ],
-      "Completed": [
-        "完成"
       ],
       "Computers": [
         "電腦"
@@ -11327,9 +11288,6 @@
       "Exporting contacts": [
         "正在匯出聯絡人"
       ],
-      "Failed": [
-        "失敗"
-      ],
       "File details": [
         "檔案詳細資訊"
       ],
@@ -11344,6 +11302,9 @@
       ],
       "Found ${ resultCount } result": [
         "找到 ${ resultCount } 個結果"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "於手機上取得 ${ DRIVE_SHORT_APP_NAME } 應用程式"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "透過 ${ planTitle } 取得 **${ referralInfo.uiData.refereeRewardAmount }** 額度。"
@@ -11486,6 +11447,9 @@
       "No photos": [
         "沒有照片"
       ],
+      "No portraits": [
+        "無屬性"
+      ],
       "No RAW": [
         "沒有 RAW"
       ],
@@ -11551,6 +11515,9 @@
       ],
       "Phone numbers": [
         "手機號碼"
+      ],
+      "Photo albums are here!": [
+        "照片相簿在此!"
       ],
       "Photos": [
         "相片"
@@ -11825,6 +11792,9 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "您下載的包含 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 檔案"
+      ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
       ],
@@ -11897,9 +11867,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "當包含於此電子郵件訊息和檔案名稱以零存取加密儲存"
-      ],
-      "New!": [
-        "新功能！"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"

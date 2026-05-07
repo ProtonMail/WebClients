@@ -144,9 +144,6 @@
       "Cancel transfers": [
         "Prekliči prenose"
       ],
-      "Cancel upload": [
-        "Prekliči nalaganje"
-      ],
       "Cancel uploads": [
         "Prekliči nalaganja"
       ],
@@ -377,9 +374,6 @@
       ],
       "Download anyway": [
         "Vseeno prenesi"
-      ],
-      "Download for MacOS": [
-        "Prenesi za macOS"
       ],
       "Download info": [
         "Prenesi informacije"
@@ -699,15 +693,6 @@
       "Open navigation": [
         "Odpri krmarjenje"
       ],
-      "Pause all": [
-        "Premor za vse"
-      ],
-      "Pause download": [
-        "Začasno prekini prenašanje"
-      ],
-      "Pause upload": [
-        "Začasno prekini nalaganje"
-      ],
       "Pay": [
         "Plačilo"
       ],
@@ -774,9 +759,6 @@
       "Remove from favorites": [
         "Odstrani iz priljubljenih"
       ],
-      "Remove from this list": [
-        "Odstrani s seznama"
-      ],
       "Remove gift code": [
         "Odstrani darilno kodo"
       ],
@@ -822,15 +804,6 @@
       "Reset to default": [
         "Ponastavi na privzeto"
       ],
-      "Restart all": [
-        "Ponovno zaženi vse"
-      ],
-      "Restart download": [
-        "Ponovni zagon prenosa"
-      ],
-      "Restart upload": [
-        "Ponovni zagon prenosa"
-      ],
       "Restore": [
         "Obnovi"
       ],
@@ -842,15 +815,6 @@
       ],
       "Restore version": [
         "Obnovi različico"
-      ],
-      "Resume all": [
-        "Nadaljuj vse"
-      ],
-      "Resume download": [
-        "Nadaljuj s prenašanjem"
-      ],
-      "Resume upload": [
-        "Nadaljuj z nalaganjem"
       ],
       "Retry": [
         "Poskusite znova"
@@ -4653,24 +4617,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } prenesena",
-        "${ activeDownloadsCount } preneseni",
-        "${ activeDownloadsCount } prenesene",
-        "${ activeDownloadsCount } prenesenih"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } prenos (${ downloadProgress }%)",
-        "${ activeDownloadsCount } prenosa (${ downloadProgress }%)",
-        "${ activeDownloadsCount } prenosi (${ downloadProgress }%)",
-        "${ activeDownloadsCount } prenosi (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } prenesena (${ uploadProgress }%)",
-        "${ activeUploadsCount } preneseni (${ uploadProgress }%)",
-        "${ activeUploadsCount } prenesene (${ uploadProgress }%)",
-        "${ activeUploadsCount } prenesene (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-poštni naslov",
         "${ addressCount } e-poštna naslova",
@@ -4700,12 +4646,6 @@
         "${ calendarsToBeMergedCount } združena koledarja",
         "${ calendarsToBeMergedCount } združeni koledarji",
         "${ calendarsToBeMergedCount } združenih koledarjev"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } preklican",
-        "${ canceledCount } preklicana",
-        "${ canceledCount } preklicani",
-        "${ canceledCount } preklicanih"
       ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } od ${ items.length } prenosov je dokončanih"
@@ -4740,24 +4680,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Datoteke ${ DOCS_APP_NAME } in ${ SHEETS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } dokončana",
-        "${ doneCount } dokončani",
-        "${ doneCount } dokončane",
-        "${ doneCount } dokončanih"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } prenesena",
-        "${ doneDownloadsCount } preneseni",
-        "${ doneDownloadsCount } prenesene",
-        "${ doneDownloadsCount } prenesenih"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } prenesena",
-        "${ doneUploadsCount } preneseni",
-        "${ doneUploadsCount } prenesene",
-        "${ doneUploadsCount } prenesenih"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v trgovini App Store"
       ],
@@ -4766,12 +4688,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } vas je povabil, da se pridružite ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } ni uspel",
-        "${ errorCount } nista uspela",
-        "${ errorCount } niso uspeli",
-        "${ errorCount } ni uspelo"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: slika v polni velikosti"
@@ -4793,12 +4709,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživljenjska ponudba nima cene za podaljšanje, gre za enkratno plačilo za doživljenjski dostop do ${ PASS_SHORT_APP_NAME }. Cena in datum podaljšanja vaše naročnine ${ planTitle } ostaneta nespremenjena."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } zaustavljen",
-        "${ pausedCount } zaustavljena",
-        "${ pausedCount } zaustavljeni",
-        "${ pausedCount } zaustavljenih"
       ],
       "${ photoCount } item": [
         "${ photoCount } predmet",
@@ -4830,12 +4740,6 @@
         "V Gmailu so odkrite ${ providerFoldersNumLocalized } oznake",
         "V Gmailu je odkritih ${ providerFoldersNumLocalized } oznak"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } napaka pri optičnem branju",
-        "${ scanErrorCount } napaki pri optičnem branju",
-        "${ scanErrorCount } napake pri optičnem branju",
-        "${ scanErrorCount } napak pri optičnem branju"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarja",
         "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarjev",
@@ -4865,15 +4769,6 @@
         "${ selectedFoldersCountLocalized } izbrani oznaki",
         "${ selectedFoldersCountLocalized } izbrane oznake",
         "${ selectedFoldersCountLocalized } izbranih oznak"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } preskočen",
-        "${ skippedCount } preskočena",
-        "${ skippedCount } preskočenih",
-        "${ skippedCount } preskočenih"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } vnosov"
@@ -5154,12 +5049,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Učinkovito sodelujte in ščitite podatke svojih strank in podjetja pred vdori, izsiljevalsko programsko opremo in nadzorom."
       ],
-      "Computed hash does not match XAttr": [
-        "Zgoščeni niz se ne ujema s atributom XAttr"
-      ],
-      "Conflict": [
-        "Spor"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
       ],
@@ -5210,9 +5099,6 @@
       ],
       "Create links and share your files with others.": [
         "Ustvarite povezave in delite svoje datoteke z drugimi uporabniki."
-      ],
-      "Creating": [
-        "Ustvarjam"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Dobropis za neporabljen naročnine prejšnjega paketa"
@@ -5379,9 +5265,6 @@
       "Expired": [
         "Poteklo"
       ],
-      "Failed": [
-        "Neuspešno"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Datoteka \"${ name }\" je bila med prenosom izbrisana"
       ],
@@ -5396,9 +5279,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Datoteke in mape, ki jih drugi delijo z vami, bodo prikazane tukaj."
-      ],
-      "Finalizing": [
-        "Zaključevanje"
       ],
       "finance": [
         "finance"
@@ -5528,9 +5408,6 @@
       ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
-      ],
-      "Initializing": [
-        "Inicializacija"
       ],
       "Integrity issues found": [
         "Najdene težave z integriteto"
@@ -5706,9 +5583,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
-      "Network issue": [
-        "Težava z omrežjem"
-      ],
       "New": [
         "Novo"
       ],
@@ -5744,9 +5618,6 @@
       ],
       "Not a valid URL": [
         "Neveljaven URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nekaj datotek ni bilo prenešenih. Poskusite ponovno naložiti ali prenesti datoteke."
       ],
       "Not connected": [
         "Niste povezani"
@@ -5931,9 +5802,6 @@
       "Public sharing of documents is not yet supported.": [
         "Javna souporaba dokumentov še ni podprta."
       ],
-      "Queued": [
-        "V vrsti"
-      ],
       "Ready to add some photos?": [
         "Ste pripravljeni dodati nekaj fotografij?"
       ],
@@ -5975,9 +5843,6 @@
       ],
       "Saving...": [
         "Shranjevanje ..."
-      ],
-      "Scan issue": [
-        "Težava pri optičnem branju"
       ],
       "Scan the QR code with your mobile device": [
         "Skenirajte kodo QR z mobilno napravo."
@@ -6057,20 +5922,8 @@
       "Signature check will be ignored": [
         "Preverjanje podpisa bo prezrto"
       ],
-      "Signature issue": [
-        "Težava s podpisom"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
-      ],
-      "Skipped": [
-        "Preskočeno"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Nekaterih datotek ni bilo mogoče prenesti. Poskusite znova prenesti datoteke."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Nekaterih datotek ni bilo mogoče naložiti. Poskusite znova naložiti datoteke."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nekatere vlade blokirajo ali omejujejo dostop do določenih spletnih strani. VPN vam pomaga zaobiti cenzuro, pri tem pa ohranja vašo dejavnost in identiteto zasebno."
@@ -6083,9 +5936,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Nekatera spletna mesta in storitve pretakanja blokirajo vsebino glede na regijo. VPN vam omogoča, da zaobidete te omejitve in prosto dostopate do interneta."
-      ],
-      "Something went wrong, please try again later.": [
-        "Nekaj je šlo narobe. Prosimo, poizkusite znova."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ga deliti s stiki in ga uporabljajte za spletne storitve."
@@ -11490,24 +11340,6 @@
       "${ feature } is now active": [
         "${ feature } je zdaj aktivna"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } neuspel prenos",
-        "${ numberOfFailedTransfer.total } neuspela prenosa",
-        "${ numberOfFailedTransfer.total } neuspeli prenosi",
-        "${ numberOfFailedTransfer.total } neuspelih prenosov"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } neuspešen prenos",
-        "${ numberOfFailedTransfer.total } neuspešna prenosa",
-        "${ numberOfFailedTransfer.total } neuspešni prenosi",
-        "${ numberOfFailedTransfer.total } neuspešnih prenosov"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } neuspelo nalaganje",
-        "${ numberOfFailedTransfer.total } neuspeli nalaganji",
-        "${ numberOfFailedTransfer.total } neuspela nalaganja",
-        "${ numberOfFailedTransfer.total } neuspelih nalaganj"
-      ],
       "Account recovery": [
         "Obnovitev računa"
       ],
@@ -11522,9 +11354,6 @@
       ],
       "Actions": [
         "Dejanja"
-      ],
-      "Active": [
-        "Aktivno"
       ],
       "Add a custom logo": [
         "Dodaj logotip po meri"
@@ -11561,9 +11390,6 @@
       ],
       "Albums": [
         "Albumi"
-      ],
-      "All": [
-        "Vse"
       ],
       "All settings": [
         "Vse nastavitve"
@@ -11642,9 +11468,6 @@
       ],
       "Collaborate on documents": [
         "Sodelujte pri dokumentih"
-      ],
-      "Completed": [
-        "Zaključeno"
       ],
       "Computers": [
         "Računalniki"
@@ -11861,9 +11684,6 @@
       ],
       "Exporting contacts": [
         "Izvažanje stikov"
-      ],
-      "Failed": [
-        "Neuspešno"
       ],
       "File details": [
         "Podrobnost datoteke"

@@ -146,9 +146,6 @@
       "Cancel trial and pay": [
         "Cancelar la prueba gratuita y pagar"
       ],
-      "Cancel upload": [
-        "Cancelar carga"
-      ],
       "Cancel uploads": [
         "Cancelar subida"
       ],
@@ -403,8 +400,8 @@
       "Download for Mac": [
         "Descargar para Mac"
       ],
-      "Download for MacOS": [
-        "Descargar para MacOS"
+      "Download for macOS": [
+        "Descargar para macOS"
       ],
       "Download for Windows": [
         "Descargar para Windows"
@@ -745,15 +742,6 @@
       "Open navigation": [
         "Abrir la navegación"
       ],
-      "Pause all": [
-        "Pausar todo"
-      ],
-      "Pause download": [
-        "Pausar descarga"
-      ],
-      "Pause upload": [
-        "Pausar carga"
-      ],
       "Pay": [
         "Pagar"
       ],
@@ -823,9 +811,6 @@
       "Remove from favorites": [
         "Eliminar de favoritos"
       ],
-      "Remove from this list": [
-        "Eliminar de la lista"
-      ],
       "Remove gift code": [
         "Eliminar el código de regalo"
       ],
@@ -874,15 +859,6 @@
       "Reset to default": [
         "Restablecer valores por defecto"
       ],
-      "Restart all": [
-        "Reiniciar todo"
-      ],
-      "Restart download": [
-        "Reiniciar descarga"
-      ],
-      "Restart upload": [
-        "Reiniciar carga"
-      ],
       "Restore": [
         "Restaurar"
       ],
@@ -894,15 +870,6 @@
       ],
       "Restore version": [
         "Restaurar versión"
-      ],
-      "Resume all": [
-        "Reanudar todo"
-      ],
-      "Resume download": [
-        "Reanudar descarga"
-      ],
-      "Resume upload": [
-        "Reanudar carga"
       ],
       "Retry": [
         "Reintentar"
@@ -4827,18 +4794,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } descargando",
-        "${ activeDownloadsCount } descargando"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } descargando (${ downloadProgress }%)",
-        "${ activeDownloadsCount } descargando (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } cargando (${ uploadProgress }%)",
-        "${ activeUploadsCount } cargando (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } dirección de correo electrónico",
         "${ addressCount } direcciones de correo electrónico"
@@ -4869,10 +4824,6 @@
         "${ calendarsToBeMergedCount } calendario combinado",
         "${ calendarsToBeMergedCount } calendarios combinados"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } cancelado",
-        "${ canceledCount } cancelados"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } de ${ items.length } transferencias completadas"
       ],
@@ -4898,18 +4849,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Los archivos de ${ DOCS_APP_NAME } y ${ SHEETS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en 'Continuar con la descarga'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } finalizado",
-        "${ doneCount } finalizados"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } descargado",
-        "${ doneDownloadsCount } descargados"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } cargado",
-        "${ doneUploadsCount } cargados"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } en App Store"
       ],
@@ -4918,10 +4857,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } te ha invitado a unirte a ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } error",
-        "${ errorCount } errores"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
@@ -4955,10 +4890,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pausado",
-        "${ pausedCount } pausados"
-      ],
       "${ photoCount } item": [
         "${ photoCount } elemento",
         "${ photoCount } elementos"
@@ -4984,10 +4915,6 @@
         "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
         "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } error de escaneo",
-        "${ scanErrorCount } errores de escaneo"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
@@ -5007,13 +4934,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } omitido",
-        "${ skippedCount } omitidos"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entradas"
@@ -5306,12 +5226,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Colabora de forma eficiente mientras proteges los datos de tus clientes y de tu empresa de filtraciones, ransomware y espionaje\n."
       ],
-      "Computed hash does not match XAttr": [
-        "El hash calculado no coincide con XAttr"
-      ],
-      "Conflict": [
-        "Conflicto"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."
       ],
@@ -5358,9 +5272,6 @@
       ],
       "Create links and share your files with others.": [
         "Crea enlaces y comparte tus archivos con otros."
-      ],
-      "Creating": [
-        "Creando"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -5538,9 +5449,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportar registros de diagnóstico para soporte técnico y resolución de problemas"
       ],
-      "Failed": [
-        "Error"
-      ],
       "Feb": [
         "Feb."
       ],
@@ -5558,9 +5466,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Los archivos y carpetas que otros comparten contigo aparecerán aquí."
-      ],
-      "Finalizing": [
-        "Finalizando"
       ],
       "finance": [
         "finanzas"
@@ -5694,9 +5599,6 @@
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
-      ],
-      "Initializing": [
-        "Inicializando"
       ],
       "Integrity issues found": [
         "Problemas de integridad encontrados"
@@ -5858,9 +5760,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
-      "Network issue": [
-        "Problema de red"
-      ],
       "New": [
         "Nuevo"
       ],
@@ -5899,9 +5798,6 @@
       ],
       "Not a valid URL": [
         "No es una URL válida."
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "No se han transferido todos los archivos. Intenta cargar o descargar los archivos de nuevo."
       ],
       "Not connected": [
         "No conectado"
@@ -6096,9 +5992,6 @@
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
       ],
-      "Queued": [
-        "En espera"
-      ],
       "Ready to add some photos?": [
         "¿Listo para añadir algunas imágenes?"
       ],
@@ -6143,9 +6036,6 @@
       ],
       "Saving...": [
         "Guardando..."
-      ],
-      "Scan issue": [
-        "Problema de escaneo"
       ],
       "Scan the QR code with your mobile device": [
         "Escanea el código QR con tu dispositivo móvil."
@@ -6237,20 +6127,8 @@
       "Signature check will be ignored": [
         "Se ignorará la verificación de la firma."
       ],
-      "Signature issue": [
-        "Problema de firma"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
-      ],
-      "Skipped": [
-        "Omitido"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Error al descargar algunos archivos. Intenta descargar los archivos de nuevo."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Error al cargar algunos archivos. Intenta cargar los archivos de nuevo."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Algunos gobiernos bloquean o restringen el acceso a ciertos sitios web. Una VPN ayuda a evitar la censura mientras mantiene tu actividad e identidad privadas."
@@ -6266,9 +6144,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
-      ],
-      "Something went wrong, please try again later.": [
-        "Se ha producido un error. Inténtalo de nuevo más tarde."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comienza a compartirla con tus contactos y úsala para servicios en línea."
@@ -12110,18 +11985,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de subidas gratuitas."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } error de descarga",
-        "${ numberOfFailedTransfer.total } errores de descarga"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } error de transferencia",
-        "${ numberOfFailedTransfer.total } errores de transferencias"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } error de carga",
-        "${ numberOfFailedTransfer.total } errores de cargas"
-      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -12136,9 +11999,6 @@
       ],
       "Actions": [
         "Acciones"
-      ],
-      "Active": [
-        "Activo"
       ],
       "Add a custom logo": [
         "Añade un logo personalizado"
@@ -12173,9 +12033,6 @@
       ],
       "Albums": [
         "Álbumes"
-      ],
-      "All": [
-        "Todo"
       ],
       "All settings": [
         "Todos los ajustes"
@@ -12258,9 +12115,6 @@
       ],
       "Collaborate on documents": [
         "Colabora en documentos"
-      ],
-      "Completed": [
-        "Completado"
       ],
       "Computers": [
         "Ordenadores"
@@ -12495,9 +12349,6 @@
       ],
       "Exporting contacts": [
         "Exportando contactos"
-      ],
-      "Failed": [
-        "Error"
       ],
       "File details": [
         "Detalles del archivo"
@@ -13201,9 +13052,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo."
-      ],
-      "New!": [
-        "¡Nuevo!"
       ],
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."

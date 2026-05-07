@@ -310,6 +310,9 @@
       "Do not show again when I press": [
         "Visa inte igen när jag trycker"
       ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
       ],
@@ -2035,10 +2038,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

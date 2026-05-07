@@ -144,9 +144,6 @@
       "Cancel trial and pay": [
         "무료 체험 취소 및 바로 결제"
       ],
-      "Cancel upload": [
-        "업로드 취소"
-      ],
       "Cancel uploads": [
         "업로드 취소"
       ],
@@ -399,7 +396,7 @@
       "Download for Mac": [
         "Mac용 다운로드"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "macOS용 다운로드"
       ],
       "Download for Windows": [
@@ -741,15 +738,6 @@
       "Open navigation": [
         "탐색 열기"
       ],
-      "Pause all": [
-        "모두 일시 정지"
-      ],
-      "Pause download": [
-        "다운로드 일시 정지"
-      ],
-      "Pause upload": [
-        "업로드 일시 정지"
-      ],
       "Pay": [
         "결제"
       ],
@@ -819,9 +807,6 @@
       "Remove from favorites": [
         "즐겨찾기에서 삭제"
       ],
-      "Remove from this list": [
-        "이 리스트에서 삭제"
-      ],
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
@@ -870,15 +855,6 @@
       "Reset to default": [
         "기본값으로 재설정"
       ],
-      "Restart all": [
-        "모두 다시 시작"
-      ],
-      "Restart download": [
-        "다운로드 다시 시작"
-      ],
-      "Restart upload": [
-        "업로드 다시 시작"
-      ],
       "Restore": [
         "복원"
       ],
@@ -890,15 +866,6 @@
       ],
       "Restore version": [
         "버전 복원"
-      ],
-      "Resume all": [
-        "모두 계속"
-      ],
-      "Resume download": [
-        "다운로드 계속"
-      ],
-      "Resume upload": [
-        "업로드 재개"
       ],
       "Retry": [
         "재시도"
@@ -4802,15 +4769,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount }개 다운로드 중"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount }개 다운로드 중 (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount }개 업로드 중 (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "이메일 주소 ${ addressCount }개"
       ],
@@ -4838,9 +4796,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount }개 캘린더로 병합됨"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount }개 취소됨"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ items.length }개 중 ${ completedItems.length }개 전송 완료"
       ],
@@ -4862,15 +4817,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 및 ${ SHEETS_APP_NAME } 파일은 직접 다운로드할 수 없으며 해당 다운로드에 포함되어 있지 않습니다. '계속 다운로드'를 클릭하여 다른 파일들을 계속 다운로드할 수 있습니다."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount }개 완료됨"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount }개 다운로드됨"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount }개 업로드됨"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store에서 ${ DRIVE_APP_NAME } 받기"
       ],
@@ -4879,9 +4825,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email }님이 ${ albumName }에 참가하도록 초대했습니다."
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount }개 실패"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
@@ -4913,9 +4856,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount }개 일시 정지됨"
-      ],
       "${ photoCount } item": [
         "${ photoCount }개 항목"
       ],
@@ -4937,9 +4877,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "Gmail에서 ${ providerFoldersNumLocalized }개 라벨 찾음"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount }개 스캔 실패"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }개 중 ${ providerCalendars.length }개 캘린더"
       ],
@@ -4954,12 +4891,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount }개 건너뜀"
-      ],
-      "${ speed }/s": [
-        "${ speed }/초"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length }개 항목"
@@ -5246,12 +5177,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "보안 사고, 랜섬웨어 및 감시로부터 고객 및 비즈니스 데이터를 보호하며 효율적으로 협업하세요."
       ],
-      "Computed hash does not match XAttr": [
-        "계산된 해시가 XAttr와 일치하지 않습니다."
-      ],
-      "Conflict": [
-        "충돌"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "${ VPN_APP_NAME }으로 연결하여 비공개로 방문하기"
       ],
@@ -5296,9 +5221,6 @@
       ],
       "Create links and share your files with others.": [
         "링크를 생성하여 내 파일을 다른 사람에게 공유해보세요."
-      ],
-      "Creating": [
-        "만들기"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -5477,9 +5399,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "기술 지원 문제 로그를 내보내기"
       ],
-      "Failed": [
-        "실패"
-      ],
       "Feb": [
         "2월"
       ],
@@ -5497,9 +5416,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "타인이 나와 공유한 폴더 및 파일이 여기에 나타납니다."
-      ],
-      "Finalizing": [
-        "끝내는 중"
       ],
       "finance": [
         "금융정보"
@@ -5632,9 +5548,6 @@
       ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
-      ],
-      "Initializing": [
-        "초기화 중"
       ],
       "Integrity issues found": [
         "무결성 문제 발견"
@@ -5804,9 +5717,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
-      "Network issue": [
-        "네트워크 문제 발생"
-      ],
       "New": [
         "신규"
       ],
@@ -5842,9 +5752,6 @@
       ],
       "Not a valid URL": [
         "유효하지 않은 URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "전송되지 않은 파일이 있습니다. 나중에 다시 업로드 및 다운로드를 실행해 주십시오."
       ],
       "Not connected": [
         "연결되지 않음"
@@ -6038,9 +5945,6 @@
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
-      "Queued": [
-        "대기열에 추가됨"
-      ],
       "Ready to add some photos?": [
         "사진 좀 올려 볼까요?"
       ],
@@ -6085,9 +5989,6 @@
       ],
       "Saving...": [
         "저장 중..."
-      ],
-      "Scan issue": [
-        "스캔 문제 발생"
       ],
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
@@ -6179,20 +6080,8 @@
       "Signature check will be ignored": [
         "서명 확인이 무시됩니다"
       ],
-      "Signature issue": [
-        "서명 문제 발생"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
-      ],
-      "Skipped": [
-        "건너뜀"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "다운로드에 실패한 파일들이 있습니다. 나중에 다시 다운로드 해 주십시오."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "업로드에 실패한 파일들이 있습니다. 나중에 다시 업로드 해 주십시오."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "일부 정부는 특정 웹사이트에 대한 접근을 차단하거나 제한합니다. VPN이 사용자의 활동과 신원을 비공개로 유지하면서 검열을 우회하는 데 도움을 드립니다."
@@ -6208,9 +6097,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "일부 웹사이트와 스트리밍 서비스는 지역별로 콘텐츠를 차단합니다. VPN을 사용하면 이러한 제한을 우회하고 인터넷에 자유롭게 접속할 수 있습니다."
-      ],
-      "Something went wrong, please try again later.": [
-        "문제가 발생했습니다, 나중에 다시 시도해 주세요."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
@@ -11865,15 +11751,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength }개의 무료 업로드."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } 개의 파일 다운로드에 실패함"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } 개의 파일 전송에 실패함"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } 개의 파일 업로드에 실패함"
-      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -11888,9 +11765,6 @@
       ],
       "Actions": [
         "작업"
-      ],
-      "Active": [
-        "활성"
       ],
       "Add a custom logo": [
         "커스텀 로고 추가하기"
@@ -11924,9 +11798,6 @@
       ],
       "Albums": [
         "앨범"
-      ],
-      "All": [
-        "전체"
       ],
       "All settings": [
         "전체 설정"
@@ -12008,9 +11879,6 @@
       ],
       "Collaborate on documents": [
         "문서에서 협업하기"
-      ],
-      "Completed": [
-        "완료"
       ],
       "Computers": [
         "컴퓨터"
@@ -12242,9 +12110,6 @@
       ],
       "Exporting contacts": [
         "연락처 내보내기"
-      ],
-      "Failed": [
-        "실패"
       ],
       "File details": [
         "파일 세부 정보"
@@ -12942,9 +12807,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "메시지와 파일 이름은 이메일에 포함될 때 제로 액세스 암호화로 저장됩니다."
-      ],
-      "New!": [
-        "신규"
       ],
       "Not all information listed here was exposed for all users.": [
         "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."

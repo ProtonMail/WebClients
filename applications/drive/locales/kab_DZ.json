@@ -94,9 +94,6 @@
       "Cancel subscription": [
         "Sefsex ajerred"
       ],
-      "Cancel upload": [
-        "Sefsex asali"
-      ],
       "Change": [
         "Beddel"
       ],
@@ -480,15 +477,6 @@
       "Open navigation": [
         "Ldi tunigin"
       ],
-      "Pause all": [
-        "Seḥbes kullec"
-      ],
-      "Pause download": [
-        "Ttarǧu asider"
-      ],
-      "Pause upload": [
-        "Ḥbes asali"
-      ],
       "Pay": [
         "Xelleṣ"
       ],
@@ -543,9 +531,6 @@
       "Remove device": [
         "Kkes ibenk"
       ],
-      "Remove from this list": [
-        "Kkes seg tebdart-a"
-      ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
       ],
@@ -582,15 +567,6 @@
       "Reset to default": [
         "Wennez ɣer umezwer"
       ],
-      "Restart all": [
-        "Ales asenker i kullec"
-      ],
-      "Restart download": [
-        "Ales asenker n usader"
-      ],
-      "Restart upload": [
-        "Ales asenker n usali"
-      ],
       "Restore": [
         "Err-d"
       ],
@@ -602,15 +578,6 @@
       ],
       "Restore version": [
         "Err-d lqem"
-      ],
-      "Resume all": [
-        "Ales asenker i kullec"
-      ],
-      "Resume download": [
-        "Kemmel asader"
-      ],
-      "Resume upload": [
-        "Kemmel asali"
       ],
       "Retry": [
         "Ɛref̣ tikelt-nniḍen"
@@ -3028,18 +2995,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } asider n",
-        "${ activeDownloadsCount } asider n"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } asader (${ downloadProgress }%)",
-        "${ activeDownloadsCount } asader (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } asali (${ uploadProgress }%)",
-        "${ activeUploadsCount } asali (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
@@ -3054,10 +3009,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } yettwasefsex",
-        "${ canceledCount } ttwasfesxen"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } unermis yegber aṭas n tansiwin yimayl.",
@@ -3078,27 +3029,11 @@
         "${ contactsLength } n unermis",
         "${ contactsLength } inermisen"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } yekfa",
-        "${ doneCount } yekfa"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } yettusader",
-        "${ doneDownloadsCount } ttusadren"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } yuli",
-        "${ doneUploadsCount } ulin"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } ɣef App Store"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } ɣef Play Store"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } yecceḍ",
-        "${ errorCount } ccḍen"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: tugna s teɣzi taččurant"
@@ -3109,10 +3044,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } yettwaḥbes",
-        "${ pausedCount } ttwaḥebsen"
       ],
       "${ photoCount } item": [
         "${ photoCount } n uferdis",
@@ -3141,9 +3072,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } n uḥraz"
@@ -3285,9 +3213,6 @@
       "Close this screen to exit.": [
         "Mdel agdil-agi akken ad teffɣeḍ."
       ],
-      "Conflict": [
-        "Amgirred"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Anermis yettwarna ɣer ugraw ${ contactGroupName }"
       ],
@@ -3315,9 +3240,6 @@
       ],
       "Create links and share your files with others.": [
         "Snulfu-d isɣewnen akken ad tebḍuḍ ifuyla-inek m akked wiyiḍ."
-      ],
-      "Creating": [
-        "Timerna"
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -3423,9 +3345,6 @@
       "Expired": [
         "Yemmut"
       ],
-      "Failed": [
-        "Yecceḍ"
-      ],
       "Feb": [
         "Fuṛ"
       ],
@@ -3434,9 +3353,6 @@
       ],
       "File will not be updated": [
         "Afaylu ur yettuleqqem ara"
-      ],
-      "Finalizing": [
-        "Akemmel"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Akaram \"${ link.name }\" yettwakkes lawan n usader"
@@ -3489,9 +3405,6 @@
       ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
-      ],
-      "Initializing": [
-        "Awennez"
       ],
       "Internet connection lost": [
         "Tuqqna internet truḥ"
@@ -3585,9 +3498,6 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
-      ],
-      "Network issue": [
-        "Ugur n uẓeṭṭa"
       ],
       "New": [
         "Amaynut"
@@ -3686,9 +3596,6 @@
       "Primary": [
         "Agejdan"
       ],
-      "Queued": [
-        "Yettwarna ar udras"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Talɣut n tririt ad teqqim ɣef yibenk-a alamma tferneḍ ad tt-tekkseḍ."
       ],
@@ -3743,17 +3650,11 @@
       "Shared with me": [
         "Yebḍa yid-i"
       ],
-      "Signature issue": [
-        "Ugur n usezmel"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Kra seg yifuyla-inek·inem anekcum ɣur-sen d awezɣi. Err-d anekcum ɣer yifuyla-inek·inem. ${ StartRecoveryButton }"
-      ],
-      "Something went wrong, please try again later.": [
-        "Yella wayen ur nteddu ara akken iwata, ttxil-k·m ɛreḍ tikkelt-nniḍen."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
@@ -6088,18 +5989,6 @@
         "${ emailsCount } tansa n yimayl",
         "${ emailsCount } n tansiwin imayl"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } yecceḍ usader",
-        "${ numberOfFailedTransfer.total } ccḍen isadaren"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } yecceḍ usiweḍ",
-        "${ numberOfFailedTransfer.total } yecceḍ usiweḍ"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } yecceḍ usali",
-        "${ numberOfFailedTransfer.total } ccḍen isalayen"
-      ],
       "Account recovery": [
         "Tiririt n umiḍan"
       ],
@@ -6108,9 +5997,6 @@
       ],
       "Actions": [
         "Tigawin"
-      ],
-      "Active": [
-        "Urmid"
       ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
@@ -6130,9 +6016,6 @@
       ],
       "Addresses": [
         "Tansiwin"
-      ],
-      "All": [
-        "Akk"
       ],
       "All settings": [
         "Akk iɣewwaren"
@@ -6178,9 +6061,6 @@
       ],
       "Clearing data": [
         "Asfaḍ n isefka"
-      ],
-      "Completed": [
-        "Immed"
       ],
       "Computers": [
         "Iselkimen"
@@ -6336,9 +6216,6 @@
       ],
       "Exporting contacts": [
         "Kter inermisen"
-      ],
-      "Failed": [
-        "Yecceḍ"
       ],
       "File details": [
         "Ifatusen n ufaylu"

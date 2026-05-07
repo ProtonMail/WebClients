@@ -137,9 +137,6 @@
       "Cancel subscription": [
         "Előfizetés lemondása"
       ],
-      "Cancel upload": [
-        "Feltöltés megszakítása"
-      ],
       "Change": [
         "Módosítás"
       ],
@@ -694,15 +691,6 @@
       "Open navigation": [
         "Navigáció megnyitása"
       ],
-      "Pause all": [
-        "Az összes szüneteltetése"
-      ],
-      "Pause download": [
-        "Letöltés szüneteltetése"
-      ],
-      "Pause upload": [
-        "Feltöltés szüneteltetése"
-      ],
       "Pay": [
         "Fizetés"
       ],
@@ -766,9 +754,6 @@
       "Remove from favorites": [
         "Eltávolítás a kedvencekből"
       ],
-      "Remove from this list": [
-        "Eltávolítás a listából"
-      ],
       "Remove gift code": [
         "Ajándék kód törlése"
       ],
@@ -814,15 +799,6 @@
       "Reset to default": [
         "Alapbeállítások visszaállítása"
       ],
-      "Restart all": [
-        "Mindegyik újraindítása"
-      ],
-      "Restart download": [
-        "Letöltés újraindítása"
-      ],
-      "Restart upload": [
-        "Feltöltés újraindítása"
-      ],
       "Restore": [
         "Visszaállítás"
       ],
@@ -834,15 +810,6 @@
       ],
       "Restore version": [
         "Változat visszaállítása"
-      ],
-      "Resume all": [
-        "Összes folytatása"
-      ],
-      "Resume download": [
-        "Letöltés folytatása"
-      ],
-      "Resume upload": [
-        "Feltöltés folytatása"
       ],
       "Retry": [
         "Újra"
@@ -4392,18 +4359,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } letöltés",
-        "${ activeDownloadsCount } letöltés"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)",
-        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)",
-        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
@@ -4434,10 +4389,6 @@
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } megszakítva",
-        "${ canceledCount } megszakítva"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } névjegy több e-mail címet tartalmaz.",
         "${ contactCount } névjegy több e-mail címet tartalmaz."
@@ -4457,18 +4408,6 @@
         "${ contactsLength } névjegy",
         "${ contactsLength } névjegy"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } kész",
-        "${ doneCount } kész"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } letöltve",
-        "${ doneDownloadsCount } letöltve"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } feltöltve",
-        "${ doneUploadsCount } feltöltve"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } az App Store-ban"
       ],
@@ -4477,10 +4416,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } meghívta Önt, hogy csatlakozzon ide: ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } sikertelen",
-        "${ errorCount } sikertelen"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: teljes méretű kép"
@@ -4501,10 +4436,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A ${ PASS_SHORT_APP_NAME } élethosszig tartó ajánlatnak nincs megújítási ára, ez egy egyszeri fizetés az ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért. A ${ planTitle } előfizetése megújítási ára és dátuma változatlan marad."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } felfüggesztve",
-        "${ pausedCount } felfüggesztve"
       ],
       "${ photoCount } item": [
         "${ photoCount } elem",
@@ -4531,10 +4462,6 @@
         "${ providerFoldersNumLocalized } címke található a Gmailben",
         "${ providerFoldersNumLocalized } címke található a Gmailben"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } szkennelés sikertelen",
-        "${ scanErrorCount } szkennelés sikertelen"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
@@ -4554,13 +4481,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } kihagyva",
-        "${ skippedCount } kihagyva"
-      ],
-      "${ speed }/s": [
-        "${ speed }/mp"
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
@@ -4795,9 +4715,6 @@
       "Close this screen to exit.": [
         "A kilépéshez zárja be ezt a képernyőt."
       ],
-      "Conflict": [
-        "Ütközés"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Kapcsolódjon a ${ VPN_APP_NAME } alkalmazáshoz a privát böngészéshez"
       ],
@@ -4844,9 +4761,6 @@
       ],
       "Create links and share your files with others.": [
         "Ossza meg a fájljait másokkal, hivatkozások létrehozásával."
-      ],
-      "Creating": [
-        "Létrehozás"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
@@ -5003,9 +4917,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Diagnosztikai naplók exportálása technikai támogatáshoz és hibaelhárításhoz"
       ],
-      "Failed": [
-        "Sikertelen"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5023,9 +4934,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Fájlok és mappák, amelyeket mások megosztottak veled"
-      ],
-      "Finalizing": [
-        "Befejezés"
       ],
       "finance": [
         "pénzügyi"
@@ -5144,9 +5052,6 @@
       ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
-      ],
-      "Initializing": [
-        "Inicializálás"
       ],
       "Integrity issues found": [
         "Integritási problémák észlelve"
@@ -5299,9 +5204,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
-      "Network issue": [
-        "Hálózati probléma"
-      ],
       "New": [
         "Új"
       ],
@@ -5337,9 +5239,6 @@
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Nem minden fájl került átvitelre. Próbálja meg újra fel- vagy letölteni a fájlokat."
       ],
       "Not connected": [
         "Nincs kapcsolódva"
@@ -5525,9 +5424,6 @@
       "Public sharing of documents is not yet supported.": [
         "A dokumentum nyilvános megosztása még nem támogatott."
       ],
-      "Queued": [
-        "Sorba állítva"
-      ],
       "Ready to add some photos?": [
         "Készen áll néhány fénykép hozzáadására?"
       ],
@@ -5569,9 +5465,6 @@
       ],
       "Saving...": [
         "Mentés..."
-      ],
-      "Scan issue": [
-        "Beolvasási probléma"
       ],
       "Scan the QR code with your mobile device": [
         "Olvassa be a QR-kódot a mobilkészülékével"
@@ -5648,20 +5541,8 @@
       "Signature check will be ignored": [
         "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
       ],
-      "Signature issue": [
-        "Probléma az aláírással"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
-      ],
-      "Skipped": [
-        "Kihagyva"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Néhány fájl letöltése nem sikerült. Próbálja meg újra."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Néhány fájl feltöltése nem sikerült. Próbálja meg újra."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Egyes kormányok letiltják vagy korlátozzák a hozzáférést bizonyos weboldalakhoz. A VPN segít megkerülni a cenzúrát, miközben megőrzi az Ön tevékenysége és személyazonossága privát jellegét."
@@ -5674,9 +5555,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Egyes weboldalak és videómegosztó szolgáltatások földrajzi régiónként blokkolják a tartalmakat. A VPN segítségével megkerülheti ezeket a korlátozásokat, és szabadon hozzáférhet az internethez."
-      ],
-      "Something went wrong, please try again later.": [
-        "Hiba történt. Kérjük, próbálkozzon később."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Kezdje el megosztani a névjegyeivel, és használja online szolgáltatásokhoz."
@@ -10795,18 +10673,6 @@
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } meghiúsult letöltés",
-        "${ numberOfFailedTransfer.total } meghiúsult letöltés"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } meghiúsult átvitel",
-        "${ numberOfFailedTransfer.total } meghiúsult átvitel"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
-        "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
-      ],
       "Account recovery": [
         "Fiók helyreállítás"
       ],
@@ -10821,9 +10687,6 @@
       ],
       "Actions": [
         "Műveletek"
-      ],
-      "Active": [
-        "Aktív"
       ],
       "Add a custom logo": [
         "Egyedi logó hozzáadása"
@@ -10858,9 +10721,6 @@
       ],
       "Albums": [
         "Albumok"
-      ],
-      "All": [
-        "Mind"
       ],
       "All settings": [
         "Minden beállítás"
@@ -10928,9 +10788,6 @@
       ],
       "Collaborate on documents": [
         "Együttműködés dokumentumokon"
-      ],
-      "Completed": [
-        "Kész"
       ],
       "Computers": [
         "Számítógépek"
@@ -11159,9 +11016,6 @@
       ],
       "Exporting contacts": [
         "Névjegyek exportálása"
-      ],
-      "Failed": [
-        "Sikertelen"
       ],
       "File details": [
         "Fájl adatok"

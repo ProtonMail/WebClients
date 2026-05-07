@@ -525,9 +525,6 @@
       "Delete record": [
         "Slet post"
       ],
-      "Delete token ${ token.Account }": [
-        "Slet token ${ token.Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Slet token “${ token.Name }”"
       ],
@@ -2876,12 +2873,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migreringsassistent"
       ],
-      "Add a custom domain": [
-        "Tilføj et brugerdomæne"
-      ],
-      "App installed": [
-        "Appen er installeret."
-      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -2909,9 +2900,6 @@
       "Domain connected": [
         "Domæne forbundet"
       ],
-      "Domain ownership verified": [
-        "Domæneejerskab verificeret"
-      ],
       "Estimated size": [
         "Anslået størrelse"
       ],
@@ -2936,14 +2924,8 @@
       "Install migration app": [
         "Installer migrations app."
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Få mere at vide om, hvad der kan migreres. Få mere at vide"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migrér"
       ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
@@ -2961,17 +2943,11 @@
       "Migration status": [
         "Migrationsstatus"
       ],
-      "Not started": [
-        "Ikke startet"
-      ],
       "Organization does not have enough seats available": [
         "Organisationen har ikke nok ledige pladser"
       ],
       "Organization does not have enough storage available": [
         "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
-      "Organization settings": [
-        "Organisationsindstillinger"
       ],
       "Required": [
         "Påkrævet"
@@ -2981,9 +2957,6 @@
       ],
       "Select at least one user to start a migration": [
         "Vælg mindst én bruger for at starte en migrering"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Vælg, hvad du ønsker at migrere. Dette vil blive anvendt på alle brugere, uanset om de oprettes nu eller senere. Migrationen starter, når brugerkonti oprettes."
       ],
       "Set up": [
         "Opsætning"
@@ -3009,9 +2982,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
       ],
-      "Transfer errors": [
-        "Overførselsfejl"
-      ],
       "User": [
         "Bruger"
       ],
@@ -3023,9 +2993,6 @@
       ],
       "Verify your domain": [
         "Bekræft dit domæne"
-      ],
-      "Verify your domain ownership": [
-        "Bekræft dit domæneejerskab"
       ],
       "Verify your domain to start a migration": [
         "Bekræft dit domæne for at starte en migrering"
@@ -10112,9 +10079,6 @@
       ],
       "Change your password": [
         "Skift din adgangskode"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Kontrollér status for import og videresendelse."
       ],
       "Check your network and try again.": [
         "Kontrollér din netværksforbindelse og prøv igen."
@@ -19979,9 +19943,6 @@
       "Partial": [
         "Delvis"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Kræv indstilling til nulstilling af adgangskode (email- eller SMS-bekræftelse)"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "Score: ${ score } / ${ maxScore }"
       ],
@@ -20023,14 +19984,8 @@
       "Download recovery file": [
         "Download gendannelsesfil"
       ],
-      "Email verification enabled": [
-        "Bekræftelse via e-mail aktiveret"
-      ],
       "Emergency contacts added": [
         "Nødkontakter tilføjet"
-      ],
-      "Enable recovery by email": [
-        "Tillad gendannelse via e-mail"
       ],
       "Enable recovery by phone": [
         "Aktiver gendannelse via telefonnummer"
@@ -20055,9 +20010,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Login med QR-kode er tilladt"
-      ],
-      "SMS verification enabled": [
-        "Bekræftelse via SMS aktiveret"
       ],
       "Verify password": [
         "Bekræft adgangskode"
@@ -20983,9 +20935,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Opnå den højeste mulige sikkerhed på din konto ved at downloade din gendannelsessætning og slå de markerede muligheder fra."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har anbefalinger fra ${ PROTON_SENTINEL_NAME }"
       ]

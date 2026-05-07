@@ -306,6 +306,9 @@
       "Confirm": [
         "Bekräfta"
       ],
+      "Confirm email": [
+        "Bekräfta e-post"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekräfta öppnande av länken ${ linkToShow }"
       ],
@@ -516,8 +519,8 @@
       "Delete record": [
         "Ta bort post"
       ],
-      "Delete token ${ token.Account }": [
-        "Ta bort token ${ token.Account }"
+      "Delete token ${ tokens[0].Account }": [
+        "Ta bort token ${ tokens[0].Account }"
       ],
       "Delete token “${ token.Name }”": [
         "Ta bort token “${ token.Name }“"
@@ -759,6 +762,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Filter tillämpas. Detta kan ta några minuter."
       ],
+      "Finish": [
+        "Slutför"
+      ],
       "Fit to window": [
         "Passa till fönster"
       ],
@@ -878,6 +884,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Gå till domänleverantör"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -1274,6 +1283,9 @@
       ],
       "Remove this notification": [
         "Ta bort denna avisering"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Tog bort ${ memberName } som gruppägare"
       ],
       "Rename": [
         "Ändra namn"
@@ -2822,14 +2834,23 @@
       ]
     },
     "BOSS": {
-      "Add a custom domain": [
-        "Lägg till en anpassad domän"
+      "Account connected": [
+        "Konto anslutet"
       ],
-      "App installed": [
-        "App installerad"
+      "Activated": [
+        "Aktiverat"
+      ],
+      "Add a domain": [
+        "Lägg till en domän"
+      ],
+      "All": [
+        "Alla"
       ],
       "Authenticate": [
         "Autentisera"
+      ],
+      "Authenticate to Google Workspace": [
+        "Autentisera till Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentisera ditt Google Workspace-konto"
@@ -2849,14 +2870,20 @@
       "Configure migration": [
         "Konfigurera migrering"
       ],
+      "Configure your domain": [
+        "Konfigurera din domän"
+      ],
       "Contacts": [
         "Kontakter"
       ],
+      "Continue migration": [
+        "Fortsätt migrering"
+      ],
+      "Domain added": [
+        "Domän tillagd"
+      ],
       "Domain connected": [
         "Domän ansluten"
-      ],
-      "Domain ownership verified": [
-        "Domänens äganderätt verifierad"
       ],
       "Estimated size": [
         "Beräknad storlek"
@@ -2864,8 +2891,14 @@
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
       ],
+      "Finalize your migration": [
+        "Slutför din migrering"
+      ],
       "Finish setting up your business account": [
         "Slutför inställningen av ditt företagskonto"
+      ],
+      "Go to Domain names": [
+        "Gå till domännamn"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
@@ -2882,20 +2915,17 @@
       "Install migration app": [
         "Installera migreringsappen"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Lär dig mer om vad som kan migreras. Lär dig mer"
-      ],
       "Mail": [
         "E-post"
-      ],
-      "Migrate": [
-        "Migrera"
       ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
       ],
       "Migrate users": [
         "Migrera användare"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Migrera användare till ${ BRAND_NAME }"
       ],
       "Migration includes": [
         "Migrering inkluderar"
@@ -2907,8 +2937,17 @@
       "Migration status": [
         "Migreringsstatus"
       ],
-      "Not started": [
-        "Inte startad"
+      "More details": [
+        "Mer detaljer"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Not activated": [
+        "Inte aktiverat"
+      ],
+      "Not confirmed": [
+        "Inte bekräftat"
       ],
       "Organization does not have enough seats available": [
         "Organisation har inte tillräckligt med licenser tillgängligt"
@@ -2916,8 +2955,8 @@
       "Organization does not have enough storage available": [
         "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
-      "Organization settings": [
-        "Organisationsinställningar"
+      "Refresh": [
+        "Uppdatera"
       ],
       "Required": [
         "Obligatoriskt"
@@ -2928,14 +2967,17 @@
       "Select at least one user to start a migration": [
         "Välj minst en användare för att starta en migrering"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Välj vad du vill migrera, detta kommer tillämpas på alla användare oavsett om de skapas nu eller senare. Migrering kommer starta efter användarkonton är skapade."
+      "Select users to migrate": [
+        "Välj användare att migrera"
       ],
       "Set up": [
         "Ställ in"
       ],
       "Set up billing information": [
         "Ställ in faktureringsinformation"
+      ],
+      "Set up manually": [
+        "Ställ in manuellt"
       ],
       "Set up two-factor authentication": [
         "Ställ in tvåfaktorsautentisering"
@@ -2946,14 +2988,20 @@
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
       ],
+      "Size": [
+        "Storlek"
+      ],
+      "SPF records": [
+        "SPF-poster"
+      ],
+      "Start migrating": [
+        "Starta migrering"
+      ],
       "Start migration": [
         "Starta migrering"
       ],
       "Status": [
         "Status"
-      ],
-      "Transfer errors": [
-        "Överföringsfel"
       ],
       "User": [
         "Användare"
@@ -2961,14 +3009,17 @@
       "Users migrated": [
         "Användare migrerade"
       ],
+      "Verified": [
+        "Verified"
+      ],
+      "Verify domain ownership": [
+        "Verifiera domänägarskap"
+      ],
       "Verify installation": [
         "Verifiera installation"
       ],
       "Verify your domain": [
         "Verifiera din domän"
-      ],
-      "Verify your domain ownership": [
-        "Verifiera ditt domänägarskap"
       ],
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
@@ -2976,11 +3027,17 @@
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
       ],
+      "We're still checking the MX records with your domain provider.": [
+        "Vi kontrollerar fortfarande MX-posterna med din domänleverantör."
+      ],
       "What are you migrating?": [
         "Vad migrerar du?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
+      ],
+      "You're all set!": [
+        "Du är klar!"
       ]
     },
     "breadcrumb": {
@@ -4925,6 +4982,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } är din standardapplikation för e-post."
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } håller din företagsdata säker och låter dig skicka krypterad e-post till vem som helst."
+      ],
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
       ],
@@ -4948,6 +5008,9 @@
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
         "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
+      ],
+      "Bring over your email, calendar events, and contacts from another provider.": [
+        "Hämta över din e-post, kalenderhändelser och kontakter från annan leverantör."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bygg förtroende och varumärkesigenkänning med professionella e-postadresser på din egen domän."
@@ -5023,6 +5086,9 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Hur vi stöttade lokala aktivister när integritet och yttrandefrihet hotades."
+      ],
+      "How you unlock your encrypted data if you lose your password.": [
+        "Hur du låser upp dina krypterade data om du tappar bort ditt lösenord."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -6867,6 +6933,9 @@
       ],
       "Invalid invitation link": [
         "Ogiltig inbjudningslänk"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Ogiltig länk för att gå med. Kontakta din administratör."
       ],
       "Invalid name": [
         "Ogiltigt namn"
@@ -9931,9 +10000,6 @@
       "Change your password": [
         "Ändra ditt lösenord"
       ],
-      "Check the status of imports and forwarding.": [
-        "Kontrollera status för importer och vidarebefordran."
-      ],
       "Check your network and try again.": [
         "Kontrollera ditt nätverk och försök igen."
       ],
@@ -9967,6 +10033,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktionens valpris med ett betyg på 8,4 av 10"
       ],
+      "Code has been re-sent.": [
+        "Kod har skickats igen."
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -9981,6 +10050,9 @@
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör så som Okta, Microsoft Azure eller Google Identity Platform. Detta kommer att aktivera SAML för hela organisationen."
+      ],
+      "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
+        "Anslut och hantera dina externa brevlådor i ${ MAIL_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Anslutningsdata kommer vara tillgänglig om cirka 1 timme."
@@ -10508,6 +10580,9 @@
       ],
       "Gateways": [
         "Gateways"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Att generera en ny återställningsfras kommer inaktivera din nuvarande återställningsfras."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Att generera en ny återställningsfras kommer inaktivera din gamla."
@@ -11057,6 +11132,9 @@
       ],
       "No card required": [
         "Inget kort krävs"
+      ],
+      "No connected addresses.": [
+        "Inga anslutna adresser."
       ],
       "No countries enabled": [
         "Inga länder aktiverade"
@@ -14300,6 +14378,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
+      "MX records": [
+        "MX-poster"
+      ],
       "Name": [
         "Namn"
       ],
@@ -14479,6 +14560,9 @@
       ],
       "Primary": [
         "Primär"
+      ],
+      "Priority": [
+        "Prioritet"
       ],
       "Priority support": [
         "Prioriterad support"
@@ -15143,6 +15227,9 @@
       ],
       "data recovery option": [
         "alternativ för dataåterställning"
+      ],
+      "Detailed instructions": [
+        "Detaljerade instruktioner"
       ],
       "Details": [
         "Detaljer"
@@ -18351,8 +18438,14 @@
       "per month, billed every two years": [
         "per månad, faktureras vartannat år"
       ],
+      "Preparing your recovery phrase": [
+        "Förbereder din återställningsfras"
+      ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
+      ],
+      "Save your recovery phrase to continue": [
+        "Spara din återställningsfras för att fortsätta"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
@@ -19527,6 +19620,9 @@
       "Add more options for stronger protection": [
         "Lägg till fler alternativ för starkare skydd"
       ],
+      "Add more options to avoid getting locked out of your account.": [
+        "Lägg till fler alternativ för att undvika att bli utelåst från ditt konto."
+      ],
       "Awesome. Keep your options up-to-date for stronger protection.": [
         "Fantastiskt. Håll dina alternativ uppdaterade för starkare skydd."
       ],
@@ -19589,14 +19685,8 @@
       "Download recovery file": [
         "Ladda ner återställningsfil"
       ],
-      "Email verification enabled": [
-        "E-postverifiering aktiverat"
-      ],
       "Emergency contacts added": [
         "Nödkontakter tillagda"
-      ],
-      "Enable recovery by email": [
-        "Aktivera återställning via e-post"
       ],
       "Enable recovery by phone": [
         "Aktivera återställning med telefon"
@@ -19610,6 +19700,9 @@
       "Recovery contacts added": [
         "Återställningskontakter tillagda"
       ],
+      "Recovery file downloaded": [
+        "Återställningsfil nerladdad"
+      ],
       "Recovery phrase saved": [
         "Återställningsfras sparad"
       ],
@@ -19618,9 +19711,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Inloggning med QR-kod tillåtet"
-      ],
-      "SMS verification enabled": [
-        "SMS-verifiering aktiverat"
       ],
       "Verify password": [
         "Verifiera lösenord"
@@ -20080,6 +20170,9 @@
       "Download ${ size }": [
         "Ladda ner ${ size }"
       ],
+      "Download your recovery phrase": [
+        "Ladda ner din återställningsfras"
+      ],
       "Email address": [
         "E-postadress"
       ],
@@ -20091,6 +20184,9 @@
       ],
       "Enable recovery by phone": [
         "Aktivera återställning via telefon"
+      ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Jag förstår att jag inte kommer att kunna återställa för närvarande låsta data med denna återställningsfras"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
@@ -20140,6 +20236,9 @@
       "Take action to secure your account": [
         "Vidta åtgärd för att säkra ditt konto"
       ],
+      "There was an error generating your recovery phrase": [
+        "Det var ett fel vid generering av din återställningsfras"
+      ],
       "There was an error verifying your email": [
         "Det var ett fel att verifiera din e-post"
       ],
@@ -20166,6 +20265,12 @@
       ],
       "to recover your account if you're ever locked out": [
         "för att återställa ditt konto om du någon gång blir utelåst"
+      ],
+      "Update your recovery phrase": [
+        "Öppna din återställningsfras"
+      ],
+      "Update your recovery phrase?": [
+        "Uppdatera din återställningsfras?"
       ],
       "Verify": [
         "Verifiera"
@@ -20211,6 +20316,9 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Du kan använda din telefon för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidigare laddat ner en återställningsfras. Om du laddar ner en ny kommer den gamla **inaktiveras**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Du har rekommenderade åtgärder för att skydda ditt konto ytterligare."
@@ -20295,6 +20403,12 @@
       ],
       "Your recovery phone number is:": [
         "Ditt telefonnummer för återställning är:"
+      ],
+      "Your recovery phrase": [
+        "Din återställningsfras"
+      ],
+      "Your recovery phrase is set": [
+        "Din återställningsfras är inställd"
       ]
     },
     "saml: Action": {
@@ -20501,9 +20615,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, ladda ner din återställningsfras och inaktivera de markerade alternativen."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har rekommenderade åtgärder från ${ PROTON_SENTINEL_NAME }"
       ]
@@ -20841,6 +20952,12 @@
     "Setting": {
       "Enable Photos section": [
         "Aktivera sektion för foton"
+      ],
+      "Get updates about comments via email": [
+        "Få uppdateringar om kommentarer via e-post"
+      ],
+      "Include document name in email notifications": [
+        "Inkludera dokumentnamn i e-postaviseringar"
       ]
     },
     "Settings description": {
@@ -23418,6 +23535,9 @@
       "Activate user": [
         "Aktivera användare"
       ],
+      "Activate your email": [
+        "Aktivera din e-post"
+      ],
       "Activity monitor": [
         "Aktivitetsövervakare"
       ],
@@ -23735,6 +23855,9 @@
       "Create a new gateway": [
         "Skapa en ny gateway"
       ],
+      "Create a new password": [
+        "Skapa ett nytt lösenord"
+      ],
       "Create Gateway": [
         "Skapa gateway"
       ],
@@ -23827,6 +23950,9 @@
       ],
       "Day theme": [
         "Dagstema"
+      ],
+      "Deactivate current phrase?": [
+        "Inaktivera nuvarande fras?"
       ],
       "Decrypt key": [
         "Avkryptera nyckel"
@@ -23957,6 +24083,9 @@
       ],
       "Download the mobile apps": [
         "Ladda ner mobilapparna"
+      ],
+      "Download your recovery phrase": [
+        "Ladda ner din återställningsfras"
       ],
       "Downloads": [
         "Nedladdningar"
@@ -25002,6 +25131,9 @@
       "Verify it’s you": [
         "Verifiera att det är du"
       ],
+      "Verify your email": [
+        "Verifiera din e-post"
+      ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
       ],
@@ -25076,6 +25208,9 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Din ${ planTitle }-prenumeration har startat"
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din administratör bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
       ],
       "Your calendar link": [
         "Din kalenderlänk"
@@ -25505,6 +25640,9 @@
       "User is a group": [
         "Användare är en grupp"
       ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
       ]
@@ -25825,6 +25963,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grupp)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Lägg till delegerade roller till en användare för att bevilja ge dem de specifika behörigheter de behöver, vilket håller fullständig administratörsbehörighet separat och din miljö säker."
       ],
@@ -26217,6 +26361,9 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna återställa ditt konto."
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
         "Kunde inte logga in. Öppna webbläsartillägget ${ PASS_APP_NAME } och logga in därifrån."

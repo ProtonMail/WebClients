@@ -326,9 +326,6 @@
       "Delete policy": [
         "Richtlinie löschen"
       ],
-      "Delete token ${ token.Account }": [
-        "Token \"${ token.Account }\" löschen"
-      ],
       "Delete user": [
         "Benutzer löschen"
       ],
@@ -1968,9 +1965,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME }-Migrations-Assistent"
       ],
-      "App installed": [
-        "App installiert"
-      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -1991,9 +1985,6 @@
       ],
       "Domain connected": [
         "Domain verbunden"
-      ],
-      "Domain ownership verified": [
-        "Inhaberschaft der Domain bestätigt"
       ],
       "Estimated size": [
         "Geschätzte Größe"
@@ -2016,14 +2007,8 @@
       "Install migration app": [
         "Übernahme-App installieren"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Erfahre mehr darüber, was übernommen werden kann. Mehr erfahren"
-      ],
       "Mail": [
         "E-Mail"
-      ],
-      "Migrate": [
-        "Übernehmen"
       ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
@@ -2041,17 +2026,11 @@
       "Migration status": [
         "Migrationsstatus"
       ],
-      "Not started": [
-        "Nicht gestartet"
-      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
-      ],
-      "Organization settings": [
-        "Organisationseinstellungen"
       ],
       "Required": [
         "Erforderlich"
@@ -2061,9 +2040,6 @@
       ],
       "Select at least one user to start a migration": [
         "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Wähle aus, was du übernehmen möchtest. Dies gilt für alle Benutzer, unabhängig davon, ob sie jetzt oder später erstellt werden. Die Übernahme beginnt, nachdem die Benutzerkonten erstellt wurden."
       ],
       "Set up": [
         "Einrichten"
@@ -2079,9 +2055,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Um die Daten deiner Organisation zu migrieren, musst du die ${ BRAND_NAME }-Migrations-Assistenten-App aus dem Google Workspace Marketplace installieren. Dadurch erhält ${ BRAND_NAME } die Berechtigung, deine Daten zu kopieren. Komm nach der Installation hierher zurück, um fortzufahren."
-      ],
-      "Transfer errors": [
-        "Übertragungsfehler"
       ],
       "User": [
         "Benutzer"

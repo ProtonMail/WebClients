@@ -525,8 +525,8 @@
       "Delete record": [
         "Suprimeix el registre"
       ],
-      "Delete token ${ token.Account }": [
-        "Elimineu el testimoni \"${ token.Account }\""
+      "Delete token ${ tokens[0].Account }": [
+        "Eliminar el testimoni \"${ tokens[0].Account }\""
       ],
       "Delete token “${ token.Name }”": [
         "Suprimiu el testimoni \"${ token.Name }\""
@@ -890,6 +890,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Anar al proveïdor de domini"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -1370,6 +1373,9 @@
       ],
       "Save": [
         "Desa"
+      ],
+      "Save & exit": [
+        "Deseu i sortiu"
       ],
       "Save address": [
         "Desa l'adreça"
@@ -2876,14 +2882,59 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Assistent de migració de ${ BRAND_NAME }"
       ],
-      "Add a custom domain": [
-        "Afegiu un domini personalitzat"
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
       ],
-      "App installed": [
-        "S'ha instal·lat l'aplicació"
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=cap**: no posa en quarantena ni rebutja els correus electrònics no autoritzats. Normalment, aquesta opció només s'utilitza per resoldre problemes o fer proves."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: demana a les plataformes receptores que marquin els correus electrònics no autoritzats com a correu brossa o que els posin en quarantena."
+      ],
+      "Account connected": [
+        "S'ha connectat el compte"
+      ],
+      "Account disconnected": [
+        "S'ha desconnectat el compte"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "Activation link": [
+        "Enllaç d'activació"
+      ],
+      "Activation link copied to clipboard": [
+        "S'ha copiat l'enllaç d'activació al porta-retalls"
+      ],
+      "Add a domain": [
+        "Afegiu un domini"
+      ],
+      "Add users": [
+        "Afegiu usuaris"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Afegiu usuaris i configureu el vostre domini manualment per enviar i rebre correu. Ideal per a equips petits que comencen de zero."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "An unknown error occurred": [
+        "S'ha produït un error desconegut"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Tan bon punt s'hagin creat els comptes, podreu compartir l'enllaç d'activació perquè els usuaris puguin demanar el seu compte de ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Autentiqueu-vos"
+      ],
+      "Authenticate to Google Workspace": [
+        "Autentiqueu-vos a Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentiqueu el vostre compte de Google Workspace"
@@ -2894,23 +2945,65 @@
       "Change": [
         "Canvieu"
       ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Escolliu com voleu portar el vostre equip i la configuració del correu electrònic a ${ BRAND_NAME }."
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Escolliu què voleu migrar. La vostra elecció s'aplicarà a tots els usuaris. La migració començarà un cop hàgiu decidit quins usuaris voleu copiar."
+      ],
       "Completed": [
         "S'ha completat"
       ],
       "Configure": [
         "Configureu"
       ],
+      "Configure domain": [
+        "Configureu el domini"
+      ],
       "Configure migration": [
         "Configureu la migració"
+      ],
+      "Configure your domain": [
+        "Configureu el vostre domini"
       ],
       "Contacts": [
         "Contactes"
       ],
+      "Continue migration": [
+        "Continueu la migració"
+      ],
+      "Copy activation link": [
+        "Copieu l'enllaç d'activació"
+      ],
+      "Copy activation link to clipboard": [
+        "Copiar l'enllaç d'activació al porta-retalls"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini. Podeu trobar un exemple i alguns consells útils a ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "S'estan creant els comptes"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense ella, els missatges poden ser considerats menys fiables."
+      ],
+      "DKIM records": [
+        "Registres DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC es basa en SPF i DKIM indicant als servidors receptors com gestionar els missatges que no superin aquestes comprovacions. Ajuda a protegir el vostre domini contra la suplantació i millora la fiabilitat general dels lliuraments."
+      ],
+      "DMARC records": [
+        "Registres DMARC"
+      ],
+      "Domain added": [
+        "S'ha afegit el domini"
+      ],
       "Domain connected": [
         "S'ha connectat el domini"
       ],
-      "Domain ownership verified": [
-        "S'ha verificat la propietat del domini"
+      "Errors": [
+        "Errors"
       ],
       "Estimated size": [
         "Mida estimada"
@@ -2918,14 +3011,32 @@
       "Failed to load OAuth": [
         "No s'ha pogut carregar OAuth"
       ],
+      "Finalize migration": [
+        "Finalitzeu la migració"
+      ],
+      "Finalize your migration": [
+        "Finalitzeu la migració"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
       "Finish setting up your business account": [
         "Acabeu de configurar el vostre compte d'empresa"
+      ],
+      "Go to Domain names": [
+        "Aneu a Noms de domini"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Compte de Google Workspace"
+      ],
       "Has errors": [
         "Té errors"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "S'han produït errors d'importació per a ${ user.AdminSetName }"
       ],
       "In progress": [
         "En curs"
@@ -2936,20 +3047,29 @@
       "Install migration app": [
         "Instal·leu l’aplicació de migració"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Obtingueu més informació sobre què es pot migrar. Per saber-ne més"
+      "Install Migration assistant": [
+        "Instal·leu l'assistent de migració"
+      ],
+      "Loading your organization data": [
+        "S'estan carregant les dades de la vostra organització"
       ],
       "Mail": [
         "Correu"
       ],
-      "Migrate": [
-        "Migreu"
+      "Managed via ${ registrar.name }": [
+        "Gestionat mitjançant ${ registrar.name }"
       ],
       "Migrate from Google Workspace": [
         "Migreu des de Google Workspace"
       ],
       "Migrate users": [
         "Migreu els usuaris"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Migreu usuaris a ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "S'ha migrat"
       ],
       "Migration includes": [
         "La migració inclou"
@@ -2961,8 +3081,29 @@
       "Migration status": [
         "Estat de la migració"
       ],
-      "Not started": [
-        "No s'ha iniciat"
+      "More details": [
+        "Més detalls"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Migreu usuaris, correus electrònics i preferències de Google Workspace automàticament. Us guiarem a través de la connexió del vostre compte, la verificació del domini i la migració segura dels usuaris."
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "No hi ha detalls de l'error disponibles. Poseu-vos en contacte amb el servei d'atenció al client per més informació"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Not confirmed": [
+        "No confirmat"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Un cop els usuaris hagin demanat el seu compte de ${ BRAND_NAME }, finalitzeu la migració."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Un cop hàgim confirmat que els correus electrònics s'envien a ${ BRAND_NAME }, la migració es completarà. Rebreu un correu electrònic de confirmació per informar-vos quan això passi. Aquest procés pot trigar fins a 24 hores."
       ],
       "Organization does not have enough seats available": [
         "L'organització no té prou llicències disponibles"
@@ -2970,8 +3111,17 @@
       "Organization does not have enough storage available": [
         "L'organització no té prou espai d'emmagatzematge disponible"
       ],
-      "Organization settings": [
-        "Configuració de l'organització"
+      "Pending": [
+        "Està pendent"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Afegiu els següents registres a la consola DNS del vostre proveïdor de domini:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deixeu aquesta finestra oberta fins que hàgim creat tots els usuaris."
+      ],
+      "Refresh": [
+        "Actualitzar"
       ],
       "Required": [
         "Obligatori"
@@ -2982,8 +3132,8 @@
       "Select at least one user to start a migration": [
         "Seleccioneu almenys un usuari per iniciar una migració"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Seleccioneu què voleu migrar; això s'aplicarà a tots els usuaris, tant si es creen ara com més endavant. La migració començarà un cop s'hagin creat els comptes d'usuari."
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
       ],
       "Set up": [
         "Configureu-ho"
@@ -2991,14 +3141,38 @@
       "Set up billing information": [
         "Configureu la informació de facturació"
       ],
+      "Set up manually": [
+        "Configuració manual"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configureu l'enviament segur (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar l'enviament segur (DMARC)"
+      ],
       "Set up two-factor authentication": [
         "Configureu l’autenticació de doble factor"
       ],
       "Settings": [
         "Preferències"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Compartiu l'enllaç d'activació amb els usuaris perquè puguin demanar el seu compte de ${ BRAND_NAME }."
+      ],
       "Sign in to Google Workspace": [
         "Inicieu la sessió a Google Workspace"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Some accounts are not claimed": [
+        "Alguns comptes no s'han reclamat"
+      ],
+      "SPF records": [
+        "Registres SPF"
+      ],
+      "Start migrating": [
+        "Inicieu la migració"
       ],
       "Start migration": [
         "Inicieu la migració"
@@ -3006,17 +3180,35 @@
       "Status": [
         "Estat"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "La configuració per defecte és cap. Tanmateix, per millorar la vostra seguretat, us recomanem establir aquest valor a p=quarantine."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "El valor \"p=\" especifica l'acció a prendre per als correus electrònics que no passen la verificació DMARC. A continuació, es mostren les accions disponibles:"
+      ],
+      "This migration has been completed": [
+        "S'ha completat la migració"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
-      ],
-      "Transfer errors": [
-        "Errors de transferència"
       ],
       "User": [
         "Usuari"
       ],
+      "User status": [
+        "Estat de l'usuari"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Els usuaris poden utilitzar ${ BRAND_NAME } o Google simultàniament mentre duri la migració."
+      ],
       "Users migrated": [
         "S'han migrat els usuaris"
+      ],
+      "Verified": [
+        "Verificat"
+      ],
+      "Verify domain ownership": [
+        "Verifiqueu la propietat del domini"
       ],
       "Verify installation": [
         "Verifiqueu la instal·lació"
@@ -3024,20 +3216,33 @@
       "Verify your domain": [
         "Verifiqueu el vostre domini"
       ],
-      "Verify your domain ownership": [
-        "Verifiqueu la propietat del vostre domini"
-      ],
       "Verify your domain to start a migration": [
         "Verifiqueu el vostre domini per iniciar una migració"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Hem detectat el domini principal vinculat al vostre compte de Google Workspace. Confirmeu-lo per continuar configurant el correu electrònic per a l'organització ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Encara estem comprovant els registres MX amb el vostre proveïdor de domini."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Cal que concediu permís perquè ${ BRAND_NAME } pugui copiar les vostres dades. Un cop acceptats els permisos, torneu aquí per continuar."
+      ],
+      "You're all set!": [
+        "Ja ho teniu tot a punt!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
+        "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
       ]
     },
     "breadcrumb": {
@@ -5269,6 +5474,11 @@
         "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "S'ha trobat un registre DMARC duplicat, aneu a la consola DNS del vostre proveïdor de domini per solucionar-ho."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "També hem aparellat automàticament camps CSV amb camps vCard. Podeu revisar i canviar aquest aparellament manualment."
@@ -6344,6 +6554,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add 1 more": [
+        "Afegiu-ne 1 més"
+      ],
       "Add emergency contact": [
         "Afegeix un contacte d'emergència"
       ],
@@ -6442,6 +6655,9 @@
       ],
       "Enable auto-renew": [
         "Habilita la renovació automàtica"
+      ],
+      "Explore plans": [
+        "Exploreu els plans"
       ],
       "For ${ email }": [
         "Per a ${ email }"
@@ -10107,9 +10323,6 @@
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
-      "Check the status of imports and forwarding.": [
-        "Comprova l'estat de les importacions i els enviaments."
-      ],
       "Check your network and try again.": [
         "Comproveu la xarxa i torneu-ho a provar."
       ],
@@ -12249,6 +12462,15 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu l'**accés d'emergència**."
+      ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu l'**inici de sessió amb codi QR**."
       ],
@@ -12257,6 +12479,9 @@
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **Restabliment amb la sessió iniciada**."
@@ -14096,6 +14321,9 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
+      "Confirm MX records added": [
+        "Confirmeu que s'han afegit els registres MX"
+      ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
       ],
@@ -14445,6 +14673,9 @@
       "Highest VPN speed": [
         "Velocitat de VPN màxima"
       ],
+      "Host name": [
+        "Nom del servidor"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entenc que he d'afegir aquesta adreça de correu electrònic a l'altre compte immediatament per a evitar perdre-la de manera permanent."
       ],
@@ -14637,6 +14868,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
       ],
+      "MX records": [
+        "Registres MX"
+      ],
       "Name": [
         "Nom"
       ],
@@ -14819,6 +15053,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Priority": [
+        "Prioritat"
       ],
       "Priority support": [
         "Suport prioritari"
@@ -15287,6 +15524,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ],
+      "Set recovery phone number": [
+        "Configureu el número de telèfon de recuperació"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15326,6 +15566,26 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "No s'ha trobat el registre ${ capitalizedGroup }"
+      ],
+      "Host name": [
+        "Nom del servidor"
+      ],
+      "Invalid ${ group.name } record found": [
+        "S'ha trobat un registre de ${ group.name } no vàlid"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Use default value": [
+        "Feu servir el valor per defecte"
+      ],
+      "Valid ${ group.name } record found": [
+        "S'ha trobat un registre ${ group.name } vàlid"
       ]
     },
     "Label for new member": {
@@ -15492,6 +15752,9 @@
       ],
       "data recovery option": [
         "opció de recuperació de dades"
+      ],
+      "Detailed instructions": [
+        "Instruccions detallades"
       ],
       "Details": [
         "Detalls"
@@ -19467,6 +19730,9 @@
       "Search for an email or IP address": [
         "Busqueu un correu electrònic o una adreça IP"
       ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
+      ],
       "Search parent folder": [
         "Cerca la carpeta principal"
       ],
@@ -19877,8 +20143,11 @@
       "Partial": [
         "Parcial"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Us cal una opció per restablir la contrasenya (verificació per correu electrònic o SMS)"
+      "Recovery score: ${ score }": [
+        "Puntuació de recuperació: ${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Cal una opció de restabliment de contrasenya verificada (correu electrònic o SMS)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Puntuació: ${ score } / ${ maxScore }"
@@ -19921,13 +20190,13 @@
       "Download recovery file": [
         "Descarregueu el fitxer de recuperació"
       ],
-      "Email verification enabled": [
-        "S'ha habilitat la verificació per correu electrònic"
+      "Email recovery enabled": [
+        "S'ha activat la recuperació per correu electrònic"
       ],
       "Emergency contacts added": [
         "S'han afegit els contactes d'emergència"
       ],
-      "Enable recovery by email": [
+      "Enable email recovery": [
         "Habiliteu la recuperació per correu electrònic"
       ],
       "Enable recovery by phone": [
@@ -19938,6 +20207,9 @@
       ],
       "Password verified": [
         "S'ha verificat la contrasenya"
+      ],
+      "Phone recovery enabled": [
+        "S'ha activat la recuperació per telèfon"
       ],
       "Recovery contacts added": [
         "S'han afegit els contactes de recuperació"
@@ -19953,9 +20225,6 @@
       ],
       "Sign-in with QR code allowed": [
         "S'ha permès l'inici de sessió amb codi QR"
-      ],
-      "SMS verification enabled": [
-        "S'ha habilitat la verificació per SMS"
       ],
       "Verify password": [
         "Verifiqueu la contrasenya"
@@ -20680,6 +20949,233 @@
         "S'ha definit la vostra frase de recuperació"
       ]
     },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Correu electrònic del compte de ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Protecció del compte"
+      ],
+      "Add": [
+        "Afegiu"
+      ],
+      "Add emergency contacts": [
+        "Afegiu contactes d'emergència"
+      ],
+      "Add options": [
+        "Afegir opcions"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Afegiu persones de confiança amb qui pugueu contactar fàcilment. Podran accedir al vostre compte i restablir-vos la contrasenya."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Afegiu persones de confiança amb qui pugueu contactar fàcilment. Us podran ajudar a desbloquejar les vostres dades després de restablir la contrasenya."
+      ],
+      "Add phone number": [
+        "Afegiu un número de telèfon"
+      ],
+      "Add recovery contacts": [
+        "Afegiu contactes de recuperació"
+      ],
+      "Add recovery email": [
+        "Afegiu un correu electrònic de recuperació"
+      ],
+      "Add recovery phone": [
+        "Afegiu un telèfon de recuperació"
+      ],
+      "Added emergency contacts": [
+        "S'han afegit els contactes d'emergència"
+      ],
+      "Added recovery contacts": [
+        "S'han afegit els contactes de recuperació"
+      ],
+      "Added recovery email": [
+        "S'ha afegit el correu electrònic de recuperació"
+      ],
+      "Added recovery phone": [
+        "S'ha afegit el telèfon de recuperació"
+      ],
+      "Allow": [
+        "Permetre-ho"
+      ],
+      "Allow data recovery from this device": [
+        "Permeteu la recuperació de dades des d'aquest dispositiu"
+      ],
+      "Allow password reset from the settings": [
+        "Permeteu el restabliment de la contrasenya des de les preferències"
+      ],
+      "Allow recovery by email": [
+        "Permeteu la recuperació per correu electrònic"
+      ],
+      "Allow recovery by phone": [
+        "Permetre la recuperació per telèfon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permetre l'escaneig d'un codi QR per iniciar sessió"
+      ],
+      "Allow trusted friends to sign in": [
+        "Permeteu que amistats de confiança iniciïn sessió"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Permeteu que amistats de confiança desbloquegin les vostres dades"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Torneu a ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Enhorabona"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "No l'heu rebut? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Download": [
+        "Descarregar"
+      ],
+      "Download recovery file": [
+        "Descarregueu el fitxer de recuperació"
+      ],
+      "Downloaded recovery file": [
+        "S'ha descarregat el fitxer de recuperació"
+      ],
+      "Emergency contacts enabled": [
+        "S'han activat els contactes d'emergència"
+      ],
+      "Enable device recovery": [
+        "Habiliteu la recuperació del dispositiu"
+      ],
+      "Enable email recovery": [
+        "Habiliteu la recuperació per correu electrònic"
+      ],
+      "Enable emergency contacts": [
+        "Habiliteu els contactes d'emergència"
+      ],
+      "Enable password reset from settings": [
+        "Habiliteu el restabliment de contrasenya des de les preferències"
+      ],
+      "Enable phone recovery": [
+        "Habiliteu la recuperació per telèfon"
+      ],
+      "Enable QR code sign-in": [
+        "Activeu l'inici de sessió amb codi QR"
+      ],
+      "Enabled device recovery": [
+        "S'ha activat la recuperació del dispositiu"
+      ],
+      "Enabled email recovery": [
+        "S'ha activat la recuperació per correu electrònic"
+      ],
+      "Enabled password reset from settings": [
+        "S'ha activat el restabliment de contrasenya des de les preferències"
+      ],
+      "Enabled phone recovery": [
+        "S'ha habilitat la recuperació per telèfon"
+      ],
+      "Enabled QR code sign-in": [
+        "S'ha activat l'inici de sessió amb codi QR"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Here's how you increased your account protection:": [
+        "Aquí teniu com heu augmentat la protecció del vostre compte:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Si oblideu la contrasenya, podeu iniciar sessió mitjançant un codi QR. Només cal que hàgiu iniciat sessió en un servei de ${ BRAND_NAME } en un altre dispositiu."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Si perdeu l'accés al vostre compte de ${ BRAND_NAME }, això us permetrà iniciar sessió i recuperar les dades. És l'única manera de restaurar-ho tot a l'instant, així que assegureu-vos de desar-ho en un lloc segur."
+      ],
+      "Later": [
+        "Més tard"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Protegiu el vostre llegat amb l'accés d'emergència"
+      ],
+      "Save recovery phrase": [
+        "Deseu la frase de recuperació"
+      ],
+      "Saved recovery phrase": [
+        "S'ha desat la frase de recuperació"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Cal que tinguin un compte de ${ BRAND_NAME }."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Això us permetrà accedir ràpidament al vostre compte de ${ BRAND_NAME } perquè pugueu canviar la contrasenya."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Això us permetrà restablir la contrasenya del vostre compte si l'heu perduda, però manteniu la sessió iniciada a ${ BRAND_NAME }. Sovint és la manera més fàcil de recuperar el vostre compte si teniu la sessió iniciada."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Això restaurarà l'accés a correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Per assegurar-nos que l'adreça de correu electrònic és vostra, introduïu el codi de verificació enviat a ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Per assegurar-vos que el número de telèfon és el vostre, introduïu el codi de verificació enviat a ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Per assegurar-nos que aquesta adreça és realment vostra, us enviarem un correu electrònic amb un enllaç de verificació."
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Milloreu de pla per habilitar l'accés d'emergència al vostre compte. Això us permetrà designar d'1 a 5 persones que us podran restablir la contrasenya."
+      ],
+      "Verified password": [
+        "S'ha verificat la contrasenya"
+      ],
+      "Verified recovery email": [
+        "S'ha verificat el correu electrònic de recuperació"
+      ],
+      "Verified recovery phone": [
+        "S'ha verificat el telèfon de recuperació"
+      ],
+      "Verify": [
+        "Verifiqueu"
+      ],
+      "Verify password": [
+        "Verifiqueu la contrasenya"
+      ],
+      "Verify recovery email": [
+        "Verifiqueu el correu electrònic de recuperació"
+      ],
+      "Verify recovery phone": [
+        "Verifiqueu el telèfon de recuperació"
+      ],
+      "Verify your recovery email": [
+        "Verifiqueu el vostre correu electrònic de recuperació"
+      ],
+      "Verify your recovery phone": [
+        "Verifiqueu el vostre telèfon de recuperació"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Podeu desar una còpia de seguretat de les dades en aquest dispositiu. Això restaurarà l'accés a correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya, simplement iniciant sessió en aquest dispositiu."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Podeu utilitzar la verificació per correu electrònic per tornar a accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Podeu utilitzar la verificació per SMS per tornar a accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Podeu utilitzar el correu electrònic de recuperació per accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Podeu utilitzar el vostre telèfon de recuperació per recuperar l'accés al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "No cal que obriu ni llegiu el fitxer; només heu de descarregar-lo i desar-lo en un lloc segur."
+      ],
+      "Your recovery checklist": [
+        "La vostra llista de verificació de recuperació"
+      ],
+      "Your security setup": [
+        "La vostra configuració de seguretat"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Cancel·la"
@@ -20884,8 +21380,11 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Per garantir la màxima seguretat possible del vostre compte, descarregueu la frase de recuperació i desactiveu les opcions ressaltades."
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu la vostra frase de recuperació."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Teniu accions recomanades per ${ PROTON_SENTINEL_NAME }"
@@ -22405,6 +22904,15 @@
       "Available on this device": [
         "Està disponible en aquest dispositiu"
       ],
+      "Disable contact-assisted recovery": [
+        "Desactiveu la recuperació assistida per contactes"
+      ],
+      "Disable device data backup": [
+        "Desactiveu la còpia de seguretat de les dades del dispositiu"
+      ],
+      "Disable emergency access": [
+        "Desactiveu l'accés d'emergència"
+      ],
       "Disable QR code sign-in": [
         "Desactiveu l'inici de sessió amb codi QR"
       ],
@@ -22413,6 +22921,9 @@
       ],
       "Disable recovery by phone": [
         "Desactiveu la recuperació per telèfon"
+      ],
+      "Disable recovery file": [
+        "Desactiveu el fitxer de recuperació"
       ],
       "Disable signed-in reset": [
         "Desactiveu el restabliment amb la sessió iniciada"
@@ -25978,6 +26489,9 @@
       "User is a group": [
         "L'usuari és un grup"
       ],
+      "via ${ groupName }": [
+        "mitjançant ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
       ]
@@ -26301,6 +26815,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grup)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Delegueu rols a un usuari per concedir-li només els permisos específics que necessiti, mentre manteniu separats els poders complets d'administració i el vostre entorn segur."
       ],
