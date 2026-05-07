@@ -1,6 +1,6 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { clientBooted } from '@proton/pass/lib/client';
+import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '@proton/pass/store/actions';
 import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
@@ -26,13 +26,14 @@ function* clientInitWorker(
     }
 
     if (loggedIn && userId && clientBooted(status)) {
+        const online = !clientOffline(status);
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
-        yield put(maybeRevalidate(getUserAccessIntent(userId)));
+        if (online) yield put(maybeRevalidate(getUserAccessIntent(userId)));
 
         /* garbage collect any stale popup tab
          * state on each popup wakeup call */
         if (endpoint === 'popup') {
-            yield put(secureLinksGet.intent());
+            if (online) yield put(secureLinksGet.intent());
             yield put(passwordHistoryGarbageCollect());
 
             yield fork(function* () {
