@@ -1,8 +1,14 @@
 import { trimLocalID, isGoogleOAuthAuthorizationURL } from "./urlTests";
-import * as urlStore from "../../store/urlStore";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 jest.mock("../config", () => {});
+
+jest.mock("../../store/urlStore", () => ({
+    getAppURL: () => ({
+        account: "https://account.proton.me",
+        meet: "https://meet.proton.me",
+    }),
+}));
 
 describe("urlTests", () => {
     describe("trimLocalID", () => {
@@ -21,13 +27,6 @@ describe("urlTests", () => {
     });
 
     describe("isGoogleOAuthAuthorizationURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                meet: "https://meet.proton.me",
-            });
-        });
-
         it("returns true for a valid Google OAuth URL", () => {
             const validURL = `https://account.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
 
