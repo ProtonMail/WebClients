@@ -7,6 +7,7 @@ jest.mock("electron", () => ({
 }));
 
 jest.mock("./sentryReport");
+jest.mock("./log");
 
 jest.mock("./isProdEnv", () => ({ isProdEnv: jest.fn(() => true) }));
 jest.mock("./urls/urlTests", () => ({ isHostAllowed: jest.fn(() => true) }));
