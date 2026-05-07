@@ -879,6 +879,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "桌面解锁检查正在进行中。"
+      ],
       "A domain ownership must be verified first.": [
         "必须首先验证域名所有权。"
       ],
