@@ -96,7 +96,9 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
     )({ payload: {} })
 );
 
-export const offlineResume = requestActionsFactory<{ localID?: number }, boolean, void>('offline::resume')();
+export const offlineResume = requestActionsFactory<{ localID?: number; retryable?: boolean; silence?: boolean }, boolean, void>(
+    'offline::resume'
+)();
 
 /** Represents an action object streamed through chunks.
  * This is only to be used in the extension when action
