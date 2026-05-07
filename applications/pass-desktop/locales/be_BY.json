@@ -9,7 +9,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -783,6 +783,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Don't show this again": [
+        "Больш не паказваць"
       ]
     },
     "App menu": {
@@ -1399,6 +1402,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } павінна быць аўтарызавана ў сістэме."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Адбываецца праверка, ці разблакіраваны працоўны стол."
       ]
     },
     "Error message": {
@@ -4901,7 +4907,7 @@
         "Аднавіць гэту версію?"
       ],
       "Resume monitoring?": [
-        "Узнавіць назіранне?"
+        "Узнавіць маніторынг?"
       ],
       "Reused ${ count } time": [
         "Паўторна выкарыстаны ${ count } раз",
