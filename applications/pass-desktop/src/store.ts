@@ -1,17 +1,16 @@
 import Store from 'electron-store';
 
-import type { DesktopTheme } from '@proton/pass/types';
+import type { DesktopTheme, UpdateStore } from '@proton/pass/types';
 
 import type { StoreInstallProperties } from './lib/install-info';
+import { calculateUpdateDistribution } from './lib/updater/helpers';
 import type { WindowConfigStoreProperties } from './lib/window-management';
-import type { StoreUpdateProperties } from './update';
 
 type RootStore = {
     installInfo?: StoreInstallProperties;
-    update?: StoreUpdateProperties;
+    update?: UpdateStore;
     theme?: DesktopTheme;
     windowConfig?: WindowConfigStoreProperties;
-    optInForBeta?: boolean;
 };
 
 export const store = new Store<RootStore>({
@@ -22,6 +21,12 @@ export const store = new Store<RootStore>({
             const distribution = s.get('update.distribution');
             if (!distribution || typeof distribution !== 'number') return;
             s.set('update', { distribution });
+        },
+        '>=1.36.0': (s) => {
+            const beta = s.get('optInForBeta') === true;
+            const distribution = s.get('update')?.distribution ?? calculateUpdateDistribution();
+            s.set<'update'>('update', { distribution, beta, status: 0, newVersion: null, progress: null });
+            s.delete('optInForBeta' as any);
         },
     },
 });

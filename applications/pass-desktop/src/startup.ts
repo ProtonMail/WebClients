@@ -6,7 +6,7 @@ import { setupIpcHandlers as info } from './lib/install-info';
 import { nativeMessaging } from './lib/native-messaging/startup';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';
-import { setupIpcHandlers as update } from './lib/update';
+import { setupIpcHandlers as update } from './lib/updater/ipc';
 import { setupIpcHandlers as window } from './lib/window';
 import type { PassElectronContext } from './types';
 import { handleSquirrelEvents } from './utils/squirrel';
@@ -24,7 +24,11 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     theming();
     autotype(() => ctx.window);
     contextMenu(() => ctx.window);
-    update(() => ctx.session);
+    update(
+        () => ctx.window,
+        () => ctx.session
+    );
+
     const shutdownNativeMessaging = await nativeMessaging(app, () => ctx.window);
 
     // Return cleanup function
