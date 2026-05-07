@@ -134,8 +134,8 @@ export const NewsletterSubscriptionView = ({
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
-    if (!loadingSubscriptions && subscriptionCount === 0) {
-        return <NewsletterSubscriptionViewPlaceholder />;
+    if (subscriptionCount === 0) {
+        return <NewsletterSubscriptionViewPlaceholder loading={!!loadingSubscriptions} />;
     }
 
     const hideEmailList = breakpoints.viewportWidth['<=medium'];
