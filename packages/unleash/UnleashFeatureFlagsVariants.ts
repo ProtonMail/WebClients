@@ -17,6 +17,7 @@ export const FLAGS_WITH_VARIANT = [
     'MaxContactsImport',
     'ShowLiteAppCheckoutV2',
     'OlesM1',
+    'Vpn2024AddonsExperiment',
 ] satisfies FeatureFlag[];
 
 /**
@@ -36,6 +37,11 @@ export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'show' | 'hide';
 export type OlesM1Variant = 'Config';
+export type EnableVpn2024AddonsExperimentVariant =
+    | 'lumo-addon-only'
+    | 'meet-addon-only'
+    | 'pass-addon-only'
+    | 'no-addon';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -65,6 +71,7 @@ type FeatureFlagVariantMap = {
     MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;
     ShowLiteAppCheckoutV2: VariantReturnType<ShowLiteAppCheckoutV2Variant>;
     OlesM1: VariantReturnType<OlesM1Variant>;
+    Vpn2024AddonsExperiment: VariantReturnType<EnableVpn2024AddonsExperimentVariant>;
 };
 
 /**
