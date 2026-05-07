@@ -90,9 +90,6 @@
       "Apply": [
         "Aplica"
       ],
-      "Ask me next time": [
-        "Pregunteu-m'ho la pròxima vegada"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
         "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
@@ -680,9 +677,6 @@
       ],
       "Save changes": [
         "Desa els canvis"
-      ],
-      "Save preferences": [
-        "Desar les preferències"
       ],
       "Search": [
         "Cerca"
@@ -4376,9 +4370,6 @@
       "Continue": [
         "Continueu"
       ],
-      "Converting document...": [
-        "S'està convertint el document..."
-      ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
@@ -4427,9 +4418,6 @@
       ],
       "Creating link to folder": [
         "S'està creant l'enllaç a la carpeta"
-      ],
-      "Creating new document...": [
-        "S’està creant el document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4530,12 +4518,6 @@
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "S'ha produït un error en convertir el document: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "S'ha produït un error en carregar el document: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Error de sincronització"
       ],
@@ -4598,12 +4580,6 @@
       ],
       "Geoblocking": [
         "Geobloqueig"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
-      ],
-      "Get Notified About Comments": [
-        "Rebeu notificacions sobre els comentaris"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
@@ -4738,17 +4714,11 @@
       "Loading link": [
         "S'està carregant l'enllaç"
       ],
-      "Loading...": [
-        "S'està carregant..."
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Sembla que no teniu connexió. El document no es pot editar sense connexió. Comproveu la connectivitat del dispositiu."
       ],
       "Low Priority": [
         "Prioritat baixa"
-      ],
-      "Making a copy...": [
-        "S’està fent una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -4780,9 +4750,6 @@
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne algun."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5064,9 +5031,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat d'Slack de manera incorrecta. Quan copieu enllaços llargs des d'Slack, feu clic amb el botó dret del ratolí sobre l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5685,9 +5649,6 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
-      "Enable email notifications": [
-        "Habilitar les notificacions per correu electrònic"
-      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
@@ -5735,9 +5696,6 @@
       ],
       "Include application logs in bug report": [
         "Inclou els registres de l'aplicació a l'informe d'errors"
-      ],
-      "Include document name in notification": [
-        "Incloure el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -8687,9 +8645,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "S’està creant el full de càlcul..."
-      ],
       "Detect automatically": [
         "Ho detecta automàticament"
       ],
