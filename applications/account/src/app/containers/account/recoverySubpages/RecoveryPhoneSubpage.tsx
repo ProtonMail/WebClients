@@ -199,6 +199,12 @@ const RecoveryPhoneSubpage = () => {
                             inputProps={{
                                 label: c('Label').t`Your recovery phone number`,
                                 readOnly: !isEditingRecoveryPhone && !!phoneRecovery.value,
+                                onFocus: () => {
+                                    if (!phoneRecovery.value) {
+                                        return;
+                                    }
+                                    setIsEditingRecoveryPhone(true);
+                                },
                             }}
                             renderForm={({ onSubmit, onReset, input, submitButtonProps, onVerify, onRemove }) => {
                                 return (
