@@ -238,11 +238,9 @@ enum DocsFeatureFlag {
 }
 
 export enum MailFeatureFlag {
-    SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
-    WalletRightSidebarLink = 'WalletRightSidebarLink',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
