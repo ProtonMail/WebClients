@@ -40,7 +40,7 @@ export const useListSelection = ({
         );
     }, [checkedIDs]);
 
-    const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID: labelID || '' });
+    const { selectAll, locationCount } = useSelectAll({ labelID: labelID || '' });
 
     const pageSize = useMailSelector(pageSizeSelector);
 
@@ -52,14 +52,13 @@ export const useListSelection = ({
         const labelIdString: string = labelID;
 
         return getCanDisplaySelectAllBanner({
-            selectAllFeatureAvailable: selectAllAvailable,
             mailPageSize: pageSize,
             checkedIDs,
             labelID: labelIdString,
             isSearch,
             hasFilter,
         });
-    }, [selectAllAvailable, pageSize, checkedIDs, labelID, isSearch, hasFilter]);
+    }, [pageSize, checkedIDs, labelID, isSearch, hasFilter]);
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,

@@ -92,12 +92,10 @@ export const getOAuthAuthorizationUrl = ({
     provider,
     scope,
     config,
-    consentExperiment,
 }: {
     provider: ImportProvider | OAUTH_PROVIDER;
     scope: string;
     config: ApiEnvironmentConfig;
-    consentExperiment: boolean;
 }) => {
     const params = new URLSearchParams();
 
@@ -106,12 +104,7 @@ export const getOAuthAuthorizationUrl = ({
     params.append('scope', scope);
 
     if (provider === ImportProvider.OUTLOOK || provider === OAUTH_PROVIDER.OUTLOOK) {
-        // The flag is present to control if we add the prompt params
-        // The flag must be off to add the consent params
-        if (!consentExperiment) {
-            params.append('prompt', 'consent');
-        }
-
+        params.append('prompt', 'consent');
         return generateOutlookOAuthUrl(params, config);
     }
 

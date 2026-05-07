@@ -227,7 +227,6 @@ describe('selectAll', () => {
         it('should show the select all banner', () => {
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
                     labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -238,7 +237,6 @@ describe('selectAll', () => {
 
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.TWO_HUNDRED,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.TWO_HUNDRED),
                     labelID: 'customLabelID',
@@ -248,23 +246,9 @@ describe('selectAll', () => {
             ).toBeTruthy();
         });
 
-        it('should not show the select all banner when Feature flag is off', () => {
-            expect(
-                getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: false,
-                    mailPageSize: MAIL_PAGE_SIZE.FIFTY,
-                    checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
-                    labelID: MAILBOX_LABEL_IDS.INBOX,
-                    isSearch: false,
-                    hasFilter: false,
-                })
-            ).toBeFalsy();
-        });
-
         it('should not show the select all banner when not enough checked ids', () => {
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY - 1),
                     labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -277,7 +261,6 @@ describe('selectAll', () => {
         it('should not show the select all banner in all mail and almost all mail', () => {
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
                     labelID: MAILBOX_LABEL_IDS.ALL_MAIL,
@@ -288,7 +271,6 @@ describe('selectAll', () => {
 
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
                     labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
@@ -301,7 +283,6 @@ describe('selectAll', () => {
         it('should not show the select all banner in search', () => {
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
                     labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -314,7 +295,6 @@ describe('selectAll', () => {
         it('should not show the select all banner in filter', () => {
             expect(
                 getCanDisplaySelectAllBanner({
-                    selectAllFeatureAvailable: true,
                     mailPageSize: MAIL_PAGE_SIZE.FIFTY,
                     checkedIDs: generateIDs(MAIL_PAGE_SIZE.FIFTY),
                     labelID: MAILBOX_LABEL_IDS.INBOX,
