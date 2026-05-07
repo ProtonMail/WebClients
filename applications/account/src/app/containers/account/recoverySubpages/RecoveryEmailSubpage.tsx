@@ -263,7 +263,7 @@ const RecoveryEmailSubpage = () => {
                             </div>
                         )}
 
-                        {emailRecovery.hasReset && isSentinelUser && (
+                        {emailRecovery.value && emailRecovery.hasReset && isSentinelUser && (
                             <SentinelWarning
                                 text={c('Info')
                                     .t`To ensure the highest possible security of your account, disable **Recovery by recovery email**.`}
