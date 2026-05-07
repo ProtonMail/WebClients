@@ -136,6 +136,7 @@ enum PaymentsFlag {
     PaymentsValidateBillingAddress = 'PaymentsValidateBillingAddress',
     HideLumoAddonForVpn2024 = 'HideLumoAddonForVpn2024',
     DomainVpnBiz2023 = 'DomainVpnBiz2023',
+    Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
 }
 
 export enum CalendarFeatureFlag {
