@@ -6,6 +6,7 @@ import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import {
     canModify,
+    getAutoCoupon,
     getAvailableSubscriptionActions,
     getPlanIDs,
     getSubscriptionPlanTitle,
@@ -1077,5 +1078,123 @@ describe('isUpcomingSubscriptionUnpaid', () => {
         };
 
         expect(isUpcomingSubscriptionUnpaid(subscription)).toBe(true);
+    });
+});
+
+describe('getAutoCoupon', () => {
+    const currency = 'EUR';
+
+    describe('auto-assigns coupon when none provided', () => {
+        it('assigns VPN_INTRO_2025 for VPN2024 on yearly cycle', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY, currency })).toBe(
+                COUPON_CODES.VPN_INTRO_2025
+            );
+        });
+
+        it('assigns VPN_INTRO_2025 for VPN2024 on two-years cycle', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.TWO_YEARS, currency })).toBe(
+                COUPON_CODES.VPN_INTRO_2025
+            );
+        });
+
+        it('assigns VPNPASSINTRO2026 for VPN_PASS_BUNDLE on yearly cycle', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.YEARLY, currency })).toBe(
+                COUPON_CODES.VPNPASSINTRO2026
+            );
+        });
+
+        it('assigns VPNPASSINTRO2026 for VPN_PASS_BUNDLE on two-years cycle', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.TWO_YEARS, currency })).toBe(
+                COUPON_CODES.VPNPASSINTRO2026
+            );
+        });
+
+        it('returns undefined for VPN2024 on monthly cycle', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.MONTHLY, currency })).toBeUndefined();
+        });
+
+        it('returns undefined for VPN_PASS_BUNDLE on monthly cycle', () => {
+            expect(
+                getAutoCoupon({ planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.MONTHLY, currency })
+            ).toBeUndefined();
+        });
+
+        it('returns undefined for non-VPN plan', () => {
+            expect(getAutoCoupon({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY, currency })).toBeUndefined();
+        });
+    });
+
+    describe('preserves valid existing coupon', () => {
+        it('keeps VPN_INTRO_2025 when plan is VPN2024', () => {
+            expect(
+                getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency,
+                    coupon: COUPON_CODES.VPN_INTRO_2025,
+                })
+            ).toBe(COUPON_CODES.VPN_INTRO_2025);
+        });
+
+        it('keeps VPNPASSINTRO2026 when plan is VPN_PASS_BUNDLE', () => {
+            expect(
+                getAutoCoupon({
+                    planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency,
+                    coupon: COUPON_CODES.VPNPASSINTRO2026,
+                })
+            ).toBe(COUPON_CODES.VPNPASSINTRO2026);
+        });
+
+        it('keeps an arbitrary coupon for a non-VPN plan', () => {
+            expect(
+                getAutoCoupon({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY, currency, coupon: 'SUMMERSALE' })
+            ).toBe('SUMMERSALE');
+        });
+    });
+
+    describe('overrides stale coupon when plan has changed', () => {
+        it('replaces VPNPASSINTRO2026 with VPN_INTRO_2025 when switching to VPN2024', () => {
+            expect(
+                getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency,
+                    coupon: COUPON_CODES.VPNPASSINTRO2026,
+                })
+            ).toBe(COUPON_CODES.VPN_INTRO_2025);
+        });
+
+        it('replaces VPN_INTRO_2025 with VPNPASSINTRO2026 when switching to VPN_PASS_BUNDLE', () => {
+            expect(
+                getAutoCoupon({
+                    planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency,
+                    coupon: COUPON_CODES.VPN_INTRO_2025,
+                })
+            ).toBe(COUPON_CODES.VPNPASSINTRO2026);
+        });
+    });
+
+    describe('trial guard', () => {
+        it('skips auto-coupon and returns existing coupon during trial', () => {
+            expect(
+                getAutoCoupon({
+                    planIDs: { [PLANS.VPN2024]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    currency,
+                    coupon: 'TRIALCOUPON',
+                    trial: true,
+                })
+            ).toBe('TRIALCOUPON');
+        });
+
+        it('returns undefined when trial is true and no coupon provided', () => {
+            expect(
+                getAutoCoupon({ planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY, currency, trial: true })
+            ).toBeUndefined();
+        });
     });
 });

@@ -10,6 +10,7 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import type { EnableVpn2024AddonsExperimentVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import type { SubscriptionModificationStepTelemetry } from './helpers';
 
@@ -114,4 +115,22 @@ export function reportAudienceChange(props: {
     build: APP_NAMES;
 }) {
     telemetry.sendCustomEvent('subscription_modification_change_audience', props);
+}
+
+/**
+ * Reports the first time the VPN 2024 addons experiment variant is seen.
+ *
+ * **Event Name:** `subscription_modification_vpn2024_addons_experiment_seen`
+ *
+ * **When to call:** Once on mount when the subscription modal is opened for a VPN Plus plan,
+ * after feature flags are ready. Use the `useVpn2024AddonsExperiment` hook for automatic tracking.
+ *
+ * **Purpose:** Track experiment exposure — which variant each user was assigned to.
+ *
+ * @param props.variant - The experiment variant name (e.g. `'no-addon'`, `'pass-addon-only'`)
+ */
+export function reportVpn2024AddonsExperimentSeen(props: {
+    variant: EnableVpn2024AddonsExperimentVariant | 'disabled';
+}) {
+    telemetry.sendCustomEvent('subscription_modification_vpn2024_addons_experiment_seen', props);
 }

@@ -43,6 +43,14 @@ jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () =>
     default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
 }));
 
+jest.mock('@proton/unleash/proxy', () => ({
+    useFlagsStatus: jest.fn(() => ({ flagsReady: true })),
+}));
+
+jest.mock('@proton/unleash/useVariant', () => ({
+    useVariant: jest.fn(() => ({ name: 'disabled' })),
+}));
+
 const ContextSubscriptionContainer = applyHOCs(
     withReduxStore({
         user: buildUser(),
