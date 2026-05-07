@@ -1,9 +1,8 @@
 import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect } from 'react';
 
+import { sendSafetyReviewPageLoadTelemetryReport } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetry';
 import { useApi, useSecurityCheckup } from '@proton/components';
-import { TelemetryAccountSecurityCheckupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import RecommendedActions from '../RecommendedActions';
 import SecurityCheckupSummaryTitle from '../SecurityCheckupSummaryTitle';
@@ -25,15 +24,12 @@ const SecurityCheckupRoot = ({
         }
 
         pageLoadOnceRef.current = true;
-        void sendTelemetryReport({
+
+        sendSafetyReviewPageLoadTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.accountSecurityCheckup,
-            event: TelemetryAccountSecurityCheckupEvents.pageLoad,
-            dimensions: {
-                initialCohort: session.initialCohort,
-                source,
-            },
-            delay: false,
+            initialCohort: session.initialCohort,
+            source,
+            variant: 'A',
         });
     }, [session?.initialCohort, source]);
 

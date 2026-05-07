@@ -66,3 +66,5 @@ export * from './previousSubscription';
 export * from './delegatedAccess';
 export * from './referralInfo';
 export * from './referrals';
+
+export { safetyReviewTelemetryReducer } from './safetyReview/telemetry/safetyReviewTelemetrySlice';

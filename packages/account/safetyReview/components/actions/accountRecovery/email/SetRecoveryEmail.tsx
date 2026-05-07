@@ -9,7 +9,6 @@ import type { SafetyReviewAllProps } from '@proton/account/safetyReview/componen
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -23,7 +22,6 @@ type Props = SafetyReviewAllProps & {
 export const SetRecoveryEmail = (props: Props) => {
     const [recoveryEmail, setRecoveryEmail] = useState('');
     const dispatch = useDispatch();
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [loading, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -39,7 +37,6 @@ export const SetRecoveryEmail = (props: Props) => {
                 withLoading(
                     (async function () {
                         await dispatch(updateRecoveryEmailValue({ value: recoveryEmail, persistPasswordScope: true }));
-                        sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);
