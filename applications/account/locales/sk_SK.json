@@ -525,9 +525,6 @@
       "Delete record": [
         "Zmazať záznam"
       ],
-      "Delete token ${ token.Account }": [
-        "Vymazať token ${ token.Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Vymazať token „${ token.Name }”"
       ],
@@ -2910,12 +2907,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Asistent migrácie ${ BRAND_NAME }"
       ],
-      "Add a custom domain": [
-        "Pridať vlastnú doménu"
-      ],
-      "App installed": [
-        "Aplikácia nainštalovaná"
-      ],
       "Authenticate": [
         "Autentifikovať"
       ],
@@ -2943,9 +2934,6 @@
       "Domain connected": [
         "Doména prepojená"
       ],
-      "Domain ownership verified": [
-        "Vlastníctvo domény je overené"
-      ],
       "Estimated size": [
         "Odhadovaná veľkosť"
       ],
@@ -2970,14 +2958,8 @@
       "Install migration app": [
         "Inštalovať migračnú aplikáciu"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Zistite viac o tom, čo môže byť zmigrované. Zistite viac"
-      ],
       "Mail": [
         "Pošta"
-      ],
-      "Migrate": [
-        "Migrovať"
       ],
       "Migrate from Google Workspace": [
         "Migrovať z Google Workspace"
@@ -2997,17 +2979,11 @@
       "Migration status": [
         "Stav migrácie"
       ],
-      "Not started": [
-        "Nezačaté"
-      ],
       "Organization does not have enough seats available": [
         "Organizaícia nemá dostatok voľných licencií"
       ],
       "Organization does not have enough storage available": [
         "Organzácia nemá dostatok úložného priestoru"
-      ],
-      "Organization settings": [
-        "Nastavenia organizácie"
       ],
       "Required": [
         "Povinné"
@@ -3017,9 +2993,6 @@
       ],
       "Select at least one user to start a migration": [
         "Pre spustenie migrácie vyberte aspoň jedného používateľa"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Vyberte, čo chcete migrovať. Toto sa bude vzťahovať na všetkých používateľov, bez ohľadu na to, či sú vytvorení teraz alebo neskôr. Migrácia sa spustí po vytvorení používateľských účtov."
       ],
       "Set up": [
         "Nastaviť"
@@ -3045,9 +3018,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali."
       ],
-      "Transfer errors": [
-        "Chyby prenosu"
-      ],
       "User": [
         "Používateľ"
       ],
@@ -3059,9 +3029,6 @@
       ],
       "Verify your domain": [
         "Overte svoju doménu"
-      ],
-      "Verify your domain ownership": [
-        "Overte vlastníctvo svojej domény"
       ],
       "Verify your domain to start a migration": [
         "Overte vašu doménu pre spustenie migrácie"
@@ -10327,9 +10294,6 @@
       ],
       "Change your password": [
         "Zmeňte si heslo"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Skontrolujte stav importov a preposielania."
       ],
       "Check your network and try again.": [
         "Skontrolujte svoju sieť a skúste to znova."
@@ -20308,9 +20272,6 @@
       "Partial": [
         "Čiastočne"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Vyžaduje možnosť obnovenia hesla (overenie prostredníctvom emailu alebo SMS)"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "Skóre: ${ score } / ${ maxScore }"
       ],
@@ -20352,14 +20313,8 @@
       "Download recovery file": [
         "Stiahnuť súbor pre obnovenie"
       ],
-      "Email verification enabled": [
-        "Overenie emailu povolené"
-      ],
       "Emergency contacts added": [
         "Núdzové kontakty pridané"
-      ],
-      "Enable recovery by email": [
-        "Povoľte obnovenie emailom"
       ],
       "Enable recovery by phone": [
         "Povoľte obnovenie telefónom"
@@ -20384,9 +20339,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Prihlásenie QR kódom povolené"
-      ],
-      "SMS verification enabled": [
-        "Overenie pomocou SMS povolené"
       ],
       "Verify password": [
         "Potvrďte heslo"
@@ -21327,9 +21279,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, stiahnite si obnovovaciu frázu a deaktivujte zvýraznené možnosti."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Máte odporúčané akcie od ${ PROTON_SENTINEL_NAME }"
       ]
