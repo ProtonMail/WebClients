@@ -8,7 +8,6 @@ import {
 import { useApiEnvironmentConfig } from '@proton/mail/store/importerConfig/hooks';
 import { GSUITE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     generateGoogleOAuthParams,
@@ -41,9 +40,6 @@ type OAuthArgs = (GoogleOAuth | GenericOAuth) & {
 const useOAuthPopup = ({ errorMessage }: Props) => {
     const [config, loadingConfig] = useApiEnvironmentConfig();
 
-    // We need to investigate Outlook b2b oAuth modal params
-    const consentExperiment = useFlag('EasySwitchConsentExperiment');
-
     const triggerOAuthPopup = async (args: OAuthArgs) => {
         const { provider, callback } = args;
         let authorizationUrl;
@@ -71,7 +67,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                 }
                 const { scope } = args as GenericOAuth;
 
-                authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, consentExperiment });
+                authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config });
                 break;
             }
         }
