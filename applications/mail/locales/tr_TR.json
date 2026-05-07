@@ -955,6 +955,9 @@
       "Move to Archive": [
         "Arşivle"
       ],
+      "Move to category...": [
+        "Kategoriye taşı..."
+      ],
       "Move to folder": [
         "Klasöre taşı"
       ],
@@ -1505,8 +1508,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7586,7 +7588,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7682,7 +7685,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -12209,10 +12212,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Bana daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet, bir daha gösterme"
       ]
     },
     "Option group": {
@@ -15472,7 +15475,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu duyuru gizlensin mi?"
+        "Bu başlığı gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"

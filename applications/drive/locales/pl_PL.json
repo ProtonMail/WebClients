@@ -147,9 +147,6 @@
       "Cancel trial and pay": [
         "Anuluj wersję próbną i zapłać"
       ],
-      "Cancel upload": [
-        "Anuluj przesyłanie"
-      ],
       "Change": [
         "Zmień"
       ],
@@ -708,15 +705,6 @@
       "Open navigation": [
         "Otwórz nawigację"
       ],
-      "Pause all": [
-        "Wstrzymaj wszystko"
-      ],
-      "Pause download": [
-        "Wstrzymaj pobieranie"
-      ],
-      "Pause upload": [
-        "Wstrzymaj przesyłanie"
-      ],
       "Pay": [
         "Zapłać"
       ],
@@ -780,9 +768,6 @@
       "Remove from favorites": [
         "Usuń z ulubionych"
       ],
-      "Remove from this list": [
-        "Usuń z listy"
-      ],
       "Remove gift code": [
         "Usuń kod podarunkowy"
       ],
@@ -828,15 +813,6 @@
       "Reset to default": [
         "Przywróć ustawienia domyślne"
       ],
-      "Restart all": [
-        "Prześlij ponownie wszystko"
-      ],
-      "Restart download": [
-        "Pobierz ponownie"
-      ],
-      "Restart upload": [
-        "Prześlij ponownie"
-      ],
       "Restore": [
         "Przywróć"
       ],
@@ -848,15 +824,6 @@
       ],
       "Restore version": [
         "Przywróć wersję"
-      ],
-      "Resume all": [
-        "Wznów wszystkie"
-      ],
-      "Resume download": [
-        "Wznów pobieranie"
-      ],
-      "Resume upload": [
-        "Wznów przesyłanie"
       ],
       "Retry": [
         "Spróbuj ponownie"
@@ -4444,24 +4411,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "Pobieranie ${ activeDownloadsCount } pliku",
-        "Pobieranie ${ activeDownloadsCount } plików",
-        "Pobieranie ${ activeDownloadsCount } plików",
-        "Pobieranie ${ activeDownloadsCount } plików"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "Pobieranie ${ activeDownloadsCount } pliku (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)",
-        "Pobieranie ${ activeDownloadsCount } plików (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "Przesyłanie ${ activeUploadsCount } pliku (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)",
-        "Przesyłanie ${ activeUploadsCount } plików (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } adres e-mail",
         "${ addressCount } adresy e-mail",
@@ -4498,12 +4447,6 @@
         "${ calendarsToBeMergedCount } scalonych kalendarzy",
         "${ calendarsToBeMergedCount } scalonych kalendarzy"
       ],
-      "${ canceledCount } canceled": [
-        "Transfer ${ canceledCount } pliku został anulowany",
-        "Transfer ${ canceledCount } plików został anulowany",
-        "Transfer ${ canceledCount } plików został anulowany",
-        "Transfer ${ canceledCount } plików został anulowany"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontakt zawiera wiele adresów e-mail.",
         "${ contactCount } kontakty zawierają wiele adresów e-mail.",
@@ -4534,24 +4477,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Pliki ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } nie mogą zostać pobrane bezpośrednio i nie zostaną uwzględnione w tym pobieraniu. Możesz pobrać pozostałe pliki, klikając „Kontynuuj pobieranie”."
       ],
-      "${ doneCount } finished": [
-        "Transfer ${ doneCount } pliku został zakończony",
-        "Transfer ${ doneCount } plików został zakończony",
-        "Transfer ${ doneCount } plików został zakończony",
-        "Transfer ${ doneCount } plików został zakończony"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "Pobrano ${ doneDownloadsCount } plik",
-        "Pobrano ${ doneDownloadsCount } pliki",
-        "Pobrano ${ doneDownloadsCount } plików",
-        "Pobrano ${ doneDownloadsCount } plików"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "Przesłano ${ doneUploadsCount } plik",
-        "Przesłano ${ doneUploadsCount } pliki",
-        "Przesłano ${ doneUploadsCount } plików",
-        "Przesłano ${ doneUploadsCount } plików"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } w App Store"
       ],
@@ -4560,12 +4485,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "Użytkownik ${ email } zaprosił Cię do albumu ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
-        "Transfer ${ errorCount } plików zakończył się niepowodzeniem"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obraz w pełnym rozmiarze"
@@ -4593,12 +4512,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
-      ],
-      "${ pausedCount } paused": [
-        "Transfer ${ pausedCount } pliku został wstrzymany",
-        "Transfer ${ pausedCount } plików został wstrzymany",
-        "Transfer ${ pausedCount } plików został wstrzymany",
-        "Transfer ${ pausedCount } plików został wstrzymany"
       ],
       "${ photoCount } item": [
         "${ photoCount } element",
@@ -4633,12 +4546,6 @@
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail",
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skanowanie nie powiodło się",
-        "${ scanErrorCount } skanowania nie powiodły się",
-        "${ scanErrorCount } skanowań nie powiodło się",
-        "${ scanErrorCount } skanowań nie powiodło się"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarz",
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarze",
@@ -4668,15 +4575,6 @@
         "${ selectedFoldersCountLocalized } zaznaczone etykiety",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
-      ],
-      "${ skippedCount } skipped": [
-        "Pominięto transfer ${ skippedCount } pliku",
-        "Pominięto transfer ${ skippedCount } plików",
-        "Pominięto transfer ${ skippedCount } plików",
-        "Pominięto transfer ${ skippedCount } plików"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
@@ -4918,9 +4816,6 @@
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
       ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Połącz się z ${ VPN_APP_NAME }, aby przeglądać Internet prywatnie"
       ],
@@ -4971,9 +4866,6 @@
       ],
       "Create links and share your files with others.": [
         "Utwórz linki i udostępnij pliki innym."
-      ],
-      "Creating": [
-        "Tworzenie"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu"
@@ -5146,9 +5038,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksportuj logi na potrzeby wsparcia technicznego i rozwiązywania problemów"
       ],
-      "Failed": [
-        "Niepowodzenie"
-      ],
       "Feb": [
         "Lut"
       ],
@@ -5166,9 +5055,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Pliki i foldery udostępnione Tobie pojawią się tutaj"
-      ],
-      "Finalizing": [
-        "Finalizowanie"
       ],
       "finance": [
         "finanse"
@@ -5286,9 +5172,6 @@
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
-      ],
-      "Initializing": [
-        "Inicjowanie"
       ],
       "Integrity issues found": [
         "Znaleziono problemy z integralnością"
@@ -5443,9 +5326,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
       ],
-      "Network issue": [
-        "Błąd sieci"
-      ],
       "New": [
         "Nowy"
       ],
@@ -5481,9 +5361,6 @@
       ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Transfer niektórych plików nie powiódł się. Spróbuj przesłać lub pobrać pliki ponownie."
       ],
       "Not connected": [
         "Nie połączono"
@@ -5671,9 +5548,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
-      "Queued": [
-        "W kolejce"
-      ],
       "Ready to add some photos?": [
         "Gotowy, aby dodać zdjęcia?"
       ],
@@ -5715,9 +5589,6 @@
       ],
       "Saving...": [
         "Zapisywanie..."
-      ],
-      "Scan issue": [
-        "Błąd skanowania"
       ],
       "Scan the QR code with your mobile device": [
         "Zeskanuj kod QR za pomocą urządzenia mobilnego"
@@ -5794,20 +5665,8 @@
       "Signature check will be ignored": [
         "Sprawdzanie podpisu zostanie pominięte"
       ],
-      "Signature issue": [
-        "Błąd podpisu"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
-      ],
-      "Skipped": [
-        "Pominięto"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Pobieranie niektórych plików nie powiodło się. Spróbuj pobrać pliki ponownie."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Przesyłanie niektórych plików nie powiodło się. Spróbuj przesłać pliki ponownie."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektóre rządy blokują lub ograniczają dostęp do niektórych stron internetowych. VPN pomaga ominąć cenzurę, zachowując prywatność użytkownika."
@@ -5820,9 +5679,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektóre strony internetowe i usługi streamingu blokują geograficznie treści. VPN pozwala ominąć te ograniczenia i uzyskać swobodny dostęp do Internetu."
-      ],
-      "Something went wrong, please try again later.": [
-        "Coś poszło nie tak. Spróbuj ponownie później."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
@@ -11263,24 +11119,6 @@
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "Pobieranie ${ numberOfFailedTransfer.total } pliku nie powiodło się",
-        "Pobieranie ${ numberOfFailedTransfer.total } plików nie powiodło się",
-        "Pobieranie ${ numberOfFailedTransfer.total } plików nie powiodło się",
-        "Pobieranie ${ numberOfFailedTransfer.total } plików nie powiodło się"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "Transfer ${ numberOfFailedTransfer.total } pliku nie powiódł się",
-        "Transfer ${ numberOfFailedTransfer.total } plików nie powiódł się",
-        "Transfer ${ numberOfFailedTransfer.total } plików nie powiódł się",
-        "Transfer ${ numberOfFailedTransfer.total } plików nie powiódł się"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "Przesyłanie ${ numberOfFailedTransfer.total } pliku nie powiodło się",
-        "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
-        "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
-        "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się"
-      ],
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
@@ -11292,9 +11130,6 @@
       ],
       "Actions": [
         "Akcje"
-      ],
-      "Active": [
-        "Aktywne"
       ],
       "Add a custom logo": [
         "Dodaj niestandardowe logo"
@@ -11331,9 +11166,6 @@
       ],
       "Albums": [
         "Albumy"
-      ],
-      "All": [
-        "Wszystkie"
       ],
       "All settings": [
         "Wszystkie ustawienia"
@@ -11403,9 +11235,6 @@
       ],
       "Collaborate on documents": [
         "Współpracuj nad dokumentami"
-      ],
-      "Completed": [
-        "Zakończone"
       ],
       "Computers": [
         "Urządzenia"
@@ -11640,9 +11469,6 @@
       ],
       "Exporting contacts": [
         "Eksportowanie kontaktów"
-      ],
-      "Failed": [
-        "Niepowodzenie"
       ],
       "File details": [
         "Szczegóły pliku"

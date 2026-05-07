@@ -90,9 +90,6 @@
       "Apply": [
         "Toepassen"
       ],
-      "Ask me next time": [
-        "Vraag het de volgende keer aan mij"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -597,6 +594,9 @@
       "Reconnect": [
         "Opnieuw verbinden"
       ],
+      "Reconnect to Gmail": [
+        "Opnieuw verbinden met Gmail"
+      ],
       "Recover data": [
         "Gegevens herstellen"
       ],
@@ -674,9 +674,6 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
-      ],
-      "Save preferences": [
-        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -2507,6 +2504,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dit kan gebeuren als de toegangsrechten zijn ingetrokken of als uw wachtwoord is gewijzigd."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw account opnieuw koppelen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw accounts opnieuw koppelen."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
@@ -2527,6 +2533,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "We hebben geen toegang meer tot ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -4352,9 +4361,6 @@
       "Continue": [
         "Ga verder"
       ],
-      "Converting document...": [
-        "Document wordt geconverteerd..."
-      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
@@ -4403,9 +4409,6 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
-      ],
-      "Creating new document...": [
-        "Nieuw document wordt aangemaakt..."
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4506,12 +4509,6 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Fout bij het converteren van het document: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Fout bij het laden van document: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4574,12 +4571,6 @@
       ],
       "Geoblocking": [
         "Geoblocking"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
-      ],
-      "Get Notified About Comments": [
-        "Krijg een melding bij opmerkingen"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
@@ -4714,17 +4705,11 @@
       "Loading link": [
         "Koppeling laden"
       ],
-      "Loading...": [
-        "Laden..."
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Het lijkt erop dat u offline bent. Het document kan niet worden bewerkt terwijl u offline bent. Controleer de verbinding van uw apparaat."
       ],
       "Low Priority": [
         "Lage Prioriteit"
-      ],
-      "Making a copy...": [
-        "Een kopie wordt gemaakt..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -4756,9 +4741,6 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Er is geen document meegegeven in de URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -5040,9 +5022,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "De URL die u heeft ingevoerd, lijkt onjuist uit Slack te zijn gekopieerd. Bij het kopiëren van lange koppelingen uit Slack, klik met de rechtermuisknop op de koppeling en kies vervolgens \"Koppeling kopiëren\" in plaats van de afgekorte URL-tekst rechtstreeks te kopiëren."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -5661,9 +5640,6 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
-      "Enable email notifications": [
-        "E-mailmeldingen inschakelen"
-      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -5711,9 +5687,6 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
-      ],
-      "Include document name in notification": [
-        "Neem de documentnaam op in de e-mailnotificatie"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -8699,9 +8672,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Een nieuw spreadsheet wordt aangemaakt..."
-      ],
       "Detect automatically": [
         "Automatisch detecteren"
       ],

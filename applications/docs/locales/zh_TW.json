@@ -4189,6 +4189,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每個代碼都只能使用一次"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -4402,9 +4405,6 @@
       "Loading link": [
         "正在載入連結"
       ],
-      "Loading...": [
-        "載入中‧‧‧"
-      ],
       "Low Priority": [
         "較低優先順序"
       ],
@@ -4467,6 +4467,9 @@
       ],
       "Offline": [
         "離線"
+      ],
+      "On public WiFi networks": [
+        "於公用 WiFi 網路上"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
@@ -4584,6 +4587,9 @@
       ],
       "Saving...": [
         "儲存中..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "透過行動裝置掃描此 QR Code"
       ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
@@ -5551,6 +5557,9 @@
     "Link": {
       "clearing your browser cache": [
         "清除瀏覽器快取"
+      ],
+      "Enforcing 2FA for organizations": [
+        "強制貴組織雙重驗證"
       ],
       "How to add users": [
         "如何新增使用者"
@@ -7265,6 +7274,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
     "Option": {
@@ -7513,6 +7525,9 @@
       ],
       "Select": [
         "選取"
+      ],
+      "Select a provider": [
+        "選擇一個供應商"
       ],
       "Select a reason": [
         "選取理由"
@@ -8228,6 +8243,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "取得 500 GB 以安全地儲存您的檔案和照片"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "取得存取在110 多個國家提供極速 VPN 伺服器"

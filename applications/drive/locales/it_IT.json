@@ -146,9 +146,6 @@
       "Cancel trial and pay": [
         "Annulla la prova e paga"
       ],
-      "Cancel upload": [
-        "Annulla il caricamento"
-      ],
       "Cancel uploads": [
         "Annulla caricamenti"
       ],
@@ -397,8 +394,8 @@
       "Download for Mac": [
         "Scarica per Mac"
       ],
-      "Download for MacOS": [
-        "Scarica per MacOS"
+      "Download for macOS": [
+        "Scarica per macOS"
       ],
       "Download for Windows": [
         "Scarica per Windows"
@@ -733,15 +730,6 @@
       "Open navigation": [
         "Apri navigazione"
       ],
-      "Pause all": [
-        "Interrompi tutto"
-      ],
-      "Pause download": [
-        "Download in pausa"
-      ],
-      "Pause upload": [
-        "Caricamento in pausa"
-      ],
       "Pay": [
         "Paga"
       ],
@@ -814,9 +802,6 @@
       "Remove from favorites": [
         "Rimuovere dai preferiti"
       ],
-      "Remove from this list": [
-        "Rimuovi da questa lista"
-      ],
       "Remove gift code": [
         "Rimuovi codice regalo"
       ],
@@ -862,15 +847,6 @@
       "Reset to default": [
         "Reimposta al valore predefinito"
       ],
-      "Restart all": [
-        "Riavvia tutto"
-      ],
-      "Restart download": [
-        "Riavvia il download"
-      ],
-      "Restart upload": [
-        "Riavvia il caricamento"
-      ],
       "Restore": [
         "Ripristina"
       ],
@@ -882,15 +858,6 @@
       ],
       "Restore version": [
         "Ripristina la versione"
-      ],
-      "Resume all": [
-        "Riprendi tutto"
-      ],
-      "Resume download": [
-        "Riprendi il download"
-      ],
-      "Resume upload": [
-        "Riprendi il caricamento"
       ],
       "Retry": [
         "Riprova"
@@ -4742,18 +4709,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } in download",
-        "${ activeDownloadsCount } in download"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } in download (${ downloadProgress }%)",
-        "${ activeDownloadsCount } in download (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } in caricamento (${ uploadProgress }%)",
-        "${ activeUploadsCount } in caricamento (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } indirizzo email",
         "${ addressCount } indirizzi email"
@@ -4784,10 +4739,6 @@
         "${ calendarsToBeMergedCount } calendario unito",
         "${ calendarsToBeMergedCount } calendari uniti"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } annullato",
-        "${ canceledCount } annullati"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } di ${ items.length } trasferimenti completati"
       ],
@@ -4813,18 +4764,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "I file ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } non possono essere scaricati direttamente e non verranno inclusi in questo download. Puoi scaricare gli altri file cliccando su \"Continua il download\"."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } completato",
-        "${ doneCount } completato"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } scaricato",
-        "${ doneDownloadsCount } scaricati"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } caricato",
-        "${ doneUploadsCount } caricati"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } su App Store"
       ],
@@ -4833,10 +4772,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } ti ha invitato a partecipare a ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } non riuscito",
-        "${ errorCount } non riusciti"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: immagine a grandezza naturale"
@@ -4864,10 +4799,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } in pausa",
-        "${ pausedCount } in pausa"
-      ],
       "${ photoCount } item": [
         "${ photoCount } elemento",
         "${ photoCount } elementi"
@@ -4893,10 +4824,6 @@
         "${ providerFoldersNumLocalized } etichetta trovata in Gmail",
         "${ providerFoldersNumLocalized } etichette trovate in Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } scansione non riuscita",
-        "${ scanErrorCount } scansioni non riuscite"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
@@ -4916,13 +4843,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignorato",
-        "${ skippedCount } ignorati"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } voci"
@@ -5182,12 +5102,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Collabora in modo efficiente proteggendo i dati dei tuoi clienti e aziendali da violazioni, ransomware e sorveglianza."
       ],
-      "Computed hash does not match XAttr": [
-        "L'hash calcolato non corrisponde a XAttr"
-      ],
-      "Conflict": [
-        "Conflitto"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connettiti a ${ VPN_APP_NAME } per navigare in privato"
       ],
@@ -5234,9 +5148,6 @@
       ],
       "Create links and share your files with others.": [
         "Crea link e condividi i tuoi file con altri."
-      ],
-      "Creating": [
-        "Creazione"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
@@ -5411,9 +5322,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Esportare log diagnostici per supporto tecnico e risoluzione dei problemi"
       ],
-      "Failed": [
-        "Non riuscito"
-      ],
       "Feb": [
         "Feb."
       ],
@@ -5431,9 +5339,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "I file e le cartelle che altri hanno condiviso con te verranno visualizzati qui"
-      ],
-      "Finalizing": [
-        "Finalizzare"
       ],
       "finance": [
         "dati finanziari"
@@ -5561,9 +5466,6 @@
       ],
       "Inherited from parent folder": [
         "Preso dalla cartella principale"
-      ],
-      "Initializing": [
-        "Avvio in corso"
       ],
       "Integrity issues found": [
         "Problemi di integrità rilevati"
@@ -5740,9 +5642,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
-      "Network issue": [
-        "Problema di rete"
-      ],
       "New": [
         "Nuovo"
       ],
@@ -5781,9 +5680,6 @@
       ],
       "Not a valid URL": [
         "URL non valido"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Non tutti i file sono stati trasferiti. Prova nuovamente a caricare o scaricare i file."
       ],
       "Not connected": [
         "Non connesso"
@@ -5975,9 +5871,6 @@
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
       ],
-      "Queued": [
-        "Accodato"
-      ],
       "Ready to add some photos?": [
         "Pronto ad aggiungere qualche foto?"
       ],
@@ -6019,9 +5912,6 @@
       ],
       "Saving...": [
         "Salvataggio..."
-      ],
-      "Scan issue": [
-        "Problema nella scansione"
       ],
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
@@ -6110,20 +6000,8 @@
       "Signature check will be ignored": [
         "Il controllo della firma verrà ignorato"
       ],
-      "Signature issue": [
-        "Problema di firma"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
-      ],
-      "Skipped": [
-        "Ignorato"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Scaricamento di alcuni file non riuscito. Prova a scaricare nuovamente i file."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Caricamento di alcuni file non riuscito. Prova a caricare nuovamente i file."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alcuni governi bloccano o limitano l'accesso a determinati siti web. Una VPN aiuta a bypassare la censura mantenendo private la tua attività e la tua identità."
@@ -6139,9 +6017,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
-      ],
-      "Something went wrong, please try again later.": [
-        "Qualcosa è andato storto, riprova più tardi."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
@@ -11848,18 +11723,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } caricature di caricamento gratuite."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } scaricamento non riuscito",
-        "${ numberOfFailedTransfer.total } scaricamenti non riusciti"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } trasferimento non riuscito",
-        "${ numberOfFailedTransfer.total } trasferimenti non riusciti"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } caricamento non riuscito",
-        "${ numberOfFailedTransfer.total } caricamenti non riusciti"
-      ],
       "Account recovery": [
         "Recupero dell'account"
       ],
@@ -11874,9 +11737,6 @@
       ],
       "Actions": [
         "Azioni"
-      ],
-      "Active": [
-        "Attivo"
       ],
       "Add a custom logo": [
         "Aggiungi un logo personalizzato"
@@ -11911,9 +11771,6 @@
       ],
       "Albums": [
         "Album"
-      ],
-      "All": [
-        "Tutto"
       ],
       "All settings": [
         "Tutte le impostazioni"
@@ -11993,9 +11850,6 @@
       ],
       "Collaborate on documents": [
         "Collabora sui documenti"
-      ],
-      "Completed": [
-        "Completato"
       ],
       "Computers": [
         "Computer"
@@ -12230,9 +12084,6 @@
       ],
       "Exporting contacts": [
         "Esportazione contatti"
-      ],
-      "Failed": [
-        "Non riuscito"
       ],
       "File details": [
         "Informazioni file"

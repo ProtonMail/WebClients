@@ -922,6 +922,10 @@
       ]
     },
     "collider_2025: Action": {
+      "Add ${ selectedCount } sheet": [
+        "${ selectedCount } tablo ekle",
+        "${ selectedCount } tablo ekle"
+      ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Dosyayı ${ DRIVE_APP_NAME } uygulamasına ekle"
       ],
@@ -996,6 +1000,9 @@
       ],
       "Report an issue": [
         "Sorun bildireceğim"
+      ],
+      "Select all": [
+        "Tümünü seç"
       ],
       "Send message": [
         "İletiyi gönder"
@@ -1463,6 +1470,9 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Eklenecek sayfaları seçin"
+      ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
       ]
@@ -1485,6 +1495,9 @@
       ],
       " talk to your admin.": [
         " yöneticiniz ile görüşün."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "“${ fileName }” dosyasında birden fazla sayfa bulunmaktadır. Sohbet bağlamına dahil edilecek sayfaları seçin."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } depolama alanı henüz ayarlanmamış"

@@ -156,9 +156,6 @@
       "Cancel trial and pay": [
         "Zrušit zkušební verzi a zaplatit"
       ],
-      "Cancel upload": [
-        "Zrušit nahrávání"
-      ],
       "Cancel uploads": [
         "Zrušit nahrávání"
       ],
@@ -417,7 +414,7 @@
       "Download for Mac": [
         "Stáhnout pro Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Stáhnout pro macOS"
       ],
       "Download for Windows": [
@@ -762,15 +759,6 @@
       "Open navigation": [
         "Otevřít menu"
       ],
-      "Pause all": [
-        "Pozastavit vše"
-      ],
-      "Pause download": [
-        "Pozastavit stahování"
-      ],
-      "Pause upload": [
-        "Pozastavit nahrávání"
-      ],
       "Pay": [
         "Zaplatit"
       ],
@@ -843,9 +831,6 @@
       "Remove from favorites": [
         "Odebrat z oblíbených"
       ],
-      "Remove from this list": [
-        "Odebrat ze seznamu"
-      ],
       "Remove gift code": [
         "Odstranit dárkový kód"
       ],
@@ -894,15 +879,6 @@
       "Reset to default": [
         "Obnovit výchozí nastavení"
       ],
-      "Restart all": [
-        "Restartovat vše"
-      ],
-      "Restart download": [
-        "Restartovat stahování"
-      ],
-      "Restart upload": [
-        "Restartovat nahrávání"
-      ],
       "Restore": [
         "Obnovit"
       ],
@@ -914,15 +890,6 @@
       ],
       "Restore version": [
         "Obnovit verzi"
-      ],
-      "Resume all": [
-        "Obnovit vše"
-      ],
-      "Resume download": [
-        "Pokračovat ve stahování"
-      ],
-      "Resume upload": [
-        "Pokračovat v nahrávání"
       ],
       "Retry": [
         "Opakovat"
@@ -943,7 +910,7 @@
         "Uložit změny"
       ],
       "Save photo to your gallery": [
-        "Uložte fotky do vaší galerie"
+        "Uložte fotku do své galerie"
       ],
       "Save photos and remove": [
         "Uložit fotky a odebrat"
@@ -4970,24 +4937,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } stahování",
-        "${ activeDownloadsCount } stahování",
-        "${ activeDownloadsCount } stahování",
-        "${ activeDownloadsCount } stahování"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Stahuji ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailová adresa",
         "${ addressCount } e-mailové adresy",
@@ -5030,12 +4979,6 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů",
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } zrušen",
-        "${ canceledCount } zrušeny",
-        "${ canceledCount } zrušených",
-        "${ canceledCount } zrušených"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } z(e) ${ items.length } přenosů dokončeno"
       ],
@@ -5069,24 +5012,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Soubory ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nelze stáhnout přímo a nebudou zahrnuty do tohoto balíku dat ke stažení. Ostatní soubory si můžete stáhnout kliknutím na 'Pokračovat ve stahování'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } ukončený",
-        "${ doneCount } ukončené",
-        "${ doneCount } ukončených",
-        "${ doneCount } ukončených"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } stažen",
-        "${ doneDownloadsCount } staženy",
-        "${ doneDownloadsCount } staženo",
-        "${ doneDownloadsCount } staženo"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } nahrán",
-        "${ doneUploadsCount } nahrány",
-        "${ doneUploadsCount } nahráno",
-        "${ doneUploadsCount } nahráno"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v App Store"
       ],
@@ -5095,12 +5020,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } vás pozval(a), abyste se připojili k ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } selhal",
-        "${ errorCount } selhaly",
-        "${ errorCount } selhalo",
-        "${ errorCount } selhalo"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázek v plné velikosti"
@@ -5150,12 +5069,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }. Cena a datum obnovení vašeho předplatného ${ planTitle } se nemění."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pozastaven",
-        "${ pausedCount } pozastaveny",
-        "${ pausedCount } pozastavených",
-        "${ pausedCount } pozastavených"
-      ],
       "${ photoCount } item": [
         "${ photoCount } položka",
         "${ photoCount } položky",
@@ -5195,12 +5108,6 @@
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
         "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skenování selhalo",
-        "${ scanErrorCount } skenování selhala",
-        "${ scanErrorCount } skenování selhalo",
-        "${ scanErrorCount } skenování selhalo"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
@@ -5230,15 +5137,6 @@
         "vybrány ${ selectedFoldersCountLocalized } štítky",
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } vynechán",
-        "${ skippedCount } vynechány",
-        "${ skippedCount } vynecháno",
-        "${ skippedCount } vynecháno"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } položek"
@@ -5543,12 +5441,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Spolupracujte efektivně a zároveň chraňte data svých klientů a firmy před úniky, ransomwarem a sledováním."
       ],
-      "Computed hash does not match XAttr": [
-        "Vypočtený hash neodpovídá atributu XAttr"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Připojte se k ${ VPN_APP_NAME } a procházejte soukromě"
       ],
@@ -5599,9 +5491,6 @@
       ],
       "Create links and share your files with others.": [
         "Vytvořte odkazy a sdílejte své soubory s ostatními."
-      ],
-      "Creating": [
-        "Vytváření"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -5789,9 +5678,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Export diagnostických logů pro technickou podporu a řešení problémů"
       ],
-      "Failed": [
-        "Selhalo"
-      ],
       "Feb": [
         "Úno"
       ],
@@ -5809,9 +5695,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Zde se zobrazí soubory a složky, které s vámi sdíleli ostatní"
-      ],
-      "Finalizing": [
-        "Dokončování"
       ],
       "finance": [
         "finance"
@@ -5962,9 +5845,6 @@
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
-      ],
-      "Initializing": [
-        "Inicializace"
       ],
       "Integrity issues found": [
         "Zjištěny problémy s integritou"
@@ -6149,9 +6029,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
-      "Network issue": [
-        "Síťový problém"
-      ],
       "New": [
         "Nově"
       ],
@@ -6190,9 +6067,6 @@
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Ne všechny soubory byly přeneseny. Zkuste soubory znovu nahrát nebo stáhnout."
       ],
       "Not connected": [
         "Nepřipojeno"
@@ -6389,9 +6263,6 @@
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
-      "Queued": [
-        "Ve frontě"
-      ],
       "Ready to add some photos?": [
         "Jste připraveni přidat nějaké fotky?"
       ],
@@ -6436,9 +6307,6 @@
       ],
       "Saving...": [
         "Ukládání..."
-      ],
-      "Scan issue": [
-        "Problém skenování"
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte kód QR pomocí mobilního zařízení"
@@ -6530,20 +6398,8 @@
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
       ],
-      "Signature issue": [
-        "Problém s podpisem"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
-      ],
-      "Skipped": [
-        "Vynecháno"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Některé soubory nebyly staženy. Zkuste soubory znovu stáhnout."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Některé soubory nebyly nahrány. Zkuste soubory znovu nahrát."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Některé vlády blokují nebo omezují přístup na určité webové stránky. VPN pomáhá obejít cenzuru a zároveň zachovává soukromí vašich aktivit a identity."
@@ -6559,9 +6415,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Některé webové stránky a streamovací služby blokují obsah podle regionu. VPN umožňuje tato omezení obejít a volně přistupovat k internetu."
-      ],
-      "Something went wrong, please try again later.": [
-        "Něco se pokazilo, prosím zkuste to později."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
@@ -12698,24 +12551,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } z bezplatných nahrání."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } nebyl stažen",
-        "${ numberOfFailedTransfer.total } nebyly staženy",
-        "${ numberOfFailedTransfer.total } nebylo staženo",
-        "${ numberOfFailedTransfer.total } nebylo staženo"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } nebyl přenesen",
-        "${ numberOfFailedTransfer.total } nebyly přeneseny",
-        "${ numberOfFailedTransfer.total } nebylo přeneseno",
-        "${ numberOfFailedTransfer.total } nebylo přeneseno"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } nebyl nahrán",
-        "${ numberOfFailedTransfer.total } nebyly nahrány",
-        "${ numberOfFailedTransfer.total } nebylo nahráno",
-        "${ numberOfFailedTransfer.total } nebylo nahráno"
-      ],
       "Account recovery": [
         "Obnovení účtu"
       ],
@@ -12730,9 +12565,6 @@
       ],
       "Actions": [
         "Akce"
-      ],
-      "Active": [
-        "Aktivní"
       ],
       "Add a custom logo": [
         "Přidejte vlastní logo"
@@ -12769,9 +12601,6 @@
       ],
       "Albums": [
         "Alba"
-      ],
-      "All": [
-        "Vše"
       ],
       "All settings": [
         "Všechna nastavení"
@@ -12856,9 +12685,6 @@
       ],
       "Collaborate on documents": [
         "Spolupracovat na dokumentech"
-      ],
-      "Completed": [
-        "Dokončeno"
       ],
       "Computers": [
         "Počítače"
@@ -13100,9 +12926,6 @@
       "Exporting contacts": [
         "Exportování kontaktů"
       ],
-      "Failed": [
-        "Selhalo"
-      ],
       "File details": [
         "Podrobnosti souboru"
       ],
@@ -13200,7 +13023,7 @@
         "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Index populators": [
-        "Služby indexování"
+        "Stavová hlášení procesu indexování"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
@@ -13811,9 +13634,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Zpráva a název souboru jsou uloženy s šifrováním s nulovým přístupem, pokud jsou součástí e-mailu"
-      ],
-      "New!": [
-        "Novinka!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."

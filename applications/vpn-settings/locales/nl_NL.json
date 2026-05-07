@@ -323,9 +323,6 @@
       "Delete policy": [
         "Policy verwijderen"
       ],
-      "Delete token ${ token.Account }": [
-        "Token \"${ token.Account }\" verwijderen"
-      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -754,6 +751,9 @@
       ],
       "Reconnect": [
         "Opnieuw verbinden"
+      ],
+      "Reconnect to Gmail": [
+        "Opnieuw verbinden met Gmail"
       ],
       "Recover account": [
         "Account herstellen"
@@ -1936,9 +1936,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migratieassistent"
       ],
-      "App installed": [
-        "App geïnstalleerd"
-      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -1959,9 +1956,6 @@
       ],
       "Domain connected": [
         "Domein verbonden"
-      ],
-      "Domain ownership verified": [
-        "Domeineigendom geverifieerd"
       ],
       "Estimated size": [
         "Geschatte grootte."
@@ -1984,14 +1978,8 @@
       "Install migration app": [
         "Installeer migratie app"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Meer informatie over wat kan worden gemigreerd. Meer informatie"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migreren"
       ],
       "Migrate from Google Workspace": [
         "Migreren vanuit Google Workspace"
@@ -2009,17 +1997,11 @@
       "Migration status": [
         "Migratiestatus"
       ],
-      "Not started": [
-        "Niet begonnen"
-      ],
       "Organization does not have enough seats available": [
         "Organisatie heeft onvoldoende licenties beschikbaar"
       ],
       "Organization does not have enough storage available": [
         "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Organization settings": [
-        "Organisatie instellingen"
       ],
       "Required": [
         "Vereist"
@@ -2029,9 +2011,6 @@
       ],
       "Select at least one user to start a migration": [
         "Selecteer minimaal één gebruiker om een migratie te starten"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
       ],
       "Set up": [
         "Configureren"
@@ -2047,9 +2026,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Hiermee wordt toestemming verleend aan ${ BRAND_NAME } om uw gegevens te kopiëren. Nadat u de app hebt geïnstalleerd, keert u hier terug om verder te gaan."
-      ],
-      "Transfer errors": [
-        "Overdrachtsfout"
       ],
       "User": [
         "Gebruiker"
@@ -3518,6 +3494,9 @@
       "Automatically forward incoming email to another email address.": [
         "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Voorkom dat Google een profiel van u aanmaakt. Gmail kan niet zien wat u in ${ MAIL_APP_NAME } doet."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bouw vertrouwen en merkherkenning op met professionele e-mailadressen met uw eigen domeinnaam."
       ],
@@ -3614,9 +3593,21 @@
       "Still need help? Our support team is here for you.": [
         "Heeft u nog steeds hulp nodig? Ons supportteam staat voor u klaar."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dit kan gebeuren als de toegangsrechten zijn ingetrokken of als uw wachtwoord is gewijzigd."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Om een ander Gmail-adres te koppelen, verwijdert u de extra Gmail-adressen die naar ${ BRAND_NAME } worden doorgestuurd."
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adres te koppelen, upgrade naar ${ planName }.",
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adressen te koppelen, upgrade naar ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw account opnieuw koppelen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw accounts opnieuw koppelen."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
@@ -3636,11 +3627,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
+      ],
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "We zijn begonnen met het importeren van uw e-mails van de afgelopen 180 dagen vanuit Gmail. We laten uw weten wanneer het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -3955,6 +3958,14 @@
         "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van één extern account naar ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -4191,6 +4202,9 @@
       ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
+      ],
+      "Address is already added to your account": [
+        "Het adres is al aan uw account toegevoegd"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"

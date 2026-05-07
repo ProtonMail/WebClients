@@ -516,9 +516,6 @@
       "Delete record": [
         "Record verwijderen"
       ],
-      "Delete token ${ token.Account }": [
-        "Token \"${ token.Account }\" verwijderen"
-      ],
       "Delete token “${ token.Name }”": [
         "Token \"${ token.Name }\" verwijderen"
       ],
@@ -1196,6 +1193,9 @@
       ],
       "Reconnect": [
         "Opnieuw verbinden"
+      ],
+      "Reconnect to Gmail": [
+        "Opnieuw verbinden met Gmail"
       ],
       "Recover account": [
         "Account herstellen"
@@ -2838,12 +2838,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migratieassistent"
       ],
-      "Add a custom domain": [
-        "Een aangepast domein toevoegen"
-      ],
-      "App installed": [
-        "App geïnstalleerd"
-      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -2871,9 +2865,6 @@
       "Domain connected": [
         "Domein verbonden"
       ],
-      "Domain ownership verified": [
-        "Domeineigendom geverifieerd"
-      ],
       "Estimated size": [
         "Geschatte grootte."
       ],
@@ -2898,14 +2889,8 @@
       "Install migration app": [
         "Installeer migratie app"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Meer informatie over wat kan worden gemigreerd. Meer informatie"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migreren"
       ],
       "Migrate from Google Workspace": [
         "Migreren vanuit Google Workspace"
@@ -2923,17 +2908,11 @@
       "Migration status": [
         "Migratiestatus"
       ],
-      "Not started": [
-        "Niet begonnen"
-      ],
       "Organization does not have enough seats available": [
         "Organisatie heeft onvoldoende licenties beschikbaar"
       ],
       "Organization does not have enough storage available": [
         "Organisatie heeft onvoldoende opslagruimte beschikbaar"
-      ],
-      "Organization settings": [
-        "Organisatie instellingen"
       ],
       "Required": [
         "Vereist"
@@ -2943,9 +2922,6 @@
       ],
       "Select at least one user to start a migration": [
         "Selecteer minimaal één gebruiker om een migratie te starten"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
       ],
       "Set up": [
         "Configureren"
@@ -2971,9 +2947,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Hiermee wordt toestemming verleend aan ${ BRAND_NAME } om uw gegevens te kopiëren. Nadat u de app hebt geïnstalleerd, keert u hier terug om verder te gaan."
       ],
-      "Transfer errors": [
-        "Overdrachtsfout"
-      ],
       "User": [
         "Gebruiker"
       ],
@@ -2985,9 +2958,6 @@
       ],
       "Verify your domain": [
         "Verifieer uw domein"
-      ],
-      "Verify your domain ownership": [
-        "Verifieer uw domeineigendom"
       ],
       "Verify your domain to start a migration": [
         "Verifieer uw domein om een migratie te starten"
@@ -4971,6 +4941,9 @@
       "Available with ${ title }": [
         "Beschikbaar met ${ title }"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Voorkom dat Google een profiel van u aanmaakt. Gmail kan niet zien wat u in ${ MAIL_APP_NAME } doet."
+      ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Neem uw e-mail, agenda-afspraken en contacten van een andere provider over."
       ],
@@ -5094,9 +5067,21 @@
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Hiermee krijgt u weer toegang tot uw ${ BRAND_NAME } account, maar uw versleutelde gegevens worden niet hersteld."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dit kan gebeuren als de toegangsrechten zijn ingetrokken of als uw wachtwoord is gewijzigd."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Om een ander Gmail-adres te koppelen, verwijdert u de extra Gmail-adressen die naar ${ BRAND_NAME } worden doorgestuurd."
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adres te koppelen, upgrade naar ${ planName }.",
         "Om maximaal ${ MAX_SYNC_PAID_USER } Gmail-adressen te koppelen, upgrade naar ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw account opnieuw koppelen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw accounts opnieuw koppelen."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
@@ -5119,11 +5104,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "We hebben geen toegang meer tot ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "We halen uw oude e-mails op en koppelen uw Gmail-account aan ${ MAIL_APP_NAME }, zodat nieuwe berichten automatisch worden weergegeven"
+      ],
       "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
         "We zijn begonnen met het importeren van uw e-mails van de afgelopen 180 dagen vanuit Gmail. We laten uw weten wanneer het klaar is."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al een Gmail-adres dat wordt doorgestuurd naar ${ MAIL_APP_NAME }. Koppel het hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "U hebt al Gmail-adressen die worden doorgestuurd naar ${ MAIL_APP_NAME }. Koppel er één hieronder om e-mails rechtstreeks vanuit ${ MAIL_APP_NAME } te verzenden en te ontvangen."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "U kunt de lijst van domeinen aanpassen waar bepaalde automatische functies in de ${ PASS_APP_NAME } browser extensie (Automatisch aanvullen, automatisch suggesties geven, automatisch opslaan) niet mogen worden uitgevoerd."
@@ -5608,6 +5605,14 @@
       ],
       "90m": [
         "90m"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van één extern account naar ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6235,6 +6240,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add 1 more": [
+        "Voeg er nog 1 toe"
+      ],
       "Add emergency contact": [
         "Contactpersoon voor noodgevallen toevoegen"
       ],
@@ -6333,6 +6341,9 @@
       ],
       "Enable auto-renew": [
         "Automatisch verlengen activeren"
+      ],
+      "Explore plans": [
+        "Verken abonnementen"
       ],
       "For ${ email }": [
         "Voor ${ email }"
@@ -6641,6 +6652,9 @@
       ],
       "Address cannot be yours": [
         "Het adres kan niet van u zijn"
+      ],
+      "Address is already added to your account": [
+        "Het adres is al aan uw account toegevoegd"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -9949,9 +9963,6 @@
       ],
       "Change your password": [
         "Wijzig uw wachtwoord"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Controleer de status van uw import- en doorstuuropdrachten."
       ],
       "Check your network and try again.": [
         "Controleer uw netwerk en probeer het opnieuw."
@@ -15052,6 +15063,9 @@
       ],
       "Recovery phrase": [
         "Herstelzin"
+      ],
+      "Set recovery phone number": [
+        "Hersteltelefoonnummer instellen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -19723,8 +19737,11 @@
       "Partial": [
         "Gedeeltelijk"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Vereis een wachtwoord reset optie (verificatie via e-mail of sms)."
+      "Recovery score: ${ score }": [
+        "Herstelscore: ${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Vereist optie voor geverifieerde wachtwoordreset (e-mail of sms)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Score: ${ score } / ${ maxScore }"
@@ -19767,14 +19784,14 @@
       "Download recovery file": [
         "Herstelbestand downloaden"
       ],
-      "Email verification enabled": [
-        "E-mailverificatie ingeschakeld"
+      "Email recovery enabled": [
+        "E-mailherstel ingeschakeld"
       ],
       "Emergency contacts added": [
         "Noodcontacten toegevoegd"
       ],
-      "Enable recovery by email": [
-        "Herstellen via e-mail inschakelen"
+      "Enable email recovery": [
+        "Schakel e-mailherstel in"
       ],
       "Enable recovery by phone": [
         "Herstellen via telefoon inschakelen"
@@ -19784,6 +19801,9 @@
       ],
       "Password verified": [
         "Wachtwoord is geverifieerd"
+      ],
+      "Phone recovery enabled": [
+        "Hersteltelefoonnummer ingeschakeld"
       ],
       "Recovery contacts added": [
         "Herstelcontacten toegevoegd"
@@ -19799,9 +19819,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Aanmelden met QR-code toegestaan"
-      ],
-      "SMS verification enabled": [
-        "Verificatie via SMS ingeschakeld"
       ],
       "Verify password": [
         "Wachtwoord verifiëren"
@@ -20484,6 +20501,233 @@
         "Uw hersteltelefoonnummer is:"
       ]
     },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } Account e-mailadres"
+      ],
+      "Account protection": [
+        "Account beveiliging"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Add emergency contacts": [
+        "Contactpersonen voor noodgevallen toevoegen"
+      ],
+      "Add options": [
+        "Opties toevoegen"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen toegang krijgen tot uw account en uw wachtwoord voor u opnieuw instellen."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw heeft ingesteld."
+      ],
+      "Add phone number": [
+        "Telefoonnummer toevoegen"
+      ],
+      "Add recovery contacts": [
+        "Herstelcontacten toevoegen"
+      ],
+      "Add recovery email": [
+        "Herstel e-mailadres toevoegen"
+      ],
+      "Add recovery phone": [
+        "Hersteltelefoon toevoegen"
+      ],
+      "Added emergency contacts": [
+        "Contactpersoon voor noodgevallen toegevoegd"
+      ],
+      "Added recovery contacts": [
+        "Herstelcontacten toegevoegd"
+      ],
+      "Added recovery email": [
+        "Herstel-e-mailadres toegevoegd"
+      ],
+      "Added recovery phone": [
+        "Hersteltelefoonnummer toegevoegd"
+      ],
+      "Allow": [
+        "Toestaan"
+      ],
+      "Allow data recovery from this device": [
+        "Sta gegevensherstel vanaf dit apparaat toe"
+      ],
+      "Allow password reset from the settings": [
+        "Sta wachtwoord reset toe vanuit instellingen"
+      ],
+      "Allow recovery by email": [
+        "Herstellen via e-mail toestaan"
+      ],
+      "Allow recovery by phone": [
+        "Herstellen via telefoon toestaan"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Sta het scannen van een QR-code toe om in te loggen"
+      ],
+      "Allow trusted friends to sign in": [
+        "Laat vertrouwde vrienden inloggen"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Laat vertrouwde vrienden uw gegevens ontgrendelen"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Terug naar ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Gefeliciteerd"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Niet ontvangen? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Download recovery file": [
+        "Herstelbestand downloaden"
+      ],
+      "Downloaded recovery file": [
+        "Herstelbestand downloaden"
+      ],
+      "Emergency contacts enabled": [
+        "Noodcontacten ingeschakeld"
+      ],
+      "Enable device recovery": [
+        "Apparaatherstel inschakelen"
+      ],
+      "Enable email recovery": [
+        "Schakel e-mailherstel in"
+      ],
+      "Enable emergency contacts": [
+        "Schakel noodcontacten in"
+      ],
+      "Enable password reset from settings": [
+        "Schakel het opnieuw instellen van het wachtwoord in vanuit de instellingen"
+      ],
+      "Enable phone recovery": [
+        "Schakel herstel via telefoon in"
+      ],
+      "Enable QR code sign-in": [
+        "QR-code aanmelding toestaan"
+      ],
+      "Enabled device recovery": [
+        "Apparaatherstel ingeschakeld"
+      ],
+      "Enabled email recovery": [
+        "E-mailherstel ingeschakeld"
+      ],
+      "Enabled password reset from settings": [
+        "Wachtwoord opnieuw instellen via instellingen ingeschakeld"
+      ],
+      "Enabled phone recovery": [
+        "Herstel via telefoon ingeschakeld"
+      ],
+      "Enabled QR code sign-in": [
+        "Aanmelden met QR-code ingeschakeld"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Here's how you increased your account protection:": [
+        "Hoe u de beveiliging van uw account hebt verbeterd:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Als u uw wachtwoord bent vergeten, kunt u inloggen met een QR-code. U hoeft alleen ingelogd te zijn op een ${ BRAND_NAME }-service op een ander apparaat."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Als u geen toegang meer heeft tot uw ${ BRAND_NAME } account, kunt u zich aanmelden en uw gegevens herstellen. Het is de enige manier om alles onmiddellijk te herstellen, dus zorg ervoor dat u het op een veilige plek bewaart."
+      ],
+      "Later": [
+        "Later"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Bescherm uw legacy met noodtoegang"
+      ],
+      "Save recovery phrase": [
+        "Herstelzin bewaren"
+      ],
+      "Saved recovery phrase": [
+        "Opgeslagen herstelzin"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Ze moeten al een ${ BRAND_NAME }-account hebben."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Hiermee krijgt u snel toegang tot uw ${ BRAND_NAME }-account, zodat u uw wachtwoord kunt wijzigen."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Hiermee kunt u uw accountwachtwoord opnieuw instellen als u het kwijt bent, maar nog steeds bent ingelogd bij ${ BRAND_NAME }. Het is vaak de makkelijkste manier om uw account te herstellen als u bent ingelogd."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Hiermee wordt de toegang tot e-mails, contacten, bestanden, wachtwoorden en andere gecodeerde gegevens in uw account hersteld nadat het wachtwoord opnieuw is ingesteld."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Om zeker te zijn dat het e-mailadres van u is, moet u de verificatiecode invoeren die naar ${ boldEmail } is verzonden."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Om zeker te zijn dat het uw telefoonnummer is, voer de verificatiecode in die naar ${ boldPhoneNumber } is verzonden."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Om er zeker van te zijn dat dit adres echt van jou is, sturen we een e-mail met een verificatielink."
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Upgrade uw abonnement om noodtoegang voor uw account in te schakelen. Hiermee kunt u 1 tot 5 personen aanwijzen die uw wachtwoord voor u kunnen resetten."
+      ],
+      "Verified password": [
+        "Geverifieerd wachtwoord"
+      ],
+      "Verified recovery email": [
+        "Geverifieerd herstel e-mailadres"
+      ],
+      "Verified recovery phone": [
+        "Geverifieerd hersteltelefoonnummer"
+      ],
+      "Verify": [
+        "Verifieer"
+      ],
+      "Verify password": [
+        "Wachtwoord verifiëren"
+      ],
+      "Verify recovery email": [
+        "Herstel-e-mailadres verifiëren"
+      ],
+      "Verify recovery phone": [
+        "Hersteltelefoon verifiëren"
+      ],
+      "Verify your recovery email": [
+        "Herstel-e-mailadres verifiëren"
+      ],
+      "Verify your recovery phone": [
+        "Verifieer uw hersteltelefoonnummer"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "U kunt een gegevensback-up op dit apparaat opslaan. Hiermee wordt de toegang tot e-mails, contacten, bestanden, wachtwoorden en andere gecodeerde gegevens in uw account hersteld na een wachtwoordreset, eenvoudigweg door u aan te melden op dit apparaat."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "U kunt e-mailverificatie gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "U kunt sms-verificatie gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "U kunt uw herstel-e-mailadres gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "U kunt uw hersteltelefoonnummer gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "U hoeft het bestand niet te openen of te lezen; download het gewoon en bewaar het op een veilige plek."
+      ],
+      "Your recovery checklist": [
+        "Uw herstelchecklist"
+      ],
+      "Your security setup": [
+        "Uw beveiligingsinstellingen"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Annuleren"
@@ -20688,9 +20932,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, downloadt u uw herstelzin en schakelt u de gemarkeerde opties uit."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "U hebt acties aanbevolen van ${ PROTON_SENTINEL_NAME }."
       ]

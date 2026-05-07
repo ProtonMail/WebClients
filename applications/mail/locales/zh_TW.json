@@ -1014,6 +1014,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Or remove forwarding address": [
+        "或移除轉寄位址"
+      ],
       "Ordered list": [
         "有序列表"
       ],
@@ -1469,9 +1472,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -4080,6 +4080,9 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "升級至 ${ planName } 已連線到至多 ${ MAX_SYNC_PAID_USER } 個帳號"
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
@@ -6955,6 +6958,9 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Each code can only be used once": [
+        "每個代碼都只能使用一次"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "輕鬆管理及取消訂閱的電子報和郵寄清單。"
       ],
@@ -7229,7 +7235,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -7489,6 +7495,9 @@
       "of": [
         "/"
       ],
+      "On public WiFi networks": [
+        "於公用 WiFi 網路上"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
@@ -7710,6 +7719,9 @@
       ],
       "Saving draft": [
         "正在儲存草槁"
+      ],
+      "Scan the QR code with your mobile device": [
+        "透過行動裝置掃描此 QR Code"
       ],
       "Scheduled send of this message will be canceled.": [
         "此郵件的寄送預定將被取消。"
@@ -9485,6 +9497,9 @@
       "Search in": [
         "搜尋於"
       ],
+      "Select which Gmail address to connect": [
+        "選取 Gmail 位址以連線"
+      ],
       "Send auto-reply": [
         "發送自動回覆"
       ],
@@ -9801,6 +9816,9 @@
       ],
       "Enable your address to answer this invitation.": [
         "請啟用您的電郵位址，以回答此邀請。"
+      ],
+      "Enforcing 2FA for organizations": [
+        "強制貴組織雙重驗證"
       ],
       "Folders": [
         "資料夾"
@@ -11647,6 +11665,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
     "Option": {
@@ -11667,12 +11688,6 @@
       ],
       "No parent folder": [
         "無上層資料夾"
-      ],
-      "Remind me later": [
-        "稍後提醒我"
-      ],
-      "Yes, don't show again": [
-        "是的，日後不再顯示"
       ]
     },
     "Option group": {
@@ -11839,6 +11854,9 @@
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "包含 ${ rate }% 稅金"
       ],
       "Including ${ rate }% taxes: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金：${ taxAmountElement }"
@@ -12181,6 +12199,9 @@
       "Select": [
         "選取"
       ],
+      "Select a provider": [
+        "選擇一個供應商"
+      ],
       "Select a reason": [
         "選取理由"
       ],
@@ -12254,6 +12275,9 @@
     "plus_block": {
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "保持 ${ currentPlanTitle } 方案"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
@@ -13151,6 +13175,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "取得 500 GB 以安全地儲存您的檔案和照片"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "取得存取在110 多個國家提供極速 VPN 伺服器"
@@ -14344,6 +14371,9 @@
       "Block sender": [
         "攔截寄件者"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "帶入您的 Gmail 至 ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "為隱私而創建"
       ],
@@ -14688,9 +14718,6 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
-      ],
-      "Keep this banner hidden?": [
-        "保持隱藏此橫幅？"
       ],
       "Label as": [
         "套用標籤"

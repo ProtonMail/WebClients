@@ -329,8 +329,8 @@
       "Delete policy": [
         "İlkeyi sil"
       ],
-      "Delete token ${ token.Account }": [
-        "${ token.Account } kodunu sil"
+      "Delete token ${ tokens[0].Account }": [
+        "${ tokens[0].Account } kodunu sil"
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -556,6 +556,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
+      ],
+      "Go to domain provider": [
+        "Etki alanı sağlayıcısına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -892,6 +895,9 @@
       ],
       "Save": [
         "Kaydet"
+      ],
+      "Save & exit": [
+        "Kaydet ve çık"
       ],
       "Save address": [
         "Adresi kaydet"
@@ -1974,8 +1980,53 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "App installed": [
-        "Uygulama kuruldu"
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=yok**: yetkisiz e-postaları karantinaya almayın veya reddetmeyin. Bu kural genellikle sorun giderme veya test amaçlı kullanılır."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=karantina**: alıcı platformlardan yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reddet**: alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
+      ],
+      "Account connected": [
+        "Hesap bağlandı"
+      ],
+      "Account disconnected": [
+        "Hesap bağlantısı kesildi"
+      ],
+      "Activated": [
+        "Etkinleştirildi"
+      ],
+      "Activation link": [
+        "Aktivasyon bağlantısı"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktivasyon bağlantısı panoya kopyalandı"
+      ],
+      "Add domain": [
+        "Etki alanı ekle"
+      ],
+      "Add users": [
+        "Kullanıcı ekle"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından halihazırda kullanılıyor. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "An unknown error occurred": [
+        "Bilinmeyen bir hata oluştu"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Devam etmek istediğinizden emin misiniz? Aktarım işlemi tamamlanmadan önce hesaplarını doğrulamamış olan kullanıcıların ${ BRAND_NAME } kuruluş yöneticisinden parola sıfırlama talebinde bulunmaları gerekecek."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Hesaplar oluşturulur oluşturulmaz kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için etkinleştirme bağlantısını paylaşabilirsiniz."
       ],
       "Authenticate": [
         "Kimliği doğrulayın"
@@ -1986,20 +2037,59 @@
       "Calendar": [
         "Takvim"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "aktarılacak öğeleri seçin. Seçiminiz tüm kullanıcılar için geçerli olacak. Hangi kullanıcıların kopyalanacağına karar verdikten sonra taşıma işlemi başlayacak."
+      ],
       "Completed": [
         "Tamamlandı"
+      ],
+      "Configure domain": [
+        "Etki alanını yapılandır"
       ],
       "Configure migration": [
         "Aktarımı yapılandırın"
       ],
+      "Configure your domain": [
+        "Etki alanınızı yapılandırın"
+      ],
       "Contacts": [
         "Kişiler"
+      ],
+      "Copy activation link": [
+        "Aktivasyon bağlantısını kopyala"
+      ],
+      "Copy activation link to clipboard": [
+        "Etkinleştirme bağlantısını panoya kopyala"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Aşağıdaki kodu kopyalayıp etki alanı barındırıcınızın DNS bölümüne yapıştırın. Bir örnek ve bazı yararlı ipuçlarını ${ hereHref } adresinde bulabilirsiniz."
+      ],
+      "Creating accounts": [
+        "Hesap oluşturuluyor"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve iletim sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
+      ],
+      "DKIM records": [
+        "DKIM kayıtları"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC, SPF ve DKIM'i temel alarak alıcı sunuculara bu denetimlerden geçemeyen iletileri nasıl ele alacaklarını bildirir. Bu, etki alanınızı kimlik sahtekarlığından korumaya yardımcı olur ve genel teslimat güvenilirliğini artırır."
+      ],
+      "DMARC records": [
+        "DMARC kayıtları"
+      ],
+      "Domain added": [
+        "Etki alanı eklendi"
       ],
       "Domain connected": [
         "Etki alanı bağlandı"
       ],
-      "Domain ownership verified": [
-        "Etki alanı sahipliği doğrulandı"
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "E-postalarınızın istenmeyen klasörüne değil gelen kutusuna ulaşmasını sağlayın. SPF'yi güncellemek geçiş süreci boyunca kullanıcıların hem ${ BRAND_NAME } hem de Google adreslerinden e-posta gönderebilmesini sağlayacak."
+      ],
+      "Errors": [
+        "Hatalar"
       ],
       "Estimated size": [
         "Öngörülen boyut"
@@ -2007,11 +2097,29 @@
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
       ],
+      "Finalize migration": [
+        "Taşıma işlemini tamamla"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Aktarımın tamamlanması tüm e-postalarınızın doğrudan ${ BRAND_NAME } adresine yönlendirileceği anlamına gelir. Kullanıcılar artık Google hesaplarına e-posta almayacak ve ${ BRAND_NAME } ile Google arasında veri senkronizasyonu yapılmayacaktır."
+      ],
+      "Find out what can be migrated.": [
+        "Nelerin taşınabileceğini öğrenin."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
       ],
+      "Google Workspace account": [
+        "Google Workspace hesabı"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Biraz sabırlı olun, kullanıcı hesaplarını oluşturuyoruz ve kısa süre içinde kullanıcı verilerini aktarmaya başlayacağız."
+      ],
       "Has errors": [
         "Sorunlar çıktı"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "${ user.AdminSetName } için içe aktarma hataları"
       ],
       "In progress": [
         "İşleniyor"
@@ -2022,20 +2130,23 @@
       "Install migration app": [
         "Aktarım uygulamasını kurun"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Nelerin aktarılabileceğini öğrenin. Ayrıntılı bilgi alın"
+      "Loading your organization data": [
+        "Kuruluşunuzun verileri yükleniyor"
       ],
       "Mail": [
         "E-posta"
       ],
-      "Migrate": [
-        "Aktar"
+      "Managed via ${ registrar.name }": [
+        "${ registrar.name } aracılığıyla yönetiliyor"
       ],
       "Migrate from Google Workspace": [
         "Google Workspace üzerinden aktar"
       ],
       "Migrate users": [
         "Kullanıcıları aktar"
+      ],
+      "Migrated": [
+        "Aktarıldı"
       ],
       "Migration includes": [
         "Şunlar aktarılır"
@@ -2047,8 +2158,26 @@
       "Migration status": [
         "Aktarım durumu"
       ],
-      "Not started": [
-        "Başlatılmamış"
+      "More details": [
+        "Daha fazla bilgi"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Hata ayrıntıları mevcut değil. Daha fazla bilgi için lütfen müşteri desteğiyle iletişime geçin"
+      ],
+      "No users to display": [
+        "Görüntülenecek kullanıcı yok"
+      ],
+      "Not activated": [
+        "Etkinleştirilmemiş"
+      ],
+      "Not confirmed": [
+        "Onaylanmamış"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Kullanıcılar ${ BRAND_NAME } hesaplarını aldıktan sonra geçiş işlemini tamamlayın."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "E-postaların ${ BRAND_NAME } adresine yönlendirildiğini doğruladığımızda aktarım tamamlanmış olacak. Bu gerçekleştiğinde size bilgi vermek üzere bir onay e-postası alacaksınız. Bu işlem 24 saate kadar sürebilir."
       ],
       "Organization does not have enough seats available": [
         "Kuruluşun yeterli koltuk sayısı yok"
@@ -2056,8 +2185,20 @@
       "Organization does not have enough storage available": [
         "Kuruluşun yeterli depolama alanı yok"
       ],
-      "Organization settings": [
-        "Kuruluş ayarları"
+      "Pending": [
+        "Beklemede"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Lütfen etki alanı sağlayıcınızın DNS konsoluna aşağıdaki kayıtları ekleyin:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Tüm kullanıcıların oluşturulması tamamlanana kadar lütfen bu pencereyi açık bırakın."
+      ],
+      "Please select at least one product to migrate": [
+        "Lütfen arktarılacak en az bir ürün seçin"
+      ],
+      "Refresh": [
+        "Yenile"
       ],
       "Required": [
         "Zorunlu"
@@ -2068,32 +2209,77 @@
       "Select at least one user to start a migration": [
         "Bir aktarım başlatmak için en az bir kullanıcı seçin"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Aktarmak istediğiniz ögeleri seçin. Bu ayar ister şimdi ister daha sonra oluşturulmuş olsun, tüm kullanıcılara uygulanır. Aktarım işlemi kullanıcı hesapları oluşturulduktan sonra başlayacaktır."
+      "Select users to migrate": [
+        "Aktarılacak kullanıcıları seçin"
       ],
       "Set up": [
         "Ayarla"
       ],
+      "Set up secure sending (DKIM)": [
+        "Güvenli gönderimi (DKIM) ayarla"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Güvenli gönderimi (DMARC) ayarla"
+      ],
+      "Set up secure sending (SPF)": [
+        "Güvenli gönderimi (SPF) ayarla"
+      ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için aktivasyon bağlantısını onlarla paylaşın."
       ],
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
       ],
+      "Size": [
+        "Boyut"
+      ],
+      "Some accounts are not claimed": [
+        "Bazı hesaplar sahiplenilmemiş"
+      ],
+      "SPF records": [
+        "SPF kayıtları"
+      ],
+      "Start migrating": [
+        "Aktarımı başlat"
+      ],
       "Status": [
         "Durum"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Varsayılan ayar yok. Ancak güvenliğinizi artırmak için bu değeri p=karantina olarak ayarlamanızı öneririz."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "\"p=\" değeri DMARC denetiminden geçemeyen e-postalar için uygulanacak eylemi belirler. Kullanılabilir eylemler şunlardır:"
+      ],
+      "This migration has been completed": [
+        "Geçiş işlemi tamamlandı"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
       ],
-      "Transfer errors": [
-        "Aktarım hataları"
+      "Update records for receiving": [
+        "Alınan kayıtlarını güncelle"
       ],
       "User": [
         "Kullanıcı"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "Kullanıcının hesabını yukarıda gösterilen aktivasyon bağlantısı üzerinden etkinleştirmesi gerekiyor"
+      ],
+      "User status": [
+        "Kullanıcı durumu"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Kullanıcılar aktarım süreci boyunca ${ BRAND_NAME } ile Google'ı aynı anda kullanabilirler."
+      ],
       "Users migrated": [
         "Kullanıcılar aktarıldı"
+      ],
+      "Verified": [
+        "Doğrulandı"
       ],
       "Verify installation": [
         "Kurulumu doğrula"
@@ -2104,14 +2290,33 @@
       "Verify your domain to start a migration": [
         "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Google Workspace hesabınızla ilişkili birincil etki alanı tespit ettik. ${ BRAND_NAME } kuruluşunuz için e-posta kurulumuna devam etmek üzere bunu onaylayın."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Hala etki alanı sağlayıcınızla MX kayıtlarını kontrol ediyoruz."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Bazı kullanıcıların ${ BRAND_NAME } hesaplarını henüz almadıklarını fark ettik."
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
       ],
+      "You": [
+        "Siz"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
+      ],
+      "You're all set!": [
+        "Her şey hazır!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin.",
+        "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin."
       ]
     },
     "Browser": {
@@ -3808,6 +4013,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Yinelenen bir DMARC kaydı bulundu. Sorunu gidermek için etki alanı sağlayıcınızın DNS konsoluna gidin."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9478,6 +9688,9 @@
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
       ],
+      "Confirm MX records added": [
+        "Eklenen MX kayıtlarını onayla"
+      ],
       "Confirm new password": [
         "Yeni parola onayı"
       ],
@@ -9698,6 +9911,9 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "Host name": [
+        "Ana bilgisayar adı"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
       ],
@@ -9814,6 +10030,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
+      ],
+      "MX records": [
+        "MX kayıtları"
       ],
       "Name": [
         "Ad"
@@ -9946,6 +10165,9 @@
       ],
       "Previous password": [
         "Önceki parola"
+      ],
+      "Priority": [
+        "Öncelik"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -10229,6 +10451,26 @@
         "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup } kaydı bulunamadı"
+      ],
+      "Host name": [
+        "Ana bilgisayar adı"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Geçersiz ${ group.name } kaydı bulundu"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "Use default value": [
+        "Varsayılan değeri kullan"
+      ],
+      "Valid ${ group.name } record found": [
+        "Geçerli ${ group.name } kaydı bulundu"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Yönetici"
@@ -10343,6 +10585,9 @@
       ],
       "data recovery option": [
         "verileri kurtarma seçeneği"
+      ],
+      "Detailed instructions": [
+        "Ayrıntılı talimatlar"
       ],
       "Details": [
         "Ayrıntılar"
@@ -13265,6 +13510,9 @@
       "Search for an email or IP address": [
         "Bir e-posta adresi ya da IP adresi arayın"
       ],
+      "Search for users or addresses": [
+        "Kullanıcıları veya adresleri ara"
+      ],
       "Search parent folder": [
         "Üst klasörü ara"
       ],
@@ -15683,6 +15931,9 @@
       "Account deleted. Signing out...": [
         "Hesap silindi. Oturum kapatılıyor..."
       ],
+      "Activation link copied to clipboard": [
+        "Aktivasyon bağlantısı panoya kopyalandı"
+      ],
       "Address added": [
         "Adres eklendi"
       ],
@@ -17582,6 +17833,9 @@
       "User is a group": [
         "Kullanıcı bir grup"
       ],
+      "via ${ groupName }": [
+        "${ groupName } üzerinden"
+      ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
@@ -17814,6 +18068,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(vasıtasıyla ${ groupName })"
+      ],
+      "(via group)": [
+        "(grup aracılığıyla)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Bir kullanıcıya devredilen roller ekleyerek ona yalnızca gerek duyduğu izinleri verin. Böylece tam yönetici yetkilerini ayrı tutun ve ortamınızın güvenliğini sağlayın."
       ],
