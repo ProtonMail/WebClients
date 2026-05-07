@@ -10,7 +10,10 @@ import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuestAdmin } from '@proton/meet/store/slices';
-import { selectLocalRecordingTime } from '@proton/meet/store/slices/recordingStatusSlice';
+import {
+    selectIsLocalParticipantRecording,
+    selectLocalRecordingTime,
+} from '@proton/meet/store/slices/recordingStatusSlice';
 import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -77,11 +80,12 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
 const RecordingControlsInternal = () => {
     const isMeetingRecordingEnabled = useFlag('MeetingRecording');
 
-    const { startRecording, downloadRecording, recordingState } = useMeetingRecorderContext();
+    const { startRecording, downloadRecording } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
     const isLargerThanMd = useIsLargerThanMd();
 
     const duration = useMeetSelector(selectLocalRecordingTime);
+    const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
 
     const [showStartRecordingConfirmation, setShowStartRecordingConfirmation] = useState(false);
     const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
@@ -155,7 +159,7 @@ const RecordingControlsInternal = () => {
     return (
         <>
             <div className="recording-controls flex items-center gap-2">
-                {!recordingState.isRecording ? (
+                {!isLocalRecording ? (
                     <CircleButton
                         IconComponent={IcMeetRecord}
                         onClick={handleStartRecordingConfirmation}

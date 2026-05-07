@@ -13,6 +13,8 @@ export interface RecordingStatusState {
     participantsRecording: string[];
     /** @deprecated Remove 'isRecording' with MeetMultipleRecording ff cleanup */
     isRecording: boolean;
+    /** @deprecated Remove 'isLocalRecording' with MeetMultipleRecording ff cleanup */
+    isLocalRecording: boolean;
 }
 
 export const initialState: RecordingStatusState = {
@@ -20,6 +22,7 @@ export const initialState: RecordingStatusState = {
     localRecordingTimer: null,
     participantsRecording: [],
     isRecording: false,
+    isLocalRecording: false,
 };
 
 const slice = createSlice({
@@ -48,6 +51,10 @@ const slice = createSlice({
         /** @deprecated Remove 'setIsRecording' with MeetMultipleRecording ff cleanup */
         setIsRecording: (state, action: PayloadAction<boolean>) => {
             state.isRecording = action.payload;
+        },
+        /** @deprecated Remove 'setIsLocalRecording' with MeetMultipleRecording ff cleanup */
+        setIsLocalRecording: (state, action: PayloadAction<boolean>) => {
+            state.isLocalRecording = action.payload;
         },
     },
 });
@@ -87,12 +94,16 @@ export const selectParticipantsRecording = (state: MeetState) => state.recording
 export const selectIsRecordingInProgress = (state: MeetState) =>
     state.recordingStatus.participantsRecording.length > 0 || state.recordingStatus.isRecording;
 
+/** @deprecated Remove 'selectIsLocalRecording' with MeetMultipleRecording ff cleanup */
+export const selectIsLocalRecording = (state: MeetState) => state.recordingStatus.isLocalRecording;
+
 export const selectIsParticipantRecording = (state: MeetState, identity: string) =>
     state.recordingStatus.participantsRecording.includes(identity);
 
 export const selectIsLocalParticipantRecording = createSelector(
-    [selectLocalParticipantIdentity, selectParticipantsRecording],
-    (localIdentity, participantsRecording) => participantsRecording.includes(localIdentity)
+    [selectLocalParticipantIdentity, selectParticipantsRecording, selectIsLocalRecording],
+    (localIdentity, participantsRecording, isLocalRecording) =>
+        participantsRecording.includes(localIdentity) || isLocalRecording
 );
 
 export const selectLocalRecordingTime = (state: MeetState) => state.recordingStatus.localRecordingTime;
@@ -106,6 +117,7 @@ export const selectRecordingParticipantNames = createSelector(
     }
 );
 
-export const { addParticipantRecording, removeParticipantRecording, setIsRecording } = slice.actions;
+export const { addParticipantRecording, removeParticipantRecording, setIsRecording, setIsLocalRecording } =
+    slice.actions;
 
 export const recordingStatusReducer = { recordingStatus: slice.reducer };

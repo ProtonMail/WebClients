@@ -1,18 +1,11 @@
 import { createContext, useContext } from 'react';
 
-import type { MeetingRecordingState } from '../hooks/useMeetingRecorder/types';
-
 export interface MeetingRecorderContextType {
-    recordingState: MeetingRecordingState;
     startRecording: () => Promise<void>;
     downloadRecording: () => Promise<void>;
 }
 
 const defaultValues: MeetingRecorderContextType = {
-    recordingState: {
-        isRecording: false,
-        recordedChunks: [],
-    },
     startRecording: () => Promise.resolve(),
     downloadRecording: () => Promise.resolve(),
 };
