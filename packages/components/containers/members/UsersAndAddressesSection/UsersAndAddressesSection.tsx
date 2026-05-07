@@ -50,6 +50,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             )}
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
             <AdminRolesOnboardingModal
+                variant="member"
                 open={canShowAdminRolesModal}
                 onClose={() => {
                     void updateAdminRolesModal(false);
