@@ -1,3 +1,33 @@
+/* Mirrors safety-review-card intro: animate only until data-safety-review-vt-intro-complete is set */
+
+/* stylelint-disable-next-line selector-type-no-unknown -- ::view-transition-new(<name>) */
+:root:not([data-safety-review-vt-intro-complete])::view-transition-new(safety-review-cta-enter) {
+	animation: safety-review-cta-vt-enter 0.3s ease-out both 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/* stylelint-disable-next-line selector-type-no-unknown */
+	:root:not([data-safety-review-vt-intro-complete])::view-transition-new(safety-review-cta-enter) {
+		animation: none;
+	}
+}
+
+@keyframes safety-review-cta-vt-enter {
+	from {
+		transform: perspective(500px) translate3d(0, 0, 1rem) rotateX(20deg);
+		opacity: 0;
+	}
+
+	to {
+		transform: perspective(500px) translate3d(0, 0, 0) rotateX(0);
+		opacity: 1;
+	}
+}
+
+.safety-review-cta-container {
+	view-transition-name: safety-review-cta-enter;
+}
+
 .safety-review-cta-button:not([disabled]) {
 	background: linear-gradient(272deg, #1fa698 -35.45%, #3ba36b 98.71%);
 
