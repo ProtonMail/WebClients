@@ -16,6 +16,7 @@ jest.mock("./quitTracker", () => ({
         setReason: jest.fn(),
     },
 }));
+jest.mock("./index");
 
 import { app, dialog } from "electron";
 import { flush as sentryFlush } from "@sentry/electron/main";

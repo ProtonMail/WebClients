@@ -5,10 +5,17 @@ import {
     isCloseTicketURL,
     isBornPrivateURL,
 } from "./urlTests";
-import * as urlStore from "../../store/urlStore";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 jest.mock("../config", () => {});
+
+jest.mock("../../store/urlStore", () => ({
+    getAppURL: () => ({
+        account: "https://account.proton.me",
+        mail: "https://mail.proton.me",
+        calendar: "https://calendar.proton.me",
+    }),
+}));
 
 describe("urlTests", () => {
     describe("trimLocalID", () => {
@@ -27,14 +34,6 @@ describe("urlTests", () => {
     });
 
     describe("isGoogleOAuthAuthorizationURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
-            });
-        });
-
         it("returns true for a valid Google OAuth URL", () => {
             const validURLAccount = `https://account.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
             expect(isGoogleOAuthAuthorizationURL(validURLAccount)).toBe(true);
@@ -69,14 +68,6 @@ describe("urlTests", () => {
     });
 
     describe("isBookingURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
-            });
-        });
-
         it("returns true for bookings path", () => {
             expect(isBookingURL("https://calendar.proton.me/bookings")).toBe(true);
             expect(isBookingURL("https://calendar.proton.me/bookings#some-booking-id")).toBe(true);
@@ -106,14 +97,6 @@ describe("urlTests", () => {
     });
 
     describe("isBornPrivateURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
-            });
-        });
-
         it("returns true for born private paths", () => {
             expect(isBornPrivateURL("https://account.proton.me/born-private")).toBe(true);
             expect(isBornPrivateURL("https://account.proton.me/born-private/")).toBe(true);
@@ -140,14 +123,6 @@ describe("urlTests", () => {
     });
 
     describe("isCloseTicketURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
-            });
-        });
-
         it("returns true for close ticket paths", () => {
             expect(isCloseTicketURL("https://account.proton.me/close-ticket")).toBe(true);
             expect(isCloseTicketURL("https://account.proton.me/close-ticket/")).toBe(true);
