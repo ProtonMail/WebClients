@@ -255,11 +255,14 @@ const config: Configuration = {
                     const maybeCryptoChunkName = CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP[chunk.id.toString()];
                     if (maybeCryptoChunkName) return maybeCryptoChunkName;
 
-                    if (!IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
-                        // throw on all unhanled chunks
+                    /** throw on all unhandled chunks for chrome/safari builds requiring manual
+                     * dynamic import registration in service-worker importScripts sequence */
+                    const importScriptsUsed = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
+                    if (importScriptsUsed && !IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
                         throw new Error(`lazy loaded chunk needs manual handling: ${chunk?.id.toString()}`);
                     }
                 }
+
                 return 'chunk.[contenthash:8].js';
             }
 
