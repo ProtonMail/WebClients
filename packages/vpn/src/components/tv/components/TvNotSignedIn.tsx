@@ -14,6 +14,13 @@ export const TvNotSignedIn = ({
     searchParams: URLSearchParams;
     paths: { login: string; signup: string };
 }) => {
+    const signupParams = new URLSearchParams(searchParams);
+    const isFromAmazon = signupParams.get('source') === 'amazon';
+
+    if (isFromAmazon) {
+        signupParams.set('plan', 'free');
+    }
+
     return (
         <>
             <img src={tvLogo} alt="tv image" role="presentation" />
@@ -22,11 +29,16 @@ export const TvNotSignedIn = ({
                 {c('Info').t`Complete the sign-in on this device to start using ${VPN_APP_NAME} on your TV.`}
             </span>
             <div className="flex flex-column gap-4 items-center">
-                <Link className="w-full" to={`${paths.signup}?${searchParams.toString()}`}>
-                    <Button fullWidth color="norm" shape="solid">{c('Info').t`Create an account`}</Button>
+                <Link className="w-full" to={`${paths.signup}?${signupParams.toString()}`}>
+                    <Button fullWidth color="norm" shape="solid">
+                        {c('Info').t`Create an account`}
+                    </Button>
                 </Link>
+
                 <Link className="w-full" to={`${paths.login}?${searchParams.toString()}`}>
-                    <Button fullWidth shape="outline">{c('Info').t`Sign in`}</Button>
+                    <Button fullWidth shape="outline">
+                        {c('Info').t`Sign in`}
+                    </Button>
                 </Link>
             </div>
         </>
