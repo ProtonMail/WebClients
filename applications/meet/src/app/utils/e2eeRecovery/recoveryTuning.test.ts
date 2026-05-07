@@ -7,12 +7,12 @@ describe('recoveryTuning', () => {
         expect(getE2eeRecoveryTuning('default')).toBe(E2EE_RECOVERY_TUNING_DEFAULT);
     });
 
-    it('returns aggressive preset with shorter cooldown and lower concealment bar', () => {
+    it('returns aggressive preset with shorter cooldowns and lower noise threshold', () => {
         const a = E2EE_RECOVERY_TUNING_AGGRESSIVE;
         const d = E2EE_RECOVERY_TUNING_DEFAULT;
         expect(getE2eeRecoveryTuning('aggressive')).toBe(a);
         expect(a.participantRecoverCooldownMs).toBeLessThan(d.participantRecoverCooldownMs);
-        expect(a.concealmentRatioThreshold).toBeLessThan(d.concealmentRatioThreshold);
+        expect(a.noiseEnergyPerSampleThreshold).toBeLessThan(d.noiseEnergyPerSampleThreshold);
         expect(a.tickIntervalMs).toBeLessThan(d.tickIntervalMs);
         expect(a.maxRecoveryAttempts).toBeGreaterThan(d.maxRecoveryAttempts);
     });
