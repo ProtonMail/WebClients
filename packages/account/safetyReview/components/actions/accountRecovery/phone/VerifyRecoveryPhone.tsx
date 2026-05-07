@@ -5,7 +5,6 @@ import { VerifyRecoveryMethod } from '@proton/account/safetyReview/components/ac
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 
 import paperplaneIllustration from '../../../assets/paperplane.svg';
@@ -18,7 +17,6 @@ type Props = SafetyReviewAllProps & {
 export const VerifyRecoveryPhone = (props: Props) => {
     const formattedPhoneNumber = <FormattedPhoneValue value={props.recoveryItem.recoveryItem.data.value} />;
     const boldPhoneNumber = <b key="phone-number">{formattedPhoneNumber}</b>;
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [loading, withLoading] = useLoading();
 
     return (
@@ -39,7 +37,6 @@ export const VerifyRecoveryPhone = (props: Props) => {
                 loading={loading}
                 withLoading={withLoading}
                 onSuccess={() => {
-                    sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
                     props.safetyReview.actions.next('completed', props.recoveryItem);
                 }}
                 onError={(error) => {

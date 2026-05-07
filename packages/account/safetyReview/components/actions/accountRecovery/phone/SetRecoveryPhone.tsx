@@ -9,7 +9,6 @@ import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/rec
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useMyCountry } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -26,7 +25,6 @@ export const SetRecoveryPhone = (props: Props) => {
     const [recoveryPhone, setRecoveryPhone] = useState('');
     const dispatch = useDispatch();
     const defaultCountry = useMyCountry();
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [loading, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -42,7 +40,6 @@ export const SetRecoveryPhone = (props: Props) => {
                 withLoading(
                     (async function () {
                         await dispatch(updateRecoveryPhoneValue({ value: recoveryPhone, persistPasswordScope: true }));
-                        sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

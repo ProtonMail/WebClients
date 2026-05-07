@@ -4,7 +4,6 @@ import { toggleRecoveryEmailReset } from '@proton/account/recovery/accountRecove
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
@@ -17,7 +16,6 @@ type Props = SafetyReviewAllProps & {
 };
 export const EnableRecoveryEmail = (props: Props) => {
     const dispatch = useDispatch();
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [loading, withLoading] = useLoading();
 
     return (
@@ -33,7 +31,6 @@ export const EnableRecoveryEmail = (props: Props) => {
                                 persistPasswordScope: true,
                             })
                         );
-                        sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

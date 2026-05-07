@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import AppLink from '@proton/components/components/link/AppLink';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -13,9 +14,11 @@ interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
 }
 
 const SecureAccountButton = ({ scoreTone, className, ...restButtonProps }: Props) => {
+    const app = getAppFromPathnameSafe(window.location.pathname);
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
+        ...(app && { appname: app }),
         v: 'new',
     });
 

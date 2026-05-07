@@ -7,6 +7,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useIsSecurityCheckupAvailable from '@proton/components/hooks/securityCheckup/useIsSecurityCheckupAvailable';
 import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
 import type { IconName } from '@proton/icons/types';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import clsx from '@proton/utils/clsx';
@@ -26,9 +27,11 @@ const GenericSecurityCheckupCard = ({
     description?: string | ReturnType<typeof getBoldFormattedText>;
     cta: string;
 }) => {
+    const app = getAppFromPathnameSafe(window.location.pathname);
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
+        ...(app && { appname: app }),
     });
 
     return (
