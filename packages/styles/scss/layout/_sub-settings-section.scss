@@ -26,3 +26,11 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 }
+
+.settings-cards {
+	&.bg-lowered {
+		.ui-standard.main-area-rounded--left {
+			background-color: var(--background-lowered);
+		}
+	}
+}
