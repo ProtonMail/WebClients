@@ -138,9 +138,6 @@
       "Cancel trial and pay": [
         "Batalkan uji coba dan bayar"
       ],
-      "Cancel upload": [
-        "Batalkan pengunggahan"
-      ],
       "Cancel uploads": [
         "Batalkan unggahan"
       ],
@@ -384,7 +381,7 @@
       "Download for Mac": [
         "Unduh untuk Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Unduh untuk macOS"
       ],
       "Download for Windows": [
@@ -726,15 +723,6 @@
       "Open navigation": [
         "Buka navigasi"
       ],
-      "Pause all": [
-        "Jeda semua"
-      ],
-      "Pause download": [
-        "Jeda unduhan"
-      ],
-      "Pause upload": [
-        "Hentikan sementara pengunggahan"
-      ],
       "Pay": [
         "Bayar"
       ],
@@ -798,9 +786,6 @@
       "Remove from favorites": [
         "Hapus dari favorit"
       ],
-      "Remove from this list": [
-        "Hapus dari daftar ini"
-      ],
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
@@ -846,15 +831,6 @@
       "Reset to default": [
         "Atur ulang ke pengaturan bawaan"
       ],
-      "Restart all": [
-        "Mulai ulang semuanya"
-      ],
-      "Restart download": [
-        "Mulai ulang unduhan"
-      ],
-      "Restart upload": [
-        "Mulai ulang unggahan"
-      ],
       "Restore": [
         "Pulihkan"
       ],
@@ -866,15 +842,6 @@
       ],
       "Restore version": [
         "Pulihkan versi"
-      ],
-      "Resume all": [
-        "Lanjutkan semua"
-      ],
-      "Resume download": [
-        "Lanjutkan pengunduhan"
-      ],
-      "Resume upload": [
-        "Lanjutkan pengunggahan"
       ],
       "Retry": [
         "Coba lagi"
@@ -4574,15 +4541,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } sedang diunduh"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } sedang diunduh (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } sedang diunggah (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
       ],
@@ -4610,9 +4568,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } dibatalkan"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } dari ${ items.length } transfer diselesaikan"
       ],
@@ -4634,15 +4589,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "File ${ DOCS_APP_NAME } dan ${ SHEETS_APP_NAME } tidak dapat diunduh secara langsung dan tidak akan disertakan pada unduhan ini. Anda dapat mengunduh file lainnya dengan mengklik 'Lanjut unduh'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } selesai diproses"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } telah terunduh"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } telah terunggah"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } di App Store"
       ],
@@ -4651,9 +4597,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } mengundang Anda untuk bergabung ke ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } gagal terproses"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
@@ -4679,9 +4622,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }. Harga dan tanggal pembaruan langganan ${ planTitle } Anda tidak akan berubah."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } dijeda"
-      ],
       "${ photoCount } item": [
         "${ photoCount } item"
       ],
@@ -4703,9 +4643,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } pemindaian gagal"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
@@ -4720,12 +4657,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } dilewati"
-      ],
-      "${ speed }/s": [
-        "${ speed }/dtk"
       ],
       "${ storage } storage": [
         "Penyimpanan ${ storage }"
@@ -4976,9 +4907,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Kolaborasikan pekerjaan Anda secara efisien selagi melindungi data klien dan bisnis Anda dari pembobolan, ransomware, dan monitoring."
       ],
-      "Conflict": [
-        "Konflik"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Hubungkan ke ${ VPN_APP_NAME } untuk menjelajahi secara privat"
       ],
@@ -5023,9 +4951,6 @@
       ],
       "Create links and share your files with others.": [
         "Buat tautan dan bagikan file Anda dengan yang lain."
-      ],
-      "Creating": [
-        "Membuat"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -5195,9 +5120,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Ekspor log diagnostik untuk layanan dukungan teknis dan penyelesaian masalah"
       ],
-      "Failed": [
-        "Gagal"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5215,9 +5137,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "File dan folder yang pengguna lain bagikan kepada Anda akan muncul di sini"
-      ],
-      "Finalizing": [
-        "Menuntaskan"
       ],
       "finance": [
         "keuangan"
@@ -5338,9 +5257,6 @@
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
-      ],
-      "Initializing": [
-        "Memulai"
       ],
       "Integrity issues found": [
         "Isu integritas ditemukan"
@@ -5498,9 +5414,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
-      "Network issue": [
-        "Masalah jaringan"
-      ],
       "New": [
         "Baru"
       ],
@@ -5536,9 +5449,6 @@
       ],
       "Not a valid URL": [
         "URL tidak valid"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Tidak semua file berhasil ditransfer. Coba unggah atau unduh kembali file tersebut."
       ],
       "Not connected": [
         "Tidak terhubung"
@@ -5732,9 +5642,6 @@
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
-      "Queued": [
-        "Ditempatkan dalam antrian"
-      ],
       "Ready to add some photos?": [
         "Siap menambahkan foto?"
       ],
@@ -5776,9 +5683,6 @@
       ],
       "Saving...": [
         "Menyimpan..."
-      ],
-      "Scan issue": [
-        "Isu pemindaian"
       ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR ini dengan perangkat seluler Anda"
@@ -5861,20 +5765,8 @@
       "Signature check will be ignored": [
         "Proses verifikasi tanda tangan akan diabaikan"
       ],
-      "Signature issue": [
-        "Masalah tanda tangan"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
-      ],
-      "Skipped": [
-        "Dilewati"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Beberapa file gagal diunduh. Coba unduh kembali file tersebut."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Beberapa file gagal diunggah. Coba unggah kembali file tersebut."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Beberapa pemerintah memblokir atau membatasi akses ke situs web tertentu. VPN membantu melewati sensor sambil menjaga aktivitas dan identitas Anda tetap pribadi."
@@ -5890,9 +5782,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Beberapa situs web dan layanan streaming memblokir konten berdasarkan wilayah. VPN memungkinkan Anda melewati batasan ini dan mengakses internet dengan bebas."
-      ],
-      "Something went wrong, please try again later.": [
-        "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
@@ -11245,15 +11134,6 @@
       "${ feature } is now active": [
         "${ feature } kini telah aktif"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } unduhan yang gagal"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transfer yang gagal"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } unggahan yang gagal"
-      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -11268,9 +11148,6 @@
       ],
       "Actions": [
         "Tindakan"
-      ],
-      "Active": [
-        "Aktif"
       ],
       "Add a custom logo": [
         "Tambah logo khusus"
@@ -11304,9 +11181,6 @@
       ],
       "Albums": [
         "Album"
-      ],
-      "All": [
-        "Semua"
       ],
       "All settings": [
         "Semua pengaturan"
@@ -11376,9 +11250,6 @@
       ],
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
-      ],
-      "Completed": [
-        "Selesai"
       ],
       "Computers": [
         "Komputer"
@@ -11607,9 +11478,6 @@
       ],
       "Exporting contacts": [
         "Mengekspor kontak"
-      ],
-      "Failed": [
-        "Gagal"
       ],
       "File details": [
         "Rincian file"
@@ -12277,9 +12145,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Pesan dan nama file disimpan dengan enkripsi zero-access pada saat diikutsertakan pada email"
-      ],
-      "New!": [
-        "Baru!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."

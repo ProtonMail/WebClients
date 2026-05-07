@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Annuleer proefversie en betaal"
       ],
-      "Cancel upload": [
-        "Upload annuleren"
-      ],
       "Cancel uploads": [
         "Uploads annuleren"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Downloaden voor Mac"
       ],
-      "Download for MacOS": [
-        "Downloaden voor macOS"
+      "Download for macOS": [
+        "Download voor macOS"
       ],
       "Download for Windows": [
         "Download voor Windows"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Navigatie openen"
       ],
-      "Pause all": [
-        "Pauzeer alle"
-      ],
-      "Pause download": [
-        "Download pauzeren"
-      ],
-      "Pause upload": [
-        "Uploaden pauzeren"
-      ],
       "Pay": [
         "Betalen"
       ],
@@ -793,6 +781,9 @@
       ],
       "Reconnect": [
         "Opnieuw verbinden"
+      ],
+      "Reconnect to Gmail": [
+        "Opnieuw verbinden met Gmail"
       ],
       "Recover data": [
         "Gegevens herstellen"
@@ -829,9 +820,6 @@
       ],
       "Remove from favorites": [
         "Verwijder uit favorieten"
-      ],
-      "Remove from this list": [
-        "Van deze lijst verwijderen"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
@@ -881,15 +869,6 @@
       "Reset to default": [
         "Terugzetten naar standaard"
       ],
-      "Restart all": [
-        "Herstart alle"
-      ],
-      "Restart download": [
-        "Download herstarten"
-      ],
-      "Restart upload": [
-        "Upload herstarten"
-      ],
       "Restore": [
         "Herstellen"
       ],
@@ -901,15 +880,6 @@
       ],
       "Restore version": [
         "Versie herstellen"
-      ],
-      "Resume all": [
-        "Zet alle verder"
-      ],
-      "Resume download": [
-        "Download hervatten"
-      ],
-      "Resume upload": [
-        "Upload hervatten"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -3002,6 +2972,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dit kan gebeuren als de toegangsrechten zijn ingetrokken of als uw wachtwoord is gewijzigd."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw account opnieuw koppelen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om Gmail-berichten te kunnen blijven ontvangen en verzenden in ${ BRAND_NAME }, moet u uw accounts opnieuw koppelen."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
@@ -3022,6 +3001,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "We hebben geen toegang meer tot ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
@@ -4849,18 +4831,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } downloaden",
-        "${ activeDownloadsCount } downloaden"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)",
-        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } uploaden (${ uploadProgress }%)",
-        "${ activeUploadsCount } uploaden (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
@@ -4895,10 +4865,6 @@
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } geannuleerd",
-        "${ canceledCount } geannuleerd"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } van ${ items.length } overdrachten voltooid"
       ],
@@ -4924,18 +4890,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } en ${ SHEETS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } voltooid",
-        "${ doneCount } voltooid"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } gedownload",
-        "${ doneDownloadsCount } gedownload"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } geüpload",
-        "${ doneUploadsCount } geüpload"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } in de App Store"
       ],
@@ -4944,10 +4898,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } heeft u uitgenodigd om lid te worden van ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } mislukt",
-        "${ errorCount } mislukt"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
@@ -4989,10 +4939,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }. De verlengingsprijs en de datum van uw ${ planTitle } abonnement blijven ongewijzigd."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } onderbroken",
-        "${ pausedCount } onderbroken"
-      ],
       "${ photoCount } item": [
         "${ photoCount } item",
         "${ photoCount } items"
@@ -5022,10 +4968,6 @@
         "${ providerFoldersNumLocalized } label gevonden in Gmail",
         "${ providerFoldersNumLocalized } labels gevonden in Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } scan mislukt",
-        "${ scanErrorCount } scans mislukt"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
@@ -5045,13 +4987,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } overgeslagen",
-        "${ skippedCount } overgeslagen"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } vermeldingen"
@@ -5344,12 +5279,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Efficiënt samenwerken terwijl u uw klant- en bedrijfsgegevens beschermt tegen inbreuken, ransomware en surveillance."
       ],
-      "Computed hash does not match XAttr": [
-        "Berekende hash komt niet overeen met XAttr"
-      ],
-      "Conflict": [
-        "Probleem"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Verbind met ${ VPN_APP_NAME } om privé te browsen"
       ],
@@ -5396,9 +5325,6 @@
       ],
       "Create links and share your files with others.": [
         "Maak links en deel uw bestanden met anderen."
-      ],
-      "Creating": [
-        "Aanmaken"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -5582,9 +5508,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Diagnostische logboeken exporteren voor technische ondersteuning en probleemoplossing"
       ],
-      "Failed": [
-        "Mislukt"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5602,9 +5525,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Bestanden en mappen die anderen met u hebben gedeeld worden hier weergegeven"
-      ],
-      "Finalizing": [
-        "Afronden"
       ],
       "finance": [
         "financiën"
@@ -5753,9 +5673,6 @@
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
-      ],
-      "Initializing": [
-        "Initialiseren"
       ],
       "Integrity issues found": [
         "Integriteitsproblemen gevonden"
@@ -5932,9 +5849,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
-      "Network issue": [
-        "Netwerk probleem"
-      ],
       "New": [
         "Nieuw"
       ],
@@ -5973,9 +5887,6 @@
       ],
       "Not a valid URL": [
         "Ongeldige link"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
       ],
       "Not connected": [
         "Niet verbonden"
@@ -6170,9 +6081,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
-      "Queued": [
-        "In wachtrij"
-      ],
       "Ready to add some photos?": [
         "Klaar om foto's toe te voegen?"
       ],
@@ -6217,9 +6125,6 @@
       ],
       "Saving...": [
         "Opslaan..."
-      ],
-      "Scan issue": [
-        "Scan probleem"
       ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
@@ -6311,20 +6216,8 @@
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
       ],
-      "Signature issue": [
-        "Handtekening probleem"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
-      ],
-      "Skipped": [
-        "Overgeslagen"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Sommige bestanden konden niet worden gedownload. Probeer de bestanden opnieuw te downloaden."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Sommige bestanden konden niet worden geüpload. Probeer de bestanden opnieuw te uploaden."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
@@ -6340,9 +6233,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
-      ],
-      "Something went wrong, please try again later.": [
-        "Er ging iets mis. Probeer het later nog eens."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
@@ -12204,18 +12094,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } van gratis uploads."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } download mislukt",
-        "${ numberOfFailedTransfer.total } downloads mislukt"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } verplaasting mislukt",
-        "${ numberOfFailedTransfer.total } verplaastingen mislukt"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } upload mislukt",
-        "${ numberOfFailedTransfer.total } uploads mislukt"
-      ],
       "Account recovery": [
         "Accountherstel"
       ],
@@ -12230,9 +12108,6 @@
       ],
       "Actions": [
         "Acties"
-      ],
-      "Active": [
-        "Actief"
       ],
       "Add a custom logo": [
         "Voeg een aangepast logo toe"
@@ -12267,9 +12142,6 @@
       ],
       "Albums": [
         "Albums"
-      ],
-      "All": [
-        "Alle"
       ],
       "All settings": [
         "Alle instellingen"
@@ -12352,9 +12224,6 @@
       ],
       "Collaborate on documents": [
         "Samenwerken aan documenten"
-      ],
-      "Completed": [
-        "Voltooid"
       ],
       "Computers": [
         "Computers"
@@ -12589,9 +12458,6 @@
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
-      ],
-      "Failed": [
-        "Mislukt"
       ],
       "File details": [
         "Bestandsdetails"
@@ -13295,9 +13161,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Bericht- en bestandsnaam worden opgeslagen met zero access versleuteling wanneer opgenomen in de e-mail"
-      ],
-      "New!": [
-        "Nieuw!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
