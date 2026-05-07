@@ -7,9 +7,7 @@ import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -17,9 +15,8 @@ type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useOnline();
-    const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
+    const { setLockMode, setLockTTL, lock, biometrics, extensionBiometrics, password } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
-    const desktopUnlockFeatureFlag = useFeatureFlag(PassFeature.PassDesktopUnlock);
 
     /**
      * Available on desktop,
@@ -29,7 +26,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const showBiometricsOption =
         password.enabled && BUILD_TARGET !== 'linux' && (DESKTOP_BUILD || lock.mode === LockMode.BIOMETRICS);
 
-    const showDesktopOption = EXTENSION_BUILD && (desktopUnlockFeatureFlag || lock.mode === LockMode.DESKTOP);
+    const showDesktopOption = extensionBiometrics.enabled || lock.mode === LockMode.DESKTOP;
 
     const biometricsText = c('Info').t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`;
 

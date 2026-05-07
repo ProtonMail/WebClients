@@ -1,10 +1,15 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 
 import './LobbyLayout.scss';
 
-export const LobbyLayout: FC<PropsWithChildren> = ({ children }) => {
+type Props = {
+    children: ReactNode;
+    large?: boolean;
+};
+
+export const LobbyLayout: FC<Props> = ({ children, large }) => {
     return (
         <div
             className="pass-lobby overflow-auto relative p-7 anime-fade-in"
@@ -13,7 +18,7 @@ export const LobbyLayout: FC<PropsWithChildren> = ({ children }) => {
             <PassIconLogo />
             <div
                 className="pass-lobby--content flex flex-nowrap flex-column h-full w-custom mx-auto text-center gap-2"
-                style={{ '--w-custom': '18.75rem' }}
+                style={{ '--w-custom': large === true ? '32rem' : '18.75rem' }}
             >
                 {children}
             </div>

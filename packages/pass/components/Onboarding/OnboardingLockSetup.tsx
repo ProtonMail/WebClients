@@ -26,7 +26,7 @@ type LockModeOption = {
 
 export const OnboardingLockSetup: FC = () => {
     const online = useOnline();
-    const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
+    const { setLockMode, setLockTTL, lock, biometrics, extensionBiometrics, password } = useLockSetup();
 
     const lockModes = useMemo<LockModeOption[]>(() => {
         const options: LockModeOption[] = [
@@ -48,6 +48,13 @@ export const OnboardingLockSetup: FC = () => {
                 icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
                 needsUpgrade: biometrics.needsUpgrade,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
+            },
+            {
+                value: LockMode.DESKTOP,
+                label: c('Label').t`Biometrics`,
+                icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
+                needsUpgrade: extensionBiometrics.needsUpgrade,
+                active: EXTENSION_BUILD && extensionBiometrics.enabled,
             },
             {
                 value: LockMode.NONE,

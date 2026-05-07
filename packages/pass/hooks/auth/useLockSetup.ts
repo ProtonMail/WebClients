@@ -13,6 +13,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -22,6 +23,7 @@ import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { cloneObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -44,6 +46,13 @@ type BiometricsState = {
     needsUpgrade: boolean;
 };
 
+type ExtensionBiometricsState = {
+    /** `true` if on extension and feature flag is on */
+    enabled: boolean;
+    /** Biometrics is a paid only feature (disabled for free users) */
+    needsUpgrade: boolean;
+};
+
 type PasswordState = {
     /** Password lock can be enabled if the user is not in two
      * password mode OR if he has a valid offline password. */
@@ -53,6 +62,7 @@ type PasswordState = {
 interface LockSetup {
     lock: LockState;
     biometrics: BiometricsState;
+    extensionBiometrics: ExtensionBiometricsState;
     password: PasswordState;
     setLockMode: (mode: LockMode) => Promise<void>;
     setLockTTL: (ttl: number) => Promise<void>;
@@ -78,6 +88,8 @@ export const useLockSetup = (): LockSetup => {
     const plan = useSelector(selectPassPlan);
     const isFreePlan = !isPaidPlan(plan);
 
+    const desktopUnlockFeatureFlag = useFeatureFlag(PassFeature.PassDesktopUnlock);
+
     /** When switching locks, the next lock might temporarily
      * be set to `LockMode.NONE` before updating to the new lock.
      * This temporary state change can cause flickering. To avoid
@@ -95,7 +107,7 @@ export const useLockSetup = (): LockSetup => {
     });
 
     const setLockMode = async (mode: LockMode) => {
-        if (isFreePlan && mode === LockMode.BIOMETRICS) {
+        if (isFreePlan && (mode === LockMode.BIOMETRICS || mode === LockMode.DESKTOP)) {
             return upsell({
                 type: 'pass-plus',
                 upsellRef: UpsellRef.PASS_BIOMETRICS,
@@ -339,9 +351,15 @@ export const useLockSetup = (): LockSetup => {
 
     const password = useMemo(() => ({ enabled: !EXTENSION_BUILD }), []);
 
+    const extensionBiometrics = useMemo(
+        () => ({ enabled: EXTENSION_BUILD && desktopUnlockFeatureFlag, needsUpgrade: isFreePlan }),
+        [desktopUnlockFeatureFlag, isFreePlan]
+    );
+
     return {
         lock,
         biometrics,
+        extensionBiometrics,
         password,
         setLockMode,
         setLockTTL,
