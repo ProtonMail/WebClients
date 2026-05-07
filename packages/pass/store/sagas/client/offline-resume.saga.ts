@@ -9,10 +9,10 @@ import { hydrate } from './hydrate.saga';
 
 export default createRequestSaga({
     actions: offlineResume,
-    call: function* ({ localID }, options) {
+    call: function* ({ localID, retryable = false, silence = false }, options) {
         const auth = options.getAuthService();
 
-        const resumed: boolean = yield auth.resumeSession(localID, { retryable: false });
+        const resumed: boolean = yield auth.resumeSession(localID, { retryable, silence });
         if (!resumed) throw new Error();
 
         yield hydrate(
