@@ -253,7 +253,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {getBoldFormattedText(
                                         c('PQC compatibility warning')
-                                            .t`**You must update all ${BRAND_NAME} mobile apps**: your new keys won't work on older app versions.`
+                                            .t`**You must update all ${BRAND_NAME} apps**: your new keys won't work on older app versions.`
                                     )}
                                     {/* {' '}
                                     <Link key="see-how" to={'todo'}>
