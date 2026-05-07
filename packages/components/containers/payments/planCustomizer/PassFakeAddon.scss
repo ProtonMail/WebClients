@@ -1,0 +1,7 @@
+.bg-pass-promotion-gradient-vertical {
+	background: linear-gradient(180deg, var(--promotion-background-start) 0%, var(--background-norm) 100%);
+}
+
+.pass-promotion-selected {
+	padding: 0.875rem; // equals to p-3.5 which doesn't exists
+}

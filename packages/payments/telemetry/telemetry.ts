@@ -24,6 +24,7 @@
 import {
     reportAddLumo,
     reportAddMeet,
+    reportAddPass,
     reportBillingCountryChange,
     reportInitialization,
     reportPayment,
@@ -34,6 +35,7 @@ import {
     reportChangeStep,
     reportClosedByUser,
     reportPlanDescriptionInteraction,
+    reportVpn2024AddonsExperimentSeen,
 } from './subscription-container';
 
 /**
@@ -54,6 +56,8 @@ export const checkoutTelemetry = {
     reportAddLumo,
     /** Report Add Meet button interaction (first time only) */
     reportAddMeet,
+    /** Report Add Pass button interaction (first time only) */
+    reportAddPass,
     /** Report payment funnel events (attempt, verification, success, etc.) */
     reportPayment,
 
@@ -70,5 +74,7 @@ export const checkoutTelemetry = {
         reportClosedByUser,
         /** Report step navigation (plan_selection ↔ checkout) */
         reportChangeStep,
+        /** Report first exposure to the VPN 2024 addons experiment variant */
+        reportVpn2024AddonsExperimentSeen,
     },
 };
