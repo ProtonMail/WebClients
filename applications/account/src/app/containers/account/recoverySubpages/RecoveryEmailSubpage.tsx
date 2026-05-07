@@ -142,7 +142,7 @@ const RecoveryEmailVerificationStatus = ({
 
 const RecoveryEmailSubpage = () => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
-    const [isEditingRecoveryEmail, setIsEditingRecoveryEmail] = useState(false);
+    const [maybeIsEditingRecoveryEmail, setIsEditingRecoveryEmail] = useState(false);
     const accountRecovery = useUpdateAccountRecovery();
 
     const { emailRecovery, loading } = accountRecovery.data;
@@ -154,6 +154,10 @@ const RecoveryEmailSubpage = () => {
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/email-sms-recovery')}>{c('Link').t`Learn more`}</Href>
     );
+
+    // Handles the case where a user focuses the input and clears the value, gets the confirmation modal, and clicks confirm.
+    // The change happens outside of the onSubmit handler, so this is an extra guard against that.
+    const isEditingEmailAndHasValue = maybeIsEditingRecoveryEmail && !!emailRecovery.value;
 
     return (
         <>
@@ -195,7 +199,7 @@ const RecoveryEmailSubpage = () => {
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery email`,
-                                readOnly: !isEditingRecoveryEmail && !!emailRecovery.value,
+                                readOnly: !isEditingEmailAndHasValue && !!emailRecovery.value,
                                 placeholder: c('Placeholder').t`example@domain.com`,
                                 onFocus: () => {
                                     if (!emailRecovery.value) {
@@ -210,14 +214,14 @@ const RecoveryEmailSubpage = () => {
                                         <RecoveryEmailInputRow
                                             input={input}
                                             emailValue={emailRecovery.value}
-                                            isEditing={isEditingRecoveryEmail}
+                                            isEditing={isEditingEmailAndHasValue}
                                             onEdit={() => setIsEditingRecoveryEmail(true)}
                                             onRemove={onRemove}
                                         />
                                         <RecoveryEmailInputActions
                                             submitButtonProps={submitButtonProps}
                                             emailValue={emailRecovery.value}
-                                            isEditing={isEditingRecoveryEmail}
+                                            isEditing={isEditingEmailAndHasValue}
                                             onKeep={() => {
                                                 onReset();
                                                 setIsEditingRecoveryEmail(false);
@@ -225,7 +229,7 @@ const RecoveryEmailSubpage = () => {
                                         />
                                         <RecoveryEmailVerificationStatus
                                             emailValue={emailRecovery.value}
-                                            isEditing={isEditingRecoveryEmail}
+                                            isEditing={isEditingEmailAndHasValue}
                                             isVerified={emailRecovery.isVerified}
                                             onVerify={onVerify}
                                         />
