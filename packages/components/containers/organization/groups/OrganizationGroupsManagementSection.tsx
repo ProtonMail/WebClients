@@ -12,7 +12,9 @@ import Loader from '@proton/components/components/loader/Loader';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -38,6 +40,14 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
+    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const {
+        feature: adminRolesModalFeature,
+        update: updateAdminRolesModal,
+        loading: adminRolesModalLoading,
+    } = useFeature(FeatureCode.AdminRolesGroupOnboardingModal, hasAdminRoles);
+
+    const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     useEffect(() => {
         if (isUserGroupsGroupOwnerEnabled) {
@@ -118,6 +128,13 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                     </div>
                 </div>
             )}
+            <AdminRolesOnboardingModal
+                variant="group"
+                open={canShowAdminRolesModal}
+                onClose={() => {
+                    void updateAdminRolesModal(false);
+                }}
+            />
         </SettingsSectionWide>
     );
 };
