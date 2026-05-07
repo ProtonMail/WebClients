@@ -28,7 +28,7 @@
 	view-transition-name: safety-review-cta-enter;
 }
 
-.safety-review-cta-button:not([disabled]) {
+.safety-review-cta-button:not([disabled][aria-busy='false']) {
 	background: linear-gradient(272deg, #1fa698 -35.45%, #3ba36b 98.71%);
 
 	&:hover,
