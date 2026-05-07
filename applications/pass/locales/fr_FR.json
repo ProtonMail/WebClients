@@ -752,6 +752,9 @@
       ],
       "Settings": [
         "Paramètres"
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
       ]
     },
     "Browser": {
@@ -1339,6 +1342,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Une vérification du déverrouillage du bureau est déjà en cours."
       ]
     },
     "Error message": {
@@ -2191,7 +2197,7 @@
         "Appuyez sur Entrée pour copier."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
+        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
       ],
       "Reconnect": [
         "Se reconnecter"
@@ -2441,7 +2447,7 @@
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre second mot de passe."
       ],
       "Unlock with biometrics": [
-        "Déverrouiller avec les données biométriques"
+        "Déverrouillez par biométrie"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."

@@ -750,6 +750,9 @@
       ],
       "Settings": [
         "设置"
+      ],
+      "Don't show this again": [
+        "不再显示"
       ]
     },
     "Browser": {
@@ -1322,6 +1325,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "${ PASS_APP_NAME } 电脑版应处于登录状态！"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "桌面解锁检查正在进行中。"
       ]
     },
     "Error message": {
@@ -2152,7 +2158,7 @@
         "按回车键以复制"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
+        "由 ${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）提供保护"
       ],
       "Reconnect": [
         "重新连接"
@@ -2401,7 +2407,7 @@
         "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock with biometrics": [
-        "使用生物识别技术解锁"
+        "使用生物识别解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
@@ -2581,7 +2587,7 @@
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
@@ -2924,7 +2930,7 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "邮箱（别名）"
+        "邮箱 (别名)"
       ],
       "Email (new alias)": [
         "邮箱 (新别名)"

@@ -752,6 +752,9 @@
       ],
       "Settings": [
         "Preferències"
+      ],
+      "Don't show this again": [
+        "No m'ho torneu a mostrar"
       ]
     },
     "Browser": {
@@ -1339,6 +1342,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
       ]
     },
     "Error message": {
@@ -2194,7 +2200,7 @@
         "Premeu Retorn per a copiar"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
       ],
       "Reconnect": [
         "Torna a connectar"
@@ -2444,7 +2450,7 @@
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
       ],
       "Unlock with biometrics": [
-        "Desbloqueja amb dades biomètriques"
+        "Desbloquegeu amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -2853,7 +2859,7 @@
         "Targetes"
       ],
       "Catch-All": [
-        "Catch-all"
+        "Capturar-ho tot"
       ],
       "Checkbox": [
         "Casella de selecció"
