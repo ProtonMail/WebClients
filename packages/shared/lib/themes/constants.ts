@@ -48,6 +48,7 @@ export enum ThemeFontFaceSetting {
     ARIAL,
     TIMES,
     DYSLEXIC,
+    ATKINSON,
 }
 
 export enum ThemeFeatureSetting {
