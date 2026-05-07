@@ -77,12 +77,12 @@
   --interaction-default: transparent;
   --interaction-default-hover: rgb(200 209 214 / 0.2);
   --interaction-default-active: rgb(200 209 214 / 0.45);
-  --shadow-primary-color: 118 125 255;
   --shadow-norm-opacity: 0.1;
   --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(0 10 77 / 0.32);
   --optional-scrollbar-thumb-color: #d1cfcd;
+  --optional-shadow-primary-color: 118 125 255;
   --optional-link-norm: #5b63f6;
   --optional-link-hover: #4449e4;
   --optional-link-active: #3e3c88;

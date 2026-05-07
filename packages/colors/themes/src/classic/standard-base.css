@@ -60,7 +60,9 @@
 
     --optional-background-elevated: white;
     --optional-background-lowered: #f3f4f6;
-
+    
+    --optional-shadow-primary-color: 101 126 228;
+    
     /* Reset because prominent part overrides those colors */
     --optional-logo-text-proton-color: initial;
     --optional-logo-text-product-color: initial;

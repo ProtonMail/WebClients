@@ -64,6 +64,8 @@
     --optional-email-item-read-background-color: #F5F7FA;
     --optional-email-item-read-text-color: #393939;
 
+    --optional-shadow-primary-color: 147 151 205;
+
     /* Reset because prominent part overrides those colors */
     --optional-mini-calendar-today-color: initial;
     --optional-logo-text-proton-color: initial;
