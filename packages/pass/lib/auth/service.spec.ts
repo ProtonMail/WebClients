@@ -27,6 +27,7 @@ describe('Core AuthService', () => {
                 onInit: jest.fn(),
                 getPersistedSession: jest.fn(() => Promise.resolve(null)),
                 getMemorySession: jest.fn(() => Promise.resolve({})),
+                onSessionFailure: jest.fn(),
             });
         });
 
@@ -38,6 +39,7 @@ describe('Core AuthService', () => {
                 getPersistedSession: jest.fn(() => Promise.resolve(null)),
                 getMemorySession: jest.fn(() => Promise.resolve({})),
                 onResumeStart: jest.fn(() => Promise.resolve(false)),
+                onSessionFailure: jest.fn(),
             });
 
             const result = await auth.resumeSession(0, {});
@@ -54,6 +56,7 @@ describe('Core AuthService', () => {
                 getPersistedSession: jest.fn(() => Promise.resolve(null)),
                 onInit: jest.fn(),
                 onResumeStart: jest.fn(() => Promise.resolve(true)),
+                onSessionFailure: jest.fn(),
             });
 
             /** Simulate in-memory session to proceed */

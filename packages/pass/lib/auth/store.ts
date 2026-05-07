@@ -54,7 +54,8 @@ export const createAuthStore = (store: Store) => {
             Boolean(authStore.getUID() && (localID === undefined || authStore.getLocalID() === localID)),
 
         /** Checks if the session has both the offline components and the derived offlineKD.
-         * This should only be `true` after a successful local password verification */
+         * This should only be `true` after a successful local password verification or a
+         * full session resume after decrypting encrypted blob holding `offlineKD`. */
         hasOfflinePassword: () => Boolean(authStore.hasOfflineComponents() && authStore.getOfflineKD()),
 
         /** Checks wether the session can verify a password locally */
