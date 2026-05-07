@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
       ],
-      "Cancel upload": [
-        "Yüklemeyi iptal et"
-      ],
       "Cancel uploads": [
         "Yüklemeleri iptal et"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Mac için indir"
       ],
-      "Download for MacOS": [
-        "macOS için indir"
+      "Download for macOS": [
+        "macOS için indirin"
       ],
       "Download for Windows": [
         "Windows için indirin"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Gezinmeyi aç"
       ],
-      "Pause all": [
-        "Tümünü duraklat"
-      ],
-      "Pause download": [
-        "İndirmeyi duraklat"
-      ],
-      "Pause upload": [
-        "Yüklemeyi duraklat"
-      ],
       "Pay": [
         "Öde"
       ],
@@ -790,6 +778,9 @@
       ],
       "Re-sign": [
         "Yeniden imzala"
+      ],
+      "Rebuild index": [
+        "Dizini yeniden oluştur"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -832,9 +823,6 @@
       ],
       "Remove from favorites": [
         "Beğenilenlerden kaldır"
-      ],
-      "Remove from this list": [
-        "Bu listeden kaldır"
       ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
@@ -884,15 +872,6 @@
       "Reset to default": [
         "Varsayılana sıfırla"
       ],
-      "Restart all": [
-        "Tümünü yeniden başlat"
-      ],
-      "Restart download": [
-        "İndirmeyi yeniden başlat"
-      ],
-      "Restart upload": [
-        "Yüklemeyi yeniden başlat"
-      ],
       "Restore": [
         "Geri yükle"
       ],
@@ -904,15 +883,6 @@
       ],
       "Restore version": [
         "Sürümü geri yükle"
-      ],
-      "Resume all": [
-        "Tümünü sürdür"
-      ],
-      "Resume download": [
-        "İndirmeyi sürdür"
-      ],
-      "Resume upload": [
-        "Yüklemeyi sürdür"
       ],
       "Retry": [
         "Yeniden dene"
@@ -955,6 +925,9 @@
       ],
       "Search drive": [
         "Drive içinde ara"
+      ],
+      "Search is unavailable": [
+        "Arama kullanılamıyor"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -3549,6 +3522,9 @@
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
+      "Folder not found": [
+        "Klasör bulunamadı"
+      ],
       "Forward address is required": [
         "İletilecek adresin yazılması zorunludur"
       ],
@@ -4870,18 +4846,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } öge indiriliyor",
-        "${ activeDownloadsCount } öge indiriliyor"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)",
-        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })",
-        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
@@ -4916,10 +4880,6 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } öge iptal edildi",
-        "${ canceledCount } öge iptal edildi"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } / ${ items.length } aktarım tamamlandı"
       ],
@@ -4945,17 +4905,8 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine katılmayacaklar. Diğer dosyaları 'İndirmeyi sürdür' seçeneğine tıklayarak indirebilirsiniz."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } tamamlandı",
-        "${ doneCount } tamamlandı"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } indirildi",
-        "${ doneDownloadsCount } indirildi"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } öge yüklendi",
-        "${ doneUploadsCount } öge yüklendi"
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } yerel arama dizininde bozulma olduğunu ve artık kullanılamayacağını tespit etti. Arama işlevini geri yüklemek için dizini yeniden oluşturun."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store üzerinde ${ DRIVE_APP_NAME }"
@@ -4965,10 +4916,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } sizi ${ albumName } albümüne katılmaya davet etti"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } başarısız oldu",
-        "${ errorCount } başarısız oldu"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: tam boyutlu görsel"
@@ -5010,10 +4957,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır. ${ planTitle } aboneliğinizin yenileme ücreti ve tarihi değişmeden kalır."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } duraklatıldı",
-        "${ pausedCount } duraklatıldı"
-      ],
       "${ photoCount } item": [
         "${ photoCount } öge",
         "${ photoCount } öge"
@@ -5043,10 +4986,6 @@
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } tarama yapılamadı",
-        "${ scanErrorCount } tarama yapılamadı"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
@@ -5066,13 +5005,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } atlandı",
-        "${ skippedCount } atlandı"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } kayıt"
@@ -5365,12 +5297,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Müşterilerinizin ve kuruluşunuzun verilerinin ele geçirilmesi endişesi yaşamadan, fidye yazılımlarından ve gözetimden korunun ve verimli bir şekilde iş birliği yapın."
       ],
-      "Computed hash does not match XAttr": [
-        "Hesaplanan karma XAttr ile eşleşmiyor"
-      ],
-      "Conflict": [
-        "Çakışma"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
       ],
@@ -5391,6 +5317,9 @@
       ],
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
+      ],
+      "Could not scan file for malware": [
+        "Dosyada kötü amaçlı yazılım taraması yapılamadı"
       ],
       "Country code": [
         "Ülke kodu"
@@ -5417,9 +5346,6 @@
       ],
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
-      ],
-      "Creating": [
-        "Oluşturuluyor"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
@@ -5603,14 +5529,17 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Teknik destek almak ve sorunları gidermek için tanılama günlüklerini dışa aktarın"
       ],
-      "Failed": [
-        "Aktarılmayan"
-      ],
       "Feb": [
         "Şub"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
+      ],
+      "File could not be scanned": [
+        "Dosya taranamadı"
+      ],
+      "File flagged as potentially malicious": [
+        "Dosya potansiyel zararlı olarak işaretlendi"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
@@ -5623,9 +5552,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Başkalarının sizinle paylaştığı dosyalar ve klasörler burada görüntülenir"
-      ],
-      "Finalizing": [
-        "Tamamlanıyor"
       ],
       "finance": [
         "finans"
@@ -5763,6 +5689,9 @@
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "${ first }, ${ second }, ${ third } ve ${ fourth } dizine eklendi"
       ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Dizin oluşturma işlemi beklenmedik bir duruma düştü ve devam edemiyor. Kurtarmak için dizini yeniden oluşturun."
+      ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
       ],
@@ -5774,9 +5703,6 @@
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
-      ],
-      "Initializing": [
-        "Hazırlanıyor"
       ],
       "Integrity issues found": [
         "Bütünlük sorunları bulundu"
@@ -5953,9 +5879,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
-      "Network issue": [
-        "Ağ sorunu"
-      ],
       "New": [
         "Yeni"
       ],
@@ -5995,11 +5918,11 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Tüm dosyalar aktarılmadı. Dosyaları yeniden yüklemeyi veya indirmeyi deneyin."
-      ],
       "Not connected": [
         "Bağlı değil"
+      ],
+      "Not enough storage space": [
+        "Yeterli depolama alanı yok"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
@@ -6191,9 +6114,6 @@
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
-      "Queued": [
-        "Sıraya alındı"
-      ],
       "Ready to add some photos?": [
         "Fotoğraflarınızı eklemeye hazır mısınız?"
       ],
@@ -6239,9 +6159,6 @@
       "Saving...": [
         "Kaydediliyor..."
       ],
-      "Scan issue": [
-        "Tarama sorunu"
-      ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
@@ -6251,11 +6168,29 @@
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
       ],
+      "Search data is corrupted": [
+        "Arama verileri bozuk"
+      ],
       "Search Enabled": [
         "Arama özelliği açıldı"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Arama özelliği açıldı. Bu pencereyi kapatarak dosyaları ve klasörleri arayabilirsiniz."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Arama sırasında dahili bir hata oluştu. Kurtarmak için dizini yeniden oluşturun."
+      ],
+      "Search engine error": [
+        "Arama motoru hatası"
+      ],
+      "Search error": [
+        "Arama hatası"
+      ],
+      "Search is in an invalid state": [
+        "Arama geçersiz durumda"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Arama hazır. Dosyalarınız dizinlendi."
       ],
       "Search module is not available.": [
         "Arama modülü kullanılamıyor."
@@ -6332,20 +6267,8 @@
       "Signature check will be ignored": [
         "İmza denetimi yok sayılacak"
       ],
-      "Signature issue": [
-        "İmza sorunu"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
-      ],
-      "Skipped": [
-        "Atlanan"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Bazı dosyalar indirilemedi. Dosyaları yeniden indirmeyi deneyin."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Bazı dosyalar yüklenemedi. Dosyaları yeniden yüklemeyi deneyin."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
@@ -6361,9 +6284,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Bazı siteler ve yayın akışı hizmetleri, içeriklerini bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
-      ],
-      "Something went wrong, please try again later.": [
-        "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
@@ -6434,6 +6354,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Arama motorunda dahili hata oluştu. Kurtarmak için dizini yeniden oluşturun."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -6927,6 +6850,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Arama için dosyalar dizinlenirken tarayıcınızın depolama alanı doldu. Depolama alanını boşaltın ardından dizini yeniden oluşturun."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Geçerli tarayıcınız büyük dosyaların/birden fazla dosyanın indirilmesini desteklemiyor. Yükleme ve indirme işlemlerinde kesinti olmaması için bilgisayar uygulamasını indirin."
@@ -12228,18 +12154,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } ücretsiz yükleme."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } indirme tamamlanamadı",
-        "${ numberOfFailedTransfer.total } indirme tamamlanamadı"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } aktarım tamamlanamadı",
-        "${ numberOfFailedTransfer.total } aktarım tamamlanamadı"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } yükleme tamamlanamadı",
-        "${ numberOfFailedTransfer.total } yükleme tamamlanamadı"
-      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -12254,9 +12168,6 @@
       ],
       "Actions": [
         "İşlemler"
-      ],
-      "Active": [
-        "İşlenen"
       ],
       "Add a custom logo": [
         "Özel logo ekle"
@@ -12291,9 +12202,6 @@
       ],
       "Albums": [
         "Albümler"
-      ],
-      "All": [
-        "Tümü"
       ],
       "All settings": [
         "Tüm ayarlar"
@@ -12376,9 +12284,6 @@
       ],
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
-      ],
-      "Completed": [
-        "Aktarılan"
       ],
       "Computers": [
         "Bilgisayarlar"
@@ -12613,9 +12518,6 @@
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
-      ],
-      "Failed": [
-        "Aktarılmayan"
       ],
       "File details": [
         "Dosya bilgileri"
@@ -13319,9 +13221,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişim şifrelemesi ile kaydedilir"
-      ],
-      "New!": [
-        "Yeni!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmez."

@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Peruuta kokeilujakso ja maksa"
       ],
-      "Cancel upload": [
-        "Peru tallennus"
-      ],
       "Cancel uploads": [
         "Peruuta lähetykset"
       ],
@@ -407,7 +404,7 @@
       "Download for Mac": [
         "Lataa Macille"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Lataa macOS:lle"
       ],
       "Download for Windows": [
@@ -749,15 +746,6 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
-      "Pause all": [
-        "Pysäytä kaikki"
-      ],
-      "Pause download": [
-        "Pysäytä lataus"
-      ],
-      "Pause upload": [
-        "Pysäytä lähetys"
-      ],
       "Pay": [
         "Maksa"
       ],
@@ -830,9 +818,6 @@
       "Remove from favorites": [
         "Poista suosikeista"
       ],
-      "Remove from this list": [
-        "Poista listalta"
-      ],
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
@@ -881,15 +866,6 @@
       "Reset to default": [
         "Palauta oletukset"
       ],
-      "Restart all": [
-        "Käynnistä kaikki uudelleen"
-      ],
-      "Restart download": [
-        "Aloita lataus uudelleen"
-      ],
-      "Restart upload": [
-        "Aloita tallennus uudelleen"
-      ],
       "Restore": [
         "Palauta"
       ],
@@ -901,15 +877,6 @@
       ],
       "Restore version": [
         "Palauta versio"
-      ],
-      "Resume all": [
-        "Jatka kaikkia"
-      ],
-      "Resume download": [
-        "Jatka latausta"
-      ],
-      "Resume upload": [
-        "Jatka tallennusta"
       ],
       "Retry": [
         "Yritä uudelleen"
@@ -4736,18 +4703,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } ladataan",
-        "${ activeDownloadsCount } ladataan"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } lataus (${ downloadProgress } %)",
-        "${ activeDownloadsCount } latausta (${ downloadProgress } %)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } tallennus (${ uploadProgress } %)",
-        "${ activeUploadsCount } tallennusta (${ uploadProgress } %)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } sähköpostiosoite",
         "${ addressCount } sähköpostiosoitetta"
@@ -4778,10 +4733,6 @@
         "${ calendarsToBeMergedCount } yhdistetty kalenteri",
         "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } peruttu",
-        "${ canceledCount } peruttua"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
         "${ contactCount } yhteystietoa sisältää useita sähköpostiosoitteita."
@@ -4804,18 +4755,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }- ja ${ SHEETS_APP_NAME } -tiedostoja ei voida ladata suoraan, eikä niitä sisällytetä tähän lataukseen. Voit ladata muut tiedostot napsauttamalla 'Jatka lataamista'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } valmistunut",
-        "${ doneCount } valmistunut"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } ladattu",
-        "${ doneDownloadsCount } ladattu"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } tallennettiin",
-        "${ doneUploadsCount } tallennettiin"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } App Storessa"
       ],
@@ -4824,10 +4763,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } kutsui sinut liittymään albumiin ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } epäonnistui",
-        "${ errorCount } epäonnistui"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
@@ -4855,10 +4790,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pysäytetty",
-        "${ pausedCount } pysäytettyä"
-      ],
       "${ photoCount } item": [
         "${ photoCount } kohde",
         "${ photoCount } kohdetta"
@@ -4884,10 +4815,6 @@
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skannaus epäonnistui",
-        "${ scanErrorCount } skannausta epäonnistui"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
@@ -4907,13 +4834,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ohitettu",
-        "${ skippedCount } ohitettu"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } kohdetta"
@@ -5197,12 +5117,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Tee tehokasta yhteistyötä ja suojaa samalla asiakkaiden ja yrityksen tietoja tietomurroilta, kiristysohjelmilta ja valvonnalta."
       ],
-      "Computed hash does not match XAttr": [
-        "Laskettu hajautusarvo ei vastaa XAttr-arvoa"
-      ],
-      "Conflict": [
-        "Ristiriita"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
       ],
@@ -5249,9 +5163,6 @@
       ],
       "Create links and share your files with others.": [
         "Luo linkkejä ja jaa tiedostojasi muille."
-      ],
-      "Creating": [
-        "Luodaan"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
@@ -5423,9 +5334,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Vie diagnostiikkalokit teknistä tukea ja vianetsintää varten"
       ],
-      "Failed": [
-        "Epäonnistui"
-      ],
       "Feb": [
         "helmi"
       ],
@@ -5443,9 +5351,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Muiden sinulle jakamat tiedostot ja kansiot näkyvät tässä"
-      ],
-      "Finalizing": [
-        "Viimeistellään"
       ],
       "finance": [
         "rahoitus"
@@ -5573,9 +5478,6 @@
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
-      ],
-      "Initializing": [
-        "Valmistellaan"
       ],
       "Internet connection lost": [
         "Internet-yhteyttä ei ole"
@@ -5746,9 +5648,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
-      "Network issue": [
-        "Yhteysongelma"
-      ],
       "New": [
         "Uusi"
       ],
@@ -5784,9 +5683,6 @@
       ],
       "Not a valid URL": [
         "Virheellinen URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Kaikkia tiedostoja ei siirretty. Yritä tallentaa tai ladata ne uudelleen."
       ],
       "Not connected": [
         "Ei yhdistetty"
@@ -5978,9 +5874,6 @@
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
       ],
-      "Queued": [
-        "Jonossa"
-      ],
       "Ready to add some photos?": [
         "Oletko valmis lisäämään kuvia?"
       ],
@@ -6025,9 +5918,6 @@
       ],
       "Saving...": [
         "Tallennetaan..."
-      ],
-      "Scan issue": [
-        "Skannausongelma"
       ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
@@ -6116,20 +6006,8 @@
       "Signature check will be ignored": [
         "Allekirjoitustarkistus ohitetaan"
       ],
-      "Signature issue": [
-        "Allekirjoitusongelma"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
-      ],
-      "Skipped": [
-        "Ohitettu"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Joidenkin tiedostojen lataus epäonnistui. Yritä ladata ne uudelleen."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Joidenkin tiedostojen tallennus epäonnistui. Yritä tallentaa ne uudelleen."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
@@ -6145,9 +6023,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
-      ],
-      "Something went wrong, please try again later.": [
-        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
@@ -11797,18 +11672,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } ilmaisia latauksia."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } epäonnistunut lataus",
-        "${ numberOfFailedTransfer.total } epäonnistunutta latausta"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } epäonnistunut siirto",
-        "${ numberOfFailedTransfer.total } epäonnistunutta siirtoa"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } tallennus epäonnistui",
-        "${ numberOfFailedTransfer.total } tallennusta epäonnistui"
-      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -11820,9 +11683,6 @@
       ],
       "Actions": [
         "Toiminnot"
-      ],
-      "Active": [
-        "Aktiiviset"
       ],
       "Add a custom logo": [
         "Lisää oma logo"
@@ -11857,9 +11717,6 @@
       ],
       "Albums": [
         "Albumit"
-      ],
-      "All": [
-        "Kaikki"
       ],
       "All settings": [
         "Kaikki asetukset"
@@ -11942,9 +11799,6 @@
       ],
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
-      ],
-      "Completed": [
-        "Valmistuneet"
       ],
       "Computers": [
         "Tietokoneet"
@@ -12164,9 +12018,6 @@
       ],
       "Exporting contacts": [
         "Yhteystietoja viedään"
-      ],
-      "Failed": [
-        "Epäonnistuneet"
       ],
       "File details": [
         "Tiedoston tiedot"
@@ -12846,9 +12697,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Viestin teksti ja tiedoston nimi säilytetään sähköpostiviestissä zero access -salauksella"
-      ],
-      "New!": [
-        "Uutta!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."

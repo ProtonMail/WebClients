@@ -144,9 +144,6 @@
       "Cancel trial and pay": [
         "トライアルをキャンセルして支払う"
       ],
-      "Cancel upload": [
-        "アップロードをキャンセル"
-      ],
       "Cancel uploads": [
         "アップロードをキャンセル"
       ],
@@ -399,7 +396,7 @@
       "Download for Mac": [
         "Mac版をダウンロード"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "macOS 版をダウンロード"
       ],
       "Download for Windows": [
@@ -741,15 +738,6 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
-      "Pause all": [
-        "すべて一時停止"
-      ],
-      "Pause download": [
-        "ダウンロードを一時停止"
-      ],
-      "Pause upload": [
-        "アップロードを一時停止"
-      ],
       "Pay": [
         "支払う"
       ],
@@ -816,9 +804,6 @@
       "Remove from favorites": [
         "お気に入りから削除"
       ],
-      "Remove from this list": [
-        "この一覧から削除"
-      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
@@ -867,15 +852,6 @@
       "Reset to default": [
         "初期値に戻す"
       ],
-      "Restart all": [
-        "すべてやり直す"
-      ],
-      "Restart download": [
-        "ダウンロードをやり直す"
-      ],
-      "Restart upload": [
-        "アップロードをやり直す"
-      ],
       "Restore": [
         "復元"
       ],
@@ -887,15 +863,6 @@
       ],
       "Restore version": [
         "バージョンの復元"
-      ],
-      "Resume all": [
-        "すべて再開"
-      ],
-      "Resume download": [
-        "ダウンロードを再開"
-      ],
-      "Resume upload": [
-        "アップロードを再開"
       ],
       "Retry": [
         "再試行"
@@ -4767,15 +4734,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "ダウンロード中 ${ activeDownloadsCount } 件"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "ダウンロード中 ${ activeDownloadsCount } 件 (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "アップロード中 ${ activeUploadsCount } 件 (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 件のメールアドレス"
       ],
@@ -4803,9 +4761,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
-      "${ canceledCount } canceled": [
-        "キャンセル ${ canceledCount } 件"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } 件中 ${ items.length } 件の転送が完了しました"
       ],
@@ -4827,15 +4782,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }および${ SHEETS_APP_NAME }のファイルは直接ダウンロードできず、このダウンロードには含まれません。「ダウンロードを続行」をクリックして、他のファイルをダウンロードできます。"
       ],
-      "${ doneCount } finished": [
-        "完了 ${ doneCount } 件"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "ダウンロード完了 ${ doneDownloadsCount } 件"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "アップロード完了 ${ doneUploadsCount } 件"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store での ${ DRIVE_APP_NAME }"
       ],
@@ -4844,9 +4790,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } があなたを ${ albumName } に招待しました"
-      ],
-      "${ errorCount } failed": [
-        "失敗 ${ errorCount } 件"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 元サイズの画像"
@@ -4875,9 +4818,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }のLifetimeプランは更新料金がなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが得られます。${ planTitle }のサブスクリプション更新料金と日付は変更されません。"
       ],
-      "${ pausedCount } paused": [
-        "一時停止 ${ pausedCount } 件"
-      ],
       "${ photoCount } item": [
         "${ photoCount }個のアイテム"
       ],
@@ -4899,9 +4839,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount }件のスキャンに失敗しました"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -4916,12 +4853,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } 件のスキップ済み"
-      ],
-      "${ speed }/s": [
-        "${ speed }/秒"
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
@@ -5202,12 +5133,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "侵害、ランサムウェア、監視からお客様のクライアントデータとビジネスデータを保護しつつ、効率的に共同作業を行えます。"
       ],
-      "Computed hash does not match XAttr": [
-        "計算されたハッシュがXAttrと一致しません"
-      ],
-      "Conflict": [
-        "競合"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "秘匿ブラウジングの前に${ VPN_APP_NAME }に接続してください"
       ],
@@ -5252,9 +5177,6 @@
       ],
       "Create links and share your files with others.": [
         "共有リンクを作成し、ファイルを共有できます。"
-      ],
-      "Creating": [
-        "作成中"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
@@ -5430,9 +5352,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "技術サポートおよびトラブルシューティング用の診断ログをエクスポート"
       ],
-      "Failed": [
-        "失敗"
-      ],
       "Feb": [
         "2月"
       ],
@@ -5450,9 +5369,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "他のユーザーがあなたと共有したファイルやフォルダがここに表示されます。"
-      ],
-      "Finalizing": [
-        "完了処理中"
       ],
       "finance": [
         "ファイナンス"
@@ -5579,9 +5495,6 @@
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
-      ],
-      "Initializing": [
-        "初期化中"
       ],
       "Integrity issues found": [
         "整合性の問題が見つかりました"
@@ -5742,9 +5655,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
-      "Network issue": [
-        "ネットワークの問題"
-      ],
       "New": [
         "新規"
       ],
@@ -5780,9 +5690,6 @@
       ],
       "Not a valid URL": [
         "有効な URL ではありません"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
       ],
       "Not connected": [
         "接続されていません"
@@ -5976,9 +5883,6 @@
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
-      "Queued": [
-        "順番待ち"
-      ],
       "Ready to add some photos?": [
         "写真を追加する準備はできましたか?"
       ],
@@ -6024,9 +5928,6 @@
       "Saving...": [
         "保存中..."
       ],
-      "Scan issue": [
-        "スキャン中の問題"
-      ],
       "Scan the QR code with your mobile device": [
         "携帯デバイスでQRコードを読み込んでください。"
       ],
@@ -6038,6 +5939,12 @@
       ],
       "Search Enabled": [
         "検索機能が有効です"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "検索時に内部エラーが発生しました。回復するにはインデックスを再構築してください。"
+      ],
+      "Search error": [
+        "検索エラー"
       ],
       "Select a destination folder": [
         "移動先のフォルダを選択"
@@ -6111,20 +6018,8 @@
       "Signature check will be ignored": [
         "署名確認は無視されます。"
       ],
-      "Signature issue": [
-        "署名の問題"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
-      ],
-      "Skipped": [
-        "スキップ済"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "ダウンロードに失敗したファイルがあります。再度ダウンロードしてください。"
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "アップロードに失敗したファイルがあります。再度アップロードしてください。"
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "一部の政府は、特定のウェブサイトへの利用をブロックまたは制限します。VPNは、お客様の活動と個人情報を秘匿し、検閲を回避するのに役立ちます。"
@@ -6140,9 +6035,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "一部のウェブサイトや配信サービスは、地域毎にコンテンツをブロックします。VPNを通じると、制限を乗り越え、自由にインターネットを利用できるようになります。"
-      ],
-      "Something went wrong, please try again later.": [
-        "問題が発生しました。後ほど再度お試しください。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
@@ -11749,15 +11641,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } 件の無料アップロード"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total }件のダウンロードに失敗"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total }件の転送に失敗"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total }件のアップロードに失敗"
-      ],
       "Account recovery": [
         "アカウントの回復"
       ],
@@ -11772,9 +11655,6 @@
       ],
       "Actions": [
         "アクション"
-      ],
-      "Active": [
-        "アクティブ"
       ],
       "Add a custom logo": [
         "カスタムロゴを追加"
@@ -11808,9 +11688,6 @@
       ],
       "Albums": [
         "アルバム"
-      ],
-      "All": [
-        "すべて"
       ],
       "All settings": [
         "すべての設定"
@@ -11889,9 +11766,6 @@
       ],
       "Collaborate on documents": [
         "ドキュメントの共同編集"
-      ],
-      "Completed": [
-        "完了"
       ],
       "Computers": [
         "コンピューター"
@@ -12123,9 +11997,6 @@
       ],
       "Exporting contacts": [
         "連絡先のエクスポート中"
-      ],
-      "Failed": [
-        "失敗"
       ],
       "File details": [
         "ファイルの詳細"
@@ -12817,9 +12688,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "メッセージとファイル名は、メールに含まれる際にゼロアクセス暗号化で保存されます"
-      ],
-      "New!": [
-        "新"
       ],
       "Not all information listed here was exposed for all users.": [
         "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"

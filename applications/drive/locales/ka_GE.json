@@ -146,9 +146,6 @@
       "Cancel trial and pay": [
         "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
       ],
-      "Cancel upload": [
-        "ატვირთვის გაუქმება"
-      ],
       "Cancel uploads": [
         "ატვირთვის გაუქმება"
       ],
@@ -400,8 +397,8 @@
       "Download for Mac": [
         "გადმოწერა Mac-ისთვის"
       ],
-      "Download for MacOS": [
-        "გადმოწერა MacOS-ისთვის"
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
       ],
       "Download for Windows": [
         "გადმოწერა Windows-სთვის"
@@ -742,15 +739,6 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
-      "Pause all": [
-        "ყველას შეჩერება"
-      ],
-      "Pause download": [
-        "გადმოწერის შეჩერება"
-      ],
-      "Pause upload": [
-        "ატვირთვის შეჩერება"
-      ],
       "Pay": [
         "გადახდა"
       ],
@@ -817,9 +805,6 @@
       "Remove from favorites": [
         "წაშლა რჩეულებიდან"
       ],
-      "Remove from this list": [
-        "ამ სიიდან წაშლა"
-      ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
       ],
@@ -868,15 +853,6 @@
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
       ],
-      "Restart all": [
-        "ყველას გადატვირთვა"
-      ],
-      "Restart download": [
-        "გადმოწერის თავიდან დაწყება"
-      ],
-      "Restart upload": [
-        "ატვირთვის თავიდან დაწყება"
-      ],
       "Restore": [
         "აღდგენა"
       ],
@@ -888,15 +864,6 @@
       ],
       "Restore version": [
         "ვერსიის აღდგენა"
-      ],
-      "Resume all": [
-        "ყველას გაგრძელება"
-      ],
-      "Resume download": [
-        "გადმოწერის გაგრძელება"
-      ],
-      "Resume upload": [
-        "ატვირთვის გაგრძელება"
       ],
       "Retry": [
         "თავიდან"
@@ -4716,18 +4683,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "მიმდინარეობს ${ activeDownloadsCount } გადმოწერა",
-        "მიმდინარეობს ${ activeDownloadsCount } გადმოწერა"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "მიმდინარეობს გადმოწერა: ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "მიმდინარეობს გადმოწერა: ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount }-ის ატვირთვა (${ uploadProgress }%)",
-        "${ activeUploadsCount }-ის ატვირთვა (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } ელ-ფოსტის მისამართი",
         "${ addressCount } ელ-ფოსტის მისამართი"
@@ -4752,10 +4707,6 @@
         "${ calendarsToBeMergedCount } შერწყმული კალენდარი",
         "${ calendarsToBeMergedCount } შერწყმული კალენდარი"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } გაუქმებულია",
-        "${ canceledCount } გაუქმებულია"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length }/${ items.length } გადაცემა დასრულდა"
       ],
@@ -4778,18 +4729,6 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } დამთავრდა",
-        "${ doneCount } დამთავრდა"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } გადმოწერილია",
-        "${ doneDownloadsCount } გადმოწერილია"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "ატვირთულია ${ doneUploadsCount }",
-        "ატვირთულია ${ doneUploadsCount }"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME }-ი App Store-ში"
       ],
@@ -4798,10 +4737,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email }-მა მოგიწვიათ, შეუერთდეთ ${ albumName }-ს"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } წარუმატებელია",
-        "${ errorCount } წარუმატებელია"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: სრული ზომის გამოსახულება"
@@ -4825,10 +4760,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } შეჩერებულია",
-        "${ pausedCount } შეჩერებულია"
       ],
       "${ photoCount } item": [
         "${ photoCount } ელემენტი",
@@ -4855,10 +4786,6 @@
         "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე",
         "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount }-ის სკანირება ჩავარდა",
-        "${ scanErrorCount }-ის სკანირება ჩავარდა"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
@@ -4878,13 +4805,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } გამოტოვებულია",
-        "${ skippedCount } გამოტოვებულია"
-      ],
-      "${ speed }/s": [
-        "${ speed }/წმ"
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
@@ -5141,12 +5061,6 @@
       "Cloud storage for businesses that take security seriously": [
         "ღრუბლოვანი საცავი ბიზნესებისთვის, რომლებიც სერიოზულად ეკიდებიან უსაფრთხოებას"
       ],
-      "Computed hash does not match XAttr": [
-        "გამოთვლილი ჰეში არ ემთხვევა XAttr-ს"
-      ],
-      "Conflict": [
-        "კონფლიქტი"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "მიუერთდით ${ VPN_APP_NAME } ინტერნეტში უსაფრთხოდ სამუშაოდ"
       ],
@@ -5193,9 +5107,6 @@
       ],
       "Create links and share your files with others.": [
         "შექმენით ბმულები და გააზიარეთ თქვენი ფაილები."
-      ],
-      "Creating": [
-        "შექმნა"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
@@ -5367,9 +5278,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "დიაგნოსტიკის ჟურნალის გატანა ტექნიკური მხარდაჭერისა და პრობლემების გადაჭრისთვის"
       ],
-      "Failed": [
-        "წარუმატებელია"
-      ],
       "Feb": [
         "თებ"
       ],
@@ -5387,9 +5295,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "ფაილები და საქარალდეები, რომლებსაც სხვებს გაუზიარებთ, აქ გამოჩნდება"
-      ],
-      "Finalizing": [
-        "დასრულება"
       ],
       "finance": [
         "ფინანსები"
@@ -5514,9 +5419,6 @@
       ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
-      ],
-      "Initializing": [
-        "ინიციალიზაცია"
       ],
       "Integrity issues found": [
         "აღმოჩენილია მთლიანობის შეცდომები"
@@ -5675,9 +5577,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
-      "Network issue": [
-        "ქსელის პრობლემა"
-      ],
       "New": [
         "ახალი"
       ],
@@ -5713,9 +5612,6 @@
       ],
       "Not a valid URL": [
         "არასწორი URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "ფაილების მიმოცვლის პრობლემა. თავიდან სცადეთ."
       ],
       "Not connected": [
         "მიერთებული არაა"
@@ -5910,9 +5806,6 @@
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
-      "Queued": [
-        "რიგშია"
-      ],
       "Ready to add some photos?": [
         "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
@@ -5957,9 +5850,6 @@
       ],
       "Saving...": [
         "შენახვა..."
-      ],
-      "Scan issue": [
-        "სკანირების შეცდომა"
       ],
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
@@ -6045,29 +5935,14 @@
       "Signature check will be ignored": [
         "ხელმოწერის შემოწმების გამოტოვება"
       ],
-      "Signature issue": [
-        "ხელმოწერის შეცდომა"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
-      ],
-      "Skipped": [
-        "გამოტოვებული"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "ზოგიერთი ფაილის გადმოწერის შეცდომა. სცადეთ თავიდან გადმოწეროთ."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "ზოგიერთი ფაილი ვერ აიტვირთა. სცადეთ თავიდან ატვირთოთ."
       ],
       "Some items failed": [
         "ზოგიერთი ელემენტი ჩავარდა"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "თქვენი ზოგიერთი ფაილი მიუწვდომელია. აღიდგინეთ წვდომა თქვენს ფაილებთან. ${ StartRecoveryButton }"
-      ],
-      "Something went wrong, please try again later.": [
-        "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "დაიწყეთ კონტაქტებთან გაზიარება და გამოიყენეთ ის ინტერნეტ-სერვისებისთვის."
@@ -11478,18 +11353,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } უფასო ატვირთვა."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } გადმოწერის შეცდომა",
-        "${ numberOfFailedTransfer.total } გადმოწერის შეცდომა"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } გადაცემის შეცდომა",
-        "${ numberOfFailedTransfer.total } გადაცემის შეცდომა"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა",
-        "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა"
-      ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
@@ -11504,9 +11367,6 @@
       ],
       "Actions": [
         "ქმედებები"
-      ],
-      "Active": [
-        "აქტიური"
       ],
       "Add a custom logo": [
         "დაამატეთ სასურველი ლოგო"
@@ -11541,9 +11401,6 @@
       ],
       "Albums": [
         "ალბომები"
-      ],
-      "All": [
-        "ყველა"
       ],
       "All settings": [
         "ყველა პარამეტრი"
@@ -11623,9 +11480,6 @@
       ],
       "Collaborate on documents": [
         "იმუშავეთ ერთად დოკუმენტებზე"
-      ],
-      "Completed": [
-        "დასრულებულია"
       ],
       "Computers": [
         "კომპიუტერები"
@@ -11845,9 +11699,6 @@
       ],
       "Exporting contacts": [
         "კონტაქტების გატანა"
-      ],
-      "Failed": [
-        "წარუმატებელი"
       ],
       "File details": [
         "ფაილის დეტალები"
@@ -12527,9 +12378,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "შეტყოვინების და ფაილის სახელი ნულოვანი წვდომის დაშიფვრით ინახება, როცა მას ამ ელფოსტაში ჩასვამთ"
-      ],
-      "New!": [
-        "ახალი!"
       ],
       "Not all information listed here was exposed for all users.": [
         "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."

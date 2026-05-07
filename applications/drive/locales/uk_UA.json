@@ -123,9 +123,6 @@
       "Cancel subscription": [
         "Скасувати передплату"
       ],
-      "Cancel upload": [
-        "Скасувати вивантаження"
-      ],
       "Change": [
         "Змінити"
       ],
@@ -561,15 +558,6 @@
       "Open navigation": [
         "Відкрити панель навігації"
       ],
-      "Pause all": [
-        "Призупинити все"
-      ],
-      "Pause download": [
-        "Призупинити завантаження"
-      ],
-      "Pause upload": [
-        "Призупинити вивантаження"
-      ],
       "Pay": [
         "Сплатити"
       ],
@@ -624,9 +612,6 @@
       "Remove device": [
         "Вилучити пристрій"
       ],
-      "Remove from this list": [
-        "Вилучити з цього списку"
-      ],
       "Remove gift code": [
         "Вилучити подарунковий код"
       ],
@@ -666,15 +651,6 @@
       "Reset to default": [
         "Відновити типові"
       ],
-      "Restart all": [
-        "Перезапустити все"
-      ],
-      "Restart download": [
-        "Перезапустити завантаження"
-      ],
-      "Restart upload": [
-        "Перезапустити вивантаження"
-      ],
       "Restore": [
         "Відновити"
       ],
@@ -686,15 +662,6 @@
       ],
       "Restore version": [
         "Відновити версію"
-      ],
-      "Resume all": [
-        "Відновити все"
-      ],
-      "Resume download": [
-        "Відновити завантаження"
-      ],
-      "Resume upload": [
-        "Відновити вивантаження"
       ],
       "Retry": [
         "Повторити спробу"
@@ -3912,24 +3879,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } завантаження",
-        "${ activeDownloadsCount } завантаження",
-        "${ activeDownloadsCount } завантажень",
-        "${ activeDownloadsCount } завантаження"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } завантаження (${ downloadProgress }%)",
-        "${ activeDownloadsCount } завантаження (${ downloadProgress }%)",
-        "${ activeDownloadsCount } завантажень (${ downloadProgress }%)",
-        "${ activeDownloadsCount } завантаження (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } вивантаження (${ uploadProgress }%)",
-        "${ activeUploadsCount } вивантаження (${ uploadProgress }%)",
-        "${ activeUploadsCount } вивантажень (${ uploadProgress }%)",
-        "${ activeUploadsCount } вивантаження (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } адреса е-пошти",
         "${ addressCount } адреси е-пошти",
@@ -3956,12 +3905,6 @@
         "${ calendarsToBeMergedCount } об'єднані календарі",
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднаних календарів"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } скасовано",
-        "${ canceledCount } скасовано",
-        "${ canceledCount } скасовано",
-        "${ canceledCount } скасовано"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт містить кілька адрес е-пошти.",
@@ -3990,35 +3933,11 @@
         "${ contactsLength } контактів",
         "${ contactsLength } контактів"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } завершено",
-        "${ doneCount } завершено",
-        "${ doneCount } завершено",
-        "${ doneCount } завершено"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } завантажено",
-        "${ doneDownloadsCount } завантажено",
-        "${ doneDownloadsCount } завантажено",
-        "${ doneDownloadsCount } завантажено"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } вивантажено",
-        "${ doneUploadsCount } вивантажено",
-        "${ doneUploadsCount } вивантажено",
-        "${ doneUploadsCount } вивантажено"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } в App Store"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } у Play Маркеті"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } не вдалося",
-        "${ errorCount } не вдалося",
-        "${ errorCount } не вдалося",
-        "${ errorCount } не вдалося"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: повнорозмірне зображення"
@@ -4043,12 +3962,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }. Ціна та дата поновлення підписки ${ planTitle } залишаються незмінними."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } призупинено",
-        "${ pausedCount } призупинено",
-        "${ pausedCount } призупинено",
-        "${ pausedCount } призупинено"
       ],
       "${ photoCount } item": [
         "${ photoCount } елемент",
@@ -4076,12 +3989,6 @@
         "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
         "${ providerFoldersNumLocalized } міток знайдено в Gmail",
         "${ providerFoldersNumLocalized } міток знайдено в Gmail"
-      ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } сканування не вдалося",
-        "${ scanErrorCount } сканування не вдалося",
-        "${ scanErrorCount } сканувань не вдалося",
-        "${ scanErrorCount } сканувань не вдалося"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
@@ -4112,15 +4019,6 @@
         "${ selectedFoldersCountLocalized } вибрані мітки",
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } пропущено",
-        "${ skippedCount } пропущено",
-        "${ skippedCount } пропущено",
-        "${ skippedCount } пропущено"
-      ],
-      "${ speed }/s": [
-        "${ speed }/с"
       ],
       "${ storage } storage": [
         "${ storage } сховища"
@@ -4314,9 +4212,6 @@
       "Close this screen to exit.": [
         "Закрийте це вікно, щоб вийти."
       ],
-      "Conflict": [
-        "Конфлікт"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Контакт призначено групі ${ contactGroupName }"
       ],
@@ -4361,9 +4256,6 @@
       ],
       "Create links and share your files with others.": [
         "Створіть посилання та діліться файлами з іншими."
-      ],
-      "Creating": [
-        "Створення"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
@@ -4503,9 +4395,6 @@
       "Expired": [
         "Протерміновано"
       ],
-      "Failed": [
-        "Не вдалося"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" було видалено під час завантаження"
       ],
@@ -4520,9 +4409,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Тут з'являтимуться файли й теки, якими поділилися з вами інші користувачі"
-      ],
-      "Finalizing": [
-        "Завершення"
       ],
       "finance": [
         "фінанси"
@@ -4625,9 +4511,6 @@
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
-      ],
-      "Initializing": [
-        "Ініціалізація"
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
@@ -4749,9 +4632,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
-      "Network issue": [
-        "Проблема з мережею"
-      ],
       "New": [
         "Нове"
       ],
@@ -4781,9 +4661,6 @@
       ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Не всі файли були передані. Спробуйте вивантажити або завантажити файли ще раз."
       ],
       "Not connected": [
         "Не під’єднано"
@@ -4932,9 +4809,6 @@
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
       ],
-      "Queued": [
-        "Поставлено в чергу"
-      ],
       "Ready to add some photos?": [
         "Готові додати фотографії?"
       ],
@@ -4973,9 +4847,6 @@
       ],
       "Saving...": [
         "Збереження..."
-      ],
-      "Scan issue": [
-        "Проблема сканування"
       ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
@@ -5040,26 +4911,11 @@
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
       ],
-      "Signature issue": [
-        "Проблема з підписом"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
-      "Skipped": [
-        "Пропущено"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Не вдалося завантажити деякі файли. Спробуйте завантажити їх ще раз."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Не вдалося вивантажити деякі файли. Спробуйте вивантажити їх ще раз."
-      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Деякі з ваших файлів більше недоступні. Відновіть доступ до файлів. ${ StartRecoveryButton }"
-      ],
-      "Something went wrong, please try again later.": [
-        "Сталася помилка, повторіть спробу пізніше."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
@@ -9639,24 +9495,6 @@
         "${ emailsCount } адрес е-пошти",
         "${ emailsCount } адреси е-пошти"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } невдале завантаження",
-        "${ numberOfFailedTransfer.total } невдалі вивантаження",
-        "${ numberOfFailedTransfer.total } невдалих завантажень",
-        "${ numberOfFailedTransfer.total } невдалих завантажень"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } невдале передавання",
-        "${ numberOfFailedTransfer.total } невдалі передавання",
-        "${ numberOfFailedTransfer.total } невдалих передавань",
-        "${ numberOfFailedTransfer.total } невдалих передавань"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } невдале вивантаження",
-        "${ numberOfFailedTransfer.total } невдалі вивантаження",
-        "${ numberOfFailedTransfer.total } невдалих вивантажень",
-        "${ numberOfFailedTransfer.total } невдалих вивантажень"
-      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -9668,9 +9506,6 @@
       ],
       "Actions": [
         "Дії"
-      ],
-      "Active": [
-        "Активні"
       ],
       "Add a custom logo": [
         "Додати власний логотип"
@@ -9695,9 +9530,6 @@
       ],
       "Addresses": [
         "Адреси"
-      ],
-      "All": [
-        "Усі"
       ],
       "All settings": [
         "Усі налаштування"
@@ -9761,9 +9593,6 @@
       ],
       "Collaborate on documents": [
         "Сумісна робота на документах"
-      ],
-      "Completed": [
-        "Завершені"
       ],
       "Computers": [
         "Комп'ютери"
@@ -9941,9 +9770,6 @@
       ],
       "Exporting contacts": [
         "Експортування контактів"
-      ],
-      "Failed": [
-        "Невдалі"
       ],
       "File details": [
         "Подробиці про файл"
