@@ -504,10 +504,6 @@ export enum PLANS {
     VISIONARY = 'visionary2022',
     VPN_PRO = 'vpnpro2023',
     VPN_BUSINESS = 'vpnbiz2023',
-    /**
-     * @deprecated
-     * It was a temporary B2C offer. Do not use it, unless you know exactly what you are doing.
-     */
     VPN_PASS_BUNDLE = 'vpnpass2023',
     PASS_PRO = 'passpro2024',
     PASS_BUSINESS = 'passbiz2024',
