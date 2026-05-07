@@ -87,6 +87,8 @@ export interface LoggerInterface {
      */
     error(...args: Args): void;
 
+    getLogs(): string;
+
     /**
      * Initiates the download of the logged messages in memory.
      */

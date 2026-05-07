@@ -1,30 +1,19 @@
-import {
-  GlobalLoader,
-  GlobalLoaderProvider,
-  LocationErrorBoundary,
-  useApi,
-  useAuthentication,
-  useConfig,
-} from '@proton/components'
+import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@proton/components'
 import type { DriveCompat } from '@proton/drive-store'
 import { DriveStoreProvider, useDriveCompat } from '@proton/drive-store'
-import { Suspense, lazy, useEffect, useMemo } from 'react'
+import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
-import { Application } from '@proton/docs-core'
-
-import config from '~/config'
 import { ApplicationProvider } from '~/utils/application-context'
 import { useFlag } from '@proton/unleash/useFlag'
-import { useUnleashClient } from '@proton/unleash/proxy'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
-import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import {
   DOCUMENT_NEW_PATH,
   DOCUMENT_CREATION_PATHS,
   DOCUMENT_EDITOR_PATH,
   DocsUrlContextProvider,
 } from '~/utils/docs-url-bar'
+import { useInitializeApplication } from './useInitializeApplication'
 
 // container
 // ---------
@@ -52,7 +41,7 @@ export function AppContainer() {
 
 function Content() {
   const driveCompat = useDriveCompat()
-  const application = useApplication({ driveCompat })
+  const application = useInitializeApplication({ driveCompat })
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
@@ -61,41 +50,6 @@ function Content() {
       </DocsNotificationsProvider>
     </ApplicationProvider>
   )
-}
-
-// application
-// -----------
-
-type ApplicationOptions = { driveCompat: DriveCompat }
-
-function useApplication({ driveCompat }: ApplicationOptions) {
-  const api = useApi()
-  const { API_URL } = useConfig()
-  const { UID } = useAuthentication()
-
-  const unleashClient = useUnleashClient()
-
-  const application = useMemo(() => {
-    return new Application(
-      api,
-      undefined,
-      {
-        apiUrl: API_URL,
-        uid: UID,
-      },
-      new DriveCompatWrapper({ userCompat: driveCompat }),
-      config.APP_NAME,
-      config.APP_VERSION,
-      unleashClient,
-    )
-    // Ensure only one application instance is created
-  }, [])
-
-  useEffect(() => {
-    application.updateCompatInstance({ userCompat: driveCompat })
-  }, [application, driveCompat])
-
-  return application
 }
 
 // routes

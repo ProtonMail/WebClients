@@ -5,7 +5,10 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
+import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { useEvent } from '~/utils/misc'
+import { getDrive, generateNodeUid } from '@proton/drive'
+import { useSharingModal } from '@proton/drive/modules/sharingModal'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -46,6 +49,8 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
+  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
+  const { showSharingModal, sharingModal } = useSharingModal()
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -59,7 +64,14 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const share = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    driveCompat.openDocumentSharingModal({ linkId, volumeId })
+    if (sharingModalDriveSdkEnabled) {
+      showSharingModal({
+        drive: getDrive(),
+        nodeUid: generateNodeUid(volumeId, linkId),
+      })
+    } else {
+      driveCompat.openDocumentSharingModal({ linkId, volumeId })
+    }
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_shared)
   })
 
@@ -176,7 +188,12 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       deletePermanently,
     ],
   )
-  return <DocumentActionsContext.Provider value={value}>{children}</DocumentActionsContext.Provider>
+  return (
+    <DocumentActionsContext.Provider value={value}>
+      {children}
+      {sharingModal}
+    </DocumentActionsContext.Provider>
+  )
 }
 
 export function useDocumentActions() {
