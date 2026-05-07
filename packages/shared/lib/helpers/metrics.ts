@@ -10,7 +10,7 @@ import type { METRICS_LOG } from '../constants';
 import { SECOND } from '../constants';
 import type { Api } from '../interfaces';
 import { BatchQueue } from './batchQueue';
-import { getAccountAgeForDimension } from './metrics.helpers';
+import { getAccountAgeForDimension, getCycleForDimension } from './metrics.helpers';
 import { wait } from './promise';
 
 // Make the metrics false by default to avoid (rare) cases where we could have sendMetricReport or sendTelemetryReport
@@ -115,6 +115,7 @@ interface SendTelemetryReportWithBaseDimensionArgs extends SendTelemetryReportAr
  *   - account_age
  *   - user_locale
  *   - subscription
+ *   - cycle
  *   - audience
  *   - is_free
  */
@@ -153,6 +154,7 @@ export const sendTelemetryReportWithBaseDimensions = async ({
             subscription: String(subscriptionName),
             audience,
             isFree: subscriptionName === 'free' ? 'true' : 'false',
+            cycle: getCycleForDimension(subscription?.Cycle),
         },
         delay,
     });
