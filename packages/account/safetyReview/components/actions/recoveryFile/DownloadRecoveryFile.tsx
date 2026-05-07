@@ -4,7 +4,6 @@ import { downloadRecoveryFileThunk } from '@proton/account/recovery/recoveryFile
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
@@ -19,7 +18,6 @@ type Props = SafetyReviewAllProps & {
 export const DownloadRecoveryFile = (props: Props) => {
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
 
     return (
         <form
@@ -29,7 +27,6 @@ export const DownloadRecoveryFile = (props: Props) => {
                 withLoading(
                     (async function () {
                         await dispatch(downloadRecoveryFileThunk());
-                        sendRecoverySettingEnabled({ setting: 'recovery_file_download' });
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

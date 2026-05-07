@@ -1,7 +1,5 @@
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
-import { TelemetryAccountSecurityCheckupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { SECURITY_CHECKUP_PATHS, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import {
     getIsPerfectDeviceRecoveryState,
     getIsPerfectEmailState,
@@ -16,6 +14,7 @@ import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/reco
 
 import type { AddressesState } from '../addresses';
 import { selectAddresses } from '../addresses';
+import { getSafetyReviewCohortChangeTelemetry } from '../safetyReview/telemetry/safetyReviewTelemetry';
 import type { UserState } from '../user';
 import { selectUser } from '../user';
 import type { UserKeysState } from '../userKeys';
@@ -28,6 +27,7 @@ import {
     removeSecurityCheckupSessionItem,
     setSecurityCheckupSessionItem,
 } from './helpers/securityCheckupSessionStorage';
+import { securityCheckupListenerStarted, securityCheckupListenerStopped } from './listenerActions';
 import type { SecurityCheckupReduxState } from './slice';
 import { securityCheckupSlice, selectSecurityCheckup } from './slice';
 
@@ -158,106 +158,97 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
      * Send telemetry on cohort transition
      */
     startListening({
-        predicate: (action, currentState, previousState) => {
-            const previousSecurityCheckup = selectSecurityCheckup(previousState);
-            const currentSecurityCheckup = selectSecurityCheckup(currentState);
+        // Only send telemetry if we are in the security checkup
+        // The Cohort can change outside the security checkup. Ie enabling the recovery phrase on the recovery page
+        actionCreator: securityCheckupListenerStarted,
+        effect: async (_, listenerApi) => {
+            listenerApi.unsubscribe();
 
-            return (
-                previousSecurityCheckup.cohort !== undefined &&
-                currentSecurityCheckup.cohort !== undefined &&
-                previousSecurityCheckup.cohort !== currentSecurityCheckup.cohort
-            );
-        },
-        effect: async (action, listenerApi) => {
-            // Only send telemetry if we are in the security checkup
-            // The Cohort can change outside the security checkup. Ie enabling the recovery phrase on the recovery page
-            if (!listenerApi.extra.history.location.pathname.includes(SECURITY_CHECKUP_PATHS.ROOT)) {
-                return;
-            }
+            while (true) {
+                const [action, state] = await Promise.race([
+                    listenerApi.take((_, currentState, previousState) => {
+                        const previousSecurityCheckup = selectSecurityCheckup(previousState);
+                        const currentSecurityCheckup = selectSecurityCheckup(currentState);
 
-            const { user, securityCheckup } = listenerApi.getState();
+                        return (
+                            previousSecurityCheckup.cohort !== undefined &&
+                            currentSecurityCheckup.cohort !== undefined &&
+                            previousSecurityCheckup.cohort !== currentSecurityCheckup.cohort
+                        );
+                    }),
+                    listenerApi.take((action) => securityCheckupListenerStopped.match(action)),
+                ]);
 
-            if (!user.value) {
-                return;
-            }
-
-            const { cohort, session, securityState } = securityCheckup;
-            if (!cohort || cohort === SecurityCheckupCohort.Common.NO_RECOVERY_METHOD) {
-                // No change should have occurred
-                return;
-            }
-
-            const securityCheckupSession = getValidSecurityCheckupSession({
-                currentSession: session,
-                currentCohort: cohort,
-            });
-
-            const isPerfectPhraseState = getIsPerfectPhraseState(securityState);
-            const isPerfectEmailState = getIsPerfectEmailState(securityState);
-            const isPerfectPhoneState = getIsPerfectPhoneState(securityState);
-            const isPerfectDeviceState = getIsPerfectDeviceRecoveryState(securityState);
-            const singleMethod = (() => {
-                if (isPerfectPhraseState) {
-                    return 'phrase';
+                if (securityCheckupListenerStopped.match(action)) {
+                    listenerApi.subscribe();
+                    break;
                 }
 
-                if (isPerfectEmailState && isPerfectDeviceState) {
-                    return 'email';
+                const { user, securityCheckup } = state;
+
+                if (!user.value) {
+                    continue;
                 }
 
-                if (isPerfectPhoneState && isPerfectDeviceState) {
-                    return 'phone';
+                const { cohort, session, securityState } = securityCheckup;
+                if (!cohort || cohort === SecurityCheckupCohort.Common.NO_RECOVERY_METHOD) {
+                    // No change should have occurred
+                    continue;
                 }
 
-                return 'unknown';
-            })();
+                const securityCheckupSession = getValidSecurityCheckupSession({
+                    currentSession: session,
+                    currentCohort: cohort,
+                });
 
-            const {
-                event,
-                dimensions = {},
-            }: { event?: TelemetryAccountSecurityCheckupEvents; dimensions?: Record<string, string> } = (() => {
+                const cohortChangeTelemetry = getSafetyReviewCohortChangeTelemetry({
+                    api: listenerApi.extra.api,
+                    initialCohort: securityCheckupSession.initialCohort,
+                    variant: 'A',
+                });
+
                 if (cohort === SecurityCheckupCohort.Common.COMPLETE_RECOVERY) {
-                    return { event: TelemetryAccountSecurityCheckupEvents.completeRecoveryMultiple };
+                    void cohortChangeTelemetry.sendCompleteRecoveryMultiple();
+                    continue;
                 }
 
                 if (cohort === SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE) {
-                    return {
-                        event: TelemetryAccountSecurityCheckupEvents.completeRecoverySingle,
-                        dimensions: {
-                            singleMethod,
-                        },
-                    };
+                    const isPerfectPhraseState = getIsPerfectPhraseState(securityState);
+                    const isPerfectEmailState = getIsPerfectEmailState(securityState);
+                    const isPerfectPhoneState = getIsPerfectPhoneState(securityState);
+                    const isPerfectDeviceState = getIsPerfectDeviceRecoveryState(securityState);
+
+                    const singleMethod = (() => {
+                        if (isPerfectPhraseState) {
+                            return 'phrase';
+                        }
+                        if (isPerfectEmailState && isPerfectDeviceState) {
+                            return 'email';
+                        }
+                        if (isPerfectPhoneState && isPerfectDeviceState) {
+                            return 'phone';
+                        }
+                        return 'unknown';
+                    })();
+
+                    void cohortChangeTelemetry.sendCompleteRecoverySingle({ singleMethod });
+                    continue;
                 }
 
                 if (cohort === SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED) {
-                    return { event: TelemetryAccountSecurityCheckupEvents.accountRecoveryEnabled };
+                    void cohortChangeTelemetry.sendAccountRecoveryEnabled();
+                    continue;
                 }
 
                 if (cohort === SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL) {
-                    return { event: TelemetryAccountSecurityCheckupEvents.completeRecoverySentinel };
+                    void cohortChangeTelemetry.sendCompleteRecoverySentinel();
+                    continue;
                 }
 
                 if (cohort === SecurityCheckupCohort.Sentinel.SENTINEL_RECOMMENDATIONS) {
-                    return { event: TelemetryAccountSecurityCheckupEvents.sentinelRecommendations };
+                    void cohortChangeTelemetry.sendSentinelRecommendations();
                 }
-
-                return { event: undefined };
-            })();
-
-            if (!event) {
-                return;
             }
-
-            void sendTelemetryReport({
-                api: listenerApi.extra.api,
-                measurementGroup: TelemetryMeasurementGroups.accountSecurityCheckup,
-                event,
-                dimensions: {
-                    initialCohort: securityCheckupSession.initialCohort,
-                    ...dimensions,
-                },
-                delay: false,
-            });
         },
     });
 
@@ -265,23 +256,13 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
      * Get touchpoint source
      */
     startListening({
-        predicate: (_, currentState) => {
-            const currentSecurityCheckup = selectSecurityCheckup(currentState);
-
-            return !currentSecurityCheckup.source;
-        },
+        actionCreator: securityCheckupListenerStarted,
         effect: async (action, listenerApi) => {
-            // Only calculate source if we are in the security checkup
-            if (!listenerApi.extra.history.location.pathname.includes(SECURITY_CHECKUP_PATHS.ROOT)) {
-                return;
-            }
-
-            const { pathname, search } = listenerApi.extra.history.location;
+            const { pathname, search } = new URL(action.payload.href);
             const source = getSource({ pathname, search: new URLSearchParams(search) });
             if (!source) {
                 return;
             }
-
             listenerApi.dispatch(securityCheckupSlice.actions.setSource({ source }));
         },
     });

@@ -4,7 +4,6 @@ import { updateDeviceRecoverySettingsThunk } from '@proton/account/recovery/devi
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
@@ -19,7 +18,6 @@ type Props = SafetyReviewAllProps & {
 export const EnableDeviceRecovery = (props: Props) => {
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
 
     return (
         <form
@@ -28,9 +26,7 @@ export const EnableDeviceRecovery = (props: Props) => {
                 event.preventDefault();
                 withLoading(
                     (async function () {
-                        if (await dispatch(updateDeviceRecoverySettingsThunk({ deviceRecovery: true }))) {
-                            sendRecoverySettingEnabled({ setting: 'device_recovery' });
-                        }
+                        await dispatch(updateDeviceRecoverySettingsThunk({ deviceRecovery: true }));
                         props.safetyReview.actions.next('completed', props.recoveryItem);
                     })()
                 ).catch(noop);

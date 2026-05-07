@@ -1,9 +1,10 @@
 import { differenceInMilliseconds } from 'date-fns';
 
+import { HOUR } from '@proton/shared/lib/constants';
 import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
 import type { SecurityCheckupCohortType } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
-import { SECURITY_SESSION_MAX_AGE } from '../consts';
+const SECURITY_SESSION_MAX_AGE = 1 * HOUR;
 
 const getValidSecurityCheckupSession = ({
     currentSession,

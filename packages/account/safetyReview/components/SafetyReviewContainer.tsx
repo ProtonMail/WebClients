@@ -16,6 +16,9 @@ import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useSafetyReviewCtrTelemetry } from '../telemetry/useSafetyReviewCtrTelemetry';
+import { useSafetyReviewScoreDiffTelemetry } from '../telemetry/useSafetyReviewScoreDiffTelemetry';
+import { useSafetyReviewPageLoadTelemetry } from '../telemetry/useSafetyReviewTelemetry';
 import { SafetyReviewBackButton, SafetyReviewHeader, SafetyReviewLayout, SafetyReviewLogo } from './SafetyReviewLayout';
 import { renderActionItem } from './actions/renderActionItem';
 import { introTransition, removeIntroTransition, swipeTransition } from './animations';
@@ -67,6 +70,15 @@ export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBack
     const [stackContentReady, setStackContentReady] = useState(false);
     const [footerEl, setFooterEl] = useState<HTMLElement | null>(null);
 
+    useSafetyReviewPageLoadTelemetry();
+    useSafetyReviewScoreDiffTelemetry({
+        score: state.recoveryState.recoveryScore.score,
+        loading: state.recoveryState.loading,
+    });
+    const { sendStepSkip, sendStepSuccess } = useSafetyReviewCtrTelemetry({
+        activeStep: state.visibleActionableRecoveryActionItems[0],
+    });
+
     useLayoutEffect(() => {
         introTransition(() => {
             setStackContentReady(true);
@@ -78,6 +90,13 @@ export const SafetyReviewContainer = ({ backLink }: { backLink: SafetyReviewBack
 
     const safetyReviewContainerActions: SafetyReviewContainerActions = {
         next: (type, item) => {
+            if (type === 'completed') {
+                sendStepSuccess(item.id);
+            }
+            if (type === 'skipped') {
+                sendStepSkip(item.id);
+            }
+
             swipeTransition({
                 visibleItems: state.visibleActionableRecoveryActionItems,
                 type,

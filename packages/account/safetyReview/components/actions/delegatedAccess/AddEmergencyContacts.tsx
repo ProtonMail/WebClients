@@ -9,7 +9,6 @@ import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyR
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
@@ -25,8 +24,6 @@ type Props = SafetyReviewAllProps & {
 export const AddEmergencyContacts = (props: Props) => {
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
 
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
@@ -51,7 +48,6 @@ export const AddEmergencyContacts = (props: Props) => {
                         }));
                         try {
                             await dispatch(addDelegatedAccessesThunk({ contacts: payload }));
-                            sendRecoverySettingEnabled({ setting: 'emergency_contacts' });
                             props.safetyReview.actions.next('completed', props.recoveryItem);
                         } catch (e) {
                             if (e instanceof ValidationError) {
