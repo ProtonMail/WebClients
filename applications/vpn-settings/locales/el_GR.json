@@ -329,8 +329,8 @@
       "Delete policy": [
         "Διαγραφή πολιτικής"
       ],
-      "Delete token ${ token.Account }": [
-        "Διαγραφή διακριτικού ${ token.Account }"
+      "Delete token ${ tokens[0].Account }": [
+        "Διαγραφή διακριτικού ${ tokens[0].Account }"
       ],
       "Delete user": [
         "Διαγραφή χρήστη"
@@ -892,6 +892,9 @@
       ],
       "Save": [
         "Αποθήκευση"
+      ],
+      "Save & exit": [
+        "Αποθήκευση & έξοδος"
       ],
       "Save address": [
         "Αποθήκευση διεύθυνσης"
@@ -1974,8 +1977,47 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Βοηθός Μετεγκατάστασης ${ BRAND_NAME }"
       ],
-      "App installed": [
-        "Η εφαρμογή εγκαταστάθηκε"
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } από ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: μη βάζετε σε καραντίνα ή απορρίπτετε μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνήθως, οι χρήστες χρησιμοποιούν αυτήν την πολιτική μόνο για την αντιμετώπιση προβλημάτων ή τη δοκιμή."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: ζητώντας από τις πλατφόρμες παραληπτών να επισημάνουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου ως ανεπιθύμητα ή να τα θέσουν σε καραντίνα."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: ζητώντας από τις πλατφόρμες παραληπτών να απορρίψουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Account disconnected": [
+        "Λογαριασμός αποσυνδεδεμένος"
+      ],
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Activation link": [
+        "Σύνδεσμος ενεργοποίησης"
+      ],
+      "Activation link copied to clipboard": [
+        "Ο σύνδεσμος ενεργοποίησης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Add domain": [
+        "Προσθήκη τομέα"
+      ],
+      "Add users": [
+        "Προσθήκη χρηστών"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
+      "All": [
+        "Όλοι"
+      ],
+      "An unknown error occurred": [
+        "Η λειτουργία απέτυχε λόγω άγνωστου σφάλματος."
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Είστε σίγουρος ότι θέλετε να συνεχίσετε; Οι χρήστες που δεν έχουν διεκδικήσει τον λογαριασμό τους πριν ολοκληρωθεί η μετεγκατάσταση θα χρειαστεί να ζητήσουν επαναφορά κωδικού πρόσβασης από τον διαχειριστή της οργάνωσης ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Ταυτοποίηση"
@@ -1989,23 +2031,38 @@
       "Completed": [
         "Ολοκληρώθηκε"
       ],
+      "Configure domain": [
+        "Ρύθμιση τομέα"
+      ],
       "Configure migration": [
         "Διαμόρφωση μετεγκατάστασης"
       ],
       "Contacts": [
         "Επαφές"
       ],
+      "Creating accounts": [
+        "Δημιουργία λογαριασμών"
+      ],
+      "DKIM records": [
+        "Εγγραφές DKIM"
+      ],
       "Domain connected": [
         "Συνδεδεμένος τομέας"
       ],
-      "Domain ownership verified": [
-        "Επαληθεύτηκε η ιδιοκτησία τομέα"
+      "Errors": [
+        "Σφάλματα"
       ],
       "Estimated size": [
         "Εκτιμώμενος χρόνος"
       ],
       "Failed to load OAuth": [
         "Αποτυχία φόρτωσης OAuth"
+      ],
+      "Finalize migration": [
+        "Ολοκλήρωση μετεγκατάστασης"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Η ολοκλήρωση της μετεγκατάστασης σημαίνει ότι όλα τα ηλεκτρονικά μηνύματά σας θα προωθούνται απευθείας στο ${ BRAND_NAME }. Οι χρήστες θα σταματήσουν να λαμβάνουν ηλεκτρονικά μηνύματα στους λογαριασμούς τους Google και τα δεδομένα δεν θα συγχρονίζονται πλέον μεταξύ του ${ BRAND_NAME } και της Google."
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
@@ -2022,20 +2079,17 @@
       "Install migration app": [
         "Εγκατάσταση εφαρμογής μετεγκατάστασης"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Μάθετε περισσότερα για το τι μπορεί να μετεγκατασταθεί. Μάθετε περισσότερα"
-      ],
       "Mail": [
         "Ταχυδρομείο"
-      ],
-      "Migrate": [
-        "Μετεγκατάσταση"
       ],
       "Migrate from Google Workspace": [
         "Μετάβαση από το Google Workspace"
       ],
       "Migrate users": [
         "Μετεγκατάσταση χρηστών"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
       ],
       "Migration includes": [
         "Η μετεγκατάσταση περιλαμβάνει"
@@ -2047,8 +2101,20 @@
       "Migration status": [
         "Κατάσταση μετεγκατάστασης"
       ],
-      "Not started": [
-        "Δεν ξεκίνησε"
+      "More details": [
+        "Περισσότερες λεπτομέρειες"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Δεν υπάρχουν διαθέσιμες λεπτομέρειες σφάλματος. Παρακαλούμε επικοινωνήστε με την υποστήριξη πελατών για περισσότερες πληροφορίες."
+      ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Μόλις οι χρήστες διεκδικήσουν τον λογαριασμό τους ${ BRAND_NAME }, ολοκληρώστε τη μετεγκατάσταση."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Μόλις επιβεβαιώσουμε ότι τα μηνύματα ηλεκτρονικού ταχυδρομείου προωθούνται στο ${ BRAND_NAME }, η μετεγκατάσταση θα ολοκληρωθεί. Θα λάβετε ένα επιβεβαιωτικό μήνυμα ηλεκτρονικού ταχυδρομείου για να σας ενημερώσουμε πότε θα συμβεί αυτό. Αυτή η διαδικασία μπορεί να διαρκέσει έως και 24 ώρες."
       ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
@@ -2056,8 +2122,14 @@
       "Organization does not have enough storage available": [
         "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
       ],
-      "Organization settings": [
-        "Ρυθμίσεις οργανισμού"
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
+      "Please select at least one product to migrate": [
+        "Παρακαλώ επιλέξτε τουλάχιστον ένα προϊόν για μετεγκατάσταση"
+      ],
+      "Refresh": [
+        "Ανανέωση"
       ],
       "Required": [
         "Απαιτείται"
@@ -2068,11 +2140,17 @@
       "Select at least one user to start a migration": [
         "Επιλέξτε τουλάχιστον έναν χρήστη για να ξεκινήσετε τη μετεγκατάσταση."
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Επιλέξτε τι θέλετε να μετεγκαταστήσετε, αυτό θα εφαρμοστεί σε όλους τους χρήστες είτε δημιουργηθούν τώρα είτε αργότερα. Η μετεγκατάσταση θα ξεκινήσει αφού δημιουργηθούν οι λογαριασμοί χρηστών."
-      ],
       "Set up": [
         "Ρύθμιση"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Ρύθμιση ασφαλούς αποστολής (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ρύθμιση ασφαλούς αποστολής (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ρύθμιση ασφαλούς αποστολής (SPF)"
       ],
       "Settings": [
         "Ρυθμίσεις"
@@ -2080,20 +2158,35 @@
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
+      "Size": [
+        "Μέγεθος"
+      ],
       "Status": [
         "Κατάσταση"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε."
       ],
-      "Transfer errors": [
-        "Σφάλματα μεταφοράς"
+      "Update records for receiving": [
+        "Ενημέρωση αρχείων για παραλαβή"
       ],
       "User": [
         "Χρήστης"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "Ο χρήστης πρέπει να ενεργοποιήσει τον λογαριασμό του μέσω του συνδέσμου ενεργοποίησης που εμφανίζεται παραπάνω"
+      ],
+      "User status": [
+        "Κατάσταση χρήστη"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Οι χρήστες μπορούν να χρησιμοποιούν ταυτόχρονα το ${ BRAND_NAME } ή το Google για τη διάρκεια της μετανάστευσης."
+      ],
       "Users migrated": [
         "Οι χρήστες μεταφέρθηκαν"
+      ],
+      "Verified": [
+        "Επικυρωμένο"
       ],
       "Verify installation": [
         "Επαλήθευση εγκατάστασης"
@@ -2110,8 +2203,18 @@
       "What are you migrating?": [
         "Τι μεταφέρετε;"
       ],
+      "You": [
+        "Εσείς"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Πρέπει να δώσετε την άδεια για το ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Αφού αποδεχτείτε τις άδειες, επιστρέψτε εδώ για να συνεχίσετε."
+      ],
+      "You're all set!": [
+        "Όλα έτοιμα!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστη. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας.",
+        "Το τρέχον πλάνο σας επιτρέπει έως και ${ maxMembers } χρήστες. Για να μετεγκαταστήσετε επιπλέον χρήστες, προσθέστε περισσότερες θέσεις στη συνδρομή σας."
       ]
     },
     "Browser": {
@@ -9698,6 +9801,9 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
+      "Host name": [
+        "Όνομα εξυπηρετητή"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Καταλαβαίνω ότι θα πρέπει να προσθέσω αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου στον άλλο λογαριασμό αμέσως, για να μη χάσω μόνιμα αυτήν τη διεύθυνση."
       ],
@@ -10227,6 +10333,20 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
+      ]
+    },
+    "Label for domain setup": {
+      "Host name": [
+        "Όνομα εξυπηρετητή"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Βρέθηκε μη έγκυρη εγγραφή ${ group.name }"
+      ],
+      "Type": [
+        "Τύπος"
+      ],
+      "Use default value": [
+        "Χρήση προκαθορισμένης τιμής"
       ]
     },
     "Label for new member": {
@@ -17486,6 +17606,9 @@
       "User is a group": [
         "Ο χρήστης είναι μια ομάδα"
       ],
+      "via ${ groupName }": [
+        "μέσω ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
       ]
@@ -17718,6 +17841,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(μέσω ${ groupName })"
+      ],
+      "(via group)": [
+        "(μέσω ομάδας)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Προσθέστε ανατεθειμένους ρόλους σε έναν χρήστη για να του εκχωρήσετε μόνο τα συγκεκριμένα δικαιώματα που χρειάζεται, διατηρώντας ξεχωριστή την πλήρη εξουσία διαχειριστή και το περιβάλλον σας ασφαλές."
       ],

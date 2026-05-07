@@ -329,8 +329,8 @@
       "Delete policy": [
         "Elimina la política"
       ],
-      "Delete token ${ token.Account }": [
-        "Elimineu el testimoni \"${ token.Account }\""
+      "Delete token ${ tokens[0].Account }": [
+        "Eliminar el testimoni \"${ tokens[0].Account }\""
       ],
       "Delete user": [
         "Elimina un usuari"
@@ -556,6 +556,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Anar al proveïdor de domini"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -892,6 +895,9 @@
       ],
       "Save": [
         "Desa"
+      ],
+      "Save & exit": [
+        "Deseu i sortiu"
       ],
       "Save address": [
         "Desa l'adreça"
@@ -1974,8 +1980,47 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Assistent de migració de ${ BRAND_NAME }"
       ],
-      "App installed": [
-        "S'ha instal·lat l'aplicació"
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=cap**: no posa en quarantena ni rebutja els correus electrònics no autoritzats. Normalment, aquesta opció només s'utilitza per resoldre problemes o fer proves."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: demana a les plataformes receptores que marquin els correus electrònics no autoritzats com a correu brossa o que els posin en quarantena."
+      ],
+      "Account connected": [
+        "S'ha connectat el compte"
+      ],
+      "Account disconnected": [
+        "S'ha desconnectat el compte"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "Activation link": [
+        "Enllaç d'activació"
+      ],
+      "Activation link copied to clipboard": [
+        "S'ha copiat l'enllaç d'activació al porta-retalls"
+      ],
+      "Add users": [
+        "Afegiu usuaris"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "All": [
+        "Tots"
+      ],
+      "An unknown error occurred": [
+        "S'ha produït un error desconegut"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Segur que voleu continuar? Els usuaris que no hagin demanat el compte abans que finalitzi la migració hauran de sol·licitar un restabliment de contrasenya a l'administrador de la seva organització de ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Tan bon punt s'hagin creat els comptes, podreu compartir l'enllaç d'activació perquè els usuaris puguin demanar el seu compte de ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Autentiqueu-vos"
@@ -1986,20 +2031,56 @@
       "Calendar": [
         "Calendari"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Escolliu què voleu migrar. La vostra elecció s'aplicarà a tots els usuaris. La migració començarà un cop hàgiu decidit quins usuaris voleu copiar."
+      ],
       "Completed": [
         "S'ha completat"
+      ],
+      "Configure domain": [
+        "Configureu el domini"
       ],
       "Configure migration": [
         "Configureu la migració"
       ],
+      "Configure your domain": [
+        "Configureu el vostre domini"
+      ],
       "Contacts": [
         "Contactes"
+      ],
+      "Copy activation link": [
+        "Copieu l'enllaç d'activació"
+      ],
+      "Copy activation link to clipboard": [
+        "Copiar l'enllaç d'activació al porta-retalls"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Copieu el codi següent i enganxeu-lo a la secció DNS del vostre proveïdor de domini. Podeu trobar un exemple i alguns consells útils a ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "S'estan creant els comptes"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM afegeix una signatura digital a cada correu electrònic perquè els destinataris puguin verificar que el missatge prové realment del vostre domini i no ha estat alterat durant el trànsit. Sense ella, els missatges poden ser considerats menys fiables."
+      ],
+      "DKIM records": [
+        "Registres DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC es basa en SPF i DKIM indicant als servidors receptors com gestionar els missatges que no superin aquestes comprovacions. Ajuda a protegir el vostre domini contra la suplantació i millora la fiabilitat general dels lliuraments."
+      ],
+      "DMARC records": [
+        "Registres DMARC"
+      ],
+      "Domain added": [
+        "S'ha afegit el domini"
       ],
       "Domain connected": [
         "S'ha connectat el domini"
       ],
-      "Domain ownership verified": [
-        "S'ha verificat la propietat del domini"
+      "Errors": [
+        "Errors"
       ],
       "Estimated size": [
         "Mida estimada"
@@ -2007,11 +2088,23 @@
       "Failed to load OAuth": [
         "No s'ha pogut carregar OAuth"
       ],
+      "Finalize migration": [
+        "Finalitzeu la migració"
+      ],
+      "Find out what can be migrated.": [
+        "Descobriu què es pot migrar."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Compte de Google Workspace"
+      ],
       "Has errors": [
         "Té errors"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "S'han produït errors d'importació per a ${ user.AdminSetName }"
       ],
       "In progress": [
         "En curs"
@@ -2022,20 +2115,23 @@
       "Install migration app": [
         "Instal·leu l’aplicació de migració"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Obtingueu més informació sobre què es pot migrar. Per saber-ne més"
+      "Loading your organization data": [
+        "S'estan carregant les dades de la vostra organització"
       ],
       "Mail": [
         "Correu"
       ],
-      "Migrate": [
-        "Migreu"
+      "Managed via ${ registrar.name }": [
+        "Gestionat mitjançant ${ registrar.name }"
       ],
       "Migrate from Google Workspace": [
         "Migreu des de Google Workspace"
       ],
       "Migrate users": [
         "Migreu els usuaris"
+      ],
+      "Migrated": [
+        "S'ha migrat"
       ],
       "Migration includes": [
         "La migració inclou"
@@ -2047,8 +2143,26 @@
       "Migration status": [
         "Estat de la migració"
       ],
-      "Not started": [
-        "No s'ha iniciat"
+      "More details": [
+        "Més detalls"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "No hi ha detalls de l'error disponibles. Poseu-vos en contacte amb el servei d'atenció al client per més informació"
+      ],
+      "No users to display": [
+        "No hi ha cap usuari per mostrar"
+      ],
+      "Not activated": [
+        "No s'ha activat"
+      ],
+      "Not confirmed": [
+        "No confirmat"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Un cop els usuaris hagin demanat el seu compte de ${ BRAND_NAME }, finalitzeu la migració."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Un cop hàgim confirmat que els correus electrònics s'envien a ${ BRAND_NAME }, la migració es completarà. Rebreu un correu electrònic de confirmació per informar-vos quan això passi. Aquest procés pot trigar fins a 24 hores."
       ],
       "Organization does not have enough seats available": [
         "L'organització no té prou llicències disponibles"
@@ -2056,8 +2170,17 @@
       "Organization does not have enough storage available": [
         "L'organització no té prou espai d'emmagatzematge disponible"
       ],
-      "Organization settings": [
-        "Configuració de l'organització"
+      "Pending": [
+        "Està pendent"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Afegiu els següents registres a la consola DNS del vostre proveïdor de domini:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deixeu aquesta finestra oberta fins que hàgim creat tots els usuaris."
+      ],
+      "Refresh": [
+        "Actualitzar"
       ],
       "Required": [
         "Obligatori"
@@ -2068,32 +2191,68 @@
       "Select at least one user to start a migration": [
         "Seleccioneu almenys un usuari per iniciar una migració"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Seleccioneu què voleu migrar; això s'aplicarà a tots els usuaris, tant si es creen ara com més endavant. La migració començarà un cop s'hagin creat els comptes d'usuari."
+      "Select users to migrate": [
+        "Seleccioneu els usuaris que voleu migrar"
       ],
       "Set up": [
         "Configureu-ho"
       ],
+      "Set up secure sending (DKIM)": [
+        "Configureu l'enviament segur (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar l'enviament segur (DMARC)"
+      ],
       "Settings": [
         "Preferències"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Compartiu l'enllaç d'activació amb els usuaris perquè puguin demanar el seu compte de ${ BRAND_NAME }."
       ],
       "Sign in to Google Workspace": [
         "Inicieu la sessió a Google Workspace"
       ],
+      "Size": [
+        "Mida"
+      ],
+      "Some accounts are not claimed": [
+        "Alguns comptes no s'han reclamat"
+      ],
+      "SPF records": [
+        "Registres SPF"
+      ],
+      "Start migrating": [
+        "Inicieu la migració"
+      ],
       "Status": [
         "Estat"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "La configuració per defecte és cap. Tanmateix, per millorar la vostra seguretat, us recomanem establir aquest valor a p=quarantine."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "El valor \"p=\" especifica l'acció a prendre per als correus electrònics que no passen la verificació DMARC. A continuació, es mostren les accions disponibles:"
+      ],
+      "This migration has been completed": [
+        "S'ha completat la migració"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
       ],
-      "Transfer errors": [
-        "Errors de transferència"
-      ],
       "User": [
         "Usuari"
       ],
+      "User status": [
+        "Estat de l'usuari"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Els usuaris poden utilitzar ${ BRAND_NAME } o Google simultàniament mentre duri la migració."
+      ],
       "Users migrated": [
         "S'han migrat els usuaris"
+      ],
+      "Verified": [
+        "Verificat"
       ],
       "Verify installation": [
         "Verifiqueu la instal·lació"
@@ -2104,14 +2263,30 @@
       "Verify your domain to start a migration": [
         "Verifiqueu el vostre domini per iniciar una migració"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Hem detectat el domini principal vinculat al vostre compte de Google Workspace. Confirmeu-lo per continuar configurant el correu electrònic per a l'organització ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "No s'ha pogut verificar la instal·lació; comproveu que estigui instal·lada al vostre compte de Google Workspace i torneu-ho a provar."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Encara estem comprovant els registres MX amb el vostre proveïdor de domini."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hem observat que alguns usuaris no han demanat els seus comptes de ${ BRAND_NAME }."
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Cal que concediu permís perquè ${ BRAND_NAME } pugui copiar les vostres dades. Un cop acceptats els permisos, torneu aquí per continuar."
+      ],
+      "You're all set!": [
+        "Ja ho teniu tot a punt!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
+        "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
       ]
     },
     "Browser": {
@@ -3808,6 +3983,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "S'ha trobat un registre DMARC duplicat, aneu a la consola DNS del vostre proveïdor de domini per solucionar-ho."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -9475,6 +9655,9 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
+      "Confirm MX records added": [
+        "Confirmeu que s'han afegit els registres MX"
+      ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
       ],
@@ -9695,6 +9878,9 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
+      "Host name": [
+        "Nom del servidor"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entenc que he d'afegir aquesta adreça de correu electrònic a l'altre compte immediatament per a evitar perdre-la de manera permanent."
       ],
@@ -9811,6 +9997,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "MX records": [
+        "Registres MX"
       ],
       "Name": [
         "Nom"
@@ -9943,6 +10132,9 @@
       ],
       "Previous password": [
         "Contrasenya anterior"
+      ],
+      "Priority": [
+        "Prioritat"
       ],
       "Priority support": [
         "Suport prioritari"
@@ -10226,6 +10418,26 @@
         "Afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "No s'ha trobat el registre ${ capitalizedGroup }"
+      ],
+      "Host name": [
+        "Nom del servidor"
+      ],
+      "Invalid ${ group.name } record found": [
+        "S'ha trobat un registre de ${ group.name } no vàlid"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Use default value": [
+        "Feu servir el valor per defecte"
+      ],
+      "Valid ${ group.name } record found": [
+        "S'ha trobat un registre ${ group.name } vàlid"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -10340,6 +10552,9 @@
       ],
       "data recovery option": [
         "opció de recuperació de dades"
+      ],
+      "Detailed instructions": [
+        "Instruccions detallades"
       ],
       "Details": [
         "Detalls"
@@ -13261,6 +13476,9 @@
       ],
       "Search for an email or IP address": [
         "Busqueu un correu electrònic o una adreça IP"
+      ],
+      "Search for users or addresses": [
+        "Cercar un usuari o adreça"
       ],
       "Search parent folder": [
         "Cerca la carpeta principal"
@@ -17486,6 +17704,9 @@
       "User is a group": [
         "L'usuari és un grup"
       ],
+      "via ${ groupName }": [
+        "mitjançant ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
       ]
@@ -17718,6 +17939,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grup)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Delegueu rols a un usuari per concedir-li només els permisos específics que necessiti, mentre manteniu separats els poders complets d'administració i el vostre entorn segur."
       ],

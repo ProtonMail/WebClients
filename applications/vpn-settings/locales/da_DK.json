@@ -329,9 +329,6 @@
       "Delete policy": [
         "Slet politik"
       ],
-      "Delete token ${ token.Account }": [
-        "Slet token ${ token.Account }"
-      ],
       "Delete user": [
         "Slet bruger"
       ],
@@ -1974,9 +1971,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migreringsassistent"
       ],
-      "App installed": [
-        "Appen er installeret."
-      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -1997,9 +1991,6 @@
       ],
       "Domain connected": [
         "Domæne forbundet"
-      ],
-      "Domain ownership verified": [
-        "Domæneejerskab verificeret"
       ],
       "Estimated size": [
         "Anslået størrelse"
@@ -2022,14 +2013,8 @@
       "Install migration app": [
         "Installer migrations app."
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Få mere at vide om, hvad der kan migreres. Få mere at vide"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migrér"
       ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
@@ -2047,17 +2032,11 @@
       "Migration status": [
         "Migrationsstatus"
       ],
-      "Not started": [
-        "Ikke startet"
-      ],
       "Organization does not have enough seats available": [
         "Organisationen har ikke nok ledige pladser"
       ],
       "Organization does not have enough storage available": [
         "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
-      "Organization settings": [
-        "Organisationsindstillinger"
       ],
       "Required": [
         "Påkrævet"
@@ -2067,9 +2046,6 @@
       ],
       "Select at least one user to start a migration": [
         "Vælg mindst én bruger for at starte en migrering"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Vælg, hvad du ønsker at migrere. Dette vil blive anvendt på alle brugere, uanset om de oprettes nu eller senere. Migrationen starter, når brugerkonti oprettes."
       ],
       "Set up": [
         "Opsætning"
@@ -2085,9 +2061,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
-      ],
-      "Transfer errors": [
-        "Overførselsfejl"
       ],
       "User": [
         "Bruger"

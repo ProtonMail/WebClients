@@ -314,9 +314,6 @@
       "Delete policy": [
         "정책 삭제"
       ],
-      "Delete token ${ token.Account }": [
-        "토큰 ${ token.Account } 삭제"
-      ],
       "Delete user": [
         "사용자 삭제"
       ],
@@ -1842,9 +1839,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } 이전 도우미"
       ],
-      "App installed": [
-        "앱 설치됨"
-      ],
       "Authenticate": [
         "인증"
       ],
@@ -1865,9 +1859,6 @@
       ],
       "Domain connected": [
         "도메인 연결됨"
-      ],
-      "Domain ownership verified": [
-        "도메인 소유권 인증됨"
       ],
       "Estimated size": [
         "예상 용량"
@@ -1890,14 +1881,8 @@
       "Install migration app": [
         "이전 앱 설치"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "이전 가능한 항목에 대해 더 알아보세요. 더 알아보기"
-      ],
       "Mail": [
         "멩리"
-      ],
-      "Migrate": [
-        "이전"
       ],
       "Migrate from Google Workspace": [
         "Google Workspace에서 이전"
@@ -1914,17 +1899,11 @@
       "Migration status": [
         "마이그레이션 상태"
       ],
-      "Not started": [
-        "시작 전"
-      ],
       "Organization does not have enough seats available": [
         "조직의 사용 권한이 충분하지 않습니다."
       ],
       "Organization does not have enough storage available": [
         "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
-      "Organization settings": [
-        "조직 설정"
       ],
       "Required": [
         "필수"
@@ -1934,9 +1913,6 @@
       ],
       "Select at least one user to start a migration": [
         "하나 이상의 사용자를 선택하여 마이그레이션을 시작하세요"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "전환할 항목을 선택하세요. 지금 생성되거나 나중에 생성되는 모든 사용자에게 일괄 적용됩니다. 사용자 계정이 생성된 뒤에 작업이 시작됩니다."
       ],
       "Set up": [
         "설정"
@@ -1952,9 +1928,6 @@
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "조직의 데이터를 이전하려면 Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 도우미 앱을 설치해야 합니다. 이 앱을 통해 ${ BRAND_NAME }에서 데이터를 복사할 수 있는 권한이 부여됩니다. 설치 후 계속 진행하려면 이곳으로 돌아오세요."
-      ],
-      "Transfer errors": [
-        "전송 오류"
       ],
       "User": [
         "사용자"
