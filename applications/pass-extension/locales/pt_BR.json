@@ -1387,6 +1387,9 @@
       ],
       "This domain is already managed by your organization": [
         "Esse domínio já é gerenciada pela sua organização"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "A verificação de desbloqueio do computador já está em andamento."
       ]
     },
     "Error message": {
@@ -2083,8 +2086,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"

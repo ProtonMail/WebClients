@@ -1402,6 +1402,9 @@
       ],
       "This domain is already managed by your organization": [
         "Aquest domini ja el gestiona la vostra organització"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
       ]
     },
     "Error message": {
@@ -2098,8 +2101,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2343,7 +2345,7 @@
         "Premeu Retorn per a copiar"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Empleneu automàticament els vostres testimonis 2FA amb rapidesa."
@@ -2611,7 +2613,7 @@
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
       ],
       "Unlock with biometrics": [
-        "Desbloqueja amb dades biomètriques"
+        "Desbloquegeu amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -3062,7 +3064,7 @@
         "Targetes"
       ],
       "Catch-All": [
-        "Catch-all"
+        "Capturar-ho tot"
       ],
       "Checkbox": [
         "Casella de selecció"

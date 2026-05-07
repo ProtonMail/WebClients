@@ -1402,6 +1402,9 @@
       ],
       "This domain is already managed by your organization": [
         "Bu etki alanı zaten kuruluşunuz tarafından yönetiliyor"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Masaüstü kilit açma kontrolü zaten devam ediyor."
       ]
     },
     "Error message": {
@@ -2098,8 +2101,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
