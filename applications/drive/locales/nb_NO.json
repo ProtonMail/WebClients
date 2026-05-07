@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
       ],
-      "Cancel upload": [
-        "Avbryt opplasting"
-      ],
       "Cancel uploads": [
         "Avbryt opplastinger"
       ],
@@ -407,7 +404,7 @@
       "Download for Mac": [
         "Last ned for Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Last ned for macOS"
       ],
       "Download for Windows": [
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
-      "Pause all": [
-        "Sett alle på pause"
-      ],
-      "Pause download": [
-        "Sett nedlastingen på pause"
-      ],
-      "Pause upload": [
-        "Sett opplastingen på pause"
-      ],
       "Pay": [
         "Betal"
       ],
@@ -833,9 +821,6 @@
       "Remove from favorites": [
         "Fjern fra favoritter"
       ],
-      "Remove from this list": [
-        "Fjern fra denne listen"
-      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
@@ -884,15 +869,6 @@
       "Reset to default": [
         "Tilbakestill til standard"
       ],
-      "Restart all": [
-        "Start alle på nytt"
-      ],
-      "Restart download": [
-        "Start nedlasting på nytt"
-      ],
-      "Restart upload": [
-        "Start opplasting på nytt"
-      ],
       "Restore": [
         "Gjenopprett"
       ],
@@ -904,15 +880,6 @@
       ],
       "Restore version": [
         "Gjenopprett versjon"
-      ],
-      "Resume all": [
-        "Gjenoppta alle"
-      ],
-      "Resume download": [
-        "Gjenoppta nedlasting"
-      ],
-      "Resume upload": [
-        "Gjenoppta opplasting"
       ],
       "Retry": [
         "Prøv på nytt"
@@ -4870,18 +4837,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } laster ned",
-        "${ activeDownloadsCount } laster ned"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } laster ned (${ downloadProgress }%)",
-        "${ activeDownloadsCount } laster ned (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } laster opp (${ uploadProgress }%)",
-        "${ activeUploadsCount } laster opp (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } e-postadresse",
         "${ addressCount } e-postadresser"
@@ -4916,10 +4871,6 @@
         "${ calendarsToBeMergedCount } sammenslått kalender",
         "${ calendarsToBeMergedCount } sammenslåtte kalendere"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } avbrutt",
-        "${ canceledCount } avbrutt"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } av ${ items.length } overføringer fullført"
       ],
@@ -4945,18 +4896,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } fullført",
-        "${ doneCount } fullført"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } lastet ned",
-        "${ doneDownloadsCount } lastet ned"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } lastet opp",
-        "${ doneUploadsCount } lastet opp"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } på App Store"
       ],
@@ -4965,10 +4904,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } har invitert deg til å bli med i ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } mislyktes",
-        "${ errorCount } mislyktes"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
@@ -5010,10 +4945,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } satt på pause",
-        "${ pausedCount } satt på pause"
-      ],
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elementer"
@@ -5043,10 +4974,6 @@
         "${ providerFoldersNumLocalized } etikett funnet i Gmail",
         "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skanning mislyktes",
-        "${ scanErrorCount } skanninger mislyktes"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
@@ -5066,13 +4993,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } hoppet over",
-        "${ skippedCount } hoppet over"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } oppføringer"
@@ -5365,12 +5285,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Samarbeid effektivt samtidig som du beskytter klient- og forretningsdataene dine mot datainnbrudd, løsepengevirus og overvåking."
       ],
-      "Computed hash does not match XAttr": [
-        "Beregnet hash stemmer ikke overens med XAttr"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
@@ -5417,9 +5331,6 @@
       ],
       "Create links and share your files with others.": [
         "Opprett koblinger og del filene dine med andre."
-      ],
-      "Creating": [
-        "Oppretter"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
@@ -5603,9 +5514,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksporter diagnoselogger for teknisk støtte og feilsøking"
       ],
-      "Failed": [
-        "Mislyktes"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5623,9 +5531,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Filer og mapper som andre har delt med deg, vises her."
-      ],
-      "Finalizing": [
-        "Fullfører"
       ],
       "finance": [
         "finans"
@@ -5774,9 +5679,6 @@
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
-      ],
-      "Initializing": [
-        "Initialiserer"
       ],
       "Integrity issues found": [
         "Integritetsproblemer funnet"
@@ -5953,9 +5855,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
-      "Network issue": [
-        "Nettverksproblem"
-      ],
       "New": [
         "Ny"
       ],
@@ -5994,9 +5893,6 @@
       ],
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Ikke alle filer ble overført. Prøv å laste opp eller laste ned filene på nytt."
       ],
       "Not connected": [
         "Ikke tilkoblet"
@@ -6191,9 +6087,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
       ],
-      "Queued": [
-        "I kø"
-      ],
       "Ready to add some photos?": [
         "Klar til å legge til noen bilder?"
       ],
@@ -6238,9 +6131,6 @@
       ],
       "Saving...": [
         "Lagrer..."
-      ],
-      "Scan issue": [
-        "Skanningsproblem"
       ],
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
@@ -6332,20 +6222,8 @@
       "Signature check will be ignored": [
         "Signaturkontrollen ignoreres"
       ],
-      "Signature issue": [
-        "Signaturproblem"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
-      ],
-      "Skipped": [
-        "Hoppet over"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Noen filer kunne ikke lastes ned. Prøv å laste ned filene på nytt."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Noen filer kunne ikke lastes opp. Prøv å laste opp filene på nytt."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
@@ -6361,9 +6239,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
-      ],
-      "Something went wrong, please try again later.": [
-        "Noe gikk galt, prøv igjen senere."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
@@ -12285,18 +12160,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } med gratis opplastinger."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } mislykket nedlasting",
-        "${ numberOfFailedTransfer.total } mislykkede nedlastinger"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } mislykket overføring",
-        "${ numberOfFailedTransfer.total } mislykkede overføringer"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } mislykket opplasting",
-        "${ numberOfFailedTransfer.total } mislykkede opplastinger"
-      ],
       "Account recovery": [
         "Kontogjenoppretting"
       ],
@@ -12311,9 +12174,6 @@
       ],
       "Actions": [
         "Handlinger"
-      ],
-      "Active": [
-        "Aktiv"
       ],
       "Add a custom logo": [
         "Legg til en tilpasset logo"
@@ -12348,9 +12208,6 @@
       ],
       "Albums": [
         "Album"
-      ],
-      "All": [
-        "Alle"
       ],
       "All settings": [
         "Alle innstillinger"
@@ -12433,9 +12290,6 @@
       ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
-      ],
-      "Completed": [
-        "Fullført"
       ],
       "Computers": [
         "Datamaskiner"
@@ -12670,9 +12524,6 @@
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
-      ],
-      "Failed": [
-        "Mislyktes"
       ],
       "File details": [
         "Fildetaljer"
@@ -13376,9 +13227,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meldings- og filnavn lagres med nulltilgangskryptering når det er inkludert i e-posten"
-      ],
-      "New!": [
-        "Ny!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke all informasjon som er oppført her ble eksponert for alle brukere."

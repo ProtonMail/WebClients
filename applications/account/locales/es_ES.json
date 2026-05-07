@@ -466,9 +466,6 @@
       "Delete record": [
         "Eliminar registro"
       ],
-      "Delete token ${ token.Account }": [
-        "Eliminar token ${ token.Account }"
-      ],
       "Delete user": [
         "Eliminar usuario"
       ],
@@ -2606,12 +2603,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "Add a custom domain": [
-        "Añadir un dominio personalizado"
-      ],
-      "App installed": [
-        "Aplicación instalada"
-      ],
       "Authenticate": [
         "Autentificar"
       ],
@@ -2639,9 +2630,6 @@
       "Domain connected": [
         "Dominio conectado"
       ],
-      "Domain ownership verified": [
-        "Se ha verificado la propiedad del dominio"
-      ],
       "Estimated size": [
         "Tamaño estimado"
       ],
@@ -2666,14 +2654,8 @@
       "Install migration app": [
         "Instalar aplicación de migración"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Consulta qué se puede migrar. Más información"
-      ],
       "Mail": [
         "Correo"
-      ],
-      "Migrate": [
-        "Migrar"
       ],
       "Migrate from Google Workspace": [
         "Migra desde Google Workspace"
@@ -2691,17 +2673,11 @@
       "Migration status": [
         "Estado de la migración"
       ],
-      "Not started": [
-        "No iniciado"
-      ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
       ],
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente espacio de almacenamiento disponible"
-      ],
-      "Organization settings": [
-        "Ajustes de la organización"
       ],
       "Required": [
         "Requerido"
@@ -2711,9 +2687,6 @@
       ],
       "Select at least one user to start a migration": [
         "Selecciona al menos un usuario para iniciar una migración"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Selecciona qué quieres migrar. Esto se aplicará a todos los usuarios, tanto actuales como futuros. La migración comenzará una vez creadas las cuentas de usuario."
       ],
       "Set up": [
         "Configurar"
@@ -2739,9 +2712,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar los datos de tu organización, necesitas instalar la aplicación ${ BRAND_NAME } Migration Assistant desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar tus datos. Después de instalarla, vuelve aquí para continuar."
       ],
-      "Transfer errors": [
-        "Errores de transferencia"
-      ],
       "User": [
         "Usuario"
       ],
@@ -2753,9 +2723,6 @@
       ],
       "Verify your domain": [
         "Verifica tu dominio"
-      ],
-      "Verify your domain ownership": [
-        "Verifica la propiedad de tu dominio"
       ],
       "Verify your domain to start a migration": [
         "Verifica tu dominio para iniciar una migración"
@@ -9249,9 +9216,6 @@
       ],
       "Change your password": [
         "Cambia tu contraseña"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Verifica el estado de las importaciones y de los reenvíos."
       ],
       "Choose a plan that works best for you.": [
         "Elige el plan que mejor se adapte a ti."

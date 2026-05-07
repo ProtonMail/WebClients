@@ -150,9 +150,6 @@
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
       ],
-      "Cancel upload": [
-        "Cancel·lar càrrega"
-      ],
       "Cancel uploads": [
         "Cancel·leu les càrregues"
       ],
@@ -407,8 +404,8 @@
       "Download for Mac": [
         "Descarregueu-ho per Mac"
       ],
-      "Download for MacOS": [
-        "Descarregueu-ho per MacOS"
+      "Download for macOS": [
+        "Descarregueu per macOS"
       ],
       "Download for Windows": [
         "Descarregueu-lo per Windows"
@@ -752,15 +749,6 @@
       "Open navigation": [
         "Obre la navegació"
       ],
-      "Pause all": [
-        "Interromp-ho tot"
-      ],
-      "Pause download": [
-        "Pausar la descarregada"
-      ],
-      "Pause upload": [
-        "Atura la càrrega"
-      ],
       "Pay": [
         "Pagar"
       ],
@@ -790,6 +778,9 @@
       ],
       "Re-sign": [
         "Tornar a signar"
+      ],
+      "Rebuild index": [
+        "Reconstruïu l'índex"
       ],
       "Reconnect": [
         "Reconnecta"
@@ -832,9 +823,6 @@
       ],
       "Remove from favorites": [
         "Suprimeix dels favorits"
-      ],
-      "Remove from this list": [
-        "Esborra de la llista"
       ],
       "Remove gift code": [
         "Esborra el codi de regal"
@@ -884,15 +872,6 @@
       "Reset to default": [
         "Restableix els valors per defecte"
       ],
-      "Restart all": [
-        "Reinicia-ho tot"
-      ],
-      "Restart download": [
-        "Reiniciar la descàrrega"
-      ],
-      "Restart upload": [
-        "Reprèn la càrrega"
-      ],
       "Restore": [
         "Restaura"
       ],
@@ -904,15 +883,6 @@
       ],
       "Restore version": [
         "Restaura la versió"
-      ],
-      "Resume all": [
-        "Reprèn-ho tot"
-      ],
-      "Resume download": [
-        "Reprendre la descarregada"
-      ],
-      "Resume upload": [
-        "Reprèn la càrrega"
       ],
       "Retry": [
         "Reintenta"
@@ -955,6 +925,9 @@
       ],
       "Search drive": [
         "Cerca a drive"
+      ],
+      "Search is unavailable": [
+        "La cerca no està disponible"
       ],
       "See how": [
         "Veieu com"
@@ -3549,6 +3522,9 @@
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
+      "Folder not found": [
+        "No s'ha trobat la carpeta"
+      ],
       "Forward address is required": [
         "L'adreça de reenviament és obligatòria."
       ],
@@ -4870,18 +4846,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "S'està descarregant ${ activeDownloadsCount }",
-        "S'estan descarregant ${ activeDownloadsCount }"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "S'està descarregant ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "S'estan descarregant ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "S'està carregant ${ activeUploadsCount } (${ uploadProgress }%)",
-        "S'estan carregant ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
@@ -4916,10 +4880,6 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } cancel·lat",
-        "${ canceledCount } cancel·lats"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "S'han completat ${ completedItems.length } de ${ items.length } transferències"
       ],
@@ -4945,17 +4905,8 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Els fitxers de ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta baixada. Podeu descarregar els altres fitxers fent clic a \"Continua la descàrrega\"."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } finalitzat",
-        "${ doneCount } finalitzats"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } descarregat",
-        "${ doneDownloadsCount } descarregats"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } pujat",
-        "${ doneUploadsCount } pujats"
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per a restaurar la cerca."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } a l'App Store"
@@ -4965,10 +4916,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } us ha convidat a unir-vos a ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } error",
-        "${ errorCount } errors"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
@@ -5010,10 +4957,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } en pausa",
-        "${ pausedCount } en pausa"
-      ],
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elements"
@@ -5043,10 +4986,6 @@
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } escaneig ha fallat",
-        "${ scanErrorCount } escanejos han fallat"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
@@ -5066,13 +5005,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
-      ],
-      "${ skippedCount } skipped": [
-        "S'ha omès ${ skippedCount }",
-        "S'han omès ${ skippedCount }"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } entrades"
@@ -5365,12 +5297,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Col·laboreu de manera eficient mentre protegiu les dades dels vostres clients i de l'empresa contra infraccions, programari de rescat i vigilància."
       ],
-      "Computed hash does not match XAttr": [
-        "L'empremta electrònica calculada no coincideix amb XAttr"
-      ],
-      "Conflict": [
-        "Conflicte"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
       ],
@@ -5391,6 +5317,9 @@
       ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
+      ],
+      "Could not scan file for malware": [
+        "No s'ha pogut escanejar el fitxer per detectar programari maliciós"
       ],
       "Country code": [
         "Codi de país"
@@ -5417,9 +5346,6 @@
       ],
       "Create links and share your files with others.": [
         "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
-      ],
-      "Creating": [
-        "S'està creant"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
@@ -5603,14 +5529,17 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exporta els registres de diagnòstic per a suport tècnic i resolució de problemes"
       ],
-      "Failed": [
-        "Error"
-      ],
       "Feb": [
         "febr."
       ],
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
+      ],
+      "File could not be scanned": [
+        "No s'ha pogut analitzar el fitxer."
+      ],
+      "File flagged as potentially malicious": [
+        "Fitxer marcat com a potencialment maliciós"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "El fitxer no està signat. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
@@ -5623,9 +5552,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Els fitxers i les carpetes que altres persones han compartit amb vós apareixeran aquí"
-      ],
-      "Finalizing": [
-        "Finalitzant"
       ],
       "finance": [
         "finances"
@@ -5763,6 +5689,9 @@
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
       ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per a recuperar-lo."
+      ],
       "Indexing in progress": [
         "Indexació en curs"
       ],
@@ -5774,9 +5703,6 @@
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
-      ],
-      "Initializing": [
-        "Inicialitzant"
       ],
       "Integrity issues found": [
         "Hi ha hagut problemes d'integritat"
@@ -5953,9 +5879,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
-      "Network issue": [
-        "Problema de xarxa"
-      ],
       "New": [
         "Nova"
       ],
@@ -5995,11 +5918,11 @@
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "No s'han transferit tots els fitxers. Intenteu tornar a carregar-los o descarregar-los."
-      ],
       "Not connected": [
         "Sense connexió"
+      ],
+      "Not enough storage space": [
+        "No hi ha prou espai d'emmagatzematge"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: les dades encara poden estar disponibles localment en dispositius on hàgiu instal·lat ${ DRIVE_APP_NAME }."
@@ -6191,9 +6114,6 @@
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
-      "Queued": [
-        "En cua"
-      ],
       "Ready to add some photos?": [
         "Preparat per a afegir algunes fotos?"
       ],
@@ -6239,9 +6159,6 @@
       "Saving...": [
         "Desant..."
       ],
-      "Scan issue": [
-        "Hi ha hagut un problema d'escaneig."
-      ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
       ],
@@ -6251,11 +6168,29 @@
       "Search cannot be enabled in this browser": [
         "La cerca no es pot activar en aquest navegador"
       ],
+      "Search data is corrupted": [
+        "Les dades de cerca estan malmeses"
+      ],
       "Search Enabled": [
         "Cerca activa"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "S'ha habilitat la cerca. Ara podeu tancar aquest diàleg i cercar fitxers i carpetes."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "S'ha produït un error intern en la cerca. Reconstruïu l'índex per a recuperar-lo."
+      ],
+      "Search engine error": [
+        "Error del motor de cerca"
+      ],
+      "Search error": [
+        "Error de cerca"
+      ],
+      "Search is in an invalid state": [
+        "La cerca es troba en un estat no vàlid"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La cerca ja està a punt. S'han indexat els vostres fitxers."
       ],
       "Search module is not available.": [
         "El mòdul de cerca no està disponible."
@@ -6332,20 +6267,8 @@
       "Signature check will be ignored": [
         "S'ignorarà la comprovació de la signatura"
       ],
-      "Signature issue": [
-        "Problema de signatura"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
-      ],
-      "Skipped": [
-        "Omès"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "No s'han pogut descarregar alguns fitxers. Intenteu tornar a descarregar-los."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "No s'han pogut carregar alguns fitxers. Intenteu tornar a carregar-los."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
@@ -6361,9 +6284,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns llocs web i serveis d'estríming bloquegen els continguts per regió. Una VPN us permet evitar aquestes restriccions i accedir a internet lliurement."
-      ],
-      "Something went wrong, please try again later.": [
-        "Alguna cosa ha anat malament. Intenteu-ho de nou més tard."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -6434,6 +6354,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "El motor de cerca ha detectat un error intern. Reconstruïu l'índex per a recuperar-lo."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
@@ -6927,6 +6850,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i, després, reconstruïu l'índex."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "El vostre navegador actual no permet la descàrrega de múltiples fitxers o molt grans. Baixeu l'aplicació d'escriptori per poder-ho fer."
@@ -12192,18 +12118,6 @@
       "${ freeUploadLength } of free uploads.": [
         "Teniu ${ freeUploadLength } de càrregues gratuïtes."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "Ha fallat ${ numberOfFailedTransfer.total } descàrrega",
-        "Han fallat ${ numberOfFailedTransfer.total } descàrregues"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transferència no completada",
-        "${ numberOfFailedTransfer.total } transferències no completades"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "Ha fallat ${ numberOfFailedTransfer.total } càrrega",
-        "Han fallat ${ numberOfFailedTransfer.total } càrregues"
-      ],
       "Account recovery": [
         "Recuperació de compte"
       ],
@@ -12218,9 +12132,6 @@
       ],
       "Actions": [
         "Accions"
-      ],
-      "Active": [
-        "Actiu"
       ],
       "Add a custom logo": [
         "Afegeix un logotip personalitzat"
@@ -12255,9 +12166,6 @@
       ],
       "Albums": [
         "Àlbums"
-      ],
-      "All": [
-        "Tot"
       ],
       "All settings": [
         "Totes les preferències"
@@ -12340,9 +12248,6 @@
       ],
       "Collaborate on documents": [
         "Col·laboració en documents"
-      ],
-      "Completed": [
-        "Completat"
       ],
       "Computers": [
         "Ordinadors"
@@ -12577,9 +12482,6 @@
       ],
       "Exporting contacts": [
         "Exportant contactes"
-      ],
-      "Failed": [
-        "Error"
       ],
       "File details": [
         "Detalls del fitxer"
@@ -13283,9 +13185,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El missatge i el nom del fitxer s'emmagatzemen amb un xifratge d'accés zero quan s'inclouen al correu electrònic"
-      ],
-      "New!": [
-        "Nou!"
       ],
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."

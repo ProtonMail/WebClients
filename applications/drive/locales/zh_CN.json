@@ -147,9 +147,6 @@
       "Cancel trial and pay": [
         "取消试用并支付"
       ],
-      "Cancel upload": [
-        "取消上传"
-      ],
       "Cancel uploads": [
         "取消上传"
       ],
@@ -402,8 +399,8 @@
       "Download for Mac": [
         "下载 Mac 版"
       ],
-      "Download for MacOS": [
-        "下载 MacOS 版"
+      "Download for macOS": [
+        "下载 macOS 版"
       ],
       "Download for Windows": [
         "下载 Windows 版"
@@ -747,15 +744,6 @@
       "Open navigation": [
         "打开导航栏"
       ],
-      "Pause all": [
-        "全部暂停"
-      ],
-      "Pause download": [
-        "暂停下载"
-      ],
-      "Pause upload": [
-        "暂停上传"
-      ],
       "Pay": [
         "支付"
       ],
@@ -828,9 +816,6 @@
       "Remove from favorites": [
         "从收藏夹中删除"
       ],
-      "Remove from this list": [
-        "从此列表中移除"
-      ],
       "Remove gift code": [
         "移除礼品码"
       ],
@@ -879,15 +864,6 @@
       "Reset to default": [
         "重置所有选项"
       ],
-      "Restart all": [
-        "全部重新开始"
-      ],
-      "Restart download": [
-        "重新开始下载"
-      ],
-      "Restart upload": [
-        "重新开始上传"
-      ],
       "Restore": [
         "恢复"
       ],
@@ -899,15 +875,6 @@
       ],
       "Restore version": [
         "恢复版本"
-      ],
-      "Resume all": [
-        "全部恢复"
-      ],
-      "Resume download": [
-        "恢复下载"
-      ],
-      "Resume upload": [
-        "恢复上传"
       ],
       "Retry": [
         "重试"
@@ -4820,15 +4787,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } 项正在下载"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } 项正在下载 (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } 项正在上传 (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
@@ -4859,9 +4817,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } 项已取消"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } / ${ items.length } 个传输已完成"
       ],
@@ -4883,15 +4838,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 文件无法直接下载，且不会包含在此次下载中。您可以点击“继续下载”来下载其他文件。"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } 项已完成"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } 项已下载"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } 项已上传"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store 上的${ DRIVE_APP_NAME }"
       ],
@@ -4900,9 +4846,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } 邀请您加入 ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } 项传输失败"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整图片"
@@ -4940,9 +4883,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。您的 ${ planTitle } 订阅续订价格和日期保持不变。"
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } 项已暂停"
-      ],
       "${ photoCount } item": [
         "${ photoCount } 项"
       ],
@@ -4967,9 +4907,6 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } 扫描失败"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
@@ -4984,12 +4921,6 @@
       ],
       "${ selectedFoldersCountLocalized } label selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } 已跳过"
-      ],
-      "${ speed }/s": [
-        "${ speed }/秒"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } 条目"
@@ -5276,12 +5207,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "高效协作，同时保护您的客户和业务数据免受泄露、勒索软件和监控的侵害。"
       ],
-      "Computed hash does not match XAttr": [
-        "计算出的哈希值与 XAttr 不匹配"
-      ],
-      "Conflict": [
-        "冲突"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
@@ -5326,9 +5251,6 @@
       ],
       "Create links and share your files with others.": [
         "创建共享链接即可将您的文件与他人分享。"
-      ],
-      "Creating": [
-        "正在创建"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
@@ -5510,9 +5432,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "导出诊断日志以提供技术支持和故障排除"
       ],
-      "Failed": [
-        "失败"
-      ],
       "Feb": [
         "二月"
       ],
@@ -5530,9 +5449,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "其他人与您共享的文件和文件夹将显示在此处"
-      ],
-      "Finalizing": [
-        "即将完成"
       ],
       "finance": [
         "金融"
@@ -5680,9 +5596,6 @@
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
-      ],
-      "Initializing": [
-        "正在初始化"
       ],
       "Integrity issues found": [
         "发现完整性问题"
@@ -5855,9 +5768,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
-      "Network issue": [
-        "网络问题"
-      ],
       "New": [
         "新"
       ],
@@ -5896,9 +5806,6 @@
       ],
       "Not a valid URL": [
         "URL 无效"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "并非所有文件都已传输。请尝试重新上传或下载文件。"
       ],
       "Not connected": [
         "未连接"
@@ -6092,9 +5999,6 @@
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
       ],
-      "Queued": [
-        "等待中"
-      ],
       "Ready to add some photos?": [
         "准备好添加一些照片了吗？"
       ],
@@ -6139,9 +6043,6 @@
       ],
       "Saving...": [
         "保存中..."
-      ],
-      "Scan issue": [
-        "扫描问题"
       ],
       "Scan the QR code with your mobile device": [
         "请使用移动设备扫描二维码"
@@ -6233,20 +6134,8 @@
       "Signature check will be ignored": [
         "将忽略签名校验"
       ],
-      "Signature issue": [
-        "签名问题"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
-      ],
-      "Skipped": [
-        "已跳过"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "某些文件下载失败，请重试。"
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "某些文件上传失败，请重试。"
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "某些国家/地区会屏蔽或限制访问某些网站。Proton VPN 能够帮助您突破网络审查，同时保护您的网络活动和身份隐私。"
@@ -6262,9 +6151,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "某些网站和流媒体服务会根据您所在的地区屏蔽内容。Proton VPN 可帮助您绕过这些地域限制，让您随时随地自由访问互联网。"
-      ],
-      "Something went wrong, please try again later.": [
-        "出错了，请稍后再试。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
@@ -11894,15 +11780,6 @@
       "${ freeUploadLength } of free uploads.": [
         "免费上传 ${ freeUploadLength } 个文件"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } 个失败的下载"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } 传输失败"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } 个失败的上传"
-      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -11917,9 +11794,6 @@
       ],
       "Actions": [
         "操作"
-      ],
-      "Active": [
-        "进行中"
       ],
       "Add a custom logo": [
         "自定义徽标"
@@ -11953,9 +11827,6 @@
       ],
       "Albums": [
         "相册"
-      ],
-      "All": [
-        "全部"
       ],
       "All settings": [
         "所有设置"
@@ -12037,9 +11908,6 @@
       ],
       "Collaborate on documents": [
         "协作处理文件"
-      ],
-      "Completed": [
-        "完成"
       ],
       "Computers": [
         "电脑"
@@ -12271,9 +12139,6 @@
       ],
       "Exporting contacts": [
         "导出联系人"
-      ],
-      "Failed": [
-        "失败"
       ],
       "File details": [
         "文件详细信息"
@@ -12974,9 +12839,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "消息和文件名包含在电子邮件中时，将以零访问加密存储"
-      ],
-      "New!": [
-        "新！"
       ],
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"

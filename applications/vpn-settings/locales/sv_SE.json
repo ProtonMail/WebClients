@@ -323,8 +323,8 @@
       "Delete policy": [
         "Ta bort policy"
       ],
-      "Delete token ${ token.Account }": [
-        "Ta bort token ${ token.Account }"
+      "Delete token ${ tokens[0].Account }": [
+        "Ta bort token ${ tokens[0].Account }"
       ],
       "Delete user": [
         "Ta bort användare"
@@ -550,6 +550,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Gå till domänleverantör"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -814,6 +817,9 @@
       ],
       "Remove gift code": [
         "Ta bort presentkod"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "Tog bort ${ memberName } som gruppägare"
       ],
       "Rename": [
         "Ändra namn"
@@ -1953,8 +1959,14 @@
       ]
     },
     "BOSS": {
-      "App installed": [
-        "App installerad"
+      "Account connected": [
+        "Konto anslutet"
+      ],
+      "Activated": [
+        "Aktiverat"
+      ],
+      "All": [
+        "Alla"
       ],
       "Authenticate": [
         "Autentisera"
@@ -1971,14 +1983,17 @@
       "Configure migration": [
         "Konfigurera migrering"
       ],
+      "Configure your domain": [
+        "Konfigurera din domän"
+      ],
       "Contacts": [
         "Kontakter"
       ],
+      "Domain added": [
+        "Domän tillagd"
+      ],
       "Domain connected": [
         "Domän ansluten"
-      ],
-      "Domain ownership verified": [
-        "Domänens äganderätt verifierad"
       ],
       "Estimated size": [
         "Beräknad storlek"
@@ -2001,14 +2016,8 @@
       "Install migration app": [
         "Installera migreringsappen"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Lär dig mer om vad som kan migreras. Lär dig mer"
-      ],
       "Mail": [
         "E-post"
-      ],
-      "Migrate": [
-        "Migrera"
       ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
@@ -2026,8 +2035,17 @@
       "Migration status": [
         "Migreringsstatus"
       ],
-      "Not started": [
-        "Inte startad"
+      "More details": [
+        "Mer detaljer"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
+      ],
+      "Not activated": [
+        "Inte aktiverat"
+      ],
+      "Not confirmed": [
+        "Inte bekräftat"
       ],
       "Organization does not have enough seats available": [
         "Organisation har inte tillräckligt med licenser tillgängligt"
@@ -2035,8 +2053,8 @@
       "Organization does not have enough storage available": [
         "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
-      "Organization settings": [
-        "Organisationsinställningar"
+      "Refresh": [
+        "Uppdatera"
       ],
       "Required": [
         "Obligatoriskt"
@@ -2047,8 +2065,8 @@
       "Select at least one user to start a migration": [
         "Välj minst en användare för att starta en migrering"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Välj vad du vill migrera, detta kommer tillämpas på alla användare oavsett om de skapas nu eller senare. Migrering kommer starta efter användarkonton är skapade."
+      "Select users to migrate": [
+        "Välj användare att migrera"
       ],
       "Set up": [
         "Ställ in"
@@ -2059,17 +2077,26 @@
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
       ],
+      "Size": [
+        "Storlek"
+      ],
+      "SPF records": [
+        "SPF-poster"
+      ],
+      "Start migrating": [
+        "Starta migrering"
+      ],
       "Status": [
         "Status"
-      ],
-      "Transfer errors": [
-        "Överföringsfel"
       ],
       "User": [
         "Användare"
       ],
       "Users migrated": [
         "Användare migrerade"
+      ],
+      "Verified": [
+        "Verified"
       ],
       "Verify installation": [
         "Verifiera installation"
@@ -2083,11 +2110,17 @@
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
       ],
+      "We're still checking the MX records with your domain provider.": [
+        "Vi kontrollerar fortfarande MX-posterna med din domänleverantör."
+      ],
       "What are you migrating?": [
         "Vad migrerar du?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
+      ],
+      "You're all set!": [
+        "Du är klar!"
       ]
     },
     "Browser": {
@@ -3537,6 +3570,9 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } håller din företagsdata säker och låter dig skicka krypterad e-post till vem som helst."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lägg till mappar och filer i ${ DRIVE_APP_NAME } och bjud in gruppmedlemmar att visa eller redigera."
@@ -9627,6 +9663,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Måste ha minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
+      "MX records": [
+        "MX-poster"
+      ],
       "Name": [
         "Namn"
       ],
@@ -9758,6 +9797,9 @@
       ],
       "Previous password": [
         "Föregående lösenord"
+      ],
+      "Priority": [
+        "Prioritet"
       ],
       "Priority support": [
         "Prioriterad support"
@@ -10149,6 +10191,9 @@
       ],
       "data recovery option": [
         "alternativ för dataåterställning"
+      ],
+      "Detailed instructions": [
+        "Detaljerade instruktioner"
       ],
       "Details": [
         "Detaljer"
@@ -17289,6 +17334,9 @@
       "User is a group": [
         "Användare är en grupp"
       ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
       ]
@@ -17518,6 +17566,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grupp)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Lägg till delegerade roller till en användare för att bevilja ge dem de specifika behörigheter de behöver, vilket håller fullständig administratörsbehörighet separat och din miljö säker."
       ],
@@ -17855,6 +17909,9 @@
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna återställa ditt konto."
+      ],
+      "By removing this phone number, you will no longer be able to recover your account.": [
+        "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
       ],
       "Please add at least one recipient.": [
         "Lägg till minst en mottagare."

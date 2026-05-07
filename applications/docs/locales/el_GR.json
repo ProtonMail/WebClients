@@ -90,9 +90,6 @@
       "Apply": [
         "Εφαρμογή"
       ],
-      "Ask me next time": [
-        "Να ερωτηθώ την επόμενη φορά"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
         "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
@@ -677,9 +674,6 @@
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
-      ],
-      "Save preferences": [
-        "Αποθήκευση προτιμήσεων"
       ],
       "Search": [
         "Αναζήτηση"
@@ -4373,9 +4367,6 @@
       "Continue": [
         "Συνέχεια"
       ],
-      "Converting document...": [
-        "Μετατροπή εγγράφου..."
-      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
@@ -4424,9 +4415,6 @@
       ],
       "Creating link to folder": [
         "Δημιουργία συνδέσμου προς το φάκελο"
-      ],
-      "Creating new document...": [
-        "Δημιουργία νέου εγγράφου..."
       ],
       "Current plan": [
         "Τρέχον πλάνο"
@@ -4527,12 +4515,6 @@
       "Enter your own password (as trusted contact).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Σφάλμα κατά τη μετατροπή εγγράφου: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Σφάλμα κατά τη φόρτωση του εγγράφου: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Σφάλμα Συγχρονισμού"
       ],
@@ -4595,12 +4577,6 @@
       ],
       "Geoblocking": [
         "Γεωγραφικός αποκλεισμός"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Λάβετε ενημερώσεις μέσω ηλεκτρονικού ταχυδρομείου για σχόλια και προτάσεις που προστίθενται στα έγγραφά σας."
-      ],
-      "Get Notified About Comments": [
-        "Λάβετε Ειδοποιήσεις για Σχόλια"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
@@ -4735,17 +4711,11 @@
       "Loading link": [
         "Φόρτωση συνδέσμου"
       ],
-      "Loading...": [
-        "Φόρτωση..."
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Φαίνεται ότι είστε εκτός σύνδεσης. Δεν είναι δυνατή η επεξεργασία του εγγράφου ενώ είστε εκτός σύνδεσης. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
-      ],
-      "Making a copy...": [
-        "Δημιουργείται ένα αντίγραφο..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρας",
@@ -4777,9 +4747,6 @@
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Δεν παρέχεται έγγραφο στη διεύθυνση URL. Επιστρέψτε στο ${ DRIVE_APP_NAME } και επιλέξτε ένα έγγραφο."
       ],
       "No email address": [
         "Δεν υπάρχει διεύθυνση E-mail"
@@ -5061,9 +5028,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Η διεύθυνση URL που εισαγάγατε φαίνεται να έχει αντιγραφεί εσφαλμένα από το Slack. Κατά την αντιγραφή μεγάλων συνδέσμων από το Slack, κάντε δεξί κλικ στον σύνδεσμο και, στη συνέχεια, επιλέξτε \"Αντιγραφή συνδέσμου\" αντί να αντιγράψετε απευθείας το περικομμένο κείμενο του URL."
       ],
       "There are no documents in the trash.": [
         "Δεν υπάρχουν έγγραφα στον κάδο απορριμμάτων."
@@ -5682,9 +5646,6 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
-      "Enable email notifications": [
-        "Ενεργοποίηση ειδοποιήσεων email"
-      ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
@@ -5732,9 +5693,6 @@
       ],
       "Include application logs in bug report": [
         "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
-      ],
-      "Include document name in notification": [
-        "Συμπερίληψη ονόματος εγγράφου στην ειδοποίηση"
       ],
       "Include message and file name in invite email": [
         "Συμπερίληψη μηνύματος και ονόματος αρχείου σε μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης"
@@ -8627,9 +8585,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Δημιουργία νέου υπολογιστικού φύλλου..."
-      ],
       "Detect automatically": [
         "Αυτόματος εντοπισμός"
       ],

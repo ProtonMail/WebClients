@@ -922,6 +922,10 @@
       ]
     },
     "collider_2025: Action": {
+      "Add ${ selectedCount } sheet": [
+        "Agregar ${ selectedCount } hoja",
+        "Agregar ${ selectedCount } hojas"
+      ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Agregar archivo a ${ DRIVE_APP_NAME }"
       ],
@@ -996,6 +1000,9 @@
       ],
       "Report an issue": [
         "Notificar un problema"
+      ],
+      "Select all": [
+        "Seleccionar todo"
       ],
       "Send message": [
         "Enviar mensaje"
@@ -1463,6 +1470,9 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Elegir hoja para agregar"
+      ],
       "Tell us more": [
         "Cuéntenos más"
       ]
@@ -1485,6 +1495,9 @@
       ],
       " talk to your admin.": [
         " hable con su administrador."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "\"${ fileName }\" tiene múltiples hojas. Seleccione las hojas para incluir en el contexto de la conversación."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado"

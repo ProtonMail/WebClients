@@ -90,9 +90,6 @@
       "Apply": [
         "Aplicare"
       ],
-      "Ask me next time": [
-        "Întreabă-mă data viitoare"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Contacte permise per grup de contacte: ${ maxContacts }",
         "Contacte permise per grup de contacte: ${ maxContacts }",
@@ -680,9 +677,6 @@
       ],
       "Save changes": [
         "Salvare modificări"
-      ],
-      "Save preferences": [
-        "Salvare preferințe"
       ],
       "Search": [
         "Căutare"
@@ -4436,9 +4430,6 @@
       "Continue": [
         "Continuare"
       ],
-      "Converting document...": [
-        "Se convertește documentul..."
-      ],
       "Copied to clipboard": [
         "Copiat în memorie."
       ],
@@ -4488,9 +4479,6 @@
       ],
       "Creating link to folder": [
         "Se creează legătura către folder"
-      ],
-      "Creating new document...": [
-        "Se creează noul document..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4591,12 +4579,6 @@
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Eroare la convertirea documentului: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Eroare la încărcarea documentului: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Eroare la sincronizare."
       ],
@@ -4659,12 +4641,6 @@
       ],
       "Geoblocking": [
         "Blocare geografică"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
-      ],
-      "Get Notified About Comments": [
-        "Primire notificări despre comentarii"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
@@ -4800,17 +4776,11 @@
       "Loading link": [
         "Se încarcă legătura."
       ],
-      "Loading...": [
-        "Se încarcă…"
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Se pare ca nu aveți conexiune. Documentul nu poate fi editat fără a avea conexiune. Verificați starea de conectare a dispozitivului la internet."
       ],
       "Low Priority": [
         "Prioritate scăzută"
-      ],
-      "Making a copy...": [
-        "Se creează o copie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
@@ -4843,9 +4813,6 @@
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Nu s-a furnizat un document la URL. Reveniți în ${ DRIVE_APP_NAME } și selectați un document."
       ],
       "No email address": [
         "Lipsă adresă de e-mail"
@@ -5129,9 +5096,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Se pare că adresa URL pe care ați introdus-o a fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul URL trunchiat."
       ],
       "There are no documents in the trash.": [
         "Nu există documente în gunoi."
@@ -5756,9 +5720,6 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
-      "Enable email notifications": [
-        "Activare notificări pe e-mail"
-      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
@@ -5806,9 +5767,6 @@
       ],
       "Include application logs in bug report": [
         "Includere jurnale aplicație în raportul de eroare"
-      ],
-      "Include document name in notification": [
-        "Includere nume document în notificări"
       ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
@@ -8876,9 +8834,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Se creează un registru de lucru nou..."
-      ],
       "Detect automatically": [
         "Detectare automată"
       ],

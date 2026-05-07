@@ -156,9 +156,6 @@
       "Cancel trial and pay": [
         "Zrušiť skúšobné obdobie a zaplatiť"
       ],
-      "Cancel upload": [
-        "Zrušiť nahrávanie"
-      ],
       "Cancel uploads": [
         "Zrušiť nahrávania"
       ],
@@ -417,7 +414,7 @@
       "Download for Mac": [
         "Stiahnuť pre Mac"
       ],
-      "Download for MacOS": [
+      "Download for macOS": [
         "Stiahnuť pre macOS"
       ],
       "Download for Windows": [
@@ -762,15 +759,6 @@
       "Open navigation": [
         "Otvoriť menu"
       ],
-      "Pause all": [
-        "Pozastaviť všetko"
-      ],
-      "Pause download": [
-        "Pozastaviť sťahovanie"
-      ],
-      "Pause upload": [
-        "Pozastaviť nahrávanie"
-      ],
       "Pay": [
         "Zaplatiť"
       ],
@@ -843,9 +831,6 @@
       "Remove from favorites": [
         "Odobrať z obľúbených"
       ],
-      "Remove from this list": [
-        "Odstrániť z tohto zoznamu"
-      ],
       "Remove gift code": [
         "Odstrániť darčekový kód"
       ],
@@ -894,15 +879,6 @@
       "Reset to default": [
         "Obnoviť východzie nastavenie"
       ],
-      "Restart all": [
-        "Reštartovať všetko"
-      ],
-      "Restart download": [
-        "Znovu spustiť sťahovanie"
-      ],
-      "Restart upload": [
-        "Znovu spustiť nahrávanie"
-      ],
       "Restore": [
         "Obnoviť"
       ],
@@ -914,15 +890,6 @@
       ],
       "Restore version": [
         "Obnoviť verziu"
-      ],
-      "Resume all": [
-        "Obnoviť všetko"
-      ],
-      "Resume download": [
-        "Obnoviť sťahovanie"
-      ],
-      "Resume upload": [
-        "Obnoviť nahrávanie"
       ],
       "Retry": [
         "Opakovať"
@@ -4970,24 +4937,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } sťahovanie",
-        "${ activeDownloadsCount } sťahovania",
-        "${ activeDownloadsCount } sťahovaní",
-        "${ activeDownloadsCount } sťahovaní"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } sťahovanie (${ downloadProgress } %)",
-        "${ activeDownloadsCount } sťahovania (${ downloadProgress } %)",
-        "${ activeDownloadsCount } sťahovaní (${ downloadProgress } %)",
-        "${ activeDownloadsCount } sťahovaní (${ downloadProgress } %)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } nahrávanie (${ uploadProgress }%)",
-        "${ activeUploadsCount } nahrávania (${ uploadProgress }%)",
-        "${ activeUploadsCount } nahrávaní (${ uploadProgress }%)",
-        "${ activeUploadsCount } nahrávaní (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } emailová adresa",
         "${ addressCount } emailové adresy",
@@ -5030,12 +4979,6 @@
         "${ calendarsToBeMergedCount } zlúčených kalendárov",
         "${ calendarsToBeMergedCount } zlúčených kalendárov"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } zrušené",
-        "${ canceledCount } zrušené",
-        "${ canceledCount } zrušených",
-        "${ canceledCount } zrušených"
-      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } z ${ items.length } prenosov dokončené"
       ],
@@ -5069,24 +5012,6 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Súbory v ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nie je možné stiahnuť priamo a nebudú zahrnuté do tohto sťahovania. Ostatné súbory si môžete stiahnuť kliknutím na tlačidlo 'Pokračovať v sťahovaní'."
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } dokončený",
-        "${ doneCount } dokončené",
-        "${ doneCount } dokončených",
-        "${ doneCount } dokončených"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } stiahnutý",
-        "${ doneDownloadsCount } stiahnuté",
-        "${ doneDownloadsCount } stiahnutých",
-        "${ doneDownloadsCount } stiahnutých"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } nahratý",
-        "${ doneUploadsCount } nahraté",
-        "${ doneUploadsCount } nahratých",
-        "${ doneUploadsCount } nahratých"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v App Store"
       ],
@@ -5095,12 +5020,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } vás pozýva do albumu ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } zlyhal",
-        "${ errorCount } zlyhali",
-        "${ errorCount } zlyhalo",
-        "${ errorCount } zlyhalo"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázok v plnej veľkosti"
@@ -5150,12 +5069,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
       ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } pozastavené",
-        "${ pausedCount } pozastavené",
-        "${ pausedCount } pozastavených",
-        "${ pausedCount } pozastavených"
-      ],
       "${ photoCount } item": [
         "${ photoCount } položka",
         "${ photoCount } položky",
@@ -5195,12 +5108,6 @@
         "${ providerFoldersNumLocalized } nájdených štítkov v G maile",
         "${ providerFoldersNumLocalized } nájdených štítkov v G maile"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } skenovanie zlyhalo",
-        "${ scanErrorCount } skenovania zlyhali",
-        "${ scanErrorCount } skenovaní zlyhalo",
-        "${ scanErrorCount } skenovaní zlyhalo"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendára",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov",
@@ -5230,15 +5137,6 @@
         "${ selectedFoldersCountLocalized } vybraté štítky",
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } preskočených",
-        "${ skippedCount } preskočené",
-        "${ skippedCount } preskočených",
-        "${ skippedCount } preskočených"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } záznamov"
@@ -5543,12 +5441,6 @@
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
         "Spolupracujte efektívne a zároveň chráňte údaje svojich klientov a firmy pred napadnutím, ransomwarom a sledovaním."
       ],
-      "Computed hash does not match XAttr": [
-        "Vypočítaný hash sa nezhoduje s XAttr"
-      ],
-      "Conflict": [
-        "Konflikt"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
       ],
@@ -5599,9 +5491,6 @@
       ],
       "Create links and share your files with others.": [
         "Vytvárajte odkazy a zdieľajte vaše súbory s ostatnými."
-      ],
-      "Creating": [
-        "Vytváranie"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -5789,9 +5678,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportovať diagnostické záznamy pre technickú podporu a riešenie problémov"
       ],
-      "Failed": [
-        "Zlyhalo"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5809,9 +5695,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Tu sa zobrazia súbory a priečinky, ktoré s vami zdieľajú iní."
-      ],
-      "Finalizing": [
-        "Finalizácia"
       ],
       "finance": [
         "financie"
@@ -5962,9 +5845,6 @@
       ],
       "Inherited from parent folder": [
         "Zdedené z nadradeného priečinka"
-      ],
-      "Initializing": [
-        "Inicializácia"
       ],
       "Integrity issues found": [
         "Nájdené problémy integrity"
@@ -6149,9 +6029,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
       ],
-      "Network issue": [
-        "Sieťový problém"
-      ],
       "New": [
         "Nový"
       ],
@@ -6190,9 +6067,6 @@
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Neboli presunuté všetky súbory. Skúste súbory znovu nahrať alebo stiahnuť."
       ],
       "Not connected": [
         "Nepripojené"
@@ -6389,9 +6263,6 @@
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
-      "Queued": [
-        "V poradí"
-      ],
       "Ready to add some photos?": [
         "Chcete pridať nejaké fotografie?"
       ],
@@ -6436,9 +6307,6 @@
       ],
       "Saving...": [
         "Ukladanie..."
-      ],
-      "Scan issue": [
-        "Problém so skenovaním"
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte QR kód pomocou mobilného zariadenia"
@@ -6530,20 +6398,8 @@
       "Signature check will be ignored": [
         "Kontrola podpisu sa nebude brať do úvahy"
       ],
-      "Signature issue": [
-        "Problém s podpisom"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
-      ],
-      "Skipped": [
-        "Preskočené"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Niektoré súbory sa nepodarilo stiahnuť. Skúste súbory stiahnuť znova."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Niektoré súbory sa nepodarilo nahrať. Skúste súbory nahrať znova."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
@@ -6559,9 +6415,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
-      ],
-      "Something went wrong, please try again later.": [
-        "Niečo sa pokazilo, skúste znova neskôr, prosím."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
@@ -12602,24 +12455,6 @@
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } z bezplatných nahratí."
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } neúspešné stiahnutie",
-        "${ numberOfFailedTransfer.total } neúspešné stiahnutia",
-        "${ numberOfFailedTransfer.total } neúspešných stiahnutí",
-        "${ numberOfFailedTransfer.total } neúspešných stiahnutí"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } prenos zlyhal",
-        "${ numberOfFailedTransfer.total } prenosy zlyhali",
-        "${ numberOfFailedTransfer.total } prenosov zlyhalo",
-        "${ numberOfFailedTransfer.total } prenosov zlyhalo"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } nahrávanie zlyhalo",
-        "${ numberOfFailedTransfer.total } nahrávania zlyhali",
-        "${ numberOfFailedTransfer.total } nahrávaní zlyhalo",
-        "${ numberOfFailedTransfer.total } nahrávaní zlyhalo"
-      ],
       "Account recovery": [
         "Obnovenie účtu"
       ],
@@ -12634,9 +12469,6 @@
       ],
       "Actions": [
         "Akcie"
-      ],
-      "Active": [
-        "Aktívny"
       ],
       "Add a custom logo": [
         "Pridať vlastné logo"
@@ -12673,9 +12505,6 @@
       ],
       "Albums": [
         "Albumy"
-      ],
-      "All": [
-        "Všetko"
       ],
       "All settings": [
         "Všetky nastavenia"
@@ -12760,9 +12589,6 @@
       ],
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
-      ],
-      "Completed": [
-        "Dokončené"
       ],
       "Computers": [
         "Počítače"
@@ -13003,9 +12829,6 @@
       ],
       "Exporting contacts": [
         "Exportovanie kontaktov"
-      ],
-      "Failed": [
-        "Neúspešne"
       ],
       "File details": [
         "Podrobnosti súboru"
@@ -13715,9 +13538,6 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Správa a názov súboru sú uložené so šifrovaním s nulovým prístupom, ak sú súčasťou emailu"
-      ],
-      "New!": [
-        "Nové!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."

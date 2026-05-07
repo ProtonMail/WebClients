@@ -525,9 +525,6 @@
       "Delete record": [
         "Smazat záznam"
       ],
-      "Delete token ${ token.Account }": [
-        "Smazat token ${ token.Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Smazat token “${ token.Name }”"
       ],
@@ -1402,7 +1399,7 @@
         "Hledat v nastavení"
       ],
       "Secure account": [
-        "Zabezpečte svůj účet"
+        "Zabezpečit účet"
       ],
       "See DNS TXT record": [
         "Zobrazit DNS TXT záznam"
@@ -2097,7 +2094,7 @@
         "Administrátorská role"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nakonfigurujte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní protokoly."
+        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci udělejte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
@@ -2127,7 +2124,7 @@
         "Správce zabezpečení:"
       ],
       "User admin": [
-        "Uživatel Admin"
+        "Správce uživatelů"
       ],
       "User admin:": [
         "Uživatel Admin:"
@@ -2910,12 +2907,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "Add a custom domain": [
-        "Přidat vlastní doménu"
-      ],
-      "App installed": [
-        "Aplikace nainstalována"
-      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -2943,9 +2934,6 @@
       "Domain connected": [
         "Doména připojena"
       ],
-      "Domain ownership verified": [
-        "Vlastnictví domény ověřeno"
-      ],
       "Estimated size": [
         "Odhadovaná velikost"
       ],
@@ -2970,14 +2958,8 @@
       "Install migration app": [
         "Nainstalujte migrační aplikaci"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Zjistěte více o tom, co lze migrovat. Více informací"
-      ],
       "Mail": [
         "Mail"
-      ],
-      "Migrate": [
-        "Migrovat"
       ],
       "Migrate from Google Workspace": [
         "Migrovat z Google Workspace"
@@ -2997,17 +2979,11 @@
       "Migration status": [
         "Stav migrace"
       ],
-      "Not started": [
-        "Nezahájeno"
-      ],
       "Organization does not have enough seats available": [
         "Organizace nemá dostatek volných licencí"
       ],
       "Organization does not have enough storage available": [
         "Organizace nemá dostatečně velké úložiště"
-      ],
-      "Organization settings": [
-        "Nastavení organizace"
       ],
       "Required": [
         "Vyžadováno"
@@ -3017,9 +2993,6 @@
       ],
       "Select at least one user to start a migration": [
         "Pro zahájení migrace vyberte alespoň jednoho uživatele"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Vyberte, co chcete migrovat. Toto nastavení se použije pro všechny uživatele, ať už jsou vytvořeni nyní nebo později. Migrace začne po vytvoření uživatelských účtů."
       ],
       "Set up": [
         "Nastavení"
@@ -3043,10 +3016,7 @@
         "Stav"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
-        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte."
-      ],
-      "Transfer errors": [
-        "Chyby přenosu"
+        "Chcete-li migrovat data své organizace, musíte nainstalovat ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte společnosti ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte."
       ],
       "User": [
         "Uživatel"
@@ -3059,9 +3029,6 @@
       ],
       "Verify your domain": [
         "Ověřte svou doménu"
-      ],
-      "Verify your domain ownership": [
-        "Ověřte vlastnictví své domény"
       ],
       "Verify your domain to start a migration": [
         "Ověřte svou doménu a spusťte migraci"
@@ -3839,7 +3806,7 @@
         "Přístup bude obnoven, jakmile se využití vrátí do povolených mezí."
       ],
       "Back up photos from your devices": [
-        "Zálohovat fotky ze svých zařízení"
+        "Zálohujte fotky ze svých zařízení"
       ],
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -3854,7 +3821,7 @@
         "Zachovat aktuální tarif"
       ],
       "Manage your calendar": [
-        "Spravovat váš kalendář"
+        "Spravujte svůj kalendář"
       ],
       "Receive new emails": [
         "Přijímat nové e-maily"
@@ -5195,7 +5162,7 @@
         "Vytvořte si vlastní zápatí e-mailu — prezentujte svou jedinečnou značku, ne naši."
       ],
       "Methods that include both password reset and data recovery.": [
-        "Metody, které zahrnují jak obnovení hesla, tak obnovu dat."
+        "Metody, které zahrnují jak resetování hesla, tak obnovu dat."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Většinu problémů lze vyřešit během několika minut pomocí našich podrobných návodů."
@@ -6683,7 +6650,7 @@
         "Přidali mě jako důvěryhodný kontakt. Mám přístup k jejich účtu v případě nouze."
       ],
       "They added you as trusted contact. You can access their account in case of an emergency.": [
-        "Přidali tě jako důvěryhodný kontakt. V případě nouze máš přístup k jejich účtu."
+        "Přidali vás jako důvěryhodný kontakt. V případě nouze máte přístup k jejich účtu."
       ],
       "They may ask to access my account in case of an emergency.": [
         "Mohou požádat o přístup k mému účtu v případě nouze."
@@ -7691,7 +7658,7 @@
         "Požádejte správce o povolení sledování účtu."
       ],
       "Enable account monitor to start loading event.": [
-        "Povolte monitorování účtu pro spuštění načítání událostí."
+        "Povolte monitor účtu pro spuštění načítání události."
       ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
@@ -8771,7 +8738,7 @@
         "Popis:"
       ],
       "Group address:": [
-        "Skupinová adresa:"
+        "Adresa skupiny:"
       ]
     },
     "Group member count": {
@@ -9510,7 +9477,7 @@
         "${ BRAND_NAME } zašle ověřovací kód na číslo ${ phoneNumber }. Mohou být účtovány běžné poplatky za zprávy."
       ],
       "${ BRAND_NAME } will send a verification code to your recovery phone. Standard message rates may apply.": [
-        "${ BRAND_NAME } zašle ověřovací kód na váš telefon pro obnovení. Mohou být účtovány běžné poplatky za zprávy."
+        "${ BRAND_NAME } zašle ověřovací kód na váš telefon, který je určen pro obnovení. Mohou být účtovány běžné poplatky za zprávy."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
@@ -9942,7 +9909,7 @@
         "přidali metodu obnovení"
       ],
       "Add an email address in case we need to contact you": [
-        "Přidejte e-mailovou adresu pro případ, že bychom Vás potřebovali kontaktovat"
+        "Přidejte e-mailovou adresu pro případ, že bychom vás potřebovali kontaktovat"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Přidejte další úroveň zabezpečení do vašeho účtu. Budete se muset oveřit pomocí 2FA při každém přihlášení."
@@ -10284,13 +10251,13 @@
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
       "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.": [
-        "Přidáním lidí, kterým důvěřujete, jako kontakty pro obnovení, jim budeme moci poslat e-mail s žádostí o pomoc, pokud budete mít potíže s obnovením dat po resetování hesla. Můžete být také kontaktem pro obnovení pro ostatní."
+        "Pokud přidáte lidi, kterým důvěřujete, jako své kontakty pro obnovení, budeme jim moci poslat e-mail s žádostí o pomoc, v případě, že budete mít potíže s obnovením dat po resetování hesla. I vy sami se můžete stát pro ostatní kontaktem pro obnovení."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvořením účtu ${ PASS_APP_NAME } s vaším e-mailem SimpleLogin můžete spravovat své aliasy přímo z ${ PASS_APP_NAME }."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Deaktivací monitoru účtu se vymaže také celá vaše historie. Opravdu chcete tuto funkci deaktivovat?"
+        "Deaktivací monitoru účtu smažete také celou vaší historii. Opravdu chcete pokračovat v deaktivaci?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -10327,9 +10294,6 @@
       ],
       "Change your password": [
         "Změňte své heslo"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Zkontrolujte stav importování a přeposílání."
       ],
       "Check your network and try again.": [
         "Zkontrolujte připojení k síti a zkuste to znovu."
@@ -11313,7 +11277,7 @@
         "Pokud jste přihlášeni, je to často nejjednodušší způsob, jak obnovit přístup k účtu."
       ],
       "It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.": [
-        "Je to jediný způsob, jak okamžitě obnovit všechna data, proto si to uložte na bezpečné, ale snadno dostupné místo."
+        "Jde o jediný způsob, jak okamžitě obnovit vše, proto zajistěte uložení na bezpečném a dostupném místě."
       ],
       "JCB logo": [
         "JCB logo"
@@ -11505,7 +11469,7 @@
         "Data o nových připojeních VPN se přestanou shromažďovat a zobrazovat."
       ],
       "News or media article": [
-        "Zpráva nebo článek v médiích"
+        "Noviny nebo článek v médiích"
       ],
       "Next billing date": [
         "Datum další fakturace"
@@ -12525,7 +12489,7 @@
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
-        "Abychom zajistili bezpečnost tvého účtu, chceme se ujistit, že se skutečně pokoušíte přihlásit vy."
+        "Abychom zajistili bezpečnost vašeho účtu, potřebujeme se ujistit, že se skutečně pokoušíte přihlásit vy."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
@@ -12783,7 +12747,7 @@
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
       ],
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
-        "Na vaši záložní e-mailovou adresu vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
+        "Na vaši e-mailovou adresu pro obnovení vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Na váš telefon pro obnovení vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
@@ -14233,7 +14197,7 @@
         "Automatická potvrzení a upozornění"
       ],
       "Automatic email forwarding": [
-        "Automatické přesměrování e-mailů"
+        "Automatické přeposílání e-mailů"
       ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
@@ -14575,7 +14539,7 @@
         "E-mail nebo uživatelské jméno"
       ],
       "Email with @yourcompany.com domain": [
-        "E-mail s doménou @yourcompany.com"
+        "E-mail s doménou @vasefirma.cz"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -15073,7 +15037,7 @@
         "Čekající"
       ],
       "Personal and work emails, plus important updates and notifications": [
-        "Osobní a pracovní e-maily, důležité novinky a oznámení"
+        "Osobní a pracovní e-maily, důležité novinky a upozornění"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -15118,7 +15082,7 @@
         "Primární"
       ],
       "Priority support": [
-        "Přednostní podpora"
+        "Prioritní podpora"
       ],
       "Promotions": [
         "Propagační akce"
@@ -20381,10 +20345,10 @@
         "Přidejte další možnosti pro lepší ochranu"
       ],
       "Add more options to avoid getting locked out of your account.": [
-        "Přidejte další možnosti, abyste se vyhnuli zablokování účtu."
+        "Přidejte více možnosti, abyste se vyhnuli ztrátě přístupu k účtu."
       ],
       "Awesome. Keep your options up-to-date for stronger protection.": [
-        "Skvělé. Udržujte své aktualizace v aktuálním stavu, abyste měli lepší ochranu."
+        "Skvělé. Udržujte své možnosti v aktuálním stavu, abyste měli lepší ochranu."
       ],
       "Good start. Add more options for a stronger protection.": [
         "Dobrý začátek. Přidejte další možnosti pro lepší ochranu."
@@ -20403,9 +20367,6 @@
       ],
       "Partial": [
         "Částečné"
-      ],
-      "Require password reset option (email or SMS verification)": [
-        "Vyžadovat možnost resetování hesla (ověření e-mailem nebo SMS)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Skóre: ${ score } / ${ maxScore }"
@@ -20448,20 +20409,14 @@
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
       ],
-      "Email verification enabled": [
-        "Ověření e-mailem je aktivováno"
-      ],
       "Emergency contacts added": [
         "Nouzové kontakty přidány"
-      ],
-      "Enable recovery by email": [
-        "Povolte obnovení e-mailem"
       ],
       "Enable recovery by phone": [
         "Povolte obnovení telefonem"
       ],
       "Password reset allowed from settings": [
-        "Obnovení hesla je možné v nastavení"
+        "Reset hesla je možný v nastavení"
       ],
       "Password verified": [
         "Heslo ověřeno"
@@ -20480,9 +20435,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Přihlášení pomocí QR kódu povoleno"
-      ],
-      "SMS verification enabled": [
-        "Ověření pomocí SMS je aktivováno"
       ],
       "Verify password": [
         "Ověření hesla"
@@ -20531,7 +20483,7 @@
         "Nebo namísto toho ${ downloadRecoveryKitSwitchButton }."
       ],
       "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "**Obnovovací fráze** vám umožní obnovit váš ${ BRAND_NAME } účet, pokud si ho uzamknete."
+        "**Obnovovací fráze** vám umožní obnovit váš ${ BRAND_NAME } účet, pokud ztratíte přístup."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20985,7 +20937,7 @@
         "Povolte obnovení telefonem"
       ],
       "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "Beru na vědomí, že pomocí této obnovovací fráze nebudu schopen obnovit aktuálně uzamčená data"
+        "Beru na vědomí, že pomocí této obnovovací fráze nebudu moci obnovit aktuálně uzamčená data"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Pokud zapomenete své heslo ${ BRAND_NAME } a bude jej nutné resetovat, můžete se přihlásit k účtu pomocí tohoto zařízení a nového hesla a obnovit tím plný přístup ke svému účtu ${ BRAND_NAME }."
@@ -21423,9 +21375,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Chcete-li zajistit co nejvyšší možnou bezpečnost svého účtu, stáhněte si svou obnovovací frázi a deaktivujte zvýrazněné možnosti."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Máte doporučené akce od ${ PROTON_SENTINEL_NAME }"
       ]
@@ -23035,7 +22984,7 @@
         "Deaktivovat obnovení telefonem"
       ],
       "Disable signed-in reset": [
-        "Zakázat resetování po přihlášení"
+        "Zakázat resetování při přihlášení"
       ],
       "Generate a recovery phrase": [
         "Vygenerovat obnovovací frázi"
@@ -24695,7 +24644,7 @@
         "Máte v prohlížeči přístup ke své relaci?"
       ],
       "Can you reach out to your emergency contacts?": [
-        "Mohl bys se spojit se svými nouzovými kontakty?"
+        "Můžete se spojit se svými nouzovými kontakty?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
@@ -25922,7 +25871,7 @@
         "Přihlášeno k členskému účtu"
       ],
       "Signed-in reset": [
-        "Resetovat přihlášení"
+        "Resetování v přihlášeném stavu"
       ],
       "Simplify email distribution": [
         "Zjednodušení distribuce e-mailů"
@@ -26045,7 +25994,7 @@
         "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
       ],
       "Troubleshoot your issue": [
-        "Vyřešte svůj problém"
+        "Zjistěte příčinu problému"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Vyzkoušejte ${ AUTHENTICATOR_APP_NAME }"
@@ -26390,7 +26339,7 @@
         "Umožnit obnovení účtu pomocí jednorázového kódu zaslaného na váš telefon pro obnovení"
       ],
       "Allow resetting your password from the account settings": [
-        "Umožnit resetování hesla v nastavení účtu"
+        "Umožňuje resetování vašeho hesla v nastavení účtu"
       ],
       "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
         "Umožnit přihlášení naskenováním QR kódu z mobilní aplikace ${ BRAND_NAME }"
@@ -26519,7 +26468,7 @@
         "Uložte si v tomto prohlížeči šifrovanou záložní kopii, abyste mohli obnovit svá data po resetování hesla"
       ],
       "Save an encryption backup file to recover your data after a password reset": [
-        "Uložte si šifrovanou záložní kopii, abyste mohli obnovit svá data po resetování hesla"
+        "Uložte si šifrovaný záložní soubor, abyste mohli obnovit svá data po resetování hesla"
       ],
       "See number of unread messages in the tab icon": [
         "Zobrazení počtu nepřečtených zpráv v ikoně záložky"
@@ -27040,7 +26989,7 @@
         "E-mail"
       ],
       "General": [
-        "Obecné"
+        "Obecný"
       ],
       "Invitation email": [
         "E-mail pozvánky"

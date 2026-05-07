@@ -141,9 +141,6 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
-      "Cancel upload": [
-        "Отменить загрузку"
-      ],
       "Change": [
         "Изменить"
       ],
@@ -654,15 +651,6 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
-      "Pause all": [
-        "Приостановить все"
-      ],
-      "Pause download": [
-        "Приостановить скачивание"
-      ],
-      "Pause upload": [
-        "Приостановить загрузку"
-      ],
       "Pay": [
         "Оплатить"
       ],
@@ -726,9 +714,6 @@
       "Remove from favorites": [
         "Убрать из избранных"
       ],
-      "Remove from this list": [
-        "Удалить из этого списка"
-      ],
       "Remove gift code": [
         "Удалить подарочный код"
       ],
@@ -774,15 +759,6 @@
       "Reset to default": [
         "Сбросить к умолчанию"
       ],
-      "Restart all": [
-        "Перезапустить все"
-      ],
-      "Restart download": [
-        "Перезапустить скачивание"
-      ],
-      "Restart upload": [
-        "Перезапустить загрузку"
-      ],
       "Restore": [
         "Восстановить"
       ],
@@ -794,15 +770,6 @@
       ],
       "Restore version": [
         "Восстановить версию"
-      ],
-      "Resume all": [
-        "Продолжить все"
-      ],
-      "Resume download": [
-        "Возобновить скачивание"
-      ],
-      "Resume upload": [
-        "Возобновить загрузку"
       ],
       "Retry": [
         "Повторить"
@@ -4241,24 +4208,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } скачивается",
-        "${ activeDownloadsCount } скачиваются",
-        "${ activeDownloadsCount } скачиваются",
-        "${ activeDownloadsCount } скачиваются"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } скачивается (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)",
-        "${ activeDownloadsCount } скачиваются (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } загружается (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружаются (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружаются (${ uploadProgress }%)",
-        "${ activeUploadsCount } загружаются (${ uploadProgress }%)"
-      ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
         "${ addressCount } адреса электронной почты",
@@ -4289,12 +4238,6 @@
         "${ calendarsToBeMergedCount } объединённых календарей",
         "${ calendarsToBeMergedCount } объединённых календарей"
       ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } отменен",
-        "${ canceledCount } отменены",
-        "${ canceledCount } отменены",
-        "${ canceledCount } отменены"
-      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт содержит несколько адресов электронной почты.",
         "${ contactCount } контакта содержит несколько адресов электронной почты.",
@@ -4322,24 +4265,6 @@
         "${ contactsLength } контактов",
         "${ contactsLength } контактов"
       ],
-      "${ doneCount } finished": [
-        "${ doneCount } завершен",
-        "${ doneCount } завершены",
-        "${ doneCount } завершены",
-        "${ doneCount } завершены"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } скачан",
-        "${ doneDownloadsCount } скачаны",
-        "${ doneDownloadsCount } скачаны",
-        "${ doneDownloadsCount } скачаны"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } загружен",
-        "${ doneUploadsCount } загружены",
-        "${ doneUploadsCount } загружены",
-        "${ doneUploadsCount } загружены"
-      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } в App Store"
       ],
@@ -4348,12 +4273,6 @@
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } пригласил вас присоединиться к ${ albumName }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } не удался",
-        "${ errorCount } не удались",
-        "${ errorCount } не удались",
-        "${ errorCount } не удались"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
@@ -4378,12 +4297,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }. Ваша стоимость и дата продления подписки ${ planTitle } остаются неизменными."
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } приостановлен",
-        "${ pausedCount } приостановлены",
-        "${ pausedCount } приостановлены",
-        "${ pausedCount } приостановлены"
       ],
       "${ photoCount } item": [
         "${ photoCount } элемент",
@@ -4418,12 +4331,6 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
       ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } сканирование не удалось",
-        "${ scanErrorCount } сканирования не удались",
-        "${ scanErrorCount } сканирований не удались",
-        "${ scanErrorCount } сканирования не удалась"
-      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
@@ -4453,15 +4360,6 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } пропущен",
-        "${ skippedCount } пропущены",
-        "${ skippedCount } пропущены",
-        "${ skippedCount } пропущены"
-      ],
-      "${ speed }/s": [
-        "${ speed }/с"
       ],
       "${ storage } storage": [
         "${ storage } хранилище"
@@ -4685,9 +4583,6 @@
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
       ],
-      "Conflict": [
-        "Конфликт"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Подключитесь к ${ VPN_APP_NAME }, чтобы приватно просматривать веб-страницы"
       ],
@@ -4735,9 +4630,6 @@
       ],
       "Create links and share your files with others.": [
         "Создавайте ссылки и делитесь файлами с другими."
-      ],
-      "Creating": [
-        "Создание"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
@@ -4895,9 +4787,6 @@
       "Expired": [
         "Истёкший"
       ],
-      "Failed": [
-        "Завершено с ошибкой"
-      ],
       "Feb": [
         "Фев"
       ],
@@ -4915,9 +4804,6 @@
       ],
       "Files and folders that others shared with you will appear here": [
         "Файлы и папки, которые другие поделились с вами, будут отображаться здесь"
-      ],
-      "Finalizing": [
-        "Завершение"
       ],
       "finance": [
         "финансы"
@@ -5026,9 +4912,6 @@
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
-      ],
-      "Initializing": [
-        "Инициализация"
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
@@ -5177,9 +5060,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
-      "Network issue": [
-        "Проблема с сетью"
-      ],
       "New": [
         "Новый"
       ],
@@ -5212,9 +5092,6 @@
       ],
       "Not a valid URL": [
         "Недействительный URL"
-      ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Не все файлы были переданы. Попробуйте загрузить или скачать файлы еще раз."
       ],
       "Not connected": [
         "Нет подключения"
@@ -5402,9 +5279,6 @@
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
-      "Queued": [
-        "Поставлено в очередь"
-      ],
       "Ready to add some photos?": [
         "Готовы добавить фотографии?"
       ],
@@ -5443,9 +5317,6 @@
       ],
       "Saving...": [
         "Сохранение..."
-      ],
-      "Scan issue": [
-        "Проблема сканирования"
       ],
       "Scan the QR code with your mobile device": [
         "Отсканируйте QR-код с вашего мобильного устройства"
@@ -5519,20 +5390,8 @@
       "Signature check will be ignored": [
         "Проверка подписи будет проигнорирована"
       ],
-      "Signature issue": [
-        "Проблема с подписью"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
-      ],
-      "Skipped": [
-        "Пропущено"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        "Не удалось скачать некоторые файлы. Попробуйте скачать файлы еще раз."
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        "Не удалось загрузить некоторые файлы. Попробуйте загрузить файлы еще раз."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Некоторые правительства блокируют или ограничивают доступ к определенным веб-сайтам. VPN помогает обойти цензуру, при этом сохраняя ваши действия и личные данные конфиденциальными."
@@ -5545,9 +5404,6 @@
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некоторые веб-сайты службы трансляций блокируют содержимое по регионам. VPN позволяет вам обходить эти ограничения и получать свободный доступ к Интернету."
-      ],
-      "Something went wrong, please try again later.": [
-        "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
@@ -10594,24 +10450,6 @@
       "${ feature } is now active": [
         "${ feature } теперь активна"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } неудавшееся скачивание",
-        "${ numberOfFailedTransfer.total } неудавшихся скачивания",
-        "${ numberOfFailedTransfer.total } неудавшихся скачиваний",
-        "${ numberOfFailedTransfer.total } неудавшихся скачиваний"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } неудавшаяся передача",
-        "${ numberOfFailedTransfer.total } неудавшихся передачи",
-        "${ numberOfFailedTransfer.total } неудавшихся передач",
-        "${ numberOfFailedTransfer.total } неудавшихся передач"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } неудавшаяся загрузка",
-        "${ numberOfFailedTransfer.total } неудавшихся загрузки",
-        "${ numberOfFailedTransfer.total } неудавшаяся загрузок",
-        "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
-      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -10623,9 +10461,6 @@
       ],
       "Actions": [
         "Действия"
-      ],
-      "Active": [
-        "Активно"
       ],
       "Add a custom logo": [
         "Добавить свой логотип"
@@ -10659,9 +10494,6 @@
       ],
       "Albums": [
         "Альбомы"
-      ],
-      "All": [
-        "Все"
       ],
       "All settings": [
         "Все настройки"
@@ -10728,9 +10560,6 @@
       ],
       "Collaborate on documents": [
         "Совместно работайте над документами"
-      ],
-      "Completed": [
-        "Завершено"
       ],
       "Computers": [
         "Компьютеры"
@@ -10935,9 +10764,6 @@
       ],
       "Exporting contacts": [
         "Экспортирование контактов"
-      ],
-      "Failed": [
-        "Не удалось"
       ],
       "File details": [
         "Информация о файле"

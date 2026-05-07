@@ -90,9 +90,6 @@
       "Apply": [
         "Appliquer"
       ],
-      "Ask me next time": [
-        "Me demander la prochaine fois"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "${ maxContacts } contact est autorisé par groupe de contacts.",
         "Un maximum de ${ maxContacts } contacts est autorisé par groupe de contacts."
@@ -680,9 +677,6 @@
       ],
       "Save changes": [
         "Enregistrer les modifications"
-      ],
-      "Save preferences": [
-        "Enregistrer les préférences"
       ],
       "Search": [
         "Rechercher"
@@ -4376,9 +4370,6 @@
       "Continue": [
         "Continuer"
       ],
-      "Converting document...": [
-        "Conversion du document en cours..."
-      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -4427,9 +4418,6 @@
       ],
       "Creating link to folder": [
         "Création du lien vers le dossier"
-      ],
-      "Creating new document...": [
-        "Création du document en cours..."
       ],
       "Current plan": [
         "Abonnement actuel"
@@ -4530,12 +4518,6 @@
       "Enter your own password (as trusted contact).": [
         "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Erreur lors de la conversion du document : ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Erreur lors du chargement du document : ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Erreur de synchronisation"
       ],
@@ -4598,12 +4580,6 @@
       ],
       "Geoblocking": [
         "Géoblocage"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Recevez des mises à jour par e-mail pour les commentaires et suggestions ajoutés à vos documents."
-      ],
-      "Get Notified About Comments": [
-        "Être notifié des commentaires"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
@@ -4738,17 +4714,11 @@
       "Loading link": [
         "Chargement du lien"
       ],
-      "Loading...": [
-        "Chargement en cours"
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Il semble que vous soyez hors ligne. Le document ne peut pas être modifié lorsque vous êtes hors ligne. Veuillez vérifier la connectivité de votre appareil."
       ],
       "Low Priority": [
         "Priorité basse"
-      ],
-      "Making a copy...": [
-        "Création d'une copie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "${ MAX_SHARED_URL_PASSWORD_LENGTH } caractère maximum",
@@ -4780,9 +4750,6 @@
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Aucun document n'est indiqué dans l'URL. Retournez dans ${ DRIVE_APP_NAME } et sélectionnez un document."
       ],
       "No email address": [
         "Aucune adresse e-mail"
@@ -5064,9 +5031,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
       ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
@@ -5685,9 +5649,6 @@
       "Emails (last month)": [
         "Messages (mois dernier)"
       ],
-      "Enable email notifications": [
-        "Activer les notifications par e-mail"
-      ],
       "Encrypt emails": [
         "Chiffrer les messages"
       ],
@@ -5735,9 +5696,6 @@
       ],
       "Include application logs in bug report": [
         "Inclure les journaux d'application dans le rapport de bug"
-      ],
-      "Include document name in notification": [
-        "Inclure le nom du document dans les notifications"
       ],
       "Include message and file name in invite email": [
         "Inclure le message et le nom du fichier dans l'e-mail d'invitation"
@@ -8783,9 +8741,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Création d'une feuille de calcul en cours..."
-      ],
       "Detect automatically": [
         "Détecter automatiquement"
       ],

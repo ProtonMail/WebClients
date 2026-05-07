@@ -922,6 +922,10 @@
       ]
     },
     "collider_2025: Action": {
+      "Add ${ selectedCount } sheet": [
+        "Adicionar ${ selectedCount } planilha",
+        "Adicionar ${ selectedCount } planilhas"
+      ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Adicionar arquivo para o ${ DRIVE_APP_NAME }"
       ],
@@ -996,6 +1000,9 @@
       ],
       "Report an issue": [
         "Reportar um problema"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Send message": [
         "Enviar mensagem"
@@ -1433,6 +1440,9 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Escolha as planilhas a serem adicionadas"
+      ],
       "Tell us more": [
         "Forneça mais informações"
       ]
@@ -2248,6 +2258,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "Adoraríamos seu feedback!"
       ],
       "What you can build": [
         "O que você pode construir"
@@ -8453,6 +8466,10 @@
       ]
     },
     "Warning": {
+      "Found ${ orphanedDocCount } document": [
+        "Encontrado ${ orphanedDocCount } documento",
+        "Encontrado ${ orphanedDocCount } documentos"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],

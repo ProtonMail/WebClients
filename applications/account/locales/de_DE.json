@@ -519,9 +519,6 @@
       "Delete record": [
         "Eintrag löschen"
       ],
-      "Delete token ${ token.Account }": [
-        "Token \"${ token.Account }\" löschen"
-      ],
       "Delete token “${ token.Name }”": [
         "Token \"${ token.Name }\" löschen"
       ],
@@ -761,6 +758,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Die Filter werden angewendet. Dies kann wenige Minuten dauern."
+      ],
+      "Finish": [
+        "Beenden"
       ],
       "Fit to window": [
         "An das Fenster anpassen"
@@ -2864,12 +2864,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME }-Migrations-Assistent"
       ],
-      "Add a custom domain": [
-        "Eigene Domain hinzufügen"
-      ],
-      "App installed": [
-        "App installiert"
-      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -2897,9 +2891,6 @@
       "Domain connected": [
         "Domain verbunden"
       ],
-      "Domain ownership verified": [
-        "Inhaberschaft der Domain bestätigt"
-      ],
       "Estimated size": [
         "Geschätzte Größe"
       ],
@@ -2924,14 +2915,8 @@
       "Install migration app": [
         "Übernahme-App installieren"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Erfahre mehr darüber, was übernommen werden kann. Mehr erfahren"
-      ],
       "Mail": [
         "E-Mail"
-      ],
-      "Migrate": [
-        "Übernehmen"
       ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
@@ -2949,17 +2934,11 @@
       "Migration status": [
         "Migrationsstatus"
       ],
-      "Not started": [
-        "Nicht gestartet"
-      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
       "Organization does not have enough storage available": [
         "Die Organisation hat nicht genügend Speicherplatz verfügbar"
-      ],
-      "Organization settings": [
-        "Organisationseinstellungen"
       ],
       "Required": [
         "Erforderlich"
@@ -2969,9 +2948,6 @@
       ],
       "Select at least one user to start a migration": [
         "Wähle mindestens einen Benutzer aus, um eine Migration zu starten"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Wähle aus, was du übernehmen möchtest. Dies gilt für alle Benutzer, unabhängig davon, ob sie jetzt oder später erstellt werden. Die Übernahme beginnt, nachdem die Benutzerkonten erstellt wurden."
       ],
       "Set up": [
         "Einrichten"
@@ -2997,9 +2973,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Um die Daten deiner Organisation zu migrieren, musst du die ${ BRAND_NAME }-Migrations-Assistenten-App aus dem Google Workspace Marketplace installieren. Dadurch erhält ${ BRAND_NAME } die Berechtigung, deine Daten zu kopieren. Komm nach der Installation hierher zurück, um fortzufahren."
       ],
-      "Transfer errors": [
-        "Übertragungsfehler"
-      ],
       "User": [
         "Benutzer"
       ],
@@ -3011,9 +2984,6 @@
       ],
       "Verify your domain": [
         "Deine Domain verifizieren"
-      ],
-      "Verify your domain ownership": [
-        "Verifiziere deinen Inhaberschaft der Domain"
       ],
       "Verify your domain to start a migration": [
         "Überprüfe deine Domain, um eine Migration zu starten"
@@ -10063,9 +10033,6 @@
       ],
       "Change your password": [
         "Passwort ändern"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Sieh dir den Status deiner Imports und Weiterleitungen an."
       ],
       "Check your network and try again.": [
         "Überprüfe dein Netzwerk und versuche es erneut."
@@ -19858,8 +19825,8 @@
       "Partial": [
         "Teilweise"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Option zur Passwortzurücksetzung erforderlich (Bestätigung per E-Mail oder SMS)"
+      "Score: ${ score } / ${ maxScore }": [
+        "Bewertung: ${ score } / ${ maxScore }"
       ],
       "Strong": [
         "Stark"
@@ -19893,14 +19860,8 @@
       "Download recovery file": [
         "Wiederherstellungsdatei herunterladen"
       ],
-      "Email verification enabled": [
-        "E-Mail-Verifikation aktiviert"
-      ],
       "Emergency contacts added": [
         "Notfallkontakte hinzugefügt"
-      ],
-      "Enable recovery by email": [
-        "Wiederherstellung per E-Mail aktivieren"
       ],
       "Enable recovery by phone": [
         "Wiederherstellung per Telefon aktivieren"
@@ -19922,9 +19883,6 @@
       ],
       "Sign-in with QR code allowed": [
         "QR-Code-Anmeldung möglich"
-      ],
-      "SMS verification enabled": [
-        "SMS-Verifizierung aktiviert"
       ],
       "Verify password": [
         "Passwort bestätigen"
@@ -20808,11 +20766,6 @@
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
-      ]
-    },
-    "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Um die größtmögliche Sicherheit deines Kontos zu sicherzustellen, lade deine Wiederherstellungsphrase herunter und deaktiviere die markierten Optionen."
       ]
     },
     "Server-Info": {
@@ -22322,6 +22275,9 @@
       ],
       "Disable recovery by email": [
         "Wiederherstellung per E-Mail deaktivieren"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Zuletzt geändert am ${ formattedDate }"
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Letzte Aktualisierung ${ formattedUpdateDate }"
@@ -25308,6 +25264,9 @@
       ],
       "Verify it’s you": [
         "Überprüfe, ob du es bist"
+      ],
+      "Verify your email": [
+        "Bestätige deine E-Mail"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."

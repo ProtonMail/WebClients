@@ -17,7 +17,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -89,9 +89,6 @@
       ],
       "Apply": [
         "Прымяніць"
-      ],
-      "Ask me next time": [
-        "Спытайце мяне наступны раз"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
@@ -460,7 +457,7 @@
         "Імпартаваць лісты, календары, кантакты"
       ],
       "Import from .csv or vCard": [
-        "Імпартаванне з .csv або vCard"
+        "Імпартаваць з .csv або vCard"
       ],
       "Import from Google": [
         "Імпартаваць з Google"
@@ -686,9 +683,6 @@
       ],
       "Save changes": [
         "Захаваць змены"
-      ],
-      "Save preferences": [
-        "Захаваць параметры"
       ],
       "Search": [
         "Пошук"
@@ -2527,7 +2521,7 @@
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
@@ -2612,7 +2606,7 @@
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+        "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
     "Downgrade account reason": {
@@ -3001,7 +2995,7 @@
         "Не ўдалося запампаваць відарыс"
       ],
       "IMAP server is required": [
-        "Патрабуецца ўвесці сервер IMAP"
+        "Патрабуецца сервер IMAP"
       ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
@@ -3142,7 +3136,7 @@
         "Не ўдалося знайсці"
       ],
       "Signature not verified": [
-        "Подпіс не правераны"
+        "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -3166,7 +3160,7 @@
         "Назвы некаторых вашых метак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+        "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong while fetching available domains": [
         "Нешта пайшло не так пры атрыманні даступных даменаў"
@@ -3235,7 +3229,7 @@
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
       "This field is invalid": [
         "Гэта поле з'яўляецца памылковым"
@@ -4030,7 +4024,7 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
       "IMAP access is enabled in your external account.": [
-        "У вашым знешнім уліковым запісе ўключаны IMAP."
+        "У вашым знешнім уліковым запісе ўключаны доступ па IMAP."
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "У вашым уліковым запісе Yahoo уключаны IMAP."
@@ -4048,7 +4042,7 @@
         "Выкарыстоўвайце свой пароль праграмы, калі:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
+        "Выкарыстоўвайце пароль праграмы замест звычайнага пароля, калі:"
       ],
       "Your app password is correct. Do not use your regular password.": [
         "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
@@ -4353,7 +4347,7 @@
         "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -4413,10 +4407,10 @@
         "Усе (${ totalFoldersCount } метак)"
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
       "an anonymous user": [
         "ананімны карыстальнік"
@@ -4502,9 +4496,6 @@
       "Continue": [
         "Працягнуць"
       ],
-      "Converting document...": [
-        "Пераўтварэнне дакумента..."
-      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
@@ -4555,9 +4546,6 @@
       ],
       "Creating link to folder": [
         "Стварэнне спасылкі на папку"
-      ],
-      "Creating new document...": [
-        "Стварэнне новага дакумента..."
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -4658,12 +4646,6 @@
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Памылка пераўтварэння дакумента: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Памылка загрузкі дакумента: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Памылка сінхранізацыі"
       ],
@@ -4726,12 +4708,6 @@
       ],
       "Geoblocking": [
         "Геаблакіроўка"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Атрымлівайце лісты на электронную пошту аб каментарыях і прапановах, якія дадаюцца ў вашы дакументы."
-      ],
-      "Get Notified About Comments": [
-        "Атрымлівайце апавяшчэнні аб каментарыях"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
@@ -4868,17 +4844,11 @@
       "Loading link": [
         "Загрузка спасылкі"
       ],
-      "Loading...": [
-        "Загрузка..."
-      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Здаецца, што вы па-за сеткай і рэдагаваць дакумент пакуль немагчыма. Праверце падключэнне да інтэрнэту на сваёй прыладзе."
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
-      ],
-      "Making a copy...": [
-        "Стварэнне копіі..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максімум ${ MAX_SHARED_URL_PASSWORD_LENGTH } сімвал",
@@ -4912,9 +4882,6 @@
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "У URL-адрасе адсутнічае дакумент. Вярніцеся ў ${ DRIVE_APP_NAME } і выберыце дакумент."
       ],
       "No email address": [
         "Няма адраса электроннай пошты"
@@ -5091,7 +5058,7 @@
         "Выберыце папку, у якую хочаце перамясціць."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -5175,7 +5142,7 @@
         "Сімвалы (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што ўліковы запіс мае новы ключ або наступныя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
@@ -5200,9 +5167,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Здаецца, што ўведзены вамі URL-адрас быў няправільна скапіяваны з платформы Slack. Пры капіяванні доўгіх спасылак з дадзенай платформы, націсніце на спасылку правай кнопкай мышы і выберыце \"Капіяваць спасылку\", а не капіюйце скарочаны тэкст URL-адраса наўпрост."
       ],
       "There are no documents in the trash.": [
         "Дакументы ў сметніцы адсутнічаюць."
@@ -5505,7 +5469,7 @@
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your browser's Print dialog will now open, where you can export your document to PDF.": [
         "Дыялогавае акно друку вашага браўзера ў цяперашні час адкрыта. Туды вы можаце экспартаваць свае дакументы ў PDF."
@@ -5833,9 +5797,6 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
-      "Enable email notifications": [
-        "Уключыць апавяшчэнні па электроннай пошце"
-      ],
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
@@ -5883,9 +5844,6 @@
       ],
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
-      ],
-      "Include document name in notification": [
-        "Уключыць назву дакумента ў апавяшчэнне"
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
@@ -6164,7 +6122,7 @@
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -7973,7 +7931,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далей вы павінны ўвайсці ў ваш уліковы запіс Google і даць нам доступ да вашых даных ${ BRAND_NAME }."
+        "На наступным кроку вы павінны ўвайсці ў свой уліковы запіс Google і даць доступ ${ BRAND_NAME } да сваіх даных."
       ]
     },
     "Oauth instructions video": {
@@ -8651,7 +8609,7 @@
         "Параіць сябрам"
       ],
       "Start earning credits": [
-        "Пачніце зарабляць крэдыты"
+        "Пачаць зарабляць крэдыты"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
@@ -8987,9 +8945,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Стварэнне новай электроннай табліцы..."
-      ],
       "Detect automatically": [
         "Вызначаць аўтаматычна"
       ],
@@ -10219,7 +10174,7 @@
         "Запытаць новы код"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
+        "Захаваць пазней у ${ DRIVE_APP_NAME }"
       ],
       "Security center": [
         "Цэнтр бяспекі"
@@ -10454,7 +10409,7 @@
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "We have sent them an invite to access the item.": [
-        "Мы адправілі ім запрашэнне на доступ да элемента."
+        "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ]
     },
     "tooltip": {

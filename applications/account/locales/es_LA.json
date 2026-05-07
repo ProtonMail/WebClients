@@ -162,6 +162,9 @@
       "Add user": [
         "Agregar usuario"
       ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } se ha añadido a la titularidad de grupo"
+      ],
       "Align center": [
         "Alinear al centro"
       ],
@@ -308,6 +311,9 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "Confirm email": [
+        "Confirmar correo electrónico"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar apertura del enlace ${ linkToShow }"
@@ -518,9 +524,6 @@
       ],
       "Delete record": [
         "Eliminar registro"
-      ],
-      "Delete token ${ token.Account }": [
-        "Eliminar token ${ token.Account }"
       ],
       "Delete token “${ token.Name }”": [
         "Eliminar token «${ token.Name }»"
@@ -761,6 +764,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Se están aplicando los filtros. Esto puede tomar unos minutos."
+      ],
+      "Finish": [
+        "Terminar"
       ],
       "Fit to window": [
         "Ajustar a la ventana"
@@ -1277,6 +1283,9 @@
       ],
       "Remove this notification": [
         "Eliminar esta notificación"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } se ha borrado de la titularidad de grupo"
       ],
       "Rename": [
         "Renombrar"
@@ -2864,14 +2873,17 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Asistente de migración de ${ BRAND_NAME }"
       ],
-      "Add a custom domain": [
-        "Añadir un dominio personalizado"
+      "Add a domain": [
+        "Añadir dominio"
       ],
-      "App installed": [
-        "Aplicación instalada"
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Agregue usuarios y configure su dominio manualmente para enviar y recibir correo. Ideal para equipos pequeños que empiezan desde cero."
       ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Authenticate to Google Workspace": [
+        "Autenticar con cuenta de Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentique su cuenta de Google Workspace"
@@ -2881,6 +2893,9 @@
       ],
       "Change": [
         "Cambiar"
+      ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Elija cómo desea importar su configuración de equipo y correo electrónico a ${ BRAND_NAME }."
       ],
       "Completed": [
         "Completado"
@@ -2894,11 +2909,11 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue migration": [
+        "Continuar migración"
+      ],
       "Domain connected": [
         "Dominio conectado"
-      ],
-      "Domain ownership verified": [
-        "Propiedad del dominio verificada"
       ],
       "Estimated size": [
         "Tamaño estimado"
@@ -2906,8 +2921,14 @@
       "Failed to load OAuth": [
         "Error al cargar OAuth"
       ],
+      "Finalize your migration": [
+        "Finalice su migración."
+      ],
       "Finish setting up your business account": [
         "Termine de configurar su cuenta de empresa"
+      ],
+      "Go to Domain names": [
+        "Ir a nombres de dominio"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicación de Google Marketplace para copiar datos a ${ BRAND_NAME }"
@@ -2924,20 +2945,20 @@
       "Install migration app": [
         "Instalar aplicación de migración"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Consulte qué se puede migrar. Más información"
+      "Install Migration assistant": [
+        "Instalar asistente de migración"
       ],
       "Mail": [
         "Correo"
-      ],
-      "Migrate": [
-        "Migrar"
       ],
       "Migrate from Google Workspace": [
         "Migrar desde Google Workspace"
       ],
       "Migrate users": [
         "Migrar usuarios"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Migrar usuarios a ${ BRAND_NAME }"
       ],
       "Migration includes": [
         "La migración incluye"
@@ -2949,17 +2970,14 @@
       "Migration status": [
         "Estado de la migración"
       ],
-      "Not started": [
-        "No iniciado"
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Mueva sus usuarios, correos electrónicos, y ajustes automáticamente desde Google Workspace. Le guiaremos a conecar su cuenta, verificar su dominio, y migrar usuarios de forma segura."
       ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
       ],
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente almacenamiento disponible"
-      ],
-      "Organization settings": [
-        "Ajustes de la organización"
       ],
       "Required": [
         "Obligatorio"
@@ -2970,14 +2988,14 @@
       "Select at least one user to start a migration": [
         "Seleccione al menos un usuario para iniciar una migración"
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Seleccione qué desea migrar. Esto se aplicará a todos los usuarios, tanto actuales como futuros. La migración comenzará una vez creadas las cuentas de usuario."
-      ],
       "Set up": [
         "Configurar"
       ],
       "Set up billing information": [
         "Configurar información de facturación"
+      ],
+      "Set up manually": [
+        "Configurar manualmente"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"
@@ -2997,23 +3015,20 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar."
       ],
-      "Transfer errors": [
-        "Errores de transferencia"
-      ],
       "User": [
         "Usuario"
       ],
       "Users migrated": [
         "Usuarios migrados"
       ],
+      "Verify domain ownership": [
+        "Verifique propiedad de dominio"
+      ],
       "Verify installation": [
         "Verificar instalación"
       ],
       "Verify your domain": [
         "Verifique su dominio"
-      ],
-      "Verify your domain ownership": [
-        "Verifique la propiedad de tu dominio"
       ],
       "Verify your domain to start a migration": [
         "Verifique su dominio para iniciar una migración"
@@ -6972,6 +6987,9 @@
       "Invalid invitation link": [
         "Enlace de invitación inválido"
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Enlace de invitación no válido. Contáctese con su administración."
+      ],
       "Invalid name": [
         "Nombre inválido"
       ],
@@ -10098,9 +10116,6 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
-      "Check the status of imports and forwarding.": [
-        "Verificar el estado de las importaciones y reenvío."
-      ],
       "Check your network and try again.": [
         "Revise su red e intente de nuevo."
       ],
@@ -10133,6 +10148,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premio Editors' Choice de CNET con una calificación de 8.4 de 10 estrellas"
+      ],
+      "Code has been re-sent.": [
+        "El código ha sido reenviado."
       ],
       "Coming soon": [
         "Próximamente"
@@ -10690,6 +10708,9 @@
       ],
       "Gateways": [
         "Puertas de enlace"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Generar una frase de recuperación nueva desactivará la actual frase de recuperación."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generar una frase de recuperación nueva desactivará la anterior."
@@ -12234,6 +12255,15 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descifrar y ver los datos bloqueados después de restablecer la contraseña, seleccione un método de recuperación."
       ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por asistencia de contacto**."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Copia de seguridad de datos de dispositivo**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Acceso de emergencia**."
+      ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Inicio de sesión con código QR**."
       ],
@@ -12242,6 +12272,9 @@
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por teléfono de recuperación**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Archivo de recuperación** (aunle todos los archivos de recuperación)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Inicio de sesión por restablecimiento**."
@@ -13039,6 +13072,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La frase de recuperación es una serie de 12 palabras generadas aleatoriamente en un orden específico."
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Su frase de recuperación le permitirá iniciar sesión y recuperar sus datos si no puede acceder a la cuenta de ${ BRAND_NAME }. Está compuesta por 12 palabras y funciona como una contraseña de respaldo."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
@@ -18722,8 +18758,14 @@
       "per month, billed every two years": [
         "al mes con facturación cada dos años"
       ],
+      "Preparing your recovery phrase": [
+        "Preparando su frase de recuperación"
+      ],
       "Protected by Swiss privacy laws": [
         "Bajo la protección de las leyes de privacidad suizas"
+      ],
+      "Save your recovery phrase to continue": [
+        "Guarde su frase de recuperación para continuar"
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
@@ -19949,9 +19991,6 @@
       "Partial": [
         "Parcial"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Requerir opción de restablecimiento de contraseña (verificación por correo electrónico o SMS)"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "Puntuación: ${ score } / ${ maxScore }"
       ],
@@ -19993,14 +20032,8 @@
       "Download recovery file": [
         "Descargar archivo de recuperación"
       ],
-      "Email verification enabled": [
-        "Verificación de correo activado"
-      ],
       "Emergency contacts added": [
         "Contactos de emergencia añadidos"
-      ],
-      "Enable recovery by email": [
-        "Activar la recuperación por correo electrónico"
       ],
       "Enable recovery by phone": [
         "Activar la recuperación por teléfono"
@@ -20026,9 +20059,6 @@
       "Sign-in with QR code allowed": [
         "Inicio de sesión con código QR permitido"
       ],
-      "SMS verification enabled": [
-        "Verificación de SMS activada"
-      ],
       "Verify password": [
         "Verificar la contraseña"
       ],
@@ -20051,6 +20081,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Asegúrese de mantener su frase de recuperación accesible después de crearla .** Por razones de seguridad, no almacenamos la frase después de guardar los cambios, y no podrá verla de nuevo en la aplicación de ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "copie la frase de recuperación"
       ],
@@ -20071,6 +20104,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "O ${ downloadRecoveryKitSwitchButton } en su lugar."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Su **frase de recuperación** le permite restaurar su cuenta de ${ BRAND_NAME } si se queda fuera."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20466,6 +20502,9 @@
       "Back to Safety Review": [
         "Volver a la verificación de seguridad"
       ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Como restableció su contraseña, la frase de recuperación actual solo puede usarse para recuperar los datos creados antes del restablecimiento de la contraseña."
+      ],
       "Can be used to regain access to your account and data": [
         "Puede usarse para recuperar el acceso a la cuenta y sus datos"
       ],
@@ -20493,6 +20532,9 @@
       "Download ${ size }": [
         "Descargar ${ size }"
       ],
+      "Download your recovery phrase": [
+        "Descargue su frase de recuperación"
+      ],
       "Email address": [
         "Dirección de correo"
       ],
@@ -20505,11 +20547,17 @@
       "Enable recovery by phone": [
         "Activar la recuperación por teléfono"
       ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Entiendo que no podré recuperar los datos actualmente bloqueados con esta frase de recuperación"
+      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Si olvida su contraseña de ${ BRAND_NAME } y necesita restablecerla, la próxima vez que inicie sesión en este dispositivo con su contraseña nueva, se restaurará el acceso total a la cuenta de ${ BRAND_NAME }."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Si se bloquea su cuenta de ${ BRAND_NAME }, su frase de recuperación le permitirá iniciar sesión y recuperar sus datos."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si pierde los datos de inicio de sesión y necesita restablecer la cuenta, **es obligatorio** que tenga configurados **un método de recuperación de la cuenta y de los datos**, de lo contrario, es posible que no pueda acceder a ninguno de sus correos electrónicos, contactos, archivos o contraseñas."
@@ -20553,6 +20601,9 @@
       "Take action to secure your account": [
         "Tome acciones para asegurar la cuenta"
       ],
+      "There was an error generating your recovery phrase": [
+        "Ocurrió un error al generar su frase de recuperación"
+      ],
       "There was an error verifying your email": [
         "Ocurrió un error al verificar su correo electrónico"
       ],
@@ -20580,6 +20631,12 @@
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
       ],
+      "Update your recovery phrase": [
+        "Actualice su frase de recuperación"
+      ],
+      "Update your recovery phrase?": [
+        "¿Actualizar su frase de recuperación?"
+      ],
       "Verify": [
         "Verificar"
       ],
@@ -20594,6 +20651,9 @@
       ],
       "Verify your recovery phone number": [
         "Verifique el número telefónico de recuperación"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Encontramos un error al generar la frase de recuperación. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Encontramos un error al verificar su correo electrónico. Intente de nuevo más tarde o contacte con el soporte si el problema continúa."
@@ -20616,6 +20676,9 @@
       "You can disable this at any time.": [
         "Puede desactivar esto en cualquier momento."
       ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Puede usar la frase de recuperación para restaurar completamente la cuenta cuando restablezca su contraseña, así que asegúrese de mantenerla a salvo en algún lugar."
+      ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Puede usar su correo electrónico para recuperar el acceso a la cuenta si olvidara la contraseña."
       ],
@@ -20624,6 +20687,9 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Puede usar su teléfono de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Previamente descargó una frase de recuperación. Descargar uno nuevo **desactivará el anterior**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "Tiene recomendaciones para proteger aún más su cuenta."
@@ -20708,6 +20774,12 @@
       ],
       "Your recovery phone number is:": [
         "El número de teléfono de recuperación es:"
+      ],
+      "Your recovery phrase": [
+        "Su frase de recuperación"
+      ],
+      "Your recovery phrase is set": [
+        "Se configuró la frase de recuperación"
       ]
     },
     "saml: Action": {
@@ -20914,8 +20986,11 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Para asegurar la seguridad máxima de la cuenta, descargue su frase de recuperación y desactive las opciones resaltadas."
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive las opciones resaltadas."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Para asegurearnos de que siempre pueda acceder a asu cuenta de ${ BRAND_NAME }, descargue su frase de recuperación."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Ha recomendado acciones desde ${ PROTON_SENTINEL_NAME }"
@@ -21254,6 +21329,12 @@
     "Setting": {
       "Enable Photos section": [
         "Activar sección Fotos"
+      ],
+      "Get updates about comments via email": [
+        "Recibir actualizaciones sobre los comentarios por correo electrónico"
+      ],
+      "Include document name in email notifications": [
+        "Incluir el nombre del documento en las notificaciones por correo electrónico"
       ]
     },
     "Settings description": {
@@ -22426,6 +22507,15 @@
       "Available on this device": [
         "Disponible en este dispositivo"
       ],
+      "Disable contact-assisted recovery": [
+        "Desactivar recuperación por asistencia de contacto"
+      ],
+      "Disable device data backup": [
+        "Desactivar copia de seguridad de datos del dispositivo"
+      ],
+      "Disable emergency access": [
+        "Desactivar acceso de emergencia"
+      ],
       "Disable QR code sign-in": [
         "Desactivar inicio de sesión con código QR"
       ],
@@ -22434,6 +22524,9 @@
       ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
+      ],
+      "Disable recovery file": [
+        "Desactivar archivo de recuperación"
       ],
       "Disable signed-in reset": [
         "Desactivar inicio de sesión por restablecimiento"
@@ -23846,6 +23939,9 @@
       "Activate user": [
         "Activar el usuario"
       ],
+      "Activate your email": [
+        "Active su correo electrónico"
+      ],
       "Activity monitor": [
         "Monitor de actividades"
       ],
@@ -24163,6 +24259,9 @@
       "Create a new gateway": [
         "Crear una puerta de enlace"
       ],
+      "Create a new password": [
+        "Crear una nueva contraseña"
+      ],
       "Create Gateway": [
         "Crear puerta de enlace"
       ],
@@ -24255,6 +24354,9 @@
       ],
       "Day theme": [
         "Tema de día"
+      ],
+      "Deactivate current phrase?": [
+        "¿Desactivar la frase actual?"
       ],
       "Decrypt key": [
         "Descifrar clave"
@@ -24391,6 +24493,9 @@
       ],
       "Download the mobile apps": [
         "Descargue las aplicaciones para dispositivos móviles"
+      ],
+      "Download your recovery phrase": [
+        "Descargue su frase de recuperación"
       ],
       "Downloads": [
         "Descargas"
@@ -25448,6 +25553,9 @@
       "Verify it’s you": [
         "Verifique que es usted"
       ],
+      "Verify your email": [
+        "Verifique su correo electrónico"
+      ],
       "Verifying your card...": [
         "Verificando la tarjeta..."
       ],
@@ -25471,6 +25579,9 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Le enviamos un código a su correo electrónico para asegurarnos de que es usted. Este código es válido por 10 minutos. Ingréselo debajo."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos un correo a la dirección nueva con instrucciones para completar el cambio."
@@ -25522,6 +25633,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Su suscripción ${ planTitle } ha comenzado"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Su administración en ${ orgName } le invita a activar su nueva cuenta segura de ${ BRAND_NAME } y actualizar su contraseña."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Su administración le invita a activar su nueva cuenta segura de ${ BRAND_NAME } y actualizar su contraseña."
       ],
       "Your calendar link": [
         "Enlace a el calendario"
@@ -25975,6 +26092,9 @@
       "User is a group": [
         "El usuario es un grupo"
       ],
+      "via ${ groupName }": [
+        "vía ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
       ]
@@ -26298,6 +26418,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(vía ${ groupName })"
+      ],
+      "(via group)": [
+        "(vía grupo)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Añada roles delegados a un usuario para otorgarle solo los permisos específicos que necesita, manteniendo el poder de administrador completo separado y su entorno seguro."
       ],
