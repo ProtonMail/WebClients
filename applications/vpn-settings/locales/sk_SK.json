@@ -2121,6 +2121,57 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udeliť povolenie pre ${ BRAND_NAME } na kopírovanie vašich údajov. Po udelení povolení sa vráťte sem a pokračujte."
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Skopírujte nižšie uvedený kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb. Príklad a niekoľko užitočných tipov nájdete ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
+      ],
+      "DMARC records": [
+        "DMARC záznamy"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Spravované cez ${ registrar.name }"
+      ],
+      "More details": [
+        "Ďalšie podrobnosti"
+      ],
+      "Not confirmed": [
+        "Nepotvrdené"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Do konzoly DNS vášho poskytovateľa doménových služieb, prosím, pridajte nasledujúce záznamy:"
+      ],
+      "Refresh": [
+        "Obnoviť"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Predvolené nastavenie je „none“. Pre zvýšenie bezpečnosti však odporúčame nastaviť túto hodnotu na „p=quarantine“."
+      ],
+      "This migration has been completed": [
+        "Migrácia bola dokončená"
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Stále overujeme MX záznamy u vášho poskytovateľa domén."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
+      ],
+      "You're all set!": [
+        "Všetko je pripravené!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľa. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
       ]
     },
     "Browser": {
@@ -10744,6 +10795,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Detailed instructions": [
+        "Podrobné pokyny"
       ]
     },
     "Link (Scribe)": {
@@ -17965,6 +18019,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "via ${ groupName }": [
+        "cez ${ groupName }"
       ]
     },
     "Tor out of date": {
@@ -18625,6 +18682,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspešnom overení prosím neodstraňujte tento TXT záznam, je potrebný pre potvrdenie, že stále používate svoju doménu."
+      ]
+    },
+    "Label for domain setup": {
+      "Host name": [
+        "Názov servera (Host name)"
       ]
     }
   }

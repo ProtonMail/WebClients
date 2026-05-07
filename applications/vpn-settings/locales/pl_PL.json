@@ -1617,6 +1617,9 @@
       ],
       "Verify your domain to start a migration": [
         "Zweryfikuj swoją domenę, aby rozpocząć migrację"
+      ],
+      "You": [
+        "Ty"
       ]
     },
     "Browser": {
@@ -7695,6 +7698,9 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ],
+      "X": [
+        "X"
       ]
     },
     "info": {
@@ -10638,6 +10644,9 @@
       ],
       "The whole organization": [
         "Cała organizacja"
+      ],
+      "TCP": [
+        "TCP"
       ]
     },
     "option": {
@@ -13037,6 +13046,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Po obniżeniu planu stracisz dostęp do nieograniczonych danych logowania, notatek, aliasów hide-my-email, 20 sejfów i priorytetowego wsparcia."
+      ],
+      "Storage used": [
+        "Wykorzystana przestrzeń"
       ]
     },
     "Subscription attribute": {
@@ -15324,19 +15336,25 @@
         "**Zaoszczędź do ${ priceString }** dzięki dłuższej subskrypcji. Te same funkcje premium w niższej cenie."
       ],
       "Advanced security for your company?": [
-        "Potrzebujesz zaawansowanych zabezpieczeń dla swojej firmy?"
+        "Potrzebujesz zaawansowanych zabezpieczeń dla firmy?"
       ],
       "Did you know?": [
         "Czy wiesz?"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
-        "Chroń swoją organizację przed wyciekami danych za pomocą aplikacji ${ VPN_APP_NAME } dla firm."
+        "Chroń swoją organizację przed wyciekami danych za pomocą planu ${ VPN_APP_NAME } for Business."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Nieograniczona prywatność dla Ciebie i Twojej ukochanej osoby. Już od ${ priceString } miesięcznie."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "W planie ${ PLAN_NAMES[plan] } możesz chronić do ${ FAMILY_MAX_USERS } użytkowników. Już od ${ priceString } miesięcznie za konto."
+      ],
+      "Advanced security for your company": [
+        "Zaawansowane zabezpieczenia dla firmy"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Chroń swoją organizację przed wyciekami danych za pomocą planu ${ PLAN_NAMES[plan] }."
       ]
     },
     "upsell panel": {
@@ -15415,6 +15433,9 @@
       ],
       "Writing assistant": [
         "Asystent pisania"
+      ],
+      "Save": [
+        "Zapisz"
       ]
     },
     "Users table: badge": {
@@ -15714,6 +15735,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Nie usuwaj rekordu TXT nawet po pomyślnej weryfikacji, ponieważ jest on potrzebny do potwierdzenia, że nadal jesteś właścicielem domeny."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Otwórz w ${ appName }"
       ]
     }
   }

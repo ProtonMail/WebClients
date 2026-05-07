@@ -1519,6 +1519,15 @@
       ],
       "User admin:": [
         "Administrador/a d'usuaris:"
+      ],
+      "2 new admin roles": [
+        "2 rols d'administrador nous"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegueu la gestió de molts usuaris a la vegada.\nAssigneu rols d'administrador específics a grups per a obtenir permisos automàtics. Això segueix el principi del mínim privilegi per a estalviar temps en la incorporació i la desincorporació de personal, alhora que reduïu els errors."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nou: Controleu l'accés d'administrador per a molts usuaris a la vegada"
       ]
     },
     "AdminRole_Info": {
@@ -2287,6 +2296,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
         "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per a resoldre-ho"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
       ]
     },
     "Browser": {
@@ -18347,6 +18365,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Després de la verificació, no esborreu aquest registre TXT, ja que cal confirmar que continueu posseint el domini."
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Feu clic al nom d'un usuari per a gestionar-ne el rol i els permisos"
+      ],
+      "User roles available": [
+        "Rols d'usuari disponibles"
       ]
     }
   }

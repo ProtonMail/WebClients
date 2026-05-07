@@ -2121,6 +2121,57 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Вам неабходна даць дазвол для ${ BRAND_NAME } на капіяванне вашых даных. Працягвайце далей пасля таго, як будуць прыняты дазволы."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
+      ],
+      "Activated": [
+        "Актывавана"
+      ],
+      "Copy activation link to clipboard": [
+        "Скапіюйце спасылку актывацыі ў буфер абмену"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Скапіюйце код ніжэй і ўстаўце яго ў раздзел DNS вашага даменнага вузла. Прыклады і карысныя парады як гэта зрабіць можна знайсці ў ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
+      ],
+      "DMARC records": [
+        "Запісы DMARC"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Кіруецца праз ${ registrar.name }"
+      ],
+      "More details": [
+        "Дадатковая інфармацыя"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Дадайце наступныя запісы ў кансоль DNS вашага пастаўшчыка даменаў:"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Абагуліце спасылку актывацыі з карыстальнікамі, каб яны змаглі пацвердзіць свой уліковы запіс ${ BRAND_NAME }."
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Прадвызначаныя налады адсутнічаюць. Аднак для ўдасканалення вашай бяспекі рэкамендуецца наладзіць гэта значэнне ў p=quarantine."
+      ],
+      "This migration has been completed": [
+        "Перанос завершаны"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Звярніце ўвагу, што некаторыя карыстальнікі не пацвердзілі свае ўліковыя запісы ${ BRAND_NAME }."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальніка. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
       ]
     },
     "Browser": {
@@ -17965,6 +18016,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
+      ],
+      "via ${ groupName }": [
+        "праз ${ groupName }"
       ]
     },
     "Tor out of date": {
@@ -18625,6 +18679,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "Label for domain setup": {
+      "Host name": [
+        "Імя вузла"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Знойдзены памылковы запіс ${ group.name }"
+      ],
+      "Use default value": [
+        "Выкарыстоўваць прадвызначанае значэнне"
       ]
     }
   }

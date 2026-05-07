@@ -1519,6 +1519,15 @@
       ],
       "User admin:": [
         "Administrateur des utilisateurs :"
+      ],
+      "2 new admin roles": [
+        "2 nouveaux rôles d'administrateur"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Gérez les droits d'accès pour plusieurs utilisateurs à la fois. Attribuez des rôles d'administrateur spécifiques à des groupes pour automatiser l'attribution des autorisations. Cette approche s'inscrit dans le principe du moindre privilège, ce qui permet de gagner du temps lors de l'intégration et du départ des collaborateurs tout en réduisant les erreurs."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nouveau : contrôlez les accès administrateur pour plusieurs utilisateurs à la fois"
       ]
     },
     "AdminRole_Info": {
@@ -2317,6 +2326,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateur. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement.",
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateurs. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
       ]
     },
     "Browser": {
@@ -18479,6 +18497,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Cliquez sur le nom d'un utilisateur pour gérer son rôle et ses permissions."
+      ],
+      "User roles available": [
+        "Rôles utilisateur disponibles"
       ]
     }
   }
