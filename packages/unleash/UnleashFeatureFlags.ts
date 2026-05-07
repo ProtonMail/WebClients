@@ -238,7 +238,6 @@ enum DocsFeatureFlag {
 }
 
 export enum MailFeatureFlag {
-    SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',

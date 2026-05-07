@@ -3,7 +3,6 @@ import { useConversationCounts } from '@proton/mail/store/counts/conversationCou
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
@@ -30,7 +29,6 @@ export const useSelectAll = ({ labelID }: Props) => {
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();
     const selectAll = useMailSelector(selectSelectAll);
-    const selectAllAvailable = useFlag('SelectAll');
 
     const locationCount = () => {
         return getLocationElementsCount(labelID, conversationCounts || [], messageCounts || [], isConversation);
@@ -71,6 +69,5 @@ export const useSelectAll = ({ labelID }: Props) => {
         getBannerText,
         getBannerTextWithLocation,
         getButtonText,
-        selectAllAvailable,
     };
 };
