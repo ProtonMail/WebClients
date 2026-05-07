@@ -109,6 +109,31 @@ export function reportAddMeet({ context }: { context: PaymentTelemetryContext })
 // #endregion
 
 // ============================================================================
+// #region reportAddPass
+// ============================================================================
+
+/** Event name mapping for Add Pass events */
+export const ADD_PASS_CONTEXT_MAPPING = getMapping('add_pass');
+
+/**
+ * Reports when user interacts with the "Add Pass" button for the first time.
+ *
+ * **When to call:** Each time user clicks/interacts with Add Pass button in a session.
+ * **Purpose:** Track interest in the Pass addon.
+ *
+ * @param context - The checkout context where the interaction occurred
+ *
+ * @example
+ * reportAddPass({ context: 'subscription-modification' });
+ * // Sends: subscription_modification_add_pass
+ */
+export function reportAddPass({ context }: { context: PaymentTelemetryContext }) {
+    const eventName = ADD_PASS_CONTEXT_MAPPING[context] ?? 'unknown_context_add_pass';
+    telemetry.sendCustomEvent(eventName);
+}
+// #endregion
+
+// ============================================================================
 // #region reportPayment
 // ============================================================================
 

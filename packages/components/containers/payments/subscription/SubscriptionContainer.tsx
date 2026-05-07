@@ -40,6 +40,7 @@ import {
     type PlainPaymentMethodType,
     type Plan,
     type PlanIDs,
+    SelectedPlan,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
     type SubscriptionEstimation,
@@ -95,6 +96,7 @@ import GenericError from '../../error/GenericError';
 import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethodMessage';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
+import { PassFakeAddon } from '../planCustomizer/PassFakeAddon';
 import { ProtonPlanCustomizer, forceAddonsMinMaxConstraints } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
@@ -119,6 +121,7 @@ import {
     reportChangeTelemetry,
     telemetryContext,
 } from './helpers/subscriptionTelemetry';
+import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
@@ -307,7 +310,6 @@ const SubscriptionContainerInner = ({
     const getCalendars = useGetCalendars();
     const getOrganization = useGetOrganization();
     const { APP_NAME } = useConfig();
-
     const [subscribing, withSubscribing] = useLoading();
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
@@ -1120,6 +1122,7 @@ const SubscriptionContainerInner = ({
     ) : null;
 
     const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
+    const vpn2024AddonsExperiment = useVpn2024AddonsExperiment(optimisticPlanIDs ?? model.planIDs);
     const optimisticPlanIDsRef = useRef<any | undefined>();
 
     const handleChangePlanIDs = useHandler(
@@ -1198,6 +1201,17 @@ const SubscriptionContainerInner = ({
                                     return null;
                                 }
 
+                                const selectedPlanIDs = optimisticPlanIDs ?? model.planIDs;
+
+                                const {
+                                    noAddonVariant,
+                                    displayLumoOnly,
+                                    displayMeetOnly,
+                                    displayPassAsFakeAddonOnly,
+                                    isVPNPass2023,
+                                    overrideAddonsBehaviour,
+                                } = vpn2024AddonsExperiment;
+
                                 return (
                                     <>
                                         <h2 className="text-2xl text-bold mb-4">
@@ -1205,22 +1219,57 @@ const SubscriptionContainerInner = ({
                                                 ? couponConfig?.checkoutSubtitle()
                                                 : c('Label').t`Subscription options`}
                                         </h2>
-                                        {getHasPlanCustomizer(model.planIDs) && (
-                                            <ProtonPlanCustomizer
-                                                scribeAddonEnabled={scribeEnabled.paymentsEnabled}
-                                                lumoAddonEnabled={lumoAddonEnabled}
-                                                meetAddonEnabled={meetAddonFlag}
-                                                loading={blockAccountSizeSelector}
-                                                currency={model.currency}
-                                                cycle={model.cycle}
-                                                plansMap={plansMapRef.current}
-                                                selectedPlanIDs={optimisticPlanIDs ?? model.planIDs}
-                                                onChangePlanIDs={handleOptimisticPlanIDs}
-                                                latestSubscription={latestSubscription}
-                                                allowedAddonTypes={allowedAddonTypes}
-                                                className="subscription-container-plan-customizer"
-                                                telemetryContext={telemetryContext}
-                                            />
+                                        {!displayPassAsFakeAddonOnly &&
+                                            !noAddonVariant &&
+                                            getHasPlanCustomizer(model.planIDs) && (
+                                                <ProtonPlanCustomizer
+                                                    scribeAddonEnabled={scribeEnabled.paymentsEnabled}
+                                                    lumoAddonEnabled={
+                                                        overrideAddonsBehaviour ? displayLumoOnly : lumoAddonEnabled
+                                                    }
+                                                    meetAddonEnabled={
+                                                        overrideAddonsBehaviour ? displayMeetOnly : meetAddonFlag
+                                                    }
+                                                    loading={blockAccountSizeSelector}
+                                                    currency={model.currency}
+                                                    cycle={model.cycle}
+                                                    plansMap={plansMapRef.current}
+                                                    selectedPlanIDs={selectedPlanIDs}
+                                                    onChangePlanIDs={handleOptimisticPlanIDs}
+                                                    latestSubscription={latestSubscription}
+                                                    allowedAddonTypes={allowedAddonTypes}
+                                                    className="subscription-container-plan-customizer"
+                                                    telemetryContext={telemetryContext}
+                                                />
+                                            )}
+                                        {displayPassAsFakeAddonOnly && (
+                                            <div className="subscription-container-plan-customizer">
+                                                <PassFakeAddon
+                                                    currency={model.currency}
+                                                    cycle={model.cycle}
+                                                    plansMap={plansMapRef.current}
+                                                    onAddPass={(planIDs) => {
+                                                        const selectedPlan = SelectedPlan.createNormalized(
+                                                            planIDs,
+                                                            plansMapRef.current,
+                                                            model.cycle,
+                                                            model.currency
+                                                        );
+                                                        handleOptimisticPlanIDs(selectedPlan.planIDs);
+                                                        checkoutTelemetry.reportAddPass({ context: telemetryContext });
+                                                    }}
+                                                    onRemovePass={() => {
+                                                        const selectedPlan = SelectedPlan.createNormalized(
+                                                            { [PLANS.VPN2024]: 1 },
+                                                            plansMapRef.current,
+                                                            model.cycle,
+                                                            model.currency
+                                                        );
+                                                        handleOptimisticPlanIDs(selectedPlan.planIDs);
+                                                    }}
+                                                    vpnPassBundleSelected={isVPNPass2023}
+                                                />
+                                            </div>
                                         )}
                                         <div className="mb-8">
                                             {disableCycleSelector ? (

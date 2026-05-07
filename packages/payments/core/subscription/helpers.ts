@@ -1065,19 +1065,35 @@ export function subscriptionExpires(
     }
 }
 
+/** If plan has changed but coupon remains, check if there is a mismatch */
+const vpnInvalidPlansForCouponMap: Map<COUPON_CODES, PLANS[]> = new Map([
+    [COUPON_CODES.VPNPASSINTRO2026, [PLANS.VPN2024]],
+    [COUPON_CODES.VPN_INTRO_2025, [PLANS.VPN_PASS_BUNDLE]],
+]);
+
 const getVpnAutoCoupon = ({ coupon, planIDs, cycle }: Parameters<typeof getAutoCoupon>[0]) => {
+    const plansInvalidForCoupon = vpnInvalidPlansForCouponMap.get(coupon as COUPON_CODES);
+    const hasInvalidPlanForCoupon = Object.keys(planIDs).some((plan) => plansInvalidForCoupon?.includes(plan as PLANS));
+
     // user already provided a coupon
-    if (coupon) {
+    if (coupon && !hasInvalidPlanForCoupon) {
         return;
     }
 
-    const planAndCycleMatch =
+    const planAndCycleMatchVPN2024 =
         [PLANS.VPN2024].some((plan) => planIDs?.[plan]) && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any);
-    if (!planAndCycleMatch) {
-        return;
+    if (planAndCycleMatchVPN2024) {
+        return COUPON_CODES.VPN_INTRO_2025;
     }
 
-    return COUPON_CODES.VPN_INTRO_2025;
+    const planAndCycleMatchVPNPassBundle =
+        [PLANS.VPN_PASS_BUNDLE].some((plan) => planIDs?.[plan]) &&
+        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any);
+    if (planAndCycleMatchVPNPassBundle) {
+        return COUPON_CODES.VPNPASSINTRO2026;
+    }
+
+    return;
 };
 
 export const getAutoCoupon = ({
