@@ -19,7 +19,10 @@ export declare namespace clipboard {
 }
 
 export declare namespace msix_updater {
-    export function installUpdate(packageUri: string): Promise<void>;
+    export function installUpdate(
+        packageUri: string,
+        onProgress: (err: Error | null, arg: number) => any
+    ): Promise<void>;
 }
 
 export declare namespace napi_native_messaging {
