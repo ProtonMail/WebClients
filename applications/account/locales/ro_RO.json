@@ -525,9 +525,6 @@
       "Delete record": [
         "Ștergere înregistrare"
       ],
-      "Delete token ${ token.Account }": [
-        "Ștergere cod de acces ${ token.Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "Ștergere cod de acces „${ token.Name }”"
       ],
@@ -2893,12 +2890,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "Add a custom domain": [
-        "Adăugați un domeniu personal"
-      ],
-      "App installed": [
-        "Aplicație instalată"
-      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -2923,11 +2914,17 @@
       "Contacts": [
         "Contacte"
       ],
+      "Copy activation link to clipboard": [
+        "Copiere legătură web de activare în memorie"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Copiați codul de mai jos și lipiți-l în secțiunea DNS a gazdei domeniului. Puteți găsi un exemplu și câteva sfaturi utile ${ hereHref }."
+      ],
+      "DMARC records": [
+        "Înregistrări DMARC"
+      ],
       "Domain connected": [
         "Domeniu conectat"
-      ],
-      "Domain ownership verified": [
-        "Deținerea domeniului verificată"
       ],
       "Estimated size": [
         "Mărime estimată"
@@ -2953,14 +2950,8 @@
       "Install migration app": [
         "Instalare aplicație de migrare"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Aflați mai multe despre ce poate fi migrat. Detalii."
-      ],
       "Mail": [
         "E-mail"
-      ],
-      "Migrate": [
-        "Migrare"
       ],
       "Migrate from Google Workspace": [
         "Migrați de la Google Workspace"
@@ -2979,17 +2970,14 @@
       "Migration status": [
         "Stare migrare"
       ],
-      "Not started": [
-        "Neîncepută"
-      ],
       "Organization does not have enough seats available": [
         "Organizația nu dispune de suficiente licențe disponibile."
       ],
       "Organization does not have enough storage available": [
         "Organizația nu are suficient spațiu de stocare disponibil."
       ],
-      "Organization settings": [
-        "Setări organizație"
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Adăugați următoarele înregistrări în consola DNS a furnizorului domeniului:"
       ],
       "Required": [
         "Obligatoriu"
@@ -3000,20 +2988,23 @@
       "Select at least one user to start a migration": [
         "Selectați cel puțin un utilizator pentru a începe o migrare."
       ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Selectați ce doriți să migrați. Aceasta se va aplica tuturor utilizatorilor, indiferent dacă sunt creați acum sau mai târziu. Migrarea va începe după ce conturile de utilizator sunt create."
-      ],
       "Set up": [
         "Configurare"
       ],
       "Set up billing information": [
         "Setare date de facturare"
       ],
+      "Set up manually": [
+        "Setare manuală"
+      ],
       "Set up two-factor authentication": [
         "Setare autentificare cu doi factori"
       ],
       "Settings": [
         "Setări"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Distribuiți legătura web de activare utilizatorilor pentru ca aceștia să își poată accesa contul ${ BRAND_NAME }."
       ],
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
@@ -3027,9 +3018,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Pentru a vă migra datele organizației, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalare, reveniți aici pentru a continua."
       ],
-      "Transfer errors": [
-        "Erori de transfer."
-      ],
       "User": [
         "Utilizator"
       ],
@@ -3042,20 +3030,25 @@
       "Verify your domain": [
         "Verificați-vă domeniul"
       ],
-      "Verify your domain ownership": [
-        "Verificare deținere domeniu"
-      ],
       "Verify your domain to start a migration": [
         "Verificați domeniul pentru a începe o migrare."
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul Google Workspace și reîncercați."
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
+      ],
       "What are you migrating?": [
         "Ce migrați?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Trebuie să acordați permisiunea ca ${ BRAND_NAME } să vă copieze datele. După acceptarea permisiunilor, reveniți aici pentru a continua."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
+        "Planul actual permite maxim ${ maxMembers } utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
+        "Planul actual permite maxim ${ maxMembers } de utilizatori. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament."
       ]
     },
     "breadcrumb": {
@@ -6383,6 +6376,9 @@
       ],
       "Add": [
         "Adăugare"
+      ],
+      "Add 1 more": [
+        "Adăugare încă unul"
       ],
       "Add emergency contact": [
         "Adăugați o persoană de contact în caz de urgență"
@@ -10218,9 +10214,6 @@
       ],
       "Change your password": [
         "Modificare parolă"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Consultați starea importărilor și transferărilor."
       ],
       "Check your network and try again.": [
         "Verificați rețeaua și reîncercați."
@@ -15480,6 +15473,11 @@
         "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ]
     },
+    "Label for domain setup": {
+      "Use default value": [
+        "Folosire valoare implicită"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -20190,9 +20188,6 @@
       "Partial": [
         "Parțial"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Solicitare opțiune de resetare a parolei (verificare prin e-mail sau SMS)"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "Scor: ${ score }/${ maxScore }"
       ],
@@ -20234,13 +20229,10 @@
       "Download recovery file": [
         "Descărcare fișier de recuperare"
       ],
-      "Email verification enabled": [
-        "Verificare e-mail activată"
-      ],
       "Emergency contacts added": [
         "Contacte de urgență adăugate"
       ],
-      "Enable recovery by email": [
+      "Enable email recovery": [
         "Activare recuperare prin e-mail"
       ],
       "Enable recovery by phone": [
@@ -20251,6 +20243,9 @@
       ],
       "Password verified": [
         "Parolă verificată"
+      ],
+      "Phone recovery enabled": [
+        "Recuperare prin telefon activată"
       ],
       "Recovery contacts added": [
         "Contacte de recuperare adăugate"
@@ -20266,9 +20261,6 @@
       ],
       "Sign-in with QR code allowed": [
         "Conectarea cu cod QR este permisă"
-      ],
-      "SMS verification enabled": [
-        "Verificarea prin SMS este activată"
       ],
       "Verify password": [
         "Verificare parolă"
@@ -20999,6 +20991,23 @@
         "Fraza de recuperare este setată"
       ]
     },
+    "safety_review": {
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Acestea vă vor putea ajuta să vă deblocați datele după ce vă resetați parola."
+      ],
+      "Allow trusted friends to sign in": [
+        "Permiteți persoanelor de încredere să se conecteze"
+      ],
+      "Done": [
+        "Gata"
+      ],
+      "Download recovery file": [
+        "Descărcare fișier de recuperare"
+      ],
+      "Verify your recovery phone": [
+        "Verificați numărul de telefon de recuperare"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Anulare"
@@ -21203,9 +21212,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, descărcați fraza de recuperare și dezactivați opțiunile evidențiate."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Aveți acțiuni recomandate de la ${ PROTON_SENTINEL_NAME }"
       ]

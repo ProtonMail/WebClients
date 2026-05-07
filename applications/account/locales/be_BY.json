@@ -39,7 +39,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -312,6 +312,9 @@
       "Confirm": [
         "Пацвердзіць"
       ],
+      "Confirm email": [
+        "Пацвердзіць электронную пошту"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
       ],
@@ -521,9 +524,6 @@
       ],
       "Delete record": [
         "Выдаліць запіс"
-      ],
-      "Delete token ${ token.Account }": [
-        "Выдаліць токен ${ token.Account }"
       ],
       "Delete token “${ token.Name }”": [
         "Выдаліць токен “${ token.Name }”"
@@ -764,6 +764,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "Адбываецца ўжыванне фільтраў. Гэта можа заняць некалькі хвілін."
+      ],
+      "Finish": [
+        "Гатова"
       ],
       "Fit to window": [
         "Па памеры акна"
@@ -2904,12 +2907,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
-      "Add a custom domain": [
-        "Дадаць карыстальніцкі дамен"
-      ],
-      "App installed": [
-        "Праграма ўсталявана"
-      ],
       "Authenticate": [
         "Аўтэнтыфікаваць"
       ],
@@ -2937,9 +2934,6 @@
       "Domain connected": [
         "Дамен падключаны"
       ],
-      "Domain ownership verified": [
-        "Уладальнік дамена спраўджаны"
-      ],
       "Estimated size": [
         "Прыблізны памер"
       ],
@@ -2964,14 +2958,8 @@
       "Install migration app": [
         "Усталяваць праграму пераносу"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Даведайцеся больш аб тым, што можна перанесці. Даведацца больш"
-      ],
       "Mail": [
         "Пошта"
-      ],
-      "Migrate": [
-        "Перанесці"
       ],
       "Migrate from Google Workspace": [
         "Перанесці з Google Workspace"
@@ -2991,17 +2979,11 @@
       "Migration status": [
         "Статус пераносу"
       ],
-      "Not started": [
-        "Не запушчана"
-      ],
       "Organization does not have enough seats available": [
         "У арганізацыі недастаткова даступных ліцэнзій"
       ],
       "Organization does not have enough storage available": [
         "У арганізацыі недастаткова даступнага месца для захоўвання"
-      ],
-      "Organization settings": [
-        "Налады арганізацыі"
       ],
       "Required": [
         "Абавязкова"
@@ -3011,9 +2993,6 @@
       ],
       "Select at least one user to start a migration": [
         "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе прыменена да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
       ],
       "Set up": [
         "Наладзіць"
@@ -3039,9 +3018,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана."
       ],
-      "Transfer errors": [
-        "Памылкі перадачы"
-      ],
       "User": [
         "Карыстальнік"
       ],
@@ -3053,9 +3029,6 @@
       ],
       "Verify your domain": [
         "Спраўдзіць свой дамен"
-      ],
-      "Verify your domain ownership": [
-        "Спраўдзіце, што вы валодаеце даменам"
       ],
       "Verify your domain to start a migration": [
         "Спраўдзіце свой дамен, каб пачаць перанос"
@@ -5171,7 +5144,7 @@
         "Якім чынам вы зможаце разбалкіраваць свае зашыфраваныя даныя ў выпадку страты пароля."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Адасобце розныя часткі свайго жыцця і ўпарадкуйце сваю паштовую скрыню з дадатковымі адрасамі."
@@ -5340,7 +5313,7 @@
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+        "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
     "Disable account": {
@@ -7008,7 +6981,7 @@
         "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
       ],
       "IMAP server is required": [
-        "Патрабуецца ўвесці сервер IMAP"
+        "Патрабуецца сервер IMAP"
       ],
       "Impossible to create the gateway": [
         "Немагчыма стварыць шлюз"
@@ -7069,6 +7042,9 @@
       ],
       "Invalid invitation link": [
         "Памылковая спасылка запрашэння"
+      ],
+      "Invalid joining link. Please contact your administrator.": [
+        "Памылковая спасылка на далучэнне. Звяжыцеся са сваім адміністратарам."
       ],
       "Invalid name": [
         "Памылковая назва"
@@ -7305,7 +7281,7 @@
         "Сеанс пратэрмінаваны. Абнавіце старонку."
       ],
       "Signature not verified": [
-        "Подпіс не правераны"
+        "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -7323,7 +7299,7 @@
         "Назвы некаторых вашых метак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+        "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong while creating the address": [
         "Нешта пайшло не так пры стварэнні адраса"
@@ -7398,7 +7374,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
       "This field is invalid": [
         "Гэта поле з'яўляецца памылковым"
@@ -9249,7 +9225,7 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
       "IMAP access is enabled in your external account.": [
-        "У вашым знешнім уліковым запісе ўключаны IMAP."
+        "У вашым знешнім уліковым запісе ўключаны доступ па IMAP."
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "У вашым уліковым запісе Yahoo уключаны IMAP."
@@ -9267,7 +9243,7 @@
         "Выкарыстоўвайце свой пароль праграмы, калі:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
+        "Выкарыстоўвайце пароль праграмы замест звычайнага пароля, калі:"
       ],
       "Your app password is correct. Do not use your regular password.": [
         "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
@@ -9825,10 +9801,10 @@
         "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце **${ referrerRewardAmount } крэдытаў** за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце **${ referrerRewardAmount } у крэдытах** за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "**Sync codes** to all your devices": [
         "**Сінхранізуйце коды** з усімі вашымі прыладамі"
@@ -10035,10 +10011,10 @@
         "Усе вашы змены будуць страчаны."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
       "Allocated": [
         "Вылучана"
@@ -10319,9 +10295,6 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
-      "Check the status of imports and forwarding.": [
-        "Праверка статусу імпартавання і перасылкі."
-      ],
       "Check your network and try again.": [
         "Праверце сваю сетку і паспрабуйце зноў."
       ],
@@ -10354,6 +10327,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
+      ],
+      "Code has been re-sent.": [
+        "Код быў паўторна адпраўлены"
       ],
       "Coming soon": [
         "Неўзабаве з'явіцца"
@@ -10921,6 +10897,9 @@
       ],
       "Gateways": [
         "шлюзоў"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі вашай бягучай фразы аднаўлення."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
@@ -12195,7 +12174,7 @@
         "Рэкамендацыя TechRadar Pro з рэйтынгам 4,2 з 5 зорак"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "Test link": [
         "Тэставая спасылка"
@@ -13239,7 +13218,7 @@
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated.": [
         "Ваш уліковы запіс паспяхова абноўлены."
@@ -13318,6 +13297,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Ваша фраза аднаўлення - гэта паслядоўнасць з 12 выпадкова згенерыраваных слоў у вызначаным парадку."
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "Ваша фраза аднаўлення дазволіць вам увайсці і аднавіць вашы даныя ў выпадку, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Яна складаецца з 12 слоў і дзейнічае аналагічна рэзервоваму паролю."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -15721,7 +15703,7 @@
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -18227,7 +18209,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далей вы павінны ўвайсці ў ваш уліковы запіс Google і даць нам доступ да вашых даных ${ BRAND_NAME }."
+        "На наступным кроку вы павінны ўвайсці ў свой уліковы запіс Google і даць доступ ${ BRAND_NAME } да сваіх даных."
       ]
     },
     "Oauth instructions video": {
@@ -19135,8 +19117,14 @@
       "per month, billed every two years": [
         "у месяц (аплачваецца кожныя два гады)"
       ],
+      "Preparing your recovery phrase": [
+        "Падрыхтоўка вашай фразы аднаўлення"
+      ],
       "Protected by Swiss privacy laws": [
         "Абарону швейцарскімі законамі аб прыватнасці"
+      ],
+      "Save your recovery phrase to continue": [
+        "Захавайце свой фразу аднаўлення для працягу"
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
@@ -20284,9 +20272,6 @@
       "Partial": [
         "Частковы"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "Патрабуе параметр скідання пароля (спраўджанне па SMS або электроннай пошце)"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "Рэйтынг: ${ score } / ${ maxScore }"
       ],
@@ -20328,14 +20313,8 @@
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
       ],
-      "Email verification enabled": [
-        "Спраўджанне па электроннай пошце ўключана"
-      ],
       "Emergency contacts added": [
         "Экстранны кантакты дададзены"
-      ],
-      "Enable recovery by email": [
-        "Уключыць аднаўленне па электроннай пошце"
       ],
       "Enable recovery by phone": [
         "Уключыць аднаўленне па нумары тэлефона"
@@ -20361,9 +20340,6 @@
       "Sign-in with QR code allowed": [
         "Уваход з QR-кодам дазволены"
       ],
-      "SMS verification enabled": [
-        "Спраўджанне па SMS уключана"
-      ],
       "Verify password": [
         "Спраўджанне пароля"
       ],
@@ -20386,6 +20362,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**Пасля стварэння фразы аднаўлення пераканайцеся, што яна знаходзіцца ў даступным для вас месцы.** З меркаванняў бяспекі мы не захоўваем яе пасля захавання вашых змяненняў, і вы больш не зможаце ўбачыць яе ў праграме ${ BRAND_NAME }."
+      ],
       "copy recovery phrase": [
         "скапіюйце фразу аднаўлення"
       ],
@@ -20406,6 +20385,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Або замест гэтага ${ downloadRecoveryKitSwitchButton }."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Ваш **фраза аднаўлення** дазваляе аднавіць ваш уліковы запіс ${ BRAND_NAME } у выпадку яго блакіравання."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20469,7 +20451,7 @@
         "Абагуліць з дапамогай ${ name }"
       ],
       "Start earning credits": [
-        "Пачніце зарабляць крэдыты"
+        "Пачаць зарабляць крэдыты"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
@@ -20813,6 +20795,9 @@
       "Back to Safety Review": [
         "Вярнуцца да бяспечнага агляду"
       ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Паколькі вы скінулі пароль, бягучую фразу аднаўлення можна будзе выкарыстоўваць толькі для аднаўлення даных, створаных да скідання пароля."
+      ],
       "Can be used to regain access to your account and data": [
         "Можа быць выкарыстаны для аднаўлення доступу да вашага ўліковага запісу і даных"
       ],
@@ -20840,6 +20825,9 @@
       "Download ${ size }": [
         "Спампаваць ${ size }"
       ],
+      "Download your recovery phrase": [
+        "Спампаваць сваю фразу аднаўлення"
+      ],
       "Email address": [
         "Адрас электроннай пошты"
       ],
@@ -20852,11 +20840,17 @@
       "Enable recovery by phone": [
         "Уключыць аднаўленне па нумары тэлефона"
       ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "Я разумею, што ў мяне не будзе магчымасці аднавіць ужо заблакіраваныя даныя з гэтай фразай аднаўлення."
+      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Поўны доступ да вашага ўліковага запісу ${ BRAND_NAME } будзе адноўлены пры наступным уваходзе на гэту прыладу з дапамогай вашага новага пароля, калі вы забудзеце свой бягучы пароль ${ BRAND_NAME } і вам неабходна будзе скінуць яго."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Поўны доступ да вашага ўліковага запісу ${ BRAND_NAME } будзе адноўлены пры наступным уваходзе на гэту прыладу з дапамогай вашага новага пароля, калі вы забудзеце свой бягучы пароль ${ BRAND_NAME } і вам неабходна будзе скінуць яго."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваша фраза аднаўлення дазволіць вам увайсці і аднавіць свае даныя."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то ў вас **абавязкова** павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
@@ -20900,6 +20894,9 @@
       "Take action to secure your account": [
         "Прыміце меры, каб абараніць свой уліковы запіс"
       ],
+      "There was an error generating your recovery phrase": [
+        "Адбылася памылка генерацыі вашай фразы аднаўлення"
+      ],
       "There was an error verifying your email": [
         "Адбылася памылка спраўджання вашай электроннай пошты"
       ],
@@ -20927,6 +20924,12 @@
       "to recover your account if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу пры магчымай блакіроўцы"
       ],
+      "Update your recovery phrase": [
+        "Абнавіце сваю фразу аднаўлення"
+      ],
+      "Update your recovery phrase?": [
+        "Абнавіць вашу фразу аднаўлення?"
+      ],
       "Verify": [
         "Спраўджанне"
       ],
@@ -20941,6 +20944,9 @@
       ],
       "Verify your recovery phone number": [
         "Спраўдзіць нумар тэлефона для аднаўлення"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Сістэма сутыкнулася з памылкай падчас генерацыі вашай фразы аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Адбылася памылка пры спраўджанні вашай электроннай пошты. Паспрабуйце яшчэ раз пазней або звярніцеся ў службу падтрымкі, калі праблема застанецца."
@@ -20971,6 +20977,9 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Вы можаце выкарыстоўваць свой нумар тэлефона для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "Вы ўжо спампоўвалі фразу аднаўлення. Паўторнае спампоўванне **дэактывуе папярэдні экзэмпляр**."
       ],
       "You have recommended actions to safeguard your account further.": [
         "У вас ёсць рэкамендаваныя дзеянні для далейшай абароны вашага ўліковага запісу."
@@ -21055,6 +21064,12 @@
       ],
       "Your recovery phone number is:": [
         "Ваш нумар тэлефона для аднаўлення доступу:"
+      ],
+      "Your recovery phrase": [
+        "Ваша фраза аднаўлення"
+      ],
+      "Your recovery phrase is set": [
+        "Ваш нумар фраза аднаўлення зададзена"
       ]
     },
     "saml: Action": {
@@ -21261,9 +21276,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "Спампуйце сваю фразу аднаўлення і адключыце вылучаныя параметры для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "У вас ёсць рэкамендаваныя дзеянні ад ${ PROTON_SENTINEL_NAME }"
       ]
@@ -21733,7 +21745,7 @@
     },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
-        "Памылка праверкі подпісу"
+        "Памылка спраўджання подпісу"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
         "Вы ўключылі спраўджанне адраса для ${ boldSenderEmail }. Мы не можам спраўдзіць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася з прычыны змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
@@ -24355,6 +24367,9 @@
       "Activate user": [
         "Актываваць карыстальніка"
       ],
+      "Activate your email": [
+        "Актывацыя вашай электроннай пошты"
+      ],
       "Activity monitor": [
         "Манітор актыўнасці"
       ],
@@ -24676,6 +24691,9 @@
       "Create a new gateway": [
         "Стварэнне новага шлюза"
       ],
+      "Create a new password": [
+        "Стварыце новы пароль"
+      ],
       "Create Gateway": [
         "Стварэнне шлюза"
       ],
@@ -24768,6 +24786,9 @@
       ],
       "Day theme": [
         "Дзённая тэма"
+      ],
+      "Deactivate current phrase?": [
+        "Дэактываваць бягучую фразу?"
       ],
       "Decrypt key": [
         "Расшыфраваць ключ"
@@ -24906,6 +24927,9 @@
       ],
       "Download the mobile apps": [
         "Спампоўванне мабільных праграм"
+      ],
+      "Download your recovery phrase": [
+        "Спампаваць сваю фразу аднаўлення"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -25969,6 +25993,9 @@
       "Verify it’s you": [
         "Спраўдзіце, што гэта вы"
       ],
+      "Verify your email": [
+        "Спраўдзіць вашу электронную пошту"
+      ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."
       ],
@@ -25992,6 +26019,9 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Код адпраўлены на вашу электронную пошту для пацвярджэння вашай асобы. Код сапраўдны на працягу 10 хвілін. Увядзіце яго ніжэй."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
@@ -26043,6 +26073,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Ваша падпіска з тарыфным планам ${ planTitle } пачалася"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ваш адміністратар у ${ orgName } запрашае актываваць ваш новы бяспечны ўліковы запіс ${ BRAND_NAME } і абнавіць пароль."
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Ваш адміністратар запрашае актываваць ваш новы бяспечны ўліковы запіс ${ BRAND_NAME } і абнавіць пароль."
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"
