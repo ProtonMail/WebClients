@@ -1402,6 +1402,9 @@
       ],
       "This domain is already managed by your organization": [
         "Ce domaine est déjà géré par votre organisation."
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Une vérification du déverrouillage du bureau est déjà en cours."
       ]
     },
     "Error message": {
@@ -2095,8 +2098,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2340,7 +2342,7 @@
         "Appuyez sur Entrée pour copier."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
+        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Remplissez automatiquement et rapidement vos jetons A2F."
@@ -2608,7 +2610,7 @@
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
       ],
       "Unlock with biometrics": [
-        "Déverrouiller avec les données biométriques"
+        "Déverrouillez par biométrie"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."

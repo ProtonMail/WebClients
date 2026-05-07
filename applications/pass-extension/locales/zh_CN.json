@@ -1385,6 +1385,9 @@
       ],
       "This domain is already managed by your organization": [
         "此域名已由您的组织管理"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "桌面解锁检查正在进行中。"
       ]
     },
     "Error message": {
@@ -2059,7 +2062,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2293,7 +2296,7 @@
         "按回车键以复制"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
+        "由 ${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）提供保护"
       ],
       "Quickly autofill your 2FA tokens.": [
         "快速自动填充您的 2FA 令牌。"
@@ -2560,7 +2563,7 @@
         "输入 PIN 码查看设置"
       ],
       "Unlock with biometrics": [
-        "使用生物识别技术解锁"
+        "使用生物识别解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
@@ -3131,7 +3134,7 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "邮箱（别名）"
+        "邮箱 (别名)"
       ],
       "Email (new alias)": [
         "邮箱 (新别名)"
