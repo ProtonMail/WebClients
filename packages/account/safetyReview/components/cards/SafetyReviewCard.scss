@@ -59,10 +59,11 @@ $safety-review-card-vt-stagger-timing: 0.9s;
 		animation:
 			safety-review-card-vt-enter $safety-review-card-vt-stagger-timing ease-out both,
 			safety-review-card-vt-enter-opacity $safety-review-card-vt-stagger-timing ease-out both;
+		animation-delay: 300ms;
 	}
 
 	&::view-transition-new(safety-review-card-enter-2) {
-		animation-delay: $safety-review-card-vt-stagger-timing * 0.1;
+		animation-delay: 400ms;
 	}
 }
 
@@ -84,21 +85,23 @@ $safety-review-card-vt-stagger-timing: 0.9s;
 
 @keyframes safety-review-card-vt-promote {
 	from {
-		transform: translateY(1.25rem) scale(0.94);
+		transform: translateY(0.8rem) scale(0.94) perspective(500px) translate3d(0, 0, 1rem) rotateX(2deg);
 	}
 
 	to {
-		transform: translateY(0) scale(1);
+		transform: translateY(0) scale(1) perspective(500px) translate3d(0, 0, 0) rotateX(0);
 	}
 }
 
 @keyframes safety-review-card-vt-enter {
 	from {
-		transform: translateY(-1.5rem) scale(0.94);
+		transform: translateY(-1.5rem) scale(0.9) perspective(500px) translate3d(0, 0, 1rem) rotateX(7deg);
+		opacity: 0;
 	}
 
 	to {
-		transform: translateY(0) scale(1);
+		transform: translateY(0) scale(1) perspective(500px) translate3d(0, 0, 0) rotateX(0);
+		opacity: 1;
 	}
 }
 
@@ -114,14 +117,14 @@ $safety-review-card-vt-stagger-timing: 0.9s;
 
 @keyframes safety-review-card-vt-fly-complete {
 	to {
-		transform: translateX(60vw) rotate(30deg);
+		transform: translateX(60vw) rotate(30deg) scale(0.8);
 		opacity: 0;
 	}
 }
 
 @keyframes safety-review-card-vt-fly-skipped {
 	to {
-		transform: translateX(-60vw) rotate(-30deg);
+		transform: translateX(-60vw) rotate(-30deg) scale(0.8);
 		opacity: 0;
 	}
 }
