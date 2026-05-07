@@ -21,6 +21,7 @@ import { MissingFeatureContent } from './content/MissingFeatureContent';
 import { OfferContent } from './content/OfferContent';
 import { TemporaryNeedContent } from './content/TemporaryNeedContent';
 import { useCancellationOffer } from './hooks/useCancellationOffer';
+import { useFeedbackFirstTelemetry } from './hooks/useFeedbackFirstTelemetry';
 
 enum CANCELLATION_STEPS {
     FEEDBACK,
@@ -44,6 +45,8 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
     const [subscription] = useSubscription();
     const offerData = useCancellationOffer();
     const { cancelSubscriptionRenewal } = useCancelRenewal();
+
+    const { sendFeedbackReport, sendSecondStepReport, sendConfirmCancellation } = useFeedbackFirstTelemetry();
 
     const closeModal = () => {
         modalProps.onClose?.();
@@ -85,10 +88,23 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
 
         const reason = result.Reason as SUBSCRIPTION_CANCELLATION_REASONS;
         setStep(getNextStepFromFeedback(reason));
+        sendFeedbackReport(result);
     };
 
     const handleContinueToConfirm = () => {
         setStep(CANCELLATION_STEPS.CONFIRM);
+        sendSecondStepReport(feedback);
+    };
+
+    const handleConfirmCancellation = async () => {
+        await cancelSubscriptionRenewal(
+            feedback ?? { Reason: '', Feedback: '', ReasonDetails: '', Context: 'mail' },
+            false
+        );
+        sendConfirmCancellation();
+
+        closeModal();
+        onCancelled();
     };
 
     return (
@@ -123,17 +139,7 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
                 />
             )}
             {step === CANCELLATION_STEPS.CONFIRM && (
-                <ConfirmCancellationContent
-                    onKeepPlan={closeModal}
-                    onCancelSubscription={async () => {
-                        await cancelSubscriptionRenewal(
-                            feedback ?? { Reason: '', Feedback: '', ReasonDetails: '', Context: 'mail' },
-                            false
-                        );
-                        closeModal();
-                        onCancelled();
-                    }}
-                />
+                <ConfirmCancellationContent onKeepPlan={closeModal} onCancelSubscription={handleConfirmCancellation} />
             )}
         </ModalTwo>
     );
