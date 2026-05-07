@@ -3,6 +3,7 @@
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
 export enum CommonFeatureFlag {
+    AtkinsonHyperlegible = 'AtkinsonHyperlegible',
     ForceReload = 'ForceReload',
     ColorPerEventWeb = 'ColorPerEventWeb',
     CollectLogs = 'CollectLogs',

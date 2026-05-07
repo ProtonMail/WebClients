@@ -69,6 +69,51 @@ $opendyslexic-font-path: '~@proton/styles/assets/fonts';
 		url('#{$opendyslexic-font-path}/OpenDyslexic-Bold-Italic.woff') format('woff');
 }
 
+/*
+Atkinson Hyperlegible font face definition for font face setting
+*/
+$atkinsonhyperlegible-font-path: '~@proton/styles/assets/fonts';
+
+@font-face {
+	font-family: 'Atkinson HyperLegible';
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src:
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-regular.woff2') format('woff2'),
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Atkinson HyperLegible';
+	font-style: italic;
+	font-weight: normal;
+	font-display: swap;
+	src:
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-italic.woff2') format('woff2'),
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Atkinson HyperLegible';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src:
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-bold.woff2') format('woff2'),
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Atkinson HyperLegible';
+	font-style: italic;
+	font-weight: 600;
+	font-display: swap;
+	src:
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-bolditalic.woff2') format('woff2'),
+		url('#{$atkinsonhyperlegible-font-path}/atkinson-hyperlegible-bolditalic.woff') format('woff');
+}
+
 // --------------------------------------------------------------------------------------
 
 :root {
