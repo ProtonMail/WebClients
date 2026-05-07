@@ -140,7 +140,7 @@ export const MeetContainer = ({
 
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
-    const { recordingState, startRecording, downloadRecording } = useMeetingRecorder();
+    const { startRecording, downloadRecording } = useMeetingRecorder();
 
     const leaveWithStopRecording = useStableCallback(async () => {
         await downloadRecording();
@@ -189,11 +189,10 @@ export const MeetContainer = ({
 
     const meetingRecorderContextValue = useMemo(
         () => ({
-            recordingState,
             startRecording,
             downloadRecording,
         }),
-        [recordingState, startRecording, downloadRecording]
+        [startRecording, downloadRecording]
     );
 
     return (
