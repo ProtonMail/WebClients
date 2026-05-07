@@ -1,7 +1,7 @@
 import { isDevOrBlack } from '@proton/docs-shared'
 import { useFlag } from '@proton/unleash/useFlag'
 
-export function useIsSDKSharingModalEnabled() {
+export function useSharingModalDriveSdkEnabled() {
   return useFlag('DocsSharingModalDriveSDK') || isDevOrBlack()
 }
 
