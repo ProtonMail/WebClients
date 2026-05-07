@@ -204,7 +204,6 @@ describe('E2eeRecoveryManager', () => {
         manager = new E2eeRecoveryManager({
             room: room as any,
             audioManager,
-            persistentNoiseDetectionEnabled: true,
         });
         manager.setup();
 
@@ -252,7 +251,6 @@ describe('E2eeRecoveryManager', () => {
         manager = new E2eeRecoveryManager({
             room: room as any,
             audioManager,
-            persistentNoiseDetectionEnabled: true,
         });
         manager.setup();
 
@@ -300,6 +298,11 @@ describe('E2eeRecoveryManager', () => {
         const participant = createParticipant('p1', [audioPub, videoPub]);
         room.remoteParticipants.set('p1', participant);
 
+        // Simulate room connection to start the grace-period clock, then
+        // advance past the join grace period before firing errors.
+        room.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
+        await vi.advanceTimersByTimeAsync(15_000);
+
         // 5 EncryptionError events within 100ms — should produce a single recovery
         // after the 1500ms debounce window.
         for (let n = 0; n < 5; n++) {
@@ -311,5 +314,64 @@ describe('E2eeRecoveryManager', () => {
 
         expect(audioManager.recoverTrack).toHaveBeenCalledTimes(1);
         expect(audioManager.recoverTrack).toHaveBeenCalledWith(audioPub, participant, 'encryption-error');
+    });
+
+    it('suppresses EncryptionError recovery within the join grace period', async () => {
+        const audioPub = createPublication({ trackSid: 'audio-1' });
+        const participant = createParticipant('p1', [audioPub]);
+        room.remoteParticipants.set('p1', participant);
+
+        // Simulate room connection, then fire within the 15s grace window — should be ignored.
+        room.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
+        room.emit(RoomEvent.EncryptionError, new Error('decryption failed'), participant);
+        await vi.advanceTimersByTimeAsync(5_000);
+
+        expect(audioManager.recoverTrack).not.toHaveBeenCalled();
+    });
+
+    it('clears recovery state after enough consecutive quiet ticks post-recovery', async () => {
+        const audioPub = createPublication({ trackSid: 'audio-1' });
+        const participant = createParticipant('p1', [audioPub]);
+        room.remoteParticipants.set('p1', participant);
+
+        // Phase 1: 4 noise ticks to trigger recovery.
+        let totalEnergy = 0;
+        let totalSamples = 0;
+        let noisy = true;
+        (audioPub.track!.receiver!.getStats as Mock).mockImplementation(async () => {
+            totalSamples += 96_000;
+            totalEnergy += noisy ? 1.344 : 0.001;
+            return makeStatsReport({
+                entry: {
+                    type: 'inbound-rtp',
+                    kind: 'audio',
+                    trackIdentifier: audioPub.track!.mediaStreamTrack!.id,
+                    packetsReceived: totalSamples / 1000,
+                    totalSamplesReceived: totalSamples,
+                    totalAudioEnergy: totalEnergy,
+                    audioLevel: noisy ? 0.6 : 0.01,
+                },
+            });
+        });
+
+        // 5 ticks: baseline + 4 noisy → recovery fires
+        for (let n = 0; n < 5; n++) {
+            await tickOnce(room);
+        }
+        expect(audioManager.recoverTrack).toHaveBeenCalledTimes(1);
+
+        // Phase 2: switch to quiet audio, run recoverySuccessTicks (3) quiet ticks.
+        noisy = false;
+        for (let n = 0; n < 3; n++) {
+            await tickOnce(room);
+        }
+
+        // A second noise burst should now be able to trigger recovery again
+        // (attempts counter was reset after the quiet-tick validation).
+        noisy = true;
+        for (let n = 0; n < 4; n++) {
+            await tickOnce(room);
+        }
+        expect(audioManager.recoverTrack).toHaveBeenCalledTimes(2);
     });
 });

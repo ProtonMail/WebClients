@@ -13,11 +13,12 @@ import {
 } from '../utils/e2eeRecovery/E2eeRecoveryManager';
 
 /**
- * Wires the E2EE recovery coordinator into the React tree. Owns the 2s
- * tick that detects broken video / audio cryptors and triggers per-track
+ * Wires the E2EE recovery coordinator into the React tree. Owns the tick
+ * interval that detects broken video / audio cryptors and triggers per-track
  * recovery via the supplied {@link AudioRecoveryAPI}.
  *
- * This is expected only in safari based browsers.
+ * Only active on Safari-based browsers, where the WebKit E2EE cryptor
+ * pipeline is known to break under certain conditions.
  *
  * The {@link AudioRecoveryAPI} comes from the audio subscription manager
  * because the unsubscribe/subscribe dance must coordinate with that
@@ -28,12 +29,9 @@ export const useE2eeRecovery = (audioManager: AudioRecoveryAPI) => {
     const { reportMeetError } = useMeetErrorReporting();
 
     // Kill switch for the whole E2EE recovery manager (audio + video detectors and
-    // the recoverTrack pipeline). Recovery is only meaningful in Safari based browsers, where the
-    // cryptor pipeline is brittle. So it's always disabled for the rest of the browsers.
+    // the recoverTrack pipeline). Recovery is only meaningful in Safari-based browsers,
+    // where the cryptor pipeline is brittle — always disabled elsewhere.
     const recoveryDisabled = useFlag('MeetE2eeDisableRecovery') || !isSafari();
-
-    // Enable persistent noise detection needed for recovery when only audio is affected.
-    const persistentNoiseDetectionEnabled = useFlag('MeetE2eeAudioNoiseDetection');
 
     // Enable more aggressive recovery tuning.
     const isAggressiveRecovery = useFlag('MeetE2eeRecoveryAggressive');
@@ -46,7 +44,6 @@ export const useE2eeRecovery = (audioManager: AudioRecoveryAPI) => {
             audioManager,
             reportError: reportMeetError,
             disabled: recoveryDisabled,
-            persistentNoiseDetectionEnabled,
             tuning,
         });
 
@@ -55,5 +52,5 @@ export const useE2eeRecovery = (audioManager: AudioRecoveryAPI) => {
         return () => {
             e2eeRecoveryManager.cleanup();
         };
-    }, [room, audioManager, recoveryDisabled, persistentNoiseDetectionEnabled, isAggressiveRecovery, reportMeetError]);
+    }, [room, audioManager, recoveryDisabled, isAggressiveRecovery, reportMeetError]);
 };

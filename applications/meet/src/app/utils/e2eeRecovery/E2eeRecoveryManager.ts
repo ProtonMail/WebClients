@@ -33,16 +33,6 @@ export interface E2eeRecoveryManagerOptions {
     /** When true the manager only logs detections, never recovers. */
     disabled?: boolean;
     /**
-     * Enables the {@link E2eeRecoveryManager.checkAudioPersistentNoise}
-     * detector. It is the most aggressive detector and the most prone to
-     * false positives on healthy speech, so it is opt-in via the
-     * `MeetE2eeAudioNoiseDetection` flag while we monitor real-world
-     * behaviour. The other detectors (missing-stats, stalled, concealment,
-     * video stall) match what shipped before the recovery refactor and stay
-     * always-on.
-     */
-    persistentNoiseDetectionEnabled?: boolean;
-    /**
      * Detector thresholds and timing. Defaults to {@link E2EE_RECOVERY_TUNING_DEFAULT}.
      * Use {@link getE2eeRecoveryTuning} or pass {@link E2EE_RECOVERY_TUNING_AGGRESSIVE} for a more sensitive profile.
      */
@@ -55,12 +45,6 @@ interface VideoStallState {
     stuckTicks: number;
 }
 
-interface ConcealmentSnapshot {
-    concealedSamples: number;
-    silentConcealedSamples: number;
-    totalSamplesReceived: number;
-}
-
 interface EnergySnapshot {
     totalAudioEnergy: number;
     totalSamplesReceived: number;
@@ -71,23 +55,19 @@ const trackKeyOf = (participant: { sid: string }, publication: { trackSid: strin
 
 /**
  * Coordinates detection and recovery of broken E2EE FrameCryptors. Polls
- * RTP stats on the configured poll interval and runs several independent
- * detectors:
+ * RTP stats on the configured tick interval and runs two independent detectors:
  *
  * - **video stall**: pktsRx grows but framesDecoded stays frozen. Almost
- *   always indicates a broken video cryptor. We also recover the same
- *   participant's audio because the audio cryptor is on the same key state.
- * - **audio missing stats**: track is subscribed but produces no
- *   inbound-rtp entry within a grace period.
- * - **audio stalled**: pktsRx is frozen for a continuously-unmuted track.
- * - **audio concealment**: high non-silent concealment ratio, either
- *   recently or cumulatively.
+ *   always indicates a broken video cryptor. Also recovers the same
+ *   participant's audio because the audio cryptor shares the same key state.
  * - **audio persistent noise**: corrupted cryptor producing continuous
  *   metallic noise — sustained high energy/sample ratio with no audioLevel
- *   dips.
+ *   dips. N consecutive quiet ticks after a recovery confirm the track is
+ *   healed and reset the attempt counter.
  *
  * Also listens to {@link RoomEvent.EncryptionError} as an early signal
- * (rare in practice but free) and triggers a per-participant recovery.
+ * (rare in practice but free), with a join-time grace period to avoid
+ * acting on the expected key-exchange burst when a new participant joins.
  *
  * Recovery is delegated:
  * - Video tracks are resubscribed in-place via setSubscribed(false/true).
@@ -99,46 +79,51 @@ export class E2eeRecoveryManager {
     private readonly audioManager: AudioRecoveryAPI;
     private readonly reportError?: ReportError;
     private readonly disabled: boolean;
-    private readonly persistentNoiseDetectionEnabled: boolean;
     private readonly tuning: E2eeRecoveryTuning;
 
     private tickInterval: NodeJS.Timeout | null = null;
+    private summaryInterval: NodeJS.Timeout | null = null;
     private isTickRunning = false;
     private isRoomReconnecting = false;
 
+    // Timestamp of the last ConnectionState.Connected event. null before the
+    // first connection. Used to suppress encryption-error recovery during the
+    // join-time (and reconnect) key-exchange window.
+    private connectedAt: number | null = null;
+
     private videoStallState = new Map<string, VideoStallState>();
-    private firstSeenWithoutStats = new Map<string, number>();
-    private firstUnmutedTime = new Map<string, number>();
-    private lastPacketCounts = new Map<string, number>();
-    private lastConcealmentStats = new Map<string, ConcealmentSnapshot>();
     private lastEnergyStats = new Map<string, EnergySnapshot>();
-    private consecutiveHighConcealment = new Map<string, number>();
     private consecutiveNoiseTicks = new Map<string, number>();
+    // Counts consecutive ticks with normal energy/sample after a recovery.
+    // When this reaches recoverySuccessTicks the track is considered healed.
+    private consecutiveQuietTicks = new Map<string, number>();
 
     // Per-track recovery accounting. recoveryAttempts only clears when a
     // track is validated as recovered or the participant disconnects.
     private recoveryAttempts = new Map<string, number>();
-    private recoveryReasons = new Map<string, RecoveryReason>();
-    private recoveryHealthyTicks = new Map<string, number>();
-    private recoveryPacketProgress = new Map<string, boolean>();
 
     // Per-participant cooldowns and pending encryption-error timers.
     private lastRecoverByParticipant = new Map<string, number>();
     private pendingEncryptionRecoveryTimers = new Map<string, NodeJS.Timeout>();
+
+    // Session-level counters flushed to Sentry every 5 minutes and on cleanup.
+    private sessionNoiseDetections = 0;
+    private sessionRecoveryAttempts = 0;
+    private sessionSuccessfulRecoveries = 0;
+    private sessionAffectedTrackKeys = new Set<string>();
+    private sessionRecoveryReasons: Partial<Record<RecoveryReason, number>> = {};
 
     constructor({
         room,
         audioManager,
         reportError,
         disabled = false,
-        persistentNoiseDetectionEnabled = false,
         tuning = E2EE_RECOVERY_TUNING_DEFAULT,
     }: E2eeRecoveryManagerOptions) {
         this.room = room;
         this.audioManager = audioManager;
         this.reportError = reportError;
         this.disabled = disabled;
-        this.persistentNoiseDetectionEnabled = persistentNoiseDetectionEnabled;
         this.tuning = tuning;
     }
 
@@ -156,12 +141,25 @@ export class E2eeRecoveryManager {
         this.room.on(RoomEvent.EncryptionError, this.handleEncryptionError);
         this.room.on(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
         this.room.on(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
+
+        this.summaryInterval = setInterval(
+            () => {
+                this.flushSessionSummary();
+                this.resetSessionCounters();
+            },
+            5 * 60 * 1_000
+        );
     };
 
     cleanup = () => {
         if (this.tickInterval) {
             clearInterval(this.tickInterval);
             this.tickInterval = null;
+        }
+
+        if (this.summaryInterval) {
+            clearInterval(this.summaryInterval);
+            this.summaryInterval = null;
         }
 
         this.pendingEncryptionRecoveryTimers.forEach((timer) => clearTimeout(timer));
@@ -172,18 +170,14 @@ export class E2eeRecoveryManager {
         this.room.off(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
 
         this.videoStallState.clear();
-        this.firstSeenWithoutStats.clear();
-        this.firstUnmutedTime.clear();
-        this.lastPacketCounts.clear();
-        this.lastConcealmentStats.clear();
         this.lastEnergyStats.clear();
-        this.consecutiveHighConcealment.clear();
         this.consecutiveNoiseTicks.clear();
+        this.consecutiveQuietTicks.clear();
         this.recoveryAttempts.clear();
-        this.recoveryReasons.clear();
-        this.recoveryHealthyTicks.clear();
-        this.recoveryPacketProgress.clear();
         this.lastRecoverByParticipant.clear();
+
+        this.flushSessionSummary();
+        this.resetSessionCounters();
     };
 
     private handleConnectionStateChanged = (state: ConnectionState) => {
@@ -191,6 +185,9 @@ export class E2eeRecoveryManager {
             this.isRoomReconnecting = true;
         } else if (state === ConnectionState.Connected) {
             this.isRoomReconnecting = false;
+            // Reset the grace-period clock on every connection (initial join and
+            // reconnects both trigger key-exchange bursts that should be suppressed).
+            this.connectedAt = Date.now();
         }
     };
 
@@ -205,17 +202,10 @@ export class E2eeRecoveryManager {
         };
 
         removeIfMatching(this.videoStallState);
-        removeIfMatching(this.firstSeenWithoutStats);
-        removeIfMatching(this.firstUnmutedTime);
-        removeIfMatching(this.lastPacketCounts);
-        removeIfMatching(this.lastConcealmentStats);
         removeIfMatching(this.lastEnergyStats);
-        removeIfMatching(this.consecutiveHighConcealment);
         removeIfMatching(this.consecutiveNoiseTicks);
+        removeIfMatching(this.consecutiveQuietTicks);
         removeIfMatching(this.recoveryAttempts);
-        removeIfMatching(this.recoveryReasons);
-        removeIfMatching(this.recoveryHealthyTicks);
-        removeIfMatching(this.recoveryPacketProgress);
 
         this.lastRecoverByParticipant.delete(participant.identity);
     };
@@ -293,20 +283,12 @@ export class E2eeRecoveryManager {
         if (publication.source !== Track.Source.Microphone) {
             return;
         }
-        const trackKey = trackKeyOf(tick.participant, publication);
 
-        // Skip while the audio manager is mid-recovery. We still update
-        // baselines (handled inside each detector) so we don't trigger on
-        // bogus deltas the moment the cooldown ends.
-        const isRecovering = this.audioManager.isRecovering(trackKey);
-
-        // Mute window resets some baselines; keep packet count to detect
-        // "frozen across mute toggles" patterns.
         if (publication.isMuted) {
-            this.firstUnmutedTime.delete(trackKey);
-            this.lastConcealmentStats.delete(trackKey);
-            this.consecutiveNoiseTicks.delete(trackKey);
+            const trackKey = trackKeyOf(tick.participant, publication);
             this.lastEnergyStats.delete(trackKey);
+            this.consecutiveNoiseTicks.delete(trackKey);
+            this.consecutiveQuietTicks.delete(trackKey);
             return;
         }
 
@@ -314,22 +296,15 @@ export class E2eeRecoveryManager {
             return;
         }
 
-        if (!this.firstUnmutedTime.has(trackKey)) {
-            this.firstUnmutedTime.set(trackKey, Date.now());
-        }
+        const trackKey = trackKeyOf(tick.participant, publication);
 
-        if (isRecovering) {
-            // While the unsubscribe/subscribe dance is running we don't trust
-            // counters at all and we don't fire new detections. We do clear
-            // baselines so the next subscription starts fresh.
-            this.lastConcealmentStats.delete(trackKey);
-            this.lastPacketCounts.delete(trackKey);
+        // While the unsubscribe/subscribe dance is running we don't trust
+        // energy counters and we don't fire new detections. Clear baselines
+        // so the next subscription starts fresh.
+        if (this.audioManager.isRecovering(trackKey)) {
             this.lastEnergyStats.delete(trackKey);
             this.consecutiveNoiseTicks.delete(trackKey);
-            return;
-        }
-
-        if (this.checkAudioMissingStats(tick)) {
+            this.consecutiveQuietTicks.delete(trackKey);
             return;
         }
 
@@ -337,254 +312,17 @@ export class E2eeRecoveryManager {
             return;
         }
 
-        // Order matters: stalled fires earliest, then concealment (also
-        // owns post-recovery validation), then persistent-noise.
-        if (this.checkAudioStalled(tick)) {
-            return;
-        }
-        this.checkAudioConcealment(tick);
-        if (this.persistentNoiseDetectionEnabled) {
-            this.checkAudioPersistentNoise(tick);
-        }
+        this.checkAudioPersistentNoise(tick);
     };
 
     /**
-     * Returns true if a recovery was triggered (caller should skip the rest
-     * of the audio detectors for this tick).
+     * Detects a corrupted E2EE FrameCryptor producing continuous metallic noise by
+     * measuring energy per decoded sample over consecutive ticks. When the ratio stays
+     * above {@link E2eeRecoveryTuning.noiseEnergyPerSampleThreshold} for
+     * {@link E2eeRecoveryTuning.noiseConsecutiveTicks} ticks in a row, recovery is
+     * triggered. Conversely, {@link E2eeRecoveryTuning.recoverySuccessTicks} consecutive
+     * quiet ticks after a recovery confirm the track is healed.
      */
-    private checkAudioMissingStats = (tick: ReceiverStatsTick): boolean => {
-        const { publication, participant, stats } = tick;
-        const trackKey = trackKeyOf(participant, publication);
-
-        if (stats) {
-            this.firstSeenWithoutStats.delete(trackKey);
-            return false;
-        }
-
-        if (publication.track?.mediaStreamTrack?.readyState !== 'live') {
-            return false;
-        }
-
-        const firstSeen = this.firstSeenWithoutStats.get(trackKey);
-        if (!firstSeen) {
-            this.firstSeenWithoutStats.set(trackKey, Date.now());
-            return false;
-        }
-
-        const missingDuration = Date.now() - firstSeen;
-        if (missingDuration <= this.tuning.missingStatsGracePeriodMs) {
-            return false;
-        }
-
-        const context = {
-            localParticipant: this.room.localParticipant.identity,
-            room: this.room.name,
-            participant: participant.identity,
-            trackSid: publication.trackSid,
-            missingDuration,
-        };
-
-        // eslint-disable-next-line no-console
-        console.warn('Detected missing inbound-rtp stats', context);
-        this.reportError?.('E2eeRecoveryManager: Detected missing inbound-rtp stats', {
-            level: 'warning',
-            context,
-        });
-
-        this.firstSeenWithoutStats.delete(trackKey);
-        void this.triggerAudioRecovery(publication, participant, 'audio-missing-stats');
-        return true;
-    };
-
-    private checkAudioStalled = (tick: ReceiverStatsTick): boolean => {
-        const { publication, participant, stats } = tick;
-
-        if (!stats) {
-            return false;
-        }
-
-        const trackKey = trackKeyOf(participant, publication);
-        const packetsReceived: number = stats.packetsReceived ?? 0;
-        const lastPackets = this.lastPacketCounts.get(trackKey) ?? 0;
-        this.lastPacketCounts.set(trackKey, packetsReceived);
-
-        if (this.recoveryAttempts.has(trackKey)) {
-            this.recoveryPacketProgress.set(trackKey, packetsReceived > lastPackets);
-        }
-
-        if (lastPackets <= 0 || packetsReceived !== lastPackets) {
-            return false;
-        }
-
-        if (publication.track?.mediaStreamTrack?.readyState !== 'live') {
-            return false;
-        }
-
-        const unmutedSince = this.firstUnmutedTime.get(trackKey) ?? Date.now();
-        const unmutedDuration = Date.now() - unmutedSince;
-        if (unmutedDuration < this.tuning.unmutedGracePeriodMs) {
-            return false;
-        }
-
-        const context = {
-            localParticipant: this.room.localParticipant.identity,
-            room: this.room.name,
-            participant: participant.identity,
-            trackSid: publication.trackSid,
-            packetsReceived,
-            lastPackets,
-            unmutedDuration,
-        };
-        // eslint-disable-next-line no-console
-        console.warn('Detected stalled audio', context);
-        this.reportError?.('E2eeRecoveryManager: Detected stalled audio', {
-            level: 'warning',
-            context,
-        });
-        void this.triggerAudioRecovery(publication, participant, 'audio-stalled');
-        return true;
-    };
-
-    private checkAudioConcealment = (tick: ReceiverStatsTick) => {
-        const { publication, participant, stats } = tick;
-        if (!stats) {
-            return;
-        }
-        const trackKey = trackKeyOf(participant, publication);
-
-        const packetsReceived: number = stats.packetsReceived ?? 0;
-        const concealedSamples: number = stats.concealedSamples ?? 0;
-        const totalSamplesReceived: number = stats.totalSamplesReceived ?? 0;
-        const silentConcealedSamples: number = stats.silentConcealedSamples ?? 0;
-        const concealmentEvents: number = stats.concealmentEvents ?? 0;
-
-        if (totalSamplesReceived < this.tuning.concealmentMinSamples) {
-            return;
-        }
-
-        const nonSilentConcealedSamples = concealedSamples - silentConcealedSamples;
-        const nonSilentConcealmentRatio = nonSilentConcealedSamples / totalSamplesReceived;
-
-        const previous = this.lastConcealmentStats.get(trackKey);
-        let recentNonSilentConcealmentRatio = 0;
-        let hasRecentData = false;
-        if (previous) {
-            const newConcealedSamples = concealedSamples - previous.concealedSamples;
-            const newSilentConcealedSamples = silentConcealedSamples - previous.silentConcealedSamples;
-            const newNonSilentConcealedSamples = newConcealedSamples - newSilentConcealedSamples;
-            const newTotalSamples = totalSamplesReceived - previous.totalSamplesReceived;
-            if (newTotalSamples >= this.tuning.concealmentMinDeltaSamples) {
-                recentNonSilentConcealmentRatio = newNonSilentConcealedSamples / newTotalSamples;
-                hasRecentData = true;
-            }
-        }
-
-        this.lastConcealmentStats.set(trackKey, {
-            concealedSamples,
-            silentConcealedSamples,
-            totalSamplesReceived,
-        });
-
-        const recentConcealmentCritical =
-            hasRecentData && recentNonSilentConcealmentRatio > this.tuning.recentConcealmentThreshold;
-        const cumulativeConcealmentHigh = nonSilentConcealmentRatio > this.tuning.concealmentRatioThreshold;
-        const attempts = this.recoveryAttempts.get(trackKey) ?? 0;
-        const packetsAdvanced = this.recoveryPacketProgress.get(trackKey) ?? false;
-        const recoveryReason = this.recoveryReasons.get(trackKey) ?? 'unknown';
-
-        if (recentConcealmentCritical || cumulativeConcealmentHigh) {
-            const consecutiveCount = (this.consecutiveHighConcealment.get(trackKey) ?? 0) + 1;
-            this.consecutiveHighConcealment.set(trackKey, consecutiveCount);
-            const shouldTrigger =
-                recentConcealmentCritical || consecutiveCount >= this.tuning.concealmentConsecutiveHighTicks;
-            if (!shouldTrigger) {
-                return;
-            }
-
-            const context = {
-                localParticipant: this.room.localParticipant.identity,
-                room: this.room.name,
-                participant: participant.identity,
-                trackSid: publication.trackSid,
-                nonSilentConcealmentRatio: nonSilentConcealmentRatio.toFixed(3),
-                recentNonSilentConcealmentRatio: hasRecentData ? recentNonSilentConcealmentRatio.toFixed(3) : 'N/A',
-                concealedSamples,
-                silentConcealedSamples,
-                nonSilentConcealedSamples,
-                totalSamplesReceived,
-                concealmentEvents,
-                consecutiveChecks: consecutiveCount,
-                triggerReason: recentConcealmentCritical ? 'recent_samples_critical' : 'cumulative_high',
-            };
-            this.resetRecoveryValidation(trackKey, {
-                participant: participant.identity,
-                trackSid: publication.trackSid,
-                packetsReceived,
-                packetsAdvanced,
-                recoveryAttempts: attempts,
-                recoveryReason,
-            });
-            // eslint-disable-next-line no-console
-            console.warn('Detected high audio concealment', context);
-            this.reportError?.('E2eeRecoveryManager: High audio concealment detected', {
-                level: 'warning',
-                context,
-            });
-            void this.triggerAudioRecovery(publication, participant, 'audio-concealment');
-            return;
-        }
-
-        // Concealment is normal. If we previously kicked off a recovery for
-        // this track, count this tick towards "successfully recovered".
-        this.consecutiveHighConcealment.delete(trackKey);
-        if (!this.recoveryAttempts.has(trackKey)) {
-            return;
-        }
-
-        const validationContext = {
-            localParticipant: this.room.localParticipant.identity,
-            room: this.room.name,
-            participant: participant.identity,
-            trackSid: publication.trackSid,
-            recoveryAttempts: attempts,
-            recoveryReason,
-            packetsReceived,
-            packetsAdvanced,
-            nonSilentConcealmentRatio: nonSilentConcealmentRatio.toFixed(3),
-            recentNonSilentConcealmentRatio: hasRecentData ? recentNonSilentConcealmentRatio.toFixed(3) : 'N/A',
-            concealedSamples,
-            silentConcealedSamples,
-            totalSamplesReceived,
-            concealmentEvents,
-        };
-
-        if (!packetsAdvanced) {
-            this.resetRecoveryValidation(trackKey, validationContext);
-            return;
-        }
-
-        const healthyTicks = (this.recoveryHealthyTicks.get(trackKey) ?? 0) + 1;
-        this.recoveryHealthyTicks.set(trackKey, healthyTicks);
-        // eslint-disable-next-line no-console
-        console.log('Recovery validation healthy tick', {
-            trackKey,
-            healthyTicks,
-            requiredHealthyTicks: this.tuning.recoverySuccessTicks,
-            ...validationContext,
-        });
-
-        if (healthyTicks >= this.tuning.recoverySuccessTicks) {
-            const context = { ...validationContext, healthyTicks };
-            // eslint-disable-next-line no-console
-            console.log('Track recovered successfully', context);
-            this.reportError?.('E2eeRecoveryManager: Track recovered successfully', {
-                level: 'info',
-                context,
-            });
-            this.cleanupTrackRecoveryState(trackKey);
-        }
-    };
-
     private checkAudioPersistentNoise = (tick: ReceiverStatsTick) => {
         const { publication, participant, stats } = tick;
         if (!stats) {
@@ -606,7 +344,9 @@ export class E2eeRecoveryManager {
         const energyDelta = totalAudioEnergy - previous.totalAudioEnergy;
         const samplesDelta = totalSamplesReceived - previous.totalSamplesReceived;
         if (energyDelta < 0 || samplesDelta <= 0) {
+            // No new samples this tick — no signal in either direction.
             this.consecutiveNoiseTicks.delete(trackKey);
+            this.consecutiveQuietTicks.delete(trackKey);
             return;
         }
 
@@ -617,9 +357,31 @@ export class E2eeRecoveryManager {
 
         if (!isNoiseTick) {
             this.consecutiveNoiseTicks.delete(trackKey);
+
+            // Count quiet ticks toward recovery success validation.
+            if (this.recoveryAttempts.has(trackKey)) {
+                const quietTicks = (this.consecutiveQuietTicks.get(trackKey) ?? 0) + 1;
+                this.consecutiveQuietTicks.set(trackKey, quietTicks);
+
+                if (quietTicks >= this.tuning.recoverySuccessTicks) {
+                    // eslint-disable-next-line no-console
+                    console.log('E2eeRecoveryManager: Track recovered successfully', {
+                        localParticipant: this.room.localParticipant.identity,
+                        room: this.room.name,
+                        participant: participant.identity,
+                        trackSid: publication.trackSid,
+                        recoveryAttempts: this.recoveryAttempts.get(trackKey),
+                        quietTicks,
+                    });
+                    this.sessionSuccessfulRecoveries += 1;
+                    this.cleanupTrackRecoveryState(trackKey);
+                }
+            }
             return;
         }
 
+        // Noise tick detected — reset quiet counter and advance noise counter.
+        this.consecutiveQuietTicks.delete(trackKey);
         const consecutive = (this.consecutiveNoiseTicks.get(trackKey) ?? 0) + 1;
         this.consecutiveNoiseTicks.set(trackKey, consecutive);
         if (consecutive < this.tuning.noiseConsecutiveTicks) {
@@ -638,11 +400,9 @@ export class E2eeRecoveryManager {
             totalSamplesReceived,
         };
         // eslint-disable-next-line no-console
-        console.warn('Detected persistent audio noise (likely broken cryptor)', context);
-        this.reportError?.('E2eeRecoveryManager: Detected persistent audio noise', {
-            level: 'warning',
-            context,
-        });
+        console.warn('E2eeRecoveryManager: Detected persistent audio noise (likely broken cryptor)', context);
+        this.sessionNoiseDetections += 1;
+        this.sessionAffectedTrackKeys.add(trackKey);
         this.consecutiveNoiseTicks.delete(trackKey);
         void this.triggerAudioRecovery(publication, participant, 'audio-persistent-noise');
     };
@@ -658,15 +418,35 @@ export class E2eeRecoveryManager {
         }
 
         const identity = participant.identity;
-        const existing = this.pendingEncryptionRecoveryTimers.get(identity);
+        const timeSinceConnected = this.connectedAt !== null ? Date.now() - this.connectedAt : null;
+        const inJoinGrace = timeSinceConnected === null || timeSinceConnected < this.tuning.joinGracePeriodMs;
+
         // eslint-disable-next-line no-console
         console.warn('E2eeRecoveryManager: EncryptionError received', {
             identity,
             participantSid: participant.sid,
             errorName: error.name,
             errorMessage: error.message,
-            hadPendingRecovery: Boolean(existing),
+            timeSinceConnected,
+            inJoinGrace,
         });
+
+        // During the join-time key-exchange window all remote participants emit
+        // EncryptionErrors simultaneously — the FrameCryptors start receiving frames
+        // before keys are distributed. Recovering at this point interrupts key
+        // negotiation and triggers a cascade of noise detections. We log the event
+        // but defer acting on it until the grace period has elapsed.
+        if (inJoinGrace) {
+            // eslint-disable-next-line no-console
+            console.log('E2eeRecoveryManager: skipping encryption-error recovery, within join grace period', {
+                identity,
+                timeSinceConnected,
+                joinGracePeriodMs: this.tuning.joinGracePeriodMs,
+            });
+            return;
+        }
+
+        const existing = this.pendingEncryptionRecoveryTimers.get(identity);
         if (existing) {
             clearTimeout(existing);
         }
@@ -789,9 +569,9 @@ export class E2eeRecoveryManager {
         }
 
         this.recoveryAttempts.set(trackKey, attempts + 1);
-        this.recoveryReasons.set(trackKey, reason);
-        this.recoveryHealthyTicks.set(trackKey, 0);
-        this.recoveryPacketProgress.delete(trackKey);
+        this.consecutiveQuietTicks.delete(trackKey);
+        this.sessionRecoveryAttempts += 1;
+        this.sessionRecoveryReasons[reason] = (this.sessionRecoveryReasons[reason] ?? 0) + 1;
 
         try {
             await this.audioManager.recoverTrack(publication, participant, reason);
@@ -806,27 +586,39 @@ export class E2eeRecoveryManager {
         }
     };
 
-    private resetRecoveryValidation = (trackKey: string, context: Record<string, unknown>) => {
-        const previous = this.recoveryHealthyTicks.get(trackKey) ?? 0;
-        this.recoveryHealthyTicks.set(trackKey, 0);
-        this.recoveryPacketProgress.delete(trackKey);
-        if (previous > 0) {
-            // eslint-disable-next-line no-console
-            console.log('Recovery validation reset', {
-                trackKey,
-                previousHealthyTicks: previous,
-                ...context,
-            });
-        }
-    };
-
     private cleanupTrackRecoveryState = (trackKey: string) => {
         this.recoveryAttempts.delete(trackKey);
-        this.recoveryReasons.delete(trackKey);
-        this.recoveryHealthyTicks.delete(trackKey);
-        this.recoveryPacketProgress.delete(trackKey);
-        this.consecutiveHighConcealment.delete(trackKey);
         this.consecutiveNoiseTicks.delete(trackKey);
+        this.consecutiveQuietTicks.delete(trackKey);
+    };
+
+    private flushSessionSummary = () => {
+        if (this.sessionNoiseDetections === 0) {
+            return;
+        }
+        const summary = {
+            localParticipant: this.room.localParticipant.identity,
+            room: this.room.name,
+            noiseDetections: this.sessionNoiseDetections,
+            recoveryAttempts: this.sessionRecoveryAttempts,
+            successfulRecoveries: this.sessionSuccessfulRecoveries,
+            affectedTracks: this.sessionAffectedTrackKeys.size,
+            reasons: { ...this.sessionRecoveryReasons },
+        };
+        // eslint-disable-next-line no-console
+        console.log('E2eeRecoveryManager: Session summary', summary);
+        this.reportError?.('E2eeRecoveryManager: Session noise summary', {
+            level: 'warning',
+            context: summary,
+        });
+    };
+
+    private resetSessionCounters = () => {
+        this.sessionNoiseDetections = 0;
+        this.sessionRecoveryAttempts = 0;
+        this.sessionSuccessfulRecoveries = 0;
+        this.sessionAffectedTrackKeys.clear();
+        this.sessionRecoveryReasons = {};
     };
 
     private findParticipantByIdentity = (identity: string): RemoteParticipant | undefined => {
