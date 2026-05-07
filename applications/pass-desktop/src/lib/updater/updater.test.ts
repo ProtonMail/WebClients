@@ -1,30 +1,33 @@
 import { autoUpdater } from 'electron';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
+import { UpdateStatus } from '@proton/pass/types/desktop';
 import noop from '@proton/utils/noop';
 
-import { msix_updater } from '../native';
-import config from './app/config';
-import { userAgent } from './lib/user-agent';
-import { store } from './store';
-import type { RemoteManifestResponse } from './update';
-import { UPDATE_SOURCE_URL, checkForUpdates } from './update';
-import { isMac, isWindows } from './utils/platform';
+import { msix_updater } from '../../../native';
+import config from '../../app/config';
+import { userAgent } from '../../lib/user-agent';
+import { store } from '../../store';
+import { isLinux, isMac, isProdEnv, isWindows } from '../../utils/platform';
+import { getUpdateStore, setUpdateStore } from './store';
+import { UPDATE_SOURCE_URL, checkForUpdates } from './updater';
+import type { RemoteManifestResponse } from './updater';
 
 jest.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },
     autoUpdater: { setFeedURL: jest.fn(), on: jest.fn(), checkForUpdates: jest.fn() },
 }));
 
-jest.mock('./utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
+jest.mock('../../utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
 
-jest.mock('./utils/platform', () => ({
+jest.mock('../../utils/platform', () => ({
     isMac: jest.fn(() => false),
     isWindows: jest.fn(() => false),
+    isLinux: jest.fn(() => false),
     isProdEnv: jest.fn(() => true),
 }));
 
-jest.mock('../native', () => ({
+jest.mock('../../../native', () => ({
     msix_updater: { installUpdate: jest.fn() },
 }));
 
@@ -36,6 +39,12 @@ const getMockSession = (version: RemoteManifestResponse, flags: FeatureFlagsResp
         return { json: () => response };
     },
 });
+
+const setOs = (os: 'windows' | 'macos' | 'linux') => {
+    (isMac as jest.Mock).mockImplementation(() => os === 'macos');
+    (isWindows as jest.Mock).mockImplementation(() => os === 'windows');
+    (isLinux as jest.Mock).mockImplementation(() => os === 'linux');
+};
 
 const check = async (versions: RemoteManifestResponse['Releases'], featureFlag = true) => {
     config.APP_VERSION = '1.0.0';
@@ -53,8 +62,12 @@ const check = async (versions: RemoteManifestResponse['Releases'], featureFlag =
 
 describe('Electron updater', () => {
     beforeEach(() => {
-        store.set('optInForBeta', false);
+        store.set('update', { beta: false, distribution: 0, status: UpdateStatus.Idle, newVersion: null });
+        (isProdEnv as jest.Mock).mockImplementation(() => true);
         jest.clearAllMocks();
+
+        // Default to macos version
+        setOs('macos');
     });
 
     it('should update if there is a new one', async () => {
@@ -71,7 +84,7 @@ describe('Electron updater', () => {
         expect(autoUpdater.checkForUpdates).toHaveBeenCalled();
     });
 
-    it('should ignore if there is are no new ones', async () => {
+    it('should ignore if there are no new ones', async () => {
         const update = await check([
             {
                 Version: '1.0.0',
@@ -158,7 +171,7 @@ describe('Electron updater', () => {
     });
 
     it('should update if opt in for beta and last Stable is newer', async () => {
-        store.set('optInForBeta', true);
+        store.set('update', { beta: true });
 
         const update = await check([
             {
@@ -174,7 +187,7 @@ describe('Electron updater', () => {
     });
 
     it('should update if opt in for beta and last Beta is newer', async () => {
-        store.set('optInForBeta', true);
+        store.set('update', { beta: true });
 
         const update = await check([
             {
@@ -227,8 +240,6 @@ describe('Electron updater', () => {
     });
 
     it('should update feed url on mac depending on the beta settings', async () => {
-        (isMac as jest.Mock).mockImplementation(() => true);
-
         await check([
             {
                 Version: '1.1.0',
@@ -247,7 +258,7 @@ describe('Electron updater', () => {
         jest.clearAllMocks();
 
         // running in the same test to ensure it changes dynamically
-        store.set('optInForBeta', true);
+        store.set('update', { beta: true });
 
         await check([
             {
@@ -266,7 +277,7 @@ describe('Electron updater', () => {
     });
 
     it('should use native windows binding to trigger updates on windows', async () => {
-        (isWindows as jest.Mock).mockImplementation(() => true);
+        setOs('windows');
 
         const url = 'url';
 
@@ -281,6 +292,38 @@ describe('Electron updater', () => {
 
         expect(update).toBe(true);
         expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
-        expect(msix_updater.installUpdate).toHaveBeenCalledWith(url);
+        expect(msix_updater.installUpdate).toHaveBeenCalledWith(url, expect.any(Function));
+    });
+
+    describe('status updates', () => {
+        it('should reset status to Idle when no update available', async () => {
+            await check([{ Version: '1.0.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [] }]);
+            expect(getUpdateStore().status).toBe(UpdateStatus.Idle);
+        });
+
+        it('should reset status to Idle when outside rollout percentage', async () => {
+            store.set('update', { distribution: 0.9 });
+            await check([{ Version: '1.1.0', RolloutPercentage: 0.5, CategoryName: 'Stable', File: [] }]);
+            expect(getUpdateStore().status).toBe(UpdateStatus.Idle);
+        });
+
+        it('should reset status to Idle when feature flag is off', async () => {
+            await check([{ Version: '1.1.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [] }], false);
+            expect(getUpdateStore().status).toBe(UpdateStatus.Idle);
+        });
+
+        it('should set status to UpdateReady when update is available', async () => {
+            (autoUpdater.checkForUpdates as jest.Mock).mockImplementation(() => {
+                setUpdateStore({ status: UpdateStatus.UpdateReady });
+            });
+            await check([{ Version: '1.1.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [] }]);
+            expect(getUpdateStore().status).toBe(UpdateStatus.UpdateReady);
+        });
+
+        it('should set status to UpdateReady on windows after install', async () => {
+            setOs('windows');
+            await check([{ Version: '1.1.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [{ Url: 'url' }] }]);
+            expect(getUpdateStore().status).toBe(UpdateStatus.UpdateReady);
+        });
     });
 });
