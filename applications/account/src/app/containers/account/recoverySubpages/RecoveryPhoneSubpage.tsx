@@ -143,7 +143,7 @@ const RecoveryPhoneVerificationStatus = ({
 
 const RecoveryPhoneSubpage = () => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
-    const [isEditingRecoveryPhone, setIsEditingRecoveryPhone] = useState(false);
+    const [maybeIsEditingRecoveryPhone, setIsEditingRecoveryPhone] = useState(false);
     const defaultCountry = useMyCountry();
     const accountRecovery = useUpdateAccountRecovery();
 
@@ -156,6 +156,10 @@ const RecoveryPhoneSubpage = () => {
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/email-sms-recovery')}>{c('Link').t`Learn more`}</Href>
     );
+
+    // Handles the case where a user focuses the input and clears the value, gets the confirmation modal, and clicks confirm.
+    // The change happens outside of the onSubmit handler, so this is an extra guard against that.
+    const isEditingRecoveryPhoneAndHasValue = maybeIsEditingRecoveryPhone && !!phoneRecovery.value;
 
     return (
         <>
@@ -193,13 +197,18 @@ const RecoveryPhoneSubpage = () => {
                                         value,
                                         autoStartVerificationFlowAfterSet: true,
                                     });
-                                } finally {
                                     setIsEditingRecoveryPhone(false);
-                                }
+                                } catch {}
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery phone number`,
-                                readOnly: !isEditingRecoveryPhone && !!phoneRecovery.value,
+                                readOnly: !isEditingRecoveryPhoneAndHasValue && !!phoneRecovery.value,
+                                onFocus: () => {
+                                    if (!phoneRecovery.value) {
+                                        return;
+                                    }
+                                    setIsEditingRecoveryPhone(true);
+                                },
                             }}
                             renderForm={({ onSubmit, onReset, input, submitButtonProps, onVerify, onRemove }) => {
                                 return (
@@ -207,14 +216,14 @@ const RecoveryPhoneSubpage = () => {
                                         <RecoveryPhoneInputRow
                                             input={input}
                                             phoneValue={phoneRecovery.value}
-                                            isEditing={isEditingRecoveryPhone}
+                                            isEditing={isEditingRecoveryPhoneAndHasValue}
                                             onEdit={() => setIsEditingRecoveryPhone(true)}
                                             onRemove={onRemove}
                                         />
                                         <RecoveryPhoneInputActions
                                             submitButtonProps={submitButtonProps}
                                             phoneValue={phoneRecovery.value}
-                                            isEditing={isEditingRecoveryPhone}
+                                            isEditing={isEditingRecoveryPhoneAndHasValue}
                                             onKeep={() => {
                                                 onReset();
                                                 setIsEditingRecoveryPhone(false);
@@ -222,7 +231,7 @@ const RecoveryPhoneSubpage = () => {
                                         />
                                         <RecoveryPhoneVerificationStatus
                                             phoneValue={phoneRecovery.value}
-                                            isEditing={isEditingRecoveryPhone}
+                                            isEditing={isEditingRecoveryPhoneAndHasValue}
                                             isVerified={phoneRecovery.isVerified}
                                             onVerify={onVerify}
                                         />
