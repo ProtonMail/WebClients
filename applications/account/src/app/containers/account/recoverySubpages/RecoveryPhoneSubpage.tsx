@@ -193,9 +193,8 @@ const RecoveryPhoneSubpage = () => {
                                         value,
                                         autoStartVerificationFlowAfterSet: true,
                                     });
-                                } finally {
                                     setIsEditingRecoveryPhone(false);
-                                }
+                                } catch {}
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery phone number`,
