@@ -1269,6 +1269,15 @@
       ],
       "Save photo to your gallery": [
         "Deseu la foto a la galeria"
+      ],
+      "Download for macOS": [
+        "Descarregueu per macOS"
+      ],
+      "Rebuild index": [
+        "Reconstruïu l'índex"
+      ],
+      "Search is unavailable": [
+        "La cerca no està disponible"
       ]
     },
     "Action: Docs": {
@@ -4029,6 +4038,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
+      "Folder not found": [
+        "No s'ha trobat la carpeta"
       ]
     },
     "error": {
@@ -7121,6 +7133,48 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per a restaurar la cerca."
+      ],
+      "Could not scan file for malware": [
+        "No s'ha pogut escanejar el fitxer per detectar programari maliciós"
+      ],
+      "File could not be scanned": [
+        "No s'ha pogut analitzar el fitxer."
+      ],
+      "File flagged as potentially malicious": [
+        "Fitxer marcat com a potencialment maliciós"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per a recuperar-lo."
+      ],
+      "Not enough storage space": [
+        "No hi ha prou espai d'emmagatzematge"
+      ],
+      "Search data is corrupted": [
+        "Les dades de cerca estan malmeses"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "S'ha produït un error intern en la cerca. Reconstruïu l'índex per a recuperar-lo."
+      ],
+      "Search engine error": [
+        "Error del motor de cerca"
+      ],
+      "Search error": [
+        "Error de cerca"
+      ],
+      "Search is in an invalid state": [
+        "La cerca es troba en un estat no vàlid"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La cerca ja està a punt. S'han indexat els vostres fitxers."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "El motor de cerca ha detectat un error intern. Reconstruïu l'índex per a recuperar-lo."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i, després, reconstruïu l'índex."
       ]
     },
     "info": {
@@ -11389,7 +11443,7 @@
         "/ mes"
       ],
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -13522,7 +13576,7 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "Only": [
         "Només"

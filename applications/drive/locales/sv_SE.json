@@ -1266,6 +1266,12 @@
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Lägg till i ”${ name }” (${ photoCount } foto)",
         "Lägg till i ”${ name }” (${ photoCount } foton)"
+      ],
+      "Download for macOS": [
+        "Ladda ner för macOS"
+      ],
+      "Save photo to your gallery": [
+        "Spara foto ditt galleri"
       ]
     },
     "Action: Docs": {
@@ -3990,6 +3996,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
+      ],
+      "Folder not found": [
+        "Mapp hittades inte"
       ]
     },
     "error": {
@@ -7033,6 +7042,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
+      ],
+      "File could not be scanned": [
+        "Fil kunde inte skannas"
       ]
     },
     "info": {
