@@ -1,17 +1,22 @@
 import { differenceInMilliseconds } from 'date-fns';
 
 import { HOUR } from '@proton/shared/lib/constants';
-import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
-import type { SecurityCheckupCohortType } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
-const SECURITY_SESSION_MAX_AGE = 1 * HOUR;
+import type { SafetyReviewCohort } from './getCohort';
 
-const getValidSecurityCheckupSession = ({
+const SAFETY_REVIEW_SESSION_MAX_AGE = 1 * HOUR;
+
+export interface SafetyReviewTelemetrySession {
+    initialCohort: SafetyReviewCohort;
+    createdTimestamp: number;
+}
+
+export const getValidSafetyReviewSession = ({
     currentSession,
     currentCohort,
 }: {
-    currentSession: SecurityCheckupSession | undefined;
-    currentCohort: SecurityCheckupCohortType;
+    currentSession: SafetyReviewTelemetrySession | undefined;
+    currentCohort: SafetyReviewCohort;
 }) => {
     const createdTimestamp = Date.now();
     const nextSession = {
@@ -24,7 +29,7 @@ const getValidSecurityCheckupSession = ({
     }
 
     const sessionAge = differenceInMilliseconds(Date.now(), currentSession.createdTimestamp);
-    const hasExpired = sessionAge > SECURITY_SESSION_MAX_AGE;
+    const hasExpired = sessionAge > SAFETY_REVIEW_SESSION_MAX_AGE;
 
     if (hasExpired) {
         return nextSession;
@@ -32,5 +37,3 @@ const getValidSecurityCheckupSession = ({
 
     return currentSession;
 };
-
-export default getValidSecurityCheckupSession;

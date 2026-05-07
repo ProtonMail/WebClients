@@ -4,6 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { restoreSecurityCheckupSession, securityCheckupSlice } from '@proton/account';
+import {
+    securityCheckupListenerStarted,
+    securityCheckupListenerStopped,
+} from '@proton/account/securityCheckup/listenerActions';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi, useAppTitle } from '@proton/components';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
@@ -33,9 +37,10 @@ const SecurityCheckupRouter = () => {
     useAppTitle(c('Safety review').t`Safety review`);
 
     useEffect(() => {
+        dispatch(securityCheckupListenerStarted({ href: window.location.href }));
         restoreSecurityCheckupSession({ dispatch, userId: user.ID });
-
         return () => {
+            dispatch(securityCheckupListenerStopped());
             dispatch(securityCheckupSlice.actions.clearSession());
             dispatch(securityCheckupSlice.actions.clearSource());
         };

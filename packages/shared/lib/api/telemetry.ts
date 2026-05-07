@@ -5,6 +5,8 @@ export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
     accountOrgLogoUpload = 'account.web.org_logo_upload',
     accountSecurityCheckup = 'account.web.security_checkup',
+    accountSafetyReviewCtr = 'account.web.safety_review_ctr',
+    accountSafetyReviewScoreDiff = 'account.web.safety_review_score_diff',
     accountRecoverySettings = 'account.web.recovery_settings',
     accountResetPassword = 'account.web.reset_password',
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
@@ -201,6 +203,17 @@ export enum TelemetryAccountSecurityCheckupEvents {
     accountRecoveryEnabled = 'cohort_change.account_recovery_enabled',
     completeRecoverySentinel = 'cohort_change.complete_recovery_sentinel',
     sentinelRecommendations = 'cohort_change.sentinel_recommendations',
+}
+
+export enum TelemetrySafetyReviewCtrEvents {
+    step_load = 'step_load',
+    step_exit = 'step_exit',
+    step_skip = 'step_skip',
+    step_success = 'step_success',
+}
+
+export enum TelemetrySafetyReviewScoreDiffEvents {
+    score_diff = 'score_diff',
 }
 
 export enum TelemetryAccountDashboardEvents {
@@ -514,7 +527,9 @@ export type TelemetryEvents =
     | TelemetryAppSwitcher
     | TelemetryESMigrationToolEvents
     | TelemetryUnauthLost2FAEvents
-    | TelemetryAccountCancellationFlowFeedbackEvents;
+    | TelemetryAccountCancellationFlowFeedbackEvents
+    | TelemetrySafetyReviewCtrEvents
+    | TelemetrySafetyReviewScoreDiffEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

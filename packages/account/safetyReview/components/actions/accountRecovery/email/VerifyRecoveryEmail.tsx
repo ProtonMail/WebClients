@@ -4,7 +4,6 @@ import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyR
 import { VerifyRecoveryMethod } from '@proton/account/safetyReview/components/actions/accountRecovery/verify/VerifyRecoveryMethod';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 
 import paperplaneIllustration from '../../../assets/paperplane.svg';
@@ -16,7 +15,6 @@ type Props = SafetyReviewAllProps & {
 
 export const VerifyRecoveryEmail = (props: Props) => {
     const boldEmail = <b key="bold-email">{props.recoveryItem.recoveryItem.data.value}</b>;
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [loading, withLoading] = useLoading();
 
     return (
@@ -37,7 +35,6 @@ export const VerifyRecoveryEmail = (props: Props) => {
                 withLoading={withLoading}
                 loading={loading}
                 onSuccess={() => {
-                    sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
                     props.safetyReview.actions.next('completed', props.recoveryItem);
                 }}
                 onError={(error) => {
