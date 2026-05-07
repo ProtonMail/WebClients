@@ -484,9 +484,6 @@
       "Delete record": [
         "Poista tapahtuma"
       ],
-      "Delete token ${ token.Account }": [
-        "Poista tunniste ${ token.Account }"
-      ],
       "Delete user": [
         "Poista käyttäjä"
       ],
@@ -2381,9 +2378,6 @@
       ]
     },
     "BOSS": {
-      "Add a custom domain": [
-        "Lisää oma verkkotunnus"
-      ],
       "Authenticate": [
         "Tunnistaudu"
       ],
@@ -2408,9 +2402,6 @@
       "Domain connected": [
         "Verkkotunnus yhdistetty"
       ],
-      "Domain ownership verified": [
-        "Verkkotunnuksen omistajuus vahvistettu"
-      ],
       "Estimated size": [
         "Arvioitu koko"
       ],
@@ -2432,14 +2423,8 @@
       "Install migration app": [
         "Asenna migraatio-sovellus"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "Lisätietoja siirrettävistä tiedoista. Lisätietoja"
-      ],
       "Mail": [
         "Sähköposti"
-      ],
-      "Migrate": [
-        "Siirrä"
       ],
       "Migrate from Google Workspace": [
         "Siirrä Google Workspace -palvelusta"
@@ -2457,17 +2442,11 @@
       "Migration status": [
         "Siirron tila"
       ],
-      "Not started": [
-        "Ei aloitettu"
-      ],
       "Organization does not have enough seats available": [
         "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
       ],
       "Organization does not have enough storage available": [
         "Organisaatiolla ei ole tarpeeksi tallennustilaa"
-      ],
-      "Organization settings": [
-        "Organisaation asetukset"
       ],
       "Required": [
         "Pakollinen"
@@ -2477,9 +2456,6 @@
       ],
       "Select at least one user to start a migration": [
         "Valitse vähintään yksi käyttäjä siirron aloittamiseksi"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Valitse, mitä haluat siirtää. Tämä koskee kaikkia käyttäjiä riippumatta siitä, luodaanko heidät nyt vai myöhemmin. Siirto alkaa, kun käyttäjätilit on luotu."
       ],
       "Set up": [
         "Määritä"
@@ -2502,9 +2478,6 @@
       "Status": [
         "Tila"
       ],
-      "Transfer errors": [
-        "Siirtovirheet"
-      ],
       "User": [
         "Käyttäjä"
       ],
@@ -2513,9 +2486,6 @@
       ],
       "Verify your domain": [
         "Vahvista verkkotunnuksesi"
-      ],
-      "Verify your domain ownership": [
-        "Vahvista verkkotunnuksesi omistajuus"
       ],
       "Verify your domain to start a migration": [
         "Varmista verkkotunnuksesi aloittaaksesi siirron"
@@ -8610,9 +8580,6 @@
       ],
       "Change your password": [
         "Vaihda salasanasi"
-      ],
-      "Check the status of imports and forwarding.": [
-        "Tarkista tuontien ja ohjausten tila."
       ],
       "Check your network and try again.": [
         "Tarkista verkkoyhteytesi ja yritä uudelleen."
@@ -17306,9 +17273,6 @@
     "Recovery score": {
       "Inactive recovery options": [
         "Käyttämättömät palautusvaihtoehdot"
-      ],
-      "Require password reset option (email or SMS verification)": [
-        "Vaadi salasanan nollausvaihtoehto (vahvistus sähköpostitse tai tekstiviestillä)"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -22359,6 +22323,9 @@
       ],
       "User is a group": [
         "Käyttäjä on ryhmä"
+      ],
+      "via ${ groupName }": [
+        "${ groupName } kautta"
       ],
       "Waiting for user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"

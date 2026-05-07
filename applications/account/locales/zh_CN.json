@@ -519,9 +519,6 @@
       "Delete record": [
         "删除记录"
       ],
-      "Delete token ${ token.Account }": [
-        "删除令牌 ${ token.Account }"
-      ],
       "Delete token “${ token.Name }”": [
         "删除令牌 “${ token.Name }”"
       ],
@@ -761,6 +758,9 @@
       ],
       "Filters are being applied. This might take a few minutes.": [
         "正在应用筛选条件，这可能需要几分钟时间。"
+      ],
+      "Finish": [
+        "完成"
       ],
       "Fit to window": [
         "适应窗口大小"
@@ -2847,12 +2847,6 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } 迁移助手"
       ],
-      "Add a custom domain": [
-        "添加自定义域名"
-      ],
-      "App installed": [
-        "应用已安装"
-      ],
       "Authenticate": [
         "身份验证"
       ],
@@ -2880,9 +2874,6 @@
       "Domain connected": [
         "域名已连接"
       ],
-      "Domain ownership verified": [
-        "域名所有权已验证"
-      ],
       "Estimated size": [
         "预计大小"
       ],
@@ -2907,14 +2898,8 @@
       "Install migration app": [
         "安装迁移应用"
       ],
-      "Learn more about what can be migrated. Learn more": [
-        "详细了解可迁移的内容。了解详情"
-      ],
       "Mail": [
         "邮箱"
-      ],
-      "Migrate": [
-        "迁移"
       ],
       "Migrate from Google Workspace": [
         "从 Google Workspace 迁移"
@@ -2931,17 +2916,11 @@
       "Migration status": [
         "迁移状态"
       ],
-      "Not started": [
-        "未开始"
-      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
       "Organization does not have enough storage available": [
         "组织可用存储空间不足"
-      ],
-      "Organization settings": [
-        "组织设置"
       ],
       "Required": [
         "必填"
@@ -2951,9 +2930,6 @@
       ],
       "Select at least one user to start a migration": [
         "请至少选择一位用户以开始迁移"
-      ],
-      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "请选择您要迁移的内容，这将应用于所有用户（无论是当前创建还是稍后创建）。账户创建后，迁移将开始。"
       ],
       "Set up": [
         "设置"
@@ -2979,9 +2955,6 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
       ],
-      "Transfer errors": [
-        "传输错误"
-      ],
       "User": [
         "用户"
       ],
@@ -2993,9 +2966,6 @@
       ],
       "Verify your domain": [
         "验证您的域名"
-      ],
-      "Verify your domain ownership": [
-        "验证您的域名所有权"
       ],
       "Verify your domain to start a migration": [
         "验证您的域名以开始迁移"
@@ -6926,6 +6896,9 @@
       "Invalid invitation link": [
         "无效的邀请链接"
       ],
+      "Invalid joining link. Please contact your administrator.": [
+        "无效的加入链接。请联系您的管理员。"
+      ],
       "Invalid name": [
         "名称无效"
       ],
@@ -9986,9 +9959,6 @@
       "Change your password": [
         "更改密码"
       ],
-      "Check the status of imports and forwarding.": [
-        "检查导入和转发的状态。"
-      ],
       "Check your network and try again.": [
         "请检查网络后重试！"
       ],
@@ -10021,6 +9991,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET 编辑选择奖，评分 8.4 分（满分 10 分）"
+      ],
+      "Code has been re-sent.": [
+        "代码已重新发送。"
       ],
       "Coming soon": [
         "即将推出"
@@ -10573,6 +10546,9 @@
       ],
       "Gateways": [
         "网关"
+      ],
+      "Generating a new recovery phrase will deactivate your current recovery phrase.": [
+        "生成新的恢复短语将停用您当前的恢复短语。"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新生成的恢复短语将取代旧的！"
@@ -12898,6 +12874,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "您的恢复短语由 12 个随机生成的单词按特定顺序组成。"
+      ],
+      "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
+        "如果您被锁定在 ${ BRAND_NAME } 帐户之外，恢复短语可让您登录并恢复数据。它由 12 个单词组成，相当于一个备用密码。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
@@ -18514,8 +18493,14 @@
       "per month, billed every two years": [
         "每月，每两年结算一次"
       ],
+      "Preparing your recovery phrase": [
+        "准备您的恢复短语"
+      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
+      ],
+      "Save your recovery phrase to continue": [
+        "保存您的恢复短语以继续"
       ],
       "Secure vault sharing": [
         "安全保险库共享"
@@ -19636,9 +19621,6 @@
       "Partial": [
         "部分"
       ],
-      "Require password reset option (email or SMS verification)": [
-        "需要密码重置选项（邮箱或短信验证）"
-      ],
       "Score: ${ score } / ${ maxScore }": [
         "得分：${ score } / ${ maxScore }"
       ],
@@ -19680,14 +19662,8 @@
       "Download recovery file": [
         "下载恢复文件"
       ],
-      "Email verification enabled": [
-        "已启用邮箱验证"
-      ],
       "Emergency contacts added": [
         "已添加紧急联系人"
-      ],
-      "Enable recovery by email": [
-        "启用通过密保邮箱恢复"
       ],
       "Enable recovery by phone": [
         "启用通过密保手机恢复"
@@ -19712,9 +19688,6 @@
       ],
       "Sign-in with QR code allowed": [
         "允许通过二维码登录"
-      ],
-      "SMS verification enabled": [
-        "已启用短信验证"
       ],
       "Verify password": [
         "验证密码"
@@ -20147,6 +20120,9 @@
       "Back to Safety Review": [
         "返回安全审查"
       ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "由于您重置了密码，因此您当前的恢复短语只能用于恢复密码重置之前创建的数据。"
+      ],
       "Can be used to regain access to your account and data": [
         "可用于重新访问您的账户和数据"
       ],
@@ -20174,6 +20150,9 @@
       "Download ${ size }": [
         "下载 ${ size }"
       ],
+      "Download your recovery phrase": [
+        "下载您的恢复短语"
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -20185,6 +20164,9 @@
       ],
       "Enable recovery by phone": [
         "启用通过密保手机恢复"
+      ],
+      "I understand that I will not be able to recover currently locked data with this recovery phrase": [
+        "我明白我无法使用此恢复短语恢复当前锁定的数据。"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
@@ -20234,6 +20216,9 @@
       "Take action to secure your account": [
         "采取行动确保您的账户安全"
       ],
+      "There was an error generating your recovery phrase": [
+        "生成恢复短语时出错"
+      ],
       "There was an error verifying your email": [
         "验证邮箱出错"
       ],
@@ -20261,6 +20246,12 @@
       "to recover your account if you're ever locked out": [
         "如果您被锁定，可恢复您的账户"
       ],
+      "Update your recovery phrase": [
+        "更新您的恢复短语"
+      ],
+      "Update your recovery phrase?": [
+        "更新您的恢复短语？"
+      ],
       "Verify": [
         "验证"
       ],
@@ -20275,6 +20266,9 @@
       ],
       "Verify your recovery phone number": [
         "验证密保手机"
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "生成恢复短语时出错。请稍后重试，如果问题仍然存在，请联系支持人员。"
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "验证邮箱出现错误，请稍后重试。若无效，请联系技术支援。"
@@ -20389,6 +20383,12 @@
       ],
       "Your recovery phone number is:": [
         "密保手机："
+      ],
+      "Your recovery phrase": [
+        "您的恢复短语"
+      ],
+      "Your recovery phrase is set": [
+        "您的恢复短语已设置"
       ]
     },
     "saml: Action": {
@@ -20595,9 +20595,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, download your recovery phrase and disable the highlighted options.": [
-        "为确保您账户的最高安全性，请下载您的恢复短语并禁用高亮显示的选项。"
-      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
       ]
@@ -20922,6 +20919,12 @@
     "Setting": {
       "Enable Photos section": [
         "启用照片版块"
+      ],
+      "Get updates about comments via email": [
+        "通过邮件接收评论更新"
+      ],
+      "Include document name in email notifications": [
+        "在邮件通知中包含文档名称"
       ]
     },
     "Settings description": {
@@ -23764,6 +23767,9 @@
       "Create a new gateway": [
         "新建网关"
       ],
+      "Create a new password": [
+        "创建新密码"
+      ],
       "Create Gateway": [
         "创建网关"
       ],
@@ -23856,6 +23862,9 @@
       ],
       "Day theme": [
         "日间模式"
+      ],
+      "Deactivate current phrase?": [
+        "停用当前短语？"
       ],
       "Decrypt key": [
         "解密密钥"
@@ -23991,6 +24000,9 @@
       ],
       "Download the mobile apps": [
         "下载移动应用"
+      ],
+      "Download your recovery phrase": [
+        "下载您的恢复短语"
       ],
       "Downloads": [
         "下载"
@@ -25068,6 +25080,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
+      ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "我们已向您的邮箱发送了验证码，以确认您的身份。此验证码有效期为 10 分钟。请在下方输入验证码。"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "我们将向您的新地址发送一封电子邮件，其中包含完成更改的说明。"
