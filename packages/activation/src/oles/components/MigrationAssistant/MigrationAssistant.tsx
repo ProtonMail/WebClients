@@ -168,13 +168,6 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
             }
 
             setTransferErrors((state) => [...state, ...errors]);
-
-            if (errors.length) {
-                createNotification({
-                    type: 'error',
-                    text: errors[0].error.message,
-                });
-            }
         } catch (err: any) {
             const text: string | undefined = err?.message ?? c('BOSS').t`An unknown error occurred`;
 
