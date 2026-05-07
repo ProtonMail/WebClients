@@ -17,7 +17,7 @@
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Выяўлена ${ name } і яшчэ 1 іншая патэнцыяльная ўцечка даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -607,7 +607,7 @@
         "Імпартаваць лісты, календары, кантакты"
       ],
       "Import from .csv or vCard": [
-        "Імпартаванне з .csv або vCard"
+        "Імпартаваць з .csv або vCard"
       ],
       "Import from Google": [
         "Імпартаваць з Google"
@@ -1283,6 +1283,9 @@
       ],
       "Save photo to your gallery": [
         "Захаваць фатаграфіі ў вашай галерэі"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
       ]
     },
     "Action: Docs": {
@@ -3062,7 +3065,7 @@
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
+        "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
@@ -3147,7 +3150,7 @@
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+        "Выяўлены наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
       ]
     },
     "Docs Info": {
@@ -3627,7 +3630,7 @@
         "Не ўдалося запампаваць відарыс"
       ],
       "IMAP server is required": [
-        "Патрабуецца ўвесці сервер IMAP"
+        "Патрабуецца сервер IMAP"
       ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
@@ -3828,10 +3831,10 @@
         "Не ўдалося знайсці"
       ],
       "Signature not verified": [
-        "Подпіс не правераны"
+        "Подпіс не спраўджаны"
       ],
       "Signature verification failed": [
-        "Не ўдалося праверыць подпіс"
+        "Не ўдалося спраўдзіць подпіс"
       ],
       "Some contacts could not be deleted": [
         "Не ўдалося выдаліць некаторыя кантакты"
@@ -3855,7 +3858,7 @@
         "Назвы некаторых вашых метак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
+        "Назвы некаторых вашых метак перавышаюць максімальнае абмежаванне па колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong during folder listing": [
         "Нешта пайшло не так падчас пераліку папак."
@@ -3933,7 +3936,7 @@
         "Адбылася памылка падчас экспартавання кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+        "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
       ],
       "This field is invalid": [
         "Гэта поле з'яўляецца памылковым"
@@ -4870,7 +4873,7 @@
         "${ BRAND_NAME } не можа падключыцца да вашага ўліковага запісу Yahoo. Пераканайцеся, што:"
       ],
       "IMAP access is enabled in your external account.": [
-        "У вашым знешнім уліковым запісе ўключаны IMAP."
+        "У вашым знешнім уліковым запісе ўключаны доступ па IMAP."
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "У вашым уліковым запісе Yahoo уключаны IMAP."
@@ -4888,7 +4891,7 @@
         "Выкарыстоўвайце свой пароль праграмы, калі:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Выкарыстоўвайце ваш пароль праграмы замест звычайнага пароля, калі:"
+        "Выкарыстоўвайце пароль праграмы замест звычайнага пароля, калі:"
       ],
       "Your app password is correct. Do not use your regular password.": [
         "Ваш пароль праграмы з'яўляецца правільным. Не выкарыстоўвайце свой звычайны пароль."
@@ -4903,7 +4906,7 @@
         "Ваш адрас электроннай пошты і пароль ад праграмы з'яўляюцца правільнымі. Не выкарыстоўвайце свой звычайны пароль."
       ],
       "Your email address and password are correct.": [
-        "Вашы адрас электроннай пошты і пароль правільныя."
+        "Ваш адрас электроннай пошты і пароль правільныя."
       ],
       "Your password is correct.": [
         "Ваш пароль правільны."
@@ -4972,7 +4975,7 @@
         "пароль праграмы або ўключыць IMAP"
       ],
       "CSV or a VCF (vCard) file": [
-        "Файл CSV або VCF (vCard)"
+        "файл CSV або VCF (vCard)"
       ],
       "full calendar view": [
         "поўнага выгляду календара"
@@ -4986,10 +4989,10 @@
     },
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
-        "Перайсці да ${ calendarViewLink } у Yahoo."
+        "Перайсці да ${ calendarViewLink } ў Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Навядзіце курсор мышы на каляндар, які вы хочаце імпартаваць, і адкрыйце выпадное меню."
+        "Навядзіце курсор мышы на каляндар, які хочаце імпартаваць, і адкрыйце выпадное меню."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Выберыце ${ boldExport }, каб экспартаваць каляндар як файл ICS."
@@ -5307,7 +5310,7 @@
         "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+        "**Крок 3:** Вы атрымаеце ${ referrerRewardAmount } у крэдытах за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -5382,10 +5385,10 @@
         "Усе вашы змены будуць страчаны."
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }",
-        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае да ${ maxContact }"
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
+        "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
       ],
       "Already in this folder": [
         "Ужо ў гэтай папцы"
@@ -6018,7 +6021,7 @@
         "Чэр"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+        "Проста пацвердзіце свой выбар, а астатнія дзеянні будуць зроблены праграмай."
       ],
       "Keep your files secure with end-to-end encryption.": [
         "Бяспечна захоўвайце свае файлы з дапамогай скразнога шыфравання."
@@ -6129,7 +6132,7 @@
         "Мае спасылкі"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
+        "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "Network issue": [
         "Праблема з сеткай"
@@ -6204,7 +6207,7 @@
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна з прычыны таго, што нядаўна было скіданне пароля."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
+        "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
@@ -6288,7 +6291,7 @@
         "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
+        "Звярніце ўвагу, што адрасы прызначаныя гэтай групе, НЕ будуць выдалены."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
@@ -6330,7 +6333,7 @@
         "Пачакайце, пакуль мы шукаем кантакты, якія можна паўторна падпісаць пры дапамозе асноўнага ключа шыфравання."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
+        "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
       "Preparing": [
         "Падрыхтоўка"
@@ -6456,7 +6459,7 @@
         "Выбар элемента"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
+        "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны для адпраўкі лістоў на гэты адрас электроннай пошты."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -6537,7 +6540,7 @@
         "Збой некаторых элементаў"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
+        "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да сваіх файлаў. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
@@ -6582,7 +6585,7 @@
         "Сімвалы (#$&)"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Часова недаступны. Паспрабуйце яшчэ раз пазней."
+        "Часова недаступна. Паспрабуйце яшчэ раз пазней."
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Дзякуй, што выбралі ${ BRAND_NAME } для абароны сваёй арганізацыі."
@@ -6735,7 +6738,7 @@
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а мы вас апавясцім, калі індэксацыя будзе завершана."
+        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме, а калі індэксацыя будзе завершана, вы атрымаеце апавяшчэнне."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -7131,7 +7134,7 @@
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+        "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
@@ -8047,7 +8050,7 @@
         "Запампаваць малюнак"
       ],
       "Upload your first file": [
-        "Запампуйце ваш першы файл"
+        "Запампуйце свой першы файл"
       ],
       "Uploaded by": [
         "Запампавана"
@@ -8192,13 +8195,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
+        "Выдаліце адзін з існуючых календароў, каб дадаць новы."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
         "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -8330,7 +8333,7 @@
         "Збор вашых даных"
       ],
       "We're gathering your data from your provider": [
-        "Мы збіраем даныя ад вашага пастаўшчыка паслуг"
+        "Адбываецца збор даных ад вашага пастаўшчыка паслуг"
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
@@ -10224,7 +10227,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далей вы павінны ўвайсці ў ваш уліковы запіс Google і даць нам доступ да вашых даных ${ BRAND_NAME }."
+        "На наступным кроку вы павінны ўвайсці ў свой уліковы запіс Google і даць доступ ${ BRAND_NAME } да сваіх даных."
       ]
     },
     "Oauth instructions video": {
@@ -11018,7 +11021,7 @@
         "${ emailAddress } пазначыў гэты ключ як скампраметаваны. Гэты ключ нельга выкарыстоўваць ні для шыфравання, ні для праверкі подпісу."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
+        "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для спраўджання подпісу."
       ],
       "External key automatically fetched from keys.openpgp.org.": [
         "Знешні ключ аўтаматычна атрыманы з вэб-сайта keys.openpgp.org."
@@ -11334,7 +11337,7 @@
         "Параіць сябрам"
       ],
       "Start earning credits": [
-        "Пачніце зарабляць крэдыты"
+        "Пачаць зарабляць крэдыты"
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
@@ -11754,7 +11757,7 @@
         "Бяспечнае патокавае вяшчанне"
       ],
       "Support online privacy": [
-        "Падтрыманне прыватнасці ў інтэрнэце"
+        "Падтрымка прыватнасці ў інтэрнэце"
       ]
     },
     "specialoffer: Footer": {
@@ -13569,7 +13572,7 @@
         "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
-        "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
+        "Захаваць пазней у ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
         "Пошук вынікаў"
@@ -13990,7 +13993,7 @@
         "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "We have sent them an invite to access the item.": [
-        "Мы адправілі ім запрашэнне на доступ да элемента."
+        "Ім адпраўлена запрашэнне, каб яны змаглі атрымаць доступ да элемента."
       ],
       "Change shared item settings": [
         "Змяніць налады абагуленага элемента"
@@ -14200,7 +14203,7 @@
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
       "Skip verification?": [
-        "Прапусціць праверку?"
+        "Прапусціць спраўджанне?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
@@ -14218,7 +14221,7 @@
         "Не ўдалося расшыфраваць зашыфраванае змесціва."
       ],
       "The verification of the contact details' signature failed.": [
-        "Не ўдалося праверыць подпіс кантактных звестак."
+        "Не ўдалося спраўдзіць подпіс кантактных звестак."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Гэта незваротнае дзеянне. Увядзіце слова ${ boldDanger } у поле, каб працягнуць."

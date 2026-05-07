@@ -1269,6 +1269,15 @@
       ],
       "Save photo to your gallery": [
         "Enregistrer la photo dans votre galerie"
+      ],
+      "Download for macOS": [
+        "Télécharger pour macOS"
+      ],
+      "Rebuild index": [
+        "Régénérez l'index"
+      ],
+      "Search is unavailable": [
+        "La recherche est indisponible."
       ]
     },
     "Action: Docs": {
@@ -4029,6 +4038,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Folder not found": [
+        "Le dossier n'a pas été trouvé."
       ]
     },
     "error": {
@@ -7113,6 +7125,48 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "${ first }, ${ second }, ${ third } et ${ fourth } indexés"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } a détecté que la recherche locale est corrompue et inutilisable. Régénérez l'index pour rétablir la recherche."
+      ],
+      "Could not scan file for malware": [
+        "Le fichier n'a pas pu être analysé pour détecter les logiciels malveillants."
+      ],
+      "File could not be scanned": [
+        "Le fichier n'a pas pu être scanné."
+      ],
+      "File flagged as potentially malicious": [
+        "Le fichier a été détecté comme potentiellement malveillant."
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "L'indexation a atteint un état inattendu et ne peut pas se poursuivre. Régénérez l'index pour la rétablir."
+      ],
+      "Not enough storage space": [
+        "Espace de stockage insuffisant"
+      ],
+      "Search data is corrupted": [
+        "Les données de recherche sont corrompues."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Une erreur interne s'est produite pendant la recherche. Régénérez l'index pour la rétablir."
+      ],
+      "Search engine error": [
+        "Erreur de moteur de recherche"
+      ],
+      "Search error": [
+        "Erreur de recherche"
+      ],
+      "Search is in an invalid state": [
+        "La recherche se trouve dans un état non valide."
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La recherche est prête. Vos fichiers ont été indexés."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Le moteur de recherche a rencontré une erreur interne. Régénérez l'index pour la rétablir."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Votre navigateur a arrivé à court d'espace pendant l'indexation des fichiers pour la recherche. Libérez de l'espace de stockage puis régénérez l'index."
       ]
     },
     "info": {

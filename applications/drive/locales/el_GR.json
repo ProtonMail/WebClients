@@ -1269,6 +1269,9 @@
       ],
       "Save photo to your gallery": [
         "Αποθήκευση φωτογραφίας στη γκαλερί σας"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
       ]
     },
     "Action: Docs": {
@@ -4029,6 +4032,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Folder not found": [
+        "Ο φάκελος δεν βρέθηκε"
       ]
     },
     "error": {
@@ -7121,6 +7127,15 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Ενημέρωση ευρετηρίου ${ first }, ${ second }, ${ third } και ${ fourth }"
+      ],
+      "Could not scan file for malware": [
+        "Δεν ήταν δυνατή η σάρωση του αρχείου για κακόβουλο λογισμικό"
+      ],
+      "File could not be scanned": [
+        "Δεν ήταν δυνατή η σάρωση του αρχείου"
+      ],
+      "File flagged as potentially malicious": [
+        "Το αρχείο επισημάνθηκε ως πιθανώς κακόβουλο"
       ]
     },
     "info": {

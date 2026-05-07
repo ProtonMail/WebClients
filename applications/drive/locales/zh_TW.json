@@ -1136,6 +1136,39 @@
       ],
       "Reconnect to Gmail": [
         "重新連接 Gmail"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "添加至 \"\"${ name }\" (${ photoCount } 張照片)"
+      ],
+      "Continue on web": [
+        "在網頁繼續"
+      ],
+      "Export system log": [
+        "匯出系統日誌"
+      ],
+      "Get Drive for Business": [
+        "取得 Drive for Business"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "以 ${ simplePriceString } 取得安全儲存空間"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "回到相簿 \"${ ellipsedAlbumName }\""
+      ],
+      "New spreadsheet": [
+        "新增工作表"
+      ],
+      "Shared": [
+        "已共享"
+      ],
+      "Try it now": [
+        "立即體驗"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ]
     },
     "Action: Sheets": {
@@ -1660,6 +1693,9 @@
       ],
       "Subtotal for ${ cycle } month": [
         "${ cycle } 個月小計"
+      ],
+      "Subtotal": [
+        "小計"
       ]
     },
     "Collapsible tooltip": {
@@ -2698,6 +2734,9 @@
       ],
       "Åland Islands": [
         "奧蘭群島"
+      ],
+      "North Macedonia": [
+        "北馬其頓"
       ]
     },
     "customer_support.feature.all": {
@@ -2860,6 +2899,12 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "確保您仍可存取至您的帳號及資料就算您忘記您的 ${ BRAND_NAME } 密碼。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ]
     },
     "description": {
@@ -3621,6 +3666,39 @@
       ],
       "Wrong billing address": [
         "錯誤帳單地址"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 個項目移動失敗"
+      ],
+      "Address could not be added.": [
+        "位址無法被添加。"
+      ],
+      "Can't find any secure link": [
+        "無法找到任何安全連結"
+      ],
+      "Cannot find move target": [
+        "找不到移動目標"
+      ],
+      "Company name or personal name is required": [
+        "公司名稱或個人名稱是需要的"
+      ],
+      "Could not add to favorites": [
+        "無法添加至最愛"
+      ],
+      "Error reading file": [
+        "讀取檔案時發生錯誤"
+      ],
+      "Failed to resend invitation": [
+        "失敗重新傳送邀請"
+      ],
+      "Folder not found": [
+        "找不到資料夾"
+      ],
+      "No file to upload": [
+        "無可上傳的檔案"
+      ],
+      "Upload failed": [
+        "上傳失敗"
       ]
     },
     "error": {
@@ -4126,6 +4204,9 @@
       ],
       "Username": [
         "使用者名稱"
+      ],
+      "Create new album": [
+        "創建新相簿"
       ]
     },
     "Heading": {
@@ -6248,6 +6329,114 @@
       ],
       "for ${ price }": [
         "為 ${ price }"
+      ],
+      "${ albums } album": [
+        "${ albums } 相簿"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 檔案無法直接下載也不會包含於此次下載。您可透過點擊'繼續下載'以下載其他檔案。"
+      ],
+      "${ files } file": [
+        "${ files } 個檔案"
+      ],
+      "${ folders } folder": [
+        "${ folders } 個資料夾"
+      ],
+      "${ photos } photo": [
+        "${ photos } 張照片"
+      ],
+      "Already in this folder": [
+        "已經在此資料夾"
+      ],
+      "Can edit": [
+        "可以編輯"
+      ],
+      "Can view only": [
+        "僅供檢視"
+      ],
+      "Can't rename to same name": [
+        "無法重新命名為相同名稱。"
+      ],
+      "Choose your service to connect with": [
+        "選擇您的服務以連線"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Each code can only be used once": [
+        "每個代碼都只能使用一次"
+      ],
+      "File could not be scanned": [
+        "檔案無法被掃瞄"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Indexing in progress": [
+        "正在排序"
+      ],
+      "Link copied": [
+        "已複製連結"
+      ],
+      "Malware detected": [
+        "發現惡意軟體"
+      ],
+      "Move ${ dragCount } item": [
+        "移動 ${ dragCount } 個項目"
+      ],
+      "Move ${ fileCount } file": [
+        "移動 ${ fileCount } 個檔案"
+      ],
+      "Move ${ folderCount } folder": [
+        "移動 ${ folderCount } 個資料夾"
+      ],
+      "No issue found": [
+        "找不到問題"
+      ],
+      "Not enough storage space": [
+        "儲存空間不足"
+      ],
+      "On public WiFi networks": [
+        "於公用 WiFi 網路上"
+      ],
+      "Photo(s) saved to your Drive": [
+        "照片已儲存至您的磁碟"
+      ],
+      "Preparing": [
+        "準備中"
+      ],
+      "Requested item doesn't exist anymore": [
+        "要求的檔案已不存在"
+      ],
+      "Running diagnostics...": [
+        "執行診斷..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "透過行動裝置掃描此 QR Code"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "搜尋已啟用。您現可關閉此對話方塊並搜尋檔案和資料夾。"
+      ],
+      "Search engine error": [
+        "搜尋引擎錯誤"
+      ],
+      "Search error": [
+        "搜尋錯誤"
+      ],
+      "Shared with you": [
+        "與您共享"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "此將暫停任何剩餘的上傳及下載。取消上傳將不會儲存在 ${ DRIVE_APP_NAME } 。"
+      ],
+      "Tracking": [
+        "追蹤"
+      ],
+      "Upload Failed": [
+        "上傳失敗"
+      ],
+      "who": [
+        "誰"
       ]
     },
     "info": {
@@ -6954,6 +7143,33 @@
       ],
       "Skip feedback": [
         "略過意見回饋"
+      ],
+      "Access": [
+        "存取"
+      ],
+      "Active": [
+        "啟用"
+      ],
+      "Additional comments": [
+        "附加備註"
+      ],
+      "Anonymous": [
+        "匿名 "
+      ],
+      "Delete link and remove access for everyone": [
+        "刪除連結並移除所有人的存取權"
+      ],
+      "Replace existing folder or file": [
+        "取代已存在的資料夾或檔案"
+      ],
+      "Searchable": [
+        "可被搜尋"
+      ],
+      "Share a file, folder, or album": [
+        "共享一個檔案、資料夾或相簿"
+      ],
+      "Visible columns:": [
+        "可見欄位："
       ]
     },
     "Label for contact group color": {
@@ -7116,6 +7332,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "Enforcing 2FA for organizations": [
+        "強制貴組織雙重驗證"
       ]
     },
     "List title": {
@@ -8650,6 +8869,30 @@
       ],
       "Your settings have been changed successfully": [
         "您的設定已成功變更。"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" 已複製"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "「${ ellipsedName }」移動失敗"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "檔案 \"${ ellipsedName }\" 未能從垃圾中被還原"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "「${ ellipsedName }」已成功移動"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" 已共享"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } 個項目刪除失敗"
+      ],
+      "${ numberOfItems } item copied": [
+        "已刪除 ${ numberOfItems } 個項目"
+      ],
+      "${ numberOfItems } item moved": [
+        "已移動 ${ numberOfItems } 個項目"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8978,6 +9221,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
     "Option": {
@@ -8995,6 +9241,24 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Expected structure": [
+        "期待的結構"
+      ],
+      "Only current location": [
+        "只有目前的位置"
+      ],
+      "Only current location: ${ name }": [
+        "只有目前的位置: ${ name }"
+      ],
+      "Select JSON file": [
+        "選擇 JSON 檔案"
+      ],
+      "Verify content": [
+        "驗證內容"
+      ],
+      "Verify thumbnails": [
+        "驗證縮圖"
       ]
     },
     "Option group label": {
@@ -9228,6 +9492,12 @@
       ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% 稅金：${ taxAmountElement }"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
+      ],
+      "Including ${ rate }% taxes": [
+        "包含 ${ rate }% 稅金"
       ]
     },
     "Payments.Error": {
@@ -9474,6 +9744,12 @@
       ],
       "San Francisco": [
         "舊金山"
+      ],
+      "Enter a name": [
+        "輸入名稱"
+      ],
+      "Select a provider": [
+        "選擇一個供應商"
       ]
     },
     "Placeholder for contact group name": {
@@ -9502,6 +9778,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "保持 ${ currentPlanTitle } 方案"
       ]
     },
     "Progress bar description": {
@@ -9966,6 +10245,9 @@
       ],
       "Open in ${ appName } (Beta)": [
         "於 ${ appName } (測驗)"
+      ],
+      "New spreadsheet": [
+        "新增工作表"
       ]
     },
     "Signing preference for emails": {
@@ -10164,6 +10446,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "取得 500 GB 以安全地儲存您的檔案和照片"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10620,6 +10905,9 @@
       ],
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "視訊會議，至多 ${ PAID_PREMIUM_MAX_PARTICIPANTS } 位參與者"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ MEET_SHORT_APP_NAME } 、和 ${ LUMO_APP_NAME } 與頂級質子版功能"
       ]
     },
     "subscription reminder": {
@@ -10700,6 +10988,18 @@
       ],
       "Your tagged photos will appear here": [
         "您標記的照片會顯示在這裡"
+      ],
+      "Your favorited photos will appear here": [
+        "您喜愛的照片會顯示在這裡"
+      ],
+      "Your panorama photos will appear here": [
+        "您自拍的照片會顯示在這裡"
+      ],
+      "Your screenshots will appear here": [
+        "您的螢幕擷取畫面會顯示在這裡"
+      ],
+      "Your selfies photos will appear here": [
+        "您的自拍照會顯示在這裡"
       ]
     },
     "Success": {
@@ -10917,6 +11217,9 @@
       ],
       "Videos": [
         "影片"
+      ],
+      "Panoramas": [
+        "全景"
       ]
     },
     "Time unit": {
@@ -11797,6 +12100,45 @@
       ],
       "Reverse charge not supported": [
         "不支援倒退修改"
+      ],
+      "Album details": [
+        "專輯詳細資訊"
+      ],
+      "Cancel all uploads?": [
+        "取消所有上傳?"
+      ],
+      "Change access to viewer?": [
+        "變更存取權至檢視者?"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "於手機上取得 ${ DRIVE_SHORT_APP_NAME } 應用程式"
+      ],
+      "Get mobile and desktop apps": [
+        "取得移動端和桌面應用程式"
+      ],
+      "Global": [
+        "全域設定"
+      ],
+      "No portraits": [
+        "無屬性"
+      ],
+      "No selfies": [
+        "沒有自拍照"
+      ],
+      "No shared albums": [
+        "無共享相簿"
+      ],
+      "No videos": [
+        "沒有任何影片"
+      ],
+      "Photo albums are here!": [
+        "照片相簿在此!"
+      ],
+      "Unknown user": [
+        "未知的使用者"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "您下載的包含 ${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME } 檔案"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12081,6 +12423,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
     "Provider option": {
@@ -12098,6 +12443,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     },
     "meet_2025: Addon": {
@@ -12106,11 +12454,19 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } 席位"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 授權"
       ]
     },
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "取得 Drive for Business"
       ]
     }
   }

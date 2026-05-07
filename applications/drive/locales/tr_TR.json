@@ -1268,7 +1268,16 @@
         "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)"
       ],
       "Save photo to your gallery": [
-        "Fotoğrafı galerine kaydet"
+        "Fotoğrafı galerinize kaydedin"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Rebuild index": [
+        "Dizini yeniden oluştur"
+      ],
+      "Search is unavailable": [
+        "Arama kullanılamıyor"
       ]
     },
     "Action: Docs": {
@@ -4029,6 +4038,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Folder not found": [
+        "Klasör bulunamadı"
       ]
     },
     "error": {
@@ -7121,6 +7133,48 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "${ first }, ${ second }, ${ third } ve ${ fourth } dizine eklendi"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } yerel arama dizininde bozulma olduğunu ve artık kullanılamayacağını tespit etti. Arama işlevini geri yüklemek için dizini yeniden oluşturun."
+      ],
+      "Could not scan file for malware": [
+        "Dosyada kötü amaçlı yazılım taraması yapılamadı"
+      ],
+      "File could not be scanned": [
+        "Dosya taranamadı"
+      ],
+      "File flagged as potentially malicious": [
+        "Dosya potansiyel zararlı olarak işaretlendi"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Dizin oluşturma işlemi beklenmedik bir duruma düştü ve devam edemiyor. Kurtarmak için dizini yeniden oluşturun."
+      ],
+      "Not enough storage space": [
+        "Yeterli depolama alanı yok"
+      ],
+      "Search data is corrupted": [
+        "Arama verileri bozuk"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Arama sırasında dahili bir hata oluştu. Kurtarmak için dizini yeniden oluşturun."
+      ],
+      "Search engine error": [
+        "Arama motoru hatası"
+      ],
+      "Search error": [
+        "Arama hatası"
+      ],
+      "Search is in an invalid state": [
+        "Arama geçersiz durumda"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Arama hazır. Dosyalarınız dizinlendi."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Arama motorunda dahili hata oluştu. Kurtarmak için dizini yeniden oluşturun."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Arama için dosyalar dizinlenirken tarayıcınızın depolama alanı doldu. Depolama alanını boşaltın ardından dizini yeniden oluşturun."
       ]
     },
     "info": {
