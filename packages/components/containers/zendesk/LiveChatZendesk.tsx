@@ -15,6 +15,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 type MessageDestination = 'proton' | 'zendesk';
+
+let zendeskToken = '';
+
 const fetchJWT = async (api: Api) => {
     try {
         const { JWT } = await api<{ JWT: string }>({
@@ -124,6 +127,7 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
             (async () => {
                 const jwt = await fetchJWT(api);
                 if (jwt) {
+                    zendeskToken = jwt;
                     sendMessage(['login', jwt], 'proton');
                 }
             })().catch(noop);
@@ -299,7 +303,14 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                     const [status] = safeReason.split(':');
                     captureMessage('Zendesk: Authentication failed', {
                         level: 'error',
-                        extra: { type, reason: btoa(safeReason), message, status },
+                        extra: {
+                            type,
+                            reason: btoa(safeReason),
+                            message,
+                            status,
+                            // TODO: Remove after figuring out ZD authentication issues
+                            token: zendeskToken || 'unknown',
+                        },
                     });
                 }
             }
