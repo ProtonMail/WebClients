@@ -244,7 +244,6 @@ export enum MailFeatureFlag {
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
     WalletRightSidebarLink = 'WalletRightSidebarLink',
-    ProtonTips = 'ProtonTips',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
