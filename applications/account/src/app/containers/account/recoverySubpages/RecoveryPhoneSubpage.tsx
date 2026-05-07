@@ -265,7 +265,7 @@ const RecoveryPhoneSubpage = () => {
                             </div>
                         )}
 
-                        {phoneRecovery.hasReset && isSentinelUser && (
+                        {phoneRecovery.value && phoneRecovery.hasReset && isSentinelUser && (
                             <SentinelWarning
                                 text={c('Info')
                                     .t`To ensure the highest possible security of your account, disable **Recovery by recovery phone**.`}
