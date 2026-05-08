@@ -18513,11 +18513,6 @@
         "주소 키를 생성할 수 없습니다. 양자 내성 암호화를 활성화하려면, 신규 암호화 키를 수동으로 생성해야 합니다.\n\n${ settingsLink }(으)로 이동한 뒤 각 주소에 대한 '키 생성'을 선택하십시오."
       ]
     },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**반드시 설치된 모든 ${ BRAND_NAME } 모바일 앱의 업데이트가 필요**: 신규 키는 이전 앱 버전에서 제대로 작동되지 않습니다."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "이 작업은 사용자의 계정에 새로운 양자 내성 암호화 키를 생성합니다."

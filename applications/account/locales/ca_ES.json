@@ -90,6 +90,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Afegeix un compte de ${ BRAND_NAME }"
       ],
@@ -2076,17 +2079,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nous rols d'administrador/a"
+      ],
       "3 new admin roles": [
         "3 nous rols d'administrador/a"
-      ],
-      "Admin roles": [
-        "Rols d'administrador/a"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delegueu la gestió assignant rols d'administrador/a específics. Doneu a cada administrador només l'accés que necessiti. Això segueix el principi del mínim privilegi, de manera que protegiu la vostra organització de comptes de risc i d'errors accidentals."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegueu la gestió de molts usuaris alhora. Assigneu rols específics d'administrador als grups per a permisos automàtics. Això segueix el principi del mínim privilegi per estalviar temps en la incorporació i la baixa d'usuaris, mentre redueix errors."
       ],
       "Delegate management with the appropriate admin role.": [
         "Delegueu la gestió amb el rol d'administrador/a adequat."
@@ -2100,20 +2106,14 @@
       "New: Control admin access for individual users": [
         "Nou: Controleu l'accés d'administració per a usuaris individuals"
       ],
-      "Organization admin": [
-        "Administrador/a de l'organització"
+      "New: Control admin access for many users at once": [
+        "Nou: Control de l'accés d'administrador/a per molts usuaris alhora"
       ],
       "Organization admin:": [
         "Administrador/a de l'organització:"
       ],
-      "Security admin": [
-        "Administrador/a de seguretat"
-      ],
       "Security admin:": [
         "Administrador/a de seguretat:"
-      ],
-      "User admin": [
-        "Administrador/a d'usuaris"
       ],
       "User admin:": [
         "Administrador/a d'usuaris:"
@@ -3059,6 +3059,9 @@
       "Managed via ${ registrar.name }": [
         "Gestionat mitjançant ${ registrar.name }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
       "Migrate from Google Workspace": [
         "Migreu des de Google Workspace"
       ],
@@ -3080,6 +3083,12 @@
       ],
       "Migration status": [
         "Estat de la migració"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
       ],
       "More details": [
         "Més detalls"
@@ -9785,6 +9794,9 @@
       "${ vaultLink } updated": [
         "S'ha actualitzat ${ vaultLink }."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
       ],
@@ -9937,6 +9949,9 @@
       ],
       "Activity Monitor": [
         "Monitor d'activitats"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10166,6 +10181,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Segur que voleu revocar el certificat **${ name }**?"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Segur que voleu tancar la sessió d'aquest compte?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Segur que voleu ordenar les carpetes alfabèticament?"
@@ -10885,6 +10903,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Per a un accés fàcil a les contrasenyes i més."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
@@ -11838,6 +11859,9 @@
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
       ],
+      "RECOMMENDED": [
+        "RECOMANAT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12463,13 +12487,13 @@
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
       "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
       ],
       "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
       ],
       "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu l'**accés d'emergència**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu l''**accés d'emergència**."
       ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu l'**inici de sessió amb codi QR**."
@@ -12481,7 +12505,7 @@
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **Restabliment amb la sessió iniciada**."
@@ -19892,8 +19916,8 @@
       ]
     },
     "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Heu d'actualitzar totes les aplicacions mòbils de ${ BRAND_NAME }**: les vostres noves claus no funcionaran en versions antigues de l'aplicació."
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Cal que actualitzeu totes les aplicacions de ${ BRAND_NAME }**: les vostres claus noves no funcionaran en versions anteriors de les aplicacions."
       ]
     },
     "PQC key generation": {
@@ -21381,10 +21405,10 @@
     },
     "Sentinel banner": {
       "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
-        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu la vostra frase de recuperació."
+        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu-ne la frase de recuperació."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Teniu accions recomanades per ${ PROTON_SENTINEL_NAME }"
@@ -22596,11 +22620,35 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Assignar rols delegats"
+      ],
+      "Assign roles": [
+        "Assignar rols"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Feu clic al nom d'un usuari per gestionar-ne el rol i els permisos"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Cliqueu Editar per assignar rols a aquest grup i gestionar l'accés dels membres automàticament."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Obtingueu fins a ${ maxRewardAmount } en crèdits"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtingueu crèdits quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
+      ],
+      "New: Roles and permissions tab": [
+        "Nou: Pestanya de rols i permisos"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Obriu aquesta pestanya per concedir permisos específics sense accés complet d'administrador/a."
+      ],
+      "User roles available": [
+        "Rols d'usuari disponibles"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Ara podeu assignar rols a usuaris individuals des d'aquesta pestanya."
       ]
     },
     "sso": {
