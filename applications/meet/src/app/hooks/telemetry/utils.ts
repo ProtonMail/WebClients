@@ -6,9 +6,9 @@ export const getWebRTCStats = async (
     pub: RemoteTrackPublication,
     identity: string,
     roomId: string,
-    skipSubscriptionCheck = false
+    isLocal = false
 ) => {
-    if ((!skipSubscriptionCheck && !pub.isSubscribed) || !pub.isEnabled || pub.isMuted || !pub.track) {
+    if ((!isLocal && !pub.isSubscribed) || !pub.isEnabled || pub.isMuted || !pub.track) {
         return null;
     }
 
@@ -17,6 +17,7 @@ export const getWebRTCStats = async (
         roomId,
         type: pub.track.source,
         trackSid: pub.trackSid,
+        isLocal,
     };
 
     try {
@@ -30,9 +31,16 @@ export const getWebRTCStats = async (
                     stats.packetsDiscarded = report.packetsDiscarded;
                     stats.framesDropped = report.framesDropped;
                     stats.framesReceived = report.framesReceived;
+                    stats.framesDecoded = report.framesDecoded;
+                    stats.framesPerSecond = report.framesPerSecond;
+                    stats.frameWidth = report.frameWidth;
+                    stats.frameHeight = report.frameHeight;
                     stats.freezeCount = report.freezeCount;
                     stats.totalFreezesDuration = report.totalFreezesDuration;
                     stats.pliCount = report.pliCount;
+                    stats.nackCount = report.nackCount;
+                    stats.totalDecodeTime = report.totalDecodeTime;
+                    stats.decoderImplementation = report.decoderImplementation;
                     stats.concealedSamples = report.concealedSamples;
                     stats.totalSamplesReceived = report.totalSamplesReceived;
                     stats.totalAudioEnergy = report.totalAudioEnergy;
@@ -40,8 +48,19 @@ export const getWebRTCStats = async (
                     stats.jitterBufferEmittedCount = report.jitterBufferEmittedCount;
                 }
 
+                if (report.type === 'outbound-rtp' && isLocal) {
+                    stats.qualityLimitationReason = report.qualityLimitationReason;
+                    stats.qualityLimitationDurationCpu = report.qualityLimitationDurations?.cpu;
+                    stats.qualityLimitationDurationBandwidth = report.qualityLimitationDurations?.bandwidth;
+                    stats.encoderImplementation = report.encoderImplementation;
+                }
+
                 if (report.type === 'candidate-pair' && report.state === 'succeeded') {
                     stats.availableIncomingBitrate = report.availableIncomingBitrate;
+                    stats.availableOutgoingBitrate = report.availableOutgoingBitrate;
+                    stats.roundTripTime = report.currentRoundTripTime;
+                    stats.totalRoundTripTime = report.totalRoundTripTime;
+                    stats.responsesReceived = report.responsesReceived;
                 }
             });
         }
@@ -49,7 +68,7 @@ export const getWebRTCStats = async (
         return null;
     }
 
-    return Object.keys(stats).length > 4 ? (stats as ParticipantQualityStats) : null;
+    return Object.keys(stats).length > 5 ? (stats as ParticipantQualityStats) : null;
 };
 
 const toDelta = (current: number | undefined, previous: number | undefined) => {
@@ -77,6 +96,8 @@ export const calculateStatsDelta = (
         roomId: current.roomId,
         type: current.type,
         trackSid: current.trackSid,
+        isLocal: current.isLocal,
+        participantCount: current.participantCount,
 
         packetsReceived: toDelta(current.packetsReceived, previous?.packetsReceived),
         packetsLost: toDelta(current.packetsLost, previous?.packetsLost),
@@ -84,9 +105,12 @@ export const calculateStatsDelta = (
 
         framesReceived: toDelta(current.framesReceived, previous?.framesReceived),
         framesDropped: toDelta(current.framesDropped, previous?.framesDropped),
+        framesDecoded: toDelta(current.framesDecoded, previous?.framesDecoded),
         freezeCount: toDelta(current.freezeCount, previous?.freezeCount),
         totalFreezesDuration: toDelta(current.totalFreezesDuration, previous?.totalFreezesDuration),
         pliCount: toDelta(current.pliCount, previous?.pliCount),
+        nackCount: toDelta(current.nackCount, previous?.nackCount),
+        totalDecodeTime: toDelta(current.totalDecodeTime, previous?.totalDecodeTime),
 
         concealedSamples: toDelta(current.concealedSamples, previous?.concealedSamples),
         totalSamplesReceived: toDelta(current.totalSamplesReceived, previous?.totalSamplesReceived),
@@ -95,9 +119,29 @@ export const calculateStatsDelta = (
         jitterBufferDelay: toDelta(current.jitterBufferDelay, previous?.jitterBufferDelay),
         jitterBufferEmittedCount: toDelta(current.jitterBufferEmittedCount, previous?.jitterBufferEmittedCount),
 
+        totalRoundTripTime: toDelta(current.totalRoundTripTime, previous?.totalRoundTripTime),
+        responsesReceived: toDelta(current.responsesReceived, previous?.responsesReceived),
+
+        qualityLimitationDurationCpu: toDelta(
+            current.qualityLimitationDurationCpu,
+            previous?.qualityLimitationDurationCpu
+        ),
+        qualityLimitationDurationBandwidth: toDelta(
+            current.qualityLimitationDurationBandwidth,
+            previous?.qualityLimitationDurationBandwidth
+        ),
+
         // Non-cumulative estimates
         jitter: current.jitter,
         availableIncomingBitrate: current.availableIncomingBitrate,
+        availableOutgoingBitrate: current.availableOutgoingBitrate,
+        roundTripTime: current.roundTripTime,
+        framesPerSecond: current.framesPerSecond,
+        frameWidth: current.frameWidth,
+        frameHeight: current.frameHeight,
+        decoderImplementation: current.decoderImplementation,
+        encoderImplementation: current.encoderImplementation,
+        qualityLimitationReason: current.qualityLimitationReason,
     };
 };
 
@@ -155,6 +199,16 @@ export const shouldReportStats = (stats: ParticipantQualityStats): boolean => {
         ) {
             return true;
         }
+    }
+
+    // RTT above 300ms is perceptible as echo / desync
+    if (stats.roundTripTime !== undefined && stats.roundTripTime > 0.3) {
+        return true;
+    }
+
+    // Encoder CPU-limited for more than 5s in the reporting interval
+    if (stats.qualityLimitationDurationCpu !== undefined && stats.qualityLimitationDurationCpu > 5000) {
+        return true;
     }
 
     return false;
