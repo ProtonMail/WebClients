@@ -31,6 +31,9 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -59,7 +62,7 @@
         "Anulare abonament"
       ],
       "Cancel trial and pay": [
-        "Anulare perioadă de probare și plătire"
+        "Anulare perioadă de evaluare și plătire"
       ],
       "Change password": [
         "Modificare parolă"
@@ -554,28 +557,28 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de evaluare."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Nu puteți adăuga domenii personale în perioada de probare."
+        "Nu puteți adăuga domenii personale în perioada de evaluare."
       ],
       "You have reached the trial limit.": [
-        "Ați atins limita perioadei de probare."
+        "Ați atins limita perioadei de evaluare."
       ]
     },
     "b2b_trials_Action": {
@@ -2751,6 +2754,9 @@
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } vă ascunde traficul. ${ PASS_SHORT_APP_NAME } vă ascunde identitatea — **aliasuri de tip „hide-my-email”** nelimitate și **alerte de pe internetul ascuns** în cazul în care datele vă sunt vreodată divulgate."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membru)",
         "(${ memberCount } membri)",
@@ -2779,6 +2785,9 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adăugare ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -2798,7 +2807,7 @@
         "Suma este sub minimul acceptat (${ amount })."
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+        "La sfârșitul perioadei de evaluare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -2919,6 +2928,9 @@
       "for ${ price }": [
         "cu ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pentru doar ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Marcare Google Pay"
       ],
@@ -3026,6 +3038,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
+      "RECOMMENDED": [
+        "RECOMANDAT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
@@ -3181,10 +3196,10 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+        "Aveți un abonament ${ planTitle } de evaluare. Dacă doriți să vă continuați abonamentul după perioada de evaluare, adăugați o metodă de plată."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
+        "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
       ],
       "You may be redirected to your bank’s website.": [
         "Probabil va trebui să accesați pagina web a băncii."
@@ -3712,7 +3727,7 @@
         "Licențe incluse: ${ seats }"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de evaluare."
       ]
     },
     "New Label form": {
@@ -4643,10 +4658,10 @@
         "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
       ],
       "Your free trial has started": [
-        "Perioada de probare gratuită a început"
+        "Perioada de evaluare gratuită a început"
       ]
     },
     "Option": {
@@ -4757,7 +4772,7 @@
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "Suma datorată după probare la ${ formattedDate }"
+        "Suma datorată după evaluare la ${ formattedDate }"
       ],
       "Billing Country": [
         "Țara de facturare"
@@ -4802,7 +4817,7 @@
         "Există alte planuri în monede diferite"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."

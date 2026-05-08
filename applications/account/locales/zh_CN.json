@@ -90,6 +90,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "添加 ${ BRAND_NAME } 账户"
       ],
@@ -161,6 +164,9 @@
       ],
       "Add user": [
         "添加用户"
+      ],
+      "Added ${ memberName } as group owner": [
+        "已添加 ${ memberName } 的群组管理员身份"
       ],
       "Align center": [
         "居中"
@@ -308,6 +314,9 @@
       ],
       "Confirm": [
         "确定"
+      ],
+      "Confirm email": [
+        "确认邮件"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "确认打开链接 ${ linkToShow }"
@@ -518,6 +527,9 @@
       ],
       "Delete record": [
         "删除记录"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "删除令牌 ${ tokens[0].Account }"
       ],
       "Delete token “${ token.Name }”": [
         "删除令牌 “${ token.Name }”"
@@ -881,6 +893,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "转到域名提供商"
       ],
       "Go to label": [
         "转至标签"
@@ -1278,6 +1293,9 @@
       "Remove this notification": [
         "移除这个通知？"
       ],
+      "Removed ${ memberName } as group owner": [
+        "已移除 ${ memberName } 的群组管理员身份"
+      ],
       "Rename": [
         "重命名"
       ],
@@ -1358,6 +1376,9 @@
       ],
       "Save": [
         "保存"
+      ],
+      "Save & exit": [
+        "保存并退出"
       ],
       "Save address": [
         "保存地址"
@@ -2048,17 +2069,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 个新管理员角色"
+      ],
       "3 new admin roles": [
         "3 个新管理员角色"
-      ],
-      "Admin roles": [
-        "管理员角色"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "通过分配特定的管理员角色进行委派管理。为每位管理员仅授予其所需的访问权限。这遵循最小权限原则，可保护您的组织免受账户被盗和意外错误的影响。"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "一次性为大量用户进行委托管理，为群组分配特定的管理员角色以自动授予权限。此举遵循最小权限原则，可节省入职和离职处理时间，同时减少错误。"
       ],
       "Delegate management with the appropriate admin role.": [
         "通过合适的管理员角色进行委派管理。"
@@ -2072,20 +2096,14 @@
       "New: Control admin access for individual users": [
         "新增：控制个人用户的管理员权限"
       ],
-      "Organization admin": [
-        "组织管理员"
+      "New: Control admin access for many users at once": [
+        "新功能：一次性控制大量用户的管理员访问权限"
       ],
       "Organization admin:": [
         "组织管理员："
       ],
-      "Security admin": [
-        "安全管理员"
-      ],
       "Security admin:": [
         "安全管理员："
-      ],
-      "User admin": [
-        "用户管理员"
       ],
       "User admin:": [
         "用户管理员："
@@ -2847,8 +2865,65 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } 迁移助手"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**：不隔离也不拒绝未经授权的邮件，通常仅在排查或测试时使用此策略。"
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**：要求收件人平台将未经授权的邮件标记为垃圾邮件或进行隔离。"
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**：要求收件人平台拒绝未经授权的邮件。"
+      ],
+      "Account connected": [
+        "账户已连接"
+      ],
+      "Account disconnected": [
+        "账户已断开连接"
+      ],
+      "Activated": [
+        "已激活"
+      ],
+      "Activation link": [
+        "激活链接"
+      ],
+      "Activation link copied to clipboard": [
+        "激活链接已复制到剪贴板"
+      ],
+      "Add a domain": [
+        "添加域名"
+      ],
+      "Add domain": [
+        "添加域名"
+      ],
+      "Add users": [
+        "添加用户"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "手动添加用户并配置您的域名以发送和接收邮件，适合从零开始的小团队。"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
+      ],
+      "All": [
+        "全部"
+      ],
+      "An unknown error occurred": [
+        "发生未知错误"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "您确定要继续吗？在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "账户创建完成后，您可以分享激活链接，以便用户领取其 ${ BRAND_NAME } 账户。"
+      ],
       "Authenticate": [
         "身份验证"
+      ],
+      "Authenticate to Google Workspace": [
+        "向 Google Workspace 进行身份验证"
       ],
       "Authenticate your Google Workspace account": [
         "验证您的 Google Workspace 账户"
@@ -2859,20 +2934,68 @@
       "Change": [
         "更改"
       ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "请选择如何将您的团队和邮箱设置迁移到 ${ BRAND_NAME }。"
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "请选择要迁移的内容，您的选择将应用于所有用户。在您决定复制哪些用户后，迁移将开始。"
+      ],
       "Completed": [
         "已完成"
       ],
       "Configure": [
         "配置"
       ],
+      "Configure domain": [
+        "配置域名"
+      ],
       "Configure migration": [
         "配置迁移"
+      ],
+      "Configure your domain": [
+        "配置域名"
       ],
       "Contacts": [
         "联系人"
       ],
+      "Continue migration": [
+        "继续迁移"
+      ],
+      "Copy activation link": [
+        "复制激活链接"
+      ],
+      "Copy activation link to clipboard": [
+        "复制激活链接到剪贴板"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "请将下面的代码复制并粘贴到您域名提供商的 DNS 设置中，您可以在 ${ hereHref } 找到示例和一些实用提示。"
+      ],
+      "Creating accounts": [
+        "正在创建账户"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM 为每封邮件添加数字签名，以便收件人验证邮件确实来自您的域名且未被篡改。否则，邮件可能被认为可信度较低！"
+      ],
+      "DKIM records": [
+        "DKIM 记录"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
+      ],
+      "DMARC records": [
+        "DMARC 记录"
+      ],
+      "Domain added": [
+        "已添加域名"
+      ],
       "Domain connected": [
         "域名已连接"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "请确保您的邮件进入收件箱而非垃圾邮件文件夹，更新 SPF 将允许用户在迁移期间同时通过 ${ BRAND_NAME } 和 Google 发送邮件。"
+      ],
+      "Errors": [
+        "错误"
       ],
       "Estimated size": [
         "预计大小"
@@ -2880,14 +3003,38 @@
       "Failed to load OAuth": [
         "加载 OAuth 失败"
       ],
+      "Finalize migration": [
+        "完成迁移"
+      ],
+      "Finalize your migration": [
+        "完成迁移"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "完成迁移后，您的所有邮件将直接路由到 ${ BRAND_NAME }。用户将不再在 Google 账户上接收邮件，并且 ${ BRAND_NAME } 与 Google 之间的数据将不再同步。"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
       "Finish setting up your business account": [
         "完成您的商业账户设置"
+      ],
+      "Go to Domain names": [
+        "转到域名管理"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
       ],
+      "Google Workspace account": [
+        "Google Workspace 账户"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "请耐心等待，我们正在设置用户账户，并将很快开始导入用户数据。"
+      ],
       "Has errors": [
         "出错啦"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "导入 ${ user.AdminSetName } 时出错"
       ],
       "In progress": [
         "进行中"
@@ -2898,14 +3045,32 @@
       "Install migration app": [
         "安装迁移应用"
       ],
+      "Install Migration assistant": [
+        "安装迁移助手"
+      ],
+      "Loading your organization data": [
+        "正在加载您的组织数据"
+      ],
       "Mail": [
         "邮箱"
+      ],
+      "Managed via ${ registrar.name }": [
+        "通过 ${ registrar.name } 管理"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
       ],
       "Migrate from Google Workspace": [
         "从 Google Workspace 迁移"
       ],
       "Migrate users": [
         "迁移用户"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "将用户迁移至 ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "已迁移"
       ],
       "Migration includes": [
         "迁移内容包括"
@@ -2916,11 +3081,56 @@
       "Migration status": [
         "迁移状态"
       ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
+      "More details": [
+        "更多详情"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "自动从 Google Workspace 迁移您的用户、邮件和设置。我们将指导您完成连接账户、验证域名以及安全迁移用户的过程。"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "没有可用的错误详情，请联系客服以获取更多信息。"
+      ],
+      "No users to display": [
+        "无可显示的用户"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Not confirmed": [
+        "尚未确认"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "用户领取其 ${ BRAND_NAME } 账户后，将完成迁移。"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "一旦我们确认邮件已路由到 ${ BRAND_NAME }，迁移即告完成。完成后您将收到一封确认邮件。此过程最多可能需要 24 小时。"
+      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
       "Organization does not have enough storage available": [
         "组织可用存储空间不足"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "请在您域名提供商的 DNS 控制台中添加以下记录："
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "请保持窗口打开，直到我们完成所有用户的创建。"
+      ],
+      "Please select at least one product to migrate": [
+        "请至少选择一个要迁移的产品"
+      ],
+      "Refresh": [
+        "刷新"
       ],
       "Required": [
         "必填"
@@ -2931,11 +3141,26 @@
       "Select at least one user to start a migration": [
         "请至少选择一位用户以开始迁移"
       ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
       "Set up": [
         "设置"
       ],
       "Set up billing information": [
         "设置账单信息"
+      ],
+      "Set up manually": [
+        "手动设置"
+      ],
+      "Set up secure sending (DKIM)": [
+        "设置安全发送 (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "设置安全发送 (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "设置安全发送 (SPF)"
       ],
       "Set up two-factor authentication": [
         "设置 2FA"
@@ -2943,8 +3168,23 @@
       "Settings": [
         "设置"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "向用户分享激活链接，以便他们领取其 ${ BRAND_NAME } 账户！"
+      ],
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Some accounts are not claimed": [
+        "部分账户未被领取"
+      ],
+      "SPF records": [
+        "SPF 记录"
+      ],
+      "Start migrating": [
+        "开始迁移"
       ],
       "Start migration": [
         "开始迁移"
@@ -2952,14 +3192,41 @@
       "Status": [
         "状态"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "默认设置为 none。但为了提升安全性，我们建议将此值设置为 p=quarantine！"
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "“p=”值指定了对 DMARC 验证失败的邮件所采取的操作。可用的操作如下："
+      ],
+      "This migration has been completed": [
+        "迁移已完成"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
+      ],
+      "Update records for receiving": [
+        "更新接收记录"
       ],
       "User": [
         "用户"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "用户需要通过上述激活链接激活其账户"
+      ],
+      "User status": [
+        "用户状态"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "在迁移期间，用户可以同时使用 ${ BRAND_NAME } 或 Google。"
+      ],
       "Users migrated": [
         "已迁移的用户"
+      ],
+      "Verified": [
+        "已验证"
+      ],
+      "Verify domain ownership": [
+        "验证域名所有权"
       ],
       "Verify installation": [
         "验证安装"
@@ -2970,14 +3237,32 @@
       "Verify your domain to start a migration": [
         "验证您的域名以开始迁移"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "我们检测到与您的 Google Workspace 账户关联的主域名。请确认以继续为您的 ${ BRAND_NAME } 组织设置邮箱。"
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "我们仍在与您的域名提供商检查 MX 记录！"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
       ],
       "What are you migrating?": [
         "您需要迁移什么？"
       ],
+      "You": [
+        "您"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
+      ],
+      "You're all set!": [
+        "一切就绪！"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "您当前的套餐最多允许 ${ maxMembers } 位用户。如需迁移更多用户，请为您的订阅增加席位。"
       ]
     },
     "breadcrumb": {
@@ -5191,6 +5476,11 @@
         "使用 Easy Switch 导入助手"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "发现重复的 DMARC 记录，请前往域名提供商的 DNS 控制台进行修复！"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "另外，我们已将 CSV 自动转换成 vCard 信息，您可以查看并修改对应关系。"
@@ -6262,6 +6552,9 @@
       "Add": [
         "添加"
       ],
+      "Add 1 more": [
+        "再添加 1 个"
+      ],
       "Add emergency contact": [
         "添加紧急联系人"
       ],
@@ -6360,6 +6653,9 @@
       ],
       "Enable auto-renew": [
         "启用自动续订"
+      ],
+      "Explore plans": [
+        "查看套餐"
       ],
       "For ${ email }": [
         "对于 ${ email }"
@@ -9428,6 +9724,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } 标签已更改"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "指定国家/地区连接需要开通 ${ vpnPlus }。"
       ],
@@ -9577,6 +9876,9 @@
       ],
       "Activity Monitor": [
         "活动监测"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -9799,6 +10101,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "确定要撤销证书 **${ name }** 吗？"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "您确定要登出您的账户吗？"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "您确定要按字母顺序排序您的文件夹吗？"
@@ -10516,6 +10821,9 @@
       ],
       "For easy access to your passwords and more.": [
         "方便您访问密码等信息。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "仅需 ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
@@ -11462,6 +11770,9 @@
       "Recently used servers:": [
         "近期使用的服务器："
       ],
+      "RECOMMENDED": [
+        "推荐"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12080,6 +12391,15 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "为确保您账户的最高安全性，请禁用**联系人辅助恢复**！"
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "为确保您账户的最高安全性，请禁用**设备数据备份**！"
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "为确保您账户的最高安全性，请禁用**紧急访问**！"
+      ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "为了确保您账户的最高安全性，请禁用 **二维码登录**。"
       ],
@@ -12088,6 +12408,9 @@
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "为确保您账户的最高安全性，请禁用**通过密保手机恢复**！"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "为确保您账户的最高安全性，请禁用**恢复文件**（作废所有恢复文件）！"
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "为了确保您账户的最高安全性，请禁用 **已登录状态下的重置**。"
@@ -12876,7 +13199,7 @@
         "您的恢复短语由 12 个随机生成的单词按特定顺序组成。"
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "如果您被锁定在 ${ BRAND_NAME } 帐户之外，恢复短语可让您登录并恢复数据。它由 12 个单词组成，相当于一个备用密码。"
+        "您的恢复短语使您能够在无法访问 ${ BRAND_NAME } 账户时重新登录并恢复数据。它由 12 个单词组成，作用类似于备份密码。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
@@ -13908,6 +14231,9 @@
       "Confirm login password": [
         "确认登录密码"
       ],
+      "Confirm MX records added": [
+        "确认已添加 MX 记录"
+      ],
       "Confirm new password": [
         "确认新密码"
       ],
@@ -14256,6 +14582,9 @@
       "Highest VPN speed": [
         "最快 VPN 速度"
       ],
+      "Host name": [
+        "主机名"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "我知道我需要立即将此邮箱地址添加到另一个账户中，以免永久丢失该地址。"
       ],
@@ -14448,6 +14777,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
       ],
+      "MX records": [
+        "MX 记录"
+      ],
       "Name": [
         "名称"
       ],
@@ -14630,6 +14962,9 @@
       ],
       "Primary": [
         "基本的"
+      ],
+      "Priority": [
+        "优先级"
       ],
       "Priority support": [
         "优先支持"
@@ -15097,6 +15432,9 @@
       ],
       "Recovery phrase": [
         "恢复短语"
+      ],
+      "Set recovery phone number": [
+        "设置密保手机"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15135,6 +15473,26 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "请添加下列 TXT 记录。注意： DNS 记录更新可能需要若干小时。"
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "未找到 ${ capitalizedGroup } 记录"
+      ],
+      "Host name": [
+        "主机名"
+      ],
+      "Invalid ${ group.name } record found": [
+        "发现无效的 ${ group.name } 记录"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "Use default value": [
+        "使用默认值"
+      ],
+      "Valid ${ group.name } record found": [
+        "找到有效的 ${ group.name } 记录"
       ]
     },
     "Label for new member": {
@@ -15301,6 +15659,9 @@
       ],
       "data recovery option": [
         "数据恢复选项"
+      ],
+      "Detailed instructions": [
+        "详细说明"
       ],
       "Details": [
         "详细信息"
@@ -18494,7 +18855,7 @@
         "每月，每两年结算一次"
       ],
       "Preparing your recovery phrase": [
-        "准备您的恢复短语"
+        "正在准备您的恢复短语"
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
@@ -19213,6 +19574,9 @@
       "Search for an email or IP address": [
         "查找电子邮件和 IP 地址"
       ],
+      "Search for users or addresses": [
+        "搜索用户或地址"
+      ],
       "Search parent folder": [
         "搜索上层文件夹"
       ],
@@ -19370,8 +19734,8 @@
       ]
     },
     "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**您必须更新所有 ${ BRAND_NAME } 移动应用**：您的新密钥将无法在旧版本应用上使用。"
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**您必须更新所有 ${ BRAND_NAME } 应用**：您的新密钥将无法在旧版本应用上使用。"
       ]
     },
     "PQC key generation": {
@@ -19621,6 +19985,12 @@
       "Partial": [
         "部分"
       ],
+      "Recovery score: ${ score }": [
+        "恢复评分：${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "需要已验证的密码重置选项 (邮箱或短信)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "得分：${ score } / ${ maxScore }"
       ],
@@ -19662,8 +20032,14 @@
       "Download recovery file": [
         "下载恢复文件"
       ],
+      "Email recovery enabled": [
+        "已启用通过密保邮箱恢复"
+      ],
       "Emergency contacts added": [
         "已添加紧急联系人"
+      ],
+      "Enable email recovery": [
+        "启用通过密保邮箱恢复"
       ],
       "Enable recovery by phone": [
         "启用通过密保手机恢复"
@@ -19673,6 +20049,9 @@
       ],
       "Password verified": [
         "密码已验证"
+      ],
+      "Phone recovery enabled": [
+        "已启用通过密保手机恢复"
       ],
       "Recovery contacts added": [
         "已添加恢复联系人"
@@ -19711,6 +20090,9 @@
       ]
     },
     "RecoveryPhrase: Info": {
+      "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
+        "**请确保在创建恢复短语后妥善保管。**出于安全考虑，我们不会在保存更改后存储该短语，并且您将无法在 ${ BRAND_NAME } 应用中再次查看它！"
+      ],
       "copy recovery phrase": [
         "复制恢复短语"
       ],
@@ -19731,6 +20113,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "或者选择 ${ downloadRecoveryKitSwitchButton }。"
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "您的**恢复短语**可在您被锁定账户时，用于恢复您的 ${ BRAND_NAME } 账户。"
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20166,13 +20551,16 @@
         "启用通过密保手机恢复"
       ],
       "I understand that I will not be able to recover currently locked data with this recovery phrase": [
-        "我明白我无法使用此恢复短语恢复当前锁定的数据。"
+        "我明白，使用此恢复短语将无法恢复当前已锁定的数据。"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "如果您忘记了您的 ${ BRAND_NAME } 的密码并且需要重置它，下次您使用您的新密码登录此设备时，将恢复您的 ${ BRAND_NAME } 账户的全部访问权限。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "如果您无法登录 ${ BRAND_NAME } 账户，您的恢复短语将允许您登录并恢复数据。"
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "如果您丢失了登录信息并需要重置账户，**务必**同时拥有**账户恢复方法和数据恢复方法**，否则您可能无法访问任何邮件、联系人、文件或密码。"
@@ -20268,7 +20656,7 @@
         "验证密保手机"
       ],
       "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
-        "生成恢复短语时出错。请稍后重试，如果问题仍然存在，请联系支持人员。"
+        "生成恢复短语时出错。请稍后重试，如果问题仍然存在，请联系客服。"
       ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "验证邮箱出现错误，请稍后重试。若无效，请联系技术支援。"
@@ -20299,6 +20687,9 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "如果忘记密码，可以使用密保手机重新访问账户。"
+      ],
+      "You have previously downloaded a recovery phrase. Downloading a new one will **deactivate the old one**.": [
+        "您以前下载过恢复短语，下载新的恢复短语将**停用先前的恢复短语**。"
       ],
       "You have recommended actions to safeguard your account further.": [
         "建议您采取进一步保护账户的措施。"
@@ -20388,7 +20779,234 @@
         "您的恢复短语"
       ],
       "Your recovery phrase is set": [
-        "您的恢复短语已设置"
+        "恢复短语已设置"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } 账户邮箱"
+      ],
+      "Account protection": [
+        "账户保护"
+      ],
+      "Add": [
+        "添加"
+      ],
+      "Add emergency contacts": [
+        "添加紧急联系人"
+      ],
+      "Add options": [
+        "添加选项"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "请添加您信任且容易联系的朋友，他们将能够访问您的账户并为您重置密码。"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "添加您信任且容易联系的朋友。重置密码后，他们将能够帮助您解锁数据。"
+      ],
+      "Add phone number": [
+        "添加手机号码"
+      ],
+      "Add recovery contacts": [
+        "添加恢复联系人"
+      ],
+      "Add recovery email": [
+        "添加密保邮箱"
+      ],
+      "Add recovery phone": [
+        "添加密保手机"
+      ],
+      "Added emergency contacts": [
+        "已添加紧急联系人"
+      ],
+      "Added recovery contacts": [
+        "已添加恢复联系人"
+      ],
+      "Added recovery email": [
+        "已添加密保邮箱"
+      ],
+      "Added recovery phone": [
+        "添加密保手机"
+      ],
+      "Allow": [
+        "允许"
+      ],
+      "Allow data recovery from this device": [
+        "允许在此设备上恢复数据"
+      ],
+      "Allow password reset from the settings": [
+        "允许通过设置重置密码"
+      ],
+      "Allow recovery by email": [
+        "允许通过密保邮箱恢复"
+      ],
+      "Allow recovery by phone": [
+        "允许通过密保手机恢复"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "允许扫描二维码登录"
+      ],
+      "Allow trusted friends to sign in": [
+        "允许受信任的朋友登录"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "允许受信任的朋友解锁您的数据"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "返回 ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "恭喜"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "没有收到？${ sendANewCode }"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Download recovery file": [
+        "下载恢复文件"
+      ],
+      "Downloaded recovery file": [
+        "已下载恢复文件"
+      ],
+      "Emergency contacts enabled": [
+        "已启用紧急联系人"
+      ],
+      "Enable device recovery": [
+        "启用通过设备恢复"
+      ],
+      "Enable email recovery": [
+        "启用通过密保邮箱恢复"
+      ],
+      "Enable emergency contacts": [
+        "启用紧急联系人"
+      ],
+      "Enable password reset from settings": [
+        "启用通过设置重置密码"
+      ],
+      "Enable phone recovery": [
+        "启用通过密保手机恢复"
+      ],
+      "Enable QR code sign-in": [
+        "启用扫码登录"
+      ],
+      "Enabled device recovery": [
+        "已启用通过设备恢复"
+      ],
+      "Enabled email recovery": [
+        "已启用通过密保邮箱恢复"
+      ],
+      "Enabled password reset from settings": [
+        "已启用通过设置重置密码"
+      ],
+      "Enabled phone recovery": [
+        "已启用通过密保手机恢复"
+      ],
+      "Enabled QR code sign-in": [
+        "已启用扫码登录"
+      ],
+      "Got it": [
+        "知道了"
+      ],
+      "Here's how you increased your account protection:": [
+        "以下是增强账户保护的方式："
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "如果您忘记密码，可以使用二维码登录。只需在另一台设备上登录 ${ BRAND_NAME } 服务即可。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "如果您无法登录 ${ BRAND_NAME } 账户，该短语将允许您登录并恢复数据。这是即时恢复所有内容的唯一方法，请务必将其保存在安全的地方！"
+      ],
+      "Later": [
+        "稍后"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "通过紧急访问功能保护您的数字资产"
+      ],
+      "Save recovery phrase": [
+        "保存恢复短语"
+      ],
+      "Saved recovery phrase": [
+        "已保存恢复短语"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "他们必须已拥有 ${ BRAND_NAME } 账户！"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "这将让您快速访问 ${ BRAND_NAME } 账户，以便更改密码。"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "如果您丢失了密码但仍在 ${ BRAND_NAME } 中保持登录状态，这将允许您重置账户密码。如果您已登录，这通常是恢复账户的最简单方式。"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "重置密码后，这将能够恢复账户中的邮件、联系人、文件、密码以及任何其他加密数据的访问权限。"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "为确保邮箱地址是您的，请输入发送至 ${ boldEmail } 的验证码。"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "为确保电话号码是您的，请输入发送至 ${ boldPhoneNumber } 的验证码。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "为确保邮箱地址是您的，我们将发送一封带有验证链接的邮件。"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "升级您的套餐以启用账户的紧急访问功能，这将允许您指定 1 到 5 位能够为您重置密码的朋友。"
+      ],
+      "Verified password": [
+        "已验证密码"
+      ],
+      "Verified recovery email": [
+        "已验证密保邮箱"
+      ],
+      "Verified recovery phone": [
+        "已验证密保手机"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Verify password": [
+        "验证密码"
+      ],
+      "Verify recovery email": [
+        "验证密保邮箱"
+      ],
+      "Verify recovery phone": [
+        "验证密保手机"
+      ],
+      "Verify your recovery email": [
+        "验证密保邮箱"
+      ],
+      "Verify your recovery phone": [
+        "验证密保手机"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "您可以在此设备上保存数据备份。重置密码后，只需在此设备上登录，即可恢复您账户中的邮件、联系人、文件、密码以及任何其他加密数据。"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用邮箱验证重新访问账户。"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用短信验证重新访问账户。"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用密保邮箱重新访问账户。"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用密保手机重新访问账户。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "您无需打开或读取该文件，只需下载并将其保存在安全的地方即可。"
+      ],
+      "Your recovery checklist": [
+        "您的恢复清单"
+      ],
+      "Your security setup": [
+        "您的安全设置"
       ]
     },
     "saml: Action": {
@@ -20595,6 +21213,12 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "为确保您账户的最高安全性，请禁用高亮显示的选项！"
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "为确保您始终可以访问您的 ${ BRAND_NAME } 账户，请下载您的恢复短语！"
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
       ]
@@ -21769,11 +22393,35 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "分配委派角色"
+      ],
+      "Assign roles": [
+        "分配角色"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "点击用户名以管理其角色和权限"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "点击“编辑”可为此组分配角色并自动管理成员访问权限。"
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "最高可赚取 ${ maxRewardAmount } 积分"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "当您邀请的人订阅 ${ BRAND_NAME } 套餐时，您将获得积分奖励。"
+      ],
+      "New: Roles and permissions tab": [
+        "新功能：角色与权限选项卡"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "打开此选项卡可授予特定权限，而无需完全的管理员访问权限。"
+      ],
+      "User roles available": [
+        "可用的用户角色"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "现在您可以在此选项卡中为单个用户分配角色。"
       ]
     },
     "sso": {
@@ -22068,6 +22716,15 @@
       "Available on this device": [
         "在此设备上可用"
       ],
+      "Disable contact-assisted recovery": [
+        "禁用联系人辅助恢复"
+      ],
+      "Disable device data backup": [
+        "禁用设备数据备份"
+      ],
+      "Disable emergency access": [
+        "禁用紧急访问"
+      ],
       "Disable QR code sign-in": [
         "禁用二维码登录"
       ],
@@ -22076,6 +22733,9 @@
       ],
       "Disable recovery by phone": [
         "禁用通过密保手机恢复"
+      ],
+      "Disable recovery file": [
+        "禁用恢复文件"
       ],
       "Disable signed-in reset": [
         "禁用已登录状态下的重置"
@@ -22833,6 +23493,9 @@
       "Account deleted. Signing out...": [
         "账户已删除，正在退出..."
       ],
+      "Activation link copied to clipboard": [
+        "激活链接已复制到剪贴板"
+      ],
       "Address added": [
         "地址已添加"
       ],
@@ -23451,6 +24114,9 @@
       ],
       "Activate user": [
         "激活用户"
+      ],
+      "Activate your email": [
+        "激活您的邮箱"
       ],
       "Activity monitor": [
         "活动监测"
@@ -25057,6 +25723,9 @@
       "Verify it’s you": [
         "验证您的身份"
       ],
+      "Verify your email": [
+        "验证您的邮箱"
+      ],
       "Verifying your card...": [
         "正在验证您的银行卡..."
       ],
@@ -25134,6 +25803,12 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "您的 ${ planTitle } 订阅已开始"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "您在 ${ orgName } 的管理员正在邀请您激活新的安全 ${ BRAND_NAME } 账户并更新您的密码。"
+      ],
+      "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "您的管理员正在邀请您激活新的安全 ${ BRAND_NAME } 账户并更新您的密码。"
       ],
       "Your calendar link": [
         "您的日历链接"
@@ -25587,6 +26262,9 @@
       "User is a group": [
         "用户是群组"
       ],
+      "via ${ groupName }": [
+        "通过 ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
       ]
@@ -25908,6 +26586,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(通过 ${ groupName })"
+      ],
+      "(via group)": [
+        "(通过群组)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "为用户添加委派角色，仅授予他们所需的特定权限，从而将完全管理员权限分开并保护您的环境安全。"
       ],

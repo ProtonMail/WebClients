@@ -51,6 +51,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "添加账户"
       ],
@@ -950,6 +953,9 @@
       ],
       "Move to Archive": [
         "移至归档"
+      ],
+      "Move to category...": [
+        "移动到分类..."
       ],
       "Move to folder": [
         "移动至文件夹"
@@ -6646,6 +6652,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 正在隐藏您的 IP 地址，网站因此无法识别您的身份。"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -6729,6 +6738,9 @@
       ],
       "Ad targeting": [
         "广告定位"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7306,6 +7318,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "仅需 ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
       ],
@@ -7457,7 +7472,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -7551,6 +7566,9 @@
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用。"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -7896,6 +7914,9 @@
       ],
       "Recipient: ": [
         "收件人："
+      ],
+      "RECOMMENDED": [
+        "推荐"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
@@ -9998,6 +10019,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "正在加载您订阅的新闻通讯..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "您退订的新闻通讯或邮件列表将在此处显示"
       ],
@@ -12000,6 +12024,12 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Remind me later": [
+        "稍后提醒"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -14141,6 +14171,9 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 项会话已从 ${ labelName } 中移除。"
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } 项会话已从星标中移除。"
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } 项会话已延迟通知"
       ],
@@ -14170,6 +14203,9 @@
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 封邮件已移除 ${ labelName } 标签。"
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } 封邮件已从星标中移除。"
       ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
@@ -15057,6 +15093,9 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Keep this banner hidden?": [
+        "隐藏此横幅？"
+      ],
       "Label as": [
         "加标签"
       ],
@@ -15074,6 +15113,9 @@
       ],
       "Load remote content": [
         "加载外链内容"
+      ],
+      "Loading...": [
+        "正在加载…"
       ],
       "Make a secure connection your default": [
         "将安全连接设为默认首选"

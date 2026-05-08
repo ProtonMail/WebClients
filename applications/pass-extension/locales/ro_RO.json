@@ -1565,9 +1565,6 @@
         "Invitații trimise: ${ payload.count }",
         "Invitații trimise: ${ payload.count }"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s-a dezactivat."
       ],
@@ -2115,11 +2112,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2361,6 +2353,9 @@
       ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Autocompletați rapid codurile de A2F."
@@ -2630,6 +2625,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
+      ],
+      "Unlock with biometrics": [
+        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."

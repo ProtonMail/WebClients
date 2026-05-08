@@ -309,6 +309,9 @@
       "Contract composer": [
         "Zamknij pełny ekran"
       ],
+      "Copy": [
+        "Kopiuj"
+      ],
       "Copy address": [
         "Kopiuj adres"
       ],
@@ -1454,9 +1457,6 @@
       ],
       "Trust": [
         "Zaufaj"
-      ],
-      "Trust key": [
-        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7186,10 +7186,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -12772,6 +12769,11 @@
         "Udostępniony przez ${ ownerName }"
       ]
     },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Otwórz w ${ appName }"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Wiadomość zaszyfrowana PGP. Weryfikacja nadawcy nie powiodła się: ${ verificationErrorsMessage }"
@@ -13174,6 +13176,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Wykorzystana przestrzeń"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."

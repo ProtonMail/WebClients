@@ -614,6 +614,9 @@
       "More options": [
         "更多選項"
       ],
+      "More options for accounts": [
+        "更多帳號選項"
+      ],
       "Need help?": [
         "需要說明嗎？"
       ],
@@ -1246,6 +1249,17 @@
         "管理員"
       ]
     },
+    "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 個新的管理員角色"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "一次管理多位使用者的委派權限。可將特定管理員角色指派給群組，以自動套用權限。這遵循最小權限原則，在節省帳號啟用與離職交接時間的同時，也能降低錯誤發生。"
+      ],
+      "New: Control admin access for many users at once": [
+        "新訊息：一次控管多位使用者的管理員存取權限"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "若您現在離開，部份聯絡人或會無法匯入"
@@ -1568,6 +1582,17 @@
         "觀看您喜愛的電影與電視節目"
       ]
     },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }桌面應用程式"
@@ -1833,6 +1858,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "新增 ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "進階帳號和網路安全於單一方案"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -2540,6 +2568,9 @@
       "North Korea": [
         "北韓"
       ],
+      "North Macedonia": [
+        "北馬其頓"
+      ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
       ],
@@ -2994,6 +3025,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "邀請好友至 ${ BRAND_NAME }，賺取高達 ${ credits } 儲值。"
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
@@ -3493,6 +3527,9 @@
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
+      ],
+      "Company name or personal name is required": [
+        "公司名稱或個人名稱是需要的"
       ],
       "Couldn't load invoices. Please try again later.": [
         "無法載入發票。請稍後再試。"
@@ -7630,6 +7667,9 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Continue cancelling": [
+        "持續取消"
+      ],
       "Copy": [
         "複製"
       ],
@@ -9963,6 +10003,9 @@
       "Advanced threat protection": [
         "進階的威脅保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "與非 ${ BRAND_NAME } 使用者合作"
+      ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
       ],
@@ -10612,6 +10655,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -10840,6 +10886,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "身為一位 **${ currentPlanTitle }** 訂閱者，您可透過升級至 **${ upsellPlanTitle }** 方案以解鎖 **${ unlockPlanTitle }** 和更多 ${ BRAND_NAME } 服務。"
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
       ],
@@ -11887,6 +11936,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "點擊使用者的名稱，以進行管理他們的角色與權限。"
+      ],
+      "User roles available": [
+        "是用的使用者角色"
       ]
     },
     "sso": {
@@ -13916,6 +13973,9 @@
       ],
       "Upgrade your privacy": [
         "升級您的隱私"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
       "Upload and share files": [
         "上傳並共享檔案"

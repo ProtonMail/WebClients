@@ -51,6 +51,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -1508,7 +1511,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -6757,6 +6761,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } masque votre adresse IP, afin que les sites internet ne puissent pas vous identifier."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -6843,6 +6850,9 @@
       ],
       "Ad targeting": [
         "Ciblage publicitaire"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7434,6 +7444,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Pour plus de sécurité, vous pouvez définir une phrase secrète. Elle ne sera pas incluse dans l'invitation de calendrier, n'oubliez pas de la partager avec vos invités séparément."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pour seulement ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Pour les messages après le ${ oldestDate }"
       ],
@@ -7588,8 +7601,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8032,6 +8044,9 @@
       ],
       "Recipient: ": [
         "Destinataire : "
+      ],
+      "RECOMMENDED": [
+        "RECOMMANDÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -10165,6 +10180,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Chargement de vos abonnements à des newsletters en cours"
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Les newsletters ou listes de diffusion dont vous vous désabonnez apparaîtront ici."
       ],
@@ -15494,6 +15512,9 @@
       ],
       "Load remote content": [
         "Charger le contenu distant"
+      ],
+      "Loading...": [
+        "Chargement en cours"
       ],
       "Make a secure connection your default": [
         "Optez par défaut pour une connexion sécurisée"

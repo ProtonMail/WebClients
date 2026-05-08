@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Preguntarme después"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -120,6 +123,9 @@
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
+      ],
+      "Change my access": [
+        "Cambiar mi acceso"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -228,6 +234,9 @@
       ],
       "Copy invite link": [
         "Copiar enlace de invitación"
+      ],
+      "Copy link": [
+        "Copiar enlace"
       ],
       "Copy password": [
         "Copiar la contraseña"
@@ -350,6 +359,9 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
+      ],
+      "Encrypted": [
+        "Cifrado"
       ],
       "Expand": [
         "Expandir"
@@ -627,6 +639,9 @@
       "Remove file": [
         "Borrar archivo"
       ],
+      "Remove my access": [
+        "Borrar mi acceso"
+      ],
       "Rename": [
         "Renombrar"
       ],
@@ -678,6 +693,9 @@
       "Save changes": [
         "Guardar los cambios"
       ],
+      "Save preferences": [
+        "Guardar preferencias"
+      ],
       "Search": [
         "Buscar"
       ],
@@ -708,6 +726,9 @@
       "Select all": [
         "Seleccionar todo"
       ],
+      "Set password or expiration date": [
+        "Establecer contraseña o fecha de expiración"
+      ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"
       ],
@@ -731,6 +752,12 @@
       ],
       "Share your calendar with your team": [
         "Compartir su calendario con su equipo"
+      ],
+      "Shared": [
+        "Compartido"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
       ],
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
@@ -2828,6 +2855,9 @@
       "Already a member of this share": [
         "Ya se ha compartido con este miembro"
       ],
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Ocurrió un error al intentar convertir el documento. Intente de nuevo."
       ],
@@ -2917,8 +2947,20 @@
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
       ],
+      "Failed to change permissions settings": [
+        "Error al cambiar los ajustes de permisos"
+      ],
       "Failed to copy photo to album": [
         "Error al copiar la foto al álbum"
+      ],
+      "Failed to create public share node": [
+        "Error al crear el nodo compartido público"
+      ],
+      "Failed to fetch node": [
+        "Error al obtener nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Error al obtener información para compartir"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Error al cargar los datos de la suscripción. Intente más tarde."
@@ -2931,6 +2973,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Error al renombrar el documento. Inténtelo de nuevo más tarde."
+      ],
+      "Failed to resend invitation": [
+        "Error al reenviar la invitación"
+      ],
+      "Failed to unshare node": [
+        "Error al dejar de compartir el nodo"
+      ],
+      "Failed to update direct share node": [
+        "Error al actualizar el nodo compartido directo"
+      ],
+      "Failed to update public share node": [
+        "Error al actualizar el nodo compartido público"
       ],
       "File \"${ name }\" is already downloading": [
         "El archivo \"${ name }\" ya se está descargando"
@@ -3123,6 +3177,9 @@
       "status page": [
         "página de estado"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Error al dejar de compartir este elemento"
+      ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
       ],
@@ -3152,6 +3209,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "La última actualización realizada al documento es demasiado grande o excede el tamaño límite del documento. Se desactivó temporalmente la edición. Sus cambios no se guardarán. Exporte una copia de su documento y recargue la página."
+      ],
+      "The link to your item failed to be deleted": [
+        "Error al eliminar el enlace a su elemento"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La revisión nueva del archivo original aún no se ha cargado, intente de nuevo más tarde"
@@ -3258,6 +3318,12 @@
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indescifrable"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nombre indescifrable"
       ]
     },
     "error": {
@@ -4328,6 +4394,18 @@
       "Calendar side panel": [
         "Panel lateral de calendario"
       ],
+      "Can edit": [
+        "Puede editar"
+      ],
+      "Can edit and manage access": [
+        "Puede editar y gestionar el acceso"
+      ],
+      "Can view and edit": [
+        "Puede ver y editar"
+      ],
+      "Can view only": [
+        "Solo lectura"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No recuerda la contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
       ],
@@ -4369,6 +4447,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Converting document...": [
+        "Convirtiendo documento..."
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4418,6 +4499,9 @@
       ],
       "Creating link to folder": [
         "Creando enlace a la carpeta"
+      ],
+      "Creating new document...": [
+        "Creando nuevo documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4518,6 +4602,12 @@
       "Enter your own password (as trusted contact).": [
         "Ingrese su propia contraseña (como contacto de confianza)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Error al convertir documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Error al cargar documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
@@ -4581,6 +4671,12 @@
       "Geoblocking": [
         "Bloqueo geográfico"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Recibir notificaciones de los comentarios"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
       ],
@@ -4613,6 +4709,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si se elimina de la lista, perderá el acceso a «${ fileName }» y no podrá volver a abrirlo a menos que el propietario lo comparta con usted de nuevo."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -4696,6 +4795,9 @@
       "Limited availability": [
         "Disponibilidad limitada"
       ],
+      "Link copied": [
+        "Enlace copiado"
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
@@ -4714,11 +4816,17 @@
       "Loading link": [
         "Cargando enlace"
       ],
+      "Loading...": [
+        "Cargando..."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Parece que no tiene conexión. El documento no puede editarse mientras no haya conexión. Compruebe la conectividad de su dispositivo."
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "Making a copy...": [
+        "Realizando una copia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
@@ -4750,6 +4858,9 @@
       ],
       "No contacts added yet": [
         "Ningún contacto agregado aún"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "No se proporcionó ningún documento en la URL. Regrese a ${ DRIVE_APP_NAME } y seleccione un documento."
       ],
       "No email address": [
         "No hay dirección de correo"
@@ -4807,6 +4918,9 @@
       ],
       "Owner": [
         "Propietario"
+      ],
+      "owner": [
+        "propietario"
       ],
       "password": [
         "contraseña"
@@ -5032,6 +5146,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "La URL que ingresó parece haberse copiado de Slack incorrectamente. Al copiar enlaces largos de Slack, haga clic derecho en el enlace y luego seleccione «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
+      ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
       ],
@@ -5221,6 +5338,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Cuando se conecta a una VPN, usa tecnología de cifrado para ocultar su dirección IP (un código único asignado a su dispositivo)."
       ],
+      "Who has access": [
+        "Quién tiene acceso"
+      ],
       "words": [
         "palabras"
       ],
@@ -5297,6 +5417,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Ya no podrá compartir «${ fileName }» si cambia el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
@@ -5502,8 +5625,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
+      "Access": [
+        "Acceso"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acceda a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
+      ],
+      "Active": [
+        "Activo"
       ],
       "Add email address": [
         "Agregar correo electrónico"
@@ -5519,6 +5648,15 @@
       ],
       "Alias title": [
         "Título del alias"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permita que los editores cambien permisos y compartan"
+      ],
+      "Anonymous": [
+        "Anónimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Cualquier persona en Internet con el enlace"
       ],
       "Anyone on the Internet with the link can edit": [
         "Cualquiera en Internet que tenga el enlace puede editar."
@@ -5558,6 +5696,12 @@
       ],
       "Calendar": [
         "Calendario"
+      ],
+      "can edit": [
+        "puede editar"
+      ],
+      "can view": [
+        "puede ver"
       ],
       "Cancel download": [
         "Cancelar descarga"
@@ -5604,8 +5748,14 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete link and remove access for everyone": [
+        "Eliminar el enlace y el acceso para todos"
+      ],
       "Delete recovery-related information.": [
         "Eliminar información de recuperación relacionada."
+      ],
+      "Disable this link on a specific date": [
+        "Desactive este enlace en una fecha específica"
       ],
       "Don't ask again": [
         "No volver a preguntar"
@@ -5649,11 +5799,17 @@
       "Emails (last month)": [
         "Correos (último mes)"
       ],
+      "Enable email notifications": [
+        "Activar notificaciones por correo electrónico"
+      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
       "Erase this link and remove everyone with access": [
         "Eliminar este enlace y quitar a todos con acceso"
+      ],
+      "Expiry": [
+        "Vencimiento"
       ],
       "Extended address": [
         "Dirección ampliada"
@@ -5696,6 +5852,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
+      ],
+      "Include document name in notification": [
+        "Incluir nombre de documento en notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -5769,6 +5928,9 @@
       "New password": [
         "Contraseña nueva"
       ],
+      "Not active": [
+        "No activo"
+      ],
       "Note": [
         "Nota"
       ],
@@ -5829,8 +5991,14 @@
       "Replace existing folder": [
         "Reemplazar carpeta existente"
       ],
+      "Require password": [
+        "Se requiere contraseña"
+      ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Set a password to limit access via link": [
+        "Establezca una contraseña para limitar el acceso mediante enlace"
       ],
       "Set expiration date": [
         "Fijar fecha de expiración"
@@ -7430,6 +7598,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "«${ fileName }» compartido"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" creado"
       ],
@@ -7627,6 +7798,12 @@
       ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuración actualizada. Los editores pueden compartir y cambiar permisos."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuración actualizada. Los editores no pueden compartir ni cambiar los permisos."
       ],
       "Share invitation accepted successfully": [
         "La invitación compartida fue aceptada."
@@ -8741,6 +8918,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creando nueva hoja de cálculo..."
+      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
@@ -9056,8 +9236,14 @@
       "Accepted": [
         "Aceptada"
       ],
+      "pending": [
+        "pendiente"
+      ],
       "Pending": [
         "Pendiente"
+      ],
+      "user joined": [
+        "usuario unido"
       ]
     },
     "Storage": {
@@ -9536,6 +9722,9 @@
       "Cannot load link": [
         "Error al cargar el enlace"
       ],
+      "Change access to viewer?": [
+        "¿Cambiar el acceso a lector?"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -9881,6 +10070,12 @@
       "Private browsing vs VPN": [
         "Navegación privada y VPN"
       ],
+      "Public link": [
+        "Enlace público"
+      ],
+      "Public link settings": [
+        "Ajustes del enlace público"
+      ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
       ],
@@ -9898,6 +10093,9 @@
       ],
       "Recover data": [
         "Recuperar datos"
+      ],
+      "Remove your access?": [
+        "¿Borrar su acceso?"
       ],
       "Report a problem": [
         "Reportar un problema"
@@ -9940,6 +10138,12 @@
       ],
       "Settings": [
         "Ajustes"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ajustes para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir «${ fileName }»"
       ],
       "Share ${ name }": [
         "Compartir ${ name }"
@@ -10076,6 +10280,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"
+      ],
+      "Change shared item settings": [
+        "Cambiar ajustes de archivos compartidos"
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"

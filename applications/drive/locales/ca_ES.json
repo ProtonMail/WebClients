@@ -45,6 +45,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Afegeix ${ photoCount } foto a un àlbum nou.",
         "Afegeix ${ photoCount } fotos a un àlbum nou."
@@ -4906,7 +4909,7 @@
         "Els fitxers de ${ DOCS_APP_NAME } i ${ SHEETS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta baixada. Podeu descarregar els altres fitxers fent clic a \"Continua la descàrrega\"."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per a restaurar la cerca."
+        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per restaurar la cerca."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } a l'App Store"
@@ -5022,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -5092,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Orientació d'anuncis"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5577,6 +5586,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per a obtenir els millors resultats, eviteu activitats d'estríming i que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
       "Free 5GB encrypted storage to get started": [
         "Emmagatzematge xifrat gratuït de 5 GB per a començar"
       ],
@@ -5690,7 +5702,7 @@
         "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per a recuperar-lo."
+        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per recuperar-la."
       ],
       "Indexing in progress": [
         "Indexació en curs"
@@ -6117,6 +6129,9 @@
       "Ready to add some photos?": [
         "Preparat per a afegir algunes fotos?"
       ],
+      "RECOMMENDED": [
+        "RECOMANAT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
@@ -6181,7 +6196,7 @@
         "S'ha produït un error intern en la cerca. Reconstruïu l'índex per a recuperar-lo."
       ],
       "Search engine error": [
-        "Error del motor de cerca"
+        "Hi ha hagut un error del motor de cerca"
       ],
       "Search error": [
         "Error de cerca"
@@ -6356,7 +6371,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "El motor de cerca ha detectat un error intern. Reconstruïu l'índex per a recuperar-lo."
+        "El motor de cerca s'ha trobat amb un error intern. Reconstruïu l'índex per recuperar-ho."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
@@ -6852,7 +6867,7 @@
         "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i, després, reconstruïu l'índex."
+        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i després reconstruïu l'índex."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "El vostre navegador actual no permet la descàrrega de múltiples fitxers o molt grans. Baixeu l'aplicació d'escriptori per poder-ho fer."

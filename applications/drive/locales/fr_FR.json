@@ -45,6 +45,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Ajouter ${ photoCount } photo à un nouvel album",
         "Ajouter ${ photoCount } photos à un nouvel album"
@@ -5022,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } masque votre adresse IP, afin que les sites internet ne puissent pas vous identifier."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -5092,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Ciblage publicitaire"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5576,6 +5585,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pour seulement ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 Go d'espace de stockage chiffré gratuit pour démarrer"
@@ -6116,6 +6128,9 @@
       ],
       "Ready to add some photos?": [
         "Prêt à ajouter des photos ?"
+      ],
+      "RECOMMENDED": [
+        "RECOMMANDÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."

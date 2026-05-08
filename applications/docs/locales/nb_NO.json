@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Avbryt abonnement"
       ],
+      "Change my access": [
+        "Endre tilgangen min"
+      ],
       "Change password": [
         "Endre passord"
       ],
@@ -228,6 +231,9 @@
       ],
       "Copy invite link": [
         "Kopier invitasjonskobling"
+      ],
+      "Copy link": [
+        "Kopier kobling"
       ],
       "Copy password": [
         "Kopier passord"
@@ -350,6 +356,9 @@
       ],
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
+      ],
+      "Encrypted": [
+        "Kryptert"
       ],
       "Expand": [
         "Utvid"
@@ -624,6 +633,9 @@
       "Remove file": [
         "Fjern fil"
       ],
+      "Remove my access": [
+        "Fjern tilgangen min"
+      ],
       "Rename": [
         "Gi nytt navn"
       ],
@@ -705,6 +717,9 @@
       "Select all": [
         "Velg alle"
       ],
+      "Set password or expiration date": [
+        "Angi passord eller utløpsdato"
+      ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
       ],
@@ -728,6 +743,12 @@
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
+      ],
+      "Shared": [
+        "Delt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deling er ende-til-ende-kryptert"
       ],
       "Show advanced PGP settings": [
         "Vis avanserte PGP-innstillinger"
@@ -2825,6 +2846,9 @@
       "Already a member of this share": [
         "Allerede et medlem av denne delte ressursen"
       ],
+      "An error occurred": [
+        "En feil oppstod"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Det oppstod en feil under forsøk på å konvertere dokumentet. Prøv igjen."
       ],
@@ -2914,8 +2938,20 @@
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
       ],
+      "Failed to change permissions settings": [
+        "Kunne ikke endre tillatelsesinnstillinger"
+      ],
       "Failed to copy photo to album": [
         "Kunne ikke kopiere bildet til albumet"
+      ],
+      "Failed to create public share node": [
+        "Kunne ikke opprette offentlig delingsnode"
+      ],
+      "Failed to fetch node": [
+        "Kunne ikke hente node"
+      ],
+      "Failed to fetch sharing info": [
+        "Kunne ikke hente delingsinfo"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
@@ -2928,6 +2964,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Kunne ikke endre navn på dokumentet. Prøv igjen senere."
+      ],
+      "Failed to resend invitation": [
+        "Kunne ikke sende invitasjonen på nytt"
+      ],
+      "Failed to unshare node": [
+        "Kunne ikke oppheve deling av node"
+      ],
+      "Failed to update direct share node": [
+        "Kunne ikke oppdatere direkte delingsnode"
+      ],
+      "Failed to update public share node": [
+        "Kunne ikke oppdatere offentlig delingsnode"
       ],
       "File \"${ name }\" is already downloading": [
         "Fil \"${ name }\" lastes allerede ned"
@@ -3120,6 +3168,9 @@
       "status page": [
         "statusside"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Det mislyktes å stoppe delingen av dette elementet"
+      ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
       ],
@@ -3149,6 +3200,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Den siste oppdateringen du gjorde i dokumentet, er enten for stor eller overskrider den totale grensen for dokumentstørrelse. Redigering er midlertidig deaktivert. Endringen blir ikke lagret. Eksporter en kopi av dokumentet og last inn siden på nytt."
+      ],
+      "The link to your item failed to be deleted": [
+        "Koblingen til elementet ditt kunne ikke slettes"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Den nye revisjonen av opprinnelige fil er ikke lastet opp enda, forsøk på nytt senere."
@@ -3255,6 +3309,12 @@
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Enhet som ikke kan dekrypteres"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
     "error": {
@@ -4325,6 +4385,18 @@
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can edit and manage access": [
+        "Kan redigere og administrere tilgang"
+      ],
+      "Can view and edit": [
+        "Kan se og redigere"
+      ],
+      "Can view only": [
+        "Kan bare se"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
       ],
@@ -4611,6 +4683,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
@@ -4693,6 +4768,9 @@
       "Limited availability": [
         "Begrenset tilgjengelighet"
       ],
+      "Link copied": [
+        "Kobling kopiert"
+      ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
@@ -4710,6 +4788,9 @@
       ],
       "Loading link": [
         "Laster kobling"
+      ],
+      "Loading...": [
+        "Laster..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det ser ut som du er frakoblet. Dokumentet kan ikke redigeres mens du er frakoblet. Kontroller enhetens tilkobling."
@@ -4804,6 +4885,9 @@
       ],
       "Owner": [
         "Eier"
+      ],
+      "owner": [
+        "eier"
       ],
       "password": [
         "passord"
@@ -5218,6 +5302,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
+      "Who has access": [
+        "Hvem har tilgang"
+      ],
       "words": [
         "ord"
       ],
@@ -5294,6 +5381,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du vil ikke kunne dele \"${ fileName }\" etter at tilgangen din endres til kun visning. Bare eieren kan endre tilgangen din igjen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
@@ -5499,8 +5589,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
+      "Access": [
+        "Tilgang"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add email address": [
         "Legg til e-postadresse"
@@ -5516,6 +5612,15 @@
       ],
       "Alias title": [
         "Aliastittel"
+      ],
+      "Allow editors to change permissions and share": [
+        "Tillat redaktører å endre tillatelser og dele"
+      ],
+      "Anonymous": [
+        "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Alle på internett med koblingen"
       ],
       "Anyone on the Internet with the link can edit": [
         "Alle på Internett med koblingen kan redigere"
@@ -5555,6 +5660,12 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "can edit": [
+        "kan redigere"
+      ],
+      "can view": [
+        "kan se"
       ],
       "Cancel download": [
         "Avbryt nedlasting"
@@ -5601,8 +5712,14 @@
       "Delete": [
         "Slett"
       ],
+      "Delete link and remove access for everyone": [
+        "Slett kobling og fjern tilgang for alle"
+      ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
+      ],
+      "Disable this link on a specific date": [
+        "Deaktiver denne koblingen på en bestemt dato"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -5651,6 +5768,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Slett denne koblingen og fjern alle med tilgang"
+      ],
+      "Expiry": [
+        "Utløp"
       ],
       "Extended address": [
         "Utvidet adresse"
@@ -5766,6 +5886,9 @@
       "New password": [
         "Nytt passord"
       ],
+      "Not active": [
+        "Ikke aktiv"
+      ],
       "Note": [
         "Notat"
       ],
@@ -5826,8 +5949,14 @@
       "Replace existing folder": [
         "Erstatt eksisterende mappe"
       ],
+      "Require password": [
+        "Krev passord"
+      ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Set a password to limit access via link": [
+        "Angi et passord for å begrense tilgang via kobling"
       ],
       "Set expiration date": [
         "Angi utløpsdato"
@@ -7427,6 +7556,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }}\" delt"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" opprettet"
       ],
@@ -7624,6 +7756,12 @@
       ],
       "Root folder failed to be loaded": [
         "Rotmappen kunne ikke lastes inn"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Innstilling oppdatert. Redaktører kan endre tillatelser og dele."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Innstilling oppdatert. Redaktører kan ikke endre tillatelser eller dele."
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
@@ -9053,8 +9191,14 @@
       "Accepted": [
         "Akseptert"
       ],
+      "pending": [
+        "ventende"
+      ],
       "Pending": [
         "Venter"
+      ],
+      "user joined": [
+        "bruker koblet til"
       ]
     },
     "Storage": {
@@ -9533,6 +9677,9 @@
       "Cannot load link": [
         "Kan ikke laste kobling"
       ],
+      "Change access to viewer?": [
+        "Endre tilgang til kun visning?"
+      ],
       "Change password": [
         "Endre passord"
       ],
@@ -9878,6 +10025,12 @@
       "Private browsing vs VPN": [
         "Privat surfing kontra VPN"
       ],
+      "Public link": [
+        "Offentlig kobling"
+      ],
+      "Public link settings": [
+        "Innstillinger for offentlig kobling"
+      ],
       "Re-sign all contacts": [
         "Signer alle kontaktene på nytt"
       ],
@@ -9895,6 +10048,9 @@
       ],
       "Recover data": [
         "Gjenopprett data"
+      ],
+      "Remove your access?": [
+        "Fjerne tilgangen din?"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -9937,6 +10093,12 @@
       ],
       "Settings": [
         "Innstillinger"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Innstillinger for ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }}\""
       ],
       "Share ${ name }": [
         "Delt ressurs ${ name }"
@@ -10073,6 +10235,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
+      ],
+      "Change shared item settings": [
+        "Endre innstillinger for delt element"
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"

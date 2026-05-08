@@ -1285,7 +1285,7 @@
         "Odstranit toto oznámení"
       ],
       "Removed ${ memberName } as group owner": [
-        "Uživatel ${ memberName } odstraněn z role vlastníka skupiny"
+        "Uživatel ${ memberName } odebrán jako vlastník skupiny"
       ],
       "Rename": [
         "Přejmenovat"
@@ -2090,9 +2090,6 @@
       "3 new admin roles": [
         "3 nové role správce"
       ],
-      "Admin roles": [
-        "Administrátorská role"
-      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
@@ -2111,20 +2108,11 @@
       "New: Control admin access for individual users": [
         "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
       ],
-      "Organization admin": [
-        "Správce organizace"
-      ],
       "Organization admin:": [
         "Správce organizace:"
       ],
-      "Security admin": [
-        "Správce zabezpečení"
-      ],
       "Security admin:": [
         "Správce zabezpečení:"
-      ],
-      "User admin": [
-        "Správce uživatelů"
       ],
       "User admin:": [
         "Uživatel Admin:"
@@ -7044,7 +7032,7 @@
         "Neplatný odkaz pozvánky"
       ],
       "Invalid joining link. Please contact your administrator.": [
-        "Neplatný odkaz pro přihlášení. Obraťte se prosím na správce."
+        "Neplatný odkaz pro připojení. Obraťte se prosím na svého správce."
       ],
       "Invalid name": [
         "Neplatný název"
@@ -10275,7 +10263,7 @@
         "Máte přístup ke své aktivní webové relaci v jiném prohlížeči?"
       ],
       "Can you reach out to your contact?": [
-        "Mohl bys se spojit se svým kontaktem?"
+        "Můžete se spojit se svým kontaktem?"
       ],
       "Cancel": [
         "Zrušit"
@@ -11070,7 +11058,7 @@
         "Pokud jste zakoupili dárkový kód nebo jej obdrželi od našeho týmu podpory, můžete jej zadat zde."
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
-        "Pokud jste si nedávno resetovali heslo, můžete pomocí odkazu ${ recoveryMethodLink } odemknout svá data. Pokud se jedná o reset staršího hesla, můžete zabránit tomu, aby se tato zpráva znovu zobrazovala."
+        "Pokud jste si nedávno resetovali heslo, můžete pomocí odkazu ${ recoveryMethodLink } odemknout svá data. Pokud se jedná o starý reset hesla, můžete zabránit opětovnému zobrazování této zprávy."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
@@ -12480,7 +12468,7 @@
         "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení pomocí telefonu**."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení přihlášení**."
+        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Resetování při přihlášení**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Abyste nepřišli o důležitá data, ${ DRIVE_APP_NAME } ukládá starší verze vašich souborů v době, kdy je vy a vaši spolupracovníci měníte.Vyberte, jak dlouho má ${ BRAND_NAME } uchovávat předchozí verze."
@@ -14965,7 +14953,7 @@
         "Online soukromí pro celou vaši rodinu"
       ],
       "Online productivity suite": [
-        "Online balík kancelářských aplikací"
+        "Sada aplikací pro zvýšení produktivity"
       ],
       "Only a single personal vault can be created": [
         "Lze vytvořit pouze jeden osobní trezor"
@@ -20018,11 +20006,6 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Nepodařilo se vygenerovat klíče adres. Pro aktivaci postkvantové ochrany budete muset vygenerovat své nové šifrovací klíče ručně.\n\nPřejděte do ${ settingsLink } a vyberte 'Generovat klíč' pro každou adresu."
-      ]
-    },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Musíte aktualizovat všechny mobilní aplikace ${ BRAND_NAME }**: vaše nové klíče nebudou fungovat ve starších verzích aplikací."
       ]
     },
     "PQC key generation": {
@@ -25205,7 +25188,7 @@
         "Free"
       ],
       "Free plan": [
-        "Tarif zdarma"
+        "Tarif Free"
       ],
       "Gateway": [
         "Brána"
@@ -26438,7 +26421,7 @@
         "Zahrnuje vlastní e-mailové domény a hide-my-email aliasy v aplikaci ${ MAIL_APP_NAME }, přístup k serverům ve více jak 120 zemích v aplikaci ${ VPN_SHORT_APP_NAME }, integrované 2FA a zabezpečené sdílení v aplikaci ${ PASS_SHORT_APP_NAME }, a mnoho dalšího."
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
-        "Zahrnuje profesionální e-mailovou adresu ve formátu @vašedoména.com, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou síť ${ VPN_SHORT_APP_NAME } a další funkce."
+        "Zahrnuje profesionální e-mailovou adresu ve formátu @vasedomena.cz, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou ${ VPN_SHORT_APP_NAME } a další funkce."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."

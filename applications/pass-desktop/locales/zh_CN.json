@@ -310,6 +310,9 @@
       "Do not show again when I press": [
         "当我按下时不再显示"
       ],
+      "Don't show this again": [
+        "不再显示"
+      ],
       "Download this CSV template": [
         "下载CSV模板"
       ],
@@ -1524,9 +1527,6 @@
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
@@ -1550,9 +1550,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个邮箱地址都将创建一个联系人。"
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "新版本正在下载！下载完成后，将在下次重启时生效。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
@@ -1787,9 +1784,6 @@
       ],
       "Emptying trash...": [
         "正在清空回收站..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "启用 ${ PASS_SHORT_APP_NAME } 测试版"
       ],
       "Enable auto-locking to secure your data": [
         "启用自动锁定功能，确保数据安全"
@@ -2052,9 +2046,6 @@
       "No network connection": [
         "无网络连接"
       ],
-      "No new versions are available at the moment.": [
-        "目前没有新版本可用 :P"
-      ],
       "None": [
         "无"
       ],
@@ -2237,6 +2228,9 @@
       ],
       "Press Enter to copy": [
         "按回车键以复制"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "由 ${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）提供保护"
       ],
       "Reconnect": [
         "重新连接"
@@ -2439,12 +2433,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
-      "This will reload the application.": [
-        "这将重新加载应用程序"
-      ],
-      "This will trigger a check for new beta releases.": [
-        "这将触发检查新的测试版发布"
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
@@ -2459,9 +2447,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "在正式发布前，抢先体验新的 ${ BRAND_NAME } 功能、更新和产品。"
       ],
       "Unable to copy to clipboard": [
         "无法复制到剪贴板"
@@ -2486,6 +2471,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock with biometrics": [
+        "使用生物识别解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
@@ -2854,9 +2842,6 @@
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的邮箱别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实邮箱地址。 "
       ],
-      "Beta Access": [
-        "测试版功能"
-      ],
       "Biometrics": [
         "生物识别"
       ],
@@ -3023,7 +3008,7 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "邮箱（别名）"
+        "邮箱 (别名)"
       ],
       "Email (new alias)": [
         "邮箱 (新别名)"

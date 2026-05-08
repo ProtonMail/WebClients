@@ -1546,9 +1546,6 @@
         "S'ha enviat ${ payload.count } invitació.",
         "S'han enviat ${ payload.count } invitacions."
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "S'ha desactivat ${ PROTON_SENTINEL_NAME }."
       ],
@@ -1575,9 +1572,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Es crea un contacte per a cada adreça de correu electrònic que enviï correus electrònics a o rebi correus electrònics de ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "S'està descarregant una nova versió. Un cop acabi la descàrrega, estarà disponible en el proper reinici."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -1812,9 +1806,6 @@
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Habiliti ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Activeu el bloqueig automàtic per protegir les vostres dades"
@@ -2055,7 +2046,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2083,9 +2075,6 @@
       ],
       "No network connection": [
         "No hi ha connexió de xarxa."
-      ],
-      "No new versions are available at the moment.": [
-        "No hi ha cap versió nova disponible en aquest moment."
       ],
       "None": [
         "Cap"
@@ -2270,6 +2259,9 @@
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
       ],
       "Reconnect": [
         "Torna a connectar"
@@ -2473,12 +2465,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Això rebutjarà el dispositiu **${ name }** que va intentar iniciar la sessió al vostre compte ${ BRAND_NAME } el **${ date }**."
       ],
-      "This will reload the application.": [
-        "Això tornarà a carregar l'aplicació."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Això activarà una comprovació de noves versions beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
       ],
@@ -2493,9 +2479,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prova les noves funcionalitats, actualitzacions i productes de ${ BRAND_NAME } abans que es publiquin al públic."
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
@@ -2520,6 +2503,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
+      ],
+      "Unlock with biometrics": [
+        "Desbloquegeu-ho amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -2905,9 +2891,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "A més de conservar les vostres credencials, ${ PASS_APP_NAME } protegeix la vostra identitat amb la seva funcionalitat d'àlies de correu electrònic integrada. Cada vegada que us registreu per obtenir un compte en línia nou, ${ PASS_APP_NAME } pot crear automàticament un àlies per protegir la vostra adreça electrònica real. "
-      ],
-      "Beta Access": [
-        "Accés Beta"
       ],
       "Biometrics": [
         "Dades biomètriques"
