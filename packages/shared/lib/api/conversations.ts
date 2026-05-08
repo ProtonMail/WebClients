@@ -1,5 +1,4 @@
 import type { SPAM_ACTION } from '../mail/mailSettings';
-import { getAppropriateSort } from './helpers/snoozeSort';
 import type { CountParams } from './interface';
 import type { MailboxItemsQueryParams } from './mailbox';
 
@@ -36,7 +35,7 @@ export const queryConversations = ({
         PageSize,
         Limit,
         LabelID,
-        Sort: getAppropriateSort(LabelID, Sort),
+        Sort,
         Desc,
         Begin,
         End,
