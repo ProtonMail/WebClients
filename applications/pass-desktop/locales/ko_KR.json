@@ -1518,9 +1518,6 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "${ aliasEmail }(으)로 이메일을 보내거나 받는 모든 이메일 주소에 대해 연락처가 생성됩니다."
       ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "새로운 버전이 다운로드 중입니다. 다운로드가 완료되면 다음 재시작 시 사용할 수 있습니다."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "새로운 버전의 ${ PASS_APP_NAME }가 사용 가능합니다. 새로운 기능과 버그 수정을 누리기 위해 업데이트 하세요."
       ],
@@ -1754,9 +1751,6 @@
       ],
       "Emptying trash...": [
         "휴지통 비우는 중..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "${ PASS_SHORT_APP_NAME } 베타 활성화"
       ],
       "Enable auto-locking to secure your data": [
         "데이터를 보호하려면 자동 잠금을 활성화 하세요."
@@ -1992,9 +1986,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2021,9 +2012,6 @@
       ],
       "No network connection": [
         "네트워크가 연결되어 있지 않습니다."
-      ],
-      "No new versions are available at the moment.": [
-        "현재 사용 가능한 새로운 버전이 없습니다."
       ],
       "None": [
         "없음"
@@ -2409,12 +2397,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
       ],
-      "This will reload the application.": [
-        "애플리케이션이 다시 로드됩니다."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "새 베타 릴리스를 확인합니다."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "이메일을 계속 수신 받으려면 아래의 별칭들을 다른 메일함으로 이동하세요:"
       ],
@@ -2429,9 +2411,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "전 세계 50,000명 이상의 비즈니스 사용자와 1억 개의 계정이 신뢰합니다."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요."
       ],
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
@@ -2823,9 +2802,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "로그인을 보관하는것 뿐만 아니라 ${ PASS_APP_NAME }이 내장된 별칭 이메일 기능으로 신원을 보호합니다. 어디서든 새 계정을 만들 때, ${ PASS_APP_NAME }이 자동으로 별칭 주소를 만들어 실제 이메일 주소를 보호할 수 있습니다. "
-      ],
-      "Beta Access": [
-        "베타 참여"
       ],
       "Biometrics": [
         "생체 인식"

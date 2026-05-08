@@ -1484,9 +1484,6 @@
         "${ payload.count } kutsu lähetettiin",
         "${ payload.count } kutsua lähetettiin"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, miedän edistynein tilinsuojausohjelmamme"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
       ],
@@ -1513,9 +1510,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Yhteystieto luodaan jokaiselle sähköpostiosoitteelle, joka lähettää tai vastaanottaa sähköposteja osoitteelta ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Uutta versiota ladataan. Kun lataus on valmis, se on käytettävissä seuraavassa uudelleenkäynnistyksessä."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
@@ -1738,9 +1732,6 @@
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Käytä ${ PASS_SHORT_APP_NAME }in beetaa"
       ],
       "Enable auto-locking to secure your data": [
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
@@ -1971,6 +1962,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1997,9 +1992,6 @@
       ],
       "No network connection": [
         "Verkkoyhteyttä ei ole"
-      ],
-      "No new versions are available at the moment.": [
-        "Ei uusia versioita saatavilla tällä hetkellä."
       ],
       "None": [
         "Ei mitään"
@@ -2357,12 +2349,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
-      "This will reload the application.": [
-        "Tämä lataa sovelluksen uudelleen."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Tämä käynnistää tarkistuksen uusien beetaversioiden varalta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"
       ],
@@ -2374,9 +2360,6 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
@@ -2768,9 +2751,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
-      ],
-      "Beta Access": [
-        "Käytä beetaversiota"
       ],
       "Biometrics": [
         "Biometria"

@@ -1584,9 +1584,6 @@
         "${ payload.count } pozvánok úspešne odoslaných",
         "${ payload.count } pozvánok úspešne odoslaných"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtu"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspešne vypnutý"
       ],
@@ -1619,9 +1616,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Pre každú emailovú adresu, na ktorú sa odosielajú alebo prijímajú emaily z ${ aliasEmail }, sa vytvorí kontakt."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Sťahuje sa nová verzia. Po dokončení sťahovania bude k dispozícii po ďalšom reštarte."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "K dispozícii je nová verzia ${ PASS_APP_NAME }. Aktualizujte a využívajte najnovšie funkcie a opravy chýb."
@@ -1856,9 +1850,6 @@
       ],
       "Emptying trash...": [
         "Vyprázdňovanie koša..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Zapnúť ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
@@ -2106,6 +2097,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2132,9 +2129,6 @@
       ],
       "No network connection": [
         "Žiadne sieťové pripojenie"
-      ],
-      "No new versions are available at the moment.": [
-        "V súčasnosti nie sú k dispozícii žiadne nové verzie."
       ],
       "None": [
         "Nezamykať"
@@ -2321,6 +2315,9 @@
       ],
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
       "Reconnect": [
         "Znovu pripojiť"
@@ -2526,12 +2523,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu ${ BRAND_NAME } účtu."
       ],
-      "This will reload the application.": [
-        "Týmto dôjde k opätovnému načítaniu aplikácie."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Tento krok spustí kontrolu nových beta verzií."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Ak chcete aj naďalej dostávať emaily, presuňte tieto aliasy do inej poštovej schránky:"
       ],
@@ -2546,9 +2537,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Má dôveru viac ako 50 000 firemných používateľov a 100 miliónov účtov na celom svete."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením."
       ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
@@ -2573,6 +2561,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho druhého hesla"
+      ],
+      "Unlock with biometrics": [
+        "Odomknúť pomocou biometrie"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
@@ -2994,9 +2985,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Okrem ukladania prihlasovacích údajov ${ PASS_APP_NAME } chráni vašu identitu integrovanou funkciou emailového aliasu. Vždy, keď sa zaregistrujete na nové online konto, ${ PASS_APP_NAME } môže automaticky vytvoriť alias, aby bola vaša skutočná emailová adresa chránená. "
-      ],
-      "Beta Access": [
-        "Beta prístup"
       ],
       "Biometrics": [
         "Biometria"

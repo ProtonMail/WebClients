@@ -1525,9 +1525,6 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Viene creato un contatto per ogni indirizzo e-mail che invia e-mail o riceve e-mail da ${ aliasEmail }."
       ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Un nuovo aggiornamento è in fase di download. Una volta completato il download, sarà disponibile al prossimo riavvio."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "È disponibile una nuova versione di ${ PASS_APP_NAME }. Aggiornala per scoprire le nuove funzionalità e correzioni."
       ],
@@ -1759,9 +1756,6 @@
       "Emptying trash...": [
         "Svuotamento del cestino in corso"
       ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Abilita la versione beta di ${ PASS_SHORT_APP_NAME }"
-      ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
       ],
@@ -1988,6 +1982,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -2014,9 +2012,6 @@
       ],
       "No network connection": [
         "Nessuna connessione alla rete"
-      ],
-      "No new versions are available at the moment.": [
-        "Al momento non sono disponibili nuove versioni."
       ],
       "None": [
         "Nessuno"
@@ -2401,12 +2396,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Il dispositivo **${ name }** che ha tentato di accedere al tuo account ${ BRAND_NAME } il **${ date }** rifiuterà."
       ],
-      "This will reload the application.": [
-        "Questo ricaricherà l'applicazione."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Questo attiverà un controllo per nuove release beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuare a ricevere email trasferisci questi alias in una casella di posta diversa:"
       ],
@@ -2421,9 +2410,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Scelto da oltre 50.000 utenti business e 100 milioni di account in tutto il mondo."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico."
       ],
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
@@ -2821,9 +2807,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Oltre a memorizzare i tuoi dati di accesso, ${ PASS_APP_NAME } protegge la tua identità con una funzione di alias email integrata. Ogni volta che crei un nuovo account online, ${ PASS_APP_NAME } può creare automaticamente un alias per mantenere protetto il tuo indirizzo email effettivo. "
-      ],
-      "Beta Access": [
-        "Accesso beta"
       ],
       "Biometrics": [
         "Biometria"
