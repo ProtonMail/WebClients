@@ -7,7 +7,7 @@ import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import {
@@ -246,20 +246,6 @@ export const getFirstSenderAddress = (element: Element) => {
     const [sender] = senders;
     const { Address = '' } = sender || {};
     return Address;
-};
-
-export const getLocationElementsCount = (
-    labelID: string,
-    conversationsCount: LabelCount[],
-    messagesCount: LabelCount[],
-    conversationMode: boolean
-) => {
-    if (conversationMode && conversationsCount && conversationsCount.length > 0) {
-        return conversationsCount.find((conversationCount) => labelID === conversationCount.LabelID)?.Total || 0;
-    } else if (messagesCount && messagesCount.length > 0) {
-        return messagesCount.find((messageCount) => labelID === messageCount.LabelID)?.Total || 0;
-    }
-    return 0;
 };
 
 export const matchFrom = (element: Element, fromInput: string) => {

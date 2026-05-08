@@ -4,7 +4,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import useApiStatus from './useApiStatus';
 
-const useDynamicFavicon = (faviconSrc: string) => {
+export const useDynamicFavicon = (faviconSrc: string) => {
     const faviconRef = useRef<string>('');
     const { offline, apiUnreachable } = useApiStatus();
 
@@ -66,5 +66,3 @@ const useDynamicFavicon = (faviconSrc: string) => {
         [faviconSrc, isPossiblyOffline]
     );
 };
-
-export default useDynamicFavicon;
