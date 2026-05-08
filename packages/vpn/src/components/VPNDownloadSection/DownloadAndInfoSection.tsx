@@ -11,19 +11,19 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
+import { getDownloadAppText } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/helpers';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
-import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
-import { VpnDownloadSection } from '../VpnDownloadSection/VpnDownloadSection';
-import { VpnGetMoreSection } from '../VpnGetMoreSection/VpnGetMoreSection';
+import { DownloadSection } from './DownloadSection';
+import { GetMoreSection } from './GetMoreSection';
 
-export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+export const VPNDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -73,16 +73,14 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
                 <DashboardGridSectionHeader title={getDownloadAppText(VPN_APP_NAME)} subtitle={downloadsSubtitle} />
             </DashboardGridSection>
             <DashboardGridSection position="content-left">
-                <VpnDownloadSection />
+                <DownloadSection />
             </DashboardGridSection>
             <DashboardGridSection position="header-right">
                 <DashboardGridSectionHeader title={c('Title').t`Get more from your VPN`} />
             </DashboardGridSection>
             <DashboardGridSection position="content-right">
-                <VpnGetMoreSection />
+                <GetMoreSection />
             </DashboardGridSection>
         </DashboardGrid>
     );
 };
-
-export default VpnDownloadAndInfoSection;

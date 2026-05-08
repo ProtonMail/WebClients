@@ -12,7 +12,7 @@ import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/h
 import { getPlan } from '@proton/payments/index';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
-import { getFeedbackSurveyOptions } from './feedbackSurveyOptions';
+import { getFeedbackSurveyOptions } from '../../../constants/feedbackSurveyOptions';
 
 type Props = Omit<ModalProps, 'onClose'> & {
     onClose: (discarted: boolean) => void;

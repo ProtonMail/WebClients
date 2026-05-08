@@ -757,15 +757,11 @@ export { default as EmbeddedVerification } from './containers/verification/Embed
 export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSection';
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
-export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
 export { default as VpnAlsoInYourPlanSection } from './containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 export { default as VpnBlogSection } from './containers/vpn/VpnBlogSection/VpnBlogSection';
-export { default as VpnDownloadAndInfoSection } from './containers/vpn/VpnDownloadAndInfoSection/VpnDownloadAndInfoSection';
-export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSection/VpnDownloadSection';
-export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';

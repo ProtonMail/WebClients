@@ -11,7 +11,7 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
-import { getOsDownloadUrl } from '../getOsDownloadUrl';
+import { getOsDownloadUrl } from '../../functions/getOsDownloadUrl';
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;

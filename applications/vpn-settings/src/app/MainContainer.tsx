@@ -49,7 +49,6 @@ import {
     PrivateHeader,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
-    ProtonVPNClientsSection,
     ReferralInvitesContextProvider,
     SentinelSection,
     SessionRecoverySection,
@@ -68,7 +67,6 @@ import {
     UsernameSection,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
-    VpnDownloadAndInfoSection,
     WireGuardConfigurationSection,
     YourPlanSection,
     YourPlanSectionV2,
@@ -96,6 +94,8 @@ import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
+import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
+import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 import { TVContainer } from '@proton/vpn/components/tv';
 
 import { VPNSidebar } from './VPNSidebar';
@@ -314,7 +314,7 @@ const MainContainer: FunctionComponent = () => {
                                     >
                                         <YourPlanSectionV2 app={app} />
                                         <YourPlanUpsellsSectionV2 app={app} />
-                                        <VpnDownloadAndInfoSection app={app} />
+                                        <VPNDownloadAndInfoSection app={app} />
                                         <VpnAlsoInYourPlanSection app={app} />
                                         <VpnBlogSection />
                                     </PrivateMainSettingsArea>
@@ -409,7 +409,7 @@ const MainContainer: FunctionComponent = () => {
                             </Route>
                             <Route path={vpnRoutes.downloads.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.downloads}>
-                                    <ProtonVPNClientsSection />
+                                    <VPNClientsSection />
                                     <WireGuardConfigurationSection />
                                     <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
