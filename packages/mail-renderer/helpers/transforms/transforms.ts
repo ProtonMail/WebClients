@@ -14,6 +14,7 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import { transformBase } from './transformBase';
 import { attachBase64, transformEscape } from './transformEscape';
 import { transformLinks } from './transformLinks';
+import { transformRawLinks } from './transformRawLinks';
 import { transformStyleAttributes } from './transformStyleAttributes';
 import { transformStylesheet } from './transformStylesheet';
 import { transformWelcome } from './transformWelcome';
@@ -27,6 +28,7 @@ export interface Preparation {
     hasEmbeddedImages?: boolean;
     remoteImages?: MessageImage[];
     embeddedImages?: MessageImage[];
+    isRawLinkDisabled?: boolean;
 }
 
 export const prepareHtml = async (
@@ -44,11 +46,16 @@ export const prepareHtml = async (
         remoteImages: MessageRemoteImage[];
         hasRemoteImages: boolean;
     },
-    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void
+    onCleanUTMTrackers: (utmTrackers: MessageUTMTracker[]) => void,
+    isRawLinkDisabled?: boolean
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
     transformBase(document);
+
+    if (!isRawLinkDisabled) {
+        transformRawLinks(document);
+    }
 
     transformLinks(document, onCleanUTMTrackers, !!mailSettings.ImageProxy);
 
