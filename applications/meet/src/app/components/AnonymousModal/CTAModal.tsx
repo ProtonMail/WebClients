@@ -29,6 +29,8 @@ const MODAL_COMPONENTS: Record<UpsellModalTypes, ComponentType<CTAModalBaseProps
     [UpsellModalTypes.HostPaidAccount]: HostPaidAccountModal,
     [UpsellModalTypes.PaidAccount]: PaidAccountModal,
     [UpsellModalTypes.MeetingEnded]: MeetingEndedModal,
+    [UpsellModalTypes.MeetingExpiredHostFree]: HostFreeAccountModal,
+    [UpsellModalTypes.MeetingExpiredHostPaid]: HostPaidAccountModal,
     [UpsellModalTypes.RemovedFromMeeting]: RemovedFromMeetingModal,
 };
 
@@ -40,5 +42,6 @@ export const CTAModal = ({ ctaModalType, ...props }: CTAModalProps) => {
     }
 
     const ModalComponent = MODAL_COMPONENTS[ctaModalType];
-    return <ModalComponent {...props} />;
+
+    return <ModalComponent {...props} upsellModalType={ctaModalType} />;
 };

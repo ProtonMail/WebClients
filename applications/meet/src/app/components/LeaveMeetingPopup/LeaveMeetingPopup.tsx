@@ -186,6 +186,7 @@ export const LeaveMeetingPopup = () => {
                         setEndingMeeting(false);
                     }}
                     onConfirm={() => handleEndMeetingConfirm(PopUpControls.EndMeeting)}
+                    loading={loadingEndMeeting}
                 />
             )}
         </>
