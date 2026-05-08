@@ -4040,6 +4040,45 @@ const plans: Plan[] = deepFreeze([
         Amount: 999,
         Vendors: [],
     },
+    {
+        ID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'bundlebiz2025',
+        Title: 'Workspace Premium',
+        MaxDomains: 20,
+        MaxAddresses: 20,
+        MaxCalendars: 25,
+        MaxSpace: 3298534883328,
+        MaxMembers: 1,
+        MaxVPN: 10,
+        MaxTier: 2,
+        Services: 351,
+        Features: 1,
+        State: 1,
+        PriceVariant: {
+            '1': null,
+            '12': null,
+        },
+        Pricing: {
+            '1': 2499,
+            '12': 23988,
+        },
+        DefaultPricing: {
+            '1': 2499,
+            '12': 23988,
+        },
+        PeriodEnd: {
+            '1': 1780908750,
+            '12': 1809766350,
+        },
+        Currency: 'USD',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 2499,
+        Vendors: [],
+    },
 ]);
 
 function multiplyPricing(pricing: Pricing, factor: number): Pricing {
