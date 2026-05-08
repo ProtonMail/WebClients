@@ -1,0 +1,7 @@
+{
+    "extends": "../../../../../../tsconfig.base.json",
+    "compilerOptions": {
+        "noUncheckedIndexedAccess": false
+    },
+    "exclude": ["**/node_modules", "**/*.spec.ts", "**/*.test.ts"]
+}
