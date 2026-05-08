@@ -32,6 +32,8 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -46,6 +48,7 @@ import {
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
@@ -59,6 +62,7 @@ import MemberToggleContainer from './MemberToggleContainer';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
 import { disableStorageSelection, getPrivateLabel } from './helper';
+import AdminRolesSpotlight from './rolesAndPermissions/AdminRolesSpotlight';
 import ModalHeaderWithTabs from './rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from './rolesAndPermissions/RolesAndPermissionsTab';
 
@@ -232,6 +236,18 @@ const SubUserEditModal = ({
     );
     const [organizationRoles, loadingRoles] = useOrganizationRoles();
     const showRolesTab = useFlag('AdminRoleMVP');
+    const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
+        FeatureCode.AdminRolesOnboardingModal
+    );
+    const isAdminRolesModalDismissed = !adminRolesModalLoading && !adminRolesModalFeature?.Value;
+    const {
+        show: shouldShowRolesTabSpotlight,
+        onDisplayed: onRolesTabSpotlightDisplayed,
+        onClose: onRolesTabSpotlightClose,
+    } = useSpotlightOnFeature(
+        FeatureCode.AdminRolesPermissionsTabSpotlight,
+        showRolesTab && isAdminRolesModalDismissed
+    );
 
     const hasVPN = Boolean(organization?.MaxVPN);
     const unprivatization = getMemberUnprivatizationMode(member);
@@ -704,6 +720,21 @@ const SubUserEditModal = ({
                             ? [
                                   {
                                       title: c('user_modal').t`Roles and permissions`,
+                                      titleNode: (
+                                          <AdminRolesSpotlight
+                                              show={shouldShowRolesTabSpotlight}
+                                              onDisplayed={onRolesTabSpotlightDisplayed}
+                                              onClose={onRolesTabSpotlightClose}
+                                              originalPlacement="bottom-start"
+                                              isAboveModal
+                                              title={c('Spotlight').t`New: Roles and permissions tab`}
+                                              description={c('Spotlight')
+                                                  .t`You can now assign roles to individual users from this tab.`}
+                                              kbLink={getKnowledgeBaseUrl('/admin-roles')}
+                                          >
+                                              <span>{c('user_modal').t`Roles and permissions`}</span>
+                                          </AdminRolesSpotlight>
+                                      ),
                                       content: (
                                           <RolesAndPermissionsTab
                                               selectedRoles={selectedRoles}
