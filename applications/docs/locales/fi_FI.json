@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Change my access": [
+        "Muuta käyttöoikeuttani"
+      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -228,6 +231,9 @@
       ],
       "Copy invite link": [
         "Kopioi kutsulinkki"
+      ],
+      "Copy link": [
+        "Kopioi linkki"
       ],
       "Copy password": [
         "Kopioi salasana"
@@ -350,6 +356,9 @@
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
+      ],
+      "Encrypted": [
+        "Salattu"
       ],
       "Expand": [
         "Laajenna"
@@ -624,6 +633,9 @@
       "Remove file": [
         "Poista tiedosto"
       ],
+      "Remove my access": [
+        "Poista käyttöoikeuteni"
+      ],
       "Rename": [
         "Nimeä uudelleen"
       ],
@@ -699,6 +711,9 @@
       "Select all": [
         "Valitse kaikki"
       ],
+      "Set password or expiration date": [
+        "Aseta salasana tai erääntymispäivä"
+      ],
       "Set recovery methods": [
         "Aseta palautustavat"
       ],
@@ -722,6 +737,12 @@
       ],
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
+      ],
+      "Shared": [
+        "Jaettu"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Jakaminen on päästä päähän -salattu"
       ],
       "Show advanced PGP settings": [
         "Näytä PGP-lisäasetukset"
@@ -2744,6 +2765,9 @@
       "Already a member of this share": [
         "On jo tämän jaon jäsen"
       ],
+      "An error occurred": [
+        "Tapahtui virhe"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Virhe muunnettaessa dokumenttia. Yritä uudelleen."
       ],
@@ -2833,8 +2857,14 @@
       "Failed loading group members": [
         "Ryhmän jäsenten lataaminen epäonnistui"
       ],
+      "Failed to change permissions settings": [
+        "Käyttöoikeuksien muuttaminen epäonnistui"
+      ],
       "Failed to copy photo to album": [
         "Kuvan kopiointi albumiin epäonnistui"
+      ],
+      "Failed to fetch sharing info": [
+        "Jakotietojen nouto epäonnistui"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
@@ -2847,6 +2877,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Dokumentin uudelleennimeäminen epäonnistui. Yritä uudelleen."
+      ],
+      "Failed to resend invitation": [
+        "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "Failed to unshare node": [
+        "Solmun jaon poistaminen epäonnistui"
+      ],
+      "Failed to update direct share node": [
+        "Suorajakosolmun päivittäminen epäonnistui."
+      ],
+      "Failed to update public share node": [
+        "Julkisen jakosolmun päivittäminen epäonnistui."
       ],
       "File \"${ name }\" is already downloading": [
         "Tiedostoa \"${ name }\" ladataan jo."
@@ -3039,6 +3081,9 @@
       "status page": [
         "tilasivumme"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Kohteen jakamisen lopetus epäonnistui"
+      ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
       ],
@@ -3068,6 +3113,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Viimeisin dokumenttiin tekemäsi päivitys on joko liian suuri, tai ylittäisi dokumentin kokonaiskoon rajan. Muokkaaminen on tilapäisesti poistettu käytöstä. Muutosta ei tallenneta. Vie kopio asiakirjastasi ja lataa sivu uudelleen."
+      ],
+      "The link to your item failed to be deleted": [
+        "Kohteen linkin poisto epäonnistui"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Alkuperäisen tiedoston uutta versiota ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
@@ -3171,6 +3219,9 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nimen salausta ei pysty purkamaan"
       ]
     },
     "error": {
@@ -4238,6 +4289,18 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
+      "Can edit": [
+        "Voi muokata"
+      ],
+      "Can edit and manage access": [
+        "Voi muokata ja hallita käyttöoikeutta"
+      ],
+      "Can view and edit": [
+        "Voi tarkastella ja muokata"
+      ],
+      "Can view only": [
+        "Vain katseluoikeus"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
@@ -4509,6 +4572,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jos poistat itsesi, menetät käyttöoikeuden tiedostoon \"${ fileName }\" etkä voi avata sitä uudelleen, ellei omistaja jaa sitä kanssasi."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
@@ -4591,6 +4657,9 @@
       "Limited availability": [
         "Rajoitettu saatavuus"
       ],
+      "Link copied": [
+        "Linkki kopioitu"
+      ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
@@ -4608,6 +4677,9 @@
       ],
       "Loading link": [
         "Ladataan linkkiä"
+      ],
+      "Loading...": [
+        "Ladataan..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Näyttää siltä, ettet ole yhteydessä. Dokumenttia ei voi muokata ilman yhteyttä. Tarkista laitteesi yhteys."
@@ -4702,6 +4774,9 @@
       ],
       "Owner": [
         "Omistaja"
+      ],
+      "owner": [
+        "omistaja"
       ],
       "password": [
         "salasana"
@@ -5098,6 +5173,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
       ],
+      "Who has access": [
+        "Kenellä on pääsy"
+      ],
       "words": [
         "sanaa"
       ],
@@ -5174,6 +5252,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Et voi jakaa tiedostoa ”${ fileName }” sen jälkeen, kun käyttöoikeus on muutettu katselijaksi. Vain omistaja voi muuttaa käyttöoikeutesi uudelleen."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
@@ -5367,8 +5448,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access": [
+        "Käyttöoikeus"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
+      ],
+      "Active": [
+        "Aktiivinen"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -5381,6 +5468,15 @@
       ],
       "Alias title": [
         "Aliaksen otsikko"
+      ],
+      "Allow editors to change permissions and share": [
+        "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Anonymous": [
+        "Anonyymi"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kuka tahansa, jolla on linkki"
       ],
       "Anyone on the Internet with the link can edit": [
         "Linkin välityksellä kuka tahansa voi muokata"
@@ -5420,6 +5516,12 @@
       ],
       "Calendar": [
         "Kalenterin"
+      ],
+      "can edit": [
+        "voi muokata"
+      ],
+      "can view": [
+        "voi tarkastella"
       ],
       "Cancel download": [
         "Peru lataus"
@@ -5463,8 +5565,14 @@
       "Delete": [
         "Poista"
       ],
+      "Delete link and remove access for everyone": [
+        "Poista linkki ja käyttöoikeudet kaikilta"
+      ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
+      ],
+      "Disable this link on a specific date": [
+        "Poista tämä linkki käytöstä tiettynä päivänä"
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
@@ -5513,6 +5621,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Poista tämä linkki ja kaikki myönnetyt käyttöoikeudet"
+      ],
+      "Expiry": [
+        "Erääntyminen"
       ],
       "Extended address": [
         "Laajennettu osoite"
@@ -5622,6 +5733,9 @@
       "New password": [
         "Uusi salasana"
       ],
+      "Not active": [
+        "Ei aktiivinen"
+      ],
       "Note": [
         "Muistiinpano"
       ],
@@ -5682,8 +5796,14 @@
       "Replace existing folder": [
         "Korvaa olemassa oleva kansio"
       ],
+      "Require password": [
+        "Vaadi salasanaa"
+      ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Set a password to limit access via link": [
+        "Aseta salasana rajoittaaksesi pääsyä linkin kautta"
       ],
       "Set expiration date": [
         "Aseta erääntymisaika"
@@ -7176,6 +7296,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" jaettiin"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" luotiin"
       ],
@@ -7370,6 +7493,12 @@
       ],
       "Root folder failed to be loaded": [
         "Juurikansion lataus epäonnistui"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Asetus päivitetty. Muokkaajat eivät voi muuttaa käyttöoikeuksia tai jakaa sisältöä."
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"
@@ -8684,8 +8813,14 @@
       "Accepted": [
         "Hyväksytty"
       ],
+      "pending": [
+        "odottaa"
+      ],
       "Pending": [
         "Odottaa"
+      ],
+      "user joined": [
+        "käyttäjä liittyi"
       ]
     },
     "Storage": {
@@ -9161,6 +9296,9 @@
       "Cannot load link": [
         "Linkin lataus epäonnistui"
       ],
+      "Change access to viewer?": [
+        "Muutetaanko käyttöoikeus katseluun?"
+      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -9497,6 +9635,12 @@
       "Private browsing vs VPN": [
         "Yksityinen selaus vs VPN"
       ],
+      "Public link": [
+        "Julkinen linkki"
+      ],
+      "Public link settings": [
+        "Julkisen linkin asetukset"
+      ],
       "Re-sign all contacts": [
         "Allekirjoita kaikki yhteystiedot uudelleen"
       ],
@@ -9514,6 +9658,9 @@
       ],
       "Recover data": [
         "Palauta tiedot"
+      ],
+      "Remove your access?": [
+        "Poista käyttöoikeus?"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -9556,6 +9703,12 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Asetukset tiedostolle ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Jaa \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Jaa ${ name }"
@@ -9686,6 +9839,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
+      ],
+      "Change shared item settings": [
+        "Muuta jaettavan kohteen asetuksia"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"

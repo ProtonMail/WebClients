@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicare"
       ],
+      "Ask me next time": [
+        "Întreabă-mă data viitoare"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Contacte permise per grup de contacte: ${ maxContacts }",
         "Contacte permise per grup de contacte: ${ maxContacts }",
@@ -121,6 +124,9 @@
       ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Change my access": [
+        "Modifică-mi accesul"
       ],
       "Change password": [
         "Modificare parolă"
@@ -229,6 +235,9 @@
       ],
       "Copy invite link": [
         "Copiere legătură web invitație"
+      ],
+      "Copy link": [
+        "Copiere legătură web"
       ],
       "Copy password": [
         "Copiere parolă"
@@ -353,6 +362,9 @@
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
+      ],
+      "Encrypted": [
+        "Criptat"
       ],
       "Expand": [
         "Extindere"
@@ -627,6 +639,9 @@
       "Remove file": [
         "Eliminare fișier"
       ],
+      "Remove my access": [
+        "Elimină-mi accesul"
+      ],
       "Rename": [
         "Redenumire"
       ],
@@ -678,6 +693,9 @@
       "Save changes": [
         "Salvare modificări"
       ],
+      "Save preferences": [
+        "Salvare preferințe"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -708,6 +726,9 @@
       "Select all": [
         "Selectare toate"
       ],
+      "Set password or expiration date": [
+        "Setare parolă sau dată de expirare"
+      ],
       "Set recovery methods": [
         "Setați metode de recuperare"
       ],
@@ -731,6 +752,12 @@
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"
+      ],
+      "Shared": [
+        "Partajate"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Partajarea este criptată bilateral"
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
@@ -1016,10 +1043,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -1032,7 +1059,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "Perioada de probare se încheie peste ${ timeRemaining }"
+        "Perioada de evaluare se încheie peste ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -2842,6 +2869,9 @@
       "Already a member of this share": [
         "Deja este membru al acestei partajări"
       ],
+      "An error occurred": [
+        "A apărut o eroare."
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "A apărut o eroare la încercarea de a converti documentul. Mai încercați."
       ],
@@ -2933,8 +2963,20 @@
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
       ],
+      "Failed to change permissions settings": [
+        "Nu s-au putut modifica setările de permisiuni."
+      ],
       "Failed to copy photo to album": [
         "Fotografia nu s-a putut copia în album."
+      ],
+      "Failed to create public share node": [
+        "Nu s-a putut crea nodul de partajare publică."
+      ],
+      "Failed to fetch node": [
+        "Eșuare preluare nod."
+      ],
+      "Failed to fetch sharing info": [
+        "Eșuare preluare informații de partajare."
       ],
       "Failed to load subscription data. Please try again later.": [
         "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
@@ -2947,6 +2989,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Redenumirea documentului nu a reușit. Reîncercați mai târziu."
+      ],
+      "Failed to resend invitation": [
+        "Eșuare retrimitere invitație."
+      ],
+      "Failed to unshare node": [
+        "Eșuare anulare partajare nod."
+      ],
+      "Failed to update direct share node": [
+        "Nu s-a putut actualiza nodul de partajare directă."
+      ],
+      "Failed to update public share node": [
+        "Nu s-a putut actualiza nodul de partajare publică."
       ],
       "File \"${ name }\" is already downloading": [
         "Fișierul „${ name }” se descarcă deja"
@@ -3144,6 +3198,9 @@
       "status page": [
         "pagina de stare"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Oprirea partajării acestui element a eșuat."
+      ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
       ],
@@ -3173,6 +3230,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Ultima actualizare pe care ați făcut-o documentului este fie prea mare, fie ar depăși limita totală a dimensiunii documentului. Editarea a fost temporar dezactivată. Modificarea nu se vor salva. Exportați o copie a documentului și reîncărcați pagina."
+      ],
+      "The link to your item failed to be deleted": [
+        "Legătura web către element nu a putut fi ștearsă."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
@@ -3280,6 +3340,12 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispozitiv nedecriptabil"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nume nedecriptabil."
       ]
     },
     "error": {
@@ -4374,7 +4440,7 @@
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+        "La sfârșitul perioadei de evaluare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -4387,6 +4453,18 @@
       ],
       "Calendar side panel": [
         "Panou lateral calendar"
+      ],
+      "Can edit": [
+        "Poate edita"
+      ],
+      "Can edit and manage access": [
+        "Puteți edita și gestiona accesul"
+      ],
+      "Can view and edit": [
+        "Poate vedea și edita"
+      ],
+      "Can view only": [
+        "Poate doar vedea"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -4429,6 +4507,9 @@
       ],
       "Continue": [
         "Continuare"
+      ],
+      "Converting document...": [
+        "Se convertește documentul..."
       ],
       "Copied to clipboard": [
         "Copiat în memorie."
@@ -4479,6 +4560,9 @@
       ],
       "Creating link to folder": [
         "Se creează legătura către folder"
+      ],
+      "Creating new document...": [
+        "Se creează noul document..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4579,6 +4663,12 @@
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Eroare la convertirea documentului: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Eroare la încărcarea documentului: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Eroare la sincronizare."
       ],
@@ -4642,6 +4732,12 @@
       "Geoblocking": [
         "Blocare geografică"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
+      ],
+      "Get Notified About Comments": [
+        "Primiți notificări despre comentarii"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
       ],
@@ -4674,6 +4770,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
@@ -4758,6 +4857,9 @@
       "Limited availability": [
         "Disponibilitate limitată"
       ],
+      "Link copied": [
+        "Legătura web a fost copiată."
+      ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
@@ -4776,11 +4878,17 @@
       "Loading link": [
         "Se încarcă legătura."
       ],
+      "Loading...": [
+        "Se încarcă…"
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Se pare ca nu aveți conexiune. Documentul nu poate fi editat fără a avea conexiune. Verificați starea de conectare a dispozitivului la internet."
       ],
       "Low Priority": [
         "Prioritate scăzută"
+      ],
+      "Making a copy...": [
+        "Se creează o copie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
@@ -4813,6 +4921,9 @@
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nu s-a furnizat un document la URL. Reveniți în ${ DRIVE_APP_NAME } și selectați un document."
       ],
       "No email address": [
         "Lipsă adresă de e-mail"
@@ -4870,6 +4981,9 @@
       ],
       "Owner": [
         "Proprietar"
+      ],
+      "owner": [
+        "proprietar"
       ],
       "password": [
         "parola"
@@ -5097,6 +5211,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Adresa URL introdusă pare să fi fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul trunchiat al adresei URL."
+      ],
       "There are no documents in the trash.": [
         "Nu există documente în gunoi."
       ],
@@ -5286,6 +5403,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
+      "Who has access": [
+        "Cine are acces"
+      ],
       "words": [
         "cuvinte"
       ],
@@ -5364,6 +5484,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
@@ -5475,7 +5598,7 @@
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Perioada de probare se termină ${ timeRemaining }."
+        "Perioada de evaluare se termină ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
@@ -5573,8 +5696,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
+      "Access": [
+        "Accesare"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
+      "Active": [
+        "Activ"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -5590,6 +5719,15 @@
       ],
       "Alias title": [
         "Titlu alias"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitere ca editorii să modifice permisiunile și să partajeze"
+      ],
+      "Anonymous": [
+        "Anonim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Oricine de pe internet care are legătura web"
       ],
       "Anyone on the Internet with the link can edit": [
         "Poate edita oricine de pe internet care are legătura web"
@@ -5629,6 +5767,12 @@
       ],
       "Calendar": [
         "Calendar"
+      ],
+      "can edit": [
+        "poate edita"
+      ],
+      "can view": [
+        "poate vedea"
       ],
       "Cancel download": [
         "Anulare descărcare"
@@ -5675,8 +5819,14 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete link and remove access for everyone": [
+        "Ștergere legătură web și anulare acces pentru toți"
+      ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
+      ],
+      "Disable this link on a specific date": [
+        "Dezactivare această legătură web la o dată specifică"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -5720,11 +5870,17 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
+      "Enable email notifications": [
+        "Activare notificări pe e-mail"
+      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
       "Erase this link and remove everyone with access": [
         "Ștergere legătură și eliminare toate persoanele cu acces"
+      ],
+      "Expiry": [
+        "Expirare"
       ],
       "Extended address": [
         "Adresa extinsă"
@@ -5767,6 +5923,9 @@
       ],
       "Include application logs in bug report": [
         "Includere jurnale aplicație în raportul de eroare"
+      ],
+      "Include document name in notification": [
+        "Includere nume document în notificări"
       ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
@@ -5840,6 +5999,9 @@
       "New password": [
         "Parola nouă"
       ],
+      "Not active": [
+        "Inactiv"
+      ],
       "Note": [
         "Notiță"
       ],
@@ -5900,8 +6062,14 @@
       "Replace existing folder": [
         "Înlocuire folder existent"
       ],
+      "Require password": [
+        "Necesită parolă"
+      ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Set a password to limit access via link": [
+        "Setare parolă pentru a limita accesarea prin legătura web"
       ],
       "Set expiration date": [
         "Setare dată de expirare"
@@ -6300,10 +6468,10 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
+        "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7483,6 +7651,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "„${ fileName }” s-a partajat"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }” a fost creat cu succes."
       ],
@@ -7695,6 +7866,12 @@
       ],
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Setare actualizată. Editorii pot schimba permisiunile și partaja."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Setare actualizată. Editorii nu pot schimba permisiunile sau partaja."
       ],
       "Share invitation accepted successfully": [
         "Invitația partajată a fost acceptată"
@@ -7919,16 +8096,16 @@
         "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
       ],
       "Your free trial has started": [
-        "Perioada de probare gratuită a început"
+        "Perioada de evaluare gratuită a început"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
+        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -8062,7 +8239,7 @@
         "${ formattedPrice } (fără TVA)"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "Suma datorată după probare la ${ formattedDate }"
+        "Suma datorată după evaluare la ${ formattedDate }"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -8461,7 +8638,7 @@
         "${ referrerRewardAmount } per recomandare"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de evaluare."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -8834,6 +9011,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Se creează un registru de lucru nou..."
+      ],
       "Detect automatically": [
         "Detectare automată"
       ],
@@ -9154,8 +9334,14 @@
       "Accepted": [
         "Acceptat"
       ],
+      "pending": [
+        "în așteptare"
+      ],
       "Pending": [
         "În așteptare"
+      ],
+      "user joined": [
+        "utilizator alăturat"
       ]
     },
     "Storage": {
@@ -9658,6 +9844,9 @@
       "Cannot load link": [
         "Legătura nu s-a putut încărca."
       ],
+      "Change access to viewer?": [
+        "Schimbați accesul cu „utilizator”?"
+      ],
       "Change password": [
         "Modificare parolă"
       ],
@@ -9885,7 +10074,7 @@
         "Cum funcționează?"
       ],
       "How your free trial works": [
-        "Cum funcționează probarea gratuită"
+        "Cum funcționează evaluarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -10006,6 +10195,12 @@
       "Private browsing vs VPN": [
         "Navigare privată versus un VPN"
       ],
+      "Public link": [
+        "Legătură web publică"
+      ],
+      "Public link settings": [
+        "Setări legătură web publică"
+      ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
       ],
@@ -10023,6 +10218,9 @@
       ],
       "Recover data": [
         "Recuperare date"
+      ],
+      "Remove your access?": [
+        "Vă eliminați accesul?"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -10065,6 +10263,12 @@
       ],
       "Settings": [
         "Setări"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Setări pentru ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partajare „${ fileName }\""
       ],
       "Share ${ name }": [
         "Partajare ${ name }"
@@ -10201,6 +10405,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
+      ],
+      "Change shared item settings": [
+        "Modificare setări articol partajat"
       ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
@@ -10481,10 +10688,10 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de evaluare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+        "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     }
   }

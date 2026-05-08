@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Change my access": [
+        "ჩემი წვდომების შეცვლა"
+      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -225,6 +228,9 @@
       ],
       "Copy invite link": [
         "მოსაწვევის ბმულის კოპირება"
+      ],
+      "Copy link": [
+        "ბმულის კოპირება"
       ],
       "Copy password": [
         "პაროლის კოპირება"
@@ -347,6 +353,9 @@
       ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
+      ],
+      "Encrypted": [
+        "დაშიფრული"
       ],
       "Expand": [
         "ამოკეცვა"
@@ -618,6 +627,9 @@
       "Remove file": [
         "ფაილის წაშლა"
       ],
+      "Remove my access": [
+        "ჩემი წვდომის გაუქმება"
+      ],
       "Rename": [
         "სახელის გადარქმევა"
       ],
@@ -699,6 +711,9 @@
       "Select all": [
         "ყველაფრის მონიშვნა"
       ],
+      "Set password or expiration date": [
+        "პაროლის, ან ვადის ამოწურვის თარიღის დაყენება"
+      ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
       ],
@@ -722,6 +737,12 @@
       ],
       "Share your calendar with your team": [
         "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
+      ],
+      "Shared": [
+        "გაზიარებული"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "გაზიარება გამჭოლად დაშიფრულია"
       ],
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
@@ -2745,6 +2766,9 @@
       "Already a member of this share": [
         "უკვე წარმოადგენს ამ გაზიარების წევრს"
       ],
+      "An error occurred": [
+        "ნაპოვნია შეცდომა"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "შეცდომა დოკუმენტის გადაყვანის მცდელობისას. მოგვიანებით სცადეთ."
       ],
@@ -2834,6 +2858,15 @@
       "Failed to copy photo to album": [
         "სურათის ალბომში კოპირება ჩავარდა"
       ],
+      "Failed to create public share node": [
+        "საჯარო ზიარის კვანძის შექმნა ჩავარდა"
+      ],
+      "Failed to fetch node": [
+        "კვანზის მოთხოვნის შეცდომა"
+      ],
+      "Failed to fetch sharing info": [
+        "გაზიარების ინფორმაციის მოთხოვნის შეცდომა"
+      ],
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
       ],
@@ -2842,6 +2875,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "დოკუმენტის სახელის გადარქმევა ჩავარდა. მოგვიანებით სცადეთ."
+      ],
+      "Failed to resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნის შეცდომა"
+      ],
+      "Failed to unshare node": [
+        "კვანძის გაზიარების გაუქმების შეცდომა"
+      ],
+      "Failed to update direct share node": [
+        "პირდაპირი გაზიარების კვანძის განახლება ჩავარდა"
+      ],
+      "Failed to update public share node": [
+        "საჯარო ზიარის კვანძის განახლება ჩავარდა"
       ],
       "File \"${ name }\" is already downloading": [
         "ფაილის ${ name } გადმოწერა უკვე მიმდინარეობს"
@@ -3028,6 +3073,9 @@
       "status page": [
         "სტატუსის გვერდი"
       ],
+      "Stopping the sharing of this item has failed": [
+        "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
+      ],
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
       ],
@@ -3057,6 +3105,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "ბოლო განახლება, რომელიც დოკუმენტში შეიტანეთ, ან ძალიან დიდია, ან სცდება დოკუმენტის ზომის შეზღუდვას. ჩასწორება დროებით გათიშულია. თქვენი ცვლილებები შენახული არ იქნება. გაიტანეთ თქვენი დოკუმენტის ასლი და ჩატვირთეთ გვერდი თავიდან."
+      ],
+      "The link to your item failed to be deleted": [
+        "ბმული თქვენს ელემენტამდე არასწორი ან წაშლილია"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
@@ -3160,6 +3211,12 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ არაგაშიფვრადი მოწყობილობა"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ არგაშიფვრადი სახელი"
       ]
     },
     "error": {
@@ -4189,6 +4246,18 @@
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
       ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can edit and manage access": [
+        "შეუძლია წვდომების ჩასწორება და მართვა"
+      ],
+      "Can view and edit": [
+        "შეუძლია ნახვა და ჩასწორება"
+      ],
+      "Can view only": [
+        "მხოლოდ ნახვა"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
       ],
@@ -4533,6 +4602,9 @@
       "Limited availability": [
         "შეზღუდული წვდომადობა"
       ],
+      "Link copied": [
+        "ბმული დაკოპირებულია"
+      ],
       "Link copied to clipboard": [
         "ბმული დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -4550,6 +4622,9 @@
       ],
       "Loading link": [
         "ბმულის ჩატვირთვა"
+      ],
+      "Loading...": [
+        "ჩატვირთვა..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "როგორც ჩანს, თქვენი ქსელი გათიშულია. დოკუმენტს ინტერნეტის გარეშე ვერ ჩაასწორებთ. შეამოწმეთ თქვენი ინტერნეტკავშირი."
@@ -4640,6 +4715,9 @@
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
       "Owner": [
+        "მფლობელი"
+      ],
+      "owner": [
         "მფლობელი"
       ],
       "password": [
@@ -5025,6 +5103,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "როცა მიუერთდებით VPN-ს, ის იყენებს დაშიფვრის ტექნოლოგიებს, რომ თქვენი IP მისამართი (თქვენი მოწყობილობისთვის მინიჭებული ნიკალური კოდი) დამალოს."
       ],
+      "Who has access": [
+        "ვის აქვს წვდომა"
+      ],
       "words": [
         "სიტყვა"
       ],
@@ -5278,6 +5359,12 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
+      "Access": [
+        "წვდომა"
+      ],
+      "Active": [
+        "აქტიური"
+      ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
       ],
@@ -5292,6 +5379,15 @@
       ],
       "Alias title": [
         "ფსევდონიმის სათაური"
+      ],
+      "Allow editors to change permissions and share": [
+        "რედაქტორებისთვის წვდომებისა და გაზიარების შეცვლის უფლების მიცემა"
+      ],
+      "Anonymous": [
+        "ანონიმური"
+      ],
+      "Anyone on the Internet with the link": [
+        "ბმულის მქონე ნებისმიერ პირს ინტერნეტში"
       ],
       "Anyone on the Internet with the link can edit": [
         "ჩასწორება შეუძლია ყველას, ვისაც ინტერნეტი და ეს ბმული აქვს"
@@ -5331,6 +5427,12 @@
       ],
       "Calendar": [
         "კალენდარი"
+      ],
+      "can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "can view": [
+        "შეუძლია, ნახოს"
       ],
       "Cancel download": [
         "გადმოწერის გაუქმება"
@@ -5377,8 +5479,14 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete link and remove access for everyone": [
+        "ბმულის წაშლა და ყველასთვის წვდომის შეწყვეტა"
+      ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
+      ],
+      "Disable this link on a specific date": [
+        "ამ ბმულის გამორთვა მითითებულ თარიღზე"
       ],
       "Don't ask again": [
         "აღარ მკითხო"
@@ -5427,6 +5535,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "ამ ბმულის წაშლა და წვდომის მქონეების მოცილება"
+      ],
+      "Expiry": [
+        "ვადა"
       ],
       "Extended address": [
         "გაფართოებული მისამართი"
@@ -5539,6 +5650,9 @@
       "New password": [
         "ახალი პაროლი"
       ],
+      "Not active": [
+        "აქტიური არაა"
+      ],
       "Note": [
         "შენიშვნა"
       ],
@@ -5599,8 +5713,14 @@
       "Replace existing folder": [
         "არსებული საქაღალდის ჩანაცვლება"
       ],
+      "Require password": [
+        "პაროლის მოთხოვნა"
+      ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Set a password to limit access via link": [
+        "დააყენეთ პაროლი ბმულით წვდომის შესაზღუდად"
       ],
       "Set expiration date": [
         "ვადის დაყენება"
@@ -8548,8 +8668,14 @@
       "Accepted": [
         "დადასტურებულია"
       ],
+      "pending": [
+        "რიგში"
+      ],
       "Pending": [
         "რიგში"
+      ],
+      "user joined": [
+        "მომხმარებელი შემოვიდა"
       ]
     },
     "Storage": {
@@ -9367,6 +9493,12 @@
       "Private browsing vs VPN": [
         "კონფიდენციალური რეჟიმი vs VPN"
       ],
+      "Public link": [
+        "საჯარო ბმული"
+      ],
+      "Public link settings": [
+        "საჯარო ბმულის მორგება"
+      ],
       "Re-sign all contacts": [
         "ყველა კონტაქტის თავიდან ხელმოწერა"
       ],
@@ -9384,6 +9516,9 @@
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
+      ],
+      "Remove your access?": [
+        "გავაუქმოთ თქვენი წვდომა?"
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
@@ -9426,6 +9561,9 @@
       ],
       "Settings": [
         "მორგება"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "პარამეტრები ${ sharedFileName }-ისთვის"
       ],
       "Share ${ name }": [
         "${ name }-ის გაზიარება"

@@ -219,6 +219,9 @@
       "Copy invite link": [
         "Kopiraj povezavo do povabila"
       ],
+      "Copy link": [
+        "Kopiraj povezavo"
+      ],
       "Copy password": [
         "Kopiraj geslo"
       ],
@@ -344,6 +347,9 @@
       ],
       "enable desktop notifications": [
         "prikazovanje obvestil na namizju"
+      ],
+      "Encrypted": [
+        "Šifrirano"
       ],
       "Expand": [
         "Razširi"
@@ -690,6 +696,9 @@
       "Select all": [
         "Označi vse"
       ],
+      "Set password or expiration date": [
+        "Nastavi geslo ali datum poteka veljavnosti"
+      ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
       ],
@@ -713,6 +722,12 @@
       ],
       "Share your calendar with your team": [
         "Deli svoj koledar s svojo ekipo"
+      ],
+      "Shared": [
+        "Daj v skupno rabo"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deljenje je šifrirano od konca do konca"
       ],
       "Show advanced PGP settings": [
         "Prikaži napredne nastavitve PGP"
@@ -2813,8 +2828,14 @@
       "Failed loading group members": [
         "Napaka pri nalaganju članov skupine"
       ],
+      "Failed to change permissions settings": [
+        "Ni uspelo spremeniti nastavitev dovoljenj"
+      ],
       "Failed to copy photo to album": [
         "Ni mogoče kopirati fotografije v album"
+      ],
+      "Failed to create public share node": [
+        "Ni uspelo ustvariti vozlišča javne povezave"
       ],
       "Failed to open to contact": [
         "Ni mogoče odpreti stika."
@@ -2824,6 +2845,12 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Dokument ni bil preimenovan. Poskusite znova kasneje."
+      ],
+      "Failed to resend invitation": [
+        "Pošiljanje povabila ni uspelo"
+      ],
+      "Failed to update public share node": [
+        "Ni uspelo posodobiti vozlišča javne povezave"
       ],
       "File \"${ name }\" is already downloading": [
         "Izbrana datoteka \"${ name }\" se že prenaša"
@@ -3014,6 +3041,9 @@
       "status page": [
         "tej strani"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Preklic deljenja za ta predmet ni uspel"
+      ],
       "The address might be misspelled": [
         "V naslovu je morda tipkarska napaka"
       ],
@@ -3043,6 +3073,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Zadnja posodobitev, ki ste jo izvedli v dokumentu, je prevelika ali pa bi presegla skupno omejitev velikosti dokumenta. Urejanje je bilo začasno onemogočeno. Vaša sprememba ne bo shranjena. Izvozite kopijo dokumenta in znova naložite stran."
+      ],
+      "The link to your item failed to be deleted": [
+        "Povezave do vašega predmeta ni bilo mogoče izbrisati"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nova različica izvirne datoteke še ni naložena, poskusite znova pozneje"
@@ -3151,6 +3184,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Ne-dešifrirano ime"
       ]
     },
     "error": {
@@ -4265,6 +4301,18 @@
       "Calendar side panel": [
         "Stranska plošča s koledarjem"
       ],
+      "Can edit": [
+        "Lahko ureja"
+      ],
+      "Can edit and manage access": [
+        "Lahko ureja in upravlja dostop"
+      ],
+      "Can view and edit": [
+        "Lahko si ogledate in uredite"
+      ],
+      "Can view only": [
+        "Možen je samo ogled"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Se ne spomnite gesla? Lahko vam pomagamo izbrisati šifrirane podatke vseh stikov, šifriranih s tem ključem, in s tem odpraviti opozorilo."
       ],
@@ -4622,6 +4670,9 @@
       "Limited availability": [
         "Omejena razpoložljivost"
       ],
+      "Link copied": [
+        "Povezava je kopirana"
+      ],
       "Link copied to clipboard": [
         "Povezava je kopirana v odložišče"
       ],
@@ -4639,6 +4690,9 @@
       ],
       "Loading link": [
         "Nalaganje povezave"
+      ],
+      "Loading...": [
+        "Nalaganje ..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Videti je, da ste brez povezave. Dokumenta ni mogoče urejati, ko ste brez povezave. Preverite povezljivost vaše naprave."
@@ -4735,6 +4789,9 @@
       ],
       "Owner": [
         "Lastnik"
+      ],
+      "owner": [
+        "lastnik"
       ],
       "password": [
         "geslo"
@@ -5150,6 +5207,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
+      "Who has access": [
+        "Kdo ima dostop"
+      ],
       "words": [
         "besed"
       ],
@@ -5422,6 +5482,12 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
+      "Access": [
+        "Dostop"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
       "Add email address": [
         "Dodaj e-poštni naslov"
       ],
@@ -5433,6 +5499,12 @@
       ],
       "Additional comments": [
         "Dodatni komentarji"
+      ],
+      "Allow editors to change permissions and share": [
+        "Dovoli urejevalcem spremeniti dovoljenja in dati v skupno rabo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Vsakdo na spletu s povezavo si lahko ogleda"
       ],
       "Anyone on the Internet with the link can edit": [
         "Vsakdo na spletu s povezavo lahko ureja"
@@ -5473,6 +5545,12 @@
       "Calendar": [
         "Koledar"
       ],
+      "can edit": [
+        "lahko ureja"
+      ],
+      "can view": [
+        "lahko si ogledate"
+      ],
       "Cancel download": [
         "Prekliči prenos"
       ],
@@ -5512,8 +5590,14 @@
       "Delete": [
         "Izbriši"
       ],
+      "Delete link and remove access for everyone": [
+        "Izbriši povezavo in odstrani dostop za vse."
+      ],
       "Delete recovery-related information.": [
         "Izbriši podatke, povezane z obnovitvijo."
+      ],
+      "Disable this link on a specific date": [
+        "Onemogoči to povezavo na določen datum"
       ],
       "Don't ask again": [
         "Ne sprašuj več"
@@ -5562,6 +5646,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Izbrišite povezavo in odstrani vse z dostopom"
+      ],
+      "Expiry": [
+        "Poteče"
       ],
       "Extended address": [
         "Razširjeni naslov"
@@ -5668,6 +5755,9 @@
       "New password": [
         "Novo geslo"
       ],
+      "Not active": [
+        "Ni dejaven"
+      ],
       "Note": [
         "Opomba"
       ],
@@ -5728,8 +5818,14 @@
       "Replace existing folder": [
         "Zamenjaj obstoječo mapo"
       ],
+      "Require password": [
+        "Zahtevaj geslo"
+      ],
       "Reveal password": [
         "Razkrij geslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavi geslo za omejitev dostopa preko povezave"
       ],
       "Set expiration date": [
         "Nastavite datum poteka"
@@ -7489,6 +7585,12 @@
       "Root folder failed to be loaded": [
         "Korenske mape ni bilo mogoče naložiti"
       ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Posodabljanje vsebine. Uredniki ne morejo spreminjati dovoljenj ali deliti."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Posodabljanje vsebine. Uredniki ne morejo spreminjati dovoljenj ali deliti."
+      ],
       "Share invitation accepted successfully": [
         "Povabilo k skupni rabi je bilo sprejeto."
       ],
@@ -8715,6 +8817,9 @@
       "Accepted": [
         "Sprejeto"
       ],
+      "pending": [
+        "v teku"
+      ],
       "Pending": [
         "V teku"
       ]
@@ -9579,6 +9684,12 @@
       "Private browsing vs VPN": [
         "Zasebno brskanje v primerjavi z VPN"
       ],
+      "Public link": [
+        "Javna povezava"
+      ],
+      "Public link settings": [
+        "Nastavitve javne povezave"
+      ],
       "Re-sign all contacts": [
         "Ponovno podpiši vse stike"
       ],
@@ -9638,6 +9749,9 @@
       ],
       "Settings": [
         "Nastavitve"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavitve za ${ sharedFileName }"
       ],
       "Share ${ name }": [
         "Skupna raba ${ name }"

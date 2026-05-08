@@ -90,6 +90,9 @@
       "Apply": [
         "Εφαρμογή"
       ],
+      "Ask me next time": [
+        "Να ερωτηθώ την επόμενη φορά"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
         "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
@@ -120,6 +123,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Change my access": [
+        "Αλλαγή της πρόσβασής μου"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -228,6 +234,9 @@
       ],
       "Copy invite link": [
         "Αντιγραφή συνδέσμου πρόσκλησης"
+      ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
       ],
       "Copy password": [
         "Αντιγραφή κωδικού πρόσβασης"
@@ -350,6 +359,9 @@
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Encrypted": [
+        "Κρυπτογραφημένο"
       ],
       "Expand": [
         "Ανάπτυξη"
@@ -624,6 +636,9 @@
       "Remove file": [
         "Κατάργηση αρχείου"
       ],
+      "Remove my access": [
+        "Αφαίρεση της πρόσβασής μου"
+      ],
       "Rename": [
         "Μετονομασία"
       ],
@@ -675,6 +690,9 @@
       "Save changes": [
         "Αποθήκευση αλλαγών"
       ],
+      "Save preferences": [
+        "Αποθήκευση προτιμήσεων"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -705,6 +723,9 @@
       "Select all": [
         "Επιλογή όλων"
       ],
+      "Set password or expiration date": [
+        "Ορισμός κωδικού πρόσβασης ή ημερομηνίας λήξης"
+      ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
       ],
@@ -728,6 +749,12 @@
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
+      ],
+      "Shared": [
+        "Κοινοποιημένα"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Η κοινοποίηση είναι, διατερματικά κρυπτογραφημένη"
       ],
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
@@ -2825,6 +2852,9 @@
       "Already a member of this share": [
         "Είναι ήδη μέλος στην παρούσα κοινοποίηση"
       ],
+      "An error occurred": [
+        "Παρουσιάστηκε σφάλμα"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Παρουσιάστηκε σφάλμα κατά την προσπάθεια μετατροπής του εγγράφου. Παρακαλούμε προσπαθήστε ξανά."
       ],
@@ -2914,8 +2944,20 @@
       "Failed loading group members": [
         "Αποτυχία φόρτωσης μελών ομάδας"
       ],
+      "Failed to change permissions settings": [
+        "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
+      ],
       "Failed to copy photo to album": [
         "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
+      ],
+      "Failed to create public share node": [
+        "Αποτυχία δημιουργίας δημόσιου κόμβου κοινοποίησης"
+      ],
+      "Failed to fetch node": [
+        "Αποτυχία ανάκτησης κόμβου"
+      ],
+      "Failed to fetch sharing info": [
+        "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -2928,6 +2970,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Αποτυχία μετονομασίας εγγράφου. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
+      "Failed to resend invitation": [
+        "Αποτυχία επαναποστολής πρόσκλησης"
+      ],
+      "Failed to unshare node": [
+        "Αποτυχία κατάργησης κοινοχρησίας κόμβου"
+      ],
+      "Failed to update direct share node": [
+        "Αποτυχία ενημέρωσης άμεσου κόμβου κοινοποίησης"
+      ],
+      "Failed to update public share node": [
+        "Αποτυχία ενημέρωσης δημόσιου κόμβου κοινοποίησης"
       ],
       "File \"${ name }\" is already downloading": [
         "Το αρχείο \"${ name }\" κατεβαίνει ήδη"
@@ -3120,6 +3174,9 @@
       "status page": [
         "σελίδα κατάστασης"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
+      ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
       ],
@@ -3149,6 +3206,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Η τελευταία ενημέρωση που κάνατε στο έγγραφο είναι είτε πολύ μεγάλη είτε θα υπερέβαινε το συνολικό όριο μεγέθους εγγράφου. Η επεξεργασία έχει απενεργοποιηθεί προσωρινά. Η αλλαγή σας δε θα αποθηκευτεί. Εξαγάγετε ένα αντίγραφο του εγγράφου σας και φορτώστε ξανά τη σελίδα."
+      ],
+      "The link to your item failed to be deleted": [
+        "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Η νέα αναθεώρηση του πρωτότυπου αρχείου δεν έχει μεταφορτωθεί ακόμα, παρακαλούμε δοκιμάστε αργότερα"
@@ -3255,6 +3315,12 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Μη αποκρυπτογραφήσιμη συσκευή"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
       ]
     },
     "error": {
@@ -4325,6 +4391,18 @@
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
+      "Can edit": [
+        "Δυνατότητα επεξεργασίας"
+      ],
+      "Can edit and manage access": [
+        "Δυνατότητα επεξεργασίας και να διαχείρισης πρόσβασης"
+      ],
+      "Can view and edit": [
+        "Δυνατότητα προβολής και επεξεργασίας"
+      ],
+      "Can view only": [
+        "Δυνατότητα προβολής μόνο"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
       ],
@@ -4366,6 +4444,9 @@
       ],
       "Continue": [
         "Συνέχεια"
+      ],
+      "Converting document...": [
+        "Μετατροπή εγγράφου..."
       ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
@@ -4415,6 +4496,9 @@
       ],
       "Creating link to folder": [
         "Δημιουργία συνδέσμου προς το φάκελο"
+      ],
+      "Creating new document...": [
+        "Δημιουργία νέου εγγράφου..."
       ],
       "Current plan": [
         "Τρέχον πλάνο"
@@ -4515,6 +4599,12 @@
       "Enter your own password (as trusted contact).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Σφάλμα κατά τη μετατροπή εγγράφου: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Σφάλμα κατά τη φόρτωση του εγγράφου: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Σφάλμα Συγχρονισμού"
       ],
@@ -4578,6 +4668,12 @@
       "Geoblocking": [
         "Γεωγραφικός αποκλεισμός"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Λάβετε ενημερώσεις μέσω ηλεκτρονικού ταχυδρομείου για σχόλια και προτάσεις που προστίθενται στα έγγραφά σας."
+      ],
+      "Get Notified About Comments": [
+        "Λάβετε Ειδοποιήσεις για Σχόλια"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
@@ -4610,6 +4706,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Αν αφαιρέσετε τον εαυτό σας, θα χάσετε την πρόσβαση στο \"${ fileName }\" και δε θα μπορείτε να το ανοίξετε ξανά εκτός αν ο κάτοχος το μοιραστεί μαζί σας."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
@@ -4693,6 +4792,9 @@
       "Limited availability": [
         "Περιορισμένη διαθεσιμότητα"
       ],
+      "Link copied": [
+        "Ο σύνδεσμος αντιγράφηκε"
+      ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
@@ -4711,11 +4813,17 @@
       "Loading link": [
         "Φόρτωση συνδέσμου"
       ],
+      "Loading...": [
+        "Φόρτωση..."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Φαίνεται ότι είστε εκτός σύνδεσης. Δεν είναι δυνατή η επεξεργασία του εγγράφου ενώ είστε εκτός σύνδεσης. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
+      ],
+      "Making a copy...": [
+        "Δημιουργείται ένα αντίγραφο..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Μέχρι ${ MAX_SHARED_URL_PASSWORD_LENGTH } χαρακτήρας",
@@ -4747,6 +4855,9 @@
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Δεν παρέχεται έγγραφο στη διεύθυνση URL. Επιστρέψτε στο ${ DRIVE_APP_NAME } και επιλέξτε ένα έγγραφο."
       ],
       "No email address": [
         "Δεν υπάρχει διεύθυνση E-mail"
@@ -4804,6 +4915,9 @@
       ],
       "Owner": [
         "Ιδιοκτήτης"
+      ],
+      "owner": [
+        "ιδιοκτήτης"
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -5029,6 +5143,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Η διεύθυνση URL που εισαγάγατε φαίνεται να έχει αντιγραφεί εσφαλμένα από το Slack. Κατά την αντιγραφή μεγάλων συνδέσμων από το Slack, κάντε δεξί κλικ στον σύνδεσμο και, στη συνέχεια, επιλέξτε \"Αντιγραφή συνδέσμου\" αντί να αντιγράψετε απευθείας το περικομμένο κείμενο του URL."
+      ],
       "There are no documents in the trash.": [
         "Δεν υπάρχουν έγγραφα στον κάδο απορριμμάτων."
       ],
@@ -5218,6 +5335,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
+      "Who has access": [
+        "Ποιος έχει πρόσβαση"
+      ],
       "words": [
         "λέξεις"
       ],
@@ -5294,6 +5414,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Δεν θα μπορείτε να μοιραστείτε το \"${ fileName }\" μετά την αλλαγή της πρόσβασης σε προβολέα. Μόνο ο ιδιοκτήτης μπορεί να αλλάξει ξανά την πρόσβασή σας."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
@@ -5499,8 +5622,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
+      "Access": [
+        "Πρόσβαση"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
+      "Active": [
+        "Ενεργό"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -5516,6 +5645,15 @@
       ],
       "Alias title": [
         "Τίτλος ψευδωνύμου"
+      ],
+      "Allow editors to change permissions and share": [
+        "Επιτρέψτε στους συντάκτες να αλλάζουν δικαιώματα και να κοινοποιούν"
+      ],
+      "Anonymous": [
+        "Ανώνυμα"
+      ],
+      "Anyone on the Internet with the link": [
+        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
       ],
       "Anyone on the Internet with the link can edit": [
         "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να επεξεργαστεί"
@@ -5555,6 +5693,12 @@
       ],
       "Calendar": [
         "Ημερολόγιο"
+      ],
+      "can edit": [
+        "μπορεί να επεξεργαστεί"
+      ],
+      "can view": [
+        "μπορεί να δει"
       ],
       "Cancel download": [
         "Ακύρωση λήψης"
@@ -5601,8 +5745,14 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete link and remove access for everyone": [
+        "Διαγραφή συνδέσμου και κατάργηση πρόσβασης για όλους"
+      ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
+      ],
+      "Disable this link on a specific date": [
+        "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -5646,11 +5796,17 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
+      "Enable email notifications": [
+        "Ενεργοποίηση ειδοποιήσεων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
       "Erase this link and remove everyone with access": [
         "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
+      ],
+      "Expiry": [
+        "Λήξη"
       ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
@@ -5693,6 +5849,9 @@
       ],
       "Include application logs in bug report": [
         "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
+      ],
+      "Include document name in notification": [
+        "Συμπερίληψη ονόματος εγγράφου στην ειδοποίηση"
       ],
       "Include message and file name in invite email": [
         "Συμπερίληψη μηνύματος και ονόματος αρχείου σε μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης"
@@ -5766,6 +5925,9 @@
       "New password": [
         "Νέος κωδικός"
       ],
+      "Not active": [
+        "Μη ενεργό"
+      ],
       "Note": [
         "Σημείωση"
       ],
@@ -5826,8 +5988,14 @@
       "Replace existing folder": [
         "Αντικατάσταση υπάρχοντος φακέλου"
       ],
+      "Require password": [
+        "Απαίτηση κωδικού πρόσβασης"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
+      ],
+      "Set a password to limit access via link": [
+        "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
       ],
       "Set expiration date": [
         "Ορισμός ημερομηνίας λήξης"
@@ -7370,6 +7538,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" κοινοποιήθηκε"
+      ],
       "\"${ name }\" created successfully": [
         "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
@@ -7567,6 +7738,12 @@
       ],
       "Root folder failed to be loaded": [
         "Απέτυχε η φόρτωση του ριζικού φακέλου"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες μπορούν να αλλάξουν τα δικαιώματα και να κοινοποιήσουν."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Η ρύθμιση ενημερώθηκε. Οι συντάκτες δε μπορούν να αλλάξουν τα δικαιώματα ή να κοινοποιήσουν."
       ],
       "Share invitation accepted successfully": [
         "Η πρόσκληση κοινής χρήσης έγινε αποδεκτή"
@@ -8585,6 +8762,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Δημιουργία νέου υπολογιστικού φύλλου..."
+      ],
       "Detect automatically": [
         "Αυτόματος εντοπισμός"
       ],
@@ -8900,8 +9080,14 @@
       "Accepted": [
         "Έγινε αποδοχή"
       ],
+      "pending": [
+        "εκκρεμεί"
+      ],
       "Pending": [
         "Σε εκκρεμότητα"
+      ],
+      "user joined": [
+        "χρήστης συνδέθηκε"
       ]
     },
     "Storage": {
@@ -9380,6 +9566,9 @@
       "Cannot load link": [
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
+      "Change access to viewer?": [
+        "Αλλαγή πρόσβασης σε προβολέα;"
+      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
@@ -9725,6 +9914,12 @@
       "Private browsing vs VPN": [
         "Ιδιωτική περιήγηση έναντι VPN"
       ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
+      "Public link settings": [
+        "Ρυθμίσεις δημοσιευμένου συνδέσμου"
+      ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
       ],
@@ -9742,6 +9937,9 @@
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
+      ],
+      "Remove your access?": [
+        "Αφαίρεση της πρόσβασής σας;"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -9784,6 +9982,12 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ρυθμίσεις για ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Κοινοποίηση \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Κοινοποίηση ${ name }"
@@ -9920,6 +10124,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
+      ],
+      "Change shared item settings": [
+        "Αλλαγή ρυθμίσεων κοινόχρηστου στοιχείου"
       ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
