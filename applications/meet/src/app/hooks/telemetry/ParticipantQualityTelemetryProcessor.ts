@@ -58,8 +58,12 @@ export class ParticipantQualityTelemetryProcessor {
             .flat();
 
         const stats = await runInQueue(promises, BATCH_SIZE);
+        const participantCount = allParticipants.length;
 
-        return stats.flat().filter((stats) => stats !== null);
+        return stats
+            .flat()
+            .filter((stats) => stats !== null)
+            .map((stat) => ({ ...stat, participantCount }));
     };
 
     private handleConnectionQualityChanged = async (quality: ConnectionQuality, participant: Participant) => {
