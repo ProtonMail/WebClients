@@ -11,6 +11,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -5121,6 +5124,9 @@
       "${ storage } storage": [
         "${ storage } depolama alanı"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
       ],
@@ -5145,6 +5151,9 @@
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
@@ -5297,6 +5306,9 @@
       "for ${ price }": [
         "${ price } karşılığında"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay işareti"
       ],
@@ -5431,6 +5443,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
+      "RECOMMENDED": [
+        "ÖNERİLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
