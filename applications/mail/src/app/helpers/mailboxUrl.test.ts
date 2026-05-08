@@ -2,7 +2,7 @@ import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { type MailUrlParams, getUrlPathname, setParamsInLocation } from './mailboxUrl';
+import { type MailUrlParams, getUrlPathname, setParamsInLocation, sortFromUrl } from './mailboxUrl';
 
 describe('Mailbox URL tests', () => {
     describe('getUrlPathname', () => {
@@ -59,6 +59,52 @@ describe('Mailbox URL tests', () => {
 
             const newLocation = setParamsInLocation(location, params);
             expect(newLocation.pathname).toBe('/inbox/newElement/123');
+        });
+    });
+
+    describe('sortFromUrl', () => {
+        const loc = (sort?: string): Location => ({ hash: sort ? `#sort=${sort}` : '' }) as Location;
+
+        it('should default to Time descending for a regular label', () => {
+            expect(sortFromUrl(loc(), 'customLabel')).toEqual({ sort: 'Time', desc: true });
+        });
+
+        it('should return Time ascending when sort=date for a regular label', () => {
+            expect(sortFromUrl(loc('date'), 'customLabel')).toEqual({ sort: 'Time', desc: false });
+        });
+
+        it('should return Size descending when sort=-size', () => {
+            expect(sortFromUrl(loc('-size'), 'customLabel')).toEqual({ sort: 'Size', desc: true });
+        });
+
+        it('should return Size ascending when sort=size', () => {
+            expect(sortFromUrl(loc('size'), 'customLabel')).toEqual({ sort: 'Size', desc: false });
+        });
+
+        it('should return SnoozeTime descending for Inbox with default sort', () => {
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'SnoozeTime', desc: true });
+        });
+
+        it('should return SnoozeTime ascending for Inbox with sort=date', () => {
+            expect(sortFromUrl(loc('date'), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'SnoozeTime', desc: false });
+        });
+
+        it('should return SnoozeTime ascending for Snoozed with default sort', () => {
+            // Snoozed flips desc so earliest-snoozed appears first
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'SnoozeTime', desc: false });
+        });
+
+        it('should return SnoozeTime descending for Snoozed with sort=date', () => {
+            expect(sortFromUrl(loc('date'), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'SnoozeTime', desc: true });
+        });
+
+        it('should return Size unchanged for Inbox when sort is size-based', () => {
+            expect(sortFromUrl(loc('-size'), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'Size', desc: true });
+            expect(sortFromUrl(loc('size'), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'Size', desc: false });
+        });
+
+        it('should return Time ascending for Scheduled with default sort', () => {
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
         });
     });
 });
