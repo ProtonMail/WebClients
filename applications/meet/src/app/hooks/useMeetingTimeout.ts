@@ -1,21 +1,16 @@
 import { useEffect } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectExpirationTime, selectIsGuestAdmin } from '@proton/meet/store/slices/meetingInfo';
+import { selectExpirationTime } from '@proton/meet/store/slices/meetingInfo';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetContext } from '../contexts/MeetContext';
-import { useIsLocalParticipantAdmin } from './useIsLocalParticipantAdmin';
 
 export const useMeetingTimeout = () => {
-    const { handleLeave, handleEndMeeting } = useMeetContext();
-    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+    const { handleMeetingExpired } = useMeetContext();
     const expirationTime = useMeetSelector(selectExpirationTime);
-    const { isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const meetUpsellEnabled = useFlag('MeetUpsell');
-
-    const isHostOrAdmin = isLocalParticipantHost || isGuestAdmin;
 
     useEffect(() => {
         if (!expirationTime || !meetUpsellEnabled) {
@@ -26,11 +21,7 @@ export const useMeetingTimeout = () => {
         const timeUntilExpiration = expirationTimestamp - Date.now();
 
         const handleTimeout = async () => {
-            if (isHostOrAdmin) {
-                await handleEndMeeting();
-            } else {
-                handleLeave();
-            }
+            await handleMeetingExpired();
         };
 
         if (timeUntilExpiration <= 0) {
@@ -43,5 +34,5 @@ export const useMeetingTimeout = () => {
         }, timeUntilExpiration);
 
         return () => clearTimeout(timeoutId);
-    }, []);
+    }, [expirationTime, meetUpsellEnabled, handleMeetingExpired]);
 };
