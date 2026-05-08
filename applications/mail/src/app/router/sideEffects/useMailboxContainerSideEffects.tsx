@@ -44,8 +44,8 @@ export const useMailboxContainerSideEffects = ({
 
     useApplyEncryptedSearch(elementsParams);
 
-    useMailboxPageTitle(labelID);
-    useMailboxFavicon(labelID);
+    useMailboxPageTitle();
+    useMailboxFavicon();
     useInboxBadgeCount();
 
     useNewEmailNotification(() => handleCheckAll(false));
