@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import appleAppStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/apple-app-store.svg';
-import googlePlayStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/google-play-store.svg';
 import type { IconName } from '@proton/icons/types';
 import { APPS, DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-macos.png';
 import windowsPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-windows.png';
+import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
+import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 
 import DashboardDownloadSection from '../../../shared/DashboardDownloadSection/DashboardDownloadSection';
 import useDownloadDesktopAppURL from '../../../shared/DashboardDownloadSection/useDownloadDesktopAppURL';

@@ -2,7 +2,17 @@ import { c } from 'ttag';
 
 import shuffle from '@proton/utils/shuffle';
 
-import type { RawFeedbackSurveyOptions } from './types';
+type ChannelCategory = 'social_media' | 'search_content' | 'friends_family' | 'other';
+
+interface RawFeedbackSurveyOptions {
+    value: string;
+    content: {
+        label: () => string;
+        hint?: () => string;
+    };
+    category: ChannelCategory;
+    disabled?: boolean;
+}
 
 const stringFeedbackSurveyOptions: RawFeedbackSurveyOptions[] = [
     {

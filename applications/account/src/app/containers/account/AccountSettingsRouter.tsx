@@ -49,7 +49,6 @@ import {
     UsernameSection,
     VpnAlsoInYourPlanSection,
     VpnBlogSection,
-    VpnDownloadAndInfoSection,
     YourPlanSection,
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
@@ -63,6 +62,7 @@ import SignInWithAnotherDeviceSettings from '@proton/components/containers/recov
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
 import RecoverySettingsRouter from './RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
@@ -129,7 +129,7 @@ const AccountSettingsRouter = ({
                     >
                         <YourPlanSectionV2 app={app} />
                         <YourPlanUpsellsSectionV2 app={app} />
-                        <VpnDownloadAndInfoSection app={app} />
+                        <VPNDownloadAndInfoSection app={app} />
                         <VpnAlsoInYourPlanSection app={app} />
                         <VpnBlogSection />
                     </PrivateMainSettingsArea>
