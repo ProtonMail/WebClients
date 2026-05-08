@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
+      "Change my access": [
+        "Mijn toegang wijzigen"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -228,6 +231,9 @@
       ],
       "Copy invite link": [
         "Uitnodigingslink kopiëren"
+      ],
+      "Copy link": [
+        "Link kopiëren"
       ],
       "Copy password": [
         "Wachtwoord kopiëren"
@@ -350,6 +356,9 @@
       ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
+      ],
+      "Encrypted": [
+        "Versleuteld"
       ],
       "Expand": [
         "Uitklappen"
@@ -624,6 +633,9 @@
       "Remove file": [
         "Verwijder bestand"
       ],
+      "Remove my access": [
+        "Mijn toegang verwijderen"
+      ],
       "Rename": [
         "Hernoem"
       ],
@@ -705,6 +717,9 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Set password or expiration date": [
+        "Stel wachtwoord of vervaldatum in"
+      ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
       ],
@@ -728,6 +743,12 @@
       ],
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"
+      ],
+      "Shared": [
+        "Gedeeld"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delen is end-to-end versleuteld"
       ],
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
@@ -2822,6 +2843,9 @@
       "Already a member of this share": [
         "Al lid van deze share"
       ],
+      "An error occurred": [
+        "Er is een fout opgetreden"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Er is een fout opgetreden tijdens het converteren van het document. Probeer het opnieuw."
       ],
@@ -2911,8 +2935,20 @@
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
       ],
+      "Failed to change permissions settings": [
+        "Het wijzigen van instellingen voor toelatingen is mislukt"
+      ],
       "Failed to copy photo to album": [
         "Kopiëren van foto naar album is mislukt."
+      ],
+      "Failed to create public share node": [
+        "Aanmaken van openbaar gedeelde node is mislukt"
+      ],
+      "Failed to fetch node": [
+        "Fout bij het ophalen van knooppunt"
+      ],
+      "Failed to fetch sharing info": [
+        "Fout bij het ophalen van informatie over delen"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
@@ -2925,6 +2961,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
+      ],
+      "Failed to resend invitation": [
+        "Opnieuw verzenden van de uitnodiging is mislukt"
+      ],
+      "Failed to unshare node": [
+        "Deling van de node kon niet ongedaan worden gemaakt."
+      ],
+      "Failed to update direct share node": [
+        "Bijwerken van direct gedeeld knooppunt is mislukt"
+      ],
+      "Failed to update public share node": [
+        "Bijwerken van openbaar gedeeld knooppunt is mislukt"
       ],
       "File \"${ name }\" is already downloading": [
         "Bestand \"${ name }\" wordt reeds gedownload"
@@ -3114,6 +3162,9 @@
       "status page": [
         "statuspagina"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Het stoppen van het delen van dit item is mislukt"
+      ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
@@ -3143,6 +3194,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "De laatste update die u hebt gemaakt aan het document is te groot of overschrijdt de totale limiet voor documentgrootte. Bewerken is tijdelijk uitgeschakeld. Uw wijziging wordt niet opgeslagen. Exporteer een kopie van uw document en laad de pagina opnieuw."
+      ],
+      "The link to your item failed to be deleted": [
+        "De link naar uw item kon niet worden verwijderd"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "De nieuwe revisie van het originele bestand is nog niet geüpload, probeer het later nog eens"
@@ -3249,6 +3303,12 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Onversleutelbaar apparaat"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Onversleutelbare naam"
       ]
     },
     "error": {
@@ -4319,6 +4379,18 @@
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
+      "Can edit": [
+        "Kan bewerken"
+      ],
+      "Can edit and manage access": [
+        "Kan bewerken en toegang beheren"
+      ],
+      "Can view and edit": [
+        "Kan bekijken en bewerken"
+      ],
+      "Can view only": [
+        "Kan alleen bekijken"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
@@ -4605,6 +4677,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Als u uzelf verwijdert, verliest u de toegang tot \"${ fileName }\" en kunt u deze niet meer openen, tenzij de eigenaar deze met u deelt."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
@@ -4687,6 +4762,9 @@
       "Limited availability": [
         "Beperkte beschikbaarheid"
       ],
+      "Link copied": [
+        "Link gekopieerd"
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -4704,6 +4782,9 @@
       ],
       "Loading link": [
         "Koppeling laden"
+      ],
+      "Loading...": [
+        "Laden..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Het lijkt erop dat u offline bent. Het document kan niet worden bewerkt terwijl u offline bent. Controleer de verbinding van uw apparaat."
@@ -4798,6 +4879,9 @@
       ],
       "Owner": [
         "Eigenaar"
+      ],
+      "owner": [
+        "eigenaar"
       ],
       "password": [
         "wachtwoord"
@@ -5212,6 +5296,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
+      "Who has access": [
+        "Wie heeft toegang"
+      ],
       "words": [
         "woorden"
       ],
@@ -5288,6 +5375,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "U kunt \"${ fileName }\" niet delen na het wijzigen van de toegang tot 'alleen-lezer'. Alleen de eigenaar kan uw toegang opnieuw wijzigen."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
@@ -5493,8 +5583,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
+      "Access": [
+        "Toegang"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
+      ],
+      "Active": [
+        "Actief"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -5510,6 +5606,15 @@
       ],
       "Alias title": [
         "Alias titel"
+      ],
+      "Allow editors to change permissions and share": [
+        "Sta bewerkers toe om toelatingen te wijzigen en te delen"
+      ],
+      "Anonymous": [
+        "Anoniem"
+      ],
+      "Anyone on the Internet with the link": [
+        "Iedereen op het internet met de link"
       ],
       "Anyone on the Internet with the link can edit": [
         "Iedereen op het internet met de link kan bewerken"
@@ -5549,6 +5654,12 @@
       ],
       "Calendar": [
         "Agenda"
+      ],
+      "can edit": [
+        "kan bewerken"
+      ],
+      "can view": [
+        "kan bekijken"
       ],
       "Cancel download": [
         "Download annuleren"
@@ -5595,8 +5706,14 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete link and remove access for everyone": [
+        "Link verwijderen en iedereen toegang ontnemen"
+      ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
+      ],
+      "Disable this link on a specific date": [
+        "Schakel deze koppeling uit op een specifieke datum"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
@@ -5645,6 +5762,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Wis deze link en verwijder iedereen met toegang"
+      ],
+      "Expiry": [
+        "Vervaldatum"
       ],
       "Extended address": [
         "Adrestoevoeging"
@@ -5760,6 +5880,9 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
+      "Not active": [
+        "Niet actief"
+      ],
       "Note": [
         "Notitie"
       ],
@@ -5820,8 +5943,14 @@
       "Replace existing folder": [
         "Bestaande map vervangen"
       ],
+      "Require password": [
+        "Wachtwoord vereist"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Set a password to limit access via link": [
+        "Stel een wachtwoord in om toegang via een koppeling te beperken"
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
@@ -7364,6 +7493,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" gedeeld"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" succesvol aangemaakt"
       ],
@@ -7561,6 +7693,12 @@
       ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Instelling bijgewerkt. Bewerkers kunnen machtigingen wijzigen en delen."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Instelling bijgewerkt. Bewerkers kunnen geen machtigingen wijzigen of delen."
       ],
       "Share invitation accepted successfully": [
         "Uitnodiging met succes geaccepteerd"
@@ -8987,8 +9125,14 @@
       "Accepted": [
         "Geaccepteerd"
       ],
+      "pending": [
+        "in behandeling"
+      ],
       "Pending": [
         "In behandeling"
+      ],
+      "user joined": [
+        "gebruiker is toegetreden"
       ]
     },
     "Storage": {
@@ -9467,6 +9611,9 @@
       "Cannot load link": [
         "Kan koppeling niet laden"
       ],
+      "Change access to viewer?": [
+        "Toegang wijzigen naar kijker?"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -9812,6 +9959,12 @@
       "Private browsing vs VPN": [
         "Privé browsen versus VPN"
       ],
+      "Public link": [
+        "Publieke link"
+      ],
+      "Public link settings": [
+        "Instellingen voor publieke link"
+      ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
       ],
@@ -9829,6 +9982,9 @@
       ],
       "Recover data": [
         "Gegevens herstellen"
+      ],
+      "Remove your access?": [
+        "Mijn toegang verwijderen?"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -9871,6 +10027,12 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Instellingen voor ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Deel \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Deel ${ name }"
@@ -10007,6 +10169,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
+      ],
+      "Change shared item settings": [
+        "Instellingen voor het delen van items wijzigen"
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"

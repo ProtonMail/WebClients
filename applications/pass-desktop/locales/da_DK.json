@@ -310,6 +310,9 @@
       "Do not show again when I press": [
         "Vis ikke igen, når jeg trykker"
       ],
+      "Don't show this again": [
+        "Vis ikke igen"
+      ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
       ],
@@ -1543,9 +1546,6 @@
         "${ payload.count } invitation sendt",
         "${ payload.count } invitationer sendt"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktiveret"
       ],
@@ -1572,9 +1572,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Der oprettes en kontakt for hver e-mailadresse, der sender e-mails til eller modtager e-mails fra ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "En ny version downloades. Når downloaden er færdig, vil den være tilgængelig ved næste genstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
@@ -1809,9 +1806,6 @@
       ],
       "Emptying trash...": [
         "Tømmer papirkurven..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktivér ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver autolåsning for at sikre dine data"
@@ -2051,6 +2045,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2077,9 +2075,6 @@
       ],
       "No network connection": [
         "Ingen internetforbindelse"
-      ],
-      "No new versions are available at the moment.": [
-        "Ingen nye versioner er tilgængelige i øjeblikket."
       ],
       "None": [
         "Ingen"
@@ -2467,12 +2462,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil afvise enheden **${ name }**, der forsøgte at logge ind på din ${ BRAND_NAME }-konto den **${ date }**."
       ],
-      "This will reload the application.": [
-        "Dette vil genindlæse applikationen."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Dette vil udløse en kontrol for nye beta-udgivelser."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
       ],
@@ -2487,9 +2476,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betroet af over 50.000 erhvervsbrugere og 100 millioner konti over hele verden."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de frigives til offentligheden."
       ],
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
@@ -2899,9 +2885,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
-      ],
-      "Beta Access": [
-        "Beta-adgang"
       ],
       "Biometrics": [
         "Biometri"

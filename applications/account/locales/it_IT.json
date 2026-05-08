@@ -18330,11 +18330,6 @@
         "Impossibile generare le chiavi per l’indirizzo. Per attivare la protezione post-quantistica, dovrai generare manualmente le nuove chiavi di crittografia. Vai su ${ settingsLink } e seleziona 'Genera chiave' per ciascun indirizzo."
       ]
     },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Devi aggiornare tutte le app mobili** ${ BRAND_NAME }: le tue nuove chiavi non funzioneranno sulle versioni precedenti dell’app."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Questo genererà nuove chiavi di crittografia resistenti ai computer quantistici per il tuo account."

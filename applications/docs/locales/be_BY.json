@@ -123,6 +123,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Change my access": [
+        "Змяніць мой доступ"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -230,6 +233,9 @@
       ],
       "Copy invite link": [
         "Скапіяваць запрашальную спасылку"
+      ],
+      "Copy link": [
+        "Скапіяваць спасылку"
       ],
       "Copy password": [
         "Скапіяваць пароль"
@@ -356,6 +362,9 @@
       ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
+      ],
+      "Encrypted": [
+        "Зашыфравана"
       ],
       "Expand": [
         "Разгарнуць"
@@ -633,6 +642,9 @@
       "Remove file": [
         "Выдаліць файл"
       ],
+      "Remove my access": [
+        "Выдаліць мой доступ"
+      ],
       "Rename": [
         "Перайменаваць"
       ],
@@ -714,6 +726,9 @@
       "Select all": [
         "Выбраць усе"
       ],
+      "Set password or expiration date": [
+        "Задаць пароль або тэрмін дзеяння"
+      ],
       "Set recovery methods": [
         "Задаць спосабы аднаўлення"
       ],
@@ -737,6 +752,12 @@
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
+      ],
+      "Shared": [
+        "Абагуленыя"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Абагуліць са скразным шыфраваннем"
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
@@ -2862,6 +2883,9 @@
       "Already a member of this share": [
         "Ужо з'яўляецца ўдзельнікам гэтага абагульвання"
       ],
+      "An error occurred": [
+        "Адбылася памылка"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Адбылася памылка пры спробе пераўтварэння дакумента. Паспрабуйце яшчэ раз."
       ],
@@ -2955,8 +2979,20 @@
       "Failed loading group members": [
         "Збой загрузкі ўдзельнікаў групы"
       ],
+      "Failed to change permissions settings": [
+        "Не ўдалося змяніць налады дазволаў"
+      ],
       "Failed to copy photo to album": [
         "Не ўдалося скапіяваць фатаграфію ў альбом"
+      ],
+      "Failed to create public share node": [
+        "Не ўдалося стварыць публічны вузел абагульвання"
+      ],
+      "Failed to fetch node": [
+        "Не ўдалося атрымаць вузел"
+      ],
+      "Failed to fetch sharing info": [
+        "Не ўдалося атрымаць зветкі абагульвання"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
@@ -2969,6 +3005,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Не ўдалося перайменаваць дакумент. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Failed to resend invitation": [
+        "Не ўдалося паўторна адправіць запрашэнне"
+      ],
+      "Failed to unshare node": [
+        "Не ўдалося скасаваць абаагульванне вузла"
+      ],
+      "Failed to update direct share node": [
+        "Не ўдалося абнавіць прамы вузел абагульвання"
+      ],
+      "Failed to update public share node": [
+        "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" ужо спампоўваецца"
@@ -3171,6 +3219,9 @@
       "status page": [
         "статус старонкі"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Збой спынення абагульвання гэтага элемента"
+      ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
       ],
@@ -3200,6 +3251,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Апошняе абнаўленне, якое вы зрабілі ў дакуменце, або занадта вялікае, або перавышае агульнае абмежаванне памеру дакумента. Рэдагаванне было часова адключана. Ваша змяненне не будзе захавана. Экспартуйце копію дакумента і перазагрузіце старонку."
+      ],
+      "The link to your item failed to be deleted": [
+        "Не ўдалося выдаліць спасылку на ваш элемент"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Новая рэдакцыя арыгінальнага файла пакуль не запампавана. Паспрабуйце яшчэ раз пазней"
@@ -3308,6 +3362,12 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Прылада не паддаецца расшыфроўцы"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Назва не паддаецца расшыфроўцы"
       ]
     },
     "error": {
@@ -4454,6 +4514,18 @@
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
+      "Can edit": [
+        "Можа рэдагаваць"
+      ],
+      "Can edit and manage access": [
+        "Можа рэдагаваць і кіраваць доступам"
+      ],
+      "Can view and edit": [
+        "Можа праглядаць і рэдагаваць"
+      ],
+      "Can view only": [
+        "Можа толькі праглядаць"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
       ],
@@ -4742,6 +4814,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
@@ -4826,6 +4901,9 @@
       "Limited availability": [
         "Абмежаваная даступнасць"
       ],
+      "Link copied": [
+        "Спасылка скапіявана"
+      ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
@@ -4843,6 +4921,9 @@
       ],
       "Loading link": [
         "Загрузка спасылкі"
+      ],
+      "Loading...": [
+        "Загрузка..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Здаецца, што вы па-за сеткай і рэдагаваць дакумент пакуль немагчыма. Праверце падключэнне да інтэрнэту на сваёй прыладзе."
@@ -4939,6 +5020,9 @@
       ],
       "Owner": [
         "Уладальнік"
+      ],
+      "owner": [
+        "уладальнік"
       ],
       "password": [
         "пароль"
@@ -5357,6 +5441,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
       ],
+      "Who has access": [
+        "Хто мае доступ"
+      ],
       "words": [
         "слоў"
       ],
@@ -5437,6 +5524,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
@@ -5650,8 +5740,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "Access": [
+        "Доступ"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
+      ],
+      "Active": [
+        "Актыўна"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -5667,6 +5763,15 @@
       ],
       "Alias title": [
         "Загаловак псеўданіма"
+      ],
+      "Allow editors to change permissions and share": [
+        "Дазволіць рэдактарам змяняць дазволы і абагульваць"
+      ],
+      "Anonymous": [
+        "Ананімны"
+      ],
+      "Anyone on the Internet with the link": [
+        "Любы карыстальнік у інтэрнэце з гэтай спасылкай"
       ],
       "Anyone on the Internet with the link can edit": [
         "Любы карыстальнік у інтэрнэце з гэтай спасылкай можа рэдагаваць"
@@ -5706,6 +5811,12 @@
       ],
       "Calendar": [
         "Каляндар"
+      ],
+      "can edit": [
+        "можа рэдагаваць"
+      ],
+      "can view": [
+        "можа праглядаць"
       ],
       "Cancel download": [
         "Скасаваць спампоўванне"
@@ -5752,8 +5863,14 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete link and remove access for everyone": [
+        "Выдаліць спасылку і доступ для кожнага ўдзельніка"
+      ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
+      ],
+      "Disable this link on a specific date": [
+        "Адключыць гэту спасылку на ўказаную дату"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -5802,6 +5919,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Сцерці гэту спасылку і выдаліць доступ для ўсіх"
+      ],
+      "Expiry": [
+        "Тэрмін дзеяння"
       ],
       "Extended address": [
         "Пашыраны адрас"
@@ -5917,6 +6037,9 @@
       "New password": [
         "Новы пароль"
       ],
+      "Not active": [
+        "Не актыўна"
+      ],
       "Note": [
         "Нататка"
       ],
@@ -5977,8 +6100,14 @@
       "Replace existing folder": [
         "Замяніць існуючую папку"
       ],
+      "Require password": [
+        "Патрабаваць пароль"
+      ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Set a password to limit access via link": [
+        "Задаць пароль для абмежавання доступу праз спасылку"
       ],
       "Set expiration date": [
         "Задаць тэрмін дзеяння"
@@ -7650,6 +7779,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" абагулены"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" паспяхова створана"
       ],
@@ -7877,6 +8009,12 @@
       ],
       "Root folder failed to be loaded": [
         "Не ўдалося загрузіць каранёвую папку"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Налады абноўлены. Рэдактары могуць змяняць дазволы і абагульваць."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Налады абноўлены. Рэдактары не могуць змяняць дазволы і абагульваць."
       ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
@@ -9270,8 +9408,14 @@
       "Accepted": [
         "Прынята"
       ],
+      "pending": [
+        "у чаканні"
+      ],
       "Pending": [
         "У чаканні"
+      ],
+      "user joined": [
+        "карыстальнік далучыўся"
       ]
     },
     "Storage": {
@@ -9798,6 +9942,9 @@
       "Cannot load link": [
         "Немагчыма загрузіць спасылку"
       ],
+      "Change access to viewer?": [
+        "Змяніць доступ на прагляд?"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -10149,6 +10296,12 @@
       "Private browsing vs VPN": [
         "Прыватны прагляд у параўнанні з VPN"
       ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
+      "Public link settings": [
+        "Налады публічнай спасылкі"
+      ],
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
       ],
@@ -10166,6 +10319,9 @@
       ],
       "Recover data": [
         "Аднаўленне даных"
+      ],
+      "Remove your access?": [
+        "Выдаліць ваш доступ?"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -10208,6 +10364,12 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Налады для ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Абагуліць \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Абагуліць ${ name }"
@@ -10344,6 +10506,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
+      ],
+      "Change shared item settings": [
+        "Змяніць налады абагуленага элемента"
       ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"

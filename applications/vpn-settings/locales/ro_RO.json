@@ -56,6 +56,9 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Adăugare adresă ${ BRAND_NAME }"
       ],
@@ -135,7 +138,7 @@
         "Anulare abonament"
       ],
       "Cancel trial and pay": [
-        "Anulare perioadă de probare și plătire"
+        "Anulare perioadă de evaluare și plătire"
       ],
       "Change": [
         "Schimbare"
@@ -328,6 +331,9 @@
       ],
       "Delete policy": [
         "Șterge regulă"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "Ștergere cod de acces ${ tokens[0].Account }"
       ],
       "Delete user": [
         "Ștergere utilizator"
@@ -553,6 +559,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Accesați furnizorul domeniului"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -889,6 +898,9 @@
       ],
       "Save": [
         "Salvare"
+      ],
+      "Save & exit": [
+        "Salvare și ieșire"
       ],
       "Save address": [
         "Salvare adresă"
@@ -1479,17 +1491,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "Două roluri noi de administrator"
+      ],
       "3 new admin roles": [
         "3 roluri noi de administrator"
-      ],
-      "Admin roles": [
-        "Roluri de administrator"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delegați gestionarea prin atribuirea unor roluri de administrator specifice. Acordați fiecărui administrator doar accesul de care are nevoie. Aceasta respectă principiul privilegiilor minime, protejându-vă organizația de conturi compromise și erori accidentale."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegați gestionarea pentru mai mulți utilizatori simultan. Atribuiți roluri specifice de administrator grupurilor pentru permisiuni automate. Aceasta respectă principiul privilegiilor minime pentru a economisi timp la afiliere și dezafiliere, reducând în același timp erorile."
       ],
       "Delegate management with the appropriate admin role.": [
         "Delegați gestionarea cu rolul de administrator corespunzător."
@@ -1503,20 +1518,14 @@
       "New: Control admin access for individual users": [
         "Nou: control acces administrator pentru utilizatori individuali"
       ],
-      "Organization admin": [
-        "Administrator organizație"
+      "New: Control admin access for many users at once": [
+        "Nou: controlați accesul administrativ pentru mai mulți utilizatori simultan."
       ],
       "Organization admin:": [
         "Administrator organizație:"
       ],
-      "Security admin": [
-        "Administrator securitate"
-      ],
       "Security admin:": [
         "Administrator securitate:"
-      ],
-      "User admin": [
-        "Administrator utilizatori"
       ],
       "User admin:": [
         "Administrator utilizatori:"
@@ -1594,16 +1603,16 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
-        "În perioada de probare, puteți avea până la 10 utilizatori."
+        "În perioada de evaluare, puteți avea până la 10 utilizatori."
       ],
       "free for ${ TRIAL_DURATION_DAYS } days": [
         "gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
@@ -1618,30 +1627,30 @@
         "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Dacă anulați, perioada de probare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
+        "Dacă anulați, perioada de evaluare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de evaluare."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Nu puteți adăuga domenii personale în perioada de probare."
+        "Nu puteți adăuga domenii personale în perioada de evaluare."
       ],
       "You have reached the trial limit.": [
-        "Ați atins limita perioadei de probare."
+        "Ați atins limita perioadei de evaluare."
       ]
     },
     "b2b_trials_2025_Label": {
       "Amount due after trial": [
-        "Suma datorată după probare"
+        "Suma datorată după evaluare"
       ],
       "Amount due now": [
         "Suma datorată acum"
@@ -1657,7 +1666,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "Perioada de probare se încheie peste ${ timeRemaining }"
+        "Perioada de evaluare se încheie peste ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -1988,6 +1997,54 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } din ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: nu se pun în carantină sau nu se resping e-mailurile neautorizate. De obicei, se folosește această politică doar pentru depanare sau testare."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: solicită platformelor destinatare să marcheze e-mailurile neautorizate ca fiind nedorite sau să le pună în carantină."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: solicită platformelor destinatare să respingă e-mailurile neautorizate."
+      ],
+      "Account connected": [
+        "Cont conectat"
+      ],
+      "Account disconnected": [
+        "Cont deconectat"
+      ],
+      "Activated": [
+        "Activat"
+      ],
+      "Activation link": [
+        "Legătura web de activare"
+      ],
+      "Activation link copied to clipboard": [
+        "Legătura web de activare s-a copiat în memorie."
+      ],
+      "Add domain": [
+        "Adăugare domeniu"
+      ],
+      "Add users": [
+        "Adăugare utilizatori"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "All": [
+        "Toate"
+      ],
+      "An unknown error occurred": [
+        "A apărut o eroare necunoscută"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Sigur doriți să continuați? Utilizatorii care nu și-au revendicat contul înainte de finalizarea migrării vor trebui să solicite o resetare a parolei de la administratorul organizației lor ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Imediat ce conturile sunt create, puteți partaja legătura web de activare, astfel încât utilizatorii să își poată accesa contul ${ BRAND_NAME }."
+      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -1997,14 +2054,26 @@
       "Calendar": [
         "Calendar"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Alegeți ce doriți să migrați. Alegerea se va aplica tuturor utilizatorilor. Migrarea va începe după ce decideți ce utilizatori veți copia."
+      ],
       "Completed": [
         "Completat"
+      ],
+      "Configure domain": [
+        "Configurare domeniu"
       ],
       "Configure migration": [
         "Configurare migrare"
       ],
+      "Configure your domain": [
+        "Configurați-vă domeniul"
+      ],
       "Contacts": [
         "Contacte"
+      ],
+      "Copy activation link": [
+        "Copiere legătură web de activare"
       ],
       "Copy activation link to clipboard": [
         "Copiere legătură web de activare în memorie"
@@ -2012,11 +2081,32 @@
       "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
         "Copiați codul de mai jos și lipiți-l în secțiunea DNS a gazdei domeniului. Puteți găsi un exemplu și câteva sfaturi utile ${ hereHref }."
       ],
+      "Creating accounts": [
+        "Se creează conturile"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM adaugă o semnătură digitală fiecărui e-mail, astfel încât destinatarii să poată verifica dacă mesajul provine într-adevăr de pe domeniul dvs. și nu a fost modificat în timpul tranzitului. Fără această semnătură, mesajele pot fi tratate ca fiind mai puțin demne de încredere."
+      ],
+      "DKIM records": [
+        "Înregistrări DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC se bazează pe SPF și DKIM, indicând serverelor receptoare cum să gestioneze mesajele care nu reușesc aceste verificări. Acesta ajută la protejarea domeniului împotriva falsificării identității și îmbunătățește fiabilitatea generală a livrării."
+      ],
       "DMARC records": [
         "Înregistrări DMARC"
       ],
+      "Domain added": [
+        "Domeniu adăugat"
+      ],
       "Domain connected": [
         "Domeniu conectat"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Se asigură că e-mailurile ajung în folderul primite, nu în folderul de mesaje nedorite. Actualizând SPF va permite utilizatorilor să trimită mesaje simultan de la ${ BRAND_NAME } și Google pe durata migrării."
+      ],
+      "Errors": [
+        "Erori"
       ],
       "Estimated size": [
         "Mărime estimată"
@@ -2024,11 +2114,29 @@
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat"
       ],
+      "Finalize migration": [
+        "Finalizare migrare"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Finalizarea migrării înseamnă că toate e-mailurile personale vor fi transferate direct către ${ BRAND_NAME }. Utilizatorii nu vor mai primi e-mailuri în conturile lor Google, iar datele nu vor mai fi sincronizate între ${ BRAND_NAME } și Google."
+      ],
+      "Find out what can be migrated.": [
+        "Aflați ce poate fi migrat."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Cont Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Așteptați puțin, se configurează conturile de utilizatori și apoi va începe în curând importarea datelor utilizatorilor."
+      ],
       "Has errors": [
         "Are erori"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Erori de importare pentru ${ user.AdminSetName }"
       ],
       "In progress": [
         "În derulare"
@@ -2039,14 +2147,26 @@
       "Install migration app": [
         "Instalare aplicație de migrare"
       ],
+      "Loading your organization data": [
+        "Se încarcă datele organizației"
+      ],
       "Mail": [
         "E-mail"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Gestionat prin ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
       ],
       "Migrate from Google Workspace": [
         "Migrați de la Google Workspace"
       ],
       "Migrate users": [
         "Migrare utilizatori"
+      ],
+      "Migrated": [
+        "Migrat"
       ],
       "Migration includes": [
         "Migrarea include"
@@ -2059,14 +2179,53 @@
       "Migration status": [
         "Stare migrare"
       ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
+      ],
+      "More details": [
+        "Detalii"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Nu sunt disponibile detalii despre eroare. Contactați serviciul de asistență pentru clienți pentru mai multe informații."
+      ],
+      "No users to display": [
+        "Nu există utilizatori de afișat."
+      ],
+      "Not activated": [
+        "Neactivat"
+      ],
+      "Not confirmed": [
+        "Neconfirmat"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "După ce utilizatorii și-au revendicat contul ${ BRAND_NAME }, finalizați migrarea."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "După ce confirmăm că mesajele sunt direcționate către ${ BRAND_NAME }, migrarea va fi finalizată. Veți primi un e-mail de confirmare care vă va anunța când se întâmplă acest lucru. Acest proces poate dura până la 24 de ore."
+      ],
       "Organization does not have enough seats available": [
         "Organizația nu dispune de suficiente licențe disponibile."
       ],
       "Organization does not have enough storage available": [
         "Organizația nu are suficient spațiu de stocare disponibil."
       ],
+      "Pending": [
+        "În așteptare"
+      ],
       "Please add the following records in your DNS console of your domain provider:": [
         "Adăugați următoarele înregistrări în consola DNS a furnizorului domeniului:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lăsați această fereastră deschisă până când se termină de creat toți utilizatorii."
+      ],
+      "Please select at least one product to migrate": [
+        "Selectați cel puțin un produs pentru migrare."
+      ],
+      "Refresh": [
+        "Împrospătare"
       ],
       "Required": [
         "Obligatoriu"
@@ -2077,8 +2236,20 @@
       "Select at least one user to start a migration": [
         "Selectați cel puțin un utilizator pentru a începe o migrare."
       ],
+      "Select users to migrate": [
+        "Selectați utilizatorii pentru migrare"
+      ],
       "Set up": [
         "Configurare"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurați trimiterea securizată (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurați trimiterea securizată (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurați trimiterea securizată (SPF)"
       ],
       "Settings": [
         "Setări"
@@ -2089,17 +2260,53 @@
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
       ],
+      "Size": [
+        "Mărime"
+      ],
+      "Some accounts are not claimed": [
+        "Unele conturi nu sunt revendicate."
+      ],
+      "SPF records": [
+        "Înregistrări SPF"
+      ],
+      "Start migrating": [
+        "Pornire migrare"
+      ],
       "Status": [
         "Stare"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Setarea implicită este „niciuna”. Totuși, pentru a vă îmbunătăți securitatea, vă recomandăm să setați această valoare cu „p=quarantine”."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Valoarea „p=” specifică acțiunea de întreprins pentru e-mailurile care nu acceptă DMARC. Iată acțiunile disponibile:"
+      ],
+      "This migration has been completed": [
+        "Această migrare a fost finalizată."
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Pentru a vă migra datele organizației, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalare, reveniți aici pentru a continua."
       ],
+      "Update records for receiving": [
+        "Actualizare înregistrări pentru primire"
+      ],
       "User": [
         "Utilizator"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "Utilizatorul trebuie să își activeze contul prin legătura web de activare afișată mai sus."
+      ],
+      "User status": [
+        "Stare utilizator"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Utilizatorii pot folosi ${ BRAND_NAME } sau Google simultan pe durata migrării."
+      ],
       "Users migrated": [
         "Utilizatori migrați"
+      ],
+      "Verified": [
+        "Verificat"
       ],
       "Verify installation": [
         "Verificare instalare"
@@ -2110,8 +2317,14 @@
       "Verify your domain to start a migration": [
         "Verificați domeniul pentru a începe o migrare."
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Am detectat domeniul principal conectat la contul Google Workspace. Confirmați-l pentru a continua configurarea e-mailului pentru organizația din ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Nu s-a putut verifica instalarea. Verificați dacă ați instalat-o în contul Google Workspace și reîncercați."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Încă verificăm înregistrările MX cu furnizorul domeniului."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
@@ -2119,8 +2332,14 @@
       "What are you migrating?": [
         "Ce migrați?"
       ],
+      "You": [
+        "Eu"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Trebuie să acordați permisiunea ca ${ BRAND_NAME } să vă copieze datele. După acceptarea permisiunilor, reveniți aici pentru a continua."
+      ],
+      "You're all set!": [
+        "Totul e în regulă!"
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Planul actual permite maxim ${ maxMembers } utilizator. Pentru a migra utilizatori suplimentari, adăugați mai multe licențe la abonament.",
@@ -3835,6 +4054,11 @@
         "folosiți asistentul de importare Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "A fost găsită o înregistrare DMARC duplicată. Accesați consola DNS a furnizorului domeniului pentru a o remedia."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "În plus, au fost asociate automat câmpurile CSV cu cele din vCard. Puteți să le examinați și să le asociați manual."
@@ -5304,13 +5528,13 @@
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
+        "* Doar o singură perioadă de evaluare per utilizator. După aceea se aplică prețul standard."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "După părăsirea planului, acest utilizator va fi mutat la un plan ${ BRAND_NAME } Free."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de probare de 30 de zile.*"
+        "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de evaluare de 30 de zile.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Alocați spațiu de stocare contului de administrator. Puteți distribui spațiul pentru utilizatorii suplimentari mai târziu."
@@ -6549,6 +6773,9 @@
       "${ vaultLink } updated": [
         "S-a actualizat ${ vaultLink }"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } vă ascunde traficul. ${ PASS_SHORT_APP_NAME } vă ascunde identitatea — **aliasuri de tip „hide-my-email”** nelimitate și **alerte de pe internetul ascuns** în cazul în care datele vă sunt vreodată divulgate."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
       ],
@@ -6671,6 +6898,9 @@
       ],
       "Activity Monitor": [
         "Monitorizare activitate"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adăugare ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -6840,7 +7070,7 @@
         "Trebuie să fie activă cel puțin o aplicație"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+        "La sfârșitul perioadei de evaluare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -7343,6 +7573,9 @@
       ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pentru doar ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
@@ -8055,6 +8288,9 @@
       "Recently used servers:": [
         "Servere utilizate recent:"
       ],
+      "RECOMMENDED": [
+        "RECOMANDAT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -8378,7 +8614,7 @@
         "Numele va fi vizibil utilizatorilor când sunt conectați."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de probare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
+        "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de evaluare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
@@ -8573,7 +8809,7 @@
         "Total conexiuni VPN"
       ],
       "Trial ends on ${ formattedPeriodEndDate }": [
-        "Perioada de probare expiră la ${ formattedPeriodEndDate }"
+        "Perioada de evaluare expiră la ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispozitiv aprobat"
@@ -8828,7 +9064,7 @@
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Dacă anulați, abonamentul nu va fi începe, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
+        "Dacă anulați, abonamentul nu va fi începe, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Când un server este eliminat dintr-o poartă de acces, acesta intră într-o perioadă de dezactivare de 10 zile. Acest server poate fi adăugat la o poartă de acces nouă, dar țara acestuia nu poate fi modificată."
@@ -8987,10 +9223,10 @@
         "Aveți ${ unassignedAvailableCount } de servere utilizate recent disponibile. Pentru a aloca aceste servere într-o altă țară, va trebui să așteptați până când dezactivarea este completă."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+        "Aveți un abonament ${ planTitle } de evaluare. Dacă doriți să vă continuați abonamentul după perioada de evaluare, adăugați o metodă de plată."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
+        "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
       ],
       "You have no invoices.": [
         "Nu aveți facturi."
@@ -9056,10 +9292,10 @@
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
       ],
       "You'll receive the credit reward 1 month after your friend's trial ended.": [
-        "Vei primi recompensa în credite la o lună după ce perioada de probare pentru persoana recomandată s-a încheiat."
+        "Vei primi recompensa în credite la o lună după ce perioada de evaluare pentru persoana recomandată s-a încheiat."
       ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
-        "Vei primi recompensa în credite la două luni după ce perioada de probare pentru persoana recomandată s-a încheiat."
+        "Vei primi recompensa în credite la două luni după ce perioada de evaluare pentru persoana recomandată s-a încheiat."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
@@ -9123,7 +9359,7 @@
         "Fișierele vor fi criptate și apoi salvate."
       ],
       "Your free trial includes 1 dedicated server.": [
-        "Perioada de probare gratuită include un server dedicat."
+        "Perioada de evaluare gratuită include un server dedicat."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -9176,7 +9412,7 @@
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Perioada de probare se termină ${ timeRemaining }."
+        "Perioada de evaluare se termină ${ timeRemaining }."
       ],
       "YouTube": [
         "YouTube"
@@ -9601,6 +9837,9 @@
       "Confirm login password": [
         "Confirmare parolă conectare"
       ],
+      "Confirm MX records added": [
+        "Confirmare înregistrări MX adăugate"
+      ],
       "Confirm new password": [
         "Confirmare parola nouă"
       ],
@@ -9822,6 +10061,9 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "Host name": [
+        "Nume gazdă"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Înțeleg că va trebui să adaug imediat această adresă de e-mail la celălalt cont, pentru a evita pierderea definitivă a acestei adrese."
       ],
@@ -9938,6 +10180,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
+      ],
+      "MX records": [
+        "Înregistrări MX"
       ],
       "Name": [
         "Nume"
@@ -10070,6 +10315,9 @@
       ],
       "Previous password": [
         "Parola anterioară"
+      ],
+      "Priority": [
+        "Prioritate"
       ],
       "Priority support": [
         "Asistență prioritară"
@@ -10356,8 +10604,23 @@
       ]
     },
     "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Nu s-a găsit înregistrarea ${ capitalizedGroup }."
+      ],
+      "Host name": [
+        "Nume gazdă"
+      ],
+      "Invalid ${ group.name } record found": [
+        "S-a găsit o înregistrare ${ group.name } nevalidă"
+      ],
+      "Type": [
+        "Tip"
+      ],
       "Use default value": [
         "Folosire valoare implicită"
+      ],
+      "Valid ${ group.name } record found": [
+        "S-a găsit o înregistrare ${ group.name } validă"
       ]
     },
     "Label for new member": {
@@ -10475,6 +10738,9 @@
       "data recovery option": [
         "opțiunea de recuperare a datelor"
       ],
+      "Detailed instructions": [
+        "Instrucțiuni detaliate"
+      ],
       "Details": [
         "Detalii"
       ],
@@ -10509,7 +10775,7 @@
         "Ajutor"
       ],
       "Help translate": [
-        "Ajutați la traducere"
+        "Traducere completă"
       ],
       "here": [
         "aici"
@@ -10931,7 +11197,7 @@
         "Licențe incluse: ${ seats }"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de evaluare."
       ]
     },
     "Meet_launch": {
@@ -11006,10 +11272,10 @@
         "Vizualizați evenimentele de conectare, recuperare și securitate ale utilizatorului."
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
+        "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -11861,7 +12127,7 @@
         "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+        "Perioada de evaluare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12531,16 +12797,16 @@
         "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
       ],
       "Your free trial has started": [
-        "Perioada de probare gratuită a început"
+        "Perioada de evaluare gratuită a început"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
+        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -13039,7 +13305,7 @@
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "Suma datorată după probare la ${ formattedDate }"
+        "Suma datorată după evaluare la ${ formattedDate }"
       ],
       "Billing Country": [
         "Țara de facturare"
@@ -13087,7 +13353,7 @@
         "Există alte planuri în monede diferite"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
@@ -13448,6 +13714,9 @@
       "Search for an email or IP address": [
         "Căutare după e-mail sau adresă IP"
       ],
+      "Search for users or addresses": [
+        "Căutare utilizator sau adresă"
+      ],
       "Search parent folder": [
         "Căutare în folder părinte"
       ],
@@ -13795,7 +14064,7 @@
         "${ referrerRewardAmount } per recomandare"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de evaluare."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -13816,13 +14085,13 @@
         "Oferiți două săptămâni gratuite, primiți ${ referrerRewardAmount } în credite."
       ],
       "How your free trial works:": [
-        "Cum funcționează probarea gratuită:"
+        "Cum funcționează evaluarea gratuită:"
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
         "Am folosit ${ BRAND_NAME } și am crezut că v-ar plăcea. Este un serviciu de e-mail securizat, stocare în cloud, manager de parole și VPN care vă protejează confidențialitatea. Înscrieți-vă folosind această legătură pentru a obține 14 zile de funcții premium gratuit: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
-        "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de probare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
+        "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de evaluare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Dacă anulați, veți pierde recompensa în credite de **${ referrerRewardAmount }**."
@@ -14956,6 +15225,14 @@
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Faceți clic pe numele unui utilizator pentru a-i gestiona rolul și permisiunile."
+      ],
+      "User roles available": [
+        "Roluri de utilizator disponibile"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO)."
@@ -15923,6 +16200,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Cont șters. Se deconectează..."
+      ],
+      "Activation link copied to clipboard": [
+        "Legătura web de activare s-a copiat în memorie."
       ],
       "Address added": [
         "Adresă adăugată"
@@ -16976,7 +17256,7 @@
         "Cum să alegeți un logo bun"
       ],
       "How your free trial works": [
-        "Cum funcționează probarea gratuită"
+        "Cum funcționează evaluarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -17835,6 +18115,9 @@
       "User is a group": [
         "Utilizatorul este un grup"
       ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
       ]
@@ -18068,6 +18351,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via grup)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Adăugați roluri delegate unui utilizator pentru a-i acorda doar permisiunile specifice de care are nevoie, păstrând puterea de administrator complet separată și mediul securizat."
       ],
@@ -18468,7 +18757,7 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de evaluare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
         "Fișierul de recuperare este vechi. Nu vă poate recupera datele dacă vă veți mai reseta parola."
@@ -18477,7 +18766,7 @@
         "Fraza de recuperare este veche. Nu vă poate recupera datele dacă vă veți mai reseta parola."
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+        "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

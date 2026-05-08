@@ -1584,9 +1584,6 @@
         "${ payload.count } запрашэнняў паспяхова адпраўлены",
         "${ payload.count } запрашэнняў паспяхова адпраўлены"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
       ],
@@ -1619,9 +1616,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Кантакт створаны для кожнага адраса электроннай пошты, які адпраўляе або атрымлівае лісты ад ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Новая версія спампоўваецца. Як толькі спампоўка завершыцца, яна будзе даступна пры наступным перазапуску."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
@@ -1856,9 +1850,6 @@
       ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Уключыць бэта-версію ${ PASS_SHORT_APP_NAME }"
       ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
@@ -2106,6 +2097,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2132,9 +2129,6 @@
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
-      ],
-      "No new versions are available at the moment.": [
-        "У цяперашні момант новыя версіі недаступны."
       ],
       "None": [
         "Адсутнічае"
@@ -2526,12 +2520,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
       ],
-      "This will reload the application.": [
-        "Гэта дзеянне перазагрузіць праграму."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Гэта дзеянне запусціць праверку новых бэта-версій."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
       ],
@@ -2546,9 +2534,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Нам давяраюць больш за 50 000 карыстальнікаў у сферы бізнесу і 100 мільёнаў уліковых запісаў па ўсім свеце."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў."
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -2994,9 +2979,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } абараняе вашу ідэнтычнасць з дапамогай убудаванай функцыі псеўданіма электроннай пошты, а не толькі захоўвае вашы запісы ўваходу. Кожны раз, калі вы рэгіструеце новы ўліковы запіс у інтэрнэце, ${ PASS_APP_NAME } можа аўтаматычна ствараць псеўданім для захавання вашага сапраўднага адраса электроннай пошты ў абароненым стане. "
-      ],
-      "Beta Access": [
-        "Бэта-доступ"
       ],
       "Biometrics": [
         "Біяметрыя"

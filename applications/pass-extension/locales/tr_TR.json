@@ -1546,9 +1546,6 @@
         "${ payload.count } davet gönderildi",
         "${ payload.count } davet gönderildi"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
       ],
@@ -2089,8 +2086,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2332,6 +2328,9 @@
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } tarafından korunmaktadır"
       ],
       "Quickly autofill your 2FA tokens.": [
         "İki adımlı doğrulama kodlarınızı otomatik doldurun."
@@ -2600,6 +2599,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
+      ],
+      "Unlock with biometrics": [
+        "Biyometri ile kilidi aç"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."

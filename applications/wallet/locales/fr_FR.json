@@ -31,6 +31,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -2732,6 +2735,9 @@
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -2757,6 +2763,9 @@
       ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2897,6 +2906,9 @@
       "for ${ price }": [
         "pour ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pour seulement ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Marquer Google Pay"
       ],
@@ -3004,6 +3016,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
+      ],
+      "RECOMMENDED": [
+        "RECOMMANDÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."

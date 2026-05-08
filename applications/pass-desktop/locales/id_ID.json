@@ -1500,9 +1500,6 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Kontak dibuat untuk setiap alamat email yang mengirimkan email ke atau menerima email dari ${ aliasEmail }."
       ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Versi baru sedang diunduh. Setelah selesai, versi tersebut akan tersedia saat memulai ulang berikutnya."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Versi terbaru dari ${ PASS_APP_NAME } telah tersedia. Perbarui aplikasi Anda untuk menikmati berbagai fitur terbaru dan perbaikan bug."
       ],
@@ -1731,9 +1728,6 @@
       "Emptying trash...": [
         "Mengosongkan sampah..."
       ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktifkan ${ PASS_SHORT_APP_NAME } beta"
-      ],
       "Enable auto-locking to secure your data": [
         "Aktifkan penguncian otomatis untuk mengamankan data Anda"
       ],
@@ -1956,9 +1950,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
-      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -1985,9 +1976,6 @@
       ],
       "No network connection": [
         "Tidak ada koneksi jaringan"
-      ],
-      "No new versions are available at the moment.": [
-        "Tidak ada versi baru yang tersedia saat ini."
       ],
       "None": [
         "Tidak ada"
@@ -2367,12 +2355,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tindakan ini akan menolak izin akses perangkat **${ name }** yang mencoba untuk masuk ke akun ${ BRAND_NAME } Anda pada **${ date }**."
       ],
-      "This will reload the application.": [
-        "Ini akan memuat ulang aplikasi."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Ini akan memicu pemeriksaan rilis beta terbaru."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Untuk tetap menerima email, alihkan alias ini ke kotak surat yang berbeda:"
       ],
@@ -2387,9 +2369,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dipercaya oleh lebih dari 50.000 pengguna bisnis dan 100 juta akun di seluruh dunia."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Coba fitur, pembaruan, dan produk terbaru ${ BRAND_NAME } sebelum rilis kepada publik."
       ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
@@ -2757,9 +2736,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Selain menyimpan login Anda, ${ PASS_APP_NAME } melindungi identitas Anda dengan fitur alias email terintegrasi. Setiap kali Anda mendaftar akun daring baru, ${ PASS_APP_NAME } dapat secara otomatis membuat alias untuk menjaga alamat email asli Anda tetap terlindungi. "
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Biometrics": [
         "Biometrik"

@@ -789,6 +789,9 @@
       "Re-sign": [
         "Паўторна падпісаць"
       ],
+      "Rebuild index": [
+        "Аднавіць індэкс"
+      ],
       "Reconnect": [
         "Перападключыцца"
       ],
@@ -932,6 +935,9 @@
       ],
       "Search drive": [
         "Пошук на дыску"
+      ],
+      "Search is unavailable": [
+        "Пошук недаступны"
       ],
       "See how": [
         "Паглядзець як"
@@ -3566,6 +3572,9 @@
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
+      "Folder not found": [
+        "Папка не знойдзена"
+      ],
       "Forward address is required": [
         "Патрабуецца адрас перасылкі"
       ],
@@ -5012,6 +5021,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Файлы ${ DOCS_APP_NAME } і ${ SHEETS_APP_NAME } не могуць быць спампаваны наўпрост і яны не будуць уключаны ў гэта спампоўванне. Вы можаце спампаваць іншыя файлы націснуўшы \"Працягнуць спампоўванне\"."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } выявіў, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } у App Store"
       ],
@@ -5462,6 +5474,9 @@
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
       ],
+      "Could not scan file for malware": [
+        "Немагчыма праверыць файл на шкодныя праграмы"
+      ],
       "Country code": [
         "Код краіны"
       ],
@@ -5684,6 +5699,12 @@
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
       ],
+      "File could not be scanned": [
+        "Не ўдалося сканіраваць файл"
+      ],
+      "File flagged as potentially malicious": [
+        "Файл пазначаны як патэнцыйна шкодны"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Файл не мае подпісу. Мы не можам спраўдзіць, што ${ emailAddress } запампаваў ${ fileName }."
       ],
@@ -5833,6 +5854,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Індэксавана ${ first }, ${ second }, ${ third } і ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце аднавіць індэкс."
       ],
       "Indexing in progress": [
         "Выконваецца індэксацыя"
@@ -6070,6 +6094,9 @@
       ],
       "Not connected": [
         "Не падключана"
+      ],
+      "Not enough storage space": [
+        "Недастаткова месца на дыску"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Нататка: даныя ўсё яшчэ могуць заставацца даступнымі лакальна на прыладзе, дзе ўсталяваны ${ DRIVE_APP_NAME }."
@@ -6317,11 +6344,29 @@
       "Search cannot be enabled in this browser": [
         "Немагчыма ўключыць пошук у гэтым браўзеры"
       ],
+      "Search data is corrupted": [
+        "Пошук даных пашкоджаны"
+      ],
       "Search Enabled": [
         "Пошук уключаны"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "У пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
+      ],
+      "Search engine error": [
+        "Памылка рухавіка пошуку"
+      ],
+      "Search error": [
+        "Памылка пошуку"
+      ],
+      "Search is in an invalid state": [
+        "Пошук мае памылковы стан"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Усё гатова для пошуку. Вашы фалы праіндэксаваны."
       ],
       "Search module is not available.": [
         "Модуль пошуку недаступны."
@@ -6487,6 +6532,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "У рухавіку пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
@@ -6994,6 +7042,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце аднавіць індэкс."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "У вашага браўзера адсутнічае функцыя спампоўкі вялікіх файлаў або некалькіх файлаў. Спампуйце настольную праграму для бесперашкоднай запампоўкі і спампоўкі."

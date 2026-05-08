@@ -220,6 +220,9 @@
       "Copy invite link": [
         "Copiar ligação de convite"
       ],
+      "Copy link": [
+        "Copiar ligação"
+      ],
       "Copy password": [
         "Copiar a palavra-passe"
       ],
@@ -2572,8 +2575,29 @@
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
       ],
+      "Failed to create public share node": [
+        "Erro ao criar o nó de partilha público"
+      ],
+      "Failed to fetch node": [
+        "Erro ao obter o nó"
+      ],
+      "Failed to fetch sharing info": [
+        "Erro ao obter as informações para partilhar"
+      ],
       "Failed to rename document. Please try again later.": [
         "Erro ao alterar o nome do documento Tente novamente mais tarde."
+      ],
+      "Failed to resend invitation": [
+        "Erro ao reenviar o convite"
+      ],
+      "Failed to unshare node": [
+        "Erro ao deixar de partilhar o nó"
+      ],
+      "Failed to update direct share node": [
+        "Erro ao atualizar o nó de partilha direto"
+      ],
+      "Failed to update public share node": [
+        "Erro ao atualizar o nó de partilha público"
       ],
       "File \"${ name }\" is already downloading": [
         "O ficheiro \"${ name }\" já está a ser transferido."
@@ -2757,6 +2781,9 @@
       "status page": [
         "página de status"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Erro ao interromper a partilha deste item"
+      ],
       "The address might be misspelled": [
         "O endereço pode estar errado"
       ],
@@ -2786,6 +2813,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "A última atualização feita no documento é muito grande ou excede o limite total de tamanho do documento. A edição foi temporariamente desativada. A sua alteração não será salva. Por favor, exporte uma cópia do seu documento e recarregue a página."
+      ],
+      "The link to your item failed to be deleted": [
+        "Falha ao eliminar a ligação ao item"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "A nova revisão do ficheiro original ainda não foi enviada. Tente novamente mais tarde."
@@ -4213,6 +4243,9 @@
       ],
       "Loading link": [
         "Carregamento da ligação"
+      ],
+      "Loading...": [
+        "A carregar..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Parece que está offline. O documento não pode ser editado enquanto estiver offline. Verifique a conectividade do seu dispositivo."

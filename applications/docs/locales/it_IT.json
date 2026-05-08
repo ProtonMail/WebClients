@@ -226,6 +226,9 @@
       "Copy invite link": [
         "Copia il link di invito"
       ],
+      "Copy link": [
+        "Copia link"
+      ],
       "Copy password": [
         "Copia la password"
       ],
@@ -696,6 +699,9 @@
       "Select all": [
         "Seleziona tutti"
       ],
+      "Set password or expiration date": [
+        "Imposta password o data di scadenza"
+      ],
       "Set recovery methods": [
         "Imposta i metodi di recupero"
       ],
@@ -719,6 +725,9 @@
       ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La condivisione è crittografata end-to-end"
       ],
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
@@ -2763,6 +2772,9 @@
       "Already a member of this share": [
         "Già membro di questa condivisione"
       ],
+      "An error occurred": [
+        "Si è verificato un errore"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Si è verificato un errore durante la conversione del documento. Riprova."
       ],
@@ -2855,6 +2867,15 @@
       "Failed to copy photo to album": [
         "Impossibile copiare la foto nell'album"
       ],
+      "Failed to create public share node": [
+        "Impossibile creare il nodo di condivisione pubblico"
+      ],
+      "Failed to fetch node": [
+        "Impossibile recuperare il nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Impossibile recuperare le informazioni di condivisione"
+      ],
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
       ],
@@ -2863,6 +2884,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Impossibile rinominare il documento. Riprova più tardi."
+      ],
+      "Failed to resend invitation": [
+        "Impossibile rinviare l'invito"
+      ],
+      "Failed to unshare node": [
+        "Impossibile annullare la condivisione del nodo"
+      ],
+      "Failed to update direct share node": [
+        "Impossibile aggiornare il nodo di condivisione diretta"
+      ],
+      "Failed to update public share node": [
+        "Impossibile aggiornare il nodo di condivisione pubblico"
       ],
       "File \"${ name }\" is already downloading": [
         "Il file \"${ name }\" è già in fase di download"
@@ -3052,6 +3085,9 @@
       "status page": [
         "pagina di stato"
       ],
+      "Stopping the sharing of this item has failed": [
+        "L'interruzione della condivisione di questo elemento non è riuscita"
+      ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
       ],
@@ -3081,6 +3117,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "L'ultimo aggiornamento apportato al documento è troppo grande o supererebbe il limite di dimensione totale del documento. La funzionalità di modifica è stata temporaneamente disabilitata. Le modifiche effettuate non verranno salvate. Esporta una copia del documento e ricarica la pagina."
+      ],
+      "The link to your item failed to be deleted": [
+        "Eliminazione del link al tuo elemento non riuscita"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La nuova revisione del file originale non è ancora stata caricata, riprova più tardi"
@@ -3184,6 +3223,12 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecifrabile"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrabile"
       ]
     },
     "error": {
@@ -4599,6 +4644,9 @@
       "Limited availability": [
         "Disponibilità limitata"
       ],
+      "Link copied": [
+        "Link copiato"
+      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -4616,6 +4664,9 @@
       ],
       "Loading link": [
         "Caricamento del link"
+      ],
+      "Loading...": [
+        "Caricamento in corso..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Sembra che tu sia offline. Il documento non può essere modificato mentre sei offline. Controlla la connettività del tuo dispositivo."
@@ -4709,6 +4760,9 @@
         "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
       ],
       "Owner": [
+        "Proprietario"
+      ],
+      "owner": [
         "Proprietario"
       ],
       "password": [
@@ -5118,6 +5172,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quando ti connetti a una VPN, questa utilizza la tecnologia di crittografia per nascondere il tuo indirizzo IP (un codice univoco assegnato al tuo dispositivo)."
       ],
+      "Who has access": [
+        "Chi ha accesso"
+      ],
       "words": [
         "parole"
       ],
@@ -5402,6 +5459,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
       ],
+      "Active": [
+        "Attivo"
+      ],
       "Add email address": [
         "Aggiungi indirizzo email"
       ],
@@ -5413,6 +5473,12 @@
       ],
       "Alias title": [
         "Titolo dell'alias"
+      ],
+      "Anonymous": [
+        "Anonimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Chiunque su Internet con il link"
       ],
       "Anyone on the Internet with the link can edit": [
         "Chiunque su Internet con questo link può modificare"
@@ -5452,6 +5518,12 @@
       ],
       "Calendar": [
         "Calendario"
+      ],
+      "can edit": [
+        "può modificare"
+      ],
+      "can view": [
+        "posso vedere"
       ],
       "Cancel download": [
         "Annulla il download"
@@ -5494,6 +5566,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimina il link e rimuovi l'accesso per tutti"
       ],
       "Delete recovery-related information.": [
         "Elimina le informazioni di recupero."
@@ -5653,6 +5728,9 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "Not active": [
+        "Inattivo"
       ],
       "Note": [
         "Nota"
@@ -8800,6 +8878,9 @@
       "Accepted": [
         "Accettato"
       ],
+      "pending": [
+        "in sospeso"
+      ],
       "Pending": [
         "In attesa"
       ]
@@ -9622,6 +9703,12 @@
       "Private browsing vs VPN": [
         "Navigazione privata vs VPN"
       ],
+      "Public link": [
+        "Link pubblico"
+      ],
+      "Public link settings": [
+        "Impostazioni link pubblico"
+      ],
       "Re-sign all contacts": [
         "Firma nuovamente tutti i contatti"
       ],
@@ -9675,6 +9762,9 @@
       ],
       "Settings": [
         "Impostazioni"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Impostazioni per ${ sharedFileName }"
       ],
       "Share ${ name }": [
         "Condividi ${ name }"

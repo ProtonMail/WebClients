@@ -222,6 +222,9 @@
       "Copy invite link": [
         "Kopiuj link zaproszenia"
       ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
       "Copy password": [
         "Kopiuj hasło"
       ],
@@ -2559,6 +2562,9 @@
       "Already a member of this share": [
         "To jest już użytkownik elementu"
       ],
+      "An error occurred": [
+        "Wystąpił błąd"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Wystąpił błąd podczas konwertowania dokumentu. Spróbuj ponownie."
       ],
@@ -2652,11 +2658,32 @@
       "Failed to copy photo to album": [
         "Nie udało się skopiować zdjęcia do albumu"
       ],
+      "Failed to create public share node": [
+        "Nie udało się utworzyć publicznego węzła udostępniania"
+      ],
+      "Failed to fetch node": [
+        "Nie udało się pobrać węzła"
+      ],
+      "Failed to fetch sharing info": [
+        "Nie udało się pobrać informacji o udostępnianiu"
+      ],
       "Failed to open to contact": [
         "Nie udało się otworzyć kontaktu"
       ],
       "Failed to rename document. Please try again later.": [
         "Nie udało się zmienić nazwy dokumentu. Spróbuj ponownie później."
+      ],
+      "Failed to resend invitation": [
+        "Nie udało się ponownie wysłać zaproszenia"
+      ],
+      "Failed to unshare node": [
+        "Nie udało się usunąć udostępniania węzła"
+      ],
+      "Failed to update direct share node": [
+        "Nie udało się zaktualizować bezpośredniego węzła udostępniania"
+      ],
+      "Failed to update public share node": [
+        "Nie udało się zaktualizować publicznego węzła udostępniania"
       ],
       "File \"${ name }\" is already downloading": [
         "Pobieranie pliku \"${ name }\""
@@ -2850,6 +2877,9 @@
       "status page": [
         "stronę statusu"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Zatrzymanie udostępniania nie powiodło się"
+      ],
       "The address might be misspelled": [
         "Adres mógł zostać błędnie wpisany"
       ],
@@ -2879,6 +2909,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Ostatnia aktualizacja dokumentu jest za duża lub przekracza maksymalny rozmiar pliku. Edycja została tymczasowo wyłączona. Twoja zmiana nie zostanie zapisana. Wyeksportuj kopię dokumentu i odśwież stronę."
+      ],
+      "The link to your item failed to be deleted": [
+        "Usunięcie linku do elementu nie powiodło się"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nowa rewizja oryginalnego pliku nie została przesłana. Spróbuj ponownie później"
@@ -2972,6 +3005,9 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Zaszyfrowana nazwa"
       ]
     },
     "Error importing calendar": {
@@ -4422,6 +4458,9 @@
       ],
       "Loading link": [
         "Ładowanie linku"
+      ],
+      "Loading...": [
+        "Ładowanie..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Wygląda na to, że jesteś w trybie offline. Dokumentu nie można edytować w trybie offline. Sprawdź połączenie swojego urządzenia."
@@ -8571,6 +8610,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Wykorzystana przestrzeń"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Aby korzystać z usług ${ BRAND_NAME }, zwolnij część miejsca lub${ upgrade }"

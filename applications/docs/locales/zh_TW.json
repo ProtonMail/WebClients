@@ -114,6 +114,9 @@
       "Cancel subscription": [
         "取消訂購授權"
       ],
+      "Change my access": [
+        "更改我的存取權限"
+      ],
       "Change password": [
         "變更密碼"
       ],
@@ -204,11 +207,17 @@
       "Copy alias “${ name }”": [
         "複製別名 \"${ name }\""
       ],
+      "Copy as markdown": [
+        "以 Markdown 格式複製"
+      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
       "Copy invite link": [
         "複製邀請連結"
+      ],
+      "Copy link": [
+        "複製連結"
       ],
       "Copy password": [
         "複製密碼"
@@ -468,6 +477,9 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
+      "More options for accounts": [
+        "更多帳號選項"
+      ],
       "Move": [
         "移動"
       ],
@@ -573,6 +585,9 @@
       "Remove button": [
         "移除按鈕"
       ],
+      "Remove my access": [
+        "移除我的存取權限"
+      ],
       "Rename": [
         "重新命名"
       ],
@@ -668,6 +683,12 @@
       ],
       "Share your calendar with your team": [
         "與團隊共享您的行事曆"
+      ],
+      "Shared": [
+        "已共享"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "共享是端對端加密"
       ],
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
@@ -1274,6 +1295,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "進階帳號和網路安全於單一方案"
+      ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
       ],
@@ -1973,6 +1997,9 @@
       "North Korea": [
         "北韓"
       ],
+      "North Macedonia": [
+        "北馬其頓"
+      ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
       ],
@@ -2343,6 +2370,9 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -2673,6 +2703,9 @@
       "Already a member of this share": [
         "已經是這個分享的成員了"
       ],
+      "An error occurred": [
+        "發生錯誤"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "轉換文件時發生錯誤，請再試一次。"
       ],
@@ -2762,6 +2795,9 @@
       ],
       "Failed to rename document. Please try again later.": [
         "無法重新命名文件，請稍後重試。"
+      ],
+      "Failed to resend invitation": [
+        "失敗重新傳送邀請"
       ],
       "File \"${ name }\" is already downloading": [
         "檔案 「${ name } 」已在下載中"
@@ -2973,6 +3009,9 @@
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "您最近對文件所做的更新過大，或將超過文件總大小限制。編輯功能已暫時停用。您的變更將不會被儲存。請匯出文件副本並重新載入頁面。"
       ],
+      "The link to your item failed to be deleted": [
+        "未能刪除指向您項目的連結"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "原始檔案的新修訂版本尚未上載，請稍後再試"
       ],
@@ -3065,6 +3104,12 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️無法解密的裝置"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️無法解密的名字"
       ]
     },
     "error": {
@@ -4057,6 +4102,15 @@
       "Calendar side panel": [
         "行事曆側面板"
       ],
+      "Can edit": [
+        "可以編輯"
+      ],
+      "Can view and edit": [
+        "可檢視和編輯"
+      ],
+      "Can view only": [
+        "僅供檢視"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
@@ -4387,6 +4441,9 @@
       "Limited availability": [
         "有限的可用性"
       ],
+      "Link copied": [
+        "已複製連結"
+      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
@@ -4404,6 +4461,9 @@
       ],
       "Loading link": [
         "正在載入連結"
+      ],
+      "Loading...": [
+        "載入中‧‧‧"
       ],
       "Low Priority": [
         "較低優先順序"
@@ -5085,8 +5145,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
+      "Access": [
+        "存取"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
+      ],
+      "Active": [
+        "啟用"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -5102,6 +5168,9 @@
       ],
       "Alias title": [
         "別名標題"
+      ],
+      "Anonymous": [
+        "匿名 "
       ],
       "Anyone on the Internet with the link can edit": [
         "網路上的任何人只要知道連結都可以編輯"
@@ -5142,6 +5211,12 @@
       "Calendar": [
         "行事曆"
       ],
+      "can edit": [
+        "可以編輯"
+      ],
+      "can view": [
+        "可以查看"
+      ],
       "Cancel download": [
         "取消下載"
       ],
@@ -5166,6 +5241,9 @@
       "Contacts": [
         "聯絡人"
       ],
+      "Continue cancelling": [
+        "持續取消"
+      ],
       "Copy": [
         "複製"
       ],
@@ -5183,6 +5261,9 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Delete link and remove access for everyone": [
+        "刪除連結並移除所有人的存取權"
       ],
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
@@ -5346,6 +5427,9 @@
       "New password": [
         "新密碼"
       ],
+      "Not active": [
+        "尚未啟用"
+      ],
       "Note": [
         "備註"
       ],
@@ -5406,8 +5490,14 @@
       "Replace existing folder": [
         "取代已存在的資料夾"
       ],
+      "Require password": [
+        "需要密碼"
+      ],
       "Reveal password": [
         "顯示密碼"
+      ],
+      "Set a password to limit access via link": [
+        "設定密碼以限制透過連結的存取"
       ],
       "Set expiration date": [
         "設定到期日"
@@ -6884,6 +6974,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" 已共享"
+      ],
       "\"${ name }\" created successfully": [
         "「${ name }」已成功創建"
       ],
@@ -7209,6 +7302,9 @@
       ],
       "Advanced threat protection": [
         "進階的威脅保護"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "與非 ${ BRAND_NAME } 使用者合作"
       ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
@@ -8057,6 +8153,11 @@
         "由 ${ ownerName } 分享"
       ]
     },
+    "sheets_2025:Action": {
+      "New spreadsheet": [
+        "新增工作表"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "不要簽章"
@@ -8308,8 +8409,14 @@
       "Accepted": [
         "已接受"
       ],
+      "pending": [
+        "待處理"
+      ],
       "Pending": [
         "擱置中"
+      ],
+      "user joined": [
+        "成員已加入"
       ]
     },
     "Storage": {
@@ -8755,6 +8862,9 @@
       "Cannot load link": [
         "無法載入連結"
       ],
+      "Change access to viewer?": [
+        "變更存取權至檢視者?"
+      ],
       "Change password": [
         "更改密碼"
       ],
@@ -9082,6 +9192,9 @@
       "Private browsing vs VPN": [
         "私有瀏覽 對比 VPN"
       ],
+      "Public link settings": [
+        "公開連結的設定"
+      ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
       ],
@@ -9099,6 +9212,9 @@
       ],
       "Recover data": [
         "恢復資料"
+      ],
+      "Remove your access?": [
+        "移除您的存取權限？"
       ],
       "Report a problem": [
         "回報問題"
@@ -9201,6 +9317,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
       "Upload and share files": [
         "上傳並共享檔案"

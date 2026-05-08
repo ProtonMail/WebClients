@@ -18059,11 +18059,6 @@
         "アドレスキーを生成できませんでした。ポスト量子保護を有効にするには、手動で新しい暗号キーを生成する必要があります。\n\n${ settingsLink }に行き、それぞれのアドレスに対して「キーを生成する」を選択してください。"
       ]
     },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**${ BRAND_NAME } のすべてのモバイルアプリを更新してください**。古いバージョンのアプリでは、新しいキーは機能しません。"
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "これによりアカウントに新しい耐量子暗号キーが生成されます。"

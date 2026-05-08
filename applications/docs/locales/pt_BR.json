@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Perguntar na próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "São permitidos no máximo ${ maxContacts } contato por grupo de contatos.",
         "São permitidos no máximo ${ maxContacts } contatos por grupo de contatos."
@@ -120,6 +123,9 @@
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
+      ],
+      "Change my access": [
+        "Alterar meu acesso"
       ],
       "Change password": [
         "Alterar senha"
@@ -228,6 +234,9 @@
       ],
       "Copy invite link": [
         "Copiar link de convite"
+      ],
+      "Copy link": [
+        "Copiar link"
       ],
       "Copy password": [
         "Copiar senha"
@@ -350,6 +359,9 @@
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
+      ],
+      "Encrypted": [
+        "Criptografado"
       ],
       "Expand": [
         "Expandir"
@@ -627,6 +639,9 @@
       "Remove file": [
         "Remover arquivo"
       ],
+      "Remove my access": [
+        "Remover meu acesso"
+      ],
       "Rename": [
         "Renomear"
       ],
@@ -678,6 +693,9 @@
       "Save changes": [
         "Salvar alterações"
       ],
+      "Save preferences": [
+        "Salvar preferências"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -708,6 +726,9 @@
       "Select all": [
         "Selecionar tudo"
       ],
+      "Set password or expiration date": [
+        "Definir senha ou data de expiração"
+      ],
       "Set recovery methods": [
         "Definir métodos de recuperação"
       ],
@@ -731,6 +752,12 @@
       ],
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"
+      ],
+      "Shared": [
+        "Compartilhado"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "O compartilhado com criptografia ponta a ponta"
       ],
       "Show advanced PGP settings": [
         "Mostrar configurações PGP avançadas"
@@ -2816,6 +2843,9 @@
       "Already a member of this share": [
         "Já é membro deste compartilhamento"
       ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Ocorreu um erro ao tentar converter o documento. Tente novamente."
       ],
@@ -2905,8 +2935,20 @@
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as configurações de permissões"
+      ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
+      ],
+      "Failed to create public share node": [
+        "Erro ao criar o nó de compartilhamento público"
+      ],
+      "Failed to fetch node": [
+        "Erro ao obter o nó"
+      ],
+      "Failed to fetch sharing info": [
+        "Erro ao obter as informações para compartilhar"
       ],
       "Failed to open to contact": [
         "Não foi possível abrir o contato"
@@ -2916,6 +2958,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
+      ],
+      "Failed to resend invitation": [
+        "Erro ao reenviar o convite"
+      ],
+      "Failed to unshare node": [
+        "Erro ao deixar de compartilhar o nó"
+      ],
+      "Failed to update direct share node": [
+        "Erro ao atualizar o nó de compartilhamento direto"
+      ],
+      "Failed to update public share node": [
+        "Erro ao atualizar o nó de compartilhamento público"
       ],
       "File \"${ name }\" is already downloading": [
         "O arquivo \"${ name }\" já está sendo baixado"
@@ -3105,6 +3159,9 @@
       "status page": [
         "página de status"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Erro ao interromper o compartilhamento deste item"
+      ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
@@ -3134,6 +3191,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "A última atualização feita no documento é muito grande ou excederia o limite de tamanho do documento. A edição foi temporariamente desativada e sua alteração não será salva. Exporte uma cópia do documento e recarregue a página."
+      ],
+      "The link to your item failed to be deleted": [
+        "Erro ao excluir o link do seu item"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "A nova revisão do arquivo original ainda não foi carregada. Tente novamente mais tarde."
@@ -3240,6 +3300,12 @@
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecifrável"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrável"
       ]
     },
     "error": {
@@ -4310,6 +4376,18 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can edit and manage access": [
+        "Pode editar e gerenciar acesso"
+      ],
+      "Can view and edit": [
+        "Pode ver e editar"
+      ],
+      "Can view only": [
+        "Pode somente visualização"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
       ],
@@ -4351,6 +4429,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Converting document...": [
+        "Convertendo o documento..."
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
@@ -4400,6 +4481,9 @@
       ],
       "Creating link to folder": [
         "Criando link para a pasta"
+      ],
+      "Creating new document...": [
+        "Criando novo documento..."
       ],
       "Current plan": [
         "Plano atual"
@@ -4500,6 +4584,12 @@
       "Enter your own password (as trusted contact).": [
         "Digite sua própria senha (como contato de confiança)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Erro ao converter o documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Erro ao carregar o documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
@@ -4562,6 +4652,12 @@
       ],
       "Geoblocking": [
         "Bloqueio geográfico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Receba atualizações por e-mail para comentários e sugestões adicionados nos seus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Receber notificações sobre comentários"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Governos e provedores de internet (ISPs) podem monitorar sua atividade on-line. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
@@ -4678,6 +4774,9 @@
       "Limited availability": [
         "Disponibilidade limitada"
       ],
+      "Link copied": [
+        "Link copiado"
+      ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
@@ -4696,11 +4795,17 @@
       "Loading link": [
         "Carregando link"
       ],
+      "Loading...": [
+        "Carregando..."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Parece que você está off-line. O documento não pode ser editado enquanto você estiver off-line. Verifique a conectividade de seu dispositivo."
       ],
       "Low Priority": [
         "Baixa prioridade"
+      ],
+      "Making a copy...": [
+        "Fazendo uma cópia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
@@ -4789,6 +4894,9 @@
       ],
       "Owner": [
         "Proprietário"
+      ],
+      "owner": [
+        "proprietário"
       ],
       "password": [
         "senha"
@@ -5203,6 +5311,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quando você se conectar à VPN, ela usa tecnologia de criptografia para ocultar seu endereço IP (um código exclusivo atribuído ao seu dispositivo)."
       ],
+      "Who has access": [
+        "Quem tem acesso"
+      ],
       "words": [
         "palavras"
       ],
@@ -5481,8 +5592,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
+      "Access": [
+        "Acesso"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
+      "Active": [
+        "ativo"
       ],
       "Add email address": [
         "Adicionar endereços de e-mail"
@@ -5498,6 +5615,15 @@
       ],
       "Alias title": [
         "Título do alias"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitir que editores alterem permissões e compartilhem"
+      ],
+      "Anonymous": [
+        "Anônimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na internet com este link"
       ],
       "Anyone on the Internet with the link can edit": [
         "Qualquer pessoa na internet com este link pode editar"
@@ -5537,6 +5663,12 @@
       ],
       "Calendar": [
         "Calendário"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
       ],
       "Cancel download": [
         "Cancelar download"
@@ -5583,8 +5715,14 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete link and remove access for everyone": [
+        "Excluir o link e remover o acesso para todos"
+      ],
       "Delete recovery-related information.": [
         "Excluir a informação de recuperação."
+      ],
+      "Disable this link on a specific date": [
+        "Desativar este link em uma data específica"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -5628,11 +5766,17 @@
       "Emails (last month)": [
         "E-mails (último mês)"
       ],
+      "Enable email notifications": [
+        "Ativar as notificações por e-mail"
+      ],
       "Encrypt emails": [
         "Criptografar e-mails"
       ],
       "Erase this link and remove everyone with access": [
         "Apagar este link e remover todos com acesso"
+      ],
+      "Expiry": [
+        "Expiração"
       ],
       "Extended address": [
         "Endereço completo"
@@ -5675,6 +5819,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir os registros do aplicativo no relatório de erro"
+      ],
+      "Include document name in notification": [
+        "Incluir o nome do documento em notificações"
       ],
       "Include message and file name in invite email": [
         "Incluir mensagem e nome do arquivo no e-mail de convite."
@@ -5748,6 +5895,9 @@
       "New password": [
         "Nova senha"
       ],
+      "Not active": [
+        "Não ativo"
+      ],
       "Note": [
         "Nota"
       ],
@@ -5808,8 +5958,14 @@
       "Replace existing folder": [
         "Substituir pasta existente"
       ],
+      "Require password": [
+        "Exigir senha"
+      ],
       "Reveal password": [
         "Mostrar senha"
+      ],
+      "Set a password to limit access via link": [
+        "Defina uma senha para limitar o acesso por link"
       ],
       "Set expiration date": [
         "Definir data de expiração"
@@ -7403,6 +7559,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" compartilhado"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" criado"
       ],
@@ -7600,6 +7759,12 @@
       ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta raiz"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuração atualizada. Editores podem alterar permissões e compartilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuração atualizada. Editores não podem alterar permissões ou compartilhar."
       ],
       "Share invitation accepted successfully": [
         "Convite para compartilhamento aceito com sucesso"
@@ -8714,6 +8879,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Criando nova planilha..."
+      ],
       "Detect automatically": [
         "Detectar automaticamente"
       ],
@@ -9029,8 +9197,14 @@
       "Accepted": [
         "Aceito"
       ],
+      "pending": [
+        "pendente"
+      ],
       "Pending": [
         "Pendente"
+      ],
+      "user joined": [
+        "usuário entrou"
       ]
     },
     "Storage": {
@@ -9509,6 +9683,9 @@
       "Cannot load link": [
         "Não foi possível carregar o link"
       ],
+      "Change access to viewer?": [
+        "Alterar acesso para visualizador?"
+      ],
       "Change password": [
         "Alterar senha"
       ],
@@ -9854,6 +10031,12 @@
       "Private browsing vs VPN": [
         "Navegação privada vs VPN"
       ],
+      "Public link": [
+        "Link público"
+      ],
+      "Public link settings": [
+        "Configurações de link público"
+      ],
       "Re-sign all contacts": [
         "Assinar novamente todos os contatos"
       ],
@@ -9871,6 +10054,9 @@
       ],
       "Recover data": [
         "Recuperar dados"
+      ],
+      "Remove your access?": [
+        "Remover seu acesso?"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -9913,6 +10099,12 @@
       ],
       "Settings": [
         "Configurações"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Configurações para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartilhar \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Compartilhar ${ name }"
@@ -10049,6 +10241,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
+      ],
+      "Change shared item settings": [
+        "Alterar configurações de itens compartilhados"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"

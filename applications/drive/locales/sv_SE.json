@@ -45,6 +45,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Lägg till ${ photoCount } foto till ett nytt album",
         "Lägg till ${ photoCount } foton till ett nytt album"
@@ -778,6 +781,9 @@
       ],
       "Re-sign": [
         "Återsignera"
+      ],
+      "Rebuild index": [
+        "Bygg om index"
       ],
       "Reconnect": [
         "Anslut igen"
@@ -5264,6 +5270,9 @@
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
       ],
+      "Could not scan file for malware": [
+        "Kunde inte skanna fil för skadlig kod"
+      ],
       "Country code": [
         "Landskod"
       ],
@@ -5516,6 +5525,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
@@ -5849,6 +5861,9 @@
       "Not connected": [
         "Inte ansluten"
       ],
+      "Not enough storage space": [
+        "Inte tillräckligt ledigt lagringsutrymme"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Obs! Data kan fortfarande vara tillgänglig lokalt på enheter där du har installerat ${ DRIVE_APP_NAME }."
       ],
@@ -6042,6 +6057,9 @@
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
       ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
@@ -6093,11 +6111,23 @@
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
       ],
+      "Search data is corrupted": [
+        "Sökdata är skadad"
+      ],
       "Search Enabled": [
         "Sökning aktiverad"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Sök stötte på ett internt fel. Återskapa indexet för att återställa."
+      ],
+      "Search error": [
+        "Sökfel"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Sök är redo. Dina filer har indexerats."
       ],
       "Search module is not available.": [
         "Sökmodul inte tillgänglig."
@@ -6261,6 +6291,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Sökmotorn stötte på ett internt fel. Återskapa indexet för att återställa."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
