@@ -36,7 +36,7 @@ const PostQuantumKeysOptInSection = () => {
             const { Sessions } = await api<{ Sessions: Session[] }>(querySessions());
             if (isMounted()) {
                 setState({
-                    pqcIncompatibleSessions: Sessions.some(({ PgpV6Capable }) => !PgpV6Capable),
+                    pqcIncompatibleSessions: Sessions.some(({ PgpV6Capable }) => PgpV6Capable === false),
                 });
             }
         };
