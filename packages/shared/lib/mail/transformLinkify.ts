@@ -1,13 +1,6 @@
-import LinkifyIt from 'linkify-it';
-
+import { filterAllowedMatches, linkifyInstance } from '@proton/shared/lib/mail/linkifyInstance';
 import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
-
-export const CUSTOM_DOMAINS = ['cloud', 'team'];
-
-const linkifyInstance = new LinkifyIt();
-
-linkifyInstance.tlds(CUSTOM_DOMAINS, true);
 
 const htmlEntities = (str = '') => {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -31,9 +24,9 @@ export const transformLinkify = ({
     canCleanUTMTrackers?: boolean;
     onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void;
 }) => {
-    const matches = linkifyInstance.match(content);
+    const matches = filterAllowedMatches(linkifyInstance.match(content));
 
-    if (!matches) {
+    if (matches.length === 0) {
         return htmlEntities(content);
     }
 
