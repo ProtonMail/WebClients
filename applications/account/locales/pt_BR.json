@@ -2070,11 +2070,11 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 novas funções administrativas"
+      ],
       "3 new admin roles": [
         "3 novas funções administrativas"
-      ],
-      "Admin roles": [
-        "Funções administrativas"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
@@ -2091,20 +2091,14 @@
       "New: Control admin access for individual users": [
         "Novo: Controle acesso de administrador para usuários individuais"
       ],
-      "Organization admin": [
-        "Adminsitrador da organização"
+      "New: Control admin access for many users at once": [
+        "Novo: Controle o acesso de administradores para vários usuários de uma só vez"
       ],
       "Organization admin:": [
         "Adminsitrador da organização:"
       ],
-      "Security admin": [
-        "Administrador de segurança"
-      ],
       "Security admin:": [
         "Administrador de segurança:"
-      ],
-      "User admin": [
-        "Adminsitrador de usuário"
       ],
       "User admin:": [
         "Adminsitrador de usuário:"
@@ -11562,6 +11556,9 @@
       "Recently used servers:": [
         "Servidores usados recentemente:"
       ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -19529,11 +19526,6 @@
         "Não foi possível gerar chaves de endereço. Para ativar a proteção pós-quântica, você precisará gerar suas novas chaves de criptografia manualmente.\n\nAcesse ${ settingsLink } e selecione 'Gerar chave' para cada endereço."
       ]
     },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Você deve atualizar todos os aplicativos móveis ${ BRAND_NAME }**: suas novas chaves não funcionarão em versões mais antigas do aplicativo."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Isso gerará novas chaves de criptografia resistentes à computação quântica para sua conta."
@@ -20720,6 +20712,9 @@
       "Congratulations": [
         "Parabéns"
       ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Não recebeu? ${ sendANewCode }"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -20806,6 +20801,9 @@
       ],
       "Verify your recovery phone": [
         "Verificar seu telefone de recuperação"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Você pode usar a verificação por e-mail para recuperar o acesso à sua conta caso esqueça a senha."
       ],
       "Your security setup": [
         "Sua configuração de segurança"
@@ -22527,6 +22525,12 @@
       "Available on this device": [
         "Disponível neste dispositivo"
       ],
+      "Disable device data backup": [
+        "Desativar o backup de dados do dispositivo"
+      ],
+      "Disable emergency access": [
+        "Desativar acesso de emergência"
+      ],
       "Disable QR code sign-in": [
         "Desativar início de sessão por código QR"
       ],
@@ -22535,6 +22539,9 @@
       ],
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
+      ],
+      "Disable recovery file": [
+        "Desativar arquivo de recuperação"
       ],
       "Disable signed-in reset": [
         "Desativar opção de início de sessão por redefinição"

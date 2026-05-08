@@ -2070,9 +2070,6 @@
       "3 new admin roles": [
         "3 nye administratorroller"
       ],
-      "Admin roles": [
-        "Administratorroller"
-      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
       ],
@@ -2091,20 +2088,11 @@
       "New: Control admin access for individual users": [
         "Nytt: kontroller administratortilgang for individuelle brukere"
       ],
-      "Organization admin": [
-        "Organisasjonsadministrator"
-      ],
       "Organization admin:": [
         "Organisasjonsadministrator:"
       ],
-      "Security admin": [
-        "Sikkerhetsadministrator"
-      ],
       "Security admin:": [
         "Sikkerhetsadministrator:"
-      ],
-      "User admin": [
-        "Brukeradministrator"
       ],
       "User admin:": [
         "Brukeradministrator:"
@@ -19590,11 +19578,6 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Kunne ikke generere adressenøkler. For å aktivere postkvantebeskyttelse, må du generere de nye krypteringsnøklene manuelt.\n\nGå til ${ settingsLink } og velg 'Generer nøkkel' for hver adresse."
-      ]
-    },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Du må oppdatere alle ${ BRAND_NAME }-mobilapper**: de nye nøklene dine vil ikke fungere på eldre appversjoner."
       ]
     },
     "PQC key generation": {
