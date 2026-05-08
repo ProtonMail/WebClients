@@ -31,6 +31,10 @@ export const WrappedProtonMeetContainer = () => {
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isAudioMixingEnabled = isMeetEnableAudioMixing && !isMeetEnableSpatialAudio;
 
+    const isMeetAdaptiveStream = useFlag('MeetAdaptiveStream');
+    const isMeetDynacast = useFlag('MeetDynacast');
+    const isMeetSimulcast = useFlag('MeetSimulcast');
+
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
@@ -60,10 +64,10 @@ export const WrappedProtonMeetContainer = () => {
                     ? qualityConstants[QualityScenarios.PortraitView].resolution
                     : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
             },
-            dynacast: true,
-            adaptiveStream: isMeetHigherBitrate,
+            dynacast: isMeetDynacast,
+            adaptiveStream: isMeetAdaptiveStream,
             publishDefaults: {
-                simulcast: true,
+                simulcast: isMeetSimulcast,
                 backupCodec: true,
                 degradationPreference: 'maintain-framerate',
                 videoEncoding: {
