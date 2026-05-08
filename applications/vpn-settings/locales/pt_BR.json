@@ -1472,11 +1472,11 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 novas funções administrativas"
+      ],
       "3 new admin roles": [
         "3 novas funções administrativas"
-      ],
-      "Admin roles": [
-        "Funções administrativas"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
@@ -1493,20 +1493,14 @@
       "New: Control admin access for individual users": [
         "Novo: Controle acesso de administrador para usuários individuais"
       ],
-      "Organization admin": [
-        "Adminsitrador da organização"
+      "New: Control admin access for many users at once": [
+        "Novo: Controle o acesso de administradores para vários usuários de uma só vez"
       ],
       "Organization admin:": [
         "Adminsitrador da organização:"
       ],
-      "Security admin": [
-        "Administrador de segurança"
-      ],
       "Security admin:": [
         "Administrador de segurança:"
-      ],
-      "User admin": [
-        "Adminsitrador de usuário"
       ],
       "User admin:": [
         "Adminsitrador de usuário:"
@@ -7926,6 +7920,9 @@
       ],
       "Recently used servers:": [
         "Servidores usados recentemente:"
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
