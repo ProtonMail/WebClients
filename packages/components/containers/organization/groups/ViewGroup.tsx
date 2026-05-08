@@ -5,14 +5,20 @@ import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import Copy from '@proton/components/components/button/Copy';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
-import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { KEY_FLAG, SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Group } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import AddUsersToGroupModal from './AddUsersToGroupModal';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
@@ -38,6 +44,17 @@ const ViewGroup = ({
     const addUsersToGroupModal = useModalStateObject();
     const deleteGroupPrompt = useModalStateObject();
     const [addingMembers, withAddingMembers] = useLoading();
+    const hasAdminRoles = useFlag('AdminRoleMVP');
+    const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
+        FeatureCode.AdminRolesGroupOnboardingModal
+    );
+    const isAdminRolesModalDismissed = !adminRolesModalLoading && !adminRolesModalFeature?.Value;
+    const {
+        show: showSpotlight,
+        onDisplayed: onSpotlightDisplayed,
+        onClose: onSpotlightClose,
+    } = useSpotlightOnFeature(FeatureCode.AdminRolesGroupEditSpotlight, hasAdminRoles && isAdminRolesModalDismissed);
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
 
     const handleAddMembers = (group: Group, emails: string[]) => {
         void withAddingMembers(actions.onAddGroupMembers(group, emails));
@@ -81,18 +98,29 @@ const ViewGroup = ({
                                 <IcUserPlus className="shrink-0 mr-2" alt={c('Action').t`Add user`} />
                                 <span>{c('Action').t`Add user`}</span>
                             </Button>,
-                            <Button
-                                shape="outline"
-                                icon
-                                disabled={canOnlyDelete}
+                            <AdminRolesSpotlight
                                 key="button-edit"
-                                onClick={() => {
-                                    actions.onEditGroup(groupData);
-                                }}
-                                title={c('Action').t`Edit group`}
+                                show={shouldShowSpotlight}
+                                onDisplayed={onSpotlightDisplayed}
+                                onClose={onSpotlightClose}
+                                originalPlacement="bottom-end"
+                                title={c('Spotlight').t`Assign roles`}
+                                description={c('Spotlight')
+                                    .t`Click Edit to assign roles to this group and manage member access automatically.`}
+                                kbLink={getKnowledgeBaseUrl('/group-roles')}
                             >
-                                <IcPencil alt={c('Action').t`Edit group`} />
-                            </Button>,
+                                <Button
+                                    shape="outline"
+                                    icon
+                                    disabled={canOnlyDelete}
+                                    onClick={() => {
+                                        actions.onEditGroup(groupData);
+                                    }}
+                                    title={c('Action').t`Edit group`}
+                                >
+                                    <IcPencil alt={c('Action').t`Edit group`} />
+                                </Button>
+                            </AdminRolesSpotlight>,
                             <Button
                                 shape="outline"
                                 icon
