@@ -1278,6 +1278,9 @@
       ],
       "Search is unavailable": [
         "La cerca no està disponible"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "Action: Docs": {
@@ -7135,7 +7138,7 @@
         "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per a restaurar la cerca."
+        "${ DRIVE_APP_NAME } ha detectat que l'índex de cerca local està malmès i ja no es pot utilitzar. Reconstruïu-lo per restaurar la cerca."
       ],
       "Could not scan file for malware": [
         "No s'ha pogut escanejar el fitxer per detectar programari maliciós"
@@ -7147,7 +7150,7 @@
         "Fitxer marcat com a potencialment maliciós"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per a recuperar-lo."
+        "La indexació ha arribat a un estat inesperat i no pot continuar. Reconstruïu l'índex per recuperar-la."
       ],
       "Not enough storage space": [
         "No hi ha prou espai d'emmagatzematge"
@@ -7159,7 +7162,7 @@
         "S'ha produït un error intern en la cerca. Reconstruïu l'índex per a recuperar-lo."
       ],
       "Search engine error": [
-        "Error del motor de cerca"
+        "Hi ha hagut un error del motor de cerca"
       ],
       "Search error": [
         "Error de cerca"
@@ -7171,10 +7174,22 @@
         "La cerca ja està a punt. S'han indexat els vostres fitxers."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "El motor de cerca ha detectat un error intern. Reconstruïu l'índex per a recuperar-lo."
+        "El motor de cerca s'ha trobat amb un error intern. Reconstruïu l'índex per recuperar-ho."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i, després, reconstruïu l'índex."
+        "El vostre navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i després reconstruïu l'índex."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMANAT"
       ]
     },
     "info": {
