@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label, LabelCount } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
@@ -11,7 +11,6 @@ import {
     getAddressID,
     getDate,
     getElementContextIdentifier,
-    getLocationElementsCount,
     isElementConversation,
     isElementMessage,
     isElementOutsideFolders,
@@ -221,28 +220,6 @@ describe('elements', () => {
                 Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel],
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
-        });
-    });
-
-    describe('getLocationElementsCount', () => {
-        const labelID = 'labelID';
-
-        const messageCounts: LabelCount[] = [
-            { LabelID: '0', Unread: 5, Total: 20 },
-            { LabelID: labelID, Unread: 2, Total: 10 },
-        ];
-
-        const conversationCounts: LabelCount[] = [
-            { LabelID: '0', Unread: 2, Total: 10 },
-            { LabelID: labelID, Unread: 1, Total: 5 },
-        ];
-
-        it('should return the expected count for messages', () => {
-            expect(getLocationElementsCount(labelID, conversationCounts, messageCounts, false)).toEqual(10);
-        });
-
-        it('should return the expected count for conversations', () => {
-            expect(getLocationElementsCount(labelID, conversationCounts, messageCounts, true)).toEqual(5);
         });
     });
 

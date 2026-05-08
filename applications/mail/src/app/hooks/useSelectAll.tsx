@@ -1,10 +1,7 @@
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import {
     getSelectAllBannerText,
@@ -15,6 +12,8 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
+import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
+
 interface Props {
     labelID: string;
 }
@@ -22,26 +21,25 @@ interface Props {
 export const useSelectAll = ({ labelID }: Props) => {
     const [mailSettings] = useMailSettings();
     const mailPageSize = mailSettings.PageSize;
-    const [conversationCounts] = useConversationCounts();
-    const [messageCounts] = useMessageCounts();
     const isConversation = isConversationMode(labelID, mailSettings);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();
     const selectAll = useMailSelector(selectSelectAll);
 
-    const locationCount = () => {
-        return getLocationElementsCount(labelID, conversationCounts || [], messageCounts || [], isConversation);
-    };
+    const { getCurrentLocationCount } = useMailboxCounter();
+    const locationCount = getCurrentLocationCount();
 
     const getBannerText = () => {
-        return getBoldFormattedText(getSelectAllBannerText(isConversation, selectAll ? locationCount() : mailPageSize));
+        return getBoldFormattedText(
+            getSelectAllBannerText(isConversation, selectAll ? locationCount.Total : mailPageSize)
+        );
     };
 
     const getBannerTextWithLocation = () => {
         return getSelectAllBannerTextWithLocation({
             conversationMode: isConversation,
-            elementsCount: selectAll ? locationCount() : mailPageSize,
+            elementsCount: selectAll ? locationCount.Total : mailPageSize,
             labelID,
             customLabels: labels,
             customFolders: folders,
@@ -51,7 +49,7 @@ export const useSelectAll = ({ labelID }: Props) => {
     const getButtonText = () => {
         return getSelectAllButtonText({
             selectAll,
-            elementsCount: locationCount(),
+            elementsCount: locationCount.Total,
             labelID,
             customLabels: labels,
             customFolders: folders,

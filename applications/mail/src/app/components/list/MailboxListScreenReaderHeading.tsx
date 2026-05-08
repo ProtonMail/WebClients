@@ -1,23 +1,14 @@
-import { useMemo } from 'react';
-
 import { c, msgid } from 'ttag';
 
-import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
-import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
+import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 
 interface MailboxListScreenReaderHeadingProps {
     conversationMode: boolean;
-    labelID?: string;
 }
 
-const MailboxListScreenReaderHeading = ({ conversationMode, labelID }: MailboxListScreenReaderHeadingProps) => {
-    const [conversationCounts] = useConversationCounts();
-    const [messageCounts] = useMessageCounts();
-
-    const unreads = useMemo(() => {
-        const counters = conversationMode ? conversationCounts : messageCounts;
-        return (counters || []).find((counter) => counter.LabelID === labelID)?.Unread || 0;
-    }, [conversationMode, labelID, conversationCounts, messageCounts]);
+export const MailboxListScreenReaderHeading = ({ conversationMode }: MailboxListScreenReaderHeadingProps) => {
+    const { getCurrentLocationCount } = useMailboxCounter();
+    const unreads = getCurrentLocationCount().Unread;
 
     return (
         <h1 className="sr-only">
@@ -26,5 +17,3 @@ const MailboxListScreenReaderHeading = ({ conversationMode, labelID }: MailboxLi
         </h1>
     );
 };
-
-export default MailboxListScreenReaderHeading;
