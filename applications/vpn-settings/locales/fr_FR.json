@@ -56,6 +56,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Ajouter l'adresse ${ BRAND_NAME }"
       ],
@@ -1478,17 +1481,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nouveaux rôles d'administrateur"
+      ],
       "3 new admin roles": [
         "3 nouveaux rôles d'administrateur"
-      ],
-      "Admin roles": [
-        "Rôles administrateur"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Déléguez la gestion en attribuant des rôles d’administrateur spécifiques. Donnez à chaque administrateur uniquement l’accès dont il a besoin. Cela suit le principe du moindre privilège, protégeant votre organisation contre les comptes compromis et les erreurs accidentelles."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Gérez les droits d'accès pour plusieurs utilisateurs à la fois. Attribuez des rôles d'administrateur spécifiques à des groupes pour automatiser l'attribution des autorisations. Cette approche s'inscrit dans le principe du moindre privilège, ce qui permet de gagner du temps lors de l'intégration et du départ des collaborateurs tout en réduisant les erreurs."
       ],
       "Delegate management with the appropriate admin role.": [
         "Déléguer la gestion avec le rôle d'administrateur approprié."
@@ -1502,20 +1508,14 @@
       "New: Control admin access for individual users": [
         "Nouveau : Contrôlez l'accès administrateur pour les utilisateurs individuels"
       ],
-      "Organization admin": [
-        "Administrateur de l'organisation"
+      "New: Control admin access for many users at once": [
+        "Nouveau : contrôlez les accès administrateur pour plusieurs utilisateurs à la fois"
       ],
       "Organization admin:": [
         "Administrateur de l'organisation :"
       ],
-      "Security admin": [
-        "Administrateur de sécurité"
-      ],
       "Security admin:": [
         "Administrateur de sécurité :"
-      ],
-      "User admin": [
-        "Administrateur des utilisateurs"
       ],
       "User admin:": [
         "Administrateur des utilisateurs :"
@@ -2139,6 +2139,9 @@
       "Managed via ${ registrar.name }": [
         "Géré par ${ registrar.name }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
       "Migrate from Google Workspace": [
         "Migrer depuis Google Workspace"
       ],
@@ -2157,6 +2160,12 @@
       ],
       "Migration status": [
         "État de la migration"
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
       ],
       "More details": [
         "Plus d'informations"
@@ -6680,6 +6689,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } a été mis à jour."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } est nécessaire pour une connexion au niveau d'un pays."
       ],
@@ -6799,6 +6811,9 @@
       ],
       "Activity Monitor": [
         "Surveillance des activités"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7459,6 +7474,9 @@
       ],
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pour seulement ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pour les utilisateurs qui passent d'un autre service de messagerie à ${ MAIL_APP_NAME }, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses de messagerie actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
@@ -8164,6 +8182,9 @@
       ],
       "Recently used servers:": [
         "Serveurs récemment utilisés :"
+      ],
+      "RECOMMENDED": [
+        "RECOMMANDÉ"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recommandé sur les appareils de confiance. ${ keepMeSignedInLearnMoreLink }"
@@ -14996,6 +15017,32 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Assigner des rôles délégués"
+      ],
+      "Assign roles": [
+        "Assigner des rôles"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Cliquez sur le nom d'un utilisateur pour gérer son rôle et ses permissions."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Cliquez Modifier pour assigner des rôles à ce groupe et gérer les accès des membres automatiquement."
+      ],
+      "New: Roles and permissions tab": [
+        "Nouveau : onglet rôles et autorisations"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Ouvrez cet onglet pour accorder des autorisations spécifiques sans donner un accès administrateur complet."
+      ],
+      "User roles available": [
+        "Rôles utilisateur disponibles"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Vous pouvez désormais assigner des rôles à des utilisateurs individuellement depuis cet onglet."
       ]
     },
     "sso": {

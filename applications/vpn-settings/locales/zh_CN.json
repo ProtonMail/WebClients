@@ -56,6 +56,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "添加 ${ BRAND_NAME } 地址"
       ],
@@ -91,6 +94,9 @@
       ],
       "Add user": [
         "添加用户"
+      ],
+      "Added ${ memberName } as group owner": [
+        "已添加 ${ memberName } 的群组管理员身份"
       ],
       "Allow": [
         "白名单"
@@ -326,6 +332,9 @@
       "Delete policy": [
         "删除策略"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "删除令牌 ${ tokens[0].Account }"
+      ],
       "Delete user": [
         "删除用户"
       ],
@@ -550,6 +559,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "转到域名提供商"
       ],
       "Go to label": [
         "转至标签"
@@ -815,6 +827,9 @@
       "Remove gift code": [
         "移除礼品码"
       ],
+      "Removed ${ memberName } as group owner": [
+        "已移除 ${ memberName } 的群组管理员身份"
+      ],
       "Rename": [
         "重命名"
       ],
@@ -883,6 +898,9 @@
       ],
       "Save": [
         "保存"
+      ],
+      "Save & exit": [
+        "保存并退出"
       ],
       "Save address": [
         "保存地址"
@@ -1453,17 +1471,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 个新管理员角色"
+      ],
       "3 new admin roles": [
         "3 个新管理员角色"
-      ],
-      "Admin roles": [
-        "管理员角色"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "通过分配特定的管理员角色进行委派管理。为每位管理员仅授予其所需的访问权限。这遵循最小权限原则，可保护您的组织免受账户被盗和意外错误的影响。"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "一次性为大量用户进行委托管理，为群组分配特定的管理员角色以自动授予权限。此举遵循最小权限原则，可节省入职和离职处理时间，同时减少错误。"
       ],
       "Delegate management with the appropriate admin role.": [
         "通过合适的管理员角色进行委派管理。"
@@ -1477,20 +1498,14 @@
       "New: Control admin access for individual users": [
         "新增：控制个人用户的管理员权限"
       ],
-      "Organization admin": [
-        "组织管理员"
+      "New: Control admin access for many users at once": [
+        "新功能：一次性控制大量用户的管理员访问权限"
       ],
       "Organization admin:": [
         "组织管理员："
       ],
-      "Security admin": [
-        "安全管理员"
-      ],
       "Security admin:": [
         "安全管理员："
-      ],
-      "User admin": [
-        "用户管理员"
       ],
       "User admin:": [
         "用户管理员："
@@ -1948,6 +1963,54 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } 迁移助手"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**：不隔离也不拒绝未经授权的邮件，通常仅在排查或测试时使用此策略。"
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**：要求收件人平台将未经授权的邮件标记为垃圾邮件或进行隔离。"
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**：要求收件人平台拒绝未经授权的邮件。"
+      ],
+      "Account connected": [
+        "账户已连接"
+      ],
+      "Account disconnected": [
+        "账户已断开连接"
+      ],
+      "Activated": [
+        "已激活"
+      ],
+      "Activation link": [
+        "激活链接"
+      ],
+      "Activation link copied to clipboard": [
+        "激活链接已复制到剪贴板"
+      ],
+      "Add domain": [
+        "添加域名"
+      ],
+      "Add users": [
+        "添加用户"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
+      ],
+      "All": [
+        "全部"
+      ],
+      "An unknown error occurred": [
+        "发生未知错误"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "您确定要继续吗？在迁移完成前未领取账户的用户，需要向其 ${ BRAND_NAME } 组织管理员申请重置密码。"
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "账户创建完成后，您可以分享激活链接，以便用户领取其 ${ BRAND_NAME } 账户。"
+      ],
       "Authenticate": [
         "身份验证"
       ],
@@ -1957,17 +2020,59 @@
       "Calendar": [
         "日历"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "请选择要迁移的内容，您的选择将应用于所有用户。在您决定复制哪些用户后，迁移将开始。"
+      ],
       "Completed": [
         "已完成"
+      ],
+      "Configure domain": [
+        "配置域名"
       ],
       "Configure migration": [
         "配置迁移"
       ],
+      "Configure your domain": [
+        "配置域名"
+      ],
       "Contacts": [
         "联系人"
       ],
+      "Copy activation link": [
+        "复制激活链接"
+      ],
+      "Copy activation link to clipboard": [
+        "复制激活链接到剪贴板"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "请将下面的代码复制并粘贴到您域名提供商的 DNS 设置中，您可以在 ${ hereHref } 找到示例和一些实用提示。"
+      ],
+      "Creating accounts": [
+        "正在创建账户"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM 为每封邮件添加数字签名，以便收件人验证邮件确实来自您的域名且未被篡改。否则，邮件可能被认为可信度较低！"
+      ],
+      "DKIM records": [
+        "DKIM 记录"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC 在 SPF 和 DKIM 的基础上，告知接收服务器如何处理未通过这些检查的邮件。它有助于保护您的域名免遭冒充，并提高整体的投递可靠性。"
+      ],
+      "DMARC records": [
+        "DMARC 记录"
+      ],
+      "Domain added": [
+        "已添加域名"
+      ],
       "Domain connected": [
         "域名已连接"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "请确保您的邮件进入收件箱而非垃圾邮件文件夹，更新 SPF 将允许用户在迁移期间同时通过 ${ BRAND_NAME } 和 Google 发送邮件。"
+      ],
+      "Errors": [
+        "错误"
       ],
       "Estimated size": [
         "预计大小"
@@ -1975,11 +2080,29 @@
       "Failed to load OAuth": [
         "加载 OAuth 失败"
       ],
+      "Finalize migration": [
+        "完成迁移"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "完成迁移后，您的所有邮件将直接路由到 ${ BRAND_NAME }。用户将不再在 Google 账户上接收邮件，并且 ${ BRAND_NAME } 与 Google 之间的数据将不再同步。"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
       ],
+      "Google Workspace account": [
+        "Google Workspace 账户"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "请耐心等待，我们正在设置用户账户，并将很快开始导入用户数据。"
+      ],
       "Has errors": [
         "出错啦"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "导入 ${ user.AdminSetName } 时出错"
       ],
       "In progress": [
         "进行中"
@@ -1990,14 +2113,26 @@
       "Install migration app": [
         "安装迁移应用"
       ],
+      "Loading your organization data": [
+        "正在加载您的组织数据"
+      ],
       "Mail": [
         "邮箱"
+      ],
+      "Managed via ${ registrar.name }": [
+        "通过 ${ registrar.name } 管理"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
       ],
       "Migrate from Google Workspace": [
         "从 Google Workspace 迁移"
       ],
       "Migrate users": [
         "迁移用户"
+      ],
+      "Migrated": [
+        "已迁移"
       ],
       "Migration includes": [
         "迁移内容包括"
@@ -2008,11 +2143,53 @@
       "Migration status": [
         "迁移状态"
       ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
+      "More details": [
+        "更多详情"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "没有可用的错误详情，请联系客服以获取更多信息。"
+      ],
+      "No users to display": [
+        "无可显示的用户"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Not confirmed": [
+        "尚未确认"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "用户领取其 ${ BRAND_NAME } 账户后，将完成迁移。"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "一旦我们确认邮件已路由到 ${ BRAND_NAME }，迁移即告完成。完成后您将收到一封确认邮件。此过程最多可能需要 24 小时。"
+      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
       "Organization does not have enough storage available": [
         "组织可用存储空间不足"
+      ],
+      "Pending": [
+        "待处理"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "请在您域名提供商的 DNS 控制台中添加以下记录："
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "请保持窗口打开，直到我们完成所有用户的创建。"
+      ],
+      "Please select at least one product to migrate": [
+        "请至少选择一个要迁移的产品"
+      ],
+      "Refresh": [
+        "刷新"
       ],
       "Required": [
         "必填"
@@ -2023,26 +2200,77 @@
       "Select at least one user to start a migration": [
         "请至少选择一位用户以开始迁移"
       ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
       "Set up": [
         "设置"
+      ],
+      "Set up secure sending (DKIM)": [
+        "设置安全发送 (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "设置安全发送 (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "设置安全发送 (SPF)"
       ],
       "Settings": [
         "设置"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "向用户分享激活链接，以便他们领取其 ${ BRAND_NAME } 账户！"
+      ],
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Some accounts are not claimed": [
+        "部分账户未被领取"
+      ],
+      "SPF records": [
+        "SPF 记录"
+      ],
+      "Start migrating": [
+        "开始迁移"
       ],
       "Status": [
         "状态"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "默认设置为 none。但为了提升安全性，我们建议将此值设置为 p=quarantine！"
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "“p=”值指定了对 DMARC 验证失败的邮件所采取的操作。可用的操作如下："
+      ],
+      "This migration has been completed": [
+        "迁移已完成"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
+      ],
+      "Update records for receiving": [
+        "更新接收记录"
       ],
       "User": [
         "用户"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "用户需要通过上述激活链接激活其账户"
+      ],
+      "User status": [
+        "用户状态"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "在迁移期间，用户可以同时使用 ${ BRAND_NAME } 或 Google。"
+      ],
       "Users migrated": [
         "已迁移的用户"
+      ],
+      "Verified": [
+        "已验证"
       ],
       "Verify installation": [
         "验证安装"
@@ -2053,14 +2281,32 @@
       "Verify your domain to start a migration": [
         "验证您的域名以开始迁移"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "我们检测到与您的 Google Workspace 账户关联的主域名。请确认以继续为您的 ${ BRAND_NAME } 组织设置邮箱。"
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "我们仍在与您的域名提供商检查 MX 记录！"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "我们注意到部分用户尚未领取其 ${ BRAND_NAME } 账户！"
       ],
       "What are you migrating?": [
         "您需要迁移什么？"
       ],
+      "You": [
+        "您"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
+      ],
+      "You're all set!": [
+        "一切就绪！"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "您当前的套餐最多允许 ${ maxMembers } 位用户。如需迁移更多用户，请为您的订阅增加席位。"
       ]
     },
     "Browser": {
@@ -3746,6 +3992,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "使用 Easy Switch 导入助手"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "发现重复的 DMARC 记录，请前往域名提供商的 DNS 控制台进行修复！"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6354,6 +6605,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } 标签已更改"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "指定国家/地区连接需要开通 ${ vpnPlus }。"
       ],
@@ -6470,6 +6724,9 @@
       ],
       "Activity Monitor": [
         "活动监测"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7118,6 +7375,9 @@
       ],
       "for choosing ${ product }": [
         "感谢您选择 ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "仅需 ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
@@ -7817,6 +8077,9 @@
       ],
       "Recently used servers:": [
         "近期使用的服务器："
+      ],
+      "RECOMMENDED": [
+        "推荐"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
@@ -9318,6 +9581,9 @@
       "Confirm login password": [
         "确认登录密码"
       ],
+      "Confirm MX records added": [
+        "确认已添加 MX 记录"
+      ],
       "Confirm new password": [
         "确认新密码"
       ],
@@ -9537,6 +9803,9 @@
       "Hide password": [
         "隐藏密码"
       ],
+      "Host name": [
+        "主机名"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "我知道我需要立即将此邮箱地址添加到另一个账户中，以免永久丢失该地址。"
       ],
@@ -9653,6 +9922,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "MX records": [
+        "MX 记录"
       ],
       "Name": [
         "名称"
@@ -9785,6 +10057,9 @@
       ],
       "Previous password": [
         "先前的密码"
+      ],
+      "Priority": [
+        "优先级"
       ],
       "Priority support": [
         "优先支持"
@@ -10066,6 +10341,26 @@
         "请添加下列 TXT 记录。注意： DNS 记录更新可能需要若干小时。"
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "未找到 ${ capitalizedGroup } 记录"
+      ],
+      "Host name": [
+        "主机名"
+      ],
+      "Invalid ${ group.name } record found": [
+        "发现无效的 ${ group.name } 记录"
+      ],
+      "Type": [
+        "类型"
+      ],
+      "Use default value": [
+        "使用默认值"
+      ],
+      "Valid ${ group.name } record found": [
+        "找到有效的 ${ group.name } 记录"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "管理员"
@@ -10180,6 +10475,9 @@
       ],
       "data recovery option": [
         "数据恢复选项"
+      ],
+      "Detailed instructions": [
+        "详细说明"
       ],
       "Details": [
         "详细信息"
@@ -13050,6 +13348,9 @@
       "Search for an email or IP address": [
         "查找电子邮件和 IP 地址"
       ],
+      "Search for users or addresses": [
+        "搜索用户或地址"
+      ],
       "Search parent folder": [
         "搜索上层文件夹"
       ],
@@ -14410,6 +14711,32 @@
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "分配委派角色"
+      ],
+      "Assign roles": [
+        "分配角色"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "点击用户名以管理其角色和权限"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "点击“编辑”可为此组分配角色并自动管理成员访问权限。"
+      ],
+      "New: Roles and permissions tab": [
+        "新功能：角色与权限选项卡"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "打开此选项卡可授予特定权限，而无需完全的管理员访问权限。"
+      ],
+      "User roles available": [
+        "可用的用户角色"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "现在您可以在此选项卡中为单个用户分配角色。"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } 请求您帮助以单点登录方式登录他们的 ${ BRAND_NAME } 账户。"
@@ -15313,6 +15640,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "账户已删除，正在退出..."
+      ],
+      "Activation link copied to clipboard": [
+        "激活链接已复制到剪贴板"
       ],
       "Address added": [
         "地址已添加"
@@ -17201,6 +17531,9 @@
       "User is a group": [
         "用户是群组"
       ],
+      "via ${ groupName }": [
+        "通过 ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
       ]
@@ -17432,6 +17765,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(通过 ${ groupName })"
+      ],
+      "(via group)": [
+        "(通过群组)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "为用户添加委派角色，仅授予他们所需的特定权限，从而将完全管理员权限分开并保护您的环境安全。"
       ],
