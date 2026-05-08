@@ -438,9 +438,7 @@ export const ProtonMeetContainer = ({
                 expiration: 20000,
             });
 
-            if (!isGuest) {
-                history.push('/dashboard');
-            }
+            history.push('/dashboard');
 
             return {};
         }
