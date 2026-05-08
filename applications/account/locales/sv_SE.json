@@ -1829,6 +1829,9 @@
       ],
       "Save & exit": [
         "Spara och avsluta"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -3146,6 +3149,21 @@
       ],
       "You": [
         "Du"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Lägg till följande poster i din DNS-konsol för din domänleverantör:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lämna detta fönster öppet tills vi är klara med att skapa alla användare."
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Dela aktiveringslänken med användarna så att de kan göra anspråk på sitt ${ BRAND_NAME }-konto."
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi upptäckte den primära domänen länkad till ditt Google Workspace-konto. Bekräfta den för att fortsätta ställa in e-post för din ${ BRAND_NAME }-organisation."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
       ]
     },
     "breadcrumb": {
@@ -12988,6 +13006,15 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Är du säker på att du vill logga ut från detta konto?"
+      ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Vi kan använda din telefon för återställning för att skicka dig en verifieringskod för att återställa ditt lösenord och att kontakta dig om vi upptäcker misstänkt aktivitet."
+      ],
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Din återställningsfil kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
       ]
     },
     "info": {
@@ -15148,6 +15175,9 @@
       ],
       "Recovery phrase": [
         "Återställningsfras"
+      ],
+      "Set recovery phone number": [
+        "Ställ in telefonnummer för återställning"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -19436,6 +19466,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Du måste uppdatera alla ${ BRAND_NAME } mobilappar**: dina nya nycklar fungerar inte på äldre appversioner."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Du måste uppdatera alla ${ BRAND_NAME }-appar**: dina nya nycklar fungerar inte på äldre appversioner."
       ]
     },
     "PQC optin": {
@@ -19852,6 +19885,12 @@
       ],
       "Email recovery enabled": [
         "Återställning via e-post aktiverat"
+      ],
+      "Enable email recovery": [
+        "Aktivera återställning med e-post"
+      ],
+      "Phone recovery enabled": [
+        "Återställning med telefon aktiverat"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20544,6 +20583,15 @@
       ],
       "Your recovery phrase is set": [
         "Din återställningsfras är inställd"
+      ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Eftersom du återställer ditt lösenord kan din nuvarande återställningsfras endast användas för att återställa data skapad innan din lösenordsåterställning."
+      ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Vi stötte på ett fel vid genereringen av din återställningsfras. Försök igen senare eller kontakta supporten om problemet kvarstår."
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Du kan använda återställningsfrasen i denna återställningsfras för att helt återställa ditt konto när du återställer ditt lösenord, så se till att du förvarar det på ett säkert ställe."
       ]
     },
     "saml: Action": {
@@ -21968,6 +22016,18 @@
       ],
       "User roles available": [
         "Användarroller tillgängliga"
+      ],
+      "Assign delegated roles": [
+        "Tilldela delegerade roller"
+      ],
+      "Assign roles": [
+        "Tilldela roller"
+      ],
+      "New: Roles and permissions tab": [
+        "Nytt: Flik för roller och behörigheter"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tilldela roller till enskilda användare från denna flik."
       ]
     },
     "sso": {
@@ -23048,6 +23108,9 @@
       ],
       "View VPN session details for your organization.": [
         "Visa VPN-sessionsdetaljer för din organisation."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
       ]
     },
     "Success": {
@@ -25406,6 +25469,9 @@
       ],
       "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
         "Din administratör på ${ orgName } bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
+      ],
+      "Remove recovery phone number": [
+        "Ta bort telefonnummer för återställning"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26864,6 +26930,18 @@
     "Label for domain setup": {
       "Use default value": [
         "Använd standardvärde"
+      ],
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post hittades inte"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ogiltig ${ group.name }-post hittades"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Valid ${ group.name } record found": [
+        "Giltig ${ group.name }-post hittades"
       ]
     },
     "safety_review": {
@@ -26992,6 +27070,59 @@
       ],
       "Your security setup": [
         "Din säkerhetsinställning"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Lägg till personer du litar på och som du enkelt kan kontakta. De kommer att kunna komma åt ditt konto och återställa ditt lösenord åt dig."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Lägg till personer du litar på och enkelt kan kontakta. De kommer att kunna hjälpa dig att låsa upp dina data efter du återställt ditt lösenord."
+      ],
+      "Allow password reset from the settings": [
+        "Tillåt lösenordsåterställning från inställningarna"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Tillbaka till ${ backLink.appNameString }"
+      ],
+      "Downloaded recovery file": [
+        "Laddade ner återställningsfil"
+      ],
+      "Enable email recovery": [
+        "Aktivera återställning med e-post"
+      ],
+      "Enable phone recovery": [
+        "Aktivera återställning med telefon"
+      ],
+      "Enabled email recovery": [
+        "Aktiverade återställning med e-post"
+      ],
+      "Enabled phone recovery": [
+        "Aktiverade återställning med telefon"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Om du glömmer ditt lösenord kan du logga in med en QR-kod. Allt du behöver göra är att vara inloggad på en ${ BRAND_NAME }-tjänst på annan enhet."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Detta kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "För att vara säker på att e-postadressen är din, ange verifieringskoden skickad till ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "För att vara säker på att telefonnumret är ditt, ange verifieringskoden skickad till ${ boldPhoneNumber }."
+      ],
+      "Verified recovery email": [
+        "Verifierade återställning med e-post"
+      ],
+      "Verify your recovery phone": [
+        "Verifiera din telefon för återställning"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Du kan använda SMS-verifiering för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Dubblett av DMARC-post hittades, gå till DNS-konsolen hos din domänleverantör för att åtgärda det."
       ]
     }
   }
