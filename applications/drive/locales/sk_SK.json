@@ -1286,6 +1286,15 @@
       ],
       "Save photo to your gallery": [
         "Uložiť fotografiu do vašej galérie"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Rebuild index": [
+        "Znova vytvoriť index"
+      ],
+      "Search is unavailable": [
+        "Vyhľadávanie je nedostupné"
       ]
     },
     "Action: Docs": {
@@ -4096,6 +4105,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
+      "Folder not found": [
+        "Priečinok nebol nájdený"
       ]
     },
     "error": {
@@ -7336,6 +7348,60 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexované ${ first }, ${ second }, ${ third } a ${ fourth }"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Aplikácia ${ DRIVE_APP_NAME } zistila, že index lokálneho vyhľadávania je poškodený a už nie je možné ho používať. Obnovte index, aby ste obnovili vyhľadávanie."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Could not scan file for malware": [
+        "Nepodarilo sa skontrolovať súbor na prítomnosť malvéru"
+      ],
+      "File could not be scanned": [
+        "Súbor sa nepodarilo skenovať"
+      ],
+      "File flagged as potentially malicious": [
+        "Súbor označený ako potenciálne škodlivý"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexovanie sa dostalo do neočakávaného stavu a nemôže pokračovať. Pre obnovenie je potrebné index preindexovať."
+      ],
+      "Not enough storage space": [
+        "V úložisku nie je dostatok miesta"
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
+      ],
+      "Search data is corrupted": [
+        "Údaje vyhľadávania sú poškodené"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Pri vyhľadávaní došlo k internej chybe. Na obnovenie je potrebné vytvoriť nový index."
+      ],
+      "Search engine error": [
+        "Chyba vyhľadávača"
+      ],
+      "Search error": [
+        "Chyba pri vyhľadávaní"
+      ],
+      "Search is in an invalid state": [
+        "Vyhľadávanie je v neplatnom stave"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Vyhľadávanie je pripravené. Vaše súbory boli zaindexované."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Vyhľadávač zaznamenal internú chybu. Na obnovenie je potrebné vytvoriť nový index."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Váš prehliadač nemá dostatok miesta na indexovanie súborov pre vyhľadávanie. Uvoľnite miesto v úložisku a potom preindexujte súbory."
       ]
     },
     "info": {
