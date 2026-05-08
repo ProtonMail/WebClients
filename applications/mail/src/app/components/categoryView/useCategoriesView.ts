@@ -2,14 +2,14 @@ import { useCategoriesData } from '@proton/mail/features/categoriesView/useCateg
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 export const useCategoriesView = () => {
-    const mailParams = useMailSelector(params);
+    const labelID = useMailSelector(selectLabelID);
     const categoriesData = useCategoriesData();
 
-    const isInboxOrCategory = mailParams.labelID === MAILBOX_LABEL_IDS.INBOX || isCategoryLabel(mailParams.labelID);
+    const isInboxOrCategory = labelID === MAILBOX_LABEL_IDS.INBOX || isCategoryLabel(labelID);
 
     return {
         ...categoriesData,
