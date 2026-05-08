@@ -51,6 +51,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -963,6 +966,9 @@
       "Move to Archive": [
         "Presunúť do archívu"
       ],
+      "Move to category...": [
+        "Presunúť do kategórie..."
+      ],
       "Move to folder": [
         "Presunúť do priečinka"
       ],
@@ -1513,7 +1519,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -6970,6 +6979,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskuje vašu IP adresu, aby vás webové stránky nemohli identifikovať."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -7062,6 +7074,9 @@
       ],
       "Ad targeting": [
         "Cielená reklama"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7681,6 +7696,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Pre väčšiu bezpečnosť môžete nastaviť prístupovú frázu. Tá nebude zahrnutá v pozvánke v kalendári, nezabudnite ju preto zdieľať so svojimi hosťami samostatne."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Pre správy novšie ako ${ oldestDate }"
       ],
@@ -7841,10 +7859,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7938,6 +7953,9 @@
       ],
       "Low Priority": [
         "Nízka priorita"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -8286,6 +8304,9 @@
       ],
       "Recipient: ": [
         "Príjemca: "
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
@@ -12612,6 +12633,12 @@
       ],
       "No parent folder": [
         "Žiadny nadradený priečinok"
+      ],
+      "Remind me later": [
+        "Pripomenúť neskôr"
+      ],
+      "Yes, don't show again": [
+        "Áno, viac nezobrazovať"
       ]
     },
     "Option group": {
@@ -15971,6 +15998,9 @@
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
+      ],
+      "Keep this banner hidden?": [
+        "Ponechať túto reklamu skrytú?"
       ],
       "Label as": [
         "Označiť ako"
