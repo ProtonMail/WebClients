@@ -13,7 +13,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsLocalScreenShare, selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
-import { isChromiumBased, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -35,6 +35,7 @@ import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
+// eslint-disable-next-line import/no-cycle
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantList } from '../ParticipantList/ParticipantList';
@@ -103,8 +104,8 @@ export const MeetingBody = ({
     const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
     const [isRefreshingScreenShare, setIsRefreshingScreenShare] = useState(false);
 
-    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing') && !isChromiumBased();
-    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio') && !isChromiumBased();
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
     const handleRefreshScreenShareTrack = async () => {
@@ -138,16 +139,17 @@ export const MeetingBody = ({
     };
 
     useEffect(() => {
-        if (isScreenShare && screenShareTrack?.publication?.track && screenShareVideoRef.current) {
-            screenShareTrack.publication.track.attach(screenShareVideoRef.current);
+        const videoEl = screenShareVideoRef.current;
+        if (isScreenShare && screenShareTrack?.publication?.track && videoEl) {
+            screenShareTrack.publication.track.attach(videoEl);
         }
 
         return () => {
-            if (screenShareTrack?.publication?.track && screenShareVideoRef.current) {
-                screenShareTrack.publication.track.detach(screenShareVideoRef.current);
+            if (screenShareTrack?.publication?.track && videoEl) {
+                screenShareTrack.publication.track.detach(videoEl);
             }
         };
-    }, [isScreenShare, screenShareTrack?.publication?.track?.sid]);
+    }, [isScreenShare, screenShareTrack?.publication?.track]);
 
     const defaultScreenShareFlexGrow = isSideBarOpen ? 6 : 8;
     // Using 0 instead of removing the video element to avoid reinitializing the screenshare video
