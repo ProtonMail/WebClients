@@ -36,6 +36,8 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
@@ -52,6 +54,7 @@ import {
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
@@ -66,6 +69,7 @@ import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
 import { disableStorageSelection, getPrivateLabel } from './helper';
+import AdminRolesSpotlight from './rolesAndPermissions/AdminRolesSpotlight';
 import ModalHeaderWithTabs from './rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from './rolesAndPermissions/RolesAndPermissionsTab';
 
@@ -141,6 +145,18 @@ const SubUserCreateModal = ({
 
     const isMagicLinkEnabled = useFlag('MagicLink');
     const showRolesTab = useFlag('AdminRoleMVP');
+    const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
+        FeatureCode.AdminRolesOnboardingModal
+    );
+    const isAdminRolesModalDismissed = !adminRolesModalLoading && !adminRolesModalFeature?.Value;
+    const {
+        show: shouldShowRolesTabSpotlight,
+        onDisplayed: onRolesTabSpotlightDisplayed,
+        onClose: onRolesTabSpotlightClose,
+    } = useSpotlightOnFeature(
+        FeatureCode.AdminRolesPermissionsTabSpotlight,
+        showRolesTab && isAdminRolesModalDismissed
+    );
     const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
 
     const [model, setModel] = useState({
@@ -561,6 +577,21 @@ const SubUserCreateModal = ({
                         ? [
                               {
                                   title: c('user_modal').t`Roles and permissions`,
+                                  titleNode: (
+                                      <AdminRolesSpotlight
+                                          show={shouldShowRolesTabSpotlight}
+                                          onDisplayed={onRolesTabSpotlightDisplayed}
+                                          onClose={onRolesTabSpotlightClose}
+                                          originalPlacement="bottom-start"
+                                          isAboveModal
+                                          title={c('Spotlight').t`Assign delegated roles`}
+                                          description={c('Spotlight')
+                                              .t`Open this tab to grant specific permissions without full admin access.`}
+                                          kbLink={getKnowledgeBaseUrl('/admin-roles')}
+                                      >
+                                          <span>{c('user_modal').t`Roles and permissions`}</span>
+                                      </AdminRolesSpotlight>
+                                  ),
                                   content: (
                                       <RolesAndPermissionsTab
                                           selectedRoles={selectedRoles}
