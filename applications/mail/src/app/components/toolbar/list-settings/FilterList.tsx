@@ -11,7 +11,6 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import type { IconName } from '@proton/icons/types';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import {
@@ -54,8 +53,7 @@ export const FilterList = () => {
     const tel = useListSettingsTelemetry();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
-    const activeState = getActiveState(filter, sort, isScheduledLabel);
+    const activeState = getActiveState(filter, sort, labelID);
 
     const applyFilter = ({ isActive, filter, onTelemetry }: FilterOption) => {
         if (isActive) {
