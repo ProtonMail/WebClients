@@ -7,9 +7,10 @@ import { useModalStateObject } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import type { Message } from '../../../../../types';
+import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
+import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import { RightDrawer } from '../../../../RightDrawer';
 import { ToolCallInfo } from './ToolCallInfo';
-import LinkWarningModal from "../../../../Modals/LinkWarningModal";
 
 interface WebSearchSourcesViewProps {
     message: Message;
@@ -18,6 +19,7 @@ interface WebSearchSourcesViewProps {
 }
 
 export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: WebSearchSourcesViewProps) => {
+    useNativeComposerVisibilityApi({ isBlocking: true });
     const [currentLink, setCurrentLink] = useState<string>('');
     const linkWarningModal = useModalStateObject();
 
