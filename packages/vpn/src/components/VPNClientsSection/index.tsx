@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import Copy from '@proton/components/components/button/Copy';
+import DownloadClientCard from '@proton/components/components/downloadClientCard/DownloadClientCard';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -13,16 +14,39 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
-import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
-import DownloadModal from './DownloadModal/DownloadModal';
-import { FeedbackSurveyModal } from './FeedbackSurveyModal/FeedbackSurveyModal';
-import { FeedbackSurveyModalWrapper } from './FeedbackSurveyModal/FeedbackSurveyModalWrapper';
-import { androidMarketplaceUrl, iosMarketplaceUrl } from './downloadLinks';
+import { androidMarketplaceUrl, iosMarketplaceUrl } from '../../../constants/downloadLinks';
+import { useFetchDownloadLinks } from '../../hooks/useFetchDownloadLinks';
+import DownloadModal from './DownloadModal';
+import { FeedbackSurveyModal } from './FeedbackSurveyModal';
+import { FeedbackSurveyModalWrapper } from './FeedbackSurveyModalWrapper';
+
+const LinkItem = ({ href, text }: { href: string; text: string }) => {
+    const { createNotification } = useNotifications();
+
+    return (
+        <div className="flex items-center overflow-hidden" key={text}>
+            <DropdownMenuLink className="flex-1" href={href}>
+                {text}
+            </DropdownMenuLink>
+            <Copy
+                shape="ghost"
+                value={href}
+                className="shrink-0 mr-2"
+                onCopy={() => {
+                    createNotification({
+                        text: c('Success').t`Link copied to clipboard`,
+                    });
+                }}
+            />
+        </div>
+    );
+};
 
 const FIVE_MINUTES = 5 * 60 * 1000;
 
-const ProtonVPNClientsSection = () => {
+export const VPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
     const { createNotification } = useNotifications();
@@ -54,35 +78,20 @@ const ProtonVPNClientsSection = () => {
     const androidLinks = [
         {
             href: 'https://protonvpn.com/download/ProtonVPN.apk',
-            children: 'APK',
+            text: 'APK',
         },
         {
             href: 'https://github.com/ProtonVPN/android-app/releases',
-            children: 'GitHub',
+            text: 'GitHub',
         },
         {
             href: 'https://f-droid.org/en/packages/ch.protonvpn.android/',
-            children: 'F-Droid',
+            text: 'F-Droid',
         },
-    ].map(({ href, children }) => {
-        return (
-            <div className="flex items-center overflow-hidden" key={children}>
-                <DropdownMenuLink className="flex-1" href={href}>
-                    {children}
-                </DropdownMenuLink>
-                <Copy
-                    shape="ghost"
-                    value={href}
-                    className="shrink-0 mr-2"
-                    onCopy={() => {
-                        createNotification({
-                            text: c('Success').t`Link copied to clipboard`,
-                        });
-                    }}
-                />
-            </div>
-        );
-    });
+    ].map(LinkItem);
+
+    const isDesktopDownloadApiEnabled = useFlag('DesktopDownloadApiEnabled');
+    const links = useFetchDownloadLinks();
 
     return (
         <SettingsSectionWide>
@@ -112,16 +121,34 @@ const ProtonVPNClientsSection = () => {
                     title={c('VPNClient').t`Windows`}
                     icon="brand-windows"
                     link="https://protonvpn.com/download-windows/"
+                    items={
+                        isDesktopDownloadApiEnabled
+                            ? links.windows?.map(({ title, link: href }) => (
+                                  <LinkItem key={title()} text={title()} href={href} />
+                              ))
+                            : undefined
+                    }
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`macOS`}
                     icon="brand-mac"
                     link="https://protonvpn.com/download-macos/"
+                    items={
+                        isDesktopDownloadApiEnabled
+                            ? links.mac?.map(({ title, link: href }) => (
+                                  <LinkItem key={title()} text={title()} href={href} />
+                              ))
+                            : undefined
+                    }
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`GNU/Linux`}
                     icon="brand-linux"
-                    link="https://protonvpn.com/download-linux/"
+                    link={
+                        isDesktopDownloadApiEnabled
+                            ? 'https://protonvpn.com/support/linux-vpn-setup'
+                            : 'https://protonvpn.com/download-linux/'
+                    }
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Chromebook`}
@@ -151,5 +178,3 @@ const ProtonVPNClientsSection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default ProtonVPNClientsSection;

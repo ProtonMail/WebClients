@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import appleAppStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/apple-app-store.svg';
-import googlePlayStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/google-play-store.svg';
 import type { IconName } from '@proton/icons/types';
+import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
+import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 
 import DashboardDownloadSection from '../../../shared/DashboardDownloadSection/DashboardDownloadSection';
 import androidPreview from './images/download-preview-android.png';
