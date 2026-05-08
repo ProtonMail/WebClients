@@ -35,7 +35,7 @@ export const useMeetSrp = () => {
     const initHandshake = useCallback(
         async (token: string) => {
             try {
-                return await api<SRPHandshakeInfo>(queryInitMeetSRPHandshake(token));
+                return await api<SRPHandshakeInfo>({ ...queryInitMeetSRPHandshake(token), silence: true });
             } catch (error) {
                 reportMeetError('Error initializing handshake', {
                     context: { error },
@@ -44,7 +44,7 @@ export const useMeetSrp = () => {
                 throw error;
             }
         },
-        [api]
+        [api, reportMeetError]
     );
 
     const getSessionToken = useCallback(
@@ -78,7 +78,7 @@ export const useMeetSrp = () => {
 
             return response.json();
         },
-        [api, auth.getUID]
+        [api, auth]
     );
 
     const getMeetingInfo = useCallback(
@@ -93,7 +93,7 @@ export const useMeetSrp = () => {
                 throw error;
             }
         },
-        [api]
+        [api, reportMeetError]
     );
 
     const getAccessToken = useCallback(
