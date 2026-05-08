@@ -241,6 +241,7 @@ export const ProtonMeetContainer = ({
     const wasmApp = useWasmApp();
 
     const meetingLinkRef = useRef<string | null>(null);
+    const isExpiringRef = useRef(false);
 
     const meetingInfoRef = useRef<MeetingInfoResponse | null>(null);
 
@@ -669,8 +670,11 @@ export const ProtonMeetContainer = ({
                 dispatch(resetUiState());
 
                 if (reason === DisconnectReason.ROOM_DELETED) {
-                    dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-                    dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
+                    if (!isExpiringRef.current) {
+                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                        dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
+                    }
+                    isExpiringRef.current = false;
                 } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
                     dispatch(setPreviousMeetingLink(meetingLinkRef.current));
                     dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
@@ -815,6 +819,7 @@ export const ProtonMeetContainer = ({
     };
 
     const joinMeeting = async (displayName: string, meetingToken: string = token) => {
+        isExpiringRef.current = false;
         meetingLinkNameRef.current = meetingToken; // meetingToken is the meeting link name
         handleWebRtcUnsupported();
 
@@ -914,6 +919,10 @@ export const ProtonMeetContainer = ({
     }, []);
 
     const prepareUpsell = () => {
+        if (isExpiringRef.current) {
+            return;
+        }
+
         if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
             if (isGuest) {
                 history.push(meetingLinkRef.current as string);
@@ -1011,6 +1020,24 @@ export const ProtonMeetContainer = ({
         cleanupMlsState();
 
         setJoinedRoom(false);
+    };
+
+    const handleMeetingExpired = async () => {
+        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+        if (isLocalParticipantHost || isGuestAdminRef.current) {
+            isExpiringRef.current = true;
+            dispatch(
+                setUpsellModalType(
+                    paidUser || isSubUser
+                        ? UpsellModalTypes.MeetingExpiredHostPaid
+                        : UpsellModalTypes.MeetingExpiredHostFree
+                )
+            );
+            await handleEndMeeting();
+        } else {
+            handleLeave();
+            dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
+        }
     };
 
     const handleMeetingLockToggle = useStableCallback(async () => {
@@ -1143,6 +1170,7 @@ export const ProtonMeetContainer = ({
                         displayName={displayName}
                         handleLeave={handleLeave}
                         handleEndMeeting={handleEndMeeting}
+                        handleMeetingExpired={handleMeetingExpired}
                         shareLink={shareLink}
                         roomName={meetingDetails.meetingName as string}
                         passphrase={password}

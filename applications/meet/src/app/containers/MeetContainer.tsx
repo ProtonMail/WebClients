@@ -9,6 +9,7 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
+// eslint-disable-next-line import/no-cycle
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
@@ -38,6 +39,7 @@ interface MeetContainerProps {
     displayName: string;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
+    handleMeetingExpired: () => Promise<void>;
     shareLink: string;
     roomName: string;
     passphrase: string;
@@ -71,6 +73,7 @@ export const MeetContainer = ({
     displayName,
     handleLeave,
     handleEndMeeting,
+    handleMeetingExpired,
     shareLink,
     roomName,
     passphrase,
@@ -152,6 +155,11 @@ export const MeetContainer = ({
         await handleEndMeeting();
     });
 
+    const meetingExpiredWithStopRecording = useStableCallback(async () => {
+        await downloadRecording();
+        await handleMeetingExpired();
+    });
+
     useMeetingTelemetry();
 
     // Safari needs a warmup so we can pass strict Safari PiP requirements
@@ -164,12 +172,14 @@ export const MeetContainer = ({
                 void pipCleanup();
             };
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const meetContextValue = useMemo(
         () => ({
             handleLeave: leaveWithStopRecording,
             handleEndMeeting: endMeetingWithStopRecording,
+            handleMeetingExpired: meetingExpiredWithStopRecording,
             startScreenShare,
             stopScreenShare,
             handleMeetingLockToggle,
@@ -179,6 +189,7 @@ export const MeetContainer = ({
         [
             leaveWithStopRecording,
             endMeetingWithStopRecording,
+            meetingExpiredWithStopRecording,
             startScreenShare,
             stopScreenShare,
             handleMeetingLockToggle,

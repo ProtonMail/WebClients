@@ -2,13 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useSettingsLink } from '@proton/components/index';
+import { UpsellModalTypes } from '@proton/meet/types/types';
 import { PLANS } from '@proton/payments/core/constants';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
 
-export const HostFreeAccountModal = ({ open, onClose, rejoin, action }: CTAModalBaseProps) => {
+export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModalType }: CTAModalBaseProps) => {
     const goToSettings = useSettingsLink();
+    const isExpired = upsellModalType === UpsellModalTypes.MeetingExpiredHostFree;
 
     return (
         <EndCallModalShell
@@ -27,8 +29,8 @@ export const HostFreeAccountModal = ({ open, onClose, rejoin, action }: CTAModal
                     {c('Action').t`Get Meet Professional`}
                 </Button>
             }
-            rejoin={rejoin}
-            title={c('Info').t`You left the meeting`}
+            rejoin={isExpired ? undefined : rejoin}
+            title={isExpired ? c('Info').t`Your free meeting has ended` : c('Info').t`You left the meeting`}
             subtitle={c('Info')
                 .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`}
         />
