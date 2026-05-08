@@ -81,7 +81,7 @@ const RecipientItemSingle = ({
             icon={
                 icon && (
                     <span className="inline-flex shrink-0 message-recipient-item-lock-icon mr-1">
-                        <EncryptionStatusIcon {...icon} />
+                        <EncryptionStatusIcon {...icon} shouldHaveHref={false} />
                     </span>
                 )
             }
