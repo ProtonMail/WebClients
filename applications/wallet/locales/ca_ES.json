@@ -31,6 +31,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -2732,6 +2735,9 @@
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -2757,6 +2763,9 @@
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2897,6 +2906,9 @@
       "for ${ price }": [
         "per ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Marca de Google Pay"
       ],
@@ -3004,6 +3016,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
+      ],
+      "RECOMMENDED": [
+        "RECOMANAT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."

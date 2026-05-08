@@ -2040,9 +2040,6 @@
       "3 new admin roles": [
         "3 nieuwe beheerdersrollen"
       ],
-      "Admin roles": [
-        "Beheerdersrollen"
-      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
       ],
@@ -2061,20 +2058,11 @@
       "New: Control admin access for individual users": [
         "Nieuw: Beheer de beheerdersrechten voor individuele gebruikers"
       ],
-      "Organization admin": [
-        "Organisatie beheerder"
-      ],
       "Organization admin:": [
         "Organisatie beheerder:"
       ],
-      "Security admin": [
-        "Beveiligingsbeheerder"
-      ],
       "Security admin:": [
         "Beveiligingsbeheerder:"
-      ],
-      "User admin": [
-        "Gebruikersbeheer"
       ],
       "User admin:": [
         "Gebruikersbeheer:"
@@ -11464,6 +11452,9 @@
       "Recently used servers:": [
         "Recent gebruikte servers:"
       ],
+      "RECOMMENDED": [
+        "AANBEVOLEN"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -19387,11 +19378,6 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Kon geen adressleutels genereren. Om post-kwantumbescherming te activeren, dient u uw nieuwe encryptiesleutels handmatig te genereren.\n\nGa naar ${ settingsLink } en selecteer 'Sleutel genereren' voor elk adres."
-      ]
-    },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**U moet alle ${ BRAND_NAME } mobiele apps updaten**: uw nieuwe sleutels werken niet op oudere app-versies."
       ]
     },
     "PQC key generation": {

@@ -123,6 +123,9 @@
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
+      "Change my access": [
+        "Změnit můj přístup"
+      ],
       "Change password": [
         "Změnit heslo"
       ],
@@ -230,6 +233,9 @@
       ],
       "Copy invite link": [
         "Kopírovat odkaz pozvánky"
+      ],
+      "Copy link": [
+        "Kopírovat odkaz"
       ],
       "Copy password": [
         "Kopírovat heslo"
@@ -356,6 +362,9 @@
       ],
       "enable desktop notifications": [
         "povolit upozornění"
+      ],
+      "Encrypted": [
+        "Šifrováno"
       ],
       "Expand": [
         "Rozbalit"
@@ -630,6 +639,9 @@
       "Remove file": [
         "Odebrat soubor"
       ],
+      "Remove my access": [
+        "Odebrat můj přístup"
+      ],
       "Rename": [
         "Přejmenovat"
       ],
@@ -711,6 +723,9 @@
       "Select all": [
         "Vybrat vše"
       ],
+      "Set password or expiration date": [
+        "Nastavit heslo nebo datum vypršení platnosti"
+      ],
       "Set recovery methods": [
         "Nastavit metody obnovení"
       ],
@@ -734,6 +749,12 @@
       ],
       "Share your calendar with your team": [
         "Sdílet kalendář se svým týmem"
+      ],
+      "Shared": [
+        "Sdílené"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Sdílení je koncově šifrované"
       ],
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
@@ -2859,6 +2880,9 @@
       "Already a member of this share": [
         "Již má členství v tomto sdílení"
       ],
+      "An error occurred": [
+        "Došlo k chybě"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Při pokusu o převod dokumentu došlo k chybě. Zkuste to prosím znovu."
       ],
@@ -2952,8 +2976,20 @@
       "Failed loading group members": [
         "Načtení členů skupiny selhalo"
       ],
+      "Failed to change permissions settings": [
+        "Změna nastavení oprávnění selhala"
+      ],
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
+      ],
+      "Failed to create public share node": [
+        "Nepodařilo se vytvořit veřejný uzel sdílení"
+      ],
+      "Failed to fetch node": [
+        "Nepodařilo se stáhnout uzel"
+      ],
+      "Failed to fetch sharing info": [
+        "Nepodařilo se získat informace o sdílení"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
@@ -2966,6 +3002,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Přejmenování dokladu se nezdařilo. Zkuste to prosím znovu později."
+      ],
+      "Failed to resend invitation": [
+        "Pozvánku se nepodařilo znovu odeslat"
+      ],
+      "Failed to unshare node": [
+        "Nepodařilo se zrušit sdílení uzlu"
+      ],
+      "Failed to update direct share node": [
+        "Nepodařilo se aktualizovat uzel přímého sdílení"
+      ],
+      "Failed to update public share node": [
+        "Nepodařilo se aktualizovat veřejný uzel sdílení"
       ],
       "File \"${ name }\" is already downloading": [
         "Soubor \"${ name }\" se již stahuje"
@@ -3168,6 +3216,9 @@
       "status page": [
         "stavová stránka"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Ukončení sdílení této položky selhalo"
+      ],
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
       ],
@@ -3197,6 +3248,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Poslední aktualizace, kterou jste v dokumentu provedli, je buď příliš velká, nebo by překročila limit celkové velikosti dokumentu. Úpravy byly dočasně zakázány. Vaše změna nebude uložena. Vyexportujte prosím kopii dokumentu a znovu načtěte stránku."
+      ],
+      "The link to your item failed to be deleted": [
+        "Odkaz na vaší položku se nepodařilo smazat"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
@@ -3305,6 +3359,12 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nerozšifrovatelné zařízení"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovatelný název"
       ]
     },
     "error": {
@@ -4451,6 +4511,18 @@
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
+      "Can edit": [
+        "Může upravovat"
+      ],
+      "Can edit and manage access": [
+        "Může upravovat a spravovat přístup"
+      ],
+      "Can view and edit": [
+        "Může zobrazovat a upravovat"
+      ],
+      "Can view only": [
+        "Může pouze zobrazovat"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
@@ -4739,6 +4811,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Pokud se odeberete, ztratíte přístup k souboru \"${ fileName }\" a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nenasdílí."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
         "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
@@ -4823,6 +4898,9 @@
       "Limited availability": [
         "Limitovaná dostupnost"
       ],
+      "Link copied": [
+        "Odkaz zkopírován"
+      ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
@@ -4840,6 +4918,9 @@
       ],
       "Loading link": [
         "Načítání odkazu"
+      ],
+      "Loading...": [
+        "Načítání..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Vypadá to, že jste offline. Dokument nelze upravovat, pokud jste offline. Zkontrolujte prosím připojení svého zařízení."
@@ -4936,6 +5017,9 @@
       ],
       "Owner": [
         "Vlastník"
+      ],
+      "owner": [
+        "vlastník"
       ],
       "password": [
         "heslo"
@@ -5354,6 +5438,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Když se připojíte k VPN, použije se technologie šifrování ke skrytí vaší IP adresy (jedinečný kód přidělený vašemu zařízení)."
       ],
+      "Who has access": [
+        "Kdo má přístup"
+      ],
       "words": [
         "slov"
       ],
@@ -5434,6 +5521,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po změně oprávnění na „Prohlížející“ již nebudete moci sdílet soubor „${ fileName }“. Vaše oprávnění bude moci znovu změnit pouze vlastník."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
@@ -5647,8 +5737,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
+      "Access": [
+        "Přístup"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
+      ],
+      "Active": [
+        "Aktivní"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -5664,6 +5760,15 @@
       ],
       "Alias title": [
         "Název aliasu"
+      ],
+      "Allow editors to change permissions and share": [
+        "Umožnit editorům měnit oprávnění a sdílet"
+      ],
+      "Anonymous": [
+        "Anonymní"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kdokoli na internetu s odkazem"
       ],
       "Anyone on the Internet with the link can edit": [
         "Kdokoli na internetu s odkazem může upravovat"
@@ -5703,6 +5808,12 @@
       ],
       "Calendar": [
         "Kalendář"
+      ],
+      "can edit": [
+        "může upravovat"
+      ],
+      "can view": [
+        "může prohlížet"
       ],
       "Cancel download": [
         "Zrušit stahování"
@@ -5749,8 +5860,14 @@
       "Delete": [
         "Odstranit"
       ],
+      "Delete link and remove access for everyone": [
+        "Smazat odkaz a odebrat všem přístup"
+      ],
       "Delete recovery-related information.": [
         "Odstranit informace související s obnovením."
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovat tento odkaz k určitému datu"
       ],
       "Don't ask again": [
         "Příště se neptat"
@@ -5799,6 +5916,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Smazat tento odkaz a odebrat všechny s přístupem"
+      ],
+      "Expiry": [
+        "Vypršení platnosti"
       ],
       "Extended address": [
         "Rozšířená adresa"
@@ -5914,6 +6034,9 @@
       "New password": [
         "Nové heslo"
       ],
+      "Not active": [
+        "Neaktivní"
+      ],
       "Note": [
         "Poznámka"
       ],
@@ -5974,8 +6097,14 @@
       "Replace existing folder": [
         "Nahradit existující složku"
       ],
+      "Require password": [
+        "Požadovat heslo"
+      ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavit heslo pro omezení přístupu přes odkaz"
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
@@ -7596,6 +7725,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" sdíleno"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" úspěšně vytvořen"
       ],
@@ -7823,6 +7955,12 @@
       ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavení aktualizováno. Editoři nemohou měnit oprávnění nebo sdílet."
       ],
       "Share invitation accepted successfully": [
         "Pozvánka ke sdílení úspěšně přijata"
@@ -9312,8 +9450,14 @@
       "Accepted": [
         "Přijato"
       ],
+      "pending": [
+        "čeká na vyřízení"
+      ],
       "Pending": [
         "Čekající"
+      ],
+      "user joined": [
+        "uživatel se připojil"
       ]
     },
     "Storage": {
@@ -9840,6 +9984,9 @@
       "Cannot load link": [
         "Odkaz se nepodařilo načíst"
       ],
+      "Change access to viewer?": [
+        "Změnit přístup na Prohlížející?"
+      ],
       "Change password": [
         "Změnit heslo"
       ],
@@ -10191,6 +10338,12 @@
       "Private browsing vs VPN": [
         "Soukromé procházení v porovnání s VPN"
       ],
+      "Public link": [
+        "Veřejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavení veřejného odkazu"
+      ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
       ],
@@ -10208,6 +10361,9 @@
       ],
       "Recover data": [
         "Obnovit data"
+      ],
+      "Remove your access?": [
+        "Odebrat váš přístup?"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -10250,6 +10406,12 @@
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavení pro ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Sdílet \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Sdílet ${ name }"
@@ -10386,6 +10548,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
+      ],
+      "Change shared item settings": [
+        "Změnit nastavení sdílených položek"
       ],
       "Customize import to reduce the number of folders": [
         "Přizpůsobte proces importu, abyste snížili počet složek"

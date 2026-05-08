@@ -56,6 +56,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini ekle"
       ],
@@ -1478,17 +1481,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 yeni yönetici rolü"
+      ],
       "3 new admin roles": [
         "3 yeni yönetici rolü"
-      ],
-      "Admin roles": [
-        "Yönetici rolleri"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Belirli yönetici rolleri atayarak yönetimi paylaşın. Her yöneticiye yalnızca gerek duyduğu erişim yetkisini verin. Böylece en az yetki ilkesi izlenerek, kuruluşunuz hesapların ele geçirilmesinden ve yanlışlıkla yapılan hatalardan korunur."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Aynı anda birçok kullanıcı için yönetim yetkisi devredin. Otomatik izinler için gruplara özel yönetici rolleri atayın. Bu yöntem işe alım ve işten ayrılma süreçlerinde zaman kazandırırken hataları azaltmak için en az ayrıcalık ilkesini temel alır."
       ],
       "Delegate management with the appropriate admin role.": [
         "Yönetimi uygun yönetici rolüne devredin."
@@ -1502,20 +1508,14 @@
       "New: Control admin access for individual users": [
         "Yeni: Bireysel kullanıcılar için yönetici erişimi denetimi"
       ],
-      "Organization admin": [
-        "Kuruluş yöneticisi"
+      "New: Control admin access for many users at once": [
+        "Yeni: Birden fazla kullanıcının yönetici erişimini aynı anda kontrol edin"
       ],
       "Organization admin:": [
         "Kuruluş yöneticisi:"
       ],
-      "Security admin": [
-        "Güvenlik yöneticisi"
-      ],
       "Security admin:": [
         "Güvenlik yöneticisi:"
-      ],
-      "User admin": [
-        "Kullanıcı yöneticisi"
       ],
       "User admin:": [
         "Kullanıcı yöneticisi:"
@@ -2139,6 +2139,9 @@
       "Managed via ${ registrar.name }": [
         "${ registrar.name } aracılığıyla yönetiliyor"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+      ],
       "Migrate from Google Workspace": [
         "Google Workspace üzerinden aktar"
       ],
@@ -2157,6 +2160,12 @@
       ],
       "Migration status": [
         "Aktarım durumu"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun özel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun açık anahtarı bulunamadı"
       ],
       "More details": [
         "Daha fazla bilgi"
@@ -6680,6 +6689,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } güncellendi"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
       ],
@@ -6799,6 +6811,9 @@
       ],
       "Activity Monitor": [
         "Etkinlik izleyici"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
@@ -7459,6 +7474,9 @@
       ],
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
@@ -8164,6 +8182,9 @@
       ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
+      ],
+      "RECOMMENDED": [
+        "ÖNERİLEN"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Güvenilen aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
@@ -14993,6 +15014,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Bir kullanıcının rolünü ve izinlerini yönetmek için adına tıklayın."
+      ],
+      "User roles available": [
+        "Kullanılabilir kullanıcı rolleri"
       ]
     },
     "sso": {

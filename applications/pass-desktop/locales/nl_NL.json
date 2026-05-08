@@ -1540,9 +1540,6 @@
         "${ payload.count } uitnodiging succesvol verzonden",
         "${ payload.count } uitnodigingen succesvol verzonden"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
       ],
@@ -1569,9 +1566,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Een contactpersoon wordt gemaakt voor elk e-mailadres dat e-mails naar of ontvangt van ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Er wordt een nieuwe versie gedownload. Zodra de download voltooid is, zal deze beschikbaar zijn bij de volgende herstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Een nieuwe versie van ${ PASS_APP_NAME } is beschikbaar. Update het om te genieten van de laatste functies en bugfixes."
@@ -1806,9 +1800,6 @@
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "${ PASS_SHORT_APP_NAME } bèta Inschakelen"
       ],
       "Enable auto-locking to secure your data": [
         "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
@@ -2049,7 +2040,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2077,9 +2069,6 @@
       ],
       "No network connection": [
         "Geen netwerkverbinding"
-      ],
-      "No new versions are available at the moment.": [
-        "Momenteel zijn er geen nieuwe versies beschikbaar."
       ],
       "None": [
         "Geen"
@@ -2467,12 +2456,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
-      "This will reload the application.": [
-        "Dit laadt de applicatie opnieuw."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Dit triggert een controle op nieuwe bètaversies."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Om e-mails te blijven ontvangen, zet deze aliassen over naar een ander postvak:"
       ],
@@ -2487,9 +2470,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Vertrouwd door meer dan 50 000 zakelijke gebruikers en 100 miljoen accounts over de hele wereld."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Probeer nieuwe ${ BRAND_NAME } functies, updates en producten voordat ze openbaar worden gemaakt."
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
@@ -2899,9 +2879,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
-      ],
-      "Beta Access": [
-        "Bèta-toegang"
       ],
       "Biometrics": [
         "Biometrie"

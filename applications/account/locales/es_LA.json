@@ -90,6 +90,9 @@
       "Add": [
         "Agregar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Agregar cuenta de ${ BRAND_NAME }"
       ],
@@ -2067,17 +2070,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 roles de administración nuevos"
+      ],
       "3 new admin roles": [
         "3 roles nuevos de administración"
-      ],
-      "Admin roles": [
-        "Roles de dadministración"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delegue la gestión al asignar roles de administración específicos. Brinde a cada administrador solo el acceso necesario. Esto cumple con el principio de privilegio mínimo, protegiendo su organización de cuentas comprometidas y errores acceidentales."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegue la gestión para varios usuarios a la vez. Asigne roles de administración específicas a grupos con permisos automáticos. Esto cumple con al principio de privilegios mínimos para ahorrar tiempo en integraciones y bajas mientras reduce errores."
       ],
       "Delegate management with the appropriate admin role.": [
         "Delegue la gestión con el rol de administración apropiado."
@@ -2091,20 +2097,14 @@
       "New: Control admin access for individual users": [
         "Nuevo: Control de acceso administrativo para usuarios individuales"
       ],
-      "Organization admin": [
-        "Administrador de la organización"
+      "New: Control admin access for many users at once": [
+        "Nuevo: Control de acceso administrativo para muchos usuarios a la vez"
       ],
       "Organization admin:": [
         "Administrador de la organización:"
       ],
-      "Security admin": [
-        "Administrador de seguridad"
-      ],
       "Security admin:": [
         "Administrador de seguridad:"
-      ],
-      "User admin": [
-        "Usuario administrador"
       ],
       "User admin:": [
         "Usuario administrador:"
@@ -2951,6 +2951,9 @@
       "Mail": [
         "Correo"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Falta la dirección de miembro. Contacte son el soporte al cliente para resolver esto"
+      ],
       "Migrate from Google Workspace": [
         "Migrar desde Google Workspace"
       ],
@@ -2969,6 +2972,12 @@
       ],
       "Migration status": [
         "Estado de la migración"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de organización"
       ],
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
         "Mueva sus usuarios, correos electrónicos, y ajustes automáticamente desde Google Workspace. Le guiaremos a conecar su cuenta, verificar su dominio, y migrar usuarios de forma segura."
@@ -9575,6 +9584,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } actualizado"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta su tráfico. ${ PASS_SHORT_APP_NAME } oculta su identidad, **alias hide-my-email** ilimitados y **alertas de la dark web** si sus datos han sido vulnerados."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Se requiere ${ vpnPlus } para conexión a nivel de país."
       ],
@@ -9727,6 +9739,9 @@
       ],
       "Activity Monitor": [
         "Monitor de actividad"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -9956,6 +9971,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "¿En verdad desea revocar el certificado **${ name }**?"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "¿En verdad desea cerrar la sesión de esta cuenta?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "¿En realidad desea ordenar sus carpetas alfabéticamente?"
@@ -10678,6 +10696,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Para acceder fácilmente a sus contraseñas y más."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
@@ -11630,6 +11651,9 @@
       ],
       "Recently used servers:": [
         "Servidores usados recientemente:"
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
@@ -19644,8 +19668,8 @@
       ]
     },
     "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Debe actualizar todas las aplicaciones móviles de ${ BRAND_NAME }**: sus nuevas claves no funcionarán en versiones anteriores de la aplicación."
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Debe actualizar todas las aplicaciones de ${ BRAND_NAME }**: sus nuevas claves no funcionarán en versiones anteriores de la aplicación."
       ]
     },
     "PQC key generation": {
@@ -22199,11 +22223,17 @@
       ]
     },
     "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Gane hasta ${ maxRewardAmount } en créditos"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtenga créditos cuando la persona que invite se suscriba a un plan de ${ BRAND_NAME }."
+      ],
+      "User roles available": [
+        "Roles de usuario disponibles"
       ]
     },
     "sso": {

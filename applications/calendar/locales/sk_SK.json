@@ -50,6 +50,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "Pridať dátum"
       ],
@@ -5306,6 +5309,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskuje vašu IP adresu, aby vás webové stránky nemohli identifikovať."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -5380,6 +5386,9 @@
       ],
       "Ad targeting": [
         "Cielená reklama"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5773,6 +5782,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Pre väčšiu bezpečnosť môžete nastaviť prístupovú frázu. Tá nebude zahrnutá v pozvánke v kalendári, nezabudnite ju preto zdieľať so svojimi hosťami samostatne."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Frekvencia úprav bude stratená."
@@ -6169,6 +6181,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Rozsah sa prekrýva s existujúcim rozsahom."
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."

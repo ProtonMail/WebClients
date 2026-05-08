@@ -45,6 +45,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "添加 ${ photoCount } 张照片到新相册"
       ],
@@ -774,6 +777,9 @@
       "Re-sign": [
         "重新签名"
       ],
+      "Rebuild index": [
+        "重建索引"
+      ],
       "Reconnect": [
         "重新连接"
       ],
@@ -917,6 +923,9 @@
       ],
       "Search drive": [
         "搜索网盘"
+      ],
+      "Search is unavailable": [
+        "搜索不可用"
       ],
       "See how": [
         "详细了解"
@@ -3491,6 +3500,9 @@
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
       ],
+      "Folder not found": [
+        "未找到文件夹"
+      ],
       "Forward address is required": [
         "转发邮箱为必填项"
       ],
@@ -4838,6 +4850,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } 和 ${ SHEETS_APP_NAME } 文件无法直接下载，且不会包含在此次下载中。您可以点击“继续下载”来下载其他文件。"
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } 检测到本地搜索索引已损坏且无法使用，请重建索引以恢复搜索。"
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store 上的${ DRIVE_APP_NAME }"
       ],
@@ -4937,6 +4952,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 正在隐藏您的 IP 地址，网站因此无法识别您的身份。"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -5005,6 +5023,9 @@
       ],
       "Ad targeting": [
         "广告定位"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5228,6 +5249,9 @@
       "Copy your referral link": [
         "复制您的推荐链接"
       ],
+      "Could not scan file for malware": [
+        "无法扫描文件是否存在恶意软件"
+      ],
       "Country code": [
         "国家/地区代码"
       ],
@@ -5438,6 +5462,12 @@
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
       ],
+      "File could not be scanned": [
+        "无法扫描文件"
+      ],
+      "File flagged as potentially malicious": [
+        "文件被标记为潜在恶意软件"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
@@ -5473,6 +5503,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "为了获得最佳效果，请避免流式传输和内存密集型活动，或将上传分成较小的批次。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "仅需 ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "免费提供 5GB 加密存储空间，供您开始使用"
@@ -5584,6 +5617,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "已索引 ${ first }、${ second }、${ third } 和 ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "索引遇到意外状况，无法继续。请重建索引以恢复。"
       ],
       "Indexing in progress": [
         "正在索引"
@@ -5810,6 +5846,9 @@
       "Not connected": [
         "未连接"
       ],
+      "Not enough storage space": [
+        "存储空间不足"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
       ],
@@ -6002,6 +6041,9 @@
       "Ready to add some photos?": [
         "准备好添加一些照片了吗？"
       ],
+      "RECOMMENDED": [
+        "推荐"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
       ],
@@ -6053,11 +6095,29 @@
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
       ],
+      "Search data is corrupted": [
+        "搜索数据已损坏"
+      ],
       "Search Enabled": [
         "搜索已启用"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "搜索已启用，您现在可以关闭此对话框，开始搜索文件和文件夹。"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "搜索时发生内部错误，请重建索引以恢复。"
+      ],
+      "Search engine error": [
+        "搜索引擎错误"
+      ],
+      "Search error": [
+        "搜索错误"
+      ],
+      "Search is in an invalid state": [
+        "搜索状态无效"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "搜索已就绪，您的文件已建立索引。"
       ],
       "Search module is not available.": [
         "搜索模块不可用！"
@@ -6220,6 +6280,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "此收件人已停用端到端加密。要能够向此收件人发送加密电子邮件，该收件人必须重新启用端到端加密。"
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "搜索引擎遇到内部错误，请重建索引以恢复。"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
@@ -6706,6 +6769,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "浏览器在索引文件以进行搜索时空间不足。请释放存储空间，然后重建索引。"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "您当前的浏览器不支持下载大型文件/多个文件，请下载桌面应用程序以获得流畅的上传和下载体验。"

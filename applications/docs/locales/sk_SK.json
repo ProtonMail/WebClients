@@ -90,6 +90,9 @@
       "Apply": [
         "Použiť"
       ],
+      "Ask me next time": [
+        "Opýtať sa nabudúce"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
@@ -122,6 +125,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Change my access": [
+        "Zmeniť môj prístup"
       ],
       "Change password": [
         "Zmeniť heslo"
@@ -230,6 +236,9 @@
       ],
       "Copy invite link": [
         "Skopírovať pozývací odkaz"
+      ],
+      "Copy link": [
+        "Kopírovať odkaz"
       ],
       "Copy password": [
         "Kopírovať heslo"
@@ -356,6 +365,9 @@
       ],
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
+      ],
+      "Encrypted": [
+        "Šifrované"
       ],
       "Expand": [
         "Rozbaliť"
@@ -630,6 +642,9 @@
       "Remove file": [
         "Odstrániť súbor"
       ],
+      "Remove my access": [
+        "Odstrániť mô prístup"
+      ],
       "Rename": [
         "Premenovať"
       ],
@@ -681,6 +696,9 @@
       "Save changes": [
         "Uložiť zmeny"
       ],
+      "Save preferences": [
+        "Uložiť preferencie"
+      ],
       "Search": [
         "Hľadať"
       ],
@@ -711,6 +729,9 @@
       "Select all": [
         "Vybrať všetko"
       ],
+      "Set password or expiration date": [
+        "Nastaviť heslo alebo dátum exspirácie"
+      ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
       ],
@@ -734,6 +755,12 @@
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
+      ],
+      "Shared": [
+        "Zdieľané"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Zdieľanie je end-to-end šifrované"
       ],
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
@@ -2859,6 +2886,9 @@
       "Already a member of this share": [
         "Už ste členom tohto zdieľania"
       ],
+      "An error occurred": [
+        "Došlo k chybe"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Pri pokuse o konvertovanie dokumentu došlo k chybe. Skúste to znova, prosím."
       ],
@@ -2952,8 +2982,20 @@
       "Failed loading group members": [
         "Chyba pri načítavaní členov skupiny"
       ],
+      "Failed to change permissions settings": [
+        "Zmena nastavení oprávnení zlyhala"
+      ],
       "Failed to copy photo to album": [
         "Nepodarilo sa skopírovať fotografiu do albumu"
+      ],
+      "Failed to create public share node": [
+        "Nepodarilo sa vytvoriť uzol verejného zdieľania"
+      ],
+      "Failed to fetch node": [
+        "Načítanie uzla zlyhalo"
+      ],
+      "Failed to fetch sharing info": [
+        "Načítanie informácií o zdieľaní zlyhalo"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
@@ -2966,6 +3008,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Pomenovanie dokumentu sa nepodarilo. Skúste to neskôr, prosím."
+      ],
+      "Failed to resend invitation": [
+        "Opätovné odoslanie pozvánky zlyhalo"
+      ],
+      "Failed to unshare node": [
+        "Nepodarilo sa zrušiť zdieľanie uzla"
+      ],
+      "Failed to update direct share node": [
+        "Nepodarilo sa aktualizovať uzol priameho zdieľania"
+      ],
+      "Failed to update public share node": [
+        "Nepodarilo sa aktualizovať uzol verejného zdieľania"
       ],
       "File \"${ name }\" is already downloading": [
         "Súbor „${ name }“ sa už sťahuje"
@@ -3168,6 +3222,9 @@
       "status page": [
         "stránka stavu"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Ukončenie zdieľania tejto položky zlyhalo"
+      ],
       "The address might be misspelled": [
         "Adresa môže obsahovať preklep"
       ],
@@ -3197,6 +3254,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Posledná aktualizácia, ktorú ste vykonali v dokumente, je buď príliš veľká, alebo by prekročila celkový limit veľkosti dokumentu. Úpravy boli dočasne zakázané. Vaša zmena sa neuloží. Exportujte, prosím, kópiu dokumentu a znovu načítajte stránku."
+      ],
+      "The link to your item failed to be deleted": [
+        "Odkaz na vašu položku sa nepodarilo zmazať"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr, prosím"
@@ -3305,6 +3365,12 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nerozšifrovateľné zariadenie"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovateľný názov"
       ]
     },
     "error": {
@@ -4451,6 +4517,18 @@
       "Calendar side panel": [
         "Bočný panel kalendára"
       ],
+      "Can edit": [
+        "Môže upravovať"
+      ],
+      "Can edit and manage access": [
+        "Môže upravovať a spravovať prístup"
+      ],
+      "Can view and edit": [
+        "Môže zobraziť a upraviť"
+      ],
+      "Can view only": [
+        "Môže len zobraziť"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
       ],
@@ -4492,6 +4570,9 @@
       ],
       "Continue": [
         "Pokračovať"
+      ],
+      "Converting document...": [
+        "Konverzia dokumentu..."
       ],
       "Copied to clipboard": [
         "Skopírované do schránky"
@@ -4543,6 +4624,9 @@
       ],
       "Creating link to folder": [
         "Vytváranie odkazu na priečinok"
+      ],
+      "Creating new document...": [
+        "Vytváranie nového dokumentu..."
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -4643,6 +4727,12 @@
       "Enter your own password (as trusted contact).": [
         "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba pri konverzii dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Chyba pri načítaní dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba synchronizácie"
       ],
@@ -4706,6 +4796,12 @@
       "Geoblocking": [
         "Geoblokácia"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dostávajte emailové aktualizácie o komentároch a návrhoch pridaných k vašim dokumentom."
+      ],
+      "Get Notified About Comments": [
+        "Dostávajte notifikácie o komentároch"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
       ],
@@ -4738,6 +4834,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ak prejdete na nižšie predplatné, stratíte prístup k plateným funkciám ${ VPN_APP_NAME } ."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendára",
@@ -4823,6 +4922,9 @@
       "Limited availability": [
         "Obmedzená dostupnosť"
       ],
+      "Link copied": [
+        "Odkaz bol skopírovaný"
+      ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
@@ -4841,11 +4943,17 @@
       "Loading link": [
         "Načítanie odkazu"
       ],
+      "Loading...": [
+        "Načítavanie..."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Zdá sa, že ste offline. Dokument nie je možné upravovať, keď ste offline. Skontrolujte pripojenie svojho zariadenia, prosím."
       ],
       "Low Priority": [
         "Nízka priorita"
+      ],
+      "Making a copy...": [
+        "Vytváranie kópie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
@@ -4879,6 +4987,9 @@
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V URL adrese nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žiadna emailová adresa"
@@ -4936,6 +5047,9 @@
       ],
       "Owner": [
         "Vlastník"
+      ],
+      "owner": [
+        "vlastník"
       ],
       "password": [
         "heslo"
@@ -5165,6 +5279,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Vami zadaná URL adresa bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu URL adresy."
+      ],
       "There are no documents in the trash.": [
         "V koši nie sú žiadne dokumenty."
       ],
@@ -5354,6 +5471,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Pri pripájaní k VPN sa používa šifrovacia technológia na skrytie vašej IP adresy (jedinečný kód pridelený vášmu zariadeniu)."
       ],
+      "Who has access": [
+        "Kto má prístup"
+      ],
       "words": [
         "slov"
       ],
@@ -5434,6 +5554,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -5647,8 +5770,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "Access": [
+        "Prístup"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
+      "Active": [
+        "Aktívne"
       ],
       "Add email address": [
         "Pridať emailovú adresu"
@@ -5664,6 +5793,15 @@
       ],
       "Alias title": [
         "Názov aliasu"
+      ],
+      "Allow editors to change permissions and share": [
+        "Povoliť editorom zmeniť oprávnenia a zdieľať"
+      ],
+      "Anonymous": [
+        "Anonymne"
+      ],
+      "Anyone on the Internet with the link": [
+        "Ktokoľvek na internete s odkazom"
       ],
       "Anyone on the Internet with the link can edit": [
         "Ktokoľvek na internete s odkazom môže upravovať"
@@ -5703,6 +5841,12 @@
       ],
       "Calendar": [
         "Kalendár"
+      ],
+      "can edit": [
+        "môže upravovať"
+      ],
+      "can view": [
+        "môže zobraziť"
       ],
       "Cancel download": [
         "Zrušiť sťahovanie"
@@ -5749,8 +5893,14 @@
       "Delete": [
         "Odstrániť"
       ],
+      "Delete link and remove access for everyone": [
+        "Odstrániť odkaz a zrušiť pre všetkých prístup"
+      ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovať tento odkaz k určitému dátumu"
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
@@ -5794,11 +5944,17 @@
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
+      "Enable email notifications": [
+        "Povoliť emailové notifikácie"
+      ],
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
       "Erase this link and remove everyone with access": [
         "Vymazať tento odkaz a odstrániť všetkých s prístupom"
+      ],
+      "Expiry": [
+        "Platnosť"
       ],
       "Extended address": [
         "Rozšírená adresa"
@@ -5841,6 +5997,9 @@
       ],
       "Include application logs in bug report": [
         "Vrátane záznamov aplikácie v chybovom hlásení"
+      ],
+      "Include document name in notification": [
+        "Zahrnúť názov dokumentu do notifikácie"
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
@@ -5914,6 +6073,9 @@
       "New password": [
         "Nové heslo"
       ],
+      "Not active": [
+        "Neaktívne"
+      ],
       "Note": [
         "Poznámka"
       ],
@@ -5974,8 +6136,14 @@
       "Replace existing folder": [
         "Nahradiť existujúci priečinok"
       ],
+      "Require password": [
+        "Vyžadovať heslo"
+      ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ],
       "Set expiration date": [
         "Nastaviť koniec platnosti"
@@ -7596,6 +7764,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" zdieľané"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }“ úspešne vytvorené"
       ],
@@ -7823,6 +7994,12 @@
       ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavenie aktualizované. Editori môžu meniť oprávnenia a zdieľať."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavenie aktualizované. Editori nemôžu meniť oprávnenia ani zdieľať."
       ],
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"
@@ -8891,6 +9068,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Vytváranie novej tabuľky..."
+      ],
       "Detect automatically": [
         "Zistiť automaticky"
       ],
@@ -9216,8 +9396,14 @@
       "Accepted": [
         "Prijaté"
       ],
+      "pending": [
+        "čakajúce"
+      ],
       "Pending": [
         "Čakajúce"
+      ],
+      "user joined": [
+        "používateľ sa pripojil"
       ]
     },
     "Storage": {
@@ -9744,6 +9930,9 @@
       "Cannot load link": [
         "Odkaz sa nepodarilo načítať"
       ],
+      "Change access to viewer?": [
+        "Zmeniť prístup čitateľovi?"
+      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -10095,6 +10284,12 @@
       "Private browsing vs VPN": [
         "Súkromné surfovanie v porovnaní s VPN"
       ],
+      "Public link": [
+        "Verejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavenia verejného odkazu"
+      ],
       "Re-sign all contacts": [
         "Znovu podpísať všetky kontakty"
       ],
@@ -10112,6 +10307,9 @@
       ],
       "Recover data": [
         "Obnoviť dáta"
+      ],
+      "Remove your access?": [
+        "Odstrániť váš prístup?"
       ],
       "Report a problem": [
         "Nahlásiť problém"
@@ -10154,6 +10352,12 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavenia pre ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Zdieľať \"${ fileName }\""
       ],
       "Share ${ name }": [
         "Zdieľa ${ name }"
@@ -10290,6 +10494,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
+      ],
+      "Change shared item settings": [
+        "Zmeniť nastavenia zdieľanej položky"
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"

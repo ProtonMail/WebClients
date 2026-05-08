@@ -56,6 +56,9 @@
       "Add": [
         "أضف"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "إضافة ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "إضافة عنوان ${ BRAND_NAME }"
       ],
@@ -5373,6 +5376,9 @@
       "Select your deal": [
         "اختر العرض"
       ],
+      "Select your payment method:": [
+        "حدد طريقة الدفع المناسبة لك."
+      ],
       "Select your pricing plan": [
         "حدد خطة التسعير"
       ],
@@ -6089,6 +6095,9 @@
       "${ vaultLink } updated": [
         "تم تحديث ${ vaultLink }"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "يُخفي ${ VPN_SHORT_APP_NAME } حركة المرور الخاصة بك. ويُخفي ${ PASS_SHORT_APP_NAME } هويتك\n— مع عناوين **hide-my-email** غير محدودة و**تنبيهات الويب المظلم** إذا تم تسريب بياناتك في أي وقت."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "مطلوب ${ vpnPlus } للاتصال على مستوى الدولة."
       ],
@@ -6199,6 +6208,9 @@
       ],
       "Activity Monitor": [
         "مراقب النشاط"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "إضافة ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "add a recovery method": [
         "إضافة طريقة استرداد"
@@ -6853,6 +6865,9 @@
       ],
       "for choosing ${ product }": [
         "لاختيارك ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "مقابل ${ bundlePlanPriceInline } فقط"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "للمستخدمين الذين يرغبون في الانتقال إلى ${ MAIL_APP_NAME } من خدمة بريد إلكتروني أخرى، اختارو علامة التبويب ${ boldAddresses } وأضيفو جميع عناوين البريد الإلكتروني النشطة قبل تغيير سجل MX لضمان انتقال سلس."
@@ -7525,6 +7540,9 @@
       ],
       "Recently used servers:": [
         "الخوادم المستخدمة مؤخرًا:"
+      ],
+      "RECOMMENDED": [
+        "موصى به"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "موصى به على الأجهزة الموثوقة ${ keepMeSignedInLearnMoreLink }"

@@ -1534,9 +1534,6 @@
         "${ payload.count } inbjudan skickad",
         "${ payload.count } inbjudningar skickat"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } inaktiverades"
       ],
@@ -1563,9 +1560,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "En kontakt skapas för varje e-postadress som skickar e-post till eller tar emot e-post från ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "En ny version laddas ner. När nedladdningen är klar kommer den att vara tillgänglig vid nästa omstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
@@ -1797,9 +1791,6 @@
       ],
       "Emptying trash...": [
         "Tömmer papperskorg …"
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktivera ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
@@ -2039,6 +2030,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2065,9 +2060,6 @@
       ],
       "No network connection": [
         "Ingen nätverksanslutning"
-      ],
-      "No new versions are available at the moment.": [
-        "Inga nya versioner är tillgängliga för tillfället."
       ],
       "None": [
         "Ingen"
@@ -2452,12 +2444,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Detta kommer avvisa enheten **${ name }** som försökte logga in på ditt ${ BRAND_NAME }-konto den **${ date }**."
       ],
-      "This will reload the application.": [
-        "Detta kommer ladda om applikationen."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Detta kommer utlösa en kontroll efter nya betaversioner."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "För att fortsätta ta emot e-post, överför dessa alias till en annan brevlåda:"
       ],
@@ -2472,9 +2458,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Betrodd av över 50 000 företagsanvändare och 100 miljoner konton runt om i världen."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten."
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -2499,6 +2482,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt andra lösenord"
+      ],
+      "Unlock with biometrics": [
+        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt …"
@@ -2881,9 +2867,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Förutom att lagra dina inloggningar skyddar ${ PASS_APP_NAME } din identitet med en integrerad funktion för e-postalias. När du registrerar dig för ett nytt konto online kan ${ PASS_APP_NAME } automatiskt skapa ett alias för att hålla din faktiska e-postadress skyddad. "
-      ],
-      "Beta Access": [
-        "Beta-åtkomst"
       ],
       "Biometrics": [
         "Biometri"

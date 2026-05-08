@@ -2061,9 +2061,6 @@
       "3 new admin roles": [
         "3 neue Administratorenrollen"
       ],
-      "Admin roles": [
-        "Administratorrollen"
-      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Sicherheitsrichtlinien, Datenaufbewahrung und die VPN-Infrastruktur konfigurieren sowie die Prüfprotokolle verwalten."
       ],
@@ -2082,20 +2079,11 @@
       "New: Control admin access for individual users": [
         "Neu: Administrationsrechte für einzelne Benutzer kontrollieren"
       ],
-      "Organization admin": [
-        "Organisationsadministrator"
-      ],
       "Organization admin:": [
         "Organisationsadministrator:"
       ],
-      "Security admin": [
-        "Sicherheitsadministrator"
-      ],
       "Security admin:": [
         "Sicherheitsadministrator:"
-      ],
-      "User admin": [
-        "Benutzeradministrator"
       ],
       "User admin:": [
         "Benutzeradministrator:"
@@ -19487,11 +19475,6 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Deine Adressschlüssel konnten nicht generiert werden. Um den Post-Quantum-Schutz zu aktivieren, musst du deine neuen Verschlüsselungsschlüssel manuell generieren.\n\nGehe zu ${ settingsLink } und wähle \"Schlüssel generieren\" für jede Adresse aus."
-      ]
-    },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Du musst alle mobilen ${ BRAND_NAME }-Apps aktualisieren**: Deine neuen Schlüssel funktionieren nicht auf älteren App-Versionen."
       ]
     },
     "PQC key generation": {

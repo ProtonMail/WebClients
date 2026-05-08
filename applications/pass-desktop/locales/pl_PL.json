@@ -169,6 +169,9 @@
       "Continue offline": [
         "Kontynuuj w trybie offline"
       ],
+      "Copy": [
+        "Kopiuj"
+      ],
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
@@ -462,6 +465,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "Wklej"
       ],
       "Pause monitoring": [
         "Wstrzymaj monitoring"
@@ -1711,9 +1717,6 @@
       "Emptying trash...": [
         "Opróżnianie kosza..."
       ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Włącz ${ PASS_SHORT_APP_NAME } w wersji beta"
-      ],
       "Enable auto-locking to secure your data": [
         "Włącz automatyczną blokadę, aby chronić dane"
       ],
@@ -1940,7 +1943,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2528,6 +2534,11 @@
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -2744,9 +2755,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy rejestrujesz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail."
-      ],
-      "Beta Access": [
-        "Dostęp beta"
       ],
       "Biometrics": [
         "Biometria"
