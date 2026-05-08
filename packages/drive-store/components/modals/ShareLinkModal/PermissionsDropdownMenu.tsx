@@ -65,8 +65,9 @@ export const PermissionsDropdownMenu = ({
     };
 
     const memberPermissionsLabels = {
-        [SHARE_MEMBER_PERMISSIONS.VIEWER]: c('Label').t`Viewer`,
-        [SHARE_MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Editor`,
+        [SHARE_MEMBER_PERMISSIONS.VIEWER]: c('Label').t`can view`,
+        [SHARE_MEMBER_PERMISSIONS.EDITOR]: c('Label').t`can edit`,
+        [SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR]: c('Label').t`can edit`,
     };
 
     const memberPermissionsIcons: { [key in number]: IconName } = {
