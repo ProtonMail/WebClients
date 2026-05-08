@@ -50,6 +50,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
       "Add a date": [
         "Bir tarih ekleyin"
       ],
@@ -5158,6 +5161,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } IP adresinizi gizler. Böylece siteler sizin kim olduğunuzu anlayamaz."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
@@ -5228,6 +5234,9 @@
       ],
       "Ad targeting": [
         "Hedeflenmiş reklam"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
@@ -5607,6 +5616,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Yinelenme değişiklikleri kaybolacak."
@@ -5999,6 +6011,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Aralık, var olan bir aralıkla çakışıyor."
+      ],
+      "RECOMMENDED": [
+        "ÖNERİLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."

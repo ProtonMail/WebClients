@@ -50,6 +50,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "Προσθέστε μια ημερομηνία"
       ],
@@ -5158,6 +5161,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "Το ${ VPN_SHORT_APP_NAME } αποκρύπτει την επισκεψιμότητά σας. Το ${ PASS_SHORT_APP_NAME } αποκρύπτει την ταυτότητά σας\n— απεριόριστα **hide-my-email ψευδώνυμα** και **ειδοποιήσεις dark-web** εάν τα δεδομένα σας διαρρεύσουν ποτέ."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
@@ -5228,6 +5234,9 @@
       ],
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5607,6 +5616,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Για επιπλέον ασφάλεια, μπορείτε να ορίσετε μια φράση πρόσβασης. Δε θα περιληφθεί στην πρόσκληση του ημερολογίου, θυμηθείτε να τη μοιραστείτε με τους καλεσμένους σας ξεχωριστά."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Μόνο για ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
@@ -5999,6 +6011,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Το εύρος επικαλύπτεται με μια υπάρχον εύρος."
+      ],
+      "RECOMMENDED": [
+        "ΠΡΟΤΕΙΝΟΜΕΝΑ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
