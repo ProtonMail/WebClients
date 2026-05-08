@@ -37,7 +37,6 @@ import {
     type TimeoutMessage,
     type TokenDataMessage,
     type ToolName,
-    type UnencryptedWireTurn,
     type WireImage,
     type WireTurn,
 } from '../../../types-api';
@@ -49,7 +48,6 @@ import {
     isEncrypted,
     isEncryptedImageDataMessage,
     isEncryptedTokenDataMessage,
-    isEncryptedWireTurn,
     isErrorMessage,
     isGenerationResponseMessage,
     isGenerationTarget,
@@ -60,8 +58,6 @@ import {
     isRejectedMessage,
     isTimeoutMessage,
     isTokenDataMessage,
-    isUnencryptedWireTurn,
-    isWireTurn,
 } from '../../../types-api';
 
 // Re-export types with aliases
@@ -92,7 +88,6 @@ export {
     type WireImage,
 };
 export type EncryptedTurn = EncryptedWireTurn;
-export type UnencryptedTurn = UnencryptedWireTurn;
 export type Turn = WireTurn;
 
 // Re-export functions with aliases
@@ -115,9 +110,6 @@ export {
     isTimeoutMessage,
     isTokenDataMessage,
 };
-export const isEncryptedTurn = isEncryptedWireTurn;
-export const isUnencryptedTurn = isUnencryptedWireTurn;
-export const isTurn = isWireTurn;
 
 export type { Base64, RequestId, Status };
 
@@ -143,7 +135,7 @@ export interface LumoApiClientConfig {
 export type ChunkCallback = (message: GenerationResponseMessage) => Promise<void> | void;
 export type FinishCallback = (status: Status) => Promise<void> | void;
 
-// Options interface
+// Options interface -
 export interface AssistantCallOptions {
     chunkCallback?: ChunkCallback;
     finishCallback?: FinishCallback;
