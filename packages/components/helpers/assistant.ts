@@ -31,7 +31,7 @@ export const PLANS_SUPPORTING_SCRIBE = [
 ];
 
 export const isScribeSupported = (organization?: Organization, user?: UserModel): boolean => {
-    if (user?.isFree) {
+    if (user?.isFree || (user?.NumLumo ?? 0) > 0) {
         return true;
     }
 

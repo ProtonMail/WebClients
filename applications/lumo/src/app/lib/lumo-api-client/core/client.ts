@@ -88,14 +88,12 @@ export class LumoApiClient {
             autoGenerateEncryption,
         });
 
-        // Prepare the request
-        // TODO consider just passing `options` instead of rebuilding a narrower object
         let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools,
             enableImageTools,
             generateTitle,
             enableReasoning,
-            enableSuggestedQuestions,
+            enableSuggestedQuestions
         });
 
         // Prepare request context and run interceptors
