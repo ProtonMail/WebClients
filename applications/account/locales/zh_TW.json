@@ -2400,6 +2400,9 @@
       ],
       "Private video calls for the conversations that matter.": [
         "用於重要交談的私密視訊。"
+      ],
+      "Advanced account and network security in one plan": [
+        "進階帳號和網路安全於單一方案"
       ]
     },
     "color": {
@@ -3519,6 +3522,9 @@
       ],
       "Åland Islands": [
         "奧蘭群島"
+      ],
+      "North Macedonia": [
+        "北馬其頓"
       ]
     },
     "Country select label": {
@@ -3851,6 +3857,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
       ]
     },
     "description": {
@@ -4995,6 +5004,9 @@
       ],
       "Zero keys reactivated": [
         "重新啟動 0 把金鑰"
+      ],
+      "Company name or personal name is required": [
+        "公司名稱或個人名稱是需要的"
       ]
     },
     "error": {
@@ -10640,6 +10652,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Continue cancelling": [
+        "持續取消"
       ]
     },
     "label": {
@@ -13715,6 +13730,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -13989,6 +14007,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "身為一位 **${ currentPlanTitle }** 訂閱者，您可透過升級至 **${ upsellPlanTitle }** 方案以解鎖 **${ unlockPlanTitle }** 和更多 ${ BRAND_NAME } 服務。"
       ]
     },
     "Property type": {
@@ -19009,6 +19030,41 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 個新的管理員角色"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "一次管理多位使用者的委派權限。可將特定管理員角色指派給群組，以自動套用權限。這遵循最小權限原則，在節省帳號啟用與離職交接時間的同時，也能降低錯誤發生。"
+      ],
+      "New: Control admin access for many users at once": [
+        "新訊息：一次控管多位使用者的管理員存取權限"
+      ]
+    },
+    "BOSS": {
+      "Member address not found. Please contact customer support to resolve this": [
+        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
+      ],
+      "Missing organization private key": [
+        "缺少組織私有密鑰"
+      ],
+      "Missing organization public key": [
+        "缺少組織公用密鑰"
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**您必須更新所有的 ${ BRAND_NAME } apps**: 您的全新金鑰是無法使用在舊版的應用程式。"
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "點擊使用者的名稱，以進行管理他們的角色與權限。"
+      ],
+      "User roles available": [
+        "是用的使用者角色"
       ]
     }
   }

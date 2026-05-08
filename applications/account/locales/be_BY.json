@@ -3041,6 +3041,69 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Вам неабходна даць дазвол для ${ BRAND_NAME } на капіяванне вашых даных. Працягвайце далей пасля таго, як будуць прыняты дазволы."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
+      ],
+      "Activated": [
+        "Актывавана"
+      ],
+      "Continue migration": [
+        "Працягнуць перанос"
+      ],
+      "Copy activation link to clipboard": [
+        "Скапіюйце спасылку актывацыі ў буфер абмену"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Скапіюйце код ніжэй і ўстаўце яго ў раздзел DNS вашага даменнага вузла. Прыклады і карысныя парады як гэта зрабіць можна знайсці ў ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
+      ],
+      "DMARC records": [
+        "Запісы DMARC"
+      ],
+      "Go to Domain names": [
+        "Перайсці ў даменныя імёны"
+      ],
+      "Install Migration assistant": [
+        "Усталяваць Migration Assistant"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Кіруецца праз ${ registrar.name }"
+      ],
+      "More details": [
+        "Дадатковая інфармацыя"
+      ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Pending": [
+        "У чаканні"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Дадайце наступныя запісы ў кансоль DNS вашага пастаўшчыка даменаў:"
+      ],
+      "Set up manually": [
+        "Наладзіць ўручную"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Абагуліце спасылку актывацыі з карыстальнікамі, каб яны змаглі пацвердзіць свой уліковы запіс ${ BRAND_NAME }."
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Прадвызначаныя налады адсутнічаюць. Аднак для ўдасканалення вашай бяспекі рэкамендуецца наладзіць гэта значэнне ў p=quarantine."
+      ],
+      "This migration has been completed": [
+        "Перанос завершаны"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Звярніце ўвагу, што некаторыя карыстальнікі не пацвердзілі свае ўліковыя запісы ${ BRAND_NAME }."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальніка. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
+        "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
       ]
     },
     "breadcrumb": {
@@ -6771,6 +6834,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "Add 1 more": [
+        "Дадаць яшчэ 1"
+      ],
+      "Explore plans": [
+        "Пазнаёміцца з тарыфнымі планамі"
       ]
     },
     "Empty group name": {
@@ -20348,6 +20417,12 @@
       ],
       "Verify recovery phone": [
         "Спраўдзіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Enable email recovery": [
+        "Уключыць электронную пошту для аднаўлення"
+      ],
+      "Phone recovery enabled": [
+        "Тэлефон для аднаўлення доступу ўключаны"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -22922,6 +22997,9 @@
       ],
       "Verify ${ value }": [
         "Спраўджанне ${ value }"
+      ],
+      "Disable recovery file": [
+        "Адключыць файл аднаўлення"
       ]
     },
     "Step in filter modal": {
@@ -26534,6 +26612,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
+      ],
+      "via ${ groupName }": [
+        "праз ${ groupName }"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -27685,6 +27766,94 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Label for domain setup": {
+      "Host name": [
+        "Імя вузла"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Знойдзены памылковы запіс ${ group.name }"
+      ],
+      "Use default value": [
+        "Выкарыстоўваць прадвызначанае значэнне"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Уліковы запіс электроннай пошты ${ BRAND_NAME }"
+      ],
+      "Add options": [
+        "Дадаць параметры"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць дапамагчы разблакіраваць вашы даныя пасля скідання пароля."
+      ],
+      "Add phone number": [
+        "Дадаць нумар тэлефона"
+      ],
+      "Added recovery phone": [
+        "Тэлефон для аднаўлення дададзены"
+      ],
+      "Allow password reset from the settings": [
+        "Дазволіць скіданне пароля з налад"
+      ],
+      "Allow recovery by email": [
+        "Дазволіць аднаўленне доступу па электроннай пошце"
+      ],
+      "Allow trusted friends to sign in": [
+        "Дазволіць давераным сябрам уваходзіць"
+      ],
+      "Done": [
+        "Гатова"
+      ],
+      "Download recovery file": [
+        "Спампаваць файл аднаўлення"
+      ],
+      "Emergency contacts enabled": [
+        "Экстранныя кантакты ўключаны"
+      ],
+      "Enable device recovery": [
+        "Уключыць аднаўленне па прыладзе"
+      ],
+      "Enable email recovery": [
+        "Уключыць электронную пошту для аднаўлення"
+      ],
+      "Enable phone recovery": [
+        "Уключыць электронную пошту для аднаўлення"
+      ],
+      "Enabled device recovery": [
+        "Аднаўленне па прыладзе ўключана"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Here's how you increased your account protection:": [
+        "Як павялічыць абарону вашага ўліковага запісу:"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Гэта дазволіць вам увайсці і аднавіць свае даныя, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Гэта адзіны спосаб імгненна аднавіць усе вашы даныя ў сэрвісе. Захавайце яе ў надзейным месцы і каб яна была даступна толькі вам."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Гэта функцыя дазволіць вам хутка атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць пароль."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } для спраўджання таго, што яна належыць менавіта вам."
+      ],
+      "Verified password": [
+        "Спраўджаны пароль"
+      ],
+      "Verify password": [
+        "Спраўджанне пароля"
+      ],
+      "Verify recovery phone": [
+        "Спраўдзіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Verify your recovery phone": [
+        "Спраўдзіце свой нумар тэлефона для аднаўлення доступу"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць свой нумар тэлефона для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
       ]
     }
   }

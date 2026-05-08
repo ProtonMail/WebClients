@@ -1823,6 +1823,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Added ${ memberName } as group owner": [
+        "Lade till ${ memberName } som gruppägare"
+      ],
+      "Save & exit": [
+        "Spara och avsluta"
       ]
     },
     "action": {
@@ -2096,6 +2102,9 @@
       ],
       "User admin:": [
         "Användaradministratör:"
+      ],
+      "2 new admin roles": [
+        "2 nya administratörsroller"
       ]
     },
     "AdminRole_Info": {
@@ -3038,6 +3047,105 @@
       ],
       "You're all set!": [
         "Du är klar!"
+      ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "Account disconnected": [
+        "Konto frånkopplat"
+      ],
+      "Activation link": [
+        "Aktiveringslänk"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
+      ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
+      "Add users": [
+        "Lägg till användare"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "An unknown error occurred": [
+        "Ett okänt fel uppstod"
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Välj vad som ska migreras.Ditt val kommer tillämpas till alla användare. Migreringen kommer starta efter du bestämt vilka användare som ska kopieras."
+      ],
+      "Configure domain": [
+        "Konfigurera domän"
+      ],
+      "Copy activation link": [
+        "Kopiera aktiveringslänk"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopiera aktiveringslänk till urklipp"
+      ],
+      "Creating accounts": [
+        "Skapar konton"
+      ],
+      "DKIM records": [
+        "DKIM-poster"
+      ],
+      "DMARC records": [
+        "DMARC-poster"
+      ],
+      "Errors": [
+        "Fel"
+      ],
+      "Finalize migration": [
+        "Slutför migrering"
+      ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
+      ],
+      "Loading your organization data": [
+        "Laddar din organisationsdata"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Hanterad via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
+      ],
+      "Migrated": [
+        "Migrerad"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
+      ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Please select at least one product to migrate": [
+        "Välj minst en produkt att migrera"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Ställ in säker sändning (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ställ in säker sändning (SPF)"
+      ],
+      "This migration has been completed": [
+        "Denna migrering har slutförts"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
+      ],
+      "User status": [
+        "Användarstatus"
+      ],
+      "You": [
+        "Du"
       ]
     },
     "breadcrumb": {
@@ -6666,6 +6774,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dina återställningskontakter bör vara personer du känner och lätt kan kontakta."
+      ],
+      "Add 1 more": [
+        "Lägg till 1 till"
+      ],
+      "Explore plans": [
+        "Utforska paket"
       ]
     },
     "Empty group name": {
@@ -12868,6 +12982,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
       ]
     },
     "info": {
@@ -15011,6 +15131,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Confirm MX records added": [
+        "Bekräfta tillagda MX-poster"
       ]
     },
     "label": {
@@ -15425,6 +15548,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "use a data recovery method": [
+        "använd en dataåterställningsmetod"
       ]
     },
     "Link (Scribe)": {
@@ -19206,6 +19332,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
       ]
     },
     "placeholder": {
@@ -19561,7 +19690,7 @@
         "Verifiera denna e-postadress för återställning nu: ${ emailData.value }"
       ],
       "Verify recovery email?": [
-        "Virifiera e-post för återställning?"
+        "Verifiera e-post för återställning?"
       ],
       "Verify with email": [
         "Verifiera med e-post"
@@ -19716,10 +19845,13 @@
         "Verifiera lösenord"
       ],
       "Verify recovery email": [
-        "Virifiera e-post för återställning"
+        "Verifiera e-post för återställning"
       ],
       "Verify recovery phone": [
         "Verifiera återställning med telefon"
+      ],
+      "Email recovery enabled": [
+        "Återställning via e-post aktiverat"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -19754,6 +19886,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller ${ downloadRecoveryKitSwitchButton } istället."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Din **återställningsfras** låter dig återställa ditt ${ BRAND_NAME }-konto om du är utelåst."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20617,6 +20752,9 @@
     "Sentinel banner": {
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har rekommenderade åtgärder från ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera de markerade alternativen."
       ]
     },
     "Server-Info": {
@@ -21824,6 +21962,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Få krediter när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicka på en användares namn för att hantera deras roll och behörigheter."
+      ],
+      "User roles available": [
+        "Användarroller tillgängliga"
       ]
     },
     "sso": {
@@ -22171,6 +22315,15 @@
       ],
       "Verify ${ value }": [
         "Verifiera ${ value }"
+      ],
+      "Disable contact-assisted recovery": [
+        "Inaktivera kontaktassisterad återställning"
+      ],
+      "Disable emergency access": [
+        "Inaktivera nödåtkomst"
+      ],
+      "Disable recovery file": [
+        "Inaktivera återställningsfil"
       ]
     },
     "Step in filter modal": {
@@ -23131,6 +23284,9 @@
       ],
       "Your address has been activated": [
         "Din adress har aktiverats"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
       ]
     },
     "Success message": {
@@ -25247,6 +25403,9 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din administratör på ${ orgName } bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26700,6 +26859,139 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Label for domain setup": {
+      "Use default value": [
+        "Använd standardvärde"
+      ]
+    },
+    "safety_review": {
+      "Account protection": [
+        "Kontoskydd"
+      ],
+      "Add": [
+        "Lägg till"
+      ],
+      "Add emergency contacts": [
+        "Lägg till nödkontakter"
+      ],
+      "Add options": [
+        "Lägga till alternativ"
+      ],
+      "Add phone number": [
+        "Lägg till telefonnummer"
+      ],
+      "Add recovery contacts": [
+        "Lägg till återställningskontakter"
+      ],
+      "Add recovery email": [
+        "Lägg till e-post för återställning"
+      ],
+      "Add recovery phone": [
+        "Lägg till telefon för återställning"
+      ],
+      "Added recovery contacts": [
+        "Lade till återställningskontakter"
+      ],
+      "Allow": [
+        "Tillåt"
+      ],
+      "Allow recovery by email": [
+        "Tillåt återställning med e-post"
+      ],
+      "Allow recovery by phone": [
+        "Tillåt återställning med telefon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillåt skanning av en QR-kod för att logga in"
+      ],
+      "Allow trusted friends to sign in": [
+        "Tillåt betrodda vänner att logga in"
+      ],
+      "Congratulations": [
+        "Grattis"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Fick du det inte? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Klar"
+      ],
+      "Download": [
+        "Ladda ner"
+      ],
+      "Download recovery file": [
+        "Ladda ner återställningsfil"
+      ],
+      "Emergency contacts enabled": [
+        "Nödkontakter aktiverade"
+      ],
+      "Enable device recovery": [
+        "Aktivera enhetsåterställning"
+      ],
+      "Enable emergency contacts": [
+        "Aktivera nödkontakter"
+      ],
+      "Enable password reset from settings": [
+        "Aktivera lösenordsåterställning från inställningar"
+      ],
+      "Enable QR code sign-in": [
+        "Aktivera inloggning med QR-kod"
+      ],
+      "Enabled device recovery": [
+        "Aktiverade enhetsåterställning"
+      ],
+      "Enabled password reset from settings": [
+        "Aktiverade lösenordsåterställning från inställningar"
+      ],
+      "Enabled QR code sign-in": [
+        "Aktiverade inloggning med QR-kod"
+      ],
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Here's how you increased your account protection:": [
+        "Så här ökade du ditt kontoskydd:"
+      ],
+      "Later": [
+        "Senare"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Skydda ditt arv med nödåtkomst"
+      ],
+      "Save recovery phrase": [
+        "Spara återställningsfras"
+      ],
+      "Saved recovery phrase": [
+        "Sparade återställningsfras"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Du måste redan ha ett ${ BRAND_NAME }-konto."
+      ],
+      "Verified password": [
+        "Verifierat lösenord"
+      ],
+      "Verified recovery phone": [
+        "Verifierade återställning med telefon"
+      ],
+      "Verify": [
+        "Verifiera"
+      ],
+      "Verify password": [
+        "Verifiera lösenord"
+      ],
+      "Verify recovery email": [
+        "Verifiera e-post för återställning"
+      ],
+      "Verify recovery phone": [
+        "Verifiera återställning med telefon"
+      ],
+      "Verify your recovery email": [
+        "Verifiera din e-post för återställning"
+      ],
+      "Your security setup": [
+        "Din säkerhetsinställning"
       ]
     }
   }

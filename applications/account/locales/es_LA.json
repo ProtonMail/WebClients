@@ -1829,6 +1829,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2108,6 +2111,15 @@
       ],
       "User admin:": [
         "Usuario administrador:"
+      ],
+      "2 new admin roles": [
+        "2 roles de administración nuevos"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegue la gestión para varios usuarios a la vez. Asigne roles de administración específicas a grupos con permisos automáticos. Esto cumple con al principio de privilegios mínimos para ahorrar tiempo en integraciones y bajas mientras reduce errores."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nuevo: Control de acceso administrativo para muchos usuarios a la vez"
       ]
     },
     "AdminRole_Info": {
@@ -3041,6 +3053,15 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Necesita otorgar el permiso para que ${ BRAND_NAME } copie sus datos. Después de aceptar los permisos, vuelva aquí para continuar."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Falta la dirección de miembro. Contacte son el soporte al cliente para resolver esto"
+      ],
+      "Missing organization private key": [
+        "Falta la clave privada de organización"
+      ],
+      "Missing organization public key": [
+        "Falta la clave pública de organización"
       ]
     },
     "breadcrumb": {
@@ -13121,6 +13142,21 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta su tráfico. ${ PASS_SHORT_APP_NAME } oculta su identidad, **alias hide-my-email** ilimitados y **alertas de la dark web** si sus datos han sido vulnerados."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "¿En verdad desea cerrar la sesión de esta cuenta?"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ]
     },
     "info": {
@@ -19646,6 +19682,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Debe actualizar todas las aplicaciones móviles de ${ BRAND_NAME }**: sus nuevas claves no funcionarán en versiones anteriores de la aplicación."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Debe actualizar todas las aplicaciones de ${ BRAND_NAME }**: sus nuevas claves no funcionarán en versiones anteriores de la aplicación."
       ]
     },
     "PQC key generation": {
@@ -22204,6 +22243,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtenga créditos cuando la persona que invite se suscriba a un plan de ${ BRAND_NAME }."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+      ],
+      "User roles available": [
+        "Roles de usuario disponibles"
       ]
     },
     "sso": {

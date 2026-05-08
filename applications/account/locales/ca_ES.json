@@ -1838,6 +1838,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2117,6 +2120,15 @@
       ],
       "User admin:": [
         "Administrador/a d'usuaris:"
+      ],
+      "2 new admin roles": [
+        "2 nous rols d'administrador/a"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegueu la gestió de molts usuaris alhora. Assigneu rols específics d'administrador als grups per a permisos automàtics. Això segueix el principi del mínim privilegi per estalviar temps en la incorporació i la baixa d'usuaris, mentre redueix errors."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nou: Control de l'accés d'administrador/a per molts usuaris alhora"
       ]
     },
     "AdminRole_Info": {
@@ -3243,6 +3255,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "El vostre pla actual us permet fins a ${ maxMembers } usuari. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció.",
         "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+      ],
+      "Missing organization private key": [
+        "Falta la clau privada de l'organització"
+      ],
+      "Missing organization public key": [
+        "Falta la clau pública de l'organització"
       ]
     },
     "breadcrumb": {
@@ -12463,13 +12484,13 @@
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
       "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
       ],
       "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
       ],
       "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu l'**accés d'emergència**."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu l''**accés d'emergència**."
       ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu l'**inici de sessió amb codi QR**."
@@ -12481,7 +12502,7 @@
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **Restabliment amb la sessió iniciada**."
@@ -13328,6 +13349,21 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Segur que voleu tancar la sessió d'aquest compte?"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMANAT"
       ]
     },
     "info": {
@@ -19894,6 +19930,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Heu d'actualitzar totes les aplicacions mòbils de ${ BRAND_NAME }**: les vostres noves claus no funcionaran en versions antigues de l'aplicació."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Cal que actualitzeu totes les aplicacions de ${ BRAND_NAME }**: les vostres claus noves no funcionaran en versions anteriors de les aplicacions."
       ]
     },
     "PQC key generation": {
@@ -21381,10 +21420,10 @@
     },
     "Sentinel banner": {
       "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Per a garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
-        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu la vostra frase de recuperació."
+        "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu-ne la frase de recuperació."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Teniu accions recomanades per ${ PROTON_SENTINEL_NAME }"
@@ -22601,6 +22640,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtingueu crèdits quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Feu clic al nom d'un usuari per gestionar-ne el rol i els permisos"
+      ],
+      "User roles available": [
+        "Rols d'usuari disponibles"
       ]
     },
     "sso": {

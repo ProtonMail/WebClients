@@ -2108,6 +2108,12 @@
       ],
       "User admin:": [
         "Adminsitrador de usuário:"
+      ],
+      "2 new admin roles": [
+        "2 novas funções administrativas"
+      ],
+      "New: Control admin access for many users at once": [
+        "Novo: Controle o acesso de administradores para vários usuários de uma só vez"
       ]
     },
     "AdminRole_Info": {
@@ -12983,6 +12989,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ]
     },
     "info": {
@@ -20809,6 +20818,12 @@
       ],
       "Your security setup": [
         "Sua configuração de segurança"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Não recebeu? ${ sendANewCode }"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Você pode usar a verificação por e-mail para recuperar o acesso à sua conta caso esqueça a senha."
       ]
     },
     "saml: Action": {
@@ -22574,6 +22589,15 @@
       ],
       "Verify ${ value }": [
         "Verificar ${ value }"
+      ],
+      "Disable device data backup": [
+        "Desativar o backup de dados do dispositivo"
+      ],
+      "Disable emergency access": [
+        "Desativar acesso de emergência"
+      ],
+      "Disable recovery file": [
+        "Desativar arquivo de recuperação"
       ]
     },
     "Step in filter modal": {

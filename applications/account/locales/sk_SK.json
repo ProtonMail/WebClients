@@ -1829,6 +1829,18 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "Vymazať token ${ tokens[0].Account }"
+      ],
+      "Go to domain provider": [
+        "Prejsť k poskytovateľovi domén"
+      ],
+      "Save & exit": [
+        "Uložiť a ukončiť"
       ]
     },
     "action": {
@@ -2128,6 +2140,15 @@
       ],
       "User admin:": [
         "Správca používateľov:"
+      ],
+      "2 new admin roles": [
+        "2 nové správcovské pozície"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Správu môžete delegovať na viacerých používateľov naraz. Skupinám môžete priradiť konkrétne správcovské role, čím sa automaticky nastavia príslušné oprávnenia. Tento postup vychádza z princípu minimálnych oprávnení, vďaka čomu ušetríte čas pri prijímaní a ukončovaní pracovného pomeru a zároveň znížite počet chýb."
+      ],
+      "New: Control admin access for many users at once": [
+        "Novinka: Správa prístupových práv správcov pre viacerých používateľov naraz"
       ]
     },
     "AdminRole_Info": {
@@ -3041,6 +3062,276 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udeliť povolenie pre ${ BRAND_NAME } na kopírovanie vašich údajov. Po udelení povolení sa vráťte sem a pokračujte."
+      ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } z ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: žiada platformy príjemcov, aby neautorizované emaily označili ako spam alebo ich umiestnili do karantény."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: žiada platformy príjemcov o odmietnutie neautorizovaných emailov."
+      ],
+      "Account connected": [
+        "Účet je pripojený"
+      ],
+      "Account disconnected": [
+        "Účet odpojený"
+      ],
+      "Activated": [
+        "Aktivované"
+      ],
+      "Activation link": [
+        "Aktivačný odkaz"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktivačný odkaz skopírovaný do schránky"
+      ],
+      "Add a domain": [
+        "Pridať doménu"
+      ],
+      "Add domain": [
+        "Pridať doménu"
+      ],
+      "Add users": [
+        "Pridať používateľov"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Pridajte používateľov a ručne nakonfigurujte svoju doménu na odosielanie a prijímanie emailov. Ideálne pre malé tímy, ktoré začínajú od nuly."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
+      ],
+      "All": [
+        "Všetko"
+      ],
+      "An unknown error occurred": [
+        "Vyskytla sa neznáma chyba"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Hneď po vytvorení účtov môžete zdieľať aktivačný odkaz, aby si používatelia mohli aktivovať svoje ${ BRAND_NAME } účty."
+      ],
+      "Authenticate to Google Workspace": [
+        "Prihláste sa do služby Google Workspace"
+      ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Vyberte si, ako chcete preniesť svoj tím a nastavenia emailu do ${ BRAND_NAME }."
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Vyberte, čo chcete preniesť. Váš výber sa bude vzťahovať na všetkých používateľov. Migrácia sa spustí hneď, ako určíte, ktorých používateľov chcete skopírovať."
+      ],
+      "Configure domain": [
+        "Nakonfigurovať doménu"
+      ],
+      "Configure your domain": [
+        "Nakonfigurujte si doménu"
+      ],
+      "Continue migration": [
+        "Pokračovanie v presune"
+      ],
+      "Copy activation link": [
+        "Kopírovať aktivačný odkaz"
+      ],
+      "Copy activation link to clipboard": [
+        "Skopírovať aktivačný odkaz do schránky"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Skopírujte nižšie uvedený kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb. Príklad a niekoľko užitočných tipov nájdete ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "Vytváranie účtov"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
+      ],
+      "DKIM records": [
+        "DKIM záznamy"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC nadväzuje na protokoly SPF a DKIM tým, že prijímajúcim serverom určuje, ako majú postupovať v prípade správ, ktoré tieto kontroly neprejdú. Pomáha chrániť vašu doménu pred zneužitím a zvyšuje celkovú spoľahlivosť doručovania."
+      ],
+      "DMARC records": [
+        "DMARC záznamy"
+      ],
+      "Domain added": [
+        "Doména pridaná"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Uistite sa, že vaše emaily prichádzajú do doručenej pošty a nie do priečinka so spamom. Aktualizáciou SPF umožníte používateľom počas migrácie odosielať správy súčasne z adresy ${ BRAND_NAME } aj z adresy Google."
+      ],
+      "Errors": [
+        "Chyby"
+      ],
+      "Finalize migration": [
+        "Dokončiť presun"
+      ],
+      "Finalize your migration": [
+        "Dokončite váš presun"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Dokončením migrácie budú všetky vaše emaily smerované priamo do ${ BRAND_NAME }. Používatelia už nebudú dostávať emaily na svoje Google účty a údaje medzi ${ BRAND_NAME } a Google sa už nebudú synchronizovať."
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
+      "Go to Domain names": [
+        "Prejsť k názvom domén"
+      ],
+      "Google Workspace account": [
+        "Účet Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Vydržte, práve vytvárame používateľské účty a čoskoro začneme importovať údaje používateľov."
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Chyby pri importe pre ${ user.AdminSetName }"
+      ],
+      "Install Migration assistant": [
+        "Nainštalovať asistenta pre presun"
+      ],
+      "Loading your organization data": [
+        "Načítavanie údajov vašej organizácie"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Spravované cez ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Presuňte používateľov do ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "Presunuté"
+      ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
+      "More details": [
+        "Ďalšie podrobnosti"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Preneste svojich používateľov, emaily a nastavenia z Google Workspace automaticky. Pomôžeme vám s pripojením účtu, overením domény a bezpečnou migráciou používateľov."
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Podrobnosti o chybe nie sú k dispozícii. Pre viac informácií kontaktujte zákaznícku podporu."
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Not activated": [
+        "Neaktivované"
+      ],
+      "Not confirmed": [
+        "Nepotvrdené"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Akonáhle si používatelia aktivujú svoj ${ BRAND_NAME } účet, dokončite migráciu."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Do konzoly DNS vášho poskytovateľa doménových služieb, prosím, pridajte nasledujúce záznamy:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Nechajte toto okno otvorené, kým nedokončíme vytváranie všetkých používateľov, prosím."
+      ],
+      "Please select at least one product to migrate": [
+        "Vyberte aspoň jeden produkt na presun, prosím"
+      ],
+      "Refresh": [
+        "Obnoviť"
+      ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
+      "Set up manually": [
+        "Nastaviť ručne"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Nastavte bezpečné odosielanie (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Nastavte bezpečné odosielanie (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Nastavte bezpečné odosielanie (SPF)"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Zdieľajte aktivačný odkaz s používateľmi, aby si mohli aktivovať svoj ${ BRAND_NAME } účet."
+      ],
+      "Size": [
+        "Veľkosť"
+      ],
+      "Some accounts are not claimed": [
+        "Niektoré účty neboli prevzaté"
+      ],
+      "SPF records": [
+        "SPF záznamy"
+      ],
+      "Start migrating": [
+        "Spustiť migráciu"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Predvolené nastavenie je „none“. Pre zvýšenie bezpečnosti však odporúčame nastaviť túto hodnotu na „p=quarantine“."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Hodnota „p=” určuje, aká akcia sa má vykonať v prípade emailov, ktoré neprejdú DMARC kontrolou. K dispozícii sú tieto akcie:"
+      ],
+      "This migration has been completed": [
+        "Migrácia bola dokončená"
+      ],
+      "Update records for receiving": [
+        "Aktualizovať záznamy o príjme"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Používateľ musí aktivovať svoj účet prostredníctvom aktivačného odkazu uvedeného vyššie"
+      ],
+      "User status": [
+        "Stav používateľa"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Počas migrácie môžu používatelia súčasne využívať službu ${ BRAND_NAME } aj Google."
+      ],
+      "Verified": [
+        "Overené"
+      ],
+      "Verify domain ownership": [
+        "Overte vlastníctvo domény"
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Zistili sme primárnu doménu prepojenú s vaším účtom Google Workspace. Potvrďte ju, aby ste mohli pokračovať v nastavovaní emailu pre vašu organizáciu ${ BRAND_NAME }."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Stále overujeme MX záznamy u vášho poskytovateľa domén."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
+      ],
+      "You": [
+        "Vy"
+      ],
+      "You're all set!": [
+        "Všetko je pripravené!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľa. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
       ]
     },
     "breadcrumb": {
@@ -6771,6 +7062,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vaše kontakty na obnovenie účtu by mali byť ľudia, ktorých poznáte a ktorých môžete ľahko kontaktovať."
+      ],
+      "Add 1 more": [
+        "Pridať 1 ďalšiu"
+      ],
+      "Explore plans": [
+        "Preskúmať plány"
       ]
     },
     "Empty group name": {
@@ -13348,6 +13645,33 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Naozaj sa chcete odhlásiť z tohto účtu?"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
+      ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie pomocou kontaktov**."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Zálohovanie údajov do zariadenia**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Núdzový prístup**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte **obnovovací súbor** (zrušte všetky obnovovacie súbory)."
       ]
     },
     "info": {
@@ -15536,6 +15860,18 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Confirm MX records added": [
+        "Potvrdiť pridané MX záznamy"
+      ],
+      "Host name": [
+        "Názov servera (Host name)"
+      ],
+      "MX records": [
+        "MX záznamy"
+      ],
+      "Priority": [
+        "Prioritné"
       ]
     },
     "label": {
@@ -15550,6 +15886,9 @@
       ],
       "Recovery phrase": [
         "Obnovovacia fráza"
+      ],
+      "Set recovery phone number": [
+        "Nastavte telefónne číslo na obnovenie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15955,6 +16294,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Detailed instructions": [
+        "Podrobné pokyny"
       ]
     },
     "Link (Scribe)": {
@@ -19905,6 +20247,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Search for users or addresses": [
+        "Hľadať používateľov alebo adresy"
       ]
     },
     "placeholder": {
@@ -20023,6 +20368,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Musíte aktualizovať všetky mobilné aplikácie ${ BRAND_NAME }**: vaše nové kľúče nebudú fungovať v starších verziách aplikácií."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Musíte aktualizovať všetky ${ BRAND_NAME } aplikácie**: vaše nové kľúče nebudú fungovať v starších verziách aplikácií."
       ]
     },
     "PQC key generation": {
@@ -20283,6 +20631,12 @@
       ],
       "Weak": [
         "Slabé"
+      ],
+      "Recovery score: ${ score }": [
+        "Skóre obnovy: ${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Vyžadovať overenie pri zmene hesla (emailom alebo SMS)"
       ]
     },
     "Recovery score item": {
@@ -20348,6 +20702,15 @@
       ],
       "Verify recovery phone": [
         "Overiť číslo na obnovenie"
+      ],
+      "Email recovery enabled": [
+        "Obnovenie emailom povolené"
+      ],
+      "Enable email recovery": [
+        "Povoliť obnovu emailom"
+      ],
+      "Phone recovery enabled": [
+        "Obnovenie telefónom povolené"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -21281,6 +21644,12 @@
     "Sentinel banner": {
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Máte odporúčané akcie od ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte zvýraznené možnosti."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Aby ste mali istotu, že budete mať vždy prístup k svojmu ${ BRAND_NAME } účtu, stiahnite si svoju obnovovaciu frázu."
       ]
     },
     "Server-Info": {
@@ -22557,6 +22926,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získajte kredity, keď si pozvaná osoba predplatí ${ BRAND_NAME } plán."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Kliknutím na meno používateľa môžete spravovať jeho pozíciu a oprávnenia."
+      ],
+      "User roles available": [
+        "Dostupné používateľské pozície"
       ]
     },
     "sso": {
@@ -22925,6 +23300,18 @@
       ],
       "Verify ${ value }": [
         "Overte ${ value }"
+      ],
+      "Disable contact-assisted recovery": [
+        "Deaktivovať obnovu s využitím kontaktných údajov"
+      ],
+      "Disable device data backup": [
+        "Deaktivovať zálohovanie údajov zariadenia"
+      ],
+      "Disable emergency access": [
+        "Deaktivovať núdzový prístup"
+      ],
+      "Disable recovery file": [
+        "Deaktivovať súbor na obnovenie"
       ]
     },
     "Step in filter modal": {
@@ -23945,6 +24332,9 @@
       ],
       "Your address has been activated": [
         "Vaša adresa bola aktivovaná"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktivačný odkaz skopírovaný do schránky"
       ]
     },
     "Success message": {
@@ -26537,6 +26927,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
+      ],
+      "via ${ groupName }": [
+        "cez ${ groupName }"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -26930,6 +27323,12 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "(via ${ groupName })": [
+        "(cez ${ groupName })"
+      ],
+      "(via group)": [
+        "(cez skupinu)"
       ]
     },
     "Users table: badge": {
@@ -27691,6 +28090,258 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Bol nájdený duplicitný DMARC záznam. Prejdite do DNS konzoly vášho poskytovateľa domén a problém vyriešte."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Záznam ${ capitalizedGroup } nebol nájdený"
+      ],
+      "Host name": [
+        "Názov servera (Host name)"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Bol nájdený neplatný záznam ${ group.name }"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Use default value": [
+        "Použiť predvolenú hodnotu"
+      ],
+      "Valid ${ group.name } record found": [
+        "Bol nájdený platný záznam ${ group.name }"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Emailová adresa ${ BRAND_NAME } účtu"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
+      ],
+      "Add": [
+        "Pridať"
+      ],
+      "Add emergency contacts": [
+        "Pridať núdzové kontakty"
+      ],
+      "Add options": [
+        "Pridať možnosti"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Pridajte osoby, ktorým dôverujete a s ktorými sa môžete ľahko skontaktovať. Tieto osoby budú mať prístup k vášmu účtu a budú vám môcť obnoviť heslo."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Pridajte ľudí, ktorým dôverujete a ktorých môžete ľahko kontaktovať. Tí vám pomôžu odomknúť vaše údaje po tom, čo si resetujete heslo."
+      ],
+      "Add phone number": [
+        "Pridať telefónne číslo"
+      ],
+      "Add recovery contacts": [
+        "Pridať kontaktné osoby na obnovenie"
+      ],
+      "Add recovery email": [
+        "Pridať email pre obnovenie"
+      ],
+      "Add recovery phone": [
+        "Pridať telefón na obnovu"
+      ],
+      "Added emergency contacts": [
+        "Pridané núdzové kontakty"
+      ],
+      "Added recovery contacts": [
+        "Pridané kontaktné osoby na obnovenie"
+      ],
+      "Added recovery email": [
+        "Pridaný email pre obnovenie"
+      ],
+      "Added recovery phone": [
+        "Pridaný telefón pre obnovenie"
+      ],
+      "Allow": [
+        "Povoliť"
+      ],
+      "Allow data recovery from this device": [
+        "Povoliť obnovu dát z tohto zariadenia"
+      ],
+      "Allow password reset from the settings": [
+        "Povoliť obnovenie hesla z nastavení"
+      ],
+      "Allow recovery by email": [
+        "Povoliť obnovenie emailom"
+      ],
+      "Allow recovery by phone": [
+        "Povoliť obnovenie telefónom"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Povoľte skenovanie QR kódu pre prihlásenie"
+      ],
+      "Allow trusted friends to sign in": [
+        "Povoliť prihlásenie dôveryhodným priateľom"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Povoľte dôveryhodným priateľom odomknúť vaše dáta"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Späť do ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Blahoželáme"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Nedostali ste ho? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Download": [
+        "Stiahnuť"
+      ],
+      "Download recovery file": [
+        "Stiahnuť súbor pre obnovenie"
+      ],
+      "Downloaded recovery file": [
+        "Súbor pre obnovenie stiahnutý"
+      ],
+      "Emergency contacts enabled": [
+        "Núdzové kontakty povolené"
+      ],
+      "Enable device recovery": [
+        "Povoliť obnovu zariadením"
+      ],
+      "Enable email recovery": [
+        "Povoliť obnovu emailom"
+      ],
+      "Enable emergency contacts": [
+        "Povoliť núdzové kontakty"
+      ],
+      "Enable password reset from settings": [
+        "Povoliť resetovanie hesla z nastavení"
+      ],
+      "Enable phone recovery": [
+        "Povoliť obnovu telefónom"
+      ],
+      "Enable QR code sign-in": [
+        "Povoliť prihlásenie QR kódom"
+      ],
+      "Enabled device recovery": [
+        "Obnova zariadením povolená"
+      ],
+      "Enabled email recovery": [
+        "Povolená obnova emailom"
+      ],
+      "Enabled password reset from settings": [
+        "V nastaveniach je povolené resetovanie hesla"
+      ],
+      "Enabled phone recovery": [
+        "Obnova telefónom povolená"
+      ],
+      "Enabled QR code sign-in": [
+        "Povoliť prihlásenie QR kódom"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Here's how you increased your account protection:": [
+        "Takto ste zvýšili ochranu vášho účtu:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ak ste zabudli heslo, môžete sa prihlásiť pomocou QR kódu. Stačí, ak máte aktívny účet v službe ${ BRAND_NAME } na inom zariadení."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Ak sa vám stane, že sa nebudete môcť prihlásiť do svojho ${ BRAND_NAME } účtu, tento kód vám umožní prihlásiť sa a obnoviť vaše údaje. Je to jediný spôsob, ako okamžite obnoviť všetko, čo ste mali uložené, preto si ho určite uložte na bezpečné miesto."
+      ],
+      "Later": [
+        "Neskôr"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Chráňte svoje dedičstvo pomocou funkcie núdzového prístupu"
+      ],
+      "Save recovery phrase": [
+        "Uložiť obnovovaciu frázu"
+      ],
+      "Saved recovery phrase": [
+        "Uložená obnovovacia fráza"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Musia už mať ${ BRAND_NAME } účet."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Takto budete mať rýchly prístup k svojmu ${ BRAND_NAME } účtu a budete si môcť zmeniť heslo."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Týmto spôsobom si môžete obnoviť heslo k účtu, ak ste ho zabudli, ale ste stále prihlásení na stránke ${ BRAND_NAME }. Ak ste prihlásení, je to často najjednoduchší spôsob, ako obnoviť prístup k účtu."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Týmto krokom obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte po zresetovaní hesla."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Ak chcete mať istotu, že emailová adresa je vaša, zadajte overovací kód zaslaný na ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím odkazom."
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Navýšte úroveň svojho plán, aby ste si aktivovali funkciu núdzového prístupu k vášmu účtu. Týmto spôsobom budete môcť určiť 1 až 5 osôb, ktoré vám budú môcť obnoviť heslo."
+      ],
+      "Verified password": [
+        "Overené heslo"
+      ],
+      "Verified recovery email": [
+        "Overený email pre obnovenie"
+      ],
+      "Verified recovery phone": [
+        "Overené telefónne číslo pre obnovenie"
+      ],
+      "Verify": [
+        "Overiť"
+      ],
+      "Verify password": [
+        "Potvrďte heslo"
+      ],
+      "Verify recovery email": [
+        "Overiť email pre obnovenie"
+      ],
+      "Verify recovery phone": [
+        "Overiť číslo na obnovenie"
+      ],
+      "Verify your recovery email": [
+        "Overte váš email na obnovenie"
+      ],
+      "Verify your recovery phone": [
+        "Overte váš telefón na obnovenie"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Na tomto zariadení si môžete uložiť zálohu údajov. Vďaka tomu si po obnovení hesla obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte jednoduchým prihlásením sa na tomto zariadení."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Ak ste zabudli heslo, môžete využiť overenie prostredníctvom emailu a získať tak opäť prístup k svojmu účtu."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Ak ste zabudli heslo, môžete využiť overenie prostredníctvom SMS a získať tak opäť prístup k svojmu účtu."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací email."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací telefón."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Súbor nemusíte otvárať ani čítať – stačí si ho stiahnuť a uložiť na bezpečné miesto."
+      ],
+      "Your recovery checklist": [
+        "Váš kontrolný zoznam pre obnovu"
+      ],
+      "Your security setup": [
+        "Vaše nastavenia zabezpečenia"
       ]
     }
   }

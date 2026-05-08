@@ -1838,6 +1838,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ]
     },
     "action": {
@@ -2117,6 +2120,15 @@
       ],
       "User admin:": [
         "Kullanıcı yöneticisi:"
+      ],
+      "2 new admin roles": [
+        "2 yeni yönetici rolü"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Aynı anda birçok kullanıcı için yönetim yetkisi devredin. Otomatik izinler için gruplara özel yönetici rolleri atayın. Bu yöntem işe alım ve işten ayrılma süreçlerinde zaman kazandırırken hataları azaltmak için en az ayrıcalık ilkesini temel alır."
+      ],
+      "New: Control admin access for many users at once": [
+        "Yeni: Birden fazla kullanıcının yönetici erişimini aynı anda kontrol edin"
       ]
     },
     "AdminRole_Info": {
@@ -3273,6 +3285,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin.",
         "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Üye adresi bulunamadı. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+      ],
+      "Missing organization private key": [
+        "Kuruluşun özel anahtarı eksik"
+      ],
+      "Missing organization public key": [
+        "Kuruluşun açık anahtarı bulunamadı"
       ]
     },
     "breadcrumb": {
@@ -13361,6 +13382,21 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Bu hesabın oturumunu kapatmak istediğinizden emin misiniz?"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "ÖNERİLEN"
       ]
     },
     "info": {
@@ -19927,6 +19963,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Tüm ${ BRAND_NAME } mobil uygulamalarını güncellemelisiniz**: Yeni anahtarlarınız eski uygulama sürümlerinde çalışmayacak."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Tüm ${ BRAND_NAME } uygulamalarını güncellemelisiniz**: yeni anahtarlarınız uygulamaların eski sürümlerinde çalışmayacak."
       ]
     },
     "PQC key generation": {
@@ -22727,6 +22766,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda kredi kazanın."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Bir kullanıcının rolünü ve izinlerini yönetmek için adına tıklayın."
+      ],
+      "User roles available": [
+        "Kullanılabilir kullanıcı rolleri"
       ]
     },
     "sso": {

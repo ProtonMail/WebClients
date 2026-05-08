@@ -1838,6 +1838,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2117,6 +2120,15 @@
       ],
       "User admin:": [
         "Administrateur des utilisateurs :"
+      ],
+      "2 new admin roles": [
+        "2 nouveaux rôles d'administrateur"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Gérez les droits d'accès pour plusieurs utilisateurs à la fois. Attribuez des rôles d'administrateur spécifiques à des groupes pour automatiser l'attribution des autorisations. Cette approche s'inscrit dans le principe du moindre privilège, ce qui permet de gagner du temps lors de l'intégration et du départ des collaborateurs tout en réduisant les erreurs."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nouveau : contrôlez les accès administrateur pour plusieurs utilisateurs à la fois"
       ]
     },
     "AdminRole_Info": {
@@ -3273,6 +3285,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateur. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement.",
         "Votre offre actuelle prend en charge jusqu'à ${ maxMembers } utilisateurs. Pour ajouter d'autres utilisateurs, augmentez le nombre de comptes inclus dans votre abonnement."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
       ]
     },
     "breadcrumb": {
@@ -13364,6 +13385,21 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } cache votre trafic. ${ PASS_SHORT_APP_NAME } cache votre identité : alias de messagerie **hide-my-email** illimités et **alertes dark web** en cas de fuite de vos données."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Voulez-vous vraiment vous déconnecter de ce compte ?"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pour seulement ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMMANDÉ"
       ]
     },
     "info": {
@@ -19930,6 +19966,9 @@
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Vous devez mettre à jour toutes les applications mobiles ${ BRAND_NAME }** : vos nouvelles clés ne fonctionneront pas sur les anciennes versions d'application."
+      ],
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Vous devez mettre à jour toutes les applications ${ BRAND_NAME }** : vos nouvelles clés ne fonctionneront pas sur des versions antérieures des applications."
       ]
     },
     "PQC key generation": {
@@ -22733,6 +22772,12 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtenez des crédits lorsque la personne que vous invitez s'abonne à un abonnement ${ BRAND_NAME }."
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Cliquez sur le nom d'un utilisateur pour gérer son rôle et ses permissions."
+      ],
+      "User roles available": [
+        "Rôles utilisateur disponibles"
       ]
     },
     "sso": {
