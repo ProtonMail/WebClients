@@ -5,6 +5,7 @@ import type { App } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import type { MLSGroupState } from '@proton/meet/types/types';
@@ -52,6 +53,7 @@ export const useMlsSession = ({
 }: UseMlsSessionParams): UseMlsSessionResult => {
     const authentication = useAuthentication();
     const dispatch = useMeetDispatch();
+    const { createNotification } = useNotifications();
 
     const mlsSetupDone = useRef(false);
 
@@ -143,24 +145,25 @@ export const useMlsSession = ({
 
             return groupKeyData;
         } catch (error) {
+            let message: string;
             switch (error) {
                 case MeetCoreErrorEnum.MlsServerVersionNotSupported:
-                    throw new Error(
-                        c('Error')
-                            .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`
-                    );
+                    message = c('Error')
+                        .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`;
+                    break;
                 case MeetCoreErrorEnum.TimeDriftError:
-                    throw new Error(
-                        c('Error')
-                            .t`Your device's clock appears to be out of sync. Please check your system time and try again.`
-                    );
+                    message = c('Error')
+                        .t`Your device's clock appears to be out of sync. Please check your system time and try again.`;
+                    break;
                 case MeetCoreErrorEnum.MaxRetriesReached:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
                     // eslint-disable-next-line no-console
                     console.error(error);
-                    throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
+                    message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
+            createNotification({ type: 'error', text: message });
+            throw new Error(message);
         }
     };
 
