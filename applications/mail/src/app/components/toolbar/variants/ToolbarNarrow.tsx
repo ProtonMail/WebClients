@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { isLabelIDNewsletterSubscription } from '../../../helpers/labels';
-import { FilterList } from '../list-settings/FilterList';
+import { FilterList } from '../filter-list/FilterList';
 
 interface Props {
     classname: string;

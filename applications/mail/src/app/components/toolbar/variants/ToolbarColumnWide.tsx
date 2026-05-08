@@ -19,7 +19,7 @@ import MoreActions from '../actions/MoreActions';
 import MoveButtons from '../actions/MoveButtons';
 import PagingControls from '../actions/PagingControls';
 import ReadUnreadButtons from '../actions/ReadUnreadButtons';
-import { FilterList } from '../list-settings/FilterList';
+import { FilterList } from '../filter-list/FilterList';
 import { MoreDropdown } from '../more-dropdown/MoreDropdown';
 
 interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
