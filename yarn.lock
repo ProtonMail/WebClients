@@ -11130,6 +11130,7 @@ __metadata:
     "@jest/globals": "npm:^30.3.0"
     "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
     "@proton/components": "workspace:^"
+    "@proton/lumo-api-client": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/types": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
@@ -11144,6 +11145,22 @@ __metadata:
     react-dom: "npm:^18.3.1"
     ts-jest: "npm:^29.4.9"
     typescript: "npm:^6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@proton/lumo-api-client@workspace:^, @proton/lumo-api-client@workspace:applications/lumo/src/app/lib/lumo-api-client":
+  version: 0.0.0-use.local
+  resolution: "@proton/lumo-api-client@workspace:applications/lumo/src/app/lib/lumo-api-client"
+  dependencies:
+    "@proton/shared": "workspace:^"
+    "@protontech/crypto": "npm:*"
+    eslint: "npm:^9.39.4"
+    uuid: "npm:^9.0.1"
+  peerDependencies:
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@reduxjs/toolkit": ^2.11.2
+    react: ^18.3.1
   languageName: unknown
   linkType: soft
 

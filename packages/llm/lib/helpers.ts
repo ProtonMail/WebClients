@@ -89,6 +89,9 @@ export function removeStopStrings(text: string, customStopStrings?: string[]) {
 }
 
 export function convertToDoubleNewlines(input: string, splitParagraphs: boolean = true): string {
+    if (!splitParagraphs) {
+        return input.replace(/\n{3,}/g, '\n\n');
+    }
     const lines = input.split('\n');
 
     const paragraphs: string[][] = [];
