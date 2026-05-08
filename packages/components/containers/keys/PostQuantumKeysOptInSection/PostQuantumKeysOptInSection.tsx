@@ -22,7 +22,6 @@ import SettingsSectionTitle from '../../account/SettingsSectionTitle';
 import type { Session } from '../../sessions/interface';
 import PostQuantumOptInModal from './PostQuantumOptInModal';
 
-const PQC_HIDE_CLIENT_IDS = new Set(['WindowsDrive', 'iOSPass']);
 const PostQuantumKeysOptInSection = () => {
     const isMounted = useIsMounted();
     const [state, setState] = useState<{ pqcIncompatibleSessions: boolean }>({ pqcIncompatibleSessions: true });
@@ -37,7 +36,7 @@ const PostQuantumKeysOptInSection = () => {
             const { Sessions } = await api<{ Sessions: Session[] }>(querySessions());
             if (isMounted()) {
                 setState({
-                    pqcIncompatibleSessions: Sessions.some(({ ClientID }) => PQC_HIDE_CLIENT_IDS.has(ClientID)),
+                    pqcIncompatibleSessions: Sessions.some(({ PgpV6Capable }) => PgpV6Capable === false),
                 });
             }
         };
