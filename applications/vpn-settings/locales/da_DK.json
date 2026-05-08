@@ -1246,6 +1246,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "Slet token ${ tokens[0].Account }"
+      ],
+      "Go to domain provider": [
+        "Gå til domæneudbyder"
       ]
     },
     "action": {
@@ -2085,6 +2091,106 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du skal give tilladelse til, at ${ BRAND_NAME } kan kopiere dine data. Når du har accepteret tilladelserne, så vend tilbage hertil for at fortsætte."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: beder modtagerplatformene om at markere de uautoriserede e-mails som spam eller sætte dem i karantæne."
+      ],
+      "Account connected": [
+        "Konto forbundet"
+      ],
+      "Activated": [
+        "Aktiveret"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Configure your domain": [
+        "Konfigurer dit domæne"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopiér aktiveringslink til udklipsholder"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Kopiér den nedenstående kode og indsæt det i DNS-sektionen hos din domænevært. Du kan se et eksempel og nogle tips ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM tilføjer en digital signatur til hver e-mail, så modtagerne kan verificere at beskeden virkelig kom fra dit domæne, og ikke blev ændret undervejs. Beskeder kan blive betragtet som mindre troværdige uden den."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC bygger på SPF og DKIM ved at fortælle modtagerservere hvordan de skal håndtere beskeder der fejler disse tjek. Det hjælper med at beskytte dit domæne fra falske beskeder der udgiver sig for at være fra dit, og gør generelt levering mere pålidelig."
+      ],
+      "DMARC records": [
+        "DMARC-records"
+      ],
+      "Google Workspace account": [
+        "Google Workspace konto"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Administreret via ${ registrar.name }"
+      ],
+      "More details": [
+        "Flere detaljer"
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Not confirmed": [
+        "Ikke bekræftet"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Når vi har bekræftet at e-mails bliver dirigeret til ${ BRAND_NAME }, så færdiggøres migrationen. Du vil modtage en bekræftelse på e-mail der fortæller dig hvornår dette sker. Processen kan tage op til 24 timer."
+      ],
+      "Pending": [
+        "Afventer"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Tilføj de følgende records i din domæneudbyders DNS-konsol:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lad dette vindue være åbent indtil vi er færdige med at oprette alle brugerne."
+      ],
+      "Select users to migrate": [
+        "Vælg brugere at migrere"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Del aktiveringslinket til brugere så de kan oprette deres ${ BRAND_NAME }-konto."
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "SPF records": [
+        "SPF-records"
+      ],
+      "Start migrating": [
+        "Start migration"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Standardindstillingen er none. Vi anbefaler dog at sætte denne værdi til p=quarantine for at forbedre din sikkerhed."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "\"p=\"-værdien angiver den handling der skal tages for de e-mails der fejler DMARC. Her er de tilgængelige handlinger:"
+      ],
+      "This migration has been completed": [
+        "Denne migration er færdig"
+      ],
+      "Verified": [
+        "Bekræftet"
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi har registreret det primære domæne tilsluttet din Google Workspace-konto. Bekræft den for at fortsætte med at konfigurere din e-mail til din ${ BRAND_NAME }-organisation."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
+      ],
+      "You're all set!": [
+        "Så er du klar!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Din nuværende plan tillader op til ${ maxMembers } bruger. Tilføj flere pladser til dit abonnement for at migrere flere brugere.",
+        "Din nuværende plan tillader op til ${ maxMembers } brugere. Tilføj flere pladser til dit abonnement for at migrere flere brugere."
       ]
     },
     "Browser": {
@@ -10163,6 +10269,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Confirm MX records added": [
+        "Bekræft tilføjede MX-records"
+      ],
+      "MX records": [
+        "MX-records"
+      ],
+      "Priority": [
+        "Prioritet"
       ]
     },
     "label": {
@@ -10484,6 +10599,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Detailed instructions": [
+        "Detaljerede instruktioner"
       ]
     },
     "Link (Scribe)": {
@@ -13279,6 +13397,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Search for users or addresses": [
+        "Søg efter brugere eller adresser"
       ]
     },
     "placeholder": {
@@ -17557,6 +17678,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
+      ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
       ]
     },
     "Tor out of date": {
@@ -17855,6 +17979,12 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "(via ${ groupName })": [
+        "(via ${ groupName })"
+      ],
+      "(via group)": [
+        "(via gruppe)"
       ]
     },
     "Users table: badge": {
@@ -18189,6 +18319,25 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Duplikerede DMARC-records fundet, gå til din domæneudbyders DNS-konsol for at fikse det."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-record ikke fundet"
+      ],
+      "Host name": [
+        "Værtsnavn"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ugyldigt ${ group.name }-record fundet"
+      ],
+      "Use default value": [
+        "Brug standardværdi"
       ]
     }
   }

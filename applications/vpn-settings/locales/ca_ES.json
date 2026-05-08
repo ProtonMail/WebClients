@@ -1255,6 +1255,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1521,13 +1524,13 @@
         "Administrador/a d'usuaris:"
       ],
       "2 new admin roles": [
-        "2 rols d'administrador nous"
+        "2 nous rols d'administrador/a"
       ],
       "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "Delegueu la gestió de molts usuaris a la vegada.\nAssigneu rols d'administrador específics a grups per a obtenir permisos automàtics. Això segueix el principi del mínim privilegi per a estalviar temps en la incorporació i la desincorporació de personal, alhora que reduïu els errors."
+        "Delegueu la gestió de molts usuaris alhora. Assigneu rols específics d'administrador als grups per a permisos automàtics. Això segueix el principi del mínim privilegi per estalviar temps en la incorporació i la baixa d'usuaris, mentre redueix errors."
       ],
       "New: Control admin access for many users at once": [
-        "Nou: Controleu l'accés d'administrador per a molts usuaris a la vegada"
+        "Nou: Control de l'accés d'administrador/a per molts usuaris alhora"
       ]
     },
     "AdminRole_Info": {
@@ -2298,7 +2301,7 @@
         "El vostre pla actual us permet fins a ${ maxMembers } usuaris. Per migrar usuaris addicionals, afegiu més llicències a la vostra subscripció."
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per a resoldre-ho"
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
       ],
       "Missing organization private key": [
         "Falta la clau privada de l'organització"
@@ -9273,6 +9276,18 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMANAT"
       ]
     },
     "info": {
@@ -18369,7 +18384,7 @@
     },
     "Spotlight": {
       "Click a user's name to manage their role and permissions.": [
-        "Feu clic al nom d'un usuari per a gestionar-ne el rol i els permisos"
+        "Feu clic al nom d'un usuari per gestionar-ne el rol i els permisos"
       ],
       "User roles available": [
         "Rols d'usuari disponibles"

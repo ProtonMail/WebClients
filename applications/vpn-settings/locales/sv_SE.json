@@ -2208,6 +2208,27 @@
       ],
       "You": [
         "Du"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Hanterad via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
       ]
     },
     "Browser": {
@@ -9028,6 +9049,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
       ]
     },
     "info": {
@@ -10128,6 +10155,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Confirm MX records added": [
+        "Bekräfta tillagda MX-poster"
       ]
     },
     "label": {
@@ -13199,6 +13229,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
       ]
     },
     "placeholder": {
@@ -13449,7 +13482,7 @@
         "Verifiera denna e-postadress för återställning nu: ${ emailData.value }"
       ],
       "Verify recovery email?": [
-        "Virifiera e-post för återställning?"
+        "Verifiera e-post för återställning?"
       ],
       "Verify with email": [
         "Verifiera med e-post"
@@ -18062,6 +18095,9 @@
     "Spotlight": {
       "User roles available": [
         "Användarroller tillgängliga"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicka på en användares namn för att hantera deras roll och behörigheter."
       ]
     }
   }

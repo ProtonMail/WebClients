@@ -1255,6 +1255,9 @@
       ],
       "Save & exit": [
         "Salvare și ieșire"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1529,6 +1532,15 @@
       ],
       "User admin:": [
         "Administrator utilizatori:"
+      ],
+      "2 new admin roles": [
+        "Două roluri noi de administrator"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegați gestionarea pentru mai mulți utilizatori simultan. Atribuiți roluri specifice de administrator grupurilor pentru permisiuni automate. Aceasta respectă principiul privilegiilor minime pentru a economisi timp la afiliere și dezafiliere, reducând în același timp erorile."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nou: controlați accesul administrativ pentru mai mulți utilizatori simultan."
       ]
     },
     "AdminRole_Info": {
@@ -2336,6 +2348,15 @@
       ],
       "You're all set!": [
         "Totul e în regulă!"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
+      ],
+      "Missing organization private key": [
+        "Cheia privată a organizației lipsește."
+      ],
+      "Missing organization public key": [
+        "Cheia publică a organizației lipsește."
       ]
     },
     "Browser": {
@@ -9405,6 +9426,18 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } vă ascunde traficul. ${ PASS_SHORT_APP_NAME } vă ascunde identitatea — **aliasuri de tip „hide-my-email”** nelimitate și **alerte de pe internetul ascuns** în cazul în care datele vă sunt vreodată divulgate."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pentru doar ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "RECOMANDAT"
       ]
     },
     "info": {
@@ -10746,7 +10779,7 @@
         "Ajutor"
       ],
       "Help translate": [
-        "Ajutați la traducere"
+        "Traducere completă"
       ],
       "here": [
         "aici"
@@ -18743,6 +18776,14 @@
     "Description for domain modal": {
       "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
         "A fost găsită o înregistrare DMARC duplicată. Accesați consola DNS a furnizorului domeniului pentru a o remedia."
+      ]
+    },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Faceți clic pe numele unui utilizator pentru a-i gestiona rolul și permisiunile."
+      ],
+      "User roles available": [
+        "Roluri de utilizator disponibile"
       ]
     }
   }
