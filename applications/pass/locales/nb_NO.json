@@ -1468,9 +1468,6 @@
         "${ payload.count } invitasjon sendt",
         "${ payload.count } invitasjoner sendt"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, vår avanserte kontobeskyttelsesprogram"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktivert"
       ],
@@ -1497,9 +1494,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Det opprettes en kontakt for hver e-postadresse som sender e-post til eller mottar e-post fra ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "En ny versjon lastes ned. Når nedlastingen er fullført, vil den være tilgjengelig ved neste omstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny versjon av ${ PASS_APP_NAME } er tilgjengelig. Oppdater den for å nyte de nyeste funksjonene og feilrettingene."
@@ -1970,6 +1964,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -1993,9 +1991,6 @@
       ],
       "No network connection": [
         "Ingen internettforbindelse"
-      ],
-      "No new versions are available at the moment.": [
-        "Ingen nye versjoner er tilgjengelige for øyeblikket."
       ],
       "None": [
         "Ingen"
@@ -2382,9 +2377,6 @@
       ],
       "This will reload the application.": [
         "Dette vil laste inn applikasjonen på nytt."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Dette vil utløse en sjekk for nye betaversjoner."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"

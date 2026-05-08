@@ -1471,9 +1471,6 @@
         "S'ha enviat ${ payload.count } invitació.",
         "S'han enviat ${ payload.count } invitacions."
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "S'ha desactivat ${ PROTON_SENTINEL_NAME }."
       ],
@@ -1500,9 +1497,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Es crea un contacte per a cada adreça de correu electrònic que enviï correus electrònics a o rebi correus electrònics de ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "S'està descarregant una nova versió. Un cop acabi la descàrrega, estarà disponible en el proper reinici."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -1974,7 +1968,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1999,9 +1994,6 @@
       ],
       "No network connection": [
         "No hi ha connexió de xarxa."
-      ],
-      "No new versions are available at the moment.": [
-        "No hi ha cap versió nova disponible en aquest moment."
       ],
       "None": [
         "Cap"
@@ -2186,6 +2178,9 @@
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
       ],
       "Reconnect": [
         "Torna a connectar"
@@ -2389,9 +2384,6 @@
       "This will reload the application.": [
         "Això tornarà a carregar l'aplicació."
       ],
-      "This will trigger a check for new beta releases.": [
-        "Això activarà una comprovació de noves versions beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
       ],
@@ -2433,6 +2425,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la segona contrasenya"
+      ],
+      "Unlock with biometrics": [
+        "Desbloquegeu-ho amb dades biomètriques"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."

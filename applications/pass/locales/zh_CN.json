@@ -295,6 +295,9 @@
       "Do not show again when I press": [
         "当我按下时不再显示"
       ],
+      "Don't show this again": [
+        "不再显示"
+      ],
       "Download this CSV template": [
         "下载CSV模板"
       ],
@@ -1449,9 +1452,6 @@
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
@@ -1475,9 +1475,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个邮箱地址都将创建一个联系人。"
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "新版本正在下载！下载完成后，将在下次重启时生效。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
@@ -1944,6 +1941,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
+      ],
       "Moving items": [
         "正在移动"
       ],
@@ -1967,9 +1967,6 @@
       ],
       "No network connection": [
         "无网络连接"
-      ],
-      "No new versions are available at the moment.": [
-        "目前没有新版本可用 :P"
       ],
       "None": [
         "无"
@@ -2153,6 +2150,9 @@
       ],
       "Press Enter to copy": [
         "按回车键以复制"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "由 ${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）提供保护"
       ],
       "Reconnect": [
         "重新连接"
@@ -2355,9 +2355,6 @@
       "This will reload the application.": [
         "这将重新加载应用程序"
       ],
-      "This will trigger a check for new beta releases.": [
-        "这将触发检查新的测试版发布"
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
@@ -2399,6 +2396,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "使用您的二级密码解锁 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Unlock with biometrics": [
+        "使用生物识别解锁"
       ],
       "Unpinning item...": [
         "正在取消固定项目..."
@@ -2915,7 +2915,7 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "邮箱（别名）"
+        "邮箱 (别名)"
       ],
       "Email (new alias)": [
         "邮箱 (新别名)"

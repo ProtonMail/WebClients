@@ -1468,9 +1468,6 @@
         "${ payload.count } invitación enviada",
         "${ payload.count } invitaciones enviadas"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
       ],
@@ -1497,9 +1494,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Se crea un contacto por cada dirección que envía o recibe correos electrónicos desde ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Se está descargando una nueva versión. Una vez que la descarga se complete, estará disponible en el próximo reinicio."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
@@ -1970,6 +1964,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -1993,9 +1991,6 @@
       ],
       "No network connection": [
         "No hay conexión a la red"
-      ],
-      "No new versions are available at the moment.": [
-        "En este momento no hay versiones nuevas disponibles."
       ],
       "None": [
         "Ninguno"
@@ -2180,6 +2175,9 @@
       ],
       "Press Enter to copy": [
         "Presione Enter para copiar"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
       ],
       "Reconnect": [
         "Reconectar"
@@ -2383,9 +2381,6 @@
       "This will reload the application.": [
         "Esto recargará la aplicación."
       ],
-      "This will trigger a check for new beta releases.": [
-        "Esto activará una verificación de nuevas versiones beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para seguir recibiendo correos electrónicos, transfiera estos alias a otro buzón:"
       ],
@@ -2427,6 +2422,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su segunda contraseña."
+      ],
+      "Unlock with biometrics": [
+        "Desbloquear con biometría"
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
