@@ -50,7 +50,7 @@ export type AppState = {
     UID?: Maybe<string>;
 };
 
-export type SessionStoreData = AuthSession;
+export type SessionStoreData = AuthSession & { resumeCount: number; resumeAttemptedAt: MaybeNull<number> };
 export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
