@@ -51,6 +51,9 @@
       "Add": [
         "Agregar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -1505,7 +1508,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -6754,6 +6758,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } está enmascarando su dirección IP por lo que los sitios web no pueden identificarle."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta su tráfico. ${ PASS_SHORT_APP_NAME } oculta su identidad, **alias hide-my-email** ilimitados y **alertas de la dark web** si sus datos han sido vulnerados."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembro)"
@@ -6840,6 +6847,9 @@
       ],
       "Ad targeting": [
         "Orientación de anuncios"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7431,6 +7441,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Para más seguridad, puede establecer una frase de contraseña. No se incluirá en la invitación del calendario, recuerde compartirla con sus invitados por separado."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensajes más nuevos que ${ oldestDate }"
       ],
@@ -7585,8 +7598,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8029,6 +8041,9 @@
       ],
       "Recipient: ": [
         "Destinatario: "
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."

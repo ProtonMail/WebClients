@@ -51,6 +51,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -1508,7 +1511,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -6757,6 +6761,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -6843,6 +6850,9 @@
       ],
       "Ad targeting": [
         "Orientació d'anuncis"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7434,6 +7444,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Per a més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari; recordeu de compartir-la amb els vostres convidats per separat."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Per només ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges posteriors al ${ oldestDate }"
       ],
@@ -7588,8 +7601,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8032,6 +8044,9 @@
       ],
       "Recipient: ": [
         "Destinatari: "
+      ],
+      "RECOMMENDED": [
+        "RECOMANAT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
@@ -10165,6 +10180,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "S'estan carregant les vostres subscripcions al butlletí..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Els butlletins informatius o llistes de correu dels quals anul·leu la subscripció apareixeran aquí."
       ],
@@ -15398,6 +15416,9 @@
       ],
       "Load remote content": [
         "Carrega el contingut remot"
+      ],
+      "Loading...": [
+        "S'està carregant..."
       ],
       "Make a secure connection your default": [
         "Feu d'una connexió segura l'opció predeterminada"

@@ -51,6 +51,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -1508,7 +1511,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4145,6 +4149,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Skicka och ta emot Gmail-meddelanden direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
@@ -7395,6 +7402,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "För extra säkerhet kan du ställa in en lösenfras. Den kommer inte att inkluderas i kalenderinbjudan, kom ihåg att dela den med dina gäster separat."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "För meddelanden nyare än ${ oldestDate }"
       ],
@@ -7546,8 +7556,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7987,6 +7996,9 @@
       ],
       "Recipient: ": [
         "Mottagare: "
+      ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
@@ -10091,6 +10103,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Laddar dina nyhetsbrevsprenumerationer …"
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
       ],
@@ -11871,6 +11886,9 @@
     "Onboarding List Placeholder": {
       "Bring your emails into ${ MAIL_APP_NAME }": [
         "Ta med din e-post till ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing emails into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Ta med din befintliga e-post till ${ MAIL_APP_NAME } så kan du hantera allt från en privat inkorg."
       ],
       "Choose a provider": [
         "Välj en leverantör"
@@ -15385,6 +15403,9 @@
       ],
       "Load remote content": [
         "Ladda fjärrinnehåll"
+      ],
+      "Loading...": [
+        "Laddar …"
       ],
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
