@@ -8,9 +8,10 @@ import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 interface EndMeetingWarningModalProps {
     onClose: () => void;
     onConfirm: () => void;
+    loading?: boolean;
 }
 
-export const EndMeetingWarningModal = ({ onClose, onConfirm }: EndMeetingWarningModalProps) => {
+export const EndMeetingWarningModal = ({ onClose, onConfirm, loading }: EndMeetingWarningModalProps) => {
     return (
         <ConfirmationModal
             icon={
@@ -35,6 +36,7 @@ export const EndMeetingWarningModal = ({ onClose, onConfirm }: EndMeetingWarning
             message={c('Info').t`This will end the meeting for all participants.`}
             primaryText={c('Action').t`End meeting`}
             primaryButtonClass="danger"
+            primaryLoading={loading}
             onPrimaryAction={onConfirm}
             secondaryText={c('Action').t`Cancel`}
             secondaryButtonClass="tertiary"
