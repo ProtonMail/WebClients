@@ -16,6 +16,14 @@ const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
 export type Tab = {
     title: string;
+    /**
+     * Optional override for the rendered tab title when a custom node needs to appear in place of plain text.
+     * The string `title` is still used for:
+     * - the slugified `data-testid` on the tab button (`tab-header-<slug>-button`)
+     * - the `data-title` attribute on the inner span
+     * - the dependency key that re-runs the tab-indicator layout effect when titles change
+     */
+    titleNode?: ReactNode;
     content?: ReactNode;
     icon?: IconName;
     iconPosition?: 'leading' | 'trailing';
@@ -162,7 +170,7 @@ export const Tabs = ({
                                 : {}
                         }
                     >
-                        {tabList.map(({ title, icon, iconPosition = 'trailing' }, index) => {
+                        {tabList.map(({ title, titleNode, icon, iconPosition = 'trailing' }, index) => {
                             const key = toKey(index, 'key_');
                             const label = toKey(index, 'label_');
                             const selected = value === index;
@@ -226,7 +234,7 @@ export const Tabs = ({
                                             )}
                                             data-title={title}
                                         >
-                                            {title}
+                                            {titleNode ?? title}
                                         </span>
                                         {icon && iconPosition === 'trailing' && (
                                             <Icon name={icon} className="shrink-0" />

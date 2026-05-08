@@ -7,6 +7,7 @@ import { Tabs } from '@proton/components/components/tabs/Tabs';
 
 interface Tab {
     title: string;
+    titleNode?: ReactNode;
     content: ReactNode;
 }
 
@@ -35,7 +36,7 @@ const ModalHeaderWithTabs = ({ title, tabs }: Props) => {
                     <div style={{ marginInlineStart: 'calc(-1 * var(--space-3))' }}>
                         <Tabs
                             className="mb-2"
-                            tabs={tabs.map(({ title }) => ({ title }))}
+                            tabs={tabs.map(({ title, titleNode }) => ({ title, titleNode }))}
                             value={activeTab}
                             onChange={setActiveTab}
                         />
