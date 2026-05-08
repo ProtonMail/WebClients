@@ -383,6 +383,9 @@
       "Expand navigation bar to see bookings": [
         "展開導航以查看預定"
       ],
+      "Expand navigation bar to see calendars": [
+        "展開導航以查看行事曆"
+      ],
       "Expand video conferencing widget": [
         "展開會議工具"
       ],
@@ -592,6 +595,9 @@
       ],
       "More options": [
         "更多選項"
+      ],
+      "More options for accounts": [
+        "更多帳號選項"
       ],
       "New event": [
         "加入事件"
@@ -1826,6 +1832,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "新增 ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "進階帳號和網路安全於單一方案"
+      ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
       ],
@@ -2556,6 +2565,9 @@
       "North Korea": [
         "北韓"
       ],
+      "North Macedonia": [
+        "北馬其頓"
+      ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
       ],
@@ -3020,6 +3032,9 @@
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
@@ -3444,6 +3459,9 @@
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
+      ],
+      "Company name or personal name is required": [
+        "公司名稱或個人名稱是需要的"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -5852,6 +5870,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "此預定頁面無法被編輯，與它關聯的行事曆已被停用"
+      ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "此預定是透過 ${ CALENDAR_APP_NAME }，是 ${ BRAND_NAME } 的隱私優先的產品之一。"
       ],
@@ -6533,6 +6554,9 @@
       ],
       "Contacts": [
         "聯絡人"
+      ],
+      "Continue cancelling": [
+        "持續取消"
       ],
       "Copy": [
         "複製"
@@ -8672,6 +8696,9 @@
       "Advanced threat protection": [
         "進階的威脅保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "與非 ${ BRAND_NAME } 使用者合作"
+      ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
       ],
@@ -9152,6 +9179,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -9268,6 +9298,9 @@
       ],
       "Enter a name": [
         "輸入名稱"
+      ],
+      "Enter a short description or additional info": [
+        "輸入一個簡短描述或額外資訊"
       ],
       "Enter passphrase": [
         "請輸入密碼"
@@ -9390,6 +9423,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "身為一位 **${ currentPlanTitle }** 訂閱者，您可透過升級至 **${ upsellPlanTitle }** 方案以解鎖 **${ unlockPlanTitle }** 和更多 ${ BRAND_NAME } 服務。"
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
       ],
@@ -10716,6 +10752,9 @@
       "Booking page created": [
         "預定頁面已創建"
       ],
+      "Booking page created and link copied to clipboard": [
+        "已創建預定網站和已複製連結至剪貼簿"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "行事曆已加入。同步或需時幾分鐘。"
       ],
@@ -11677,6 +11716,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
       "Upload and share files": [
         "上傳並共享檔案"
