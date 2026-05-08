@@ -17,6 +17,7 @@ interface ConfirmationModalProps {
     primaryText: string;
     onPrimaryAction: () => void;
     primaryButtonClass?: MeetButtonClass;
+    primaryLoading?: boolean;
     secondaryText?: string;
     onSecondaryAction?: () => void;
     secondaryButtonClass?: MeetButtonClass;
@@ -29,6 +30,7 @@ export const ConfirmationModal = ({
     message,
     primaryText,
     primaryButtonClass = 'primary',
+    primaryLoading = false,
     onPrimaryAction,
     secondaryText,
     secondaryButtonClass = 'tertiary',
@@ -70,8 +72,14 @@ export const ConfirmationModal = ({
 
                 <div className="w-full flex flex-column flex-nowrap gap-2 mt-4">
                     <Button
-                        className={clsx('rounded-full text-semibold', primaryButtonClass)}
+                        className={clsx(
+                            'rounded-full text-semibold',
+                            primaryButtonClass,
+                            primaryLoading && primaryButtonClass === 'danger' && 'confirmation-modal-danger-loading'
+                        )}
                         onClick={onPrimaryAction}
+                        disabled={primaryLoading}
+                        loading={primaryLoading}
                         size="large"
                     >
                         {primaryText}

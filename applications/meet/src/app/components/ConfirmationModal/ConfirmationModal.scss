@@ -4,6 +4,14 @@
 im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
+.confirmation-modal-danger-loading {
+	&:disabled {
+		background: var(--signal-danger-minor-1) !important;
+		border-color: var(--signal-danger-minor-1) !important;
+		color: var(--text-invert) !important;
+	}
+}
+
 .confirmation-modal {
 	background-color: rgb(0 0 0 / 0.3);
 	animation: none;

@@ -23,6 +23,8 @@ export enum UpsellModalTypes {
     FreeAccount = 'freeAccount',
     PaidAccount = 'paidAccount',
     MeetingEnded = 'meetingEnded',
+    MeetingExpiredHostFree = 'meetingExpiredHostFree',
+    MeetingExpiredHostPaid = 'meetingExpiredHostPaid',
     RemovedFromMeeting = 'removedFromMeeting',
 }
 
