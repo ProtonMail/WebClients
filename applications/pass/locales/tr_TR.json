@@ -1471,9 +1471,6 @@
         "${ payload.count } davet gönderildi",
         "${ payload.count } davet gönderildi"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
       ],
@@ -1500,9 +1497,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "${ aliasEmail } adresiyle e-posta gönderen veya alan her e-posta adresi için bir kişi oluşturulur."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Yeni sürüm indiriliyor. İndirme tamamlandığında sonraki yeniden başlatmada kullanılabilecek."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
@@ -1974,7 +1968,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -1999,9 +1994,6 @@
       ],
       "No network connection": [
         "Ağ bağlantısı yok"
-      ],
-      "No new versions are available at the moment.": [
-        "Şu anda daha yeni bir sürüm yok."
       ],
       "None": [
         "Yok"
@@ -2186,6 +2178,9 @@
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } tarafından korunmaktadır"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -2389,9 +2384,6 @@
       "This will reload the application.": [
         "Bu seçenek uygulamayı yeniden yükleyecek."
       ],
-      "This will trigger a check for new beta releases.": [
-        "Bu seçenek yeni beta sürümlerini denetleyecek."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "E-posta almayı sürdürmek için bu takma adları farklı bir e-posta kutusuna aktarın:"
       ],
@@ -2433,6 +2425,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ikinci parolanızı kullanın"
+      ],
+      "Unlock with biometrics": [
+        "Biyometri ile kilidi aç"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."

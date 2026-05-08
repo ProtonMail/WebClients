@@ -1443,9 +1443,6 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "${ aliasEmail }(으)로 이메일을 보내거나 받는 모든 이메일 주소에 대해 연락처가 생성됩니다."
       ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "새로운 버전이 다운로드 중입니다. 다운로드가 완료되면 다음 재시작 시 사용할 수 있습니다."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "새로운 버전의 ${ PASS_APP_NAME }가 사용 가능합니다. 새로운 기능과 버그 수정을 누리기 위해 업데이트 하세요."
       ],
@@ -1912,7 +1909,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1937,9 +1934,6 @@
       ],
       "No network connection": [
         "네트워크가 연결되어 있지 않습니다."
-      ],
-      "No new versions are available at the moment.": [
-        "현재 사용 가능한 새로운 버전이 없습니다."
       ],
       "None": [
         "없음"
@@ -2324,9 +2318,6 @@
       ],
       "This will reload the application.": [
         "애플리케이션이 다시 로드됩니다."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "새 베타 릴리스를 확인합니다."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "이메일을 계속 수신 받으려면 아래의 별칭들을 다른 메일함으로 이동하세요:"

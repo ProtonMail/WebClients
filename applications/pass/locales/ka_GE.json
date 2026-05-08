@@ -1886,6 +1886,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1909,9 +1913,6 @@
       ],
       "No network connection": [
         "ქსელთან კავშირი არ არის"
-      ],
-      "No new versions are available at the moment.": [
-        "ამ მომენტისთვის ახალი ვერსიები ხელმისაწვდომი არაა."
       ],
       "None": [
         "არცერთი"
@@ -2277,9 +2278,6 @@
       ],
       "This will reload the application.": [
         "ეს აპლიკაციას გადატვირთავს."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "ეს შეამოწმებს ახალი ბეტა გამოშვებების არსებობას."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "ელფოსტის მიღების გასაგრძელებლად გადაიტანეთ ეს ფსევდონიმები სხვა საფოსტო ყუთზე:"

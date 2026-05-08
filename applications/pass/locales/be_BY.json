@@ -1509,9 +1509,6 @@
         "${ payload.count } запрашэнняў паспяхова адпраўлены",
         "${ payload.count } запрашэнняў паспяхова адпраўлены"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
       ],
@@ -1544,9 +1541,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Кантакт створаны для кожнага адраса электроннай пошты, які адпраўляе або атрымлівае лісты ад ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Новая версія спампоўваецца. Як толькі спампоўка завершыцца, яна будзе даступна пры наступным перазапуску."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
@@ -2025,6 +2019,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2048,9 +2048,6 @@
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
-      ],
-      "No new versions are available at the moment.": [
-        "У цяперашні момант новыя версіі недаступны."
       ],
       "None": [
         "Адсутнічае"
@@ -2441,9 +2438,6 @@
       ],
       "This will reload the application.": [
         "Гэта дзеянне перазагрузіць праграму."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Гэта дзеянне запусціць праверку новых бэта-версій."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"

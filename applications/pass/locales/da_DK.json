@@ -295,6 +295,9 @@
       "Do not show again when I press": [
         "Vis ikke igen, når jeg trykker"
       ],
+      "Don't show this again": [
+        "Vis ikke igen"
+      ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
       ],
@@ -1468,9 +1471,6 @@
         "${ payload.count } invitation sendt",
         "${ payload.count } invitationer sendt"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktiveret"
       ],
@@ -1497,9 +1497,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Der oprettes en kontakt for hver e-mailadresse, der sender e-mails til eller modtager e-mails fra ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "En ny version downloades. Når downloaden er færdig, vil den være tilgængelig ved næste genstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
@@ -1970,6 +1967,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -1993,9 +1994,6 @@
       ],
       "No network connection": [
         "Ingen internetforbindelse"
-      ],
-      "No new versions are available at the moment.": [
-        "Ingen nye versioner er tilgængelige i øjeblikket."
       ],
       "None": [
         "Ingen"
@@ -2382,9 +2380,6 @@
       ],
       "This will reload the application.": [
         "Dette vil genindlæse applikationen."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Dette vil udløse en kontrol for nye beta-udgivelser."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
