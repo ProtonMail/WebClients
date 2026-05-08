@@ -56,11 +56,19 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
 
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
+const INSTRUCTIONS_NO_CLARIFICATION = [
+    'Do not ask the user any follow-up questions and do not request clarification.',
+    'If the request is ambiguous or you are unsure how to modify the text,',
+    'return the original text unchanged instead of asking a question or adding a comment.',
+    'Only output the revised text, never a question or an explanation.',
+].join(' ');
+
 const INSTRUCTIONS_REFINE_SPAN = [
     'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a span tag with class "modified".',
     'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
+    INSTRUCTIONS_NO_CLARIFICATION,
 ].join(' ');
 const INSTRUCTIONS_REFINE_DIV = [
     'The user wants you to modify a part of the text identified by the div tags (class "to-modify").',
@@ -68,6 +76,7 @@ const INSTRUCTIONS_REFINE_DIV = [
     'Write the rest of the email outside of the div tag.',
     'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
+    INSTRUCTIONS_NO_CLARIFICATION,
 ].join(' ');
 const INSTRUCTIONS_REFINE_WHOLE = [
     'The user wants you to modify the email.',
@@ -75,12 +84,13 @@ const INSTRUCTIONS_REFINE_WHOLE = [
     'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
     'Do not modify markdown link references.',
+    INSTRUCTIONS_NO_CLARIFICATION,
 ].join(' ');
 
 const INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
-    'In the span that has the class "modified", please do the following changes but keep the language unchanged: ';
+    'For the text within the span with class "to-modify", please do the following changes and provide the result in a span with class "modified", keeping the language unchanged: ';
 const INSTRUCTIONS_REFINE_USER_PREFIX_DIV =
-    'In the div that has the class "modified", please do the following changes but keep the language unchanged: ';
+    'For the text within the div with class "to-modify", please do the following changes and provide the result in a div with class "modified", keeping the language unchanged: ';
 const INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes but keep the language unchanged: ';
 
 function removePartialSubstringAtEnd(s: string, end: string): string {
@@ -127,11 +137,27 @@ export const makeRefineCleanup = (action: Action) => {
     const customStopStrings = getCustomStopStringsForAction(action);
     const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
     return (fulltext: string): string => {
+        // Unwrap a leading markdown code fence BEFORE `removeStopStrings` runs.
+        // GENERAL_STOP_STRINGS (and STOP_STRINGS_REFINE) contain '```', so a response that opens
+        // with a fence would otherwise be truncated to the empty string at index 0, leaving nothing
+        // for the extraction to recover.
+        const markdownMatch = fulltext.match(/^\s*```[a-z]*\n([\s\S]*?)(?:```|$)/i);
+        if (markdownMatch) {
+            fulltext = markdownMatch[1];
+        } else {
+            // Some models might not include a newline after the language identifier or just use backticks.
+            const genericMatch = fulltext.match(/^\s*```[a-z]*([\s\S]*?)(?:```|$)/i);
+            if (genericMatch) {
+                fulltext = genericMatch[1];
+            }
+        }
+
         fulltext = removeStopStrings(fulltext, customStopStrings);
-        fulltext = fulltext.replaceAll(/<\/?[a-z][^>]*>/gi, '');
+
+        fulltext = fulltext.replaceAll(/<[^>]*>/gi, '');
         fulltext = fulltext.replaceAll(/^(Harmful|Subject|Body|Language) ?:.*$/gm, '');
         fulltext = convertToDoubleNewlines(fulltext, false);
-        fulltext = fulltext.trim();
+
         for (const s of stopStrings) {
             fulltext = removePartialSubstringAtEnd(fulltext, s);
         }
@@ -354,12 +380,12 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
         newEmailStart = '';
     } else if (isParagraph) {
         oldEmail = `${pre.trim()}\n\n<div class="to-modify">\n${mid.trim()}\n</div>\n\n${end.trim()}`;
-        newEmailStart = `${pre.trim()}\n\n<div class="modified">\n`;
+        newEmailStart = '<div class="modified">\n';
         user = `${INSTRUCTIONS_REFINE_USER_PREFIX_DIV}${action.prompt}`;
         system = INSTRUCTIONS_REFINE_DIV;
     } else {
         oldEmail = `${pre}<span class="to-modify"> ${mid}</span>${end}`;
-        newEmailStart = `${pre}<span class="modified">`;
+        newEmailStart = '<span class="modified">';
         user = `${INSTRUCTIONS_REFINE_USER_PREFIX_SPAN}${action.prompt}`;
         system = INSTRUCTIONS_REFINE_SPAN;
     }
