@@ -17960,11 +17960,6 @@
         "No se han podido generar las claves de las direcciones. Para activar la protección poscuántica, deberás crear tus nuevas claves de cifrado manualmente.\n\nVe a ${ settingsLink } y selecciona «Generar clave» para cada dirección."
       ]
     },
-    "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Debes actualizar todas las aplicaciones móviles de ${ BRAND_NAME }**: tus nuevas claves no funcionarán en versiones anteriores de la aplicación."
-      ]
-    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Esto generará nuevas claves de cifrado resistentes al análisis cuántico para tu cuenta."

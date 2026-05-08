@@ -90,6 +90,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Lägg till ${ BRAND_NAME }-konto"
       ],
@@ -161,6 +164,9 @@
       ],
       "Add user": [
         "Lägg till användare"
+      ],
+      "Added ${ memberName } as group owner": [
+        "Lade till ${ memberName } som gruppägare"
       ],
       "Align center": [
         "Centrera"
@@ -1368,6 +1374,9 @@
       "Save": [
         "Spara"
       ],
+      "Save & exit": [
+        "Spara och avsluta"
+      ],
       "Save address": [
         "Spara adress"
       ],
@@ -2058,11 +2067,11 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nya administratörsroller"
+      ],
       "3 new admin roles": [
         "3 nya administratörsroller"
-      ],
-      "Admin roles": [
-        "Administratörsroller"
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delegera hantering genom att tilldela specifika administratörsroller. Ge varje administratör endast den åtkomst de behöver. Detta följer principen om minsta möjliga behörighet och skyddar din organisation från komprometterade konton och oavsiktliga fel."
@@ -2079,20 +2088,11 @@
       "New: Control admin access for individual users": [
         "Nytt: Kontrollera administratörsåtkomst för enskilda användare"
       ],
-      "Organization admin": [
-        "Organisationsadministratör"
-      ],
       "Organization admin:": [
         "Organisationsadministratör:"
       ],
-      "Security admin": [
-        "Säkerhetsadministratör"
-      ],
       "Security admin:": [
         "Säkerhetsadministratör:"
-      ],
-      "User admin": [
-        "Användaradministratör"
       ],
       "User admin:": [
         "Användaradministratör:"
@@ -2834,17 +2834,41 @@
       ]
     },
     "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
       "Account connected": [
         "Konto anslutet"
+      ],
+      "Account disconnected": [
+        "Konto frånkopplat"
       ],
       "Activated": [
         "Aktiverat"
       ],
+      "Activation link": [
+        "Aktiveringslänk"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
+      ],
       "Add a domain": [
         "Lägg till en domän"
       ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
+      "Add users": [
+        "Lägg till användare"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "All": [
         "Alla"
+      ],
+      "An unknown error occurred": [
+        "Ett okänt fel uppstod"
       ],
       "Authenticate": [
         "Autentisera"
@@ -2861,11 +2885,17 @@
       "Change": [
         "Ändra"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Välj vad som ska migreras.Ditt val kommer tillämpas till alla användare. Migreringen kommer starta efter du bestämt vilka användare som ska kopieras."
+      ],
       "Completed": [
         "Slutförd"
       ],
       "Configure": [
         "Konfigurera"
+      ],
+      "Configure domain": [
+        "Konfigurera domän"
       ],
       "Configure migration": [
         "Konfigurera migrering"
@@ -2879,17 +2909,38 @@
       "Continue migration": [
         "Fortsätt migrering"
       ],
+      "Copy activation link": [
+        "Kopiera aktiveringslänk"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopiera aktiveringslänk till urklipp"
+      ],
+      "Creating accounts": [
+        "Skapar konton"
+      ],
+      "DKIM records": [
+        "DKIM-poster"
+      ],
+      "DMARC records": [
+        "DMARC-poster"
+      ],
       "Domain added": [
         "Domän tillagd"
       ],
       "Domain connected": [
         "Domän ansluten"
       ],
+      "Errors": [
+        "Fel"
+      ],
       "Estimated size": [
         "Beräknad storlek"
       ],
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
+      ],
+      "Finalize migration": [
+        "Slutför migrering"
       ],
       "Finalize your migration": [
         "Slutför din migrering"
@@ -2903,6 +2954,9 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
+      ],
       "Has errors": [
         "Har fel"
       ],
@@ -2915,8 +2969,17 @@
       "Install migration app": [
         "Installera migreringsappen"
       ],
+      "Loading your organization data": [
+        "Laddar din organisationsdata"
+      ],
       "Mail": [
         "E-post"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Hanterad via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
       ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
@@ -2927,6 +2990,9 @@
       "Migrate users to ${ BRAND_NAME }": [
         "Migrera användare till ${ BRAND_NAME }"
       ],
+      "Migrated": [
+        "Migrerad"
+      ],
       "Migration includes": [
         "Migrering inkluderar"
       ],
@@ -2936,6 +3002,12 @@
       ],
       "Migration status": [
         "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
       ],
       "More details": [
         "Mer detaljer"
@@ -2954,6 +3026,18 @@
       ],
       "Organization does not have enough storage available": [
         "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Lägg till följande poster i din DNS-konsol för din domänleverantör:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lämna detta fönster öppet tills vi är klara med att skapa alla användare."
+      ],
+      "Please select at least one product to migrate": [
+        "Välj minst en produkt att migrera"
       ],
       "Refresh": [
         "Uppdatera"
@@ -2979,11 +3063,23 @@
       "Set up manually": [
         "Ställ in manuellt"
       ],
+      "Set up secure sending (DKIM)": [
+        "Ställ in säker sändning (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ställ in säker sändning (SPF)"
+      ],
       "Set up two-factor authentication": [
         "Ställ in tvåfaktorsautentisering"
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Dela aktiveringslänken med användarna så att de kan göra anspråk på sitt ${ BRAND_NAME }-konto."
       ],
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
@@ -3003,8 +3099,17 @@
       "Status": [
         "Status"
       ],
+      "This migration has been completed": [
+        "Denna migrering har slutförts"
+      ],
       "User": [
         "Användare"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
+      ],
+      "User status": [
+        "Användarstatus"
       ],
       "Users migrated": [
         "Användare migrerade"
@@ -3024,14 +3129,23 @@
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi upptäckte den primära domänen länkad till ditt Google Workspace-konto. Bekräfta den för att fortsätta ställa in e-post för din ${ BRAND_NAME }-organisation."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
       ],
       "We're still checking the MX records with your domain provider.": [
         "Vi kontrollerar fortfarande MX-posterna med din domänleverantör."
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
+      ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "You": [
+        "Du"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
@@ -5230,6 +5344,11 @@
         "använd importassistenten Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Dubblett av DMARC-post hittades, gå till DNS-konsolen hos din domänleverantör för att åtgärda det."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Dessutom har vi automatiskt matchat CSV-fält med vCard-fält. Du kan granska och ändra denna matchning manuellt."
@@ -6302,6 +6421,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add 1 more": [
+        "Lägg till 1 till"
+      ],
       "Add emergency contact": [
         "Lägg till nödkontakt"
       ],
@@ -6400,6 +6522,9 @@
       ],
       "Enable auto-renew": [
         "Aktivera automatisk förnyelse"
+      ],
+      "Explore plans": [
+        "Utforska paket"
       ],
       "For ${ email }": [
         "För ${ email }"
@@ -9853,6 +9978,9 @@
       "Are you sure you want to revoke certificate **${ name }**": [
         "Är du säker på att du vill återkalla certifikat **${ name }**?"
       ],
+      "Are you sure you want to sign out of this account?": [
+        "Är du säker på att du vill logga ut från detta konto?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Är du säker på att du vill sortera dina mappar alfabetiskt?"
       ],
@@ -10550,6 +10678,9 @@
       ],
       "For easy access to your passwords and more.": [
         "För enkel åtkomst till dina lösenord och mer."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
@@ -11461,6 +11592,9 @@
       "Recently used servers:": [
         "Nyligen använda servrar:"
       ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12334,6 +12468,9 @@
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vi kan använda din e-postadress för återställning för att skicka dig en verifieringskod för att återställa ditt lösenord och att kontakta dig om vi upptäcker misstänkt aktivitet."
       ],
+      "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
+        "Vi kan använda din telefon för återställning för att skicka dig en verifieringskod för att återställa ditt lösenord och att kontakta dig om vi upptäcker misstänkt aktivitet."
+      ],
       "We couldn't complete the transaction. Please try again.": [
         "Vi kunde inte slutföra transaktionen. Försök igen."
       ],
@@ -12816,6 +12953,9 @@
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dina senaste ändringar har publicerats. De kommer vara synliga för användare inom de närmaste timmarna."
+      ],
+      "Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Din återställningsfil kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
       ],
       "Your recovery phrase": [
         "Din återställningsfras"
@@ -13845,6 +13985,9 @@
       ],
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
+      ],
+      "Confirm MX records added": [
+        "Bekräfta tillagda MX-poster"
       ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
@@ -15025,6 +15168,9 @@
       ],
       "Recovery phrase": [
         "Återställningsfras"
+      ],
+      "Set recovery phone number": [
+        "Ställ in telefonnummer för återställning"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15064,6 +15210,23 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post hittades inte"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ogiltig ${ group.name }-post hittades"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Use default value": [
+        "Använd standardvärde"
+      ],
+      "Valid ${ group.name } record found": [
+        "Giltig ${ group.name }-post hittades"
       ]
     },
     "Label for new member": {
@@ -15404,6 +15567,9 @@
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
+      ],
+      "use a data recovery method": [
+        "använd en dataåterställningsmetod"
       ],
       "Vault": [
         "Valv"
@@ -19159,6 +19325,9 @@
       "Search for an email or IP address": [
         "Sök efter en e-post eller IP-adress"
       ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
+      ],
       "Search parent folder": [
         "Sök överordnad mapp"
       ],
@@ -19305,8 +19474,8 @@
       ]
     },
     "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Du måste uppdatera alla ${ BRAND_NAME } mobilappar**: dina nya nycklar fungerar inte på äldre appversioner."
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Du måste uppdatera alla ${ BRAND_NAME }-appar**: dina nya nycklar fungerar inte på äldre appversioner."
       ]
     },
     "PQC optin": {
@@ -19561,7 +19730,7 @@
         "Verifiera denna e-postadress för återställning nu: ${ emailData.value }"
       ],
       "Verify recovery email?": [
-        "Virifiera e-post för återställning?"
+        "Verifiera e-post för återställning?"
       ],
       "Verify with email": [
         "Verifiera med e-post"
@@ -19685,8 +19854,14 @@
       "Download recovery file": [
         "Ladda ner återställningsfil"
       ],
+      "Email recovery enabled": [
+        "Återställning via e-post aktiverat"
+      ],
       "Emergency contacts added": [
         "Nödkontakter tillagda"
+      ],
+      "Enable email recovery": [
+        "Aktivera återställning med e-post"
       ],
       "Enable recovery by phone": [
         "Aktivera återställning med telefon"
@@ -19696,6 +19871,9 @@
       ],
       "Password verified": [
         "Lösenord verifierat"
+      ],
+      "Phone recovery enabled": [
+        "Återställning med telefon aktiverat"
       ],
       "Recovery contacts added": [
         "Återställningskontakter tillagda"
@@ -19716,7 +19894,7 @@
         "Verifiera lösenord"
       ],
       "Verify recovery email": [
-        "Virifiera e-post för återställning"
+        "Verifiera e-post för återställning"
       ],
       "Verify recovery phone": [
         "Verifiera återställning med telefon"
@@ -19754,6 +19932,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "Eller ${ downloadRecoveryKitSwitchButton } istället."
+      ],
+      "Your **recovery phrase** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "Din **återställningsfras** låter dig återställa ditt ${ BRAND_NAME }-konto om du är utelåst."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -20143,6 +20324,9 @@
       "Back to Safety Review": [
         "Tillbaka till säkerhetsgranskning"
       ],
+      "Because you reset your password, your current recovery phrase can only be used to recover the data created before your password reset.": [
+        "Eftersom du återställer ditt lösenord kan din nuvarande återställningsfras endast användas för att återställa data skapad innan din lösenordsåterställning."
+      ],
       "Can be used to regain access to your account and data": [
         "Kan användas för att återfå åtkomst till ditt konto och data"
       ],
@@ -20287,6 +20471,9 @@
       "Verify your recovery phone number": [
         "Verifiera ditt telefonnummer för återställning"
       ],
+      "We encountered an error while generating your recovery phrase. Please try again later, or contact support if the issue continues.": [
+        "Vi stötte på ett fel vid genereringen av din återställningsfras. Försök igen senare eller kontakta supporten om problemet kvarstår."
+      ],
       "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
         "Vi stötte på ett fel vid verifieringen av din e-post. Försök igen senare eller kontakta supporten om problemet kvarstår."
       ],
@@ -20307,6 +20494,9 @@
       ],
       "You can disable this at any time.": [
         "Du kan inaktivera detta när som helst."
+      ],
+      "You can use the recovery phrase in this recovery phrase to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Du kan använda återställningsfrasen i denna återställningsfras för att helt återställa ditt konto när du återställer ditt lösenord, så se till att du förvarar det på ett säkert ställe."
       ],
       "You can use your email to regain access to your account if you forget your password.": [
         "Du kan använda din e-post för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
@@ -20409,6 +20599,182 @@
       ],
       "Your recovery phrase is set": [
         "Din återställningsfras är inställd"
+      ]
+    },
+    "safety_review": {
+      "Account protection": [
+        "Kontoskydd"
+      ],
+      "Add": [
+        "Lägg till"
+      ],
+      "Add emergency contacts": [
+        "Lägg till nödkontakter"
+      ],
+      "Add options": [
+        "Lägga till alternativ"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Lägg till personer du litar på och som du enkelt kan kontakta. De kommer att kunna komma åt ditt konto och återställa ditt lösenord åt dig."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Lägg till personer du litar på och enkelt kan kontakta. De kommer att kunna hjälpa dig att låsa upp dina data efter du återställt ditt lösenord."
+      ],
+      "Add phone number": [
+        "Lägg till telefonnummer"
+      ],
+      "Add recovery contacts": [
+        "Lägg till återställningskontakter"
+      ],
+      "Add recovery email": [
+        "Lägg till e-post för återställning"
+      ],
+      "Add recovery phone": [
+        "Lägg till telefon för återställning"
+      ],
+      "Added recovery contacts": [
+        "Lade till återställningskontakter"
+      ],
+      "Allow": [
+        "Tillåt"
+      ],
+      "Allow password reset from the settings": [
+        "Tillåt lösenordsåterställning från inställningarna"
+      ],
+      "Allow recovery by email": [
+        "Tillåt återställning med e-post"
+      ],
+      "Allow recovery by phone": [
+        "Tillåt återställning med telefon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillåt skanning av en QR-kod för att logga in"
+      ],
+      "Allow trusted friends to sign in": [
+        "Tillåt betrodda vänner att logga in"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Tillbaka till ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Grattis"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Fick du det inte? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Klar"
+      ],
+      "Download": [
+        "Ladda ner"
+      ],
+      "Download recovery file": [
+        "Ladda ner återställningsfil"
+      ],
+      "Downloaded recovery file": [
+        "Laddade ner återställningsfil"
+      ],
+      "Emergency contacts enabled": [
+        "Nödkontakter aktiverade"
+      ],
+      "Enable device recovery": [
+        "Aktivera enhetsåterställning"
+      ],
+      "Enable email recovery": [
+        "Aktivera återställning med e-post"
+      ],
+      "Enable emergency contacts": [
+        "Aktivera nödkontakter"
+      ],
+      "Enable password reset from settings": [
+        "Aktivera lösenordsåterställning från inställningar"
+      ],
+      "Enable phone recovery": [
+        "Aktivera återställning med telefon"
+      ],
+      "Enable QR code sign-in": [
+        "Aktivera inloggning med QR-kod"
+      ],
+      "Enabled device recovery": [
+        "Aktiverade enhetsåterställning"
+      ],
+      "Enabled email recovery": [
+        "Aktiverade återställning med e-post"
+      ],
+      "Enabled password reset from settings": [
+        "Aktiverade lösenordsåterställning från inställningar"
+      ],
+      "Enabled phone recovery": [
+        "Aktiverade återställning med telefon"
+      ],
+      "Enabled QR code sign-in": [
+        "Aktiverade inloggning med QR-kod"
+      ],
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Here's how you increased your account protection:": [
+        "Så här ökade du ditt kontoskydd:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Om du glömmer ditt lösenord kan du logga in med en QR-kod. Allt du behöver göra är att vara inloggad på en ${ BRAND_NAME }-tjänst på annan enhet."
+      ],
+      "Later": [
+        "Senare"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Skydda ditt arv med nödåtkomst"
+      ],
+      "Save recovery phrase": [
+        "Spara återställningsfras"
+      ],
+      "Saved recovery phrase": [
+        "Sparade återställningsfras"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Du måste redan ha ett ${ BRAND_NAME }-konto."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Detta kommer återställa åtkomst till e-post, kontakter, filer, lösenord och annan krypterad data på ditt konto efter en lösenordsåterställning."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "För att vara säker på att e-postadressen är din, ange verifieringskoden skickad till ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "För att vara säker på att telefonnumret är ditt, ange verifieringskoden skickad till ${ boldPhoneNumber }."
+      ],
+      "Verified password": [
+        "Verifierat lösenord"
+      ],
+      "Verified recovery email": [
+        "Verifierade återställning med e-post"
+      ],
+      "Verified recovery phone": [
+        "Verifierade återställning med telefon"
+      ],
+      "Verify": [
+        "Verifiera"
+      ],
+      "Verify password": [
+        "Verifiera lösenord"
+      ],
+      "Verify recovery email": [
+        "Verifiera e-post för återställning"
+      ],
+      "Verify recovery phone": [
+        "Verifiera återställning med telefon"
+      ],
+      "Verify your recovery email": [
+        "Verifiera din e-post för återställning"
+      ],
+      "Verify your recovery phone": [
+        "Verifiera din telefon för återställning"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Du kan använda SMS-verifiering för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
+      "Your security setup": [
+        "Din säkerhetsinställning"
       ]
     },
     "saml: Action": {
@@ -20615,6 +20981,9 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera de markerade alternativen."
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har rekommenderade åtgärder från ${ PROTON_SENTINEL_NAME }"
       ]
@@ -21819,11 +22188,29 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Tilldela delegerade roller"
+      ],
+      "Assign roles": [
+        "Tilldela roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicka på en användares namn för att hantera deras roll och behörigheter."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Tjäna upp till ${ maxRewardAmount } i kredit"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Få krediter när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ],
+      "New: Roles and permissions tab": [
+        "Nytt: Flik för roller och behörigheter"
+      ],
+      "User roles available": [
+        "Användarroller tillgängliga"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tilldela roller till enskilda användare från denna flik."
       ]
     },
     "sso": {
@@ -22127,6 +22514,12 @@
       "Available on this device": [
         "Tillgänglig på denna enhet"
       ],
+      "Disable contact-assisted recovery": [
+        "Inaktivera kontaktassisterad återställning"
+      ],
+      "Disable emergency access": [
+        "Inaktivera nödåtkomst"
+      ],
       "Disable QR code sign-in": [
         "Inaktivera inloggning med QR-kod"
       ],
@@ -22135,6 +22528,9 @@
       ],
       "Disable recovery by phone": [
         "Inaktivera återställning med telefon"
+      ],
+      "Disable recovery file": [
+        "Inaktivera återställningsfil"
       ],
       "Generate a recovery phrase": [
         "Generera en återställningsfras"
@@ -22875,6 +23271,9 @@
       "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planTitle } går utöver grunderna för att hjälpa dig att bli mer produktiv, organiserad och ha kontroll över din inkorg, e-postidentitet och mer."
       ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
+      ],
       "Compare the key differences that matter for your business.": [
         "Jämför de viktigaste skillnaderna som är viktiga för ditt företag."
       ],
@@ -22900,6 +23299,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
       ],
       "Address added": [
         "Adress tillagd"
@@ -24731,6 +25133,9 @@
       "Remove forwarding address": [
         "Ta bort vidarebefordringsadress"
       ],
+      "Remove recovery phone number": [
+        "Ta bort telefonnummer för återställning"
+      ],
       "Remove server?": [
         "Ta bort server?"
       ],
@@ -25208,6 +25613,9 @@
       ],
       "Your ${ planTitle } subscription has started": [
         "Din ${ planTitle }-prenumeration har startat"
+      ],
+      "Your admin at ${ orgName } is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
+        "Din administratör på ${ orgName } bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."
       ],
       "Your admin is inviting you to activate your new secure ${ BRAND_NAME } account and update your password.": [
         "Din administratör bjuder in dig att aktivera ditt nya säkra ${ BRAND_NAME }-konto och uppdatera ditt lösenord."

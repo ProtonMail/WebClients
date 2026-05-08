@@ -90,6 +90,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Προσθήκη Λογαριασμού ${ BRAND_NAME }"
       ],
@@ -890,6 +893,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Πηγαίνετε στο ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Μετάβαση στον πάροχο τομέα"
       ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
@@ -2073,17 +2079,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 νέοι ρόλοι διαχειριστή"
+      ],
       "3 new admin roles": [
         "3 νέοι ρόλοι διαχειριστή"
-      ],
-      "Admin roles": [
-        "Ρόλοι διαχειριστών"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Διαχειριστείτε την ανάθεση εξουσιών αναθέτοντας συγκεκριμένους ρόλους διαχειριστή. Δώστε σε κάθε διαχειριστή μόνο την πρόσβαση που χρειάζεται. Αυτό ακολουθεί την αρχή της ελάχιστης προνομίας, προστατεύοντας τον οργανισμό σας από παραβιασμένους λογαριασμούς και τυχαία σφάλματα."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Αναθέστε τη διαχείριση σε πολλούς χρήστες ταυτόχρονα. Αναθέστε συγκεκριμένους ρόλους διαχειριστή σε ομάδες για αυτόματα δικαιώματα. Αυτό ακολουθεί την αρχή των ελαχίστων προνομίων για εξοικονόμηση χρόνου κατά την ενσωμάτωση και την αποσύνδεση, μειώνοντας παράλληλα τα σφάλματα."
       ],
       "Delegate management with the appropriate admin role.": [
         "Διαχείριση εκπροσώπων με τον κατάλληλο ρόλο διαχειριστή."
@@ -2097,20 +2106,14 @@
       "New: Control admin access for individual users": [
         "Νέο: Έλεγχος πρόσβασης διαχειριστή για μεμονωμένους χρήστες"
       ],
-      "Organization admin": [
-        "Διαχειριστής οργανισμού"
+      "New: Control admin access for many users at once": [
+        "Νέο: Έλεγχος πρόσβασης διαχειριστή για πολλούς χρήστες ταυτόχρονα"
       ],
       "Organization admin:": [
         "Διαχειριστής οργανισμού:"
       ],
-      "Security admin": [
-        "Διαχειριστής ασφαλείας"
-      ],
       "Security admin:": [
         "Διαχειριστής ασφαλείας:"
-      ],
-      "User admin": [
-        "Διαχειριστής χρηστών"
       ],
       "User admin:": [
         "Διαχειριστής χρηστών:"
@@ -2891,6 +2894,9 @@
       "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
         "**p=reject**: ζητώντας από τις πλατφόρμες παραληπτών να απορρίψουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
+      "Account connected": [
+        "Ο λογαριασμός συνδέθηκε"
+      ],
       "Account disconnected": [
         "Λογαριασμός αποσυνδεδεμένος"
       ],
@@ -2927,6 +2933,9 @@
       "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
         "Είστε σίγουρος ότι θέλετε να συνεχίσετε; Οι χρήστες που δεν έχουν διεκδικήσει τον λογαριασμό τους πριν ολοκληρωθεί η μετεγκατάσταση θα χρειαστεί να ζητήσουν επαναφορά κωδικού πρόσβασης από τον διαχειριστή της οργάνωσης ${ BRAND_NAME }."
       ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Μόλις δημιουργηθούν οι λογαριασμοί, μπορείτε να κοινοποιήσετε τον σύνδεσμο ενεργοποίησης, ώστε οι χρήστες να μπορούν να διεκδικήσουν τον λογαριασμό τους ${ BRAND_NAME }."
+      ],
       "Authenticate": [
         "Ταυτοποίηση"
       ],
@@ -2945,6 +2954,9 @@
       "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
         "Επιλέξτε πώς θέλετε να φέρετε την ομάδα σας και τη ρύθμιση του ηλεκτρονικού ταχυδρομείου σας στο ${ BRAND_NAME }."
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Επιλέξτε τι θα μετεγκατασταθεί. Η επιλογή σας θα ισχύει για όλους τους χρήστες. Η μετεγκατάσταση θα ξεκινήσει αφού αποφασίσετε ποιους χρήστες θα αντιγράψετε."
+      ],
       "Completed": [
         "Ολοκληρώθηκε"
       ],
@@ -2957,20 +2969,47 @@
       "Configure migration": [
         "Διαμόρφωση μετεγκατάστασης"
       ],
+      "Configure your domain": [
+        "Ρυθμίστε τον τομέα σας"
+      ],
       "Contacts": [
         "Επαφές"
       ],
       "Continue migration": [
         "Συνέχιση της μετεγκατάστασης"
       ],
+      "Copy activation link": [
+        "Αντιγραφή συνδέσμου ενεργοποίησης"
+      ],
+      "Copy activation link to clipboard": [
+        "Αντιγραφή συνδέσμου ενεργοποίησης στο πρόχειρο"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Αντιγράψτε τον παρακάτω κώδικα και επικολλήστε τον στην ενότητα DNS του κεντρικού υπολογιστή του τομέα σας. Μπορείτε να βρείτε ένα παράδειγμα και μερικές χρήσιμες συμβουλές ${ hereHref }."
+      ],
       "Creating accounts": [
         "Δημιουργία λογαριασμών"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "Το DKIM προσθέτει μια ψηφιακή υπογραφή σε κάθε μήνυμα ηλεκτρονικού ταχυδρομείου, ώστε οι παραλήπτες να μπορούν να επαληθεύσουν ότι το μήνυμα προήλθε όντως από τον τομέα σας και δεν τροποποιήθηκε κατά τη μεταφορά του. Χωρίς αυτήν, τα μηνύματα ενδέχεται να θεωρηθούν λιγότερο αξιόπιστα."
       ],
       "DKIM records": [
         "Εγγραφές DKIM"
       ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "Το DMARC βασίζεται στο SPF και το DKIM, υποδεικνύοντας στους διακομιστές λήψης πώς να χειρίζονται τα μηνύματα που αποτυγχάνουν σε αυτούς τους ελέγχους. Βοηθά στην προστασία του τομέα σας από την πλαστοπροσωπία και βελτιώνει τη συνολική αξιοπιστία παράδοσης."
+      ],
+      "DMARC records": [
+        "Εγγραφές DMARC"
+      ],
+      "Domain added": [
+        "Προστέθηκε τομέας"
+      ],
       "Domain connected": [
         "Συνδεδεμένος τομέας"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Βεβαιωθείτε ότι τα ηλεκτρονικά μηνύματά σας φτάνουν στα εισερχόμενα και όχι στον φάκελο ανεπιθύμητης αλληλογραφίας. Η ενημέρωση του SPF θα επιτρέψει στους χρήστες να στέλνουν από ${ BRAND_NAME } και την Google ταυτόχρονα κατά τη διάρκεια της μετεγκατάστασης."
       ],
       "Errors": [
         "Σφάλματα"
@@ -2990,6 +3029,9 @@
       "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
         "Η ολοκλήρωση της μετεγκατάστασης σημαίνει ότι όλα τα ηλεκτρονικά μηνύματά σας θα προωθούνται απευθείας στο ${ BRAND_NAME }. Οι χρήστες θα σταματήσουν να λαμβάνουν ηλεκτρονικά μηνύματα στους λογαριασμούς τους Google και τα δεδομένα δεν θα συγχρονίζονται πλέον μεταξύ του ${ BRAND_NAME } και της Google."
       ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
       "Finish setting up your business account": [
         "Ολοκληρώστε τη ρύθμιση του επαγγελματικού σας λογαριασμού"
       ],
@@ -2999,8 +3041,17 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Λογαριασμός Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Υπομονή, δημιουργούμε λογαριασμούς χρηστών και σύντομα θα ξεκινήσουμε την εισαγωγή δεδομένων χρηστών."
+      ],
       "Has errors": [
         "Έχει σφάλματα"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Σφάλματα εισαγωγής για ${ user.AdminSetName }"
       ],
       "In progress": [
         "Σε εξέλιξη"
@@ -3014,8 +3065,17 @@
       "Install Migration assistant": [
         "Εγκαταστήστε τον Βοηθό Μετεγκατάστασης"
       ],
+      "Loading your organization data": [
+        "Φόρτωση των δεδομένων του οργανισμού σας"
+      ],
       "Mail": [
         "Ταχυδρομείο"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Διαχείριση μέσω ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
       ],
       "Migrate from Google Workspace": [
         "Μετάβαση από το Google Workspace"
@@ -3039,6 +3099,12 @@
       "Migration status": [
         "Κατάσταση μετεγκατάστασης"
       ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
+      ],
       "More details": [
         "Περισσότερες λεπτομέρειες"
       ],
@@ -3050,6 +3116,12 @@
       ],
       "No users to display": [
         "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Not confirmed": [
+        "Δεν έχει επιβεβαιωθεί"
       ],
       "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
         "Μόλις οι χρήστες διεκδικήσουν τον λογαριασμό τους ${ BRAND_NAME }, ολοκληρώστε τη μετεγκατάσταση."
@@ -3066,6 +3138,12 @@
       "Pending": [
         "Σε εκκρεμότητα"
       ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Προσθέστε τις ακόλουθες εγγραφές στην κονσόλα DNS του παρόχου τομέα σας:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Αφήστε αυτό το παράθυρο ανοιχτό μέχρι να ολοκληρώσουμε τη δημιουργία όλων των χρηστών."
+      ],
       "Please select at least one product to migrate": [
         "Παρακαλώ επιλέξτε τουλάχιστον ένα προϊόν για μετεγκατάσταση"
       ],
@@ -3080,6 +3158,9 @@
       ],
       "Select at least one user to start a migration": [
         "Επιλέξτε τουλάχιστον έναν χρήστη για να ξεκινήσετε τη μετεγκατάσταση."
+      ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
       ],
       "Set up": [
         "Ρύθμιση"
@@ -3105,17 +3186,38 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Κοινοποιήστε τον σύνδεσμο ενεργοποίησης στους χρήστες, ώστε να μπορούν να διεκδικήσουν τον λογαριασμό τους ${ BRAND_NAME }."
+      ],
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
       "Size": [
         "Μέγεθος"
       ],
+      "Some accounts are not claimed": [
+        "Ορισμένοι λογαριασμοί δεν έχουν διεκδικηθεί"
+      ],
+      "SPF records": [
+        "Εγγραφές SPF"
+      ],
+      "Start migrating": [
+        "Έναρξη μετεγκατάστασης"
+      ],
       "Start migration": [
         "Έναρξη μετεγκατάστασης"
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Η προεπιλεγμένη ρύθμιση είναι καμία. Ωστόσο, για να βελτιώσετε την ασφάλειά σας, συνιστούμε να ορίσετε αυτήν την τιμή σε p=quarantine."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Η τιμή \"p=\" καθορίζει την ενέργεια που πρέπει να ληφθεί για τα μηνύματα ηλεκτρονικού ταχυδρομείου που δεν πληρούν τις απαιτήσεις DMARC. Ακολουθούν οι διαθέσιμες ενέργειες:"
+      ],
+      "This migration has been completed": [
+        "Αυτή η μετεγκατάσταση έχει ολοκληρωθεί"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε."
@@ -3153,8 +3255,17 @@
       "Verify your domain to start a migration": [
         "Επαληθεύστε τον τομέα σας για να ξεκινήσετε τη μετεγκατάσταση"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Εντοπίσαμε τον κύριο τομέα που είναι συνδεδεμένος με τον λογαριασμό σας Google Workspace. Επιβεβαιώστε τον για να συνεχίσετε τη ρύθμιση του email για τον οργανισμό σας ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Δεν καταφέραμε να επαληθεύσουμε την εγκατάσταση, παρακαλούμε ελέγξτε ότι την έχετε εγκαταστήσει στο Google Workspace λογαριασμό σας και προσπαθήστε ξανά."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Εξακολουθούμε να ελέγχουμε τις εγγραφές MX με τον πάροχο τομέα σας."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Παρατηρήσαμε ότι ορισμένοι χρήστες δεν έχουν διεκδικήσει τους λογαριασμούς τους ${ BRAND_NAME }."
       ],
       "What are you migrating?": [
         "Τι μεταφέρετε;"
@@ -5402,6 +5513,11 @@
         "χρησιμοποιήστε τον βοηθό εισαγωγής Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Βρέθηκε διπλότυπη εγγραφή DMARC, μεταβείτε στην κονσόλα DNS του παρόχου τομέα σας για να το διορθώσετε."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Επίσης, έχουμε αντιστοιχίσει αυτόματα τα πεδία CSV με πεδία vCard. Μπορείτε να ελέγξετε και να αλλάξετε αυτήν την αντιστοίχιση με μη αυτόματο τρόπο."
@@ -6476,6 +6592,9 @@
       ],
       "Add": [
         "Προσθήκη"
+      ],
+      "Add 1 more": [
+        "Προσθέστε 1 ακόμα"
       ],
       "Add emergency contact": [
         "Προσθήκη επαφής έκτακτης ανάγκης"
@@ -9705,6 +9824,9 @@
       "${ vaultLink } updated": [
         "Η κρύπτη ${ vaultLink } ενημερώθηκε"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "Το ${ VPN_SHORT_APP_NAME } αποκρύπτει την επισκεψιμότητά σας. Το ${ PASS_SHORT_APP_NAME } αποκρύπτει την ταυτότητά σας\n— απεριόριστα **hide-my-email ψευδώνυμα** και **ειδοποιήσεις dark-web** εάν τα δεδομένα σας διαρρεύσουν ποτέ."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } απαιτείται για σύνδεση επιπέδου Χώρας."
       ],
@@ -9857,6 +9979,9 @@
       ],
       "Activity Monitor": [
         "Παρακολούθηση Δραστηριότητας"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10086,6 +10211,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Είστε σίγουροι ότι θέλετε να ανακαλέσετε το πιστοποιητικό **${ name }**"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Σίγουρα θες να αποσυνδεθείς από αυτό τον λογαριασμό;"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Είστε σίγουροι ότι θέλετε να ταξινομήσετε τους φακέλους σας αλφαβητικά;"
@@ -10808,6 +10936,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Για εύκολη πρόσβαση στους κωδικούς πρόσβασής σας και πολλά άλλα."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Μόνο για ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
@@ -11761,6 +11892,9 @@
       "Recently used servers:": [
         "Πρόσφατα χρησιμοποιημένοι διακομιστές:"
       ],
+      "RECOMMENDED": [
+        "ΠΡΟΤΕΙΝΟΜΕΝΑ"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Συνιστάται σε αξιόπιστες συσκευές. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12385,6 +12519,15 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση με τη βοήθεια επαφών**."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Δημιουργία αντιγράφων ασφαλείας δεδομένων συσκευής**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Πρόσβαση έκτακτης ανάγκης**."
+      ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **είσοδο με κωδικό QR**."
       ],
@@ -12393,6 +12536,9 @@
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω τηλεφώνου ανάκτησης**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε το **Αρχείο ανάκτησης** (ακυρώστε όλα τα αρχεία ανάκτησης)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Επαναφορά συνδεδεμένου χρήστη**."
@@ -14232,6 +14378,9 @@
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
+      "Confirm MX records added": [
+        "Επιβεβαίωση προσθήκης εγγραφών MX"
+      ],
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
       ],
@@ -14776,6 +14925,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
       ],
+      "MX records": [
+        "Εγγραφές MX"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -14958,6 +15110,9 @@
       ],
       "Primary": [
         "Κύριο"
+      ],
+      "Priority": [
+        "Προτεραιότητα"
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
@@ -15471,6 +15626,9 @@
       ]
     },
     "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Η εγγραφή ${ capitalizedGroup } δεν βρέθηκε"
+      ],
       "Host name": [
         "Όνομα εξυπηρετητή"
       ],
@@ -15482,6 +15640,9 @@
       ],
       "Use default value": [
         "Χρήση προκαθορισμένης τιμής"
+      ],
+      "Valid ${ group.name } record found": [
+        "Βρέθηκε έγκυρη εγγραφή ${ group.name }"
       ]
     },
     "Label for new member": {
@@ -15648,6 +15809,9 @@
       ],
       "data recovery option": [
         "επιλογή ανάκτησης δεδομένων"
+      ],
+      "Detailed instructions": [
+        "Λεπτομερείς οδηγίες"
       ],
       "Details": [
         "Λεπτομέρειες"
@@ -19623,6 +19787,9 @@
       "Search for an email or IP address": [
         "Αναζήτηση διεύθυνσης ηλεκτρονικού ταχυδρομείου ή IP"
       ],
+      "Search for users or addresses": [
+        "Αναζήτηση χρηστών ή διευθύνσεων"
+      ],
       "Search parent folder": [
         "Αναζήτηση σε γονικό φάκελο"
       ],
@@ -19782,8 +19949,8 @@
       ]
     },
     "PQC compatibility warning": {
-      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
-        "**Πρέπει να ενημερώσετε όλες τις εφαρμογές για κινητά ${ BRAND_NAME }**: τα νέα κλειδιά σας δε θα λειτουργούν σε παλαιότερες εκδόσεις της εφαρμογής."
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Πρέπει να ενημερώσετε όλες τις εφαρμογές ${ BRAND_NAME }**: τα νέα σας κλειδιά δε θα λειτουργούν σε παλαιότερες εκδόσεις εφαρμογών."
       ]
     },
     "PQC key generation": {
@@ -20036,6 +20203,9 @@
       "Recovery score: ${ score }": [
         "Βαθμολογία ανάκτησης: ${ score }"
       ],
+      "Require verified password reset option (email or SMS)": [
+        "Απαιτείται η επιλογή επαληθευμένης επαναφοράς κωδικού πρόσβασης (email ή SMS)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Βαθμολογία: ${ score } / ${ maxScore }"
       ],
@@ -20082,6 +20252,9 @@
       ],
       "Emergency contacts added": [
         "Προστέθηκαν επαφές έκτακτης ανάγκης"
+      ],
+      "Enable email recovery": [
+        "Ενεργοποίηση ανάκτησης email"
       ],
       "Enable recovery by phone": [
         "Ενεργοποίηση ανάκτησης μέσω τηλεφώνου"
@@ -20843,8 +21016,17 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add emergency contacts": [
+        "Προσθήκη επαφών έκτακτης ανάγκης"
+      ],
       "Add options": [
         "Προσθήκη επιλογών"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Θα μπορούν να έχουν πρόσβαση στον λογαριασμό σας και να επαναφέρουν τον κωδικό πρόσβασής σας για εσάς."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Θα μπορούν να σας βοηθήσουν να ξεκλειδώσετε τα δεδομένα σας αφού επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
@@ -20857,6 +21039,15 @@
       ],
       "Add recovery phone": [
         "Προσθήκη τηλεφώνου ανάκτησης"
+      ],
+      "Added emergency contacts": [
+        "Προστέθηκαν επαφές έκτακτης ανάγκης"
+      ],
+      "Added recovery contacts": [
+        "Προστέθηκαν επαφές ανάκτησης"
+      ],
+      "Added recovery email": [
+        "Προστέθηκε διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
       ],
       "Added recovery phone": [
         "Προστέθηκε τηλεφωνικός αριθμός ανάκτησης"
@@ -20873,26 +21064,86 @@
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
+      "Allow recovery by phone": [
+        "Άδεια ανάκτησης μέσω τηλεφώνου"
+      ],
       "Allow scanning a QR code to sign in": [
         "Να επιτρέπεται η σάρωση ενός QR κωδικού για σύνδεση"
+      ],
+      "Allow trusted friends to sign in": [
+        "Επιτρέψτε σε αξιόπιστους φίλους να συνδεθούν"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Επιτρέψτε σε έμπιστους φίλους να ξεκλειδώσουν τα δεδομένα σας"
       ],
       "Back to ${ backLink.appNameString }": [
         "Πίσω στη ${ backLink.appNameString }"
       ],
+      "Congratulations": [
+        "Συγχαρητήρια"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Δεν το λάβατε; ${ sendANewCode }"
+      ],
       "Done": [
         "Ολοκληρώθηκε"
+      ],
+      "Download": [
+        "Λήψη"
       ],
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
       ],
+      "Downloaded recovery file": [
+        "Λήψη αρχείου ανάκτησης"
+      ],
+      "Emergency contacts enabled": [
+        "Ενεργοποιήθηκαν οι επαφές έκτακτης ανάγκης"
+      ],
+      "Enable device recovery": [
+        "Ενεργοποίηση ανάκτησης συσκευής"
+      ],
+      "Enable email recovery": [
+        "Ενεργοποίηση ανάκτησης email"
+      ],
+      "Enable emergency contacts": [
+        "Ενεργοποίηση επαφών έκτακτης ανάγκης"
+      ],
       "Enable password reset from settings": [
         "Ενεργοποίηση επαναφοράς κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Enable phone recovery": [
+        "Ενεργοποίηση η ανάκτηση τηλεφώνου"
+      ],
+      "Enable QR code sign-in": [
+        "Ενεργοποίηση σύνδεσης με κωδικό QR"
       ],
       "Enabled device recovery": [
         "Ενεργοποιήθηκε η ανάκτηση συσκευής"
       ],
+      "Enabled email recovery": [
+        "Ενεργοποιημένη ανάκτηση email"
+      ],
+      "Enabled password reset from settings": [
+        "Ενεργοποιήθηκε η επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Enabled phone recovery": [
+        "Ενεργοποιήθηκε η ανάκτηση τηλεφώνου"
+      ],
+      "Enabled QR code sign-in": [
+        "Ενεργοποίηση σύνδεσης με κωδικό QR"
+      ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Here's how you increased your account protection:": [
+        "Δείτε πώς αυξήσατε την προστασία του λογαριασμού σας:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Εάν ξεχάσετε τον κωδικό πρόσβασής σας, μπορείτε να συνδεθείτε χρησιμοποιώντας έναν κωδικό QR. Το μόνο που χρειάζεστε είναι να είστε συνδεδεμένοι σε μια υπηρεσία ${ BRAND_NAME } σε άλλη συσκευή."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Εάν κλειδωθείτε έξω από τον λογαριασμό σας ${ BRAND_NAME }, θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας. Είναι ο μόνος τρόπος για να επαναφέρετε άμεσα τα πάντα, γι' αυτό φροντίστε να τα φυλάξετε σε ασφαλές μέρος."
       ],
       "Later": [
         "Αργότερα"
@@ -20903,17 +21154,41 @@
       "Save recovery phrase": [
         "Αποθήκευση φράσης ανάκτησης"
       ],
+      "Saved recovery phrase": [
+        "Αποθηκευμένη φράση ανάκτησης"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Πρέπει να έχουν ήδη έναν λογαριασμό ${ BRAND_NAME }."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Αυτό θα σας επιτρέψει να αποκτήσετε γρήγορη πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, ώστε να μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Αυτό θα σας επιτρέψει να επαναφέρετε τον κωδικό πρόσβασης του λογαριασμού σας, εάν τον έχετε χάσει, αλλά εξακολουθείτε να είστε συνδεδεμένοι στο ${ BRAND_NAME }. Είναι συχνά ο ευκολότερος τρόπος για να ανακτήσετε τον λογαριασμό σας, εάν είστε συνδεδεμένοι."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Αυτό θα επαναφέρει την πρόσβαση σε ηλεκτρονικά μηνύματα, επαφές, αρχεία, κωδικούς πρόσβασης και οποιαδήποτε άλλα κρυπτογραφημένα δεδομένα στον λογαριασμό σας μετά από επαναφορά κωδικού πρόσβασης."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Για να βεβαιωθούμε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι δική σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Για να βεβαιωθούμε ότι το τηλέφωνο είναι δικό σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Για να βεβαιωθούμε ότι αυτή η διεύθυνση είναι όντως δική σας, θα σας στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν σύνδεσμο επαλήθευσης."
+      ],
       "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
         "Αναβαθμίστε το πλάνο σας για να ενεργοποιήσετε την Πρόσβαση Έκτακτης Ανάγκης στον λογαριασμό σας. Αυτό θα σας επιτρέψει να ορίσετε από 1 έως 5 άτομα που θα μπορούν να επαναφέρουν τον κωδικό πρόσβασής σας για εσάς."
       ],
       "Verified password": [
         "Επαληθευμένος κωδικός πρόσβασης"
+      ],
+      "Verified recovery email": [
+        "Επαληθευμένη ηλεκτρονική διεύθυνση ανάκτησης"
+      ],
+      "Verified recovery phone": [
+        "Επαληθευμένο τηλέφωνο ανάκτησης"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -20927,6 +21202,9 @@
       "Verify recovery phone": [
         "Επαλήθευση τηλέφωνου ανάκτησης"
       ],
+      "Verify your recovery email": [
+        "Επαληθεύστε την ηλεκτρονικής διεύθυνσης ανάκτησης σας"
+      ],
       "Verify your recovery phone": [
         "Επαλήθευση τηλεφώνου ανάκτησης σας"
       ],
@@ -20935,6 +21213,9 @@
       ],
       "You can use email verification to regain access to your account if you forget your password.": [
         "Μπορείτε να χρησιμοποιήσετε την επαλήθευση διεύθυνσης ηλεκτρονικού ταχυδρομείου για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Μπορείτε να χρησιμοποιήσετε την επαλήθευση μέσω SMS για να ανακτήσετε την πρόσβαση στον λογαριασμό σας σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Μπορείτε να χρησιμοποιήσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
@@ -20947,6 +21228,9 @@
       ],
       "Your recovery checklist": [
         "Η λίστα ελέγχου για ανάκτηση σας"
+      ],
+      "Your security setup": [
+        "Η ρύθμιση ασφαλείας σας"
       ]
     },
     "saml: Action": {
@@ -21153,6 +21437,12 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε τις επισημασμένες επιλογές."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Για να βεβαιωθείτε ότι έχετε πάντα πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, κατεβάστε τη φράση ανάκτησης."
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Έχετε προτεινόμενες ενέργειες από το ${ PROTON_SENTINEL_NAME }"
       ]
@@ -22360,11 +22650,17 @@
       ]
     },
     "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Κάντε κλικ στο όνομα ενός χρήστη για να διαχειριστείτε τον ρόλο και τα δικαιώματά του."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Λάβετε έως και ${ maxRewardAmount } σε πιστώσεις"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Κερδίστε πόντους όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."
+      ],
+      "User roles available": [
+        "Διαθέσιμοι ρόλοι χρηστών"
       ]
     },
     "sso": {
@@ -22671,6 +22967,12 @@
       "Disable contact-assisted recovery": [
         "Απενεργοποίηση ανάκτησης με υποβοήθηση επαφής"
       ],
+      "Disable device data backup": [
+        "Απενεργοποίηση δημιουργίας αντιγράφων ασφαλείας δεδομένων συσκευής"
+      ],
+      "Disable emergency access": [
+        "Απενεργοποίηση πρόσβασης έκτακτης ανάγκης"
+      ],
       "Disable QR code sign-in": [
         "Απενεργοποίηση σύνδεσης με κωδικό QR"
       ],
@@ -22679,6 +22981,9 @@
       ],
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
+      ],
+      "Disable recovery file": [
+        "Απενεργοποίηση αρχείου ανάκτησης"
       ],
       "Disable signed-in reset": [
         "Απενεργοποίηση επαναφοράς σε κατάσταση σύνδεσης"
@@ -23459,6 +23764,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
+      ],
+      "Activation link copied to clipboard": [
+        "Ο σύνδεσμος ενεργοποίησης αντιγράφηκε στο πρόχειρο"
       ],
       "Address added": [
         "Η διεύθυνση προστέθηκε"
