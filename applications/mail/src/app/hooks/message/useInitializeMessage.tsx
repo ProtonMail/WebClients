@@ -24,6 +24,7 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import { useFlag } from '@proton/unleash/useFlag';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
@@ -68,6 +69,8 @@ export const useInitializeMessage = () => {
     const [mailSettings] = useMailSettings();
     const { maybeCreateNotificationForDecryptionError } = useMessageDecryptionErrorNotification();
     const authentication = useAuthentication();
+
+    const isRawLinkParsingDisabled = useFlag('RawLinkParsingDisabled');
 
     const { feature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
@@ -228,7 +231,8 @@ export const useInitializeMessage = () => {
                       mailSettings,
                       handleTransformAndLoadEmbeddedImages,
                       handleTransformAndLoadRemoteImages,
-                      handleCleanUTMTrackers
+                      handleCleanUTMTrackers,
+                      isRawLinkParsingDisabled
                   );
 
             if (!isPlainText({ MIMEType })) {
