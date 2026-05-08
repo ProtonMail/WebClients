@@ -1283,6 +1283,9 @@
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Det uppstod ett fel när den säkra länken skulle tas bort. Försök igen om några minuter."
       ],
+      "This domain is already managed by your organization": [
+        "Denna domän är redan hanterad av din organisation"
+      ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Detta kan inträffa efter en lång tid av att du inte har använt ${ PASS_SHORT_APP_NAME } eller rensat din Safari-historik."
       ],
@@ -1527,9 +1530,6 @@
       "${ payload.count } invite successfully sent": [
         "${ payload.count } inbjudan skickad",
         "${ payload.count } inbjudningar skickat"
-      ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } inaktiverades"
@@ -2064,10 +2064,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2561,6 +2557,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
+      ],
+      "Unlock with biometrics": [
+        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt …"

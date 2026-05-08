@@ -1546,9 +1546,6 @@
         "${ payload.count } convite enviado",
         "${ payload.count } convites enviados"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desativado"
       ],
@@ -2089,8 +2086,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2332,6 +2328,9 @@
       ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Preenchimento automático de tokens A2F."
@@ -2600,6 +2599,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
+      ],
+      "Unlock with biometrics": [
+        "Desbloquear com a biometria"
       ],
       "Unpinning item...": [
         "Desafiando item..."
