@@ -45,6 +45,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "${ photoCount } fotoğrafı yeni bir albüme ekle",
         "${ photoCount } fotoğrafı yeni bir albüme ekle"
@@ -5022,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } IP adresinizi gizler. Böylece siteler sizin kim olduğunuzu anlayamaz."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
@@ -5092,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Hedeflenmiş reklam"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
@@ -5576,6 +5585,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Sadece ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "Başlamak için ücretsiz 5GB şifrelenmiş depolama alanı"
@@ -6116,6 +6128,9 @@
       ],
       "Ready to add some photos?": [
         "Fotoğraflarınızı eklemeye hazır mısınız?"
+      ],
+      "RECOMMENDED": [
+        "ÖNERİLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."

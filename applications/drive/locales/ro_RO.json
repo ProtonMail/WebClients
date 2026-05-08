@@ -45,6 +45,9 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Adăugare fotografii în album nou: ${ photoCount }",
         "Adăugare fotografii în album nou: ${ photoCount }",
@@ -151,7 +154,7 @@
         "Anulare transferuri"
       ],
       "Cancel trial and pay": [
-        "Anulare perioadă de probare și plătire"
+        "Anulare perioadă de evaluare și plătire"
       ],
       "Cancel uploads": [
         "Anulare încărcări"
@@ -784,6 +787,9 @@
       "Re-sign": [
         "Reînregistrare"
       ],
+      "Rebuild index": [
+        "Reconstruire index"
+      ],
       "Reconnect": [
         "Reconectare"
       ],
@@ -927,6 +933,9 @@
       ],
       "Search drive": [
         "Căutare"
+      ],
+      "Search is unavailable": [
+        "Căutarea nu este disponibilă"
       ],
       "See how": [
         "Vedeți cum"
@@ -1365,28 +1374,28 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de evaluare."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de evaluare."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Nu puteți adăuga domenii personale în perioada de probare."
+        "Nu puteți adăuga domenii personale în perioada de evaluare."
       ],
       "You have reached the trial limit.": [
-        "Ați atins limita perioadei de probare."
+        "Ați atins limita perioadei de evaluare."
       ]
     },
     "b2b_trials_Action": {
@@ -1399,7 +1408,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "Perioada de probare se încheie peste ${ timeRemaining }"
+        "Perioada de evaluare se încheie peste ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -4957,6 +4966,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Fișierele ${ DOCS_APP_NAME } și ${ SHEETS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } a detectat că indexul de căutare locală este corupt și nu mai poate fi utilizat. Reconstruiți indexul pentru a restabili căutarea."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } din App Store"
       ],
@@ -5086,6 +5098,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } vă ascunde traficul. ${ PASS_SHORT_APP_NAME } vă ascunde identitatea — **aliasuri de tip „hide-my-email”** nelimitate și **alerte de pe internetul ascuns** în cazul în care datele vă sunt vreodată divulgate."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membru)",
         "(${ memberCount } membri)",
@@ -5158,6 +5173,9 @@
       ],
       "Ad targeting": [
         "Publicitate țintită"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adăugare ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5256,7 +5274,7 @@
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+        "La sfârșitul perioadei de evaluare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -5650,6 +5668,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Pentru doar ${ bundlePlanPriceInline }"
+      ],
       "Free 5GB encrypted storage to get started": [
         "5 GiB spațiu de stocare gratuit pentru început"
       ],
@@ -5762,6 +5783,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexat ${ first }, ${ second }, ${ third } și ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexarea a atins o stare neașteptată și nu poate continua. Reconstruiți indexul pentru recuperare."
       ],
       "Indexing in progress": [
         "Indexare în curs"
@@ -5996,6 +6020,9 @@
       "Not connected": [
         "Neconectat"
       ],
+      "Not enough storage space": [
+        "Spațiu de stocare insuficient"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observație: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
       ],
@@ -6190,6 +6217,9 @@
       "Ready to add some photos?": [
         "Sunteți gata să adăugați fotografii?"
       ],
+      "RECOMMENDED": [
+        "RECOMANDAT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
@@ -6241,11 +6271,29 @@
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
+      "Search data is corrupted": [
+        "Datele de căutare sunt corupte."
+      ],
       "Search Enabled": [
         "Căutare actvată."
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea este activată. Puteți închide acest dialog și căuta fișiere și foldere."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Căutarea a întâmpinat o eroare internă. Reconstruiți indexul pentru recuperare."
+      ],
+      "Search engine error": [
+        "Eroare motor de căutare."
+      ],
+      "Search error": [
+        "Eroare de căutare"
+      ],
+      "Search is in an invalid state": [
+        "Căutarea este într-o stare nevalidă."
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Căutarea este gata. Fișierele au fost indexate."
       ],
       "Search module is not available.": [
         "Modulul de căutare nu este disponibil."
@@ -6410,6 +6458,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Motorul de căutare a întâmpinat o eroare internă. Reconstruiți indexul pentru recuperare."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
@@ -6842,10 +6893,10 @@
         "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 3 GiB și să vă "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
+        "Aveți un abonament ${ planTitle } de evaluare. Dacă doriți să vă continuați abonamentul după perioada de evaluare, adăugați o metodă de plată."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
-        "Aveți un abonament ${ planTitle } de probare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de probare."
+        "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
       ],
       "You may be redirected to your bank’s website.": [
         "Probabil va trebui să accesați pagina web a băncii."
@@ -6910,6 +6961,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Navigatorul web a rămas fără spațiu în timp ce indexa fișierele pentru căutare. Eliberați spațiu de stocare, apoi reconstruiți indexul."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Navigatorul web actual nu acceptă descărcarea fișierelor mari sau fișiere multiple. Descărcați aplicația pentru desktop pentru încărcări și descărcări fără probleme."
@@ -6995,7 +7049,7 @@
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Perioada de probare se termină ${ timeRemaining }."
+        "Perioada de evaluare se termină ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
@@ -8142,15 +8196,15 @@
         "Licențe incluse: ${ seats }"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de evaluare."
       ]
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
+        "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -9931,7 +9985,7 @@
         "Fișierele încărcate acum nu vor conta la limita de stocare."
       ],
       "Final approval in progress": [
-        "Aprobarea finală în desfășurare"
+        "Aprobare finală în desfășurare"
       ],
       "Final approval pending": [
         "Aprobare finală în așteptare"
@@ -10041,16 +10095,16 @@
         "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
       ],
       "Your free trial has started": [
-        "Perioada de probare gratuită a început"
+        "Perioada de evaluare gratuită a început"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
+        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -10224,7 +10278,7 @@
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "Suma datorată după probare la ${ formattedDate }"
+        "Suma datorată după evaluare la ${ formattedDate }"
       ],
       "Billing Country": [
         "Țara de facturare"
@@ -10269,7 +10323,7 @@
         "Există alte planuri în monede diferite"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
-        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
@@ -10858,7 +10912,7 @@
         "${ referrerRewardAmount } per recomandare"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de evaluare."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -12775,7 +12829,7 @@
         "Cum funcționează?"
       ],
       "How your free trial works": [
-        "Cum funcționează probarea gratuită"
+        "Cum funcționează evaluarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -13674,10 +13728,10 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de evaluare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+        "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     }
   }
