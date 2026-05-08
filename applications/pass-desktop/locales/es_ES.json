@@ -1528,9 +1528,6 @@
         "${ payload.count } invitación enviada",
         "${ payload.count } invitaciones enviadas"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección avanzada para tu cuenta"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
       ],
@@ -1557,9 +1554,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Se crea un contacto por cada dirección de correo electrónico que envía o recibe correos electrónicos desde ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Se está descargando una nueva versión. Estará disponible cuando reinicies la aplicación."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
@@ -1794,9 +1788,6 @@
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activa la versión beta de ${ PASS_SHORT_APP_NAME }."
       ],
       "Enable auto-locking to secure your data": [
         "Activa el bloqueo automático para asegurar tus datos"
@@ -2037,7 +2028,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2065,9 +2057,6 @@
       ],
       "No network connection": [
         "No hay conexión a la red."
-      ],
-      "No new versions are available at the moment.": [
-        "No hay versiones nuevas disponibles en este momento."
       ],
       "None": [
         "Ninguno"
@@ -2455,12 +2444,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
       ],
-      "This will reload the application.": [
-        "Se reiniciará la aplicación."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Esta acción buscará nuevas versiones beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para seguir recibiendo correos electrónicos, transfiere estos alias a otro buzón:"
       ],
@@ -2475,9 +2458,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Con la confianza de más de 50,000 empresas y 100 millones de cuentas en todo el mundo."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prueba antes que nadie las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME }."
       ],
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
@@ -2887,9 +2867,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Además de almacenar tus inicios de sesión, ${ PASS_APP_NAME } protege tu identidad con una función de alias de correo electrónico integrada. Cada vez que te registres para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida tu dirección de correo real. "
-      ],
-      "Beta Access": [
-        "Acceso beta"
       ],
       "Biometrics": [
         "Datos biométricos"
