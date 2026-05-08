@@ -2,7 +2,7 @@ import type { Mock } from 'vitest';
 
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 
-import { androidMarketplaceUrl, defaultDownloadUrl, iosMarketplaceUrl } from './downloadLinks';
+import { androidMarketplaceUrl, defaultDownloadUrl, iosMarketplaceUrl } from '../../constants/downloadLinks';
 import { getOsDownloadUrl } from './getOsDownloadUrl';
 
 jest.mock('@proton/shared/lib/helpers/browser', () => ({

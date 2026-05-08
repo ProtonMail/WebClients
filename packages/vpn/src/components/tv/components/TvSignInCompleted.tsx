@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { getOsDownloadUrl } from '@proton/components/containers/vpn/ProtonVPNClientsSection/getOsDownloadUrl';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import { getOsDownloadUrl } from '../../../functions/getOsDownloadUrl';
 import desktopSuccess from '../assets/desktopSuccess.svg';
 import mobileSuccess from '../assets/mobileSuccess.svg';
 
