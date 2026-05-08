@@ -7,6 +7,8 @@
     "type": "module",
     "exports": {
         "./constants/tvUserTier.ts": "./constants/tvUserTier.ts",
+        "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
+        "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
@@ -35,15 +37,25 @@
         "@proton/testing": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
+        "fast-xml-parser": "^5.7.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12"
     },
     "devDependencies": {
+        "@babel/core": "^7.28.5",
+        "@babel/plugin-transform-runtime": "^7.28.5",
+        "@babel/preset-env": "^7.28.5",
+        "@babel/preset-react": "^7.28.5",
+        "@babel/preset-typescript": "^7.28.5",
         "@proton/eslint-config-proton": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@testing-library/user-event": "^14.6.1",
+        "@types/jest": "^30.0.0",
+        "babel-jest": "^30.2.0",
+        "babel-plugin-transform-require-context": "^0.1.1",
         "core-js": "^3.49.0",
         "eslint": "^9.39.4",
         "jest": "^30.3.0",
@@ -51,6 +63,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.9",
-        "typescript": "^6.0.2"
+        "typescript": "^6.0.2",
+        "vitest": "^4.1.5"
     }
 }

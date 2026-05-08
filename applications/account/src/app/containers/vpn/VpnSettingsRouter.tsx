@@ -5,11 +5,11 @@ import {
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
     PrivateMainSettingsArea,
-    ProtonVPNClientsSection,
     WireGuardConfigurationSection,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
 import { TVContainer } from '@proton/vpn/components/tv';
 
 import VpnUpgradeSection from './VpnUpgradeSection';
@@ -36,7 +36,7 @@ const VpnSettingsRouter = ({
             <Route path={getSectionPath(path, downloads)}>
                 <PrivateMainSettingsArea config={downloads}>
                     <VpnUpgradeSection />
-                    <ProtonVPNClientsSection />
+                    <VPNClientsSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, openvpn)}>
