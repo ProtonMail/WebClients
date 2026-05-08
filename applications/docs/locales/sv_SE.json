@@ -90,6 +90,9 @@
       "Apply": [
         "Tillämpa"
       ],
+      "Ask me next time": [
+        "Fråga mig nästa gång"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
         "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
@@ -120,6 +123,9 @@
       ],
       "Cancel subscription": [
         "Avsluta prenumeration"
+      ],
+      "Change my access": [
+        "Ändra min åtkomst"
       ],
       "Change password": [
         "Ändra lösenord"
@@ -228,6 +234,9 @@
       ],
       "Copy invite link": [
         "Kopiera inbjudningslänk"
+      ],
+      "Copy link": [
+        "Kopiera länk"
       ],
       "Copy password": [
         "Kopiera lösenord"
@@ -350,6 +359,9 @@
       ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
+      ],
+      "Encrypted": [
+        "Krypterad"
       ],
       "Expand": [
         "Expandera"
@@ -624,6 +636,9 @@
       "Remove file": [
         "Ta bort fil"
       ],
+      "Remove my access": [
+        "Ta bort min åtkomst"
+      ],
       "Rename": [
         "Ändra namn"
       ],
@@ -675,6 +690,9 @@
       "Save changes": [
         "Spara ändringar"
       ],
+      "Save preferences": [
+        "Spara preferenser"
+      ],
       "Search": [
         "Sök"
       ],
@@ -705,6 +723,9 @@
       "Select all": [
         "Markera alla"
       ],
+      "Set password or expiration date": [
+        "Ställ in lösenord eller utgångsdatum"
+      ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
       ],
@@ -728,6 +749,12 @@
       ],
       "Share your calendar with your team": [
         "Dela din kalender med ditt team"
+      ],
+      "Shared": [
+        "Delad"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Delning är end-to-end-krypterad"
       ],
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
@@ -2813,6 +2840,9 @@
       "Already a member of this share": [
         "Redan medlem av denna delning"
       ],
+      "An error occurred": [
+        "Ett fel uppstod"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Ett fel uppstod vid försök att konvertera dokumentet. Försök igen."
       ],
@@ -2902,8 +2932,20 @@
       "Failed loading group members": [
         "Misslyckades att ladda gruppmedlemmar"
       ],
+      "Failed to change permissions settings": [
+        "Misslyckades att ändra behörighetsinställningar"
+      ],
       "Failed to copy photo to album": [
         "Misslyckades att kopiera foto till album"
+      ],
+      "Failed to create public share node": [
+        "Misslyckades att skapa offentlig delningsnod"
+      ],
+      "Failed to fetch node": [
+        "Misslyckades att hämta nod"
+      ],
+      "Failed to fetch sharing info": [
+        "Misslyckades att hämta delningsinformation"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
@@ -2916,6 +2958,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Misslyckades att byta namn på dokument. Försök igen senare."
+      ],
+      "Failed to resend invitation": [
+        "Misslyckades att skicka inbjudan igen"
+      ],
+      "Failed to unshare node": [
+        "Misslyckades att sluta dela nod"
+      ],
+      "Failed to update direct share node": [
+        "Misslyckades att uppdatera direkt delningsnod"
+      ],
+      "Failed to update public share node": [
+        "Misslyckades att uppdatera offentlig delningsnod"
       ],
       "File \"${ name }\" is already downloading": [
         "Filen “${ name }“ laddas redan ner"
@@ -3105,6 +3159,9 @@
       "status page": [
         "statussida"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Misslyckades att stoppa delning av detta objekt"
+      ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
       ],
@@ -3134,6 +3191,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Den senaste uppdateringen du gjorde av dokumentet är antingen för stor eller skulle överskrida den totala dokumentstorleken. Redigering har tillfälligt inaktiverats. Din ändring kommer inte att sparas. Exportera en kopia av ditt dokument och ladda om sidan."
+      ],
+      "The link to your item failed to be deleted": [
+        "Länken till ditt objekt misslyckades att tas bort"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Den nya versionen av originalfilen är inte uppladdad ännu, försök igen senare"
@@ -4310,6 +4370,18 @@
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can edit and manage access": [
+        "Kan redigera och hantera åtkomst"
+      ],
+      "Can view and edit": [
+        "Kan visa och redigera"
+      ],
+      "Can view only": [
+        "Kan endast visa"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
       ],
@@ -4351,6 +4423,9 @@
       ],
       "Continue": [
         "Fortsätt"
+      ],
+      "Converting document...": [
+        "Konverterar dokument …"
       ],
       "Copied to clipboard": [
         "Kopierat till urklipp"
@@ -4400,6 +4475,9 @@
       ],
       "Creating link to folder": [
         "Skapar länk till mapp"
+      ],
+      "Creating new document...": [
+        "Skapar nytt dokument …"
       ],
       "Current plan": [
         "Nuvarande paket"
@@ -4500,6 +4578,12 @@
       "Enter your own password (as trusted contact).": [
         "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fel vid konvertering av dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fel vid laddning av dokument: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fel vid synkronisering"
       ],
@@ -4562,6 +4646,12 @@
       ],
       "Geoblocking": [
         "Geoblockering"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Skaffa e-postuppdateringar för kommentarer och förslag som läggs till dina dokument."
+      ],
+      "Get Notified About Comments": [
+        "Bli aviserad om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
@@ -4675,6 +4765,9 @@
       "Limited availability": [
         "Begränsad tillgänglighet"
       ],
+      "Link copied": [
+        "Länk kopierad"
+      ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
@@ -4693,11 +4786,17 @@
       "Loading link": [
         "Laddar länk"
       ],
+      "Loading...": [
+        "Laddar in …"
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det verkar som att du är offline. Dokumentet kan inte redigeras när du är offline. Kontrollera din enhets anslutning."
       ],
       "Low Priority": [
         "Låg prioritet"
+      ],
+      "Making a copy...": [
+        "Gör en kopia …"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximalt ${ MAX_SHARED_URL_PASSWORD_LENGTH } tecken",
@@ -4729,6 +4828,9 @@
       ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Inget dokument angivet i URL. Gå tillbaka till ${ DRIVE_APP_NAME } och välj ett dokument."
       ],
       "No email address": [
         "Ingen e-postadress"
@@ -4786,6 +4888,9 @@
       ],
       "Owner": [
         "Ägare"
+      ],
+      "owner": [
+        "ägare"
       ],
       "password": [
         "lösenord"
@@ -5011,6 +5116,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL:en du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj sedan “Kopiera länk“ istället för att kopiera den avkortade URL-texten direkt."
+      ],
       "There are no documents in the trash.": [
         "Det finns inga dokument i papperskorgen."
       ],
@@ -5196,6 +5304,9 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "När du ansluter till VPN används krypteringsteknik för att dölja din IP-adress (en unik kod som tilldelas din enhet)."
+      ],
+      "Who has access": [
+        "Vem har åtkomst"
       ],
       "words": [
         "ord"
@@ -5468,8 +5579,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
+      "Access": [
+        "Åtkomst"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add email address": [
         "Lägg till e-postadress"
@@ -5485,6 +5602,15 @@
       ],
       "Alias title": [
         "Alias-rubrik"
+      ],
+      "Allow editors to change permissions and share": [
+        "Tillåt redaktörer att ändra behörigheter och dela"
+      ],
+      "Anonymous": [
+        "Anonymt"
+      ],
+      "Anyone on the Internet with the link": [
+        "Vem som helst på internet med länken"
       ],
       "Anyone on the Internet with the link can edit": [
         "Vem som helst på internet med länken kan redigera"
@@ -5524,6 +5650,12 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "can edit": [
+        "kan redigera"
+      ],
+      "can view": [
+        "kan visa"
       ],
       "Cancel download": [
         "Avbryt nedladdning"
@@ -5570,8 +5702,14 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete link and remove access for everyone": [
+        "Ta bort länk och ta bort åtkomst för alla"
+      ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
+      ],
+      "Disable this link on a specific date": [
+        "Inaktivera denna länk på ett specifikt datum"
       ],
       "Don't ask again": [
         "Fråga inte igen"
@@ -5615,11 +5753,17 @@
       "Emails (last month)": [
         "E-post (senaste månaden)"
       ],
+      "Enable email notifications": [
+        "Aktivera e-postaviseringar"
+      ],
       "Encrypt emails": [
         "Kryptera e-post"
       ],
       "Erase this link and remove everyone with access": [
         "Radera denna länk och ta bort alla med åtkomst"
+      ],
+      "Expiry": [
+        "Löper ut"
       ],
       "Extended address": [
         "Utökad adress"
@@ -5662,6 +5806,9 @@
       ],
       "Include application logs in bug report": [
         "Inkludera applikationsloggar i felrapport"
+      ],
+      "Include document name in notification": [
+        "Inkludera dokumentnamn i avisering"
       ],
       "Include message and file name in invite email": [
         "Inkludera meddelande och filnamn i e-postinbjudan"
@@ -5732,6 +5879,9 @@
       "New password": [
         "Nytt lösenord"
       ],
+      "Not active": [
+        "Inte aktiv"
+      ],
       "Note": [
         "Anteckning"
       ],
@@ -5792,8 +5942,14 @@
       "Replace existing folder": [
         "Ersätt befintlig mapp"
       ],
+      "Require password": [
+        "Kräv lösenord"
+      ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Set a password to limit access via link": [
+        "Ställ in ett lösenord för att begränsa åtkomst via länk"
       ],
       "Set expiration date": [
         "Ange utgångsdatum"
@@ -7376,6 +7532,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "”${ fileName }” delad"
+      ],
       "\"${ name }\" created successfully": [
         "“${ name }“ skapades utan problem"
       ],
@@ -7573,6 +7732,12 @@
       ],
       "Root folder failed to be loaded": [
         "Misslyckades att ladda rotmapp"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Inställning uppdaterad. Redaktörer kan ändra behörigheter och dela."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Inställning uppdaterad. Redaktörer kan inte ändra behörigheter eller dela."
       ],
       "Share invitation accepted successfully": [
         "Delningsinbjudan accepterades"
@@ -8687,6 +8852,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Skapar nytt kalkylblad …"
+      ],
       "Detect automatically": [
         "Upptäck automatiskt"
       ],
@@ -9002,8 +9170,14 @@
       "Accepted": [
         "Accepterad"
       ],
+      "pending": [
+        "väntande"
+      ],
       "Pending": [
         "Väntande"
+      ],
+      "user joined": [
+        "användare gick med"
       ]
     },
     "Storage": {
@@ -9821,6 +9995,12 @@
       "Private browsing vs VPN": [
         "Privat surfning jämfört med VPN"
       ],
+      "Public link": [
+        "Offentlig länk"
+      ],
+      "Public link settings": [
+        "Inställning för offentlig länk"
+      ],
       "Re-sign all contacts": [
         "Återsignera alla kontakter"
       ],
@@ -9838,6 +10018,9 @@
       ],
       "Recover data": [
         "Återställ data"
+      ],
+      "Remove your access?": [
+        "Ta bort din åtkomst?"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -9880,6 +10063,12 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Inställningar för ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Dela ”${ fileName }”"
       ],
       "Share ${ name }": [
         "Dela ${ name }"

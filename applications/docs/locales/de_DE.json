@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "Change my access": [
+        "Meinen Zugriff ändern"
+      ],
       "Change password": [
         "Passwort ändern"
       ],
@@ -228,6 +231,9 @@
       ],
       "Copy invite link": [
         "Einladungslink kopieren"
+      ],
+      "Copy link": [
+        "Link kopieren"
       ],
       "Copy password": [
         "Passwort kopieren"
@@ -350,6 +356,9 @@
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
+      ],
+      "Encrypted": [
+        "Verschlüsselt"
       ],
       "Expand": [
         "Erweitern"
@@ -624,6 +633,9 @@
       "Remove file": [
         "Datei entfernen"
       ],
+      "Remove my access": [
+        "Meinen Zugriff entfernen"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -705,6 +717,9 @@
       "Select all": [
         "Alle auswählen"
       ],
+      "Set password or expiration date": [
+        "Passwort oder Ablaufdatum festlegen"
+      ],
       "Set recovery methods": [
         "Wiederherstellungsmethoden festlegen"
       ],
@@ -728,6 +743,12 @@
       ],
       "Share your calendar with your team": [
         "Teile deinen Kalender mit deinem Team"
+      ],
+      "Shared": [
+        "Geteilt"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Die Freigabe ist Ende-zu-Ende-verschlüsselt"
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
@@ -2825,6 +2846,9 @@
       "Already a member of this share": [
         "Bereits Mitglied dieser Freigabe"
       ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Fehler beim Konvertieren des Dokuments. Bitte versuche es erneut."
       ],
@@ -2914,8 +2938,20 @@
       "Failed loading group members": [
         "Gruppenmitglieder konnten nicht geladen werden"
       ],
+      "Failed to change permissions settings": [
+        "Fehler beim Ändern der Berechtigungseinstellungen"
+      ],
       "Failed to copy photo to album": [
         "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
+      ],
+      "Failed to create public share node": [
+        "Fehler beim Erstellen des öffentlich geteilten Knotens"
+      ],
+      "Failed to fetch node": [
+        "Fehler beim Abrufen des Knotens"
+      ],
+      "Failed to fetch sharing info": [
+        "Fehler beim Abrufen der Freigabeinformationen"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
@@ -2928,6 +2964,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Fehler beim Umbenennen des Dokuments. Bitte versuche es später erneut."
+      ],
+      "Failed to resend invitation": [
+        "Fehler beim erneuten Senden der Einladung"
+      ],
+      "Failed to unshare node": [
+        "Fehler beim Zurücknehmen des freigegebenen Knotens"
+      ],
+      "Failed to update direct share node": [
+        "Fehler beim Aktualisieren des direkt geteilten Knotens"
+      ],
+      "Failed to update public share node": [
+        "Fehler beim Aktualisieren des öffentlich geteilten Knotens"
       ],
       "File \"${ name }\" is already downloading": [
         "Die Datei „${ name }“ wird bereits heruntergeladen"
@@ -3120,6 +3168,9 @@
       "status page": [
         "Statusseite"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
+      ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
       ],
@@ -3149,6 +3200,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Die letzte Aktualisierung, die du an dem Dokument vorgenommen hast, ist entweder zu groß oder würde die maximale Dokumentgröße überschreiten. Die Bearbeitung wurde vorübergehend deaktiviert. Deine Änderung wird nicht gespeichert. Bitte exportiere eine Kopie deines Dokuments und lade die Seite neu."
+      ],
+      "The link to your item failed to be deleted": [
+        "Der Link zu deinem Eintrag konnte nicht gelöscht werden"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal."
@@ -3255,6 +3309,12 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nicht entschlüsselbares Gerät"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nicht entschlüsselbarer Name"
       ]
     },
     "error": {
@@ -4325,6 +4385,18 @@
       "Calendar side panel": [
         "Kalender-Seitenleiste"
       ],
+      "Can edit": [
+        "Darf bearbeiten"
+      ],
+      "Can edit and manage access": [
+        "Darf bearbeiten und Zugriff verwalten"
+      ],
+      "Can view and edit": [
+        "Anzeigen und Bearbeiten möglich"
+      ],
+      "Can view only": [
+        "Nur anzeigen möglich"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
@@ -4611,6 +4683,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Wenn du dich selbst entfernst, verlierst du den Zugriff auf die Datei \"${ fileName }\" und kannst sie nicht wieder öffnen, es sei denn, der Inhaber teilt sie mit dir."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
@@ -4693,6 +4768,9 @@
       "Limited availability": [
         "Begrenzte Verfügbarkeit"
       ],
+      "Link copied": [
+        "Link kopiert"
+      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -4710,6 +4788,9 @@
       ],
       "Loading link": [
         "Link wird geladen"
+      ],
+      "Loading...": [
+        "Wird geladen..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Du bist anscheinend offline. Das Dokument kann nicht bearbeitet werden, während du offline bist. Bitte überprüfe die Konnektivität deines Geräts."
@@ -4803,6 +4884,9 @@
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
+        "Besitzer"
+      ],
+      "owner": [
         "Besitzer"
       ],
       "password": [
@@ -5218,6 +5302,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
       ],
+      "Who has access": [
+        "Wer hat Zugriff"
+      ],
       "words": [
         "Wörter"
       ],
@@ -5294,6 +5381,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kannst \"${ fileName }\" nicht mehr teilen, nachdem du den Zugriff auf \"Betrachter\" geändert hast. Nur der Inhaber kann deinen Zugriff erneut ändern."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
@@ -5499,8 +5589,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
+      "Access": [
+        "Zugriff"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
+      ],
+      "Active": [
+        "Aktiv"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5516,6 +5612,15 @@
       ],
       "Alias title": [
         "Aliasbezeichnung"
+      ],
+      "Allow editors to change permissions and share": [
+        "Ermögliche es Bearbeitern, Berechtigungen zu ändern und zu teilen"
+      ],
+      "Anonymous": [
+        "Anonym"
+      ],
+      "Anyone on the Internet with the link": [
+        "Jeder im Internet mit dem Link"
       ],
       "Anyone on the Internet with the link can edit": [
         "Jeder mit dem Link kann bearbeiten"
@@ -5555,6 +5660,12 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "can edit": [
+        "Kann bearbeiten"
+      ],
+      "can view": [
+        "Kann anzeigen"
       ],
       "Cancel download": [
         "Download abbrechen"
@@ -5601,8 +5712,14 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete link and remove access for everyone": [
+        "Link löschen und Zugriff für alle entfernen"
+      ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
+      ],
+      "Disable this link on a specific date": [
+        "Diesen Link an einem bestimmten Datum deaktivieren"
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
@@ -5651,6 +5768,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Diesen Link löschen und jeden mit Zugriff entfernen"
+      ],
+      "Expiry": [
+        "Ablauf"
       ],
       "Extended address": [
         "Adresszusatz"
@@ -5766,6 +5886,9 @@
       "New password": [
         "Neues Passwort"
       ],
+      "Not active": [
+        "Nicht aktiv"
+      ],
       "Note": [
         "Notiz"
       ],
@@ -5826,8 +5949,14 @@
       "Replace existing folder": [
         "Vorhandenen Ordner ersetzen"
       ],
+      "Require password": [
+        "Passwort erforderlich"
+      ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Set a password to limit access via link": [
+        "Passwort festlegen, um den Zugriff per Link zu beschränken"
       ],
       "Set expiration date": [
         "Ablaufdatum festlegen"
@@ -7427,6 +7556,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" geteilt"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }“ erfolgreich erstellt"
       ],
@@ -7624,6 +7756,12 @@
       ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen Berechtigungen ändern und Inhalte freigeben."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Einstellung aktualisiert. Mitwirkende dürfen keine Berechtigungen ändern oder Inhalte freigeben."
       ],
       "Share invitation accepted successfully": [
         "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"
@@ -9053,8 +9191,14 @@
       "Accepted": [
         "Angenommen"
       ],
+      "pending": [
+        "Ausstehend"
+      ],
       "Pending": [
         "Ausstehend"
+      ],
+      "user joined": [
+        "Benutzer beigetreten"
       ]
     },
     "Storage": {
@@ -9533,6 +9677,9 @@
       "Cannot load link": [
         "Link kann nicht geladen werden"
       ],
+      "Change access to viewer?": [
+        "Zugriff auf Betrachter ändern?"
+      ],
       "Change password": [
         "Passwort ändern"
       ],
@@ -9878,6 +10025,12 @@
       "Private browsing vs VPN": [
         "Privates Surfen vs. VPN"
       ],
+      "Public link": [
+        "Öffentlicher Link"
+      ],
+      "Public link settings": [
+        "Einstellungen für öffentliche Links"
+      ],
       "Re-sign all contacts": [
         "Alle Kontakte neu signieren"
       ],
@@ -9895,6 +10048,9 @@
       ],
       "Recover data": [
         "Daten wiederherstellen"
+      ],
+      "Remove your access?": [
+        "Deinen Zugriff entfernen?"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -9937,6 +10093,12 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Einstellungen für ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" teilen"
       ],
       "Share ${ name }": [
         "${ name } teilen"
@@ -10073,6 +10235,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
+      ],
+      "Change shared item settings": [
+        "Einstellungen für freigegebene Elemente ändern"
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"

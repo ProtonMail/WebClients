@@ -225,6 +225,9 @@
       "Copy invite link": [
         "Salin tautan undangan"
       ],
+      "Copy link": [
+        "Salin tautan"
+      ],
       "Copy password": [
         "Salin kata sandi"
       ],
@@ -344,6 +347,9 @@
       ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
+      ],
+      "Encrypted": [
+        "Terenkripsi"
       ],
       "Expand": [
         "Lebarkan"
@@ -719,6 +725,9 @@
       ],
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
+      ],
+      "Shared": [
+        "Dibagikan"
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
@@ -2708,6 +2717,9 @@
       "Already a member of this share": [
         "Pengguna sudah merupakan anggota dari partisi ini"
       ],
+      "An error occurred": [
+        "Terjadi kesalahan"
+      ],
       "An error occurred while attempting to convert the document. Please try again.": [
         "Terjadi kesalahan saat mencoba mengonversi dokumen. Silakan coba lagi."
       ],
@@ -2792,6 +2804,15 @@
       "Failed to copy photo to album": [
         "Gagal menyalin foto ke album"
       ],
+      "Failed to create public share node": [
+        "Gagal membuat node berbagi publik"
+      ],
+      "Failed to fetch node": [
+        "Gagal mengambil node"
+      ],
+      "Failed to fetch sharing info": [
+        "Gagal mengambil info berbagi"
+      ],
       "Failed to open to contact": [
         "Kontak gagal dibuka"
       ],
@@ -2800,6 +2821,18 @@
       ],
       "Failed to rename document. Please try again later.": [
         "Gagal mengganti nama dokumen. Silakan coba lagi nanti."
+      ],
+      "Failed to resend invitation": [
+        "Gagal mengirim ulang undangan"
+      ],
+      "Failed to unshare node": [
+        "Gagal membatalkan berbagi node"
+      ],
+      "Failed to update direct share node": [
+        "Gagal memperbarui node berbagi langsung"
+      ],
+      "Failed to update public share node": [
+        "Gagal memperbarui node berbagi publik"
       ],
       "File \"${ name }\" is already downloading": [
         "Proses unduhan file \"${ name }\" sedang berlangsung"
@@ -2978,6 +3011,9 @@
       "status page": [
         "halaman status"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Pembagian item gagal dihentikan"
+      ],
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
       ],
@@ -3007,6 +3043,9 @@
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Pembaruan terakhir yang Anda lakukan pada dokumen terlalu besar atau akan melampaui batas ukuran total dokumen. Pengeditan sementara dinonaktifkan. Perubahan Anda tidak akan disimpan. Silakan ekspor salinan dokumen Anda dan muat ulang halaman."
+      ],
+      "The link to your item failed to be deleted": [
+        "Tautan ke item Anda gagal dihapus"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Revisi baru file asli belum diunggah. Silakan coba lagi nanti"
@@ -3106,6 +3145,12 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️Perangkat yang tidak dapat didekripsi"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nama tidak dapat didekripsi"
       ]
     },
     "error": {
@@ -4122,6 +4167,12 @@
       "Calendar side panel": [
         "Panel samping kalender"
       ],
+      "Can edit": [
+        "Dapat menyunting"
+      ],
+      "Can view only": [
+        "Hanya dapat melihat"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda membersihkan data terenkripsi dari semua kontak yang dienkripsi dengan kunci ini dan sekaligus menutup peringatan tersebut."
       ],
@@ -4467,6 +4518,9 @@
       "Limited availability": [
         "Ketersediaan terbatas"
       ],
+      "Link copied": [
+        "Tautan disalin"
+      ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
       ],
@@ -4484,6 +4538,9 @@
       ],
       "Loading link": [
         "Memuat tautan"
+      ],
+      "Loading...": [
+        "Memuat..."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Sepertinya Anda sedang luring. Dokumen tidak dapat diedit saat Anda luring. Silakan periksa konektivitas perangkat Anda."
@@ -4577,6 +4634,9 @@
       ],
       "Owner": [
         "Pemilik"
+      ],
+      "owner": [
+        "pemilik"
       ],
       "password": [
         "kata sandi"
@@ -5249,8 +5309,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "Access": [
+        "Akses"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5263,6 +5329,9 @@
       ],
       "Alias title": [
         "Judul alias"
+      ],
+      "Anonymous": [
+        "Anonim"
       ],
       "Anyone on the Internet with the link can edit": [
         "Siapa pun di Internet yang memiliki tautan ini dapat mengedit"
@@ -5302,6 +5371,12 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "can edit": [
+        "dapat menyunting"
+      ],
+      "can view": [
+        "dapat melihat"
       ],
       "Cancel download": [
         "Batalkan unduhan"
@@ -5392,6 +5467,9 @@
       ],
       "Erase this link and remove everyone with access": [
         "Hapus tautan ini dan hapus semua orang yang dapat mengakses"
+      ],
+      "Expiry": [
+        "Kedaluwarsa"
       ],
       "Extended address": [
         "Alamat lengkap"
@@ -8482,6 +8560,9 @@
       "Accepted": [
         "Diterima"
       ],
+      "pending": [
+        "menunggu"
+      ],
       "Pending": [
         "Menunggu jawaban"
       ]
@@ -9270,6 +9351,9 @@
       ],
       "Private browsing vs VPN": [
         "Penjelajahan pribadi vs. VPN"
+      ],
+      "Public link": [
+        "Tautan publik"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
