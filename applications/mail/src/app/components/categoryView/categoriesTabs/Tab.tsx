@@ -101,8 +101,11 @@ export const Tab = ({ category, tabState }: Props) => {
                             : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
                     }
                     className={clsx(
-                        'tag-count px-1.5 py-0.5 text-sm mail-category-color mail-category-count-bg',
-                        shouldShowCount ? undefined : 'opacity-0'
+                        'tag-count px-1.5 py-0.5 text-sm',
+                        shouldShowCount ? undefined : 'opacity-0',
+                        tabState === TabState.ACTIVE
+                            ? 'mail-category-color mail-category-count-bg'
+                            : 'bg-weak color-weak'
                     )}
                 >
                     {unreadCount}
