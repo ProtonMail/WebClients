@@ -47,17 +47,41 @@ const stringToPage = (string: string | undefined): number => {
     return 0;
 };
 
+/**
+ * The sort type and the sort order needs to be updated based on the labelID.
+ *
+ * The following rules apply:
+ * - If the labelID is SNOOZED or INBOX, the sort type is changed to SnoozeTime.
+ * - If the labelID is SNOOZED the sort order is reversed.
+ * - If the labelID is SCHEDULED, the sort order is reversed as well.
+ *
+ * In both SNOOZE and SCHEDULE labelID we want to display the elements that will be sent or unsnoozed first.
+ * This change is invisible for the user and only affects the sorting logic.
+ */
 const stringToSort = (string: string | undefined, labelID?: string): Sort => {
-    const isScheduledLabel = labelID && labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+    const isSnooze = labelID === MAILBOX_LABEL_IDS.SNOOZED;
+    const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+    const isSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
+
     switch (string) {
         case '-size':
             return { sort: 'Size', desc: true };
         case 'size':
             return { sort: 'Size', desc: false };
-        case 'date':
-            return { sort: 'Time', desc: !!isScheduledLabel };
-        default:
-            return { sort: 'Time', desc: !isScheduledLabel };
+        case 'date': {
+            const desc = !!isScheduledLabel;
+            return {
+                sort: isSnoozeOrInbox ? 'SnoozeTime' : 'Time',
+                desc: isSnooze ? !desc : desc,
+            };
+        }
+        default: {
+            const desc = !isScheduledLabel;
+            return {
+                sort: isSnoozeOrInbox ? 'SnoozeTime' : 'Time',
+                desc: isSnooze ? !desc : desc,
+            };
+        }
     }
 };
 
