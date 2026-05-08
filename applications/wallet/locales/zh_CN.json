@@ -31,6 +31,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "添加账户"
       ],
@@ -2713,6 +2716,9 @@
       "${ storage } storage": [
         "${ storage } 存储空间"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隐藏您的流量，${ PASS_SHORT_APP_NAME } 隐藏您的身份\n— 无限制的 **Hide-my-email 别名** 和 **暗网警报**（当您的数据被泄露时）。"
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -2736,6 +2742,9 @@
       ],
       "Account successfully updated": [
         "账户已成功更新"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2875,6 +2884,9 @@
       "for ${ price }": [
         "仅需 ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "仅需 ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay 标记"
       ],
@@ -2982,6 +2994,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
+      ],
+      "RECOMMENDED": [
+        "推荐"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
