@@ -12,7 +12,6 @@ interface Props extends Partial<StatusIcon> {
     disabled?: boolean;
     useTooltip?: boolean;
     className?: string;
-    isDetailsModal?: boolean;
     shouldHaveHref?: boolean;
 }
 
@@ -28,7 +27,6 @@ const EncryptionStatusIcon = ({
     disabled,
     useTooltip = true,
     className,
-    isDetailsModal = false,
     colorClassName,
 }: Props) => {
     if (loading) {
@@ -46,10 +44,6 @@ const EncryptionStatusIcon = ({
     const icon = iconName && (
         <Icon size={4} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
     );
-
-    if (isDetailsModal) {
-        return <span className={spanClassNames}>{icon}</span>;
-    }
 
     return (
         <Tooltip title={tooltip} data-testid="encryption-icon-tooltip">
