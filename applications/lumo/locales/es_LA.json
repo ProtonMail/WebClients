@@ -11,6 +11,9 @@
       "Add": [
         "Agregar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Agregar una cuenta"
       ],
@@ -5121,6 +5124,9 @@
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } oculta su tráfico. ${ PASS_SHORT_APP_NAME } oculta su identidad, **alias hide-my-email** ilimitados y **alertas de la dark web** si sus datos han sido vulnerados."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mes)"
       ],
@@ -5145,6 +5151,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5297,6 +5306,9 @@
       "for ${ price }": [
         "por ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Por solo ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Marca de Google Pay"
       ],
@@ -5431,6 +5443,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
+      ],
+      "RECOMMENDED": [
+        "RECOMENDADO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
