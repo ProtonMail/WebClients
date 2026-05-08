@@ -116,7 +116,7 @@ const MessageDetailsModal = ({
                     {icon && (
                         <div className="mb-2 flex flex-nowrap items-center">
                             <span className="mr-2 flex">
-                                <EncryptionStatusIcon useTooltip={true} isDetailsModal {...icon} />
+                                <EncryptionStatusIcon useTooltip {...icon} />
                             </span>
                             <div className="pl-1 flex-1">
                                 <div className="flex flex-column">
