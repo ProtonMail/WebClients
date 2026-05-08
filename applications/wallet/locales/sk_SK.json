@@ -31,6 +31,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -2770,6 +2773,9 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -2799,6 +2805,9 @@
       ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2941,6 +2950,9 @@
       "for ${ price }": [
         "za ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay mark"
       ],
@@ -3048,6 +3060,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
