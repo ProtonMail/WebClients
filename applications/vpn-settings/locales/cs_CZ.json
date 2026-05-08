@@ -819,7 +819,7 @@
         "Odstranit dárkový kód"
       ],
       "Removed ${ memberName } as group owner": [
-        "Uživatel ${ memberName } odstraněn z role vlastníka skupiny"
+        "Uživatel ${ memberName } odebrán jako vlastník skupiny"
       ],
       "Rename": [
         "Přejmenovat"
@@ -1492,9 +1492,6 @@
       "3 new admin roles": [
         "3 nové role správce"
       ],
-      "Admin roles": [
-        "Administrátorská role"
-      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
@@ -1513,20 +1510,11 @@
       "New: Control admin access for individual users": [
         "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
       ],
-      "Organization admin": [
-        "Správce organizace"
-      ],
       "Organization admin:": [
         "Správce organizace:"
       ],
-      "Security admin": [
-        "Správce zabezpečení"
-      ],
       "Security admin:": [
         "Správce zabezpečení:"
-      ],
-      "User admin": [
-        "Správce uživatelů"
       ],
       "User admin:": [
         "Uživatel Admin:"
@@ -6979,7 +6967,7 @@
         "Máte přístup ke své aktivní webové relaci v jiném prohlížeči?"
       ],
       "Can you reach out to your contact?": [
-        "Mohl bys se spojit se svým kontaktem?"
+        "Můžete se spojit se svým kontaktem?"
       ],
       "Cancel": [
         "Zrušit"
@@ -10090,7 +10078,7 @@
         "Číslice"
       ],
       "Online productivity suite": [
-        "Online balík kancelářských aplikací"
+        "Sada aplikací pro zvýšení produktivity"
       ],
       "Open-source code": [
         "Otevřený zdrojový kód"
@@ -17117,7 +17105,7 @@
         "Zapomenutá metoda obnovení"
       ],
       "Free plan": [
-        "Tarif zdarma"
+        "Tarif Free"
       ],
       "Gateway": [
         "Brána"
@@ -17956,7 +17944,7 @@
         "Zahrnuje vlastní e-mailové domény a hide-my-email aliasy v aplikaci ${ MAIL_APP_NAME }, přístup k serverům ve více jak 120 zemích v aplikaci ${ VPN_SHORT_APP_NAME }, integrované 2FA a zabezpečené sdílení v aplikaci ${ PASS_SHORT_APP_NAME }, a mnoho dalšího."
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
-        "Zahrnuje profesionální e-mailovou adresu ve formátu @vašedoména.com, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou síť ${ VPN_SHORT_APP_NAME } a další funkce."
+        "Zahrnuje profesionální e-mailovou adresu ve formátu @vasedomena.cz, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou ${ VPN_SHORT_APP_NAME } a další funkce."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."

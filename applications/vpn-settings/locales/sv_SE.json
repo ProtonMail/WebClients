@@ -56,6 +56,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Lägg till ${ BRAND_NAME }-adress"
       ],
@@ -91,6 +94,9 @@
       ],
       "Add user": [
         "Lägg till användare"
+      ],
+      "Added ${ memberName } as group owner": [
+        "Lade till ${ memberName } som gruppägare"
       ],
       "Allow": [
         "Tillåt"
@@ -890,6 +896,9 @@
       "Save": [
         "Spara"
       ],
+      "Save & exit": [
+        "Spara och avsluta"
+      ],
       "Save address": [
         "Spara adress"
       ],
@@ -1463,11 +1472,11 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nya administratörsroller"
+      ],
       "3 new admin roles": [
         "3 nya administratörsroller"
-      ],
-      "Admin roles": [
-        "Administratörsroller"
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Delegera hantering genom att tilldela specifika administratörsroller. Ge varje administratör endast den åtkomst de behöver. Detta följer principen om minsta möjliga behörighet och skyddar din organisation från komprometterade konton och oavsiktliga fel."
@@ -1484,20 +1493,11 @@
       "New: Control admin access for individual users": [
         "Nytt: Kontrollera administratörsåtkomst för enskilda användare"
       ],
-      "Organization admin": [
-        "Organisationsadministratör"
-      ],
       "Organization admin:": [
         "Organisationsadministratör:"
       ],
-      "Security admin": [
-        "Säkerhetsadministratör"
-      ],
       "Security admin:": [
         "Säkerhetsadministratör:"
-      ],
-      "User admin": [
-        "Användaradministratör"
       ],
       "User admin:": [
         "Användaradministratör:"
@@ -1959,14 +1959,38 @@
       ]
     },
     "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
       "Account connected": [
         "Konto anslutet"
+      ],
+      "Account disconnected": [
+        "Konto frånkopplat"
       ],
       "Activated": [
         "Aktiverat"
       ],
+      "Activation link": [
+        "Aktiveringslänk"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
+      ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
+      "Add users": [
+        "Lägg till användare"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
+      ],
       "All": [
         "Alla"
+      ],
+      "An unknown error occurred": [
+        "Ett okänt fel uppstod"
       ],
       "Authenticate": [
         "Autentisera"
@@ -1977,8 +2001,14 @@
       "Calendar": [
         "Kalender"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Välj vad som ska migreras.Ditt val kommer tillämpas till alla användare. Migreringen kommer starta efter du bestämt vilka användare som ska kopieras."
+      ],
       "Completed": [
         "Slutförd"
+      ],
+      "Configure domain": [
+        "Konfigurera domän"
       ],
       "Configure migration": [
         "Konfigurera migrering"
@@ -1989,11 +2019,29 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Copy activation link": [
+        "Kopiera aktiveringslänk"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopiera aktiveringslänk till urklipp"
+      ],
+      "Creating accounts": [
+        "Skapar konton"
+      ],
+      "DKIM records": [
+        "DKIM-poster"
+      ],
+      "DMARC records": [
+        "DMARC-poster"
+      ],
       "Domain added": [
         "Domän tillagd"
       ],
       "Domain connected": [
         "Domän ansluten"
+      ],
+      "Errors": [
+        "Fel"
       ],
       "Estimated size": [
         "Beräknad storlek"
@@ -2001,8 +2049,14 @@
       "Failed to load OAuth": [
         "Misslyckades att ladda OAuth"
       ],
+      "Finalize migration": [
+        "Slutför migrering"
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
+      ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
       ],
       "Has errors": [
         "Har fel"
@@ -2016,14 +2070,26 @@
       "Install migration app": [
         "Installera migreringsappen"
       ],
+      "Loading your organization data": [
+        "Laddar din organisationsdata"
+      ],
       "Mail": [
         "E-post"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Hanterad via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta."
       ],
       "Migrate from Google Workspace": [
         "Migrera från Google Workspace"
       ],
       "Migrate users": [
         "Migrera användare"
+      ],
+      "Migrated": [
+        "Migrerad"
       ],
       "Migration includes": [
         "Migrering inkluderar"
@@ -2034,6 +2100,12 @@
       ],
       "Migration status": [
         "Migreringsstatus"
+      ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
+      "Missing organization public key": [
+        "Saknar organisationens offentliga nyckel"
       ],
       "More details": [
         "Mer detaljer"
@@ -2053,6 +2125,18 @@
       "Organization does not have enough storage available": [
         "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
+      "Pending": [
+        "Väntar"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Lägg till följande poster i din DNS-konsol för din domänleverantör:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lämna detta fönster öppet tills vi är klara med att skapa alla användare."
+      ],
+      "Please select at least one product to migrate": [
+        "Välj minst en produkt att migrera"
+      ],
       "Refresh": [
         "Uppdatera"
       ],
@@ -2071,8 +2155,20 @@
       "Set up": [
         "Ställ in"
       ],
+      "Set up secure sending (DKIM)": [
+        "Ställ in säker sändning (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Ställ in säker sändning (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Ställ in säker sändning (SPF)"
+      ],
       "Settings": [
         "Inställningar"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Dela aktiveringslänken med användarna så att de kan göra anspråk på sitt ${ BRAND_NAME }-konto."
       ],
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
@@ -2089,8 +2185,17 @@
       "Status": [
         "Status"
       ],
+      "This migration has been completed": [
+        "Denna migrering har slutförts"
+      ],
       "User": [
         "Användare"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
+      ],
+      "User status": [
+        "Användarstatus"
       ],
       "Users migrated": [
         "Användare migrerade"
@@ -2107,14 +2212,23 @@
       "Verify your domain to start a migration": [
         "Verifiera din domän för att starta en migrering"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi upptäckte den primära domänen länkad till ditt Google Workspace-konto. Bekräfta den för att fortsätta ställa in e-post för din ${ BRAND_NAME }-organisation."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunde inte verifiera installationen, kontrollera att du har installerat den i ditt Google Workspace-konto och försök igen."
       ],
       "We're still checking the MX records with your domain provider.": [
         "Vi kontrollerar fortfarande MX-posterna med din domänleverantör."
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
+      ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "You": [
+        "Du"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
@@ -3784,6 +3898,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "använd importassistenten Easy Switch"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Dubblett av DMARC-post hittades, gå till DNS-konsolen hos din domänleverantör för att åtgärda det."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7172,6 +7291,9 @@
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "För endast ${ bundlePlanPriceInline }"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
@@ -7855,6 +7977,9 @@
       ],
       "Recently used servers:": [
         "Nyligen använda servrar:"
+      ],
+      "RECOMMENDED": [
+        "REKOMMENDERAT"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
@@ -9332,6 +9457,9 @@
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
       ],
+      "Confirm MX records added": [
+        "Bekräfta tillagda MX-poster"
+      ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
       ],
@@ -10078,6 +10206,23 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post hittades inte"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ogiltig ${ group.name }-post hittades"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Use default value": [
+        "Använd standardvärde"
+      ],
+      "Valid ${ group.name } record found": [
+        "Giltig ${ group.name }-post hittades"
       ]
     },
     "Label for new member": {
@@ -13071,6 +13216,9 @@
       "Search for an email or IP address": [
         "Sök efter en e-post eller IP-adress"
       ],
+      "Search for users or addresses": [
+        "Sök efter användare eller adresser"
+      ],
       "Search parent folder": [
         "Sök överordnad mapp"
       ],
@@ -13362,7 +13510,7 @@
         "Verifiera denna e-postadress för återställning nu: ${ emailData.value }"
       ],
       "Verify recovery email?": [
-        "Virifiera e-post för återställning?"
+        "Verifiera e-post för återställning?"
       ],
       "Verify with email": [
         "Verifiera med e-post"
@@ -14544,6 +14692,26 @@
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ]
     },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Tilldela delegerade roller"
+      ],
+      "Assign roles": [
+        "Tilldela roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicka på en användares namn för att hantera deras roll och behörigheter."
+      ],
+      "New: Roles and permissions tab": [
+        "Nytt: Flik för roller och behörigheter"
+      ],
+      "User roles available": [
+        "Användarroller tillgängliga"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tilldela roller till enskilda användare från denna flik."
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ber om din hjälp att logga in på deras ${ BRAND_NAME }-konto med enkel inloggning."
@@ -15448,6 +15616,9 @@
       "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planTitle } går utöver grunderna för att hjälpa dig att bli mer produktiv, organiserad och ha kontroll över din inkorg, e-postidentitet och mer."
       ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
+      ],
       "Compare the key differences that matter for your business.": [
         "Jämför de viktigaste skillnaderna som är viktiga för ditt företag."
       ],
@@ -15467,6 +15638,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringslänk kopierad till urklipp"
       ],
       "Address added": [
         "Adress tillagd"
@@ -16734,6 +16908,9 @@
       ],
       "Remove forwarding address": [
         "Ta bort vidarebefordringsadress"
+      ],
+      "Remove recovery phone number": [
+        "Ta bort telefonnummer för återställning"
       ],
       "Remove server?": [
         "Ta bort server?"

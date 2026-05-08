@@ -56,6 +56,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Pridať ${ BRAND_NAME } adresu"
       ],
@@ -329,6 +332,9 @@
       "Delete policy": [
         "Vymazať pravidlo"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "Vymazať token ${ tokens[0].Account }"
+      ],
       "Delete user": [
         "Vymazať používateľa"
       ],
@@ -553,6 +559,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Prejsť k poskytovateľovi domén"
       ],
       "Go to label": [
         "Prejsť na štítok"
@@ -889,6 +898,9 @@
       ],
       "Save": [
         "Uložiť"
+      ],
+      "Save & exit": [
+        "Uložiť a ukončiť"
       ],
       "Save address": [
         "Uložiť adresu"
@@ -1489,17 +1501,20 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nové správcovské pozície"
+      ],
       "3 new admin roles": [
         "3 nové správcovské pozície"
-      ],
-      "Admin roles": [
-        "Správcovské pozície"
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Spravujte delegovanie právomocí prideľovaním konkrétnych správcovských rolí. Každému správcovi poskytnite len tie prístupové práva, ktoré skutočne potrebuje. Týmto postupom sa riadite zásadou minimálnych oprávnení, čím chránite svoju organizáciu pred kompromitovanými účtami a náhodnými chybami."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Správu môžete delegovať na viacerých používateľov naraz. Skupinám môžete priradiť konkrétne správcovské role, čím sa automaticky nastavia príslušné oprávnenia. Tento postup vychádza z princípu minimálnych oprávnení, vďaka čomu ušetríte čas pri prijímaní a ukončovaní pracovného pomeru a zároveň znížite počet chýb."
       ],
       "Delegate management with the appropriate admin role.": [
         "Delegujte správu pomocou príslušnej správcovskej pozície."
@@ -1513,20 +1528,14 @@
       "New: Control admin access for individual users": [
         "Novinka: Riadenie prístupových práv správcu pre jednotlivých používateľov"
       ],
-      "Organization admin": [
-        "Správca organizácie"
+      "New: Control admin access for many users at once": [
+        "Novinka: Správa prístupových práv správcov pre viacerých používateľov naraz"
       ],
       "Organization admin:": [
         "Správca organizácie:"
       ],
-      "Security admin": [
-        "Bezpečnostný správca"
-      ],
       "Security admin:": [
         "Bezpečnostný správca:"
-      ],
-      "User admin": [
-        "Správca používateľov"
       ],
       "User admin:": [
         "Správca používateľov:"
@@ -2005,6 +2014,54 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Asistent migrácie ${ BRAND_NAME }"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } z ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: žiada platformy príjemcov, aby neautorizované emaily označili ako spam alebo ich umiestnili do karantény."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: žiada platformy príjemcov o odmietnutie neautorizovaných emailov."
+      ],
+      "Account connected": [
+        "Účet je pripojený"
+      ],
+      "Account disconnected": [
+        "Účet odpojený"
+      ],
+      "Activated": [
+        "Aktivované"
+      ],
+      "Activation link": [
+        "Aktivačný odkaz"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktivačný odkaz skopírovaný do schránky"
+      ],
+      "Add domain": [
+        "Pridať doménu"
+      ],
+      "Add users": [
+        "Pridať používateľov"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
+      ],
+      "All": [
+        "Všetko"
+      ],
+      "An unknown error occurred": [
+        "Vyskytla sa neznáma chyba"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Naozaj chcete pokračovať? Používatelia, ktorí si svoj účet neprevzali pred dokončením migrácie, budú musieť požiadať správcu organizácie ${ BRAND_NAME } o obnovenie hesla."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Hneď po vytvorení účtov môžete zdieľať aktivačný odkaz, aby si používatelia mohli aktivovať svoje ${ BRAND_NAME } účty."
+      ],
       "Authenticate": [
         "Autentifikovať"
       ],
@@ -2014,17 +2071,59 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Vyberte, čo chcete preniesť. Váš výber sa bude vzťahovať na všetkých používateľov. Migrácia sa spustí hneď, ako určíte, ktorých používateľov chcete skopírovať."
+      ],
       "Completed": [
         "Dokončené"
+      ],
+      "Configure domain": [
+        "Nakonfigurovať doménu"
       ],
       "Configure migration": [
         "Nastaviť migráciu"
       ],
+      "Configure your domain": [
+        "Nakonfigurujte si doménu"
+      ],
       "Contacts": [
         "Kontakty"
       ],
+      "Copy activation link": [
+        "Kopírovať aktivačný odkaz"
+      ],
+      "Copy activation link to clipboard": [
+        "Skopírovať aktivačný odkaz do schránky"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Skopírujte nižšie uvedený kód a vložte ho do sekcie DNS u vášho poskytovateľa doménových služieb. Príklad a niekoľko užitočných tipov nájdete ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "Vytváranie účtov"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM pridáva ku každému emailu digitálny podpis, vďaka čomu si príjemcovia môžu overiť, že správa skutočne pochádza z vašej domény a nebola počas prenosu pozmenená. Bez neho môžu byť správy považované za menej dôveryhodné."
+      ],
+      "DKIM records": [
+        "DKIM záznamy"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC nadväzuje na protokoly SPF a DKIM tým, že prijímajúcim serverom určuje, ako majú postupovať v prípade správ, ktoré tieto kontroly neprejdú. Pomáha chrániť vašu doménu pred zneužitím a zvyšuje celkovú spoľahlivosť doručovania."
+      ],
+      "DMARC records": [
+        "DMARC záznamy"
+      ],
+      "Domain added": [
+        "Doména pridaná"
+      ],
       "Domain connected": [
         "Doména prepojená"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Uistite sa, že vaše emaily prichádzajú do doručenej pošty a nie do priečinka so spamom. Aktualizáciou SPF umožníte používateľom počas migrácie odosielať správy súčasne z adresy ${ BRAND_NAME } aj z adresy Google."
+      ],
+      "Errors": [
+        "Chyby"
       ],
       "Estimated size": [
         "Odhadovaná veľkosť"
@@ -2032,11 +2131,29 @@
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
       ],
+      "Finalize migration": [
+        "Dokončiť presun"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Dokončením migrácie budú všetky vaše emaily smerované priamo do ${ BRAND_NAME }. Používatelia už nebudú dostávať emaily na svoje Google účty a údaje medzi ${ BRAND_NAME } a Google sa už nebudú synchronizovať."
+      ],
+      "Find out what can be migrated.": [
+        "Zistite, čo je možné preniesť."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplikácia Google Marketplace na kopírovanie údajov do ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Účet Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Vydržte, práve vytvárame používateľské účty a čoskoro začneme importovať údaje používateľov."
+      ],
       "Has errors": [
         "Má chyby"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Chyby pri importe pre ${ user.AdminSetName }"
       ],
       "In progress": [
         "Prebieha"
@@ -2047,14 +2164,26 @@
       "Install migration app": [
         "Inštalovať migračnú aplikáciu"
       ],
+      "Loading your organization data": [
+        "Načítavanie údajov vašej organizácie"
+      ],
       "Mail": [
         "Pošta"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Spravované cez ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
       ],
       "Migrate from Google Workspace": [
         "Migrovať z Google Workspace"
       ],
       "Migrate users": [
         "Migrovať používateľov"
+      ],
+      "Migrated": [
+        "Presunuté"
       ],
       "Migration includes": [
         "Migrácia zahŕňa"
@@ -2068,11 +2197,53 @@
       "Migration status": [
         "Stav migrácie"
       ],
+      "Missing organization private key": [
+        "Chýba súkromný kľúč organizácie"
+      ],
+      "Missing organization public key": [
+        "Chýba verejný kľúč organizácie"
+      ],
+      "More details": [
+        "Ďalšie podrobnosti"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Podrobnosti o chybe nie sú k dispozícii. Pre viac informácií kontaktujte zákaznícku podporu."
+      ],
+      "No users to display": [
+        "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Not activated": [
+        "Neaktivované"
+      ],
+      "Not confirmed": [
+        "Nepotvrdené"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Akonáhle si používatelia aktivujú svoj ${ BRAND_NAME } účet, dokončite migráciu."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Akonáhle overíme, že emaily sú smerované na ${ BRAND_NAME }, migrácia bude dokončená. Po dokončení tohto procesu dostanete potvrdzovací email. Tento proces môže trvať až 24 hodín."
+      ],
       "Organization does not have enough seats available": [
         "Organizaícia nemá dostatok voľných licencií"
       ],
       "Organization does not have enough storage available": [
         "Organzácia nemá dostatok úložného priestoru"
+      ],
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Do konzoly DNS vášho poskytovateľa doménových služieb, prosím, pridajte nasledujúce záznamy:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Nechajte toto okno otvorené, kým nedokončíme vytváranie všetkých používateľov, prosím."
+      ],
+      "Please select at least one product to migrate": [
+        "Vyberte aspoň jeden produkt na presun, prosím"
+      ],
+      "Refresh": [
+        "Obnoviť"
       ],
       "Required": [
         "Povinné"
@@ -2083,26 +2254,77 @@
       "Select at least one user to start a migration": [
         "Pre spustenie migrácie vyberte aspoň jedného používateľa"
       ],
+      "Select users to migrate": [
+        "Vyberte používateľov na presun"
+      ],
       "Set up": [
         "Nastaviť"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Nastavte bezpečné odosielanie (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Nastavte bezpečné odosielanie (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Nastavte bezpečné odosielanie (SPF)"
       ],
       "Settings": [
         "Nastavenia"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Zdieľajte aktivačný odkaz s používateľmi, aby si mohli aktivovať svoj ${ BRAND_NAME } účet."
+      ],
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
+      ],
+      "Size": [
+        "Veľkosť"
+      ],
+      "Some accounts are not claimed": [
+        "Niektoré účty neboli prevzaté"
+      ],
+      "SPF records": [
+        "SPF záznamy"
+      ],
+      "Start migrating": [
+        "Spustiť migráciu"
       ],
       "Status": [
         "Stav"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Predvolené nastavenie je „none“. Pre zvýšenie bezpečnosti však odporúčame nastaviť túto hodnotu na „p=quarantine“."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Hodnota „p=” určuje, aká akcia sa má vykonať v prípade emailov, ktoré neprejdú DMARC kontrolou. K dispozícii sú tieto akcie:"
+      ],
+      "This migration has been completed": [
+        "Migrácia bola dokončená"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali."
+      ],
+      "Update records for receiving": [
+        "Aktualizovať záznamy o príjme"
       ],
       "User": [
         "Používateľ"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "Používateľ musí aktivovať svoj účet prostredníctvom aktivačného odkazu uvedeného vyššie"
+      ],
+      "User status": [
+        "Stav používateľa"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Počas migrácie môžu používatelia súčasne využívať službu ${ BRAND_NAME } aj Google."
+      ],
       "Users migrated": [
         "Používatelia zmigrovaní"
+      ],
+      "Verified": [
+        "Overené"
       ],
       "Verify installation": [
         "Overiť inštaláciu"
@@ -2113,14 +2335,35 @@
       "Verify your domain to start a migration": [
         "Overte vašu doménu pre spustenie migrácie"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Zistili sme primárnu doménu prepojenú s vaším účtom Google Workspace. Potvrďte ju, aby ste mohli pokračovať v nastavovaní emailu pre vašu organizáciu ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Inštaláciu sa nám nepodarilo overiť. Skontrolujte, či ste ju nainštalovali do svojho účtu Google Workspace, a skúste to znova."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Stále overujeme MX záznamy u vášho poskytovateľa domén."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Zistili sme, že niektorí používatelia si ešte neaktivovali svoje ${ BRAND_NAME } účty."
       ],
       "What are you migrating?": [
         "Čo migrujete?"
       ],
+      "You": [
+        "Vy"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udeliť povolenie pre ${ BRAND_NAME } na kopírovanie vašich údajov. Po udelení povolení sa vráťte sem a pokračujte."
+      ],
+      "You're all set!": [
+        "Všetko je pripravené!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľa. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie.",
+        "Váš súčasný plán umožňuje až ${ maxMembers } používateľov. Ak chcete pridať ďalších používateľov, rozšírte si predplatné o ďalšie licencie."
       ]
     },
     "Browser": {
@@ -3839,6 +4082,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "použite asistenta pre import Easy Switch"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Bol nájdený duplicitný DMARC záznam. Prejdite do DNS konzoly vášho poskytovateľa domén a problém vyriešte."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6609,6 +6857,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } bol aktualizovaný"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
       ],
@@ -6734,6 +6985,9 @@
       ],
       "Activity Monitor": [
         "Monitor aktivity"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7418,6 +7672,9 @@
       ],
       "for choosing ${ product }": [
         "za výber ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
@@ -8135,6 +8392,9 @@
       ],
       "Recently used servers:": [
         "Nedávno použité servery:"
+      ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Odporúčané na dôveryhodných zariadeniach. ${ keepMeSignedInLearnMoreLink }"
@@ -9705,6 +9965,9 @@
       "Confirm login password": [
         "Potvrďte prihlasovacie heslo"
       ],
+      "Confirm MX records added": [
+        "Potvrdiť pridané MX záznamy"
+      ],
       "Confirm new password": [
         "Potvrďte nové heslo"
       ],
@@ -9927,6 +10190,9 @@
       "Hide password": [
         "Skryť heslo"
       ],
+      "Host name": [
+        "Názov servera (Host name)"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Chápem, že túto emailovú adresu budem musieť okamžite pridať do druhého konta, aby nedošlo k trvalej strate tejto adresy."
       ],
@@ -10043,6 +10309,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "MX records": [
+        "MX záznamy"
       ],
       "Name": [
         "Meno"
@@ -10175,6 +10444,9 @@
       ],
       "Previous password": [
         "Predchádzajúce heslo"
+      ],
+      "Priority": [
+        "Prioritné"
       ],
       "Priority support": [
         "Prednostná podpora"
@@ -10462,6 +10734,26 @@
         "Pridajte prosím nasledujúci TXT záznam. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Záznam ${ capitalizedGroup } nebol nájdený"
+      ],
+      "Host name": [
+        "Názov servera (Host name)"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Bol nájdený neplatný záznam ${ group.name }"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Use default value": [
+        "Použiť predvolenú hodnotu"
+      ],
+      "Valid ${ group.name } record found": [
+        "Bol nájdený platný záznam ${ group.name }"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrátor"
@@ -10576,6 +10868,9 @@
       ],
       "data recovery option": [
         "možnosť obnovy dát"
+      ],
+      "Detailed instructions": [
+        "Podrobné pokyny"
       ],
       "Details": [
         "Podrobnosti"
@@ -13602,6 +13897,9 @@
       "Search for an email or IP address": [
         "Hľadať email alebo IP adresu"
       ],
+      "Search for users or addresses": [
+        "Hľadať používateľov alebo adresy"
+      ],
       "Search parent folder": [
         "Prehľadať nadradenú zložku"
       ],
@@ -15040,6 +15338,14 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
+    "Spotlight": {
+      "Click a user's name to manage their role and permissions.": [
+        "Kliknutím na meno používateľa môžete spravovať jeho pozíciu a oprávnenia."
+      ],
+      "User roles available": [
+        "Dostupné používateľské pozície"
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
@@ -16039,6 +16345,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Účet vymazaný. Odhlasovanie..."
+      ],
+      "Activation link copied to clipboard": [
+        "Aktivačný odkaz skopírovaný do schránky"
       ],
       "Address added": [
         "Adresa pridaná"
@@ -17963,6 +18272,9 @@
       "User is a group": [
         "Používateľ je skupina"
       ],
+      "via ${ groupName }": [
+        "cez ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
       ]
@@ -18197,6 +18509,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(cez ${ groupName })"
+      ],
+      "(via group)": [
+        "(cez skupinu)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Pridajte delegované roly používateľovi, aby ste mu udelili iba špecifické povolenia, ktoré potrebuje, pričom si zachováte plné administrátorské oprávnenia oddelene a vaše prostredie bude v bezpečí."
       ],
