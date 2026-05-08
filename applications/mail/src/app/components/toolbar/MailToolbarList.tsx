@@ -26,7 +26,7 @@ import MoveButtons from './actions/MoveButtons';
 import PagingControls from './actions/PagingControls';
 import ReadUnreadButtons from './actions/ReadUnreadButtons';
 import SelectAll from './actions/SelectAll';
-import { FilterList } from './list-settings/FilterList';
+import { FilterList } from './filter-list/FilterList';
 import { MoreDropdown } from './more-dropdown/MoreDropdown';
 import { useMailboxToolbarBreakpoints } from './useMailToolbarResponsive';
 
