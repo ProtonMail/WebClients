@@ -27,7 +27,7 @@ const useAssistantSubscriptionStatus = (): AssistantSubscriptionStatus => {
     const { sendFreeTrialStart } = useAssistantTelemetry();
     const nowDate = new Date();
 
-    const hasAiAssistantAddon = !!user.NumAI;
+    const hasAiAssistantAddon = !!user.NumAI || !!user.NumLumo;
     const trialStartDateFeat = useFeature(FeatureCode.ComposerAssistantTrialStartDate);
     const trialStartDate =
         trialStartDateFeat.feature?.Value && typeof trialStartDateFeat.feature?.Value === 'number'
