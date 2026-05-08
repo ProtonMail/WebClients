@@ -1565,9 +1565,6 @@
         "Invitații trimise: ${ payload.count }",
         "Invitații trimise: ${ payload.count }"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s-a dezactivat."
       ],
@@ -1597,9 +1594,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Este creat un contact pentru fiecare adresă de e-mail care trimite mesaje către sau primește de la ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "O nouă versiune este în curs de descărcare. După finalizarea descărcării, va fi disponibilă la următoarea repornire."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
@@ -1834,9 +1828,6 @@
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activare ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
         "Activați autoblocarea pentru a securiza datele."
@@ -2080,6 +2071,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2106,9 +2102,6 @@
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
-      ],
-      "No new versions are available at the moment.": [
-        "În acest moment, nu există versiuni noi disponibile."
       ],
       "None": [
         "Fără"
@@ -2294,6 +2287,9 @@
       ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
       "Reconnect": [
         "Reconectare"
@@ -2498,12 +2494,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
-      "This will reload the application.": [
-        "Aceasta va reîncărca aplicația."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Aceasta va declanșa o verificare a noilor versiuni beta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pentru a continua să primiți mesaje pe e-mail, transferați aceste aliasuri la un alt cont de e-mail:"
       ],
@@ -2518,9 +2508,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Aprobat de peste 50.000 de utilizatori de afaceri și 100 de milioane de conturi din întreaga lume."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -2545,6 +2532,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola secundară."
+      ],
+      "Unlock with biometrics": [
+        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
@@ -2948,9 +2938,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Biometrics": [
         "Date biometrice"

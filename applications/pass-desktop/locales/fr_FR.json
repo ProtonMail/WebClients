@@ -1546,9 +1546,6 @@
         "${ payload.count } invitation a été envoyée.",
         "${ payload.count } invitations ont été envoyées."
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } a été desactivé."
       ],
@@ -1575,9 +1572,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Un contact est créé pour chaque adresse e-mail qui envoie ou reçoit des messages depuis ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Une nouvelle version est en cours de téléchargement. Une fois le téléchargement terminé, elle sera disponible au prochain redémarrage."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
@@ -1812,9 +1806,6 @@
       ],
       "Emptying trash...": [
         "Suppression des éléments de la corbeille en cours"
-      ],
-      "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Activez la version bêta de ${ PASS_SHORT_APP_NAME }."
       ],
       "Enable auto-locking to secure your data": [
         "Activez le verrouillage automatique pour sécuriser vos données."
@@ -2055,7 +2046,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2083,9 +2075,6 @@
       ],
       "No network connection": [
         "Aucune connexion réseau"
-      ],
-      "No new versions are available at the moment.": [
-        "Aucune nouvelle version n'est disponible pour le moment."
       ],
       "None": [
         "Aucun"
@@ -2270,6 +2259,9 @@
       ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
       ],
       "Reconnect": [
         "Se reconnecter"
@@ -2473,12 +2465,6 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Ceci refusera l'appareil **${ name }** qui a tenté de se connecter à votre compte ${ BRAND_NAME } le **${ date }**."
       ],
-      "This will reload the application.": [
-        "Cela rechargera l'application."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Cela déclenchera une vérification des nouvelles versions bêta."
-      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pour continuer à recevoir des e-mails, transférez ces alias vers une autre messagerie :"
       ],
@@ -2493,9 +2479,6 @@
       ],
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Approuvé par plus de 50 000 utilisateurs professionnels et 100 millions de comptes dans le monde entier."
-      ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public."
       ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
@@ -2520,6 +2503,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre second mot de passe."
+      ],
+      "Unlock with biometrics": [
+        "Déverrouillez par biométrie"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
@@ -2905,9 +2891,6 @@
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "En plus de conserver vos identifiants, ${ PASS_APP_NAME } protège votre identité avec sa fonctionnalité intégrée d'alias d'adresse e-mail. Chaque fois que vous vous inscrivez à un nouveau compte en ligne, ${ PASS_APP_NAME } peut créer automatiquement un alias pour protéger votre véritable adresse e-mail. "
-      ],
-      "Beta Access": [
-        "Accès à la version bêta"
       ],
       "Biometrics": [
         "Données biométriques"
