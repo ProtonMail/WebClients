@@ -45,6 +45,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Pridať ${ photoCount } fotografiu do nového albumu",
         "Pridať ${ photoCount } fotografie do nového albumu",
@@ -789,6 +792,9 @@
       "Re-sign": [
         "Znovu podpísať"
       ],
+      "Rebuild index": [
+        "Znova vytvoriť index"
+      ],
       "Reconnect": [
         "Obnoviť pripojenie"
       ],
@@ -932,6 +938,9 @@
       ],
       "Search drive": [
         "Prehľadávať disk"
+      ],
+      "Search is unavailable": [
+        "Vyhľadávanie je nedostupné"
       ],
       "See how": [
         "Pozrieť ako"
@@ -3566,6 +3575,9 @@
       "Folder name cannot be empty.": [
         "Názov priečinka nesmie byť prázdny."
       ],
+      "Folder not found": [
+        "Priečinok nebol nájdený"
+      ],
       "Forward address is required": [
         "Adresa preposielania je povinná"
       ],
@@ -5012,6 +5024,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Súbory v ${ DOCS_APP_NAME } a ${ SHEETS_APP_NAME } nie je možné stiahnuť priamo a nebudú zahrnuté do tohto sťahovania. Ostatné súbory si môžete stiahnuť kliknutím na tlačidlo 'Pokračovať v sťahovaní'."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Aplikácia ${ DRIVE_APP_NAME } zistila, že index lokálneho vyhľadávania je poškodený a už nie je možné ho používať. Obnovte index, aby ste obnovili vyhľadávanie."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } v App Store"
       ],
@@ -5156,6 +5171,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskuje vašu IP adresu, aby vás webové stránky nemohli identifikovať."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skryje vašu internetovú aktivitu. ${ PASS_SHORT_APP_NAME } skryje vašu identitu\n— neobmedzený počet **hide-my-emailaliasov ** a **upozornení z dark webu** v prípade úniku vašich údajov."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -5230,6 +5248,9 @@
       ],
       "Ad targeting": [
         "Cielená reklama"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5462,6 +5483,9 @@
       "Copy your referral link": [
         "Kopírujte váš odporúčací odkaz"
       ],
+      "Could not scan file for malware": [
+        "Nepodarilo sa skontrolovať súbor na prítomnosť malvéru"
+      ],
       "Country code": [
         "Kód krajiny"
       ],
@@ -5684,6 +5708,12 @@
       "File \"${ name }\" was deleted during download": [
         "Súbor „${ name }“ bol vymazaný počas sťahovania"
       ],
+      "File could not be scanned": [
+        "Súbor sa nepodarilo skenovať"
+      ],
+      "File flagged as potentially malicious": [
+        "Súbor označený ako potenciálne škodlivý"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Súboru chýba podpis. Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
       ],
@@ -5719,6 +5749,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Len za ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "5 GB bezplatného šifrovaného úložného priestoru"
@@ -5833,6 +5866,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexované ${ first }, ${ second }, ${ third } a ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indexovanie sa dostalo do neočakávaného stavu a nemôže pokračovať. Pre obnovenie je potrebné index preindexovať."
       ],
       "Indexing in progress": [
         "Prebieha indexovanie"
@@ -6071,6 +6107,9 @@
       "Not connected": [
         "Nepripojené"
       ],
+      "Not enough storage space": [
+        "V úložisku nie je dostatok miesta"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: dáta môžu byť stále dostupné lokálne na zariadeniach, kde ste nainštalovali ${ DRIVE_APP_NAME }."
       ],
@@ -6266,6 +6305,9 @@
       "Ready to add some photos?": [
         "Chcete pridať nejaké fotografie?"
       ],
+      "RECOMMENDED": [
+        "ODPORÚČANÉ"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
       ],
@@ -6317,11 +6359,29 @@
       "Search cannot be enabled in this browser": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie"
       ],
+      "Search data is corrupted": [
+        "Údaje vyhľadávania sú poškodené"
+      ],
       "Search Enabled": [
         "Vyhľadávanie povolené"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Vyhľadávanie je povolené. Teraz môžete zatvoriť toto dialógové okno a vyhľadávať súbory a priečinky."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Pri vyhľadávaní došlo k internej chybe. Na obnovenie je potrebné vytvoriť nový index."
+      ],
+      "Search engine error": [
+        "Chyba vyhľadávača"
+      ],
+      "Search error": [
+        "Chyba pri vyhľadávaní"
+      ],
+      "Search is in an invalid state": [
+        "Vyhľadávanie je v neplatnom stave"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Vyhľadávanie je pripravené. Vaše súbory boli zaindexované."
       ],
       "Search module is not available.": [
         "Modul vyhľadávania nie je k dispozícii."
@@ -6487,6 +6547,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Vyhľadávač zaznamenal internú chybu. Na obnovenie je potrebné vytvoriť nový index."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proces overenia otvorí novú kartu prehliadača. Vypnite všetky aktívne blokovania automaticky otváraných okien."
@@ -6994,6 +7057,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Váš prehliadač nemá dostatok miesta na indexovanie súborov pre vyhľadávanie. Uvoľnite miesto v úložisku a potom preindexujte súbory."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Váš aktuálny prehliadač nepodporuje sťahovanie veľkých súborov/viacerých súborov. Stiahnite si desktopovú aplikáciu pre bezproblémové nahrávanie a sťahovanie."

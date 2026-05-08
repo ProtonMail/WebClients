@@ -135,6 +135,9 @@
       "Cancel download": [
         "取消下載"
       ],
+      "Cancel downloads": [
+        "取消下載"
+      ],
       "Cancel subscription": [
         "取消訂購授權"
       ],
@@ -384,11 +387,17 @@
       "Download anyway": [
         "仍要下載"
       ],
+      "Download app": [
+        "下載應用程式"
+      ],
       "Download info": [
         "下載資訊"
       ],
       "Download logs": [
         "下載日誌"
+      ],
+      "Download results": [
+        "下載的結果"
       ],
       "Drive Locked": [
         "雲端硬碟已上鎖"
@@ -429,6 +438,9 @@
       "Expand folder": [
         "展開資料夾"
       ],
+      "Explore more": [
+        "探索更多內容"
+      ],
       "Export": [
         "匯出"
       ],
@@ -467,6 +479,9 @@
       ],
       "Get in touch": [
         "保持聯絡"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "以 ${ simplePriceString } 取得安全儲存空間"
       ],
       "Get the apps": [
         "取得應用程式"
@@ -632,6 +647,9 @@
       ],
       "More options": [
         "更多選項"
+      ],
+      "More options for accounts": [
+        "更多帳號選項"
       ],
       "Move": [
         "移動"
@@ -909,6 +927,12 @@
       "Share your calendar with your team": [
         "與團隊共享您的行事曆"
       ],
+      "Shared": [
+        "已共享"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "共享是端對端加密"
+      ],
       "Sharing options": [
         "分享可用選項"
       ],
@@ -1043,6 +1067,9 @@
       ],
       "Upload folder": [
         "上載資料夾"
+      ],
+      "Upload from computer": [
+        "從電腦上傳"
       ],
       "Upload photos": [
         "上傳照片"
@@ -1699,6 +1726,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "新增 ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "進階帳號和網路安全於單一方案"
       ],
       "High-speed chats and advanced AI features.": [
         "高速聊天和先進的人工智慧功能。"
@@ -2399,6 +2429,9 @@
       "North Korea": [
         "北韓"
       ],
+      "North Macedonia": [
+        "北馬其頓"
+      ],
       "Northern Mariana Islands": [
         "北馬利安納群島"
       ],
@@ -2776,6 +2809,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
@@ -3157,6 +3193,9 @@
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
       ],
+      "Company name or personal name is required": [
+        "公司名稱或個人名稱是需要的"
+      ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
@@ -3226,6 +3265,12 @@
       "Failed loading group members": [
         "無法再入群組成員"
       ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
+      ],
+      "Failed to expand folder": [
+        "展開資料夾失敗"
+      ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
       ],
@@ -3252,6 +3297,9 @@
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
+      ],
+      "Folder not found": [
+        "找不到資料夾"
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
@@ -3589,6 +3637,9 @@
       "Validation error": [
         "驗證錯誤"
       ],
+      "We were not able to load some items shared with you": [
+        "我們無法載入部分與您共享的項目"
+      ],
       "We were not able to load the folder contents": [
         "無法載入資料夾內容"
       ],
@@ -3615,6 +3666,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️無法解密的裝置"
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
@@ -4131,6 +4185,9 @@
     "Heading": {
       "Add ${ photoCount } photo to": [
         "新增${ photoCount }照片至"
+      ],
+      "Add to shared album": [
+        "加入至共享的相簿"
       ],
       "All albums": [
         "所有相簿"
@@ -4683,6 +4740,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "所有聯絡人將被匯入，至多 ${ maxContact }"
       ],
+      "Already in this folder": [
+        "已經在此資料夾"
+      ],
       "Also try looking in Trash.": [
         "也別忘記看看垃圾桶。"
       ],
@@ -4914,6 +4974,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
       ],
+      "Done": [
+        "完成"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
       ],
@@ -5030,6 +5093,9 @@
       ],
       "File \"${ name }\" was deleted during download": [
         "檔案 \"${ name }\" 在下載過程中被刪除"
+      ],
+      "File could not be scanned": [
+        "檔案無法被掃瞄"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "檔案欠缺簽署。我們無法驗證 ${ fileName } 由 ${ emailAddress } 上載。"
@@ -5168,6 +5234,12 @@
       ],
       "Invite link copied": [
         "邀請鏈接已復制"
+      ],
+      "iOS and Android Apps": [
+        "iOS 和 Android 應用程式"
+      ],
+      "Issues found": [
+        "發現問題"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
@@ -5355,6 +5427,9 @@
       "Not connected": [
         "未連線"
       ],
+      "Not enough storage space": [
+        "儲存空間不足"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
       ],
@@ -5433,6 +5508,9 @@
       "Photo is set as album cover": [
         "照片已設為相簿封面"
       ],
+      "Photo(s) saved to your Drive": [
+        "照片已儲存至您的磁碟"
+      ],
       "Photos have been successfully recovered.": [
         "照片已成功復原。"
       ],
@@ -5495,6 +5573,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
+      ],
+      "Preparing": [
+        "準備中"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -5586,6 +5667,12 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "搜尋已啟用。您現可關閉此對話方塊並搜尋檔案和資料夾。"
       ],
+      "Search engine error": [
+        "搜尋引擎錯誤"
+      ],
+      "Search error": [
+        "搜尋錯誤"
+      ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
       ],
@@ -5642,6 +5729,9 @@
       ],
       "Shared with me": [
         "與我分享"
+      ],
+      "Shared with you": [
+        "與您共享"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
@@ -5945,6 +6035,9 @@
       ],
       "VPN IP": [
         "VPN IP"
+      ],
+      "Waiting": [
+        "等待中"
       ],
       "Want to sync files faster?": [
         "想更快同步?"
@@ -6364,6 +6457,9 @@
       "Anderson": [
         "安德松"
       ],
+      "Anonymous": [
+        "匿名 "
+      ],
       "App password": [
         "應用程式密碼"
       ],
@@ -6402,6 +6498,9 @@
       ],
       "Calendar": [
         "行事曆"
+      ],
+      "can edit": [
+        "可以編輯"
       ],
       "can view": [
         "可以查看"
@@ -6453,6 +6552,9 @@
       ],
       "Contacts": [
         "聯絡人"
+      ],
+      "Continue cancelling": [
+        "持續取消"
       ],
       "Copy": [
         "複製"
@@ -6550,6 +6652,9 @@
       "Enter device name": [
         "輸入裝置名稱"
       ],
+      "Environment compatible": [
+        "環境兼容"
+      ],
       "Expired": [
         "已失效"
       ],
@@ -6564,6 +6669,9 @@
       ],
       "File name": [
         "檔案名稱"
+      ],
+      "File transfer overview": [
+        "檔案轉換總覽"
       ],
       "First name": [
         "名"
@@ -6783,6 +6891,9 @@
       ],
       "Select type of abuse": [
         "選取濫用類型"
+      ],
+      "Set a password to limit access via link": [
+        "設定密碼以限制透過連結的存取"
       ],
       "Set recovery method": [
         "設定復原方法"
@@ -8487,6 +8598,9 @@
       "Access updated": [
         "權限已更新"
       ],
+      "All items deleted permanently from trash": [
+        "全部的項目已從垃圾桶被永久刪除"
+      ],
       "An invitation has been sent": [
         "邀請函已寄出"
       ],
@@ -8619,6 +8733,11 @@
         "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
       ]
     },
+    "Notitication": {
+      "Album renamed successfully": [
+        "相簿已成功重新命名"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "接下來，您將必須登入您的 Google 帳號，並同意 ${ BRAND_NAME } 存取您的資料。"
@@ -8725,6 +8844,9 @@
       ],
       "Advanced threat protection": [
         "進階的威脅保護"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "與非 ${ BRAND_NAME } 使用者合作"
       ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
@@ -8964,11 +9086,17 @@
       "No parent folder": [
         "無上層資料夾"
       ],
+      "Only current location": [
+        "只有目前的位置"
+      ],
       "Only current location: ${ name }": [
         "只有目前的位置: ${ name }"
       ],
       "Select JSON file": [
         "選擇 JSON 檔案"
+      ],
+      "Verify content": [
+        "驗證內容"
       ],
       "Verify thumbnails": [
         "驗證縮圖"
@@ -9274,6 +9402,9 @@
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "續訂價格取決於計費區域和 VAT 號碼。"
       ]
     },
     "Payments.Saved payment method details": {
@@ -9486,6 +9617,9 @@
       ]
     },
     "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "身為一位 **${ currentPlanTitle }** 訂閱者，您可透過升級至 **${ upsellPlanTitle }** 方案以解鎖 **${ unlockPlanTitle }** 和更多 ${ BRAND_NAME } 服務。"
+      ],
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "更多 ${ BRAND_NAME } 服務。${ br } 一個簡單的訂購授權。"
       ],
@@ -9970,6 +10104,9 @@
       ]
     },
     "sheets_2025:Action": {
+      "New spreadsheet": [
+        "新增工作表"
+      ],
       "Open in ${ appName }": [
         "於 ${ appName } 開啟"
       ],
@@ -10710,11 +10847,23 @@
       ]
     },
     "Subtitle": {
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "透過相簿安全地與朋友和家庭共享您最愛的時光。"
+      ],
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 分享"
       ],
       "Your favorited photos will appear here": [
         "您喜愛的照片會顯示在這裡"
+      ],
+      "Your panorama photos will appear here": [
+        "您自拍的照片會顯示在這裡"
+      ],
+      "Your portraits photos will appear here": [
+        "您自拍的照片會顯示在這裡"
+      ],
+      "Your RAW photos will appear here": [
+        "您 RAW 的照片會顯示在這裡"
       ],
       "Your screenshots will appear here": [
         "您的螢幕擷取畫面會顯示在這裡"
@@ -11198,6 +11347,9 @@
       "Diagnostics": [
         "診斷"
       ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "電子簽署部分完成驗證。此檔案由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
+      ],
       "Discard": [
         "捨棄"
       ],
@@ -11218,6 +11370,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "下載 ${ DRIVE_APP_NAME } 應用程式"
+      ],
+      "Download details": [
+        "下載的詳細資料"
       ],
       "Download the app": [
         "下載應用程式"
@@ -11534,6 +11689,9 @@
       "Processing...": [
         "處理中..."
       ],
+      "Public link settings": [
+        "公開連結的設定"
+      ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
       ],
@@ -11731,6 +11889,9 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
       ],
       "Upload and share files": [
         "上傳並共享檔案"

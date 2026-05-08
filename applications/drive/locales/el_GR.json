@@ -45,6 +45,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Προσθήκη ${ photoCount } φωτογραφίας σε νέο άλμπουμ",
         "Προσθήκη ${ photoCount } φωτογραφιών σε νέο άλμπουμ"
@@ -779,6 +782,9 @@
       "Re-sign": [
         "Επανασυνδεθείτε"
       ],
+      "Rebuild index": [
+        "Αναδημιουργία ευρετηρίου"
+      ],
       "Reconnect": [
         "Επανασύνδεση"
       ],
@@ -922,6 +928,9 @@
       ],
       "Search drive": [
         "Τοπική αναζήτηση"
+      ],
+      "Search is unavailable": [
+        "Η αναζήτηση δεν είναι διαθέσιμη"
       ],
       "See how": [
         "Δείτε πώς"
@@ -4899,6 +4908,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Τα αρχεία ${ DOCS_APP_NAME } και ${ SHEETS_APP_NAME } δεν μπορούν να ληφθούν απευθείας και δε θα συμπεριληφθούν σε αυτή τη λήψη. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο \"Συνέχεια λήψης\"."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "Το ${ DRIVE_APP_NAME } εντόπισε ότι το τοπικό ευρετήριο αναζήτησης είναι κατεστραμμένο και δεν μπορεί πλέον να χρησιμοποιηθεί. Αναδημιουργήστε το ευρετήριο για να επαναφέρετε την αναζήτηση."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } στο App Store"
       ],
@@ -5013,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "Το ${ VPN_APP_NAME } καλύπτει τη διεύθυνση IP σας, επομένως οι ιστότοποι δεν μπορούν να σας αναγνωρίσουν."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "Το ${ VPN_SHORT_APP_NAME } αποκρύπτει την επισκεψιμότητά σας. Το ${ PASS_SHORT_APP_NAME } αποκρύπτει την ταυτότητά σας\n— απεριόριστα **hide-my-email ψευδώνυμα** και **ειδοποιήσεις dark-web** εάν τα δεδομένα σας διαρρεύσουν ποτέ."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
@@ -5083,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5568,6 +5586,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή απαιτητικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Μόνο για ${ bundlePlanPriceInline }"
+      ],
       "Free 5GB encrypted storage to get started": [
         "Δωρεάν κρυπτογραφημένος χώρος 5GB για να ξεκινήσετε"
       ],
@@ -5679,6 +5700,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Ενημέρωση ευρετηρίου ${ first }, ${ second }, ${ third } και ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Η δημιουργία ευρετηρίου αντιμετώπισε μια μη αναμενόμενη κατάσταση και δεν είναι δυνατή η συνέχιση. Αναδημιουργήστε το ευρετήριο για να το ανακτήσετε."
       ],
       "Indexing in progress": [
         "Ευρετηρίαση σε εξέλιξη"
@@ -5909,6 +5933,9 @@
       "Not connected": [
         "Μη συνδεδεμένο"
       ],
+      "Not enough storage space": [
+        "Ανεπαρκής χώρος αποθήκευσης"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ DRIVE_APP_NAME }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
@@ -6102,6 +6129,9 @@
       "Ready to add some photos?": [
         "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
+      "RECOMMENDED": [
+        "ΠΡΟΤΕΙΝΟΜΕΝΑ"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
@@ -6153,11 +6183,29 @@
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν είναι δυνατό να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
+      "Search data is corrupted": [
+        "Τα δεδομένα αναζήτησης είναι κατεστραμμένα"
+      ],
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Η αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Η αναζήτηση αντιμετώπισε εσωτερικό σφάλμα. Αναδημιουργήστε το ευρετήριο για ανάκτηση."
+      ],
+      "Search engine error": [
+        "Σφάλμα μηχανής αναζήτησης"
+      ],
+      "Search error": [
+        "Λάθος αναζήτησης"
+      ],
+      "Search is in an invalid state": [
+        "Η αναζήτηση είναι σε μη έγκυρη κατάσταση"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Η αναζήτηση είναι έτοιμη. Τα αρχεία σας έχουν καταχωρηθεί στο ευρετήριο."
       ],
       "Search module is not available.": [
         "Η μονάδα αναζήτησης δεν είναι διαθέσιμη."
@@ -6321,6 +6369,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Η μηχανή αναζήτησης αντιμετώπισε εσωτερικό σφάλμα. Αναδημιουργήστε το ευρετήριο για ανάκτηση."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Η διαδικασία επαλήθευσης θα ανοίξει μια νέα καρτέλα του προγράμματος περιήγησης. Απενεργοποιήστε τυχόν ενεργά προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -6814,6 +6865,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Ο χώρος στο πρόγραμμα περιήγησής σας εξαντλήθηκε κατά την ευρετηρίαση αρχείων για αναζήτηση. Απελευθερώστε χώρο αποθήκευσης και, στη συνέχεια, δημιουργήστε ξανά το ευρετήριο."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Το τρέχον πρόγραμμα περιήγησής σας δεν υποστηρίζει τη λήψη μεγάλων αρχείων/πολλαπλών αρχείων. Κατεβάστε την εφαρμογή επιφάνειας εργασίας για απρόσκοπτες μεταφορτώσεις και λήψεις."
