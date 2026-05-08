@@ -1,18 +1,53 @@
-import type { JestConfigWithTsJest } from 'ts-jest';
+import { createRequire } from 'module';
 
-const jestConfig: JestConfigWithTsJest = {
-    preset: 'ts-jest',
+export default {
+    setupFilesAfterEnv: ['./jest.setup.ts'],
+    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
+    testEnvironment: '@proton/jest-env',
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton|@protontech|@scure|mutex-browser|bip39|@preact/signals-core)/)',
+    ],
+
     transform: {
-        '^.+\\.(ts|js)x?$': [
-            'ts-jest',
+        '^.+\\.(ts|tsx|js|jsx|mjs)$': [
+            '@swc/jest',
             {
-                babelConfig: './babel.config.js',
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+                env: {
+                    mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
+                },
             },
         ],
     },
-    setupFilesAfterEnv: ['./jest.setup.ts'],
-    testEnvironment: 'jsdom',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'json'],
+    moduleNameMapper: {
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+        '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
+    },
+    modulePathIgnorePatterns: ['<rootDir>/tests'],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
+    collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
+    coverageThreshold: {
+        global: {
+            branches: 66,
+            functions: 50,
+            lines: 51,
+            statements: 52,
+        },
+    },
 };
-
-export default jestConfig;

@@ -3,6 +3,12 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import type { DashboardMoreInfoSection } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
+import {
+    DashboardMoreInfoSectionTag,
+    DashboardMoreInfoSections,
+} from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
@@ -10,26 +16,19 @@ import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
 import { APPS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
+import family from '@proton/styles/assets/img/vpn/download-section/family.svg';
+import household from '@proton/styles/assets/img/vpn/download-section/household.svg';
+import roundTheClockProtection from '@proton/styles/assets/img/vpn/download-section/round-the-clock-protection.svg';
+import sensitiveData from '@proton/styles/assets/img/vpn/download-section/sensitive-data.svg';
+import tv from '@proton/styles/assets/img/vpn/download-section/tv.svg';
 
-import type { DashboardMoreInfoSection } from '../../account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
-import {
-    DashboardMoreInfoSectionTag,
-    DashboardMoreInfoSections,
-} from '../../account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import family from './illustrations/family.svg';
-import household from './illustrations/household.svg';
-import roundTheClockProtection from './illustrations/round-the-clock-protection.svg';
-import sensitiveData from './illustrations/sensitive-data.svg';
-import tv from './illustrations/tv.svg';
-
-export const VpnGetMoreSection = () => {
+export const GetMoreSection = () => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONVPN_SETTINGS);
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const handleUnlimitedUpsell = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.BUNDLE,
             metrics: { source: 'upsells' },
@@ -101,5 +100,3 @@ export const VpnGetMoreSection = () => {
 
     return <DashboardMoreInfoSections sections={sections} />;
 };
-
-export default VpnGetMoreSection;

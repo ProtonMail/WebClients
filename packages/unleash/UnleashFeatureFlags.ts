@@ -67,6 +67,7 @@ export enum CommonFeatureFlag {
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
     MaxContactsImport = 'MaxContactsImport',
     EventLoopInterval = 'EventLoopInterval',
+    DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
 }
 
 enum AccountFlag {

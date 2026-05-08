@@ -1,6 +1,6 @@
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 
-import { androidMarketplaceUrl, defaultDownloadUrl, iosMarketplaceUrl } from './downloadLinks';
+import { androidMarketplaceUrl, defaultDownloadUrl, iosMarketplaceUrl } from '../../constants/downloadLinks';
 
 /**
  * Redirects phone users to their marketplace. The other users
