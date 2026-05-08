@@ -270,7 +270,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                 />
                                 <Label htmlFor="understood-pqc-force-upgrade" className="flex-1">
                                     {c('Force upgrade safety review')
-                                        .t`I understand that I will no longer be able to sign in to older versions of ${BRAND_NAME} mobile apps.`}
+                                        .t`I understand that I will no longer be able to sign in to older versions of ${BRAND_NAME} apps.`}
                                 </Label>
                             </div>
                         </>
