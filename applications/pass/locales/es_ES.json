@@ -1453,9 +1453,6 @@
         "${ payload.count } invitación enviada",
         "${ payload.count } invitaciones enviadas"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, nuestro programa de protección avanzada para tu cuenta"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
       ],
@@ -1482,9 +1479,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Se crea un contacto por cada dirección de correo electrónico que envía o recibe correos electrónicos desde ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Se está descargando una nueva versión. Estará disponible cuando reinicies la aplicación."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
@@ -1956,7 +1950,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -1981,9 +1976,6 @@
       ],
       "No network connection": [
         "No hay conexión a la red."
-      ],
-      "No new versions are available at the moment.": [
-        "No hay versiones nuevas disponibles en este momento."
       ],
       "None": [
         "Ninguno"
@@ -2370,9 +2362,6 @@
       ],
       "This will reload the application.": [
         "Se reiniciará la aplicación."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Esta acción buscará nuevas versiones beta."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Para seguir recibiendo correos electrónicos, transfiere estos alias a otro buzón:"

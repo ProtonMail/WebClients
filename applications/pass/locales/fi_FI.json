@@ -1412,9 +1412,6 @@
         "${ payload.count } kutsu lähetettiin",
         "${ payload.count } kutsua lähetettiin"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, miedän edistynein tilinsuojausohjelmamme"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
       ],
@@ -1441,9 +1438,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Yhteystieto luodaan jokaiselle sähköpostiosoitteelle, joka lähettää tai vastaanottaa sähköposteja osoitteelta ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Uutta versiota ladataan. Kun lataus on valmis, se on käytettävissä seuraavassa uudelleenkäynnistyksessä."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
@@ -1896,6 +1890,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1919,9 +1917,6 @@
       ],
       "No network connection": [
         "Verkkoyhteyttä ei ole"
-      ],
-      "No new versions are available at the moment.": [
-        "Ei uusia versioita saatavilla tällä hetkellä."
       ],
       "None": [
         "Ei mitään"
@@ -2278,9 +2273,6 @@
       ],
       "This will reload the application.": [
         "Tämä lataa sovelluksen uudelleen."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Tämä käynnistää tarkistuksen uusien beetaversioiden varalta."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"

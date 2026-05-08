@@ -1450,9 +1450,6 @@
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Viene creato un contatto per ogni indirizzo e-mail che invia e-mail o riceve e-mail da ${ aliasEmail }."
       ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Un nuovo aggiornamento è in fase di download. Una volta completato il download, sarà disponibile al prossimo riavvio."
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "È disponibile una nuova versione di ${ PASS_APP_NAME }. Aggiornala per scoprire le nuove funzionalità e correzioni."
       ],
@@ -1907,6 +1904,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -1930,9 +1931,6 @@
       ],
       "No network connection": [
         "Nessuna connessione alla rete"
-      ],
-      "No new versions are available at the moment.": [
-        "Al momento non sono disponibili nuove versioni."
       ],
       "None": [
         "Nessuno"
@@ -2316,9 +2314,6 @@
       ],
       "This will reload the application.": [
         "Questo ricaricherà l'applicazione."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Questo attiverà un controllo per nuove release beta."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Per continuare a ricevere email trasferisci questi alias in una casella di posta diversa:"

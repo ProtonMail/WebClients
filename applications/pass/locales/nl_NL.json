@@ -1465,9 +1465,6 @@
         "${ payload.count } uitnodiging succesvol verzonden",
         "${ payload.count } uitnodigingen succesvol verzonden"
       ],
-      "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
       ],
@@ -1494,9 +1491,6 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Een contactpersoon wordt gemaakt voor elk e-mailadres dat e-mails naar of ontvangt van ${ aliasEmail }."
-      ],
-      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
-        "Er wordt een nieuwe versie gedownload. Zodra de download voltooid is, zal deze beschikbaar zijn bij de volgende herstart."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Een nieuwe versie van ${ PASS_APP_NAME } is beschikbaar. Update het om te genieten van de laatste functies en bugfixes."
@@ -1968,7 +1962,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -1993,9 +1988,6 @@
       ],
       "No network connection": [
         "Geen netwerkverbinding"
-      ],
-      "No new versions are available at the moment.": [
-        "Momenteel zijn er geen nieuwe versies beschikbaar."
       ],
       "None": [
         "Geen"
@@ -2382,9 +2374,6 @@
       ],
       "This will reload the application.": [
         "Dit laadt de applicatie opnieuw."
-      ],
-      "This will trigger a check for new beta releases.": [
-        "Dit triggert een controle op nieuwe bètaversies."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Om e-mails te blijven ontvangen, zet deze aliassen over naar een ander postvak:"
