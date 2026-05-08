@@ -13,7 +13,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
-import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { TabState, categoryColorClassName } from './tabsInterface';
@@ -35,13 +35,13 @@ export const Tab = ({ category, count, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
     const history = useHistory();
-    const mailParams = useMailSelector(params);
+    const labelID = useMailSelector(selectLabelID);
     const { call } = useEventManager();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
-        if (category.id === mailParams.labelID && history.location.hash === '' && !refreshing) {
+        if (category.id === labelID && history.location.hash === '' && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
