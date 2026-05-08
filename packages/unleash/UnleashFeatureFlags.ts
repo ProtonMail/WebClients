@@ -326,6 +326,9 @@ enum MeetFeatureFlag {
     MeetPreSharedKey = 'MeetPreSharedKey',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetJoinTelemetry = 'MeetJoinTelemetry',
+    MeetAdaptiveStream = 'MeetAdaptiveStream',
+    MeetDynacast = 'MeetDynacast',
+    MeetSimulcast = 'MeetSimulcast',
 }
 
 enum LumoFeatureFlag {
