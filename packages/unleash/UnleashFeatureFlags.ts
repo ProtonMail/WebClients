@@ -260,6 +260,7 @@ export enum MailFeatureFlag {
     MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
     // Refreshed toolbar UI flags
     RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
+    RawLinkParsingDisabled = 'RawLinkParsingDisabled',
 }
 
 enum AdminFeatureFlag {
