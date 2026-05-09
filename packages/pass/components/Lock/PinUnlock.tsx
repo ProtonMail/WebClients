@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
@@ -20,7 +20,7 @@ type Props = {
 };
 
 export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) => {
-    const online = useOnline();
+    const offline = useOffline();
     const [value, setValue] = useState('');
     const [key, rerender] = useRerender('pin-input'); /* Re-render the PIN input with correct input focus */
 
@@ -43,14 +43,14 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
             <PinCodeInput
                 key={key}
                 className="mb-5"
-                disabled={!online}
-                autoFocus={online}
+                disabled={offline}
+                autoFocus={!offline}
                 loading={sessionUnlock.loading}
                 onValue={setValue}
                 value={value}
             />
 
-            {!online && offlineEnabled && !sessionUnlock.loading && (
+            {offline && offlineEnabled && !sessionUnlock.loading && (
                 <Button pill shape="ghost" color="norm" className="w-full mt-3" onClick={onOffline}>
                     {c('Action').t`Unlock offline with password`}
                 </Button>
