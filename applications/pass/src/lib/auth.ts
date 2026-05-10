@@ -44,6 +44,7 @@ import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted } from '@proton/pass/lib/client';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -82,7 +83,7 @@ type AuthServiceBindings = {
     core: PassCoreContextValue;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
-    getOnline: () => boolean;
+    connectivity: ConnectivityService;
     onNotification: (notification: CreateNotificationOptions) => void;
 };
 
@@ -91,9 +92,9 @@ export const createAuthService = ({
     authSwitch,
     config,
     core,
+    connectivity,
     history,
     sw,
-    getOnline,
     onNotification,
 }: AuthServiceBindings) => {
     const redirect = objectHandler(getBootRedirection(history.location));
@@ -101,7 +102,7 @@ export const createAuthService = ({
     const canUnlockOffline = async (localID?: number): Promise<boolean> =>
         canLocalUnlock({
             lockMode: authStore.getLockMode(),
-            offline: !getOnline(),
+            offline: !connectivity.online,
             offlineConfig: authStore.getOfflineConfig(),
             offlineVerifier: authStore.getOfflineVerifier(),
             offlineEnabled: (await core.settings.resolve(localID))?.offlineEnabled ?? false,
@@ -139,7 +140,7 @@ export const createAuthService = ({
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
             const validActiveSession = authStore.validSession(authStore.getSession());
-            options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && getOnline());
+            options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && connectivity.online);
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
@@ -167,7 +168,7 @@ export const createAuthService = ({
                 if (theme) core.theme.setState(theme);
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
-                const onlineAndSessionReady = getOnline() && !cookieUpgrade;
+                const onlineAndSessionReady = connectivity.online && !cookieUpgrade;
                 await authSwitch.sync({ revalidate: onlineAndSessionReady });
 
                 if (onlineAndSessionReady) {
@@ -210,7 +211,7 @@ export const createAuthService = ({
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!getOnline() && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
+            if (!connectivity.online && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
             else if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.

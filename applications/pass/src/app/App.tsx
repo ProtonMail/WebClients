@@ -189,7 +189,7 @@ export const App = () => (
                                                 <NavigationProvider>
                                                     <AuthStoreProvider store={authStore}>
                                                         <AuthSwitchProvider>
-                                                            <AuthServiceProvider>
+                                                            <AuthServiceProvider connectivity={connectivity}>
                                                                 <StoreProvider>
                                                                     <ContextMenuProvider>
                                                                         <ThemeConnect />
