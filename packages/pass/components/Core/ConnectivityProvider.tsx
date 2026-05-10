@@ -17,17 +17,13 @@ import type { AppStatus, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 type Props = { service: ConnectivityService };
-type ConnectivityState = {
-    status: ConnectivityStatus;
-    check: () => Promise<ConnectivityStatus>;
-};
+type ConnectivityState = { status: ConnectivityStatus };
 
 const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
 
 export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, service }) => {
     const [status, setStatus] = useState(() => service.status);
-    const ctx = useMemo(() => ({ check: service.check, status }), [status]);
-
+    const ctx = useMemo(() => ({ status }), [status]);
     useEffect(() => service.subscribe(setStatus), []);
 
     return <ConnectivityContext.Provider value={ctx}>{children}</ConnectivityContext.Provider>;
@@ -41,7 +37,6 @@ export const useOnline = () => {
 export const useOffline = () => !useOnline();
 
 export const useConnectivity = () => useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
-export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
 export const useOnlineRef = () => useStatefulRef(useOnline());
 
 export const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) => BottomBarProps) => {
