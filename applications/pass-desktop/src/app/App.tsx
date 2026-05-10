@@ -74,7 +74,7 @@ exposeApi(api);
 exposePassCrypto(createPassCrypto(core, store));
 
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
-connectivity.init();
+void connectivity.init();
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -149,7 +149,7 @@ export const App = () => {
                                     <NavigationProvider>
                                         <AuthStoreProvider store={authStore}>
                                             <AuthSwitchProvider>
-                                                <AuthServiceProvider>
+                                                <AuthServiceProvider connectivity={connectivity}>
                                                     <StoreProvider>
                                                         <ContextMenuProvider>
                                                             <ExtensionUnlock>
