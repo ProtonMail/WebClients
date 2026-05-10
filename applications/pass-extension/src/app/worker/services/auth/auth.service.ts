@@ -231,7 +231,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (booted && mode !== LockMode.NONE && ttl) void alarms.setAutoLock(ttl);
+                if (mode !== LockMode.NONE && booted && ttl) await alarms.setAutoLock(ttl);
             } catch {}
         }),
 
@@ -254,6 +254,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             await ctx.service.storage.local.setItem('forceLock', true);
             await ctx.service.storage.session.removeItems(SESSION_KEYS);
             await alarms.clearAutoLock();
+            await alarms.resetAutoResume();
         }),
 
         onResumeStart: withContext<AuthServiceConfig['onResumeStart']>(async (ctx, { hasSession, memorySession }) => {
