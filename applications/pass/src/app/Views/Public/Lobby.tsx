@@ -18,8 +18,9 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { clientErrored } from '@proton/pass/lib/client';
+import { clientBooted, clientBusy, clientErrored } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -104,7 +105,7 @@ export const Lobby: FC = () => {
                 }}
             />
 
-            {connectivityBar}
+            {!or(clientBusy, clientBooted)(status) && connectivityBar}
         </LobbyLayout>
     );
 };
