@@ -70,12 +70,14 @@ describe('Extension AuthService', () => {
                 storage: {
                     local: {
                         clear: jest.fn().mockResolvedValue(undefined),
+                        getItem: jest.fn().mockResolvedValue(undefined),
                         removeItem: jest.fn(),
                         setItem: jest.fn(),
                         setItems: jest.fn(),
                     },
                     session: {
                         clear: jest.fn().mockResolvedValue(undefined),
+                        getItems: jest.fn().mockResolvedValue({}),
                         removeItem: jest.fn(),
                         removeItems: jest.fn(),
                         setItems: jest.fn(),
@@ -157,6 +159,51 @@ describe('Extension AuthService', () => {
                 setOfflineComponents();
                 await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.SESSION_LOCKED);
+            });
+
+            test('should reset the resume-scheduler state so post-unlock resumes are not throttled', async () => {
+                const resetAutoResume = jest.spyOn(auth.alarms, 'resetAutoResume').mockResolvedValue(undefined);
+                await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
+                expect(resetAutoResume).toHaveBeenCalled();
+            });
+        });
+
+        describe('`onLockUpdate`', () => {
+            beforeEach(() => {
+                jest.spyOn(auth.alarms, 'setAutoLock').mockResolvedValue(undefined);
+            });
+
+            test('should clear the auto-lock alarm before any rearm', async () => {
+                await auth.config.onLockUpdate?.({ mode: LockMode.SESSION, locked: false, ttl: 600 }, undefined, false);
+                expect(auth.alarms.clearAutoLock).toHaveBeenCalled();
+            });
+
+            test('should NOT call `setAutoLock` when `LockMode.NONE`', async () => {
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+                await auth.config.onLockUpdate?.({ mode: LockMode.NONE, locked: false }, undefined, false);
+                expect(auth.alarms.setAutoLock).not.toHaveBeenCalled();
+            });
+
+            test('should call `setAutoLock(ttl)` when booted with a valid mode + ttl', async () => {
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+                await auth.config.onLockUpdate?.({ mode: LockMode.SESSION, locked: false, ttl: 600 }, undefined, false);
+                expect(auth.alarms.setAutoLock).toHaveBeenCalledWith(600);
+            });
+
+            test('should NOT call `setAutoLock` when not booted', async () => {
+                ctx.status = AppStatus.IDLE;
+                ctx.booted = false;
+                await auth.config.onLockUpdate?.({ mode: LockMode.SESSION, locked: false, ttl: 600 }, undefined, false);
+                expect(auth.alarms.setAutoLock).not.toHaveBeenCalled();
+            });
+
+            test('should NOT call `setAutoLock` when `ttl` is missing', async () => {
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+                await auth.config.onLockUpdate?.({ mode: LockMode.SESSION, locked: false }, undefined, false);
+                expect(auth.alarms.setAutoLock).not.toHaveBeenCalled();
             });
         });
 
@@ -308,6 +355,35 @@ describe('Extension AuthService', () => {
 
                 expect(result).toBe(true);
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: true }));
+            });
+
+            test('should set `PASSWORD_LOCKED` instead of offline-booting when force-locked', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = false;
+                ctx.booted = false;
+                (ctx.service.storage.local.getItem as jest.Mock).mockImplementation(async (key: string) =>
+                    key === 'forceLock' ? true : undefined
+                );
+
+                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(false);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: true }));
+            });
+
+            test('should offline-boot normally when not force-locked', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = false;
+                ctx.booted = false;
+
+                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(false);
+                expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: true }));
+                expect(ctx.setStatus).not.toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
             });
         });
 
