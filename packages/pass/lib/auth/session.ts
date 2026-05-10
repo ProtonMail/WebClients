@@ -33,6 +33,7 @@ export type AuthSession = {
     LocalID?: number;
     lockMode: LockMode;
     lockTTL?: number;
+    lockLastExtendTime?: number;
     offlineConfig?: OfflineConfig;
     offlineKD?: string;
     offlineVerifier?: string;
@@ -67,6 +68,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'LocalID',
     'lockMode',
     'lockTTL',
+    'lockLastExtendTime',
     'offlineConfig',
     'offlineKD',
     'offlineVerifier',
