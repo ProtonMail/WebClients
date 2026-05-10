@@ -11,6 +11,7 @@ const browser = {
             return false;
         }),
         getManifest: () => ({}),
+        requestUpdateCheck: jest.fn().mockResolvedValue(['no_update']),
         onMessage: {
             addListener: jest.fn(),
             removeListener: jest.fn(),
@@ -19,6 +20,11 @@ const browser = {
     permissions: {
         request: jest.fn(async () => true),
         contains: jest.fn(async () => true),
+        onAdded: { addListener: jest.fn() },
+        onRemoved: { addListener: jest.fn() },
+    },
+    action: {
+        setBadgeBackgroundColor: jest.fn().mockResolvedValue(undefined),
     },
     privacy: {
         services: {
@@ -33,16 +39,23 @@ const browser = {
         onAlarm: { addListener: jest.fn() },
     },
     webNavigation: { getAllFrames: jest.fn(async () => []) },
-    tabs: { sendMessage: jest.fn(async () => ({})) },
+    tabs: {
+        sendMessage: jest.fn(async () => ({})),
+        query: jest.fn(async () => []),
+    },
 };
 
 export const clearBrowserMocks = () => {
     browser.runtime.getURL.mockClear();
     browser.runtime.sendMessage.mockClear();
+    browser.runtime.requestUpdateCheck.mockClear();
     browser.runtime.onMessage.addListener.mockClear();
     browser.runtime.onMessage.removeListener.mockClear();
     browser.permissions.request.mockClear();
     browser.permissions.contains.mockClear();
+    browser.permissions.onAdded.addListener.mockClear();
+    browser.permissions.onRemoved.addListener.mockClear();
+    browser.action.setBadgeBackgroundColor.mockClear();
     browser.privacy.services.autofillAddressEnabled.get.mockClear();
     browser.privacy.services.autofillAddressEnabled.set.mockClear();
     browser.privacy.services.passwordSavingEnabled.get.mockClear();
@@ -53,6 +66,7 @@ export const clearBrowserMocks = () => {
     browser.alarms.onAlarm.addListener.mockClear();
     browser.webNavigation.getAllFrames.mockClear();
     browser.tabs.sendMessage.mockClear();
+    browser.tabs.query.mockClear();
 };
 
 export default browser;
