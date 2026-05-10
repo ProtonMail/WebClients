@@ -64,7 +64,7 @@ import noop from '@proton/utils/noop';
 
 import type { AuthAlarms } from './auth.alarms';
 import { createAuthAlarms } from './auth.alarms';
-import { shouldForceLock, validateExtensionForkPayload } from './auth.utils';
+import { isOfflineModeEnabled, shouldForceLock, validateExtensionForkPayload } from './auth.utils';
 
 export interface ExtensionAuthService extends AuthService {
     /** Starts extension specific listeners. Moved outside
@@ -239,7 +239,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.setBooted(false);
 
             const offline = !ctx.service.connectivity.online;
-            const forcePasswordLock = offline && authStore.hasOfflineComponents();
+            const forcePasswordLock = offline && authStore.hasOfflineComponents() && (await isOfflineModeEnabled());
 
             if (forcePasswordLock) ctx.setStatus(AppStatus.PASSWORD_LOCKED);
             else ctx.setStatus(AppStatusFromLockMode[mode]);
@@ -281,7 +281,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const offline = !ctx.service.connectivity.online;
             const booted = ctx.booted;
 
-            if (hasOfflineSession && offline && !booted) {
+            if (hasOfflineSession && offline && !booted && (await isOfflineModeEnabled())) {
                 if (await shouldForceLock()) ctx.setStatus(AppStatus.PASSWORD_LOCKED);
                 else boot({ offline: true });
                 return false;
@@ -332,7 +332,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                  * of partial downtime (eg: `/ping` returns 200 but `/auth` routes 5xx) */
                 const connectionIssue = getIsConnectionIssue(err);
                 const hasOfflineComponents = authStore.hasOfflineComponents();
-                const canOfflineUnlock = connectionIssue && hasOfflineComponents;
+                const canOfflineUnlock = connectionIssue && hasOfflineComponents && (await isOfflineModeEnabled());
                 const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
 
                 /** If the user managed to unlock during the sequence but session resuming
@@ -468,14 +468,18 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     };
 
     /** Force password-lock when user explicitly switches to offline mode */
-    const handleOfflineSwitch: MessageHandlerCallback<WorkerMessageType.AUTH_OFFLINE_SWITCH> = withContext((ctx) => {
-        if (!ctx.service.connectivity.online) {
-            ctx.setBooted(false);
-            ctx.setStatus(AppStatus.PASSWORD_LOCKED);
-        }
+    const handleOfflineSwitch: MessageHandlerCallback<WorkerMessageType.AUTH_OFFLINE_SWITCH> = withContext(
+        async (ctx) => {
+            if (!(await isOfflineModeEnabled())) return false;
 
-        return true;
-    });
+            if (!ctx.service.connectivity.online) {
+                ctx.setBooted(false);
+                ctx.setStatus(AppStatus.PASSWORD_LOCKED);
+            }
+
+            return true;
+        }
+    );
 
     authService.listen = withContext<() => void>((ctx) => {
         void alarms.hydrate();
