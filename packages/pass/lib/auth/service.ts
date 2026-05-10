@@ -12,10 +12,8 @@ import type { Notification } from '@proton/pass/store/actions/enhancers/notifica
 import type { Api, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { deleteKey } from '@proton/pass/utils/object/zero';
@@ -298,8 +296,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
             await api.reset();
             authStore.clear();
-            authService.resumeSession.resetCount();
-
             config.onLogoutComplete?.(userID, localID, options.broadcast ?? true);
 
             return true;
@@ -594,69 +590,60 @@ export const createAuthService = (config: AuthServiceConfig) => {
             logger.info(`[AuthService] Synced persisted session ${localID ?? 0} [${updatedKeys}]`);
         },
 
-        resumeSession: withCallCount(
-            pipe(
-                async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
-                    try {
-                        const memorySession = await config.getMemorySession?.(localID);
-                        const persistedSession = await config.getPersistedSession(localID);
-                        const validMemorySession = memorySession && authStore.validSession(memorySession);
-                        const hasSession = Boolean(validMemorySession || persistedSession);
+        resumeSession: async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
+            try {
+                const memorySession = await config.getMemorySession?.(localID);
+                const persistedSession = await config.getPersistedSession(localID);
+                const validMemorySession = memorySession && authStore.validSession(memorySession);
+                const hasSession = Boolean(validMemorySession || persistedSession);
 
-                        const proceed = (await config.onResumeStart?.({ hasSession, memorySession })) ?? true;
-                        if (!proceed) return false;
+                const proceed = (await config.onResumeStart?.({ hasSession, memorySession })) ?? true;
+                if (!proceed) return false;
 
-                        if (validMemorySession) {
-                            logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
-                            options.forcePersist = options.forcePersist || !persistedSession;
-                            return await authService.login(memorySession, options);
-                        }
+                if (validMemorySession) {
+                    logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
+                    options.forcePersist = options.forcePersist || !persistedSession;
+                    return await authService.login(memorySession, options);
+                }
 
-                        if (!persistedSession) {
-                            /** If we have no persisted session to resume from, exit early */
-                            logger.info(`[AuthService] No persisted session found`);
-                            config.onSessionEmpty?.();
-                            return false;
-                        }
+                if (!persistedSession) {
+                    /** If we have no persisted session to resume from, exit early */
+                    logger.info(`[AuthService] No persisted session found`);
+                    config.onSessionEmpty?.();
+                    return false;
+                }
 
-                        logger.info(`[AuthService] Resuming persisted session [lock=${options.forceLock ?? false}]`);
-                        await config.onLoginStart?.();
+                logger.info(`[AuthService] Resuming persisted session [lock=${options.forceLock ?? false}]`);
+                await config.onLoginStart?.();
 
-                        /** Partially configure the auth store before resume sequence. `keyPassword`
-                         * and `sessionLockToken` may be still encrypted at this point */
-                        authStore.setSession(persistedSession);
-                        await api.reset();
+                /** Partially configure the auth store before resume sequence. `keyPassword`
+                 * and `sessionLockToken` may be still encrypted at this point */
+                authStore.setSession(persistedSession);
+                await api.reset();
 
-                        const result = await resumeSession(persistedSession, localID, config, options);
+                const result = await resumeSession(persistedSession, localID, config, options);
 
-                        logger.info(`[AuthService] Session successfully resumed`);
-                        options.forcePersist = options.forcePersist || result.repersist;
-                        return await authService.login(result.session, options);
-                    } catch (error: unknown) {
-                        if (error instanceof Error) {
-                            const text = c('Warning').t`Your session could not be resumed.`;
-                            const errorMessage = getErrorMessage(error);
-                            logger.warn(`[AuthService] Resuming session failed: ${errorMessage}`);
-                            if (!options.silence) config.onNotification?.({ text, type: 'error', errorMessage });
-                        }
+                logger.info(`[AuthService] Session successfully resumed`);
+                options.forcePersist = options.forcePersist || result.repersist;
+                return await authService.login(result.session, options);
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    const text = c('Warning').t`Your session could not be resumed.`;
+                    const errorMessage = getErrorMessage(error);
+                    logger.warn(`[AuthService] Resuming session failed: ${errorMessage}`);
+                    if (!options.silence) config.onNotification?.({ text, type: 'error', errorMessage });
+                }
 
-                        /** If a session fails to resume due to reasons other than being locked,
-                         * inactive, or offline, the sessionFailure callback should trigger the
-                         * resuming process. Session errors will be managed by the API listener. */
-                        const { sessionLocked, sessionInactive } = api.getState();
-                        const sessionFailure = !(sessionLocked || sessionInactive);
-                        if (sessionFailure) await config.onSessionFailure?.(options, error);
+                /** If a session fails to resume due to reasons other than being locked,
+                 * inactive, or offline, the sessionFailure callback should trigger the
+                 * resuming process. Session errors will be managed by the API listener. */
+                const { sessionLocked, sessionInactive } = api.getState();
+                const sessionFailure = !(sessionLocked || sessionInactive);
+                if (sessionFailure) await config.onSessionFailure?.(options, error);
 
-                        return false;
-                    }
-                },
-                tap((resumed) => {
-                    /** Reset the internal resume session count when session
-                     * resuming succeeds */
-                    if (resumed) authService.resumeSession.resetCount();
-                })
-            )
-        ),
+                return false;
+            }
+        },
 
         /** Password confirmation can either be verified offline or online.
          * In `srp` mode, we will verify the user's password through SRP
