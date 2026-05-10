@@ -10,6 +10,7 @@ import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { Api, Maybe } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
@@ -104,6 +105,11 @@ describe('Auth integration', () => {
                 apiProxy: { clear: jest.fn() },
                 autofill: { clear: jest.fn() },
                 connectivity,
+                featureFlags: {
+                    resolve: jest
+                        .fn()
+                        .mockResolvedValue({ features: { [PassFeature.PassExtensionOfflineV1]: true }, variants: {} }),
+                },
                 formTracker: { clear: jest.fn() },
                 logger: { clear: jest.fn() },
                 nativeMessaging: { disconnect: jest.fn() },
