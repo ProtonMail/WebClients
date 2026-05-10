@@ -9,7 +9,6 @@ import { createAuthService } from 'proton-pass-web/lib/auth';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { useCheckConnectivity, useOnlineRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
@@ -21,6 +20,7 @@ import { getConsumeForkParameters, getStateKey } from '@proton/pass/lib/auth/for
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -37,16 +37,17 @@ export const useAuthService = createUseContext(AuthServiceContext);
  * to be able to leverage the history object provided by `react-router-dom` and the
  * notifications handler. Ideally this could live outside of react-land by moving the
  * authentication service to an event-bus architecture.. */
-export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
+export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: ConnectivityService }>> = ({
+    children,
+    connectivity,
+}) => {
     const core = usePassCore();
     const { createNotification } = useNotifications();
     const { getCurrentLocation } = useNavigationActions();
     const sw = useServiceWorker();
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
-    const online = useOnlineRef();
     const authSwitch = useAuthSwitch();
-    const checkConnectivity = useCheckConnectivity();
     const enhance = useNotificationEnhancer();
 
     const authService = useInstance(() =>
@@ -55,9 +56,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             authSwitch,
             config,
             core,
+            connectivity,
             history,
             sw,
-            getOnline: () => online.current,
             onNotification: (notification) =>
                 createNotification(
                     enhance({
@@ -95,7 +96,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     persistent,
                 });
             } else {
-                await checkConnectivity?.();
+                await connectivity.check();
                 return authService.init({ forcePersist: true });
             }
         };
