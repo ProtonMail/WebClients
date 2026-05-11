@@ -147,11 +147,11 @@ export enum CalendarFeatureFlag {
     CalendarMetrics = 'CalendarMetrics',
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
-    CalendarExternalBookings = 'CalendarExternalBookings',
 }
 
 export enum CalendarKillSwitchFlag {
     ZoomIntegrationDisabled = 'ZoomIntegrationDisabled',
+    CalendarExternalBookingsDisabled = 'CalendarExternalBookingsDisabled',
 }
 
 enum DriveFeatureFlag {
@@ -359,6 +359,7 @@ export type FeatureFlag =
     | `${AccountFlag}`
     | `${PaymentsFlag}`
     | `${CalendarFeatureFlag}`
+    | `${CalendarKillSwitchFlag}`
     | `${DriveFeatureFlag}`
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
