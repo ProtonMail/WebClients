@@ -15,20 +15,17 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { IcPlusCircleFilled } from '@proton/icons/icons/IcPlusCircleFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAX_IPS_ADDON } from '@proton/payments';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import range from '@proton/utils/range';
 
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { Gateway } from './Gateway';
-import GatewayAddServersModal from './GatewayAddServersModal';
-import type { GatewayLocation } from './GatewayLocation';
-import type { GatewayLogical } from './GatewayLogical';
-import type { GatewayUser } from './GatewayUser';
-import RemoveServerConfirmationModal from './RemoveServerConfirmationModal';
-import { getFormattedLoad, getLocationFromId, getSuffix, getTotalAdded } from './helpers';
+import { getFormattedLoad, getLocationFromId, getSuffix, getTotalAdded } from '../../functions/gatewayHelpers';
+import type { Gateway, GatewayLocation, GatewayLogical, GatewayUser } from '../../types/Gateway';
+import { GatewayAddServersModal } from './GatewayAddServersModal';
+import { RemoveServerConfirmationModal } from './RemoveServerConfirmationModal';
 
 interface Props extends ModalProps<typeof Form> {
     gateway: Gateway;
@@ -48,7 +45,7 @@ interface Props extends ModalProps<typeof Form> {
     onUpsell: () => void;
 }
 
-const GatewayServersModal = ({
+export const GatewayServersModal = ({
     gateway,
     locations,
     countryOptions,
@@ -435,5 +432,3 @@ const GatewayServersModal = ({
         </>
     );
 };
-
-export default GatewayServersModal;
