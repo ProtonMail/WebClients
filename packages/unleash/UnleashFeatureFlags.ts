@@ -246,18 +246,20 @@ export enum MailFeatureFlag {
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
-    MailPostSignupOneDollarPromoDisabled = 'MailPostSignupOneDollarPromoDisabled',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     RemoveReplyStyles = 'RemoveReplyStyles',
-    // Category view flags
-    // Used to control the whole category view
+    // Category view flags, used to control the whole category view
     CategoryView = 'CategoryView',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
-    EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     MailStoreDebugMode = 'MailStoreDebugMode',
-    MailInfitiniteLoopRateLimiterEnabled = 'MailInfitiniteLoopRateLimiterEnabled',
+}
+
+enum MailKillSwitchFlag {
+    MailPostSignupOneDollarPromoDisabled = 'MailPostSignupOneDollarPromoDisabled',
+    MailInfitiniteLoopRateLimiterDisabled = 'MailInfitiniteLoopRateLimiterDisabled',
+    EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     // Refreshed toolbar UI flags
     RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
@@ -358,6 +360,7 @@ export type FeatureFlag =
     | `${DriveFeatureFlag}`
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
+    | `${MailKillSwitchFlag}`
     | `${AdminFeatureFlag}`
     | `${WalletFlag}`
     | `${MeetFeatureFlag}`
