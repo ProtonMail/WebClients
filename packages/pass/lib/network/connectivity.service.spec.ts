@@ -296,6 +296,34 @@ describe('ConnectivityService', () => {
         service.destroy();
     });
 
+    test('uses injected getRetryTimeout for retry scheduling', async () => {
+        /** 1. Set navigator.onLine = true & initial online API state */
+        const { api, setState, publish } = setupMockAPI();
+        setNavigatorOnline(true);
+        setState({ online: true, unreachable: false });
+
+        /** 2. Inject custom strategy: flat 1000ms regardless of status */
+        const getRetryTimeout = jest.fn(() => 1_000);
+        const service = createConnectivityService({ api, getRetryTimeout });
+
+        /** 3. Wait for initial `check` */
+        await initService(service, api);
+
+        /** 4. Publish OFFLINE → handler uses injected timeout, NOT CONNECTIVITY_RETRY_TIMEOUT */
+        publish({ type: 'connectivity', online: false, unreachable: false });
+        expect(service.retryHandler).not.toBe(null);
+
+        await expectNextCheck(api, 1_000);
+        expect(getRetryTimeout).toHaveBeenCalledWith(ConnectivityStatus.OFFLINE, 0);
+
+        /** 5. Publish DOWNTIME → still 1000ms, ignoring default fib schedule */
+        publish({ type: 'connectivity', online: true, unreachable: true });
+        await expectNextCheck(api, 1_000);
+        expect(getRetryTimeout).toHaveBeenCalledWith(ConnectivityStatus.DOWNTIME, expect.any(Number));
+
+        service.destroy();
+    });
+
     test('destroy cancels deferred retry before any check fires', async () => {
         /** 1. Set navigator.onLine = false & initial offline API state */
         const { api, setState } = setupMockAPI();
