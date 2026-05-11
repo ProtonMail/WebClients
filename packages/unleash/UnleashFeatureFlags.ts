@@ -151,7 +151,6 @@ export enum CalendarKillSwitchFlag {
     ZoomIntegrationDisabled = 'ZoomIntegrationDisabled',
     CalendarExternalBookingsDisabled = 'CalendarExternalBookingsDisabled',
     CalendarBookingsDisabled = 'CalendarBookingsDisabled',
-    VideoConferenceWidgetDisabled = 'VideoConferenceWidgetDisabled',
 }
 
 enum DriveFeatureFlag {
