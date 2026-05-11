@@ -61,7 +61,7 @@ const AccessTokensList: FC = () => {
             className="flex items-center gap-1 shrink-0"
         >
             <IcPlus size={3} />
-            {c('pass_2026: Action').t`New token`}
+            {c('Action').t`New token`}
         </Button>
     );
 
@@ -69,10 +69,9 @@ const AccessTokensList: FC = () => {
         if (!list.loading && tokens.length === 0) {
             return (
                 <div className="flex flex-column items-center text-center py-2 gap-2">
-                    <strong>{c('pass_2026: Title').t`No access tokens yet`}</strong>
+                    <strong>{c('Title').t`No access tokens yet`}</strong>
                     <span className="color-weak text-sm">
-                        {c('pass_2026: Info')
-                            .t`Create a token to integrate ${PASS_APP_NAME} with your scripts and tools.`}
+                        {c('Info').t`Create a token to integrate ${PASS_APP_NAME} with your scripts and tools.`}
                     </span>
                     <div className="mt-2">{createNewTokenBtn}</div>
                 </div>
@@ -108,10 +107,10 @@ const AccessTokensList: FC = () => {
                 return (
                     <ConfirmationPrompt
                         danger
-                        title={c('pass_2026: Title').t`Delete access token?`}
+                        title={c('Title').t`Delete access token?`}
                         message={
                             <span className="text-break">
-                                {c('pass_2026: Info')
+                                {c('Info')
                                     .t`Access token "${action.token.Name}" will stop working immediately. This action cannot be undone.`}
                             </span>
                         }
@@ -135,9 +134,9 @@ const AccessTokensList: FC = () => {
 
 const AccessTokensUpgrade: FC = () => (
     <div className="flex flex-column items-center text-center py-2 gap-3">
-        <strong>{c('pass_2026: Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
+        <strong>{c('Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
         <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
-            {c('pass_2026: Info')
+            {c('Info')
                 .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`}
         </span>
         <UpgradeButton upsellRef={UpsellRef.SETTING} />
@@ -159,12 +158,12 @@ export const AccessTokens: FC = () => {
             contentClassname="flex flex-column flex-nowrap pt-6 pb-2"
             title={
                 <span className="flex items-center gap-1.5">
-                    <IcKey size={3.5} /> {c('pass_2026: Label').t`Access tokens`}
+                    <IcKey size={3.5} /> {c('Label').t`Access tokens`}
                 </span>
             }
             subTitle={
                 <span className="block mt-2">
-                    {c('pass_2026: Info')
+                    {c('Info')
                         .jt`Access tokens, used together with ${passCliLink}, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.`}
                 </span>
             }

@@ -56,11 +56,11 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
         const trimmedName = name.trim();
 
         if (!trimmedName) {
-            setNameError(c('pass_2026: Error').t`Name is required`);
+            setNameError(c('Error').t`Name is required`);
             return;
         }
         if (trimmedName.length > MAX_NAME_LENGTH) {
-            setNameError(c('pass_2026: Error').t`Name must be 191 characters or fewer`);
+            setNameError(c('Error').t`Name must be 191 characters or fewer`);
             return;
         }
 
@@ -71,7 +71,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
             minutes < MIN_EXPIRATION_MINUTES ||
             minutes > MAX_EXPIRATION_MINUTES
         ) {
-            setMinutesError(c('pass_2026: Error').t`Expiration must be between 60 minutes and 1 year`);
+            setMinutesError(c('Error').t`Expiration must be between 60 minutes and 1 year`);
             return;
         }
 
@@ -88,12 +88,12 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
 
     return (
         <PassModal open onClose={onClose} onReset={onClose} size="large">
-            <ModalTwoHeader title={c('pass_2026: Title').t`Create new access token`} />
+            <ModalTwoHeader title={c('Title').t`Create new access token`} />
             <ModalTwoContent className="pt-2">
                 <InputFieldTwo
                     id="pat-name"
-                    label={c('pass_2026: Label').t`Token name`}
-                    placeholder={c('pass_2026: Placeholder').t`e.g. My automation script`}
+                    label={c('Label').t`Token name`}
+                    placeholder={c('Placeholder').t`e.g. My automation script`}
                     value={name}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         setName(e.target.value);
@@ -112,9 +112,9 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     min={MIN_EXPIRATION_MINUTES}
                     max={MAX_EXPIRATION_MINUTES}
                     step={1}
-                    label={c('pass_2026: Label').t`Expires in (minutes)`}
-                    hint={c('pass_2026: Info').t`Between 60 (1 hour) and 525600 (1 year)`}
-                    placeholder={c('pass_2026: Placeholder').t`e.g. 60`}
+                    label={c('Label').t`Expires in (minutes)`}
+                    hint={c('Info').t`Between 60 (1 hour) and 525600 (1 year)`}
+                    placeholder={c('Placeholder').t`e.g. 60`}
                     value={expirationMinutes}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         setExpirationMinutes(e.target.value);
@@ -128,10 +128,10 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                 <div className="flex items-start justify-space-between gap-4 mb-4">
                     <div className="flex-1">
                         <label htmlFor="pat-agent" className="text-bold block">
-                            {c('pass_2026: Label').t`Use for AI agent`}
+                            {c('Label').t`Use for AI agent`}
                         </label>
                         <span className="text-sm color-weak block mt-1">
-                            {c('pass_2026: Info')
+                            {c('Info')
                                 .t`The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.`}
                         </span>
                     </div>
@@ -146,17 +146,17 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
 
                 <div>
                     <div className="flex items-baseline justify-space-between mb-1">
-                        <h3 className="text-bold text-lg m-0">{c('pass_2026: Label').t`Vault access`}</h3>
+                        <h3 className="text-bold text-lg m-0">{c('Label').t`Vault access`}</h3>
                         {vaults.length > 0 && (
                             <span className="text-sm color-weak">
                                 {selectedShareIds.size > 0
-                                    ? c('pass_2026: Info').t`${selectedShareIds.size} selected`
-                                    : c('pass_2026: Info').t`None selected`}
+                                    ? c('Info').t`${selectedShareIds.size} selected`
+                                    : c('Info').t`None selected`}
                             </span>
                         )}
                     </div>
                     <p className="text-sm color-weak mt-0 mb-2">
-                        {c('pass_2026: Info')
+                        {c('Info')
                             .t`This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.`}
                     </p>
                     <VaultMultiSelect
@@ -177,7 +177,7 @@ export const CreateTokenModal: FC<Props> = ({ onClose, onCreated }) => {
                     loading={create.loading}
                     disabled={create.loading || selectedShareIds.size === 0}
                 >
-                    {c('pass_2026: Action').t`Create token`}
+                    {c('Action').t`Create token`}
                 </Button>
             </ModalTwoFooter>
         </PassModal>
