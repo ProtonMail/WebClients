@@ -13,8 +13,8 @@ import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { Unpack } from '@proton/pass/types';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -38,7 +38,7 @@ const getSettingsTabs = (
     ...(!aliasCreationDisabled ? [{ hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
     ...(accessTokensEnabled
-        ? [{ hash: 'access-tokens', title: c('pass_2026: Label').t`Access tokens`, content: <AccessTokens /> }]
+        ? [{ hash: 'access-tokens', title: c('Label').t`Access tokens`, content: <AccessTokens /> }]
         : []),
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: exportTab },

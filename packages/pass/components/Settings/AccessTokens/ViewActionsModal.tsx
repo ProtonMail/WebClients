@@ -70,10 +70,10 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
 
     return (
         <PassModal open onClose={onClose} onReset={onClose} size="xlarge" enableCloseWhenClickOutside>
-            <ModalTwoHeader title={c('pass_2026: Title').t`Activity for "${token.Name}"`} />
+            <ModalTwoHeader title={c('Title').t`Activity for "${token.Name}"`} />
             <ModalTwoContent className="min-h-custom flex flex-column" style={{ '--min-h-custom': '10rem' }}>
                 <p className="color-weak mt-0 mb-3">
-                    {c('pass_2026: Info').t`Every action this agent token has performed, newest first.`}
+                    {c('Info').t`Every action this agent token has performed, newest first.`}
                 </p>
 
                 {(() => {
@@ -83,9 +83,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                 {initialLoading ? (
                                     <CircleLoader size="medium" />
                                 ) : (
-                                    <span className="color-weak">
-                                        {c('pass_2026: Info').t`No activity recorded yet.`}
-                                    </span>
+                                    <span className="color-weak">{c('Info').t`No activity recorded yet.`}</span>
                                 )}
                             </div>
                         );
@@ -106,7 +104,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                     >
                                         <div className="flex flex-nowrap items-baseline justify-space-between gap-3 mb-2">
                                             <strong className="text-ellipsis">
-                                                {label ?? c('pass_2026: Activity').t`Activity`}
+                                                {label ?? c('Activity').t`Activity`}
                                             </strong>
                                             <span className="text-sm color-weak shrink-0">
                                                 {epochToDateTime(ActionTime)}
@@ -116,9 +114,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                             <dl className="m-0 grid gap-x-3 gap-y-1 text-sm" style={fieldGrid}>
                                                 {payload.itemName && (
                                                     <>
-                                                        <dt className="color-weak m-0">
-                                                            {c('pass_2026: Activity').t`Item`}
-                                                        </dt>
+                                                        <dt className="color-weak m-0">{c('Activity').t`Item`}</dt>
                                                         <dd className="m-0 text-ellipsis" title={payload.itemName}>
                                                             {payload.itemName}
                                                         </dd>
@@ -126,9 +122,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                                 )}
                                                 {payload.vaultName && (
                                                     <>
-                                                        <dt className="color-weak m-0">
-                                                            {c('pass_2026: Activity').t`Vault`}
-                                                        </dt>
+                                                        <dt className="color-weak m-0">{c('Activity').t`Vault`}</dt>
                                                         <dd className="m-0 text-ellipsis" title={payload.vaultName}>
                                                             {payload.vaultName}
                                                         </dd>
@@ -136,9 +130,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                                 )}
                                                 {payload.folderName && (
                                                     <>
-                                                        <dt className="color-weak m-0">
-                                                            {c('pass_2026: Activity').t`Folder`}
-                                                        </dt>
+                                                        <dt className="color-weak m-0">{c('Activity').t`Folder`}</dt>
                                                         <dd className="m-0 text-ellipsis" title={payload.folderName}>
                                                             {payload.folderName}
                                                         </dd>
@@ -146,9 +138,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                                 )}
                                                 {payload.reason && (
                                                     <>
-                                                        <dt className="color-weak m-0">
-                                                            {c('pass_2026: Activity').t`Reason`}
-                                                        </dt>
+                                                        <dt className="color-weak m-0">{c('Activity').t`Reason`}</dt>
                                                         <dd className="m-0 text-break">{payload.reason}</dd>
                                                     </>
                                                 )}
@@ -156,7 +146,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                         )}
                                         {isDecodeError && (
                                             <div className="text-sm color-weak text-italic">
-                                                {c('pass_2026: Activity').t`Activity details could not be loaded.`}
+                                                {c('Activity').t`Activity details could not be loaded.`}
                                             </div>
                                         )}
                                     </div>
@@ -171,7 +161,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                     loading={getActions.loading}
                                     className="w-full mt-2 shrink-0 rounded-none"
                                 >
-                                    {c('pass_2026: Action').t`Load more`}
+                                    {c('Action').t`Load more`}
                                 </Button>
                             )}
                         </div>
