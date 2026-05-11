@@ -635,15 +635,22 @@ export function sortSheetsByIndex<S extends BaseSheet>(sheets: S[], includeHidde
 
 const LOCK_START_THRESHOLD = seconds_to_ms(2.5)
 const MAX_LOCK_DURATION = minutes_to_ms(5)
-const CLIENT_VERSION = 1
+const CLIENT_VERSION = 2
 
-const versionToMigrationMap: Record<number, Function> = {
-  // 2: () => {},
+const versionToMigrationMap: Record<number, (state: ProtonSheetsState) => void> = {
+  2: (state) => {
+    // Required because of a change upstream to make certain conditional formatting
+    // comparators (e.g. number_eq) be calculated asynchronously instead of blocking,
+    // to achieve parity with excel. These only need to be called once as the results
+    // are then stored in the yjs state.
+    state.evaluateConditionalFormatting()
+    state.evaluateDataValidations()
+  },
 }
 
 export function useVersioning(
   canRunMigration: boolean,
-  yjsState: ReturnType<typeof useYjsState>,
+  state: ProtonSheetsState,
   handleIncompatibleClientVersion: () => void,
   reloadClient: () => void,
 ) {
@@ -654,7 +661,7 @@ export function useVersioning(
   const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
   const { receivedEverythingFromRTS } = useSyncedState()
   const version = useKeyValueState((state) => state.version)
-  const { kvSet, clientID } = yjsState
+  const { kvSet, clientID } = state.yjsState
   const startThresholdTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const lockDurationTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -694,7 +701,7 @@ export function useVersioning(
     for (let i = currentVersion + 1; i <= CLIENT_VERSION; i++) {
       const migrationFunction = versionToMigrationMap[i]
       if (migrationFunction) {
-        migrationFunction()
+        migrationFunction(state)
       }
     }
     logger.info('versioning: setting version')

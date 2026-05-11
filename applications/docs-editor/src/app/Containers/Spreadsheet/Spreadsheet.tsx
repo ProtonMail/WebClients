@@ -91,7 +91,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const state = useProtonSheetsState({ docState, functions, isReadonly })
   const { setInitialVersion } = useVersioning(
     canRunMigration,
-    state.yjsState,
+    state,
     () => {
       void clientInvoker.reportUserInterfaceError(
         new Error(
