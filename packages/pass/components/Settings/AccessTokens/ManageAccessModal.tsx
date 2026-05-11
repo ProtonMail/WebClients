@@ -69,7 +69,7 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
         <PassModal open onClose={onClose} onReset={onClose} size="large" enableCloseWhenClickOutside>
             <ModalTwoHeader title={c('pass_2026: Title').t`Manage vault access`} />
             <ModalTwoContent>
-                <p className="color-weak mt-0 mb-3">
+                <p className="color-weak mt-0 mb-3 text-break">
                     {c('pass_2026: Info').t`Select the vaults "${token.Name}" can read.`}
                 </p>
 
