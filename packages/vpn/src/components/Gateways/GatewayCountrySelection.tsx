@@ -8,18 +8,16 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { useNow } from '@proton/components/hooks/useNow';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
 
+import { getLocationDisplayName, getLocationFromId, getLocationId } from '../../functions/gatewayHelpers';
+import type { DeletedDedicatedIp, GatewayDto, GatewayLocation } from '../../types/Gateway';
 import { ButtonNumberInput } from './ButtonNumberInput';
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayLocation } from './GatewayLocation';
-import { getLocationDisplayName, getLocationFromId, getLocationId } from './helpers';
 
 interface Props {
     locations: readonly GatewayLocation[];
@@ -156,7 +154,7 @@ export const GatewayCountrySelection = ({
                         const availableAgainAfterHours = Math.ceil(availableAgainAfterSeconds / 3600);
                         const availableAgainAfterDays = Math.ceil(availableAgainAfterSeconds / 3600 / 24);
                         return (
-                            <div>
+                            <div key={deletedDedicatedIp.LogicalID}>
                                 <Label>
                                     <Checkbox
                                         checked={isLocationChecked(deletedDedicatedIp.Location)}
@@ -251,5 +249,3 @@ export const GatewayCountrySelection = ({
         </>
     );
 };
-
-export default GatewayCountrySelection;

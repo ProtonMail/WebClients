@@ -1,6 +1,4 @@
-import { act } from 'react-dom/test-utils';
-
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -8,11 +6,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNow } from '@proton/components/hooks/useNow';
 import { useIsB2BTrial } from '@proton/payments/ui';
 
-import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
+import { getInitialModel } from '../../functions/gatewayHelpers';
+import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayLocation } from './GatewayLocation';
-import { getInitialModel } from './helpers';
 
 jest.mock('@proton/account/organization/hooks');
 jest.mock('@proton/account/subscription/hooks');
@@ -50,7 +46,7 @@ describe('GatewayCountrySelection', () => {
         },
     ];
 
-    const defaultModel: GatewayDto = getInitialModel(mockLocations);
+    const defaultModel = getInitialModel(mockLocations);
 
     const defaultProps = {
         locations: mockLocations,

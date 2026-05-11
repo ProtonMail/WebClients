@@ -4,14 +4,14 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import clsx from '@proton/utils/clsx';
 
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { GatewayLocation } from './GatewayLocation';
-import { getLocationDisplayName } from './helpers';
+import { getLocationDisplayName } from '../../functions/gatewayHelpers';
+import type { GatewayLocation } from '../../types/Gateway';
 
 export const ButtonNumberInput = ({
     value,
@@ -99,7 +99,7 @@ export const ButtonNumberInput = ({
                         autoComplete="off"
                         min={min}
                         max={max}
-                        value={tmpValue}
+                        value={tmpValue ?? min}
                         id={id}
                         className="w-custom border-left border-right text-center"
                         style={{ '--w-custom': '6em' }}
