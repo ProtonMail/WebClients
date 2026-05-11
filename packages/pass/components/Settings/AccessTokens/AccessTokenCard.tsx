@@ -35,11 +35,11 @@ const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
 const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType } => {
     switch (status) {
         case 'expired':
-            return { label: c('pass_2026: Status').t`Expired`, type: 'error' };
+            return { label: c('Status').t`Expired`, type: 'error' };
         case 'expiring':
-            return { label: c('pass_2026: Status').t`Expiring soon`, type: 'warning' };
+            return { label: c('Status').t`Expiring soon`, type: 'warning' };
         default:
-            return { label: c('pass_2026: Status').t`Active`, type: 'success' };
+            return { label: c('Status').t`Active`, type: 'success' };
     }
 };
 
@@ -47,11 +47,11 @@ const getExpiryLabel = (expireTime: number): string => {
     const hours = epochHoursFromNow(expireTime);
     if (hours < 0) {
         const abs = Math.abs(hours);
-        return c('pass_2026: Info').ngettext(msgid`Expired ${abs} hour ago`, `Expired ${abs} hours ago`, abs);
+        return c('Info').ngettext(msgid`Expired ${abs} hour ago`, `Expired ${abs} hours ago`, abs);
     }
 
-    if (hours === 0) return c('pass_2026: Info').t`Expires in less than an hour`;
-    return c('pass_2026: Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
+    if (hours === 0) return c('Info').t`Expires in less than an hour`;
+    return c('Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
 };
 
 const getTokenStatus = (expireTime: number): TokenStatus => {
@@ -89,14 +89,14 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
                     </Badge>
                     {token.Flags?.PassAgent && (
                         <Badge type="info" className={BADGE_CLASSNAMES}>
-                            {c('pass_2026: Status').t`Agent`}
+                            {c('Status').t`Agent`}
                         </Badge>
                     )}
                 </div>
                 <div className="text-sm color-weak">
                     {expiryLabel}
                     <span className="mx-2">·</span>
-                    {c('pass_2026: Info').t`Created ${createdDate}`}
+                    {c('Info').t`Created ${createdDate}`}
                 </div>
             </div>
 
@@ -109,13 +109,13 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
                 originalPlacement="bottom-end"
             >
                 <DropdownMenuButton
-                    label={c('pass_2026: Action').t`Manage vault access`}
+                    label={c('Action').t`Manage vault access`}
                     icon="pass-all-vaults"
                     onClick={() => onManageAccess(token)}
                 />
                 {token.Flags?.PassAgent && (
                     <DropdownMenuButton
-                        label={c('pass_2026: Action').t`View agent activity`}
+                        label={c('Action').t`View agent activity`}
                         icon="clock"
                         onClick={() => onViewActions(token)}
                     />

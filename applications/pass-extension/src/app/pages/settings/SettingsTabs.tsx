@@ -48,7 +48,7 @@ const getSettingsTabs = (
     ...(!aliasCreationDisabled ? [{ path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
     ...(accessTokensEnabled
-        ? [{ path: '/access-tokens', title: c('pass_2026: Label').t`Access tokens`, content: <AccessTokens /> }]
+        ? [{ path: '/access-tokens', title: c('Label').t`Access tokens`, content: <AccessTokens /> }]
         : []),
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
