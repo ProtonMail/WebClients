@@ -9,7 +9,6 @@ const isVcalEvent = (model: EventModelReadView | VcalVeventComponent): model is 
 };
 
 export const getVideoConferencingData = (model: EventModelReadView | VcalVeventComponent) => {
-    // The model is a VcalVeventComponent if it has a 'component' property
     if (isVcalEvent(model)) {
         const provider = model?.['x-pm-conference-id']?.parameters?.['x-pm-provider'];
 
@@ -28,17 +27,20 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
         };
     }
 
-    // We return both the description and location as trimmed strings with the custom fields
+    // For EventModelReadView, use the dedicated conference fields first, then fall back to raw rest properties
     return {
         description: model.description.trim(),
         location: model.location.trim(),
-        meetingId: model.rest?.['x-pm-conference-id']?.value,
-        meetingUrl: model.rest?.['x-pm-conference-url']?.value,
+        meetingId: model.conferenceId ?? model.rest?.['x-pm-conference-id']?.value,
+        meetingUrl: model.conferenceUrl ?? model.rest?.['x-pm-conference-url']?.value,
         password:
-            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-password'] ||
+            model.conferencePassword ??
+            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-password'] ??
             model.rest?.['x-pm-conference-url']?.parameters?.password,
         meetingHost:
-            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-host'] ||
+            model.conferenceHost ??
+            model.rest?.['x-pm-conference-url']?.parameters?.['x-pm-host'] ??
             model.rest?.['x-pm-conference-url']?.parameters?.host,
+        meetingProvider: model.conferenceProvider,
     };
 };
