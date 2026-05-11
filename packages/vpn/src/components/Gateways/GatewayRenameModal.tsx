@@ -11,7 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 
-import type { GatewayDto } from './GatewayDto';
+import type { GatewayDto } from '../../types/Gateway';
 import { GatewayNameField } from './GatewayNameField';
 
 interface Props extends ModalProps<typeof Form> {
@@ -20,7 +20,7 @@ interface Props extends ModalProps<typeof Form> {
     onSubmitDone: (server: { Name: string }) => Promise<void>;
 }
 
-const GatewayRenameModal = ({ currentName, showCancelButton = false, onSubmitDone, ...rest }: Props) => {
+export const GatewayRenameModal = ({ currentName, showCancelButton = false, onSubmitDone, ...rest }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [model, setModel] = useState({
         name: '',
@@ -68,5 +68,3 @@ const GatewayRenameModal = ({ currentName, showCancelButton = false, onSubmitDon
         </ModalTwo>
     );
 };
-
-export default GatewayRenameModal;

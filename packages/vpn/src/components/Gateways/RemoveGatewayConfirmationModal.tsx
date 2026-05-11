@@ -9,13 +9,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { Either } from '@proton/shared/lib/interfaces';
 
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { Gateway } from './Gateway';
+import type { Gateway } from '../../types/Gateway';
 
 const useCreateSubmitNotifications = () => {
     const { createNotification } = useNotifications();

@@ -7,7 +7,6 @@ import {
     ActivityMonitorDashboard,
     CatchAllSection,
     DomainsSection,
-    GatewaysSection,
     MultiUserCreationSection,
     OrganizationGroupsManagementSection,
     OrganizationPasswordPoliciesSection,
@@ -31,6 +30,7 @@ import AccessControlSettingsSection from '@proton/components/containers/organiza
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import { GatewaysSection } from '@proton/vpn/components/Gateways';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
 import { RolesAndPermissionsSection } from './components/RolesAndPermissionsSection';

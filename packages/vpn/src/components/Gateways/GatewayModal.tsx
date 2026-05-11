@@ -17,20 +17,22 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-import AddServerConfirmationModal from './AddServerConfirmationModal';
-import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
+import { queryDeletedDedicatedIPs } from '../../apis/gateway';
+import { getInitialModel } from '../../functions/gatewayHelpers';
+import { useAddedQuantities, useUnassigningAddedQuantities } from '../../hooks/useAddedQuantities';
+import { useSpecificCountryCount } from '../../hooks/useSpecificCountryCount';
+import type {
+    DeletedDedicatedIp,
+    GatewayDto,
+    GatewayGroup,
+    GatewayLocation,
+    GatewayModel,
+    GatewayUser,
+} from '../../types/Gateway';
+import { AddServerConfirmationModal } from './AddServerConfirmationModal';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayLocation } from './GatewayLocation';
-import type { GatewayModel } from './GatewayModel';
 import { GatewayNameField } from './GatewayNameField';
-import type { GatewayUser } from './GatewayUser';
 import { GatewayUserSelection } from './GatewayUserSelection';
-import { queryDeletedDedicatedIPs } from './api';
-import { getInitialModel } from './helpers';
-import { useAddedQuantities, useUnassigningAddedQuantities } from './useAddedQuantities';
-import { useSpecificCountryCount } from './useSpecificCountryCount';
 
 interface Props extends ModalProps<typeof Form> {
     locations: readonly GatewayLocation[];
@@ -51,7 +53,7 @@ enum STEP {
     MEMBERS,
 }
 
-const GatewayModal = ({
+export const GatewayModal = ({
     locations,
     deletedInCountries,
     ownedCount,
@@ -273,5 +275,3 @@ const GatewayModal = ({
         </>
     );
 };
-
-export default GatewayModal;

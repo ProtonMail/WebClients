@@ -10,6 +10,7 @@
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
+        "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
         "./components/tv": "./src/components/tv/index.ts"

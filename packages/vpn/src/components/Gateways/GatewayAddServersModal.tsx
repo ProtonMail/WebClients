@@ -14,16 +14,13 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import useApiResult from '@proton/components/hooks/useApiResult';
 import type { CountryOptions } from '@proton/payments/core/countries';
 
-import AddServerConfirmationModal from './AddServerConfirmationModal';
-import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
+import { queryDeletedDedicatedIPs } from '../../apis/gateway';
+import { getInitialModel } from '../../functions/gatewayHelpers';
+import { useAddedQuantities, useUnassigningAddedQuantities } from '../../hooks/useAddedQuantities';
+import { useSpecificCountryCount } from '../../hooks/useSpecificCountryCount';
+import type { DeletedDedicatedIp, GatewayDto, GatewayLocation, GatewayUser } from '../../types/Gateway';
+import { AddServerConfirmationModal } from './AddServerConfirmationModal';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayLocation } from './GatewayLocation';
-import type { GatewayUser } from './GatewayUser';
-import { queryDeletedDedicatedIPs } from './api';
-import { getInitialModel } from './helpers';
-import { useAddedQuantities, useUnassigningAddedQuantities } from './useAddedQuantities';
-import { useSpecificCountryCount } from './useSpecificCountryCount';
 
 interface Props extends ModalStateProps {
     locations: readonly GatewayLocation[];
@@ -38,7 +35,7 @@ interface Props extends ModalStateProps {
     onUpsell: () => void;
 }
 
-const GatewayAddServersModal = ({
+export const GatewayAddServersModal = ({
     locations,
     deletedInCountries,
     ownedCount,
@@ -157,5 +154,3 @@ const GatewayAddServersModal = ({
         </>
     );
 };
-
-export default GatewayAddServersModal;
