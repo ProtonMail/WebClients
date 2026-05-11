@@ -1272,6 +1272,15 @@
       ],
       "Reconnect to Gmail": [
         "Opnieuw verbinden met Gmail"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Rebuild index": [
+        "Index herbouwen"
+      ],
+      "Search is unavailable": [
+        "Zoeken is niet beschikbaar"
       ]
     },
     "Action: Docs": {
@@ -4026,6 +4035,15 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
+      "Folder not found": [
+        "Map niet gevonden"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ]
     },
     "error": {
@@ -7110,6 +7128,57 @@
       ],
       "RECOMMENDED": [
         "AANBEVOLEN"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } heeft gedetecteerd dat de lokale zoekindex beschadigd is en niet langer kan worden gebruikt. Bouw de index opnieuw op om de zoekopdracht te herstellen."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Could not scan file for malware": [
+        "Bestand kon niet gescanned worden op malware"
+      ],
+      "File could not be scanned": [
+        "Bestand kan niet gescanned worden"
+      ],
+      "File flagged as potentially malicious": [
+        "Bestand gemarkeerd als mogelijks schadelijk"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Het indexeren heeft een onverwachte status bereikt en kan niet worden voortgezet. Bouw de index opnieuw op om te herstellen."
+      ],
+      "Not enough storage space": [
+        "Onvoldoende opslagruimte"
+      ],
+      "Search data is corrupted": [
+        "Zoekgegevens zijn beschadigd"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Zoeken heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
+      ],
+      "Search engine error": [
+        "Fout in zoekmachine"
+      ],
+      "Search error": [
+        "Zoekopdracht fout"
+      ],
+      "Search is in an invalid state": [
+        "De zoekopdracht heeft een ongeldige status"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Zoeken is klaar. Uw bestanden zijn geïndexeerd."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "De zoekmachine heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Uw browser had onvoldoende ruimte tijdens het indexeren van bestanden voor zoeken. Maak opslagruimte vrij en bouw de index opnieuw op."
       ]
     },
     "info": {
@@ -9782,6 +9851,9 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

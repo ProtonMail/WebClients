@@ -1272,6 +1272,15 @@
       ],
       "Download for macOS": [
         "Last ned for macOS"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Rebuild index": [
+        "Gjenoppbygg indeks"
+      ],
+      "Search is unavailable": [
+        "Søk er ikke tilgjengelig"
       ]
     },
     "Action: Docs": {
@@ -4026,6 +4035,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
+      "Folder not found": [
+        "Mappe ikke funnet"
       ]
     },
     "error": {
@@ -7112,6 +7124,60 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indekserte ${ first }, ${ second }, ${ third } og ${ fourth }"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søket."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Could not scan file for malware": [
+        "Kunne ikke skanne filen etter skadelig programvare"
+      ],
+      "File could not be scanned": [
+        "Fil kunne ikke skannes"
+      ],
+      "File flagged as potentially malicious": [
+        "Fil markert som potensielt skadelig"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indekseringen har nådd en uventet tilstand og kan ikke fortsette. Bygg opp indeksen på nytt for å gjenopprette."
+      ],
+      "Not enough storage space": [
+        "Ikke nok lagringsplass"
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
+      ],
+      "Search data is corrupted": [
+        "Søkedataene er ødelagt"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Søket opplevde en intern feil. Bygg indeksen på nytt for å gjenopprette."
+      ],
+      "Search engine error": [
+        "Søkemotorfeil"
+      ],
+      "Search error": [
+        "Søkefeil"
+      ],
+      "Search is in an invalid state": [
+        "Søk er i en ugyldig tilstand"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Søket er klart. Filene dine er indeksert."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Søket opplevde en intern feil. Bygg indeksen opp på nytt for å gjenopprette."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Nettleseren gikk tom for plass mens den indekserte filer for søk. Frigjør lagringsplass, og bygg deretter opp indeksen på nytt."
       ]
     },
     "info": {
