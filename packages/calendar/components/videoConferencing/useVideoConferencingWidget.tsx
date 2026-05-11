@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 
 import type { EventModelReadView, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { VideoConferenceLocation } from './VideoConferencingWidget';
 import { VideoConferencingWidget } from './VideoConferencingWidget';
@@ -26,7 +25,6 @@ export const useVideoConferencingWidget = ({ model, widgetLocation }: Props) => 
     const hasReported = useRef(false);
 
     const { sendEventVideoConfSource } = useVideoConfTelemetry();
-    const videoConferenceWidget = useFlag('VideoConferenceWidget');
 
     // This is required to avoid sending multiple requests for the same event
     const sendTelemetryReport = (source: VideoConferenceSource) => {
@@ -36,7 +34,7 @@ export const useVideoConferencingWidget = ({ model, widgetLocation }: Props) => 
         }
     };
 
-    if (!videoConferenceWidget || !model) {
+    if (!model) {
         return null;
     }
 

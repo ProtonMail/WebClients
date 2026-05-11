@@ -91,7 +91,7 @@ export const createNewBookingPage = createAsyncThunk<
     SerializedFormData,
     CalendarThunkExtra
 >('internalBookings/createPage', async (payload, thunkExtra) => {
-    if (!thunkExtra.extra.unleashClient.isEnabled('CalendarBookings')) {
+    if (thunkExtra.extra.unleashClient.isEnabled('CalendarBookingsDisabled')) {
         return;
     }
 
