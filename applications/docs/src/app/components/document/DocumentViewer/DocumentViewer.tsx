@@ -24,13 +24,7 @@ import type {
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
-import {
-  CommentsEvent,
-  EditorEvent,
-  EditorSystemMode,
-  isLocalEnvironment,
-  LiveCommentsEvent,
-} from '@proton/docs-shared'
+import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
@@ -67,6 +61,7 @@ import { useIsSheetsEditorEnabled } from '~/utils/flags'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { isLocalEnvironment } from '@proton/utils/env'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
