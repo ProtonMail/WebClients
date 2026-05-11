@@ -16,7 +16,7 @@ export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     return (
-        <div className="pt-6">
+        <>
             <SettingsSectionWide className="mb-6">
                 <OutgoingDelegatedAccessProvider>
                     <OutgoingDelegatedAccessActions />
@@ -31,6 +31,6 @@ export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
                     <IncomingRecoveryContactParams />
                 </IncomingDelegatedAccessProvider>
             </SettingsSectionWide>
-        </div>
+        </>
     );
 };
