@@ -15,6 +15,7 @@ import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../utils/wa
 interface UseMlsSessionParams {
     wasmApp: App | null;
     isMeetNewJoinTypeEnabled: boolean;
+    isMeetNewSwitchJoinTypeEnabled: boolean;
     isMeetSwitchJoinTypeEnabled: boolean;
     usePreSharedKey: boolean;
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
@@ -41,6 +42,7 @@ export const useMlsSession = ({
     wasmApp,
     isMeetNewJoinTypeEnabled,
     isMeetSwitchJoinTypeEnabled,
+    isMeetNewSwitchJoinTypeEnabled,
     usePreSharedKey,
     getGroupKeyInfo,
     onNewGroupKeyInfo,
@@ -89,24 +91,42 @@ export const useMlsSession = ({
 
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            const joinType = wasmApp.getJoinType(
-                isMeetNewJoinTypeEnabled,
-                isMeetSwitchJoinTypeEnabled,
-                participantsCountValue ?? 0
-            );
-            if (joinType === JoinTypeInfo.ExternalProposal) {
-                // eslint-disable-next-line no-console
-                console.log('Joining room with proposal');
-                try {
-                    await wasmApp.joinRoomWithProposal(
-                        accessToken,
-                        meetingLinkName,
-                        meetingPassword,
-                        usePreSharedKey,
-                        sessionId
-                    );
-                } catch (error) {
-                    // fallback to join with external commit
+            if (isMeetNewSwitchJoinTypeEnabled) {
+                await wasmApp.joinMeetingWithAccessTokenWithSwitchJoinType(
+                    accessToken,
+                    meetingLinkName,
+                    meetingPassword,
+                    sessionId,
+                    isMeetSwitchJoinTypeEnabled
+                );
+            } else {
+                const joinType = wasmApp.getJoinType(
+                    isMeetNewJoinTypeEnabled,
+                    isMeetSwitchJoinTypeEnabled,
+                    participantsCountValue ?? 0
+                );
+                if (joinType === JoinTypeInfo.ExternalProposal) {
+                    // eslint-disable-next-line no-console
+                    console.log('Joining room with proposal');
+                    try {
+                        await wasmApp.joinRoomWithProposal(
+                            accessToken,
+                            meetingLinkName,
+                            meetingPassword,
+                            usePreSharedKey,
+                            sessionId
+                        );
+                    } catch (error) {
+                        // fallback to join with external commit
+                        await wasmApp.joinMeetingWithAccessToken(
+                            accessToken,
+                            meetingLinkName,
+                            meetingPassword,
+                            usePreSharedKey,
+                            sessionId
+                        );
+                    }
+                } else {
                     await wasmApp.joinMeetingWithAccessToken(
                         accessToken,
                         meetingLinkName,
@@ -115,14 +135,6 @@ export const useMlsSession = ({
                         sessionId
                     );
                 }
-            } else {
-                await wasmApp.joinMeetingWithAccessToken(
-                    accessToken,
-                    meetingLinkName,
-                    meetingPassword,
-                    usePreSharedKey,
-                    sessionId
-                );
             }
 
             await wasmApp.setMlsGroupUpdateHandler();
