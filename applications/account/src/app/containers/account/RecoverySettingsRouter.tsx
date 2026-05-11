@@ -276,8 +276,8 @@ const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                             <OverviewSection />
                             <AccountRecoverySection />
                             <DataRecoverySection />
-                            <EmergencyContactSection app={app} />
                             <RecoveryContactSection app={app} />
+                            <EmergencyContactSection app={app} />
                             <SessionRecoverySection />
                         </PrivateMainSettingsArea>
                     </Route>

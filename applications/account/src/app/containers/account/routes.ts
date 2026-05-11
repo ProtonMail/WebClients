@@ -236,7 +236,7 @@ const getRecoverySettings = ({
                 },
                 recoveryContacts: {
                     id: 'recovery-contacts',
-                    text: c('emergency_access').t`Contact-assisted recovery`,
+                    text: c('emergency_access').t`Data recovery contacts`,
                     to: '/recovery-contacts',
                     available: isRecoveryContactsAvailable,
                     variant: SettingsLayoutVariant.Card,
@@ -317,14 +317,14 @@ const getRecoverySettings = ({
                           available: isDataRecoveryAvailable,
                       },
                       {
+                          text: c('emergency_access').t`Data recovery contacts`,
+                          id: recoveryIds.recoveryContacts,
+                          available: isRecoveryContactsAvailable,
+                      },
+                      {
                           text: c('emergency_access').t`Emergency access`,
                           id: recoveryIds.emergencyAccess,
                           available: isEmergencyAccessAvailable,
-                      },
-                      {
-                          text: c('emergency_access').t`Contact-assisted recovery`,
-                          id: recoveryIds.recoveryContacts,
-                          available: isRecoveryContactsAvailable,
                       },
                       {
                           text: c('Title').t`Password reset settings`,
@@ -680,7 +680,7 @@ export const getAccountAppRoutes = ({
                         available: isNonPrivateEmergencyAccessAvailable,
                     },
                     {
-                        text: c('emergency_access').t`Contact-assisted recovery`,
+                        text: c('emergency_access').t`Data recovery contacts`,
                         id: recoveryIds.recoveryContacts,
                         available: isNonPrivateRecoveryContactsAvailable,
                     },

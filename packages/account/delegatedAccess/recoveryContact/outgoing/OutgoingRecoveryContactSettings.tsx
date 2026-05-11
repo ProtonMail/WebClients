@@ -1,9 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Loader from '@proton/components/components/loader/Loader';
@@ -19,6 +22,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url.ts';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -182,7 +186,7 @@ export const OutgoingRecoveryContactSettings = ({
     passwordResetOptionRequiredWarning,
 }: {
     userHasNoAccountRecoveryMethodSet: boolean;
-    passwordResetOptionRequiredWarning?: React.ReactNode;
+    passwordResetOptionRequiredWarning?: ReactNode;
 }) => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
@@ -267,10 +271,12 @@ export const OutgoingRecoveryContactSettings = ({
 
     return (
         <>
-            <div className="text-semibold text-xl mb-3">{c('emergency_access').t`Your recovery contacts`}</div>
             <SettingsParagraph>
-                {c('emergency_access').t`People you have added as recovery contacts.`}
+                {c('Info')
+                    .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.`}{' '}
+                <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
             </SettingsParagraph>
+            <div className="text-semibold text-xl mb-3">{c('emergency_access').t`Your recovery contacts`}</div>
             <div className="mb-4">
                 {canAddRecoveryContact && (
                     <Button
