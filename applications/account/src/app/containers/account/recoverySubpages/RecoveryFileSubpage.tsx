@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
+import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -28,6 +29,7 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
     const recoveryFileData = useSelector(selectRecoveryFileData);
     const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+    const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     if (!recoveryFileData.isRecoveryFileAvailable) {
         return null;
@@ -75,7 +77,11 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
                             )}
                         </h3>
                         <span className="block mt-0 mb-2 text-ellipsis">{RECOVERY_FILE_FILE_NAME}</span>
-                        <ExportRecoveryFileButton className="block" color="norm">
+                        <ExportRecoveryFileButton
+                            className="block"
+                            color="norm"
+                            disabled={isSentinelUser || !hasAccountRecoveryMethod}
+                        >
                             <IcArrowDownLine size={4} />
                             {recoveryFileData.hasOutdatedRecoveryFile
                                 ? c('Action').t`Download updated file`
