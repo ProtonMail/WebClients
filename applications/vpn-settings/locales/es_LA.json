@@ -1249,6 +1249,15 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "Eliminar token ${ tokens[0].Account }"
+      ],
+      "Go to domain provider": [
+        "Vaya al proveedor del dominio"
+      ],
+      "Save & exit": [
+        "Guardar y salir"
       ]
     },
     "action": {
@@ -2106,6 +2115,229 @@
       ],
       "Missing organization public key": [
         "Falta la clave pública de organización"
+      ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: no poner en cuarentena o rechazar los correos no autorizados. Usualmente las personas solo usan esta política como prueba."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: solicitando a las plataformas de destino que marquen los correos no autorizados como spam o los pongan en cuarentena."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: solicitando a las plataformas de destino rechazar los correos no autorizados."
+      ],
+      "Account connected": [
+        "Cuenta conectada"
+      ],
+      "Account disconnected": [
+        "Cuenta desconectada"
+      ],
+      "Activated": [
+        "Activado"
+      ],
+      "Activation link": [
+        "Enlace de activación"
+      ],
+      "Activation link copied to clipboard": [
+        "Enlace de activación copiado al portapapeles"
+      ],
+      "Add domain": [
+        "Añadir dominio"
+      ],
+      "Add users": [
+        "Añadir usuarios"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está en uso por otra persona de la organización. Contacte con soporte al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
+      "An unknown error occurred": [
+        "Ocurrió un error desconocido"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "¿En verdad desea continuar? Los usuarios que no hayan reclamado su cuenta antes de que finalice la migración deberán solicitar un restablecimiento de contraseña al administrador de su organización en ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "En cuanto se creen las cuentas, puede compartir el enlace de activación para que los usuarios puedan reclamar su cuenta de ${ BRAND_NAME }."
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Elija qué migrar. Su elección se aplicará a todos los usuarios. La migración comenzará después de que decida cuáles usuarios copiar."
+      ],
+      "Configure domain": [
+        "Configurar dominio"
+      ],
+      "Configure your domain": [
+        "Configure su dominio"
+      ],
+      "Copy activation link": [
+        "Copiar enlace de activación"
+      ],
+      "Copy activation link to clipboard": [
+        "Copiar el enlace de activación al portapapeles"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Copie el siguiente código y péguelo en la sección de DNS de su anfitrión de dominio. Puede encontrar un ejemplo y consejos ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "Creando cuentas"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM añade una firma digital a cada correo para que los destinatarios puedan verificar que el mensaje viene realmente de su dominio y no fue alterado en su tránsito. Sin ella, los mensajes podrían considerarse menos confiables."
+      ],
+      "DKIM records": [
+        "Registros DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC se basa en SPF y DKIM, indicando a los servidores receptores cómo gestionar los mensajes que no superan estas comprobaciones. Esto ayuda a proteger su dominio contra la suplantación de identidad y mejora la fiabilidad general de la entrega."
+      ],
+      "DMARC records": [
+        "Registros DMARC"
+      ],
+      "Domain added": [
+        "Dominio añadido"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Asegúrese de que sus correos electrónicos lleguen a la bandeja de entrada, no a la carpeta de spam. La actualización de SPF permitirá a los usuarios enviar correos desde ${ BRAND_NAME } y Google simultáneamente durante el periodo de migración."
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "Finalize migration": [
+        "Finalizar migración"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Finalizar la migración significa que todos sus correos electrónicos se redirigirán directamente a ${ BRAND_NAME }. Los usuarios dejarán de recibir correos electrónicos en sus cuentas de Google y los datos ya no se sincronizarán entre ${ BRAND_NAME } y Google."
+      ],
+      "Find out what can be migrated.": [
+        "Descubra lo que puede ser migrado."
+      ],
+      "Google Workspace account": [
+        "Cuenta de Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Un momento, estamos configurando las cuentas de usuario y en breve comenzaremos a importar los datos de los usuarios."
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importar errores para ${ user.AdminSetName }"
+      ],
+      "Loading your organization data": [
+        "Cargando los datos de su organización"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Gestionado mediante ${ registrar.name }"
+      ],
+      "Migrated": [
+        "Migrado"
+      ],
+      "More details": [
+        "Más detalles"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "No hay detalles de error disponibles. Contáctese con soporte al cliente para más información."
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
+      ],
+      "Not confirmed": [
+        "No confirmado"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Una vez que los usuarios reclamen sus cuentas de ${ BRAND_NAME }, finalice la migración."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Una vez que hayamos confirmado que los correos electrónicos se enrutan a ${ BRAND_NAME }, la migración finalizará. Recibirá un correo electrónico de confirmación para informarle cuando esto suceda. Este proceso puede tardar hasta 24 horas."
+      ],
+      "Pending": [
+        "Pendiente"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Añada los siguientes registros en la consola de DNS de su proveedor de dominio:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deje esta ventana abierta hasta que hayamos terminado de crear todos los usuarios."
+      ],
+      "Please select at least one product to migrate": [
+        "Seleccione al menos un producto para migrar"
+      ],
+      "Refresh": [
+        "Actualizar"
+      ],
+      "Select users to migrate": [
+        "Seleccione los usuarios para migrar"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Configurar el envío seguro (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar el envío seguro (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar el envío seguro (SPF)"
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Comparta el enlace de activación a los usuarios para que puedan reclamar sus cuentas de ${ BRAND_NAME }."
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Some accounts are not claimed": [
+        "Algunas cuentas no están reclamadas"
+      ],
+      "SPF records": [
+        "Registros SPF"
+      ],
+      "Start migrating": [
+        "Iniciar migración"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "La configuración predeterminada es ninguna. Sin embargo, para mejorar su seguridad, le recomendamos establecer este valor en p=quarantine."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "El valor «p=» especifica la acción que se debe tomar para los correos electrónicos que no cumplen con DMARC. Estas son las acciones disponibles:"
+      ],
+      "This migration has been completed": [
+        "Esta migración ha sido completada"
+      ],
+      "Update records for receiving": [
+        "Actualizar registros para recepción"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "El usuario debe activar su cuenta a través del enlace de activación que se muestra arriba"
+      ],
+      "User status": [
+        "Estado del usuario"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Los usuarios pueden usar ${ BRAND_NAME } o Google simultáneamente por el tiempo de la migración."
+      ],
+      "Verified": [
+        "Verificado"
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Hemos detectado el dominio principal vinculado a su cuenta de Google Workspace. Confírmelo para continuar configurando el correo electrónico de su organización en ${ BRAND_NAME }."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Aún estamos comprobando los registros MX con su proveedor de dominio."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hemos notado que algunos usuarios no han reclamado sus cuentas de ${ BRAND_NAME }."
+      ],
+      "You": [
+        "Usted"
+      ],
+      "You're all set!": [
+        "¡Todo listo!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Su plan actual permite hasta ${ maxMembers } usuario. Para migrar usuarios adicionales, añada más licencias a la suscripción.",
+        "Su plan actual permite hasta ${ maxMembers } usuarios. Para migrar usuarios adicionales, añada más licencias a la suscripción."
       ]
     },
     "Browser": {
@@ -10196,6 +10428,18 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Confirm MX records added": [
+        "Confirmar registros MX añadidos"
+      ],
+      "Host name": [
+        "Nombre del host"
+      ],
+      "MX records": [
+        "Registros MX"
+      ],
+      "Priority": [
+        "Prioridad"
       ]
     },
     "label": {
@@ -10517,6 +10761,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Detailed instructions": [
+        "Instrucciones detalladas"
       ]
     },
     "Link (Scribe)": {
@@ -13312,6 +13559,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
       ]
     },
     "placeholder": {
@@ -15853,6 +16103,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Recibirá su nombre de usuario por SMS en un minuto si ha ingresado un número de teléfono de recuperación válido."
+      ],
+      "Activation link copied to clipboard": [
+        "Enlace de activación copiado al portapapeles"
       ]
     },
     "Success message": {
@@ -18239,6 +18492,49 @@
       ],
       "User roles available": [
         "Roles de usuario disponibles"
+      ],
+      "Assign delegated roles": [
+        "Asignar roles delegados"
+      ],
+      "Assign roles": [
+        "Asignar roles"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Haga clic en Editar para asignar roles a este grupo y gestionar acceso a miembros automáticamente."
+      ],
+      "New: Roles and permissions tab": [
+        "Nuevo: Pestaña de roles y permisos"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Abra esta pesaña para otorgar permisos específicos sin acceso administrativo total."
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "hora puee asignar roles a usuarios individuales desde esta pestaña"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Se encontró un registro DMARC duplicado; vaya a la consola DNS de su proveedor de dominio para solucionarlo."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Registro ${ capitalizedGroup } no encontrado"
+      ],
+      "Host name": [
+        "Nombre del host"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Se encontró un registro inválido de ${ group.name }"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Use default value": [
+        "Usar valores por defecto"
+      ],
+      "Valid ${ group.name } record found": [
+        "Se encontró un registro válido de ${ group.name }"
       ]
     }
   }

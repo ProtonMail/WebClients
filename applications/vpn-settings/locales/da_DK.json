@@ -1252,6 +1252,9 @@
       ],
       "Go to domain provider": [
         "Gå til domæneudbyder"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -1516,6 +1519,15 @@
       ],
       "User admin:": [
         "Brugeradmin:"
+      ],
+      "2 new admin roles": [
+        "2 nye admin-roller"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Uddeleger administration for mange brugere ad gangen. Tildel specifikke admin-roller til grupper for automatisk at give tilladelser. Dette er i overensstemmelse med princippet om \"least privilege\", og sparer tid i forbindelse med onboarding og offboarding, samtidig med at det formindsker fejl."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nyhed: Administrer admin-adgang for mange brugere på samme tid"
       ]
     },
     "AdminRole_Info": {
@@ -2191,6 +2203,15 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nuværende plan tillader op til ${ maxMembers } bruger. Tilføj flere pladser til dit abonnement for at migrere flere brugere.",
         "Din nuværende plan tillader op til ${ maxMembers } brugere. Tilføj flere pladser til dit abonnement for at migrere flere brugere."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
       ]
     },
     "Browser": {
@@ -9157,6 +9178,18 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "FORSLÅET"
       ]
     },
     "info": {
@@ -18338,6 +18371,32 @@
       ],
       "Use default value": [
         "Brug standardværdi"
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Tildel delegerede roller"
+      ],
+      "Assign roles": [
+        "Tildel roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klik på en brugers navn for at administrere deres rolle og tilladelser."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klik Rediger for at tildele roller til denne gruppe og administrere medlemsadgang automatisk."
+      ],
+      "New: Roles and permissions tab": [
+        "Nyhed: Rolle- og tilladelsesfane"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Åbn denne fane for at give specifikke tilladelser uden fuld admin-adgang."
+      ],
+      "User roles available": [
+        "Tilgængelige brugerroller"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tildele roller til individuelle brugere fra denne fane."
       ]
     }
   }

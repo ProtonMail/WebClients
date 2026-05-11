@@ -1246,6 +1246,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2085,6 +2088,10 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
+        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
       ]
     },
     "Browser": {
@@ -9051,6 +9058,18 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
       ]
     },
     "info": {

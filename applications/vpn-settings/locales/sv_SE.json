@@ -1249,6 +1249,9 @@
       ],
       "Save & exit": [
         "Spara och avsluta"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "action": {
@@ -2229,6 +2232,21 @@
       ],
       "User needs to activate their account through the activation link shown above": [
         "Användare måste aktivera sitt konto via aktiveringslänken som visas ovan."
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Lägg till följande poster i din DNS-konsol för din domänleverantör:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Lämna detta fönster öppet tills vi är klara med att skapa alla användare."
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Dela aktiveringslänken med användarna så att de kan göra anspråk på sitt ${ BRAND_NAME }-konto."
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi upptäckte den primära domänen länkad till ditt Google Workspace-konto. Bekräfta den för att fortsätta ställa in e-post för din ${ BRAND_NAME }-organisation."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har märkt att några användare inte har gjort anspråk på sina ${ BRAND_NAME }-konton."
       ]
     },
     "Browser": {
@@ -9055,6 +9073,9 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "info": {
@@ -15582,6 +15603,9 @@
       ],
       "View VPN session details for your organization.": [
         "Visa VPN-sessionsdetaljer för din organisation."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } hjälper dig att se till att alla dina familjemedlemmar – och deras data – är skyddade när de är online."
       ]
     },
     "Success": {
@@ -17227,6 +17251,9 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Remove recovery phone number": [
+        "Ta bort telefonnummer för återställning"
       ]
     },
     "Title for payment methods table": {
@@ -18090,6 +18117,18 @@
     "Label for domain setup": {
       "Use default value": [
         "Använd standardvärde"
+      ],
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post hittades inte"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ogiltig ${ group.name }-post hittades"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Valid ${ group.name } record found": [
+        "Giltig ${ group.name }-post hittades"
       ]
     },
     "Spotlight": {
@@ -18098,6 +18137,23 @@
       ],
       "Click a user's name to manage their role and permissions.": [
         "Klicka på en användares namn för att hantera deras roll och behörigheter."
+      ],
+      "Assign delegated roles": [
+        "Tilldela delegerade roller"
+      ],
+      "Assign roles": [
+        "Tilldela roller"
+      ],
+      "New: Roles and permissions tab": [
+        "Nytt: Flik för roller och behörigheter"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tilldela roller till enskilda användare från denna flik."
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Dubblett av DMARC-post hittades, gå till DNS-konsolen hos din domänleverantör för att åtgärda det."
       ]
     }
   }

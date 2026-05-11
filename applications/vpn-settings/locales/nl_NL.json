@@ -1216,6 +1216,12 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Or remove forwarding address": [
+        "Of verwijder het doorstuuradres"
       ]
     },
     "action": {
@@ -1480,6 +1486,15 @@
       ],
       "User admin:": [
         "Gebruikersbeheer:"
+      ],
+      "2 new admin roles": [
+        "2 nieuwe beheerdersrollen"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Delegeer het beheer voor veel gebruikers tegelijk. Wijs specifieke beheerdersrollen toe aan groepen voor automatische machtigingen. Dit volgt het principe van de minste privileges om tijd te besparen bij onboarding en offboarding en tegelijkertijd het aantal fouten te verminderen."
+      ],
+      "New: Control admin access for many users at once": [
+        "Nieuw: beheer de beheerderstoegang voor veel gebruikers tegelijk"
       ]
     },
     "AdminRole_Info": {
@@ -2050,6 +2065,33 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "U dient de toestemming te verlenen aan ${ BRAND_NAME } om uw gegevens te kopiëren. Keer hier terug om verder te gaan nadat u de toestemmingen hebt geaccepteerd."
+      ],
+      "Copy activation link to clipboard": [
+        "Kopieer de activatielink naar klembord"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Kopieer onderstaande code en plak ze in de DNS sectie van je domein beheerder. Je vindt voorbeelden en hulpzame tips ${ hereHref }"
+      ],
+      "DMARC records": [
+        "DMARC records"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
+      ],
+      "Missing organization private key": [
+        "Ontbrekende privésleutel van de organisatie"
+      ],
+      "Missing organization public key": [
+        "Ontbrekende openbare sleutel van de organisatie"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Voeg volgende DNS records toe je het configuratiepaneel van je domein provider."
+      ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Deel de activatielink met de gebruikers zodat ze hun ${ BRAND_NAME } account kunnen opeisen"
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "We hebben gemerkt dat sommige gebruikers hun ${ BRAND_NAME } profiel nog niet hebben geactiveerd."
       ]
     },
     "Browser": {
@@ -3675,6 +3717,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adres.",
         "Uw abonnement ondersteunt in totaal ${ MAX_SYNC_PAID_USER } Gmail-adressen."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ]
     },
     "description": {
@@ -4728,6 +4776,15 @@
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
+      "Something went wrong while creating the address": [
+        "Er is iets misgegaan tijdens het aanmaken van het adres"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ]
     },
     "error": {
@@ -8857,6 +8914,15 @@
       ],
       "RECOMMENDED": [
         "AANBEVOLEN"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
       ]
     },
     "info": {
@@ -11878,6 +11944,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom Instellingen voor videoconferenties zijn bijgewerkt"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16932,6 +17001,12 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Voeg uw Gmail toe aan ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "U bent helemaal klaar"
       ]
     },
     "Title for payment methods table": {
@@ -17790,6 +17865,37 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "Label for domain setup": {
+      "Use default value": [
+        "Gebruik de standaard waarde"
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Wijs gedelegeerde rollen toe"
+      ],
+      "Assign roles": [
+        "Rollen toewijzen"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klik op de naam van een gebruiker om zijn rol en machtigingen te beheren."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klik op Bewerken om rollen aan deze groep toe te wijzen en de ledentoegang automatisch te beheren."
+      ],
+      "New: Roles and permissions tab": [
+        "Nieuw: tabblad Rollen en rechten"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Open dit tabblad om specifieke machtigingen te verlenen zonder volledige beheerderstoegang."
+      ],
+      "User roles available": [
+        "Gebruikersrollen beschikbaar"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Vanaf dit tabblad kunt u nu rollen toewijzen aan individuele gebruikers."
       ]
     }
   }

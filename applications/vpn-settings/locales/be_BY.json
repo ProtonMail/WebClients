@@ -1246,6 +1246,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Delete token ${ tokens[0].Account }": [
+        "Выдаліць токен ${ tokens[0].Account }"
+      ],
+      "Go to domain provider": [
+        "Перайсці да пастаўшчыка даменаў"
+      ],
+      "Save & exit": [
+        "Захаваць і выйсці"
       ]
     },
     "action": {
@@ -1530,6 +1542,15 @@
       ],
       "User admin:": [
         "Адміністратар карыстальніка:"
+      ],
+      "2 new admin roles": [
+        "2 новыя ролі адміністратара"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Упаўнаважанае кіраванне некалькімі карыстальнікам адначасова. Прызначайце канкрэтныя ролі адміністратарам у групах для аўтаматычнага атрымання дазволаў. Гэта адпавядае прынцыпу найменшых паўнамоцтва і эканоміць час на прыём або вывад адміністратара з групы, а таксама дазваляе скараціць колькасць памылак."
+      ],
+      "New: Control admin access for many users at once": [
+        "Новае: кантралюйце доступ адміністратара для некалькіх карыстальнікаў адначасова"
       ]
     },
     "AdminRole_Info": {
@@ -2172,6 +2193,126 @@
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальнікаў. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў."
+      ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } з ${ providerUsers.length }"
+      ],
+      "Account connected": [
+        "Уліковы запіс падключаны"
+      ],
+      "Activation link": [
+        "Спасылка актывацыі"
+      ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
+      "Add users": [
+        "Дадаць карыстальнікаў"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Як толькі ўліковыя запісы будуць створаны, вы зможаце абагуліць спасылку актывацыі, карыстальнікі змаглі атрымаць свой уліковы запіс ${ BRAND_NAME }."
+      ],
+      "Configure your domain": [
+        "Сканфігурыруйце свой дамен"
+      ],
+      "Copy activation link": [
+        "Скапіяваць спасылку актывацыі"
+      ],
+      "DKIM records": [
+        "Запісы DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC заснаваны на SPF і DKIM. Сутнасць тэхналогіі заключаецца ў тым, што ён паведамляе правілы апрацоўкі паведамленняў, якія не прайшлі спраўджанне на серверы, які атрымаў гэтыя паведамленні. Гэта дапамагае абараніць ваш дамен ад імітацыі і павышае агульную надзейнасць дастаўкі."
+      ],
+      "Domain added": [
+        "Дамены дададзены"
+      ],
+      "Errors": [
+        "Памылкі"
+      ],
+      "Finalize migration": [
+        "Завяршэнне пераносу"
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
+      ],
+      "Google Workspace account": [
+        "Уліковы запіс Google Workspace"
+      ],
+      "Loading your organization data": [
+        "Загрузка даных вашай арганізацыі"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
+      "Migrated": [
+        "Перанесена"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
+      "Not activated": [
+        "Не актываваны"
+      ],
+      "Not confirmed": [
+        "Не пацверджана"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Пакіньце гэта акно адкрытым, пакуль не будзе завершана стварэнне ўсіх карыстальнікаў."
+      ],
+      "Refresh": [
+        "Абнавiць"
+      ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
+      "Set up secure sending (SPF)": [
+        "Наладзьце бяспечную адпраўку (SPF)"
+      ],
+      "Size": [
+        "Памер"
+      ],
+      "Some accounts are not claimed": [
+        "Некаторыя ўліковыя запісы не пацверджаны"
+      ],
+      "SPF records": [
+        "Запісы SPF"
+      ],
+      "Start migrating": [
+        "Пачаць перанос"
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Значэнне \"p=\" указвае дзеянне, якое неабходна выканаць для лістоў, якія не прайшлі спраўджанне DMARC. Тут прадстаўлены даступныя дзеянні:"
+      ],
+      "Update records for receiving": [
+        "Абнавіце запісы для атрымання"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Карыстальнікі могуць адначасова выкарыстоўваць ${ BRAND_NAME } або Google на працягу ўсяго перыяду пераносу."
+      ],
+      "Verified": [
+        "Спраўджана"
+      ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Сістэма выявіла, што асноўны дамен звязаны з вашым уліковым запісам Google Workspace. Пацвердзіце яго, каб працягнуць наладжванне электроннай пошты для сваёй арганізацыі ${ BRAND_NAME }."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Сістэма ўсё яшчэ правярае запісы MX з вашым пастаўшчыком дамена."
+      ],
+      "You": [
+        "Вы"
+      ],
+      "You're all set!": [
+        "Усё гатова!"
       ]
     },
     "Browser": {
@@ -9344,6 +9485,18 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
       ]
     },
     "info": {
@@ -10472,6 +10625,18 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Confirm MX records added": [
+        "Пацвярджэнне дадавання запісаў MX"
+      ],
+      "Host name": [
+        "Імя вузла"
+      ],
+      "MX records": [
+        "Запіс MX"
+      ],
+      "Priority": [
+        "Прыярытэт"
       ]
     },
     "label": {
@@ -10795,6 +10960,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Detailed instructions": [
+        "Падрабязныя інструкцыі"
       ]
     },
     "Link (Scribe)": {
@@ -13694,6 +13862,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Search for users or addresses": [
+        "Пошук карыстальнікаў або адрасоў"
       ]
     },
     "placeholder": {
@@ -16255,6 +16426,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Вы атрымаеце сваё імя карыстальніка праз SMS на працягу хвіліны, калі вы ўвялі слушны нумар тэлефона для аднаўлення доступу."
+      ],
+      "Activation link copied to clipboard": [
+        "Спасылка актывацыі скапіявана ў буфер абмену"
       ]
     },
     "Success message": {
@@ -18319,6 +18493,12 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "(via ${ groupName })": [
+        "(праз ${ groupName })"
+      ],
+      "(via group)": [
+        "(праз групу)"
       ]
     },
     "Users table: badge": {
@@ -18690,6 +18870,46 @@
       ],
       "Use default value": [
         "Выкарыстоўваць прадвызначанае значэнне"
+      ],
+      "${ capitalizedGroup } record not found": [
+        "Запіс ${ capitalizedGroup } не знойдзены"
+      ],
+      "Type": [
+        "Тып"
+      ],
+      "Valid ${ group.name } record found": [
+        "Знойдзены сапраўдны запіс ${ group.name }"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Знойдзены дублікат запісу DMARC. Перайдзіце ў кансоль DNS свайго пастаўшчыка дамена, каб выправіць гэта."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Прызначыць упаўнаважаныя ролі"
+      ],
+      "Assign roles": [
+        "Прызначыць ролі"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Націсніце па імі карыстальніка, каб кіраваць яго роллю і дазволамі."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Націсніце кнопку \"Рэдагаваць\", каб прызначыць ролі ў гэтай групе і аўтаматычна кіраваць доступам удзельнікаў."
+      ],
+      "New: Roles and permissions tab": [
+        "Новае: укладка ролі і дазволы"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Адкрыйце гэту ўкладку, каб даць канкрэтныя правы без поўнага доступу адміністратара."
+      ],
+      "User roles available": [
+        "Даступныя ролі для карыстальнікаў"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Цяпер вы можаце прызначаць ролі для індывідуальных карыстальнікаў з гэтай укладкі."
       ]
     }
   }

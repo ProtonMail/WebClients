@@ -1240,6 +1240,15 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer hinzufügen"
+      ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer entfernt"
       ]
     },
     "action": {
@@ -1504,6 +1513,15 @@
       ],
       "User admin:": [
         "Benutzeradministrator:"
+      ],
+      "2 new admin roles": [
+        "2 neue Administratorenrollen"
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Verwalte Benutzer auf einmal. Weise Gruppen bestimmte Administratorrollen zu, um Berechtigungen automatisch zu vergeben. Dies folgt dem Prinzip der geringsten Privilegien, wodurch Zeit beim Onboarding und Offboarding gespart und Fehler reduziert werden."
+      ],
+      "New: Control admin access for many users at once": [
+        "Neu: Administratorzugriff für viele Benutzer auf einmal verwalten"
       ]
     },
     "AdminRole_Info": {
@@ -2079,6 +2097,15 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du musst ${ BRAND_NAME } die Berechtigung erteilen, deine Daten zu kopieren. Nachdem du die Berechtigungen akzeptiert hast, kehre hierher zurück, um fortzufahren."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
       ]
     },
     "Browser": {
@@ -9045,6 +9072,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ]
     },
     "info": {
@@ -17548,6 +17587,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
+      ],
+      "via ${ groupName }": [
+        "über ${ groupName }"
       ]
     },
     "Tor out of date": {
@@ -17846,6 +17888,12 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "(via ${ groupName })": [
+        "(über ${ groupName })"
+      ],
+      "(via group)": [
+        "(über Gruppe)"
       ]
     },
     "Users table: badge": {
@@ -18180,6 +18228,32 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Delegierte Rollen zuweisen"
+      ],
+      "Assign roles": [
+        "Rollen zuweisen"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicke einen Benutzernamen um dessen Rolle und Berechtigungen zu verwalten."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klicke auf „Bearbeiten“, um dieser Gruppe Rollen zuzuweisen und den Zugriff der Mitglieder automatisch zu verwalten."
+      ],
+      "New: Roles and permissions tab": [
+        "Neu: Registerkarte „Rollen und Berechtigungen“"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Öffne diese Registerkarte, um bestimmte Berechtigungen ohne vollständige Administratorrechte zu erteilen."
+      ],
+      "User roles available": [
+        "Benutzerrollen verfügbar"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Über diese Registerkarte kannst du nun einzelnen Benutzern Rollen zuweisen."
       ]
     }
   }

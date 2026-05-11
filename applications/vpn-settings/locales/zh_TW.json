@@ -1102,6 +1102,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "More options for accounts": [
+        "更多帳號選項"
       ]
     },
     "action": {
@@ -1175,6 +1178,12 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ]
     },
     "Address action": {
@@ -1513,6 +1522,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ]
     },
     "BF2025: Tooltip": {
@@ -3072,6 +3084,12 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ]
     },
     "description": {
@@ -3925,6 +3943,9 @@
       ],
       "Company name or personal name is required": [
         "公司名稱或個人名稱是需要的"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "復原代碼不正確，請重試。"
       ]
     },
     "error": {
@@ -4492,6 +4513,9 @@
     "fido2: Error": {
       "Something went wrong registering your security key. Please try again.": [
         "註冊您的安全金鑰時出現問題。請再試一次。"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
       ]
     },
     "fido2: Info": {
@@ -4533,6 +4557,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "您的兩步驟驗證金鑰已準備就緒"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ]
     },
     "fido2: Label": {
@@ -7307,6 +7334,24 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } 筆結果"
+      ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ]
     },
     "info": {
@@ -8199,6 +8244,9 @@
       ],
       "Continue cancelling": [
         "持續取消"
+      ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
       ]
     },
     "label": {
@@ -8686,6 +8734,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Member action": {
@@ -10001,6 +10052,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "在110 多個國家提供極速 VPN 伺服器"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "與非 ${ BRAND_NAME } 使用者合作"
       ]
     },
     "Onboarding": {
@@ -10844,6 +10898,9 @@
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Plans": {
@@ -14021,6 +14078,12 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "以 ${ planName } 的 ${ formattedPrice } 方案升級您的儲存空間"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ]
     },
     "Title for payment methods table": {

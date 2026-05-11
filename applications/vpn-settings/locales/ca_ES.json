@@ -2308,6 +2308,36 @@
       ],
       "Missing organization public key": [
         "Falta la clau pública de l'organització"
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: demaneu a les plataformes receptores que rebutgin els correus electrònics no autoritzats."
+      ],
+      "Add domain": [
+        "Afegeix un domini"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Finalitzar la migració significa que tots els vostres correus electrònics s'enviaran directament a ${ BRAND_NAME }. Els usuaris deixaran de rebre correus electrònics als seus comptes de Google i les dades ja no se sincronitzaran més entre ${ BRAND_NAME } i Google."
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Espereu un moment, estem configurant els comptes d'usuari i començarem a importar les dades d'usuari d'aquí a poc."
+      ],
+      "Please select at least one product to migrate": [
+        "Seleccioneu almenys un producte per migrar"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configura l'enviament segur (SPF)"
+      ],
+      "Update records for receiving": [
+        "Actualitzeu els registres per a la recepció"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "L'usuari ha d'activar el seu compte mitjançant l'enllaç d'activació que es mostra a dalt"
+      ],
+      "You": [
+        "Tú"
       ]
     },
     "Browser": {
@@ -16002,6 +16032,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Rebreu el vostre nom d'usuari per SMS en un minut si heu introduït un número de telèfon de recuperació vàlid."
+      ],
+      "Activation link copied to clipboard": [
+        "S'ha copiat l'enllaç d'activació al porta-retalls"
       ]
     },
     "Success message": {
@@ -18388,6 +18421,24 @@
       ],
       "User roles available": [
         "Rols d'usuari disponibles"
+      ],
+      "Assign delegated roles": [
+        "Assignar rols delegats"
+      ],
+      "Assign roles": [
+        "Assignar rols"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Cliqueu Editar per assignar rols a aquest grup i gestionar l'accés dels membres automàticament."
+      ],
+      "New: Roles and permissions tab": [
+        "Nou: Pestanya de rols i permisos"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Obriu aquesta pestanya per concedir permisos específics sense accés complet d'administrador/a."
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Ara podeu assignar rols a usuaris individuals des d'aquesta pestanya."
       ]
     }
   }
