@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import Commander from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useFolders } from '@proton/mail/store/labels/hooks';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
@@ -14,6 +15,7 @@ import { useCategoryFlagWatcher } from 'proton-mail/components/categoryView/useC
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import { MailToolbar } from 'proton-mail/components/toolbar/MailToolbar';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
@@ -82,6 +84,7 @@ export const RouterLabelContainer = ({
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
+    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
 
     const categoryViewControl = useCategoriesView();
     useCategoryFlagWatcher();
@@ -174,7 +177,7 @@ export const RouterLabelContainer = ({
         [selectedIDs, elementID, labelID, folders, handleBack, selectAll]
     );
 
-    return (
+    const content = (
         <div
             ref={elementRef}
             tabIndex={-1}
@@ -198,15 +201,17 @@ export const RouterLabelContainer = ({
                     actions={actions}
                     elementsData={elementsData}
                     toolbar={
-                        <>
-                            <MailboxToolbar
-                                params={params}
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={{ ...actions, handleMove }}
-                            />
-                            {categoryViewControl.shouldShowTabs && <CategoriesTabs />}
-                        </>
+                        isRefreshedToolbarUIDisabled ? (
+                            <>
+                                <MailboxToolbar
+                                    params={params}
+                                    navigation={navigation}
+                                    elementsData={elementsData}
+                                    actions={{ ...actions, handleMove }}
+                                />
+                                {categoryViewControl.shouldShowTabs && <CategoriesTabs />}
+                            </>
+                        ) : null
                     }
                     listRef={listRef}
                     scrollContainerRef={scrollContainerRef}
@@ -250,6 +255,16 @@ export const RouterLabelContainer = ({
             {hotkeySelectAllMoveModal}
             {hotkeyDeleteAllShortcutModal}
             {hotkeyDeleteSelectionShortcutModal}
+        </div>
+    );
+
+    // This can be removed once the refreshed toolbar UI is fully implemented and validated
+    return isRefreshedToolbarUIDisabled ? (
+        content
+    ) : (
+        <div className="flex flex-column flex-1 flex-nowrap">
+            <MailToolbar placement="list" />
+            {content}
         </div>
     );
 };
