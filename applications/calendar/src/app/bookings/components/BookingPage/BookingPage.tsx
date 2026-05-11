@@ -12,13 +12,13 @@ export const BookingPage = () => {
     const hasLoaded = useBookingStore((state) => state.hasLoaded);
     const isEmpty = useBookingStore((state) => !state.bookingDetails);
 
-    const isExternalBookingsEnabled = useFlag('CalendarExternalBookings');
+    const calendarExternalBookingsDisabled = useFlag('CalendarExternalBookingsDisabled');
 
     if (!isLoading && hasLoaded && isEmpty) {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    if (!isExternalBookingsEnabled) {
+    if (calendarExternalBookingsDisabled) {
         return <NoMatch reason={Reason.featureUnavailable} />;
     }
 
