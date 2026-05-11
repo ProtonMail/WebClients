@@ -32,30 +32,26 @@ const RadioGroup = <T extends string | number>({
     // If we dont have marginRight or horizontal margin in className, let's add default one
     const defaultMarginRight = ['mr', 'mx'].every((marginMatch) => !className?.includes(marginMatch)) ? 'mr-8' : '';
 
-    return (
-        <>
-            {options.map((option, i) => (
-                <Radio
-                    id={`${name}-radio_${i}`}
-                    key={option.value}
-                    onChange={() => {
-                        if (disableChange) {
-                            return;
-                        }
+    return options.map((option, i) => (
+        <Radio
+            id={`${name}-radio_${i}`}
+            key={option.value}
+            onChange={() => {
+                if (disableChange) {
+                    return;
+                }
 
-                        onChange(option.value);
-                    }}
-                    checked={value === option.value}
-                    name={name}
-                    className={clsx('inline-flex *:self-center', defaultMarginRight, defaultMarginBottom, className)}
-                    disabled={option.disabled}
-                    aria-describedby={ariaDescribedBy}
-                >
-                    {option.label}
-                </Radio>
-            ))}
-        </>
-    );
+                onChange(option.value);
+            }}
+            checked={value === option.value}
+            name={name}
+            className={clsx('inline-flex *:self-center', defaultMarginRight, defaultMarginBottom, className)}
+            disabled={option.disabled}
+            aria-describedby={ariaDescribedBy}
+        >
+            {option.label}
+        </Radio>
+    ));
 };
 
 export default RadioGroup;
