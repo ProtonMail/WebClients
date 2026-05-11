@@ -121,9 +121,15 @@ export const listPatMonitorRecords = async (
     const rawPatKey = await PassCrypto.openAccessTokenKey(pat.PersonalAccessTokenKey);
     const records = await Promise.all(response.Actions.Records.map((record) => decodePatRecord(record, rawPatKey)));
 
+    // Workaround for BE issue: NextSince is always returned on the initial request
+    // even if there is no next page. If we see less than PAT_MONITOR_PAGE_SIZE records,
+    // then we can safely assume there is no next page.
+    const nextSince =
+        response.Actions.Records.length >= PAT_MONITOR_PAGE_SIZE ? (response.Actions.NextSince ?? null) : null;
+
     return {
         records,
-        nextSince: response.Actions.NextSince ?? null,
+        nextSince,
         append: Boolean(since),
         tokenId: pat.PersonalAccessTokenID,
     };
