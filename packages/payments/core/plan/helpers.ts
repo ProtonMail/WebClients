@@ -192,7 +192,7 @@ export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled:
     }
     const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS];
     if (isSsoForPbsEnabled) {
-        plans.push(PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
+        plans.push(PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
     }
     return plans.some((ssoPlanName) => ssoPlanName === planName);
 };
