@@ -97,7 +97,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
                 });
             } else {
                 await connectivity.check();
-                return authService.init({ forcePersist: true });
+                await authService.init({ forcePersist: true });
             }
         };
 
@@ -150,6 +150,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
             }
         };
 
+        const unsubscribe = authService.listen();
         sw?.on('fork', handleFork);
         sw?.on('unauthorized', handleUnauthorized);
         sw?.on('locked', handleLocked);
@@ -159,6 +160,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
         run().catch(noop);
 
         return () => {
+            unsubscribe();
             sw?.off('fork', handleFork);
             sw?.off('lock_deleted', handleLockDeleted);
             sw?.off('locked', handleLocked);
