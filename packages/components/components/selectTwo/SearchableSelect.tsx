@@ -31,6 +31,7 @@ export interface SearcheableSelectProps<V> extends SelectProps<V> {
     dropdownClassName?: string;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     prefixIcon?: ReactNode;
+    onSearchInputChange?: (value: string) => void;
 }
 
 const SearchableSelect = <V extends any>({
@@ -58,6 +59,7 @@ const SearchableSelect = <V extends any>({
     caretClassName,
     anchorRef: maybeAnchorRef,
     prefixIcon,
+    onSearchInputChange,
     ...rest
 }: SearcheableSelectProps<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -130,9 +132,11 @@ const SearchableSelect = <V extends any>({
     };
 
     const onSearchChange = (event: FormEvent<HTMLInputElement>) => {
-        setSearchValue(event.currentTarget.value);
+        const value = event.currentTarget.value;
+        setSearchValue(value);
+        onSearchInputChange?.(value);
 
-        if (!event.currentTarget.value) {
+        if (!value) {
             focusSearchInput();
         }
     };
