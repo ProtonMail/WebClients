@@ -39,13 +39,13 @@ export const useBookingPageSpotlight = () => {
     const [user] = useUser();
     const accountAge = differenceInDays(new Date(), fromUnixTime(user.CreateTime));
 
-    const isBookingsEnabled = useFlag('CalendarBookings');
+    const calendarBookingsDisabled = useFlag('CalendarBookingsDisabled');
     const calendarSpotlight = useFeature(FeatureCode.SpotlightIntroduceBookings);
     const hasUserSeeCalendarSpotlight = !calendarSpotlight.loading && !calendarSpotlight.feature?.Value;
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.BookingSpotlightInMail,
-        !isWelcomeFlow && accountAge > 3 && !hasUserSeeCalendarSpotlight && isBookingsEnabled
+        !isWelcomeFlow && accountAge > 3 && !hasUserSeeCalendarSpotlight && !calendarBookingsDisabled
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);
