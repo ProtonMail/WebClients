@@ -190,8 +190,7 @@ export const useElements: UseElements = ({
     const getConversationCounts = useGetConversationCounts();
     const getMessageCounts = useGetMessageCounts();
 
-    // Used for the rate limit check and Sentry reports
-    const isMailInfitiniteLoopRateLimiterEnabled = useFlag('MailInfitiniteLoopRateLimiterEnabled');
+    const mailInfitiniteLoopRateLimiterDisabled = useFlag('MailInfitiniteLoopRateLimiterDisabled');
     const rateLimitReachedRef = useRef(false);
 
     const ctxTotal = useMailSelector(contextTotal);
@@ -370,7 +369,7 @@ export const useElements: UseElements = ({
          * OR change the page size for a bigger one (100 > 200)
          */
         if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
-            if (isMailInfitiniteLoopRateLimiterEnabled) {
+            if (!mailInfitiniteLoopRateLimiterDisabled) {
                 try {
                     elementsLoadRateLimiter.recordCallOrThrow(labelID);
                 } catch {
