@@ -1395,6 +1395,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "Debe iniciar sesión en la aplicación de escritorio de ${ PASS_APP_NAME }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Ya se está realizando una comprobación de desbloqueo del escritorio."
       ]
     },
     "Error message": {
@@ -2538,7 +2541,7 @@
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su segunda contraseña."
       ],
       "Unlock with biometrics": [
-        "Desbloquear usando datos biométricos"
+        "Desbloquear con biometría"
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
