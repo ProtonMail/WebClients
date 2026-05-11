@@ -255,7 +255,6 @@ export enum MailFeatureFlag {
     CategoryView = 'CategoryView',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
-    FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
     MailStoreDebugMode = 'MailStoreDebugMode',
 }
 
