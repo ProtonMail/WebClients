@@ -26,6 +26,7 @@ import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { cloneObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 type LockState = {
@@ -352,7 +353,15 @@ export const useLockSetup = (): LockSetup => {
     const password = useMemo(() => ({ enabled: !EXTENSION_BUILD }), []);
 
     const extensionBiometrics = useMemo(
-        () => ({ enabled: EXTENSION_BUILD && desktopUnlockFeatureFlag, needsUpgrade: isFreePlan }),
+        () => ({
+            enabled:
+                EXTENSION_BUILD &&
+                desktopUnlockFeatureFlag &&
+                // It's not possible to constraint a feature flag to extension + os
+                // Limiting to macos is meant to be removed
+                isMac(),
+            needsUpgrade: isFreePlan,
+        }),
         [desktopUnlockFeatureFlag, isFreePlan]
     );
 
