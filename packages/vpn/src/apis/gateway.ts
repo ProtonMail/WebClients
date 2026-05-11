@@ -1,5 +1,4 @@
-import type { GatewayIpModel } from '../gateways/GatewayIpModel';
-import type { GatewayModel } from './GatewayModel';
+import type { GatewayIpModel, GatewayModel } from '../types/Gateway';
 
 export const queryVPNGateways = () => ({
     url: 'vpn/v1/business/gateways',

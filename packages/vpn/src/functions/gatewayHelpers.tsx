@@ -8,12 +8,14 @@ import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayLocation } from './GatewayLocation';
-import type { GatewayLogical } from './GatewayLogical';
-import type { GatewayServer } from './GatewayServer';
-import type { GatewayUser } from './GatewayUser';
+import type {
+    GatewayDto,
+    GatewayGroup,
+    GatewayLocation,
+    GatewayLogical,
+    GatewayServer,
+    GatewayUser,
+} from '../types/Gateway';
 
 export const getSuffix = (name: string | undefined) => name?.match(/#\d+$/)?.[0] || '';
 

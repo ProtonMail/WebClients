@@ -4,8 +4,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 
-import type { GatewayGroup } from '../gateways/GatewayGroup';
-import type { GatewayUser } from '../gateways/GatewayUser';
+import type { GatewayGroup, GatewayUser } from '../../types/Gateway';
 
 interface TableHeaderProps {
     entities: GatewayUser[] | GatewayGroup[];
@@ -14,7 +13,7 @@ interface TableHeaderProps {
     label: string;
 }
 
-const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }: TableHeaderProps) => (
+export const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }: TableHeaderProps) => (
     <TableRow>
         <TableCell>
             <div className="flex gap-4 w-full items-center">
@@ -33,4 +32,3 @@ const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }:
         </TableCell>
     </TableRow>
 );
-export default TableHeader;

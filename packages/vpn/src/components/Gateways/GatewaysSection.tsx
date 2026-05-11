@@ -11,11 +11,14 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import EmptyViewContainer from '@proton/components/containers/app/EmptyViewContainer';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useSortedList from '@proton/components/hooks/useSortedList';
 import { PLANS } from '@proton/payments';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -25,21 +28,22 @@ import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
-import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
-import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
-import useSortedList from '../../../hooks/useSortedList';
-import type { Gateway } from './Gateway';
-import type { GatewayLogical } from './GatewayLogical';
-import GatewayModal from './GatewayModal';
-import type { GatewayModel } from './GatewayModel';
-import GatewayRenameModal from './GatewayRenameModal';
+import {
+    addIpInVPNGateway,
+    createVPNGateway,
+    deleteVPNGateway,
+    renameVPNGateway,
+    updateVPNGatewayUsers,
+} from '../../apis/gateway';
+import { getLocationFromId } from '../../functions/gatewayHelpers';
+import { useGateways } from '../../hooks/useGateways';
+import type { Gateway, GatewayLogical, GatewayModel } from '../../types/Gateway';
+import { GatewayModal } from './GatewayModal';
+import { GatewayRenameModal } from './GatewayRenameModal';
 import { GatewayRow } from './GatewayRow';
-import GatewayServersModal from './GatewayServersModal';
-import GatewayUsersModal from './GatewayUsersModal';
+import { GatewayServersModal } from './GatewayServersModal';
+import { GatewayUsersModal } from './GatewayUsersModal';
 import { RemoveGatewayConfirmationModal } from './RemoveGatewayConfirmationModal';
-import { addIpInVPNGateway, createVPNGateway, deleteVPNGateway, renameVPNGateway, updateVPNGatewayUsers } from './api';
-import { getLocationFromId } from './helpers';
-import { useGateways } from './useGateways';
 
 interface Props {
     organization?: Organization;
@@ -56,7 +60,7 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, string[] |
     ];
 };
 
-const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
+export const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const DASHBOARD = 'dashboard';
     const UPSELLS = 'upsells';
 
@@ -115,7 +119,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             });
     }, [gateways, updatedLogicals, deletedLogicals]);
     const { sortedList } = useSortedList(allGateways as Gateway[], { key: 'Name', direction: SORT_DIRECTION.ASC });
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
 
     if (!organization || !user || !gateways || !locations) {
         return <Loader />;
@@ -634,7 +638,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     imageProps={{
                         src: isAdmin ? gatewaysEmptyStateAdminsSvg : gatewaysEmptyStateUsersSvg,
                         title: c('Info').t`No gateways`,
-                        key: 'no-gateways-image',
                     }}
                 >
                     <h2 className="h3 text-bold">
@@ -664,5 +667,3 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         </>
     );
 };
-
-export default GatewaysSection;

@@ -11,8 +11,7 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 
-import type { Gateway } from './Gateway';
-import type { GatewayLogical } from './GatewayLogical';
+import type { Gateway, GatewayLogical } from '../../types/Gateway';
 
 interface Props {
     gateway: Gateway;
@@ -114,5 +113,3 @@ export const GatewayManageButton = ({
         </>
     );
 };
-
-export default GatewayManageButton;

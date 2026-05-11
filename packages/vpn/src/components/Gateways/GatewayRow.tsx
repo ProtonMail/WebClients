@@ -2,18 +2,14 @@ import { c, msgid } from 'ttag';
 
 import Copy from '@proton/components/components/button/Copy';
 import TableRow from '@proton/components/components/table/TableRow';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import clsx from '@proton/utils/clsx';
 
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { Gateway } from './Gateway';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayLogical } from './GatewayLogical';
+import { getFormattedLoad, getMembers } from '../../functions/gatewayHelpers';
+import type { Gateway, GatewayGroup, GatewayLogical, GatewayServer, GatewayUser } from '../../types/Gateway';
 import { GatewayManageButton } from './GatewayManageButton';
-import type { GatewayServer } from './GatewayServer';
-import type { GatewayUser } from './GatewayUser';
-import { getFormattedLoad, getMembers } from './helpers';
 
 import './GatewayRow.scss';
 
@@ -170,5 +166,3 @@ export const GatewayRow = ({
         />
     );
 };
-
-export default GatewayRow;
