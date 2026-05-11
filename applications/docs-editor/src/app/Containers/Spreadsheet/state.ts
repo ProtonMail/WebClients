@@ -643,8 +643,8 @@ const versionToMigrationMap: Record<number, (state: ProtonSheetsState) => void> 
     // comparators (e.g. number_eq) be calculated asynchronously instead of blocking,
     // to achieve parity with excel. These only need to be called once as the results
     // are then stored in the yjs state.
-    state.evaluateConditionalFormatting()
-    state.evaluateDataValidations()
+    state.evaluateConditionalFormatting(state.conditionalFormats)
+    state.evaluateDataValidations(state.dataValidations)
   },
 }
 
