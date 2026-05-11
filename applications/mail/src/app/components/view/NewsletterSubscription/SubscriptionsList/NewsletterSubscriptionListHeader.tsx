@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
@@ -170,15 +171,21 @@ export const NewsletterSubscriptionListHeader = ({ tabClickCallback }: Newslette
     const counts = useMailSelector(selectSubscriptionsCount);
     const dispatch = useMailDispatch();
 
+    const overridenViewName = useFlag('OverrideNewsletterViewName');
+
     const handleTabClick = (tab: SubscriptionTabs) => {
         dispatch(newsletterSubscriptionsActions.setSelectedTab(tab));
         tabClickCallback();
     };
 
+    const title = overridenViewName
+        ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, counts.active)
+        : c('Title').t`Newsletters`;
+
     return (
         <div className="flex flex-row flex-nowrap justify-space-between py-4 px-6 sticky top-0 subscriptions-list-header">
             <div className="flex gap-4 items-center">
-                <h2 className="text-bold text-xl hidden sm:block">{c('Title').t`Newsletters`}</h2>
+                <h2 className="text-bold text-xl hidden sm:block">{title}</h2>
                 <ul className="unstyled m-0 p-0 flex flex-row flex-wrap" role="tablist">
                     {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                     <li role="presentation">
