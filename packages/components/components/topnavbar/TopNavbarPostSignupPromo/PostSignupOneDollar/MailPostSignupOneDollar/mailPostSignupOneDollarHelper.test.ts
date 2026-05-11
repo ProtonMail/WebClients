@@ -21,7 +21,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -40,7 +40,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 4,
                 })
@@ -59,7 +59,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -78,7 +78,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -97,7 +97,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -118,7 +118,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
@@ -141,7 +141,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
@@ -164,7 +164,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
@@ -190,7 +190,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -210,7 +210,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -229,7 +229,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user: nonFreeUser,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: false,
+                    mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -248,7 +248,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user: nonFreeUser,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: false,
+                    mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: true,
                     nbrEmailsInAllMail: 10,
                 })
@@ -267,7 +267,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user: nonFreeUser,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -286,7 +286,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user: delinquentUser,
                     protonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })
@@ -305,7 +305,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     user,
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
                     offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
+                    mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
                     nbrEmailsInAllMail: 10,
                 })

@@ -14,7 +14,7 @@ interface Props {
     user: UserModel;
     protonConfig: ProtonConfig;
     offerStartDateTimeStamp: number;
-    mailOneDollarPostSignupFlag: boolean;
+    mailPostSignupOneDollarPromoDisabled: boolean;
     nbrEmailsInAllMail: number;
     hasHadSubscription: boolean;
     driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
@@ -26,13 +26,12 @@ export const getIsUserEligibleForOneDollar = ({
     user,
     protonConfig,
     offerStartDateTimeStamp,
-    mailOneDollarPostSignupFlag,
+    mailPostSignupOneDollarPromoDisabled,
     nbrEmailsInAllMail,
     hasHadSubscription,
     driveOfferStartDateTimestamp,
 }: Props) => {
-    // Global offer flag
-    if (!mailOneDollarPostSignupFlag) {
+    if (mailPostSignupOneDollarPromoDisabled) {
         return false;
     }
 
