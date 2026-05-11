@@ -910,6 +910,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Ask me next time": [
+        "Volgende keer vragen"
+      ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
       ]
     },
     "Actions message": {
@@ -3309,6 +3315,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ]
     },
     "error": {
@@ -5497,6 +5509,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Converting document...": [
+        "Document converteren..."
+      ],
+      "Creating new document...": [
+        "Nieuw document wordt aangemaakt..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Fout bij het converteren van document: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fout bij het laden van document: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
+      ],
+      "Get Notified About Comments": [
+        "Krijg een melding bij opmerkingen"
+      ],
+      "Making a copy...": [
+        "Een kopie maken..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Er is geen document meegegeven in de URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Het lijkt erop dat de URL die u hebt ingevoerd, onjuist uit Slack is gekopieerd. Wanneer u lange links vanuit Slack kopieert, klikt u met de rechtermuisknop op de link en kiest u vervolgens 'Kopieer link' in plaats van de ingekorte URL-tekst rechtstreeks te kopiëren."
       ]
     },
     "info": {
@@ -6047,6 +6086,12 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "Enable email notifications": [
+        "E-mailmeldingen inschakelen"
+      ],
+      "Include document name in notification": [
+        "Documentnaam opnemen in melding"
       ]
     },
     "Label for contact group color": {
@@ -7739,6 +7784,9 @@
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8830,6 +8878,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Uw huidige spreadsheet, inclusief alle werkbladen daarin, wordt vervangen door deze versie."
+      ],
+      "Creating new spreadsheet...": [
+        "Nieuwe spreadsheet maken..."
       ]
     },
     "sheets_2025:Label": {

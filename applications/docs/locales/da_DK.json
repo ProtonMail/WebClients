@@ -913,6 +913,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Ask me next time": [
+        "Spørg mig næste gang"
+      ],
+      "Save preferences": [
+        "Gem præferencer"
       ]
     },
     "Actions message": {
@@ -5506,6 +5512,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
+      "Creating new document...": [
+        "Opretter nyt dokument..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Fejl ved konvertering af dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fejl ved indlæsning af dokument: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer for kommentarer og forslag, der er tilføjet til dine dokumenter."
+      ],
+      "Get Notified About Comments": [
+        "Få besked om kommentarer"
+      ],
+      "Making a copy...": [
+        "Kopierer..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME } og vælg et dokument."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL'en, du har indtastet, ser ud til at være kopieret forkert fra Slack. Når du kopierer lange links fra Slack, skal du højreklikke på linket og derefter vælge \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
       ]
     },
     "info": {
@@ -6056,6 +6089,12 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
+      ],
+      "Enable email notifications": [
+        "Slå e-mailnotifikationer til"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i notifikation"
       ]
     },
     "Label for contact group color": {
@@ -8842,6 +8881,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Dit aktuelle regneark, inklusiv alle ark inde i, vil blive erstattet med denne version."
+      ],
+      "Creating new spreadsheet...": [
+        "Opretter nyt regneark..."
       ]
     },
     "sheets_2025:Label": {

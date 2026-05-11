@@ -923,6 +923,12 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Ask me next time": [
+        "Спытайце мяне наступны раз"
+      ],
+      "Save preferences": [
+        "Захаваць параметры"
       ]
     },
     "Actions message": {
@@ -5650,6 +5656,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Converting document...": [
+        "Пераўтварэнне дакумента..."
+      ],
+      "Creating new document...": [
+        "Стварэнне новага дакумента..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Памылка пераўтварэння дакумента: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Памылка загрузкі дакумента: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Атрымлівайце лісты на электронную пошту аб каментарыях і прапановах, якія дадаюцца ў вашы дакументы."
+      ],
+      "Get Notified About Comments": [
+        "Атрымлівайце апавяшчэнні аб каментарыях"
+      ],
+      "Making a copy...": [
+        "Стварэнне копіі..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "У URL-адрасе адсутнічае дакумент. Вярніцеся ў ${ DRIVE_APP_NAME } і выберыце дакумент."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Здаецца, што ўведзены вамі URL-адрас быў няправільна скапіяваны з платформы Slack. Пры капіяванні доўгіх спасылак з дадзенай платформы, націсніце на спасылку правай кнопкай мышы і выберыце \"Капіяваць спасылку\", а не капіюйце скарочаны тэкст URL-адраса наўпрост."
       ]
     },
     "info": {
@@ -6204,6 +6237,12 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "Enable email notifications": [
+        "Уключыць апавяшчэнні па электроннай пошце"
+      ],
+      "Include document name in notification": [
+        "Уключыць назву дакумента ў апавяшчэнне"
       ]
     },
     "Label for contact group color": {
@@ -9103,6 +9142,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Ваша бягучая электронная табліца, уключаючы ўсе аркушы ў ёй, будзе заменена гэтай версіяй."
+      ],
+      "Creating new spreadsheet...": [
+        "Стварэнне новай электроннай табліцы..."
       ]
     },
     "sheets_2025:Label": {

@@ -910,6 +910,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Ask me next time": [
+        "Nächstes Mal fragen"
+      ],
+      "Save preferences": [
+        "Einstellungen speichern"
       ]
     },
     "Actions message": {
@@ -5503,6 +5509,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Converting document...": [
+        "Dokument wird umgewandelt…"
+      ],
+      "Creating new document...": [
+        "Neues Dokument wird erstellt..."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fehler beim Laden des Dokuments: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
+      ],
+      "Get Notified About Comments": [
+        "Benachrichtigungen über Kommentare erhalten"
+      ],
+      "Making a copy...": [
+        "Kopie wird erstellt..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Kein Dokument in der URL angegeben. Zu ${ DRIVE_APP_NAME } zurückkehren und ein Dokument auswählen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann \"Link kopieren\" anstatt den abgeschnittenen URL-Text direkt zu kopieren."
       ]
     },
     "info": {
@@ -6053,6 +6086,12 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "Enable email notifications": [
+        "E-Mail-Benachrichtigungen aktivieren"
+      ],
+      "Include document name in notification": [
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ]
     },
     "Label for contact group color": {
@@ -8896,6 +8935,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Deine aktuelle Tabelle, einschließlich aller darin enthaltenen Arbeitsblätter, wird durch diese Version ersetzt."
+      ],
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
       ]
     },
     "sheets_2025:Label": {
