@@ -1,5 +1,6 @@
 import type { MaybeNode } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
+import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isHEICSupported } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContentPreviewMethod, getContentPreviewMethod } from './content';
@@ -9,7 +10,16 @@ jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
     isHEICSupported: jest.fn(),
 }));
 
+jest.mock('@proton/drive/modules/thumbnails', () => ({
+    canHtmlVideoPlay: jest.fn(),
+}));
+
 const mockedIsHEICSupported = jest.mocked(isHEICSupported);
+const mockedCanHtmlVideoPlay = jest.mocked(canHtmlVideoPlay);
+
+beforeEach(() => {
+    mockedCanHtmlVideoPlay.mockReturnValue(true);
+});
 
 describe('getContentPreviewMethod', () => {
     const baseDate = new Date();
@@ -62,6 +72,22 @@ describe('getContentPreviewMethod', () => {
         const result = getContentPreviewMethod(node);
 
         expect(result).toBe(ContentPreviewMethod.Streaming);
+    });
+
+    it('should return Thumbnail for video the browser cannot decode (e.g. AVI)', () => {
+        mockedCanHtmlVideoPlay.mockReturnValue(false);
+
+        const node: MaybeNode = {
+            ok: true,
+            value: {
+                ...baseValidNodeProps,
+                mediaType: 'video/x-msvideo',
+            },
+        };
+
+        const result = getContentPreviewMethod(node);
+
+        expect(result).toBe(ContentPreviewMethod.Thumbnail);
     });
 
     it('should return Buffer for image/jpeg', () => {

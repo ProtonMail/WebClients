@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { FileNameDisplay } from '@proton/components/index';
 import { MemberRole, type NodeEntity } from '@proton/drive';
 
-import { FileName } from '../../components/FileName';
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { ContentPreviewMethod, PartialPreview } from '../../modals/preview';
 import { getOpenInDocsInfo } from '../../utils/docs/openInDocs';
@@ -60,15 +60,9 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
         <div className="h-full flex flex-column">
             <PublicHeader
                 breadcrumbOrName={
-                    <FileName
-                        // Custom padding to match breadcrumb style
-                        className="pl-custom py-custom"
-                        style={{
-                            '--pl-custom': '0.315rem',
-                            '--py-custom': '0.5625rem',
-                        }}
-                        text={rootNode.name}
-                    />
+                    <div className="file-preview-filename flex items-center flex-nowrap">
+                        <FileNameDisplay text={rootNode.name} className="user-select w-100" />
+                    </div>
                 }
                 sharedBy={
                     canSeeEmail
