@@ -29,8 +29,7 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const [messageCount] = useMessageCounts();
     const totalMessage = messageCount?.find((label) => label.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL)?.Total || 0;
 
-    // One flag to control the feature, and another to manage the progressive rollout of existing users
-    const mailOneDollarPostSignupFlag = useFlag('MailPostSignupOneDollarPromo');
+    const mailPostSignupOneDollarPromoDisabled = useFlag('MailPostSignupOneDollarPromoDisabled');
 
     // One flag to store the state of the offer and the different modals, and another to manage the progressive rollout
     const { feature: mailOfferState, loading: mailOfferStateLoading } = useFeature<PostSubscriptionOneDollarOfferState>(
@@ -46,7 +45,7 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             user,
             protonConfig,
             offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
-            mailOneDollarPostSignupFlag,
+            mailPostSignupOneDollarPromoDisabled,
             nbrEmailsInAllMail: totalMessage,
             hasHadSubscription,
             driveOfferStartDateTimestamp: driveOfferState?.Value,

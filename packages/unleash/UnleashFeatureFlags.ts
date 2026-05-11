@@ -246,7 +246,7 @@ export enum MailFeatureFlag {
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
     MailWebListTelemetry = 'MailWebListTelemetry',
-    MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
+    MailPostSignupOneDollarPromoDisabled = 'MailPostSignupOneDollarPromoDisabled',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     RemoveReplyStyles = 'RemoveReplyStyles',
     // Category view flags
