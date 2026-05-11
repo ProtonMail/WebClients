@@ -547,17 +547,12 @@ export const PhotosLayout = () => {
             if (!albumShareId || !albumLinkId) {
                 return;
             }
-            const addedLinkIds = await addAlbumPhotos(
+            await addAlbumPhotos(
                 new AbortController().signal,
                 albumShareId,
                 albumLinkId,
                 selectedItemsNodeUids.map((nodeUid) => splitNodeUid(nodeUid).nodeId)
             );
-            if (addedLinkIds.length > 0) {
-                await getDriveForPhotos().updateAlbum(generateNodeUid(volumeId, albumLinkId), {
-                    coverPhotoNodeUid: generateNodeUid(volumeId, addedLinkIds[0]),
-                });
-            }
             void navigateToAlbum(albumShareId, albumLinkId);
         } else {
             if (albumLinkId && previewShareId) {
