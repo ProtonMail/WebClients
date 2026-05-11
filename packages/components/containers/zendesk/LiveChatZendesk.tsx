@@ -309,7 +309,7 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                             message,
                             status,
                             // TODO: Remove after figuring out ZD authentication issues
-                            token: zendeskToken || 'unknown',
+                            code: zendeskToken || 'unknown',
                         },
                     });
                 }
