@@ -267,6 +267,7 @@ export const ProtonMeetContainer = ({
     const isMeetSwitchJoinTypeEnabled = useFlag('MeetSwitchJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
+    const isMeetNewSwitchJoinTypeEnabled = useFlag('MeetNewSwitchJoinType');
 
     const {
         keyRotationScheduler,
@@ -295,6 +296,7 @@ export const ProtonMeetContainer = ({
     const { mlsSetupDone, handleMlsSetup } = useMlsSession({
         wasmApp,
         isMeetNewJoinTypeEnabled,
+        isMeetNewSwitchJoinTypeEnabled,
         isMeetSwitchJoinTypeEnabled,
         usePreSharedKey,
         getGroupKeyInfo,
@@ -498,12 +500,20 @@ export const ProtonMeetContainer = ({
                 meetingInfoRef.current = null;
             }
 
-            // get participants count from the API so we can know which joinType to use based on the participants count
-            const participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
-            participantCount = participantsCountValue;
+            let participantsCountValue: number | null = null;
+            if (isMeetNewSwitchJoinTypeEnabled) {
+                // No need to await here, we just want to set the participants count for the prejoin loader
+                // In the handleMlsSetup call, the participants count will be handled in the new join method.
+                void getQueryParticipantsCount(meetingToken).then((count) => {
+                    setPrejoinParticipantCount(count ?? 0);
+                });
+            } else {
+                // get participants count from the API so we can know which joinType to use based on the participants count
+                participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
 
-            // Set count for prejoin loader
-            setPrejoinParticipantCount(participantsCountValue);
+                participantCount = participantsCountValue;
+            }
+
 
             accessTokenRef.current = accessToken;
 
@@ -759,6 +769,12 @@ export const ProtonMeetContainer = ({
         loadingStartTimeRef.current = Date.now();
 
         try {
+            await wasmApp?.logStartToJoinRoom();
+        } catch (error) {
+            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
+        }
+
+        try {
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
                 isGuest: isGuest,
@@ -830,6 +846,12 @@ export const ProtonMeetContainer = ({
         joinBlockedRef.current = true;
 
         loadingStartTimeRef.current = Date.now();
+
+        try {
+            await wasmApp?.logStartToJoinRoom();
+        } catch (error) {
+            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
+        }
 
         try {
             const handshakeInfo = await initHandshake(meetingToken);
