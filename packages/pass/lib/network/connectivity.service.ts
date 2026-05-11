@@ -33,7 +33,14 @@ export interface ConnectivityService {
     subscribe: (subscriber: Subscriber<ConnectivityStatus>) => () => void;
 }
 
-type ConnectivityServiceOptions = { api: Api };
+export type GetRetryTimeout = (status: ConnectivityStatus, retryCount: number) => number;
+
+type ConnectivityServiceOptions = {
+    api: Api;
+    /** Strategy controlling delay between retries. Defaults to
+     * `getConnectivityRetryTimeout` (linear for OFFLINE, fib for DOWNTIME). */
+    getRetryTimeout?: GetRetryTimeout;
+};
 type ConnectivityRetryHandler = { start: () => void; cancel: () => void };
 
 export type ConnectivityState = {
@@ -53,7 +60,10 @@ const isEffectivelyOnline = ({ status, navigatorOnline }: ConnectivityState) =>
 
 /** Creates connectivity service managing network state with
  * automatic retry logic and subscriber notifications */
-export const createConnectivityService = ({ api }: ConnectivityServiceOptions): ConnectivityService => {
+export const createConnectivityService = ({
+    api,
+    getRetryTimeout = getConnectivityRetryTimeout,
+}: ConnectivityServiceOptions): ConnectivityService => {
     const target = typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope ? self : window;
 
     const listeners = createListenerStore();
@@ -98,7 +108,7 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
         const cancelableCheck = cancelable(check);
 
         const handler = (next: ConnectivityStatus) => {
-            const ms = getConnectivityRetryTimeout(next, retryCount);
+            const ms = getRetryTimeout(next, retryCount);
 
             retryTimer = setTimeout(
                 safeAsyncCall(async () => {
