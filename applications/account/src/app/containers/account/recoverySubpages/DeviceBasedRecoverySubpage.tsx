@@ -82,6 +82,7 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                                     loading={loadingDeviceRecovery}
                                     checked={recoveryFileData.hasDeviceRecoveryEnabled}
                                     onChange={({ target: { checked } }) => handleToggleChange(checked)}
+                                    disabled={!recoveryFileData.hasDeviceRecoveryEnabled && isSentinelUser}
                                 />
                             }
                         />

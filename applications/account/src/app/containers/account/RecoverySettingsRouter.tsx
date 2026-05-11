@@ -39,6 +39,7 @@ import RecoveryPhoneSubpage from './recoverySubpages/RecoveryPhoneSubpage';
 import RecoveryPhraseSubpage from './recoverySubpages/RecoveryPhraseSubpage';
 import { SessionRecoverySubpage } from './recoverySubpages/SessionRecoverySubpage';
 import SignInWithAnotherDeviceSubpage from './recoverySubpages/SignInWithAnotherDeviceSubpage';
+import { PasswordResetOptionRequiredWarningInGroup } from './recoverySubpages/shared/PasswordResetOptionRequiredWarning';
 import type { getAccountAppRoutes } from './routes';
 
 interface Props {
@@ -196,6 +197,9 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                         description={dataRecovery.description}
                         subsections={Object.values(dataRecovery.subroutes)}
                     >
+                        <PasswordResetOptionRequiredWarningInGroup
+                            emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
+                        />
                         <RecoveryDevice to={getSubroutePath(recoveryPath, dataRecovery.subroutes.deviceRecovery)} />
                         <RecoveryFile to={getSubroutePath(recoveryPath, dataRecovery.subroutes.backupFile)} />
                         <RecoveryContacts to={getSubroutePath(recoveryPath, dataRecovery.subroutes.recoveryContacts)} />
