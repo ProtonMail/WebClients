@@ -12,7 +12,7 @@ import type {
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
-import { isDevOrBlack } from '@proton/docs-shared'
+import { isDevOrBlack } from '@proton/utils/env'
 import {
   decompressDocumentUpdate,
   isCompressedDocumentUpdate,
