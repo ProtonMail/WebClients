@@ -23,9 +23,6 @@ import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequ
 
 export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAMES; emailSubpagePath: string }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
-    );
     return (
         <DashboardGrid>
             <SettingsDescription
@@ -33,7 +30,7 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
                     <SettingsDescriptionItem>
                         {c('Info')
                             .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.`}{' '}
-                        {learnMoreLink}
+                        <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
                     </SettingsDescriptionItem>
                 }
                 right={<img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />}
