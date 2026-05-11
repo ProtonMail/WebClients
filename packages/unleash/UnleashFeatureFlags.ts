@@ -145,12 +145,13 @@ export enum CalendarFeatureFlag {
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     CalendarMetrics = 'CalendarMetrics',
     RsvpCommentWeb = 'RsvpCommentWeb',
-    CalendarBookings = 'CalendarBookings',
 }
 
 export enum CalendarKillSwitchFlag {
     ZoomIntegrationDisabled = 'ZoomIntegrationDisabled',
     CalendarExternalBookingsDisabled = 'CalendarExternalBookingsDisabled',
+    CalendarBookingsDisabled = 'CalendarBookingsDisabled',
+    VideoConferenceWidgetDisabled = 'VideoConferenceWidgetDisabled',
 }
 
 enum DriveFeatureFlag {
