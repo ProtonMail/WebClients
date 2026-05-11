@@ -23,7 +23,7 @@ export const getAccessTokens = requestActionsFactory<void, PersonalAccessToken[]
         prepare: (error) =>
             withNotification({
                 type: 'error',
-                text: c('pass_2026: Error').t`Failed to load access tokens`,
+                text: c('Error').t`Failed to load access tokens`,
                 error,
             })({ payload: getApiError(error) }),
     },
@@ -35,7 +35,7 @@ export const createAccessToken = requestActionsFactory<CreateAccessTokenIntent, 
         prepare: (error) =>
             withNotification({
                 type: 'error',
-                text: c('pass_2026: Error').t`Failed to create access token`,
+                text: c('Error').t`Failed to create access token`,
                 error,
             })({ payload: getApiError(error) }),
     },
@@ -47,14 +47,14 @@ export const deleteAccessToken = requestActionsFactory<string, string>('access-t
         prepare: (payload) =>
             withNotification({
                 type: 'success',
-                text: c('pass_2026: Notification').t`Access token deleted`,
+                text: c('Notification').t`Access token deleted`,
             })({ payload }),
     },
     failure: {
         prepare: (error, payload) =>
             withNotification({
                 type: 'error',
-                text: c('pass_2026: Error').t`Failed to delete access token`,
+                text: c('Error').t`Failed to delete access token`,
                 error,
             })({ payload, error }),
     },
@@ -73,7 +73,7 @@ export const updateAccessTokenAccess = requestActionsFactory<UpdateAccessTokenAc
         prepare: (error, payload) =>
             withNotification({
                 type: 'error',
-                text: c('pass_2026: Error').t`Failed to update vault access`,
+                text: c('Error').t`Failed to update vault access`,
                 error,
             })({ payload, error }),
     },
@@ -87,7 +87,7 @@ export const getAccessTokenActions = requestActionsFactory<GetAccessTokenActions
         prepare: (error, payload) =>
             withNotification({
                 type: 'error',
-                text: c('pass_2026: Error').t`Failed to load token actions`,
+                text: c('Error').t`Failed to load token actions`,
                 error,
             })({ payload, error }),
     },

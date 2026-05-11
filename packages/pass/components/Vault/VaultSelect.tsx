@@ -172,7 +172,7 @@ export const VaultMultiSelect: FC<VaultMultiSelectProps> = ({
     emptyState,
 }) => {
     if (vaults.length === 0) {
-        return <div className="text-sm color-weak">{emptyState ?? c('pass_2026: Info').t`No vaults available.`}</div>;
+        return <div className="text-sm color-weak">{emptyState ?? c('Info').t`No vaults available.`}</div>;
     }
 
     return (
