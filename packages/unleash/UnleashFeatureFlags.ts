@@ -261,6 +261,7 @@ export enum MailFeatureFlag {
     // Refreshed toolbar UI flags
     RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
+    OverrideNewsletterViewName = 'OverrideNewsletterViewName',
 }
 
 enum AdminFeatureFlag {

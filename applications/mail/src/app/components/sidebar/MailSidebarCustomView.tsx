@@ -6,6 +6,7 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';
@@ -21,6 +22,7 @@ interface SidebarItemProps {
 
 const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: SidebarItemProps) => {
     const spotlight = useNewsletterSubscriptionSpotlight();
+    const overridenViewName = useFlag('OverrideNewsletterViewName');
 
     const [newsletterSub] = useNewsletterSubscriptions();
 
@@ -41,7 +43,7 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
                     labelID={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label}
                     isFolder={false}
                     icon="envelope-check"
-                    text={c('Label').t`Newsletters`}
+                    text={overridenViewName ? c('Label').t`Mailing list` : c('Label').t`Newsletters`}
                     moveToFolder={noop}
                     applyLabels={noop}
                     unreadCount={hideNotificationDot ? 0 : newsletterSub.tabs.active.totalCount}
