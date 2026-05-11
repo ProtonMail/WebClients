@@ -34,6 +34,10 @@ const RecoveryFileBadge = () => {
         );
     }
 
+    if (isSentinelUser) {
+        return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;
+    }
+
     if (hasOutdatedRecoveryFile) {
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Status').t`Outdated`} />;
     }
