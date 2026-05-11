@@ -12,10 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayModel } from './GatewayModel';
-import type { GatewayUser } from './GatewayUser';
+import type { GatewayDto, GatewayGroup, GatewayModel, GatewayUser } from '../../types/Gateway';
 import { GatewayUserSelection } from './GatewayUserSelection';
 
 type PartialGateway = Pick<GatewayDto, 'features' | 'userIds' | 'groupIds'>;
@@ -28,7 +25,7 @@ interface Props extends ModalProps<typeof Form> {
     onSubmitDone: (gateway: Pick<GatewayModel, 'Features' | 'UserIds' | 'GroupIds'>) => Promise<void>;
 }
 
-const GatewayUsersModal = ({
+export const GatewayUsersModal = ({
     model: initialModel,
     users,
     groups,
@@ -90,5 +87,3 @@ const GatewayUsersModal = ({
         </ModalTwo>
     );
 };
-
-export default GatewayUsersModal;

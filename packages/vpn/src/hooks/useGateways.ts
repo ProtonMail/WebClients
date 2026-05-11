@@ -5,11 +5,8 @@ import { useFetchData } from '@proton/components/hooks/useFetchData';
 import { PLANS } from '@proton/payments';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import type { Gateway } from './Gateway';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayLocation } from './GatewayLocation';
-import type { GatewayUser } from './GatewayUser';
-import { queryVPNGateways } from './api';
+import { queryVPNGateways } from '../apis/gateway';
+import type { Gateway, GatewayGroup, GatewayLocation, GatewayUser } from '../types/Gateway';
 
 interface TableConfig {
     Name: boolean;

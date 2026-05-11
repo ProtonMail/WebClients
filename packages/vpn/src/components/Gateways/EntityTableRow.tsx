@@ -2,8 +2,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 
-import type { GatewayGroup } from '../gateways/GatewayGroup';
-import type { GatewayUser } from '../gateways/GatewayUser';
+import type { GatewayGroup, GatewayUser } from '../../types/Gateway';
 
 interface AddEntitiesTableRowProps {
     id: string | number;
@@ -14,7 +13,14 @@ interface AddEntitiesTableRowProps {
     description: React.ReactNode;
 }
 
-const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, description }: AddEntitiesTableRowProps) => (
+export const EntityTableRow = ({
+    id,
+    checked,
+    onSelectEntity,
+    entity,
+    avatar,
+    description,
+}: AddEntitiesTableRowProps) => (
     <TableRow key={id}>
         <TableCell>
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
@@ -39,4 +45,3 @@ const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, descripti
         </TableCell>
     </TableRow>
 );
-export default EntityTableRow;

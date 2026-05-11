@@ -8,12 +8,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { CountryOptions } from '@proton/payments/core/countries';
 
-import { CountryFlagAndName } from './CountryFlagAndName';
-import type { GatewayLocation } from './GatewayLocation';
-import { getLocationDisplayName, getLocationFromId } from './helpers';
+import { getLocationDisplayName, getLocationFromId } from '../../functions/gatewayHelpers';
+import type { GatewayLocation } from '../../types/Gateway';
 
 interface Props extends ModalStateProps {
     totalQuantities: Record<string, number>;
@@ -21,7 +21,7 @@ interface Props extends ModalStateProps {
     onSubmitDone: () => void;
 }
 
-const AddServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitDone, ...rest }: Props) => {
+export const AddServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitDone, ...rest }: Props) => {
     const handleSubmit = async () => {
         onSubmitDone();
         rest.onClose?.();
@@ -82,5 +82,3 @@ const AddServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitD
         </ModalTwo>
     );
 };
-
-export default AddServerConfirmationModal;

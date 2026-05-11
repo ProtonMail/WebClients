@@ -11,18 +11,16 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
+import ApplyPolicyButton from '@proton/components/containers/vpn/sharedServers/ApplyPolicyButton';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import EntityTableRow from '../shared/EntityTableRow';
-import TableHeader from '../shared/TableHeader';
-import { useEntityTableSearch } from '../shared/useEntityTableSearch';
-import ApplyPolicyButton from '../sharedServers/ApplyPolicyButton';
-import type { GatewayDto } from './GatewayDto';
-import type { GatewayGroup } from './GatewayGroup';
-import type { GatewayUser } from './GatewayUser';
+import { useEntityTableSearch } from '../../hooks/useEntityTableSearch';
+import type { GatewayDto, GatewayGroup, GatewayUser } from '../../types/Gateway';
+import { EntityTableRow } from './EntityTableRow';
+import { TableHeader } from './TableHeader';
 
 type PartialGateway = Pick<GatewayDto, 'features' | 'userIds' | 'groupIds'>;
 interface Props {
@@ -235,5 +233,3 @@ export const GatewayUserSelection = ({ users, groups, model, changeModel }: Prop
         </>
     );
 };
-
-export default GatewayUserSelection;
