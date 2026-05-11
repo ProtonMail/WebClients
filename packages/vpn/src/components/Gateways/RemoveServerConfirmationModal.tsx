@@ -12,7 +12,7 @@ interface Props extends ModalStateProps {
     onSubmitDone: () => void;
 }
 
-const RemoveServerConfirmationModal = ({ onSubmitDone, ...rest }: Props) => {
+export const RemoveServerConfirmationModal = ({ onSubmitDone, ...rest }: Props) => {
     const handleSubmit = () => {
         onSubmitDone();
         rest.onClose?.();
@@ -38,5 +38,3 @@ const RemoveServerConfirmationModal = ({ onSubmitDone, ...rest }: Props) => {
         </ModalTwo>
     );
 };
-
-export default RemoveServerConfirmationModal;
