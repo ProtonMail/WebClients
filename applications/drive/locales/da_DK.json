@@ -1272,6 +1272,15 @@
       ],
       "Download for macOS": [
         "Download til macOS"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Rebuild index": [
+        "Opret indeks"
+      ],
+      "Search is unavailable": [
+        "Søgning utilgængelig"
       ]
     },
     "Action: Docs": {
@@ -7123,6 +7132,51 @@
       ],
       "File flagged as potentially malicious": [
         "Fil markeret som potentielt skadelig"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } registrerede at det lokale søgeindeks er beskadiget og ikke længere kan bruges. Opret indekset igen for at gendanne søgning."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indekseringen ramte en uventet status og kan ikke fortsætte. Opret indekset igen for at gendanne søgning."
+      ],
+      "Not enough storage space": [
+        "Ikke nok lagerplads"
+      ],
+      "RECOMMENDED": [
+        "FORSLÅET"
+      ],
+      "Search data is corrupted": [
+        "Søgningsdata er beskadiget"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Der opstod en intern fejl med søgning. Opret indekset igen for at gendanne søgning."
+      ],
+      "Search engine error": [
+        "Fejl med søgemaskine"
+      ],
+      "Search error": [
+        "Søgefejl"
+      ],
+      "Search is in an invalid state": [
+        "Søgning har en ugyldig status"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Søgning er klar. Dine filer er blevet indekseret."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Der opstod en intern fejl med søgemaskinen. Opret indekset igen for at gendanne søgning."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Din browser løb tør for plads under indekseringen af filer til søgning. Frigør lagerplads, og opret derefter indekset igen."
       ]
     },
     "info": {
