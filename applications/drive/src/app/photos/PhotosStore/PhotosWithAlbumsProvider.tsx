@@ -444,9 +444,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 (a) => splitNodeUid(a.nodeUid).nodeId === albumLinkId
             );
             if (albumEntry) {
+                const firstSuccessLinkId = result.successes[0];
+                const newCoverNodeUid =
+                    !albumEntry.coverNodeUid && firstSuccessLinkId
+                        ? generateNodeUid(link.volumeId, firstSuccessLinkId)
+                        : albumEntry.coverNodeUid;
                 useAlbumsStore.getState().upsertAlbum({
                     ...albumEntry,
                     photoCount: (albumEntry.photoCount ?? 0) + nbSuccesses,
+                    coverNodeUid: newCoverNodeUid,
                 });
             }
 
@@ -480,7 +486,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     }
                 }
             } else {
-                showNotifications(result, albumName, fromUpload, linkIds);
+                showNotifications(result, albumName, fromUpload, shouldCopy ? result.successes : linkIds);
                 // Reload albums to reload cover of current album - first photo is automatically set as cover.
                 if (useAlbumsStore.getState().getCurrentAlbum()?.photoNodeUids?.size === 0) {
                     void loadAlbums(abortSignal);
