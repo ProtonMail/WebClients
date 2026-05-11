@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/index';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -13,6 +12,7 @@ import { getPlan } from '@proton/payments/index';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { getFeedbackSurveyOptions } from '../../../constants/feedbackSurveyOptions';
+import { RadioElements } from './RadioElements';
 
 type Props = Omit<ModalProps, 'onClose'> & {
     onClose: (discarted: boolean) => void;
@@ -28,6 +28,7 @@ const sendFeedback = (data: Record<string, unknown>) => telemetry.sendCustomEven
 export const FeedbackSurveyModal = (props: Props) => {
     const [userChoice, setUserChoice] = useState<string | null>(null);
     const [otherReason, setOtherReason] = useState<string | null>(null);
+    const [podcastValue, setPodcastValue] = useState('');
     const [subscription] = useSubscription();
     const options = useMemo(getFeedbackSurveyOptions, []);
 
@@ -54,6 +55,7 @@ export const FeedbackSurveyModal = (props: Props) => {
             channel_source: userChoice === 'Other' ? otherReason : userChoice,
             subscription_plan: getSubscriptionPlan(subscription),
             platform: 'web',
+            ...(podcastValue && userChoice === 'Podcast' ? { podcast_value: podcastValue } : {}),
         });
         props.onClose(false);
     };
@@ -71,10 +73,12 @@ export const FeedbackSurveyModal = (props: Props) => {
         <ModalTwo {...props} onClose={handleCloseModalWithNoSubmit} size="large">
             <ModalTwoHeader title={c('Title').t`How did you find out about us?`} />
             <ModalTwoContent>
-                <div className="flex flex-column gap-2 flex-nowrap">
-                    <RadioGroup
-                        onChange={setUserChoice}
-                        value={userChoice || ''}
+                <div className="flex flex-column gap-3">
+                    <RadioElements
+                        onChangeRadio={setUserChoice}
+                        radioValue={userChoice || ''}
+                        onChangePodcast={setPodcastValue}
+                        podcastValue={podcastValue}
                         options={options.map((option) => {
                             return {
                                 value: option.value,
@@ -89,7 +93,6 @@ export const FeedbackSurveyModal = (props: Props) => {
                                 ),
                             };
                         })}
-                        name="feedback-suvey"
                         className="flex-nowrap"
                     />
                 </div>
