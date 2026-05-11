@@ -4,7 +4,6 @@ import {
   ApiResult,
   type WebsocketConnectionInterface,
   type WebsocketCallbacks,
-  isLocalEnvironment,
   ConnectionType,
 } from '@proton/docs-shared'
 import { WebsocketState } from './WebsocketState'
@@ -19,6 +18,7 @@ import { hours_to_ms, seconds_to_ms } from '../Util/time-utils'
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers'
 import { getClientID } from '@proton/shared/lib/apps/helper'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
+import { isLocalEnvironment } from '@proton/utils/env'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
