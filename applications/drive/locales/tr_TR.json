@@ -735,7 +735,7 @@
         "Yeni paylaşılan albüm"
       ],
       "New spreadsheet": [
-        "Yeni hesap tablosu"
+        "Yeni elektronik tablo"
       ],
       "Next": [
         "İleri"
@@ -1717,7 +1717,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -7138,7 +7138,7 @@
         "${ first }, ${ second }, ${ third } ve ${ fourth } dizine eklendi"
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } yerel arama dizininde bozulma olduğunu ve artık kullanılamayacağını tespit etti. Arama işlevini geri yüklemek için dizini yeniden oluşturun."
+        "${ DRIVE_APP_NAME } yerel arama dizininde bozulma olduğunu ve artık kullanılamayacağını buldu. Arama özelliğini kurtarmak için dizini yeniden oluşturun."
       ],
       "Could not scan file for malware": [
         "Dosyada kötü amaçlı yazılım taraması yapılamadı"
@@ -7150,43 +7150,43 @@
         "Dosya potansiyel zararlı olarak işaretlendi"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Dizin oluşturma işlemi beklenmedik bir duruma düştü ve devam edemiyor. Kurtarmak için dizini yeniden oluşturun."
+        "Dizine ekleme işlemi beklenmeyen bir duruma geçti ve ilerleyemiyor. Kurtarmak için dizini yeniden oluşturun."
       ],
       "Not enough storage space": [
         "Yeterli depolama alanı yok"
       ],
       "Search data is corrupted": [
-        "Arama verileri bozuk"
+        "Arama verileri bozulmuş"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "Arama sırasında dahili bir hata oluştu. Kurtarmak için dizini yeniden oluşturun."
+        "Arama sırasında bir iç sorun çıktı. Kurtarmak için dizini yeniden oluşturun."
       ],
       "Search engine error": [
-        "Arama motoru hatası"
+        "Arama işleyici sorunu"
       ],
       "Search error": [
-        "Arama hatası"
+        "Arama sorunu"
       ],
       "Search is in an invalid state": [
-        "Arama geçersiz durumda"
+        "Arama durumu geçersiz"
       ],
       "Search is ready. Your files have been indexed.": [
-        "Arama hazır. Dosyalarınız dizinlendi."
+        "Arama hazır. Dosyalarınız dizine eklendi."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Arama motorunda dahili hata oluştu. Kurtarmak için dizini yeniden oluşturun."
+        "Arama işleyicisinde bir iç sorun çıktı. Kurtarmak için dizini yeniden oluşturun."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Arama için dosyalar dizinlenirken tarayıcınızın depolama alanı doldu. Depolama alanını boşaltın ardından dizini yeniden oluşturun."
+        "Arama için dosyalar dizine eklenirken tarayıcınızın depolama alanı doldu. Depolama alanını boşaltın ardından dizini yeniden oluşturun."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
       ],
       "For just ${ bundlePlanPriceInline }": [
-        "Sadece ${ bundlePlanPriceInline }"
+        "Yalnızca ${ bundlePlanPriceInline }"
       ],
       "RECOMMENDED": [
         "ÖNERİLEN"
@@ -8443,7 +8443,7 @@
         "OpenDocument sunum belgesi"
       ],
       "OpenDocument spreadsheet document": [
-        "OpenDocument hesap tablosu belgesi"
+        "OpenDocument elektronik tablo belgesi"
       ],
       "OpenDocument text document": [
         "OpenDocument yazı belgesi"
@@ -11356,7 +11356,7 @@
     },
     "sheets_2025:Action": {
       "New spreadsheet": [
-        "Yeni hesap tablosu"
+        "Yeni elektronik tablo"
       ],
       "Open in ${ appName }": [
         "${ appName } ile aç"
@@ -13316,10 +13316,10 @@
         "Zaman"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu ön izlemek için indirin."
+        "Bu elektronik tabloyu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
+        "Bu elektronik tabloyu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
       "Total size": [
         "Toplam boyut"
@@ -13346,7 +13346,7 @@
         "Adlandırılmamış belge ${ date }"
       ],
       "Untitled spreadsheet ${ date }": [
-        "Adlandırılmamış hesap tablosu ${ date }"
+        "Adlandırılmamış elektronik tablo ${ date }"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
