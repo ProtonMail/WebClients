@@ -14,8 +14,25 @@ mod store;
 
 use tauri_specta::{collect_commands, collect_events, Builder};
 
+// TODO: remove this once a patch is released for OpenPGP.js.
+// Fix Proton login & app password lock crashing on recent Linux distros
+// with WebKitGTK 2.50+ (Ubuntu 26.04+, Fedora 43+). The WebView hangs while
+// loading openpgp.js's Argon2 SIMD module. Turning off WebAssembly SIMD
+// makes openpgp use its non-SIMD build instead.
+// Older distros e.g Ubuntu 24.04 / Fedora 42 and below (WebKitGTK 2.48) are
+// not affected, but we apply this everywhere as newer versions are becoming LTS
+#[cfg(target_os = "linux")]
+fn apply_webkitgtk_workaround() {
+    if std::env::var_os("JSC_useWasmSIMD").is_none() {
+        std::env::set_var("JSC_useWasmSIMD", "false");
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    #[cfg(target_os = "linux")]
+    apply_webkitgtk_workaround();
+
     let builder = Builder::<tauri::Wry>::new()
         .commands(collect_commands![
             auth::log_in,
