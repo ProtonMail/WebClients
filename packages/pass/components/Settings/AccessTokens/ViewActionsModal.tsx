@@ -149,9 +149,7 @@ export const ViewActionsModal: FC<Props> = ({ token, onClose }) => {
                                                         <dt className="color-weak m-0">
                                                             {c('pass_2026: Activity').t`Reason`}
                                                         </dt>
-                                                        <dd className="m-0 text-ellipsis" title={payload.reason}>
-                                                            {payload.reason}
-                                                        </dd>
+                                                        <dd className="m-0 text-break">{payload.reason}</dd>
                                                     </>
                                                 )}
                                             </dl>

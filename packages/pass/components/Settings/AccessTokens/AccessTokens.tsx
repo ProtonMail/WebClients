@@ -109,8 +109,12 @@ const AccessTokensList: FC = () => {
                     <ConfirmationPrompt
                         danger
                         title={c('pass_2026: Title').t`Delete access token?`}
-                        message={c('pass_2026: Info')
-                            .t`"${action.token.Name}" will stop working immediately. This action cannot be undone.`}
+                        message={
+                            <span className="text-break">
+                                {c('pass_2026: Info')
+                                    .t`Access token "${action.token.Name}" will stop working immediately. This action cannot be undone.`}
+                            </span>
+                        }
                         confirmText={c('Action').t`Delete`}
                         loading={remove.loading}
                         onCancel={() => setAction(null)}
