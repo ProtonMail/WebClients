@@ -1,4 +1,5 @@
 import type { MaybeNode } from '@proton/drive';
+import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import { isIWAD, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -40,7 +41,7 @@ export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
     }
 
     if (isVideo(mimeType)) {
-        return ContentPreviewMethod.Streaming;
+        return canHtmlVideoPlay(mimeType) ? ContentPreviewMethod.Streaming : ContentPreviewMethod.Thumbnail;
     }
 
     if (isPreviewAvailable(mimeType, getNodeDisplaySize(node)) || isIWAD(mimeType)) {
