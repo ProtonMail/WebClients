@@ -12,10 +12,11 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
+import type { ImageAspectRatio } from '../../types';
 import { ComposerMode } from '../../types';
-import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
 import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
+import AspectRatioDropdown from './AspectRatioDropdown';
 import { ModelModeDropdown } from './ModelModeDropdown';
 import { ToolMenuDropdown } from './ToolMenuDropdown';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
@@ -119,12 +120,9 @@ export interface ComposerToolbarProps {
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
     fileUploadMode: FileUploadMode;
-
-    // From legacy composer component - can delete
-    // hasAttachments: boolean;
-    // canShowLumoUpsellToggle?: boolean;
-    // TODO: remove in later versions
-    canShowLumoUpsellToggle?: boolean;
+    // Gallery-mode only — unused in all other composer modes
+    selectedAspectRatio?: ImageAspectRatio;
+    onAspectRatioChange?: (ratio: ImageAspectRatio) => void;
     canUseAgents?: boolean;
     isAgent?: boolean;
 }
@@ -135,7 +133,8 @@ export const ComposerToolbar = ({
     onBrowseDrive,
     onDrawSketch,
     fileUploadMode,
-    canShowLumoUpsellToggle,
+    selectedAspectRatio,
+    onAspectRatioChange,
     canUseAgents = false,
     isAgent = false,
 }: ComposerToolbarProps) => {
@@ -154,8 +153,15 @@ export const ComposerToolbar = ({
 
     if (composerMode === ComposerMode.GALLERY) {
         return (
-            <div className="flex flex-row flex-nowrap items-center gap-1 pl-2 mt-1">
-                <UploadMenuSection {...uploadSectionProps} buttonIcon={<GalleryUploadIcon />} />
+            <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
+                <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
+                    <UploadMenuSection {...uploadSectionProps} buttonIcon={<GalleryUploadIcon />} />
+                </div>
+                {selectedAspectRatio && onAspectRatioChange && (
+                    <div className="flex flex-row flex-nowrap items-center mr-2">
+                        <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
+                    </div>
+                )}
             </div>
         );
     }
@@ -205,14 +211,7 @@ export const ComposerToolbar = ({
                 )}
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
-                {/* <LumoComposerToggleUpsell /> */}
-                {canShowLumoUpsellToggle && !isImageToolsFlagEnabled && (
-                    <div className="flex flex-row">
-                        <LumoComposerToggleUpsell />
-                    </div>
-                )}
                 <div className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')} id="voice-entry-mobile">
-                    {/* <LumoPlusToggle /> */}
                     <Button
                         icon
                         id="voice-entry-mobile-button"
