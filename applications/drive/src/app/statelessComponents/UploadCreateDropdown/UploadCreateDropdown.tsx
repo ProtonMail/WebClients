@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, MimeIcon } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
+import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
+import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 interface UploadCreateDropdownProps {
     onUploadFile?: () => void;
@@ -33,20 +35,20 @@ export function UploadCreateDropdown({
             <DropdownMenu>
                 {onUploadFile && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onUploadFile}>
-                        <Icon name="file-arrow-in-up" />
+                        <IcFileArrowInUp />
                         {c('Action').t`Upload file`}
                     </DropdownMenuButton>
                 )}
                 {onUploadFolder && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onUploadFolder}>
-                        <Icon name="folder-arrow-up" />
+                        <IcFolderArrowUp />
                         {c('Action').t`Upload folder`}
                     </DropdownMenuButton>
                 )}
                 {showDivider && <hr className="my-2" />}
                 {onCreateFolder && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onCreateFolder}>
-                        <Icon name="folder-plus" />
+                        <IcFolderPlus />
                         {c('Action').t`New folder`}
                     </DropdownMenuButton>
                 )}

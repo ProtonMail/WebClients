@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton';
 
 interface PublicPagePasswordProps {
     submitPassword: (password: string) => Promise<void>;
@@ -28,7 +29,7 @@ export const PublicPagePassword = ({ submitPassword }: PublicPagePasswordProps) 
             >
                 <div className="flex justify-center pb-7">
                     <span className="password-page--icon-container rounded p-4">
-                        <Icon name="key-skeleton" className="color-primary" size={7} />
+                        <IcKeySkeleton className="color-primary" size={7} />
                     </span>
                 </div>
                 <h3 className="text-center text-bold mb-2">{c('Title').t`This link is password protected`}</h3>

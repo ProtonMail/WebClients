@@ -14,6 +14,8 @@ import {
     useLocalState,
 } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -315,9 +317,7 @@ function WelcomeAction({
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>
-            {!isDone && (
-                <Icon name={onHover ? 'arrow-right' : 'chevron-right'} className={onHover ? '' : 'color-weak'} />
-            )}
+            {!isDone && (onHover ? <IcArrowRight /> : <IcChevronRight className="color-weak" />)}
         </Row>
     );
 }
