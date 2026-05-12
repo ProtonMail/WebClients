@@ -90,6 +90,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Ask me next time": [
+        "Nächstes Mal fragen"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
         "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
@@ -686,6 +689,9 @@
       ],
       "Save changes": [
         "Änderungen speichern"
+      ],
+      "Save preferences": [
+        "Einstellungen speichern"
       ],
       "Search": [
         "Suchen"
@@ -4439,6 +4445,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Converting document...": [
+        "Dokument wird umgewandelt…"
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
@@ -4487,6 +4496,9 @@
       ],
       "Creating link to folder": [
         "Link zum Ordner wird erstellt"
+      ],
+      "Creating new document...": [
+        "Neues Dokument wird erstellt..."
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -4587,6 +4599,12 @@
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fehler beim Laden des Dokuments: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fehler beim Synchronisieren"
       ],
@@ -4649,6 +4667,12 @@
       ],
       "Geoblocking": [
         "Geoblockierung"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
+      ],
+      "Get Notified About Comments": [
+        "Benachrichtigungen über Kommentare erhalten"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
@@ -4798,6 +4822,9 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Making a copy...": [
+        "Kopie wird erstellt..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen"
@@ -4828,6 +4855,9 @@
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Kein Dokument in der URL angegeben. Zu ${ DRIVE_APP_NAME } zurückkehren und ein Dokument auswählen."
       ],
       "No email address": [
         "Keine E-Mail-Adresse"
@@ -5112,6 +5142,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann \"Link kopieren\" anstatt den abgeschnittenen URL-Text direkt zu kopieren."
       ],
       "There are no documents in the trash.": [
         "Es befinden sich keine Dokumente im Papierkorb."
@@ -5763,6 +5796,9 @@
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
+      "Enable email notifications": [
+        "E-Mail-Benachrichtigungen aktivieren"
+      ],
       "Encrypt emails": [
         "E-Mails verschlüsseln"
       ],
@@ -5813,6 +5849,9 @@
       ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
+      ],
+      "Include document name in notification": [
+        "Dokumentname in der Benachrichtigung einbeziehen"
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
@@ -8876,6 +8915,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Neue Tabelle wird erstellt..."
+      ],
       "Detect automatically": [
         "Automatisch erkennen"
       ],

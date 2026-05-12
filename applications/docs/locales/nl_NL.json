@@ -2825,6 +2825,9 @@
       "Account does not exist": [
         "Account bestaat niet"
       ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3155,6 +3158,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
@@ -7733,6 +7739,9 @@
       ],
       "You stopped sharing this item": [
         "U bent gestopt met dit item te delen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ],
       "Your settings failed to be saved": [
         "Uw instellingen konden niet worden bewaard"
