@@ -10,6 +10,7 @@ import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeI
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
+import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
@@ -30,6 +31,8 @@ const MainContainer: FunctionComponent = () => {
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
+
+    usePreventWasmLoading();
 
     /**
      * @description React has an issue regarding DOM changed by Gtranslate from Chrome
