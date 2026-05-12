@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import { type Member, ROLE_SOURCE, type UserOrganizationRole } from '@proton/shared/lib/interfaces';
+import { type Member, ROLE_SOURCE, type RoleAssignment } from '@proton/shared/lib/interfaces';
 
 interface AdminRoleItemProps {
-    role: UserOrganizationRole;
+    role: RoleAssignment;
     isLastItem: boolean;
 }
 
@@ -31,7 +31,7 @@ const AdminRoleItem = ({ role, isLastItem }: AdminRoleItemProps) => {
 
 interface MemberRoleProps {
     member: Member;
-    userOrganizationRoles?: UserOrganizationRole[];
+    userOrganizationRoles?: RoleAssignment[];
 }
 
 const MemberRole = ({ member, userOrganizationRoles }: MemberRoleProps) => {

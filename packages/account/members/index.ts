@@ -2,10 +2,10 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt'
-import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import { previousSelector } from '@proton/redux-utilities/creator';
+import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promiseStore';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
@@ -13,7 +13,7 @@ import { getMemberOrganizationRoles } from '@proton/shared/lib/api/organizationR
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Api, EnhancedMember, Member, User, UserOrganizationRole } from '@proton/shared/lib/interfaces';
+import type { Address, Api, EnhancedMember, Member, RoleAssignment, User } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
@@ -198,7 +198,7 @@ const slice = createSlice({
         },
         memberRoleFetchFulfilled: (
             state,
-            action: PayloadAction<{ member: Member; organizationRoles: UserOrganizationRole[] }>
+            action: PayloadAction<{ member: Member; organizationRoles: RoleAssignment[] }>
         ) => {
             const member = getMemberFromState(state, action.payload.member);
             if (member) {
@@ -398,7 +398,7 @@ export const getMemberAddresses = ({
 };
 
 const getTemporaryRolePromiseMap = (() => {
-    let map: undefined | Map<string, Promise<UserOrganizationRole[]>>;
+    let map: undefined | Map<string, Promise<RoleAssignment[]>>;
     return () => {
         if (!map) {
             map = new Map();
@@ -415,7 +415,7 @@ export const getMemberRoles = ({
     member: Member;
     retry?: boolean;
     cache?: CacheType;
-}): ThunkAction<Promise<UserOrganizationRole[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<RoleAssignment[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
     const map = getTemporaryRolePromiseMap();
 
     return async (dispatch, getState, extra) => {
@@ -436,7 +436,7 @@ export const getMemberRoles = ({
             return oldPromise;
         }
         const promise = extra
-            .api<{ RoleAssignments: UserOrganizationRole[] }>(getMemberOrganizationRoles(member.ID))
+            .api<{ RoleAssignments: RoleAssignment[] }>(getMemberOrganizationRoles(member.ID))
             .then(({ RoleAssignments }) => RoleAssignments);
         try {
             map.set(member.ID, promise);
