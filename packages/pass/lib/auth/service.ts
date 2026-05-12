@@ -533,6 +533,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             throw err;
                         });
 
+                    const lockLastExtendTime = authStore.getLockLastExtendTime();
+                    await authService.syncPersistedSession(localID, { lockLastExtendTime });
                     await config.onLockUpdate?.(lock, localID, false);
                     return lock;
                 })()

@@ -33,7 +33,7 @@ export const generateBiometricsKey = async (core: PassCoreContextValue, offlineK
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
 export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreContextValue): LockAdapterBiometrics => {
-    const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
+    const { authStore, api } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
      * the authentication session blob */
@@ -48,12 +48,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
 
         authStore.setUnlockRetryCount(retryCount);
         const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
+        await auth.syncPersistedSession(localID, { unlockRetryCount: retryCount });
     };
 
     const adapter: LockAdapterBiometrics = {
