@@ -42,8 +42,7 @@ interface Props {
 export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const location = useLocation();
 
-    const { ref, headerBreakpoints, isSmallScreen } = useMailboxToolbarBreakpoints();
-    const { isExtraTiny, isTiny } = headerBreakpoints;
+    const { ref, isExtraTiny, isTiny, isSmallScreen } = useMailboxToolbarBreakpoints('header');
 
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
