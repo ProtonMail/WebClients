@@ -3,12 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
-import type { LocalTrack } from 'livekit-client';
+import type { LocalTrack, Room } from 'livekit-client';
 import { Track } from 'livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import {
     selectActiveMicrophoneId,
     selectInitialAudioState,
@@ -24,7 +25,7 @@ import { audioQuality } from '../../../qualityConstants';
 import type { SwitchActiveDevice } from '../../../types';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
-const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
+const isKrispNoiseFilterBrowserSupported = isKrispNoiseFilterSupported();
 const TOGGLE_TIMEOUT_MS = 8000;
 const NOISE_FILTER_ATTACH_TIMEOUT_MS = 3000;
 /** Delay before attaching noise filter after a mute/unmute toggle */
@@ -71,6 +72,14 @@ const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TO
 };
 
 /**
+ * Whether the connected LiveKit server is LiveKit Cloud.
+ */
+const isRoomInLivekitCloud = (room: Room) => {
+    const CLOUD_EDITION = 1;
+    return room.serverInfo?.edition === CLOUD_EDITION;
+};
+
+/**
  * Manages microphone toggle (mute/unmute), device switching, and Krisp noise filter lifecycle.
  *
  * Noise filter architecture:
@@ -83,10 +92,13 @@ const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TO
  */
 export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
+
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
     const microphones = useMeetSelector(selectMicrophones);
     const microphoneState = useMeetSelector(selectMicrophoneState);
+    const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
+
     const [noiseFilter, setNoiseFilter] = useState(() => {
         const persisted = getPersistedNoiseFilter();
         return persisted ?? true;
@@ -110,6 +122,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const pendingRecovery = useRef<AudioToggleParams | null>(null);
 
     const room = useRoomContext();
+
+    const isAdvancedNoiseFilterSupported = isKrispNoiseFilterBrowserSupported && isRoomInLivekitCloud(room);
 
     const getCurrentPublication = () => {
         return [...room.localParticipant.audioTrackPublications.values()].find(
@@ -186,6 +200,69 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         abandonNoiseFilter();
     };
 
+    /**
+     * Recreates the mic track with a new native `noiseSuppression` value.
+     * `restartTrack` is the only path that re-runs `getUserMedia` and forces the
+     * browser to reinitialize its Audio Processing Module — `applyConstraints`
+     * and `setMicrophoneEnabled` are both no-ops on a published track.
+     *
+     * Used as the noise-cancellation fallback when Krisp isn't available.
+     */
+    const recreateMicrophoneWithNoiseSuppression = async (enabled: boolean) => {
+        const audioTrack = getCurrentPublication()?.audioTrack;
+
+        if (!audioTrack) {
+            debugLog('noiseFilter:native-recreate-skip', { reason: 'no-current-track' });
+            return;
+        }
+
+        if (toggleInProgress.current) {
+            debugLog('noiseFilter:native-recreate-skip', { reason: 'toggle-in-progress' });
+            return;
+        }
+
+        const previousTrack = audioTrack.mediaStreamTrack;
+
+        const useIOSWorkaround = isAudioSessionAvailable();
+        const deviceId = activeMicrophoneDeviceId;
+        const restartOptions = {
+            ...(useIOSWorkaround || !deviceId ? {} : { deviceId: { exact: deviceId } }),
+            echoCancellation: true,
+            autoGainControl: true,
+            noiseSuppression: enabled,
+            channelCount: 1,
+        };
+
+        toggleInProgress.current = true;
+        try {
+            // Old MediaStreamTrack is about to be stopped — drop any Krisp refs pointing to it.
+            abandonNoiseFilter();
+
+            await withTimeout(
+                audioTrack.restartTrack(restartOptions),
+                'Restart audio track for noise suppression',
+                TOGGLE_TIMEOUT_MS
+            );
+
+            const newTrack = audioTrack.mediaStreamTrack;
+            if (newTrack) {
+                const applied = newTrack.getSettings().noiseSuppression;
+                debugLog('noiseFilter:native-recreated', {
+                    requested: enabled,
+                    applied,
+                    honored: applied === enabled,
+                    trackChanged: newTrack !== previousTrack,
+                });
+            } else {
+                debugLog('noiseFilter:native-recreate-no-new-track');
+            }
+        } catch (error) {
+            debugLog('noiseFilter:native-recreate-failed', { reason: getErrorReason(error) });
+        } finally {
+            toggleInProgress.current = false;
+        }
+    };
+
     /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
     const destroyNoiseFilter = () => {
         abandonNoiseFilter();
@@ -244,7 +321,9 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
-        const processor = KrispNoiseFilter();
+        const processor = KrispNoiseFilter({
+            debugLogs: isKrispDebugEnabled,
+        });
 
         try {
             currentAudioTrack.setAudioContext(ctx);
@@ -300,6 +379,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             navigator.mediaDevices?.removeEventListener('devicechange', handleDeviceChange);
             destroyNoiseFilter();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     /** Cleans up a track whose MediaStreamTrack has ended (e.g. device unplugged). */
@@ -613,6 +693,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         return () => {
             mediaTrack.removeEventListener('ended', handleTrackEnded);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeMicrophoneDeviceId, microphones, room, localParticipant]);
 
     const toggleNoiseFilter = async () => {
@@ -623,10 +704,17 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
         if (isMicrophoneEnabled) {
             try {
-                if (newValue) {
-                    await attachNoiseFilter();
+                if (isAdvancedNoiseFilterSupported) {
+                    if (newValue) {
+                        await attachNoiseFilter();
+                    } else {
+                        await detachNoiseFilter();
+                    }
                 } else {
-                    await detachNoiseFilter();
+                    // Krisp unavailable — recreate the mic track with the new
+                    // native `noiseSuppression` constraint. `applyConstraints` is a no-op for
+                    // this constraint once the track is published in an RTCPeerConnection.
+                    await recreateMicrophoneWithNoiseSuppression(newValue);
                 }
                 debugLog('toggleNoiseFilter:applied', { newValue });
             } catch (error) {
