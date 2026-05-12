@@ -51,6 +51,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -1036,6 +1039,9 @@
       "Open navigation": [
         "Navigatie openen"
       ],
+      "Or remove forwarding address": [
+        "Of verwijder het doorstuuradres"
+      ],
       "Or use a different Gmail address": [
         "Of gebruik een ander Gmail-adres"
       ],
@@ -1505,8 +1511,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4095,6 +4100,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
       ],
@@ -4146,6 +4154,9 @@
       ],
       "No labels": [
         "Geen labels"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Verzend en ontvang Gmail-berichten rechtstreeks in ${ MAIL_APP_NAME }. Verbind uw adres in ${ addressesSettingsLink }."
@@ -4601,6 +4612,9 @@
       ],
       "Add at least one condition": [
         "Voeg tenminste één voorwaarde toe"
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
       ],
       "Address is already added to your account": [
         "Het adres is al aan uw account toegevoegd"
@@ -5059,6 +5073,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong while creating the address": [
+        "Er is iets misgegaan tijdens het aanmaken van het adres"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
@@ -5734,6 +5754,9 @@
     "Filter": {
       "Filter": [
         "Filter"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filter (${ activeState.dropdownActiveCount })"
       ],
       "Filter and sort emails": [
         "Filter en sorteer e-mails"
@@ -6737,6 +6760,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -6823,6 +6849,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
@@ -7414,6 +7443,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
       ],
@@ -7662,6 +7694,9 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -9706,6 +9741,9 @@
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
+      "Mailing list": [
+        "Mailinglijst"
+      ],
       "Main": [
         "Primair"
       ],
@@ -10144,6 +10182,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Uw nieuwsbriefabonnementen worden geladen..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Nieuwsbrieven of adressenlijsten waarvan u zich afmeldt, verschijnen hier."
       ],
@@ -11799,6 +11840,9 @@
       ],
       "Trial started": [
         "Proefperiode gestart"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12186,6 +12230,12 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Yes, don't show again": [
+        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -15084,6 +15134,9 @@
       "Block sender": [
         "Blokkeer afzender"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Voeg uw Gmail toe aan ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Gebouwd voor privacy"
       ],
@@ -15461,6 +15514,13 @@
       ],
       "Load remote content": [
         "Externe inhoud laden"
+      ],
+      "Loading...": [
+        "Laden..."
+      ],
+      "Mailing list": [
+        "Mailinglijst",
+        "Mailinglijsten"
       ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
@@ -15979,6 +16039,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Wanneer is het erg belangrijk om een VPN te gebruiken?"
+      ],
+      "You are all set": [
+        "U bent helemaal klaar"
       ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
