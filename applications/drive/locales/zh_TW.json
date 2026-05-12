@@ -435,6 +435,9 @@
       "Enable drive search": [
         "啟用磁碟搜尋"
       ],
+      "Encrypted": [
+        "加密"
+      ],
       "Expand folder": [
         "展開資料夾"
       ],
@@ -690,6 +693,9 @@
       "Next page": [
         "下一頁"
       ],
+      "No sensitive data": [
+        "無敏感資料"
+      ],
       "Not now": [
         "現在不要"
       ],
@@ -729,8 +735,14 @@
       "Quit": [
         "退出"
       ],
+      "Re-index": [
+        "重新索引"
+      ],
       "Re-sign": [
         "重新簽署"
+      ],
+      "Rebuild index": [
+        "重新建立索引"
       ],
       "Reconnect": [
         "重新連線"
@@ -743,6 +755,9 @@
       ],
       "Refer a friend": [
         "推薦好友"
+      ],
+      "Refetch index": [
+        "重整排序"
       ],
       "Refresh the page": [
         "重新整理此頁面"
@@ -855,6 +870,9 @@
       "Scan & Download (${ nbSelected })": [
         "掃描和下載 (${ nbSelected } 個)"
       ],
+      "Scan and Download": [
+        "掃描和下載"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -863,6 +881,9 @@
       ],
       "Search drive": [
         "搜尋硬碟"
+      ],
+      "Search is unavailable": [
+        "無法搜尋"
       ],
       "See how": [
         "看看怎麼做"
@@ -890,6 +911,9 @@
       ],
       "Set as cover": [
         "設為封面"
+      ],
+      "Set password or expiration date": [
+        "設定密碼或過期日期"
       ],
       "Set recovery methods": [
         "設定復原方式"
@@ -995,6 +1019,9 @@
       ],
       "Take a tour": [
         "瀏覽"
+      ],
+      "This album is empty": [
+        "該相冊是空的"
       ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
@@ -1119,6 +1146,9 @@
       "What do I get?": [
         "我的專屬服務方案："
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
       "Windows 11/10 (x64)": [
         "Windows 11/10 (x64)"
       ],
@@ -1133,6 +1163,11 @@
       ],
       "Zoom out": [
         "縮小"
+      ]
+    },
+    "Action: Docs": {
+      "Open in ${ DOCS_APP_NAME }": [
+        "於 ${ DOCS_APP_NAME } 開啟"
       ]
     },
     "Action: Sheets": {
@@ -1166,6 +1201,9 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
       ],
@@ -1183,6 +1221,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
@@ -1416,6 +1457,9 @@
       ],
       "Connect 10 devices at once": [
         "同時連線 10 臺裝置"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
@@ -2834,6 +2878,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
@@ -2851,6 +2898,9 @@
       ],
       "To start, give your organization a name.": [
         "若要開始，為貴組織取個名稱。"
+      ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "升級至 ${ planName } 以保持共享有編輯權限的檔案"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
@@ -3184,6 +3234,9 @@
       "Can't find any secure link": [
         "無法找到任何安全連結"
       ],
+      "Can't retrieve device name": [
+        "無法載入裝置名稱"
+      ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
@@ -3220,6 +3273,9 @@
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
       ],
+      "Could not remove from favorites": [
+        "無法取消收藏"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
       ],
@@ -3228,6 +3284,9 @@
       ],
       "Device name does not match": [
         "裝置名稱不符合"
+      ],
+      "Diagnostics failed": [
+        "整段失敗"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -3265,17 +3324,29 @@
       "Failed loading group members": [
         "無法再入群組成員"
       ],
+      "Failed to copy photo to album": [
+        "複製照片至相簿失敗"
+      ],
       "Failed to create folder": [
         "建立資料夾失敗"
       ],
       "Failed to expand folder": [
         "展開資料夾失敗"
       ],
+      "Failed to fetch node": [
+        "擷取節點失敗"
+      ],
+      "Failed to get details, please try again later": [
+        "無法取得詳細資料，請稍後再試。"
+      ],
       "Failed to open to contact": [
         "無法開啟聯絡人"
       ],
       "Failed to resend invitation": [
         "失敗重新傳送邀請"
+      ],
+      "Failed to save some photos to your Drive": [
+        "儲存部分照片至磁碟失敗"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
@@ -3336,6 +3407,9 @@
       ],
       "Invalid IBAN": [
         "國際銀行帳號不正確"
+      ],
+      "Invalid JSON file": [
+        "無效的 JSON 檔案"
       ],
       "Invalid name": [
         "無效的名稱"
@@ -3616,6 +3690,9 @@
       "Unknown error": [
         "未知錯誤"
       ],
+      "Unknown location": [
+        "未知的位置"
+      ],
       "Unknown number of downloads": [
         "不明下載次數"
       ],
@@ -3637,8 +3714,17 @@
       "Validation error": [
         "驗證錯誤"
       ],
+      "We cannot retrieve this item": [
+        "無法載入此項目"
+      ],
+      "We were not able to load some items": [
+        "我們無法載入部分的結果"
+      ],
       "We were not able to load some items shared with you": [
         "我們無法載入部分與您共享的項目"
+      ],
+      "We were not able to load some search results": [
+        "我們無法載入部分的搜尋結果"
       ],
       "We were not able to load the folder contents": [
         "無法載入資料夾內容"
@@ -4065,7 +4151,15 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -4605,6 +4699,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
       ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress } % 已完成"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
       ],
@@ -4619,6 +4716,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
@@ -4655,6 +4755,9 @@
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
@@ -4833,6 +4936,9 @@
       "Can edit": [
         "可以編輯"
       ],
+      "Can edit and manage access": [
+        "可編輯及管理存取權"
+      ],
       "Can view and edit": [
         "可檢視和編輯"
       ],
@@ -4841,6 +4947,9 @@
       ],
       "Can't rename to same name": [
         "無法重新命名為相同名稱。"
+      ],
+      "Can't write into folder": [
+        "無法寫入資料夾"
       ],
       "Canceled": [
         "已取消"
@@ -4866,6 +4975,9 @@
       "Choose your service to connect with": [
         "選擇您的服務以連線"
       ],
+      "Clear all search data": [
+        "清除所有的搜尋資料"
+      ],
       "Clear data": [
         "清除資料"
       ],
@@ -4877,6 +4989,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "清除與加密搜索相關的瀏覽器數據。"
+      ],
+      "Clears browser data related to the search.": [
+        "清除與搜索相關的瀏覽器數據。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -4992,6 +5107,9 @@
       "Download current logs": [
         "下載最近的日誌"
       ],
+      "Download Failed": [
+        "下載失敗"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 將會中止下載"
       ],
@@ -5097,6 +5215,9 @@
       "File could not be scanned": [
         "檔案無法被掃瞄"
       ],
+      "File flagged as potentially malicious": [
+        "檔案被標註為潛在惡意程式"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "檔案欠缺簽署。我們無法驗證 ${ fileName } 由 ${ emailAddress } 上載。"
       ],
@@ -5133,6 +5254,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
       "Free 5GB encrypted storage to get started": [
         "Free5GB加密的儲存空間以開始"
       ],
@@ -5159,6 +5283,9 @@
       ],
       "How does encrypted search work?": [
         "加密搜索如何運作？"
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "若這些檔案未完正被下載至 ${ deviceName } 您將失去存取至它們。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -5210,6 +5337,12 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
+      ],
+      "Index is empty.": [
+        "此索引是空的"
+      ],
+      "Indexed ${ first }": [
+        "索引 ${ first }"
       ],
       "Indexing in progress": [
         "正在排序"
@@ -5478,6 +5611,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
+      "owner": [
+        "擁有者"
+      ],
       "password": [
         "密碼"
       ],
@@ -5613,6 +5749,9 @@
       "Ready to add some photos?": [
         "準備好新增一些照片了嗎?"
       ],
+      "RECOMMENDED": [
+        "推薦"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
@@ -5672,6 +5811,12 @@
       ],
       "Search error": [
         "搜尋錯誤"
+      ],
+      "Search module is not available.": [
+        "無法載入搜尋模組"
+      ],
+      "Select a destination folder": [
+        "選擇一個目的文件夾"
       ],
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
@@ -5742,6 +5887,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
+      "Some items failed": [
+        "部分項目失敗"
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您有部份檔案不再能夠存取。請為您的檔案還原存取。${ StartRecoveryButton }"
       ],
@@ -5811,6 +5959,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "此搜尋引擎遭遇內部錯誤。重新創建索引以復原。"
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
       ],
@@ -5864,6 +6015,9 @@
       ],
       "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
         "此將暫停任何剩餘的上傳及下載。取消上傳將不會儲存在 ${ DRIVE_APP_NAME } 。"
+      ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "此將暫停任何剩餘的上傳。取消上傳的檔案將不會儲存在 ${ DRIVE_APP_NAME } 。"
       ],
       "This will permanently delete the file you uploaded.": [
         "此將會永久刪除所有上傳的檔案。"
@@ -5958,6 +6112,9 @@
       "Try searching by file name, date, or type.": [
         "試著搜尋檔案名稱、日期與類型。"
       ],
+      "Unexpected download error": [
+        "未知下載錯誤"
+      ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "不幸的是，該檔案或其部份資料似乎無法解密。"
       ],
@@ -5975,6 +6132,9 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Update required": [
+        "需要更新"
       ],
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
@@ -6093,6 +6253,9 @@
       "who": [
         "誰"
       ],
+      "Who has access": [
+        "誰有訪問權"
+      ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "將還原到 ${ formattedRevisionDate } 的版本。其他所有版本仍會被儲存。"
       ],
@@ -6168,6 +6331,9 @@
       "You cannot undo this action.": [
         "此操作無法復原。"
       ],
+      "You don't have permission to copy files to this folder.": [
+        "您無權限將檔案複製至此資料夾。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -6209,6 +6375,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "您將拒絕此加入至 ${ invitationName } 資料夾的邀請。若您繼續，您將無法存取至它除非擁有者再次邀請您。您確定要繼續嗎?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
@@ -6721,6 +6890,12 @@
       "Include message and file name in invite email": [
         "在邀請電子郵件中包含訊息與檔案名稱"
       ],
+      "Index kinds": [
+        "排序種類"
+      ],
+      "Initial indexing": [
+        "初始索引"
+      ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
       ],
@@ -6816,6 +6991,9 @@
       ],
       "Other": [
         "其他"
+      ],
+      "Outdated version": [
+        "逾期的版本"
       ],
       "Password": [
         "密碼"
@@ -7374,6 +7552,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Message": {
@@ -8493,11 +8674,23 @@
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" 已複製"
       ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "檔案 \"${ ellipsedName }\" 已經從垃圾桶被永久刪除"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "「${ ellipsedName }」創建失敗"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" 刪除失敗"
+      ],
       "\"${ ellipsedName }\" failed to be moved": [
         "「${ ellipsedName }」移動失敗"
       ],
       "\"${ ellipsedName }\" failed to be restored from trash": [
         "檔案 \"${ ellipsedName }\" 未能從垃圾中被還原"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "「${ ellipsedName }」已從垃圾桶中還原"
       ],
       "\"${ ellipsedName }\" successfully moved": [
         "「${ ellipsedName }」已成功移動"
@@ -8597,6 +8790,9 @@
       ],
       "Access updated": [
         "權限已更新"
+      ],
+      "Album renamed successfully": [
+        "相簿已成功重新命名"
       ],
       "All items deleted permanently from trash": [
         "全部的項目已從垃圾桶被永久刪除"
@@ -8973,6 +9169,12 @@
       ],
       "Get the mobile app": [
         "取得手機應用程式"
+      ],
+      "Got an Android? We've got you covered.": [
+        "是 Android 嗎? 我們照你。"
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "是 iPhone 嗎? 我們照你。"
       ],
       "Hang tight": [
         "準備好"
@@ -9607,6 +9809,9 @@
       ]
     },
     "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
@@ -10847,6 +11052,9 @@
       ]
     },
     "Subtitle": {
+      "Albums you've shared will appear here": [
+        "您已共享的相簿將出現於此"
+      ],
       "Securely share your favorite moments with friends and family using Albums.": [
         "透過相簿安全地與朋友和家庭共享您最愛的時光。"
       ],
@@ -10873,6 +11081,9 @@
       ],
       "Your tagged photos will appear here": [
         "您標記的照片會顯示在這裡"
+      ],
+      "Your videos will appear here": [
+        "您的影片將會顯示在這裡"
       ]
     },
     "Success": {
@@ -11113,6 +11324,9 @@
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
       ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } 免費上傳。"
+      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -11145,6 +11359,9 @@
       ],
       "Addresses": [
         "位址"
+      ],
+      "Advanced details": [
+        "進階的詳細資訊"
       ],
       "Album": [
         "相簿"
@@ -11284,6 +11501,9 @@
       "Create new group": [
         "創建新群組"
       ],
+      "Created by": [
+        "作者"
+      ],
       "Currency": [
         "貨幣"
       ],
@@ -11349,6 +11569,9 @@
       ],
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "電子簽署部分完成驗證。此檔案由無${ BRAND_NAME }帳號的使用者由大眾可共享連結上傳，所以身分無法驗證。"
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "數位簽署已通過驗證。此檔案由 <strong> ${ emailAddress } </strong> 創建。"
       ],
       "Discard": [
         "捨棄"
@@ -11536,6 +11759,9 @@
       "Item details": [
         "項目詳細資訊"
       ],
+      "Last uploaded by": [
+        "上次更新於"
+      ],
       "Level": [
         "等級"
       ],
@@ -11551,8 +11777,14 @@
       "Logs": [
         "記錄"
       ],
+      "Make a copy": [
+        "創建副本"
+      ],
       "Manage secure link": [
         "管理安全連結"
+      ],
+      "Media type": [
+        "媒體類型"
       ],
       "Merge contacts": [
         "合併通訊錄"
@@ -11689,6 +11921,9 @@
       "Processing...": [
         "處理中..."
       ],
+      "Public link": [
+        "公開連結"
+      ],
       "Public link settings": [
         "公開連結的設定"
       ],
@@ -11749,6 +11984,9 @@
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍後儲存於${ DRIVE_APP_NAME }"
       ],
+      "Search": [
+        "搜尋"
+      ],
       "Search results": [
         "搜尋結果"
       ],
@@ -11787,6 +12025,12 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "${ sharedFileName } 的設定"
+      ],
+      "Share \"${ fileName }\"": [
+        "共享 \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "與團隊共享行事曆"
@@ -11902,6 +12146,9 @@
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
       ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
+      ],
       "Verification failed": [
         "驗證失敗"
       ],
@@ -11922,6 +12169,15 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "我們無法驗證創建此檔案的匿名使用者。"
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "我們無法驗證創建此資料夾的匿名使用者。"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "我們無法驗證上傳此資料夾的匿名使用者。"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
