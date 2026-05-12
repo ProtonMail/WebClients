@@ -236,14 +236,9 @@ export const createAuthService = ({
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
-            const persistedSession = await auth.config.getPersistedSession(localID);
             /** Updates session timestamp to track last login, ensuring
              * this session loads first when opening new tabs */
-            if (persistedSession) {
-                persistedSession.lastUsedAt = getEpoch();
-                const lastUsedSession = JSON.stringify(persistedSession);
-                void auth.config.onSessionPersist?.(lastUsedSession);
-            }
+            await auth.syncPersistedSession(localID, { lastUsedAt: getEpoch() });
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {

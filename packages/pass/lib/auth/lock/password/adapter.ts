@@ -21,22 +21,16 @@ import noop from '@proton/utils/noop';
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
 export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPassword => {
-    const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
+    const { authStore, api } = auth.config;
 
     /** Persists `unlockRetryCount` on the session blob without
      * re-encrypting it. Triggers `onSessionPersist` as a side-effect,
      * which consumers use to sync additional session state (eg: the
      * extension writes to session storage for SW lifecycle). */
     const syncSession = async (options: { retryCount: number }) => {
-        authStore.setUnlockRetryCount(options.retryCount);
-
         const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = options.retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
+        authStore.setUnlockRetryCount(options.retryCount);
+        await auth.syncPersistedSession(localID, { unlockRetryCount: options.retryCount });
     };
 
     const adapter: LockAdapterPassword = {
