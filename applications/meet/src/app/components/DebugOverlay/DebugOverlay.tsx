@@ -11,8 +11,10 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Toggle } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectKrispDebug, toggleKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import {
     selectCameras,
     selectMicrophones,
@@ -25,6 +27,7 @@ import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import './DebugOverlay.scss';
 
@@ -459,6 +462,8 @@ interface TrackRecording {
 
 export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugOverlayProps) => {
     const room = useRoomContext();
+    const dispatch = useMeetDispatch();
+
     const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const remoteParticipants = useRemoteParticipants();
     const roomName = useMeetSelector(selectRoomName);
@@ -469,6 +474,8 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
     const selectedCameraId = useMeetSelector(selectSelectedCameraId);
     const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
     const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
+
+    const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
 
     const [localInfo, setLocalInfo] = useState<LocalParticipantDebugInfo | null>(null);
     const [remoteInfos, setRemoteInfos] = useState<ParticipantDebugInfo[]>([]);
@@ -789,6 +796,18 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                 </div>
 
                 <div className="debug-overlay-body">
+                    <div className="debug-section">
+                        <label className="setting-label color-norm" htmlFor="krisp-debug">
+                            Krsip debug
+                        </label>
+                        <Toggle
+                            id="krisp-debug"
+                            checked={isKrispDebugEnabled}
+                            onChange={() => dispatch(toggleKrispDebug())}
+                            className={clsx('settings-toggle', isKrispDebugEnabled ? '' : 'settings-toggle-inactive')}
+                        />
+                    </div>
+
                     {/* Reconnection Testing Section */}
                     <div className="debug-section">
                         <h3>{c('Title').t`Reconnection Testing`}</h3>
