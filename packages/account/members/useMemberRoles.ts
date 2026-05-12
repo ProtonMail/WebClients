@@ -4,14 +4,14 @@ import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolki
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { EnhancedMember, UserOrganizationRole } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, RoleAssignment } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { type MembersState, getMemberRoles, selectMembers } from './index';
 
 type Result = {
-    [key: string]: UserOrganizationRole[] | undefined;
+    [key: string]: RoleAssignment[] | undefined;
 };
 
 const selector = createSelector([(state: MembersState) => selectMembers(state)], (membersState): Result => {
