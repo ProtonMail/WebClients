@@ -3,10 +3,12 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { ContactEmailsProvider, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { useItemContextMenu } from '../../components/FileBrowser';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
@@ -17,6 +19,7 @@ import { getSharedWithMeCells, getSharedWithMeGrid } from './SharedWithMeCells';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { useSharedWithMeItems } from './hooks/useSharedWithMeItems';
+import { getSharedWithMeItemAriaLabel } from './sharedWithMeItemAriaLabel';
 import { ItemType, useSharedWithMeStore } from './useSharedWithMe.store';
 
 export const SharedWithMe = () => {
@@ -25,6 +28,7 @@ export const SharedWithMe = () => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { acceptInvitation } = useInvitationsActions();
+    const [contactEmails] = useContactEmails();
 
     const {
         uids,
@@ -102,6 +106,16 @@ export const SharedWithMe = () => {
         },
     };
 
+    const a11y: DriveExplorerA11y = {
+        getItemAriaLabel: ({ uid, isSelected, index }) =>
+            getSharedWithMeItemAriaLabel({
+                item: useSharedWithMeStore.getState().getSharedWithMeItem(uid),
+                isSelected,
+                index,
+                contactEmails,
+            }),
+    };
+
     return (
         <ContactEmailsProvider>
             <SharedWithMeContextMenu
@@ -129,6 +143,7 @@ export const SharedWithMe = () => {
                         showContextMenu: contextMenuControls.handleContextMenu,
                         close: contextMenuControls.close,
                     }}
+                    a11y={a11y}
                 />
             </div>
             {confirmModal}
