@@ -21,6 +21,7 @@ import {
     type ChunkCallback,
     type FinishCallback,
     type GenerationResponseMessage,
+    type ImageAspectRatio,
     type LumoApiClientConfig,
     type LumoApiGenerationRequest,
     type RequestContext,
@@ -79,6 +80,7 @@ export class LumoApiClient {
             requestId,
             generateTitle = false,
             autoGenerateEncryption = true,
+            imageAspectRatio,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
 
@@ -88,13 +90,20 @@ export class LumoApiClient {
             autoGenerateEncryption,
         });
 
-        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
-            enableExternalTools,
-            enableImageTools,
-            generateTitle,
-            enableReasoning,
-            enableSuggestedQuestions
-        });
+        // Prepare the request
+        // TODO consider just passing `options` instead of rebuilding a narrower object
+        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
+            turns,
+            encryption,
+            {
+                enableExternalTools,
+                enableImageTools,
+                generateTitle,
+                enableReasoning,
+                enableSuggestedQuestions,
+            },
+            { imageAspectRatio }
+        );
 
         // Prepare request context and run interceptors
         const requestContext: RequestContext = this.initializeRequestContext(endpoint, {
@@ -192,10 +201,14 @@ export class LumoApiClient {
             generateTitle: boolean;
             enableReasoning: boolean;
             enableSuggestedQuestions: boolean;
+        },
+        additionalOptions?: {
+            imageAspectRatio?: ImageAspectRatio;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
         const { enableExternalTools, enableImageTools, generateTitle, enableReasoning } = flags;
+        const { imageAspectRatio } = additionalOptions || {};
 
         // Encrypt request if needed
         if (encryption) {
@@ -212,6 +225,7 @@ export class LumoApiClient {
             options: {
                 tools,
                 reasoning: enableReasoning,
+                ...(enableImageTools && imageAspectRatio && { image_aspect_ratio: imageAspectRatio }),
             },
             targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
