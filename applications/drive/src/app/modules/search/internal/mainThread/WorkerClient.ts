@@ -3,11 +3,8 @@ import * as Comlink from 'comlink';
 import { createAsyncQueue } from '../../../../utils/asyncQueue';
 import { Logger } from '../shared/Logger';
 import { registerComlinkErrorTransferHandler } from '../shared/comlinkErrorTransferHandler';
-import {
-    SearchWorkerDisconnectedError,
-    SharedWorkerHeartbeatTimeout,
-    sendErrorReportForSearch,
-} from '../shared/errors';
+import { SearchWorkerDisconnectedError, SharedWorkerHeartbeatTimeout } from '../shared/errors';
+import { searchMetrics } from '../shared/searchMetrics';
 import type {
     ClientId,
     IndexKind,
@@ -92,16 +89,14 @@ export class WorkerClient {
             ]);
         } catch (error) {
             if (error instanceof SharedWorkerHeartbeatTimeout) {
-                sendErrorReportForSearch('WorkerClient: heartbeat timed out, reconnecting to sharedworker', error);
+                searchMetrics.markWorkerHealthError({ kind: 'heartbeat-timeout', error });
                 this.connectionAbort.abort(new SearchWorkerDisconnectedError());
                 this.connectionAbort = new AbortController();
 
                 // Try to recover and reconnect the timeout.
                 this.reconnectSharedWorker();
-
-                // TODO: Instrument sharedworker timeouts.
             } else {
-                sendErrorReportForSearch('Error while emitting heartbeat from worker client', error);
+                searchMetrics.markWorkerHealthError({ kind: 'heartbeat-error', error });
                 // No need to recover, another heartbeat will be sent by the periodic timer.
             }
         }
@@ -114,14 +109,18 @@ export class WorkerClient {
         // Jitter avoids all tabs reconnecting at the exact same instant.
         const jitter = Math.random() * 1000;
         setTimeout(() => {
-            this.api = this.createWorker();
+            try {
+                this.api = this.createWorker();
 
-            this.startHeartbeat();
+                this.startHeartbeat();
 
-            // Re-register if we were running.
-            if (this.running) {
-                this.running = false;
-                this.start();
+                // Re-register if we were running.
+                if (this.running) {
+                    this.running = false;
+                    this.start();
+                }
+            } catch (error) {
+                searchMetrics.markWorkerHealthError({ kind: 'reconnect-failure', error });
             }
         }, jitter);
     }

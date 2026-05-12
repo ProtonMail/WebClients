@@ -1,13 +1,17 @@
 import { Logger } from '../../../../shared/Logger';
 import type { TreeEventScopeId } from '../../../../shared/types';
-import type { TaskContext } from '../BaseTask';
+import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
 // Flushes in-memory index blobs to IndexedDB and persists event cursor positions, creating a durable checkpoint
 // that the indexing will resume from on next reload.
 export class PersistDataTask extends BaseTask {
     getUid(): string {
-        return 'task-PersistData';
+        return this.getKind();
+    }
+
+    getKind(): IndexerTaskKind {
+        return 'persist-data-task';
     }
 
     async execute(ctx: TaskContext): Promise<void> {

@@ -9,6 +9,8 @@ import { Logger } from '../shared/Logger';
 import { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';
 import { SearchDB } from '../shared/SearchDB';
 import { InvalidSearchModuleState, listenForWorkerErrors } from '../shared/errors';
+import type { SearchEnvironmentIncompatibilityReason } from '../shared/searchMetrics';
+import { searchMetrics } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type {
@@ -25,6 +27,17 @@ import type { FetchLastEventIdForTreeScopeId } from './MainThreadBridge';
 import { MainThreadBridge } from './MainThreadBridge';
 import { SearchOptInManager } from './SearchOptInManager';
 import { WorkerClient } from './WorkerClient';
+
+// `isEnvironmentCompatible` may run several times per page (e.g. by
+// `useSearchModule` re-renders), but we only want one cohort sample per session.
+let environmentIncompatibilityRecorded = false;
+function recordEnvironmentIncompatibilityOnce(reason: SearchEnvironmentIncompatibilityReason): void {
+    if (environmentIncompatibilityRecorded) {
+        return;
+    }
+    environmentIncompatibilityRecorded = true;
+    searchMetrics.markIncompatibilityEnvironment({ reason });
+}
 
 // All required dependencies to initialize and run the search module.
 export type SearchModuleContext = {
@@ -150,6 +163,7 @@ export class SearchModule {
     /** Call when the user opts in to the search experience. */
     async optIn(): Promise<void> {
         await this.optInManager.optIn();
+        searchMetrics.markOptIn({ kind: 'manual' });
         this.setState({ ...this.state, isUserOptIn: true });
     }
 
@@ -226,7 +240,6 @@ export class SearchModule {
 
     // TODO: Return a discriminated type instead of true/false to propagate the reason of uncomatibitly
     // TODO: Add some UI to explain better why search is not enabled.
-    // TODO: Instrument the uncompatibility reason (once per user/session/browser only)
     static isEnvironmentCompatible(): boolean {
         // Old Safari (<17) has several issues.
         // One: it is throttling a lot. First tens of items are done fast but
@@ -241,17 +254,20 @@ export class SearchModule {
             const browser = getBrowser();
             if (!browser?.version || !new Version(browser.version).isGreaterThanOrEqual('17')) {
                 Logger.info('Bad env: Obsolete safari unsupported');
+                recordEnvironmentIncompatibilityOnce('safari_too_old');
                 return false;
             }
         }
 
         if (typeof SharedWorker === 'undefined') {
             Logger.info('Bad env: SharedWorker unsupported');
+            recordEnvironmentIncompatibilityOnce('shared_worker_unsupported');
             return false;
         }
 
         if (typeof indexedDB === 'undefined') {
             Logger.info('Bad env: IndexedDB unsupported');
+            recordEnvironmentIncompatibilityOnce('indexed_db_unsupported');
             return false;
         }
 
@@ -259,6 +275,7 @@ export class SearchModule {
 
         if (isMobile()) {
             Logger.info('Bad env: Mobile detected');
+            recordEnvironmentIncompatibilityOnce('mobile');
             return false;
         }
 

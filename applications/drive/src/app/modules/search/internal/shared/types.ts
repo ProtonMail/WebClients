@@ -56,6 +56,19 @@ export enum IndexKind {
     // TODO: Add more indices as needed (e.g. Devices, Photos, Shared with me, ...)
 }
 
+/**
+ * Discriminator for the kind of indexer task. Used as a Sentry tag and as
+ * routing metadata in `searchMetrics`. Each `BaseTask` subclass implements
+ * `getKind()` to return its value.
+ */
+export type IndexerTaskKind =
+    | 'index-populator-task'
+    | 'incremental-update-task'
+    | 'cleanup-stale-blobs-task'
+    | 'cleanup-stale-index-entries-task'
+    | 'persist-data-task'
+    | 'remove-tree-event-scope-id-task';
+
 export type SearchQuery = {
     filename: string;
     filters?: Record<string, AttributeFilter>;

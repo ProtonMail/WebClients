@@ -1,8 +1,11 @@
 import type { MainThreadBridge } from '../../../mainThread/MainThreadBridge';
 import type { SearchDB } from '../../../shared/SearchDB';
+import type { IndexerTaskKind } from '../../../shared/types';
 import type { IndexRegistry } from '../../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from '../TreeSubscriptionRegistry';
 import type { IndexPopulator } from '../indexPopulators/IndexPopulator';
+
+export type { IndexerTaskKind };
 
 /**
  * Minimal view of an IndexPopulator exposed to tasks via TaskContext.
@@ -33,5 +36,6 @@ export interface TaskContext {
 
 export abstract class BaseTask {
     abstract getUid(): string;
+    abstract getKind(): IndexerTaskKind;
     abstract execute(ctx: TaskContext): Promise<void>;
 }
