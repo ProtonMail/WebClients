@@ -77,7 +77,7 @@ const AssistantActionToolbar = ({
             className={clsx([
                 'action-toolbar no-print text-sm w-full mt-2  ',
                 'flex flex-row items-center flex-1 gap-3',
-                'justify-space-between items-center',
+                'justify-end items-center',
             ])}
         >
             <>
@@ -91,7 +91,7 @@ const AssistantActionToolbar = ({
                         />
                     </div>
                 )}
-                <div className="flex-1"></div>
+                {/* <div className="flex-1"></div> */}
                 <div className="flex flex-row flex-nowrap gap-3">
                     <SiblingSelector siblingInfo={siblingInfo} />
                     {results && <SourcesButton results={results} onClick={onToggleMessageSource} />}
@@ -105,6 +105,7 @@ const AssistantActionToolbar = ({
                         onSuccess={handleCopy}
                         disabled={!isFinishedGenerating || generationFailed || isMessageEmpty}
                         className="lumo-no-copy"
+                        shape="solid"
                     />
                     <LumoButton
                         buttonRef={retryButtonRef}

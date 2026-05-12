@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
@@ -269,29 +268,29 @@ const TestConversationComponent = ({
     // );
 
     // Memoize the action button to prevent re-renders
-    const drawerActionButton = useMemo(
-        () => (
-            <Button
-                onClick={handleShowDriveBrowser}
-                icon
-                shape="ghost"
-                color="weak"
-                size="small"
-                title={c('collider_2025:Button').t`Add files from Drive`}
-            >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M8 3.33331V12.6666M3.33333 7.99998H12.6667"
-                        stroke="currentColor"
-                        strokeWidth="1.33333"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </svg>
-            </Button>
-        ),
-        [handleShowDriveBrowser]
-    );
+    // const drawerActionButton = useMemo(
+    //     () => (
+    //         <Button
+    //             onClick={handleShowDriveBrowser}
+    //             icon
+    //             shape="ghost"
+    //             color="weak"
+    //             size="small"
+    //             title={c('collider_2025:Button').t`Add files from Drive`}
+    //         >
+    //             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //                 <path
+    //                     d="M8 3.33331V12.6666M3.33333 7.99998H12.6667"
+    //                     stroke="currentColor"
+    //                     strokeWidth="1.33333"
+    //                     strokeLinecap="round"
+    //                     strokeLinejoin="round"
+    //                 />
+    //             </svg>
+    //         </Button>
+    //     ),
+    //     [handleShowDriveBrowser]
+    // );
 
     const drawerTitle = useMemo(() => {
         switch (openPanel.type) {
@@ -347,7 +346,7 @@ const TestConversationComponent = ({
                     </>
                 }
                 drawerTitle={drawerTitle}
-                drawerActionButton={drawerActionButton}
+                // drawerActionButton={drawerActionButton}
             >
                 <>
                     <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
