@@ -1,5 +1,3 @@
-import { useShallow } from 'zustand/react/shallow';
-
 import type { DriveClient, ThumbnailRequest } from './loader/types';
 import { useThumbnailsStore } from './loader/useThumbnails.store';
 
@@ -25,5 +23,5 @@ export const getThumbnail = (revisionUid: string) => {
 };
 
 export const useThumbnail = (revisionUid: string | undefined) => {
-    return useThumbnailsStore(useShallow((state) => (revisionUid ? state.getThumbnail(revisionUid) : undefined)));
+    return useThumbnailsStore((state) => (revisionUid ? state.getThumbnail(revisionUid) : undefined));
 };
