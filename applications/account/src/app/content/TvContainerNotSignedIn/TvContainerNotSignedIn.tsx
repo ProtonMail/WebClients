@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/components/index';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { TelemetryMeasurementGroups, TelemetryVpnTvEvents } from '@proton/shared/lib/api/telemetry';
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { setItem } from '@proton/shared/lib/helpers/storage';
-import { telemetry } from '@proton/shared/lib/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
 import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier.ts';
@@ -18,10 +20,18 @@ import SupportDropdown from '../../public/SupportDropdown';
 import type { Paths } from '../helper';
 
 export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
+    const api = useApi();
     const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
 
     useEffectOnce(() => {
-        telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: 'non_user', flowType: 'web' });
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryVpnTvEvents.tvAuthInitiated,
+            dimensions: { userTierAtInitiation: 'non_user', flowType: 'web' },
+            measurementGroup: TelemetryMeasurementGroups.vpnTv,
+        });
+
         setItem(VPN_TV_USER_TIER, 'non_user');
 
         const code = searchParams.get('code');
