@@ -67,6 +67,8 @@ export enum TelemetryMeasurementGroups {
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
+    /** Vpn TV */
+    vpnTv = 'vpn.any.tv_signin',
 }
 
 export enum TelemetryMailOnboardingEvents {
@@ -475,6 +477,10 @@ export enum TelemetryESMigrationToolEvents {
     migration_finished = 'es_migration_tool.migration_finished',
 }
 
+export const enum TelemetryVpnTvEvents {
+    tvAuthInitiated = 'tv_auth_initiated',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -529,7 +535,8 @@ export type TelemetryEvents =
     | TelemetryUnauthLost2FAEvents
     | TelemetryAccountCancellationFlowFeedbackEvents
     | TelemetrySafetyReviewCtrEvents
-    | TelemetrySafetyReviewScoreDiffEvents;
+    | TelemetrySafetyReviewScoreDiffEvents
+    | TelemetryVpnTvEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
