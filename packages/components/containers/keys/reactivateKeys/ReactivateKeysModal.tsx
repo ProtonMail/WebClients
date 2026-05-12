@@ -84,7 +84,7 @@ const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) =
                   content: <RecoveryContactForm {...sharedProps} />,
                   cta: canSomeContactRecoverStep2
                       ? c('Action').t`Recover data`
-                      : c('emergency_access').t`Send email request`,
+                      : c('emergency_access').t`Start recovery`,
               }
             : undefined,
         showMnemonicTab
