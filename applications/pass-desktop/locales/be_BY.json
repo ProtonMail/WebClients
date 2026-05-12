@@ -2097,12 +2097,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2315,6 +2309,9 @@
       ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK }, якая з'яўляецца нашай перадавой праграмай абароны ўліковых запісаў"
       ],
       "Reconnect": [
         "Перападключыцца"
@@ -2558,6 +2555,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай другога пароля"
+      ],
+      "Unlock with biometrics": [
+        "Разблакіраваць з дапамогай біяметрыі"
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
