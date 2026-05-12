@@ -11,6 +11,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Adicionar conta"
       ],
@@ -1225,6 +1228,9 @@
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
       ],
+      "Solves complex problems": [
+        "Resolve problemas complexos"
+      ],
       "Switch between light and dark mode": [
         "Alternar entre os modos claro e escuro"
       ]
@@ -1472,6 +1478,9 @@
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } dá acesso a modelos avançados para ajudar com consultas mais complexas e fornecer respostas melhores"
       ],
+      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
+        "${ LUMO_SHORT_APP_NAME }+ — a API do ${ LUMO_SHORT_APP_NAME } e as chaves de API exigem uma assinatura ativa do ${ LUMO_SHORT_APP_NAME }+. "
+      ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         "Segue o esquema da API da OpenAI — basta inserir seu cliente existente com uma única alteração."
       ],
@@ -1496,8 +1505,14 @@
       "All files in this chat": [
         "Todos os arquivos deste bate-papo"
       ],
+      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
+        "Um cliente HTTP ou um SDK oficial (Python, TypeScript, Rust)"
+      ],
       "API calls": [
         "Chamadas de API"
+      ],
+      "API key management is not available for your account at the moment.": [
+        "O gerenciamento de chaves de API não está disponível para sua conta no momento."
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Pergunte qualquer coisa ao ${ LUMO_SHORT_APP_NAME }"
@@ -1522,6 +1537,9 @@
       ],
       "characters not shown": [
         "caracteres não exibidos"
+      ],
+      "characters processed": [
+        "caracteres processados"
       ],
       "Check this is the site you expect to visit": [
         "Verifique se este é o site que você espera visitar"
@@ -1724,8 +1742,14 @@
       "Table view": [
         "Visualização em tabela"
       ],
+      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
+        "A API do ${ LUMO_SHORT_APP_NAME } e as chaves de API estão incluídas no ${ LUMO_SHORT_APP_NAME }+. Peça ao administrador da sua organização para atribuir uma licença do ${ LUMO_SHORT_APP_NAME } à sua conta."
+      ],
       "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
         "A API do ${ LUMO_SHORT_APP_NAME } está disponível para assinantes do ${ LUMO_SHORT_APP_NAME }+. Faça upgrade para criar chaves de API e usar a API programaticamente."
+      ],
+      "There was an error processing this file.": [
+        "Houve um erro ao processar este arquivo."
       ],
       "These files won't be used for future questions.": [
         "Estes arquivos não serão usados para perguntas futuras."
@@ -1999,6 +2023,9 @@
       ],
       "API key deleted": [
         "Chave de API excluída"
+      ],
+      "Create an account or sign in to save your chats and increase limits.": [
+        "Crie uma conta ou inicie a sessão para salvar suas conversas e aumentar os limites."
       ]
     },
     "collider_2025: Option": {
@@ -2414,6 +2441,9 @@
       "Failed to index file for search: ${ processingResult.message }": [
         "Falha ao indexar o arquivo para pesquisa: ${ processingResult.message }"
       ],
+      "File limit reached": [
+        "O limite de arquivo foi atingido"
+      ],
       "Message limit reached": [
         "Limite de mensagens atingido."
       ],
@@ -2735,6 +2765,9 @@
       "Failed to link Drive folder": [
         "Falha ao vincular a pasta do Drive"
       ],
+      "Failed to load image": [
+        "Falha ao carregar a imagem"
+      ],
       "Failed to load images. Please try again.": [
         "Erro ao carregar as imagens.Tente novamente."
       ],
@@ -2803,6 +2836,9 @@
       ]
     },
     "collider_2025:Gallery suggestion hint": {
+      "Draw a sketch to bring to life": [
+        "Faça um esboço para dar vida à ideia"
+      ],
       "Upload a photo to caricature": [
         "Envie uma foto para fazer uma caricatura"
       ],
@@ -3180,6 +3216,9 @@
       "Checked ${ BRAND_NAME } knowledge": [
         "Verifiquei os conhecimentos sobre a ${ BRAND_NAME }"
       ],
+      "Checking ${ BRAND_NAME } knowledge...": [
+        "Verificando os conhecimentos sobre a ${ BRAND_NAME }..."
+      ],
       "Dividend Yield": [
         "Rendimento de dividendos"
       ],
@@ -3197,6 +3236,9 @@
       ],
       "Expand reasoning": [
         "Expandir raciocínio"
+      ],
+      "Extracted page content": [
+        "Conteúdo extraído da página"
       ],
       "Extracting content from page...": [
         "Extraindo conteúdo da página..."
@@ -3339,6 +3381,9 @@
       ],
       "Get started by creating a new project": [
         "Comece criando um projeto"
+      ],
+      "Get started by generating an image": [
+        "Comece gerando uma imagem"
       ],
       "Ghost mode": [
         "Modo fantasma"
@@ -4970,6 +5015,9 @@
       "Account successfully updated": [
         "Conta atualizada"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -5120,6 +5168,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "por apenas ${ bundlePlanPriceInline }"
       ],
       "Google Pay mark": [
         "Marca Google Pay"
@@ -5864,6 +5915,9 @@
       "Clear overrides": [
         "Limpar substituições"
       ],
+      "Conversations": [
+        "Conversas"
+      ],
       "Create Test Chats": [
         "Criar bate-papos de teste"
       ],
@@ -5872,6 +5926,15 @@
       ],
       "Differential": [
         "Diferencial"
+      ],
+      "Export all chats (JSON)": [
+        "Exportar todas os bate-papos (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Exportar conversa atual (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Exportar apenas os arquivos não sincronizados (JSON)"
       ],
       "FPS": [
         "FPS"
@@ -5884,6 +5947,9 @@
       ],
       "Last token": [
         "Último token"
+      ],
+      "Local storage (IndexedDB)": [
+        "Armazenamento local (IndexedDB)"
       ],
       "max": [
         "máx."
@@ -5912,6 +5978,9 @@
       "Redux/sec": [
         "Redux/sec"
       ],
+      "Refresh": [
+        "Atualizar"
+      ],
       "Render time": [
         "Tempo de renderização"
       ],
@@ -5927,6 +5996,9 @@
       "Smoothing (Spring-Mass)": [
         "Suavização (Massa-Mola)"
       ],
+      "Spaces": [
+        "Espaços"
+      ],
       "Spring state": [
         "Estado da mola"
       ],
@@ -5938,6 +6010,9 @@
       ],
       "Stiffness": [
         "Rigidez"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Streaming": [
         "Streaming"
@@ -5953,6 +6028,15 @@
       ],
       "Tokens/sec": [
         "Tokens/seg"
+      ],
+      "Unsynced conversations": [
+        "Conversas não sincronizadas"
+      ],
+      "Unsynced messages": [
+        "Mensagens não sincronizadas"
+      ],
+      "Unsynced spaces": [
+        "Espaços não sincronizados"
       ]
     },
     "lumo: Test Renderer": {

@@ -6061,6 +6061,9 @@
       "Composer limit banner preview": [
         "Aperçu de la bannière de limitation de l'éditeur"
       ],
+      "Conversations": [
+        "Conversations"
+      ],
       "Create Test Chats": [
         "Créer des discussions de test"
       ],
@@ -6072,6 +6075,15 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Cela envoie une erreur de limite 422 simulée, qui sera affichée par le système de notification intégré à l'application."
+      ],
+      "Export all chats (JSON)": [
+        "Exporter tous les chats (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Exporter les conversations actuelles (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Exporter uniquement les données non synchronisées (JSON)"
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Ceci force la bannière du compositeur en ligne à passer à l'état « en approche » ou « à la limite » afin que vous puissiez la prévisualiser dans n'importe quel contexte."
@@ -6088,6 +6100,9 @@
       "Last token": [
         "Dernier jeton"
       ],
+      "Local storage (IndexedDB)": [
+        "Stockage local (IndexedDB)"
+      ],
       "max": [
         "max."
       ],
@@ -6096,6 +6111,9 @@
       ],
       "Messages": [
         "Messages"
+      ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "Les messages rejetés par le backend (par exemple, en raison de limites) restent stockés localement dans IndexedDB avec un indicateur « dirty ». Les exportations déchiffrent le contenu de l'état Redux en mémoire et marquent les messages non synchronisés avec _dirty: true. Les clés de chiffrement d'espace sont supprimées."
       ],
       "Native bridge: onLimitReachedError": [
         "Native bridge: onLimitReachedError"
@@ -6117,6 +6135,9 @@
       ],
       "Redux/sec": [
         "Redux/s"
+      ],
+      "Refresh": [
+        "Actualiser"
       ],
       "Render time": [
         "Temps de rendu"
@@ -6145,6 +6166,9 @@
       "Smoothing (Spring-Mass)": [
         "Lissage (masse-ressort)"
       ],
+      "Spaces": [
+        "Espaces"
+      ],
       "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
         "Lancez le moteur de rendu de test ou alimentez la barre latérale avec des conversations issues de différents groupes d'âge."
       ],
@@ -6159,6 +6183,9 @@
       ],
       "Stiffness": [
         "Raideur"
+      ],
+      "Storage": [
+        "Espace de stockage"
       ],
       "Streaming": [
         "Streaming"
@@ -6186,6 +6213,15 @@
       ],
       "Trigger spaces limit": [
         "Déclencher la limite d'espaces"
+      ],
+      "Unsynced conversations": [
+        "Conversations non synchronisées"
+      ],
+      "Unsynced messages": [
+        "Messages non synchronisés"
+      ],
+      "Unsynced spaces": [
+        "Espaces non synchronisés"
       ]
     },
     "lumo: Test Renderer": {
