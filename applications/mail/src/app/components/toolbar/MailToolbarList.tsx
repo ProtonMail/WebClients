@@ -48,7 +48,8 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
     const history = useHistory();
     const location = useLocation();
 
-    const { ref, isSmallScreen, isExtraTiny, isTiny, filterAsDropdown } = useMailboxToolbarBreakpoints();
+    const { ref, isSmallScreen, listBreakpoints } = useMailboxToolbarBreakpoints();
+    const { isExtraTiny, isTiny, filterAsDropdown } = listBreakpoints;
 
     const sort = useMailSelector(selectSort);
     const filter = useMailSelector(selectFilter);
@@ -163,14 +164,13 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                             <MoveButtons
                                 // This is needed to avoir showing a <Vr />. Will be removed in a future version.
                                 labelID={labelID}
-                                isExtraTiny={false}
+                                isExtraTiny={isExtraTiny}
                                 viewportIsNarrow
                                 selectedIDs={actions.selectedIDs}
                                 onMove={actions.handleMove}
                                 onDelete={actions.handleDelete}
                             />
-                            {isExtraTiny && <Vr />}
-                            {!isExtraTiny && (
+                            {!isTiny && (
                                 <LabelsAndFolders
                                     labelID={labelID}
                                     selectedIDs={actions.selectedIDs}
@@ -179,7 +179,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                                     onCheckAll={actions.handleCheckAll}
                                 />
                             )}
-                            {!isExtraTiny && !isSelectAll && (
+                            {!isTiny && !isSelectAll && (
                                 <SnoozeToolbarDropdown selectedIDs={actions.selectedIDs} labelID={labelID} />
                             )}
                             <MoreDropdown
@@ -187,8 +187,8 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                                 selectedIDs={actions.selectedIDs}
                                 isSearch={isSearching}
                                 isNarrow={isTiny}
-                                isTiny={isExtraTiny}
-                                isExtraTiny={false}
+                                isTiny={isTiny}
+                                isExtraTiny={isExtraTiny}
                                 onMove={actions.handleMove}
                                 onDelete={actions.handleDelete}
                                 onCheckAll={actions.handleCheckAll}

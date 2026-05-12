@@ -42,7 +42,8 @@ interface Props {
 export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
     const location = useLocation();
 
-    const { ref, isTiny, isExtraTiny, isSmallScreen } = useMailboxToolbarBreakpoints();
+    const { ref, headerBreakpoints, isSmallScreen } = useMailboxToolbarBreakpoints();
+    const { isExtraTiny, isTiny } = headerBreakpoints;
 
     const labelID = useMailSelector(selectLabelID);
     const elementID = useMailSelector(selectElementID);
@@ -80,7 +81,6 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                             onMove={actions.handleMove}
                             onDelete={actions.handleDelete}
                         />
-                        <Vr />
                         {!isTiny && (
                             <LabelsAndFolders
                                 labelID={labelID}
@@ -97,9 +97,9 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                             elementIDs={elementsData.elementIDs}
                             selectedIDs={actions.selectedIDs}
                             isSearch={isSearching}
-                            isNarrow
-                            isTiny
-                            isExtraTiny={false}
+                            isNarrow={isTiny}
+                            isTiny={isTiny}
+                            isExtraTiny={isExtraTiny}
                             onMove={actions.handleMove}
                             onDelete={actions.handleDelete}
                             onCheckAll={actions.handleCheckAll}
@@ -168,11 +168,13 @@ export const MailToolbarHeader = ({ elementsData, actions }: Props) => {
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             onCheckAll={actions.handleCheckAll}
                         />
-                        {!isSelectAll && <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />}
+                        {!isSelectAll && !isExtraTiny && (
+                            <SnoozeToolbarDropdown labelID={labelID} selectedIDs={actions.selectedIDs} />
+                        )}
                     </>
                 )}
 
-                {!isExtraTiny ? (
+                {!isTiny ? (
                     <>
                         <Vr />
                         <NavigationControls
