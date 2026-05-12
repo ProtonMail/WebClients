@@ -278,6 +278,22 @@ export const OutgoingRecoveryContactSettings = ({
             </SettingsParagraph>
             <div className="text-semibold text-xl mb-3">{c('emergency_access').t`Your recovery contacts`}</div>
             <div className="mb-4">
+                {userHasNoAccountRecoveryMethodSet && (
+                    <div className="mb-4">
+                        <Banner
+                            action={
+                                <Button
+                                    onClick={() => {
+                                        document.getElementById('account')?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                >{c('emergency_access').t`Add recovery method`}</Button>
+                            }
+                        >
+                            {c('emergency_access')
+                                .t`To add recovery contacts, you must have a recovery email address or phone number.`}
+                        </Banner>
+                    </div>
+                )}
                 {canAddRecoveryContact && (
                     <Button
                         disabled={userHasNoAccountRecoveryMethodSet}

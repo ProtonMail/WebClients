@@ -63,7 +63,7 @@ export const CreateOutgoingRecoveryContactModal = ({ ...rest }: AddOutgoingTrust
                     <div className="mb-4">
                         {getBoldFormattedText(
                             c('emergency_access')
-                                .t`**${contact}** is now your recovery contact. They can help you recover your data after a password reset.`
+                                .t`**${contact}** is now your recovery contact. They can help you unlock your data after you reset your password.`
                         )}
                     </div>
                 </ModalTwoContent>
