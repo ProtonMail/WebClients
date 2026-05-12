@@ -300,6 +300,103 @@ describe('useTransferManagerState', () => {
         ]);
     });
 
+    it('sorts items by status priority (desc) and breaks ties by id (asc), ignoring lastStatusUpdateTime', () => {
+        // Scrambled offsets — within each multi-item priority bucket the times
+        // are non-monotonic so neither time-asc nor time-desc matches the
+        // expected id-asc order.
+        addDownloadItems(
+            // Priority 5 — InProgress
+            createDownloadItem({
+                downloadId: 'b-in-progress',
+                status: DownloadStatus.InProgress,
+                lastStatusUpdateTime: createFutureStatusDate(1_000),
+            }),
+            createDownloadItem({
+                downloadId: 'a-in-progress',
+                status: DownloadStatus.InProgress,
+                lastStatusUpdateTime: createFutureStatusDate(8_000),
+            }),
+            // Priority 3 — Failed and Malware* share the bucket
+            createDownloadItem({
+                downloadId: 'malware-detected',
+                status: DownloadStatus.MalwareDetected,
+                lastStatusUpdateTime: createFutureStatusDate(2_000),
+            }),
+            createDownloadItem({
+                downloadId: 'failed-download',
+                status: DownloadStatus.Failed,
+                lastStatusUpdateTime: createFutureStatusDate(9_000),
+            }),
+            createDownloadItem({
+                downloadId: 'malware-scan-unavailable',
+                status: DownloadStatus.MalwareScanUnavailable,
+                lastStatusUpdateTime: createFutureStatusDate(3_000),
+            }),
+            // Priority 1 — Pending (downloads use Pending as "waiting in queue")
+            createDownloadItem({
+                downloadId: 'pending-download',
+                status: DownloadStatus.Pending,
+                lastStatusUpdateTime: createFutureStatusDate(7_000),
+            }),
+            createDownloadItem({
+                downloadId: 'waiting-download',
+                status: DownloadStatus.Pending,
+                lastStatusUpdateTime: createFutureStatusDate(4_000),
+            }),
+            // Priority 0 — Finished (falls through to default)
+            createDownloadItem({
+                downloadId: 'finished-download',
+                status: DownloadStatus.Finished,
+                lastStatusUpdateTime: createFutureStatusDate(11_000),
+            })
+        );
+
+        addUploadItems(
+            // Priority 4 — Preparing
+            createUploadItem({
+                uploadId: 'preparing-upload',
+                status: UploadStatus.Preparing,
+                lastStatusUpdateTime: createFutureStatusDate(5_000),
+            }),
+            // Priority 2 — NotSupportedForPhotos
+            createUploadItem({
+                uploadId: 'not-supported-upload',
+                status: UploadStatus.NotSupportedForPhotos,
+                lastStatusUpdateTime: createFutureStatusDate(6_000),
+            }),
+            // Priority 1 — Waiting (same bucket as Pending)
+            createUploadItem({
+                uploadId: 'waiting-upload',
+                status: UploadStatus.Waiting,
+                lastStatusUpdateTime: createFutureStatusDate(10_000),
+            }),
+            // Priority 0 — Skipped (falls through to default)
+            createUploadItem({
+                uploadId: 'skipped-upload',
+                status: UploadStatus.Skipped,
+                lastStatusUpdateTime: createFutureStatusDate(12_000),
+            })
+        );
+
+        const { result } = renderHook(() => useTransferManagerState());
+        const idsInOrder = result.current.items.map(({ id }) => id);
+
+        expect(idsInOrder).toEqual([
+            'a-in-progress',
+            'b-in-progress',
+            'preparing-upload',
+            'failed-download',
+            'malware-detected',
+            'malware-scan-unavailable',
+            'not-supported-upload',
+            'pending-download',
+            'waiting-download',
+            'waiting-upload',
+            'finished-download',
+            'skipped-upload',
+        ]);
+    });
+
     describe('isVisible', () => {
         it('returns false when queues are empty', () => {
             const { result } = renderHook(() => useTransferManagerState());

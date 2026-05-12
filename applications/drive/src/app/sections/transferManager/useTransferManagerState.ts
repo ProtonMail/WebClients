@@ -199,9 +199,8 @@ export const useTransferManagerState = () => {
             if (priorityDiff !== 0) {
                 return priorityDiff;
             }
-            const aTime = a.lastStatusUpdateTime.getTime();
-            const bTime = b.lastStatusUpdateTime.getTime();
-            return bTime - aTime;
+            const idDiff = a.id.localeCompare(b.id);
+            return idDiff;
         });
 
         return {
