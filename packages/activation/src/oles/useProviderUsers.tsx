@@ -36,9 +36,9 @@ export const useProviderUsers = (
 
         return api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers({ DomainName: domainName }))
             .then((r) => setData(r.Users))
-            .catch(noop)
+            .catch(data ? noop : () => setData([]))
             .finally(() => setLoading(false));
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         if (data) {
