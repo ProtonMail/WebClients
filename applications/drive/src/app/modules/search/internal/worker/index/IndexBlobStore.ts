@@ -17,7 +17,6 @@ import type { IndexKind } from './IndexRegistry';
 export class IndexBlobStore {
     // TODO: Big indexes might not fit in memory and we might not just rely in a infinitely big
     //   cache. Monitor and replace by a sized scope cache (LRU).
-    // TODO: Monitor cache hit per index kind.
     private cache = new Map<string, Cached>();
 
     constructor(

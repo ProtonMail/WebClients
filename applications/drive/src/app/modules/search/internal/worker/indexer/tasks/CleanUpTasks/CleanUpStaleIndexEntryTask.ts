@@ -6,7 +6,7 @@ import { sendErrorReportForSearch } from '../../../../shared/errors';
 import { yieldToEventLoop } from '../../../../shared/yieldToEventLoop';
 import type { IndexInstance } from '../../../index/IndexRegistry';
 import { DEFAULT_BATCH_SIZE, exportEntries, removeDocumentIds } from '../../../index/indexEntriesUtils';
-import type { TaskContext } from '../BaseTask';
+import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
 // Hand the worker event loop back to pending `postMessage`s (search queries) every
@@ -29,7 +29,11 @@ const YIELD_EVENT_LOOP_EVERY = 200;
  */
 export class CleanUpStaleIndexEntryTask extends BaseTask {
     getUid(): string {
-        return 'task-CleanUpStaleIndexEntry';
+        return this.getKind();
+    }
+
+    getKind(): IndexerTaskKind {
+        return 'cleanup-stale-index-entries-task';
     }
 
     async execute(ctx: TaskContext): Promise<void> {

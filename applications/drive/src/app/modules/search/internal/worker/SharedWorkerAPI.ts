@@ -3,6 +3,7 @@ import type { Entry } from '@proton/proton-foundation-search';
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
+import { searchMetrics } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type {
@@ -128,16 +129,26 @@ export class SharedWorkerAPI {
     }
 
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
+        const stopTimer = searchMetrics.startTimer();
+
         if (!this.searcher) {
-            // TODO: Handle error
-            Logger.error('SharedWorkerAPI: search called but no searcher available');
+            searchMetrics.markSearchQueryFailed({
+                error: new Error('No searcher available'),
+            });
             onEvent?.({ type: 'done' });
             return;
         }
-        for await (const item of this.searcher.performSearch(query)) {
-            onEvent?.({ type: 'item', ...item });
+        try {
+            for await (const item of this.searcher.performSearch(query)) {
+                onEvent?.({ type: 'item', ...item });
+            }
+            searchMetrics.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
+        } catch (error) {
+            searchMetrics.markSearchQueryFailed({ error });
+            throw error;
+        } finally {
+            onEvent?.({ type: 'done' });
         }
-        onEvent?.({ type: 'done' });
     }
 
     /**
