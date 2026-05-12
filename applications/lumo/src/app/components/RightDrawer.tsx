@@ -1,9 +1,6 @@
-import React from 'react';
-
 import { clsx } from 'clsx';
 
 import { useRightPanel } from '../providers/RightPanelProvider';
-import { DrawerToggleButton } from './Conversation/Header';
 
 import './RightDrawer.scss';
 
@@ -21,7 +18,7 @@ interface RightDrawerProps {
  * content div registered here.
  */
 export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerProps) => {
-    const { registerContentEl, isOverlay, title, actionButton } = useRightPanel();
+    const { registerContentEl, isOverlay } = useRightPanel();
 
     return (
         <>
@@ -38,13 +35,13 @@ export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerPro
                     className
                 )}
             >
-                <div className="right-drawer-header w-full flex flex-row items-center justify-between px-3 py-2 shrink-0">
+                {/* <div className="right-drawer-header w-full flex flex-row items-center justify-between px-3 py-2 shrink-0">
                     {title && <h3 className="text-bold text-rg flex-1 mx-2">{title}</h3>}
                     <div className="flex flex-row items-center gap-2">
                         {actionButton}
                         <DrawerToggleButton />
                     </div>
-                </div>
+                </div> */}
                 <div
                     ref={registerContentEl}
                     className="right-drawer-content flex flex-column flex-1 overflow-auto w-full"
