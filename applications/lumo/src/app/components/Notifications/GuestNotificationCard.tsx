@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { IcHeart } from '@proton/icons/icons/IcHeart';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -9,7 +11,6 @@ import { CreateFreeAccountButton } from '../Guest/CreateFreeAccountLink/CreateFr
 import { ComposerNotificationCard } from './ComposerNotificationCard';
 
 import './GuestNotificationCard.scss';
-import { c } from 'ttag';
 
 const HeartIcon = () => {
     return (
@@ -46,7 +47,7 @@ export const GuestNotificationCard = ({ messageChain, isGenerating = false }: Gu
         setDismissedAtMessageCount(messageChain.length);
     }, [messageChain.length]);
 
-    if (isSmallScreen) {
+    if (isSmallScreen || !shouldShow) {
         return null;
     }
 
@@ -54,7 +55,8 @@ export const GuestNotificationCard = ({ messageChain, isGenerating = false }: Gu
         <ComposerNotificationCard
             icon={<HeartIcon />}
             title="Liking Lumo?"
-            description={c('collider_2025: Notification').t`Create an account or sign in to save your chats and increase limits.`}
+            description={c('collider_2025: Notification')
+                .t`Create an account or sign in to save your chats and increase limits.`}
             action={
                 <CreateFreeAccountButton onClick={() => sendGuestNotificationCtaClickedEvent(messageChain.length)} />
             }
