@@ -30,9 +30,14 @@ describe('OAuth url generation', () => {
             'oauth.zoom.client_id': 'string',
         };
 
-        expect(() => getOAuthAuthorizationUrl({ provider: ImportProvider.DEFAULT, scope: '', config })).toThrow(
-            'Provider does not exist'
-        );
+        expect(() =>
+            getOAuthAuthorizationUrl({
+                provider: ImportProvider.DEFAULT,
+                scope: '',
+                config,
+                selectAccountDisabled: false,
+            })
+        ).toThrow('Provider does not exist');
     });
 
     it('Should return appropriate number for each supported providers', () => {
@@ -98,9 +103,10 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesMail.join(' '),
             config,
+            selectAccountDisabled: false,
         });
         expect(outlookMailsRedirect).toStrictEqual(
-            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read&prompt=consent&client_id=string'
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read&prompt=select_account&client_id=string'
         );
 
         const scopesContact = getScopeFromProvider(provider, [ImportType.CONTACTS]);
@@ -108,18 +114,20 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesContact.join(' '),
             config,
+            selectAccountDisabled: false,
         });
         expect(outlookContactsRedirect).toStrictEqual(
-            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=select_account&client_id=string'
         );
 
         const outlookHintRedirect = getOAuthAuthorizationUrl({
             provider,
             scope: scopesContact.join(' '),
             config,
+            selectAccountDisabled: false,
         });
         expect(outlookHintRedirect).toStrictEqual(
-            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=consent&client_id=string'
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Contacts.read&prompt=select_account&client_id=string'
         );
 
         const scopesCalendars = getScopeFromProvider(provider, [ImportType.CALENDAR]);
@@ -127,9 +135,10 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesCalendars.join(' '),
             config,
+            selectAccountDisabled: false,
         });
         expect(outlookCalendarsRedirect).toStrictEqual(
-            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Calendars.read&prompt=consent&client_id=string'
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Calendars.read&prompt=select_account&client_id=string'
         );
 
         const scopesAll = getScopeFromProvider(provider, [ImportType.CALENDAR, ImportType.CONTACTS, ImportType.MAIL]);
@@ -137,9 +146,32 @@ describe('OAuth url generation', () => {
             provider,
             scope: scopesAll.join(' '),
             config,
+            selectAccountDisabled: false,
         });
         expect(outlookAllScopes).toStrictEqual(
-            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read+Calendars.read+Contacts.read&prompt=consent&client_id=string'
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read+Calendars.read+Contacts.read&prompt=select_account&client_id=string'
+        );
+    });
+
+    it('Should build correct Outlook prompt based on selectAccountDisabled flag', () => {
+        const provider = ImportProvider.OUTLOOK;
+        const config = {
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
+        };
+        const scope = getScopeFromProvider(provider, [ImportType.MAIL]).join(' ');
+        const baseUrl =
+            'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+User.Read+offline_access+Mail.read';
+
+        // kill switch off → use select_account for account selection
+        expect(getOAuthAuthorizationUrl({ provider, scope, config, selectAccountDisabled: false })).toStrictEqual(
+            `${baseUrl}&prompt=select_account&client_id=string`
+        );
+
+        // kill switch on → fall back to consent
+        expect(getOAuthAuthorizationUrl({ provider, scope, config, selectAccountDisabled: true })).toStrictEqual(
+            `${baseUrl}&prompt=consent&client_id=string`
         );
     });
 
