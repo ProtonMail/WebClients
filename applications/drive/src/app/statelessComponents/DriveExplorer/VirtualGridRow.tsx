@@ -6,6 +6,7 @@ import { DriveExplorerGridBox } from './DriveExplorerGridBox';
 import type {
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
@@ -29,6 +30,7 @@ interface VirtualGridRowProps {
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
     onObserve: (element: HTMLElement | null, uid: string) => void;
+    a11y: DriveExplorerA11y;
 }
 
 export function VirtualGridRow({
@@ -48,6 +50,7 @@ export function VirtualGridRow({
     hideSelectionHighlight,
     contextMenuControls,
     onObserve,
+    a11y,
 }: VirtualGridRowProps) {
     const startIndex = virtualRow.index * itemsPerRow;
     const endIndex = Math.min(startIndex + itemsPerRow, itemIds.length);
@@ -89,6 +92,7 @@ export function VirtualGridRow({
                             showCheckboxColumn={showCheckboxColumn}
                             hideSelectionHighlight={hideSelectionHighlight}
                             contextMenuControls={contextMenuControls}
+                            a11y={a11y}
                         />
                     );
                 })}

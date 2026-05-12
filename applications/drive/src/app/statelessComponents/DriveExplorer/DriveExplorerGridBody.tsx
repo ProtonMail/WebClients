@@ -7,6 +7,7 @@ import { VirtualGridRow } from './VirtualGridRow';
 import type {
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerConfig,
     DriveExplorerEvents,
@@ -30,6 +31,7 @@ interface DriveExplorerGridBodyProps {
     showCheckboxColumn?: boolean;
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
+    a11y: DriveExplorerA11y;
 }
 
 const calculateCellDimensions = (areaWidth: number) => {
@@ -71,6 +73,7 @@ export const DriveExplorerGridBody = ({
     showCheckboxColumn = true,
     hideSelectionHighlight = false,
     contextMenuControls,
+    a11y,
 }: DriveExplorerGridBodyProps) => {
     const gridContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(gridContainerRef);
@@ -135,6 +138,7 @@ export const DriveExplorerGridBody = ({
                                     hideSelectionHighlight={hideSelectionHighlight}
                                     contextMenuControls={contextMenuControls}
                                     onObserve={observeElement}
+                                    a11y={a11y}
                                 />
                             );
                         })}
