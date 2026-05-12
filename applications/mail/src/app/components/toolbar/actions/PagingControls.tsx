@@ -142,6 +142,7 @@ const PagingControls = ({
                 </Button>
                 {showPageNumber && (
                     <DropdownButton
+                        dir="ltr"
                         size="tiny"
                         shape="ghost"
                         data-testid="toolbar:page-number-dropdown"
