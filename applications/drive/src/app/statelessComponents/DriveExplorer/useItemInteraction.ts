@@ -36,18 +36,6 @@ export const useItemInteraction = ({
 
     const handleMouseDown = useCallback(
         (event: React.MouseEvent) => {
-            const target = event.target as HTMLElement;
-
-            if (
-                target.tagName === 'BUTTON' ||
-                target.tagName === 'INPUT' ||
-                target.closest('button') ||
-                target.closest('input') ||
-                target.closest('[role="button"]')
-            ) {
-                return;
-            }
-
             // Right click
             if (event.button === 2) {
                 return;
@@ -67,18 +55,6 @@ export const useItemInteraction = ({
 
     const handleClick = useCallback(
         (event: React.MouseEvent) => {
-            const target = event.target as HTMLElement;
-
-            if (
-                target.tagName === 'BUTTON' ||
-                target.tagName === 'INPUT' ||
-                target.closest('button') ||
-                target.closest('input') ||
-                target.closest('[role="button"]')
-            ) {
-                return;
-            }
-
             // Right click
             if (event.button === 2) {
                 return;
