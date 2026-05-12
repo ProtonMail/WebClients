@@ -48,8 +48,7 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
     const history = useHistory();
     const location = useLocation();
 
-    const { ref, isSmallScreen, listBreakpoints } = useMailboxToolbarBreakpoints();
-    const { isExtraTiny, isTiny, filterAsDropdown } = listBreakpoints;
+    const { ref, isSmallScreen, isExtraTiny, isTiny, filterAsDropdown } = useMailboxToolbarBreakpoints('list');
 
     const sort = useMailSelector(selectSort);
     const filter = useMailSelector(selectFilter);
