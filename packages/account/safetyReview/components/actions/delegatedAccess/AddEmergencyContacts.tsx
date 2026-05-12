@@ -65,11 +65,11 @@ export const AddEmergencyContacts = (props: Props) => {
                     <img src={illustration} alt="" width={64} height={64} />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>
-                    {c('safety_review').t`Allow trusted friends to sign in`}
+                    {c('safety_review').t`Add an emergency contact`}
                 </SafetyReviewCardHeader.Title>
                 <SafetyReviewCardHeader.Description>
                     {c('safety_review')
-                        .t`Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.`}
+                        .t`Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.`}
                 </SafetyReviewCardHeader.Description>
                 <SafetyReviewCardHeader.Description>
                     {c('safety_review').t`They must already have a ${BRAND_NAME} Account.`}
