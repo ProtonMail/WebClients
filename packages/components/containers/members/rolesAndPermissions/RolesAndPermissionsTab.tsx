@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { OrganizationRole, UserOrganizationRole } from '@proton/shared/lib/interfaces/OrganizationRole';
+import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import type { RoleRow } from './RoleCheckList';
@@ -9,7 +9,7 @@ import RoleCheckList from './RoleCheckList';
 
 const buildRows = (
     organizationRoles: OrganizationRole[] = [],
-    userRoles: UserOrganizationRole[] = [],
+    userRoles: RoleAssignment[] = [],
     selectedRoles: Set<string>
 ): RoleRow[] => {
     const groupByRoleId = new Map(
@@ -31,7 +31,7 @@ interface Props {
     selectedRoles: Set<string>;
     onChange: (selectedRoles: Set<string>) => void;
     organizationRoles: OrganizationRole[] | undefined;
-    userRoles?: UserOrganizationRole[];
+    userRoles?: RoleAssignment[];
     loadingRoles: boolean;
 }
 
