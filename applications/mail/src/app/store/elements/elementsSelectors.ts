@@ -140,16 +140,6 @@ export const elements = createSelector(
         // To prevent any de-synchronization between cache and the output of the memo
         const { labelID, sort, filter, conversationMode, search, categoryIDs } = params;
 
-        let finalSort = { ...sort };
-        // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
-        const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
-        if (isInSnoozeOrInbox && sort.sort === 'Time') {
-            finalSort = {
-                sort: 'SnoozeTime',
-                desc: labelID === MAILBOX_LABEL_IDS.SNOOZED ? !sort.desc : sort.desc,
-            };
-        }
-
         const minPage = pages.length > 0 ? Math.min(...pages) : 0;
         const startIndex = (page - minPage) * pageSize;
         const endIndex = startIndex + pageSize;
@@ -179,7 +169,7 @@ export const elements = createSelector(
               })
             : [];
 
-        const sorted = sortElements(filtered, finalSort, labelID);
+        const sorted = sortElements(filtered, sort, labelID);
 
         // We only keep a slice of the cached elements: the ones we want to display in the current List view
         return sorted.slice(startIndex, endIndex);
