@@ -174,10 +174,13 @@ export type ChatEndpointGenerationRequest = {
     Prompt: LumoApiGenerationRequest;
 };
 
+export type ImageAspectRatio = '1:1' | '2:3' | '3:2' | '9:16' | '16:9';
+
 export type Options = {
     tools?: ToolName[] | boolean;
     reasoning?: boolean;
     suggested_questions?: boolean;
+    image_aspect_ratio?: ImageAspectRatio;
 };
 
 // *** Utility types for encryption state ***
