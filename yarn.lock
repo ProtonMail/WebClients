@@ -2171,17 +2171,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chevrotain/cst-dts-gen@npm:11.1.2":
-  version: 11.1.2
-  resolution: "@chevrotain/cst-dts-gen@npm:11.1.2"
-  dependencies:
-    "@chevrotain/gast": "npm:11.1.2"
-    "@chevrotain/types": "npm:11.1.2"
-    lodash-es: "npm:4.17.23"
-  checksum: 10/04a84285fd4d26129f44f8e20b99fd6ab51cb1ee4c7eb104baa4842413b9e18bb171046a665583b94ff29e2c06a2e1a65205940a75cda848aa2a5e847b99bbb6
-  languageName: node
-  linkType: hard
-
 "@chevrotain/gast@npm:10.5.0":
   version: 10.5.0
   resolution: "@chevrotain/gast@npm:10.5.0"
@@ -2192,23 +2181,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chevrotain/gast@npm:11.1.2":
-  version: 11.1.2
-  resolution: "@chevrotain/gast@npm:11.1.2"
-  dependencies:
-    "@chevrotain/types": "npm:11.1.2"
-    lodash-es: "npm:4.17.23"
-  checksum: 10/8733cbadfcb982f5afe0e1825446ad8e82de3044c9ae22a69771ec20292facce25e459da23c16061c894ef49ca381ad53c0796171fa0dfce08fc25305850eeca
-  languageName: node
-  linkType: hard
-
-"@chevrotain/regexp-to-ast@npm:11.1.2":
-  version: 11.1.2
-  resolution: "@chevrotain/regexp-to-ast@npm:11.1.2"
-  checksum: 10/9ba399b2c23ae1a86f1bcb1db4b07fd3191d0f491b63303b824850ef5f8b455f8f8a39c4d7876271c23ca06f7e03b7273b07014cd9c8ccb2328bff5dc6c9df00
-  languageName: node
-  linkType: hard
-
 "@chevrotain/types@npm:10.5.0":
   version: 10.5.0
   resolution: "@chevrotain/types@npm:10.5.0"
@@ -2216,7 +2188,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chevrotain/types@npm:11.1.2":
+"@chevrotain/types@npm:~11.1.1":
   version: 11.1.2
   resolution: "@chevrotain/types@npm:11.1.2"
   checksum: 10/ad39d7651a20b05ead9b4374f98afc39915118dda29678c2b623571aa3da3018a0f3fb799d1809605cafcae59cba637d640855ea0f97b9b01d0900d77d6781fe
@@ -2227,13 +2199,6 @@ __metadata:
   version: 10.5.0
   resolution: "@chevrotain/utils@npm:10.5.0"
   checksum: 10/92571b905e33c8cb7ba83935e9b8c5a46b4528d9906ad26d74f1530da33e4888cfac15fc4cea6212843cb62350906a88671d586afd9019ceb176ae2c3a1a402e
-  languageName: node
-  linkType: hard
-
-"@chevrotain/utils@npm:11.1.2":
-  version: 11.1.2
-  resolution: "@chevrotain/utils@npm:11.1.2"
-  checksum: 10/a5ba5886547665726e6680bdc6e1c939e643c8c606d8eb3806ed178ebb2c3a8a1a581db558412374f230babfe9d8c1c37f2c3edf260c63729dbe6ff9ca4f0223
   languageName: node
   linkType: hard
 
@@ -6743,12 +6708,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mermaid-js/parser@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@mermaid-js/parser@npm:1.1.0"
+"@mermaid-js/parser@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@mermaid-js/parser@npm:1.1.1"
   dependencies:
-    langium: "npm:^4.0.0"
-  checksum: 10/845bafce5d2be94a8104112e2197ebd925e58b3c9aae5b3e4b7795e308b0bc7c8016a5c955974da956cf7351a5572e4797ad5c991ecbb771326ffa18d1db2074
+    "@chevrotain/types": "npm:~11.1.1"
+  checksum: 10/9f3645fd055c0800c16a3e7eab1ce7f05736c352ab48996e9c64fb21b27c25a5987636040816b1bb16384a4434744cecbdf746c152ef80e0bc712972cb58deed
   languageName: node
   linkType: hard
 
@@ -11351,7 +11316,7 @@ __metadata:
     "@astrojs/starlight": "npm:^0.38.2"
     astro: "npm:^6.1.8"
     astro-mermaid: "npm:^2.0.1"
-    mermaid: "npm:^11.14.0"
+    mermaid: "npm:^11.15.0"
     sharp: "npm:^0.34.5"
   languageName: unknown
   linkType: soft
@@ -22361,17 +22326,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chevrotain-allstar@npm:~0.3.1":
-  version: 0.3.1
-  resolution: "chevrotain-allstar@npm:0.3.1"
-  dependencies:
-    lodash-es: "npm:^4.17.21"
-  peerDependencies:
-    chevrotain: ^11.0.0
-  checksum: 10/a12c0e408c17920b5f8fc095b7981d15609a63b3795946005fdfc77a5bbc692bbdb196ea29ad4655f55bfa7c93bbcbe7fe2e5782475bf65761b33f13a4aa1a77
-  languageName: node
-  linkType: hard
-
 "chevrotain@npm:7.1.1":
   version: 7.1.1
   resolution: "chevrotain@npm:7.1.1"
@@ -22392,20 +22346,6 @@ __metadata:
     lodash: "npm:4.17.21"
     regexp-to-ast: "npm:0.5.0"
   checksum: 10/f39738bf4429736bc68130548c4fd00846b5ef2b057cfab0e757abae0568519271040f403f60aeb2a4aee826b64cd2c026b6bf5ae746fcf632b458b10731568f
-  languageName: node
-  linkType: hard
-
-"chevrotain@npm:~11.1.1":
-  version: 11.1.2
-  resolution: "chevrotain@npm:11.1.2"
-  dependencies:
-    "@chevrotain/cst-dts-gen": "npm:11.1.2"
-    "@chevrotain/gast": "npm:11.1.2"
-    "@chevrotain/regexp-to-ast": "npm:11.1.2"
-    "@chevrotain/types": "npm:11.1.2"
-    "@chevrotain/utils": "npm:11.1.2"
-    lodash-es: "npm:4.17.23"
-  checksum: 10/67caa47a3d38eeb4a584960bbf5fdc83894a1419a6428f7dcf8a07f5937c1bda4c8e1acf628fe80d3be8f4c1a84426942c0a8f6bcf44a5958f1df0cf4225bc4d
   languageName: node
   linkType: hard
 
@@ -26860,15 +26800,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-toolkit@npm:^1.39.10, es-toolkit@npm:^1.39.3":
-  version: 1.45.1
-  resolution: "es-toolkit@npm:1.45.1"
+"es-toolkit@npm:^1.39.10, es-toolkit@npm:^1.39.3, es-toolkit@npm:^1.45.1":
+  version: 1.46.1
+  resolution: "es-toolkit@npm:1.46.1"
   dependenciesMeta:
     "@trivago/prettier-plugin-sort-imports@4.3.0":
       unplugged: true
     prettier-plugin-sort-re-exports@0.0.1:
       unplugged: true
-  checksum: 10/e092803bd0ba473db04798311e39bfc1e27e7bb958309f2e49c1be59931c7d88d5d84fc12483b32e0e73c2dec42739b73b4dfe6322a37c2a158b552456b24134
+  checksum: 10/15fa8e58848c3cf3f56b3fca6505362a7e19a6487613cd928197d11a12066010655ee47f74e5f412d949173f998df7ce7babcba9ff838bd40ce4ca79fca8f3c4
   languageName: node
   linkType: hard
 
@@ -35084,19 +35024,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"langium@npm:^4.0.0":
-  version: 4.2.1
-  resolution: "langium@npm:4.2.1"
-  dependencies:
-    chevrotain: "npm:~11.1.1"
-    chevrotain-allstar: "npm:~0.3.1"
-    vscode-languageserver: "npm:~9.0.1"
-    vscode-languageserver-textdocument: "npm:~1.0.11"
-    vscode-uri: "npm:~3.1.0"
-  checksum: 10/9fd9208762ae9b551ec1deea25b6633605b06b59505a1ce6bf5b6c639779378bab35f813ffe549db57af95a5b71f9dcf61e553273a5d9d6ad2a3a99c5b7bfcc2
-  languageName: node
-  linkType: hard
-
 "language-subtag-registry@npm:^0.3.20":
   version: 0.3.23
   resolution: "language-subtag-registry@npm:0.3.23"
@@ -35613,14 +35540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:4.17.23":
-  version: 4.17.23
-  resolution: "lodash-es@npm:4.17.23"
-  checksum: 10/1feae200df22eb0bd93ca86d485e77784b8a9fb1d13e91b66e9baa7a7e5e04be088c12a7e20c2250fc0bd3db1bc0ef0affc7d9e3810b6af2455a3c6bf6dde59e
-  languageName: node
-  linkType: hard
-
-"lodash-es@npm:^4.17.21, lodash-es@npm:^4.17.23, lodash-es@npm:^4.18.1":
+"lodash-es@npm:^4.17.21, lodash-es@npm:^4.18.1":
   version: 4.18.1
   resolution: "lodash-es@npm:4.18.1"
   checksum: 10/8bfad225ef09ef42b04283cdaf7830efcc2ba29ae41b56501c74422155ee1ccaa1f0f6e8319def3451a1fe54dec501c8e4bee622bae2b2d98ac993731e0a5cce
@@ -36938,13 +36858,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mermaid@npm:^11.14.0":
-  version: 11.14.0
-  resolution: "mermaid@npm:11.14.0"
+"mermaid@npm:^11.15.0":
+  version: 11.15.0
+  resolution: "mermaid@npm:11.15.0"
   dependencies:
     "@braintree/sanitize-url": "npm:^7.1.1"
     "@iconify/utils": "npm:^3.0.2"
-    "@mermaid-js/parser": "npm:^1.1.0"
+    "@mermaid-js/parser": "npm:^1.1.1"
     "@types/d3": "npm:^7.4.3"
     "@upsetjs/venn.js": "npm:^2.0.0"
     cytoscape: "npm:^3.33.1"
@@ -36955,15 +36875,15 @@ __metadata:
     dagre-d3-es: "npm:7.0.14"
     dayjs: "npm:^1.11.19"
     dompurify: "npm:^3.3.1"
+    es-toolkit: "npm:^1.45.1"
     katex: "npm:^0.16.25"
     khroma: "npm:^2.1.0"
-    lodash-es: "npm:^4.17.23"
     marked: "npm:^16.3.0"
     roughjs: "npm:^4.6.6"
     stylis: "npm:^4.3.6"
     ts-dedent: "npm:^2.2.0"
-    uuid: "npm:^11.1.0"
-  checksum: 10/44a4d1884702956b61e99a54a7a8f369749c65da4c2278d6aa6dd2c4a6904f9950ce9925b310c37fc9f71c7684c38f5853995e4c0002256e7d887621bb24a4ec
+    uuid: "npm:^11.1.0 || ^12 || ^13 || ^14.0.0"
+  checksum: 10/4a3f8ac77aba326c96adc2325f550421b6f05f1592998fcf80dfeb9fbcd751e2a0a030092559bd258e45bba60c0ad1e7415ad46ff5c165b1d9a469835e927e9a
   languageName: node
   linkType: hard
 
@@ -51141,16 +51061,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^11.1.0":
-  version: 11.1.0
-  resolution: "uuid@npm:11.1.0"
-  bin:
-    uuid: dist/esm/bin/uuid
-  checksum: 10/d2da43b49b154d154574891ced66d0c83fc70caaad87e043400cf644423b067542d6f3eb641b7c819224a7cd3b4c2f21906acbedd6ec9c6a05887aa9115a9cf5
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^14.0.0":
+"uuid@npm:^11.1.0 || ^12 || ^13 || ^14.0.0, uuid@npm:^14.0.0":
   version: 14.0.0
   resolution: "uuid@npm:14.0.0"
   bin:
@@ -51751,55 +51662,6 @@ __metadata:
   version: 2.0.1
   resolution: "void-elements@npm:2.0.1"
   checksum: 10/07306c2d3be9d4ec0199b09cdbd65620d0ba15483ac1bff814191892fe7ab8dba03ac43e138ebe227430a6d146d89d3d2fe85886ac250e5276027b84d83a4b00
-  languageName: node
-  linkType: hard
-
-"vscode-jsonrpc@npm:8.2.0":
-  version: 8.2.0
-  resolution: "vscode-jsonrpc@npm:8.2.0"
-  checksum: 10/6d57c3aed591d0bc89d1c226061d265b04de528582bef183f5998cac5de78a736887e5238fe48b9f6a14ec32f05d8fda71599f92862ac5dacc7f26bf7399b532
-  languageName: node
-  linkType: hard
-
-"vscode-languageserver-protocol@npm:3.17.5":
-  version: 3.17.5
-  resolution: "vscode-languageserver-protocol@npm:3.17.5"
-  dependencies:
-    vscode-jsonrpc: "npm:8.2.0"
-    vscode-languageserver-types: "npm:3.17.5"
-  checksum: 10/aeb9c190184c365fa6b835e5aa7574c86cb3ecb2789386bcff76a09b22bc8b8e0d5da47c28193a9c73cfb32c10a12a91191779280324a38efb401e3ef7bad294
-  languageName: node
-  linkType: hard
-
-"vscode-languageserver-textdocument@npm:~1.0.11":
-  version: 1.0.12
-  resolution: "vscode-languageserver-textdocument@npm:1.0.12"
-  checksum: 10/2bc0fde952d40f35a31179623d1491b0fafdee156aaf58557f40f5d394a25fc84826763cdde55fa6ce2ed9cd35a931355ad6dd7fe5db82e7f21e5d865f0af8c6
-  languageName: node
-  linkType: hard
-
-"vscode-languageserver-types@npm:3.17.5":
-  version: 3.17.5
-  resolution: "vscode-languageserver-types@npm:3.17.5"
-  checksum: 10/900d0b81df5bef8d90933e75be089142f6989cc70fdb2d5a3a5f11fa20feb396aaea23ccffc8fbcc83a2f0e1b13c6ee48ff8151f236cbd6e61a4f856efac1a58
-  languageName: node
-  linkType: hard
-
-"vscode-languageserver@npm:~9.0.1":
-  version: 9.0.1
-  resolution: "vscode-languageserver@npm:9.0.1"
-  dependencies:
-    vscode-languageserver-protocol: "npm:3.17.5"
-  bin:
-    installServerIntoExtension: bin/installServerIntoExtension
-  checksum: 10/1cb643b1b1f41a620aaf4a62e152acad694c22b4d98de73fa614a0bddf3b4b4832460465bdbc43f27ba23dad7e61aba533e77b8bfac74cc8de310c39623a7ba1
-  languageName: node
-  linkType: hard
-
-"vscode-uri@npm:~3.1.0":
-  version: 3.1.0
-  resolution: "vscode-uri@npm:3.1.0"
-  checksum: 10/80c2a2421f44b64008ef1f91dfa52a2d68105cbb4dcea197dbf5b00c65ccaccf218b615e93ec587f26fc3ba04796898f3631a9406e3b04cda970c3ca8eadf646
   languageName: node
   linkType: hard
 
