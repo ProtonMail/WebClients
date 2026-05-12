@@ -4,18 +4,19 @@ import { createUrl } from '../fetch/helpers';
 import { toBase64 } from './file';
 
 /**
+ * encodeURI encodes % as %25, which double-encodes any existing %XX sequences in the URL for example %3A would become %253A.
+ * This helper undoes that double-encoding after the fact, restoring %25XX back to %XX.
+ */
+const encodeURIWithoutDoubleEncoding = (uri: string) =>
+    encodeURI(uri).replace(/%25([0-9A-Fa-f]{2})/g, (_, hex: string) => `%${hex}`);
+
+/**
  * Use to encode Image URI when loading images
  */
 export const encodeImageUri = (url: string) => {
     const trimmed = url.trim();
     const [base, query] = trimmed.split('?');
-
-    // Decode any existing encodings, so that we don’t double encode which would prevent the image from being loaded
-    const decodedBase = decodeURI(base);
-
-    // Now, we can safely encode reserved characters like `{}` or spaces
-    const safeBase = encodeURI(decodedBase);
-
+    const safeBase = encodeURIWithoutDoubleEncoding(base);
     return query ? `${safeBase}?${query}` : safeBase;
 };
 
