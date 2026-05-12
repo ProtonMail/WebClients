@@ -72,6 +72,9 @@ export const AddRecoveryContacts = (props: Props) => {
                         .t`Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.`}
                 </SafetyReviewCardHeader.Description>
                 <SafetyReviewCardHeader.Description>
+                    {c('safety_review').t`They will not be able to see or access your data.`}
+                </SafetyReviewCardHeader.Description>
+                <SafetyReviewCardHeader.Description>
                     {c('safety_review').t`They must already have a ${BRAND_NAME} Account.`}
                 </SafetyReviewCardHeader.Description>
             </SafetyReviewCardHeader>
