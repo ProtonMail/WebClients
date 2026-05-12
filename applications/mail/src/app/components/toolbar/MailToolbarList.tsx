@@ -28,6 +28,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { CategoriesTabs } from '../categoryView/categoriesTabs/CategoriesTabs';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
+import { ClaimProtonAddressToolbarButton } from './actions/ClaimProtonAddressToolbarButton';
 import LabelName from './actions/LabelName';
 import LabelsAndFolders from './actions/LabelsAndFolders';
 import MoreActions from './actions/MoreActions';
@@ -156,6 +157,8 @@ export const MailToolbarList = ({ elementsData, actions }: Props) => {
                         loading={elementsData.loading}
                     />
                     <LabelName selectedIDs={actions.selectedIDs} labelName={labelName} />
+                    <ClaimProtonAddressToolbarButton />
+
                     {!isInDeletedFolder && (
                         <>
                             <ReadUnreadButtons selectedIDs={actions.selectedIDs} onMarkAs={actions.handleMarkAs} />
