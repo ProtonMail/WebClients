@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useCallback, useRef } from 'react';
 
+import { c } from 'ttag';
+
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';
 
@@ -11,6 +13,7 @@ import type {
     CellDefinition,
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerConfig,
     DriveExplorerEvents,
@@ -18,6 +21,15 @@ import type {
     DriveExplorerSort,
     GridDefinition,
 } from './types';
+
+// Fallback used when a consumer does not provide a custom `a11y`. Sections that
+// know their items should pass a richer label; this is a positional last resort.
+const defaultA11y: DriveExplorerA11y = {
+    getItemAriaLabel: ({ index }) => {
+        const position = index + 1;
+        return c('Label').t`Item #${position}`;
+    },
+};
 
 /**
  * DriveExplorer component props
@@ -211,6 +223,22 @@ export interface DriveExplorerProps {
      * ```
      */
     contextMenuControls?: ContextMenuControls;
+
+    /**
+     * Accessibility configuration. Provides per-item aria-label generators
+     * for the row activator.
+     *
+     * @example
+     * ```tsx
+     * {
+     *   getItemAriaLabel: ({ uid }) => {
+     *     const item = store.get(uid);
+     *     return item.isShared ? `${item.name}, shared` : item.name;
+     *   }
+     * }
+     * ```
+     */
+    a11y?: DriveExplorerA11y;
 }
 
 /**
@@ -261,6 +289,7 @@ const DriveExplorer = ({
     showCheckboxColumn = true,
     hideSelectionHighlight = false,
     contextMenuControls,
+    a11y = defaultA11y,
 }: DriveExplorerProps) => {
     const resolvedConditions: DriveExplorerConditions = {
         isDraggable: () => true,
@@ -355,6 +384,7 @@ const DriveExplorer = ({
                     showCheckboxColumn={showCheckboxColumn}
                     hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
+                    a11y={a11y}
                 />
             ) : (
                 <DriveExplorerBody
@@ -371,6 +401,7 @@ const DriveExplorer = ({
                     showCheckboxColumn={showCheckboxColumn}
                     hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
+                    a11y={a11y}
                 />
             )}
         </div>
