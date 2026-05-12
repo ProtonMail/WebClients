@@ -37,11 +37,11 @@ const OAuthModal = () => {
 
     return (
         <>
-            {step === 'products' && initialLoading && <StepLoadingImporter />}
+            {step === 'products' && initialLoading && <StepLoadingImporter onClose={handleClose} />}
             {step === 'instructions' && provider === ImportProvider.GOOGLE && (
                 <StepInstructionsGoogle triggerOAuth={triggerOAuth} />
             )}
-            {step === 'loading-importer' && <StepLoadingImporter />}
+            {step === 'loading-importer' && <StepLoadingImporter onClose={handleClose} />}
             {step === 'prepare-import' && <StepPrepare />}
             {step === 'importing' && <StepLoadingImporting />}
             {step === 'success' && <StepSuccess />}
