@@ -68,6 +68,7 @@ export enum CommonFeatureFlag {
     MaxContactsImport = 'MaxContactsImport',
     EventLoopInterval = 'EventLoopInterval',
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
+    LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
 }
 
 enum AccountFlag {

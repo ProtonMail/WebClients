@@ -64,6 +64,7 @@ export enum TelemetryMeasurementGroups {
     b2bOnboarding = 'any.web.b2b_onboarding',
     bringYourOwnEmail = 'any.web.bring_your_own_email',
     appSwitcher = 'any.web.app_switcher',
+    preventWasmLoading = 'any.web.prevent_wasm_loading',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
@@ -481,6 +482,12 @@ export const enum TelemetryVpnTvEvents {
     tvAuthInitiated = 'tv_auth_initiated',
 }
 
+export enum TelemetryPreventWasmLoading {
+    wasm_unsupported = 'wasm_unsupported',
+    wasm_loading = 'wasm_loading',
+    wasm_failed = 'wasm_failed',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -536,7 +543,8 @@ export type TelemetryEvents =
     | TelemetryAccountCancellationFlowFeedbackEvents
     | TelemetrySafetyReviewCtrEvents
     | TelemetrySafetyReviewScoreDiffEvents
-    | TelemetryVpnTvEvents;
+    | TelemetryVpnTvEvents
+    | TelemetryPreventWasmLoading;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
