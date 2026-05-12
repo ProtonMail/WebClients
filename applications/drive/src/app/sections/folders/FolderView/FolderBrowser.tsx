@@ -18,6 +18,7 @@ import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import type { SortConfig, SortField } from '../../../modules/sorting';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
+    DriveExplorerA11y,
     DriveExplorerEvents,
     DriveExplorerSelection,
     DriveExplorerSort,
@@ -27,6 +28,7 @@ import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
 import { getFolderCells, getFolderGrid } from '../FolderDriveExplorerCells';
+import { getFolderItemAriaLabel } from '../folderItemAriaLabel';
 import { getSelectedItems } from '../getSelectedItems';
 import { FolderContextMenu } from '../menus/FolderContextMenu';
 import { FolderItemContextMenu } from '../menus/FolderItemContextMenu';
@@ -291,6 +293,11 @@ export function FolderBrowser({
         onSort: handleDriveExplorerSorting,
     };
 
+    const a11y: DriveExplorerA11y = {
+        getItemAriaLabel: ({ uid, isSelected, index }) =>
+            getFolderItemAriaLabel({ item: useFolderStore.getState().items.get(uid), isSelected, index }),
+    };
+
     return (
         <>
             <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
@@ -333,6 +340,7 @@ export function FolderBrowser({
                     showContextMenu: contextMenu.handleContextMenu,
                     close: contextMenu.close,
                 }}
+                a11y={a11y}
             />
             {uploadInputs}
             {modals.previewModal}

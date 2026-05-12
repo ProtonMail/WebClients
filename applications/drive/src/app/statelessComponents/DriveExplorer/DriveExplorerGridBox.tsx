@@ -5,11 +5,13 @@ import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { ItemA11yActivator } from './ItemA11yActivator';
 import { CheckboxCell } from './cells/CheckboxCell';
 import { ContextMenuCellWithControls } from './cells/ContextMenuCell';
 import type {
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
@@ -30,11 +32,13 @@ interface DriveExplorerGridBoxProps {
     showCheckboxColumn?: boolean;
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
+    a11y: DriveExplorerA11y;
 }
 
 export const DriveExplorerGridBox = ({
     onObserve,
     itemId,
+    index,
     selection,
     grid,
     events,
@@ -44,6 +48,7 @@ export const DriveExplorerGridBox = ({
     showCheckboxColumn = true,
     hideSelectionHighlight = false,
     contextMenuControls,
+    a11y,
 }: DriveExplorerGridBoxProps) => {
     const rowRef = useRef<HTMLDivElement>(null);
     const isSelected = selection?.selectedItems.has(itemId) ?? false;
@@ -111,7 +116,6 @@ export const DriveExplorerGridBox = ({
                     <DragMoveContainer>{dragMoveControls.dragFeedbackText}</DragMoveContainer>
                 </DragMoveContent>
             )}
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
                 ref={rowRef}
                 className={clsx(
@@ -120,12 +124,6 @@ export const DriveExplorerGridBox = ({
                         'border-primary',
                     dragging && 'opacity-50'
                 )}
-                onFocus={hideSelectionHighlight ? (e) => e.currentTarget.blur() : undefined}
-                onMouseDown={handleMouseDown}
-                onClick={handleClick}
-                onDoubleClick={handleDoubleClick}
-                onContextMenu={handleContextMenu}
-                onKeyDown={handleKeyDown}
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
                 onDragOver={canBeDropTarget ? dragMoveControls?.handleDragOver : undefined}
@@ -133,14 +131,21 @@ export const DriveExplorerGridBox = ({
                 onDragEnter={canBeDropTarget ? dragMoveControls?.handleDragEnter : undefined}
                 onDragLeave={canBeDropTarget ? dragMoveControls?.handleDragLeave : undefined}
                 draggable={isDraggable}
-                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-                tabIndex={0}
                 data-testid="grid-item"
                 data-item-uid={itemId}
             >
+                <ItemA11yActivator
+                    ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
+                    isSelected={isSelected}
+                    onMouseDown={handleMouseDown}
+                    onClick={handleClick}
+                    onDoubleClick={handleDoubleClick}
+                    onKeyDown={handleKeyDown}
+                    onContextMenu={handleContextMenu}
+                />
                 {showCheckboxColumn && (
                     <CheckboxCell
-                        className="absolute top-0 left-0 pl-0.5 pt-0.5"
+                        className="absolute top-0 left-0 pl-0.5 pt-0.5 z-up"
                         uid={itemId}
                         selectionMethods={selection.selectionMethods}
                     />
@@ -158,7 +163,7 @@ export const DriveExplorerGridBox = ({
                 >
                     {grid.name(itemId)}
                     {contextMenuControls && (
-                        <div className="absolute right-0 mr-1">
+                        <div className="absolute right-0 mr-1 z-up">
                             <ContextMenuCellWithControls
                                 uid={itemId}
                                 isSelected={isSelected}

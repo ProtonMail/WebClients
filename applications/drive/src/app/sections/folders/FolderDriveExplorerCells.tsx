@@ -82,7 +82,8 @@ export const getFolderCells = ({
     },
     {
         id: 'share-options',
-        className: 'file-browser-list--icon-column file-browser-list--context-menu-column flex items-center',
+        className:
+            'file-browser-list--icon-column file-browser-list--context-menu-column flex items-center relative z-up',
         testId: 'column-share-options',
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
@@ -114,22 +115,7 @@ export const getFolderCells = ({
                             // For folder section so we can force getDrive
                             onClick={() => showSharingModal({ nodeUid: uid, drive: getDrive() })}
                         />
-                        {/* The modal is rendered inside an interactive Drive Explorer row.
-                        This is broken accessibility: actionable elements should not be nested
-                        inside other actionable elements. Because the modal lives inside the
-                        interactive row, events triggered in the sharing modal propagate to the
-                        parent row handler (via React Portal event propagation). */}
-                        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-                        <div
-                            style={{ display: 'contents' }}
-                            onClick={(e) => e.stopPropagation()}
-                            onMouseDown={(e) => e.stopPropagation()}
-                            onDoubleClick={(e) => e.stopPropagation()}
-                            onContextMenu={(e) => e.stopPropagation()}
-                            onKeyDown={(e) => e.stopPropagation()}
-                        >
-                            {sharingModal}
-                        </div>
+                        {sharingModal}
                     </>
                 );
             };
