@@ -31,6 +31,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -60,9 +63,6 @@
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
-      ],
-      "Change password": [
-        "Змяніць пароль"
       ],
       "Chat with us": [
         "Чат з намі"
@@ -2770,6 +2770,9 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
@@ -2799,6 +2802,9 @@
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2941,6 +2947,9 @@
       "for ${ price }": [
         "за ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Пазнака Google Pay"
       ],
@@ -3048,6 +3057,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
+      ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
@@ -5705,12 +5717,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
-      ],
-      "Account restricted": [
-        "Уліковы запіс абмежаваны"
-      ],
-      "Account temporarily locked": [
-        "Уліковы запіс часова заблакіраваны"
       ],
       "Add credit/debit card": [
         "Дадаць крэдытную/плацежную картку"
