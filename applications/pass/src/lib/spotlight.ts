@@ -3,6 +3,7 @@ import { SPOTLIGHT_STORAGE_KEY, getSpotlightStorageKey } from 'proton-pass-web/l
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import {
+    createAccessTokensDiscoveryRule,
     createAliasDiscoveryRules,
     createAliasSyncEnableRule,
     createAutotypeRules,
@@ -62,6 +63,7 @@ export const spotlight = createSpotlightService({
         ...createAliasDiscoveryRules(store),
         createFileAttachmentsDiscoveryRule(store),
         createProtonAnniversary2025Rule(),
+        createAccessTokensDiscoveryRule(),
         ...(DESKTOP_BUILD ? createAutotypeRules() : []),
     ],
 });
