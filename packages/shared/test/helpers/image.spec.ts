@@ -17,6 +17,14 @@ describe('encodeImageUri', () => {
         { url: `${domain}/logo.png%22`, expected: `${domain}/logo.png%22` },
         { url: `${domain}/logo.png&quot`, expected: `${domain}/logo.png&quot` },
         { url: `${domain}/{id}/logo.png`, expected: `${domain}/%7Bid%7D/logo.png` },
+        // Bare % not part of a valid %XX sequence gets encoded to %25
+        { url: `${domain}/image%with%invalid.png`, expected: `${domain}/image%25with%25invalid.png` },
+        // Substack CDN URLs embed an encoded URL in the path — must not double-encode %3A, %2F etc.
+        {
+            url: 'https://substackcdn.com/image/fetch/w_40/https%3A%2F%2Fsubstack.com%2Ficon%3Fstroke%3D%2523EA410B',
+            expected:
+                'https://substackcdn.com/image/fetch/w_40/https%3A%2F%2Fsubstack.com%2Ficon%3Fstroke%3D%2523EA410B',
+        },
     ].forEach(({ url, expected }) => {
         it(`should encode image URI "${url}"`, () => {
             expect(encodeImageUri(url)).toEqual(expected);
