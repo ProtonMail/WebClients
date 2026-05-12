@@ -1989,6 +1989,9 @@
       "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "**p=quarantine**: demana a les plataformes receptores que marquin els correus electrònics no autoritzats com a correu brossa o que els posin en quarantena."
       ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: demaneu a les plataformes receptores que rebutgin els correus electrònics no autoritzats."
+      ],
       "Account connected": [
         "S'ha connectat el compte"
       ],
@@ -2003,6 +2006,9 @@
       ],
       "Activation link copied to clipboard": [
         "S'ha copiat l'enllaç d'activació al porta-retalls"
+      ],
+      "Add domain": [
+        "Afegeix un domini"
       ],
       "Add users": [
         "Afegiu usuaris"
@@ -2079,6 +2085,9 @@
       "Domain connected": [
         "S'ha connectat el domini"
       ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Assegureu-vos que els vostres correus electrònics arribin a la bústia d'entrada i no a la carpeta de correu brossa. L'actualització de l'SPF permetrà als usuaris enviar correus des de ${ BRAND_NAME } i Google simultàniament mentre duri la migració."
+      ],
       "Errors": [
         "Errors"
       ],
@@ -2091,6 +2100,9 @@
       "Finalize migration": [
         "Finalitzeu la migració"
       ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Finalitzar la migració significa que tots els vostres correus electrònics s'enviaran directament a ${ BRAND_NAME }. Els usuaris deixaran de rebre correus electrònics als seus comptes de Google i les dades ja no se sincronitzaran més entre ${ BRAND_NAME } i Google."
+      ],
       "Find out what can be migrated.": [
         "Descobriu què es pot migrar."
       ],
@@ -2099,6 +2111,9 @@
       ],
       "Google Workspace account": [
         "Compte de Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Espereu un moment, estem configurant els comptes d'usuari i començarem a importar les dades d'usuari d'aquí a poc."
       ],
       "Has errors": [
         "Té errors"
@@ -2188,6 +2203,9 @@
       "Please leave this window open until we're done creating all the users.": [
         "Deixeu aquesta finestra oberta fins que hàgim creat tots els usuaris."
       ],
+      "Please select at least one product to migrate": [
+        "Seleccioneu almenys un producte per migrar"
+      ],
       "Refresh": [
         "Actualitzar"
       ],
@@ -2211,6 +2229,9 @@
       ],
       "Set up secure sending (DMARC)": [
         "Configurar l'enviament segur (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configura l'enviament segur (SPF)"
       ],
       "Settings": [
         "Preferències"
@@ -2248,8 +2269,14 @@
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
       ],
+      "Update records for receiving": [
+        "Actualitzeu els registres per a la recepció"
+      ],
       "User": [
         "Usuari"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "L'usuari ha d'activar el seu compte mitjançant l'enllaç d'activació que es mostra a dalt"
       ],
       "User status": [
         "Estat de l'usuari"
@@ -2286,6 +2313,9 @@
       ],
       "What are you migrating?": [
         "Què esteu migrant?"
+      ],
+      "You": [
+        "Tú"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Cal que concediu permís perquè ${ BRAND_NAME } pugui copiar les vostres dades. Un cop acceptats els permisos, torneu aquí per continuar."
@@ -15851,6 +15881,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "S'ha eliminat el compte. S'està tancant la sessió..."
+      ],
+      "Activation link copied to clipboard": [
+        "S'ha copiat l'enllaç d'activació al porta-retalls"
       ],
       "Address added": [
         "Adreça afegida"

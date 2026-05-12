@@ -1047,6 +1047,9 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
       ],
@@ -1064,6 +1067,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
@@ -1346,6 +1352,9 @@
       ],
       "Connect 10 devices at once": [
         "同時連線 10 臺裝置"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
@@ -3062,6 +3071,9 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "這可能需要幾分鐘的時間。同時，您可以像往常一樣繼續使用${ CALENDAR_APP_NAME }。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
+      ],
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "若要於 ${ BRAND_NAME } 要持續接收和傳送 Gmail 的訊息，請重新連接至您的帳號。"
       ],
@@ -4389,7 +4401,15 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -4925,6 +4945,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
       ],
@@ -4954,6 +4977,9 @@
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
@@ -5360,6 +5386,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "為強化安全性，您可設定密碼短語。此密碼短語不會包含在行事曆邀請中，請記得另行與賓客分享。"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
       "Frequency modifications will be lost.": [
         "頻率修改將會消失。"
       ],
@@ -5734,6 +5763,9 @@
       ],
       "Range is too short.": [
         "範圍太短。"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
@@ -6986,8 +7018,14 @@
       ]
     },
     "label": {
+      "Date of the booking range": [
+        "移除此預定範圍"
+      ],
       "How long should an appointment last?": [
         "預約應持續多久？"
+      ],
+      "Start time of the booking range": [
+        "預定範圍的開始時間"
       ]
     },
     "Label for contact group color": {
@@ -7316,6 +7354,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Message": {
@@ -9413,6 +9454,9 @@
       ]
     },
     "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
@@ -11722,6 +11766,9 @@
       ],
       "Upload and share files": [
         "上傳並共享檔案"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ],
       "Verification failed": [
         "驗證失敗"

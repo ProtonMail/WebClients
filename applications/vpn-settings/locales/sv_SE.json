@@ -2052,6 +2052,9 @@
       "Finalize migration": [
         "Slutför migrering"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
       ],
@@ -2060,6 +2063,9 @@
       ],
       "Has errors": [
         "Har fel"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importfel för ${ user.AdminSetName }"
       ],
       "In progress": [
         "Pågår"
@@ -2109,6 +2115,9 @@
       ],
       "More details": [
         "Mer detaljer"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
       ],
       "No users to display": [
         "Inga användare att visa"
@@ -6648,6 +6657,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsövervakare"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -14702,8 +14714,14 @@
       "Click a user's name to manage their role and permissions.": [
         "Klicka på en användares namn för att hantera deras roll och behörigheter."
       ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klicka på “Redigera“ för att tilldela roller till denna grupp och hantera medlemsåtkomst automatiskt."
+      ],
       "New: Roles and permissions tab": [
         "Nytt: Flik för roller och behörigheter"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Öppna denna flik för att bevilja specifika behörigheter utan fullständig administratörsåtkomst."
       ],
       "User roles available": [
         "Användarroller tillgängliga"
@@ -15603,6 +15621,9 @@
       ],
       "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
         "${ planTitle } ger dig åtkomst till alla appar och premiumfunktioner. Integritet är inbyggt så att du kan fortsätta med det med vetskap om att din data och din identitet är säker."
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
       "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planTitle } ger dig obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
@@ -18077,6 +18098,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "Är du säker på att du vill ta bort din e-postavisering?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."

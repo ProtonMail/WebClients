@@ -784,7 +784,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -926,8 +926,8 @@
     },
     "collider_2025: Action": {
       "Add ${ selectedCount } sheet": [
-        "${ selectedCount } tablo ekle",
-        "${ selectedCount } tablo ekle"
+        "${ selectedCount } çalışma sayfası ekle",
+        "${ selectedCount } çalışma sayfası ekle"
       ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Dosyayı ${ DRIVE_APP_NAME } uygulamasına ekle"
@@ -999,7 +999,7 @@
         "Klasör içeriklerini yenile"
       ],
       "Register here": [
-        "Buradan kaydolun"
+        "Buradan hesap açın"
       ],
       "Report an issue": [
         "Sorun bildireceğim"
@@ -1190,7 +1190,7 @@
     },
     "collider_2025: Description": {
       "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
-        "${ BRAND_NAME } yapay zeka asistanları hakkında ücretli bir araştırma yürütüyor. İlgilenir misiniz? Sadece 2 dakikanızı alır. Seçilirseniz £80 kazanacaksınız."
+        "${ BRAND_NAME } yapay zeka yardımcıları ile ilgili ücretli bir araştırma yürütüyor. İlgilenir misiniz? Yalnızca 2 dakikanızı alır. Seçilirseniz £80 kazanacaksınız."
       ],
       "Always enable web search for new conversations": [
         "Yeni yazışmalarda internet araması her zaman açık olsun"
@@ -1474,7 +1474,7 @@
     },
     "collider_2025: Header": {
       "Choose sheets to add": [
-        "Eklenecek sayfaları seçin"
+        "Eklenecek çalışma sayfalarını seçin"
       ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
@@ -1500,7 +1500,7 @@
         " yöneticiniz ile görüşün."
       ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
-        "“${ fileName }” dosyasında birden fazla sayfa bulunmaktadır. Sohbet bağlamına dahil edilecek sayfaları seçin."
+        "“${ fileName }” dosyasında birden fazla çalışma sayfası var. Sohbet bağlamına eklenecek çalışma sayfalarını seçin."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } depolama alanı henüz ayarlanmamış"
@@ -5125,7 +5125,7 @@
         "${ storage } depolama alanı"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
@@ -5307,7 +5307,7 @@
         "${ price } karşılığında"
       ],
       "For just ${ bundlePlanPriceInline }": [
-        "Sadece ${ bundlePlanPriceInline }"
+        "Yalnızca ${ bundlePlanPriceInline }"
       ],
       "Google Pay mark": [
         "Google Pay işareti"
@@ -6061,6 +6061,9 @@
       "Composer limit banner preview": [
         "Oluşturucu sınırı bildirimi ön izlemesi"
       ],
+      "Conversations": [
+        "Yazışmalar"
+      ],
       "Create Test Chats": [
         "Deneme sohbetleri oluştur"
       ],
@@ -6072,6 +6075,15 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Uygulama içi bildirimler tarafından gösterilecek benzetilmiş bir 422 sınırı uyarısı görüntüler."
+      ],
+      "Export all chats (JSON)": [
+        "Tüm sohbetleri dışa aktar (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Geçerli yazışmayı dışa aktar (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Yalnızca eşitlenmemişleri dışa aktar (JSON)"
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Satır arası oluşturucu başlığını \"yaklaşıyor\" ya da \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda ön izleme yapabilirsiniz."
@@ -6088,6 +6100,9 @@
       "Last token": [
         "Son kod"
       ],
+      "Local storage (IndexedDB)": [
+        "Yerel depolama alanı (IndexedDB)"
+      ],
       "max": [
         "en fazla"
       ],
@@ -6096,6 +6111,9 @@
       ],
       "Messages": [
         "İletiler"
+      ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "Arka uç tarafından reddedilen iletiler (sınırlamalar gibi), \"dirty\" işaretiyle yerel olarak IndexedDB içinde kalır. Dışa aktarımlar bellek içi Redux durumundaki içeriğin şifresini çözer ve eşitlenmemiş iletileri _dirty: true etiketiyle işaretler. Alan şifreleme anahtarları kaldırılır."
       ],
       "Native bridge: onLimitReachedError": [
         "Yerel köprü: onLimitReachedError"
@@ -6117,6 +6135,9 @@
       ],
       "Redux/sec": [
         "Redux/sn"
+      ],
+      "Refresh": [
+        "Yenile"
       ],
       "Render time": [
         "Görüntüleme süresi"
@@ -6145,6 +6166,9 @@
       "Smoothing (Spring-Mass)": [
         "Düzeltme (Yay-Kütle)"
       ],
+      "Spaces": [
+        "Alanlar"
+      ],
       "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
         "Deneme oluşturucuyu (görselleştirici) başlatın ya da yan panoyu farklı yaş gruplarındaki yazışma dallarıyla besleyin."
       ],
@@ -6159,6 +6183,9 @@
       ],
       "Stiffness": [
         "Katılık"
+      ],
+      "Storage": [
+        "Depolama alanı"
       ],
       "Streaming": [
         "Yayın akışı"
@@ -6186,6 +6213,15 @@
       ],
       "Trigger spaces limit": [
         "Tetikleyici alanları sınırı"
+      ],
+      "Unsynced conversations": [
+        "Eşitlenmemiş yazışmalar"
+      ],
+      "Unsynced messages": [
+        "Eşitlenmemiş iletiler"
+      ],
+      "Unsynced spaces": [
+        "Eşitlenmemiş alanlar"
       ]
     },
     "lumo: Test Renderer": {

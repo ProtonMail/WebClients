@@ -45,6 +45,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "${ photoCount } Fotos zu einem neuen Album hinzufügen",
         "${ photoCount } Fotos zu einem neuen Album hinzufügen"
@@ -5004,6 +5007,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } verbirgt deine IP-Adresse, so dass Websites dich nicht identifizieren können."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
@@ -5074,6 +5080,9 @@
       ],
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -5549,6 +5558,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Die besten Ergebnisse können erzielt werden, indem du Streaming und speicherintensive Aktivitäten vermeidest oder Uploads in kleinere Stapel aufteilst."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "Kostenlose 5 GB verschlüsselter Speicherplatz für den Anfang"
@@ -6083,6 +6095,9 @@
       ],
       "Ready to add some photos?": [
         "Bereit ein paar Fotos hinzuzufügen?"
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."

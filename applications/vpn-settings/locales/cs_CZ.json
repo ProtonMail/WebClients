@@ -1098,7 +1098,7 @@
         "Zkuste jinou metodu"
       ],
       "Try another way": [
-        "Zkuste to jinak"
+        "Zkusit jiný způsob"
       ],
       "Try for free": [
         "Vyzkoušet zdarma"
@@ -1499,7 +1499,7 @@
         "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci udělejte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
       ],
       "Delegate management with the appropriate admin role.": [
-        "Pověřte správu osobě s příslušnou správcovskou rolí."
+        "Pověřte uživatele správou tak, že mu přiřadíte vhodnou roli správce."
       ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditní logy a systémové konfigurace."
@@ -1661,7 +1661,7 @@
     },
     "Badge": {
       "Save ${ discountRate }%": [
-        "Ušetřete ${ discountRate }%"
+        "Ušetřete ${ discountRate } %"
       ]
     },
     "Badge for domain": {
@@ -1991,7 +1991,7 @@
     },
     "BOSS": {
       "${ BRAND_NAME } Migration Assistant": [
-        "${ BRAND_NAME } Migration Assistant"
+        "Asistent migrace ${ BRAND_NAME }"
       ],
       "Authenticate": [
         "Ověřit"
@@ -6361,7 +6361,7 @@
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
       ],
       "${ BRAND_NAME } Business plans gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
-        "Business tarify ${ BRAND_NAME } poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
+        "Tarify ${ BRAND_NAME } Business poskytují vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
       ],
       "${ BRAND_NAME } is independently funded and operates without advertising. Below are examples of how this independence has been used in practice.": [
         "${ BRAND_NAME } je nezávisle financován a funguje bez reklamy.\nNíže uvádíme příklady toho, jak se tato nezávislost uplatňuje v praxi."
@@ -8452,7 +8452,7 @@
         "Jméno bude viditelné vašim uživatelům, když budou přihlášeni."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "Bonus za doporučení lze získat nejpozději do 2 měsíců po skončení zkušební doby vašeho přítele, a to pouze v případě, že si váš přítel předplatil některý z tarifů."
+        "Kredit za doporučení lze získat nejpozději do 2 měsíců po skončení zkušební verze vašeho přítele, a to pouze v případě, že si váš přítel předplatil některý z tarifů."
       ],
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
@@ -9649,7 +9649,7 @@
         "Hotovost"
       ],
       "Catch-all email address": [
-        "Univerzální e-mailová adresa"
+        "E-mailová adresa doménového koše"
       ],
       "Category": [
         "Kategorie"
@@ -10225,7 +10225,7 @@
         "Druhé heslo"
       ],
       "See your team's availability": [
-        "Zjistěte dostupnost svých týmů"
+        "Zjistěte dostupnost svého týmu"
       ],
       "Select which Gmail address to connect": [
         "Vyberte adresu Gmail, kterou chcete připojit"
@@ -10390,7 +10390,7 @@
         "Ročně"
       ],
       "Yearly free storage bonus": [
-        "Roční bonus bezplatného úložiště"
+        "Roční bezplatný bonus úložiště"
       ],
       "Yes": [
         "Ano"
@@ -16087,7 +16087,7 @@
         "${ planTitle } vám poskytne všechny aplikace, všechny funkce, přednostní přístup k novým verzím a vše, co potřebujete, abyste měli plnou kontrolu nad svými daty a jejich zabezpečením."
       ],
       "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
-        "${ planTitle } vám zajišťuje neomezené soukromí a více úložného prostoru pro až 2 uživatele."
+        "${ planTitle } nabízí neomezené soukromí a více úložného prostoru pro až 2 uživatele."
       ],
       "${ planTitle } gives your team all the collaboration tools they need to be productive and organized in their work, while safeguarding your business.": [
         "${ planTitle } poskytuje vašemu týmu všechny nástroje pro spolupráci, které potřebuje k produktivní a organizované práci, a zároveň chrání vaši firmu."
@@ -17645,7 +17645,7 @@
         "Vyzkoušejte ${ AUTHENTICATOR_APP_NAME }"
       ],
       "Try changing your password in your active web session": [
-        "Zkuste změnit heslo v aktuální webové relaci"
+        "Zkuste změnit heslo v aktivní webové relaci"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
@@ -17941,7 +17941,7 @@
         "Pokud jste zakoupil dárkový kód nebo jste je obdržel od naší podpory, můžete ho vložit sem."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
-        "Zahrnuje vlastní e-mailové domény a hide-my-email aliasy v aplikaci ${ MAIL_APP_NAME }, přístup k serverům ve více jak 120 zemích v aplikaci ${ VPN_SHORT_APP_NAME }, integrované 2FA a zabezpečené sdílení v aplikaci ${ PASS_SHORT_APP_NAME }, a mnoho dalšího."
+        "Zahrnuje vlastní e-mailové domény a neomezený počet aliasů hide-my-email v ${ MAIL_APP_NAME }, přístup k serverům ve více než 120 zemích v ${ VPN_SHORT_APP_NAME }, integrované 2FA a bezpečné sdílení v ${ PASS_SHORT_APP_NAME }, a mnoho dalšího."
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Zahrnuje profesionální e-mailovou adresu ve formátu @vasedomena.cz, cloudové úložiště s možností společné úpravy dokumentů, plánování schůzek a videokonference, správu hesel, zabezpečenou ${ VPN_SHORT_APP_NAME } a další funkce."

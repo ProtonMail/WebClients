@@ -909,6 +909,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Er wordt al een controle uitgevoerd om de desktop te ontgrendelen."
+      ],
       "A domain ownership must be verified first.": [
         "De eigenaar van het domein moet eerst worden gecontroleerd."
       ],
@@ -2326,6 +2329,9 @@
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Vul snel uw 2FA-tokens in."
       ],
@@ -2593,6 +2599,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
+      ],
+      "Unlock with biometrics": [
+        "Ontgrendel met biometrische gegevens"
       ],
       "Unpinning item...": [
         "Item losmaken..."

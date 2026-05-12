@@ -64,9 +64,6 @@
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
       ],
-      "Change password": [
-        "Parolayı değiştir"
-      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -935,7 +932,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -2736,7 +2733,7 @@
         "${ storage } depolama alanı"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
@@ -2907,7 +2904,7 @@
         "${ price } karşılığında"
       ],
       "For just ${ bundlePlanPriceInline }": [
-        "Sadece ${ bundlePlanPriceInline }"
+        "Yalnızca ${ bundlePlanPriceInline }"
       ],
       "Google Pay mark": [
         "Google Pay işareti"
@@ -5558,12 +5555,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
-      ],
-      "Account restricted": [
-        "Hesap kısıtlandı"
-      ],
-      "Account temporarily locked": [
-        "Hesap geçici olarak kilitlendi"
       ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"

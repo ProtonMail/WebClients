@@ -11,6 +11,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -922,6 +925,10 @@
       ]
     },
     "collider_2025: Action": {
+      "Add ${ selectedCount } sheet": [
+        "${ selectedCount } Tabellenblatt hinzufügen",
+        "${ selectedCount } Tabellenblätter hinzufügen"
+      ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Datei zu ${ DRIVE_APP_NAME } hinzufügen"
       ],
@@ -993,6 +1000,9 @@
       ],
       "Report an issue": [
         "Ein Problem melden"
+      ],
+      "Select all": [
+        "Alles auswählen"
       ],
       "Send message": [
         "Nachricht senden"
@@ -1439,6 +1449,9 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Tabellenblätter zum Hinzufügen auswählen"
+      ],
       "Tell us more": [
         "Erzähl uns mehr"
       ]
@@ -1461,6 +1474,9 @@
       ],
       " talk to your admin.": [
         " Sprich mit deinem Administrator."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "\"${ fileName }\" hat mehrere Tabellenblätter. Tabellenblätter auswählen, die in den Kontext der Unterhaltung aufgenommen werden sollen."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } Speicher noch nicht eingerichtet"
@@ -4847,6 +4863,9 @@
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/Monat)"
       ],
@@ -4871,6 +4890,9 @@
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -5023,6 +5045,9 @@
       "for ${ price }": [
         "für ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay markieren"
       ],
@@ -5157,6 +5182,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -5763,6 +5791,9 @@
       "Clear History": [
         "Verlauf löschen"
       ],
+      "Conversations": [
+        "Unterhaltungen"
+      ],
       "Create Test Chats": [
         "Test-Chats erstellen"
       ],
@@ -5771,6 +5802,15 @@
       ],
       "Differential": [
         "Differenzial"
+      ],
+      "Export all chats (JSON)": [
+        "Alle Unterhaltungen exportieren (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Aktuelle Unterhaltung exportieren (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Nur nicht Synchronisiertes exportieren (JSON)"
       ],
       "FPS": [
         "FPS"
@@ -5784,6 +5824,9 @@
       "Last token": [
         "Letzter Token"
       ],
+      "Local storage (IndexedDB)": [
+        "Lokaler Speicher (indexierte Datenbank)"
+      ],
       "max": [
         "max."
       ],
@@ -5792,6 +5835,9 @@
       ],
       "Messages": [
         "Nachrichten"
+      ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "Vom Backend abgelehnte Nachrichten (z. B. aufgrund von Limiten) verbleiben lokal in der indexierten Datenbank und werden mit „dirty“ gekennzeichnet. Exporte entschlüsseln Inhalte aus dem Arbeitsspeicher von Redux und kennzeichnen nicht synchronisierte Nachrichten mit „_dirty: true“. Die Verschlüsselungsschlüssel des Bereichs werden entfernt."
       ],
       "Notifications": [
         "Benachrichtigungen"
@@ -5805,6 +5851,9 @@
       "Redux/sec": [
         "Redux/Sek."
       ],
+      "Refresh": [
+        "Aktualisieren"
+      ],
       "Render time": [
         "Renderzeit"
       ],
@@ -5813,6 +5862,9 @@
       ],
       "Smoothing (Spring-Mass)": [
         "Glättung (Feder-Masse)"
+      ],
+      "Spaces": [
+        "Bereiche"
       ],
       "Spring state": [
         "Federzustand"
@@ -5825,6 +5877,9 @@
       ],
       "Stiffness": [
         "Steifheit"
+      ],
+      "Storage": [
+        "Speicher"
       ],
       "Streaming": [
         "Streaming"
@@ -5840,6 +5895,15 @@
       ],
       "Tokens/sec": [
         "Tokens/Sek."
+      ],
+      "Unsynced conversations": [
+        "Nicht synchronisierte Unterhaltungen"
+      ],
+      "Unsynced messages": [
+        "Nicht synchronisierte Nachrichten"
+      ],
+      "Unsynced spaces": [
+        "Nicht synchronisierte Bereiche"
       ]
     },
     "lumo: Test Renderer": {

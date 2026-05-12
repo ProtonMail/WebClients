@@ -6603,11 +6603,11 @@
       "Connect with them to confirm they need help to recover their data.": [
         "请与他们联系以确认他们需要帮助来恢复数据！"
       ],
-      "Contact-assisted recovery": [
-        "联系人辅助恢复"
-      ],
       "Contacts": [
         "联系人"
+      ],
+      "Data recovery contacts": [
+        "数据恢复联系人"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "数据已成功恢复，您现在可以解密现有数据及加密文件。"
@@ -6713,9 +6713,6 @@
       ],
       "People who trust me": [
         "信任我的人"
-      ],
-      "People you have added as recovery contacts.": [
-        "您已添加为恢复联系人的用户。"
       ],
       "Proceed anyway": [
         "仍要继续"
@@ -8726,8 +8723,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "我理解我将无法再登录旧版本的 ${ BRAND_NAME } 移动应用。"
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "我理解我将无法再登录旧版本的 ${ BRAND_NAME } 应用。"
       ]
     },
     "Form heading": {
@@ -10440,6 +10437,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "通过恢复短语恢复数据"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "数据恢复需要密码重置选项（邮件或短信）"
       ],
       "dedicated servers": [
         "专用服务器"
@@ -12232,6 +12232,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "这可能需要一些时间。请不要关闭此页面或断开与互联网的连接。"
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "该数据恢复方法需要密码重置选项（邮件或短信）"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "此功能会延迟发送邮件，让您有机会在选定的时间范围内撤消发送。"
       ],
@@ -12448,8 +12451,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "若要使用此数据恢复方法，您必须具备密码重置选项（例如邮箱验证或短信验证）。"
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "若要使用该恢复方法，您必须禁用 ${ PROTON_SENTINEL_NAME } 并启用密码重置选项（邮件或短信）"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"

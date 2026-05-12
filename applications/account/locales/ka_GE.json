@@ -2609,6 +2609,9 @@
       ]
     },
     "BOSS": {
+      "All": [
+        "ყველა"
+      ],
       "Authenticate": [
         "ავთენტიკაცია"
       ],
@@ -2700,6 +2703,9 @@
       "Sign in to Google Workspace": [
         "შესვლა Google Workspace-ში"
       ],
+      "Size": [
+        "ზომა"
+      ],
       "Start migration": [
         "მიგრაციის დაწყება"
       ],
@@ -2723,6 +2729,9 @@
       ],
       "What are you migrating?": [
         "რის მიგრაციას ახდენთ?"
+      ],
+      "You": [
+        "თქვენ"
       ]
     },
     "breadcrumb": {
@@ -7763,11 +7772,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "მე მესმის, რომ ვეღარ შევალ ${ BRAND_NAME }-ის მობილური პროგრამების ძველ ვერსიებში."
       ]
     },
     "Form heading": {
@@ -13775,6 +13779,11 @@
         "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
       ]
     },
+    "Label for domain setup": {
+      "Type": [
+        "ტიპი"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "ადმინისტრატორი"
@@ -18607,6 +18616,23 @@
       ],
       "Your recovery phone number is:": [
         "თქვენი აღდგენის ტელეფონის ნომერია:"
+      ]
+    },
+    "safety_review": {
+      "Add": [
+        "დამატება"
+      ],
+      "Allow": [
+        "დაშვება"
+      ],
+      "Done": [
+        "მზადაა"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Later": [
+        "მოგვიანებით"
       ]
     },
     "saml: Action": {

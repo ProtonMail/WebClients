@@ -2046,8 +2046,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2505,7 +2504,7 @@
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre second mot de passe."
       ],
       "Unlock with biometrics": [
-        "Déverrouillez par biométrie"
+        "Déverrouiller avec les données biométriques"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
