@@ -3525,6 +3525,9 @@
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
       ],
+      "Folder not found": [
+        "Carpeta no encontrada"
+      ],
       "Forward address is required": [
         "Se requiere la dirección de reenvío"
       ],
@@ -4906,7 +4909,7 @@
         "Los archivos de ${ DOCS_APP_NAME } y ${ SHEETS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puede descargar los demás archivos haciendo clic en \"Continuar la descarga\"."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } ha detectado que el índice local de búsqueda está corrupta y ya no se puede usar. Reconstruya el índice para restaurar la búsqueda."
+        "${ DRIVE_APP_NAME } ha detectado que el índice local de búsqueda está corrupto y ya no se puede usar. Reconstruya el índice para restaurar la búsqueda."
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } en App Store"
@@ -5324,6 +5327,9 @@
       "Copy your referral link": [
         "Copiar el enlace de referencia"
       ],
+      "Could not scan file for malware": [
+        "No se pudo escanear el archivo por malware"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -5537,6 +5543,12 @@
       ],
       "File \"${ name }\" was deleted during download": [
         "El archivo \"${ name }\" fue eliminado durante la descarga"
+      ],
+      "File could not be scanned": [
+        "No se pudo escanear el archivo"
+      ],
+      "File flagged as potentially malicious": [
+        "Archivo marcado como potencialmente malicioso"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Falta la firma del archivo. No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
@@ -6190,7 +6202,7 @@
         "Error de búsqueda"
       ],
       "Search is in an invalid state": [
-        "La búsqueda está en un estado no válido"
+        "La búsqueda está en un estado inválido"
       ],
       "Search is ready. Your files have been indexed.": [
         "La búsqueda está lista. Sus archivos se han indexado."
@@ -6359,7 +6371,7 @@
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Se ha encontrado un error interno en el motor de búsqueda. Reconsruya el índice para recuperar."
+        "Se ha encontrado un error interno en el motor de búsqueda. Reconstruya el índice para recuperar."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."

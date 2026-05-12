@@ -49,9 +49,6 @@
       "Cancel trial and pay": [
         "取消試用並付款"
       ],
-      "Change password": [
-        "變更密碼"
-      ],
       "Chat with us": [
         "與我們往來對話"
       ],
@@ -408,6 +405,9 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
       ],
@@ -425,6 +425,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
@@ -2242,7 +2245,15 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
       "Security key": [
         "安全金鑰"
       ]
@@ -2391,6 +2402,9 @@
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
@@ -2542,6 +2556,9 @@
       "for ${ price }": [
         "為 ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay 標記"
       ],
@@ -2646,6 +2663,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
@@ -3280,6 +3300,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "New Label form": {
@@ -4536,6 +4559,9 @@
       ]
     },
     "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
@@ -4945,9 +4971,6 @@
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
       ],
-      "Account restricted": [
-        "帳號已受限制"
-      ],
       "Add credit/debit card": [
         "加入信用卡/扣帳卡"
       ],
@@ -5118,6 +5141,9 @@
       ],
       "Upload and share files": [
         "上傳並共享檔案"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ],
       "Verification failed": [
         "驗證失敗"

@@ -64,9 +64,6 @@
       "Cancel trial and pay": [
         "Avbryt provperiod och betala"
       ],
-      "Change password": [
-        "Ändra lösenord"
-      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -2730,6 +2727,9 @@
       ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5477,12 +5477,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
-      ],
-      "Account restricted": [
-        "Kontot begränsat"
-      ],
-      "Account temporarily locked": [
-        "Konto tillfälligt låst"
       ],
       "Add credit/debit card": [
         "Lägg till kredit-/betalkort"

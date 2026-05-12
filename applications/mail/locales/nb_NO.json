@@ -51,6 +51,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -955,6 +958,9 @@
       "Move to Archive": [
         "Flytt til arkiv"
       ],
+      "Move to category...": [
+        "Flytt til kategori..."
+      ],
       "Move to folder": [
         "Flytt til mappe"
       ],
@@ -1503,10 +1509,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -6755,6 +6757,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -6841,6 +6846,9 @@
       ],
       "Ad targeting": [
         "Annonsemålretting"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7432,6 +7440,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "For ekstra sikkerhet kan du angi en passfrase. Den blir ikke inkludert i kalenderinvitasjonen, husk å dele den med gjestene dine separat."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "For meldinger nyere enn ${ oldestDate }"
       ],
@@ -7680,6 +7691,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -8026,6 +8040,9 @@
       ],
       "Recipient: ": [
         "Mottaker: "
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
@@ -9721,6 +9738,9 @@
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
+      "Mailing list": [
+        "E-postliste"
+      ],
       "Main": [
         "Hjem"
       ],
@@ -10159,6 +10179,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Laster inn nyhetsbrevabonnementene dine ..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Nyhetsbrev eller e-postlister du avslutter abonnement på vises her."
       ],
@@ -12204,6 +12227,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Yes, don't show again": [
+        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -15462,6 +15491,9 @@
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Keep this banner hidden?": [
+        "Holde dette banneret skjult?"
+      ],
       "Label as": [
         "Merk som"
       ],
@@ -15479,6 +15511,13 @@
       ],
       "Load remote content": [
         "Last eksternt innhold"
+      ],
+      "Loading...": [
+        "Laster..."
+      ],
+      "Mailing list": [
+        "E-postliste",
+        "E-postliste"
       ],
       "Make a secure connection your default": [
         "Gjør en sikker tilkobling til standard"
