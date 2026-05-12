@@ -41,9 +41,10 @@ export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
 
     return (
         <Button
-            className="lumo-no-copy flex flex-row flex-nowrap gap-2 items-center shrink-0 p-2 rounded"
-            shape="outline"
+            className="lumo-no-copy flex flex-row flex-nowrap gap-2 items-center shrink-0 rounded"
+            shape="solid"
             onClick={onClick}
+            size="small"
         >
             <div className="flex flex-row flex-nowrap">
                 {firstThreeDomains.map((domain) => (
