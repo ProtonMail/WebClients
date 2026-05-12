@@ -75,6 +75,7 @@ export const createAuthStore = (store: Store) => {
             keyPassword: authStore.getPassword() ?? '',
             lastUsedAt: authStore.getLastUsedAt(),
             LocalID: authStore.getLocalID(),
+            lockLastExtendTime: authStore.getLockLastExtendTime(),
             lockMode: authStore.getLockMode(),
             lockTTL: authStore.getLockTTL(),
             offlineConfig: authStore.getOfflineConfig(),
@@ -132,6 +133,7 @@ export const createAuthStore = (store: Store) => {
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.lockMode) authStore.setLockMode(session.lockMode);
             if (session.lockTTL) authStore.setLockTTL(session.lockTTL);
+            if (session.lockLastExtendTime !== undefined) authStore.setLockLastExtendTime(session.lockLastExtendTime);
             if (session.offlineConfig) authStore.setOfflineConfig(session.offlineConfig);
             if (session.offlineKD) authStore.setOfflineKD(session.offlineKD);
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);

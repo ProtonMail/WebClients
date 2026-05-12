@@ -32,16 +32,12 @@ export const desktopLockAdapterFactory = (
     auth: AuthService,
     nativeMessaging: NativeMessagingService
 ): LockAdapterDesktop => {
-    const { authStore, getPersistedSession, onSessionPersist } = auth.config;
+    const { authStore } = auth.config;
 
     const setRetryCount = async (retryCount: number) => {
         authStore.setUnlockRetryCount(retryCount);
         const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
+        await auth.syncPersistedSession(localID, { unlockRetryCount: retryCount });
     };
 
     const adapter: LockAdapterDesktop = {
