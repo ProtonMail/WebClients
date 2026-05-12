@@ -193,9 +193,9 @@ export const FilterList = () => {
                             data-testid={option.testID}
                             aria-pressed={option.isActive}
                         >
-                            <span className="flex items-center justify-space-between w-full">
+                            <span className="flex items-start flex-nowrap justify-space-between w-full">
                                 {option.label}
-                                {option.isActive && <IcCheckmarkStrong className="color-primary" />}
+                                {option.isActive && <IcCheckmarkStrong className="color-primary shrink-0 mt-0.5" />}
                             </span>
                         </DropdownMenuButton>
                     ))}
@@ -209,15 +209,15 @@ export const FilterList = () => {
                         <DropdownMenuButton
                             key={option.testID}
                             onClick={() => applySort(option)}
-                            className="flex items-center w-full justify-space-between"
+                            className="flex items-start flex-nowrap w-full justify-space-between"
                             data-testid={option.testID}
                             aria-pressed={option.isActive}
                         >
-                            <span className="flex items-center gap-2">
-                                <Icon name={option.iconName} title={option.label} />
-                                {option.label}
+                            <span className="flex items-start flex-nowrap gap-2 text-left">
+                                <Icon name={option.iconName} title={option.label} className="shrink-0 mt-0.5" />
+                                <span className="flex-1">{option.label}</span>
                             </span>
-                            {option.isActive && <IcCheckmarkStrong className="color-primary" />}
+                            {option.isActive && <IcCheckmarkStrong className="color-primary shrink-0 mt-0.5" />}
                         </DropdownMenuButton>
                     ))}
                 </DropdownMenu>
