@@ -46,6 +46,15 @@ interface SearchDBSchema extends DBSchema {
 type RawSearchDB = IDBPDatabase<SearchDBSchema>;
 
 /**
+ * `indexBlobs` holds blobs for every index kind in a single object store, keyed by
+ * `[indexKind, blobName]`. To select rows for a single `indexKind`, we use a
+ * compound-key prefix scan: arrays sort after strings in IndexedDB, so
+ * `[indexKind, []]` sits just above every `[indexKind, <any string>]`.
+ */
+const indexBlobsKeyRangeForKind = (indexKind: IndexKind): IDBKeyRange =>
+    IDBKeyRange.bound([indexKind, ''], [indexKind, []]);
+
+/**
  * Encapsulates all IndexedDB operations for the search module.
  * One database per user: "search:<userId>".
  * IndexedDB is the persistent store — IndexBlobStore reads from here with a pending-write buffer on top.
@@ -97,17 +106,17 @@ export class SearchDB {
         return this.db.getAllKeys('indexBlobs');
     }
 
+    /** Count the number of blobs persisted under `indexKind`. */
+    async countIndexBlobs(indexKind: IndexKind): Promise<number> {
+        return this.db.count('indexBlobs', indexBlobsKeyRangeForKind(indexKind));
+    }
+
     /**
      * Sum the ciphertext byte size of every blob stored under `indexKind`.
      * Used by diagnostics to report per-index on-disk usage.
      */
-    async getIndexBlobsByteSize(indexKind: string): Promise<number> {
-        // `indexBlobs` holds blobs for every index kind in a single object store, keyed by
-        // `[indexKind, blobName]`. We only want the rows for `indexKind`, so we narrow
-        // `getAll` to a compound-key prefix scan: arrays sort after strings in IndexedDB,
-        // so `[indexKind, []]` sits just above every `[indexKind, <any string>]`.
-        const keysForKind = IDBKeyRange.bound([indexKind, ''], [indexKind, []]);
-        const blobs = await this.db.getAll('indexBlobs', keysForKind);
+    async getIndexBlobsByteSize(indexKind: IndexKind): Promise<number> {
+        const blobs = await this.db.getAll('indexBlobs', indexBlobsKeyRangeForKind(indexKind));
         let total = 0;
         for (const blob of blobs) {
             total += blob.byteLength;

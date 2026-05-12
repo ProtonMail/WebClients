@@ -1,6 +1,7 @@
 import { Logger } from '../../../../shared/Logger';
+import { searchMetrics } from '../../../../shared/searchMetrics';
 import type { IndexPopulator } from '../../indexPopulators/IndexPopulator';
-import type { TaskContext } from '../BaseTask';
+import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
 /**
@@ -18,7 +19,11 @@ export class IndexPopulatorTask extends BaseTask {
     }
 
     getUid(): string {
-        return `task-${this.populator.getUid()}`;
+        return `${this.getKind()}:${this.populator.getUid()}`;
+    }
+
+    getKind(): IndexerTaskKind {
+        return 'index-populator-task';
     }
 
     async execute(ctx: TaskContext): Promise<void> {
@@ -50,6 +55,8 @@ export class IndexPopulatorTask extends BaseTask {
             ctx.markInitialIndexing();
         }
 
+        const stopTimer = searchMetrics.startTimer();
+
         const { indexWriter } = await ctx.indexRegistry.get(populator.indexKind, ctx.db);
         const session = indexWriter.startWriteSession();
         try {
@@ -59,14 +66,13 @@ export class IndexPopulatorTask extends BaseTask {
                 ctx.notifyIndexingProgress();
             }
             await session.commit();
-        } catch (e) {
+        } finally {
             session.dispose();
-            // TODO: Error handling hardening.
-            Logger.error(`${populator.getUid()}: failed`, e);
-            throw e;
         }
 
         // Mark done in DB and keep the populator's in-memory mirror in sync.
         await populator.markAsDone(ctx.db);
+
+        searchMetrics.markInitialIndexingSucceeded({ durationInSeconds: stopTimer() });
     }
 }

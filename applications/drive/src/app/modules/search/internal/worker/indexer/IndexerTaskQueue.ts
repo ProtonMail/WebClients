@@ -1,3 +1,5 @@
+import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
+
 import { getNodeEntity } from '../../../../../utils/sdk/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
@@ -6,14 +8,13 @@ import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils
 import type { PermanentErrorKind } from '../../shared/errors';
 import {
     DEFAULT_RETRY_AFTER_IN_MS,
-    TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS,
-    TRANSIENT_REPORT_THROTTLE_MS,
-    type TransientErrorKind,
-    classifyError,
+    classifyPermanentError,
     computeBackoff,
     isAbortError,
+    isPermanentIndexerError,
     sendErrorReportForSearch,
 } from '../../shared/errors';
+import { searchMetrics } from '../../shared/searchMetrics';
 import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
@@ -71,10 +72,6 @@ export class IndexerTaskQueue {
     // Per-task retry counter for backoff. Keyed by task UID and reset on success.
     private taskAttempts = new Map<string, number>();
 
-    // Per-reason Sentry report bursts. Each burst allows up to MAX_REPORTED_ATTEMPTS
-    // reports; after TRANSIENT_REPORT_THROTTLE_MS from the burst start, a new burst opens.
-    private transientReportBursts = new Map<TransientErrorKind, { count: number; windowStartedAt: number }>();
-
     private readonly onlineMonitor = new OnlineMonitor();
 
     private state: IndexerState = {
@@ -129,7 +126,6 @@ export class IndexerTaskQueue {
         this.treeSubscriptionRegistry.dispose();
 
         this.taskAttempts.clear();
-        this.transientReportBursts.clear();
         this.onlineMonitor.cancelWaits();
 
         this.populators.clear();
@@ -215,6 +211,7 @@ export class IndexerTaskQueue {
 
                 if (!this.bootstrapDone) {
                     this.bootstrapDone = true;
+                    this.observeStartupIndexStats();
                     for (const task of this.postBootstrapTasks) {
                         this.enqueue(task);
                     }
@@ -296,39 +293,40 @@ export class IndexerTaskQueue {
             Logger.info(`IndexerTaskQueue - Starting task: ${uid}`);
             await task.execute(ctx);
             this.taskAttempts.delete(uid);
+            searchMetrics.markIndexerTaskSucceeded({ taskUid: uid, taskKind: task.getKind() });
         } catch (e) {
             if (isAbortError(e) || signal.aborted) {
                 return;
             }
 
-            const decision = classifyError(e);
-            switch (decision.kind) {
-                case 'permanent':
-                    // TODO: monitor in graphana
-                    this.taskAttempts.delete(uid);
-                    sendErrorReportForSearch(`IndexerTaskQueue: permanent error (${decision.reason}) in ${uid}`, e);
-                    await this.updateState({ permanentError: decision.reason });
-                    this.stop();
-                    return;
+            searchMetrics.markIndexerError({
+                error: e,
+                taskUid: uid,
+                taskKind: task.getKind(),
+                isInitialIndexing: task instanceof IndexPopulatorTask,
+                isIncrementalUpdate: task instanceof IncrementalUpdateTask,
+            });
 
-                case 'transient': {
-                    // TODO: monitor in graphana
-                    const currentAttemptCount = (this.taskAttempts.get(uid) ?? 0) + 1;
-                    this.taskAttempts.set(uid, currentAttemptCount);
-
-                    this.reportTransientIssue(decision.reason, e);
-
-                    // Only IndexPopulatorTask re-enqueues itself on transient failure.
-                    // Other task types (maintenance) rely on thier own scheduling mechanism.
-                    if (task instanceof IndexPopulatorTask) {
-                        const delayMs =
-                            decision.reason === 'rate-limited'
-                                ? DEFAULT_RETRY_AFTER_IN_MS
-                                : computeBackoff(currentAttemptCount);
-                        ctx.enqueueDelayed(task, delayMs);
-                    }
-                    return;
+            if (isPermanentIndexerError(e)) {
+                const permanentKind = classifyPermanentError(e);
+                this.taskAttempts.delete(uid);
+                if (permanentKind) {
+                    await this.updateState({ permanentError: permanentKind });
                 }
+                this.stop();
+                return;
+            }
+
+            // Transient: queue owns retry policy.
+            const currentAttemptCount = (this.taskAttempts.get(uid) ?? 0) + 1;
+            this.taskAttempts.set(uid, currentAttemptCount);
+
+            // Only IndexPopulatorTask re-enqueues itself on transient failure.
+            // Other task types (maintenance) rely on their own scheduling mechanism.
+            if (task instanceof IndexPopulatorTask) {
+                const delayMs =
+                    e instanceof SdkRateLimitedError ? DEFAULT_RETRY_AFTER_IN_MS : computeBackoff(currentAttemptCount);
+                ctx.enqueueDelayed(task, delayMs);
             }
         }
     }
@@ -337,24 +335,6 @@ export class IndexerTaskQueue {
         return new Promise<void>((resolve) => {
             this.wakeUp = () => resolve();
         });
-    }
-
-    /**
-     * Reports the first MAX_REPORTED_ATTEMPTS occurrences of a transient reason to
-     * Sentry, then stays silent. After TRANSIENT_REPORT_THROTTLE_MS from the burst start,
-     * a new burst is allowed so ongoing problems remain visible.
-     */
-    private reportTransientIssue(reason: TransientErrorKind, error: unknown): void {
-        const now = Date.now();
-        const existing = this.transientReportBursts.get(reason);
-        const burst =
-            !existing || now - existing.windowStartedAt >= TRANSIENT_REPORT_THROTTLE_MS
-                ? { count: 1, windowStartedAt: now }
-                : { count: existing.count + 1, windowStartedAt: existing.windowStartedAt };
-        this.transientReportBursts.set(reason, burst);
-        if (burst.count <= TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS) {
-            sendErrorReportForSearch(`IndexerTaskQueue: Transient error (${reason})`, error);
-        }
     }
 
     protected async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
@@ -369,6 +349,15 @@ export class IndexerTaskQueue {
             bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator, true /* isBootstrap */)],
             postBootstrapTasks: [new CleanUpStaleIndexEntryTask(), new CleanUpStaleBlobsTask()],
         };
+    }
+
+    private observeStartupIndexStats(): void {
+        Promise.all(
+            [...this.indexRegistry.getAll()].map(async ({ indexKind }) => {
+                const sizeBytes = await this.db.getIndexBlobsByteSize(indexKind);
+                searchMetrics.markIndexSizeOnInit({ sizeMb: sizeBytes / 1024 / 1024 });
+            })
+        ).catch((error) => sendErrorReportForSearch('IndexerTaskQueue: startup index stats observation failed', error));
     }
 
     private async updateState(patch: Partial<IndexerState>): Promise<void> {

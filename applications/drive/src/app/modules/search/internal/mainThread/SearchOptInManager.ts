@@ -1,6 +1,7 @@
 import { Logger } from '../shared/Logger';
 import type { SearchDB } from '../shared/SearchDB';
 import { hasLegacyEncryptedSearchDb } from '../shared/encryptedSearchUtils';
+import { searchMetrics } from '../shared/searchMetrics';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type { UserId } from '../shared/types';
@@ -31,8 +32,8 @@ export class SearchOptInManager {
 
         const hasLegacySearchOptin = await hasLegacyEncryptedSearchDb(this.userId);
         if (hasLegacySearchOptin) {
-            // TODO: instrument
             Logger.info('SearchOptInManager: auto-opting in from legacy search');
+            searchMetrics.markOptIn({ kind: 'legacy_auto_upgrade' });
             // NOTE: The user is opt-in. The legacy DB will be deleted after the
             // initial indexing of the new search is done.
             await this.optIn();
