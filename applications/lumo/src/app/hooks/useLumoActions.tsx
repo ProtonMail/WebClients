@@ -14,19 +14,19 @@ import {
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from '../llm/attachments';
 import { getApproximateTokenCount } from '../llm/tokenizer';
-import { SearchService } from '../services/search/searchService';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
-import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
-import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
+import { SearchService } from '../services/search/searchService';
+import type { ActionParams, Attachment, ErrorContext, ImageGenerationOptions, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
@@ -55,7 +55,11 @@ interface Props {
     navigateCallback: (conversationId: ConversationId) => void;
 }
 
-export type HandleSendMessage = (newMessage: string, isWebSearchButtonToggled: boolean) => Promise<void>;
+export type HandleSendMessage = (
+    newMessage: string,
+    isWebSearchButtonToggled: boolean,
+    imageOptions?: ImageGenerationOptions
+) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
     isWebSearchButtonToggled: boolean,
@@ -217,7 +221,7 @@ export const useLumoActions = ({
         spaceDek: AesGcmCryptoKey | undefined,
         signal: AbortSignal
     ) => {
-        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled, imageOptions } = actionParams;
         if (!newMessageContent) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -266,6 +270,7 @@ export const useLumoActions = ({
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
+                    imageAspectRatio: imageOptions?.aspectRatio,
                 },
                 settingsContext: {
                     personalization,
@@ -628,14 +633,18 @@ export const useLumoActions = ({
         }
     };
 
-    const handleSendMessage: HandleSendMessage = async (messageContent: string, isWebSearchButtonToggled: boolean) => {
-        // send telemetry for send message
+    const handleSendMessage: HandleSendMessage = async (
+        messageContent: string,
+        isWebSearchButtonToggled: boolean,
+        imageOptions?: ImageGenerationOptions
+    ) => {
         sendMessageSendEvent();
 
         return handleMessageAction({
             actionType: 'send',
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
+            imageOptions,
         });
     };
 

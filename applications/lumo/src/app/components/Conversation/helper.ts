@@ -33,7 +33,7 @@ import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../..
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
-import type { MessageId, ShallowAttachment } from '../../types';
+import type { ImageAspectRatio, MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
     type ConversationId,
@@ -90,6 +90,7 @@ export type UiContext = {
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
+    imageAspectRatio?: ImageAspectRatio;
 };
 
 export type SettingsContext = {
@@ -393,6 +394,7 @@ export function sendMessage({
                     enableReasoning: ui.enableReasoning,
                     enableSuggestedQuestions: false,
                     generateTitle,
+                    imageAspectRatio: ui.imageAspectRatio,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
