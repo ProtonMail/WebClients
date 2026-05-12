@@ -31,6 +31,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Adicionar conta"
       ],
@@ -60,9 +63,6 @@
       ],
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
-      ],
-      "Change password": [
-        "Alterar senha"
       ],
       "Chat with us": [
         "Converse conosco"
@@ -2749,6 +2749,9 @@
       "Account successfully updated": [
         "Conta atualizada"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -2887,6 +2890,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "por apenas ${ bundlePlanPriceInline }"
       ],
       "Google Pay mark": [
         "Marca Google Pay"
@@ -5537,12 +5543,6 @@
     "Title": {
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
-      ],
-      "Account restricted": [
-        "Conta restrita"
-      ],
-      "Account temporarily locked": [
-        "Conta temporariamente bloqueada"
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"

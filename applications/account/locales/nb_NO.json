@@ -90,6 +90,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Legg til ${ BRAND_NAME }-konto"
       ],
@@ -525,6 +528,9 @@
       "Delete record": [
         "Slett post"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "Slett token ${ tokens[0].Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Slett token “${ token.Name }”"
       ],
@@ -887,6 +893,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Gå til domeneleverandøren"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -2076,6 +2085,9 @@
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Deleger administrasjon ved å tildele spesifikke administratorroller. Gi hver administrator bare den tilgangen de trenger. Dette følger prinsippet om færrest rettigheter, og beskytter organisasjonen din mot kompromitterte kontoer og utilsiktede feil."
       ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Deleger administrasjon for mange brukere samtidig. Tildel spesifikke administratorroller til grupper for automatiske tillatelser. Dette følger prinsippet om færrest rettigheter for å spare tid på onboarding og offboarding, samtidig som det reduserer feil."
+      ],
       "Delegate management with the appropriate admin role.": [
         "Deleger administrasjonen med riktig administratorrolle."
       ],
@@ -2861,8 +2873,26 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
+      "Account connected": [
+        "Konto tilkoblet"
+      ],
+      "Activated": [
+        "Aktivert"
+      ],
+      "Add a domain": [
+        "Legg til et domene"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Legg til brukere og konfigurer domenet ditt manuelt for sending og mottak av e-post. Ideelt for små team som starter helt på nytt."
+      ],
+      "All": [
+        "Alle"
+      ],
       "Authenticate": [
         "Autentiser"
+      ],
+      "Authenticate to Google Workspace": [
+        "Autentiser til Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Autentiser Google Workspace-kontoen din"
@@ -2873,6 +2903,9 @@
       "Change": [
         "Endre"
       ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Velg hvordan du vil sette opp teamet og e-posten din i ${ BRAND_NAME }."
+      ],
       "Completed": [
         "Fullført"
       ],
@@ -2882,8 +2915,29 @@
       "Configure migration": [
         "Konfigurer migrering"
       ],
+      "Configure your domain": [
+        "Konfigurer domenet ditt"
+      ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Continue migration": [
+        "Fortsett migrering"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopier aktiveringskoblingen til utklippstavlen"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din. Du finner et eksempel og noen nyttige tips ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC bygger på SPF og DKIM ved å fortelle mottakerserverne hvordan de skal håndtere meldinger som ikke består disse kontrollene. Det bidrar til å beskytte domenet ditt mot etterligning og forbedrer den generelle leveringspåliteligheten."
+      ],
+      "DMARC records": [
+        "DMARC-poster"
       ],
       "Domain connected": [
         "Domene tilkoblet"
@@ -2900,6 +2954,9 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
+      ],
       "Has errors": [
         "Inneholder feil"
       ],
@@ -2915,11 +2972,20 @@
       "Mail": [
         "E-post"
       ],
+      "Managed via ${ registrar.name }": [
+        "Administrert via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
       ],
       "Migrate users": [
         "Migrer brukere"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Migrer brukere til ${ BRAND_NAME }"
       ],
       "Migration includes": [
         "Migrering inkluderer"
@@ -2931,11 +2997,38 @@
       "Migration status": [
         "Migreringsstatus"
       ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "More details": [
+        "Flere detaljer"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Not confirmed": [
+        "Ikke bekreftet"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
+      ],
       "Organization does not have enough seats available": [
         "Organisasjonen har ikke nok ledige lisenser"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Legg til følgende poster i DNS-konsollen til domeneleverandøren din:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "La dette vinduet stå åpent til vi er ferdige med å opprette alle brukerne."
       ],
       "Required": [
         "Obligatorisk"
@@ -2952,20 +3045,41 @@
       "Set up billing information": [
         "Konfigurer faktureringsinformasjon"
       ],
+      "Set up manually": [
+        "Konfigurer manuelt"
+      ],
       "Set up two-factor authentication": [
         "Konfigurer tofaktorautentisering"
       ],
       "Settings": [
         "Innstillinger"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Del aktiveringskoblingen med brukerne slik at de kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
+      ],
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "SPF records": [
+        "SPF-poster"
+      ],
+      "Start migrating": [
+        "Start migrering"
       ],
       "Start migration": [
         "Start migrering"
       ],
       "Status": [
         "Status"
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Verdien «p=\" angir handlingen som skal utføres for e-poster som ikke lykkes med DMARC. Her er de tilgjengelige handlingene:"
+      ],
+      "This migration has been completed": [
+        "Migreringen er fullført"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
@@ -2976,6 +3090,9 @@
       "Users migrated": [
         "Brukere migrert"
       ],
+      "Verified": [
+        "Verifisert"
+      ],
       "Verify installation": [
         "Verifiser installasjon"
       ],
@@ -2985,14 +3102,24 @@
       "Verify your domain to start a migration": [
         "Verifiser domenet ditt for å starte en migrering"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi fant hoveddomenet som er knyttet til Google Workspace-kontoen din. Bekreft det for å fortsette å konfigurere e-post for ${ BRAND_NAME }-organisasjonen din."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
+        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
       ]
     },
     "breadcrumb": {
@@ -5224,6 +5351,11 @@
         "bruk Easy Switch-importassistenten"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Duplikat DMARC-post funnet. Gå til DNS-konsollen til domeneleverandøren din for å fikse det."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Vi har også automatisk matchet CSV-felt med vCard-felt. Du kan se gjennom og endre dette samsvaret manuelt."
@@ -6299,6 +6431,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add 1 more": [
+        "Legg til 1 til"
+      ],
       "Add emergency contact": [
         "Legg til nødkontakt"
       ],
@@ -6347,9 +6482,6 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Ta kontakt med dem for å bekrefte at de trenger hjelp til å gjenopprette dataene sine."
       ],
-      "Contact-assisted recovery": [
-        "Kontaktassistert gjenoppretting"
-      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -6397,6 +6529,9 @@
       ],
       "Enable auto-renew": [
         "Aktiver automatisk fornyelse"
+      ],
+      "Explore plans": [
+        "Utforsk planer"
       ],
       "For ${ email }": [
         "For ${ email }"
@@ -6455,9 +6590,6 @@
       ],
       "People who trust me": [
         "Folk som stoler på meg"
-      ],
-      "People you have added as recovery contacts.": [
-        "Personer du har lagt til som gjenopprettingskontakter."
       ],
       "Proceed anyway": [
         "Fortsett uansett"
@@ -8493,8 +8625,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av mobilappene til ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av appene til ${ BRAND_NAME }."
       ]
     },
     "Form heading": {
@@ -9524,6 +9656,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } oppdatert"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } kreves for tilknytning på landnivå."
       ],
@@ -9676,6 +9811,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsovervåking"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10627,6 +10765,9 @@
       ],
       "For easy access to your passwords and more.": [
         "For enkel tilgang til passordene dine og mer."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
@@ -11580,6 +11721,9 @@
       "Recently used servers:": [
         "Nylig brukte tjenere:"
       ],
+      "RECOMMENDED": [
+        "ANBEFALT"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefalt på klarerte enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12248,9 +12392,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "For å bruke ${ toAppName }, vil du trenge en ${ MAIL_APP_NAME }-adresse."
-      ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "For å bruke denne metoden for datagjenoppretting må du ha et alternativ for tilbakestilling av passord, som e-postbekreftelse eller SMS-bekreftelse."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "For å fungere skikkelig, må hvert filter inneholde minst et navn og et gyldig Sieve-skript. Du kan ${ link }."
@@ -14051,6 +14192,9 @@
       "Confirm login password": [
         "Bekreft påloggingspassord"
       ],
+      "Confirm MX records added": [
+        "Bekreft at MX-poster er lagt til"
+      ],
       "Confirm new password": [
         "Bekreft nytt passord"
       ],
@@ -14592,6 +14736,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
       ],
+      "MX records": [
+        "MX-poster"
+      ],
       "Name": [
         "Navn"
       ],
@@ -14774,6 +14921,9 @@
       ],
       "Primary": [
         "Primær"
+      ],
+      "Priority": [
+        "Prioritet"
       ],
       "Priority support": [
         "Prioritert kundestøtte"
@@ -15283,6 +15433,20 @@
         "Legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post ikke funnet"
+      ],
+      "Host name": [
+        "Vertsnavn"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ugyldig ${ group.name }-post funnet"
+      ],
+      "Use default value": [
+        "Bruk standardverdi"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -15447,6 +15611,9 @@
       ],
       "data recovery option": [
         "alternativ for datagjenoppretting"
+      ],
+      "Detailed instructions": [
+        "Detaljerte instruksjoner"
       ],
       "Details": [
         "Detaljer"
@@ -19422,6 +19589,9 @@
       "Search for an email or IP address": [
         "Søk etter en e-postadresse eller IP-adresse"
       ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
+      ],
       "Search parent folder": [
         "Søk i overordnet mappe"
       ],
@@ -19578,6 +19748,11 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Kunne ikke generere adressenøkler. For å aktivere postkvantebeskyttelse, må du generere de nye krypteringsnøklene manuelt.\n\nGå til ${ settingsLink } og velg 'Generer nøkkel' for hver adresse."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Du må oppdatere alle ${ BRAND_NAME }-appene**: de nye nøklene dine vil ikke fungere på eldre appversjoner."
       ]
     },
     "PQC key generation": {
@@ -19923,6 +20098,9 @@
       "Partial": [
         "Delvis"
       ],
+      "Require verified password reset option (email or SMS)": [
+        "Krev bekreftet alternativ for tilbakestilling av passord (e-post eller SMS)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Poengsum: ${ score } / ${ maxScore }"
       ],
@@ -19967,6 +20145,9 @@
       "Emergency contacts added": [
         "Nødkontakter lagt til"
       ],
+      "Enable email recovery": [
+        "Aktiver gjenoppretting av e-post"
+      ],
       "Enable recovery by phone": [
         "Aktiver gjenoppretting via telefon"
       ],
@@ -19975,6 +20156,9 @@
       ],
       "Password verified": [
         "Passord bekreftet"
+      ],
+      "Phone recovery enabled": [
+        "Telefongjenoppretting aktivert"
       ],
       "Recovery contacts added": [
         "Gjenopprettingskontakter lagt til"
@@ -20714,6 +20898,113 @@
         "Gjenopprettingsfrasen din er angitt"
       ]
     },
+    "safety_review": {
+      "Add emergency contacts": [
+        "Legg til nødkontakter"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Legg til personer du stoler på og enkelt kan kontakte. De vil kunne hjelpe deg med å låse opp dataene dine etter at du har tilbakestilt passordet."
+      ],
+      "Add phone number": [
+        "Legg til telefonnummer"
+      ],
+      "Added emergency contacts": [
+        "La til nødkontakter"
+      ],
+      "Added recovery phone": [
+        "La til telefonnummer for gjenoppretting"
+      ],
+      "Allow password reset from the settings": [
+        "Tillat tilbakestilling av passord fra innstillingene"
+      ],
+      "Allow recovery by phone": [
+        "Tillat gjenoppretting ved telefon"
+      ],
+      "Allow trusted friends to sign in": [
+        "Tillat betrodde venner å logge på"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Tillat at betrodde venner låser opp dataene dine"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Tilbake til ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Gratulerer"
+      ],
+      "Done": [
+        "Fullført"
+      ],
+      "Download": [
+        "Last ned"
+      ],
+      "Download recovery file": [
+        "Last ned gjenopprettningsfil"
+      ],
+      "Downloaded recovery file": [
+        "Nedlastet gjenopprettningsfil"
+      ],
+      "Emergency contacts enabled": [
+        "Nødkontakter aktivert"
+      ],
+      "Enable email recovery": [
+        "Aktiver gjenoppretting av e-post"
+      ],
+      "Enable emergency contacts": [
+        "Aktiver nødkontakter"
+      ],
+      "Enable phone recovery": [
+        "Aktiver telefongjenoppretting"
+      ],
+      "Enable QR code sign-in": [
+        "Aktiver pålogging ved QR-kode"
+      ],
+      "Enabled device recovery": [
+        "Aktivert enhetsgjenoppretting"
+      ],
+      "Enabled QR code sign-in": [
+        "Aktiverte pålogging ved QR-kode"
+      ],
+      "Got it": [
+        "Skjønner"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Hvis du blir låst ute fra ${ BRAND_NAME }-kontoen din, kan du logge på og gjenopprette dataene dine. Det er den eneste måten å gjenopprette alt umiddelbart, så sørg for at du oppbevarer den et trygt sted."
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "De må allerede ha en ${ BRAND_NAME }-konto."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Dette gir deg rask og sikker tilgang til ${ BRAND_NAME }-kontoen din, slik at du kan endre passordet ditt."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Dette vil gjenopprette tilgangen til e-poster, kontakter, filer, passord og andre krypterte data på kontoen din etter en tilbakestilling av passord."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "For å være sikker på at telefonnummeret er ditt, skriv inn verifiseringskoden som ble sendt til ${ boldPhoneNumber }."
+      ],
+      "Verified password": [
+        "Bekreftet passord"
+      ],
+      "Verify recovery email": [
+        "Verifiser gjenopprettings-e-post"
+      ],
+      "Verify your recovery email": [
+        "Bekreft gjenopprettings-e-postadressen din"
+      ],
+      "Verify your recovery phone": [
+        "Bekreft gjenopprettingstelefonen din"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Du kan lagre en sikkerhetskopi av dataene på denne enheten. Dette vil gjenopprette tilgangen til e-poster, kontakter, filer, passord og andre krypterte data på kontoen din etter en tilbakestilling av passordet, ganske enkelt ved å logge på denne enheten."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Du kan bruke SMS-verifisering for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Du kan bruke gjenopprettingstelefonen til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Avbryt"
@@ -20918,6 +21209,9 @@
       ]
     },
     "Sentinel banner": {
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "For å sikre at du alltid har tilgang til ${ BRAND_NAME }-kontoen, last ned gjenopprettingsfrasen din."
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har anbefalte handlinger fra ${ PROTON_SENTINEL_NAME }"
       ]
@@ -22125,6 +22419,12 @@
       ]
     },
     "Spotlight": {
+      "Assign roles": [
+        "Tildel roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klikk på en brukers navn for å administrere rollen og tillatelsene deres."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Tjen opptil ${ maxRewardAmount } i kreditt"
       ],
@@ -22433,6 +22733,9 @@
       "Available on this device": [
         "Tilgjengelig på denne enheten"
       ],
+      "Disable emergency access": [
+        "Deaktiver nødtilgang"
+      ],
       "Disable QR code sign-in": [
         "Deaktiver pålogging ved QR-kode"
       ],
@@ -22441,6 +22744,9 @@
       ],
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
+      ],
+      "Disable recovery file": [
+        "Deaktiver gjenopprettingsfilen"
       ],
       "Disable signed-in reset": [
         "Deaktiver tilbakestillilng ved pålogget"
@@ -26005,6 +26311,9 @@
       ],
       "User is a group": [
         "Brukeren er en gruppe"
+      ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

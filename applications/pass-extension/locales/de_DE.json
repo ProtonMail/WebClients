@@ -909,6 +909,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Die Desktop-Entsperrung wird bereits durchgeführt."
+      ],
       "A domain ownership must be verified first.": [
         "Die Eigentümerschaft einer Domain muss zunächst verifiziert werden."
       ],
@@ -2323,6 +2326,9 @@
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
+      ],
       "Quickly autofill your 2FA tokens.": [
         "Schnelles automatisches Ausfüllen deiner 2FA-Token."
       ],
@@ -2590,6 +2596,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
+      ],
+      "Unlock with biometrics": [
+        "Mit Biometrie entsperren"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."

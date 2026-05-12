@@ -310,6 +310,9 @@
       "Do not show again when I press": [
         "Nicht erneut anzeigen, wenn ich drücke"
       ],
+      "Don't show this again": [
+        "Nicht mehr anzeigen"
+      ],
       "Download this CSV template": [
         "Diese CSV-Vorlage herunterladen"
       ],
@@ -931,6 +934,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "A desktop unlock check is already in progress.": [
+        "Die Desktop-Entsperrung wird bereits durchgeführt."
       ],
       "A domain ownership must be verified first.": [
         "Die Eigentümerschaft einer Domain muss zunächst verifiziert werden."
@@ -2039,10 +2045,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2253,6 +2255,9 @@
       ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
       "Reconnect": [
         "Erneut verbinden"
@@ -2494,6 +2499,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zweiten Passwort"
+      ],
+      "Unlock with biometrics": [
+        "Mit Biometrie entsperren"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."

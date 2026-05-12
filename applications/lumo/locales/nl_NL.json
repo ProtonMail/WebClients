@@ -11,6 +11,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -907,6 +910,10 @@
       ]
     },
     "collider_2025: Action": {
+      "Add ${ selectedCount } sheet": [
+        "Voeg ${ selectedCount } werkblad toe",
+        "Voeg ${ selectedCount } werkbladen toe"
+      ],
       "Add file to ${ DRIVE_APP_NAME }": [
         "Bestand toevoegen aan ${ DRIVE_APP_NAME }"
       ],
@@ -976,8 +983,14 @@
       "Refresh folder contents": [
         "Inhoud van de map vernieuwen"
       ],
+      "Register here": [
+        "Registreer hier"
+      ],
       "Report an issue": [
         "Meld een probleem"
+      ],
+      "Select all": [
+        "Selecteer alles"
       ],
       "Send message": [
         "Bericht verzenden"
@@ -1155,6 +1168,9 @@
       ]
     },
     "collider_2025: Description": {
+      "${ BRAND_NAME } is conducting a paid research study about AI assistants. Interested? It takes 2 minutes. If selected, you'll earn £80.": [
+        "${ BRAND_NAME } voert een betaald onderzoek uit naar AI-assistenten. Interesse? Het duurt slechts 2 minuten. Als u geselecteerd wordt, verdient u £80."
+      ],
       "Always enable web search for new conversations": [
         "Schakel web zoeken altijd in voor nieuwe gesprekken"
       ],
@@ -1403,6 +1419,9 @@
       ]
     },
     "collider_2025: Header": {
+      "Choose sheets to add": [
+        "Kies de werkbladen die u wilt toevoegen"
+      ],
       "Tell us more": [
         "Vertel ons meer"
       ]
@@ -1425,6 +1444,9 @@
       ],
       " talk to your admin.": [
         " neem contact op met uw beheerder."
+      ],
+      "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
+        "\"${ fileName }\" bevat meerdere werkbladen. Selecteer de werkbladen die u in de conversatie wilt opnemen."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } opslagruimte is nog niet ingesteld"
@@ -2105,6 +2127,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "We'd love your feedback!": [
+        "We hechten veel waarde aan uw feedback!"
       ],
       "What you can build": [
         "Wat u kunt bouwen"
@@ -4842,6 +4867,9 @@
       "${ storage } storage": [
         "${ storage } opslag"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
       ],
@@ -4866,6 +4894,9 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
@@ -5017,6 +5048,9 @@
       ],
       "for ${ price }": [
         "voor ${ price }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
       ],
       "Google Pay mark": [
         "Google Pay merk"
@@ -5764,6 +5798,9 @@
       "Composer limit banner preview": [
         "Voorbeeld van bannerbeperking Composer"
       ],
+      "Conversations": [
+        "Conversaties"
+      ],
       "Create Test Chats": [
         "Maak Test Chats"
       ],
@@ -5775,6 +5812,15 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Verstuurt een gesimuleerde limietfout 422, die via de in-app-notificatie wordt weergegeven."
+      ],
+      "Export all chats (JSON)": [
+        "Exporteer alle chats (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Huidig ​​gesprek exporteren (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Alleen niet-gesynchroniseerd exporteren (JSON)"
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Hiermee wordt de inline-composerbanner in de status \"naderend\" of \"limiet bereikt\" gezet, zodat u deze in elke context kunt bekijken."
@@ -5790,6 +5836,9 @@
       ],
       "Last token": [
         "Laatste token"
+      ],
+      "Local storage (IndexedDB)": [
+        "Lokale opslag (IndexedDB)"
       ],
       "max": [
         "max"
@@ -5821,6 +5870,9 @@
       "Redux/sec": [
         "Redux/sec"
       ],
+      "Refresh": [
+        "Vernieuw"
+      ],
       "Render time": [
         "Geef tijd weer"
       ],
@@ -5848,6 +5900,9 @@
       "Smoothing (Spring-Mass)": [
         "Vloeiend maken (veer-massa)"
       ],
+      "Spaces": [
+        "ruimtes"
+      ],
       "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
         "Start de testrenderer op of vul de zijbalk met gesprekken uit verschillende leeftijdsgroepen."
       ],
@@ -5862,6 +5917,9 @@
       ],
       "Stiffness": [
         "Stijfheid"
+      ],
+      "Storage": [
+        "Opslagruimte"
       ],
       "Streaming": [
         "Streaming"
@@ -5889,6 +5947,15 @@
       ],
       "Trigger spaces limit": [
         "Limiet triggerruimtes"
+      ],
+      "Unsynced conversations": [
+        "Niet-gesynchroniseerde gesprekken"
+      ],
+      "Unsynced messages": [
+        "Niet-gesynchroniseerde berichten"
+      ],
+      "Unsynced spaces": [
+        "Niet-gesynchroniseerde ruimtes"
       ]
     },
     "lumo: Test Renderer": {

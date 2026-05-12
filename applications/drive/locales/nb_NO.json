@@ -45,6 +45,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Legg til ${ photoCount } bilde i et nytt album",
         "Legg til ${ photoCount } bilder i et nytt album"
@@ -779,6 +782,9 @@
       "Re-sign": [
         "Signér på nytt"
       ],
+      "Rebuild index": [
+        "Gjenoppbygg indeks"
+      ],
       "Reconnect": [
         "Koble til på nytt"
       ],
@@ -922,6 +928,9 @@
       ],
       "Search drive": [
         "Søk i Drive"
+      ],
+      "Search is unavailable": [
+        "Søk er ikke tilgjengelig"
       ],
       "See how": [
         "Se hvordan"
@@ -3516,6 +3525,9 @@
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
       ],
+      "Folder not found": [
+        "Mappe ikke funnet"
+      ],
       "Forward address is required": [
         "Videresendingsadresse kreves"
       ],
@@ -4896,6 +4908,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } oppdaget at den lokale søkeindeksen er ødelagt og ikke lenger kan brukes. Gjenoppbygg indeksen for å gjenopprette søket."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } på App Store"
       ],
@@ -5010,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -5080,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Annonsemålretting"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5306,6 +5327,9 @@
       "Copy your referral link": [
         "Kopier vervekoblingen din"
       ],
+      "Could not scan file for malware": [
+        "Kunne ikke skanne filen etter skadelig programvare"
+      ],
       "Country code": [
         "Landskode"
       ],
@@ -5520,6 +5544,12 @@
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
       ],
+      "File could not be scanned": [
+        "Fil kunne ikke skannes"
+      ],
+      "File flagged as potentially malicious": [
+        "Fil markert som potensielt skadelig"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Fil mangler signatur. Vi kan ikke bekrefte at ${ emailAddress } lastet opp ${ fileName }."
       ],
@@ -5555,6 +5585,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB kryptert lagring for å komme i gang"
@@ -5667,6 +5700,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indekserte ${ first }, ${ second }, ${ third } og ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indekseringen har nådd en uventet tilstand og kan ikke fortsette. Bygg opp indeksen på nytt for å gjenopprette."
       ],
       "Indexing in progress": [
         "Indeksering pågår"
@@ -5897,6 +5933,9 @@
       "Not connected": [
         "Ikke tilkoblet"
       ],
+      "Not enough storage space": [
+        "Ikke nok lagringsplass"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
       ],
@@ -6090,6 +6129,9 @@
       "Ready to add some photos?": [
         "Klar til å legge til noen bilder?"
       ],
+      "RECOMMENDED": [
+        "ANBEFALT"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
       ],
@@ -6141,11 +6183,29 @@
       "Search cannot be enabled in this browser": [
         "Søk kan ikke aktiveres i denne nettleseren"
       ],
+      "Search data is corrupted": [
+        "Søkedataene er ødelagt"
+      ],
       "Search Enabled": [
         "Søk aktivert"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Søket opplevde en intern feil. Bygg indeksen på nytt for å gjenopprette."
+      ],
+      "Search engine error": [
+        "Søkemotorfeil"
+      ],
+      "Search error": [
+        "Søkefeil"
+      ],
+      "Search is in an invalid state": [
+        "Søk er i en ugyldig tilstand"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Søket er klart. Filene dine er indeksert."
       ],
       "Search module is not available.": [
         "Søkemodul er ikke tilgjengelig."
@@ -6309,6 +6369,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Søket opplevde en intern feil. Bygg indeksen opp på nytt for å gjenopprette."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
@@ -6802,6 +6865,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Nettleseren gikk tom for plass mens den indekserte filer for søk. Frigjør lagringsplass, og bygg deretter opp indeksen på nytt."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Din nåværende nettleser støtter ikke nedlasting av store filer/flere filer. Last ned desktopappen for sømløse opplastinger og nedlastinger."

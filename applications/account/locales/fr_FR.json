@@ -6644,11 +6644,11 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Connectez-vous avec eux pour confirmer qu'ils ont besoin d'aide pour récupérer leurs données."
       ],
-      "Contact-assisted recovery": [
-        "Récupération assistée par un contact"
-      ],
       "Contacts": [
         "Contacts"
+      ],
+      "Data recovery contacts": [
+        "Contacts de récupération de données"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Données récupérées avec succès. Vous pouvez maintenant déchiffrer vos données existantes et vos fichiers chiffrés."
@@ -6755,9 +6755,6 @@
       ],
       "People who trust me": [
         "Les personnes qui m'ont approuvé"
-      ],
-      "People you have added as recovery contacts.": [
-        "Personnes qui vous avez désignées comme contact de récupération."
       ],
       "Proceed anyway": [
         "Continuer quand même"
@@ -8796,7 +8793,7 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
         "Je comprends que je ne pourrai plus me connecter sur des anciennes versions des applications mobiles ${ BRAND_NAME }."
       ]
     },
@@ -10556,6 +10553,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Données récupérables avec une phrase de récupération"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "La récupération des données nécessite une option de réinitialisation du mot de passe (e-mail ou SMS)."
       ],
       "dedicated servers": [
         "serveurs dédiés"
@@ -12363,6 +12363,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Cette méthode de récupération des données nécessite une option de réinitialisation du mot de passe (e-mail ou SMS)."
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi dans un délai imparti."
       ],
@@ -12541,7 +12544,7 @@
         "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par numéro de téléphone**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez le **fichier de récupération** (désactiver tous les fichiers de récupération)."
+        "Pour garantir la sécurité maximale de votre compte, désactivez le **fichier de récupération** (désactive tous les fichiers de récupération)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Pour garantir la sécurité maximale de votre compte, désactivez la **Réinitialisation lorsque connecté**."
@@ -12579,8 +12582,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Pour utiliser cette méthode de récupération des données, vous devez avoir une option de réinitialisation du mot de passe, par exemple la vérification par e-mail ou par SMS."
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Pour utiliser cette méthode de récupération, vous devez désactiver ${ PROTON_SENTINEL_NAME } et activer une option de réinitialisation du mot de passe (e-mail ou SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pour fonctionner correctement, chaque filtre doit contenir au moins un nom et un script Sieve valide. Vous pouvez ${ link }."
