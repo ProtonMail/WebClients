@@ -139,7 +139,7 @@ const AccessTokensUpgrade: FC = () => (
             {c('Info')
                 .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`}
         </span>
-        <UpgradeButton upsellRef={UpsellRef.SETTING} />
+        <UpgradeButton upsellRef={UpsellRef.PAT} />
     </div>
 );
 
