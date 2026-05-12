@@ -49,7 +49,7 @@ export const SidebarBottomUserArea = () => {
 
     if (isSmallScreen) {
         return (
-            <div className="sidebar-bottom-user-dropdown mobile-user-dropdown shrink-0">
+            <div className="sidebar-bottom-user-dropdown mobile-user-dropdown shrink-0 w-full">
                 <DropdownComponent app={APP_NAME} dropdownIcon={undefined} className="border-none" />
                 {/* <UserDropdown app={APP_NAME} dropdownIcon={undefined} className="border-none">
                     <LumoUserDropdownContent />
