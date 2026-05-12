@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoItem } from '../../usePhotos.store';
@@ -27,7 +28,7 @@ const PhotosShareLinkButton = ({ selectedPhoto, showIconOnly, onClick, dropDownM
                 data-testid="toolbar-share-link"
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="user-plus" className={clsx(!showIconOnly && 'mr-2')} />
+                <IcUserPlus className={clsx(!showIconOnly && 'mr-2')} />
                 <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Share`}</span>
             </ButtonComp>
         </>
