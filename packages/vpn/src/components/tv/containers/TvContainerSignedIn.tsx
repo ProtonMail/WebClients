@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Loader, useApi } from '@proton/components/index';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { TelemetryMeasurementGroups, TelemetryVpnTvEvents } from '@proton/shared/lib/api/telemetry';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getItem, removeItem } from '@proton/shared/lib/helpers/storage';
-import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { VPN_TV_USER_TIER } from '../../../../constants/tvUserTier';
 import { isB2BAdmin } from '../../../functions/isB2BAdmin';
@@ -39,7 +41,7 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
 
     const isBusiness = isB2BAdmin({ subscription, user, organization });
 
-    useEffect(() => {
+    useEffectOnce(() => {
         // If the tier is in the localStorage means it was sent already, but it is also need to
         // be sent in the payload when forking the session.
         const localStorageTier: UserTier | undefined = getItem(VPN_TV_USER_TIER);
@@ -49,8 +51,14 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
             return;
         }
 
-        telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: tier, flowType: 'web' });
-    }, []);
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryVpnTvEvents.tvAuthInitiated,
+            dimensions: { userTierAtInitiation: tier, flowType: 'web' },
+            measurementGroup: TelemetryMeasurementGroups.vpnTv,
+        });
+    });
 
     const onConfirm = () => {
         setStep(ForkSessionStep.FETCHING_CODE);
