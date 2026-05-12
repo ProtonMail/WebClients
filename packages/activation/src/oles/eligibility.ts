@@ -1,4 +1,4 @@
-import { getHasMemberCapablePlan } from '@proton/payments';
+import { getHasInboxB2BPlan, getHasMemberCapablePlan } from '@proton/payments';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -23,6 +23,7 @@ export const isOLESEligible = ({
         hasOrganizationSetupWithKeys(organization) &&
         organization?.State === ORGANIZATION_STATE.ACTIVE &&
         getHasMemberCapablePlan(organization, subscription) &&
+        getHasInboxB2BPlan(subscription) &&
         isOrganizationB2B(organization)
     );
 };

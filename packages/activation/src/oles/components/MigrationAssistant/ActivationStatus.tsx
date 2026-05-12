@@ -2,7 +2,6 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api.interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 
@@ -27,12 +26,9 @@ const Activated = () => (
 );
 
 const ActivationStatus: FC<{
-    user: ApiImporterOrganizationUser;
-    currentUser: string;
+    isActivated: boolean;
     activationLinkVisible: boolean;
-}> = ({ user, currentUser, activationLinkVisible }) => {
-    const isActivated = user.Email === currentUser || user.ImporterOrganizationUser?.HasTemporaryPassword === false;
-
+}> = ({ isActivated, activationLinkVisible }) => {
     return (
         <div className="flex items-center gap-1 justify-end justify-start-when-stacked">
             {isActivated ? <Activated /> : <NotActivated showTooltip={activationLinkVisible} />}

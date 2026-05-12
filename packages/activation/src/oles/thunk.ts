@@ -16,6 +16,7 @@ import type { UserSettingsState } from '@proton/account/userSettings';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { authMember, updateQuota } from '@proton/shared/lib/api/members';
@@ -84,7 +85,7 @@ const createDefaultCalendar = async (
 };
 
 const getMemberApi = async (api: Api, member: Member) => {
-    const { UID } = await api<{ UID: string; LocalID: number }>(authMember(member.ID));
+    const { UID } = await api<{ UID: string; LocalID: number }>(authMember(member.ID, { Unlock: true }));
     return getUIDApi(UID, api);
 };
 
@@ -348,7 +349,6 @@ export const createMigrationBatch = createAsyncThunk<
                         c('BOSS').t`Member address not found. Please contact customer support to resolve this`
                     );
                 }
-                membersAddresses[member.ID] = [address];
 
                 const memberApi = await getMemberApi(api, member);
                 const getAddressKeys = () =>
@@ -357,6 +357,9 @@ export const createMigrationBatch = createAsyncThunk<
                         privateKey: orgKey.privateKey,
                     });
                 await createDefaultCalendar(memberApi, getAddressKeys, address.ID);
+                await memberApi(revoke()).catch(noop);
+
+                membersAddresses[member.ID] = [address];
             } catch (err: any) {
                 errors.push(toSerializableUserError(user, err));
             }
