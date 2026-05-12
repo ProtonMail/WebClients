@@ -1,6 +1,8 @@
-import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
+import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { buildSubscription } from '@proton/testing/builders';
 
 import { isOLESEligible } from './eligibility';
 
@@ -8,7 +10,7 @@ const baseOrganization: Partial<Organization> = {
     RequiresKey: 1,
     HasKeys: 1,
     State: ORGANIZATION_STATE.ACTIVE,
-    MaxMembers: 2,
+    MaxMembers: 1,
     PlanName: PLANS.BUNDLE_PRO_2024,
 };
 
@@ -17,13 +19,12 @@ const baseUser: Partial<UserModel> = {
     isSelf: true,
 };
 
-// Minimal truthy subscription — getHasMemberCapablePlan falls back to MaxMembers > 1
-const baseSubscription = { Plans: [] } as any;
+const baseSubscription = buildSubscription(baseOrganization.PlanName);
 
 const eligibleArgs = () => ({
     user: baseUser as UserModel,
     organization: baseOrganization as Organization,
-    subscription: baseSubscription,
+    subscription: baseSubscription as MaybeFreeSubscription,
 });
 
 describe('isOLESEligible', () => {
@@ -78,15 +79,6 @@ describe('isOLESEligible', () => {
         ).toBe(false);
     });
 
-    it('returns false when organization cannot have members (MaxMembers <= 1 and no member addons)', () => {
-        expect(
-            isOLESEligible({
-                ...eligibleArgs(),
-                organization: { ...baseOrganization, MaxMembers: 1 } as Organization,
-            })
-        ).toBe(false);
-    });
-
     it('returns false when organization plan is not B2B', () => {
         expect(
             isOLESEligible({
@@ -97,14 +89,25 @@ describe('isOLESEligible', () => {
     });
 
     describe('plan coverage', () => {
-        const planB2BStatus: [boolean, PLANS][] = Object.values(PLANS).map((plan) => [
-            getIsB2BAudienceFromPlan(plan),
-            plan,
-        ]);
+        const supportedPlans: PLANS[] = [
+            PLANS.MAIL_BUSINESS,
+            PLANS.MAIL_PRO,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.BUNDLE_BIZ_2025,
+        ];
 
-        it.each(planB2BStatus)('returns %s for plan %s', (expected, plan) => {
+        const unsupportedPlans = Object.values(PLANS).filter((k) => !supportedPlans.includes(k));
+
+        const planExpectations: [boolean, PLANS][] = [
+            ...supportedPlans.map((p): [boolean, PLANS] => [true, p]),
+            ...unsupportedPlans.map((p): [boolean, PLANS] => [false, p]),
+        ];
+
+        it.each(planExpectations)('returns %s for plan %s', (expected, plan) => {
             const organization = { ...baseOrganization, PlanName: plan } as Organization;
-            expect(isOLESEligible({ ...eligibleArgs(), organization })).toBe(expected);
+            const subscription = plan === PLANS.FREE ? FREE_SUBSCRIPTION : buildSubscription(plan);
+            expect(isOLESEligible({ ...eligibleArgs(), organization, subscription })).toBe(expected);
         });
     });
 });

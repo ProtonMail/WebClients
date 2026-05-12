@@ -31,7 +31,7 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { isMemberAddon } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
@@ -111,12 +111,21 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
     const notEnoughSeats = organization && organization.MaxMembers - organization.UsedMembers < usersToCreate.length;
 
     useEffect(() => {
-        if (!hasIncompleteUsers || !hasInactiveUsers) {
-            return;
-        }
+        let timer: NodeJS.Timeout;
 
-        const interval = setInterval(() => refreshProviderUsers(), 30_000);
-        return () => clearInterval(interval);
+        const refreshAfter = (delay: number) => {
+            if (!hasIncompleteUsers && !hasInactiveUsers) {
+                return;
+            }
+
+            timer = setTimeout(() => {
+                refreshProviderUsers().catch(noop);
+                refreshAfter(delay);
+            }, delay);
+        };
+
+        refreshAfter(30 * SECOND);
+        return () => clearTimeout(timer);
     }, [hasIncompleteUsers, hasInactiveUsers, refreshProviderUsers]);
 
     if (loading) {
@@ -255,9 +264,7 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
         return included.join(', ');
     })();
 
-    const activationLinkVisible = Boolean(
-        showBannerShareActivationLink && activationLink && hasAnySubmitted && hasInactiveUsers
-    );
+    const activationLinkVisible = Boolean(!hasFinalized && activationLink && hasAnySubmitted && hasInactiveUsers);
 
     const banners = hasFinalized
         ? []
@@ -287,7 +294,7 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
                       </span>
                   </Banner>
               ),
-              activationLinkVisible && (
+              showBannerShareActivationLink && activationLinkVisible && (
                   <Banner
                       key="share-activation-link"
                       className="p-2 rounded-xl"
@@ -401,7 +408,7 @@ const MigrationAssistant: FC<{ model: MigrationModel }> = ({ model }) => {
 
                 {/* Migrate users */}
                 <ProviderUsersTable
-                    currentUser={tokens[0].Account}
+                    currentUser={tokens.at(0)?.Account}
                     users={providerUsers}
                     transferErrors={transferErrors}
                     banners={banners}
