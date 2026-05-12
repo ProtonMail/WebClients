@@ -691,7 +691,7 @@
         "Değişiklikleri kaydet"
       ],
       "Save preferences": [
-        "Ayarları kaydet"
+        "Tercihleri kaydet"
       ],
       "Search": [
         "Arama"
@@ -703,7 +703,7 @@
         "Son kullanılan belgelerde ara"
       ],
       "Search recent spreadsheets": [
-        "Son hesap tablolarını ara"
+        "Son elektronik tabloları ara"
       ],
       "Search recents": [
         "Son kullanılanlarda ara"
@@ -1260,7 +1260,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -4480,7 +4480,7 @@
         "Uçtan uca şifrelenmiş bir belge oluşturun."
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
-        "Uçtan uca şifrelenmiş belgeler ve hesap tabloları oluşturun."
+        "Uçtan uca şifrelenmiş belgeler ve elektronik tablolar oluşturun."
       ],
       "Create in": [
         "Şuraya ekle"
@@ -4823,7 +4823,7 @@
         "Düşük Öncelik"
       ],
       "Making a copy...": [
-        "Kopyalanıyor..."
+        "Kopya oluşturuluyor..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -4857,7 +4857,7 @@
         "Henüz bir kişi eklenmemiş"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Adreste herhangi bir belge belirtilmemiş. ${ DRIVE_APP_NAME } sayfasına geri dönün ve bir belge seçin."
+        "Adreste belge bulunmuyor. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -4999,7 +4999,7 @@
         "Son kullanılan belgeler"
       ],
       "Recent spreadsheets": [
-        "Son kullanılan hesap tabloları"
+        "Son kullanılan elektronik tablolar"
       ],
       "Recents": [
         "Son kullanılanlar"
@@ -5089,7 +5089,7 @@
         "Bir sorun çıktı"
       ],
       "Spreadsheets": [
-        "Hesap tabloları"
+        "Elektronik tablolar"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
@@ -6524,7 +6524,7 @@
         "OpenDocument sunum belgesi"
       ],
       "OpenDocument spreadsheet document": [
-        "OpenDocument hesap tablosu belgesi"
+        "OpenDocument elektronik tablo belgesi"
       ],
       "OpenDocument text document": [
         "OpenDocument yazı belgesi"
@@ -7771,7 +7771,7 @@
         "Öge bağlantınız silindi"
       ],
       "The spreadsheet failed to be created": [
-        "Hesap tablosu oluşturulamadı"
+        "Elektronik tablo oluşturulamadı"
       ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
@@ -8851,7 +8851,7 @@
         "Microsoft Excel (.xlsx)"
       ],
       "New spreadsheet": [
-        "Yeni hesap tablosu"
+        "Yeni elektronik tablo"
       ],
       "Tab Separated Values (.tsv)": [
         "Sekme ile ayrılmış değerler (.tsv)"
@@ -8859,7 +8859,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Yeni bir hesap tablosu oluşturuluyor..."
+        "Yeni elektronik tablo oluşturuluyor..."
       ],
       "Detect automatically": [
         "Otomatik olarak algıla"
@@ -8868,19 +8868,19 @@
         "Yeni sayfa olarak ekle"
       ],
       "Replace current sheet": [
-        "Geçerli sayfayı değiştir"
+        "Geçerli çalışma sayfasını değiştir"
       ],
       "Replace data at selected cell": [
         "Seçilmiş hücredeki verileri değiştir"
       ],
       "Replace spreadsheet": [
-        "Hesap tablosunu değiştir"
+        "Elektronik tabloyu değiştir"
       ],
       "Select a file to import": [
         "İçe aktarılacak bir dosya seçin"
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
-        "Geçerli hesap tablonuz ve içindeki tüm sayfalar bu sürümdekiler ile değiştirilecek."
+        "Geçerli elektronik tablonuz ve içindeki tüm çalışma sayfaları bu sürümdekiler ile değiştirilecek."
       ]
     },
     "sheets_2025:Label": {
@@ -10143,7 +10143,7 @@
         "Adlandırılmamış belge ${ date }"
       ],
       "Untitled spreadsheet ${ date }": [
-        "Adlandırılmamış hesap tablosu ${ date }"
+        "Adlandırılmamış elektronik tablo ${ date }"
       ],
       "Upgrade to ${ planName }": [
         "${ planName } tarifesine yükseltin"
@@ -10476,7 +10476,7 @@
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızla kullanılabilecek depolama alanını aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "This will replace all the data in the spreadsheet": [
-        "Bu işlem hesap tablosundaki tüm verileri değiştirecek"
+        "Bu işlem elektronik tablodaki tüm verileri değiştirecek"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
