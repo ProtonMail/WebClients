@@ -31,6 +31,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -60,9 +63,6 @@
       ],
       "Cancel trial and pay": [
         "Testversion beenden und bezahlen"
-      ],
-      "Change password": [
-        "Passwort ändern"
       ],
       "Chat with us": [
         "Chatte mit uns"
@@ -2732,6 +2732,9 @@
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
@@ -2757,6 +2760,9 @@
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -2897,6 +2903,9 @@
       "for ${ price }": [
         "für ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Google Pay markieren"
       ],
@@ -3004,6 +3013,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -5543,12 +5555,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
-      ],
-      "Account restricted": [
-        "Konto eingeschränkt"
-      ],
-      "Account temporarily locked": [
-        "Konto vorübergehend gesperrt"
       ],
       "Add credit/debit card": [
         "Kredit-/Debitkarte hinzufügen"

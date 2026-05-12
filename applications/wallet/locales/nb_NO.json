@@ -31,6 +31,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -60,9 +63,6 @@
       ],
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
-      ],
-      "Change password": [
-        "Endre passord"
       ],
       "Chat with us": [
         "Snakk med oss"
@@ -2732,6 +2732,9 @@
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -2757,6 +2760,9 @@
       ],
       "Account successfully updated": [
         "Konto oppdatert"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -2897,6 +2903,9 @@
       "for ${ price }": [
         "for ${ price }"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
       "Google Pay mark": [
         "Merk Google Pay"
       ],
@@ -3004,6 +3013,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
@@ -5543,12 +5555,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
-      ],
-      "Account restricted": [
-        "Konto begrenset"
-      ],
-      "Account temporarily locked": [
-        "Konto midlertidig låst"
       ],
       "Add credit/debit card": [
         "Legg til kreditt-/debetkort"
