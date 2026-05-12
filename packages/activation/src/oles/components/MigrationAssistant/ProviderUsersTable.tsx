@@ -28,7 +28,7 @@ type Props = {
     users: ApiImporterOrganizationUser[];
     transferErrors: CreateMigrationBatchError[];
     banners: ReactNode[];
-    currentUser: string;
+    currentUser: string | undefined;
     selected: string[];
     setSelected: (users: string[]) => void;
     selectable: string[];
@@ -247,8 +247,10 @@ const ProviderUsersTable: FC<Props> = ({
                                     className="text-right text-left-when-stacked provider-users-table-cell color-weak"
                                 >
                                     <ActivationStatus
-                                        user={u}
-                                        currentUser={currentUser}
+                                        isActivated={
+                                            u.Email === currentUser ||
+                                            u.ImporterOrganizationUser?.HasTemporaryPassword === false
+                                        }
                                         activationLinkVisible={activationLinkVisible}
                                     />
                                 </TableCell>
