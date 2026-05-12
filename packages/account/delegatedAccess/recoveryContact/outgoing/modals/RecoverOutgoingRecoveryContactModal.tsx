@@ -26,7 +26,8 @@ export const RecoverOutgoingRecoveryContactModal = ({ value, ...rest }: Props) =
                 </Button>,
             ]}
         >
-            {c('emergency_access').jt`Let ${user} know it’s really you trying to regain access.`}
+            {c('emergency_access')
+                .jt`We sent an email request to ${user}. Let them know it's really you trying to regain access.`}
             <br />
             <br />
             {c('emergency_access')
