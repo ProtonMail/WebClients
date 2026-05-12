@@ -12,9 +12,14 @@ import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { SortField } from '../../modules/sorting';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
-import type { DriveExplorerEvents, DriveExplorerSelection } from '../../statelessComponents/DriveExplorer/types';
+import type {
+    DriveExplorerA11y,
+    DriveExplorerEvents,
+    DriveExplorerSelection,
+} from '../../statelessComponents/DriveExplorer/types';
 import { getDevicesCells, getDevicesGrid } from './DevicesDriveExplorerCells';
 import { DevicesItemContextMenu } from './connectedComponents/DevicesItemContextMenu';
+import { getDeviceItemAriaLabel } from './deviceItemAriaLabel';
 import { useDevicesStore } from './useDevices.store';
 
 interface Props {
@@ -79,6 +84,11 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
         },
     };
 
+    const a11y: DriveExplorerA11y = {
+        getItemAriaLabel: ({ uid, index }) =>
+            getDeviceItemAriaLabel({ device: useDevicesStore.getState().getItem(uid), index }),
+    };
+
     const events: DriveExplorerEvents = {
         onItemClick: () => {
             if (contextMenu.isOpen) {
@@ -123,6 +133,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
                     showContextMenu: contextMenu.handleContextMenu,
                     close: contextMenu.close,
                 }}
+                a11y={a11y}
             />
         </>
     );

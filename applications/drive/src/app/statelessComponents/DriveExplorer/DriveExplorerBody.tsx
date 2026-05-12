@@ -8,6 +8,7 @@ import type {
     CellDefinition,
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerConfig,
     DriveExplorerEvents,
@@ -30,6 +31,7 @@ interface DriveExplorerBodyProps {
     showCheckboxColumn?: boolean;
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
+    a11y: DriveExplorerA11y;
 }
 
 export const DriveExplorerBody = ({
@@ -46,6 +48,7 @@ export const DriveExplorerBody = ({
     showCheckboxColumn = true,
     hideSelectionHighlight = false,
     contextMenuControls,
+    a11y,
 }: DriveExplorerBodyProps) => {
     const itemCount = loading ? itemIds.length + 1 : itemIds.length;
 
@@ -106,6 +109,7 @@ export const DriveExplorerBody = ({
                                         showCheckboxColumn={showCheckboxColumn}
                                         hideSelectionHighlight={hideSelectionHighlight}
                                         contextMenuControls={contextMenuControls}
+                                        a11y={a11y}
                                     />
                                 );
                             })}

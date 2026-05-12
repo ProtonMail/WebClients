@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { DriveExplorerCell } from './DriveExplorerCell';
+import { ItemA11yActivator } from './ItemA11yActivator';
 import { CheckboxCell } from './cells/CheckboxCell';
 import { ContextMenuCellWithControls } from './cells/ContextMenuCell';
 import { EmptyCell } from './cells/EmptyCell';
@@ -13,6 +14,7 @@ import type {
     CellDefinition,
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
@@ -21,6 +23,7 @@ import { useItemInteraction } from './useItemInteraction';
 
 interface DriveExplorerRowProps {
     itemId: string;
+    index: number;
     cells: CellDefinition[];
     style: React.CSSProperties;
     conditions: DriveExplorerConditions;
@@ -33,11 +36,13 @@ interface DriveExplorerRowProps {
     showCheckboxColumn?: boolean;
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
+    a11y: DriveExplorerA11y;
 }
 
 export const DriveExplorerRow = ({
     className,
     itemId,
+    index,
     cells,
     style,
     selection,
@@ -49,6 +54,7 @@ export const DriveExplorerRow = ({
     showCheckboxColumn = true,
     hideSelectionHighlight = false,
     contextMenuControls,
+    a11y,
 }: DriveExplorerRowProps) => {
     const isSelected = selection?.selectedItems.has(itemId) ?? false;
     const rowRef = useRef<HTMLTableRowElement>(null);
@@ -118,18 +124,12 @@ export const DriveExplorerRow = ({
             <TableRow
                 ref={rowRef}
                 className={clsx(
-                    'flex user-select-none group-hover-opacity-container',
+                    'flex user-select-none group-hover-opacity-container relative',
                     ((!hideSelectionHighlight && isSelected) || dragMoveControls?.isActiveDropTarget) && 'bg-strong',
                     dragging && 'opacity-50',
                     className
                 )}
                 style={style}
-                onMouseDown={handleMouseDown}
-                onClick={handleClick}
-                onDoubleClick={handleDoubleClick}
-                onContextMenu={handleContextMenu}
-                onFocus={hideSelectionHighlight ? (e) => e.currentTarget.blur() : undefined}
-                onKeyDown={handleKeyDown}
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
                 onDragOver={canBeDropTarget ? dragMoveControls?.handleDragOver : undefined}
@@ -139,10 +139,18 @@ export const DriveExplorerRow = ({
                 draggable={isDraggable}
                 data-testid="drive-explorer-row"
                 data-item-uid={itemId}
-                tabIndex={0}
             >
+                <ItemA11yActivator
+                    ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
+                    isSelected={isSelected}
+                    onMouseDown={handleMouseDown}
+                    onClick={handleClick}
+                    onDoubleClick={handleDoubleClick}
+                    onKeyDown={handleKeyDown}
+                    onContextMenu={handleContextMenu}
+                />
                 {showCheckboxColumn ? (
-                    <TableCell className="m-0 flex items-center relative" data-testid="checkbox">
+                    <TableCell className="m-0 flex items-center relative z-up" data-testid="checkbox">
                         <CheckboxCell className="ml-2" uid={itemId} selectionMethods={selection.selectionMethods} />
                     </TableCell>
                 ) : (
@@ -161,7 +169,7 @@ export const DriveExplorerRow = ({
                         return <DriveExplorerCell key={cell.id} itemId={itemId} cell={cell} />;
                     })}
                 {contextMenuControls && (
-                    <TableCell className="m-0 flex items-center relative" data-testid="column-options">
+                    <TableCell className="m-0 flex items-center relative z-up" data-testid="column-options">
                         <ContextMenuCellWithControls
                             uid={itemId}
                             isSelected={isSelected}

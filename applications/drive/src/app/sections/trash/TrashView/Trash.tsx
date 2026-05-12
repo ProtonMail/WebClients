@@ -16,6 +16,7 @@ import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
+    DriveExplorerA11y,
     DriveExplorerEvents,
     DriveExplorerSelection,
     DriveExplorerSort,
@@ -23,6 +24,7 @@ import type {
 import { getTrashCells, getTrashGrid } from '../TrashDriveExplorerCells';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import { EmptyTrash } from '../statelessComponents/EmptyTrash';
+import { getTrashItemAriaLabel } from '../trashItemAriaLabel';
 import type { TrashItem } from '../useTrash.store';
 import { useTrashStore } from '../useTrash.store';
 
@@ -163,6 +165,11 @@ export function Trash({ onPreview, handleShowDetails, handleShowFilesDetails, on
         onSort: handleDriveExplorerSorting,
     };
 
+    const a11y: DriveExplorerA11y = {
+        getItemAriaLabel: ({ uid, isSelected, index }) =>
+            getTrashItemAriaLabel({ item: useTrashStore.getState().getItem(uid), isSelected, index }),
+    };
+
     return (
         <>
             <TrashItemContextMenu
@@ -193,6 +200,7 @@ export function Trash({ onPreview, handleShowDetails, handleShowFilesDetails, on
                     showContextMenu: contextMenu.handleContextMenu,
                     close: contextMenu.close,
                 }}
+                a11y={a11y}
             />
         </>
     );

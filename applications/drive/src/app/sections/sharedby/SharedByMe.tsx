@@ -18,6 +18,7 @@ import { useSelectionStore } from '../../modules/selection';
 import type { SortConfig, SortField } from '../../modules/sorting/types';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
+    DriveExplorerA11y,
     DriveExplorerEvents,
     DriveExplorerSelection,
     DriveExplorerSort,
@@ -26,6 +27,7 @@ import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../utils/docs/op
 import { EmptySharedByMe } from './EmptySharedByMe';
 import { getSharedByMeCells, getSharedByMeGrid } from './SharedByMeDriveExplorerCells';
 import { SharedByMeItemContextMenu } from './SharedByMeItemContextMenu';
+import { getSharedByMeItemAriaLabel } from './sharedByMeItemAriaLabel';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
 export const SharedByMe = () => {
@@ -159,6 +161,15 @@ export const SharedByMe = () => {
         onSort: handleSorting,
     };
 
+    const a11y: DriveExplorerA11y = {
+        getItemAriaLabel: ({ uid, isSelected, index }) =>
+            getSharedByMeItemAriaLabel({
+                item: useSharedByMeStore.getState().getSharedByMeItem(uid),
+                isSelected,
+                index,
+            }),
+    };
+
     const cells = getSharedByMeCells({ viewportWidth });
     const grid = getSharedByMeGrid();
 
@@ -181,6 +192,7 @@ export const SharedByMe = () => {
                         showContextMenu: contextMenu.handleContextMenu,
                         close: contextMenu.close,
                     }}
+                    a11y={a11y}
                 />
             </div>
             {previewModal}

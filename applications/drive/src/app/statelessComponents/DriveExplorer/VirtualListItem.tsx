@@ -7,6 +7,7 @@ import type {
     CellDefinition,
     ContextMenuControls,
     DragMoveControls,
+    DriveExplorerA11y,
     DriveExplorerConditions,
     DriveExplorerEvents,
     DriveExplorerSelection,
@@ -27,6 +28,7 @@ interface VirtualListItemProps {
     showCheckboxColumn?: boolean;
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
+    a11y: DriveExplorerA11y;
 }
 
 export function VirtualListItem({
@@ -44,6 +46,7 @@ export function VirtualListItem({
     showCheckboxColumn,
     hideSelectionHighlight,
     contextMenuControls,
+    a11y,
 }: VirtualListItemProps) {
     const isLoadingRow = loading && virtualItem.index === totalItemCount;
 
@@ -74,6 +77,7 @@ export function VirtualListItem({
             className="absolute top-0 left-0 w-full h-custom"
             key={itemId}
             itemId={itemId}
+            index={virtualItem.index}
             cells={cells}
             style={{
                 transform: `translateY(${virtualItem.start}px)`,
@@ -88,6 +92,7 @@ export function VirtualListItem({
             showCheckboxColumn={showCheckboxColumn}
             hideSelectionHighlight={hideSelectionHighlight}
             contextMenuControls={contextMenuControls}
+            a11y={a11y}
         />
     );
 }
