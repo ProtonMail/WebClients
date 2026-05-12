@@ -135,13 +135,15 @@ export const queryElementsInBatch = async (
                 const elements = conversationMode ? result.Conversations : result.Messages;
                 const lastElement = elements[pageSize - 1];
 
+                // The anchor of the latest element when sorted by SnoozeTime is the Time field, otherwise it's the sort key itself.
+                const anchorKey = queryParameters.Sort === 'SnoozeTime' ? 'Time' : queryParameters.Sort;
                 const queryResult = {
                     abortController: newAbortController,
                     More: elements.length >= pageSize,
                     Elements: elements,
                     ...(lastElement && {
                         AnchorID: lastElement.ID,
-                        Anchor: lastElement[queryParameters.Sort ?? 'Time'],
+                        Anchor: lastElement[anchorKey ?? 'Time'],
                     }),
                     // We take the Total of the first request only as the others are affected by the Anchor/AnchorID parameters.
                     // Initial Total is set to -1 to discriminate it from Total: 0 sent back by API
