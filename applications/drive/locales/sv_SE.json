@@ -1278,6 +1278,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Search is unavailable": [
+        "Sök är inte tillgänglig"
       ]
     },
     "Action: Docs": {
@@ -7081,6 +7084,12 @@
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
         "Sökmotorn stötte på ett internt fel. Återskapa indexet för att återställa."
+      ],
+      "Search engine error": [
+        "Sökmotorfel"
+      ],
+      "Search is in an invalid state": [
+        "Sök är i ett ogiltigt tillstånd"
       ]
     },
     "info": {
