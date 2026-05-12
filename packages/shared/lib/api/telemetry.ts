@@ -64,6 +64,7 @@ export enum TelemetryMeasurementGroups {
     b2bOnboarding = 'any.web.b2b_onboarding',
     bringYourOwnEmail = 'any.web.bring_your_own_email',
     appSwitcher = 'any.web.app_switcher',
+    preventWasmLoading = 'any.web.prevent_wasm_loading',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
@@ -475,6 +476,12 @@ export enum TelemetryESMigrationToolEvents {
     migration_finished = 'es_migration_tool.migration_finished',
 }
 
+export enum TelemetryPreventWasmLoading {
+    wasm_unsupported = 'wasm_unsupported',
+    wasm_loading = 'wasm_loading',
+    wasm_failed = 'wasm_failed',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -529,7 +536,8 @@ export type TelemetryEvents =
     | TelemetryUnauthLost2FAEvents
     | TelemetryAccountCancellationFlowFeedbackEvents
     | TelemetrySafetyReviewCtrEvents
-    | TelemetrySafetyReviewScoreDiffEvents;
+    | TelemetrySafetyReviewScoreDiffEvents
+    | TelemetryPreventWasmLoading;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
