@@ -90,6 +90,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Дадаць уліковы запіс ${ BRAND_NAME }"
       ],
@@ -525,6 +528,9 @@
       "Delete record": [
         "Выдаліць запіс"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "Выдаліць токен ${ tokens[0].Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Выдаліць токен “${ token.Name }”"
       ],
@@ -887,6 +893,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Перайсці да пастаўшчыка даменаў"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1367,6 +1376,9 @@
       ],
       "Save": [
         "Захаваць"
+      ],
+      "Save & exit": [
+        "Захаваць і выйсці"
       ],
       "Save address": [
         "Захаваць адрас"
@@ -2087,6 +2099,9 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 новыя ролі адміністратара"
+      ],
       "3 new admin roles": [
         "3 новыя ролі адміністратара"
       ],
@@ -2095,6 +2110,9 @@
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Упаўнаважанае кіраванне з прызначэннем канкрэтных роляў адміністратару. Давайце кожнаму адміністратару толькі той доступ, які яму неабходны. Гэта адпавядае прынцыпу найменшых паўнамоцтваў, дазваляе абараніць вашу арганізацыю ад кампраметацыі ўліковых запісаў і выпадковых памылак."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Упаўнаважанае кіраванне некалькімі карыстальнікам адначасова. Прызначайце канкрэтныя ролі адміністратарам у групах для аўтаматычнага атрымання дазволаў. Гэта адпавядае прынцыпу найменшых паўнамоцтва і эканоміць час на прыём або вывад адміністратара з групы, а таксама дазваляе скараціць колькасць памылак."
       ],
       "Delegate management with the appropriate admin role.": [
         "Упаўнаважанае кіраванне з адпаведнай роляй адміністратара"
@@ -2107,6 +2125,9 @@
       ],
       "New: Control admin access for individual users": [
         "Новае: кантроль доступу адміністратара для індывідуальных карыстальнікаў"
+      ],
+      "New: Control admin access for many users at once": [
+        "Новае: кантралюйце доступ адміністратара для некалькіх карыстальнікаў адначасова"
       ],
       "Organization admin:": [
         "Адміністратар арганізацыі:"
@@ -2895,14 +2916,65 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } з ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+      ],
       "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "**p=quarantine**: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: просіць платформы атрымальніка адхіляць неаўтарызаваныя лісты."
+      ],
+      "Account connected": [
+        "Уліковы запіс падключаны"
+      ],
+      "Account disconnected": [
+        "Уліковы запіс адключаны"
       ],
       "Activated": [
         "Актывавана"
       ],
+      "Activation link": [
+        "Спасылка актывацыі"
+      ],
+      "Activation link copied to clipboard": [
+        "Спасылка актывацыі скапіявана ў буфер абмену"
+      ],
+      "Add a domain": [
+        "Дадаць дамен"
+      ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
+      "Add users": [
+        "Дадаць карыстальнікаў"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Дадайце карыстальнікаў і сканфігурыруйце свой дамен уручную для адпраўкі і атрымання пошты. Ідэальна падыходзіць для невялікіх каманд, якія пачынаюць сваю дзейнасць з нуля."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "An unknown error occurred": [
+        "Адбылася невядомая памылка"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Вы сапраўды хочаце працягнуць? Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Як толькі ўліковыя запісы будуць створаны, вы зможаце абагуліць спасылку актывацыі, карыстальнікі змаглі атрымаць свой уліковы запіс ${ BRAND_NAME }."
+      ],
       "Authenticate": [
         "Аўтэнтыфікаваць"
+      ],
+      "Authenticate to Google Workspace": [
+        "Аўтэнтыфікацыя ў Google Workspace"
       ],
       "Authenticate your Google Workspace account": [
         "Аўтэнтыфікацыя вашага ўліковага запісу Google Workspace"
@@ -2913,14 +2985,26 @@
       "Change": [
         "Змяніць"
       ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Выберыце, як перанесці налады сваёй каманды і лісты ў ${ BRAND_NAME }."
+      ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Выберыце, што вы хочаце перанесці. Ваш выбар будзе прыменены да ўсіх карыстальнікаў. Перанос пачнецца адразу пасля таго, як вы вырашыце якіх карыстальнікаў капіяваць."
+      ],
       "Completed": [
         "Завершаныя"
       ],
       "Configure": [
         "Сканфігурыраваць"
       ],
+      "Configure domain": [
+        "Сканіфігурыраваць дамен"
+      ],
       "Configure migration": [
         "Сканфігурыраваць перанос"
+      ],
+      "Configure your domain": [
+        "Сканфігурыруйце свой дамен"
       ],
       "Contacts": [
         "Кантакты"
@@ -2928,26 +3012,59 @@
       "Continue migration": [
         "Працягнуць перанос"
       ],
+      "Copy activation link": [
+        "Скапіяваць спасылку актывацыі"
+      ],
       "Copy activation link to clipboard": [
         "Скапіюйце спасылку актывацыі ў буфер абмену"
       ],
       "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
         "Скапіюйце код ніжэй і ўстаўце яго ў раздзел DNS вашага даменнага вузла. Прыклады і карысныя парады як гэта зрабіць можна знайсці ў ${ hereHref }."
       ],
+      "Creating accounts": [
+        "Стварэнне ўліковых запісаў"
+      ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
         "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
+      ],
+      "DKIM records": [
+        "Запісы DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC заснаваны на SPF і DKIM. Сутнасць тэхналогіі заключаецца ў тым, што ён паведамляе правілы апрацоўкі паведамленняў, якія не прайшлі спраўджанне на серверы, які атрымаў гэтыя паведамленні. Гэта дапамагае абараніць ваш дамен ад імітацыі і павышае агульную надзейнасць дастаўкі."
       ],
       "DMARC records": [
         "Запісы DMARC"
       ],
+      "Domain added": [
+        "Дамены дададзены"
+      ],
       "Domain connected": [
         "Дамен падключаны"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Пераканайцеся, што вашы электронныя лісты трапляюць у паштовую скрыню, а не ў папку са спамам. Абнаўленне SPF дазволіць карыстальнікам адначасова адпраўляць лісты з ${ BRAND_NAME } і Google на працягу ўсяго перыяду пераносу."
+      ],
+      "Errors": [
+        "Памылкі"
       ],
       "Estimated size": [
         "Прыблізны памер"
       ],
       "Failed to load OAuth": [
         "Не ўдалося загрузіць OAuth"
+      ],
+      "Finalize migration": [
+        "Завяршэнне пераносу"
+      ],
+      "Finalize your migration": [
+        "Завяршэнне пераносу"
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Завяршэнне пераносу азначае, што ўсе вашы лісты будуць накіроўвацца непасрэдна ў ${ BRAND_NAME }. Карыстальнікі больш не будуць атрымліваць лісты ў сваіх уліковых запісах Google, а даныя больш не будуць сінхранізавацца паміж ${ BRAND_NAME } і Google."
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што перанесена."
       ],
       "Finish setting up your business account": [
         "Завяршэнне наладкі вашага ўліковага запісу для бізнесу"
@@ -2958,8 +3075,17 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Праграма Google Marketplace для капіявання даных у ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Уліковы запіс Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Пачакайце крыху... адбываецца наладжванне ўліковых запісаў карыстальнікаў і неўзабаве пачнецца імпартаванне іх даных."
+      ],
       "Has errors": [
         "З памылкамі"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Памылкі імпартавання для ${ user.AdminSetName }"
       ],
       "In progress": [
         "Выконваецца"
@@ -2973,17 +3099,29 @@
       "Install Migration assistant": [
         "Усталяваць Migration Assistant"
       ],
+      "Loading your organization data": [
+        "Загрузка даных вашай арганізацыі"
+      ],
       "Mail": [
         "Пошта"
       ],
       "Managed via ${ registrar.name }": [
         "Кіруецца праз ${ registrar.name }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
+      ],
       "Migrate from Google Workspace": [
         "Перанесці з Google Workspace"
       ],
       "Migrate users": [
         "Перанос карыстальнікаў"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Перанесці карыстальнікаў у ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "Перанесена"
       ],
       "Migration includes": [
         "Перанос уключаны"
@@ -2997,11 +3135,35 @@
       "Migration status": [
         "Статус пераносу"
       ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
+      ],
       "More details": [
         "Дадатковая інфармацыя"
       ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Аўтаматычна перамяшчайце сваіх карыстальнікаў, электронныя адрасы і налады з Google Workspace. Майстар дапаможа вам падключыць уліковы запіс, спраўдзіць дамен і бяспечна перанесці карыстальнікаў."
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Падрабязнасці памылкі недаступны. Звяжыцеся са службай падтрымкі для атрымання дадатковай інфармацыі."
+      ],
       "No users to display": [
         "Няма карыстальнікаў для адлюстравання"
+      ],
+      "Not activated": [
+        "Не актываваны"
+      ],
+      "Not confirmed": [
+        "Не пацверджана"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Пасля таго, як карыстальнікі запытаюць свае ўліковыя запісы ${ BRAND_NAME }, завяршыце перанос."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Як толькі будзе пацверджана, што лісты накіроўваюцца ў ${ BRAND_NAME } перанос будзе завершаны. Вы атрымаеце ліст з пацвярджэннем, калі гэта адбудзецца. Гэты працэс зойме да 24 гадзін."
       ],
       "Organization does not have enough seats available": [
         "У арганізацыі недастаткова даступных ліцэнзій"
@@ -3015,6 +3177,15 @@
       "Please add the following records in your DNS console of your domain provider:": [
         "Дадайце наступныя запісы ў кансоль DNS вашага пастаўшчыка даменаў:"
       ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Пакіньце гэта акно адкрытым, пакуль не будзе завершана стварэнне ўсіх карыстальнікаў."
+      ],
+      "Please select at least one product to migrate": [
+        "Выберыце прынамсі адзін прадукт для пераносу"
+      ],
+      "Refresh": [
+        "Абнавiць"
+      ],
       "Required": [
         "Абавязкова"
       ],
@@ -3024,6 +3195,9 @@
       "Select at least one user to start a migration": [
         "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
       ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
       "Set up": [
         "Наладзіць"
       ],
@@ -3032,6 +3206,15 @@
       ],
       "Set up manually": [
         "Наладзіць ўручную"
+      ],
+      "Set up secure sending (DKIM)": [
+        "Наладзьце бяспечную адпраўку (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Наладзьце бяспечную адпраўку (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Наладзьце бяспечную адпраўку (SPF)"
       ],
       "Set up two-factor authentication": [
         "Наладзіць двухфактарную аўтэнтыфікацыю"
@@ -3045,6 +3228,18 @@
       "Sign in to Google Workspace": [
         "Увайсці ў Google Workspace"
       ],
+      "Size": [
+        "Памер"
+      ],
+      "Some accounts are not claimed": [
+        "Некаторыя ўліковыя запісы не пацверджаны"
+      ],
+      "SPF records": [
+        "Запісы SPF"
+      ],
+      "Start migrating": [
+        "Пачаць перанос"
+      ],
       "Start migration": [
         "Пачаць перанос"
       ],
@@ -3054,17 +3249,38 @@
       "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
         "Прадвызначаныя налады адсутнічаюць. Аднак для ўдасканалення вашай бяспекі рэкамендуецца наладзіць гэта значэнне ў p=quarantine."
       ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Значэнне \"p=\" указвае дзеянне, якое неабходна выканаць для лістоў, якія не прайшлі спраўджанне DMARC. Тут прадстаўлены даступныя дзеянні:"
+      ],
       "This migration has been completed": [
         "Перанос завершаны"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана."
       ],
+      "Update records for receiving": [
+        "Абнавіце запісы для атрымання"
+      ],
       "User": [
         "Карыстальнік"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "Карыстальнік павінен актываваць свой уліковы запіс праз спасылку актывацыі паказаную вышэй"
+      ],
+      "User status": [
+        "Статус карыстальніка"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Карыстальнікі могуць адначасова выкарыстоўваць ${ BRAND_NAME } або Google на працягу ўсяго перыяду пераносу."
+      ],
       "Users migrated": [
         "Карыстальнікі перанесены"
+      ],
+      "Verified": [
+        "Спраўджана"
+      ],
+      "Verify domain ownership": [
+        "Спраўдзіце права ўласнасці на дамен"
       ],
       "Verify installation": [
         "Спраўдзіць усталяванне"
@@ -3075,17 +3291,29 @@
       "Verify your domain to start a migration": [
         "Спраўдзіце свой дамен, каб пачаць перанос"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Сістэма выявіла, што асноўны дамен звязаны з вашым уліковым запісам Google Workspace. Пацвердзіце яго, каб працягнуць наладжванне электроннай пошты для сваёй арганізацыі ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Немагчыма спраўдзіць усталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
       ],
+      "We're still checking the MX records with your domain provider.": [
+        "Сістэма ўсё яшчэ правярае запісы MX з вашым пастаўшчыком дамена."
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Звярніце ўвагу, што некаторыя карыстальнікі не пацвердзілі свае ўліковыя запісы ${ BRAND_NAME }."
+        "Звярніце ўвагу, што некаторыя карыстальнікі не запыталі свае ўліковыя запісы ${ BRAND_NAME }."
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
       ],
+      "You": [
+        "Вы"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Вам неабходна даць дазвол для ${ BRAND_NAME } на капіяванне вашых даных. Працягвайце далей пасля таго, як будуць прыняты дазволы."
+      ],
+      "You're all set!": [
+        "Усё гатова!"
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Ваш бягучы тарыфны план падтрымлівае да ${ maxMembers } карыстальніка. Дадайце больш ліцэнзій у сваю падпіску, каб перанесці дадатковых карыстальнікаў.",
@@ -5359,6 +5587,11 @@
         "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Знойдзены дублікат запісу DMARC. Перайдзіце ў кансоль DNS свайго пастаўшчыка дамена, каб выправіць гэта."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Таксама мы аўтаматычна параўналі палі CSV з палямі vCard. Вы можаце праверыць і змяніць гэтыя адпаведнасці ўручную."
@@ -6493,11 +6726,11 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Спачатку звярніцеся да іх. Такім чынам вы пераканаецеся, што ім сапраўды патрэбная дапамога з аднаўленнем іх даных."
       ],
-      "Contact-assisted recovery": [
-        "Аднаўленне з дапамогай кантакту"
-      ],
       "Contacts": [
         "Кантакты"
+      ],
+      "Data recovery contacts": [
+        "Кантакты для аднаўлення даных"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Даныя паспяхова адноўлены. Цяпер вы можаце расшыфраваць свае існуючыя даныя і зашыфраваныя файлы."
@@ -6606,9 +6839,6 @@
       ],
       "People who trust me": [
         "Людзі, якія давяраюць мне"
-      ],
-      "People you have added as recovery contacts.": [
-        "Людзі, якіх вы дадалі ў якасці кантактаў для аднаўлення."
       ],
       "Proceed anyway": [
         "Працягнуць у любым выпадку"
@@ -8694,8 +8924,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Я разумею, што я больш не змагу ўвайсці са старых версій мабільных праграм ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Я разумею, што я больш не змагу ўвайсці са старых версій праграм ${ BRAND_NAME }."
       ]
     },
     "Form heading": {
@@ -9639,7 +9869,7 @@
         "${ name } для Windows"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "${ none }: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+        "${ none }: не пераводзіць у каранцін і не адхіляе неаўтарызаваныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
       ],
       "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
         "${ noTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength }",
@@ -9790,6 +10020,9 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } абноўлена"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
@@ -9949,6 +10182,9 @@
       ],
       "Activity Monitor": [
         "Манітор актыўнасці"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -10192,6 +10428,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Вы сапраўды хочаце адклікаць сертыфікат **${ name }**"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Вы сапраўды хочаце выйсці з гэтага ўліковага запісу?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Вы сапраўды хочаце сартаваць вашыя папкі па алфавіце?"
@@ -10537,6 +10776,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Даныя можна аднавіць з дапамогай фразы аднаўлення"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Аднаўленне даных патрабуе параметр скідання пароля (электронная пошта або SMS)"
       ],
       "dedicated servers": [
         "вылучаныя серверы"
@@ -10924,6 +11166,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Для лёгкага доступу да вашых пароляў і не толькі."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для забеспячэння плаўнага пераходу карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншых служб электроннай пошты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
@@ -11891,6 +12136,9 @@
       "Recently used servers:": [
         "Серверы, якімі вы нядаўна карысталіся:"
       ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -12368,6 +12616,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Гэты спосаб аднаўлення патрабуе параметр скідання пароля (электронная пошта або SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Гэта функцыя затрымлівае адпраўку вашых паведамленняў, што дае вам магчымасць адрабіць адпраўку на працягу выбранага перыяду часу."
       ],
@@ -12527,6 +12778,15 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Адключыце **Аднаўленне з дапамогай кантактаў** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Адключыце **Рэзервовае капіяванне даных на прыладзе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Адключыце **Экстранны доступ** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "Адключыце **Уваход па QR-кодзе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
@@ -12535,6 +12795,9 @@
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Адключыце **Аднаўленне па нумары тэлефона** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Адключыце **Файл аднаўлення** (анулюе ўсе файлы аднаўлення) для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Адключыце **Скіданне пры актыўным сеансе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
@@ -12572,8 +12835,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Вам неабходны адрас ${ MAIL_APP_NAME }, каб выкарыстоўваць ${ toAppName }."
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "У вас павінны быць зададзены параметры скідання пароля такія, як спраўджанне па электроннай пошце або SMS, каб скарыстацца гэтым спосабам аднаўлення даных."
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Адключыце ${ PROTON_SENTINEL_NAME } і ўключыце параметр скідання пароля (электронная пошта або SMS), каб выкарыстоўваць гэты спосаб аднаўлення."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правільнай працы, кожны фільтр павінен змяшчаць прынамсі назву і сапраўдны сцэнарый Sieve. Вы можаце ${ link }."
@@ -14146,7 +14409,7 @@
         "Дазволіць апавяшчэнні па электроннай пошце"
       ],
       "Allow QR code sign-in": [
-        "Дазволіць уваход па QR-коду"
+        "Дазволіць уваход па QR-кодзе"
       ],
       "Allow random passwords": [
         "Дазволіць выпадковыя паролі"
@@ -14411,6 +14674,9 @@
       ],
       "Confirm login password": [
         "Пацвердзіць пароль уваходу"
+      ],
+      "Confirm MX records added": [
+        "Пацвярджэнне дадавання запісаў MX"
       ],
       "Confirm new password": [
         "Пацвердзіце новы пароль"
@@ -14763,6 +15029,9 @@
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
+      "Host name": [
+        "Імя вузла"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Я разумею, што мне неабходна будзе неадкладна дадаць гэты адрас электроннай пошты ў іншы ўліковы запіс, каб пазбегнуць незваротнай страты гэтага адраса."
       ],
@@ -14955,6 +15224,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Пароль павінен мець прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы(аў)"
       ],
+      "MX records": [
+        "Запіс MX"
+      ],
       "Name": [
         "Назва"
       ],
@@ -15137,6 +15409,9 @@
       ],
       "Primary": [
         "Асноўны"
+      ],
+      "Priority": [
+        "Прыярытэт"
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
@@ -15607,6 +15882,9 @@
       ],
       "Recovery phrase": [
         "Фраза аднаўлення"
+      ],
+      "Set recovery phone number": [
+        "Задаць нумар тэлефона для аднаўлення доступу"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15651,14 +15929,23 @@
       ]
     },
     "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Запіс ${ capitalizedGroup } не знойдзены"
+      ],
       "Host name": [
         "Імя вузла"
       ],
       "Invalid ${ group.name } record found": [
         "Знойдзены памылковы запіс ${ group.name }"
       ],
+      "Type": [
+        "Тып"
+      ],
       "Use default value": [
         "Выкарыстоўваць прадвызначанае значэнне"
+      ],
+      "Valid ${ group.name } record found": [
+        "Знойдзены сапраўдны запіс ${ group.name }"
       ]
     },
     "Label for new member": {
@@ -15825,6 +16112,9 @@
       ],
       "data recovery option": [
         "параметр аднаўлення даных"
+      ],
+      "Detailed instructions": [
+        "Падрабязныя інструкцыі"
       ],
       "Details": [
         "Падрабязнасці"
@@ -19926,6 +20216,9 @@
       "Search for an email or IP address": [
         "Пошук па адрасе электроннай пошты або IP"
       ],
+      "Search for users or addresses": [
+        "Пошук карыстальнікаў або адрасоў"
+      ],
       "Search parent folder": [
         "Пошук бацькоўскай папкі"
       ],
@@ -20086,6 +20379,11 @@
     "PQC adress key generation": {
       "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
         "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\nПерайдзіце ў ${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага кожнага адраса."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Вы павінны абнавіць усе праграмы ${ BRAND_NAME }**: вашы новыя ключы не будуць працаваць са старымі версіямі праграм."
       ]
     },
     "PQC key generation": {
@@ -20335,6 +20633,12 @@
       "Partial": [
         "Частковы"
       ],
+      "Recovery score: ${ score }": [
+        "Ацэнка аднаўлення: ${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Патрабаваць параметр спраўджання пры скіданні пароля (электронная пошта або SMS)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Рэйтынг: ${ score } / ${ maxScore }"
       ],
@@ -20375,6 +20679,9 @@
       ],
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
+      ],
+      "Email recovery enabled": [
+        "Аднаўленне доступу па электроннай пошце ўключана"
       ],
       "Emergency contacts added": [
         "Экстранны кантакты дададзены"
@@ -21145,8 +21452,20 @@
       "${ BRAND_NAME } Account email": [
         "Уліковы запіс электроннай пошты ${ BRAND_NAME }"
       ],
+      "Account protection": [
+        "Абарона ўліковага запісу"
+      ],
+      "Add": [
+        "Дадаць"
+      ],
+      "Add emergency contacts": [
+        "Дадаць экстранныя кантакты"
+      ],
       "Add options": [
         "Дадаць параметры"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць атрымаць доступ да вашага ўліковага запісу і скінуць пароль для вас."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць дапамагчы разблакіраваць вашы даныя пасля скідання пароля."
@@ -21154,8 +21473,32 @@
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
+      "Add recovery contacts": [
+        "Дадаць кантакты для аднаўлення"
+      ],
+      "Add recovery email": [
+        "Дадаць электронную пошту для аднаўлення"
+      ],
+      "Add recovery phone": [
+        "Дадаць тэлефон для аднаўлення"
+      ],
+      "Added emergency contacts": [
+        "Даданыя экстранныя кантакты"
+      ],
+      "Added recovery contacts": [
+        "Кантакты для аднаўлення дадзены"
+      ],
+      "Added recovery email": [
+        "Электронная пошта для аднаўлення доступу дададзена"
+      ],
       "Added recovery phone": [
         "Тэлефон для аднаўлення дададзены"
+      ],
+      "Allow": [
+        "Дазволіць"
+      ],
+      "Allow data recovery from this device": [
+        "Дазволіць аднаўленне даных з гэтай прылады"
       ],
       "Allow password reset from the settings": [
         "Дазволіць скіданне пароля з налад"
@@ -21163,14 +21506,38 @@
       "Allow recovery by email": [
         "Дазволіць аднаўленне доступу па электроннай пошце"
       ],
+      "Allow recovery by phone": [
+        "Дазволіць аднаўленне па нумары тэлефона"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Дазволіць сканіраванне QR-кода для ўваходу"
+      ],
       "Allow trusted friends to sign in": [
         "Дазволіць давераным сябрам уваходзіць"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Дазволіць давераным сябрам разблакіроўку вашых даных"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Вярнуцца ў ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Віншуем"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Не атрымалі яго? ${ sendANewCode }"
       ],
       "Done": [
         "Гатова"
       ],
+      "Download": [
+        "Спампаваць"
+      ],
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
+      ],
+      "Downloaded recovery file": [
+        "Спампаваны файл аднаўлення"
       ],
       "Emergency contacts enabled": [
         "Экстранныя кантакты ўключаны"
@@ -21181,11 +21548,32 @@
       "Enable email recovery": [
         "Уключыць электронную пошту для аднаўлення"
       ],
+      "Enable emergency contacts": [
+        "Уключыць экстранныя кантакты"
+      ],
+      "Enable password reset from settings": [
+        "Уключыць скідання пароля з налад"
+      ],
       "Enable phone recovery": [
         "Уключыць электронную пошту для аднаўлення"
       ],
+      "Enable QR code sign-in": [
+        "Уключыць уваход па QR-кодзе"
+      ],
       "Enabled device recovery": [
         "Аднаўленне па прыладзе ўключана"
+      ],
+      "Enabled email recovery": [
+        "Аднаўленне доступу па электроннай пошце ўключана"
+      ],
+      "Enabled password reset from settings": [
+        "Скіданне пароля з налад уключана"
+      ],
+      "Enabled phone recovery": [
+        "Аднаўленне па нумары тэлефона ўключана"
+      ],
+      "Enabled QR code sign-in": [
+        "Уваход па QR-кодзе ўключаны"
       ],
       "Got it": [
         "Зразумела"
@@ -21193,29 +21581,98 @@
       "Here's how you increased your account protection:": [
         "Як павялічыць абарону вашага ўліковага запісу:"
       ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Вы можаце ўвайсці з дапамогай QR-кода, калі забылі свой пароль. Усё, што вам неабходна, гэта ўвайсці ў сэрвіс ${ BRAND_NAME } на іншай прыладзе."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
         "Гэта дазволіць вам увайсці і аднавіць свае даныя, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Гэта адзіны спосаб імгненна аднавіць усе вашы даныя ў сэрвісе. Захавайце яе ў надзейным месцы і каб яна была даступна толькі вам."
+      ],
+      "Later": [
+        "Пазней"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Абараніце сваю спадчыну з дапамогай экстраннага доступу"
+      ],
+      "Save recovery phrase": [
+        "Захаваць фразу аднаўлення"
+      ],
+      "Saved recovery phrase": [
+        "Фраза аднаўлення захавана"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "У іх ужо павінен быць уліковы запіс ${ BRAND_NAME }."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Гэта функцыя дазволіць вам хутка атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць пароль."
       ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Гэта дазволіць скінуць ваш пароль ад уліковага запісу, калі вы згубіце яго. Адзінай умовай з'яўляецца актыўны сеанс у ${ BRAND_NAME }. Гэта самы просты спосаб аднавіць ваш уліковы запіс пры ўмове, што ў вас ёсць актыўны сеанс у сістэме."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Гэта дзеянне адновіць доступ да лістоў, кантактаў, файлаў, пароляў і іншых зашыфраваных даных у вашым уліковым запісе пасля скідання пароля."
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } для спраўджання таго, што яна належыць менавіта вам."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Увядзіце код спраўджання адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Сістэма адправіць вам ліст са спасылкай для спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш адрас."
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Палепшыце свой тарыфны план, каб уключыць экстранны доступ да свайго ўліковага запісу. Гэта дазволіць вам прызначыць ад 1 да 5 карыстальнікаў, якія змогуць скінуць ваш пароль."
       ],
       "Verified password": [
         "Спраўджаны пароль"
       ],
+      "Verified recovery email": [
+        "Электронная пошта для аднаўлення доступу спраўджана"
+      ],
+      "Verified recovery phone": [
+        "Нумар тэлефона для аднаўлення доступу спраўджаны"
+      ],
+      "Verify": [
+        "Спраўджанне"
+      ],
       "Verify password": [
         "Спраўджанне пароля"
+      ],
+      "Verify recovery email": [
+        "Спраўдзіць электронную пошту для аднаўлення доступу"
       ],
       "Verify recovery phone": [
         "Спраўдзіць нумар тэлефона для аднаўлення доступу"
       ],
+      "Verify your recovery email": [
+        "Спраўдзіце сваю электронную пошту для аднаўлення доступу"
+      ],
       "Verify your recovery phone": [
         "Спраўдзіце свой нумар тэлефона для аднаўлення доступу"
       ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Вы можаце захаваць рэзервовыя копіі даных на гэтай прыладзе. Гэта дзеянне дазволіць аднавіць доступ да лістоў, кантактаў, файлаў, пароляў і іншых зашыфраваных даных у вашым уліковым запісе пасля скідання пароля. Вам неабходна будзе толькі ўвайсці ў сістэму на гэтай прыладзе."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць спраўджанне па электроннай пошце для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць спраўджанне па SMS для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць сваю электронную пошту для вяртання доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Вы можаце выкарыстоўваць свой нумар тэлефона для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Няма неабходнасці адкрываць або чытаць файл. Проста спампуйце яго і захавайце дзе-небудзь у надзейным месцы."
+      ],
+      "Your recovery checklist": [
+        "Ваш кантрольны спіс аднаўлення"
+      ],
+      "Your security setup": [
+        "Ваша бяспечная наладка"
       ]
     },
     "saml: Action": {
@@ -21422,6 +21879,12 @@
       ]
     },
     "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Адключыце вылучаныя параметры для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Спампуйце фразу аднаўлення. Яна заўсёды зможа дапамагчы аднавіць доступ да ўліковага ${ BRAND_NAME }."
+      ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "У вас ёсць рэкамендаваныя дзеянні ад ${ PROTON_SENTINEL_NAME }"
       ]
@@ -22695,11 +23158,35 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Прызначыць упаўнаважаныя ролі"
+      ],
+      "Assign roles": [
+        "Прызначыць ролі"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Націсніце па імі карыстальніка, каб кіраваць яго роллю і дазволамі."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Націсніце кнопку \"Рэдагаваць\", каб прызначыць ролі ў гэтай групе і аўтаматычна кіраваць доступам удзельнікаў."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Зарабіце да ${ maxRewardAmount } у крэдытах"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Атрымлівайце крэдыты, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
+      ],
+      "New: Roles and permissions tab": [
+        "Новае: укладка ролі і дазволы"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Адкрыйце гэту ўкладку, каб даць канкрэтныя правы без поўнага доступу адміністратара."
+      ],
+      "User roles available": [
+        "Даступныя ролі для карыстальнікаў"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Цяпер вы можаце прызначаць ролі для індывідуальных карыстальнікаў з гэтай укладкі."
       ]
     },
     "sso": {
@@ -23021,8 +23508,17 @@
       "Available on this device": [
         "Даступна на гэтай прыладзе"
       ],
+      "Disable contact-assisted recovery": [
+        "Адключэнне аднаўлення з дапамогай кантакту"
+      ],
+      "Disable device data backup": [
+        "Адключыць рэзервовую копію даных прылады"
+      ],
+      "Disable emergency access": [
+        "Адключыць экстранны доступ"
+      ],
       "Disable QR code sign-in": [
-        "Адключыць уваход па QR-коду"
+        "Адключыць уваход па QR-кодзе"
       ],
       "Disable recovery by email": [
         "Адключыць аднаўленне па электроннай пошце"
@@ -23860,6 +24356,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Уліковы запіс выдалены. Адбываецца выхад..."
+      ],
+      "Activation link copied to clipboard": [
+        "Спасылка актывацыі скапіявана ў буфер абмену"
       ],
       "Address added": [
         "Адрас дададзены"
@@ -27011,6 +27510,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(праз ${ groupName })"
+      ],
+      "(via group)": [
+        "(праз групу)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Дадайце ўпаўнаважаныя ролі карыстальніку, каб даць яму толькі канкрэтныя правы. Асобна вамі будуць захаваны поўныя правы адміністратара і ваша бяспечнае асяроддзе."
       ],

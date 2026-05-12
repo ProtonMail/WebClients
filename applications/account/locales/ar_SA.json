@@ -7287,6 +7287,11 @@
         "${ BRAND_NAME }. الخصوصية بشكل افتراضي"
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "أفهم أنني لن أتمكن بعد الآن من تسجيل الدخول إلى الإصدارات الأقدم من تطبيقات ${ BRAND_NAME }."
+      ]
+    },
     "Form heading": {
       "Enter your email address": [
         "أدخل عنوان بريدك الإلكتروني"
@@ -10649,9 +10654,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "لاستخدام ${ toAppName }، تحتاج إلى عنوان ${ MAIL_APP_NAME }."
-      ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "لاستخدام طريقة استعادة البيانات هذه، يجب أن يكون لديك خيار لإعادة تعيين كلمة المرور، مثل التحقق عبر البريد الإلكتروني أو التحقق عبر الرسائل النصية (SMS)."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "اشحن حسابك بأرصدة يمكنك استخدامها للاشتراك في خطة جديدة أو تجديد خطتك الحالية. حصل على رصيد واحد مقابل كل ${ i18nCurrency } يتم إنفاقه."
