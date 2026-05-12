@@ -23,6 +23,7 @@ export const MoveBackButton = () => {
             icon={<IcArrowLeft alt={c('Action').t`Back`} />}
             onClick={handleBack}
             data-testid="toolbar:back-button"
+            className="rtl:mirror"
         />
     );
 };
