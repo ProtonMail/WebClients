@@ -56,6 +56,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Adicionar endereço da ${ BRAND_NAME }"
       ],
@@ -91,6 +94,9 @@
       ],
       "Add user": [
         "Adicionar usuário"
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } adicionamo como proprietário do grupo"
       ],
       "Allow": [
         "Permitir"
@@ -2063,6 +2069,9 @@
       ],
       "Has errors": [
         "Tem erros"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importar erros para ${ user.AdminSetName }"
       ],
       "In progress": [
         "Em processo"
@@ -6592,6 +6601,9 @@
       "Activity Monitor": [
         "Monitor de atividades"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -6814,6 +6826,9 @@
       ],
       "Can you access your active web session in another browser?": [
         "Você pode acessar sua sessão ativa em outro navegador?"
+      ],
+      "Can you reach out to your contact?": [
+        "Você Consegue entrar em contato com a pessoa de contato?"
       ],
       "Cancel": [
         "Cancelar"
@@ -7233,6 +7248,9 @@
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "por apenas ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
@@ -10198,6 +10216,9 @@
       ],
       "Use default value": [
         "Usar valor padrão"
+      ],
+      "Valid ${ group.name } record found": [
+        "Encontrado um registro válido de ${ group.name }"
       ]
     },
     "Label for new member": {
@@ -14719,6 +14740,20 @@
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ]
     },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Atribuir funções delegadas"
+      ],
+      "New: Roles and permissions tab": [
+        "Novo: guia Funções e permissões"
+      ],
+      "User roles available": [
+        "Funções de usuário disponíveis"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Você pode agora atribuir funções a usuários individuais nesta guia."
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando sua ajuda para iniciar sessão na sua conta ${ BRAND_NAME } com login único."
@@ -15485,6 +15520,10 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Assista à entrevista"
