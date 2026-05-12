@@ -62,6 +62,8 @@ export enum SpotlightMessage {
     AUTOTYPE_CONFIRM_SHORTCUT = 29,
     /** Offline manual setup available */
     OFFLINE_SETUP = 30,
+    /** Access tokens settings discovery */
+    ACCESS_TOKENS_DISCOVERY = 31,
 }
 
 export type SpotlightAcknowledgment = {

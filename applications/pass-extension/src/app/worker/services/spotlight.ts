@@ -6,6 +6,7 @@ import type { Store } from 'redux';
 
 import browser from '@proton/pass/lib/globals/browser';
 import {
+    createAccessTokensDiscoveryRule,
     createAliasDiscoveryRules,
     createAliasSyncEnableRule,
     createFileAttachmentsDiscoveryRule,
@@ -53,6 +54,7 @@ export const createSpotlightService = (
             createItemSharingRule(),
             ...createAliasDiscoveryRules(store),
             createFileAttachmentsDiscoveryRule(store),
+            createAccessTokensDiscoveryRule(),
         ],
     });
 
