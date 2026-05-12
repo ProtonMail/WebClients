@@ -89,7 +89,7 @@ import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
-import { EditorEvent, TooltipKey, useTooltipOnce, EditorSystemMode, isDevOrBlack } from '@proton/docs-shared'
+import { EditorEvent, TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
@@ -103,6 +103,7 @@ import { ToolbarItem } from './ToolbarItem'
 import { TableOfContents } from './TableOfContents'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useSyncedState } from '../Hooks/useSyncedState'
+import { isDevOrBlack } from '@proton/utils/env'
 
 function SubscriptIcon() {
   return (

@@ -11,13 +11,7 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import {
-  AnonymousUserDisplayName,
-  GenerateUUID,
-  DocProvider,
-  getRandomAnonymousUserLetter,
-  isDevOrBlack,
-} from '@proton/docs-shared'
+import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
@@ -64,6 +58,7 @@ import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 import { PageBreakPlugin } from '../Plugins/PageBreak/PageBreakPlugin'
 import { useApplication } from './ApplicationProvider'
+import { isDevOrBlack } from '@proton/utils/env'
 
 const TypingBotEnabled = false
 
