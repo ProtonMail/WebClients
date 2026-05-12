@@ -6061,6 +6061,9 @@
       "Composer limit banner preview": [
         "Vista previa del banner de límite del editor"
       ],
+      "Conversations": [
+        "Conversaciones"
+      ],
       "Create Test Chats": [
         "Crear chats de prueba"
       ],
@@ -6072,6 +6075,15 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Envía un error de límite 422 simulado, que será mostrado por el notificador dentro de la aplicación."
+      ],
+      "Export all chats (JSON)": [
+        "Exportar todos los chats (JSON)"
+      ],
+      "Export current conversation (JSON)": [
+        "Exportar conversaciones acuales (JSON)"
+      ],
+      "Export unsynced only (JSON)": [
+        "Solo exportar no sincronizados (JSON)"
       ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Fuerza al banner del editor en línea a un estado de «aproximado» o «en límite» para que pueda previsualizarlo en cualquier contexto."
@@ -6088,6 +6100,9 @@
       "Last token": [
         "Último token"
       ],
+      "Local storage (IndexedDB)": [
+        "Almacenamiento local (IndexedDB)"
+      ],
       "max": [
         "máx."
       ],
@@ -6096,6 +6111,9 @@
       ],
       "Messages": [
         "Mensajes"
+      ],
+      "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
+        "Los mensajes rechazados por el backend (ej. límites) se mantinen localmente en IndexedDB con una bandera sucia. La exportación descifra el contenido del estado Redux en memoria y etiqueta los mensajes no sincronizados con _dirty:true. Los espacios de clave de cifrado se quitan."
       ],
       "Native bridge: onLimitReachedError": [
         "Native bridge: onLimitReachedError"
@@ -6117,6 +6135,9 @@
       ],
       "Redux/sec": [
         "Redux/sec"
+      ],
+      "Refresh": [
+        "Actualizar"
       ],
       "Render time": [
         "Tiempo de renderizado"
@@ -6145,6 +6166,9 @@
       "Smoothing (Spring-Mass)": [
         "Amortiguación (Resorte-Masa)"
       ],
+      "Spaces": [
+        "Espacios"
+      ],
       "Spin up the test renderer or seed the sidebar with conversations across age buckets.": [
         "Inicia el renderizador de prueba o llena la barra lateral con conversaciones de diferentes grupos de edad."
       ],
@@ -6159,6 +6183,9 @@
       ],
       "Stiffness": [
         "Inflexibilidad"
+      ],
+      "Storage": [
+        "Almacenamiento"
       ],
       "Streaming": [
         "Streaming"
@@ -6186,6 +6213,15 @@
       ],
       "Trigger spaces limit": [
         "Límite de espacios de activación"
+      ],
+      "Unsynced conversations": [
+        "Conversaciones no sincronizadas"
+      ],
+      "Unsynced messages": [
+        "Mensajes no sincronizados"
+      ],
+      "Unsynced spaces": [
+        "Espacios no sincronizados"
       ]
     },
     "lumo: Test Renderer": {
