@@ -1,3 +1,8 @@
+### Version 1.1.5
+
+- Fix WebKitGTK crash on Linux when trying to login or set a password lock
+- Update Tauri dependencies
+
 ### Version 1.1.4
 
 - Fix duplicate keyring entries edge-case
