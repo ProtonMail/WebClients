@@ -53,6 +53,7 @@ export const SafetyReviewHeader = ({ logo, backButton }: { logo: ReactNode; back
 
             <div
                 className="w-full max-w-custom hidden md:flex gap-3 items-center rounded relative text-sm ml-auto"
+                data-testid="safety-review-header-user-info"
                 style={{ '--max-w-custom': '25rem' }}
             >
                 <div className="flex-1 text-right">
