@@ -90,6 +90,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto hinzufügen"
       ],
@@ -161,6 +164,9 @@
       ],
       "Add user": [
         "Benutzer hinzuf."
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer hinzufügen"
       ],
       "Align center": [
         "Zentrieren"
@@ -1278,6 +1284,9 @@
       "Remove this notification": [
         "Diese Benachrichtigung entfernen"
       ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer entfernt"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -2058,6 +2067,9 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 neue Administratorenrollen"
+      ],
       "3 new admin roles": [
         "3 neue Administratorenrollen"
       ],
@@ -2066,6 +2078,9 @@
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Verwaltungsaufgaben mit der Zuweisung bestimmter Administratorenrollen delegieren. Jedem Administrator nur den benötigten Zugriff gewähren. Dies folgt dem Prinzip der geringsten Rechte und schützt deine Organisation vor gehackten Konten und versehentlichen Fehlern."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Verwalte Benutzer auf einmal. Weise Gruppen bestimmte Administratorrollen zu, um Berechtigungen automatisch zu vergeben. Dies folgt dem Prinzip der geringsten Privilegien, wodurch Zeit beim Onboarding und Offboarding gespart und Fehler reduziert werden."
       ],
       "Delegate management with the appropriate admin role.": [
         "Verwaltungsaufgaben mit den geeigneten Administratorenrollen delegieren"
@@ -2078,6 +2093,9 @@
       ],
       "New: Control admin access for individual users": [
         "Neu: Administrationsrechte für einzelne Benutzer kontrollieren"
+      ],
+      "New: Control admin access for many users at once": [
+        "Neu: Administratorzugriff für viele Benutzer auf einmal verwalten"
       ],
       "Organization admin:": [
         "Organisationsadministrator:"
@@ -2852,8 +2870,17 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME }-Migrations-Assistent"
       ],
+      "Add a domain": [
+        "Eine Domain hinzufügen"
+      ],
+      "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
+        "Benutzer hinzufügen und deine Domain manuell einrichten, um E-Mails zu senden und erhalten. Ideal für kleine Teams, die ganz von vorne anfangen."
+      ],
       "Authenticate": [
         "Authentifizieren"
+      ],
+      "Authenticate to Google Workspace": [
+        "Bei Google Workspace anmelden"
       ],
       "Authenticate your Google Workspace account": [
         "Dein Google Workspace-Konto authentifizieren"
@@ -2863,6 +2890,9 @@
       ],
       "Change": [
         "Ändern"
+      ],
+      "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
+        "Entscheide, wie du dein Team und deine E-Mail-Einstellungen zu ${ BRAND_NAME } übertragen möchtest."
       ],
       "Completed": [
         "Abgeschlossen"
@@ -2876,6 +2906,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue migration": [
+        "Migration fortsetzen"
+      ],
       "Domain connected": [
         "Domain verbunden"
       ],
@@ -2885,8 +2918,14 @@
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
       ],
+      "Finalize your migration": [
+        "Deine Migration fertigstellen"
+      ],
       "Finish setting up your business account": [
         "Da Einrichten deines Geschäftskontos abschließen"
+      ],
+      "Go to Domain names": [
+        "Zu Domain-Namen gehen"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-App zum Kopieren von Daten nach ${ BRAND_NAME }"
@@ -2903,14 +2942,23 @@
       "Install migration app": [
         "Übernahme-App installieren"
       ],
+      "Install Migration assistant": [
+        "Migrations-Assistenten installieren"
+      ],
       "Mail": [
         "E-Mail"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
       ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
       ],
       "Migrate users": [
         "Benutzer übernehmen"
+      ],
+      "Migrate users to ${ BRAND_NAME }": [
+        "Benutzer nach ${ BRAND_NAME } migrieren"
       ],
       "Migration includes": [
         "Übernahme beinhaltet"
@@ -2921,6 +2969,15 @@
       ],
       "Migration status": [
         "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Deine Benutzer, E-Mails und Einstellungen automatisch aus Google Workspace übertragen. Wir führen dich Schritt für Schritt durch das Verbinden deines Kontos, die Verifizierung deiner Domain und die sichere Migration deiner Benutzer."
       ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
@@ -2942,6 +2999,9 @@
       ],
       "Set up billing information": [
         "Zahlungsinformationen einrichten"
+      ],
+      "Set up manually": [
+        "Manuell einrichten"
       ],
       "Set up two-factor authentication": [
         "Zwei-Faktor-Authentifizierung einrichten"
@@ -2966,6 +3026,9 @@
       ],
       "Users migrated": [
         "Benutzer übernommen"
+      ],
+      "Verify domain ownership": [
+        "Inhaberschaft der Domain verifizieren"
       ],
       "Verify installation": [
         "Installation überprüfen"
@@ -6335,6 +6398,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Data recovery contacts": [
+        "Wiederherstellungskontakt der Daten"
+      ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Daten erfolgreich wiederhergestellt. Du kannst jetzt deine vorhandenen Daten und verschlüsselten Dateien entschlüsseln."
       ],
@@ -6433,9 +6499,6 @@
       ],
       "People who trust me": [
         "Personen, die mir vertrauen"
-      ],
-      "People you have added as recovery contacts.": [
-        "Personen, die du als Wiederherstellungskontakt erfasst hast."
       ],
       "Proceed anyway": [
         "Trotzdem fortfahren"
@@ -8465,8 +8528,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Mir ist klar, dass ich mich auf älteren Versionen der mobilen ${ BRAND_NAME }-Apps nicht mehr anmelden kann."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Mir ist klar, dass ich mich auf älteren Versionen von ${ BRAND_NAME }-Apps nicht mehr anmelden kann."
       ]
     },
     "Form heading": {
@@ -9496,6 +9559,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } aktualisiert."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
@@ -9642,6 +9708,9 @@
       ],
       "Activity Monitor": [
         "Aktivitätsüberwachung"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -9865,6 +9934,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Bist du sicher, dass du das Zertifikat **${ name }** widerrufen möchtest?"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Bist du dir sicher, dass du dich von diesem Account abmelden möchtest?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Bist du sicher, dass du deine Ordner alphabetisch sortieren möchtest?"
@@ -10198,6 +10270,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Daten mit Wiederherstellungsphrase wiederherstellbar"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Datenwiederherstellung benötigt eine Option zur Passwortzurücksetzung (E-Mail oder SMS)"
       ],
       "dedicated servers": [
         "dedizierte Server"
@@ -10575,6 +10650,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Für einfachen Zugang zu deinen Passwörtern und mehr."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
@@ -11516,6 +11594,9 @@
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
       ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Auf vertrauenswürdigen Geräten empfohlen. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -11981,6 +12062,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Diese Datenwiederherstellungsmethode benötigt eine Option zur Passwortzurücksetzung (E-Mail oder SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Diese Funktion verzögert den Versand deiner E-Mails und gibt dir die Möglichkeit, den Versand während des gewählten Zeitfensters zu widerrufen."
       ],
@@ -12173,8 +12257,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Um ${ toAppName } verwenden zu können, benötigst du eine ${ MAIL_APP_NAME }-Adresse."
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Um diese Methode zur Wiederherstellung nutzen zu können, muss eine Option zum Zurücksetzen des Passworts vorhanden sein, beispielsweise eine Bestätigung per E-Mail oder SMS."
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Um diese Wiederherstellungsmethode zu nutzen, musst du ${ PROTON_SENTINEL_NAME } deaktivieren und eine Option zur Passwortzurücksetzung aktivieren (E-Mail oder SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten, damit er richtig funktioniert. Siehe ${ link }."
@@ -19477,6 +19561,11 @@
         "Deine Adressschlüssel konnten nicht generiert werden. Um den Post-Quantum-Schutz zu aktivieren, musst du deine neuen Verschlüsselungsschlüssel manuell generieren.\n\nGehe zu ${ settingsLink } und wähle \"Schlüssel generieren\" für jede Adresse aus."
       ]
     },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } apps**: your new keys won't work on older app versions.": [
+        "**Du musst alle ${ BRAND_NAME }-Apps aktualisieren**: Deine neuen Schlüssel funktionieren nicht auf älteren App-Versionen."
+      ]
+    },
     "PQC key generation": {
       "This will generate new quantum-resistant encryption keys for your account.": [
         "Dadurch werden neue quantenresistente Verschlüsselungsschlüssel für dein Konto generiert."
@@ -21084,6 +21173,12 @@
     "Setting": {
       "Enable Photos section": [
         "Bereich „Fotos“ aktivieren"
+      ],
+      "Get updates about comments via email": [
+        "Benachrichtigungen über Kommentare via E-Mail erhalten"
+      ],
+      "Include document name in email notifications": [
+        "Dokumentnamen in E-Mail-Benachrichtigungen einbeziehen"
       ]
     },
     "Settings description": {
@@ -21948,11 +22043,35 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Delegierte Rollen zuweisen"
+      ],
+      "Assign roles": [
+        "Rollen zuweisen"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicke einen Benutzernamen um dessen Rolle und Berechtigungen zu verwalten."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klicke auf „Bearbeiten“, um dieser Gruppe Rollen zuzuweisen und den Zugriff der Mitglieder automatisch zu verwalten."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Verdiene bis zu ${ maxRewardAmount } als Guthaben"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Du erhältst Guthaben, wenn die von dir eingeladene Person ein ${ BRAND_NAME } Abonnement abschließt."
+      ],
+      "New: Roles and permissions tab": [
+        "Neu: Registerkarte „Rollen und Berechtigungen“"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Öffne diese Registerkarte, um bestimmte Berechtigungen ohne vollständige Administratorrechte zu erteilen."
+      ],
+      "User roles available": [
+        "Benutzerrollen verfügbar"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Über diese Registerkarte kannst du nun einzelnen Benutzern Rollen zuweisen."
       ]
     },
     "sso": {
@@ -25763,6 +25882,9 @@
       "User is a group": [
         "Benutzer ist eine Gruppe"
       ],
+      "via ${ groupName }": [
+        "über ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
       ]
@@ -26086,6 +26208,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(über ${ groupName })"
+      ],
+      "(via group)": [
+        "(über Gruppe)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Weise einem Benutzer delegierte Rollen zu, um ihm nur die spezifischen Berechtigungen zu erteilen, die er benötigt. Behalte die vollen Administrationsrechte getrennt und deine Umgebung sicher."
       ],

@@ -8,6 +8,9 @@
       "Full view (see all event details)": [
         "完整檢視（檢視所有事件的詳細資訊）"
       ],
+      "Limited view": [
+        "限制檢視"
+      ],
       "Limited view (see only free/busy)": [
         "有限制的檢視（僅檢視有空／忙碌）"
       ]
@@ -1465,6 +1468,9 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI 授權"
       ],
@@ -1482,6 +1488,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
@@ -1903,6 +1912,9 @@
       ],
       "Connect 10 devices at once": [
         "同時連線 10 臺裝置"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
@@ -2334,6 +2346,12 @@
       ]
     },
     "Checkout row": {
+      "${ n } day": [
+        "${ n } 天"
+      ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "${ users } user": [
         "${ users } 位使用者"
       ],
@@ -3835,6 +3853,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
+      ],
       "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
         "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
       ],
@@ -3867,6 +3888,9 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "我們無法再存取至 ${ boldEmails }"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -4621,6 +4645,9 @@
       ],
       "Incorrect password": [
         "密碼錯誤"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "復原代碼不正確，請重試。"
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
@@ -5659,6 +5686,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "註冊您的安全金鑰時出現問題。請再試一次。"
       ]
@@ -5678,6 +5708,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ],
       "Insert your security key into your device's USB port.": [
         "將安全金鑰插入您的 USB 連接孔。"
@@ -6652,6 +6685,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
       ],
@@ -6679,6 +6715,9 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length }更多的電子郵件位址"
       ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } 筆結果"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
@@ -6694,6 +6733,9 @@
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
+      "${ total } user found": [
+        "找到 ${ total } 位使用者"
+      ],
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
       ],
@@ -6705,6 +6747,9 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } 已更新"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
@@ -7435,6 +7480,9 @@
       "For easy access to your passwords and more.": [
         "容易存取密碼及更多。"
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
       "Free forever": [
         "永遠免費"
       ],
@@ -8121,6 +8169,9 @@
       ],
       "Recently used servers:": [
         "最近使用的伺服器:"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建議僅用於受信任的裝置。 ${ keepMeSignedInLearnMoreLink }"
@@ -9916,6 +9967,9 @@
       "Current email": [
         "目前的電子郵件"
       ],
+      "Custom email domain": [
+        "自訂電子郵件網域"
+      ],
       "Date": [
         "日期"
       ],
@@ -10011,6 +10065,9 @@
       ],
       "Enabled": [
         "啟用"
+      ],
+      "End time": [
+        "結束時間"
       ],
       "Enter password": [
         "請輸入密碼"
@@ -10572,6 +10629,9 @@
       ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
+      ],
+      "today": [
+        "今天"
       ],
       "Transactions": [
         "交易記錄"
@@ -11265,6 +11325,9 @@
       ],
       "Secure calendar": [
         "安全行事曆"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Member action": {
@@ -12995,6 +13058,9 @@
       "Organization only": [
         "僅限組織機構"
       ],
+      "Permanent": [
+        "永久"
+      ],
       "Receive from all": [
         "從全部接收"
       ],
@@ -14008,6 +14074,9 @@
       ]
     },
     "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ],
@@ -14546,6 +14615,11 @@
         "您的復原電話號碼:"
       ]
     },
+    "safety_review": {
+      "Allow trusted friends to sign in": [
+        "允許信任的朋友登入"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "取消"
@@ -15037,6 +15111,12 @@
       ]
     },
     "Signup": {
+      "${ FREE_PASS_ALIASES } hide-my-email alias": [
+        "${ FREE_PASS_ALIASES } hide-my-email 組別名"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } Hide-my-email 別名以對抗垃圾郵件"
+      ],
       "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
         "用於對抗垃圾郵件的 ${ FREE_PASS_ALIASES } 個 hide-my-email 別名"
       ],
@@ -15045,6 +15125,9 @@
       ],
       "${ maxAddresses } email address": [
         "${ maxAddresses }個電郵位址"
+      ],
+      "${ maxAddresses } extra email address for you": [
+        "給您的 ${ maxAddresses } 組額外電子郵件地址"
       ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars }個行事曆"
@@ -15780,6 +15863,11 @@
     "State": {
       "Canceling your subscription, please wait": [
         "正將您的訂購授權取消，請稍候"
+      ]
+    },
+    "Status": {
+      "${ count } person": [
+        "${ count } 人"
       ]
     },
     "Step in filter modal": {
@@ -18055,6 +18143,9 @@
       ],
       "Upload your organization’s logo": [
         "上傳您的組織標誌圖片檔案"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ],
       "User": [
         "使用者"
