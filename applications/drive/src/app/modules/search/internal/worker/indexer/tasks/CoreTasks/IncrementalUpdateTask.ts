@@ -1,12 +1,15 @@
 import { Logger } from '../../../../shared/Logger';
-import { isPermanentError, sendErrorReportForSearch } from '../../../../shared/errors';
 import type { IndexPopulatorRegistration } from '../../TreeSubscriptionRegistry';
-import type { TaskContext } from '../BaseTask';
+import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
 /**
  * Processes buffered tree events for a single IndexPopulator.
  * Enqueued by TreeSubscriptionRegistry when events arrive (debounced).
+ *
+ * Errors propagate to IndexerTaskQueue, which records both the lifecycle
+ * counter and the severity counter (markIndexer{Permanent|Transient}Error)
+ * and decides retry vs stop.
  */
 export class IncrementalUpdateTask extends BaseTask {
     constructor(private readonly registration: IndexPopulatorRegistration) {
@@ -14,7 +17,11 @@ export class IncrementalUpdateTask extends BaseTask {
     }
 
     getUid(): string {
-        return `task-IncrementalUpdate:${this.registration.populator.getUid()}`;
+        return `${this.getKind()}:${this.registration.populator.getUid()}`;
+    }
+
+    getKind(): IndexerTaskKind {
+        return 'incremental-update-task';
     }
 
     async execute(ctx: TaskContext): Promise<void> {
@@ -25,20 +32,17 @@ export class IncrementalUpdateTask extends BaseTask {
         Logger.info(`IncrementalUpdate: processing ${events.length} events for ${populatorUid}`);
 
         try {
-            if (events.length > 0) {
-                const processed = await registration.populator.processIncrementalUpdates(events, ctx);
-                if (processed > 0) {
-                    registration.collector.commit(processed);
-                    registration.lastEventId = events[processed - 1].eventId;
-                    registration.subscriptionTime = Date.now();
-                    ctx.notifyIndexingProgress();
-                }
+            if (events.length === 0) {
+                return;
             }
-        } catch (e) {
-            if (isPermanentError(e)) {
-                throw e;
+
+            const processed = await registration.populator.processIncrementalUpdates(events, ctx);
+            if (processed > 0) {
+                registration.collector.commit(processed);
+                registration.lastEventId = events[processed - 1].eventId;
+                registration.subscriptionTime = Date.now();
+                ctx.notifyIndexingProgress();
             }
-            sendErrorReportForSearch(`Uncaught incremental update error for <${populatorUid}>`, e);
         } finally {
             ctx.treeSubscriptionRegistry.markIncrementalUpdateComplete(registration);
         }

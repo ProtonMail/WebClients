@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-import metrics from '@proton/metrics';
-
+import { legacySearchMetrics } from '../../modules/search';
 import type { ESLink } from './types';
 import useSearchLibrary from './useSearchLibrary';
 
@@ -32,14 +31,7 @@ function useSearchResultsProvider() {
             setResults(results);
         }).finally(() => {
             setIsSearching(false);
-
-            const durationInSeconds = (performance.now() - startTime) / 1000;
-            metrics.drive_search_query_time_histogram.observe({
-                Labels: {
-                    searchVersion: 'legacy',
-                },
-                Value: durationInSeconds,
-            });
+            legacySearchMetrics.observeSearchQueryDuration((performance.now() - startTime) / 1000);
         });
     };
 

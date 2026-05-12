@@ -1,5 +1,7 @@
 export { SearchModule } from './internal/mainThread/SearchModule';
 export { tryCatchWithNotification } from './internal/shared/errors';
+export { searchMetrics, legacySearchMetrics } from './internal/shared/searchMetrics';
+export type { SearchMetrics, LegacySearchMetrics } from './internal/shared/searchMetrics';
 export { IndexKind } from './internal/shared/types';
 export type {
     IndexingProgress,

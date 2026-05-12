@@ -93,15 +93,19 @@ describe('IncrementalUpdateTask', () => {
         expect(registration.lastIncrementalUpdateTime).toBeGreaterThan(0);
     });
 
-    it('leaves events in collector and calls markIncrementalUpdateComplete on transient error', async () => {
+    it('propagates transient errors, leaves events in collector, calls markIncrementalUpdateComplete', async () => {
         const { populator, registration } = await registerAndGet(registry);
         (populator.processIncrementalUpdates as jest.Mock).mockRejectedValue(new Error('boom'));
 
         bridge.emitEvent(SCOPE_ID, makeEvent('e1'));
 
         const ctx = makeTaskContext({ treeSubscriptionRegistry: registry });
-        await new IncrementalUpdateTask(registration).execute(ctx);
+        await expect(new IncrementalUpdateTask(registration).execute(ctx)).rejects.toThrow('boom');
 
+        // Severity + lifecycle counters and Sentry routing are owned by IndexerTaskQueue's
+        // catch block now, so the task only has to propagate. The finally block must still
+        // run: the collector keeps the un-committed events, and lastIncrementalUpdateTime
+        // is bumped via markIncrementalUpdateComplete.
         expect(registration.collector.peek()).toHaveLength(1);
         expect(registration.lastIncrementalUpdateTime).toBeGreaterThan(0);
     });

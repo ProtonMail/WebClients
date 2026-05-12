@@ -185,9 +185,17 @@ import type { HttpsProtonMeWebDrivePerformanceV2DataloadHistogramV1SchemaJson } 
 import type { HttpsProtonMeWebDrivePerformanceV2PageloadHistogramV1SchemaJson } from './types/web_drive_performance_v2_pageload_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
-import type { HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV1SchemaJson } from './types/web_drive_search_index_build_time_histogram_v1.schema';
-import type { HttpsProtonMeWebDriveSearchIndexSizeHistogramV1SchemaJson } from './types/web_drive_search_index_size_histogram_v1.schema';
+import type { HttpsProtonMeWebDriveSearchCleanupBlobsRemovedHistogramV1SchemaJson } from './types/web_drive_search_cleanup_blobs_removed_histogram_v1.schema';
+import type { HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson } from './types/web_drive_search_environment_incompatibility_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchIncrementalUpdateTimeHistogramV1SchemaJson } from './types/web_drive_search_incremental_update_time_histogram_v1.schema';
+import type { HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV2SchemaJson } from './types/web_drive_search_index_build_time_histogram_v2.schema';
+import type { HttpsProtonMeWebDriveSearchIndexSizeHistogramV2SchemaJson } from './types/web_drive_search_index_size_histogram_v2.schema';
+import type { HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson } from './types/web_drive_search_initial_indexing_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson } from './types/web_drive_search_opt_in_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from './types/web_drive_search_permanent_errors_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchQueryTimeHistogramV1SchemaJson } from './types/web_drive_search_query_time_histogram_v1.schema';
+import type { HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson } from './types/web_drive_search_query_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchTransientErrorsTotalV1SchemaJson } from './types/web_drive_search_transient_errors_total_v1.schema';
 import type { HttpsProtonMeWebDriveWarningsTotalV1SchemaJson } from './types/web_drive_warnings_total_v1.schema';
 import type { EmailContentRenderTime } from './types/web_mail_performance_email_content_render_time_histogram_v1.schema';
 import type { EmailContentRenderTimeSeconds } from './types/web_mail_performance_email_content_render_time_second_histogram_v1.schema';
@@ -549,11 +557,27 @@ class Metrics extends MetricsBase {
 
     public drive_public_share_load_success_total: Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>;
 
-    public drive_search_index_build_time_histogram: Histogram<HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV1SchemaJson>;
+    public drive_search_cleanup_blobs_removed_histogram: Histogram<HttpsProtonMeWebDriveSearchCleanupBlobsRemovedHistogramV1SchemaJson>;
 
-    public drive_search_index_size_histogram: Histogram<HttpsProtonMeWebDriveSearchIndexSizeHistogramV1SchemaJson>;
+    public drive_search_environment_incompatibility_total: Counter<HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson>;
+
+    public drive_search_incremental_update_time_histogram: Histogram<HttpsProtonMeWebDriveSearchIncrementalUpdateTimeHistogramV1SchemaJson>;
+
+    public drive_search_index_build_time_histogram: Histogram<HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV2SchemaJson>;
+
+    public drive_search_index_size_histogram: Histogram<HttpsProtonMeWebDriveSearchIndexSizeHistogramV2SchemaJson>;
+
+    public drive_search_initial_indexing_total: Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson>;
+
+    public drive_search_opt_in_total: Counter<HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson>;
+
+    public drive_search_permanent_errors_total: Counter<HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson>;
 
     public drive_search_query_time_histogram: Histogram<HttpsProtonMeWebDriveSearchQueryTimeHistogramV1SchemaJson>;
+
+    public drive_search_query_total: Counter<HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson>;
+
+    public drive_search_transient_errors_total: Counter<HttpsProtonMeWebDriveSearchTransientErrorsTotalV1SchemaJson>;
 
     public drive_warnings_total: Counter<HttpsProtonMeWebDriveWarningsTotalV1SchemaJson>;
 
@@ -1518,21 +1542,67 @@ class Metrics extends MetricsBase {
                 this.requestService
             );
 
+        this.drive_search_cleanup_blobs_removed_histogram =
+            new Histogram<HttpsProtonMeWebDriveSearchCleanupBlobsRemovedHistogramV1SchemaJson>(
+                { name: 'web_drive_search_cleanup_blobs_removed_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_search_environment_incompatibility_total =
+            new Counter<HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1SchemaJson>(
+                { name: 'web_drive_search_environment_incompatibility_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_search_incremental_update_time_histogram =
+            new Histogram<HttpsProtonMeWebDriveSearchIncrementalUpdateTimeHistogramV1SchemaJson>(
+                { name: 'web_drive_search_incremental_update_time_histogram', version: 1 },
+                this.requestService
+            );
+
         this.drive_search_index_build_time_histogram =
-            new Histogram<HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV1SchemaJson>(
-                { name: 'web_drive_search_index_build_time_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV2SchemaJson>(
+                { name: 'web_drive_search_index_build_time_histogram', version: 2 },
                 this.requestService
             );
 
         this.drive_search_index_size_histogram =
-            new Histogram<HttpsProtonMeWebDriveSearchIndexSizeHistogramV1SchemaJson>(
-                { name: 'web_drive_search_index_size_histogram', version: 1 },
+            new Histogram<HttpsProtonMeWebDriveSearchIndexSizeHistogramV2SchemaJson>(
+                { name: 'web_drive_search_index_size_histogram', version: 2 },
+                this.requestService
+            );
+
+        this.drive_search_initial_indexing_total =
+            new Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson>(
+                { name: 'web_drive_search_initial_indexing_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_search_opt_in_total = new Counter<HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson>(
+            { name: 'web_drive_search_opt_in_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_search_permanent_errors_total =
+            new Counter<HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson>(
+                { name: 'web_drive_search_permanent_errors_total', version: 1 },
                 this.requestService
             );
 
         this.drive_search_query_time_histogram =
             new Histogram<HttpsProtonMeWebDriveSearchQueryTimeHistogramV1SchemaJson>(
                 { name: 'web_drive_search_query_time_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_search_query_total = new Counter<HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson>(
+            { name: 'web_drive_search_query_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_search_transient_errors_total =
+            new Counter<HttpsProtonMeWebDriveSearchTransientErrorsTotalV1SchemaJson>(
+                { name: 'web_drive_search_transient_errors_total', version: 1 },
                 this.requestService
             );
 
