@@ -220,10 +220,11 @@ export class MissingUserKeyEncryptionError extends Error {
 }
 
 /**
- * Returns true for errors that are unrecoverable and should permanently stop the
- * task processor. These errors require user intervention (free disk space, clear DB, etc).
+ * Returns true for indexer errors that are unrecoverable and should permanently
+ * stop the task processor. These errors require user intervention (free disk
+ * space, clear DB, etc).
  */
-export function isPermanentError(e: unknown): boolean {
+export function isPermanentIndexerError(e: unknown): boolean {
     return classifyPermanentError(e) !== null;
 }
 

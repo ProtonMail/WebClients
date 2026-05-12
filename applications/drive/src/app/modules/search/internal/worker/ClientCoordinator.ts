@@ -1,6 +1,6 @@
 import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
 import { Logger } from '../shared/Logger';
-import { sendErrorReportForSearch } from '../shared/errors';
+import { searchMetrics } from '../shared/searchMetrics';
 import type { ClientId, UserId } from '../shared/types';
 
 const HEARTBEAT_TIMEOUT = 300_000; // 5 minutes — generous to survive browser throttling of background tabs.
@@ -102,16 +102,10 @@ export class ClientCoordinator {
                 this.disconnect(clientId);
                 // Clients normally disconnect via beforeunload in WorkerClient.
                 // Heartbeat timeout is a fallback — report so we can track how often it happens.
-                sendErrorReportForSearch(
-                    'Search client disconnected by timeout',
-                    new Error('Search client disconnected by timeout'),
-                    {
-                        extra: {
-                            staleness: now - lastSeen,
-                            remainingClients: this.clients.size,
-                        },
-                    }
-                );
+                searchMetrics.markClientDisconnectTimeout({
+                    staleness: now - lastSeen,
+                    remainingClients: this.clients.size,
+                });
             }
         }
     }
