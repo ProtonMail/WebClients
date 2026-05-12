@@ -7,6 +7,7 @@ import type { SpaceMap } from './redux/slices/core/spaces';
 import {
     type EncryptedWireTurn,
     type GenerationResponseMessage,
+    type ImageAspectRatio,
     Role,
     type UnencryptedWireTurn,
     type WireTurn,
@@ -15,6 +16,8 @@ import {
     isUnencryptedWireTurn,
     isWireTurn,
 } from './types-api';
+
+export type { ImageAspectRatio };
 
 // *** Turn aliases ***
 // Turn types are defined in types-api as WireTurn (matching backend schema)
@@ -1014,6 +1017,10 @@ export enum LUMO_API_ERRORS {
 
 export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
 
+export type ImageGenerationOptions = {
+    aspectRatio?: ImageAspectRatio;
+};
+
 // TODO this type should be refactored in a union like:
 //    ({ type: 'send', ... } | { type: 'edit', ... }) | { type: 'regenerate' } & { ...common... }
 export interface ActionParams {
@@ -1023,6 +1030,7 @@ export interface ActionParams {
     isWebSearchButtonToggled: boolean;
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
+    imageOptions?: ImageGenerationOptions;
 }
 
 export interface ErrorContext {

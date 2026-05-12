@@ -1,5 +1,4 @@
 /* eslint-disable no-duplicate-imports */
-
 /* Types for the lumo-api-client library.
  *
  * This file contains:
@@ -9,7 +8,6 @@
  *
  * Most types are re-exported to avoid breaking existing imports within the library.
  */
-
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 import type { Base64, RequestId, Status } from '../../../types';
 import {
@@ -27,6 +25,7 @@ import {
     type GenerationResponseMessageDecrypted,
     type GenerationTarget,
     type HarmfulMessage,
+    type ImageAspectRatio,
     type ImageDataMessage,
     type IngestingMessage,
     type LumoApiGenerationRequest,
@@ -75,6 +74,7 @@ export {
     type GenerationResponseMessageDecrypted,
     type GenerationTarget,
     type HarmfulMessage,
+    type ImageAspectRatio,
     type ImageDataMessage,
     type IngestingMessage,
     type LumoApiGenerationRequest,
@@ -148,6 +148,7 @@ export interface AssistantCallOptions {
     requestId?: RequestId;
     generateTitle?: boolean;
     autoGenerateEncryption?: boolean;
+    imageAspectRatio?: ImageAspectRatio;
 }
 
 /**
