@@ -2945,6 +2945,9 @@
       "Finalize your migration": [
         "Slutför din migrering"
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "Finish setting up your business account": [
         "Slutför inställningen av ditt företagskonto"
       ],
@@ -2960,6 +2963,9 @@
       "Has errors": [
         "Har fel"
       ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importfel för ${ user.AdminSetName }"
+      ],
       "In progress": [
         "Pågår"
       ],
@@ -2968,6 +2974,9 @@
       ],
       "Install migration app": [
         "Installera migreringsappen"
+      ],
+      "Install Migration assistant": [
+        "Installera migrationsassistent"
       ],
       "Loading your organization data": [
         "Laddar din organisationsdata"
@@ -3011,6 +3020,9 @@
       ],
       "More details": [
         "Mer detaljer"
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "Inga feldetaljer tillgängliga. Kontakta kundsupport för mer information."
       ],
       "No users to display": [
         "Inga användare att visa"
@@ -6472,9 +6484,6 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Anslut med dem för att bekräfta att de behöver hjälp att återställa sina data."
       ],
-      "Contact-assisted recovery": [
-        "Kontaktassisterad återställning"
-      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -6579,9 +6588,6 @@
       ],
       "People who trust me": [
         "Människor som litar på mig"
-      ],
-      "People you have added as recovery contacts.": [
-        "Personer du har lagt till som återställningskontakter."
       ],
       "Proceed anyway": [
         "Fortsätt ändå"
@@ -8600,11 +8606,6 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Jag förstår att jag inte längre kommer att kunna logga in från äldre versioner av mobilappar för ${ BRAND_NAME }."
-      ]
-    },
     "Form heading": {
       "Enter your email address": [
         "Ange din e-postadress"
@@ -9757,6 +9758,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsövervakare"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -12132,6 +12136,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+        "Detta ger dig snabb och säker åtkomst till ditt ${ BRAND_NAME }-konto så du kan ändra ditt lösenord."
+      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerade med dessa användare."
       ],
@@ -12203,6 +12210,12 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
+      ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Kontaktassisterad återställning**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Nödåtkomst**."
       ],
       "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **QR-kodsinloggning**."
@@ -20378,6 +20391,9 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Om du glömmer ditt ${ BRAND_NAME }-lösenord och behöver återställa det så kommer full åtkomst till ditt ${ BRAND_NAME }-konto att återställas nästa gång du loggar in på den här enheten."
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer din återställningsfras att låta dig logga in och återställa dina data."
+      ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Om du tappar dina inloggningsuppgifter och behöver återställa ditt konto **är det absolut nödvändigt** att du har både en **kontoåterställnings- och dataåterställningsmetod** på plats, annars kanske du inte kommer åt din e-post, kontakter, filer eller lösenord."
       ],
@@ -20638,6 +20654,9 @@
       "Allow": [
         "Tillåt"
       ],
+      "Allow data recovery from this device": [
+        "Tillåt dataåterställning från denna enhet"
+      ],
       "Allow password reset from the settings": [
         "Tillåt lösenordsåterställning från inställningarna"
       ],
@@ -20652,6 +20671,9 @@
       ],
       "Allow trusted friends to sign in": [
         "Tillåt betrodda vänner att logga in"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Tillåt betrodda vänner att låsa upp dina data"
       ],
       "Back to ${ backLink.appNameString }": [
         "Tillbaka till ${ backLink.appNameString }"
@@ -20743,6 +20765,9 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "För att vara säker på att telefonnumret är ditt, ange verifieringskoden skickad till ${ boldPhoneNumber }."
       ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "För att säkerställa att denna adress verkligen är din skickar vi ett e-postmeddelande med en verifieringslänk."
+      ],
       "Verified password": [
         "Verifierat lösenord"
       ],
@@ -20770,8 +20795,17 @@
       "Verify your recovery phone": [
         "Verifiera din telefon för återställning"
       ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Du kan använda e-postverifiering för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
       "You can use SMS verification to regain access to your account if you forget your password.": [
         "Du kan använda SMS-verifiering för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Du kan använda din e-post för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Du kan använda din telefon för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
       "Your security setup": [
         "Din säkerhetsinställning"
@@ -20983,6 +21017,9 @@
     "Sentinel banner": {
       "To ensure the highest possible security of your account, disable the highlighted options.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera de markerade alternativen."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "För att säkerställa att du alltid kan komma åt ditt ${ BRAND_NAME }-konto, ladda ner din återställningsfras."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har rekommenderade åtgärder från ${ PROTON_SENTINEL_NAME }"
@@ -22197,6 +22234,9 @@
       "Click a user's name to manage their role and permissions.": [
         "Klicka på en användares namn för att hantera deras roll och behörigheter."
       ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klicka på “Redigera“ för att tilldela roller till denna grupp och hantera medlemsåtkomst automatiskt."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Tjäna upp till ${ maxRewardAmount } i kredit"
       ],
@@ -22205,6 +22245,9 @@
       ],
       "New: Roles and permissions tab": [
         "Nytt: Flik för roller och behörigheter"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Öppna denna flik för att bevilja specifika behörigheter utan fullständig administratörsåtkomst."
       ],
       "User roles available": [
         "Användarroller tillgängliga"
@@ -23258,6 +23301,9 @@
       ],
       "${ planTitle } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
         "${ planTitle } ger dig åtkomst till alla appar och premiumfunktioner. Integritet är inbyggt så att du kan fortsätta med det med vetskap om att din data och din identitet är säker."
+      ],
+      "${ planTitle } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planTitle } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
       "${ planTitle } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planTitle } ger dig obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
@@ -25563,6 +25609,9 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
+      "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
+        "Vi skickade en kod till din e-post för att bekräfta din identitet. Koden är giltig i 10 minuter. Ange den nedan."
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
       ],
@@ -26760,6 +26809,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
+      ],
+      "Are you sure you want to remove your notification email?": [
+        "Är du säker på att du vill ta bort din e-postavisering?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."

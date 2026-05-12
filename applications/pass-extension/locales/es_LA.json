@@ -909,6 +909,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se pudo analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
+      "A desktop unlock check is already in progress.": [
+        "Ya se está realizando una comprobación de desbloqueo del escritorio."
+      ],
       "A domain ownership must be verified first.": [
         "Primero se debe verificar la propiedad de un dominio."
       ],

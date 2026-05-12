@@ -1511,8 +1511,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2238,7 +2237,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -6762,7 +6761,7 @@
         "${ VPN_APP_NAME } IP adresinizi gizler. Böylece siteler sizin kim olduğunuzu anlayamaz."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
@@ -7445,7 +7444,7 @@
         "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
       ],
       "For just ${ bundlePlanPriceInline }": [
-        "Sadece ${ bundlePlanPriceInline }"
+        "Yalnızca ${ bundlePlanPriceInline }"
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden yeni iletiler için"
@@ -7697,7 +7696,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9742,6 +9741,9 @@
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
       ],
+      "Mailing list": [
+        "E-posta listesi"
+      ],
       "Main": [
         "Ana"
       ],
@@ -10180,6 +10182,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Duyuru abonelikleriniz yükleniyor..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Aboneliğini sonlandırdığınız duyurular veya e-posta listeleri burada görüntülenir."
       ],
@@ -12227,10 +12232,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Bana daha sonra hatırlat"
+        "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -15490,7 +15495,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu başlığı gizli tutmak ister misiniz?"
+        "Bu duyuru gizlensin mi?"
       ],
       "Label as": [
         "Etiketle"
@@ -15509,6 +15514,13 @@
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
+      ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
+      "Mailing list": [
+        "E-posta listesi",
+        "E-posta listesi"
       ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
@@ -15922,10 +15934,10 @@
         "Kime"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu ön izlemek için indirin."
+        "Bu elektronik tabloyu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
+        "Bu elektronik tabloyu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
       "Trash all messages?": [
         "Tüm iletiler çöpe atılsın mı?"

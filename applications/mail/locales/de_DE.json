@@ -51,6 +51,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -1505,8 +1508,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -6755,6 +6757,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } verbirgt deine IP-Adresse, so dass Websites dich nicht identifizieren können."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
@@ -6841,6 +6846,9 @@
       ],
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -7432,6 +7440,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Für zusätzliche Sicherheit kannst du eine Passphrase festlegen. Diese wird nicht in der Kalendereinladung enthalten sein, denke daran, sie separat mit deinen Gästen zu teilen."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
       ],
@@ -7680,6 +7691,9 @@
       ],
       "Low Priority": [
         "Niedrige Priorität"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } zu deiner Standard-E-Mail-Anwendung machen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8026,6 +8040,9 @@
       ],
       "Recipient: ": [
         "Empfänger: "
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -9721,6 +9738,9 @@
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
       ],
+      "Mailing list": [
+        "Verteilerliste"
+      ],
       "Main": [
         "Hauptebene"
       ],
@@ -10159,6 +10179,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Deine Newsletter-Abonnemente werden geladen..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Newsletter oder Verteilerlisten, von denen du abgemeldet bist, werden hier angezeigt."
       ],
@@ -12204,6 +12227,12 @@
       ],
       "No parent folder": [
         "Kein übergeordneter Ordner"
+      ],
+      "Remind me later": [
+        "Später erinnern"
+      ],
+      "Yes, don't show again": [
+        "Ja, nicht erneut anzeigen"
       ]
     },
     "Option group": {
@@ -15462,6 +15491,9 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
+      "Keep this banner hidden?": [
+        "Dieses Banner ausgeblendet lassen?"
+      ],
       "Label as": [
         "Folgender Kategorie zuordnen"
       ],
@@ -15479,6 +15511,13 @@
       ],
       "Load remote content": [
         "Externe Inhalte laden"
+      ],
+      "Loading...": [
+        "Wird geladen…"
+      ],
+      "Mailing list": [
+        "Verteilerliste",
+        "Verteilerlisten"
       ],
       "Make a secure connection your default": [
         "Mach eine sichere Verbindung zum Standard"

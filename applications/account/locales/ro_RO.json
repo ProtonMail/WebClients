@@ -6685,9 +6685,6 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Conectați-vă cu ei pentru a confirma că au nevoie de ajutor pentru a-și recupera datele."
       ],
-      "Contact-assisted recovery": [
-        "Recuperare asistată de contacte"
-      ],
       "Contacts": [
         "Contacte"
       ],
@@ -6797,9 +6794,6 @@
       ],
       "People who trust me": [
         "Persoane care au încredere în mine"
-      ],
-      "People you have added as recovery contacts.": [
-        "Persoane adăugate ca și contacte de recuperare."
       ],
       "Proceed anyway": [
         "Continuare oricum"
@@ -8860,8 +8854,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor mobile ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor ${ BRAND_NAME }."
       ]
     },
     "Form heading": {
@@ -12703,9 +12697,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Pentru a folosi ${ toAppName }, vă trebuie o adresă ${ MAIL_APP_NAME }."
-      ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Pentru a utiliza această metodă de recuperare a datelor, trebuie să aveți o opțiune de resetare a parolei, cum ar fi verificarea prin e-mail sau verificarea prin SMS."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
@@ -23000,8 +22991,17 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Atribuiți roluri delegate"
+      ],
+      "Assign roles": [
+        "Atribuiți roluri"
+      ],
       "Click a user's name to manage their role and permissions.": [
         "Faceți clic pe numele unui utilizator pentru a-i gestiona rolul și permisiunile."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Faceți clic pe Editare pentru a atribui roluri acestui grup și a gestiona automat accesul membrilor."
       ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Câștigați până la ${ maxRewardAmount } în credite."
@@ -23009,8 +23009,17 @@
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obțineți credite când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
       ],
+      "New: Roles and permissions tab": [
+        "Nou: fila de roluri și permisiuni"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Deschideți această filă pentru a acorda anumite permisiuni fără acces complet de administrator."
+      ],
       "User roles available": [
         "Roluri de utilizator disponibile"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Din această filă acum puteți atribui roluri utilizatorilor individuali."
       ]
     },
     "sso": {
