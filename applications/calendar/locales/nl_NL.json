@@ -50,6 +50,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
       "Add a date": [
         "Datum toevoegen"
       ],
@@ -3527,6 +3530,9 @@
       "Account does not exist": [
         "Account bestaat niet"
       ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3953,6 +3959,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
@@ -5152,6 +5161,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -5222,6 +5234,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
@@ -5601,6 +5616,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Aanpassingen m.b.t. frequentie zullen verloren gaan."
@@ -8868,6 +8886,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Wachtwoordzin gekopieerd naar klembord"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

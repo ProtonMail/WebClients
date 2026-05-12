@@ -50,6 +50,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "Legg til en dato"
       ],
@@ -5158,6 +5161,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -5228,6 +5234,9 @@
       ],
       "Ad targeting": [
         "Annonsemålretting"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5607,6 +5616,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "For ekstra sikkerhet kan du angi en passfrase. Den blir ikke inkludert i kalenderinvitasjonen, husk å dele den med gjestene dine separat."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
@@ -5999,6 +6011,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Tidsintervallet overlapper med et eksisterende tidsrom."
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."

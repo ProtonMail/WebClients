@@ -50,6 +50,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add a date": [
         "Tilføj en dato"
       ],
@@ -5158,6 +5161,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer din IP-adresse, så websteder ikke kan identificere dig."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -5228,6 +5234,9 @@
       ],
       "Ad targeting": [
         "Annoncemålretning"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5607,6 +5616,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Som en ekstra sikkerhed kan du indstille en adgangssætning. Den vil ikke blive inkluderet i kalenderinvitationen—husk at dele den med dine gæster separat."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "Frequency modifications will be lost.": [
         "Hyppighedsændringer vil gå tabt."
@@ -5999,6 +6011,9 @@
       ],
       "Range overlaps with an existing range.": [
         "Din reservation overlapper med en eksisterende reservation."
+      ],
+      "RECOMMENDED": [
+        "FORSLÅET"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
