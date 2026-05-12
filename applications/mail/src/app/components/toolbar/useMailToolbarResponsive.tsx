@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
-export const useMailboxToolbarBreakpoints = () => {
+export const useMailboxToolbarBreakpoints = (placement: 'list' | 'header') => {
     const observerRef = useRef<ResizeObserver | null>(null);
     const [containerWidth, setContainerWidth] = useState(Infinity);
     const breakpoint = useActiveBreakpoint();
@@ -26,17 +26,10 @@ export const useMailboxToolbarBreakpoints = () => {
 
     // Derived breakpoints based on available toolbar width (not viewport width)
     const isSmallScreen = breakpoint.viewportWidth['<=small'];
-    const listBreakpoints = {
-        isExtraTiny: containerWidth < 500,
-        isTiny: containerWidth < 650,
-        filterAsDropdown: containerWidth < 1024,
-    };
 
-    const headerBreakpoints = {
-        isExtraTiny: containerWidth < 375,
-        isTiny: containerWidth < 450,
-        filterAsDropdown: containerWidth < 1024,
-    };
+    const isExtraTiny = containerWidth < (placement === 'list' ? 500 : 375);
+    const isTiny = containerWidth < (placement === 'list' ? 650 : 450);
+    const filterAsDropdown = containerWidth < 1024;
 
-    return { ref, listBreakpoints, headerBreakpoints, isSmallScreen };
+    return { ref, isSmallScreen, isExtraTiny, isTiny, filterAsDropdown };
 };
