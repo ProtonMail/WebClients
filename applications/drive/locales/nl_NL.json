@@ -45,6 +45,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Voeg ${ photoCount } foto toe aan een nieuw album",
         "Voeg ${ photoCount } foto's toe aan een nieuw album"
@@ -779,6 +782,9 @@
       "Re-sign": [
         "Opnieuw ondertekenen"
       ],
+      "Rebuild index": [
+        "Index herbouwen"
+      ],
       "Reconnect": [
         "Opnieuw verbinden"
       ],
@@ -922,6 +928,9 @@
       ],
       "Search drive": [
         "Drive doorzoeken"
+      ],
+      "Search is unavailable": [
+        "Zoeken is niet beschikbaar"
       ],
       "See how": [
         "Zie hoe"
@@ -3292,6 +3301,9 @@
       "Account does not exist": [
         "Account bestaat niet"
       ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3512,6 +3524,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
+      ],
+      "Folder not found": [
+        "Map niet gevonden"
       ],
       "Forward address is required": [
         "Doorstuuradres is vereist"
@@ -3739,6 +3754,9 @@
       ],
       "Something went wrong during folder listing": [
         "Er is iets misgegaan tijdens het oplijsten van de mappen"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ],
       "Something went wrong with search. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -4890,6 +4908,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } en ${ SHEETS_APP_NAME } bestanden kunnen niet direct worden gedownload en zullen niet worden opgenomen in deze download. U kunt de andere bestanden downloaden door te klikken op 'Doorgaan met downloaden'."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } heeft gedetecteerd dat de lokale zoekindex beschadigd is en niet langer kan worden gebruikt. Bouw de index opnieuw op om de zoekopdracht te herstellen."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } in de App Store"
       ],
@@ -5004,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
@@ -5074,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
@@ -5300,6 +5327,9 @@
       "Copy your referral link": [
         "Kopieer uw doorverwijslink"
       ],
+      "Could not scan file for malware": [
+        "Bestand kon niet gescanned worden op malware"
+      ],
       "Country code": [
         "Landcode"
       ],
@@ -5514,6 +5544,12 @@
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
       ],
+      "File could not be scanned": [
+        "Bestand kan niet gescanned worden"
+      ],
+      "File flagged as potentially malicious": [
+        "Bestand gemarkeerd als mogelijks schadelijk"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
       ],
@@ -5549,6 +5585,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
       ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5GB versleutelde opslag om te beginnen"
@@ -5661,6 +5700,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "${ first }, ${ second }, ${ third } en ${ fourth } geïndexeerd"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Het indexeren heeft een onverwachte status bereikt en kan niet worden voortgezet. Bouw de index opnieuw op om te herstellen."
       ],
       "Indexing in progress": [
         "Bezig met indexeren"
@@ -5890,6 +5932,9 @@
       ],
       "Not connected": [
         "Niet verbonden"
+      ],
+      "Not enough storage space": [
+        "Onvoldoende opslagruimte"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
@@ -6138,11 +6183,29 @@
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
       ],
+      "Search data is corrupted": [
+        "Zoekgegevens zijn beschadigd"
+      ],
       "Search Enabled": [
         "Zoeken Ingeschakeld"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Zoeken ingeschakeld. U kunt dit dialoog nu sluiten en zoeken naar bestanden en mappen."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Zoeken heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
+      ],
+      "Search engine error": [
+        "Fout in zoekmachine"
+      ],
+      "Search error": [
+        "Zoekopdracht fout"
+      ],
+      "Search is in an invalid state": [
+        "De zoekopdracht heeft een ongeldige status"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Zoeken is klaar. Uw bestanden zijn geïndexeerd."
       ],
       "Search module is not available.": [
         "De zoekfunctie is niet beschikbaar."
@@ -6306,6 +6369,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "De zoekmachine heeft een interne fout aangetroffen. Bouw de index opnieuw op om te herstellen."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
@@ -6799,6 +6865,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Uw browser had onvoldoende ruimte tijdens het indexeren van bestanden voor zoeken. Maak opslagruimte vrij en bouw de index opnieuw op."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Uw huidige browser biedt geen ondersteuning voor het downloaden van grote bestanden/meerdere bestanden. Download de desktop app voor naadloze uploads en downloads."
@@ -9493,6 +9562,9 @@
       ],
       "You stopped sharing this item": [
         "U bent gestopt met dit item te delen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"

@@ -45,6 +45,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Tilføj ${ photoCount } foto til et nyt album",
         "Tilføj ${ photoCount } fotos til et nyt album"
@@ -779,6 +782,9 @@
       "Re-sign": [
         "Signér igen"
       ],
+      "Rebuild index": [
+        "Opret indeks"
+      ],
       "Reconnect": [
         "Tilslut igen"
       ],
@@ -922,6 +928,9 @@
       ],
       "Search drive": [
         "Søg på drev"
+      ],
+      "Search is unavailable": [
+        "Søgning utilgængelig"
       ],
       "See how": [
         "Se hvordan"
@@ -4899,6 +4908,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke downloades direkte og vil ikke blive inkluderet i dette download. Du kan downloade de andre filer ved at klikke på 'Fortsæt med at downloade'."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } registrerede at det lokale søgeindeks er beskadiget og ikke længere kan bruges. Opret indekset igen for at gendanne søgning."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } i App Store"
       ],
@@ -5013,6 +5025,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer din IP-adresse, så websteder ikke kan identificere dig."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -5083,6 +5098,9 @@
       ],
       "Ad targeting": [
         "Annoncemålretning"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -5568,6 +5586,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
       "Free 5GB encrypted storage to get started": [
         "Gratis 5 GB krypteret lagerplads til at starte med"
       ],
@@ -5679,6 +5700,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indekserede ${ first }, ${ second }, ${ third } og ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Indekseringen ramte en uventet status og kan ikke fortsætte. Opret indekset igen for at gendanne søgning."
       ],
       "Indexing in progress": [
         "Indeksering i gang"
@@ -5909,6 +5933,9 @@
       "Not connected": [
         "Ikke forbundet"
       ],
+      "Not enough storage space": [
+        "Ikke nok lagerplads"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
       ],
@@ -6102,6 +6129,9 @@
       "Ready to add some photos?": [
         "Klar til at tilføje nogle fotos?"
       ],
+      "RECOMMENDED": [
+        "FORSLÅET"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
@@ -6153,11 +6183,29 @@
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
       ],
+      "Search data is corrupted": [
+        "Søgningsdata er beskadiget"
+      ],
       "Search Enabled": [
         "Søgning aktiveret"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Der opstod en intern fejl med søgning. Opret indekset igen for at gendanne søgning."
+      ],
+      "Search engine error": [
+        "Fejl med søgemaskine"
+      ],
+      "Search error": [
+        "Søgefejl"
+      ],
+      "Search is in an invalid state": [
+        "Søgning har en ugyldig status"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Søgning er klar. Dine filer er blevet indekseret."
       ],
       "Search module is not available.": [
         "Søgningsmodulet er ikke tilgængeligt."
@@ -6321,6 +6369,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Der opstod en intern fejl med søgemaskinen. Opret indekset igen for at gendanne søgning."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
@@ -6814,6 +6865,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Din browser løb tør for plads under indekseringen af filer til søgning. Frigør lagerplads, og opret derefter indekset igen."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Din nuværende browser understøtter ikke download af store filer/flere filer. Download skrivebordsappen for problemfri upload og download."
