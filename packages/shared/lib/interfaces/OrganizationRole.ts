@@ -13,7 +13,7 @@ export interface OrganizationRole {
     UpdateTime: number;
 }
 
-export interface UserOrganizationRole {
+export interface RoleAssignment {
     OrganizationID: string;
     AssignmentTime: number;
     Role: OrganizationRole;
