@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 
+import { computeKeyPassword, generateKeySalt, getSrp as srpModuleGetSrp } from '@protontech/crypto/srp';
+
 import useApi from '@proton/components/hooks/useApi';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword, getSrp as srpModuleGetSrp } from '@protontech/crypto/srp';
 
 export type SRPVerifier = {
     modulusId: string;
@@ -53,11 +54,13 @@ export const useSrpModule = () => {
         getSrp,
         getSrpVerifier,
         computeKeyPassword,
+        generateKeySalt,
     });
 
     srpModule.current.getSrp = getSrp;
     srpModule.current.getSrpVerifier = getSrpVerifier;
     srpModule.current.computeKeyPassword = computeKeyPassword;
+    srpModule.current.generateKeySalt = generateKeySalt;
 
     return srpModule.current;
 };
