@@ -51,6 +51,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -1516,10 +1519,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -6976,6 +6976,9 @@
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
@@ -7068,6 +7071,9 @@
       ],
       "Ad targeting": [
         "Мэтавая рэклама"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7687,6 +7693,9 @@
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Для дадатковай бяспекі вы можаце задаць парольную фразу. Не забудзьце абагуліць яе з гасцямі асобна, бо яна не будзе ўключана ў запрашэнне календара."
       ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
+      ],
       "For messages newer than ${ oldestDate }": [
         "Для паведамленняў больш новых, чым ${ oldestDate }"
       ],
@@ -8292,6 +8301,9 @@
       ],
       "Recipient: ": [
         "Атрымальнік: "
+      ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
@@ -10049,6 +10061,9 @@
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
+      "Mailing list": [
+        "Спіс рассылкі"
+      ],
       "Main": [
         "Галоўная"
       ],
@@ -10487,6 +10502,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Загрузка вашых падпісак на рассылку..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Скасаваныя вамі падпіскі на рассылкі або на спісы рассылак з'явяцца тут."
       ],
@@ -16004,6 +16022,15 @@
       ],
       "Load remote content": [
         "Загружаць аддаленае змесціва"
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Mailing list": [
+        "Спіс рассылкі",
+        "Спісы рассылкі",
+        "Спісы рассылкі",
+        "Спісы рассылкі"
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
