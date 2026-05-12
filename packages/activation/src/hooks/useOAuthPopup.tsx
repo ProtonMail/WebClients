@@ -15,6 +15,7 @@ import {
     getOAuthAuthorizationUrl,
     getOAuthRedirectURL,
 } from './useOAuthPopup.helpers';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
     errorMessage: string;
@@ -39,6 +40,7 @@ type OAuthArgs = (GoogleOAuth | GenericOAuth) & {
 
 const useOAuthPopup = ({ errorMessage }: Props) => {
     const [config, loadingConfig] = useApiEnvironmentConfig();
+    const selectAccountDisabled = useFlag('EasySwitchOutlookSelectAccountDisabled');
 
     const triggerOAuthPopup = async (args: OAuthArgs) => {
         const { provider, callback } = args;
@@ -67,7 +69,7 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                 }
                 const { scope } = args as GenericOAuth;
 
-                authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config });
+                authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, selectAccountDisabled });
                 break;
             }
         }
