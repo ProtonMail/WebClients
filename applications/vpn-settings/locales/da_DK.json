@@ -56,6 +56,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Tilføj ${ BRAND_NAME }-adresse"
       ],
@@ -1475,6 +1478,9 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 nye admin-roller"
+      ],
       "3 new admin roles": [
         "3 nye admin-roller"
       ],
@@ -1483,6 +1489,9 @@
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Uddeleger administration ved at tildele specifikke admin-roller. Giv kun hver admin den adgang de skal bruge. Dette er i overensstemmelse med princippet om \"least privilege\", og det hjælper med at beskytte din organisation fra kompromitterede konti og utilsigtede fejl."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Uddeleger administration for mange brugere ad gangen. Tildel specifikke admin-roller til grupper for automatisk at give tilladelser. Dette er i overensstemmelse med princippet om \"least privilege\", og sparer tid i forbindelse med onboarding og offboarding, samtidig med at det formindsker fejl."
       ],
       "Delegate management with the appropriate admin role.": [
         "Uddeleger administration med passende admin-roller"
@@ -1495,6 +1504,9 @@
       ],
       "New: Control admin access for individual users": [
         "Nyt: Kontrollér adminstratoradgang for individuelle brugere"
+      ],
+      "New: Control admin access for many users at once": [
+        "Nyhed: Administrer admin-adgang for mange brugere på samme tid"
       ],
       "Organization admin:": [
         "Organisationsadmin:"
@@ -2046,6 +2058,9 @@
       "Managed via ${ registrar.name }": [
         "Administreret via ${ registrar.name }"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Adresse for medlem ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
+      ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
       ],
@@ -2061,6 +2076,12 @@
       ],
       "Migration status": [
         "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Mangler organisationens private nøgle"
+      ],
+      "Missing organization public key": [
+        "Mangler organisationens offentlige nøgle"
       ],
       "More details": [
         "Flere detaljer"
@@ -6542,6 +6563,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } opdateret"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landeniveau."
       ],
@@ -6661,6 +6685,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsovervågning"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7321,6 +7348,9 @@
       ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
@@ -8026,6 +8056,9 @@
       ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
+      ],
+      "RECOMMENDED": [
+        "FORSLÅET"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
@@ -14846,6 +14879,32 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Tildel delegerede roller"
+      ],
+      "Assign roles": [
+        "Tildel roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klik på en brugers navn for at administrere deres rolle og tilladelser."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klik Rediger for at tildele roller til denne gruppe og administrere medlemsadgang automatisk."
+      ],
+      "New: Roles and permissions tab": [
+        "Nyhed: Rolle- og tilladelsesfane"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Åbn denne fane for at give specifikke tilladelser uden fuld admin-adgang."
+      ],
+      "User roles available": [
+        "Tilgængelige brugerroller"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nu tildele roller til individuelle brugere fra denne fane."
       ]
     },
     "sso": {

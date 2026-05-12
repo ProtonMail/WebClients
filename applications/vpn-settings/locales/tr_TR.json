@@ -561,7 +561,7 @@
         "${ planOrAppName } uygulamasına git"
       ],
       "Go to domain provider": [
-        "Etki alanı sağlayıcısına git"
+        "Etki alanı hizmeti sağlayıcısına git"
       ],
       "Go to label": [
         "Etikete git"
@@ -1494,7 +1494,7 @@
         "Belirli yönetici rolleri atayarak yönetimi paylaşın. Her yöneticiye yalnızca gerek duyduğu erişim yetkisini verin. Böylece en az yetki ilkesi izlenerek, kuruluşunuz hesapların ele geçirilmesinden ve yanlışlıkla yapılan hatalardan korunur."
       ],
       "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "Aynı anda birçok kullanıcı için yönetim yetkisi devredin. Otomatik izinler için gruplara özel yönetici rolleri atayın. Bu yöntem işe alım ve işten ayrılma süreçlerinde zaman kazandırırken hataları azaltmak için en az ayrıcalık ilkesini temel alır."
+        "Aynı anda çok sayıda kullanıcıya yetki verin. Otomatik izin yönetimi için gruplara belirli yönetici rolleri atayın. Bu yöntemde işe başlama ve işten ayrılma süreçlerinde zaman kazanırken sorunları azaltmak için en az yetki ilkesini temel alınır."
       ],
       "Delegate management with the appropriate admin role.": [
         "Yönetimi uygun yönetici rolüne devredin."
@@ -1987,13 +1987,13 @@
         "**p=yok**: yetkisiz e-postaları karantinaya almayın veya reddetmeyin. Bu kural genellikle sorun giderme veya test amaçlı kullanılır."
       ],
       "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "**p=karantina**: alıcı platformlardan yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
+        "**p=karantina**: Alıcı platformlardan yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
       ],
       "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
         "**p=reddet**: alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
       ],
       "Account connected": [
-        "Hesap bağlandı"
+        "Hesap bağlantısı kuruldu"
       ],
       "Account disconnected": [
         "Hesap bağlantısı kesildi"
@@ -2068,13 +2068,13 @@
         "Hesap oluşturuluyor"
       ],
       "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
-        "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve iletim sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
+        "DKIM her e-postaya bir dijital imza ekler. Böylece alıcılar iletinin gerçekten sizin etki alanınızdan geldiğini ve aktarım sırasında değiştirilmediğini doğrulayabilir. Bu imza olmadan iletiler daha az güvenilir olarak değerlendirilebilir."
       ],
       "DKIM records": [
         "DKIM kayıtları"
       ],
       "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
-        "DMARC, SPF ve DKIM'i temel alarak alıcı sunuculara bu denetimlerden geçemeyen iletileri nasıl ele alacaklarını bildirir. Bu, etki alanınızı kimlik sahtekarlığından korumaya yardımcı olur ve genel teslimat güvenilirliğini artırır."
+        "DMARC, SPF ve DKIM alıcı sunuculara bu denetimleri geçemeyen iletileri nasıl işleyeceklerini bildirir. Bunlar, etki alanınızın kimlik sahtekarlığından korunmasını sağlar ve genel gönderim güvenilirliğini artırır."
       ],
       "DMARC records": [
         "DMARC kayıtları"
@@ -2137,10 +2137,10 @@
         "E-posta"
       ],
       "Managed via ${ registrar.name }": [
-        "${ registrar.name } aracılığıyla yönetiliyor"
+        "${ registrar.name } ile yönetiliyor"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için lütfen müşteri desteğiyle iletişime geçin"
+        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimizle görüşün"
       ],
       "Migrate from Google Workspace": [
         "Google Workspace üzerinden aktar"
@@ -2162,7 +2162,7 @@
         "Aktarım durumu"
       ],
       "Missing organization private key": [
-        "Kuruluşun özel anahtarı eksik"
+        "Kuruluşun kişisel anahtarı eksik"
       ],
       "Missing organization public key": [
         "Kuruluşun açık anahtarı bulunamadı"
@@ -2174,7 +2174,7 @@
         "Hata ayrıntıları mevcut değil. Daha fazla bilgi için lütfen müşteri desteğiyle iletişime geçin"
       ],
       "No users to display": [
-        "Görüntülenecek kullanıcı yok"
+        "Görüntülenebilecek bir kullanıcı yok"
       ],
       "Not activated": [
         "Etkinleştirilmemiş"
@@ -2186,7 +2186,7 @@
         "Kullanıcılar ${ BRAND_NAME } hesaplarını aldıktan sonra geçiş işlemini tamamlayın."
       ],
       "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
-        "E-postaların ${ BRAND_NAME } adresine yönlendirildiğini doğruladığımızda aktarım tamamlanmış olacak. Bu gerçekleştiğinde size bilgi vermek üzere bir onay e-postası alacaksınız. Bu işlem 24 saate kadar sürebilir."
+        "E-postaların ${ BRAND_NAME } adresine yönlendirildiğini doğruladığımızda aktarım tamamlanmış olacak. Bundan sonra size bilgi veren bir onay e-postası alacaksınız. Bu işlemin tamamlanması 24 saat kadar sürebilir."
       ],
       "Organization does not have enough seats available": [
         "Kuruluşun yeterli koltuk sayısı yok"
@@ -2195,13 +2195,13 @@
         "Kuruluşun yeterli depolama alanı yok"
       ],
       "Pending": [
-        "Beklemede"
+        "Bekliyor"
       ],
       "Please add the following records in your DNS console of your domain provider:": [
-        "Lütfen etki alanı sağlayıcınızın DNS konsoluna aşağıdaki kayıtları ekleyin:"
+        "Lütfen etki alanı sağlayıcınızın DNS panosuna şu kayıtları ekleyin:"
       ],
       "Please leave this window open until we're done creating all the users.": [
-        "Tüm kullanıcıların oluşturulması tamamlanana kadar lütfen bu pencereyi açık bırakın."
+        "Tüm kullanıcılar oluşturulana kadar bu pencereyi açık bırakın."
       ],
       "Please select at least one product to migrate": [
         "Lütfen arktarılacak en az bir ürün seçin"
@@ -2237,7 +2237,7 @@
         "Ayarlar"
       ],
       "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
-        "Kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için aktivasyon bağlantısını onlarla paylaşın."
+        "Kullanıcıların ${ BRAND_NAME } hesaplarını alabilmeleri için onlarla etkinleştirme bağlantısını paylaşın."
       ],
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
@@ -2261,10 +2261,10 @@
         "Varsayılan ayar yok. Ancak güvenliğinizi artırmak için bu değeri p=karantina olarak ayarlamanızı öneririz."
       ],
       "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
-        "\"p=\" değeri DMARC denetiminden geçemeyen e-postalar için uygulanacak eylemi belirler. Kullanılabilir eylemler şunlardır:"
+        "“p=“ değeri DMARC denetiminden geçemeyen e-postalar için yapılacak işlemi belirler. Yapılabilecek işlemler şunlardır:"
       ],
       "This migration has been completed": [
-        "Geçiş işlemi tamamlandı"
+        "Aktarım tamamlandı"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
@@ -2300,7 +2300,7 @@
         "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
       "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
-        "Google Workspace hesabınızla ilişkili birincil etki alanı tespit ettik. ${ BRAND_NAME } kuruluşunuz için e-posta kurulumuna devam etmek üzere bunu onaylayın."
+        "Google Workspace hesabınızla ilişkilendirilmiş bir birincil etki alanı bulduk. ${ BRAND_NAME } kuruluşunuzun e-posta kurulumunu sürdürmek için bunu onaylayın."
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
@@ -2309,7 +2309,7 @@
         "Hala etki alanı sağlayıcınızla MX kayıtlarını kontrol ediyoruz."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
-        "Bazı kullanıcıların ${ BRAND_NAME } hesaplarını henüz almadıklarını fark ettik."
+        "Bazı kullanıcıların henüz ${ BRAND_NAME } hesaplarını almadıklarını fark ettik."
       ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
@@ -2324,8 +2324,8 @@
         "Her şey hazır!"
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin.",
-        "Mevcut tarifeniz en fazla ${ maxMembers } kullanıcıya izin veriyor. Daha fazla kullanıcı taşımak için aboneliğinize yeni koltuk ekleyin."
+        "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin.",
+        "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin."
       ]
     },
     "Browser": {
@@ -2392,7 +2392,7 @@
         "Ödeme sorunu"
       ],
       "Sheets problem": [
-        "Hesap tablosu sorunu"
+        "Çalışma sayfaları sorunu"
       ],
       "Sign in problem": [
         "Oturum açma sorunu"
@@ -4026,7 +4026,7 @@
     },
     "Description for domain modal": {
       "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
-        "Yinelenen bir DMARC kaydı bulundu. Sorunu gidermek için etki alanı sağlayıcınızın DNS konsoluna gidin."
+        "Yinelenen bir DMARC kaydı bulundu. Sorunu gidermek için etki alanı hizmeti sağlayıcınızın DNS panosuna gidin."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6690,7 +6690,7 @@
         "${ vaultLink } güncellendi"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler\n— verileriniz sızdırılırsa sınırsız **hide-my-email takma adları** ve **dark-web uyarıları**."
+        "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
@@ -7476,7 +7476,7 @@
         "${ product } seçtiğiniz için"
       ],
       "For just ${ bundlePlanPriceInline }": [
-        "Sadece ${ bundlePlanPriceInline }"
+        "Yalnızca ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
@@ -10477,7 +10477,7 @@
         "${ capitalizedGroup } kaydı bulunamadı"
       ],
       "Host name": [
-        "Ana bilgisayar adı"
+        "Sunucu adı"
       ],
       "Invalid ${ group.name } record found": [
         "Geçersiz ${ group.name } kaydı bulundu"
@@ -10486,7 +10486,7 @@
         "Tür"
       ],
       "Use default value": [
-        "Varsayılan değeri kullan"
+        "Varsayılan değer kullanılsın"
       ],
       "Valid ${ group.name } record found": [
         "Geçerli ${ group.name } kaydı bulundu"
@@ -10608,7 +10608,7 @@
         "verileri kurtarma seçeneği"
       ],
       "Detailed instructions": [
-        "Ayrıntılı talimatlar"
+        "Ayrıntılı yönergeler"
       ],
       "Details": [
         "Ayrıntılar"
@@ -15017,11 +15017,29 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Devredilen rol atama"
+      ],
+      "Assign roles": [
+        "Rolleri atayın"
+      ],
       "Click a user's name to manage their role and permissions.": [
         "Bir kullanıcının rolünü ve izinlerini yönetmek için adına tıklayın."
       ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Bu gruba roller atamak ve üye erişimini otomatik olarak yönetmek için Düzenle'ye tıklayın."
+      ],
+      "New: Roles and permissions tab": [
+        "Yeni: Roller ve izinler sekmesi"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Tam yönetici erişimi olmadan belirli izinler vermek için bu sekmeyi açın."
+      ],
       "User roles available": [
         "Kullanılabilir kullanıcı rolleri"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Artık bu sekmeden kullanıcılara tek tek rol atayabilirsiniz."
       ]
     },
     "sso": {
@@ -17448,10 +17466,10 @@
         "Üçüncü taraf uygulamalar ve hizmetler"
       ],
       "To preview this spreadsheet, download it.": [
-        "Bu hesap tablosunu ön izlemek için indirin."
+        "Bu elektronik tabloyu ön izlemek için indirin."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
+        "Bu elektronik tabloyu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
       "Troubleshoot your issue": [
         "Sorununuzu giderin"
@@ -18436,13 +18454,13 @@
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "Are you sure you want to remove your notification email?": [
-        "Bildirim e-postanızı kaldırmak istediğinizden emin misiniz?"
+        "Bildirim e-posta adresinizi kaldırmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to remove your recovery email?": [
         "Kurtarma e-postanızı kaldırmak istediğinizden emin misiniz?"
       ],
       "Are you sure you want to remove your recovery phone number?": [
-        "Kurtarma telefon numaranızı kaldırmak istediğinizden emin misiniz?"
+        "Kurtarma telefon numaranızı kaldırmak istediğinize emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Bu adresi sildikten sonra günlük gönderilen e-posta bildirimlerini alamazsınız."

@@ -56,6 +56,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } address": [
         "Legg til ${ BRAND_NAME }-adresse"
       ],
@@ -329,6 +332,9 @@
       "Delete policy": [
         "Slett retningslinje"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "Slett token ${ tokens[0].Account }"
+      ],
       "Delete user": [
         "Slett bruker"
       ],
@@ -553,6 +559,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Gå til domeneleverandøren"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -1478,6 +1487,9 @@
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Deleger administrasjon ved å tildele spesifikke administratorroller. Gi hver administrator bare den tilgangen de trenger. Dette følger prinsippet om færrest rettigheter, og beskytter organisasjonen din mot kompromitterte kontoer og utilsiktede feil."
       ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Deleger administrasjon for mange brukere samtidig. Tildel spesifikke administratorroller til grupper for automatiske tillatelser. Dette følger prinsippet om færrest rettigheter for å spare tid på onboarding og offboarding, samtidig som det reduserer feil."
+      ],
       "Delegate management with the appropriate admin role.": [
         "Deleger administrasjonen med riktig administratorrolle."
       ],
@@ -1959,6 +1971,15 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
+      "Account connected": [
+        "Konto tilkoblet"
+      ],
+      "Activated": [
+        "Aktivert"
+      ],
+      "All": [
+        "Alle"
+      ],
       "Authenticate": [
         "Autentiser"
       ],
@@ -1974,8 +1995,26 @@
       "Configure migration": [
         "Konfigurer migrering"
       ],
+      "Configure your domain": [
+        "Konfigurer domenet ditt"
+      ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Copy activation link to clipboard": [
+        "Kopier aktiveringskoblingen til utklippstavlen"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Kopier koden nedenfor og lim den inn i DNS-delen av domeneverten din. Du finner et eksempel og noen nyttige tips ${ hereHref }."
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM legger til en digital signatur i hver e-post, slik at mottakerne kan bekrefte at meldingen faktisk kom fra domenet ditt og ikke ble endret underveis. Uten den kan meldinger bli behandlet som mindre pålitelige."
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC bygger på SPF og DKIM ved å fortelle mottakerserverne hvordan de skal håndtere meldinger som ikke består disse kontrollene. Det bidrar til å beskytte domenet ditt mot etterligning og forbedrer den generelle leveringspåliteligheten."
+      ],
+      "DMARC records": [
+        "DMARC-poster"
       ],
       "Domain connected": [
         "Domene tilkoblet"
@@ -1988,6 +2027,9 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
+      ],
+      "Google Workspace account": [
+        "Google Workspace-konto"
       ],
       "Has errors": [
         "Inneholder feil"
@@ -2003,6 +2045,12 @@
       ],
       "Mail": [
         "E-post"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Administrert via ${ registrar.name }"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
       ],
       "Migrate from Google Workspace": [
         "Migrer fra Google Workspace"
@@ -2020,11 +2068,38 @@
       "Migration status": [
         "Migreringsstatus"
       ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "More details": [
+        "Flere detaljer"
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Not confirmed": [
+        "Ikke bekreftet"
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Når vi har bekreftet at e-postene er sendt til ${ BRAND_NAME }, vil overføringen være fullført. Du vil motta en bekreftelses-e-post som gir deg beskjed når dette skjer. Denne prosessen kan ta opptil 24 timer."
+      ],
       "Organization does not have enough seats available": [
         "Organisasjonen har ikke nok ledige lisenser"
       ],
       "Organization does not have enough storage available": [
         "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Legg til følgende poster i DNS-konsollen til domeneleverandøren din:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "La dette vinduet stå åpent til vi er ferdige med å opprette alle brukerne."
       ],
       "Required": [
         "Obligatorisk"
@@ -2041,11 +2116,29 @@
       "Settings": [
         "Innstillinger"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Del aktiveringskoblingen med brukerne slik at de kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
+      ],
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
       ],
+      "Size": [
+        "Størrelse"
+      ],
+      "SPF records": [
+        "SPF-poster"
+      ],
+      "Start migrating": [
+        "Start migrering"
+      ],
       "Status": [
         "Status"
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "Verdien «p=\" angir handlingen som skal utføres for e-poster som ikke lykkes med DMARC. Her er de tilgjengelige handlingene:"
+      ],
+      "This migration has been completed": [
+        "Migreringen er fullført"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
@@ -2056,6 +2149,9 @@
       "Users migrated": [
         "Brukere migrert"
       ],
+      "Verified": [
+        "Verifisert"
+      ],
       "Verify installation": [
         "Verifiser installasjon"
       ],
@@ -2065,14 +2161,24 @@
       "Verify your domain to start a migration": [
         "Verifiser domenet ditt for å starte en migrering"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Vi fant hoveddomenet som er knyttet til Google Workspace-kontoen din. Bekreft det for å fortsette å konfigurere e-post for ${ BRAND_NAME }-organisasjonen din."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Vi har lagt merke til at noen brukere ikke har gjort krav på ${ BRAND_NAME }-kontoene sine."
       ],
       "What are you migrating?": [
         "Hva migrerer du?"
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
+        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
       ]
     },
     "Browser": {
@@ -3769,6 +3875,11 @@
     "description": {
       "use the Easy Switch import assistant": [
         "bruk Easy Switch-importassistenten"
+      ]
+    },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Duplikat DMARC-post funnet. Gå til DNS-konsollen til domeneleverandøren din for å fikse det."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6431,6 +6542,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } oppdatert"
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler trafikken din. ${ PASS_SHORT_APP_NAME } skjule identiteten din\n— ubegrenset antall **hide-my-email-aliaser** og **varsler på det mørke nettet** hvis dataene dine noen gang lekker ut."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } kreves for tilknytning på landnivå."
       ],
@@ -6550,6 +6664,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsovervåking"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7210,6 +7327,9 @@
       ],
       "for choosing ${ product }": [
         "for at du velger ${ product }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
@@ -7915,6 +8035,9 @@
       ],
       "Recently used servers:": [
         "Nylig brukte tjenere:"
+      ],
+      "RECOMMENDED": [
+        "ANBEFALT"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefalt på klarerte enheter. ${ keepMeSignedInLearnMoreLink }"
@@ -9439,6 +9562,9 @@
       "Confirm login password": [
         "Bekreft påloggingspassord"
       ],
+      "Confirm MX records added": [
+        "Bekreft at MX-poster er lagt til"
+      ],
       "Confirm new password": [
         "Bekreft nytt passord"
       ],
@@ -9776,6 +9902,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
       ],
+      "MX records": [
+        "MX-poster"
+      ],
       "Name": [
         "Navn"
       ],
@@ -9907,6 +10036,9 @@
       ],
       "Previous password": [
         "Forrige passord"
+      ],
+      "Priority": [
+        "Prioritet"
       ],
       "Priority support": [
         "Prioritert kundestøtte"
@@ -10190,6 +10322,20 @@
         "Legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ]
     },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "${ capitalizedGroup }-post ikke funnet"
+      ],
+      "Host name": [
+        "Vertsnavn"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Ugyldig ${ group.name }-post funnet"
+      ],
+      "Use default value": [
+        "Bruk standardverdi"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -10304,6 +10450,9 @@
       ],
       "data recovery option": [
         "alternativ for datagjenoppretting"
+      ],
+      "Detailed instructions": [
+        "Detaljerte instruksjoner"
       ],
       "Details": [
         "Detaljer"
@@ -13226,6 +13375,9 @@
       "Search for an email or IP address": [
         "Søk etter en e-postadresse eller IP-adresse"
       ],
+      "Search for users or addresses": [
+        "Søk etter brukere eller adresser"
+      ],
       "Search parent folder": [
         "Søk i overordnet mappe"
       ],
@@ -14706,6 +14858,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
+      ]
+    },
+    "Spotlight": {
+      "Assign roles": [
+        "Tildel roller"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klikk på en brukers navn for å administrere rollen og tillatelsene deres."
       ]
     },
     "sso": {
@@ -17542,6 +17702,9 @@
       ],
       "User is a group": [
         "Brukeren er en gruppe"
+      ],
+      "via ${ groupName }": [
+        "via ${ groupName }"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"

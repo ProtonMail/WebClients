@@ -56,6 +56,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-E-Mail-Adresse hinzufügen"
       ],
@@ -91,6 +94,9 @@
       ],
       "Add user": [
         "Benutzer hinzuf."
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer hinzufügen"
       ],
       "Allow": [
         "Erlauben"
@@ -815,6 +821,9 @@
       "Remove gift code": [
         "Geschenkgutschein entfernen"
       ],
+      "Removed ${ memberName } as group owner": [
+        "${ memberName } als Gruppeneigentümer entfernt"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -1463,6 +1472,9 @@
       ]
     },
     "Admin roles onboarding": {
+      "2 new admin roles": [
+        "2 neue Administratorenrollen"
+      ],
       "3 new admin roles": [
         "3 neue Administratorenrollen"
       ],
@@ -1471,6 +1483,9 @@
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
         "Verwaltungsaufgaben mit der Zuweisung bestimmter Administratorenrollen delegieren. Jedem Administrator nur den benötigten Zugriff gewähren. Dies folgt dem Prinzip der geringsten Rechte und schützt deine Organisation vor gehackten Konten und versehentlichen Fehlern."
+      ],
+      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
+        "Verwalte Benutzer auf einmal. Weise Gruppen bestimmte Administratorrollen zu, um Berechtigungen automatisch zu vergeben. Dies folgt dem Prinzip der geringsten Privilegien, wodurch Zeit beim Onboarding und Offboarding gespart und Fehler reduziert werden."
       ],
       "Delegate management with the appropriate admin role.": [
         "Verwaltungsaufgaben mit den geeigneten Administratorenrollen delegieren"
@@ -1483,6 +1498,9 @@
       ],
       "New: Control admin access for individual users": [
         "Neu: Administrationsrechte für einzelne Benutzer kontrollieren"
+      ],
+      "New: Control admin access for many users at once": [
+        "Neu: Administratorzugriff für viele Benutzer auf einmal verwalten"
       ],
       "Organization admin:": [
         "Organisationsadministrator:"
@@ -1998,6 +2016,9 @@
       "Mail": [
         "E-Mail"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "E-Mail-Adresse des Mitglieds fehlt. Bitte kontaktiere den Kundensupport, um das zu beheben."
+      ],
       "Migrate from Google Workspace": [
         "Von Google Workspace übernehmen"
       ],
@@ -2013,6 +2034,12 @@
       ],
       "Migration status": [
         "Migrationsstatus"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
       ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
@@ -6425,6 +6452,9 @@
       "${ vaultLink } updated": [
         "${ vaultLink } aktualisiert."
       ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
@@ -6544,6 +6574,9 @@
       ],
       "Activity Monitor": [
         "Aktivitätsüberwachung"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
@@ -7204,6 +7237,9 @@
       ],
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
@@ -7909,6 +7945,9 @@
       ],
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Auf vertrauenswürdigen Geräten empfohlen. ${ keepMeSignedInLearnMoreLink }"
@@ -14699,6 +14738,32 @@
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
       ]
     },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "Delegierte Rollen zuweisen"
+      ],
+      "Assign roles": [
+        "Rollen zuweisen"
+      ],
+      "Click a user's name to manage their role and permissions.": [
+        "Klicke einen Benutzernamen um dessen Rolle und Berechtigungen zu verwalten."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klicke auf „Bearbeiten“, um dieser Gruppe Rollen zuzuweisen und den Zugriff der Mitglieder automatisch zu verwalten."
+      ],
+      "New: Roles and permissions tab": [
+        "Neu: Registerkarte „Rollen und Berechtigungen“"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Öffne diese Registerkarte, um bestimmte Berechtigungen ohne vollständige Administratorrechte zu erteilen."
+      ],
+      "User roles available": [
+        "Benutzerrollen verfügbar"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Über diese Registerkarte kannst du nun einzelnen Benutzern Rollen zuweisen."
+      ]
+    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } benötigt deine Hilfe, um sich bei seinem/ihrem ${ BRAND_NAME } Konto mit Single Sign-On anzumelden."
@@ -17534,6 +17599,9 @@
       "User is a group": [
         "Benutzer ist eine Gruppe"
       ],
+      "via ${ groupName }": [
+        "über ${ groupName }"
+      ],
       "Waiting for user to accept the invitation": [
         "Warten auf die Annahme der Einladung durch den Benutzer"
       ]
@@ -17766,6 +17834,12 @@
       ]
     },
     "user_modal": {
+      "(via ${ groupName })": [
+        "(über ${ groupName })"
+      ],
+      "(via group)": [
+        "(über Gruppe)"
+      ],
       "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
         "Weise einem Benutzer delegierte Rollen zu, um ihm nur die spezifischen Berechtigungen zu erteilen, die er benötigt. Behalte die vollen Administrationsrechte getrennt und deine Umgebung sicher."
       ],
