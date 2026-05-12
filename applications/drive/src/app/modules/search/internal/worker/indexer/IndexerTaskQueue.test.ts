@@ -1,8 +1,8 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { MaybeNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { RateLimitedError as SdkRateLimitedError } from '@proton/drive';
 
 import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
@@ -15,6 +15,7 @@ import {
     TRANSIENT_REPORT_THROTTLE_MS,
     sendErrorReportForSearch,
 } from '../../shared/errors';
+import { resetTransientReportBurstsForTests } from '../../shared/searchMetrics';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
 import { findDocuments } from '../../testing/indexHelpers';
@@ -140,6 +141,10 @@ describe('IndexerTaskQueue', () => {
     let treeSubRegistry: TreeSubscriptionRegistry;
 
     beforeEach(async () => {
+        // searchMetrics keeps a module-level transient-error throttle map keyed by task UID.
+        // Tests reuse the same populator UIDs so leftover counts would skew burst assertions.
+        resetTransientReportBurstsForTests();
+
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = new FakeMainThreadBridge();
@@ -756,7 +761,7 @@ describe('IndexerTaskQueue', () => {
         }
     });
 
-    it('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per reason, then a fresh burst after the throttle window', async () => {
+    it('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per task UID, then a fresh burst after the throttle window', async () => {
         const errorReportMock = sendErrorReportForSearch as jest.Mock;
         errorReportMock.mockClear();
 
@@ -792,23 +797,21 @@ describe('IndexerTaskQueue', () => {
             await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS - 1);
 
             const reportsInWindow = errorReportMock.mock.calls.filter(([msg]) =>
-                String(msg).includes('Transient error')
+                String(msg).includes('transient error')
             );
             expect(reportsInWindow).toHaveLength(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
             // Stable message (no attempt number) so Sentry groups them.
-            expect(reportsInWindow.every(([msg]) => msg === 'IndexerTaskQueue: Transient error (unknown)')).toBe(true);
+            expect(reportsInWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
 
             // Cross the throttle window - a new burst should be allowed.
             await fakeAdvance(TRANSIENT_REPORT_THROTTLE_MS);
 
             const reportsAfterWindow = errorReportMock.mock.calls.filter(([msg]) =>
-                String(msg).includes('Transient error')
+                String(msg).includes('transient error')
             );
             expect(reportsAfterWindow.length).toBeGreaterThan(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS);
             expect(reportsAfterWindow.length).toBeLessThanOrEqual(TRANSIENT_ERRORS_MAX_REPORTED_ATTEMPTS * 2);
-            expect(reportsAfterWindow.every(([msg]) => msg === 'IndexerTaskQueue: Transient error (unknown)')).toBe(
-                true
-            );
+            expect(reportsAfterWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
         } finally {
             queue?.stop();
             jest.useRealTimers();
@@ -822,6 +825,7 @@ describe('IndexerTaskQueue', () => {
 
         const failingTask = {
             getUid: () => 'failing-task',
+            getKind: () => 'persist-data-task',
             execute: async () => {
                 failingRunCount++;
                 throw new Error('transient');
@@ -830,6 +834,7 @@ describe('IndexerTaskQueue', () => {
 
         const followUpTask = {
             getUid: () => 'follow-up',
+            getKind: () => 'persist-data-task',
             execute: async () => {
                 followUpRan = true;
             },

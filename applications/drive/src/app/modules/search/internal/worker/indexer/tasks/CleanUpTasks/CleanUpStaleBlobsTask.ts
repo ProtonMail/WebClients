@@ -3,9 +3,10 @@ import { CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
 import { sendErrorReportForSearch } from '../../../../shared/errors';
+import { searchMetrics } from '../../../../shared/searchMetrics';
 import type { IndexBlobStore } from '../../../index/IndexBlobStore';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
-import type { TaskContext } from '../BaseTask';
+import type { IndexerTaskKind, TaskContext } from '../BaseTask';
 import { BaseTask } from '../BaseTask';
 
 // Remove blobs from IndexedDB that are no longer referenced by any engine using the
@@ -20,7 +21,11 @@ import { BaseTask } from '../BaseTask';
 //     any remaining blobs in IndexedDB that aren't in that set.
 export class CleanUpStaleBlobsTask extends BaseTask {
     getUid(): string {
-        return 'task-CleanUpStaleBlobs';
+        return this.getKind();
+    }
+
+    getKind(): IndexerTaskKind {
+        return 'cleanup-stale-blobs-task';
     }
 
     async execute(ctx: TaskContext): Promise<void> {
@@ -48,16 +53,25 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             return;
         }
 
+        let releasedCount = 0;
+        let orphanCount = 0;
         try {
-            const trackedBlobNames = await this.driveCleanupIterator(cleanup, blobStore);
-            await this.deleteOrphanBlobs(indexKind, trackedBlobNames, ctx);
+            const result = await this.driveCleanupIterator(cleanup, blobStore);
+            releasedCount = result.releasedCount;
+            orphanCount = await this.deleteOrphanBlobs(indexKind, result.trackedBlobNames, ctx);
         } finally {
             cleanup.free();
         }
+
+        searchMetrics.markBlobsCleanup({ removedBlobsCount: releasedCount + orphanCount });
     }
 
-    private async driveCleanupIterator(cleanup: Cleanup, blobStore: IndexBlobStore): Promise<Set<string>> {
+    private async driveCleanupIterator(
+        cleanup: Cleanup,
+        blobStore: IndexBlobStore
+    ): Promise<{ trackedBlobNames: Set<string>; releasedCount: number }> {
         const trackedBlobNames = new Set<string>();
+        let releasedCount = 0;
 
         for (let event = cleanup.next(); event !== undefined; event = cleanup.next()) {
             switch (event.kind()) {
@@ -70,6 +84,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
                 case CleanupEventKind.Release:
                     // Clean-up obsolete blob
                     await blobStore.releaseEvent(event);
+                    releasedCount++;
                     break;
                 case CleanupEventKind.Tracked:
                     // Track active blobs (to allow deleting non-active/orphan ones later)
@@ -78,14 +93,14 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             }
         }
 
-        return trackedBlobNames;
+        return { trackedBlobNames, releasedCount };
     }
 
     private async deleteOrphanBlobs(
         indexKind: IndexKind,
         trackedBlobNames: Set<string>,
         ctx: TaskContext
-    ): Promise<void> {
+    ): Promise<number> {
         const allKeys = await ctx.db.getAllIndexBlobKeys();
 
         let orphanCount = 0;
@@ -104,7 +119,8 @@ export class CleanUpStaleBlobsTask extends BaseTask {
 
         if (orphanCount > 0) {
             Logger.info(`${this.getUid()}: deleted ${orphanCount} orphan blob(s) for index "${indexKind}"`);
-            // TODO: instrument
         }
+
+        return orphanCount;
     }
 }
