@@ -6,6 +6,8 @@ import lumoBusinessLogoDark from '@proton/styles/assets/img/lumo/lumo-business-l
 import lumoBusinessLogo from '@proton/styles/assets/img/lumo/lumo-business-logo.svg';
 import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
 import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
+import lumoLogoNewDark from '@proton/styles/assets/img/lumo/lumo-logo-v5-dark.svg';
+import lumoLogoNew from '@proton/styles/assets/img/lumo/lumo-logo-v5.svg';
 
 import { GuestChatDisclaimerModal } from '../../components/Guest/GuestChatDisclaimerModal';
 import LumoPlusLogoInline from '../../components/Icons/LumoPlusLogoInline';
@@ -22,7 +24,7 @@ const getLogoSrc = (theme: ThemeTypes, hasLumoB2B: boolean, hasLumoSeat: boolean
     if (hasLumoSeat) {
         return undefined; // Use LumoPlusLogoInline component
     }
-    return theme === ThemeTypes.LumoDark ? lumoLogoDark : lumoLogo;
+    return theme === ThemeTypes.LumoDark ? lumoLogoNewDark : lumoLogoNew;
 };
 
 const LumoLogoHeader = memo(() => {
