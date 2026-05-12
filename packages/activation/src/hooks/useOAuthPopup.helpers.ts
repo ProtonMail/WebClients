@@ -92,10 +92,12 @@ export const getOAuthAuthorizationUrl = ({
     provider,
     scope,
     config,
+    selectAccountDisabled,
 }: {
     provider: ImportProvider | OAUTH_PROVIDER;
     scope: string;
     config: ApiEnvironmentConfig;
+    selectAccountDisabled: boolean;
 }) => {
     const params = new URLSearchParams();
 
@@ -104,7 +106,14 @@ export const getOAuthAuthorizationUrl = ({
     params.append('scope', scope);
 
     if (provider === ImportProvider.OUTLOOK || provider === OAUTH_PROVIDER.OUTLOOK) {
-        params.append('prompt', 'consent');
+        // Microsoft doesn't support combining prompt values (e.g. "select_account consent").
+        // The feature flag for the consent parameter was removed, thus now the 'account_selection' parameter takes precedence over 'consent'.
+        if (!selectAccountDisabled) {
+            params.append('prompt', 'select_account');
+        } else {
+            params.append('prompt', 'consent');
+        }
+
         return generateOutlookOAuthUrl(params, config);
     }
 
