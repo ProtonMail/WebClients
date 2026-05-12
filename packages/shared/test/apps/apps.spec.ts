@@ -169,7 +169,7 @@ describe('available apps', () => {
                         ...defaultOptions,
                         organization: getAllowedProducts([Product.Drive]),
                     }),
-                    [APPS.PROTONDRIVE, APPS.PROTONDOCS]
+                    [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
                 );
             });
 
@@ -179,7 +179,7 @@ describe('available apps', () => {
                         ...defaultOptions,
                         organization: getAllowedProducts([Product.Mail, Product.Drive]),
                     }),
-                    [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONDOCS]
+                    [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
                 );
             });
 
@@ -189,7 +189,14 @@ describe('available apps', () => {
                         ...defaultOptions,
                         organization: getAllowedProducts([Product.Mail, Product.VPN, Product.Drive]),
                     }),
-                    [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONVPN_SETTINGS]
+                    [
+                        APPS.PROTONMAIL,
+                        APPS.PROTONCALENDAR,
+                        APPS.PROTONDRIVE,
+                        APPS.PROTONDOCS,
+                        APPS.PROTONVPN_SETTINGS,
+                        APPS.PROTONSHEETS,
+                    ]
                 );
             });
 
@@ -220,7 +227,7 @@ describe('available apps', () => {
                         context: 'dropdown',
                         organization: getAllowedProducts([Product.Drive]),
                     }),
-                    [APPS.PROTONDRIVE, APPS.PROTONDOCS]
+                    [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
                 );
             });
 
@@ -232,7 +239,7 @@ describe('available apps', () => {
                         context: 'dropdown',
                         organization: getAllowedProducts([Product.Drive]),
                     }),
-                    [APPS.PROTONDRIVE]
+                    [APPS.PROTONDRIVE, APPS.PROTONSHEETS]
                 );
             });
 
@@ -286,7 +293,7 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                     organization: getAllowedProducts([Product.Drive]),
                 }),
-                [APPS.PROTONDRIVE, APPS.PROTONDOCS]
+                [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
             );
 
             assertEquals(
@@ -296,7 +303,7 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                     organization: getAllowedProducts([Product.Drive]),
                 }),
-                [APPS.PROTONDRIVE, APPS.PROTONDOCS]
+                [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS]
             );
 
             assertEquals(
@@ -307,7 +314,7 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                     organization: getAllowedProducts([Product.Drive]),
                 }),
-                [APPS.PROTONDRIVE]
+                [APPS.PROTONDRIVE, APPS.PROTONSHEETS]
             );
 
             assertEquals(

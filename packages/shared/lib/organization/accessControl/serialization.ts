@@ -12,7 +12,7 @@ const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = 
     // Calendar is bundled together with mail, and returned as two separate entities
     [Product.Calendar]: [APPS.PROTONMAIL, APPS.PROTONCALENDAR],
     // Drive is bundled together with docs, and docs is _not_ returned
-    [Product.Drive]: [APPS.PROTONDRIVE, APPS.PROTONDOCS],
+    [Product.Drive]: [APPS.PROTONDRIVE, APPS.PROTONDOCS, APPS.PROTONSHEETS],
     [Product.Pass]: [APPS.PROTONPASS],
     [Product.Wallet]: [APPS.PROTONWALLET],
     [Product.VPN]: [APPS.PROTONVPN_SETTINGS],
