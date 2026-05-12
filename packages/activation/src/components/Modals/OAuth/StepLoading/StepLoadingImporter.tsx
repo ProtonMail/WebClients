@@ -1,8 +1,13 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { Loader, ModalTwo, ModalTwoContent, TextLoader } from '@proton/components';
 
-const StepLoadingImporter = () => {
+interface Props {
+    onClose?: () => void;
+}
+
+const StepLoadingImporter = ({ onClose }: Props) => {
     return (
         <ModalTwo open size="large">
             <ModalTwoContent>
@@ -11,6 +16,12 @@ const StepLoadingImporter = () => {
 
                     <h4>{c('Loading info').t`Gathering your data`}</h4>
                     <TextLoader>{c('Loading info').t`We're gathering your data from your provider`}</TextLoader>
+
+                    {onClose && (
+                        <Button size="medium" type="button" shape="outline" onClick={onClose}>
+                            {c('Action').t`Go back`}
+                        </Button>
+                    )}
                 </div>
             </ModalTwoContent>
         </ModalTwo>
