@@ -214,6 +214,12 @@ export const createAutotypeRules = (): SpotlightRule[] =>
         })
     );
 
+export const createAccessTokensDiscoveryRule = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.ACCESS_TOKENS_DISCOVERY,
+        when: (previous) => !previous,
+    });
+
 export const createOfflineSetupRule = (store: Store) =>
     createSpotlightRule({
         message: SpotlightMessage.OFFLINE_SETUP,
