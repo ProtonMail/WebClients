@@ -90,6 +90,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Account": [
         "Adicionar conta da ${ BRAND_NAME }"
       ],
@@ -161,6 +164,9 @@
       ],
       "Add user": [
         "Adicionar usuário"
+      ],
+      "Added ${ memberName } as group owner": [
+        "${ memberName } adicionamo como proprietário do grupo"
       ],
       "Align center": [
         "Centralizar"
@@ -2989,6 +2995,9 @@
       ],
       "Has errors": [
         "Tem erros"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importar erros para ${ user.AdminSetName }"
       ],
       "In progress": [
         "Em processo"
@@ -6427,9 +6436,6 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Faça contato para confirmar que precisam de ajuda para recuperar os seus dados."
       ],
-      "Contact-assisted recovery": [
-        "Recuperação assistida por contato"
-      ],
       "Contacts": [
         "Contatos"
       ],
@@ -8559,11 +8565,6 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Eu entendo que não conseguirei mais fazer login em versões mais antigas dos aplicativos móveis ${ BRAND_NAME }."
-      ]
-    },
     "Form heading": {
       "Enter your email address": [
         "Digite seu endereço de e-mail"
@@ -9723,6 +9724,9 @@
       "Activity Monitor": [
         "Monitor de atividades"
       ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -10077,6 +10081,9 @@
       ],
       "Can you access your active web session in another browser?": [
         "Você pode acessar sua sessão ativa em outro navegador?"
+      ],
+      "Can you reach out to your contact?": [
+        "Você Consegue entrar em contato com a pessoa de contato?"
       ],
       "Cancel": [
         "Cancelar"
@@ -10643,6 +10650,9 @@
       ],
       "For easy access to your passwords and more.": [
         "Para facilitar o acesso às suas senhas e muito mais."
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "por apenas ${ bundlePlanPriceInline }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
@@ -14658,6 +14668,9 @@
       "Pending": [
         "Pendente"
       ],
+      "Personal and work emails, plus important updates and notifications": [
+        "E-mails pessoais e profissionais, além de atualizações e notificações importantes"
+      ],
       "Phone number": [
         "Número do telefone"
       ],
@@ -15223,6 +15236,9 @@
       ],
       "Use default value": [
         "Usar valor padrão"
+      ],
+      "Valid ${ group.name } record found": [
+        "Encontrado um registro válido de ${ group.name }"
       ]
     },
     "Label for new member": {
@@ -20694,6 +20710,9 @@
       "Allow": [
         "Permitir"
       ],
+      "Allow data recovery from this device": [
+        "Permitir a recuperação de dados deste dispositivo"
+      ],
       "Allow password reset from the settings": [
         "Permitir redefinição de senha através da configurações"
       ],
@@ -22217,11 +22236,23 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Atribuir funções delegadas"
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Receba até ${ maxRewardAmount } em crédito"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe créditos quando a pessoa que você convida se inscreve em um plano ${ BRAND_NAME }."
+      ],
+      "New: Roles and permissions tab": [
+        "Novo: guia Funções e permissões"
+      ],
+      "User roles available": [
+        "Funções de usuário disponíveis"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Você pode agora atribuir funções a usuários individuais nesta guia."
       ]
     },
     "sso": {
@@ -23147,6 +23178,10 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Assista à entrevista"

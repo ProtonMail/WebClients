@@ -6644,11 +6644,11 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Επικοινωνήστε μαζί τους για να επιβεβαιώσετε ότι χρειάζονται βοήθεια για την ανάκτηση των δεδομένων τους."
       ],
-      "Contact-assisted recovery": [
-        "Ανάκτηση με υποβοήθηση επαφής"
-      ],
       "Contacts": [
         "Επαφές"
+      ],
+      "Data recovery contacts": [
+        "Επαφές ανάκτησης δεδομένων"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Τα δεδομένα ανακτήθηκαν με επιτυχία. Τώρα μπορείτε να αποκρυπτογραφήσετε τα υπάρχοντα δεδομένα και τα κρυπτογραφημένα αρχεία σας."
@@ -6755,9 +6755,6 @@
       ],
       "People who trust me": [
         "Άτομα που με εμπιστεύονται"
-      ],
-      "People you have added as recovery contacts.": [
-        "Άτομα που έχετε προσθέσει ως επαφές ανάκτησης."
       ],
       "Proceed anyway": [
         "Συνέχεια παρ’ όλα αυτά"
@@ -8793,8 +8790,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME } για κινητά."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME }."
       ]
     },
     "Form heading": {
@@ -10553,6 +10550,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Ανακτήσιμα δεδομένα με φράση ανάκτησης"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Η ανάκτηση δεδομένων απαιτεί επιλογή επαναφοράς κωδικού (ηλεκτρονικό ταχυδρομείο ή SMS)"
       ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
@@ -12360,6 +12360,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Αυτή η μέθοδος ανάκτησης δεδομένων απαιτεί επιλογή επαναφοράς κωδικού (email ή SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Αυτή η λειτουργία καθυστερεί την αποστολή των μηνυμάτων σας, δίνοντάς σας την δυνατότητα να αναιρέσετε την αποστολή κατά τη διάρκεια του επιλεγμένου χρονικού πλαισίου."
       ],
@@ -12576,8 +12579,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Για να χρησιμοποιήσετε ${ toAppName }, χρειάζεστε μια ${ MAIL_APP_NAME } διεύθυνση."
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Για να χρησιμοποιήσετε αυτήν τη μέθοδο ανάκτησης δεδομένων, πρέπει να έχετε μια επιλογή επαναφοράς κωδικού, όπως επαλήθευση μέσω ηλεκτρονικής διεύθυνσης ή επαλήθευση μέσω SMS."
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Για να χρησιμοποιήσετε αυτή τη μέθοδο ανάκτησης, πρέπει να απενεργοποιήσετε το ${ PROTON_SENTINEL_NAME } και να ενεργοποιήσετε μια επιλογή επαναφοράς κωδικού πρόσβασης (email ή SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο πρόγραμμα Sieve. Μπορείτε να ${ link }."
@@ -22650,8 +22653,17 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Εκχωρήστε ανατεθειμένους ρόλους"
+      ],
+      "Assign roles": [
+        "Ανάθεση ρόλων"
+      ],
       "Click a user's name to manage their role and permissions.": [
         "Κάντε κλικ στο όνομα ενός χρήστη για να διαχειριστείτε τον ρόλο και τα δικαιώματά του."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Κάντε κλικ στο Επεξεργασία για να αναθέσετε ρόλους σε αυτή την ομάδα και να διαχειριστείτε αυτόματα την πρόσβαση των μελών."
       ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Λάβετε έως και ${ maxRewardAmount } σε πιστώσεις"
@@ -22659,8 +22671,17 @@
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Κερδίστε πόντους όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."
       ],
+      "New: Roles and permissions tab": [
+        "Νέο: Καρτέλα ρόλων και αδειών"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Ανοίξτε αυτήν την καρτέλα για να χορηγήσετε συγκεκριμένα δικαιώματα χωρίς πλήρη πρόσβαση διαχειριστή."
+      ],
       "User roles available": [
         "Διαθέσιμοι ρόλοι χρηστών"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Τώρα μπορείτε να εκχωρείτε ρόλους σε μεμονωμένους χρήστες από αυτήν την καρτέλα."
       ]
     },
     "sso": {

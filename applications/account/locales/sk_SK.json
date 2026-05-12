@@ -6726,9 +6726,6 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Spojte sa s nimi a overte si, či potrebujú pomoc s obnovením svojich údajov."
       ],
-      "Contact-assisted recovery": [
-        "Obnova s využitím kontaktných údajov"
-      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -6839,9 +6836,6 @@
       ],
       "People who trust me": [
         "Ľudia, ktorí mi dôverujú"
-      ],
-      "People you have added as recovery contacts.": [
-        "Ľudia, ktorých ste si pridali ako kontaktné osoby na obnovenie účtu."
       ],
       "Proceed anyway": [
         "Aj tak pokračovať"
@@ -8927,8 +8921,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Rozumiem, že sa už nebudem môcť prihlásiť do starších verzií mobilných aplikácií ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Rozumiem, že sa už nebudem môcť prihlásiť do starších verzií ${ BRAND_NAME } aplikácií."
       ]
     },
     "Form heading": {
@@ -12831,9 +12825,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Aby ste mohli použiť ${ toAppName }, potrebujete ${ MAIL_APP_NAME } adresu."
-      ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Ak chcete túto metódu obnovy údajov použiť, musíte mať k dispozícii možnosť obnovenia hesla, napríklad overenie prostredníctvom emailu alebo SMS."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pre správnu funkciu musí každý filter obsahovať aspoň názov a platný skript Sieve. Môžete ${ link }."
@@ -23158,8 +23149,17 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Priradiť delegované pozície"
+      ],
+      "Assign roles": [
+        "Priradiť pozície"
+      ],
       "Click a user's name to manage their role and permissions.": [
         "Kliknutím na meno používateľa môžete spravovať jeho pozíciu a oprávnenia."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Kliknite na tlačidlo Upraviť, aby ste tejto skupine priradili pozícia a automaticky spravovali prístup jej členov."
       ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Získajte až ${ maxRewardAmount } kreditov"
@@ -23167,8 +23167,17 @@
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získajte kredity, keď si pozvaná osoba predplatí ${ BRAND_NAME } plán."
       ],
+      "New: Roles and permissions tab": [
+        "Novinka: Karta Pozície a oprávnenia"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Otvorte túto kartu, ak chcete udeliť konkrétne oprávnenia bez plných správcovských práv."
+      ],
       "User roles available": [
         "Dostupné používateľské pozície"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Na tejto karte môžete teraz jednotlivým používateľom prideľovať pozície."
       ]
     },
     "sso": {

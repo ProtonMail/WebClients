@@ -528,6 +528,9 @@
       "Delete record": [
         "Eliminar registro"
       ],
+      "Delete token ${ tokens[0].Account }": [
+        "Eliminar token ${ tokens[0].Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Eliminar token «${ token.Name }»"
       ],
@@ -890,6 +893,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acceda a ${ planOrAppName }"
+      ],
+      "Go to domain provider": [
+        "Vaya al proveedor del dominio"
       ],
       "Go to label": [
         "Ir a la etiqueta"
@@ -1370,6 +1376,9 @@
       ],
       "Save": [
         "Guardar"
+      ],
+      "Save & exit": [
+        "Guardar y salir"
       ],
       "Save address": [
         "Guardar dirección"
@@ -2873,11 +2882,59 @@
       "${ BRAND_NAME } Migration Assistant": [
         "Asistente de migración de ${ BRAND_NAME }"
       ],
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "**p=none**: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "**p=none**: no poner en cuarentena o rechazar los correos no autorizados. Usualmente las personas solo usan esta política como prueba."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: solicitando a las plataformas de destino que marquen los correos no autorizados como spam o los pongan en cuarentena."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: solicitando a las plataformas de destino rechazar los correos no autorizados."
+      ],
+      "Account connected": [
+        "Cuenta conectada"
+      ],
+      "Account disconnected": [
+        "Cuenta desconectada"
+      ],
+      "Activated": [
+        "Activado"
+      ],
+      "Activation link": [
+        "Enlace de activación"
+      ],
+      "Activation link copied to clipboard": [
+        "Enlace de activación copiado al portapapeles"
+      ],
       "Add a domain": [
         "Añadir dominio"
       ],
+      "Add domain": [
+        "Añadir dominio"
+      ],
+      "Add users": [
+        "Añadir usuarios"
+      ],
       "Add users and configure your domain manually for sending and receiving mail. Ideal for small teams starting from a clean slate.": [
         "Agregue usuarios y configure su dominio manualmente para enviar y recibir correo. Ideal para equipos pequeños que empiezan desde cero."
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "La dirección ya está en uso por otra persona de la organización. Contacte con soporte al cliente para resolverlo."
+      ],
+      "All": [
+        "Todo"
+      ],
+      "An unknown error occurred": [
+        "Ocurrió un error desconocido"
+      ],
+      "Are you sure you want to proceed? Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "¿En verdad desea continuar? Los usuarios que no hayan reclamado su cuenta antes de que finalice la migración deberán solicitar un restablecimiento de contraseña al administrador de su organización en ${ BRAND_NAME }."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "En cuanto se creen las cuentas, puede compartir el enlace de activación para que los usuarios puedan reclamar su cuenta de ${ BRAND_NAME }."
       ],
       "Authenticate": [
         "Autenticar"
@@ -2897,14 +2954,23 @@
       "Choose how you want to bring your team and email setup to ${ BRAND_NAME }.": [
         "Elija cómo desea importar su configuración de equipo y correo electrónico a ${ BRAND_NAME }."
       ],
+      "Choose what to migrate. Your choice will apply to all users. The migration will start after you decide which users to copy.": [
+        "Elija qué migrar. Su elección se aplicará a todos los usuarios. La migración comenzará después de que decida cuáles usuarios copiar."
+      ],
       "Completed": [
         "Completado"
       ],
       "Configure": [
         "Configurar"
       ],
+      "Configure domain": [
+        "Configurar dominio"
+      ],
       "Configure migration": [
         "Configurar migración"
+      ],
+      "Configure your domain": [
+        "Configure su dominio"
       ],
       "Contacts": [
         "Contactos"
@@ -2912,8 +2978,41 @@
       "Continue migration": [
         "Continuar migración"
       ],
+      "Copy activation link": [
+        "Copiar enlace de activación"
+      ],
+      "Copy activation link to clipboard": [
+        "Copiar el enlace de activación al portapapeles"
+      ],
+      "Copy the below code and paste it in the DNS section of your domain host. You can find an example and some helpful tips ${ hereHref }.": [
+        "Copie el siguiente código y péguelo en la sección de DNS de su anfitrión de dominio. Puede encontrar un ejemplo y consejos ${ hereHref }."
+      ],
+      "Creating accounts": [
+        "Creando cuentas"
+      ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM añade una firma digital a cada correo para que los destinatarios puedan verificar que el mensaje viene realmente de su dominio y no fue alterado en su tránsito. Sin ella, los mensajes podrían considerarse menos confiables."
+      ],
+      "DKIM records": [
+        "Registros DKIM"
+      ],
+      "DMARC builds on SPF and DKIM by telling receiving servers how to handle messages that fail these checks. It helps protect your domain from impersonation and improves overall delivery reliability.": [
+        "DMARC se basa en SPF y DKIM, indicando a los servidores receptores cómo gestionar los mensajes que no superan estas comprobaciones. Esto ayuda a proteger su dominio contra la suplantación de identidad y mejora la fiabilidad general de la entrega."
+      ],
+      "DMARC records": [
+        "Registros DMARC"
+      ],
+      "Domain added": [
+        "Dominio añadido"
+      ],
       "Domain connected": [
         "Dominio conectado"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Asegúrese de que sus correos electrónicos lleguen a la bandeja de entrada, no a la carpeta de spam. La actualización de SPF permitirá a los usuarios enviar correos desde ${ BRAND_NAME } y Google simultáneamente durante el periodo de migración."
+      ],
+      "Errors": [
+        "Errores"
       ],
       "Estimated size": [
         "Tamaño estimado"
@@ -2921,8 +3020,17 @@
       "Failed to load OAuth": [
         "Error al cargar OAuth"
       ],
+      "Finalize migration": [
+        "Finalizar migración"
+      ],
       "Finalize your migration": [
         "Finalice su migración."
+      ],
+      "Finalizing the migration means all your emails will be routed directly to ${ BRAND_NAME }. Users will stop receiving emails on their Google accounts and data will not be synchronized between ${ BRAND_NAME } and Google anymore.": [
+        "Finalizar la migración significa que todos sus correos electrónicos se redirigirán directamente a ${ BRAND_NAME }. Los usuarios dejarán de recibir correos electrónicos en sus cuentas de Google y los datos ya no se sincronizarán entre ${ BRAND_NAME } y Google."
+      ],
+      "Find out what can be migrated.": [
+        "Descubra lo que puede ser migrado."
       ],
       "Finish setting up your business account": [
         "Termine de configurar su cuenta de empresa"
@@ -2933,8 +3041,17 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicación de Google Marketplace para copiar datos a ${ BRAND_NAME }"
       ],
+      "Google Workspace account": [
+        "Cuenta de Google Workspace"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Un momento, estamos configurando las cuentas de usuario y en breve comenzaremos a importar los datos de los usuarios."
+      ],
       "Has errors": [
         "Tiene errores"
+      ],
+      "Import errors for ${ user.AdminSetName }": [
+        "Importar errores para ${ user.AdminSetName }"
       ],
       "In progress": [
         "En progreso"
@@ -2948,8 +3065,14 @@
       "Install Migration assistant": [
         "Instalar asistente de migración"
       ],
+      "Loading your organization data": [
+        "Cargando los datos de su organización"
+      ],
       "Mail": [
         "Correo"
+      ],
+      "Managed via ${ registrar.name }": [
+        "Gestionado mediante ${ registrar.name }"
       ],
       "Member address not found. Please contact customer support to resolve this": [
         "Falta la dirección de miembro. Contacte son el soporte al cliente para resolver esto"
@@ -2962,6 +3085,9 @@
       ],
       "Migrate users to ${ BRAND_NAME }": [
         "Migrar usuarios a ${ BRAND_NAME }"
+      ],
+      "Migrated": [
+        "Migrado"
       ],
       "Migration includes": [
         "La migración incluye"
@@ -2979,14 +3105,50 @@
       "Missing organization public key": [
         "Falta la clave pública de organización"
       ],
+      "More details": [
+        "Más detalles"
+      ],
       "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
         "Mueva sus usuarios, correos electrónicos, y ajustes automáticamente desde Google Workspace. Le guiaremos a conecar su cuenta, verificar su dominio, y migrar usuarios de forma segura."
+      ],
+      "No error details available. Please contact customer support for more information": [
+        "No hay detalles de error disponibles. Contáctese con soporte al cliente para más información."
+      ],
+      "No users to display": [
+        "No hay usuarios que mostrar"
+      ],
+      "Not activated": [
+        "No activado"
+      ],
+      "Not confirmed": [
+        "No confirmado"
+      ],
+      "Once users have claimed their ${ BRAND_NAME } account, finalize the migration.": [
+        "Una vez que los usuarios reclamen sus cuentas de ${ BRAND_NAME }, finalice la migración."
+      ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Una vez que hayamos confirmado que los correos electrónicos se enrutan a ${ BRAND_NAME }, la migración finalizará. Recibirá un correo electrónico de confirmación para informarle cuando esto suceda. Este proceso puede tardar hasta 24 horas."
       ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
       ],
       "Organization does not have enough storage available": [
         "La organización no tiene suficiente almacenamiento disponible"
+      ],
+      "Pending": [
+        "Pendiente"
+      ],
+      "Please add the following records in your DNS console of your domain provider:": [
+        "Añada los siguientes registros en la consola de DNS de su proveedor de dominio:"
+      ],
+      "Please leave this window open until we're done creating all the users.": [
+        "Deje esta ventana abierta hasta que hayamos terminado de crear todos los usuarios."
+      ],
+      "Please select at least one product to migrate": [
+        "Seleccione al menos un producto para migrar"
+      ],
+      "Refresh": [
+        "Actualizar"
       ],
       "Required": [
         "Obligatorio"
@@ -2997,6 +3159,9 @@
       "Select at least one user to start a migration": [
         "Seleccione al menos un usuario para iniciar una migración"
       ],
+      "Select users to migrate": [
+        "Seleccione los usuarios para migrar"
+      ],
       "Set up": [
         "Configurar"
       ],
@@ -3006,14 +3171,38 @@
       "Set up manually": [
         "Configurar manualmente"
       ],
+      "Set up secure sending (DKIM)": [
+        "Configurar el envío seguro (DKIM)"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurar el envío seguro (DMARC)"
+      ],
+      "Set up secure sending (SPF)": [
+        "Configurar el envío seguro (SPF)"
+      ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"
       ],
       "Settings": [
         "Ajustes"
       ],
+      "Share the activation link to users so they can claim their ${ BRAND_NAME } account.": [
+        "Comparta el enlace de activación a los usuarios para que puedan reclamar sus cuentas de ${ BRAND_NAME }."
+      ],
       "Sign in to Google Workspace": [
         "Iniciar sesión en Google Workspace"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Some accounts are not claimed": [
+        "Algunas cuentas no están reclamadas"
+      ],
+      "SPF records": [
+        "Registros SPF"
+      ],
+      "Start migrating": [
+        "Iniciar migración"
       ],
       "Start migration": [
         "Iniciar migración"
@@ -3021,14 +3210,38 @@
       "Status": [
         "Estado"
       ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "La configuración predeterminada es ninguna. Sin embargo, para mejorar su seguridad, le recomendamos establecer este valor en p=quarantine."
+      ],
+      "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
+        "El valor «p=» especifica la acción que se debe tomar para los correos electrónicos que no cumplen con DMARC. Estas son las acciones disponibles:"
+      ],
+      "This migration has been completed": [
+        "Esta migración ha sido completada"
+      ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar."
+      ],
+      "Update records for receiving": [
+        "Actualizar registros para recepción"
       ],
       "User": [
         "Usuario"
       ],
+      "User needs to activate their account through the activation link shown above": [
+        "El usuario debe activar su cuenta a través del enlace de activación que se muestra arriba"
+      ],
+      "User status": [
+        "Estado del usuario"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Los usuarios pueden usar ${ BRAND_NAME } o Google simultáneamente por el tiempo de la migración."
+      ],
       "Users migrated": [
         "Usuarios migrados"
+      ],
+      "Verified": [
+        "Verificado"
       ],
       "Verify domain ownership": [
         "Verifique propiedad de dominio"
@@ -3042,14 +3255,33 @@
       "Verify your domain to start a migration": [
         "Verifique su dominio para iniciar una migración"
       ],
+      "We detected the primary domain linked to your Google Workspace account. Confirm it to continue setting up email for your ${ BRAND_NAME } organization.": [
+        "Hemos detectado el dominio principal vinculado a su cuenta de Google Workspace. Confírmelo para continuar configurando el correo electrónico de su organización en ${ BRAND_NAME }."
+      ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
         "No pudimos verificar la instalación. Compruebe que la ha instalado en su cuenta de Google Workspace e intente de nuevo."
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Aún estamos comprobando los registros MX con su proveedor de dominio."
+      ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Hemos notado que algunos usuarios no han reclamado sus cuentas de ${ BRAND_NAME }."
       ],
       "What are you migrating?": [
         "¿Qué está migrando?"
       ],
+      "You": [
+        "Usted"
+      ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Necesita otorgar el permiso para que ${ BRAND_NAME } copie sus datos. Después de aceptar los permisos, vuelva aquí para continuar."
+      ],
+      "You're all set!": [
+        "¡Todo listo!"
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Su plan actual permite hasta ${ maxMembers } usuario. Para migrar usuarios adicionales, añada más licencias a la suscripción.",
+        "Su plan actual permite hasta ${ maxMembers } usuarios. Para migrar usuarios adicionales, añada más licencias a la suscripción."
       ]
     },
     "breadcrumb": {
@@ -5281,6 +5513,11 @@
         "use el asistente de importación Easy Switch"
       ]
     },
+    "Description for domain modal": {
+      "Duplicate DMARC record found, go to the DNS console of your domain provider to fix it.": [
+        "Se encontró un registro DMARC duplicado; vaya a la consola DNS de su proveedor de dominio para solucionarlo."
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puede verificar y cambiar este emparejamiento manualmente."
@@ -6356,6 +6593,9 @@
       "Add": [
         "Agregar"
       ],
+      "Add 1 more": [
+        "Añadir 1 más"
+      ],
       "Add emergency contact": [
         "Añadir contacto de emergencia"
       ],
@@ -6404,11 +6644,11 @@
       "Connect with them to confirm they need help to recover their data.": [
         "Conéctese con ellos para confirmar si necesitan ayuda para recuperar sus datos."
       ],
-      "Contact-assisted recovery": [
-        "Recuperación por asistencia de contacto"
-      ],
       "Contacts": [
         "Contactos"
+      ],
+      "Data recovery contacts": [
+        "Contactos de recuperación de datos"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Datos recuperados con éxito. Ahora puede descifrar sus datos existentes y los archivos cifrados."
@@ -6454,6 +6694,9 @@
       ],
       "Enable auto-renew": [
         "Activar la renovación automática"
+      ],
+      "Explore plans": [
+        "Explorar los planes"
       ],
       "For ${ email }": [
         "Para ${ email }"
@@ -6512,9 +6755,6 @@
       ],
       "People who trust me": [
         "Personas que confían en mí"
-      ],
-      "People you have added as recovery contacts.": [
-        "Personas que ha añadido como contactos de recuperación."
       ],
       "Proceed anyway": [
         "Continuar de todos modos"
@@ -8553,8 +8793,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
-        "Entiendo que ya no podré iniciar sesión en versiones anteriores de las aplicaciones móviles de ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } apps.": [
+        "Entiendo que ya no podré iniciar sesión en versiones anteriores de las aplicaciones de ${ BRAND_NAME }."
       ]
     },
     "Form heading": {
@@ -10313,6 +10553,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Datos recuperables con frase de recuperación"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "La recuperación de datos requiere una opción de restablecimiento de contraseña (correo electrónico o SMS)"
       ],
       "dedicated servers": [
         "servidores dedicados"
@@ -12120,6 +12363,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Esto podría tomar un tiempo. No cierre esta página o se desconecte de internet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Este método de recuperación requiere una opción de restablecimiento de contraseña (correo electrónico o SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Esta función retrasa el envío de los correos electrónicos, dándole la oportunidad de deshacer el envío durante el periodo de tiempo seleccionado."
       ],
@@ -12336,8 +12582,8 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Para usar ${ toAppName } necesita una dirección de ${ MAIL_APP_NAME }."
       ],
-      "To use this data recovery method, you must have a password reset option, like email verification or SMS verification.": [
-        "Para usar este método de recupéración, debe tener una opción para restablecer contraseña, como una verificación por correo electrónico o SMS."
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Para usar este método de recuperación, debe desactivar ${ PROTON_SENTINEL_NAME } y activar una opción de restablecimiento de contraseña (correo electrónico o SMS)"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puede ${ link }."
@@ -14138,6 +14384,9 @@
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
+      "Confirm MX records added": [
+        "Confirmar registros MX añadidos"
+      ],
       "Confirm new password": [
         "Confirmar contraseña nueva"
       ],
@@ -14487,6 +14736,9 @@
       "Highest VPN speed": [
         "Máxima velocidad de VPN"
       ],
+      "Host name": [
+        "Nombre del host"
+      ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entiendo que debo añadir esta dirección de correo de inmediato a la otra cuenta para evitar la pérdida de esta cuenta permanentemente."
       ],
@@ -14679,6 +14931,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
+      "MX records": [
+        "Registros MX"
+      ],
       "Name": [
         "Nombre"
       ],
@@ -14818,7 +15073,7 @@
         "Pendiente"
       ],
       "Personal and work emails, plus important updates and notifications": [
-        "correos electrónicos personales y profesionales, con actualizaciones y notificaciones importantes"
+        "Correos electrónicos personales y profesionales, con actualizaciones y notificaciones importantes"
       ],
       "Phone number": [
         "Número telefónico"
@@ -14861,6 +15116,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Priority": [
+        "Prioridad"
       ],
       "Priority support": [
         "Soporte prioritario"
@@ -15329,6 +15587,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Set recovery phone number": [
+        "Establecer número de teléfono de recuperación"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15368,6 +15629,26 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Agregue el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
+      ]
+    },
+    "Label for domain setup": {
+      "${ capitalizedGroup } record not found": [
+        "Registro ${ capitalizedGroup } no encontrado"
+      ],
+      "Host name": [
+        "Nombre del host"
+      ],
+      "Invalid ${ group.name } record found": [
+        "Se encontró un registro inválido de ${ group.name }"
+      ],
+      "Type": [
+        "Tipo"
+      ],
+      "Use default value": [
+        "Usar valores por defecto"
+      ],
+      "Valid ${ group.name } record found": [
+        "Se encontró un registro válido de ${ group.name }"
       ]
     },
     "Label for new member": {
@@ -15534,6 +15815,9 @@
       ],
       "data recovery option": [
         "opción de recuperación de datos"
+      ],
+      "Detailed instructions": [
+        "Instrucciones detalladas"
       ],
       "Details": [
         "Detalles"
@@ -19509,6 +19793,9 @@
       "Search for an email or IP address": [
         "Buscar un correo electrónico o una dirección IP"
       ],
+      "Search for users or addresses": [
+        "Buscar usuarios o direcciones"
+      ],
       "Search parent folder": [
         "Buscar en la carpeta principal"
       ],
@@ -20015,6 +20302,12 @@
       "Partial": [
         "Parcial"
       ],
+      "Recovery score: ${ score }": [
+        "Puntuación de recuperación: ${ score }"
+      ],
+      "Require verified password reset option (email or SMS)": [
+        "Requerir opción de restablecimiento de contraseña verificada (correo electrónico o SMS)"
+      ],
       "Score: ${ score } / ${ maxScore }": [
         "Puntuación: ${ score } / ${ maxScore }"
       ],
@@ -20056,8 +20349,14 @@
       "Download recovery file": [
         "Descargar archivo de recuperación"
       ],
+      "Email recovery enabled": [
+        "Correo de recuperación activado"
+      ],
       "Emergency contacts added": [
         "Contactos de emergencia añadidos"
+      ],
+      "Enable email recovery": [
+        "Activar correo de recuperación"
       ],
       "Enable recovery by phone": [
         "Activar la recuperación por teléfono"
@@ -20067,6 +20366,9 @@
       ],
       "Password verified": [
         "Contraseña verificada"
+      ],
+      "Phone recovery enabled": [
+        "Número de recuperación activado"
       ],
       "Recovery contacts added": [
         "Contactos de recuperación añadidos"
@@ -20804,6 +21106,233 @@
       ],
       "Your recovery phrase is set": [
         "Se configuró la frase de recuperación"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Correo de la cuenta de ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Protección de la cuenta"
+      ],
+      "Add": [
+        "Añadir"
+      ],
+      "Add emergency contacts": [
+        "Añadir contactos de emergencia"
+      ],
+      "Add options": [
+        "Añadir opciones"
+      ],
+      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
+        "Añada a personas de su confianza con las que pueda contactar fácilmente. Podrán acceder a su cuenta y restablecer la contraseña."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Añada personas en las que confía y pueda contactar fácilmente. Podrán ayudarle a desbloquear sus datos después de restablecer la contraseña."
+      ],
+      "Add phone number": [
+        "Añadir número telefónico"
+      ],
+      "Add recovery contacts": [
+        "Añadir contactos de recuperación"
+      ],
+      "Add recovery email": [
+        "Añadir un correo de recuperación"
+      ],
+      "Add recovery phone": [
+        "Añadir teléfono de recuperación"
+      ],
+      "Added emergency contacts": [
+        "Contactos de emergencia añadidos"
+      ],
+      "Added recovery contacts": [
+        "Contactos de recuperación añadidos"
+      ],
+      "Added recovery email": [
+        "Correo de recuperación añadido"
+      ],
+      "Added recovery phone": [
+        "Teléfono de recuperación añadido"
+      ],
+      "Allow": [
+        "Permitir"
+      ],
+      "Allow data recovery from this device": [
+        "Permitir la recuperación de datos de este dispositivo"
+      ],
+      "Allow password reset from the settings": [
+        "Permitir el restablecimiento de contraseña desde los ajustes"
+      ],
+      "Allow recovery by email": [
+        "Permitir recuperación por correo electrónico"
+      ],
+      "Allow recovery by phone": [
+        "Permitir recuperación por teléfono"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permitir escanear un código QR para iniciar sesión"
+      ],
+      "Allow trusted friends to sign in": [
+        "Permitir amistades de confianza de iniciar sesión"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Permitir amistades de confianza para desbloquear sus datos"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Volver a ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Felicitaciones"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "¿No lo recibió? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Hecho"
+      ],
+      "Download": [
+        "Descargar"
+      ],
+      "Download recovery file": [
+        "Descargar archivo de recuperación"
+      ],
+      "Downloaded recovery file": [
+        "Archivo de recuperación descargado"
+      ],
+      "Emergency contacts enabled": [
+        "Contactos de emergencia activados"
+      ],
+      "Enable device recovery": [
+        "Activar recuperación de dispositivo"
+      ],
+      "Enable email recovery": [
+        "Activar correo de recuperación"
+      ],
+      "Enable emergency contacts": [
+        "Activar contactos de emergencia"
+      ],
+      "Enable password reset from settings": [
+        "Activar el restablecimiento de contraseña desde los ajustes"
+      ],
+      "Enable phone recovery": [
+        "Activar teléfono de recuperación"
+      ],
+      "Enable QR code sign-in": [
+        "Activar inicio de sesión con código QR"
+      ],
+      "Enabled device recovery": [
+        "Recuperación de dispositivo activada"
+      ],
+      "Enabled email recovery": [
+        "Correo de recuperación activado"
+      ],
+      "Enabled password reset from settings": [
+        "Restablecimiento de contraseña desde los ajustes activado"
+      ],
+      "Enabled phone recovery": [
+        "Teléfono de recuperación activado"
+      ],
+      "Enabled QR code sign-in": [
+        "Inicio de sesión con código QR activado"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Here's how you increased your account protection:": [
+        "Así es cómo incrementó la seguridad de su cuenta:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Si olvida la contraseña, puede iniciar sesión usando un código QR. Solo necesita haber iniciado sesión en un servicio de ${ BRAND_NAME } en otro dispositivo."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Si no pudiera acceder a su cuenta de ${ BRAND_NAME }, le permitirá iniciar sesión y recuperar sus datos. Es la única manera de restaurar todo, así que asegúrese de guardarlo en un lugar seguro."
+      ],
+      "Later": [
+        "Después"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Proteja su legado con Acceso de Emergencia"
+      ],
+      "Save recovery phrase": [
+        "Guardar frase de recuperación"
+      ],
+      "Saved recovery phrase": [
+        "Frase de recuperación guardada"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Ya debe tener una cuenta de ${ BRAND_NAME }."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Esto le permitirá acceder de forma rápida a su cuenta de ${ BRAND_NAME } para que pueda cambiar la contraseña."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Esto le permitirá restablecer la contraseña de su cuenta si la ha perdido, pero aún ha iniciado sesión en ${ BRAND_NAME }. A menudo es la forma más fácil de recuperar la cuenta si ha iniciado sesión."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Esto restaurará el acceso a correos electrónicos, contactos, archivos, contraseñas y cualquier otro dato cifrado en su cuenta después de restablecer la contraseña."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Para asegurarnos que la dirección de correo es suya, ingrese el código de verificación enviado a ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Para asegurarnos que el número telefónico es suyo, ingrese el código de verificación enviado a ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Para asegurarnos de que esta dirección es realmente suya, le enviaremos un correo electrónico con un enlace de verificación."
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Actualice su plan para activar el Acceso de Emergencia a su cuenta. Esto le permitirá designar de 1 a 5 personas que podrán restablecer su contraseña."
+      ],
+      "Verified password": [
+        "Contraseña verificada"
+      ],
+      "Verified recovery email": [
+        "Correo de recuperación verificado"
+      ],
+      "Verified recovery phone": [
+        "Teléfono de recuperación verificado"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Verify password": [
+        "Verificar la contraseña"
+      ],
+      "Verify recovery email": [
+        "Verificar correo de recuperación"
+      ],
+      "Verify recovery phone": [
+        "Verificar el teléfono de recuperación"
+      ],
+      "Verify your recovery email": [
+        "Verifique su correo de recuperación"
+      ],
+      "Verify your recovery phone": [
+        "Verifique su teléfono de recuperación"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Puede guardar una copia de seguridad de datos en este dispositivo. Esto restaurará el acceso a correos electrónicos, contactos, archivos, contraseñas y cualquier otro dato cifrado en su cuenta después de restablecer la contraseña, simplemente iniciando sesión en este dispositivo."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Puede usar el correo de verificación para recuperar el acceso a la cuenta si olvidara la contraseña."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Puede usar SMS para recuperar el acceso a la cuenta si olvidara la contraseña."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Puede usar su correo electrónico de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Puede usar su teléfono de recuperación para recuperar el acceso a la cuenta si olvidara la contraseña."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "No necesita abrir o leer el archivo, solo descárguelo y guárdelo en un lugar seguro."
+      ],
+      "Your recovery checklist": [
+        "Lista de verificación para su recuperación"
+      ],
+      "Your security setup": [
+        "Su configuración de seguridad"
       ]
     },
     "saml: Action": {
@@ -22223,8 +22752,17 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "Asignar roles delegados"
+      ],
+      "Assign roles": [
+        "Asignar roles"
+      ],
       "Click a user's name to manage their role and permissions.": [
         "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Haga clic en Editar para asignar roles a este grupo y gestionar acceso a miembros automáticamente."
       ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Gane hasta ${ maxRewardAmount } en créditos"
@@ -22232,8 +22770,17 @@
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtenga créditos cuando la persona que invite se suscriba a un plan de ${ BRAND_NAME }."
       ],
+      "New: Roles and permissions tab": [
+        "Nuevo: Pestaña de roles y permisos"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Abra esta pesaña para otorgar permisos específicos sin acceso administrativo total."
+      ],
       "User roles available": [
         "Roles de usuario disponibles"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "hora puee asignar roles a usuarios individuales desde esta pestaña"
       ]
     },
     "sso": {
@@ -23337,6 +23884,9 @@
     "Success": {
       "Account deleted. Signing out...": [
         "Cuenta eliminada. Cerrando sesión..."
+      ],
+      "Activation link copied to clipboard": [
+        "Enlace de activación copiado al portapapeles"
       ],
       "Address added": [
         "Dirección agregada"
