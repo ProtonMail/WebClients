@@ -284,3 +284,7 @@ button {
 		background-color: var(--button-default-background-color);
 	}
 }
+
+.button-solid-weak {
+	--interaction-weak: var(--interaction-solid-weak-custom);
+}
