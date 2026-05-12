@@ -138,6 +138,14 @@ export interface DriveExplorerConditions {
 }
 
 /**
+ * Accessibility configuration.
+ */
+
+export interface DriveExplorerA11y {
+    getItemAriaLabel: (params: { uid: string; isSelected: boolean; index: number }) => string;
+}
+
+/**
  * Sorting configuration
  */
 export interface DriveExplorerSort {
