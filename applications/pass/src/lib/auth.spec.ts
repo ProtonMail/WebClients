@@ -72,6 +72,7 @@ const fireConnectivity = (status: ConnectivityStatus) => connectivitySubscribers
 const connectivity = {
     online: true,
     check: jest.fn().mockResolvedValue(undefined),
+    retryHandler: { reset: jest.fn() } as any,
     subscribe: jest.fn((cb) => {
         connectivitySubscribers.push(cb);
         return () => connectivitySubscribers.splice(connectivitySubscribers.indexOf(cb), 1);
@@ -81,7 +82,7 @@ const connectivity = {
 /** Document listeners */
 const evtListeners: Map<string, EventListener> = new Map();
 let visibility: DocumentVisibilityState = 'visible';
-const fireVisibility = () => evtListeners.get('visibilitychange')?.(new Event('visibilitychange'));
+const fireVisibility = async () => evtListeners.get('visibilitychange')?.(new Event('visibilitychange'));
 document.addEventListener = jest.fn((type: string, handler: EventListener) => evtListeners.set(type, handler));
 document.removeEventListener = jest.fn((type: string) => evtListeners.delete(type));
 Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => visibility });
@@ -363,17 +364,17 @@ describe('AuthService', () => {
 
         afterEach(() => detach());
 
-        test('visibilitychange while offline-booted + online dispatches offlineResume', () => {
+        test('visibilitychange while offline-booted + online dispatches offlineResume', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
-        test('visibilitychange while hidden does not dispatch', () => {
+        test('visibilitychange while hidden does not dispatch', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             visibility = 'hidden';
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
@@ -384,25 +385,25 @@ describe('AuthService', () => {
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
-        test('does not dispatch when connectivity is offline', () => {
+        test('does not dispatch when connectivity is offline', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = false;
             fireConnectivity(ConnectivityStatus.OFFLINE);
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
-        test('does not dispatch when not offline-booted', () => {
+        test('does not dispatch when not offline-booted', async () => {
             setAppState({ status: AppStatus.AUTHORIZED });
             fireConnectivity(ConnectivityStatus.ONLINE);
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
-        test('does not dispatch when localID is missing', () => {
+        test('does not dispatch when localID is missing', async () => {
             authStore.clear();
             setAppState({ status: AppStatus.OFFLINE });
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
@@ -420,15 +421,42 @@ describe('AuthService', () => {
             connectivity.online = true;
             await authService.config.onSessionFailure({}, offlineError);
             expect(authService.scheduler.isThrottled()).toBe(true);
-            fireVisibility();
+            await fireVisibility();
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
+        test('`visibilitychange` while offline probes connectivity and rewinds retry backoff', async () => {
+            connectivity.online = false;
+            visibility = 'visible';
+            await fireVisibility();
+
+            expect(connectivity.check).toHaveBeenCalledTimes(1);
+            expect(connectivity.retryHandler!.reset).toHaveBeenCalledTimes(1);
+        });
+
+        test('visibilitychange skips probe when already online', async () => {
+            connectivity.online = true;
+            visibility = 'visible';
+            await fireVisibility();
+
+            expect(connectivity.check).not.toHaveBeenCalled();
+            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
+        });
+
+        test('visibilitychange skips probe when document is hidden', async () => {
+            connectivity.online = false;
+            visibility = 'hidden';
+            await fireVisibility();
+
+            expect(connectivity.check).not.toHaveBeenCalled();
+            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
+        });
+
         test('detach unwires document and connectivity listeners', () => {
-            const docRemoveSpy = document.removeEventListener as jest.Mock;
+            const removeListeners = document.removeEventListener as jest.Mock;
             const subscribersBefore = connectivitySubscribers.length;
             detach();
-            expect(docRemoveSpy).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
+            expect(removeListeners).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
             expect(connectivitySubscribers.length).toBe(subscribersBefore - 1);
         });
     });
