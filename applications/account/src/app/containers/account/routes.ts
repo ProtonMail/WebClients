@@ -178,8 +178,7 @@ const getRecoverySettings = ({
     isMnemonicAvailable,
     isRecoveryFileAvailable,
     isSessionRecoveryAvailable,
-    isEmergencyAccessAvailable,
-    isRecoveryContactsAvailable,
+    isDelegatedAccessAvailable,
     isRecoverySettingsRedesignEnabled,
     isAccountRecoveryAvailable,
     recoveryNotification,
@@ -189,8 +188,7 @@ const getRecoverySettings = ({
     isMnemonicAvailable: boolean;
     isRecoveryFileAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
-    isEmergencyAccessAvailable: boolean;
-    isRecoveryContactsAvailable: boolean;
+    isDelegatedAccessAvailable: boolean;
     isRecoverySettingsRedesignEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }) => {
@@ -238,7 +236,7 @@ const getRecoverySettings = ({
                     id: 'recovery-contacts',
                     text: c('emergency_access').t`Data recovery contacts`,
                     to: '/recovery-contacts',
-                    available: isRecoveryContactsAvailable,
+                    available: isDelegatedAccessAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
             },
@@ -272,7 +270,7 @@ const getRecoverySettings = ({
                     id: 'emergency-contacts',
                     text: c('emergency_access').t`Emergency access`,
                     to: '/emergency-contacts',
-                    available: isEmergencyAccessAvailable,
+                    available: isDelegatedAccessAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
             },
@@ -319,12 +317,12 @@ const getRecoverySettings = ({
                       {
                           text: c('emergency_access').t`Data recovery contacts`,
                           id: recoveryIds.recoveryContacts,
-                          available: isRecoveryContactsAvailable,
+                          available: isDelegatedAccessAvailable,
                       },
                       {
                           text: c('emergency_access').t`Emergency access`,
                           id: recoveryIds.emergencyAccess,
-                          available: isEmergencyAccessAvailable,
+                          available: isDelegatedAccessAvailable,
                       },
                       {
                           text: c('Title').t`Password reset settings`,
@@ -340,7 +338,6 @@ export const getAccountAppRoutes = ({
     app,
     user,
     isSessionRecoveryAvailable,
-    isRecoveryContactsEnabled,
     subscription,
     isDataRecoveryAvailable,
     isMnemonicAvailable,
@@ -373,7 +370,6 @@ export const getAccountAppRoutes = ({
     isDataRecoveryAvailable: boolean;
     isMnemonicAvailable: boolean;
     isRecoveryFileAvailable: boolean;
-    isRecoveryContactsEnabled: boolean;
     isSessionRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
     recoveryNotification?: ThemeColor;
@@ -450,10 +446,8 @@ export const getAccountAppRoutes = ({
         (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isEmergencyAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
-    const isRecoveryContactsAvailable = isRecoveryContactsEnabled && isEmergencyAccessAvailable;
-    const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
-    const isNonPrivateRecoveryContactsAvailable = isRecoveryContactsEnabled && isNonPrivateEmergencyAccessAvailable;
+    const isDelegatedAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
+    const isNonPrivateDelegatedAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
     const recoverySettings = getRecoverySettings({
         isAccountRecoveryAvailable,
         recoveryNotification,
@@ -462,8 +456,7 @@ export const getAccountAppRoutes = ({
         isDataRecoveryAvailable,
         isMnemonicAvailable,
         isRecoveryFileAvailable,
-        isEmergencyAccessAvailable,
-        isRecoveryContactsAvailable,
+        isDelegatedAccessAvailable,
     });
 
     const paymentsSectionAvailable =
@@ -677,12 +670,12 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Emergency access`,
                         id: 'emergency-access',
                         // This is a special section for non-private users that only contains incoming delegated access
-                        available: isNonPrivateEmergencyAccessAvailable,
+                        available: isNonPrivateDelegatedAccessAvailable,
                     },
                     {
                         text: c('emergency_access').t`Data recovery contacts`,
                         id: recoveryIds.recoveryContacts,
-                        available: isNonPrivateRecoveryContactsAvailable,
+                        available: isNonPrivateDelegatedAccessAvailable,
                     },
                     {
                         text: isFamilyOrg
