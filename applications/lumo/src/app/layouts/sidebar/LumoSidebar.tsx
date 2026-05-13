@@ -38,6 +38,7 @@ const LumoSidebarContent = () => {
     const { isVisible, isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
     const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
+    const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
@@ -104,14 +105,26 @@ const LumoSidebarContent = () => {
                         onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
                     /> */}
 
-                    {/* <SidebarItem
-                        icon="cog-wheel"
-                        label={c('collider_2025:Button').t`Settings`}
-                        onClick={() => settingsModal.openModal(true)}
-                    /> */}
+                    {isGuest && (
+                        <SidebarItem
+                            icon="cog-wheel"
+                            label={c('collider_2025:Button').t`Settings`}
+                            onClick={() => settingsModal.openModal(true)}
+                        />
+                    )}
 
                     <ForBusinessSidebarButton isSmallScreen={isSmallScreen} />
 
+                    {/* <Button
+                        shape="ghost"
+                        color="weak"
+                        fullWidth
+                        onClick={() => settingsModal.openModal(true)}
+                        className="inline-flex items-center gap-4"
+                    >
+                        <IcCogWheel className="shrink-0" />
+                        {c('Action').t`Settings`}
+                    </Button> */}
                     <SidebarBottomUserArea />
                 </div>
             </div>
