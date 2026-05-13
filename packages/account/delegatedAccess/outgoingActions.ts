@@ -1,7 +1,7 @@
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import { verifyAddressKeyToRecover } from '@proton/key-transparency/verification';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';
@@ -513,13 +513,16 @@ export const recoverDelegatedAccessStep2Thunk = ({
                 */
             }
 
+            // Temporarily allowed while KT is being updated
+            const disableSklCheck = extra.unleashClient.isEnabled('SocialRecoverySklDisabled');
+
             untrustedSignatureAddressKey = await CryptoProxy.importPublicKey({
                 armoredKey: signatureAddressKey.PrivateKey,
             });
             const verificationResult = await verifyAddressKeyToRecover({
                 api,
                 email: address.Email,
-                signedKeyList: SignedKeyList,
+                signedKeyList: disableSklCheck ? null : SignedKeyList,
                 addressKeyToRecover: {
                     publicKey: untrustedSignatureAddressKey,
                     armoredKey: signatureAddressKey.PrivateKey,
@@ -529,7 +532,11 @@ export const recoverDelegatedAccessStep2Thunk = ({
             });
 
             // Allow the user to ignore unverified keys (the user has been prompted).
-            if (verificationResult.status === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS && !ignoreVerification) {
+            if (
+                !disableSklCheck &&
+                verificationResult.status === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS &&
+                !ignoreVerification
+            ) {
                 throw new RetrySignedKeyListError(verificationResult.errorDetails);
             }
 
