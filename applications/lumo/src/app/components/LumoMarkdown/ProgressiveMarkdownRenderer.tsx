@@ -47,6 +47,8 @@ function remarkBrToBreak() {
  * - We only re-parse the last ~100 bytes (active section)
  */
 
+type HandleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+
 interface ContentBlock {
     type: 'complete' | 'incomplete';
     content: string;
@@ -149,10 +151,30 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
     return blocks;
 }
 
+function SafeLink({
+    href,
+    handleLinkClick,
+    children,
+}: {
+    href: string;
+    handleLinkClick: HandleLinkClick | undefined;
+    children?: React.ReactNode;
+}) {
+    if (!handleLinkClick || !href) {
+        return <a href={href}>{children}</a>;
+    }
+
+    return (
+        <a href={href} onClick={(e) => handleLinkClick(e, href)}>
+            {children}
+        </a>
+    );
+}
+
 interface ProgressiveMarkdownProps {
     content: string;
     isStreaming: boolean;
-    handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+    handleLinkClick?: HandleLinkClick;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     message: any;
@@ -167,7 +189,7 @@ interface ProgressiveMarkdownProps {
  */
 const MarkdownBlock: React.FC<{
     content: string;
-    handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+    handleLinkClick?: HandleLinkClick;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     message: any;
@@ -271,15 +293,10 @@ const MarkdownBlock: React.FC<{
                         return <RefLink id={id}>{children}</RefLink>;
                     }
 
-                    // Handle regular links
-                    if (!handleLinkClick || !href) {
-                        return <a href={href}>{children}</a>;
-                    }
-
                     return (
-                        <a href={href} onClick={(e) => handleLinkClick(e, href)}>
+                        <SafeLink href={href} handleLinkClick={handleLinkClick}>
                             {children}
-                        </a>
+                        </SafeLink>
                     );
                 },
                 img: (props: any) => {
@@ -292,8 +309,13 @@ const MarkdownBlock: React.FC<{
                         return <InlineImageComponent attachmentId={attachmentId} alt={alt} />;
                     }
 
-                    // For security, don't render other images
-                    return null;
+                    // For security, do not render images inline, but allow accessing them via a link
+                    const text = alt?.trim() || '[image]';
+                    return (
+                        <SafeLink href={src} handleLinkClick={handleLinkClick}>
+                            {text}
+                        </SafeLink>
+                    );
                 },
                 table(props: any) {
                     return (
