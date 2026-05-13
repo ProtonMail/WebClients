@@ -1,3 +1,5 @@
+import './ItemA11yActivator.scss';
+
 interface ItemA11yActivatorProps {
     ariaLabel: string;
     isSelected: boolean;
@@ -44,7 +46,7 @@ export const ItemA11yActivator = ({
 }: ItemA11yActivatorProps) => (
     <button
         type="button"
-        className="absolute inset-0 z-1"
+        className="item-a11y-activator absolute inset-0 z-1"
         style={{ background: 'transparent', border: 0, padding: 0, cursor: 'default' }}
         aria-label={ariaLabel}
         aria-pressed={isSelected}
@@ -55,4 +57,10 @@ export const ItemA11yActivator = ({
         onKeyDown={onKeyDown}
         onContextMenu={onContextMenu}
     />
+);
+
+export const ItemA11yActivatorCell = (props: ItemA11yActivatorProps) => (
+    <td className="item-a11y-activator-cell absolute inset-0 p-0 border-0">
+        <ItemA11yActivator {...props} />
+    </td>
 );
