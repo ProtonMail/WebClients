@@ -21,23 +21,7 @@ import noop from '@proton/utils/noop';
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
 export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPassword => {
-    const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
-
-    /** Persists `unlockRetryCount` on the session blob without
-     * re-encrypting it. Triggers `onSessionPersist` as a side-effect,
-     * which consumers use to sync additional session state (eg: the
-     * extension writes to session storage for SW lifecycle). */
-    const syncSession = async (options: { retryCount: number }) => {
-        authStore.setUnlockRetryCount(options.retryCount);
-
-        const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = options.retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
-    };
+    const { authStore, api } = auth.config;
 
     const adapter: LockAdapterPassword = {
         type: LockMode.PASSWORD,
@@ -45,8 +29,6 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPasswo
         check: async () => {
             logger.info(`[PasswordLock] checking password lock`);
             if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
-
-            authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
@@ -112,7 +94,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPasswo
          * Load the crypto workers early in case password unlocking
          * happens before we boot the application state (hydrate.saga) */
         unlock: async (password) => {
-            const retryCount = authStore.getUnlockRetryCount() + 1;
+            const unlockRetryCount = authStore.getUnlockRetryCount() + 1;
 
             /** API may have been flagged as sessionLocked before
              * booting offline - as such reset the api state to
@@ -141,23 +123,21 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPasswo
                 authStore.setOfflineKD(hash);
                 authStore.setLocked(false);
 
-                /** NOTE: Besides resetting the retry count, the `onSessionPersist`
-                 * side-effect propagates the unlocked session state. In the extension,
-                 * this is what allows `onResumeStart` to detect a valid offline session
-                 * after a SW reload and boot without requiring the user password. */
-                await syncSession({ retryCount: 0 }).catch(noop);
-                await adapter.check();
+                /** `onSessionPersist` side-effect propagates the unlocked session state.
+                 * In the extension, this is what allows `onResumeStart` to detect a
+                 * valid offline session after a SW reload and re-boot offline. */
+                await auth.syncLock({ unlockRetryCount: 0, lockLastExtendTime: getEpoch() }).catch(noop);
 
                 return hash;
             } catch (err) {
                 if (err instanceof PassCryptoError) throw err;
 
-                if (retryCount >= 3) {
+                if (unlockRetryCount >= 3) {
                     await auth.logout({ soft: false, broadcast: true });
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
-                await syncSession({ retryCount }).catch(noop);
+                await auth.syncLock({ unlockRetryCount }).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true });
 
                 throw new Error(getInvalidPasswordString(authStore));

@@ -1,12 +1,18 @@
 import { ARGON2_PARAMS } from '@protontech/crypto';
+import { store as appStore } from 'proton-pass-web/app/Store/store';
+
 import { getInitialAppState } from '@proton/pass/components/Core/AppStateManager';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { AppStatus } from '@proton/pass/types';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/client';
+import { type AppState, AppStatus } from '@proton/pass/types';
 import { createMemoryStore } from '@proton/pass/utils/store';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import * as auth from './auth';
 import * as sessions from './sessions';
@@ -32,19 +38,25 @@ const MOCK_PERSISTED_SESSION = {
     blob: '',
 };
 exposeAuthStore(createAuthStore(createMemoryStore()));
-exposeApi({ subscribe: jest.fn() } as any);
+exposeApi({ subscribe: jest.fn(), idle: jest.fn(() => Promise.resolve()) } as any);
 
 const config = { SSO_URL: 'test://' } as PassConfig;
 const settings = { clear: jest.fn(), resolve: jest.fn() };
 
+let appState: AppState = getInitialAppState();
+const setAppState = (next: Partial<AppState>) => (appState = { ...appState, ...next });
+
+const genericError = new Error('unknown');
+const offlineError = createOfflineError({});
+
 const app = {
-    getState: getInitialAppState,
+    getState: jest.fn(() => appState),
     reset: jest.fn(),
     setAuthorized: jest.fn(),
-    setBooted: jest.fn(),
+    setBooted: jest.fn((booted: boolean) => setAppState({ booted })),
     setLocalID: jest.fn(),
     setState: jest.fn(),
-    setStatus: jest.fn(),
+    setStatus: jest.fn((status: AppStatus) => setAppState({ status })),
     setUID: jest.fn(),
     subscribe: jest.fn(),
 };
@@ -53,16 +65,35 @@ const history = { replace: jest.fn(), location: { pathname: '/', search: '', sta
 const sw = { on: jest.fn(), off: jest.fn() } as any;
 const core = { settings, i18n: { setLocale: jest.fn() } } as any;
 const authSwitch = { sync: jest.fn() } as any;
-const getOnline = jest.fn(() => true);
+
+/** Connectivity */
+const connectivitySubscribers: ((status: ConnectivityStatus) => void)[] = [];
+const fireConnectivity = (status: ConnectivityStatus) => connectivitySubscribers.forEach((cb) => cb(status));
+const connectivity = {
+    online: true,
+    check: jest.fn().mockResolvedValue(undefined),
+    subscribe: jest.fn((cb) => {
+        connectivitySubscribers.push(cb);
+        return () => connectivitySubscribers.splice(connectivitySubscribers.indexOf(cb), 1);
+    }),
+} as unknown as { -readonly [P in keyof ConnectivityService]: ConnectivityService[P] };
+
+/** Document listeners */
+const evtListeners: Map<string, EventListener> = new Map();
+let visibility: DocumentVisibilityState = 'visible';
+const fireVisibility = () => evtListeners.get('visibilitychange')?.(new Event('visibilitychange'));
+document.addEventListener = jest.fn((type: string, handler: EventListener) => evtListeners.set(type, handler));
+document.removeEventListener = jest.fn((type: string) => evtListeners.delete(type));
+Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => visibility });
 
 const authService = auth.createAuthService({
     app,
     authSwitch,
     config,
     core,
+    connectivity,
     history,
     sw,
-    getOnline,
     onNotification: jest.fn(),
 } as any);
 
@@ -78,13 +109,21 @@ jest.spyOn(sessions, 'getPersistedLocalIDsForUserID').mockImplementation(() => [
 jest.spyOn(storage, 'clearUserLocalData').mockImplementation(() => []);
 jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve([]));
 
+jest.useFakeTimers();
+
 describe('AuthService', () => {
     beforeEach(() => {
         authStore.clear();
-        history.location = { pathname: '/', search: '', state: null, hash: '' };
-
         jest.clearAllMocks();
 
+        history.location = { pathname: '/', search: '', state: null, hash: '' };
+        connectivity.online = true;
+        appState = getInitialAppState();
+        visibility = 'visible';
+        connectivitySubscribers.length = 0;
+
+        evtListeners.clear();
+        authService.scheduler.reset();
         core.i18n.setLocale.mockResolvedValue({});
         authSwitch.sync.mockResolvedValue();
     });
@@ -146,15 +185,11 @@ describe('AuthService', () => {
         });
 
         test('should set `forceLock` to true if local ID conflict', async () => {
-            /** When in-memory session has localID 41 but URL requests different localID
-             * that has a persisted session, force password lock to switch accounts */
-
             /** Mock valid in-memory session for localID 41 */
             validSession.mockImplementationOnce(() => true);
-            authStore.setLocalID(41);
 
             /** Simulate accessing URL for different localID with persisted session */
-            history.location.pathname = `/u/${MOCK_PERSISTED_SESSION}/some/path`;
+            history.location.pathname = `/u/1337/some/path`;
             getPersistedSession.mockImplementationOnce(async () => MOCK_PERSISTED_SESSION);
 
             const options: AuthOptions = {};
@@ -162,15 +197,12 @@ describe('AuthService', () => {
 
             expect(result).toBe(false);
             expect(options.forceLock).toBe(true);
-            expect(resumeSession).not.toHaveBeenCalled();
             expect(clear).toHaveBeenCalled();
+            expect(resumeSession).not.toHaveBeenCalled();
             expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
         });
 
         test('should set `forceLock` to true when offline with valid session', async () => {
-            /** When user has valid session but is offline, force lock screen
-             * to require local authentication (biometrics/password) */
-
             /** Setup valid session with offline capabilities and biometric lock */
             settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
             validSession.mockImplementationOnce(() => true);
@@ -182,7 +214,7 @@ describe('AuthService', () => {
             authStore.setLockMode(LockMode.BIOMETRICS);
 
             /** Simulate offline state */
-            getOnline.mockReturnValueOnce(false);
+            connectivity.online = false;
 
             const options: AuthOptions = {};
             const result = await authService.init(options);
@@ -196,14 +228,12 @@ describe('AuthService', () => {
         test('should set `forceLock` to true when session validation returns false', async () => {
             /** When in-memory session is invalid despite matching localID,
              * force lock to require re-authentication through persisted session */
-
             authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
             history.location.pathname = `/u/${MOCK_PERSISTED_SESSION.LocalID}`;
 
             /** Mock session validation failure but persisted session exists */
             validSession.mockImplementationOnce(() => false);
             getPersistedSession.mockImplementationOnce(async () => MOCK_PERSISTED_SESSION);
-            resumeSession.mockImplementation(async () => true);
 
             const options: AuthOptions = {};
             const result = await authService.init(options);
@@ -217,15 +247,13 @@ describe('AuthService', () => {
         test('should set `forceLock` to true with empty localID manipulation', async () => {
             /** When user has valid session but URL has empty/malformed localID,
              * clear auth store and force lock to prevent unauthorized access */
-
-            /** Setup valid in-memory session and persisted session */
-            validSession.mockImplementationOnce(() => true);
             authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
             getPersistedSession.mockImplementationOnce(async () => MOCK_PERSISTED_SESSION);
 
-            /** Simulate malformed URL with empty localID */
+            /** Simulate malformed URL with empty localID &
+             * Setup valid in-memory session and persisted session */
+            validSession.mockImplementationOnce(() => true);
             history.location.pathname = '/u/';
-            resumeSession.mockImplementation(async () => true);
 
             const options: AuthOptions = {};
             const result = await authService.init(options);
@@ -257,6 +285,151 @@ describe('AuthService', () => {
             const result = authService.config.getPersistedSession(0);
             expect(getItem).toHaveBeenCalledWith(sessions.getSessionKey(0));
             expect(result).toEqual(session);
+        });
+    });
+
+    describe('onSessionFailure', () => {
+        beforeEach(() => {
+            settings.resolve.mockResolvedValue({ offlineEnabled: false });
+            authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
+        });
+
+        test('connection issue while offline-booted: no state mutation, scheduler advances', async () => {
+            setAppState({ status: AppStatus.OFFLINE, booted: true });
+            await authService.config.onSessionFailure({}, offlineError);
+
+            expect(app.setStatus).not.toHaveBeenCalled();
+            expect(app.setBooted).not.toHaveBeenCalled();
+            expect(authService.scheduler.isThrottled()).toBe(true);
+        });
+
+        test('non-connection error while offline-booted: no-op', async () => {
+            setAppState({ status: AppStatus.OFFLINE, booted: true });
+            await authService.config.onSessionFailure({}, genericError);
+
+            expect(app.setStatus).not.toHaveBeenCalled();
+            expect(app.setBooted).not.toHaveBeenCalled();
+            expect(authService.scheduler.isThrottled()).toBe(false);
+        });
+
+        test('connection issue + canOfflineUnlock + unlocked → boots offline', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            authStore.setUID('uid');
+            authStore.setUserID('user-id');
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setEncryptedOfflineKD('encrypted-offline-kd');
+            authStore.setOfflineKD('offline-kd');
+            authStore.setLockMode(LockMode.PASSWORD);
+
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({ unlocked: true }, offlineError);
+
+            expect(appStore.dispatch).toHaveBeenCalledTimes(1);
+            expect(appStore.dispatch).toHaveBeenCalledWith(bootIntent({ offline: true }));
+        });
+
+        test('connection issue + canOfflineUnlock + !unlocked → sets locked status', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setEncryptedOfflineKD('encrypted-offline-kd');
+            authStore.setLockMode(LockMode.BIOMETRICS);
+
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({}, offlineError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.BIOMETRICS_LOCKED);
+            expect(app.setBooted).toHaveBeenCalledWith(false);
+        });
+
+        test('non-connection error + not booted → ERROR status', async () => {
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onSessionFailure({}, genericError);
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
+            expect(app.setBooted).toHaveBeenCalledWith(false);
+        });
+    });
+
+    describe('listen', () => {
+        const localID = MOCK_PERSISTED_SESSION.LocalID;
+        let detach: () => void = () => {};
+
+        beforeEach(() => {
+            authStore.setLocalID(localID);
+            detach = authService.listen();
+        });
+
+        afterEach(() => detach());
+
+        test('visibilitychange while offline-booted + online dispatches offlineResume', () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            fireVisibility();
+            expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
+        });
+
+        test('visibilitychange while hidden does not dispatch', () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            visibility = 'hidden';
+            fireVisibility();
+            expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('connectivity ONLINE transition while offline-booted dispatches', () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            fireConnectivity(ConnectivityStatus.ONLINE);
+            expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
+        });
+
+        test('does not dispatch when connectivity is offline', () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = false;
+            fireConnectivity(ConnectivityStatus.OFFLINE);
+            fireVisibility();
+            expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('does not dispatch when not offline-booted', () => {
+            setAppState({ status: AppStatus.AUTHORIZED });
+            fireConnectivity(ConnectivityStatus.ONLINE);
+            fireVisibility();
+            expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('does not dispatch when localID is missing', () => {
+            authStore.clear();
+            setAppState({ status: AppStatus.OFFLINE });
+            fireVisibility();
+            expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('throttle gate suppresses connectivity-driven dispatch after a connection-issue failure', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+            fireConnectivity(ConnectivityStatus.ONLINE);
+            expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('visibilitychange bypasses the throttle gate (user gesture)', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+            fireVisibility();
+            expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
+        });
+
+        test('detach unwires document and connectivity listeners', () => {
+            const docRemoveSpy = document.removeEventListener as jest.Mock;
+            const subscribersBefore = connectivitySubscribers.length;
+            detach();
+            expect(docRemoveSpy).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
+            expect(connectivitySubscribers.length).toBe(subscribersBefore - 1);
         });
     });
 });

@@ -40,6 +40,7 @@ describe('API factory', () => {
         auth = undefined;
         api.unsubscribe();
         await api.reset();
+        api.setResumeLock(false);
         api.subscribe(listener);
         listener.mockClear();
         fetchMock.mockClear();
@@ -55,6 +56,7 @@ describe('API factory', () => {
                 pendingCount: 0,
                 queued: [],
                 refreshing: false,
+                resumeLocked: false,
                 serverTime: undefined,
                 sessionInactive: false,
                 sessionLocked: false,
@@ -257,6 +259,71 @@ describe('API factory', () => {
             expect(listener).toHaveBeenCalledTimes(1);
             expect(listener).toHaveBeenCalledWith({ type: 'refresh', data: { RefreshToken: 'refresh-001' } });
             expect(api.getState().sessionInactive).toEqual(false);
+        });
+    });
+
+    describe('Resume lock', () => {
+        test('should default to unlocked', () => {
+            expect(api.getState().resumeLocked).toBe(false);
+        });
+
+        test('`setResumeLock` should toggle resume-locked state', () => {
+            api.setResumeLock(true);
+            expect(api.getState().resumeLocked).toBe(true);
+            api.setResumeLock(false);
+            expect(api.getState().resumeLocked).toBe(false);
+        });
+
+        test('should let session-resume routes through when locked', async () => {
+            api.setResumeLock(true);
+            const allowed = [
+                'tests/ping',
+                'pass/v1/user/session/lock/check',
+                'pass/v1/user/session/lock/force_lock',
+                'auth/v4/sessions/local/key',
+                'core/v4/users',
+                'auth/refresh',
+                'core/v4/auth',
+            ];
+
+            for (const url of allowed) {
+                fetchMock.mockResolvedValueOnce(mockAPIResponse());
+                await expect(api({ url })).resolves.toBeDefined();
+            }
+
+            expect(fetchMock).toHaveBeenCalledTimes(allowed.length);
+        });
+
+        test('should reject non-resume routes with offline error when locked', async () => {
+            api.setResumeLock(true);
+
+            await expect(api({ url: 'pass/v1/share' })).rejects.toThrow('No network connection');
+            await expect(api({ url: 'pass/v1/user/access' })).rejects.toThrow('No network connection');
+            await expect(api({ url: 'core/v4/events' })).rejects.toThrow('No network connection');
+
+            expect(fetchMock).not.toHaveBeenCalled();
+        });
+
+        test('rejected calls should NOT increment pendingCount', async () => {
+            api.setResumeLock(true);
+            await expect(api({ url: 'pass/v1/share' })).rejects.toThrow();
+            expect(api.getState().pendingCount).toBe(0);
+        });
+
+        test('should let everything through once unlocked', async () => {
+            api.setResumeLock(true);
+            await expect(api({ url: 'pass/v1/share' })).rejects.toThrow();
+
+            api.setResumeLock(false);
+            fetchMock.mockResolvedValueOnce(mockAPIResponse());
+            await expect(api({ url: 'pass/v1/share' })).resolves.toBeDefined();
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+        });
+
+        test('`api.reset` should NOT clear resume lock', async () => {
+            api.setResumeLock(true);
+            await api.reset();
+            expect(api.getState().resumeLocked).toBe(true);
         });
     });
 

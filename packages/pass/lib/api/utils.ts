@@ -15,6 +15,7 @@ export const buildApiState = () =>
         pendingCount: 0,
         queued: [],
         refreshing: false,
+        resumeLocked: false,
         serverTime: undefined,
         sessionInactive: false,
         sessionLocked: false,
@@ -56,3 +57,17 @@ export const fetchIfModified = async (url: string, lastRequestedAt: number): Pro
 
     return fetch(url);
 };
+
+/** Routes required to bridge the offline-booted state back to a fully
+ * authenticated online session. Anything outside this list is a UI-driven
+ * side-effect that must not fire when offline-booted & session is unresumed. */
+export const SESSION_RESUME_ROUTES = [
+    'tests/ping', // connectivity check route
+    'pass/v1/user/session/lock', // post-resume login (checkSessionLock/forceLock)
+    'core/v4/users', // resumeSession (getUser)
+    'core/v4/auth', // core auth routes
+    'auth/', // auth routes
+];
+
+export const isSessionResumeRoute = (url?: string): boolean =>
+    !!url && SESSION_RESUME_ROUTES.some((route) => url.startsWith(route));

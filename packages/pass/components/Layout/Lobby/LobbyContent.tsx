@@ -216,7 +216,7 @@ export const LobbyContent: FC<Props> = ({
                             return <BiometricsUnlock offlineEnabled={offlineEnabled} />;
 
                         case AppStatus.DESKTOP_LOCKED:
-                            return <DesktopUnlock />;
+                            return <DesktopUnlock onOffline={onOfflineFallback} offlineEnabled={offlineEnabled} />;
 
                         default:
                             return (

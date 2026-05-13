@@ -81,7 +81,7 @@ exposePassCrypto(createPassCrypto(core, store));
 exposeApi(api);
 
 sentry({ config: PASS_CONFIG });
-connectivity.init();
+void connectivity.init();
 
 export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
@@ -189,7 +189,7 @@ export const App = () => (
                                                 <NavigationProvider>
                                                     <AuthStoreProvider store={authStore}>
                                                         <AuthSwitchProvider>
-                                                            <AuthServiceProvider>
+                                                            <AuthServiceProvider connectivity={connectivity}>
                                                                 <StoreProvider>
                                                                     <ContextMenuProvider>
                                                                         <ThemeConnect />
