@@ -1,4 +1,4 @@
-import { AppsDropdown, Icon, Logo, MimeIcon, useActiveBreakpoint, UserDropdown } from '@proton/components'
+import { AppsDropdown, Icon, Logo, MimeIcon, useActiveBreakpoint, useConfig, UserDropdown } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 import { DocumentTitleDropdown } from './DocumentTitleDropdown/DocumentTitleDropdown'
 import { DocumentActiveUsers } from './DocumentActiveUsers'
@@ -26,6 +26,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
 import { useIsSheetsEditorEnabled } from '~/utils/flags'
+import { getDocsReportContextLines } from '~/utils/report-context'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -101,6 +102,7 @@ export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
  */
 function DocsHeaderNoDocument() {
   const { viewportWidth } = useActiveBreakpoint()
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
 
   return (
     <div className="error-header flex flex-nowrap items-center justify-between gap-2 bg-signalInfoMinorCustom px-10 pt-5">
@@ -115,6 +117,10 @@ function DocsHeaderNoDocument() {
       <div className="no-doc-header">
         <UserDropdown
           app={APPS.PROTONDOCS}
+          reportDescriptionContext={getDocsReportContextLines({
+            appVersion: APP_VERSION,
+            clientType: CLIENT_TYPE,
+          })}
           sessionOptions={{
             path: getWindowLocationExcludingDomain(),
             target: '_self',
@@ -146,6 +152,7 @@ function DocsHeaderForDocument({
   documentType,
 }: DocsHeaderForDocumentProps) {
   const { publicContext } = useDocsContext()
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
 
@@ -224,6 +231,12 @@ function DocsHeaderForDocument({
             <div className="w-2" />
             <UserDropdown
               app={APPS.PROTONDOCS}
+              reportDescriptionContext={getDocsReportContextLines({
+                documentType,
+                role,
+                appVersion: APP_VERSION,
+                clientType: CLIENT_TYPE,
+              })}
               sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
             />
           </>
