@@ -119,7 +119,7 @@ export const DriveExplorerGridBox = ({
             <div
                 ref={rowRef}
                 className={clsx(
-                    'relative bg-norm overflow-hidden flex flex-column text-left rounded border group-hover-opacity-container',
+                    'item-a11y-container relative bg-norm overflow-hidden flex flex-column text-left rounded border group-hover-opacity-container',
                     ((!hideSelectionHighlight && isSelected) || dragMoveControls?.isActiveDropTarget) &&
                         'border-primary',
                     dragging && 'opacity-50'
