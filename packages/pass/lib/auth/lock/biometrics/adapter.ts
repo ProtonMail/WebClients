@@ -37,18 +37,16 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
 
     /** Persist the `unlockRetryCount` without re-encrypting
      * the authentication session blob */
-    const setRetryCount = async (retryCount: number) => {
-        if (retryCount >= 3) {
-            authStore.setUnlockRetryCount(0);
+    const setRetryCount = async (unlockRetryCount: number) => {
+        if (unlockRetryCount >= 3) {
             authStore.setEncryptedOfflineKD(undefined);
             authStore.setLockMode(LockMode.PASSWORD);
+            await auth.syncLock({ unlockRetryCount: 0 });
             await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
             throw new Error(c('Warning').t`Too many attempts`);
         }
 
-        authStore.setUnlockRetryCount(retryCount);
-        const localID = authStore.getLocalID();
-        await auth.syncPersistedSession(localID, { unlockRetryCount: retryCount });
+        await auth.syncLock({ unlockRetryCount });
     };
 
     const adapter: LockAdapterBiometrics = {
@@ -57,8 +55,6 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         check: async () => {
             logger.info(`[BiometricLock] checking lock`);
             if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
-
-            authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
@@ -172,16 +168,14 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
                 authStore.setOfflineKD(hash);
                 authStore.setLocked(false);
 
-                await setRetryCount(0);
-
-                await adapter.check();
+                await auth.syncLock({ unlockRetryCount: 0, lockLastExtendTime: getEpoch() });
                 return hash;
             } catch (err) {
                 if (err instanceof PassCryptoError) {
                     /* Fall back to password lock in case the biometrics key can't be decrypted */
-                    authStore.setUnlockRetryCount(0);
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
+                    await auth.syncLock({ unlockRetryCount: 0 });
                     await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
                     throw err;
                 }

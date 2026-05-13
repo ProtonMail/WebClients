@@ -517,7 +517,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * and backend-side extension). */
         checkLock: async (): Promise<Lock> => {
             const mode = authStore.getLockMode();
-            const ttl = authStore.getLockTTL();
             const localID = authStore.getLocalID();
 
             if (mode === LockMode.NONE) return { mode: LockMode.NONE, locked: false };
@@ -525,18 +524,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return (
                 (await authService.checkAutoLock()) ??
                 (async () => {
-                    const lock = await getLockAdapter(mode)
-                        .check()
-                        .catch((err) => {
-                            /** On connectivity failures, `checkAutoLock` already passed meaning the
-                             * local TTL has not expired. Treat as non-locked to ensure `onLockUpdate`
-                             * still fires and resets the auto-lock auth alarm. */
-                            if (getIsConnectionIssue(err)) return { mode, ttl, locked: false };
-                            throw err;
-                        });
-
-                    const lockLastExtendTime = authStore.getLockLastExtendTime();
-                    await authService.syncPersistedSession(localID, { lockLastExtendTime });
+                    const lock = await getLockAdapter(mode).check();
+                    const shouldSync = lock.mode !== LockMode.NONE && !lock.locked;
+                    if (shouldSync) await authService.syncLock({ lockLastExtendTime: getEpoch() });
                     await config.onLockUpdate?.(lock, localID, false);
                     return lock;
                 })()
@@ -578,6 +568,15 @@ export const createAuthService = (config: AuthServiceConfig) => {
             } catch (error) {
                 logger.warn(`[AuthService] Persisting session failure`, error);
             }
+        },
+
+        /** Single entry point for persisting lock fields. Mirrors the update into the
+         * in-memory `authStore` and writes the persisted session in one shot. */
+        syncLock: async (update: Partial<{ unlockRetryCount: number; lockLastExtendTime: Maybe<number> }>) => {
+            const localID = authStore.getLocalID();
+            if ('unlockRetryCount' in update) authStore.setUnlockRetryCount(update.unlockRetryCount ?? 0);
+            if ('lockLastExtendTime' in update) authStore.setLockLastExtendTime(update.lockLastExtendTime);
+            await authService.syncPersistedSession(localID, update);
         },
 
         /** Syncs the persisted session without re-encrypting the session blob. Use
