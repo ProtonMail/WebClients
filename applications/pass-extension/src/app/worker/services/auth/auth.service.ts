@@ -100,16 +100,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (clientAuthorized(ctx.status)) return true;
             if (clientUnauthorized(ctx.status)) return false;
 
-            /** Refresh connectivity before attempting a session resume so downstream
-             * decisions (offline fallback in `onResumeStart` and `onSessionFailure`)
-             * operate on a current status. Skipped on the early-return paths above
-             * to avoid an unnecessary `/ping` when no resume will run. */
-            await ctx.service.connectivity.check();
-
             /* If worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
-             * return as the authentication store will have been configured. Waits for
-             * connectivity check in-order to prompt for offline unlock. */
+             * return as the authentication store will have been configured. */
             if (or(clientDesktopLocked, clientSessionLocked)(ctx.status)) return false;
 
             return ctx.service.auth.resumeSession(undefined, options);
@@ -521,6 +514,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const status = ctx.getState().status;
 
             logger.info(`[AuthService] auto-resume alarm fired [${status}]`);
+
+            /** Connectivity state may be stale after SW idle-shutdown or a long
+             * gap between alarms. Probe before gating so the switch and the
+             * downstream resume operate on trusted status. `check` also rewinds
+             * the connectivity retry backoff so a recovery is caught sooner. */
+            if (!connectivity.online) await connectivity.check();
 
             if (!connectivity.online) {
                 /** DOWNTIME: burn a slot so the chain advances and eventually exhausts.
