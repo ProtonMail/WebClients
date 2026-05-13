@@ -617,20 +617,20 @@ export const createAuthService = ({
     auth.registerLockAdapter(biometricsLockAdapterFactory(auth, core));
 
     /** Event-driven offline-resume triggers without alarm timers. Retries fire
-     * opportunistically on tab focus or connectivity transitions, gated by the
-     * scheduler's cooldown. */
+     * opportunistically on tab focus or connectivity transitions. Connectivity
+     * transitions are gated by the scheduler's cooldown; user gestures (tab focus)
+     * bypass it (iso with the extension's popup-open path). */
     auth.listen = () => {
-        const throttledOfflineResume = () => {
+        const tryOfflineResume = (throttle: boolean) => {
             if (clientOffline(app.getState().status) && connectivity.online) {
                 const localID = authStore.getLocalID();
-                if (scheduler.isThrottled()) return;
+                if (throttle && scheduler.isThrottled()) return;
                 if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
             }
         };
 
-        const connectivityUnsub = connectivity.subscribe(() => throttledOfflineResume());
-        const onVisibilityChange = () => document.visibilityState === 'visible' && throttledOfflineResume();
-
+        const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
+        const onVisibilityChange = () => document.visibilityState === 'visible' && tryOfflineResume(false);
         document.addEventListener('visibilitychange', onVisibilityChange);
 
         return () => {
