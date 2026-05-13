@@ -11,25 +11,25 @@ import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/recovery-phrase-dark.svg';
 import illustration from './assets/recovery-phrase.svg';
 
 const RecoveryPhraseSubpage = () => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const mnemonicData = useSelector(selectMnemonicData);
     const updateRecoveryKit = useUpdateRecoveryKit(mnemonicData);
 
     if (!mnemonicData.isMnemonicAvailable) {
         return null;
     }
-
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/recovery-phrase')}>{c('Link').t`Learn more`}</Href>
-    );
 
     return (
         <>
@@ -46,12 +46,19 @@ const RecoveryPhraseSubpage = () => {
                             <SettingsDescriptionItem>
                                 {c('Info')
                                     .t`It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.`}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/recovery-phrase')}>{c('Link')
+                                    .t`Learn more`}</Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
 

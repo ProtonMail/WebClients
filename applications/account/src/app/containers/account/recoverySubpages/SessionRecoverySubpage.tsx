@@ -21,6 +21,7 @@ import { SettingsToggleRow } from '@proton/components/containers/account/Setting
 import InitiateSessionRecoveryModal from '@proton/components/containers/account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
@@ -30,11 +31,13 @@ import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvi
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/session-recovery-dark.svg';
 import illustration from './assets/session-recovery.svg';
 import RecoveryWarning from './shared/RecoveryWarning';
-import SentinelWarning from './shared/SentinelWarning';
 
 export const SessionRecoverySubpage = () => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const dispatch = useDispatch();
@@ -57,7 +60,6 @@ export const SessionRecoverySubpage = () => {
     } = useSelector(selectAvailableRecoveryMethods);
     const {
         isSessionRecoveryEnabled,
-        isSessionRecoveryAvailable,
         isSessionRecoveryInitiationAvailable,
         loading: loadingSessionRecoveryData,
     } = useSelector(selectSessionRecoveryData);
@@ -79,12 +81,6 @@ export const SessionRecoverySubpage = () => {
             );
         }
     };
-
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/signed-in-reset')}>
-            {c('Link').t`Learn more`}
-        </Href>
-    );
 
     if (loadingIsSentinelUser || loadingSessionRecoveryData) {
         return <Loader />;
@@ -137,12 +133,19 @@ export const SessionRecoverySubpage = () => {
                             </SettingsDescriptionItem>
                             <SettingsDescriptionItem>
                                 {c('Info').t`It’s often the easiest way to recover your account if you’re signed in.`}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/signed-in-reset')}>{c('Link')
+                                    .t`Learn more`}</Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
                 <DashboardCard>
@@ -196,12 +199,6 @@ export const SessionRecoverySubpage = () => {
                             </div>
                         )}
                         {!isSessionRecoveryEnabled && !isSentinelUser && <RecoveryWarning />}
-                        {isSessionRecoveryAvailable && isSessionRecoveryEnabled && isSentinelUser && (
-                            <SentinelWarning
-                                text={c('Info')
-                                    .t`To ensure the highest possible security of your account, disable **Signed-in reset**.`}
-                            />
-                        )}
                     </DashboardCardContent>
                 </DashboardCard>
             </DashboardGrid>

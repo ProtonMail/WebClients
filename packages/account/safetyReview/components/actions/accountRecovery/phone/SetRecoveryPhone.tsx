@@ -9,12 +9,14 @@ import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/rec
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useMyCountry } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';
 import recoveryPhoneIllustration from '../../../assets/recovery-phone.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
 
@@ -22,6 +24,8 @@ type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'setRecoveryPhone'>;
 };
 export const SetRecoveryPhone = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [recoveryPhone, setRecoveryPhone] = useState('');
     const dispatch = useDispatch();
     const defaultCountry = useMyCountry();
@@ -47,7 +51,12 @@ export const SetRecoveryPhone = (props: Props) => {
         >
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={recoveryPhoneIllustration} alt="" width={64} height={64} />
+                    <img
+                        src={isDarkTheme ? darkRecoveryPhoneIllustration : recoveryPhoneIllustration}
+                        alt=""
+                        width={64}
+                        height={64}
+                    />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>{c('safety_review').t`Add phone number`}</SafetyReviewCardHeader.Title>
                 <SafetyReviewCardHeader.Description>

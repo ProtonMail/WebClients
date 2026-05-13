@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -14,22 +13,23 @@ import SettingsDescription, {
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import darkIllustration from './assets/recovery-qr-code-dark.svg';
 import illustration from './assets/recovery-qr-code.svg';
 import RecoveryWarning from './shared/RecoveryWarning';
-import SentinelWarning from './shared/SentinelWarning';
 
 const SignInWithAnotherDeviceSubpage = () => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const [loadingEDM, withLoadingEDM] = useLoading();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
@@ -49,11 +49,7 @@ const SignInWithAnotherDeviceSubpage = () => {
 
     const allowScanningQrCode = !userSettings?.Flags.EdmOptOut;
 
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link').t`Learn more`}</Href>
-    );
-
-    if (loadingUserSettings || loadingIsSentinelUser) {
+    if (loadingUserSettings) {
         return <Loader />;
     }
 
@@ -71,12 +67,19 @@ const SignInWithAnotherDeviceSubpage = () => {
                             <SettingsDescriptionItem>
                                 {c('Info')
                                     .t`This will let you quickly and safely access your ${BRAND_NAME} Account so you can change you password.`}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link')
+                                    .t`Learn more`}</Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
                 <DashboardCard>
@@ -95,7 +98,6 @@ const SignInWithAnotherDeviceSubpage = () => {
                                     }}
                                 >
                                     {c('Label').t`Allow QR code sign-in`}
-                                    {isSentinelUser && <IcShieldExclamationFilled className="color-warning shrink-0" />}
                                 </SettingsToggleRow.Label>
                             }
                             toggle={
@@ -108,13 +110,7 @@ const SignInWithAnotherDeviceSubpage = () => {
                                 />
                             }
                         />
-                        {!allowScanningQrCode && !isSentinelUser && <RecoveryWarning />}
-                        {allowScanningQrCode && isSentinelUser && (
-                            <SentinelWarning
-                                text={c('Info')
-                                    .t`To ensure the highest possible security of your account, disable **QR code sign-in**.`}
-                            />
-                        )}
+                        {!allowScanningQrCode && <RecoveryWarning />}
                     </DashboardCardContent>
                 </DashboardCard>
             </DashboardGrid>

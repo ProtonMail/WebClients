@@ -17,6 +17,7 @@ import SettingsDescription, {
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 import { IcPen } from '@proton/icons/icons/IcPen';
@@ -26,6 +27,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/recovery-phone-dark.svg';
 import illustration from './assets/recovery-phone.svg';
 import SentinelWarning from './shared/SentinelWarning';
 
@@ -142,6 +144,8 @@ const RecoveryPhoneVerificationStatus = ({
 };
 
 const RecoveryPhoneSubpage = () => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const [maybeIsEditingRecoveryPhone, setIsEditingRecoveryPhone] = useState(false);
     const defaultCountry = useMyCountry();
@@ -152,10 +156,6 @@ const RecoveryPhoneSubpage = () => {
     if (loading || loadingIsSentinelUser) {
         return <Loader />;
     }
-
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/email-sms-recovery')}>{c('Link').t`Learn more`}</Href>
-    );
 
     // Handles the case where a user focuses the input and clears the value, gets the confirmation modal, and clicks confirm.
     // The change happens outside of the onSubmit handler, so this is an extra guard against that.
@@ -177,12 +177,19 @@ const RecoveryPhoneSubpage = () => {
                                     c('Info')
                                         .t`**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.`
                                 )}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/email-sms-recovery')}>{c('Link')
+                                    .t`Learn more`}</Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
                 <DashboardCard>
