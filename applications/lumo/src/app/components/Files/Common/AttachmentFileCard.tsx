@@ -21,6 +21,7 @@ import './AttachmentFileCard.scss';
 // Constants
 const CARD_WIDTH = '9rem';
 const CARD_HEIGHT = '6.5rem';
+const PREVIEW_CHARACTERS = 150;
 
 interface AttachmentFileCardProps {
     attachment: Attachment;
@@ -202,7 +203,7 @@ export const AttachmentFileCard = ({
     const isImage = !!previewUrl;
 
     const rawText = attachment.markdown?.trim() ?? '';
-    const previewText = !isImage && rawText ? String(rawText).substring(0, 60) : undefined;
+    const previewText = !isImage && rawText ? String(rawText).substring(0, PREVIEW_CHARACTERS) : undefined;
 
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
