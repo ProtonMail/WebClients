@@ -269,6 +269,7 @@ enum MailKillSwitchFlag {
     RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     OverrideNewsletterViewName = 'OverrideNewsletterViewName',
+    CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
 }
 
 enum AdminFeatureFlag {
