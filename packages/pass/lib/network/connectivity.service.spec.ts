@@ -346,6 +346,47 @@ describe('ConnectivityService', () => {
         expect(api).not.toHaveBeenCalled();
     });
 
+    test('`retryHandler.reset` rewinds backoff to floor delay', async () => {
+        /** 1. Bootstrap online, then publish UNREACHABLE to start fib backoff */
+        setNavigatorOnline(true);
+        const { api, publish } = setupMockAPI();
+        const service = createConnectivityService({ api });
+        await initService(service, api);
+        publish({ type: 'connectivity', online: true, unreachable: true });
+
+        /** 2. Advance through several fib steps so retryCount > 0 */
+        await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+        await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[1]);
+        await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[2]);
+
+        /** 3. Reset: next tick must fire at FIB[0] again, not FIB[3] */
+        service.retryHandler?.reset();
+        await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+
+        service.destroy();
+    });
+
+    test('`retryHandler.reset` keeps the chain alive across multiple resets', async () => {
+        /** 1. Bootstrap online, then publish UNREACHABLE to start fib backoff */
+        setNavigatorOnline(true);
+        const { api, publish } = setupMockAPI();
+        const service = createConnectivityService({ api });
+        await initService(service, api);
+        publish({ type: 'connectivity', online: true, unreachable: true });
+
+        /** 2. Simulate multiple resets */
+        for (let i = 0; i < 3; i++) {
+            await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+            service.retryHandler?.reset();
+        }
+
+        /** 3. After the last reset the handler must still be live on FIB[0] */
+        expect(service.retryHandler).not.toBe(null);
+        await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+
+        service.destroy();
+    });
+
     test('destroy stops retry loop mid-cycle', async () => {
         /** 1. Set navigator.onLine = true */
         setNavigatorOnline(true);
