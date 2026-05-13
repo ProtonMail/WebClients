@@ -11,7 +11,7 @@ import { isInDeletedFolder } from '../../helpers/elements';
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import ClaimProtonAddressToolbarButton from './actions/ClaimProtonAddressToolbarButton';
+import { ClaimProtonAddressToolbarButton } from './actions/ClaimProtonAddressToolbarButton';
 import SelectAll from './actions/SelectAll';
 import type { ListSettingsProps } from './list-settings/ListSettings';
 import ToolbarColumnWide from './variants/ToolbarColumnWide';

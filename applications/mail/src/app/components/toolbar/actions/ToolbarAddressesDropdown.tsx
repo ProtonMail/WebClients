@@ -21,7 +21,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import generateUID from '@proton/utils/generateUID';
 
-import ClaimProtonAddressToolbarButton from './ClaimProtonAddressToolbarButton';
+import { ClaimProtonAddressToolbarButton } from './ClaimProtonAddressToolbarButton';
 
 interface Props {
     labelID: string;
