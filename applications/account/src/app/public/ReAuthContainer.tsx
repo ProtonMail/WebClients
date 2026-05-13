@@ -224,7 +224,7 @@ const ReAuthContainer = ({
                             content={c('Link').t`Trouble signing in?`}
                         >
                             <Link
-                                to={`${paths.reset}?variant=${unauthedForgotPasswordEnabled ? 'b' : 'a'}`}
+                                to={`${paths.reset}?variant=${!unauthedForgotPasswordEnabled ? 'a' : 'b'}`}
                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                             >
                                 <IcKey />
