@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 import { call, put, race, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
+import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import {
@@ -122,6 +123,11 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
  * the app status to ERROR to avoid leaving the app stuck in a BOOTING state. */
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(bootIntent.match, function* (action) {
+        /** Gate the API to session-resume routes for the duration of an
+         * offline boot. Derived from the boot payload so a subsequent online
+         * boot in the same lifecycle clears the gate. */
+        api.setResumeLock(Boolean(action.payload?.offline));
+
         const { caching, destroyed } = (yield race({
             booted: call(bootWorker, action, options),
             caching: take(isCachingAction),
@@ -134,5 +140,9 @@ export default function* watcher(options: RootSagaOptions) {
             options.setAppStatus(AppStatus.ERROR);
             options.onBoot?.({ ok: false, clearCache: false, offline: action.payload?.offline ?? false });
         } else yield put(cacheRequest({ throttle: true }));
+    });
+
+    yield takeLeading(bootFailure.match, function* () {
+        api.setResumeLock(false);
     });
 }
