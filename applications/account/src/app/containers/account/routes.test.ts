@@ -27,7 +27,6 @@ function buildDefaultParams(overrides?: Record<string, any>) {
         isDataRecoveryAvailable: false,
         isRecoveryFileAvailable: false,
         isMnemonicAvailable: false,
-        isRecoveryContactsEnabled: false,
         isSessionRecoveryAvailable: false,
         isReferralProgramEnabled: false,
         recoveryNotification: undefined,
