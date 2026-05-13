@@ -436,8 +436,8 @@ const LoginContainer = ({
                     }}
                     onResetPassword={(username) => {
                         const params = new URLSearchParams({ username });
-                        if (unauthedForgotPasswordEnabled) {
-                            params.set('variant', 'b');
+                        if (!unauthedForgotPasswordEnabled) {
+                            params.set('variant', 'a');
                         }
                         window.location.assign(`${paths.reset}?${params.toString()}`);
                     }}

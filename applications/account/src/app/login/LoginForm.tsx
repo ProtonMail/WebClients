@@ -397,8 +397,8 @@ const LoginForm = ({
     if (username) {
         urlParams.append('username', username);
     }
-    if (unauthedForgotPasswordEnabled) {
-        urlParams.append('variant', 'b');
+    if (!unauthedForgotPasswordEnabled) {
+        urlParams.append('variant', 'a');
     }
 
     const stringUrlParams = urlParams.toString();
