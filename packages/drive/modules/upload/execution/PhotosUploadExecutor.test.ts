@@ -1,6 +1,6 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
-import { CryptoProxy } from '@protontech/crypto';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
@@ -124,6 +124,7 @@ describe('PhotosUploadExecutor', () => {
         jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             findPhotoDuplicates: mockFindPhotoDuplicates,
+            getMyPhotosRootFolder: jest.fn().mockResolvedValue({ ok: true, value: { uid: 'photos-root-uid' } }),
         } as any);
 
         executor = new PhotosUploadExecutor();
@@ -234,6 +235,7 @@ describe('PhotosUploadExecutor', () => {
                     type: 'file:complete',
                     uploadId: 'task123',
                     nodeUid: 'uploaded-node-123',
+                    parentUid: 'photos-root-uid',
                     isForPhotos: true,
                 })
             );
