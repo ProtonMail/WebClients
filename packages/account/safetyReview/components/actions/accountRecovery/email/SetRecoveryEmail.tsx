@@ -9,17 +9,21 @@ import type { SafetyReviewAllProps } from '@proton/account/safetyReview/componen
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import darkRecoveryEmailIllustration from '../../../assets/recovery-email-dark.svg';
 import recoveryEmailIllustration from '../../../assets/recovery-email.svg';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'setRecoveryEmail'>;
 };
 export const SetRecoveryEmail = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [recoveryEmail, setRecoveryEmail] = useState('');
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
@@ -44,7 +48,12 @@ export const SetRecoveryEmail = (props: Props) => {
         >
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={recoveryEmailIllustration} alt="" width={64} height={64} />
+                    <img
+                        src={isDarkTheme ? darkRecoveryEmailIllustration : recoveryEmailIllustration}
+                        alt=""
+                        width={64}
+                        height={64}
+                    />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>{c('safety_review').t`Add recovery email`}</SafetyReviewCardHeader.Title>
                 <SafetyReviewCardHeader.Description>

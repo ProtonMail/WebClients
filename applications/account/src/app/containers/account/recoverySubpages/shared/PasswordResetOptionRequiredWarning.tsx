@@ -8,7 +8,6 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
 import './PasswordResetOptionRequiredWarning.scss';
 
@@ -37,19 +36,17 @@ export const PasswordResetOptionRequiredWarningInGroup = ({ emailSubpagePath }: 
 
 const PasswordResetOptionRequiredWarning = ({ emailSubpagePath }: { emailSubpagePath: string }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+    const [{ isSentinelUser }] = useIsSentinelUser();
 
-    if (hasAccountRecoveryMethod || loadingIsSentinelUser) {
+    // Don't show banner for sentinel users even if they don't have an account recovery method
+    if (hasAccountRecoveryMethod || (!hasAccountRecoveryMethod && isSentinelUser)) {
         return null;
     }
 
     return (
         <DashboardCardContent className="flex items-center justify-space-between gap-2 lg:flex-nowrap password-reset-option-required-warning">
             <p className="m-0">
-                {isSentinelUser
-                    ? c('Info')
-                          .t`To use this recovery method, you must disable ${PROTON_SENTINEL_NAME} and enable a password reset option (email or SMS).`
-                    : c('Info').t`This data recovery method requires a password reset option (email or SMS)`}
+                {c('Info').t`This data recovery method requires a password reset option (email or SMS)`}
             </p>
             {!isSentinelUser && (
                 <ButtonLike

@@ -1,12 +1,16 @@
 import { c } from 'ttag';
 
 import { selectSentinelRecoveryBannerDisplay } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 
+import SentinelShieldDark from './SentinelShield-dark.svg';
 import SentinelShield from './SentinelShield.svg';
 
 const SentinelBanner = () => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const { loading, variant } = useSelector(selectSentinelRecoveryBannerDisplay);
 
     if (loading || variant === null) {
@@ -16,14 +20,14 @@ const SentinelBanner = () => {
     const description =
         variant === 'disable-recovery-options'
             ? c('Sentinel banner')
-                  .t`To ensure the highest possible security of your account, disable the highlighted options.`
+                  .t`To ensure the highest possible security of your account, disable recovery via email and SMS.`
             : c('Sentinel banner')
                   .t`To make sure that you can always access your ${BRAND_NAME} Account, download your recovery phrase.`;
 
     return (
         <section className="rounded-xl bg-elevated p-4 shadow-norm flex items-center gap-4">
             <div className="shrink-0">
-                <img src={SentinelShield} alt="" width={56} height={56} />
+                <img src={isDarkTheme ? SentinelShieldDark : SentinelShield} alt="" width={56} height={56} />
             </div>
 
             <div className="min-w-0 flex-1">

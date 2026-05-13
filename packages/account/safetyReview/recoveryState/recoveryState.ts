@@ -308,15 +308,7 @@ export const selectSentinelRecoveryBannerDisplay = createSelector(
         const emailRecoveryPathActive = !!accountRecovery.emailRecovery.value && accountRecovery.emailRecovery.hasReset;
         const phoneRecoveryPathActive = !!accountRecovery.phoneRecovery.value && accountRecovery.phoneRecovery.hasReset;
 
-        const hasSentinelRecoveryConflict =
-            emailRecoveryPathActive ||
-            phoneRecoveryPathActive ||
-            !!getRecoveryItem('deviceRecovery')?.isEnabled ||
-            !!getRecoveryItem('recoveryFile')?.isEnabled ||
-            !!getRecoveryItem('recoveryContacts')?.isEnabled ||
-            !!getRecoveryItem('signedInReset')?.isEnabled ||
-            !!getRecoveryItem('qrCodeSignIn')?.isEnabled ||
-            !!getRecoveryItem('emergencyContacts')?.isEnabled;
+        const hasSentinelRecoveryConflict = emailRecoveryPathActive || phoneRecoveryPathActive;
 
         const phraseGenerated = !!getRecoveryItem('recoveryPhrase')?.isEnabled;
 
