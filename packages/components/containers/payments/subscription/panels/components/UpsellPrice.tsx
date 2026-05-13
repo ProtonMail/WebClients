@@ -16,7 +16,7 @@ const UpsellPrice = ({ upsell }: UpsellPriceProps) => {
     if (upsell.plan && upsell.customCycle) {
         return (
             <OfferPrice
-                planToCheck={{ planIDs: { [upsell.plan]: 1 }, cycle: upsell.customCycle, currency }}
+                planToCheck={{ planIDs: upsell.planIDs, cycle: upsell.customCycle, currency }}
                 suffix={c('new_plans: Plan frequency').t`/month`}
                 wrapperClassName="text-semibold"
                 currencyClassName={priceColorClassName}
