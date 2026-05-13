@@ -85,7 +85,7 @@ export const searchMetrics = {
             metrics.drive_search_initial_indexing_total.increment({ outcome: 'failure' });
         }
         if (isIncrementalUpdate) {
-            // TODO: add missing metric (no schema yet).
+            metrics.drive_search_incremental_update_total.increment({ outcome: 'failure' });
         }
 
         if (decision.kind === 'permanent') {
@@ -94,11 +94,10 @@ export const searchMetrics = {
                 tags: { label: 'search-permanent-error', taskKind },
             });
         } else {
-            // TODO: pass transientErrorKind to metric once schema supports it.
-            metrics.drive_search_transient_errors_total.increment({});
+            metrics.drive_search_transient_errors_total.increment({ kind: decision.reason });
             if (shouldReportTransientToSentry(taskUid)) {
                 sendErrorReportForSearch(`Search transient error (${decision.reason})`, error, {
-                    tags: { label: 'search-transient-error', taskKind },
+                    tags: { label: 'search-transient-error', taskKind, kind: decision.reason },
                 });
             } else {
                 Logger.error(`Search transient error (${decision.reason}) [Sentry-throttled]`, error);
@@ -111,11 +110,11 @@ export const searchMetrics = {
      */
     markIndexerTaskSucceeded({ taskUid, taskKind }: { taskUid: string; taskKind: IndexerTaskKind }): void {
         // Clears its transient-error throttle bucket so any future failure starts
-        // with a fresh reporting budget/
+        // with a fresh reporting budget.
         transientReportBursts.delete(taskUid);
 
         if (taskKind === 'incremental-update-task') {
-            // TODO: add missing metric (no schema yet).
+            metrics.drive_search_incremental_update_total.increment({ outcome: 'success' });
         }
     },
 
