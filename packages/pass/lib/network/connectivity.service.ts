@@ -41,7 +41,7 @@ type ConnectivityServiceOptions = {
      * `getConnectivityRetryTimeout` (linear for OFFLINE, fib for DOWNTIME). */
     getRetryTimeout?: GetRetryTimeout;
 };
-type ConnectivityRetryHandler = { start: () => void; cancel: () => void };
+type ConnectivityRetryHandler = { start: () => void; cancel: () => void; reset: () => void };
 
 export type ConnectivityState = {
     status: ConnectivityStatus;
@@ -119,11 +119,17 @@ export const createConnectivityService = ({
                 ms
             );
         };
+
         return {
             start: () => handler(status),
             cancel: () => {
                 cancelableCheck.cancel();
                 clearTimeout(retryTimer);
+            },
+            reset: () => {
+                retryCount = 0;
+                clearTimeout(retryTimer);
+                handler(state.status);
             },
         };
     };
