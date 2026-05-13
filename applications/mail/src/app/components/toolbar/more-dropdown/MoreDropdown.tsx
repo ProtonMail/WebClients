@@ -14,24 +14,24 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import LabelDropdown, { labelDropdownContentProps } from 'proton-mail/components/dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from 'proton-mail/components/dropdown/MoveDropdown';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import SnoozeUpsellModal from 'proton-mail/components/list/snooze/components/SnoozeUpsellModal';
+import SnoozeToolbarDropdownStepWrapper, {
+    SnoozeToolbarDropdownStepWrapperProps,
+} from 'proton-mail/components/list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
+import { canMoveAll } from 'proton-mail/helpers/labels';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
+import useSnooze from 'proton-mail/hooks/actions/useSnooze';
+import { useLabelActions } from 'proton-mail/hooks/useLabelActions';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { canMoveAll } from '../../../helpers/labels';
-import useSnooze from '../../../hooks/actions/useSnooze';
-import { useLabelActions } from '../../../hooks/useLabelActions';
-import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
-import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
-import SnoozeUpsellModal from '../../list/snooze/components/SnoozeUpsellModal';
-import SnoozeToolbarDropdownStepWrapper, {
-    SnoozeToolbarDropdownStepWrapperProps,
-} from '../../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
-import type { DropdownRender } from '../../message/extrasHeader/HeaderDropdown';
+import type { DropdownRender } from '../ToolbarDropdown';
 import ToolbarDropdown from '../ToolbarDropdown';
 import {
     ArchiveAction,
@@ -160,12 +160,12 @@ export const MoreDropdown = ({
 
     const allMoveButtons = useMemo(
         () => ({
-            inbox: <InboxAction onMove={onMove} />,
-            trash: <TrashAction onMove={onMove} />,
-            archive: <ArchiveAction onMove={onMove} />,
-            spam: <SpamAction onMove={onMove} />,
-            nospam: <NoSpamAction onMove={onMove} />,
-            delete: <DeleteAction onDelete={onDelete} />,
+            inbox: <InboxAction key="inbox" onMove={onMove} />,
+            trash: <TrashAction key="trash" onMove={onMove} />,
+            archive: <ArchiveAction key="archive" onMove={onMove} />,
+            spam: <SpamAction key="spam" onMove={onMove} />,
+            nospam: <NoSpamAction key="nospam" onMove={onMove} />,
+            delete: <DeleteAction key="delete" onDelete={onDelete} />,
         }),
         [onMove, onDelete]
     );
