@@ -53,7 +53,7 @@ describe('Extension AuthService', () => {
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status })),
+            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
             setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
             setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
             service: {
@@ -227,15 +227,32 @@ describe('Extension AuthService', () => {
         });
 
         describe('`onLoginComplete`', () => {
-            test('should set `AUTHORIZED` status and trigger boot', async () => {
+            test('should set `AUTHORIZED` status and trigger boot when not booted', async () => {
+                ctx.booted = false;
                 await auth.config.onLoginComplete?.('userId', undefined);
                 expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.AUTHORIZED);
                 expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: false }));
             });
 
-            test('should reset auto-resume count on successful login', async () => {
+            test('should set `READY` status and skip boot dispatch when already booted', async () => {
+                ctx.booted = true;
+                await auth.config.onLoginComplete?.('userId', undefined);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.READY);
+                expect(ctx.setStatus).not.toHaveBeenCalledWith(AppStatus.AUTHORIZED);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: false }));
+            });
+
+            test('should reset auto-resume count on successful login regardless of booted state', async () => {
+                ctx.booted = false;
                 await auth.config.onLoginComplete?.('userId', undefined);
                 expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+
+                jest.clearAllMocks();
+
+                ctx.booted = true;
+                await auth.config.onLoginComplete?.('userId', undefined);
+                expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+                expect(auth.alarms.clearAutoResume).toHaveBeenCalled();
             });
         });
 

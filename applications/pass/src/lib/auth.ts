@@ -116,10 +116,11 @@ export const createAuthService = ({
     const scheduler = createAuthScheduler();
 
     /** Wraps `bootIntent` dispatch with a scheduler reset: any successful boot
-     *  invalidates the offline-resume retry chain. */
+     *  invalidates the offline-resume retry chain. Skips the dispatch when the
+     *  app is already booted (offline-resume handles hydration). */
     const boot = (payload: Parameters<typeof bootIntent>[0]) => {
         scheduler.reset();
-        store.dispatch(bootIntent(payload));
+        if (!app.getState().booted) store.dispatch(bootIntent(payload));
     };
 
     const auth = createCoreAuthService({
