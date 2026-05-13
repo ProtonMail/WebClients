@@ -8,9 +8,9 @@ import { InputFieldTwo } from '@proton/components';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 
-import { useProjectActions } from '../../../features/projects/hooks/useProjectActions';
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
@@ -36,6 +36,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
     const [conversationTitle, setConversationTitle] = useState(title);
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
+    const isGuest = useIsGuest();
 
     // const { isGhostChatMode } = useGhostChat();
     const { showFavoritesUpsellModal, favoritesUpsellModalProps } = useConversationStar({
@@ -44,7 +45,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
     });
     const { isSmallScreen } = useSidebar();
     const allAttachments = useLumoSelector(selectAttachments);
-    const { navigateToAllProjects } = useProjectActions();
+    // const { navigateToAllProjects } = useProjectActions();
 
     // Get space/project info if this conversation is part of a project
     const space = useLumoSelector(selectSpaceById(spaceId));
@@ -158,9 +159,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
         [saveTitleChange]
     );
 
-    // const handleStarClick = () => {
-    //     handleStarToggle();
-    // };
+    const navigateToAllProjects = useCallback(() => {
+        history.push('/projects');
+    }, [history]);
 
     const handleNavigateToProject = useCallback(() => {
         if (spaceId) {
@@ -188,11 +189,13 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
             <>
                 <header className="w-full max-w-full flex flex-nowrap items-center justify-end mx-auto p-3 header-lumo">
                     {/* <NewChatButtonHeader /> */}
-                    <ChatDropdownMenu
-                        conversation={conversation}
-                        visibleOnHover
-                        additionalOptions={additionalOptions}
-                    />
+                    {!isGuest && (
+                        <ChatDropdownMenu
+                            conversation={conversation}
+                            visibleOnHover
+                            additionalOptions={additionalOptions}
+                        />
+                    )}
                 </header>
                 {/* <HeaderWrapper>
                     <div className="flex flex-row items-center gap-1">
@@ -306,7 +309,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
             <div className="flex flex-row justify-space-between items-center pt-3 pb-2 px-3">
                 <div className="inline-flex flex-row flex-nowrap items-center justify-start">
                     <RenderTitle isEditing={isEditing} />
-                    <ChatDropdownMenu conversation={conversation} visibleOnHover />
+                    {!isGuest && <ChatDropdownMenu conversation={conversation} visibleOnHover />}
                 </div>
 
                 {/* <div className="flex flex-row items-center gap-1">
