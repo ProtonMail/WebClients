@@ -15,7 +15,8 @@
 	&--on,
 	&--off,
 	&--warning,
-	&--success {
+	&--success,
+	&--danger {
 		--status-badge-background: color-mix(in srgb, var(--background-norm) 80%, var(--status-badge-accent-color));
 		--status-badge-color: color-mix(in srgb, var(--text-norm) 60%, var(--status-badge-accent-color));
 		--status-badge-icon-color: color-mix(in srgb, var(--status-badge-accent-color) 85%, var(--text-norm));
@@ -35,6 +36,10 @@
 
 	&--success {
 		--status-badge-accent-color: var(--signal-success);
+	}
+
+	&--danger {
+		--status-badge-accent-color: var(--signal-danger);
 	}
 
 	&--upsell {

@@ -4,11 +4,13 @@ import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions
 import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import darkIllustration from '../../assets/recovery-qr-code-dark.svg';
 import illustration from '../../assets/recovery-qr-code.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
 
@@ -16,6 +18,8 @@ type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'qrCodeSignIn'>;
 };
 export const EnableQrCodeSignIn = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
 
@@ -34,7 +38,7 @@ export const EnableQrCodeSignIn = (props: Props) => {
         >
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={illustration} alt="" width={64} height={64} />
+                    <img src={isDarkTheme ? darkIllustration : illustration} alt="" width={64} height={64} />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>
                     {c('safety_review').t`Allow scanning a QR code to sign in`}
