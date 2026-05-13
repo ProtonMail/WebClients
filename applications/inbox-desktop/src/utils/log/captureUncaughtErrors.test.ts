@@ -66,7 +66,12 @@ describe("captureUncaughtErrors", () => {
             for (let i = 0; i < 10; i++) handler(error);
 
             expect(reportException).toHaveBeenCalledTimes(1);
-            expect(reportException).toHaveBeenCalledWith(error);
+            expect(reportException).toHaveBeenCalledWith(
+                error,
+                expect.objectContaining({
+                    extras: { occurrenceCount: 10 },
+                }),
+            );
             expect(reportMessage).not.toHaveBeenCalled();
         });
 
@@ -77,7 +82,7 @@ describe("captureUncaughtErrors", () => {
             expect(reportMessage).toHaveBeenCalledTimes(1);
             expect(reportMessage).toHaveBeenCalledWith(
                 "unhandledRejection: string reason",
-                expect.objectContaining({ level: "error" }),
+                expect.objectContaining({ level: "error", extras: { occurrenceCount: 10 } }),
             );
             expect(reportException).not.toHaveBeenCalled();
         });
@@ -125,7 +130,10 @@ describe("captureTopLevelRejection", () => {
         const error = new Error("fatal");
         captureTopLevelRejection(error);
 
-        expect(reportException).toHaveBeenCalledWith(error);
+        expect(reportException).toHaveBeenCalledWith(
+            error,
+            expect.objectContaining({ tags: { origin: "uncaughtException" } }),
+        );
     });
 
     it("reports to Sentry via reportMessage when given a non-Error", () => {
@@ -133,7 +141,7 @@ describe("captureTopLevelRejection", () => {
 
         expect(reportMessage).toHaveBeenCalledWith(
             "uncaughtException: string rejection",
-            expect.objectContaining({ level: "fatal" }),
+            expect.objectContaining({ level: "fatal", tags: { origin: "uncaughtException" } }),
         );
     });
 
@@ -150,7 +158,7 @@ describe("captureTopLevelRejection", () => {
 
         expect(dialog.showErrorBox).toHaveBeenCalledTimes(1);
         expect(reportException).toHaveBeenCalledTimes(1);
-        expect(reportException).toHaveBeenCalledWith(error);
+        expect(reportException).toHaveBeenCalledWith(error, expect.anything());
     });
 
     it("flushes Sentry then exits", async () => {
