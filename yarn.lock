@@ -11234,7 +11234,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
     happy-dom: "npm:^20.8.9"
-    livekit-client: "npm:2.18.9"
+    livekit-client: "npm:2.18.6"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -35486,9 +35486,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:2.18.9":
-  version: 2.18.9
-  resolution: "livekit-client@npm:2.18.9"
+"livekit-client@npm:2.18.6":
+  version: 2.18.6
+  resolution: "livekit-client@npm:2.18.6"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
     "@livekit/protocol": "npm:1.45.3"
@@ -35501,7 +35501,7 @@ __metadata:
     webrtc-adapter: "npm:9.0.5"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10/47a2aee8100df5b24dd81bfca16d18dd9a30df299f2e305b090c7bf2e75649d22e2cc4f235e152c0bd6856d53ca19262ea65c7ad6f29ee6e1e04239b88e2f954
+  checksum: 10/bcaffd90f435926bcbc81d9a9c2ccf8c43093515778effc42e57cbe04d193353f9f894cc4bfa93918623fdbabeb8f2cfbb597610c2c35739bc9fba271b62fff0
   languageName: node
   linkType: hard
 
@@ -42353,7 +42353,7 @@ __metadata:
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.4"
     happy-dom: "npm:^20.8.9"
-    livekit-client: "npm:2.18.9"
+    livekit-client: "npm:2.18.6"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
