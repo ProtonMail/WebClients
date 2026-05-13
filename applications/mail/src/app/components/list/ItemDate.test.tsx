@@ -1,9 +1,13 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import { mailTestRender } from '../../helpers/test/render';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import ItemDate from './ItemDate';
+
+jest.mock('proton-mail/store/hooks');
+jest.mocked(useMailSelector).mockImplementation(() => ({ conversationMode: true }));
 
 const element = {
     ID: 'elementID',
@@ -22,28 +26,28 @@ const snoozedElement = {
 } as Conversation;
 
 describe('ItemDate', () => {
-    it('Should display regular date with simple mode', async () => {
-        await mailTestRender(<ItemDate element={element} labelID="1" />);
+    it('Should display regular date with simple mode', () => {
+        render(<ItemDate element={element} labelID="1" />);
         expect(screen.getByTestId('item-date-simple'));
     });
-    it('Should display regular date with distance mode', async () => {
-        await mailTestRender(<ItemDate element={element} labelID="1" mode="distance" />);
+    it('Should display regular date with distance mode', () => {
+        render(<ItemDate element={element} labelID="1" mode="distance" />);
         expect(screen.getByTestId('item-date-distance'));
     });
-    it('Should display the snooze time when snooze time and in list view while in snooze folder', async () => {
-        await mailTestRender(<ItemDate element={snoozedElement} labelID="16" isInListView />);
+    it('Should display the snooze time when snooze time and in list view while in snooze folder', () => {
+        render(<ItemDate element={snoozedElement} labelID="16" isInListView />);
         expect(screen.getByTestId('item-date-snoozed'));
     });
-    it('Should not display the snooze time when snooze time and in list view and in inbox', async () => {
-        const { queryByTestId } = await mailTestRender(<ItemDate element={snoozedElement} labelID="0" isInListView />);
+    it('Should not display the snooze time when snooze time and in list view and in inbox', () => {
+        const { queryByTestId } = render(<ItemDate element={snoozedElement} labelID="0" isInListView />);
         expect(queryByTestId('item-date-snoozed')).toBeNull();
     });
-    it('Should display regular date with simple mode when not in list', async () => {
-        await mailTestRender(<ItemDate element={snoozedElement} labelID="1" />);
+    it('Should display regular date with simple mode when not in list', () => {
+        render(<ItemDate element={snoozedElement} labelID="1" />);
         expect(screen.getByTestId('item-date-simple'));
     });
-    it('Should display regular date with distance mode when not in list', async () => {
-        await mailTestRender(<ItemDate element={snoozedElement} labelID="1" mode="distance" />);
+    it('Should display regular date with distance mode when not in list', () => {
+        render(<ItemDate element={snoozedElement} labelID="1" mode="distance" />);
         expect(screen.getByTestId('item-date-distance'));
     });
 });
