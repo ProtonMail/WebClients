@@ -1,150 +1,83 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
-import type { Conversation } from 'proton-mail/models/conversation';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';
-import { newElementsState } from '../../../store/elements/elementsSlice';
+import { elementsAreUnread as elementsAreUnreadSelector, params } from '../../../store/elements/elementsSelectors';
 import ReadUnreadButtons from './ReadUnreadButtons';
 
-const defaultParams: ElementsStateParams = {
-    labelID: MAILBOX_LABEL_IDS.INBOX,
-    categoryIDs: [],
-    conversationMode: true,
-    filter: {},
-    sort: { sort: 'Time', desc: true },
-    search: {},
-    esEnabled: false,
-    isSearching: false,
-};
+jest.mock('@proton/mail/store/mailSettings/hooks');
+jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+
+jest.mock('proton-mail/store/hooks');
+const mockUseMailSelector = jest.mocked(useMailSelector);
 
 jest.mock('proton-mail/hooks/useSelectAll', () => ({
     useSelectAll: jest.fn(() => ({ selectAll: false })),
 }));
-
 const mockUseSelectAll = jest.requireMock('proton-mail/hooks/useSelectAll').useSelectAll;
 
-const getProps = (selectedIDs: string[] = ['id1', 'id2']) => {
-    return {
-        labelID: MAILBOX_LABEL_IDS.INBOX,
-        selectedIDs,
-        onMarkAs: jest.fn(),
-    };
+const getProps = (selectedIDs: string[] = ['id1', 'id2']) => ({
+    selectedIDs,
+    onMarkAs: jest.fn(),
+});
+
+const mockSelectors = (elementsAreUnread: Record<string, boolean>) => {
+    mockUseMailSelector.mockImplementation((selector: any) => {
+        if (selector === params) {
+            return { labelID: MAILBOX_LABEL_IDS.INBOX };
+        }
+        if (selector === elementsAreUnreadSelector) {
+            return elementsAreUnread;
+        }
+    });
 };
 
-const createConversation = (id: string, unread: boolean): Conversation =>
-    ({
-        ID: id,
-        ContextNumUnread: unread ? 1 : 0,
-        Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: unread ? 1 : 0 }],
-    }) as Conversation;
-
 describe('ReadUnreadButtons', () => {
-    const context = getElementContextIdentifier(defaultParams);
-
     afterEach(() => {
+        jest.clearAllMocks();
         mockUseSelectAll.mockReturnValue({ selectAll: false });
-        clearAll();
     });
 
-    it('should not show buttons when no items are selected', async () => {
-        const props = getProps([]);
-        minimalCache();
-
-        await mailTestRender(<ReadUnreadButtons {...props} />, {
-            preloadedState: {
-                elements: newElementsState(),
-            },
-        });
+    it('should not show buttons when no items are selected', () => {
+        mockSelectors({});
+        render(<ReadUnreadButtons {...getProps([])} />);
 
         expect(screen.queryByTestId('toolbar:read')).toBeNull();
         expect(screen.queryByTestId('toolbar:unread')).toBeNull();
     });
 
-    it('should show "Mark as read" button when all items are unread', async () => {
-        const props = getProps(['id1', 'id2']);
-        minimalCache();
-
-        const elementsState = newElementsState();
-        elementsState.elements = {
-            id1: createConversation('id1', true),
-            id2: createConversation('id2', true),
-        };
-        elementsState.pages = { [context]: [0] };
-
-        await mailTestRender(<ReadUnreadButtons {...props} />, {
-            preloadedState: {
-                elements: elementsState,
-            },
-        });
+    it('should show "Mark as read" button when all items are unread', () => {
+        mockSelectors({ id1: true, id2: true });
+        render(<ReadUnreadButtons {...getProps()} />);
 
         expect(screen.getByTestId('toolbar:read')).toBeInTheDocument();
         expect(screen.queryByTestId('toolbar:unread')).toBeNull();
     });
 
-    it('should show "Mark as read" button when some items are unread', async () => {
-        const props = getProps(['id1', 'id2']);
-        minimalCache();
-
-        const elementsState = newElementsState();
-        elementsState.elements = {
-            id1: createConversation('id1', true),
-            id2: createConversation('id2', false),
-        };
-        elementsState.pages = { [context]: [0] };
-
-        await mailTestRender(<ReadUnreadButtons {...props} />, {
-            preloadedState: {
-                elements: elementsState,
-            },
-        });
+    it('should show "Mark as read" button when some items are unread', () => {
+        mockSelectors({ id1: true, id2: false });
+        render(<ReadUnreadButtons {...getProps()} />);
 
         expect(screen.getByTestId('toolbar:read')).toBeInTheDocument();
         expect(screen.queryByTestId('toolbar:unread')).toBeNull();
     });
 
-    it('should show "Mark as unread" button when all items are read', async () => {
-        const props = getProps(['id1', 'id2']);
-        minimalCache();
-
-        const elementsState = newElementsState();
-        elementsState.elements = {
-            id1: createConversation('id1', false),
-            id2: createConversation('id2', false),
-        };
-        elementsState.pages = { [context]: [0] };
-
-        await mailTestRender(<ReadUnreadButtons {...props} />, {
-            preloadedState: {
-                elements: elementsState,
-            },
-        });
+    it('should show "Mark as unread" button when all items are read', () => {
+        mockSelectors({ id1: false, id2: false });
+        render(<ReadUnreadButtons {...getProps()} />);
 
         expect(screen.queryByTestId('toolbar:read')).toBeNull();
         expect(screen.getByTestId('toolbar:unread')).toBeInTheDocument();
     });
 
-    it('should show both buttons when doing a selectAll', async () => {
+    it('should show both buttons when doing a selectAll', () => {
         mockUseSelectAll.mockReturnValue({ selectAll: true });
-
-        const props = getProps(['id1', 'id2']);
-        minimalCache();
-
-        const elementsState = newElementsState();
-        elementsState.elements = {
-            id1: createConversation('id1', true),
-            id2: createConversation('id2', false),
-        };
-        elementsState.pages = { [context]: [0] };
-
-        await mailTestRender(<ReadUnreadButtons {...props} />, {
-            preloadedState: {
-                elements: elementsState,
-            },
-        });
+        mockSelectors({ id1: true, id2: false });
+        render(<ReadUnreadButtons {...getProps()} />);
 
         expect(screen.getByTestId('toolbar:read')).toBeInTheDocument();
         expect(screen.getByTestId('toolbar:unread')).toBeInTheDocument();
