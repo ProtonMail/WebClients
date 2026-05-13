@@ -111,7 +111,6 @@ enum AccountFlag {
     PassDashboard = 'PassDashboard',
     DriveDashboard = 'DriveDashboard',
     MeetDashboard = 'MeetDashboard',
-    SocialRecovery = 'SocialRecovery',
     SocialRecoverySklDisabled = 'SocialRecoverySklDisabled',
     MembersRemote = 'MembersRemote',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
