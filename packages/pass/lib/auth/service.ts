@@ -277,6 +277,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         logout: async (options: { soft: boolean; broadcast?: boolean }) => {
+            api.setResumeLock(false);
             config.onLogoutStart?.();
 
             const localID = authStore.getLocalID();
@@ -459,6 +460,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const localID = authStore.getLocalID();
             const broadcast = options.broadcast ?? false;
 
+            api.setResumeLock(false);
             await config.onLocked?.(mode, localID, broadcast);
             const lock = await adapter.lock(options);
 
