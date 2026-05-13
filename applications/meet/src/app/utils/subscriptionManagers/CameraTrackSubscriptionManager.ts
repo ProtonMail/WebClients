@@ -252,7 +252,7 @@ export class CameraTrackSubscriptionManager {
 
                 if (
                     !shouldBeDisabled &&
-                    this.participantQuality &&
+                    this.participantQuality !== undefined &&
                     publication.videoQuality !== this.participantQuality
                 ) {
                     publication.setVideoQuality(this.participantQuality);
