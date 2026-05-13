@@ -5,22 +5,22 @@ import { useModalStateObject } from '@proton/components';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
-// import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 // import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
-import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
-import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
-import { RightPanelSlot } from '../RightPanelSlot';
+import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
+import ProtectedByProton from './MainContainer/ProtectedByProton';
 
 import './MainContainer.scss';
 
@@ -45,7 +45,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
-    // const { isGhostChatMode } = useGhostChat();
+    const { isGhostChatMode } = useGhostChat();
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
 
@@ -88,108 +88,82 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     // const shouldShowWelcomeSection = !isSmallScreen || isEditorEmpty;
 
     return (
-        // <>
-        <div className="main-container-component bg-norm rounded-xl flex flex-column flex-nowrap flex-1">
-            {isSmallScreen && (
-                <HeaderWrapper>
-                    <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} onlyShowOffers={true} />
-                    <NewGhostChatButton />
-                </HeaderWrapper>
-            )}
-            {isGuest && <PublicHeader />}
-            {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
-            {/* <div className="main-container-component absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px', border: 
-                '1px green solid'
-             }}>
-                <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
-            </div> */}
-            <div
-                className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0"
-                style={{
-                    '--md-max-w-custom': '90%',
-                    '--lg-max-w-custom': '43rem',
-                }}
-            >
-                {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
-                {/* <div
-                    className={clsx(
-                        'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
-                        isSmallScreen && 'top-custom',
-                        shouldShowWelcomeSection ? 'is-visible' : 'is-hidden'
-                    )}
-                    style={{
-                        '--top-custom': isSmallScreen ? '-6rem' : undefined,
-                    }}
-                >
-                    <div className="main-text-container flex-1 my-auto flex flex-column relative w-full">
-                        <LumoMainText
-                            isOnboardingCompleted={isOnboardingCompleted}
-                            isSmallScreen={isSmallScreen}
-                            isGhostMode={isGhostChatMode}
-                        />
-
-                        <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} canShow={!isSmallScreen} />
-                    </div>
-                    <LumoCat isSmallScreen={isSmallScreen} isGhostChatMode={isGhostChatMode} />
-                </div>
-                <ThemedPromptSuggestion
-                    onClick={handlePromptSuggestionClick}
-                    className="align-self-center"
-                    canShow={isSmallScreen && isEditorEmpty}
-                /> */}
-
-                <div className="composer-container md:px-4 w-full">
-                    <ComposerComponent
-                        composerMode={ComposerMode.NEW_CONVERSATION}
-                        handleSendMessage={handleSendMessage}
-                        isProcessingAttachment={isProcessingAttachment}
-                        className="fixed bottom-0 md:static w-full z-20"
-                        setIsEditorFocused={setIsEditorFocused}
-                        isEditorFocused={isEditorFocused}
-                        setIsEditorEmpty={setIsEditorEmpty}
-                        handleOpenFiles={handleOpenFiles}
-                        onShowDriveBrowser={handleShowDriveBrowser}
-                        onOpenFilePreview={handleOpenFilePreview}
-                        canShowLegalDisclaimer={isGuest && isSmallScreen}
-                        canShowLumoUpsellToggle={true}
-                        initialQuery={promptSuggestion || initialQuery}
-                        prefillQuery={prefillQuery}
+        <LumoLayoutWithDrawer
+            headerComponent={isGuest ? <PublicHeader /> : null}
+            drawerContentComponent={
+                <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1">
+                    <FilesManagementView
+                        messageChain={[]}
+                        filesContainerRef={filesContainerRef}
+                        onClose={handleCloseFiles}
+                        filterMessage={openPanel.filterMessage}
+                        onClearFilter={handleClearFilter}
+                        initialShowDriveBrowser={false}
                     />
                 </div>
-                <WhatsNew />
-            </div>
-            {filePreviewModal.render && previewAttachment && (
+            }
+        >
+            <div className="main-container-component bg-norm rounded-xl flex flex-column flex-nowrap flex-1">
+                {/* {isSmallScreen && (
+                    <HeaderWrapper>
+                        <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} onlyShowOffers={true} />
+                        <NewGhostChatButton />
+                    </HeaderWrapper>
+                )}
+                {isGuest && <PublicHeader />} */}
+                <div
+                    className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0"
+                    style={{
+                        '--md-max-w-custom': '90%',
+                        '--lg-max-w-custom': '43rem',
+                    }}
+                >
+                    <LumoMainText
+                        // isOnboardingCompleted={isOnboardingCompleted}
+                        isSmallScreen={isSmallScreen}
+                        isGhostMode={isGhostChatMode}
+                    />
+                    <div className="composer-container md:px-4 w-full">
+                        <ComposerComponent
+                            composerMode={ComposerMode.NEW_CONVERSATION}
+                            handleSendMessage={handleSendMessage}
+                            isProcessingAttachment={isProcessingAttachment}
+                            className="main-container fixed bottom-0 md:static w-full z-20"
+                            setIsEditorFocused={setIsEditorFocused}
+                            isEditorFocused={isEditorFocused}
+                            setIsEditorEmpty={setIsEditorEmpty}
+                            handleOpenFiles={handleOpenFiles}
+                            onShowDriveBrowser={handleShowDriveBrowser}
+                            onOpenFilePreview={handleOpenFilePreview}
+                        canShowLegalDisclaimer={isGuest && isSmallScreen}
+                            canShowLumoUpsellToggle={true}
+                            initialQuery={promptSuggestion || initialQuery}
+                            prefillQuery={prefillQuery}
+                            optionalElementBelowComposer={
+                                isGuest ? <TermsAndConditions className="m-0 hidden md:block" /> : <ProtectedByProton />
+                            }
+                        />
+                    </div>
+                    <WhatsNew />
+                </div>
+                {filePreviewModal.render && previewAttachment && (
                 <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
             )}
             {openPanel.type === 'files' && (
-                <FilesManagementView
-                    messageChain={[]}
-                    filesContainerRef={filesContainerRef}
-                    onClose={handleCloseFiles}
-                    filterMessage={openPanel.filterMessage}
-                    onClearFilter={handleClearFilter}
-                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                    forceModal={true}
-                />
-            )}
-            <RightPanelSlot>
-                {/* <FilesManagementView
-                    messageChain={[]}
-                    filesContainerRef={filesContainerRef}
-                    onClose={handleCloseFiles}
-                    filterMessage={openPanel.filterMessage}
-                    onClearFilter={handleClearFilter}
-                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                /> */}
-                {/* <p>HELLO</p> */}
-                <div className="flex flex-column  items-center gap-2 justify-center items-center flex-1">
-                    <Button>Upload from Drive (Add)</Button>
-                    <Button>Upload from computer (Add)</Button>
-                </div>
-            </RightPanelSlot>
+                    <FilesManagementView
+                        messageChain={[]}
+                        filesContainerRef={filesContainerRef}
+                        onClose={handleCloseFiles}
+                        filterMessage={openPanel.filterMessage}
+                        onClearFilter={handleClearFilter}
+                        initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                        forceModal={true}
+                    />
+                )}
 
-            <MainContainerFooter />
-        </div>
+                <MainContainerFooter />
+            </div>
+        </LumoLayoutWithDrawer>
     );
 };
 

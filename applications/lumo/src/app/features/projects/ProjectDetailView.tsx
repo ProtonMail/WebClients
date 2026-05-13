@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
@@ -16,10 +16,9 @@ import { FilesManagementView } from '../../components/Files';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
 import { usePersonalization } from '../../hooks';
-import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { applyRetentionPolicy, categorizeConversations } from '../../layouts/sidepanel/helpers';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
@@ -41,8 +40,8 @@ import { ComposerMode, getProjectInfo } from '../../types';
 import { openLumoUpsellModal } from '../../upsells/providers/LumoUpsellModalProvider';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { ConversationDropdown } from './components/ConversationDropdown';
-import { ProjectDetailHeader } from './components/ProjectDetailHeader';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
+import { ProjectTitleSection } from './components/ProjectTitleSection';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
 import { useNativeComposerProjectDetailVisibilityApi } from './hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useProjectActions } from './hooks/useProjectActions';
@@ -56,12 +55,13 @@ interface RouteParams {
     projectId: string;
 }
 
+// TODO: clean up unused css
 const ProjectDetailViewInner = () => {
     const { projectId } = useParams<RouteParams>();
     const history = useHistory();
     const dispatch = useLumoDispatch();
     const api = useApi();
-    const [showSidebar, setShowSidebar] = useState(true);
+    const [showSidebar] = useState(true);
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [suggestedPrompt, setSuggestedPrompt] = useState<string | undefined>(undefined);
 
@@ -73,7 +73,6 @@ const ProjectDetailViewInner = () => {
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
 
-    const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
     const { personalization } = usePersonalization();
     const {
         smoothRendering: ffSmoothRendering,
@@ -281,127 +280,160 @@ const ProjectDetailViewInner = () => {
         }
     };
 
-    const handleProjectSettingsButtonClick = () => {
-        if (isMobileViewport) {
-            sidebarModal.openModal(true);
-        } else {
-            setShowSidebar(!showSidebar);
-        }
-    };
+    // const handleProjectSettingsButtonClick = () => {
+    //     if (isMobileViewport) {
+    //         sidebarModal.openModal(true);
+    //     } else {
+    //         setShowSidebar(!showSidebar);
+    //     }
+    // };
 
     const handleUpgradeClick = () => {
         openLumoUpsellModal(LUMO_UPSELL_PATHS.CHAT_HISTORY);
     };
 
     return (
-        <div className="project-detail-view flex flex-column">
-            {isMobileViewport && (
-                <HeaderWrapper>
-                    <></>
-                </HeaderWrapper>
-            )}
-            <ProjectDetailHeader
-                projectName={projectName}
-                category={category}
-                showSidebar={showSidebar}
-                isMobileView={isMobileViewport}
-                onBack={() => history.push('/projects')}
-                onProjectSettingsClick={handleProjectSettingsButtonClick}
-                onSaveTitle={handleSaveTitle}
-                onDeleteProject={() => deleteModal.openModal(true)}
-            />
+        <LumoLayoutWithDrawer
+            // leftHeaderButton={
+            //     <Button
+            //         onClick={() => history.push('/projects')}
+            //         icon
+            //         shape="ghost"
+            //         color="weak"
+            //         size="small"
+            //         className="shrink-0"
+            //     >
+            //         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //             <rect width="40" height="40" rx="12" fill="#F5F6FE" />
+            //         </svg>
+            //     </Button>
+            // }
+            headerComponent={
+                <ProjectTitleSection
+                    projectName={projectName}
+                    categoryIcon={category.icon}
+                    onSaveTitle={handleSaveTitle}
+                    onDeleteProject={() => deleteModal.openModal(true)}
+                />
+            }
+            drawerContentComponent={
+                <ProjectFilesPanel
+                    key={projectId}
+                    projectId={projectId}
+                    instructions={projectInstructions}
+                    onEditInstructions={() => instructionsModal.openModal(true)}
+                />
+            }
+            drawerTitle={c('collider_2025:Title').t`Project knowledge`}
+        >
+            <div className="project-detail-view flex flex-column">
+                {/* {isMobileViewport && (
+                    <HeaderWrapper>
+                        <></>
+                    </HeaderWrapper>
+                )} */}
+                {/* <ProjectDetailHeader
+                    projectName={projectName}
+                    category={category}
+                    showSidebar={showSidebar}
+                    isMobileView={isMobileViewport}
+                    onBack={() => history.push('/projects')}
+                    onProjectSettingsClick={handleProjectSettingsButtonClick}
+                    onSaveTitle={handleSaveTitle}
+                    onDeleteProject={() => deleteModal.openModal(true)}
+                /> */}
 
-            <div
-                className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
-            >
-                {/* Main area - similar to 'outer' in lumo-chat-container */}
-                <div className="outer">
-                    <div className="project-detail-main">
-                        {sortedConversations.length === 0 ? (
-                            <ProjectEmptyState
-                                promptSuggestions={promptSuggestions}
-                                onSelectSuggestion={setSuggestedPrompt}
-                            />
-                        ) : (
-                            <div className="project-detail-conversations pt-5 mb-0">
-                                <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
-                                    <SelectableConversationList
-                                        groups={
-                                            [
-                                                {
-                                                    title: c('collider_2025:Title').t`Today`,
-                                                    conversations: today,
-                                                },
-                                                {
-                                                    title: c('collider_2025:Title').t`Last 7 days`,
-                                                    conversations: lastWeek,
-                                                },
-                                                !hasLumoPlus && expiringSoon.length > 0
-                                                    ? {
-                                                          title: c('collider_2025:Title').t`Expiring Soon`,
-                                                          conversations: expiringSoon,
-                                                          headerAction: (
-                                                              <button
-                                                                  className="keep-projects-button text-sm color-weak bg-transparent border-none cursor-pointer p-0"
-                                                                  onClick={handleUpgradeClick}
-                                                              >
-                                                                  {c('collider_2025:Action').t`Keep these chats`}
-                                                              </button>
-                                                          ),
-                                                      }
-                                                    : null,
-                                                {
-                                                    title: c('collider_2025:Title').t`Older`,
-                                                    conversations: olderConversations,
-                                                },
-                                            ].filter((g) => g && g.conversations.length > 0) as ConversationGroup[]
-                                        }
-                                        onConversationClick={(id) => history.push(`/c/${id}`)}
-                                        onDeleteSelected={handleDeleteSelectedConversations}
-                                        renderConversationActions={(conversation) => (
-                                            <ConversationDropdown
-                                                conversationId={conversation.id}
-                                                onDelete={() => handleDeleteConversation(conversation.id)}
-                                            />
-                                        )}
-                                    />
+                <div
+                    className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
+                >
+                    {/* Main area - similar to 'outer' in lumo-chat-container */}
+                    <div className="outer">
+                        <div className="project-detail-main">
+                            {sortedConversations.length === 0 ? (
+                                <ProjectEmptyState
+                                    promptSuggestions={promptSuggestions}
+                                    onSelectSuggestion={setSuggestedPrompt}
+                                />
+                            ) : (
+                                <div className="project-detail-conversations pt-5 mb-0">
+                                    <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
+                                        <SelectableConversationList
+                                            groups={
+                                                [
+                                                    {
+                                                        title: c('collider_2025:Title').t`Today`,
+                                                        conversations: today,
+                                                    },
+                                                    {
+                                                        title: c('collider_2025:Title').t`Last 7 days`,
+                                                        conversations: lastWeek,
+                                                    },
+                                                    !hasLumoPlus && expiringSoon.length > 0
+                                                        ? {
+                                                              title: c('collider_2025:Title').t`Expiring Soon`,
+                                                              conversations: expiringSoon,
+                                                              headerAction: (
+                                                                  <button
+                                                                      className="keep-projects-button text-sm color-weak bg-transparent border-none cursor-pointer p-0"
+                                                                      onClick={handleUpgradeClick}
+                                                                  >
+                                                                      {c('collider_2025:Action').t`Keep these chats`}
+                                                                  </button>
+                                                              ),
+                                                          }
+                                                        : null,
+                                                    {
+                                                        title: c('collider_2025:Title').t`Older`,
+                                                        conversations: olderConversations,
+                                                    },
+                                                ].filter((g) => g && g.conversations.length > 0) as ConversationGroup[]
+                                            }
+                                            onConversationClick={(id) => history.push(`/c/${id}`)}
+                                            onDeleteSelected={handleDeleteSelectedConversations}
+                                            renderConversationActions={(conversation) => (
+                                                <ConversationDropdown
+                                                    conversationId={conversation.id}
+                                                    onDelete={() => handleDeleteConversation(conversation.id)}
+                                                />
+                                            )}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
 
-                        <div className="project-detail-composer">
-                            <ComposerComponent
-                                handleSendMessage={handleSendInProject}
-                                isProcessingAttachment={false}
-                                className="w-full"
-                                composerMode={ComposerMode.PROJECT}
-                                setIsEditorFocused={setIsEditorFocused}
-                                isEditorFocused={isEditorFocused}
-                                canShowLumoUpsellToggle={false}
-                                prefillQuery={suggestedPrompt}
-                                spaceId={projectId}
-                                onShowDriveBrowser={handleShowDriveBrowser}
-                            />
-                            <p className="text-center color-weak text-xs mt-2">
-                                {c('collider_2025: Disclosure')
-                                    .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
-                            </p>
+                            <div className="project-detail-composer">
+                                <ComposerComponent
+                                    handleSendMessage={handleSendInProject}
+                                    isProcessingAttachment={false}
+                                    className="w-full"
+                                    composerMode={ComposerMode.PROJECT}
+                                    setIsEditorFocused={setIsEditorFocused}
+                                    isEditorFocused={isEditorFocused}
+                                    canShowLumoUpsellToggle={false}
+                                    prefillQuery={suggestedPrompt}
+                                    spaceId={projectId}
+                                    onShowDriveBrowser={handleShowDriveBrowser}
+                                />
+                                <p className="text-center color-weak text-xs mt-2">
+                                    {c('collider_2025: Disclosure')
+                                        .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
+                                </p>
+                            </div>
                         </div>
                     </div>
+
+                    {/* Sidepanel - Desktop only
+                    {!isMobileViewport && showSidebar && (
+                        <ProjectFilesPanel
+                            key={projectId}
+                            projectId={projectId}
+                            instructions={projectInstructions}
+                            onEditInstructions={() => instructionsModal.openModal(true)}
+                        />
+                    )} */}
                 </div>
 
-                {/* Sidepanel - Desktop only */}
-                {!isMobileViewport && showSidebar && (
-                    <ProjectFilesPanel
-                        key={projectId}
-                        projectId={projectId}
-                        instructions={projectInstructions}
-                        onEditInstructions={() => instructionsModal.openModal(true)}
-                    />
-                )}
-            </div>
-
-            {/* Mobile Sidebar Modal */}
+                {/* Mobile Sidebar Modal
             {isMobileViewport && sidebarModal.render && (
                 <ModalTwo {...sidebarModal.modalProps} size="large" className="project-files-modal">
                     <ModalTwoHeader
@@ -421,24 +453,24 @@ const ProjectDetailViewInner = () => {
                         />
                     </ModalTwoContent>
                 </ModalTwo>
-            )}
+            )} */}
 
-            {instructionsModal.render && (
-                <ProjectInstructionsModal
-                    {...instructionsModal.modalProps}
-                    projectId={projectId}
-                    currentInstructions={projectInstructions}
-                    space={space}
-                />
-            )}
+                {instructionsModal.render && (
+                    <ProjectInstructionsModal
+                        {...instructionsModal.modalProps}
+                        projectId={projectId}
+                        currentInstructions={projectInstructions}
+                        space={space}
+                    />
+                )}
 
-            {deleteModal.render && (
-                <DeleteProjectModal
-                    {...deleteModal.modalProps}
-                    project={projectForModal}
-                    onConfirmDelete={handleDelete}
-                />
-            )}
+                {deleteModal.render && (
+                    <DeleteProjectModal
+                        {...deleteModal.modalProps}
+                        project={projectForModal}
+                        onConfirmDelete={handleDelete}
+                    />
+                )}
 
             {deleteConversationModal.render && (
                 <ConfirmDeleteModal
@@ -450,19 +482,19 @@ const ProjectDetailViewInner = () => {
                 />
             )}
 
-            {/* Drive Browser Modal */}
-            {driveBrowserModal.render && (
-                <FilesManagementView
-                    messageChain={[]}
-                    filesContainerRef={{ current: null }}
-                    onClose={() => driveBrowserModal.openModal(false)}
-                    initialShowDriveBrowser={true}
-                    forceModal={true}
-                    modalProps={driveBrowserModal.modalProps}
-                    spaceId={projectId}
-                />
-            )}
-        </div>
+                {/* Drive Browser Modal */}
+                {driveBrowserModal.render && (
+                    <FilesManagementView
+                        messageChain={[]}
+                        filesContainerRef={{ current: null }}
+                        onClose={() => driveBrowserModal.openModal(false)}
+                        initialShowDriveBrowser={true}
+                        forceModal={true}
+                        spaceId={projectId}
+                    />
+                )}
+            </div>
+        </LumoLayoutWithDrawer>
     );
 };
 
