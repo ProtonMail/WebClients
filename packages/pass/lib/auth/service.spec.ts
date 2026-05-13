@@ -22,6 +22,8 @@ describe('Core AuthService', () => {
         jest.clearAllMocks();
         api = jest.fn() as unknown as Api;
         api.subscribe = jest.fn();
+        api.setResumeLock = jest.fn();
+        api.reset = jest.fn().mockResolvedValue(undefined);
         authStore = createAuthStore(createMemoryStore());
 
         onSessionPersist = jest.fn().mockResolvedValue(undefined);
@@ -130,6 +132,24 @@ describe('Core AuthService', () => {
             expect(result).toEqual({ mode: LockMode.NONE, locked: false });
             expect(onSessionPersist).not.toHaveBeenCalled();
             expect(onLockUpdate).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('AuthService resume-locking', () => {
+        test('`logout` should release the resume lock', async () => {
+            await auth.logout({ soft: true });
+            expect(api.setResumeLock).toHaveBeenCalledWith(false);
+        });
+
+        test('`lock` should release the resume lock', async () => {
+            auth.registerLockAdapter({ type: LockMode.SESSION, lock: jest.fn().mockResolvedValue({}) } as any);
+            await auth.lock(LockMode.SESSION, { soft: true });
+            expect(api.setResumeLock).toHaveBeenCalledWith(false);
+        });
+
+        test('`lock` with `LockMode.NONE` should be a no-op', async () => {
+            await auth.lock(LockMode.NONE, { soft: true });
+            expect(api.setResumeLock).not.toHaveBeenCalled();
         });
     });
 });
