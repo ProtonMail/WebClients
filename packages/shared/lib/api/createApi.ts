@@ -108,11 +108,13 @@ const createApi = ({
     defaultHeaders,
     noErrorState,
     sendLocaleHeaders = true,
+    ignoreMissingScopes = false,
 }: {
     sendLocaleHeaders?: boolean;
     defaultHeaders?: any;
     config: any;
     noErrorState?: boolean;
+    ignoreMissingScopes?: boolean;
 }): ApiWithListener => {
     const call = configureApi({
         ...config,
@@ -128,7 +130,7 @@ const createApi = ({
     };
 
     const handleMissingScopes = (data: any) => {
-        if (!listeners.length) {
+        if (!listeners.length || ignoreMissingScopes) {
             return Promise.reject(data.error);
         }
         return new Promise((resolve, reject) => {

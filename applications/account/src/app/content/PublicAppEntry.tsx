@@ -29,7 +29,7 @@ import { LocationThemeSync } from './theme/LocationThemeSync';
 import { PublicAppThemeProvider } from './theme/PublicAppThemeProvider';
 
 const bootstrapApp = () => {
-    const api = createApi({ config });
+    const api = createApi({ config, ignoreMissingScopes: true });
     const initialSessions = getPersistedSessions();
     const initialSessionsLength = initialSessions.length;
     writeAccountSessions(initialSessions);
