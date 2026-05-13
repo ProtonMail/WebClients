@@ -630,7 +630,21 @@ export const createAuthService = ({
         };
 
         const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
-        const onVisibilityChange = () => document.visibilityState === 'visible' && tryOfflineResume(false);
+
+        /** On tab focus / window show while offline, force a fresh probe and reset
+         * the retry backoff so a return-online transition is caught immediately
+         * instead of waiting on the next auto-retry tick. */
+        const onVisibilityChange = async () => {
+            if (document.visibilityState === 'visible') {
+                if (!connectivity.online) {
+                    await connectivity.check();
+                    connectivity.retryHandler?.reset();
+                }
+
+                tryOfflineResume(false);
+            }
+        };
+
         document.addEventListener('visibilitychange', onVisibilityChange);
 
         return () => {
