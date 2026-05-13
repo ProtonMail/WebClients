@@ -40,7 +40,6 @@ describe('Activation service - `CLIENT_INIT`', () => {
             online: true,
             status: ConnectivityStatus.ONLINE,
             check: jest.fn().mockResolvedValue(undefined),
-            retryHandler: { reset: jest.fn() } as any,
             subscribe: jest.fn(),
         } as any;
 
@@ -215,12 +214,11 @@ describe('Activation service - `CLIENT_INIT`', () => {
     });
 
     describe('popup-driven connectivity probe', () => {
-        test('probes connectivity and rewinds retry backoff when popup wakes offline', async () => {
+        test('probes connectivity when popup wakes offline', async () => {
             ctx.status = AppStatus.READY;
             connectivity.online = false;
             await handler(initMessage('popup'), {});
             expect(connectivity.check).toHaveBeenCalledTimes(1);
-            expect(connectivity.retryHandler!.reset).toHaveBeenCalledTimes(1);
         });
 
         test('probes regardless of AppStatus when worker reports offline connectivity', async () => {
@@ -228,7 +226,6 @@ describe('Activation service - `CLIENT_INIT`', () => {
             connectivity.online = false;
             await handler(initMessage('popup'), {});
             expect(connectivity.check).toHaveBeenCalledTimes(1);
-            expect(connectivity.retryHandler!.reset).toHaveBeenCalledTimes(1);
         });
 
         test('skips probe when popup wakes already online', async () => {
@@ -236,16 +233,13 @@ describe('Activation service - `CLIENT_INIT`', () => {
             connectivity.online = true;
             await handler(initMessage('popup'), {});
             expect(connectivity.check).not.toHaveBeenCalled();
-            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
         });
 
         test('skips probe for non-popup senders even when offline', async () => {
             ctx.status = AppStatus.OFFLINE;
             connectivity.online = false;
             await handler(initMessage('contentscript'), {});
-
             expect(connectivity.check).not.toHaveBeenCalled();
-            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
         });
 
         test('post-probe online state drives the offline-resume gate', async () => {
