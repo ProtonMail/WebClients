@@ -209,6 +209,20 @@ export const setNativeToolsEnabled = (enabled: boolean): void => {
     (window as any).nativeComposerApiInstance.setToolsEnabled(enabled);
 };
 
+export const setNativeEditMode = (prefillText: string): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setEditMode(prefillText);
+};
+
+export const clearNativeEditMode = (): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        return;
+    }
+    (window as any).nativeComposerApiInstance.clearEditMode();
+};
+
 export const setNativeTsAndCsVisibility = (visible: boolean): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
