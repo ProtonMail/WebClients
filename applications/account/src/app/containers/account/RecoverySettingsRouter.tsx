@@ -28,7 +28,6 @@ import RecoveryQrCode from '@proton/components/containers/recovery/navItems/Reco
 import SignedInReset from '@proton/components/containers/recovery/navItems/SignedInReset';
 import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import DeviceBasedRecoverySubpage from './recoverySubpages/DeviceBasedRecoverySubpage';
 import { EmergencyContactSubpage } from './recoverySubpages/EmergencyContactSubpage';
@@ -223,11 +222,10 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
 };
 
 const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
-    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const recoveryPath = getSectionPath(path, recovery);
     const location = useLocation();
 
-    const showRedesign = isRecoverySettingsRedesignEnabled && !!recovery.subrouteGroups;
+    const showRedesign = !!recovery.subrouteGroups;
 
     if (showRedesign && location.pathname === recoveryPath) {
         const params = new URLSearchParams(location.search);
