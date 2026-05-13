@@ -53,7 +53,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         <NavLink
             to={navigateTo}
             className={clsx(
-                'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState]
             )}
             role="tab"
@@ -70,7 +70,10 @@ export const Tab = ({ category, count, tabState }: Props) => {
             />
             <span
                 title={getLabelFromCategoryId(category.id)}
-                className={clsx('tag-label tag-label-text', tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak')}
+                className={clsx(
+                    'tag-label tag-label-text text-sm',
+                    tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
+                )}
             >
                 {getLabelFromCategoryId(category.id)}
             </span>
