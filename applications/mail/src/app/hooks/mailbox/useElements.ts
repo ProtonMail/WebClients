@@ -14,7 +14,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { SentryMailInitiatives, captureMessage, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { type MAIL_PAGE_SIZE, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -220,7 +220,7 @@ export const useElements: UseElements = ({
         }
 
         const labelID = getLabelIDFromRawID(labelIDs, rawLabelID);
-        const sort = sortFromUrl(location, mailSettings.ViewMode === VIEW_MODE.GROUP, labelID);
+        const sort = sortFromUrl(location, labelID);
         const filter = filterFromUrl(location);
         const search = extractSearchParameters(location);
         const isSearching = isSearch(search);
