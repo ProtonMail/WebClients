@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -17,11 +17,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url.ts';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -190,7 +186,7 @@ export const OutgoingRecoveryContactSettings = ({
 }) => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+    const [{ isSentinelUser }] = useIsSentinelUser();
 
     if (!controller.outgoingDelegatedAccess.isAvailable) {
         return null;
@@ -200,10 +196,6 @@ export const OutgoingRecoveryContactSettings = ({
     const canAddRecoveryContact =
         controller.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
         !controller.outgoingDelegatedAccess.recoveryContacts.hasReachedLimit;
-    const showSentinelWarning =
-        !loadingIsSentinelUser &&
-        isSentinelUser &&
-        controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0;
 
     if (isRecoverySettingsRedesignEnabled) {
         if (controller.outgoingDelegatedAccess.loading) {
@@ -215,7 +207,8 @@ export const OutgoingRecoveryContactSettings = ({
                 {canAddRecoveryContact && (
                     <div className="mb-2">
                         <Button
-                            disabled={userHasNoAccountRecoveryMethodSet}
+                            // Non-sentinel users need to have a recovery method
+                            disabled={userHasNoAccountRecoveryMethodSet && !isSentinelUser}
                             color="norm"
                             className="inline-flex gap-2 items-center"
                             onClick={() => {
@@ -244,24 +237,6 @@ export const OutgoingRecoveryContactSettings = ({
                                 </Banner>
                             )}
                             <OutgoingTable controller={controller} />
-                            {showSentinelWarning && (
-                                <div className="fade-in">
-                                    <DashboardCardDivider />
-                                    <div className="flex flex-column gap-2 items-start">
-                                        <StatusBadge
-                                            status={StatusBadgeStatus.Warning}
-                                            text={PROTON_SENTINEL_NAME}
-                                            icon={IcShieldExclamationFilled}
-                                        />
-                                        <p className="m-0">
-                                            {getBoldFormattedText(
-                                                c('Info')
-                                                    .t`To ensure the highest possible security of your account, disable **Contact-assisted recovery**.`
-                                            )}
-                                        </p>
-                                    </div>
-                                </div>
-                            )}
                         </DashboardCardContent>
                     )}
                 </DashboardCard>
