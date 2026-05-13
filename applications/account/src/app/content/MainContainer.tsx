@@ -190,7 +190,6 @@ const MainContainer = () => {
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isOLESEnabled = useFlag('OlesM1');
     const isCategoryViewEnabled = useFlag('CategoryView');
-    const isRecoveryContactsEnabled = useFlag('SocialRecovery');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
@@ -265,7 +264,6 @@ const MainContainer = () => {
         isUserGroupsFeatureEnabled,
         showThemeSelection,
         assistantKillSwitch,
-        isRecoveryContactsEnabled,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
         canDisplayPassReports,
