@@ -25,6 +25,16 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
 };
 
 /**
+ * Returns true if the native app supports edit mode via the native composer (>= 1.5.0).
+ * Older versions fall back to web-side editing.
+ */
+export const canUseNativeEditMode = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (!appInfo) return false;
+    return !isNativeVersionOlderThan(appInfo.version, '1.5.0');
+};
+
+/**
  * Extracts the native mobile app version from the User-Agent string
  * Expected format: ProtonLumo/VERSION (Platform details)
  *
