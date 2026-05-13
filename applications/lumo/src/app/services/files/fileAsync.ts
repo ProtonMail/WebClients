@@ -1,5 +1,5 @@
 import { selectAttachments } from '../../redux/selectors';
-import { newAttachmentId } from '../../redux/slices/core/attachments';
+import { deleteAttachment, newAttachmentId } from '../../redux/slices/core/attachments';
 import type { LumoDispatch, LumoState } from '../../redux/store';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import type { Attachment, Message } from '../../types';
@@ -106,8 +106,11 @@ export const handleFileAsync =
                 );
             } else if (result.type === 'error') {
                 if (result.unsupported) {
-                    // Unsupported file type
+                    // Unsupported file type — remove the placeholder we dispatched
+                    // earlier so the UI does not get stuck in "processing" state with
+                    // an attachment that can't be removed.
                     isUnsupported = true;
+                    dispatch(deleteAttachment(attachment.id));
 
                     const endTime = performance.now();
                     const processingDurationMs = Math.round(endTime - startTime);
