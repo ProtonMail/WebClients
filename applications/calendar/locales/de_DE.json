@@ -1028,6 +1028,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "Go back": [
+        "Zurück"
       ]
     },
     "action": {
@@ -6572,6 +6578,18 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ]
     },
     "info": {

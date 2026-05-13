@@ -37,7 +37,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -1036,6 +1036,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back": [
+        "Вярнуцца"
       ]
     },
     "action": {
@@ -4084,7 +4090,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Адбылася памылка падчас экспартавання кантактаў vCard"
+        "Адбылася памылка пры экспартаванні кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -6171,7 +6177,7 @@
         "Дыяпазон перакрываецца з існуючым дыяпазонам."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Referral link copied to your clipboard": [
         "Рэферальная спасылка скапіявана ў буфер абмену"
@@ -6754,6 +6760,18 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
       ]
     },
     "info": {
@@ -9339,7 +9357,7 @@
         "Падчас падзеі"
       ],
       "On the same day at ${ time }": [
-        "У той жа дзень а ${ time }"
+        "У той жа дзень у ${ time }"
       ],
       "Unknown": [
         "Невядома"

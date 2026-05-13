@@ -1028,6 +1028,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back": [
+        "Voltar"
       ]
     },
     "action": {
@@ -6551,6 +6557,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "por apenas ${ bundlePlanPriceInline }"
       ]
     },
     "info": {
@@ -11224,6 +11236,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Reuniões por vídeo, de até ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ]
     },
     "subscription reminder": {

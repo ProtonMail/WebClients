@@ -1003,6 +1003,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Go back": [
+        "倒退"
       ]
     },
     "action": {
@@ -1094,6 +1097,12 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ]
     },
     "Alarm notification": {
@@ -1349,6 +1358,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ]
     },
     "BF2025: Tooltip": {
@@ -3106,6 +3118,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
       ]
     },
     "description": {
@@ -4392,6 +4407,9 @@
     "fido2: Info": {
       "Security key": [
         "安全金鑰"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ]
     },
     "fido2: Label": {
@@ -6265,6 +6283,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ]
     },
     "info": {
@@ -6988,6 +7018,12 @@
     "label": {
       "How long should an appointment last?": [
         "預約應持續多久？"
+      ],
+      "Date of the booking range": [
+        "移除此預定範圍"
+      ],
+      "Start time of the booking range": [
+        "預定範圍的開始時間"
       ]
     },
     "Label for contact group color": {
@@ -7316,6 +7352,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Message": {
@@ -9415,6 +9454,9 @@
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Plans": {
@@ -11797,6 +11839,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12315,6 +12360,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
       ]
     }
   }

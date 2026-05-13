@@ -1028,6 +1028,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Go back": [
+        "Ga terug"
       ]
     },
     "action": {
@@ -4080,6 +4086,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ]
     },
     "error": {
@@ -6569,6 +6581,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
       ]
     },
     "info": {
@@ -8868,6 +8889,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Wachtwoordzin gekopieerd naar klembord"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
