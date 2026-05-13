@@ -406,11 +406,22 @@ describe('AuthService', () => {
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
-        test('throttle gate suppresses dispatch immediately after a connection-issue failure', async () => {
+        test('throttle gate suppresses connectivity-driven dispatch after a connection-issue failure', async () => {
             setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
             await authService.config.onSessionFailure({}, offlineError);
-            fireVisibility();
+            expect(authService.scheduler.isThrottled()).toBe(true);
+            fireConnectivity(ConnectivityStatus.ONLINE);
             expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('visibilitychange bypasses the throttle gate (user gesture)', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+            fireVisibility();
+            expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
         test('detach unwires document and connectivity listeners', () => {
