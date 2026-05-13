@@ -17,6 +17,7 @@ export enum StatusBadgeStatus {
     Warning = 'warning',
     Success = 'success',
     Upsell = 'upsell',
+    Danger = 'danger',
 }
 
 interface IconProps {
@@ -35,6 +36,7 @@ const STATUS_CONFIG: Record<StatusBadgeStatus, StatusConfig> = {
     [StatusBadgeStatus.Warning]: { Icon: IcExclamationCircleFilled, colorClassName: 'status-badge--warning' },
     [StatusBadgeStatus.Success]: { Icon: IcCheckmarkCircleFilled, colorClassName: 'status-badge--success' },
     [StatusBadgeStatus.Upsell]: { Icon: IcUpgrade, colorClassName: 'status-badge--upsell' },
+    [StatusBadgeStatus.Danger]: { Icon: IcExclamationCircleFilled, colorClassName: 'status-badge--danger' },
 };
 
 export interface StatusBadgeProps extends ComponentPropsWithoutRef<'span'> {

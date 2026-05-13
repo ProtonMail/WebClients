@@ -4,8 +4,10 @@ import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyR
 import { VerifyRecoveryMethod } from '@proton/account/safetyReview/components/actions/accountRecovery/verify/VerifyRecoveryMethod';
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 
+import darkPaperplaneIllustration from '../../../assets/paperplane-dark.svg';
 import paperplaneIllustration from '../../../assets/paperplane.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
 
@@ -14,6 +16,8 @@ type Props = SafetyReviewAllProps & {
 };
 
 export const VerifyRecoveryEmail = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const boldEmail = <b key="bold-email">{props.recoveryItem.recoveryItem.data.value}</b>;
     const [loading, withLoading] = useLoading();
 
@@ -21,7 +25,12 @@ export const VerifyRecoveryEmail = (props: Props) => {
         <>
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={paperplaneIllustration} alt="" width={80} height={64} />
+                    <img
+                        src={isDarkTheme ? darkPaperplaneIllustration : paperplaneIllustration}
+                        alt=""
+                        width={80}
+                        height={64}
+                    />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>{c('safety_review')
                     .t`Verify your recovery email`}</SafetyReviewCardHeader.Title>
