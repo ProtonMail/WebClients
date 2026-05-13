@@ -1,6 +1,6 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@protontech/crypto';
 import { getFileExtension, isImage, isRAWExtension, isRAWPhoto, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
@@ -134,11 +134,14 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
 
             const { nodeUid } = await controller.completion();
 
+            const photosRoot = await drivePhotos.getMyPhotosRootFolder();
+            const photosRootUid = photosRoot.ok ? photosRoot.value.uid : undefined;
+
             void this.eventCallback?.({
                 type: 'file:complete',
                 uploadId: task.uploadId,
                 nodeUid,
-                parentUid: undefined,
+                parentUid: photosRootUid,
                 isUpdatedNode: false,
                 isForPhotos: true,
             });
