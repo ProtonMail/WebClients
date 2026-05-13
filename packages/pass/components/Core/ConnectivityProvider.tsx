@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
@@ -31,6 +32,8 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, s
 
 export const useOnline = () => {
     const ctx = useContext(ConnectivityContext);
+    const offlineBooted = clientOffline(useAppState().status);
+    if (offlineBooted) return false;
     return ctx ? ctx.status === ConnectivityStatus.ONLINE : true;
 };
 
