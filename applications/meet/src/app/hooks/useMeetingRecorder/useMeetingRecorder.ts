@@ -441,6 +441,13 @@ export function useMeetingRecorder() {
             };
 
             mediaRecorder.onstart = () => {
+                // If the encoder failed immediately after start, the state is already
+                // 'inactive'. Don't resolve — onerror will fire next and reject with
+                // EncodingError so the retry/fallback logic can handle it.
+                if (mediaRecorder.state !== 'recording') {
+                    return;
+                }
+
                 resolve();
             };
 
@@ -689,6 +696,7 @@ export function useMeetingRecorder() {
                     console.error('[MeetingRecorder] EncodingError with codec, retrying with fallback', {
                         failed: recordingCodec,
                         fallback: fallbackCodec,
+                        error: error,
                     });
                     reportMeetError('MeetingRecording Error: EncodingError, retrying with fallback codec', {
                         context: { failed: recordingCodec, fallback: fallbackCodec },
