@@ -1,5 +1,6 @@
 import { put } from 'redux-saga/effects';
 
+import { api } from '@proton/pass/lib/api/api';
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { offlineResume, startEventPolling } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
@@ -14,6 +15,7 @@ export default createRequestSaga({
 
         const resumed: boolean = yield auth.resumeSession(localID, { retryable, silence });
         if (!resumed) throw new Error();
+        api.setResumeLock(false);
 
         yield hydrate(
             {
