@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,6 +7,7 @@ import { clsx } from 'clsx';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
+import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
@@ -19,7 +20,6 @@ import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { RetryPanel } from '../RetryPanel';
-import { RightPanelSlot } from '../RightPanelSlot';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
@@ -277,17 +277,96 @@ const ConversationComponent = ({
     //     [messageChain, handleRegenerateMessage, isWebSearchButtonToggled]
     // );
 
+    // Memoize the action button to prevent re-renders
+    // const drawerActionButton = useMemo(
+    //     () => (
+    //         <Button
+    //             onClick={handleShowDriveBrowser}
+    //             icon
+    //             shape="ghost"
+    //             color="weak"
+    //             size="small"
+    //             title={c('collider_2025:Button').t`Add files from Drive`}
+    //         >
+    //             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //                 <path
+    //                     d="M8 3.33331V12.6666M3.33333 7.99998H12.6667"
+    //                     stroke="currentColor"
+    //                     strokeWidth="1.33333"
+    //                     strokeLinecap="round"
+    //                     strokeLinejoin="round"
+    //                 />
+    //             </svg>
+    //         </Button>
+    //     ),
+    //     [handleShowDriveBrowser]
+    // );
+
+    const drawerTitle = useMemo(() => {
+        switch (openPanel.type) {
+            case 'sources':
+                return c('collider_2025:Title').t`Sources`;
+            case 'files':
+                return c('collider_2025:Title').t`Chat knowledge`;
+            case 'file-preview':
+                return c('collider_2025:Title').t`File preview`;
+        }
+    }, [openPanel.type]);
+
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
-            <>
-                <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
-                    <div
+            <LumoLayoutWithDrawer
+                showNewChatButton={true}
+                headerComponent={
+                    conversation && (
+                        <ConversationHeader
+                            conversation={conversation}
+                            messageChain={messageChain}
+                            // onOpenFiles={handleOpenFiles}
+                        />
+                    )
+                }
+                drawerContentComponent={
+                    <>
+                        {openPanel.type === 'sources' && openPanel.message && (
+                            <WebSearchSourcesView
+                                message={openPanel.message}
+                                sourcesContainerRef={sourcesContainerRef}
+                                onClose={() => setOpenPanel({ type: null })}
+                            />
+                        )}
+                        {openPanel.type === 'files' && (
+                            <FilesManagementView
+                                messageChain={messageChain}
+                                filesContainerRef={filesContainerRef}
+                                onClose={handleCloseFiles}
+                                filterMessage={openPanel.filterMessage}
+                                onClearFilter={handleClearFilter}
+                                initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                                spaceId={conversation?.spaceId}
+                            />
+                        )}
+                        {openPanel.type === 'file-preview' && openPanel.attachment && (
+                            <FilePreviewPanel
+                                attachment={openPanel.attachment}
+                                onBack={() => setOpenPanel({ type: 'files' })}
+                                onClose={() => setOpenPanel({ type: null })}
+                            />
+                        )}
+                    </>
+                }
+                drawerTitle={drawerTitle}
+                // drawerActionButton={drawerActionButton}
+            >
+                <>
+                    <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden gap-2">
+                        <div
                         className={clsx(
                             'outer conversation-page-component flex flex-column flex-nowrap flex-1 reset4print overflow-hidden bg-norm rounded-xl',
                             isAgent && 'lumo-agent-fullwidth'
                         )}
                     >
-                        {conversation && !isAgent && (
+                            {/* {conversation && !isAgent && (
                             <ConversationHeader
                                 conversation={conversation}
                                 messageChain={messageChain}
@@ -346,7 +425,7 @@ const ConversationComponent = ({
                                 .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                         </p>
                     </div>
-                    <RightPanelSlot>
+                    {/* <RightPanelSlot>
                         {openPanel.type === 'sources' && openPanel.message && (
                             <WebSearchSourcesView
                                 message={openPanel.message}
@@ -372,18 +451,19 @@ const ConversationComponent = ({
                                 onClose={() => setOpenPanel({ type: null })}
                             />
                         )}
-                    </RightPanelSlot>
+                    </RightPanelSlot> */}
                 </div>
 
-                {/* Floating Retry Panel */}
-                {retryPanelState.show && retryPanelState.buttonRef && (
-                    <FloatingRetryPanel
-                        buttonRef={retryPanelState.buttonRef}
-                        onRetry={handleRetry}
-                        onClose={handleRetryPanelClose}
-                    />
-                )}
-            </>
+                    {/* Floating Retry Panel */}
+                    {retryPanelState.show && retryPanelState.buttonRef && (
+                        <FloatingRetryPanel
+                            buttonRef={retryPanelState.buttonRef}
+                            onRetry={handleRetry}
+                            onClose={handleRetryPanelClose}
+                        />
+                    )}
+                </>
+            </LumoLayoutWithDrawer>
         </HtmlPreviewContext.Provider>
     );
 };
