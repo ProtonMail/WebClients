@@ -12,7 +12,7 @@ const ConversationPage = lazy(() =>
 );
 const ProjectsView = lazy(() => import('../features/projects/ProjectsView').then((m) => ({ default: m.ProjectsView })));
 const ProjectDetailView = lazy(() =>
-    import('../features/projects/TestProjectDetailView').then((m) => ({ default: m.ProjectDetailView }))
+    import('../features/projects/ProjectDetailView').then((m) => ({ default: m.ProjectDetailView }))
 );
 const ApiDocsPage = lazy(() => import('../features/api-docs/ApiDocsPage').then((m) => ({ default: m.ApiDocsPage })));
 
