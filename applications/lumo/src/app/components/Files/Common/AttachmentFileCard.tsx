@@ -98,7 +98,7 @@ const RemoveButton = ({ processing, onRemove }: RemoveButtonProps) => {
     if (processing) {
         return (
             <Tooltip title={c('collider_2025:Info').t`Processing file...`}>
-                <span className="file-card-dismiss-button bg-white rounded-full border p-1">
+                <span className="file-card-dismiss-button file-card-progress bg-white rounded-full border" >
                     <CircularProgress progress={75} size={15} />
                 </span>
             </Tooltip>
