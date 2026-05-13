@@ -1667,6 +1667,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Go back": [
+        "倒退"
       ]
     },
     "action": {
@@ -1763,6 +1766,12 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } 專用伺服器"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } AI 授權"
       ]
     },
     "Alert": {
@@ -2054,6 +2063,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Individual accounts for 6 users": [
+        "給 6 位使用者的個人帳戶"
       ]
     },
     "BF2025: Tooltip": {
@@ -4155,6 +4167,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "此可能發生於權限被移除或您的密碼被變更。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我們將帶入您舊的電子郵件便連線您的 Gmail 至 ${ MAIL_APP_NAME } 已讓新訊息自動顯示。"
       ]
     },
     "description": {
@@ -5500,6 +5518,9 @@
     "fido2: Info": {
       "Security key": [
         "安全金鑰"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ]
     },
     "fido2: Label": {
@@ -5562,6 +5583,9 @@
       ],
       "Unread": [
         "未讀"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "過濾器 (${ activeState.dropdownActiveCount })"
       ]
     },
     "Filter Actions": {
@@ -8637,6 +8661,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 過其於 ${ daysLeft } 天。"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } 隱藏您的流量。 ${ PASS_SHORT_APP_NAME } 隱藏您的身份 - 無限 ** Hide-my-email 別名 ** 和 ** 暗網警告 ** 若您的資料外洩。"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "只要 ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "推薦"
       ]
     },
     "info": {
@@ -10195,6 +10231,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "您可在試用期內盡情享有多 ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     },
     "Message": {
@@ -11715,6 +11754,9 @@
       ],
       "Yes, don't show again": [
         "是的，不再顯示"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
       ]
     },
     "Option group": {
@@ -12295,6 +12337,9 @@
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ CALENDAR_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Plans": {
@@ -15300,6 +15345,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Loading...": [
+        "載入中…"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15821,6 +15872,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
       ]
     }
   }

@@ -1508,8 +1508,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1703,6 +1702,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back": [
+        "Gå tilbage"
       ]
     },
     "action": {
@@ -9027,6 +9032,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } skjuler din internettrafik. ${ PASS_SHORT_APP_NAME } skjuler din identitet – ubegrænsede **hide-my-email-aliasser** og **mørk-net advarsler** hvis dine data lækkes."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "For kun ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "FORSLÅET"
       ]
     },
     "info": {
@@ -10089,6 +10106,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Mailing list": [
+        "Mailingliste"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10173,6 +10193,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Du har ingen nyhedsbreve eller mailinglisteabonnementer."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Indlæser dine abonnementer på nyhedsbreve..."
       ]
     },
     "Landmarks": {
@@ -16045,6 +16068,13 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Loading...": [
+        "Indlæser..."
+      ],
+      "Mailing list": [
+        "Mailingliste",
+        "Mailinglister"
       ]
     },
     "Today icon tooltip in mini calendar": {

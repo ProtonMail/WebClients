@@ -29,7 +29,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -1516,10 +1516,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1715,6 +1712,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Go back": [
+        "Вярнуцца"
       ]
     },
     "action": {
@@ -5240,7 +5243,7 @@
         "Узнікла праблема з расшыфроўкай вашага паведамлення. Звярніцеся ў службу падтрымкі кліентаў, калі праблема застанецца."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Адбылася памылка падчас экспартавання кантактаў vCard"
+        "Адбылася памылка пры экспартаванні кантактаў vCard"
       ],
       "This action cannot be performed": [
         "Гэта дзеянне немагчыма выканаць"
@@ -8294,7 +8297,7 @@
         "Атрымальнік: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Referral link copied to your clipboard": [
         "Рэферальная спасылка скапіявана ў буфер абмену"
@@ -9333,6 +9336,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "Дадаванне ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Усяго за ${ bundlePlanPriceInline }"
+      ],
+      "RECOMMENDED": [
+        "РЭКАМЕНДАВАНЫ"
       ]
     },
     "info": {
@@ -10411,6 +10426,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Mailing list": [
+        "Спіс рассылкі"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10495,6 +10513,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "У вас адсутнічаюць рассылкі або падпіскі на спісы рассылак."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Загрузка вашых падпісак на рассылку..."
       ]
     },
     "Landmarks": {
@@ -16559,6 +16580,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "Mailing list": [
+        "Спіс рассылкі",
+        "Спісы рассылкі",
+        "Спісы рассылкі",
+        "Спісы рассылкі"
       ]
     },
     "Today icon tooltip in mini calendar": {

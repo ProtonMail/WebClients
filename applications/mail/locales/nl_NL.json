@@ -1505,8 +1505,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1700,6 +1699,15 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Go back": [
+        "Ga terug"
+      ],
+      "Or remove forwarding address": [
+        "Of verwijder het doorstuuradres"
       ]
     },
     "action": {
@@ -4287,6 +4295,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails die naar ${ connectedAddressText } worden verzonden, verschijnen nu in ${ MAIL_APP_NAME }."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ]
     },
     "description": {
@@ -5236,6 +5250,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Address could not be added.": [
+        "Adres kon niet worden toegevoegd."
+      ],
+      "Something went wrong while creating the address": [
+        "Er is iets misgegaan tijdens het aanmaken van het adres"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Er is een fout opgetreden bij het ophalen van beschikbare domeinnamen"
       ]
     },
     "error": {
@@ -5752,6 +5775,9 @@
       ],
       "Unread": [
         "Ongelezen"
+      ],
+      "Filter (${ activeState.dropdownActiveCount })": [
+        "Filter (${ activeState.dropdownActiveCount })"
       ]
     },
     "Filter Actions": {
@@ -9006,6 +9032,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbergt uw internetverkeer. ${ PASS_SHORT_APP_NAME } verbergt uw identiteit\n— oneindig **hide-my-email aliassen** en **dark-web waarschuwingen** als uw gegevens ooit uitlekken."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Voor maar ${ bundlePlanPriceInline }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ]
     },
     "info": {
@@ -10068,6 +10106,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Mailing list": [
+        "Mailinglijst"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10152,6 +10193,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "U hebt geen nieuwsbrieven of adressenlijst abonnementen."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Uw nieuwsbriefabonnementen worden geladen..."
       ]
     },
     "Landmarks": {
@@ -11799,6 +11843,9 @@
       ],
       "Trial started": [
         "Proefperiode gestart"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Uw ${ BRAND_NAME } adres is klaar voor gebruik"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12186,6 +12233,12 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Yes, don't show again": [
+        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -16009,6 +16062,19 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Voeg uw Gmail toe aan ${ MAIL_APP_NAME }"
+      ],
+      "Loading...": [
+        "Laden..."
+      ],
+      "Mailing list": [
+        "Mailinglijst",
+        "Mailinglijsten"
+      ],
+      "You are all set": [
+        "U bent helemaal klaar"
       ]
     },
     "Today icon tooltip in mini calendar": {

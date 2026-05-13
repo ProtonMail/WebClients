@@ -1505,8 +1505,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1700,6 +1699,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "Go back": [
+        "Zurück"
       ]
     },
     "action": {
@@ -9021,6 +9026,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
+        "${ VPN_SHORT_APP_NAME } verbirgt deinen Datenverkehr. ${ PASS_SHORT_APP_NAME } verbirgt deine Identität - unbegrenzte **Hide-my-email Aliase** und **Dark-Web-Warnungen**, falls deine Daten je nach außen gelangen."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "For just ${ bundlePlanPriceInline }": [
+        "Für nur ${ bundlePlanPriceInline }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } zu deiner Standard-E-Mail-Anwendung machen."
+      ],
+      "RECOMMENDED": [
+        "EMPFOHLEN"
       ]
     },
     "info": {
@@ -10083,6 +10103,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Mailing list": [
+        "Verteilerliste"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10167,6 +10190,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Du hast keine Newsletter oder Verteilerlisten-Abonnemente."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Deine Newsletter-Abonnemente werden geladen..."
       ]
     },
     "Landmarks": {
@@ -12204,6 +12230,12 @@
       ],
       "No parent folder": [
         "Kein übergeordneter Ordner"
+      ],
+      "Remind me later": [
+        "Später erinnern"
+      ],
+      "Yes, don't show again": [
+        "Ja, nicht erneut anzeigen"
       ]
     },
     "Option group": {
@@ -16030,6 +16062,16 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Keep this banner hidden?": [
+        "Dieses Banner ausgeblendet lassen?"
+      ],
+      "Loading...": [
+        "Wird geladen…"
+      ],
+      "Mailing list": [
+        "Verteilerliste",
+        "Verteilerlisten"
       ]
     },
     "Today icon tooltip in mini calendar": {
