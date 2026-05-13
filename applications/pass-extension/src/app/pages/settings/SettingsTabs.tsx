@@ -14,12 +14,15 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { OrganizationProvider, useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { AccessTokens } from '@proton/pass/components/Settings/AccessTokens/AccessTokens';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { AccountPath } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { OrganizationAliasCreateMode } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -36,10 +39,17 @@ type Props = { pathname: string };
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 type SettingTab = Tab & { path: string; hidden?: boolean };
 
-const getSettingsTabs = (orgEnabled: boolean = false, aliasCreationDisabled: boolean = false): SettingTab[] => [
+const getSettingsTabs = (
+    orgEnabled: boolean = false,
+    aliasCreationDisabled: boolean = false,
+    accessTokensEnabled: boolean = false
+): SettingTab[] => [
     { path: '/', title: c('Label').t`General`, content: <General /> },
     ...(!aliasCreationDisabled ? [{ path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
+    ...(accessTokensEnabled
+        ? [{ path: '/access-tokens', title: c('Label').t`Access tokens`, content: <AccessTokens /> }]
+        : []),
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
     { path: '/account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
@@ -66,10 +76,11 @@ const SettingsTabsContent: FC<Props> = ({ pathname }) => {
     const history = useHistory();
     const organization = useOrganization();
     const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
 
     const tabs = useMemo(
-        () => getSettingsTabs(organization?.settings.enabled, orgAliasCreationDisabled),
-        [organization]
+        () => getSettingsTabs(organization?.settings.enabled, orgAliasCreationDisabled, accessTokensEnabled),
+        [organization, accessTokensEnabled]
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 

@@ -7,6 +7,7 @@ export enum PassEncryptionTag {
     ItemKey = 'itemkey',
     VaultContent = 'vaultcontent',
     LinkKey = 'linkkey',
+    ShareKey = 'sharekey',
     BiometricOfflineKD = 'biometricofflinekd',
     DesktopUnlockVerifier = 'desktopunlockverifier',
     FileData = 'filedata',
@@ -14,6 +15,7 @@ export enum PassEncryptionTag {
     FileDataV2 = 'v2;{chunkIndex};{totalChunks};filedata.item.pass.proton',
     FileMetadataV2 = 'v2;filemetadata.item.pass.proton',
     ReauthPayload = 'reauthpayload',
+    ActionPayload = 'proton.pass.payload',
 }
 
 export enum PassSignatureContext {
