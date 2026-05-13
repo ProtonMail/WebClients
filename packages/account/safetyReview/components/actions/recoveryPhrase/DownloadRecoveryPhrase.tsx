@@ -10,6 +10,7 @@ import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyR
 import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import Loader from '@proton/components/components/loader/Loader';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
@@ -17,6 +18,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import darkIllustration from '../../assets/recovery-phrase-dark.svg';
 import illustration from '../../assets/recovery-phrase.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
 
@@ -24,6 +26,8 @@ type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'recoveryPhrase'>;
 };
 export const DownloadRecoveryPhrase = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
 
@@ -83,7 +87,7 @@ export const DownloadRecoveryPhrase = (props: Props) => {
         >
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={illustration} alt="" width={64} height={64} />
+                    <img src={isDarkTheme ? darkIllustration : illustration} alt="" width={64} height={64} />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>
                     {c('safety_review').t`Save recovery phrase`}

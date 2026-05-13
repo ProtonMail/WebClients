@@ -1,10 +1,8 @@
 import { c } from 'ttag';
 
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { IcSignedInReset } from '@proton/icons/icons/IcSignedInReset';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
@@ -14,22 +12,12 @@ interface Props {
 
 const SignedInResetBadge = () => {
     const { isSessionRecoveryEnabled, isSessionRecoveryAvailable, loading } = useSelector(selectSessionRecoveryData);
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
-    if (loadingIsSentinelUser || loading) {
+    if (loading) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
 
-    if (isSentinelUser && isSessionRecoveryAvailable && isSessionRecoveryEnabled) {
-        return (
-            <StatusBadge
-                status={StatusBadgeStatus.Warning}
-                text={c('Status').t`Disable signed-in reset`}
-                icon={IcShieldExclamationFilled}
-            />
-        );
-    }
-    if (isSessionRecoveryEnabled) {
+    if (isSessionRecoveryEnabled && isSessionRecoveryAvailable) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`On`} />;
     }
     return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;

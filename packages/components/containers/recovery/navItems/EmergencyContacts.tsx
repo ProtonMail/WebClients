@@ -2,12 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { getFormattedCreateTime } from '@proton/account/delegatedAccess/emergencyContact/date';
 import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcEmergencyAccess } from '@proton/icons/icons/IcEmergencyAccess';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 
 interface Props {
     to: string;
@@ -18,33 +16,19 @@ const EmergencyContactsStatus = () => {
         emergencyContacts: { items: contacts, hasUpsell },
         loading,
     } = useOutgoingItems();
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
-    if (loading || loadingIsSentinelUser) {
+    if (loading) {
         return <SkeletonLoader width={'3rem'} />;
     }
 
     const count = contacts.length;
     if (count === 0) {
-        if (isSentinelUser) {
-            return <span className="color-weak text-sm">{c('Status').t`No contact`}</span>;
-        }
         if (hasUpsell) {
             return (
                 <StatusBadge status={StatusBadgeStatus.Upsell} text={c('emergency_access').t`Add emergency contact`} />
             );
         }
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Title').t`Add an emergency contact`} />;
-    }
-
-    if (isSentinelUser && count > 0) {
-        return (
-            <StatusBadge
-                status={StatusBadgeStatus.Warning}
-                text={c('Status').t`Disable emergency access`}
-                icon={IcShieldExclamationFilled}
-            />
-        );
     }
 
     const latestDate = contacts.reduce<Date | null>((latest, contact) => {

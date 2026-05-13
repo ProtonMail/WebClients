@@ -14,14 +14,18 @@ import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/recovery-contacts-dark.svg';
 import illustration from './assets/recovery-contacts.svg';
 import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 
 export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAMES; emailSubpagePath: string }) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
     return (
         <DashboardGrid>
@@ -33,7 +37,15 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
                         <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
                     </SettingsDescriptionItem>
                 }
-                right={<img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />}
+                right={
+                    <img
+                        src={isDarkTheme ? darkIllustration : illustration}
+                        alt=""
+                        className="shrink-0 hidden md:block"
+                        width={80}
+                        height={80}
+                    />
+                }
             />
             <OutgoingDelegatedAccessProvider>
                 <OutgoingDelegatedAccessActions />

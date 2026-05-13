@@ -9,12 +9,14 @@ import SubscriptionModalProvider, {
     useSubscriptionModal,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import darkIllustration from '../../assets/recovery-emergency-contacts-dark.svg';
 import illustration from '../../assets/recovery-emergency-contacts.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
 
@@ -22,6 +24,8 @@ type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'upsellEmergencyContacts'>;
 };
 export const BaseUpsellEmergencyContacts = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const handleUpsell = () => {
@@ -52,7 +56,7 @@ export const BaseUpsellEmergencyContacts = (props: Props) => {
         >
             <SafetyReviewCardHeader>
                 <SafetyReviewCardHeader.Illustration>
-                    <img src={illustration} alt="" width={64} height={64} />
+                    <img src={isDarkTheme ? darkIllustration : illustration} alt="" width={64} height={64} />
                 </SafetyReviewCardHeader.Illustration>
                 <SafetyReviewCardHeader.Title>
                     {c('safety_review').t`Protect your legacy with Emergency Access`}

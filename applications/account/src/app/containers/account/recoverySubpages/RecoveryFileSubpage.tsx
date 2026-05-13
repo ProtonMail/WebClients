@@ -1,8 +1,6 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -12,24 +10,24 @@ import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import ExportRecoveryFileButton from '@proton/components/containers/recovery/ExportRecoveryFileButton';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { RECOVERY_FILE_FILE_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/recovery-file-dark.svg';
 import illustration from './assets/recovery-file.svg';
 import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 import RecoveryWarning from './shared/RecoveryWarning';
-import SentinelWarning from './shared/SentinelWarning';
 
 const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string }) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const recoveryFileData = useSelector(selectRecoveryFileData);
     const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
-    const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     if (!recoveryFileData.isRecoveryFileAvailable) {
         return null;
@@ -39,11 +37,6 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
         recoveryFileData.isRecoveryFileAvailable &&
         !recoveryFileData.hasOutdatedRecoveryFile &&
         recoveryFileData.recoverySecrets.length > 0;
-
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>{c('Link')
-            .t`Learn more`}</Href>
-    );
 
     return (
         <>
@@ -59,12 +52,20 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
                             <SettingsDescriptionItem>
                                 {c('Info')
                                     .t`You don’t need to open or read the file—just download it and store it somewhere safe.`}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
+                                    {c('Link').t`Learn more`}
+                                </Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
                 <DashboardCard>
@@ -72,16 +73,9 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
                     <DashboardCardContent>
                         <h3 className="flex items-center gap-2 mb-0 text-rg text-semibold mb-2">
                             {c('Title').t`Your recovery file`}
-                            {isSentinelUser && !loadingIsSentinelUser && (
-                                <IcShieldExclamationFilled className="color-warning shrink-0" />
-                            )}
                         </h3>
                         <span className="block mt-0 mb-2 text-ellipsis">{RECOVERY_FILE_FILE_NAME}</span>
-                        <ExportRecoveryFileButton
-                            className="block"
-                            color="norm"
-                            disabled={isSentinelUser || !hasAccountRecoveryMethod}
-                        >
+                        <ExportRecoveryFileButton className="block" color="norm">
                             <IcArrowDownLine size={4} />
                             {recoveryFileData.hasOutdatedRecoveryFile
                                 ? c('Action').t`Download updated file`
@@ -111,14 +105,8 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
                                 </p>
                             </div>
                         )}
-                        {!isRecoveryFileSentinelConflict &&
-                            !isSentinelUser &&
-                            !recoveryFileData.hasOutdatedRecoveryFile && <RecoveryWarning />}
-                        {isRecoveryFileSentinelConflict && isSentinelUser && !loadingIsSentinelUser && (
-                            <SentinelWarning
-                                text={c('Info')
-                                    .t`To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).`}
-                            />
+                        {!isRecoveryFileSentinelConflict && !recoveryFileData.hasOutdatedRecoveryFile && (
+                            <RecoveryWarning />
                         )}
                     </DashboardCardContent>
                 </DashboardCard>

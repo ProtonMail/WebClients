@@ -13,16 +13,16 @@ import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/recovery-emergency-contacts-dark.svg';
 import illustration from './assets/recovery-emergency-contacts.svg';
 
 export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link').t`Learn more`}</Href>
-    );
-
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     return (
         <DashboardGrid>
             <SettingsDescription
@@ -30,10 +30,19 @@ export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
                     <SettingsDescriptionItem>
                         {c('Info')
                             .t`Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${BRAND_NAME} Account.`}{' '}
-                        {learnMoreLink}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link')
+                            .t`Learn more`}</Href>
                     </SettingsDescriptionItem>
                 }
-                right={<img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />}
+                right={
+                    <img
+                        src={isDarkTheme ? darkIllustration : illustration}
+                        alt=""
+                        className="shrink-0 hidden md:block"
+                        width={80}
+                        height={80}
+                    />
+                }
             />
 
             <OutgoingDelegatedAccessProvider>

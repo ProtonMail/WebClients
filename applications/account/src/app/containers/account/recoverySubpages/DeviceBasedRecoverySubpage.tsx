@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -13,21 +12,22 @@ import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import darkIllustration from './assets/device-based-recovery-dark.svg';
 import illustration from './assets/device-based-recovery.svg';
 import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 import RecoveryWarning from './shared/RecoveryWarning';
-import SentinelWarning from './shared/SentinelWarning';
 
 const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: string }) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
     const recoveryFileData = useSelector(selectRecoveryFileData);
     const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
-    const [{ isSentinelUser }] = useIsSentinelUser();
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
     const [disableModalProps, setDisableModalOpen, renderDisableModal] = useModalState();
@@ -44,10 +44,6 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
         return null;
     }
 
-    const learnMoreLink = (
-        <Href key="learn" href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link').t`Learn more`}</Href>
-    );
-
     return (
         <>
             {updateRecoveryFile.el}
@@ -58,12 +54,19 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                             <SettingsDescriptionItem>
                                 {c('Info')
                                     .t`Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.`}{' '}
-                                {learnMoreLink}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link')
+                                    .t`Learn more`}</Href>
                             </SettingsDescriptionItem>
                         </>
                     }
                     right={
-                        <img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />
+                        <img
+                            src={isDarkTheme ? darkIllustration : illustration}
+                            alt=""
+                            className="shrink-0 hidden md:block"
+                            width={80}
+                            height={80}
+                        />
                     }
                 />
                 <DashboardCard>
@@ -74,7 +77,6 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                             label={
                                 <SettingsToggleRow.Label data-testid="account:recovery:trustedDevice">
                                     {c('Label').t`Allow recovery using a trusted device`}
-                                    {isSentinelUser && <IcShieldExclamationFilled className="color-warning shrink-0" />}
                                 </SettingsToggleRow.Label>
                             }
                             toggle={
@@ -82,7 +84,6 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                                     loading={loadingDeviceRecovery}
                                     checked={recoveryFileData.hasDeviceRecoveryEnabled}
                                     onChange={({ target: { checked } }) => handleToggleChange(checked)}
-                                    disabled={!recoveryFileData.hasDeviceRecoveryEnabled && isSentinelUser}
                                 />
                             }
                         />
@@ -96,13 +97,7 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                                 </div>
                             </div>
                         )}
-                        {!recoveryFileData.hasDeviceRecoveryEnabled && !isSentinelUser && <RecoveryWarning />}
-                        {recoveryFileData.hasDeviceRecoveryEnabled && isSentinelUser && (
-                            <SentinelWarning
-                                text={c('Info')
-                                    .t`To ensure the highest possible security of your account, disable **Device data backup**.`}
-                            />
-                        )}
+                        {!recoveryFileData.hasDeviceRecoveryEnabled && <RecoveryWarning />}
                     </DashboardCardContent>
                 </DashboardCard>
             </DashboardGrid>
