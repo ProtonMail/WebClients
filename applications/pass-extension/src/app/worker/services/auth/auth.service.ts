@@ -82,7 +82,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     const boot = withContext<(payload: Parameters<typeof bootIntent>[0]) => void>((ctx, payload) => {
         void alarms.clearAutoResume();
         void alarms.resetAutoResume();
-        ctx.service.store.dispatch(bootIntent(payload));
+        if (!ctx.getState().booted) ctx.service.store.dispatch(bootIntent(payload));
     });
 
     const authService = createCoreAuthService({
@@ -133,7 +133,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onLoginComplete: withContext(async (ctx, _) => {
-            ctx.setStatus(AppStatus.AUTHORIZED);
+            if (ctx.getState().booted) ctx.setStatus(AppStatus.READY);
+            else ctx.setStatus(AppStatus.AUTHORIZED);
             boot({ offline: false });
             await ctx.service.storage.local.removeItem('forceLock');
             await ctx.service.storage.session.setItems(authStore.getSession());
