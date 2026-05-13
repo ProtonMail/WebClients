@@ -1,5 +1,5 @@
 import { Request } from "electron";
-import { checkKeys, verifyDownloadCertificate, VerificationResult } from "./keyPinning";
+import { checkKeys, verifyDownloadCertificate, VerificationResult, resetPinningReportedTestOnly } from "./keyPinning";
 import { sentryReport } from "./sentryReport";
 
 jest.mock("electron", () => ({
@@ -100,14 +100,13 @@ function test_verifyDownloadCertificate(hostname: string, certificateData: strin
 describe("checkKeys", () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        resetPinningReportedTestOnly();
     });
 
     test("reports to Sentry with app-session context on cert pinning failure", () => {
         const r = {
             hostname: "proton.me",
-            validatedCertificate: {
-                data: CERTIFICATE_DATA_rsa4096_badssl_com,
-            },
+            validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
         } as Request;
 
         checkKeys(r);
@@ -120,9 +119,43 @@ describe("checkKeys", () => {
             }),
         );
     });
+
+    test("reports to Sentry only once per session for the same hostname", () => {
+        const r = {
+            hostname: "proton.me",
+            validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
+        } as Request;
+
+        checkKeys(r);
+        checkKeys(r);
+        checkKeys(r);
+
+        expect(sentryReport.reportMessage).toHaveBeenCalledTimes(1);
+    });
+
+    test("reports separately for different hostnames", () => {
+        const mail = {
+            hostname: "mail.proton.me",
+            validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
+        } as Request;
+        const calendar = {
+            hostname: "calendar.proton.me",
+            validatedCertificate: { data: CERTIFICATE_DATA_rsa4096_badssl_com },
+        } as Request;
+
+        checkKeys(mail);
+        checkKeys(calendar);
+
+        expect(sentryReport.reportMessage).toHaveBeenCalledTimes(2);
+    });
 });
 
 describe("key pinning", () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        resetPinningReportedTestOnly();
+    });
+
     test("verifyDownloadCertificate is accepted from proton.me", () => {
         test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_proton_me, VerificationResult.Accept);
     });
@@ -153,5 +186,13 @@ describe("key pinning", () => {
                 tags: expect.objectContaining({ context: "download-session", hostname: "proton.me" }),
             }),
         );
+    });
+
+    test("reports to Sentry only once per session for the same download hostname", () => {
+        test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_rsa4096_badssl_com, VerificationResult.Reject);
+        test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_rsa4096_badssl_com, VerificationResult.Reject);
+        test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_rsa4096_badssl_com, VerificationResult.Reject);
+
+        expect(sentryReport.reportMessage).toHaveBeenCalledTimes(1);
     });
 });

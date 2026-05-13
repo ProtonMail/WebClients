@@ -14,6 +14,7 @@ import { getFeatureFlagManager } from "../utils/flags/manager";
 import { FeatureFlag } from "../utils/flags/flags";
 import { quitTracker } from "../utils/log/quitTracker";
 import { sentryReport } from "../utils/sentryReport";
+import { isNetworkError } from "../utils/netErrors";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -37,30 +38,35 @@ export function initializeUpdateChecks() {
 
     updateLogger.info("Initialization of update checks.");
 
-    // Report after 3 consecutive errors to avoid spam on persistent network issues.
+    // Report after 3 non-network errors to avoid spam on persistent network issues.
     // Resets on successful download or when no update is available (updater is healthy).
     const AUTO_UPDATER_ERROR_THRESHOLD = 3;
-    let consecutiveAutoUpdaterErrors = 0;
+    let nonNetworkAutoUpdaterErrors = 0;
 
     autoUpdater.on("error", (error) => {
-        consecutiveAutoUpdaterErrors++;
-        updateLogger.error("autoUpdater error:", error);
+        if (isNetworkError(error)) {
+            updateLogger.warn("autoUpdater network error (not reported):", error.message);
+            return;
+        }
 
-        if (consecutiveAutoUpdaterErrors === AUTO_UPDATER_ERROR_THRESHOLD) {
+        updateLogger.error("autoUpdater error:", error);
+        nonNetworkAutoUpdaterErrors++;
+
+        if (nonNetworkAutoUpdaterErrors === AUTO_UPDATER_ERROR_THRESHOLD) {
             sentryReport.reportMessage("autoUpdater error repeated", {
                 error: error,
                 level: "error",
-                extras: { consecutiveErrors: consecutiveAutoUpdaterErrors },
+                extras: { nonNetworkErrors: nonNetworkAutoUpdaterErrors },
             });
         }
     });
 
     autoUpdater.on("update-not-available", () => {
-        consecutiveAutoUpdaterErrors = 0;
+        nonNetworkAutoUpdaterErrors = 0;
     });
 
     autoUpdater.on("update-downloaded", async () => {
-        consecutiveAutoUpdaterErrors = 0;
+        nonNetworkAutoUpdaterErrors = 0;
         updateDownloaded = true;
         updateLogger.info("Update downloaded, showing prompt.");
 
@@ -259,13 +265,19 @@ async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<Versio
         const result = VersionFileSchema.parse(json);
         return result;
     } catch (error) {
-        totalVersionFetchFailures++;
+        const asError = error instanceof Error ? error : new Error(String(error));
+        if (isNetworkError(asError)) {
+            updateLogger.warn("Version fetch failed (network):", asError.message);
+            return undefined;
+        }
+
         updateLogger.warn("Check update: failed to get available versions:", error);
+        totalVersionFetchFailures++;
 
         if (totalVersionFetchFailures === VERSION_FETCH_FAILURE_THRESHOLD) {
             sentryReport.reportMessage("version fetch failed repeatedly", {
                 level: "warning",
-                error: error instanceof Error ? error : undefined,
+                error: asError,
                 extras: { totalFailures: totalVersionFetchFailures },
             });
         }
