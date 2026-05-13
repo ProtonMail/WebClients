@@ -18,7 +18,7 @@ export const DownloadCell = ({ uid, onDownload, className }: DownloadCellProps) 
         onDownload(uid);
     };
 
-    const buttonClassName = clsx(['self-center my-auto', 'mouse:group-hover:opacity-100', className]);
+    const buttonClassName = clsx(['self-center my-auto relative z-up', 'mouse:group-hover:opacity-100', className]);
 
     return (
         <Button className={buttonClassName} shape="ghost" size="small" onClick={handleClick}>
