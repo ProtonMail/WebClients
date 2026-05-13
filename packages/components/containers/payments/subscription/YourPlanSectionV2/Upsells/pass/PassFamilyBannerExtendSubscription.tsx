@@ -5,14 +5,23 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
+import { SUBSCRIPTION_STEPS } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
+import {
+    CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    type Subscription,
+    getAddonsFromIDs,
+    getHasConsumerVpnPlan,
+    getPlanIDs,
+} from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useSubscriptionModalRaw } from '../../../SubscriptionModalProvider';
 import type { GetPlanUpsellArgs } from '../../../helpers';
 import UpsellPanelV2 from '../../../panels/UpsellPanelV2';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
@@ -32,11 +41,11 @@ export const usePassFamilyBannerExtendSubscription = ({
     freePlan,
     user,
 }: UpsellSectionProps): UpsellsHook => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
@@ -64,6 +73,7 @@ export const usePassFamilyBannerExtendSubscription = ({
             title: getDashboardUpsellTitle(CYCLE.YEARLY),
             isRecommended: true,
             defaultCtaOverrides: { label: c('Action').t`Get the deal` },
+            addons: getAddonsFromIDs(getPlanIDs(subscription)),
         }),
     ].filter(isTruthy);
 
