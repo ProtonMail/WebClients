@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 /** Decrypts a stored PAT key (as returned in the list endpoint's
  * `PersonalAccessTokenKey` field) back to its raw 32 bytes, verifying the
