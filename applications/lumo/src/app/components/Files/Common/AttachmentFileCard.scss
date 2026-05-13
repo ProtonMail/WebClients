@@ -27,6 +27,10 @@
 		block-size: #{rem(22)};
 	}
 
+	&-progress {
+		padding: #{rem(2)};
+	}
+
 	&:hover {
 		cursor: pointer;
 
