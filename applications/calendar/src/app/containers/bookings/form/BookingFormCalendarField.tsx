@@ -32,17 +32,27 @@ export const BookingFormCalendarField = () => {
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
-    const [hasConflictingCalendarIDs, setHasConflictingCalendarIDs] = useState<boolean>(
-        formData.conflictCalendarIDs.length > 0
-    );
+    // Create a local state to keep a copy of selected conflict calendar IDs in case the user toggle the main checkbox
+    const [conflictIds, setConflictIds] = useState<string[]>(formData.conflictCalendarIDs);
+    const [hasConflictingCalendarIDs, setHasConflictingCalendarIDs] = useState<boolean>(conflictIds.length > 0);
 
     const isCalendarSelectDisabled = writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING;
 
     const handleToggleConflictingCalendar = (id: string, checked: boolean) => {
-        const currentIDs = formData.conflictCalendarIDs;
-        const updatedIDs = checked ? [...currentIDs, id] : currentIDs.filter((calID) => calID !== id);
+        const updatedIDs = checked ? [...conflictIds, id] : conflictIds.filter((calID) => calID !== id);
 
+        setConflictIds(updatedIDs);
         updateFormData('conflictCalendarIDs', updatedIDs);
+    };
+
+    const handleToggleCheck = (checked: boolean) => {
+        setHasConflictingCalendarIDs(checked);
+
+        if (!checked) {
+            updateFormData('conflictCalendarIDs', []);
+        } else {
+            updateFormData('conflictCalendarIDs', conflictIds);
+        }
     };
 
     return (
@@ -88,7 +98,7 @@ export const BookingFormCalendarField = () => {
                 <Checkbox
                     className="gap-0 my-4 text-sm items-center"
                     checked={hasConflictingCalendarIDs}
-                    onChange={({ target }) => setHasConflictingCalendarIDs(target.checked)}
+                    onChange={({ target }) => handleToggleCheck(target.checked)}
                 >
                     <span className="ml-2">{c('Label').t`Check additional calendars for availability`}</span>
                 </Checkbox>
@@ -101,7 +111,7 @@ export const BookingFormCalendarField = () => {
                     {availabilityCalendars.map((calendar) => {
                         const calendarID = calendar.ID;
                         const isSelectedCalendar = calendarID === formData.selectedCalendar;
-                        const isChecked = formData.conflictCalendarIDs.includes(calendarID) || isSelectedCalendar;
+                        const isChecked = conflictIds.includes(calendarID) || isSelectedCalendar;
 
                         return (
                             <Checkbox
