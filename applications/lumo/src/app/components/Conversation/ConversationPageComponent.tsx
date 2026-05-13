@@ -29,15 +29,15 @@ import { clearProvisionalAttachments } from '../../redux/slices/core/attachments
 import { EMPTY_CONVERSATION_MAP, pullConversationRequest } from '../../redux/slices/core/conversations';
 import { type ConversationId, ConversationStatus } from '../../types';
 import ConversationSkeleton from '../ConversationSkeleton';
-import TestConversationComponent from './TestConversationComponent';
-import TestMainContainer from './TestMainContainer';
+import ConversationComponent from './ConversationComponent';
+import MainContainer from './MainContainer';
 
 import './Conversation.scss';
 
-// const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
-const TestGalleryView = lazy(() =>
-    import('../../features/gallery/TestGalleryView').then((m) => ({ default: m.GalleryView }))
-);
+const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
+// const TestGalleryView = lazy(() =>
+//     import('../../features/gallery/TestGalleryView').then((m) => ({ default: m.GalleryView }))
+// );
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
@@ -199,39 +199,31 @@ const ConversationPageComponentInner = () => {
                 {/* <Header conversation={conversation} /> */}
                 {!curConversationId && isGalleryRoute && (
                     <Suspense fallback={<ConversationSkeleton />}>
-                        {/* <GalleryView
-                            isProcessingAttachment={isProcessingAttachment}
-                            prefillQuery={prefillQuery || undefined}
-                        /> */}
-                        <TestGalleryView
+                        <GalleryView
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
                         />
+                        {/* <TestGalleryView
+                            isProcessingAttachment={isProcessingAttachment}
+                            prefillQuery={prefillQuery || undefined}
+                        /> */}
                     </Suspense>
                 )}
                 {!curConversationId && !isGalleryRoute && (
-                    // <MainContainer
-                    //     isProcessingAttachment={isProcessingAttachment}
-                    //     initialQuery={initialQuery || undefined}
-                    //     prefillQuery={prefillQuery || undefined}
-                    // />
-                    <TestMainContainer
+                    <MainContainer
                         isProcessingAttachment={isProcessingAttachment}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
                     />
+                    // <TestMainContainer
+                    //     isProcessingAttachment={isProcessingAttachment}
+                    //     initialQuery={initialQuery || undefined}
+                    //     prefillQuery={prefillQuery || undefined}
+                    // />
                 )}
                 {curConversationId && isLoading && <ConversationSkeleton />}
                 {curConversationId && !isLoading && (
-                    // <ConversationComponent
-                    //     key={curConversationId}
-                    //     conversation={conversation}
-                    //     isGenerating={isGenerating}
-                    //     isProcessingAttachment={isProcessingAttachment}
-                    //     initialQuery={initialQuery || undefined}
-                    //     prefillQuery={pendingPrefill || undefined}
-                    // />
-                    <TestConversationComponent
+                    <ConversationComponent
                         key={curConversationId}
                         conversation={conversation}
                         isGenerating={isGenerating}
@@ -239,6 +231,14 @@ const ConversationPageComponentInner = () => {
                         initialQuery={initialQuery || undefined}
                         prefillQuery={pendingPrefill || undefined}
                     />
+                    // <TestConversationComponent
+                    //     key={curConversationId}
+                    //     conversation={conversation}
+                    //     isGenerating={isGenerating}
+                    //     isProcessingAttachment={isProcessingAttachment}
+                    //     initialQuery={initialQuery || undefined}
+                    //     prefillQuery={pendingPrefill || undefined}
+                    // />
                 )}
             </div>
         </ConversationActionsProvider>
