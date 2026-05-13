@@ -27,17 +27,19 @@ import { type Either, type Organization, left, right } from '@proton/shared/lib/
 import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     addIpInVPNGateway,
     createVPNGateway,
+    createVPNGatewayWithMultipleIps,
     deleteVPNGateway,
     renameVPNGateway,
     updateVPNGatewayUsers,
 } from '../../apis/gateway';
 import { getLocationFromId } from '../../functions/gatewayHelpers';
 import { useGateways } from '../../hooks/useGateways';
-import type { Gateway, GatewayLogical, GatewayModel } from '../../types/Gateway';
+import type { Gateway, GatewayLocation, GatewayLogical, GatewayModel } from '../../types/Gateway';
 import { GatewayModal } from './GatewayModal';
 import { GatewayRenameModal } from './GatewayRenameModal';
 import { GatewayRow } from './GatewayRow';
@@ -65,6 +67,7 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
     const UPSELLS = 'upsells';
 
     const api = useApi();
+    const isMultiIpEndpointEnabled = useFlag('VpnOrganizationLogRelayGatewayCreationMultiIp');
     const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
     const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
     const [usersModal, showUsersModal] = useModalTwoStatic(GatewayUsersModal);
@@ -317,8 +320,62 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
         return gatewayHost;
     };
 
+    const createGatewayInOneRequest = async (data: GatewayModel): Promise<Gateway | undefined> => {
+        const quantities = data.Quantities;
+
+        if (!quantities || !data.Name) {
+            return;
+        }
+
+        const locations: GatewayLocation[] = Object.entries(quantities).flatMap(([locationId, count]) =>
+            Array.from({ length: count }, () => getLocationFromId(locationId))
+        );
+
+        const total = locations.length;
+
+        if (total === 0) {
+            return;
+        }
+
+        createNotification({
+            key: 'gateway-creation',
+            text: c('Info').ngettext(
+                msgid`Creating gateway with ${total} server`,
+                `Creating gateway with ${total} servers`,
+                total
+            ),
+            type: 'info',
+        });
+
+        const [features, usersIds, groupIds] = getFeaturesAndUserIds(data);
+
+        try {
+            return await createGateway(
+                createVPNGatewayWithMultipleIps({
+                    Name: data.Name,
+                    Locations: locations,
+                    Features: features,
+                    UserIds: usersIds,
+                    GroupIds: groupIds,
+                })
+            );
+        } catch (error) {
+            createNotification({
+                key: 'gateway-creation',
+                text: getNonEmptyErrorMessage(error),
+                type: 'warning',
+            });
+
+            return undefined;
+        }
+    };
+
     const buildGateway = async (data: GatewayModel): Promise<Gateway | undefined> => {
         if (data.Quantities) {
+            if (isMultiIpEndpointEnabled) {
+                return createGatewayInOneRequest(data);
+            }
+
             return createServersSequentially(data);
         }
 

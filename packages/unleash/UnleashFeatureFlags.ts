@@ -83,6 +83,7 @@ enum AccountFlag {
     NewCancellationFlow = 'NewCancellationFlow',
     B2BLogsPass = 'B2BLogsPass',
     B2BLogsVPN = 'B2BLogsVPN',
+    VpnOrganizationLogRelayGatewayCreationMultiIp = 'VpnOrganizationLogRelayGatewayCreationMultiIp',
     B2BOrganizationMonitor = 'B2BOrganizationMonitor',
     B2BNonPrivateEmailPhone = 'B2BNonPrivateEmailPhone',
     B2BDarkWebMonitoring = 'B2BDarkWebMonitoring',
