@@ -65,7 +65,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     const restartRef = useRef<null | (() => Promise<void>)>(null);
 
     const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
-    const resetPath = unauthedForgotPasswordEnabled ? `${paths.reset}?variant=b` : paths.reset;
+    const resetPath = unauthedForgotPasswordEnabled ? paths.reset : `${paths.reset}?variant=a`;
 
     const history = useHistory();
     const backToSignIn = () => history.push(paths.login);
