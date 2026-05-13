@@ -1,5 +1,5 @@
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
-import { reducerMap } from '@proton/pass/store/reducers';
+import { getInitialPATState, reducerMap } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -16,6 +16,7 @@ export const selectCachableState = (state: State) => {
     cachable.access = {};
     cachable.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
     cachable.files = {};
+    cachable.accessTokens = getInitialPATState();
 
     /** Filter stale request metadata and optimisticIds */
     cachable.items.byOptimisticId = {};
