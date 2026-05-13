@@ -69,6 +69,7 @@ export interface Props {
     onExit: ModalProps['onExit'];
     open: ModalProps['open'];
     app?: APP_NAMES;
+    reportDescriptionContext?: string[];
 }
 
 const getMailOptions = ({ isAuthenticatorAvailable }: { isAuthenticatorAvailable: boolean }): OptionItem[] => {
@@ -190,7 +191,16 @@ const APPS_FOR_LOG_COLLECTION: Partial<Record<APP_NAMES, boolean>> = {
     [APPS.PROTONCALENDAR]: true,
 };
 
-const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit, app: maybeApp }: Props) => {
+const BugModal = ({
+    username: Username = '',
+    email,
+    mode,
+    open,
+    onClose,
+    onExit,
+    app: maybeApp,
+    reportDescriptionContext,
+}: Props) => {
     const api = useApi();
     const location = useLocation();
     const [loading, setLoading] = useState(false);
@@ -305,9 +315,14 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
                 .filter(Boolean)
                 .join(' ');
 
+            const Description = reportDescriptionContext?.length
+                ? `${model.Description.trimEnd()}\n\n${reportDescriptionContext.join('\n')}`
+                : model.Description;
+
             return {
                 ...attachments,
                 ...omit(model, ['OSArtificial', 'Category']),
+                Description,
                 Trigger: mode || '',
                 Client,
                 ClientVersion: APP_VERSION,
