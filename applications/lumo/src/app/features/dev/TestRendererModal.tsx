@@ -107,6 +107,42 @@ const TEST_CONTENT_SAMPLES = {
         name: 'Link with Annotation',
         content: 'This is a link with Annotation: https://www.morgen.so/morgen-for-linux[3](#ref-3)',
     },
+    image_basic: {
+        name: 'Image (Basic Markdown)',
+        content: `Here's a basic markdown image that should NOT render inline, but be accessible via a link:\n\n![Proton logo](https://proton.me/images/proton-logo.png)\n\nText after the image.`,
+    },
+    image_no_alt: {
+        name: 'Image without Alt Text',
+        content: `Image with no alt text (should fall back to "[image]"):\n\n![](https://example.com/image.jpg)\n\nText after.`,
+    },
+    image_with_long_alt: {
+        name: 'Image with Long Alt Text',
+        content: `Image with a long, descriptive alt text:\n\n![A detailed description of a beautiful sunset over the ocean with vibrant colors](https://example.com/sunset.jpg)`,
+    },
+    image_multiple: {
+        name: 'Multiple Images',
+        content: `Multiple images in a row:\n\n![First image](https://example.com/1.png)\n\n![Second image](https://example.com/2.png)\n\n![Third image](https://example.com/3.png)`,
+    },
+    image_inline_in_paragraph: {
+        name: 'Image Inline in Paragraph',
+        content: `An image ![inline](https://example.com/inline.png) sits inside this paragraph along with some other text.`,
+    },
+    image_with_data_url: {
+        name: 'Image with Data URL',
+        content: `Image using a data URL (should also be rendered as a link, not inline):\n\n![tiny pixel](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)`,
+    },
+    image_attachment: {
+        name: 'Image (Attachment URL)',
+        content: `Attachment-style image which should render via the inline attachment component:\n\n![attached file](attachment:test-attachment-id-123)\n\nNote: this will only display correctly if the attachment exists in Redux.`,
+    },
+    image_with_special_chars_in_alt: {
+        name: 'Image with Special Chars in Alt',
+        content: `Alt text with markdown-like special characters:\n\n![Some **bold** & <script>tag</script> in alt](https://example.com/x.png)`,
+    },
+    image_mixed_with_markdown: {
+        name: 'Image Mixed with Markdown',
+        content: `# Article with Images\n\nSome **introductory** text before the image.\n\n![Header image](https://example.com/header.jpg)\n\n## Section\n\n- List item with ![icon](https://example.com/icon.png) inline\n- Another item\n\n> Blockquote with an image: ![quote](https://example.com/quote.png)\n\nFinal paragraph.`,
+    },
 };
 
 interface RouteParams {

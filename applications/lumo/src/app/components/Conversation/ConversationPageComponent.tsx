@@ -12,7 +12,6 @@ import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
-import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
@@ -46,7 +45,6 @@ const ConversationPageComponentInner = () => {
     const { conversationId: curConversationId } = useParams<RouteParams>();
     const { setConversationId } = useConversation();
     const isGuest = useIsGuest();
-    const { isGhostChatMode } = useGhostChat();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
 
@@ -55,7 +53,6 @@ const ConversationPageComponentInner = () => {
     const prefillQuery = useQueryParam('prefill');
 
     // Prefill text injected from within the conversation (e.g. style change on an inline image).
-    // Consumed once then cleared.
     const pendingPrefill = useLumoSelector((state) => state.composerActions.pendingPrefill);
     useEffect(() => {
         if (pendingPrefill) dispatch(clearPendingPrefill());
@@ -68,7 +65,6 @@ const ConversationPageComponentInner = () => {
     const space = useLumoSelector(selectSpaceByConversationId(curConversationId));
 
     // ** Derived values **
-    const conversationTitle = conversation?.title.trim() || '';
     const isProcessingAttachment = provisionalAttachments.some((a) => a.processing);
     const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
     const remoteWasSynced = conversations !== EMPTY_CONVERSATION_MAP && reduxLoadedFromIdb;
@@ -101,8 +97,8 @@ const ConversationPageComponentInner = () => {
 
     // ** Effects & related **
 
-    // Set document title - don't expose conversation title in ghost mode for privacy
-    useDocumentTitle(isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`);
+    // Set document title - never expose the conversation title in the tab for privacy
+    useDocumentTitle(LUMO_FULL_APP_TITLE);
 
     // Synchronize the /c/:conversationId parameter with ConversationProvider.
     useEffect(() => {
