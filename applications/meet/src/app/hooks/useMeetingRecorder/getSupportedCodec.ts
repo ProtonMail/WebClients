@@ -1,5 +1,4 @@
-import { isSafari } from '@proton/shared/lib/helpers/browser';
-
+import { RECORDING_FPS } from './constants';
 import type { CodecProbeOutcome, RecordingCodec } from './types';
 
 const FALLBACK_MP4_CODEC: RecordingCodec = { mimeType: 'video/mp4', extension: 'mp4' };
@@ -74,19 +73,41 @@ const isCodecSupported = (codec: string): Promise<boolean> => {
             return;
         }
 
-        // Set up a probe canvas. 320x240 is the smallest size hardware H.264
-        // encoders are reliably tuned for; tinier canvases stall the encoder.
+        // Probe at the exact resolution and FPS the real recorder will use.
+        // Hardware H.264 encoders behave differently across resolutions/framerates,
+        // so probing at smaller sizes produces false positives.
         const canvas = document.createElement('canvas');
         canvas.width = 320;
         canvas.height = 240;
         const ctx = canvas.getContext('2d');
-        const stream = canvas.captureStream(30);
+        const canvasStream = canvas.captureStream(RECORDING_FPS);
+
+        // Build a silent audio destination stream like the real recorder does.
+        const audioContext = new AudioContext();
+        const audioDestination = audioContext.createMediaStreamDestination();
+        const silentSource = audioContext.createConstantSource();
+        silentSource.offset.value = 0;
+        const silentGain = audioContext.createGain();
+        silentGain.gain.value = 0;
+        silentSource.connect(silentGain);
+        silentGain.connect(audioDestination);
+        silentSource.start();
+
+        // Combine video + audio tracks into a fresh MediaStream — matches the
+        // real recorder. Some hardware encoders fail this combination but
+        // accept video-only or single-stream variants.
+        const stream = new MediaStream([...canvasStream.getVideoTracks(), ...audioDestination.stream.getAudioTracks()]);
 
         let timeout: ReturnType<typeof setTimeout> | undefined;
         let flushTimeout: ReturnType<typeof setTimeout> | undefined;
         let drawInterval: ReturnType<typeof setInterval> | undefined;
+        let cleanedUp = false;
 
         const cleanup = () => {
+            if (cleanedUp) {
+                return;
+            }
+            cleanedUp = true;
             if (timeout !== undefined) {
                 clearTimeout(timeout);
                 timeout = undefined;
@@ -100,6 +121,16 @@ const isCodecSupported = (codec: string): Promise<boolean> => {
                 drawInterval = undefined;
             }
             stream.getTracks().forEach((track) => track.stop());
+            try {
+                silentSource.stop();
+            } catch {
+                // already stopped
+            }
+            silentSource.disconnect();
+            silentGain.disconnect();
+            void audioContext.close().catch(() => {
+                // already closed
+            });
         };
 
         // Real motion every frame, otherwise captureStream skips frames and
@@ -118,8 +149,12 @@ const isCodecSupported = (codec: string): Promise<boolean> => {
         }
 
         try {
-            // Build the recorder under test.
-            const mediaRecorder = new MediaRecorder(stream, { mimeType: codec });
+            // Match the real recorder's options exactly. Hardware encoders can
+            // accept a codec with default settings but reject the same codec
+            // with explicit bitrates / audio track combos at high resolutions.
+            const mediaRecorder = new MediaRecorder(stream, {
+                mimeType: codec,
+            });
 
             // Any error during construction or run = codec is unusable.
             mediaRecorder.onerror = (event) => {
@@ -182,15 +217,15 @@ const isCodecSupported = (codec: string): Promise<boolean> => {
 
 // Fallback codec, only used on the edge case of `isCodecSupported` returning a false positive
 export const getFallbackCodec = (): RecordingCodec => {
-    return isSafari() ? FALLBACK_MP4_CODEC : FALLBACK_WEBM_CODEC;
+    return FALLBACK_MP4_CODEC;
 };
 
 export const getSupportedRecordingCodec = async (): Promise<RecordingCodec> => {
     let selectedRecordingCodec: RecordingCodec = getFallbackCodec();
     let codecFound = false;
 
-    // For any browser but Safari we try WebM first, then MP4
-    for (const codec of [...(!isSafari() ? webmCodecs : []), ...mp4Codecs]) {
+    // We try MP4 first, then WebM
+    for (const codec of [...mp4Codecs, ...webmCodecs]) {
         if (await isCodecSupported(codec.mimeType)) {
             selectedRecordingCodec = codec;
             codecFound = true;
