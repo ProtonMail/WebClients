@@ -87,6 +87,10 @@
 
 		.tab-container {
 			padding-inline: rem(16);
+
+			.tag-count {
+				display: none;
+			}
 		}
 	}
 
