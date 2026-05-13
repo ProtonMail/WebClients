@@ -1,0 +1,19 @@
+.item-a11y-activator {
+	// Suppress the button's native outline — the row tr draws it instead via
+	// :focus-within below, so it is never clipped by overflow:hidden containers.
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+// Draw the focus ring on the row/card container so it spans the full element
+// and is not clipped by the virtual-list container's overflow:hidden.
+.item-a11y-container:has(.item-a11y-activator:focus-visible) {
+	outline: 2px solid var(--focus-outline);
+	outline-offset: -2px;
+}
+
+td.item-a11y-activator-cell {
+	// .simple-table td sets border-block-end via a class+element selector;
+	border-block-end: none;
+}
