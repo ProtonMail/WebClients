@@ -34,7 +34,7 @@ export const AcceptRejectCell = ({
     );
 
     return (
-        <div className={clsx('flex flex-nowrap', className)}>
+        <div className={clsx('flex flex-nowrap relative z-up', className)}>
             <Button
                 loading={isBeingAccepted}
                 disabled={isBeingAccepted}
