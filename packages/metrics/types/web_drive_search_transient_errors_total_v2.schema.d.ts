@@ -6,9 +6,11 @@
  */
 
 /**
- * Wall-clock time in seconds to process one batch of incremental events.
+ * Counts indexer hiccups that the queue retries automatically.
  */
-export interface HttpsProtonMeWebDriveSearchIncrementalUpdateTimeHistogramV1SchemaJson {
-  Labels: {};
+export interface HttpsProtonMeWebDriveSearchTransientErrorsTotalV2SchemaJson {
+  Labels: {
+    kind: "rate-limited" | "server" | "network" | "offline" | "abort" | "unknown";
+  };
   Value: number;
 }
