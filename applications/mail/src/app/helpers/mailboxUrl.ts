@@ -58,7 +58,7 @@ const stringToPage = (string: string | undefined): number => {
  * In both SNOOZE and SCHEDULE labelID we want to display the elements that will be sent or unsnoozed first.
  * This change is invisible for the user and only affects the sorting logic.
  */
-const stringToSort = (string: string | undefined, labelID?: string): Sort => {
+const stringToSort = (string: string | undefined, conversationMode: boolean, labelID?: string): Sort => {
     const isSnooze = labelID === MAILBOX_LABEL_IDS.SNOOZED;
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     const isSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
@@ -71,14 +71,14 @@ const stringToSort = (string: string | undefined, labelID?: string): Sort => {
         case 'date': {
             const desc = !!isScheduledLabel;
             return {
-                sort: isSnoozeOrInbox ? 'SnoozeTime' : 'Time',
+                sort: isSnoozeOrInbox && conversationMode ? 'SnoozeTime' : 'Time',
                 desc: isSnooze ? !desc : desc,
             };
         }
         default: {
             const desc = !isScheduledLabel;
             return {
-                sort: isSnoozeOrInbox ? 'SnoozeTime' : 'Time',
+                sort: isSnoozeOrInbox && conversationMode ? 'SnoozeTime' : 'Time',
                 desc: isSnooze ? !desc : desc,
             };
         }
@@ -132,8 +132,8 @@ export const keywordToString = (keyword: string): string | undefined => {
 
 export const pageFromUrl = (location: Location) => stringToPage(getSearchParams(location.hash).page);
 
-export const sortFromUrl = (location: Location, labelID?: string) =>
-    stringToSort(getSearchParams(location.hash).sort, labelID);
+export const sortFromUrl = (location: Location, conversationMode: boolean, labelID?: string) =>
+    stringToSort(getSearchParams(location.hash).sort, conversationMode, labelID);
 
 export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.hash).filter);
 
