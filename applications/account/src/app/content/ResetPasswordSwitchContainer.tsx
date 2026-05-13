@@ -35,11 +35,11 @@ const ResetPasswordSwitchContainer = ({
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
-    const renderUnauthedForgotPasswordFlow = searchParams.get('variant')?.toLowerCase() === 'b';
+    const renderOldResetFlow = searchParams.get('variant') === 'a';
 
-    if (renderUnauthedForgotPasswordFlow) {
+    if (renderOldResetFlow) {
         return (
-            <UnauthedForgotPassword
+            <ResetPasswordContainer
                 toApp={toApp}
                 onLogin={onLogin}
                 setupVPN={setupVPN}
@@ -52,7 +52,7 @@ const ResetPasswordSwitchContainer = ({
     }
 
     return (
-        <ResetPasswordContainer
+        <UnauthedForgotPassword
             toApp={toApp}
             onLogin={onLogin}
             setupVPN={setupVPN}
