@@ -66,67 +66,45 @@ describe('Mailbox URL tests', () => {
         const loc = (sort?: string): Location => ({ hash: sort ? `#sort=${sort}` : '' }) as Location;
 
         it('should default to Time descending for a regular label', () => {
-            expect(sortFromUrl(loc(), false, 'customLabel')).toEqual({ sort: 'Time', desc: true });
+            expect(sortFromUrl(loc(), 'customLabel')).toEqual({ sort: 'Time', desc: true });
         });
 
         it('should return Time ascending when sort=date for a regular label', () => {
-            expect(sortFromUrl(loc('date'), false, 'customLabel')).toEqual({ sort: 'Time', desc: false });
+            expect(sortFromUrl(loc('date'), 'customLabel')).toEqual({ sort: 'Time', desc: false });
         });
 
         it('should return Size descending when sort=-size', () => {
-            expect(sortFromUrl(loc('-size'), false, 'customLabel')).toEqual({ sort: 'Size', desc: true });
+            expect(sortFromUrl(loc('-size'), 'customLabel')).toEqual({ sort: 'Size', desc: true });
         });
 
         it('should return Size ascending when sort=size', () => {
-            expect(sortFromUrl(loc('size'), false, 'customLabel')).toEqual({ sort: 'Size', desc: false });
+            expect(sortFromUrl(loc('size'), 'customLabel')).toEqual({ sort: 'Size', desc: false });
         });
 
-        it('should return SnoozeTime descending for Inbox with default sort in conversation mode', () => {
-            expect(sortFromUrl(loc(), true, MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'SnoozeTime', desc: true });
+        it('should return SnoozeTime descending for Inbox with default sort', () => {
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'SnoozeTime', desc: true });
         });
 
-        it('should return SnoozeTime ascending for Inbox with sort=date in conversation mode', () => {
-            expect(sortFromUrl(loc('date'), true, MAILBOX_LABEL_IDS.INBOX)).toEqual({
-                sort: 'SnoozeTime',
-                desc: false,
-            });
+        it('should return SnoozeTime ascending for Inbox with sort=date', () => {
+            expect(sortFromUrl(loc('date'), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'SnoozeTime', desc: false });
         });
 
-        it('should return Time descending for Inbox with default sort outside conversation mode', () => {
-            expect(sortFromUrl(loc(), false, MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'Time', desc: true });
-        });
-
-        it('should return Time ascending for Inbox with sort=date outside conversation mode', () => {
-            expect(sortFromUrl(loc('date'), false, MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'Time', desc: false });
-        });
-
-        it('should return SnoozeTime ascending for Snoozed with default sort in conversation mode', () => {
+        it('should return SnoozeTime ascending for Snoozed with default sort', () => {
             // Snoozed flips desc so earliest-snoozed appears first
-            expect(sortFromUrl(loc(), true, MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'SnoozeTime', desc: false });
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'SnoozeTime', desc: false });
         });
 
-        it('should return SnoozeTime descending for Snoozed with sort=date in conversation mode', () => {
-            expect(sortFromUrl(loc('date'), true, MAILBOX_LABEL_IDS.SNOOZED)).toEqual({
-                sort: 'SnoozeTime',
-                desc: true,
-            });
-        });
-
-        it('should return Time ascending for Snoozed with default sort outside conversation mode', () => {
-            expect(sortFromUrl(loc(), false, MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'Time', desc: false });
-        });
-
-        it('should return Time descending for Snoozed with sort=date outside conversation mode', () => {
-            expect(sortFromUrl(loc('date'), false, MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'Time', desc: true });
+        it('should return SnoozeTime descending for Snoozed with sort=date', () => {
+            expect(sortFromUrl(loc('date'), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'SnoozeTime', desc: true });
         });
 
         it('should return Size unchanged for Inbox when sort is size-based', () => {
-            expect(sortFromUrl(loc('-size'), true, MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'Size', desc: true });
-            expect(sortFromUrl(loc('size'), true, MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'Size', desc: false });
+            expect(sortFromUrl(loc('-size'), MAILBOX_LABEL_IDS.INBOX)).toEqual({ sort: 'Size', desc: true });
+            expect(sortFromUrl(loc('size'), MAILBOX_LABEL_IDS.SNOOZED)).toEqual({ sort: 'Size', desc: false });
         });
 
         it('should return Time ascending for Scheduled with default sort', () => {
-            expect(sortFromUrl(loc(), false, MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
+            expect(sortFromUrl(loc(), MAILBOX_LABEL_IDS.SCHEDULED)).toEqual({ sort: 'Time', desc: false });
         });
     });
 });
