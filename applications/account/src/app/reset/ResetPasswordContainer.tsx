@@ -247,6 +247,7 @@ const ResetPasswordContainer = ({
     useSearchParamsEffect((params) => {
         const username = params.get('username');
         const token = params.get('token');
+        const variant = params.get('variant');
 
         /**
          * Automatic token validation reset
@@ -287,7 +288,7 @@ const ResetPasswordContainer = ({
             };
             void run();
 
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
 
         /**
@@ -295,7 +296,7 @@ const ResetPasswordContainer = ({
          */
         if (username) {
             setAutomaticVerification({ username, loading: false });
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
     }, []);
 
