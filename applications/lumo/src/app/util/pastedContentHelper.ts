@@ -39,6 +39,45 @@ export function generateFilenameForPastedContent(content: string): string {
 }
 
 /**
+ * Check whether an attachment originated from a large clipboard paste.
+ *
+ * Pasted content is created via {@link createAttachmentFromPastedContent} which
+ * always assigns a `pasted-content-*.txt` filename and `text/plain` mime type.
+ */
+export function isPastedContentAttachment(attachment: {
+    filename?: string;
+    mimeType?: string;
+}): boolean {
+    if (!attachment?.filename) return false;
+    if (attachment.mimeType && attachment.mimeType !== 'text/plain') return false;
+    return /^pasted-content[-.]/i.test(attachment.filename);
+}
+
+/**
+ * Update an existing pasted-content attachment with new text content while
+ * preserving its id, filename and other metadata.
+ */
+export function updatePastedContentAttachment(attachment: Attachment, newContent: string): Attachment {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(newContent);
+
+    const filenameHeader = `Filename: ${attachment.filename}`;
+    const header = 'File contents:';
+    const beginMarker = '----- BEGIN FILE CONTENTS -----';
+    const endMarker = '----- END FILE CONTENTS -----';
+    const fullContext = [filenameHeader, header, beginMarker, newContent.trim(), endMarker].join('\n');
+    const tokenCount = getApproximateTokenCount(fullContext);
+
+    return {
+        ...attachment,
+        rawBytes: data.length,
+        data,
+        markdown: newContent,
+        tokenCount,
+    };
+}
+
+/**
  * Create an attachment from pasted content
  */
 export function createAttachmentFromPastedContent(content: string): Attachment {

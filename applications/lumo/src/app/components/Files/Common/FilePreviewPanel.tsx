@@ -6,12 +6,17 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { selectAttachments } from '../../../redux/selectors';
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { Role } from '../../../types';
+import { storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
+import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
 
 interface FilePreviewPanelProps {
@@ -61,8 +66,37 @@ const parseCSVContent = (content: string): string[][] => {
     return rows;
 };
 
-export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPanelProps) => {
+export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose }: FilePreviewPanelProps) => {
+    const dispatch = useLumoDispatch();
+    // Always read the latest version from Redux so the panel reflects edits made via Save.
+    const attachments = useLumoSelector(selectAttachments);
+    const attachment = attachments[attachmentProp.id] ?? attachmentProp;
     const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const [isEditing, setIsEditing] = useState(false);
+    const [draft, setDraft] = useState('');
+
+    const isPasted = isPastedContentAttachment(attachment);
+    const canEdit = isPasted && !attachment.spaceId;
+
+    useEffect(() => {
+        // Exit edit mode if the attachment switches.
+        setIsEditing(false);
+    }, [attachment.id]);
+
+    const handleStartEdit = () => {
+        setDraft(attachment.markdown ?? '');
+        setIsEditing(true);
+    };
+
+    const handleCancelEdit = () => {
+        setIsEditing(false);
+    };
+
+    const handleSaveEdit = () => {
+        const updated = updatePastedContentAttachment(attachment, draft);
+        storeAttachmentInRedux(dispatch, updated, false);
+        setIsEditing(false);
+    };
 
     const truncatedContent = useMemo(() => {
         if (!attachment.markdown) return { content: '', truncated: false, remaining: 0 };
@@ -149,7 +183,7 @@ export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPan
                                         <td
                                             key={ci}
                                             className="border-r border-b border-weak p-2 text-xs"
-                                        style={{ minInlineSize: '7.5rem' }}
+                                            style={{ minInlineSize: '7.5rem' }}
                                         >
                                             {row[ci] || ''}
                                         </td>
@@ -172,6 +206,27 @@ export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPan
     };
 
     const renderContent = () => {
+        if (isEditing) {
+            return (
+                <div className="flex flex-column h-full p-3 gap-2">
+                    <textarea
+                        className="flex-1 min-h-0 w-full p-3 border border-weak rounded bg-norm color-norm text-sm font-mono"
+                        value={draft}
+                        onChange={(e) => setDraft(e.target.value)}
+                        spellCheck={false}
+                        autoFocus
+                    />
+                    <div className="flex flex-row justify-end gap-2 shrink-0">
+                        <Button size="small" shape="ghost" onClick={handleCancelEdit}>
+                            {c('collider_2025: Action').t`Cancel`}
+                        </Button>
+                        <Button size="small" color="norm" onClick={handleSaveEdit}>
+                            {c('collider_2025: Action').t`Save`}
+                        </Button>
+                    </div>
+                </div>
+            );
+        }
         if (isProcessing) {
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
@@ -263,6 +318,17 @@ export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPan
                         {attachment.rawBytes ? ` • ${getFileSize(attachment.rawBytes)}` : ''}
                     </p>
                 </div>
+                {canEdit && !isEditing && (
+                    <Button
+                        icon
+                        size="small"
+                        shape="ghost"
+                        onClick={handleStartEdit}
+                        title={c('collider_2025: Action').t`Edit`}
+                    >
+                        <IcPencil size={4} />
+                    </Button>
+                )}
                 <Button
                     icon
                     size="small"
