@@ -6,13 +6,21 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
+import {
+    CYCLE,
+    PLANS,
+    PLAN_NAMES,
+    type Subscription,
+    getAddonsFromIDs,
+    getHasConsumerVpnPlan,
+    getPlanIDs,
+} from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
@@ -62,11 +70,11 @@ export const useDuoBannerExtendSubscription = ({
     user,
     show24MonthPlan,
 }: UpsellSectionProps): UpsellsHook => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
@@ -92,6 +100,7 @@ export const useDuoBannerExtendSubscription = ({
             title: getDashboardUpsellTitle(CYCLE.YEARLY),
             isRecommended: !show24MonthPlan,
             defaultCtaOverrides: { label: c('Action').t`Get the deal` },
+            addons: getAddonsFromIDs(getPlanIDs(subscription)),
         }),
         show24MonthPlan &&
             getDuoUpsell({
@@ -101,6 +110,7 @@ export const useDuoBannerExtendSubscription = ({
                 title: getDashboardUpsellTitle(CYCLE.TWO_YEARS),
                 isRecommended: true,
                 defaultCtaOverrides: { label: c('Action').t`Get the deal` },
+                addons: getAddonsFromIDs(getPlanIDs(subscription)),
             }),
     ].filter(isTruthy);
 

@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import type { Plan } from '@proton/payments';
-import { CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { hookWrapper } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
@@ -49,8 +49,18 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
+        const loadingWrapper = hookWrapper(
+            withApi(),
+            withConfig(),
+            withReduxStore({
+                preloadedState: {
+                    plans: { value: undefined, error: undefined, meta: { fetchedAt: 0, fetchedEphemeral: undefined } },
+                },
+            })
+        );
+
         const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
-            wrapper: getWrapper(),
+            wrapper: loadingWrapper,
         });
 
         expect(result.current).toEqual({
@@ -416,6 +426,35 @@ describe('useSubscriptionPriceComparison', () => {
             showPriceDifference: true,
             showPriceDifferenceCheapest: false,
             showSavings: false,
+        });
+    });
+
+    it('should calculate price difference correctly for mail plus with lumo addon', () => {
+        const subscription = buildSubscription(
+            new SelectedPlan(
+                {
+                    [PLANS.MAIL]: 1,
+                    [ADDON_NAMES.MEET_MAIL]: 1,
+                },
+                getTestPlans('USD'),
+                CYCLE.MONTHLY,
+                'USD'
+            )
+        );
+
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
+            wrapper: getWrapper(getTestPlans()),
+        });
+
+        expect(result.current).toEqual({
+            priceDifference: 0,
+            priceDifferenceCheapestCycle: 350,
+            cheapestMonthlyPrice: 1148,
+            priceFallbackPerMonth: 1148,
+            totalSavings: 8400,
+            showPriceDifference: false,
+            showPriceDifferenceCheapest: true,
+            showSavings: true,
         });
     });
 });
