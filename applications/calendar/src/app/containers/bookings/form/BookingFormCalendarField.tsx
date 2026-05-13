@@ -97,6 +97,7 @@ export const BookingFormCalendarField = () => {
             {availabilityCalendars.length > 1 && (
                 <Checkbox
                     className="gap-0 my-4 text-sm items-center"
+                    data-testid="conflicting-calendars-checkbox"
                     checked={hasConflictingCalendarIDs}
                     onChange={({ target }) => handleToggleCheck(target.checked)}
                 >
