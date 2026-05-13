@@ -8,7 +8,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
-const ClaimProtonAddressToolbarButton = () => {
+export const ClaimProtonAddressToolbarButton = () => {
     const [addresses] = useAddresses();
 
     const [claimProtonAddressModalProps, setClaimProtonAddressModalProps, renderClaimProtonAddressModal] =
@@ -35,5 +35,3 @@ const ClaimProtonAddressToolbarButton = () => {
         </>
     );
 };
-
-export default ClaimProtonAddressToolbarButton;

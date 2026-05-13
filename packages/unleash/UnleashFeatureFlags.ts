@@ -267,6 +267,7 @@ enum MailKillSwitchFlag {
     EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     // Refreshed toolbar UI flags
     RefreshedFilterUIDisabled = 'RefreshedFilterUIDisabled',
+    RefreshedToolbarUIDisabled = 'RefreshedToolbarUIDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     OverrideNewsletterViewName = 'OverrideNewsletterViewName',
 }

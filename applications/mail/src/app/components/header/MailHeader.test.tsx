@@ -4,22 +4,32 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/test';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { addApiMock, clearAll, getDropdown, mailTestRender, minimalCache, tick } from '../../helpers/test/helper';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import type { MailboxActions } from '../../router/interface';
 import MailHeader from './MailHeader';
 
 loudRejection();
 
+const mockElementsData: ElementsStructure = {
+    labelID: 'labelID',
+    elements: [],
+    elementIDs: [],
+    placeholderCount: 0,
+    loading: false,
+    total: undefined,
+};
+
+const mockActions = {
+    selectedIDs: [],
+} as unknown as MailboxActions;
+
 const getProps = () => ({
     labelID: 'labelID',
     elementID: undefined,
-    selectedIDs: [],
-    breakpoints: mockDefaultBreakpoints,
-    onSearch: jest.fn(),
-    expanded: true,
-    onToggleExpand: jest.fn(),
-    onOpenShortcutsModal: jest.fn(),
+    elementsData: mockElementsData,
+    actions: mockActions,
 });
 
 const user = {
