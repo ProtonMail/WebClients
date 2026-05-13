@@ -11,6 +11,7 @@ import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
+import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
 import { useLumoTheme } from '../../../../../providers';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
@@ -20,10 +21,12 @@ import { getIsMobileDevice } from '../../../../../util/device';
 import { parseFileReferences } from '../../../../../util/fileReferences';
 import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
+import { canUseNativeEditMode } from '../../../../../util/userAgent';
 import { AttachmentFileCard } from '../../../../Files/Common';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
+import useNativeMessageEdit from './useNativeMessageEdit';
 
 import './UserMessage.scss';
 
@@ -171,6 +174,8 @@ const UserMessage = ({
     onOpenFilePreview,
 }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
+    const { startNativeEdit } = useNativeMessageEdit({ message, messageContent, handleEditMessage });
+    const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
     const { isDarkLumoTheme } = useLumoTheme();
     const { isWebSearchButtonToggled } = useWebSearch();
 
@@ -210,7 +215,11 @@ const UserMessage = ({
 
     const handleEdit = () => {
         sendMessageEditEvent();
-        setIsEditing(true);
+        if (lumoNativeComposerEnabled && canUseNativeEditMode()) {
+            startNativeEdit();
+        } else {
+            setIsEditing(true);
+        }
     };
 
     return (
