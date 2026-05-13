@@ -1,3 +1,5 @@
+import { useFlag } from '@proton/unleash/useFlag';
+
 import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -9,10 +11,11 @@ export const useCategoryViewConversationPrefetch = () => {
     const getConversation = useGetConversation();
 
     const { categoryViewAccess } = useCategoriesView();
+    const isCategoryViewConversationPrefetchDisabled = useFlag('CategoryViewConversationPrefetchDisabled');
 
     return (conversationID: string) => {
         const existing = getConversation(conversationID);
-        if (!categoryViewAccess || existing) {
+        if (isCategoryViewConversationPrefetchDisabled || !categoryViewAccess || existing) {
             return;
         }
 
