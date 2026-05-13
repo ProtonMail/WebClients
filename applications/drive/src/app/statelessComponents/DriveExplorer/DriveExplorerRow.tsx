@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { DriveExplorerCell } from './DriveExplorerCell';
-import { ItemA11yActivator } from './ItemA11yActivator';
+import { ItemA11yActivatorCell } from './ItemA11yActivator';
 import { CheckboxCell } from './cells/CheckboxCell';
 import { ContextMenuCellWithControls } from './cells/ContextMenuCell';
 import { EmptyCell } from './cells/EmptyCell';
@@ -124,7 +124,7 @@ export const DriveExplorerRow = ({
             <TableRow
                 ref={rowRef}
                 className={clsx(
-                    'flex user-select-none group-hover-opacity-container relative',
+                    'item-a11y-container flex user-select-none group-hover-opacity-container relative',
                     ((!hideSelectionHighlight && isSelected) || dragMoveControls?.isActiveDropTarget) && 'bg-strong',
                     dragging && 'opacity-50',
                     className
@@ -140,7 +140,7 @@ export const DriveExplorerRow = ({
                 data-testid="drive-explorer-row"
                 data-item-uid={itemId}
             >
-                <ItemA11yActivator
+                <ItemA11yActivatorCell
                     ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
                     isSelected={isSelected}
                     onMouseDown={handleMouseDown}
