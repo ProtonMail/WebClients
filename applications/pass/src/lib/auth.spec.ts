@@ -72,7 +72,6 @@ const fireConnectivity = (status: ConnectivityStatus) => connectivitySubscribers
 const connectivity = {
     online: true,
     check: jest.fn().mockResolvedValue(undefined),
-    retryHandler: { reset: jest.fn() } as any,
     subscribe: jest.fn((cb) => {
         connectivitySubscribers.push(cb);
         return () => connectivitySubscribers.splice(connectivitySubscribers.indexOf(cb), 1);
@@ -449,31 +448,25 @@ describe('AuthService', () => {
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
-        test('`visibilitychange` while offline probes connectivity and rewinds retry backoff', async () => {
+        test('`visibilitychange` while offline probes connectivity', async () => {
             connectivity.online = false;
             visibility = 'visible';
             await fireVisibility();
-
             expect(connectivity.check).toHaveBeenCalledTimes(1);
-            expect(connectivity.retryHandler!.reset).toHaveBeenCalledTimes(1);
         });
 
         test('visibilitychange skips probe when already online', async () => {
             connectivity.online = true;
             visibility = 'visible';
             await fireVisibility();
-
             expect(connectivity.check).not.toHaveBeenCalled();
-            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
         });
 
         test('visibilitychange skips probe when document is hidden', async () => {
             connectivity.online = false;
             visibility = 'hidden';
             await fireVisibility();
-
             expect(connectivity.check).not.toHaveBeenCalled();
-            expect(connectivity.retryHandler!.reset).not.toHaveBeenCalled();
         });
 
         test('detach unwires document and connectivity listeners', () => {

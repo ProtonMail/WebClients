@@ -632,16 +632,12 @@ export const createAuthService = ({
 
         const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
 
-        /** On tab focus / window show while offline, force a fresh probe and reset
-         * the retry backoff so a return-online transition is caught immediately
-         * instead of waiting on the next auto-retry tick. */
+        /** On tab focus / window show while offline, force a fresh probe + retry-backoff
+         * rewind so a return-online transition is caught immediately instead of waiting
+         * on the next auto-retry tick. */
         const onVisibilityChange = async () => {
             if (document.visibilityState === 'visible') {
-                if (!connectivity.online) {
-                    await connectivity.check();
-                    connectivity.retryHandler?.reset();
-                }
-
+                if (!connectivity.online) await connectivity.check();
                 tryOfflineResume(false);
             }
         };

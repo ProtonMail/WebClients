@@ -198,17 +198,10 @@ export const createActivationService = () => {
             const fromPage = endpoint === 'page';
             const fromClientApp = fromPopup || fromPage;
 
-            const online = await (async () => {
-                /** Resolve the real connectivity status early on popup wakeup whenever
-                 * the worker currently thinks it's offline regardless of whether the app
-                 * booted offline. Forces a fresh connectivity probe if still offline. */
-                if (fromPopup && !ctx.service.connectivity.online) {
-                    await ctx.service.connectivity.check();
-                    ctx.service.connectivity.retryHandler?.reset();
-                }
-
-                return ctx.service.connectivity.online;
-            })();
+            /** Resolve the real connectivity status early on popup wakeup whenever the
+             * worker currently thinks it's offline, regardless of app boot state. */
+            if (fromPopup && !ctx.service.connectivity.online) await ctx.service.connectivity.check();
+            const online = ctx.service.connectivity.online;
 
             /* Resume the session immediately if the worker is stale/idle or if the wakeup request
              * originated from the popup. For wake-up calls from other extension endpoints (e.g.,
