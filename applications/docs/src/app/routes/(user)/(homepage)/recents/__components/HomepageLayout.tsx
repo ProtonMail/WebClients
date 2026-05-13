@@ -39,6 +39,7 @@ import './HomepageLayout.css'
 import type { HomepageViewState } from '../__utils/homepage-view'
 import { useHomepageView } from '../__utils/homepage-view'
 import { useHistory, useRouteMatch } from 'react-router'
+import { getDocsReportContextLines } from '~/utils/report-context'
 import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
 import { useEvent } from '~/utils/misc'
 import { useIsSheetsEnabled } from '~/utils/flags'
@@ -91,6 +92,7 @@ type HeaderProps = {
 
 function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   const { viewportWidth } = useActiveBreakpoint()
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const { state, type, setSearch } = useHomepageView()
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
@@ -99,7 +101,15 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
       <PrivateHeader
         className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
-        userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
+        userDropdown={
+          <UserDropdown
+            app={APPS.PROTONDOCS}
+            reportDescriptionContext={getDocsReportContextLines({
+              appVersion: APP_VERSION,
+              clientType: CLIENT_TYPE,
+            })}
+          />
+        }
         title={c('Title').t`Docs`}
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
