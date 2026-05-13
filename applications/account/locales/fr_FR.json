@@ -6968,6 +6968,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vos contacts de rétablissement doivent être des personnes que vous connaissez et que vous pouvez contacter facilement."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** est désormais votre contact de récupération. Ce contact peut vous aider à récupérer vos données après une réinitialisation de mot de passe."
+      ],
+      "Add recovery method": [
+        "Ajouter une méthode de récupération"
+      ],
+      "Start recovery": [
+        "Démarrer la récupération"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Pour ajouter des contacts de récupération, vous devez avoir une adresse e-mail ou un numéro de téléphone de récupération."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Nous avons envoyé une demande par e-mail à ${ user }. Faites savoir à votre contact qu'il s'agit bien de vous, et que vous essayez de récupérer vos accès."
       ]
     },
     "Empty group name": {
@@ -21333,6 +21348,15 @@
       ],
       "Your security setup": [
         "Votre configuration de sécurité"
+      ],
+      "Add an emergency contact": [
+        "Ajouter un contact d'urgence"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Ajoutez des personnes en qui vous avez confiance et que vous pouvez contacter facilement. Elles pourront accéder à votre compte et réinitialiser votre mot de passe pour vous."
+      ],
+      "They will not be able to see or access your data.": [
+        "Ils ne pourront pas voir ou accéder à vos données."
       ]
     },
     "saml: Action": {

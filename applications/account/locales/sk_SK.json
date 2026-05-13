@@ -7055,6 +7055,24 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vaše kontakty na obnovenie účtu by mali byť ľudia, ktorých poznáte a ktorých môžete ľahko kontaktovať."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** je teraz vaša kontaktná osoba pre obnovenie. Táto osoba vám pomôže odomknúť vaše dáta po tom, čo si obnovíte heslo."
+      ],
+      "Add recovery method": [
+        "Pridať metódu obnovenia"
+      ],
+      "Data recovery contacts": [
+        "Kontaktné osoby na obnovenie údajov"
+      ],
+      "Start recovery": [
+        "Spustiť obnovu"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Ak chcete pridať kontakty pre obnovenie, musíte mať emailovú adresu alebo telefónne číslo na obnovenie."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Poslali sme emailovú žiadosť používateľom ${ user }. Dajte im vedieť, že ste to naozaj vy, kto sa snaží získať späť prístup."
       ]
     },
     "Empty group name": {
@@ -13656,6 +13674,15 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Obnovenie údajov si vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Táto metóda obnovy údajov vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
+      ],
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Ak chcete použiť túto metódu obnovenia, musíte deaktivovať ${ PROTON_SENTINEL_NAME } a aktivovať možnosť obnovenia hesla (emailom alebo SMS)."
       ]
     },
     "info": {

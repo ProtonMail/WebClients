@@ -3100,7 +3100,7 @@
         "Estado de la migración"
       ],
       "Missing organization private key": [
-        "Falta la clave privada de organización"
+        "Falta la clave privada de la organización"
       ],
       "Missing organization public key": [
         "Falta la clave pública de organización"
@@ -6968,6 +6968,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Sus contactos de recuperación deben ser personas que conoce y puede contactar fácilmente."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** ahora es su contacto de recuperación. Podrá ayudarle a desbloquear sus datos después de restablecer su contraseña."
+      ],
+      "Add recovery method": [
+        "Agregar método de recuperación"
+      ],
+      "Start recovery": [
+        "Iniciar recuperación"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Para agregar contactos de recuperación, debe tener una dirección de correo electrónico o número de telefono de recuperación."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Le enviamos una solicitud de correo electrónico a ${ user }. Coméntele que es realmente usted quien intenta volver a acceder."
       ]
     },
     "Empty group name": {
@@ -7237,7 +7252,7 @@
         "Enlace de invitación inválido"
       ],
       "Invalid joining link. Please contact your administrator.": [
-        "Enlace de invitación no válido. Contáctese con su administración."
+        "Enlace de invitación inválido. Contacte con el administrador."
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -12544,7 +12559,7 @@
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por teléfono de recuperación**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Archivo de recuperación** (aunle todos los archivos de recuperación)."
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Archivo de recuperación** (anula todos los archivos de recuperación)."
       ],
       "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Inicio de sesión por restablecimiento**."
@@ -21333,6 +21348,15 @@
       ],
       "Your security setup": [
         "Su configuración de seguridad"
+      ],
+      "Add an emergency contact": [
+        "Añadir un contacto de emergencia"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Añada a personas de confianza con las que pueda contactar fácilmente. Su contacto de emergencia podrá acceder a su cuenta y restablecer la contraseña si es necesario."
+      ],
+      "They will not be able to see or access your data.": [
+        "Ellos no podrán ver o acceder a sus datos."
       ]
     },
     "saml: Action": {
@@ -22759,7 +22783,7 @@
         "Asignar roles"
       ],
       "Click a user's name to manage their role and permissions.": [
-        "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+        "Pulse en el nombre de usuario para gestionar su rol y permiso"
       ],
       "Click Edit to assign roles to this group and manage member access automatically.": [
         "Haga clic en Editar para asignar roles a este grupo y gestionar acceso a miembros automáticamente."
@@ -22774,13 +22798,13 @@
         "Nuevo: Pestaña de roles y permisos"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
-        "Abra esta pesaña para otorgar permisos específicos sin acceso administrativo total."
+        "Abra esta pestaña para otorgar permisos específicos sin acceso administrativo total."
       ],
       "User roles available": [
         "Roles de usuario disponibles"
       ],
       "You can now assign roles to individual users from this tab.": [
-        "hora puee asignar roles a usuarios individuales desde esta pestaña"
+        "Ahora puede asignar roles a usuarios individuales desde esta pestaña"
       ]
     },
     "sso": {

@@ -6968,6 +6968,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Els vostres contactes de recuperació han de ser persones que conegueu i amb qui us pugueu posar en contacte fàcilment."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** és ara el vostre contacte de recuperació. Us pot ajudar a desbloquejar les dades després de restablir la contrasenya."
+      ],
+      "Add recovery method": [
+        "Afegir un mètode de recuperació"
+      ],
+      "Start recovery": [
+        "Començar la recuperació"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Per afegir contactes de recuperació, heu de tenir una adreça de correu electrònic o un número de telèfon de recuperació."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Hem enviat una sol·licitud per correu electrònic a ${ user }. Feu-li saber que sou vós qui intenta recuperar l'accés."
       ]
     },
     "Empty group name": {
@@ -21231,6 +21246,15 @@
       ],
       "Your security setup": [
         "La vostra configuració de seguretat"
+      ],
+      "Add an emergency contact": [
+        "Afegir un contacte d'emergència"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Afegiu persones en qui confieu i que hi pugueu contactar fàcilment. El vostre contacte d'emergència podrà accedir al compte i restablir-vos la contrasenya si cal."
+      ],
+      "They will not be able to see or access your data.": [
+        "No podran veure les vostres dades ni accedir-hi."
       ]
     },
     "saml: Action": {

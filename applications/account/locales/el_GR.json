@@ -6968,6 +6968,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Οι επαφές σας για την ανάκτηση πρέπει να είναι άτομα που γνωρίζετε και με τα οποία μπορείτε να επικοινωνήσετε εύκολα."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** είναι πλέον η επαφή ανάκτησής σας. Μπορεί να σας βοηθήσει να ξεκλειδώσετε τα δεδομένα σας αφού επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add recovery method": [
+        "Προσθήκη μεθόδου ανάκτησης"
+      ],
+      "Start recovery": [
+        "Εκκίνηση ανάκτησης"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Για να προσθέσετε επαφές ανάκτησης, πρέπει να έχετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου για ανάκτηση."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Στείλαμε ένα αίτημα μέσω ηλεκτρονικού μηνύματος στον ${ user }. Ενημερώστε τους ότι όντως είστε εσείς που προσπαθείτε να ανακτήσετε την πρόσβαση."
       ]
     },
     "Empty group name": {
@@ -21234,6 +21249,15 @@
       ],
       "Your security setup": [
         "Η ρύθμιση ασφαλείας σας"
+      ],
+      "Add an emergency contact": [
+        "Προσθήκη επαφής έκτακτης ανάγκης"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Το άτομο επαφής έκτακτης ανάγκης θα μπορεί να έχει πρόσβαση στον λογαριασμό σας και να επαναφέρει τον κωδικό πρόσβασής σας εάν χρειαστεί."
+      ],
+      "They will not be able to see or access your data.": [
+        "Δε θα μπορούν να δουν ή να έχουν πρόσβαση στα δεδομένα σας."
       ]
     },
     "saml: Action": {

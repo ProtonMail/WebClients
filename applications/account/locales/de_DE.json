@@ -6709,6 +6709,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Deine Wiederherstellungskontakte sollten Personen sein, die du kennst und die du leicht erreichen kannst."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** ist nun dein Wiederherstellungskontakt. Er kann dir dabei helfen, deine Daten nach einer Passwortzurücksetzung zu entsperren."
+      ],
+      "Add recovery method": [
+        "Wiederherstellungsmethode hinzufügen"
+      ],
+      "Start recovery": [
+        "Wiederherstellung starten"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Um einen Wiederherstellungskontakt hinzuzufügen, benötigst du eine Wiederherstellungs-E-Mail-Adresse oder -Telefonnummer."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Wir senden eine E-Mail-Anfrage an ${ user }. Lass ihn wissen, dass du es bist, der versucht Zugriff wiederzuerlangen."
       ]
     },
     "Empty group name": {
@@ -13054,6 +13069,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
+        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere **Kontaktgestützte Wiederherstellung**."
+      ],
+      "To ensure the highest possible security of your account, disable **Device data backup**.": [
+        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere **Sicherung der Gerätedaten**."
+      ],
+      "To ensure the highest possible security of your account, disable **Emergency access**.": [
+        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere **Notfallzugriff**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
+        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere **Wiederherstellungsdatei** (alle Wiederherstellungsdateien löschen)."
       ]
     },
     "info": {
@@ -22410,6 +22437,18 @@
       ],
       "Verify ${ value }": [
         "${ value } verifizieren"
+      ],
+      "Disable contact-assisted recovery": [
+        "Kontaktunterstützte Wiederherstellung deaktivieren"
+      ],
+      "Disable device data backup": [
+        "Sicherung der Gerätedaten deaktivieren"
+      ],
+      "Disable emergency access": [
+        "Notfallzugriff deaktivieren"
+      ],
+      "Disable recovery file": [
+        "Wiederherstellungsdatei deaktivieren"
       ]
     },
     "Step in filter modal": {
@@ -26957,6 +26996,25 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "safety_review": {
+      "Add an emergency contact": [
+        "Notfallkontakt hinzufügen"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Personen hinzufügen, denen du vertraust und die du leicht erreichen kannst. Dein Notfallkontakt kann bei Bedarf auf dein Konto zugreifen und dein Passwort für dich zurücksetzen."
+      ],
+      "They will not be able to see or access your data.": [
+        "Sie können deine Daten weder einsehen noch darauf zugreifen."
+      ]
+    },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable the highlighted options.": [
+        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere die hervorgehobenen Optionen."
+      ],
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Um sicher zu sein, dass du immer Zugriff auf dein ${ BRAND_NAME }-Konto hast, lade deine Wiederherstellungsphrase herunter."
       ]
     }
   }

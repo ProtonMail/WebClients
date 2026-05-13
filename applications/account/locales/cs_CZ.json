@@ -922,7 +922,7 @@
         "Skrýt funkce tarifu"
       ],
       "I don't have my 2FA device": [
-        "Nemám své zařízení pro 2FA ověření"
+        "Nemám své zařízení 2FA"
       ],
       "I don't have my key": [
         "Nemám klíč"
@@ -2094,7 +2094,7 @@
         "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci udělejte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
+        "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci přidělte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
       ],
       "Delegate management with the appropriate admin role.": [
         "Pověřte uživatele správou tak, že mu přiřadíte vhodnou roli správce."
@@ -2115,7 +2115,7 @@
         "Správce zabezpečení:"
       ],
       "User admin:": [
-        "Uživatel Admin:"
+        "Správce uživatelů:"
       ]
     },
     "AdminRole_Info": {
@@ -10600,7 +10600,7 @@
         "Přetažením provedete import"
       ],
       "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
-        "Díky koncovému šifrování si můžete heslo resetovat, ale ${ DataLockedText }, dokud nepoužijete odkaz ${ DataRecoveryOptionsLink }:"
+        "Díky koncovému šifrování si můžete heslo resetovat, ale ${ DataLockedText }, dokud nepoužijete ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -11152,7 +11152,7 @@
         "Připojení k internetu obnoveno."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Neplatný kód. Zadejte ${ RequestNewCodeLink } a zkuste to znovu."
+        "Neplatný kód. ${ RequestNewCodeLink } a zkuste to znovu."
       ],
       "Invitation link expired": [
         "Odkazu pozvánky vypršela platnost"
@@ -11590,7 +11590,7 @@
         "Uspořádejte dedikované servery do bran a rozhodněte, kteří členové k nim mohou přistupovat."
       ],
       "Other": [
-        "Další"
+        "Ostatní"
       ],
       "Other accounts": [
         "Další účty"
@@ -15730,7 +15730,7 @@
         "Vytvořit alias"
       ],
       "data recovery option": [
-        "Možnosti obnovy dat"
+        "možnost obnovy dat"
       ],
       "Details": [
         "Detaily"
@@ -20915,7 +20915,7 @@
         "Pokud zapomenete své heslo ${ BRAND_NAME } a bude jej nutné resetovat, můžete se přihlásit k účtu pomocí tohoto zařízení a nového hesla a obnovit tím plný přístup ke svému účtu ${ BRAND_NAME }."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your recovery phrase will allow you to sign in and recover your data.": [
-        "Pokud dojde k zablokování vašeho účtu ${ BRAND_NAME }, vaše obnovovací fráze vám umožní přihlásit se a obnovit vaše data."
+        "Pokud ztratíte přístup k vašeho účtu ${ BRAND_NAME }, vaše obnovovací fráze vám umožní přihlásit se a obnovit vaše data."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Pokud ztratíte přihlašovací údaje a potřebujete resetovat účet, **je nutné** mít k dispozici **metodu obnovení účtu i obnovení dat**, jinak se vám může stát, že nebudete mít přístup k vašim e-mailům, kontaktům, souborům nebo heslům."
@@ -26302,7 +26302,7 @@
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
       ],
       "Allow recovering your account with a one-time code sent to your recovery email": [
-        "Povolit obnovení účtu pomocí jednorázového kódu zaslaného na váš záložní e-mail"
+        "Umožnit obnovení účtu pomocí jednorázového kódu zaslaného na vaši e-mailovou adresu pro obnovení"
       ],
       "Allow recovering your account with a one-time code sent to your recovery phone": [
         "Umožnit obnovení účtu pomocí jednorázového kódu zaslaného na váš telefon pro obnovení"
@@ -27395,7 +27395,7 @@
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
-        "Servery začnou běžet v desetidenní deaktivační lhůtě. Tyto servery lze přidat do nové brány, ale jejich zemi nelze změnit."
+        "Servery této brány začnou běžet v desetidenní deaktivační lhůtě. Tyto servery lze přidat do nové brány, ale jejich zemi nelze změnit."
       ],
       "Skip verification?": [
         "Přeskočit ověření?"

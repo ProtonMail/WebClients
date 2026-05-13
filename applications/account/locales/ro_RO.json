@@ -7010,6 +7010,24 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Contactele de recuperare ar trebui să fie persoane pe care le cunoașteți și le puteți contacta cu ușurință."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** vă este acum propria persoană de contact pentru recuperare. Aceasta vă poate ajuta să vă deblocați datele după ce vă resetați parola."
+      ],
+      "Add recovery method": [
+        "Adăugare metodă de recuperare"
+      ],
+      "Data recovery contacts": [
+        "Contacte pentru recuperarea datelor"
+      ],
+      "Start recovery": [
+        "Începeți recuperarea"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Pentru a adăuga contacte de recuperare, trebuie să aveți o adresă de e-mail sau un număr de telefon pentru recuperare."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "S-a trimis o solicitare prin e-mail către ${ user }. Spuneți-i că într-adevăr sunteți persoana care încearcă să redobândească accesul la cont."
       ]
     },
     "Empty group name": {
@@ -13516,6 +13534,15 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Recuperarea datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Această metodă de recuperare a datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
+      ],
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Pentru a utiliza această metodă de recuperare, trebuie să dezactivați ${ PROTON_SENTINEL_NAME } și să activați o opțiune de resetare a parolei (e-mail sau SMS)."
       ]
     },
     "info": {
@@ -21539,6 +21566,15 @@
       ],
       "Your security setup": [
         "Configurația de securitate"
+      ],
+      "Add an emergency contact": [
+        "Adăugați un contact de urgență"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Persoana de contact în caz de urgență vă va putea accesa contul și reseta parola, dacă este necesar."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nu vă vor putea vedea sau accesa datele."
       ]
     },
     "saml: Action": {

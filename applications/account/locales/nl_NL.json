@@ -6875,6 +6875,24 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Uw herstelcontacten moeten personen zijn die u kent en gemakkelijk kunt bereiken."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** is nu uw herstelcontact. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw hebt ingesteld."
+      ],
+      "Add recovery method": [
+        "Herstelmethode toevoegen"
+      ],
+      "Data recovery contacts": [
+        "Herstelcontacten toevoegen"
+      ],
+      "Start recovery": [
+        "Herstel starten"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Om herstel contactpersonen toe te voegen, hebt u een herstel e-mailadres of telefoonnummer nodig."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "We hebben een e-mailverzoek naar ${ user } gestuurd. Laat hen weten dat u het bent die probeert de toegang te herstellen."
       ]
     },
     "Empty group name": {
@@ -13256,6 +13274,15 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Voor gegevensherstel is een optie voor het opnieuw instellen van het wachtwoord vereist (via e-mail of sms)."
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Deze methode voor gegevensherstel vereist een optie om het wachtwoord opnieuw in te stellen (via e-mail of sms)."
+      ],
+      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
+        "Om deze herstelmethode te gebruiken, moet u ${ PROTON_SENTINEL_NAME } uitschakelen en een optie voor het opnieuw instellen van het wachtwoord inschakelen (e-mail of sms)."
       ]
     },
     "info": {

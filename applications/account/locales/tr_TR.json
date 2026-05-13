@@ -6968,6 +6968,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Kurtarma kişilerinizi tanıdığınız ve kolayca ulaşabileceğiniz kişilerden seçmelisiniz."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** artık kurtarma kişiniz oldu. Parolanızı sıfırladıktan sonra verilerinizin kilidini açmanıza yardımcı olabilir."
+      ],
+      "Add recovery method": [
+        "Kurtarma yöntemi ekle"
+      ],
+      "Start recovery": [
+        "Kurtarmayı başlat"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Kurtarma kişileri eklemek için kurtarma e-posta adresiniz veya telefon numaranız olmalıdır."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "${ user } adresine bir e-posta isteği gönderdik. Erişimi geri kazanmaya çalışanın gerçekten siz olduğunuzu onlara bildirin."
       ]
     },
     "Empty group name": {
@@ -21330,6 +21345,15 @@
       ],
       "Your security setup": [
         "Güvenlik kurulumunuz"
+      ],
+      "Add an emergency contact": [
+        "Acil durum kişisi ekle"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Güvendiğiniz ve kolayca iletişim kurabileceğiniz kişileri ekleyin. Acil durum kişiniz gerektiğinde hesabınıza erişebilir ve parolanızı sizin yerinize sıfırlayabilir."
+      ],
+      "They will not be able to see or access your data.": [
+        "Verilerinizi göremeyecekler ve erişemeyecekler."
       ]
     },
     "saml: Action": {
