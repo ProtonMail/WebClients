@@ -1,17 +1,13 @@
 import { DAY } from '@proton/shared/lib/constants';
 
 import { stringToUint8Array, uint8ArrayToString } from '../../helpers/encoding';
-import { getItem, removeItem, setItem } from '../../helpers/storage';
+import { removeItem } from '../../helpers/storage';
 import { isNumber } from '../../helpers/validators';
 
 const prefix = 'r-';
 
 const getKey = (UID: string) => {
     return stringToUint8Array(`${prefix}${UID}`).toBase64({ alphabet: 'base64url', omitPadding: true });
-};
-
-export const setLastRefreshDate = (UID: string, now: Date) => {
-    setItem(getKey(UID), `${+now}`);
 };
 
 const getParsedValue = (value: string | null | undefined) => {
@@ -22,10 +18,6 @@ const getParsedValue = (value: string | null | undefined) => {
     const parsed = Number.parseInt(value || '', 10);
     const date = new Date(parsed);
     return Number.isNaN(+date) ? undefined : date;
-};
-
-export const getLastRefreshDate = (UID: string) => {
-    return getParsedValue(getItem(getKey(UID)));
 };
 
 export const removeLastRefreshDate = (UID: string) => {
@@ -56,6 +48,9 @@ export const getLastRefreshDates = (): LastRefreshDate[] => {
     }, []);
 };
 
+/**
+ * TODO: Remove this code after 2026-08-16
+ */
 export const cleanupLastRefreshDate = () => {
     const lastRefreshDates = getLastRefreshDates();
     const now = Date.now();
