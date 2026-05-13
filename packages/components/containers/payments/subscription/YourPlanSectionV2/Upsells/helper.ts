@@ -4,10 +4,12 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import {
     type FreeSubscription,
     type PLANS,
+    type PlanIDs,
     type Subscription,
     getMaximumCycleForApp,
     getPlan,
-    getPlanName,
+    getPlanIDs,
+    getPrice,
     isFreeSubscription,
 } from '@proton/payments';
 import type { APP_NAMES, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
@@ -47,26 +49,22 @@ export const useSubscriptionPriceComparison = (
             return returnFalse;
         }
 
-        compareWithPlan = compareWithPlan ?? getPlanName(subscription);
-
-        if (!compareWithPlan) {
+        if (compareWithPlan && !plansMap[compareWithPlan]) {
             return returnFalse;
         }
+
+        const planIDs: PlanIDs = compareWithPlan ? { [compareWithPlan]: 1 } : getPlanIDs(subscription);
 
         const allowedCycles = getAllowedCycles({
             plansMap,
-            subscription: subscription,
+            subscription,
             currency: subscription.Currency,
-            planIDs: { [compareWithPlan]: 1 },
+            planIDs,
             maximumCycle: getMaximumCycleForApp(app),
         });
 
-        let pricingOptions = plansMap[compareWithPlan]?.Pricing;
-        if (!pricingOptions) {
-            return returnFalse;
-        }
-        pricingOptions = Object.fromEntries(
-            Object.entries(pricingOptions).filter(([cycle]) => allowedCycles.includes(Number(cycle)))
+        const pricingOptions: Record<number, number> = Object.fromEntries(
+            allowedCycles.map((cycle) => [cycle, getPrice(planIDs, cycle, plansMap)]).filter(([, price]) => price > 0)
         );
 
         const cycleLength = subscription.Cycle;
