@@ -175,6 +175,7 @@ const UnsubscribedSubscriptionButtons = ({
             shape="outline"
             size="tiny"
             className="color-danger"
+            data-testid="move-to-trash"
         >{c('Action').t`Move to Trash`}</Button>
     );
 };
