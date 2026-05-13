@@ -45,6 +45,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     hasAppLinks?: boolean;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     logoutRedirectUrl?: string;
+    reportDescriptionContext?: string[];
 }
 
 const ALLOWED_APPS_FOR_SELF_TROUBLESHOOT: Partial<APP_NAMES>[] = [
@@ -60,6 +61,7 @@ const UserDropdown = ({
     sessionOptions,
     hasAppLinks,
     logoutRedirectUrl,
+    reportDescriptionContext,
     ...rest
 }: UserDropdownProps) => {
     const { APP_NAME } = useConfig();
@@ -203,7 +205,13 @@ const UserDropdown = ({
 
     return (
         <UserDropdownContext.Provider value={value}>
-            {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
+            {renderBugReportModal && (
+                <AuthenticatedBugModal
+                    {...bugReportModal}
+                    app={app}
+                    reportDescriptionContext={reportDescriptionContext}
+                />
+            )}
             {renderSelfHelpModal && (
                 <SelfHelpModal
                     open={selfHelpModal.open}
