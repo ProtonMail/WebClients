@@ -9,7 +9,7 @@ import type { Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -37,15 +37,23 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession
     const adapter: LockAdapterSession = {
         type: LockMode.SESSION,
 
-        /** Calling this function when a lock is registered and active
-         * will extend the lock by resetting the ttl server-side. Set the
-         * lock extend time regardless of the result of the API call in
-         * order for clients to be able to lock even when offline. */
+        /** Calling this function when a lock is registered and active will extend
+         * the lock by resetting the ttl server-side. The local `lockLastExtendTime`
+         * is bumped in-memory BEFORE the API call (intentionally not persisted here
+         * as `service.checkLock` owns the post-call persist) so a slow `checkSessionLock`
+         * roundtrip cannot race `checkAutoLock`. */
         check: async () => {
             logger.info(`[SessionLock] checking session lock`);
-
             authStore.setLockLastExtendTime(getEpoch());
-            const lock = await checkSessionLock();
+
+            const lock = await checkSessionLock().catch((err) => {
+                /** On connectivity failures, `checkAutoLock` already passed meaning the
+                 * local TTL has not expired. Treat as non-locked to ensure `onLockUpdate`
+                 * still fires and resets the auto-lock auth alarm. */
+                const ttl = authStore.getLockTTL();
+                if (getIsConnectionIssue(err)) return { mode: adapter.type, ttl, locked: false };
+                throw err;
+            });
 
             authStore.setLocked(lock.locked);
             authStore.setLockTTL(lock.ttl);
@@ -54,14 +62,16 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession
             if (authStore.getLockMode() !== lock.mode) {
                 authStore.setLockMode(lock.mode);
 
-                if (lock.mode === LockMode.NONE) {
-                    authStore.setLockToken(undefined);
-                    await auth.config.onLockUpdate?.(lock, authStore.getLocalID(), true);
-                    await auth.persistSession().catch(noop);
-                }
-
-                if (lock.mode === LockMode.SESSION) {
-                    await auth.lock(adapter.type, { broadcast: true, soft: true });
+                switch (lock.mode) {
+                    case LockMode.NONE:
+                        authStore.setLockToken(undefined);
+                        authStore.setLockLastExtendTime(undefined);
+                        await auth.config.onLockUpdate?.(lock, authStore.getLocalID(), true);
+                        await auth.persistSession().catch(noop);
+                        break;
+                    case LockMode.SESSION:
+                        await auth.lock(adapter.type, { broadcast: true, soft: true });
+                        break;
                 }
             }
 
@@ -160,15 +170,22 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession
                 throw new Error('Invalid session unlock response');
             }
 
+            const now = getEpoch();
             authStore.setLockToken(token);
             authStore.setLockMode(LockMode.SESSION);
+            authStore.setLockLastExtendTime(now);
+            authStore.setUnlockRetryCount(0);
 
             /** session may be partially hydrated when unlocking  */
             const validSession = authStore.validSession(authStore.getSession());
             const shouldPersist = validSession && (currentToken !== token || currentMode !== LockMode.SESSION);
-            if (shouldPersist) await auth.persistSession().catch(noop);
 
-            await adapter.check();
+            /** When `shouldPersist`, the full `persistSession` re-encrypts the entire
+             * authStore (including the just-bumped `lockLastExtendTime`). Otherwise
+             * issue a targeted `syncLock` so the persisted session doesn't drift. */
+            if (shouldPersist) await auth.persistSession().catch(noop);
+            else await auth.syncLock({ unlockRetryCount: 0, lockLastExtendTime: now });
+
             return token;
         },
     };
