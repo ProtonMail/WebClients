@@ -40,6 +40,7 @@ import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { isWindowValid } from "./windowUtils";
 import { profiler } from "../profiler/profiler";
 import { sentryReport } from "../sentryReport";
+import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
 
 type ViewID = keyof URLConfig;
 
@@ -83,18 +84,7 @@ const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
 let mainWindow: BrowserWindow | null = null;
 let loadingView: WebContentsView | null = null;
 
-/**
- * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
- * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
- */
-const NET_ERROR_CODE = {
-    ABORTED: -3,
-    CONNECTION_REFUSED: -102,
-    ERR_NAME_NOT_RESOLVED: -105,
-    INVALID_URL: -300,
-};
-
-export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
+export const IGNORED_NET_ERROR_CODES: number[] = [NET_ERROR_CODE.ABORTED];
 
 // Report loadURL timeouts to Sentry once per session per view, after 10 total timeouts.
 const LOAD_TIMEOUT_REPORT_THRESHOLD = 10;
@@ -524,15 +514,17 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
-                const failCount = (loadFailCounts.get(viewID) ?? 0) + 1;
-                loadFailCounts.set(viewID, failCount);
+                if (!isUserNetworkErrorCode(errorCode)) {
+                    const failCount = (loadFailCounts.get(viewID) ?? 0) + 1;
+                    loadFailCounts.set(viewID, failCount);
 
-                if (failCount === LOAD_FAIL_REPORT_THRESHOLD) {
-                    sentryReport.reportMessage("did-fail-load repeated", {
-                        level: "error",
-                        tags: { viewID, errorCode: String(errorCode) },
-                        extras: { url, errorDescription, totalFailures: failCount },
-                    });
+                    if (failCount === LOAD_FAIL_REPORT_THRESHOLD) {
+                        sentryReport.reportMessage("did-fail-load repeated", {
+                            level: "error",
+                            tags: { viewID, errorCode: String(errorCode) },
+                            extras: { url, errorDescription, totalFailures: failCount },
+                        });
+                    }
                 }
 
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
