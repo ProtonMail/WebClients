@@ -1,7 +1,12 @@
 import { useEffect, useRef } from 'react';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
-import { onNativeAbortPrompt, onNativeSendPrompt } from '../../../remote/nativeComposerBridgeHelpers';
+import {
+    clearNativeEditMode,
+    onNativeAbortPrompt,
+    onNativeSendPrompt,
+} from '../../../remote/nativeComposerBridgeHelpers';
+import { completePendingNativeEdit, getPendingNativeEdit } from '../../../remote/nativeEditStore';
 
 export const useNativeComposerPromptApi = (handleSendMessage: HandleSendMessage, handleAbort: () => void): void => {
     // Refs for native composer bridge event listeners
@@ -18,7 +23,17 @@ export const useNativeComposerPromptApi = (handleSendMessage: HandleSendMessage,
             const { text, webSearchEnabled } = event.detail;
             console.log('Received native send prompt event', handleSendMessageRef.current);
 
-            if (text?.trim()) {
+            const pending = getPendingNativeEdit();
+            if (pending) {
+                try {
+                    if (text?.trim()) {
+                        await pending.handleEditMessage(pending.message, text, webSearchEnabled);
+                    }
+                } finally {
+                    completePendingNativeEdit();
+                    clearNativeEditMode();
+                }
+            } else if (text?.trim()) {
                 await handleSendMessageRef.current?.(text, webSearchEnabled);
             }
         });

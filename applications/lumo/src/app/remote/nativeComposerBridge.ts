@@ -72,6 +72,10 @@ export interface UserFlags {
     isGuestUser: boolean;
 }
 
+export interface EditMode {
+    active: boolean;
+}
+
 export interface State {
     lumoMode: LumoMode;
     modelTier: ModelTier;
@@ -84,6 +88,7 @@ export interface State {
     userFlags: UserFlags;
     attachedFiles: LumoFile[];
     featureFlags: FeatureFlags;
+    editMode: EditMode;
 }
 
 /**
@@ -138,6 +143,25 @@ const sendResultToNative = (callId: string, payload: any) => {
         }
     } catch (e) {
         console.error(`Native Composer Bridge: Error sending message to native for callId ${callId}:`, e);
+    }
+};
+
+/**
+ * Injects an edit mode prefill text to the native side as a one-shot callback.
+ * Sent separately from State to avoid re-applying on every state update.
+ */
+const injectEditModePrompt = (text: string) => {
+    console.log('Native Composer Bridge: Injecting edit mode prompt to native');
+    try {
+        if ((window as any).webkit?.messageHandlers?.nativeComposerEditModeHandler) {
+            (window as any).webkit.messageHandlers.nativeComposerEditModeHandler.postMessage(text);
+        } else if ((window as any).Android?.injectEditModePrompt) {
+            (window as any).Android.injectEditModePrompt(text);
+        } else {
+            console.log('Native Composer Bridge: Native bridge not detected for edit mode prompt');
+        }
+    } catch (error) {
+        console.log('Native Composer Bridge: Error injecting edit mode prompt to native:', error);
     }
 };
 
@@ -204,6 +228,7 @@ class NativeComposerApi {
             isModelSelectionEnabled: false,
             isToolsEnabled: true,
         },
+        editMode: { active: false },
     };
 
     constructor() {
@@ -489,6 +514,18 @@ class NativeComposerApi {
         this.updateState({ userFlags: { ...this.state.userFlags, isGuestUser: isGuestUser } });
     }
 
+    public setEditMode(prefillText: string): void {
+        console.log('NativeComposerApi: Setting edit mode with prefill text');
+        injectEditModePrompt(prefillText);
+        this.updateState({ editMode: { active: true } });
+    }
+
+    public clearEditMode(): void {
+        console.log('NativeComposerApi: Clearing edit mode');
+        this.updateState({ editMode: { active: false } });
+        window.dispatchEvent(new CustomEvent('lumo:nativeEditCleared'));
+    }
+
     public injectImageGenerationHelperPrompt(prompt: string): void {
         injectImageGenerationHelperPrompt(prompt);
     }
@@ -606,6 +643,9 @@ try {
 
         // Tools
         setToolsEnabled: createNativeWrapper('setToolsEnabled'),
+
+        // Edit mode
+        clearEditMode: createNativeWrapper('clearEditMode'),
 
         // Error handling
         onComposerError: createNativeWrapper('onComposerError'),
