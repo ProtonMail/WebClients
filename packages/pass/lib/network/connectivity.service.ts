@@ -84,15 +84,12 @@ export const createConnectivityService = ({
         }
     };
 
-    /** Pings server and updates connectivity status. Async-locked to prevent concurrent
-     * checks. If requests are in-flight, skips the ping and waits for them to drain instead
-     * to avoid a redundant ping race that could produce contradictory state. */
+    /** Pings the server and updates connectivity status. Async-locked so concurrent
+     * callers share the same in-flight ping. */
     const check = asyncLock(async (signal?: AbortSignal): Promise<ConnectivityStatus> => {
-        if (api.getState().pendingCount > 0) await api.idle();
-        else await api({ ...ping(), unauthenticated: true, signal }).catch(noop);
+        await api({ ...ping(), unauthenticated: true, signal }).catch(noop);
 
-        const apiState = api.getState();
-        const status = intoConnectivityStatus(apiState);
+        const status = intoConnectivityStatus(api.getState());
         setStatus(status);
 
         await wait(CONNECTIVITY_CHECK_DELAY);
@@ -155,9 +152,15 @@ export const createConnectivityService = ({
     const init = async () => {
         const onNavigatorEvent = () => {
             const wasOnline = isEffectivelyOnline(state);
-            const online = navigator.onLine;
-            state.navigatorOnline = online;
-            onConnectivityChange(wasOnline);
+            const wasNavigatorOnline = state.navigatorOnline;
+            state.navigatorOnline = navigator.onLine;
+
+            /** Navigator just transitioned offline → online: probe immediately and rewind
+             * the retry backoff so recovery doesn't wait on the next retry tick. Gated on
+             * the transition to skip spurious online-while-online events. */
+            if (!wasNavigatorOnline && state.navigatorOnline && state.retryHandler) {
+                void check().then(() => state.retryHandler?.reset());
+            } else onConnectivityChange(wasOnline);
         };
 
         const onApiEvent: Subscriber<ApiSubscriptionEvent> = (event) => {
