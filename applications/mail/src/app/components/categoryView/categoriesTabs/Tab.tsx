@@ -71,7 +71,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             <span
                 title={getLabelFromCategoryId(category.id)}
                 className={clsx(
-                    'tag-label tag-label-text text-sm',
+                    'tag-label tag-label-text text-sm truncate min-w-0',
                     tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
                 )}
             >
@@ -90,7 +90,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
                             : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
                     }
                     className={clsx(
-                        'tag-count px-1.5 py-0.5 text-sm',
+                        'tag-count shrink-0 px-1.5 py-0.5 text-sm',
                         tabState === TabState.ACTIVE
                             ? 'mail-category-color mail-category-count-bg'
                             : 'bg-weak color-weak'
