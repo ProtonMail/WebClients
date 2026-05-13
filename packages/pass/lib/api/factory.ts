@@ -24,6 +24,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { protonFetch } from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
@@ -34,7 +35,7 @@ import noop from '@proton/utils/noop';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
-import { buildApiState, getSilenced, isAccessRestricted } from './utils';
+import { buildApiState, getSilenced, isAccessRestricted, isSessionResumeRoute } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
@@ -76,7 +77,12 @@ export const createApi = ({
 
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
-    const api = async (options: ApiOptions): Promise<ApiResult> => {
+    const api = (async (options: ApiOptions): Promise<ApiResult> => {
+        if (state.get('resumeLocked') && !isSessionResumeRoute(options?.url)) {
+            logger.debug(`[API] blocked by resume gate`, options.url);
+            throw createOfflineError(options);
+        }
+
         const pending = state.get('pendingCount') + 1;
         state.set('pendingCount', pending);
 
@@ -185,7 +191,7 @@ export const createApi = ({
                     }
                 }
             });
-    };
+    }) as Api;
 
     api.getState = () => state.data;
 
@@ -216,5 +222,10 @@ export const createApi = ({
     api.subscribe = pubsub.subscribe;
     api.unsubscribe = pubsub.unsubscribe;
 
-    return api as Api;
+    /** Toggle the offline-resume gate. Engaged (`locked: true`) during
+     * offline boot. Released (`locked: false`) once `offlineResume`
+     * succeeds and the session is fully re-authenticated. */
+    api.setResumeLock = (locked) => state.set('resumeLocked', locked);
+
+    return api;
 };

@@ -23,6 +23,9 @@ export type ApiState = {
     pendingCount: number;
     queued: Awaiter<void>[];
     refreshing: boolean;
+    /** When `true`, the API rejects any request that is not part of the
+     * session-resume flow. Set during offline boot, cleared on resume. */
+    resumeLocked: boolean;
     serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
@@ -43,6 +46,8 @@ export type Api = {
     getState: () => ApiState;
     idle: () => Promise<void>;
     reset: () => Promise<void>;
+    /** Toggle the offline-resume gate (see `ApiState.resumeLocked`). */
+    setResumeLock: (locked: boolean) => void;
     subscribe: (subscribe: Subscriber<ApiSubscriptionEvent>) => () => void;
     unsubscribe: () => void;
 };
