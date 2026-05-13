@@ -2,7 +2,6 @@ import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RE
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import type { ApiError } from '../../fetch/ApiError';
 import { getUIDHeaderValue, getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
-import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
 import type { HumanVerificationMethodType } from '../../interfaces';
 import { setRefreshCookies } from '../auth';
@@ -52,7 +51,7 @@ export function withApiHandlers({
                     throw e;
                 }
 
-                const { status, name, response } = e as ApiError;
+                const { status, name } = e as ApiError;
 
                 const {
                     ignoreHandler,
@@ -87,7 +86,7 @@ export function withApiHandlers({
                     !ignoreUnauthorized &&
                     (UID || (requestUID && !headers?.Authorization))
                 ) {
-                    return refreshHandler(requestUID, getDateHeader(response && response.headers)).then(
+                    return refreshHandler(requestUID).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
                             if (getIsRefreshFailure(error)) {
