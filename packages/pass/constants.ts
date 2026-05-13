@@ -54,6 +54,7 @@ export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass'
 export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detection/public_suffix_list.dat';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const WEBSITE_RULES_EXPERIMENTAL_URL = 'https://proton.me/download/pass/auto-detection/rules.experimental.json';
+export const AGENT_INSTRUCTIONS_URL = 'https://proton.me/download/pass/agent-data/agent-instructions.md';
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
@@ -106,6 +107,7 @@ export enum UpsellRef {
     PLUS_PLAN_ONBOARDING = 'plus_plan_onboarding',
     UNLIMITED_PLAN_ONBOARDING = 'unlimited_plan_onboarding',
     AUTOTYPE = 'autotype',
+    PAT = 'pat',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */

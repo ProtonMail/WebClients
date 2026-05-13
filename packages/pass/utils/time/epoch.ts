@@ -5,3 +5,9 @@ export const getEpoch = (): number => Math.round(new Date().getTime() / 1_000);
 export const epochToMs = (s: number) => s * 1_000;
 export const msToEpoch = (ms: number) => Math.floor(ms / 1_000);
 export const epochToDate = (s: number): Date => new Date(s * 1_000);
+
+/** Hours remaining until the given epoch, rounded up. Negative if past. */
+export const epochHoursFromNow = (s: number): number => Math.ceil((s - getEpoch()) / 3_600);
+
+/** Days remaining until the given epoch, rounded up. Negative if past. */
+export const epochDaysFromNow = (s: number): number => Math.ceil((s - getEpoch()) / 86_400);
