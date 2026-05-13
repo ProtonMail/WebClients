@@ -5,10 +5,6 @@
 	background-color: var(--toolbar-background-color);
 	container-type: inline-size;
 
-	.tab-wrapper {
-		max-inline-size: rem(1600);
-	}
-
 	.tab-container {
 		border-width: rem(3) 0;
 		padding-block: rem(10);
@@ -44,6 +40,20 @@
 			}
 		}
 
+		// Default (< 820px): icon-only — label and count hidden
+		.tag-label,
+		.tag-count {
+			display: none;
+		}
+
+		// Show label for active tab or when dragging over it
+		&[aria-selected='true'],
+		&.hovered {
+			.tag-label {
+				display: block;
+			}
+		}
+
 		// Reserves width to avoid layout shift when label gets semibold weight
 		.tag-label::before {
 			display: block;
@@ -60,49 +70,32 @@
 		}
 	}
 
-	// Icon-only for inactive tabs on small containers (< 820px)
-	@container (max-width: #{rem(820)}) {
-		.tab-container {
-			.tag-label,
-			.tag-count {
-				display: none;
-			}
-
-			// Show label for active tab or when dragging over it
-			&[aria-selected='true'],
-			&.hovered {
-				.tag-label {
-					display: block;
-				}
-			}
-		}
-	}
-
-	// Medium: max-width 136px per tab, left-aligned (820px–1024px)
-	@container (min-width: #{rem(820)}) and (max-width: #{rem(1024)}) {
+	// Medium and above (≥ 820px): expand tabs, show labels
+	@container (min-width: #{rem(820)}) {
 		.tab-wrapper {
-			flex-grow: 1;
+			flex: 1;
 			max-inline-size: rem(136);
 		}
 
 		.tab-container {
 			padding-inline: rem(16);
 
-			.tag-count {
-				display: none;
+			.tag-label {
+				display: block;
 			}
 		}
 	}
 
-	// Large: max-width 200px per tab, left-aligned (> 1024px)
+	// Large (≥ 1024px): wider tabs, larger font, show count
 	@container (min-width: #{rem(1024)}) {
 		.tab-wrapper {
-			flex-grow: 1;
 			max-inline-size: rem(200);
 		}
 
 		.tab-container {
-			padding-inline: rem(16);
+			.tag-count {
+				display: revert;
+			}
 
 			.tag-label-text {
 				font-size: rem(13);
