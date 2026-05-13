@@ -16,7 +16,7 @@ import { type ExcelSheetInfo, createExcelSheetFile, getExcelSheetsFromFile } fro
 import { SearchService } from '../../../services/search/searchService';
 import type { AttachmentId, Message, ProjectSpace } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
-import { isExcelFile, isLargeSpreadsheetFile, isPresentationFile } from '../../../util/fileTypeHelpers';
+import { isExcelFile, isLargeSpreadsheetFile, isPresentationFile, isSupportedFile } from '../../../util/fileTypeHelpers';
 import { sendFileUploadFromDriveEvent } from '../../../util/telemetry';
 
 export type FileUploadMode = 'guest' | 'local' | 'linked-drive';
@@ -62,6 +62,24 @@ export const useFileHandling = ({
 
     const validateFile = useCallback(
         (file: File): boolean => {
+            // Reject unsupported file types up-front so we never dispatch a stuck
+            // "processing" attachment into Redux for something we can't import.
+            if (!isSupportedFile(file)) {
+                if (isPresentationFile(file)) {
+                    createNotification({
+                        text: c('collider_2025: Error')
+                            .t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
+                        type: 'warning',
+                    });
+                } else {
+                    createNotification({
+                        text: c('collider_2025: Error (validation)').t`File format not supported: ${file.name}`,
+                        type: 'error',
+                    });
+                }
+                return false;
+            }
+
             // All upload paths (including linked-drive) download, process and index the
             // file, so the same asset-size limit applies everywhere to avoid UI freezes.
             if (file.size > MAX_ASSET_SIZE) {
@@ -221,7 +239,7 @@ export const useFileHandling = ({
                         });
                     } else {
                         createNotification({
-                            text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
+                            text: c('collider_2025: Error (processing)').t`File format not supported: ${result.fileName}`,
                             type: 'error',
                         });
                     }
@@ -277,7 +295,7 @@ export const useFileHandling = ({
             } catch (error) {
                 console.error('Error processing file locally:', error);
                 createNotification({
-                    text: c('collider_2025: Error').t`Error processing file: ${file.name}`,
+                    text: c('collider_2025: Error (local processing)').t`Error processing file: ${file.name}`,
                     type: 'error',
                 });
             }
@@ -303,7 +321,7 @@ export const useFileHandling = ({
             } catch (error) {
                 console.error('Error processing file:', error);
                 createNotification({
-                    text: c('collider_2025: Error').t`Error processing file: ${file.name}`,
+                    text: c('collider_2025: Error (file processing)').t`Error processing file: ${file.name}`,
                     type: 'error',
                 });
             }
