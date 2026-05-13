@@ -1,12 +1,14 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 
-import { EasySwitchProvider } from '@proton/activation/index';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { mailTestRender } from '../../helpers/test/helper';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
@@ -20,6 +22,14 @@ jest.mock('@proton/unleash/useVariant', () => jest.fn(() => ({ name: 'old' })));
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
 const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGetStartedChecklist>;
 
+jest.mock('@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard', () => () => null);
+
+jest.mock('proton-mail/store/hooks');
+jest.mocked(useMailSelector).mockReturnValue(undefined);
+
+jest.mock('@proton/mail/store/mailSettings/hooks');
+jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+
 describe('EmptyListPlaceholder', () => {
     it('Should display checklist when no mails are present', async () => {
         mockedReturn.mockReturnValue({
@@ -30,11 +40,7 @@ describe('EmptyListPlaceholder', () => {
             itemsToComplete: ['Import'],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(
-            <EasySwitchProvider>
-                <EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />
-            </EasySwitchProvider>
-        );
+        render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('onboarding-importers');
     });
 
@@ -44,7 +50,7 @@ describe('EmptyListPlaceholder', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
+        render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('empty-view-placeholder--empty-title');
     });
 
@@ -54,7 +60,7 @@ describe('EmptyListPlaceholder', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
+        render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('empty-view-placeholder--empty-title');
     });
 });
