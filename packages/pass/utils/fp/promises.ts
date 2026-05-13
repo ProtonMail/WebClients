@@ -95,16 +95,19 @@ export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, op
 
 export type CancelablePromise<T> = Promise<T> & { cancel: () => void };
 
-export const cancelable = <T>(job: () => Promise<T>, canceled: boolean = false) => ({
+export const cancelable = <T>(
+    job: (signal: AbortSignal) => Promise<T>,
+    ctrl: AbortController = new AbortController()
+) => ({
     run: () =>
-        canceled
+        ctrl.signal.aborted
             ? Promise.reject()
             : new Promise<T>(async (resolve, reject) => {
-                  const result = await job();
-                  return canceled ? reject() : resolve(result);
+                  const result = await job(ctrl.signal);
+                  return ctrl.signal.aborted ? reject() : resolve(result);
               }),
     cancel: () => {
-        canceled = true;
+        ctrl.abort();
     },
 });
 

@@ -65,7 +65,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             addAddress: () => setAction({ type: 'add' }),
             verifyAddress: (data, sentAt) => setAction({ type: 'verify', data: { ...data, sentAt } }),
             deleteAddress: (addressID) => dispatch(deleteCustomAddress.intent(addressID)),
-            sync: loadBreaches.revalidate,
+            sync: () => loadBreaches.revalidate(),
         }),
         [loadBreaches.revalidate]
     );

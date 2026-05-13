@@ -16,28 +16,28 @@ import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constan
 import { api } from '@proton/pass/lib/api/api';
 import { requestFork } from '@proton/pass/lib/auth/fork';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
-import { clientCanBoot, clientErrored, clientPasswordLocked, clientStale } from '@proton/pass/lib/client';
+import { authStore } from '@proton/pass/lib/auth/store';
+import { clientErrored, clientOffline, clientPasswordLocked, clientStale } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
-import { bootIntent, clientInit } from '@proton/pass/store/actions/creators/client';
+import { clientInit, offlineResume } from '@proton/pass/store/actions/creators/client';
 import { selectFilters, selectTabState } from '@proton/pass/store/selectors/filters';
 import { selectItem } from '@proton/pass/store/selectors/items';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
-import { AppStatus } from '@proton/pass/types/worker/state';
 import { first } from '@proton/pass/utils/array/first';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
-import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { getAutoResumeDelay } from './auth/auth.alarms';
 import { shouldForceLock } from './auth/auth.utils';
 
 type ActivationServiceState = {
@@ -50,15 +50,6 @@ const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
     const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0, permissionsGranted: false };
-
-    /* Safety-net around worker boot-sequence :
-     * Ensures no on-going booting sequence */
-    const handleBoot = withContext((ctx) => {
-        if (clientCanBoot(ctx.status)) {
-            ctx.setStatus(AppStatus.BOOTING);
-            ctx.service.store.dispatch(bootIntent());
-        }
-    });
 
     const checkAvailableUpdate = async (): Promise<boolean> => {
         const now = getEpoch();
@@ -202,42 +193,30 @@ export const createActivationService = () => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
             const { status } = ctx.getState();
-            const clientApp = message.sender === 'popup' || message.sender === 'page';
+            const fromPopup = endpoint === 'popup';
+            const fromPage = endpoint === 'page';
+            const fromClientApp = fromPopup || fromPage;
+            const online = ctx.service.connectivity.online;
 
             /* Resume the session immediately if the worker is stale/idle or if the wakeup request
              * originated from the popup. For wake-up calls from other extension endpoints (e.g.,
              * content-script), determine based on the current session resuming state. If an ongoing
              * alarm exists or if we haven't reached the next session resume delay, take no action */
             const shouldResume = await (async (): Promise<boolean> => {
+                /** Stale escapes the connectivity gate: `onResumeStart` may boot offline
+                 * when an offline session is available, so we must let init run even when
+                 * offline. All other paths require connectivity.  */
                 if (clientStale(status)) return true;
+                if (!online) return false;
 
-                if (clientPasswordLocked(status)) {
-                    if (endpoint === 'popup') {
-                        return ctx.service.connectivity.online;
-                    }
-                }
+                if (or(clientPasswordLocked, clientErrored)(status)) {
+                    if (fromPopup) return true;
 
-                if (clientErrored(status)) {
-                    if (endpoint === 'popup') return true;
-
-                    /* Non-popup clients (content-scripts, settings page, etc.) should not trigger
-                     * concurrent resume attempts. We check if an alarm is already  managing the
-                     * retry schedule - if so, defer to it. Even without an alarm, we respect the
-                     * backoff delay based on `lastCalledAt` to prevent hammering the resume logic. */
-                    const alarmTime = await ctx.service.auth.alarms.autoResumeAlarm.when();
-
-                    if (alarmTime !== undefined) {
-                        const delay = msToEpoch(alarmTime) - getEpoch();
-                        logger.info(`[Activation] Automatic session resume scheduled in ${delay}s`);
-                        return false;
-                    }
-
-                    const { lastCalledAt, callCount } = ctx.service.auth.resumeSession;
-                    const nextResumeTime = (lastCalledAt ?? 0) + getAutoResumeDelay(callCount);
-                    const delay = nextResumeTime - getEpoch();
-
-                    if (delay > 0) {
-                        logger.info(`[Activation] Automatic session resume stalled for ${delay}s`);
+                    /* Non-popup clients (content-scripts, settings page, etc.) defer to the
+                     * alarm-driven retry chain. `isResumeThrottled` covers both the "alarm
+                     * pending" case (chain alive) and the "post-max window" (chain exhausted) */
+                    if (await ctx.service.auth.alarms.isResumeThrottled()) {
+                        logger.info(`[Activation] Automatic session resume throttled`);
                         return false;
                     }
 
@@ -247,14 +226,27 @@ export const createActivationService = () => {
                 return false;
             })();
 
+            /** NOTE: `retryable: false` -> don't start resume chain from client inits */
             if (shouldResume) void ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: false });
 
             /** Dispatch a wakeup action for client app receivers. Tracking the wakeup's request metadata
              * can be consumed in the UI to infer wakeup result - see `wakeup.saga.ts` no need for any redux
              * operations on content-script wakeup as it doesn't hold any state. */
-            if (clientApp) await ctx.service.store.dispatchAsyncRequest(clientInit, { status, endpoint, tabId });
+            if (fromClientApp) await ctx.service.store.dispatchAsyncRequest(clientInit, { status, endpoint, tabId });
 
-            if (message.sender === 'popup') {
+            if (fromPopup) {
+                /** Try a background offline-resume when opening the popup
+                 * and connectivity is available. */
+                if (clientOffline(status) && ctx.service.connectivity.online) {
+                    ctx.service.store.dispatch(
+                        offlineResume.intent({
+                            localID: authStore.getLocalID(),
+                            silence: true,
+                            retryable: false,
+                        })
+                    );
+                }
+
                 WorkerMessageBroker.buffer.flush().forEach((notification) => {
                     WorkerMessageBroker.ports
                         .query((name) => isPopupPort(name, tabId))
@@ -263,10 +255,9 @@ export const createActivationService = () => {
             }
 
             const settings = sanitizeSettings(await ctx.service.settings.resolve(), ctx.service.store.getState());
-            // Note: in the future we can modify this to add featureFlags variants in the extension content script
             const { features } = await ctx.service.featureFlags.resolve();
-            const connectivity = ctx.service.connectivity.getStatus();
-            const session: Partial<AuthSession> = clientApp ? ctx.service.auth.config.authStore.getSession() : {};
+            const connectivity = ctx.service.connectivity.status;
+            const session: Partial<AuthSession> = fromClientApp ? ctx.service.auth.config.authStore.getSession() : {};
 
             return { state: ctx.getState(), features, settings, connectivity, session };
         }
@@ -379,7 +370,6 @@ export const createActivationService = () => {
     void setupExtensionBadge();
 
     return {
-        boot: handleBoot,
         onInstall: handleInstall,
         onStartup: handleStartup,
         onUpdateAvailable: handleOnUpdateAvailable,
