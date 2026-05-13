@@ -2,25 +2,29 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .file-card {
-	border-radius: rem(12);
+	$radius: rem(12);
+
+	border-radius: $radius;
+
+	&-preview {
+		overflow: hidden;
+		border-start-start-radius: $radius;
+		border-start-end-radius: $radius;
+	}
+
+	.button-for-icon.button-small {
+		--padding-block: 0;
+	}
 
 	&-dismiss-button {
 		position: absolute;
-		inset-block-start: #{rem(-6)};
-		inset-inline-end: #{rem(-6)};
+		inset-block-start: #{rem(-8)};
+		inset-inline-end: #{rem(-8)};
 		z-index: 10;
-		background: var(--background-norm);
-		border: 1px solid var(--border-weak);
-		border-radius: 50%;
-		box-shadow: var(--shadow-norm);
 		opacity: 0;
 		visibility: hidden;
-		transition:
-			opacity 0.2s ease,
-			visibility 0.2s ease;
-		inline-size: #{rem(24)};
-		block-size: #{rem(24)};
-		padding: #{rem(3)};
+		inline-size: #{rem(22)};
+		block-size: #{rem(22)};
 	}
 
 	&:hover {
@@ -34,5 +38,45 @@
 
 	p {
 		margin: 0;
+	}
+
+	&-footer {
+		border-block-start: 1px solid var(--border-weak);
+		border-end-start-radius: $radius;
+		border-end-end-radius: $radius;
+
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+		gap: rem(8);
+	}
+
+	&-info {
+		display: contents;
+	}
+
+	&-info-text {
+		min-inline-size: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+	}
+
+	&-preview--text {
+		font-size: rem(7) !important;
+		white-space: pre-wrap;
+		word-break: break-word;
+		overflow-wrap: anywhere;
+		line-height: 1.25;
+		mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+		mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+	}
+
+	&-pasted-badge {
+		inset-block-end: #{rem(10)};
+		inset-inline-start: #{rem(10)};
+		letter-spacing: 0.05em;
+		z-index: 1;
 	}
 }

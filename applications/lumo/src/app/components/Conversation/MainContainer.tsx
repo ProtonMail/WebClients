@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 
+import { useModalStateObject } from '@proton/components';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -10,11 +11,13 @@ import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useOnboardingContext } from '../../providers/OnboardingProvider';
+import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
 import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
+import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
 import { LumoCat } from '../LumoAvatar';
 import WhatsNew from '../WhatsNew/WhatsNew';
@@ -49,6 +52,16 @@ const MainContainer = ({
         autoShowDriveBrowser?: boolean;
     }>({ type: null });
     const { isGhostChatMode } = useGhostChat();
+    const filePreviewModal = useModalStateObject();
+    const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
+
+    const handleOpenFilePreview = useCallback(
+        (attachment: Attachment) => {
+            setPreviewAttachment(attachment);
+            filePreviewModal.openModal(true);
+        },
+        [filePreviewModal]
+    );
 
     // Files panel handlers
     const handleOpenFiles = useCallback((message?: Message) => {
@@ -139,6 +152,7 @@ const MainContainer = ({
                         setIsEditorEmpty={setIsEditorEmpty}
                         handleOpenFiles={handleOpenFiles}
                         onShowDriveBrowser={handleShowDriveBrowser}
+                        onOpenFilePreview={handleOpenFilePreview}
                         canShowLegalDisclaimer={isGuest && isSmallScreen}
                         canShowLumoUpsellToggle={true}
                         initialQuery={promptSuggestion || initialQuery}
@@ -147,6 +161,9 @@ const MainContainer = ({
                 </div>
                 <WhatsNew />
             </div>
+            {filePreviewModal.render && previewAttachment && (
+                <FilePreviewModal attachment={previewAttachment} {...filePreviewModal.modalProps} />
+            )}
             {openPanel.type === 'files' && (
                 <FilesManagementView
                     messageChain={[]} // Empty message chain for MainContainer
