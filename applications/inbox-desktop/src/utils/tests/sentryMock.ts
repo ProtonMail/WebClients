@@ -15,6 +15,7 @@ jest.mock("@sentry/electron/main", () => ({
             setTags: jest.fn(),
             setLevel: jest.fn(),
             setContext: jest.fn(),
+            setFingerprint: jest.fn(),
         }),
     ),
 }));
