@@ -14,12 +14,13 @@ import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridg
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { mimeToHuman } from '../../../util/filetypes';
+import { isPastedContentAttachment } from '../../../util/pastedContentHelper';
 
 import './AttachmentFileCard.scss';
 
 // Constants
-const CARD_WIDTH = '11rem';
-const PREVIEW_SIZE = '2.5rem';
+const CARD_WIDTH = '9rem';
+const CARD_HEIGHT = '6.5rem';
 
 interface AttachmentFileCardProps {
     attachment: Attachment;
@@ -45,34 +46,41 @@ const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): st
 interface FilePreviewProps {
     processing?: boolean;
     previewUrl: string | null;
+    previewText?: string;
     filename: string;
     mimeTypeIcon: string;
 }
 
-const FilePreview = ({ processing, previewUrl, filename, mimeTypeIcon }: FilePreviewProps) => {
+const FilePreview = ({ processing, previewUrl, previewText, filename, mimeTypeIcon }: FilePreviewProps) => {
     if (processing) {
         return (
-            <div
-                className="mr-1 flex items-center justify-center"
-                style={{ width: PREVIEW_SIZE, height: PREVIEW_SIZE }}
-            >
-                <CircularProgress progress={75} size={20} />
+            <div className="file-card-preview flex-1 min-h-0 flex items-center justify-center">
+                <CircularProgress progress={75} size={28} />
             </div>
         );
     }
 
     if (previewUrl) {
         return (
-            <img
-                src={previewUrl}
-                alt={filename}
-                className="mr-1 rounded object-cover"
-                style={{ width: PREVIEW_SIZE, height: PREVIEW_SIZE }}
-            />
+            <div className="file-card-preview flex-1 min-h-0 overflow-hidden">
+                <img src={previewUrl} alt={filename} className="w-full h-full object-cover" />
+            </div>
         );
     }
 
-    return <FileIcon mimeType={mimeTypeIcon} size={10} className="mr-1" />;
+    if (previewText) {
+        return (
+            <div className="file-card-preview file-card-preview--text flex-1 min-h-0 overflow-hidden p-3 text-xs color-weak">
+                {previewText}
+            </div>
+        );
+    }
+
+    return (
+        <div className="file-card-preview flex-1 min-h-0 flex items-center justify-center">
+            <FileIcon mimeType={mimeTypeIcon} size={10} />
+        </div>
+    );
 };
 
 interface RemoveButtonProps {
@@ -116,22 +124,26 @@ interface FileInfoProps {
     prettyType: string;
     processing?: boolean;
     autoRetrieved?: boolean;
+    mimeTypeIcon: string;
 }
 
-const FileInfo = ({ filename, prettyType, processing, autoRetrieved }: FileInfoProps) => (
-    <div className="relative flex-1 flex flex-column items-start gap-0.5 min-w-0">
-        <p className="m-0 text-ellipsis w-full font-medium file-title" title={filename}>
-            {filename}
-        </p>
-        <p className="m-0 text-xs color-weak w-full text-ellipsis file-subtitle" title={prettyType}>
-            {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
-        </p>
-        {autoRetrieved && (
-            <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
-                <IcMagicWand size={3} />
-                {c('collider_2025:Info').t`Auto-retrieved`}
-            </span>
-        )}
+const FileInfo = ({ filename, prettyType, processing, autoRetrieved, mimeTypeIcon }: FileInfoProps) => (
+    <div className="file-card-info">
+        <FileIcon mimeType={mimeTypeIcon} size={6} className="file-card-info-icon" />
+        <div className="file-card-info-text">
+            <p className="m-0 text-ellipsis font-medium file-title text-xs" title={filename}>
+                {filename}
+            </p>
+            <p className="m-0 text-xs color-weak text-ellipsis file-subtitle" title={prettyType}>
+                {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
+            </p>
+            {autoRetrieved && (
+                <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
+                    <IcMagicWand size={3} />
+                    {c('collider_2025:Info').t`Auto-retrieved`}
+                </span>
+            )}
+        </div>
     </div>
 );
 
@@ -186,35 +198,54 @@ export const AttachmentFileCard = ({
         }
     };
 
+    const isPasted = isPastedContentAttachment(attachment);
+    const isImage = !!previewUrl;
+
+    const rawText = attachment.markdown?.trim() ?? '';
+    const previewText = !isImage && rawText ? String(rawText).substring(0, 60) : undefined;
+
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
             className={clsx(
-                'file-card group relative border border-weak p-2 bg-norm text-hint w-custom transition-all',
+                'file-card group relative border border-weak bg-norm text-hint w-custom h-custom transition-all flex flex-column',
                 canClick && 'cursor-pointer hover:border-norm hover:bg-weak',
                 className
             )}
-            style={{ '--w-custom': CARD_WIDTH }}
+            style={{ '--w-custom': CARD_WIDTH, '--h-custom': CARD_HEIGHT }}
             onClick={handleCardClick}
         >
             {!readonly && onRemove && <RemoveButton processing={processing} onRemove={onRemove} />}
 
-            <div className="flex flex-row flex-nowrap gap-2 items-start">
-                <FilePreview
-                    processing={processing}
-                    previewUrl={previewUrl}
-                    filename={filename}
-                    mimeTypeIcon={mimeTypeIcon}
-                />
-                <FileInfo
-                    filename={filename}
-                    prettyType={prettyType}
-                    processing={processing}
-                    autoRetrieved={attachment.autoRetrieved}
-                />
-            </div>
+            <FilePreview
+                processing={processing}
+                previewUrl={previewUrl}
+                previewText={previewText}
+                filename={filename}
+                mimeTypeIcon={mimeTypeIcon}
+            />
 
-            {hasError && <ErrorDisplay errorMessage={errorMessage} />}
+            {isPasted ? (
+                <span className="file-card-pasted-badge absolute inline-block border border-weak rounded-sm px-2 py-1 text-xs font-semibold color-norm bg-norm">
+                    {c('collider_2025:Info').t`PASTED`}
+                </span>
+            ) : (
+                <div className="file-card-footer shrink-0 px-3 py-2 bg-norm overflow-hidden">
+                    <FileInfo
+                        filename={filename}
+                        prettyType={prettyType}
+                        processing={processing}
+                        autoRetrieved={attachment.autoRetrieved}
+                        mimeTypeIcon={mimeTypeIcon}
+                    />
+                </div>
+            )}
+
+            {hasError && (
+                <div className="px-3 pb-2">
+                    <ErrorDisplay errorMessage={errorMessage} />
+                </div>
+            )}
         </div>
     );
 };
