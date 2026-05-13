@@ -25,10 +25,20 @@ jest.mock("./log/getOSInfo", () => ({
     getOSInfo: jest.fn(() => ({ cpuCount: 8 })),
 }));
 
-import { captureMessage, captureException, withScope } from "@sentry/electron/main";
+import { captureException, withScope } from "@sentry/electron/main";
 import { getMainWindow } from "./view/viewManagement";
 import { sentryReport } from "./sentryReport";
 const { reportMessage, reportException } = sentryReport;
+
+function makeMockScope() {
+    return {
+        setExtras: jest.fn(),
+        setTags: jest.fn(),
+        setLevel: jest.fn(),
+        setContext: jest.fn(),
+        setFingerprint: jest.fn(),
+    };
+}
 
 describe("collectContext failure", () => {
     beforeEach(() => {
@@ -39,12 +49,7 @@ describe("collectContext failure", () => {
         (getMainWindow as jest.Mock).mockImplementationOnce(() => {
             throw new Error("window not ready");
         });
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
@@ -60,20 +65,15 @@ describe("reportMessage", () => {
         jest.clearAllMocks();
     });
 
-    it("calls captureMessage with correct level and centralized context", () => {
+    it("calls captureException with correct level and centralized context", () => {
         reportMessage("something went wrong", { level: "warning" });
 
         expect(withScope).toHaveBeenCalledTimes(1);
-        expect(captureMessage).toHaveBeenCalledWith("something went wrong");
+        expect(captureException).toHaveBeenCalledWith(expect.objectContaining({ message: "something went wrong" }));
     });
 
     it("attaches additional tags when provided", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("test message", { tags: { viewID: "mail" } });
@@ -82,12 +82,7 @@ describe("reportMessage", () => {
     });
 
     it("attaches error as extra context when provided", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         const error = new Error("underlying cause");
@@ -101,12 +96,7 @@ describe("reportMessage", () => {
     });
 
     it("merges call-site extras with collected context", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("did-fail-load", {
@@ -123,17 +113,22 @@ describe("reportMessage", () => {
     });
 
     it("defaults to error level when no level is specified", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("test");
 
         expect(mockScope.setLevel).toHaveBeenCalledWith("error");
+    });
+
+    it("sets fingerprint to the message string so each distinct message creates a separate Sentry issue", () => {
+        const mockScope = makeMockScope();
+        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+
+        reportMessage("renderer unresponsive");
+
+        expect(mockScope.setFingerprint).toHaveBeenCalledWith(["renderer unresponsive"]);
+        expect(captureException).toHaveBeenCalledWith(expect.objectContaining({ message: "renderer unresponsive" }));
     });
 });
 
@@ -143,12 +138,7 @@ describe("reportException", () => {
     });
 
     it("calls captureException with the error object", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         const error = new Error("crash");
@@ -158,12 +148,7 @@ describe("reportException", () => {
     });
 
     it("includes centralized context in extras", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
@@ -182,12 +167,7 @@ describe("reportException", () => {
     });
 
     it("defaults to error level", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
@@ -196,16 +176,21 @@ describe("reportException", () => {
     });
 
     it("attaches tags when provided", () => {
-        const mockScope = {
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-        };
+        const mockScope = makeMockScope();
         (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"), { tags: { component: "autoUpdater" } });
 
         expect(mockScope.setTags).toHaveBeenCalledWith(expect.objectContaining({ component: "autoUpdater" }));
+    });
+
+    it("includes error.name in fingerprint so same-message different-type errors create separate Sentry issues", () => {
+        const mockScope = makeMockScope();
+        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+
+        const error = new TypeError("request failed");
+        reportException(error);
+
+        expect(mockScope.setFingerprint).toHaveBeenCalledWith(["TypeError", "request failed"]);
     });
 });

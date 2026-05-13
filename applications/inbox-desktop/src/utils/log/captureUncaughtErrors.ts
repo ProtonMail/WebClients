@@ -25,9 +25,14 @@ export function captureUncaughtErrors() {
 
         if (unhandledRejectionCount % UNHANDLED_REJECTION_REPORT_MODULO === 0) {
             if (reason instanceof Error) {
-                sentryReport.reportException(reason);
+                sentryReport.reportException(reason, {
+                    extras: { occurrenceCount: unhandledRejectionCount },
+                });
             } else {
-                sentryReport.reportMessage(`unhandledRejection: ${String(reason)}`, { level: "error" });
+                sentryReport.reportMessage(`unhandledRejection: ${String(reason)}`, {
+                    level: "error",
+                    extras: { occurrenceCount: unhandledRejectionCount },
+                });
             }
         }
     });
@@ -44,9 +49,14 @@ export function captureTopLevelRejection(reason: unknown, origin?: NodeJS.Uncaug
     mainLogger.error("uncaughtException", reason, origin);
 
     if (reason instanceof Error) {
-        sentryReport.reportException(reason);
+        sentryReport.reportException(reason, {
+            tags: { origin: origin ?? "uncaughtException" },
+        });
     } else {
-        sentryReport.reportMessage(`uncaughtException: ${String(reason)}`, { level: "fatal" });
+        sentryReport.reportMessage(`uncaughtException: ${String(reason)}`, {
+            level: "fatal",
+            tags: { origin: origin ?? "uncaughtException" },
+        });
     }
 
     dialog.showErrorBox(
