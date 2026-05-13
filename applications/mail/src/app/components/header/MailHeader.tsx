@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import FloatingButton from '@proton/components/components/button/FloatingButton';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
@@ -9,34 +8,33 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
+import type { MailboxActions } from 'proton-mail/router/interface';
 import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { getLabelName } from '../../helpers/labels';
-import { isColumnMode } from '../../helpers/mailSettings';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
-import MailSearch from './search/MailSearch';
+import { MailHeaderActionArea } from './MailHeaderActionArea';
 
 interface Props {
     labelID: string;
     elementID: string | undefined;
-    selectedIDs: string[];
-    toolbar?: ReactNode | undefined;
+    elementsData: ElementsStructure;
+    actions: MailboxActions;
     settingsButton?: ReactNode;
+    toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsButton }: Props) => {
-    const location = useLocation();
+const MailHeader = ({ labelID, elementID, elementsData, actions, toolbar, settingsButton }: Props) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const [mailSettings] = useMailSettings();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A7EB47
@@ -49,16 +47,11 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
     const hideMenuButton = breakpoints.viewportWidth['<=small'] && !!elementID;
     const hideUpsellButton =
         (breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium) &&
-        (!!elementID || selectedIDs.length !== 0);
+        (!!elementID || actions.selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
-
-    const isColumn = isColumnMode(mailSettings);
 
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
     const shouldDragInElectronMailClassName = hasComposerInFocus && isElectronMail ? 'ignore-drag' : '';
-
-    /** Search is displayed everytime except when we are on message view with row mode */
-    const displaySearch = !(!isColumn && elementID);
 
     return (
         <>
@@ -69,20 +62,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], toolbar, settingsBut
                 hideMenuButton={hideMenuButton}
                 hideUpsellButton={hideUpsellButton}
                 title={labelName}
-                actionArea={
-                    breakpoints.viewportWidth['<=small'] ||
-                    breakpoints.viewportWidth.medium ||
-                    (breakpoints.viewportWidth.large && elementID) ? (
-                        <div className="flex-1 flex flex-nowrap justify-space-between">
-                            {toolbar}
-                            {!elementID && <MailSearch labelID={labelID} location={location} columnMode={isColumn} />}
-                        </div>
-                    ) : displaySearch ? (
-                        <MailSearch labelID={labelID} location={location} columnMode={isColumn} />
-                    ) : (
-                        <>{toolbar}</>
-                    )
-                }
+                actionArea={<MailHeaderActionArea toolbar={toolbar} actions={actions} elementsData={elementsData} />}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={breakpoints.viewportWidth['<=small']}

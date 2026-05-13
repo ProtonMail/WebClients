@@ -15,6 +15,7 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/s
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import MailHeader from 'proton-mail/components/header/MailHeader';
@@ -50,13 +51,14 @@ export const RouterMailboxContainer = () => {
     const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
-    const { selectedIDs } = actions;
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const hasRowMode = !isColumnModeActive;
 
     const [isResizing, setIsResizing] = useState(false);
+
+    const isRefreshedToolbarUIDisabled = useFlag('RefreshedToolbarUIDisabled');
 
     /**
      * Temporary: Router mailbox side effects
@@ -120,13 +122,14 @@ export const RouterMailboxContainer = () => {
             isResizing={isResizing}
         >
             <MailHeader
+                elementsData={elementsData}
+                actions={actions}
                 elementID={elementID}
-                selectedIDs={selectedIDs}
                 labelID={labelID}
                 settingsButton={<InboxQuickSettingsAppButton />}
                 toolbar={
                     // Show toolbar in header when in row layout and an email is selected
-                    (!isColumnModeActive && elementID) || viewPortIsNarrow ? (
+                    isRefreshedToolbarUIDisabled && ((!isColumnModeActive && elementID) || viewPortIsNarrow) ? (
                         <MailboxToolbar
                             inHeader
                             params={params}
