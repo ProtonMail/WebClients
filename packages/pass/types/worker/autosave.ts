@@ -13,7 +13,7 @@ type AutosaveCreate<DTO = {}> = { type: AutosaveMode.NEW } & DTO;
 type AutosaveUpdate<DTO = {}> = { type: AutosaveMode.UPDATE } & DTO;
 type AutosaveCandidates = { candidates: LoginItemPreview[] };
 
-type AutosaveCreateDTO = AutosaveCreate<SelectedShare>;
+type AutosaveCreateDTO = AutosaveCreate<SelectedShare & { optimisticId: string }>;
 type AutosaveUpdateDTO = AutosaveUpdate<SelectedItem>;
 type AutosaveRequestData = FormCredentials & { name: string; passkey?: SanitizedPasskey };
 export type AutosaveRequest = (AutosaveCreateDTO | AutosaveUpdateDTO) & AutosaveRequestData;

@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { Maybe } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 
 export type PasswordTypeSwitch<T> = { extra: T; sso: T; default: T; twoPwd: T };
 export type PasswordTypeConfig = Omit<PasswordTypeSwitch<boolean>, 'default'>;
@@ -28,4 +31,32 @@ export const getInvalidPasswordString = (authStore: AuthStore) => {
         sso: c('Error').t`Wrong backup password`,
         twoPwd: c('Error').t`Wrong second password`,
     });
+};
+
+/** Resolves the locked `AppStatus` the app should sit in before unlock.
+ *  - No offline crypto material → cannot lock locally
+ *  - Offline + offline-mode disabled → cannot unlock locally
+ *  - BIOMETRICS: prefers `BIOMETRICS_LOCKED` when `encryptedOfflineKD` exists,
+ *    otherwise falls back to `PASSWORD_LOCKED` as recovery path
+ *  - PASSWORD: `PASSWORD_LOCKED`.
+ *  - SESSION / NONE (default): only locks when offline via `PASSWORD_LOCKED` */
+export const getInitialLockedAppStatus = (
+    authStore: AuthStore,
+    params: { offlineEnabled: boolean; offline: boolean }
+): Maybe<AppStatus> => {
+    const lockMode = authStore.getLockMode();
+    const encryptedOfflineKD = authStore.getEncryptedOfflineKD();
+
+    if (!authStore.hasOfflineComponents()) return;
+    if (params.offline && !params.offlineEnabled) return;
+
+    switch (lockMode) {
+        case LockMode.BIOMETRICS:
+            return encryptedOfflineKD ? AppStatus.BIOMETRICS_LOCKED : AppStatus.PASSWORD_LOCKED;
+        case LockMode.PASSWORD:
+            return AppStatus.PASSWORD_LOCKED;
+        default:
+            if (params.offline) return AppStatus.PASSWORD_LOCKED;
+            break;
+    }
 };

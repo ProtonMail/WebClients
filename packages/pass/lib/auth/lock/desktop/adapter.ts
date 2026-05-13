@@ -1,6 +1,6 @@
+import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
-import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { sendSetupLockSecretMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
 import type { LockAdapterDesktop } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -32,25 +32,13 @@ export const desktopLockAdapterFactory = (
     auth: AuthService,
     nativeMessaging: NativeMessagingService
 ): LockAdapterDesktop => {
-    const { authStore, getPersistedSession, onSessionPersist } = auth.config;
-
-    const setRetryCount = async (retryCount: number) => {
-        authStore.setUnlockRetryCount(retryCount);
-        const localID = authStore.getLocalID();
-        const encryptedSession = await getPersistedSession(localID);
-        if (encryptedSession) {
-            encryptedSession.unlockRetryCount = retryCount;
-            await onSessionPersist?.(JSON.stringify(encryptedSession));
-        }
-    };
+    const { authStore } = auth.config;
 
     const adapter: LockAdapterDesktop = {
         type: LockMode.DESKTOP,
 
         check: async () => {
             logger.info(`[DesktopLock] checking desktop lock`);
-
-            authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
@@ -107,17 +95,17 @@ export const desktopLockAdapterFactory = (
             const verifier = authStore.getDesktopLockVerifier();
             if (!verifier) throw new NativeMessageError(NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED);
 
-            const retryCount = authStore.getUnlockRetryCount() + 1;
+            const unlockRetryCount = authStore.getUnlockRetryCount() + 1;
 
             /** Empty secret means the native messaging fetch failed and was already
              * notified to the user — SilentError counts the attempt without a duplicate notification */
             if (!secret) {
-                if (retryCount >= 3) {
+                if (unlockRetryCount >= 3) {
                     await auth.logout({ soft: false, broadcast: true });
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
-                await setRetryCount(retryCount).catch(noop);
+                await auth.syncLock({ unlockRetryCount }).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true });
                 throw new SilentError();
             }
@@ -126,19 +114,18 @@ export const desktopLockAdapterFactory = (
             const verified = await checkVerifier(secret, verifier).catch(() => false);
 
             if (!verified) {
-                if (retryCount >= 3) {
+                if (unlockRetryCount >= 3) {
                     await auth.logout({ soft: false, broadcast: true });
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
-                await setRetryCount(retryCount).catch(noop);
+                await auth.syncLock({ unlockRetryCount }).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true });
                 throw new NativeMessageError(NativeMessageErrorType.SECRET_MISMATCH);
             }
 
             authStore.setLocked(false);
-            await setRetryCount(0).catch(noop);
-            await adapter.check();
+            await auth.syncLock({ unlockRetryCount: 0, lockLastExtendTime: getEpoch() }).catch(noop);
 
             return secret;
         }),
