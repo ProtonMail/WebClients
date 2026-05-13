@@ -1,4 +1,5 @@
 import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
+import type { DecryptedActionPayload } from '@proton/pass/lib/crypto/processes/access-token/open-action-payload';
 import type { Group, GroupWithPublicKeys } from '@proton/pass/lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
@@ -182,6 +183,32 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         fileID: FileID;
         linkKey: string;
     }) => Promise<Uint8Array<ArrayBuffer>>;
+
+    /** Generates a fresh 32-byte raw access-token key, encrypts+signs it
+     * with the user's primary key, and returns both forms.
+     * Raw key never persists in the worker; the saga forwards it to the
+     * server (encrypted) and to the user (raw, base64-url) once. */
+    createAccessTokenKey: () => Promise<{ encrypted: string; raw: Uint8Array<ArrayBuffer> }>;
+
+    /** Recovers the raw 32 bytes of a stored access-token key by
+     * decrypting it with the user's primary private key. */
+    openAccessTokenKey: (encryptedKey: string) => Promise<Uint8Array<ArrayBuffer>>;
+
+    /** Wraps every rotation of a vault's share keys with the raw PAT key
+     * (AES-GCM, AAD=ShareKey) so the holder of the PAT can decrypt items
+     * in that vault. */
+    createAccessTokenShareKeys: (data: {
+        rawPatKey: Uint8Array<ArrayBuffer>;
+        shareId: ShareId;
+    }) => Promise<KeyRotationKeyPair[]>;
+
+    /** Decrypts + protobuf-decodes an `ActionPayload` carried by a
+     * pat-monitor record, using the raw PAT key as the symmetric key
+     * (AAD = "proton.pass.payload"). Returns `null` for empty input. */
+    openActionPayload: (data: {
+        encodedPayload: string;
+        rawPatKey: Uint8Array<ArrayBuffer>;
+    }) => Promise<MaybeNull<DecryptedActionPayload>>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {

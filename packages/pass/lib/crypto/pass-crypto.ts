@@ -668,6 +668,27 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             });
         },
 
+        async createAccessTokenKey() {
+            assertHydrated(context);
+            const { publicKey, privateKey } = context.primaryUserKey;
+            return processes.createAccessTokenKey(publicKey, privateKey);
+        },
+
+        async openAccessTokenKey(encryptedKey) {
+            assertHydrated(context);
+            const { publicKey, privateKey } = context.primaryUserKey;
+            return processes.openAccessTokenKey(encryptedKey, privateKey, publicKey);
+        },
+
+        async createAccessTokenShareKeys({ rawPatKey, shareId }) {
+            const shareKeys = worker.getShareManager(shareId).getVaultShareKeys();
+            return processes.createAccessTokenShareKeys(rawPatKey, shareKeys);
+        },
+
+        async openActionPayload({ encodedPayload, rawPatKey }) {
+            return processes.openActionPayload(encodedPayload, rawPatKey);
+        },
+
         async openSecureLinkFileDescriptor({
             encryptedItemKey,
             encryptedFileKey,

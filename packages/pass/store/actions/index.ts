@@ -1,4 +1,5 @@
 export * from './creators/access';
+export * from './creators/access-token';
 export * from './creators/alias';
 export * from './creators/api';
 export * from './creators/auth';

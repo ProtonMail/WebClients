@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package proton_pass_action_payload_v1;
+
+message AgentAction {
+	string reason = 1;
+	string vault_name = 2;
+	string item_name = 3;
+	string folder_name = 4;
+}
+
+message ActionPayload {
+	oneof content {
+		AgentAction agent_action = 1;
+	}
+}
