@@ -45,7 +45,7 @@ const RecoveryPhoneBadge = () => {
     if (isSentinelUser && (state.type === 'active' || state.type === 'unverified')) {
         return (
             <StatusBadge
-                status={StatusBadgeStatus.Warning}
+                status={StatusBadgeStatus.Danger}
                 text={c('Status').t`Disable recovery by phone`}
                 icon={IcShieldExclamationFilled}
             />
