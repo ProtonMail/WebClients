@@ -109,10 +109,10 @@ export function* hydrate(
             else if (autofill.cc === undefined) autofill.cc = true;
         }
 
-        /** Activate offline mode by default if user
-         * has an offline password available */
+        /** Activate offline mode by default if user has an offline password available. */
         const hasOfflinePassword = authStore.hasOfflinePassword();
-        settings.offlineEnabled = hasOfflinePassword;
+        const offlineFlag = !EXTENSION_BUILD || (userState.features.PassExtensionOfflineV1 ?? false);
+        settings.offlineEnabled = offlineFlag && hasOfflinePassword;
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();

@@ -17,7 +17,6 @@ import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import type { FormEntry } from '@proton/pass/types/worker/form';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -128,7 +127,7 @@ export const createAutoSaveService = () => {
                     .dispatchAsyncRequest(itemCreate, {
                         ...item.data,
                         extraData: { withAlias: false },
-                        optimisticId: uniqueId(),
+                        optimisticId: payload.optimisticId,
                         shareId: payload.shareId,
                         files: filesFormInitializer(),
                     })

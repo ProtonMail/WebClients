@@ -37,19 +37,28 @@ import {
     isLockChangeReauth,
     isOfflinePasswordReauth,
 } from '@proton/pass/lib/auth/reauth';
-import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
+import { type AuthService, createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
+import { getInitialLockedAppStatus } from '@proton/pass/lib/auth/utils';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
-import { clientBooted } from '@proton/pass/lib/client';
-import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
+import { clientBooted, clientOffline } from '@proton/pass/lib/client';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import {
+    bootIntent,
+    cacheCancel,
+    lockSync,
+    offlineResume,
+    stateDestroy,
+    stopEventPolling,
+} from '@proton/pass/store/actions';
 import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     getBasename,
@@ -64,6 +73,8 @@ import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import type { AuthScheduler } from './auth.scheduler';
+import { createAuthScheduler } from './auth.scheduler';
 import {
     clearPendingRevocations,
     getDefaultLocalID,
@@ -82,8 +93,13 @@ type AuthServiceBindings = {
     core: PassCoreContextValue;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
-    getOnline: () => boolean;
+    connectivity: ConnectivityService;
     onNotification: (notification: CreateNotificationOptions) => void;
+};
+
+export type WebAuthService = AuthService & {
+    listen: () => () => void;
+    scheduler: AuthScheduler;
 };
 
 export const createAuthService = ({
@@ -91,22 +107,20 @@ export const createAuthService = ({
     authSwitch,
     config,
     core,
+    connectivity,
     history,
     sw,
-    getOnline,
     onNotification,
 }: AuthServiceBindings) => {
     const redirect = objectHandler(getBootRedirection(history.location));
+    const scheduler = createAuthScheduler();
 
-    const canUnlockOffline = async (localID?: number): Promise<boolean> =>
-        canLocalUnlock({
-            lockMode: authStore.getLockMode(),
-            offline: !getOnline(),
-            offlineConfig: authStore.getOfflineConfig(),
-            offlineVerifier: authStore.getOfflineVerifier(),
-            offlineEnabled: (await core.settings.resolve(localID))?.offlineEnabled ?? false,
-            encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
-        });
+    /** Wraps `bootIntent` dispatch with a scheduler reset: any successful boot
+     *  invalidates the offline-resume retry chain. */
+    const boot = (payload: Parameters<typeof bootIntent>[0]) => {
+        scheduler.reset();
+        store.dispatch(bootIntent(payload));
+    };
 
     const auth = createCoreAuthService({
         api,
@@ -139,7 +153,7 @@ export const createAuthService = ({
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
             const validActiveSession = authStore.validSession(authStore.getSession());
-            options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && getOnline());
+            options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && connectivity.online);
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
@@ -167,7 +181,7 @@ export const createAuthService = ({
                 if (theme) core.theme.setState(theme);
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
-                const onlineAndSessionReady = getOnline() && !cookieUpgrade;
+                const onlineAndSessionReady = connectivity.online && !cookieUpgrade;
                 await authSwitch.sync({ revalidate: onlineAndSessionReady });
 
                 if (onlineAndSessionReady) {
@@ -191,14 +205,13 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                if (await canUnlockOffline(localID)) {
-                    authStore.setPassword(undefined);
-                    const appStatus =
-                        authStore.getLockMode() === LockMode.BIOMETRICS
-                            ? AppStatus.BIOMETRICS_LOCKED
-                            : AppStatus.PASSWORD_LOCKED;
+                const offlineEnabled = (await core.settings.resolve(localID))?.offlineEnabled ?? false;
+                const offline = !connectivity.online;
+                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline });
 
-                    app.setStatus(appStatus);
+                if (initialLockedStatus) {
+                    authStore.setPassword(undefined);
+                    app.setStatus(initialLockedStatus);
                     return false;
                 }
             }
@@ -210,7 +223,7 @@ export const createAuthService = ({
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!getOnline() && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
+            if (!connectivity.online && authStore.hasSession()) app.setStatus(AppStatus.ERROR);
             else if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another app.
@@ -228,22 +241,17 @@ export const createAuthService = ({
         },
 
         onLoginStart: () => {
-            if (app.getState().booted) return;
-            return app.setStatus(AppStatus.AUTHORIZING);
+            if (!app.getState().booted) app.setStatus(AppStatus.AUTHORIZING);
         },
 
         onLoginComplete: async (_, localID, reauth) => {
+            scheduler.reset();
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
 
-            const persistedSession = await auth.config.getPersistedSession(localID);
             /** Updates session timestamp to track last login, ensuring
              * this session loads first when opening new tabs */
-            if (persistedSession) {
-                persistedSession.lastUsedAt = getEpoch();
-                const lastUsedSession = JSON.stringify(persistedSession);
-                void auth.config.onSessionPersist?.(lastUsedSession);
-            }
+            await auth.syncPersistedSession(localID, { lastUsedAt: getEpoch() });
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
@@ -268,7 +276,7 @@ export const createAuthService = ({
 
                 history.replace({ ...history.location, ...route });
                 app.setStatus(AppStatus.AUTHORIZED);
-                store.dispatch(bootIntent({ reauth }));
+                boot({ reauth, offline: false });
             }
         },
 
@@ -286,6 +294,7 @@ export const createAuthService = ({
         },
 
         onLogoutComplete: async (userID, localID, broadcast) => {
+            scheduler.reset();
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
 
@@ -502,20 +511,15 @@ export const createAuthService = ({
         onUnlocked: async (mode, _, localID, offline) => {
             if (clientBooted(app.getState().status)) return;
 
-            if (mode === LockMode.SESSION) {
-                /** If the unlock request was triggered before the authentication
-                 * store session was fully hydrated, trigger a session resume. */
-                await auth.resumeSession(localID, { retryable: false, unlocked: true });
-            }
-
-            if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
-                if (offline) store.dispatch(bootIntent({ offline: true }));
-                else {
-                    /** User may have resumed connection while trying to offline-unlock,
-                     * as such force-lock if the lock mode requires it */
-                    const forceLock = authStore.getLockMode() === LockMode.SESSION;
-                    await auth.resumeSession(localID, { retryable: false, forceLock });
-                }
+            switch (mode) {
+                case LockMode.SESSION:
+                    await auth.resumeSession(localID, { retryable: false, unlocked: true });
+                    break;
+                case LockMode.PASSWORD:
+                case LockMode.BIOMETRICS:
+                    if (offline) boot({ offline: true });
+                    else await auth.resumeSession(localID, { retryable: false, unlocked: true });
+                    break;
             }
         },
 
@@ -547,10 +551,32 @@ export const createAuthService = ({
             sw?.send({ type: 'session', localID, data, broadcast: true });
         },
 
-        onSessionFailure: () => {
+        onSessionFailure: async (options, err) => {
             logger.info('[AuthServiceProvider] Session resume failure');
+            await api.idle();
+
+            /** Only advance the retry chain on real connectivity failures. */
+            const connectionIssue = getIsConnectionIssue(err);
+            if (connectionIssue) scheduler.attempt();
+
+            /** Offline-booted: do not mutate app state on resume failures. */
+            if (clientOffline(app.getState().status)) return;
+
             if (!app.getState().booted) {
-                app.setStatus(AppStatus.ERROR);
+                const offlineEnabled = (await core.settings.resolve(authStore.getLocalID()))?.offlineEnabled ?? false;
+                const hasOfflineComponents = authStore.hasOfflineComponents();
+                const canOfflineUnlock = connectionIssue && hasOfflineComponents && offlineEnabled;
+                const unlocked = options.unlocked && authStore.validOfflineSession(authStore.getSession());
+
+                /** If the user managed to unlock during the sequence but session resuming
+                 * failed: fallback to offline booting. `unlocked: true` is set on `onUnlocked`  */
+                if (canOfflineUnlock && unlocked) return boot({ offline: true });
+
+                /** `offline: connectionIssue` is intentional: we treat any connection-issue
+                 *  signal as "offline enough" to surface the offline lock screen, even when
+                 *  `connectivity.online` is still true (handles flapping mid-resume). */
+                const lockedStatus = getInitialLockedAppStatus(authStore, { offlineEnabled, offline: connectionIssue });
+                app.setStatus(lockedStatus ?? AppStatus.ERROR);
                 app.setBooted(false);
             }
         },
@@ -583,11 +609,35 @@ export const createAuthService = ({
         },
 
         onNotification,
-    });
+    }) as WebAuthService;
 
+    auth.scheduler = scheduler;
     auth.registerLockAdapter(sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(passwordLockAdapterFactory(auth));
     auth.registerLockAdapter(biometricsLockAdapterFactory(auth, core));
+
+    /** Event-driven offline-resume triggers without alarm timers. Retries fire
+     * opportunistically on tab focus or connectivity transitions. Connectivity
+     * transitions are gated by the scheduler's cooldown; user gestures (tab focus)
+     * bypass it (iso with the extension's popup-open path). */
+    auth.listen = () => {
+        const tryOfflineResume = (throttle: boolean) => {
+            if (clientOffline(app.getState().status) && connectivity.online) {
+                const localID = authStore.getLocalID();
+                if (throttle && scheduler.isThrottled()) return;
+                if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
+            }
+        };
+
+        const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
+        const onVisibilityChange = () => document.visibilityState === 'visible' && tryOfflineResume(false);
+        document.addEventListener('visibilitychange', onVisibilityChange);
+
+        return () => {
+            connectivityUnsub();
+            document.removeEventListener('visibilitychange', onVisibilityChange);
+        };
+    };
 
     return auth;
 };
