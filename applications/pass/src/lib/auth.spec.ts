@@ -289,6 +289,30 @@ describe('AuthService', () => {
         });
     });
 
+    describe('onLoginComplete', () => {
+        beforeEach(() => {
+            authStore.setUID('uid');
+            authStore.setUserID('user-id');
+            authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
+            jest.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
+        });
+
+        test('should set `READY` status and skip `bootIntent` dispatch when already booted', async () => {
+            setAppState({ status: AppStatus.OFFLINE, booted: true });
+            await authService.config.onLoginComplete?.('user-id', MOCK_PERSISTED_SESSION.LocalID);
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.READY);
+            expect(app.setStatus).not.toHaveBeenCalledWith(AppStatus.AUTHORIZED);
+            expect(appStore.dispatch).not.toHaveBeenCalledWith(bootIntent({ offline: false, reauth: undefined }));
+        });
+
+        test('should set `AUTHORIZED` status and dispatch `bootIntent` when not booted', async () => {
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onLoginComplete?.('user-id', MOCK_PERSISTED_SESSION.LocalID);
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.AUTHORIZED);
+            expect(appStore.dispatch).toHaveBeenCalledWith(bootIntent({ offline: false, reauth: undefined }));
+        });
+    });
+
     describe('onSessionFailure', () => {
         beforeEach(() => {
             settings.resolve.mockResolvedValue({ offlineEnabled: false });

@@ -97,7 +97,7 @@ describe('Auth integration', () => {
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status })),
+            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
             setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
             setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
             service: {
