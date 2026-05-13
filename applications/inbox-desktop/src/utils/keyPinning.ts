@@ -6,6 +6,10 @@ import { isHostAllowed } from "./urls/urlTests";
 import { networkLogger } from "./log";
 import { sentryReport } from "./sentryReport";
 
+// Report cert pinning failures once per session per hostname to avoid flooding Sentry
+const appSessionPinningReported = new Set<string>();
+const downloadSessionPinningReported = new Set<string>();
+
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
         // We dont do any verification for dev and testing environments
@@ -16,10 +20,13 @@ export const checkKeys = (request: Request) => {
         if (hasProtonMeCert(request)) return 0;
 
         networkLogger.error("Certificate Pinning failed for host", request.hostname);
-        sentryReport.reportMessage("certificate pinning failed", {
-            level: "fatal",
-            tags: { hostname: request.hostname, context: "app-session" },
-        });
+        if (!appSessionPinningReported.has(request.hostname)) {
+            appSessionPinningReported.add(request.hostname);
+            sentryReport.reportMessage("certificate pinning failed", {
+                level: "fatal",
+                tags: { hostname: request.hostname, context: "app-session" },
+            });
+        }
         return -2;
     }
 
@@ -34,6 +41,11 @@ function hasProtonMeCert(request: Request): boolean {
         .digest("base64");
 
     return CERT_PROTON_ME.includes(hash);
+}
+
+export function resetPinningReportedTestOnly() {
+    appSessionPinningReported.clear();
+    downloadSessionPinningReported.clear();
 }
 
 export enum VerificationResult {
@@ -55,10 +67,13 @@ export function verifyDownloadCertificate(request: Request, callback: (code: Ver
 
         if (!hasProtonMeCert(request)) {
             networkLogger.error("Certificate Pinning failed for download host", request.hostname);
-            sentryReport.reportMessage("certificate pinning failed", {
-                level: "fatal",
-                tags: { hostname: request.hostname, context: "download-session" },
-            });
+            if (!downloadSessionPinningReported.has(request.hostname)) {
+                downloadSessionPinningReported.add(request.hostname);
+                sentryReport.reportMessage("certificate pinning failed", {
+                    level: "fatal",
+                    tags: { hostname: request.hostname, context: "download-session" },
+                });
+            }
             return VerificationResult.Reject;
         }
 

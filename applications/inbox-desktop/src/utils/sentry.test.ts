@@ -22,9 +22,50 @@ jest.mock("./view/viewManagement", () => ({
 }));
 jest.mock("./log/getOSInfo", () => ({ getOSInfo: jest.fn(() => ({})) }));
 
-import { addBreadcrumb, captureMessage } from "@sentry/electron/main";
+import { addBreadcrumb, captureMessage, init } from "@sentry/electron/main";
 import Logger, { LogMessage } from "electron-log";
 import { initializeSentry } from "./sentry";
+import type { Event } from "@sentry/electron/main";
+
+describe("beforeSend", () => {
+    let beforeSend: (event: Event) => Event | null;
+
+    beforeEach(async () => {
+        jest.clearAllMocks();
+        process.env.DESKTOP_SENTRY_DSN = "https://key@sentry/123";
+        await initializeSentry();
+        beforeSend = (init as jest.Mock).mock.calls[0][0].beforeSend;
+    });
+
+    afterEach(() => {
+        delete process.env.DESKTOP_SENTRY_DSN;
+    });
+
+    it("uses error message as issue title for exception events", () => {
+        const event: Event = {
+            exception: { values: [{ type: "Error", value: "certificate pinning failed" }] },
+        };
+        const result = beforeSend(event);
+        expect(result?.exception?.values?.[0].type).toBe("certificate pinning failed");
+        expect(result?.exception?.values?.[0].value).toBe("certificate pinning failed");
+    });
+
+    it("uses error message as issue title for custom error classes", () => {
+        const event: Event = {
+            exception: { values: [{ type: "Fs", value: "version fetch failed repeatedly" }] },
+        };
+        const result = beforeSend(event);
+        expect(result?.exception?.values?.[0].type).toBe("version fetch failed repeatedly");
+        expect(result?.exception?.values?.[0].value).toBe("version fetch failed repeatedly");
+    });
+
+    it("does not transform message events — title remains the message string", () => {
+        const event: Event = { message: "renderer unresponsive" };
+        const result = beforeSend(event);
+        expect(result?.message).toBe("renderer unresponsive");
+        expect(result?.exception).toBeUndefined();
+    });
+});
 
 describe("Sentry transport", () => {
     beforeEach(() => {

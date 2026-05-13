@@ -48,19 +48,34 @@ export async function initializeSentry() {
     init({
         debug,
         beforeSend: (event) => {
+            // Use the error message as the issue title instead of the class name (e.g. "Error" or "Fs").
+            // Sentry sets exception.type to the class name and exception.value to the message;
+            // swapping them gives readable issue titles while preserving the full stack trace.
+            const ex = event.exception?.values?.[0];
+            const out = ex?.value
+                ? {
+                      ...event,
+                      exception: {
+                          ...event.exception,
+                          values: [{ ...ex, type: ex.value, value: ex.value }, ...event.exception!.values!.slice(1)],
+                      },
+                  }
+                : event;
+
             sentryLogger.info(
                 "beforeSend",
                 JSON.stringify({
-                    level: event.level,
-                    type: event.type,
-                    message: event.message,
-                    tags: event.tags,
-                    user: event.user,
-                    extra: event.extra,
+                    level: out.level,
+                    type: out.type,
+                    message: out.message,
+                    fingerprint: out.fingerprint,
+                    tags: out.tags,
+                    user: out.user,
+                    extra: out.extra,
                 }),
             );
 
-            return event;
+            return out;
         },
         enabled: true,
         dsn,
