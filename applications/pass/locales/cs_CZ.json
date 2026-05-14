@@ -756,6 +756,12 @@
       ],
       "Settings": [
         "Nastavení"
+      ],
+      "Copy": [
+        "Kopírovat"
+      ],
+      "Load more": [
+        "Načíst více"
       ]
     },
     "Browser": {
@@ -1340,6 +1346,9 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Právě probíhá kontrola odemknutí počítače."
+      ],
+      "Name is required": [
+        "Název je povinný"
       ]
     },
     "Error message": {
@@ -2014,7 +2023,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2684,6 +2696,9 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtů"
+      ],
+      "New": [
+        "Nově"
       ]
     },
     "Keyboard key": {
@@ -3888,6 +3903,9 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Token name": [
+        "Název tokenu"
       ]
     },
     "Link": {
@@ -4204,6 +4222,9 @@
       ],
       "Used on ${ url }": [
         "Použito na ${ url }"
+      ],
+      "e.g. My automation script": [
+        "např. můj automatizační skript"
       ]
     },
     "Security Center - Info": {

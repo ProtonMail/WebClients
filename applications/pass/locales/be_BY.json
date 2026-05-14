@@ -759,6 +759,15 @@
       ],
       "Don't show this again": [
         "Больш не паказваць"
+      ],
+      "Copy": [
+        "Скапіяваць"
+      ],
+      "Copy instructions": [
+        "Скапіяваць інструкцыі"
+      ],
+      "Load more": [
+        "Загрузіць больш"
       ]
     },
     "Browser": {
@@ -1355,6 +1364,9 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Адбываецца праверка, ці разблакіраваны працоўны стол."
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ]
     },
     "Error message": {
@@ -2702,6 +2714,21 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK } — гэта наша перадавая праграма абароны ўліковых запісаў"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } выбрана"
+      ],
+      "Created item": [
+        "Створаны элемент"
+      ],
+      "Moved item to trash": [
+        "Перамясціць элемент у сметніцу"
+      ],
+      "New": [
+        "Новы"
+      ],
+      "Updated item": [
+        "Абноўленыя элементы"
       ]
     },
     "Keyboard key": {
@@ -3906,6 +3933,9 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Token name": [
+        "Назва токена"
       ]
     },
     "Link": {
@@ -4222,6 +4252,9 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "e.g. My automation script": [
+        "напрыклад, мой сцэнарый аўтаматызацыі"
       ]
     },
     "Security Center - Info": {
@@ -5238,6 +5271,11 @@
     "Upsell": {
       "Get ${ planName }": [
         "Атрымаць ${ planName }"
+      ]
+    },
+    "Status": {
+      "Agent": [
+        "Агент"
       ]
     }
   }
