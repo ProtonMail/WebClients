@@ -7,11 +7,12 @@ import { EmergencyAccessStep } from './steps/authenticated-recovery/delegated-ac
 import { SocialRecoveryStep } from './steps/authenticated-recovery/delegated-access/SocialRecoveryStep';
 import { VerifyEmailRecoveryCode } from './steps/email-recovery/VerifyEmailRecoveryCode';
 import { EntryStep } from './steps/entry/EntryStep';
+import { RecoveryMethodVerificationError } from './steps/error/RecoveryMethodVerificationError';
 import { ConfirmMnemonicPhraseRecovery } from './steps/mnemonic-recovery/ConfirmMnemonicPhraseRecovery';
 import { EnterMnemonicPhrase } from './steps/mnemonic-recovery/EnterMnemonicPhrase';
 import { ResetPassword } from './steps/reset-password/ResetPassword';
 import { ResetPasswordWithDataLoss } from './steps/reset-password/ResetPasswordWithDataLoss';
-import { EnterSMSRecoveryCode } from './steps/sms-recovery/EnterSMSRecoveryCode';
+import { ConfirmPhoneVerification } from './steps/sms-recovery/ConfirmPhoneVerification';
 import { VerifySMSRecoveryCode } from './steps/sms-recovery/VerifySMSRecoveryCode';
 import { OtherLoggedInSessionPrompt } from './steps/unauthenticated-recovery/OtherLoggedInSessionPrompt';
 import { ShowEmergencyContactsInstructions } from './steps/unauthenticated-recovery/ShowEmergencyContactsInstructions';
@@ -20,7 +21,7 @@ import { ShowSignedInResetSteps } from './steps/unauthenticated-recovery/ShowSig
 export const forgotPasswordStepRegistry: Partial<Record<ForgotPasswordStatePath, ComponentType>> = {
     entry: EntryStep,
     verifyRecoveryEmail: VerifyEmailRecoveryCode,
-    enterRecoverySms: EnterSMSRecoveryCode,
+    enterRecoverySms: ConfirmPhoneVerification,
     verifyRecoverySms: VerifySMSRecoveryCode,
     'mnemonicRecovery.enterPhrase': EnterMnemonicPhrase,
     'mnemonicRecovery.confirmPhrase': ConfirmMnemonicPhraseRecovery,
@@ -35,4 +36,5 @@ export const forgotPasswordStepRegistry: Partial<Record<ForgotPasswordStatePath,
     offerDataLossReset: ResetPasswordWithDataLoss,
     recoveryFailed: AccountLost,
     setNewPassword: ResetPassword,
+    recoveryMethodVerificationError: RecoveryMethodVerificationError,
 };

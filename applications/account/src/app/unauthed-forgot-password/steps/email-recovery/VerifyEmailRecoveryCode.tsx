@@ -9,7 +9,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { InputFieldTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -46,7 +46,20 @@ export const VerifyEmailRecoveryCode = () => {
         method: 'email',
         username,
         onSuccess: noop,
-        onError: errorHandler,
+        onError: (error) => {
+            const apiError = getApiError(error);
+            const apiErrorMessage = getApiErrorMessage(error);
+            if (apiError.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED && apiErrorMessage) {
+                send({
+                    type: 'email.code.validation.failed',
+                    payload: {
+                        errorMessage: apiErrorMessage,
+                    },
+                });
+            } else {
+                errorHandler(error);
+            }
+        },
     });
 
     useEffect(() => {
