@@ -448,6 +448,15 @@ describe('AuthService', () => {
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
+        test('visibilitychange fully resets the scheduler', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+            await fireVisibility();
+            expect(authService.scheduler.isThrottled()).toBe(false);
+        });
+
         test('`visibilitychange` while offline probes connectivity', async () => {
             connectivity.online = false;
             visibility = 'visible';

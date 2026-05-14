@@ -338,7 +338,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 ctx.setBooted(false);
             }
 
+            /** Retry-chain bookkeeping, three outcomes based on failure context:
+             * - retryable: alarm-driven attempt → advance the chain via `scheduleAutoResume`.
+             * - unlocked: user just provided credentials → deliberate gesture should reset.
+             * - default: non-retryable → burn a slot via `registerResumeFailure`. */
             if (options.retryable) await alarms.scheduleAutoResume({ extend: false });
+            else if (options.unlocked) await alarms.resetAutoResume();
             else await alarms.registerResumeFailure();
         }),
 

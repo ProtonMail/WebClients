@@ -637,6 +637,7 @@ export const createAuthService = ({
          * on the next auto-retry tick. */
         const onVisibilityChange = async () => {
             if (document.visibilityState === 'visible') {
+                scheduler.reset();
                 if (!connectivity.online) await connectivity.check();
                 tryOfflineResume(false);
             }
