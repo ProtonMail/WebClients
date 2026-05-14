@@ -21,7 +21,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -169,6 +169,9 @@
       "Continue offline": [
         "Працягнуць па-за сеткай"
       ],
+      "Copy": [
+        "Скапіяваць"
+      ],
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
@@ -183,6 +186,9 @@
       ],
       "Copy forwarding address": [
         "Капіяваць адрас перасылкі"
+      ],
+      "Copy instructions": [
+        "Скапіяваць інструкцыі"
       ],
       "Copy link": [
         "Скапіяваць спасылку"
@@ -411,6 +417,9 @@
       ],
       "Link expires after": [
         "Спасылка міне праз"
+      ],
+      "Load more": [
+        "Загрузіць больш"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Заблакіраваць ${ PASS_APP_NAME }"
@@ -1191,6 +1200,9 @@
       "Moving item failed": [
         "Збой перамяшчэння элемента"
       ],
+      "Name is required": [
+        "Патрабуецца назва"
+      ],
       "Network error": [
         "Памылка сеткі"
       ],
@@ -1527,6 +1539,9 @@
         "Выяўлена ${ row.breachCount } парушэнняў",
         "Выяўлена ${ row.breachCount } парушэнняў"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } выбрана"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
@@ -1709,6 +1724,9 @@
       ],
       "Created ${ time }.": [
         "Створана ${ time }."
+      ],
+      "Created item": [
+        "Створаны элемент"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, ключы доступу і г.д.) з прычыны таго, што фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
@@ -2016,6 +2034,9 @@
         "Перамясціць ${ count } элементаў",
         "Перамясціць ${ count } элементаў"
       ],
+      "Moved item to trash": [
+        "Перамясціць элемент у сметніцу"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
@@ -2042,6 +2063,9 @@
       ],
       "Never": [
         "Ніколі"
+      ],
+      "New": [
+        "Новы"
       ],
       "No breaches detected": [
         "Парушэнні не выяўлены"
@@ -2492,6 +2516,9 @@
       ],
       "Unverified": [
         "Неправерана"
+      ],
+      "Updated item": [
+        "Абноўленыя элементы"
       ],
       "Updating vault organization...": [
         "Абнаўленне арганізацыі сховішча..."
@@ -3727,6 +3754,9 @@
       "Today": [
         "Сёння"
       ],
+      "Token name": [
+        "Назва токена"
+      ],
       "Total imported items: ": [
         "Усяго імпартаваных элементаў: "
       ],
@@ -4109,6 +4139,9 @@
       "Coupon": [
         "Купон"
       ],
+      "e.g. My automation script": [
+        "напрыклад, мой сцэнарый аўтаматызацыі"
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -4264,6 +4297,11 @@
       ],
       "Unknown": [
         "Невядома"
+      ]
+    },
+    "Status": {
+      "Agent": [
+        "Агент"
       ]
     },
     "Success": {
