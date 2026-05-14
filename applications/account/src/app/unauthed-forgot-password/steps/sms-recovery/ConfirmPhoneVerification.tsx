@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import { getResendSMSVerificationCodeText } from '../../../content/helper';
@@ -15,7 +17,7 @@ import { useRequestCode } from '../../hooks/useRequestCode';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
-export const EnterSMSRecoveryCode = () => {
+export const ConfirmPhoneVerification = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryPhoneNumber } = snapshot.context;
     const { sendResetPasswordCodeSent, sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
@@ -38,7 +40,20 @@ export const EnterSMSRecoveryCode = () => {
                 type: 'sms.code.sent',
             });
         },
-        onError: errorHandler,
+        onError: (error) => {
+            const apiError = getApiError(error);
+            const apiErrorMessage = getApiErrorMessage(error);
+            if (apiError.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED && apiErrorMessage) {
+                send({
+                    type: 'sms.code.send.failed',
+                    payload: {
+                        errorMessage: apiErrorMessage,
+                    },
+                });
+            } else {
+                errorHandler(error);
+            }
+        },
     });
 
     const handleSubmit = () => {
