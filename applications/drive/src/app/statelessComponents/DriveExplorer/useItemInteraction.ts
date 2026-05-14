@@ -82,13 +82,19 @@ export const useItemInteraction = ({
 
     const handleContextMenu = useCallback(
         (event: React.MouseEvent) => {
+            // Skip synthetic bubbles from portalled descendants (modals/popovers):
+            // React bubbles their events back through the row's handler even though
+            // their real DOM lives outside the row. Inline (non-portalled) children
+            // bubble naturally and must call stopPropagation themselves to opt out.
+            const currentTarget = event.currentTarget as HTMLElement;
+            const target = event.target as HTMLElement;
+            if (!currentTarget.contains(target)) {
+                return;
+            }
             event.preventDefault();
-            event.stopPropagation();
-
             if (!isSelected) {
                 selection?.selectionMethods.selectItem(itemId);
             }
-
             events?.onItemContextMenu?.(itemId, event);
         },
         [itemId, isSelected, selection, events]
