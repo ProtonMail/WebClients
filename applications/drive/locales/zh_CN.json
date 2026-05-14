@@ -6963,6 +6963,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
+      "${ downloads } downloads": [
+        "下载次数 ${ downloads }"
+      ],
       "${ n } month": [
         "${ n } 个月"
       ],
@@ -7146,6 +7149,9 @@
       "Created": [
         "创建时间"
       ],
+      "Created ${ created }": [
+        "创建时间 ${ created }"
+      ],
       "Credits": [
         "余额"
       ],
@@ -7164,11 +7170,20 @@
       "Deleted": [
         "删除时间"
       ],
+      "Deleted ${ deleted }": [
+        "已删除 ${ deleted }"
+      ],
       "Device": [
         "设备"
       ],
+      "Device #${ position }": [
+        "设备 #${ position }"
+      ],
       "Device name": [
         "设备名称"
+      ],
+      "Device: ${ name }": [
+        "设备：${ name }"
       ],
       "Disable this link on a specific date": [
         "在特定日期禁用此链接"
@@ -7227,8 +7242,14 @@
       "Expired": [
         "已失效"
       ],
+      "Expired on ${ formatted }": [
+        "过期时间 ${ formatted }"
+      ],
       "Expires": [
         "有效期至"
+      ],
+      "Expires ${ formatted }": [
+        "过期时间 ${ formatted }"
       ],
       "Expiry": [
         "过期时间"
@@ -7302,6 +7323,9 @@
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
       ],
+      "Item #${ position }": [
+        "项目 #${ position }"
+      ],
       "Keep both": [
         "都保留"
       ],
@@ -7332,6 +7356,9 @@
       "Location": [
         "位置"
       ],
+      "Location: ${ item.location }": [
+        "位置：${ item.location }"
+      ],
       "Log in or sign up ": [
         "登录或注册 "
       ],
@@ -7352,6 +7379,9 @@
       ],
       "Modified": [
         "修改时间"
+      ],
+      "Modified ${ modified }": [
+        "修改时间 ${ modified }"
       ],
       "Move to Archive": [
         "移至归档"
@@ -7374,11 +7404,17 @@
       "Never": [
         "永不"
       ],
+      "Never expires": [
+        "永不过期"
+      ],
       "New password": [
         "新密码"
       ],
       "Not active": [
         "未激活"
+      ],
+      "Not selected": [
+        "未选中"
       ],
       "Note": [
         "笔记"
@@ -7415,6 +7451,9 @@
       ],
       "Payment method": [
         "付款方式"
+      ],
+      "Pending invitation": [
+        "待定邀请"
       ],
       "PGP scheme": [
         "PGP 方案"
@@ -7476,6 +7515,9 @@
       "Select type of abuse": [
         "选择滥用类型"
       ],
+      "Selected": [
+        "已选中"
+      ],
       "Set a password to limit access via link": [
         "设置密码以限制通过链接访问"
       ],
@@ -7491,8 +7533,17 @@
       "Shared by": [
         "共享者"
       ],
+      "Shared by ${ sharedBy }": [
+        "由 ${ sharedBy } 共享"
+      ],
+      "Shared by Public link": [
+        "通过公开链接共享"
+      ],
       "Shared on": [
         "共享于"
+      ],
+      "Shared on ${ sharedOn }": [
+        "共享于 ${ sharedOn }"
       ],
       "Shared with me": [
         "与我共享"

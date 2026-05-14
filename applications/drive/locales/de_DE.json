@@ -782,6 +782,9 @@
       "Re-sign": [
         "Neu signieren"
       ],
+      "Rebuild index": [
+        "Index neu erstellen"
+      ],
       "Reconnect": [
         "Erneut verbinden"
       ],
@@ -925,6 +928,9 @@
       ],
       "Search drive": [
         "Drive durchsuchen"
+      ],
+      "Search is unavailable": [
+        "Suche ist nicht verfügbar"
       ],
       "See how": [
         "Siehe wie"
@@ -4893,6 +4899,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME }- und ${ SHEETS_APP_NAME }-Dateien können nicht direkt heruntergeladen werden und werden nicht in diesem Download enthalten sein. Du kannst die anderen Dateien herunterladen, indem du auf „Download fortsetzen“ klickst."
       ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } hat festgestellt, dass der lokale Suchindex beschädigt ist und nicht mehr verwendet werden kann. Erstelle den Index neu, um die Suchfunktion wiederherzustellen."
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } im App Store"
       ],
@@ -5674,6 +5683,9 @@
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indiziert: ${ first }, ${ second }, ${ third } und ${ fourth }"
       ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Die Indexierung ist in einen unerwarteten Zustand geraten und kann nicht fortgesetzt werden. Erstelle den Index neu, um das Problem zu beheben."
+      ],
       "Indexing in progress": [
         "Indizierung läuft"
       ],
@@ -5902,6 +5914,9 @@
       ],
       "Not connected": [
         "Nicht verbunden"
+      ],
+      "Not enough storage space": [
+        "Nicht genügend Speicherplatz"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Hinweis: Auf Geräten, auf denen ${ DRIVE_APP_NAME } installiert ist, sind die Daten möglicherweise weiterhin lokal verfügbar."
@@ -6150,11 +6165,29 @@
       "Search cannot be enabled in this browser": [
         "Die Suche kann in diesem Browser nicht aktiviert werden"
       ],
+      "Search data is corrupted": [
+        "Suchdaten sind beschädigt"
+      ],
       "Search Enabled": [
         "Suche aktiviert"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Suche aktiviert. Du kannst diesen Dialog jetzt schließen und nach Dateien und Ordnern suchen."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
+      ],
+      "Search engine error": [
+        "Fehler bei der Suchmaschine"
+      ],
+      "Search error": [
+        "Fehler suchen"
+      ],
+      "Search is in an invalid state": [
+        "Suche befindet sich in einem ungültigen Zustand"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Suche ist bereit. Deine Dateien sind indexiert."
       ],
       "Search module is not available.": [
         "Suchmodul ist nicht verfügbar."
@@ -6318,6 +6351,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
@@ -6812,6 +6848,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Deinem Browser ist beim Indexieren der Dateien für die Suche der Speicherplatz ausgegangen. Schaffe Speicherplatz und erstelle den Index anschließend neu."
+      ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Dein aktueller Browser unterstützt das Herunterladen großer Dateien/mehrerer Dateien nicht. Lade die Desktop-App für nahtlose Uploads und Downloads herunter."
       ],
@@ -7005,6 +7044,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } Downloads"
+      ],
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
@@ -7191,6 +7233,9 @@
       "Created": [
         "Erstellt"
       ],
+      "Created ${ created }": [
+        "Erstellt ${ created }"
+      ],
       "Credits": [
         "Guthaben"
       ],
@@ -7210,11 +7255,20 @@
       "Deleted": [
         "Gelöscht"
       ],
+      "Deleted ${ deleted }": [
+        "Gelöscht ${ deleted }"
+      ],
       "Device": [
         "Gerät"
       ],
+      "Device #${ position }": [
+        "Gerätenummer ${ position }"
+      ],
       "Device name": [
         "Gerätename"
+      ],
+      "Device: ${ name }": [
+        "Gerät: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Diesen Link an einem bestimmten Datum deaktivieren"
@@ -7273,8 +7327,14 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Expired on ${ formatted }": [
+        "Am ${ formatted } abgelaufen"
+      ],
       "Expires": [
         "Gültig bis"
+      ],
+      "Expires ${ formatted }": [
+        "Läuft ab ${ formatted }"
       ],
       "Expiry": [
         "Ablauf"
@@ -7348,6 +7408,9 @@
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
       ],
+      "Item #${ position }": [
+        "Eintragsnummer ${ position }"
+      ],
       "Keep both": [
         "Beide behalten"
       ],
@@ -7378,6 +7441,9 @@
       "Location": [
         "Ort"
       ],
+      "Location: ${ item.location }": [
+        "Standort: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Anmelden oder registrieren "
       ],
@@ -7398,6 +7464,9 @@
       ],
       "Modified": [
         "Geändert"
+      ],
+      "Modified ${ modified }": [
+        "Bearbeitet ${ modified }"
       ],
       "Move to Archive": [
         "Ins Archiv verschieben"
@@ -7420,11 +7489,17 @@
       "Never": [
         "Niemals"
       ],
+      "Never expires": [
+        "Läuft nie ab"
+      ],
       "New password": [
         "Neues Passwort"
       ],
       "Not active": [
         "Nicht aktiv"
+      ],
+      "Not selected": [
+        "Nicht ausgewählt"
       ],
       "Note": [
         "Notiz"
@@ -7461,6 +7536,9 @@
       ],
       "Payment method": [
         "Zahlungsmethode"
+      ],
+      "Pending invitation": [
+        "Ausstehende Einladung"
       ],
       "PGP scheme": [
         "PGP-Schema"
@@ -7522,6 +7600,9 @@
       "Select type of abuse": [
         "Wähle die Art des Missbrauchs"
       ],
+      "Selected": [
+        "Ausgewählt"
+      ],
       "Set a password to limit access via link": [
         "Passwort festlegen, um den Zugriff per Link zu beschränken"
       ],
@@ -7537,8 +7618,17 @@
       "Shared by": [
         "Geteilt von"
       ],
+      "Shared by ${ sharedBy }": [
+        "Geteilt von ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Über einen öffentlichen Link geteilt"
+      ],
       "Shared on": [
         "Geteilt am"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Geteilt am ${ sharedOn }"
       ],
       "Shared with me": [
         "Mit mir geteilt"
