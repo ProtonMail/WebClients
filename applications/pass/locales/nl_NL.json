@@ -755,6 +755,12 @@
       ],
       "Don't show this again": [
         "Laat dit niet meer zien"
+      ],
+      "Copy": [
+        "Kopiëren"
+      ],
+      "Load more": [
+        "Laad meer"
       ]
     },
     "Browser": {
@@ -1333,6 +1339,9 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Er wordt al een controle uitgevoerd om de desktop te ontgrendelen."
+      ],
+      "Name is required": [
+        "Naam is verplicht"
       ]
     },
     "Error message": {
@@ -1974,7 +1983,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2623,6 +2633,9 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
+      "New": [
+        "Nieuw"
       ]
     },
     "Keyboard key": {
@@ -3799,6 +3812,9 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Token name": [
+        "Token naam"
       ]
     },
     "Link": {

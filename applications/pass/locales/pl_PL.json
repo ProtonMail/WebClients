@@ -714,6 +714,12 @@
       ],
       "Settings": [
         "Ustawienia"
+      ],
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Load more": [
+        "Załaduj więcej"
       ]
     },
     "Browser": {
@@ -1242,6 +1248,9 @@
       ],
       "Unknown error.": [
         "Wystąpił nieznany błąd."
+      ],
+      "Name is required": [
+        "Nazwa jest wymagana"
       ]
     },
     "Error message": {
@@ -1877,7 +1886,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2463,6 +2475,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "New": [
+        "Nowy"
       ]
     },
     "Label": {
@@ -3656,6 +3671,9 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Token name": [
+        "Nazwa tokena"
       ]
     },
     "Link": {
