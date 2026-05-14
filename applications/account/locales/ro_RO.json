@@ -6604,8 +6604,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "Utilizatorul ${ user } nu vă va putea accesa contul până la următorul acces de urgență."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** este acum un contact de recuperare. Acesta vă poate ajuta să vă recuperați datele după o resetare a parolei."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** vă este acum propria persoană de contact pentru recuperare. Aceasta vă poate ajuta să vă deblocați datele după ce vă resetați parola."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Dacă confirmă**, faceți clic pe **Aevaluare recuperare**. Acest lucru le va debloca datele criptate."
@@ -6645,6 +6645,9 @@
       ],
       "Add recovery contact": [
         "Adăugare contact de recuperare"
+      ],
+      "Add recovery method": [
+        "Adăugare metodă de recuperare"
       ],
       "Added on ${ formattedDate }": [
         "Adăugat la ${ formattedDate }"
@@ -6687,6 +6690,9 @@
       ],
       "Contacts": [
         "Contacte"
+      ],
+      "Data recovery contacts": [
+        "Contacte pentru recuperarea datelor"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Recuperarea datelor a reușit. Acum puteți decripta datele existente și fișierele criptate."
@@ -6765,9 +6771,6 @@
       ],
       "Less than a minute left": [
         "Mai puțin de un minut rămas"
-      ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Anunțați-l pe ${ user } că sunteți persoana care încearcă să recupereze accesul."
       ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "S-a atins limita maximă de ${ limit } contact. Pentru modificare, eliminați un contact și adăugați altul.",
@@ -6867,11 +6870,11 @@
       "Select recovery contact ${ name }": [
         "Selectare contact de recuperare ${ name }"
       ],
-      "Send email request": [
-        "Trimitere cerere de e-mail"
-      ],
       "Send recovery request": [
         "Trimite solicitare de recuperare"
+      ],
+      "Start recovery": [
+        "Începeți recuperarea"
       ],
       "Stop being recovery contact": [
         "Încetați să mai fiți contact de recuperare"
@@ -6917,6 +6920,9 @@
       "Time required before automatically granting them access": [
         "Timp necesar înainte de a le acorda automat accesul."
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Pentru a adăuga contacte de recuperare, trebuie să aveți o adresă de e-mail sau un număr de telefon pentru recuperare."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Pentru a dezactiva această metodă de recuperare, eliminați toate contactele de recuperare."
       ],
@@ -6946,6 +6952,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "S-a primit o cerere de deblocare a datelor criptate ale contactului **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "S-a trimis o solicitare prin e-mail către ${ user }. Spuneți-i că într-adevăr sunteți persoana care încearcă să redobândească accesul la cont."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Nu s-a putut verifica datele de recuperare. Doriți să continuați oricum?"
@@ -10613,6 +10622,11 @@
         "Creare server poartă de acces: ${ serverNumber }/${ total }",
         "Creare server poartă de acces: ${ serverNumber }/${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Se creează o poartă de acces cu ${ total } server",
+        "Se creează o poartă de acces cu ${ total } servere",
+        "Se creează o poartă de acces cu ${ total } de servere"
+      ],
       "Creating your account": [
         "Creare cont"
       ],
@@ -10660,6 +10674,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Date recuperabile cu fraza de recuperare"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Recuperarea datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
       ],
       "dedicated servers": [
         "servere dedicate"
@@ -12482,6 +12499,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Această metodă de recuperare a datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Această funcție întârzie trimiterea mesajelor, permițându-vă să anulați trimiterea în intervalul de timp selectat."
       ],
@@ -12641,29 +12661,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea asistată prin contacte**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Conservarea datelor pe dispozitiv**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Accesul de urgență**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Conectarea prin cod QR**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin adresa de e-mail de recuperare**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin număr de telefon de recuperare**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Fișierul de recuperare** (anulați toate fișierele de recuperare)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Resetarea cu sesiune activă**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ar trebui ca ${ BRAND_NAME } să păstreze versiunile anterioare."
@@ -21324,14 +21326,17 @@
       "Add": [
         "Adăugare"
       ],
+      "Add an emergency contact": [
+        "Adăugați un contact de urgență"
+      ],
       "Add emergency contacts": [
         "Adăugați contacte de urgență"
       ],
       "Add options": [
         "Adăugare opțiuni"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Adăugați persoane de încredere și pe care le puteți contacta cu ușurință. Acestea vor putea să vă acceseze contul și să vă reseteze parola."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Persoana de contact în caz de urgență vă va putea accesa contul și reseta parola, dacă este necesar."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Acestea vă vor putea ajuta să vă deblocați datele după ce vă resetați parola."
@@ -21377,9 +21382,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Permitere scanare cod QR pentru conectare"
-      ],
-      "Allow trusted friends to sign in": [
-        "Permiteți persoanelor de încredere să se conecteze"
       ],
       "Allow trusted friends to unlock your data": [
         "Permiteți persoanelor de încredere să vă deblocheze datele"
@@ -21467,6 +21469,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Trebuie să aibă deja un cont ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nu vă vor putea vedea sau accesa datele."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Acest lucru vă va permite să vă accesați rapid contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
@@ -21745,8 +21750,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați opțiunile evidențiate."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați recuperarea prin e-mail și SMS."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Pentru a vă asigura că puteți să vă accesați întotdeauna contul ${ BRAND_NAME }, descărcați fraza de recuperare."
@@ -23332,29 +23337,11 @@
       "Available on this device": [
         "Disponibil pe acest dispozitiv"
       ],
-      "Disable contact-assisted recovery": [
-        "Dezactivați recuperarea asistată prin contacte"
-      ],
-      "Disable device data backup": [
-        "Dezactivați conservarea datelor pe dispozitiv"
-      ],
-      "Disable emergency access": [
-        "Dezactivați accesul de urgență"
-      ],
-      "Disable QR code sign-in": [
-        "Dezactivare conectare cu cod QR"
-      ],
       "Disable recovery by email": [
         "Dezactivare recuperare prin e-mail"
       ],
       "Disable recovery by phone": [
         "Dezactivare recuperare cu număr de telefon"
-      ],
-      "Disable recovery file": [
-        "Dezactivare fișier de recuperare"
-      ],
-      "Disable signed-in reset": [
-        "Dezactivare resetare cu sesiune activă"
       ],
       "Generate a recovery phrase": [
         "Generare frază de recuperare"
@@ -23364,9 +23351,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Ultima actualizare ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Nu există contacte"
       ],
       "Not saved": [
         "Nesalvat"
@@ -25096,9 +25080,6 @@
       "Contact us": [
         "Contactați-ne"
       ],
-      "Contact-assisted recovery": [
-        "Recuperare asistată de contacte"
-      ],
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
@@ -25208,6 +25189,9 @@
       ],
       "Data recovery": [
         "Recuperare date"
+      ],
+      "Data recovery contacts": [
+        "Contacte pentru recuperarea datelor"
       ],
       "Data recovery options": [
         "Opțiuni de recuperare date"
