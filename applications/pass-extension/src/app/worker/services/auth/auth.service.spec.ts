@@ -551,6 +551,14 @@ describe('Extension AuthService', () => {
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
             });
 
+            test('should call resetAutoResume when retryable: false and unlocked: true', async () => {
+                ctx.status = AppStatus.IDLE;
+                await auth.config.onSessionFailure?.({ retryable: false, unlocked: true }, genericError);
+                expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
+                expect(auth.alarms.registerResumeFailure).not.toHaveBeenCalled();
+                expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
+            });
+
             test('should land in `ERROR` (not PASSWORD_LOCKED) on connection error when flag is OFF', async () => {
                 ctx.status = AppStatus.IDLE;
                 featureFlags.PassExtensionOfflineV1 = false;
