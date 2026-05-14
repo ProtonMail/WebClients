@@ -1278,6 +1278,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Rebuild index": [
+        "Reconstruir índice"
       ]
     },
     "Action: Docs": {
@@ -4014,6 +4017,9 @@
       ],
       "Folder not found": [
         "Pasta não encontrada"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ]
     },
     "error": {
@@ -7106,6 +7112,27 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "por apenas ${ bundlePlanPriceInline }"
+      ],
+      "Could not scan file for malware": [
+        "Não foi possível verificar se o arquivo contém malware"
+      ],
+      "File flagged as potentially malicious": [
+        "O arquivo foi marcado como potencialmente malicioso"
+      ],
+      "Not enough storage space": [
+        "Não há espaço suficiente no armazenamento"
+      ],
+      "Search data is corrupted": [
+        "Os dados de pesquisa estão corrompidos"
+      ],
+      "Search engine error": [
+        "Erro no motor de pesquisa"
+      ],
+      "Search is in an invalid state": [
+        "A pesquisa está em um estado invalido"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "A pesquisa está pronta. Seus arquivos foram indexados."
       ]
     },
     "info": {
@@ -7896,6 +7923,57 @@
       ],
       "Initial indexing": [
         "Indexação inicial"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } baixados"
+      ],
+      "Created ${ created }": [
+        "Criado em ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Excluído ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Dispositivo #${ position }"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
+      ],
+      "Expired on ${ formatted }": [
+        "Expirado em ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Expira em ${ formatted }"
+      ],
+      "Item #${ position }": [
+        "Item #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Localização: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Modificado: ${ modified }"
+      ],
+      "Never expires": [
+        "Nunca expira"
+      ],
+      "Not selected": [
+        "Não selecionado"
+      ],
+      "Pending invitation": [
+        "Convite pendente"
+      ],
+      "Selected": [
+        "Selecionado"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Compartilhado por ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Compartilhado por link público"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Compartilhado em ${ sharedOn }"
       ]
     },
     "Label for contact group color": {

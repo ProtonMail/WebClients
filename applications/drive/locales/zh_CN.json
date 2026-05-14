@@ -7847,6 +7847,57 @@
       ],
       "Visible columns:": [
         "可见列："
+      ],
+      "${ downloads } downloads": [
+        "下载次数 ${ downloads }"
+      ],
+      "Created ${ created }": [
+        "创建时间 ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "已删除 ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "设备 #${ position }"
+      ],
+      "Device: ${ name }": [
+        "设备：${ name }"
+      ],
+      "Expired on ${ formatted }": [
+        "过期时间 ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "过期时间 ${ formatted }"
+      ],
+      "Item #${ position }": [
+        "项目 #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "位置：${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "修改时间 ${ modified }"
+      ],
+      "Never expires": [
+        "永不过期"
+      ],
+      "Not selected": [
+        "未选中"
+      ],
+      "Pending invitation": [
+        "待定邀请"
+      ],
+      "Selected": [
+        "已选中"
+      ],
+      "Shared by ${ sharedBy }": [
+        "由 ${ sharedBy } 共享"
+      ],
+      "Shared by Public link": [
+        "通过公开链接共享"
+      ],
+      "Shared on ${ sharedOn }": [
+        "共享于 ${ sharedOn }"
       ]
     },
     "Label for contact group color": {

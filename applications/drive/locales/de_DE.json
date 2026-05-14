@@ -1269,6 +1269,12 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "Rebuild index": [
+        "Index neu erstellen"
+      ],
+      "Search is unavailable": [
+        "Suche ist nicht verfügbar"
       ]
     },
     "Action: Docs": {
@@ -7133,6 +7139,39 @@
       ],
       "RECOMMENDED": [
         "EMPFOHLEN"
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } hat festgestellt, dass der lokale Suchindex beschädigt ist und nicht mehr verwendet werden kann. Erstelle den Index neu, um die Suchfunktion wiederherzustellen."
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "Die Indexierung ist in einen unerwarteten Zustand geraten und kann nicht fortgesetzt werden. Erstelle den Index neu, um das Problem zu beheben."
+      ],
+      "Not enough storage space": [
+        "Nicht genügend Speicherplatz"
+      ],
+      "Search data is corrupted": [
+        "Suchdaten sind beschädigt"
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
+      ],
+      "Search engine error": [
+        "Fehler bei der Suchmaschine"
+      ],
+      "Search error": [
+        "Fehler suchen"
+      ],
+      "Search is in an invalid state": [
+        "Suche befindet sich in einem ungültigen Zustand"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "Suche ist bereit. Deine Dateien sind indexiert."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Deinem Browser ist beim Indexieren der Dateien für die Suche der Speicherplatz ausgegangen. Schaffe Speicherplatz und erstelle den Index anschließend neu."
       ]
     },
     "info": {
@@ -7920,6 +7959,57 @@
       ],
       "Visible columns:": [
         "Sichtbare Spalten:"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } Downloads"
+      ],
+      "Created ${ created }": [
+        "Erstellt ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Gelöscht ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Gerätenummer ${ position }"
+      ],
+      "Device: ${ name }": [
+        "Gerät: ${ name }"
+      ],
+      "Expired on ${ formatted }": [
+        "Am ${ formatted } abgelaufen"
+      ],
+      "Expires ${ formatted }": [
+        "Läuft ab ${ formatted }"
+      ],
+      "Item #${ position }": [
+        "Eintragsnummer ${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Standort: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Bearbeitet ${ modified }"
+      ],
+      "Never expires": [
+        "Läuft nie ab"
+      ],
+      "Not selected": [
+        "Nicht ausgewählt"
+      ],
+      "Pending invitation": [
+        "Ausstehende Einladung"
+      ],
+      "Selected": [
+        "Ausgewählt"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Geteilt von ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Über einen öffentlichen Link geteilt"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Geteilt am ${ sharedOn }"
       ]
     },
     "Label for contact group color": {
