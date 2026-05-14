@@ -5496,6 +5496,9 @@
       "File could not be scanned": [
         "Fil kunde inte skannas"
       ],
+      "File flagged as potentially malicious": [
+        "Fil flaggad som potentiellt skadlig"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
       ],
@@ -7151,6 +7154,9 @@
       "Created": [
         "Skapad"
       ],
+      "Created ${ created }": [
+        "Skapad ${ created }"
+      ],
       "Credits": [
         "Krediter"
       ],
@@ -7170,11 +7176,20 @@
       "Deleted": [
         "Borttagen"
       ],
+      "Deleted ${ deleted }": [
+        "Ta bort ${ deleted }"
+      ],
       "Device": [
         "Enhet"
       ],
+      "Device #${ position }": [
+        "Enhet #${ position }"
+      ],
       "Device name": [
         "Enhetsnamn"
+      ],
+      "Device: ${ name }": [
+        "Enhet: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Inaktivera denna länk på ett specifikt datum"
@@ -7233,8 +7248,14 @@
       "Expired": [
         "Löpt ut"
       ],
+      "Expired on ${ formatted }": [
+        "Löpte ut den ${ formatted }"
+      ],
       "Expires": [
         "Löper ut"
+      ],
+      "Expires ${ formatted }": [
+        "Löper ut ${ formatted }"
       ],
       "Expiry": [
         "Löper ut"
@@ -7308,6 +7329,9 @@
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
+      "Item #${ position }": [
+        "Objekt #${ position }"
+      ],
       "Keep both": [
         "Behåll båda"
       ],
@@ -7338,6 +7362,9 @@
       "Location": [
         "Plats"
       ],
+      "Location: ${ item.location }": [
+        "Plats: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Logga in eller registrera "
       ],
@@ -7355,6 +7382,9 @@
       ],
       "Modified": [
         "Ändrad"
+      ],
+      "Modified ${ modified }": [
+        "Ändrad ${ modified }"
       ],
       "Move to Archive": [
         "Flytta till Arkiv"
@@ -7377,11 +7407,17 @@
       "Never": [
         "Aldrig"
       ],
+      "Never expires": [
+        "Löper aldrig ut"
+      ],
       "New password": [
         "Nytt lösenord"
       ],
       "Not active": [
         "Inte aktiv"
+      ],
+      "Not selected": [
+        "Inte vald"
       ],
       "Note": [
         "Anteckning"
@@ -7418,6 +7454,9 @@
       ],
       "Payment method": [
         "Betalningsmetod"
+      ],
+      "Pending invitation": [
+        "Väntande inbjudan"
       ],
       "PGP scheme": [
         "PGP-schema"
@@ -7479,6 +7518,9 @@
       "Select type of abuse": [
         "Välj typ av missbruk"
       ],
+      "Selected": [
+        "Valda"
+      ],
       "Set a password to limit access via link": [
         "Ställ in ett lösenord för att begränsa åtkomst via länk"
       ],
@@ -7494,8 +7536,17 @@
       "Shared by": [
         "Delat av"
       ],
+      "Shared by ${ sharedBy }": [
+        "Delad av ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Delad av offentlig länk"
+      ],
       "Shared on": [
         "Delat på"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Delad på ${ sharedOn }"
       ],
       "Shared with me": [
         "Delat med mig"

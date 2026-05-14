@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } indirilme"
+      ],
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
@@ -7248,6 +7251,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Created ${ created }": [
+        "${ created } tarihinde oluşturuldu"
+      ],
       "Credits": [
         "Kredi"
       ],
@@ -7267,11 +7273,20 @@
       "Deleted": [
         "Silindi"
       ],
+      "Deleted ${ deleted }": [
+        "${ deleted } silindi"
+      ],
       "Device": [
         "Aygıt"
       ],
+      "Device #${ position }": [
+        "Cihaz #${ position }"
+      ],
       "Device name": [
         "Aygıt adı"
+      ],
+      "Device: ${ name }": [
+        "Cihaz: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Bu bağlantıyı belirli bir tarihte kullanımdan kaldır"
@@ -7330,8 +7345,14 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expired on ${ formatted }": [
+        "${ formatted } tarihinde sona erdi"
+      ],
       "Expires": [
         "Geçerlilik süresi sonu"
+      ],
+      "Expires ${ formatted }": [
+        "Geçerlilik süresi ${ formatted }"
       ],
       "Expiry": [
         "Geçerlilik sonu"
@@ -7405,6 +7426,9 @@
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
+      "Item #${ position }": [
+        "Öğe #${ position }"
+      ],
       "Keep both": [
         "İkisi de tutulsun"
       ],
@@ -7435,6 +7459,9 @@
       "Location": [
         "Konum"
       ],
+      "Location: ${ item.location }": [
+        "Konum: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Oturum ya da hesap açın "
       ],
@@ -7455,6 +7482,9 @@
       ],
       "Modified": [
         "Değiştirilme"
+      ],
+      "Modified ${ modified }": [
+        "${ modified } tarihinde değiştirildi"
       ],
       "Move to Archive": [
         "Arşivle"
@@ -7477,11 +7507,17 @@
       "Never": [
         "Asla"
       ],
+      "Never expires": [
+        "Asla sona ermez"
+      ],
       "New password": [
         "Yeni parola"
       ],
       "Not active": [
         "Etkin değil"
+      ],
+      "Not selected": [
+        "Seçilmemiş"
       ],
       "Note": [
         "Not"
@@ -7518,6 +7554,9 @@
       ],
       "Payment method": [
         "Ödeme yöntemi"
+      ],
+      "Pending invitation": [
+        "Bekleyen davet"
       ],
       "PGP scheme": [
         "PGP şeması"
@@ -7579,6 +7618,9 @@
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
       ],
+      "Selected": [
+        "Seçilmiş"
+      ],
       "Set a password to limit access via link": [
         "Bağlantı üzerinden erişimi sınırlamak için bir parola belirleyin"
       ],
@@ -7594,8 +7636,17 @@
       "Shared by": [
         "Paylaşan"
       ],
+      "Shared by ${ sharedBy }": [
+        "${ sharedBy } tarafından paylaşıldı"
+      ],
+      "Shared by Public link": [
+        "Herkese açık bağlantı ile paylaşıldı"
+      ],
       "Shared on": [
         "Paylaşılma zamanı"
+      ],
+      "Shared on ${ sharedOn }": [
+        "${ sharedOn } tarihinde paylaşıldı"
       ],
       "Shared with me": [
         "Benimle paylaşılanlar"

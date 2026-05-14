@@ -782,6 +782,9 @@
       "Re-sign": [
         "Assinar novamente"
       ],
+      "Rebuild index": [
+        "Reconstruir índice"
+      ],
       "Reconnect": [
         "Reconectar"
       ],
@@ -3465,6 +3468,9 @@
       "Failed to load signature details, please try again later": [
         "Falha ao carregar detalhes da assinatura, tente novamente mais tarde"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
@@ -5297,6 +5303,9 @@
       "Copy your referral link": [
         "Copiar seu link de referência"
       ],
+      "Could not scan file for malware": [
+        "Não foi possível verificar se o arquivo contém malware"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -5513,6 +5522,9 @@
       ],
       "File could not be scanned": [
         "Não foi possível escanear o arquivo."
+      ],
+      "File flagged as potentially malicious": [
+        "O arquivo foi marcado como potencialmente malicioso"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Arquivo está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
@@ -5888,6 +5900,9 @@
       "Not connected": [
         "Não conectado"
       ],
+      "Not enough storage space": [
+        "Não há espaço suficiente no armazenamento"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ DRIVE_APP_NAME }."
       ],
@@ -6135,14 +6150,26 @@
       "Search cannot be enabled in this browser": [
         "Não é possível ativar a pesquisa nesse navegador."
       ],
+      "Search data is corrupted": [
+        "Os dados de pesquisa estão corrompidos"
+      ],
       "Search Enabled": [
         "Busca habilitada"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Pesquisa ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
       ],
+      "Search engine error": [
+        "Erro no motor de pesquisa"
+      ],
       "Search error": [
         "Erro de pesquisa"
+      ],
+      "Search is in an invalid state": [
+        "A pesquisa está em um estado invalido"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "A pesquisa está pronta. Seus arquivos foram indexados."
       ],
       "Search module is not available.": [
         "Módulo de pesquisa não disponível"
@@ -6984,6 +7011,9 @@
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } baixados"
+      ],
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
@@ -7173,6 +7203,9 @@
       "Created": [
         "Criado"
       ],
+      "Created ${ created }": [
+        "Criado em ${ created }"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -7192,11 +7225,20 @@
       "Deleted": [
         "Excluído"
       ],
+      "Deleted ${ deleted }": [
+        "Excluído ${ deleted }"
+      ],
       "Device": [
         "Dispositivo"
       ],
+      "Device #${ position }": [
+        "Dispositivo #${ position }"
+      ],
       "Device name": [
         "Nome do dispositivo"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Desativar este link em uma data específica"
@@ -7255,8 +7297,14 @@
       "Expired": [
         "Expirado"
       ],
+      "Expired on ${ formatted }": [
+        "Expirado em ${ formatted }"
+      ],
       "Expires": [
         "Data de validade"
+      ],
+      "Expires ${ formatted }": [
+        "Expira em ${ formatted }"
       ],
       "Expiry": [
         "Expiração"
@@ -7330,6 +7378,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
       ],
+      "Item #${ position }": [
+        "Item #${ position }"
+      ],
       "Keep both": [
         "Manter ambos"
       ],
@@ -7360,6 +7411,9 @@
       "Location": [
         "Localização"
       ],
+      "Location: ${ item.location }": [
+        "Localização: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Iniciar sessão ou criar conta "
       ],
@@ -7380,6 +7434,9 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Modified ${ modified }": [
+        "Modificado: ${ modified }"
       ],
       "Move to Archive": [
         "Mover para Arquivo"
@@ -7402,11 +7459,17 @@
       "Never": [
         "Nunca"
       ],
+      "Never expires": [
+        "Nunca expira"
+      ],
       "New password": [
         "Nova senha"
       ],
       "Not active": [
         "Não ativo"
+      ],
+      "Not selected": [
+        "Não selecionado"
       ],
       "Note": [
         "Nota"
@@ -7443,6 +7506,9 @@
       ],
       "Payment method": [
         "Forma de pagamento"
+      ],
+      "Pending invitation": [
+        "Convite pendente"
       ],
       "PGP scheme": [
         "Esquema PGP"
@@ -7504,6 +7570,9 @@
       "Select type of abuse": [
         "Selecione a categoria de abuso"
       ],
+      "Selected": [
+        "Selecionado"
+      ],
       "Set a password to limit access via link": [
         "Defina uma senha para limitar o acesso por link"
       ],
@@ -7519,8 +7588,17 @@
       "Shared by": [
         "Compartilhado por"
       ],
+      "Shared by ${ sharedBy }": [
+        "Compartilhado por ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Compartilhado por link público"
+      ],
       "Shared on": [
         "Compartilhado em"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Compartilhado em ${ sharedOn }"
       ],
       "Shared with me": [
         "Compartilhado comigo"
