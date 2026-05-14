@@ -46,10 +46,6 @@ export const RecoverIncomingRecoveryContactModal = ({ value, ...rest }: RequestA
                 </p>
 
                 <p className="mt-0 mb-4">
-                    {c('emergency_access').t`Connect with them to confirm they need help to recover their data.`}
-                </p>
-
-                <p className="mt-0 mb-4">
                     <ol className="my-0">
                         <li className="mb-2">{c('emergency_access')
                             .t`Connect with them to confirm they need help to recover their data.`}</li>
