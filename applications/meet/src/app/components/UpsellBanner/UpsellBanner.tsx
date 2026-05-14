@@ -6,11 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { SettingsLink } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { canShowBanner } from '../../utils/canShowBanner';
 
 import './UpsellColor.scss';
@@ -18,13 +19,10 @@ import './UpsellColor.scss';
 export const STORAGE_KEY = 'upsell_banner_dismissed_until';
 export const DISMISS_DAYS = 30;
 
-interface UpsellBannerProps {
-    isPaid: boolean;
-    hasSubscriptionWithoutMeet: boolean;
-}
-
-export const UpsellBanner = ({ isPaid, hasSubscriptionWithoutMeet }: UpsellBannerProps) => {
+export const UpsellBanner = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
+    const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+
     const [visible, setVisible] = useState(() => canShowBanner(STORAGE_KEY));
 
     const dismiss = () => {
@@ -37,7 +35,7 @@ export const UpsellBanner = ({ isPaid, hasSubscriptionWithoutMeet }: UpsellBanne
         setVisible(false);
     };
 
-    if (!visible || !meetUpsellEnabled || isPaid) {
+    if (!visible || !meetUpsellEnabled || isPaidUser || isSubUser) {
         return null;
     }
 
@@ -76,10 +74,4 @@ export const UpsellBanner = ({ isPaid, hasSubscriptionWithoutMeet }: UpsellBanne
             </button>
         </div>
     );
-};
-
-export const UpsellBannerWithUser = () => {
-    const { isPaid, isSubUser, hasSubscriptionWithoutMeet } = useIsTreatedAsPaidMeetUser();
-
-    return <UpsellBanner isPaid={isPaid || isSubUser} hasSubscriptionWithoutMeet={hasSubscriptionWithoutMeet} />;
 };

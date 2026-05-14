@@ -13,6 +13,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsLocalScreenShare, selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -21,7 +22,6 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -74,7 +74,7 @@ export const MeetingBody = ({
 }: MeetingBodyProps) => {
     useMeetingInitialisation();
 
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
 
     const isLargerThanMd = useIsLargerThanMd();
 
