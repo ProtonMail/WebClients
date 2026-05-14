@@ -10,6 +10,7 @@ import { settingsReducer } from './settings';
 import { sortedParticipantsReducer } from './sortedParticipantsSlice';
 import { uiStateReducer } from './uiStateSlice';
 import { userSettingsReducer } from './userSettings';
+import { meetUserReducer } from './userSlice';
 
 export * from './deviceManagementSlice';
 export * from './meetAppStateSlice';
@@ -31,4 +32,5 @@ export const meetReducers = {
     ...settingsReducer,
     ...sortedParticipantsReducer,
     ...uiStateReducer,
+    ...meetUserReducer,
 };

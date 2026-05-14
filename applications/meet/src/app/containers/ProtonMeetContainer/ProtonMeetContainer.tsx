@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
@@ -20,6 +20,7 @@ import {
     setMeetingReadyPopupOpen,
     setPopupStateValue,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import {
     decryptSessionKey,
@@ -46,7 +47,6 @@ import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useWasmApp } from '../../contexts/WasmContext';
@@ -58,7 +58,6 @@ import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useDisplayName } from '../../hooks/useDisplayName';
-import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { useKeyManagement } from '../../hooks/useKeyManagement';
 import { isConnectionTimeoutError, useLiveKitConnection } from '../../hooks/useLiveKitConnection';
 import { MeetingListStatus } from '../../hooks/useMeetingList';
@@ -88,8 +87,6 @@ interface ProtonMeetContainerProps {
     room: Room;
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
-    paidUser: boolean;
-    isSubUser: boolean;
 }
 
 const getNetworkHints = () => {
@@ -104,15 +101,10 @@ const getNetworkHints = () => {
     };
 };
 
-export const ProtonMeetContainer = ({
-    room,
-    keyProvider,
-    user = null,
-    paidUser = false,
-    isSubUser = false,
-}: ProtonMeetContainerProps) => {
+export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
+    const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
 
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
@@ -514,7 +506,6 @@ export const ProtonMeetContainer = ({
                 participantCount = participantsCountValue;
             }
 
-
             accessTokenRef.current = accessToken;
 
             const t1 = performance.now();
@@ -778,7 +769,7 @@ export const ProtonMeetContainer = ({
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
                 isGuest: isGuest,
-                isPaidUser: paidUser,
+                isPaidUser,
             });
             meetingLinkNameRef.current = id; // id is the meeting link name
 
@@ -958,19 +949,19 @@ export const ProtonMeetContainer = ({
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
         }
 
-        if (isLocalParticipantHost && !paidUser) {
+        if (isLocalParticipantHost && !isPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.HostFreeAccount));
         }
 
-        if (isLocalParticipantHost && (paidUser || isSubUser)) {
+        if (isLocalParticipantHost && (isPaidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.HostPaidAccount));
         }
 
-        if (!isLocalParticipantHost && user && !paidUser) {
+        if (!isLocalParticipantHost && user && !isPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (!isLocalParticipantHost && user && (paidUser || isSubUser)) {
+        if (!isLocalParticipantHost && user && (isPaidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -1048,7 +1039,7 @@ export const ProtonMeetContainer = ({
             isExpiringRef.current = true;
             dispatch(
                 setUpsellModalType(
-                    paidUser || isSubUser
+                    isPaidUser || isSubUser
                         ? UpsellModalTypes.MeetingExpiredHostPaid
                         : UpsellModalTypes.MeetingExpiredHostFree
                 )
@@ -1206,7 +1197,6 @@ export const ProtonMeetContainer = ({
                         maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
-                        paidUser={paidUser}
                         getKeychainIndexInformation={getKeychainIndexInformation}
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
@@ -1280,12 +1270,8 @@ export const ProtonMeetContainer = ({
     );
 };
 
-export const ProtonMeetContainerWithUser = (
-    props: Omit<ProtonMeetContainerProps, 'user' | 'paidUser' | 'isSubUser'>
-) => {
+export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user'>) => {
     const [user] = useUser();
 
-    const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
-
-    return <ProtonMeetContainer {...props} user={user} paidUser={isPaid} isSubUser={isSubUser} />;
+    return <ProtonMeetContainer {...props} user={user} />;
 };

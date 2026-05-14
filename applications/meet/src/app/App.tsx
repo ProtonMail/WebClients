@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { getIsGuestFromUrl, selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
@@ -16,7 +18,6 @@ import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDa
 import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
-import { useGuestContext } from './contexts/GuestProvider/GuestContext';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 
 // @ts-ignore
@@ -46,7 +47,7 @@ const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
     const hasInitialized = useRef(false);
 
     const history = useHistory();
@@ -92,7 +93,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const App = () => {
-    const isGuest = useGuestContext();
+    const isGuest = getIsGuestFromUrl();
 
     if (!isWasmSupported()) {
         return <WasmUnsupportedError />;
