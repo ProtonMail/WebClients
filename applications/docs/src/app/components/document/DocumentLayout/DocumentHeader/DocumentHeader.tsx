@@ -25,8 +25,10 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useIsSheetsEditorEnabled } from '~/utils/flags'
+import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
+import { useSharingModal } from '@proton/drive/modules/sharingModal'
+import { generateNodeUid, getDrive } from '@proton/drive'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -156,6 +158,11 @@ function DocsHeaderForDocument({
   const role = useMemo(() => documentState.getProperty('userRole'), [documentState])
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
 
+  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
+  const { showSharingModal, sharingModal } = useSharingModal()
+
+  const { volumeId, nodeId } = documentState.getProperty('decryptedNode')
+
   const icon = (
     <MimeIcon
       name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'}
@@ -165,84 +172,95 @@ function DocsHeaderForDocument({
   )
 
   return (
-    <div
-      className={clsx(
-        'flex select-none flex-nowrap items-center gap-2 px-3 py-2',
-        documentType === 'sheet' && 'bg-[#F9FBFC]',
-      )}
-      data-testid="docs-header"
-    >
-      <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
-        {isHomepageEnabled ? (
-          <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)}>
-            {icon}
-          </a>
-        ) : (
-          icon
+    <>
+      <div
+        className={clsx(
+          'flex select-none flex-nowrap items-center gap-2 px-3 py-2',
+          documentType === 'sheet' && 'bg-[#F9FBFC]',
         )}
+        data-testid="docs-header"
+      >
+        <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
+          {isHomepageEnabled ? (
+            <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)}>
+              {icon}
+            </a>
+          ) : (
+            icon
+          )}
 
-        <DocumentTitleDropdown
-          documentType={documentType}
-          actionMode={actionMode}
-          authenticatedController={authenticatedController}
-          editorController={editorController}
-          documentState={documentState}
-          renameController={renameController}
-        />
-        <div
-          className="flex-grow-1 flex-basis-0 ml-0.5 flex min-w-fit flex-shrink-0 items-center justify-between gap-2 head-max-1199:!max-w-[4.5rem]"
-          data-testid="status-container"
-        >
-          <ConnectionStatus documentState={documentState} />
-          <div className="flex-none head-max-479:![display:none]">{!role.canEdit() && <ViewOnlyPill />}</div>
+          <DocumentTitleDropdown
+            documentType={documentType}
+            actionMode={actionMode}
+            authenticatedController={authenticatedController}
+            editorController={editorController}
+            documentState={documentState}
+            renameController={renameController}
+          />
+          <div
+            className="flex-grow-1 flex-basis-0 ml-0.5 flex min-w-fit flex-shrink-0 items-center justify-between gap-2 head-max-1199:!max-w-[4.5rem]"
+            data-testid="status-container"
+          >
+            <ConnectionStatus documentState={documentState} />
+            <div className="flex-none head-max-479:![display:none]">{!role.canEdit() && <ViewOnlyPill />}</div>
+          </div>
+        </div>
+
+        <div className="flex flex-1 flex-nowrap items-center justify-end head-max-479:!flex-shrink-0 head-max-479:!basis-auto">
+          {publicContext ? (
+            <HeaderPublicOptions
+              editorController={editorController}
+              documentState={documentState as PublicDocumentState}
+              documentType={documentType}
+            />
+          ) : (
+            <>
+              <DocumentActiveUsers className="mr-2 hidden md:flex" />
+
+              {documentState.getProperty('userRole').canShare() && (
+                <Button
+                  shape="ghost"
+                  className="flex flex-nowrap items-center gap-2 border !border-[transparent] head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
+                  data-testid="share-button"
+                  onClick={() =>
+                    sharingModalDriveSdkEnabled
+                      ? showSharingModal({
+                          drive: getDrive(),
+                          nodeUid: generateNodeUid(volumeId, nodeId),
+                        })
+                      : authenticatedController?.openDocumentSharingModal()
+                  }
+                >
+                  <Icon name="user-plus" />
+                  <span className="leading-none head-max-849:!sr-only">{c('Action').t`Share`}</span>
+                </Button>
+              )}
+            </>
+          )}
+
+          {!publicContext && (
+            <>
+              {documentState.getProperty('userRole').canComment() && documentType !== 'sheet' && (
+                <CommentsButton editorController={editorController} />
+              )}
+              <div className="w-2" />
+              <UserDropdown
+                app={APPS.PROTONDOCS}
+                reportDescriptionContext={getDocsReportContextLines({
+                  documentType,
+                  role,
+                  appVersion: APP_VERSION,
+                  clientType: CLIENT_TYPE,
+                })}
+                sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
+              />
+            </>
+          )}
         </div>
       </div>
 
-      <div className="flex flex-1 flex-nowrap items-center justify-end head-max-479:!flex-shrink-0 head-max-479:!basis-auto">
-        {publicContext ? (
-          <HeaderPublicOptions
-            editorController={editorController}
-            documentState={documentState as PublicDocumentState}
-            documentType={documentType}
-          />
-        ) : (
-          <>
-            <DocumentActiveUsers className="mr-2 hidden md:flex" />
-
-            {documentState.getProperty('userRole').canShare() && (
-              <Button
-                shape="ghost"
-                className="flex flex-nowrap items-center gap-2 border !border-[transparent] head-max-849:!mr-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!px-[0.5em]"
-                data-testid="share-button"
-                onClick={() => authenticatedController?.openDocumentSharingModal()}
-              >
-                <Icon name="user-plus" />
-                <span className="leading-none head-max-849:!sr-only">{c('Action').t`Share`}</span>
-              </Button>
-            )}
-          </>
-        )}
-
-        {!publicContext && (
-          <>
-            {documentState.getProperty('userRole').canComment() && documentType !== 'sheet' && (
-              <CommentsButton editorController={editorController} />
-            )}
-            <div className="w-2" />
-            <UserDropdown
-              app={APPS.PROTONDOCS}
-              reportDescriptionContext={getDocsReportContextLines({
-                documentType,
-                role,
-                appVersion: APP_VERSION,
-                clientType: CLIENT_TYPE,
-              })}
-              sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
-            />
-          </>
-        )}
-      </div>
-    </div>
+      {sharingModal}
+    </>
   )
 }
 
