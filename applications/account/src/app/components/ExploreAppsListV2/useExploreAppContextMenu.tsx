@@ -8,13 +8,11 @@ import ContextMenuButton from '@proton/components/components/contextMenu/Context
 import { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
-import {
-    sendExploreAppsListContextMenuOpenNewTab,
-    sendExploreAppsListContextMenuOpenSettings,
-} from './exploreAppsListTelemetry';
+import { useExploreAppsListTelemetry } from './exploreAppsListTelemetry';
 
-export const useExploreAppContextMenu = ({ onClick }: { onClick: () => void }) => {
+export const useExploreAppContextMenu = () => {
     const anchorRef = useRef<HTMLElement>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [position, setPosition] = useState<{ top: number; left: number }>();
@@ -24,11 +22,23 @@ export const useExploreAppContextMenu = ({ onClick }: { onClick: () => void }) =
 
     const close = useCallback(() => setIsOpen(false), []);
 
+    const { sendAppClick } = useExploreAppsListTelemetry();
+
     const handleContextMenu = useCallback(
-        (e: React.MouseEvent<HTMLAnchorElement>, appHref: string, settingsHref: string, appName: APP_NAMES) => {
-            e.stopPropagation();
-            e.preventDefault();
-            setPosition({ top: e.clientY, left: e.clientX });
+        ({
+            event,
+            appHref,
+            settingsHref,
+            appName,
+        }: {
+            event: React.MouseEvent<HTMLAnchorElement>;
+            appHref: string;
+            settingsHref: string;
+            appName: APP_NAMES;
+        }) => {
+            event.stopPropagation();
+            event.preventDefault();
+            setPosition({ top: event.clientY, left: event.clientX });
             setSelectedAppHref(appHref);
             setSelectedSettingsHref(settingsHref);
             setSelectedAppName(appName);
@@ -39,20 +49,25 @@ export const useExploreAppContextMenu = ({ onClick }: { onClick: () => void }) =
 
     const handleOpenInNewTab = useCallback(() => {
         if (selectedAppHref && selectedAppName) {
-            onClick();
-            sendExploreAppsListContextMenuOpenNewTab({ appName: selectedAppName });
+            sendAppClick({
+                appName: selectedAppName,
+                openMethod: 'new_tab',
+            });
             window.open(selectedAppHref, '_blank');
         }
         close();
-    }, [selectedAppHref, selectedAppName, close, onClick]);
+    }, [selectedAppHref, selectedAppName, close]);
 
-    const handleOpenSettings = useCallback(() => {
+    const handleOpenSettings = useCallback(async () => {
         if (selectedAppName) {
-            onClick();
-            sendExploreAppsListContextMenuOpenSettings({ appName: selectedAppName });
+            sendAppClick({
+                appName: selectedAppName,
+                openMethod: 'settings',
+            });
+            await wait(50); // This ensures the telemetry event has time to be initiated and sent before the page redirects
         }
         close();
-    }, [selectedAppName, close, onClick]);
+    }, [selectedAppName, close]);
 
     const contextMenu = (
         <ContextMenu
