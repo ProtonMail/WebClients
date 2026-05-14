@@ -2979,7 +2979,7 @@
         "Aktarımı sürdür"
       ],
       "Copy activation link": [
-        "Aktivasyon bağlantısını kopyala"
+        "Etkinleştirme bağlantısını kopyala"
       ],
       "Copy activation link to clipboard": [
         "Etkinleştirme bağlantısını panoya kopyala"
@@ -3036,7 +3036,7 @@
         "Kuruluş hesabınızın kurulumunu tamamlayın"
       ],
       "Go to Domain names": [
-        "Alan adlarına git"
+        "Etki alanı adlarına git"
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
@@ -3063,7 +3063,7 @@
         "Aktarım uygulamasını kurun"
       ],
       "Install Migration assistant": [
-        "Taşıma yardımcısı'nı yükleyin"
+        "Aktarım yardımcısını kur"
       ],
       "Loading your organization data": [
         "Kuruluşunuzun verileri yükleniyor"
@@ -3211,7 +3211,7 @@
         "Durum"
       ],
       "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Varsayılan ayar yok. Ancak güvenliğinizi artırmak için bu değeri p=karantina olarak ayarlamanızı öneririz."
+        "Varsayılan ayar: Yok. Ancak güvenliğinizi artırmak için bu değeri p=quarantine olarak ayarlamanızı öneririz."
       ],
       "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
         "“p=“ değeri DMARC denetiminden geçemeyen e-postalar için yapılacak işlemi belirler. Yapılabilecek işlemler şunlardır:"
@@ -3262,7 +3262,7 @@
         "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
       ],
       "We're still checking the MX records with your domain provider.": [
-        "Hala etki alanı sağlayıcınızla MX kayıtlarını kontrol ediyoruz."
+        "Hala etki alanı hizmeti sağlayıcınızdaki MX kayıtlarını denetliyoruz."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Bazı kullanıcıların henüz ${ BRAND_NAME } hesaplarını almadıklarını fark ettik."
@@ -3277,7 +3277,7 @@
         "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
       ],
       "You're all set!": [
-        "Her şey hazır!"
+        "Hazırsınız!"
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin.",
@@ -6563,8 +6563,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } bir sonraki acil durumda erişme izni isteğine kadar hesabınıza erişemeyecek."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** artık kurtarma kişiniz. Parolanızı sıfırladığınızda verilerinizi kurtarmanıza yardımcı olabilir."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** artık kurtarma kişiniz oldu. Parolanızı sıfırladıktan sonra verilerinizin kilidini açmanıza yardımcı olabilir."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Onaylarsa**, **Kurtarmayı onayla** üzerine tıklayın. Bu işlem şifrelenmiş verilerinin şifresini çözer."
@@ -6604,6 +6604,9 @@
       ],
       "Add recovery contact": [
         "Kurtarma kişisi ekle"
+      ],
+      "Add recovery method": [
+        "Kurtarma yöntemi ekle"
       ],
       "Added on ${ formattedDate }": [
         "${ formattedDate } tarihinde eklendi"
@@ -6728,9 +6731,6 @@
       "Less than a minute left": [
         "Bir dakikadan az kaldı"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Erişimi geri almaya çalışan kişinin gerçekten siz olduğunuzu ${ user } kullanıcısına bildirin."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Kişi sayısı ${ limit } sınırına ulaştı. Değiştirmek için bir kişiyi silip yenisini ekleyin.",
         "Kişi sayısı ${ limit } sınırına ulaştı. Değiştirmek için bir kişiyi silip yenisini ekleyin."
@@ -6828,11 +6828,11 @@
       "Select recovery contact ${ name }": [
         "${ name } kurtarma kişisini seç"
       ],
-      "Send email request": [
-        "E-posta isteği gönder"
-      ],
       "Send recovery request": [
         "Kurtarma isteği gönder"
+      ],
+      "Start recovery": [
+        "Kurtarmayı başlat"
       ],
       "Stop being recovery contact": [
         "Kurtarma kişisi olmayı bırak"
@@ -6877,6 +6877,9 @@
       "Time required before automatically granting them access": [
         "Otomatik olarak erişme izni verilmeden önce beklenecek süre"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Kurtarma kişileri eklemek için kurtarma e-posta adresiniz veya telefon numaranız olmalıdır."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Bu kurtarma yöntemini kullanımdan kaldırmak için tüm kurtarma kişilerinizi kaldırın."
       ],
@@ -6906,6 +6909,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "**${ user }** adlı kişinizin şifrelenmiş verilerinin şifresini çözmek için bir istek aldık."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "${ user } adresine bir e-posta isteği gönderdik. Erişimi geri kazanmaya çalışanın gerçekten siz olduğunuzu onlara bildirin."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Kurtarma verileri doğrulanamadı. Yine de ilerlemek istiyor musunuz?"
@@ -10210,7 +10216,7 @@
         "**${ name }** sertifikasını geçersiz kılmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to sign out of this account?": [
-        "Bu hesabın oturumunu kapatmak istediğinizden emin misiniz?"
+        "Bu hesabın oturumunu kapatmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Klasörlerinizi alfabetik olarak sıralamak istediğinize emin misiniz?"
@@ -10503,6 +10509,10 @@
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "${ total } sunucu ile ağ geçidi oluşturuluyor",
+        "${ total } sunucu ile ağ geçidi oluşturuluyor"
+      ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
@@ -10552,7 +10562,7 @@
         "Veriler kurtarma ifadesi kurtarılabilir"
       ],
       "Data recovery requires a password reset option (email or SMS)": [
-        "Veri kurtarma işlemi için parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
+        "Veri kurtarma işlemi için bir parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
       ],
       "dedicated servers": [
         "size ayrılmış sunucular"
@@ -12361,7 +12371,7 @@
         "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya internet bağlantınızı kesmeyin."
       ],
       "This data recovery method requires a password reset option (email or SMS)": [
-        "Bu veri kurtarma yöntemi için parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
+        "Bu veri kurtarma yöntemi için bir parola sıfırlama seçeneği (e-posta veya SMS) gereklidir"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Bu özellik, e-postalarınızı göndermeyi geciktirerek belirtilen süre içinde göndermeyi geri alma olanağı sağlar."
@@ -12522,29 +12532,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Hesabınızın güvenliğini en üst düzeye çıkarmak için **Kişi destekli kurtarma** özelliğini devre dışı bırakın."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Hesabınızın güvenliğini en üst düzeye çıkarmak için **Aygıt verileri yedekleme** özelliğini devre dışı bırakın."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Hesabınızın güvenliğini en üst düzeye çıkarmak için **Acil durum erişimi** özelliğini devre dışı bırakın."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **Kare kod ile oturum açılabilsin** seçeneğini kapatın."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **E-posta adresi ile kurtarma** seçeneğini kapatın."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **Telefon numarası ile kurtarma** seçeneğini kapatın."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Hesabınızın güvenliğini mümkün olan en üst düzeye çıkarmak için **Kurtarma dosyası** seçeneğini devre dışı bırakın (tüm kurtarma dosyalarını geçersiz kılın)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **Oturum açmış sıfırlama** seçeneğini kapatın."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. Önceki sürümlerin ${ BRAND_NAME } tarafından ne kadar süreyle tutulacağını seçin."
@@ -12578,9 +12570,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresiniz olmalıdır."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Bu kurtarma yöntemini kullanmak için ${ PROTON_SENTINEL_NAME } öğesini devre dışı bırakmanız ve bir parola sıfırlama seçeneğini (e-posta veya SMS) etkinleştirmeniz gerekir."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Düzgün çalışması için, her süzgecin en az bir adı ve geçerli bir Sieve betiği olmalıdır. ${ link }."
@@ -13341,7 +13330,7 @@
         "Kurtarma ifadeniz, belirli bir sırada rastgele oluşturulmuş 12 sözcükten oluşan bir dizidir."
       ],
       "Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${ BRAND_NAME } Account. It is composed of 12 words and acts like a backup password.": [
-        "${ BRAND_NAME } Hesabınıza erişiminiz engellendiğinde kurtarma ifadeniz oturum açmanıza ve verilerinizi kurtarmanıza olanak tanır. 12 kelimeden oluşur ve yedek parola görevi görür."
+        "${ BRAND_NAME } hesabınıza erişiminiz engellendiğinde kurtarma ifadeniz oturum açmanızı ve verilerinizi kurtarmanızı sağlar. 12 sözcükten oluşur ve yedek parola olarak kullanılır."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
@@ -19070,7 +19059,7 @@
         "İsviçre gizlilik yasaları tarafından korunur"
       ],
       "Save your recovery phrase to continue": [
-        "Devam etmek için kurtarma ifadenizi kaydedin"
+        "İlerlemek için kurtarma ifadenizi kaydedin"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
@@ -21107,7 +21096,7 @@
     },
     "safety_review": {
       "${ BRAND_NAME } Account email": [
-        "${ BRAND_NAME } Hesap e-postası"
+        "${ BRAND_NAME } hesabı e-posta adresi"
       ],
       "Account protection": [
         "Hesap koruması"
@@ -21115,14 +21104,17 @@
       "Add": [
         "Ekle"
       ],
+      "Add an emergency contact": [
+        "Acil durum kişisi ekle"
+      ],
       "Add emergency contacts": [
         "Acil durum kişileri ekle"
       ],
       "Add options": [
         "Seçenek ekle"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Güvendiğiniz ve kolayca ulaşabileceğiniz kişileri ekleyin. Bu kişiler hesabınıza erişip parolanızı sizin için sıfırlayabilecekler."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Güvendiğiniz ve kolayca iletişim kurabileceğiniz kişileri ekleyin. Acil durum kişiniz gerektiğinde hesabınıza erişebilir ve parolanızı sizin yerinize sıfırlayabilir."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Güvendiğiniz ve kolayca ulaşabileceğiniz kişileri ekleyin. Parolanızı sıfırladıktan sonra bu kişiler verilerinize erişmenize yardımcı olabilir."
@@ -21169,9 +21161,6 @@
       "Allow scanning a QR code to sign in": [
         "Kare kod tarayarak oturum açılabilsin"
       ],
-      "Allow trusted friends to sign in": [
-        "Güvenilir arkadaşlarınızın oturum açmasına izin verin"
-      ],
       "Allow trusted friends to unlock your data": [
         "Güvendiğiniz arkadaşlarınızın verilerinize erişmesine izin verin"
       ],
@@ -21197,7 +21186,7 @@
         "Kurtarma dosyası indirildi"
       ],
       "Emergency contacts enabled": [
-        "Acil durum kişileri etkinleştirildi"
+        "Acil durum kişileri kullanıma alındı"
       ],
       "Enable device recovery": [
         "Aygıt kurtarmayı etkinleştir"
@@ -21224,10 +21213,10 @@
         "E-posta kurtarma etkinleştirildi"
       ],
       "Enabled password reset from settings": [
-        "Ayarlar'an parola sıfırlama etkinleştirildi"
+        "Ayarlarda parola sıfırlama özelliği açıldı"
       ],
       "Enabled phone recovery": [
-        "Telefon kurtarma etkinleştirildi"
+        "Telefon numarası ile kurtarma açıldı"
       ],
       "Enabled QR code sign-in": [
         "Kare kod ile oturum açma özelliği açıldı"
@@ -21259,6 +21248,9 @@
       "They must already have a ${ BRAND_NAME } Account.": [
         "Bir ${ BRAND_NAME } hesabı olması gereklidir."
       ],
+      "They will not be able to see or access your data.": [
+        "Verilerinizi göremeyecek ve erişemeyecekler."
+      ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Böylece ${ BRAND_NAME } hesabınıza hızlıca erişebilir ve parolanızı değiştirebilirsiniz."
       ],
@@ -21284,10 +21276,10 @@
         "Parola doğrulanmış"
       ],
       "Verified recovery email": [
-        "Doğrulanmış kurtarma e-postası"
+        "Doğrulanmış kurtarma e-posta adresi"
       ],
       "Verified recovery phone": [
-        "Doğrulanmış kurtarma telefonu"
+        "Doğrulanmış kurtarma telefon numarası"
       ],
       "Verify": [
         "Doğrula"
@@ -21299,7 +21291,7 @@
         "Kurtarma e-postasını doğrula"
       ],
       "Verify recovery phone": [
-        "Kurtarma telefonunu doğrula"
+        "Kurtarma telefon numarasını doğrula"
       ],
       "Verify your recovery email": [
         "Kurtarma e-postanızı doğrulayın"
@@ -21536,8 +21528,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Hesabınızın güvenliğini en üst düzeye çıkarmak için vurgulanan seçenekleri devre dışı bırakın."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Hesabınızın mümkün olan en yüksek güvenliğini sağlamak için e-posta ve SMS yoluyla kurtarmayı devre dışı bırakın."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "${ BRAND_NAME } hesabınıza her zaman erişebilmek için kurtarma ifadenizi indirin."
@@ -22759,7 +22751,7 @@
         "Bir kullanıcının rolünü ve izinlerini yönetmek için adına tıklayın."
       ],
       "Click Edit to assign roles to this group and manage member access automatically.": [
-        "Bu gruba roller atamak ve üye erişimini otomatik olarak yönetmek için Düzenle'ye tıklayın."
+        "Bu gruba roller atamak ve üye erişimini otomatik olarak yönetmek için Düzenle üzerine tıklayın."
       ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın"
@@ -22771,7 +22763,7 @@
         "Yeni: Roller ve izinler sekmesi"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
-        "Tam yönetici erişimi olmadan belirli izinler vermek için bu sekmeyi açın."
+        "Tam yönetici erişimi olmadan belirli izinleri vermek için bu sekmeyi açın."
       ],
       "User roles available": [
         "Kullanılabilir kullanıcı rolleri"
@@ -23081,29 +23073,11 @@
       "Available on this device": [
         "Bu aygıtta kullanılabilir"
       ],
-      "Disable contact-assisted recovery": [
-        "Kişi yardımıyla kurtarmayı devre dışı bırak"
-      ],
-      "Disable device data backup": [
-        "Aygıt veri yedeklemesini devre dışı bırak"
-      ],
-      "Disable emergency access": [
-        "Acil erişim özelliğini kapat"
-      ],
-      "Disable QR code sign-in": [
-        "Kare kod ile oturum açma özelliğini kapatın"
-      ],
       "Disable recovery by email": [
         "E-posta adresi ile kurtarmayı kapatın"
       ],
       "Disable recovery by phone": [
         "Telefon numarası ile kurtarmayı kapatın"
-      ],
-      "Disable recovery file": [
-        "Kurtarma dosyasını etkisizleştir"
-      ],
-      "Disable signed-in reset": [
-        "Oturum açmış sıfırlamayı kapat"
       ],
       "Generate a recovery phrase": [
         "Bir kurtarma ifadesi oluşturun"
@@ -23113,9 +23087,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Son güncelleme ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Herhangi bir kişi yok"
       ],
       "Not saved": [
         "Kaydedilmedi"
@@ -24808,9 +24779,6 @@
       "Contact us": [
         "Bize ulaşın"
       ],
-      "Contact-assisted recovery": [
-        "Kişi yardımı ile kurtarma"
-      ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
@@ -24919,6 +24887,9 @@
       ],
       "Data recovery": [
         "Veri kurtarma"
+      ],
+      "Data recovery contacts": [
+        "Veri kurtarma kişileri"
       ],
       "Data recovery options": [
         "Veri kurtarma seçenekleri"

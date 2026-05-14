@@ -6317,8 +6317,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } wird erst beim nächsten Notfallzugang auf dein Konto zugreifen können."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** ist jetzt dein Wiederherstellungskontakt. Er kann dir helfen, deine Daten nach einem Zurücksetzen des Passworts wiederherzustellen."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** ist nun dein Wiederherstellungskontakt. Er kann dir dabei helfen, deine Daten nach einer Passwortzurücksetzung zu entsperren."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Wenn sie bestätigen**, klicke auf **Wiederherstellung genehmigen**. Dies entsperrt deren verschlüsselte Daten."
@@ -6355,6 +6355,9 @@
       ],
       "Add recovery contact": [
         "Wiederherstellungskontakt hinzufügen"
+      ],
+      "Add recovery method": [
+        "Wiederherstellungsmethode hinzufügen"
       ],
       "Added on ${ formattedDate }": [
         "Hinzugefügt am ${ formattedDate }"
@@ -6476,9 +6479,6 @@
       "Less than a minute left": [
         "Noch weniger als eine Minute"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Lass ${ user } wissen, dass es wirklich du bist, der versucht, den Zugriff wiederherzustellen."
-      ],
       "None": [
         "Keine"
       ],
@@ -6572,11 +6572,11 @@
       "Select recovery contact ${ name }": [
         "Wiederherstellungskontakt ${ name } auswählen"
       ],
-      "Send email request": [
-        "E-Mail-Anfrage senden"
-      ],
       "Send recovery request": [
         "Wiederherstellungsanfrage senden"
+      ],
+      "Start recovery": [
+        "Wiederherstellung starten"
       ],
       "Stop being recovery contact": [
         "Kein Wiederherstellungskontakt mehr sein"
@@ -6618,6 +6618,9 @@
       "Time required before automatically granting them access": [
         "Benötigte Zeit, bevor du ihnen automatisch Zugriff gewährst"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Um einen Wiederherstellungskontakt hinzuzufügen, benötigst du eine Wiederherstellungs-E-Mail-Adresse oder -Telefonnummer."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Um diese Wiederherstellungsmethode zu deaktivieren, entferne alle deine Wiederherstellungskontakte."
       ],
@@ -6647,6 +6650,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Wir haben eine Anfrage erhalten, die verschlüsselten Daten deines Kontakts **${ user }** zu entsperren."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Wir senden eine E-Mail-Anfrage an ${ user }. Lass ihn wissen, dass du es bist, der versucht Zugriff wiederzuerlangen."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Wir konnten die Wiederherstellungsdaten nicht überprüfen. Trotzdem fortfahren?"
@@ -12221,9 +12227,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Wähle eine Wiederherstellungsmethode aus, um deine gesperrten Daten nach dem Zurücksetzen des Passworts zu entschlüsseln und anzuzeigen."
       ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Um die größtmögliche Sicherheit deines Kontos sicherzustellen, deaktiviere **Angemeldete zurücksetzen**."
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Um sicherzustellen, dass du keine wichtigen Daten verlierst, speichert ${ DRIVE_APP_NAME } ältere Versionen deiner Dateien, wenn du \nund deine Mitbearbeiter Änderungen vornehmen. Wähle, wie lange ${ BRAND_NAME } frühere Versionen speichern soll."
       ],
@@ -12256,9 +12259,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Um ${ toAppName } verwenden zu können, benötigst du eine ${ MAIL_APP_NAME }-Adresse."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Um diese Wiederherstellungsmethode zu nutzen, musst du ${ PROTON_SENTINEL_NAME } deaktivieren und eine Option zur Passwortzurücksetzung aktivieren (E-Mail oder SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten, damit er richtig funktioniert. Siehe ${ link }."
@@ -20637,6 +20637,17 @@
         "Deine Wiederherstellungs-Telefonnummer ist:"
       ]
     },
+    "safety_review": {
+      "Add an emergency contact": [
+        "Notfallkontakt hinzufügen"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Personen hinzufügen, denen du vertraust und die du leicht erreichen kannst. Dein Notfallkontakt kann bei Bedarf auf dein Konto zugreifen und dein Passwort für dich zurücksetzen."
+      ],
+      "They will not be able to see or access your data.": [
+        "Sie können deine Daten weder einsehen noch darauf zugreifen."
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Abbrechen"
@@ -20838,6 +20849,11 @@
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ]
+    },
+    "Sentinel banner": {
+      "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
+        "Um sicher zu sein, dass du immer Zugriff auf dein ${ BRAND_NAME }-Konto hast, lade deine Wiederherstellungsphrase herunter."
       ]
     },
     "Server-Info": {
@@ -22372,9 +22388,6 @@
       "Add an email address": [
         "E-Mail-Adresse hinzufügen"
       ],
-      "Disable QR code sign-in": [
-        "QR-Code-Anmeldung deaktivieren"
-      ],
       "Disable recovery by email": [
         "Wiederherstellung per E-Mail deaktivieren"
       ],
@@ -22383,9 +22396,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Letzte Aktualisierung ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Kein Kontakt"
       ],
       "Not saved": [
         "Nicht gespeichert"
@@ -24068,9 +24078,6 @@
       ],
       "Contact us": [
         "Kontaktiere uns"
-      ],
-      "Contact-assisted recovery": [
-        "Kontaktunterstützte Wiederherstellung"
       ],
       "Continue with partial import?": [
         "Mit Teilimport fortfahren?"
