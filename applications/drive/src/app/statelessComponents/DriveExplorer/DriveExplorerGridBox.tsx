@@ -130,9 +130,10 @@ export const DriveExplorerGridBox = ({
                 onDrop={canBeDropTarget ? dragMoveControls?.handleDrop : undefined}
                 onDragEnter={canBeDropTarget ? dragMoveControls?.handleDragEnter : undefined}
                 onDragLeave={canBeDropTarget ? dragMoveControls?.handleDragLeave : undefined}
+                onContextMenu={handleContextMenu}
                 draggable={isDraggable}
                 data-testid="grid-item"
-                data-item-uid={itemId}
+                data-drive-explorer-item-uid={itemId}
             >
                 <ItemA11yActivator
                     ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
@@ -141,7 +142,6 @@ export const DriveExplorerGridBox = ({
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                     onKeyDown={handleKeyDown}
-                    onContextMenu={handleContextMenu}
                 />
                 {showCheckboxColumn && (
                     <CheckboxCell
