@@ -175,6 +175,9 @@
       "Continue offline": [
         "Continuer hors-ligne"
       ],
+      "Copy": [
+        "Copier"
+      ],
       "Copy and close": [
         "Copier et fermer"
       ],
@@ -189,6 +192,9 @@
       ],
       "Copy forwarding address": [
         "Copier l'adresse de transfert"
+      ],
+      "Copy instructions": [
+        "Copier les instructions"
       ],
       "Copy link": [
         "Copier le lien"
@@ -207,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Copier dans le presse-papiers"
+      ],
+      "Copy token": [
+        "Copier le jeton"
       ],
       "Copy username": [
         "Copier le nom d'utilisateur"
@@ -243,6 +252,9 @@
       ],
       "Create note": [
         "Créer une note"
+      ],
+      "Create token": [
+        "Créer le jeton"
       ],
       "Create vault": [
         "Créer un coffre-fort"
@@ -421,6 +433,9 @@
       "Link expires after": [
         "Le lien arrive à expiration après"
       ],
+      "Load more": [
+        "Charger plus"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Verrouiller ${ PASS_APP_NAME }"
       ],
@@ -444,6 +459,9 @@
       ],
       "Manage access": [
         "Gérer l'accès"
+      ],
+      "Manage vault access": [
+        "Gérer l'accès aux coffres-forts"
       ],
       "Manually sync your data": [
         "Synchroniser manuellement vos données"
@@ -480,6 +498,9 @@
       ],
       "Multiple select": [
         "Sélection multiple"
+      ],
+      "New token": [
+        "Nouveau jeton"
       ],
       "Next month": [
         "Mois suivant"
@@ -744,6 +765,9 @@
       "Via secure link": [
         "Par lien sécurisé"
       ],
+      "View agent activity": [
+        "Voir l'activité de l'agent"
+      ],
       "View app logs": [
         "Afficher les journaux de l'application"
       ],
@@ -770,6 +794,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activité"
+      ],
+      "Activity details could not be loaded.": [
+        "Le chargement du détail des activités n'a pas abouti."
+      ],
+      "Folder": [
+        "Dossier"
+      ],
+      "Item": [
+        "Élément"
+      ],
+      "Reason": [
+        "Raison"
+      ],
+      "Vault": [
+        "Coffre-fort"
       ]
     },
     "Browser": {
@@ -997,6 +1041,9 @@
       "Could not validate addresses at the moment.": [
         "Les adresses ne peuvent être validées pour le moment."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Le chargement des instructions de configuration de l'agent n'a pas abouti. Veuillez copier le jeton ci-dessous, il ne sera plus jamais affiché."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Le fichier CSV ne contient pas les en-têtes nécessaires : ${ missingHeaders }"
       ],
@@ -1040,6 +1087,9 @@
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La durée de validité doit être comprise entre 60 minutes et 1 an."
+      ],
       "Failed loading group members": [
         "Le chargement des membres du groupe n'a pas abouti."
       ],
@@ -1061,6 +1111,9 @@
       "Failed to change mailbox": [
         "Le changement de messagerie n'a pas abouti."
       ],
+      "Failed to create access token": [
+        "La création du jeton d'accès n'a pas abouti."
+      ],
       "Failed to create domain": [
         "La création du domaine n'a pas abouti."
       ],
@@ -1069,6 +1122,9 @@
       ],
       "Failed to create the contact": [
         "La création du contact n'a pas abouti."
+      ],
+      "Failed to delete access token": [
+        "La suppression du jeton d'accès n'a pas abouti."
       ],
       "Failed to delete domain": [
         "La suppression du domaine n'a pas abouti."
@@ -1088,6 +1144,9 @@
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
       ],
+      "Failed to load access tokens": [
+        "Le chargement des jetons d'accès n'a pas abouti."
+      ],
       "Failed to load breaches for this address": [
         "Les fuites de données pour cette adresse n'ont pas pu être chargées."
       ],
@@ -1099,6 +1158,9 @@
       ],
       "Failed to load item history": [
         "L'historique de l'élément n'a pas pu être chargé."
+      ],
+      "Failed to load token actions": [
+        "Les actions liées aux jetons n'ont pas pu être chargées."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
@@ -1156,6 +1218,9 @@
       ],
       "Failed to update random prefix generation setting.": [
         "La mise à jour du paramètre de génération de préfixe aléatoire n'a pas abouti."
+      ],
+      "Failed to update vault access": [
+        "La mise à jour de l'accès aux coffres-forts n'a pas abouti."
       ],
       "Failed to verify domain": [
         "La vérification du domaine n'a pas abouti."
@@ -1219,6 +1284,12 @@
       ],
       "Moving item failed": [
         "Le déplacement de l'élément n'a pas abouti."
+      ],
+      "Name is required": [
+        "Veuillez indiquer un nom."
+      ],
+      "Name must be 191 characters or fewer": [
+        "Le nom doit comporter 191 caractères au maximum."
       ],
       "Network error": [
         "Erreur de réseau "
@@ -1560,6 +1631,9 @@
         "${ row.breachCount } fuite de données a été détectée.",
         "${ row.breachCount } fuites de données ont été détectées."
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } sélectionnés"
+      ],
       "${ trialDaysLeft } day left": [
         "Il reste ${ trialDaysLeft } jour.",
         "Il reste ${ trialDaysLeft } jours."
@@ -1603,6 +1677,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accès à ${ PASS_APP_NAME } nécessitera votre empreinte digitale ou le code PIN de votre appareil."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Le jeton d'accès « ${ action.token.Name } » cessera de fonctionner immédiatement. Cette action est irréversible."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Les jetons d'accès peuvent être utilisés grâce à ${ passCliLink } afin d'automatiser votre CI/CD ou de donner des accès limités à votre agent IA."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Accédez à vos mots de passe lors de vos déplacements grâce à nos applications mobiles."
@@ -1694,6 +1774,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Avant d'exporter vos données sous ce format, ouvrez et désactivez l'option suivante Paramètres Safari -> Général -> Ouvrir les fichiers sécurisés après téléchargement. Cela empêchera Safari d'extraire le fichier exporté de façon incorrecte."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 heure) et 525600 (1 an)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le verrouillage avec les données biométriques a été enregistré. Utilisez-le pour déverrouiller ${ PASS_APP_NAME }."
       ],
@@ -1763,14 +1846,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copié dans le presse-papiers (expire dans ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copiez le code markdown ci-dessous et envoyez-le à votre agent IA. Le jeton ne sera plus jamais affiché après cela."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Veuillez copier ce jeton. Pour des raisons de sécurité, il ne sera plus jamais affiché."
+      ],
       "Coupon successfully applied!": [
         "Le code promo a été appliqué."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Créez un jeton pour intégrer ${ PASS_APP_NAME } à vos scripts et outils."
       ],
       "Create contact illustration": [
         "Créer l'illustration du contact"
       ],
+      "Created ${ createdDate }": [
+        "Créé le ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Créé le ${ time }."
+      ],
+      "Created item": [
+        "Élément créé"
       ],
       "Creating alias...": [
         "Création de l'alias..."
@@ -1786,6 +1884,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Il s'agit du nom d'affichage par défaut pour les alias créés avec ${ domainDisplay }, sauf s'il est remplacé par le nom d'affichage de l'alias."
+      ],
+      "Deleted item": [
+        "Élément supprimé"
       ],
       "Deleted items will be moved here first": [
         "Les éléments supprimés seront d'abord déplacés ici."
@@ -1810,6 +1911,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domaine : ${ domainPath } ou @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Téléchargez pass-cli depuis ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
@@ -1889,14 +1993,28 @@
       "Enter your PIN code": [
         "Entrez votre code PIN"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Toutes les actions effectuées par ce jeton d'agent, les plus récentes en premier"
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Chaque fois que votre alias reçoit un email de quelqu’un, un contact est automatiquement créé."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expiré il y a ${ abs } heure",
+        "Expiré il y a ${ abs } heures"
       ],
       "Expires in": [
         "Expire dans"
       ],
+      "Expires in ${ hours } hour": [
+        "Expire dans ${ hours } heure",
+        "Expire dans ${ hours } heures"
+      ],
       "Expires in ${ remainingTime }": [
         "Expire dans ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Expire dans moins d'une heure"
       ],
       "Exporting your data...": [
         "Exportation de vos données..."
@@ -2054,6 +2172,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "Log out of any existing session:": [
+        "Se déconnecter de toutes les sessions existantes :"
+      ],
       "Logging you out...": [
         "Déconnexion…"
       ],
@@ -2082,11 +2203,15 @@
         "Déplacer ${ count } élément",
         "Déplacer ${ count } éléments"
       ],
+      "Moved item to trash": [
+        "Les éléments ont été mis à la corbeille."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2109,6 +2234,12 @@
       "Never": [
         "Jamais"
       ],
+      "New": [
+        "Nouveau"
+      ],
+      "No activity recorded yet.": [
+        "Aucune activité n'a été enregistrée pour le moment."
+      ],
       "No breaches detected": [
         "Aucune fuite de données n'a été détectée."
       ],
@@ -2124,8 +2255,14 @@
       "No network connection": [
         "Aucune connexion réseau"
       ],
+      "No vaults available.": [
+        "Aucun coffre-fort n'est disponible."
+      ],
       "None": [
         "Aucun"
+      ],
+      "None selected": [
+        "Aucun sélectionné"
       ],
       "Not configured": [
         "Non configuré"
@@ -2341,6 +2478,9 @@
       "Quickly autofill your saved credentials.": [
         "Remplit automatiquement et rapidement vos identifiants enregistrés."
       ],
+      "Read item": [
+        "Élément lu"
+      ],
       "Reconnect": [
         "Se reconnecter"
       ],
@@ -2374,6 +2514,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "La réinitialisation de l'historique supprimera définitivement toutes les versions précédentes de l'élément et ne peut pas être annulée."
       ],
+      "Restored item from trash": [
+        "L'élément a bien été restauré depuis la corbeille."
+      ],
       "Restoring items from trash": [
         "Restauration des éléments depuis la corbeille"
       ],
@@ -2400,6 +2543,9 @@
       ],
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Sélectionnez les coffres-forts que « ${ token.Name } » peut consulter."
       ],
       "Select where you want your imported vaults to be saved.": [
         "Sélectionnez l'endroit où vous voulez que vos coffres-forts importés soient enregistrés."
@@ -2473,8 +2619,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Appuyez sur l’icône ${ gearIcon } pour personnaliser l’alias comme vous le souhaitez."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Essayez le jeton en vous connectant puis en affichant vos coffres-forts :"
+      ],
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "L'agent devra fournir une raison pour chaque action qu'il effectue, et chaque action sera consignée dans un journal d'audit que vous pourrez consulter. Après la création du jeton, vous recevrez des instructions à copier-coller dans votre agent IA."
       ],
       "The display name when sending an email from this alias.": [
         "Il s'agit du nom d'affichage lors de l'envoi d'un message depuis cet alias."
@@ -2506,6 +2658,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "L'utilisateur n'a pas encore accepté l'invitation."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Vous pouvez ensuite vous rendre sur ${ url } pour copier les instructions à envoyer à votre agent IA."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
@@ -2539,6 +2694,9 @@
       ],
       "This setting is enforced by your organization": [
         "Ce paramètre est imposé par votre organisation"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Ce jeton dispose d'un accès en lecture seule aux coffres-forts que vous sélectionnez. Il permet de consulter les éléments, mais ne permet pas de les modifier, de partager des coffres ni d'inviter d'autres personnes. Vous pourrez modifier ces paramètres ultérieurement."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
@@ -2612,6 +2770,9 @@
       "Update login": [
         "Mettre à jour l'identifiant"
       ],
+      "Updated item": [
+        "Élément mis à jour"
+      ],
       "Updating vault organization...": [
         "Mise à jour de l'organisation du coffre-fort..."
       ],
@@ -2620,6 +2781,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Passez à la version supérieure dès maintenant pour profiter des fonctionnalités premium."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Mettez à niveau vers ${ PASS_APP_NAME } Plus afin de créer des jetons d'accès et d'utiliser ${ PASS_APP_NAME } programmatiquement."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Passez à un abonnement payant pour créer plusieurs coffres-forts."
@@ -2644,6 +2808,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Le coffre-fort « ${ share.content.name } » a été retiré."
+      ],
+      "Vault access granted": [
+        "L'accès aux coffres-forts a été accordé."
       ],
       "Vault organization successfully updated": [
         "L'organisation du coffre-fort a été effectuée avec succès."
@@ -2925,6 +3092,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Jetons d'accès"
+      ],
       "Account": [
         "Compte"
       ],
@@ -3197,6 +3367,9 @@
       ],
       "Expired": [
         "Expiré"
+      ],
+      "Expires in (minutes)": [
+        "Expire dans (minutes)"
       ],
       "Expiry Date": [
         "Date d'expiration"
@@ -3807,6 +3980,9 @@
       "Today": [
         "Aujourd'hui"
       ],
+      "Token name": [
+        "Nom du jeton"
+      ],
       "Total imported items: ": [
         "Nombre total d’éléments importés : "
       ],
@@ -3867,6 +4043,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Utilisez ${ PASS_APP_NAME } comme le gestionnaire de mots de passe par défaut de votre navigateur."
       ],
+      "Use for AI agent": [
+        "Utiliser pour un agent IA"
+      ],
       "Used in": [
         "Utilisation dans"
       ],
@@ -3881,6 +4060,9 @@
       ],
       "Value:": [
         "Valeur :"
+      ],
+      "Vault access": [
+        "Accès aux coffres-forts"
       ],
       "Vault ID": [
         "ID du coffre-fort"
@@ -3986,6 +4168,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a été activé."
+      ],
+      "Access token deleted": [
+        "Le jeton d'accès a été supprimé."
       ]
     },
     "Onboarding": {
@@ -4169,6 +4354,12 @@
       "Coupon": [
         "Code promo"
       ],
+      "e.g. 60": [
+        "par exemple 60"
+      ],
+      "e.g. My automation script": [
+        "par exemple. Mon script d’automatisation"
+      ],
       "E.g., ": [
         "Par exemple, "
       ],
@@ -4326,6 +4517,20 @@
         "Inconnu"
       ]
     },
+    "Status": {
+      "Active": [
+        "Actif"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Expiré"
+      ],
+      "Expiring soon": [
+        "Expire bientôt"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "La synchronisation des alias a été activée. La synchronisation des alias SimpleLogin peut prendre un certain temps."
@@ -4420,6 +4625,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Les jetons d'accès nécessitent le plan ${ PASS_APP_NAME } Plus."
+      ],
       "Account protection": [
         "Protection du compte"
       ],
@@ -4429,11 +4637,17 @@
       "Activity": [
         "Activité"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Activité pour « ${ token.Name } »"
+      ],
       "Add custom domain": [
         "Ajouter un domaine personnalisé"
       ],
       "Add mailbox": [
         "Ajouter une messagerie"
+      ],
+      "Agent setup instructions": [
+        "Instructions de configuration de l'agent"
       ],
       "Alias contacts": [
         "Contacts de l'alias"
@@ -4492,6 +4706,9 @@
       "Create contact": [
         "Créer un contact"
       ],
+      "Create new access token": [
+        "Créer un nouveau jeton d'accès"
+      ],
       "Create PIN code": [
         "Créez un code PIN"
       ],
@@ -4522,6 +4739,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Voulez-vous supprimer ${ deletedItemsCount } élément ?",
         "Voulez-vous supprimer ${ deletedItemsCount } éléments ?"
+      ],
+      "Delete access token?": [
+        "Supprimer le jeton d'accès ?"
       ],
       "Delete domain": [
         "Supprimer le domaine "
@@ -4655,6 +4875,9 @@
       "Mailbox": [
         "Messagerie"
       ],
+      "Manage vault access": [
+        "Gérer l'accès aux coffres-forts"
+      ],
       "Mark as resolved?": [
         "Marquer comme résolue ?"
       ],
@@ -4689,6 +4912,9 @@
       ],
       "Next": [
         "Suivant"
+      ],
+      "No access tokens yet": [
+        "Il n'y a aucun jeton d'accès pour le moment."
       ],
       "No excluded items": [
         "Aucun élément exclu"
@@ -4910,6 +5136,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your new access token": [
+        "Votre nouveau jeton d'accès"
       ],
       "Your vault is empty": [
         "Votre coffre-fort est vide."

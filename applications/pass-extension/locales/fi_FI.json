@@ -169,6 +169,9 @@
       "Continue offline": [
         "Jatka yhteydettömässä tilassa"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Copy and close": [
         "Kopioi ja sulje"
       ],
@@ -402,6 +405,9 @@
       ],
       "Link expires after": [
         "Linkki erääntyy"
+      ],
+      "Load more": [
+        "Lataa lisää"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME }"
@@ -1160,6 +1166,9 @@
       ],
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
+      ],
+      "Name is required": [
+        "Nimi vaaditaan"
       ],
       "Network error": [
         "Verkkovirhe"
@@ -1990,6 +1999,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2007,6 +2020,9 @@
       ],
       "Never": [
         "Ei koskaan"
+      ],
+      "New": [
+        "Uusi"
       ],
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"

@@ -175,6 +175,9 @@
       "Continue offline": [
         "Offline fortsetzen"
       ],
+      "Copy": [
+        "Kopieren"
+      ],
       "Copy and close": [
         "Kopieren und schließen"
       ],
@@ -420,6 +423,9 @@
       ],
       "Link expires after": [
         "Link läuft ab nach"
+      ],
+      "Load more": [
+        "Weitere laden"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } sperren"
@@ -1219,6 +1225,9 @@
       ],
       "Moving item failed": [
         "Fehler beim Verschieben des Eintrags."
+      ],
+      "Name is required": [
+        "Name ist erforderlich"
       ],
       "Network error": [
         "Netzwerkfehler"
@@ -2085,6 +2094,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2105,6 +2118,9 @@
       ],
       "Never": [
         "Niemals"
+      ],
+      "New": [
+        "Neu"
       ],
       "No breaches detected": [
         "Keine Datenlecks entdeckt"
@@ -3804,6 +3820,9 @@
       "Today": [
         "Heute"
       ],
+      "Token name": [
+        "Name des Tokens"
+      ],
       "Total imported items: ": [
         "Insgesamt importierte Einträge: "
       ],
@@ -4165,6 +4184,9 @@
       ],
       "Coupon": [
         "Gutschein"
+      ],
+      "e.g. My automation script": [
+        "z. B. Mein Automatisierungsskript"
       ],
       "E.g., ": [
         "Z. B. "
