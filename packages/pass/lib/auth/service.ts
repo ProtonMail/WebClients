@@ -642,7 +642,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                  * resuming process. Session errors will be managed by the API listener. */
                 const { sessionLocked, sessionInactive } = api.getState();
                 const sessionFailure = !(sessionLocked || sessionInactive);
-                if (sessionFailure) await config.onSessionFailure?.(options, error);
+                if (sessionFailure) await config.onSessionFailure(options, error);
 
                 return false;
             }
