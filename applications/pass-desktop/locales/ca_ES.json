@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Copia l'adreça de reenviament"
       ],
+      "Copy instructions": [
+        "Copiar les instruccions"
+      ],
       "Copy link": [
         "Copia l'enllaç"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Copia al porta-retalls"
+      ],
+      "Copy token": [
+        "Copiar el testimoni"
       ],
       "Copy username": [
         "Copieu el nom d'usuari"
@@ -249,6 +255,9 @@
       ],
       "Create note": [
         "Crea una nota"
+      ],
+      "Create token": [
+        "Crear un testimoni"
       ],
       "Create vault": [
         "Crea una caixa forta"
@@ -430,6 +439,9 @@
       "Link expires after": [
         "L'enllaç caduca després de"
       ],
+      "Load more": [
+        "Carrega'n més"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloca ${ PASS_APP_NAME }"
       ],
@@ -453,6 +465,9 @@
       ],
       "Manage access": [
         "Gestiona l'accés"
+      ],
+      "Manage vault access": [
+        "Gestionar l'accés a la caixa forta"
       ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
@@ -489,6 +504,9 @@
       ],
       "Multiple select": [
         "Selecció múltiple"
+      ],
+      "New token": [
+        "Nou testimoni"
       ],
       "Next": [
         "Següent"
@@ -756,6 +774,9 @@
       "Via secure link": [
         "Mitjançant un enllaç segur"
       ],
+      "View agent activity": [
+        "Vegeu l'activitat de l'agent"
+      ],
       "View details": [
         "Mostra els detalls"
       ],
@@ -779,6 +800,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activitat"
+      ],
+      "Activity details could not be loaded.": [
+        "No s'han pogut carregar els detalls de l'activitat."
+      ],
+      "Folder": [
+        "Carpeta"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Reason": [
+        "Motiu"
+      ],
+      "Vault": [
+        "Caixa forta"
       ]
     },
     "App menu": {
@@ -1020,6 +1061,9 @@
       "Could not validate addresses at the moment.": [
         "No s'han pogut validar les adreces en aquest moment."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No s'han pogut carregar les instruccions de configuració de l'agent. Copieu el testimoni a continuació; no es tornarà a mostrar."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Al fitxer CSV li falten les capçaleres esperades: ${ missingHeaders }"
       ],
@@ -1063,6 +1107,9 @@
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La caducitat ha de ser d'entre 60 minuts i 1 any"
+      ],
       "Failed loading group members": [
         "No s'han pogut carregar els membres del grup"
       ],
@@ -1084,6 +1131,9 @@
       "Failed to change mailbox": [
         "No s'ha pogut canviar la bústia de correu."
       ],
+      "Failed to create access token": [
+        "No s'ha pogut crear l'identificador d'accés"
+      ],
       "Failed to create domain": [
         "No s'ha pogut crear el domini."
       ],
@@ -1092,6 +1142,9 @@
       ],
       "Failed to create the contact": [
         "No s'ha pogut crear el contacte."
+      ],
+      "Failed to delete access token": [
+        "No s'ha pogut eliminar l'identificador d'accés"
       ],
       "Failed to delete domain": [
         "No s'ha pogut eliminar el domini."
@@ -1111,6 +1164,9 @@
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
       ],
+      "Failed to load access tokens": [
+        "S'ha produït un error en carregar els identificadors d'accés"
+      ],
       "Failed to load breaches for this address": [
         "No s'han pogut carregar les infraccions per a aquesta adreça"
       ],
@@ -1122,6 +1178,9 @@
       ],
       "Failed to load item history": [
         "No s'ha pogut carregar l'historial d'elements"
+      ],
+      "Failed to load token actions": [
+        "S'ha produït un error en carregar les accions del testimoni"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "No s'han pogut moure tots els elements de «${ payload.content.name }»"
@@ -1180,6 +1239,9 @@
       "Failed to update random prefix generation setting.": [
         "No s'ha pogut actualitzar la preferència de la generació aleatòria de prefixos."
       ],
+      "Failed to update vault access": [
+        "No s'ha pogut actualitzar l'accés a la caixa forta"
+      ],
       "Failed to verify domain": [
         "No s'ha pogut verificar el domini."
       ],
@@ -1230,6 +1292,12 @@
       ],
       "Moving item failed": [
         "No s'ha pogut moure l'element"
+      ],
+      "Name is required": [
+        "Es requereix un nom."
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nom ha de tenir com a màxim 191 caràcters"
       ],
       "Network error": [
         "Error de xarxa"
@@ -1560,6 +1628,9 @@
         "S'ha detectat ${ row.breachCount } infracció.",
         "S'han detectat ${ row.breachCount } infraccions."
       ],
+      "${ selectedShareIds.size } selected": [
+        "S'han seleccionat ${ selectedShareIds.size }"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
@@ -1593,6 +1664,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "L'identificador d'accés \"${ action.token.Name }\" deixarà de funcionar immediatament. Aquesta acció no es podrà desfer."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Els identificadors d'accés, utilitzats juntament amb ${ passCliLink }, permeten automatitzar el CI/CD o donar al vostre agent d'IA un accés amb abast a allò que necessita per dur a terme la seva tasca."
       ],
       "Add your custom email address to monitor:": [
         "Afegiu la vostra adreça electrònica personalitzada per monitoritzar:"
@@ -1669,6 +1746,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) i 525600 (1 any)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el bloqueig amb dades biomètriques. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
       ],
@@ -1732,14 +1812,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "S'ha copiat al porta-retalls (caduca en ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copieu el contingut marcat a continuació i envieu-lo al vostre agent d'IA. Aquesta és l'única vegada que es mostrarà el testimoni."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copiar aquest testimoni ara. Per motius de seguretat, no es tornarà a mostrar."
+      ],
       "Coupon successfully applied!": [
         "S'ha aplicat el cupó."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Creeu un testimoni per integrar ${ PASS_APP_NAME } amb els vostres scripts i eines."
       ],
       "Create contact illustration": [
         "Crea la il·lustració del contacte"
       ],
+      "Created ${ createdDate }": [
+        "S'ha creat ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Creat el ${ time }."
+      ],
+      "Created item": [
+        "S'ha creat l'element"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus d'accés...). Per a una exportació completa, us recomanem que utilitzeu un format diferent."
@@ -1752,6 +1847,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "És el nom per a mostrar predeterminat per als àlies creats amb ${ domainDisplay }, tret que el sobreescrigui el nom per a mostrar de l'àlies."
+      ],
+      "Deleted item": [
+        "S'ha eliminat l'element"
       ],
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
@@ -1773,6 +1871,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domini: ${ domainPath } o @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descarregueu-vos pass-cli des de ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -1846,14 +1947,28 @@
       "Enter your PIN code": [
         "Introduïu el codi PIN"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Totes les accions que ha realitzat aquest testimoni d'agent, les més recents primer."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vegada que el vostre àlies rep un correu electrònic d'algú, es crea automàticament un contacte."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Ha caducat fa ${ abs } hora",
+        "Ha caducat fa ${ abs } hores"
       ],
       "Expires in": [
         "Caduca en"
       ],
+      "Expires in ${ hours } hour": [
+        "Caduca en ${ hours } hora",
+        "Caduca en ${ hours } hores"
+      ],
       "Expires in ${ remainingTime }": [
         "Caduca en ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Caduca en menys d'una hora"
       ],
       "Exporting your data...": [
         "S'estan exportant les dades..."
@@ -2014,6 +2129,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Carregant ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Tanqueu totes les sessions obertes:"
+      ],
       "Logging you out...": [
         "S'està tancant la sessió..."
       ],
@@ -2042,6 +2160,9 @@
         "Mou ${ count } element",
         "Mou ${ count } elements"
       ],
+      "Moved item to trash": [
+        "S'ha mogut l'element a la paperera"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
@@ -2066,8 +2187,14 @@
       "Never": [
         "Mai"
       ],
+      "New": [
+        "Nova"
+      ],
       "New version ${ latestVersion } is available.": [
         "La nova versió ${ latestVersion } està disponible."
+      ],
+      "No activity recorded yet.": [
+        "Encara no s'ha registrat cap activitat."
       ],
       "No breaches detected": [
         "No s'han detectat infraccions"
@@ -2075,8 +2202,14 @@
       "No network connection": [
         "No hi ha connexió de xarxa."
       ],
+      "No vaults available.": [
+        "No hi ha cap caixa forta disponible."
+      ],
       "None": [
         "Cap"
+      ],
+      "None selected": [
+        "No se n'ha seleccionat cap"
       ],
       "Not recommended": [
         "No recomanat"
@@ -2262,6 +2395,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció del compte"
       ],
+      "Read item": [
+        "Llegir l'element"
+      ],
       "Reconnect": [
         "Torna a connectar"
       ],
@@ -2295,6 +2431,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "En restablir l'historial, se suprimiran permanentment tots els elements anteriors i no es podran desfer."
       ],
+      "Restored item from trash": [
+        "S'ha restaurat l'element de la paperera"
+      ],
       "Restoring items from trash": [
         "S'estan restaurant els elements de la paperera"
       ],
@@ -2309,6 +2448,9 @@
       ],
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleccioneu les caixes fortes que \"${ token.Name }\" pugui llegir."
       ],
       "Select vault to share": [
         "Seleccioneu la caixa forta per compartir"
@@ -2385,8 +2527,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Toqueu la icona ${ gearIcon } per a personalitzar l'àlies com vulgueu."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Proveu el testimoni iniciant sessió i llistant les caixes fortes:"
+      ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "L'agent haurà de proporcionar un motiu per cada acció que realitzi, i cada acció es registrarà en un registre d'auditoria que podreu revisar. Després de la creació del testimoni, rebreu instruccions per copiar-lo i enganxar-lo al vostre agent d'IA."
       ],
       "The changelog can be found ${ changelogLink }.": [
         "El registre de canvis es pot trobar ${ changelogLink }."
@@ -2422,6 +2570,9 @@
       "The user did not accept the invitation yet.": [
         "L'usuari encara no ha acceptat la invitació."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Llavors podeu anar a ${ url } per copiar les instruccions per enviar al vostre agent d'IA."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
       ],
@@ -2454,6 +2605,9 @@
       ],
       "This setting is enforced by your organization": [
         "L'organització aplica aquesta configuració."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Aquest testimoni obté accés de només lectura a les caixes fortes que seleccioneu. Pot llegir elements, però no els pot editar, ni compartir caixes fortes, ni convidar altres persones. Podreu canviar-ho més endavant."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
@@ -2512,11 +2666,17 @@
       "Unverified": [
         "Sense verificar"
       ],
+      "Updated item": [
+        "S'ha actualitzat l'element"
+      ],
       "Updating vault organization...": [
         "S'està actualitzant l'organització de la caixa forta..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Milloreu a ${ PASS_APP_NAME } Plus per crear identificadors d'accés i utilitzar ${ PASS_APP_NAME } de manera programàtica."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Milloreu a un pla de pagament per crear diverses caixes fortes."
@@ -2541,6 +2701,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "La caixa forta \"${ share.content.name }\" s'ha esborrat."
+      ],
+      "Vault access granted": [
+        "S'ha permès l'accés a la caixa forta"
       ],
       "Vault organization successfully updated": [
         "S'ha actualitzat correctament l'organització de la caixa forta"
@@ -2819,6 +2982,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Identificadors d'accés"
+      ],
       "Account": [
         "Compte"
       ],
@@ -3088,6 +3254,9 @@
       ],
       "Expired": [
         "Caducat"
+      ],
+      "Expires in (minutes)": [
+        "Caducarà en (minuts)"
       ],
       "Expiry Date": [
         "Data d'expiració"
@@ -3764,6 +3933,9 @@
       "Today": [
         "Avui"
       ],
+      "Token name": [
+        "Nom del testimoni"
+      ],
       "Total imported items: ": [
         "Total d'elements importats: "
       ],
@@ -3827,6 +3999,9 @@
       "Update": [
         "Actualitza"
       ],
+      "Use for AI agent": [
+        "Per a ús de l'agent d'IA"
+      ],
       "Used in": [
         "Utilitzat en"
       ],
@@ -3841,6 +4016,9 @@
       ],
       "Value:": [
         "Valor:"
+      ],
+      "Vault access": [
+        "Accés a la caixa forta"
       ],
       "Vault ID": [
         "ID de la caixa forta"
@@ -3980,6 +4158,9 @@
       ],
       "${ reason } has been enabled": [
         "S'ha activat ${ reason } "
+      ],
+      "Access token deleted": [
+        "S'ha eliminat l'identificador d'accés"
       ]
     },
     "Option": {
@@ -4160,6 +4341,12 @@
       "Coupon": [
         "Cupó"
       ],
+      "e.g. 60": [
+        "per exemple: 60"
+      ],
+      "e.g. My automation script": [
+        "per exemple, el meu guió d'automatització"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -4317,6 +4504,20 @@
         "Desconegut"
       ]
     },
+    "Status": {
+      "Active": [
+        "Actiu"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Ha caducat"
+      ],
+      "Expiring soon": [
+        "Caducarà aviat"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "La sincronització d'àlies s'ha activat. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
@@ -4405,6 +4606,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Els identificadors d'accés requereixen ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Protecció del compte"
       ],
@@ -4414,11 +4618,17 @@
       "Activity": [
         "Activitat"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Activitat de \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Afegeix un domini personalitzat"
       ],
       "Add mailbox": [
         "Afegeix una bústia de correu"
+      ],
+      "Agent setup instructions": [
+        "Instruccions de configuració de l'agent"
       ],
       "Alias contacts": [
         "Contactes de l'àlies"
@@ -4477,6 +4687,9 @@
       "Create contact": [
         "Crea un contacte"
       ],
+      "Create new access token": [
+        "Crear un nou identificador d'accés"
+      ],
       "Create PIN code": [
         "Creeu un codi PIN"
       ],
@@ -4507,6 +4720,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Voleu eliminar ${ deletedItemsCount } element?",
         "Voleu eliminar ${ deletedItemsCount } elements?"
+      ],
+      "Delete access token?": [
+        "Voleu eliminar l'identificador d'accés?"
       ],
       "Delete domain": [
         "Elimina el domini"
@@ -4622,6 +4838,9 @@
       "Mailbox": [
         "Bústia de correu"
       ],
+      "Manage vault access": [
+        "Gestionar l'accés a la caixa forta"
+      ],
       "Mark as resolved?": [
         "Marca com a resolt?"
       ],
@@ -4656,6 +4875,9 @@
       ],
       "Next": [
         "Següent"
+      ],
+      "No access tokens yet": [
+        "Encara no hi ha cap identificador d'accés"
       ],
       "No excluded items": [
         "No hi ha elements exclosos"
@@ -4874,6 +5096,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your new access token": [
+        "El vostre nou identificador d'accés"
       ],
       "Your vault is empty": [
         "La caixa forta està buida"
