@@ -768,6 +768,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Copy": [
+        "コピー"
+      ],
+      "Load more": [
+        "さらに読み込む"
       ]
     },
     "Browser": {
@@ -1340,6 +1346,9 @@
       ],
       "Unknown error.": [
         "不明なエラーが発生しました。"
+      ],
+      "Name is required": [
+        "名前は必須です"
       ]
     },
     "Error message": {
@@ -2656,10 +2665,13 @@
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Logging you out...": [
         "ログアウト中..."
+      ],
+      "New": [
+        "新規"
       ]
     },
     "Keyboard key": {
@@ -3789,6 +3801,9 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "Token name": [
+        "トークン名"
       ]
     },
     "Link": {

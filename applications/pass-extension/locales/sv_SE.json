@@ -773,6 +773,27 @@
       ],
       "Configure": [
         "Konfigurera"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Copy instructions": [
+        "Kopiera instruktioner"
+      ],
+      "Copy token": [
+        "Kopiera token"
+      ],
+      "Create token": [
+        "Skapa token"
+      ],
+      "Load more": [
+        "Ladda mer"
+      ],
+      "Manage vault access": [
+        "Hantera valvåtkomst"
+      ],
+      "New token": [
+        "Ny token"
       ]
     },
     "Browser": {
@@ -1381,6 +1402,24 @@
       ],
       "This domain is already managed by your organization": [
         "Denna domän är redan hanterad av din organisation"
+      ],
+      "Failed to create access token": [
+        "Misslyckades att skapa åtkomsttoken"
+      ],
+      "Failed to delete access token": [
+        "Misslyckades att ta bort åtkomsttoken"
+      ],
+      "Failed to load access tokens": [
+        "Misslyckades att ladda åtkomsttoken"
+      ],
+      "Failed to update vault access": [
+        "Misslyckades att uppdatera valvåtkomst"
+      ],
+      "Name is required": [
+        "Namn är obligatoriskt"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Namn måste vara 191 tecken långt eller färre"
       ]
     },
     "Error message": {
@@ -2778,6 +2817,59 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valt"
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mellan 60 (1 timme) och 525600 (1 år)"
+      ],
+      "Created ${ createdDate }": [
+        "Skapat ${ createdDate }"
+      ],
+      "Created item": [
+        "Skapade objekt"
+      ],
+      "Deleted item": [
+        "Tog bort objekt"
+      ],
+      "Expired ${ abs } hour ago": [
+        "Löpte ut för ${ abs } timme sedan",
+        "Löpte ut för ${ abs } timmar sedan"
+      ],
+      "Expires in ${ hours } hour": [
+        "Löper ut om ${ hours } timme",
+        "Löper ut om ${ hours } timmar"
+      ],
+      "Expires in less than an hour": [
+        "Löper ut om mindre än timme"
+      ],
+      "Moved item to trash": [
+        "Flyttade objekt till papperskorg"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "No activity recorded yet.": [
+        "Ingen aktivitet registrerad ännu."
+      ],
+      "No vaults available.": [
+        "Inga valv tillgängliga."
+      ],
+      "None selected": [
+        "Inget valt"
+      ],
+      "Read item": [
+        "Läs objekt"
+      ],
+      "Restored item from trash": [
+        "Återställde objekt från papperskorg"
+      ],
+      "Updated item": [
+        "Uppdaterade objekt"
+      ],
+      "Vault access granted": [
+        "Valvåtkomst beviljad"
       ]
     },
     "Keyboard key": {
@@ -3915,6 +4007,21 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Access tokens": [
+        "Åtkomsttoken"
+      ],
+      "Expires in (minutes)": [
+        "Löper ut om (minuter)"
+      ],
+      "Token name": [
+        "Tokennamn"
+      ],
+      "Use for AI agent": [
+        "Använd för AI-agent"
+      ],
+      "Vault access": [
+        "Valvåtkomst"
       ]
     },
     "Link": {
@@ -3960,6 +4067,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } har aktiverats"
+      ],
+      "Access token deleted": [
+        "Åtkomsttoken borttagen"
       ]
     },
     "Onboarding": {
@@ -4223,6 +4333,12 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
+      ],
+      "e.g. 60": [
+        "t.ex. 60"
+      ],
+      "e.g. My automation script": [
+        "t.ex. “Mitt automatiseringsskript“"
       ]
     },
     "Security Center - Info": {
@@ -4894,6 +5010,24 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Åtkomsttoken kräver ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitet för “${ token.Name }“"
+      ],
+      "Create new access token": [
+        "Skapa ny åtkomsttoken"
+      ],
+      "Delete access token?": [
+        "Ta bort åtkomsttoken?"
+      ],
+      "Manage vault access": [
+        "Hantera valvåtkomst"
+      ],
+      "Your new access token": [
+        "Din nya åtkomsttoken"
       ]
     },
     "Title_cloned_item": {
@@ -5240,6 +5374,40 @@
       ],
       "Offline": [
         "Offline"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitetsdetaljer kunde inte laddas."
+      ],
+      "Folder": [
+        "Mapp"
+      ],
+      "Item": [
+        "Objekt"
+      ],
+      "Reason": [
+        "Orsak"
+      ],
+      "Vault": [
+        "Valv"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Löpt ut"
+      ],
+      "Expiring soon": [
+        "Löper snart ut"
       ]
     }
   }

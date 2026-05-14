@@ -771,6 +771,30 @@
       ],
       "Configure": [
         "配置"
+      ],
+      "Copy": [
+        "复制"
+      ],
+      "Copy instructions": [
+        "复制说明"
+      ],
+      "Copy token": [
+        "复制令牌"
+      ],
+      "Create token": [
+        "创建令牌"
+      ],
+      "Load more": [
+        "加载更多"
+      ],
+      "Manage vault access": [
+        "管理保险库访问"
+      ],
+      "New token": [
+        "新建令牌"
+      ],
+      "View agent activity": [
+        "查看代理活动"
       ]
     },
     "Browser": {
@@ -1388,6 +1412,33 @@
       ],
       "A desktop unlock check is already in progress.": [
         "桌面解锁检查正在进行中。"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "无法加载代理设置说明。请复制下方的令牌，该令牌将不再显示！"
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "过期时间必须在 60 分钟至 1 年之间"
+      ],
+      "Failed to create access token": [
+        "无法创建访问令牌"
+      ],
+      "Failed to delete access token": [
+        "无法删除访问令牌"
+      ],
+      "Failed to load access tokens": [
+        "无法加载访问令牌"
+      ],
+      "Failed to load token actions": [
+        "无法加载令牌操作"
+      ],
+      "Failed to update vault access": [
+        "无法更新保险库访问权限"
+      ],
+      "Name is required": [
+        "名称为必填项"
+      ],
+      "Name must be 191 characters or fewer": [
+        "名称不得超过 191 个字符"
       ]
     },
     "Error message": {
@@ -2062,7 +2113,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2780,6 +2831,99 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "已选择 ${ selectedShareIds.size } 项"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "访问令牌“${ action.token.Name }”将立即失效，此操作无法撤销！"
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "访问令牌与 ${ passCliLink } 配合使用，可让您自动化 CI/CD 流程，或为 AI 代理授予执行任务所需的作用域权限。"
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "介于 60（1 小时）到 525600（1 年）之间"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "复制下方的 Markdown 并将其发送给您的 AI 代理。注意，令牌仅显示一次！"
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "请立即复制此令牌。出于安全考虑，该令牌将不再显示！"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "创建令牌以便将 ${ PASS_APP_NAME } 与您的脚本和工具集成。"
+      ],
+      "Created ${ createdDate }": [
+        "创建时间 ${ createdDate }"
+      ],
+      "Created item": [
+        "已创建项目"
+      ],
+      "Deleted item": [
+        "已删除项目"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "从 ${ passCliLink } 下载 pass-cli"
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "此代理令牌执行过的所有操作，按时间倒序排列。"
+      ],
+      "Expired ${ abs } hour ago": [
+        "已过期 ${ abs } 小时"
+      ],
+      "Expires in ${ hours } hour": [
+        "${ hours } 小时后过期"
+      ],
+      "Expires in less than an hour": [
+        "不到一小时后过期"
+      ],
+      "Log out of any existing session:": [
+        "退出任何现有会话："
+      ],
+      "Moved item to trash": [
+        "已将项目移至回收站"
+      ],
+      "New": [
+        "新"
+      ],
+      "No activity recorded yet.": [
+        "暂无活动记录"
+      ],
+      "No vaults available.": [
+        "没有可用的保险库"
+      ],
+      "None selected": [
+        "未选择"
+      ],
+      "Read item": [
+        "读取项目"
+      ],
+      "Restored item from trash": [
+        "已从回收站恢复项目"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "选择“${ token.Name }”可以读取的保险库"
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "通过登录并列出保险库来测试令牌："
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "代理执行每项操作时需提供原因，每项操作都会记录在可供您查看的审计日志中。创建令牌后，您将获得可复制粘贴到 AI 代理中的说明。"
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "然后您可以访问 ${ url } 复制说明并将其发送给您的 AI 代理。"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "此令牌对您选择的保险库拥有只读权限。它可以读取项目，但无法编辑项目、共享保险库或邀请其他人。您之后可以更改此设置。"
+      ],
+      "Updated item": [
+        "已更新项目"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "升级到 ${ PASS_APP_NAME } Plus 套餐，即可通过编程方式创建访问令牌并使用 ${ PASS_APP_NAME }。"
+      ],
+      "Vault access granted": [
+        "已授予保险库访问权限"
       ]
     },
     "Keyboard key": {
@@ -3906,6 +4050,21 @@
       ],
       "ZIP or Postal code": [
         "邮政编码"
+      ],
+      "Access tokens": [
+        "访问令牌"
+      ],
+      "Expires in (minutes)": [
+        "过期时间（分钟）"
+      ],
+      "Token name": [
+        "令牌名称"
+      ],
+      "Use for AI agent": [
+        "用于 AI 代理"
+      ],
+      "Vault access": [
+        "保险库访问"
       ]
     },
     "Link": {
@@ -3949,6 +4108,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } 已启用"
+      ],
+      "Access token deleted": [
+        "访问令牌已删除"
       ]
     },
     "Onboarding": {
@@ -4211,6 +4373,12 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
+      ],
+      "e.g. 60": [
+        "例如：60"
+      ],
+      "e.g. My automation script": [
+        "例如：我的自动化脚本"
       ]
     },
     "Security Center - Info": {
@@ -4874,6 +5042,30 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "访问令牌需要 ${ PASS_APP_NAME } Plus 套餐"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "“${ token.Name }”的活动"
+      ],
+      "Agent setup instructions": [
+        "代理设置说明"
+      ],
+      "Create new access token": [
+        "新建访问令牌"
+      ],
+      "Delete access token?": [
+        "删除访问令牌？"
+      ],
+      "Manage vault access": [
+        "管理保险库访问"
+      ],
+      "No access tokens yet": [
+        "暂无访问令牌"
+      ],
+      "Your new access token": [
+        "您的新访问令牌"
       ]
     },
     "Title_cloned_item": {
@@ -5216,6 +5408,40 @@
       ],
       "Offline": [
         "无网络连接"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "活动"
+      ],
+      "Activity details could not be loaded.": [
+        "无法加载活动详情！"
+      ],
+      "Folder": [
+        "文件夹"
+      ],
+      "Item": [
+        "项目"
+      ],
+      "Reason": [
+        "原因"
+      ],
+      "Vault": [
+        "保险库"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "活动"
+      ],
+      "Agent": [
+        "代理"
+      ],
+      "Expired": [
+        "已过期"
+      ],
+      "Expiring soon": [
+        "即将过期"
       ]
     }
   }
