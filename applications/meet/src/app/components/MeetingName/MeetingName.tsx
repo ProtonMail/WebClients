@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, SettingsLink } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsGuestAdmin, selectPaidUser, selectRoomName, selectShowDuration } from '@proton/meet/store/slices';
+import { selectIsGuestAdmin, selectRoomName, selectShowDuration } from '@proton/meet/store/slices';
+import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -27,13 +28,13 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
-    const paidUser = useMeetSelector(selectPaidUser);
+    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
     const { timeLeftMs, isExpiringSoon } = useMeetingDuration();
 
     const [showRemainingTime, setShowRemainingTime] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    const canOpenDropdown = !paidUser;
+    const canOpenDropdown = !isPaidUser;
 
     const forceShowPopup = showRemainingTime && canOpenDropdown;
 
@@ -138,9 +139,9 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
-    const paidUser = useMeetSelector(selectPaidUser);
+    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const roomName = useMeetSelector(selectRoomName);
-    const forceShowDuration = !paidUser;
+    const forceShowDuration = !isPaidUser;
     const showDuration = useMeetSelector(selectShowDuration) || forceShowDuration;
 
     // Determine whether to show the CTA based on the guest mode

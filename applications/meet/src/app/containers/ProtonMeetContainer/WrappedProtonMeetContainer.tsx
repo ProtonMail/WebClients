@@ -5,10 +5,10 @@ import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 import { isDevOrBlack } from '@proton/utils/env';
 
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
@@ -19,7 +19,7 @@ import { createMeetAudioContext } from '../../utils/meet-audio-context';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = () => {
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
@@ -115,12 +115,7 @@ export const WrappedProtonMeetContainer = () => {
                 <MediaManagementProvider>
                     <SortedParticipantsProvider>
                         {isGuest ? (
-                            <ProtonMeetContainer
-                                room={room}
-                                keyProvider={keyProvider}
-                                paidUser={false}
-                                isSubUser={false}
-                            />
+                            <ProtonMeetContainer room={room} keyProvider={keyProvider} />
                         ) : (
                             <ProtonMeetContainerWithUser room={room} keyProvider={keyProvider} />
                         )}

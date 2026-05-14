@@ -14,6 +14,7 @@ import {
     selectIsLocalParticipantRecording,
     selectLocalRecordingTime,
 } from '@proton/meet/store/slices/recordingStatusSlice';
+import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -22,11 +23,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -77,7 +76,7 @@ const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
     );
 };
 
-const RecordingControlsInternal = () => {
+export const RecordingControls = () => {
     const isMeetingRecordingEnabled = useFlag('MeetingRecording');
 
     const { startRecording, downloadRecording } = useMeetingRecorderContext();
@@ -91,11 +90,12 @@ const RecordingControlsInternal = () => {
     const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
-    const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
+    const { isPaidUser, isSubUser } = useMeetSelector(selectSubscriptionStatus);
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
 
     const recordingNotSupported = isMobile() || isFirefox();
 
-    const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
+    const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin;
 
     const shouldDisplayRecordingControls = hasAdminPermission && isMeetingRecordingEnabled;
 
@@ -112,7 +112,7 @@ const RecordingControlsInternal = () => {
     };
 
     const handleStartRecordingConfirmation = () => {
-        if (isPaid) {
+        if (isPaidUser) {
             setShowStartRecordingConfirmation(true);
             return;
         }
@@ -152,7 +152,7 @@ const RecordingControlsInternal = () => {
         return null;
     }
 
-    if (!isPaid) {
+    if (!isPaidUser) {
         return <RecordingUpsellButton isSubUser={isSubUser} />;
     }
 
@@ -224,21 +224,4 @@ const RecordingControlsInternal = () => {
             )}
         </>
     );
-};
-
-export const RecordingControls = () => {
-    const isGuest = useGuestContext();
-    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
-
-    // Show recording upsell button for guest admins.
-    if (isGuestAdmin) {
-        return <RecordingUpsellButton />;
-    }
-
-    // Don't show recording controls for guests users.
-    if (isGuest) {
-        return null;
-    }
-
-    return <RecordingControlsInternal />;
 };

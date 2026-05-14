@@ -2,14 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcLink } from '@proton/icons/icons/IcLink';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
 import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingListLoading';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
+import { UpsellBanner } from '../../components/UpsellBanner/UpsellBanner';
 import type { MeetingListStatus } from '../../hooks/useMeetingList';
 
 import './DashboardContainerBody.scss';
@@ -41,7 +42,7 @@ export const DashboardContainerBody = ({
     meetingsListStatus,
     newlyCreatedMeetingId,
 }: DashboardContainerBodyProps) => {
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
 
     const getHeadline = () => {
         // translator: this word is part of the full sentence "Talk in total privacy" but we need to emphasize privacy with a purple color
@@ -56,7 +57,7 @@ export const DashboardContainerBody = ({
 
     return (
         <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
-            {!isGuest && <UpsellBannerWithUser />}
+            {!isGuest && <UpsellBanner />}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
                 <PageHeader showAppSwitcher={!isElectronApp} />
                 <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
