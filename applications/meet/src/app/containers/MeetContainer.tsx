@@ -35,7 +35,6 @@ interface MeetContainerProps {
     locked: boolean;
     maxDuration: number;
     maxParticipants: number;
-    paidUser: boolean;
     displayName: string;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
@@ -69,7 +68,6 @@ export const MeetContainer = ({
     expirationTime,
     maxDuration,
     maxParticipants,
-    paidUser,
     displayName,
     handleLeave,
     handleEndMeeting,
@@ -111,7 +109,6 @@ export const MeetContainer = ({
             setMeetingInfo({
                 roomName,
                 meetingLink: shareLink,
-                paidUser,
                 maxDuration,
                 maxParticipants,
                 expirationTime,
@@ -125,7 +122,6 @@ export const MeetContainer = ({
         dispatch,
         roomName,
         shareLink,
-        paidUser,
         maxDuration,
         maxParticipants,
         expirationTime,

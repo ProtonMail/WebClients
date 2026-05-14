@@ -17,6 +17,7 @@ import {
     setInitialCameraState,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -28,7 +29,6 @@ import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
@@ -73,7 +73,7 @@ export const PrejoinContainer = ({
     joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
     const dispatch = useMeetDispatch();
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
 
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(isGuest, userId)) != null;

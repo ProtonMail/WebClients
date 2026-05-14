@@ -7,6 +7,8 @@ import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -15,7 +17,6 @@ import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MeetSignIn } from '../SignIn/SignIn';
 
 import './PageHeader.scss';
@@ -28,7 +29,7 @@ interface PageHeaderProps {
 export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
     const location = useLocation();
     const history = useHistory();
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
