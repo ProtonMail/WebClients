@@ -773,6 +773,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Copy instructions": [
+        "Αντιγραφή οδηγιών"
+      ],
+      "Copy token": [
+        "Αντιγραφή διακριτικού"
+      ],
+      "Load more": [
+        "Φόρτωση περισσοτέρων"
+      ],
+      "New token": [
+        "Νέο διακριτικό"
       ]
     },
     "Browser": {
@@ -1405,6 +1420,12 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Ένας έλεγχος ξεκλειδώματος επιφάνειας εργασίας είναι ήδη σε εξέλιξη."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Δεν ήταν δυνατή η φόρτωση των οδηγιών ρύθμισης του πράκτορα. Παρακαλούμε αντιγράψτε το παρακάτω διακριτικό, δε θα εμφανιστεί ξανά."
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ]
     },
     "Error message": {
@@ -2826,6 +2847,32 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } επιλεγμένες"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Δημιουργήστε ένα διακριτικό για να ενσωματώσετε το ${ PASS_APP_NAME } με τα σενάρια και τα εργαλεία σας."
+      ],
+      "Created item": [
+        "Δημιουργημένο στοιχείο"
+      ],
+      "Expired ${ abs } hour ago": [
+        "Έληξε πριν από ${ abs } ώρα",
+        "Έληξε πριν από ${ abs } ώρες"
+      ],
+      "Expires in ${ hours } hour": [
+        "Λήγει σε ${ hours } ώρα",
+        "Λήγει σε ${ hours } ώρες"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "Updated item": [
+        "Επεξεργασμένο στοιχείο"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Αναβαθμίστε σε ${ PASS_APP_NAME } Plus για να δημιουργήσετε διακριτικά πρόσβασης και να χρησιμοποιήσετε το ${ PASS_APP_NAME } μέσω προγραμματισμού."
       ]
     },
     "Keyboard key": {
@@ -3969,6 +4016,9 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Token name": [
+        "Όνομα διακριτικού"
       ]
     },
     "Link": {
@@ -4014,6 +4064,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } έχει ενεργοποιηθεί"
+      ],
+      "Access token deleted": [
+        "Το διακριτικό πρόσβασης έχει διαγραφεί"
       ]
     },
     "Onboarding": {
@@ -4277,6 +4330,9 @@
       ],
       "Used on ${ url }": [
         "Χρησιμοποιείται στο ${ url }"
+      ],
+      "e.g. My automation script": [
+        "π.χ. Το σενάριο αυτοματοποίησής μου"
       ]
     },
     "Security Center - Info": {
@@ -4948,6 +5004,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Delete access token?": [
+        "Διαγραφή διακριτικού πρόσβασης;"
+      ],
+      "Manage vault access": [
+        "Διαχείριση πρόσβασης κρύπτης"
       ]
     },
     "Title_cloned_item": {
@@ -5294,6 +5356,37 @@
       ],
       "Offline": [
         "Εκτός σύνδεσης"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Δραστηριότητα"
+      ],
+      "Folder": [
+        "Φάκελος"
+      ],
+      "Item": [
+        "Στοιχείο"
+      ],
+      "Reason": [
+        "Αιτία"
+      ],
+      "Vault": [
+        "Κρύπτη"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Ενεργό"
+      ],
+      "Agent": [
+        "Πράκτορας"
+      ],
+      "Expired": [
+        "Ληγμένα"
+      ],
+      "Expiring soon": [
+        "Λήγει σύντομα"
       ]
     }
   }

@@ -775,6 +775,30 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Copy": [
+        "Copiere"
+      ],
+      "Copy instructions": [
+        "Copiere instrucțiuni"
+      ],
+      "Copy token": [
+        "Copiere cod de acces"
+      ],
+      "Create token": [
+        "Creare cod de acces"
+      ],
+      "Load more": [
+        "Încărcare mai multe"
+      ],
+      "Manage vault access": [
+        "Gestionare acces la seif"
+      ],
+      "New token": [
+        "Cod de acces nou"
+      ],
+      "View agent activity": [
+        "Afișare activitate agent"
       ]
     },
     "Browser": {
@@ -1410,6 +1434,33 @@
       ],
       "A desktop unlock check is already in progress.": [
         "O verificare a deblocării desktopului este deja în curs de desfășurare."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nu s-au putut încărca instrucțiunile de configurare a agentului. Copiați codul de acces de mai jos. Acesta nu va mai fi afișat."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Timpul de expirare trebuie să fie cuprins între 60 de minute și un an."
+      ],
+      "Failed to create access token": [
+        "Eșuare creare cod de acces."
+      ],
+      "Failed to delete access token": [
+        "Eșuare ștergere cod de acces."
+      ],
+      "Failed to load access tokens": [
+        "Eșuare la încărcarea codurilor de acces."
+      ],
+      "Failed to load token actions": [
+        "Nu s-au putut încărca acțiunile codului de acces."
+      ],
+      "Failed to update vault access": [
+        "Actualizarea accesului la seif a eșuat."
+      ],
+      "Name is required": [
+        "Numele este obligatoriu."
+      ],
+      "Name must be 191 characters or fewer": [
+        "Numele trebuie să aibă maxim 191 de caractere."
       ]
     },
     "Error message": {
@@ -2860,6 +2911,103 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selectate"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Codul de acces „${ action.token.Name }” va înceta să funcționeze imediat. Această acțiune nu poate fi anulată."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Codurile de acces, utilizate împreună cu ${ passCliLink }, vă permit să automatizați CI/CD sau să acordați agentului de inteligență artificială acces limitat la ceea ce are nevoie pentru a-și executa sarcina."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Între 60 (o oră) și 525600 (un an)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copiați textul de mai jos și trimiteți-l agentului personal de inteligență artificială. Acesta este singurul moment în care va fi afișat codul de acces."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copiați acest token acum. Din motive de securitate acesta nu va mai fi afișat."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Creați un cod de acces pentru a integra ${ PASS_APP_NAME } cu scripturile și instrumentele personale."
+      ],
+      "Created ${ createdDate }": [
+        "Creat la ${ createdDate }"
+      ],
+      "Created item": [
+        "Articol creat."
+      ],
+      "Deleted item": [
+        "Ștergere articol"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descărcare pass-cli de la ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Fiecare acțiune efectuată de acest cod de acces pentru agent. Cea mai nouă e cea mai recentă."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expirat acum ${ abs } oră",
+        "Expirat acum ${ abs } ore",
+        "Expirat acum ${ abs } de ore"
+      ],
+      "Expires in ${ hours } hour": [
+        "Expiră peste ${ hours } oră",
+        "Expiră peste ${ hours } ore",
+        "Expiră peste ${ hours } de ore"
+      ],
+      "Expires in less than an hour": [
+        "Expiră în mai puțin de o oră"
+      ],
+      "Log out of any existing session:": [
+        "Deconectare orice sesiune existentă:"
+      ],
+      "Moved item to trash": [
+        "Articol mutat în gunoi."
+      ],
+      "New": [
+        "Nou"
+      ],
+      "No activity recorded yet.": [
+        "Încă nu există activități înregistrate."
+      ],
+      "No vaults available.": [
+        "Nu există seifuri disponibile."
+      ],
+      "None selected": [
+        "Nimic selectat."
+      ],
+      "Read item": [
+        "Citire articol"
+      ],
+      "Restored item from trash": [
+        "Articol restaurat din gunoi."
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selectați seifurile pe care „${ token.Name }” le poate citi."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Testați codul de acces conectându-vă și listând seifurile:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agentul va trebui să ofere un motiv pentru fiecare acțiune pe care o efectuează, iar fiecare acțiune va fi înregistrată într-un jurnal de audit pe care îl puteți consulta. După crearea codului de acces, veți primi instrucțiuni pentru a-l copia și insera în agentul personal de inteligență artificială."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Apoi puteți vizita ${ url } pentru a copia instrucțiunile pe care le trimiteți agentului de IA."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Acest cod de acces are acces doar pentru citire la seifurile pe care le selectați. Poate citi articolele, dar nu le poate edita, partaja seifuri sau invita alte persoane. Puteți schimba acest lucru ulterior."
+      ],
+      "Updated item": [
+        "Articol actualizat."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Treceți la ${ PASS_APP_NAME } Plus pentru a crea coduri de acces și a folosi ${ PASS_APP_NAME } programatic."
+      ],
+      "Vault access granted": [
+        "Acces permis la seif."
       ]
     },
     "Keyboard key": {
@@ -4017,6 +4165,21 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Access tokens": [
+        "Coduri de acces"
+      ],
+      "Expires in (minutes)": [
+        "Expiră peste (minute)"
+      ],
+      "Token name": [
+        "Nume cod de acces"
+      ],
+      "Use for AI agent": [
+        "Utilizare pentru agentu de IA"
+      ],
+      "Vault access": [
+        "Acces seif"
       ]
     },
     "Link": {
@@ -4064,6 +4227,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a fost activat"
+      ],
+      "Access token deleted": [
+        "Codul de acces s-a șters."
       ]
     },
     "Onboarding": {
@@ -4328,6 +4494,12 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
+      ],
+      "e.g. 60": [
+        "ex. 60"
+      ],
+      "e.g. My automation script": [
+        "de ex. Scriptul meu de automatizare"
       ]
     },
     "Security Center - Info": {
@@ -5007,6 +5179,30 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Codurile de acces necesită planul ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Activitate pentru „${ token.Name }”"
+      ],
+      "Agent setup instructions": [
+        "Instrucțiuni de setare agent"
+      ],
+      "Create new access token": [
+        "Creare cod de acces"
+      ],
+      "Delete access token?": [
+        "Ștergeți codul de acces?"
+      ],
+      "Manage vault access": [
+        "Gestionare acces la seif"
+      ],
+      "No access tokens yet": [
+        "Încă nu există coduri de acces"
+      ],
+      "Your new access token": [
+        "Noul cod de acces"
       ]
     },
     "Title_cloned_item": {
@@ -5357,6 +5553,40 @@
       ],
       "Offline": [
         "Deconectat"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activitate"
+      ],
+      "Activity details could not be loaded.": [
+        "Detaliile activității nu s-au putut încărca."
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "Item": [
+        "Articol"
+      ],
+      "Reason": [
+        "Motiv"
+      ],
+      "Vault": [
+        "Seif"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Activ"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Expirat"
+      ],
+      "Expiring soon": [
+        "Expiră în curând"
       ]
     }
   }
