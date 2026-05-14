@@ -175,6 +175,9 @@
       "Continue offline": [
         "Fortsätt offline"
       ],
+      "Copy": [
+        "Kopiera"
+      ],
       "Copy and close": [
         "Kopiera och stäng"
       ],
@@ -189,6 +192,9 @@
       ],
       "Copy forwarding address": [
         "Kopiera vidarebefordringsadress"
+      ],
+      "Copy instructions": [
+        "Kopiera instruktioner"
       ],
       "Copy link": [
         "Kopiera länk"
@@ -207,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Kopiera till urklipp"
+      ],
+      "Copy token": [
+        "Kopiera token"
       ],
       "Copy username": [
         "Kopiera användarnamn"
@@ -243,6 +252,9 @@
       ],
       "Create note": [
         "Skapa anteckning"
+      ],
+      "Create token": [
+        "Skapa token"
       ],
       "Create vault": [
         "Skapa valv"
@@ -421,6 +433,9 @@
       "Link expires after": [
         "Länk löper ut efter"
       ],
+      "Load more": [
+        "Ladda mer"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Lås ${ PASS_APP_NAME }"
       ],
@@ -444,6 +459,9 @@
       ],
       "Manage access": [
         "Hantera åtkomst"
+      ],
+      "Manage vault access": [
+        "Hantera valvåtkomst"
       ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
@@ -480,6 +498,9 @@
       ],
       "Multiple select": [
         "Välj flera"
+      ],
+      "New token": [
+        "Ny token"
       ],
       "Next month": [
         "Nästa månad"
@@ -772,6 +793,26 @@
         "Är din lösenordshanterare inte här? Begär den."
       ]
     },
+    "Activity": {
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitetsdetaljer kunde inte laddas."
+      ],
+      "Folder": [
+        "Mapp"
+      ],
+      "Item": [
+        "Objekt"
+      ],
+      "Reason": [
+        "Orsak"
+      ],
+      "Vault": [
+        "Valv"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applikation för stationär dator ${ MAIL_APP_NAME }"
@@ -1052,6 +1093,9 @@
       "Failed to change mailbox": [
         "Misslyckades att ändra brevlåda"
       ],
+      "Failed to create access token": [
+        "Misslyckades att skapa åtkomsttoken"
+      ],
       "Failed to create domain": [
         "Misslyckades att skapa domän"
       ],
@@ -1060,6 +1104,9 @@
       ],
       "Failed to create the contact": [
         "Misslyckades att skapa kontakten"
+      ],
+      "Failed to delete access token": [
+        "Misslyckades att ta bort åtkomsttoken"
       ],
       "Failed to delete domain": [
         "Misslyckades att ta bort domän"
@@ -1078,6 +1125,9 @@
       ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
+      ],
+      "Failed to load access tokens": [
+        "Misslyckades att ladda åtkomsttoken"
       ],
       "Failed to load breaches for this address": [
         "Misslyckades att ladda intrång för denna adress"
@@ -1148,6 +1198,9 @@
       "Failed to update random prefix generation setting.": [
         "Misslyckades att uppdatera inställningar för generering av slumpmässigt prefix."
       ],
+      "Failed to update vault access": [
+        "Misslyckades att uppdatera valvåtkomst"
+      ],
       "Failed to verify domain": [
         "Misslyckades att verifiera domän"
       ],
@@ -1207,6 +1260,12 @@
       ],
       "Moving item failed": [
         "Misslyckades att flytta objekt"
+      ],
+      "Name is required": [
+        "Namn är obligatoriskt"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Namn måste vara 191 tecken långt eller färre"
       ],
       "Network error": [
         "Nätverksfel"
@@ -1545,6 +1604,9 @@
         "${ row.breachCount } intrång upptäckt",
         "${ row.breachCount } intrång upptäckta"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valt"
+      ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
@@ -1673,6 +1735,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Innan du exporterar dina data med detta format, öppna Safari-inställningar -> fliken ”Allmänt” -> inaktivera alternativet ”Öppna säkra filer efter nedladdning”. Detta kommer att förhindra att Safari extraherar den exporterade filen felaktigt."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mellan 60 (1 timme) och 525600 (1 år)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrisk lås har registrerats. Använd det för att låsa upp ${ PASS_APP_NAME }"
       ],
@@ -1748,8 +1813,14 @@
       "Create contact illustration": [
         "Skapa kontaktillustration"
       ],
+      "Created ${ createdDate }": [
+        "Skapat ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Skapad ${ time }."
+      ],
+      "Created item": [
+        "Skapade objekt"
       ],
       "Creating alias...": [
         "Skapar alias …"
@@ -1765,6 +1836,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Standardvisningsnamnet för alias skapade med ${ domainDisplay } såvida de inte skrivits över av aliasvisningsnamnet."
+      ],
+      "Deleted item": [
+        "Tog bort objekt"
       ],
       "Deleted items will be moved here first": [
         "Borttagna objekt kommer att flyttas hit först"
@@ -1871,11 +1945,22 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Varje gång ditt alias tar emot ett e-postmeddelande från någon skapas en ny kontakt automatiskt."
       ],
+      "Expired ${ abs } hour ago": [
+        "Löpte ut för ${ abs } timme sedan",
+        "Löpte ut för ${ abs } timmar sedan"
+      ],
       "Expires in": [
         "Löper ut om"
       ],
+      "Expires in ${ hours } hour": [
+        "Löper ut om ${ hours } timme",
+        "Löper ut om ${ hours } timmar"
+      ],
       "Expires in ${ remainingTime }": [
         "Löper ut om ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Löper ut om mindre än timme"
       ],
       "Exporting your data...": [
         "Exporterar din data …"
@@ -2061,8 +2146,15 @@
         "Flytta ${ count } objekt",
         "Flytta ${ count } objekt"
       ],
+      "Moved item to trash": [
+        "Flyttade objekt till papperskorg"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2082,6 +2174,12 @@
       "Never": [
         "Aldrig"
       ],
+      "New": [
+        "Ny"
+      ],
+      "No activity recorded yet.": [
+        "Ingen aktivitet registrerad ännu."
+      ],
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
@@ -2097,8 +2195,14 @@
       "No network connection": [
         "Ingen nätverksanslutning"
       ],
+      "No vaults available.": [
+        "Inga valv tillgängliga."
+      ],
       "None": [
         "Ingen"
+      ],
+      "None selected": [
+        "Inget valt"
       ],
       "Not configured": [
         "Inte konfigurerad"
@@ -2308,6 +2412,9 @@
       "Quickly autofill your saved credentials.": [
         "Fyll snabbt i dina sparade inloggningsuppgifter automatiskt."
       ],
+      "Read item": [
+        "Läs objekt"
+      ],
       "Reconnect": [
         "Anslut igen"
       ],
@@ -2340,6 +2447,9 @@
       ],
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Återställning av historik kommer att ta bort alla tidigare versioner permanent och kan inte ångras."
+      ],
+      "Restored item from trash": [
+        "Återställde objekt från papperskorg"
       ],
       "Restoring items from trash": [
         "Återställer objekt från papperskorg"
@@ -2570,6 +2680,9 @@
       "Update login": [
         "Uppdatera inloggning"
       ],
+      "Updated item": [
+        "Uppdaterade objekt"
+      ],
       "Updating vault organization...": [
         "Uppdaterar valvorganisation …"
       ],
@@ -2602,6 +2715,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Valv “${ share.content.name }“ togs bort."
+      ],
+      "Vault access granted": [
+        "Valvåtkomst beviljad"
       ],
       "Vault organization successfully updated": [
         "Valvorganisation uppdaterad"
@@ -2880,6 +2996,9 @@
       "A-Z": [
         "A-Ö"
       ],
+      "Access tokens": [
+        "Åtkomsttoken"
+      ],
       "Account": [
         "Konto"
       ],
@@ -3149,6 +3268,9 @@
       ],
       "Expired": [
         "Löpt ut"
+      ],
+      "Expires in (minutes)": [
+        "Löper ut om (minuter)"
       ],
       "Expiry Date": [
         "Utgångsdatum"
@@ -3756,6 +3878,9 @@
       "Today": [
         "Idag"
       ],
+      "Token name": [
+        "Tokennamn"
+      ],
       "Total imported items: ": [
         "Totalt antal importerade objekt: "
       ],
@@ -3816,6 +3941,9 @@
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
         "Använd ${ PASS_APP_NAME } som din webbläsares lösenordshanterare som standard"
       ],
+      "Use for AI agent": [
+        "Använd för AI-agent"
+      ],
       "Used in": [
         "Används i"
       ],
@@ -3830,6 +3958,9 @@
       ],
       "Value:": [
         "Värde:"
+      ],
+      "Vault access": [
+        "Valvåtkomst"
       ],
       "Vault ID": [
         "Valv-ID"
@@ -3935,6 +4066,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } har aktiverats"
+      ],
+      "Access token deleted": [
+        "Åtkomsttoken borttagen"
       ]
     },
     "Onboarding": {
@@ -4118,6 +4252,12 @@
       "Coupon": [
         "Kupong"
       ],
+      "e.g. 60": [
+        "t.ex. 60"
+      ],
+      "e.g. My automation script": [
+        "t.ex. “Mitt automatiseringsskript“"
+      ],
       "E.g., ": [
         "T.ex., "
       ],
@@ -4275,6 +4415,20 @@
         "Okänd"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Löpt ut"
+      ],
+      "Expiring soon": [
+        "Löper snart ut"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering av alias aktiverat. SimpleLogin-alias kan ta lite tid att synkronisera"
@@ -4369,6 +4523,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Åtkomsttoken kräver ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Kontoskydd"
       ],
@@ -4377,6 +4534,9 @@
       ],
       "Activity": [
         "Aktivitet"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitet för “${ token.Name }“"
       ],
       "Add custom domain": [
         "Lägg till anpassad domän"
@@ -4441,6 +4601,9 @@
       "Create contact": [
         "Skapa kontakt"
       ],
+      "Create new access token": [
+        "Skapa ny åtkomsttoken"
+      ],
       "Create PIN code": [
         "Skapa PIN-kod"
       ],
@@ -4471,6 +4634,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Ta bort ${ deletedItemsCount } objekt?",
         "Ta bort ${ deletedItemsCount } objekt?"
+      ],
+      "Delete access token?": [
+        "Ta bort åtkomsttoken?"
       ],
       "Delete domain": [
         "Ta bort domän"
@@ -4603,6 +4769,9 @@
       ],
       "Mailbox": [
         "Brevlåda"
+      ],
+      "Manage vault access": [
+        "Hantera valvåtkomst"
       ],
       "Mark as resolved?": [
         "Markera som löst?"
@@ -4859,6 +5028,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your new access token": [
+        "Din nya åtkomsttoken"
       ],
       "Your vault is empty": [
         "Ditt valv är tomt"
