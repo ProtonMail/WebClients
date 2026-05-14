@@ -14,15 +14,14 @@ import AuthenticationProvider from '@proton/components/containers/authentication
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MeetExtraThunkArguments, MeetStore } from '@proton/meet/store/store';
-import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';
-import { GuestProvider } from '../contexts/GuestProvider/GuestProvider';
 import { WasmContext } from '../contexts/WasmContext';
 
 type ExtraThunkArguments = Omit<MeetExtraThunkArguments, 'config' | 'notificationsManager'>;
@@ -85,24 +84,22 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     >;
 
     return (
-        <GuestProvider>
-            <ProtonStoreProvider store={storeRef.current as MeetStore}>
-                <AuthenticationProvider store={authentication}>
-                    <FlagProvider unleashClient={unleashClient} startClient={false}>
-                        <EventManagerProvider eventManager={eventManager}>
-                            <Router history={history}>
-                                <ApiProvider api={api}>
-                                    <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
-                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                            <StandardPrivateApp>{children}</StandardPrivateApp>
-                                        </ErrorBoundary>
-                                    </WasmContext.Provider>
-                                </ApiProvider>
-                            </Router>
-                        </EventManagerProvider>
-                    </FlagProvider>
-                </AuthenticationProvider>
-            </ProtonStoreProvider>
-        </GuestProvider>
+        <ProtonStoreProvider store={storeRef.current as MeetStore}>
+            <AuthenticationProvider store={authentication}>
+                <FlagProvider unleashClient={unleashClient} startClient={false}>
+                    <EventManagerProvider eventManager={eventManager}>
+                        <Router history={history}>
+                            <ApiProvider api={api}>
+                                <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <StandardPrivateApp>{children}</StandardPrivateApp>
+                                    </ErrorBoundary>
+                                </WasmContext.Provider>
+                            </ApiProvider>
+                        </Router>
+                    </EventManagerProvider>
+                </FlagProvider>
+            </AuthenticationProvider>
+        </ProtonStoreProvider>
     );
 };
