@@ -175,6 +175,9 @@
       "Continue offline": [
         "Continuar off-line"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy and close": [
         "Copiar e fechar"
       ],
@@ -189,6 +192,9 @@
       ],
       "Copy forwarding address": [
         "Copiar o endereço de encaminhamento"
+      ],
+      "Copy instructions": [
+        "Copiar instruções"
       ],
       "Copy link": [
         "Copiar link"
@@ -207,6 +213,9 @@
       ],
       "Copy to clipboard": [
         "Copiar para área de transferência"
+      ],
+      "Copy token": [
+        "Copiar token"
       ],
       "Copy username": [
         "Copiar nome de usuário"
@@ -243,6 +252,9 @@
       ],
       "Create note": [
         "Criar nota"
+      ],
+      "Create token": [
+        "Criar token"
       ],
       "Create vault": [
         "Criar cofre"
@@ -421,6 +433,9 @@
       "Link expires after": [
         "Link expira depois de"
       ],
+      "Load more": [
+        "Carregar mais"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear o ${ PASS_APP_NAME }"
       ],
@@ -444,6 +459,9 @@
       ],
       "Manage access": [
         "Gerenciar acesso"
+      ],
+      "Manage vault access": [
+        "Gerenciar acesso ao cofre"
       ],
       "Manually sync your data": [
         "Sincronizar seus dados manualmente"
@@ -480,6 +498,9 @@
       ],
       "Multiple select": [
         "Seleção múltipla"
+      ],
+      "New token": [
+        "Novo token"
       ],
       "Next month": [
         "Próximo mês"
@@ -744,6 +765,9 @@
       "Via secure link": [
         "Via link seguro"
       ],
+      "View agent activity": [
+        "Ver a atividade do agente"
+      ],
       "View app logs": [
         "Ver registros de aplicativos"
       ],
@@ -770,6 +794,23 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Atividade"
+      ],
+      "Folder": [
+        "Pasta"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Cofre"
       ]
     },
     "Browser": {
@@ -1219,6 +1260,12 @@
       ],
       "Moving item failed": [
         "Erro ao mover o item"
+      ],
+      "Name is required": [
+        "O nome é obrigatório."
+      ],
+      "Name must be 191 characters or fewer": [
+        "O nome deve ter no máximo 191 caracteres"
       ],
       "Network error": [
         "Erro de rede"
@@ -1766,11 +1813,20 @@
       "Coupon successfully applied!": [
         "O cupom foi aplicado!"
       ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Crie um token para integrar o ${ PASS_APP_NAME } aos seus scripts e ferramentas."
+      ],
       "Create contact illustration": [
         "Criar ilustração de contato"
       ],
+      "Created ${ createdDate }": [
+        "Criado em ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Criado ${ time }."
+      ],
+      "Created item": [
+        "Item criado"
       ],
       "Creating alias...": [
         "Criando alias..."
@@ -1786,6 +1842,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Nome de exibição padrão para aliases criados com ${ domainDisplay }, a menos que seja substituído pelo nome de exibição do alias."
+      ],
+      "Deleted item": [
+        "Item excluído"
       ],
       "Deleted items will be moved here first": [
         "Os itens excluídos serão movidos para cá primeiro"
@@ -1892,11 +1951,22 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Cada vez que seu alias receber um e-mail de alguém, um contato será criado automaticamente."
       ],
+      "Expired ${ abs } hour ago": [
+        "Expirou há ${ abs } hora",
+        "Expirou há ${ abs } horass"
+      ],
       "Expires in": [
         "Expira em"
       ],
+      "Expires in ${ hours } hour": [
+        "Expira em ${ hours } hora",
+        "Expira em ${ hours } horas"
+      ],
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Expira em menos de uma hora"
       ],
       "Exporting your data...": [
         "Exportando seus dados..."
@@ -2082,11 +2152,15 @@
         "Mover ${ count } item",
         "Mover ${ count } itens"
       ],
+      "Moved item to trash": [
+        "Item para a lixeira movido"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2109,6 +2183,12 @@
       "Never": [
         "Nunca"
       ],
+      "New": [
+        "Novo"
+      ],
+      "No activity recorded yet.": [
+        "Nenhuma atividade registrada ainda."
+      ],
       "No breaches detected": [
         "Nenhuma violação detectada"
       ],
@@ -2124,8 +2204,14 @@
       "No network connection": [
         "Sem conexão com a internet"
       ],
+      "No vaults available.": [
+        "Nenhum cofre disponível."
+      ],
       "None": [
         "Nenhum"
+      ],
+      "None selected": [
+        "Nenhum selecionado-"
       ],
       "Not configured": [
         "Não configurado"
@@ -2340,6 +2426,9 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Preencha rapidamente suas credenciais salvas."
+      ],
+      "Read item": [
+        "Ler item"
       ],
       "Reconnect": [
         "Reconectar"
@@ -2611,6 +2700,9 @@
       ],
       "Update login": [
         "Atualizar início de sessão"
+      ],
+      "Updated item": [
+        "Item atualizado"
       ],
       "Updating vault organization...": [
         "Atualizando o cofre da organização..."
@@ -2925,6 +3017,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Tokens de acesso"
+      ],
       "Account": [
         "Conta"
       ],
@@ -3197,6 +3292,9 @@
       ],
       "Expired": [
         "Expirado"
+      ],
+      "Expires in (minutes)": [
+        "Expira em (minutos)"
       ],
       "Expiry Date": [
         "Data de validade"
@@ -3807,6 +3905,9 @@
       "Today": [
         "Hoje"
       ],
+      "Token name": [
+        "Nome do token"
+      ],
       "Total imported items: ": [
         "Total de itens importados: "
       ],
@@ -3881,6 +3982,9 @@
       ],
       "Value:": [
         "Valor:"
+      ],
+      "Vault access": [
+        "Acesso ao cofre"
       ],
       "Vault ID": [
         "ID do cofre"
@@ -4169,6 +4273,12 @@
       "Coupon": [
         "Cupom"
       ],
+      "e.g. 60": [
+        "por ex. 60"
+      ],
+      "e.g. My automation script": [
+        "ex. Meu script de automação"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -4326,6 +4436,20 @@
         "Desconhecido"
       ]
     },
+    "Status": {
+      "Active": [
+        "Ativo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "Expirando em breve"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "A sincronização de aliases foi realizada. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados."
@@ -4429,6 +4553,9 @@
       "Activity": [
         "Atividade"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Atividade para \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Adicionar domínio personalizado"
       ],
@@ -4522,6 +4649,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Excluir ${ deletedItemsCount } item?",
         "Excluir ${ deletedItemsCount } itens?"
+      ],
+      "Delete access token?": [
+        "Excluir token de acesso?"
       ],
       "Delete domain": [
         "Excluir domínio"
