@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { createDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import { useErrorHandler } from '@proton/components/index';
+import { useErrorHandler, useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -21,8 +21,12 @@ interface Props extends StepComponentProps {
 const StepDomain = ({ model, domain, registrar, submitButton }: Props) => {
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
+    const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const handleAddDomain = () => dispatch(createDomain({ name: model.domainName! })).catch(handleError);
+    const handleAddDomain = () =>
+        dispatch(createDomain({ name: model.domainName! }))
+            .then(() => createNotification({ text: c('BOSS').t`Domain added` }))
+            .catch(handleError);
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '42rem' }}>
