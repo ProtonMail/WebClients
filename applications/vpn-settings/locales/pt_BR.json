@@ -557,6 +557,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go back": [
+        "Voltar"
+      ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
       ],
@@ -2061,6 +2064,9 @@
       "Finalize migration": [
         "Finalizar migração"
       ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicativo do Google Marketplace para copiar dados para a ${ BRAND_NAME }"
       ],
@@ -2170,6 +2176,9 @@
       "Size": [
         "Tamanho"
       ],
+      "Some accounts are not claimed": [
+        "Algumas contas não foram reivindicadas"
+      ],
       "SPF records": [
         "Registros SPF"
       ],
@@ -2178,6 +2187,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This migration has been completed": [
+        "A migração foi completada"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
@@ -3827,6 +3839,9 @@
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
       ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
@@ -4332,8 +4347,8 @@
       "Select recovery contact ${ name }": [
         "Selecionar contato de recuperação ${ name }"
       ],
-      "Send email request": [
-        "Enviar solicitação por e-mail?"
+      "Start recovery": [
+        "Iniciar recuperação"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desativar este método de recuperação, remova todos os seus contatos de recuperação."
@@ -4448,6 +4463,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Falha ao carregar o modal OAuth."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
@@ -14744,6 +14762,9 @@
       "Assign delegated roles": [
         "Atribuir funções delegadas"
       ],
+      "Assign roles": [
+        "Atribuir funções"
+      ],
       "New: Roles and permissions tab": [
         "Novo: guia Funções e permissões"
       ],
@@ -15670,6 +15691,9 @@
       "Save 50% for 6 months, and keep full access": [
         "Economize 50% em 6 meses e mantenha o acesso completo"
       ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "Veja como o ${ MAIL_APP_NAME } se compara e por que nossa independência faz a diferença."
+      ],
       "View VPN session details for your organization.": [
         "Veja os detalhes da sessão VPN para sua organização."
       ]
@@ -16278,6 +16302,9 @@
       "Can you access your session in the browser?": [
         "Você pode acessar sua sessão no navegador?"
       ],
+      "Can you reach out to your emergency contacts?": [
+        "Você Consegue entrar em contato com o contato de emergência?"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -16767,6 +16794,9 @@
       ],
       "Limit reached": [
         "Limite atingido"
+      ],
+      "Lower your cost without losing features": [
+        "Reduza seus custos sem perder os recursos"
       ],
       "Main password": [
         "Senha principal"
