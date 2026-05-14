@@ -52,9 +52,9 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                     >
                         <IcKey size={6} />
                         <div className="text-left flex-1">
-                            <div className="text-lg">{c('Action').t`Reset password`}</div>
+                            <div className="text-lg">{c('Action').t`Recover account`}</div>
                             <div className="color-weak">{c('Description')
-                                .t`Send a code to your recovery email or phone`}</div>
+                                .t`Use a recovery method to reset your password`}</div>
                         </div>
                     </Link>
 

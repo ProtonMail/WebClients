@@ -38,6 +38,7 @@ interface UnauthedForgotPasswordMachineContext {
     delegatedAccessContacts: DelegatedAccessSummary[];
     redactedRecoveryEmail: string | undefined;
     redactedRecoveryPhoneNumber: string | undefined;
+    apiErrorMessage: string | undefined;
 }
 
 /** Sent when the user chooses account recovery and recovery methods are known. */
@@ -66,6 +67,7 @@ export type UnauthedForgotPasswordMachineEvent =
     | { type: 'decision.skip' }
     | { type: 'decision.yes' }
     | { type: 'email.code.validated'; payload: OwnershipRecoveryValidatedPayload }
+    | { type: 'email.code.validation.failed'; payload: { errorMessage: string } }
     | { type: 'help.opened' }
     | { type: 'mnemonic.validated'; payload: { mnemonicData: MnemonicDataWithoutAPI } }
     | { type: 'mnemonic.prefilled'; payload: { mnemonicData: MnemonicDataWithoutAPI; username: string } }
@@ -86,6 +88,7 @@ export type UnauthedForgotPasswordMachineEvent =
           payload: RecoverySelectedPayload;
       }
     | { type: 'sms.code.sent' }
+    | { type: 'sms.code.send.failed'; payload: { errorMessage: string } }
     | { type: 'sms.code.validated'; payload: OwnershipRecoveryValidatedPayload }
     | { type: 'socialRecovery.started' };
 
@@ -141,6 +144,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
         deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
         recoveryMethods: [],
         errorCode: undefined,
+        apiErrorMessage: undefined,
         resetWithDataLoss: false,
         mnemonicData: undefined,
         emailRecoverySkipped: false,
@@ -239,6 +243,12 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         deviceRecoveryLevel: event.payload.deviceRecoveryLevel,
                     })),
                 },
+                'email.code.validation.failed': {
+                    target: 'recoveryMethodVerificationError',
+                    actions: assign(({ event }) => ({
+                        apiErrorMessage: event.payload.errorMessage,
+                    })),
+                },
                 'decision.back': {
                     target: 'entry',
                     actions: assign(() => ({ smsRecoverySkipped: false, emailRecoverySkipped: false })),
@@ -254,6 +264,12 @@ export const UnauthedForgotPasswordStateMachine = setup({
             on: {
                 'sms.code.sent': {
                     target: 'verifyRecoverySms',
+                },
+                'sms.code.send.failed': {
+                    target: 'recoveryMethodVerificationError',
+                    actions: assign(({ event }) => ({
+                        apiErrorMessage: event.payload.errorMessage,
+                    })),
                 },
                 'decision.back': {
                     target: 'entry',
@@ -563,6 +579,20 @@ export const UnauthedForgotPasswordStateMachine = setup({
 
         fatalError: {
             type: 'final',
+        },
+
+        recoveryMethodVerificationError: {
+            on: {
+                'decision.back': {
+                    target: '#forgotPassword.entry',
+                    actions: assign(() => ({ apiErrorMessage: undefined })),
+                },
+                'decision.skip': {
+                    actions: {
+                        type: 'redirectToSignIn',
+                    },
+                },
+            },
         },
     },
 });
