@@ -111,18 +111,12 @@ const SidebarToggle = ({
                     </Toggle>
                 </div>
             </Spotlight>
-            {adminSidebarFeature.feedback.isOn ? (
-                <InlineLinkButton
-                    className="text-sm"
-                    onClick={() => {
-                        showFeedbackModal({
-                            onAction() {
-                                adminSidebarFeature.feedback.setOff();
-                            },
-                        });
-                    }}
-                >{c('Action').t`Share feedback`}</InlineLinkButton>
-            ) : null}
+            <InlineLinkButton
+                className="text-sm"
+                onClick={() => {
+                    showFeedbackModal({});
+                }}
+            >{c('Action').t`Share feedback`}</InlineLinkButton>
         </div>
     ) : null;
 };
