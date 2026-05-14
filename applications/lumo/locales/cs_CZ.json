@@ -1240,7 +1240,7 @@
         "Trvale smažte svůj projekt a chaty. Tento úkon nelze vrátit zpět."
       ],
       "Quick responses": [
-        "Rychlá odpověď"
+        "Rychlé odpovědi"
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Přihlaste se pro přístup k účtu a odemknutí dalších funkcí. Nemáte účet? ${ createLink }"
@@ -1278,9 +1278,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Chyba při zpracování ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Chyba při zpracování souboru: ${ file.name }"
-      ],
       "Failed to create API key": [
         "Nepodařilo se vytvořit klíč API"
       ],
@@ -1304,9 +1301,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Soubor již byl přidán: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Formát souboru není podporován: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Soubor byl nahrán, ale nepodařilo se jej přidat do databáze znalostí"

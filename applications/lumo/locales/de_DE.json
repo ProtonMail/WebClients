@@ -965,6 +965,9 @@
       "Draw a sketch": [
         "Eine Skizze zeichnen"
       ],
+      "Edit": [
+        "Bearbeiten"
+      ],
       "Enable ghost mode": [
         "Ghost-Modus aktivieren"
       ],
@@ -1000,6 +1003,9 @@
       ],
       "Report an issue": [
         "Ein Problem melden"
+      ],
+      "Save": [
+        "Speichern"
       ],
       "Select all": [
         "Alles auswählen"
@@ -1252,9 +1258,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fehler bei der Verarbeitung von ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Fehler beim Verarbeiten der Datei: ${ file.name }"
-      ],
       "Failed to create API key": [
         "API-Schlüssel konnte nicht erstellt werden"
       ],
@@ -1278,9 +1281,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Datei bereits hinzugefügt: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Dateiformat nicht unterstützt: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Datei hochgeladen, konnte aber nicht zur Wissensdatenbank hinzugefügt werden."
@@ -2885,6 +2885,9 @@
       ],
       "No projects yet": [
         "Noch keine Projekte"
+      ],
+      "PASTED": [
+        "Eingefügt"
       ],
       "Processing file...": [
         "Datei wird verarbeitet..."

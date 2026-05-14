@@ -1085,9 +1085,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Errore durante l'elaborazione di ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Errore durante l'elaborazione del file: ${ file.name }"
-      ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Impossibile elaborare il file di ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
       ],
@@ -1102,9 +1099,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "File già aggiunto: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Formato file non supportato: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "File aggiunto con successo alla base di conoscenza"

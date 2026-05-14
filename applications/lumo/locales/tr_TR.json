@@ -965,6 +965,9 @@
       "Draw a sketch": [
         "Bir taslak çiz"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Enable ghost mode": [
         "Hayalet kipini aç"
       ],
@@ -1003,6 +1006,9 @@
       ],
       "Report an issue": [
         "Sorun bildireceğim"
+      ],
+      "Save": [
+        "Kaydet"
       ],
       "Select all": [
         "Tümünü seç"
@@ -1261,9 +1267,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "${ result.fileName } işlenirken sorun çıktı: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Dosya işlenirken sorun çıktı: ${ file.name }"
-      ],
       "Failed to create API key": [
         "API anahtarı oluşturulamadı"
       ],
@@ -1287,9 +1290,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Dosya zaten eklenmiş: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Dosya biçimi desteklenmiyor: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Dosya yüklendi ancak bilgi bankasına eklenemedi"
@@ -1344,6 +1344,26 @@
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "Bu sohbetin ${ limit } ileti sayısı sınırına ulaştınız. ${ LUMO_SHORT_APP_NAME } ile sohbet etmeyi sürdürmek için yeni bir sohbet başlatın."
+      ]
+    },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Dosya işlenirken hata oluştu: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Dosya işlenirken hata oluştu: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Dosya formatı desteklenmiyor: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Dosya formatı desteklenmiyor: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -3072,6 +3092,9 @@
       ],
       "No projects yet": [
         "Henüz bir proje yok"
+      ],
+      "PASTED": [
+        "YAPIŞTIRILDI"
       ],
       "Processing file...": [
         "Dosya işleniyor..."
