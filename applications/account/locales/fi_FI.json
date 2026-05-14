@@ -8698,6 +8698,10 @@
         "Luodaan yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Luodaan yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Yhdyskäytävän luominen ${ total }:llä palvelimella",
+        "Yhdyskäytävän luominen ${ total } palvelimella"
+      ],
       "Creating your account": [
         "Luodaan tiliä"
       ],
@@ -17976,6 +17980,11 @@
         "Tuloksia ei löytynyt"
       ]
     },
+    "Sentinel banner": {
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Varmistaaksesi tilisi mahdollisimman korkean turvallisuustason, poista käytöstä palautus sähköpostin ja tekstiviestin kautta."
+      ]
+    },
     "Server-Info": {
       "active": [
         "aktiivinen"
@@ -20923,6 +20932,9 @@
       ],
       "Data recovery": [
         "Tietojen palautus"
+      ],
+      "Data recovery contacts": [
+        "Tietojen palautuksen yhteystiedot"
       ],
       "Date": [
         "Päiväys"

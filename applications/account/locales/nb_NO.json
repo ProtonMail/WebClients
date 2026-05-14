@@ -6401,9 +6401,6 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } vil ikke kunne få tilgang til kontoen din før neste nødtilgang."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** er nå din gjenopprettingskontakt. De kan hjelpe deg med å gjenopprette dataene dine etter en tilbakestilling av passordet."
-      ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Hvis de bekrefter**, klikk **Godkjenn gjenoppretting**. Dette vil låse opp deres krypterte data."
       ],
@@ -6563,9 +6560,6 @@
       "Less than a minute left": [
         "Under ett minutt igjen"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Gi ${ user } beskjed om at det faktisk er du som prøver å få tilbake tilgangen."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Maksimum antall kontakter på ${ limit } er nådd. For å endre, fjern en kontakt og legg til en ny.",
         "Maksimum antall kontakter på ${ limit } er nådd. For å endre, fjern en kontakt og legg til en ny."
@@ -6662,9 +6656,6 @@
       ],
       "Select recovery contact ${ name }": [
         "Velg gjenopprettingskontakt ${ name }"
-      ],
-      "Send email request": [
-        "Send e-postforespørsel"
       ],
       "Send recovery request": [
         "Send gjenopprettingsforespørsel"
@@ -12348,17 +12339,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "For å dekryptere og se låst data etter en tilbakestilling av passord, velg en gjenopprettingsmetode."
       ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **QR-kodepålogging**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettings-e-postadresse**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettingstelefon**."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Tilbakestilling ved pålogging**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For å sikre at du ikke mister viktige data, lagrer ${ DRIVE_APP_NAME } eldre versjoner av dine filer når du og dine samarbeidspartnere gjør endringer. Velg hvor lenge ${ BRAND_NAME } bør beholde tidligere versjoner."
@@ -20920,9 +20905,6 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
-      "Allow trusted friends to sign in": [
-        "Tillat betrodde venner å logge på"
-      ],
       "Allow trusted friends to unlock your data": [
         "Tillat at betrodde venner låser opp dataene dine"
       ],
@@ -22733,23 +22715,11 @@
       "Available on this device": [
         "Tilgjengelig på denne enheten"
       ],
-      "Disable emergency access": [
-        "Deaktiver nødtilgang"
-      ],
-      "Disable QR code sign-in": [
-        "Deaktiver pålogging ved QR-kode"
-      ],
       "Disable recovery by email": [
         "Deaktiver gjenoppretting via e-post"
       ],
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
-      ],
-      "Disable recovery file": [
-        "Deaktiver gjenopprettingsfilen"
-      ],
-      "Disable signed-in reset": [
-        "Deaktiver tilbakestillilng ved pålogget"
       ],
       "Generate a recovery phrase": [
         "Generer en gjenopprettingsfrase"
@@ -22759,9 +22729,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Sist oppdatert ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Ingen kontakt"
       ],
       "Not saved": [
         "Ikke lagret"
@@ -24450,9 +24417,6 @@
       ],
       "Contact us": [
         "Kontakt oss"
-      ],
-      "Contact-assisted recovery": [
-        "Kontaktassistert gjenoppretting"
       ],
       "Continue with partial import?": [
         "Fortsette med delvis import?"

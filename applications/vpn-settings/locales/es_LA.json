@@ -557,6 +557,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go back": [
+        "Regresar"
+      ],
       "Go to ${ planOrAppName }": [
         "Acceda a ${ planOrAppName }"
       ],
@@ -2162,7 +2165,7 @@
         "Estado de la migración"
       ],
       "Missing organization private key": [
-        "Falta la clave privada de organización"
+        "Falta la clave privada de la organización"
       ],
       "Missing organization public key": [
         "Falta la clave pública de organización"
@@ -4519,8 +4522,8 @@
       "Select recovery contact ${ name }": [
         "Seleccionar contacto de recuperación ${ name }"
       ],
-      "Send email request": [
-        "Enviar solicitud por correo electrónico"
+      "Start recovery": [
+        "Iniciar recuperación"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desactivar este método de recuperación, elimine todos sus contactos de recuperación."
@@ -7160,6 +7163,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Creando servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Creando servidores de puerta de enlace: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Creando puerta de enlace con ${ total } servidor",
+        "Creando puertas de enlace con ${ total } servidores"
       ],
       "Creating your account": [
         "Creando la cuenta"
@@ -15024,7 +15031,7 @@
         "Asignar roles"
       ],
       "Click a user's name to manage their role and permissions.": [
-        "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+        "Pulse en el nombre de usuario para gestionar su rol y permiso"
       ],
       "Click Edit to assign roles to this group and manage member access automatically.": [
         "Haga clic en Editar para asignar roles a este grupo y gestionar acceso a miembros automáticamente."
@@ -15033,13 +15040,13 @@
         "Nuevo: Pestaña de roles y permisos"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
-        "Abra esta pesaña para otorgar permisos específicos sin acceso administrativo total."
+        "Abra esta pestaña para otorgar permisos específicos sin acceso administrativo total."
       ],
       "User roles available": [
         "Roles de usuario disponibles"
       ],
       "You can now assign roles to individual users from this tab.": [
-        "hora puee asignar roles a usuarios individuales desde esta pestaña"
+        "Ahora puede asignar roles a usuarios individuales desde esta pestaña"
       ]
     },
     "sso": {

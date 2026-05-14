@@ -530,6 +530,9 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
+      "Go back": [
+        "Takaisin"
+      ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
       ],
@@ -6310,6 +6313,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Luodaan yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
         "Luodaan yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Yhdyskäytävän luominen ${ total }:llä palvelimella",
+        "Yhdyskäytävän luominen ${ total } palvelimella"
       ],
       "Creating your account": [
         "Luodaan tiliä"

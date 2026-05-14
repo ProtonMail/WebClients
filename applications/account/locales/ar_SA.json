@@ -5190,8 +5190,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "لن يتمكن ${ user } من الوصول إلى حسابك حتى الوصول الطارئ التالي."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** أصبحت الآن جهة اتصال الاسترداد الخاصة بك. يمكنها مساعدتك في استعادة بياناتك بعد إعادة تعيين كلمة المرور."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "أصبح **${ contact }** الآن جهة اتصال الاسترداد الخاصة بك. يمكنه مساعدتك في استعادة الوصول إلى بياناتك بعد إعادة تعيين كلمة المرور."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**إذا أكدوا**، فانقر فوق **الموافقة على الاسترداد**. سيؤدي ذلك إلى فتح بياناتهم المشفرة."
@@ -5228,6 +5228,9 @@
       ],
       "Add recovery contact": [
         "إضافة جهة اتصال الاسترداد"
+      ],
+      "Add recovery method": [
+        "إضافة طريقة الاسترداد"
       ],
       "Added on ${ formattedDate }": [
         "أُضيف في ${ formattedDate }"
@@ -5346,9 +5349,6 @@
       "Less than a minute left": [
         "أقل من دقيقة متبقية"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "أخبر ${ user } بأنك أنت فعلاً من يحاول استعادة الوصول."
-      ],
       "None": [
         "لا شيء"
       ],
@@ -5442,11 +5442,11 @@
       "Select recovery contact ${ name }": [
         "حدد جهة اتصال الاسترداد ${ name }"
       ],
-      "Send email request": [
-        "أرسل طلب بريد إلكتروني"
-      ],
       "Send recovery request": [
         "إرسال طلب الاسترداد"
+      ],
+      "Start recovery": [
+        "بدء الاسترداد"
       ],
       "Stop being recovery contact": [
         "توقف عن أن تكون جهة اتصال الاسترداد"
@@ -5489,6 +5489,9 @@
       "Time required before automatically granting them access": [
         "الوقت المطلوب قبل منحهم الوصول تلقائيًا"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "لإضافة جهات اتصال الاسترداد، يجب أن يكون لديك عنوان بريد إلكتروني أو رقم هاتف للاسترداد."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
       ],
@@ -5518,6 +5521,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "تلقينا طلبا لإلغاء قفل البيانات المشفرة لجهة الاتصال الخاصة بك **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "أرسلنا طلبًا عبر البريد الإلكتروني إلى ${ user }. أخبره بأنك بالفعل تحاول استعادة الوصول إلى حسابك."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "لم نتمكن من التحقق من بيانات الاسترداد. المضي قدما على أي حال؟"
@@ -19334,11 +19340,29 @@
       ]
     },
     "Spotlight": {
+      "Assign delegated roles": [
+        "تعيين الأدوار المفوّضة"
+      ],
+      "Assign roles": [
+        "تعيين الأدوار"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "اضغط على «تعديل» لتعيين الأدوار لهذه المجموعة وإدارة وصول الأعضاء تلقائيًا."
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "اكسب رصيدًا يصل إلى ${ maxRewardAmount }"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "احصل على أرصدة عندما يشترك الشخص الذي تدعوه في خطة ${ BRAND_NAME }."
+      ],
+      "New: Roles and permissions tab": [
+        "جديد: علامة تبويب الأدوار والأذونات"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "افتح علامة التبويب هذه لمنح أذونات محددة بدون صلاحية وصول كاملة للمشرف."
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "يمكنك الآن تعيين الأدوار للمستخدمين الفرديين من علامة التبويب هذه."
       ]
     },
     "sso": {

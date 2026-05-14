@@ -169,6 +169,9 @@
       "Continue offline": [
         "Pokračovať offline"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Copy and close": [
         "Kopírovať a zatvoriť"
       ],
@@ -183,6 +186,9 @@
       ],
       "Copy forwarding address": [
         "Kopírovať adresu pre preposielanie"
+      ],
+      "Copy instructions": [
+        "Kopírovať pokyny"
       ],
       "Copy link": [
         "Kopírovať odkaz"
@@ -201,6 +207,9 @@
       ],
       "Copy to clipboard": [
         "Skopírovať do schránky"
+      ],
+      "Copy token": [
+        "Skopírovať token"
       ],
       "Copy username": [
         "Kopírovať používateľské meno"
@@ -237,6 +246,9 @@
       ],
       "Create note": [
         "Vytvoriť poznámku"
+      ],
+      "Create token": [
+        "Vytvoriť token"
       ],
       "Create vault": [
         "Vytvoriť trezor"
@@ -412,6 +424,9 @@
       "Link expires after": [
         "Platnosť odkazu vyprší po"
       ],
+      "Load more": [
+        "Načítať viac"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Uzamknúť ${ PASS_APP_NAME }"
       ],
@@ -435,6 +450,9 @@
       ],
       "Manage access": [
         "Spravovať prístup"
+      ],
+      "Manage vault access": [
+        "Spravovať prístup k trezoru"
       ],
       "Manually sync your data": [
         "Synchronizovať údaje manuálne"
@@ -471,6 +489,9 @@
       ],
       "Multiple select": [
         "Viacnásobný výber"
+      ],
+      "New token": [
+        "Nový token"
       ],
       "Next month": [
         "Budúci mesiac"
@@ -733,6 +754,9 @@
       "Via secure link": [
         "Cez bezpečný odkaz"
       ],
+      "View agent activity": [
+        "Zobraziť aktivitu agenta"
+      ],
       "View details": [
         "Zobraziť podrobnosti"
       ],
@@ -756,6 +780,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivita"
+      ],
+      "Activity details could not be loaded.": [
+        "Podrobnosti o aktivite sa nepodarilo načítať."
+      ],
+      "Folder": [
+        "Priečinok"
+      ],
+      "Item": [
+        "Položka"
+      ],
+      "Reason": [
+        "Dôvod"
+      ],
+      "Vault": [
+        "Trezor"
       ]
     },
     "Browser": {
@@ -978,6 +1022,9 @@
       "Could not validate addresses at the moment.": [
         "Adresy v tejto chvíli nebolo možné overiť."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nepodarilo sa načítať pokyny na nastavenie agenta. Skopírujte si, prosím, nižšie uvedený token, už sa viac nezobrazí."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V súbore CSV chýbajú očakávané hlavičky: ${ missingHeaders }"
       ],
@@ -1023,6 +1070,9 @@
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Exspirácia musí byť medzi 60 minútami a 1 rokom"
+      ],
       "Failed loading group members": [
         "Chyba pri načítavaní členov skupiny"
       ],
@@ -1044,6 +1094,9 @@
       "Failed to change mailbox": [
         "Nepodarilo sa zmeniť poštovú schránku"
       ],
+      "Failed to create access token": [
+        "Nepodarilo sa vytvoriť prístupový token"
+      ],
       "Failed to create domain": [
         "Vytvorenie domény zlyhalo"
       ],
@@ -1052,6 +1105,9 @@
       ],
       "Failed to create the contact": [
         "Vytvorenie kontaktu zlyhalo"
+      ],
+      "Failed to delete access token": [
+        "Nepodarilo sa vymazať prístupový token"
       ],
       "Failed to delete domain": [
         "Vymazanie domény zlyhalo"
@@ -1071,6 +1127,9 @@
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
       ],
+      "Failed to load access tokens": [
+        "Nepodarilo sa načítať prístupové tokeny"
+      ],
       "Failed to load breaches for this address": [
         "Načítanie únikov pre túto adresu zlyhalo"
       ],
@@ -1082,6 +1141,9 @@
       ],
       "Failed to load item history": [
         "Nepodarilo sa načítať históriu položky"
+      ],
+      "Failed to load token actions": [
+        "Nepodarilo sa načítať akcie tokenov"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
@@ -1140,6 +1202,9 @@
       "Failed to update random prefix generation setting.": [
         "Aktualizácia nastavenia generovania náhodných prefixov zlyhala."
       ],
+      "Failed to update vault access": [
+        "Nepodarilo sa aktualizovať prístup k trezoru"
+      ],
       "Failed to verify domain": [
         "Overenie domény zlyhalo"
       ],
@@ -1190,6 +1255,12 @@
       ],
       "Moving item failed": [
         "Presun položky zlyhal"
+      ],
+      "Name is required": [
+        "Názov je povinný"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Názov nesmie presiahnuť 191 znakov"
       ],
       "Network error": [
         "Chyba siete"
@@ -1527,6 +1598,9 @@
         "${ row.breachCount } zistené úniky",
         "${ row.breachCount } zistených únikov"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } vybrané"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členovia)",
@@ -1562,6 +1636,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Prístupový token „${ action.token.Name }“ prestane okamžite fungovať. Táto akcia sa nedá vrátiť späť."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Prístupové tokeny používané spolu s ${ passCliLink } vám umožňujú automatizovať CI/CD alebo poskytnúť vášmu AI agentovi obmedzený prístup k tomu, čo potrebuje na vykonanie svojej úlohy."
       ],
       "Add your custom email address to monitor:": [
         "Pridajte vašu vlastnú emailovú adresu na monitorovanie:"
@@ -1638,6 +1718,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Tým sa zabráni tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Medzi 60 (1 hodina) a 525600 (1 rok)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biometrické uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
       ],
@@ -1701,14 +1784,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Skopírované do schránky (vyprší o ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Skopírujte nižšie uvedený text v formáte Markdown a pošlite ho svojmu AI agentovi. Token sa zobrazí len v tomto prípade."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Tento token si teraz skopírujte. Z bezpečnostných dôvodov sa už viac nezobrazí."
+      ],
       "Coupon successfully applied!": [
         "Kupón bol úspešne použitý!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Vytvorte token na integráciu ${ PASS_APP_NAME } s vašimi skriptami a nástrojmi."
       ],
       "Create contact illustration": [
         "Vytvorte obrázok kontaktu"
       ],
+      "Created ${ createdDate }": [
+        "Vytvorené ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Vytvorené ${ time }."
+      ],
+      "Created item": [
+        "Vytvorená položka"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, prístupové kľúče...). Pre kompletný export odporúčame použiť iný formát."
@@ -1721,6 +1819,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Predvolené zobrazované meno pre aliasy vytvorené pomocou ${ domainDisplay }, pokiaľ nie je prepísané zobrazovaným menom aliasu."
+      ],
+      "Deleted item": [
+        "Vymazaná položka"
       ],
       "Deleted items will be moved here first": [
         "Odstránené položky budú presunuté najskôr sem"
@@ -1742,6 +1843,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Doména: ${ domainPath } alebo @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Stiahnuť pass-cli z ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
@@ -1818,14 +1922,32 @@
       "Enter your PIN code": [
         "Zadajte PIN kód"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Všetky akcie, ktoré tento agent vykonal, zoradené od najnovších."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Zakaždým, keď váš alias dostane od niekoho email, automaticky sa vytvorí nový kontakt."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Exspiroval pred ${ abs } hodinou",
+        "Exspiroval pred ${ abs } hodinami",
+        "Exspiroval pred ${ abs } hodinami",
+        "Exspiroval pred ${ abs } hodinami"
       ],
       "Expires in": [
         "Vyprší za"
       ],
+      "Expires in ${ hours } hour": [
+        "Exspiruje o ${ hours } hodinu",
+        "Exspiruje o ${ hours } hodiny",
+        "Exspiruje o ${ hours } hodín",
+        "Exspiruje o ${ hours } hodín"
+      ],
       "Expires in ${ remainingTime }": [
         "Vyprší o ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Exspiruje o menej ako hodinu"
       ],
       "Exporting your data...": [
         "Exportujeme vaše údaje..."
@@ -1986,6 +2108,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Načítanie ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Odhláste sa zo všetkých otvorených relácií:"
+      ],
       "Logging you out...": [
         "Odhlasovanie..."
       ],
@@ -2016,6 +2141,9 @@
         "Presunúť ${ count } položiek",
         "Presunúť ${ count } položiek"
       ],
+      "Moved item to trash": [
+        "Položka presunutá do koša"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
@@ -2043,14 +2171,26 @@
       "Never": [
         "Nikdy"
       ],
+      "New": [
+        "Nový"
+      ],
+      "No activity recorded yet.": [
+        "Zatiaľ nebola zaznamenaná žiadna aktivita."
+      ],
       "No breaches detected": [
         "Neboli zistené žiadne prípady únikov"
       ],
       "No network connection": [
         "Žiadne sieťové pripojenie"
       ],
+      "No vaults available.": [
+        "Nie sú k dispozícii žiadne trezory."
+      ],
       "None": [
         "Nezamykať"
+      ],
+      "None selected": [
+        "Nevybraté"
       ],
       "Not recommended": [
         "Neodporúčané"
@@ -2238,6 +2378,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
+      "Read item": [
+        "Prečítať položku"
+      ],
       "Reconnect": [
         "Znovu pripojiť"
       ],
@@ -2271,6 +2414,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Resetovanie histórie natrvalo vymaže všetky predchádzajúce verzie položky a nebude možné ich vrátiť späť."
       ],
+      "Restored item from trash": [
+        "Položka obnovená z koša"
+      ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
       ],
@@ -2285,6 +2431,9 @@
       ],
       "Select destination vault": [
         "Vyberte cieľový trezor"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vyberte trezory, do ktorých má „${ token.Name }“ prístup na čítanie."
       ],
       "Select vault to share": [
         "Vyberte trezor na zdieľanie"
@@ -2361,8 +2510,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Ťuknite na ikonu ${ gearIcon } a prispôsobte si alias podľa svojich predstáv."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Otestujte token tak, že sa prihlásite a zobrazíte zoznam trezorov:"
+      ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agent bude musieť zdôvodniť každú svoju činnosť a každá činnosť bude zaznamenaná v kontrolnom zázname, ktorý si môžete prezrieť. Po vytvorení tokenu dostanete pokyny, ktoré stačí skopírovať a vložiť do vášho AI agenta."
       ],
       "The display name when sending an email from this alias.": [
         "Zobrazované meno pri odosielaní emailu z tohto aliasu."
@@ -2397,6 +2552,9 @@
       "The user did not accept the invitation yet.": [
         "Používateľ pozvánku zatiaľ neakceptoval."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Potom môžete prejsť na stránku ${ url } a skopírovať si pokyny, ktoré pošlete svojmu AI agentovi."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
@@ -2429,6 +2587,9 @@
       ],
       "This setting is enforced by your organization": [
         "Toto nastavenie je vynútené vašou organizáciou"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Tento token získa prístup len na čítanie k trezorom, ktoré vyberiete. Môže čítať položky, ale nemôže ich upravovať, zdieľať trezory ani pozývať ďalších používateľov. Toto nastavenie môžete neskôr zmeniť."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."
@@ -2493,11 +2654,17 @@
       "Unverified": [
         "Neoverený"
       ],
+      "Updated item": [
+        "Aktualizovaná položka"
+      ],
       "Updating vault organization...": [
         "Aktualizuje sa organizácia trezoru..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Inovujte teraz pre odomknutie prémiových funkcií"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Navýšte úroveň na verziu ${ PASS_APP_NAME } Plus, aby ste mohli vytvárať prístupové tokeny a využívať ${ PASS_APP_NAME } programovo."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Pre vytvorenie viacerých trezorov prejdite na platený plán."
@@ -2522,6 +2689,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Trezor \"${ share.content.name }\" bol odstránený."
+      ],
+      "Vault access granted": [
+        "Prístup do trezora bol povolený"
       ],
       "Vault organization successfully updated": [
         "Organizácia trezoru bola úspešne aktualizovaná"
@@ -2827,6 +2997,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Prístupové tokeny"
+      ],
       "Account": [
         "Účet"
       ],
@@ -3084,6 +3257,9 @@
       ],
       "Expired": [
         "Vypršal"
+      ],
+      "Expires in (minutes)": [
+        "Vyprší o (minúty)"
       ],
       "Expiry Date": [
         "Dátum exspirácie"
@@ -3727,6 +3903,9 @@
       "Today": [
         "Dnes"
       ],
+      "Token name": [
+        "Názov tokenu"
+      ],
       "Total imported items: ": [
         "Celkom importovaných položiek: "
       ],
@@ -3787,6 +3966,9 @@
       "Update": [
         "Aktualizovať"
       ],
+      "Use for AI agent": [
+        "Použiť pre AI agenta"
+      ],
       "Used in": [
         "Použité v"
       ],
@@ -3798,6 +3980,9 @@
       ],
       "Value:": [
         "Hodnota:"
+      ],
+      "Vault access": [
+        "Prístup k trezoru"
       ],
       "Vault ID": [
         "ID trezoru"
@@ -3927,6 +4112,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } bol povolený"
+      ],
+      "Access token deleted": [
+        "Prístupový token vymazaný"
       ]
     },
     "Option": {
@@ -4109,6 +4297,12 @@
       "Coupon": [
         "Kupón"
       ],
+      "e.g. 60": [
+        "napr. 60"
+      ],
+      "e.g. My automation script": [
+        "napr. Môj automatizačný skript"
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -4266,6 +4460,20 @@
         "Neznáme"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktívny"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Exspirované"
+      ],
+      "Expiring soon": [
+        "Čoskoro exspiruje"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizácia aliasov bola úspešne zapnutá. Synchronizácia aliasov SimpleLogin môže určitý čas trvať"
@@ -4358,6 +4566,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Prístupové tokeny vyžadujú ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Ochrana účtu"
       ],
@@ -4367,11 +4578,17 @@
       "Activity": [
         "Aktivita"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivita \"${ token.Name }\""
+      ],
       "Add custom domain": [
         "Pridať vlastnú doménu"
       ],
       "Add mailbox": [
         "Pridať poštovú schránku"
+      ],
+      "Agent setup instructions": [
+        "Pokyny na nastavenie agenta"
       ],
       "Alias contacts": [
         "Kontakty aliasu"
@@ -4430,6 +4647,9 @@
       "Create contact": [
         "Vytvoriť kontakt"
       ],
+      "Create new access token": [
+        "Vytvoriť nový prístupový token"
+      ],
       "Create PIN code": [
         "Vytvoriť PIN kód"
       ],
@@ -4462,6 +4682,9 @@
         "Vymazať ${ deletedItemsCount } položky?",
         "Vymazať ${ deletedItemsCount } položiek?",
         "Vymazať ${ deletedItemsCount } položiek?"
+      ],
+      "Delete access token?": [
+        "Vymazať prístupový token?"
       ],
       "Delete domain": [
         "Vymazať doménu"
@@ -4577,6 +4800,9 @@
       "Mailbox": [
         "Poštová schránka"
       ],
+      "Manage vault access": [
+        "Spravovať prístup k trezoru"
+      ],
       "Mark as resolved?": [
         "Označiť ako vyriešené?"
       ],
@@ -4615,6 +4841,9 @@
       ],
       "Next": [
         "Ďalej"
+      ],
+      "No access tokens yet": [
+        "Zatiaľ žiadne prístupové tokeny"
       ],
       "No excluded items": [
         "Žiadne vylúčené položky"
@@ -4837,6 +5066,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your new access token": [
+        "Váš nový prístupový token"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"

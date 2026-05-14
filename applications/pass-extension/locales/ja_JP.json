@@ -172,6 +172,9 @@
       "Continue offline": [
         "オフラインで続行"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Copy and close": [
         "コピーして閉じる"
       ],
@@ -417,6 +420,9 @@
       ],
       "Link expires after": [
         "リンクの有効期限："
+      ],
+      "Load more": [
+        "さらに読み込む"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をロックする"
@@ -1190,6 +1196,9 @@
       ],
       "Moving item failed": [
         "アイテムの移動に失敗しました"
+      ],
+      "Name is required": [
+        "名前は必須です"
       ],
       "Network error": [
         "ネットワークエラーが発生しました"
@@ -1993,7 +2002,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2015,6 +2024,9 @@
       ],
       "Never": [
         "なし"
+      ],
+      "New": [
+        "新規"
       ],
       "No breaches detected": [
         "侵害は検出されませんでした"
@@ -3639,6 +3651,9 @@
       ],
       "Today": [
         "今日"
+      ],
+      "Token name": [
+        "トークン名"
       ],
       "Total imported items: ": [
         "合計インポートアイテム： "

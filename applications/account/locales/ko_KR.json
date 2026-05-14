@@ -5969,9 +5969,6 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user }님이 다음 비상 접근시까지 사용자의 계정에 접근할 수 없게 됩니다."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }**님이 복구 연락처로 지정되었습니다. 비밀번호 재설정을 진행하는 경우 해당 연락처를 통해 데이터 복구가 가능합니다."
-      ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**확인하면** **복구 승인**을 클릭하세요. 암호화된 데이터의 잠금이 해제됩니다."
       ],
@@ -6122,9 +6119,6 @@
       "Less than a minute left": [
         "1분 미만 남음"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "${ user }님에게 복구 시도를 하는 사람이 본인임을 알려주세요."
-      ],
       "None": [
         "없음"
       ],
@@ -6217,9 +6211,6 @@
       ],
       "Select recovery contact ${ name }": [
         "복구 연락처 ${ name } 선택"
-      ],
-      "Send email request": [
-        "이메일 요청 전송"
       ],
       "Send recovery request": [
         "복구 요청 전송"

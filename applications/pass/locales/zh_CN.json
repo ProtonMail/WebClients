@@ -169,6 +169,9 @@
       "Continue offline": [
         "保持离线"
       ],
+      "Copy": [
+        "复制"
+      ],
       "Copy and close": [
         "复制并关闭"
       ],
@@ -183,6 +186,9 @@
       ],
       "Copy forwarding address": [
         "复制转发地址"
+      ],
+      "Copy instructions": [
+        "复制说明"
       ],
       "Copy link": [
         "复制链接"
@@ -201,6 +207,9 @@
       ],
       "Copy to clipboard": [
         "复制到剪贴板"
+      ],
+      "Copy token": [
+        "复制令牌"
       ],
       "Copy username": [
         "复制用户名"
@@ -237,6 +246,9 @@
       ],
       "Create note": [
         "创建笔记"
+      ],
+      "Create token": [
+        "创建令牌"
       ],
       "Create vault": [
         "创建保险库"
@@ -412,6 +424,9 @@
       "Link expires after": [
         "链接过期于"
       ],
+      "Load more": [
+        "加载更多"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "锁定 ${ PASS_APP_NAME }"
       ],
@@ -435,6 +450,9 @@
       ],
       "Manage access": [
         "管理权限"
+      ],
+      "Manage vault access": [
+        "管理保险库访问"
       ],
       "Manually sync your data": [
         "手动同步您的数据"
@@ -471,6 +489,9 @@
       ],
       "Multiple select": [
         "多重选择"
+      ],
+      "New token": [
+        "新建令牌"
       ],
       "Next month": [
         "下个月"
@@ -727,6 +748,9 @@
       "Via secure link": [
         "通过安全链接"
       ],
+      "View agent activity": [
+        "查看代理活动"
+      ],
       "View details": [
         "查看详细信息"
       ],
@@ -750,6 +774,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "活动"
+      ],
+      "Activity details could not be loaded.": [
+        "无法加载活动详情！"
+      ],
+      "Folder": [
+        "文件夹"
+      ],
+      "Item": [
+        "项目"
+      ],
+      "Reason": [
+        "原因"
+      ],
+      "Vault": [
+        "保险库"
       ]
     },
     "Browser": {
@@ -966,6 +1010,9 @@
       "Could not validate addresses at the moment.": [
         "目前无法验证地址。"
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "无法加载代理设置说明。请复制下方的令牌，该令牌将不再显示！"
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV 文件缺少预期标头：${ missingHeaders }"
       ],
@@ -1008,6 +1055,9 @@
       "Error reporting problem": [
         "错误报告"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "过期时间必须在 60 分钟至 1 年之间"
+      ],
       "Failed loading group members": [
         "加载群组成员失败"
       ],
@@ -1029,6 +1079,9 @@
       "Failed to change mailbox": [
         "更改邮箱失败"
       ],
+      "Failed to create access token": [
+        "无法创建访问令牌"
+      ],
       "Failed to create domain": [
         "创建域失败"
       ],
@@ -1037,6 +1090,9 @@
       ],
       "Failed to create the contact": [
         "无法创建联系人"
+      ],
+      "Failed to delete access token": [
+        "无法删除访问令牌"
       ],
       "Failed to delete domain": [
         "删除域失败"
@@ -1056,6 +1112,9 @@
       "Failed to edit user's access.": [
         "修改用户权限失败。"
       ],
+      "Failed to load access tokens": [
+        "无法加载访问令牌"
+      ],
       "Failed to load breaches for this address": [
         "无法加载此地址的泄露信息"
       ],
@@ -1067,6 +1126,9 @@
       ],
       "Failed to load item history": [
         "加载项目历史记录失败"
+      ],
+      "Failed to load token actions": [
+        "无法加载令牌操作"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "无法从 “${ payload.content.name }” 移动所有项目"
@@ -1125,6 +1187,9 @@
       "Failed to update random prefix generation setting.": [
         "更新随机前缀生成设置失败。"
       ],
+      "Failed to update vault access": [
+        "无法更新保险库访问权限"
+      ],
       "Failed to verify domain": [
         "无法验证域"
       ],
@@ -1175,6 +1240,12 @@
       ],
       "Moving item failed": [
         "移动项目失败"
+      ],
+      "Name is required": [
+        "名称为必填项"
+      ],
+      "Name must be 191 characters or fewer": [
+        "名称不得超过 191 个字符"
       ],
       "Network error": [
         "网络错误"
@@ -1464,6 +1535,9 @@
       "${ row.breachCount } breach detected": [
         "检测到 ${ row.breachCount } 泄露"
       ],
+      "${ selectedShareIds.size } selected": [
+        "已选择 ${ selectedShareIds.size } 项"
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -1496,6 +1570,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "访问令牌“${ action.token.Name }”将立即失效，此操作无法撤销！"
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "访问令牌与 ${ passCliLink } 配合使用，可让您自动化 CI/CD 流程，或为 AI 代理授予执行任务所需的作用域权限。"
       ],
       "Add your custom email address to monitor:": [
         "添加您的自定义邮箱地址进行监测："
@@ -1572,6 +1652,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "使用此格式导出数据前，请打开 Safari 设置 -> “常规”选项卡 -> 禁用 “下载后打开安全文件”选项。这将防止 Safari 错误提取导出的文件。"
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "介于 60（1 小时）到 525600（1 年）之间"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "生物识别锁注册成功。使用它解锁 ${ PASS_APP_NAME }"
       ],
@@ -1635,14 +1718,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "已复制到剪贴板（将在 ${ timeoutDurationHumanReadable } 后过期）"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "复制下方的 Markdown 并将其发送给您的 AI 代理。注意，令牌仅显示一次！"
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "请立即复制此令牌。出于安全考虑，该令牌将不再显示！"
+      ],
       "Coupon successfully applied!": [
         "优惠券已成功应用！"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "创建令牌以便将 ${ PASS_APP_NAME } 与您的脚本和工具集成。"
       ],
       "Create contact illustration": [
         "创建联系人图标"
       ],
+      "Created ${ createdDate }": [
+        "创建时间 ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "已创建 ${ time }。"
+      ],
+      "Created item": [
+        "已创建项目"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内（自定义字段、密码等）。如需完整导出，建议使用其他格式。"
@@ -1655,6 +1753,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "使用 ${ domainDisplay } 创建别名的默认显示名称，除非被别名显示名称覆盖。"
+      ],
+      "Deleted item": [
+        "已删除项目"
       ],
       "Deleted items will be moved here first": [
         "删除的项目将首先移至此处"
@@ -1676,6 +1777,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "域名：${ domainPath } 或 @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "从 ${ passCliLink } 下载 pass-cli"
       ],
       "Drop file here to upload": [
         "拖至此处上传文件"
@@ -1752,14 +1856,26 @@
       "Enter your PIN code": [
         "输入 PIN 码"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "此代理令牌执行过的所有操作，按时间倒序排列。"
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "每次您的别名收到某人的电子邮件时，就会自动创建一个新的联系人。"
+      ],
+      "Expired ${ abs } hour ago": [
+        "已过期 ${ abs } 小时"
       ],
       "Expires in": [
         "到期于"
       ],
+      "Expires in ${ hours } hour": [
+        "${ hours } 小时后过期"
+      ],
       "Expires in ${ remainingTime }": [
         "在 ${ remainingTime } 后过期"
+      ],
+      "Expires in less than an hour": [
+        "不到一小时后过期"
       ],
       "Exporting your data...": [
         "正在导出您的数据..."
@@ -1911,6 +2027,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "正在加载 ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "退出任何现有会话："
+      ],
       "Logging you out...": [
         "正在退出账户..."
       ],
@@ -1938,6 +2057,9 @@
       "Move ${ count } item": [
         "移动 ${ count } 项"
       ],
+      "Moved item to trash": [
+        "已将项目移至回收站"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
@@ -1962,14 +2084,26 @@
       "Never": [
         "从不"
       ],
+      "New": [
+        "新"
+      ],
+      "No activity recorded yet.": [
+        "暂无活动记录"
+      ],
       "No breaches detected": [
         "未检测到数据泄露"
       ],
       "No network connection": [
         "无网络连接"
       ],
+      "No vaults available.": [
+        "没有可用的保险库"
+      ],
       "None": [
         "无"
+      ],
+      "None selected": [
+        "未选择"
       ],
       "Not recommended": [
         "不推荐"
@@ -2154,6 +2288,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "由 ${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）提供保护"
       ],
+      "Read item": [
+        "读取项目"
+      ],
       "Reconnect": [
         "重新连接"
       ],
@@ -2187,6 +2324,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "重置历史记录将永久删除所有过去的项目版本，且无法撤销。"
       ],
+      "Restored item from trash": [
+        "已从回收站恢复项目"
+      ],
       "Restoring items from trash": [
         "正在从回收站中恢复项目"
       ],
@@ -2201,6 +2341,9 @@
       ],
       "Select destination vault": [
         "选择目标保险库"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "选择“${ token.Name }”可以读取的保险库"
       ],
       "Select vault to share": [
         "选择要共享的保险库"
@@ -2277,8 +2420,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "点击图标 ${ gearIcon }，按自己想要的方式自定义别名。"
       ],
+      "Test the token by logging in and listing vaults:": [
+        "通过登录并列出保险库来测试令牌："
+      ],
       "Thank you, the problem has been reported": [
         "谢谢，这个问题已上报"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "代理执行每项操作时需提供原因，每项操作都会记录在可供您查看的审计日志中。创建令牌后，您将获得可复制粘贴到 AI 代理中的说明。"
       ],
       "The display name when sending an email from this alias.": [
         "使用此别名发送电子邮件时的显示名称。"
@@ -2309,6 +2458,9 @@
       ],
       "The user did not accept the invitation yet.": [
         "用户尚未接受邀请。"
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "然后您可以访问 ${ url } 复制说明并将其发送给您的 AI 代理。"
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "该导出文件未经加密，任何可以访问您导出文件的人都可以看到您的密码。为了安全起见，请在使用完毕后将其删除。"
@@ -2342,6 +2494,9 @@
       ],
       "This setting is enforced by your organization": [
         "此设置由您的组织执行"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "此令牌对您选择的保险库拥有只读权限。它可以读取项目，但无法编辑项目、共享保险库或邀请其他人。您之后可以更改此设置。"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "该保险库目前未与任何人共享。请与他人共享。"
@@ -2406,11 +2561,17 @@
       "Unverified": [
         "未验证"
       ],
+      "Updated item": [
+        "已更新项目"
+      ],
       "Updating vault organization...": [
         "正在更新保险库组织..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "立即升级以解锁高级功能"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "升级到 ${ PASS_APP_NAME } Plus 套餐，即可通过编程方式创建访问令牌并使用 ${ PASS_APP_NAME }。"
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "升级到付费计划以创建多个保险库。"
@@ -2435,6 +2596,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "保险库“${ share.content.name }”已被移除"
+      ],
+      "Vault access granted": [
+        "已授予保险库访问权限"
       ],
       "Vault organization successfully updated": [
         "保险库组织已成功更新"
@@ -2685,6 +2849,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Access tokens": [
+        "访问令牌"
       ],
       "Account": [
         "账户"
@@ -2940,6 +3107,9 @@
       ],
       "Expired": [
         "已失效"
+      ],
+      "Expires in (minutes)": [
+        "过期时间（分钟）"
       ],
       "Expiry Date": [
         "截止日期"
@@ -3583,6 +3753,9 @@
       "Today": [
         "今天"
       ],
+      "Token name": [
+        "令牌名称"
+      ],
       "Total imported items: ": [
         "总导入项目数： "
       ],
@@ -3643,6 +3816,9 @@
       "Update": [
         "更新"
       ],
+      "Use for AI agent": [
+        "用于 AI 代理"
+      ],
       "Used in": [
         "已用于"
       ],
@@ -3654,6 +3830,9 @@
       ],
       "Value:": [
         "值:"
+      ],
+      "Vault access": [
+        "保险库访问"
       ],
       "Vault ID": [
         "保险库 ID"
@@ -3777,6 +3956,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } 已启用"
+      ],
+      "Access token deleted": [
+        "访问令牌已删除"
       ]
     },
     "Option": {
@@ -3956,6 +4138,12 @@
       "Coupon": [
         "优惠券"
       ],
+      "e.g. 60": [
+        "例如：60"
+      ],
+      "e.g. My automation script": [
+        "例如：我的自动化脚本"
+      ],
       "E.g., ": [
         "例如："
       ],
@@ -4113,6 +4301,20 @@
         "未知"
       ]
     },
+    "Status": {
+      "Active": [
+        "活动"
+      ],
+      "Agent": [
+        "代理"
+      ],
+      "Expired": [
+        "已过期"
+      ],
+      "Expiring soon": [
+        "即将过期"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "别名同步已成功启用，SimpleLogin 别名可能需要一些时间才能同步"
@@ -4199,6 +4401,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "访问令牌需要 ${ PASS_APP_NAME } Plus 套餐"
+      ],
       "Account protection": [
         "账户保护"
       ],
@@ -4208,11 +4413,17 @@
       "Activity": [
         "启用"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "“${ token.Name }”的活动"
+      ],
       "Add custom domain": [
         "添加自定义域名"
       ],
       "Add mailbox": [
         "添加邮箱"
+      ],
+      "Agent setup instructions": [
+        "代理设置说明"
       ],
       "Alias contacts": [
         "别名联系人"
@@ -4271,6 +4482,9 @@
       "Create contact": [
         "创建联系人"
       ],
+      "Create new access token": [
+        "新建访问令牌"
+      ],
       "Create PIN code": [
         "创建 PIN 码"
       ],
@@ -4300,6 +4514,9 @@
       ],
       "Delete ${ deletedItemsCount } item?": [
         "删除 ${ deletedItemsCount } 项吗？"
+      ],
+      "Delete access token?": [
+        "删除访问令牌？"
       ],
       "Delete domain": [
         "删除域名"
@@ -4415,6 +4632,9 @@
       "Mailbox": [
         "邮箱"
       ],
+      "Manage vault access": [
+        "管理保险库访问"
+      ],
       "Mark as resolved?": [
         "标记为已解决?"
       ],
@@ -4447,6 +4667,9 @@
       ],
       "Next": [
         "下一页"
+      ],
+      "No access tokens yet": [
+        "暂无访问令牌"
       ],
       "No excluded items": [
         "无除外项目"
@@ -4663,6 +4886,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your new access token": [
+        "您的新访问令牌"
       ],
       "Your vault is empty": [
         "您的保险库是空的"
