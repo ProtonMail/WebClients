@@ -19,7 +19,7 @@ export const useItemVisibility = ({ onItemRender, threshold = 0.1, rootMargin = 
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        const itemUid = entry.target.getAttribute('data-item-uid');
+                        const itemUid = entry.target.getAttribute('data-drive-explorer-item-uid');
 
                         if (itemUid && !observedItemsRef.current.has(itemUid)) {
                             onItemRender(itemUid);
@@ -46,7 +46,7 @@ export const useItemVisibility = ({ onItemRender, threshold = 0.1, rootMargin = 
             return;
         }
 
-        element.setAttribute('data-item-uid', uid);
+        element.setAttribute('data-drive-explorer-item-uid', uid);
 
         observerRef.current.observe(element);
     }, []);
