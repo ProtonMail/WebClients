@@ -136,9 +136,10 @@ export const DriveExplorerRow = ({
                 onDrop={canBeDropTarget ? dragMoveControls?.handleDrop : undefined}
                 onDragEnter={canBeDropTarget ? dragMoveControls?.handleDragEnter : undefined}
                 onDragLeave={canBeDropTarget ? dragMoveControls?.handleDragLeave : undefined}
+                onContextMenu={handleContextMenu}
                 draggable={isDraggable}
                 data-testid="drive-explorer-row"
-                data-item-uid={itemId}
+                data-drive-explorer-item-uid={itemId}
             >
                 <ItemA11yActivatorCell
                     ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
@@ -147,7 +148,6 @@ export const DriveExplorerRow = ({
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                     onKeyDown={handleKeyDown}
-                    onContextMenu={handleContextMenu}
                 />
                 {showCheckboxColumn ? (
                     <TableCell className="m-0 flex items-center relative z-up" data-testid="checkbox">
