@@ -40,4 +40,5 @@ export type ForgotPasswordStatePath =
     | 'setNewPassword'
     | 'recoveryFailed'
     | 'doneHelpExit'
-    | 'fatalError';
+    | 'fatalError'
+    | 'recoveryMethodVerificationError';
