@@ -15,6 +15,40 @@ import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/Siz
 import { defaultModifiedTimeCellConfig } from '../commonDriveExplorerCells/modifiedTimeCellConfig';
 import { useFolderStore } from './useFolder.store';
 
+// Hoisted so its identity is stable across cell's re-renders.
+const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
+    const { isShared, trashed, volumeId, linkId, role } = useFolderStore(
+        useShallow((state) => {
+            const item = state.items.get(uid);
+            return {
+                isShared: item?.isShared,
+                trashed: item?.trashed ?? null,
+                volumeId: item?.volumeId,
+                linkId: item?.linkId,
+                role: state?.role,
+            };
+        })
+    );
+    const isAdmin = role === MemberRole.Admin;
+    const { sharingModal, showSharingModal } = useSharingModal();
+
+    if (!isShared || !volumeId || !linkId) {
+        return null;
+    }
+
+    return (
+        <>
+            <ShareIcon
+                trashed={trashed}
+                isAdmin={isAdmin}
+                // For folder section so we can force getDrive
+                onClick={() => showSharingModal({ nodeUid: uid, drive: getDrive() })}
+            />
+            {sharingModal}
+        </>
+    );
+};
+
 export const getFolderCells = ({
     viewportWidth,
 }: {
@@ -86,41 +120,7 @@ export const getFolderCells = ({
             'file-browser-list--icon-column file-browser-list--context-menu-column flex items-center relative z-up',
         testId: 'column-share-options',
         disabled: !viewportWidth['>=large'],
-        render: (uid) => {
-            const ShareOptionsCellComponent = () => {
-                const { isShared, trashed, volumeId, linkId, role } = useFolderStore(
-                    useShallow((state) => {
-                        const item = state.items.get(uid);
-                        return {
-                            isShared: item?.isShared,
-                            trashed: item?.trashed ?? null,
-                            volumeId: item?.volumeId,
-                            linkId: item?.linkId,
-                            role: state?.role,
-                        };
-                    })
-                );
-                const isAdmin = role === MemberRole.Admin;
-                const { sharingModal, showSharingModal } = useSharingModal();
-
-                if (!isShared || !volumeId || !linkId) {
-                    return null;
-                }
-
-                return (
-                    <>
-                        <ShareIcon
-                            trashed={trashed}
-                            isAdmin={isAdmin}
-                            // For folder section so we can force getDrive
-                            onClick={() => showSharingModal({ nodeUid: uid, drive: getDrive() })}
-                        />
-                        {sharingModal}
-                    </>
-                );
-            };
-            return <ShareOptionsCellComponent />;
-        },
+        render: (uid) => <ShareOptionsCellComponent uid={uid} />,
     },
 ];
 
