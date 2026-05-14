@@ -128,8 +128,9 @@ export const useLockSetup = (): LockSetup => {
                             .t`Please confirm your PIN code in order to unregister your current lock.`,
                         onSubmit: async (pin) => {
                             const dto: UnlockDTO = { mode: LockMode.SESSION, pin, offline: false };
-                            await unlock(dto);
-                            resolve({ ok: true, ...dto });
+                            await unlock(dto)
+                                .then(() => resolve({ ok: true, ...dto }))
+                                .catch(() => resolve({ ok: false }));
                         },
                     });
 
@@ -181,8 +182,10 @@ export const useLockSetup = (): LockSetup => {
                                 password: cloneObfuscation(password),
                                 offline: false,
                             };
-                            await unlock(dto);
-                            resolve({ ok: true, ...dto, password });
+
+                            await unlock(dto)
+                                .then(() => resolve({ ok: true, ...dto, password }))
+                                .catch(() => resolve({ ok: false }));
                         },
                     });
                 }
