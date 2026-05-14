@@ -37,7 +37,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -451,6 +451,9 @@
       ],
       "Get verification code": [
         "Атрымаць код спраўджання"
+      ],
+      "Go back": [
+        "Вярнуцца"
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -4087,7 +4090,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Адбылася памылка падчас экспартавання кантактаў vCard"
+        "Адбылася памылка пры экспартаванні кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -6186,7 +6189,7 @@
         "РЭКАМЕНДАВАНЫ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Referral link copied to your clipboard": [
         "Рэферальная спасылка скапіявана ў буфер абмену"
@@ -9354,7 +9357,7 @@
         "Падчас падзеі"
       ],
       "On the same day at ${ time }": [
-        "У той жа дзень а ${ time }"
+        "У той жа дзень у ${ time }"
       ],
       "Unknown": [
         "Невядома"

@@ -7260,6 +7260,9 @@
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } stiahnutí"
+      ],
       "${ n } month": [
         "${ n } mesiac",
         "${ n } mesiace",
@@ -7452,6 +7455,9 @@
       "Created": [
         "Vytvorené"
       ],
+      "Created ${ created }": [
+        "Vytvorené ${ created }"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -7473,11 +7479,20 @@
       "Deleted": [
         "Odstránený"
       ],
+      "Deleted ${ deleted }": [
+        "Vymazané ${ deleted }"
+      ],
       "Device": [
         "Zariadenie"
       ],
+      "Device #${ position }": [
+        "Zariadenie #${ position }"
+      ],
       "Device name": [
         "Názov zariadenia"
+      ],
+      "Device: ${ name }": [
+        "Zariadenie: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Deaktivovať tento odkaz k určitému dátumu"
@@ -7536,8 +7551,14 @@
       "Expired": [
         "Vypršal"
       ],
+      "Expired on ${ formatted }": [
+        "Platnosť skončí ${ formatted }"
+      ],
       "Expires": [
         "Exspiruje"
+      ],
+      "Expires ${ formatted }": [
+        "Platnosť skončí ${ formatted }"
       ],
       "Expiry": [
         "Platnosť"
@@ -7611,6 +7632,9 @@
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
+      "Item #${ position }": [
+        "Položka #${ position }"
+      ],
       "Keep both": [
         "Ponechať oba"
       ],
@@ -7641,6 +7665,9 @@
       "Location": [
         "Poloha"
       ],
+      "Location: ${ item.location }": [
+        "Lokalita: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Prihláste sa alebo zaregistrujte "
       ],
@@ -7661,6 +7688,9 @@
       ],
       "Modified": [
         "Upravené"
+      ],
+      "Modified ${ modified }": [
+        "Upravené ${ modified }"
       ],
       "Move to Archive": [
         "Premiestniť do Archívu"
@@ -7683,11 +7713,17 @@
       "Never": [
         "Nikdy"
       ],
+      "Never expires": [
+        "Platnosť nikdy nevyprší"
+      ],
       "New password": [
         "Nové heslo"
       ],
       "Not active": [
         "Neaktívne"
+      ],
+      "Not selected": [
+        "Nezvolené"
       ],
       "Note": [
         "Poznámka"
@@ -7724,6 +7760,9 @@
       ],
       "Payment method": [
         "Spôsob platby"
+      ],
+      "Pending invitation": [
+        "Čakajúca pozvánka"
       ],
       "PGP scheme": [
         "PGP schéma"
@@ -7785,6 +7824,9 @@
       "Select type of abuse": [
         "Vyberte typ zneužitia"
       ],
+      "Selected": [
+        "Vybrané"
+      ],
       "Set a password to limit access via link": [
         "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ],
@@ -7800,8 +7842,17 @@
       "Shared by": [
         "Zdieľané používateľom"
       ],
+      "Shared by ${ sharedBy }": [
+        "Zdieľané ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Zdieľané verejným odkazom"
+      ],
       "Shared on": [
         "Zdieľané"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Zdieľané na ${ sharedOn }"
       ],
       "Shared with me": [
         "Zdieľané so mnou"

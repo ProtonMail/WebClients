@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "İletme adresini kopyala"
       ],
+      "Copy instructions": [
+        "Talimatları kopyala"
+      ],
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Panoya kopyala"
+      ],
+      "Copy token": [
+        "Kodu kopyala"
       ],
       "Copy username": [
         "Kullanıcı adını kopyala"
@@ -249,6 +255,9 @@
       ],
       "Create note": [
         "Not oluştur"
+      ],
+      "Create token": [
+        "Kod oluştur"
       ],
       "Create vault": [
         "Kasa oluştur"
@@ -430,6 +439,9 @@
       "Link expires after": [
         "Bağlantının geçerlilik süresi sonu"
       ],
+      "Load more": [
+        "Diğerlerini yükle"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kilitle"
       ],
@@ -453,6 +465,9 @@
       ],
       "Manage access": [
         "Erişim yönetimi"
+      ],
+      "Manage vault access": [
+        "Kasa erişimini yönet"
       ],
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
@@ -489,6 +504,9 @@
       ],
       "Multiple select": [
         "Çoklu seçim"
+      ],
+      "New token": [
+        "Yeni kod"
       ],
       "Next": [
         "İleri"
@@ -756,6 +774,9 @@
       "Via secure link": [
         "Güvenli bağlantı ile"
       ],
+      "View agent activity": [
+        "Ajan etkinliğini görüntüle"
+      ],
       "View details": [
         "Ayrıntıları görüntüle"
       ],
@@ -779,6 +800,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Etkinlik"
+      ],
+      "Activity details could not be loaded.": [
+        "Etkinlik detayları yüklenemedi."
+      ],
+      "Folder": [
+        "Klasör"
+      ],
+      "Item": [
+        "Öğe"
+      ],
+      "Reason": [
+        "Gerekçe"
+      ],
+      "Vault": [
+        "Kasa"
       ]
     },
     "App menu": {
@@ -1020,6 +1061,9 @@
       "Could not validate addresses at the moment.": [
         "Adresler şu anda doğrulanamıyor."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Ajan kurulum talimatları yüklenemedi. Lütfen aşağıdaki kodu kopyalayın. Bu bir daha gösterilmeyecek."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
       ],
@@ -1063,6 +1107,9 @@
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Geçerlilik süresi 60 dakika ile 1 yıl arasında olmalıdır"
+      ],
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
       ],
@@ -1084,6 +1131,9 @@
       "Failed to change mailbox": [
         "E-posta kutusu değiştirilemedi"
       ],
+      "Failed to create access token": [
+        "Erişim kodu oluşturulamadı"
+      ],
       "Failed to create domain": [
         "Etki alanı oluşturulamadı"
       ],
@@ -1092,6 +1142,9 @@
       ],
       "Failed to create the contact": [
         "Kişi oluşturulamadı"
+      ],
+      "Failed to delete access token": [
+        "Erişim kodu silinemedi"
       ],
       "Failed to delete domain": [
         "Etki alanı silinemedi"
@@ -1111,6 +1164,9 @@
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
       ],
+      "Failed to load access tokens": [
+        "Erişim kodu yüklenemedi"
+      ],
       "Failed to load breaches for this address": [
         "Bu adres için veri sızıntıları yüklenemedi"
       ],
@@ -1122,6 +1178,9 @@
       ],
       "Failed to load item history": [
         "Öge geçmişi yüklenemedi"
+      ],
+      "Failed to load token actions": [
+        "Kod eylemleri yüklenemedi"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
@@ -1180,6 +1239,9 @@
       "Failed to update random prefix generation setting.": [
         "Rastgele ön ek oluşturma ayarı güncellenemedi."
       ],
+      "Failed to update vault access": [
+        "Kasa erişimi güncellenemedi"
+      ],
       "Failed to verify domain": [
         "Etki alanı doğrulanamadı"
       ],
@@ -1230,6 +1292,12 @@
       ],
       "Moving item failed": [
         "Öge taşınamadı"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Ad en fazla 191 karakterden oluşmalıdır"
       ],
       "Network error": [
         "Ağ sorunu"
@@ -1560,6 +1628,9 @@
         "${ row.breachCount } veri sızıntısı bulundu",
         "${ row.breachCount } veri sızıntısı bulundu"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } seçildi"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
@@ -1593,6 +1664,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "\"${ action.token.Name }\" erişim kodu çalışmayı hemen durduracak. Bu işlem geri alınamaz."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "${ passCliLink } ile birlikte kullanılan erişim kodları CI/CD'yi otomatikleştirmenize veya yapay zeka aracınıza işini yürütmesi için gerekenlere kapsamlı erişim vermenize olanak tanır."
       ],
       "Add your custom email address to monitor:": [
         "İzlenecek özel e-posta adresinizi ekleyin:"
@@ -1669,6 +1746,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "60 (1 saat) ile 525600 (1 yıl) arasında"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biyometri ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
       ],
@@ -1732,14 +1812,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Panoya kopyalandı (${ timeoutDurationHumanReadable } sonra süresi dolacak)"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Aşağıdaki markdown'ı kopyalayın ve yapay zeka ajanınıza gönderin. Kod yalnızca bu sefer gösterilecek."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Bu kodu şimdi kopyalayın. Güvenlik nedenleriyle tekrar gösterilmeyecek."
+      ],
       "Coupon successfully applied!": [
         "Kupon kodu uygulandı!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "${ PASS_APP_NAME } uygulamasını betikleriniz ve araçlarınızla entegre etmek için bir kod oluşturun."
       ],
       "Create contact illustration": [
         "Kişi oluşturma görseli"
       ],
+      "Created ${ createdDate }": [
+        "${ createdDate } tarihinde oluşturuldu"
+      ],
       "Created ${ time }.": [
         "Oluşturulma: ${ time }."
+      ],
+      "Created item": [
+        "Oluşturulan öğe"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, geçiş anahtarları...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
@@ -1752,6 +1847,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "${ domainDisplay } ile oluşturulan takma adlar için, takma adın görüntülenecek adı tarafından değiştirilmediği sürece kullanılacak varsayılan görüntülenecek ad."
+      ],
+      "Deleted item": [
+        "Silinmiş öğe"
       ],
       "Deleted items will be moved here first": [
         "Silinen ögeler önce buraya taşınır"
@@ -1773,6 +1871,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Etki alanı: ${ domainPath } ya da @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "${ passCliLink } bağlantısından pass-cli'yı indirin."
       ],
       "Drop file here to upload": [
         "Yüklenecek dosyayı buraya bırakın"
@@ -1846,14 +1947,28 @@
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Bu ajan kodunun gerçekleştirdiği her eylem. En yenisinden başlayarak."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Takma adınız birinden bir e-posta aldığında otomatik olarak yeni bir kişi oluşturulur."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Geçerlilik süresi ${ abs } saat önce doldu",
+        "Geçerlilik süresi ${ abs } saat önce doldu"
       ],
       "Expires in": [
         "Geçerlilik sonu"
       ],
+      "Expires in ${ hours } hour": [
+        "${ hours } saat sonra sona erecek",
+        "${ hours } saat sonra sona erecek"
+      ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
+      ],
+      "Expires in less than an hour": [
+        "Bir saatten kısa süre içinde sona erecek"
       ],
       "Exporting your data...": [
         "Verileriniz dışa aktarılıyor..."
@@ -2014,6 +2129,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } yükleniyor"
       ],
+      "Log out of any existing session:": [
+        "Mevcut tüm oturumlardan çıkış yap:"
+      ],
       "Logging you out...": [
         "Oturumunuz kapatılıyor..."
       ],
@@ -2042,6 +2160,9 @@
         "${ count } ögeyi taşı",
         "${ count } ögeyi taşı"
       ],
+      "Moved item to trash": [
+        "Öğe çöp kutusuna taşındı"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
@@ -2066,8 +2187,14 @@
       "Never": [
         "Asla"
       ],
+      "New": [
+        "Yeni"
+      ],
       "New version ${ latestVersion } is available.": [
         "${ latestVersion } sürümü yayınlanmış."
+      ],
+      "No activity recorded yet.": [
+        "Henüz kaydedilmiş etkinlik yok."
       ],
       "No breaches detected": [
         "Herhangi bir veri sızmamış"
@@ -2075,8 +2202,14 @@
       "No network connection": [
         "Ağ bağlantısı yok"
       ],
+      "No vaults available.": [
+        "Kullanılabilir kasa yok."
+      ],
       "None": [
         "Yok"
+      ],
+      "None selected": [
+        "Hiçbiri seçilmedi"
       ],
       "Not recommended": [
         "Önerilmez"
@@ -2262,6 +2395,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } tarafından korunuyor"
       ],
+      "Read item": [
+        "Öğeyi oku"
+      ],
       "Reconnect": [
         "Yeniden bağlan"
       ],
@@ -2295,6 +2431,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Geçmişi silmek, ögenin tüm geçmiş sürümlerini kalıcı olarak siler ve bu işlem geri alınamaz."
       ],
+      "Restored item from trash": [
+        "Öğe çöp kutusundan geri yüklendi"
+      ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
       ],
@@ -2309,6 +2448,9 @@
       ],
       "Select destination vault": [
         "Hedef kasayı seçin"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "\"${ token.Name }\" adlı kullanıcının okuyabileceği kasaları seçin."
       ],
       "Select vault to share": [
         "Paylaşılacak kasayı seçin"
@@ -2385,8 +2527,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Takma adınızı istediğiniz şekilde özelleştirmek için ${ gearIcon } simgesine dokunun."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Oturum açarak ve kasaları listeleyerek kodu test edin:"
+      ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Ajanın gerçekleştirdiği her eylem için bir gerekçe sunması gerekecek ve her eylem inceleyebileceğiniz bir denetim günlüğüne kaydedilecek. Kod oluşturulduktan sonra yapay zeka ajanınıza kopyalayıp yapıştıracağınız talimatlar alacaksınız."
       ],
       "The changelog can be found ${ changelogLink }.": [
         "Değişiklik günlüğüne ${ changelogLink } adresinden bakabilirsiniz."
@@ -2422,6 +2570,9 @@
       "The user did not accept the invitation yet.": [
         "Kullanıcı henüz daveti kabul etmedi."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Ardından yapay zeka ajanınıza göndereceğiniz talimatları kopyalamak için ${ url } adresine gidebilirsiniz."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
@@ -2454,6 +2605,9 @@
       ],
       "This setting is enforced by your organization": [
         "Bu ayar kuruluşunuz tarafından zorunlu kılınmış"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Bu kod seçtiğiniz kasalara salt okunur erişim sağlar. Öğeleri okuyabilir ancak bunları düzenleyemez, kasaları paylaşamaz veya başkalarını davet edemez. Bunu daha sonra değiştirebilirsiniz."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
@@ -2512,11 +2666,17 @@
       "Unverified": [
         "Doğrulanmamış"
       ],
+      "Updated item": [
+        "Güncellenen öğe"
+      ],
       "Updating vault organization...": [
         "Kasa kuruluşu güncelleniyor..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Erişim kodları oluşturmak ve ${ PASS_APP_NAME } uygulamasını programlı olarak kullanmak için ${ PASS_APP_NAME } Plus'a yükseltin."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
@@ -2541,6 +2701,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "\"${ share.content.name }\" kasası kaldırıldı."
+      ],
+      "Vault access granted": [
+        "Kasa erişim izni verildi"
       ],
       "Vault organization successfully updated": [
         "Kasa kuruluşu güncellendi"
@@ -2819,6 +2982,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Erişim kodu"
+      ],
       "Account": [
         "Hesap"
       ],
@@ -3088,6 +3254,9 @@
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
+      ],
+      "Expires in (minutes)": [
+        "Geçerlilik süresi (dakika) içinde dolacak"
       ],
       "Expiry Date": [
         "Son geçerlilik tarihi"
@@ -3764,6 +3933,9 @@
       "Today": [
         "Bugün"
       ],
+      "Token name": [
+        "Kod adı"
+      ],
       "Total imported items: ": [
         "Toplam içe aktarılan öge: "
       ],
@@ -3827,6 +3999,9 @@
       "Update": [
         "Güncelle"
       ],
+      "Use for AI agent": [
+        "Yapay zeka ajanı için kullan"
+      ],
       "Used in": [
         "Şurada kullanılmış"
       ],
@@ -3841,6 +4016,9 @@
       ],
       "Value:": [
         "Değer:"
+      ],
+      "Vault access": [
+        "Kasa erişimi"
       ],
       "Vault ID": [
         "Kasa kimliği"
@@ -3980,6 +4158,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } özelliği açıldı"
+      ],
+      "Access token deleted": [
+        "Erişim kodu silindi"
       ]
     },
     "Option": {
@@ -4160,6 +4341,12 @@
       "Coupon": [
         "Kupon"
       ],
+      "e.g. 60": [
+        "örn. 60"
+      ],
+      "e.g. My automation script": [
+        "Örnek: Otomasyon betiğim"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -4317,6 +4504,20 @@
         "Bilinmiyor"
       ]
     },
+    "Status": {
+      "Active": [
+        "Aktif"
+      ],
+      "Agent": [
+        "Ajan"
+      ],
+      "Expired": [
+        "Süresi doldu"
+      ],
+      "Expiring soon": [
+        "Yakında sona eriyor"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Takma adların eşitlenmesi açıldı. SimpleLogin takma adlarının eşitlenmesi biraz zaman alabilir"
@@ -4405,6 +4606,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Erişim kodları ${ PASS_APP_NAME } Plus gerektirir"
+      ],
       "Account protection": [
         "Hesap koruması"
       ],
@@ -4414,11 +4618,17 @@
       "Activity": [
         "Etkinlik"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "\"${ token.Name }\" için etkinlik"
+      ],
       "Add custom domain": [
         "Özel etki alanı ekle"
       ],
       "Add mailbox": [
         "E-posta kutusu ekle"
+      ],
+      "Agent setup instructions": [
+        "Ajan kurulum talimatları"
       ],
       "Alias contacts": [
         "Takma ad kişileri"
@@ -4477,6 +4687,9 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create new access token": [
+        "Yeni erişim kodu oluştur"
+      ],
       "Create PIN code": [
         "PIN kodu oluştur"
       ],
@@ -4507,6 +4720,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "${ deletedItemsCount } öge silinsin mi?",
         "${ deletedItemsCount } öge silinsin mi?"
+      ],
+      "Delete access token?": [
+        "Erişim kodları silinsin mi?"
       ],
       "Delete domain": [
         "Etki alanını sil"
@@ -4622,6 +4838,9 @@
       "Mailbox": [
         "E-posta kutusu"
       ],
+      "Manage vault access": [
+        "Kasa erişimini yönet"
+      ],
       "Mark as resolved?": [
         "Çözümlenmiş olarak işaretlensin mi?"
       ],
@@ -4656,6 +4875,9 @@
       ],
       "Next": [
         "Sonraki"
+      ],
+      "No access tokens yet": [
+        "Henüz erişim kodu yok"
       ],
       "No excluded items": [
         "Katılmayan bir öge yok"
@@ -4874,6 +5096,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your new access token": [
+        "Yeni erişim kodunuz"
       ],
       "Your vault is empty": [
         "Kasanız boş"

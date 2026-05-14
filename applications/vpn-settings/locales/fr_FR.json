@@ -557,6 +557,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go back": [
+        "Retour"
+      ],
       "Go to ${ planOrAppName }": [
         "Accéder à ${ planOrAppName }"
       ],
@@ -4519,8 +4522,8 @@
       "Select recovery contact ${ name }": [
         "Sélectionner le contact de récupération ${ name }"
       ],
-      "Send email request": [
-        "Envoyer une demande par e-mail"
+      "Start recovery": [
+        "Démarrer la récupération"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Pour désactiver cette méthode de récupération, retirez tous vos contacts de récupération."
@@ -7160,6 +7163,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
         "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Création d'une passerelle avec ${ total } serveur en cours",
+        "Création d'une passerelle avec ${ total } serveurs en cours"
       ],
       "Creating your account": [
         "Création de votre compte"

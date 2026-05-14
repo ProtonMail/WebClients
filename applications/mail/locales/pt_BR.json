@@ -642,6 +642,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go back": [
+        "Voltar"
+      ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
       ],
@@ -1511,7 +1514,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4213,6 +4217,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
       ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
+      ],
       "When do you want your message to be sent?": [
         "Quando você deseja que sua mensagem seja enviada?"
       ],
@@ -4712,6 +4719,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Erro na criptografia do anexo. Tente novamente."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
@@ -10108,6 +10118,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Carregando suas assinaturas de boletins informativos..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Boletins informativos ou listas de e-mail das quais você se desinscreveu aparecerão aqui."
       ],

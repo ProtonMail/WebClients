@@ -29,7 +29,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Action": {
@@ -3894,7 +3894,7 @@
         "У вашым знешнім уліковым запісе занадта шмат папак. Наладзьце імпартаванне, каб выдаліць некаторыя папкі."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Адбылася памылка падчас экспартавання кантактаў vCard"
+        "Адбылася памылка пры экспартаванні кантактаў vCard"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -6309,7 +6309,7 @@
         "РЭКАМЕНДАВАНЫ"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Recovery process might take some time.": [
         "Працэс аднаўлення зойме некаторы час."
@@ -6531,7 +6531,7 @@
         "Лічбавы подпіс часткова правераны. Гэты файл запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Лічбавы подпіс часткова правераны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+        "Лічбавы подпіс быў часткова спраўджаны. Гэта папка запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
@@ -6648,7 +6648,7 @@
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "This will upload a new version of the file": [
-        "Гэта запампуе новую версію файла"
+        "Гэта прывядзе да запампоўвання новай версіі файла"
       ],
       "This will upload a new version of the folder": [
         "Гэта запампуе новую версію папкі"
@@ -7260,6 +7260,9 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } спампавана"
+      ],
       "${ n } month": [
         "${ n } месяц",
         "${ n } месяцы",
@@ -7452,6 +7455,9 @@
       "Created": [
         "Створана"
       ],
+      "Created ${ created }": [
+        "Створана ${ created }"
+      ],
       "Credits": [
         "Крэдыты"
       ],
@@ -7473,11 +7479,20 @@
       "Deleted": [
         "Выдалена"
       ],
+      "Deleted ${ deleted }": [
+        "Выдалена ${ deleted }"
+      ],
       "Device": [
         "Прылада"
       ],
+      "Device #${ position }": [
+        "Прылада #${ position }"
+      ],
       "Device name": [
         "Назва прылады"
+      ],
+      "Device: ${ name }": [
+        "Прылада: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Адключыць гэту спасылку на ўказаную дату"
@@ -7536,8 +7551,14 @@
       "Expired": [
         "Пратэрмінавана"
       ],
+      "Expired on ${ formatted }": [
+        "Мінуў ${ formatted }"
+      ],
       "Expires": [
         "Дзейнічае да"
+      ],
+      "Expires ${ formatted }": [
+        "Міне праз ${ formatted }"
       ],
       "Expiry": [
         "Тэрмін дзеяння"
@@ -7611,6 +7632,9 @@
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
+      "Item #${ position }": [
+        "Элемент #${ position }"
+      ],
       "Keep both": [
         "Пакінуць абодва"
       ],
@@ -7641,6 +7665,9 @@
       "Location": [
         "Месцазнаходжанне"
       ],
+      "Location: ${ item.location }": [
+        "Размяшчэнне: (${ item.location }"
+      ],
       "Log in or sign up ": [
         "Уваход або рэгістрацыя "
       ],
@@ -7661,6 +7688,9 @@
       ],
       "Modified": [
         "Зменена"
+      ],
+      "Modified ${ modified }": [
+        "Зменена: ${ modified }"
       ],
       "Move to Archive": [
         "Перамясціць у Архіў"
@@ -7683,11 +7713,17 @@
       "Never": [
         "Ніколі"
       ],
+      "Never expires": [
+        "Неабмежаваны тэрмін дзеяння"
+      ],
       "New password": [
         "Новы пароль"
       ],
       "Not active": [
         "Не актыўна"
+      ],
+      "Not selected": [
+        "Не выбрана"
       ],
       "Note": [
         "Нататка"
@@ -7724,6 +7760,9 @@
       ],
       "Payment method": [
         "Спосаб аплаты"
+      ],
+      "Pending invitation": [
+        "Запрашэнне, якое чакае адказу"
       ],
       "PGP scheme": [
         "Схема PGP"
@@ -7785,6 +7824,9 @@
       "Select type of abuse": [
         "Выберыце тып парушэння"
       ],
+      "Selected": [
+        "Выбрана"
+      ],
       "Set a password to limit access via link": [
         "Задаць пароль для абмежавання доступу праз спасылку"
       ],
@@ -7800,8 +7842,17 @@
       "Shared by": [
         "Абагулена"
       ],
+      "Shared by ${ sharedBy }": [
+        "Абагулена ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Абагулена публічнай спасылкай"
+      ],
       "Shared on": [
         "Абагулена"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Абагулена ${ sharedOn }"
       ],
       "Shared with me": [
         "Абагулена са мной"
@@ -10267,7 +10318,7 @@
         "Сінхранізуйце і атрымлівайце доступ да сваіх файлаў з любога месца"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Уладальніку патрэбна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
+        "Уладальніку неабходна пацвердзіць абагульванне доступу. Вы атрымаеце ліст, як толькі гэта будзе зроблена."
       ],
       "Upload your first file": [
         "Запампуйце свой першы файл"

@@ -6563,8 +6563,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } ne pourra pas accéder à votre compte avant le prochain accès d'urgence."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** est maintenant votre contact de récupération. Il peut vous aider à récupérer vos données après une réinitialisation de mot de passe."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** est désormais votre contact de récupération. Ce contact peut vous aider à récupérer vos données après une réinitialisation de mot de passe."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**S'ils confirment**, cliquez sur **Approuver la récupération**. Cela déverrouillera leurs données chiffrées."
@@ -6604,6 +6604,9 @@
       ],
       "Add recovery contact": [
         "Ajouter un contact de récupération"
+      ],
+      "Add recovery method": [
+        "Ajouter une méthode de récupération"
       ],
       "Added on ${ formattedDate }": [
         "Ajouté le ${ formattedDate }"
@@ -6728,9 +6731,6 @@
       "Less than a minute left": [
         "Il reste moins d'une minute"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Faites savoir à ${ user } que c'est bien vous qui tentez de récupérer l'accès."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Limite de ${ limit } contact atteinte. Pour changer, supprimez un contact et ajoutez en un nouveau.",
         "Limite de ${ limit } contacts atteinte. Pour changer, supprimez un contact et ajoutez en un nouveau."
@@ -6828,11 +6828,11 @@
       "Select recovery contact ${ name }": [
         "Sélectionner le contact de récupération ${ name }"
       ],
-      "Send email request": [
-        "Envoyer une demande par e-mail"
-      ],
       "Send recovery request": [
         "Envoyer la demande de récupération"
+      ],
+      "Start recovery": [
+        "Démarrer la récupération"
       ],
       "Stop being recovery contact": [
         "Cesser d'être un contact de récupération"
@@ -6877,6 +6877,9 @@
       "Time required before automatically granting them access": [
         "Temps d’attente avant de leur accorder automatiquement l’accès"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Pour ajouter des contacts de récupération, vous devez avoir une adresse e-mail ou un numéro de téléphone de récupération."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Pour désactiver cette méthode de récupération, retirez tous vos contacts de récupération."
       ],
@@ -6906,6 +6909,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Nous avons reçu une demande de déverrouillage des données chiffrées de votre contact **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Nous avons envoyé une demande par e-mail à ${ user }. Faites savoir à votre contact qu'il s'agit bien de vous, et que vous essayez de récupérer vos accès."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Nous n'avons pas pu vérifier les données de récupération. Continuer quand même ?"
@@ -10506,6 +10512,10 @@
         "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
         "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Création d'une passerelle avec ${ total } serveur en cours",
+        "Création d'une passerelle avec ${ total } serveurs en cours"
+      ],
       "Creating your account": [
         "Création de votre compte"
       ],
@@ -12525,29 +12535,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation du mot de passe, sélectionnez une méthode de récupération."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **récupération assistée par un contact**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **sauvegarde des données de l'appareil**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez l'**accès d'urgence**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **Connexion par QR code**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par e-mail**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par numéro de téléphone**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez le **fichier de récupération** (désactive tous les fichiers de récupération)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **Réinitialisation lorsque connecté**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
@@ -12581,9 +12573,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Pour utiliser cette méthode de récupération, vous devez désactiver ${ PROTON_SENTINEL_NAME } et activer une option de réinitialisation du mot de passe (e-mail ou SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pour fonctionner correctement, chaque filtre doit contenir au moins un nom et un script Sieve valide. Vous pouvez ${ link }."
@@ -21118,14 +21107,17 @@
       "Add": [
         "Ajouter"
       ],
+      "Add an emergency contact": [
+        "Ajouter un contact d'urgence"
+      ],
       "Add emergency contacts": [
         "Ajouter des contacts d'urgence"
       ],
       "Add options": [
         "Ajouter des options"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Ajoutez des personnes en qui vous avez confiance et que vous pouvez contacter facilement. Elles pourront accéder à votre compte et réinitialiser votre mot de passe pour vous."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Ajoutez des personnes en qui vous avez confiance et que vous pouvez contacter facilement. Elles pourront accéder à votre compte et réinitialiser votre mot de passe pour vous si nécessaire."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Ajoutez des personnes en qui vous avez confiance et que vous pouvez contacter facilement. Elles pourront vous aider à déverrouiller vos données après une réinitialisation de mot de passe."
@@ -21171,9 +21163,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Autoriser la lecture d’un QR code pour se connecter"
-      ],
-      "Allow trusted friends to sign in": [
-        "Autoriser les amis de confiance à se connecter"
       ],
       "Allow trusted friends to unlock your data": [
         "Autoriser les amis de confiance à déverrouiller vos données"
@@ -21261,6 +21250,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Ils doivent déjà avoir un compte ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Ils ne pourront pas voir ou accéder à vos données."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Ceci vous permettra d'accéder rapidement à votre compte ${ BRAND_NAME } afin que vous puissiez modifier votre mot de passe."
@@ -21539,8 +21531,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez les options mises en avant."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Pour garantir la sécurité maximale de votre compte, désactivez la récupération par e-mail et SMS."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Afin de vous assurez que vous pourrez toujours accéder à votre compte ${ BRAND_NAME }, téléchargez votre phrase de récupération."
@@ -23087,29 +23079,11 @@
       "Available on this device": [
         "Disponible sur cet appareil"
       ],
-      "Disable contact-assisted recovery": [
-        "Désactiver la récupération assistée par un contact"
-      ],
-      "Disable device data backup": [
-        "Désactiver la sauvegarde des données de l'appareil"
-      ],
-      "Disable emergency access": [
-        "Désactiver l'accès d'urgence"
-      ],
-      "Disable QR code sign-in": [
-        "Désactiver la connexion par QR code"
-      ],
       "Disable recovery by email": [
         "Désactiver la récupération par e-mail"
       ],
       "Disable recovery by phone": [
         "Désactiver la récupération par téléphone"
-      ],
-      "Disable recovery file": [
-        "Désactiver le fichier de récupération"
-      ],
-      "Disable signed-in reset": [
-        "Désactiver la réinitialisation lorsque connecté"
       ],
       "Generate a recovery phrase": [
         "Générer une phrase de récupération"
@@ -23119,9 +23093,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Dernière mise à jour le ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Aucun contact"
       ],
       "Not saved": [
         "Non enregistré"
@@ -24814,9 +24785,6 @@
       "Contact us": [
         "Nous contacter"
       ],
-      "Contact-assisted recovery": [
-        "Récupération assistée par un contact"
-      ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
       ],
@@ -24925,6 +24893,9 @@
       ],
       "Data recovery": [
         "Récupération de données"
+      ],
+      "Data recovery contacts": [
+        "Contacts de récupération des données"
       ],
       "Data recovery options": [
         "Options de récupération de données"
