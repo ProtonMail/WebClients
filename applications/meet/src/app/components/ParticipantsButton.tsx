@@ -6,9 +6,9 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
-import { useGuestContext } from '../contexts/GuestProvider/GuestContext';
 
 export const ParticipantsButton = ({
     hasAdminPermission,
@@ -18,7 +18,7 @@ export const ParticipantsButton = ({
     isPaid: boolean;
 }) => {
     const dispatch = useMeetDispatch();
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);

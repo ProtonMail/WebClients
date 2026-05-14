@@ -31,12 +31,12 @@ import {
     togglePopupState,
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
-import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
@@ -60,7 +60,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
-    const isGuest = useGuestContext();
+    const isGuest = useMeetSelector(selectIsGuest);
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const isScreenShare = useMeetSelector(selectIsScreenShare);
     const page = useMeetSelector(selectPage);
