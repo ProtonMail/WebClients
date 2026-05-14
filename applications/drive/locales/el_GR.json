@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } λήψεις"
+      ],
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
@@ -7248,6 +7251,9 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Created ${ created }": [
+        "Δημιουργήθηκε ${ created }"
+      ],
       "Credits": [
         "Πιστώσεις"
       ],
@@ -7267,11 +7273,20 @@
       "Deleted": [
         "Διαγράφηκαν"
       ],
+      "Deleted ${ deleted }": [
+        "Διαγράφηκε ${ deleted }"
+      ],
       "Device": [
         "Συσκευή"
       ],
+      "Device #${ position }": [
+        "Συσκευή #${ position }"
+      ],
       "Device name": [
         "Όνομα συσκευής"
+      ],
+      "Device: ${ name }": [
+        "Συσκευή: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
@@ -7330,8 +7345,14 @@
       "Expired": [
         "Έχει λήξει"
       ],
+      "Expired on ${ formatted }": [
+        "Έληξε στις ${ formatted }"
+      ],
       "Expires": [
         "Λήγει"
+      ],
+      "Expires ${ formatted }": [
+        "Λήγει ${ formatted }"
       ],
       "Expiry": [
         "Λήξη"
@@ -7405,6 +7426,9 @@
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
       ],
+      "Item #${ position }": [
+        "Στοιχείο #${ position }"
+      ],
       "Keep both": [
         "Κρατήστε και τα δύο"
       ],
@@ -7435,6 +7459,9 @@
       "Location": [
         "Τοποθεσία"
       ],
+      "Location: ${ item.location }": [
+        "Τοποθεσία: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Σύνδεση ή Eγγραφή "
       ],
@@ -7455,6 +7482,9 @@
       ],
       "Modified": [
         "Τροποποιήθηκε"
+      ],
+      "Modified ${ modified }": [
+        "Τροποποιήθηκε ${ modified }"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -7477,11 +7507,17 @@
       "Never": [
         "Ποτέ"
       ],
+      "Never expires": [
+        "Δε λήγει ποτέ"
+      ],
       "New password": [
         "Νέος κωδικός"
       ],
       "Not active": [
         "Μη ενεργό"
+      ],
+      "Not selected": [
+        "Δεν είναι επιλεγμένο"
       ],
       "Note": [
         "Σημείωση"
@@ -7518,6 +7554,9 @@
       ],
       "Payment method": [
         "Μέθοδος πληρωμής"
+      ],
+      "Pending invitation": [
+        "Εκκρεμής πρόσκληση"
       ],
       "PGP scheme": [
         "Σύστημα PGP"
@@ -7579,6 +7618,9 @@
       "Select type of abuse": [
         "Επιλογή τύπου κατάχρησης"
       ],
+      "Selected": [
+        "Επιλεγμένα"
+      ],
       "Set a password to limit access via link": [
         "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
       ],
@@ -7594,8 +7636,17 @@
       "Shared by": [
         "Κοινοποιήθηκε από"
       ],
+      "Shared by ${ sharedBy }": [
+        "Κοινοποιήθηκε από τον/την ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Κοινόχρηστο μέσω Δημόσιου συνδέσμου"
+      ],
       "Shared on": [
         "Κοινοποιήθηκε στις"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Κοινοποιήθηκε στις ${ sharedOn }"
       ],
       "Shared with me": [
         "Σε κοινή χρήση με εμένα"

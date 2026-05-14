@@ -64,6 +64,9 @@
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
       ],
+      "Change password": [
+        "Alterar senha"
+      ],
       "Chat with us": [
         "Converse conosco"
       ],
@@ -2308,6 +2311,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
@@ -5543,6 +5549,12 @@
     "Title": {
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
+      ],
+      "Account restricted": [
+        "Conta restrita"
+      ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"

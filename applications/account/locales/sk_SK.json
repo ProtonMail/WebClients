@@ -6645,8 +6645,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } nebude mať prístup k vášmu účtu až do ďalšieho núdzového prístupu."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** je teraz váš kontaktný údaj pre obnovenie. Môže vám pomôcť obnoviť dáta po resetovaní hesla."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** je teraz vaša kontaktná osoba pre obnovenie. Táto osoba vám pomôže odomknúť vaše dáta po tom, čo si obnovíte heslo."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Ak potvrdia**, kliknite na **Schváliť obnovenie**. Tým sa odomknú ich šifrované údaje."
@@ -6686,6 +6686,9 @@
       ],
       "Add recovery contact": [
         "Pridať kontaktnú osobu na obnovenie"
+      ],
+      "Add recovery method": [
+        "Pridať metódu obnovenia"
       ],
       "Added on ${ formattedDate }": [
         "Pridané dňa ${ formattedDate }"
@@ -6728,6 +6731,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Data recovery contacts": [
+        "Kontaktné osoby na obnovenie údajov"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Údaje boli úspešne obnovené. Teraz môžete dešifrovať svoje existujúce dáta a zašifrované súbory."
@@ -6806,9 +6812,6 @@
       ],
       "Less than a minute left": [
         "Zostáva menej ako minúta"
-      ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Dajte ${ user } vedieť, že ste to naozaj vy, kto sa snaží získať prístup späť."
       ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Bol dosiahnutý maximálny počet ${ limit } kontaktu. Ak chcete tento počet zmeniť, odstráňte jeden kontakt a pridajte nový.",
@@ -6909,11 +6912,11 @@
       "Select recovery contact ${ name }": [
         "Vyberte kontaktnú osobu na obnovenie účtu ${ name }"
       ],
-      "Send email request": [
-        "Odoslať žiadosť emailom"
-      ],
       "Send recovery request": [
         "Odoslať žiadosť o obnovenie"
+      ],
+      "Start recovery": [
+        "Spustiť obnovu"
       ],
       "Stop being recovery contact": [
         "Prestať byť kontaktnou osobou na obnovenie účtu"
@@ -6960,6 +6963,9 @@
       "Time required before automatically granting them access": [
         "Čas potrebný na automatické udelenie prístupu"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Ak chcete pridať kontakty pre obnovenie, musíte mať emailovú adresu alebo telefónne číslo na obnovenie."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Ak chcete túto metódu obnovenia deaktivovať, odstráňte všetky svoje kontakty na obnovenie účtu."
       ],
@@ -6989,6 +6995,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Dostali sme žiadosť o odblokovanie šifrovaných údajov vášho kontaktu **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Poslali sme emailovú žiadosť používateľom ${ user }. Dajte im vedieť, že ste to naozaj vy, kto sa snaží získať späť prístup."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Nebolo možné overiť údaje o obnovení účtu. Pokračovať aj tak?"
@@ -10726,6 +10735,12 @@
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Vytváranie brány s ${ total } serverom",
+        "Vytváranie brány s ${ total } servermi",
+        "Vytváranie brány s ${ total } servermi",
+        "Vytváranie brány s ${ total } servermi"
+      ],
       "Creating your account": [
         "Vytvárame váš účet"
       ],
@@ -10773,6 +10788,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Dáta obnoviteľné pomocou obnovovacej frázy"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Obnovenie údajov si vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
       ],
       "dedicated servers": [
         "dedikované servery"
@@ -12610,6 +12628,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Táto metóda obnovy údajov vyžaduje možnosť obnovenia hesla (emailom alebo SMS)"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Táto funkcia oneskoruje odosielanie emailov a dáva vám možnosť zrušiť odoslanie počas zvoleného časového rámca."
       ],
@@ -12769,29 +12790,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Ak chcete dešifrovať a prezerať uzamknuté údaje po obnovení hesla, vyberte spôsob obnovenia."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie pomocou kontaktov**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Zálohovanie údajov do zariadenia**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Núdzový prístup**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Prihlásenie QR kódom**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu na obnovenie**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte **obnovovací súbor** (zrušte všetky obnovovacie súbory)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie hesla po prihlásení**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Aby ste nestratili dôležité údaje, ${ DRIVE_APP_NAME } ukladá staršie verzie vašich súborov, keď vy a vaši spolupracovníci vykonávate zmeny. Vyberte, ako dlho má ${ BRAND_NAME } uchovávať predchádzajúce verzie."
@@ -21449,14 +21452,17 @@
       "Add": [
         "Pridať"
       ],
+      "Add an emergency contact": [
+        "Pridať núdzový kontakt"
+      ],
       "Add emergency contacts": [
         "Pridať núdzové kontakty"
       ],
       "Add options": [
         "Pridať možnosti"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Pridajte osoby, ktorým dôverujete a s ktorými sa môžete ľahko skontaktovať. Tieto osoby budú mať prístup k vášmu účtu a budú vám môcť obnoviť heslo."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Pridajte osoby, ktorým dôverujete a s ktorými sa môžete ľahko skontaktovať. Vaša kontaktná osoba pre núdzové situácie bude mať prístup k vášmu účtu a v prípade potreby vám môže obnoviť heslo."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Pridajte ľudí, ktorým dôverujete a ktorých môžete ľahko kontaktovať. Tí vám pomôžu odomknúť vaše údaje po tom, čo si resetujete heslo."
@@ -21502,9 +21508,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Povoľte skenovanie QR kódu pre prihlásenie"
-      ],
-      "Allow trusted friends to sign in": [
-        "Povoliť prihlásenie dôveryhodným priateľom"
       ],
       "Allow trusted friends to unlock your data": [
         "Povoľte dôveryhodným priateľom odomknúť vaše dáta"
@@ -21592,6 +21595,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Musia už mať ${ BRAND_NAME } účet."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nebudú môcť vidieť vaše údaje ani k nim získať prístup."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Takto budete mať rýchly prístup k svojmu ${ BRAND_NAME } účtu a budete si môcť zmeniť heslo."
@@ -21870,8 +21876,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte zvýraznené možnosti."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte možnosť obnovenia hesla prostredníctvom emailu a SMS."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Aby ste mali istotu, že budete mať vždy prístup k svojmu ${ BRAND_NAME } účtu, stiahnite si svoju obnovovaciu frázu."
@@ -23499,29 +23505,11 @@
       "Available on this device": [
         "Dostupné na tomto zariadení"
       ],
-      "Disable contact-assisted recovery": [
-        "Deaktivovať obnovu s využitím kontaktných údajov"
-      ],
-      "Disable device data backup": [
-        "Deaktivovať zálohovanie údajov zariadenia"
-      ],
-      "Disable emergency access": [
-        "Deaktivovať núdzový prístup"
-      ],
-      "Disable QR code sign-in": [
-        "Deaktivovať prihlásenie QR kódom"
-      ],
       "Disable recovery by email": [
         "Deaktivovať obnovenie emailom"
       ],
       "Disable recovery by phone": [
         "Zakázať obnovenie telefónom"
-      ],
-      "Disable recovery file": [
-        "Deaktivovať súbor na obnovenie"
-      ],
-      "Disable signed-in reset": [
-        "Dizaktivovať reset prihlásených relácií"
       ],
       "Generate a recovery phrase": [
         "Vygenerovať obnovovaciu frázu"
@@ -23531,9 +23519,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Posledná aktualizácia ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Žiadny kontakt"
       ],
       "Not saved": [
         "Neuložené"
@@ -25300,9 +25285,6 @@
       "Contact us": [
         "Kontaktujte nás"
       ],
-      "Contact-assisted recovery": [
-        "Obnova s využitím kontaktných údajov"
-      ],
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
       ],
@@ -25413,6 +25395,9 @@
       ],
       "Data recovery": [
         "Obnovenie údajov"
+      ],
+      "Data recovery contacts": [
+        "Kontaktné osoby na obnovenie údajov"
       ],
       "Data recovery options": [
         "Možnosti obnovy dát"

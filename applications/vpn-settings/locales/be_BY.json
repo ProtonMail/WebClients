@@ -29,7 +29,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Accounts": {
@@ -556,6 +556,9 @@
       ],
       "Get verification code": [
         "Атрымаць код спраўджання"
+      ],
+      "Go back": [
+        "Вярнуцца"
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -4581,8 +4584,8 @@
       "Select recovery contact ${ name }": [
         "Выберыце кантакт для аднаўлення ${ name }"
       ],
-      "Send email request": [
-        "Адправіць запыт на электронную пошту"
+      "Start recovery": [
+        "Пачаць аднаўленне"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
@@ -7355,6 +7358,12 @@
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Стварэнне шлюза з ${ total } серверам",
+        "Стварэнне шлюза з ${ total } серверамі",
+        "варэнне шлюза з ${ total } серверамі",
+        "варэнне шлюза з ${ total } серверамі"
+      ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
       ],
@@ -8406,7 +8415,7 @@
         "Файлы аднаўлення былі ануляваны"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -14955,7 +14964,7 @@
         "У мэтах бяспекі вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Калі ў вас наладжаны **спосаб аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
+        "Калі ў вас наладжаны **спосаб аднаўлення**, паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
       ],
       "We will contact you again when the password reset is available.": [
         "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."

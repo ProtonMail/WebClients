@@ -175,6 +175,9 @@
       "Continue offline": [
         "Pokračovat offline"
       ],
+      "Copy": [
+        "Kopírovat"
+      ],
       "Copy and close": [
         "Kopírovat a zavřít"
       ],
@@ -420,6 +423,9 @@
       ],
       "Link expires after": [
         "Odkazu vyprší platnost za"
+      ],
+      "Load more": [
+        "Načíst více"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Uzamknout ${ PASS_APP_NAME }"
@@ -1229,6 +1235,9 @@
       ],
       "Moving item failed": [
         "Přesouvání položky selhalo"
+      ],
+      "Name is required": [
+        "Název je povinný"
       ],
       "Network error": [
         "Chyba sítě"
@@ -2140,7 +2149,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2162,6 +2174,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "New": [
+        "Nově"
       ],
       "No breaches detected": [
         "Žádné úniky informací nebyly zjištěny"
@@ -3895,6 +3910,9 @@
       "Today": [
         "Dnes"
       ],
+      "Token name": [
+        "Název tokenu"
+      ],
       "Total imported items: ": [
         "Celkem importovaných položek: "
       ],
@@ -4262,6 +4280,9 @@
       ],
       "Coupon": [
         "Kupón"
+      ],
+      "e.g. My automation script": [
+        "např. můj automatizační skript"
       ],
       "E.g., ": [
         "Např., "

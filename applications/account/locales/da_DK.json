@@ -6437,7 +6437,7 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } vil ikke kunne få adgang til din konto før næste nødadgang."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
         "**${ contact }** er nu din gendannelseskontakt. De kan hjælpe dig med at gendanne dine data efter en nulstilling af adgangskoden."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
@@ -6478,6 +6478,9 @@
       ],
       "Add recovery contact": [
         "Tilføj gendannelseskontakt"
+      ],
+      "Add recovery method": [
+        "Tilføj en gendannelsesmetode"
       ],
       "Added on ${ formattedDate }": [
         "Tilføjet den ${ formattedDate }"
@@ -6599,9 +6602,6 @@
       "Less than a minute left": [
         "Mindre end et minut tilbage"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Lad ${ user } vide, at det virkelig er dig, der forsøger at genvinde adgang."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Det maksimale antal på ${ limit } kontakt nået. Fjern en kontakt eller tilføj en ny for at ændre det.",
         "Det maksimale antal på ${ limit } kontakter nået. Fjern en kontakt eller tilføj en ny for at ændre det."
@@ -6699,11 +6699,11 @@
       "Select recovery contact ${ name }": [
         "Vælg gendannelseskontakt ${ name }"
       ],
-      "Send email request": [
-        "Send e-mail anmodning"
-      ],
       "Send recovery request": [
         "Send gendannelsesanmodning"
+      ],
+      "Start recovery": [
+        "Start gendannelse"
       ],
       "Stop being recovery contact": [
         "Stop med at være gendannelseskontakt"
@@ -6748,6 +6748,9 @@
       "Time required before automatically granting them access": [
         "Krævet tid før der automatisk gives adgang"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "For at tilføje genoprettelseskontakter skal du have en genoprettelses-e-mailadresse eller et telefonnummer."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
       ],
@@ -6777,6 +6780,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Vi har modtaget en anmodning om at låse de krypterede data op for din kontakt **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Vi sendte en e-mail-anmodning til ${ user }. Lad dem vide, at det virkelig er dig, der prøver at få adgang igen."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Vi kunne ikke verificere gendannelsesdataen. Vil du fortsætte alligevel?"
@@ -12390,29 +12396,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Kontakt-assisteret gendannelse** fra."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Sikkerhedskopiering af data på enheden** fra."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Nødadgang** fra."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Login med QR-kode** fra."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via telefon** fra."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelsesfil** fra (gør alle gendannelsesfiler ugyldige)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå **Nulstilling logget ind** fra."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For at sikre at du ikke mister vigtig data, gemmer ${ DRIVE_APP_NAME } ældre versioner af dine filer, når du og dine samarbejdspartnere foretager ændringer. Vælg, hvor længe ${ BRAND_NAME } skal gemme tidligere versioner."
@@ -20974,9 +20962,6 @@
       "Add options": [
         "Tilføj muligheder"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Tilføj personer du stoler på og nemt kan kontakte. De vil kunne tilgå din konto og nulstille din adgangskode for dig."
-      ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Tilføj personer du stoler på og nemt kan kontakte. De vil kunne hjælpe dig med at låse op for din data efter du har nulstillet din adgangskode."
       ],
@@ -21021,9 +21006,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Tillad skanning af en QR-kode for at logge ind"
-      ],
-      "Allow trusted friends to sign in": [
-        "Tillad betroede venner at logge ind"
       ],
       "Allow trusted friends to unlock your data": [
         "Tillad at betroede venner låser op for dine data"
@@ -21389,9 +21371,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Opnå størst mulig sikkerhed på din konto ved at slå de markerede muligheder fra."
-      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Download din gendannelsessætning for at sikre, at du altid kan tilgå din ${ BRAND_NAME }-konto."
       ],
@@ -22934,29 +22913,11 @@
       "Available on this device": [
         "Tilgængeligt på denne enhed"
       ],
-      "Disable contact-assisted recovery": [
-        "Deaktiver kontakt-assisteret gendannelse"
-      ],
-      "Disable device data backup": [
-        "Deaktiver sikkerhedskopiering af data på enheden"
-      ],
-      "Disable emergency access": [
-        "Deaktiver nødadgang"
-      ],
-      "Disable QR code sign-in": [
-        "Deaktivér login med QR-kode"
-      ],
       "Disable recovery by email": [
         "Deaktivér gendannelse via e-mail"
       ],
       "Disable recovery by phone": [
         "Deaktivér gendannelse via telefon"
-      ],
-      "Disable recovery file": [
-        "Deaktiver gendannelsesfil"
-      ],
-      "Disable signed-in reset": [
-        "Slå nulstilling logget ind fra"
       ],
       "Generate a recovery phrase": [
         "Opret en gendannelsessætning"
@@ -22966,9 +22927,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Sidst opdateret ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Ingen kontakt"
       ],
       "Not saved": [
         "Ikke gemt"
@@ -24657,9 +24615,6 @@
       ],
       "Contact us": [
         "Kontakt os"
-      ],
-      "Contact-assisted recovery": [
-        "Kontakt-assisteret gendannelse"
       ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"

@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } descàrregues"
+      ],
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
@@ -7251,6 +7254,9 @@
       "Created": [
         "Creat"
       ],
+      "Created ${ created }": [
+        "Creat el ${ created }"
+      ],
       "Credits": [
         "Crèdits"
       ],
@@ -7270,11 +7276,20 @@
       "Deleted": [
         "Esborrat"
       ],
+      "Deleted ${ deleted }": [
+        "Eliminat el ${ deleted }"
+      ],
       "Device": [
         "Dispositiu"
       ],
+      "Device #${ position }": [
+        "Dispositiu #${ position }"
+      ],
       "Device name": [
         "Nom del dispositiu"
+      ],
+      "Device: ${ name }": [
+        "Dispositiu: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Desactiveu aquest enllaç en una data específica"
@@ -7333,8 +7348,14 @@
       "Expired": [
         "Caducat"
       ],
+      "Expired on ${ formatted }": [
+        "Va caducar el ${ formatted }"
+      ],
       "Expires": [
         "Expira"
+      ],
+      "Expires ${ formatted }": [
+        "Caduca el ${ formatted }"
       ],
       "Expiry": [
         "Caducitat"
@@ -7408,6 +7429,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
       ],
+      "Item #${ position }": [
+        "Element #${ position }"
+      ],
       "Keep both": [
         "Mantén tots dos"
       ],
@@ -7438,6 +7462,9 @@
       "Location": [
         "Ubicació"
       ],
+      "Location: ${ item.location }": [
+        "Ubicació: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Inicieu sessió o registreu-vos "
       ],
@@ -7458,6 +7485,9 @@
       ],
       "Modified": [
         "Modificació"
+      ],
+      "Modified ${ modified }": [
+        "Modificat el ${ modified }"
       ],
       "Move to Archive": [
         "Mou a l'arxiu"
@@ -7480,11 +7510,17 @@
       "Never": [
         "Mai"
       ],
+      "Never expires": [
+        "No caduca mai"
+      ],
       "New password": [
         "Contrasenya nova"
       ],
       "Not active": [
         "No està actiu"
+      ],
+      "Not selected": [
+        "Sense seleccionar"
       ],
       "Note": [
         "Nota"
@@ -7521,6 +7557,9 @@
       ],
       "Payment method": [
         "Forma de pagament"
+      ],
+      "Pending invitation": [
+        "Invitació pendent"
       ],
       "PGP scheme": [
         "Esquema PGP"
@@ -7582,6 +7621,9 @@
       "Select type of abuse": [
         "Seleccioneu el tipus d'abús"
       ],
+      "Selected": [
+        "Seleccionat"
+      ],
       "Set a password to limit access via link": [
         "Establiu una contrasenya per limitar l'accés mitjançant l'enllaç"
       ],
@@ -7597,8 +7639,17 @@
       "Shared by": [
         "Compartit per"
       ],
+      "Shared by ${ sharedBy }": [
+        "Compartit per ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Compartit mitjançant un enllaç públic"
+      ],
       "Shared on": [
         "Compartit a"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Compartit el ${ sharedOn }"
       ],
       "Shared with me": [
         "Compartit amb mi"

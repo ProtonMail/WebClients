@@ -557,6 +557,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Go back": [
+        "Geri dön"
+      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
       ],
@@ -2056,7 +2059,7 @@
         "Kişiler"
       ],
       "Copy activation link": [
-        "Aktivasyon bağlantısını kopyala"
+        "Etkinleştirme bağlantısını kopyala"
       ],
       "Copy activation link to clipboard": [
         "Etkinleştirme bağlantısını panoya kopyala"
@@ -2258,7 +2261,7 @@
         "Durum"
       ],
       "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
-        "Varsayılan ayar yok. Ancak güvenliğinizi artırmak için bu değeri p=karantina olarak ayarlamanızı öneririz."
+        "Varsayılan ayar: Yok. Ancak güvenliğinizi artırmak için bu değeri p=quarantine olarak ayarlamanızı öneririz."
       ],
       "The “p=” value specifies the action to take for emails that fail DMARC. Here are the available actions:": [
         "“p=“ değeri DMARC denetiminden geçemeyen e-postalar için yapılacak işlemi belirler. Yapılabilecek işlemler şunlardır:"
@@ -2306,7 +2309,7 @@
         "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
       ],
       "We're still checking the MX records with your domain provider.": [
-        "Hala etki alanı sağlayıcınızla MX kayıtlarını kontrol ediyoruz."
+        "Hala etki alanı hizmeti sağlayıcınızdaki MX kayıtlarını denetliyoruz."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Bazı kullanıcıların henüz ${ BRAND_NAME } hesaplarını almadıklarını fark ettik."
@@ -2321,7 +2324,7 @@
         "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
       ],
       "You're all set!": [
-        "Her şey hazır!"
+        "Hazırsınız!"
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Geçerli tarifenizde en fazla ${ maxMembers } kullanıcı olabilir. Daha fazla kullanıcı aktarmak için aboneliğinize yeni koltuklar ekleyin.",
@@ -4519,8 +4522,8 @@
       "Select recovery contact ${ name }": [
         "${ name } kurtarma kişisini seç"
       ],
-      "Send email request": [
-        "E-posta isteği gönder"
+      "Start recovery": [
+        "Kurtarmayı başlat"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Bu kurtarma yöntemini kullanımdan kaldırmak için tüm kurtarma kişilerinizi kaldırın."
@@ -7160,6 +7163,10 @@
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
         "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "${ total } sunucu ile ağ geçidi oluşturuluyor",
+        "${ total } sunucu ile ağ geçidi oluşturuluyor"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -15027,13 +15034,13 @@
         "Bir kullanıcının rolünü ve izinlerini yönetmek için adına tıklayın."
       ],
       "Click Edit to assign roles to this group and manage member access automatically.": [
-        "Bu gruba roller atamak ve üye erişimini otomatik olarak yönetmek için Düzenle'ye tıklayın."
+        "Bu gruba roller atamak ve üye erişimini otomatik olarak yönetmek için Düzenle üzerine tıklayın."
       ],
       "New: Roles and permissions tab": [
         "Yeni: Roller ve izinler sekmesi"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
-        "Tam yönetici erişimi olmadan belirli izinler vermek için bu sekmeyi açın."
+        "Tam yönetici erişimi olmadan belirli izinleri vermek için bu sekmeyi açın."
       ],
       "User roles available": [
         "Kullanılabilir kullanıcı rolleri"

@@ -175,6 +175,9 @@
       "Continue offline": [
         "Continuar sin conexión"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy and close": [
         "Copiar y cerrar"
       ],
@@ -420,6 +423,9 @@
       ],
       "Link expires after": [
         "El enlace expira después de"
+      ],
+      "Load more": [
+        "Cargar más"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear ${ PASS_APP_NAME }"
@@ -1219,6 +1225,9 @@
       ],
       "Moving item failed": [
         "Error al mover el elemento"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio."
       ],
       "Network error": [
         "Error de red"
@@ -2086,7 +2095,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2108,6 +2118,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "New": [
+        "Nuevo"
       ],
       "No breaches detected": [
         "No se detectaron vulneraciones"
@@ -3807,6 +3820,9 @@
       "Today": [
         "Hoy"
       ],
+      "Token name": [
+        "Nombre de token"
+      ],
       "Total imported items: ": [
         "Número total de elementos importados: "
       ],
@@ -4168,6 +4184,9 @@
       ],
       "Coupon": [
         "Cupón"
+      ],
+      "e.g. My automation script": [
+        "p. ej., mi script de automatización"
       ],
       "E.g., ": [
         "Ej., "

@@ -965,6 +965,9 @@
       "Draw a sketch": [
         "Dibujar un boceto"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Enable ghost mode": [
         "Activar el modo fantasma"
       ],
@@ -999,10 +1002,13 @@
         "Actualizar los contenidos de la carpeta"
       ],
       "Register here": [
-        "Resgistrarse aquí"
+        "Registrarse aquí"
       ],
       "Report an issue": [
         "Notificar un problema"
+      ],
+      "Save": [
+        "Guardar"
       ],
       "Select all": [
         "Seleccionar todo"
@@ -1261,9 +1267,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Error al procesar ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Error al procesar el archivo: ${ file.name }"
-      ],
       "Failed to create API key": [
         "Error al crear la clave de API"
       ],
@@ -1287,9 +1290,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Archivo ya añadido: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Formato de archivo no soportado: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Archivo cargado pero o se pudo añadir a la base de conocimientos"
@@ -1344,6 +1344,26 @@
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "Ha alcanzado el máximo de ${ limit } mensajes en esta conversación. Comience una conversación nueva para seguir hablando con ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Error al procesar el archivo: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Error al procesar el archivo: ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Formato de archivo no soportado: ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Formato de archivo no soportado: ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -1500,7 +1520,7 @@
         " hable con su administrador."
       ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
-        "\"${ fileName }\" tiene múltiples hojas. Seleccione las hojas para incluir en el contexto de la conversación."
+        "«${ fileName }» tiene múltiples hojas. Seleccione las hojas para incluir en el contexto de la conversación."
       ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado"
@@ -3072,6 +3092,9 @@
       ],
       "No projects yet": [
         "Aún no hay proyectos"
+      ],
+      "PASTED": [
+        "PEGADO"
       ],
       "Processing file...": [
         "Procesando archivo..."

@@ -6563,8 +6563,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } no podrà accedir al vostre compte fins al següent accés d'emergència."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** és ara el vostre contacte de recuperació. Us pot ajudar a recuperar les vostres dades després de restablir la contrasenya."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** és ara el vostre contacte de recuperació. Us pot ajudar a desbloquejar les dades després de restablir la contrasenya."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Si ho confirmen**, feu clic a **Aprovar la recuperació**. Això desbloquejarà les seves dades xifrades."
@@ -6604,6 +6604,9 @@
       ],
       "Add recovery contact": [
         "Afegiu un contacte de recuperació"
+      ],
+      "Add recovery method": [
+        "Afegir un mètode de recuperació"
       ],
       "Added on ${ formattedDate }": [
         "S'ha afegit el ${ formattedDate }"
@@ -6728,9 +6731,6 @@
       "Less than a minute left": [
         "Queda menys d'un minut"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Feu saber a ${ user } que sou realment vós qui intenteu recuperar l'accés."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "S'ha arribat al màxim d'${ limit } contacte. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou.",
         "S'ha arribat al màxim de ${ limit } contactes. Per canviar-ho, esborreu un contacte i afegiu-ne un de nou."
@@ -6828,11 +6828,11 @@
       "Select recovery contact ${ name }": [
         "Seleccioneu el contacte de recuperació ${ name }."
       ],
-      "Send email request": [
-        "Enviar sol·licitud de correu electrònic"
-      ],
       "Send recovery request": [
         "Envieu la sol·licitud de recuperació"
+      ],
+      "Start recovery": [
+        "Començar la recuperació"
       ],
       "Stop being recovery contact": [
         "Deixeu de ser contacte de recuperació."
@@ -6877,6 +6877,9 @@
       "Time required before automatically granting them access": [
         "Temps necessari abans de concedir-li accés automàticament"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Per afegir contactes de recuperació, heu de tenir una adreça de correu electrònic o un número de telèfon de recuperació."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Per desactivar aquest mètode de recuperació, esborreu tots els vostres contactes de recuperació."
       ],
@@ -6906,6 +6909,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Hem rebut una sol·licitud per desbloquejar les dades xifrades del teu contacte **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Hem enviat una sol·licitud per correu electrònic a ${ user }. Feu-li saber que sou vós qui intenta recuperar l'accés."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "No s'han pogut verificar les dades de recuperació. Voleu continuar igualment?"
@@ -10500,6 +10506,10 @@
         "S'està creant un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan creant servidors de passarel·la: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "S'està creant la passarel·la amb ${ total } servidor",
+        "S'està creant la passarel·la amb ${ total } servidors"
+      ],
       "Creating your account": [
         "S'està creant el compte"
       ],
@@ -12519,29 +12529,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **recuperació assistida per contactes**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **còpia de seguretat de les dades del dispositiu**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu l''**accés d'emergència**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu l'**inici de sessió amb codi QR**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant correu electrònic de recuperació**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **fitxer de recuperació** (anul·leu tots els fitxers de recuperació)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu el **Restabliment amb la sessió iniciada**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Per assegurar-vos que no perdeu dades importants, ${ DRIVE_APP_NAME } desa versions anteriors dels vostres fitxers a mesura que vós i els vostres col·laboradors hi feu canvis. Seleccioneu quant de temps ${ BRAND_NAME } hauria de mantenir les versions anteriors."
@@ -12575,9 +12567,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Per a utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Per utilitzar aquest mètode de recuperació, cal desactivar ${ PROTON_SENTINEL_NAME } i habilitar una opció de restabliment de contrasenya (correu electrònic o SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Per funcionar correctament, cada filtre ha de contenir com a mínim un nom i un script Sieve vàlid. Podeu ${ link }."
@@ -21016,14 +21005,17 @@
       "Add": [
         "Afegiu"
       ],
+      "Add an emergency contact": [
+        "Afegir un contacte d'emergència"
+      ],
       "Add emergency contacts": [
         "Afegiu contactes d'emergència"
       ],
       "Add options": [
         "Afegir opcions"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Afegiu persones de confiança amb qui pugueu contactar fàcilment. Podran accedir al vostre compte i restablir-vos la contrasenya."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Afegiu persones en qui confieu i que hi pugueu contactar fàcilment. El vostre contacte d'emergència podrà accedir al compte i restablir-vos la contrasenya si cal."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Afegiu persones de confiança amb qui pugueu contactar fàcilment. Us podran ajudar a desbloquejar les vostres dades després de restablir la contrasenya."
@@ -21069,9 +21061,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Permetre l'escaneig d'un codi QR per iniciar sessió"
-      ],
-      "Allow trusted friends to sign in": [
-        "Permeteu que amistats de confiança iniciïn sessió"
       ],
       "Allow trusted friends to unlock your data": [
         "Permeteu que amistats de confiança desbloquegin les vostres dades"
@@ -21159,6 +21148,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Cal que tinguin un compte de ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "No podran veure les vostres dades ni accedir-hi."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Això us permetrà accedir ràpidament al vostre compte de ${ BRAND_NAME } perquè pugueu canviar la contrasenya."
@@ -21437,8 +21429,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu les opcions destacades."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Per garantir la màxima seguretat del vostre compte, desactiveu la recuperació mitjançant correu electrònic i SMS."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Per a assegurar-vos que sempre pugueu accedir al vostre compte de ${ BRAND_NAME }, descarregueu-ne la frase de recuperació."
@@ -22985,29 +22977,11 @@
       "Available on this device": [
         "Està disponible en aquest dispositiu"
       ],
-      "Disable contact-assisted recovery": [
-        "Desactiveu la recuperació assistida per contactes"
-      ],
-      "Disable device data backup": [
-        "Desactiveu la còpia de seguretat de les dades del dispositiu"
-      ],
-      "Disable emergency access": [
-        "Desactiveu l'accés d'emergència"
-      ],
-      "Disable QR code sign-in": [
-        "Desactiveu l'inici de sessió amb codi QR"
-      ],
       "Disable recovery by email": [
         "Desactiveu la recuperació per correu electrònic"
       ],
       "Disable recovery by phone": [
         "Desactiveu la recuperació per telèfon"
-      ],
-      "Disable recovery file": [
-        "Desactiveu el fitxer de recuperació"
-      ],
-      "Disable signed-in reset": [
-        "Desactiveu el restabliment amb la sessió iniciada"
       ],
       "Generate a recovery phrase": [
         "Genereu una frase de recuperació"
@@ -23017,9 +22991,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Darrera actualització el ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "No hi ha cap contacte"
       ],
       "Not saved": [
         "No s'ha desat"
@@ -24712,9 +24683,6 @@
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
-      "Contact-assisted recovery": [
-        "Recuperació assistida per contactes"
-      ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
@@ -24823,6 +24791,9 @@
       ],
       "Data recovery": [
         "Recuperació de dades"
+      ],
+      "Data recovery contacts": [
+        "Contactes de recuperació de dades"
       ],
       "Data recovery options": [
         "Opcions de recuperació de dades"

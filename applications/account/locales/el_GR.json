@@ -6563,8 +6563,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } δεν θα μπορεί να αποκτήσει πρόσβαση στον λογαριασμό σας μέχρι την επόμενη πρόσβαση έκτακτης ανάγκης."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** είναι πλέον η επαφή ανάκτησής σας. Μπορεί να σας βοηθήσει να ανακτήσετε τα δεδομένα σας μετά από επαναφορά κωδικού πρόσβασης."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** είναι πλέον η επαφή ανάκτησής σας. Μπορεί να σας βοηθήσει να ξεκλειδώσετε τα δεδομένα σας αφού επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Εάν επιβεβαιώσουν**, κάντε κλικ στο **Έγκριση ανάκτησης**. Αυτό θα ξεκλειδώσει τα κρυπτογραφημένα δεδομένα τους."
@@ -6604,6 +6604,9 @@
       ],
       "Add recovery contact": [
         "Προσθήκη επαφής ανάκτησης"
+      ],
+      "Add recovery method": [
+        "Προσθήκη μεθόδου ανάκτησης"
       ],
       "Added on ${ formattedDate }": [
         "Προστέθηκε στις ${ formattedDate }"
@@ -6728,9 +6731,6 @@
       "Less than a minute left": [
         "Απομένει λιγότερο από ένα λεπτό"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Ενημερώστε τον ${ user } ότι είστε πραγματικά εσείς που προσπαθείτε να ανακτήσετε την πρόσβαση."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Έχετε φτάσει στο μέγιστο της ${ limit } επαφής. Για να αλλάξετε, αφαιρέστε μια επαφή και προσθέστε μια νέα.",
         "Έχετε φτάσει στο μέγιστο των ${ limit } επαφών. Για να αλλάξετε, αφαιρέστε μια επαφή και προσθέστε μια νέα."
@@ -6828,11 +6828,11 @@
       "Select recovery contact ${ name }": [
         "Επιλέξτε επαφή ανάκτησης ${ name }"
       ],
-      "Send email request": [
-        "Αποστολή αιτήματος μέσω email"
-      ],
       "Send recovery request": [
         "Αποστολή αιτήματος ανάκτησης"
+      ],
+      "Start recovery": [
+        "Εκκίνηση ανάκτησης"
       ],
       "Stop being recovery contact": [
         "Διακοπή ως επαφή ανάκτησης"
@@ -6877,6 +6877,9 @@
       "Time required before automatically granting them access": [
         "Απαιτούμενος χρόνος πριν την αυτόματη παροχή πρόσβασης σε αυτούς"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Για να προσθέσετε επαφές ανάκτησης, πρέπει να έχετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου για ανάκτηση."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Για να απενεργοποιήσετε αυτή τη μέθοδο ανάκτησης, διαγράψτε όλες τις επαφές ανάκτησης σας."
       ],
@@ -6906,6 +6909,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Λάβαμε αίτημα για το ξεκλείδωμα των κρυπτογραφημένων δεδομένων της επαφής σας **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Στείλαμε ένα αίτημα μέσω ηλεκτρονικού μηνύματος στον ${ user }. Ενημερώστε τους ότι όντως είστε εσείς που προσπαθείτε να ανακτήσετε την πρόσβαση."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Δεν μπορέσαμε να επαληθεύσουμε τα δεδομένα ανάκτησης. Θέλετε να συνεχίσετε;"
@@ -12522,29 +12528,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση με τη βοήθεια επαφών**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Δημιουργία αντιγράφων ασφαλείας δεδομένων συσκευής**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Πρόσβαση έκτακτης ανάγκης**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **είσοδο με κωδικό QR**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω τηλεφώνου ανάκτησης**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε το **Αρχείο ανάκτησης** (ακυρώστε όλα τα αρχεία ανάκτησης)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Επαναφορά συνδεδεμένου χρήστη**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Για να διασφαλίσετε ότι δε θα χάσετε σημαντικά δεδομένα, το ${ DRIVE_APP_NAME } αποθηκεύει παλαιότερες εκδόσεις των αρχείων σας καθώς εσείς και οι συνεργάτες σας κάνετε αλλαγές. Επιλέξτε πόσο καιρό το ${ BRAND_NAME } θα πρέπει να διατηρεί τις προηγούμενες εκδόσεις."
@@ -12578,9 +12566,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Για να χρησιμοποιήσετε ${ toAppName }, χρειάζεστε μια ${ MAIL_APP_NAME } διεύθυνση."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Για να χρησιμοποιήσετε αυτή τη μέθοδο ανάκτησης, πρέπει να απενεργοποιήσετε το ${ PROTON_SENTINEL_NAME } και να ενεργοποιήσετε μια επιλογή επαναφοράς κωδικού πρόσβασης (email ή SMS)."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο πρόγραμμα Sieve. Μπορείτε να ${ link }."
@@ -21019,14 +21004,17 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add an emergency contact": [
+        "Προσθήκη επαφής έκτακτης ανάγκης"
+      ],
       "Add emergency contacts": [
         "Προσθήκη επαφών έκτακτης ανάγκης"
       ],
       "Add options": [
         "Προσθήκη επιλογών"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Θα μπορούν να έχουν πρόσβαση στον λογαριασμό σας και να επαναφέρουν τον κωδικό πρόσβασής σας για εσάς."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Το άτομο επαφής έκτακτης ανάγκης θα μπορεί να έχει πρόσβαση στον λογαριασμό σας και να επαναφέρει τον κωδικό πρόσβασής σας εάν χρειαστεί."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Θα μπορούν να σας βοηθήσουν να ξεκλειδώσετε τα δεδομένα σας αφού επαναφέρετε τον κωδικό πρόσβασής σας."
@@ -21072,9 +21060,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Να επιτρέπεται η σάρωση ενός QR κωδικού για σύνδεση"
-      ],
-      "Allow trusted friends to sign in": [
-        "Επιτρέψτε σε αξιόπιστους φίλους να συνδεθούν"
       ],
       "Allow trusted friends to unlock your data": [
         "Επιτρέψτε σε έμπιστους φίλους να ξεκλειδώσουν τα δεδομένα σας"
@@ -21162,6 +21147,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Πρέπει να έχουν ήδη έναν λογαριασμό ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Δε θα μπορούν να δουν ή να έχουν πρόσβαση στα δεδομένα σας."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Αυτό θα σας επιτρέψει να αποκτήσετε γρήγορη πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, ώστε να μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας."
@@ -21440,9 +21428,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε τις επισημασμένες επιλογές."
-      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Για να βεβαιωθείτε ότι έχετε πάντα πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, κατεβάστε τη φράση ανάκτησης."
       ],
@@ -22985,29 +22970,11 @@
       "Available on this device": [
         "Διαθέσιμο σε αυτή τη συσκευή"
       ],
-      "Disable contact-assisted recovery": [
-        "Απενεργοποίηση ανάκτησης με υποβοήθηση επαφής"
-      ],
-      "Disable device data backup": [
-        "Απενεργοποίηση δημιουργίας αντιγράφων ασφαλείας δεδομένων συσκευής"
-      ],
-      "Disable emergency access": [
-        "Απενεργοποίηση πρόσβασης έκτακτης ανάγκης"
-      ],
-      "Disable QR code sign-in": [
-        "Απενεργοποίηση σύνδεσης με κωδικό QR"
-      ],
       "Disable recovery by email": [
         "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
-      ],
-      "Disable recovery file": [
-        "Απενεργοποίηση αρχείου ανάκτησης"
-      ],
-      "Disable signed-in reset": [
-        "Απενεργοποίηση επαναφοράς σε κατάσταση σύνδεσης"
       ],
       "Generate a recovery phrase": [
         "Παραγωγή μιας φράσης ανάκτησης"
@@ -23017,9 +22984,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Τελευταία ενημέρωση ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Καμμία επαφή"
       ],
       "Not saved": [
         "Μη αποθηκευμένο"
@@ -24711,9 +24675,6 @@
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
-      ],
-      "Contact-assisted recovery": [
-        "Ανάκτηση με υποβοήθηση επαφής"
       ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"

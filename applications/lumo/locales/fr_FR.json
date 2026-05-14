@@ -965,6 +965,9 @@
       "Draw a sketch": [
         "Dessiner un croquis"
       ],
+      "Edit": [
+        "Modifier"
+      ],
       "Enable ghost mode": [
         "Activer le mode fantôme"
       ],
@@ -1003,6 +1006,9 @@
       ],
       "Report an issue": [
         "Signaler un problème"
+      ],
+      "Save": [
+        "Enregistrer"
       ],
       "Select all": [
         "Tout sélectionner"
@@ -1261,9 +1267,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Erreur de traitement de ${ result.fileName } : ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Erreur de traitement du fichier : ${ file.name }"
-      ],
       "Failed to create API key": [
         "Impossible de créer la clé API"
       ],
@@ -1287,9 +1290,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Fichier déjà ajouté : ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Format de fichier non pris en charge : ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Le fichier a été importé mais n'a pas pu être ajouté à la base de connaissances"
@@ -1344,6 +1344,26 @@
       ],
       "You've reached the maximum of ${ limit } messages in this conversation. Start a new conversation to continue chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "Vous avez atteint la limite de ${ limit } messages dans cette conversation. Démarrez une nouvelle conversation pour continuer à discuter avec ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "collider_2025: Error (file processing)": {
+      "Error processing file: ${ file.name }": [
+        "Une erreur s'est produite lors du traitement du fichier ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (local processing)": {
+      "Error processing file: ${ file.name }": [
+        "Une erreur s'est produite lors du traitement du fichier ${ file.name }"
+      ]
+    },
+    "collider_2025: Error (processing)": {
+      "File format not supported: ${ result.fileName }": [
+        "Le format de fichier n'est pas pris en charge pour le fichier ${ result.fileName }"
+      ]
+    },
+    "collider_2025: Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Le format de fichier n'est pas pris en charge pour le fichier ${ file.name }"
       ]
     },
     "collider_2025: Error Message": {
@@ -3072,6 +3092,9 @@
       ],
       "No projects yet": [
         "Aucun projet pour le moment"
+      ],
+      "PASTED": [
+        "COLLÉ"
       ],
       "Processing file...": [
         "Traitement du fichier..."

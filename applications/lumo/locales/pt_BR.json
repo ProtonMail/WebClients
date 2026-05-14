@@ -965,6 +965,9 @@
       "Draw a sketch": [
         "Desenhar um rascunho"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Enable ghost mode": [
         "Ativar modo fantasma"
       ],
@@ -1003,6 +1006,9 @@
       ],
       "Report an issue": [
         "Reportar um problema"
+      ],
+      "Save": [
+        "Salvar"
       ],
       "Select all": [
         "Selecionar tudo"
@@ -1258,9 +1264,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Erro ao processar ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Erro ao processar arquivo: ${ file.name }"
-      ],
       "Failed to create API key": [
         "Falha ao criar a chave de API"
       ],
@@ -1284,9 +1287,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Arquivo já adicionado: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Formato de arquivo não suportado: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Arquivo enviado, mas houve uma falha ao adicioná-lo à base de conhecimento"
@@ -2954,6 +2954,9 @@
       "No projects yet": [
         "Nenhum projeto ainda"
       ],
+      "PASTED": [
+        "COLADO"
+      ],
       "Processing file...": [
         "Processando arquivo..."
       ],
@@ -4596,6 +4599,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"

@@ -7161,6 +7161,9 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "Descărcări ${ downloads }"
+      ],
       "${ n } month": [
         "O lună",
         "${ n } luni",
@@ -7350,6 +7353,9 @@
       "Created": [
         "Creat la"
       ],
+      "Created ${ created }": [
+        "Creat ${ created }"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -7370,11 +7376,20 @@
       "Deleted": [
         "Șters"
       ],
+      "Deleted ${ deleted }": [
+        "Șters ${ deleted }"
+      ],
       "Device": [
         "Dispozitiv"
       ],
+      "Device #${ position }": [
+        "Dispozitiv #${ position }"
+      ],
       "Device name": [
         "Nume dispozitiv"
+      ],
+      "Device: ${ name }": [
+        "Dispozitiv: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Dezactivare această legătură web la o dată specifică"
@@ -7433,8 +7448,14 @@
       "Expired": [
         "Expirat"
       ],
+      "Expired on ${ formatted }": [
+        "Expirat la ${ formatted }"
+      ],
       "Expires": [
         "Expirare"
+      ],
+      "Expires ${ formatted }": [
+        "Expiră ${ formatted }"
       ],
       "Expiry": [
         "Expirare"
@@ -7508,6 +7529,9 @@
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
       ],
+      "Item #${ position }": [
+        "Articol #${ position }"
+      ],
       "Keep both": [
         "Păstrare ambele"
       ],
@@ -7538,6 +7562,9 @@
       "Location": [
         "Loc"
       ],
+      "Location: ${ item.location }": [
+        "Loc: (${ item.location }"
+      ],
       "Log in or sign up ": [
         "Conectare sau înscriere"
       ],
@@ -7558,6 +7585,9 @@
       ],
       "Modified": [
         "Modificat"
+      ],
+      "Modified ${ modified }": [
+        "Modificat ${ modified }"
       ],
       "Move to Archive": [
         "Mutare în «Arhivă»"
@@ -7580,11 +7610,17 @@
       "Never": [
         "Niciodată"
       ],
+      "Never expires": [
+        "Nu expiră"
+      ],
       "New password": [
         "Parola nouă"
       ],
       "Not active": [
         "Inactiv"
+      ],
+      "Not selected": [
+        "Neselectat"
       ],
       "Note": [
         "Notiță"
@@ -7621,6 +7657,9 @@
       ],
       "Payment method": [
         "Metoda de plată"
+      ],
+      "Pending invitation": [
+        "Invitație in așteptare"
       ],
       "PGP scheme": [
         "Schema PGP"
@@ -7682,6 +7721,9 @@
       "Select type of abuse": [
         "Selectați tipul de abuz"
       ],
+      "Selected": [
+        "Selectat"
+      ],
       "Set a password to limit access via link": [
         "Setare parolă pentru a limita accesarea prin legătura web"
       ],
@@ -7697,8 +7739,17 @@
       "Shared by": [
         "Partajat de"
       ],
+      "Shared by ${ sharedBy }": [
+        "Partajat de ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Partajat cu legătură web publică"
+      ],
       "Shared on": [
         "Partajat"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Partajat la ${ sharedOn }"
       ],
       "Shared with me": [
         "Partajate cu mine"

@@ -175,6 +175,9 @@
       "Continue offline": [
         "გაგრძელება ქსელის გარეშე"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Copy and close": [
         "კოპირება და დახურვა"
       ],
@@ -420,6 +423,9 @@
       ],
       "Link expires after": [
         "ბმულის ვადა"
+      ],
+      "Load more": [
+        "მეტის ჩატვირთვა"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაბლოკვა"
@@ -1183,6 +1189,9 @@
       ],
       "Moving item failed": [
         "ელემენტის გადატანის შეცდომა"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "Network error": [
         "ქსელის შეცდომა"
@@ -2004,6 +2013,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2024,6 +2037,9 @@
       ],
       "Never": [
         "არასოდეს"
+      ],
+      "New": [
+        "ახალი"
       ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
@@ -3653,6 +3669,9 @@
       ],
       "Today": [
         "დღეს"
+      ],
+      "Token name": [
+        "კოდის სახელი"
       ],
       "Total imported items: ": [
         "შემოტანილი ელემენტები სულ: "

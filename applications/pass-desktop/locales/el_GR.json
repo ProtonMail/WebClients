@@ -196,6 +196,9 @@
       "Copy forwarding address": [
         "Αντιγραφή διεύθυνσης προώθησης"
       ],
+      "Copy instructions": [
+        "Αντιγραφή οδηγιών"
+      ],
       "Copy link": [
         "Αντιγραφή συνδέσμου"
       ],
@@ -213,6 +216,9 @@
       ],
       "Copy to clipboard": [
         "Αντιγραφή στο πρόχειρο"
+      ],
+      "Copy token": [
+        "Αντιγραφή διακριτικού"
       ],
       "Copy username": [
         "Αντιγραφή ονόματος χρήστη"
@@ -430,6 +436,9 @@
       "Link expires after": [
         "Ο σύνδεσμος λήγει μετά"
       ],
+      "Load more": [
+        "Φόρτωση περισσοτέρων"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Κλείδωμα ${ PASS_APP_NAME }"
       ],
@@ -489,6 +498,9 @@
       ],
       "Multiple select": [
         "Πολλαπλή επιλογή"
+      ],
+      "New token": [
+        "Νέο διακριτικό"
       ],
       "Next": [
         "Επόμενο"
@@ -781,6 +793,23 @@
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
       ]
     },
+    "Activity": {
+      "Activity": [
+        "Δραστηριότητα"
+      ],
+      "Folder": [
+        "Φάκελος"
+      ],
+      "Item": [
+        "Στοιχείο"
+      ],
+      "Reason": [
+        "Αιτία"
+      ],
+      "Vault": [
+        "Κρύπτη"
+      ]
+    },
     "App menu": {
       "Force Reload": [
         "Αναγκαστική Επαναφόρτωση"
@@ -1020,6 +1049,9 @@
       "Could not validate addresses at the moment.": [
         "Δεν ήταν δυνατή η επικύρωση διευθύνσεων αυτήν τη στιγμή."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Δεν ήταν δυνατή η φόρτωση των οδηγιών ρύθμισης του πράκτορα. Παρακαλούμε αντιγράψτε το παρακάτω διακριτικό, δε θα εμφανιστεί ξανά."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Λείπει το αρχείο CSV αναμενόμενες κεφαλίδες: ${ missingHeaders }"
       ],
@@ -1230,6 +1262,9 @@
       ],
       "Moving item failed": [
         "Η μετακίνηση στοιχείου απέτυχε"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -1560,6 +1595,9 @@
         "${ row.breachCount } παραβίαση εντοπίστηκε",
         "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } επιλεγμένες"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
@@ -1735,11 +1773,17 @@
       "Coupon successfully applied!": [
         "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Δημιουργήστε ένα διακριτικό για να ενσωματώσετε το ${ PASS_APP_NAME } με τα σενάρια και τα εργαλεία σας."
+      ],
       "Create contact illustration": [
         "Απεικόνιση δημιουργίας επαφών"
       ],
       "Created ${ time }.": [
         "Δημιουργήθηκε ${ time }."
+      ],
+      "Created item": [
+        "Δημιουργημένο στοιχείο"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "Το CSV προσφέρει μια βολική μορφή για την προβολή των δεδομένων σας. Ωστόσο, λόγω της απλότητάς του, ορισμένα δεδομένα δε θα συμπεριληφθούν (προσαρμοσμένα πεδία, κλειδιά πρόσβασης...). Για πλήρη εξαγωγή, συνιστάται η χρήση διαφορετικής μορφής."
@@ -1849,8 +1893,16 @@
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "Κάθε φορά που το ψευδώνυμό σας λαμβάνει ένα μήνυμα ηλεκτρονικού ταχυδρομείου από κάποιον, μια νέα επαφή δημιουργείται αυτόματα."
       ],
+      "Expired ${ abs } hour ago": [
+        "Έληξε πριν από ${ abs } ώρα",
+        "Έληξε πριν από ${ abs } ώρες"
+      ],
       "Expires in": [
         "Λήγει σε"
+      ],
+      "Expires in ${ hours } hour": [
+        "Λήγει σε ${ hours } ώρα",
+        "Λήγει σε ${ hours } ώρες"
       ],
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
@@ -2062,6 +2114,9 @@
       ],
       "Never": [
         "Ποτέ"
+      ],
+      "New": [
+        "Νέο"
       ],
       "New version ${ latestVersion } is available.": [
         "Νέα έκδοση ${ latestVersion } είναι διαθέσιμη."
@@ -2509,11 +2564,17 @@
       "Unverified": [
         "Μη επαληθευμένος"
       ],
+      "Updated item": [
+        "Επεξεργασμένο στοιχείο"
+      ],
       "Updating vault organization...": [
         "Ενημερώνεται η οργάνωση της κρύπτης..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium δυνατότητες"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Αναβαθμίστε σε ${ PASS_APP_NAME } Plus για να δημιουργήσετε διακριτικά πρόσβασης και να χρησιμοποιήσετε το ${ PASS_APP_NAME } μέσω προγραμματισμού."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
@@ -3761,6 +3822,9 @@
       "Today": [
         "Σήμερα"
       ],
+      "Token name": [
+        "Όνομα διακριτικού"
+      ],
       "Total imported items: ": [
         "Σύνολο εισαγόμενων αντικείμενων: "
       ],
@@ -3977,6 +4041,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } έχει ενεργοποιηθεί"
+      ],
+      "Access token deleted": [
+        "Το διακριτικό πρόσβασης έχει διαγραφεί"
       ]
     },
     "Option": {
@@ -4157,6 +4224,9 @@
       "Coupon": [
         "Κουπόνι"
       ],
+      "e.g. My automation script": [
+        "π.χ. Το σενάριο αυτοματοποίησής μου"
+      ],
       "E.g., ": [
         "Για παράδειγμα, "
       ],
@@ -4312,6 +4382,20 @@
       ],
       "Unknown": [
         "Άγνωστος"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Ενεργό"
+      ],
+      "Agent": [
+        "Πράκτορας"
+      ],
+      "Expired": [
+        "Ληγμένα"
+      ],
+      "Expiring soon": [
+        "Λήγει σύντομα"
       ]
     },
     "Success": {
@@ -4505,6 +4589,9 @@
         "Διαγραφή ${ deletedItemsCount } στοιχείου;",
         "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
       ],
+      "Delete access token?": [
+        "Διαγραφή διακριτικού πρόσβασης;"
+      ],
       "Delete domain": [
         "Διαγραφή τομέα"
       ],
@@ -4618,6 +4705,9 @@
       ],
       "Mailbox": [
         "Γραμματοκιβώτιο"
+      ],
+      "Manage vault access": [
+        "Διαχείριση πρόσβασης κρύπτης"
       ],
       "Mark as resolved?": [
         "Σήμανση ως επιλυμένου?"
