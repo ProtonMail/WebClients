@@ -1140,9 +1140,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Error al procesar ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Error al procesar el archivo: ${ file.name }"
-      ],
       "Failed to create API key": [
         "Error al crear la clave de API"
       ],
@@ -1163,9 +1160,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Archivo ya añadido: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Formato de archivo no compatible: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Archivo cargado pero no se pudo añadir a conocimiento base"
