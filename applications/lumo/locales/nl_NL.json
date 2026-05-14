@@ -1222,9 +1222,6 @@
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fout bij het verwerken van ${ result.fileName }: ${ result.errorMessage }"
       ],
-      "Error processing file: ${ file.name }": [
-        "Fout bij het verwerken van bestand: ${ file.name }"
-      ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Het verwerken van het ${ DRIVE_SHORT_APP_NAME } bestand is mislukt: ${ file.name }"
       ],
@@ -1239,9 +1236,6 @@
       ],
       "File already added: ${ result.fileName }": [
         "Bestand reeds toegevoegd: ${ result.fileName }"
-      ],
-      "File format not supported: ${ result.fileName }": [
-        "Bestandsformaat wordt niet ondersteund: ${ result.fileName }"
       ],
       "File uploaded but failed to add to knowledge base": [
         "Bestand geüpload, maar kon niet aan de kennisbank worden toegevoegd."
