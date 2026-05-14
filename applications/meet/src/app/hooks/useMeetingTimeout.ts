@@ -11,9 +11,10 @@ export const useMeetingTimeout = () => {
     const expirationTime = useMeetSelector(selectExpirationTime);
 
     const meetUpsellEnabled = useFlag('MeetUpsell');
+    const meetMeetingTimeoutEnabled = useFlag('MeetMeetingTimeout');
 
     useEffect(() => {
-        if (!expirationTime || !meetUpsellEnabled) {
+        if (!expirationTime || !meetUpsellEnabled || !meetMeetingTimeoutEnabled) {
             return;
         }
 
@@ -34,5 +35,5 @@ export const useMeetingTimeout = () => {
         }, timeUntilExpiration);
 
         return () => clearTimeout(timeoutId);
-    }, [expirationTime, meetUpsellEnabled, handleMeetingExpired]);
+    }, [expirationTime, meetUpsellEnabled, meetMeetingTimeoutEnabled, handleMeetingExpired]);
 };
