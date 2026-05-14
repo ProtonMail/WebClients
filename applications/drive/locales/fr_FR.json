@@ -7062,6 +7062,9 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ downloads } downloads": [
+        "${ downloads } téléchargements"
+      ],
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
@@ -7251,6 +7254,9 @@
       "Created": [
         "Créé"
       ],
+      "Created ${ created }": [
+        "Créé le ${ created }"
+      ],
       "Credits": [
         "Crédits"
       ],
@@ -7270,11 +7276,20 @@
       "Deleted": [
         "Supprimé"
       ],
+      "Deleted ${ deleted }": [
+        "Supprimé le ${ deleted }"
+      ],
       "Device": [
         "Appareil"
       ],
+      "Device #${ position }": [
+        "Appareil #${ position }"
+      ],
       "Device name": [
         "Nom de l'appareil"
+      ],
+      "Device: ${ name }": [
+        "Appareil : ${ name }"
       ],
       "Disable this link on a specific date": [
         "Désactiver ce lien à une date spécifique"
@@ -7333,8 +7348,14 @@
       "Expired": [
         "Expiré"
       ],
+      "Expired on ${ formatted }": [
+        "Expiré le ${ formatted }"
+      ],
       "Expires": [
         "Expire le"
+      ],
+      "Expires ${ formatted }": [
+        "Expire le ${ formatted }"
       ],
       "Expiry": [
         "Expiration"
@@ -7408,6 +7429,9 @@
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
       ],
+      "Item #${ position }": [
+        "Élément #${ position }"
+      ],
       "Keep both": [
         "Garder les deux"
       ],
@@ -7438,6 +7462,9 @@
       "Location": [
         "Lieu"
       ],
+      "Location: ${ item.location }": [
+        "Emplacement : ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Se connecter ou s'inscrire "
       ],
@@ -7458,6 +7485,9 @@
       ],
       "Modified": [
         "Modifié"
+      ],
+      "Modified ${ modified }": [
+        "Modifié le ${ modified }"
       ],
       "Move to Archive": [
         "Déplacer vers les archives"
@@ -7480,11 +7510,17 @@
       "Never": [
         "Jamais"
       ],
+      "Never expires": [
+        "N'expire jamais"
+      ],
       "New password": [
         "Nouveau mot de passe"
       ],
       "Not active": [
         "Inactif"
+      ],
+      "Not selected": [
+        "Non sélectionné"
       ],
       "Note": [
         "Note"
@@ -7521,6 +7557,9 @@
       ],
       "Payment method": [
         "Moyen de paiement"
+      ],
+      "Pending invitation": [
+        "Invitation en attente"
       ],
       "PGP scheme": [
         "Schéma PGP"
@@ -7582,6 +7621,9 @@
       "Select type of abuse": [
         "Sélectionnez un type d'abus"
       ],
+      "Selected": [
+        "Sélectionné"
+      ],
       "Set a password to limit access via link": [
         "Définir un mot de passe pour limiter l'accès par lien"
       ],
@@ -7597,8 +7639,17 @@
       "Shared by": [
         "Partagé par"
       ],
+      "Shared by ${ sharedBy }": [
+        "Partagé par ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Partagé par un lien public"
+      ],
       "Shared on": [
         "Partagé le"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Partagé sur ${ sharedOn }"
       ],
       "Shared with me": [
         "Partagé avec moi"
