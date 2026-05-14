@@ -782,6 +782,27 @@
       ],
       "Don't show this again": [
         "Não mostrar isso novamente"
+      ],
+      "Copy instructions": [
+        "Copiar instruções"
+      ],
+      "Copy token": [
+        "Copiar token"
+      ],
+      "Create token": [
+        "Criar token"
+      ],
+      "Load more": [
+        "Carregar mais"
+      ],
+      "Manage vault access": [
+        "Gerenciar acesso ao cofre"
+      ],
+      "New token": [
+        "Novo token"
+      ],
+      "View agent activity": [
+        "Ver a atividade do agente"
       ]
     },
     "App menu": {
@@ -1383,6 +1404,12 @@
       ],
       "A desktop unlock check is already in progress.": [
         "A verificação de desbloqueio do computador já está em andamento."
+      ],
+      "Name is required": [
+        "O nome é obrigatório."
+      ],
+      "Name must be 191 characters or fewer": [
+        "O nome deve ter no máximo 191 caracteres"
       ]
     },
     "Error message": {
@@ -2710,6 +2737,50 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Crie um token para integrar o ${ PASS_APP_NAME } aos seus scripts e ferramentas."
+      ],
+      "Created ${ createdDate }": [
+        "Criado em ${ createdDate }"
+      ],
+      "Created item": [
+        "Item criado"
+      ],
+      "Deleted item": [
+        "Item excluído"
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expirou há ${ abs } hora",
+        "Expirou há ${ abs } horass"
+      ],
+      "Expires in ${ hours } hour": [
+        "Expira em ${ hours } hora",
+        "Expira em ${ hours } horas"
+      ],
+      "Expires in less than an hour": [
+        "Expira em menos de uma hora"
+      ],
+      "Moved item to trash": [
+        "Item para a lixeira movido"
+      ],
+      "New": [
+        "Novo"
+      ],
+      "No activity recorded yet.": [
+        "Nenhuma atividade registrada ainda."
+      ],
+      "No vaults available.": [
+        "Nenhum cofre disponível."
+      ],
+      "None selected": [
+        "Nenhum selecionado-"
+      ],
+      "Read item": [
+        "Ler item"
+      ],
+      "Updated item": [
+        "Item atualizado"
       ]
     },
     "Keyboard key": {
@@ -3949,6 +4020,18 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "Access tokens": [
+        "Tokens de acesso"
+      ],
+      "Expires in (minutes)": [
+        "Expira em (minutos)"
+      ],
+      "Token name": [
+        "Nome do token"
+      ],
+      "Vault access": [
+        "Acesso ao cofre"
       ]
     },
     "Link": {
@@ -4273,6 +4356,12 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
+      ],
+      "e.g. 60": [
+        "por ex. 60"
+      ],
+      "e.g. My automation script": [
+        "ex. Meu script de automação"
       ]
     },
     "Security Center - Info": {
@@ -4917,6 +5006,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Atividade para \"${ token.Name }\""
+      ],
+      "Delete access token?": [
+        "Excluir token de acesso?"
       ]
     },
     "Title_cloned_item": {
@@ -5268,6 +5363,37 @@
     "Upsell": {
       "Get ${ planName }": [
         "Obter ${ planName }"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Atividade"
+      ],
+      "Folder": [
+        "Pasta"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Cofre"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Ativo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "Expirando em breve"
       ]
     }
   }

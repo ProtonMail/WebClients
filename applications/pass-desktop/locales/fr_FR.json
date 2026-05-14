@@ -782,6 +782,27 @@
       ],
       "Don't show this again": [
         "Ne plus afficher"
+      ],
+      "Copy instructions": [
+        "Copier les instructions"
+      ],
+      "Copy token": [
+        "Copier le jeton"
+      ],
+      "Create token": [
+        "Créer le jeton"
+      ],
+      "Load more": [
+        "Charger plus"
+      ],
+      "Manage vault access": [
+        "Gérer l'accès aux coffres-forts"
+      ],
+      "New token": [
+        "Nouveau jeton"
+      ],
+      "View agent activity": [
+        "Voir l'activité de l'agent"
       ]
     },
     "App menu": {
@@ -1398,6 +1419,33 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Une vérification du déverrouillage du bureau est déjà en cours."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Le chargement des instructions de configuration de l'agent n'a pas abouti. Veuillez copier le jeton ci-dessous, il ne sera plus jamais affiché."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La durée de validité doit être comprise entre 60 minutes et 1 an."
+      ],
+      "Failed to create access token": [
+        "La création du jeton d'accès n'a pas abouti."
+      ],
+      "Failed to delete access token": [
+        "La suppression du jeton d'accès n'a pas abouti."
+      ],
+      "Failed to load access tokens": [
+        "Le chargement des jetons d'accès n'a pas abouti."
+      ],
+      "Failed to load token actions": [
+        "Les actions liées aux jetons n'ont pas pu être chargées."
+      ],
+      "Failed to update vault access": [
+        "La mise à jour de l'accès aux coffres-forts n'a pas abouti."
+      ],
+      "Name is required": [
+        "Veuillez indiquer un nom."
+      ],
+      "Name must be 191 characters or fewer": [
+        "Le nom doit comporter 191 caractères au maximum."
       ]
     },
     "Error message": {
@@ -2725,6 +2773,101 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, notre programme avancé de protection des comptes"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } sélectionnés"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Le jeton d'accès « ${ action.token.Name } » cessera de fonctionner immédiatement. Cette action est irréversible."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Les jetons d'accès peuvent être utilisés grâce à ${ passCliLink } afin d'automatiser votre CI/CD ou de donner des accès limités à votre agent IA."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 heure) et 525600 (1 an)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copiez le code markdown ci-dessous et envoyez-le à votre agent IA. Le jeton ne sera plus jamais affiché après cela."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Veuillez copier ce jeton. Pour des raisons de sécurité, il ne sera plus jamais affiché."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Créez un jeton pour intégrer ${ PASS_APP_NAME } à vos scripts et outils."
+      ],
+      "Created ${ createdDate }": [
+        "Créé le ${ createdDate }"
+      ],
+      "Created item": [
+        "Élément créé"
+      ],
+      "Deleted item": [
+        "Élément supprimé"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Téléchargez pass-cli depuis ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Toutes les actions effectuées par ce jeton d'agent, les plus récentes en premier"
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expiré il y a ${ abs } heure",
+        "Expiré il y a ${ abs } heures"
+      ],
+      "Expires in ${ hours } hour": [
+        "Expire dans ${ hours } heure",
+        "Expire dans ${ hours } heures"
+      ],
+      "Expires in less than an hour": [
+        "Expire dans moins d'une heure"
+      ],
+      "Log out of any existing session:": [
+        "Se déconnecter de toutes les sessions existantes :"
+      ],
+      "Moved item to trash": [
+        "Les éléments ont été mis à la corbeille."
+      ],
+      "New": [
+        "Nouveau"
+      ],
+      "No activity recorded yet.": [
+        "Aucune activité n'a été enregistrée pour le moment."
+      ],
+      "No vaults available.": [
+        "Aucun coffre-fort n'est disponible."
+      ],
+      "None selected": [
+        "Aucun sélectionné"
+      ],
+      "Read item": [
+        "Élément lu"
+      ],
+      "Restored item from trash": [
+        "L'élément a bien été restauré depuis la corbeille."
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Sélectionnez les coffres-forts que « ${ token.Name } » peut consulter."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Essayez le jeton en vous connectant puis en affichant vos coffres-forts :"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "L'agent devra fournir une raison pour chaque action qu'il effectue, et chaque action sera consignée dans un journal d'audit que vous pourrez consulter. Après la création du jeton, vous recevrez des instructions à copier-coller dans votre agent IA."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Vous pouvez ensuite vous rendre sur ${ url } pour copier les instructions à envoyer à votre agent IA."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Ce jeton dispose d'un accès en lecture seule aux coffres-forts que vous sélectionnez. Il permet de consulter les éléments, mais ne permet pas de les modifier, de partager des coffres ni d'inviter d'autres personnes. Vous pourrez modifier ces paramètres ultérieurement."
+      ],
+      "Updated item": [
+        "Élément mis à jour"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Mettez à niveau vers ${ PASS_APP_NAME } Plus afin de créer des jetons d'accès et d'utiliser ${ PASS_APP_NAME } programmatiquement."
+      ],
+      "Vault access granted": [
+        "L'accès aux coffres-forts a été accordé."
       ]
     },
     "Keyboard key": {
@@ -3964,6 +4107,21 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Access tokens": [
+        "Jetons d'accès"
+      ],
+      "Expires in (minutes)": [
+        "Expire dans (minutes)"
+      ],
+      "Token name": [
+        "Nom du jeton"
+      ],
+      "Use for AI agent": [
+        "Utiliser pour un agent IA"
+      ],
+      "Vault access": [
+        "Accès aux coffres-forts"
       ]
     },
     "Link": {
@@ -4028,6 +4186,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a été activé."
+      ],
+      "Access token deleted": [
+        "Le jeton d'accès a été supprimé."
       ]
     },
     "Option": {
@@ -4288,6 +4449,12 @@
       ],
       "Used on ${ url }": [
         "Utilisé sur ${ url }"
+      ],
+      "e.g. 60": [
+        "par exemple 60"
+      ],
+      "e.g. My automation script": [
+        "par exemple. Mon script d’automatisation"
       ]
     },
     "Security Center - Info": {
@@ -4932,6 +5099,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Les jetons d'accès nécessitent le plan ${ PASS_APP_NAME } Plus."
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Activité pour « ${ token.Name } »"
+      ],
+      "Agent setup instructions": [
+        "Instructions de configuration de l'agent"
+      ],
+      "Create new access token": [
+        "Créer un nouveau jeton d'accès"
+      ],
+      "Delete access token?": [
+        "Supprimer le jeton d'accès ?"
+      ],
+      "Manage vault access": [
+        "Gérer l'accès aux coffres-forts"
+      ],
+      "No access tokens yet": [
+        "Il n'y a aucun jeton d'accès pour le moment."
+      ],
+      "Your new access token": [
+        "Votre nouveau jeton d'accès"
       ]
     },
     "Title_cloned_item": {
@@ -5283,6 +5474,40 @@
     "Upsell": {
       "Get ${ planName }": [
         "Obtenir ${ planName }"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activité"
+      ],
+      "Activity details could not be loaded.": [
+        "Le chargement du détail des activités n'a pas abouti."
+      ],
+      "Folder": [
+        "Dossier"
+      ],
+      "Item": [
+        "Élément"
+      ],
+      "Reason": [
+        "Raison"
+      ],
+      "Vault": [
+        "Coffre-fort"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Actif"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Expiré"
+      ],
+      "Expiring soon": [
+        "Expire bientôt"
       ]
     }
   }

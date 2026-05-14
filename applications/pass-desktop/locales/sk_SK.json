@@ -786,6 +786,27 @@
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
+      ],
+      "Copy instructions": [
+        "Kopírovať pokyny"
+      ],
+      "Copy token": [
+        "Skopírovať token"
+      ],
+      "Create token": [
+        "Vytvoriť token"
+      ],
+      "Load more": [
+        "Načítať viac"
+      ],
+      "Manage vault access": [
+        "Spravovať prístup k trezoru"
+      ],
+      "New token": [
+        "Nový token"
+      ],
+      "View agent activity": [
+        "Zobraziť aktivitu agenta"
       ]
     },
     "App menu": {
@@ -1408,6 +1429,33 @@
       ],
       "A desktop unlock check is already in progress.": [
         "V súčasnosti prebieha kontrola odblokovania desktopu."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nepodarilo sa načítať pokyny na nastavenie agenta. Skopírujte si, prosím, nižšie uvedený token, už sa viac nezobrazí."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Exspirácia musí byť medzi 60 minútami a 1 rokom"
+      ],
+      "Failed to create access token": [
+        "Nepodarilo sa vytvoriť prístupový token"
+      ],
+      "Failed to delete access token": [
+        "Nepodarilo sa vymazať prístupový token"
+      ],
+      "Failed to load access tokens": [
+        "Nepodarilo sa načítať prístupové tokeny"
+      ],
+      "Failed to load token actions": [
+        "Nepodarilo sa načítať akcie tokenov"
+      ],
+      "Failed to update vault access": [
+        "Nepodarilo sa aktualizovať prístup k trezoru"
+      ],
+      "Name is required": [
+        "Názov je povinný"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Názov nesmie presiahnuť 191 znakov"
       ]
     },
     "Error message": {
@@ -2792,6 +2840,105 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, náš pokročilý program na ochranu účtu"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } vybrané"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Prístupový token „${ action.token.Name }“ prestane okamžite fungovať. Táto akcia sa nedá vrátiť späť."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Prístupové tokeny používané spolu s ${ passCliLink } vám umožňujú automatizovať CI/CD alebo poskytnúť vášmu AI agentovi obmedzený prístup k tomu, čo potrebuje na vykonanie svojej úlohy."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Medzi 60 (1 hodina) a 525600 (1 rok)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Skopírujte nižšie uvedený text v formáte Markdown a pošlite ho svojmu AI agentovi. Token sa zobrazí len v tomto prípade."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Tento token si teraz skopírujte. Z bezpečnostných dôvodov sa už viac nezobrazí."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Vytvorte token na integráciu ${ PASS_APP_NAME } s vašimi skriptami a nástrojmi."
+      ],
+      "Created ${ createdDate }": [
+        "Vytvorené ${ createdDate }"
+      ],
+      "Created item": [
+        "Vytvorená položka"
+      ],
+      "Deleted item": [
+        "Vymazaná položka"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Stiahnuť pass-cli z ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Všetky akcie, ktoré tento agent vykonal, zoradené od najnovších."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Exspiroval pred ${ abs } hodinou",
+        "Exspiroval pred ${ abs } hodinami",
+        "Exspiroval pred ${ abs } hodinami",
+        "Exspiroval pred ${ abs } hodinami"
+      ],
+      "Expires in ${ hours } hour": [
+        "Exspiruje o ${ hours } hodinu",
+        "Exspiruje o ${ hours } hodiny",
+        "Exspiruje o ${ hours } hodín",
+        "Exspiruje o ${ hours } hodín"
+      ],
+      "Expires in less than an hour": [
+        "Exspiruje o menej ako hodinu"
+      ],
+      "Log out of any existing session:": [
+        "Odhláste sa zo všetkých otvorených relácií:"
+      ],
+      "Moved item to trash": [
+        "Položka presunutá do koša"
+      ],
+      "New": [
+        "Nový"
+      ],
+      "No activity recorded yet.": [
+        "Zatiaľ nebola zaznamenaná žiadna aktivita."
+      ],
+      "No vaults available.": [
+        "Nie sú k dispozícii žiadne trezory."
+      ],
+      "None selected": [
+        "Nevybraté"
+      ],
+      "Read item": [
+        "Prečítať položku"
+      ],
+      "Restored item from trash": [
+        "Položka obnovená z koša"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vyberte trezory, do ktorých má „${ token.Name }“ prístup na čítanie."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Otestujte token tak, že sa prihlásite a zobrazíte zoznam trezorov:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agent bude musieť zdôvodniť každú svoju činnosť a každá činnosť bude zaznamenaná v kontrolnom zázname, ktorý si môžete prezrieť. Po vytvorení tokenu dostanete pokyny, ktoré stačí skopírovať a vložiť do vášho AI agenta."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Potom môžete prejsť na stránku ${ url } a skopírovať si pokyny, ktoré pošlete svojmu AI agentovi."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Tento token získa prístup len na čítanie k trezorom, ktoré vyberiete. Môže čítať položky, ale nemôže ich upravovať, zdieľať trezory ani pozývať ďalších používateľov. Toto nastavenie môžete neskôr zmeniť."
+      ],
+      "Updated item": [
+        "Aktualizovaná položka"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Navýšte úroveň na verziu ${ PASS_APP_NAME } Plus, aby ste mohli vytvárať prístupové tokeny a využívať ${ PASS_APP_NAME } programovo."
+      ],
+      "Vault access granted": [
+        "Prístup do trezora bol povolený"
       ]
     },
     "Keyboard key": {
@@ -4059,6 +4206,21 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Access tokens": [
+        "Prístupové tokeny"
+      ],
+      "Expires in (minutes)": [
+        "Vyprší o (minúty)"
+      ],
+      "Token name": [
+        "Názov tokenu"
+      ],
+      "Use for AI agent": [
+        "Použiť pre AI agenta"
+      ],
+      "Vault access": [
+        "Prístup k trezoru"
       ]
     },
     "Link": {
@@ -4127,6 +4289,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } bol povolený"
+      ],
+      "Access token deleted": [
+        "Prístupový token vymazaný"
       ]
     },
     "Option": {
@@ -4389,6 +4554,12 @@
       ],
       "Used on ${ url }": [
         "Používa sa na ${ url }"
+      ],
+      "e.g. 60": [
+        "napr. 60"
+      ],
+      "e.g. My automation script": [
+        "napr. Môj automatizačný skript"
       ]
     },
     "Security Center - Info": {
@@ -5049,6 +5220,30 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Prístupové tokeny vyžadujú ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivita \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Pokyny na nastavenie agenta"
+      ],
+      "Create new access token": [
+        "Vytvoriť nový prístupový token"
+      ],
+      "Delete access token?": [
+        "Vymazať prístupový token?"
+      ],
+      "Manage vault access": [
+        "Spravovať prístup k trezoru"
+      ],
+      "No access tokens yet": [
+        "Zatiaľ žiadne prístupové tokeny"
+      ],
+      "Your new access token": [
+        "Váš nový prístupový token"
       ]
     },
     "Title_cloned_item": {
@@ -5408,6 +5603,40 @@
     "Upsell": {
       "Get ${ planName }": [
         "Získať ${ planName }"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivita"
+      ],
+      "Activity details could not be loaded.": [
+        "Podrobnosti o aktivite sa nepodarilo načítať."
+      ],
+      "Folder": [
+        "Priečinok"
+      ],
+      "Item": [
+        "Položka"
+      ],
+      "Reason": [
+        "Dôvod"
+      ],
+      "Vault": [
+        "Trezor"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktívny"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Exspirované"
+      ],
+      "Expiring soon": [
+        "Čoskoro exspiruje"
       ]
     }
   }
