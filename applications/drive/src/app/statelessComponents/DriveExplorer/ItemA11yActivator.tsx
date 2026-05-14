@@ -7,7 +7,6 @@ interface ItemA11yActivatorProps {
     onClick: (event: React.MouseEvent) => void;
     onDoubleClick: (event: React.MouseEvent) => void;
     onKeyDown: (event: React.KeyboardEvent) => void;
-    onContextMenu: (event: React.MouseEvent) => void;
 }
 
 // Always-present invisible <button> that provides keyboard and pointer
@@ -42,7 +41,6 @@ export const ItemA11yActivator = ({
     onClick,
     onDoubleClick,
     onKeyDown,
-    onContextMenu,
 }: ItemA11yActivatorProps) => (
     <button
         type="button"
@@ -55,7 +53,6 @@ export const ItemA11yActivator = ({
         onClick={onClick}
         onDoubleClick={onDoubleClick}
         onKeyDown={onKeyDown}
-        onContextMenu={onContextMenu}
     />
 );
 

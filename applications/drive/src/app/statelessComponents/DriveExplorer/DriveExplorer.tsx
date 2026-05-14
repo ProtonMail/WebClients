@@ -322,9 +322,7 @@ const DriveExplorer = ({
             }
             const target = event.target as HTMLElement;
             const isClickOnEmptySpace =
-                target === event.currentTarget ||
-                (target.closest('[data-testid="drive-explorer-row"]') === null &&
-                    target.closest('[data-testid="grid-item"]') === null);
+                target === event.currentTarget || target.closest('[data-drive-explorer-item-uid]') === null;
 
             if (isClickOnEmptySpace) {
                 events.onViewContextMenu(event);
