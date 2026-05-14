@@ -3100,7 +3100,7 @@
         "Estado de la migración"
       ],
       "Missing organization private key": [
-        "Falta la clave privada de organización"
+        "Falta la clave privada de la organización"
       ],
       "Missing organization public key": [
         "Falta la clave pública de organización"
@@ -6563,8 +6563,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } no podrá acceder a su cuenta hasta el próximo acceso de emergencia."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** ahora es su contacto de recuperación. Podrá ayudarle a recuperar sus datos después del restablecimiento de la contraseña."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** ahora es su contacto de recuperación. Podrá ayudarle a desbloquear sus datos después de restablecer su contraseña."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Si confirma**, pulse **Aprobar recuperación**. Esto desbloqueará sus datos cifrados."
@@ -6604,6 +6604,9 @@
       ],
       "Add recovery contact": [
         "Añadir un contacto de recuperación"
+      ],
+      "Add recovery method": [
+        "Agregar método de recuperación"
       ],
       "Added on ${ formattedDate }": [
         "Añadido el ${ formattedDate }"
@@ -6728,9 +6731,6 @@
       "Less than a minute left": [
         "Menos de un minuto restante"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Permita a ${ user } saber que es usted intentando recuperar el acceso."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Se alcanzó el máximo de ${ limit } contacto. Para cambiarlo, borre un contacto y añada uno nuevo.",
         "Se alcanzó el máximo de ${ limit } contactos. Para cambiarlo, borre un contacto y añada uno nuevo."
@@ -6828,11 +6828,11 @@
       "Select recovery contact ${ name }": [
         "Seleccionar contacto de recuperación ${ name }"
       ],
-      "Send email request": [
-        "Enviar solicitud por correo electrónico"
-      ],
       "Send recovery request": [
         "Enviar solicitud de recuperación"
+      ],
+      "Start recovery": [
+        "Iniciar recuperación"
       ],
       "Stop being recovery contact": [
         "Dejar de ser contacto de recuperación"
@@ -6877,6 +6877,9 @@
       "Time required before automatically granting them access": [
         "Tiempo necesario antes de otorgarles acceso automáticamente"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Para agregar contactos de recuperación, debe tener una dirección de correo electrónico o número de telefono de recuperación."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desactivar este método de recuperación, elimine todos sus contactos de recuperación."
       ],
@@ -6906,6 +6909,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "Recibimos una solicitud para desbloquear los datos cifrados de su contacto **${ user }**."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "Le enviamos una solicitud de correo electrónico a ${ user }. Coméntele que es realmente usted quien intenta volver a acceder."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "No pudimos verificar los datos de recuperación. ¿Continuar de todos modos?"
@@ -7237,7 +7243,7 @@
         "Enlace de invitación inválido"
       ],
       "Invalid joining link. Please contact your administrator.": [
-        "Enlace de invitación no válido. Contáctese con su administración."
+        "Enlace de invitación inválido. Contacte con el administrador."
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -10506,6 +10512,10 @@
         "Creando servidor de puerta de enlace: ${ serverNumber } / ${ total }",
         "Creando servidores de puerta de enlace: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Creando puerta de enlace con ${ total } servidor",
+        "Creando puertas de enlace con ${ total } servidores"
+      ],
       "Creating your account": [
         "Creando la cuenta"
       ],
@@ -12525,29 +12535,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descifrar y ver los datos bloqueados después de restablecer la contraseña, seleccione un método de recuperación."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por asistencia de contacto**."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Copia de seguridad de datos de dispositivo**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Acceso de emergencia**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Inicio de sesión con código QR**."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por correo electrónico**."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por teléfono de recuperación**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Archivo de recuperación** (aunle todos los archivos de recuperación)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Inicio de sesión por restablecimiento**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para asegurarse de no perder datos importantes, ${ DRIVE_APP_NAME } guarda versiones anteriores de los archivos a medida que usted\ny sus colaboradores realizan cambios. Seleccione cuánto tiempo ${ BRAND_NAME } debería de conservar las versiones."
@@ -12581,9 +12573,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Para usar ${ toAppName } necesita una dirección de ${ MAIL_APP_NAME }."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Para usar este método de recuperación, debe desactivar ${ PROTON_SENTINEL_NAME } y activar una opción de restablecimiento de contraseña (correo electrónico o SMS)"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puede ${ link }."
@@ -21118,14 +21107,17 @@
       "Add": [
         "Añadir"
       ],
+      "Add an emergency contact": [
+        "Añadir un contacto de emergencia"
+      ],
       "Add emergency contacts": [
         "Añadir contactos de emergencia"
       ],
       "Add options": [
         "Añadir opciones"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Añada a personas de su confianza con las que pueda contactar fácilmente. Podrán acceder a su cuenta y restablecer la contraseña."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Añada a personas de confianza con las que pueda contactar fácilmente. Su contacto de emergencia podrá acceder a su cuenta y restablecer la contraseña si es necesario."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Añada personas en las que confía y pueda contactar fácilmente. Podrán ayudarle a desbloquear sus datos después de restablecer la contraseña."
@@ -21171,9 +21163,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Permitir escanear un código QR para iniciar sesión"
-      ],
-      "Allow trusted friends to sign in": [
-        "Permitir amistades de confianza de iniciar sesión"
       ],
       "Allow trusted friends to unlock your data": [
         "Permitir amistades de confianza para desbloquear sus datos"
@@ -21261,6 +21250,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "Ya debe tener una cuenta de ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Ellos no podrán ver o acceder a sus datos."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Esto le permitirá acceder de forma rápida a su cuenta de ${ BRAND_NAME } para que pueda cambiar la contraseña."
@@ -21539,8 +21531,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive las opciones resaltadas."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Para asegurar la máxima seguridad posible de su cuenta, desactive la recuperación por correo electrónico y SMS."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Para asegurearnos de que siempre pueda acceder a asu cuenta de ${ BRAND_NAME }, descargue su frase de recuperación."
@@ -22759,7 +22751,7 @@
         "Asignar roles"
       ],
       "Click a user's name to manage their role and permissions.": [
-        "Haga clic en el nombre de usuario para gestionar su rol y permiso"
+        "Pulse en el nombre de usuario para gestionar su rol y permiso"
       ],
       "Click Edit to assign roles to this group and manage member access automatically.": [
         "Haga clic en Editar para asignar roles a este grupo y gestionar acceso a miembros automáticamente."
@@ -22774,13 +22766,13 @@
         "Nuevo: Pestaña de roles y permisos"
       ],
       "Open this tab to grant specific permissions without full admin access.": [
-        "Abra esta pesaña para otorgar permisos específicos sin acceso administrativo total."
+        "Abra esta pestaña para otorgar permisos específicos sin acceso administrativo total."
       ],
       "User roles available": [
         "Roles de usuario disponibles"
       ],
       "You can now assign roles to individual users from this tab.": [
-        "hora puee asignar roles a usuarios individuales desde esta pestaña"
+        "Ahora puede asignar roles a usuarios individuales desde esta pestaña"
       ]
     },
     "sso": {
@@ -23084,29 +23076,11 @@
       "Available on this device": [
         "Disponible en este dispositivo"
       ],
-      "Disable contact-assisted recovery": [
-        "Desactivar recuperación por asistencia de contacto"
-      ],
-      "Disable device data backup": [
-        "Desactivar copia de seguridad de datos del dispositivo"
-      ],
-      "Disable emergency access": [
-        "Desactivar acceso de emergencia"
-      ],
-      "Disable QR code sign-in": [
-        "Desactivar inicio de sesión con código QR"
-      ],
       "Disable recovery by email": [
         "Desactivar recuperación por correo electrónico"
       ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
-      ],
-      "Disable recovery file": [
-        "Desactivar archivo de recuperación"
-      ],
-      "Disable signed-in reset": [
-        "Desactivar inicio de sesión por restablecimiento"
       ],
       "Generate a recovery phrase": [
         "Generar una frase de recuperación"
@@ -23116,9 +23090,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Última actualización el ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "No hay contacto"
       ],
       "Not saved": [
         "Sin guardar"
@@ -24811,9 +24782,6 @@
       "Contact us": [
         "Contáctenos"
       ],
-      "Contact-assisted recovery": [
-        "Recuperación por asistencia de contacto"
-      ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
       ],
@@ -24922,6 +24890,9 @@
       ],
       "Data recovery": [
         "Recuperación de datos"
+      ],
+      "Data recovery contacts": [
+        "Contactos de recuperación de datos"
       ],
       "Data recovery options": [
         "Opciones de recuperación de datos"

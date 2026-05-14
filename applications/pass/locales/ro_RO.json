@@ -169,6 +169,9 @@
       "Continue offline": [
         "Continuare în mod deconectat"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy and close": [
         "Copiere și închidere"
       ],
@@ -183,6 +186,9 @@
       ],
       "Copy forwarding address": [
         "Copiere adresă de transferare"
+      ],
+      "Copy instructions": [
+        "Copiere instrucțiuni"
       ],
       "Copy link": [
         "Copiere legătură web"
@@ -201,6 +207,9 @@
       ],
       "Copy to clipboard": [
         "Copiere în memorie"
+      ],
+      "Copy token": [
+        "Copiere cod de acces"
       ],
       "Copy username": [
         "Copiere nume utilizator"
@@ -237,6 +246,9 @@
       ],
       "Create note": [
         "Creare notiță"
+      ],
+      "Create token": [
+        "Creare cod de acces"
       ],
       "Create vault": [
         "Creare seif"
@@ -412,6 +424,9 @@
       "Link expires after": [
         "Legătura web expiră după"
       ],
+      "Load more": [
+        "Încărcare mai multe"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Blocare ${ PASS_APP_NAME }"
       ],
@@ -435,6 +450,9 @@
       ],
       "Manage access": [
         "Gestionare acces"
+      ],
+      "Manage vault access": [
+        "Gestionare acces la seif"
       ],
       "Manually sync your data": [
         "Sincronizare manuală date"
@@ -471,6 +489,9 @@
       ],
       "Multiple select": [
         "Selectare multiplă"
+      ],
+      "New token": [
+        "Cod de acces nou"
       ],
       "Next month": [
         "Luna viitoare"
@@ -731,6 +752,9 @@
       "Via secure link": [
         "Prin legătură web securizată"
       ],
+      "View agent activity": [
+        "Afișare activitate agent"
+      ],
       "View details": [
         "Afișare detalii"
       ],
@@ -754,6 +778,26 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activitate"
+      ],
+      "Activity details could not be loaded.": [
+        "Detaliile activității nu s-au putut încărca."
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "Item": [
+        "Articol"
+      ],
+      "Reason": [
+        "Motiv"
+      ],
+      "Vault": [
+        "Seif"
       ]
     },
     "Browser": {
@@ -974,6 +1018,9 @@
       "Could not validate addresses at the moment.": [
         "Adresele nu s-au putut valida momentan."
       ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Nu s-au putut încărca instrucțiunile de configurare a agentului. Copiați codul de acces de mai jos. Acesta nu va mai fi afișat."
+      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Din fișierul CSV lipsesc antetele așteptate: ${ missingHeaders }"
       ],
@@ -1018,6 +1065,9 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Timpul de expirare trebuie să fie cuprins între 60 de minute și un an."
+      ],
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
       ],
@@ -1039,6 +1089,9 @@
       "Failed to change mailbox": [
         "Eșuare modificare adresă de e-mail."
       ],
+      "Failed to create access token": [
+        "Eșuare creare cod de acces."
+      ],
       "Failed to create domain": [
         "Crearea domeniului a eșuat."
       ],
@@ -1047,6 +1100,9 @@
       ],
       "Failed to create the contact": [
         "Contactul nu s-a putut crea."
+      ],
+      "Failed to delete access token": [
+        "Eșuare ștergere cod de acces."
       ],
       "Failed to delete domain": [
         "Ștergerea domeniului a eșuat."
@@ -1066,6 +1122,9 @@
       "Failed to edit user's access.": [
         "Eșuare editare acces utilizator."
       ],
+      "Failed to load access tokens": [
+        "Eșuare la încărcarea codurilor de acces."
+      ],
       "Failed to load breaches for this address": [
         "Încărcarea divulgărilor pentru această adresă a eșuat."
       ],
@@ -1077,6 +1136,9 @@
       ],
       "Failed to load item history": [
         "Încărcarea istoricului articolelor a eșuat."
+      ],
+      "Failed to load token actions": [
+        "Nu s-au putut încărca acțiunile codului de acces."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Eșuare mutare toate articolele din „${ payload.content.name }”."
@@ -1135,6 +1197,9 @@
       "Failed to update random prefix generation setting.": [
         "Nu s-a putut actualiza setarea de generare aleatorie a prefixului."
       ],
+      "Failed to update vault access": [
+        "Actualizarea accesului la seif a eșuat."
+      ],
       "Failed to verify domain": [
         "Verificarea domeniului a eșuat."
       ],
@@ -1185,6 +1250,12 @@
       ],
       "Moving item failed": [
         "Mutarea articolelor a eșuat."
+      ],
+      "Name is required": [
+        "Numele este obligatoriu."
+      ],
+      "Name must be 191 characters or fewer": [
+        "Numele trebuie să aibă maxim 191 de caractere."
       ],
       "Network error": [
         "Eroare de rețea."
@@ -1506,6 +1577,9 @@
         "${ row.breachCount } divulgări detectate",
         "${ row.breachCount } de divulgări detectate"
       ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } selectate"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membru)",
         "(${ memberCount } membri)",
@@ -1540,6 +1614,12 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Codul de acces „${ action.token.Name }” va înceta să funcționeze imediat. Această acțiune nu poate fi anulată."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Codurile de acces, utilizate împreună cu ${ passCliLink }, vă permit să automatizați CI/CD sau să acordați agentului de inteligență artificială acces limitat la ceea ce are nevoie pentru a-și executa sarcina."
       ],
       "Add your custom email address to monitor:": [
         "Adăugați-vă adresa personală la monitorizare:"
@@ -1616,6 +1696,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Înainte de a vă exporta datele cu acest format, accesați Setări Safari -> fila „General” -> dezactivați opțiunea „Deschidere fișiere sigure după descărcare”. Acest lucru va împiedica Safari să extragă incorect fișierul exportat."
       ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Între 60 (o oră) și 525600 (un an)"
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocarea cu date biometrice s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
       ],
@@ -1679,14 +1762,29 @@
       "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
         "Copiat în memorie (expiră peste ${ timeoutDurationHumanReadable })"
       ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copiați textul de mai jos și trimiteți-l agentului personal de inteligență artificială. Acesta este singurul moment în care va fi afișat codul de acces."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copiați acest token acum. Din motive de securitate acesta nu va mai fi afișat."
+      ],
       "Coupon successfully applied!": [
         "Cuponul a fost aplicat!"
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Creați un cod de acces pentru a integra ${ PASS_APP_NAME } cu scripturile și instrumentele personale."
       ],
       "Create contact illustration": [
         "Ilustrare creare contact"
       ],
+      "Created ${ createdDate }": [
+        "Creat la ${ createdDate }"
+      ],
       "Created ${ time }.": [
         "Creat ${ time }."
+      ],
+      "Created item": [
+        "Articol creat."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV oferă un format convenabil pentru a vă vizualiza datele. Cu toate acestea, datorită simplității sale, unele date nu vor fi incluse (câmpuri personale, chei de acces...). Pentru o exportare completă, vă recomandăm să utilizați un alt format."
@@ -1699,6 +1797,9 @@
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
         "Numele afișat implicit pentru aliasurile create cu ${ domainDisplay }, dacă nu este suprascris de numele afișat al aliasului."
+      ],
+      "Deleted item": [
+        "Ștergere articol"
       ],
       "Deleted items will be moved here first": [
         "Articolele șterse vor fi mai întâi mutate aici"
@@ -1720,6 +1821,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domeniu: ${ domainPath } sau @"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descărcare pass-cli de la ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
@@ -1796,14 +1900,30 @@
       "Enter your PIN code": [
         "Introduceți codul PIN"
       ],
+      "Every action this agent token has performed, newest first.": [
+        "Fiecare acțiune efectuată de acest cod de acces pentru agent. Cea mai nouă e cea mai recentă."
+      ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
         "De fiecare dată când aliasul primește un mesaj de la cineva, este creat automat un contact."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expirat acum ${ abs } oră",
+        "Expirat acum ${ abs } ore",
+        "Expirat acum ${ abs } de ore"
       ],
       "Expires in": [
         "Expiră peste"
       ],
+      "Expires in ${ hours } hour": [
+        "Expiră peste ${ hours } oră",
+        "Expiră peste ${ hours } ore",
+        "Expiră peste ${ hours } de ore"
+      ],
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
+      ],
+      "Expires in less than an hour": [
+        "Expiră în mai puțin de o oră"
       ],
       "Exporting your data...": [
         "Se exportă datele..."
@@ -1961,6 +2081,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "Se încarcă ${ PASS_APP_NAME }"
       ],
+      "Log out of any existing session:": [
+        "Deconectare orice sesiune existentă:"
+      ],
       "Logging you out...": [
         "Se deconectează…"
       ],
@@ -1990,6 +2113,9 @@
         "Mutare ${ count } articole.",
         "Mutare ${ count } de articole."
       ],
+      "Moved item to trash": [
+        "Articol mutat în gunoi."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
@@ -2016,14 +2142,26 @@
       "Never": [
         "Niciodată"
       ],
+      "New": [
+        "Nou"
+      ],
+      "No activity recorded yet.": [
+        "Încă nu există activități înregistrate."
+      ],
       "No breaches detected": [
         "Nu există divulgări"
       ],
       "No network connection": [
         "Nu există conexiune la rețea."
       ],
+      "No vaults available.": [
+        "Nu există seifuri disponibile."
+      ],
       "None": [
         "Fără"
+      ],
+      "None selected": [
+        "Nimic selectat."
       ],
       "Not recommended": [
         "Nerecomandat"
@@ -2210,6 +2348,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
+      "Read item": [
+        "Citire articol"
+      ],
       "Reconnect": [
         "Reconectare"
       ],
@@ -2243,6 +2384,9 @@
       "Resetting history will permanently delete all past item versions and cannot be undone.": [
         "Resetarea istoricului va șterge definitiv toate articolele anterioare și nu poate fi anulată."
       ],
+      "Restored item from trash": [
+        "Articol restaurat din gunoi."
+      ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
       ],
@@ -2257,6 +2401,9 @@
       ],
       "Select destination vault": [
         "Selectare seif destinație"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Selectați seifurile pe care „${ token.Name }” le poate citi."
       ],
       "Select vault to share": [
         "Selectați seiful de partajat"
@@ -2333,8 +2480,14 @@
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
         "Atingeți pictograma ${ gearIcon } pentru vă a personaliza aliasul cum doriți."
       ],
+      "Test the token by logging in and listing vaults:": [
+        "Testați codul de acces conectându-vă și listând seifurile:"
+      ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agentul va trebui să ofere un motiv pentru fiecare acțiune pe care o efectuează, iar fiecare acțiune va fi înregistrată într-un jurnal de audit pe care îl puteți consulta. După crearea codului de acces, veți primi instrucțiuni pentru a-l copia și insera în agentul personal de inteligență artificială."
       ],
       "The display name when sending an email from this alias.": [
         "Numele afișat când se trimite un mesaj de la acest alias."
@@ -2368,6 +2521,9 @@
       "The user did not accept the invitation yet.": [
         "Utilizatorul încă nu a acceptat invitația."
       ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Apoi puteți vizita ${ url } pentru a copia instrucțiunile pe care le trimiteți agentului de IA."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
@@ -2400,6 +2556,9 @@
       ],
       "This setting is enforced by your organization": [
         "Această setare este aplicată de organizația proprie"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Acest cod de acces are acces doar pentru citire la seifurile pe care le selectați. Poate citi articolele, dar nu le poate edita, partaja seifuri sau invita alte persoane. Puteți schimba acest lucru ulterior."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
@@ -2464,11 +2623,17 @@
       "Unverified": [
         "Neverificat"
       ],
+      "Updated item": [
+        "Articol actualizat."
+      ],
       "Updating vault organization...": [
         "Se actualizează organizarea seifului..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Modificați-vă acum contul pentru a debloca funcțiile premium"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Treceți la ${ PASS_APP_NAME } Plus pentru a crea coduri de acces și a folosi ${ PASS_APP_NAME } programatic."
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
@@ -2493,6 +2658,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed.": [
         "Seiful „${ share.content.name }\" a fost eliminat."
+      ],
+      "Vault access granted": [
+        "Acces permis la seif."
       ],
       "Vault organization successfully updated": [
         "Organizarea seifului a fost actualizată cu succes."
@@ -2780,6 +2948,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Access tokens": [
+        "Coduri de acces"
+      ],
       "Account": [
         "Cont"
       ],
@@ -3037,6 +3208,9 @@
       ],
       "Expired": [
         "Expirat"
+      ],
+      "Expires in (minutes)": [
+        "Expiră peste (minute)"
       ],
       "Expiry Date": [
         "Dată expirare"
@@ -3680,6 +3854,9 @@
       "Today": [
         "Astăzi"
       ],
+      "Token name": [
+        "Nume cod de acces"
+      ],
       "Total imported items: ": [
         "Total articole importate: "
       ],
@@ -3740,6 +3917,9 @@
       "Update": [
         "Actualizare"
       ],
+      "Use for AI agent": [
+        "Utilizare pentru agentu de IA"
+      ],
       "Used in": [
         "Utilizată în"
       ],
@@ -3751,6 +3931,9 @@
       ],
       "Value:": [
         "Valoare:"
+      ],
+      "Vault access": [
+        "Acces seif"
       ],
       "Vault ID": [
         "ID seif"
@@ -3878,6 +4061,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a fost activat"
+      ],
+      "Access token deleted": [
+        "Codul de acces s-a șters."
       ]
     },
     "Option": {
@@ -4059,6 +4245,12 @@
       "Coupon": [
         "Cupon"
       ],
+      "e.g. 60": [
+        "ex. 60"
+      ],
+      "e.g. My automation script": [
+        "de ex. Scriptul meu de automatizare"
+      ],
       "E.g., ": [
         "Ex.: "
       ],
@@ -4216,6 +4408,20 @@
         "Necunoscută"
       ]
     },
+    "Status": {
+      "Active": [
+        "Activ"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Expirat"
+      ],
+      "Expiring soon": [
+        "Expiră în curând"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronizarea aliasurilor s-a activat. Sincronizarea aliasurilor SimpleLogin ar putea dura ceva timp."
@@ -4306,6 +4512,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Codurile de acces necesită planul ${ PASS_APP_NAME } Plus"
+      ],
       "Account protection": [
         "Protecție cont"
       ],
@@ -4315,11 +4524,17 @@
       "Activity": [
         "Activitate"
       ],
+      "Activity for \"${ token.Name }\"": [
+        "Activitate pentru „${ token.Name }”"
+      ],
       "Add custom domain": [
         "Adăugare domeniu personal"
       ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
+      ],
+      "Agent setup instructions": [
+        "Instrucțiuni de setare agent"
       ],
       "Alias contacts": [
         "Contacte alias"
@@ -4378,6 +4593,9 @@
       "Create contact": [
         "Creare contact"
       ],
+      "Create new access token": [
+        "Creare cod de acces"
+      ],
       "Create PIN code": [
         "Creare cod PIN"
       ],
@@ -4409,6 +4627,9 @@
         "Ștergeți ${ deletedItemsCount } articol?",
         "Ștergeți ${ deletedItemsCount } articole?",
         "Ștergeți ${ deletedItemsCount } de articole?"
+      ],
+      "Delete access token?": [
+        "Ștergeți codul de acces?"
       ],
       "Delete domain": [
         "Ștergere domeniu"
@@ -4524,6 +4745,9 @@
       "Mailbox": [
         "Cont e-mail"
       ],
+      "Manage vault access": [
+        "Gestionare acces la seif"
+      ],
       "Mark as resolved?": [
         "Marcare ca rezolvată?"
       ],
@@ -4560,6 +4784,9 @@
       ],
       "Next": [
         "Următoare"
+      ],
+      "No access tokens yet": [
+        "Încă nu există coduri de acces"
       ],
       "No excluded items": [
         "Nu sunt articole excluse"
@@ -4780,6 +5007,9 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Your new access token": [
+        "Noul cod de acces"
       ],
       "Your vault is empty": [
         "Seiful este gol"
