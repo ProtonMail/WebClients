@@ -557,6 +557,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Go back": [
+        "Înapoi"
+      ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
       ],
@@ -4550,8 +4553,8 @@
       "Select recovery contact ${ name }": [
         "Selectare contact de recuperare ${ name }"
       ],
-      "Send email request": [
-        "Trimitere cerere de e-mail"
+      "Start recovery": [
+        "Începeți recuperarea"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Pentru a dezactiva această metodă de recuperare, eliminați toate contactele de recuperare."
@@ -7257,6 +7260,11 @@
         "Creare server poartă de acces: ${ serverNumber }/${ total }",
         "Creare server poartă de acces: ${ serverNumber }/${ total }",
         "Creare server poartă de acces: ${ serverNumber }/${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Se creează o poartă de acces cu ${ total } server",
+        "Se creează o poartă de acces cu ${ total } servere",
+        "Se creează o poartă de acces cu ${ total } de servere"
       ],
       "Creating your account": [
         "Creare cont"

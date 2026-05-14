@@ -557,6 +557,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Go back": [
+        "Späť"
+      ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
       ],
@@ -4581,8 +4584,8 @@
       "Select recovery contact ${ name }": [
         "Vyberte kontaktnú osobu na obnovenie účtu ${ name }"
       ],
-      "Send email request": [
-        "Odoslať žiadosť emailom"
+      "Start recovery": [
+        "Spustiť obnovu"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Ak chcete túto metódu obnovenia deaktivovať, odstráňte všetky svoje kontakty na obnovenie účtu."
@@ -7354,6 +7357,12 @@
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
         "Vytváranie serverov brány: ${ serverNumber } / ${ total }"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Vytváranie brány s ${ total } serverom",
+        "Vytváranie brány s ${ total } servermi",
+        "Vytváranie brány s ${ total } servermi",
+        "Vytváranie brány s ${ total } servermi"
       ],
       "Creating your account": [
         "Vytvárame váš účet"
