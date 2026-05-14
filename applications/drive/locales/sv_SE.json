@@ -7090,6 +7090,9 @@
       ],
       "Search is in an invalid state": [
         "Sök är i ett ogiltigt tillstånd"
+      ],
+      "File flagged as potentially malicious": [
+        "Fil flaggad som potentiellt skadlig"
       ]
     },
     "info": {
@@ -7871,6 +7874,54 @@
       ],
       "Visible columns:": [
         "Synliga kolumner:"
+      ],
+      "Created ${ created }": [
+        "Skapad ${ created }"
+      ],
+      "Deleted ${ deleted }": [
+        "Ta bort ${ deleted }"
+      ],
+      "Device #${ position }": [
+        "Enhet #${ position }"
+      ],
+      "Device: ${ name }": [
+        "Enhet: ${ name }"
+      ],
+      "Expired on ${ formatted }": [
+        "Löpte ut den ${ formatted }"
+      ],
+      "Expires ${ formatted }": [
+        "Löper ut ${ formatted }"
+      ],
+      "Item #${ position }": [
+        "Objekt #${ position }"
+      ],
+      "Location: ${ item.location }": [
+        "Plats: ${ item.location }"
+      ],
+      "Modified ${ modified }": [
+        "Ändrad ${ modified }"
+      ],
+      "Never expires": [
+        "Löper aldrig ut"
+      ],
+      "Not selected": [
+        "Inte vald"
+      ],
+      "Pending invitation": [
+        "Väntande inbjudan"
+      ],
+      "Selected": [
+        "Valda"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Delad av ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Delad av offentlig länk"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Delad på ${ sharedOn }"
       ]
     },
     "Label for contact group color": {
