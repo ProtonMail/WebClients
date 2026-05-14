@@ -551,6 +551,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Go back": [
+        "Zpět"
+      ],
       "Go to ${ planOrAppName }": [
         "Jít do ${ planOrAppName }"
       ],
@@ -585,7 +588,7 @@
         "Skrýt funkce tarifu"
       ],
       "I don't have my 2FA device": [
-        "Nemám své zařízení pro 2FA ověření"
+        "Nemám své zařízení pro 2FA"
       ],
       "I don't have my key": [
         "Nemám klíč"
@@ -1496,7 +1499,7 @@
         "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
       ],
       "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci udělejte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
+        "Spravujte oprávnění přidělováním konkrétních správcovských rolí. Každému správci přidělte pouze ta oprávnění, která skutečně potřebuje. Tím se řídíte zásadou minimálních oprávnění, která chrání vaši organizaci před zneužitím účtů a náhodnými chybami."
       ],
       "Delegate management with the appropriate admin role.": [
         "Pověřte uživatele správou tak, že mu přiřadíte vhodnou roli správce."
@@ -1517,7 +1520,7 @@
         "Správce zabezpečení:"
       ],
       "User admin:": [
-        "Uživatel Admin:"
+        "Správce uživatelů:"
       ]
     },
     "AdminRole_Info": {
@@ -4320,9 +4323,6 @@
       ],
       "Select recovery contact ${ name }": [
         "Vyberte kontakt pro obnovení ${ name }"
-      ],
-      "Send email request": [
-        "Odeslat žádost e-mailem"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Chcete-li tuto metodu obnovení deaktivovat, odeberte všechny své kontakty pro obnovení."
@@ -7243,7 +7243,7 @@
         "Přetažením provedete import"
       ],
       "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
-        "Díky koncovému šifrování si můžete heslo resetovat, ale ${ DataLockedText }, dokud nepoužijete odkaz ${ DataRecoveryOptionsLink }:"
+        "Díky koncovému šifrování si můžete heslo resetovat, ale ${ DataLockedText }, dokud nepoužijete ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -7615,7 +7615,7 @@
         "Připojení k internetu obnoveno."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Neplatný kód. Zadejte ${ RequestNewCodeLink } a zkuste to znovu."
+        "Neplatný kód. ${ RequestNewCodeLink } a zkuste to znovu."
       ],
       "Invite deleted": [
         "Pozvánka smazána"
@@ -7951,7 +7951,7 @@
         "Uspořádejte dedikované servery do bran a rozhodněte, kteří členové k nim mohou přistupovat."
       ],
       "Other": [
-        "Další"
+        "Ostatní"
       ],
       "Other accounts": [
         "Další účty"
@@ -10563,7 +10563,7 @@
         "Vytvořit alias"
       ],
       "data recovery option": [
-        "Možnosti obnovy dat"
+        "možnost obnovy dat"
       ],
       "Details": [
         "Detaily"
@@ -18667,7 +18667,7 @@
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
-        "Servery začnou běžet v desetidenní deaktivační lhůtě. Tyto servery lze přidat do nové brány, ale jejich zemi nelze změnit."
+        "Servery této brány začnou běžet v desetidenní deaktivační lhůtě. Tyto servery lze přidat do nové brány, ale jejich zemi nelze změnit."
       ],
       "Skip verification?": [
         "Přeskočit ověření?"

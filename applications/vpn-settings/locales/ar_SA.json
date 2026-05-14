@@ -524,6 +524,9 @@
       "Get verification code": [
         "احصل على رمز التحقق"
       ],
+      "Go back": [
+        "رجوع"
+      ],
       "Go to ${ planOrAppName }": [
         "اذهب إلى ${ planOrAppName }"
       ],
@@ -3869,8 +3872,8 @@
       "Select recovery contact ${ name }": [
         "حدد جهة اتصال الاسترداد ${ name }"
       ],
-      "Send email request": [
-        "أرسل طلب بريد إلكتروني"
+      "Start recovery": [
+        "بدء الاسترداد"
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
@@ -14161,6 +14164,26 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "أمّن ملفاتك بتخزين سحابي مشفر. يشمل المزامنة التلقائية، ومشاركة الملفات المشفرة، والمزيد."
+      ]
+    },
+    "Spotlight": {
+      "Assign delegated roles": [
+        "تعيين الأدوار المفوّضة"
+      ],
+      "Assign roles": [
+        "تعيين الأدوار"
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "اضغط على «تعديل» لتعيين الأدوار لهذه المجموعة وإدارة وصول الأعضاء تلقائيًا."
+      ],
+      "New: Roles and permissions tab": [
+        "جديد: علامة تبويب الأدوار والأذونات"
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "افتح علامة التبويب هذه لمنح أذونات محددة بدون صلاحية وصول كاملة للمشرف."
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "يمكنك الآن تعيين الأدوار للمستخدمين الفرديين من علامة التبويب هذه."
       ]
     },
     "sso": {
