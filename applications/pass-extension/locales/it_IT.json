@@ -172,6 +172,9 @@
       "Continue offline": [
         "Continua offline"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Copy and close": [
         "Copia e chiudi"
       ],
@@ -414,6 +417,9 @@
       ],
       "Link expires after": [
         "Il link scade dopo"
+      ],
+      "Load more": [
+        "Carica di più"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Blocca ${ PASS_APP_NAME }"
@@ -1192,6 +1198,9 @@
       ],
       "Moving item failed": [
         "Spostamento dell'elemento non riuscito"
+      ],
+      "Name is required": [
+        "Il nome è obbligatorio"
       ],
       "Network error": [
         "Errore di rete"
@@ -2023,7 +2032,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2045,6 +2055,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "New": [
+        "Nuovo"
       ],
       "No breaches detected": [
         "Nessuna violazione di dati rilevata"
@@ -3707,6 +3720,9 @@
       ],
       "Today": [
         "Oggi"
+      ],
+      "Token name": [
+        "Nome token"
       ],
       "Total imported items: ": [
         "Totale elementi importati: "
