@@ -782,6 +782,27 @@
       ],
       "Don't show this again": [
         "No m'ho torneu a mostrar"
+      ],
+      "Copy instructions": [
+        "Copiar les instruccions"
+      ],
+      "Copy token": [
+        "Copiar el testimoni"
+      ],
+      "Create token": [
+        "Crear un testimoni"
+      ],
+      "Load more": [
+        "Carrega'n més"
+      ],
+      "Manage vault access": [
+        "Gestionar l'accés a la caixa forta"
+      ],
+      "New token": [
+        "Nou testimoni"
+      ],
+      "View agent activity": [
+        "Vegeu l'activitat de l'agent"
       ]
     },
     "App menu": {
@@ -1398,6 +1419,33 @@
       ],
       "A desktop unlock check is already in progress.": [
         "Ja hi ha una comprovació de desbloqueig de l'escriptori en curs."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No s'han pogut carregar les instruccions de configuració de l'agent. Copieu el testimoni a continuació; no es tornarà a mostrar."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La caducitat ha de ser d'entre 60 minuts i 1 any"
+      ],
+      "Failed to create access token": [
+        "No s'ha pogut crear l'identificador d'accés"
+      ],
+      "Failed to delete access token": [
+        "No s'ha pogut eliminar l'identificador d'accés"
+      ],
+      "Failed to load access tokens": [
+        "S'ha produït un error en carregar els identificadors d'accés"
+      ],
+      "Failed to load token actions": [
+        "S'ha produït un error en carregar les accions del testimoni"
+      ],
+      "Failed to update vault access": [
+        "No s'ha pogut actualitzar l'accés a la caixa forta"
+      ],
+      "Name is required": [
+        "Es requereix un nom."
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nom ha de tenir com a màxim 191 caràcters"
       ]
     },
     "Error message": {
@@ -2725,6 +2773,101 @@
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "S'han seleccionat ${ selectedShareIds.size }"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "L'identificador d'accés \"${ action.token.Name }\" deixarà de funcionar immediatament. Aquesta acció no es podrà desfer."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Els identificadors d'accés, utilitzats juntament amb ${ passCliLink }, permeten automatitzar el CI/CD o donar al vostre agent d'IA un accés amb abast a allò que necessita per dur a terme la seva tasca."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) i 525600 (1 any)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copieu el contingut marcat a continuació i envieu-lo al vostre agent d'IA. Aquesta és l'única vegada que es mostrarà el testimoni."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copiar aquest testimoni ara. Per motius de seguretat, no es tornarà a mostrar."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Creeu un testimoni per integrar ${ PASS_APP_NAME } amb els vostres scripts i eines."
+      ],
+      "Created ${ createdDate }": [
+        "S'ha creat ${ createdDate }"
+      ],
+      "Created item": [
+        "S'ha creat l'element"
+      ],
+      "Deleted item": [
+        "S'ha eliminat l'element"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descarregueu-vos pass-cli des de ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Totes les accions que ha realitzat aquest testimoni d'agent, les més recents primer."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Ha caducat fa ${ abs } hora",
+        "Ha caducat fa ${ abs } hores"
+      ],
+      "Expires in ${ hours } hour": [
+        "Caduca en ${ hours } hora",
+        "Caduca en ${ hours } hores"
+      ],
+      "Expires in less than an hour": [
+        "Caduca en menys d'una hora"
+      ],
+      "Log out of any existing session:": [
+        "Tanqueu totes les sessions obertes:"
+      ],
+      "Moved item to trash": [
+        "S'ha mogut l'element a la paperera"
+      ],
+      "New": [
+        "Nova"
+      ],
+      "No activity recorded yet.": [
+        "Encara no s'ha registrat cap activitat."
+      ],
+      "No vaults available.": [
+        "No hi ha cap caixa forta disponible."
+      ],
+      "None selected": [
+        "No se n'ha seleccionat cap"
+      ],
+      "Read item": [
+        "Llegir l'element"
+      ],
+      "Restored item from trash": [
+        "S'ha restaurat l'element de la paperera"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleccioneu les caixes fortes que \"${ token.Name }\" pugui llegir."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Proveu el testimoni iniciant sessió i llistant les caixes fortes:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "L'agent haurà de proporcionar un motiu per cada acció que realitzi, i cada acció es registrarà en un registre d'auditoria que podreu revisar. Després de la creació del testimoni, rebreu instruccions per copiar-lo i enganxar-lo al vostre agent d'IA."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Llavors podeu anar a ${ url } per copiar les instruccions per enviar al vostre agent d'IA."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Aquest testimoni obté accés de només lectura a les caixes fortes que seleccioneu. Pot llegir elements, però no els pot editar, ni compartir caixes fortes, ni convidar altres persones. Podreu canviar-ho més endavant."
+      ],
+      "Updated item": [
+        "S'ha actualitzat l'element"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Milloreu a ${ PASS_APP_NAME } Plus per crear identificadors d'accés i utilitzar ${ PASS_APP_NAME } de manera programàtica."
+      ],
+      "Vault access granted": [
+        "S'ha permès l'accés a la caixa forta"
       ]
     },
     "Keyboard key": {
@@ -3964,6 +4107,21 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Access tokens": [
+        "Identificadors d'accés"
+      ],
+      "Expires in (minutes)": [
+        "Caducarà en (minuts)"
+      ],
+      "Token name": [
+        "Nom del testimoni"
+      ],
+      "Use for AI agent": [
+        "Per a ús de l'agent d'IA"
+      ],
+      "Vault access": [
+        "Accés a la caixa forta"
       ]
     },
     "Link": {
@@ -4028,6 +4186,9 @@
       ],
       "${ reason } has been enabled": [
         "S'ha activat ${ reason } "
+      ],
+      "Access token deleted": [
+        "S'ha eliminat l'identificador d'accés"
       ]
     },
     "Option": {
@@ -4288,6 +4449,12 @@
       ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
+      ],
+      "e.g. 60": [
+        "per exemple: 60"
+      ],
+      "e.g. My automation script": [
+        "per exemple, el meu guió d'automatització"
       ]
     },
     "Security Center - Info": {
@@ -4932,6 +5099,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Els identificadors d'accés requereixen ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Activitat de \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Instruccions de configuració de l'agent"
+      ],
+      "Create new access token": [
+        "Crear un nou identificador d'accés"
+      ],
+      "Delete access token?": [
+        "Voleu eliminar l'identificador d'accés?"
+      ],
+      "Manage vault access": [
+        "Gestionar l'accés a la caixa forta"
+      ],
+      "No access tokens yet": [
+        "Encara no hi ha cap identificador d'accés"
+      ],
+      "Your new access token": [
+        "El vostre nou identificador d'accés"
       ]
     },
     "Title_cloned_item": {
@@ -5283,6 +5474,40 @@
     "Upsell": {
       "Get ${ planName }": [
         "Obtingueu el pla ${ planName }"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Activitat"
+      ],
+      "Activity details could not be loaded.": [
+        "No s'han pogut carregar els detalls de l'activitat."
+      ],
+      "Folder": [
+        "Carpeta"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Reason": [
+        "Motiu"
+      ],
+      "Vault": [
+        "Caixa forta"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Actiu"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Ha caducat"
+      ],
+      "Expiring soon": [
+        "Caducarà aviat"
       ]
     }
   }
