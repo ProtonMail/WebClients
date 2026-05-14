@@ -51,7 +51,7 @@
         "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
     "Accounts": {
@@ -6645,8 +6645,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } не зможа атрымаць доступ да вашага ўліковага запісу пакуль не наступіць чарговы экстранны доступ."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** цяпер з'яўляецца вашым кантактам для аднаўлення. Ён/яна змогуць дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** цяпер з'яўляецца вашым кантактам для аднаўлення. Дадзеныя кантакт зможа дапамагчы вам аднавіць вашы даныя пасля скідання пароля."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "Націсніце **зацвердзіць аднаўленне**, **калі яны пацвердзяць**. Гэта разблакіруе іх зашыфраваныя даныя."
@@ -6686,6 +6686,9 @@
       ],
       "Add recovery contact": [
         "Дадаць кантакт для аднаўлення"
+      ],
+      "Add recovery method": [
+        "Дадаць спосаб аднаўлення"
       ],
       "Added on ${ formattedDate }": [
         "Дададзена ${ formattedDate }"
@@ -6810,9 +6813,6 @@
       "Less than a minute left": [
         "Засталося менш за хвіліну"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Дазвольце карыстальніку ${ user } ведаць, што доступ аднаўляеце менавіта вы."
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Дасягнута максімальная колькасць у ${ limit } кантакт. Выдаліце кантакт і дадайце новы, каб змяніць.",
         "Дасягнута максімальная колькасць у ${ limit } кантакты. Выдаліце кантакт і дадайце новы, каб змяніць.",
@@ -6912,11 +6912,11 @@
       "Select recovery contact ${ name }": [
         "Выберыце кантакт для аднаўлення ${ name }"
       ],
-      "Send email request": [
-        "Адправіць запыт на электронную пошту"
-      ],
       "Send recovery request": [
         "Адправіць запыт на аднаўленне"
+      ],
+      "Start recovery": [
+        "Пачаць аднаўленне"
       ],
       "Stop being recovery contact": [
         "Перастаць быць кантактам для аднаўлення"
@@ -6962,6 +6962,9 @@
       ],
       "Time required before automatically granting them access": [
         "Час, які патрэбны на атрыманне дазволу аўтаматычнага доступу"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Вы павінны мець адрас электроннай пошты або нумар тэлефона для аднаўлення."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
@@ -10729,6 +10732,12 @@
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
         "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }"
       ],
+      "Creating gateway with ${ total } server": [
+        "Стварэнне шлюза з ${ total } серверам",
+        "Стварэнне шлюза з ${ total } серверамі",
+        "варэнне шлюза з ${ total } серверамі",
+        "варэнне шлюза з ${ total } серверамі"
+      ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
       ],
@@ -12155,7 +12164,7 @@
         "Файлы аднаўлення былі ануляваны"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+        "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -12778,29 +12787,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Адключыце **Аднаўленне з дапамогай кантактаў** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Адключыце **Рэзервовае капіяванне даных на прыладзе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Адключыце **Экстранны доступ** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Адключыце **Уваход па QR-кодзе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Адключыце **Аднаўленне па электроннай пошце** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Адключыце **Аднаўленне па нумары тэлефона** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Адключыце **Файл аднаўлення** (анулюе ўсе файлы аднаўлення) для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Адключыце **Скіданне пры актыўным сеансе** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME } захоўвае старыя версіі вашых файлаў, калі вы і іншыя ўдзельнікі сумеснай працы ўносіце змены. Гэта гарантуе, што вы не страціце важныя даныя. Выберыце, як доўга ${ BRAND_NAME } павінен захоўваць папярэднюю версію."
@@ -12834,9 +12825,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Вам неабходны адрас ${ MAIL_APP_NAME }, каб выкарыстоўваць ${ toAppName }."
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "Адключыце ${ PROTON_SENTINEL_NAME } і ўключыце параметр скідання пароля (электронная пошта або SMS), каб выкарыстоўваць гэты спосаб аднаўлення."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правільнай працы, кожны фільтр павінен змяшчаць прынамсі назву і сапраўдны сцэнарый Sieve. Вы можаце ${ link }."
@@ -21458,14 +21446,17 @@
       "Add": [
         "Дадаць"
       ],
+      "Add an emergency contact": [
+        "Дадаць экстранны кантакт"
+      ],
       "Add emergency contacts": [
         "Дадаць экстранныя кантакты"
       ],
       "Add options": [
         "Дадаць параметры"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць атрымаць доступ да вашага ўліковага запісу і скінуць пароль для вас."
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Вашы экстранныя кантакты змогуць атрымаць доступ да вашага ўліковага запісу і скінуць пароль для вас, калі вам гэта будзе неабходна."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць дапамагчы разблакіраваць вашы даныя пасля скідання пароля."
@@ -21511,9 +21502,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Дазволіць сканіраванне QR-кода для ўваходу"
-      ],
-      "Allow trusted friends to sign in": [
-        "Дазволіць давераным сябрам уваходзіць"
       ],
       "Allow trusted friends to unlock your data": [
         "Дазволіць давераным сябрам разблакіроўку вашых даных"
@@ -21601,6 +21589,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "У іх ужо павінен быць уліковы запіс ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "У іх не будзе магчымасці ўбачыць або атрымаць доступ да вашых даных."
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "Гэта функцыя дазволіць вам хутка атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць пароль."
@@ -21879,8 +21870,8 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Адключыце вылучаныя параметры для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Адключыце аднаўленне праз электронную пошту і SMS для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Спампуйце фразу аднаўлення. Яна заўсёды зможа дапамагчы аднавіць доступ да ўліковага ${ BRAND_NAME }."
@@ -22145,7 +22136,7 @@
         "У мэтах бяспекі вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Калі ў вас наладжаны **спосаб аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
+        "Калі ў вас наладжаны **спосаб аднаўлення**, паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
       ],
       "We will contact you again when the password reset is available.": [
         "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."
@@ -23508,29 +23499,11 @@
       "Available on this device": [
         "Даступна на гэтай прыладзе"
       ],
-      "Disable contact-assisted recovery": [
-        "Адключэнне аднаўлення з дапамогай кантакту"
-      ],
-      "Disable device data backup": [
-        "Адключыць рэзервовую копію даных прылады"
-      ],
-      "Disable emergency access": [
-        "Адключыць экстранны доступ"
-      ],
-      "Disable QR code sign-in": [
-        "Адключыць уваход па QR-кодзе"
-      ],
       "Disable recovery by email": [
         "Адключыць аднаўленне па электроннай пошце"
       ],
       "Disable recovery by phone": [
         "Адключыць аднаўленне па нумары тэлефона"
-      ],
-      "Disable recovery file": [
-        "Адключыць файл аднаўлення"
-      ],
-      "Disable signed-in reset": [
-        "Адключыць скіданне пры актыўным сеансе"
       ],
       "Generate a recovery phrase": [
         "Згенерыраваць фразу аднаўлення"
@@ -23540,9 +23513,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Апошняе абнаўленне ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Не кантакт"
       ],
       "Not saved": [
         "Не захавана"
@@ -25309,9 +25279,6 @@
       "Contact us": [
         "Звязацца з намі"
       ],
-      "Contact-assisted recovery": [
-        "Аднаўленне з дапамогай кантакту"
-      ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
       ],
@@ -25422,6 +25389,9 @@
       ],
       "Data recovery": [
         "Аднаўленне даных"
+      ],
+      "Data recovery contacts": [
+        "Кантакты для аднаўлення даных"
       ],
       "Data recovery options": [
         "Параметры аднаўлення даных"

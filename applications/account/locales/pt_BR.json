@@ -2981,6 +2981,9 @@
       "Finalize your migration": [
         "Finalizar sua migração"
       ],
+      "Find out what can be migrated.": [
+        "Descubra o que pode ser migrado."
+      ],
       "Finish setting up your business account": [
         "Conclua a configuração da sua conta empresarial"
       ],
@@ -3111,6 +3114,9 @@
       "Size": [
         "Tamanho"
       ],
+      "Some accounts are not claimed": [
+        "Algumas contas não foram reivindicadas"
+      ],
       "SPF records": [
         "Registros SPF"
       ],
@@ -3122,6 +3128,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "This migration has been completed": [
+        "A migração foi completada"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
@@ -5289,6 +5298,9 @@
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
       ],
+      "We've started importing your last 180 days of emails from Gmail. We'll let you know when it's done.": [
+        "Inciamos a importação de seus últimos 180 dias de e-mail do Gmail. Avisaremos quando estiver pronto."
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Você pode personalizar a lista de domínios onde certas funções automáticas na extensão do navegador ${ PASS_APP_NAME } (preenchimento automático, sugestão automática e salvamento automático) não devem ser executadas."
       ],
@@ -6355,9 +6367,6 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } não poderá acessar sua conta até o próximo acesso de emergência."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** agora é seu contato de recuperação e pode ajudar você a recuperar seus dados após a redefinição de senha."
-      ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Se a confirmação for realizada**, clique em **Aprovar recuperação**. Isso desbloqueará os dados criptografados da conta."
       ],
@@ -6396,6 +6405,9 @@
       ],
       "Add recovery contact": [
         "Adicionar contato de recuperação"
+      ],
+      "Add recovery method": [
+        "Adicionar método de recuperação"
       ],
       "Added on ${ formattedDate }": [
         "Adicionado em ${ formattedDate }"
@@ -6438,6 +6450,9 @@
       ],
       "Contacts": [
         "Contatos"
+      ],
+      "Data recovery contacts": [
+        "Contatos de recuperação de dados"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Dados recuperados com sucesso. Você já pode descriptografar seus dados e arquivos criptografados existentes."
@@ -6516,9 +6531,6 @@
       ],
       "Less than a minute left": [
         "Menos de um minuto restante"
-      ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Informe ${ user } que é realmente você tentando recuperar o acesso."
       ],
       "None": [
         "Nenhum"
@@ -6613,11 +6625,11 @@
       "Select recovery contact ${ name }": [
         "Selecionar contato de recuperação ${ name }"
       ],
-      "Send email request": [
-        "Enviar solicitação por e-mail?"
-      ],
       "Send recovery request": [
         "Enviar solicitação de recuperação"
+      ],
+      "Start recovery": [
+        "Iniciar recuperação"
       ],
       "Stop being recovery contact": [
         "Deixar de ser um contato de recuperação"
@@ -6924,6 +6936,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Falha ao carregar o modal OAuth."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
       ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
@@ -9947,6 +9962,9 @@
       "Are you sure you want to revoke certificate **${ name }**": [
         "Você tem certeza que quer revogar o certificado **${ name }**"
       ],
+      "Are you sure you want to sign out of this account?": [
+        "Tem certeza que deseja desconectar esta conta?"
+      ],
       "Are you sure you want to sort your folders alphabetically?": [
         "Você tem certeza que deseja ordenar suas pastas alfabeticamente?"
       ],
@@ -10279,6 +10297,9 @@
       ],
       "Data recoverable with recovery phrase": [
         "Dados recuperáveis com a frase de recuperação"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "A recuperação de dados requer uma opção de redefinição de senha (e-mail ou SMS)"
       ],
       "dedicated servers": [
         "servidores dedicados"
@@ -20677,6 +20698,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add an emergency contact": [
+        "Adicionar um contato de emergência"
+      ],
       "Add emergency contacts": [
         "Adicionar contatos de emergência"
       ],
@@ -20724,6 +20748,9 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Permitir a leitura de um código QR para iniciar sessão"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Permitir que amigos de confiança desbloqueiem seus dados"
       ],
       "Back to ${ backLink.appNameString }": [
         "Voltar para ${ backLink.appNameString }"
@@ -20823,6 +20850,9 @@
       ],
       "You can use email verification to regain access to your account if you forget your password.": [
         "Você pode usar a verificação por e-mail para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "Your recovery checklist": [
+        "Lista de verificação para sua recuperação"
       ],
       "Your security setup": [
         "Sua configuração de segurança"
@@ -22239,6 +22269,9 @@
       "Assign delegated roles": [
         "Atribuir funções delegadas"
       ],
+      "Assign roles": [
+        "Atribuir funções"
+      ],
       "Earn up to ${ maxRewardAmount } in credit": [
         "Receba até ${ maxRewardAmount } em crédito"
       ],
@@ -22556,26 +22589,11 @@
       "Available on this device": [
         "Disponível neste dispositivo"
       ],
-      "Disable device data backup": [
-        "Desativar o backup de dados do dispositivo"
-      ],
-      "Disable emergency access": [
-        "Desativar acesso de emergência"
-      ],
-      "Disable QR code sign-in": [
-        "Desativar início de sessão por código QR"
-      ],
       "Disable recovery by email": [
         "Desativar recuperação por e-mail"
       ],
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
-      ],
-      "Disable recovery file": [
-        "Desativar arquivo de recuperação"
-      ],
-      "Disable signed-in reset": [
-        "Desativar opção de início de sessão por redefinição"
       ],
       "Generate a recovery phrase": [
         "Gerar uma frase de recuperação"
@@ -22585,9 +22603,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Última atualização em ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Nenhum contato"
       ],
       "Not saved": [
         "Não salvo"
@@ -23333,6 +23348,9 @@
       ],
       "Save 50% for 6 months, and keep full access": [
         "Economize 50% em 6 meses e mantenha o acesso completo"
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "Veja como o ${ MAIL_APP_NAME } se compara e por que nossa independência faz a diferença."
       ],
       "View VPN session details for your organization.": [
         "Veja os detalhes da sessão VPN para sua organização."
@@ -24154,6 +24172,9 @@
       "Can you access your session in the browser?": [
         "Você pode acessar sua sessão no navegador?"
       ],
+      "Can you reach out to your emergency contacts?": [
+        "Você Consegue entrar em contato com o contato de emergência?"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -24268,9 +24289,6 @@
       "Contact us": [
         "Fale conosco"
       ],
-      "Contact-assisted recovery": [
-        "Recuperação assistida por contato"
-      ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
@@ -24379,6 +24397,9 @@
       ],
       "Data recovery": [
         "Recuperação de dados"
+      ],
+      "Data recovery contacts": [
+        "Contatos de recuperação de dados"
       ],
       "Data recovery options": [
         "Opções de recuperação de dados"
@@ -24923,6 +24944,9 @@
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
+      "Lower your cost without losing features": [
+        "Reduza seus custos sem perder os recursos"
+      ],
       "Main password": [
         "Senha principal"
       ],
@@ -25387,6 +25411,9 @@
       ],
       "Snooze:": [
         "Adiar:"
+      ],
+      "Some of your encrypted data is locked": [
+        "Alguns de seus dados criptografado estão bloqueados"
       ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"

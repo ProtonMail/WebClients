@@ -6403,9 +6403,6 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } kommer inte att kunna komma åt ditt konto förrän nästa nödåtkomst."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** är nu din återställningskontakt. De kan hjälpa dig att återställa dina data efter en lösenordsåterställning."
-      ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Om de bekräftar**, klicka **Godkänn återställning**. Detta kommer låsa upp deras krypterade data."
       ],
@@ -6444,6 +6441,9 @@
       ],
       "Add recovery contact": [
         "Lägg till återställningskontakt"
+      ],
+      "Add recovery method": [
+        "Lägg till återställningsmetod"
       ],
       "Added on ${ formattedDate }": [
         "Tillagd den ${ formattedDate }"
@@ -6565,9 +6565,6 @@
       "Less than a minute left": [
         "Mindre än en minut kvar"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Låt ${ user } veta att det verkligen är du som försöker återfå åtkomst."
-      ],
       "None": [
         "Ingen"
       ],
@@ -6661,11 +6658,11 @@
       "Select recovery contact ${ name }": [
         "Välj återställningskontakt ${ name }"
       ],
-      "Send email request": [
-        "Skicka e-postbegäran"
-      ],
       "Send recovery request": [
         "Skicka begäran om återställning"
+      ],
+      "Start recovery": [
+        "Starta återställning"
       ],
       "Stop being recovery contact": [
         "Sluta vara återställningskontakt"
@@ -12210,15 +12207,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
-      ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Kontaktassisterad återställning**."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Nödåtkomst**."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **QR-kodsinloggning**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "För att säkerställa att du inte förlorar viktig data sparar ${ DRIVE_APP_NAME } äldre versioner av dina filer när du och dina medarbetare gör ändringar. Välj hur länge ${ BRAND_NAME } ska behålla tidigare versioner."
@@ -20624,14 +20612,14 @@
       "Add": [
         "Lägg till"
       ],
+      "Add an emergency contact": [
+        "Lägg till en nödkontakt"
+      ],
       "Add emergency contacts": [
         "Lägg till nödkontakter"
       ],
       "Add options": [
         "Lägga till alternativ"
-      ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Lägg till personer du litar på och som du enkelt kan kontakta. De kommer att kunna komma åt ditt konto och återställa ditt lösenord åt dig."
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Lägg till personer du litar på och enkelt kan kontakta. De kommer att kunna hjälpa dig att låsa upp dina data efter du återställt ditt lösenord."
@@ -20668,9 +20656,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Tillåt skanning av en QR-kod för att logga in"
-      ],
-      "Allow trusted friends to sign in": [
-        "Tillåt betrodda vänner att logga in"
       ],
       "Allow trusted friends to unlock your data": [
         "Tillåt betrodda vänner att låsa upp dina data"
@@ -21015,9 +21000,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera de markerade alternativen."
-      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "För att säkerställa att du alltid kan komma åt ditt ${ BRAND_NAME }-konto, ladda ner din återställningsfras."
       ],
@@ -22557,23 +22539,11 @@
       "Available on this device": [
         "Tillgänglig på denna enhet"
       ],
-      "Disable contact-assisted recovery": [
-        "Inaktivera kontaktassisterad återställning"
-      ],
-      "Disable emergency access": [
-        "Inaktivera nödåtkomst"
-      ],
-      "Disable QR code sign-in": [
-        "Inaktivera inloggning med QR-kod"
-      ],
       "Disable recovery by email": [
         "Inaktivera återställning med e-post"
       ],
       "Disable recovery by phone": [
         "Inaktivera återställning med telefon"
-      ],
-      "Disable recovery file": [
-        "Inaktivera återställningsfil"
       ],
       "Generate a recovery phrase": [
         "Generera en återställningsfras"
@@ -22583,9 +22553,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Senast uppdaterad ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Ingen kontakt"
       ],
       "Not saved": [
         "Inte sparat"
@@ -24274,9 +24241,6 @@
       ],
       "Contact us": [
         "Kontakta oss"
-      ],
-      "Contact-assisted recovery": [
-        "Kontaktassisterad återställning"
       ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"

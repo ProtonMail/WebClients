@@ -6522,7 +6522,7 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "在下次紧急访问之前，${ user } 将无法访问您的账户。"
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
         "**${ contact }** 现已成为您的恢复联系人，他们可以在您重置密码后帮助您恢复数据。"
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
@@ -6563,6 +6563,9 @@
       ],
       "Add recovery contact": [
         "添加恢复联系人"
+      ],
+      "Add recovery method": [
+        "添加恢复方法"
       ],
       "Added on ${ formattedDate }": [
         "添加于 ${ formattedDate }"
@@ -6687,9 +6690,6 @@
       "Less than a minute left": [
         "剩余不足 1 分钟"
       ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "让 ${ user } 知道确实是您正在尝试恢复访问权限"
-      ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "已达到 ${ limit } 位联系人的上限。如需更改，请移除一位联系人后再添加新联系人。"
       ],
@@ -6786,11 +6786,11 @@
       "Select recovery contact ${ name }": [
         "选择恢复联系人 ${ name }"
       ],
-      "Send email request": [
-        "发送邮件请求"
-      ],
       "Send recovery request": [
         "发送恢复请求"
+      ],
+      "Start recovery": [
+        "开始恢复"
       ],
       "Stop being recovery contact": [
         "停止作为恢复联系人"
@@ -6834,6 +6834,9 @@
       "Time required before automatically granting them access": [
         "自动授予访问权限前所需的等待时间"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "若要添加恢复联系人，您必须设置密保邮箱或手机。"
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "要禁用此恢复方式，请移除您所有的恢复联系人！"
       ],
@@ -6863,6 +6866,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "我们收到为您的联系人 **${ user }** 解锁加密数据的请求。"
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "我们已向 ${ user } 发送了邮件请求，请让他们确认是您本人正在尝试重新获得访问权限。"
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "我们无法验证恢复数据，是否仍要继续？"
@@ -12394,29 +12400,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "为确保您账户的最高安全性，请禁用**联系人辅助恢复**！"
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "为确保您账户的最高安全性，请禁用**设备数据备份**！"
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "为确保您账户的最高安全性，请禁用**紧急访问**！"
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "为了确保您账户的最高安全性，请禁用 **二维码登录**。"
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "为确保您账户的最高安全性，请禁用**通过密保邮箱恢复**！"
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "为确保您账户的最高安全性，请禁用**通过密保手机恢复**！"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "为确保您账户的最高安全性，请禁用**恢复文件**（作废所有恢复文件）！"
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "为了确保您账户的最高安全性，请禁用 **已登录状态下的重置**。"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "为了确保您不会丢失重要数据，${ DRIVE_APP_NAME } 会在您和您的协作者进行更改时保存文件的旧版本。选择 ${ BRAND_NAME } 应保留先前版本的时间。"
@@ -12450,9 +12438,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
-      ],
-      "To use this recovery method, you must disable ${ PROTON_SENTINEL_NAME } and enable a password reset option (email or SMS).": [
-        "若要使用该恢复方法，您必须禁用 ${ PROTON_SENTINEL_NAME } 并启用密码重置选项（邮件或短信）"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
@@ -20795,14 +20780,17 @@
       "Add": [
         "添加"
       ],
+      "Add an emergency contact": [
+        "添加紧急联系人"
+      ],
       "Add emergency contacts": [
         "添加紧急联系人"
       ],
       "Add options": [
         "添加选项"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "请添加您信任且容易联系的朋友，他们将能够访问您的账户并为您重置密码。"
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "请添加您信任且容易联系的朋友，他们将能够在需要时访问您的账户并为您重置密码。"
       ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "添加您信任且容易联系的朋友。重置密码后，他们将能够帮助您解锁数据。"
@@ -20848,9 +20836,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "允许扫描二维码登录"
-      ],
-      "Allow trusted friends to sign in": [
-        "允许受信任的朋友登录"
       ],
       "Allow trusted friends to unlock your data": [
         "允许受信任的朋友解锁您的数据"
@@ -20938,6 +20923,9 @@
       ],
       "They must already have a ${ BRAND_NAME } Account.": [
         "他们必须已拥有 ${ BRAND_NAME } 账户！"
+      ],
+      "They will not be able to see or access your data.": [
+        "他们将无法查看或访问您的数据！"
       ],
       "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
         "这将让您快速访问 ${ BRAND_NAME } 账户，以便更改密码。"
@@ -21216,9 +21204,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "为确保您账户的最高安全性，请禁用高亮显示的选项！"
-      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "为确保您始终可以访问您的 ${ BRAND_NAME } 账户，请下载您的恢复短语！"
       ],
@@ -22719,29 +22704,11 @@
       "Available on this device": [
         "在此设备上可用"
       ],
-      "Disable contact-assisted recovery": [
-        "禁用联系人辅助恢复"
-      ],
-      "Disable device data backup": [
-        "禁用设备数据备份"
-      ],
-      "Disable emergency access": [
-        "禁用紧急访问"
-      ],
-      "Disable QR code sign-in": [
-        "禁用二维码登录"
-      ],
       "Disable recovery by email": [
         "禁用通过密保邮箱恢复"
       ],
       "Disable recovery by phone": [
         "禁用通过密保手机恢复"
-      ],
-      "Disable recovery file": [
-        "禁用恢复文件"
-      ],
-      "Disable signed-in reset": [
-        "禁用已登录状态下的重置"
       ],
       "Generate a recovery phrase": [
         "生成恢复短语"
@@ -22751,9 +22718,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "最后更新于 ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "暂无联系人"
       ],
       "Not saved": [
         "未保存"
@@ -24409,9 +24373,6 @@
       "Contact us": [
         "联系我们"
       ],
-      "Contact-assisted recovery": [
-        "联系人辅助恢复"
-      ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
@@ -25994,7 +25955,7 @@
         "根据系统设置自动调整日间或夜间模式。"
       ],
       "Click here to learn how to create a customized signature with HTML.": [
-        "点击此处了解如何使用 HTML 创建个性化签名"
+        "点击此处了解如何使用 HTML 创建个性化落款。"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "将此 URL 复制并粘贴到身份供应商的 ACS（断言消费者服务）URL 字段中"

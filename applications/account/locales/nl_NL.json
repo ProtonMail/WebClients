@@ -6473,8 +6473,8 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } zal geen toegang kunnen krijgen tot uw account tot de volgende noodtoegang."
       ],
-      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
-        "**${ contact }** is nu uw herstelcontact. Zij kunnen u helpen uw gegevens te herstellen na het resetten van uw wachtwoord."
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** is nu uw herstelcontact. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw hebt ingesteld."
       ],
       "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
         "**Als zij bevestigen**, klik op **Herstel goedkeuren**. Hiermee worden hun versleutelde gegevens ontgrendeld."
@@ -6514,6 +6514,9 @@
       ],
       "Add recovery contact": [
         "Herstelcontact toevoegen"
+      ],
+      "Add recovery method": [
+        "Herstelmethode toevoegen"
       ],
       "Added on ${ formattedDate }": [
         "Toegevoegd op ${ formattedDate }"
@@ -6556,6 +6559,9 @@
       ],
       "Contacts": [
         "Contactpersonen"
+      ],
+      "Data recovery contacts": [
+        "Herstelcontacten toevoegen"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Gegevens succesvol hersteld. U kunt uw bestaande gegevens en versleutelde bestanden ontsleutelen."
@@ -6634,9 +6640,6 @@
       ],
       "Less than a minute left": [
         "Minder dan een minuut resterend"
-      ],
-      "Let ${ user } know it’s really you trying to regain access.": [
-        "Laat ${ user } weten dat u het echt bent die toegang probeert te krijgen."
       ],
       "Maximum of ${ limit } contact reached. To change, remove a contact and add a new one.": [
         "Maximum van ${ limit } contact werd bereikt. Om dit te wijzigen, verwijdert u een contactpersoon en voegt u een nieuwe toe.",
@@ -6735,11 +6738,11 @@
       "Select recovery contact ${ name }": [
         "Herstelcontact ${ name } selecteren"
       ],
-      "Send email request": [
-        "E-mailverzoek verzenden"
-      ],
       "Send recovery request": [
         "Herstelverzoek verzenden"
+      ],
+      "Start recovery": [
+        "Herstel starten"
       ],
       "Stop being recovery contact": [
         "Niet langer herstelcontact zijn"
@@ -6784,6 +6787,9 @@
       "Time required before automatically granting them access": [
         "Benodigde tijd voordat hen automatisch toegang wordt verleend"
       ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "Om herstel contactpersonen toe te voegen, hebt u een herstel e-mailadres of telefoonnummer nodig."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Om deze herstelmethode uit te schakelen, verwijdert u al uw herstelcontacten."
       ],
@@ -6813,6 +6819,9 @@
       ],
       "We received a request to unlock the encrypted data of your contact **${ user }**.": [
         "We hebben een verzoek ontvangen om de versleutelde gegevens van uw contactpersoon **${ user }** te ontgrendelen."
+      ],
+      "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
+        "We hebben een e-mailverzoek naar ${ user } gestuurd. Laat hen weten dat u het bent die probeert de toegang te herstellen."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "We konden de herstelgegevens niet verifiëren. Toch doorgaan?"
@@ -10440,6 +10449,9 @@
       "Data recoverable with recovery phrase": [
         "Gegevens kunnen worden hersteld met een herstelzin."
       ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Voor gegevensherstel is een optie voor het opnieuw instellen van het wachtwoord vereist (via e-mail of sms)."
+      ],
       "dedicated servers": [
         "toegewijde servers"
       ],
@@ -12240,6 +12252,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
       ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Deze methode voor gegevensherstel vereist een optie om het wachtwoord opnieuw in te stellen (via e-mail of sms)."
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Deze functie vertraagt het verzenden van uw e-mails, waardoor u de kans krijgt om het verzenden ongedaan te maken gedurende het geselecteerde tijdsbestek."
       ],
@@ -12399,29 +12414,11 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
-      "To ensure the highest possible security of your account, disable **Contact-assisted recovery**.": [
-        "Om de hoogst mogelijke veiligheid van uw account te garanderen, schakelt u **Contactondersteund herstel** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **Device data backup**.": [
-        "Om de hoogst mogelijke veiligheid van uw account te garanderen, schakelt u **Back-up van apparaatgegevens** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **Emergency access**.": [
-        "Om de hoogst mogelijke veiligheid van uw account te garanderen, schakelt u **Noodtoegang** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **QR code sign-in**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **aanmelden via QR-code** uit."
-      ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
         "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via herstel-e-mail** uit."
       ],
       "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
         "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via hersteltelefoon** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery file** (void all recovery files).": [
-        "Om de hoogst mogelijke veiligheid van uw account te garanderen, schakelt u **Herstelbestand** uit (alle herstelbestanden ongeldig)."
-      ],
-      "To ensure the highest possible security of your account, disable **Signed-in reset**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Ingelogd resetten** uit."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Om te garanderen dat u geen belangrijke gegevens verliest, bewaart ${ DRIVE_APP_NAME } oude versies van uw bestanden als u en de mensen met wie u samenwerkt veranderingen maken. Selecteer hoe lang ${ BRAND_NAME } vorige versies moet bewaren."
@@ -20962,9 +20959,6 @@
       "Add options": [
         "Opties toevoegen"
       ],
-      "Add people who you trust and can contact easily. They will be able to access your account and reset your password for you.": [
-        "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen toegang krijgen tot uw account en uw wachtwoord voor u opnieuw instellen."
-      ],
       "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
         "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw heeft ingesteld."
       ],
@@ -21009,9 +21003,6 @@
       ],
       "Allow scanning a QR code to sign in": [
         "Sta het scannen van een QR-code toe om in te loggen"
-      ],
-      "Allow trusted friends to sign in": [
-        "Laat vertrouwde vrienden inloggen"
       ],
       "Allow trusted friends to unlock your data": [
         "Laat vertrouwde vrienden uw gegevens ontgrendelen"
@@ -21377,9 +21368,6 @@
       ]
     },
     "Sentinel banner": {
-      "To ensure the highest possible security of your account, disable the highlighted options.": [
-        "Om de hoogst mogelijke veiligheid van uw account te garanderen, schakelt u de gemarkeerde opties uit."
-      ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
         "Download uw herstelzin om ervoor te zorgen dat u altijd toegang heeft tot uw ${ BRAND_NAME }-account."
       ],
@@ -22922,29 +22910,11 @@
       "Available on this device": [
         "Beschikbaar op dit apparaat"
       ],
-      "Disable contact-assisted recovery": [
-        "Schakel contactondersteund herstel uit"
-      ],
-      "Disable device data backup": [
-        "Apparaatback-up uitschakelen"
-      ],
-      "Disable emergency access": [
-        "Schakel noodtoegang uit"
-      ],
-      "Disable QR code sign-in": [
-        "Aanmelden met QR-code uitschakelen"
-      ],
       "Disable recovery by email": [
         "Herstellen via e-mail uitschakelen"
       ],
       "Disable recovery by phone": [
         "Herstellen via telefoon uitschakelen"
-      ],
-      "Disable recovery file": [
-        "Herstelbestand uitschakelen"
-      ],
-      "Disable signed-in reset": [
-        "Resetten bij aanmelding uitschakelen"
       ],
       "Generate a recovery phrase": [
         "Genereer herstelzin"
@@ -22954,9 +22924,6 @@
       ],
       "Last updated ${ formattedUpdateDate }": [
         "Laatst bijgewerkt op ${ formattedUpdateDate }"
-      ],
-      "No contact": [
-        "Geen contact"
       ],
       "Not saved": [
         "Niet opgeslagen"
@@ -24645,9 +24612,6 @@
       ],
       "Contact us": [
         "Contacteer ons"
-      ],
-      "Contact-assisted recovery": [
-        "Contactondersteund herstel"
       ],
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
