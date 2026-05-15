@@ -32,6 +32,7 @@ export const createConnectivityProxy = (): ConnectivityService => {
         check: notImplemented,
         init: notImplemented,
         destroy: notImplemented,
+        syncNavigatorOnline: notImplemented,
 
         setStatus,
         subscribe: pubsub.subscribe,
