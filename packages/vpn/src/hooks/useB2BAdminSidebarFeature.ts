@@ -40,7 +40,6 @@ export const useB2BAdminSidebarFeature = ({
           enabled: true;
           routes: NavResolved;
           sidebar: ReturnType<typeof useSidebarState>;
-          feedback: ReturnType<typeof useKillableFeature>;
           spotlight: ReturnType<typeof useKillableFeature>;
       }
     | { enabled: false; routes: undefined } => {
@@ -49,7 +48,6 @@ export const useB2BAdminSidebarFeature = ({
     const recoveryNotification = useRecoveryNotification(false, false);
 
     const sidebarFeature = useSidebarState();
-    const feedbackFeature = useKillableFeature(constants.AdminSidebarFeedbackKey);
     const spotlightFeature = useKillableFeature(constants.AdminSidebarSpotlightKey);
 
     const B2BLogsVPN = useFlag('B2BLogsVPN');
@@ -69,7 +67,6 @@ export const useB2BAdminSidebarFeature = ({
                 },
             }),
             sidebar: sidebarFeature,
-            feedback: feedbackFeature,
             spotlight: spotlightFeature,
         };
     }
