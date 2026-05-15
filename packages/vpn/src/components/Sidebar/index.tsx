@@ -34,14 +34,11 @@ const useCreateNotifications = () => {
     return { success, failure };
 };
 
-interface Props extends ModalStateProps {
-    onAction: () => void;
-}
 const onSubmit: () => Promise<Either<'ok', 'error'>> = async () => {
     return left('ok');
 };
 
-export const FeedbackModal = (props: Props) => {
+export const FeedbackModal = (props: ModalStateProps) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const notifications = useCreateNotifications();
 
@@ -60,12 +57,10 @@ export const FeedbackModal = (props: Props) => {
 
         status.match({
             left: () => {
-                props.onAction?.();
                 notifications.success();
                 props.onClose?.();
             },
             right: () => {
-                props.onAction?.();
                 notifications.failure();
             },
         });
