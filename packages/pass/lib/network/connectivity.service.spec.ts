@@ -4,7 +4,7 @@ import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
 import type { ConnectivityService } from './connectivity.service';
-import { CONNECTIVITY_CHECK_DELAY, createConnectivityService } from './connectivity.service';
+import { CONNECTIVITY_PROBE_DELAY, createConnectivityService } from './connectivity.service';
 
 /** Mock API - all requests will resolve by default.
  * - `ConnectivityService::check` -> reads `api.getState` directly
@@ -38,6 +38,8 @@ const EXPECTED_PING = {
     method: 'get',
     unauthenticated: true,
     url: 'tests/ping',
+    prioritize: true,
+    timeout: 5_000,
     signal: expect.any(AbortSignal),
 };
 
@@ -47,7 +49,7 @@ const nextTick = () => Promise.resolve();
 /** Verifies the next retry's `check` fires exactly after `delay` ms:
  * - At `delay - 1`: api still not called
  * - At `delay`: api called once more (retry timer fired)
- * Then advances `CONNECTIVITY_CHECK_DELAY` more to settle so the next
+ * Then advances `CONNECTIVITY_PROBE_DELAY` more to settle so the next
  * retry timer is scheduled before the helper returns. */
 const expectNextCheck = async (api: Api, delay: number) => {
     const before = (api as unknown as jest.Mock).mock.calls.length;
@@ -62,7 +64,7 @@ const expectNextCheck = async (api: Api, delay: number) => {
     expect(api).toHaveBeenLastCalledWith(EXPECTED_PING);
 
     /** Settle internal delay so the next retry timer is scheduled */
-    await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+    await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
 };
 
 /** Bootstraps a service and waits for the initial `check` to complete.
@@ -364,7 +366,7 @@ describe('ConnectivityService', () => {
          * Fast-path fires `check()` and rewinds the backoff to FIB[0]. */
         (api as unknown as jest.Mock).mockClear();
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).toHaveBeenCalledTimes(1);
 
         await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
@@ -381,7 +383,7 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).toBe(null);
 
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -399,7 +401,7 @@ describe('ConnectivityService', () => {
         /** navigator was already true — re-dispatching 'online' is a no-op for the fast-path */
         (api as unknown as jest.Mock).mockClear();
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -447,7 +449,7 @@ describe('ConnectivityService', () => {
 
         /** 3. Trigger `check` */
         const checkPromise = service.check();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await checkPromise;
 
         /** 4. Status flipped, handler cancelled by the api subscriber path */
@@ -475,7 +477,7 @@ describe('ConnectivityService', () => {
 
         /** 2. Trigger `check`: ping returns non-ONLINE (api state unchanged) */
         const checkPromise = service.check();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_CHECK_DELAY);
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await checkPromise;
 
         /** 3. Backoff reset: next tick restarts from FIB[0] */
@@ -541,7 +543,7 @@ describe('ConnectivityService', () => {
         await jest.runOnlyPendingTimersAsync();
 
         expect(api).toHaveBeenCalledTimes(1);
-        expect(api).toHaveBeenCalledWith({ method: 'get', unauthenticated: true, url: 'tests/ping' });
+        expect(api).toHaveBeenCalledWith({ ...EXPECTED_PING, signal: undefined });
 
         service.destroy();
     });
