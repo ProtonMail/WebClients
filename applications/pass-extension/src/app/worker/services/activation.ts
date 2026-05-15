@@ -198,9 +198,17 @@ export const createActivationService = () => {
             const fromPage = endpoint === 'page';
             const fromClientApp = fromPopup || fromPage;
 
-            /** Resolve the real connectivity status early on popup wakeup whenever the
-             * worker currently thinks it's offline, regardless of app boot state. */
-            if (fromPopup && !ctx.service.connectivity.online) await ctx.service.connectivity.check();
+            /** Forward the popup's navigator state into the worker's service as
+             * navigator events are unreliable. Drives the same retry handler
+             * transition  as a worker-observed navigator transition would.
+             * Popup-only: see `CONNECTIVITY_SYNC` for the rationale. */
+            if (fromPopup) ctx.service.connectivity.syncNavigatorOnline(payload.online);
+            const revalidateConn = fromPopup && payload.online && !ctx.service.connectivity.online;
+
+            /** Resolve real connectivity status on popup wakeup when the worker thinks
+             * it's offline. Skip the probe entirely if the client signaled offline.
+             * no point pinging when the device itself reports no network. */
+            if (revalidateConn) await ctx.service.connectivity.check();
             const online = ctx.service.connectivity.online;
 
             /* Resume the session immediately if the worker is stale/idle or if the wakeup request
