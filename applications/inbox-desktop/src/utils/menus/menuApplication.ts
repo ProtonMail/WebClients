@@ -15,6 +15,7 @@ import { isProdEnv } from "../isProdEnv";
 import { getSettings, updateSettings } from "../../store/settingsStore";
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { profiler } from "../profiler/profiler";
+import { restartApp } from "../restartApp";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -88,8 +89,7 @@ export const setApplicationMenu = () => {
                                     updateSettings({
                                         disableHardwareAcceleration: !hardwareAccelerationDisabled,
                                     });
-                                    app.relaunch();
-                                    app.exit(0);
+                                    restartApp("toggle-hardware-acceleration");
                                 }
                             });
                     },
@@ -113,8 +113,7 @@ export const setApplicationMenu = () => {
                             .then(({ response }) => {
                                 if (response === 0) {
                                     updateSettings({ chromiumLoggingEnabled: true });
-                                    app.relaunch();
-                                    app.exit(0);
+                                    restartApp("enable-chromium-logging");
                                 }
                             });
                     },
