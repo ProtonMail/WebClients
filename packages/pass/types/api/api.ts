@@ -60,6 +60,8 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     method?: M;
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
+    /** Skips the concurrency-threshold queue. */
+    prioritize?: boolean;
     sideEffects?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
