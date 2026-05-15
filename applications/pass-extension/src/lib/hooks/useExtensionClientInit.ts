@@ -77,7 +77,7 @@ export const useExtensionClientInit = (options: {
             sendMessage.on(
                 message({
                     type: WorkerMessageType.CLIENT_INIT,
-                    payload: { tabId },
+                    payload: { tabId, online: navigator.onLine },
                 }),
                 (response) => {
                     if (response.type === 'success') return response;
