@@ -8,6 +8,7 @@
     "minimumReleaseAge": "3 days",
     "ignoreDeps": [
         "@protontech/drive-sdk",
+        "@proton/proton-foundation-search",
         "@proton-meet/proton-meet-core",
         "roosterjs",
         "emoji-mart",
@@ -21,6 +22,7 @@
     "ignorePaths": [
         "**/node_modules/**",
         "vendor/**",
+        "applications/authenticator/src-tauri/**",
         "applications/pass-extension/safari/**",
         "applications/pass-desktop/native/**",
         "applications/pass-desktop/macOS/**"
