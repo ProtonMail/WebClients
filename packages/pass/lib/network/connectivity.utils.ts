@@ -4,8 +4,11 @@ import type { Maybe } from '@proton/pass/types';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
 export enum ConnectivityStatus {
+    /** Network and API healthy */
     ONLINE = 'ONLINE',
+    /** No network or network error */
     OFFLINE = 'OFFLINE',
+    /** Network but server down or unreachable */
     DOWNTIME = 'DOWNTIME',
 }
 
