@@ -520,13 +520,13 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             logger.info(`[AuthService] auto-resume alarm fired [${status}]`);
 
-            /** Connectivity state may be stale after SW idle-shutdown or a long
-             * gap between alarms. Probe before gating so the switch and the
-             * downstream resume operate on trusted status. `check` also rewinds
-             * the connectivity retry backoff so a recovery is caught sooner. */
-            if (!connectivity.online) await connectivity.check();
-
             if (!connectivity.online) {
+                /** Connectivity state may be stale after SW idle-shutdown or a long
+                 * gap between alarms. Probe before gating so the switch and the
+                 * downstream resume operate on trusted status. `check` also rewinds
+                 * the connectivity retry backoff so a recovery is caught sooner. */
+                await connectivity.check();
+
                 /** DOWNTIME: burn a slot so the chain advances and eventually exhausts.
                  * Extending here would keep the SW alive forever with no progress.
                  * OFFLINE: stop. The connectivity subscriber resumes on reconnect.
