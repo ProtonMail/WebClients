@@ -40,7 +40,16 @@ export const useTransferManagerActions = () => {
         })
     );
 
-    const clearQueue = () => {
+    const clearQueue = async () => {
+        const downloadStore = useDownloadManagerStore.getState();
+        const uploadStore = useUploadQueueStore.getState();
+        const downloadIds = downloadStore.getQueue().map((item) => item.downloadId);
+        const uploadIds = uploadStore.getQueue().map((item) => item.uploadId);
+        // Cancel in-flight transfers first so abort signals propagate before items vanish from the store.
+        await Promise.all([
+            downloadIds.length > 0 ? downloadManager.cancel(downloadIds) : undefined,
+            ...uploadIds.map((id) => uploadManager.cancelUpload(id)),
+        ]);
         clearDownloads();
         clearUploads();
     };
