@@ -1,17 +1,17 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
 
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
-import type { PublicKeyReference } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -39,6 +39,8 @@ type LocalKeyModel = {
     creationTime: Date;
     expirationTime: any;
     isUsedForSending?: boolean;
+    isUsedForSendingFallback: boolean;
+    isActiveSigner: boolean;
     isWKD: boolean;
     isKOO: boolean;
     isExpired: boolean;
@@ -53,6 +55,51 @@ type LocalKeyModel = {
     canBeUntrusted: boolean;
 };
 
+/**
+ * For internal users, following the v6 key integration, additional usage labels
+ * are needed to clarify key usage, and the way key pinning affects it.
+ */
+const getKeyInternalUsageInfo = ({
+    publicKey,
+    model,
+    encryptionEnabled,
+    existsPrimaryKeyV6,
+    supportV6Keys,
+}: {
+    publicKey: PublicKeyReference;
+    model: ContactPublicKeyModelWithApiKeySource;
+    encryptionEnabled?: boolean;
+    existsPrimaryKeyV6: boolean;
+    supportV6Keys: boolean;
+}) => {
+    if (!model.isPGPInternal) {
+        // usage is only relevant for internal users
+        return { isActiveSigner: false, isUsedForSendingFallback: false };
+    }
+
+    const isPrimary = model.primaryKeyFingerprints.has(publicKey.getFingerprint());
+    const isV6Key = publicKey.getVersion() === 6;
+    const hasTrustedKeys = model.trustedFingerprints.size > 0;
+    // the active signer info is only relevant if pinned keys are present,
+    // since they affect the keys passed for verification, and might lead to
+    // verification errors.
+    const isActiveSigner = isPrimary && !isV6Key && hasTrustedKeys;
+
+    if (!encryptionEnabled) {
+        // even with e2ee disabled, message verification is still carried out
+        return { isActiveSigner, isUsedForSendingFallback: false };
+    }
+
+    // if the user has opted-into v6 support, then there is no fallback as the v6 primary key
+    // is used for sending by all their clients.
+    // similarly, if any key has been pinned, then those are always used for sending.
+    const isUsedForSendingFallback = supportV6Keys
+        ? false
+        : existsPrimaryKeyV6 && isPrimary && !isV6Key && !hasTrustedKeys;
+
+    return { isActiveSigner, isUsedForSendingFallback };
+};
+
 const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
     const { viewportWidth } = useActiveBreakpoint();
@@ -62,6 +109,10 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
 
     // translator: Please translate as in the sentence "this key is the primary one"
     const primaryText = c('Key badge').t`Primary`;
+    // translator: Please translate as in the sentence "this key is the fallback one"
+    const fallbackText = c('Key badge').t`Fallback`;
+    // translator: Please translate as in the sentence "this key is the active signer one"
+    const activeSignerText = c('Key badge').t`Active Signer`;
     // translator: Please translate as in the sentence "this key is obsolete"
     const obsoleteText = c('Key badge').t`Obsolete`;
     // translator: Please translate as in the sentence "this key is compromised"
@@ -84,7 +135,21 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
         const allKeys = model.isPGPInternal
             ? [...model.publicKeys.apiKeys]
             : [...model.publicKeys.apiKeys, ...model.publicKeys.pinnedKeys];
+        // TODO keys should be compared in full, not just by fingerprint, to avoid collapsing two rows
+        // where the e.g. the subkeys have changed, or a key has expired
         const uniqueKeys = uniqueBy(allKeys, (publicKey) => publicKey.getFingerprint());
+        // model.encrypt is undefined for internal contacts without pinned keys;
+        // encryption status depends on whether mail e2ee is enabled
+        const encryptionEnabled = model.isPGPInternal
+            ? model.isInternalWithDisabledE2EEForMail === false
+            : model.encrypt;
+        const existsPrimaryKeyV6 =
+            model.isPGPInternal &&
+            !!model.publicKeys.apiKeys.find(
+                (publicKey) =>
+                    publicKey.getVersion() === 6 && model.primaryKeyFingerprints.has(publicKey.getFingerprint())
+            );
+
         const parsedKeys = await Promise.all(
             uniqueKeys.map(async (publicKey, index) => {
                 const armoredPublicKey = await CryptoProxy.exportPublicKey({
@@ -105,13 +170,15 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                 const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
                 const isObsolete = model.obsoleteFingerprints.has(fingerprint);
                 const isCompromised = model.compromisedFingerprints.has(fingerprint);
-                // model.encrypt is undefined for internal contacts without pinned keys;
-                // encryption status depends on whether mail e2ee is enabled
-                const encryptionEnabled = model.isPGPInternal
-                    ? model.isInternalWithDisabledE2EEForMail === false
-                    : model.encrypt;
                 const isUsedForSending =
                     encryptionEnabled && index === 0 && supportsEncryption && !isObsolete && !isCompromised;
+                const { isActiveSigner, isUsedForSendingFallback } = getKeyInternalUsageInfo({
+                    publicKey,
+                    model,
+                    encryptionEnabled,
+                    existsPrimaryKeyV6,
+                    supportV6Keys,
+                });
                 const isWKD = !!model.apiKeysSourceMap[API_KEY_SOURCE.WKD]?.has(fingerprint);
                 const isKOO = !!model.apiKeysSourceMap[API_KEY_SOURCE.KOO]?.has(fingerprint);
                 const isUploaded = index >= totalApiKeys;
@@ -136,6 +203,8 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                     creationTime,
                     expirationTime,
                     isUsedForSending,
+                    isUsedForSendingFallback,
+                    isActiveSigner,
                     isWKD,
                     isKOO,
                     isExpired,
@@ -199,6 +268,8 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                         creationTime,
                         expirationTime,
                         isUsedForSending,
+                        isUsedForSendingFallback,
+                        isActiveSigner,
                         isWKD,
                         isKOO,
                         publicKey,
@@ -218,6 +289,11 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                         const expiration = new Date(expirationTime);
                         const primaryKeyTooltipText = c('PGP Key info')
                             .t`This key is used to encrypt messages to this contact`;
+                        const fallbackKeyTooltipText = c('PGP Key info')
+                            .t`This key is used to encrypt messages to this contact on older apps`;
+                        const activeSignerTooltipText = c('PGP Key info')
+                            .t`This contact currently signs messages with this key`;
+                        const trustedTooltipText = c('PGP Key info').t`This key is used for message verification`;
                         const untrustKeyText = c('PGP Key info').t`We recommend that you "untrust" this key.`;
                         const obsoleteTooltipText = c('PGP Key info')
                             .t`${emailAddress} has marked this key as obsolete. This key can only be used for signature verification.`;
@@ -380,6 +456,24 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                                         {primaryText}
                                     </Badge>
                                 ) : null}
+                                {isUsedForSendingFallback ? (
+                                    <Badge
+                                        type="success"
+                                        data-testid="fallback-key-label"
+                                        tooltip={fallbackKeyTooltipText}
+                                    >
+                                        {fallbackText}
+                                    </Badge>
+                                ) : null}
+                                {isActiveSigner ? (
+                                    <Badge
+                                        type="info"
+                                        tooltip={activeSignerTooltipText}
+                                        data-testid="active-signer-key-label"
+                                    >
+                                        {activeSignerText}
+                                    </Badge>
+                                ) : null}
                                 {isObsolete && !isCompromised ? (
                                     <Badge
                                         type="warning"
@@ -408,7 +502,11 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                                         {kooText}
                                     </Badge>
                                 ) : null}
-                                {isTrusted ? <Badge type="success">{trustedText}</Badge> : null}
+                                {isTrusted ? (
+                                    <Badge type="success" tooltip={trustedTooltipText}>
+                                        {trustedText}
+                                    </Badge>
+                                ) : null}
                                 {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
                                 {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
                             </div>,
