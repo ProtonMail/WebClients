@@ -20,7 +20,6 @@ import { createOnceHandler } from '../apiHandlers';
 import type { ChallengePayload } from '../authentication/interface';
 import { HTTP_ERROR_CODES } from '../errors';
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../fetch/headers';
-import { getDateHeader } from '../fetch/helpers';
 import { createPromise, wait } from '../helpers/promise';
 import { setUID } from '../helpers/sentry';
 import { getItem, removeItem, setItem } from '../helpers/sessionStorage';
@@ -244,7 +243,7 @@ export const createUnauthenticatedApi = (api: Api) => {
                 if (config.url === auth2FAConfig.url && code === PASSWORD_WRONG_ERROR) {
                     throw e;
                 }
-                return await refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
+                return await refreshHandler(UID).then(() => {
                     return apiCallback(config);
                 });
             }
