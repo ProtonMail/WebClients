@@ -1,8 +1,5 @@
 // @ts-check
 
-/** @type {import('@yarnpkg/types')} */
-const {defineConfig} = require(`@yarnpkg/types`);
-
 /**
  * @typedef {import('@yarnpkg/types').Yarn.Constraints.Context} Context
  * @typedef {import('@yarnpkg/types').Yarn.Constraints.Workspace} Workspace
@@ -18,7 +15,7 @@ const {defineConfig} = require(`@yarnpkg/types`);
 const ENFORCE_STAR_DEPENDENCY_FOR = new Set(['@protontech/crypto']);
 /**
  * This rule will enforce that workspaces MUST depend on consistent versions for certain dependencies.
- * The resolved version of such dependencies is handled 
+ * The resolved version of such dependencies is handled
  * @param {Context} context
  */
 function enforceConsistentDependenciesAcrossTheProject({Yarn}) {
@@ -26,12 +23,12 @@ function enforceConsistentDependenciesAcrossTheProject({Yarn}) {
     const unexpectedDependecies = Yarn.dependencies({ident: enforcedDependencyId }).filter(({ range }) => range !== '*');
     if (unexpectedDependecies.length > 0) {
       unexpectedDependecies[0].error(`Unexpected dependency version ${unexpectedDependecies[0].range} for ${enforcedDependencyId}; use '*' instead.`);
-    }      
+    }
   }
 }
 
-module.exports = defineConfig({
+module.exports = {
   constraints: async ctx => {
     enforceConsistentDependenciesAcrossTheProject(ctx);
   },
-});
+};
