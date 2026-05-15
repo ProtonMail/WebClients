@@ -287,7 +287,7 @@ const SheetTabs = memo(function SheetTabs(props: SheetTabsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const moveSheet = useUI.$.sheets.move
-  const handleDragEnd = useEvent<DragEndEvent>((event) => {
+  const handleDragEnd = useEvent((event: DragEndEvent) => {
     const { source } = event.operation
     if (isSortable(source)) {
       const oldIndex = source.initialIndex
