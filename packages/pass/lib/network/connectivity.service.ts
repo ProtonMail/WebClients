@@ -49,7 +49,8 @@ export type ConnectivityState = {
     retryHandler: MaybeNull<ConnectivityRetryHandler>;
 };
 
-export const CONNECTIVITY_CHECK_DELAY = 50; /** ms */
+export const CONNECTIVITY_PROBE_DELAY = 50; /** ms */
+export const CONNECTIVITY_PROBE_TIMEOUT = 5_000; /** ms */
 
 /** Determines effective online state for retry handler transition detection:
  * requires both API reachability and navigator online. This is intentionally
@@ -86,14 +87,23 @@ export const createConnectivityService = ({
 
     /** Internal: pings the server and updates connectivity status. Async-locked
      * so concurrent callers share the same in-flight ping. Used by the retry
-     * handler and by the bootstrap path - external callers go through `check`. */
+     * handler and by the bootstrap path - external callers go through `check`.
+     * `timeout` caps a stalled fetch (eg: Safari hangs offline) at `CONNECTIVITY_PROBE_TIMEOUT`;
+     * API factory classifies the resulting `TimeoutError` as OFFLINE. */
     const probe = asyncLock(async (signal?: AbortSignal): Promise<ConnectivityStatus> => {
-        await api({ ...ping(), unauthenticated: true, signal }).catch(noop);
+        await api({
+            ...ping(),
+            unauthenticated: true,
+            timeout: CONNECTIVITY_PROBE_TIMEOUT,
+            prioritize: true,
+            signal,
+        }).catch(noop);
 
         const status = intoConnectivityStatus(api.getState());
         setStatus(status);
 
-        await wait(CONNECTIVITY_CHECK_DELAY);
+        await wait(CONNECTIVITY_PROBE_DELAY);
+
         return status;
     });
 
