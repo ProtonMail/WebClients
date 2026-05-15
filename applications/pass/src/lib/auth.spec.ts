@@ -7,7 +7,7 @@ import { exposeApi } from '@proton/pass/lib/api/api';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/client';
 import { type AppState, AppStatus } from '@proton/pass/types';
@@ -67,10 +67,13 @@ const core = { settings, i18n: { setLocale: jest.fn() } } as any;
 const authSwitch = { sync: jest.fn() } as any;
 
 /** Connectivity */
-const connectivitySubscribers: ((status: ConnectivityStatus) => void)[] = [];
-const fireConnectivity = (status: ConnectivityStatus) => connectivitySubscribers.forEach((cb) => cb(status));
+const connectivitySubscribers: ((event: ConnectivityEvent) => void)[] = [];
+const fireConnectivity = (event: ConnectivityEvent) => connectivitySubscribers.forEach((cb) => cb(event));
+const fireStatus = (status: ConnectivityStatus) => fireConnectivity({ type: 'status', status });
+const fireNavigatorOnline = () => fireConnectivity({ type: 'navigator-online' });
 const connectivity = {
     online: true,
+    status: ConnectivityStatus.ONLINE,
     check: jest.fn().mockResolvedValue(undefined),
     subscribe: jest.fn((cb) => {
         connectivitySubscribers.push(cb);
@@ -118,6 +121,7 @@ describe('AuthService', () => {
 
         history.location = { pathname: '/', search: '', state: null, hash: '' };
         connectivity.online = true;
+        connectivity.status = ConnectivityStatus.ONLINE;
         appState = getInitialAppState();
         visibility = 'visible';
         connectivitySubscribers.length = 0;
@@ -318,13 +322,22 @@ describe('AuthService', () => {
             authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
         });
 
-        test('connection issue while offline-booted: no state mutation, scheduler advances', async () => {
+        test('DOWNTIME advances the scheduler: no state mutation while offline-booted', async () => {
             setAppState({ status: AppStatus.OFFLINE, booted: true });
+            connectivity.status = ConnectivityStatus.DOWNTIME;
             await authService.config.onSessionFailure({}, offlineError);
 
             expect(app.setStatus).not.toHaveBeenCalled();
             expect(app.setBooted).not.toHaveBeenCalled();
             expect(authService.scheduler.isThrottled()).toBe(true);
+        });
+
+        test('OFFLINE does not advance the scheduler (cooldown is for server downtime only)', async () => {
+            setAppState({ status: AppStatus.OFFLINE, booted: true });
+            connectivity.status = ConnectivityStatus.OFFLINE;
+            await authService.config.onSessionFailure({}, offlineError);
+
+            expect(authService.scheduler.isThrottled()).toBe(false);
         });
 
         test('non-connection error while offline-booted: no-op', async () => {
@@ -404,21 +417,21 @@ describe('AuthService', () => {
         test('connectivity ONLINE transition while offline-booted dispatches', () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
-            fireConnectivity(ConnectivityStatus.ONLINE);
+            fireStatus(ConnectivityStatus.ONLINE);
             expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
         });
 
         test('does not dispatch when connectivity is offline', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = false;
-            fireConnectivity(ConnectivityStatus.OFFLINE);
+            fireStatus(ConnectivityStatus.OFFLINE);
             await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
         test('does not dispatch when not offline-booted', async () => {
             setAppState({ status: AppStatus.AUTHORIZED });
-            fireConnectivity(ConnectivityStatus.ONLINE);
+            fireStatus(ConnectivityStatus.ONLINE);
             await fireVisibility();
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
@@ -430,18 +443,30 @@ describe('AuthService', () => {
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
-        test('throttle gate suppresses connectivity-driven dispatch after a connection-issue failure', async () => {
+        test('throttle gate suppresses connectivity-driven dispatch after a DOWNTIME failure', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
+            connectivity.status = ConnectivityStatus.DOWNTIME;
             await authService.config.onSessionFailure({}, offlineError);
             expect(authService.scheduler.isThrottled()).toBe(true);
-            fireConnectivity(ConnectivityStatus.ONLINE);
+            fireStatus(ConnectivityStatus.ONLINE);
             expect(appStore.dispatch).not.toHaveBeenCalled();
+        });
+
+        test('`navigator-online` event resets the scheduler', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.status = ConnectivityStatus.DOWNTIME;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+
+            fireNavigatorOnline();
+            expect(authService.scheduler.isThrottled()).toBe(false);
         });
 
         test('visibilitychange bypasses the throttle gate (user gesture)', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
+            connectivity.status = ConnectivityStatus.DOWNTIME;
             await authService.config.onSessionFailure({}, offlineError);
             expect(authService.scheduler.isThrottled()).toBe(true);
             await fireVisibility();
@@ -451,6 +476,7 @@ describe('AuthService', () => {
         test('visibilitychange fully resets the scheduler', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
+            connectivity.status = ConnectivityStatus.DOWNTIME;
             await authService.config.onSessionFailure({}, offlineError);
             expect(authService.scheduler.isThrottled()).toBe(true);
             await fireVisibility();
