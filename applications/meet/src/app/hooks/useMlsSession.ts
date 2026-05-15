@@ -17,7 +17,6 @@ interface UseMlsSessionParams {
     isMeetNewJoinTypeEnabled: boolean;
     isMeetNewSwitchJoinTypeEnabled: boolean;
     isMeetSwitchJoinTypeEnabled: boolean;
-    usePreSharedKey: boolean;
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
     updateAdminParticipant: (roomId: string, participantUid: string, participantType: Number) => Promise<void>;
@@ -43,7 +42,6 @@ export const useMlsSession = ({
     isMeetNewJoinTypeEnabled,
     isMeetSwitchJoinTypeEnabled,
     isMeetNewSwitchJoinTypeEnabled,
-    usePreSharedKey,
     getGroupKeyInfo,
     onNewGroupKeyInfo,
     updateAdminParticipant,
@@ -109,31 +107,18 @@ export const useMlsSession = ({
                     // eslint-disable-next-line no-console
                     console.log('Joining room with proposal');
                     try {
-                        await wasmApp.joinRoomWithProposal(
-                            accessToken,
-                            meetingLinkName,
-                            meetingPassword,
-                            usePreSharedKey,
-                            sessionId
-                        );
+                        await wasmApp.joinRoomWithProposal(accessToken, meetingLinkName, meetingPassword, sessionId);
                     } catch (error) {
                         // fallback to join with external commit
                         await wasmApp.joinMeetingWithAccessToken(
                             accessToken,
                             meetingLinkName,
                             meetingPassword,
-                            usePreSharedKey,
                             sessionId
                         );
                     }
                 } else {
-                    await wasmApp.joinMeetingWithAccessToken(
-                        accessToken,
-                        meetingLinkName,
-                        meetingPassword,
-                        usePreSharedKey,
-                        sessionId
-                    );
+                    await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, meetingPassword, sessionId);
                 }
             }
 
