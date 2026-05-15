@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Key } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -53,7 +53,7 @@ const KeysStatus = ({
                 key: 'primary-fallback',
                 // no primary-fallback for user keys
                 tooltip: c('Tooltip')
-                    .t`This is the default key used by other ${MAIL_APP_NAME} users on older mobile apps to encrypt data they send to you`,
+                    .t`This is the default key used by other ${MAIL_APP_NAME} users on older apps to encrypt data they send to you`,
                 title: keyStatusBadgeTitles.fallback,
                 type: 'success',
             } as const),
