@@ -52,7 +52,7 @@ describe('EditEmailSubscription', () => {
         render(<EditEmailSubscription />);
 
         expect(screen.getByText('Proton important announcements'));
-        expect(screen.getByText('Proton for Business newsletter'));
+        expect(screen.getByText('Proton for Business communications'));
         expect(screen.getByText('Proton newsletter'));
         expect(screen.getByText('Proton offers and promotions'));
         expect(screen.getByText('Proton welcome emails'));
@@ -67,7 +67,7 @@ describe('EditEmailSubscription', () => {
         render(<EditEmailSubscription />);
 
         expect(screen.getByText('Proton important announcements'));
-        expect(screen.getByText('Proton for Business newsletter'));
+        expect(screen.getByText('Proton for Business communications'));
         expect(screen.getByText('Proton newsletter'));
         expect(screen.getByText('Proton offers and promotions'));
         expect(screen.getByText('Proton welcome emails'));
