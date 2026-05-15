@@ -20,10 +20,10 @@
         "test:ci": "jest --coverage --runInBand --ci --passWithNoTests"
     },
     "dependencies": {
-        "@dnd-kit/collision": "^0.4.0",
-        "@dnd-kit/dom": "^0.4.0",
-        "@dnd-kit/helpers": "^0.4.0",
-        "@dnd-kit/react": "^0.4.0",
+        "@dnd-kit/collision": "0.3.2",
+        "@dnd-kit/dom": "0.3.2",
+        "@dnd-kit/helpers": "0.3.2",
+        "@dnd-kit/react": "0.3.2",
         "@proton/atoms": "workspace:^",
         "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",
