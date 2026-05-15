@@ -19,7 +19,6 @@ export type ApiAuth =
 export type ApiState = {
     appVersionBad: boolean;
     online: boolean;
-    pendingConnectivityChange: number;
     pendingCount: number;
     queued: Awaiter<void>[];
     refreshing: boolean;
@@ -29,6 +28,7 @@ export type ApiState = {
     serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
+    ticksUntilOnline: number;
     unreachable: boolean;
 };
 
