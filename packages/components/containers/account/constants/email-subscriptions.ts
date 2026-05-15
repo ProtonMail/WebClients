@@ -58,8 +58,8 @@ export const getEmailSubscriptions = (
         {
             id: 'business',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.BUSINESS,
-            title: c('news').t`${BRAND_NAME} for Business newsletter`,
-            frequency: c('news').t`1 email per month`,
+            title: c('news').t`${BRAND_NAME} for Business communications`,
+            frequency: c('news').t`1-2 emails per month`,
         },
         {
             id: 'features',
@@ -158,7 +158,7 @@ export const getEmailSubscriptions = (
     ].filter(filter);
 
     return {
-        general: { title: c('news').t`Email subscriptions`, toggles: general },
+        general: { title: c('news').t`Email communications`, toggles: general },
         product: { title: c('news').t`Product updates`, toggles: product },
         notifications: { title: c('news').t`Application notifications`, toggles: notifications },
     };
