@@ -216,7 +216,7 @@ export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQU
 export type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 
-export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
+export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId; online: boolean }>;
 export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
