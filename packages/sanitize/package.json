@@ -15,12 +15,12 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "dompurify": "^3.4.0"
+        "dompurify": "^3.4.2"
     },
     "devDependencies": {
         "eslint": "^9.39.4",
-        "jest": "^30.3.0",
-        "jest-environment-jsdom": "^30.3.0",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
         "ts-jest": "^29.4.9",
         "typescript": "^6.0.2"
     }

@@ -25,10 +25,10 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "@protontech/drive-sdk": "^0.15.1",
-        "@types/node": "^24.12.2",
+        "@types/node": "^24.12.4",
         "@xmldom/xmldom": "^0.9.10",
         "core-js": "^3.49.0",
-        "exifreader": "^4.37.1",
+        "exifreader": "^4.38.1",
         "heic-to": "^1.4.2",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
@@ -44,13 +44,13 @@
         "@testing-library/user-event": "^14.6.1",
         "@types/jest": "^30.0.0",
         "eslint": "^9.39.4",
-        "jest": "^30.3.0",
+        "jest": "^30.4.2",
         "jest-when": "3.7.0",
         "ts-jest": "^29.4.9",
         "ts-loader": "^9.5.7",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.2",
-        "webpack": "^5.105.4",
+        "webpack": "^5.106.2",
         "webpack-cli": "^7.0.2"
     }
 }
