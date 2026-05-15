@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { shallowEqual } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,8 +8,7 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
-import { selectConversations } from '../../redux/selectors';
-import { sortByDate } from '../../util/date';
+import { selectStarredConversationsSorted } from '../../redux/selectors';
 import RecentChatsList from '../sidepanel/RecentChatsList';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
 
@@ -19,22 +18,11 @@ interface FavoritesSidebarSectionProps {
 }
 
 export const FavoritesSidebarSection = ({ showText, onItemClick }: FavoritesSidebarSectionProps) => {
-    const conversationMap = useLumoSelector(selectConversations);
+    const favorites = useLumoSelector(selectStarredConversationsSorted, shallowEqual);
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
     const { isGhostChatMode } = useGhostChat();
 
-    const favorites = useMemo(() => {
-        if (isGuest) return [];
-
-        const conversations = Object.values(conversationMap).filter(
-            (conversation) => !conversation.ghost && conversation.starred === true
-        );
-
-        return conversations.sort(sortByDate('desc'));
-    }, [conversationMap, isGuest]);
-
-    // Don't render section if no favorites
     if (favorites.length === 0 || isGuest || isGhostChatMode) {
         return null;
     }
