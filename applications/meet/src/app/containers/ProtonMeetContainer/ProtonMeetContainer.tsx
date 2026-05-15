@@ -110,7 +110,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
-    const usePreSharedKey = useFlag('MeetPreSharedKey');
     const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
 
     useWakeLock();
@@ -290,7 +289,6 @@ export const ProtonMeetContainer = ({ room, keyProvider, user = null }: ProtonMe
         isMeetNewJoinTypeEnabled,
         isMeetNewSwitchJoinTypeEnabled,
         isMeetSwitchJoinTypeEnabled,
-        usePreSharedKey,
         getGroupKeyInfo,
         onNewGroupKeyInfo,
         updateAdminParticipant,
