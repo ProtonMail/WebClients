@@ -87,7 +87,7 @@ export const TransferManager = ({
         setMinimized((value) => !value);
     };
 
-    const onClose = () => {
+    const onClose = async () => {
         if (status === TransferManagerStatus.InProgress || status === TransferManagerStatus.Failed) {
             void showConfirmModal({
                 title: c('Title').t`Stop transfers?`,
@@ -99,7 +99,7 @@ export const TransferManager = ({
                 canUndo: true,
             });
         } else {
-            clearQueue();
+            await clearQueue();
         }
     };
 
