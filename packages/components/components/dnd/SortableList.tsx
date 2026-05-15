@@ -15,7 +15,7 @@ export const SortableList = ({
     children: ReactNode;
     containerRef?: RefObject<HTMLElement>;
 }) => {
-    const handleDragEnd = (event: DragEndEvent) => {
+    const handleDragEnd: DragEndEvent = (event) => {
         const { operation } = event;
         const { source } = operation;
         if (isSortable(source)) {
