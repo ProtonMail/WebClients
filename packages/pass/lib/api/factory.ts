@@ -1,4 +1,5 @@
 import { updateServerTime } from '@protontech/crypto/serverTime';
+
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
 import {
@@ -20,6 +21,7 @@ import {
     getApiError,
     getApiErrorMessage,
     getIsOfflineError,
+    getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -86,7 +88,7 @@ export const createApi = ({
         const pending = state.get('pendingCount') + 1;
         state.set('pendingCount', pending);
 
-        if (threshold && pending > threshold) {
+        if (threshold && pending > threshold && !options.prioritize) {
             const trigger = awaiter<void>();
             state.get('queued').push(trigger);
             await trigger;
@@ -148,9 +150,11 @@ export const createApi = ({
                 const silent = getSilenced(options, code);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
+                const timedOut = getIsTimeoutError(e);
+                const offline = getIsOfflineError(e);
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
                 const restricted = isAccessRestricted(code, options.url);
-                const online = !(getIsOfflineError(e) || networkError);
+                const online = !(offline || timedOut || networkError);
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
                 const sessionInactive = e.name === 'InactiveSession' || code === PassErrorCode.SRP_ERROR;
