@@ -31,6 +31,9 @@ export interface ConnectivityService {
     setStatus: (status: ConnectivityStatus) => void;
     /** Subscribe to connectivity status change notifications */
     subscribe: (subscriber: Subscriber<ConnectivityStatus>) => () => void;
+    /** Sync navigator online state into the service. Extension only usage
+     * to forward client-side signals when worker navigator events are unreliable. */
+    syncNavigatorOnline: (online: boolean) => void;
 }
 
 export type GetRetryTimeout = (status: ConnectivityStatus, retryCount: number) => number;
@@ -168,18 +171,20 @@ export const createConnectivityService = ({
         }
     };
 
-    const init = async () => {
-        const onNavigatorEvent = () => {
-            const wasOnline = isEffectivelyOnline(state);
-            const wasNavigatorOnline = state.navigatorOnline;
-            state.navigatorOnline = navigator.onLine;
+    const syncNavigatorOnline = (online: boolean): void => {
+        const wasOnline = isEffectivelyOnline(state);
+        const wasNavigatorOnline = state.navigatorOnline;
+        state.navigatorOnline = online;
 
-            /** Navigator just transitioned offline → online: probe immediately and rewind
-             * the retry backoff so recovery doesn't wait on the next retry tick. Gated on
-             * the transition to skip spurious online-while-online events. */
-            if (!wasNavigatorOnline && state.navigatorOnline && state.retryHandler) void check();
-            else onConnectivityChange(wasOnline);
-        };
+        /** Navigator just transitioned offline → online: probe immediately and rewind
+         * the retry backoff so recovery doesn't wait on the next retry tick. Gated on
+         * the transition to skip spurious online-while-online events. */
+        if (!wasNavigatorOnline && state.navigatorOnline && state.retryHandler) void check();
+        else onConnectivityChange(wasOnline);
+    };
+
+    const init = async () => {
+        const onNavigatorEvent = () => syncNavigatorOnline(navigator.onLine);
 
         const onApiEvent: Subscriber<ApiSubscriptionEvent> = (event) => {
             if (event.type === 'connectivity') {
@@ -221,6 +226,7 @@ export const createConnectivityService = ({
         check,
         setStatus,
         subscribe: (subscriber) => pubsub.subscribe(subscriber),
+        syncNavigatorOnline,
         init,
         destroy,
     };
