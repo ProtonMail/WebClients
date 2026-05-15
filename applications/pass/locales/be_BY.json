@@ -768,6 +768,12 @@
       ],
       "Load more": [
         "Загрузіць больш"
+      ],
+      "New token": [
+        "Новы токен"
+      ],
+      "View agent activity": [
+        "Паглядзець актыўнасць агента"
       ]
     },
     "Browser": {
@@ -1367,6 +1373,21 @@
       ],
       "Name is required": [
         "Патрабуецца назва"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Немагчыма загрузіць інструкцыі па наладцы агента. Скапіюйце токен ніжэй, бо ён больш не будзе паказаны."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Тэрмін дзеянне павінен быць у інтэрвале паміж 60 хвілінамі і 1 годам"
+      ],
+      "Failed to create access token": [
+        "Не ўдалося стварыць токен доступу"
+      ],
+      "Failed to load access tokens": [
+        "Не ўдалося загрузіць токены доступу"
+      ],
+      "Failed to load token actions": [
+        "Не ўдалося загрузіць дзеянні токена"
       ]
     },
     "Error message": {
@@ -2729,6 +2750,57 @@
       ],
       "Updated item": [
         "Абноўленыя элементы"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Токен доступу \"${ action.token.Name }\" ужо пратэрмінаваны. Ён больш не будзе паказаны, калі выдалены."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Токены доступу, якія выкарыстоўваюцца разам з ${ passCliLink }, дазваляюць аўтаматызаваць CI/CD або даць вашаму агенту ШІ абмежаваны доступ да рэсурсаў, якія яму неабходны для выканання яго задач."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Скапіюйце гэты токен цяпер. У мэтах бяспекі, ён больш не будзе паказаны."
+      ],
+      "Created ${ createdDate }": [
+        "Створана ${ createdDate }"
+      ],
+      "Deleted item": [
+        "Выдалены элемент"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Спампаваць pass-cli з ${ passCliLink }."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Мінуў ${ abs } гадзіну таму",
+        "Мінуў ${ abs } гадзіны таму",
+        "Мінуў ${ abs } гадзін таму",
+        "Мінуў ${ abs } гадзін таму"
+      ],
+      "Expires in ${ hours } hour": [
+        "Міне праз ${ hours } хвіліну",
+        "Міне праз ${ hours } хвіліны",
+        "Міне праз ${ hours } хвілін",
+        "Міне праз ${ hours } хвілін"
+      ],
+      "Expires in less than an hour": [
+        "Тэрмін дзеяння міне менш чым праз гадзіну"
+      ],
+      "None selected": [
+        "Нічога не выбрана"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Паказаны толькі токены, якія пратэрмінаваны за апошнія 30 дзён. Больш старыя токены аўтаматычна выдалены."
+      ],
+      "Read item": [
+        "Прачытаць элемент"
+      ],
+      "Restored item from trash": [
+        "Элемент адноўлены са сметніцы"
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Пратэсціруйце токены і паглядзіце спіс сховішчаў:"
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Гэты токен дае доступ толькі на чытанне для сховішчаў, якія вы выбралі. Ён можа чытаць элементы, але не можа рэдагаваць іх, абагульваць сховішчы або запрашаць іншых. Гэта можна змяніць пазней."
       ]
     },
     "Keyboard key": {
@@ -3936,6 +4008,15 @@
       ],
       "Token name": [
         "Назва токена"
+      ],
+      "Access tokens": [
+        "Токены доступу"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Пратэрмінаваныя токены (${ expired.length })"
+      ],
+      "Expires in (minutes)": [
+        "Міне праз (хвілін)"
       ]
     },
     "Link": {
@@ -4255,6 +4336,9 @@
       ],
       "e.g. My automation script": [
         "напрыклад, мой сцэнарый аўтаматызацыі"
+      ],
+      "e.g. 60": [
+        "напрыклад, 60"
       ]
     },
     "Security Center - Info": {
@@ -4915,6 +4999,18 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Токены доступу патрабуюць ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Актыўнасць для \"${ token.Name }\""
+      ],
+      "Delete access token?": [
+        "Выдаліць токен доступу?"
+      ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
       ]
     },
     "Title_cloned_item": {
@@ -5276,6 +5372,17 @@
     "Status": {
       "Agent": [
         "Агент"
+      ],
+      "Active": [
+        "Актыўны"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Актыўнасць"
+      ],
+      "Reason": [
+        "Прычына"
       ]
     }
   }
