@@ -8,7 +8,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -662,7 +662,7 @@ describe('Extension AuthService', () => {
         });
 
         describe('Connectivity events', () => {
-            let subscriber: (status: ConnectivityStatus) => void;
+            let subscriber: (event: ConnectivityEvent) => void;
 
             beforeEach(() => {
                 jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
@@ -674,7 +674,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from offline-booted client', () => {
                 ctx.status = AppStatus.OFFLINE;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
@@ -683,7 +683,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from password-locked status', () => {
                 ctx.status = AppStatus.PASSWORD_LOCKED;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
@@ -692,7 +692,7 @@ describe('Extension AuthService', () => {
             test('should bootstrap auto-resume alarm when coming online from errored status', () => {
                 ctx.status = AppStatus.ERROR;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
@@ -701,7 +701,7 @@ describe('Extension AuthService', () => {
             test('should noop when network goes offline', () => {
                 ctx.status = AppStatus.OFFLINE;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.OFFLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.OFFLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
@@ -710,7 +710,7 @@ describe('Extension AuthService', () => {
             test('should noop when online and already booted online', () => {
                 ctx.status = AppStatus.READY;
                 ctx.booted = true;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
             });
@@ -718,7 +718,7 @@ describe('Extension AuthService', () => {
             test('should noop when online but status is idle', () => {
                 ctx.status = AppStatus.IDLE;
                 ctx.booted = false;
-                subscriber(ConnectivityStatus.ONLINE);
+                subscriber({ type: 'status', status: ConnectivityStatus.ONLINE });
                 expect(auth.alarms.scheduleAutoResume).not.toHaveBeenCalled();
                 expect(auth.init).not.toHaveBeenCalled();
             });
