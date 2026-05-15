@@ -26,8 +26,8 @@ const importPhoneFields = (label: string, value: KeeperPhoneField): Deobfuscated
 
 function isKeeperPhoneField(
     label: string,
-    value: KeeperCustomFieldValue
-): value is KeeperPhoneField | KeeperPhoneField[] {
+    _value: KeeperCustomFieldValue
+): _value is KeeperPhoneField | KeeperPhoneField[] {
     return label.startsWith('$phone:');
 }
 
