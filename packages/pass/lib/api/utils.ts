@@ -11,7 +11,6 @@ export const buildApiState = () =>
     objectHandler<ApiState>({
         appVersionBad: false,
         online: true,
-        pendingConnectivityChange: 0,
         pendingCount: 0,
         queued: [],
         refreshing: false,
@@ -19,6 +18,7 @@ export const buildApiState = () =>
         serverTime: undefined,
         sessionInactive: false,
         sessionLocked: false,
+        ticksUntilOnline: 0,
         unreachable: false,
     });
 
