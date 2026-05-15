@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -9,15 +9,18 @@ import { Href } from '@proton/atoms/Href/Href';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
+import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import { getTokenStatus } from '@proton/pass/lib/access-token/access-token.utils';
 import { deleteAccessToken, getAccessTokens } from '@proton/pass/store/actions';
 import { selectAccessTokens, selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { partition } from '@proton/pass/utils/array/partition';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AccessTokenCard } from './AccessTokenCard';
@@ -39,6 +42,11 @@ const AccessTokensList: FC = () => {
 
     const [action, setAction] = useState<MaybeNull<Action>>(null);
     const [reveal, setReveal] = useState<MaybeNull<{ envVar: string; agent: boolean }>>(null);
+
+    const [expired, active] = useMemo(
+        () => partition(tokens, (t) => getTokenStatus(t.ExpireTime) === 'expired'),
+        [tokens]
+    );
 
     useEffect(() => list.dispatch(), []);
 
@@ -65,6 +73,16 @@ const AccessTokensList: FC = () => {
         </Button>
     );
 
+    const renderTokenCard = (token: PersonalAccessToken) => (
+        <AccessTokenCard
+            key={token.PersonalAccessTokenID}
+            token={token}
+            onDelete={(t) => setAction({ type: 'delete', token: t })}
+            onManageAccess={(t) => setAction({ type: 'manage-access', token: t })}
+            onViewActions={(t) => setAction({ type: 'view-actions', token: t })}
+        />
+    );
+
     const renderContent = () => {
         if (!list.loading && tokens.length === 0) {
             return (
@@ -80,17 +98,15 @@ const AccessTokensList: FC = () => {
 
         return (
             <div className="flex flex-column gap-2">
-                {tokens.map((token) => (
-                    <AccessTokenCard
-                        key={token.PersonalAccessTokenID}
-                        token={token}
-                        onDelete={(t) => setAction({ type: 'delete', token: t })}
-                        onManageAccess={(t) => setAction({ type: 'manage-access', token: t })}
-                        onViewActions={(t) => setAction({ type: 'view-actions', token: t })}
-                    />
-                ))}
-
+                {active.map(renderTokenCard)}
                 {createNewTokenBtn}
+                {expired.length > 0 && (
+                    <CollapsibleSection className="mt-3" label={c('Label').t`Expired tokens (${expired.length})`}>
+                        <div className="color-weak text-sm mb-4">{c('Info')
+                            .t`Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.`}</div>
+                        <div className="flex flex-column gap-2">{expired.map(renderTokenCard)}</div>
+                    </CollapsibleSection>
+                )}
             </div>
         );
     };
@@ -110,8 +126,11 @@ const AccessTokensList: FC = () => {
                         title={c('Title').t`Delete access token?`}
                         message={
                             <span className="text-break">
-                                {c('Info')
-                                    .t`Access token "${action.token.Name}" will stop working immediately. This action cannot be undone.`}
+                                {getTokenStatus(action.token.ExpireTime) === 'expired'
+                                    ? c('Info')
+                                          .t`Access token "${action.token.Name}" is already expired. If deleted, it will no longer be shown.`
+                                    : c('Info')
+                                          .t`Access token "${action.token.Name}" will stop working immediately. This action cannot be undone.`}
                             </span>
                         }
                         confirmText={c('Action').t`Delete`}

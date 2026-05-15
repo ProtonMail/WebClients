@@ -22,7 +22,11 @@ const PASS_PAT_BASE_URL = 'pass/v1/personal-access-token';
 
 /** Lists all access tokens  */
 export const listPersonalAccessTokens = async (): Promise<PersonalAccessToken[]> => {
-    const response = await api<ListPersonalAccessTokensResponse>({ url: PAT_BASE_URL, method: 'get' });
+    const response = await api<ListPersonalAccessTokensResponse>({
+        url: PAT_BASE_URL,
+        method: 'get',
+        params: { IncludeExpired: 1 },
+    });
     return response.PersonalAccessTokens.PersonalAccessTokens ?? [];
 };
 

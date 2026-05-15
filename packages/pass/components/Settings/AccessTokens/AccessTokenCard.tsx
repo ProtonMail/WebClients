@@ -9,6 +9,7 @@ import { IcKey } from '@proton/icons/icons/IcKey';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import { type TokenStatus, getTokenStatus } from '@proton/pass/lib/access-token/access-token.utils';
 import { epochHoursFromNow } from '@proton/pass/utils/time/epoch';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
@@ -27,9 +28,6 @@ type Props = {
     onViewActions: (token: PersonalAccessToken) => void;
 };
 
-type TokenStatus = 'active' | 'expiring' | 'expired';
-
-const EXPIRING_SOON_THRESHOLD = 3600;
 const BADGE_CLASSNAMES = `m-0 text-sm px-1.5 shrink-0`;
 
 const getStatusBadge = (status: TokenStatus): { label: string; type: BadgeType } => {
@@ -52,13 +50,6 @@ const getExpiryLabel = (expireTime: number): string => {
 
     if (hours === 0) return c('Info').t`Expires in less than an hour`;
     return c('Info').ngettext(msgid`Expires in ${hours} hour`, `Expires in ${hours} hours`, hours);
-};
-
-const getTokenStatus = (expireTime: number): TokenStatus => {
-    const now = Math.floor(Date.now() / 1000);
-    if (expireTime < now) return 'expired';
-    if (expireTime - now <= EXPIRING_SOON_THRESHOLD) return 'expiring';
-    return 'active';
 };
 
 export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, onViewActions }) => {
@@ -89,7 +80,10 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
                     </Badge>
                     {token.Flags?.PassAgent && (
                         <Badge type="info" className={BADGE_CLASSNAMES}>
-                            {c('Status').t`Agent`}
+                            {
+                                // translator: it's an item for "AI Agent"
+                                c('Status').t`Agent`
+                            }
                         </Badge>
                     )}
                 </div>
@@ -108,11 +102,13 @@ export const AccessTokenCard: FC<Props> = ({ token, onDelete, onManageAccess, on
                 pill={false}
                 originalPlacement="bottom-end"
             >
-                <DropdownMenuButton
-                    label={c('Action').t`Manage vault access`}
-                    icon="pass-all-vaults"
-                    onClick={() => onManageAccess(token)}
-                />
+                {!isExpired && (
+                    <DropdownMenuButton
+                        label={c('Action').t`Manage vault access`}
+                        icon="pass-all-vaults"
+                        onClick={() => onManageAccess(token)}
+                    />
+                )}
                 {token.Flags?.PassAgent && (
                     <DropdownMenuButton
                         label={c('Action').t`View agent activity`}
