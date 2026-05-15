@@ -111,7 +111,7 @@ export const createContentScriptClient = ({
             const res = await sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.CLIENT_INIT,
-                    payload: { endpoint: 'contentscript', tabId },
+                    payload: { endpoint: 'contentscript', tabId, online: navigator.onLine },
                 })
             );
 
