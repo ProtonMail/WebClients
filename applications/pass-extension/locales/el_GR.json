@@ -788,6 +788,15 @@
       ],
       "New token": [
         "Νέο διακριτικό"
+      ],
+      "Create token": [
+        "Δημιουργία διακριτικού"
+      ],
+      "Manage vault access": [
+        "Διαχείριση πρόσβασης κρύπτης"
+      ],
+      "View agent activity": [
+        "Προβολή δραστηριότητας πράκτορα"
       ]
     },
     "Browser": {
@@ -1426,6 +1435,27 @@
       ],
       "Name is required": [
         "Απαιτείται όνομα"
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Η λήξη πρέπει να είναι μεταξύ 60 λεπτών και 1 έτους"
+      ],
+      "Failed to create access token": [
+        "Αποτυχία δημιουργίας διακριτικού πρόσβασης"
+      ],
+      "Failed to delete access token": [
+        "Αποτυχία κατάργησης διακριτικού πρόσβασης"
+      ],
+      "Failed to load access tokens": [
+        "Αποτυχία φόρτωσης των διακριτικών πρόσβασης"
+      ],
+      "Failed to load token actions": [
+        "Αποτυχία φόρτωσης ενεργειών διακριτικού"
+      ],
+      "Failed to update vault access": [
+        "Αποτυχία ενημέρωσης πρόσβασης κρύπτης"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Το όνομα πρέπει να έχει 191 χαρακτήρες ή λιγότερους"
       ]
     },
     "Error message": {
@@ -2873,6 +2903,75 @@
       ],
       "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
         "Αναβαθμίστε σε ${ PASS_APP_NAME } Plus για να δημιουργήσετε διακριτικά πρόσβασης και να χρησιμοποιήσετε το ${ PASS_APP_NAME } μέσω προγραμματισμού."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Το διακριτικό πρόσβασης \"${ action.token.Name }\" θα σταματήσει να λειτουργεί αμέσως. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Τα διακριτικά πρόσβασης, που χρησιμοποιούνται μαζί με το ${ passCliLink }, σας επιτρέπουν να αυτοματοποιήσετε CI/CD ή να δώσετε στον AI πράκτορά σας περιορισμένη πρόσβαση σε ότι χρειάζεται για να εκτελέσει την εργασία του."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Μεταξύ 60 (1 ώρα) και 525600 (1 χρόνο)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Αντιγράψτε το παρακάτω markdown και στείλτε το στον πράκτορά ΤΝ σας. Αυτή είναι η μοναδική φορά που θα εμφανιστεί το διακριτικό."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Αντιγράψτε αυτό το διακριτικό τώρα. Για λόγους ασφαλείας, δε θα εμφανιστεί ξανά."
+      ],
+      "Created ${ createdDate }": [
+        "Δημιουργήθηκε ${ createdDate }"
+      ],
+      "Deleted item": [
+        "Διαγραμμένο στοιχείο"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Κατεβάστε το pass-cli από το ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Κάθε ενέργεια που έχει εκτελέσει αυτό το διακριτικό πράκτορα, η πιο πρόσφατη πρώτη."
+      ],
+      "Expires in less than an hour": [
+        "Λήγει σε λιγότερο από μία ώρα"
+      ],
+      "Log out of any existing session:": [
+        "Αποσυνδεθείτε από οποιαδήποτε υπάρχουσα συνεδρία:"
+      ],
+      "Moved item to trash": [
+        "Μεταφέρθηκε αντικείμενο στα διαγραμμένα"
+      ],
+      "No activity recorded yet.": [
+        "Δεν έχει καταγραφεί καμία δραστηριότητα ακόμα."
+      ],
+      "No vaults available.": [
+        "Δεν υπάρχουν διαθέσιμες κρύπτες."
+      ],
+      "None selected": [
+        "Κανένα επιλεγμένο"
+      ],
+      "Read item": [
+        "Διαβασμένο στοιχείο"
+      ],
+      "Restored item from trash": [
+        "Αποκαταστάθηκε αντικείμενο από τα διαγραμμένα"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Επιλέξτε τις κρύπτες που μπορεί να διαβάσει το \"${ token.Name }\"."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Δοκιμάστε το διακριτικό συνδεόμενοι και καταγράφοντας τις κρύπτες:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Ο πράκτορας θα πρέπει να παρέχει έναν λόγο για κάθε ενέργεια που εκτελεί, και κάθε ενέργεια θα καταγράφεται σε ένα αρχείο ελέγχου που μπορείτε να εξετάσετε. Μετά τη δημιουργία του διακριτικού, θα λάβετε οδηγίες για αντιγραφή-επικόλληση στον πράκτορά ΤΝ σας."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Στη συνέχεια μπορείτε να μεταβείτε στο ${ url } για να αντιγράψετε τις οδηγίες που θα στείλετε στον πράκτορα ΤΝ σας."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Αυτό το διακριτικό αποκτά πρόσβαση μόνο για ανάγνωση στις κρύπτες που επιλέγετε. Μπορεί να διαβάζει στοιχεία, αλλά δεν μπορεί να τα επεξεργαστεί, να κοινοποιήσει κρύπτες ή να προσκαλέσει άλλους. Μπορείτε να το αλλάξετε αργότερα."
+      ],
+      "Vault access granted": [
+        "Η πρόσβαση στην κρύπτη χορηγήθηκε"
       ]
     },
     "Keyboard key": {
@@ -4019,6 +4118,18 @@
       ],
       "Token name": [
         "Όνομα διακριτικού"
+      ],
+      "Access tokens": [
+        "Διακριτικά πρόσβασης"
+      ],
+      "Expires in (minutes)": [
+        "Λήγει σε (λεπτά)"
+      ],
+      "Use for AI agent": [
+        "Χρήση για πράκτορα ΤΝ"
+      ],
+      "Vault access": [
+        "Πρόσβαση κρύπτης"
       ]
     },
     "Link": {
@@ -4333,6 +4444,9 @@
       ],
       "e.g. My automation script": [
         "π.χ. Το σενάριο αυτοματοποίησής μου"
+      ],
+      "e.g. 60": [
+        "π.χ. 60"
       ]
     },
     "Security Center - Info": {
@@ -5010,6 +5124,24 @@
       ],
       "Manage vault access": [
         "Διαχείριση πρόσβασης κρύπτης"
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Τα διακριτικά πρόσβασης απαιτούν ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Δραστηριότητα για το \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Οδηγίες ρύθμισης πράκτορα"
+      ],
+      "Create new access token": [
+        "Δημιουργία νέου διακριτικού πρόσβασης"
+      ],
+      "No access tokens yet": [
+        "Δεν υπάρχουν ακόμη διακριτικά πρόσβασης"
+      ],
+      "Your new access token": [
+        "Το νέο σας διακριτικό πρόσβασης σας"
       ]
     },
     "Title_cloned_item": {
@@ -5373,6 +5505,9 @@
       ],
       "Vault": [
         "Κρύπτη"
+      ],
+      "Activity details could not be loaded.": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών της δραστηριότητας."
       ]
     },
     "Status": {
