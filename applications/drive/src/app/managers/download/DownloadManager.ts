@@ -316,6 +316,11 @@ export class DownloadManager {
                 await savePromise.catch(() => undefined);
             };
 
+            // SDK may not honor abortSignal mid-block so cancel must tear the writer down here too.
+            abortController.signal.addEventListener('abort', () => {
+                void abortSaving(abortController.signal.reason ?? new AbortError(`Transfer ${downloadId} canceled`));
+            });
+
             completionPromise = this.attachActiveDownload({
                 downloadId,
                 controller,
@@ -348,6 +353,7 @@ export class DownloadManager {
                 downloadId,
                 node,
                 controller,
+                skipSignatureCheck: getQueueItem(downloadId)?.skipSignatureCheck,
                 onApproved: async () => {
                     closeWriter();
                     if (controller.isDownloadCompleteWithSignatureIssues()) {
@@ -433,6 +439,7 @@ export class DownloadManager {
                 parentPathByUid,
                 downloadId,
                 malwareDetection: this.malwareDetection,
+                skipSignatureCheck: queueItem?.skipSignatureCheck,
             });
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
