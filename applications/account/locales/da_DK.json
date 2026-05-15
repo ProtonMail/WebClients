@@ -1838,6 +1838,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Back to sign-in": [
+        "Tilbage til login"
       ]
     },
     "action": {
@@ -5380,6 +5383,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Use a recovery method to reset your password": [
+        "Brug en gendannelsesmetode til at nulstille din adgangskode"
       ]
     },
     "description": {
@@ -6749,7 +6755,7 @@
         "Krævet tid før der automatisk gives adgang"
       ],
       "To add recovery contacts, you must have a recovery email address or phone number.": [
-        "For at tilføje genoprettelseskontakter skal du have en genoprettelses-e-mailadresse eller et telefonnummer."
+        "For at tilføje gendannelseskontakter skal du have en e-mailadresse eller et telefonnummer til gendannelse."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
@@ -6782,7 +6788,7 @@
         "Vi har modtaget en anmodning om at låse de krypterede data op for din kontakt **${ user }**."
       ],
       "We sent an email request to ${ user }. Let them know it's really you trying to regain access.": [
-        "Vi sendte en e-mail-anmodning til ${ user }. Lad dem vide, at det virkelig er dig, der prøver at få adgang igen."
+        "Vi sendte en e-mail-anmodning til ${ user }. Fortæl dem, at det virkelig er dig, der prøver at få adgang igen."
       ],
       "We were not able to verify the recovery data. Proceed anyway?": [
         "Vi kunne ikke verificere gendannelsesdataen. Vil du fortsætte alligevel?"
@@ -6845,6 +6851,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dine gendannelseskontakter bør være personer, du kender og nemt kan komme i kontakt med."
+      ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
       ]
     },
     "Empty group name": {
@@ -13241,6 +13250,16 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Opretter gateway med ${ total } server",
+        "Opretter gateway med ${ total } servere"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Denne datagendannelsesmetode kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
       ]
     },
     "info": {
@@ -21165,6 +21184,15 @@
       ],
       "Your security setup": [
         "Din sikkerhedskonfiguration"
+      ],
+      "Add an emergency contact": [
+        "Tilføj en nødkontakt"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Tilføj personer du stoler på og nemt kan kontakte. Din nødkontakt vil kunne tilgå din konto og nulstille din adgangskode for dig, hvis det bliver nødvendigt."
+      ],
+      "They will not be able to see or access your data.": [
+        "De vil ikke kunne se eller tilgå dine data."
       ]
     },
     "saml: Action": {
@@ -21376,6 +21404,9 @@
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har anbefalinger fra ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå gendannelse via e-mail og SMS fra."
       ]
     },
     "Server-Info": {
@@ -26057,6 +26088,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Data recovery contacts": [
+        "Kontakter til gendannelse af data"
+      ],
+      "Something went wrong": [
+        "Et eller andet gik galt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

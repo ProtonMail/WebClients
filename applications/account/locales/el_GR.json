@@ -1841,6 +1841,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Back to sign-in": [
+        "Επιστροφή στη σύνδεση"
       ]
     },
     "action": {
@@ -5506,6 +5509,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "Use a recovery method to reset your password": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να επαναφέρετε τον κωδικό πρόσβασής σας"
       ]
     },
     "description": {
@@ -13373,6 +13379,10 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Δημιουργία πύλης με ${ total } διακομιστή",
+        "Δημιουργία πύλης με ${ total } διακομιστές"
       ]
     },
     "info": {
@@ -21433,6 +21443,9 @@
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Έχετε προτεινόμενες ενέργειες από το ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης και SMS."
       ]
     },
     "Server-Info": {
@@ -26117,6 +26130,12 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Data recovery contacts": [
+        "Επαφές ανάκτησης δεδομένων"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1838,6 +1838,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Back to sign-in": [
+        "Tilbake til pålogging"
       ]
     },
     "action": {
@@ -2108,6 +2111,9 @@
       ],
       "User admin:": [
         "Brukeradministrator:"
+      ],
+      "2 new admin roles": [
+        "2 nye administratorroller"
       ]
     },
     "AdminRole_Info": {
@@ -3120,6 +3126,102 @@
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
         "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere plasser i abonnementet ditt.",
         "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere plasser i abonnementet ditt."
+      ],
+      "**p=quarantine**: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "**p=quarantine**: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
+      ],
+      "**p=reject**: asking the recipient platforms to reject the unauthorized emails.": [
+        "**p=reject**: ber mottakerplattformene om å avvise de uautoriserte e-postene."
+      ],
+      "Activation link": [
+        "Aktiveringskobling"
+      ],
+      "Add domain": [
+        "Legg til domene"
+      ],
+      "Add users": [
+        "Legg til brukere"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+      ],
+      "As soon as the accounts are created, you can share the activation link so users can claim their ${ BRAND_NAME } account.": [
+        "Så snart kontoene er opprettet, kan du dele aktiveringskoblingen slik at brukerne kan gjøre krav på ${ BRAND_NAME }-kontoen sin."
+      ],
+      "Copy activation link": [
+        "Kopier aktiveringskoblingen"
+      ],
+      "DKIM records": [
+        "DKIM-poster"
+      ],
+      "Domain added": [
+        "Domene lagt til"
+      ],
+      "Ensure that your emails reach the inbox, not the spam folder. Updating SPF will allow users to send from ${ BRAND_NAME } and Google simultaneously for the duration of the migration.": [
+        "Sørg for at e-postene dine havner i innboksen, ikke i søppelpostmappen. Hvis du oppdaterer SPF, kan brukere sende fra ${ BRAND_NAME } og Google samtidig under migreringen."
+      ],
+      "Finalize migration": [
+        "Fullfør migreringen"
+      ],
+      "Finalize your migration": [
+        "Fullfør migreringen din"
+      ],
+      "Go to Domain names": [
+        "Gå til domenenavn"
+      ],
+      "Hang tight, we're setting up user accounts and will start importing user data shortly.": [
+        "Vent litt, vi setter opp brukerkontoer og begynner snart å importere brukerdata."
+      ],
+      "Install Migration assistant": [
+        "Installer Migrerings-assistent"
+      ],
+      "Loading your organization data": [
+        "Laster inn organisasjonsdataene dine"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "Move your users, emails, and settings from Google Workspace automatically. We’ll guide you through connecting your account, verifying your domain, and migrating users securely.": [
+        "Flytt brukerne, e-postene og innstillingene dine automatisk fra Google Workspace. Vi veileder deg gjennom tilkoblingen av kontoen din, bekreftelse av domenet ditt og sikker overføring av brukere."
+      ],
+      "Please select at least one product to migrate": [
+        "Velg minst ett produkt du vil migrere"
+      ],
+      "Refresh": [
+        "Oppdater"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Set up secure sending (SPF)": [
+        "Konfigurer sikker sending (SPF)"
+      ],
+      "The default setting is none. However, to improve your security we recommend setting this value to p=quarantine.": [
+        "Standardinnstillingen er ingen. For å forbedre sikkerheten anbefaler vi imidlertid at du setter denne verdien til p=quarantine."
+      ],
+      "Update records for receiving": [
+        "Oppdater poster for mottak"
+      ],
+      "User needs to activate their account through the activation link shown above": [
+        "Brukeren må aktivere kontoen sin via aktiveringskoblingen som vises ovenfor."
+      ],
+      "User status": [
+        "Brukerstatus"
+      ],
+      "Users can use ${ BRAND_NAME } or Google simultaneously for the duration of the migration.": [
+        "Brukere kan bruke ${ BRAND_NAME } eller Google samtidig under migreringen."
+      ],
+      "Verify domain ownership": [
+        "Verifiser domeneeierskap"
+      ],
+      "We're still checking the MX records with your domain provider.": [
+        "Vi sjekker fortsatt MX-postene med domeneleverandøren din."
+      ],
+      "You": [
+        "Du"
+      ],
+      "You're all set!": [
+        "Nå er du klar!"
       ]
     },
     "breadcrumb": {
@@ -5344,6 +5446,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Use a recovery method to reset your password": [
+        "Bruk en gjenopprettingsmetode for å tilbakestille passordet ditt"
       ]
     },
     "description": {
@@ -6794,6 +6899,21 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dine gjenopprettingskontakter bør være personer du kjenner og kan kontakte enkelt."
+      ],
+      "**${ contact }** is now your recovery contact. They can help you unlock your data after you reset your password.": [
+        "**${ contact }** er nå din gjenopprettingskontakt. De kan hjelpe deg med å gjenopprette dataene dine etter en tilbakestilling av passordet."
+      ],
+      "Add recovery method": [
+        "Legg til gjenoppretingsmetode"
+      ],
+      "Data recovery contacts": [
+        "Kontakter for datagjenoppretting"
+      ],
+      "Start recovery": [
+        "Start gjenoppretting"
+      ],
+      "To add recovery contacts, you must have a recovery email address or phone number.": [
+        "For å legge til gjenopprettingskontakter må du ha en gjenopprettings-e-postadresse eller et telefonnummer."
       ]
     },
     "Empty group name": {
@@ -13184,6 +13304,19 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Are you sure you want to sign out of this account?": [
+        "Er du sikker på at du vil logge ut av denne kontoen?"
+      ],
+      "Creating gateway with ${ total } server": [
+        "Oppretter gateway med ${ total } server",
+        "Oppretter gateway med ${ total } servere"
+      ],
+      "Data recovery requires a password reset option (email or SMS)": [
+        "Datagjenoppretting krever et alternativ for tilbakestilling av passord (e-post eller SMS)"
+      ],
+      "This data recovery method requires a password reset option (email or SMS)": [
+        "Denne metoden for datagjenoppretting krever et alternativ for tilbakestilling av passord (e-post eller SMS)"
       ]
     },
     "info": {
@@ -15377,6 +15510,9 @@
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
+      ],
+      "Set recovery phone number": [
+        "Angi telefonnummer for gjenoppretting"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15430,6 +15566,9 @@
       ],
       "Use default value": [
         "Bruk standardverdi"
+      ],
+      "Type": [
+        "Type"
       ]
     },
     "Label for new member": {
@@ -20097,6 +20236,9 @@
       ],
       "Weak": [
         "Svak"
+      ],
+      "Recovery score: ${ score }": [
+        "Gjenopprettingspoengsum: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -20168,6 +20310,9 @@
       ],
       "Verify recovery phone": [
         "Verifiser gjenopprettingstelefon"
+      ],
+      "Email recovery enabled": [
+        "E-postgjenoppretting aktivert"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -20985,6 +21130,102 @@
       ],
       "You can use your recovery phone to regain access to your account if you forget your password.": [
         "Du kan bruke gjenopprettingstelefonen til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-konto e-post"
+      ],
+      "Add": [
+        "Legg til"
+      ],
+      "Add an emergency contact": [
+        "Legg til en nødkontakt"
+      ],
+      "Add options": [
+        "Legg til alternativer"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Legg til personer du stoler på og enkelt kan kontakte. Nødkontakten din vil kunne få tilgang til kontoen din og tilbakestille passordet for deg om nødvendig."
+      ],
+      "Add recovery contacts": [
+        "Legg til gjenopprettingskontakter"
+      ],
+      "Add recovery email": [
+        "Legg til e-post for gjenoppretting"
+      ],
+      "Add recovery phone": [
+        "Legg til telefonnummer for gjenoppretting"
+      ],
+      "Added recovery contacts": [
+        "La til gjenopprettingskontakter"
+      ],
+      "Added recovery email": [
+        "La til e-post for gjenoppretting"
+      ],
+      "Allow recovery by email": [
+        "Tillat gjenoppretting ved e-post"
+      ],
+      "Enable device recovery": [
+        "Aktiver enhetsgjenoppretting"
+      ],
+      "Enabled email recovery": [
+        "Aktivert e-postgjenoppretting"
+      ],
+      "Enabled password reset from settings": [
+        "Aktiverte tilbakestilling av passord fra innstillingene"
+      ],
+      "Enabled phone recovery": [
+        "Aktiverte telefongjenoppretting"
+      ],
+      "Here's how you increased your account protection:": [
+        "Hvordan du økte kontobeskyttelsen din:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Hvis du glemmer passordet ditt, kan du logge på med en QR-kode. Alt du trenger å gjøre er å være logget på en ${ BRAND_NAME }-tjeneste på en annen enhet."
+      ],
+      "Later": [
+        "Senere"
+      ],
+      "Save recovery phrase": [
+        "Lagre gjenopprettingsfrasen"
+      ],
+      "Saved recovery phrase": [
+        "Lagret gjenopprettingsfrase"
+      ],
+      "They will not be able to see or access your data.": [
+        "De vil ikke kunne se eller få tilgang til dataene dine."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Dette lar deg tilbakestille kontopassordet ditt hvis du har mistet det, mens du fortsatt er logget på ${ BRAND_NAME }. Det er ofte den enkleste måten å gjenopprette kontoen din på hvis du er logget på."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "For å være sikker på at e-postadressen er din, skriv inn verifiseringskoden som ble sendt til ${ boldEmail }."
+      ],
+      "Verified recovery email": [
+        "Bekreftet gjenopprettings-e-postadresse"
+      ],
+      "Verified recovery phone": [
+        "Verifisert gjenopprettingstelefon"
+      ],
+      "Verify": [
+        "Verifiser"
+      ],
+      "Verify password": [
+        "Bekreft passord"
+      ],
+      "Verify recovery phone": [
+        "Verifiser gjenopprettingstelefon"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Du kan bruke gjenopprettings-e-postadressen din for å få tilgang til kontoen igjen hvis du glemmer passordet."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Du trenger ikke å åpne eller lese filen – bare last den ned og oppbevar den et trygt sted."
+      ],
+      "Your recovery checklist": [
+        "Sjekklisten din for gjenoppretting"
+      ],
+      "Your security setup": [
+        "Sikkerhetsoppsettet ditt"
       ]
     },
     "saml: Action": {
@@ -21196,6 +21437,9 @@
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Du har anbefalte handlinger fra ${ PROTON_SENTINEL_NAME }"
+      ],
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "For å sikre best mulig sikkerhet for kontoen din, deaktiver gjenoppretting via e-post og SMS."
       ]
     },
     "Server-Info": {
@@ -22412,6 +22656,18 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Få kreditter når personen du inviterer abonnerer på en ${ BRAND_NAME }-plan."
+      ],
+      "Click Edit to assign roles to this group and manage member access automatically.": [
+        "Klikk på Rediger for å tilordne roller til denne gruppen og administrere medlemstilgang automatisk."
+      ],
+      "Open this tab to grant specific permissions without full admin access.": [
+        "Åpne denne fanen for å gi spesifikke tillatelser uten full administratortilgang."
+      ],
+      "User roles available": [
+        "Tilgjengelige brukerroller"
+      ],
+      "You can now assign roles to individual users from this tab.": [
+        "Du kan nå tilordne roller til individuelle brukere fra denne fanen."
       ]
     },
     "sso": {
@@ -23725,6 +23981,9 @@
       ],
       "Your address has been activated": [
         "Adressen din har blitt aktivert"
+      ],
+      "Activation link copied to clipboard": [
+        "Aktiveringskobling kopiert til utklippstavlen"
       ]
     },
     "Success message": {
@@ -25859,6 +26118,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Data recovery contacts": [
+        "Kontakter for datagjenoppretting"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26670,6 +26935,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "(via group)": [
+        "(via gruppe)"
       ]
     },
     "Users table: badge": {

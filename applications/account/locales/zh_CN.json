@@ -1841,6 +1841,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Back to sign-in": [
+        "返回登录"
       ]
     },
     "action": {
@@ -5469,6 +5472,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Use a recovery method to reset your password": [
+        "使用恢复方法重置密码"
       ]
     },
     "description": {
@@ -13233,6 +13239,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Creating gateway with ${ total } server": [
+        "正在创建包含 ${ total } 台服务器的网关"
       ]
     },
     "info": {
@@ -21209,6 +21218,9 @@
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "您有来自 ${ PROTON_SENTINEL_NAME } 的推荐操作"
+      ],
+      "To ensure the highest possible security of your account, disable recovery via email and SMS.": [
+        "为确保您账户的最高安全性，请禁用通过邮件和短信恢复！"
       ]
     },
     "Server-Info": {
@@ -25809,6 +25821,12 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Data recovery contacts": [
+        "数据恢复联系人"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

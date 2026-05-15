@@ -1677,6 +1677,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Back to sign-in": [
+        "Palaa kirjautumiseen"
       ]
     },
     "action": {
@@ -4510,6 +4513,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
         "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
+      ],
+      "Use a recovery method to reset your password": [
+        "Nollaa salasanasi palautustoiminnon avulla"
       ]
     },
     "description": {
@@ -8275,7 +8281,7 @@
         "Tili on päivitetty"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Aktivoi tiedoillesi ainakin palautustapa, jolla varmistat pääsysi ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
+        "Aktivoi vähintään yksi tietojen palautustapa, jotta pääset edelleen ${ BRAND_NAME }-tilisi sisältöön, jos kadotat salasanasi."
       ],
       "Active": [
         "Aktiiviset"
@@ -11158,6 +11164,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -22028,6 +22037,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
