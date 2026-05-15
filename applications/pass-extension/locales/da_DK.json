@@ -779,6 +779,24 @@
       ],
       "Load more": [
         "Indlæs flere"
+      ],
+      "Copy instructions": [
+        "Kopiér instruktioner"
+      ],
+      "Copy token": [
+        "Kopiér token"
+      ],
+      "Create token": [
+        "Opret token"
+      ],
+      "Manage vault access": [
+        "Håndter adgang til boksen"
+      ],
+      "New token": [
+        "Ny token"
+      ],
+      "View agent activity": [
+        "Se agent-aktivitet"
       ]
     },
     "Browser": {
@@ -1402,6 +1420,30 @@
       ],
       "Name is required": [
         "Navn er påkrævet"
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "Kunne ikke indlæse instruktionerne til opsætning af agent. Kopiér den token vist nedenfor, den vil ikke blive vist igen."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "Udløb skal være mellem 60 minutter og 1 år"
+      ],
+      "Failed to create access token": [
+        "Kunne ikke oprette adgangstoken"
+      ],
+      "Failed to delete access token": [
+        "Kunne ikke slette adgangstoken"
+      ],
+      "Failed to load access tokens": [
+        "Kunne ikke indlæse adgangstokens"
+      ],
+      "Failed to load token actions": [
+        "Kunne ikke indlæse token-handlinger"
+      ],
+      "Failed to update vault access": [
+        "Kunne ikke opdatere adgang til boksen"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Navn skal være på 191 tegn eller færre"
       ]
     },
     "Error message": {
@@ -2098,8 +2140,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2826,6 +2867,98 @@
       ],
       "New": [
         "Ny"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } valgt"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Adgangstoken \"${ action.token.Name }\" vil øjeblikkeligt stoppe med at virke. Denne handling kan ikke fortrydes."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Adgangstokens, sammen med ${ passCliLink }, giver dig mulighed for at automatisere CI/CD eller give din AI-agent begrænset adgang til det den skal bruge for at køre sit job."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Mellem 60 (1 time) og 525600 (1 år)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Kopiér markdown-indholdet nedenfor og send det til dine AI-agenter. Dette er den eneste tidspunkt at denne token vil blive vist."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Kopiér denne token nu. Af sikkerhedsmæssige årsager bliver den ikke vist igen."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Opret en token for at integrere ${ PASS_APP_NAME } med dine scripts og værktøjer."
+      ],
+      "Created ${ createdDate }": [
+        "Oprettet ${ createdDate }"
+      ],
+      "Created item": [
+        "Oprettede element"
+      ],
+      "Deleted item": [
+        "Slettet element"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Download pass-cli fra ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Hver eneste handling, som denne agent har udført, nyeste først."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Udløb for ${ abs } time siden",
+        "Udløb for ${ abs } timer siden"
+      ],
+      "Expires in ${ hours } hour": [
+        "Udløber om ${ hours } time",
+        "Udløber om ${ hours } timer"
+      ],
+      "Expires in less than an hour": [
+        "Udløber om mindre end en time"
+      ],
+      "Log out of any existing session:": [
+        "Log ud af enhver eksisterende session:"
+      ],
+      "Moved item to trash": [
+        "Flyttede element til papirkurven"
+      ],
+      "No activity recorded yet.": [
+        "Ingen aktivitet registreret endnu."
+      ],
+      "No vaults available.": [
+        "Ingen tilgængelige bokse."
+      ],
+      "None selected": [
+        "Ingen valgte"
+      ],
+      "Read item": [
+        "Læs element"
+      ],
+      "Restored item from trash": [
+        "Gendannede element fra papirkurven"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Vælg de bokse, som \"${ token.Name }\" kan læse."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Test denne token ved at logge ind og vise alle bokse:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "Agenten vil skulle begrunde hver eneste handling den udfører, og hver handling vil blive optaget i en log, som du kan se igennem. Efter at have oprettet din adgangstoken, vil du få instruktioner, som du kan copy-paste til din AI-agent."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Så kan du gå til ${ url } for at kopiere de instruktioner, der skal sendes til din AI-agent."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Denne token får skrivebeskyttet adgang til de bokse du vælger. Den kan læse elementer, men kan ikke redigere i dem, dele bokse eller invitere andre. Du kan ændre dette senere."
+      ],
+      "Updated item": [
+        "Opdaterede element"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Opgrader til ${ PASS_APP_NAME } Plus for at oprette adgangstokens og bruge ${ PASS_APP_NAME } programmatisk."
+      ],
+      "Vault access granted": [
+        "Adgang til boks(e) blev givet"
       ]
     },
     "Keyboard key": {
@@ -3972,6 +4105,18 @@
       ],
       "Token name": [
         "Tokennavn"
+      ],
+      "Access tokens": [
+        "Adgangstokens"
+      ],
+      "Expires in (minutes)": [
+        "Udløber om (minutter)"
+      ],
+      "Use for AI agent": [
+        "Brug til en AI-agent"
+      ],
+      "Vault access": [
+        "Adgang til boksen"
       ]
     },
     "Link": {
@@ -4017,6 +4162,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } er blevet aktiveret"
+      ],
+      "Access token deleted": [
+        "Adgangstoken slettet"
       ]
     },
     "Onboarding": {
@@ -4283,6 +4431,9 @@
       ],
       "e.g. My automation script": [
         "f.eks. mit automatiseringsscript"
+      ],
+      "e.g. 60": [
+        "f.eks. 60"
       ]
     },
     "Security Center - Info": {
@@ -4954,6 +5105,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Adgangstokens kræver ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Aktivitet for \"${ token.Name }\""
+      ],
+      "Agent setup instructions": [
+        "Instruktioner til opsætning af agent"
+      ],
+      "Create new access token": [
+        "Opret ny adgangstoken"
+      ],
+      "Delete access token?": [
+        "Slet adgangstoken?"
+      ],
+      "Manage vault access": [
+        "Håndter adgang til boksen"
+      ],
+      "No access tokens yet": [
+        "Ingen adgangstokens endnu"
+      ],
+      "Your new access token": [
+        "Din nye adgangstoken"
       ]
     },
     "Title_cloned_item": {
@@ -5300,6 +5475,40 @@
       ],
       "Offline": [
         "Offline"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Aktivitet"
+      ],
+      "Activity details could not be loaded.": [
+        "Aktivitetsdetaljer kunne ikke indlæses"
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Reason": [
+        "Årsag"
+      ],
+      "Vault": [
+        "Boks"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Agent": [
+        "Agent"
+      ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Expiring soon": [
+        "Udløber snart"
       ]
     }
   }
