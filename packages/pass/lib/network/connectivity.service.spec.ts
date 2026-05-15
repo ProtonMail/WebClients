@@ -105,7 +105,7 @@ describe('ConnectivityService', () => {
         const { api, publish } = setupMockAPI();
         const service = createConnectivityService({ api });
         const statusChanges: ConnectivityStatus[] = [];
-        const unsubscribe = service.subscribe((status) => statusChanges.push(status));
+        const unsubscribe = service.subscribe((event) => event.type === 'status' && statusChanges.push(event.status));
 
         /** 2. wait for initial `check` */
         void service.init();
@@ -128,7 +128,7 @@ describe('ConnectivityService', () => {
         const { api, publish } = setupMockAPI();
         const service = createConnectivityService({ api });
         const statusChanges: ConnectivityStatus[] = [];
-        const unsubscribe = service.subscribe((status) => statusChanges.push(status));
+        const unsubscribe = service.subscribe((event) => event.type === 'status' && statusChanges.push(event.status));
 
         /** 2. wait for initial `check` */
         void service.init();
@@ -546,5 +546,103 @@ describe('ConnectivityService', () => {
         expect(api).toHaveBeenCalledWith({ ...EXPECTED_PING, signal: undefined });
 
         service.destroy();
+    });
+
+    describe('`syncNavigatorOnline`', () => {
+        test('no-op on same-state sync', async () => {
+            setNavigatorOnline(true);
+            const { api } = setupMockAPI();
+            const service = createConnectivityService({ api });
+            await initService(service, api);
+
+            const events: string[] = [];
+            service.subscribe((event) => events.push(event.type));
+
+            service.syncNavigatorOnline(true);
+            await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+            expect(events).toEqual([]);
+            expect(api).not.toHaveBeenCalled();
+
+            service.destroy();
+        });
+
+        test('quick-switch to OFFLINE on online → offline transition (no probe)', async () => {
+            setNavigatorOnline(true);
+            const { api } = setupMockAPI();
+            const service = createConnectivityService({ api });
+            await initService(service, api);
+
+            service.syncNavigatorOnline(false);
+            expect(service.status).toBe(ConnectivityStatus.OFFLINE);
+            expect(service.retryHandler).not.toBe(null);
+            expect(api).not.toHaveBeenCalled();
+
+            service.destroy();
+        });
+
+        test('quick-switch to ONLINE when api state already agrees (no probe)', async () => {
+            /** 1. Boot offline so navigator transition is meaningful */
+            const { api, setState } = setupMockAPI();
+            setNavigatorOnline(false);
+            setState({ online: false, unreachable: false });
+            const service = createConnectivityService({ api });
+            await initService(service, api);
+            expect(service.status).toBe(ConnectivityStatus.OFFLINE);
+
+            /** 2. Api recovers first (e.g., via a concurrent request),
+             *  then navigator catches up. Sync flips status immediately. */
+            setState({ online: true, unreachable: false });
+            (api as unknown as jest.Mock).mockClear();
+            service.syncNavigatorOnline(true);
+
+            expect(service.status).toBe(ConnectivityStatus.ONLINE);
+            expect(api).not.toHaveBeenCalled();
+            expect(service.retryHandler).toBe(null);
+
+            service.destroy();
+        });
+
+        test('emits `navigator-online` only on offline → online transitions', async () => {
+            setNavigatorOnline(true);
+            const { api } = setupMockAPI();
+            const service = createConnectivityService({ api });
+            await initService(service, api);
+
+            const events: string[] = [];
+            service.subscribe((event) => events.push(event.type));
+
+            service.syncNavigatorOnline(true); /** no transition */
+            service.syncNavigatorOnline(false);
+            service.syncNavigatorOnline(true); /** offline → online */
+            service.syncNavigatorOnline(true); /** no transition */
+
+            expect(events.filter((e) => e === 'navigator-online')).toHaveLength(1);
+
+            service.destroy();
+        });
+
+        test('rewinds backoff on online transition while retrying', async () => {
+            /** 1. Bootstrap online, drive into DOWNTIME so retryCount > 0 */
+            setNavigatorOnline(true);
+            const { api, publish } = setupMockAPI();
+            const service = createConnectivityService({ api });
+            await initService(service, api);
+            publish({ type: 'connectivity', online: true, unreachable: true });
+
+            await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+            await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[1]);
+
+            /** 2. Flap navigator: offline → online */
+            (api as unknown as jest.Mock).mockClear();
+            service.syncNavigatorOnline(false);
+            service.syncNavigatorOnline(true);
+            await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+            expect(api).toHaveBeenCalledTimes(1);
+
+            /** 3. Backoff rewound: next retry fires at FIB[0], not the next fib step */
+            await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+
+            service.destroy();
+        });
     });
 });

@@ -630,7 +630,7 @@ export const createAuthService = ({
             }
         };
 
-        const connectivityUnsub = connectivity.subscribe(() => tryOfflineResume(true));
+        const connectivityUnsub = connectivity.subscribe((evt) => evt.type === 'status' && tryOfflineResume(true));
 
         /** On tab focus / window show while offline, force a fresh probe + retry-backoff
          * rewind so a return-online transition is caught immediately instead of waiting

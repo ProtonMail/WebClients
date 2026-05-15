@@ -575,8 +575,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
          * `onSessionFailure`, no alarm is pending after it. This handler
          * schedules the first retry on the next ONLINE transition. From there
          * `onSessionFailure` keeps the chain going with backoff. */
-        ctx.service.connectivity.subscribe((status) => {
-            const online = status === ConnectivityStatus.ONLINE;
+        ctx.service.connectivity.subscribe((event) => {
+            if (event.type !== 'status') return;
+            const online = event.status === ConnectivityStatus.ONLINE;
             const appStatus = ctx.getState().status;
             const shouldResume = online && or(clientOffline, clientPasswordLocked, clientErrored)(appStatus);
             if (shouldResume) void alarms.scheduleAutoResume({ extend: false });
