@@ -173,7 +173,7 @@ const PiPPreviewVideoInternal = ({
 export const PiPPreviewVideo = ({ canvas, onClose, tracksLength }: PiPPreviewVideoProps) => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const handleDragEnd: DragEndEvent = (event) => {
+    const handleDragEnd = (event: DragEndEvent) => {
         if (!event.canceled) {
             setPosition((prev) => ({
                 x: prev.x + event.operation.transform.x,
