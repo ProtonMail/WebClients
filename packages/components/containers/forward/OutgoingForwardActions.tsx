@@ -25,6 +25,7 @@ interface Props {
     user: UserModel;
     addresses: Address[];
     isLastOutgoingNonE2EEForwarding: boolean;
+    isLastOutgoingE2EEForwarding: boolean;
 }
 
 const OutgoingForwardActions = ({
@@ -32,6 +33,7 @@ const OutgoingForwardActions = ({
     existingForwardingConfig,
     addresses,
     isLastOutgoingNonE2EEForwarding,
+    isLastOutgoingE2EEForwarding,
 }: Props) => {
     const isPending = existingForwardingConfig.State === ForwardingState.Pending;
     const isActive = existingForwardingConfig.State === ForwardingState.Active;
@@ -45,6 +47,7 @@ const OutgoingForwardActions = ({
     const address = addresses.find((address) => address.ID === existingForwardingConfig.ForwarderAddressID) as Address;
     const pointToProton = address?.ProtonMX === true; // the domain's record point to Proton servers
     const reActivateE2EE = pointToProton && isLastOutgoingNonE2EEForwarding;
+    const reActivatePQC = isLastOutgoingE2EEForwarding;
 
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
@@ -54,7 +57,14 @@ const OutgoingForwardActions = ({
 
     const handleDeleteForwarding = async () => {
         try {
-            await dispatch(deleteForwarding({ address, forward: existingForwardingConfig, reActivateE2EE }));
+            await dispatch(
+                deleteForwarding({
+                    address,
+                    forward: existingForwardingConfig,
+                    reActivateE2EE,
+                    reActivatePQC,
+                })
+            );
             setConfirmDeleteModalOpen(false);
             createNotification({ text: 'Forwarding deleted' });
         } catch (e) {

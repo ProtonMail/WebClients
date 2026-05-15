@@ -1,14 +1,15 @@
+import type { PrivateKeyReferenceV4, PublicKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
+import { setAddressKeyPrimaryAction } from '@proton/account/addressKeys/setAddressKeyPrimaryAction';
 import { type AddressesState, addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import type { UserKeysState } from '@proton/account/userKeys';
-import type { PrivateKeyReferenceV4, PublicKeyReference } from '@protontech/crypto';
 import {
     getOutgoingAddressForwarding,
     outgoingAddressForwardingsActions,
@@ -123,15 +124,18 @@ export const requestConfirmation = ({
 export const deleteForwarding = ({
     address,
     reActivateE2EE,
+    reActivatePQC,
     forward,
 }: {
     address?: Address;
     reActivateE2EE: boolean;
+    reActivatePQC: boolean;
     forward: OutgoingAddressForwarding;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         await api(deleteForwardingConfig(forward.ID));
+        await dispatch(outgoingAddressForwardingsActions.deleteForwarding(forward));
 
         // Re-enable E2EE for this address if deleting last outgoing forwarding
         if (address && reActivateE2EE) {
@@ -146,8 +150,16 @@ export const deleteForwarding = ({
                 );
             }
         }
+        // Re-enable PQC for this address if deleting last outgoing e2ee forwarding
+        if (address && reActivatePQC) {
+            const addressKeys = await dispatch(addressKeysThunk({ addressID: address.ID }));
+            // TODO check PQC algo
+            const firstV6AddressKey = addressKeys.find((addressKey) => addressKey.privateKey.isPrivateKeyV6());
 
-        dispatch(outgoingAddressForwardingsActions.deleteForwarding(forward));
+            if (firstV6AddressKey) {
+                await dispatch(setAddressKeyPrimaryAction({ address, addressKeyID: firstV6AddressKey.ID }));
+            }
+        }
     };
 };
 
