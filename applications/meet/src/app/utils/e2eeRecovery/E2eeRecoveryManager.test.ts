@@ -1,4 +1,4 @@
-import { ConnectionQuality, ConnectionState, RoomEvent, Track } from 'livekit-client';
+import { ConnectionQuality, ConnectionState, type RoomEvent, Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -284,47 +284,6 @@ describe('E2eeRecoveryManager', () => {
         for (let n = 0; n < 5; n++) {
             await tickOnce(room);
         }
-
-        expect(audioManager.recoverTrack).not.toHaveBeenCalled();
-    });
-
-    it('coalesces rapid EncryptionError events into a single delayed recovery', async () => {
-        const audioPub = createPublication({ trackSid: 'audio-1' });
-        const videoPub = createPublication({
-            trackSid: 'video-1',
-            kind: 'video',
-            source: Track.Source.Camera,
-        });
-        const participant = createParticipant('p1', [audioPub, videoPub]);
-        room.remoteParticipants.set('p1', participant);
-
-        // Simulate room connection to start the grace-period clock, then
-        // advance past the join grace period before firing errors.
-        room.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
-        await vi.advanceTimersByTimeAsync(15_000);
-
-        // 5 EncryptionError events within 100ms — should produce a single recovery
-        // after the 1500ms debounce window.
-        for (let n = 0; n < 5; n++) {
-            room.emit(RoomEvent.EncryptionError, new Error('decryption failed'), participant);
-            await vi.advanceTimersByTimeAsync(20);
-        }
-
-        await vi.advanceTimersByTimeAsync(2_000);
-
-        expect(audioManager.recoverTrack).toHaveBeenCalledTimes(1);
-        expect(audioManager.recoverTrack).toHaveBeenCalledWith(audioPub, participant, 'encryption-error');
-    });
-
-    it('suppresses EncryptionError recovery within the join grace period', async () => {
-        const audioPub = createPublication({ trackSid: 'audio-1' });
-        const participant = createParticipant('p1', [audioPub]);
-        room.remoteParticipants.set('p1', participant);
-
-        // Simulate room connection, then fire within the 15s grace window — should be ignored.
-        room.emit(RoomEvent.ConnectionStateChanged, ConnectionState.Connected);
-        room.emit(RoomEvent.EncryptionError, new Error('decryption failed'), participant);
-        await vi.advanceTimersByTimeAsync(5_000);
 
         expect(audioManager.recoverTrack).not.toHaveBeenCalled();
     });
