@@ -2500,14 +2500,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/abstract@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/abstract@npm:0.4.0"
+"@dnd-kit/abstract@npm:0.3.2, @dnd-kit/abstract@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/abstract@npm:0.3.2"
   dependencies:
-    "@dnd-kit/geometry": "npm:^0.4.0"
-    "@dnd-kit/state": "npm:^0.4.0"
+    "@dnd-kit/geometry": "npm:^0.3.2"
+    "@dnd-kit/state": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/ac533f1b0fe94111cedbd7bd4eec432865a68fdb6b187dfffe25f8354ae2d219d39225f35d6fb48b3cb998b7fb913d69453d0d731688d7194c47d0f147f3524e
+  checksum: 10/5a1888747346f03880d84644b7c8244d413c33a1eaf4b0478949c6fe2137fadcc2136379e7ada7e46806d204da6d753be2361983809b037b240f1eb074a12002
   languageName: node
   linkType: hard
 
@@ -2522,14 +2522,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/collision@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/collision@npm:0.4.0"
+"@dnd-kit/collision@npm:0.3.2, @dnd-kit/collision@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/collision@npm:0.3.2"
   dependencies:
-    "@dnd-kit/abstract": "npm:^0.4.0"
-    "@dnd-kit/geometry": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:^0.3.2"
+    "@dnd-kit/geometry": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/104aa887178a702e853aa31aa7b53a4527ba1214a91ba8b94b2420050df5c5360d6ae7f963536c26b06d0d7b3b26ff2dd1885ce2c62fa8659b2f5ccd4c9b1af0
+  checksum: 10/44cd159d2f2f4b2438d857d642d6e09f6bcbf85149f69dbe84923f1fb79cb6fd1ebe733a79d09faa7684e3f9a57f88591ee5538bf5c70c7461429acbde26291a
   languageName: node
   linkType: hard
 
@@ -2547,36 +2547,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/dom@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/dom@npm:0.4.0"
+"@dnd-kit/dom@npm:0.3.2, @dnd-kit/dom@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/dom@npm:0.3.2"
   dependencies:
-    "@dnd-kit/abstract": "npm:^0.4.0"
-    "@dnd-kit/collision": "npm:^0.4.0"
-    "@dnd-kit/geometry": "npm:^0.4.0"
-    "@dnd-kit/state": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:^0.3.2"
+    "@dnd-kit/collision": "npm:^0.3.2"
+    "@dnd-kit/geometry": "npm:^0.3.2"
+    "@dnd-kit/state": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/839e289b2d4d7fa904b032045d51547be695fe3ae2d09857962fd6f3ce91cd8f0bef22e7e2e50746d6f5221b30025d9cd84221ca770ca9120b2171db7b60f30a
+  checksum: 10/f09c1eeffd06c69851c6da706ce3122426924fd3ec0c6463b931b24306ad683ffb8445ebdf1c67be2be3f85a0cf7682a72449011aec748501f09fc6ce7f9e143
   languageName: node
   linkType: hard
 
-"@dnd-kit/geometry@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/geometry@npm:0.4.0"
+"@dnd-kit/geometry@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/geometry@npm:0.3.2"
   dependencies:
-    "@dnd-kit/state": "npm:^0.4.0"
+    "@dnd-kit/state": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/7aeed85a26d7a2625d7a51038290d5ff00c6e64484564d1f3e87c5321ca6f92e64894fda7538746a621215dc0ad3e90d478e1890a19453452255fc79ba465a7d
+  checksum: 10/3932754f8c01bfe8f6c4cab0a39052f262cd2956369b4f249a42cfb5e7979969e1ff279d7f35dcedee45963865c6147692a638a6eaebde87778004d50ee72c67
   languageName: node
   linkType: hard
 
-"@dnd-kit/helpers@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/helpers@npm:0.4.0"
+"@dnd-kit/helpers@npm:0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/helpers@npm:0.3.2"
   dependencies:
-    "@dnd-kit/abstract": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/04262534eec2e24e51765b8d4be3a6ef5a3f544e1063d57885a87a5d586842f9912e65f8cf32bdd2b903706f279066594956e53f714f3c55054b19c6782fcd1b
+  checksum: 10/9c2daf9789cb7b775902ccd8a3620b7cadb22722f241e9421c7f6fc2a007fd15b332a11257d4824dc718bf8ec9ddc7a023fbd704314f7aa5da5a525de556bae6
   languageName: node
   linkType: hard
 
@@ -2593,18 +2593,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/react@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/react@npm:0.4.0"
+"@dnd-kit/react@npm:0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/react@npm:0.3.2"
   dependencies:
-    "@dnd-kit/abstract": "npm:^0.4.0"
-    "@dnd-kit/dom": "npm:^0.4.0"
-    "@dnd-kit/state": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:^0.3.2"
+    "@dnd-kit/dom": "npm:^0.3.2"
+    "@dnd-kit/state": "npm:^0.3.2"
     tslib: "npm:^2.6.2"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 10/e5ab430d8904e363e820da2356ed9fc7b399ab004c84bb7ca04a5ced6542003d1b6cb31c80135535ea3a43dd4260ac42c84838167378b9c83a3d43c70b10b6fb
+  checksum: 10/39e826d75c7e555373517a3c99f7b77b9beda87b566a5bd2d0968f105ff99411721a481cc3c1c953cbec54e3192e0ab65e0260555ce5bfaf4a7f7a2f6016158a
   languageName: node
   linkType: hard
 
@@ -2621,13 +2621,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dnd-kit/state@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@dnd-kit/state@npm:0.4.0"
+"@dnd-kit/state@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@dnd-kit/state@npm:0.3.2"
   dependencies:
     "@preact/signals-core": "npm:^1.10.0"
     tslib: "npm:^2.6.2"
-  checksum: 10/1f513a8ce35b5daa42cf62378e0b19b92537ead06734fc2aec9e8b9f49a449785e073120e4d8e09f2e8b544b2947f6059ec6a48cdcb335093f544f8ab09cf820
+  checksum: 10/aca69487ec79fc8d8d564ea7480777aa4986f03d318b4eba7c7cbc822f47e569dfb351b403ae0cf8a40e52c6c2ee7534df969ae8d32537febbe6493208fdb69e
   languageName: node
   linkType: hard
 
@@ -10561,9 +10561,9 @@ __metadata:
     "@babel/preset-env": "npm:^7.28.5"
     "@babel/preset-react": "npm:^7.28.5"
     "@babel/preset-typescript": "npm:^7.28.5"
-    "@dnd-kit/abstract": "npm:^0.4.0"
-    "@dnd-kit/dom": "npm:^0.4.0"
-    "@dnd-kit/react": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:0.3.2"
+    "@dnd-kit/dom": "npm:0.3.2"
+    "@dnd-kit/react": "npm:0.3.2"
     "@emoji-mart/data": "npm:^1.0.3"
     "@floating-ui/dom": "npm:^1.7.6"
     "@noble/ed25519": "npm:1.7.5"
@@ -41437,10 +41437,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-authenticator@workspace:applications/authenticator"
   dependencies:
-    "@dnd-kit/collision": "npm:^0.4.0"
-    "@dnd-kit/dom": "npm:^0.4.0"
-    "@dnd-kit/helpers": "npm:^0.4.0"
-    "@dnd-kit/react": "npm:^0.4.0"
+    "@dnd-kit/collision": "npm:0.3.2"
+    "@dnd-kit/dom": "npm:0.3.2"
+    "@dnd-kit/helpers": "npm:0.3.2"
+    "@dnd-kit/react": "npm:0.3.2"
     "@iarna/toml": "npm:^2.2.5"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
     "@proton/atoms": "workspace:^"
@@ -41579,10 +41579,10 @@ __metadata:
     "@ariakit/react": "npm:^0.4.26"
     "@ariakit/react-core": "npm:^0.4.26"
     "@babel/preset-typescript": "npm:^7.28.5"
-    "@dnd-kit/abstract": "npm:^0.4.0"
-    "@dnd-kit/collision": "npm:^0.4.0"
-    "@dnd-kit/dom": "npm:^0.4.0"
-    "@dnd-kit/react": "npm:^0.4.0"
+    "@dnd-kit/abstract": "npm:0.3.2"
+    "@dnd-kit/collision": "npm:0.3.2"
+    "@dnd-kit/dom": "npm:0.3.2"
+    "@dnd-kit/react": "npm:0.3.2"
     "@lexical/clipboard": "npm:0.30.0"
     "@lexical/code": "npm:0.30.0"
     "@lexical/hashtag": "npm:0.30.0"
@@ -42166,8 +42166,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
-    "@dnd-kit/dom": "npm:^0.4.0"
-    "@dnd-kit/react": "npm:^0.4.0"
+    "@dnd-kit/dom": "npm:0.3.2"
+    "@dnd-kit/react": "npm:0.3.2"
     "@livekit/components-react": "npm:^2.9.21"
     "@livekit/krisp-noise-filter": "npm:^0.4.3"
     "@livekit/track-processors": "npm:^0.7.2"
