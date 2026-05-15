@@ -6,6 +6,8 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { PatMonitorListEntryOutput } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
+import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export const PAT_PRODUCT = 'pass';
 
@@ -47,4 +49,13 @@ export const decodePatRecord = async (
         logger.error(`[Saga::AccessToken] record decode failure`, error);
         return { ...record, decodedPayload: { kind: 'decode-error', error } };
     }
+};
+
+export type TokenStatus = 'active' | 'expiring' | 'expired';
+
+export const getTokenStatus = (expireTime: number): TokenStatus => {
+    const now = getEpoch();
+    if (expireTime < now) return 'expired';
+    if (expireTime - now <= UNIX_HOUR) return 'expiring';
+    return 'active';
 };
