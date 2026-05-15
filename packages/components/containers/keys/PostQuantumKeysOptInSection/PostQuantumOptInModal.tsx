@@ -19,7 +19,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import useLoading, { type WithLoading } from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
@@ -31,7 +32,11 @@ import noop from '@proton/utils/noop';
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
 import AuthModal from '../../password/AuthModal';
 
-interface Props extends ModalProps {}
+interface Props extends ModalProps {
+    /** open modal at this step if key setup got interrupted after the opt-in was completed */
+    resumeKeyGenerationStep?: Step.IN_PROGRESS_ACCOUNT_KEY | Step.IN_PROGRESS_ADDRESS_KEYS;
+    withLoadingWhileInProgress: WithLoading;
+}
 
 enum Step {
     CONFIRMATION,
@@ -43,13 +48,15 @@ enum Step {
     ERROR,
 }
 
+export { Step as PostQuantumSetupStep };
+
 interface Model {
     step: Step;
     hadManualRecoveryMethodBeforeOptIn: boolean;
     error?: ReactNode;
 }
 
-const PostQuantumOptInModal = ({ ...rest }: Props) => {
+const PostQuantumOptInModal = ({ resumeKeyGenerationStep, withLoadingWhileInProgress, ...rest }: Props) => {
     const dispatch = useDispatch();
     const { isMnemonicSet } = useSelector(selectMnemonicData);
     const { hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
@@ -60,7 +67,10 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const loadingDependencies = loadingOutgoingAddressForwardings;
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState<Model>({
-        step: Step.CONFIRMATION,
+        step: resumeKeyGenerationStep ?? Step.CONFIRMATION,
+        // recovery methods are potentially unaffected if resumeKeyGenerationStep === Step.IN_PROGRESS_ADDRESS_KEYS,
+        // however since that state is the result of setup errors, it's likely the user has yet to manually
+        // re-setup the recovery methods, hence we again display the notice in all cases
         hadManualRecoveryMethodBeforeOptIn: hasManualRecoveryMethod,
     });
     const [understoodForceUpgrade, setUnderstoodForceUpgrade] = useState(false);
@@ -78,11 +88,12 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
             console.error(error);
             handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
-            const settingsLink = (
+            const goToSettingsLink = (
                 <SettingsLink
-                    path="/encryption-keys#address"
-                    key="addresses-keys-section-link"
+                    path="/encryption-keys#pqc-optin"
+                    key="post-quantum-section-link"
                     className="link inline-block"
+                    target="_blank"
                 >
                     {c('PQC optin').t`Go to ${encryptionAndKeysSettingsTitle}`}
                 </SettingsLink>
@@ -91,9 +102,9 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
                 step: Step.ERROR,
                 error: c('PQC adress key generation')
-                    .jt`Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.
+                    .jt`Couldn’t generate address keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys for each address.
 
-                        Go to ${settingsLink} and select 'Generate key' for each address.`,
+                    ${goToSettingsLink} and select 'Generate missing keys'.`,
             }));
         }
     };
@@ -111,11 +122,12 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
             console.error(error);
             handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
-            const settingsLink = (
+            const goToSettingsLink = (
                 <SettingsLink
-                    path="/encryption-keys#user"
-                    key="account-keys-section-link"
+                    path="/encryption-keys#pqc-optin"
+                    key="post-quantum-section-link"
                     className="link inline-block"
+                    target="_blank"
                 >
                     {c('PQC optin').t`Go to ${encryptionAndKeysSettingsTitle}`}
                 </SettingsLink>
@@ -123,9 +135,9 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
             setModel((prev) => ({
                 step: Step.ERROR,
                 error: c('PQC account key generation')
-                    .jt`Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.
+                    .jt`Couldn’t generate keys. To activate post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.
 
-                    ${settingsLink} and select 'Generate key' for your account and for each address.`,
+                    ${goToSettingsLink} and select 'Generate missing keys'.`,
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
             }));
         }
@@ -174,6 +186,18 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
         model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
 
+    useEffectOnce(() => {
+        if (resumeKeyGenerationStep) {
+            void withLoadingWhileInProgress(
+                withLoading(
+                    model.step === Step.IN_PROGRESS_ACCOUNT_KEY
+                        ? handleGenerateUserKey()
+                        : handleGenerateAddressKeyForAllAddresses()
+                )
+            );
+        }
+    });
+
     /**
      * Prompt for authentication beforehand if needed, otherwise this would be triggered on the account
      * key creation step, interrupting key creation if the user cancels.
@@ -190,7 +214,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                         step: Step.IN_PROGRESS_OPTIN,
                         hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
                     }));
-                    return withLoading(handleOptIn());
+                    return withLoadingWhileInProgress(withLoading(handleOptIn()));
                 }}
             />
         );
@@ -321,15 +345,17 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                 {(model.step === Step.CONFIRMATION || isProgressStep) && (
                     <>
                         <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                        <Button
-                            color="danger"
-                            loading={loading}
-                            disabled={loadingDependencies || !understoodForceUpgrade}
-                            data-testid="confirm-pqc-opt-in"
-                            onClick={() => withLoading(handleSubmit().catch(noop))}
-                        >
-                            {c('PQC optin').t`Enable and generate keys`}
-                        </Button>
+                        {!resumeKeyGenerationStep && (
+                            <Button
+                                color="danger"
+                                loading={loading}
+                                disabled={loadingDependencies || !understoodForceUpgrade}
+                                data-testid="confirm-pqc-opt-in"
+                                onClick={() => withLoading(handleSubmit().catch(noop))}
+                            >
+                                {c('PQC optin').t`Enable and generate keys`}
+                            </Button>
+                        )}
                     </>
                 )}
                 {model.step === Step.SUCCESS && (
