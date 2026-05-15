@@ -123,6 +123,29 @@ describe('API factory', () => {
             resolvers[2](mockAPIResponse());
             await call3;
         });
+
+        test('`prioritize` bypasses the threshold queue', async () => {
+            const backPressuredApi = createApi({ config, getAuth, threshold: 1 });
+            const resolvers: ((res: Response) => void)[] = [];
+
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)));
+
+            /** Saturate the threshold with a normal request */
+            const blocking = backPressuredApi({});
+            await asyncNextTick();
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+
+            /** Priority request dispatches immediately, bypassing the gate */
+            const priority = backPressuredApi({ prioritize: true });
+            await asyncNextTick();
+            expect(fetchMock).toHaveBeenCalledTimes(2);
+
+            resolvers[0](mockAPIResponse());
+            resolvers[1](mockAPIResponse());
+            await Promise.all([blocking, priority]);
+        });
     });
 
     describe('Server time', () => {
@@ -344,6 +367,15 @@ describe('API factory', () => {
             fetchMock.mockResolvedValueOnce(mockAPIResponse({ Code: APP_VERSION_BAD, Error: 'Bad verson' }, 500));
             await expect(api({})).rejects.toThrow('App version outdated');
             expect(api.getState().appVersionBad).toBe(true);
+        });
+
+        test('should classify TimeoutError as OFFLINE', async () => {
+            const timeoutError = Object.assign(new Error('timeout'), { name: 'TimeoutError' });
+            fetchMock.mockRejectedValueOnce(timeoutError);
+
+            await expect(api({})).rejects.toThrow();
+            expect(api.getState().online).toBe(false);
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
         });
     });
 
