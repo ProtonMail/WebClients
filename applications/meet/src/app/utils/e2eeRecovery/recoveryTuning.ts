@@ -24,16 +24,6 @@ export interface E2eeRecoveryTuning {
      * before we consider the audio track successfully healed and reset the attempt counter.
      */
     recoverySuccessTicks: number;
-    /** Wait this long after Room encryption errors before recovery runs (debounce). */
-    encryptionErrorRecoveryDelayMs: number;
-    /**
-     * After joining a room, suppress encryption-error–triggered recovery for this many ms.
-     * EncryptionErrors at join time are expected: FrameCryptors start receiving frames before
-     * the E2EE key exchange completes, so all remote participants throw errors simultaneously.
-     * Acting on those errors interrupts key negotiation and destabilises the cryptors, causing
-     * a cascade of noise detections immediately after join.
-     */
-    joinGracePeriodMs: number;
     /** Audio energy per sample above this threshold points to sustained garbage noise vs speech. */
     noiseEnergyPerSampleThreshold: number;
     /** Noise detector also requires audio level at least this high (together with energy above). */
@@ -51,8 +41,6 @@ export const E2EE_RECOVERY_TUNING_DEFAULT: E2eeRecoveryTuning = {
     videoPktsDeltaMin: 20,
     videoFramesDeltaMin: 2,
     recoverySuccessTicks: 3,
-    encryptionErrorRecoveryDelayMs: 1_500,
-    joinGracePeriodMs: 10_000,
     noiseEnergyPerSampleThreshold: 3e-6,
     noiseAudioLevelMinThreshold: 0.05,
     noiseConsecutiveTicks: 4,
@@ -70,8 +58,6 @@ export const E2EE_RECOVERY_TUNING_AGGRESSIVE: E2eeRecoveryTuning = {
     videoPktsDeltaMin: 15,
     videoFramesDeltaMin: 1,
     recoverySuccessTicks: 2,
-    encryptionErrorRecoveryDelayMs: 800,
-    joinGracePeriodMs: 10_000,
     noiseEnergyPerSampleThreshold: 2.5e-6,
     noiseAudioLevelMinThreshold: 0.04,
     noiseConsecutiveTicks: 3,
