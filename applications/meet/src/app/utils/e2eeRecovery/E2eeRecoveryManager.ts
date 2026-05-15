@@ -1,4 +1,4 @@
-import type { Participant, RemoteParticipant, RemoteTrackPublication, Room } from 'livekit-client';
+import type { RemoteParticipant, RemoteTrackPublication, Room } from 'livekit-client';
 import { ConnectionQuality, ConnectionState, RoomEvent, Track } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
@@ -65,10 +65,6 @@ const trackKeyOf = (participant: { sid: string }, publication: { trackSid: strin
  *   dips. N consecutive quiet ticks after a recovery confirm the track is
  *   healed and reset the attempt counter.
  *
- * Also listens to {@link RoomEvent.EncryptionError} as an early signal
- * (rare in practice but free), with a join-time grace period to avoid
- * acting on the expected key-exchange burst when a new participant joins.
- *
  * Recovery is delegated:
  * - Video tracks are resubscribed in-place via setSubscribed(false/true).
  * - Audio tracks go through the supplied {@link AudioRecoveryAPI} so the
@@ -106,12 +102,9 @@ export class E2eeRecoveryManager {
     private lastRecoverByParticipant = new Map<string, number>();
     private pendingEncryptionRecoveryTimers = new Map<string, NodeJS.Timeout>();
 
-    // Session-level counters flushed to Sentry every 5 minutes and on cleanup.
-    private sessionNoiseDetections = 0;
-    private sessionRecoveryAttempts = 0;
-    private sessionSuccessfulRecoveries = 0;
-    private sessionAffectedTrackKeys = new Set<string>();
-    private sessionRecoveryReasons: Partial<Record<RecoveryReason, number>> = {};
+    // Timeline of notable events flushed to Sentry every 5 minutes and on cleanup.
+    private sessionEvents: { message: string; time: string }[] = [];
+    private shouldFlushSessionSummary = false;
 
     constructor({
         room,
@@ -127,10 +120,28 @@ export class E2eeRecoveryManager {
         this.tuning = tuning;
     }
 
+    /** Elapsed time since the most recent Connected event as `SS.MMM` (seconds.milliseconds). */
+    private meetingTime = (): string => {
+        if (this.connectedAt === null) {
+            return '00.000';
+        }
+        const elapsedMs = Date.now() - this.connectedAt;
+        const totalSeconds = Math.floor(elapsedMs / 1_000);
+        const ms = elapsedMs % 1_000;
+        return `${String(totalSeconds).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
+    };
+
+    private addSessionEvent = (message: string, shouldFlushSummary: boolean = false): void => {
+        this.sessionEvents.push({ message, time: this.meetingTime() });
+        if (shouldFlushSummary) {
+            this.shouldFlushSessionSummary = shouldFlushSummary;
+        }
+    };
+
     setup = () => {
         if (this.disabled) {
             // eslint-disable-next-line no-console
-            console.log('E2eeRecoveryManager: disabled by flag, skipping setup');
+            console.log(`E2eeRecoveryManager: disabled by flag, skipping setup`);
             return;
         }
 
@@ -138,7 +149,6 @@ export class E2eeRecoveryManager {
             void this.runTick();
         }, this.tuning.tickIntervalMs);
 
-        this.room.on(RoomEvent.EncryptionError, this.handleEncryptionError);
         this.room.on(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
         this.room.on(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
 
@@ -165,7 +175,6 @@ export class E2eeRecoveryManager {
         this.pendingEncryptionRecoveryTimers.forEach((timer) => clearTimeout(timer));
         this.pendingEncryptionRecoveryTimers.clear();
 
-        this.room.off(RoomEvent.EncryptionError, this.handleEncryptionError);
         this.room.off(RoomEvent.ConnectionStateChanged, this.handleConnectionStateChanged);
         this.room.off(RoomEvent.ParticipantDisconnected, this.handleParticipantDisconnected);
 
@@ -183,11 +192,19 @@ export class E2eeRecoveryManager {
     private handleConnectionStateChanged = (state: ConnectionState) => {
         if (state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting) {
             this.isRoomReconnecting = true;
+            this.addSessionEvent(
+                state === ConnectionState.Reconnecting
+                    ? 'room reconnecting: media path'
+                    : 'room reconnecting: signal path'
+            );
         } else if (state === ConnectionState.Connected) {
+            if (this.isRoomReconnecting) {
+                this.addSessionEvent('room reconnected');
+            }
             this.isRoomReconnecting = false;
-            // Reset the grace-period clock on every connection (initial join and
-            // reconnects both trigger key-exchange bursts that should be suppressed).
             this.connectedAt = Date.now();
+        } else if (state === ConnectionState.Disconnected) {
+            this.addSessionEvent('room disconnected');
         }
     };
 
@@ -251,7 +268,7 @@ export class E2eeRecoveryManager {
             }
         } catch (error) {
             // eslint-disable-next-line no-console
-            console.error('E2eeRecoveryManager tick failed', error);
+            console.error(`E2eeRecoveryManager: tick failed`, error);
             this.reportError?.('E2eeRecoveryManager: tick failed', {
                 level: 'error',
                 context: { error },
@@ -364,16 +381,19 @@ export class E2eeRecoveryManager {
                 this.consecutiveQuietTicks.set(trackKey, quietTicks);
 
                 if (quietTicks >= this.tuning.recoverySuccessTicks) {
+                    const recoveryAttempts = this.recoveryAttempts.get(trackKey);
                     // eslint-disable-next-line no-console
-                    console.log('E2eeRecoveryManager: Track recovered successfully', {
+                    console.log(`E2eeRecoveryManager: Track recovered successfully`, {
                         localParticipant: this.room.localParticipant.identity,
                         room: this.room.name,
                         participant: participant.identity,
                         trackSid: publication.trackSid,
-                        recoveryAttempts: this.recoveryAttempts.get(trackKey),
+                        recoveryAttempts,
                         quietTicks,
                     });
-                    this.sessionSuccessfulRecoveries += 1;
+                    this.addSessionEvent(
+                        `audio track recovered: trackSid=${publication.trackSid} attempts=${recoveryAttempts} quietTicks=${quietTicks}`
+                    );
                     this.cleanupTrackRecoveryState(trackKey);
                 }
             }
@@ -384,10 +404,6 @@ export class E2eeRecoveryManager {
         this.consecutiveQuietTicks.delete(trackKey);
         const consecutive = (this.consecutiveNoiseTicks.get(trackKey) ?? 0) + 1;
         this.consecutiveNoiseTicks.set(trackKey, consecutive);
-        if (consecutive < this.tuning.noiseConsecutiveTicks) {
-            return;
-        }
-
         const context = {
             localParticipant: this.room.localParticipant.identity,
             room: this.room.name,
@@ -399,66 +415,26 @@ export class E2eeRecoveryManager {
             totalAudioEnergy: totalAudioEnergy.toFixed(3),
             totalSamplesReceived,
         };
+
+        if (consecutive < this.tuning.noiseConsecutiveTicks) {
+            // eslint-disable-next-line no-console
+            console.log(
+                `E2eeRecoveryManager ${this.meetingTime()}: Noise tick detected but not consecutive enough`,
+                context
+            );
+            return;
+        }
+
         // eslint-disable-next-line no-console
-        console.warn('E2eeRecoveryManager: Detected persistent audio noise (likely broken cryptor)', context);
-        this.sessionNoiseDetections += 1;
-        this.sessionAffectedTrackKeys.add(trackKey);
+        console.warn(
+            `E2eeRecoveryManager ${this.meetingTime()}: Detected persistent audio noise (likely broken cryptor)`,
+            context
+        );
+        this.addSessionEvent(
+            `audio noise detected: trackSid=${publication.trackSid} consecutiveTicks=${consecutive} energyPerSample=${energyPerSample.toExponential(3)} audioLevel=${audioLevel.toFixed(3)}`
+        );
         this.consecutiveNoiseTicks.delete(trackKey);
         void this.triggerAudioRecovery(publication, participant, 'audio-persistent-noise');
-    };
-
-    private handleEncryptionError = (error: Error, participant?: Participant | undefined) => {
-        if (!participant) {
-            // eslint-disable-next-line no-console
-            console.warn('E2eeRecoveryManager: EncryptionError without participant', {
-                errorName: error.name,
-                errorMessage: error.message,
-            });
-            return;
-        }
-
-        const identity = participant.identity;
-        const timeSinceConnected = this.connectedAt !== null ? Date.now() - this.connectedAt : null;
-        const inJoinGrace = timeSinceConnected === null || timeSinceConnected < this.tuning.joinGracePeriodMs;
-
-        // eslint-disable-next-line no-console
-        console.warn('E2eeRecoveryManager: EncryptionError received', {
-            identity,
-            participantSid: participant.sid,
-            errorName: error.name,
-            errorMessage: error.message,
-            timeSinceConnected,
-            inJoinGrace,
-        });
-
-        // During the join-time key-exchange window all remote participants emit
-        // EncryptionErrors simultaneously — the FrameCryptors start receiving frames
-        // before keys are distributed. Recovering at this point interrupts key
-        // negotiation and triggers a cascade of noise detections. We log the event
-        // but defer acting on it until the grace period has elapsed.
-        if (inJoinGrace) {
-            // eslint-disable-next-line no-console
-            console.log('E2eeRecoveryManager: skipping encryption-error recovery, within join grace period', {
-                identity,
-                timeSinceConnected,
-                joinGracePeriodMs: this.tuning.joinGracePeriodMs,
-            });
-            return;
-        }
-
-        const existing = this.pendingEncryptionRecoveryTimers.get(identity);
-        if (existing) {
-            clearTimeout(existing);
-        }
-
-        const timer = setTimeout(() => {
-            this.pendingEncryptionRecoveryTimers.delete(identity);
-            const stillPresent = this.findParticipantByIdentity(identity);
-            if (stillPresent) {
-                void this.recoverParticipant(stillPresent, 'encryption-error');
-            }
-        }, this.tuning.encryptionErrorRecoveryDelayMs);
-        this.pendingEncryptionRecoveryTimers.set(identity, timer);
     };
 
     private recoverParticipant = async (participant: RemoteParticipant, reason: RecoveryReason) => {
@@ -480,13 +456,16 @@ export class E2eeRecoveryManager {
         }
 
         // eslint-disable-next-line no-console
-        console.warn('E2eeRecoveryManager: recovering participant', {
+        console.warn(`E2eeRecoveryManager ${this.meetingTime()}: recovering participant`, {
             identity: participant.identity,
             participantSid: participant.sid,
             reason,
             videoTrackCount: videoPubs.length,
             audioTrackCount: audioPubs.length,
         });
+        this.addSessionEvent(
+            `participant recovery triggered: reason=${reason} videoTracks=${videoPubs.length} audioTracks=${audioPubs.length}`
+        );
 
         // Video recovery: short, simple in-place resubscribe.
         for (const pub of videoPubs) {
@@ -494,7 +473,7 @@ export class E2eeRecoveryManager {
                 pub.setSubscribed(false);
             } catch (err) {
                 // eslint-disable-next-line no-console
-                console.warn('E2eeRecoveryManager: video setSubscribed(false) failed', err);
+                console.warn(`E2eeRecoveryManager ${this.meetingTime()}: video setSubscribed(false) failed`, err);
             }
         }
         setTimeout(() => {
@@ -503,7 +482,7 @@ export class E2eeRecoveryManager {
                     pub.setSubscribed(true);
                 } catch (err) {
                     // eslint-disable-next-line no-console
-                    console.warn('E2eeRecoveryManager: video setSubscribed(true) failed', err);
+                    console.warn(`E2eeRecoveryManager ${this.meetingTime()}: video setSubscribed(true) failed`, err);
                 }
                 this.videoStallState.delete(trackKeyOf(participant, pub));
             }
@@ -524,11 +503,17 @@ export class E2eeRecoveryManager {
         if (this.disabled) {
             return;
         }
+
         if (this.isRoomReconnecting) {
             // eslint-disable-next-line no-console
-            console.log('E2eeRecoveryManager: skipping recovery, room is reconnecting');
+            console.log(`E2eeRecoveryManager: skipping recovery, room is reconnecting`);
+            this.addSessionEvent(
+                `audio recovery skipped: room reconnecting trackSid=${publication.trackSid} reason=${reason}`,
+                true
+            );
             return;
         }
+
         if (
             participant.connectionQuality === ConnectionQuality.Poor ||
             participant.connectionQuality === ConnectionQuality.Lost ||
@@ -536,12 +521,16 @@ export class E2eeRecoveryManager {
             this.room.localParticipant.connectionQuality === ConnectionQuality.Lost
         ) {
             // eslint-disable-next-line no-console
-            console.log('E2eeRecoveryManager: skipping recovery, connection quality poor', {
+            console.log(`E2eeRecoveryManager: skipping recovery, connection quality poor`, {
                 participant: participant.identity,
                 trackSid: publication.trackSid,
                 participantQuality: participant.connectionQuality,
                 localQuality: this.room.localParticipant.connectionQuality,
             });
+            this.addSessionEvent(
+                `audio recovery skipped: poor quality trackSid=${publication.trackSid} participantQuality=${participant.connectionQuality} localQuality=${this.room.localParticipant.connectionQuality} reason=${reason}`,
+                true
+            );
             return;
         }
 
@@ -560,27 +549,29 @@ export class E2eeRecoveryManager {
                 attempts,
             };
             // eslint-disable-next-line no-console
-            console.error('E2eeRecoveryManager: Max recovery attempts reached', context);
-            this.reportError?.('E2eeRecoveryManager: Max recovery attempts reached', {
-                level: 'error',
-                context,
-            });
+            console.error(`E2eeRecoveryManager: Max recovery attempts reached`, context);
+            this.addSessionEvent(
+                `audio recovery exhausted: max attempts reached trackSid=${publication.trackSid} attempts=${attempts} reason=${reason}`,
+                true
+            );
             return;
         }
 
         this.recoveryAttempts.set(trackKey, attempts + 1);
         this.consecutiveQuietTicks.delete(trackKey);
-        this.sessionRecoveryAttempts += 1;
-        this.sessionRecoveryReasons[reason] = (this.sessionRecoveryReasons[reason] ?? 0) + 1;
+        this.addSessionEvent(
+            `audio recovery attempt: trackSid=${publication.trackSid} reason=${reason} attempt=${attempts + 1} reason=${reason}`,
+            true
+        );
 
         try {
             await this.audioManager.recoverTrack(publication, participant, reason);
         } catch (error) {
             // eslint-disable-next-line no-console
-            console.error('E2eeRecoveryManager: audio recoverTrack threw', error);
+            console.error(`E2eeRecoveryManager: audio recoverTrack threw`, error);
             this.reportError?.('E2eeRecoveryManager: audio recoverTrack threw', {
                 level: 'error',
-                context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid },
+                context: { error, trackKey, participant: participant.identity, trackSid: publication.trackSid, reason },
             });
             this.cleanupTrackRecoveryState(trackKey);
         }
@@ -593,32 +584,26 @@ export class E2eeRecoveryManager {
     };
 
     private flushSessionSummary = () => {
-        if (this.sessionNoiseDetections === 0) {
+        if (!this.shouldFlushSessionSummary) {
             return;
         }
+
         const summary = {
             localParticipant: this.room.localParticipant.identity,
             room: this.room.name,
-            noiseDetections: this.sessionNoiseDetections,
-            recoveryAttempts: this.sessionRecoveryAttempts,
-            successfulRecoveries: this.sessionSuccessfulRecoveries,
-            affectedTracks: this.sessionAffectedTrackKeys.size,
-            reasons: { ...this.sessionRecoveryReasons },
+            events: [...this.sessionEvents],
         };
+
         // eslint-disable-next-line no-console
-        console.log('E2eeRecoveryManager: Session summary', summary);
-        this.reportError?.('E2eeRecoveryManager: Session noise summary', {
+        console.log(`E2eeRecoveryManager: Session summary`, summary);
+        this.reportError?.('E2eeRecoveryManager: Session summary', {
             level: 'warning',
             context: summary,
         });
     };
 
     private resetSessionCounters = () => {
-        this.sessionNoiseDetections = 0;
-        this.sessionRecoveryAttempts = 0;
-        this.sessionSuccessfulRecoveries = 0;
-        this.sessionAffectedTrackKeys.clear();
-        this.sessionRecoveryReasons = {};
+        this.shouldFlushSessionSummary = false;
     };
 
     private findParticipantByIdentity = (identity: string): RemoteParticipant | undefined => {
