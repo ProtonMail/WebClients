@@ -78,6 +78,7 @@ export type DownloadItem = {
     signatureIssues?: Record<string, SignatureIssue>;
     // Decision set with applyAll, will override individual choices
     signatureIssueAllDecision?: IssueStatus;
+    skipSignatureCheck?: boolean;
     lastStatusUpdateTime: Date;
     isPhoto?: boolean;
     isRetried?: boolean;

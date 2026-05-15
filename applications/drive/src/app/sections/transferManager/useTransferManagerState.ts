@@ -177,17 +177,21 @@ export const useTransferManagerState = () => {
         const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) => {
             switch (status) {
                 case BaseTransferStatus.InProgress:
-                    return 5;
+                    return 7;
                 case UploadStatus.Preparing:
-                    return 4;
+                    return 6;
                 case BaseTransferStatus.Failed:
                 case BaseTransferStatus.MalwareDetected:
                 case BaseTransferStatus.MalwareScanUnavailable:
-                    return 3;
+                    return 5;
                 case UploadStatus.NotSupportedForPhotos:
-                    return 2;
+                    return 4;
                 case BaseTransferStatus.Pending:
                 case UploadStatus.Waiting:
+                    return 3;
+                case UploadStatus.Finished:
+                    return 2;
+                case UploadStatus.Cancelled:
                     return 1;
                 default:
                     return 0;
@@ -199,6 +203,7 @@ export const useTransferManagerState = () => {
             if (priorityDiff !== 0) {
                 return priorityDiff;
             }
+
             const idDiff = a.id.localeCompare(b.id);
             return idDiff;
         });

@@ -119,6 +119,7 @@ type ArchiveStreamGeneratorParams = {
     parentPathByUid: Map<string, string[]>;
     downloadId: string;
     malwareDetection: MalwareDetection;
+    skipSignatureCheck?: boolean;
 };
 
 export class ArchiveStreamGenerator {
@@ -127,6 +128,7 @@ export class ArchiveStreamGenerator {
     private readonly abortController: AbortController;
     private readonly parentPathByUid: Map<string, string[]>;
     private readonly downloadId: string;
+    private readonly skipSignatureCheck: boolean;
     // Queue of the items that have started actively downloading
     private readonly archiveItemsQueue = createAsyncQueue<ArchiveItem>();
     private pendingArchiveTasks = 0;
@@ -153,6 +155,7 @@ export class ArchiveStreamGenerator {
         parentPathByUid,
         downloadId,
         malwareDetection,
+        skipSignatureCheck,
     }: ArchiveStreamGeneratorParams) {
         this.entries = entries;
         this.scheduler = scheduler;
@@ -160,6 +163,7 @@ export class ArchiveStreamGenerator {
         this.parentPathByUid = parentPathByUid;
         this.downloadId = downloadId;
         this.malwareDetection = malwareDetection;
+        this.skipSignatureCheck = !!skipSignatureCheck;
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
         this.controller = {
@@ -185,16 +189,18 @@ export class ArchiveStreamGenerator {
      */
     private async createArchiveItem(taskId: string, node: NodeEntity, parentPath: string[]): Promise<ArchiveItem> {
         if (node.type !== NodeType.File && node.type !== NodeType.Photo) {
-            await checkMetadataSignature(
-                this.downloadId,
-                node,
-                () => {},
-                () => {
-                    const error = new AbortError(`Transfer ${this.downloadId} canceled`);
-                    this.abortController.abort(error);
-                    throw error;
-                }
-            );
+            if (!this.skipSignatureCheck) {
+                await checkMetadataSignature(
+                    this.downloadId,
+                    node,
+                    () => {},
+                    () => {
+                        const error = new AbortError(`Transfer ${this.downloadId} canceled`);
+                        this.abortController.abort(error);
+                        throw error;
+                    }
+                );
+            }
             return { isFile: false, name: node.name, parentPath };
         }
         const { getQueueItem } = useDownloadManagerStore.getState();
@@ -220,6 +226,7 @@ export class ArchiveStreamGenerator {
                     downloadId: this.downloadId,
                     node,
                     controller,
+                    skipSignatureCheck: this.skipSignatureCheck,
                     onApproved: closeWriter,
                     onRejected: () => {
                         const error = new AbortError(`Transfer ${this.downloadId} canceled`);

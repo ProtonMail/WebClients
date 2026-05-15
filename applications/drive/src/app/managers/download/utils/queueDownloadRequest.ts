@@ -77,6 +77,7 @@ export function queueDownloadRequest({
             isPhoto,
             shouldScanForMalware,
             signatureIssueAllDecision,
+            skipSignatureCheck,
         });
         requestedDownloads.set(downloadId, nodes);
         void scheduleSingleFile(downloadId, node);
@@ -94,6 +95,7 @@ export function queueDownloadRequest({
         isPhoto,
         shouldScanForMalware,
         signatureIssueAllDecision,
+        skipSignatureCheck,
     });
     requestedDownloads.set(downloadId, nodes);
     void scheduleArchive(downloadId, nodes);
