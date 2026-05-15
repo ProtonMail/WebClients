@@ -37,11 +37,17 @@ const CANVAS_WIDTH = 1920;
 const CANVAS_HEIGHT = 1080;
 
 let recordingCodec: RecordingCodec;
+let codecPromise: Promise<RecordingCodec> | undefined;
 
-// Preload supported recording codec
-void getSupportedRecordingCodec().then((codec) => {
-    recordingCodec = codec;
-});
+const preloadRecordingCodec = (): Promise<RecordingCodec> => {
+    if (!codecPromise) {
+        codecPromise = getSupportedRecordingCodec().then((codec) => {
+            recordingCodec = codec;
+            return codec;
+        });
+    }
+    return codecPromise;
+};
 
 export function useMeetingRecorder() {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
@@ -974,6 +980,10 @@ export function useMeetingRecorder() {
             return `${track?.sid}-${trackRef.publication.isMuted}-${track?.mediaStreamTrack?.id}`;
         })
         .join(',');
+
+    useEffect(() => {
+        void preloadRecordingCodec();
+    }, []);
 
     useEffect(() => {
         if (!isLocalRecording || !renderWorkerRef.current) {
