@@ -37,9 +37,10 @@ export const generatePqcAddressKeys = (): ThunkAction<
             addresses.map(async (address) => {
                 const { ID: addressID } = address;
                 const addressKeys = await dispatch(addressKeysThunk({ addressID }));
-                // v6 key already present, skip (TODO: check PQC algo)
-                // (this is for when this action will be used also to generate missing PQC address keys if the setup
+                // v6 key already present, skip
+                // (this action is used also to generate missing PQC address keys if the setup
                 // flow was cut short by errors)
+                // No need to check for PQC key algo since v6 keys can only be imported after opt-in
                 if (addressKeys.some((key) => key.privateKey.isPrivateKeyV6())) {
                     return;
                 }
