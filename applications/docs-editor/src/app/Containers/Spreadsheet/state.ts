@@ -350,12 +350,13 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const canvasGridMethods = useSpreadsheet()
 
   const previousLocaleResolved = useRef(localeResolved)
+  const { receivedEverythingFromRTS } = useSyncedState()
   useLayoutEffect(() => {
-    if (previousLocaleResolved.current !== localeResolved) {
+    if (receivedEverythingFromRTS && previousLocaleResolved.current !== localeResolved) {
       previousLocaleResolved.current = localeResolved
       spreadsheetState.onChangeLocale(localeResolved)
     }
-  }, [localeResolved, spreadsheetState])
+  }, [localeResolved, receivedEverythingFromRTS, spreadsheetState])
 
   const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = canvasGridMethods
 
