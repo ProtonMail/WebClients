@@ -1,20 +1,18 @@
 import { create as createMutex } from '@protontech/mutex-browser';
 
-import { getLastRefreshDate, setLastRefreshDate } from '@proton/shared/lib/api/helpers/refreshStorage';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response>) => {
-    const refreshHandlers: { [key: string]: (date: Date | undefined) => Promise<void> } = {};
+    const refreshHandlers: { [key: string]: () => Promise<void> } = {};
 
-    const refreshHandler = (UID: string, responseDate: Date | undefined) => {
+    const refreshHandler = (UID: string) => {
         if (!refreshHandlers[UID]) {
             const mutex = createMutex({ expiry: 15000 });
 
@@ -38,23 +36,19 @@ export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response
              * 1) Race conditions within the context (tab). Solved by the once handler.
              * 2) Race conditions within multiple contexts (tabs). Solved by the shared mutex.
              */
-            refreshHandlers[UID] = createOnceHandler(async (responseDate: Date = new Date()) => {
+            refreshHandlers[UID] = createOnceHandler(async () => {
                 const unlockMutex = await getMutexLock(UID);
                 try {
-                    const lastRefreshDate = getLastRefreshDate(UID);
-                    if (lastRefreshDate === undefined || responseDate > lastRefreshDate) {
-                        const result = await refresh(UID);
-                        setLastRefreshDate(UID, getDateHeader(result.headers) || new Date());
-                        // Add an artificial delay to ensure cookies are properly updated to avoid race conditions
-                        await wait(50);
-                    }
+                    await refresh(UID);
+                    // Add an artificial delay to ensure cookies are properly updated to avoid race conditions
+                    await wait(50);
                 } finally {
                     await unlockMutex();
                 }
             });
         }
 
-        return refreshHandlers[UID](responseDate);
+        return refreshHandlers[UID]();
     };
 
     return refreshHandler;
