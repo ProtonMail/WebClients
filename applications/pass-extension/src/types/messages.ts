@@ -116,6 +116,7 @@ export enum WorkerMessageType {
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
 
     CONNECTIVITY = 'CONNECTIVITY',
+    CONNECTIVITY_SYNC = 'CONNECTIVITY_SYNC',
 
     DEBUG = 'DEBUG',
     DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
@@ -221,6 +222,7 @@ export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
 export type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
+export type ConnectivitySyncMessage = WithPayload<WorkerMessageType.CONNECTIVITY_SYNC, { online: boolean }>;
 
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
@@ -321,6 +323,7 @@ export type WorkerMessage =
     | ClipboardReadMessage
     | ClipboardWriteMessage
     | ConnectivityStatusMessage
+    | ConnectivitySyncMessage
     | DebugMessage
     | DesktopUnlockSecretMessage
     | EndpointInitMessage
