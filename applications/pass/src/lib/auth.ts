@@ -45,6 +45,7 @@ import { getInitialLockedAppStatus } from '@proton/pass/lib/auth/utils';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import {
     bootIntent,
     cacheCancel,
@@ -556,9 +557,9 @@ export const createAuthService = ({
             logger.info('[AuthServiceProvider] Session resume failure');
             await api.idle();
 
-            /** Only advance the retry chain on real connectivity failures. */
+            /** Only advance the retry chain on server-side downtime */
             const connectionIssue = getIsConnectionIssue(err);
-            if (connectionIssue) scheduler.attempt();
+            if (connectionIssue && connectivity.status === ConnectivityStatus.DOWNTIME) scheduler.attempt();
 
             /** Offline-booted: do not mutate app state on resume failures. */
             if (clientOffline(app.getState().status)) return;
@@ -630,7 +631,12 @@ export const createAuthService = ({
             }
         };
 
-        const connectivityUnsub = connectivity.subscribe((evt) => evt.type === 'status' && tryOfflineResume(true));
+        const connectivityUnsub = connectivity.subscribe(({ type }) => {
+            /** Status events drive opportunistic resumes. Navigator
+             * -online events invalidate the cooldown for quick retries. */
+            if (type === 'navigator-online') scheduler.reset();
+            if (type === 'status') tryOfflineResume(true);
+        });
 
         /** On tab focus / window show while offline, force a fresh probe + retry-backoff
          * rewind so a return-online transition is caught immediately instead of waiting
