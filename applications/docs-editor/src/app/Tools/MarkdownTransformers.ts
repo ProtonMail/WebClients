@@ -58,7 +58,7 @@ function getTableColumnsSize(table: TableNode) {
 }
 
 function createTableCell(textContent: string): TableCellNode {
-  textContent = textContent.replace(/\\n/g, '\n')
+  textContent = textContent.replace(/<br\s*\/?>/gi, '\n')
   const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   $convertFromMarkdownString(textContent, MarkdownTransformers, cell)
@@ -93,7 +93,7 @@ export const TABLE: ElementTransformer = {
         // It's TableCellNode so it's just to make flow happy
         if ($isTableCellNode(cell)) {
           // eslint-disable-next-line @typescript-eslint/no-use-before-define
-          rowOutput.push($convertToMarkdownString(MarkdownTransformers, cell).replace(/\n/g, '\\n'))
+          rowOutput.push($convertToMarkdownString(MarkdownTransformers, cell).replace(/\n/g, '<br/>'))
           if (cell.__headerState === TableCellHeaderStates.ROW) {
             isHeaderRow = true
           }
