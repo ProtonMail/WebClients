@@ -10,6 +10,7 @@ import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/au
 import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/client';
+import type { MaybeNull } from '@proton/pass/types';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
@@ -75,6 +76,7 @@ const connectivity = {
     online: true,
     status: ConnectivityStatus.ONLINE,
     check: jest.fn().mockResolvedValue(undefined),
+    syncNavigatorOnline: jest.fn(),
     subscribe: jest.fn((cb) => {
         connectivitySubscribers.push(cb);
         return () => connectivitySubscribers.splice(connectivitySubscribers.indexOf(cb), 1);
@@ -443,13 +445,33 @@ describe('AuthService', () => {
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
-        test('throttle gate suppresses connectivity-driven dispatch after a DOWNTIME failure', async () => {
+        test('status ONLINE transition resets cooldown and dispatches even after a DOWNTIME failure', async () => {
             setAppState({ status: AppStatus.OFFLINE });
             connectivity.online = true;
             connectivity.status = ConnectivityStatus.DOWNTIME;
             await authService.config.onSessionFailure({}, offlineError);
             expect(authService.scheduler.isThrottled()).toBe(true);
+
+            connectivity.status = ConnectivityStatus.ONLINE;
             fireStatus(ConnectivityStatus.ONLINE);
+
+            expect(authService.scheduler.isThrottled()).toBe(false);
+            expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
+        });
+
+        test('non-ONLINE status events do not reset the scheduler', async () => {
+            setAppState({ status: AppStatus.OFFLINE });
+            connectivity.online = true;
+            connectivity.status = ConnectivityStatus.DOWNTIME;
+            await authService.config.onSessionFailure({}, offlineError);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+
+            fireStatus(ConnectivityStatus.OFFLINE);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+
+            fireStatus(ConnectivityStatus.DOWNTIME);
+            expect(authService.scheduler.isThrottled()).toBe(true);
+
             expect(appStore.dispatch).not.toHaveBeenCalled();
         });
 
@@ -490,6 +512,12 @@ describe('AuthService', () => {
             expect(connectivity.check).toHaveBeenCalledTimes(1);
         });
 
+        test('wake handler syncs navigator state defensively', async () => {
+            visibility = 'visible';
+            await fireVisibility();
+            expect(connectivity.syncNavigatorOnline).toHaveBeenCalledWith(navigator.onLine);
+        });
+
         test('visibilitychange skips probe when already online', async () => {
             connectivity.online = true;
             visibility = 'visible';
@@ -510,6 +538,44 @@ describe('AuthService', () => {
             detach();
             expect(removeListeners).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
             expect(connectivitySubscribers.length).toBe(subscribersBefore - 1);
+        });
+
+        describe('Desktop `system:wake`', () => {
+            let onSystemWakeHandler: MaybeNull<() => void>;
+            let onSystemWake: jest.Mock;
+            let onSystemWakeUnsub: jest.Mock;
+
+            beforeEach(() => {
+                (global as any).DESKTOP_BUILD = true;
+
+                onSystemWakeHandler = null;
+                onSystemWakeUnsub = jest.fn();
+                onSystemWake = jest.fn((cb: () => void) => {
+                    onSystemWakeHandler = cb;
+                    return onSystemWakeUnsub;
+                });
+                (window as any).ctxBridge = { onSystemWake: onSystemWake };
+                detach = authService.listen();
+            });
+
+            afterEach(() => detach());
+
+            test('subscribes to `system:wake` via ctxBridge', () => {
+                expect(onSystemWake).toHaveBeenCalledTimes(1);
+            });
+
+            test('unsubscribes from `system:wake`', () => {
+                detach();
+                expect(onSystemWakeUnsub).toHaveBeenCalled();
+            });
+
+            test('wake dispatches offline resume when offline-booted + online', () => {
+                setAppState({ status: AppStatus.OFFLINE });
+                connectivity.online = true;
+                onSystemWakeHandler?.();
+                expect(connectivity.syncNavigatorOnline).toHaveBeenCalledWith(navigator.onLine);
+                expect(appStore.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID, silence: true }));
+            });
         });
     });
 });
