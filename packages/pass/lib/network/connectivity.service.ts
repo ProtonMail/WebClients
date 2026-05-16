@@ -47,8 +47,10 @@ export interface ConnectivityService {
     setStatus: (status: ConnectivityStatus) => void;
     /** Subscribe to connectivity events. */
     subscribe: (subscriber: Subscriber<ConnectivityEvent>) => () => void;
-    /** Sync navigator online state into the service. Extension only usage
-     * to forward client-side signals when worker navigator events are unreliable. */
+    /** Sync navigator online state into the service. Used to recover from
+     * potentially missed navigator events: in extensions where worker-scope
+     * navigator events are unreliable (popup forwards via CONNECTIVITY_SYNC),
+     * and in desktop renderers re-syncing after sleep/lock cycles. */
     syncNavigatorOnline: (online: boolean) => void;
 }
 
