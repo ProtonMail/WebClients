@@ -774,6 +774,15 @@
       ],
       "View agent activity": [
         "Паглядзець актыўнасць агента"
+      ],
+      "Copy token": [
+        "Скапіяваць токен"
+      ],
+      "Create token": [
+        "Стварыць токен"
+      ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
       ]
     },
     "Browser": {
@@ -1388,6 +1397,15 @@
       ],
       "Failed to load token actions": [
         "Не ўдалося загрузіць дзеянні токена"
+      ],
+      "Failed to delete access token": [
+        "Не ўдалося выдаліць токен доступу"
+      ],
+      "Failed to update vault access": [
+        "Не ўдалося абнавіць доступ да сховішча"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Назва павінна быць не больш за 191 сімвал"
       ]
     },
     "Error message": {
@@ -2801,6 +2819,39 @@
       ],
       "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
         "Гэты токен дае доступ толькі на чытанне для сховішчаў, якія вы выбралі. Ён можа чытаць элементы, але не можа рэдагаваць іх, абагульваць сховішчы або запрашаць іншых. Гэта можна змяніць пазней."
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Токен доступу \"${ action.token.Name }\" неадкадладна спыніць сваю працу. Гэта дзеянне нельга будзе адрабіць."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Паміж 60 (1 гадзіна) і 525600 (1 год)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Скапіюйце ніжэй у фармаце Markdown і адпраўце яго свайму агенту ШІ. Токен будзе паказаны толькі адзін раз."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Стварыце токен, каб інтэграваць ${ PASS_APP_NAME } у свае сцэнарыі і інструменты."
+      ],
+      "Log out of any existing session:": [
+        "Выйсці з усіх актыўных сеансаў:"
+      ],
+      "No activity recorded yet.": [
+        "Пакуль ніякай актыўнасці не выяўлена."
+      ],
+      "No vaults available.": [
+        "Няма даступных сховішчаў."
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Выберыце сховішчы, якія можа прачытаць \"${ token.Name }\"."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Цяпер вы можаце перайсці па наступнай спасылцы ${ url }, каб скапіяваць інструкцыі для адпраўкі ў свой агент ШІ."
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Палепшыць да ${ PASS_APP_NAME } Plus, каб стварыць токены доступу і выкарыстоўваць ${ PASS_APP_NAME } праграмна."
+      ],
+      "Vault access granted": [
+        "Доступ да сховішча прадстаўлены"
       ]
     },
     "Keyboard key": {
@@ -4017,6 +4068,12 @@
       ],
       "Expires in (minutes)": [
         "Міне праз (хвілін)"
+      ],
+      "Use for AI agent": [
+        "Выкарыстоўваць для агента ШІ"
+      ],
+      "Vault access": [
+        "Доступ да сховішча"
       ]
     },
     "Link": {
@@ -4071,6 +4128,9 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } было ўключана"
+      ],
+      "Access token deleted": [
+        "Токен доступу выдалены"
       ]
     },
     "Option": {
@@ -5011,6 +5071,18 @@
       ],
       "Manage vault access": [
         "Кіраванне доступам да сховішча"
+      ],
+      "Agent setup instructions": [
+        "Інструкцыі па наладцы агента"
+      ],
+      "Create new access token": [
+        "Стварыць новы токен доступу"
+      ],
+      "No access tokens yet": [
+        "Пакуль няма токена доступу"
+      ],
+      "Your new access token": [
+        "Ваш новы токен доступу"
       ]
     },
     "Title_cloned_item": {
@@ -5375,6 +5447,12 @@
       ],
       "Active": [
         "Актыўны"
+      ],
+      "Expired": [
+        "Пратэрмінаваны"
+      ],
+      "Expiring soon": [
+        "Неўзабаве міне"
       ]
     },
     "Activity": {
@@ -5383,6 +5461,18 @@
       ],
       "Reason": [
         "Прычына"
+      ],
+      "Activity details could not be loaded.": [
+        "Не ўдалося загрузіць падрабязнасці актыўнасці."
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Item": [
+        "Элемент"
+      ],
+      "Vault": [
+        "Сховішча"
       ]
     }
   }

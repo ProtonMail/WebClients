@@ -2638,7 +2638,7 @@
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "${ PROTON_SENTINEL_LINK }（我们的高级账户保护方案）"
@@ -2735,6 +2735,12 @@
       ],
       "Vault access granted": [
         "已授予保险库访问权限"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "访问令牌“${ action.token.Name }”已过期。若删除，将不再显示。"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "仅显示过去 30 天内过期的令牌，更早的令牌将被自动删除。"
       ]
     },
     "Keyboard key": {
@@ -3909,6 +3915,9 @@
       ],
       "Vault access": [
         "保险库访问"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "已过期的令牌（${ expired.length } 个）"
       ]
     },
     "Link": {
