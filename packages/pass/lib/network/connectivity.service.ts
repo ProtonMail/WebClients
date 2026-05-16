@@ -149,14 +149,17 @@ export const createConnectivityService = ({
         const handler = (next: ConnectivityStatus) => {
             const ms = getRetryTimeout(next, retryCount);
 
-            retryTimer = setTimeout(
+            const timer = setTimeout(
                 safeAsyncCall(async () => {
                     retryCount++;
                     const result = await cancelableCheck.run();
+                    if (timer !== retryTimer) return; // Bail if a newer handler took over via cancel/reset.
                     if (result !== ConnectivityStatus.ONLINE) handler(result);
                 }),
                 ms
             );
+
+            retryTimer = timer;
         };
 
         return {
