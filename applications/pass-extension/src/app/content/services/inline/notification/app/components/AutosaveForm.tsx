@@ -1,11 +1,12 @@
 import type { FC } from 'react';
 
-import { Field, type FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
@@ -32,31 +33,29 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
 
     return (
         <>
-            <div className="flex flex-nowrap items-center">
-                <ItemIcon
-                    url={domain}
-                    icon={'user'}
-                    size={5}
-                    alt=""
-                    className="shrink-0"
-                    loadImage={settings.loadDomainImages}
+            <FieldsetCluster className="mt-2">
+                <Field
+                    lengthLimiters
+                    name="name"
+                    component={TitleField}
+                    spellCheck={false}
+                    autoComplete={'off'}
+                    placeholder={c('Placeholder').t`Untitled`}
+                    maxLength={MAX_ITEM_NAME_LENGTH}
+                    className="items-center"
+                    label={c('Label').t`Title`}
+                    dense
+                    icon={
+                        <ItemIcon
+                            url={domain}
+                            icon={'user'}
+                            size={5}
+                            alt=""
+                            className="shrink-0"
+                            loadImage={settings.loadDomainImages}
+                        />
+                    }
                 />
-                <div className="flex-auto border rounded-xl border-weak ml-3">
-                    <Field
-                        lengthLimiters
-                        name="name"
-                        component={TitleField}
-                        spellCheck={false}
-                        autoComplete={'off'}
-                        placeholder={c('Placeholder').t`Untitled`}
-                        maxLength={MAX_ITEM_NAME_LENGTH}
-                        className="pr-0"
-                        dense
-                    />
-                </div>
-            </div>
-
-            <FieldsetCluster>
                 <Field
                     name="userIdentifier"
                     component={TextField}
