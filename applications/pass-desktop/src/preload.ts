@@ -28,6 +28,9 @@ const contextBridgeApi: ContextBridgeApi = {
     windowShow: () => invoke('window:show'),
     onWindowHide: (callback) => handler('window:hide', callback),
 
+    /* system */
+    onSystemWake: (callback) => handler('system:wake', callback),
+
     /* clipboard */
     writeToClipboard: (text) => invoke('clipboard:write', text),
     readFromClipboard: () => invoke('clipboard:read'),

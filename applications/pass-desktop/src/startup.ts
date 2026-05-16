@@ -5,6 +5,7 @@ import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { nativeMessaging } from './lib/native-messaging/startup';
 import { setupIpcHandlers as navigation } from './lib/navigation';
+import { system } from './lib/system';
 import { setupIpcHandlers as theming } from './lib/theming';
 import { setupIpcHandlers as update } from './lib/updater/ipc';
 import { setupIpcHandlers as window } from './lib/window';
@@ -17,6 +18,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
 
     // Initialize IPC handlers
     window(() => ctx.window);
+    system(() => ctx.window);
     biometrics(() => ctx.window);
     navigation(() => ctx.window);
     clipboard();
