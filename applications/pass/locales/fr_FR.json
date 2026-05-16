@@ -2034,7 +2034,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2781,6 +2782,12 @@
       ],
       "Vault access granted": [
         "L'accès aux coffres-forts a été accordé."
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Le jeton d'accès « ${ action.token.Name } » a déjà expiré. Une fois supprimé, il n'apparaîtra plus."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Seuls les jetons expirés depuis moins de 30 jours sont affichés. Les jetons plus anciens sont automatiquement supprimés."
       ]
     },
     "Keyboard key": {
@@ -3972,6 +3979,9 @@
       ],
       "Vault access": [
         "Accès aux coffres-forts"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Jetons expirés (${ expired.length })"
       ]
     },
     "Link": {
