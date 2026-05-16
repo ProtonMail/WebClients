@@ -2857,6 +2857,12 @@
       ],
       "Vault access granted": [
         "Adgang til boks(e) blev givet"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Adgangstoken \"${ action.token.Name }\" er allerede udløbet. Den vil ikke længere vises, hvis den er slettet."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
       ]
     },
     "Keyboard key": {
@@ -4111,6 +4117,9 @@
       ],
       "Vault access": [
         "Adgang til boksen"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Udløbede tokens (${ expired.length })"
       ]
     },
     "Link": {

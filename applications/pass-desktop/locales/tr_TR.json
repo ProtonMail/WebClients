@@ -784,7 +784,7 @@
         "Bunu yeniden gösterme"
       ],
       "Copy instructions": [
-        "Talimatları kopyala"
+        "Yönergeleri kopyala"
       ],
       "Copy token": [
         "Kodu kopyala"
@@ -796,13 +796,13 @@
         "Diğerlerini yükle"
       ],
       "Manage vault access": [
-        "Kasa erişimini yönet"
+        "Kasa erişimi yönetimi"
       ],
       "New token": [
         "Yeni kod"
       ],
       "View agent activity": [
-        "Ajan etkinliğini görüntüle"
+        "Aracının etkinliğini görüntüle"
       ]
     },
     "App menu": {
@@ -1421,7 +1421,7 @@
         "Bir bilgisayar kilit açma denetimi zaten yapılıyor."
       ],
       "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
-        "Ajan kurulum talimatları yüklenemedi. Lütfen aşağıdaki kodu kopyalayın. Bu bir daha gösterilmeyecek."
+        "Aracı kurma yönergeleri yüklenemedi. Lütfen aşağıdaki kodu kopyalayın. Bu bir daha görüntülenmeyecek."
       ],
       "Expiration must be between 60 minutes and 1 year": [
         "Geçerlilik süresi 60 dakika ile 1 yıl arasında olmalıdır"
@@ -1433,10 +1433,10 @@
         "Erişim kodu silinemedi"
       ],
       "Failed to load access tokens": [
-        "Erişim kodu yüklenemedi"
+        "Erişim kodları yüklenemedi"
       ],
       "Failed to load token actions": [
-        "Kod eylemleri yüklenemedi"
+        "Kod işlemleri yüklenemedi"
       ],
       "Failed to update vault access": [
         "Kasa erişimi güncellenemedi"
@@ -1445,7 +1445,7 @@
         "Adın yazılması zorunludur"
       ],
       "Name must be 191 characters or fewer": [
-        "Ad en fazla 191 karakterden oluşmalıdır"
+        "Ad en fazla 191 karakter uzunluğunda olabilir"
       ]
     },
     "Error message": {
@@ -2118,7 +2118,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2775,99 +2776,105 @@
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK }"
       ],
       "${ selectedShareIds.size } selected": [
-        "${ selectedShareIds.size } seçildi"
+        "${ selectedShareIds.size } seçilmiş"
       ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "\"${ action.token.Name }\" erişim kodu çalışmayı hemen durduracak. Bu işlem geri alınamaz."
       ],
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
-        "${ passCliLink } ile birlikte kullanılan erişim kodları CI/CD'yi otomatikleştirmenize veya yapay zeka aracınıza işini yürütmesi için gerekenlere kapsamlı erişim vermenize olanak tanır."
+        "${ passCliLink } ile kullanılan erişim kodları CI/CD otomatikleştirmesini veya yapay zeka aracınıza işini yürütmesi için gerekenlere kapsamlı erişimi vermenizi sağlar."
       ],
       "Between 60 (1 hour) and 525600 (1 year)": [
         "60 (1 saat) ile 525600 (1 yıl) arasında"
       ],
       "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
-        "Aşağıdaki markdown'ı kopyalayın ve yapay zeka ajanınıza gönderin. Kod yalnızca bu sefer gösterilecek."
+        "Aşağıdaki markdown kodunu kopyalayın ve yapay zeka aracınıza gönderin. Kod bir daha görüntülenmeyecek."
       ],
       "Copy this token now. For security reasons, it won't be shown again.": [
-        "Bu kodu şimdi kopyalayın. Güvenlik nedenleriyle tekrar gösterilmeyecek."
+        "Bu kodu şimdi kopyalayın. Güvenlik nedeniyle yeniden görüntülenmeyecek."
       ],
       "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
-        "${ PASS_APP_NAME } uygulamasını betikleriniz ve araçlarınızla entegre etmek için bir kod oluşturun."
+        "${ PASS_APP_NAME } uygulamasını betikleriniz ve araçlarınızla bütünleştirmek için bir kod oluşturun."
       ],
       "Created ${ createdDate }": [
-        "${ createdDate } tarihinde oluşturuldu"
+        "Oluşturulma: ${ createdDate }"
       ],
       "Created item": [
-        "Oluşturulan öğe"
+        "Oluşturulan öge"
       ],
       "Deleted item": [
-        "Silinmiş öğe"
+        "Öge silme"
       ],
       "Download pass-cli from ${ passCliLink }.": [
-        "${ passCliLink } bağlantısından pass-cli'yı indirin."
+        "${ passCliLink } bağlantısından pass-cli paketini indirin."
       ],
       "Every action this agent token has performed, newest first.": [
-        "Bu ajan kodunun gerçekleştirdiği her eylem. En yenisinden başlayarak."
+        "Bu aracı kodunun yaptığı her işlem. En yenisinden başlayarak."
       ],
       "Expired ${ abs } hour ago": [
         "Geçerlilik süresi ${ abs } saat önce doldu",
         "Geçerlilik süresi ${ abs } saat önce doldu"
       ],
       "Expires in ${ hours } hour": [
-        "${ hours } saat sonra sona erecek",
-        "${ hours } saat sonra sona erecek"
+        "Geçerlilik süresi ${ hours } saat sonra dolacak",
+        "Geçerlilik süresi ${ hours } saat sonra dolacak"
       ],
       "Expires in less than an hour": [
-        "Bir saatten kısa süre içinde sona erecek"
+        "Geçerlilik süresi bir saatten kısa sürede dolacak"
       ],
       "Log out of any existing session:": [
-        "Mevcut tüm oturumlardan çıkış yap:"
+        "Var olan tüm oturumları kapat:"
       ],
       "Moved item to trash": [
-        "Öğe çöp kutusuna taşındı"
+        "Öge çöpe atıldı"
       ],
       "New": [
         "Yeni"
       ],
       "No activity recorded yet.": [
-        "Henüz kaydedilmiş etkinlik yok."
+        "Henüz bir etkinlik kaydedilmemiş."
       ],
       "No vaults available.": [
-        "Kullanılabilir kasa yok."
+        "Kullanılabilecek bir kasa yok."
       ],
       "None selected": [
-        "Hiçbiri seçilmedi"
+        "Hiçbir şey seçilmemiş"
       ],
       "Read item": [
-        "Öğeyi oku"
+        "Öge okuma"
       ],
       "Restored item from trash": [
-        "Öğe çöp kutusundan geri yüklendi"
+        "Öge çöpten çıkarıldı"
       ],
       "Select the vaults \"${ token.Name }\" can read.": [
-        "\"${ token.Name }\" adlı kullanıcının okuyabileceği kasaları seçin."
+        "\"${ token.Name }\" kodunun okuyabileceği kasaları seçin."
       ],
       "Test the token by logging in and listing vaults:": [
-        "Oturum açarak ve kasaları listeleyerek kodu test edin:"
+        "Oturum açarak ve kasaları listeleyerek kodu sınayın:"
       ],
       "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
-        "Ajanın gerçekleştirdiği her eylem için bir gerekçe sunması gerekecek ve her eylem inceleyebileceğiniz bir denetim günlüğüne kaydedilecek. Kod oluşturulduktan sonra yapay zeka ajanınıza kopyalayıp yapıştıracağınız talimatlar alacaksınız."
+        "Aracının yağtığı her işlem için bir gerekçe sunması gerekecek ve her işlem inceleyebileceğiniz bir denetim günlüğüne kaydedilecek. Kod oluşturulduğunda, kopyalayıp yapay zeka aracınıza yapıştıracağınız yönergeleri alacaksınız."
       ],
       "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
-        "Ardından yapay zeka ajanınıza göndereceğiniz talimatları kopyalamak için ${ url } adresine gidebilirsiniz."
+        "Ardından yapay zeka ajanınıza göndereceğiniz yönergeleri kopyalamak için ${ url } adresine gidebilirsiniz."
       ],
       "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
-        "Bu kod seçtiğiniz kasalara salt okunur erişim sağlar. Öğeleri okuyabilir ancak bunları düzenleyemez, kasaları paylaşamaz veya başkalarını davet edemez. Bunu daha sonra değiştirebilirsiniz."
+        "Bu kod seçtiğiniz kasalara salt okunur erişim sağlar. Ögeleri okuyabilir ancak bunları düzenleyemez, kasaları paylaşamaz veya başkalarını davet edemez. Bunu daha sonra değiştirebilirsiniz."
       ],
       "Updated item": [
-        "Güncellenen öğe"
+        "Güncellenen öge"
       ],
       "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
-        "Erişim kodları oluşturmak ve ${ PASS_APP_NAME } uygulamasını programlı olarak kullanmak için ${ PASS_APP_NAME } Plus'a yükseltin."
+        "Erişim kodları oluşturmak ve ${ PASS_APP_NAME } uygulamasını programlama ile kullanmak için ${ PASS_APP_NAME } Plus tarifesine yükseltin."
       ],
       "Vault access granted": [
-        "Kasa erişim izni verildi"
+        "Kasaya erişme izni verildi"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "\"${ action.token.Name }\" erişim kodunun süresi zaten dolmuş. Silinirse artık görüntülenmeyecek."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Yalnızca son 30 gün içinde süresi dolan kodlar görüntülenir. Daha eski kodlar otomatik olarak silinir."
       ]
     },
     "Keyboard key": {
@@ -4109,7 +4116,7 @@
         "Posta kodu"
       ],
       "Access tokens": [
-        "Erişim kodu"
+        "Erişim kodları"
       ],
       "Expires in (minutes)": [
         "Geçerlilik süresi (dakika) içinde dolacak"
@@ -4118,7 +4125,7 @@
         "Kod adı"
       ],
       "Use for AI agent": [
-        "Yapay zeka ajanı için kullan"
+        "Yapay zeka aracısı için kullan"
       ],
       "Vault access": [
         "Kasa erişimi"
@@ -4454,7 +4461,7 @@
         "${ url } üzerinde kullanılmış"
       ],
       "e.g. 60": [
-        "örn. 60"
+        "örnek: 60"
       ],
       "e.g. My automation script": [
         "Örnek: Otomasyon betiğim"
@@ -5104,25 +5111,25 @@
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
       ],
       "Access tokens require ${ PASS_APP_NAME } Plus": [
-        "Erişim kodları ${ PASS_APP_NAME } Plus gerektirir"
+        "Erişim kodları ${ PASS_APP_NAME } Plus tarifesi ile kullanılabilir"
       ],
       "Activity for \"${ token.Name }\"": [
-        "\"${ token.Name }\" için etkinlik"
+        "\"${ token.Name }\" etkinliği"
       ],
       "Agent setup instructions": [
-        "Ajan kurulum talimatları"
+        "Aracı kurulum yönergeleri"
       ],
       "Create new access token": [
         "Yeni erişim kodu oluştur"
       ],
       "Delete access token?": [
-        "Erişim kodları silinsin mi?"
+        "Erişim kodu silinsin mi?"
       ],
       "Manage vault access": [
-        "Kasa erişimini yönet"
+        "Kasa erişimi yönetimi"
       ],
       "No access tokens yet": [
-        "Henüz erişim kodu yok"
+        "Henüz bir erişim kodu yok"
       ],
       "Your new access token": [
         "Yeni erişim kodunuz"
@@ -5484,13 +5491,13 @@
         "Etkinlik"
       ],
       "Activity details could not be loaded.": [
-        "Etkinlik detayları yüklenemedi."
+        "Etkinlik ayrıntıları yüklenemedi."
       ],
       "Folder": [
         "Klasör"
       ],
       "Item": [
-        "Öğe"
+        "Öge"
       ],
       "Reason": [
         "Gerekçe"
@@ -5501,16 +5508,16 @@
     },
     "Status": {
       "Active": [
-        "Aktif"
+        "Etkin"
       ],
       "Agent": [
-        "Ajan"
+        "Aracı"
       ],
       "Expired": [
-        "Süresi doldu"
+        "Süresi dolmuş"
       ],
       "Expiring soon": [
-        "Yakında sona eriyor"
+        "Geçerlilik süresi yakında dolacak"
       ]
     }
   }
