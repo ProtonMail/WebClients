@@ -2672,6 +2672,12 @@
       ],
       "New": [
         "新規"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "アクセストークン「${ action.token.Name }」は既に期限切れです。削除すると、表示されなくなります。"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "過去30日以内に有効期限が切れたトークンのみが表示されます。それより古いトークンは自動的に削除されます。"
       ]
     },
     "Keyboard key": {
@@ -3804,6 +3810,9 @@
       ],
       "Token name": [
         "トークン名"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "期限切れトークン(${ expired.length })"
       ]
     },
     "Link": {
