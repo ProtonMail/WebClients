@@ -487,6 +487,38 @@ describe('ConnectivityService', () => {
         service.destroy();
     });
 
+    test('`check` racing an in-flight retry probe does not spawn a parallel retry chain', async () => {
+        /** 1. Bootstrap online, then go into DOWNTIME so retries are active */
+        setNavigatorOnline(true);
+        const { api, publish } = setupMockAPI();
+        const service = createConnectivityService({ api });
+        await initService(service, api);
+        publish({ type: 'connectivity', online: true, unreachable: true });
+
+        /** 2. Hang the next retry probe's api call so we can defer `check()` */
+        let resolveApi!: () => void;
+        (api as unknown as jest.Mock).mockImplementationOnce(
+            () => new Promise<void>((resolve) => (resolveApi = resolve))
+        );
+
+        /** 3. Fire the retry tick: probe is now in-flight, paused on the api call */
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+        expect(api).toHaveBeenCalledTimes(1);
+
+        /** 4. External `check()` joins the in-flight probe via `asyncLock` */
+        const checkPromise = service.check();
+
+        /** 5. Resolve the probe: `reset()` from `check` and the retry callback's
+         * continuation both run but only ONE next tick should be scheduled */
+        resolveApi();
+        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await checkPromise;
+
+        expect(jest.getTimerCount()).toBe(1);
+
+        service.destroy();
+    });
+
     test('`retryHandler.reset` keeps the chain alive across multiple resets', async () => {
         /** 1. Bootstrap online, then publish UNREACHABLE to start fib backoff */
         setNavigatorOnline(true);
