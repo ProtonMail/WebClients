@@ -618,41 +618,44 @@ export const createAuthService = ({
     auth.registerLockAdapter(passwordLockAdapterFactory(auth));
     auth.registerLockAdapter(biometricsLockAdapterFactory(auth, core));
 
-    /** Event-driven offline-resume triggers without alarm timers. Retries fire
-     * opportunistically on tab focus or connectivity transitions. Connectivity
-     * transitions are gated by the scheduler's cooldown; user gestures (tab focus)
-     * bypass it (iso with the extension's popup-open path). */
+    /** Event-driven offline-resume: connectivity transitions dispatch through
+     * the scheduler's cooldown. User gestures (visibility, desktop system wake)
+     * bypass it via `onWake` & also re-syncs navigator state to recover from
+     * events missed across system suspend. */
     auth.listen = () => {
         const tryOfflineResume = (throttle: boolean) => {
             if (clientOffline(app.getState().status) && connectivity.online) {
-                const localID = authStore.getLocalID();
                 if (throttle && scheduler.isThrottled()) return;
+                const localID = authStore.getLocalID();
                 if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
             }
         };
 
-        const connectivityUnsub = connectivity.subscribe(({ type }) => {
-            /** Status events drive opportunistic resumes. Navigator
-             * -online events invalidate the cooldown for quick retries. */
-            if (type === 'navigator-online') scheduler.reset();
-            if (type === 'status') tryOfflineResume(true);
-        });
-
-        /** On tab focus / window show while offline, force a fresh probe + retry-backoff
-         * rewind so a return-online transition is caught immediately instead of waiting
-         * on the next auto-retry tick. */
-        const onVisibilityChange = async () => {
-            if (document.visibilityState === 'visible') {
-                scheduler.reset();
-                if (!connectivity.online) await connectivity.check();
-                tryOfflineResume(false);
-            }
+        const onWake = async () => {
+            scheduler.reset();
+            connectivity.syncNavigatorOnline(navigator.onLine);
+            if (navigator.onLine && !connectivity.online) await connectivity.check();
+            tryOfflineResume(false);
         };
 
+        /** Connectivity service subscriber */
+        const connectivityUnsub = connectivity.subscribe((evt) => {
+            const navigatorOnline = evt.type === 'navigator-online';
+            const apiOnline = evt.type === 'status' && evt.status === ConnectivityStatus.ONLINE;
+            if (navigatorOnline || apiOnline) scheduler.reset();
+            if (evt.type === 'status') tryOfflineResume(true);
+        });
+
+        /** Desktop-only system wake subscriber */
+        const systemWakeUnsub = DESKTOP_BUILD ? window.ctxBridge?.onSystemWake(onWake) : undefined;
+
+        /** Visibility-change handler */
+        const onVisibilityChange = () => document.visibilityState === 'visible' && onWake();
         document.addEventListener('visibilitychange', onVisibilityChange);
 
         return () => {
             connectivityUnsub();
+            systemWakeUnsub?.();
             document.removeEventListener('visibilitychange', onVisibilityChange);
         };
     };
