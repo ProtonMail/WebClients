@@ -2971,6 +2971,12 @@
       ],
       "Vault access granted": [
         "S'ha permès l'accés a la caixa forta"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "El token d'accés \"${ action.token.Name }\" ja ha caducat. Si l'elimineu, ja no es mostrarà."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els testimonis més antics s'eliminen automàticament."
       ]
     },
     "Keyboard key": {
@@ -4129,6 +4135,9 @@
       ],
       "Vault access": [
         "Accés a la caixa forta"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Testimonis caducats (${ expired.length })"
       ]
     },
     "Link": {
