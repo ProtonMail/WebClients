@@ -36,13 +36,13 @@ const SshAgentDesktop: FC = () => {
     const [loading, setLoading] = useState(false);
     const enabled = Boolean(socketPath);
 
-    const updateSocketPath = async () => setSocketPath(await sshAgent?.socketPath);
+    const updateSocketPath = async () => setSocketPath((await window.ctxBridge?.sshAgent.getStatus())?.socketPath);
 
     const handleSshAgentToggle = async () => {
         setLoading(true);
         try {
             if (enabled) {
-                await sshAgent?.stop();
+                await sshAgent?.destroy();
                 setSocketPath(undefined);
                 createNotification({ text: c('Success').t`SSH agent successfully stopped` });
             } else {
@@ -69,7 +69,7 @@ const SshAgentDesktop: FC = () => {
 
     const handleModalCancel = async () => {
         setModal({ show: false });
-        await sshAgent?.stop();
+        await sshAgent?.destroy();
         setSocketPath(undefined);
     };
 
