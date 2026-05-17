@@ -1,5 +1,6 @@
 import type { CustomElementRef } from '@proton/pass/utils/dom/create-element';
 import { POPOVER_SUPPORTED, TopLayerManager, hidePopover, showPopover } from '@proton/pass/utils/dom/popover';
+import { repaint } from '@proton/pass/utils/dom/repaint';
 
 import type { ProtonPassRoot } from './custom-elements/ProtonPassRoot';
 import type { InlineRegistry } from './inline.registry';
@@ -20,6 +21,9 @@ export const createPopoverController = (registry: InlineRegistry): PopoverContro
             if (POPOVER_SUPPORTED) {
                 root.customElement.setAttribute('popover', 'manual');
                 showPopover(root.customElement);
+                /** Safari won't paint the popover host's contents under page zoom.
+                 * Force a reflow as a workaround: needs investigation/report. */
+                if (BUILD_TARGET === 'safari') repaint(root.customElement);
                 TopLayerManager.arm(root.customElement);
             } else root.customElement.removeAttribute('popover');
         },
