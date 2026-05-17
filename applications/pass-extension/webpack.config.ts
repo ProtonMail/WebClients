@@ -14,7 +14,7 @@ import getOptimizations from '@proton/pack/webpack/optimization';
 import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
 import { coreJsUint8ArrayFromBase64Rule, sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
 
-import { CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP, IGNORED_DYNAMIC_IMPORTS_CHUNKS } from './src/app/worker/chunks';
+import { CRYPTO_DYNAMIC_IMPORTS_CHUNKS, IGNORED_DYNAMIC_IMPORTS_CHUNKS } from './src/app/worker/chunks';
 import envVars from './tools/env';
 import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
 
@@ -252,13 +252,12 @@ const config: Configuration = {
         chunkFilename: ({ chunk }) => {
             if (!chunk?.name) {
                 if (chunk?.id) {
-                    const maybeCryptoChunkName = CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP[chunk.id.toString()];
+                    const maybeCryptoChunkName = CRYPTO_DYNAMIC_IMPORTS_CHUNKS[chunk.id.toString()];
                     if (maybeCryptoChunkName) return maybeCryptoChunkName;
 
                     /** throw on all unhandled chunks for chrome/safari builds requiring manual
                      * dynamic import registration in service-worker importScripts sequence */
-                    const importScriptsUsed = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
-                    if (importScriptsUsed && !IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
+                    if (USE_IMPORT_SCRIPTS && !IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
                         throw new Error(`lazy loaded chunk needs manual handling: ${chunk?.id.toString()}`);
                     }
                 }
