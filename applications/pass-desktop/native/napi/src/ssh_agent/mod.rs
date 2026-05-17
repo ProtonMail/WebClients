@@ -37,7 +37,7 @@ struct TrackedKey {
 }
 
 static SSH_AGENT_INSTANCE: Mutex<Option<SshAgentInstance>> = Mutex::new(None);
-static TRACKED_KEYS: Mutex<Vec<TrackedKey>> = Mutex::new(Vec::new());
+static SSH_TRACKED_KEYS: Mutex<Vec<TrackedKey>> = Mutex::new(Vec::new());
 
 type IsUnlockedCallback = ThreadsafeFunction<Option<String>, Promise<bool>>;
 
@@ -48,6 +48,8 @@ struct SshAgentInstance {
     named_pipe_cancel_token: CancellationToken,
 }
 
+/// Mutating methods are not concurrency-safe individually — they're
+/// serialized at the napi boundary via `SSH_AGENT_OPS` in `lib.rs`.
 pub struct SshAgentManager;
 
 #[derive(Clone)]
@@ -169,7 +171,8 @@ impl SshAgentManager {
         Ok(())
     }
 
-    pub async fn stop_agent() -> Result<()> {
+    /// Safe to call regardless of agent state. No-op when not running.
+    pub async fn destroy_agent() -> Result<()> {
         if let Err(e) = Self::remove_all_keys().await {
             eprintln!("Failed to clear SSH keys: {}", e);
         }
@@ -230,9 +233,17 @@ impl SshAgentManager {
         }
     }
 
+    /// Safe to call regardless of agent state. When no agent is running,
+    /// clears `SSH_TRACKED_KEYS` and returns `Ok(())` so stale entries
+    /// don't survive into a later `start_agent` call.
     pub async fn remove_all_keys() -> Result<()> {
+        if SSH_AGENT_INSTANCE.lock().unwrap().is_none() {
+            SSH_TRACKED_KEYS.lock().unwrap().clear();
+            return Ok(());
+        }
+
         let mut client = Self::connect_agent_client().await?;
-        let keys = TRACKED_KEYS.lock().unwrap().clone();
+        let keys = SSH_TRACKED_KEYS.lock().unwrap().clone();
 
         if keys.is_empty() {
             return Ok(());
@@ -253,7 +264,7 @@ impl SshAgentManager {
 
         // Edge-case: only clear keys that were successfully removed. Failed
         // ones stay tracked for future cleanup if agent is still running.
-        TRACKED_KEYS
+        SSH_TRACKED_KEYS
             .lock()
             .unwrap()
             .retain(|k| !removed.contains(&&k.public_key));
@@ -261,6 +272,9 @@ impl SshAgentManager {
         Ok(())
     }
 
+    /// Errors when no agent is running (via `connect_agent_client`
+    /// inside `add_keys_to_agent`). The JS layer should flag keys as
+    /// synced only on success.
     pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<()> {
         Self::remove_all_keys().await?;
         Self::add_keys_to_agent(keys).await
@@ -287,7 +301,7 @@ impl SshAgentManager {
         client.add_identity(&private_key, &[Constraint::Confirm]).await?;
 
         let public_key = private_key.public_key().clone();
-        TRACKED_KEYS.lock().unwrap().push(TrackedKey { public_key });
+        SSH_TRACKED_KEYS.lock().unwrap().push(TrackedKey { public_key });
 
         Ok(())
     }
