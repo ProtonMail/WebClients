@@ -17,7 +17,7 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
-import { CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP } from './chunks';
+import { CRYPTO_CHUNK_FILES } from './chunks';
 import { createWorkerContext } from './context/factory';
 import './debugger';
 
@@ -33,7 +33,7 @@ if (typeof browser !== 'undefined') {
             .map((locale) => `chunk.locales/${locale}-json.js`);
 
         const passChunks = ['chunk.pass-core.main.js'];
-        const cryptoChunks = ['chunk.crypto-worker-api.js', ...Object.values(CRYPTO_DYNAMIC_IMPORTS_CHUNKS_MAP)];
+        const cryptoChunks = ['chunk.crypto-worker-api.js', ...CRYPTO_CHUNK_FILES];
         const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
 
         const chunks = localeChunks.concat(passChunks).concat(cryptoChunks).concat(extraChunks);
