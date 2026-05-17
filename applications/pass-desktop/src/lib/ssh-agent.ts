@@ -5,7 +5,7 @@ import { ssh_agent_napi } from 'proton-pass-desktop/native';
 import { store } from 'proton-pass-desktop/store';
 import logger from 'proton-pass-desktop/utils/logger';
 
-import type { ItemRevision, SSHKeyItem } from '@proton/pass/types';
+import type { ItemRevision, MaybeNull, SSHKeyItem } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -32,12 +32,13 @@ const intoNativeSshKey = (item: ItemRevision<'sshKey'>): SshKeyData => ({
 });
 
 let sshSynced = false;
+let readyLock: MaybeNull<Promise<void>> = null;
+
 const isReady = () => sshSynced && isClientAppReady();
 
-/** Create a callback that will be called from Rust when SSH operations
- * occur. Returns true if app is unlocked, false if locked/timeout.
- * Waits for unlock with a 60 seconds timeout polling every 100ms.
- * Worst-case: concurrent SSH operations each start polling when locked. */
+/** Create a callback that will be called from Rust when SSH
+ * operations occur. Returns true if app is unlocked, false if
+ * locked/timeout. Concurrent callers share a single 60s poll. */
 const onStart = (event: Electron.IpcMainInvokeEvent) =>
     ssh_agent_napi.startAgent(
         async (
@@ -47,16 +48,14 @@ const onStart = (event: Electron.IpcMainInvokeEvent) =>
             _publicKey
         ) => {
             try {
-                if (error) throw new Error(`Lock check error from Rust (${error})`);
+                if (error) throw new Error('Lock check error', { cause: error });
 
                 const window = BrowserWindow.fromWebContents(event.sender);
                 if (!window) throw new Error('Could not find window for lock check');
 
                 if (isReady()) return true;
                 window.show();
-
-                await waitUntil(isReady, 100, 60_000);
-
+                await (readyLock ??= waitUntil(isReady, 100, 60_000).finally(() => (readyLock = null)));
                 return true;
             } catch (err) {
                 logger.error(`[SSH Agent] ${getErrorMessage(err)}`);
