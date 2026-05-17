@@ -2592,6 +2592,12 @@
       ],
       "New": [
         "Uusi"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Käyttötunnus \"${ action.token.Name }\" on jo vanhentunut. Jos se poistetaan, sitä ei enää näytetä."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Näkyvissä ovat vain viimeisten 30 päivän aikana vanhentuneet tunnukset. Vanhemmat tunnukset poistetaan automaattisesti."
       ]
     },
     "Keyboard key": {
@@ -3813,6 +3819,9 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Vanhentuneet tunnukset (${ expired.length })"
       ]
     },
     "Link": {

@@ -2788,6 +2788,15 @@
       ],
       "Vault access granted": [
         "Valvåtkomst beviljad"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "Åtkomsttoken “${ action.token.Name }“ kommer att sluta fungera omedelbart. Denna åtgärd kan inte ångras."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Skapa en token för att integrera ${ PASS_APP_NAME } med dina skript och verktyg."
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Välj valvet som “${ token.Name }“ kan läsa."
       ]
     },
     "Keyboard key": {

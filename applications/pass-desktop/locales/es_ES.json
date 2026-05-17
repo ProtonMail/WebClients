@@ -782,6 +782,9 @@
       ],
       "Load more": [
         "Cargar más"
+      ],
+      "Copy instructions": [
+        "Copiar instrucciones"
       ]
     },
     "App menu": {
@@ -1374,6 +1377,15 @@
       ],
       "Name is required": [
         "El nombre es obligatorio."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copia el token que verás a continuación, no se mostrará de nuevo."
+      ],
+      "Failed to load access tokens": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copia el token que verás a continuación, no se mostrará de nuevo."
+      ],
+      "Failed to load token actions": [
+        "No se pudieron cargar las acciones de token"
       ]
     },
     "Error message": {
@@ -2705,6 +2717,32 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } seleccionados"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "El token de acceso \"${ action.token.Name }\" ya ha expirado. Si lo eliminas, no volverá a mostrarse."
+      ],
+      "Created item": [
+        "Elemento creado"
+      ],
+      "Expired ${ abs } hour ago": [
+        "Caducó hace ${ abs } hora",
+        "Caducó hace ${ abs } horas"
+      ],
+      "Expires in ${ hours } hour": [
+        "Caduca en ${ hours } hora",
+        "Caduca en ${ hours } horas"
+      ],
+      "Moved item to trash": [
+        "Elemento movido a la papelera"
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Solo se muestran los tokens que expiraron en los últimos 30 días. Los tokens más antiguos se eliminan automáticamente."
+      ],
+      "Updated item": [
+        "Elemento actualizado"
       ]
     },
     "Keyboard key": {
@@ -3944,6 +3982,12 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Access tokens": [
+        "Tokens de acceso"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Tokens expirados (${ expired.length })"
       ]
     },
     "Link": {
@@ -5261,6 +5305,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
+      ]
+    },
+    "Status": {
+      "Agent": [
+        "Agente"
       ]
     }
   }
