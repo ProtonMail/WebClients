@@ -52,7 +52,6 @@ import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { semver } from '@proton/pass/utils/string/semver';
-import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { resolveBroadcast } from './broadcast';
@@ -175,7 +174,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 onNotification: pipe(enhance, createNotification),
 
-                onItemsUpdated: onNextTick((options) => {
+                onItemsUpdated: async (options) => {
                     if (options?.report ?? true) {
                         void createMonitorReport({
                             state: store.getState(),
@@ -184,8 +183,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         });
                     }
 
-                    void sshAgent?.sync();
-                }),
+                    await sshAgent?.sync();
+                },
                 onSettingsUpdated: async (update) => {
                     await settings.sync(update, authStore.getLocalID());
                     if (update.theme) core.theme.setState(update.theme);
