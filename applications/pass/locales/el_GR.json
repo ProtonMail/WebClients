@@ -2782,6 +2782,12 @@
       ],
       "Vault access granted": [
         "Η πρόσβαση στην κρύπτη χορηγήθηκε"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Το διακριτικό πρόσβασης \"${ action.token.Name }\" έχει ήδη λήξει. Εάν διαγραφεί, δε θα εμφανίζεται πλέον."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Εμφανίζονται μόνο τα διακριτικά που έληξαν τις τελευταίες 30 ημέρες. Τα παλαιότερα διακριτικά διαγράφονται αυτόματα."
       ]
     },
     "Keyboard key": {
@@ -3973,6 +3979,9 @@
       ],
       "Vault access": [
         "Πρόσβαση κρύπτης"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Ληγμένα διακριτικά (${ expired.length })"
       ]
     },
     "Link": {

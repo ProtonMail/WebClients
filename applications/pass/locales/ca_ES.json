@@ -2784,10 +2784,10 @@
         "S'ha permès l'accés a la caixa forta"
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
-        "El token d'accés \"${ action.token.Name }\" ja ha caducat. Si l'elimineu, ja no es mostrarà."
+        "El testimoni d'accés \"${ action.token.Name }\" ja ha caducat. Si l'elimineu, no es tornarà a mostrar."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
-        "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els testimonis més antics s'eliminen automàticament."
+        "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els més antics s'eliminen automàticament."
       ]
     },
     "Keyboard key": {
