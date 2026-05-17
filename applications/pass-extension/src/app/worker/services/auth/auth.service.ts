@@ -518,7 +518,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             const localID = authStore.getLocalID();
             const status = ctx.getState().status;
 
-            logger.info(`[AuthService] auto-resume alarm fired [${status}]`);
+            logger.debug(`[AuthService] auto-resume alarm fired [${status}]`);
 
             if (!connectivity.online) {
                 /** Connectivity state may be stale after SW idle-shutdown or a long
@@ -558,7 +558,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 /** Password-locked with popup opened: avoid triggering a resume
                  * while the user is trying to offline-unlock. Always extend as
                  * this isn't a real attempt. The the cap stays intact for real failures. */
-                logger.info('[AuthService] deferred auto resume [popup-opened]');
+                logger.debug('[AuthService] deferred auto resume [popup-opened]');
                 return alarms.scheduleAutoResume({ extend: true });
             }
 
@@ -567,7 +567,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 return authService.init({ forceLock, retryable: true, silence: true });
             }
 
-            logger.info(`[AuthService] dropped auto resume [${status}]`);
+            logger.debug(`[AuthService] dropped auto resume [${status}]`);
         });
 
         /** Bootstrap the auto-resume alarm chain for offline-booted clients.
