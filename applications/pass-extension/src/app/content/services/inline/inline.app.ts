@@ -151,10 +151,6 @@ export const createInlineApp = <T extends InlineRequest>({
         parent: popover.root.shadowRoot,
     });
 
-    /** Safari renders absolutely-positioned children of a popover-top-layer shadow
-     * host as 0×0 after a page zoom. Pin to viewport so layout is host-independent. */
-    if (BUILD_TARGET === 'safari') iframe.classList.add('fixed');
-
     iframe.style.setProperty(`--frame-animation`, animation);
 
     const cancel = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));

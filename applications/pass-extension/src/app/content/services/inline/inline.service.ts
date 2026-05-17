@@ -34,12 +34,7 @@ export const createInlineService = ({
         const { coords, action, origin } = payload;
 
         const root = registry.root;
-        /** Safari mispositions popover top-layer elements under page zoom,
-         * so the host's actual rect must be measured rather than assumed at (0,0). */
-        const rootRect =
-            POPOVER_SUPPORTED && BUILD_TARGET !== 'safari'
-                ? { top: 0, left: 0 }
-                : root.customElement.getBoundingClientRect();
+        const rootRect = POPOVER_SUPPORTED ? { top: 0, left: 0 } : root.customElement.getBoundingClientRect();
 
         const top = rootRect.top + coords.top;
         const left = rootRect.left + coords.left;

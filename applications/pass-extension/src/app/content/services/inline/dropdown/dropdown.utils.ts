@@ -167,12 +167,7 @@ export const getDropdownPosition =
                     const { element } = request.field;
                     const boxElement = request.field.getAnchor().element;
                     const boxed = boxElement !== element;
-                    /** Safari mispositions popover top-layer elements under page zoom,
-                     * so the host's actual rect must be measured rather than assumed at (0,0). */
-                    const rootRect =
-                        POPOVER_SUPPORTED && BUILD_TARGET !== 'safari'
-                            ? { top: 0, left: 0 }
-                            : root.getBoundingClientRect();
+                    const rootRect = POPOVER_SUPPORTED ? { top: 0, left: 0 } : root.getBoundingClientRect();
 
                     const styles = createStyleParser(boxElement);
                     const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
