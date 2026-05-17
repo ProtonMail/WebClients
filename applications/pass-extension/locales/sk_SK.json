@@ -3044,6 +3044,12 @@
       ],
       "Vault access granted": [
         "Prístup do trezora bol povolený"
+      ],
+      "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
+        "Platnosť prístupového tokenu „${ action.token.Name }“ už uplynula. Ak ho odstránite, už sa nebude zobrazovať."
+      ],
+      "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
+        "Zobrazujú sa len tokeny, ktorých platnosť uplynula v posledných 30 dňoch. Staršie tokeny sa automaticky mažú."
       ]
     },
     "Keyboard key": {
@@ -4230,6 +4236,9 @@
       ],
       "Vault access": [
         "Prístup k trezoru"
+      ],
+      "Expired tokens (${ expired.length })": [
+        "Exspirované tokeny (${ expired.length })"
       ]
     },
     "Link": {

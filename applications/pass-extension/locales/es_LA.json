@@ -779,6 +779,24 @@
       ],
       "Load more": [
         "Cargar más"
+      ],
+      "Copy instructions": [
+        "Copiar instrucciones"
+      ],
+      "Copy token": [
+        "Copiar token"
+      ],
+      "Create token": [
+        "Crear token"
+      ],
+      "Manage vault access": [
+        "Gestionar acceso de bóveda"
+      ],
+      "New token": [
+        "Token nuevo"
+      ],
+      "View agent activity": [
+        "Ver actividad del agente"
       ]
     },
     "Browser": {
@@ -1414,6 +1432,30 @@
       ],
       "Name is required": [
         "El nombre es obligatorio."
+      ],
+      "Couldn't load agent setup instructions. Please copy the token below, it won't be shown again.": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copie el token de abajo, no se mostrará de nuevo."
+      ],
+      "Expiration must be between 60 minutes and 1 year": [
+        "La expiración debe estar entre 60 minutos y 1 año"
+      ],
+      "Failed to create access token": [
+        "Error al crear el token de acceso"
+      ],
+      "Failed to delete access token": [
+        "Error al eliminar el token de acceso"
+      ],
+      "Failed to load access tokens": [
+        "No se pudieron cargar las instrucciones de configuración del agente. Copie el token de abajo, no se mostrará de nuevo."
+      ],
+      "Failed to load token actions": [
+        "Error al cargar las acciones de token"
+      ],
+      "Failed to update vault access": [
+        "Error al actualizar el acceso a la bóveda"
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nombre debe tener 191 caracteres como máximo"
       ]
     },
     "Error message": {
@@ -2839,10 +2881,102 @@
         "Nuevo"
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
-        "El token de acceso \"${ action.token.Name }\" ya expiró. Si lo elimina ya no se mostrará."
+        "El token de acceso «${ action.token.Name }» ya expiró. Si lo elimina ya no se mostrará."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
-        "Solo se muestran los tokens que han expirado en los últimos 30 días. Los tokens más antiguos son elimindos automáticamente."
+        "Solo se muestran los tokens que han expirado en los últimos 30 días. Los tokens más antiguos son eliminados automáticamente."
+      ],
+      "${ selectedShareIds.size } selected": [
+        "${ selectedShareIds.size } seleccionado(s)"
+      ],
+      "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
+        "El token de acceso «${ action.token.Name }» dejará de funcionar inmediatamente. Esta acción no se puede deshacer."
+      ],
+      "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
+        "Los tokens de acceso, usados junto con ${ passCliLink }, permiten automatizar CI/CD o proporcionar a su agente de IA acceso restringido a lo que necesita para ejecutar su tarea."
+      ],
+      "Between 60 (1 hour) and 525600 (1 year)": [
+        "Entre 60 (1 hora) y 525600 (1 año)"
+      ],
+      "Copy the markdown below and send it to your AI agent. This is the only time the token will be shown.": [
+        "Copie el código Markdown que aparece a continuación y envíelo a su agente de IA. Esta es la única vez que se mostrará el token."
+      ],
+      "Copy this token now. For security reasons, it won't be shown again.": [
+        "Copie este token ahora. Por razones de seguridad, no se mostrará de nuevo."
+      ],
+      "Create a token to integrate ${ PASS_APP_NAME } with your scripts and tools.": [
+        "Cree un token para integrar ${ PASS_APP_NAME } con sus scripts y herramientas."
+      ],
+      "Created ${ createdDate }": [
+        "Creado el ${ createdDate }"
+      ],
+      "Created item": [
+        "Elemento creado"
+      ],
+      "Deleted item": [
+        "Elemento eliminado"
+      ],
+      "Download pass-cli from ${ passCliLink }.": [
+        "Descargar pass-cli de ${ passCliLink }."
+      ],
+      "Every action this agent token has performed, newest first.": [
+        "Cada acción que ha realizado este token de agente, la más reciente primero."
+      ],
+      "Expired ${ abs } hour ago": [
+        "Expiró hace ${ abs } hora",
+        "Expiró hace ${ abs } horas"
+      ],
+      "Expires in ${ hours } hour": [
+        "Expira en ${ hours } hora",
+        "Expira en ${ hours } horas"
+      ],
+      "Expires in less than an hour": [
+        "Expira en menos de una hora"
+      ],
+      "Log out of any existing session:": [
+        "Salir de toda sesión existente:"
+      ],
+      "Moved item to trash": [
+        "Elemento movido a la papelera"
+      ],
+      "No activity recorded yet.": [
+        "Aún no hay actividad registrada."
+      ],
+      "No vaults available.": [
+        "No hay bóvedas disponibles."
+      ],
+      "None selected": [
+        "Sin selección"
+      ],
+      "Read item": [
+        "Leer elemento"
+      ],
+      "Restored item from trash": [
+        "Elemento restaurado de la papelera"
+      ],
+      "Select the vaults \"${ token.Name }\" can read.": [
+        "Seleccione las bóvedas que «${ token.Name }» puede leer."
+      ],
+      "Test the token by logging in and listing vaults:": [
+        "Pruebe el token iniciando sesión y listando las bóvedas:"
+      ],
+      "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
+        "El agente deberá proporcionar un motivo para cada acción que realice y cada acción se registrará en un registro de auditoría que usted podrá revisar. Después de la creación del token, recibirá instrucciones para copiar y pegar en su agente de IA."
+      ],
+      "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
+        "Luego puede ir a ${ url } para copiar las instrucciones para enviar a su agente de IA."
+      ],
+      "This token gets read-only access to the vaults you select. It can read items, but cannot edit them, share vaults, or invite others. You can change this later.": [
+        "Este token obtiene acceso de solo lectura a las bóvedas que seleccione. Puede leer elementos, pero no puede editarlos, compartir bóvedas ni invitar a otros. Puede cambiar esto más adelante."
+      ],
+      "Updated item": [
+        "Elemento actualizado"
+      ],
+      "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
+        "Actualice a ${ PASS_APP_NAME } Plus para crear tokens de acceso y usar ${ PASS_APP_NAME } programáticamente."
+      ],
+      "Vault access granted": [
+        "Acceso de bóveda concedido"
       ]
     },
     "Keyboard key": {
@@ -3992,6 +4126,18 @@
       ],
       "Expired tokens (${ expired.length })": [
         "Tokens expirados (${ expired.length })"
+      ],
+      "Access tokens": [
+        "Tokens de acceso"
+      ],
+      "Expires in (minutes)": [
+        "Expira en (minutos)"
+      ],
+      "Use for AI agent": [
+        "Uso para agente de IA"
+      ],
+      "Vault access": [
+        "Acceso de bóveda"
       ]
     },
     "Link": {
@@ -4037,6 +4183,9 @@
       ],
       "${ reason } has been enabled": [
         "Se ha activado ${ reason }."
+      ],
+      "Access token deleted": [
+        "Token de acceso eliminado"
       ]
     },
     "Onboarding": {
@@ -4303,6 +4452,9 @@
       ],
       "e.g. My automation script": [
         "p. ej., mi script de automatización"
+      ],
+      "e.g. 60": [
+        "p. ej. 60"
       ]
     },
     "Security Center - Info": {
@@ -4974,6 +5126,30 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Access tokens require ${ PASS_APP_NAME } Plus": [
+        "Los tokens de acceso requieren de ${ PASS_APP_NAME } Plus"
+      ],
+      "Activity for \"${ token.Name }\"": [
+        "Actividad para «${ token.Name }»"
+      ],
+      "Agent setup instructions": [
+        "Instrucciones de configuración del agente"
+      ],
+      "Create new access token": [
+        "Crear token de acceso"
+      ],
+      "Delete access token?": [
+        "¿Eliminar token de acceso?"
+      ],
+      "Manage vault access": [
+        "Gestionar el acceso a la bóveda"
+      ],
+      "No access tokens yet": [
+        "Aún no hay tokens de acceso"
+      ],
+      "Your new access token": [
+        "Su token de acceso nuevo"
       ]
     },
     "Title_cloned_item": {
@@ -5320,6 +5496,40 @@
       ],
       "Offline": [
         "Sin conexión"
+      ]
+    },
+    "Activity": {
+      "Activity": [
+        "Actividad"
+      ],
+      "Activity details could not be loaded.": [
+        "No se pudieron cargar los detalles de la actividad."
+      ],
+      "Folder": [
+        "Carpeta"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Reason": [
+        "Motivo"
+      ],
+      "Vault": [
+        "Bóveda"
+      ]
+    },
+    "Status": {
+      "Active": [
+        "Activo"
+      ],
+      "Agent": [
+        "Agente"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "Expirará pronto"
       ]
     }
   }
