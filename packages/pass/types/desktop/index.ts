@@ -1,11 +1,11 @@
 import type {
     AppState,
-    ItemRevision,
     Maybe,
     MaybeNull,
     NativeMessagePayload,
     NativeMessageRequest,
     NativeMessageResponse,
+    SSHKeyItem,
 } from '@proton/pass/types';
 import type { ContextMenuItemSerializable } from '@proton/pass/types/desktop/context-menu';
 import type { UpdateStore } from '@proton/pass/types/desktop/update';
@@ -56,13 +56,15 @@ export type ContextBridgeApi = {
     onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
 
-    startSshAgent: () => Promise<void>;
-    stopSshAgent: () => Promise<void>;
-    setSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<void>;
-    removeAllSshKeys: () => Promise<void>;
-    getSshAgentStatus: () => Promise<{ socketPath?: string }>;
-    getSshAgentSetting: () => Promise<boolean>;
-    setSshAgentSetting: (enabled: boolean) => Promise<void>;
+    sshAgent: {
+        clear: () => Promise<void>;
+        destroy: () => Promise<void>;
+        getEnabled: () => Promise<boolean>;
+        getStatus: () => Promise<{ socketPath?: string }>;
+        setEnabled: (enabled: boolean) => Promise<void>;
+        setKeys: (items: SSHKeyItem[]) => Promise<void>;
+        start: () => Promise<void>;
+    };
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';

@@ -25,7 +25,7 @@ sshAgentListener.startListening({
         const state = getState();
         const plan = selectPassPlan(state);
         const featureEnabled = selectFeatureFlag(PassFeature.PassDesktopSSHAgent)(state);
-        if (plan === UserPassPlan.FREE || !featureEnabled) void sshAgent.stop();
+        if (plan === UserPassPlan.FREE || !featureEnabled) void sshAgent.destroy();
     },
 });
 
