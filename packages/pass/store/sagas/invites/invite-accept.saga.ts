@@ -52,7 +52,7 @@ function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof
             if (action.type === 'done') {
                 const items = action.result;
                 yield put(inviteAccept.success(requestId, { inviteToken, share, items }));
-                options.onItemsUpdated?.();
+
                 const dimensions =
                     invite.targetType === ShareType.Item && items[0]
                         ? {
