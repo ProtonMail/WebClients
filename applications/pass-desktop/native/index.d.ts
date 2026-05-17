@@ -37,6 +37,7 @@ export declare namespace napi_native_messaging {
 }
 
 export declare namespace ssh_agent_napi {
+    export function destroyAgent(): Promise<void>;
     export function getStatus(): Promise<SshAgentStatus>;
     export function removeAllKeys(): Promise<void>;
     export function setKeys(keys: Array<SshKeyData>): Promise<void>;
@@ -46,5 +47,4 @@ export declare namespace ssh_agent_napi {
     export function startAgent(
         isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => Promise<boolean>
     ): Promise<void>;
-    export function stopAgent(): Promise<void>;
 }
