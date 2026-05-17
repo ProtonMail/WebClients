@@ -4,9 +4,8 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 
 export default createRequestSaga({
     actions: itemTrash,
-    call: async (payload, { onItemsUpdated }) => {
+    call: async (payload) => {
         await trashItems([payload]);
-        onItemsUpdated?.();
         return payload;
     },
 });
