@@ -6,6 +6,7 @@ import type { SyncMigration, SyncResult } from '@proton/pass/lib/sync/types';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
 import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
+import { withItems } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
 import { withRequest } from '@proton/pass/store/request/enhancers';
@@ -75,6 +76,7 @@ export const syncIntent = createAction('sync::intent', () =>
 
 export const syncSuccess = createAction('sync::success', (payload: SyncResult) =>
     pipe(
+        withItems,
         withCache,
         withStreamableAction,
         withRequest({ id: syncRequest(), status: 'success' }),

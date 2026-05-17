@@ -5,6 +5,7 @@ import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
+import { withItems } from '@proton/pass/store/actions/enhancers/items';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { shareEditMemberRoleRequest, shareLeaveRequest, shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import type { AccessState } from '@proton/pass/store/reducers';
@@ -103,6 +104,7 @@ export const shareLeaveSuccess = createAction(
     'share::leave::success',
     withRequestSuccess((shareId: string, targetType: ShareType) =>
         pipe(
+            withItems,
             withShareDedupe,
             withNotification({
                 type: 'info',
