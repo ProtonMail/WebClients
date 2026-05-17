@@ -40,7 +40,7 @@ export interface ConnectivityService {
     /** Triggers connectivity check against server ping endpoint */
     check: () => Promise<ConnectivityStatus>;
     /** Initializes navigator online/offline and API connectivity event listeners */
-    init: () => Promise<void>;
+    init: () => void;
     /** Cancels ongoing retry handlers and resets connectivity state */
     destroy: () => void;
     /** Manually set the connectivity status */
@@ -110,7 +110,7 @@ export const createConnectivityService = ({
 
     /** Internal: pings the server and updates connectivity status. Async-locked
      * so concurrent callers share the same in-flight ping. Used by the retry
-     * handler and by the bootstrap path - external callers go through `check`.
+     * handler - external callers go through `check`.
      * `timeout` caps a stalled fetch (eg: Safari hangs offline) at `CONNECTIVITY_PROBE_TIMEOUT`;
      * API factory classifies the resulting `TimeoutError` as OFFLINE. */
     const probe = asyncLock(async (signal?: AbortSignal): Promise<ConnectivityStatus> => {
@@ -210,7 +210,7 @@ export const createConnectivityService = ({
         onConnectivityChange();
     };
 
-    const init = async () => {
+    const init = () => {
         const onNavigatorEvent = () => syncNavigatorOnline(navigator.onLine);
 
         const onApiEvent: Subscriber<ApiSubscriptionEvent> = (event) => {
@@ -225,10 +225,8 @@ export const createConnectivityService = ({
         listeners.addListener(target, 'offline', onNavigatorEvent);
         listeners.addSubscriber(api.subscribe(onApiEvent));
 
-        /** Bootstrap initial connectivity state: starts the retry handler immediately
-         * if offline, or falls back to a direct check to detect unreachable API state. */
+        /** Bootstrap connectivity state from initial state */
         onConnectivityChange();
-        if (!state.retryHandler) await probe().then(() => onConnectivityChange());
     };
 
     const destroy = () => {
