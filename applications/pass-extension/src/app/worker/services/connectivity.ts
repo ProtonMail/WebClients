@@ -33,7 +33,7 @@ export const createConnectivityService = (): ConnectivityService => {
     });
 
     service.subscribe((event) => event.type === 'status' && broadcast(event.status));
-    void service.init();
+    service.init();
 
     return service;
 };
