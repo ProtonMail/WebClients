@@ -2,15 +2,9 @@ import { END, eventChannel } from 'redux-saga';
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
 import { moveItems } from '@proton/pass/lib/items/item.requests';
-import {
-    itemBulkMoveFailure,
-    itemBulkMoveIntent,
-    itemBulkMoveProgress,
-    itemBulkMoveSuccess,
-} from '@proton/pass/store/actions';
+import { itemBulkMoveFailure, itemBulkMoveIntent, itemBulkMoveProgress, itemBulkMoveSuccess } from '@proton/pass/store/actions';
 import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectBulkSelection } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { BatchItemRevisions, ItemRevision } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -29,10 +23,7 @@ export const bulkMoveChannel = (items: ItemRevision[], targetShareId: string) =>
         return noop;
     });
 
-function* itemBulkMoveWorker(
-    { onItemsUpdated }: RootSagaOptions,
-    { payload, meta }: ReturnType<typeof itemBulkMoveIntent>
-) {
+function* itemBulkMoveWorker({ payload, meta }: ReturnType<typeof itemBulkMoveIntent>) {
     const requestId = meta.request.id;
     const { selected, shareId } = payload;
     const items = (yield select(selectBulkSelection(selected))) as ItemRevision[];
@@ -41,14 +32,12 @@ function* itemBulkMoveWorker(
 
     while (true) {
         const action: BulkMoveItemsChannel = yield take(channel);
-        onItemsUpdated?.({ report: action.type === 'done' });
-
         if (action.type === 'progress') yield put(itemBulkMoveProgress(requestId, action.progress, action.data));
         if (action.type === 'done') yield put(itemBulkMoveSuccess(requestId, {}));
         if (action.type === 'error') yield put(itemBulkMoveFailure(requestId, payload, action.error));
     }
 }
 
-export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(itemBulkMoveIntent.match, itemBulkMoveWorker, options);
+export default function* watcher() {
+    yield takeLeading(itemBulkMoveIntent.match, itemBulkMoveWorker);
 }

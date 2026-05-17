@@ -1,4 +1,4 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { updateItemLastUseTime } from '@proton/pass/lib/items/item.requests';
@@ -10,7 +10,7 @@ import { logId, logger } from '@proton/pass/utils/logger';
 function* itemAutofilledWorker({ onItemsUpdated }: RootSagaOptions, { payload: { shareId, itemId } }: ReturnType<typeof itemAutofilled>) {
     try {
         logger.info(`[Item::Autofill] used item ${logId(itemId)} on share ${logId(shareId)}`);
-        onItemsUpdated?.({ report: false }); /* will re-order items for autofill suggestions */
+        yield call(onItemsUpdated, { report: false }); /** force `onItemsUpdated` to re-order items in autofill suggestions */
 
         const encryptedItem: ItemRevisionContentsResponse = yield updateItemLastUseTime(shareId, itemId);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);

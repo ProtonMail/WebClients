@@ -58,7 +58,6 @@ function* syncWorker(options: RootSagaOptions) {
 
         const state = (yield select()) as State;
         yield put(syncSuccess(yield call(sync, state, options)));
-        options.onItemsUpdated?.({ report: true });
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
