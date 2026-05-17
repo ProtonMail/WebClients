@@ -51,7 +51,7 @@ export const createAuthAlarms = (): AuthAlarms => {
                 resumeAttemptedAt = stored.resumeAttemptedAt ?? null;
                 resumeCount = stored.resumeCount ?? 0;
                 hydrated = true;
-                logger.info(`[AuthAlarms] hydrated [attemptedAt:${resumeAttemptedAt}][count:${resumeCount}]`);
+                logger.debug(`[AuthAlarms] hydrated [attemptedAt:${resumeAttemptedAt}][count:${resumeCount}]`);
             }
         })
     );
@@ -71,12 +71,12 @@ export const createAuthAlarms = (): AuthAlarms => {
         hydrate,
 
         clearAutoLock: async () => {
-            logger.info(`[AuthAlarms] Clearing auto-lock alarm`);
+            logger.debug(`[AuthAlarms] Clearing auto-lock alarm`);
             await autoLockAlarm.reset();
         },
 
         clearAutoResume: async () => {
-            logger.info(`[AuthAlarms] Clearing auto-resume alarm`);
+            logger.debug(`[AuthAlarms] Clearing auto-resume alarm`);
             await autoResumeAlarm.reset();
         },
 
@@ -113,7 +113,7 @@ export const createAuthAlarms = (): AuthAlarms => {
 
             /** Skip if a resume alarm is already pending. */
             if ((await autoResumeAlarm.when()) !== undefined) {
-                logger.info(`[AuthAlarms] Auto-resume already pending -> skip`);
+                logger.debug(`[AuthAlarms] Auto-resume already pending -> skip`);
                 return persist();
             }
 
@@ -141,7 +141,7 @@ export const createAuthAlarms = (): AuthAlarms => {
             await autoLockAlarm.reset();
             const when = epochToMs(getEpoch() + ttl);
 
-            logger.info(`[AuthAlarms] Creating auto-lock alarm [${ttl}s]`);
+            logger.debug(`[AuthAlarms] Creating auto-lock alarm [${ttl}s]`);
             await autoLockAlarm.set(when);
         },
     };
