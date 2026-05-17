@@ -75,7 +75,7 @@ export const createActivationService = () => {
     /* throttle update checks for updates every hour */
     const handleActivation = async () => {
         try {
-            logger.info('[Activation] activating worker [alarms cleared - checking for update]');
+            logger.debug('[Activation] activating worker [alarms cleared - checking for update]');
             await browser.alarms.clearAll();
             const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
             if (!alarmRegistered) void browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
@@ -228,7 +228,7 @@ export const createActivationService = () => {
                      * alarm-driven retry chain. `isResumeThrottled` covers both the "alarm
                      * pending" case (chain alive) and the "post-max window" (chain exhausted) */
                     if (await ctx.service.auth.alarms.isResumeThrottled()) {
-                        logger.info(`[Activation] Automatic session resume throttled`);
+                        logger.debug(`[Activation] Automatic session resume throttled`);
                         return false;
                     }
 
