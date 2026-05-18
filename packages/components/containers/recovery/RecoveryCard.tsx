@@ -12,6 +12,8 @@ import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import clsx from '@proton/utils/clsx';
 
+import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
+
 const GenericSecurityCheckupCard = ({
     title,
     subtitle,
@@ -28,6 +30,7 @@ const GenericSecurityCheckupCard = ({
     cta: string;
 }) => {
     const app = getAppFromPathnameSafe(window.location.pathname);
+    const { sendAccountSafetyReviewClick } = useRecoverySettingsTelemetry();
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
@@ -53,6 +56,7 @@ const GenericSecurityCheckupCard = ({
                 as={AppLink}
                 to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}
                 color="norm"
+                onClick={() => sendAccountSafetyReviewClick()}
             >
                 {cta}
             </ButtonLike>
