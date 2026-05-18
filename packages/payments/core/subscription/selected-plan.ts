@@ -229,87 +229,106 @@ export class SelectedPlan {
     }
 
     setScribeCount(newCount: number, balance = true): SelectedPlan {
+        const applied = this.applyScribeCount(newCount);
+        if (applied === this) {
+            return this;
+        }
+
+        const capped = applied.capScribes();
+        if (balance) {
+            return capped.balanceScribesAndLumos('prefer-scribes');
+        }
+
+        return capped;
+    }
+
+    setLumoCount(newCount: number, balance = true): SelectedPlan {
+        const applied = this.applyLumoCount(newCount);
+        if (applied === this) {
+            return this;
+        }
+
+        const capped = applied.capLumos();
+        if (balance) {
+            return capped.balanceScribesAndLumos('prefer-lumos');
+        }
+
+        return capped;
+    }
+
+    setMeetCount(newCount: number): SelectedPlan {
+        const applied = this.applyMeetCount(newCount);
+        if (applied === this) {
+            return this;
+        }
+
+        return applied.capMeets();
+    }
+
+    private applyScribeCount(newCount: number): SelectedPlan {
         const scribeAddonName = getScribeAddonNameByPlan(this.getPlanName());
         if (!scribeAddonName) {
             return this;
         }
 
-        const planIDs = { ...this._planIDs };
-
         const scribesInPlan = this.getCountInPlan('MaxAI');
-
         const scribesInAddons = this.getCountInAddons(isScribeAddon, 'MaxAI');
         const scribesChange = newCount - scribesInPlan - scribesInAddons;
         if (scribesChange === 0) {
             return this;
         }
 
+        const planIDs = { ...this._planIDs };
         planIDs[scribeAddonName] = Math.max((planIDs[scribeAddonName] ?? 0) + scribesChange, 0);
         if (planIDs[scribeAddonName] === 0) {
             delete planIDs[scribeAddonName];
         }
 
-        const updatedPlan = this.selectedPlanWithNewIds(planIDs);
-        const result = updatedPlan.capScribes();
-        if (balance) {
-            return result.balanceScribesAndLumos('prefer-scribes');
-        }
-
-        return result;
+        return this.selectedPlanWithNewIds(planIDs);
     }
 
-    setLumoCount(newCount: number, balance = true): SelectedPlan {
+    private applyLumoCount(newCount: number): SelectedPlan {
         const lumoAddonName = getLumoAddonNameByPlan(this.getPlanName());
         if (!lumoAddonName) {
             return this;
         }
 
-        const planIDs = { ...this._planIDs };
-
         const lumosInPlan = this.getCountInPlan('MaxLumo');
-
         const lumosInAddons = this.getCountInAddons(isLumoAddon, 'MaxLumo');
         const lumosChange = newCount - lumosInPlan - lumosInAddons;
         if (lumosChange === 0) {
             return this;
         }
 
+        const planIDs = { ...this._planIDs };
         planIDs[lumoAddonName] = Math.max((planIDs[lumoAddonName] ?? 0) + lumosChange, 0);
         if (planIDs[lumoAddonName] === 0) {
             delete planIDs[lumoAddonName];
         }
 
-        const updatedPlan = this.selectedPlanWithNewIds(planIDs).capLumos();
-        if (balance) {
-            return updatedPlan.balanceScribesAndLumos('prefer-lumos');
-        }
-
-        return updatedPlan;
+        return this.selectedPlanWithNewIds(planIDs);
     }
 
-    setMeetCount(newCount: number): SelectedPlan {
+    private applyMeetCount(newCount: number): SelectedPlan {
         const meetAddonName = getMeetAddonNameByPlan(this.getPlanName());
         if (!meetAddonName) {
             return this;
         }
 
-        const planIDs = { ...this._planIDs };
-
         const meetsInPlan = this.getCountInPlan('MaxMeet');
-
         const meetsInAddons = this.getCountInAddons(isMeetAddon, 'MaxMeet');
         const meetsChange = newCount - meetsInPlan - meetsInAddons;
         if (meetsChange === 0) {
             return this;
         }
 
+        const planIDs = { ...this._planIDs };
         planIDs[meetAddonName] = Math.max((planIDs[meetAddonName] ?? 0) + meetsChange, 0);
         if (planIDs[meetAddonName] === 0) {
             delete planIDs[meetAddonName];
         }
 
-        const updatedPlan = this.selectedPlanWithNewIds(planIDs).capMeets();
-        return updatedPlan;
+        return this.selectedPlanWithNewIds(planIDs);
     }
 
     private applyRules(preferred: AddonBalanceKey): SelectedPlan {
@@ -360,29 +379,56 @@ export class SelectedPlan {
 
     private capScribes(): SelectedPlan {
         const maxScribes = this.getMaxScribes();
-        if (this.getTotalScribes() > maxScribes) {
-            return this.setScribeCount(maxScribes, false);
+        if (this.getTotalScribes() <= maxScribes) {
+            return this;
         }
 
-        return this;
+        const trimmed = this.dropForeignAddons(isScribeAddon, getScribeAddonNameByPlan(this.getPlanName()));
+        if (trimmed.getTotalScribes() <= maxScribes) {
+            return trimmed;
+        }
+
+        return trimmed.applyScribeCount(maxScribes);
     }
 
     private capLumos(): SelectedPlan {
         const maxLumos = this.getMaxLumos();
-        if (this.getTotalLumos() > maxLumos) {
-            return this.setLumoCount(maxLumos, false);
+        if (this.getTotalLumos() <= maxLumos) {
+            return this;
         }
 
-        return this;
+        const trimmed = this.dropForeignAddons(isLumoAddon, getLumoAddonNameByPlan(this.getPlanName()));
+        if (trimmed.getTotalLumos() <= maxLumos) {
+            return trimmed;
+        }
+
+        return trimmed.applyLumoCount(maxLumos);
     }
 
     private capMeets(): SelectedPlan {
         const maxMeets = this.getMaxMeets();
-        if (this.getTotalMeets() > maxMeets) {
-            return this.setMeetCount(maxMeets);
+        if (this.getTotalMeets() <= maxMeets) {
+            return this;
         }
 
-        return this;
+        const trimmed = this.dropForeignAddons(isMeetAddon, getMeetAddonNameByPlan(this.getPlanName()));
+        if (trimmed.getTotalMeets() <= maxMeets) {
+            return trimmed;
+        }
+
+        return trimmed.applyMeetCount(maxMeets);
+    }
+
+    private dropForeignAddons(guard: AddonGuard, matchingAddon: ADDON_NAMES | undefined): SelectedPlan {
+        const planIDs = { ...this._planIDs };
+        let changed = false;
+        for (const name of Object.keys(planIDs) as (ADDON_NAMES | PLANS)[]) {
+            if (guard(name) && name !== matchingAddon) {
+                delete planIDs[name];
+                changed = true;
+            }
+        }
+        return changed ? this.selectedPlanWithNewIds(planIDs) : this;
     }
 
     private balanceScribesAndLumos(preferred: AddonBalanceKey): SelectedPlan {
