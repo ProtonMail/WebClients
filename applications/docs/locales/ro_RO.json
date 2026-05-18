@@ -649,7 +649,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -900,6 +900,27 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Change my access": [
+        "Modifică-mi accesul"
+      ],
+      "Copy link": [
+        "Copiere legătură web"
+      ],
+      "Encrypted": [
+        "Criptat"
+      ],
+      "Remove my access": [
+        "Elimină-mi accesul"
+      ],
+      "Set password or expiration date": [
+        "Setare parolă sau dată de expirare"
+      ],
+      "Shared": [
+        "Partajate"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Partajarea este criptată bilateral"
       ]
     },
     "Actions message": {
@@ -1022,10 +1043,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+        "După ce perioada de evaluare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -1038,7 +1059,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "Perioada de probare se încheie peste ${ timeRemaining }"
+        "Perioada de evaluare se încheie peste ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -3283,6 +3304,48 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "An error occurred": [
+        "A apărut o eroare."
+      ],
+      "Failed to change permissions settings": [
+        "Nu s-au putut modifica setările de permisiuni."
+      ],
+      "Failed to create public share node": [
+        "Nu s-a putut crea nodul de partajare publică."
+      ],
+      "Failed to fetch node": [
+        "Eșuare preluare nod."
+      ],
+      "Failed to fetch sharing info": [
+        "Eșuare preluare informații de partajare."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
+      ],
+      "Failed to resend invitation": [
+        "Eșuare retrimitere invitație."
+      ],
+      "Failed to unshare node": [
+        "Eșuare anulare partajare nod."
+      ],
+      "Failed to update direct share node": [
+        "Nu s-a putut actualiza nodul de partajare directă."
+      ],
+      "Failed to update public share node": [
+        "Nu s-a putut actualiza nodul de partajare publică."
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Oprirea partajării acestui element a eșuat."
+      ],
+      "The link to your item failed to be deleted": [
+        "Legătura web către element nu a putut fi ștearsă."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispozitiv nedecriptabil"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nume nedecriptabil."
       ]
     },
     "error": {
@@ -4377,7 +4440,7 @@
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "La sfârșitul perioadei de probare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
+        "La sfârșitul perioadei de evaluare ${ boldCancelDate }, contul va fi retrogradat la ${ boldProtonFree }. Toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -4661,7 +4724,7 @@
         "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
       ],
       "Get Notified About Comments": [
-        "Primire notificări despre comentarii"
+        "Primiți notificări despre comentarii"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
@@ -5128,7 +5191,7 @@
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Se pare că adresa URL pe care ați introdus-o a fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul URL trunchiat."
+        "Adresa URL introdusă pare să fi fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul trunchiat al adresei URL."
       ],
       "There are no documents in the trash.": [
         "Nu există documente în gunoi."
@@ -5508,7 +5571,7 @@
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Perioada de probare se termină ${ timeRemaining }."
+        "Perioada de evaluare se termină ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
@@ -5518,6 +5581,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Can edit": [
+        "Poate edita"
+      ],
+      "Can edit and manage access": [
+        "Puteți edita și gestiona accesul"
+      ],
+      "Can view and edit": [
+        "Poate vedea și edita"
+      ],
+      "Can view only": [
+        "Poate doar vedea"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
+      ],
+      "Link copied": [
+        "Legătura web a fost copiată."
+      ],
+      "owner": [
+        "proprietar"
+      ],
+      "Who has access": [
+        "Cine are acces"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
       ]
     },
     "info": {
@@ -6037,6 +6127,45 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Access": [
+        "Accesare"
+      ],
+      "Active": [
+        "Activ"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitere ca editorii să modifice permisiunile și să partajeze"
+      ],
+      "Anonymous": [
+        "Anonim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Oricine de pe internet care are legătura web"
+      ],
+      "can edit": [
+        "poate edita"
+      ],
+      "can view": [
+        "poate vedea"
+      ],
+      "Delete link and remove access for everyone": [
+        "Ștergere legătură web și anulare acces pentru toți"
+      ],
+      "Disable this link on a specific date": [
+        "Dezactivare această legătură web la o dată specifică"
+      ],
+      "Expiry": [
+        "Expirare"
+      ],
+      "Not active": [
+        "Inactiv"
+      ],
+      "Require password": [
+        "Necesită parolă"
+      ],
+      "Set a password to limit access via link": [
+        "Setare parolă pentru a limita accesarea prin legătura web"
       ]
     },
     "Label for contact group color": {
@@ -6339,10 +6468,10 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "Perioada de probare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
+        "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de evaluare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7101,6 +7230,17 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servere dedicate optimizate pentru viteză"
       ]
     },
     "new_plans: feature highlight": {
@@ -7578,9 +7718,9 @@
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
       ],
       "${ numberOfItems } item failed to be deleted": [
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }"
+        "Articole care nu s-au put șterge: ${ numberOfItems }",
+        "Articole care nu s-au put șterge: ${ numberOfItems }",
+        "Articole care nu s-au put șterge: ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Un element nu a putut fi eliminat definitiv din «Gunoi».",
@@ -7770,6 +7910,15 @@
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "\"${ fileName }\" shared": [
+        "„${ fileName }” s-a partajat"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Setare actualizată. Editorii pot schimba permisiunile și partaja."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Setare actualizată. Editorii nu pot schimba permisiunile sau partaja."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7950,16 +8099,16 @@
         "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Puteți folosi ${ planTitle } până la terminarea perioadei de probare fără a vi se aplica vreo taxă."
+        "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
       ],
       "Your free trial has started": [
-        "Perioada de probare gratuită a început"
+        "Perioada de evaluare gratuită a început"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de probă."
+        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -8093,7 +8242,7 @@
         "${ formattedPrice } (fără TVA)"
       ],
       "Amount due after trial on ${ formattedDate }": [
-        "Suma datorată după probare la ${ formattedDate }"
+        "Suma datorată după evaluare la ${ formattedDate }"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -8492,7 +8641,7 @@
         "${ referrerRewardAmount } per recomandare"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de evaluare."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -9193,6 +9342,12 @@
       ],
       "Pending": [
         "În așteptare"
+      ],
+      "pending": [
+        "în așteptare"
+      ],
+      "user joined": [
+        "utilizator alăturat"
       ]
     },
     "Storage": {
@@ -9922,7 +10077,7 @@
         "Cum funcționează?"
       ],
       "How your free trial works": [
-        "Cum funcționează probarea gratuită"
+        "Cum funcționează evaluarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -10222,6 +10377,24 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Change access to viewer?": [
+        "Schimbați accesul cu „utilizator”?"
+      ],
+      "Public link": [
+        "Legătură web publică"
+      ],
+      "Public link settings": [
+        "Setări legătură web publică"
+      ],
+      "Remove your access?": [
+        "Vă eliminați accesul?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Setări pentru ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partajare „${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10304,6 +10477,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
+      ],
+      "Change shared item settings": [
+        "Modificare setări articol partajat"
       ]
     },
     "tooltip": {
@@ -10518,10 +10694,10 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de evaluare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
-        "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+        "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
       ]
     }
   }

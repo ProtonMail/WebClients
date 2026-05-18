@@ -832,6 +832,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos.",
         "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
+      ],
+      "Copy link": [
+        "Copiar ligação"
       ]
     },
     "Actions message": {
@@ -2877,6 +2880,33 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "Failed to create public share node": [
+        "Erro ao criar o nó de partilha público"
+      ],
+      "Failed to fetch node": [
+        "Erro ao obter o nó"
+      ],
+      "Failed to fetch sharing info": [
+        "Erro ao obter as informações para partilhar"
+      ],
+      "Failed to resend invitation": [
+        "Erro ao reenviar o convite"
+      ],
+      "Failed to unshare node": [
+        "Erro ao deixar de partilhar o nó"
+      ],
+      "Failed to update direct share node": [
+        "Erro ao atualizar o nó de partilha direto"
+      ],
+      "Failed to update public share node": [
+        "Erro ao atualizar o nó de partilha público"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Erro ao interromper a partilha deste item"
+      ],
+      "The link to your item failed to be deleted": [
+        "Falha ao eliminar a ligação ao item"
       ]
     },
     "Error importing calendar": {

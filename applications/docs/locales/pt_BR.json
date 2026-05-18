@@ -991,6 +991,24 @@
       ],
       "View only": [
         "Somente visualizar"
+      ],
+      "Change my access": [
+        "Alterar meu acesso"
+      ],
+      "Encrypted": [
+        "Criptografado"
+      ],
+      "Remove my access": [
+        "Remover meu acesso"
+      ],
+      "Set password or expiration date": [
+        "Definir senha ou data de expiração"
+      ],
+      "Shared": [
+        "Compartilhado"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "O compartilhado com criptografia ponta a ponta"
       ]
     },
     "Action subscription": {
@@ -2682,6 +2700,9 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos sua saída. Se tiver um momento, gostaríamos muito de saber o motivo do cancelamento. Seu feedback nos ajuda a fazer a ${ BRAND_NAME } ainda melhor para todos."
       ]
     },
     "description": {
@@ -3453,6 +3474,48 @@
       ],
       "Wrong billing address": [
         "Endereço de cobrança incorreto"
+      ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as configurações de permissões"
+      ],
+      "Failed to create public share node": [
+        "Erro ao criar o nó de compartilhamento público"
+      ],
+      "Failed to fetch node": [
+        "Erro ao obter o nó"
+      ],
+      "Failed to fetch sharing info": [
+        "Erro ao obter as informações para compartilhar"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Falha ao carregar os dados da assinatura. Tente novamente mais tarde."
+      ],
+      "Failed to resend invitation": [
+        "Erro ao reenviar o convite"
+      ],
+      "Failed to unshare node": [
+        "Erro ao deixar de compartilhar o nó"
+      ],
+      "Failed to update direct share node": [
+        "Erro ao atualizar o nó de compartilhamento direto"
+      ],
+      "Failed to update public share node": [
+        "Erro ao atualizar o nó de compartilhamento público"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Erro ao interromper o compartilhamento deste item"
+      ],
+      "The link to your item failed to be deleted": [
+        "Erro ao excluir o link do seu item"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecifrável"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrável"
       ]
     },
     "Error importing calendar": {
@@ -5908,6 +5971,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can edit and manage access": [
+        "Pode editar e gerenciar acesso"
+      ],
+      "Can view and edit": [
+        "Pode ver e editar"
+      ],
+      "Can view only": [
+        "Pode somente visualização"
+      ],
+      "Link copied": [
+        "Link copiado"
+      ],
+      "owner": [
+        "proprietário"
+      ],
+      "Who has access": [
+        "Quem tem acesso"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ]
     },
     "info": {
@@ -6549,6 +6636,45 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "Access": [
+        "Acesso"
+      ],
+      "Active": [
+        "ativo"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permitir que editores alterem permissões e compartilhem"
+      ],
+      "Anonymous": [
+        "Anônimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualquer pessoa na internet com este link"
+      ],
+      "can edit": [
+        "pode editar"
+      ],
+      "can view": [
+        "pode ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Excluir o link e remover o acesso para todos"
+      ],
+      "Disable this link on a specific date": [
+        "Desativar este link em uma data específica"
+      ],
+      "Expiry": [
+        "Expiração"
+      ],
+      "Not active": [
+        "Não ativo"
+      ],
+      "Require password": [
+        "Exigir senha"
+      ],
+      "Set a password to limit access via link": [
+        "Defina uma senha para limitar o acesso por link"
       ]
     },
     "Label for contact group color": {
@@ -7685,6 +7811,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN com bloqueador de anúncios e proteção contra malware"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ]
     },
     "new_plans: feature highlight": {
@@ -8383,6 +8516,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Seu endereço da ${ BRAND_NAME } está pronto para uso"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" compartilhado"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuração atualizada. Editores podem alterar permissões e compartilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuração atualizada. Editores não podem alterar permissões ou compartilhar."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8874,7 +9016,7 @@
         "Fax"
       ],
       "Home": [
-        "Casa"
+        "Início"
       ],
       "Main": [
         "Principal"
@@ -9474,6 +9616,12 @@
       ],
       "Pending": [
         "Pendente"
+      ],
+      "pending": [
+        "pendente"
+      ],
+      "user joined": [
+        "usuário entrou"
       ]
     },
     "Storage": {
@@ -10652,6 +10800,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "O download inclui um arquivo do ${ DOCS_APP_NAME }."
+      ],
+      "Change access to viewer?": [
+        "Alterar acesso para visualizador?"
+      ],
+      "Public link": [
+        "Link público"
+      ],
+      "Public link settings": [
+        "Configurações de link público"
+      ],
+      "Remove your access?": [
+        "Remover seu acesso?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Configurações para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartilhar \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10754,6 +10920,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
+      ],
+      "Change shared item settings": [
+        "Alterar configurações de itens compartilhados"
       ]
     },
     "tooltip": {

@@ -967,6 +967,27 @@
       "View ${ pendingCount } invitation": [
         "Näytä ${ pendingCount } odottava kutsu",
         "Näytä kaikki ${ pendingCount } kutsua"
+      ],
+      "Change my access": [
+        "Muuta käyttöoikeuttani"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Jatka sovellukseen ${ planOrAppName }"
+      ],
+      "Encrypted": [
+        "Salattu"
+      ],
+      "Remove my access": [
+        "Poista käyttöoikeuteni"
+      ],
+      "Set password or expiration date": [
+        "Aseta salasana tai erääntymispäivä"
+      ],
+      "Shared": [
+        "Jaettu"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Jakaminen on päästä päähän -salattu"
       ]
     },
     "Action subscription": {
@@ -1040,6 +1061,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME }-tekoälylisenssi"
       ]
     },
     "Alert": {
@@ -3407,6 +3431,39 @@
       ],
       "Wrong billing address": [
         "Virheellinen laskutusosoite"
+      ],
+      "An error occurred": [
+        "Tapahtui virhe"
+      ],
+      "Failed to change permissions settings": [
+        "Käyttöoikeuksien muuttaminen epäonnistui"
+      ],
+      "Failed to fetch sharing info": [
+        "Jakotietojen nouto epäonnistui"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
+      "Failed to resend invitation": [
+        "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "Failed to unshare node": [
+        "Solmun jaon poistaminen epäonnistui"
+      ],
+      "Failed to update direct share node": [
+        "Suorajakosolmun päivittäminen epäonnistui."
+      ],
+      "Failed to update public share node": [
+        "Julkisen jakosolmun päivittäminen epäonnistui."
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Kohteen jakamisen lopetus epäonnistui"
+      ],
+      "The link to your item failed to be deleted": [
+        "Kohteen linkin poisto epäonnistui"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nimen salausta ei pysty purkamaan"
       ]
     },
     "Error importing calendar": {
@@ -3822,7 +3879,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
+        "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Security key": [
         "Suojausavain"
@@ -4211,6 +4268,9 @@
       ],
       "Other": [
         "Muu"
+      ],
+      "More import options": [
+        "Lisää tuontiasetuksia"
       ]
     },
     "Import warning": {
@@ -5802,6 +5862,42 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Can edit": [
+        "Voi muokata"
+      ],
+      "Can edit and manage access": [
+        "Voi muokata ja hallita käyttöoikeutta"
+      ],
+      "Can view and edit": [
+        "Voi tarkastella ja muokata"
+      ],
+      "Can view only": [
+        "Vain katseluoikeus"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Kaikki ${ planOrAppName } -tilaukseen kuuluva, sekä:"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jos poistat itsesi, menetät käyttöoikeuden tiedostoon \"${ fileName }\" etkä voi avata sitä uudelleen, ellei omistaja jaa sitä kanssasi."
+      ],
+      "Link copied": [
+        "Linkki kopioitu"
+      ],
+      "owner": [
+        "omistaja"
+      ],
+      "Who has access": [
+        "Kenellä on pääsy"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Et voi jakaa tiedostoa ”${ fileName }” sen jälkeen, kun käyttöoikeus on muutettu katselijaksi. Vain omistaja voi muuttaa käyttöoikeutesi uudelleen."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
       ]
     },
     "info": {
@@ -6419,6 +6515,45 @@
       ],
       "Your location": [
         "Sijaintisi"
+      ],
+      "Access": [
+        "Käyttöoikeus"
+      ],
+      "Active": [
+        "Aktiivinen"
+      ],
+      "Allow editors to change permissions and share": [
+        "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Anonymous": [
+        "Anonyymi"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kuka tahansa, jolla on linkki"
+      ],
+      "can edit": [
+        "voi muokata"
+      ],
+      "can view": [
+        "voi tarkastella"
+      ],
+      "Delete link and remove access for everyone": [
+        "Poista linkki ja käyttöoikeudet kaikilta"
+      ],
+      "Disable this link on a specific date": [
+        "Poista tämä linkki käytöstä tiettynä päivänä"
+      ],
+      "Expiry": [
+        "Erääntyminen"
+      ],
+      "Not active": [
+        "Ei aktiivinen"
+      ],
+      "Require password": [
+        "Vaadi salasanaa"
+      ],
+      "Set a password to limit access via link": [
+        "Aseta salasana rajoittaaksesi pääsyä linkin kautta"
       ]
     },
     "Label for contact group color": {
@@ -7112,7 +7247,7 @@
         "Hallintapaneeli"
       ],
       "All ${ BRAND_NAME } products and features": [
-        "Kaikki ${ BRAND_NAME } tuotteet ja ominaisuudet"
+        "Kaikki ${ BRAND_NAME }n tuotteet ja ominaisuudet"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7223,7 +7358,7 @@
         "GDPR-tietojenkäsittelysopimus"
       ],
       "Generate emails with a prompt": [
-        "Luo sähköposteja kehotteella"
+        "Luo sähköposteja kehoitteella"
       ],
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
@@ -7493,6 +7628,15 @@
       "Vault sharing with up to ${ n } person": [
         "Holvin jakaminen enintään ${ n } henkilölle",
         "Holvin jakaminen enintään ${ n } henkilölle"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Nopeudelle optimoidut dedikoidut palvelimet"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Yksityinen (${ LUMO_APP_NAME }) –tekoälykeskustelu"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mainos- ja haittaohjelmaestolla"
       ]
     },
     "new_plans: feature highlight": {
@@ -7617,6 +7761,12 @@
       ],
       "Pay once, secure your passwords and identity forever.": [
         "Maksa kerran, suojaa salasanasi ja identiteettisi ikuisesti."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 Tt pilvitallennustilaa, jolla voit tallentaa, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Suojaa perheesi kaikilla ${ plusTitle } premium-ominaisuuksilla kuudelle käyttäjälle."
       ]
     },
     "new_plans: Title": {
@@ -8179,6 +8329,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" jaettiin"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Asetus päivitetty. Muokkaajat voivat muuttaa käyttöoikeuksia ja jakaa sisältöä"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Asetus päivitetty. Muokkaajat eivät voi muuttaa käyttöoikeuksia tai jakaa sisältöä."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8441,6 +8600,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (poislukien VAT)"
       ]
     },
     "Payments.Error": {
@@ -9099,6 +9261,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Tee enemmäm ${ BRAND_NAME }lla"
       ]
     },
     "specialoffer: Offers": {
@@ -9176,6 +9341,9 @@
       ],
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ]
     },
     "specialoffer: Tooltip": {
@@ -9237,6 +9405,12 @@
       ],
       "Pending": [
         "Odottaa"
+      ],
+      "pending": [
+        "odottaa"
+      ],
+      "user joined": [
+        "käyttäjä liittyi"
       ]
     },
     "Storage": {
@@ -10397,6 +10571,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Latauksesi sisältää ${ DOCS_APP_NAME } -tiedoston"
+      ],
+      "Change access to viewer?": [
+        "Muutetaanko käyttöoikeus katseluun?"
+      ],
+      "Public link": [
+        "Julkinen linkki"
+      ],
+      "Public link settings": [
+        "Julkisen linkin asetukset"
+      ],
+      "Remove your access?": [
+        "Poista käyttöoikeus?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Asetukset tiedostolle ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Jaa \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10499,6 +10691,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
+      ],
+      "Change shared item settings": [
+        "Muuta jaettavan kohteen asetuksia"
       ]
     },
     "tooltip": {
@@ -10751,6 +10946,18 @@
       ],
       "3 TB data storage": [
         "3 Tt tallennustilaa"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Connect 10 devices at once": [
+        "Yhdistä 10 laitetta samanaikaisesti"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
       ]
     },
     "collider_2025: feature": {
@@ -10996,6 +11203,9 @@
       "Up to ${ n } participant": [
         "Enintää ${ n } osallistuja",
         "Enintää ${ n } osallistujaa"
+      ],
+      "Unlimited meetings per day": [
+        "Rajattomasti tapaamisia päivässä"
       ]
     },
     "new_plans: Subtext": {
@@ -11112,6 +11322,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Huippunopeat VPN-yhteydet yli 110 maassa"
       ]
     },
     "Onboarding Trial": {
@@ -11132,6 +11345,12 @@
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Peru koska tahansa ennen ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "Peruuta koska vain ennen sitä."
       ]
     },
     "Page title": {
@@ -11160,6 +11379,9 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
       ]
     },
     "q1campaign: Action": {
@@ -11415,6 +11637,24 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ilmainen kokeilusi päättyy ${ timeRemaining }"
+      ]
+    },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Hintaan ${ MEET_APP_NAME }"
       ]
     }
   }

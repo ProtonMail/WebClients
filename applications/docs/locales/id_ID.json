@@ -971,6 +971,12 @@
       ],
       "View only": [
         "Hanya lihat"
+      ],
+      "Encrypted": [
+        "Terenkripsi"
+      ],
+      "Shared": [
+        "Dibagikan"
       ]
     },
     "Action subscription": {
@@ -3359,6 +3365,42 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Kami tidak dapat mengimpor file ini ke ${ SHEETS_APP_NAME }. Anda dapat mencoba untuk menyalin dan menempelkan isi file ini ke dalam ${ SHEETS_APP_NAME } baru."
+      ],
+      "An error occurred": [
+        "Terjadi kesalahan"
+      ],
+      "Failed to create public share node": [
+        "Gagal membuat node berbagi publik"
+      ],
+      "Failed to fetch node": [
+        "Gagal mengambil node"
+      ],
+      "Failed to fetch sharing info": [
+        "Gagal mengambil info berbagi"
+      ],
+      "Failed to resend invitation": [
+        "Gagal mengirim ulang undangan"
+      ],
+      "Failed to unshare node": [
+        "Gagal membatalkan berbagi node"
+      ],
+      "Failed to update direct share node": [
+        "Gagal memperbarui node berbagi langsung"
+      ],
+      "Failed to update public share node": [
+        "Gagal memperbarui node berbagi publik"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Pembagian item gagal dihentikan"
+      ],
+      "The link to your item failed to be deleted": [
+        "Tautan ke item Anda gagal dihapus"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️Perangkat yang tidak dapat didekripsi"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nama tidak dapat didekripsi"
       ]
     },
     "Error importing calendar": {
@@ -5718,6 +5760,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "Can edit": [
+        "Dapat menyunting"
+      ],
+      "Can view only": [
+        "Hanya dapat melihat"
+      ],
+      "Link copied": [
+        "Tautan disalin"
+      ],
+      "owner": [
+        "pemilik"
       ]
     },
     "info": {
@@ -6332,6 +6386,24 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
+      ],
+      "Access": [
+        "Akses"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "Anonymous": [
+        "Anonim"
+      ],
+      "can edit": [
+        "dapat menyunting"
+      ],
+      "can view": [
+        "dapat melihat"
+      ],
+      "Expiry": [
+        "Kedaluwarsa"
       ]
     },
     "Label for contact group color": {
@@ -9129,6 +9201,9 @@
       ],
       "Pending": [
         "Menunggu jawaban"
+      ],
+      "pending": [
+        "menunggu"
       ]
     },
     "Storage": {
@@ -10272,6 +10347,9 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Unduhan Anda termasuk file ${ DOCS_APP_NAME }"
+      ],
+      "Public link": [
+        "Tautan publik"
       ]
     },
     "Title subscription": {

@@ -3338,6 +3338,39 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie można załadować pulpitu VPN. Sprawdź połączenie i spróbuj ponownie."
+      ],
+      "An error occurred": [
+        "Wystąpił błąd"
+      ],
+      "Failed to create public share node": [
+        "Nie udało się utworzyć publicznego węzła udostępniania"
+      ],
+      "Failed to fetch node": [
+        "Nie udało się pobrać węzła"
+      ],
+      "Failed to fetch sharing info": [
+        "Nie udało się pobrać informacji o udostępnianiu"
+      ],
+      "Failed to resend invitation": [
+        "Nie udało się ponownie wysłać zaproszenia"
+      ],
+      "Failed to unshare node": [
+        "Nie udało się usunąć udostępniania węzła"
+      ],
+      "Failed to update direct share node": [
+        "Nie udało się zaktualizować bezpośredniego węzła udostępniania"
+      ],
+      "Failed to update public share node": [
+        "Nie udało się zaktualizować publicznego węzła udostępniania"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Zatrzymanie udostępniania nie powiodło się"
+      ],
+      "The link to your item failed to be deleted": [
+        "Usunięcie linku do elementu nie powiodło się"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Zaszyfrowana nazwa"
       ]
     },
     "Error importing calendar": {
@@ -9494,6 +9527,9 @@
       ],
       "Your ${ productString } is full. ${ cta }.": [
         "${ productString } jest pełna. ${ cta }."
+      ],
+      "Storage used": [
+        "Wykorzystana przestrzeń"
       ]
     },
     "Subscription": {

@@ -911,7 +911,7 @@
         "S'està restaurant..."
       ],
       "Save preferences": [
-        "Desar les preferències"
+        "Deseu les preferències"
       ],
       "Search recent documents": [
         "Cerca documents recents"
@@ -991,6 +991,24 @@
       ],
       "View only": [
         "De només lectura"
+      ],
+      "Change my access": [
+        "Canviar el meu accés"
+      ],
+      "Encrypted": [
+        "Xifrat"
+      ],
+      "Remove my access": [
+        "Elimineu el meu accés"
+      ],
+      "Set password or expiration date": [
+        "Establiu una contrasenya o una data de caducitat"
+      ],
+      "Shared": [
+        "S'ha compartit"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "La compartició està xifrada d’extrem a extrem"
       ]
     },
     "Action subscription": {
@@ -3449,6 +3467,48 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Heu arribat al nombre límit de contactes per al vostre compte."
+      ],
+      "An error occurred": [
+        "S'ha produït un error"
+      ],
+      "Failed to change permissions settings": [
+        "No s'han pogut canviar les preferències de permisos"
+      ],
+      "Failed to create public share node": [
+        "No s\"ha pogut crear el node de compartició públic"
+      ],
+      "Failed to fetch node": [
+        "No s'ha pogut obtenir el node"
+      ],
+      "Failed to fetch sharing info": [
+        "No s'ha pogut obtenir la informació de compartició"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
+      "Failed to resend invitation": [
+        "No s'ha pogut tornar a enviar la invitació"
+      ],
+      "Failed to unshare node": [
+        "No s'ha pogut deixar de compartir el node"
+      ],
+      "Failed to update direct share node": [
+        "No s'ha pogut actualitzar el node de compartició directe"
+      ],
+      "Failed to update public share node": [
+        "No s'ha pogut actualitzar el node de compartició públic"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "No s'ha pogut deixar de compartir aquest element"
+      ],
+      "The link to your item failed to be deleted": [
+        "No s'ha pogut eliminar l'enllaç a aquest element"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ No es pot desxifrar el dispositiu"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ No es pot desxifrar aquest nom"
       ]
     },
     "Error importing calendar": {
@@ -4525,7 +4585,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S’està creant el document..."
+        "S'està creant el document..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
@@ -4636,7 +4696,7 @@
         "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "S'ha produït un error en convertir el document: ${ errorMessage }"
+        "Hi ha hagut un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document${ errorDetail }": [
         "S'ha produït un error en carregar el document${ errorDetail }"
@@ -5540,7 +5600,7 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Error loading document: ${ errorDetail }": [
-        "S'ha produït un error en carregar el document: ${ errorDetail }"
+        "Hi ha hagut un error en carregar el document: ${ errorDetail }"
       ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
@@ -5597,7 +5657,7 @@
         "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Making a copy...": [
-        "S’està fent una còpia..."
+        "S'està fent una còpia..."
       ],
       "Member": [
         "Membre"
@@ -5718,7 +5778,7 @@
         "La signatura digital s'ha verificat parcialment. Aquesta carpeta s'ha carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat d'Slack de manera incorrecta. Quan copieu enllaços llargs des d'Slack, feu clic amb el botó dret del ratolí sobre l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
+        "L'URL que heu introduït sembla que s'ha copiat d'Slack incorrectament. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i a continuació trieu \"Copiar l'enllaç\" en comptes de copiar directament el tros de text de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5892,6 +5952,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Can edit": [
+        "Es pot editar"
+      ],
+      "Can edit and manage access": [
+        "Vostè pot editar i gestionar l'accés"
+      ],
+      "Can view and edit": [
+        "Es pot visualitzar i editar"
+      ],
+      "Can view only": [
+        "Només es pot visualitzar"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+      ],
+      "Link copied": [
+        "S'ha copiat l'enllaç"
+      ],
+      "owner": [
+        "propietari"
+      ],
+      "Who has access": [
+        "Qui hi té accés"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "No podreu compartir \"${ fileName }\" un cop canvieu l'accés a visualitzador. Només el propietari podrà tornar a canviar el vostre accés."
       ]
     },
     "info": {
@@ -6448,7 +6535,7 @@
         "Correus electrònics (dels darrers sis mesos)"
       ],
       "Enable email notifications": [
-        "Habilitar les notificacions per correu electrònic"
+        "Habiliteu les notificacions per correu electrònic"
       ],
       "File": [
         "Fitxer"
@@ -6460,7 +6547,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Incloure el nom del document a la notificació"
+        "Incloeu el nom del document a la notificació"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
@@ -6530,6 +6617,45 @@
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "Access": [
+        "Accés"
+      ],
+      "Active": [
+        "Actiu"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permet als editors canviar els permisos i compartir"
+      ],
+      "Anonymous": [
+        "Anònim"
+      ],
+      "Anyone on the Internet with the link": [
+        "Qualsevol persona a Internet amb l'enllaç"
+      ],
+      "can edit": [
+        "es pot editar"
+      ],
+      "can view": [
+        "pot veure"
+      ],
+      "Delete link and remove access for everyone": [
+        "Elimineu l'enllaç i esborreu l'accés per a tothom"
+      ],
+      "Disable this link on a specific date": [
+        "Desactiveu aquest enllaç en una data específica"
+      ],
+      "Expiry": [
+        "Caducitat"
+      ],
+      "Not active": [
+        "No està actiu"
+      ],
+      "Require password": [
+        "Es requereix contrasenya"
+      ],
+      "Set a password to limit access via link": [
+        "Establiu una contrasenya per limitar l'accés mitjançant l'enllaç"
       ]
     },
     "Label for contact group color": {
@@ -7670,6 +7796,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidors dedicats optimitzats per més rapidesa"
       ]
     },
     "new_plans: feature highlight": {
@@ -8359,6 +8488,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
+      ],
+      "\"${ fileName }\" shared": [
+        "S'ha compartit \"${ fileName }\""
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "S'han actualitzat les referències. Els editors poden canviar els permisos i compartir-los."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "S'ha actualitzat les preferències. Els editors no poden canviar els permisos ni compartir-los."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9287,7 +9425,7 @@
         "/ mes"
       ],
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "1 year": [
         "1 any"
@@ -9432,6 +9570,12 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "pending": [
+        "pendent"
+      ],
+      "user joined": [
+        "l'usuari s'ha unit"
       ]
     },
     "Storage": {
@@ -10605,6 +10749,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "La vostra descàrrega inclou un fitxer ${ DOCS_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Voleu canviar l'accés a visualitzador?"
+      ],
+      "Public link": [
+        "Enllaç públic"
+      ],
+      "Public link settings": [
+        "Preferències de l'enllaç públic"
+      ],
+      "Remove your access?": [
+        "Voleu eliminar el vostre accés?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Preferències de ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10707,6 +10869,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
+      ],
+      "Change shared item settings": [
+        "Canviar les preferències dels elements compartits"
       ]
     },
     "tooltip": {
@@ -11656,7 +11821,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "S’està creant el full de càlcul..."
+        "S'està creant el full de càlcul..."
       ],
       "Detect automatically": [
         "Ho detecta automàticament"
@@ -11738,7 +11903,7 @@
     },
     "Unlimited offer": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "Only": [
         "Només"

@@ -983,6 +983,33 @@
       ],
       "View only": [
         "Pouze prohlížet"
+      ],
+      "Change my access": [
+        "Změnit můj přístup"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračovat na ${ planOrAppName }"
+      ],
+      "Encrypted": [
+        "Šifrováno"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Reconnect to Gmail": [
+        "Znovu připojit ke Gmail"
+      ],
+      "Remove my access": [
+        "Odebrat můj přístup"
+      ],
+      "Set password or expiration date": [
+        "Nastavit heslo nebo datum vypršení platnosti"
+      ],
+      "Shared": [
+        "Sdílené"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Sdílení je koncově šifrované"
       ]
     },
     "Action subscription": {
@@ -1082,6 +1109,12 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ]
     },
     "Alert": {
@@ -2695,6 +2728,21 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte svůj účet."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte své účty."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Již nemáme přístup k ${ boldEmails }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
       ]
     },
     "description": {
@@ -3470,6 +3518,63 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Tento soubor se nám nepodařilo importovat do aplikace ${ SHEETS_APP_NAME }. Můžete zkusit obsah zkopírovat a vložit do nového souboru ${ SHEETS_APP_NAME }."
+      ],
+      "Address could not be added.": [
+        "Adresa nemohla být přidána."
+      ],
+      "An error occurred": [
+        "Došlo k chybě"
+      ],
+      "Failed to change permissions settings": [
+        "Změna nastavení oprávnění selhala"
+      ],
+      "Failed to create public share node": [
+        "Nepodařilo se vytvořit veřejný uzel sdílení"
+      ],
+      "Failed to fetch node": [
+        "Nepodařilo se stáhnout uzel"
+      ],
+      "Failed to fetch sharing info": [
+        "Nepodařilo se získat informace o sdílení"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
+      ],
+      "Failed to resend invitation": [
+        "Pozvánku se nepodařilo znovu odeslat"
+      ],
+      "Failed to unshare node": [
+        "Nepodařilo se zrušit sdílení uzlu"
+      ],
+      "Failed to update direct share node": [
+        "Nepodařilo se aktualizovat uzel přímého sdílení"
+      ],
+      "Failed to update public share node": [
+        "Nepodařilo se aktualizovat veřejný uzel sdílení"
+      ],
+      "Invalid coupon": [
+        "Neplatný kupón"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Při vyhledávání volných domén došlo k chybě"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Ukončení sdílení této položky selhalo"
+      ],
+      "The link to your item failed to be deleted": [
+        "Odkaz na vaší položku se nepodařilo smazat"
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nerozšifrovatelné zařízení"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovatelný název"
       ]
     },
     "Error importing calendar": {
@@ -4304,6 +4409,9 @@
       ],
       "Other": [
         "Ostatní"
+      ],
+      "More import options": [
+        "Další možnosti importu"
       ]
     },
     "Import warning": {
@@ -5997,6 +6105,51 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "Can edit": [
+        "Může upravovat"
+      ],
+      "Can edit and manage access": [
+        "Může upravovat a spravovat přístup"
+      ],
+      "Can view and edit": [
+        "Může zobrazovat a upravovat"
+      ],
+      "Can view only": [
+        "Může pouze zobrazovat"
+      ],
+      "Choose your service to connect with": [
+        "Vyberte službu, kterou chcete propojit"
+      ],
+      "Decrypting your document": [
+        "Dešifrování dokumentu"
+      ],
+      "Enter code": [
+        "Zadejte kód"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Pokud se odeberete, ztratíte přístup k souboru \"${ fileName }\" a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nenasdílí."
+      ],
+      "Link copied": [
+        "Odkaz zkopírován"
+      ],
+      "owner": [
+        "vlastník"
+      ],
+      "Who has access": [
+        "Kdo má přístup"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po změně oprávnění na „Prohlížející“ již nebudete moci sdílet soubor „${ fileName }“. Vaše oprávnění bude moci znovu změnit pouze vlastník."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
       ]
     },
     "info": {
@@ -6620,6 +6773,63 @@
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (důvěryhodný kontakt)"
+      ],
+      "Access": [
+        "Přístup"
+      ],
+      "Active": [
+        "Aktivní"
+      ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
+      "Allow editors to change permissions and share": [
+        "Umožnit editorům měnit oprávnění a sdílet"
+      ],
+      "Anonymous": [
+        "Anonymní"
+      ],
+      "Anyone on the Internet with the link": [
+        "Kdokoli na internetu s odkazem"
+      ],
+      "can edit": [
+        "může upravovat"
+      ],
+      "can view": [
+        "může prohlížet"
+      ],
+      "Continue cancelling": [
+        "Pokračovat v rušení"
+      ],
+      "Delete link and remove access for everyone": [
+        "Smazat odkaz a odebrat všem přístup"
+      ],
+      "Disable this link on a specific date": [
+        "Deaktivovat tento odkaz k určitému datu"
+      ],
+      "Emails (last 6 months)": [
+        "E-maily (posledních 6 měsíců)"
+      ],
+      "Expiry": [
+        "Vypršení platnosti"
+      ],
+      "Last 6 months only": [
+        "Pouze posledních 6 měsíců"
+      ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
+      ],
+      "Not active": [
+        "Neaktivní"
+      ],
+      "Require password": [
+        "Požadovat heslo"
+      ],
+      "Set a password to limit access via link": [
+        "Nastavit heslo pro omezení přístupu přes odkaz"
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
       ]
     },
     "Label for contact group color": {
@@ -7745,6 +7955,27 @@
         "Sdílení trezoru až se ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami"
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -8483,6 +8714,18 @@
       ],
       "The spreadsheet failed to be created": [
         "Vytvoření tabulky selhalo"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" sdíleno"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavení aktualizováno. Editoři nemohou měnit oprávnění nebo sdílet."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaše adresa ${ BRAND_NAME } je připravena k použití"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8907,6 +9150,15 @@
       ],
       "Your organization name": [
         "Název vaší organizace"
+      ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
+      "Enter a name": [
+        "Zadejte jméno"
+      ],
+      "Select a provider": [
+        "Vyberte poskytovatele"
       ]
     },
     "Placeholder for contact group name": {
@@ -9621,6 +9873,12 @@
       ],
       "Pending": [
         "Čekající"
+      ],
+      "pending": [
+        "čeká na vyřízení"
+      ],
+      "user joined": [
+        "uživatel se připojil"
       ]
     },
     "Storage": {
@@ -10830,6 +11088,39 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "Vaše stahování obsahuje soubor ${ DOCS_APP_NAME }"
+      ],
+      "Change access to viewer?": [
+        "Změnit přístup na Prohlížející?"
+      ],
+      "Choose a provider": [
+        "Vybrat poskytovatele"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojeno od služby Gmail"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svá data do ${ BRAND_NAME }"
+      ],
+      "Public link": [
+        "Veřejný odkaz"
+      ],
+      "Public link settings": [
+        "Nastavení veřejného odkazu"
+      ],
+      "Remove your access?": [
+        "Odebrat váš přístup?"
+      ],
+      "Select data to import": [
+        "Vyberte data k importu"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavení pro ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Sdílet \"${ fileName }\""
       ]
     },
     "Title subscription": {
@@ -10932,6 +11223,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokud nejsou dešifrována, zůstávají zašifrovaná hesla bezpečná, i když uniknou."
+      ],
+      "Change shared item settings": [
+        "Změnit nastavení sdílených položek"
       ]
     },
     "tooltip": {
@@ -11565,6 +11859,15 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
       ]
     },
     "new_plans: Subtext": {
@@ -12087,6 +12390,40 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

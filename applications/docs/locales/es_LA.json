@@ -704,7 +704,7 @@
         "Añada otra cuenta"
       ],
       "Ask me next time": [
-        "Preguntarme la próxima vez"
+        "Preguntarme después"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -991,6 +991,24 @@
       ],
       "View only": [
         "Solo lectura"
+      ],
+      "Change my access": [
+        "Cambiar mi acceso"
+      ],
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "Remove my access": [
+        "Borrar mi acceso"
+      ],
+      "Set password or expiration date": [
+        "Establecer contraseña o fecha de expiración"
+      ],
+      "Shared": [
+        "Compartido"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
       ]
     },
     "Action subscription": {
@@ -3468,6 +3486,48 @@
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
+      ],
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
+      "Failed to change permissions settings": [
+        "Error al cambiar los ajustes de permisos"
+      ],
+      "Failed to create public share node": [
+        "Error al crear el nodo compartido público"
+      ],
+      "Failed to fetch node": [
+        "Error al obtener nodo"
+      ],
+      "Failed to fetch sharing info": [
+        "Error al obtener información para compartir"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
+      ],
+      "Failed to resend invitation": [
+        "Error al reenviar la invitación"
+      ],
+      "Failed to unshare node": [
+        "Error al dejar de compartir el nodo"
+      ],
+      "Failed to update direct share node": [
+        "Error al actualizar el nodo compartido directo"
+      ],
+      "Failed to update public share node": [
+        "Error al actualizar el nodo compartido público"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Error al dejar de compartir este elemento"
+      ],
+      "The link to your item failed to be deleted": [
+        "Error al eliminar el enlace a su elemento"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indescifrable"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nombre indescifrable"
       ]
     },
     "Error importing calendar": {
@@ -4527,7 +4587,7 @@
         "Se eliminó el contacto del grupo ${ contactGroupName }."
       ],
       "Converting document...": [
-        "Convirtiendo el documento..."
+        "Convirtiendo documento..."
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -4571,7 +4631,7 @@
         "Creando enlace a la carpeta"
       ],
       "Creating new document...": [
-        "Creando el documento..."
+        "Creando nuevo documento..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -5926,6 +5986,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Can edit": [
+        "Puede editar"
+      ],
+      "Can edit and manage access": [
+        "Puede editar y gestionar el acceso"
+      ],
+      "Can view and edit": [
+        "Puede ver y editar"
+      ],
+      "Can view only": [
+        "Solo lectura"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si se elimina de la lista, perderá el acceso a «${ fileName }» y no podrá volver a abrirlo a menos que el propietario lo comparta con usted de nuevo."
+      ],
+      "Link copied": [
+        "Enlace copiado"
+      ],
+      "owner": [
+        "propietario"
+      ],
+      "Who has access": [
+        "Quién tiene acceso"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Ya no podrá compartir «${ fileName }» si cambia el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
       ]
     },
     "info": {
@@ -6567,6 +6654,45 @@
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "Access": [
+        "Acceso"
+      ],
+      "Active": [
+        "Activo"
+      ],
+      "Allow editors to change permissions and share": [
+        "Permita que los editores cambien permisos y compartan"
+      ],
+      "Anonymous": [
+        "Anónimo"
+      ],
+      "Anyone on the Internet with the link": [
+        "Cualquier persona en Internet con el enlace"
+      ],
+      "can edit": [
+        "puede editar"
+      ],
+      "can view": [
+        "puede ver"
+      ],
+      "Delete link and remove access for everyone": [
+        "Eliminar el enlace y el acceso para todos"
+      ],
+      "Disable this link on a specific date": [
+        "Desactive este enlace en una fecha específica"
+      ],
+      "Expiry": [
+        "Vencimiento"
+      ],
+      "Not active": [
+        "No activo"
+      ],
+      "Require password": [
+        "Se requiere contraseña"
+      ],
+      "Set a password to limit access via link": [
+        "Establezca una contraseña para limitar el acceso mediante enlace"
       ]
     },
     "Label for contact group color": {
@@ -7707,6 +7833,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN con bloqueador de publicidad y protección contra malware"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ]
     },
     "new_plans: feature highlight": {
@@ -8402,6 +8531,15 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Su dirección de ${ BRAND_NAME } está lista para usarse"
+      ],
+      "\"${ fileName }\" shared": [
+        "«${ fileName }» compartido"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuración actualizada. Los editores pueden compartir y cambiar permisos."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuración actualizada. Los editores no pueden compartir ni cambiar los permisos."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9487,6 +9625,12 @@
       ],
       "Pending": [
         "Pendiente"
+      ],
+      "pending": [
+        "pendiente"
+      ],
+      "user joined": [
+        "usuario unido"
       ]
     },
     "Storage": {
@@ -10505,7 +10649,7 @@
         "Escritorio"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Document Size Limit Exceeded": [
         "Límite de tamaño de documento excedido"
@@ -10665,6 +10809,24 @@
       ],
       "Your download includes a ${ DOCS_APP_NAME } file": [
         "La descarga incluye un archivo de ${ DOCS_APP_NAME }."
+      ],
+      "Change access to viewer?": [
+        "¿Cambiar el acceso a lector?"
+      ],
+      "Public link": [
+        "Enlace público"
+      ],
+      "Public link settings": [
+        "Ajustes del enlace público"
+      ],
+      "Remove your access?": [
+        "¿Borrar su acceso?"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Ajustes para ${ sharedFileName }"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir «${ fileName }»"
       ]
     },
     "Title subscription": {
@@ -10767,6 +10929,9 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
+      ],
+      "Change shared item settings": [
+        "Cambiar ajustes de archivos compartidos"
       ]
     },
     "tooltip": {
@@ -11820,7 +11985,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Creando una hoja de cálculo..."
+        "Creando nueva hoja de cálculo..."
       ],
       "Detect automatically": [
         "Detectar automáticamente"
