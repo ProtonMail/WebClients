@@ -56,6 +56,14 @@ type UploadQueueStore = {
     addItem: (item: UploadItemInput) => string;
 
     /**
+     * Adds multiple upload items to the queue in a single state update.
+     *
+     * @param items - The upload items to add
+     * @returns Array of generated upload IDs in the same order as the input
+     */
+    addItems: (items: UploadItemInput[]) => string[];
+
+    /**
      * Updates specific properties of a queue item.
      * Only mutable properties can be updated (status, progress, errors, etc.).
      * Immutable properties like name, file, batchId cannot be changed after creation.
@@ -111,6 +119,19 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
                     queue: new Map(state.queue).set(uploadId, { ...item, uploadId, lastStatusUpdateTime: new Date() }),
                 }));
                 return uploadId;
+            },
+
+            addItems: (items) => {
+                const now = new Date();
+                const uploadIds = items.map(() => generateUID());
+                set((state) => {
+                    const queue = new Map(state.queue);
+                    for (let i = 0; i < items.length; i++) {
+                        queue.set(uploadIds[i], { ...items[i], uploadId: uploadIds[i], lastStatusUpdateTime: now });
+                    }
+                    return { queue };
+                });
+                return uploadIds;
             },
 
             updateQueueItems: (uploadIds, update) => {
