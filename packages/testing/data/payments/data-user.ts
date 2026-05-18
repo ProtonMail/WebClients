@@ -56,6 +56,7 @@ const user: User = {
     DriveEarlyAccess: 0,
     Idle: 0,
     HasMultipleSubscriptions: false,
+    ForbiddenProducts: [],
 };
 
 const userMock: UserModel = formatUser(user);
