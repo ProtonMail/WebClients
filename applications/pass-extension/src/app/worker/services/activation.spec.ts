@@ -22,10 +22,10 @@ describe('Activation service - `CLIENT_INIT`', () => {
     let ctx: WorkerContextInterface;
     let handler: any;
 
-    const initMessage = (sender: ClientEndpoint, tabId = 1) => ({
+    const initMessage = (sender: ClientEndpoint, { tabId = 1, online = true } = {}) => ({
         type: WorkerMessageType.CLIENT_INIT,
         sender,
-        payload: { tabId },
+        payload: { tabId, online },
     });
 
     beforeEach(() => {
@@ -41,6 +41,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
             status: ConnectivityStatus.ONLINE,
             check: jest.fn().mockResolvedValue(undefined),
             subscribe: jest.fn(),
+            syncNavigatorOnline: jest.fn(),
         } as any;
 
         ctx = {
@@ -210,6 +211,75 @@ describe('Activation service - `CLIENT_INIT`', () => {
                     silence: true,
                 })
             );
+        });
+    });
+
+    describe('popup-driven connectivity probe', () => {
+        test('probes when popup signals online and worker thinks offline', async () => {
+            ctx.status = AppStatus.READY;
+            connectivity.online = false;
+            await handler(initMessage('popup', { online: true }), {});
+            expect(connectivity.check).toHaveBeenCalledTimes(1);
+        });
+
+        test('skips probe when popup signals offline', async () => {
+            ctx.status = AppStatus.PASSWORD_LOCKED;
+            connectivity.online = false;
+            await handler(initMessage('popup', { online: false }), {});
+            expect(connectivity.check).not.toHaveBeenCalled();
+        });
+
+        test('skips probe when worker already reports online', async () => {
+            ctx.status = AppStatus.OFFLINE;
+            connectivity.online = true;
+            await handler(initMessage('popup', { online: true }), {});
+            expect(connectivity.check).not.toHaveBeenCalled();
+        });
+
+        test('skips probe for non-popup senders even when offline', async () => {
+            ctx.status = AppStatus.OFFLINE;
+            connectivity.online = false;
+            await handler(initMessage('contentscript', { online: true }), {});
+            expect(connectivity.check).not.toHaveBeenCalled();
+        });
+
+        test('post-probe online state drives the offline-resume gate', async () => {
+            ctx.status = AppStatus.OFFLINE;
+            connectivity.online = false;
+            (connectivity.check as jest.Mock).mockImplementationOnce(async () => {
+                connectivity.online = true;
+                connectivity.status = ConnectivityStatus.ONLINE;
+            });
+
+            await handler(initMessage('popup', { online: true }), {});
+            expect(ctx.service.store.dispatch).toHaveBeenCalledWith(
+                offlineResume.intent({
+                    localID: 123,
+                    silence: true,
+                    retryable: false,
+                })
+            );
+        });
+    });
+
+    describe('navigator sync', () => {
+        test('forwards popup `payload.online` to connectivity service', async () => {
+            await handler(initMessage('popup', { online: false }), {});
+            expect(connectivity.syncNavigatorOnline).toHaveBeenCalledWith(false);
+
+            await handler(initMessage('popup', { online: true }), {});
+            expect(connectivity.syncNavigatorOnline).toHaveBeenLastCalledWith(true);
+        });
+
+        test('does not sync from contentscript senders', async () => {
+            await handler(initMessage('contentscript', { online: false }), {});
+            expect(connectivity.syncNavigatorOnline).not.toHaveBeenCalled();
+        });
+
+        test('does not sync from page senders', async () => {
+            /** Page (settings/onboarding) skipped: only popup is the trusted source. */
+            await handler(initMessage('page', { online: false }), {});
+            expect(connectivity.syncNavigatorOnline).not.toHaveBeenCalled();
         });
     });
 });

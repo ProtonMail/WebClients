@@ -72,7 +72,7 @@ const getPassCoreProviderProps = (
 
     return {
         config,
-        connectivity: createConnectivityProxy(),
+        connectivity: createConnectivityProxy(endpoint),
         core: createPassCoreProxy(createCoreServiceBridge(messageFactory)),
         endpoint,
         i18n: createI18nService({

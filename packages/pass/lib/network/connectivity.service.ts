@@ -14,6 +14,22 @@ import { ping } from '@proton/shared/lib/api/tests';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
+/**
+ * Reconciles `navigator.onLine` and the API's connectivity state into a single
+ * `ConnectivityStatus`. Drives a retry loop while degraded. Both inputs are kept
+ * decoupled as navigator can lie & API state is only as fresh as the last request.
+ *
+ * Retry: Each tick fires `probe()`, which is bounded by `CONNECTIVITY_PROBE_TIMEOUT`
+ * and bypasses the threshold queue via `prioritize`. `TimeoutError` classifies as
+ * as OFFLINE in the api factory.
+ *
+ * Reconciliation paths:
+ * - API: `onApiEvent` broadcasts on state change & re-evaluates retry handler.
+ * - Navigator events: online → offline quick-switches to OFFLINE (device beats stale API).
+ *   offline → online: flips to ONLINE if API agrees or probes via `check()` otherwise.
+ * - `check()`: manual probe, rewinds backoff.
+ */
+
 export interface ConnectivityService {
     /** getter resolving online state from current status */
     readonly online: boolean;
@@ -24,13 +40,18 @@ export interface ConnectivityService {
     /** Triggers connectivity check against server ping endpoint */
     check: () => Promise<ConnectivityStatus>;
     /** Initializes navigator online/offline and API connectivity event listeners */
-    init: () => Promise<void>;
+    init: () => void;
     /** Cancels ongoing retry handlers and resets connectivity state */
     destroy: () => void;
     /** Manually set the connectivity status */
     setStatus: (status: ConnectivityStatus) => void;
-    /** Subscribe to connectivity status change notifications */
-    subscribe: (subscriber: Subscriber<ConnectivityStatus>) => () => void;
+    /** Subscribe to connectivity events. */
+    subscribe: (subscriber: Subscriber<ConnectivityEvent>) => () => void;
+    /** Sync navigator online state into the service. Used to recover from
+     * potentially missed navigator events: in extensions where worker-scope
+     * navigator events are unreliable (popup forwards via CONNECTIVITY_SYNC),
+     * and in desktop renderers re-syncing after sleep/lock cycles. */
+    syncNavigatorOnline: (online: boolean) => void;
 }
 
 export type GetRetryTimeout = (status: ConnectivityStatus, retryCount: number) => number;
@@ -41,7 +62,7 @@ type ConnectivityServiceOptions = {
      * `getConnectivityRetryTimeout` (linear for OFFLINE, fib for DOWNTIME). */
     getRetryTimeout?: GetRetryTimeout;
 };
-type ConnectivityRetryHandler = { start: () => void; cancel: () => void };
+type ConnectivityRetryHandler = { start: () => void; cancel: () => void; reset: () => void };
 
 export type ConnectivityState = {
     status: ConnectivityStatus;
@@ -49,7 +70,10 @@ export type ConnectivityState = {
     retryHandler: MaybeNull<ConnectivityRetryHandler>;
 };
 
-export const CONNECTIVITY_CHECK_DELAY = 50; /** ms */
+export type ConnectivityEvent = { type: 'status'; status: ConnectivityStatus } | { type: 'navigator-online' };
+
+export const CONNECTIVITY_PROBE_DELAY = 50; /** ms */
+export const CONNECTIVITY_PROBE_TIMEOUT = 5_000; /** ms */
 
 /** Determines effective online state for retry handler transition detection:
  * requires both API reachability and navigator online. This is intentionally
@@ -67,7 +91,7 @@ export const createConnectivityService = ({
     const target = typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope ? self : window;
 
     const listeners = createListenerStore();
-    const pubsub = createPubSub<ConnectivityStatus>();
+    const pubsub = createPubSub<ConnectivityEvent>();
 
     const state: ConnectivityState = {
         status: ConnectivityStatus[navigator.onLine ? 'ONLINE' : 'OFFLINE'],
@@ -80,24 +104,39 @@ export const createConnectivityService = ({
     const setStatus = (status: ConnectivityStatus): void => {
         if (state.status !== status) {
             state.status = status;
-            pubsub.publish(status);
+            pubsub.publish({ type: 'status', status });
         }
     };
 
-    /** Pings server and updates connectivity status. Async-locked to prevent concurrent
-     * checks. If requests are in-flight, skips the ping and waits for them to drain instead
-     * to avoid a redundant ping race that could produce contradictory state. */
-    const check = asyncLock(async (signal?: AbortSignal): Promise<ConnectivityStatus> => {
-        if (api.getState().pendingCount > 0) await api.idle();
-        else await api({ ...ping(), unauthenticated: true, signal }).catch(noop);
+    /** Internal: pings the server and updates connectivity status. Async-locked
+     * so concurrent callers share the same in-flight ping. Used by the retry
+     * handler - external callers go through `check`.
+     * `timeout` caps a stalled fetch (eg: Safari hangs offline) at `CONNECTIVITY_PROBE_TIMEOUT`;
+     * API factory classifies the resulting `TimeoutError` as OFFLINE. */
+    const probe = asyncLock(async (signal?: AbortSignal): Promise<ConnectivityStatus> => {
+        await api({
+            ...ping(),
+            unauthenticated: true,
+            timeout: CONNECTIVITY_PROBE_TIMEOUT,
+            prioritize: true,
+            signal,
+        }).catch(noop);
 
-        const apiState = api.getState();
-        const status = intoConnectivityStatus(apiState);
+        const status = intoConnectivityStatus(api.getState());
         setStatus(status);
 
-        await wait(CONNECTIVITY_CHECK_DELAY);
+        await wait(CONNECTIVITY_PROBE_DELAY);
+
         return status;
     });
+
+    /** Any user-initiated connectivity recheck goes through here so
+     * the retry chain doesn't sit on a stale fib step after a manual probe. */
+    const check = async (): Promise<ConnectivityStatus> => {
+        const status = await probe();
+        state.retryHandler?.reset();
+        return status;
+    };
 
     /** Creates retry mechanism with exponential backoff based
      * on retry count and connectivity status */
@@ -105,25 +144,34 @@ export const createConnectivityService = ({
         let retryCount = 0;
         let retryTimer: NodeJS.Timeout;
 
-        const cancelableCheck = cancelable(check);
+        const cancelableCheck = cancelable(probe);
 
         const handler = (next: ConnectivityStatus) => {
             const ms = getRetryTimeout(next, retryCount);
 
-            retryTimer = setTimeout(
+            const timer = setTimeout(
                 safeAsyncCall(async () => {
                     retryCount++;
                     const result = await cancelableCheck.run();
+                    if (timer !== retryTimer) return; // Bail if a newer handler took over via cancel/reset.
                     if (result !== ConnectivityStatus.ONLINE) handler(result);
                 }),
                 ms
             );
+
+            retryTimer = timer;
         };
+
         return {
             start: () => handler(status),
             cancel: () => {
                 cancelableCheck.cancel();
                 clearTimeout(retryTimer);
+            },
+            reset: () => {
+                retryCount = 0;
+                clearTimeout(retryTimer);
+                handler(state.status);
             },
         };
     };
@@ -146,13 +194,24 @@ export const createConnectivityService = ({
         }
     };
 
-    const init = async () => {
-        const onNavigatorEvent = () => {
-            const wasOnline = isEffectivelyOnline(state);
-            const online = navigator.onLine;
-            state.navigatorOnline = online;
-            onConnectivityChange(wasOnline);
-        };
+    const syncNavigatorOnline = (online: boolean): void => {
+        const wasNavigatorOnline = state.navigatorOnline;
+        const transitioned = wasNavigatorOnline !== online;
+        if (!transitioned) return;
+
+        state.navigatorOnline = online;
+
+        if (online) {
+            pubsub.publish({ type: 'navigator-online' });
+            setStatus(intoConnectivityStatus(api.getState()));
+            if (!isEffectivelyOnline(state)) void check();
+        } else setStatus(ConnectivityStatus.OFFLINE);
+
+        onConnectivityChange();
+    };
+
+    const init = () => {
+        const onNavigatorEvent = () => syncNavigatorOnline(navigator.onLine);
 
         const onApiEvent: Subscriber<ApiSubscriptionEvent> = (event) => {
             if (event.type === 'connectivity') {
@@ -166,10 +225,8 @@ export const createConnectivityService = ({
         listeners.addListener(target, 'offline', onNavigatorEvent);
         listeners.addSubscriber(api.subscribe(onApiEvent));
 
-        /** Bootstrap initial connectivity state: starts the retry handler immediately
-         * if offline, or falls back to a direct check to detect unreachable API state. */
+        /** Bootstrap connectivity state from initial state */
         onConnectivityChange();
-        if (!state.retryHandler) await check().then(() => onConnectivityChange());
     };
 
     const destroy = () => {
@@ -194,6 +251,7 @@ export const createConnectivityService = ({
         check,
         setStatus,
         subscribe: (subscriber) => pubsub.subscribe(subscriber),
+        syncNavigatorOnline,
         init,
         destroy,
     };

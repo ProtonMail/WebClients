@@ -19,7 +19,6 @@ export type ApiAuth =
 export type ApiState = {
     appVersionBad: boolean;
     online: boolean;
-    pendingConnectivityChange: number;
     pendingCount: number;
     queued: Awaiter<void>[];
     refreshing: boolean;
@@ -29,6 +28,7 @@ export type ApiState = {
     serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
+    ticksUntilOnline: number;
     unreachable: boolean;
 };
 
@@ -60,6 +60,8 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     method?: M;
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
+    /** Skips the concurrency-threshold queue. */
+    prioritize?: boolean;
     sideEffects?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
