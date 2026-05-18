@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import {
     createRandomKey,
     createRandomVaultKey,
@@ -56,6 +57,26 @@ describe('open invite keys', () => {
                 inviteKey,
                 invitedPrivateKey: invitedKey.privateKey,
                 inviterPublicKeys: [inviterKey.publicKey],
+            })
+        ).rejects.toThrow();
+    });
+
+    test('should throw if no inviter public keys are provided', async () => {
+        const vaultKey = await createRandomVaultKey(0);
+        const invitedKey = await createRandomKey();
+        const inviterKey = await createRandomKey();
+
+        const [inviteKey] = await createInviteKeys({
+            targetKeys: [vaultKey],
+            invitedPublicKey: invitedKey.publicKey,
+            inviterPrivateKey: inviterKey.privateKey,
+        });
+
+        await expect(() =>
+            openInviteKey({
+                inviteKey,
+                invitedPrivateKey: invitedKey.privateKey,
+                inviterPublicKeys: [],
             })
         ).rejects.toThrow();
     });
