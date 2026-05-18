@@ -1,11 +1,11 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useApi from '@proton/components/hooks/useApi';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { Group, RoleAssignment } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
@@ -21,14 +21,24 @@ interface Props {
     canOnlyDelete: boolean;
     name?: string;
     serializedGroup?: ReturnType<GroupsManagementReturn['getSerializedGroup']>;
+    groupOrganizationRoles?: RoleAssignment[];
 }
 
-const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, canOnlyDelete }: Props) => {
+const GroupItem = ({
+    active,
+    group,
+    serializedGroup,
+    onClick,
+    isNew,
+    onDeleteGroup,
+    canOnlyDelete,
+    groupOrganizationRoles,
+}: Props) => {
     const api = useApi();
     const [organization] = useOrganization();
     const showMailFeatures = shouldShowMail(organization?.PlanName);
 
-    const memberCount = group && Number.isInteger(group.MemberCount) ? group.MemberCount : undefined;
+    const roleNames = groupOrganizationRoles?.map((assignment) => assignment.Role.Name).join(', ');
 
     const handleDeleteGroup = async () => {
         onDeleteGroup?.();
@@ -42,6 +52,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
 
     const name = (serializedGroup?.payload.name ?? group?.Name) || c('Empty group name').t`Unnamed`;
     const email = serializedGroup?.payload.email || group?.Address?.Email || '';
+    const subtitle = roleNames || (showMailFeatures && email ? email : undefined);
 
     return (
         <div className="relative">
@@ -66,18 +77,9 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                         <span className="block max-w-full text-bold text-ellipsis" title={name}>
                             {name}
                         </span>
-                        {showMailFeatures && email && (
-                            <span className="block max-w-full text-ellipsis" title={email}>
-                                {email}
-                            </span>
-                        )}
-                        {memberCount !== undefined && (
-                            <p className="m-0 text-sm color-weak">
-                                {c('Group member count').ngettext(
-                                    msgid`${memberCount} member`,
-                                    `${memberCount} members`,
-                                    memberCount
-                                )}
+                        {subtitle && (
+                            <p className="m-0 text-sm color-weak text-ellipsis" title={subtitle}>
+                                {subtitle}
                             </p>
                         )}
                     </div>
