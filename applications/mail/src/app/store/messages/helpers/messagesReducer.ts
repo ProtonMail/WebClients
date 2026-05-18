@@ -3,6 +3,7 @@ import type { Draft } from 'immer';
 
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -194,15 +195,9 @@ export const labelMessagesPending = (
 ) => {
     const { messages, destinationLabelID, labels, folders } = action.meta.arg;
 
-    // When updating message's category, we need to move all messages that are in the same conversation to the new category
+    // We do not label message when changing categories, instead we perform a conversation label
     if (isCategoryLabel(destinationLabelID)) {
-        const conversationIDs = new Set(messages.map(({ ConversationID }) => ConversationID));
-
-        Object.values(state).forEach((message) => {
-            if (message && message.data && conversationIDs.has(message.data.ConversationID)) {
-                applyLabelToMessage(message.data as MessageMetadata, destinationLabelID, folders, labels);
-            }
-        });
+        traceInitiativeError(SentryMailInitiatives.MOVE_ACTIONS, 'messagesReducer: updating category label counts');
     } else {
         messages.forEach((message) => {
             const messageState = getMessage(state, message.ID);

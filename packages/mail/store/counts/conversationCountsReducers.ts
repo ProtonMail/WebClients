@@ -3,6 +3,7 @@ import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/account';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -290,39 +291,12 @@ export const labelMessagesPending = (
 ) => {
     const { messages, conversations, destinationLabelID, labels, folders } = action.payload;
 
-    // When updating item category, decrease old label count and increase new label count
+    // We do not label message when changing categories, instead we perform a conversation label
     if (isCategoryLabel(destinationLabelID)) {
-        conversations.forEach((conversation) => {
-            const sourceCategory = conversation.Labels?.find(({ ID }) => isCategoryLabel(ID))?.ID;
-
-            if (sourceCategory && sourceCategory !== destinationLabelID) {
-                const numMessagesInInbox = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
-                const numUnreadInInbox = getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX);
-
-                if (numMessagesInInbox === 0) {
-                    return;
-                }
-
-                const oldCategoryCounter = state.value?.find((counter) => counter.LabelID === sourceCategory);
-                const newCategoryCounter = state.value?.find((counter) => counter.LabelID === destinationLabelID);
-
-                // Decrease old category
-                if (oldCategoryCounter) {
-                    oldCategoryCounter.Total = safeDecreaseCount(oldCategoryCounter.Total, 1);
-                    if (numUnreadInInbox > 0) {
-                        oldCategoryCounter.Unread = safeDecreaseCount(oldCategoryCounter.Unread, 1);
-                    }
-                }
-
-                // Increase new category
-                if (newCategoryCounter) {
-                    newCategoryCounter.Total = safeIncreaseCount(newCategoryCounter.Total, 1);
-                    if (numUnreadInInbox > 0) {
-                        newCategoryCounter.Unread = safeIncreaseCount(newCategoryCounter.Unread, 1);
-                    }
-                }
-            }
-        });
+        traceInitiativeError(
+            SentryMailInitiatives.MOVE_ACTIONS,
+            'conversationCountsReducers: updating category label counts'
+        );
     } else {
         const conversationCounterTarget = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
