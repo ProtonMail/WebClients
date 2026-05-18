@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
+import { isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
@@ -25,8 +26,9 @@ import {
 } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
 import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
-import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
+import { useGetConversation, useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
+import { load } from 'proton-mail/store/conversations/conversationsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -65,6 +67,7 @@ export const useApplyLocation = () => {
     const { getFilterActions } = useCreateFilters();
 
     const getConversationById = useGetConversation();
+    const getConversationsByIDs = useGetConversationsByIDs();
     const getElementByID = useGetElementByID();
 
     const dispatchMessage = ({
@@ -359,6 +362,52 @@ export const useApplyLocation = () => {
                     },
                 });
                 return Promise.resolve([]);
+            }
+
+            // Moving a message to a different category is difficult.
+            // This is because we cannot predict the number of elements of the conversation that are both in the category and in inbox.
+            // To solve the issue we try to pre-fetch conversation before the user perform the action, if not available we fetch it and do the action.
+            if (isCategoryLabel(destinationLabelID)) {
+                const messageElements = elements.filter(isElementMessage);
+                const conversationIDs = unique(messageElements.map((element) => element.ConversationID));
+
+                const conversationStates = getConversationsByIDs(conversationIDs);
+                const allConversationsInStore = conversationStates.every((state) => state?.Conversation !== undefined);
+
+                // If all conversations are already in the store, we can perform the action optimistically
+                if (allConversationsInStore) {
+                    return moveToFolder({
+                        elements: conversationStates.map((state) => state!.Conversation!),
+                        removeLabel,
+                        askUnsubscribe,
+                        destinationLabelID,
+                        showSuccessNotification,
+                        createFilters,
+                        type: APPLY_LOCATION_TYPES.MOVE,
+                    });
+                }
+
+                // Fetch all conversation and perform the action, this breaks optimistic action but ensure the context total remains correct
+                await Promise.all(
+                    conversationIDs.map((id) => dispatch(load({ conversationID: id, messageID: undefined })))
+                );
+
+                captureInitiativeMessage(
+                    SentryMailInitiatives.MAIL_REDUX_ERRORS,
+                    'No conversation in cache for category-to-category move in message mode'
+                );
+
+                const conversations = conversationIDs.map((id) => getElementByID(id)).filter(isTruthy);
+
+                return moveToFolder({
+                    elements: conversations,
+                    removeLabel,
+                    askUnsubscribe,
+                    destinationLabelID,
+                    showSuccessNotification,
+                    createFilters,
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                });
             }
 
             const { payload } = await dispatchMessage({

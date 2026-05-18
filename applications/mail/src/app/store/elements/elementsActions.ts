@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { getConversation } from '@proton/shared/lib/api/conversations';
 import {
     labelAll as labelAllRequest,
     markAllMessagesAsRead,
@@ -16,6 +17,7 @@ import unique from '@proton/utils/unique';
 import { isElementMessage } from 'proton-mail/helpers/elements';
 
 import type { Element } from '../../models/element';
+import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import type { MailState, MailThunkExtra } from '../store';
 import type {
     ESResults,
@@ -354,3 +356,15 @@ export const labelAll = createAsyncThunk<
 });
 
 export const resetRetry = createAction<void>('elements/resetRetry');
+
+export const loadConversation = createAsyncThunk<ConversationResult, ConversationParams, MailThunkExtra>(
+    'conversations/load',
+    async ({ silentFetch = false, conversationID, messageID }, thunkApi) => {
+        try {
+            return await thunkApi.extra.api({ ...getConversation(conversationID, messageID), silent: silentFetch });
+        } catch (error: any | undefined) {
+            console.error(error);
+            throw error;
+        }
+    }
+);

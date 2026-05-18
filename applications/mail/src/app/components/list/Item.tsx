@@ -18,6 +18,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { isElementMessage, isUnread } from '../../helpers/elements';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
+import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
@@ -89,6 +90,9 @@ const Item = ({
 
     const elementRef = useRef<HTMLDivElement>(null);
 
+    const prefetchConversation = useCategoryViewConversationPrefetch();
+    const conversationID = !conversationMode && isElementMessage(element) ? element.ConversationID : undefined;
+
     const displayRecipients =
         [
             MAILBOX_LABEL_IDS.SENT,
@@ -133,10 +137,32 @@ const Item = ({
             event.stopPropagation();
             return;
         }
+        if (conversationID) {
+            prefetchConversation(conversationID);
+        }
         onClick(element.ID);
     };
 
+    const handleDragStart = (event: DragEvent) => {
+        onDragStart(event, element);
+
+        if (conversationID) {
+            prefetchConversation(conversationID);
+        }
+    };
+
+    const handleContextMenu = (event: MouseEvent<HTMLDivElement>) => {
+        onContextMenu(event, element);
+
+        if (conversationID) {
+            prefetchConversation(conversationID);
+        }
+    };
+
     const handleCheck = (event: ChangeEvent) => {
+        if (conversationID) {
+            prefetchConversation(conversationID);
+        }
         onCheck(event, element.ID || '');
     };
 
@@ -159,10 +185,10 @@ const Item = ({
         <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
             <div
-                onContextMenu={(event) => onContextMenu(event, element)}
+                onContextMenu={handleContextMenu}
                 onClick={handleClick}
                 draggable
-                onDragStart={(event) => onDragStart(event, element)}
+                onDragStart={handleDragStart}
                 onDragEnd={onDragEnd}
                 className={clsx([
                     'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
