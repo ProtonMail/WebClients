@@ -91,6 +91,14 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
     return allAppsSet;
 };
 
+export const getForbiddenApps = (user?: User): Set<APP_NAMES> => {
+    if (!user) {
+        return new Set();
+    }
+
+    return getAppNameSetFromProductSet(new Set(user.ForbiddenProducts));
+};
+
 export const getAvailableApps = (
     options: GetAvailableAppsByUserTypeArguments & GetOrganizationAllowedProductsArguments
 ) => {
@@ -110,8 +118,14 @@ export const getAvailableApps = (
     }
     const availableAppsByUser = getAvailableAppsByUser(options);
     const availableAppsByOrganization = getAvailableAppsByOrganization(options);
+    const forbiddenApps = getForbiddenApps(options.user);
     return allApps.filter((app) => {
-        return !removeApps.has(app) && availableAppsByUser.has(app) && availableAppsByOrganization.has(app);
+        return (
+            !removeApps.has(app) &&
+            availableAppsByUser.has(app) &&
+            availableAppsByOrganization.has(app) &&
+            !forbiddenApps.has(app)
+        );
     });
 };
 

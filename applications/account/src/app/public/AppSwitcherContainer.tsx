@@ -14,13 +14,17 @@ import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { getForbiddenApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import ExploreAppsListV2, { getExploreApps } from '../components/ExploreAppsListV2/ExploreAppsListV2';
+import ExploreAppsListV2, {
+    getExploreApps,
+    getForbiddenAppConfigs,
+} from '../components/ExploreAppsListV2/ExploreAppsListV2';
 import Layout from './Layout';
 import PublicUserItem from './PublicUserItem';
 
@@ -54,9 +58,36 @@ const Disabled = ({ children }: { children: ReactElement }) => {
     );
 };
 
-export const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationExtended }) => {
+const getUnsupportedAppErrorMessage = ({
+    app,
+    organization,
+    forbiddenApps,
+}: {
+    app: APP_NAMES;
+    organization?: OrganizationExtended;
+    forbiddenApps: Set<APP_NAMES>;
+}) => {
     const appName = getAppName(app);
     const organizationName = organization?.Name || '';
+
+    if (forbiddenApps.has(app)) {
+        return c('Info').t`**${appName}** is not available for your account.`;
+    }
+
+    return organization && organizationName
+        ? c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
+        : c('Info').t`**${appName}** is not supported.`;
+};
+
+export const UnsupportedAppError = ({
+    app,
+    organization,
+    forbiddenApps,
+}: {
+    app: APP_NAMES;
+    organization?: OrganizationExtended;
+    forbiddenApps: Set<APP_NAMES>;
+}) => {
     return (
         <div
             className="flex flex-row items-center gap-2 px-3 py-2 border rounded bg-norm border-weak mb-6 mt-6"
@@ -73,11 +104,7 @@ export const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; org
                 </Disabled>
             </div>
             <div className="flex-1">
-                {getBoldFormattedText(
-                    organization && organizationName
-                        ? c('Info').t`**${appName}** is not supported in your organization **${organizationName}**.`
-                        : c('Info').t`**${appName}** is not supported.`
-                )}
+                {getBoldFormattedText(getUnsupportedAppErrorMessage({ app, organization, forbiddenApps }))}
             </div>
         </div>
     );
@@ -99,6 +126,18 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const subscribed = User.Subscribed;
+
+    const forbiddenApps = getForbiddenApps(User);
+
+    const apps = getExploreApps({
+        user: User,
+        organization: Organization,
+        isDocsHomepageAvailable,
+        isSheetsAvailable,
+        oauth: persistedSession.source === SessionSource.Oauth,
+        isMeetAvailable,
+        isAuthenticatorAvailable,
+    }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
 
     return (
         <Layout
@@ -129,22 +168,18 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     <p className="m-0 md:text-lg color-weak">{c('Info').t`Privacy and security starts here`}</p>
                     {error?.type === 'unsupported-app' && (
                         <div className="mt-6 max-w-custom mx-auto" style={{ '--max-w-custom': '30rem' }}>
-                            <UnsupportedAppError organization={Organization} app={error.app} />
+                            <UnsupportedAppError
+                                organization={Organization}
+                                app={error.app}
+                                forbiddenApps={forbiddenApps}
+                            />
                         </div>
                     )}
                 </header>
                 <div>
                     <ExploreAppsListV2
                         subscription={{ subscribed, plan: Organization?.PlanName }}
-                        apps={getExploreApps({
-                            user: User,
-                            organization: Organization,
-                            isDocsHomepageAvailable,
-                            isSheetsAvailable,
-                            oauth: persistedSession.source === SessionSource.Oauth,
-                            isMeetAvailable,
-                            isAuthenticatorAvailable,
-                        })}
+                        apps={apps}
                         localID={persistedSession.localID}
                         onExplore={async (app) => {
                             await onLogin({
