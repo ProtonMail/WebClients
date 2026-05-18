@@ -11,7 +11,6 @@ import { ChatHistoryGuestUserUpsell } from '../../components/Guest/ChatHistoryUp
 import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
-import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectHistoryConversationsSorted } from '../../redux/selectors';
@@ -34,7 +33,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
-    const { isGhostChatMode } = useGhostChat();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
@@ -50,7 +48,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
         };
 
         // Guest render path returns early below and never uses these values.
-        if (isGuest || isGhostChatMode) {
+        if (isGuest) {
             return empty;
         }
 
@@ -69,15 +67,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             noConversationAtAll: conversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && conversations.length > 0,
         };
-    }, [
-        sortedConversations,
-        spaceMap,
-        searchInput,
-        isGuest,
-        isGhostChatMode,
-        showProjectConversationsInHistory,
-        hasLumoPlus,
-    ]);
+    }, [sortedConversations, spaceMap, searchInput, isGuest, showProjectConversationsInHistory, hasLumoPlus]);
 
     const { today, lastWeek, expiringSoon, lastMonth, earlier } = categorizedConversations;
 
