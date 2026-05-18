@@ -42,6 +42,10 @@ function recordEnvironmentIncompatibilityOnce(reason: SearchEnvironmentIncompati
 // All required dependencies to initialize and run the search module.
 export type SearchModuleContext = {
     appVersion: string;
+    // Auth + app-version headers forwarded into the SharedWorker so its @proton/metrics
+    // singleton emits authenticated POSTs (the worker runs in its own JS realm and never
+    // sees the main-thread bootstrap call to metrics.setAuthHeaders / setVersionHeaders).
+    metricsHeaders: { uid: string; clientID: string };
     userId: UserId;
     driveClient: ProtonDriveClient;
     createSearchDriveInstance: (params: { latestEventIdProvider: LatestEventIdProvider }) => ProtonDriveClient;
@@ -100,7 +104,13 @@ export class SearchModule {
             context.fetchLastEventIdForTreeScopeId,
             context.getUserKeys
         );
-        this.workerClient = new WorkerClient(context.userId, context.appVersion, clientId, bridge);
+        this.workerClient = new WorkerClient(
+            context.userId,
+            context.appVersion,
+            clientId,
+            bridge,
+            context.metricsHeaders
+        );
 
         this.updateChannel = createSearchModuleStateUpdateChannel(context.userId);
         this.updateChannel.onmessage = ({ data: patch }) => {
