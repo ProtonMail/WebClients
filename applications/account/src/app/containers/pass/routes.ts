@@ -2,29 +2,13 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
 import { hasAnyB2bBundle, hasPassBusiness, hasVPNPassProfessional } from '@proton/payments';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 
-interface Props {
-    app: APP_NAMES;
-    user: UserModel;
-    organization?: Organization;
-    subscription: MaybeFreeSubscription;
-    canDisplayB2BLogsPass?: boolean;
-    canDisplayPassReports?: boolean;
-}
+import type { OrganizationRouterParams } from '../../content/router-params';
 
-export const getPassAppRoutes = ({
-    app,
-    user,
-    organization,
-    subscription,
-    canDisplayB2BLogsPass,
-    canDisplayPassReports,
-}: Props) => {
+export const getPassAppRoutes = ({ app, user, organization, subscription, flags }: OrganizationRouterParams) => {
+    const { canDisplayB2BLogsPass = false, canDisplayPassReports = false } = flags;
     const isAdmin = user.isAdmin && user.isSelf;
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);

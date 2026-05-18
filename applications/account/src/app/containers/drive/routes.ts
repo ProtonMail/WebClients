@@ -1,18 +1,12 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getDriveAppRoutes = ({
-    app,
-    isB2BDrive,
-    canB2BHidePhotos,
-}: {
-    app: APP_NAMES;
-    isB2BDrive: boolean;
-    canB2BHidePhotos: boolean;
-}) => {
+import type { OrganizationRouterParams } from '../../content/router-params';
+
+export const getDriveAppRoutes = ({ app, isB2BDrive, flags }: OrganizationRouterParams) => {
+    const { canB2BHidePhotos = false } = flags;
     return <const>{
         available: app === APPS.PROTONDRIVE,
         header: DRIVE_APP_NAME,
