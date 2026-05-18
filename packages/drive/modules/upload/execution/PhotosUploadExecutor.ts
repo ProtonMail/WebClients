@@ -173,8 +173,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             debug: Boolean(getItem('proton-drive-debug', 'false')),
         });
 
-        const thumbnailsResult = await thumbnailsPromise;
-        const mimeType = await mimeTypePromise;
+        const [thumbnailsResult, mimeType] = await Promise.all([thumbnailsPromise, mimeTypePromise]);
 
         const result = thumbnailsResult.ok ? thumbnailsResult.result : undefined;
         const mediaInfo = result

@@ -24,6 +24,7 @@ import { UploadEventHandler } from './UploadEventHandler';
 export class UploadOrchestrator {
     private isRunning = false;
     private shouldStop = false;
+    private wakeOrchestratorResolvers = new Set<() => void>();
 
     private capacityManager = new CapacityManager();
     private fileExecutor = new FileUploadExecutor();
@@ -41,7 +42,8 @@ export class UploadOrchestrator {
         this.conflictManager,
         this.sdkTransferActivity,
         this.sdkPhotosTransferActivity,
-        (uploadId) => this.cancelFolderChildren(uploadId)
+        (uploadId) => this.cancelFolderChildren(uploadId),
+        () => this.wakeOrchestrator()
     );
 
     constructor() {
@@ -195,6 +197,7 @@ export class UploadOrchestrator {
             } else {
                 this.capacityManager.releaseFile(task.uploadId);
             }
+            this.wakeOrchestrator();
         }
     }
 
@@ -222,13 +225,30 @@ export class UploadOrchestrator {
         return load.activePreparingFiles > 0 || load.activeUploadingFiles > 0 || load.activeFolders > 0;
     }
 
-    /**
-     * Waits for a short interval to allow async operations to complete.
-     * This prevents tight loops while waiting for uploads to finish or conflicts to be resolved.
-     * The 100ms interval is a balance between responsiveness and CPU usage.
-     */
+    // Called when a task finishes or capacity is freed — skips the 500ms timeout in waitForCapacity.
+    private wakeOrchestrator(): void {
+        for (const resolve of this.wakeOrchestratorResolvers) {
+            resolve();
+        }
+        this.wakeOrchestratorResolvers.clear();
+    }
+
     private async waitForCapacity(): Promise<void> {
-        return new Promise((resolve) => setTimeout(resolve, 100));
+        return new Promise((resolve) => {
+            let timeoutId: ReturnType<typeof setTimeout>;
+
+            const wrappedResolve = () => {
+                clearTimeout(timeoutId);
+                resolve();
+            };
+
+            timeoutId = setTimeout(() => {
+                this.wakeOrchestratorResolvers.delete(wrappedResolve);
+                resolve();
+            }, 100);
+
+            this.wakeOrchestratorResolvers.add(wrappedResolve);
+        });
     }
 
     /**
@@ -276,6 +296,7 @@ export class UploadOrchestrator {
 
     stop(): void {
         this.shouldStop = true;
+        this.wakeOrchestrator();
     }
 
     reset(): void {
