@@ -29,6 +29,7 @@ import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/util
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/modules/sharingModal'
 import { generateNodeUid, getDrive } from '@proton/drive'
+import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -173,6 +174,7 @@ function DocsHeaderForDocument({
 
   return (
     <>
+      {!publicContext && <WorkspacePromoBanner />}
       <div
         className={clsx(
           'flex select-none flex-nowrap items-center gap-2 px-3 py-2',
