@@ -1,9 +1,7 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import clsx from '@proton/utils/clsx';
 
 import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
 import { getRawLocationCount } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter.helpers';
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
@@ -24,10 +22,7 @@ export const CategoriesTabsList = () => {
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const selectAll = useMailSelector(selectSelectAll);
 
-    const { isColumnModeActive } = useMailboxLayoutProvider();
-
     const { counterMap } = useMailboxCounter();
-
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         if (selectAll) {
             return;
@@ -47,10 +42,7 @@ export const CategoriesTabsList = () => {
     return (
         <>
             <div
-                className={clsx(
-                    'categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak',
-                    !isColumnModeActive && activeCategoriesTabs.length <= 4 && 'low-active-categories'
-                )}
+                className="categories-tabs flex flex-nowrap px-4 h-fit-content border-bottom border-weak"
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}

@@ -53,7 +53,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         <NavLink
             to={navigateTo}
             className={clsx(
-                'tab-container h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
+                'tab-container gap-1.5 h-full flex flex-nowrap items-center text-no-decoration color-hint hover:mail-category-color',
                 navClasses[tabState]
             )}
             role="tab"
@@ -70,7 +70,10 @@ export const Tab = ({ category, count, tabState }: Props) => {
             />
             <span
                 title={getLabelFromCategoryId(category.id)}
-                className={clsx('tag-label tag-label-text', tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak')}
+                className={clsx(
+                    'tag-label text-sm truncate min-w-0',
+                    tabState === TabState.ACTIVE ? 'color-norm' : 'color-weak'
+                )}
             >
                 {getLabelFromCategoryId(category.id)}
             </span>
@@ -87,7 +90,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
                             : c('Label').ngettext(msgid`${count} unread message`, `${count} unread messages`, count)
                     }
                     className={clsx(
-                        'tag-count px-1.5 py-0.5 text-sm',
+                        'tag-count shrink-0 px-1.5 py-0.5 text-sm',
                         tabState === TabState.ACTIVE
                             ? 'mail-category-color mail-category-count-bg'
                             : 'bg-weak color-weak'
