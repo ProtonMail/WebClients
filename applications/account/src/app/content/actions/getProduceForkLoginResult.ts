@@ -54,9 +54,11 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
 };
 
 const getIsProductDisabledResult = (code: number) => {
-    return [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
-        (errorCode) => errorCode === code
-    );
+    return [
+        API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID,
+        API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED_BY_ORG_ADMIN,
+        API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED_BY_ACCESS_RESTRICTION,
+    ].some((errorCode) => errorCode === code);
 };
 
 export const getProduceForkLoginResult = async ({

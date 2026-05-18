@@ -108,8 +108,8 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	&:hover &-icon,
-	&:focus-visible &-icon {
+	&:hover:not(.explore-app-inaccessible) &-icon,
+	&:focus-visible:not(.explore-app-inaccessible) &-icon {
 		box-shadow: var(--shadow-hover);
 		transform: translateY(#{rem(-1)});
 
