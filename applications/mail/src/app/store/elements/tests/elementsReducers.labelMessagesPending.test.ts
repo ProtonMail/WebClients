@@ -331,48 +331,6 @@ describe('labelMessagesPending', () => {
         });
     });
 
-    describe('Move to a category', () => {
-        it('should move to the category', () => {
-            const message = setupMessage({
-                messageID: MESSAGE_ID,
-                unreadState: 'unread',
-                labelIDs: [
-                    MAILBOX_LABEL_IDS.INBOX,
-                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    MAILBOX_LABEL_IDS.ALL_MAIL,
-                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                ],
-            });
-
-            testState.elements = {
-                [MESSAGE_ID]: message,
-            };
-
-            labelMessagesPending(testState, {
-                type: 'mailbox/labelMessages',
-                payload: undefined,
-                meta: {
-                    arg: {
-                        messages: [message],
-                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                        labels: customLabels,
-                        folders: customFolders,
-                    },
-                },
-            });
-
-            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
-            expect(updatedMessage.Unread).toEqual(1);
-            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
-                MAILBOX_LABEL_IDS.INBOX,
-                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                MAILBOX_LABEL_IDS.ALL_MAIL,
-                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-            ]);
-        });
-    });
-
     describe('Move to SENT', () => {
         it('should move to SENT', () => {
             const message = setupMessage({
@@ -577,46 +535,6 @@ describe('labelMessagesPending', () => {
             expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
                 MAILBOX_LABEL_IDS.ARCHIVE,
                 MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                MAILBOX_LABEL_IDS.ALL_MAIL,
-                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-            ]);
-        });
-
-        it('should replace old category with new category when moving between categories', () => {
-            const message = setupMessage({
-                messageID: MESSAGE_ID,
-                unreadState: 'unread',
-                labelIDs: [
-                    MAILBOX_LABEL_IDS.INBOX,
-                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    MAILBOX_LABEL_IDS.ALL_MAIL,
-                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                ],
-            });
-
-            testState.elements = {
-                [MESSAGE_ID]: message,
-            };
-
-            labelMessagesPending(testState, {
-                type: 'mailbox/labelMessages',
-                payload: undefined,
-                meta: {
-                    arg: {
-                        messages: [message],
-                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                        labels: customLabels,
-                        folders: customFolders,
-                    },
-                },
-            });
-
-            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
-            expect(updatedMessage.Unread).toEqual(1);
-            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
-                MAILBOX_LABEL_IDS.INBOX,
-                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 MAILBOX_LABEL_IDS.ALL_MAIL,
                 MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
             ]);
@@ -1843,113 +1761,6 @@ describe('labelMessagesPending', () => {
                     },
                     {
                         ID: CUSTOM_LABEL_ID1,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                        ContextNumAttachments: 1,
-                    },
-                ]);
-            });
-        });
-
-        describe('Move to a category', () => {
-            it('should move all messages to the new category', () => {
-                const message = setupMessage({
-                    messageID: MESSAGE_ID,
-                    unreadState: 'unread',
-                    labelIDs: [
-                        MAILBOX_LABEL_IDS.INBOX,
-                        MAILBOX_LABEL_IDS.ALL_MAIL,
-                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                        MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    ],
-                    attachments: [{ Name: 'att' }] as Attachment[],
-                });
-
-                const conversation = setupConversation({
-                    conversationLabels: [
-                        {
-                            ID: MAILBOX_LABEL_IDS.INBOX,
-                            ContextNumMessages: 2,
-                            ContextNumUnread: 2,
-                            ContextNumAttachments: 1,
-                        },
-                        {
-                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                            ContextNumMessages: 2,
-                            ContextNumUnread: 2,
-                            ContextNumAttachments: 1,
-                        },
-                        {
-                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                            ContextNumMessages: 2,
-                            ContextNumUnread: 2,
-                            ContextNumAttachments: 1,
-                        },
-                        {
-                            ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                            ContextNumMessages: 2,
-                            ContextNumUnread: 2,
-                            ContextNumAttachments: 1,
-                        },
-                    ] as ConversationLabel[],
-                    numMessages: 2,
-                    numUnread: 2,
-                    numAttachments: 1,
-                });
-
-                testState.elements = {
-                    [CONVERSATION_ID]: conversation,
-                    [MESSAGE_ID]: message,
-                };
-
-                labelMessagesPending(testState, {
-                    type: 'mailbox/labelMessages',
-                    payload: undefined,
-                    meta: {
-                        arg: {
-                            messages: [message],
-                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                            labels: customLabels,
-                            folders: customFolders,
-                        },
-                    },
-                });
-
-                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
-                expect(updatedMessage.Unread).toEqual(1);
-                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
-                    MAILBOX_LABEL_IDS.INBOX,
-                    MAILBOX_LABEL_IDS.ALL_MAIL,
-                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                ]);
-
-                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
-                expect(updatedConversation.NumMessages).toBe(2);
-                expect(updatedConversation.NumUnread).toBe(2);
-                expect(updatedConversation.NumAttachments).toBe(1);
-                expectConversationLabelsSameArray(updatedConversation.Labels, [
-                    {
-                        ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         ContextNumMessages: 2,
                         ContextNumUnread: 2,
                         ContextNumAttachments: 1,

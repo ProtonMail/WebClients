@@ -6,6 +6,7 @@ import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -13,7 +14,6 @@ import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
-import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
     getElementContextIdentifier,
@@ -24,6 +24,7 @@ import {
 } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import {
     applyLabelToConversation,
     applyLabelToConversationMessage,
@@ -900,27 +901,9 @@ export const labelMessagesPending = (
     const { messages, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
     const countsBeforeAction = computeContextTotals(state);
 
+    // We do not label message when changing categories, instead we perform a conversation label
     if (isCategoryLabel(destinationLabelID)) {
-        const conversationIDs = uniqueBy(
-            messages.map(({ ConversationID }) => ConversationID),
-            (id) => id
-        );
-
-        // Update message's conversations
-        conversationIDs.forEach((conversationID) => {
-            const conversation = state.elements[conversationID];
-
-            if (conversation && isElementConversation(conversation)) {
-                applyLabelToConversation(conversation, sourceLabelID, destinationLabelID, labels, folders);
-            }
-        });
-
-        // Update all messages from conversations
-        Object.values(state.elements).forEach((element) => {
-            if (isElementMessage(element) && conversationIDs.includes(element.ConversationID)) {
-                applyLabelToMessage(element, destinationLabelID, folders, labels);
-            }
-        });
+        traceInitiativeError(SentryMailInitiatives.MOVE_ACTIONS, 'elementsReducers: updating category label counts');
     } else {
         messages.forEach((message) => {
             // Update conversation first because we need to have the initial state of the element
@@ -1090,4 +1073,12 @@ export const unlabelConversationsPending = (
 
     const countsAfterAction = computeContextTotals(state);
     updateContextTotals({ state, countsBeforeAction, countsAfterAction });
+};
+
+export const loadConversationFulfilled = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<ConversationResult, string, { arg: ConversationParams }>
+) => {
+    const { Conversation } = action.payload;
+    state.elements[Conversation.ID] = Conversation;
 };

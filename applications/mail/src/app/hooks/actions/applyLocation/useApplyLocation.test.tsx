@@ -12,7 +12,7 @@ import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
+import { labelConversations, labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
 
 import { APPLY_LOCATION_TYPES } from './interface';
 import { useApplyLocation } from './useApplyLocation';
@@ -26,10 +26,20 @@ jest.mock('proton-mail/store/mailbox/mailboxActions');
 const mockedLabelMessages = labelMessages as jest.Mock;
 //@ts-ignore
 const mockedUnlabelMessages = unlabelMessages as jest.Mock;
+//@ts-ignore
+const mockedLabelConversations = labelConversations as jest.Mock;
+
+const mockCaptureInitiativeMessage = jest.fn();
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    captureInitiativeMessage: (...args: any[]) => mockCaptureInitiativeMessage(...args),
+    SentryMailInitiatives: { MAIL_REDUX_ERRORS: 'mail-redux-errors' },
+}));
 
 const mockUseGetConversation = jest.fn();
+const mockUseGetConversationsByIDs = jest.fn();
 jest.mock('proton-mail/hooks/conversation/useConversation', () => ({
     useGetConversation: () => mockUseGetConversation,
+    useGetConversationsByIDs: () => mockUseGetConversationsByIDs,
 }));
 
 const mockUseGetElementByID = jest.fn();
@@ -450,6 +460,55 @@ describe('useApplyLocation', () => {
                     onActionUndo: expect.any(Function),
                     sourceLabelID: undefined,
                 });
+            });
+        });
+
+        describe('category label move', () => {
+            it('should move optimistically using conversations from store when all conversations are cached', async () => {
+                const conversationID = 'conv-1';
+                const conversation = { ID: conversationID, Labels: [] };
+                mockUseGetConversationsByIDs.mockReturnValue([{ Conversation: conversation }]);
+
+                const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+                await result.current.applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                    elements: [{ ID: 'msg-1', ConversationID: conversationID, LabelIDs: [] }],
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                });
+
+                expect(mockedLabelMessages).not.toHaveBeenCalled();
+                expect(mockedLabelConversations).toHaveBeenCalledWith({
+                    conversations: [conversation],
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    sourceLabelID: undefined,
+                    showSuccessNotification: true,
+                    labels: [],
+                    folders: [],
+                    spamAction: undefined,
+                    onActionUndo: expect.any(Function),
+                });
+            });
+
+            it('should fetch missing conversations and then move when conversations are not in store', async () => {
+                const conversationID = 'conv-1';
+                const conversation = { ID: conversationID, Labels: [] };
+                mockUseGetConversationsByIDs.mockReturnValue([undefined]);
+                mockUseGetElementByID.mockReturnValue(conversation);
+
+                const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+                await result.current.applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                    elements: [{ ID: 'msg-1', ConversationID: conversationID, LabelIDs: [] }],
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                });
+
+                expect(typeof mockDispatch.mock.calls[0][0]).toBe('function');
+                expect(mockCaptureInitiativeMessage).toHaveBeenCalledWith(
+                    'mail-redux-errors',
+                    'No conversation in cache for category-to-category move in message mode'
+                );
             });
         });
     });

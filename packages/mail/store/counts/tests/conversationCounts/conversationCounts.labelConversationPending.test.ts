@@ -1010,65 +1010,6 @@ describe('conversation counts - label messages', () => {
             });
         });
 
-        it('should update both categories counters when moving between categories', () => {
-            const conversation = {
-                ID: 'conversationID',
-                Labels: [
-                    {
-                        ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 1,
-                        ContextNumAttachments: 1,
-                    },
-                ],
-                NumMessages: 2,
-                NumUnread: 1,
-                NumAttachments: 1,
-            } as Conversation;
-
-            labelConversationsPending(state, {
-                type: 'mailbox/labelMessages',
-                payload: {
-                    conversations: [conversation],
-                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-                    labels: customLabels,
-                    folders: customFolders,
-                },
-            });
-
-            const updatedCounters = state.value as LabelCount[];
-
-            const socialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(socialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 0, Total: 1 });
-
-            const newslettersCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
-            expect(newslettersCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 1 });
-
-            checkUpdatedCounters({
-                updatedCounters,
-                skippedLabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
-            });
-        });
-
         it('should increase ALMOST_ALL_MAIL counters when moving out from TRASH', () => {
             const conversation = {
                 ID: 'conversationID',
