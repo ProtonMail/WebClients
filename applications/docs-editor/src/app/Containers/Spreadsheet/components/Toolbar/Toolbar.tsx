@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef } from 'react'
+import { useState, type ComponentPropsWithRef } from 'react'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
 import * as Atoms from '../atoms'
@@ -13,6 +13,8 @@ import { useUI } from '../../ui-store'
 import { createComponent } from '../utils'
 import { FormulaBar } from './FormulaBar'
 import {
+  type BorderStyle,
+  type Color,
   getStringifiedColor,
   TextHorizontalAlignSelectorContent,
   TextVerticalAlignSelectorContent,
@@ -371,6 +373,8 @@ function BorderSelector() {
   const theme = useUI((ui) => ui.legacy.theme)
   const borders = useUI((ui) => ui.format.borders.value)
   const onChange = useUI.$.format.borders.set
+  const [color, setColor] = useState<Color>()
+  const [style, setStyle] = useState<BorderStyle>('solid')
   return (
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
@@ -386,7 +390,15 @@ function BorderSelector() {
           className="p-2 [&_.flex-wrap]:!flex-wrap"
           render={<Ariakit.Popover />}
         >
-          <BorderSelectorContent borders={borders} onChange={onChange} theme={theme} />
+          <BorderSelectorContent
+            borders={borders}
+            color={color}
+            style={style}
+            onColorChange={setColor}
+            onStyleChange={setStyle}
+            onChange={onChange}
+            theme={theme}
+          />
         </Atoms.DropdownPopover>
       )}
     </Ariakit.PopoverProvider>
