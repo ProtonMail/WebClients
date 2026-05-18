@@ -150,7 +150,7 @@ export const createAuthService = ({
             if (!validLocalID) authStore.clear();
 
             /** Clear auth store if active localID was garbage collected */
-            if (activeLocalID && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
+            if (activeLocalID !== undefined && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
@@ -627,7 +627,7 @@ export const createAuthService = ({
             if (clientOffline(app.getState().status) && connectivity.online) {
                 if (throttle && scheduler.isThrottled()) return;
                 const localID = authStore.getLocalID();
-                if (localID) store.dispatch(offlineResume.intent({ localID, silence: true }));
+                if (localID !== undefined) store.dispatch(offlineResume.intent({ localID, silence: true }));
             }
         };
 
