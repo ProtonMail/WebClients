@@ -1,29 +1,31 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import ModalHeaderWithTabs from '@proton/components/containers/members/rolesAndPermissions/ModalHeaderWithTabs';
+import RolesAndPermissionsTab from '@proton/components/containers/members/rolesAndPermissions/RolesAndPermissionsTab';
 import { useLoading } from '@proton/hooks';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
@@ -36,7 +38,7 @@ import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;
-    groupData?: Group;
+    groupData?: EnhancedGroup;
 }
 
 const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
@@ -60,6 +62,12 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
     const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
+
+    const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
+        () => new Set(groupData?.GroupOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
+    );
+    const [organizationRoles, loadingRoles] = useOrganizationRoles();
+    const showRolesTab = useFlag('AdminRoleMVP');
 
     const onCancel = () => {
         if (dirty) {
@@ -217,8 +225,27 @@ const EditGroupModal = ({ groupsManagement, groupData }: Props) => {
     return (
         <>
             <ModalTwo size="large" open onClose={onCancel}>
-                <ModalTwoHeader title={modalTitle} />
-                <ModalTwoContent>{formContent}</ModalTwoContent>
+                <ModalHeaderWithTabs
+                    title={modalTitle}
+                    tabs={[
+                        { title: c('group_modal').t`General`, content: formContent },
+                        ...(showRolesTab
+                            ? [
+                                  {
+                                      title: c('group_modal').t`Roles and permissions`,
+                                      content: (
+                                          <RolesAndPermissionsTab
+                                              selectedRoles={selectedRoles}
+                                              onChange={setSelectedRoles}
+                                              organizationRoles={organizationRoles}
+                                              loadingRoles={loadingRoles}
+                                          />
+                                      ),
+                                  },
+                              ]
+                            : []),
+                    ]}
+                />
                 <ModalTwoFooter>
                     <Button color="weak" onClick={onCancel}>
                         {c('Action').t`Cancel`}
