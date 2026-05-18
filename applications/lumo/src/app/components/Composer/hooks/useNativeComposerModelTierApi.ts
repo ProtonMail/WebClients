@@ -18,5 +18,5 @@ export const useNativeComposerModelTierApi = (modelTier: ModelTier, setModelTier
         return () => {
             unsubscribeChangeModel();
         };
-    }, []);
+    }, [setModelTier]);
 };

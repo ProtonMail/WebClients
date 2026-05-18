@@ -20,5 +20,5 @@ export const useNativeComposerAccountApi = () => {
         return () => {
             unsubscribeOpenAccount();
         };
-    }, [isGuest]);
+    }, [isGuest, settingsLink]);
 };
