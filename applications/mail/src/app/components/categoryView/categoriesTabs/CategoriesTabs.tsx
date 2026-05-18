@@ -42,7 +42,7 @@ export const CategoriesTabsList = () => {
     return (
         <>
             <div
-                className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak"
+                className="categories-tabs flex flex-nowrap px-4 h-fit-content border-bottom border-weak"
                 data-testid="categories-tabs"
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
