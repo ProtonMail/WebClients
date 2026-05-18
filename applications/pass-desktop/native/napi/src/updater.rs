@@ -2,8 +2,8 @@ use anyhow::{bail, Result};
 use napi::threadsafe_function::{ThreadsafeFunction, ThreadsafeFunctionCallMode};
 use windows::{
     core::{HSTRING, PCWSTR},
-    Foundation::Uri,
-    Management::Deployment::{AddPackageOptions, DeploymentProgress, PackageManager},
+    Foundation::{AsyncOperationProgressHandler, Uri},
+    Management::Deployment::{AddPackageOptions, DeploymentProgress, DeploymentResult, PackageManager},
     Win32::System::Recovery::{RegisterApplicationRestart, REGISTER_APPLICATION_RESTART_FLAGS},
 };
 
@@ -29,12 +29,11 @@ pub fn install_update(package_uri: String, on_progress: ThreadsafeFunction<u32>)
 
     let operation = package_manager.AddPackageByUriAsync(&uri, &options)?;
 
-    operation.SetProgress(&move |_, progress: &Option<DeploymentProgress>| {
-        if let Some(p) = progress {
-            on_progress.call(Ok(p.percentage), ThreadsafeFunctionCallMode::NonBlocking);
-        }
+    let handler = AsyncOperationProgressHandler::<DeploymentResult, DeploymentProgress>::new(move |_, progress| {
+        on_progress.call(Ok(progress.percentage), ThreadsafeFunctionCallMode::NonBlocking);
         Ok(())
-    })?;
+    });
+    operation.SetProgress(&handler)?;
 
     let result = operation.get()?;
 
