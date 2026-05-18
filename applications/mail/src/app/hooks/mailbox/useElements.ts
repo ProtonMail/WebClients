@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import isDeepEqual from 'lodash/isEqual';
 
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
@@ -29,6 +28,7 @@ import {
     filterFromUrl,
     filterToString,
     sortFromUrl,
+    sortToString,
 } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
@@ -233,7 +233,7 @@ export const useElements: UseElements = ({
         const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
         const hasESEnabledChange = esEnabled !== esEnabledRef.current && isSearch(search);
         const hasPageJump = !pageIsConsecutive;
-        const hasSortChange = !isDeepEqual(sort, stateParams.sort);
+        const hasSortChange = sortToString(sort) !== sortToString(stateParams.sort);
 
         const shouldResetElementsState =
             // Always reset for search keyword changes (even in newsletter view)
