@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi, useConfig } from '@proton/components';
+import { useApi, useAuthentication, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
 import { getNotificationsManager } from '../../modules/notifications';
@@ -73,7 +74,7 @@ export type UseSearchModuleReturn =
       };
 
 export const useSearchModule = (): UseSearchModuleReturn => {
-    const { APP_VERSION } = useConfig();
+    const { APP_VERSION, APP_NAME } = useConfig();
     const isFeatureFlagEnabled = useFlagsDriveFoundationSearch();
     const {
         drive,
@@ -82,6 +83,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
 
     const [user] = useUser();
     const api = useApi();
+    const { UID } = useAuthentication();
     const getUserKeys = useGetUserKeys();
 
     const [searchModule, setSearchModule] = useState<SearchModule | null>(null);
@@ -104,6 +106,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
 
                 const module = await SearchModule.getOrCreate({
                     appVersion: APP_VERSION,
+                    metricsHeaders: { uid: UID, clientID: getClientID(APP_NAME) },
                     userId,
                     driveClient: drive,
                     createSearchDriveInstance,
