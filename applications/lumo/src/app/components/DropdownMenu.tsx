@@ -8,8 +8,8 @@ import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import type { IconName } from '@proton/icons/types';
 
+import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../hooks/useIsTouchDevice';
-import { useSidebar } from '../providers/SidebarProvider';
 
 import './DropdownMenu.scss';
 
@@ -27,7 +27,7 @@ interface Props {
 
 const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
-    const { isSmallScreen } = useSidebar();
+    const { isSmallScreen } = useIsLumoSmallScreen();
     const isTouchDevice = useIsTouchDevice();
     const alwaysVisible = isSmallScreen || isTouchDevice;
 
