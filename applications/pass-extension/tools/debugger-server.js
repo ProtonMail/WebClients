@@ -28,7 +28,7 @@ const writeLog = (type, date, message) =>
 
 const handleLog = (req, res) => {
     try {
-        const { date, message, type = 'log' } = JSON.parse(decodeURIComponent(req.query.message));
+        const { date, message, type = 'log' } = req.body;
         writeLog(type, date, message);
     } catch {}
 
@@ -37,6 +37,7 @@ const handleLog = (req, res) => {
 
 module.exports = () => {
     const app = express();
-    app.get('/log', handleLog);
+    app.use(express.json());
+    app.post('/log', handleLog);
     app.listen(PORT, () => writeLog('info', new Date(), `Listening on :${PORT}\x1b[0m`));
 };
